@@ -27,27 +27,40 @@ const founders: Founder[] = [
     initials: "KP",
     linkedin: "https://www.linkedin.com/in/paramesh-korrakuti-265b3928/",
     photo: "/founders/paramesh-korrakuti.jpg",
+    message:
+      "As a Senior Architect with 17+ years across Java, Spring Boot, C#, Python, Golang, React, and AI, I've delivered many enterprise-grade applications to production. My passion is mentoring students into industry-ready professionals who can bridge the gap between learning and employment.",
   },
 ];
 
-// Core values, adapted from the Mavvrik.ai headlines that define how the team
-// builds and ships.
-const teamValues: { title: string; detail: string }[] = [
+// Core values that define the student journey on CareerLaunchPad.
+const teamValues: { icon: string; title: string; detail: string }[] = [
   {
-    title: "Built for what's next",
-    detail: "We design for the AI era, not yesterday's playbook.",
+    icon: "🎯",
+    title: "Aspire",
+    detail: "Dream bigger than your circumstances.",
   },
   {
-    title: "Clarity over complexity",
-    detail: "Clear answers to hard problems, every time.",
+    icon: "📚",
+    title: "Prepare",
+    detail: "Develop the skills that industry demands.",
   },
   {
-    title: "Proactive, not reactive",
-    detail: "Get ahead of problems before they spiral.",
+    icon: "🚀",
+    title: "Launch",
+    detail: "Start a successful and meaningful career.",
+  },
+];
+
+const visionMission: { icon: string; label: string; text: string }[] = [
+  {
+    icon: "🔭",
+    label: "Vision",
+    text: "Empowering students to dream bigger, learn smarter, and launch successful careers.",
   },
   {
-    title: "Scale with confidence",
-    detail: "Move fast with guardrails that protect outcomes.",
+    icon: "🧭",
+    label: "Mission",
+    text: "Connecting students with mentors, skills, and opportunities to become job-ready and future-ready.",
   },
 ];
 
@@ -89,13 +102,30 @@ export default function FoundersMessage() {
             <ul className="team-values">
               {teamValues.map((v) => (
                 <li className="team-value" key={v.title}>
-                  <span className="team-value-title">{v.title}</span>
+                  <span className="team-value-title">
+                    <span className="team-value-icon" aria-hidden="true">
+                      {v.icon}
+                    </span>
+                    {v.title}
+                  </span>
                   <span className="team-value-detail">{v.detail}</span>
                 </li>
               ))}
             </ul>
           </div>
         </article>
+      </div>
+
+      <div className="vision-mission">
+        {visionMission.map((vm) => (
+          <article className="vm-card" key={vm.label}>
+            <span className="vm-badge" aria-hidden="true">
+              {vm.icon}
+            </span>
+            <p className="founder-role">{vm.label}</p>
+            <p className="vm-text">{vm.text}</p>
+          </article>
+        ))}
       </div>
     </section>
   );
