@@ -1,0 +1,713 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  -webkit-text-size-adjust: 100%;
+}
+
+body {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  background: #f6f8fb;
+  color: #1a1a2e;
+  /* Guard against any single element forcing sideways scroll on small screens */
+  overflow-x: hidden;
+}
+
+/* Media never overflows its container */
+img,
+svg,
+video {
+  max-width: 100%;
+}
+
+/* ---------- Navbar ---------- */
+.navbar {
+  position: sticky;
+  top: 0;
+  z-index: 50;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  padding: 8px clamp(16px, 4vw, 28px);
+  background: #fff;
+  border-bottom: 1px solid #eef0f4;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.04);
+}
+
+.brand {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  text-decoration: none;
+  /* Allow the wordmark/tagline to shrink and wrap instead of overflowing */
+  min-width: 0;
+}
+
+.brand-logo {
+  height: clamp(48px, 11vw, 84px);
+  width: auto;
+  display: block;
+  flex: 0 0 auto;
+}
+
+.brand-text {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 4px;
+  min-width: 0;
+}
+
+/* Enterprise-style wordmark: two-tone, no space, tight tracking */
+.brand-name {
+  display: inline-flex;
+  align-items: baseline;
+  gap: 0;
+  font-size: clamp(1.4rem, 5.2vw, 2.5rem);
+  font-weight: 800;
+  letter-spacing: -0.022em;
+  line-height: 1;
+}
+
+.brand-tagline {
+  font-size: clamp(0.72rem, 2.3vw, 1rem);
+  font-weight: 500;
+  letter-spacing: 0.01em;
+  color: #64748b;
+  line-height: 1.2;
+}
+
+.brand-name .brand-mark {
+  color: #16162b;
+}
+
+.brand-name .brand-accent {
+  background: linear-gradient(90deg, #2563eb, #7c3aed);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.nav-cta {
+  background: linear-gradient(90deg, #2563eb, #7c3aed);
+  color: #fff;
+  padding: 10px clamp(12px, 3vw, 18px);
+  border-radius: 10px;
+  font-weight: 600;
+  font-size: clamp(0.82rem, 2.4vw, 0.95rem);
+  text-decoration: none;
+  white-space: nowrap;
+  flex: 0 0 auto;
+  transition: filter 0.15s ease;
+}
+
+.nav-cta:hover {
+  filter: brightness(1.07);
+}
+
+/* ---------- Page ---------- */
+.page {
+  max-width: 1040px;
+  margin: 0 auto;
+  padding: 32px clamp(16px, 4vw, 20px) 80px;
+  text-align: center;
+}
+
+.intro {
+  max-width: 820px;
+  margin: 8px auto 8px;
+  padding: 0 8px;
+}
+
+.intro-title {
+  font-size: 2.3rem;
+  font-weight: 800;
+  letter-spacing: -0.02em;
+  line-height: 1.18;
+  color: #16162b;
+}
+
+.intro-lead {
+  margin-top: 16px;
+  font-size: 1.12rem;
+  line-height: 1.6;
+  color: #475569;
+}
+
+.hero {
+  padding: 24px 0 8px;
+}
+
+.greeting {
+  font-size: 2.6rem;
+  font-weight: 700;
+  background: linear-gradient(90deg, #2563eb, #7c3aed);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.subtitle {
+  margin-top: 12px;
+  color: #555;
+  font-size: 1.1rem;
+}
+
+.hero-image {
+  width: 100%;
+  max-width: 460px;
+  height: auto;
+  border-radius: 16px;
+  margin: 28px auto 0;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.14);
+}
+
+.section-title {
+  font-size: clamp(1.5rem, 4.5vw, 1.8rem);
+  font-weight: 700;
+  margin-top: clamp(40px, 8vw, 56px);
+}
+
+/* ---------- Journey flow (animated visual walkthrough) ---------- */
+.journey-panel {
+  max-width: 1040px;
+  margin: 28px auto 0;
+  padding: 36px 32px;
+  border-radius: 24px;
+  background:
+    radial-gradient(120% 120% at 12% 0%, #f6f2ff 0%, rgba(246, 242, 255, 0) 55%),
+    linear-gradient(180deg, #ffffff, #fbfaff);
+  border: 1px solid #ece7fb;
+  box-shadow: 0 24px 60px rgba(76, 29, 149, 0.08);
+}
+
+.journey-flow {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  flex-wrap: wrap;
+}
+
+/* Shared flowing-dash styling */
+.flow-line,
+.flow-curve {
+  fill: none;
+  stroke: #7c3aed;
+  stroke-width: 2.2;
+  stroke-linecap: round;
+  stroke-dasharray: 3 7;
+  animation: jf-dash 0.7s linear infinite;
+}
+
+.flow-curve {
+  stroke: #b8a4f4;
+}
+
+.flow-head {
+  fill: none;
+  stroke: #7c3aed;
+  stroke-width: 2.2;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
+/* Students hub */
+.jf-students {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 10px;
+  flex: 0 0 auto;
+}
+
+.jf-students-id {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+}
+
+.jf-hub {
+  width: 92px;
+  height: 92px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 24px;
+  color: #fff;
+  background: linear-gradient(135deg, #2563eb, #7c3aed);
+  box-shadow: 0 14px 30px rgba(124, 58, 237, 0.32);
+  animation: jf-float 3.6s ease-in-out infinite;
+}
+
+.jf-students-label {
+  font-weight: 700;
+  font-size: 1.05rem;
+  color: #1a1a2e;
+}
+
+.jf-arrow-in {
+  width: 56px;
+  height: 16px;
+  overflow: visible;
+}
+
+/* Steps */
+.jf-steps {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.jf-step {
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  opacity: 0;
+  animation: jf-rise 0.5s ease forwards;
+}
+
+.jf-step-card {
+  position: relative;
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  width: 288px;
+  background: #fff;
+  border: 1px solid #eef0f4;
+  border-radius: 16px;
+  padding: 16px 18px;
+  box-shadow: 0 10px 26px rgba(30, 27, 75, 0.07);
+  text-align: left;
+}
+
+.jf-step-card::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 8px;
+  bottom: 8px;
+  width: 4px;
+  border-radius: 4px;
+  background: linear-gradient(180deg, #2563eb, #7c3aed);
+}
+
+.jf-step-badge {
+  position: absolute;
+  top: -10px;
+  left: 16px;
+  font-size: 0.6rem;
+  font-weight: 800;
+  letter-spacing: 0.07em;
+  text-transform: uppercase;
+  color: #fff;
+  background: linear-gradient(90deg, #2563eb, #7c3aed);
+  padding: 3px 9px;
+  border-radius: 999px;
+  box-shadow: 0 4px 10px rgba(124, 58, 237, 0.3);
+}
+
+.jf-step-icon {
+  flex: 0 0 auto;
+  width: 42px;
+  height: 42px;
+  padding: 9px;
+  border-radius: 11px;
+  color: #7c3aed;
+  background: linear-gradient(135deg, #f1ebfe, #e9e2fd);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.jf-step-title {
+  font-weight: 600;
+  font-size: 1rem;
+  line-height: 1.25;
+  color: #1a1a2e;
+}
+
+.jf-step-arrow {
+  width: 16px;
+  height: 24px;
+  margin: 2px 0;
+  overflow: visible;
+  align-self: center;
+}
+
+/* Fan-out connectors (signature element) */
+.jf-fan {
+  width: 96px;
+  height: 304px;
+  flex: 0 0 auto;
+  overflow: visible;
+}
+
+.jf-fan-hub {
+  fill: #7c3aed;
+}
+
+.jf-fan-dot {
+  fill: #2563eb;
+}
+
+/* Sectors */
+.jf-sector-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  flex: 0 0 auto;
+}
+
+.jf-sector-card {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  width: 196px;
+  height: 64px;
+  background: #fff;
+  border: 1px solid #e8ecf6;
+  border-radius: 14px;
+  padding: 0 16px;
+  box-shadow: 0 10px 24px rgba(30, 27, 75, 0.06);
+  transition: transform 0.18s ease, box-shadow 0.18s ease;
+}
+
+.jf-sector-card:hover {
+  transform: translateX(4px);
+  box-shadow: 0 14px 30px rgba(37, 99, 235, 0.16);
+}
+
+.jf-sector-icon {
+  flex: 0 0 auto;
+  width: 40px;
+  height: 40px;
+  padding: 8px;
+  border-radius: 10px;
+  color: #2563eb;
+  background: linear-gradient(135deg, #e9f0ff, #eaf4ff);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.jf-sector-label {
+  font-weight: 600;
+  font-size: 1rem;
+  color: #1a1a2e;
+}
+
+/* Keyframes */
+@keyframes jf-dash {
+  to {
+    stroke-dashoffset: -10;
+  }
+}
+
+@keyframes jf-rise {
+  from {
+    opacity: 0;
+    transform: translateY(12px) scale(0.97);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+@keyframes jf-float {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-7px);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .jf-hub,
+  .jf-step {
+    animation: none;
+    opacity: 1;
+  }
+  .flow-line,
+  .flow-curve {
+    animation: none;
+  }
+}
+
+/* Stack on narrow screens: hide the fan + horizontal lead-in, point flow down */
+@media (max-width: 820px) {
+  .journey-panel {
+    padding: 24px 16px;
+  }
+  .journey-flow {
+    flex-direction: column;
+    gap: 14px;
+  }
+  .jf-students {
+    flex-direction: column;
+  }
+  .jf-arrow-in {
+    transform: rotate(90deg);
+  }
+  .jf-fan {
+    display: none;
+  }
+  /* Cards go fluid so they never overflow narrow phones (was fixed 288/196px) */
+  .jf-steps,
+  .jf-sector-list {
+    width: 100%;
+  }
+  .jf-step {
+    width: 100%;
+    align-items: center;
+  }
+  .jf-step-card,
+  .jf-sector-card {
+    width: 100%;
+    max-width: 360px;
+    margin-inline: auto;
+  }
+}
+
+/* ---------- Founder's Message ---------- */
+.founders {
+  max-width: 1100px;
+  margin: 0 auto;
+  text-align: left;
+}
+
+.founders .section-title {
+  text-align: center;
+}
+
+.founders-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+  margin-top: 24px;
+  align-items: stretch;
+}
+
+.founder-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  gap: 16px;
+  background: #fff;
+  border: 1px solid #eef0f4;
+  border-radius: 16px;
+  padding: 28px 24px;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.05);
+}
+
+.avatar {
+  flex: 0 0 auto;
+  width: 72px;
+  height: 72px;
+  border-radius: 50%;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(135deg, #2563eb, #7c3aed);
+  color: #fff;
+  font-weight: 700;
+  font-size: 1.4rem;
+  text-decoration: none;
+  transition: filter 0.15s ease;
+}
+
+.avatar-photo {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  /* Bias the crop toward the top so portrait headshots keep the full head */
+  object-position: center 15%;
+}
+
+.avatar:hover {
+  filter: brightness(1.08);
+}
+
+.founder-role {
+  font-size: 0.8rem;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: #7c3aed;
+  font-weight: 700;
+}
+
+.founder-name {
+  font-size: 1.2rem;
+  margin-top: 2px;
+}
+
+.founder-name a {
+  color: #1a1a2e;
+  text-decoration: none;
+}
+
+.founder-name a:hover {
+  text-decoration: underline;
+}
+
+.founder-message {
+  margin-top: 10px;
+  color: #475569;
+  line-height: 1.6;
+  text-align: justify;
+  text-justify: inter-word;
+}
+
+/* ---------- Team / Core Values tile ---------- */
+.team-card .avatar {
+  font-size: 1.8rem;
+}
+
+.team-values {
+  list-style: none;
+  margin: 12px 0 0;
+  padding: 0;
+  display: grid;
+  gap: 14px;
+  text-align: left;
+  width: 100%;
+}
+
+.team-value {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  padding-left: 16px;
+  border-left: 3px solid #7c3aed;
+}
+
+.team-value-title {
+  font-weight: 700;
+  color: #1a1a2e;
+}
+
+.team-value-icon {
+  margin-right: 7px;
+  font-size: 1.05rem;
+}
+
+.team-value-detail {
+  font-size: 0.9rem;
+  color: #475569;
+  line-height: 1.5;
+}
+
+/* ---------- Vision & Mission ---------- */
+.vision-mission {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 24px;
+  margin-top: 24px;
+}
+
+.vm-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  gap: 12px;
+  padding: 30px 28px;
+  border-radius: 16px;
+  border: 1px solid #e7e2f8;
+  background: linear-gradient(135deg, #f6f2fe, #eef3ff);
+  box-shadow: 0 6px 20px rgba(76, 29, 149, 0.06);
+}
+
+.vm-badge {
+  width: 58px;
+  height: 58px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.6rem;
+  background: linear-gradient(135deg, #2563eb, #7c3aed);
+  box-shadow: 0 8px 20px rgba(124, 58, 237, 0.26);
+}
+
+.vm-text {
+  color: #334155;
+  font-size: 1.05rem;
+  line-height: 1.6;
+  max-width: 46ch;
+}
+
+/* ---------- Responsive ---------- */
+@media (max-width: 600px) {
+  .navbar {
+    padding: 0 16px;
+  }
+
+  .brand-logo {
+    height: 58px;
+  }
+
+  .brand-name {
+    font-size: 1.55rem;
+  }
+
+  .brand-tagline {
+    font-size: 0.78rem;
+  }
+
+  .greeting {
+    font-size: 2rem;
+  }
+
+  .intro-title {
+    font-size: 1.7rem;
+  }
+
+  .intro-lead {
+    font-size: 1rem;
+  }
+
+  .founders-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .vision-mission {
+    grid-template-columns: 1fr;
+  }
+
+  .founder-card {
+    padding: 24px 18px;
+  }
+
+  .vm-card {
+    padding: 24px 20px;
+  }
+
+  /* Justified text creates ugly rivers in a narrow column; left-align on phones */
+  .founder-message {
+    text-align: left;
+  }
+}
+
+@media (min-width: 601px) and (max-width: 900px) {
+  .founders-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+}

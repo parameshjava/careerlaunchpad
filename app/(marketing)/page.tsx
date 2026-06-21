@@ -1,5 +1,5 @@
-import JourneyGraphic from "./components/JourneyGraphic";
-import FoundersMessage from "./components/FoundersMessage";
+import JourneyGraphic from "../components/JourneyGraphic";
+import FoundersMessage from "../components/FoundersMessage";
 
 export default function Home() {
   return (
