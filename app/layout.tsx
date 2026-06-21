@@ -37,9 +37,11 @@ export const metadata: Metadata = {
     locale: "en_US",
     images: [
       {
+        // Kept small (240²) so WhatsApp/iMessage render the inline side-by-side
+        // thumbnail card instead of a full-width banner.
         url: "/logo-mark.png",
-        width: 512,
-        height: 512,
+        width: 240,
+        height: 240,
         alt: "CareerLaunchPad",
       },
     ],
