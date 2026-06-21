@@ -1,74 +1,221 @@
-// Flow diagram (inspired by the provided sketch):
-// Students -> Growth & upskilling (rising bars) -> branching into Banks / IT Sector / Govt Sector.
+// Animated "visual walkthrough" of the student journey (loops like a GIF, stays
+// crisp/scalable): Students -> 6 numbered steps -> career sectors, joined by
+// flowing dashed connectors that fan out at the end.
+import type { ReactNode } from "react";
+
+/* ----------------------------- Icons ----------------------------- */
+const ic = {
+  stroke: "currentColor",
+  strokeWidth: 1.8,
+  strokeLinecap: "round" as const,
+  strokeLinejoin: "round" as const,
+  fill: "none",
+};
+
+function GradCapIcon() {
+  return (
+    <svg viewBox="0 0 24 24" width="100%" height="100%" aria-hidden="true">
+      <path {...ic} d="M12 4 2 9l10 5 10-5-10-5Z" />
+      <path {...ic} d="M6 11.2V15c0 1.6 2.7 3 6 3s6-1.4 6-3v-3.8" />
+      <path {...ic} d="M22 9v5" />
+    </svg>
+  );
+}
+function RegisterIcon() {
+  return (
+    <svg viewBox="0 0 24 24" width="100%" height="100%" aria-hidden="true">
+      <rect {...ic} x="5" y="3" width="14" height="18" rx="2" />
+      <path {...ic} d="M9 3.5h6v2.5H9z" />
+      <path {...ic} d="M8.5 11h4M8.5 14.5h7" />
+      <path {...ic} d="m14.5 11 1.4 1.4 2.6-2.6" />
+    </svg>
+  );
+}
+function AssessIcon() {
+  return (
+    <svg viewBox="0 0 24 24" width="100%" height="100%" aria-hidden="true">
+      <path {...ic} d="M4 19h16" />
+      <rect {...ic} x="5" y="11" width="3.2" height="6" rx="1" />
+      <rect {...ic} x="10.4" y="8" width="3.2" height="9" rx="1" />
+      <rect {...ic} x="15.8" y="5" width="3.2" height="12" rx="1" />
+    </svg>
+  );
+}
+function MentorIcon() {
+  return (
+    <svg viewBox="0 0 24 24" width="100%" height="100%" aria-hidden="true">
+      <circle {...ic} cx="8" cy="8" r="2.6" />
+      <circle {...ic} cx="16" cy="8" r="2.6" />
+      <path {...ic} d="M3.5 19c0-2.5 2-4 4.5-4s4.5 1.5 4.5 4" />
+      <path {...ic} d="M12.5 19c0-2.5 2-4 4.5-4s4.5 1.5 4.5 4" />
+    </svg>
+  );
+}
+function SkillIcon() {
+  return (
+    <svg viewBox="0 0 24 24" width="100%" height="100%" aria-hidden="true">
+      <path {...ic} d="M9 18h6M10 21h4" />
+      <path
+        {...ic}
+        d="M12 3a6 6 0 0 0-4 10.5c.8.8 1.1 1.5 1.1 2.5h5.8c0-1 .3-1.7 1.1-2.5A6 6 0 0 0 12 3Z"
+      />
+    </svg>
+  );
+}
+function InterviewIcon() {
+  return (
+    <svg viewBox="0 0 24 24" width="100%" height="100%" aria-hidden="true">
+      <path {...ic} d="M4 5h16v10H9l-4 3v-3H4Z" />
+      <path {...ic} d="M8 9h8M8 12h5" />
+    </svg>
+  );
+}
+function PlacementIcon() {
+  return (
+    <svg viewBox="0 0 24 24" width="100%" height="100%" aria-hidden="true">
+      <path {...ic} d="M7 4h10v3a5 5 0 0 1-10 0V4Z" />
+      <path {...ic} d="M5 5H3v1.5A2.5 2.5 0 0 0 5.5 9M19 5h2v1.5A2.5 2.5 0 0 1 18.5 9" />
+      <path {...ic} d="M12 12v3M9 20h6M10 20l.5-3h3l.5 3" />
+    </svg>
+  );
+}
+function BankIcon() {
+  return (
+    <svg viewBox="0 0 24 24" width="100%" height="100%" aria-hidden="true">
+      <path {...ic} d="M4 9 12 4l8 5" />
+      <path {...ic} d="M6 9v8M10 9v8M14 9v8M18 9v8" />
+      <path {...ic} d="M3.5 20h17" />
+    </svg>
+  );
+}
+function ITIcon() {
+  return (
+    <svg viewBox="0 0 24 24" width="100%" height="100%" aria-hidden="true">
+      <rect {...ic} x="3" y="4" width="18" height="12" rx="1.5" />
+      <path {...ic} d="M9 20h6M12 16v4" />
+      <path {...ic} d="m9.5 8-2 2 2 2M14.5 8l2 2-2 2" />
+    </svg>
+  );
+}
+function GovtIcon() {
+  return (
+    <svg viewBox="0 0 24 24" width="100%" height="100%" aria-hidden="true">
+      <path {...ic} d="M12 3l4 2-4 1-4-1 4-2Z" />
+      <path {...ic} d="M12 6v3" />
+      <rect {...ic} x="5" y="9" width="14" height="9" rx="1" />
+      <path {...ic} d="M9 9v9M15 9v9M4 21h16" />
+    </svg>
+  );
+}
+function MoreIcon() {
+  return (
+    <svg viewBox="0 0 24 24" width="100%" height="100%" aria-hidden="true">
+      <circle cx="6" cy="12" r="1.5" fill="currentColor" />
+      <circle cx="12" cy="12" r="1.5" fill="currentColor" />
+      <circle cx="18" cy="12" r="1.5" fill="currentColor" />
+    </svg>
+  );
+}
+
+/* ------------------------------ Data ------------------------------ */
+const steps: { n: number; title: string; icon: ReactNode }[] = [
+  { n: 1, title: "Register", icon: <RegisterIcon /> },
+  { n: 2, title: "Career Assessment", icon: <AssessIcon /> },
+  { n: 3, title: "Mentor Allocation", icon: <MentorIcon /> },
+  { n: 4, title: "Skill Development", icon: <SkillIcon /> },
+  { n: 5, title: "Interview Preparation", icon: <InterviewIcon /> },
+  { n: 6, title: "Placement & Career Growth", icon: <PlacementIcon /> },
+];
+
+const sectors: { label: string; icon: ReactNode }[] = [
+  { label: "Banks", icon: <BankIcon /> },
+  { label: "IT Sector", icon: <ITIcon /> },
+  { label: "Govt Sector", icon: <GovtIcon /> },
+  { label: "& Much More", icon: <MoreIcon /> },
+];
+
+// y-centres for the 4 sector cards inside the 304-tall fan SVG
+// (card height 64 + 16 gap): 32, 112, 192, 272.
+const fanTargets = [32, 112, 192, 272];
+
+/* ---------------------------- Component ---------------------------- */
 export default function JourneyGraphic() {
   return (
-    <svg
-      className="journey-graphic"
-      viewBox="0 0 660 360"
-      role="img"
-      aria-label="Students grow and upskill, then branch into careers in Banks, IT Sector and Govt Sector"
-      xmlns="http://www.w3.org/2000/svg"
-    >
-      <defs>
-        <marker
-          id="cl-arrow"
-          viewBox="0 0 10 10"
-          refX="8"
-          refY="5"
-          markerWidth="7"
-          markerHeight="7"
-          orient="auto-start-reverse"
+    <div className="journey-panel">
+      <div
+        className="journey-flow"
+        role="img"
+        aria-label="Student career journey: register, career assessment, mentor allocation, skill development, interview preparation, then placement into Banks, IT Sector, Govt Sector and more."
+      >
+        {/* Students hub */}
+        <div className="jf-students">
+          <div className="jf-students-id">
+            <div className="jf-hub">
+              <GradCapIcon />
+            </div>
+            <span className="jf-students-label">Students</span>
+          </div>
+          <svg className="jf-arrow-in" viewBox="0 0 56 16" aria-hidden="true">
+            <line className="flow-line" x1="2" y1="8" x2="44" y2="8" />
+            <path className="flow-head" d="M40 3 48 8 40 13" />
+          </svg>
+        </div>
+
+        {/* 6 steps */}
+        <ol className="jf-steps">
+          {steps.map((s, i) => (
+            <li
+              className="jf-step"
+              key={s.n}
+              style={{ animationDelay: `${i * 0.12}s` }}
+            >
+              <div className="jf-step-card">
+                <span className="jf-step-badge">Step {s.n}</span>
+                <span className="jf-step-icon">{s.icon}</span>
+                <span className="jf-step-title">{s.title}</span>
+              </div>
+              {i < steps.length - 1 && (
+                <svg className="jf-step-arrow" viewBox="0 0 16 24" aria-hidden="true">
+                  <line className="flow-line flow-line--v" x1="8" y1="2" x2="8" y2="16" />
+                  <path className="flow-head" d="M3 12 8 18 13 12" />
+                </svg>
+              )}
+            </li>
+          ))}
+        </ol>
+
+        {/* Fan-out connectors (signature element) */}
+        <svg
+          className="jf-fan"
+          viewBox="0 0 96 304"
+          preserveAspectRatio="xMidYMid meet"
+          aria-hidden="true"
         >
-          <path d="M0 0 L10 5 L0 10 z" fill="#475569" />
-        </marker>
-      </defs>
+          <line className="flow-line" x1="0" y1="152" x2="18" y2="152" />
+          <circle className="jf-fan-hub" cx="18" cy="152" r="4.5" />
+          {fanTargets.map((y, i) => (
+            <path
+              key={i}
+              className="flow-curve"
+              style={{ animationDelay: `${i * 0.15}s` }}
+              d={`M18 152 C 60 152 54 ${y} 92 ${y}`}
+            />
+          ))}
+          {fanTargets.map((y, i) => (
+            <circle key={`d${i}`} className="jf-fan-dot" cx="92" cy={y} r="3.5" />
+          ))}
+        </svg>
 
-      {/* ---- Students ---- */}
-      <g>
-        <circle cx="38" cy="196" r="9" fill="#64748b" />
-        <path d="M26 236 C26 214 50 214 50 236 Z" fill="#64748b" />
-        <circle cx="74" cy="196" r="9" fill="#64748b" />
-        <path d="M62 236 C62 214 86 214 86 236 Z" fill="#64748b" />
-        <circle cx="56" cy="190" r="11" fill="#334155" />
-        <path d="M40 244 C40 215 72 215 72 244 Z" fill="#334155" />
-        <text x="56" y="268" fontSize="14" fontWeight="700" fill="#1a1a2e" textAnchor="middle">
-          Students
-        </text>
-      </g>
-
-      {/* arrow: students -> growth */}
-      <line x1="100" y1="210" x2="160" y2="210" stroke="#475569" strokeWidth="2.5" markerEnd="url(#cl-arrow)" />
-
-      {/* ---- Growth (rising bars) ---- */}
-      <g>
-        <rect x="165" y="110" width="190" height="200" rx="10" fill="#ffffff" stroke="#cbd5e1" strokeWidth="2" />
-        <rect x="185" y="235" width="28" height="60" rx="3" fill="#fcd34d" />
-        <rect x="221" y="205" width="28" height="90" rx="3" fill="#f9a8d4" />
-        <rect x="257" y="170" width="28" height="125" rx="3" fill="#c4b5fd" />
-        <rect x="293" y="140" width="28" height="155" rx="3" fill="#a78bfa" />
-        <text x="260" y="338" fontSize="14" fontWeight="700" fill="#1a1a2e" textAnchor="middle">
-          Growth &amp; Upskilling
-        </text>
-      </g>
-
-      {/* branching arrows: growth -> 3 sectors */}
-      <g fill="none" stroke="#475569" strokeWidth="2.5">
-        <path d="M355 210 H388 V150 Q388 148 392 148 H466" markerEnd="url(#cl-arrow)" />
-        <path d="M355 210 H466" markerEnd="url(#cl-arrow)" />
-        <path d="M355 210 H388 V285 Q388 287 392 287 H466" markerEnd="url(#cl-arrow)" />
-      </g>
-
-      {/* ---- Sector boxes ---- */}
-      <g fontSize="14" fontWeight="600" fill="#1a1a2e" textAnchor="middle">
-        <rect x="472" y="128" width="160" height="44" rx="8" fill="#ffffff" stroke="#cbd5e1" strokeWidth="2" />
-        <text x="552" y="155">Banks</text>
-
-        <rect x="472" y="188" width="160" height="44" rx="8" fill="#ffffff" stroke="#cbd5e1" strokeWidth="2" />
-        <text x="552" y="215">IT Sector</text>
-
-        <rect x="472" y="263" width="160" height="44" rx="8" fill="#ffffff" stroke="#cbd5e1" strokeWidth="2" />
-        <text x="552" y="290">Govt Sector</text>
-      </g>
-    </svg>
+        {/* Career sectors */}
+        <ul className="jf-sector-list">
+          {sectors.map((s) => (
+            <li className="jf-sector-card" key={s.label}>
+              <span className="jf-sector-icon">{s.icon}</span>
+              <span className="jf-sector-label">{s.label}</span>
+            </li>
+          ))}
+        </ul>
+      </div>
+    </div>
   );
 }
