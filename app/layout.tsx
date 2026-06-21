@@ -1,9 +1,10 @@
 import type { Metadata } from "next";
 import "./globals.css";
+import Navbar from "./components/Navbar";
 
 export const metadata: Metadata = {
   title: "Career Launchpad",
-  description: "College to Corporate — Hello Student",
+  description: "College to Corporate — bridging academic learning and industry expectations.",
 };
 
 export default function RootLayout({
@@ -13,7 +14,10 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body>{children}</body>
+      <body>
+        <Navbar />
+        {children}
+      </body>
     </html>
   );
 }

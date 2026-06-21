@@ -1,27 +1,31 @@
 import Image from "next/image";
+import JourneyGraphic from "./components/JourneyGraphic";
+import FoundersMessage from "./components/FoundersMessage";
 
 export default function Home() {
   return (
     <main className="page">
-      <Image
-        className="banner"
-        src="/launchpad.jpeg"
-        alt="Career Launchpad — College to Corporate"
-        width={1024}
-        height={200}
-        priority
-      />
+      <section className="hero">
+        <h1 className="greeting">Hello Student</h1>
+        <p className="subtitle">
+          Your step-by-step journey from college to corporate — with confidence.
+        </p>
+        <Image
+          className="hero-image"
+          src="/career-pathway.png"
+          alt="From College to Corporate — Career Pathway"
+          width={948}
+          height={1080}
+          priority
+        />
+      </section>
 
-      <h1 className="greeting">Hello Student</h1>
-      <p className="subtitle">Welcome to your journey from college to corporate.</p>
+      <section className="journey">
+        <h2 className="section-title">From Campus to Career</h2>
+        <JourneyGraphic />
+      </section>
 
-      <Image
-        className="hero"
-        src="/career-path.jpeg"
-        alt="From College to Corporate — Career Pathway"
-        width={711}
-        height={804}
-      />
+      <FoundersMessage />
     </main>
   );
 }
