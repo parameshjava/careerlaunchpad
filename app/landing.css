@@ -10,8 +10,8 @@ html {
 
 body {
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
-  background: #f6f8fb;
-  color: #1a1a2e;
+  background: var(--surface-page);
+  color: var(--text);
   /* Guard against any single element forcing sideways scroll on small screens */
   overflow-x: hidden;
 }
@@ -33,8 +33,8 @@ video {
   justify-content: space-between;
   gap: 12px;
   padding: 8px clamp(16px, 4vw, 28px);
-  background: #fff;
-  border-bottom: 1px solid #eef0f4;
+  background: var(--surface);
+  border-bottom: 1px solid var(--line);
   box-shadow: 0 1px 3px rgba(0, 0, 0, 0.04);
 }
 
@@ -77,23 +77,23 @@ video {
   font-size: clamp(0.72rem, 2.3vw, 1rem);
   font-weight: 500;
   letter-spacing: 0.01em;
-  color: #64748b;
+  color: var(--text-subtle);
   line-height: 1.2;
 }
 
 .brand-name .brand-mark {
-  color: #16162b;
+  color: var(--ink);
 }
 
 .brand-name .brand-accent {
-  background: linear-gradient(90deg, #2563eb, #7c3aed);
+  background: var(--brand-gradient);
   -webkit-background-clip: text;
   background-clip: text;
   -webkit-text-fill-color: transparent;
 }
 
 .nav-cta {
-  background: linear-gradient(90deg, #2563eb, #7c3aed);
+  background: var(--brand-gradient);
   color: #fff;
   padding: 10px clamp(12px, 3vw, 18px);
   border-radius: 10px;
@@ -128,14 +128,14 @@ video {
   font-weight: 800;
   letter-spacing: -0.02em;
   line-height: 1.18;
-  color: #16162b;
+  color: var(--ink);
 }
 
 .intro-lead {
   margin-top: 16px;
   font-size: 1.12rem;
   line-height: 1.6;
-  color: #475569;
+  color: var(--text-muted);
 }
 
 .hero {
@@ -145,7 +145,7 @@ video {
 .greeting {
   font-size: 2.6rem;
   font-weight: 700;
-  background: linear-gradient(90deg, #2563eb, #7c3aed);
+  background: var(--brand-gradient);
   -webkit-background-clip: text;
   background-clip: text;
   -webkit-text-fill-color: transparent;
@@ -197,7 +197,7 @@ video {
 .flow-line,
 .flow-curve {
   fill: none;
-  stroke: #7c3aed;
+  stroke: var(--brand-violet);
   stroke-width: 2.2;
   stroke-linecap: round;
   stroke-dasharray: 3 7;
@@ -210,7 +210,7 @@ video {
 
 .flow-head {
   fill: none;
-  stroke: #7c3aed;
+  stroke: var(--brand-violet);
   stroke-width: 2.2;
   stroke-linecap: round;
   stroke-linejoin: round;
@@ -241,7 +241,7 @@ video {
   justify-content: center;
   padding: 24px;
   color: #fff;
-  background: linear-gradient(135deg, #2563eb, #7c3aed);
+  background: var(--brand-gradient-135);
   box-shadow: 0 14px 30px rgba(124, 58, 237, 0.32);
   animation: jf-float 3.6s ease-in-out infinite;
 }
@@ -249,7 +249,7 @@ video {
 .jf-students-label {
   font-weight: 700;
   font-size: 1.05rem;
-  color: #1a1a2e;
+  color: var(--text);
 }
 
 .jf-arrow-in {
@@ -282,8 +282,8 @@ video {
   align-items: center;
   gap: 14px;
   width: 288px;
-  background: #fff;
-  border: 1px solid #eef0f4;
+  background: var(--surface);
+  border: 1px solid var(--line);
   border-radius: 16px;
   padding: 16px 18px;
   box-shadow: 0 10px 26px rgba(30, 27, 75, 0.07);
@@ -298,7 +298,7 @@ video {
   bottom: 8px;
   width: 4px;
   border-radius: 4px;
-  background: linear-gradient(180deg, #2563eb, #7c3aed);
+  background: linear-gradient(180deg, var(--brand-blue), var(--brand-violet));
 }
 
 .jf-step-badge {
@@ -310,7 +310,7 @@ video {
   letter-spacing: 0.07em;
   text-transform: uppercase;
   color: #fff;
-  background: linear-gradient(90deg, #2563eb, #7c3aed);
+  background: var(--brand-gradient);
   padding: 3px 9px;
   border-radius: 999px;
   box-shadow: 0 4px 10px rgba(124, 58, 237, 0.3);
@@ -322,8 +322,8 @@ video {
   height: 42px;
   padding: 9px;
   border-radius: 11px;
-  color: #7c3aed;
-  background: linear-gradient(135deg, #f1ebfe, #e9e2fd);
+  color: var(--brand-violet);
+  background: linear-gradient(135deg, var(--brand-violet-tint-from), var(--brand-violet-tint-to));
   display: flex;
   align-items: center;
   justify-content: center;
@@ -333,7 +333,7 @@ video {
   font-weight: 600;
   font-size: 1rem;
   line-height: 1.25;
-  color: #1a1a2e;
+  color: var(--text);
 }
 
 .jf-step-arrow {
@@ -353,11 +353,11 @@ video {
 }
 
 .jf-fan-hub {
-  fill: #7c3aed;
+  fill: var(--brand-violet);
 }
 
 .jf-fan-dot {
-  fill: #2563eb;
+  fill: var(--brand-blue);
 }
 
 /* Sectors */
@@ -377,7 +377,7 @@ video {
   gap: 12px;
   width: 196px;
   height: 64px;
-  background: #fff;
+  background: var(--surface);
   border: 1px solid #e8ecf6;
   border-radius: 14px;
   padding: 0 16px;
@@ -396,8 +396,8 @@ video {
   height: 40px;
   padding: 8px;
   border-radius: 10px;
-  color: #2563eb;
-  background: linear-gradient(135deg, #e9f0ff, #eaf4ff);
+  color: var(--brand-blue);
+  background: linear-gradient(135deg, var(--brand-blue-tint-from), var(--brand-blue-tint-to));
   display: flex;
   align-items: center;
   justify-content: center;
@@ -406,7 +406,7 @@ video {
 .jf-sector-label {
   font-weight: 600;
   font-size: 1rem;
-  color: #1a1a2e;
+  color: var(--text);
 }
 
 /* Keyframes */
@@ -509,8 +509,8 @@ video {
   align-items: center;
   text-align: center;
   gap: 16px;
-  background: #fff;
-  border: 1px solid #eef0f4;
+  background: var(--surface);
+  border: 1px solid var(--line);
   border-radius: 16px;
   padding: 28px 24px;
   box-shadow: 0 6px 20px rgba(0, 0, 0, 0.05);
@@ -525,7 +525,7 @@ video {
   display: flex;
   align-items: center;
   justify-content: center;
-  background: linear-gradient(135deg, #2563eb, #7c3aed);
+  background: var(--brand-gradient-135);
   color: #fff;
   font-weight: 700;
   font-size: 1.4rem;
@@ -549,7 +549,7 @@ video {
   font-size: 0.8rem;
   text-transform: uppercase;
   letter-spacing: 0.08em;
-  color: #7c3aed;
+  color: var(--brand-violet);
   font-weight: 700;
 }
 
@@ -559,7 +559,7 @@ video {
 }
 
 .founder-name a {
-  color: #1a1a2e;
+  color: var(--text);
   text-decoration: none;
 }
 
@@ -569,7 +569,7 @@ video {
 
 .founder-message {
   margin-top: 10px;
-  color: #475569;
+  color: var(--text-muted);
   line-height: 1.6;
   text-align: justify;
   text-justify: inter-word;
@@ -595,12 +595,12 @@ video {
   flex-direction: column;
   gap: 2px;
   padding-left: 16px;
-  border-left: 3px solid #7c3aed;
+  border-left: 3px solid var(--brand-violet);
 }
 
 .team-value-title {
   font-weight: 700;
-  color: #1a1a2e;
+  color: var(--text);
 }
 
 .team-value-icon {
@@ -610,7 +610,7 @@ video {
 
 .team-value-detail {
   font-size: 0.9rem;
-  color: #475569;
+  color: var(--text-muted);
   line-height: 1.5;
 }
 
@@ -643,7 +643,7 @@ video {
   align-items: center;
   justify-content: center;
   font-size: 1.6rem;
-  background: linear-gradient(135deg, #2563eb, #7c3aed);
+  background: var(--brand-gradient-135);
   box-shadow: 0 8px 20px rgba(124, 58, 237, 0.26);
 }
 
