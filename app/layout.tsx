@@ -2,9 +2,85 @@ import type { Metadata } from "next";
 import "./globals.css";
 import Navbar from "./components/Navbar";
 
+const siteUrl = process.env.NEXT_PUBLIC_SITE_URL ?? "https://careerlaunchpad.ai";
+
+const description =
+  "CareerLaunchPad helps rural students enrich their knowledge and build the practical, industry-ready skills enterprises demand — connecting them with mentors, real-world training, and opportunities that bridge the gap between learning and employment.";
+
 export const metadata: Metadata = {
-  title: "Career Launchpad",
-  description: "College to Corporate — bridging academic learning and industry expectations.",
+  metadataBase: new URL(siteUrl),
+  title: {
+    default: "CareerLaunchPad — Connecting Rural Talent with Global Opportunities",
+    template: "%s | CareerLaunchPad",
+  },
+  description,
+  applicationName: "CareerLaunchPad",
+  category: "education",
+  keywords: [
+    "rural students",
+    "skill development",
+    "industry-ready skills",
+    "employability",
+    "student mentorship",
+    "career launchpad",
+    "enterprise careers",
+    "job-ready training",
+    "upskilling",
+    "college to corporate",
+  ],
+  openGraph: {
+    type: "website",
+    siteName: "CareerLaunchPad",
+    title: "CareerLaunchPad — Connecting Rural Talent with Global Opportunities",
+    description,
+    url: "/",
+    locale: "en_US",
+    images: [
+      {
+        url: "/logo.jpeg",
+        width: 1254,
+        height: 1254,
+        alt: "CareerLaunchPad",
+      },
+    ],
+  },
+  twitter: {
+    card: "summary",
+    title: "CareerLaunchPad — Connecting Rural Talent with Global Opportunities",
+    description,
+    images: ["/logo.jpeg"],
+  },
+};
+
+const jsonLd = {
+  "@context": "https://schema.org",
+  "@type": "EducationalOrganization",
+  name: "CareerLaunchPad",
+  url: siteUrl,
+  logo: `${siteUrl}/logo.jpeg`,
+  slogan: "Connecting Rural Talent with Global Opportunities",
+  description,
+  knowsAbout: [
+    "Career mentorship",
+    "Skill development",
+    "Employability training",
+    "Rural student empowerment",
+    "Industry-ready skills",
+  ],
+  founder: [
+    {
+      "@type": "Person",
+      name: "Darisiguntla Lakshmi Narayana",
+      jobTitle: "Founder",
+      sameAs: "https://www.linkedin.com/in/lakshminarayana2930/",
+    },
+    {
+      "@type": "Person",
+      name: "Korrakuti Paramesh",
+      jobTitle: "Co-Founder",
+      sameAs: "https://www.linkedin.com/in/paramesh-korrakuti-265b3928/",
+    },
+  ],
 };
 
 export default function RootLayout({
@@ -17,6 +93,10 @@ export default function RootLayout({
       <body>
         <Navbar />
         {children}
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+        />
       </body>
     </html>
   );
