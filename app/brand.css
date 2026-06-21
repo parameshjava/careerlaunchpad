@@ -1,0 +1,52 @@
+/* Brand token layer — the SINGLE source of truth for CareerLaunchPad's visual
+   identity. Imported by the ROOT layout so BOTH surfaces (marketing plain CSS
+   and the shadcn/Tailwind console) read the same values. Contains ONLY custom
+   property definitions — no resets, no element rules — so it never bleeds
+   between the two CSS systems (per CLAUDE.md). */
+
+:root {
+  /* Brand — mode-independent (identical in light and dark) */
+  --brand-blue: #2563eb;
+  --brand-violet: #7c3aed;
+  --brand-gradient: linear-gradient(90deg, var(--brand-blue), var(--brand-violet));
+  --brand-gradient-135: linear-gradient(135deg, var(--brand-blue), var(--brand-violet));
+  --brand-blue-tint-from: #e9f0ff;
+  --brand-blue-tint-to: #eaf4ff;
+  --brand-violet-tint-from: #f1ebfe;
+  --brand-violet-tint-to: #e9e2fd;
+
+  /* Ink, text, surface — light defaults */
+  --ink: #16162b;
+  --text: #1a1a2e;
+  --text-muted: #475569;
+  --text-subtle: #64748b;
+  --surface: #ffffff;
+  --surface-page: #f6f8fb;
+  --line: #eef0f4;
+
+  /* Elevation (recipes already used across the marketing CSS) */
+  --shadow-sm: 0 1px 3px rgba(0, 0, 0, 0.04);
+  --shadow-md: 0 6px 20px rgba(0, 0, 0, 0.05);
+  --shadow-lg: 0 10px 30px rgba(0, 0, 0, 0.14);
+  --shadow-brand: 0 14px 30px rgba(124, 58, 237, 0.32);
+
+  /* Fluid, mobile-first type scale (for console/style-guide use) */
+  --text-display: clamp(2rem, 6vw, 2.6rem);
+  --text-h1: clamp(1.7rem, 5vw, 2.3rem);
+  --text-h2: clamp(1.5rem, 4.5vw, 1.8rem);
+  --text-lead: clamp(1rem, 2.5vw, 1.12rem);
+  --text-body: 1rem;
+  --text-small: 0.9rem;
+  --text-caption: clamp(0.72rem, 2.3vw, 0.8rem);
+}
+
+.dark {
+  /* Neutral surface/text flip for the console; brand blue/violet stay constant */
+  --ink: #f4f4fb;
+  --text: #e8e8f0;
+  --text-muted: #a9b0c0;
+  --text-subtle: #8b93a7;
+  --surface: #16161f;
+  --surface-page: #0f0f17;
+  --line: rgba(255, 255, 255, 0.1);
+}
