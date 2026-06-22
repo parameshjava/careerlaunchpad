@@ -7,10 +7,10 @@ export default function Navbar() {
       <Link href="/" className="brand">
         <Image
           className="brand-logo"
-          src="/logo.jpeg"
+          src="/logo-transparent.png"
           alt="Career Launchpad logo"
-          width={62}
-          height={62}
+          width={1209}
+          height={1235}
           priority
         />
         <span className="brand-text">
