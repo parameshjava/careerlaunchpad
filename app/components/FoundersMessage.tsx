@@ -19,7 +19,7 @@ const founders: Founder[] = [
     linkedin: "https://www.linkedin.com/in/lakshminarayana2930/",
     photo: "/founders/lakshmi-narayana.jpg",
     message:
-      "During my visits to engineering and degree colleges, I noticed a significant gap between academic learning and industry expectations. CareerLaunchPad.ai was created to bridge that gap by connecting students, mentors, and employers on a single platform.",
+      "During my recent visits to several Degree, PG, and Engineering colleges, I observed a common challenge. Many students are academically qualified and eager to succeed, yet they often lack clarity about industry expectations, career pathways, and the skills required to become job-ready. I realized that the gap is not in talent—it is in guidance, exposure, and opportunity. CareerLaunchPad.ai was created with a simple mission: to bridge the gap between education and employment by connecting students with experienced mentors, practical learning opportunities, and industry networks. Our goal is to help every student move confidently from the classroom to a successful career by providing the right guidance, skills, and opportunities at the right time. I believe that no student's future should be limited by their geography, background, or access to resources. With the right mentorship and support, every student has the potential to achieve great things. I invite students, mentors, educators, parents, and employers to join us in building a stronger bridge between education and industry. Together, let's make students job-ready and future-ready.",
   },
   {
     name: "Korrakuti Paramesh",
@@ -67,26 +67,16 @@ const visionMission: { icon: string; label: string; text: string }[] = [
 export default function FoundersMessage() {
   return (
     <section id="founders" className="founders">
-      <h2 className="section-title">Founder&apos;s Message</h2>
-
-      <div className="founders-grid">
-        {founders.map((f) => (
-          <article className="founder-card" key={f.name}>
-            <FounderAvatar
-              photo={f.photo}
-              initials={f.initials}
-              name={f.name}
-              linkedin={f.linkedin}
-            />
-
-            <div className="founder-body">
-              <p className="founder-role">{f.role}</p>
-              <h3 className="founder-name">
-                <a href={f.linkedin} target="_blank" rel="noopener noreferrer">
-                  {f.name}
-                </a>
-              </h3>
-              {f.message && <p className="founder-message">{f.message}</p>}
+      <div className="founders-stack">
+        {/* Order: Vision, Mission, Values, Founder, Co-Founder — stacked, each laid out horizontally */}
+        {visionMission.map((vm) => (
+          <article className="vm-card" key={vm.label}>
+            <span className="vm-badge" aria-hidden="true">
+              {vm.icon}
+            </span>
+            <div className="vm-body">
+              <p className="founder-role">{vm.label}</p>
+              <p className="vm-text">{vm.text}</p>
             </div>
           </article>
         ))}
@@ -114,16 +104,25 @@ export default function FoundersMessage() {
             </ul>
           </div>
         </article>
-      </div>
 
-      <div className="vision-mission">
-        {visionMission.map((vm) => (
-          <article className="vm-card" key={vm.label}>
-            <span className="vm-badge" aria-hidden="true">
-              {vm.icon}
-            </span>
-            <p className="founder-role">{vm.label}</p>
-            <p className="vm-text">{vm.text}</p>
+        {founders.map((f) => (
+          <article className="founder-card" key={f.name}>
+            <FounderAvatar
+              photo={f.photo}
+              initials={f.initials}
+              name={f.name}
+              linkedin={f.linkedin}
+            />
+
+            <div className="founder-body">
+              <p className="founder-role">{f.role}</p>
+              <h3 className="founder-name">
+                <a href={f.linkedin} target="_blank" rel="noopener noreferrer">
+                  {f.name}
+                </a>
+              </h3>
+              {f.message && <p className="founder-message">{f.message}</p>}
+            </div>
           </article>
         ))}
       </div>

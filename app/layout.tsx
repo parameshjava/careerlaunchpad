@@ -70,7 +70,7 @@ const jsonLd = {
   "@type": "EducationalOrganization",
   name: "CareerLaunchPad",
   url: siteUrl,
-  logo: `${siteUrl}/logo.jpeg`,
+  logo: `${siteUrl}/logo-transparent.png`,
   slogan: "Connecting Rural Talent with Global Opportunities",
   description,
   knowsAbout: [
