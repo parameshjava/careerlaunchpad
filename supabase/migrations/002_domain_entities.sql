@@ -6,9 +6,11 @@
 
 -- college ---------------------------------------------------------------------
 -- Columns mirror the UGC "list of colleges" source (public/list_of_college...pdf):
--- name + place + full address + state + year established + Govt/Non-Govt ownership.
--- `place` disambiguates same-named colleges in different towns. Extend later as
--- needed (e.g. affiliating_university, teaching_upto, naac_grade).
+-- name + place + full address + district/state + pincode + Govt/Non-Govt ownership.
+-- `place` disambiguates same-named colleges in different towns; identity is the
+-- (name, place, pincode) triple (NULLs distinct, so only enforced where a
+-- pincode exists). Seeded in 008_college_seed.sql. Extend later as needed
+-- (e.g. affiliating_university, teaching_upto, naac_grade).
 create table if not exists public.college (
   id             uuid primary key default gen_random_uuid(),   -- auto-generated
   name           text not null,
@@ -16,14 +18,20 @@ create table if not exists public.college (
   address        text,                              -- full address as printed
   district       text,
   state          text,
+  pincode        text,                              -- 6-digit PIN as text (preserves leading zeros)
   established_in int,                               -- "Year of Estb."
   ownership_type text check (ownership_type in ('GOVERNMENT', 'PRIVATE')),
   status         text not null default 'active' check (status in ('active', 'archived')),
   created_by     uuid references public.app_user(id),
-  created_at     timestamptz not null default now()
+  created_at     timestamptz not null default now(),
+  constraint college_name_place_pincode_key unique (name, place, pincode)
 );
-create index if not exists college_state_idx on public.college (state);
-create index if not exists college_name_idx  on public.college (name);
+create index if not exists college_state_idx     on public.college (state);
+create index if not exists college_name_idx       on public.college (name);
+create index if not exists college_district_idx   on public.college (district);
+create index if not exists college_place_idx       on public.college (place);
+create index if not exists college_pincode_idx     on public.college (pincode);
+create index if not exists college_ownership_idx   on public.college (ownership_type);
 
 -- Now that college exists, wire user_role.scope_college_id -> college.id.
 alter table public.user_role
@@ -76,7 +84,7 @@ create table if not exists public.student_profile (
   user_id               uuid primary key references public.app_user(id) on delete cascade,
   -- Group 1: core identity & academics
   full_name             text,
-  photo_url             text,
+  photo_url             text,                       -- R2 object key for the profile photo (see lib/r2.ts / docs/R2_SETUP.md)
   college_id            uuid references public.college(id),
   degree                text,
   branch                text,
@@ -84,7 +92,7 @@ create table if not exists public.student_profile (
   cgpa                  numeric(4,2),
   -- Group 2: skills & resume
   skills                text[] not null default '{}',
-  resume_url            text,
+  resume_url            text,                       -- R2 object key for the resume PDF (private; served via presigned URL)
   portfolio_url         text,
   github_url            text,
   linkedin_url          text,

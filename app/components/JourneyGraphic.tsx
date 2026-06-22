@@ -1,6 +1,6 @@
-// Animated "visual walkthrough" of the student journey (loops like a GIF, stays
-// crisp/scalable): Students -> 6 numbered steps -> career sectors, joined by
-// flowing dashed connectors that fan out at the end.
+// Animated "visual walkthrough" of the student journey, styled as a metro line
+// (crisp/scalable): a gradient track runs Students -> 6 numbered stations
+// (alternating above/below the line) -> career sectors fanned out at the terminus.
 import type { ReactNode } from "react";
 
 /* ----------------------------- Icons ----------------------------- */
@@ -12,12 +12,21 @@ const ic = {
   fill: "none",
 };
 
-function GradCapIcon() {
+// Group of students (the origin hub). Three figures so it reads as "many
+// students", not one — a small grad cap on the front figure keeps the theme.
+function StudentsIcon() {
   return (
     <svg viewBox="0 0 24 24" width="100%" height="100%" aria-hidden="true">
-      <path {...ic} d="M12 4 2 9l10 5 10-5-10-5Z" />
-      <path {...ic} d="M6 11.2V15c0 1.6 2.7 3 6 3s6-1.4 6-3v-3.8" />
-      <path {...ic} d="M22 9v5" />
+      {/* back-left and back-right peers */}
+      <circle {...ic} cx="5.5" cy="9" r="1.9" />
+      <path {...ic} d="M2.5 18.5c0-2.3 1.3-3.6 3-3.6" />
+      <circle {...ic} cx="18.5" cy="9" r="1.9" />
+      <path {...ic} d="M21.5 18.5c0-2.3-1.3-3.6-3-3.6" />
+      {/* front student with graduation cap */}
+      <path {...ic} d="M12 4 8 6l4 2 4-2-4-2Z" />
+      <path {...ic} d="M16 6v2.2" />
+      <circle {...ic} cx="12" cy="11.2" r="2.4" />
+      <path {...ic} d="M7.5 19c0-2.9 2-4.4 4.5-4.4s4.5 1.5 4.5 4.4" />
     </svg>
   );
 }
@@ -134,87 +143,82 @@ const sectors: { label: string; icon: ReactNode }[] = [
   { label: "& Much More", icon: <MoreIcon /> },
 ];
 
-// y-centres for the 4 sector cards inside the 304-tall fan SVG
-// (card height 64 + 16 gap): 32, 112, 192, 272.
-const fanTargets = [32, 112, 192, 272];
+// y-centres for the 4 outcome cards inside the fan SVG
+// (card height 56 + 14 gap = 70 pitch): 28, 98, 168, 238 within a 266-tall box.
+const fanTargets = [28, 98, 168, 238];
 
 /* ---------------------------- Component ---------------------------- */
+// Metro-line walkthrough: a single gradient "track" runs Students -> 6 numbered
+// stations (alternating above/below the line) -> a fan-out into career sectors.
+// On narrow screens the track turns vertical (see the @media block in landing.css).
 export default function JourneyGraphic() {
   return (
     <div className="journey-panel">
       <div
-        className="journey-flow"
+        className="metro"
         role="img"
         aria-label="Student career journey: register, career assessment, mentor allocation, skill development, interview preparation, then placement into Banks, IT Sector, Govt Sector and more."
       >
-        {/* Students hub */}
-        <div className="jf-students">
-          <div className="jf-students-id">
-            <div className="jf-hub">
-              <GradCapIcon />
-            </div>
-            <span className="jf-students-label">Students</span>
+        {/* Origin */}
+        <div className="metro-origin">
+          <div className="jf-hub">
+            <StudentsIcon />
           </div>
-          <svg className="jf-arrow-in" viewBox="0 0 56 16" aria-hidden="true">
-            <line className="flow-line" x1="2" y1="8" x2="44" y2="8" />
-            <path className="flow-head" d="M40 3 48 8 40 13" />
-          </svg>
+          <span className="metro-origin-label">Students</span>
         </div>
 
-        {/* 6 steps */}
-        <ol className="jf-steps">
-          {steps.map((s, i) => (
-            <li
-              className="jf-step"
-              key={s.n}
-              style={{ animationDelay: `${i * 0.12}s` }}
-            >
-              <div className="jf-step-card">
-                <span className="jf-step-badge">Step {s.n}</span>
-                <span className="jf-step-icon">{s.icon}</span>
-                <span className="jf-step-title">{s.title}</span>
-              </div>
-              {i < steps.length - 1 && (
-                <svg className="jf-step-arrow" viewBox="0 0 16 24" aria-hidden="true">
-                  <line className="flow-line flow-line--v" x1="8" y1="2" x2="8" y2="16" />
-                  <path className="flow-head" d="M3 12 8 18 13 12" />
-                </svg>
-              )}
-            </li>
-          ))}
-        </ol>
+        {/* Track with 6 stations */}
+        <div className="metro-track">
+          <span className="metro-line" aria-hidden="true" />
+          <ol className="metro-stations">
+            {steps.map((s, i) => (
+              <li
+                className={`metro-station metro-station--${i % 2 === 0 ? "up" : "down"}`}
+                key={s.n}
+                style={{ animationDelay: `${i * 0.1}s` }}
+              >
+                <div className="metro-card">
+                  <span className="metro-card-icon">{s.icon}</span>
+                  <span className="metro-card-title">{s.title}</span>
+                </div>
+                <span className="metro-stem" aria-hidden="true" />
+                <span className="metro-dot">{s.n}</span>
+              </li>
+            ))}
+          </ol>
+        </div>
 
-        {/* Fan-out connectors (signature element) */}
-        <svg
-          className="jf-fan"
-          viewBox="0 0 96 304"
-          preserveAspectRatio="xMidYMid meet"
-          aria-hidden="true"
-        >
-          <line className="flow-line" x1="0" y1="152" x2="18" y2="152" />
-          <circle className="jf-fan-hub" cx="18" cy="152" r="4.5" />
-          {fanTargets.map((y, i) => (
-            <path
-              key={i}
-              className="flow-curve"
-              style={{ animationDelay: `${i * 0.15}s` }}
-              d={`M18 152 C 60 152 54 ${y} 92 ${y}`}
-            />
-          ))}
-          {fanTargets.map((y, i) => (
-            <circle key={`d${i}`} className="jf-fan-dot" cx="92" cy={y} r="3.5" />
-          ))}
-        </svg>
-
-        {/* Career sectors */}
-        <ul className="jf-sector-list">
-          {sectors.map((s) => (
-            <li className="jf-sector-card" key={s.label}>
-              <span className="jf-sector-icon">{s.icon}</span>
-              <span className="jf-sector-label">{s.label}</span>
-            </li>
-          ))}
-        </ul>
+        {/* Terminus: fan-out into career sectors */}
+        <div className="metro-terminus">
+          <svg
+            className="metro-fan"
+            viewBox="0 0 64 266"
+            preserveAspectRatio="xMidYMid meet"
+            aria-hidden="true"
+          >
+            <line className="flow-line" x1="0" y1="133" x2="14" y2="133" />
+            <circle className="metro-fan-hub" cx="14" cy="133" r="4.5" />
+            {fanTargets.map((y, i) => (
+              <path
+                key={i}
+                className="flow-curve"
+                style={{ animationDelay: `${i * 0.15}s` }}
+                d={`M14 133 C 44 133 34 ${y} 62 ${y}`}
+              />
+            ))}
+            {fanTargets.map((y, i) => (
+              <circle key={`d${i}`} className="metro-fan-dot" cx="62" cy={y} r="3.5" />
+            ))}
+          </svg>
+          <ul className="metro-outcomes">
+            {sectors.map((s) => (
+              <li className="metro-outcome" key={s.label}>
+                <span className="metro-outcome-icon">{s.icon}</span>
+                <span className="metro-outcome-label">{s.label}</span>
+              </li>
+            ))}
+          </ul>
+        </div>
       </div>
     </div>
   );

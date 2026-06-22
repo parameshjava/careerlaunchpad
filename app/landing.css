@@ -173,24 +173,31 @@ video {
 }
 
 /* ---------- Journey flow (animated visual walkthrough) ---------- */
-.journey-panel {
-  max-width: 1040px;
-  margin: 28px auto 0;
-  padding: 36px 32px;
-  border-radius: 24px;
-  background:
-    radial-gradient(120% 120% at 12% 0%, #f6f2ff 0%, rgba(246, 242, 255, 0) 55%),
-    linear-gradient(180deg, #ffffff, #fbfaff);
-  border: 1px solid #ece7fb;
-  box-shadow: 0 24px 60px rgba(76, 29, 149, 0.08);
+/* The journey is the core of the product, so it breaks out wider than the
+   1040px page column to give the flow room to breathe. */
+.journey {
+  width: min(1180px, calc(100vw - 48px));
+  margin-left: 50%;
+  transform: translateX(-50%);
 }
 
-.journey-flow {
+.journey-panel {
+  max-width: 1180px;
+  margin: 28px auto 0;
+  padding: 44px 40px;
+  border-radius: 28px;
+  background: linear-gradient(180deg, #f4f0fe 0%, #efe9fc 100%);
+  border: 1px solid #e3dcf7;
+  box-shadow:
+    0 30px 70px rgba(76, 29, 149, 0.12),
+    0 2px 6px rgba(76, 29, 149, 0.04);
+}
+
+.metro {
   display: flex;
   align-items: center;
   justify-content: center;
-  gap: 6px;
-  flex-wrap: wrap;
+  gap: 44px;
 }
 
 /* Shared flowing-dash styling */
@@ -216,196 +223,268 @@ video {
   stroke-linejoin: round;
 }
 
-/* Students hub */
-.jf-students {
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  gap: 10px;
+/* Origin (Students) — hub centred on the line, label floated beneath it so the
+   hub's centre (not the hub+label block) sits exactly on the track line. */
+.metro-origin {
   flex: 0 0 auto;
-}
-
-.jf-students-id {
+  position: relative;
   display: flex;
-  flex-direction: column;
   align-items: center;
-  gap: 10px;
+  justify-content: center;
 }
 
 .jf-hub {
-  width: 92px;
-  height: 92px;
+  width: 88px;
+  height: 88px;
   border-radius: 50%;
   display: flex;
   align-items: center;
   justify-content: center;
-  padding: 24px;
+  padding: 18px;
   color: #fff;
   background: var(--brand-gradient-135);
   box-shadow: 0 14px 30px rgba(124, 58, 237, 0.32);
   animation: jf-float 3.6s ease-in-out infinite;
 }
 
-.jf-students-label {
+.metro-origin-label {
+  position: absolute;
+  top: calc(100% + 12px);
+  left: 50%;
+  transform: translateX(-50%);
+  white-space: nowrap;
   font-weight: 700;
-  font-size: 1.05rem;
+  font-size: 1rem;
   color: var(--text);
 }
 
-.jf-arrow-in {
-  width: 56px;
-  height: 16px;
-  overflow: visible;
+/* Track — wrapped in a rounded container; the line pokes out each side to
+   link the Students hub and the terminus fan. */
+.metro-track {
+  position: relative;
+  flex: 1 1 auto;
+  max-width: 690px;
+  min-width: 0;
+  display: flex;
+  align-items: center;
+  border: 1px solid #e6e0f6;
+  border-radius: 28px;
+  padding: 20px 50px;
+  background: rgba(255, 255, 255, 0.5);
 }
 
-/* Steps */
-.jf-steps {
+.metro-line {
+  position: absolute;
+  left: -50px;
+  right: -50px;
+  top: 50%;
+  height: 4px;
+  transform: translateY(-50%);
+  border-radius: 4px;
+  background: linear-gradient(90deg, var(--brand-blue), var(--brand-violet));
+}
+
+.metro-stations {
   list-style: none;
   margin: 0;
   padding: 0;
+  box-sizing: border-box;
+  position: relative;
   display: flex;
-  flex-direction: column;
-  align-items: center;
+  width: 100%;
 }
 
-.jf-step {
-  display: flex;
-  flex-direction: column;
-  align-items: stretch;
+.metro-station {
+  position: relative;
+  flex: 1 1 0;
+  height: 250px;
   opacity: 0;
   animation: jf-rise 0.5s ease forwards;
 }
 
-.jf-step-card {
-  position: relative;
+/* Numbered station marker, centred on the track line */
+.metro-dot {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
   display: flex;
   align-items: center;
-  gap: 14px;
-  width: 288px;
+  justify-content: center;
+  color: #fff;
+  font-size: 0.72rem;
+  font-weight: 800;
+  background: var(--brand-gradient-135);
+  box-shadow: 0 0 0 4px #fff, 0 6px 14px rgba(124, 58, 237, 0.35);
+  z-index: 2;
+}
+
+/* Stem connecting the dot to its station card */
+.metro-stem {
+  position: absolute;
+  left: 50%;
+  width: 2px;
+  height: 38px;
+  transform: translateX(-50%);
+  background: var(--brand-violet);
+  opacity: 0.45;
+}
+
+.metro-station--up .metro-stem {
+  bottom: 50%;
+}
+
+.metro-station--down .metro-stem {
+  top: 50%;
+}
+
+/* All station cards share one width + height for a uniform, scannable grid */
+.metro-card {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 166px;
+  height: 86px;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  gap: 11px;
   background: var(--surface);
   border: 1px solid var(--line);
-  border-radius: 16px;
-  padding: 16px 18px;
-  box-shadow: 0 10px 26px rgba(30, 27, 75, 0.07);
-  text-align: left;
+  border-radius: 14px;
+  padding: 12px 14px;
+  box-shadow: 0 10px 24px rgba(30, 27, 75, 0.07);
 }
 
-.jf-step-card::before {
-  content: "";
-  position: absolute;
-  left: 0;
-  top: 8px;
-  bottom: 8px;
-  width: 4px;
-  border-radius: 4px;
-  background: linear-gradient(180deg, var(--brand-blue), var(--brand-violet));
+.metro-station--up .metro-card {
+  bottom: calc(50% + 38px);
 }
 
-.jf-step-badge {
-  position: absolute;
-  top: -10px;
-  left: 16px;
-  font-size: 0.6rem;
-  font-weight: 800;
-  letter-spacing: 0.07em;
-  text-transform: uppercase;
-  color: #fff;
-  background: var(--brand-gradient);
-  padding: 3px 9px;
-  border-radius: 999px;
-  box-shadow: 0 4px 10px rgba(124, 58, 237, 0.3);
+.metro-station--down .metro-card {
+  top: calc(50% + 38px);
 }
 
-.jf-step-icon {
+.metro-card-icon {
   flex: 0 0 auto;
   width: 42px;
   height: 42px;
-  padding: 9px;
-  border-radius: 11px;
-  color: var(--brand-violet);
-  background: linear-gradient(135deg, var(--brand-violet-tint-from), var(--brand-violet-tint-to));
+  padding: 10px;
+  border-radius: 13px;
+  color: #fff;
+  background: var(--brand-gradient-135);
+  box-shadow: 0 6px 14px rgba(124, 58, 237, 0.28);
   display: flex;
   align-items: center;
   justify-content: center;
 }
 
-.jf-step-title {
+/* Crisper white glyphs on the filled tiles */
+.metro-card-icon svg [stroke] {
+  stroke-width: 2;
+}
+
+.metro-card-title {
   font-weight: 600;
-  font-size: 1rem;
+  font-size: 0.86rem;
   line-height: 1.25;
   color: var(--text);
 }
 
-.jf-step-arrow {
-  width: 16px;
-  height: 24px;
-  margin: 2px 0;
-  overflow: visible;
-  align-self: center;
+/* Terminus: fan-out into career sectors */
+.metro-terminus {
+  flex: 0 0 auto;
+  display: flex;
+  align-items: center;
+  gap: 2px;
 }
 
-/* Fan-out connectors (signature element) */
-.jf-fan {
-  width: 96px;
-  height: 304px;
+.metro-fan {
+  width: 64px;
+  height: 266px;
   flex: 0 0 auto;
   overflow: visible;
 }
 
-.jf-fan-hub {
+.metro-fan-hub {
   fill: var(--brand-violet);
 }
 
-.jf-fan-dot {
+.metro-fan-dot {
   fill: var(--brand-blue);
 }
 
-/* Sectors */
-.jf-sector-list {
+.metro-outcomes {
   list-style: none;
   margin: 0;
   padding: 0;
   display: flex;
   flex-direction: column;
-  gap: 16px;
+  gap: 14px;
   flex: 0 0 auto;
 }
 
-.jf-sector-card {
+.metro-outcome {
   display: flex;
   align-items: center;
-  gap: 12px;
-  width: 196px;
-  height: 64px;
+  gap: 10px;
+  width: 176px;
+  height: 56px;
   background: var(--surface);
   border: 1px solid #e8ecf6;
-  border-radius: 14px;
-  padding: 0 16px;
+  border-radius: 13px;
+  padding: 0 14px;
   box-shadow: 0 10px 24px rgba(30, 27, 75, 0.06);
   transition: transform 0.18s ease, box-shadow 0.18s ease;
 }
 
-.jf-sector-card:hover {
+.metro-outcome:hover {
   transform: translateX(4px);
   box-shadow: 0 14px 30px rgba(37, 99, 235, 0.16);
 }
 
-.jf-sector-icon {
+/* Rich hexagonal gradient badges (per-sector hue), echoing a sector-badge motif */
+.metro-outcome-icon {
   flex: 0 0 auto;
-  width: 40px;
-  height: 40px;
-  padding: 8px;
-  border-radius: 10px;
-  color: var(--brand-blue);
-  background: linear-gradient(135deg, var(--brand-blue-tint-from), var(--brand-blue-tint-to));
+  width: 46px;
+  height: 46px;
+  color: #fff;
+  clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%);
+  background: linear-gradient(150deg, #3b82f6, #1d4ed8);
+  /* drop-shadow (not box-shadow) so the glow follows the hexagon clip */
+  filter: drop-shadow(0 5px 9px rgba(37, 99, 235, 0.32));
   display: flex;
   align-items: center;
   justify-content: center;
 }
 
-.jf-sector-label {
+.metro-outcome-icon svg {
+  width: 22px;
+  height: 22px;
+}
+
+.metro-outcome-icon svg [stroke] {
+  stroke-width: 2;
+}
+
+/* Sector-specific gradients + matching glow */
+.metro-outcome:nth-child(2) .metro-outcome-icon {
+  background: linear-gradient(150deg, #8b5cf6, #6d28d9);
+}
+.metro-outcome:nth-child(3) .metro-outcome-icon {
+  background: linear-gradient(150deg, #6366f1, #4338ca);
+}
+.metro-outcome:nth-child(4) .metro-outcome-icon {
+  background: linear-gradient(150deg, #818cf8, #6d28d9);
+}
+
+.metro-outcome-label {
   font-weight: 600;
-  font-size: 1rem;
+  font-size: 0.92rem;
   color: var(--text);
 }
 
@@ -439,7 +518,7 @@ video {
 
 @media (prefers-reduced-motion: reduce) {
   .jf-hub,
-  .jf-step {
+  .metro-station {
     animation: none;
     opacity: 1;
   }
@@ -449,38 +528,103 @@ video {
   }
 }
 
-/* Stack on narrow screens: hide the fan + horizontal lead-in, point flow down */
-@media (max-width: 820px) {
+/* Below the wide canvas the horizontal metro can't fit six roomy cards, so it
+   turns into a vertical rail that stacks cleanly down to ~320px phones. */
+@media (max-width: 1180px) {
   .journey-panel {
-    padding: 24px 16px;
+    padding: 22px 14px;
   }
-  .journey-flow {
+  .metro {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 0;
+  }
+  .metro-origin {
+    flex-direction: column;
+    gap: 10px;
+    margin-bottom: 6px;
+  }
+  /* Label sits back under the hub in the stacked layout */
+  .metro-origin-label {
+    position: static;
+    transform: none;
+  }
+
+  .metro-track {
+    width: 100%;
+    max-width: none;
+    /* Drop the desktop container framing; mobile is a plain vertical rail */
+    border: none;
+    background: none;
+    padding: 0;
+  }
+  /* Rail runs down the left instead of across the middle */
+  .metro-line {
+    left: 28px;
+    right: auto;
+    top: 0;
+    bottom: 0;
+    width: 4px;
+    height: auto;
+    transform: none;
+    background: linear-gradient(180deg, var(--brand-blue), var(--brand-violet));
+  }
+  .metro-stations {
     flex-direction: column;
     gap: 14px;
   }
-  .jf-students {
-    flex-direction: column;
-  }
-  .jf-arrow-in {
-    transform: rotate(90deg);
-  }
-  .jf-fan {
-    display: none;
-  }
-  /* Cards go fluid so they never overflow narrow phones (was fixed 288/196px) */
-  .jf-steps,
-  .jf-sector-list {
-    width: 100%;
-  }
-  .jf-step {
-    width: 100%;
+  .metro-station {
+    height: auto;
+    display: flex;
     align-items: center;
   }
-  .jf-step-card,
-  .jf-sector-card {
+  .metro-dot {
+    position: static;
+    transform: none;
+    order: 1;
+    margin-left: 15px;
+    flex: 0 0 auto;
+  }
+  .metro-stem {
+    display: none;
+  }
+  .metro-card {
+    position: static;
+    transform: none;
+    order: 2;
+    width: auto;
+    height: auto;
+    flex: 1 1 auto;
+    margin-left: 14px;
+    flex-direction: row;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 12px;
+  }
+  .metro-station--up .metro-card,
+  .metro-station--down .metro-card {
+    top: auto;
+    bottom: auto;
+  }
+  .metro-card-title {
+    font-size: 0.95rem;
+  }
+
+  .metro-terminus {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 14px;
+    margin-top: 20px;
+  }
+  .metro-fan {
+    display: none;
+  }
+  .metro-outcomes {
     width: 100%;
-    max-width: 360px;
-    margin-inline: auto;
+  }
+  .metro-outcome {
+    width: 100%;
+    height: 58px;
   }
 }
 
