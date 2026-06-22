@@ -82,6 +82,21 @@
     --sidebar-ring: oklch(0.708 0 0);
     --background: oklch(1 0 0);
     --foreground: oklch(0.145 0 0);
+    /* Brand mapping — shadcn tokens take the CareerLaunchPad identity.
+       Brand chromatic tokens come from app/brand.css. */
+    --primary: var(--brand-blue);
+    --primary-foreground: #ffffff;
+    --ring: var(--brand-blue);
+    --accent: var(--brand-violet-tint-from);
+    --accent-foreground: var(--brand-violet);
+    --chart-1: var(--brand-blue);
+    --chart-2: var(--brand-violet);
+    --chart-3: #4f46e5;
+    --chart-4: #9333ea;
+    --chart-5: #1d4ed8;
+    --sidebar-primary: var(--brand-blue);
+    --sidebar-primary-foreground: #ffffff;
+    --sidebar-ring: var(--brand-blue);
 }
 
 .dark {
@@ -116,6 +131,19 @@
     --sidebar-accent-foreground: oklch(0.985 0 0);
     --sidebar-border: oklch(1 0 0 / 10%);
     --sidebar-ring: oklch(0.556 0 0);
+    /* Brand mapping (dark) — keep brand blue/violet; neutrals stay dark. */
+    --primary: var(--brand-blue);
+    --primary-foreground: #ffffff;
+    --ring: var(--brand-blue);
+    --accent-foreground: #c4b5fd;
+    --chart-1: var(--brand-blue);
+    --chart-2: var(--brand-violet);
+    --chart-3: #818cf8;
+    --chart-4: #c084fc;
+    --chart-5: #60a5fa;
+    --sidebar-primary: var(--brand-blue);
+    --sidebar-primary-foreground: #ffffff;
+    --sidebar-ring: var(--brand-blue);
 }
 
 @layer base {
