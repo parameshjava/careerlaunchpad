@@ -96,10 +96,12 @@ export default function FoundersMessage() {
         <ul className="values-row">
           {teamValues.map((v) => (
             <li className="value-tile" key={v.title}>
-              <span className="value-tile-icon" aria-hidden="true">
-                {v.icon}
+              <span className="value-tile-head">
+                <span className="value-tile-icon" aria-hidden="true">
+                  {v.icon}
+                </span>
+                <span className="value-tile-title">{v.title}</span>
               </span>
-              <span className="value-tile-title">{v.title}</span>
               <span className="value-tile-detail">{v.detail}</span>
             </li>
           ))}
