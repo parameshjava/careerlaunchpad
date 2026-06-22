@@ -67,8 +67,8 @@ const visionMission: { icon: string; label: string; text: string }[] = [
 export default function FoundersMessage() {
   return (
     <section id="founders" className="founders">
-      <div className="founders-stack">
-        {/* Order: Vision, Mission, Values, Founder, Co-Founder — stacked, each laid out horizontally */}
+      {/* Vision + Mission — a conceptual pair, shown side by side */}
+      <div className="vm-grid">
         {visionMission.map((vm) => (
           <article className="vm-card" key={vm.label}>
             <span className="vm-badge" aria-hidden="true">
@@ -80,31 +80,34 @@ export default function FoundersMessage() {
             </div>
           </article>
         ))}
+      </div>
 
-        <article className="founder-card team-card">
-          <div className="avatar" aria-hidden="true">
-            <span>★</span>
-          </div>
-
-          <div className="founder-body">
+      {/* Core Values — header plus the three values as a row */}
+      <article className="values-card">
+        <div className="values-head">
+          <span className="values-badge" aria-hidden="true">
+            ★
+          </span>
+          <div>
             <p className="founder-role">Our Team</p>
             <h3 className="founder-name">Core Values</h3>
-            <ul className="team-values">
-              {teamValues.map((v) => (
-                <li className="team-value" key={v.title}>
-                  <span className="team-value-title">
-                    <span className="team-value-icon" aria-hidden="true">
-                      {v.icon}
-                    </span>
-                    {v.title}
-                  </span>
-                  <span className="team-value-detail">{v.detail}</span>
-                </li>
-              ))}
-            </ul>
           </div>
-        </article>
+        </div>
+        <ul className="values-row">
+          {teamValues.map((v) => (
+            <li className="value-tile" key={v.title}>
+              <span className="value-tile-icon" aria-hidden="true">
+                {v.icon}
+              </span>
+              <span className="value-tile-title">{v.title}</span>
+              <span className="value-tile-detail">{v.detail}</span>
+            </li>
+          ))}
+        </ul>
+      </article>
 
+      {/* Founder + Co-Founder — side by side, equal-height profile cards */}
+      <div className="team-grid">
         {founders.map((f) => (
           <article className="founder-card" key={f.name}>
             <FounderAvatar
