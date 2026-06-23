@@ -1,20 +1,24 @@
 "use client";
 
 import { useState } from "react";
-import Image from "next/image";
 import { createClient } from "@/lib/supabase/client";
 import { Button } from "@/components/ui/button";
-import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import type { Provider } from "@supabase/supabase-js";
 
-// Social providers enabled for v1. Add more here (and enable them in the
-// Supabase dashboard) later — see docs/AUTH_SETUP.md. LinkedIn uses the
-// OpenID Connect provider id `linkedin_oidc`.
+// Social providers enabled for v1, ordered by relevance to our audience
+// (Google dominates in India; LinkedIn fits a careers product). Add more here
+// (and enable them in the Supabase dashboard) later — see docs/AUTH_SETUP.md.
 const PROVIDERS: { id: Provider; label: string; icon: React.ReactNode }[] = [
   { id: "google", label: "Continue with Google", icon: <GoogleIcon /> },
-  { id: "github", label: "Continue with GitHub", icon: <GitHubIcon /> },
   { id: "linkedin_oidc", label: "Continue with LinkedIn", icon: <LinkedInIcon /> },
+  { id: "github", label: "Continue with GitHub", icon: <GitHubIcon /> },
   { id: "facebook", label: "Continue with Facebook", icon: <FacebookIcon /> },
+];
+
+const FEATURES = [
+  "Build a career-ready profile in minutes",
+  "Get matched with mentors who've been there",
+  "Be discovered by employers hiring now",
 ];
 
 export default function LoginPage() {
@@ -37,36 +41,97 @@ export default function LoginPage() {
   }
 
   return (
-    <main className="bg-muted/30 flex min-h-screen items-center justify-center px-4 py-12">
-      <Card className="w-full max-w-sm">
-        <CardHeader className="items-center text-center">
-          <Image src="/logo-transparent.png" alt="CareerLaunchpad" width={56} height={56} className="mb-2" priority />
-          <CardTitle>Sign in to CareerLaunchpad</CardTitle>
-          <CardDescription>
-            Access is invite-only. Sign in with the email your administrator invited.
-          </CardDescription>
-        </CardHeader>
-        <CardContent className="flex flex-col gap-3">
-          {PROVIDERS.map((p) => (
-            <Button
-              key={p.id}
-              variant="outline"
-              className="w-full justify-center gap-2"
-              disabled={pending !== null}
-              onClick={() => signIn(p.id)}
-            >
-              {p.icon}
-              {pending === p.id ? "Redirecting…" : p.label}
-            </Button>
-          ))}
-          {error && <p className="text-destructive text-center text-sm">{error}</p>}
-        </CardContent>
-      </Card>
+    <main className="flex w-full flex-1 flex-col lg:grid lg:grid-cols-[1.05fr_1fr]">
+      {/* Brand panel (desktop only) */}
+      <aside className="relative hidden overflow-hidden bg-gradient-to-br from-[#2563eb] via-[#4f46e5] to-[#7c3aed] p-12 text-white lg:flex lg:flex-col lg:justify-center lg:gap-10">
+        <div aria-hidden className="pointer-events-none absolute -top-24 -right-24 h-80 w-80 rounded-full bg-white/10 blur-2xl" />
+        <div aria-hidden className="pointer-events-none absolute -bottom-32 -left-16 h-96 w-96 rounded-full bg-white/10 blur-3xl" />
+
+        <div className="relative max-w-md">
+          <h2 className="text-[2rem] leading-tight font-extrabold tracking-tight">
+            Bridge the gap between college and corporate.
+          </h2>
+          <p className="mt-4 text-white/80">
+            Join thousands of students turning their degree into a career — with
+            the profile, mentors and opportunities to get there.
+          </p>
+          <ul className="mt-8 space-y-3.5">
+            {FEATURES.map((f) => (
+              <li key={f} className="flex items-center gap-3">
+                <span className="flex h-6 w-6 shrink-0 items-center justify-center rounded-full bg-white/20">
+                  <CheckIcon />
+                </span>
+                <span className="text-[0.95rem] text-white/90">{f}</span>
+              </li>
+            ))}
+          </ul>
+        </div>
+
+        <p className="relative text-sm text-white/60">Made you job-ready. © CareerLaunchpad</p>
+      </aside>
+
+      {/* Sign-in panel */}
+      <section className="flex flex-1 items-center justify-center bg-background px-5 py-12 sm:px-8">
+        <div className="w-full max-w-sm">
+          <div className="text-center lg:text-left">
+            <h1 className="text-2xl font-bold tracking-tight">Welcome 👋</h1>
+            <p className="text-muted-foreground mt-1.5 text-sm">
+              Sign in or create your account. Students register in seconds — no invite needed.
+            </p>
+          </div>
+
+          <div className="mt-7 flex flex-col gap-3">
+            {PROVIDERS.map((p) => (
+              <Button
+                key={p.id}
+                variant="outline"
+                className="h-11 w-full justify-center gap-2.5 text-[0.95rem] font-medium shadow-sm transition hover:shadow"
+                disabled={pending !== null}
+                onClick={() => signIn(p.id)}
+              >
+                {pending === p.id ? <Spinner /> : p.icon}
+                {pending === p.id ? "Redirecting…" : p.label}
+              </Button>
+            ))}
+          </div>
+
+          {error && (
+            <p className="text-destructive mt-4 text-center text-sm" role="alert">
+              {error}
+            </p>
+          )}
+
+          <p className="text-muted-foreground mt-6 text-center text-xs lg:text-left">
+            Admins &amp; employers: use the email you were invited with.
+          </p>
+
+          <p className="text-muted-foreground mt-8 text-center text-xs leading-relaxed">
+            By continuing you agree to our{" "}
+            <a href="#" className="hover:text-foreground underline underline-offset-2">Terms</a> and{" "}
+            <a href="#" className="hover:text-foreground underline underline-offset-2">Privacy Policy</a>.
+          </p>
+        </div>
+      </section>
     </main>
   );
 }
 
-/* --- Minimal inline brand marks (lucide dropped brand icons) --- */
+/* --- Icons --------------------------------------------------------------- */
+function CheckIcon() {
+  return (
+    <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="3.5" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
+      <path d="M20 6 9 17l-5-5" />
+    </svg>
+  );
+}
+function Spinner() {
+  return (
+    <svg width="16" height="16" viewBox="0 0 24 24" className="animate-spin" aria-hidden="true">
+      <circle cx="12" cy="12" r="9" stroke="currentColor" strokeWidth="3" fill="none" opacity="0.25" />
+      <path d="M21 12a9 9 0 0 0-9-9" stroke="currentColor" strokeWidth="3" fill="none" strokeLinecap="round" />
+    </svg>
+  );
+}
 function GoogleIcon() {
   return (
     <svg width="18" height="18" viewBox="0 0 48 48" aria-hidden="true">

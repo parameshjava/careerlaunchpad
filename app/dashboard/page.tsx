@@ -3,21 +3,27 @@ import type { Metadata } from "next";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { DataTable } from "@/components/data-table";
 import { columns } from "@/components/students/columns";
-import { getStudents } from "@/lib/students-data";
+import { createClient } from "@/lib/supabase/server";
+import { fetchStudents } from "@/lib/students-query";
 
 export const metadata: Metadata = {
   title: "Students Console",
 };
 
-const stats = [
-  { label: "Total Students", value: "60", hint: "+8 this month" },
-  { label: "In Training", value: "18", hint: "active cohorts" },
-  { label: "Placed", value: "21", hint: "35% placement rate" },
-  { label: "Mentors", value: "5", hint: "avg 12 students each" },
-];
+export default async function DashboardPage() {
+  const supabase = await createClient();
+  const data = await fetchStudents(supabase);
 
-export default function DashboardPage() {
-  const data = getStudents(60);
+  const registered = data.filter((s) => s.stage === "Registered").length;
+  const awaiting = data.filter((s) => s.stage !== "Registered").length;
+  const colleges = new Set(data.map((s) => s.college).filter(Boolean)).size;
+
+  const stats = [
+    { label: "Total Students", value: String(data.length), hint: "imported + registered" },
+    { label: "Registered", value: String(registered), hint: "signed in & provisioned" },
+    { label: "Awaiting Sign-up", value: String(awaiting), hint: "imported / invited" },
+    { label: "Colleges", value: String(colleges), hint: "represented" },
+  ];
 
   return (
     <div className="space-y-6">

@@ -1,0 +1,329 @@
+<title>CareerLaunchpad — Student Registration (Mock)</title>
+<style>
+  :root{
+    --blue:#2563eb; --violet:#7c3aed; --ink:#1e1b4b; --text:#334155;
+    --muted:#64748b; --line:#e6e0f6; --bg:#f4f2fb; --surface:#fff;
+    --grad:linear-gradient(135deg,var(--blue),var(--violet));
+    --radius:16px;
+  }
+  *{box-sizing:border-box}
+  body{margin:0;background:radial-gradient(120% 70% at 50% 0%,#f7f4ff,#eef0fa);
+    font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
+    color:var(--text);padding:28px 16px 64px;-webkit-font-smoothing:antialiased}
+  .wrap{max-width:760px;margin:0 auto}
+
+  /* Brand header */
+  .brand{display:flex;align-items:center;justify-content:center;gap:10px;margin-bottom:6px}
+  .brand-name{font-weight:800;font-size:1.7rem;letter-spacing:-.025em}
+  .brand-name .a{color:var(--ink)}
+  .brand-name .b{background:var(--grad);-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent}
+  .sub{text-align:center;color:var(--muted);font-size:.95rem;margin-bottom:22px}
+
+  /* Stepper */
+  .stepper{display:flex;align-items:flex-start;justify-content:space-between;gap:4px;margin:0 auto 22px;max-width:660px}
+  .stp{flex:1;display:flex;flex-direction:column;align-items:center;gap:7px;position:relative;cursor:pointer}
+  .stp::before{content:"";position:absolute;top:15px;left:-50%;width:100%;height:3px;background:#e3ddf3;z-index:0}
+  .stp:first-child::before{display:none}
+  .stp.done::before,.stp.active::before{background:var(--grad)}
+  .stp .dot{position:relative;z-index:1;width:32px;height:32px;border-radius:50%;display:flex;align-items:center;justify-content:center;
+    font-weight:800;font-size:.8rem;background:#fff;border:2px solid #d9d0f0;color:#9a90c0;box-shadow:0 0 0 4px #fff}
+  .stp.active .dot,.stp.done .dot{background:var(--grad);border-color:transparent;color:#fff}
+  .stp .lbl{font-size:.66rem;font-weight:700;text-align:center;color:#9a90c0;text-transform:uppercase;letter-spacing:.03em;line-height:1.2;max-width:84px}
+  .stp.active .lbl{color:var(--violet)}
+  .stp.done .lbl{color:var(--text)}
+
+  /* Card */
+  .card{background:var(--surface);border:1px solid var(--line);border-radius:22px;
+    box-shadow:0 24px 60px rgba(76,29,149,.10);padding:30px 30px 26px}
+  .step{display:none}
+  .step.active{display:block;animation:rise .35s ease}
+  @keyframes rise{from{opacity:0;transform:translateY(8px)}to{opacity:1;transform:none}}
+  .eyebrow{font-size:.72rem;font-weight:800;letter-spacing:.08em;text-transform:uppercase;color:var(--violet)}
+  .h{font-size:1.35rem;font-weight:800;color:var(--ink);margin:4px 0 2px;letter-spacing:-.02em}
+  .hint{color:var(--muted);font-size:.9rem;margin:0 0 20px}
+
+  /* Fields */
+  .grid{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+  .full{grid-column:1/-1}
+  .field{display:flex;flex-direction:column;gap:6px;margin-bottom:2px}
+  label{font-size:.82rem;font-weight:700;color:var(--ink)}
+  label .req{color:var(--violet)}
+  input,select,textarea{font:inherit;color:var(--text);background:#fbfaff;border:1px solid var(--line);
+    border-radius:11px;padding:11px 13px;width:100%;outline:none;transition:border-color .15s,box-shadow .15s}
+  input:focus,select:focus,textarea:focus{border-color:var(--violet);box-shadow:0 0 0 3px rgba(124,58,237,.12);background:#fff}
+  textarea{resize:vertical;min-height:90px}
+  select{appearance:none;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='14' height='14' viewBox='0 0 24 24' fill='none' stroke='%237c3aed' stroke-width='2.5' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M6 9l6 6 6-6'/%3E%3C/svg%3E");background-repeat:no-repeat;background-position:right 13px center;padding-right:36px}
+
+  /* College typeahead */
+  .ta{position:relative}
+  .ta-list{position:absolute;top:calc(100% + 4px);left:0;right:0;background:#fff;border:1px solid var(--line);
+    border-radius:12px;box-shadow:0 18px 40px rgba(30,27,75,.14);max-height:230px;overflow:auto;z-index:5;display:none}
+  .ta-list.open{display:block}
+  .ta-item{padding:10px 13px;cursor:pointer;font-size:.9rem;border-bottom:1px solid #f2effb}
+  .ta-item:hover{background:#f5f2ff}
+  .ta-item small{display:block;color:var(--muted);font-size:.78rem}
+  .note{font-size:.76rem;color:var(--muted);margin-top:2px}
+
+  /* Chips */
+  .chips{display:flex;flex-wrap:wrap;gap:9px}
+  .chip{border:1.5px solid var(--line);background:#fbfaff;border-radius:999px;padding:8px 15px;font-size:.86rem;
+    font-weight:600;color:var(--text);cursor:pointer;user-select:none;transition:.15s}
+  .chip:hover{border-color:#c9bdf2}
+  .chip.on{background:var(--grad);border-color:transparent;color:#fff;box-shadow:0 6px 14px rgba(124,58,237,.28)}
+
+  /* Career goals — multi-select chips with a "primary" star */
+  .goal-cat{font-size:.7rem;font-weight:800;letter-spacing:.05em;text-transform:uppercase;color:var(--muted);margin:16px 0 9px}
+  .goal-cat:first-child{margin-top:0}
+  .goal-chip{display:inline-flex;align-items:center;gap:0;padding:0;overflow:hidden}
+  .goal-chip .gc-label{padding:8px 15px}
+  .goal-chip .gc-star{display:none;align-items:center;justify-content:center;width:30px;align-self:stretch;
+    font-size:1rem;line-height:1;border-left:1px solid rgba(255,255,255,.4);color:#fff;background:rgba(255,255,255,.12)}
+  .goal-chip.on .gc-star{display:flex}
+  .goal-chip.on .gc-label{padding-right:9px}
+  .goal-chip.on .gc-star:hover{background:rgba(255,255,255,.28)}
+  .goal-chip.primary{box-shadow:0 0 0 2px #fff,0 0 0 4px var(--violet),0 6px 16px rgba(124,58,237,.35)}
+  .goal-chip.primary .gc-star{background:rgba(255,255,255,.28)}
+  .primary-note{margin-top:14px;font-size:.84rem;color:var(--muted)}
+  .primary-note b{color:var(--violet)}
+
+  /* Rating rows */
+  .rate-row{display:flex;align-items:center;justify-content:space-between;gap:12px;padding:12px 0;border-bottom:1px solid #f1eefa}
+  .rate-row:last-child{border-bottom:none}
+  .rate-row .rl{font-weight:700;color:var(--ink);font-size:.92rem}
+  .stars{display:flex;gap:6px}
+  .star{width:30px;height:30px;border-radius:9px;border:1.5px solid var(--line);background:#fbfaff;color:#c9c2e0;
+    font-weight:800;font-size:.85rem;display:flex;align-items:center;justify-content:center;cursor:pointer;transition:.12s}
+  .star.on{background:var(--grad);border-color:transparent;color:#fff}
+
+  /* Footer nav */
+  .nav{display:flex;justify-content:space-between;align-items:center;margin-top:24px;gap:12px}
+  .btn{border:none;border-radius:12px;padding:12px 22px;font-weight:700;font-size:.92rem;cursor:pointer;transition:.15s}
+  .btn-ghost{background:#f1eefb;color:var(--violet)}
+  .btn-ghost:hover{background:#e8e2f8}
+  .btn-primary{background:var(--grad);color:#fff;box-shadow:0 10px 24px rgba(124,58,237,.3)}
+  .btn-primary:hover{filter:brightness(1.05)}
+  .btn:disabled{opacity:.45;cursor:not-allowed;box-shadow:none}
+  .pageinfo{font-size:.82rem;color:var(--muted);font-weight:600}
+
+  @media(max-width:560px){.grid{grid-template-columns:1fr}.card{padding:22px 18px}.stp .lbl{display:none}}
+</style>
+
+<div class="wrap">
+  <div class="brand"><span class="brand-name"><span class="a">Career</span><span class="b">Launchpad</span></span></div>
+  <p class="sub">🎓 Student Registration</p>
+
+  <div class="stepper" id="stepper">
+    <div class="stp active" data-go="0"><div class="dot">1</div><div class="lbl">Basic Info</div></div>
+    <div class="stp" data-go="1"><div class="dot">2</div><div class="lbl">Academics</div></div>
+    <div class="stp" data-go="2"><div class="dot">3</div><div class="lbl">Career Goal</div></div>
+    <div class="stp" data-go="3"><div class="dot">4</div><div class="lbl">Self Assess</div></div>
+    <div class="stp" data-go="4"><div class="dot">5</div><div class="lbl">Skills</div></div>
+    <div class="stp" data-go="5"><div class="dot">6</div><div class="lbl">Mentor</div></div>
+  </div>
+
+  <div class="card">
+    <!-- STEP 1 -->
+    <section class="step active">
+      <div class="eyebrow">Step 1</div><h2 class="h">Basic Information</h2>
+      <p class="hint">Tell us who you are and where you're from.</p>
+      <div class="grid">
+        <div class="field full"><label>Full Name <span class="req">*</span></label><input placeholder="e.g. Ravi Kumar"></div>
+        <div class="field"><label>Mobile Number <span class="req">*</span></label><input placeholder="+91 90000 00000"></div>
+        <div class="field"><label>Email <span class="req">*</span></label><input placeholder="you@example.com"></div>
+        <div class="field"><label>Gender</label>
+          <select><option value="">Select…</option><option>Male</option><option>Female</option><option>Other</option><option>Prefer not to say</option></select></div>
+        <div class="field"><label>Village / Mandal / City</label><input placeholder="e.g. Tenali"></div>
+        <div class="field"><label>District</label><input placeholder="e.g. Guntur"></div>
+        <div class="field"><label>State</label>
+          <select><option value="">Select…</option><option selected>Andhra Pradesh</option><option>Telangana</option><option>Karnataka</option><option>Tamil Nadu</option><option>Other</option></select></div>
+      </div>
+    </section>
+
+    <!-- STEP 2 -->
+    <section class="step">
+      <div class="eyebrow">Step 2</div><h2 class="h">Academic Details</h2>
+      <p class="hint">Your college and current course.</p>
+      <div class="grid">
+        <div class="field full">
+          <label>College <span class="req">*</span></label>
+          <div class="ta">
+            <input id="collegeInput" placeholder="Search your college…" autocomplete="off">
+            <div class="ta-list" id="collegeList"></div>
+          </div>
+          <span class="note">🔎 Searches the full college list (10,149 colleges in <code>public.college</code>).</span>
+        </div>
+        <div class="field"><label>Degree</label>
+          <select><option value="">Select…</option><option>B.Tech</option><option>B.E</option><option>B.Sc</option><option>B.Com</option><option>BBA</option><option>BCA</option><option>Diploma</option><option>M.Tech</option><option>MBA</option><option>MCA</option><option>Other</option></select></div>
+        <div class="field"><label>Branch</label>
+          <select><option value="">Select…</option><option>Computer Science (CSE)</option><option>Information Technology (IT)</option><option>AI &amp; ML</option><option>Data Science</option><option>Electronics &amp; Communication (ECE)</option><option>Electrical &amp; Electronics (EEE)</option><option>Mechanical</option><option>Civil</option><option>Chemical</option><option>Other</option></select></div>
+        <div class="field"><label>Year of Study</label>
+          <select><option value="">Select…</option><option>1st Year</option><option>2nd Year</option><option>3rd Year</option><option>4th Year</option><option>Final Year</option><option>Passed Out</option></select></div>
+        <div class="field"><label>Graduation Year</label><input type="number" placeholder="2026"></div>
+        <div class="field full"><label>CGPA / Percentage (till now)</label><input placeholder="e.g. 8.2 CGPA or 78%"></div>
+      </div>
+    </section>
+
+    <!-- STEP 3 -->
+    <section class="step">
+      <div class="eyebrow">Step 3 ⭐</div><h2 class="h">Career Aspirations</h2>
+      <p class="hint">Pick every career goal you're aiming for, then tap the ★ to set <b>one</b> as your primary goal.</p>
+      <div class="field full"><label>Career Goals <span class="req">*</span></label>
+        <div id="goalGroups"></div>
+        <p class="primary-note" id="primaryNote">No goals selected yet.</p>
+      </div>
+    </section>
+
+    <!-- STEP 4 -->
+    <section class="step">
+      <div class="eyebrow">Step 4</div><h2 class="h">Current Skill Assessment</h2>
+      <p class="hint">Rate yourself from 1 (beginner) to 5 (confident).</p>
+      <div id="rates"></div>
+    </section>
+
+    <!-- STEP 5 -->
+    <section class="step">
+      <div class="eyebrow">Step 5</div><h2 class="h">Skills &amp; Interests</h2>
+      <p class="hint">Pick everything that applies — tap to toggle.</p>
+      <div class="field full"><label>Skills</label>
+        <div class="chips" data-chips>
+          <span class="chip">Java</span><span class="chip">Python</span><span class="chip">SQL</span><span class="chip">C++</span>
+          <span class="chip">React</span><span class="chip">Testing</span><span class="chip">AI</span><span class="chip">ML</span>
+        </div>
+      </div>
+      <div class="field full" style="margin-top:14px"><label>Interests</label>
+        <div class="chips" data-chips>
+          <span class="chip">Coding</span><span class="chip">Public Speaking</span><span class="chip">Research</span>
+          <span class="chip">Entrepreneurship</span><span class="chip">Leadership</span><span class="chip">Content Creation</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- STEP 6 -->
+    <section class="step">
+      <div class="eyebrow">Step 6</div><h2 class="h">Mentor Matching</h2>
+      <p class="hint">Help us match you with the right mentor.</p>
+      <div class="field full"><label>Preferred Mentor Type</label>
+        <div class="chips" data-chips data-single>
+          <span class="chip">Same Branch</span><span class="chip">Same College Alumni</span><span class="chip">Same District</span>
+          <span class="chip">Same Industry</span><span class="chip">No Preference</span>
+        </div>
+      </div>
+      <div class="field full" style="margin-top:16px"><label>Biggest Challenge</label>
+        <textarea placeholder="What is the biggest obstacle preventing you from achieving your career goal?"></textarea>
+      </div>
+    </section>
+
+    <div class="nav">
+      <button class="btn btn-ghost" id="back" disabled>← Back</button>
+      <span class="pageinfo" id="pageinfo">Step 1 of 6</span>
+      <button class="btn btn-primary" id="next">Next →</button>
+    </div>
+  </div>
+</div>
+
+<script>
+  var COLLEGES=[
+    ["Bapatla Engineering College","Bapatla, Guntur"],
+    ["K.L. College of Engineering","Green Fields, Guntur"],
+    ["Andhra Christian College","Guntur"],
+    ["Hindu College","Machilipatnam, Krishna"],
+    ["Jagarlamudi Kuppuswamy Choundry College","Guntur"],
+    ["A.N.R. College","Gudivada, Krishna"],
+    ["Govt. Degree College","Tiruvuru, Krishna"],
+    ["Govt. College for Women","Guntur"],
+    ["Chundi Ranganayakulu College","Chilkaluripet, Guntur"],
+    ["Bapatla College of Arts & Science","Bapatla, Guntur"]
+  ];
+  var ci=document.getElementById('collegeInput'),cl=document.getElementById('collegeList');
+  function renderColleges(q){
+    q=(q||'').toLowerCase();
+    var hits=COLLEGES.filter(function(c){return c[0].toLowerCase().indexOf(q)>-1}).slice(0,8);
+    cl.innerHTML=hits.map(function(c){return '<div class="ta-item">'+c[0]+'<small>'+c[1]+'</small></div>'}).join('')||'<div class="ta-item" style="color:#94a3b8">No match — try another name</div>';
+    cl.classList.add('open');
+    Array.prototype.forEach.call(cl.querySelectorAll('.ta-item'),function(it){
+      it.onclick=function(){ if(it.querySelector('small')){ci.value=it.childNodes[0].nodeValue;} cl.classList.remove('open');};
+    });
+  }
+  ci.addEventListener('focus',function(){renderColleges(ci.value)});
+  ci.addEventListener('input',function(){renderColleges(ci.value)});
+  document.addEventListener('click',function(e){ if(!e.target.closest('.ta')) cl.classList.remove('open');});
+
+  // Rating rows
+  var DIMS=["Communication Skills","Aptitude","Programming","English Speaking","Presentation Skills","Interview Confidence"];
+  document.getElementById('rates').innerHTML=DIMS.map(function(d){
+    var s='';for(var i=1;i<=5;i++) s+='<span class="star" data-v="'+i+'">'+i+'</span>';
+    return '<div class="rate-row"><span class="rl">'+d+'</span><span class="stars">'+s+'</span></div>';
+  }).join('');
+  document.querySelectorAll('.stars').forEach(function(row){
+    row.querySelectorAll('.star').forEach(function(st){
+      st.onclick=function(){var v=+st.dataset.v;row.querySelectorAll('.star').forEach(function(x){x.classList.toggle('on',+x.dataset.v<=v)});};
+    });
+  });
+
+  // Chips
+  document.querySelectorAll('[data-chips]').forEach(function(group){
+    group.querySelectorAll('.chip').forEach(function(c){
+      c.onclick=function(){
+        if(group.hasAttribute('data-single')) group.querySelectorAll('.chip').forEach(function(x){if(x!==c)x.classList.remove('on')});
+        c.classList.toggle('on');
+      };
+    });
+  });
+
+  // Career goals — multi-select chips + single primary (Step 3)
+  var GOALS=[
+    ["IT Sector",["Full Stack Developer","Data Analyst","Data Engineer","Data Scientist","AI/ML Engineer","Cyber Security","Cloud Engineer","Quality Assurance"]],
+    ["Core Jobs",["Mechanical Core","Electrical Core","Civil Core"]],
+    ["Banking",["Banking Sector"]],
+    ["Government",["Government Sector","APPSC","UPSC"]],
+    ["Other",["Entrepreneurship","Higher Studies","Undecided"]]
+  ];
+  var gg=document.getElementById('goalGroups'),pn=document.getElementById('primaryNote');
+  var primaryGoal=null;
+  gg.innerHTML=GOALS.map(function(grp){
+    return '<div class="goal-cat">'+grp[0]+'</div><div class="chips">'+grp[1].map(function(g){
+      return '<span class="chip goal-chip" data-goal="'+g+'"><span class="gc-label">'+g+'</span>'+
+             '<span class="gc-star" title="Set as primary goal">★</span></span>';
+    }).join('')+'</div>';
+  }).join('');
+  function selectedGoals(){return Array.prototype.map.call(gg.querySelectorAll('.goal-chip.on'),function(c){return c.dataset.goal});}
+  function setPrimary(goal){
+    primaryGoal=goal;
+    gg.querySelectorAll('.goal-chip').forEach(function(c){c.classList.toggle('primary',c.dataset.goal===goal)});
+    updateNote();
+  }
+  function updateNote(){
+    var sel=selectedGoals();
+    if(!sel.length){pn.innerHTML='No goals selected yet.';return;}
+    pn.innerHTML=sel.length+' goal'+(sel.length>1?'s':'')+' selected · Primary: <b>'+(primaryGoal||'—')+'</b>';
+  }
+  gg.querySelectorAll('.goal-chip').forEach(function(c){
+    var goal=c.dataset.goal;
+    c.querySelector('.gc-label').onclick=function(){
+      var on=c.classList.toggle('on');
+      if(on){ if(!primaryGoal) setPrimary(goal); }                 // first pick becomes primary
+      else { c.classList.remove('primary');
+        if(primaryGoal===goal){ var rest=selectedGoals(); setPrimary(rest.length?rest[0]:null); } }
+      updateNote();
+    };
+    c.querySelector('.gc-star').onclick=function(){
+      if(!c.classList.contains('on')) c.classList.add('on');       // starring also selects
+      setPrimary(goal);
+    };
+  });
+
+  // Stepper
+  var steps=document.querySelectorAll('.step'),stps=document.querySelectorAll('.stp'),cur=0,N=steps.length;
+  var back=document.getElementById('back'),next=document.getElementById('next'),info=document.getElementById('pageinfo');
+  function show(i){
+    cur=Math.max(0,Math.min(N-1,i));
+    steps.forEach(function(s,k){s.classList.toggle('active',k===cur)});
+    stps.forEach(function(s,k){s.classList.toggle('active',k===cur);s.classList.toggle('done',k<cur)});
+    back.disabled=cur===0; info.textContent='Step '+(cur+1)+' of '+N;
+    next.textContent=cur===N-1?'Submit ✓':'Next →';
+    window.scrollTo({top:0,behavior:'smooth'});
+  }
+  next.onclick=function(){ if(cur===N-1){alert('Mock only — this is where the profile would be saved.');return;} show(cur+1);};
+  back.onclick=function(){show(cur-1)};
+  stps.forEach(function(s){s.onclick=function(){show(+s.dataset.go)}});
+</script>

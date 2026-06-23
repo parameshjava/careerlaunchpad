@@ -48,7 +48,7 @@ video {
 }
 
 .brand-logo {
-  height: clamp(48px, 11vw, 84px);
+  height: clamp(40px, 9vw, 84px);
   width: auto;
   display: block;
   flex: 0 0 auto;
@@ -67,7 +67,7 @@ video {
   display: inline-flex;
   align-items: baseline;
   gap: 0;
-  font-size: clamp(1.4rem, 5.2vw, 2.5rem);
+  font-size: clamp(1.15rem, 4.5vw, 2.5rem);
   font-weight: 800;
   letter-spacing: -0.022em;
   line-height: 1;
@@ -926,16 +926,11 @@ video {
     padding: 0 16px;
   }
 
-  .brand-logo {
-    height: 58px;
-  }
-
-  .brand-name {
-    font-size: 1.55rem;
-  }
-
+  /* Logo/name sizes come from the shared clamp() on the base rules (identical to
+     SiteHeader). Below 600px only the tagline is dropped, so the "Get Started"
+     CTA always fits on phones — see CLAUDE.md → "One navbar, two impls". */
   .brand-tagline {
-    font-size: 0.78rem;
+    display: none;
   }
 
   .greeting {

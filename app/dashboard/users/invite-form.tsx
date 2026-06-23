@@ -1,6 +1,7 @@
 "use client";
 
-import { useActionState, useEffect, useRef, useState } from "react";
+import { useEffect, useRef, useState } from "react";
+import { useActionState } from "react";
 import { createInvite, type InviteState } from "./actions";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
@@ -13,24 +14,46 @@ const ROLES = [
   { key: "student", label: "Student" },
   { key: "college_admin", label: "College Admin" },
   { key: "employer", label: "Employer" },
+  { key: "platform_admin", label: "CareerLaunchpad Admin" },
   { key: "support", label: "Support Team" },
 ];
 
 const selectClass =
   "border-input bg-background h-9 w-full rounded-md border px-3 py-1 text-sm shadow-sm focus-visible:ring-1 focus-visible:outline-none";
 
+const EMAIL_RE = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+
 export function InviteForm({ employers }: { employers: Employer[] }) {
   const [state, formAction, pending] = useActionState<InviteState, FormData>(createInvite, {});
+  // All field values live here so we can tell when the form is complete and only
+  // then reveal the submit button (which required fields apply depends on role).
+  const [email, setEmail] = useState("");
   const [role, setRole] = useState("");
+  const [college, setCollege] = useState<College | null>(null);
+  const [employerId, setEmployerId] = useState("");
 
   const needsCollege = role === "student" || role === "college_admin";
   const needsEmployer = role === "employer";
+
+  const complete =
+    EMAIL_RE.test(email.trim()) &&
+    role !== "" &&
+    (!needsCollege || college !== null) &&
+    (!needsEmployer || employerId !== "");
 
   return (
     <form action={formAction} className="grid gap-4 sm:grid-cols-2">
       <div className="grid gap-1.5">
         <Label htmlFor="email">Email</Label>
-        <Input id="email" name="email" type="email" placeholder="person@example.com" required />
+        <Input
+          id="email"
+          name="email"
+          type="email"
+          placeholder="person@example.com"
+          value={email}
+          onChange={(e) => setEmail(e.target.value)}
+          required
+        />
       </div>
 
       <div className="grid gap-1.5">
@@ -50,13 +73,20 @@ export function InviteForm({ employers }: { employers: Employer[] }) {
         </select>
       </div>
 
-      {needsCollege && <CollegePicker />}
+      {needsCollege && <CollegePicker value={college} onPick={setCollege} />}
 
       {needsEmployer && (
         <div className="grid gap-1.5">
           <Label htmlFor="employer_id">Employer</Label>
-          <select id="employer_id" name="employer_id" className={selectClass} required>
-            <option value="" disabled selected>Select an employer…</option>
+          <select
+            id="employer_id"
+            name="employer_id"
+            className={selectClass}
+            value={employerId}
+            onChange={(e) => setEmployerId(e.target.value)}
+            required
+          >
+            <option value="" disabled>Select an employer…</option>
             {employers.map((e) => (
               <option key={e.id} value={e.id}>{e.name}</option>
             ))}
@@ -64,10 +94,14 @@ export function InviteForm({ employers }: { employers: Employer[] }) {
         </div>
       )}
 
-      <div className="flex items-end gap-3 sm:col-span-2">
-        <Button type="submit" disabled={pending}>
-          {pending ? "Sending invite…" : "Send invite"}
-        </Button>
+      <div className="flex items-center gap-3 sm:col-span-2">
+        {complete ? (
+          <Button type="submit" disabled={pending}>
+            {pending ? "Sending invite…" : "Send invite"}
+          </Button>
+        ) : (
+          <p className="text-muted-foreground text-sm">Enter all fields to send the invite.</p>
+        )}
         {state.error && <p className="text-destructive text-sm">{state.error}</p>}
         {state.ok && state.message && <p className="text-sm text-green-600">{state.message}</p>}
       </div>
@@ -75,17 +109,23 @@ export function InviteForm({ employers }: { employers: Employer[] }) {
   );
 }
 
-/** Typeahead for picking a college (the table has ~10k rows). Submits the
- * chosen college's id via a hidden `college_id` input. */
-function CollegePicker() {
+/** Typeahead for picking a college (the table has ~10k rows). Controlled by the
+ * parent so it can tell when a college has been chosen; submits the chosen id
+ * via a hidden `college_id` input. */
+function CollegePicker({
+  value,
+  onPick,
+}: {
+  value: College | null;
+  onPick: (c: College | null) => void;
+}) {
   const [query, setQuery] = useState("");
   const [results, setResults] = useState<College[]>([]);
-  const [chosen, setChosen] = useState<College | null>(null);
   const [open, setOpen] = useState(false);
   const debounce = useRef<ReturnType<typeof setTimeout> | null>(null);
 
   useEffect(() => {
-    if (chosen || query.trim().length < 2) {
+    if (value || query.trim().length < 2) {
       setResults([]);
       return;
     }
@@ -98,32 +138,32 @@ function CollegePicker() {
         setOpen(true);
       }
     }, 250);
-  }, [query, chosen]);
+  }, [query, value]);
 
   return (
     <div className="relative grid gap-1.5">
       <Label htmlFor="college_search">College</Label>
-      <input type="hidden" name="college_id" value={chosen?.id ?? ""} required />
+      <input type="hidden" name="college_id" value={value?.id ?? ""} required />
       <Input
         id="college_search"
         autoComplete="off"
         placeholder="Search colleges…"
-        value={chosen ? `${chosen.name}${chosen.place ? ` — ${chosen.place}` : ""}` : query}
+        value={value ? `${value.name}${value.place ? ` — ${value.place}` : ""}` : query}
         onChange={(e) => {
-          setChosen(null);
+          onPick(null);
           setQuery(e.target.value);
         }}
         onFocus={() => results.length && setOpen(true)}
       />
-      {open && !chosen && results.length > 0 && (
-        <ul className="border-input bg-background absolute top-full z-10 mt-1 max-h-56 w-full overflow-auto rounded-md border text-sm shadow-md">
+      {open && !value && results.length > 0 && (
+        <ul className="border-input bg-background absolute top-full z-50 mt-1 max-h-56 w-full overflow-auto rounded-md border text-sm shadow-md">
           {results.map((c) => (
             <li key={c.id}>
               <button
                 type="button"
                 className="hover:bg-muted w-full px-3 py-2 text-left"
                 onClick={() => {
-                  setChosen(c);
+                  onPick(c);
                   setOpen(false);
                 }}
               >

@@ -48,7 +48,9 @@ export default async function UsersPage() {
       </div>
 
       {canInvite && (
-        <Card>
+        // overflow-visible so the college typeahead dropdown isn't clipped by
+        // the card (shadcn Card is overflow-hidden by default).
+        <Card className="overflow-visible">
           <CardHeader>
             <CardTitle>Invite a user</CardTitle>
             <CardDescription>
