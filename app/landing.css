@@ -181,23 +181,49 @@ video {
   transform: translateX(-50%);
 }
 
+/* Outer container: the whole journey — students enter from the left, pass
+   through the CareerLaunchpad box, and exit into sectors on the right. */
 .journey-panel {
   max-width: 1180px;
   margin: 28px auto 0;
-  padding: 44px 40px;
+  padding: 40px;
   border-radius: 28px;
-  background: linear-gradient(180deg, #f4f0fe 0%, #efe9fc 100%);
+  background:
+    radial-gradient(120% 90% at 50% -10%, #faf8ff 0%, rgba(250, 248, 255, 0) 60%),
+    linear-gradient(180deg, #f4f0fe 0%, #efe9fc 100%);
   border: 1px solid #e3dcf7;
   box-shadow:
     0 30px 70px rgba(76, 29, 149, 0.12),
     0 2px 6px rgba(76, 29, 149, 0.04);
 }
 
+/* Two-tone wordmark used in the CareerLaunchpad box header */
+.journey-title {
+  display: inline-flex;
+  align-items: baseline;
+  gap: 0;
+  font-weight: 800;
+  font-size: clamp(1.05rem, 1.7vw, 1.4rem);
+  letter-spacing: -0.022em;
+  line-height: 1;
+}
+
+.jt-mark {
+  color: var(--ink);
+}
+
+.jt-accent {
+  background: var(--brand-gradient);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
 .metro {
   display: flex;
   align-items: center;
   justify-content: center;
-  gap: 44px;
+  gap: 40px;
 }
 
 /* Shared flowing-dash styling */
@@ -260,17 +286,42 @@ video {
 
 /* Track — wrapped in a rounded container; the line pokes out each side to
    link the Students hub and the terminus fan. */
+/* The CareerLaunchpad box: a white card with a branded header on top and the
+   six steps inside. Vertical padding is symmetric so the line/dots stay on the
+   panel's centre (aligning the Students hub and the sectors), while the header
+   sits in the top band. */
 .metro-track {
   position: relative;
   flex: 1 1 auto;
-  max-width: 690px;
+  max-width: 700px;
   min-width: 0;
   display: flex;
   align-items: center;
-  border: 1px solid #e6e0f6;
-  border-radius: 28px;
-  padding: 20px 50px;
-  background: rgba(255, 255, 255, 0.5);
+  padding: 60px 46px;
+  border: 1.5px solid transparent;
+  border-radius: 22px;
+  /* Soft cool tint fill so the white step cards pop, plus a blue→violet
+     gradient border. (A plain white fill blended with the white cards.) */
+  background:
+    linear-gradient(180deg, #eef1fb 0%, #e8ecf8 100%) padding-box,
+    linear-gradient(135deg, var(--brand-blue), var(--brand-violet)) border-box;
+  box-shadow: 0 14px 34px rgba(76, 29, 149, 0.09);
+}
+
+.metro-track-header {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  /* Divider matches the container's gradient border (same colour + 1.5px) */
+  background-image: linear-gradient(135deg, var(--brand-blue), var(--brand-violet));
+  background-repeat: no-repeat;
+  background-position: bottom;
+  background-size: 100% 1.5px;
 }
 
 .metro-line {
@@ -346,7 +397,7 @@ video {
   position: absolute;
   left: 50%;
   transform: translateX(-50%);
-  width: 166px;
+  width: 164px;
   height: 86px;
   box-sizing: border-box;
   display: flex;
@@ -532,7 +583,7 @@ video {
    turns into a vertical rail that stacks cleanly down to ~320px phones. */
 @media (max-width: 1180px) {
   .journey-panel {
-    padding: 22px 14px;
+    padding: 20px 14px;
   }
   .metro {
     flex-direction: column;
@@ -542,7 +593,7 @@ video {
   .metro-origin {
     flex-direction: column;
     gap: 10px;
-    margin-bottom: 6px;
+    margin-bottom: 16px;
   }
   /* Label sits back under the hub in the stacked layout */
   .metro-origin-label {
@@ -550,28 +601,40 @@ video {
     transform: none;
   }
 
+  /* CareerLaunchpad box keeps its white card; the header sits on top and the
+     six steps become a vertical rail beneath it. */
   .metro-track {
     width: 100%;
     max-width: none;
-    /* Drop the desktop container framing; mobile is a plain vertical rail */
-    border: none;
-    background: none;
-    padding: 0;
+    flex-direction: column;
+    align-items: stretch;
+    padding: 0 14px 16px;
   }
-  /* Rail runs down the left instead of across the middle */
-  .metro-line {
-    left: 28px;
-    right: auto;
-    top: 0;
-    bottom: 0;
-    width: 4px;
+  .metro-track-header {
+    position: static;
     height: auto;
-    transform: none;
-    background: linear-gradient(180deg, var(--brand-blue), var(--brand-violet));
+    padding: 14px 0 12px;
+    margin: 0 -14px 12px;
+    /* gradient divider line (matches the box border) inherited from base */
+  }
+  /* Rail lives inside the stations area, below the header */
+  .metro-line {
+    display: none;
   }
   .metro-stations {
+    position: relative;
     flex-direction: column;
     gap: 14px;
+  }
+  .metro-stations::before {
+    content: "";
+    position: absolute;
+    left: 28px;
+    top: 10px;
+    bottom: 10px;
+    width: 4px;
+    border-radius: 4px;
+    background: linear-gradient(180deg, var(--brand-blue), var(--brand-violet));
   }
   .metro-station {
     height: auto;

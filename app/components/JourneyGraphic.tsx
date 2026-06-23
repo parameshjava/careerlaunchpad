@@ -167,8 +167,14 @@ export default function JourneyGraphic() {
           <span className="metro-origin-label">Students</span>
         </div>
 
-        {/* Track with 6 stations */}
+        {/* The CareerLaunchpad box: students enter here, pass the 6 steps */}
         <div className="metro-track">
+          <div className="metro-track-header">
+            <span className="journey-title">
+              <span className="jt-mark">Career</span>
+              <span className="jt-accent">Launchpad</span>
+            </span>
+          </div>
           <span className="metro-line" aria-hidden="true" />
           <ol className="metro-stations">
             {steps.map((s, i) => (

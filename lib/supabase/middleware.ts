@@ -38,12 +38,16 @@ export async function updateSession(request: NextRequest) {
   const { data } = await supabase.auth.getClaims()
   const user = data?.claims
 
-  if (
-    !user &&
-    !request.nextUrl.pathname.startsWith('/login') &&
-    !request.nextUrl.pathname.startsWith('/auth')
-  ) {
-    // no user, potentially respond by redirecting the user to the login page
+  // Only the application surfaces require auth — the marketing site (/) and the
+  // /auth/* pages stay public. (The matcher in middleware.ts already scopes this,
+  // but we re-check defensively.)
+  const PROTECTED_PREFIXES = ['/dashboard', '/student', '/employer']
+  const path = request.nextUrl.pathname
+  const needsAuth = PROTECTED_PREFIXES.some(
+    (p) => path === p || path.startsWith(`${p}/`)
+  )
+
+  if (!user && needsAuth) {
     const url = request.nextUrl.clone()
     url.pathname = '/auth/login'
     return NextResponse.redirect(url)

@@ -89,8 +89,7 @@ export default function FoundersMessage() {
             ★
           </span>
           <div>
-            <p className="founder-role">Our Team</p>
-            <h3 className="founder-name">Core Values</h3>
+            <p className="founder-role">Core Values</p>
           </div>
         </div>
         <ul className="values-row">
