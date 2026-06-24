@@ -15,6 +15,7 @@ The only backend so far is one trivial route handler (`app/api/students/route.ts
 
 ## Working Principles
 
+- **API design first — for every form.** Before building or changing *any* form (marketing or console), design the API contract **first**: the endpoint(s), the request/response JSON shape, validation rules, and the exact DB tables/columns it reads and writes. Build the form UI against that contract and keep the two in lockstep — forms collect and submit data **through** the API, never bypassing it, and they must round-trip (a record created via the form can be re-fetched and edited later through the same API). Fetch reference/option data (dropdowns, chips) from the API / `ref_*` tables rather than hard-coding it in the component. When a form's fields change, update the API contract **and** the underlying schema in the same change so the form, API, and DB never drift apart.
 - **Mobile-first, fully responsive — always.** Design and verify for phones first, then scale up. Use fluid/relative units, responsive grids, and breakpoints so layouts reflow and stack gracefully; nothing should overflow horizontally or require zooming on small screens. Check narrow widths (~320–390px) on every UI change before claiming it works.
 - **Verify in the browser, not just the build.** There is no test suite, so a passing build does not prove a UI change looks right. Run the dev server and render the page at both mobile and desktop widths (screenshots help) before claiming a visual change is done.
 - **Keep copy in data, not JSX.** Section content (founders, core values, vision/mission, journey steps) lives in plain arrays at the top of each component. Edit the array, not the markup, when changing content.
@@ -47,13 +48,41 @@ npx tsc --noEmit # type-check only
 `app/layout.tsx` is the **root layout**: it sets metadata/viewport/JSON-LD, imports `app/globals.css` (Tailwind + shadcn theme), and loads the Geist font on `<html>`. It deliberately does **not** render the marketing navbar.
 
 - **Marketing** — `app/(marketing)/` route group. `(marketing)/layout.tsx` imports `app/landing.css` and renders the marketing `<Navbar/>`; `(marketing)/page.tsx` is the landing page assembled from `app/components/`:
-  - `Navbar` — brand lockup (logo + wordmark + tagline) and the "Get Started" CTA
+  - `Navbar` — the marketing copy of the shared brand bar (logo + wordmark + tagline + "Get Started" CTA); kept pixel-matched to `SiteHeader` — see "The top navbar" below
   - `JourneyGraphic` — the student-journey flow diagram (hand-authored inline SVG / animated CSS)
   - `FoundersMessage` — founder & co-founder cards, the "Core Values" tile, and the Vision/Mission cards
   - `FounderAvatar` — a `"use client"` component that falls back from a profile photo to an initials badge on image error
-- **Application** — `app/dashboard/` (and future app routes). `dashboard/layout.tsx` is the token-themed app shell (topbar + nav). UI is composed from `components/ui/*` (shadcn) and `components/data-table.tsx` (generic TanStack Table grid); `components/students/columns.tsx` defines the students grid; sample data is in `lib/students-data.ts`.
+- **Application** — `app/dashboard/` (and future app routes). `dashboard/layout.tsx` is the token-themed app shell; its topbar is the shared `<SiteHeader/>` (see below) with the console nav links and account menu passed into its slots. UI is composed from `components/ui/*` (shadcn) and `components/data-table.tsx` (generic TanStack Table grid); `components/students/columns.tsx` defines the students grid; sample data is in `lib/students-data.ts`.
 
 The lone API endpoint is `app/api/students/route.ts`.
+
+### The top navbar — ONE bar, every surface ("one navbar, two impls")
+
+The brand navbar must look **identical on every page** — marketing, auth, student,
+employer, and the dashboard console. It is the same logo + wordmark + tagline lockup
+everywhere; only the trailing action and (on the console) the nav links change. Do
+**not** introduce a third navbar, a "Console"-suffixed variant, or per-page restyling
+of the bar — that drift is exactly what this rule prevents.
+
+Because the two surfaces can't share one component (marketing is plain CSS, app is
+Tailwind — see Styling rule below), the navbar exists as **two implementations that
+are kept pixel-matched**:
+
+- **Marketing** → `app/components/Navbar.tsx` + `components/brand/Brand.tsx`, styled by
+  `.navbar` / `.brand*` / `.nav-cta` in `app/landing.css`.
+- **All app surfaces** (auth, student, employer, dashboard) → `components/brand/SiteHeader.tsx`
+  (Tailwind). Per-surface content goes in its two slots, never by forking the bar:
+  - `nav` — in-bar links (the console passes Students/Import/Users here).
+  - `right` — trailing action: omit → "Get Started" CTA; `null` → brand only (login);
+    a node → custom (e.g. email + Sign out on signed-in pages).
+
+**Keeping them matched:** the lockup dimensions are shared `clamp()` values — logo
+`clamp(40px,9vw,84px)`, wordmark `clamp(1.15rem,4.5vw,2.5rem)`, tagline
+`clamp(0.72rem,2.3vw,1rem)`, brand gradient `#2563eb→#7c3aed`. These are duplicated in
+`SiteHeader.tsx` and the `.brand*` rules in `landing.css`. **If you change the lockup
+in one, change the other to match.** The tagline is **hidden below 600px** in both
+(`min-[600px]:block` in SiteHeader; an `@media (max-width:600px)` rule in landing.css)
+so the right-side action always fits on phones without horizontal overflow.
 
 ### Styling: surface-scoped, NEVER mixed
 
@@ -79,6 +108,7 @@ Profile photos live in `public/founders/` with filenames referenced in the `foun
 
 - **Changing marketing UI/layout** → edit the rule in `app/landing.css` and the relevant component in `app/components/`; run `npm run dev` and render to confirm. Card grids are responsive (`founders-grid`, `vision-mission`) and stack on mobile — check narrow widths too.
 - **Building app/console UI** → compose shadcn primitives + Tailwind tokens under `app/dashboard/` (or new app routes); add missing components via `npx shadcn@latest add <name>`. For tables use the `DataTable` in `components/data-table.tsx`. Wide grids should scroll inside their own container — never let the page scroll sideways.
+- **Changing the top navbar** → it must stay identical on every surface. Edit **both** `components/brand/SiteHeader.tsx` (app surfaces) **and** the `.navbar`/`.brand*`/`.nav-cta` rules in `app/landing.css` + `app/components/Navbar.tsx` (marketing) so they keep matching — see Architecture → "The top navbar". Per-page changes belong in `SiteHeader`'s `nav`/`right` slots, not in a new navbar. Verify the right-side action stays visible (no horizontal overflow) at ~320–390px.
 - **Changing copy/content** → edit the data array at the top of the component (e.g. `founders`, `teamValues`, `visionMission`), not the JSX loop.
 - **Working with the logo or favicon** → remember JPEG has no transparency; produce a transparent PNG/ICO rather than referencing the JPEG directly.
 - **Adding/replacing founder photos** → drop the file in `public/founders/` matching the path in the `founders` array; the avatar surfaces it automatically and falls back to initials if absent.

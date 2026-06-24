@@ -5,7 +5,7 @@ export default function Navbar() {
   return (
     <header className="navbar">
       <Brand />
-      <Link href="#founders" className="nav-cta">
+      <Link href="/auth/login" className="nav-cta">
         Get Started
       </Link>
     </header>

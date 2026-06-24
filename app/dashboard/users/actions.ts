@@ -11,7 +11,7 @@ const SITE_URL = process.env.NEXT_PUBLIC_SITE_URL ?? "http://localhost:3000";
 const INVITE_TTL_DAYS = 14;
 
 // Roles the Owner can invite into (not 'owner' — that's seeded/managed separately).
-const INVITABLE = new Set(["student", "college_admin", "employer", "support"]);
+const INVITABLE = new Set(["student", "college_admin", "employer", "support", "platform_admin"]);
 
 /** Owner creates an invite. Consumed on the invitee's first social sign-in. */
 export async function createInvite(_prev: InviteState, formData: FormData): Promise<InviteState> {

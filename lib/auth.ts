@@ -23,16 +23,39 @@ export type AuthContext = {
   employerId: string | null;
   /** Where this user should land after login. */
   homePath: string;
+  /** Display name from the social provider, if any. */
+  name: string | null;
+  /** Profile photo URL from the social provider (Google/LinkedIn/GitHub/…), if any. */
+  avatarUrl: string | null;
 };
 
+/**
+ * Pull the profile photo + display name out of the OAuth user_metadata. Each
+ * provider stuffs them under slightly different keys (Google/LinkedIn use
+ * `picture`, GitHub/Supabase normalize to `avatar_url`; names land in
+ * `full_name` or `name`), so we probe the common ones in order.
+ */
+function readProviderProfile(meta: Record<string, unknown> | undefined) {
+  const str = (v: unknown) => (typeof v === "string" && v.trim() ? v : null);
+  const m = meta ?? {};
+  return {
+    name: str(m.full_name) ?? str(m.name) ?? null,
+    avatarUrl: str(m.avatar_url) ?? str(m.picture) ?? null,
+  };
+}
+
 /** Roles that use the /dashboard console. */
-const CONSOLE_ROLES = ["owner", "college_admin", "support"];
+const CONSOLE_ROLES = ["owner", "platform_admin", "college_admin", "support"];
 
 function computeHomePath(roles: string[], provisioned: boolean): string {
   if (!provisioned) return "/auth/no-access";
   if (roles.some((r) => CONSOLE_ROLES.includes(r))) return "/dashboard";
   if (roles.includes("employer")) return "/employer";
   if (roles.includes("student")) return "/student";
+  // A pure mentor (e.g. external professional) lands on the mentor hub.
+  // Multi-role mentors (student/owner/admin who also mentor) keep the home
+  // above and reach /mentor via the sidebar.
+  if (roles.includes("mentor")) return "/mentor";
   return "/auth/no-access";
 }
 
@@ -58,6 +81,7 @@ export async function getAuthContext(): Promise<AuthContext | null> {
 
   const provisioned = ctx.provisioned === true;
   const roles = (ctx.roles as string[]) ?? [];
+  const { name, avatarUrl } = readProviderProfile(user.user_metadata);
 
   return {
     userId: user.id,
@@ -69,6 +93,8 @@ export async function getAuthContext(): Promise<AuthContext | null> {
     collegeScopes: (ctx.college_scopes as string[]) ?? [],
     employerId: (ctx.employer_id as string) ?? null,
     homePath: computeHomePath(roles, provisioned),
+    name,
+    avatarUrl,
   };
 }
 

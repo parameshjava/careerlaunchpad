@@ -1,28 +1,22 @@
 import { redirect } from "next/navigation";
 import { getAuthContext } from "@/lib/auth";
-import { Button } from "@/components/ui/button";
-import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
+import { createClient } from "@/lib/supabase/server";
 
-// Placeholder student surface — role-routing target. The full profile builder
-// (Groups 1–4 of student_profile, photo/resume upload to R2) comes later.
+// Student landing. Students who have already submitted their registration land
+// on their insights; everyone still completing it goes to the form (which
+// resumes at the last completed step).
 export default async function StudentHome() {
   const ctx = await getAuthContext();
   if (!ctx) redirect("/auth/login");
   if (!ctx.provisioned || ctx.status === "suspended") redirect("/auth/no-access");
 
-  return (
-    <main className="bg-muted/30 flex min-h-screen items-center justify-center px-4 py-12">
-      <Card className="w-full max-w-md">
-        <CardHeader>
-          <CardTitle>Welcome, {ctx.email}</CardTitle>
-          <CardDescription>Your student profile workspace is coming soon.</CardDescription>
-        </CardHeader>
-        <CardContent>
-          <form action="/auth/signout" method="post">
-            <Button type="submit" variant="outline">Sign out</Button>
-          </form>
-        </CardContent>
-      </Card>
-    </main>
-  );
+  const supabase = await createClient();
+  const { data } = await supabase
+    .from("student_profile")
+    .select("registration_status")
+    .eq("user_id", ctx.userId)
+    .maybeSingle();
+
+  if (data?.registration_status === "submitted") redirect("/student/insights");
+  redirect("/student/register");
 }
