@@ -35,6 +35,16 @@ const EMPTY: Form = {
 };
 
 const STEPS = ["Basic Info", "Academics", "Career Goals", "Self Assess", "Skills", "Mentor"];
+
+// Friendly labels for the submit-time "X is required" messages, so the form
+// shows "Career goals" instead of the raw column name "career goal ids".
+const FIELD_LABELS: Record<string, string> = {
+  full_name: "Full name",
+  phone: "Mobile number",
+  college_id: "College",
+  career_goal_ids: "Career goals",
+  primary_career_goal_id: "Primary career goal",
+};
 const selectClass =
   "border-input bg-background h-10 w-full rounded-md border px-3 text-sm shadow-sm focus-visible:ring-1 focus-visible:ring-ring focus-visible:outline-none";
 
@@ -113,8 +123,9 @@ export function RegistrationForm() {
       if (sub.ok) { setDone(true); return; }
       const body = await sub.json().catch(() => ({}));
       if (body.missing?.length) {
-        setErrors(body.missing.map((m: { step: number; field: string }) => `Step ${m.step}: ${m.field.replace(/_/g, " ")} is required`));
+        setErrors(body.missing.map((m: { step: number; field: string }) => `Step ${m.step}: ${FIELD_LABELS[m.field] ?? m.field.replace(/_/g, " ")} is required`));
         setStep(body.missing[0].step);
+        window.scrollTo({ top: 0, behavior: "smooth" });
       } else setErrors([body.error ?? "Could not submit."]);
       return;
     }

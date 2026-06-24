@@ -21,3 +21,22 @@ export async function registerAsStudent() {
 
   redirect("/student/register");
 }
+
+/**
+ * Self-register the signed-in user as a MENTOR, then send them into the mentor
+ * registration form. Backed by `register_as_mentor()` (migration 017): unlike
+ * the student RPC, this ADDS the mentor role on top of any existing student/
+ * owner/admin role (so a placed student or staff member can also mentor), and
+ * is the entry point for external professionals who arrive with no role at all.
+ * The new mentor profile starts 'pending_review' until an admin approves it.
+ */
+export async function registerAsMentor() {
+  const supabase = await createClient();
+  const { data: { user } } = await supabase.auth.getUser();
+  if (!user) redirect("/auth/login");
+
+  const { error } = await supabase.rpc("register_as_mentor");
+  if (error) throw new Error(error.message);
+
+  redirect("/mentor/register");
+}

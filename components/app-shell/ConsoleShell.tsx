@@ -18,6 +18,7 @@ import { usePathname } from "next/navigation";
 import {
   BarChart3,
   GraduationCap,
+  Handshake,
   LayoutDashboard,
   Menu,
   PanelLeft,
@@ -38,6 +39,7 @@ const ICONS: Record<NavIcon, React.ComponentType<{ className?: string }>> = {
   analytics: BarChart3,
   profile: UserRound,
   employer: LayoutDashboard,
+  mentor: Handshake,
 };
 
 const COLLAPSE_KEY = "cl-sidebar-collapsed";

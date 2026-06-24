@@ -1,6 +1,6 @@
 import Link from "next/link";
 import { Button } from "@/components/ui/button";
-import { registerAsStudent } from "./actions";
+import { registerAsStudent, registerAsMentor } from "./actions";
 
 /**
  * Landing for a user who signed in successfully but isn't provisioned yet (no
@@ -17,6 +17,7 @@ const paths: {
   title: string;
   description: string;
   available: boolean;
+  action?: () => Promise<void>;
 }[] = [
   {
     key: "student",
@@ -25,14 +26,16 @@ const paths: {
     description:
       "Build a career-ready profile, get matched to opportunities, and bridge the gap from college to corporate.",
     available: true,
+    action: registerAsStudent,
   },
   {
     key: "mentor",
     emoji: "🧭",
     title: "Mentor",
     description:
-      "Guide students with feedback, mock interviews, and industry insight. Mentor onboarding is coming soon.",
-    available: false,
+      "Guide students with feedback, mock interviews, and industry insight. Share where you studied or work and what you can teach — it takes a couple of minutes.",
+    available: true,
+    action: registerAsMentor,
   },
 ];
 
@@ -70,8 +73,8 @@ export default function NoAccessPage() {
               <h2 className="mt-3 text-lg font-semibold">{path.title}</h2>
               <p className="text-muted-foreground mt-1 flex-1 text-sm">{path.description}</p>
 
-              {path.available ? (
-                <form action={registerAsStudent} className="mt-5">
+              {path.available && path.action ? (
+                <form action={path.action} className="mt-5">
                   <Button
                     type="submit"
                     className="w-full bg-gradient-to-r from-[#2563eb] to-[#7c3aed] text-white shadow-lg shadow-[#7c3aed]/25 transition hover:brightness-105"

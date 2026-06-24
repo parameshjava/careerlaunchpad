@@ -52,6 +52,10 @@ function computeHomePath(roles: string[], provisioned: boolean): string {
   if (roles.some((r) => CONSOLE_ROLES.includes(r))) return "/dashboard";
   if (roles.includes("employer")) return "/employer";
   if (roles.includes("student")) return "/student";
+  // A pure mentor (e.g. external professional) lands on the mentor hub.
+  // Multi-role mentors (student/owner/admin who also mentor) keep the home
+  // above and reach /mentor via the sidebar.
+  if (roles.includes("mentor")) return "/mentor";
   return "/auth/no-access";
 }
 

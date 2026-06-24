@@ -5,6 +5,7 @@ import { redirect } from "next/navigation";
 import { Button } from "@/components/ui/button";
 import { AnalyticsView } from "@/components/analytics/AnalyticsView";
 import { StudentComparisonView } from "@/components/analytics/StudentComparisonView";
+import { CareerStatusCard } from "@/components/students/CareerStatusCard";
 import { getAuthContext } from "@/lib/auth";
 import { createClient } from "@/lib/supabase/server";
 import { fetchStudentComparison } from "@/lib/analytics-query";
@@ -25,6 +26,7 @@ export default async function StudentInsightsPage() {
   const supabase = await createClient();
   const cmp = await fetchStudentComparison(supabase, ctx.userId);
   const hasCollege = !!cmp.collegeName;
+  const isMentor = ctx.roles.includes("mentor");
 
   return (
     <div className="mx-auto w-full max-w-5xl space-y-6">
@@ -41,6 +43,8 @@ export default async function StudentInsightsPage() {
           <Link href="/student/register">Update my profile</Link>
         </Button>
       </div>
+
+      <CareerStatusCard isMentor={isMentor} />
 
       {hasCollege ? (
         <StudentComparisonView
