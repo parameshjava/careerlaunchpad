@@ -26,6 +26,11 @@ export const metadata: Metadata = {
   description,
   applicationName: "CareerLaunchPad",
   category: "education",
+  verification: {
+    other: {
+      "facebook-domain-verification": "dou9smfyzzahe15fiyebvx9qlyta4v",
+    },
+  },
   keywords: [
     "rural students",
     "skill development",
