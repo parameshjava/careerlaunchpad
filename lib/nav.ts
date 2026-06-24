@@ -14,7 +14,8 @@ export type NavIcon =
   | "analytics"
   | "profile"
   | "employer"
-  | "mentor";
+  | "mentor"
+  | "mail";
 
 export type NavItem = { label: string; href: string; icon: NavIcon };
 export type NavSection = { title?: string; items: NavItem[] };
@@ -95,6 +96,9 @@ export function buildNav(ctx: AuthContext): NavSection[] {
       admin.push({ label: "Import", href: "/dashboard/students/import", icon: "import" });
     if (can(ctx, "user.view") || can(ctx, "user.invite") || can(ctx, "user.manage"))
       admin.push({ label: "Users", href: "/dashboard/users", icon: "users" });
+    // Owner-only: validate the email integration (Gmail SMTP).
+    if (ctx.permissions.has("*"))
+      admin.push({ label: "Email test", href: "/dashboard/email-test", icon: "mail" });
 
     const insights: NavItem[] = [];
     if (canViewAnalytics(ctx))

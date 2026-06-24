@@ -4,6 +4,9 @@ import { redirect } from "next/navigation";
 import { revalidatePath } from "next/cache";
 import { createClient } from "@/lib/supabase/server";
 import { requirePermission } from "@/lib/auth";
+import { sendMentorApprovedEmail } from "@/lib/mailer";
+
+const SITE_URL = process.env.NEXT_PUBLIC_SITE_URL ?? "http://localhost:3000";
 
 /**
  * Let the signed-in owner / admin set up their OWN mentor profile (requirement
@@ -34,6 +37,21 @@ export async function setMentorStatus(userId: string, status: "approved" | "susp
   const supabase = await createClient();
   const { error } = await supabase.rpc("set_mentor_status", { p_user: userId, p_status: status });
   if (error) throw new Error(error.message);
+
+  // Notify the mentor when they're approved. Best-effort — sendMentorApprovedEmail
+  // never throws, so a mail hiccup can't fail the approval the reviewer just made.
+  if (status === "approved") {
+    const { data: mentor } = await supabase
+      .from("mentor_profile")
+      .select("full_name, app_user:user_id(email)")
+      .eq("user_id", userId)
+      .single();
+    const appUser = mentor?.app_user as { email?: string | null } | { email?: string | null }[] | null;
+    const email = Array.isArray(appUser) ? appUser[0]?.email : appUser?.email;
+    if (email) {
+      await sendMentorApprovedEmail({ to: email, name: mentor?.full_name, loginUrl: `${SITE_URL}/mentor` });
+    }
+  }
 
   revalidatePath("/dashboard/mentors");
 }
