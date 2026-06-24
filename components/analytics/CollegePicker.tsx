@@ -8,7 +8,7 @@
 // search box. A College Admin is locked to their own college (no search, no
 // Change) — preview-requirements rule 2/3.
 import { useEffect, useRef, useState } from "react";
-import { useRouter, useSearchParams } from "next/navigation";
+import { usePathname, useRouter, useSearchParams } from "next/navigation";
 import { Check, ChevronsUpDown, Search } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
@@ -40,7 +40,15 @@ function Detail({ label, value }: { label: string; value: React.ReactNode }) {
   );
 }
 
-function CollegeDetails({ college, onChange }: { college: College; onChange?: () => void }) {
+function CollegeDetails({
+  college,
+  onChange,
+  onClear,
+}: {
+  college: College;
+  onChange?: () => void;
+  onClear?: () => void;
+}) {
   const location = [college.place, college.district, college.state].filter(Boolean).join(", ");
   return (
     <div className="grid gap-1.5">
@@ -51,10 +59,19 @@ function CollegeDetails({ college, onChange }: { college: College; onChange?: ()
             <p className="font-medium break-words">{college.name}</p>
             {location && <p className="text-muted-foreground mt-0.5 text-sm break-words">{location}</p>}
           </div>
-          {onChange && (
-            <Button type="button" variant="ghost" size="sm" className="shrink-0" onClick={onChange}>
-              Change
-            </Button>
+          {(onChange || onClear) && (
+            <div className="flex shrink-0 items-center gap-2">
+              {onChange && (
+                <Button type="button" size="sm" onClick={onChange}>
+                  Change
+                </Button>
+              )}
+              {onClear && (
+                <Button type="button" variant="outline" size="sm" onClick={onClear}>
+                  Clear
+                </Button>
+              )}
+            </div>
           )}
         </div>
         <dl className="mt-3 grid grid-cols-2 gap-x-4 gap-y-2 sm:grid-cols-3 lg:grid-cols-4">
@@ -91,6 +108,7 @@ export function CollegePicker({
   disabled?: boolean;
 }) {
   const router = useRouter();
+  const pathname = usePathname();
   const searchParams = useSearchParams();
   const [query, setQuery] = useState("");
   const [results, setResults] = useState<College[]>([]);
@@ -132,9 +150,27 @@ export function CollegePicker({
     router.push(`?${params.toString()}`);
   }
 
+  // Clear the selection → drop the ?college param and reset the page to the
+  // empty (search) state.
+  function clear() {
+    setOpen(false);
+    setEditing(false);
+    setQuery("");
+    const params = new URLSearchParams(searchParams.toString());
+    params.delete("college");
+    const qs = params.toString();
+    router.push(qs ? `${pathname}?${qs}` : pathname);
+  }
+
   // Locked (College Admin) or selected-and-not-editing → show the details panel.
   if (selected && (disabled || !editing)) {
-    return <CollegeDetails college={selected} onChange={disabled ? undefined : () => setEditing(true)} />;
+    return (
+      <CollegeDetails
+        college={selected}
+        onChange={disabled ? undefined : () => setEditing(true)}
+        onClear={disabled ? undefined : clear}
+      />
+    );
   }
 
   return (

@@ -225,3 +225,77 @@ export async function fetchStudentAnalytics(
     assessment: agg.assessment,
   };
 }
+
+/** The student self-view plus their college benchmark, for the comparison page. */
+export type StudentComparison = {
+  /** The student's college name (null if they haven't picked one yet). */
+  collegeName: string | null;
+  /** How many students (registered + imported) make up the college benchmark. */
+  collegeStudents: number;
+  /** The student's own aggregated charts (each selection = 1). */
+  self: CollegeAnalytics;
+  /** The college-wide aggregate the student is compared against. */
+  college: CollegeAnalytics;
+};
+
+/** Shape an aggregate() result + counts into the CollegeAnalytics chart shape. */
+function toAnalytics(rows: StudentRow[], refs: Awaited<ReturnType<typeof loadRefMaps>>): CollegeAnalytics {
+  const agg = aggregate(rows, refs);
+  return {
+    college: null,
+    totals: {
+      students: rows.length,
+      registered: rows.length,
+      imported: 0,
+      withAssessment: agg.withAssessment,
+    },
+    skills: agg.skills,
+    primaryGoals: agg.primaryGoals,
+    allGoals: agg.allGoals,
+    assessment: agg.assessment,
+  };
+}
+
+/**
+ * Student vs. their college. The student's own row comes through normal RLS;
+ * the college benchmark comes from the `student_college_comparison()` RPC
+ * (migration 015), which returns ANONYMOUS aggregatable rows for the caller's
+ * college only — so we never read peer identities, just compute averages and
+ * popularity over them. Both sides are aggregated with the same code as the
+ * console dashboard, so the numbers line up.
+ */
+export async function fetchStudentComparison(
+  supabase: SupabaseClient,
+  userId: string,
+): Promise<StudentComparison> {
+  const [refs, profileRes, rpcRes] = await Promise.all([
+    loadRefMaps(supabase),
+    supabase
+      .from("student_profile")
+      .select(`${STUDENT_FIELDS}, college:college_id(name)`)
+      .eq("user_id", userId)
+      .maybeSingle(),
+    supabase.rpc("student_college_comparison"),
+  ]);
+  if (profileRes.error) throw new Error(`student_profile: ${profileRes.error.message}`);
+
+  const profile = (profileRes.data as (StudentRow & { college?: { name?: string }[] | { name?: string } | null }) | null) ?? null;
+  const selfRow = profile;
+  // The college name is authoritative from the student's own row, so the page
+  // knows whether they have a college even if the benchmark RPC is unavailable.
+  // Supabase types a to-one embed as a possible array; normalize either shape.
+  const collegeEmbed = Array.isArray(profile?.college) ? profile?.college[0] : profile?.college;
+  const collegeName = collegeEmbed?.name ?? null;
+
+  // The benchmark RPC (migration 015) may not be deployed yet — degrade to a
+  // self-only view rather than crashing the page if it errors.
+  const payload = (!rpcRes.error && rpcRes.data ? rpcRes.data : {}) as { rows?: StudentRow[] | null };
+  const collegeRows = (payload.rows ?? []) as StudentRow[];
+
+  return {
+    collegeName,
+    collegeStudents: collegeRows.length,
+    self: toAnalytics(selfRow ? [selfRow] : [], refs),
+    college: toAnalytics(collegeRows, refs),
+  };
+}

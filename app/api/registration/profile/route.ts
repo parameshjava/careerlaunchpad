@@ -30,9 +30,10 @@ export async function GET() {
 
   if (error) return NextResponse.json({ error: error.message }, { status: 500 });
   if (!data) {
-    // Signed-in student with no profile row yet (not provisioned as a student).
+    // Signed-in student with no profile row yet. Still return the email so the
+    // form can show it (it comes from auth, not the profile row).
     return NextResponse.json(
-      { registration_status: "in_progress", last_completed_step: 0, profile: null },
+      { registration_status: "in_progress", last_completed_step: 0, profile: null, email: user.email ?? null },
       { status: 200 },
     );
   }
@@ -84,15 +85,21 @@ export async function PATCH(req: NextRequest) {
     .maybeSingle();
   const nextStep = Math.max(Number(current?.last_completed_step ?? 0), step);
 
+  // UPSERT, not UPDATE: a student who self-registers (or whose stub row was
+  // never created) has no row yet, so the first save must INSERT it. RLS still
+  // gates this — only a user with `student.profile.manage_own` can create their
+  // own row (user_id = auth.uid()), so non-students can't slip a row in here.
   const { data: updated, error: upErr } = await supabase
     .from("student_profile")
-    .update({ ...clean, last_completed_step: nextStep, updated_at: new Date().toISOString() })
-    .eq("user_id", user.id)
+    .upsert(
+      { user_id: user.id, ...clean, last_completed_step: nextStep, updated_at: new Date().toISOString() },
+      { onConflict: "user_id" },
+    )
     .select(`${PROFILE_SELECT}, registration_status, last_completed_step`)
     .maybeSingle();
 
   if (upErr) return NextResponse.json({ ok: false, error: upErr.message }, { status: 500 });
-  if (!updated) return NextResponse.json({ ok: false, error: "No student profile to update" }, { status: 404 });
+  if (!updated) return NextResponse.json({ ok: false, error: "Could not save profile" }, { status: 500 });
 
   const { registration_status, last_completed_step, ...profile } = updated as unknown as Record<string, unknown>;
   return NextResponse.json({ ok: true, registration_status, last_completed_step, profile });
