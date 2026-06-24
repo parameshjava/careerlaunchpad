@@ -6,6 +6,9 @@
 import { NextResponse } from "next/server";
 import { createClient } from "@/lib/supabase/server";
 import { REQUIRED_FIELDS } from "@/lib/registration";
+import { sendStudentSubmittedEmail } from "@/lib/mailer";
+
+const SITE_URL = process.env.NEXT_PUBLIC_SITE_URL ?? "http://localhost:3000";
 
 export async function POST() {
   const supabase = await createClient();
@@ -40,5 +43,15 @@ export async function POST() {
     .eq("user_id", user.id);
 
   if (upErr) return NextResponse.json({ ok: false, error: upErr.message }, { status: 500 });
+
+  // Confirm the submission by email. Best-effort — never blocks the response.
+  if (user.email) {
+    await sendStudentSubmittedEmail({
+      to: user.email,
+      name: (profile as { full_name?: string | null }).full_name,
+      loginUrl: `${SITE_URL}/student/register`,
+    });
+  }
+
   return NextResponse.json({ ok: true, registration_status: "submitted" });
 }

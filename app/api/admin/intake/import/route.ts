@@ -8,16 +8,14 @@
 import { type NextRequest, NextResponse } from "next/server";
 import { createClient } from "@/lib/supabase/server";
 import { requirePermission } from "@/lib/auth";
-import { sendInviteEmail } from "@/lib/mailer";
+import { sendStudentImportedEmail } from "@/lib/mailer";
 import { loadRefData, parseWorkbook, normalizeRows } from "@/lib/intake-excel";
 
 const SITE_URL = process.env.NEXT_PUBLIC_SITE_URL ?? "http://localhost:3000";
 
 export async function POST(req: NextRequest) {
-  let ctxEmail: string | null = null;
   try {
-    const ctx = await requirePermission("student.intake.import");
-    ctxEmail = ctx.email;
+    await requirePermission("student.intake.import");
   } catch {
     return NextResponse.json({ error: "Forbidden" }, { status: 403 });
   }
@@ -69,10 +67,10 @@ export async function POST(req: NextRequest) {
     new_invite_emails: string[];
   };
 
-  // Send invite emails for the rows that received a new invite.
+  // Welcome the newly-registered students and point them to access their profile.
   await Promise.all(
     (result.new_invite_emails ?? []).map((to) =>
-      sendInviteEmail({ to, roleName: "Student", invitedBy: ctxEmail, loginUrl: `${SITE_URL}/auth/login` }),
+      sendStudentImportedEmail({ to, loginUrl: `${SITE_URL}/auth/login` }),
     ),
   );
 

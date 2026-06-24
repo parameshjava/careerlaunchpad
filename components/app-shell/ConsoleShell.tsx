@@ -20,6 +20,7 @@ import {
   GraduationCap,
   Handshake,
   LayoutDashboard,
+  Mail,
   Menu,
   PanelLeft,
   PanelLeftClose,
@@ -40,6 +41,7 @@ const ICONS: Record<NavIcon, React.ComponentType<{ className?: string }>> = {
   profile: UserRound,
   employer: LayoutDashboard,
   mentor: Handshake,
+  mail: Mail,
 };
 
 const COLLAPSE_KEY = "cl-sidebar-collapsed";
