@@ -1,5 +1,5 @@
 -- ============================================================================
--- 008_college_seed_09.sql  —  part 9 of 11
+-- 008_college_seed_09.sql  -  part 9 of 11
 -- College seed (continued). Idempotent via ON CONFLICT. See part 01 for notes.
 -- ============================================================================
 
@@ -340,7 +340,7 @@ insert into public.college (name, place, address, district, state, pincode, owne
     ('Munna Pal Kailashi Devi Mahavidyalaya', 'Kodwat', 'Vill. Kodwat, Post. Gayghat, Dist. Sant Kabir Nagar - 222 176, Uttar Pradesh', 'Sant Kabir Nagar', 'Uttar Pradesh', '222176', 'PRIVATE'),
     ('Nath Chandrawat Mahavidyalaya', 'Gorakhpur', 'Jagdishpur (Kasia Road), Gorakhpur, Uttar Pradesh', null, 'Uttar Pradesh', null, 'PRIVATE'),
     ('National Post-Graduate College', 'Barhalganj', 'Barhalganj, District Gorakhpur, Uttar Pradesh', 'Gorakhpur', 'Uttar Pradesh', null, 'PRIVATE'),
-    ('Naval’s Degree College', 'Kusmhi', 'Kusmhi, Gorakhpur, Uttar Pradesh', null, 'Uttar Pradesh', null, 'PRIVATE'),
+    ('Naval''s Degree College', 'Kusmhi', 'Kusmhi, Gorakhpur, Uttar Pradesh', null, 'Uttar Pradesh', null, 'PRIVATE'),
     ('Pacific College of Physiotherapy', 'Shahi Market', 'Shahi Market, Cinema Road, Gorakhpur, Uttar Pradesh', null, 'Uttar Pradesh', null, 'PRIVATE'),
     ('Paramhans Pal Mahavidyalaya', 'Mahrajganj', 'Gurli - Savya (Siswa), Mahrajganj - 273 153, Uttar Pradesh', null, 'Uttar Pradesh', '273153', 'PRIVATE'),
     ('Parmeswar Mahavidyalaya', 'Nautan Hathiyagarh', 'Nautan Hathiyagarh, District Deoria, Uttar Pradesh', 'Deoria', 'Uttar Pradesh', null, 'PRIVATE'),
@@ -412,7 +412,7 @@ insert into public.college (name, place, address, district, state, pincode, owne
     ('Sri Muralidhar Bhagwat Lal Mahavidyalaya', 'Mathauli Bazar', 'Mathauli Bazar, Kushinagar, Uttar Pradesh', null, 'Uttar Pradesh', null, 'PRIVATE'),
     ('Sri Tarachand Degree College', '(Mithana) Dhanghata', '(Mithana) Dhanghata, Sant Kabir Nagar, Uttar Pradesh', null, 'Uttar Pradesh', null, 'PRIVATE'),
     ('St. Andhrew''s P.G. College', 'Gorakhpur - 1', 'Gorakhpur - 1, District Gorakhpur, Uttar Pradesh', 'Gorakhpur', 'Uttar Pradesh', null, 'PRIVATE'),
-    ('St. Joseph’s College for Women', 'Gorakhpur', 'Civil Lines, University P.O., Gorakhpur - 273 009, Uttar Pradesh', null, 'Uttar Pradesh', '273009', 'PRIVATE'),
+    ('St. Joseph''s College for Women', 'Gorakhpur', 'Civil Lines, University P.O., Gorakhpur - 273 009, Uttar Pradesh', null, 'Uttar Pradesh', '273009', 'PRIVATE'),
     ('Sukhai Singh Mahavidyalaya', 'Basti', 'Bhelwal, Pipra Gautama, Basti - 272 124, Uttar Pradesh', null, 'Uttar Pradesh', '272124', 'PRIVATE'),
     ('Surya Baksh Pal Smarak Degree College', 'Bankati', 'Bankati, Basti, Uttar Pradesh', null, 'Uttar Pradesh', null, 'PRIVATE'),
     ('Swami Devanand P.G. College', 'Mathlar', 'Mathlar, District Deoria, Uttar Pradesh', 'Deoria', 'Uttar Pradesh', null, 'PRIVATE'),
@@ -762,7 +762,7 @@ insert into public.college (name, place, address, district, state, pincode, owne
     ('J.S. College of Education', 'Shikohabad', 'Shikohabad, Firozabad, Uttar Pradesh', null, 'Uttar Pradesh', null, 'PRIVATE'),
     ('Jagannath Prasad Mahavidyalaya', 'Kota', 'Vill. Kota, Post Kota, Dist. Hathras (Mahamaya Nagar) -, 204 213, Uttar Pradesh', 'Hathras (Mahamaya Nagar)', 'Uttar Pradesh', '204213', 'PRIVATE'),
     ('Jagdish Prasad Pandey Smarak Mahavidyalaya', 'Maharajganj', 'Devpur, Adda Bazar, Maharajganj - 273 164, Uttar Pradesh', null, 'Uttar Pradesh', '273164', 'PRIVATE'),
-    ('Jai Bhagwan Sevabhavi Sanstha’s Late. Shankarrao Gutte Gramin Arts, Commerce & Science College', 'Dharmapuri, Tq. Parli Vaijnath', 'Dharmapuri, Tq. Parli Vaijnath, Dist. Beed - 431 519, Uttar Pradesh', 'Beed', 'Uttar Pradesh', '431519', 'PRIVATE'),
+    ('Jai Bhagwan Sevabhavi Sanstha''s Late. Shankarrao Gutte Gramin Arts, Commerce & Science College', 'Dharmapuri, Tq. Parli Vaijnath', 'Dharmapuri, Tq. Parli Vaijnath, Dist. Beed - 431 519, Uttar Pradesh', 'Beed', 'Uttar Pradesh', '431519', 'PRIVATE'),
     ('Jai Murti College', 'Firozabad', 'Nagla Ball, Sirsaganj, Firozabad - 205 151, Uttar Pradesh', null, 'Uttar Pradesh', '205151', 'PRIVATE'),
     ('Janta Degree College', 'Parson', 'Parson, District Etah, Uttar Pradesh', 'Etah', 'Uttar Pradesh', null, 'PRIVATE'),
     ('Janta Kanya Mahavidyalaya', 'Awagarh', 'Awagarh, Dist. Etah - 207 301, Uttar Pradesh', 'Etah', 'Uttar Pradesh', '207301', 'PRIVATE'),
@@ -772,7 +772,7 @@ insert into public.college (name, place, address, district, state, pincode, owne
     ('K.D. Dental College & Hospital', 'Mathura', 'Delhi Mathura Road, National Highway# 2, P.O. Chhatikara, Mathura - 281 006, Uttar Pradesh', null, 'Uttar Pradesh', '281006', 'PRIVATE'),
     ('K.G.N. College', 'Sikandra Rao', 'Sikandra Rao, Hathras, Uttar Pradesh', null, 'Uttar Pradesh', null, 'PRIVATE'),
     ('K.R. Girls Degree College', 'Mathura', 'Mathura, District Mathura, Uttar Pradesh', 'Mathura', 'Uttar Pradesh', null, 'PRIVATE'),
-    ('Kalyani Girl’s Degree College', 'Etah', 'Near Pidora Adda, Marerha, Etah - 207 401, Uttar Pradesh', null, 'Uttar Pradesh', '207401', 'PRIVATE'),
+    ('Kalyani Girl''s Degree College', 'Etah', 'Near Pidora Adda, Marerha, Etah - 207 401, Uttar Pradesh', null, 'Uttar Pradesh', '207401', 'PRIVATE'),
     ('Kapoori Devi Kraparam Mahavidyalaya', 'Dhauleshwar', 'Dhauleshwar, Dist. Etah - 207 001, Uttar Pradesh', 'Etah', 'Uttar Pradesh', '207001', 'PRIVATE'),
     ('Kayam Singh Mahavidyalaya', 'Mainpuri', 'Aurandh, Mainpuri - 205 267, Uttar Pradesh', null, 'Uttar Pradesh', '205267', 'PRIVATE'),
     ('Khair Kanya Mahavidyalaya', 'Khair, Aligarh', 'Khair, Aligarh, Tappal Road,\, Distt. Aligarh, Uttar Pradesh', 'Aligarh', 'Uttar Pradesh', null, 'PRIVATE'),
@@ -789,7 +789,7 @@ insert into public.college (name, place, address, district, state, pincode, owne
     ('Laxmi Chand Katori Devi Degree College', 'Hathras', 'Agra Road, Hathras - 204 101, Uttar Pradesh', null, 'Uttar Pradesh', '204101', 'PRIVATE'),
     ('Lok Rashtriya College', 'Jasrana', 'Jasrana, Firozabad, Uttar Pradesh', null, 'Uttar Pradesh', null, 'PRIVATE'),
     ('Lokmani Sharma Swatantrata Sangram Senani Govt. Degree College', 'Maut', 'Maut, Mathura, Uttar Pradesh', null, 'Uttar Pradesh', null, 'GOVERNMENT'),
-    ('M.D. College', '8A/1AB', '8A/1AB, Lawyer‟s Colony, Bye Pass Road, Agra, Uttar Pradesh', null, 'Uttar Pradesh', null, 'PRIVATE'),
+    ('M.D. College', '8A/1AB', '8A/1AB, Lawyer''s Colony, Bye Pass Road, Agra, Uttar Pradesh', null, 'Uttar Pradesh', null, 'PRIVATE'),
     ('M.G. Balika Vidyalaya Degree College', 'Firozabad', 'Firozabad, District Firozabad, Uttar Pradesh', 'Firozabad', 'Uttar Pradesh', null, 'PRIVATE'),
     ('Maa Anjani Institute of Education', 'Shikohabad', 'Etah Road, Shikohabad, Dist. Firozabad - 205 153, Uttar Pradesh', 'Firozabad', 'Uttar Pradesh', '205153', 'PRIVATE'),
     ('Maan Janki Institute of Management & Technology', 'Kuthila, Etah', 'Kuthila, Etah, Uttar Pradesh', null, 'Uttar Pradesh', null, 'PRIVATE'),
@@ -799,7 +799,7 @@ insert into public.college (name, place, address, district, state, pincode, owne
     ('Maharshi Dayanand Mahavidyalaya', 'Firozabad', 'Sirsaganj, Firozabad - 205 151, Uttar Pradesh', null, 'Uttar Pradesh', '205151', 'PRIVATE'),
     ('Mamta Mahavidyalaya', 'Firozabad', 'Naipai, Firozabad - 283 203, Uttar Pradesh', null, 'Uttar Pradesh', '283203', 'PRIVATE'),
     ('Mata Bhagwati Devi Rajkiya Mahila Mahavidyalaya', 'Anwalkheda', 'Anwalkheda, (Agra), Uttar Pradesh', null, 'Uttar Pradesh', null, 'GOVERNMENT'),
-    ('Mother Teresa Women’s College', 'Aligarh', 'Tala Nagri, Ramghat Road, Aligarh - 202 001, Uttar Pradesh', null, 'Uttar Pradesh', '202001', 'PRIVATE'),
+    ('Mother Teresa Women''s College', 'Aligarh', 'Tala Nagri, Ramghat Road, Aligarh - 202 001, Uttar Pradesh', null, 'Uttar Pradesh', '202001', 'PRIVATE'),
     ('Motilal Ramnath Mahavidyalaya', '(Bah) Dist. Agra', 'Bhadroli, (Bah) Dist. Agra - 283 113, Uttar Pradesh', null, 'Uttar Pradesh', '283113', 'PRIVATE'),
     ('Mukdam Bihari Lal Mahavidyalaya', 'Mathura', 'N.H-2 Mahuan, Mathura - 281 122, Uttar Pradesh', null, 'Uttar Pradesh', '281122', 'PRIVATE'),
     ('Murlidhar Mahavidyalaya', 'Maggorra, Mathura', 'Rasulpur, Jajampatti, Maggorra, Mathura - 281 005, Uttar Pradesh', null, 'Uttar Pradesh', '281005', 'PRIVATE'),
@@ -994,7 +994,7 @@ insert into public.college (name, place, address, district, state, pincode, owne
     ('Navyug Kanya Mahavidyalaya', 'Rajendra Nagar', 'Rajendra Nagar, Lucknow, District Lucknow - 226 004, Uttar Pradesh', 'Lucknow', 'Uttar Pradesh', '226004', 'PRIVATE'),
     ('Netaji Subhash Chandra Bose Government Girls College', 'Lucknow', 'Lucknow, District Lucknow, Uttar Pradesh', 'Lucknow', 'Uttar Pradesh', null, 'PRIVATE'),
     ('Pt. Deen Dayal Upadhyay Government Girls Degree College', 'Rajajipuram', 'Rajajipuram, Lucknow, Uttar Pradesh', null, 'Uttar Pradesh', null, 'GOVERNMENT'),
-    ('Rajat Girl’s Degree College', 'Lucknow', 'Panchwati Kamta, Faizabad Road, Lucknow - 227 105, Uttar Pradesh', null, 'Uttar Pradesh', '227105', 'PRIVATE'),
+    ('Rajat Girl''s Degree College', 'Lucknow', 'Panchwati Kamta, Faizabad Road, Lucknow - 227 105, Uttar Pradesh', null, 'Uttar Pradesh', '227105', 'PRIVATE'),
     ('Rama Mahavidyalaya', 'Lucknow', 'Gaurav Vihar, Chinhat, Lucknow - 227 105, Uttar Pradesh', null, 'Uttar Pradesh', '227105', 'PRIVATE'),
     ('Ramadheen Singh Girls Degree College', 'Lucknow', 'Babuganj, Lucknow - 226 020, Uttar Pradesh', null, 'Uttar Pradesh', '226020', 'PRIVATE'),
     ('Rameshwaram Institute of Education & Training', 'Lucknow', 'Govind Puram, Near Sewa Hospital, Sitapur Road, Lucknow - 227 202, Uttar Pradesh', null, 'Uttar Pradesh', '227202', 'PRIVATE'),
@@ -1003,7 +1003,7 @@ insert into public.college (name, place, address, district, state, pincode, owne
     ('Shia Degree College', 'Daliganj Lucknow', 'Sitapur Road, Daliganj Lucknow, District Lucknow, Uttar Pradesh', 'Lucknow', 'Uttar Pradesh', null, 'PRIVATE'),
     ('Shri Durga Shiksha Neketan Mahavidyalaya', 'Lucknow', 'Vill. - Devri Rukhar, P.O. - Arjunpur, Bakshi-ka-Talaab, Lucknow - 226 203, Uttar Pradesh', null, 'Uttar Pradesh', '226203', 'PRIVATE'),
     ('Shri Durga Shiksha Niketan Mahavidyalaya', 'Lucknow', 'Vill. Chhota Bharwara, P.O. Gomti Nagar, Lucknow - 226 010, Uttar Pradesh', null, 'Uttar Pradesh', '226010', 'PRIVATE'),
-    ('Shri Guru Nanak Girls’ Degree College', 'Lucknow', 'Gautam Budh Marg, Charbagh, Lucknow - 226 004, Uttar Pradesh', null, 'Uttar Pradesh', '226004', 'PRIVATE'),
+    ('Shri Guru Nanak Girls'' Degree College', 'Lucknow', 'Gautam Budh Marg, Charbagh, Lucknow - 226 004, Uttar Pradesh', null, 'Uttar Pradesh', '226004', 'PRIVATE'),
     ('Shri Jai Narain Degree College', 'Station Road', 'Station Road, District Lucknow, Uttar Pradesh', 'Lucknow', 'Uttar Pradesh', null, 'PRIVATE'),
     ('Sri Mahavir Prasad Mahila Mahavidyalaya', 'Lucknow', 'Surya Nagar, Rajajipuram, Lucknow - 226 017, Uttar Pradesh', null, 'Uttar Pradesh', '226017', 'PRIVATE')
   on conflict (name, place, pincode) do nothing;

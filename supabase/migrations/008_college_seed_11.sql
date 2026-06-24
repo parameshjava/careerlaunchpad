@@ -1,5 +1,5 @@
 -- ============================================================================
--- 008_college_seed_11.sql  —  part 11 of 11
+-- 008_college_seed_11.sql  -  part 11 of 11
 -- College seed (continued). Idempotent via ON CONFLICT. See part 01 for notes.
 -- ============================================================================
 
@@ -19,7 +19,7 @@ insert into public.college (name, place, address, district, state, pincode, owne
     ('Balurghat Mahila Mahavidyalaya', 'Balurghat', 'Balurghat, District Dakshin Dinajpur - 733 101, West Bengal', 'Dakshin Dinajpur', 'West Bengal', '733101', 'PRIVATE'),
     ('Birapara College', 'Jalpaiguri', 'Jalpaiguri, District Jalpaiguri - 735 204, West Bengal', 'Jalpaiguri', 'West Bengal', '735204', 'PRIVATE'),
     ('Chanchal College', 'Chanchal', 'Chanchal, District Malda - 732 123, West Bengal', 'Malda', 'West Bengal', '732123', 'PRIVATE'),
-    ('Cluny Women’s College', 'Kalimpong', '8th Mile, Kalimpong-734 301, District Darjeeling, West Bengal', 'Darjeeling', 'West Bengal', '734301', 'PRIVATE'),
+    ('Cluny Women''s College', 'Kalimpong', '8th Mile, Kalimpong-734 301, District Darjeeling, West Bengal', 'Darjeeling', 'West Bengal', '734301', 'PRIVATE'),
     ('Cooach Behar College', 'Kalighat Road', 'Kalighat Road, District Cooch Behar - 736 101, West Bengal', 'Cooch Behar', 'West Bengal', '736101', 'PRIVATE'),
     ('Darjeeling Governement College', 'North Point Darjeeling', 'P.O. North Point Darjeeling, District Darjeeling - 734 101, West Bengal', 'Darjeeling', 'West Bengal', '734101', 'GOVERNMENT'),
     ('Dewan Abdul Gani College', 'Harirampur', 'Harirampur, South Dinajpur, District West Dinajpur - 733 125, West Bengal', 'West Dinajpur', 'West Bengal', '733125', 'PRIVATE'),

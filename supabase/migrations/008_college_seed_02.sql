@@ -1,5 +1,5 @@
 -- ============================================================================
--- 008_college_seed_02.sql  —  part 2 of 11
+-- 008_college_seed_02.sql  -  part 2 of 11
 -- College seed (continued). Idempotent via ON CONFLICT. See part 01 for notes.
 -- ============================================================================
 
@@ -537,15 +537,15 @@ insert into public.college (name, place, address, district, state, pincode, owne
     ('Carmel College of Arts, Science & Commerce for Women', 'Nuvem', 'Nuvem, Margao, Dist. South Goa - 403 604, Goa', 'South Goa', 'Goa', '403604', 'PRIVATE'),
     ('CES College of Arts & Commerce', 'Salcete', 'Cuncolim, Salcete - 403 703, Goa', null, 'Goa', '403703', 'PRIVATE'),
     ('College of Engineering', 'Fermagudi', 'Fermagudi, Dist. North Goa, Goa', 'North Goa', 'Goa', null, 'GOVERNMENT'),
-    ('Dnyan Prabodhini Mandal’s Shree Mallikarjun College of Arts & Commerce', 'Delem - Canacona', 'Delem - Canacona - 403 702, Goa', null, 'Goa', '403702', 'PRIVATE'),
+    ('Dnyan Prabodhini Mandal''s Shree Mallikarjun College of Arts & Commerce', 'Delem - Canacona', 'Delem - Canacona - 403 702, Goa', null, 'Goa', '403702', 'PRIVATE'),
     ('Dnyanprassarak Mandal''s College of Arts, Sou. Sheella Premanand Vaidya College of Science and V.N.S. Bandekar College of Commerce', 'Mapusa', 'P. B. No. 20, Mapusa - 403 507, Goa', null, 'Goa', '403507', 'PRIVATE'),
     ('Fr. Angel College of Arts And Commerce', 'North Goa', 'Pilar, North Goa - 403 203, Goa', null, 'Goa', '403203', 'PRIVATE'),
     ('Goa College of Architecture', 'Campel Panjim', 'Campel Panjim, Dist. North Goa, Goa', 'North Goa', 'Goa', null, 'PRIVATE'),
     ('Goa College of Home Science', 'Campal, Panaji', 'Opp. Parade Ground, Campal, Panaji - 403 001, Goa', null, 'Goa', '403001', 'GOVERNMENT'),
     ('Goa College of Pharmacy', 'Panaji', 'Panaji, Dist. North Goa, Goa', 'North Goa', 'Goa', null, 'GOVERNMENT'),
     ('Goa Medical College', 'Bambolim', 'Bambolim, Dist. North Goa, Goa', 'North Goa', 'Goa', null, 'GOVERNMENT'),
-    ('Goa Vidya Prasarak Mandal’s Dr. Dada Vaidya College of Education', 'nda', 'Ponda, North Goa, Goa', null, 'Goa', null, 'GOVERNMENT'),
-    ('Goa Vidyaprasarak Mandal’s Gopal Govind Poy Raiturcar College of Commerce and Economics', 'nda', 'Ponda, Dist. North Goa - 483481, Goa', 'North Goa', 'Goa', '483481', 'PRIVATE'),
+    ('Goa Vidya Prasarak Mandal''s Dr. Dada Vaidya College of Education', 'nda', 'Ponda, North Goa, Goa', null, 'Goa', null, 'GOVERNMENT'),
+    ('Goa Vidyaprasarak Mandal''s Gopal Govind Poy Raiturcar College of Commerce and Economics', 'nda', 'Ponda, Dist. North Goa - 483481, Goa', 'North Goa', 'Goa', '483481', 'PRIVATE'),
     ('Govind Ramnath Kare College of Law', 'Margoa', 'Margoa, Dist. South Goa, Goa', 'South Goa', 'Goa', null, 'PRIVATE'),
     ('Govind Ramnath Kare of Law', 'Mangao', 'Mangao, Goa', null, 'Goa', null, 'PRIVATE'),
     ('Govt. College of Arts & Science and Commerce', 'Khandall', 'Khandall, Morcell, Goa', null, 'Goa', null, 'GOVERNMENT'),
@@ -568,7 +568,7 @@ insert into public.college (name, place, address, district, state, pincode, owne
     ('Vidya Vikas Mandal''s Shree Damodar College of Commerce and Economics', 'Margoa', 'Margoa, Dist. South Goa - 403 601, Goa', 'South Goa', 'Goa', '403601', 'PRIVATE'),
     ('Anjuman Education Trust M.Ed. College', 'Balasinor', 'Rajpur Road, Balasinor - 388 255, Dist. Kheda, Goa', 'Kheda', 'Goa', '388255', 'PRIVATE'),
     ('Govindbhai Jorabhai Patel Ayurveda College & Research Centre', 'New Vallabh Vidyanagar', 'New Vallabh Vidyanagar, Anand - 388 1221, Gujarat', null, 'Gujarat', null, 'PRIVATE'),
-    ('Atmiya Institute of Technology & Science', 'Rajkot', '“Yogidham Gurukul”, Kalawad Road, Rajkot - 360 005, Gujarat', null, 'Gujarat', '360005', 'PRIVATE'),
+    ('Atmiya Institute of Technology & Science', 'Rajkot', '"Yogidham Gurukul", Kalawad Road, Rajkot - 360 005, Gujarat', null, 'Gujarat', '360005', 'PRIVATE'),
     ('B.K. Mody Government Pharmacy College', 'Rajkot', 'Near Aji Dam, Rajkot - 360 003, Gujarat', null, 'Gujarat', '360003', 'GOVERNMENT'),
     ('Dr. S. & S.S. Gandhy Government Engineering College', 'Surat', 'Mujura Gate, Opp. RTO, Surat - 395 001, Gujarat', null, 'Gujarat', '395001', 'GOVERNMENT'),
     ('Government Engineering College', 'Bhavnagar', 'Vidyanagab, Bhavnagar - 364 002, Gujarat', null, 'Gujarat', '364002', 'GOVERNMENT'),
@@ -625,7 +625,7 @@ insert into public.college (name, place, address, district, state, pincode, owne
     ('Government Arts College', 'Maninagar', 'Maninagar, Ahmedabad - 8, Gujarat', null, 'Gujarat', null, 'PRIVATE'),
     ('Government Commerce College', 'Ahmedabad', 'Kubernagar, Ahmedabad - 382 340, Gujarat', null, 'Gujarat', '382340', 'GOVERNMENT'),
     ('Government Law College', 'Ahmedabad', 'Khokhra Road, Maninagar (East), Ahmedabad - 380 008, Gujarat', null, 'Gujarat', '380008', 'GOVERNMENT'),
-    ('Government Science College', 'Ahmedabad', 'K.K. Shastri Education Campus, €, Khokhra Road, Maninagar, Ahmedabad - 380 008, Gujarat', null, 'Gujarat', '380008', 'GOVERNMENT'),
+    ('Government Science College', 'Ahmedabad', 'K.K. Shastri Education Campus, Khokhra Road, Maninagar, Ahmedabad - 380 008, Gujarat', null, 'Gujarat', '380008', 'GOVERNMENT'),
     ('Govt. Arts & Commerce College', 'Naswadi', 'Naswadi, Taluka - Naswadi, Dist. Vadodara - 394 450, Gujarat', 'Vadodara', 'Gujarat', '394450', 'GOVERNMENT'),
     ('Govt. Arts College', 'Sec. 26', 'Sec. 26, Gandhinagar, Dist. Gandhinagar, Gujarat', 'Gandhinagar', 'Gujarat', null, 'GOVERNMENT'),
     ('Govt. Commerce College', 'Gandhinagar', 'Gandhinagar, Dist. Gandhinagar, Gujarat', 'Gandhinagar', 'Gujarat', null, 'GOVERNMENT'),
@@ -849,7 +849,7 @@ insert into public.college (name, place, address, district, state, pincode, owne
     ('The Dhansura People''s Co- Operative Bank Ltd. Arts & Commerce College', 'Dhansura', 'Dhansura, Dist. Sabar Kantha - 383 310, Gujarat', 'Sabar Kantha', 'Gujarat', '383310', 'PRIVATE'),
     ('The H.N.S. Bank Ltd. Science College', 'Himmatnagar', 'Himmatnagar, Dist. Sabar kantha, Gujarat', 'Sabar kantha', 'Gujarat', null, 'PRIVATE'),
     ('The K.N.S.B.C. Arts and Commerce College', 'Kherali', 'Kherali - 384325, Dist. Mehsana, Gujarat', 'Mehsana', 'Gujarat', '384325', 'PRIVATE'),
-    ('The New Progressive College of Teacher’s Education', 'Mehsana', 'Mehsana - 384 001, Gujarat', null, 'Gujarat', '384001', 'PRIVATE'),
+    ('The New Progressive College of Teacher''s Education', 'Mehsana', 'Mehsana - 384 001, Gujarat', null, 'Gujarat', '384001', 'PRIVATE'),
     ('The Sarvoday Nagrik Sahkari Bank Ltd. Mahila Arts College', 'TA.  Himatnagar', 'Vijapur Road, Mehtrapura, PO. Savgadh, TA.  Himatnagar-383 220, Gujarat', null, 'Gujarat', '383220', 'PRIVATE'),
     ('Trikamjibhai Chatvani Arts & J.V. Gokal Trust Commerce College', 'Radhanpur', 'Radhanpur, Dist. Patan, Gujarat', 'Patan', 'Gujarat', null, 'PRIVATE'),
     ('V.N.S.B. Ltd. Arts and Commerce College', 'Vadnagar', 'Vadnagar, Dist. Mehesana - 384 355, Gujarat', 'Mehesana', 'Gujarat', '384355', 'PRIVATE'),
@@ -951,7 +951,7 @@ insert into public.college (name, place, address, district, state, pincode, owne
     ('H.M.V. Arts and Commerce College', 'Una', 'Una, Dist. Junagadh, Gujarat', 'Junagadh', 'Gujarat', null, 'PRIVATE'),
     ('H.N. Dodhi Arts & R.N. Doshi College of Commerce', 'Wankanner', 'Wankanner, Dist. Rajkot, Gujarat', 'Rajkot', 'Gujarat', null, 'PRIVATE'),
     ('J.C.E. Trust Sanchilit Commerce College', 'Junagadh', 'Junagadh, Junagadh Dist., Gujarat', null, 'Gujarat', null, 'PRIVATE'),
-    ('J.H. Bhalodia Women’s College', 'Rajkot', 'Kalavad Road, Opp. Jalaram Petrol Pump, Rajkot - 360 007, Gujarat', null, 'Gujarat', '360007', 'PRIVATE'),
+    ('J.H. Bhalodia Women''s College', 'Rajkot', 'Kalavad Road, Opp. Jalaram Petrol Pump, Rajkot - 360 007, Gujarat', null, 'Gujarat', '360007', 'PRIVATE'),
     ('K.H. Madhvani Arts and Commerce College', 'rbandar', 'Porbandar, Dist. Porbandar, Gujarat', 'Porbandar', 'Gujarat', null, 'PRIVATE'),
     ('K.K. Parekh Commerce College', 'Amreli', 'Amreli, Dist. Amrali, Gujarat', 'Amrali', 'Gujarat', null, 'PRIVATE'),
     ('K.O. Shah Municipal Arts and Commerce College', 'Dhoraji', 'Dhoraji, Dist. Rajkot, Gujarat', 'Rajkot', 'Gujarat', null, 'PRIVATE'),

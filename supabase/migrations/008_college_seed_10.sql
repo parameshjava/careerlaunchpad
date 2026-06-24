@@ -1,5 +1,5 @@
 -- ============================================================================
--- 008_college_seed_10.sql  —  part 10 of 11
+-- 008_college_seed_10.sql  -  part 10 of 11
 -- College seed (continued). Idempotent via ON CONFLICT. See part 01 for notes.
 -- ============================================================================
 
@@ -158,7 +158,7 @@ insert into public.college (name, place, address, district, state, pincode, owne
     ('Baba Jageshwar Nath Mahavidyalaya', 'Hetimpur', 'Hetimpur, Chakiya, Dist. Chandauli - 232 103, Uttar Pradesh', 'Chandauli', 'Uttar Pradesh', '232103', 'PRIVATE'),
     ('Baba Mathuradas Sitaram Mahavidyalaya', 'Chilkahar', 'Chilkahar, Dist. Ballia - 221 701, Uttar Pradesh', 'Ballia', 'Uttar Pradesh', '221701', 'PRIVATE'),
     ('Baba Ramdal Surajdev Smarak Mahavidyalaya', 'Madhopur (Pakawainar)', 'Madhopur (Pakawainar), Post - Nawapura (Rasra), Dist. Ballia, Uttar Pradesh', 'Ballia', 'Uttar Pradesh', null, 'PRIVATE'),
-    ('Banaras Institute of Teacher’s Education', 'Varanasi', 'Nibah, Pindra, Varanasi - 221 204, Uttar Pradesh', null, 'Uttar Pradesh', '221204', 'PRIVATE'),
+    ('Banaras Institute of Teacher''s Education', 'Varanasi', 'Nibah, Pindra, Varanasi - 221 204, Uttar Pradesh', null, 'Uttar Pradesh', '221204', 'PRIVATE'),
     ('Bankey Bahadur Singh Mahavidyalaya', 'Ballia', 'Mujauna, Turtipar, Ballia - 221 715, Uttar Pradesh', null, 'Uttar Pradesh', '221715', 'PRIVATE'),
     ('Bindeshwari Mahavidyalaya', 'Malap', 'Malap, Harsenpur, Dist. Ballia - 221 711, Uttar Pradesh', 'Ballia', 'Uttar Pradesh', '221711', 'PRIVATE'),
     ('Chhatradhari Mahavidyalaya', 'Dayalpur, Sadalpura, Chandauli', 'Dayalpur, Sadalpura, Chandauli -, 232 120, Uttar Pradesh', null, 'Uttar Pradesh', '232120', 'PRIVATE'),
@@ -674,7 +674,7 @@ insert into public.college (name, place, address, district, state, pincode, owne
     ('S.M.J.N. (P.G.) College', 'Haridwar', 'Govind Puri, Haridwar - 249 401, District Haridwar, Uttarakhand', 'Haridwar', 'Uttarakhand', '249401', 'PRIVATE'),
     ('Shri Gulab Singh Rajkiya Mahavidyalaya', 'Chakrata (Dehradun)', 'Chakrata (Dehradun) - 248 123, Uttarakhand', null, 'Uttarakhand', '248123', 'GOVERNMENT'),
     ('Shri Guru Ram Rai Post-Graduate College', 'Dehradun', 'Dehradun, District Dehradun, Uttarakhand', 'Dehradun', 'Uttarakhand', null, 'PRIVATE'),
-    ('Susana Methodist Girls’ B.Ed. College', 'Roorkee', 'Civil Lines, Roorkee - 247 667, Haridwar, Uttarakhand', null, 'Uttarakhand', '247667', 'PRIVATE'),
+    ('Susana Methodist Girls'' B.Ed. College', 'Roorkee', 'Civil Lines, Roorkee - 247 667, Haridwar, Uttarakhand', null, 'Uttarakhand', '247667', 'PRIVATE'),
     ('Arya Kanya Degree College', 'Almora', 'Almora, District Almora, Uttarakhand', 'Almora', 'Uttarakhand', null, 'PRIVATE'),
     ('Government Degree College', 'Manila', 'Manila, District Almora, Uttarakhand', 'Almora', 'Uttarakhand', null, 'GOVERNMENT'),
     ('Government Degree College', 'Jainti', 'Jainti, (Almora), Uttarakhand', null, 'Uttarakhand', null, 'PRIVATE'),
@@ -704,7 +704,7 @@ insert into public.college (name, place, address, district, state, pincode, owne
     ('Abhedananda Mahavidyalaya', 'Sainthia', 'Sainthia, District Birbhum, West Bengal', 'Birbhum', 'West Bengal', null, 'PRIVATE'),
     ('Achhruram Memorial College', 'Jhalda', 'Jhalda, District Purulia, West Bengal', 'Purulia', 'West Bengal', null, 'PRIVATE'),
     ('Aghore Kamini Prakash Chandra Mahavidyalaya', 'Subhashanagar, P.O. Bengai', 'Subhashanagar, P.O. Bengai, District Hooghly, West Bengal', 'Hooghly', 'West Bengal', null, 'PRIVATE'),
-    ('Arambagh Girls’ College', 'Pallishree', 'Pallishree, Arambagh Hooghly, West Bengal', null, 'West Bengal', null, 'PRIVATE'),
+    ('Arambagh Girls'' College', 'Pallishree', 'Pallishree, Arambagh Hooghly, West Bengal', null, 'West Bengal', null, 'PRIVATE'),
     ('Asansol Girls College', 'Asansol-4', 'Asansol-4, District Burdwan, West Bengal', 'Burdwan', 'West Bengal', null, 'PRIVATE'),
     ('Balagarh Bejoy Krishna Mahavidyalaya', 'Balagarh', 'Balagarh, District Hooghly, West Bengal', 'Hooghly', 'West Bengal', null, 'PRIVATE'),
     ('Balarampur College', 'Balarampur', 'Balarampur, P.O. Rangadih, Dist. Purulia - 723 143, West Bengal', 'Purulia', 'West Bengal', '723143', 'PRIVATE'),
@@ -919,7 +919,7 @@ insert into public.college (name, place, address, district, state, pincode, owne
     ('Sagar Mahavidyalaya', 'P.s.sagar', 'P.O. Harinbari, P.s.sagar, Dist. South 24 Parganas, West Bengal', 'South 24 Parganas', 'West Bengal', null, 'PRIVATE'),
     ('Saheed Nurul Islam Mahavidyalaya', 'Gokulpur - Harishpur', 'Gokulpur - Harishpur, P.O. Tentulia, Dist. 24 Parganas - 743 703, West Bengal', '24 Parganas', 'West Bengal', '743703', 'PRIVATE'),
     ('Sammilani Mahavidyalaya', 'Baghajatin', 'Baghajatin, District 24 Pargana (South), E.M. (By Pass), West Bengal', '24 Pargana (South)', 'West Bengal', null, 'PRIVATE'),
-    ('Sammilani Teachers’ Training College', 'Mukundapur, Kolkata', 'Barakhola, Krishakpally, Mukundapur, Kolkata - 700 099, West Bengal', null, 'West Bengal', '700099', 'PRIVATE'),
+    ('Sammilani Teachers'' Training College', 'Mukundapur, Kolkata', 'Barakhola, Krishakpally, Mukundapur, Kolkata - 700 099, West Bengal', null, 'West Bengal', '700099', 'PRIVATE'),
     ('Sanskrit College', 'Calcutta - 12', '1 - Bankim Chatterjee Street, Calcutta - 12, District Calcutta, West Bengal', 'Calcutta', 'West Bengal', null, 'PRIVATE'),
     ('Sarojini Naidu College for Women', 'Dum Dum', 'Dum Dum, Calcutta - 28, District North Twenty Four Parganas, West Bengal', 'North Twenty Four Parganas', 'West Bengal', null, 'PRIVATE'),
     ('Sarsuna College', 'Kolkata', '4/HB/A, Ho-Chi-Mein Sarani, Sarsuna Upanagari, Kolkata-700 061, West Bengal', null, 'West Bengal', '700061', 'GOVERNMENT'),
