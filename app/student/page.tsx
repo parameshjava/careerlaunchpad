@@ -13,10 +13,15 @@ export default async function StudentHome() {
   const supabase = await createClient();
   const { data } = await supabase
     .from("student_profile")
-    .select("registration_status")
+    .select("registration_status, status")
     .eq("user_id", ctx.userId)
     .maybeSingle();
 
-  if (data?.registration_status === "submitted") redirect("/student/insights");
+  // Submitted students go to insights once approved; otherwise they wait on the
+  // pending screen. Anyone still completing the form goes to the form.
+  if (data?.registration_status === "submitted") {
+    if (data.status === "approved") redirect("/student/insights");
+    redirect("/student/pending");
+  }
   redirect("/student/register");
 }

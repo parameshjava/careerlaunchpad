@@ -11,7 +11,10 @@ const SITE_URL = process.env.NEXT_PUBLIC_SITE_URL ?? "http://localhost:3000";
 const INVITE_TTL_DAYS = 14;
 
 // Roles the Owner can invite into (not 'owner' — that's seeded/managed separately).
-const INVITABLE = new Set(["student", "college_admin", "employer", "support", "platform_admin"]);
+// 'mentor' is unscoped (no college/employer), like support/platform_admin; the mentor
+// lands on /mentor and their profile row is created on first save (upsert in
+// /api/mentor/profile), so no provisioning stub is needed.
+const INVITABLE = new Set(["student", "college_admin", "employer", "mentor", "support", "platform_admin"]);
 
 /** Owner creates an invite. Consumed on the invitee's first social sign-in. */
 export async function createInvite(_prev: InviteState, formData: FormData): Promise<InviteState> {

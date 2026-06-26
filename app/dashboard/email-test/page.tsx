@@ -35,12 +35,13 @@ export default async function EmailTestPage() {
             {configured ? (
               <>
                 Emails are sent from <span className="font-medium">{from}</span>. Send a test below to
-                confirm the App Password works end-to-end.
+                confirm SMTP works end-to-end.
               </>
             ) : (
               <>
-                <span className="text-foreground font-medium">GMAIL_USER</span> and{" "}
-                <span className="text-foreground font-medium">GMAIL_APP_PASSWORD</span> are not set, so
+                <span className="text-foreground font-medium">SMTP_HOST</span>,{" "}
+                <span className="text-foreground font-medium">SMTP_USER</span> and{" "}
+                <span className="text-foreground font-medium">SMTP_PASSWORD</span> are not set, so
                 invites are only logged to the server console. Add them to{" "}
                 <span className="font-medium">.env</span> and restart to enable real delivery.
               </>

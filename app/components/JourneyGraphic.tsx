@@ -147,6 +147,31 @@ const sectors: { label: string; icon: ReactNode }[] = [
 // (card height 56 + 14 gap = 70 pitch): 28, 98, 168, 238 within a 266-tall box.
 const fanTargets = [28, 98, 168, 238];
 
+// Orthogonal "elbow" connector with rounded corners (flowchart-style): a short
+// stub from the junction, a shared vertical bus at FAN_BUS_X, then a 90° turn into
+// each card. Corners are rounded with quadratic curves of radius FAN_RADIUS.
+const FAN_JUNCTION_X = 14; // where the straight stub meets the bus branch
+const FAN_BUS_X = 30; // x of the shared vertical bus
+const FAN_TARGET_X = 62; // x where lines reach the cards
+const FAN_CENTER_Y = 133; // y of the incoming track
+const FAN_RADIUS = 7; // rounded-corner radius
+function fanPath(y: number) {
+  if (y === FAN_CENTER_Y) {
+    return `M${FAN_JUNCTION_X} ${y} H${FAN_TARGET_X}`;
+  }
+  const up = y < FAN_CENTER_Y;
+  const afterCorner1 = up ? FAN_CENTER_Y - FAN_RADIUS : FAN_CENTER_Y + FAN_RADIUS;
+  const beforeCorner2 = up ? y + FAN_RADIUS : y - FAN_RADIUS;
+  return [
+    `M${FAN_JUNCTION_X} ${FAN_CENTER_Y}`, // start at the junction
+    `H${FAN_BUS_X - FAN_RADIUS}`, // run along the track toward the bus
+    `Q${FAN_BUS_X} ${FAN_CENTER_Y} ${FAN_BUS_X} ${afterCorner1}`, // round into the bus
+    `V${beforeCorner2}`, // climb/descend the vertical bus
+    `Q${FAN_BUS_X} ${y} ${FAN_BUS_X + FAN_RADIUS} ${y}`, // round out toward the card
+    `H${FAN_TARGET_X}`, // run into the card
+  ].join(" ");
+}
+
 /* ---------------------------- Component ---------------------------- */
 // Metro-line walkthrough: a single gradient "track" runs Students -> 6 numbered
 // stations (alternating above/below the line) -> a fan-out into career sectors.
@@ -202,14 +227,13 @@ export default function JourneyGraphic() {
             preserveAspectRatio="xMidYMid meet"
             aria-hidden="true"
           >
-            <line className="flow-line" x1="0" y1="133" x2="14" y2="133" />
-            <circle className="metro-fan-hub" cx="14" cy="133" r="4.5" />
+            <line className="flow-line" x1="0" y1="133" x2={FAN_JUNCTION_X} y2="133" />
             {fanTargets.map((y, i) => (
               <path
                 key={i}
                 className="flow-curve"
                 style={{ animationDelay: `${i * 0.15}s` }}
-                d={`M14 133 C 44 133 34 ${y} 62 ${y}`}
+                d={fanPath(y)}
               />
             ))}
             {fanTargets.map((y, i) => (

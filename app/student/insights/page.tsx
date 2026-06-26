@@ -24,6 +24,17 @@ export default async function StudentInsightsPage() {
   if (!ctx.provisioned || ctx.status === "suspended") redirect("/auth/no-access");
 
   const supabase = await createClient();
+
+  // Insights are gated behind approval — students not yet approved wait on the
+  // pending screen. (Imported/invited students are auto-approved, so this only
+  // ever stops a self-registered student who's awaiting review.)
+  const { data: gate } = await supabase
+    .from("student_profile")
+    .select("status")
+    .eq("user_id", ctx.userId)
+    .maybeSingle();
+  if (gate && gate.status !== "approved") redirect("/student/pending");
+
   const cmp = await fetchStudentComparison(supabase, ctx.userId);
   const hasCollege = !!cmp.collegeName;
   const isMentor = ctx.roles.includes("mentor");

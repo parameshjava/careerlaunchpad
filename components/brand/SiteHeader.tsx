@@ -9,7 +9,7 @@ import Image from "next/image";
  *   - `nav`   -> in-bar navigation links, placed between brand and the right
  *                slot (the console passes its Students/Import/Users links here).
  *   - `right` -> the trailing action:
- *       omit it  -> default "Get Started" CTA (public / marketing pages)
+ *       omit it  -> default "Login" CTA (public / marketing pages)
  *       pass null -> brand only (e.g. the login page itself)
  *       pass a node -> custom action (e.g. email + Sign out on signed-in pages)
  *
@@ -71,7 +71,7 @@ export function SiteHeader({
               href="/auth/login"
               className="whitespace-nowrap rounded-[10px] bg-gradient-to-r from-[#2563eb] to-[#7c3aed] px-[clamp(12px,3vw,18px)] py-2.5 text-[clamp(0.82rem,2.4vw,0.95rem)] font-semibold text-white transition hover:brightness-105"
             >
-              Get Started
+              Login
             </Link>
           ) : (
             right

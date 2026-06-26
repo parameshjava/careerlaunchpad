@@ -96,7 +96,10 @@ export function buildNav(ctx: AuthContext): NavSection[] {
       admin.push({ label: "Import", href: "/dashboard/students/import", icon: "import" });
     if (can(ctx, "user.view") || can(ctx, "user.invite") || can(ctx, "user.manage"))
       admin.push({ label: "Users", href: "/dashboard/users", icon: "users" });
-    // Owner-only: validate the email integration (Gmail SMTP).
+    // Manage the office @careerlaunchpad.ai addresses notifications are sent to.
+    if (can(ctx, "user.manage"))
+      admin.push({ label: "Notification emails", href: "/dashboard/notifications", icon: "mail" });
+    // Owner-only: validate the email integration (SMTP).
     if (ctx.permissions.has("*"))
       admin.push({ label: "Email test", href: "/dashboard/email-test", icon: "mail" });
 

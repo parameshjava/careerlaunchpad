@@ -9,6 +9,7 @@
 import type { SupabaseClient } from "@supabase/supabase-js";
 
 export type StudentStage = "Imported" | "Invited" | "Registered";
+export type ReviewStatus = "pending_review" | "approved" | "suspended";
 
 export type Student = {
   id: string;
@@ -17,6 +18,10 @@ export type Student = {
   college: string | null;
   course: string | null; // "Degree — Branch" (whichever parts exist)
   stage: StudentStage;
+  // Approval gate (registered students only). Imported/invited rows have no
+  // student_profile yet, so they default to "approved" (auto-approved on sign-in).
+  reviewStatus: ReviewStatus;
+  registrationStatus: "in_progress" | "submitted";
   joinedAt: string; // YYYY-MM-DD
   // Membership fields powering the chart click-to-filter drilldown. Slugs for
   // skills; ref_career_goal ids for goals (matches lib/analytics-query keys).
@@ -56,7 +61,7 @@ export async function fetchStudents(
   let profileQ = supabase
     .from("student_profile")
     .select(
-      "user_id, full_name, degree, branch, updated_at, skills, career_goal_ids, primary_career_goal_id, college:college_id(name), app_user:user_id(email)",
+      "user_id, full_name, degree, branch, updated_at, skills, career_goal_ids, primary_career_goal_id, status, registration_status, college:college_id(name), app_user:user_id(email)",
     )
     .order("updated_at", { ascending: false });
 
@@ -80,6 +85,8 @@ export async function fetchStudents(
       college: college?.name ?? null,
       course: courseOf(r.degree as string | null, r.branch as string | null),
       stage: (r.status === "invited" ? "Invited" : "Imported") as StudentStage,
+      reviewStatus: "approved" as ReviewStatus, // not yet a profile; nothing to approve
+      registrationStatus: "in_progress" as const,
       joinedAt: day(r.created_at as string | null),
       skills: (r.skills as string[] | null) ?? [],
       goalIds: (r.career_goal_ids as string[] | null) ?? [],
@@ -97,6 +104,8 @@ export async function fetchStudents(
       college: college?.name ?? null,
       course: courseOf(r.degree as string | null, r.branch as string | null),
       stage: "Registered" as StudentStage,
+      reviewStatus: ((r.status as ReviewStatus | null) ?? "approved") as ReviewStatus,
+      registrationStatus: ((r.registration_status as string | null) ?? "in_progress") as "in_progress" | "submitted",
       joinedAt: day(r.updated_at as string | null),
       skills: (r.skills as string[] | null) ?? [],
       goalIds: (r.career_goal_ids as string[] | null) ?? [],
