@@ -103,6 +103,49 @@
   -webkit-text-fill-color: transparent;
 }
 
+/* Trailing actions: text menu-link(s) + the single gradient CTA. */
+.nav-actions {
+  display: flex;
+  align-items: center;
+  gap: clamp(14px, 3vw, 28px);
+  flex: 0 0 auto;
+}
+
+/* Plain-text menu link with an animated gradient underline (modern SaaS nav
+   style — mavvrik/tuba). No box, so it doesn't compete with the CTA. */
+.nav-link {
+  position: relative;
+  color: var(--text-muted);
+  font-weight: 600;
+  font-size: clamp(0.85rem, 2.4vw, 0.95rem);
+  text-decoration: none;
+  white-space: nowrap;
+  padding: 4px 1px;
+  transition: color 0.15s ease;
+}
+
+.nav-link::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: -2px;
+  height: 2px;
+  border-radius: 2px;
+  background: var(--brand-gradient);
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 0.18s ease;
+}
+
+.nav-link:hover {
+  color: var(--ink);
+}
+
+.nav-link:hover::after {
+  transform: scaleX(1);
+}
+
 .nav-cta {
   background: var(--brand-gradient);
   color: #fff;
@@ -335,15 +378,19 @@
   background-size: 100% 1.5px;
 }
 
+/* Moving dotted track (matches the fan-out dashes): a blue→violet gradient
+   revealed through an animated dash mask, so the dots flow toward the steps. */
 .metro-line {
   position: absolute;
   left: -50px;
   right: -50px;
   top: 50%;
-  height: 4px;
+  height: 3px;
   transform: translateY(-50%);
-  border-radius: 4px;
   background: linear-gradient(90deg, var(--brand-blue), var(--brand-violet));
+  -webkit-mask: repeating-linear-gradient(90deg, #000 0 4px, transparent 4px 14px);
+  mask: repeating-linear-gradient(90deg, #000 0 4px, transparent 4px 14px);
+  animation: metro-flow 0.7s linear infinite;
 }
 
 .metro-stations {
@@ -384,7 +431,7 @@
   z-index: 2;
 }
 
-/* Stem connecting the dot to its station card */
+/* Stem connecting the dot to its station card — same moving dotted treatment */
 .metro-stem {
   position: absolute;
   left: 50%;
@@ -392,11 +439,16 @@
   height: 38px;
   transform: translateX(-50%);
   background: var(--brand-violet);
-  opacity: 0.45;
+  opacity: 0.55;
+  -webkit-mask: repeating-linear-gradient(180deg, #000 0 4px, transparent 4px 14px);
+  mask: repeating-linear-gradient(180deg, #000 0 4px, transparent 4px 14px);
+  animation: metro-flow-v 0.7s linear infinite;
 }
 
+/* Up-stations: card is above the number, so the dots flow upward toward it */
 .metro-station--up .metro-stem {
   bottom: 50%;
+  animation-name: metro-flow-v-up;
 }
 
 .metro-station--down .metro-stem {
@@ -470,10 +522,6 @@
   height: 266px;
   flex: 0 0 auto;
   overflow: visible;
-}
-
-.metro-fan-hub {
-  fill: var(--brand-violet);
 }
 
 .metro-fan-dot {
@@ -557,6 +605,28 @@
   }
 }
 
+/* Flowing dots along the metro track (mask shifts by one dash period) */
+@keyframes metro-flow {
+  to {
+    -webkit-mask-position: 14px 0;
+    mask-position: 14px 0;
+  }
+}
+
+@keyframes metro-flow-v {
+  to {
+    -webkit-mask-position: 0 14px;
+    mask-position: 0 14px;
+  }
+}
+
+@keyframes metro-flow-v-up {
+  to {
+    -webkit-mask-position: 0 -14px;
+    mask-position: 0 -14px;
+  }
+}
+
 @keyframes jf-rise {
   from {
     opacity: 0;
@@ -585,7 +655,10 @@
     opacity: 1;
   }
   .flow-line,
-  .flow-curve {
+  .flow-curve,
+  .metro-line,
+  .metro-stem,
+  .metro-stations::before {
     animation: none;
   }
 }
@@ -643,9 +716,12 @@
     left: 28px;
     top: 10px;
     bottom: 10px;
-    width: 4px;
-    border-radius: 4px;
+    width: 3px;
+    /* Same moving dotted treatment as the horizontal track, flowing downward */
     background: linear-gradient(180deg, var(--brand-blue), var(--brand-violet));
+    -webkit-mask: repeating-linear-gradient(180deg, #000 0 4px, transparent 4px 14px);
+    mask: repeating-linear-gradient(180deg, #000 0 4px, transparent 4px 14px);
+    animation: metro-flow-v 0.7s linear infinite;
   }
   .metro-station {
     height: auto;
@@ -705,7 +781,9 @@
 /* ---------- Vision / Mission / Values / Founders ----------
    Laid out as wide 2-up rows (aligned with the journey panel) so the block
    stays compact vertically and leaves room for future surfaces below. */
-.founders {
+/* About cluster (Vision & Mission, Core Values, Founders) — breaks out to match
+   the journey panel width above. Each child <section> is titled + anchored. */
+.about {
   /* Break out to match the journey panel width above */
   width: min(1180px, calc(100vw - 48px));
   margin-left: 50%;
@@ -713,8 +791,13 @@
   text-align: left;
 }
 
-.founders .section-title {
+.about .section-title {
   text-align: center;
+}
+
+/* Smooth-scroll + offset so an in-page #anchor isn't hidden under the sticky bar */
+.about section {
+  scroll-margin-top: 96px;
 }
 
 /* Vision + Mission pair */
@@ -811,38 +894,9 @@
 }
 
 /* ---------- Core Values ---------- */
-.values-card {
-  margin-top: 20px;
-  background: var(--surface);
-  border: 1px solid var(--line);
-  border-radius: 16px;
-  padding: 22px 24px;
-  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.05);
-}
-
-.values-head {
-  display: flex;
-  align-items: center;
-  gap: 16px;
-}
-
-.values-badge {
-  flex: 0 0 auto;
-  width: 54px;
-  height: 54px;
-  border-radius: 50%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-size: 1.5rem;
-  color: #fff;
-  background: var(--brand-gradient-135);
-  box-shadow: 0 8px 20px rgba(124, 58, 237, 0.26);
-}
-
 .values-row {
   list-style: none;
-  margin: 18px 0 0;
+  margin: 24px 0 0;
   padding: 0;
   display: grid;
   grid-template-columns: repeat(3, 1fr);
@@ -944,6 +998,12 @@
     display: none;
   }
 
+  /* Tighten the action spacing on phones so brand + Contact link + CTA fit
+     without forcing horizontal overflow on small screens. */
+  .nav-actions {
+    gap: 12px;
+  }
+
   .greeting {
     font-size: 2rem;
   }
@@ -982,5 +1042,130 @@
   /* Justified text creates ugly rivers in a narrow column; left-align on phones */
   .founder-message {
     text-align: left;
+  }
+}
+
+/* ---------- Contact Us page ---------- */
+.contact {
+  max-width: 880px;
+}
+
+.contact-head {
+  margin: 8px auto 28px;
+  max-width: 640px;
+}
+
+.contact-title {
+  font-size: clamp(2rem, 7vw, 2.8rem);
+  font-weight: 800;
+  letter-spacing: -0.02em;
+  line-height: 1.15;
+  color: var(--ink);
+}
+
+.contact-lead {
+  margin-top: 14px;
+  font-size: clamp(1rem, 2.6vw, 1.12rem);
+  line-height: 1.6;
+  color: var(--text-muted);
+}
+
+/* One column on phones, widening to two/three as space allows */
+.contact-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 16px;
+  text-align: left;
+}
+
+.contact-card {
+  display: flex;
+  align-items: flex-start;
+  gap: 16px;
+  background: var(--surface);
+  border: 1px solid var(--line);
+  border-radius: 16px;
+  padding: 20px;
+  text-decoration: none;
+  color: inherit;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.05);
+  transition: transform 0.15s ease, box-shadow 0.15s ease, border-color 0.15s ease;
+}
+
+.contact-card:hover {
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-lg);
+  border-color: color-mix(in srgb, var(--brand-violet) 35%, var(--line));
+}
+
+/* Colourful tinted badge holding the emoji */
+.contact-icon {
+  flex: 0 0 auto;
+  width: 52px;
+  height: 52px;
+  border-radius: 14px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.6rem;
+  line-height: 1;
+}
+
+.contact-icon--addr {
+  background: var(--brand-blue-tint-from);
+}
+.contact-icon--phone {
+  background: #e6f9ef;
+}
+.contact-icon--mail {
+  background: var(--brand-violet-tint-from);
+}
+
+.contact-card-body {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  min-width: 0;
+}
+
+.contact-label {
+  font-size: 0.78rem;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--text-subtle);
+}
+
+.contact-value {
+  font-size: 1.02rem;
+  font-weight: 600;
+  color: var(--ink);
+  line-height: 1.45;
+  /* Long email shouldn't force sideways scroll on tiny screens */
+  overflow-wrap: anywhere;
+}
+
+.contact-addr-line {
+  display: block;
+  font-weight: 500;
+}
+
+.contact-action {
+  margin-top: 6px;
+  font-size: 0.9rem;
+  font-weight: 600;
+  background: var(--brand-gradient);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+@media (min-width: 720px) {
+  .contact-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  /* The address card carries the most text — let it span the full width */
+  .contact-grid > .contact-card:first-child {
+    grid-column: 1 / -1;
   }
 }

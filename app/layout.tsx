@@ -3,6 +3,7 @@ import "./brand.css";
 import "./globals.css";
 import { Geist } from "next/font/google";
 import { cn } from "@/lib/utils";
+import { ServiceWorkerRegister } from "./components/ServiceWorkerRegister";
 
 const geist = Geist({subsets:['latin'],variable:'--font-sans'});
 
@@ -25,6 +26,12 @@ export const metadata: Metadata = {
   },
   description,
   applicationName: "CareerLaunchPad",
+  // iOS standalone "Add to Home Screen": opens chromeless with this title/status bar.
+  appleWebApp: {
+    capable: true,
+    title: "CareerLaunchpad",
+    statusBarStyle: "default",
+  },
   category: "education",
   verification: {
     other: {
@@ -110,6 +117,7 @@ export default function RootLayout({
     <html lang="en" className={cn("font-sans", geist.variable)}>
       <body>
         {children}
+        <ServiceWorkerRegister />
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}

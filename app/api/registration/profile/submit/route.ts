@@ -6,7 +6,7 @@
 import { NextResponse } from "next/server";
 import { createClient } from "@/lib/supabase/server";
 import { REQUIRED_FIELDS } from "@/lib/registration";
-import { sendStudentSubmittedEmail } from "@/lib/mailer";
+import { sendStudentSubmittedEmail, sendRegistrationPendingEmail } from "@/lib/mailer";
 
 const SITE_URL = process.env.NEXT_PUBLIC_SITE_URL ?? "http://localhost:3000";
 
@@ -17,7 +17,7 @@ export async function POST() {
 
   const { data: profile, error } = await supabase
     .from("student_profile")
-    .select("full_name, phone, college_id, career_goal_ids, primary_career_goal_id")
+    .select("full_name, phone, college_id, career_goal_ids, primary_career_goal_id, status")
     .eq("user_id", user.id)
     .maybeSingle();
 
@@ -44,12 +44,26 @@ export async function POST() {
 
   if (upErr) return NextResponse.json({ ok: false, error: upErr.message }, { status: 500 });
 
-  // Confirm the submission by email. Best-effort — never blocks the response.
+  const fullName = (p.full_name as string | null | undefined) ?? null;
+
+  // Confirm the submission to the student. Best-effort — never blocks the response.
   if (user.email) {
     await sendStudentSubmittedEmail({
       to: user.email,
-      name: (profile as { full_name?: string | null }).full_name,
+      name: fullName,
       loginUrl: `${SITE_URL}/student/register`,
+    });
+  }
+
+  // Self-registered students await approval — notify owners/admins to review.
+  // Invited/imported students are auto-approved, so their submit notifies no one.
+  if (p.status === "pending_review") {
+    const { data: recips } = await supabase.rpc("notification_recipients");
+    await sendRegistrationPendingEmail({
+      to: (recips as string[] | null) ?? [],
+      kind: "student",
+      name: fullName,
+      reviewUrl: `${SITE_URL}/dashboard`,
     });
   }
 

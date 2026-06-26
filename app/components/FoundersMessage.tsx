@@ -64,34 +64,36 @@ const visionMission: { icon: string; label: string; text: string }[] = [
   },
 ];
 
+// The "About" cluster of the landing page. Per IA best practice, it follows the
+// product story (the Journey above) in the order purpose → principles → people:
+//   1. Vision & Mission  (why we exist)
+//   2. Core Values       (how we operate)
+//   3. Founders          (who's behind it)
+// Each is its OWN titled, anchored section rather than an unlabeled card stack.
 export default function FoundersMessage() {
   return (
-    <section id="founders" className="founders">
-      {/* Vision + Mission — a conceptual pair, shown side by side */}
-      <div className="vm-grid">
-        {visionMission.map((vm) => (
-          <article className="vm-card" key={vm.label}>
-            <span className="vm-badge" aria-hidden="true">
-              {vm.icon}
-            </span>
-            <div className="vm-body">
-              <p className="founder-role">{vm.label}</p>
-              <p className="vm-text">{vm.text}</p>
-            </div>
-          </article>
-        ))}
-      </div>
-
-      {/* Core Values — header plus the three values as a row */}
-      <article className="values-card">
-        <div className="values-head">
-          <span className="values-badge" aria-hidden="true">
-            ★
-          </span>
-          <div>
-            <p className="founder-role">Core Values</p>
-          </div>
+    <div className="about">
+      {/* 1) Vision & Mission — the purpose, right after the product story */}
+      <section id="vision-mission">
+        <h2 className="section-title">Our Vision &amp; Mission</h2>
+        <div className="vm-grid">
+          {visionMission.map((vm) => (
+            <article className="vm-card" key={vm.label}>
+              <span className="vm-badge" aria-hidden="true">
+                {vm.icon}
+              </span>
+              <div className="vm-body">
+                <p className="founder-role">{vm.label}</p>
+                <p className="vm-text">{vm.text}</p>
+              </div>
+            </article>
+          ))}
         </div>
+      </section>
+
+      {/* 2) Core Values — the principles, as three parallel tiles */}
+      <section id="values">
+        <h2 className="section-title">Our Core Values</h2>
         <ul className="values-row">
           {teamValues.map((v) => (
             <li className="value-tile" key={v.title}>
@@ -105,31 +107,34 @@ export default function FoundersMessage() {
             </li>
           ))}
         </ul>
-      </article>
+      </section>
 
-      {/* Founder + Co-Founder — side by side, equal-height profile cards */}
-      <div className="team-grid">
-        {founders.map((f) => (
-          <article className="founder-card" key={f.name}>
-            <FounderAvatar
-              photo={f.photo}
-              initials={f.initials}
-              name={f.name}
-              linkedin={f.linkedin}
-            />
+      {/* 3) Founders — the people, equal-height profile cards */}
+      <section id="founders">
+        <h2 className="section-title">Meet the Founders</h2>
+        <div className="team-grid">
+          {founders.map((f) => (
+            <article className="founder-card" key={f.name}>
+              <FounderAvatar
+                photo={f.photo}
+                initials={f.initials}
+                name={f.name}
+                linkedin={f.linkedin}
+              />
 
-            <div className="founder-body">
-              <p className="founder-role">{f.role}</p>
-              <h3 className="founder-name">
-                <a href={f.linkedin} target="_blank" rel="noopener noreferrer">
-                  {f.name}
-                </a>
-              </h3>
-              {f.message && <p className="founder-message">{f.message}</p>}
-            </div>
-          </article>
-        ))}
-      </div>
-    </section>
+              <div className="founder-body">
+                <p className="founder-role">{f.role}</p>
+                <h3 className="founder-name">
+                  <a href={f.linkedin} target="_blank" rel="noopener noreferrer">
+                    {f.name}
+                  </a>
+                </h3>
+                {f.message && <p className="founder-message">{f.message}</p>}
+              </div>
+            </article>
+          ))}
+        </div>
+      </section>
+    </div>
   );
 }

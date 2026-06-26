@@ -8,6 +8,9 @@
 import { NextResponse } from "next/server";
 import { createClient } from "@/lib/supabase/server";
 import { REQUIRED_FIELDS } from "@/lib/mentor-registration";
+import { sendRegistrationPendingEmail } from "@/lib/mailer";
+
+const SITE_URL = process.env.NEXT_PUBLIC_SITE_URL ?? "http://localhost:3000";
 
 export async function POST() {
   const supabase = await createClient();
@@ -16,7 +19,7 @@ export async function POST() {
 
   const { data: profile, error } = await supabase
     .from("mentor_profile")
-    .select("full_name, mentoring_area_ids, mentor_mode_id")
+    .select("full_name, mentoring_area_ids, mentor_mode_id, status")
     .eq("user_id", user.id)
     .maybeSingle();
 
@@ -42,5 +45,18 @@ export async function POST() {
     .eq("user_id", user.id);
 
   if (upErr) return NextResponse.json({ ok: false, error: upErr.message }, { status: 500 });
+
+  // A pending mentor's submission needs review — notify owners/admins. Skip when
+  // an already-approved mentor just edits their profile. Best-effort: never blocks.
+  if ((p.status as string | undefined) === "pending_review") {
+    const { data: recips } = await supabase.rpc("notification_recipients");
+    await sendRegistrationPendingEmail({
+      to: (recips as string[] | null) ?? [],
+      kind: "mentor",
+      name: (profile as { full_name?: string | null }).full_name,
+      reviewUrl: `${SITE_URL}/dashboard/mentors`,
+    });
+  }
+
   return NextResponse.json({ ok: true, registration_status: "submitted" });
 }

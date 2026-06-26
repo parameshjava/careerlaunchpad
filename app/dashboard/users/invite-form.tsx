@@ -14,6 +14,7 @@ const ROLES = [
   { key: "student", label: "Student" },
   { key: "college_admin", label: "College Admin" },
   { key: "employer", label: "Employer" },
+  { key: "mentor", label: "Mentor" },
   { key: "platform_admin", label: "CareerLaunchpad Admin" },
   { key: "support", label: "Support Team" },
 ];
