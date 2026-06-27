@@ -280,19 +280,16 @@
   gap: 40px;
 }
 
-/* Shared flowing-dash styling */
+/* Shared flowing-dash styling — one dotted treatment for every connector
+   (track, stems, fan): 2.5px violet, 3px dot / 8px gap. */
 .flow-line,
 .flow-curve {
   fill: none;
   stroke: var(--brand-violet);
-  stroke-width: 2.2;
+  stroke-width: 2.5;
   stroke-linecap: round;
-  stroke-dasharray: 3 7;
+  stroke-dasharray: 3 8;
   animation: jf-dash 0.7s linear infinite;
-}
-
-.flow-curve {
-  stroke: #b8a4f4;
 }
 
 .flow-head {
@@ -385,11 +382,11 @@
   left: -50px;
   right: -50px;
   top: 50%;
-  height: 3px;
+  height: 2.5px;
   transform: translateY(-50%);
   background: linear-gradient(90deg, var(--brand-blue), var(--brand-violet));
-  -webkit-mask: repeating-linear-gradient(90deg, #000 0 4px, transparent 4px 14px);
-  mask: repeating-linear-gradient(90deg, #000 0 4px, transparent 4px 14px);
+  -webkit-mask: repeating-linear-gradient(90deg, #000 0 3px, transparent 3px 11px);
+  mask: repeating-linear-gradient(90deg, #000 0 3px, transparent 3px 11px);
   animation: metro-flow 0.7s linear infinite;
 }
 
@@ -435,13 +432,12 @@
 .metro-stem {
   position: absolute;
   left: 50%;
-  width: 2px;
+  width: 2.5px;
   height: 38px;
   transform: translateX(-50%);
   background: var(--brand-violet);
-  opacity: 0.55;
-  -webkit-mask: repeating-linear-gradient(180deg, #000 0 4px, transparent 4px 14px);
-  mask: repeating-linear-gradient(180deg, #000 0 4px, transparent 4px 14px);
+  -webkit-mask: repeating-linear-gradient(180deg, #000 0 3px, transparent 3px 11px);
+  mask: repeating-linear-gradient(180deg, #000 0 3px, transparent 3px 11px);
   animation: metro-flow-v 0.7s linear infinite;
 }
 
@@ -601,29 +597,29 @@
 /* Keyframes */
 @keyframes jf-dash {
   to {
-    stroke-dashoffset: -10;
+    stroke-dashoffset: -11;
   }
 }
 
 /* Flowing dots along the metro track (mask shifts by one dash period) */
 @keyframes metro-flow {
   to {
-    -webkit-mask-position: 14px 0;
-    mask-position: 14px 0;
+    -webkit-mask-position: 11px 0;
+    mask-position: 11px 0;
   }
 }
 
 @keyframes metro-flow-v {
   to {
-    -webkit-mask-position: 0 14px;
-    mask-position: 0 14px;
+    -webkit-mask-position: 0 11px;
+    mask-position: 0 11px;
   }
 }
 
 @keyframes metro-flow-v-up {
   to {
-    -webkit-mask-position: 0 -14px;
-    mask-position: 0 -14px;
+    -webkit-mask-position: 0 -11px;
+    mask-position: 0 -11px;
   }
 }
 
@@ -716,11 +712,11 @@
     left: 28px;
     top: 10px;
     bottom: 10px;
-    width: 3px;
+    width: 2.5px;
     /* Same moving dotted treatment as the horizontal track, flowing downward */
     background: linear-gradient(180deg, var(--brand-blue), var(--brand-violet));
-    -webkit-mask: repeating-linear-gradient(180deg, #000 0 4px, transparent 4px 14px);
-    mask: repeating-linear-gradient(180deg, #000 0 4px, transparent 4px 14px);
+    -webkit-mask: repeating-linear-gradient(180deg, #000 0 3px, transparent 3px 11px);
+    mask: repeating-linear-gradient(180deg, #000 0 3px, transparent 3px 11px);
     animation: metro-flow-v 0.7s linear infinite;
   }
   .metro-station {
