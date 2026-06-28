@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg version="1.2" baseProfile="tiny-ps" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" width="512" height="512">
+  <title>CareerLaunchPad</title>
+  <defs>
+    <linearGradient id="ring" x1="256" y1="84" x2="256" y2="428" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#0060c0"/>
+      <stop offset="1" stop-color="#00a020"/>
+    </linearGradient>
+  </defs>
+  <rect width="512" height="512" fill="#ffffff"/>
+  <circle cx="256" cy="256" r="168" fill="#ffffff" stroke="url(#ring)" stroke-width="46"/>
+
+  <!-- open book (education) -->
+  <path d="M256 322 C228 308 196 308 176 318 L176 360 C196 350 228 350 256 364 C284 350 316 350 336 360 L336 318 C316 308 284 308 256 322 Z" fill="#0a4aa8"/>
+  <path d="M256 322 L256 364" stroke="#ffffff" stroke-width="7" stroke-linecap="round"/>
+
+  <!-- growth / launch arrow rising from the book -->
+  <g fill="none" stroke="#009020" stroke-width="42" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M214 300 L330 184"/>
+    <path d="M276 184 L330 184 L330 238"/>
+  </g>
+</svg>

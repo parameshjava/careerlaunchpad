@@ -15,17 +15,27 @@ export async function GET(request: NextRequest) {
   const { searchParams, origin } = new URL(request.url);
   const code = searchParams.get("code");
 
-  if (!code) {
-    return NextResponse.redirect(`${origin}/auth/auth-code-error`);
-  }
-
   const supabase = await createClient();
-  const { error } = await supabase.auth.exchangeCodeForSession(code);
-  if (error) {
+
+  if (code) {
+    const { error } = await supabase.auth.exchangeCodeForSession(code);
+    if (!error) {
+      // Route by role. Unprovisioned (no invite) → /auth/no-access via homePath.
+      const ctx = await getAuthContext();
+      return NextResponse.redirect(`${origin}${ctx?.homePath ?? "/auth/no-access"}`);
+    }
+    // The exchange failed — but an OAuth `code` is single-use, so a duplicate or
+    // prefetched second hit of this callback will ALWAYS fail even though the
+    // first hit already created the session. If we do have a valid session, the
+    // sign-in actually succeeded: send the user on instead of to the error page.
+    const ctx = await getAuthContext();
+    if (ctx) return NextResponse.redirect(`${origin}${ctx.homePath}`);
     return NextResponse.redirect(`${origin}/auth/auth-code-error`);
   }
 
-  // Route by role. Unprovisioned (no invite) → /auth/no-access (homePath handles it).
+  // No code (e.g. provider returned an error, or the user is already signed in
+  // and bounced straight back). If a session exists, route them; else show error.
   const ctx = await getAuthContext();
-  return NextResponse.redirect(`${origin}${ctx?.homePath ?? "/auth/no-access"}`);
+  if (ctx) return NextResponse.redirect(`${origin}${ctx.homePath}`);
+  return NextResponse.redirect(`${origin}/auth/auth-code-error`);
 }

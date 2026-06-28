@@ -21,6 +21,8 @@ export type AuthContext = {
   permissions: Set<string>;
   collegeScopes: string[];
   employerId: string | null;
+  /** True if the user is assigned as staff/evaluator on any exam (exam_staff). */
+  examEvaluator: boolean;
   /** Where this user should land after login. */
   homePath: string;
   /** Display name from the social provider, if any. */
@@ -83,6 +85,14 @@ export async function getAuthContext(): Promise<AuthContext | null> {
   const roles = (ctx.roles as string[]) ?? [];
   const { name, avatarUrl } = readProviderProfile(user.user_metadata);
 
+  // Is this user assigned as an exam evaluator? (exam_staff self-read RLS.) Only
+  // worth checking for provisioned users; drives the "Exam evaluation" nav item.
+  let examEvaluator = false;
+  if (provisioned) {
+    const { data: staffRows } = await supabase.from("exam_staff").select("exam_id").limit(1);
+    examEvaluator = (staffRows?.length ?? 0) > 0;
+  }
+
   return {
     userId: user.id,
     email: (ctx.email as string) ?? user.email ?? null,
@@ -92,6 +102,7 @@ export async function getAuthContext(): Promise<AuthContext | null> {
     permissions: new Set((ctx.permissions as string[]) ?? []),
     collegeScopes: (ctx.college_scopes as string[]) ?? [],
     employerId: (ctx.employer_id as string) ?? null,
+    examEvaluator,
     homePath: computeHomePath(roles, provisioned),
     name,
     avatarUrl,

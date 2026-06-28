@@ -29,14 +29,16 @@ export async function updateSession(request: NextRequest) {
     }
   )
 
-  // Do not run code between createServerClient and
-  // supabase.auth.getClaims(). A simple mistake could make it very hard to debug
-  // issues with users being randomly logged out.
-
-  // IMPORTANT: If you remove getClaims() and you use server-side rendering
-  // with the Supabase client, your users may be randomly logged out.
-  const { data } = await supabase.auth.getClaims()
-  const user = data?.claims
+  // Do not run code between createServerClient and supabase.auth.getUser().
+  // A simple mistake could make it very hard to debug issues with users being
+  // randomly logged out.
+  //
+  // We use getUser() (not getClaims()) on purpose: it validates the token with
+  // the auth server AND refreshes/rotates an expired session, writing the new
+  // cookies onto supabaseResponse via setAll above. Local-only verification
+  // (getClaims) can leave an expired-but-refreshable session looking signed-out,
+  // which bounces a user who actually has a valid session back to /auth/login.
+  const { data: { user } } = await supabase.auth.getUser()
 
   // Only the application surfaces require auth — the marketing site (/) and the
   // /auth/* pages stay public. (The matcher in middleware.ts already scopes this,

@@ -1,8 +1,10 @@
+import { redirect } from "next/navigation";
+import { getAuthContext } from "@/lib/auth";
 import { ProviderButtons } from "./ProviderButtons";
 
-// Static shell is a SERVER component so its HTML + CSS render-block on first
-// paint (no flash of under-styled content on cold loads). Only the OAuth
-// buttons need client JS — those live in <ProviderButtons/>.
+// Server component: the static shell renders HTML + CSS on first paint (no flash
+// of under-styled content). Only the OAuth buttons need client JS — those live
+// in <ProviderButtons/>.
 
 const FEATURES = [
   "Build a career-ready profile in minutes",
@@ -10,7 +12,14 @@ const FEATURES = [
   "Be discovered by employers hiring now",
 ];
 
-export default function LoginPage() {
+export default async function LoginPage() {
+  // Someone who already has a valid session should never see the sign-in screen
+  // — send them straight to their surface (homePath routes unprovisioned users
+  // to /auth/no-access). This stops "asked to sign in again" when a live session
+  // lands on /auth/login.
+  const ctx = await getAuthContext();
+  if (ctx) redirect(ctx.homePath);
+
   return (
     <main className="flex w-full flex-1 flex-col lg:grid lg:grid-cols-[1.05fr_1fr]">
       {/* Brand panel (desktop only) */}

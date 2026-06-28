@@ -157,3 +157,32 @@
     @apply font-sans;
     }
 }
+
+/* Exam rich content (Markdown + KaTeX + code), rendered by components/exam/RichContent.tsx.
+   Scoped to .exam-rich so it never leaks into other app UI. */
+.exam-rich :where(p) { margin: 0.25rem 0; }
+.exam-rich :where(p:first-child) { margin-top: 0; }
+.exam-rich :where(p:last-child) { margin-bottom: 0; }
+.exam-rich :where(ul, ol) { margin: 0.25rem 0; padding-left: 1.25rem; }
+.exam-rich :where(ul) { list-style: disc; }
+.exam-rich :where(ol) { list-style: decimal; }
+.exam-rich :where(pre) {
+  overflow-x: auto;
+  background: var(--muted);
+  border-radius: 0.375rem;
+  padding: 0.75rem;
+  font-size: 0.875rem;
+  margin: 0.4rem 0;
+}
+.exam-rich :where(code) { font-family: ui-monospace, SFMono-Regular, Menlo, monospace; }
+.exam-rich :where(:not(pre) > code) {
+  background: var(--muted);
+  padding: 0.1em 0.3em;
+  border-radius: 0.25rem;
+  font-size: 0.9em;
+}
+.exam-rich :where(table) { border-collapse: collapse; width: 100%; margin: 0.4rem 0; }
+.exam-rich :where(th, td) { border: 1px solid var(--border); padding: 0.3rem 0.5rem; text-align: left; }
+.exam-rich :where(img) { max-width: 100%; height: auto; }
+/* Inline variant (option labels): unwrap the paragraph so text stays on one line. */
+.exam-rich-inline :where(p) { display: inline; margin: 0; }

@@ -128,6 +128,22 @@ export async function sendStudentSubmittedEmail({ to, name, loginUrl }: Approval
   await deliver("student-submitted", to, subject, text, html);
 }
 
+/** Mentor finished registration — confirm we received it and it's pending approval. */
+export async function sendMentorSubmittedEmail({ to, name, loginUrl }: ApprovalEmail): Promise<void> {
+  const hi = name ? `Hi ${name},` : "Hi,";
+  const subject = "We've received your CareerLaunchPad mentor registration — pending approval";
+  const text =
+    `${hi}\n\n` +
+    `Thanks for registering as a mentor with CareerLaunchPad — your registration has been submitted and is now pending approval.\n\n` +
+    `We'll email you as soon as it's approved. You can sign in any time to view or update your profile:\n${loginUrl}\n`;
+  const html =
+    `<p>${hi}</p>` +
+    `<p>Thanks for registering as a mentor with CareerLaunchPad — your registration has been <strong>submitted and is now pending approval</strong>.</p>` +
+    `<p>We'll email you as soon as it's approved.</p>` +
+    `<p><a href="${loginUrl}">View your profile</a></p>`;
+  await deliver("mentor-submitted", to, subject, text, html);
+}
+
 /** Student profile approved by a reviewer — invite them into their portal. */
 export async function sendStudentApprovedEmail({ to, name, loginUrl }: ApprovalEmail): Promise<void> {
   const hi = name ? `Hi ${name},` : "Hi,";
