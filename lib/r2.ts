@@ -86,6 +86,14 @@ export function studentObjectKey(
   filename: string,
   now: number,
 ): string {
-  const safe = filename.toLowerCase().replace(/[^a-z0-9.]+/g, "-").replace(/^-+|-+$/g, "");
+  // Collapse runs of disallowed chars to a single '-' (linear), then trim leading/
+  // trailing '-' with a loop — NOT a regex like /^-+|-+$/g, which backtracks
+  // super-linearly on dash-heavy filenames (CodeQL js/polynomial-redos).
+  const collapsed = filename.toLowerCase().replace(/[^a-z0-9.]+/g, "-");
+  let start = 0;
+  let end = collapsed.length;
+  while (start < end && collapsed.charCodeAt(start) === 45) start++; // 45 = '-'
+  while (end > start && collapsed.charCodeAt(end - 1) === 45) end--;
+  const safe = collapsed.slice(start, end);
   return `students/${userId}/${kind}/${now}-${safe}`;
 }
