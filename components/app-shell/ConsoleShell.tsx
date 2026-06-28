@@ -17,6 +17,8 @@ import Link from "next/link";
 import { usePathname } from "next/navigation";
 import {
   BarChart3,
+  Building2,
+  ClipboardList,
   GraduationCap,
   Handshake,
   LayoutDashboard,
@@ -42,6 +44,8 @@ const ICONS: Record<NavIcon, React.ComponentType<{ className?: string }>> = {
   employer: LayoutDashboard,
   mentor: Handshake,
   mail: Mail,
+  exams: ClipboardList,
+  college: Building2,
 };
 
 const COLLAPSE_KEY = "cl-sidebar-collapsed";

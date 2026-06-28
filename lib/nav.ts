@@ -15,7 +15,9 @@ export type NavIcon =
   | "profile"
   | "employer"
   | "mentor"
-  | "mail";
+  | "mail"
+  | "exams"
+  | "college";
 
 export type NavItem = { label: string; href: string; icon: NavIcon };
 export type NavSection = { title?: string; items: NavItem[] };
@@ -54,6 +56,25 @@ function canReviewMentors(ctx: AuthContext): boolean {
   return ctx.permissions.has("*") || can(ctx, "mentor.review") || can(ctx, "user.manage");
 }
 
+/** True if the user can author the exam question bank (subjects/chapters/questions). */
+function canAuthorExams(ctx: AuthContext): boolean {
+  return (
+    ctx.permissions.has("*") ||
+    can(ctx, "exam.subject.manage") ||
+    can(ctx, "exam.question.manage")
+  );
+}
+
+/** True if the user can build/conduct exams (blueprints, sessions, results). */
+function canConductExams(ctx: AuthContext): boolean {
+  return (
+    ctx.permissions.has("*") ||
+    can(ctx, "exam.blueprint.manage") ||
+    can(ctx, "exam.assign") ||
+    can(ctx, "exam.results.view_all")
+  );
+}
+
 /**
  * Build the sidebar for the current user. Because `mentor` is an ADDITIVE role,
  * mentor items are appended to whatever surface the user primarily lives on
@@ -66,22 +87,28 @@ function canReviewMentors(ctx: AuthContext): boolean {
  */
 export function buildNav(ctx: AuthContext): NavSection[] {
   const isMentor = ctx.roles.includes("mentor");
+  // Shown to assigned exam staff AND blanket evaluators (mentors/employers with
+  // exam.evaluate), regardless of their primary role.
+  const evalItem: NavItem = { label: "Exam evaluation", href: "/dashboard/exams/evaluate", icon: "exams" };
+  const canEvaluate = ctx.examEvaluator || can(ctx, "exam.evaluate");
 
   if (ctx.roles.includes("student")) {
-    const sections: NavSection[] = [
-      {
-        items: [
-          { label: "My profile", href: "/student/register", icon: "profile" },
-          { label: "My insights", href: "/student/insights", icon: "analytics" },
-        ],
-      },
+    const items: NavItem[] = [
+      { label: "My profile", href: "/student/register", icon: "profile" },
+      { label: "My insights", href: "/student/insights", icon: "analytics" },
     ];
+    if (can(ctx, "exam.attempt.take"))
+      items.push({ label: "My exams", href: "/student/exams", icon: "exams" });
+    if (canEvaluate) items.push(evalItem);
+    const sections: NavSection[] = [{ items }];
     if (isMentor) sections.push({ title: "Mentoring", items: mentorItems() });
     return sections;
   }
 
   if (ctx.roles.includes("employer")) {
-    return [{ items: [{ label: "Dashboard", href: "/employer", icon: "employer" }] }];
+    const items: NavItem[] = [{ label: "Dashboard", href: "/employer", icon: "employer" }];
+    if (canEvaluate) items.push(evalItem);
+    return [{ items }];
   }
 
   // Console surfaces — only include items the user is actually permitted to use.
@@ -96,26 +123,50 @@ export function buildNav(ctx: AuthContext): NavSection[] {
       admin.push({ label: "Import", href: "/dashboard/students/import", icon: "import" });
     if (can(ctx, "user.view") || can(ctx, "user.invite") || can(ctx, "user.manage"))
       admin.push({ label: "Users", href: "/dashboard/users", icon: "users" });
+    // Owners and CareerLaunchpad admins manage the master college list.
+    if (can(ctx, "college.manage"))
+      admin.push({ label: "Colleges", href: "/dashboard/colleges", icon: "college" });
     // Manage the office @careerlaunchpad.ai addresses notifications are sent to.
     if (can(ctx, "user.manage"))
       admin.push({ label: "Notification emails", href: "/dashboard/notifications", icon: "mail" });
     // Owner-only: validate the email integration (SMTP).
     if (ctx.permissions.has("*"))
-      admin.push({ label: "Email test", href: "/dashboard/email-test", icon: "mail" });
+      admin.push({ label: "Test Email", href: "/dashboard/email-test", icon: "mail" });
 
     const insights: NavItem[] = [];
     if (canViewAnalytics(ctx))
       insights.push({ label: "College analytics", href: "/dashboard/analytics", icon: "analytics" });
 
+    // Question Bank — the global CareerLaunchPad asset, its OWN top-level area,
+    // independent of Exams.
+    const bank: NavItem[] = [];
+    if (canAuthorExams(ctx))
+      bank.push({ label: "Question bank", href: "/dashboard/questions", icon: "exams" });
+
+    // Exams — per-college conduct + evaluation.
+    const exams: NavItem[] = [];
+    if (canConductExams(ctx))
+      exams.push({ label: "Exam papers", href: "/dashboard/exams", icon: "exams" });
+    if (canEvaluate) exams.push(evalItem);
+
     const sections: NavSection[] = [];
     if (admin.length) sections.push({ title: "Administration", items: admin });
+    if (bank.length) sections.push({ title: "Question Bank", items: bank });
+    if (exams.length) sections.push({ title: "Exams", items: exams });
     if (insights.length) sections.push({ title: "Insights", items: insights });
     if (isMentor) sections.push({ title: "Mentoring", items: mentorItems() });
     return sections;
   }
 
   // Pure mentor (e.g. an external professional with no other role).
-  if (isMentor) return [{ items: mentorItems() }];
+  if (isMentor) {
+    const items = mentorItems();
+    if (canEvaluate) items.push(evalItem);
+    return [{ items }];
+  }
+
+  // Any other provisioned user who is only an exam evaluator.
+  if (canEvaluate) return [{ items: [evalItem] }];
 
   return [];
 }
