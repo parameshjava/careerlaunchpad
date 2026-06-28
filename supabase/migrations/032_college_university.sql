@@ -19,6 +19,14 @@
 alter table public.college
   add column if not exists university_id uuid references public.college(id) on delete set null;
 
+-- Source-system identifier (e.g. the OAMDC / APSCHE "Institute Code"). Optional —
+-- the UGC 008_* rows have none. A unique index lets a degree-college seed upsert
+-- on the code (its natural key); NULLs are distinct, so the many code-less UGC
+-- rows don't collide.
+alter table public.college
+  add column if not exists college_code text;
+create unique index if not exists college_code_key on public.college (college_code);
+
 -- Look up affiliates of a university, and find the university rows themselves
 -- (university_id = id), without a full table scan.
 create index if not exists college_university_idx on public.college (university_id);
