@@ -53,6 +53,7 @@ type FormFields = {
   established_in: string;
   ownership_type: "" | OwnershipType;
   status: CollegeStatus;
+  college_code: string;
   /** Affiliating university id ("" = none). Ignored when isUniversity is true. */
   university_id: string;
   /** This institution is itself a university (self-association). */
@@ -69,6 +70,7 @@ const EMPTY_FORM: FormFields = {
   established_in: "",
   ownership_type: "",
   status: "active",
+  college_code: "",
   university_id: "",
   isUniversity: false,
 };
@@ -86,6 +88,7 @@ function toForm(c: College): FormFields {
     established_in: c.established_in != null ? String(c.established_in) : "",
     ownership_type: c.ownership_type ?? "",
     status: c.status ?? "active",
+    college_code: c.college_code ?? "",
     university_id: isUniversity ? "" : (c.university_id ?? ""),
     isUniversity,
   };
@@ -104,6 +107,7 @@ function toPayload(f: FormFields) {
     established_in: f.established_in.trim() === "" ? null : Number(f.established_in),
     ownership_type: f.ownership_type === "" ? null : f.ownership_type,
     status: f.status,
+    college_code: n(f.college_code),
     // SELF_UNIVERSITY tells the server to self-associate; otherwise the chosen
     // university id, or null for none.
     university_id: f.isUniversity ? SELF_UNIVERSITY : f.university_id || null,
@@ -322,6 +326,14 @@ export function CollegesManager() {
                   />
                 </Field>
 
+                <Field label="College code">
+                  <Input
+                    value={form.college_code}
+                    onChange={(e) => setForm({ ...form, college_code: e.target.value })}
+                    placeholder="e.g. 10033 (OAMDC)"
+                  />
+                </Field>
+
                 <Field label="Address" className="sm:col-span-2">
                   <Input
                     value={form.address}
@@ -504,9 +516,10 @@ export function CollegesManager() {
           own container on narrow screens so the page never overflows. */}
       <div className="rounded-md border">
         <div className="w-full overflow-x-auto">
-          <Table className="min-w-[1100px] text-sm">
+          <Table className="min-w-[1180px] text-sm">
             <TableHeader>
               <TableRow>
+                <TableHead>Code</TableHead>
                 <TableHead className="min-w-[220px]">Name</TableHead>
                 <TableHead className="min-w-[200px]">University</TableHead>
                 <TableHead>Place</TableHead>
@@ -522,13 +535,14 @@ export function CollegesManager() {
             <TableBody>
               {!loading && colleges.length === 0 && (
                 <TableRow>
-                  <TableCell colSpan={10} className="text-muted-foreground py-8 text-center">
+                  <TableCell colSpan={11} className="text-muted-foreground py-8 text-center">
                     No colleges match these filters.
                   </TableCell>
                 </TableRow>
               )}
               {colleges.map((c) => (
                 <TableRow key={c.id} className={c.status === "archived" ? "opacity-60" : undefined}>
+                  <TableCell className="text-muted-foreground tabular-nums">{c.college_code ?? "—"}</TableCell>
                   <TableCell className="font-medium">{c.name}</TableCell>
                   <TableCell>
                     {c.university_id && c.university_id === c.id ? (
