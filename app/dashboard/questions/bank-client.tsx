@@ -318,7 +318,7 @@ export function BankClient({
                         </div>
                       </div>
                       <Button asChild disabled={chapters.length === 0}>
-                        <Link href={`/dashboard/questions/new?subject=${subjectId}`}>
+                        <Link href={`/dashboard/questions/new?subject=${encodeURIComponent(subjectId)}`}>
                           New question
                         </Link>
                       </Button>
@@ -365,7 +365,7 @@ export function BankClient({
                             </div>
                             <div className="flex shrink-0 gap-1">
                               <Button variant="ghost" size="sm" asChild>
-                                <Link href={`/dashboard/questions/q/${q.id}`}>Edit</Link>
+                                <Link href={`/dashboard/questions/q/${encodeURIComponent(q.id)}`}>Edit</Link>
                               </Button>
                               <Button variant="ghost" size="sm" onClick={() => archiveQuestion(q.id)}>
                                 Archive
