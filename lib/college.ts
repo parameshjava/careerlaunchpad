@@ -27,6 +27,8 @@ export type College = {
   established_in: number | null;
   ownership_type: OwnershipType | null;
   status: CollegeStatus;
+  /** Source-system identifier (e.g. OAMDC "Institute Code"); null for UGC rows. */
+  college_code: string | null;
   /** Affiliating university (another college row). `=== id` means this row IS a
    * university (self-associated); null means unknown/unset. */
   university_id: string | null;
@@ -37,7 +39,7 @@ export type College = {
 
 /** Base columns of a college (used for writes and as the root of every read). */
 export const COLLEGE_COLUMNS =
-  "id, name, place, address, district, state, pincode, established_in, ownership_type, status, university_id, created_at";
+  "id, name, place, address, district, state, pincode, established_in, ownership_type, status, college_code, university_id, created_at";
 
 /** Read projection: base columns + the affiliating university's name, via a
  * self-join on university_id (PostgREST embedded resource). */
@@ -58,6 +60,8 @@ export type CollegeInput = {
   established_in: number | null;
   ownership_type: OwnershipType | null;
   status: CollegeStatus;
+  /** Source-system identifier (e.g. OAMDC "Institute Code"), or null. */
+  college_code: string | null;
   /** A university's uuid, the SELF_UNIVERSITY sentinel, or null (none). */
   university_id: string | null;
 };
@@ -130,6 +134,8 @@ export function parseCollegeInput(
       return { error: "status: must be active or archived" };
     out.status = s as CollegeStatus;
   }
+
+  if (!partial || has("college_code")) out.college_code = text(body.college_code);
 
   // Affiliating university: a uuid, the SELF_UNIVERSITY sentinel (resolved by the
   // route to this row's own id), or null. The route does the self-resolution
