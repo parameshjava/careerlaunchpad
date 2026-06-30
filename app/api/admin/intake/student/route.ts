@@ -55,7 +55,10 @@ export async function POST(req: NextRequest) {
   const collegeId = String(body.college_id ?? "").trim();
   const email = String(body.email ?? "").trim();
   if (!collegeId) return NextResponse.json({ error: "college_id is required" }, { status: 400 });
-  if (!/^[^@\s]+@[^@\s]+\.[^@\s]+$/.test(email))
+  // Linear (no-backtracking) email check: domain segments exclude '.', so the
+  // two quantifiers can't overlap — avoids the polynomial-ReDoS CodeQL flags on
+  // `[^@\s]+\.[^@\s]+` (its class includes '.').
+  if (!/^[^\s@]+@[^\s@.]+(?:\.[^\s@.]+)+$/.test(email))
     return NextResponse.json({ error: "A valid email is required" }, { status: 422 });
 
   const p = body.profile ?? {};
