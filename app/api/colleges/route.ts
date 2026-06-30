@@ -4,8 +4,9 @@
  * the `college.manage` permission — held by owner ('*') and platform_admin — and
  * RLS (college_owner_manage) enforces it again at the database.
  *
- *   GET  /api/colleges?q=&state=&ownership=&status=&page=&pageSize=
+ *   GET  /api/colleges?q=&state=&ownership=&status=&page=&pageSize=&sort=&dir=
  *        -> { colleges: College[], total, page, pageSize }
+ *        sort ∈ SORTABLE (default name), dir ∈ asc|desc (default asc).
  *   POST /api/colleges  body: CollegeInput  -> { ok, id }  (409 on duplicate)
  */
 import { NextResponse, type NextRequest } from "next/server";
@@ -22,6 +23,13 @@ import {
 const DEFAULT_PAGE_SIZE = 25;
 const MAX_PAGE_SIZE = 100;
 
+// Columns the client may sort by (whitelist — never trust a raw column name in
+// .order()). University is a foreign embed, so it isn't sortable here.
+const SORTABLE = new Set([
+  "college_code", "name", "place", "district", "state",
+  "pincode", "established_in", "ownership_type", "status",
+]);
+
 export async function GET(req: NextRequest) {
   const ctx = await getAuthContext();
   if (!ctx || !ctx.provisioned)
@@ -36,6 +44,10 @@ export async function GET(req: NextRequest) {
   // pass status=all to include both, or status=archived for just archived.
   const status = (sp.get("status") ?? "active").trim() as CollegeStatus | "all";
 
+  const sortReq = (sp.get("sort") ?? "name").trim();
+  const sort = SORTABLE.has(sortReq) ? sortReq : "name";
+  const ascending = (sp.get("dir") ?? "asc").trim().toLowerCase() !== "desc";
+
   const page = Math.max(1, parseInt(sp.get("page") ?? "1", 10) || 1);
   const pageSize = Math.min(
     MAX_PAGE_SIZE,
@@ -47,8 +59,11 @@ export async function GET(req: NextRequest) {
   let query = supabase
     .from("college")
     .select(COLLEGE_SELECT, { count: "exact" })
-    .order("name")
+    .order(sort, { ascending, nullsFirst: false })
     .range(from, from + pageSize - 1);
+  // Stable tiebreak so paging is deterministic when the sort column has ties.
+  if (sort !== "name") query = query.order("name", { ascending: true });
+  query = query.order("id", { ascending: true });
 
   if (status !== "all") query = query.eq("status", status);
   if (state) query = query.eq("state", state);

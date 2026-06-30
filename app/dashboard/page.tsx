@@ -3,6 +3,7 @@ import type { Metadata } from "next";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { DataTable } from "@/components/data-table";
+import Link from "next/link";
 import { columns } from "@/components/students/columns";
 import { createClient } from "@/lib/supabase/server";
 import { getAuthContext, can } from "@/lib/auth";
@@ -16,6 +17,7 @@ export const metadata: Metadata = {
 export default async function DashboardPage() {
   const ctx = await getAuthContext();
   const canReview = !!ctx && (ctx.permissions.has("*") || can(ctx, "student.review"));
+  const canImport = !!ctx && (ctx.permissions.has("*") || can(ctx, "student.intake.import"));
 
   const supabase = await createClient();
   const data = await fetchStudents(supabase);
@@ -38,11 +40,18 @@ export default async function DashboardPage() {
 
   return (
     <div className="space-y-6">
-      <div>
-        <h1 className="text-2xl font-semibold tracking-tight">Students</h1>
-        <p className="text-muted-foreground text-sm">
-          Manage enrolled students, track progress, and assign mentors.
-        </p>
+      <div className="flex items-start justify-between gap-3">
+        <div>
+          <h1 className="text-2xl font-semibold tracking-tight">Students</h1>
+          <p className="text-muted-foreground text-sm">
+            Manage enrolled students, track progress, and assign mentors.
+          </p>
+        </div>
+        {canImport && (
+          <Button asChild>
+            <Link href="/dashboard/students/new">+ Student</Link>
+          </Button>
+        )}
       </div>
 
       <div className="grid grid-cols-2 gap-4 lg:grid-cols-4">
