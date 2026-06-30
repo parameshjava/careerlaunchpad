@@ -9,6 +9,15 @@
  */
 import { useCallback, useEffect, useRef, useState } from "react";
 import {
+  Pencil,
+  Trash2,
+  Archive,
+  ArchiveRestore,
+  ChevronUp,
+  ChevronDown,
+  ChevronsUpDown,
+} from "lucide-react";
+import {
   COLLEGE_STATUSES,
   OWNERSHIP_TYPES,
   SELF_UNIVERSITY,
@@ -39,6 +48,18 @@ const selectClass =
   "border-input bg-background h-9 w-full rounded-md border px-3 py-1 text-sm shadow-sm focus-visible:ring-1 focus-visible:outline-none";
 
 const PAGE_SIZE_OPTIONS = [25, 50, 100];
+
+/** Columns the list endpoint can sort by (must match SORTABLE in the API route). */
+type SortKey =
+  | "college_code"
+  | "name"
+  | "place"
+  | "district"
+  | "state"
+  | "pincode"
+  | "established_in"
+  | "ownership_type"
+  | "status";
 
 /** A university option for the affiliating-university dropdown/filter. */
 type UniversityOption = { id: string; name: string; state: string | null };
@@ -123,6 +144,9 @@ export function CollegesManager() {
   const [universityFilter, setUniversityFilter] = useState("");
   const [page, setPage] = useState(1);
   const [pageSize, setPageSize] = useState(25);
+  // Server-side sort: a whitelisted column + direction (see /api/colleges).
+  const [sort, setSort] = useState<SortKey>("name");
+  const [dir, setDir] = useState<"asc" | "desc">("asc");
 
   // Data
   const [colleges, setColleges] = useState<College[]>([]);
@@ -148,6 +172,8 @@ export function CollegesManager() {
       page: String(page),
       pageSize: String(pageSize),
       status: statusFilter,
+      sort,
+      dir,
     });
     if (q.trim()) params.set("q", q.trim());
     if (stateFilter) params.set("state", stateFilter);
@@ -167,7 +193,7 @@ export function CollegesManager() {
     } finally {
       setLoading(false);
     }
-  }, [page, pageSize, q, stateFilter, ownershipFilter, statusFilter, universityFilter]);
+  }, [page, pageSize, q, stateFilter, ownershipFilter, statusFilter, universityFilter, sort, dir]);
 
   // Debounce only the free-text search; other filters apply immediately.
   useEffect(() => {
@@ -178,10 +204,19 @@ export function CollegesManager() {
     };
   }, [load, q]);
 
-  // Reset to page 1 whenever a filter or the page size changes.
+  // Reset to page 1 whenever a filter, the page size, or the sort changes.
   useEffect(() => {
     setPage(1);
-  }, [q, stateFilter, ownershipFilter, statusFilter, universityFilter, pageSize]);
+  }, [q, stateFilter, ownershipFilter, statusFilter, universityFilter, pageSize, sort, dir]);
+
+  // Click a column header: same column toggles direction, a new column sorts asc.
+  function toggleSort(key: SortKey) {
+    if (sort === key) setDir((d) => (d === "asc" ? "desc" : "asc"));
+    else {
+      setSort(key);
+      setDir("asc");
+    }
+  }
 
   // Load the state list once for the filter + form datalist.
   useEffect(() => {
@@ -257,6 +292,20 @@ export function CollegesManager() {
       });
       const json = await res.json();
       if (!res.ok) throw new Error(json.error ?? "Update failed");
+      await load();
+    } catch (e) {
+      setListError((e as Error).message);
+    }
+  }
+
+  async function remove(c: College) {
+    // ponytail: native confirm() is the zero-dep guard for a destructive action.
+    if (!window.confirm(`Delete "${c.name}"? This permanently removes it and can't be undone.`))
+      return;
+    try {
+      const res = await fetch(`/api/colleges/${c.id}`, { method: "DELETE" });
+      const json = await res.json();
+      if (!res.ok) throw new Error(json.error ?? "Delete failed");
       await load();
     } catch (e) {
       setListError((e as Error).message);
@@ -518,17 +567,17 @@ export function CollegesManager() {
         <div className="w-full overflow-x-auto">
           <Table className="min-w-[1180px] text-sm">
             <TableHeader>
-              <TableRow>
-                <TableHead>Code</TableHead>
-                <TableHead className="min-w-[220px]">Name</TableHead>
+              <TableRow className="bg-muted/50">
+                <SortHeader label="Code" col="college_code" sort={sort} dir={dir} onSort={toggleSort} />
+                <SortHeader label="Name" col="name" sort={sort} dir={dir} onSort={toggleSort} className="min-w-[220px]" />
                 <TableHead className="min-w-[200px]">University</TableHead>
-                <TableHead>Place</TableHead>
-                <TableHead>District</TableHead>
-                <TableHead>State</TableHead>
-                <TableHead>Pincode</TableHead>
-                <TableHead className="text-right">Est.</TableHead>
-                <TableHead>Ownership</TableHead>
-                <TableHead>Status</TableHead>
+                <SortHeader label="Place" col="place" sort={sort} dir={dir} onSort={toggleSort} />
+                <SortHeader label="District" col="district" sort={sort} dir={dir} onSort={toggleSort} />
+                <SortHeader label="State" col="state" sort={sort} dir={dir} onSort={toggleSort} />
+                <SortHeader label="Pincode" col="pincode" sort={sort} dir={dir} onSort={toggleSort} />
+                <SortHeader label="Est." col="established_in" sort={sort} dir={dir} onSort={toggleSort} align="right" />
+                <SortHeader label="Ownership" col="ownership_type" sort={sort} dir={dir} onSort={toggleSort} />
+                <SortHeader label="Status" col="status" sort={sort} dir={dir} onSort={toggleSort} />
                 <TableHead className="text-right">Actions</TableHead>
               </TableRow>
             </TableHeader>
@@ -569,17 +618,42 @@ export function CollegesManager() {
                     </Badge>
                   </TableCell>
                   <TableCell className="text-right whitespace-nowrap">
-                    <Button size="sm" variant="outline" onClick={() => openEdit(c)}>
-                      Edit
-                    </Button>
-                    <Button
-                      size="sm"
-                      variant="ghost"
-                      className="ml-1"
-                      onClick={() => setStatus(c, c.status === "active" ? "archived" : "active")}
-                    >
-                      {c.status === "active" ? "Archive" : "Restore"}
-                    </Button>
+                    <div className="flex items-center justify-end gap-0.5">
+                      <Button
+                        size="icon"
+                        variant="ghost"
+                        className="h-8 w-8"
+                        title="Edit"
+                        aria-label={`Edit ${c.name}`}
+                        onClick={() => openEdit(c)}
+                      >
+                        <Pencil className="h-4 w-4" />
+                      </Button>
+                      <Button
+                        size="icon"
+                        variant="ghost"
+                        className="h-8 w-8"
+                        title={c.status === "active" ? "Archive" : "Restore"}
+                        aria-label={`${c.status === "active" ? "Archive" : "Restore"} ${c.name}`}
+                        onClick={() => setStatus(c, c.status === "active" ? "archived" : "active")}
+                      >
+                        {c.status === "active" ? (
+                          <Archive className="h-4 w-4" />
+                        ) : (
+                          <ArchiveRestore className="h-4 w-4" />
+                        )}
+                      </Button>
+                      <Button
+                        size="icon"
+                        variant="ghost"
+                        className="text-destructive hover:text-destructive h-8 w-8"
+                        title="Delete"
+                        aria-label={`Delete ${c.name}`}
+                        onClick={() => remove(c)}
+                      >
+                        <Trash2 className="h-4 w-4" />
+                      </Button>
+                    </div>
                   </TableCell>
                 </TableRow>
               ))}
@@ -636,6 +710,50 @@ export function CollegesManager() {
         </div>
       )}
     </div>
+  );
+}
+
+/** A sortable column header: click to sort, shows the active direction. */
+function SortHeader({
+  label,
+  col,
+  sort,
+  dir,
+  onSort,
+  align,
+  className,
+}: {
+  label: string;
+  col: SortKey;
+  sort: SortKey;
+  dir: "asc" | "desc";
+  onSort: (key: SortKey) => void;
+  align?: "right";
+  className?: string;
+}) {
+  const active = sort === col;
+  return (
+    <TableHead className={className}>
+      <button
+        type="button"
+        onClick={() => onSort(col)}
+        aria-label={`Sort by ${label}${active ? (dir === "asc" ? " (ascending)" : " (descending)") : ""}`}
+        className={`group hover:text-foreground -mx-1 flex w-full items-center gap-1 rounded px-1 ${
+          align === "right" ? "justify-end" : ""
+        } ${active ? "text-foreground font-medium" : ""}`}
+      >
+        <span>{label}</span>
+        {active ? (
+          dir === "asc" ? (
+            <ChevronUp className="h-3.5 w-3.5" />
+          ) : (
+            <ChevronDown className="h-3.5 w-3.5" />
+          )
+        ) : (
+          <ChevronsUpDown className="h-3.5 w-3.5 opacity-0 transition-opacity group-hover:opacity-50" />
+        )}
+      </button>
+    </TableHead>
   );
 }
 

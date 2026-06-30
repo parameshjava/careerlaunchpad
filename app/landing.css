@@ -274,6 +274,13 @@
 }
 
 .metro {
+  /* Track padding is asymmetric (small bottom). The dot line sits at the
+     stations-row centre, which is (top-bottom)/2 below the track's own centre;
+     the hub + fan (centred on the tallest child = the track) are shifted down
+     by that same amount so the line meets them. One source of truth here. */
+  --metro-pad-top: 60px;
+  --metro-pad-bottom: 14px;
+  --metro-line-shift: calc((var(--metro-pad-top) - var(--metro-pad-bottom)) / 2);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -308,6 +315,8 @@
   display: flex;
   align-items: center;
   justify-content: center;
+  /* drop onto the dot line (see --metro-line-shift) */
+  transform: translateY(var(--metro-line-shift));
 }
 
 .jf-hub {
@@ -317,11 +326,17 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  padding: 18px;
+  padding: 8px;
   color: #fff;
-  background: var(--brand-gradient-135);
+  background: #fff;
   box-shadow: 0 14px 30px rgba(124, 58, 237, 0.32);
   animation: jf-float 3.6s ease-in-out infinite;
+}
+
+.jf-hub-logo {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
 }
 
 .metro-origin-label {
@@ -348,7 +363,10 @@
   min-width: 0;
   display: flex;
   align-items: center;
-  padding: 60px 46px;
+  /* Less bottom padding: the down-cards sit near the box floor, so a full 60px
+     below them left a large empty band. (The track line tracks the dot row via
+     .metro-stations::before, so trimming this doesn't shift it off the dots.) */
+  padding: var(--metro-pad-top) 46px var(--metro-pad-bottom);
   border: 1.5px solid transparent;
   border-radius: 22px;
   /* Soft cool tint fill so the white step cards pop, plus a blue→violet
@@ -377,13 +395,18 @@
 
 /* Moving dotted track (matches the fan-out dashes): a blue→violet gradient
    revealed through an animated dash mask, so the dots flow toward the steps. */
-.metro-line {
+/* Horizontal track. Drawn as the stations row's own ::before so it always sits
+   on the dot centres (the dots are positioned within this same row) regardless
+   of the box's padding — see the asymmetric bottom padding on .metro-track. */
+.metro-stations::before {
+  content: "";
   position: absolute;
-  left: -50px;
-  right: -50px;
-  top: 50%;
+  /* poke far enough past the stations row to reach the hub (left) and the
+     fan (right), which sit 40px + the box's 46px padding outside this row. */
+  left: -98px;
+  right: -98px;
+  top: calc(50% - 1.25px);
   height: 2.5px;
-  transform: translateY(-50%);
   background: linear-gradient(90deg, var(--brand-blue), var(--brand-violet));
   -webkit-mask: repeating-linear-gradient(90deg, #000 0 3px, transparent 3px 11px);
   mask: repeating-linear-gradient(90deg, #000 0 3px, transparent 3px 11px);
@@ -447,8 +470,12 @@
   animation-name: metro-flow-v-up;
 }
 
+/* The down-cards' drop shadow falls away from the dots (the up-cards' shadow
+   fills the gap), so an equal offset reads as a larger gap below. Pull the
+   down stem + card up a touch so top and bottom look evenly spaced. */
 .metro-station--down .metro-stem {
   top: 50%;
+  height: 28px;
 }
 
 /* All station cards share one width + height for a uniform, scannable grid */
@@ -476,7 +503,7 @@
 }
 
 .metro-station--down .metro-card {
-  top: calc(50% + 38px);
+  top: calc(50% + 28px);
 }
 
 .metro-card-icon {
@@ -511,6 +538,8 @@
   display: flex;
   align-items: center;
   gap: 2px;
+  /* drop onto the dot line (see --metro-line-shift) */
+  transform: translateY(var(--metro-line-shift));
 }
 
 .metro-fan {
@@ -652,7 +681,6 @@
   }
   .flow-line,
   .flow-curve,
-  .metro-line,
   .metro-stem,
   .metro-stations::before {
     animation: none;
@@ -674,6 +702,7 @@
     flex-direction: column;
     gap: 10px;
     margin-bottom: 16px;
+    transform: none;
   }
   /* Label sits back under the hub in the stacked layout */
   .metro-origin-label {
@@ -696,10 +725,6 @@
     padding: 14px 0 12px;
     margin: 0 -14px 12px;
     /* gradient divider line (matches the box border) inherited from base */
-  }
-  /* Rail lives inside the stations area, below the header */
-  .metro-line {
-    display: none;
   }
   .metro-stations {
     position: relative;
@@ -761,6 +786,7 @@
     align-items: stretch;
     gap: 14px;
     margin-top: 20px;
+    transform: none;
   }
   .metro-fan {
     display: none;

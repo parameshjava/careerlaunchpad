@@ -12,24 +12,6 @@ const ic = {
   fill: "none",
 };
 
-// Group of students (the origin hub). Three figures so it reads as "many
-// students", not one — a small grad cap on the front figure keeps the theme.
-function StudentsIcon() {
-  return (
-    <svg viewBox="0 0 24 24" width="100%" height="100%" aria-hidden="true">
-      {/* back-left and back-right peers */}
-      <circle {...ic} cx="5.5" cy="9" r="1.9" />
-      <path {...ic} d="M2.5 18.5c0-2.3 1.3-3.6 3-3.6" />
-      <circle {...ic} cx="18.5" cy="9" r="1.9" />
-      <path {...ic} d="M21.5 18.5c0-2.3-1.3-3.6-3-3.6" />
-      {/* front student with graduation cap */}
-      <path {...ic} d="M12 4 8 6l4 2 4-2-4-2Z" />
-      <path {...ic} d="M16 6v2.2" />
-      <circle {...ic} cx="12" cy="11.2" r="2.4" />
-      <path {...ic} d="M7.5 19c0-2.9 2-4.4 4.5-4.4s4.5 1.5 4.5 4.4" />
-    </svg>
-  );
-}
 function RegisterIcon() {
   return (
     <svg viewBox="0 0 24 24" width="100%" height="100%" aria-hidden="true">
@@ -187,7 +169,8 @@ export default function JourneyGraphic() {
         {/* Origin */}
         <div className="metro-origin">
           <div className="jf-hub">
-            <StudentsIcon />
+            {/* eslint-disable-next-line @next/next/no-img-element */}
+            <img src="/student-logo.svg" alt="Students" className="jf-hub-logo" />
           </div>
           <span className="metro-origin-label">Students</span>
         </div>
@@ -200,7 +183,6 @@ export default function JourneyGraphic() {
               <span className="jt-accent">Launchpad</span>
             </span>
           </div>
-          <span className="metro-line" aria-hidden="true" />
           <ol className="metro-stations">
             {steps.map((s, i) => (
               <li
