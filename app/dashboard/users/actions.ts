@@ -126,6 +126,48 @@ export async function updateMemberRoles(
   return { ok: true };
 }
 
+/** Set (or clear) a member's office notification email. Empty string clears it.
+ * notification_email RLS is user.manage, so the direct writes are authorized. */
+export async function setMemberOfficeEmail(
+  userId: string,
+  email: string,
+): Promise<{ ok?: boolean; error?: string }> {
+  try {
+    await requirePermission("user.manage");
+  } catch {
+    return { error: "You don't have permission to set office emails." };
+  }
+  const trimmed = email.trim().toLowerCase();
+  if (trimmed && !/^[^\s@]+@[^\s@.]+(?:\.[^\s@.]+)+$/.test(trimmed)) {
+    return { error: "Enter a valid office email." };
+  }
+  const supabase = await createClient();
+  // Replace any existing office address (one office address per member).
+  await supabase.from("notification_email").delete().eq("user_id", userId).eq("kind", "office");
+  if (trimmed) {
+    const { error } = await supabase
+      .from("notification_email")
+      .insert({ user_id: userId, email: trimmed, kind: "office", active: true });
+    if (error) return { error: error.message };
+  }
+  revalidatePath("/dashboard/users");
+  return { ok: true };
+}
+
+/** Soft-delete a platform member (🗑️). Guards live in soft_delete_member(). */
+export async function deleteMember(userId: string): Promise<{ ok?: boolean; error?: string }> {
+  try {
+    await requirePermission("user.manage");
+  } catch {
+    return { error: "You don't have permission to delete members." };
+  }
+  const supabase = await createClient();
+  const { error } = await supabase.rpc("soft_delete_member", { p_user_id: userId });
+  if (error) return { error: error.message };
+  revalidatePath("/dashboard/users");
+  return { ok: true };
+}
+
 /** Suspend or reactivate a user. */
 export async function setUserStatus(formData: FormData): Promise<void> {
   await requirePermission("user.suspend");
