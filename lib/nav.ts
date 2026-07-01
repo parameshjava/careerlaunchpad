@@ -113,7 +113,7 @@ export function buildNav(ctx: AuthContext): NavSection[] {
 
   // Console surfaces — only include items the user is actually permitted to use.
   const consoleRole = ctx.roles.some((r) =>
-    ["owner", "platform_admin", "college_admin", "support"].includes(r),
+    ["owner", "platform_admin", "college_admin", "support", "coordinator"].includes(r),
   );
   if (consoleRole) {
     const admin: NavItem[] = [];

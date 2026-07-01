@@ -47,7 +47,7 @@ function readProviderProfile(meta: Record<string, unknown> | undefined) {
 }
 
 /** Roles that use the /dashboard console. */
-const CONSOLE_ROLES = ["owner", "platform_admin", "college_admin", "support"];
+const CONSOLE_ROLES = ["owner", "platform_admin", "college_admin", "support", "coordinator"];
 
 function computeHomePath(roles: string[], provisioned: boolean): string {
   if (!provisioned) return "/auth/no-access";

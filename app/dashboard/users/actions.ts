@@ -10,11 +10,10 @@ export type InviteState = { ok?: boolean; error?: string; message?: string };
 const SITE_URL = process.env.NEXT_PUBLIC_SITE_URL ?? "http://localhost:3000";
 const INVITE_TTL_DAYS = 14;
 
-// Roles the Owner can invite into (not 'owner' — that's seeded/managed separately).
-// 'mentor' is unscoped (no college/employer), like support/platform_admin; the mentor
-// lands on /mentor and their profile row is created on first save (upsert in
-// /api/mentor/profile), so no provisioning stub is needed.
-const INVITABLE = new Set(["student", "college_admin", "employer", "mentor", "support", "platform_admin"]);
+// Roles that can be invited. 'coordinator' is unscoped (like support/mentor/
+// platform_admin). 'owner' is invitable too but ONLY by an existing owner (the
+// caller-holds-'*' check in createInvite), mirroring set_member_roles' guardrail.
+const INVITABLE = new Set(["student", "college_admin", "employer", "mentor", "support", "platform_admin", "coordinator", "owner"]);
 
 /** Owner creates an invite. Consumed on the invitee's first social sign-in. */
 export async function createInvite(_prev: InviteState, formData: FormData): Promise<InviteState> {
@@ -31,6 +30,10 @@ export async function createInvite(_prev: InviteState, formData: FormData): Prom
   }
   if (!INVITABLE.has(roleKey)) {
     return { error: "Choose a role to invite." };
+  }
+  // Only an existing Owner may invite another Owner (UI hides it; enforced here).
+  if (roleKey === "owner" && !ctx.permissions.has("*")) {
+    return { error: "Only an owner can invite another owner." };
   }
   if ((roleKey === "student" || roleKey === "college_admin") && !collegeId) {
     return { error: "Select the college for this user." };
@@ -98,6 +101,29 @@ export async function revokeInvite(formData: FormData): Promise<void> {
   const id = String(formData.get("id") ?? "");
   await supabase.from("invite").update({ status: "revoked" }).eq("id", id);
   revalidatePath("/dashboard/users");
+}
+
+/**
+ * Grant/revoke a member's unscoped staff roles. Delegates to set_member_roles()
+ * which enforces the escalation guardrail + last-owner protection in the DB.
+ */
+export async function updateMemberRoles(
+  userId: string,
+  roleKeys: string[],
+): Promise<{ ok?: boolean; error?: string }> {
+  try {
+    await requirePermission("role.assign");
+  } catch {
+    return { error: "You don't have permission to assign roles." };
+  }
+  const supabase = await createClient();
+  const { error } = await supabase.rpc("set_member_roles", {
+    p_user_id: userId,
+    p_role_keys: roleKeys,
+  });
+  if (error) return { error: error.message };
+  revalidatePath("/dashboard/users");
+  return { ok: true };
 }
 
 /** Suspend or reactivate a user. */

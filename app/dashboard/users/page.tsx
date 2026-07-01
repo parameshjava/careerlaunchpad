@@ -3,6 +3,10 @@ import { getAuthContext, can } from "@/lib/auth";
 import { createClient } from "@/lib/supabase/server";
 import { resendInvite, revokeInvite, setUserStatus } from "./actions";
 import { InviteForm } from "./invite-form";
+import { ManageRolesDialog } from "./manage-roles-dialog";
+
+// Privilege ladder (mirrors role.rank) for computing the caller's assign reach.
+const ROLE_RANK: Record<string, number> = { owner: 3, platform_admin: 2, coordinator: 1, support: 1 };
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
@@ -23,6 +27,9 @@ export default async function UsersPage() {
   const canResend = can(ctx, "invite.resend");
   const canViewUsers = can(ctx, "user.view");
   const canSuspend = can(ctx, "user.suspend");
+  const canAssignRoles = can(ctx, "role.assign");
+  const isOwner = ctx.permissions.has("*") || ctx.roles.includes("owner");
+  const callerRank = Math.max(0, ...ctx.roles.map((r) => ROLE_RANK[r] ?? 0));
   if (!canViewUsers && !canInvite && !canResend) redirect("/dashboard");
 
   const supabase = await createClient();
@@ -58,7 +65,7 @@ export default async function UsersPage() {
             </CardDescription>
           </CardHeader>
           <CardContent>
-            <InviteForm employers={employers ?? []} />
+            <InviteForm employers={employers ?? []} canInviteOwner={isOwner} />
           </CardContent>
         </Card>
       )}
@@ -134,7 +141,11 @@ export default async function UsersPage() {
               </TableHeader>
               <TableBody>
                 {(users ?? []).map((u) => {
-                  const roles = (u.user_role ?? []).map((ur: { role: Role | Role[] }) => roleName(ur.role)).join(", ") || "—";
+                  const roleRows = (u.user_role ?? []) as { role: Role | Role[] }[];
+                  const roles = roleRows.map((ur) => roleName(ur.role)).join(", ") || "—";
+                  const roleKeys = roleRows
+                    .map((ur) => (Array.isArray(ur.role) ? ur.role[0]?.key : ur.role?.key))
+                    .filter((k): k is string => !!k);
                   const suspended = u.status === "suspended";
                   return (
                     <TableRow key={u.id}>
@@ -144,15 +155,24 @@ export default async function UsersPage() {
                         <Badge variant={suspended ? "outline" : "secondary"}>{u.status}</Badge>
                       </TableCell>
                       <TableCell className="text-right">
-                        {canSuspend && u.id !== ctx.userId && (
-                          <form action={setUserStatus} className="flex justify-end">
-                            <input type="hidden" name="id" value={u.id} />
-                            <input type="hidden" name="status" value={suspended ? "active" : "suspended"} />
-                            <Button type="submit" variant="outline" size="sm">
-                              {suspended ? "Reactivate" : "Suspend"}
-                            </Button>
-                          </form>
-                        )}
+                        <div className="flex justify-end gap-2">
+                          {canAssignRoles && (
+                            <ManageRolesDialog
+                              user={{ id: u.id, email: u.email, roleKeys }}
+                              callerRank={callerRank}
+                              isOwner={isOwner}
+                            />
+                          )}
+                          {canSuspend && u.id !== ctx.userId && (
+                            <form action={setUserStatus}>
+                              <input type="hidden" name="id" value={u.id} />
+                              <input type="hidden" name="status" value={suspended ? "active" : "suspended"} />
+                              <Button type="submit" variant="outline" size="sm">
+                                {suspended ? "Reactivate" : "Suspend"}
+                              </Button>
+                            </form>
+                          )}
+                        </div>
                       </TableCell>
                     </TableRow>
                   );

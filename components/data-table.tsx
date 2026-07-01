@@ -38,6 +38,8 @@ interface DataTableProps<TData, TValue> {
   /** Column id used by the search box (global-ish text filter). */
   searchKey?: string;
   searchPlaceholder?: string;
+  /** Passed through to TanStack `table.options.meta` (e.g. per-row capability flags). */
+  meta?: Record<string, unknown>;
 }
 
 export function DataTable<TData, TValue>({
@@ -45,6 +47,7 @@ export function DataTable<TData, TValue>({
   data,
   searchKey,
   searchPlaceholder = "Search…",
+  meta,
 }: DataTableProps<TData, TValue>) {
   const [sorting, setSorting] = React.useState<SortingState>([]);
   const [columnFilters, setColumnFilters] = React.useState<ColumnFiltersState>(
@@ -66,6 +69,7 @@ export function DataTable<TData, TValue>({
     onColumnVisibilityChange: setColumnVisibility,
     onRowSelectionChange: setRowSelection,
     state: { sorting, columnFilters, columnVisibility, rowSelection },
+    meta,
   });
 
   return (

@@ -16,6 +16,7 @@ const ROLES = [
   { key: "employer", label: "Employer" },
   { key: "mentor", label: "Mentor" },
   { key: "platform_admin", label: "CareerLaunchpad Admin" },
+  { key: "coordinator", label: "Coordinator" },
   { key: "support", label: "Support Team" },
 ];
 
@@ -24,7 +25,9 @@ const selectClass =
 
 const EMAIL_RE = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
 
-export function InviteForm({ employers }: { employers: Employer[] }) {
+export function InviteForm({ employers, canInviteOwner = false }: { employers: Employer[]; canInviteOwner?: boolean }) {
+  // Owner is invitable only by an owner (server re-checks in createInvite).
+  const roles = canInviteOwner ? [{ key: "owner", label: "Owner" }, ...ROLES] : ROLES;
   const [state, formAction, pending] = useActionState<InviteState, FormData>(createInvite, {});
   // All field values live here so we can tell when the form is complete and only
   // then reveal the submit button (which required fields apply depends on role).
@@ -68,7 +71,7 @@ export function InviteForm({ employers }: { employers: Employer[] }) {
           required
         >
           <option value="" disabled>Select a role…</option>
-          {ROLES.map((r) => (
+          {roles.map((r) => (
             <option key={r.key} value={r.key}>{r.label}</option>
           ))}
         </select>
