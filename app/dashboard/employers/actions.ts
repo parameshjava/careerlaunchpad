@@ -9,6 +9,7 @@ import { requirePermission } from "@/lib/auth";
 export async function createEmployer(
   name: string,
   website: string,
+  logoUrl: string = "",
 ): Promise<{ ok?: boolean; id?: string; name?: string; error?: string }> {
   let ctx;
   try {
@@ -21,7 +22,7 @@ export async function createEmployer(
   const supabase = await createClient();
   const { data, error } = await supabase
     .from("employer")
-    .insert({ name: trimmed, website: website.trim() || null, created_by: ctx.userId })
+    .insert({ name: trimmed, website: website.trim() || null, logo_url: logoUrl.trim() || null, created_by: ctx.userId })
     .select("id, name")
     .single();
   if (error) return { error: error.message };

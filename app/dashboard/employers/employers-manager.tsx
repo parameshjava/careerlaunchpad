@@ -114,7 +114,7 @@ function EmployerDialog({ mode, employer }: { mode: "create" | "edit"; employer?
   async function save() {
     setBusy(true); setError(null);
     const res = mode === "create"
-      ? await createEmployer(name, website)
+      ? await createEmployer(name, website, logo)
       : await updateEmployer(employer!.id, name, website, logo);
     setBusy(false);
     if (res.error) { setError(res.error); return; }
@@ -143,12 +143,10 @@ function EmployerDialog({ mode, employer }: { mode: "create" | "edit"; employer?
               <Label htmlFor="emp-site">Website <span className="text-muted-foreground">(optional)</span></Label>
               <Input id="emp-site" value={website} onChange={(e) => setWebsite(e.target.value)} placeholder="https://acme.com" />
             </div>
-            {mode === "edit" && (
-              <div className="grid gap-1.5">
-                <Label htmlFor="emp-logo">Logo URL <span className="text-muted-foreground">(optional)</span></Label>
-                <Input id="emp-logo" value={logo} onChange={(e) => setLogo(e.target.value)} placeholder="https://…/logo.png" />
-              </div>
-            )}
+            <div className="grid gap-1.5">
+              <Label htmlFor="emp-logo">Logo URL <span className="text-muted-foreground">(optional)</span></Label>
+              <Input id="emp-logo" value={logo} onChange={(e) => setLogo(e.target.value)} placeholder="https://…/logo.png" />
+            </div>
             {error && <p className="text-destructive text-sm">{error}</p>}
           </div>
           <DialogFooter>
