@@ -8,7 +8,7 @@ import { PlatformUsersTable, type MemberRow, type Caps } from "./platform-users-
 const ROLE_RANK: Record<string, number> = { owner: 3, platform_admin: 2, coordinator: 1, support: 1 };
 
 type Role = { key?: string; name?: string };
-const one = (r: Role | Role[] | null | undefined): Role | null => (Array.isArray(r) ? r[0] ?? null : r ?? null);
+const one = <T,>(r: T | T[] | null | undefined): T | null => (Array.isArray(r) ? r[0] ?? null : r ?? null);
 
 export default async function UsersPage() {
   const ctx = await getAuthContext();
@@ -38,7 +38,7 @@ export default async function UsersPage() {
       .order("created_at", { ascending: false }),
     supabase
       .from("app_user")
-      .select("id, email, status, full_name, phone, user_role(role:role_id(key,name)), notification_email(email,kind,active)")
+      .select("id, email, status, full_name, phone, user_role(role:role_id(key,name)), notification_email(email,kind,active), mentor_profile(full_name,phone)")
       .neq("status", "deleted")
       .order("created_at", { ascending: false }),
   ]);
@@ -52,12 +52,15 @@ export default async function UsersPage() {
       const roleKeys = roles.map((r) => r.key).filter((k): k is string => !!k);
       const officeRow = ((u.notification_email ?? []) as { email: string; kind: string; active: boolean }[])
         .find((n) => n.kind === "office" && n.active);
+      // A mentor's own profile carries their name/phone; fall back to it when the
+      // app_user columns aren't set (readable to user.manage via RLS).
+      const mp = one(u.mentor_profile as { full_name?: string | null; phone?: string | null }[] | { full_name?: string | null; phone?: string | null } | null);
       return {
         kind: "user" as const,
         id: u.id as string,
-        fullName: (u.full_name as string | null) ?? null,
+        fullName: (u.full_name as string | null) || mp?.full_name || null,
         email: u.email as string,
-        phone: (u.phone as string | null) ?? null,
+        phone: (u.phone as string | null) || mp?.phone || null,
         officeEmail: officeRow?.email ?? null,
         roleKeys,
         roleLabel: roles.map((r) => r.name).filter(Boolean).join(", "),
