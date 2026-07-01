@@ -1,6 +1,8 @@
+import Link from "next/link";
 import { redirect } from "next/navigation";
 import { getAuthContext, can } from "@/lib/auth";
 import { createClient } from "@/lib/supabase/server";
+import { Button } from "@/components/ui/button";
 import { InviteDialog } from "./invite-dialog";
 import { PlatformUsersTable, type MemberRow, type Caps } from "./platform-users-table";
 
@@ -100,7 +102,14 @@ export default async function UsersPage() {
             Students are managed under the <b>Students</b> section.
           </p>
         </div>
-        {canInvite && <InviteDialog employers={employers ?? []} canInviteOwner={isOwner} />}
+        {canInvite && (
+          <div className="flex flex-wrap gap-2">
+            <Button asChild variant="outline">
+              <Link href="/dashboard/users/add-mentor">Add mentor</Link>
+            </Button>
+            <InviteDialog employers={employers ?? []} canInviteOwner={isOwner} />
+          </div>
+        )}
       </div>
 
       {usersError && (
