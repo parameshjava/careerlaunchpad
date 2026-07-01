@@ -41,3 +41,24 @@ export async function setStudentStatus(formData: FormData): Promise<void> {
 
   revalidatePath("/dashboard");
 }
+
+/**
+ * Soft-delete a student (hide from the console). `kind` distinguishes the two
+ * grid sources: 'registered' (app_user, must be student-only) vs 'intake'
+ * (imported/invited). Authorized by student.delete via soft_delete_student().
+ */
+export async function deleteStudent(
+  id: string,
+  kind: "registered" | "intake",
+): Promise<{ ok?: boolean; error?: string }> {
+  try {
+    await requirePermission("student.delete");
+  } catch {
+    return { error: "You don't have permission to delete students." };
+  }
+  const supabase = await createClient();
+  const { error } = await supabase.rpc("soft_delete_student", { p_id: id, p_kind: kind });
+  if (error) return { error: error.message };
+  revalidatePath("/dashboard");
+  return { ok: true };
+}

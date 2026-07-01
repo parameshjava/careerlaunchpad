@@ -61,7 +61,7 @@ export async function fetchStudents(
   let profileQ = supabase
     .from("student_profile")
     .select(
-      "user_id, full_name, degree, branch, updated_at, skills, career_goal_ids, primary_career_goal_id, status, registration_status, college:college_id(name), app_user:user_id(email)",
+      "user_id, full_name, degree, branch, updated_at, skills, career_goal_ids, primary_career_goal_id, status, registration_status, college:college_id(name), app_user:user_id(email, status)",
     )
     .order("updated_at", { ascending: false });
 
@@ -94,7 +94,10 @@ export async function fetchStudents(
     };
   });
 
-  const registered: Student[] = (profiles.data ?? []).map((r) => {
+  const registered: Student[] = (profiles.data ?? [])
+    // Soft-deleted users (app_user.status='deleted') are hidden from the grid.
+    .filter((r) => one<{ status?: string }>(r.app_user as never)?.status !== "deleted")
+    .map((r) => {
     const college = one<CollegeRef>(r.college as never);
     const user = one<{ email: string | null }>(r.app_user as never);
     return {

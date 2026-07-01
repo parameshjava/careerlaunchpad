@@ -10,11 +10,10 @@ export type InviteState = { ok?: boolean; error?: string; message?: string };
 const SITE_URL = process.env.NEXT_PUBLIC_SITE_URL ?? "http://localhost:3000";
 const INVITE_TTL_DAYS = 14;
 
-// Roles the Owner can invite into (not 'owner' — that's seeded/managed separately).
-// 'mentor' is unscoped (no college/employer), like support/platform_admin; the mentor
-// lands on /mentor and their profile row is created on first save (upsert in
-// /api/mentor/profile), so no provisioning stub is needed.
-const INVITABLE = new Set(["student", "college_admin", "employer", "mentor", "support", "platform_admin"]);
+// Roles that can be invited. 'coordinator' is unscoped (like support/mentor/
+// platform_admin). 'owner' is invitable too but ONLY by an existing owner (the
+// caller-holds-'*' check in createInvite), mirroring set_member_roles' guardrail.
+const INVITABLE = new Set(["student", "college_admin", "employer", "mentor", "support", "platform_admin", "coordinator", "owner"]);
 
 /** Owner creates an invite. Consumed on the invitee's first social sign-in. */
 export async function createInvite(_prev: InviteState, formData: FormData): Promise<InviteState> {
@@ -31,6 +30,10 @@ export async function createInvite(_prev: InviteState, formData: FormData): Prom
   }
   if (!INVITABLE.has(roleKey)) {
     return { error: "Choose a role to invite." };
+  }
+  // Only an existing Owner may invite another Owner (UI hides it; enforced here).
+  if (roleKey === "owner" && !ctx.permissions.has("*")) {
+    return { error: "Only an owner can invite another owner." };
   }
   if ((roleKey === "student" || roleKey === "college_admin") && !collegeId) {
     return { error: "Select the college for this user." };
@@ -98,6 +101,93 @@ export async function revokeInvite(formData: FormData): Promise<void> {
   const id = String(formData.get("id") ?? "");
   await supabase.from("invite").update({ status: "revoked" }).eq("id", id);
   revalidatePath("/dashboard/users");
+}
+
+/**
+ * Grant/revoke a member's unscoped staff roles. Delegates to set_member_roles()
+ * which enforces the escalation guardrail + last-owner protection in the DB.
+ */
+export async function updateMemberRoles(
+  userId: string,
+  roleKeys: string[],
+): Promise<{ ok?: boolean; error?: string }> {
+  try {
+    await requirePermission("role.assign");
+  } catch {
+    return { error: "You don't have permission to assign roles." };
+  }
+  const supabase = await createClient();
+  const { error } = await supabase.rpc("set_member_roles", {
+    p_user_id: userId,
+    p_role_keys: roleKeys,
+  });
+  if (error) return { error: error.message };
+  revalidatePath("/dashboard/users");
+  return { ok: true };
+}
+
+/** Set (or clear) a member's office notification email. Empty string clears it.
+ * notification_email RLS is user.manage, so the direct writes are authorized. */
+export async function setMemberOfficeEmail(
+  userId: string,
+  email: string,
+): Promise<{ ok?: boolean; error?: string }> {
+  try {
+    await requirePermission("user.manage");
+  } catch {
+    return { error: "You don't have permission to set office emails." };
+  }
+  const trimmed = email.trim().toLowerCase();
+  if (trimmed && !/^[^\s@]+@[^\s@.]+(?:\.[^\s@.]+)+$/.test(trimmed)) {
+    return { error: "Enter a valid office email." };
+  }
+  const supabase = await createClient();
+  // Replace any existing office address (one office address per member).
+  await supabase.from("notification_email").delete().eq("user_id", userId).eq("kind", "office");
+  if (trimmed) {
+    const { error } = await supabase
+      .from("notification_email")
+      .insert({ user_id: userId, email: trimmed, kind: "office", active: true });
+    if (error) return { error: error.message };
+  }
+  revalidatePath("/dashboard/users");
+  return { ok: true };
+}
+
+/** Edit a member's name + phone (from the ✏️ dialog). Only these two columns are
+ * written, so status/roles are untouched; app_user RLS allows user.manage. */
+export async function updateMemberProfile(
+  userId: string,
+  fullName: string,
+  phone: string,
+): Promise<{ ok?: boolean; error?: string }> {
+  try {
+    await requirePermission("user.manage");
+  } catch {
+    return { error: "You don't have permission to edit members." };
+  }
+  const supabase = await createClient();
+  const { error } = await supabase
+    .from("app_user")
+    .update({ full_name: fullName.trim() || null, phone: phone.trim() || null })
+    .eq("id", userId);
+  if (error) return { error: error.message };
+  revalidatePath("/dashboard/users");
+  return { ok: true };
+}
+
+/** Soft-delete a platform member (🗑️). Guards live in soft_delete_member(). */
+export async function deleteMember(userId: string): Promise<{ ok?: boolean; error?: string }> {
+  try {
+    await requirePermission("user.manage");
+  } catch {
+    return { error: "You don't have permission to delete members." };
+  }
+  const supabase = await createClient();
+  const { error } = await supabase.rpc("soft_delete_member", { p_user_id: userId });
+  if (error) return { error: error.message };
+  revalidatePath("/dashboard/users");
+  return { ok: true };
 }
 
 /** Suspend or reactivate a user. */

@@ -1,27 +1,26 @@
 import { redirect } from "next/navigation";
 import { getAuthContext, can } from "@/lib/auth";
-import { BankClient } from "./bank-client";
+import { QuestionsClient } from "./questions-client";
 
-// Question bank — the GLOBAL CareerLaunchPad asset (migration 021). Subjects,
-// chapters, passages and questions are shared across all colleges and curated by
-// the central team. No college is involved here; only exams are per-college.
-export default async function QuestionBankPage() {
+// Questions — browse & author the GLOBAL question bank (migration 021). Shared
+// across all colleges. Subjects/chapters/passages are curated on the separate
+// "Subjects & Chapters" page (/dashboard/questions/structure).
+export default async function QuestionsPage() {
   const ctx = await getAuthContext();
   if (!ctx) redirect("/auth/login");
   if (!ctx.provisioned || ctx.status === "suspended") redirect("/auth/no-access");
-  const canManageSubjects = ctx.permissions.has("*") || can(ctx, "exam.subject.manage");
-  const canManageQuestions = ctx.permissions.has("*") || can(ctx, "exam.question.manage");
-  if (!canManageSubjects && !canManageQuestions) redirect("/dashboard");
+  if (!(ctx.permissions.has("*") || can(ctx, "exam.question.manage"))) redirect("/dashboard");
 
   return (
     <div className="mx-auto max-w-5xl">
       <header className="mb-6">
-        <h1 className="text-2xl font-bold tracking-tight">Question bank</h1>
+        <h1 className="text-2xl font-bold tracking-tight">Questions</h1>
         <p className="text-muted-foreground mt-1 text-sm">
-          Shared across all colleges. Exams draw from this bank by subject, chapter and difficulty.
+          Author and manage questions. They draw on subjects &amp; chapters curated under
+          <b> Subjects &amp; Chapters</b>.
         </p>
       </header>
-      <BankClient canManageSubjects={canManageSubjects} canManageQuestions={canManageQuestions} />
+      <QuestionsClient />
     </div>
   );
 }

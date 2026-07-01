@@ -3,6 +3,7 @@
 import { useEffect, useRef, useState } from "react";
 import { useActionState } from "react";
 import { createInvite, type InviteState } from "./actions";
+import { createEmployer } from "../employers/actions";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
@@ -10,12 +11,14 @@ import { Label } from "@/components/ui/label";
 type College = { id: string; name: string; place: string | null; state?: string | null };
 type Employer = { id: string; name: string };
 
+// Platform-user roles only. Students are onboarded via the Students section
+// (single "+ Student" or bulk Import), not this generic invite form.
 const ROLES = [
-  { key: "student", label: "Student" },
   { key: "college_admin", label: "College Admin" },
   { key: "employer", label: "Employer" },
   { key: "mentor", label: "Mentor" },
-  { key: "platform_admin", label: "CareerLaunchpad Admin" },
+  { key: "platform_admin", label: "Admin" },
+  { key: "coordinator", label: "Coordinator" },
   { key: "support", label: "Support Team" },
 ];
 
@@ -24,7 +27,9 @@ const selectClass =
 
 const EMAIL_RE = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
 
-export function InviteForm({ employers }: { employers: Employer[] }) {
+export function InviteForm({ employers, canInviteOwner = false }: { employers: Employer[]; canInviteOwner?: boolean }) {
+  // Owner is invitable only by an owner (server re-checks in createInvite).
+  const roles = canInviteOwner ? [{ key: "owner", label: "Owner" }, ...ROLES] : ROLES;
   const [state, formAction, pending] = useActionState<InviteState, FormData>(createInvite, {});
   // All field values live here so we can tell when the form is complete and only
   // then reveal the submit button (which required fields apply depends on role).
@@ -32,6 +37,23 @@ export function InviteForm({ employers }: { employers: Employer[] }) {
   const [role, setRole] = useState("");
   const [college, setCollege] = useState<College | null>(null);
   const [employerId, setEmployerId] = useState("");
+  // Local employer list so a just-created organization appears + is selected.
+  const [emps, setEmps] = useState<Employer[]>(employers);
+  const [showNewEmp, setShowNewEmp] = useState(false);
+  const [newEmpName, setNewEmpName] = useState("");
+  const [newEmpSite, setNewEmpSite] = useState("");
+  const [creatingEmp, setCreatingEmp] = useState(false);
+  const [empError, setEmpError] = useState<string | null>(null);
+
+  async function addEmployer() {
+    setCreatingEmp(true); setEmpError(null);
+    const res = await createEmployer(newEmpName, newEmpSite);
+    setCreatingEmp(false);
+    if (res.error || !res.id) { setEmpError(res.error ?? "Could not add organization."); return; }
+    setEmps((prev) => [...prev, { id: res.id!, name: res.name ?? newEmpName }].sort((a, b) => a.name.localeCompare(b.name)));
+    setEmployerId(res.id);
+    setNewEmpName(""); setNewEmpSite(""); setShowNewEmp(false);
+  }
 
   const needsCollege = role === "student" || role === "college_admin";
   const needsEmployer = role === "employer";
@@ -68,7 +90,7 @@ export function InviteForm({ employers }: { employers: Employer[] }) {
           required
         >
           <option value="" disabled>Select a role…</option>
-          {ROLES.map((r) => (
+          {roles.map((r) => (
             <option key={r.key} value={r.key}>{r.label}</option>
           ))}
         </select>
@@ -88,10 +110,28 @@ export function InviteForm({ employers }: { employers: Employer[] }) {
             required
           >
             <option value="" disabled>Select an employer…</option>
-            {employers.map((e) => (
+            {emps.map((e) => (
               <option key={e.id} value={e.id}>{e.name}</option>
             ))}
           </select>
+
+          {showNewEmp ? (
+            <div className="mt-1 grid gap-2 rounded-md border p-3">
+              <Input placeholder="Organization name" value={newEmpName} onChange={(e) => setNewEmpName(e.target.value)} />
+              <Input placeholder="Website (optional)" value={newEmpSite} onChange={(e) => setNewEmpSite(e.target.value)} />
+              {empError && <p className="text-destructive text-xs">{empError}</p>}
+              <div className="flex gap-2">
+                <Button type="button" size="sm" onClick={addEmployer} disabled={creatingEmp || !newEmpName.trim()}>
+                  {creatingEmp ? "Adding…" : "Create organization"}
+                </Button>
+                <Button type="button" size="sm" variant="ghost" onClick={() => { setShowNewEmp(false); setEmpError(null); }}>Cancel</Button>
+              </div>
+            </div>
+          ) : (
+            <button type="button" className="text-primary justify-self-start text-sm hover:underline" onClick={() => setShowNewEmp(true)}>
+              + Add new organization
+            </button>
+          )}
         </div>
       )}
 

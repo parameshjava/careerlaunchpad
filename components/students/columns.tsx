@@ -1,7 +1,8 @@
 "use client";
 
-import { ColumnDef } from "@tanstack/react-table";
+import { ColumnDef, type Table } from "@tanstack/react-table";
 import { ArrowUpDown, MoreHorizontal } from "lucide-react";
+import { useRouter } from "next/navigation";
 
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
@@ -15,6 +16,7 @@ import {
   DropdownMenuTrigger,
 } from "@/components/ui/dropdown-menu";
 import type { Student, StudentStage } from "@/lib/students-query";
+import { deleteStudent } from "@/app/dashboard/students/actions";
 
 const stageStyles: Record<StudentStage, string> = {
   Registered: "bg-emerald-100 text-emerald-700 dark:bg-emerald-950 dark:text-emerald-300",
@@ -112,25 +114,50 @@ export const columns: ColumnDef<Student>[] = [
   {
     id: "actions",
     enableHiding: false,
-    cell: ({ row }) => (
-      <DropdownMenu>
-        <DropdownMenuTrigger asChild>
-          <Button variant="ghost" className="size-8 p-0">
-            <span className="sr-only">Open menu</span>
-            <MoreHorizontal className="size-4" />
-          </Button>
-        </DropdownMenuTrigger>
-        <DropdownMenuContent align="end">
-          <DropdownMenuLabel>Actions</DropdownMenuLabel>
-          <DropdownMenuItem
-            onClick={() => navigator.clipboard.writeText(row.original.email)}
-          >
-            Copy email
-          </DropdownMenuItem>
-          <DropdownMenuSeparator />
-          <DropdownMenuItem>View profile</DropdownMenuItem>
-        </DropdownMenuContent>
-      </DropdownMenu>
-    ),
+    cell: ({ row, table }) => <StudentActions student={row.original} table={table} />,
   },
 ];
+
+// Row action menu. Reads `canDelete` from the table meta (set server-side from
+// the student.delete permission) to decide whether to offer soft-delete.
+function StudentActions({ student, table }: { student: Student; table: Table<Student> }) {
+  const router = useRouter();
+  const canDelete = (table.options.meta as { canDelete?: boolean } | undefined)?.canDelete ?? false;
+
+  async function onDelete() {
+    if (!confirm(`Delete ${student.name || student.email}? They'll be removed from the list.`)) return;
+    const kind = student.stage === "Registered" ? "registered" : "intake";
+    const res = await deleteStudent(student.id, kind);
+    if (res.error) { alert(res.error); return; }
+    router.refresh();
+  }
+
+  return (
+    <DropdownMenu>
+      <DropdownMenuTrigger asChild>
+        <Button variant="ghost" className="size-8 p-0">
+          <span className="sr-only">Open menu</span>
+          <MoreHorizontal className="size-4" />
+        </Button>
+      </DropdownMenuTrigger>
+      <DropdownMenuContent align="end">
+        <DropdownMenuLabel>Actions</DropdownMenuLabel>
+        <DropdownMenuItem onClick={() => navigator.clipboard.writeText(student.email)}>
+          Copy email
+        </DropdownMenuItem>
+        <DropdownMenuItem>View profile</DropdownMenuItem>
+        {canDelete && (
+          <>
+            <DropdownMenuSeparator />
+            <DropdownMenuItem
+              onClick={onDelete}
+              className="text-destructive focus:text-destructive"
+            >
+              Delete
+            </DropdownMenuItem>
+          </>
+        )}
+      </DropdownMenuContent>
+    </DropdownMenu>
+  );
+}

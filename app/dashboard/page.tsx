@@ -18,6 +18,7 @@ export default async function DashboardPage() {
   const ctx = await getAuthContext();
   const canReview = !!ctx && (ctx.permissions.has("*") || can(ctx, "student.review"));
   const canImport = !!ctx && (ctx.permissions.has("*") || can(ctx, "student.intake.import"));
+  const canDelete = !!ctx && (ctx.permissions.has("*") || can(ctx, "student.delete"));
 
   const supabase = await createClient();
   const data = await fetchStudents(supabase);
@@ -116,6 +117,7 @@ export default async function DashboardPage() {
             data={data}
             searchKey="name"
             searchPlaceholder="Search students…"
+            meta={{ canDelete }}
           />
         </CardContent>
       </Card>
