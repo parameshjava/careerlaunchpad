@@ -18,6 +18,7 @@ import { usePathname } from "next/navigation";
 import {
   BarChart3,
   Building2,
+  ChevronDown,
   ClipboardList,
   GraduationCap,
   Handshake,
@@ -58,6 +59,8 @@ function isActive(pathname: string, href: string): boolean {
   return pathname === href || pathname.startsWith(href + "/");
 }
 
+const sectionKey = (section: NavSection, i: number) => section.title ?? `__untitled_${i}`;
+
 function NavLinks({
   nav,
   pathname,
@@ -69,40 +72,75 @@ function NavLinks({
   collapsed?: boolean;
   onNavigate?: () => void;
 }) {
+  // Titled sections collapse/expand; the one holding the active route starts
+  // open. Untitled sections (no header) always show. Only applies in the full
+  // sidebar — the icon rail shows every item.
+  const [openMap, setOpenMap] = useState<Record<string, boolean>>(() => {
+    const m: Record<string, boolean> = {};
+    nav.forEach((s, i) => {
+      m[sectionKey(s, i)] = s.items.some((it) => isActive(pathname, it.href));
+    });
+    return m;
+  });
+
+  // Keep the active section expanded as the route changes (preserve manual toggles).
+  useEffect(() => {
+    setOpenMap((prev) => {
+      const next = { ...prev };
+      nav.forEach((s, i) => {
+        if (s.items.some((it) => isActive(pathname, it.href))) next[sectionKey(s, i)] = true;
+      });
+      return next;
+    });
+  }, [pathname, nav]);
+
   return (
     <nav className="flex flex-col gap-5 px-3 py-4">
-      {nav.map((section, i) => (
-        <div key={section.title ?? i} className="flex flex-col gap-1">
-          {section.title && !collapsed && (
-            <p className="text-muted-foreground px-3 pb-1 text-xs font-semibold tracking-wider uppercase">
-              {section.title}
-            </p>
-          )}
-          {section.items.map((item) => {
-            const Icon = ICONS[item.icon];
-            const active = isActive(pathname, item.href);
-            return (
-              <Link
-                key={item.href}
-                href={item.href}
-                onClick={onNavigate}
-                aria-current={active ? "page" : undefined}
-                title={collapsed ? item.label : undefined}
-                className={cn(
-                  "flex items-center gap-3 rounded-md py-2 text-sm font-medium transition-colors",
-                  collapsed ? "justify-center px-0" : "px-3",
-                  active
-                    ? "bg-sidebar-accent text-sidebar-accent-foreground"
-                    : "text-sidebar-foreground/75 hover:bg-sidebar-accent/60 hover:text-sidebar-foreground",
-                )}
+      {nav.map((section, i) => {
+        const key = sectionKey(section, i);
+        const hasTitle = !!section.title && !collapsed;
+        // Untitled sections and the icon rail always show their items.
+        const open = collapsed || !section.title || openMap[key];
+        return (
+          <div key={key} className="flex flex-col gap-1">
+            {hasTitle && (
+              <button
+                type="button"
+                onClick={() => setOpenMap((m) => ({ ...m, [key]: !open }))}
+                aria-expanded={open}
+                className="text-muted-foreground hover:text-foreground flex items-center justify-between gap-2 rounded-md px-3 pb-1 text-xs font-semibold tracking-wider uppercase transition-colors"
               >
-                <Icon className="size-4 shrink-0" />
-                {!collapsed && item.label}
-              </Link>
-            );
-          })}
-        </div>
-      ))}
+                <span>{section.title}</span>
+                <ChevronDown className={cn("size-3.5 transition-transform", open ? "" : "-rotate-90")} />
+              </button>
+            )}
+            {open &&
+              section.items.map((item) => {
+                const Icon = ICONS[item.icon];
+                const active = isActive(pathname, item.href);
+                return (
+                  <Link
+                    key={item.href}
+                    href={item.href}
+                    onClick={onNavigate}
+                    aria-current={active ? "page" : undefined}
+                    title={collapsed ? item.label : undefined}
+                    className={cn(
+                      "flex items-center gap-3 rounded-md py-2 text-sm font-medium transition-colors",
+                      collapsed ? "justify-center px-0" : "px-3",
+                      active
+                        ? "bg-sidebar-accent text-sidebar-accent-foreground"
+                        : "text-sidebar-foreground/75 hover:bg-sidebar-accent/60 hover:text-sidebar-foreground",
+                    )}
+                  >
+                    <Icon className="size-4 shrink-0" />
+                    {!collapsed && item.label}
+                  </Link>
+                );
+              })}
+          </div>
+        );
+      })}
     </nav>
   );
 }
