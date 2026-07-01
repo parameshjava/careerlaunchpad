@@ -29,7 +29,7 @@ export default async function UsersPage() {
   const callerRank = Math.max(0, ...ctx.roles.map((r) => ROLE_RANK[r] ?? 0));
 
   const supabase = await createClient();
-  const [{ data: employers }, { data: invites }, { data: users }] = await Promise.all([
+  const [{ data: employers }, { data: invites }, { data: users, error: usersError }] = await Promise.all([
     supabase.from("employer").select("id, name").order("name"),
     supabase
       .from("invite")
@@ -38,7 +38,7 @@ export default async function UsersPage() {
       .order("created_at", { ascending: false }),
     supabase
       .from("app_user")
-      .select("id, email, status, full_name, phone, user_role(role:role_id(key,name)), notification_email(email,kind,active), mentor_profile(full_name,phone)")
+      .select("id, email, status, full_name, phone, user_role(role:role_id(key,name)), notification_email(email,kind,active), mentor_profile!user_id(full_name,phone)")
       .neq("status", "deleted")
       .order("created_at", { ascending: false }),
   ]);
@@ -102,6 +102,10 @@ export default async function UsersPage() {
         </div>
         {canInvite && <InviteDialog employers={employers ?? []} canInviteOwner={isOwner} />}
       </div>
+
+      {usersError && (
+        <p className="text-destructive text-sm">Couldn’t load users: {usersError.message}</p>
+      )}
 
       <div className="bg-card rounded-xl border p-2 shadow-sm">
         <PlatformUsersTable
