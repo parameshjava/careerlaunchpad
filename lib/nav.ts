@@ -116,29 +116,29 @@ export function buildNav(ctx: AuthContext): NavSection[] {
     ["owner", "platform_admin", "college_admin", "support", "coordinator"].includes(r),
   );
   if (consoleRole) {
-    const admin: NavItem[] = [];
-    if (canViewStudents(ctx)) admin.push({ label: "Students", href: "/dashboard", icon: "students" });
-    if (canReviewMentors(ctx)) admin.push({ label: "Mentors", href: "/dashboard/mentors", icon: "mentor" });
+    // Grouped by what the user acts on, one item per home, each permission-gated:
+    //   Students (the domain) · Platform (its people + config) · Question Bank
+    //   (content) · Exams (assessment) · Reports (read-only analytics).
+
+    // Students — everything about students (add/delete live in the row menu).
+    const students: NavItem[] = [];
+    if (canViewStudents(ctx)) students.push({ label: "Students", href: "/dashboard", icon: "students" });
     if (can(ctx, "student.intake.import"))
-      admin.push({ label: "Import", href: "/dashboard/students/import", icon: "import" });
+      students.push({ label: "Import", href: "/dashboard/students/import", icon: "import" });
+
+    // Platform — the people who run it + supporting configuration.
+    const platform: NavItem[] = [];
     if (can(ctx, "user.view") || can(ctx, "user.invite") || can(ctx, "user.manage"))
-      admin.push({ label: "Users", href: "/dashboard/users", icon: "users" });
-    // Owners and CareerLaunchpad admins manage the master college list.
+      platform.push({ label: "Users", href: "/dashboard/users", icon: "users" });
+    if (canReviewMentors(ctx)) platform.push({ label: "Mentors", href: "/dashboard/mentors", icon: "mentor" });
     if (can(ctx, "college.manage"))
-      admin.push({ label: "Colleges", href: "/dashboard/colleges", icon: "college" });
-    // Manage the office @careerlaunchpad.ai addresses notifications are sent to.
+      platform.push({ label: "Colleges", href: "/dashboard/colleges", icon: "college" });
     if (can(ctx, "user.manage"))
-      admin.push({ label: "Notification emails", href: "/dashboard/notifications", icon: "mail" });
-    // Owner-only: validate the email integration (SMTP).
+      platform.push({ label: "Notification emails", href: "/dashboard/notifications", icon: "mail" });
     if (ctx.permissions.has("*"))
-      admin.push({ label: "Test Email", href: "/dashboard/email-test", icon: "mail" });
+      platform.push({ label: "Test Email", href: "/dashboard/email-test", icon: "mail" });
 
-    const insights: NavItem[] = [];
-    if (canViewAnalytics(ctx))
-      insights.push({ label: "College analytics", href: "/dashboard/analytics", icon: "analytics" });
-
-    // Question Bank — the global CareerLaunchPad asset, its OWN top-level area,
-    // independent of Exams.
+    // Question Bank — the global content asset, its own top-level area.
     const bank: NavItem[] = [];
     if (canAuthorExams(ctx))
       bank.push({ label: "Question bank", href: "/dashboard/questions", icon: "exams" });
@@ -149,11 +149,18 @@ export function buildNav(ctx: AuthContext): NavSection[] {
       exams.push({ label: "Exam papers", href: "/dashboard/exams", icon: "exams" });
     if (canEvaluate) exams.push(evalItem);
 
+    // Reports — read-only analytics across domains.
+    const reports: NavItem[] = [];
+    if (canViewAnalytics(ctx))
+      reports.push({ label: "College analytics", href: "/dashboard/analytics", icon: "analytics" });
+
     const sections: NavSection[] = [];
-    if (admin.length) sections.push({ title: "Administration", items: admin });
+    if (students.length) sections.push({ title: "Students", items: students });
+    if (platform.length) sections.push({ title: "Platform", items: platform });
     if (bank.length) sections.push({ title: "Question Bank", items: bank });
     if (exams.length) sections.push({ title: "Exams", items: exams });
-    if (insights.length) sections.push({ title: "Insights", items: insights });
+    if (reports.length) sections.push({ title: "Reports", items: reports });
+    // Mentoring stays a role-specific group (the mentor's own workspace).
     if (isMentor) sections.push({ title: "Mentoring", items: mentorItems() });
     return sections;
   }

@@ -17,6 +17,8 @@ export type AuthContext = {
   /** false = signed in but no app_user row (no invite matched) → not provisioned. */
   provisioned: boolean;
   status: "active" | "suspended" | null;
+  /** Editable phone from the app_user self-profile (/account), if set. */
+  phone: string | null;
   roles: string[];
   permissions: Set<string>;
   collegeScopes: string[];
@@ -83,7 +85,9 @@ export async function getAuthContext(): Promise<AuthContext | null> {
 
   const provisioned = ctx.provisioned === true;
   const roles = (ctx.roles as string[]) ?? [];
-  const { name, avatarUrl } = readProviderProfile(user.user_metadata);
+  const { name: providerName, avatarUrl } = readProviderProfile(user.user_metadata);
+  // Prefer the name the user set on their /account profile over the OAuth name.
+  const name = (ctx.name as string | null) || providerName;
 
   // Is this user assigned as an exam evaluator? (exam_staff self-read RLS.) Only
   // worth checking for provisioned users; drives the "Exam evaluation" nav item.
@@ -98,6 +102,7 @@ export async function getAuthContext(): Promise<AuthContext | null> {
     email: (ctx.email as string) ?? user.email ?? null,
     provisioned,
     status: (ctx.status as AuthContext["status"]) ?? null,
+    phone: (ctx.phone as string) ?? null,
     roles,
     permissions: new Set((ctx.permissions as string[]) ?? []),
     collegeScopes: (ctx.college_scopes as string[]) ?? [],
