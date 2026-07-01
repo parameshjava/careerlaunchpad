@@ -10,8 +10,9 @@ import { Label } from "@/components/ui/label";
 type College = { id: string; name: string; place: string | null; state?: string | null };
 type Employer = { id: string; name: string };
 
+// Platform-user roles only. Students are onboarded via the Students section
+// (single "+ Student" or bulk Import), not this generic invite form.
 const ROLES = [
-  { key: "student", label: "Student" },
   { key: "college_admin", label: "College Admin" },
   { key: "employer", label: "Employer" },
   { key: "mentor", label: "Mentor" },

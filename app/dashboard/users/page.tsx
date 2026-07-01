@@ -37,7 +37,7 @@ export default async function UsersPage() {
     supabase.from("employer").select("id, name").order("name"),
     supabase
       .from("invite")
-      .select("id, email, status, created_at, expires_at, role:role_id(name)")
+      .select("id, email, status, created_at, expires_at, role:role_id(key,name)")
       .order("created_at", { ascending: false }),
     supabase
       .from("app_user")
@@ -45,12 +45,26 @@ export default async function UsersPage() {
       .order("created_at", { ascending: false }),
   ]);
 
+  // This page manages PLATFORM people only — students live under the Students
+  // section. Hide pure-student accounts/invites here (a student who also holds a
+  // platform role, e.g. student+mentor, still shows as a member).
+  const keyOf = (r: unknown): string | undefined => {
+    const v = Array.isArray(r) ? r[0] : r;
+    return (v as { key?: string } | null)?.key;
+  };
+  const platformInvites = (invites ?? []).filter((inv) => keyOf(inv.role) !== "student");
+  const platformUsers = (users ?? []).filter((u) => {
+    const keys = ((u.user_role ?? []) as { role: unknown }[]).map((ur) => keyOf(ur.role));
+    return keys.length === 0 || keys.some((k) => k && k !== "student");
+  });
+
   return (
     <div className="flex flex-col gap-8">
       <div>
-        <h1 className="text-2xl font-semibold">Users &amp; invites</h1>
+        <h1 className="text-2xl font-semibold">Platform users &amp; invites</h1>
         <p className="text-muted-foreground text-sm">
-          Add people to CareerLaunchpad. They sign in with social login using the invited email.
+          Invite and manage the people who run the platform. Students are onboarded and
+          managed under the <b>Students</b> section.
         </p>
       </div>
 
@@ -59,9 +73,10 @@ export default async function UsersPage() {
         // the card (shadcn Card is overflow-hidden by default).
         <Card className="overflow-visible">
           <CardHeader>
-            <CardTitle>Invite a user</CardTitle>
+            <CardTitle>Invite a platform user</CardTitle>
             <CardDescription>
-              Students &amp; College Admins are scoped to a college; Employers to an organization.
+              College Admins are scoped to a college; Employers to an organization.
+              (To add students, use the Students section.)
             </CardDescription>
           </CardHeader>
           <CardContent>
@@ -87,7 +102,7 @@ export default async function UsersPage() {
                 </TableRow>
               </TableHeader>
               <TableBody>
-                {(invites ?? []).map((inv) => (
+                {platformInvites.map((inv) => (
                   <TableRow key={inv.id}>
                     <TableCell>{inv.email}</TableCell>
                     <TableCell>{roleName(inv.role as Role | Role[])}</TableCell>
@@ -114,7 +129,7 @@ export default async function UsersPage() {
                     </TableCell>
                   </TableRow>
                 ))}
-                {(invites ?? []).length === 0 && (
+                {platformInvites.length === 0 && (
                   <TableRow><TableCell colSpan={4} className="text-muted-foreground text-center">No invites yet.</TableCell></TableRow>
                 )}
               </TableBody>
@@ -126,8 +141,8 @@ export default async function UsersPage() {
       {canViewUsers && (
         <Card>
           <CardHeader>
-            <CardTitle>Users</CardTitle>
-            <CardDescription>Everyone provisioned on the platform.</CardDescription>
+            <CardTitle>Platform users</CardTitle>
+            <CardDescription>Owners, admins, coordinators, support, mentors and employers. Students are managed under the Students section.</CardDescription>
           </CardHeader>
           <CardContent>
             <Table>
@@ -140,7 +155,7 @@ export default async function UsersPage() {
                 </TableRow>
               </TableHeader>
               <TableBody>
-                {(users ?? []).map((u) => {
+                {platformUsers.map((u) => {
                   const roleRows = (u.user_role ?? []) as { role: Role | Role[] }[];
                   const roles = roleRows.map((ur) => roleName(ur.role)).join(", ") || "—";
                   const roleKeys = roleRows
@@ -177,8 +192,8 @@ export default async function UsersPage() {
                     </TableRow>
                   );
                 })}
-                {(users ?? []).length === 0 && (
-                  <TableRow><TableCell colSpan={4} className="text-muted-foreground text-center">No users yet.</TableCell></TableRow>
+                {platformUsers.length === 0 && (
+                  <TableRow><TableCell colSpan={4} className="text-muted-foreground text-center">No platform users yet.</TableCell></TableRow>
                 )}
               </TableBody>
             </Table>
