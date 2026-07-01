@@ -151,7 +151,7 @@ function RowActions({
       )}
       {caps.canAssignRoles && (
         <ManageMemberDialog
-          user={{ id: row.id, email: row.email, roleKeys: row.roleKeys, officeEmail: row.officeEmail }}
+          user={{ id: row.id, email: row.email, fullName: row.fullName, phone: row.phone, roleKeys: row.roleKeys, officeEmail: row.officeEmail }}
           callerRank={callerRank}
           isOwner={isOwner}
           canOffice={caps.canOffice}

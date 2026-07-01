@@ -17,7 +17,7 @@ import {
   Dialog, DialogContent, DialogDescription, DialogFooter, DialogHeader, DialogTitle,
 } from "@/components/ui/dialog";
 import { Pencil } from "lucide-react";
-import { updateMemberRoles, setMemberOfficeEmail } from "./actions";
+import { updateMemberRoles, setMemberOfficeEmail, updateMemberProfile } from "./actions";
 
 // System staff roles + ladder rank (mirrors role.rank; the RPC enforces rules).
 const STAFF = [
@@ -35,7 +35,7 @@ export function ManageMemberDialog({
   isOwner,
   canOffice,
 }: {
-  user: { id: string; email: string; roleKeys: string[]; officeEmail: string | null };
+  user: { id: string; email: string; fullName: string | null; phone: string | null; roleKeys: string[]; officeEmail: string | null };
   callerRank: number;
   isOwner: boolean;
   canOffice: boolean;
@@ -43,9 +43,13 @@ export function ManageMemberDialog({
   const router = useRouter();
   const [open, setOpen] = useState(false);
   const [selected, setSelected] = useState<Set<string>>(new Set());
+  const [fullName, setFullName] = useState("");
+  const [phone, setPhone] = useState("");
   const [office, setOffice] = useState("");
   const [busy, setBusy] = useState(false);
   const [error, setError] = useState<string | null>(null);
+  // user.manage gates editing profile fields + office email; roles use their own guard.
+  const canEditProfile = canOffice;
 
   const scopedRoles = user.roleKeys.filter((k) => !STAFF_KEYS.includes(k));
   const canAssign = (rank: number) => isOwner || rank < callerRank;
@@ -63,6 +67,8 @@ export function ManageMemberDialog({
 
   function openDialog() {
     setSelected(new Set(user.roleKeys.filter((k) => STAFF_KEYS.includes(k))));
+    setFullName(user.fullName ?? "");
+    setPhone(user.phone ?? "");
     setOffice(user.officeEmail ?? "");
     setError(null);
     setOpen(true);
@@ -70,13 +76,22 @@ export function ManageMemberDialog({
 
   async function save() {
     setBusy(true); setError(null);
+    const fail = (msg: string) => { setBusy(false); setError(msg); };
+
+    if (canEditProfile && (fullName.trim() !== (user.fullName ?? "") || phone.trim() !== (user.phone ?? ""))) {
+      const res = await updateMemberProfile(user.id, fullName, phone);
+      if (res.error) return fail(res.error);
+    }
+
     const keys = STAFF.filter((r) => selected.has(r.key) && !redundant(r.rank)).map((r) => r.key);
     const roleRes = await updateMemberRoles(user.id, keys);
-    if (roleRes.error) { setBusy(false); setError(roleRes.error); return; }
+    if (roleRes.error) return fail(roleRes.error);
+
     if (canOffice && office.trim() !== (user.officeEmail ?? "")) {
       const offRes = await setMemberOfficeEmail(user.id, office);
-      if (offRes.error) { setBusy(false); setError(offRes.error); return; }
+      if (offRes.error) return fail(offRes.error);
     }
+
     setBusy(false);
     setOpen(false);
     router.refresh();
@@ -95,6 +110,19 @@ export function ManageMemberDialog({
           </DialogHeader>
 
           <div className="grid gap-4 py-1">
+            {canEditProfile && (
+              <div className="grid gap-3 sm:grid-cols-2">
+                <div className="grid gap-1.5">
+                  <Label htmlFor="mm-name">Full name</Label>
+                  <Input id="mm-name" value={fullName} onChange={(e) => setFullName(e.target.value)} placeholder="Full name" />
+                </div>
+                <div className="grid gap-1.5">
+                  <Label htmlFor="mm-phone">Phone</Label>
+                  <Input id="mm-phone" value={phone} onChange={(e) => setPhone(e.target.value)} placeholder="+91 90000 00000" />
+                </div>
+              </div>
+            )}
+
             <div className="grid gap-2.5">
               <Label>Roles</Label>
               {STAFF.map((r) => {

@@ -154,6 +154,28 @@ export async function setMemberOfficeEmail(
   return { ok: true };
 }
 
+/** Edit a member's name + phone (from the ✏️ dialog). Only these two columns are
+ * written, so status/roles are untouched; app_user RLS allows user.manage. */
+export async function updateMemberProfile(
+  userId: string,
+  fullName: string,
+  phone: string,
+): Promise<{ ok?: boolean; error?: string }> {
+  try {
+    await requirePermission("user.manage");
+  } catch {
+    return { error: "You don't have permission to edit members." };
+  }
+  const supabase = await createClient();
+  const { error } = await supabase
+    .from("app_user")
+    .update({ full_name: fullName.trim() || null, phone: phone.trim() || null })
+    .eq("id", userId);
+  if (error) return { error: error.message };
+  revalidatePath("/dashboard/users");
+  return { ok: true };
+}
+
 /** Soft-delete a platform member (🗑️). Guards live in soft_delete_member(). */
 export async function deleteMember(userId: string): Promise<{ ok?: boolean; error?: string }> {
   try {
