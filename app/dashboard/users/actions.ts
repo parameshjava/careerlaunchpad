@@ -154,6 +154,31 @@ export async function setMemberOfficeEmail(
   return { ok: true };
 }
 
+/** Create an employer organization (so Employer users can be invited to it).
+ * employer RLS is user.manage. Returns the new row for the invite form to select. */
+export async function createEmployer(
+  name: string,
+  website: string,
+): Promise<{ ok?: boolean; id?: string; name?: string; error?: string }> {
+  let ctx;
+  try {
+    ctx = await requirePermission("user.manage");
+  } catch {
+    return { error: "You don't have permission to add organizations." };
+  }
+  const trimmed = name.trim();
+  if (!trimmed) return { error: "Organization name is required." };
+  const supabase = await createClient();
+  const { data, error } = await supabase
+    .from("employer")
+    .insert({ name: trimmed, website: website.trim() || null, created_by: ctx.userId })
+    .select("id, name")
+    .single();
+  if (error) return { error: error.message };
+  revalidatePath("/dashboard/users");
+  return { ok: true, id: data.id, name: data.name };
+}
+
 /** Edit a member's name + phone (from the ✏️ dialog). Only these two columns are
  * written, so status/roles are untouched; app_user RLS allows user.manage. */
 export async function updateMemberProfile(
