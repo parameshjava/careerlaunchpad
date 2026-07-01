@@ -126,11 +126,13 @@ function NavLinks({
                     aria-current={active ? "page" : undefined}
                     title={collapsed ? item.label : undefined}
                     className={cn(
-                      "flex items-center gap-3 rounded-md py-2 text-sm font-medium transition-colors",
+                      "relative flex items-center gap-3 rounded-md py-2 text-sm transition-colors",
                       collapsed ? "justify-center px-0" : "px-3",
                       active
-                        ? "bg-sidebar-accent text-sidebar-accent-foreground"
-                        : "text-sidebar-foreground/75 hover:bg-sidebar-accent/60 hover:text-sidebar-foreground",
+                        ? // Clear brand highlight for the current page: tinted
+                          // background, brand text/icon, and a left accent bar.
+                          "bg-primary/10 text-primary font-semibold before:absolute before:top-1.5 before:bottom-1.5 before:left-0 before:w-1 before:rounded-full before:bg-primary before:content-['']"
+                        : "text-sidebar-foreground/75 font-medium hover:bg-sidebar-accent/60 hover:text-sidebar-foreground",
                     )}
                   >
                     <Icon className="size-4 shrink-0" />
