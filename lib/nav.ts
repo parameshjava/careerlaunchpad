@@ -56,15 +56,6 @@ function canReviewMentors(ctx: AuthContext): boolean {
   return ctx.permissions.has("*") || can(ctx, "mentor.review") || can(ctx, "user.manage");
 }
 
-/** True if the user can author the exam question bank (subjects/chapters/questions). */
-function canAuthorExams(ctx: AuthContext): boolean {
-  return (
-    ctx.permissions.has("*") ||
-    can(ctx, "exam.subject.manage") ||
-    can(ctx, "exam.question.manage")
-  );
-}
-
 /** True if the user can build/conduct exams (blueprints, sessions, results). */
 function canConductExams(ctx: AuthContext): boolean {
   return (
@@ -138,10 +129,13 @@ export function buildNav(ctx: AuthContext): NavSection[] {
     if (ctx.permissions.has("*"))
       platform.push({ label: "Test Email", href: "/dashboard/email-test", icon: "mail" });
 
-    // Question Bank — the global content asset, its own top-level area.
+    // Question Bank — split: the taxonomy (subjects/chapters/passages) vs the
+    // questions themselves, gated by their respective permissions.
     const bank: NavItem[] = [];
-    if (canAuthorExams(ctx))
-      bank.push({ label: "Question bank", href: "/dashboard/questions", icon: "exams" });
+    if (ctx.permissions.has("*") || can(ctx, "exam.subject.manage"))
+      bank.push({ label: "Subjects & Chapters", href: "/dashboard/questions/structure", icon: "exams" });
+    if (ctx.permissions.has("*") || can(ctx, "exam.question.manage"))
+      bank.push({ label: "Questions", href: "/dashboard/questions", icon: "exams" });
 
     // Exams — per-college conduct + evaluation.
     const exams: NavItem[] = [];
