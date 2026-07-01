@@ -19,7 +19,7 @@ import { updateMemberRoles } from "./actions";
 // mirrored here for the UI — the RPC enforces the real rules regardless).
 const STAFF = [
   { key: "owner", name: "Owner", rank: 3 },
-  { key: "platform_admin", name: "CareerLaunchpad Admin", rank: 2 },
+  { key: "platform_admin", name: "Admin", rank: 2 },
   { key: "coordinator", name: "Coordinator", rank: 1 },
   { key: "support", name: "Support Team", rank: 1 },
   { key: "mentor", name: "Mentor (Trainer)", rank: 0 },

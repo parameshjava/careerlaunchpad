@@ -7,7 +7,7 @@ export const metadata: Metadata = { title: "Profile" };
 // Friendly labels for the read-only roles line.
 const ROLE_NAMES: Record<string, string> = {
   owner: "Owner",
-  platform_admin: "CareerLaunchpad Admin",
+  platform_admin: "Admin",
   coordinator: "Coordinator",
   support: "Support Team",
   mentor: "Mentor",
