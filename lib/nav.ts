@@ -124,8 +124,6 @@ export function buildNav(ctx: AuthContext): NavSection[] {
     if (canReviewMentors(ctx)) platform.push({ label: "Mentors", href: "/dashboard/mentors", icon: "mentor" });
     if (can(ctx, "college.manage"))
       platform.push({ label: "Colleges", href: "/dashboard/colleges", icon: "college" });
-    if (can(ctx, "user.manage"))
-      platform.push({ label: "Notification emails", href: "/dashboard/notifications", icon: "mail" });
     if (ctx.permissions.has("*"))
       platform.push({ label: "Test Email", href: "/dashboard/email-test", icon: "mail" });
 
