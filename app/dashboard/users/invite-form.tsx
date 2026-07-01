@@ -2,7 +2,8 @@
 
 import { useEffect, useRef, useState } from "react";
 import { useActionState } from "react";
-import { createInvite, createEmployer, type InviteState } from "./actions";
+import { createInvite, type InviteState } from "./actions";
+import { createEmployer } from "../employers/actions";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
