@@ -53,7 +53,7 @@ const COLLAPSE_KEY = "cl-sidebar-collapsed";
 
 // Roots are active only on an exact match; deeper routes also match their
 // children (e.g. /dashboard/students/import highlights "Import").
-const ROOTS = new Set(["/dashboard", "/student", "/employer"]);
+const ROOTS = new Set(["/dashboard", "/student", "/employer", "/dashboard/questions"]);
 function isActive(pathname: string, href: string): boolean {
   if (ROOTS.has(href)) return pathname === href;
   return pathname === href || pathname.startsWith(href + "/");
