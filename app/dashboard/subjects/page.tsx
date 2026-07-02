@@ -1,6 +1,6 @@
 import { redirect } from "next/navigation";
 import { getAuthContext, can } from "@/lib/auth";
-import { TaxonomyClient } from "../taxonomy-client";
+import { TaxonomyClient } from "./taxonomy-client";
 
 // Subjects & Chapters — the GLOBAL question-bank taxonomy (subjects, chapters,
 // passages). Curating it needs exam.subject.manage. Question authoring lives on
