@@ -133,7 +133,7 @@ export function buildNav(ctx: AuthContext): NavSection[] {
     // questions themselves, gated by their respective permissions.
     const bank: NavItem[] = [];
     if (ctx.permissions.has("*") || can(ctx, "exam.subject.manage"))
-      bank.push({ label: "Subjects & Chapters", href: "/dashboard/questions/structure", icon: "exams" });
+      bank.push({ label: "Subjects & Chapters", href: "/dashboard/subjects", icon: "exams" });
     if (ctx.permissions.has("*") || can(ctx, "exam.question.manage"))
       bank.push({ label: "Questions", href: "/dashboard/questions", icon: "exams" });
 
