@@ -1,0 +1,63 @@
+-- ============================================================================
+-- 071_arith_prob.sql
+-- Seed the 'Probability' Arithmetic chapter of the exam question bank.
+-- 40 distinct competitive-exam questions across easy/medium/hard/very_hard,
+-- each with 4 options and a worked explanation. Idempotent (skips existing stems).
+-- ============================================================================
+create or replace function public._seed_arith_q(p_chapter text, p_difficulty text, p_stem text, p_opts text[], p_correct int, p_explanation text) returns void language plpgsql as $fn$
+declare v_subj uuid; v_chap uuid; v_qid uuid; i int;
+begin
+  select id into v_subj from public.subject where lower(name)='arithmetic' limit 1;
+  if v_subj is null then raise exception 'Arithmetic subject not found (run 023 first)'; end if;
+  select id into v_chap from public.chapter where subject_id=v_subj and lower(name)=lower(p_chapter) limit 1;
+  if v_chap is null then raise exception 'Chapter % not found', p_chapter; end if;
+  if exists (select 1 from public.question where chapter_id=v_chap and stem=p_stem) then return; end if;
+  insert into public.question (subject_id, chapter_id, kind, difficulty, answer_type, stem, explanation)
+  values (v_subj, v_chap, 'standard', p_difficulty, 'single', p_stem, p_explanation) returning id into v_qid;
+  for i in 1..array_length(p_opts,1) loop
+    insert into public.question_option (question_id, label, is_correct, position) values (v_qid, p_opts[i], i=p_correct, i-1);
+  end loop;
+end; $fn$;
+
+select public._seed_arith_q($q$Probability$q$, $q$easy$q$, $q$A fair die is rolled once. What is the probability of getting a number greater than 4?$q$, ARRAY[$q$1/3$q$,$q$1/2$q$,$q$2/3$q$,$q$1/6$q$], 1, $q$Favourable {5,6}=2; total 6; 2/6=1/3.$q$);
+select public._seed_arith_q($q$Probability$q$, $q$easy$q$, $q$A single die is thrown. Find the probability of getting a prime number.$q$, ARRAY[$q$1/3$q$,$q$1/2$q$,$q$2/3$q$,$q$5/6$q$], 2, $q$Primes {2,3,5}=3; 3/6=1/2.$q$);
+select public._seed_arith_q($q$Probability$q$, $q$easy$q$, $q$One card is drawn from a well-shuffled pack of 52 cards. What is the probability that it is a king?$q$, ARRAY[$q$1/26$q$,$q$1/52$q$,$q$1/13$q$,$q$4/13$q$], 3, $q$4 kings; 4/52=1/13.$q$);
+select public._seed_arith_q($q$Probability$q$, $q$easy$q$, $q$A card is drawn from a pack of 52 cards. Find the probability that it is a spade.$q$, ARRAY[$q$1/13$q$,$q$1/2$q$,$q$3/13$q$,$q$1/4$q$], 4, $q$13 spades; 13/52=1/4.$q$);
+select public._seed_arith_q($q$Probability$q$, $q$easy$q$, $q$A bag contains 3 red and 2 blue balls. One ball is drawn at random. What is the probability it is red?$q$, ARRAY[$q$3/5$q$,$q$2/5$q$,$q$1/2$q$,$q$3/2$q$], 1, $q$3 red of 5; 3/5.$q$);
+select public._seed_arith_q($q$Probability$q$, $q$easy$q$, $q$Two coins are tossed. What is the probability of getting exactly two heads?$q$, ARRAY[$q$1/2$q$,$q$1/4$q$,$q$3/4$q$,$q$1/8$q$], 2, $q$Sample {HH,HT,TH,TT}; HH=1; 1/4.$q$);
+select public._seed_arith_q($q$Probability$q$, $q$easy$q$, $q$A die is rolled. What is the probability of getting an even number?$q$, ARRAY[$q$1/3$q$,$q$2/3$q$,$q$1/2$q$,$q$1/6$q$], 3, $q$Evens {2,4,6}=3; 3/6=1/2.$q$);
+select public._seed_arith_q($q$Probability$q$, $q$easy$q$, $q$A single coin is tossed. What is the probability of getting a tail?$q$, ARRAY[$q$1/4$q$,$q$1$q$,$q$0$q$,$q$1/2$q$], 4, $q$1 tail of 2 outcomes; 1/2.$q$);
+select public._seed_arith_q($q$Probability$q$, $q$easy$q$, $q$A card is drawn from 52 cards. What is the probability it is a face card (J, Q, K)?$q$, ARRAY[$q$3/13$q$,$q$1/13$q$,$q$4/13$q$,$q$1/4$q$], 1, $q$12 face cards; 12/52=3/13.$q$);
+select public._seed_arith_q($q$Probability$q$, $q$easy$q$, $q$A bag has 4 white and 6 black balls. One ball is drawn. What is the probability it is black?$q$, ARRAY[$q$2/5$q$,$q$3/5$q$,$q$1/2$q$,$q$3/10$q$], 2, $q$6 black of 10; 6/10=3/5.$q$);
+select public._seed_arith_q($q$Probability$q$, $q$medium$q$, $q$Two dice are thrown. What is the probability that the sum of the numbers is 7?$q$, ARRAY[$q$1/9$q$,$q$5/36$q$,$q$1/6$q$,$q$1/12$q$], 3, $q$Pairs summing 7 = 6; 6/36=1/6.$q$);
+select public._seed_arith_q($q$Probability$q$, $q$medium$q$, $q$Two dice are rolled. What is the probability that the sum is 9?$q$, ARRAY[$q$1/6$q$,$q$5/36$q$,$q$1/12$q$,$q$1/9$q$], 4, $q$Sums to 9: (3,6)(4,5)(5,4)(6,3)=4; 4/36=1/9.$q$);
+select public._seed_arith_q($q$Probability$q$, $q$medium$q$, $q$Two dice are thrown together. What is the probability of getting at least one 6?$q$, ARRAY[$q$11/36$q$,$q$1/6$q$,$q$1/3$q$,$q$25/36$q$], 1, $q$P(no 6)=25/36; at least one =1-25/36=11/36.$q$);
+select public._seed_arith_q($q$Probability$q$, $q$medium$q$, $q$Two dice are thrown. What is the probability that both show the same number (a doublet)?$q$, ARRAY[$q$1/12$q$,$q$1/6$q$,$q$5/36$q$,$q$1/3$q$], 2, $q$6 doublets; 6/36=1/6.$q$);
+select public._seed_arith_q($q$Probability$q$, $q$medium$q$, $q$Three coins are tossed simultaneously. What is the probability of getting exactly two heads?$q$, ARRAY[$q$1/8$q$,$q$1/2$q$,$q$3/8$q$,$q$5/8$q$], 3, $q$Outcomes with 2 heads: HHT,HTH,THH=3; total 8; 3/8.$q$);
+select public._seed_arith_q($q$Probability$q$, $q$medium$q$, $q$Three coins are tossed. What is the probability of getting at least one head?$q$, ARRAY[$q$1/8$q$,$q$3/4$q$,$q$1/2$q$,$q$7/8$q$], 4, $q$P(no head)=1/8; at least one =1-1/8=7/8.$q$);
+select public._seed_arith_q($q$Probability$q$, $q$medium$q$, $q$A card is drawn from 52 cards. What is the probability that it is a king or a heart?$q$, ARRAY[$q$4/13$q$,$q$1/13$q$,$q$17/52$q$,$q$5/13$q$], 1, $q$Kings 4 + hearts 13 - king of hearts 1 =16; 16/52=4/13.$q$);
+select public._seed_arith_q($q$Probability$q$, $q$medium$q$, $q$A card is drawn from a pack. What is the probability that it is a red card or a queen?$q$, ARRAY[$q$1/2$q$,$q$7/13$q$,$q$6/13$q$,$q$15/26$q$], 2, $q$Red 26 + queens 4 - 2 red queens =28; 28/52=7/13.$q$);
+select public._seed_arith_q($q$Probability$q$, $q$medium$q$, $q$A bag has 5 red and 3 green balls. Two balls are drawn one after another without replacement. What is the probability both are red?$q$, ARRAY[$q$3/14$q$,$q$15/56$q$,$q$5/14$q$,$q$1/2$q$], 3, $q$C(5,2)/C(8,2)=10/28=5/14.$q$);
+select public._seed_arith_q($q$Probability$q$, $q$medium$q$, $q$Two dice are thrown. What is the probability that the sum is greater than 10?$q$, ARRAY[$q$1/6$q$,$q$1/9$q$,$q$1/18$q$,$q$1/12$q$], 4, $q$Sums>10: (5,6)(6,5)(6,6)=3; 3/36=1/12.$q$);
+select public._seed_arith_q($q$Probability$q$, $q$hard$q$, $q$A bag contains 4 red and 6 blue balls. Two balls are drawn at random. What is the probability both are of the same colour?$q$, ARRAY[$q$7/15$q$,$q$8/15$q$,$q$1/3$q$,$q$2/5$q$], 1, $q$[C(4,2)+C(6,2)]/C(10,2)=(6+15)/45=21/45=7/15.$q$);
+select public._seed_arith_q($q$Probability$q$, $q$hard$q$, $q$A box has 3 white and 5 black balls. Two balls are drawn together. What is the probability one is white and one is black?$q$, ARRAY[$q$13/28$q$,$q$15/28$q$,$q$1/2$q$,$q$5/14$q$], 2, $q$C(3,1)C(5,1)/C(8,2)=15/28.$q$);
+select public._seed_arith_q($q$Probability$q$, $q$hard$q$, $q$A bag contains 5 green and 4 yellow balls. Two balls are drawn. What is the probability of at least one green ball?$q$, ARRAY[$q$1/6$q$,$q$2/3$q$,$q$5/6$q$,$q$13/18$q$], 3, $q$P(no green)=C(4,2)/C(9,2)=6/36=1/6; at least one=1-1/6=5/6.$q$);
+select public._seed_arith_q($q$Probability$q$, $q$hard$q$, $q$Two cards are drawn from a pack of 52. What is the probability that both are aces?$q$, ARRAY[$q$1/13$q$,$q$1/26$q$,$q$2/13$q$,$q$1/221$q$], 4, $q$C(4,2)/C(52,2)=6/1326=1/221.$q$);
+select public._seed_arith_q($q$Probability$q$, $q$hard$q$, $q$Two cards are drawn from a pack. What is the probability that both are kings?$q$, ARRAY[$q$1/221$q$,$q$1/169$q$,$q$1/13$q$,$q$2/221$q$], 1, $q$C(4,2)/C(52,2)=6/1326=1/221.$q$);
+select public._seed_arith_q($q$Probability$q$, $q$hard$q$, $q$A box contains 6 red and 4 white balls. Three balls are drawn. What is the probability that all three are red?$q$, ARRAY[$q$1/5$q$,$q$1/6$q$,$q$1/4$q$,$q$5/12$q$], 2, $q$C(6,3)/C(10,3)=20/120=1/6.$q$);
+select public._seed_arith_q($q$Probability$q$, $q$hard$q$, $q$A bag has 7 black and 3 white balls. Two balls are drawn. What is the probability that both are black?$q$, ARRAY[$q$8/15$q$,$q$3/10$q$,$q$7/15$q$,$q$21/50$q$], 3, $q$C(7,2)/C(10,2)=21/45=7/15.$q$);
+select public._seed_arith_q($q$Probability$q$, $q$hard$q$, $q$From a group of 4 men and 3 women, 2 people are chosen. What is the probability that both are women?$q$, ARRAY[$q$2/7$q$,$q$3/7$q$,$q$1/3$q$,$q$1/7$q$], 4, $q$C(3,2)/C(7,2)=3/21=1/7.$q$);
+select public._seed_arith_q($q$Probability$q$, $q$hard$q$, $q$A bag contains 3 red, 4 blue and 5 green balls. Two balls are drawn. What is the probability both are green?$q$, ARRAY[$q$5/33$q$,$q$4/33$q$,$q$1/6$q$,$q$5/22$q$], 1, $q$C(5,2)/C(12,2)=10/66=5/33.$q$);
+select public._seed_arith_q($q$Probability$q$, $q$hard$q$, $q$Two cards are drawn from a pack. What is the probability that both are red?$q$, ARRAY[$q$1/4$q$,$q$25/102$q$,$q$13/51$q$,$q$12/51$q$], 2, $q$C(26,2)/C(52,2)=325/1326=25/102.$q$);
+select public._seed_arith_q($q$Probability$q$, $q$very_hard$q$, $q$A bag contains 5 white and 4 red balls. Three balls are drawn one by one without replacement. What is the probability that all three are white?$q$, ARRAY[$q$1/7$q$,$q$5/18$q$,$q$5/42$q$,$q$5/21$q$], 3, $q$5/9 * 4/8 * 3/7 = 60/504 = 5/42.$q$);
+select public._seed_arith_q($q$Probability$q$, $q$very_hard$q$, $q$A coin is tossed 4 times. What is the probability of getting at least one head?$q$, ARRAY[$q$1/16$q$,$q$7/8$q$,$q$3/4$q$,$q$15/16$q$], 4, $q$P(no head)=(1/2)^4=1/16; at least one=1-1/16=15/16.$q$);
+select public._seed_arith_q($q$Probability$q$, $q$very_hard$q$, $q$A die is thrown 3 times. What is the probability of getting at least one six?$q$, ARRAY[$q$91/216$q$,$q$125/216$q$,$q$1/2$q$,$q$25/216$q$], 1, $q$P(no six)=(5/6)^3=125/216; at least one=1-125/216=91/216.$q$);
+select public._seed_arith_q($q$Probability$q$, $q$very_hard$q$, $q$The letters of the word 'LEADING' are arranged at random. What is the probability that the vowels come together?$q$, ARRAY[$q$3/7$q$,$q$1/7$q$,$q$2/7$q$,$q$1/5$q$], 2, $q$7 distinct letters; vowels E,A,I as one block: 5!*3!=720; total 7!=5040; 720/5040=1/7.$q$);
+select public._seed_arith_q($q$Probability$q$, $q$very_hard$q$, $q$Two dice are thrown. Given that the sum is even, what is the probability that both dice show the same number?$q$, ARRAY[$q$1/6$q$,$q$1/2$q$,$q$1/3$q$,$q$2/3$q$], 3, $q$Even-sum outcomes=18; doublets among them=6; 6/18=1/3.$q$);
+select public._seed_arith_q($q$Probability$q$, $q$very_hard$q$, $q$A bag has 4 red and 5 black balls. Two balls are drawn without replacement. What is the probability the second ball is red given the first was black?$q$, ARRAY[$q$4/9$q$,$q$5/9$q$,$q$3/8$q$,$q$1/2$q$], 4, $q$After a black removed: 4 red of 8; 4/8=1/2.$q$);
+select public._seed_arith_q($q$Probability$q$, $q$very_hard$q$, $q$Three cards are drawn from a pack of 52 without replacement. What is the probability all three are spades?$q$, ARRAY[$q$11/850$q$,$q$13/204$q$,$q$1/64$q$,$q$1/17$q$], 1, $q$C(13,3)/C(52,3)=286/22100=11/850.$q$);
+select public._seed_arith_q($q$Probability$q$, $q$very_hard$q$, $q$A problem is given to 3 students whose chances of solving it are 1/2, 1/3 and 1/4. What is the probability that the problem is solved?$q$, ARRAY[$q$1/4$q$,$q$3/4$q$,$q$1/2$q$,$q$2/3$q$], 2, $q$P(none solve)=1/2*2/3*3/4=1/4; solved=1-1/4=3/4.$q$);
+select public._seed_arith_q($q$Probability$q$, $q$very_hard$q$, $q$A bag contains 6 white and 4 black balls. Two balls are drawn one by one without replacement. What is the probability that the first is white and the second is black?$q$, ARRAY[$q$2/5$q$,$q$6/25$q$,$q$4/15$q$,$q$8/15$q$], 3, $q$6/10 * 4/9 = 24/90 = 4/15.$q$);
+select public._seed_arith_q($q$Probability$q$, $q$very_hard$q$, $q$Four persons are seated at random around a round table having 4 seats. What is the probability that two particular persons A and B sit together (adjacent)?$q$, ARRAY[$q$1/3$q$,$q$1/2$q$,$q$1/4$q$,$q$2/3$q$], 4, $q$Circular arr (4-1)!=6; A,B together: (3-1)!*2!=4; 4/6=2/3.$q$);
+
+drop function public._seed_arith_q(text,text,text,text[],int,text);
