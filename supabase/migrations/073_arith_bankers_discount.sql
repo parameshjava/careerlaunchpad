@@ -1,6 +1,5 @@
 -- ============================================================================
--- 073_arith_bd.sql
--- Seed the 'Banker's Discount' Arithmetic chapter of the exam question bank.
+-- 073_arith: seed the 'Banker's Discount' Arithmetic chapter of the exam question bank.
 -- 37 distinct competitive-exam questions across easy/medium/hard/very_hard,
 -- each with 4 options and a worked explanation. Idempotent (skips existing stems).
 -- ============================================================================
@@ -19,13 +18,13 @@ begin
   end loop;
 end; $fn$;
 
+select public._seed_arith_q($q$Banker's Discount$q$, $q$easy$q$, $q$The banker's discount on a bill due 1 year hence at 10% per annum is ₹100. Find the true discount.$q$, ARRAY[$q$₹90.91$q$,$q$₹90$q$,$q$₹100$q$,$q$₹110$q$], 1, $q$TD = BD·100/(100+RT) = 100×100/110 = ₹90.91.$q$);
+select public._seed_arith_q($q$Banker's Discount$q$, $q$easy$q$, $q$A bill due 6 months hence at 8% per annum has a true discount of ₹40. Find the banker's discount.$q$, ARRAY[$q$₹41.60$q$,$q$₹40$q$,$q$₹42$q$,$q$₹43.20$q$], 1, $q$RT=4%. BD = TD·(100+RT)/100 = 40×104/100 = ₹41.60.$q$);
+select public._seed_arith_q($q$Banker's Discount$q$, $q$easy$q$, $q$The present worth of a bill is ₹1600 and the banker's gain is ₹4. Find the true discount.$q$, ARRAY[$q$₹80$q$,$q$₹64$q$,$q$₹100$q$,$q$₹40$q$], 1, $q$BG = TD²/PW ⇒ TD = √(BG·PW) = √(4×1600) = ₹80.$q$);
+select public._seed_arith_q($q$Banker's Discount$q$, $q$easy$q$, $q$A bill of ₹6000 due 6 months hence is discounted at 8% per annum. Find the banker's gain.$q$, ARRAY[$q$₹9.23$q$,$q$₹9$q$,$q$₹10$q$,$q$₹9.60$q$], 1, $q$RT=4%. BD = 6000×8×0.5/100 = 240; TD = 6000×4/104 = 230.77; BG = ₹9.23.$q$);
 select public._seed_arith_q($q$Banker's Discount$q$, $q$easy$q$, $q$The banker's discount on a bill of ₹1,800 due 146 days hence at 10% per annum is:$q$, ARRAY[$q$₹72$q$,$q$₹90$q$,$q$₹180$q$,$q$₹65$q$], 1, $q$146 days = 146/365 = 0.4 yr. BD = F·R·T/100 = 1800·10·0.4/100 = ₹72.$q$);
-select public._seed_arith_q($q$Banker's Discount$q$, $q$easy$q$, $q$Find the banker's discount on a bill of ₹5,000 due 3 years hence at 5% per annum.$q$, ARRAY[$q$₹500$q$,$q$₹600$q$,$q$₹750$q$,$q$₹800$q$], 3, $q$BD = SI on face value = 5000·5·3/100 = ₹750.$q$);
 select public._seed_arith_q($q$Banker's Discount$q$, $q$easy$q$, $q$The banker's discount on a sum of ₹1,600 due 292 days hence at 15% per annum is:$q$, ARRAY[$q$₹150$q$,$q$₹192$q$,$q$₹210$q$,$q$₹175$q$], 2, $q$292/365 = 0.8 yr. BD = 1600·15·0.8/100 = ₹192.$q$);
-select public._seed_arith_q($q$Banker's Discount$q$, $q$easy$q$, $q$Find the banker's discount on ₹2,500 due 6 months hence at 8% per annum.$q$, ARRAY[$q$₹120$q$,$q$₹150$q$,$q$₹100$q$,$q$₹90$q$], 3, $q$T = 0.5 yr. BD = 2500·8·0.5/100 = ₹100.$q$);
 select public._seed_arith_q($q$Banker's Discount$q$, $q$easy$q$, $q$The banker's discount on a bill of ₹3,600 due 219 days hence at 12% per annum is:$q$, ARRAY[$q$₹240$q$,$q$₹300$q$,$q$₹259.20$q$,$q$₹216$q$], 3, $q$219/365 = 0.6 yr. BD = 3600·12·0.6/100 = ₹259.20.$q$);
-select public._seed_arith_q($q$Banker's Discount$q$, $q$easy$q$, $q$For a bill of ₹10,000 due 1 year hence at 8% per annum, which statement about the banker's discount (BD) and true discount (TD) is correct?$q$, ARRAY[$q$BD = TD$q$,$q$BD < TD$q$,$q$BD > TD$q$,$q$BD = 2·TD$q$], 3, $q$BD is SI on face value, TD is SI on present worth (< face value), so BD is always greater than TD.$q$);
-select public._seed_arith_q($q$Banker's Discount$q$, $q$easy$q$, $q$Find the banker's discount on ₹4,000 due 2 years hence at 6% per annum.$q$, ARRAY[$q$₹360$q$,$q$₹480$q$,$q$₹420$q$,$q$₹500$q$], 2, $q$BD = 4000·6·2/100 = ₹480.$q$);
 select public._seed_arith_q($q$Banker's Discount$q$, $q$easy$q$, $q$The banker's discount on a bill of ₹7,200 due 73 days hence at 10% per annum is:$q$, ARRAY[$q$₹144$q$,$q$₹150$q$,$q$₹160$q$,$q$₹120$q$], 1, $q$73/365 = 0.2 yr. BD = 7200·10·0.2/100 = ₹144.$q$);
 select public._seed_arith_q($q$Banker's Discount$q$, $q$easy$q$, $q$The true discount and banker's discount on a certain sum are ₹100 and ₹110 respectively. What is the banker's gain?$q$, ARRAY[$q$₹210$q$,$q$₹105$q$,$q$₹10$q$,$q$₹100$q$], 3, $q$BG = BD − TD = 110 − 100 = ₹10.$q$);
 select public._seed_arith_q($q$Banker's Discount$q$, $q$medium$q$, $q$The banker's discount on a bill due 2 years hence at 10% per annum is ₹120. Find the true discount.$q$, ARRAY[$q$₹100$q$,$q$₹110$q$,$q$₹96$q$,$q$₹108$q$], 1, $q$TD = BD·100/(100+R·T) = 120·100/120 = ₹100.$q$);

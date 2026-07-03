@@ -1,6 +1,5 @@
 -- ============================================================================
--- 071_arith_prob.sql
--- Seed the 'Probability' Arithmetic chapter of the exam question bank.
+-- 071_arith: seed the 'Probability' Arithmetic chapter of the exam question bank.
 -- 40 distinct competitive-exam questions across easy/medium/hard/very_hard,
 -- each with 4 options and a worked explanation. Idempotent (skips existing stems).
 -- ============================================================================
@@ -19,21 +18,21 @@ begin
   end loop;
 end; $fn$;
 
-select public._seed_arith_q($q$Probability$q$, $q$easy$q$, $q$A fair die is rolled once. What is the probability of getting a number greater than 4?$q$, ARRAY[$q$1/3$q$,$q$1/2$q$,$q$2/3$q$,$q$1/6$q$], 1, $q$Favourable {5,6}=2; total 6; 2/6=1/3.$q$);
-select public._seed_arith_q($q$Probability$q$, $q$easy$q$, $q$A single die is thrown. Find the probability of getting a prime number.$q$, ARRAY[$q$1/3$q$,$q$1/2$q$,$q$2/3$q$,$q$5/6$q$], 2, $q$Primes {2,3,5}=3; 3/6=1/2.$q$);
-select public._seed_arith_q($q$Probability$q$, $q$easy$q$, $q$One card is drawn from a well-shuffled pack of 52 cards. What is the probability that it is a king?$q$, ARRAY[$q$1/26$q$,$q$1/52$q$,$q$1/13$q$,$q$4/13$q$], 3, $q$4 kings; 4/52=1/13.$q$);
-select public._seed_arith_q($q$Probability$q$, $q$easy$q$, $q$A card is drawn from a pack of 52 cards. Find the probability that it is a spade.$q$, ARRAY[$q$1/13$q$,$q$1/2$q$,$q$3/13$q$,$q$1/4$q$], 4, $q$13 spades; 13/52=1/4.$q$);
-select public._seed_arith_q($q$Probability$q$, $q$easy$q$, $q$A bag contains 3 red and 2 blue balls. One ball is drawn at random. What is the probability it is red?$q$, ARRAY[$q$3/5$q$,$q$2/5$q$,$q$1/2$q$,$q$3/2$q$], 1, $q$3 red of 5; 3/5.$q$);
-select public._seed_arith_q($q$Probability$q$, $q$easy$q$, $q$Two coins are tossed. What is the probability of getting exactly two heads?$q$, ARRAY[$q$1/2$q$,$q$1/4$q$,$q$3/4$q$,$q$1/8$q$], 2, $q$Sample {HH,HT,TH,TT}; HH=1; 1/4.$q$);
-select public._seed_arith_q($q$Probability$q$, $q$easy$q$, $q$A die is rolled. What is the probability of getting an even number?$q$, ARRAY[$q$1/3$q$,$q$2/3$q$,$q$1/2$q$,$q$1/6$q$], 3, $q$Evens {2,4,6}=3; 3/6=1/2.$q$);
-select public._seed_arith_q($q$Probability$q$, $q$easy$q$, $q$A single coin is tossed. What is the probability of getting a tail?$q$, ARRAY[$q$1/4$q$,$q$1$q$,$q$0$q$,$q$1/2$q$], 4, $q$1 tail of 2 outcomes; 1/2.$q$);
-select public._seed_arith_q($q$Probability$q$, $q$easy$q$, $q$A card is drawn from 52 cards. What is the probability it is a face card (J, Q, K)?$q$, ARRAY[$q$3/13$q$,$q$1/13$q$,$q$4/13$q$,$q$1/4$q$], 1, $q$12 face cards; 12/52=3/13.$q$);
-select public._seed_arith_q($q$Probability$q$, $q$easy$q$, $q$A bag has 4 white and 6 black balls. One ball is drawn. What is the probability it is black?$q$, ARRAY[$q$2/5$q$,$q$3/5$q$,$q$1/2$q$,$q$3/10$q$], 2, $q$6 black of 10; 6/10=3/5.$q$);
+select public._seed_arith_q($q$Probability$q$, $q$easy$q$, $q$Two dice are thrown. What is the probability that the sum of the numbers is a prime number?$q$, ARRAY[$q$5/12$q$,$q$1/6$q$,$q$1/3$q$,$q$7/18$q$], 1, $q$Prime sums 2,3,5,7,11 occur in 1+2+4+6+2=15 ways; 15/36=5/12.$q$);
+select public._seed_arith_q($q$Probability$q$, $q$easy$q$, $q$Two dice are thrown together. What is the probability that the product of the two numbers is even?$q$, ARRAY[$q$1/2$q$,$q$3/4$q$,$q$2/3$q$,$q$1/4$q$], 2, $q$P(product odd)=both odd=9/36=1/4; product even=1-1/4=3/4.$q$);
+select public._seed_arith_q($q$Probability$q$, $q$easy$q$, $q$A card is drawn from a pack of 52. What is the probability that it is a face card or a spade?$q$, ARRAY[$q$11/26$q$,$q$6/13$q$,$q$1/2$q$,$q$25/52$q$], 1, $q$Face cards 12 + spades 13 - spade face cards 3 = 22; 22/52=11/26.$q$);
+select public._seed_arith_q($q$Probability$q$, $q$easy$q$, $q$A number is chosen at random from 1 to 20. What is the probability that it is a multiple of 3?$q$, ARRAY[$q$3/10$q$,$q$1/3$q$,$q$7/20$q$,$q$2/5$q$], 1, $q$Multiples of 3: 3,6,9,12,15,18 = 6; 6/20=3/10.$q$);
+select public._seed_arith_q($q$Probability$q$, $q$easy$q$, $q$Two coins are tossed together. What is the probability of getting at least one head?$q$, ARRAY[$q$1/2$q$,$q$1/4$q$,$q$3/4$q$,$q$2/3$q$], 3, $q$P(no head)=1/4; at least one =1-1/4=3/4.$q$);
+select public._seed_arith_q($q$Probability$q$, $q$easy$q$, $q$A die is thrown once. What is the probability of getting a number that is a factor of 6?$q$, ARRAY[$q$1/2$q$,$q$2/3$q$,$q$1/3$q$,$q$5/6$q$], 2, $q$Factors of 6 within 1-6: 1,2,3,6 = 4; 4/6=2/3.$q$);
+select public._seed_arith_q($q$Probability$q$, $q$easy$q$, $q$A ticket is drawn at random from tickets numbered 1 to 25. What is the probability that it is a multiple of 5 or 7?$q$, ARRAY[$q$8/25$q$,$q$7/25$q$,$q$9/25$q$,$q$1/5$q$], 1, $q$Multiples of 5: 5,10,15,20,25 (5); of 7: 7,14,21 (3); no overlap; 8/25.$q$);
+select public._seed_arith_q($q$Probability$q$, $q$easy$q$, $q$Two dice are thrown. What is the probability that both dice show a number greater than 4?$q$, ARRAY[$q$1/9$q$,$q$1/6$q$,$q$1/4$q$,$q$1/3$q$], 1, $q$Each die must be 5 or 6: 2×2=4 outcomes; 4/36=1/9.$q$);
+select public._seed_arith_q($q$Probability$q$, $q$easy$q$, $q$A letter is chosen at random from the word MATHEMATICS. What is the probability that it is a vowel?$q$, ARRAY[$q$4/11$q$,$q$3/11$q$,$q$5/11$q$,$q$2/11$q$], 1, $q$MATHEMATICS has 11 letters; vowels A,E,A,I = 4; 4/11.$q$);
+select public._seed_arith_q($q$Probability$q$, $q$easy$q$, $q$What is the probability that a randomly chosen leap year has 53 Sundays?$q$, ARRAY[$q$1/7$q$,$q$2/7$q$,$q$3/7$q$,$q$53/366$q$], 2, $q$366 days = 52 weeks + 2 extra days; the 2 extra form 7 equally likely pairs, 2 of which contain a Sunday; 2/7.$q$);
+select public._seed_arith_q($q$Probability$q$, $q$medium$q$, $q$Two dice are thrown. What is the probability that the difference of the two numbers shown is exactly 2?$q$, ARRAY[$q$1/6$q$,$q$2/9$q$,$q$1/4$q$,$q$5/18$q$], 2, $q$Pairs with |a-b|=2: (1,3)(2,4)(3,5)(4,6) and reverses = 8; 8/36=2/9.$q$);
 select public._seed_arith_q($q$Probability$q$, $q$medium$q$, $q$Two dice are thrown. What is the probability that the sum of the numbers is 7?$q$, ARRAY[$q$1/9$q$,$q$5/36$q$,$q$1/6$q$,$q$1/12$q$], 3, $q$Pairs summing 7 = 6; 6/36=1/6.$q$);
 select public._seed_arith_q($q$Probability$q$, $q$medium$q$, $q$Two dice are rolled. What is the probability that the sum is 9?$q$, ARRAY[$q$1/6$q$,$q$5/36$q$,$q$1/12$q$,$q$1/9$q$], 4, $q$Sums to 9: (3,6)(4,5)(5,4)(6,3)=4; 4/36=1/9.$q$);
 select public._seed_arith_q($q$Probability$q$, $q$medium$q$, $q$Two dice are thrown together. What is the probability of getting at least one 6?$q$, ARRAY[$q$11/36$q$,$q$1/6$q$,$q$1/3$q$,$q$25/36$q$], 1, $q$P(no 6)=25/36; at least one =1-25/36=11/36.$q$);
 select public._seed_arith_q($q$Probability$q$, $q$medium$q$, $q$Two dice are thrown. What is the probability that both show the same number (a doublet)?$q$, ARRAY[$q$1/12$q$,$q$1/6$q$,$q$5/36$q$,$q$1/3$q$], 2, $q$6 doublets; 6/36=1/6.$q$);
-select public._seed_arith_q($q$Probability$q$, $q$medium$q$, $q$Three coins are tossed simultaneously. What is the probability of getting exactly two heads?$q$, ARRAY[$q$1/8$q$,$q$1/2$q$,$q$3/8$q$,$q$5/8$q$], 3, $q$Outcomes with 2 heads: HHT,HTH,THH=3; total 8; 3/8.$q$);
 select public._seed_arith_q($q$Probability$q$, $q$medium$q$, $q$Three coins are tossed. What is the probability of getting at least one head?$q$, ARRAY[$q$1/8$q$,$q$3/4$q$,$q$1/2$q$,$q$7/8$q$], 4, $q$P(no head)=1/8; at least one =1-1/8=7/8.$q$);
 select public._seed_arith_q($q$Probability$q$, $q$medium$q$, $q$A card is drawn from 52 cards. What is the probability that it is a king or a heart?$q$, ARRAY[$q$4/13$q$,$q$1/13$q$,$q$17/52$q$,$q$5/13$q$], 1, $q$Kings 4 + hearts 13 - king of hearts 1 =16; 16/52=4/13.$q$);
 select public._seed_arith_q($q$Probability$q$, $q$medium$q$, $q$A card is drawn from a pack. What is the probability that it is a red card or a queen?$q$, ARRAY[$q$1/2$q$,$q$7/13$q$,$q$6/13$q$,$q$15/26$q$], 2, $q$Red 26 + queens 4 - 2 red queens =28; 28/52=7/13.$q$);

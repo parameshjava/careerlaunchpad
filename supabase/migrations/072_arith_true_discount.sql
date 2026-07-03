@@ -1,6 +1,5 @@
 -- ============================================================================
--- 072_arith_td.sql
--- Seed the 'True Discount' Arithmetic chapter of the exam question bank.
+-- 072_arith: seed the 'True Discount' Arithmetic chapter of the exam question bank.
 -- 37 distinct competitive-exam questions across easy/medium/hard/very_hard,
 -- each with 4 options and a worked explanation. Idempotent (skips existing stems).
 -- ============================================================================
@@ -19,15 +18,15 @@ begin
   end loop;
 end; $fn$;
 
+select public._seed_arith_q($q$True Discount$q$, $q$easy$q$, $q$A sum of money is due 3 years hence at 8% per annum. If its present worth is ₹2500, find the true discount.$q$, ARRAY[$q$₹560$q$,$q$₹600$q$,$q$₹640$q$,$q$₹580$q$], 2, $q$RT=24%. TD = PW·RT/100 = 2500×24/100 = ₹600.$q$);
+select public._seed_arith_q($q$True Discount$q$, $q$easy$q$, $q$If the true discount on a certain sum due 2 years hence at 10% per annum is ₹100, find the sum due.$q$, ARRAY[$q$₹550$q$,$q$₹600$q$,$q$₹660$q$,$q$₹500$q$], 2, $q$RT=20%. A = TD·(100+RT)/RT = 100×120/20 = ₹600.$q$);
+select public._seed_arith_q($q$True Discount$q$, $q$easy$q$, $q$The present worth of ₹1770 due 3 years hence is ₹1500. Find the rate percent per annum.$q$, ARRAY[$q$5%$q$,$q$6%$q$,$q$7%$q$,$q$8%$q$], 2, $q$TD=270. RT = TD·100/PW = 270×100/1500 = 18% for 3 yr ⇒ R = 6%.$q$);
 select public._seed_arith_q($q$True Discount$q$, $q$easy$q$, $q$Find the true discount on ₹1860 due after a period at a rate where R·T = 24%.$q$, ARRAY[$q$₹340$q$,$q$₹350$q$,$q$₹360$q$,$q$₹380$q$], 3, $q$TD = A·(RT)/(100+RT) = 1860×24/124 = ₹360.$q$);
-select public._seed_arith_q($q$True Discount$q$, $q$easy$q$, $q$The true discount on a bill of ₹2040 due 6 months hence at 8% per annum is:$q$, ARRAY[$q$₹78.46$q$,$q$₹80$q$,$q$₹78$q$,$q$₹81.60$q$], 1, $q$RT = 4%. TD = 2040×4/104 = ₹78.46.$q$);
 select public._seed_arith_q($q$True Discount$q$, $q$easy$q$, $q$Find the present worth of ₹930 due 3 years hence at 8% per annum simple interest.$q$, ARRAY[$q$₹730$q$,$q$₹740$q$,$q$₹750$q$,$q$₹720$q$], 3, $q$RT = 24%. PW = 100×930/124 = ₹750 (TD = 180).$q$);
 select public._seed_arith_q($q$True Discount$q$, $q$easy$q$, $q$The present worth of a sum due sometime hence is ₹576 and the true discount is ₹96. The sum due is:$q$, ARRAY[$q$₹648$q$,$q$₹672$q$,$q$₹700$q$,$q$₹680$q$], 2, $q$A = PW + TD = 576 + 96 = ₹672.$q$);
 select public._seed_arith_q($q$True Discount$q$, $q$easy$q$, $q$Find the present worth of ₹1245 due 15 months hence at 8% per annum.$q$, ARRAY[$q$₹1130$q$,$q$₹1120$q$,$q$₹1131.82$q$,$q$₹1125$q$], 3, $q$RT = 10%. PW = 100×1245/110 = ₹1131.82.$q$);
 select public._seed_arith_q($q$True Discount$q$, $q$easy$q$, $q$A man sells a watch for ₹2200 payable 1 year hence. If money is worth 10% per annum, the true discount on the sale price is:$q$, ARRAY[$q$₹200$q$,$q$₹210$q$,$q$₹190$q$,$q$₹220$q$], 1, $q$TD = 2200×10/110 = ₹200.$q$);
-select public._seed_arith_q($q$True Discount$q$, $q$easy$q$, $q$The true discount on ₹936 due after a period at a rate where R·T = 17% is:$q$, ARRAY[$q$₹136$q$,$q$₹135$q$,$q$₹140$q$,$q$₹138$q$], 1, $q$TD = 936×17/117 = ₹136.$q$);
 select public._seed_arith_q($q$True Discount$q$, $q$easy$q$, $q$The true discount on ₹2562 due 4 years hence at 5% per annum simple interest is:$q$, ARRAY[$q$₹420$q$,$q$₹427$q$,$q$₹430$q$,$q$₹410$q$], 2, $q$RT = 20%. TD = 2562×20/120 = ₹427.$q$);
-select public._seed_arith_q($q$True Discount$q$, $q$easy$q$, $q$Find the present worth of ₹1120 due 2 years hence at 8% per annum.$q$, ARRAY[$q$₹960$q$,$q$₹965.52$q$,$q$₹950$q$,$q$₹1000$q$], 2, $q$RT = 16%. PW = 100×1120/116 = ₹965.52.$q$);
 select public._seed_arith_q($q$True Discount$q$, $q$medium$q$, $q$If the true discount on a sum due 2 years hence at 14% per annum be ₹168, the sum due is:$q$, ARRAY[$q$₹768$q$,$q$₹968$q$,$q$₹868$q$,$q$₹1024$q$], 1, $q$RT = 28%. 168 = A×28/128 → A = 168×128/28 = ₹768.$q$);
 select public._seed_arith_q($q$True Discount$q$, $q$medium$q$, $q$The true discount on a bill due 9 months hence at 12% per annum is ₹540. The amount of the bill is:$q$, ARRAY[$q$₹5940$q$,$q$₹5040$q$,$q$₹6540$q$,$q$₹6000$q$], 3, $q$RT = 9%. 540 = A×9/109 → A = 540×109/9 = ₹6540.$q$);
 select public._seed_arith_q($q$True Discount$q$, $q$medium$q$, $q$The difference between simple interest and true discount on ₹2400 due 4 years hence at 5% per annum is:$q$, ARRAY[$q$₹120$q$,$q$₹96$q$,$q$₹80$q$,$q$₹100$q$], 3, $q$SI = 2400×20/100 = 480. PW = 2400×100/120 = 2000, TD = 400. Diff = 480−400 = ₹80.$q$);

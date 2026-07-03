@@ -1,6 +1,5 @@
 -- ============================================================================
--- 075_arith_odd.sql
--- Seed the 'Odd Man Out and Series' Arithmetic chapter of the exam question bank.
+-- 075_arith: seed the 'Odd Man Out and Series' Arithmetic chapter of the exam question bank.
 -- 41 distinct competitive-exam questions across easy/medium/hard/very_hard,
 -- each with 4 options and a worked explanation. Idempotent (skips existing stems).
 -- ============================================================================
@@ -19,25 +18,25 @@ begin
   end loop;
 end; $fn$;
 
-select public._seed_arith_q($q$Odd Man Out and Series$q$, $q$easy$q$, $q$Find the odd one out: 16, 36, 49, 50$q$, ARRAY[$q$16$q$,$q$49$q$,$q$50$q$,$q$36$q$], 3, $q$All are perfect squares (4²,6²,7²) except 50.$q$);
-select public._seed_arith_q($q$Odd Man Out and Series$q$, $q$easy$q$, $q$Find the odd one out: 27, 64, 100, 125$q$, ARRAY[$q$100$q$,$q$27$q$,$q$64$q$,$q$125$q$], 1, $q$All are perfect cubes (3³,4³,5³) except 100 (=10²).$q$);
-select public._seed_arith_q($q$Odd Man Out and Series$q$, $q$easy$q$, $q$Find the odd one out: 17, 19, 21, 23$q$, ARRAY[$q$17$q$,$q$19$q$,$q$21$q$,$q$23$q$], 3, $q$All are primes except 21 (=3×7).$q$);
-select public._seed_arith_q($q$Odd Man Out and Series$q$, $q$easy$q$, $q$What comes next in the series: 3, 6, 12, 24, ?$q$, ARRAY[$q$30$q$,$q$48$q$,$q$36$q$,$q$42$q$], 2, $q$Each term ×2, so 24×2 = 48.$q$);
+select public._seed_arith_q($q$Odd Man Out and Series$q$, $q$easy$q$, $q$What comes next in the series: 6, 11, 21, 41, ?$q$, ARRAY[$q$71$q$,$q$81$q$,$q$82$q$,$q$61$q$], 2, $q$Each term = previous×2−1, so 41×2−1 = 81.$q$);
+select public._seed_arith_q($q$Odd Man Out and Series$q$, $q$easy$q$, $q$Find the odd one out: 4, 9, 16, 23, 25, 36$q$, ARRAY[$q$9$q$,$q$16$q$,$q$23$q$,$q$25$q$], 3, $q$All are perfect squares (2²..6²) except 23.$q$);
+select public._seed_arith_q($q$Odd Man Out and Series$q$, $q$easy$q$, $q$What comes next in the series: 5, 8, 14, 23, ?$q$, ARRAY[$q$32$q$,$q$35$q$,$q$33$q$,$q$38$q$], 2, $q$Differences +3,+6,+9,+12, so 23+12 = 35.$q$);
+select public._seed_arith_q($q$Odd Man Out and Series$q$, $q$easy$q$, $q$Find the odd one out: 11, 22, 33, 44, 54, 66$q$, ARRAY[$q$22$q$,$q$33$q$,$q$54$q$,$q$66$q$], 3, $q$All are multiples of 11 except 54.$q$);
+select public._seed_arith_q($q$Odd Man Out and Series$q$, $q$easy$q$, $q$What comes next in the series: 3, 4, 7, 11, 18, ?$q$, ARRAY[$q$25$q$,$q$29$q$,$q$28$q$,$q$30$q$], 2, $q$Each term = sum of the previous two, so 11+18 = 29.$q$);
+select public._seed_arith_q($q$Odd Man Out and Series$q$, $q$easy$q$, $q$Find the odd one out: 43, 53, 63, 73, 83$q$, ARRAY[$q$43$q$,$q$53$q$,$q$63$q$,$q$73$q$], 3, $q$All are prime except 63 (=9×7).$q$);
+select public._seed_arith_q($q$Odd Man Out and Series$q$, $q$easy$q$, $q$What comes next in the series: 2, 6, 12, 20, 30, ?$q$, ARRAY[$q$40$q$,$q$42$q$,$q$44$q$,$q$36$q$], 2, $q$Term = n²+n (n=1..5); next is 6²+6 = 42.$q$);
+select public._seed_arith_q($q$Odd Man Out and Series$q$, $q$easy$q$, $q$Find the odd one out: 8, 27, 64, 125, 180, 216$q$, ARRAY[$q$27$q$,$q$64$q$,$q$180$q$,$q$216$q$], 3, $q$All are perfect cubes (2³..6³) except 180.$q$);
+select public._seed_arith_q($q$Odd Man Out and Series$q$, $q$easy$q$, $q$What comes next in the series: 7, 10, 16, 28, ?$q$, ARRAY[$q$46$q$,$q$50$q$,$q$52$q$,$q$54$q$], 3, $q$Differences 3,6,12,24 (each doubling), so 28+24 = 52.$q$);
 select public._seed_arith_q($q$Odd Man Out and Series$q$, $q$easy$q$, $q$What comes next in the series: 2, 4, 7, 11, ?$q$, ARRAY[$q$14$q$,$q$15$q$,$q$16$q$,$q$18$q$], 3, $q$Differences +2,+3,+4,+5, so 11+5 = 16.$q$);
-select public._seed_arith_q($q$Odd Man Out and Series$q$, $q$easy$q$, $q$Find the odd one out: 8, 12, 20, 26$q$, ARRAY[$q$8$q$,$q$12$q$,$q$26$q$,$q$20$q$], 3, $q$All are multiples of 4 except 26.$q$);
-select public._seed_arith_q($q$Odd Man Out and Series$q$, $q$easy$q$, $q$What comes next in the series: 7, 14, 21, 28, ?$q$, ARRAY[$q$30$q$,$q$32$q$,$q$35$q$,$q$42$q$], 3, $q$Common difference 7, so 28+7 = 35.$q$);
-select public._seed_arith_q($q$Odd Man Out and Series$q$, $q$easy$q$, $q$Find the odd one out: 12, 24, 35, 48$q$, ARRAY[$q$12$q$,$q$35$q$,$q$24$q$,$q$48$q$], 2, $q$All are even except 35.$q$);
-select public._seed_arith_q($q$Odd Man Out and Series$q$, $q$easy$q$, $q$What comes next in the series: 40, 37, 34, 31, ?$q$, ARRAY[$q$27$q$,$q$28$q$,$q$29$q$,$q$30$q$], 2, $q$Decreasing by 3, so 31−3 = 28.$q$);
-select public._seed_arith_q($q$Odd Man Out and Series$q$, $q$easy$q$, $q$Find the odd one out: 15, 25, 32, 45$q$, ARRAY[$q$15$q$,$q$32$q$,$q$25$q$,$q$45$q$], 2, $q$All are multiples of 5 except 32.$q$);
-select public._seed_arith_q($q$Odd Man Out and Series$q$, $q$medium$q$, $q$Find the wrong term: 3, 6, 11, 24, 48$q$, ARRAY[$q$6$q$,$q$11$q$,$q$24$q$,$q$48$q$], 2, $q$Rule is ×2 (3,6,12,24,48); the 3rd term should be 12, not 11.$q$);
+select public._seed_arith_q($q$Odd Man Out and Series$q$, $q$medium$q$, $q$Find the wrong term: 3, 8, 18, 38, 78, 156$q$, ARRAY[$q$8$q$,$q$18$q$,$q$78$q$,$q$156$q$], 4, $q$Rule is ×2+2 (3,8,18,38,78,158); the last term should be 158, not 156.$q$);
+select public._seed_arith_q($q$Odd Man Out and Series$q$, $q$medium$q$, $q$Find the wrong term: 1, 5, 13, 25, 41, 62$q$, ARRAY[$q$5$q$,$q$13$q$,$q$41$q$,$q$62$q$], 4, $q$Differences +4,+8,+12,+16,+20 (…41,61); the last term should be 61, not 62.$q$);
+select public._seed_arith_q($q$Odd Man Out and Series$q$, $q$medium$q$, $q$What comes next in the series: 5, 6, 9, 14, 21, ?$q$, ARRAY[$q$28$q$,$q$30$q$,$q$32$q$,$q$34$q$], 2, $q$Differences 1,3,5,7,9 (odd numbers), so 21+9 = 30.$q$);
 select public._seed_arith_q($q$Odd Man Out and Series$q$, $q$medium$q$, $q$What comes next in the series: 2, 3, 5, 8, 12, 17, ?$q$, ARRAY[$q$21$q$,$q$22$q$,$q$23$q$,$q$24$q$], 3, $q$Differences +1,+2,+3,+4,+5,+6, so 17+6 = 23.$q$);
 select public._seed_arith_q($q$Odd Man Out and Series$q$, $q$medium$q$, $q$What comes next in the series: 10, 16, 13, 19, 16, 22, ?$q$, ARRAY[$q$18$q$,$q$19$q$,$q$20$q$,$q$25$q$], 2, $q$Alternating +6 then −3; last op is −3, so 22−3 = 19.$q$);
 select public._seed_arith_q($q$Odd Man Out and Series$q$, $q$medium$q$, $q$What comes next in the series: 3, 7, 15, 31, 63, ?$q$, ARRAY[$q$95$q$,$q$121$q$,$q$127$q$,$q$130$q$], 3, $q$Each term = previous×2+1, so 63×2+1 = 127.$q$);
 select public._seed_arith_q($q$Odd Man Out and Series$q$, $q$medium$q$, $q$What comes next in the series: 2, 5, 14, 41, 122, ?$q$, ARRAY[$q$245$q$,$q$365$q$,$q$363$q$,$q$366$q$], 2, $q$Each term = previous×3−1, so 122×3−1 = 365.$q$);
-select public._seed_arith_q($q$Odd Man Out and Series$q$, $q$medium$q$, $q$Find the wrong term: 2, 3, 5, 7, 11, 14, 17$q$, ARRAY[$q$5$q$,$q$7$q$,$q$11$q$,$q$14$q$], 4, $q$Sequence is consecutive primes; 14 breaks it and should be 13.$q$);
 select public._seed_arith_q($q$Odd Man Out and Series$q$, $q$medium$q$, $q$What comes next in the series: 16, 24, 36, 54, ?$q$, ARRAY[$q$72$q$,$q$78$q$,$q$81$q$,$q$96$q$], 3, $q$Each term ×1.5, so 54×1.5 = 81.$q$);
 select public._seed_arith_q($q$Odd Man Out and Series$q$, $q$medium$q$, $q$What comes next in the series: 2, 5, 10, 17, 26, ?$q$, ARRAY[$q$35$q$,$q$36$q$,$q$37$q$,$q$38$q$], 3, $q$Term = n²+1 (n=1..6); 6²+1 = 37.$q$);
-select public._seed_arith_q($q$Odd Man Out and Series$q$, $q$medium$q$, $q$Find the wrong term: 320, 160, 80, 40, 22, 10$q$, ARRAY[$q$160$q$,$q$80$q$,$q$40$q$,$q$22$q$], 4, $q$Rule is ÷2 (320,160,80,40,20,10); the 5th term should be 20, not 22.$q$);
 select public._seed_arith_q($q$Odd Man Out and Series$q$, $q$medium$q$, $q$Find the wrong term: 3, 5, 9, 15, 24, 33$q$, ARRAY[$q$5$q$,$q$9$q$,$q$24$q$,$q$33$q$], 3, $q$Differences should be +2,+4,+6,+8,+10 (3,5,9,15,23,33); the 5th term should be 23, not 24.$q$);
 select public._seed_arith_q($q$Odd Man Out and Series$q$, $q$hard$q$, $q$What comes next in the series: 5, 11, 23, 47, 95, ?$q$, ARRAY[$q$185$q$,$q$190$q$,$q$191$q$,$q$193$q$], 3, $q$Each term = previous×2+1, so 95×2+1 = 191.$q$);
 select public._seed_arith_q($q$Odd Man Out and Series$q$, $q$hard$q$, $q$What comes next in the series: 3, 8, 15, 24, 35, 48, ?$q$, ARRAY[$q$60$q$,$q$61$q$,$q$63$q$,$q$65$q$], 3, $q$Term = n²−1 for n=2..7; next is 8²−1 = 63.$q$);
