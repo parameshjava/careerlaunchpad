@@ -34,7 +34,7 @@ select public._seed_arith_q($q$Percentage$q$,'easy',$q$Express 3/8 as a percenta
 select public._seed_arith_q($q$Percentage$q$,'easy',$q$What is 12.5% of 640?$q$,array[$q$70$q$,$q$75$q$,$q$80$q$,$q$85$q$],3,$q$640 × 12.5/100 = 80$q$);
 select public._seed_arith_q($q$Percentage$q$,'easy',$q$45 is what percent of 300?$q$,array[$q$12%$q$,$q$15%$q$,$q$18%$q$,$q$20%$q$],2,$q$45/300 × 100 = 15%$q$);
 select public._seed_arith_q($q$Percentage$q$,'easy',$q$If 40% of a number is 96, find the number.$q$,array[$q$220$q$,$q$240$q$,$q$260$q$,$q$280$q$],2,$q$96 × 100/40 = 240$q$);
-select public._seed_arith_q($q$Percentage$q$,'easy',$q$Convert 0.65 to a percentage.$q$,array[$q$6.5%$q$,$q$56%$q$,$q$65%$q$,$q$6.05%$q$],3,$q$0.65 × 100 = 65%$q$);
+select public._seed_arith_q($q$Percentage$q$,'easy',$q$A number is first increased by 20% and then the result is decreased by 20%. What is the net percentage change?$q$,array[$q$4% increase$q$,$q$4% decrease$q$,$q$No change$q$,$q$2% decrease$q$],2,$q$Net factor = 1.20 × 0.80 = 0.96, i.e. 96% of the original — a 4% decrease.$q$);
 select public._seed_arith_q($q$Percentage$q$,'easy',$q$What is 150% of 60?$q$,array[$q$75$q$,$q$80$q$,$q$90$q$,$q$100$q$],3,$q$60 × 150/100 = 90$q$);
 select public._seed_arith_q($q$Percentage$q$,'easy',$q$Express 40% as a fraction in lowest terms.$q$,array[$q$1/4$q$,$q$2/5$q$,$q$3/5$q$,$q$4/5$q$],2,$q$40/100 = 2/5$q$);
 select public._seed_arith_q($q$Percentage$q$,'easy',$q$How much is 8% of 2500?$q$,array[$q$150$q$,$q$180$q$,$q$200$q$,$q$220$q$],3,$q$2500 × 8/100 = 200$q$);

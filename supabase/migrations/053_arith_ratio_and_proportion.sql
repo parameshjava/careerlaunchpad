@@ -29,11 +29,11 @@ end; $$;
 -- Ratio and Proportion (40 questions)
 select public._seed_arith_q($q$Ratio and Proportion$q$,'easy',$q$If a : b = 3 : 4 and b : c = 5 : 7, then a : c is:$q$,array[$q$12 : 35$q$,$q$15 : 28$q$,$q$20 : 21$q$,$q$15 : 14$q$],2,$q$a:c = (3×5):(4×7) = 15:28.$q$);
 select public._seed_arith_q($q$Ratio and Proportion$q$,'easy',$q$A sum of ₹1560 is divided between two persons in the ratio 5 : 7. The larger share is:$q$,array[$q$₹650$q$,$q$₹780$q$,$q$₹910$q$,$q$₹1092$q$],3,$q$Larger = 1560×7/12 = 910.$q$);
-select public._seed_arith_q($q$Ratio and Proportion$q$,'easy',$q$The ratio 0.75 : 1.25 in simplest form is:$q$,array[$q$3 : 5$q$,$q$5 : 3$q$,$q$3 : 4$q$,$q$2 : 5$q$],1,$q$75:125 = 3:5.$q$);
+select public._seed_arith_q($q$Ratio and Proportion$q$,'easy',$q$If A : B = 3 : 4 and B : C = 8 : 9, find A : C.$q$,array[$q$2 : 3$q$,$q$3 : 4$q$,$q$4 : 9$q$,$q$1 : 3$q$],1,$q$Make B common: A:B = 3:4 = 6:8; B:C = 8:9. So A:C = 6:9 = 2:3.$q$);
 select public._seed_arith_q($q$Ratio and Proportion$q$,'easy',$q$Find the fourth proportional to 4, 6 and 14.$q$,array[$q$18$q$,$q$21$q$,$q$24$q$,$q$28$q$],2,$q$x = 6×14/4 = 21.$q$);
 select public._seed_arith_q($q$Ratio and Proportion$q$,'easy',$q$The mean proportional between 9 and 16 is:$q$,array[$q$11$q$,$q$12$q$,$q$13$q$,$q$14$q$],2,$q$√(9×16)=√144=12.$q$);
 select public._seed_arith_q($q$Ratio and Proportion$q$,'easy',$q$If a : b = 2 : 3 and b : c = 4 : 5, then a : b : c is:$q$,array[$q$8 : 12 : 15$q$,$q$2 : 3 : 5$q$,$q$8 : 12 : 10$q$,$q$6 : 12 : 15$q$],1,$q$Scale b to 12: a:b:c = 8:12:15.$q$);
-select public._seed_arith_q($q$Ratio and Proportion$q$,'easy',$q$The ratio 40 : 60 expressed in lowest terms is:$q$,array[$q$4 : 6$q$,$q$2 : 3$q$,$q$3 : 2$q$,$q$4 : 5$q$],2,$q$40:60 = 2:3.$q$);
+select public._seed_arith_q($q$Ratio and Proportion$q$,'easy',$q$Two numbers are in the ratio 5 : 7. If 6 is added to each, the ratio becomes 3 : 4. Find the larger number.$q$,array[$q$28$q$,$q$35$q$,$q$42$q$,$q$30$q$],3,$q$(5x+6)/(7x+6) = 3/4 ⇒ 4(5x+6) = 3(7x+6) ⇒ 20x+24 = 21x+18 ⇒ x = 6. Larger = 7×6 = 42.$q$);
 select public._seed_arith_q($q$Ratio and Proportion$q$,'easy',$q$The third proportional to 4 and 12 is:$q$,array[$q$30$q$,$q$32$q$,$q$36$q$,$q$48$q$],3,$q$x = 12²/4 = 36.$q$);
 select public._seed_arith_q($q$Ratio and Proportion$q$,'easy',$q$₹750 is divided among A, B and C in the ratio 2 : 3 : 5. C's share is:$q$,array[$q$₹150$q$,$q$₹225$q$,$q$₹300$q$,$q$₹375$q$],4,$q$C = 750×5/10 = 375.$q$);
 select public._seed_arith_q($q$Ratio and Proportion$q$,'easy',$q$Which of the following fractions is the greatest: 3/5 or 5/8?$q$,array[$q$3/5$q$,$q$5/8$q$,$q$Both equal$q$,$q$Cannot be determined$q$],2,$q$3/5=0.60, 5/8=0.625 → 5/8 greater.$q$);

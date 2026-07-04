@@ -26,7 +26,7 @@ begin
 end; $$;
 
 -- Surds and Indices (39 questions)
-select public._seed_arith_q($q$Surds and Indices$q$,'easy',$q$Simplify: (2^5 × 2^3) ÷ 2^6$q$,array[$q$2$q$,$q$4$q$,$q$8$q$,$q$16$q$],2,$q$a^m×a^n=a^(m+n); a^m÷a^n=a^(m−n). Numerator=2^(5+3)=2^8. Then 2^8÷2^6=2^(8−6)=2^2=4.$q$);
+select public._seed_arith_q($q$Surds and Indices$q$,'easy',$q$Simplify: (√12 + √48) ÷ √3$q$,array[$q$4$q$,$q$6$q$,$q$8$q$,$q$2√3$q$],2,$q$√12 = 2√3 and √48 = 4√3, so the numerator = 6√3. Then 6√3 ÷ √3 = 6.$q$);
 select public._seed_arith_q($q$Surds and Indices$q$,'easy',$q$The value of (27)^(2/3) is:$q$,array[$q$6$q$,$q$9$q$,$q$18$q$,$q$27$q$],2,$q$27=3^3, so (3^3)^(2/3)=3^(3×2/3)=3^2=9.$q$);
 select public._seed_arith_q($q$Surds and Indices$q$,'easy',$q$The value of (0.0016)^(1/4) is:$q$,array[$q$0.02$q$,$q$0.2$q$,$q$0.4$q$,$q$0.04$q$],2,$q$0.0016=16/10000=(2/10)^4. So (0.0016)^(1/4)=2/10=0.2.$q$);
 select public._seed_arith_q($q$Surds and Indices$q$,'easy',$q$Evaluate: ((5^2)^3) ÷ 5^4$q$,array[$q$25$q$,$q$125$q$,$q$5$q$,$q$625$q$],1,$q$(a^m)^n=a^(mn): (5^2)^3=5^6. Then 5^6÷5^4=5^(6−4)=5^2=25.$q$);
