@@ -14,6 +14,7 @@ type ResultOption = { id: string; label: string; is_correct: boolean };
 type ResultQuestion = {
   position: number;
   stem: string;
+  explanation: string | null;
   awarded_marks: number | null;
   selected_option_ids: string[];
   options: ResultOption[];
@@ -105,6 +106,12 @@ export function StudentResult({ sessionId }: { sessionId: string }) {
                       );
                     })}
                   </ul>
+                  {q.explanation && (
+                    <div className="bg-muted/50 text-muted-foreground rounded border p-3 text-sm">
+                      <p className="text-foreground mb-1 text-xs font-semibold">Explanation</p>
+                      <RichContent content={q.explanation} />
+                    </div>
+                  )}
                 </CardContent>
               </Card>
             </li>
