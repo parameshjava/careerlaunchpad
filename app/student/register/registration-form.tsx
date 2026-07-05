@@ -14,7 +14,11 @@ import {
   EMPTY, FIELD_LABELS, STEP_PAYLOAD, StepBody, Stepper,
 } from "@/components/students/registration-fields";
 
-export function RegistrationForm() {
+// Endpoints default to the student's own registration API; the console profile
+// editor overrides them to target a specific student (/api/students/:id/...).
+const DEFAULT_ENDPOINTS = { profile: "/api/registration/profile", submit: "/api/registration/profile/submit" };
+
+export function RegistrationForm({ endpoints = DEFAULT_ENDPOINTS }: { endpoints?: { profile: string; submit: string } }) {
   const [refs, setRefs] = useState<RefData | null>(null);
   const [f, setF] = useState<Form>(EMPTY);
   const [email, setEmail] = useState<string | null>(null);
@@ -31,7 +35,7 @@ export function RegistrationForm() {
     (async () => {
       const [refRes, profRes] = await Promise.all([
         fetch("/api/registration/reference"),
-        fetch("/api/registration/profile"),
+        fetch(endpoints.profile),
       ]);
       if (refRes.ok) setRefs(await refRes.json());
       if (profRes.ok) {
@@ -58,12 +62,12 @@ export function RegistrationForm() {
       }
       setLoading(false);
     })();
-  }, []);
+  }, [endpoints.profile]);
 
   async function saveStep(target: number) {
     setSaving(true);
     setErrors([]);
-    const res = await fetch("/api/registration/profile", {
+    const res = await fetch(endpoints.profile, {
       method: "PATCH",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({ step, data: STEP_PAYLOAD[step](f) }),
@@ -75,7 +79,7 @@ export function RegistrationForm() {
       return;
     }
     if (target > 6) {
-      const sub = await fetch("/api/registration/profile/submit", { method: "POST" });
+      const sub = await fetch(endpoints.submit, { method: "POST" });
       if (sub.ok) { setDone(true); return; }
       const body = await sub.json().catch(() => ({}));
       if (body.missing?.length) {

@@ -1,15 +1,16 @@
 import Link from "next/link";
 import { redirect } from "next/navigation";
-import { getAuthContext } from "@/lib/auth";
+import { getAuthContext, can } from "@/lib/auth";
 import { createClient } from "@/lib/supabase/server";
 import { PROFILE_SELECT, REF_TABLES } from "@/lib/registration";
 import { EMPTY, type Form, type RefData, type College } from "@/components/students/registration-fields";
-import { ProfileSummary } from "@/app/student/register/registration-form";
+import { ProfileSummary, RegistrationForm } from "@/app/student/register/registration-form";
 
-// Console-side, read-only view of one student's profile — the same layout the
-// student sees after submitting registration (ProfileSummary), fetched by id
-// (the student_profile.user_id) instead of the session user. RLS bounds the read
-// to what the console user may see; intake rows (not yet a profile) show a note.
+// Console-side student profile. Platform staff (student.profile.manage) get the
+// registration wizard pointed at the admin API, which does its own load → summary
+// → Edit → per-step save loop; everyone else gets the read-only ProfileSummary
+// (same layout the student sees after submitting). Fetched by id (= user_id).
+// RLS bounds both; intake rows (not yet a profile) show a note.
 export default async function StudentProfilePage({ params }: { params: Promise<{ id: string }> }) {
   const ctx = await getAuthContext();
   if (!ctx) redirect("/auth/login");
@@ -34,6 +35,23 @@ export default async function StudentProfilePage({ params }: { params: Promise<{
         <p className="text-muted-foreground py-20 text-center text-sm">
           This student hasn’t started registration yet — no profile to show.
         </p>
+      </div>
+    );
+  }
+
+  // Staff (student.profile.manage): reuse the wizard in edit mode. It self-loads
+  // the target's profile from the admin API and runs its summary → Edit → save
+  // loop, so no need to map the row we just fetched (that was the existence gate).
+  if (can(ctx, "student.profile.manage")) {
+    return (
+      <div className="mx-auto w-full max-w-2xl">
+        <BackLink />
+        <RegistrationForm
+          endpoints={{
+            profile: `/api/students/${id}/profile`,
+            submit: `/api/students/${id}/profile/submit`,
+          }}
+        />
       </div>
     );
   }
