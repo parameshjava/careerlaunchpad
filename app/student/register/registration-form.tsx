@@ -18,7 +18,17 @@ import {
 // editor overrides them to target a specific student (/api/students/:id/...).
 const DEFAULT_ENDPOINTS = { profile: "/api/registration/profile", submit: "/api/registration/profile/submit" };
 
-export function RegistrationForm({ endpoints = DEFAULT_ENDPOINTS }: { endpoints?: { profile: string; submit: string } }) {
+// `reviewFirst` lands on the read-only summary regardless of registration status
+// (the console: staff review the whole profile, then click Edit to open the
+// wizard). Students self-registering leave it false so an in-progress profile
+// drops straight back into the wizard where they left off.
+export function RegistrationForm({
+  endpoints = DEFAULT_ENDPOINTS,
+  reviewFirst = false,
+}: {
+  endpoints?: { profile: string; submit: string };
+  reviewFirst?: boolean;
+}) {
   const [refs, setRefs] = useState<RefData | null>(null);
   const [f, setF] = useState<Form>(EMPTY);
   const [email, setEmail] = useState<string | null>(null);
@@ -28,6 +38,7 @@ export function RegistrationForm({ endpoints = DEFAULT_ENDPOINTS }: { endpoints?
   const [saving, setSaving] = useState(false);
   const [errors, setErrors] = useState<string[]>([]);
   const [done, setDone] = useState(false);
+  const [regStatus, setRegStatus] = useState<"submitted" | "in_progress">("in_progress");
 
   const set = useCallback(<K extends keyof Form>(k: K, v: Form[K]) => setF((p) => ({ ...p, [k]: v })), []);
 
@@ -57,12 +68,13 @@ export function RegistrationForm({ endpoints = DEFAULT_ENDPOINTS }: { endpoints?
           }));
           if (profile.college) setCollege(profile.college);
         }
-        if (registration_status === "submitted") setDone(true);
+        setRegStatus(registration_status === "submitted" ? "submitted" : "in_progress");
+        if (reviewFirst || registration_status === "submitted") setDone(true);
         setStep(Math.min(6, Math.max(1, (last_completed_step ?? 0) + 1)));
       }
       setLoading(false);
     })();
-  }, [endpoints.profile]);
+  }, [endpoints.profile, reviewFirst]);
 
   async function saveStep(target: number) {
     setSaving(true);
@@ -96,7 +108,7 @@ export function RegistrationForm({ endpoints = DEFAULT_ENDPOINTS }: { endpoints?
   if (loading) return <p className="text-muted-foreground py-20 text-center text-sm">Loading your registration…</p>;
 
   if (done) {
-    return <ProfileSummary f={f} refs={refs} email={email} college={college} onEdit={() => setDone(false)} />;
+    return <ProfileSummary f={f} refs={refs} email={email} college={college} status={regStatus} onEdit={() => setDone(false)} />;
   }
 
   if (!refs) return <p className="text-destructive py-20 text-center text-sm">Could not load registration options.</p>;

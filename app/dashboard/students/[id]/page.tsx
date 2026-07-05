@@ -39,14 +39,16 @@ export default async function StudentProfilePage({ params }: { params: Promise<{
     );
   }
 
-  // Staff (student.profile.manage): reuse the wizard in edit mode. It self-loads
-  // the target's profile from the admin API and runs its summary → Edit → save
-  // loop, so no need to map the row we just fetched (that was the existence gate).
+  // Staff (student.profile.manage): reuse the wizard, but land on the read-only
+  // summary first (reviewFirst) — review the whole profile, then Edit to open the
+  // wizard. It self-loads from the admin API, so no need to map the row we just
+  // fetched (that was the existence gate).
   if (can(ctx, "student.profile.manage")) {
     return (
       <div className="mx-auto w-full max-w-2xl">
         <BackLink />
         <RegistrationForm
+          reviewFirst
           endpoints={{
             profile: `/api/students/${id}/profile`,
             submit: `/api/students/${id}/profile/submit`,
