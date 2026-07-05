@@ -145,7 +145,9 @@ function StudentActions({ student, table }: { student: Student; table: Table<Stu
         <DropdownMenuItem onClick={() => navigator.clipboard.writeText(student.email)}>
           Copy email
         </DropdownMenuItem>
-        <DropdownMenuItem>View profile</DropdownMenuItem>
+        <DropdownMenuItem onClick={() => router.push(`/dashboard/students/${student.id}`)}>
+          View profile
+        </DropdownMenuItem>
         {canDelete && (
           <>
             <DropdownMenuSeparator />

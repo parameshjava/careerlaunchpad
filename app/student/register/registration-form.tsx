@@ -138,15 +138,17 @@ export function RegistrationForm() {
 // ---- profile summary (shown once registration is submitted) ----------------
 
 /**
- * Read-only view of the submitted profile. Reads the same in-memory form state
- * (`f` + `refs` + `college` + `email`) the wizard collected, mapping stored
- * slugs/ids back to their human labels via the reference data. "Edit my profile"
- * drops back into the wizard (which already resumes at the last step).
+ * Read-only view of a profile. Reads form state (`f` + `refs` + `college` +
+ * `email`), mapping stored slugs/ids back to their human labels via the reference
+ * data. Reused by the console's student-profile page (no `onEdit` → no edit
+ * button; `status` swaps the header badge). "Edit my profile" drops the student
+ * back into the wizard (which already resumes at the last step).
  */
-function ProfileSummary({
-  f, refs, email, college, onEdit,
+export function ProfileSummary({
+  f, refs, email, college, onEdit, status = "submitted",
 }: {
-  f: Form; refs: RefData | null; email: string | null; college: College | null; onEdit: () => void;
+  f: Form; refs: RefData | null; email: string | null; college: College | null;
+  onEdit?: () => void; status?: "submitted" | "in_progress";
 }) {
   const bySlug = (list?: Ref[]) => new Map((list ?? []).map((r) => [r.slug, r.label]));
   const byId = (list?: Ref[]) => new Map((list ?? []).map((r) => [r.id, r.label]));
@@ -169,18 +171,26 @@ function ProfileSummary({
     <div className="bg-card rounded-3xl border p-5 shadow-xl shadow-[#7c3aed]/5 sm:p-8">
       <div className="flex flex-col gap-4 border-b pb-5 sm:flex-row sm:items-center sm:justify-between">
         <div className="min-w-0">
-          <span className="inline-flex items-center gap-1.5 rounded-full bg-emerald-50 px-2.5 py-0.5 text-[0.72rem] font-semibold text-emerald-700">
-            ✓ Registration submitted
-          </span>
+          {status === "submitted" ? (
+            <span className="inline-flex items-center gap-1.5 rounded-full bg-emerald-50 px-2.5 py-0.5 text-[0.72rem] font-semibold text-emerald-700">
+              ✓ Registration submitted
+            </span>
+          ) : (
+            <span className="inline-flex items-center gap-1.5 rounded-full bg-amber-50 px-2.5 py-0.5 text-[0.72rem] font-semibold text-amber-700">
+              Registration in progress
+            </span>
+          )}
           <h2 className="mt-2 truncate text-xl font-bold">{f.full_name || "Your profile"}</h2>
           {email && <p className="text-muted-foreground truncate text-sm">{email}</p>}
         </div>
-        <Button
-          onClick={onEdit}
-          className="shrink-0 bg-gradient-to-r from-[#2563eb] to-[#7c3aed] text-white shadow-lg shadow-[#7c3aed]/25 transition hover:brightness-105"
-        >
-          Edit my profile
-        </Button>
+        {onEdit && (
+          <Button
+            onClick={onEdit}
+            className="shrink-0 bg-gradient-to-r from-[#2563eb] to-[#7c3aed] text-white shadow-lg shadow-[#7c3aed]/25 transition hover:brightness-105"
+          >
+            Edit my profile
+          </Button>
+        )}
       </div>
 
       <SummarySection title="Basic Information">
