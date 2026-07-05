@@ -4,7 +4,7 @@ import { QuestionsClient } from "./questions-client";
 
 // Questions — browse & author the GLOBAL question bank (migration 021). Shared
 // across all colleges. Subjects/chapters/passages are curated on the separate
-// "Subjects & Chapters" page (/dashboard/questions/structure).
+// "Subjects & Chapters" page (/dashboard/subjects).
 export default async function QuestionsPage() {
   const ctx = await getAuthContext();
   if (!ctx) redirect("/auth/login");
