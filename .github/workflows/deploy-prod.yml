@@ -1,14 +1,32 @@
 name: Deploy Production
 
 # Preview deploys (PRs + main) are handled by Vercel's native Git integration.
-# Production is gated here: it deploys ONLY when a GitHub Release is published.
+# Production is gated here: it runs ONLY when a GitHub Release is published.
 # A bare `git push --tags` does NOT deploy — you must publish a Release.
+#
+# Order matters: migrate the production DB first, then deploy the app, so new
+# code never meets an old schema.
 on:
   release:
     types: [published]
 
 jobs:
+  migrate:
+    runs-on: ubuntu-latest
+    env:
+      SUPABASE_ACCESS_TOKEN: ${{ secrets.SUPABASE_ACCESS_TOKEN }}
+      SUPABASE_DB_PASSWORD: ${{ secrets.PROD_DB_PASSWORD }}
+      PROJECT_ID: ${{ secrets.PROD_PROJECT_ID }}
+    steps:
+      - uses: actions/checkout@v4
+      - uses: supabase/setup-cli@v1
+        with:
+          version: latest
+      - run: supabase link --project-ref "$PROJECT_ID"
+      - run: supabase db push
+
   deploy:
+    needs: migrate
     runs-on: ubuntu-latest
     env:
       VERCEL_ORG_ID: ${{ secrets.VERCEL_ORG_ID }}
