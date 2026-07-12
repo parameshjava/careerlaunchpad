@@ -13,7 +13,7 @@ export default async function AccountLayout({ children }: { children: React.Reac
 
   return (
     <div className="bg-muted/30 text-foreground flex min-h-dvh flex-col">
-      <SiteHeader right={<AccountMenu email={ctx.email} name={ctx.name} avatarUrl={ctx.avatarUrl} />} />
+      <SiteHeader right={<AccountMenu email={ctx.email} name={ctx.name} avatarUrl={ctx.avatarUrl} profileHref={ctx.profilePath} />} />
       <main className="mx-auto w-full max-w-2xl flex-1 px-4 py-8">{children}</main>
     </div>
   );

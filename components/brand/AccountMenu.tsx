@@ -25,10 +25,13 @@ export function AccountMenu({
   email,
   name,
   avatarUrl,
+  profileHref = "/account",
 }: {
   email: string | null;
   name: string | null;
   avatarUrl: string | null;
+  /** Role-appropriate profile editor; defaults to the generic /account page. */
+  profileHref?: string;
 }) {
   const label = name ?? email ?? "Account";
   const initials = initialsFrom(name, email);
@@ -55,7 +58,7 @@ export function AccountMenu({
         </DropdownMenuLabel>
         <DropdownMenuSeparator />
         <DropdownMenuItem asChild>
-          <Link href="/account">
+          <Link href={profileHref}>
             <UserRound />
             Profile
           </Link>

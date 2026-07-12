@@ -35,7 +35,8 @@ export function SiteHeader({
       {/* Dimensions mirror the marketing .navbar/.brand rules in app/landing.css so
           the bar looks identical on the marketing and app surfaces. */}
       <div className="flex items-center gap-3 px-[clamp(16px,4vw,28px)] py-2">
-        <Link href="/" className="flex min-w-0 items-center gap-3">
+        {/* /home resolves per-user: signed-in → their dashboard, else → marketing home. */}
+        <Link href="/home" className="flex min-w-0 items-center gap-3">
           <Image
             src="/logo-transparent.png"
             alt="CareerLaunchpad"

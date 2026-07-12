@@ -322,22 +322,25 @@ function GoalPicker({ goals, selected, primary, onChange }: {
   }
 
   return (
-    <div>
+    <div className="space-y-4">
       {categories.map((cat) => (
-        <div key={cat}>
-          <p className="text-muted-foreground mt-4 mb-2 text-xs font-bold tracking-wide uppercase first:mt-0">{cat}</p>
-          <div className="flex flex-wrap gap-2">
+        // fieldset/legend so the sector label straddles the top border (native notch).
+        <fieldset key={cat} className="bg-muted/30 rounded-xl border px-4 pt-1 pb-4">
+          <legend className="ml-1 px-2 text-base font-bold tracking-[0.08em] text-[#7c3aed] uppercase">{cat}</legend>
+          <div className="grid grid-cols-2 gap-2 sm:grid-cols-3">
             {goals.filter((g) => (g.category ?? "Other") === cat).map((g) => {
               const on = selected.includes(g.id);
               const isPrimary = primary === g.id;
               return (
                 <span
                   key={g.id}
-                  className={`inline-flex items-center overflow-hidden rounded-full border text-sm font-medium transition ${
-                    on ? "border-transparent bg-primary text-primary-foreground" : "bg-background"
+                  className={`flex items-center overflow-hidden rounded-full border text-sm font-medium transition ${
+                    on
+                      ? "border-transparent bg-primary text-primary-foreground shadow-sm"
+                      : "border-border/60 text-muted-foreground hover:border-primary/40 hover:text-foreground hover:bg-background"
                   } ${isPrimary ? "ring-2 ring-primary ring-offset-1" : ""}`}
                 >
-                  <button type="button" onClick={() => toggle(g.id)} className="py-1.5 pr-2 pl-4">{g.label}</button>
+                  <button type="button" onClick={() => toggle(g.id)} className="min-w-0 flex-1 truncate py-1.5 pr-2 pl-4 text-left whitespace-nowrap" title={g.label}>{g.label}</button>
                   {on && (
                     <button
                       type="button"
@@ -352,9 +355,9 @@ function GoalPicker({ goals, selected, primary, onChange }: {
               );
             })}
           </div>
-        </div>
+        </fieldset>
       ))}
-      <p className="text-muted-foreground mt-4 text-sm">
+      <p className="text-muted-foreground pt-1 text-sm">
         {selected.length === 0 ? "No goals selected yet."
           : <>{selected.length} goal{selected.length > 1 ? "s" : ""} selected · Primary: <b className="text-primary">{byId.get(primary)?.label ?? "—"}</b></>}
       </p>

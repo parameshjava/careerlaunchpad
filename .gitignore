@@ -150,3 +150,6 @@ vite.config.ts.timestamp-*
 # claude plugins
 docs/superpowers/*
 analysis/*
+.vercel
+.env*.local
+.claude/

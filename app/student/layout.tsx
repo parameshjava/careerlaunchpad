@@ -15,7 +15,7 @@ export default async function StudentLayout({ children }: { children: React.Reac
   return (
     <div className="bg-muted/30 text-foreground flex h-dvh flex-col overflow-hidden">
       <SiteHeader
-        right={<AccountMenu email={ctx.email} name={ctx.name} avatarUrl={ctx.avatarUrl} />}
+        right={<AccountMenu email={ctx.email} name={ctx.name} avatarUrl={ctx.avatarUrl} profileHref={ctx.profilePath} />}
       />
       <ConsoleShell nav={buildNav(ctx)}>{children}</ConsoleShell>
     </div>

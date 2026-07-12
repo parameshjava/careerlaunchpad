@@ -27,6 +27,8 @@ export type AuthContext = {
   examEvaluator: boolean;
   /** Where this user should land after login. */
   homePath: string;
+  /** The user's own editable profile page for the "Profile" account-menu item. */
+  profilePath: string;
   /** Display name from the social provider, if any. */
   name: string | null;
   /** Profile photo URL from the social provider (Google/LinkedIn/GitHub/…), if any. */
@@ -63,6 +65,20 @@ function computeHomePath(roles: string[], provisioned: boolean): string {
   return "/auth/no-access";
 }
 
+/**
+ * Destination for the "Profile" account-menu item: the role's own editable
+ * profile. Staff/owner/admin/employer edit the generic /account profile;
+ * students and mentors have their own rich profile editors. Follows the same
+ * role precedence as computeHomePath so profile matches where the user works.
+ */
+function computeProfilePath(roles: string[], provisioned: boolean): string {
+  if (!provisioned) return "/account";
+  if (roles.some((r) => CONSOLE_ROLES.includes(r)) || roles.includes("employer")) return "/account";
+  if (roles.includes("student")) return "/student/register";
+  if (roles.includes("mentor")) return "/mentor/register";
+  return "/account";
+}
+
 /** Current Supabase auth user, or null if not signed in. */
 export async function getUser() {
   const supabase = await createClient();
@@ -77,29 +93,33 @@ export async function getUser() {
  */
 export async function getAuthContext(): Promise<AuthContext | null> {
   const supabase = await createClient();
-  const { data: { user } } = await supabase.auth.getUser();
-  if (!user) return null;
+  // getClaims() verifies the access token LOCALLY (WebCrypto + cached JWKS) when
+  // the project uses asymmetric JWT signing keys — no network round-trip — and
+  // still refreshes an expired-but-renewable session under the hood (getClaims →
+  // getSession → _callRefreshToken). With legacy symmetric keys it falls back to
+  // a getUser() validation, so this is never slower than the old getUser() call.
+  // We rely on it here because auth_context() below is the real authorization
+  // boundary (RLS); this call only needs to identify the caller.
+  const { data: claimsData } = await supabase.auth.getClaims();
+  const claims = claimsData?.claims;
+  if (!claims) return null;
 
   const { data, error } = await supabase.rpc("auth_context");
   const ctx = (!error && data) ? (data as Record<string, unknown>) : { provisioned: false };
 
   const provisioned = ctx.provisioned === true;
   const roles = (ctx.roles as string[]) ?? [];
-  const { name: providerName, avatarUrl } = readProviderProfile(user.user_metadata);
+  const { name: providerName, avatarUrl } = readProviderProfile(claims.user_metadata);
   // Prefer the name the user set on their /account profile over the OAuth name.
   const name = (ctx.name as string | null) || providerName;
 
-  // Is this user assigned as an exam evaluator? (exam_staff self-read RLS.) Only
-  // worth checking for provisioned users; drives the "Exam evaluation" nav item.
-  let examEvaluator = false;
-  if (provisioned) {
-    const { data: staffRows } = await supabase.from("exam_staff").select("exam_id").limit(1);
-    examEvaluator = (staffRows?.length ?? 0) > 0;
-  }
+  // exam_evaluator now comes back from auth_context() itself (migration 093),
+  // so no separate exam_staff round-trip. Drives the "Exam evaluation" nav item.
+  const examEvaluator = ctx.exam_evaluator === true;
 
   return {
-    userId: user.id,
-    email: (ctx.email as string) ?? user.email ?? null,
+    userId: claims.sub,
+    email: (ctx.email as string) ?? claims.email ?? null,
     provisioned,
     status: (ctx.status as AuthContext["status"]) ?? null,
     phone: (ctx.phone as string) ?? null,
@@ -109,6 +129,7 @@ export async function getAuthContext(): Promise<AuthContext | null> {
     employerId: (ctx.employer_id as string) ?? null,
     examEvaluator,
     homePath: computeHomePath(roles, provisioned),
+    profilePath: computeProfilePath(roles, provisioned),
     name,
     avatarUrl,
   };

@@ -29,16 +29,19 @@ export async function updateSession(request: NextRequest) {
     }
   )
 
-  // Do not run code between createServerClient and supabase.auth.getUser().
+  // Do not run code between createServerClient and the auth call below.
   // A simple mistake could make it very hard to debug issues with users being
   // randomly logged out.
   //
-  // We use getUser() (not getClaims()) on purpose: it validates the token with
-  // the auth server AND refreshes/rotates an expired session, writing the new
-  // cookies onto supabaseResponse via setAll above. Local-only verification
-  // (getClaims) can leave an expired-but-refreshable session looking signed-out,
-  // which bounces a user who actually has a valid session back to /auth/login.
-  const { data: { user } } = await supabase.auth.getUser()
+  // getClaims() verifies the token LOCALLY (WebCrypto + cached JWKS) when the
+  // project uses asymmetric JWT signing keys, avoiding a network round-trip to
+  // the auth server on every protected navigation. It still refreshes/rotates an
+  // expired-but-renewable session (getClaims → getSession → _callRefreshToken),
+  // writing the new cookies onto supabaseResponse via setAll above — so it does
+  // NOT leave a valid session looking signed-out. With legacy symmetric keys it
+  // falls back to a getUser() validation, so it is never slower than getUser().
+  const { data } = await supabase.auth.getClaims()
+  const user = data?.claims ?? null
 
   // Only the application surfaces require auth — the marketing site (/) and the
   // /auth/* pages stay public. (The matcher in middleware.ts already scopes this,
