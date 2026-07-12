@@ -10,6 +10,11 @@ on:
   release:
     types: [published]
 
+# Minimal token scope: these jobs only read the repo (checkout); Vercel and
+# Supabase auth via their own secrets, not GITHUB_TOKEN.
+permissions:
+  contents: read
+
 jobs:
   migrate:
     runs-on: ubuntu-latest

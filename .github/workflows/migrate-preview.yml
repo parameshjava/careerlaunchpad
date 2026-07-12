@@ -8,6 +8,11 @@ on:
   push:
     branches: [main]
 
+# Minimal token scope: this job only reads the repo (checkout); Supabase auth
+# via its own secrets, not GITHUB_TOKEN.
+permissions:
+  contents: read
+
 jobs:
   migrate:
     runs-on: ubuntu-latest
