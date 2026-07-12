@@ -96,13 +96,13 @@ const jsonLd = {
     {
       "@type": "Person",
       name: "Darisiguntla Lakshmi Narayana",
-      jobTitle: "Founder",
+      jobTitle: "CEO, Co-Founder",
       sameAs: "https://www.linkedin.com/in/lakshminarayana2930/",
     },
     {
       "@type": "Person",
       name: "Korrakuti Paramesh",
-      jobTitle: "Co-Founder",
+      jobTitle: "CTO, Co-Founder",
       sameAs: "https://www.linkedin.com/in/paramesh-korrakuti-265b3928/",
     },
   ],

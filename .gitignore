@@ -153,3 +153,6 @@ analysis/*
 .vercel
 .env*.local
 .claude/
+
+# spec drafts (intermediary, not committed)
+specs/

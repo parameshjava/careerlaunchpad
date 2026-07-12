@@ -1,0 +1,29 @@
+name: Migrate Preview DB
+
+# On merge to main, apply any unapplied migrations to the PREVIEW Supabase
+# project. `supabase db push` is incremental + tracked in
+# supabase_migrations.schema_migrations, so it only runs new files.
+# Vercel deploys the preview app natively; this keeps its DB in sync.
+on:
+  push:
+    branches: [main]
+
+# Minimal token scope: this job only reads the repo (checkout); Supabase auth
+# via its own secrets, not GITHUB_TOKEN.
+permissions:
+  contents: read
+
+jobs:
+  migrate:
+    runs-on: ubuntu-latest
+    env:
+      SUPABASE_ACCESS_TOKEN: ${{ secrets.SUPABASE_ACCESS_TOKEN }}
+      SUPABASE_DB_PASSWORD: ${{ secrets.PREVIEW_DB_PASSWORD }}
+      PROJECT_ID: ${{ secrets.PREVIEW_PROJECT_ID }}
+    steps:
+      - uses: actions/checkout@v4
+      - uses: supabase/setup-cli@v1
+        with:
+          version: latest
+      - run: supabase link --project-ref "$PROJECT_ID"
+      - run: supabase db push
