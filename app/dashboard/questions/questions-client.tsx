@@ -115,9 +115,14 @@ export function QuestionsClient() {
                   </select>
                 </div>
               </div>
-              <Button asChild disabled={chapters.length === 0}>
-                <Link href={`/dashboard/questions/new?subject=${encodeURIComponent(subjectId)}`}>New question</Link>
-              </Button>
+              <div className="flex gap-2">
+                <Button asChild variant="outline">
+                  <Link href="/dashboard/questions/import">Import JSON</Link>
+                </Button>
+                <Button asChild disabled={chapters.length === 0}>
+                  <Link href={`/dashboard/questions/new?subject=${encodeURIComponent(subjectId)}`}>New question</Link>
+                </Button>
+              </div>
             </div>
 
             {chapters.length === 0 ? (
