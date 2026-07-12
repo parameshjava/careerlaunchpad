@@ -1,0 +1,32 @@
+name: Auto Tag
+
+# After every merge to main, bump the patch version and create a new tag.
+# First tag ever is v1.0.0. (Publishing a Release from that tag is what
+# deploys to prod — see deploy-prod.yml.)
+on:
+  push:
+    branches: [main]
+
+permissions:
+  contents: write
+
+jobs:
+  tag:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+          fetch-tags: true
+      - name: Create next patch tag
+        run: |
+          latest=$(git tag -l 'v*.*.*' | sort -V | tail -n1)
+          if [ -z "$latest" ]; then
+            next="v1.0.0"
+          else
+            IFS=. read -r major minor patch <<< "${latest#v}"
+            next="v${major}.${minor}.$((patch + 1))"
+          fi
+          echo "Latest: ${latest:-none} -> New: $next"
+          git tag "$next"
+          git push origin "$next"
