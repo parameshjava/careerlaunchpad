@@ -14,7 +14,7 @@ type Founder = {
 const founders: Founder[] = [
   {
     name: "Darisiguntla Lakshmi Narayana",
-    role: "Founder",
+    role: "CEO & Co-Founder",
     initials: "LN",
     linkedin: "https://www.linkedin.com/in/lakshminarayana2930/",
     photo: "/founders/lakshmi-narayana.jpg",
@@ -23,7 +23,7 @@ const founders: Founder[] = [
   },
   {
     name: "Korrakuti Paramesh",
-    role: "Co-Founder",
+    role: "CTO & Co-Founder",
     initials: "KP",
     linkedin: "https://www.linkedin.com/in/paramesh-korrakuti-265b3928/",
     photo: "/founders/paramesh-korrakuti.jpg",
@@ -111,25 +111,27 @@ export default function FoundersMessage() {
 
       {/* 3) Founders — the people, equal-height profile cards */}
       <section id="founders">
-        <h2 className="section-title">Meet the Founders</h2>
+        <h2 className="section-title">Our Team</h2>
         <div className="team-grid">
           {founders.map((f) => (
             <article className="founder-card" key={f.name}>
-              <FounderAvatar
-                photo={f.photo}
-                initials={f.initials}
-                name={f.name}
-                linkedin={f.linkedin}
-              />
+              {f.message && <p className="founder-message">{f.message}</p>}
 
-              <div className="founder-body">
-                <p className="founder-role">{f.role}</p>
-                <h3 className="founder-name">
-                  <a href={f.linkedin} target="_blank" rel="noopener noreferrer">
-                    {f.name}
-                  </a>
-                </h3>
-                {f.message && <p className="founder-message">{f.message}</p>}
+              <div className="founder-attrib">
+                <FounderAvatar
+                  photo={f.photo}
+                  initials={f.initials}
+                  name={f.name}
+                  linkedin={f.linkedin}
+                />
+                <div className="founder-attrib-text">
+                  <h3 className="founder-name">
+                    <a href={f.linkedin} target="_blank" rel="noopener noreferrer">
+                      {f.name}
+                    </a>
+                  </h3>
+                  <p className="founder-role">{f.role}</p>
+                </div>
               </div>
             </article>
           ))}

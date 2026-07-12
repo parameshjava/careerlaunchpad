@@ -838,28 +838,35 @@
   margin-top: 20px;
 }
 
+/* Testimonial layout: the message sits on top; the person (avatar + name +
+   role) is a footer pinned to the bottom so both cards' footers align. */
 .founder-card {
   display: flex;
-  flex-direction: row;
-  align-items: flex-start;
+  flex-direction: column;
   text-align: left;
-  gap: 18px;
+  gap: 22px;
   background: var(--surface);
   border: 1px solid var(--line);
   border-radius: 16px;
-  padding: 24px;
+  padding: 28px;
   box-shadow: 0 6px 20px rgba(0, 0, 0, 0.05);
 }
 
-.founder-body {
-  flex: 1 1 auto;
+/* Attribution footer: avatar beside the name/role, at the card bottom. */
+.founder-attrib {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+}
+
+.founder-attrib-text {
   min-width: 0;
 }
 
 .avatar {
   flex: 0 0 auto;
-  width: 72px;
-  height: 72px;
+  width: 48px;
+  height: 48px;
   border-radius: 50%;
   overflow: hidden;
   display: flex;
@@ -868,7 +875,7 @@
   background: var(--brand-gradient-135);
   color: #fff;
   font-weight: 700;
-  font-size: 1.4rem;
+  font-size: 1rem;
   text-decoration: none;
   transition: filter 0.15s ease;
 }
@@ -893,9 +900,19 @@
   font-weight: 700;
 }
 
-.founder-name {
-  font-size: 1.2rem;
+/* In the founder card the role is a plain, muted subtitle (like the testimonial
+   reference) — NOT the brand-violet uppercase used for the shared VM labels. */
+.founder-attrib .founder-role {
+  color: var(--text-muted);
+  text-transform: none;
+  letter-spacing: normal;
+  font-weight: 500;
   margin-top: 2px;
+}
+
+.founder-name {
+  font-size: 1.05rem;
+  margin: 0;
 }
 
 .founder-name a {
@@ -908,11 +925,10 @@
 }
 
 .founder-message {
-  margin-top: 10px;
+  margin: 0;
+  flex: 1 1 auto; /* grow so the attribution footer aligns at the card bottom */
   color: var(--text-muted);
-  line-height: 1.6;
-  text-align: justify;
-  text-justify: inter-word;
+  line-height: 1.7;
 }
 
 /* ---------- Core Values ---------- */
@@ -1038,10 +1054,10 @@
     font-size: 1rem;
   }
 
-  /* Keep cards horizontal but tighten the avatar/gap so the text column stays readable */
+  /* Tighten padding/gap on phones; layout stays vertical (message → footer) */
   .founder-card {
     padding: 22px 18px;
-    gap: 16px;
+    gap: 18px;
   }
 
   .vm-card {
@@ -1049,21 +1065,10 @@
     gap: 16px;
   }
 
-  .avatar {
-    width: 56px;
-    height: 56px;
-    font-size: 1.15rem;
-  }
-
   .vm-badge {
     width: 50px;
     height: 50px;
     font-size: 1.4rem;
-  }
-
-  /* Justified text creates ugly rivers in a narrow column; left-align on phones */
-  .founder-message {
-    text-align: left;
   }
 }
 
