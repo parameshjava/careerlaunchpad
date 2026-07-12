@@ -35,18 +35,25 @@ export type CleanQuestion = {
 
 export type ValidationResult<T> = { clean: T | null; errors: string[] };
 
-export async function validateQuestion(
-  supabase: SupabaseClient,
+// The DB-free field checks (enums, stem, option shape/correct-count). Shared by
+// single-question authoring (validateQuestion) and bulk import so a rule change
+// can't drift between the two entry points (CLAUDE.md: API + form in lockstep).
+// Chapter/passage are NOT here — they need the DB and differ (id vs. name) per
+// entry point.
+export type QuestionFields = {
+  kind: QuestionKind;
+  difficulty: Difficulty;
+  answer_type: AnswerType;
+  stem: string;
+  stem_image_url: string | null;
+  explanation: string | null;
+  options: { label: string; is_correct: boolean; position: number }[];
+};
+
+export function validateQuestionFields(
   data: Record<string, unknown>,
-): Promise<ValidationResult<CleanQuestion>> {
+): { errors: string[]; fields: QuestionFields | null } {
   const errors: string[] = [];
-
-  const chapterId = str(data.chapter_id);
-  if (!UUID_RE.test(chapterId)) errors.push("chapter_id: required");
-
-  const passageRaw = data.passage_id == null ? "" : str(data.passage_id);
-  const passageId = passageRaw || null;
-  if (passageId && !UUID_RE.test(passageId)) errors.push("passage_id: invalid");
 
   const kind = str(data.kind) || "standard";
   if (!KINDS.includes(kind as QuestionKind)) errors.push("kind: invalid");
@@ -79,6 +86,35 @@ export async function validateQuestion(
   if (answerType === "single" && correctCount !== 1)
     errors.push("answer_type 'single' requires exactly one correct option");
 
+  if (errors.length) return { errors, fields: null };
+  return {
+    errors,
+    fields: {
+      kind: kind as QuestionKind,
+      difficulty: difficulty as Difficulty,
+      answer_type: answerType as AnswerType,
+      stem,
+      stem_image_url: stemImageUrl,
+      explanation,
+      options,
+    },
+  };
+}
+
+export async function validateQuestion(
+  supabase: SupabaseClient,
+  data: Record<string, unknown>,
+): Promise<ValidationResult<CleanQuestion>> {
+  const { errors: fieldErrors, fields } = validateQuestionFields(data);
+  const errors = [...fieldErrors];
+
+  const chapterId = str(data.chapter_id);
+  if (!UUID_RE.test(chapterId)) errors.push("chapter_id: required");
+
+  const passageRaw = data.passage_id == null ? "" : str(data.passage_id);
+  const passageId = passageRaw || null;
+  if (passageId && !UUID_RE.test(passageId)) errors.push("passage_id: invalid");
+
   // Referential: chapter must exist; derive its (global) subject_id, which is
   // denormalized onto the question for the generator's hot query.
   let subjectId = "";
@@ -106,20 +142,20 @@ export async function validateQuestion(
       errors.push("passage_id: must belong to the same subject as the chapter");
   }
 
-  if (errors.length || !subjectId) return { clean: null, errors };
+  if (errors.length || !subjectId || !fields) return { clean: null, errors };
 
   return {
     clean: {
       subject_id: subjectId,
       chapter_id: chapterId,
       passage_id: passageId,
-      kind: kind as QuestionKind,
-      difficulty: difficulty as Difficulty,
-      answer_type: answerType as AnswerType,
-      stem,
-      stem_image_url: stemImageUrl,
-      explanation,
-      options,
+      kind: fields.kind,
+      difficulty: fields.difficulty,
+      answer_type: fields.answer_type,
+      stem: fields.stem,
+      stem_image_url: fields.stem_image_url,
+      explanation: fields.explanation,
+      options: fields.options,
     },
     errors,
   };
