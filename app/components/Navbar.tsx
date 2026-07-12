@@ -4,7 +4,8 @@ import { Brand } from "@/components/brand/Brand";
 export default function Navbar() {
   return (
     <header className="navbar">
-      <Brand />
+      {/* /home resolves per-user: signed-in → their dashboard, else → marketing home. */}
+      <Brand href="/home" />
       <div className="nav-actions">
         {/* Contact Us → dedicated /contact page. A clean text menu-link (not a
             boxed button) with a gradient underline on hover, so the gradient

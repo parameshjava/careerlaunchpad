@@ -38,13 +38,13 @@ export const ALL_FIELDS = Object.values(STEP_FIELDS).flat();
 /** The columns returned by GET /api/registration/profile. */
 export const PROFILE_SELECT = [...ALL_FIELDS, "college_id"].join(", ");
 
-/** Fields required before registration can be marked 'submitted'. */
+/** Fields required before registration can be marked 'submitted'. Only the first
+ * two steps are mandatory — career goals, self-assessment, skills and mentor
+ * (steps 3–6) are optional, so a student can submit right after Academics. */
 export const REQUIRED_FIELDS: { step: number; field: string }[] = [
   { step: 1, field: "full_name" },
   { step: 1, field: "phone" },
   { step: 2, field: "college_id" },
-  { step: 3, field: "career_goal_ids" },
-  { step: 3, field: "primary_career_goal_id" },
 ];
 
 type Refs = {

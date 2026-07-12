@@ -108,17 +108,20 @@ export function RegistrationForm({
   if (loading) return <p className="text-muted-foreground py-20 text-center text-sm">Loading your registration…</p>;
 
   if (done) {
-    return <ProfileSummary f={f} refs={refs} email={email} college={college} status={regStatus} onEdit={() => setDone(false)} />;
+    return <ProfileSummary f={f} refs={refs} email={email} college={college} status={regStatus} onEdit={() => { setStep(1); setDone(false); }} />;
   }
 
   if (!refs) return <p className="text-destructive py-20 text-center text-sm">Could not load registration options.</p>;
+
+  // Mandatory fields (steps 1–2). Steps 3–6 are optional, so Submit unlocks once these are set.
+  const canSubmit = Boolean(f.full_name.trim() && f.phone.trim() && f.college_id);
 
   return (
     <div>
       <Stepper step={step} onJump={setStep} />
 
-      <div className="bg-card rounded-3xl border p-5 shadow-xl shadow-[#7c3aed]/5 sm:p-8">
-        <p className="mb-1 text-[0.72rem] font-bold tracking-[0.08em] text-[#7c3aed] uppercase">Step {step}</p>
+      <div className="bg-card overflow-hidden rounded-3xl border p-5 shadow-xl shadow-[#7c3aed]/5 sm:p-8">
+        <p className="-mx-5 -mt-5 mb-6 bg-gradient-to-r from-[#2563eb] to-[#7c3aed] px-5 py-3 text-sm font-bold tracking-[0.04em] text-white sm:-mx-8 sm:-mt-8 sm:px-8">Step {step} of 6</p>
         <StepBody
           step={step}
           f={f}
@@ -136,15 +139,36 @@ export function RegistrationForm({
         )}
 
         <div className="mt-7 flex items-center justify-between gap-3 border-t pt-5">
-          <Button variant="ghost" disabled={step === 1 || saving} onClick={() => setStep((s) => Math.max(1, s - 1))}>← Back</Button>
-          <span className="text-muted-foreground text-xs font-medium">Step {step} of 6</span>
           <Button
-            disabled={saving}
-            onClick={() => saveStep(step + 1)}
-            className="bg-gradient-to-r from-[#2563eb] to-[#7c3aed] text-white shadow-lg shadow-[#7c3aed]/25 transition hover:brightness-105"
+            variant="outline"
+            disabled={step === 1 || saving}
+            onClick={() => setStep((s) => Math.max(1, s - 1))}
+            className="border-2 border-[#2563eb] font-semibold text-[#2563eb] hover:bg-[#2563eb]/5"
           >
-            {saving ? "Saving…" : step === 6 ? "Submit ✓" : "Next →"}
+            ← Back
           </Button>
+          {/* Steps 3–6 are optional: from Academics on, Submit sits beside Next and
+              unlocks once the mandatory fields are filled. */}
+          <div className="flex items-center gap-2">
+            {step < 6 && (
+              <Button
+                disabled={saving}
+                onClick={() => saveStep(step + 1)}
+                className="bg-gradient-to-r from-[#2563eb] to-[#7c3aed] font-semibold text-white shadow-lg shadow-[#7c3aed]/25 transition hover:brightness-105"
+              >
+                {saving ? "Saving…" : "Next →"}
+              </Button>
+            )}
+            {step >= 2 && (
+              <Button
+                disabled={saving || !canSubmit}
+                onClick={() => saveStep(7)}
+                className="bg-emerald-600 font-semibold text-white shadow-lg shadow-emerald-600/25 transition hover:bg-emerald-700"
+              >
+                {saving ? "Saving…" : "Submit ✓"}
+              </Button>
+            )}
+          </div>
         </div>
       </div>
     </div>
