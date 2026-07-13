@@ -26,6 +26,8 @@ export default async function UsersPage() {
     canDelete: can(ctx, "user.manage"),
     canOffice: can(ctx, "user.manage"),
     canResend,
+    canImpersonate:
+      ctx.permissions.has("*") || ctx.roles.includes("owner") || ctx.roles.includes("platform_admin"),
   };
   const isOwner = ctx.permissions.has("*") || ctx.roles.includes("owner");
   const callerRank = Math.max(0, ...ctx.roles.map((r) => ROLE_RANK[r] ?? 0));

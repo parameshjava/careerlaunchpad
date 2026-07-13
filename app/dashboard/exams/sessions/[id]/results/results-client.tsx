@@ -3,12 +3,13 @@
 // Admin results view: summary stats, a score-distribution chart, the roster with
 // scores, and the publish toggle (gates whether students can see their result).
 import { useMemo, useState } from "react";
+import Link from "next/link";
 import { useRouter } from "next/navigation";
 import { Bar, BarChart, CartesianGrid, ResponsiveContainer, Tooltip, XAxis, YAxis } from "recharts";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
-import type { RosterEntry } from "@/lib/exam-query";
+import type { RosterEntry, SubjectAvg } from "@/lib/exam-query";
 
 function Stat({ label, value }: { label: string; value: string }) {
   return (
@@ -25,11 +26,13 @@ export function ResultsClient({
   sessionId,
   resultsPublished,
   roster,
+  subjectAvgs,
   canPublish,
 }: {
   sessionId: string;
   resultsPublished: boolean;
   roster: RosterEntry[];
+  subjectAvgs: SubjectAvg[];
   canPublish: boolean;
 }) {
   const router = useRouter();
@@ -77,6 +80,14 @@ export function ResultsClient({
     <div className="grid gap-6">
       {error && <p className="text-destructive text-sm">{error}</p>}
 
+      <div className="flex justify-end">
+        <Button variant="outline" asChild>
+          <Link href={`/dashboard/exams/sessions/${sessionId}/results/print`} target="_blank">
+            Print results
+          </Link>
+        </Button>
+      </div>
+
       <div className="grid grid-cols-2 gap-3 lg:grid-cols-4">
         <Stat label="Assigned" value={String(roster.length)} />
         <Stat label="Graded" value={String(graded.length)} />
@@ -99,6 +110,32 @@ export function ResultsClient({
           )}
         </CardContent>
       </Card>
+
+      {subjectAvgs.length > 0 && (
+        <Card>
+          <CardContent className="pt-6">
+            <div className="mb-2 text-sm font-medium">Average score by subject</div>
+            <ResponsiveContainer width="100%" height={260}>
+              <BarChart data={subjectAvgs} margin={{ top: 8, right: 8, bottom: 8, left: -12 }}>
+                <CartesianGrid strokeDasharray="3 3" vertical={false} />
+                <XAxis dataKey="subject" fontSize={12} />
+                <YAxis
+                  fontSize={12}
+                  domain={[0, Math.max(...subjectAvgs.map((s) => s.max))]}
+                  allowDecimals={false}
+                />
+                <Tooltip
+                  formatter={(value, _name, item) => [
+                    `${value} / ${(item.payload as SubjectAvg).max} marks (avg)`,
+                    (item.payload as SubjectAvg).subject,
+                  ]}
+                />
+                <Bar dataKey="avg" fill="var(--brand-blue)" radius={[4, 4, 0, 0]} />
+              </BarChart>
+            </ResponsiveContainer>
+          </CardContent>
+        </Card>
+      )}
 
       {histogram.length > 0 && (
         <Card>

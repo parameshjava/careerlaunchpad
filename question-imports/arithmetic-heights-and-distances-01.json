@@ -1,0 +1,5205 @@
+{
+  "subject": "Arithmetic",
+  "questions": [
+    {
+      "chapter": "Heights and Distances",
+      "kind": "standard",
+      "difficulty": "easy",
+      "answer_type": "single",
+      "stem": "When the sun's angle of elevation is 45°, a vertical pole casts a shadow 16 m long. Find the height of the pole.",
+      "explanation": "At 45°, height = shadow length = 16 m.",
+      "options": [
+        {
+          "label": "16 m",
+          "is_correct": true
+        },
+        {
+          "label": "17 m",
+          "is_correct": false
+        },
+        {
+          "label": "15 m",
+          "is_correct": false
+        },
+        {
+          "label": "18 m",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Heights and Distances",
+      "kind": "standard",
+      "difficulty": "easy",
+      "answer_type": "single",
+      "stem": "The angle of elevation of the top of a tower from a point on the ground is 45°. If the point is 29 m from the foot of the tower, find the height of the tower.",
+      "explanation": "At 45°, height = horizontal distance = 29 m.",
+      "options": [
+        {
+          "label": "28 m",
+          "is_correct": false
+        },
+        {
+          "label": "30 m",
+          "is_correct": false
+        },
+        {
+          "label": "29 m",
+          "is_correct": true
+        },
+        {
+          "label": "31 m",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Heights and Distances",
+      "kind": "standard",
+      "difficulty": "easy",
+      "answer_type": "single",
+      "stem": "From the top of a tower 10 m high, the angle of depression of a point on the ground is 45°. Find the horizontal distance of the point from the foot of the tower.",
+      "explanation": "At 45°, horizontal distance = height = 10 m.",
+      "options": [
+        {
+          "label": "9 m",
+          "is_correct": false
+        },
+        {
+          "label": "11 m",
+          "is_correct": false
+        },
+        {
+          "label": "12 m",
+          "is_correct": false
+        },
+        {
+          "label": "10 m",
+          "is_correct": true
+        }
+      ]
+    },
+    {
+      "chapter": "Heights and Distances",
+      "kind": "standard",
+      "difficulty": "easy",
+      "answer_type": "single",
+      "stem": "The angle of elevation of the top of a tower from a point on the ground is 45°. If the point is 66 m from the foot of the tower, find the height of the tower.",
+      "explanation": "At 45°, height = horizontal distance = 66 m.",
+      "options": [
+        {
+          "label": "66 m",
+          "is_correct": true
+        },
+        {
+          "label": "64 m",
+          "is_correct": false
+        },
+        {
+          "label": "68 m",
+          "is_correct": false
+        },
+        {
+          "label": "70 m",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Heights and Distances",
+      "kind": "standard",
+      "difficulty": "easy",
+      "answer_type": "single",
+      "stem": "When the sun's angle of elevation is 45°, a vertical pole casts a shadow 79 m long. Find the height of the pole.",
+      "explanation": "At 45°, height = shadow length = 79 m.",
+      "options": [
+        {
+          "label": "81 m",
+          "is_correct": false
+        },
+        {
+          "label": "79 m",
+          "is_correct": true
+        },
+        {
+          "label": "77 m",
+          "is_correct": false
+        },
+        {
+          "label": "83 m",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Heights and Distances",
+      "kind": "standard",
+      "difficulty": "easy",
+      "answer_type": "single",
+      "stem": "When the sun's angle of elevation is 45°, a vertical pole casts a shadow 70 m long. Find the height of the pole.",
+      "explanation": "At 45°, height = shadow length = 70 m.",
+      "options": [
+        {
+          "label": "72 m",
+          "is_correct": false
+        },
+        {
+          "label": "70 m",
+          "is_correct": true
+        },
+        {
+          "label": "74 m",
+          "is_correct": false
+        },
+        {
+          "label": "68 m",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Heights and Distances",
+      "kind": "standard",
+      "difficulty": "easy",
+      "answer_type": "single",
+      "stem": "The angle of elevation of the top of a tower from a point on the ground is 45°. If the point is 45 m from the foot of the tower, find the height of the tower.",
+      "explanation": "At 45°, height = horizontal distance = 45 m.",
+      "options": [
+        {
+          "label": "45 m",
+          "is_correct": true
+        },
+        {
+          "label": "43 m",
+          "is_correct": false
+        },
+        {
+          "label": "49 m",
+          "is_correct": false
+        },
+        {
+          "label": "47 m",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Heights and Distances",
+      "kind": "standard",
+      "difficulty": "easy",
+      "answer_type": "single",
+      "stem": "When the sun's angle of elevation is 45°, a vertical pole casts a shadow 36 m long. Find the height of the pole.",
+      "explanation": "At 45°, height = shadow length = 36 m.",
+      "options": [
+        {
+          "label": "38 m",
+          "is_correct": false
+        },
+        {
+          "label": "37 m",
+          "is_correct": false
+        },
+        {
+          "label": "35 m",
+          "is_correct": false
+        },
+        {
+          "label": "36 m",
+          "is_correct": true
+        }
+      ]
+    },
+    {
+      "chapter": "Heights and Distances",
+      "kind": "standard",
+      "difficulty": "easy",
+      "answer_type": "single",
+      "stem": "The angle of elevation of the top of a tower from a point on the ground is 45°. If the point is 41 m from the foot of the tower, find the height of the tower.",
+      "explanation": "At 45°, height = horizontal distance = 41 m.",
+      "options": [
+        {
+          "label": "41 m",
+          "is_correct": true
+        },
+        {
+          "label": "43 m",
+          "is_correct": false
+        },
+        {
+          "label": "45 m",
+          "is_correct": false
+        },
+        {
+          "label": "39 m",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Heights and Distances",
+      "kind": "standard",
+      "difficulty": "easy",
+      "answer_type": "single",
+      "stem": "When the sun's angle of elevation is 45°, a vertical pole casts a shadow 33 m long. Find the height of the pole.",
+      "explanation": "At 45°, height = shadow length = 33 m.",
+      "options": [
+        {
+          "label": "35 m",
+          "is_correct": false
+        },
+        {
+          "label": "34 m",
+          "is_correct": false
+        },
+        {
+          "label": "33 m",
+          "is_correct": true
+        },
+        {
+          "label": "32 m",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Heights and Distances",
+      "kind": "standard",
+      "difficulty": "easy",
+      "answer_type": "single",
+      "stem": "From the top of a tower 71 m high, the angle of depression of a point on the ground is 45°. Find the horizontal distance of the point from the foot of the tower.",
+      "explanation": "At 45°, horizontal distance = height = 71 m.",
+      "options": [
+        {
+          "label": "75 m",
+          "is_correct": false
+        },
+        {
+          "label": "73 m",
+          "is_correct": false
+        },
+        {
+          "label": "69 m",
+          "is_correct": false
+        },
+        {
+          "label": "71 m",
+          "is_correct": true
+        }
+      ]
+    },
+    {
+      "chapter": "Heights and Distances",
+      "kind": "standard",
+      "difficulty": "easy",
+      "answer_type": "single",
+      "stem": "When the sun's angle of elevation is 45°, a vertical pole casts a shadow 58 m long. Find the height of the pole.",
+      "explanation": "At 45°, height = shadow length = 58 m.",
+      "options": [
+        {
+          "label": "60 m",
+          "is_correct": false
+        },
+        {
+          "label": "56 m",
+          "is_correct": false
+        },
+        {
+          "label": "62 m",
+          "is_correct": false
+        },
+        {
+          "label": "58 m",
+          "is_correct": true
+        }
+      ]
+    },
+    {
+      "chapter": "Heights and Distances",
+      "kind": "standard",
+      "difficulty": "easy",
+      "answer_type": "single",
+      "stem": "When the sun's angle of elevation is 45°, a vertical pole casts a shadow 11 m long. Find the height of the pole.",
+      "explanation": "At 45°, height = shadow length = 11 m.",
+      "options": [
+        {
+          "label": "10 m",
+          "is_correct": false
+        },
+        {
+          "label": "12 m",
+          "is_correct": false
+        },
+        {
+          "label": "11 m",
+          "is_correct": true
+        },
+        {
+          "label": "13 m",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Heights and Distances",
+      "kind": "standard",
+      "difficulty": "easy",
+      "answer_type": "single",
+      "stem": "The angle of elevation of the top of a tower from a point on the ground is 45°. If the point is 15 m from the foot of the tower, find the height of the tower.",
+      "explanation": "At 45°, height = horizontal distance = 15 m.",
+      "options": [
+        {
+          "label": "16 m",
+          "is_correct": false
+        },
+        {
+          "label": "14 m",
+          "is_correct": false
+        },
+        {
+          "label": "17 m",
+          "is_correct": false
+        },
+        {
+          "label": "15 m",
+          "is_correct": true
+        }
+      ]
+    },
+    {
+      "chapter": "Heights and Distances",
+      "kind": "standard",
+      "difficulty": "easy",
+      "answer_type": "single",
+      "stem": "From the top of a tower 40 m high, the angle of depression of a point on the ground is 45°. Find the horizontal distance of the point from the foot of the tower.",
+      "explanation": "At 45°, horizontal distance = height = 40 m.",
+      "options": [
+        {
+          "label": "44 m",
+          "is_correct": false
+        },
+        {
+          "label": "42 m",
+          "is_correct": false
+        },
+        {
+          "label": "38 m",
+          "is_correct": false
+        },
+        {
+          "label": "40 m",
+          "is_correct": true
+        }
+      ]
+    },
+    {
+      "chapter": "Heights and Distances",
+      "kind": "standard",
+      "difficulty": "easy",
+      "answer_type": "single",
+      "stem": "From the top of a tower 19 m high, the angle of depression of a point on the ground is 45°. Find the horizontal distance of the point from the foot of the tower.",
+      "explanation": "At 45°, horizontal distance = height = 19 m.",
+      "options": [
+        {
+          "label": "19 m",
+          "is_correct": true
+        },
+        {
+          "label": "21 m",
+          "is_correct": false
+        },
+        {
+          "label": "20 m",
+          "is_correct": false
+        },
+        {
+          "label": "18 m",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Heights and Distances",
+      "kind": "standard",
+      "difficulty": "easy",
+      "answer_type": "single",
+      "stem": "The angle of elevation of the top of a tower from a point on the ground is 45°. If the point is 31 m from the foot of the tower, find the height of the tower.",
+      "explanation": "At 45°, height = horizontal distance = 31 m.",
+      "options": [
+        {
+          "label": "32 m",
+          "is_correct": false
+        },
+        {
+          "label": "33 m",
+          "is_correct": false
+        },
+        {
+          "label": "31 m",
+          "is_correct": true
+        },
+        {
+          "label": "30 m",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Heights and Distances",
+      "kind": "standard",
+      "difficulty": "easy",
+      "answer_type": "single",
+      "stem": "The angle of elevation of the top of a tower from a point on the ground is 45°. If the point is 14 m from the foot of the tower, find the height of the tower.",
+      "explanation": "At 45°, height = horizontal distance = 14 m.",
+      "options": [
+        {
+          "label": "16 m",
+          "is_correct": false
+        },
+        {
+          "label": "14 m",
+          "is_correct": true
+        },
+        {
+          "label": "15 m",
+          "is_correct": false
+        },
+        {
+          "label": "13 m",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Heights and Distances",
+      "kind": "standard",
+      "difficulty": "easy",
+      "answer_type": "single",
+      "stem": "The angle of elevation of the top of a tower from a point on the ground is 45°. If the point is 35 m from the foot of the tower, find the height of the tower.",
+      "explanation": "At 45°, height = horizontal distance = 35 m.",
+      "options": [
+        {
+          "label": "34 m",
+          "is_correct": false
+        },
+        {
+          "label": "35 m",
+          "is_correct": true
+        },
+        {
+          "label": "37 m",
+          "is_correct": false
+        },
+        {
+          "label": "36 m",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Heights and Distances",
+      "kind": "standard",
+      "difficulty": "easy",
+      "answer_type": "single",
+      "stem": "The angle of elevation of the top of a tower from a point on the ground is 45°. If the point is 80 m from the foot of the tower, find the height of the tower.",
+      "explanation": "At 45°, height = horizontal distance = 80 m.",
+      "options": [
+        {
+          "label": "80 m",
+          "is_correct": true
+        },
+        {
+          "label": "84 m",
+          "is_correct": false
+        },
+        {
+          "label": "82 m",
+          "is_correct": false
+        },
+        {
+          "label": "78 m",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Heights and Distances",
+      "kind": "standard",
+      "difficulty": "easy",
+      "answer_type": "single",
+      "stem": "The angle of elevation of the top of a tower from a point on the ground is 45°. If the point is 52 m from the foot of the tower, find the height of the tower.",
+      "explanation": "At 45°, height = horizontal distance = 52 m.",
+      "options": [
+        {
+          "label": "52 m",
+          "is_correct": true
+        },
+        {
+          "label": "54 m",
+          "is_correct": false
+        },
+        {
+          "label": "50 m",
+          "is_correct": false
+        },
+        {
+          "label": "56 m",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Heights and Distances",
+      "kind": "standard",
+      "difficulty": "easy",
+      "answer_type": "single",
+      "stem": "When the sun's angle of elevation is 45°, a vertical pole casts a shadow 5 m long. Find the height of the pole.",
+      "explanation": "At 45°, height = shadow length = 5 m.",
+      "options": [
+        {
+          "label": "6 m",
+          "is_correct": false
+        },
+        {
+          "label": "5 m",
+          "is_correct": true
+        },
+        {
+          "label": "4 m",
+          "is_correct": false
+        },
+        {
+          "label": "7 m",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Heights and Distances",
+      "kind": "standard",
+      "difficulty": "easy",
+      "answer_type": "single",
+      "stem": "When the sun's angle of elevation is 45°, a vertical pole casts a shadow 15 m long. Find the height of the pole.",
+      "explanation": "At 45°, height = shadow length = 15 m.",
+      "options": [
+        {
+          "label": "15 m",
+          "is_correct": true
+        },
+        {
+          "label": "14 m",
+          "is_correct": false
+        },
+        {
+          "label": "16 m",
+          "is_correct": false
+        },
+        {
+          "label": "17 m",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Heights and Distances",
+      "kind": "standard",
+      "difficulty": "easy",
+      "answer_type": "single",
+      "stem": "When the sun's angle of elevation is 45°, a vertical pole casts a shadow 74 m long. Find the height of the pole.",
+      "explanation": "At 45°, height = shadow length = 74 m.",
+      "options": [
+        {
+          "label": "78 m",
+          "is_correct": false
+        },
+        {
+          "label": "76 m",
+          "is_correct": false
+        },
+        {
+          "label": "74 m",
+          "is_correct": true
+        },
+        {
+          "label": "72 m",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Heights and Distances",
+      "kind": "standard",
+      "difficulty": "easy",
+      "answer_type": "single",
+      "stem": "When the sun's angle of elevation is 45°, a vertical pole casts a shadow 19 m long. Find the height of the pole.",
+      "explanation": "At 45°, height = shadow length = 19 m.",
+      "options": [
+        {
+          "label": "19 m",
+          "is_correct": true
+        },
+        {
+          "label": "21 m",
+          "is_correct": false
+        },
+        {
+          "label": "20 m",
+          "is_correct": false
+        },
+        {
+          "label": "18 m",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Heights and Distances",
+      "kind": "standard",
+      "difficulty": "easy",
+      "answer_type": "single",
+      "stem": "From the top of a tower 59 m high, the angle of depression of a point on the ground is 45°. Find the horizontal distance of the point from the foot of the tower.",
+      "explanation": "At 45°, horizontal distance = height = 59 m.",
+      "options": [
+        {
+          "label": "61 m",
+          "is_correct": false
+        },
+        {
+          "label": "57 m",
+          "is_correct": false
+        },
+        {
+          "label": "59 m",
+          "is_correct": true
+        },
+        {
+          "label": "63 m",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Heights and Distances",
+      "kind": "standard",
+      "difficulty": "easy",
+      "answer_type": "single",
+      "stem": "From the top of a tower 24 m high, the angle of depression of a point on the ground is 45°. Find the horizontal distance of the point from the foot of the tower.",
+      "explanation": "At 45°, horizontal distance = height = 24 m.",
+      "options": [
+        {
+          "label": "24 m",
+          "is_correct": true
+        },
+        {
+          "label": "23 m",
+          "is_correct": false
+        },
+        {
+          "label": "26 m",
+          "is_correct": false
+        },
+        {
+          "label": "25 m",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Heights and Distances",
+      "kind": "standard",
+      "difficulty": "easy",
+      "answer_type": "single",
+      "stem": "From the top of a tower 49 m high, the angle of depression of a point on the ground is 45°. Find the horizontal distance of the point from the foot of the tower.",
+      "explanation": "At 45°, horizontal distance = height = 49 m.",
+      "options": [
+        {
+          "label": "47 m",
+          "is_correct": false
+        },
+        {
+          "label": "53 m",
+          "is_correct": false
+        },
+        {
+          "label": "49 m",
+          "is_correct": true
+        },
+        {
+          "label": "51 m",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Heights and Distances",
+      "kind": "standard",
+      "difficulty": "easy",
+      "answer_type": "single",
+      "stem": "The angle of elevation of the top of a tower from a point on the ground is 45°. If the point is 74 m from the foot of the tower, find the height of the tower.",
+      "explanation": "At 45°, height = horizontal distance = 74 m.",
+      "options": [
+        {
+          "label": "78 m",
+          "is_correct": false
+        },
+        {
+          "label": "74 m",
+          "is_correct": true
+        },
+        {
+          "label": "72 m",
+          "is_correct": false
+        },
+        {
+          "label": "76 m",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Heights and Distances",
+      "kind": "standard",
+      "difficulty": "easy",
+      "answer_type": "single",
+      "stem": "When the sun's angle of elevation is 45°, a vertical pole casts a shadow 77 m long. Find the height of the pole.",
+      "explanation": "At 45°, height = shadow length = 77 m.",
+      "options": [
+        {
+          "label": "79 m",
+          "is_correct": false
+        },
+        {
+          "label": "77 m",
+          "is_correct": true
+        },
+        {
+          "label": "75 m",
+          "is_correct": false
+        },
+        {
+          "label": "81 m",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Heights and Distances",
+      "kind": "standard",
+      "difficulty": "easy",
+      "answer_type": "single",
+      "stem": "From the top of a tower 63 m high, the angle of depression of a point on the ground is 45°. Find the horizontal distance of the point from the foot of the tower.",
+      "explanation": "At 45°, horizontal distance = height = 63 m.",
+      "options": [
+        {
+          "label": "65 m",
+          "is_correct": false
+        },
+        {
+          "label": "63 m",
+          "is_correct": true
+        },
+        {
+          "label": "61 m",
+          "is_correct": false
+        },
+        {
+          "label": "67 m",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Heights and Distances",
+      "kind": "standard",
+      "difficulty": "easy",
+      "answer_type": "single",
+      "stem": "The angle of elevation of the top of a tower from a point on the ground is 45°. If the point is 68 m from the foot of the tower, find the height of the tower.",
+      "explanation": "At 45°, height = horizontal distance = 68 m.",
+      "options": [
+        {
+          "label": "66 m",
+          "is_correct": false
+        },
+        {
+          "label": "68 m",
+          "is_correct": true
+        },
+        {
+          "label": "72 m",
+          "is_correct": false
+        },
+        {
+          "label": "70 m",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Heights and Distances",
+      "kind": "standard",
+      "difficulty": "easy",
+      "answer_type": "single",
+      "stem": "The angle of elevation of the top of a tower from a point on the ground is 45°. If the point is 12 m from the foot of the tower, find the height of the tower.",
+      "explanation": "At 45°, height = horizontal distance = 12 m.",
+      "options": [
+        {
+          "label": "14 m",
+          "is_correct": false
+        },
+        {
+          "label": "12 m",
+          "is_correct": true
+        },
+        {
+          "label": "13 m",
+          "is_correct": false
+        },
+        {
+          "label": "11 m",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Heights and Distances",
+      "kind": "standard",
+      "difficulty": "easy",
+      "answer_type": "single",
+      "stem": "From the top of a tower 45 m high, the angle of depression of a point on the ground is 45°. Find the horizontal distance of the point from the foot of the tower.",
+      "explanation": "At 45°, horizontal distance = height = 45 m.",
+      "options": [
+        {
+          "label": "47 m",
+          "is_correct": false
+        },
+        {
+          "label": "45 m",
+          "is_correct": true
+        },
+        {
+          "label": "49 m",
+          "is_correct": false
+        },
+        {
+          "label": "43 m",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Heights and Distances",
+      "kind": "standard",
+      "difficulty": "easy",
+      "answer_type": "single",
+      "stem": "From the top of a tower 9 m high, the angle of depression of a point on the ground is 45°. Find the horizontal distance of the point from the foot of the tower.",
+      "explanation": "At 45°, horizontal distance = height = 9 m.",
+      "options": [
+        {
+          "label": "10 m",
+          "is_correct": false
+        },
+        {
+          "label": "8 m",
+          "is_correct": false
+        },
+        {
+          "label": "11 m",
+          "is_correct": false
+        },
+        {
+          "label": "9 m",
+          "is_correct": true
+        }
+      ]
+    },
+    {
+      "chapter": "Heights and Distances",
+      "kind": "standard",
+      "difficulty": "easy",
+      "answer_type": "single",
+      "stem": "When the sun's angle of elevation is 45°, a vertical pole casts a shadow 65 m long. Find the height of the pole.",
+      "explanation": "At 45°, height = shadow length = 65 m.",
+      "options": [
+        {
+          "label": "67 m",
+          "is_correct": false
+        },
+        {
+          "label": "69 m",
+          "is_correct": false
+        },
+        {
+          "label": "65 m",
+          "is_correct": true
+        },
+        {
+          "label": "63 m",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Heights and Distances",
+      "kind": "standard",
+      "difficulty": "easy",
+      "answer_type": "single",
+      "stem": "The angle of elevation of the top of a tower from a point on the ground is 45°. If the point is 18 m from the foot of the tower, find the height of the tower.",
+      "explanation": "At 45°, height = horizontal distance = 18 m.",
+      "options": [
+        {
+          "label": "17 m",
+          "is_correct": false
+        },
+        {
+          "label": "20 m",
+          "is_correct": false
+        },
+        {
+          "label": "19 m",
+          "is_correct": false
+        },
+        {
+          "label": "18 m",
+          "is_correct": true
+        }
+      ]
+    },
+    {
+      "chapter": "Heights and Distances",
+      "kind": "standard",
+      "difficulty": "easy",
+      "answer_type": "single",
+      "stem": "From the top of a tower 44 m high, the angle of depression of a point on the ground is 45°. Find the horizontal distance of the point from the foot of the tower.",
+      "explanation": "At 45°, horizontal distance = height = 44 m.",
+      "options": [
+        {
+          "label": "46 m",
+          "is_correct": false
+        },
+        {
+          "label": "42 m",
+          "is_correct": false
+        },
+        {
+          "label": "48 m",
+          "is_correct": false
+        },
+        {
+          "label": "44 m",
+          "is_correct": true
+        }
+      ]
+    },
+    {
+      "chapter": "Heights and Distances",
+      "kind": "standard",
+      "difficulty": "easy",
+      "answer_type": "single",
+      "stem": "From the top of a tower 33 m high, the angle of depression of a point on the ground is 45°. Find the horizontal distance of the point from the foot of the tower.",
+      "explanation": "At 45°, horizontal distance = height = 33 m.",
+      "options": [
+        {
+          "label": "33 m",
+          "is_correct": true
+        },
+        {
+          "label": "32 m",
+          "is_correct": false
+        },
+        {
+          "label": "35 m",
+          "is_correct": false
+        },
+        {
+          "label": "34 m",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Heights and Distances",
+      "kind": "standard",
+      "difficulty": "easy",
+      "answer_type": "single",
+      "stem": "From the top of a tower 16 m high, the angle of depression of a point on the ground is 45°. Find the horizontal distance of the point from the foot of the tower.",
+      "explanation": "At 45°, horizontal distance = height = 16 m.",
+      "options": [
+        {
+          "label": "16 m",
+          "is_correct": true
+        },
+        {
+          "label": "17 m",
+          "is_correct": false
+        },
+        {
+          "label": "15 m",
+          "is_correct": false
+        },
+        {
+          "label": "18 m",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Heights and Distances",
+      "kind": "standard",
+      "difficulty": "easy",
+      "answer_type": "single",
+      "stem": "From the top of a tower 66 m high, the angle of depression of a point on the ground is 45°. Find the horizontal distance of the point from the foot of the tower.",
+      "explanation": "At 45°, horizontal distance = height = 66 m.",
+      "options": [
+        {
+          "label": "64 m",
+          "is_correct": false
+        },
+        {
+          "label": "68 m",
+          "is_correct": false
+        },
+        {
+          "label": "66 m",
+          "is_correct": true
+        },
+        {
+          "label": "70 m",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Heights and Distances",
+      "kind": "standard",
+      "difficulty": "easy",
+      "answer_type": "single",
+      "stem": "From the top of a tower 18 m high, the angle of depression of a point on the ground is 45°. Find the horizontal distance of the point from the foot of the tower.",
+      "explanation": "At 45°, horizontal distance = height = 18 m.",
+      "options": [
+        {
+          "label": "19 m",
+          "is_correct": false
+        },
+        {
+          "label": "17 m",
+          "is_correct": false
+        },
+        {
+          "label": "20 m",
+          "is_correct": false
+        },
+        {
+          "label": "18 m",
+          "is_correct": true
+        }
+      ]
+    },
+    {
+      "chapter": "Heights and Distances",
+      "kind": "standard",
+      "difficulty": "easy",
+      "answer_type": "single",
+      "stem": "The angle of elevation of the top of a tower from a point on the ground is 45°. If the point is 75 m from the foot of the tower, find the height of the tower.",
+      "explanation": "At 45°, height = horizontal distance = 75 m.",
+      "options": [
+        {
+          "label": "79 m",
+          "is_correct": false
+        },
+        {
+          "label": "77 m",
+          "is_correct": false
+        },
+        {
+          "label": "75 m",
+          "is_correct": true
+        },
+        {
+          "label": "73 m",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Heights and Distances",
+      "kind": "standard",
+      "difficulty": "easy",
+      "answer_type": "single",
+      "stem": "When the sun's angle of elevation is 45°, a vertical pole casts a shadow 53 m long. Find the height of the pole.",
+      "explanation": "At 45°, height = shadow length = 53 m.",
+      "options": [
+        {
+          "label": "55 m",
+          "is_correct": false
+        },
+        {
+          "label": "51 m",
+          "is_correct": false
+        },
+        {
+          "label": "53 m",
+          "is_correct": true
+        },
+        {
+          "label": "57 m",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Heights and Distances",
+      "kind": "standard",
+      "difficulty": "easy",
+      "answer_type": "single",
+      "stem": "When the sun's angle of elevation is 45°, a vertical pole casts a shadow 20 m long. Find the height of the pole.",
+      "explanation": "At 45°, height = shadow length = 20 m.",
+      "options": [
+        {
+          "label": "22 m",
+          "is_correct": false
+        },
+        {
+          "label": "20 m",
+          "is_correct": true
+        },
+        {
+          "label": "21 m",
+          "is_correct": false
+        },
+        {
+          "label": "19 m",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Heights and Distances",
+      "kind": "standard",
+      "difficulty": "easy",
+      "answer_type": "single",
+      "stem": "The angle of elevation of the top of a tower from a point on the ground is 45°. If the point is 54 m from the foot of the tower, find the height of the tower.",
+      "explanation": "At 45°, height = horizontal distance = 54 m.",
+      "options": [
+        {
+          "label": "58 m",
+          "is_correct": false
+        },
+        {
+          "label": "52 m",
+          "is_correct": false
+        },
+        {
+          "label": "56 m",
+          "is_correct": false
+        },
+        {
+          "label": "54 m",
+          "is_correct": true
+        }
+      ]
+    },
+    {
+      "chapter": "Heights and Distances",
+      "kind": "standard",
+      "difficulty": "easy",
+      "answer_type": "single",
+      "stem": "When the sun's angle of elevation is 45°, a vertical pole casts a shadow 7 m long. Find the height of the pole.",
+      "explanation": "At 45°, height = shadow length = 7 m.",
+      "options": [
+        {
+          "label": "8 m",
+          "is_correct": false
+        },
+        {
+          "label": "7 m",
+          "is_correct": true
+        },
+        {
+          "label": "6 m",
+          "is_correct": false
+        },
+        {
+          "label": "9 m",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Heights and Distances",
+      "kind": "standard",
+      "difficulty": "easy",
+      "answer_type": "single",
+      "stem": "From the top of a tower 41 m high, the angle of depression of a point on the ground is 45°. Find the horizontal distance of the point from the foot of the tower.",
+      "explanation": "At 45°, horizontal distance = height = 41 m.",
+      "options": [
+        {
+          "label": "41 m",
+          "is_correct": true
+        },
+        {
+          "label": "39 m",
+          "is_correct": false
+        },
+        {
+          "label": "43 m",
+          "is_correct": false
+        },
+        {
+          "label": "45 m",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Heights and Distances",
+      "kind": "standard",
+      "difficulty": "easy",
+      "answer_type": "single",
+      "stem": "When the sun's angle of elevation is 45°, a vertical pole casts a shadow 34 m long. Find the height of the pole.",
+      "explanation": "At 45°, height = shadow length = 34 m.",
+      "options": [
+        {
+          "label": "35 m",
+          "is_correct": false
+        },
+        {
+          "label": "36 m",
+          "is_correct": false
+        },
+        {
+          "label": "34 m",
+          "is_correct": true
+        },
+        {
+          "label": "33 m",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Heights and Distances",
+      "kind": "standard",
+      "difficulty": "easy",
+      "answer_type": "single",
+      "stem": "When the sun's angle of elevation is 45°, a vertical pole casts a shadow 54 m long. Find the height of the pole.",
+      "explanation": "At 45°, height = shadow length = 54 m.",
+      "options": [
+        {
+          "label": "58 m",
+          "is_correct": false
+        },
+        {
+          "label": "52 m",
+          "is_correct": false
+        },
+        {
+          "label": "54 m",
+          "is_correct": true
+        },
+        {
+          "label": "56 m",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Heights and Distances",
+      "kind": "standard",
+      "difficulty": "medium",
+      "answer_type": "single",
+      "stem": "A ladder 78 m long leans against a wall with its foot 30 m away from the wall. How high up the wall does the ladder reach?",
+      "explanation": "Height = √(78² − 30²) = 72 m.",
+      "options": [
+        {
+          "label": "74 m",
+          "is_correct": false
+        },
+        {
+          "label": "72 m",
+          "is_correct": true
+        },
+        {
+          "label": "76 m",
+          "is_correct": false
+        },
+        {
+          "label": "70 m",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Heights and Distances",
+      "kind": "standard",
+      "difficulty": "medium",
+      "answer_type": "single",
+      "stem": "A kite is flying with 156 m of (straight) string let out, and the horizontal distance of the kite from the flyer is 60 m. Find the height of the kite.",
+      "explanation": "Height = √(156² − 60²) = 144 m.",
+      "options": [
+        {
+          "label": "148 m",
+          "is_correct": false
+        },
+        {
+          "label": "144 m",
+          "is_correct": true
+        },
+        {
+          "label": "142 m",
+          "is_correct": false
+        },
+        {
+          "label": "146 m",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Heights and Distances",
+      "kind": "standard",
+      "difficulty": "medium",
+      "answer_type": "single",
+      "stem": "A ladder reaches a window 48 m above the ground, its foot being 36 m from the wall. Find the length of the ladder.",
+      "explanation": "Length = √(48² + 36²) = 60 m.",
+      "options": [
+        {
+          "label": "60 m",
+          "is_correct": true
+        },
+        {
+          "label": "64 m",
+          "is_correct": false
+        },
+        {
+          "label": "62 m",
+          "is_correct": false
+        },
+        {
+          "label": "58 m",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Heights and Distances",
+      "kind": "standard",
+      "difficulty": "medium",
+      "answer_type": "single",
+      "stem": "A ladder reaches a window 72 m above the ground, its foot being 30 m from the wall. Find the length of the ladder.",
+      "explanation": "Length = √(72² + 30²) = 78 m.",
+      "options": [
+        {
+          "label": "82 m",
+          "is_correct": false
+        },
+        {
+          "label": "76 m",
+          "is_correct": false
+        },
+        {
+          "label": "78 m",
+          "is_correct": true
+        },
+        {
+          "label": "80 m",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Heights and Distances",
+      "kind": "standard",
+      "difficulty": "medium",
+      "answer_type": "single",
+      "stem": "A ladder reaches a window 240 m above the ground, its foot being 54 m from the wall. Find the length of the ladder.",
+      "explanation": "Length = √(240² + 54²) = 246 m.",
+      "options": [
+        {
+          "label": "236 m",
+          "is_correct": false
+        },
+        {
+          "label": "266 m",
+          "is_correct": false
+        },
+        {
+          "label": "246 m",
+          "is_correct": true
+        },
+        {
+          "label": "256 m",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Heights and Distances",
+      "kind": "standard",
+      "difficulty": "medium",
+      "answer_type": "single",
+      "stem": "A ladder 120 m long leans against a wall with its foot 72 m away from the wall. How high up the wall does the ladder reach?",
+      "explanation": "Height = √(120² − 72²) = 96 m.",
+      "options": [
+        {
+          "label": "94 m",
+          "is_correct": false
+        },
+        {
+          "label": "98 m",
+          "is_correct": false
+        },
+        {
+          "label": "100 m",
+          "is_correct": false
+        },
+        {
+          "label": "96 m",
+          "is_correct": true
+        }
+      ]
+    },
+    {
+      "chapter": "Heights and Distances",
+      "kind": "standard",
+      "difficulty": "medium",
+      "answer_type": "single",
+      "stem": "A ladder reaches a window 280 m above the ground, its foot being 63 m from the wall. Find the length of the ladder.",
+      "explanation": "Length = √(280² + 63²) = 287 m.",
+      "options": [
+        {
+          "label": "298 m",
+          "is_correct": false
+        },
+        {
+          "label": "287 m",
+          "is_correct": true
+        },
+        {
+          "label": "276 m",
+          "is_correct": false
+        },
+        {
+          "label": "309 m",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Heights and Distances",
+      "kind": "standard",
+      "difficulty": "medium",
+      "answer_type": "single",
+      "stem": "A kite is flying with 208 m of (straight) string let out, and the horizontal distance of the kite from the flyer is 80 m. Find the height of the kite.",
+      "explanation": "Height = √(208² − 80²) = 192 m.",
+      "options": [
+        {
+          "label": "192 m",
+          "is_correct": true
+        },
+        {
+          "label": "194 m",
+          "is_correct": false
+        },
+        {
+          "label": "196 m",
+          "is_correct": false
+        },
+        {
+          "label": "190 m",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Heights and Distances",
+      "kind": "standard",
+      "difficulty": "medium",
+      "answer_type": "single",
+      "stem": "A ladder reaches a window 168 m above the ground, its foot being 70 m from the wall. Find the length of the ladder.",
+      "explanation": "Length = √(168² + 70²) = 182 m.",
+      "options": [
+        {
+          "label": "182 m",
+          "is_correct": true
+        },
+        {
+          "label": "180 m",
+          "is_correct": false
+        },
+        {
+          "label": "184 m",
+          "is_correct": false
+        },
+        {
+          "label": "186 m",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Heights and Distances",
+      "kind": "standard",
+      "difficulty": "medium",
+      "answer_type": "single",
+      "stem": "A ladder reaches a window 36 m above the ground, its foot being 27 m from the wall. Find the length of the ladder.",
+      "explanation": "Length = √(36² + 27²) = 45 m.",
+      "options": [
+        {
+          "label": "45 m",
+          "is_correct": true
+        },
+        {
+          "label": "43 m",
+          "is_correct": false
+        },
+        {
+          "label": "49 m",
+          "is_correct": false
+        },
+        {
+          "label": "47 m",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Heights and Distances",
+      "kind": "standard",
+      "difficulty": "medium",
+      "answer_type": "single",
+      "stem": "A kite is flying with 120 m of (straight) string let out, and the horizontal distance of the kite from the flyer is 72 m. Find the height of the kite.",
+      "explanation": "Height = √(120² − 72²) = 96 m.",
+      "options": [
+        {
+          "label": "100 m",
+          "is_correct": false
+        },
+        {
+          "label": "98 m",
+          "is_correct": false
+        },
+        {
+          "label": "96 m",
+          "is_correct": true
+        },
+        {
+          "label": "94 m",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Heights and Distances",
+      "kind": "standard",
+      "difficulty": "medium",
+      "answer_type": "single",
+      "stem": "A ladder reaches a window 24 m above the ground, its foot being 10 m from the wall. Find the length of the ladder.",
+      "explanation": "Length = √(24² + 10²) = 26 m.",
+      "options": [
+        {
+          "label": "26 m",
+          "is_correct": true
+        },
+        {
+          "label": "27 m",
+          "is_correct": false
+        },
+        {
+          "label": "25 m",
+          "is_correct": false
+        },
+        {
+          "label": "28 m",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Heights and Distances",
+      "kind": "standard",
+      "difficulty": "medium",
+      "answer_type": "single",
+      "stem": "A ladder 75 m long leans against a wall with its foot 21 m away from the wall. How high up the wall does the ladder reach?",
+      "explanation": "Height = √(75² − 21²) = 72 m.",
+      "options": [
+        {
+          "label": "76 m",
+          "is_correct": false
+        },
+        {
+          "label": "72 m",
+          "is_correct": true
+        },
+        {
+          "label": "74 m",
+          "is_correct": false
+        },
+        {
+          "label": "70 m",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Heights and Distances",
+      "kind": "standard",
+      "difficulty": "medium",
+      "answer_type": "single",
+      "stem": "A ladder 140 m long leans against a wall with its foot 84 m away from the wall. How high up the wall does the ladder reach?",
+      "explanation": "Height = √(140² − 84²) = 112 m.",
+      "options": [
+        {
+          "label": "114 m",
+          "is_correct": false
+        },
+        {
+          "label": "116 m",
+          "is_correct": false
+        },
+        {
+          "label": "112 m",
+          "is_correct": true
+        },
+        {
+          "label": "110 m",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Heights and Distances",
+      "kind": "standard",
+      "difficulty": "medium",
+      "answer_type": "single",
+      "stem": "A ladder reaches a window 168 m above the ground, its foot being 49 m from the wall. Find the length of the ladder.",
+      "explanation": "Length = √(168² + 49²) = 175 m.",
+      "options": [
+        {
+          "label": "173 m",
+          "is_correct": false
+        },
+        {
+          "label": "175 m",
+          "is_correct": true
+        },
+        {
+          "label": "179 m",
+          "is_correct": false
+        },
+        {
+          "label": "177 m",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Heights and Distances",
+      "kind": "standard",
+      "difficulty": "medium",
+      "answer_type": "single",
+      "stem": "A kite is flying with 91 m of (straight) string let out, and the horizontal distance of the kite from the flyer is 35 m. Find the height of the kite.",
+      "explanation": "Height = √(91² − 35²) = 84 m.",
+      "options": [
+        {
+          "label": "82 m",
+          "is_correct": false
+        },
+        {
+          "label": "86 m",
+          "is_correct": false
+        },
+        {
+          "label": "84 m",
+          "is_correct": true
+        },
+        {
+          "label": "88 m",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Heights and Distances",
+      "kind": "standard",
+      "difficulty": "medium",
+      "answer_type": "single",
+      "stem": "A kite is flying with 160 m of (straight) string let out, and the horizontal distance of the kite from the flyer is 96 m. Find the height of the kite.",
+      "explanation": "Height = √(160² − 96²) = 128 m.",
+      "options": [
+        {
+          "label": "126 m",
+          "is_correct": false
+        },
+        {
+          "label": "128 m",
+          "is_correct": true
+        },
+        {
+          "label": "130 m",
+          "is_correct": false
+        },
+        {
+          "label": "132 m",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Heights and Distances",
+      "kind": "standard",
+      "difficulty": "medium",
+      "answer_type": "single",
+      "stem": "A ladder 174 m long leans against a wall with its foot 120 m away from the wall. How high up the wall does the ladder reach?",
+      "explanation": "Height = √(174² − 120²) = 126 m.",
+      "options": [
+        {
+          "label": "124 m",
+          "is_correct": false
+        },
+        {
+          "label": "130 m",
+          "is_correct": false
+        },
+        {
+          "label": "126 m",
+          "is_correct": true
+        },
+        {
+          "label": "128 m",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Heights and Distances",
+      "kind": "standard",
+      "difficulty": "medium",
+      "answer_type": "single",
+      "stem": "A ladder reaches a window 320 m above the ground, its foot being 72 m from the wall. Find the length of the ladder.",
+      "explanation": "Length = √(320² + 72²) = 328 m.",
+      "options": [
+        {
+          "label": "341 m",
+          "is_correct": false
+        },
+        {
+          "label": "328 m",
+          "is_correct": true
+        },
+        {
+          "label": "315 m",
+          "is_correct": false
+        },
+        {
+          "label": "354 m",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Heights and Distances",
+      "kind": "standard",
+      "difficulty": "medium",
+      "answer_type": "single",
+      "stem": "A kite is flying with 65 m of (straight) string let out, and the horizontal distance of the kite from the flyer is 25 m. Find the height of the kite.",
+      "explanation": "Height = √(65² − 25²) = 60 m.",
+      "options": [
+        {
+          "label": "58 m",
+          "is_correct": false
+        },
+        {
+          "label": "62 m",
+          "is_correct": false
+        },
+        {
+          "label": "64 m",
+          "is_correct": false
+        },
+        {
+          "label": "60 m",
+          "is_correct": true
+        }
+      ]
+    },
+    {
+      "chapter": "Heights and Distances",
+      "kind": "standard",
+      "difficulty": "medium",
+      "answer_type": "single",
+      "stem": "A ladder reaches a window 112 m above the ground, its foot being 84 m from the wall. Find the length of the ladder.",
+      "explanation": "Length = √(112² + 84²) = 140 m.",
+      "options": [
+        {
+          "label": "138 m",
+          "is_correct": false
+        },
+        {
+          "label": "142 m",
+          "is_correct": false
+        },
+        {
+          "label": "140 m",
+          "is_correct": true
+        },
+        {
+          "label": "144 m",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Heights and Distances",
+      "kind": "standard",
+      "difficulty": "medium",
+      "answer_type": "single",
+      "stem": "A kite is flying with 78 m of (straight) string let out, and the horizontal distance of the kite from the flyer is 30 m. Find the height of the kite.",
+      "explanation": "Height = √(78² − 30²) = 72 m.",
+      "options": [
+        {
+          "label": "76 m",
+          "is_correct": false
+        },
+        {
+          "label": "74 m",
+          "is_correct": false
+        },
+        {
+          "label": "70 m",
+          "is_correct": false
+        },
+        {
+          "label": "72 m",
+          "is_correct": true
+        }
+      ]
+    },
+    {
+      "chapter": "Heights and Distances",
+      "kind": "standard",
+      "difficulty": "medium",
+      "answer_type": "single",
+      "stem": "A ladder reaches a window 147 m above the ground, its foot being 140 m from the wall. Find the length of the ladder.",
+      "explanation": "Length = √(147² + 140²) = 203 m.",
+      "options": [
+        {
+          "label": "203 m",
+          "is_correct": true
+        },
+        {
+          "label": "219 m",
+          "is_correct": false
+        },
+        {
+          "label": "195 m",
+          "is_correct": false
+        },
+        {
+          "label": "211 m",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Heights and Distances",
+      "kind": "standard",
+      "difficulty": "medium",
+      "answer_type": "single",
+      "stem": "A ladder 51 m long leans against a wall with its foot 24 m away from the wall. How high up the wall does the ladder reach?",
+      "explanation": "Height = √(51² − 24²) = 45 m.",
+      "options": [
+        {
+          "label": "43 m",
+          "is_correct": false
+        },
+        {
+          "label": "45 m",
+          "is_correct": true
+        },
+        {
+          "label": "47 m",
+          "is_correct": false
+        },
+        {
+          "label": "49 m",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Heights and Distances",
+      "kind": "standard",
+      "difficulty": "medium",
+      "answer_type": "single",
+      "stem": "A ladder 58 m long leans against a wall with its foot 40 m away from the wall. How high up the wall does the ladder reach?",
+      "explanation": "Height = √(58² − 40²) = 42 m.",
+      "options": [
+        {
+          "label": "42 m",
+          "is_correct": true
+        },
+        {
+          "label": "46 m",
+          "is_correct": false
+        },
+        {
+          "label": "40 m",
+          "is_correct": false
+        },
+        {
+          "label": "44 m",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Heights and Distances",
+      "kind": "standard",
+      "difficulty": "medium",
+      "answer_type": "single",
+      "stem": "A ladder reaches a window 16 m above the ground, its foot being 12 m from the wall. Find the length of the ladder.",
+      "explanation": "Length = √(16² + 12²) = 20 m.",
+      "options": [
+        {
+          "label": "22 m",
+          "is_correct": false
+        },
+        {
+          "label": "19 m",
+          "is_correct": false
+        },
+        {
+          "label": "20 m",
+          "is_correct": true
+        },
+        {
+          "label": "21 m",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Heights and Distances",
+      "kind": "standard",
+      "difficulty": "medium",
+      "answer_type": "single",
+      "stem": "A ladder 52 m long leans against a wall with its foot 20 m away from the wall. How high up the wall does the ladder reach?",
+      "explanation": "Height = √(52² − 20²) = 48 m.",
+      "options": [
+        {
+          "label": "52 m",
+          "is_correct": false
+        },
+        {
+          "label": "50 m",
+          "is_correct": false
+        },
+        {
+          "label": "46 m",
+          "is_correct": false
+        },
+        {
+          "label": "48 m",
+          "is_correct": true
+        }
+      ]
+    },
+    {
+      "chapter": "Heights and Distances",
+      "kind": "standard",
+      "difficulty": "medium",
+      "answer_type": "single",
+      "stem": "A ladder 85 m long leans against a wall with its foot 40 m away from the wall. How high up the wall does the ladder reach?",
+      "explanation": "Height = √(85² − 40²) = 75 m.",
+      "options": [
+        {
+          "label": "75 m",
+          "is_correct": true
+        },
+        {
+          "label": "73 m",
+          "is_correct": false
+        },
+        {
+          "label": "79 m",
+          "is_correct": false
+        },
+        {
+          "label": "77 m",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Heights and Distances",
+      "kind": "standard",
+      "difficulty": "medium",
+      "answer_type": "single",
+      "stem": "A kite is flying with 116 m of (straight) string let out, and the horizontal distance of the kite from the flyer is 80 m. Find the height of the kite.",
+      "explanation": "Height = √(116² − 80²) = 84 m.",
+      "options": [
+        {
+          "label": "84 m",
+          "is_correct": true
+        },
+        {
+          "label": "82 m",
+          "is_correct": false
+        },
+        {
+          "label": "86 m",
+          "is_correct": false
+        },
+        {
+          "label": "88 m",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Heights and Distances",
+      "kind": "standard",
+      "difficulty": "medium",
+      "answer_type": "single",
+      "stem": "A kite is flying with 29 m of (straight) string let out, and the horizontal distance of the kite from the flyer is 20 m. Find the height of the kite.",
+      "explanation": "Height = √(29² − 20²) = 21 m.",
+      "options": [
+        {
+          "label": "23 m",
+          "is_correct": false
+        },
+        {
+          "label": "20 m",
+          "is_correct": false
+        },
+        {
+          "label": "22 m",
+          "is_correct": false
+        },
+        {
+          "label": "21 m",
+          "is_correct": true
+        }
+      ]
+    },
+    {
+      "chapter": "Heights and Distances",
+      "kind": "standard",
+      "difficulty": "medium",
+      "answer_type": "single",
+      "stem": "A kite is flying with 80 m of (straight) string let out, and the horizontal distance of the kite from the flyer is 48 m. Find the height of the kite.",
+      "explanation": "Height = √(80² − 48²) = 64 m.",
+      "options": [
+        {
+          "label": "62 m",
+          "is_correct": false
+        },
+        {
+          "label": "64 m",
+          "is_correct": true
+        },
+        {
+          "label": "66 m",
+          "is_correct": false
+        },
+        {
+          "label": "68 m",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Heights and Distances",
+      "kind": "standard",
+      "difficulty": "medium",
+      "answer_type": "single",
+      "stem": "A ladder reaches a window 12 m above the ground, its foot being 5 m from the wall. Find the length of the ladder.",
+      "explanation": "Length = √(12² + 5²) = 13 m.",
+      "options": [
+        {
+          "label": "15 m",
+          "is_correct": false
+        },
+        {
+          "label": "13 m",
+          "is_correct": true
+        },
+        {
+          "label": "12 m",
+          "is_correct": false
+        },
+        {
+          "label": "14 m",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Heights and Distances",
+      "kind": "standard",
+      "difficulty": "medium",
+      "answer_type": "single",
+      "stem": "A ladder reaches a window 24 m above the ground, its foot being 18 m from the wall. Find the length of the ladder.",
+      "explanation": "Length = √(24² + 18²) = 30 m.",
+      "options": [
+        {
+          "label": "32 m",
+          "is_correct": false
+        },
+        {
+          "label": "30 m",
+          "is_correct": true
+        },
+        {
+          "label": "29 m",
+          "is_correct": false
+        },
+        {
+          "label": "31 m",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Heights and Distances",
+      "kind": "standard",
+      "difficulty": "medium",
+      "answer_type": "single",
+      "stem": "A ladder 105 m long leans against a wall with its foot 63 m away from the wall. How high up the wall does the ladder reach?",
+      "explanation": "Height = √(105² − 63²) = 84 m.",
+      "options": [
+        {
+          "label": "88 m",
+          "is_correct": false
+        },
+        {
+          "label": "86 m",
+          "is_correct": false
+        },
+        {
+          "label": "82 m",
+          "is_correct": false
+        },
+        {
+          "label": "84 m",
+          "is_correct": true
+        }
+      ]
+    },
+    {
+      "chapter": "Heights and Distances",
+      "kind": "standard",
+      "difficulty": "medium",
+      "answer_type": "single",
+      "stem": "A ladder reaches a window 192 m above the ground, its foot being 56 m from the wall. Find the length of the ladder.",
+      "explanation": "Length = √(192² + 56²) = 200 m.",
+      "options": [
+        {
+          "label": "192 m",
+          "is_correct": false
+        },
+        {
+          "label": "200 m",
+          "is_correct": true
+        },
+        {
+          "label": "216 m",
+          "is_correct": false
+        },
+        {
+          "label": "208 m",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Heights and Distances",
+      "kind": "standard",
+      "difficulty": "medium",
+      "answer_type": "single",
+      "stem": "A kite is flying with 70 m of (straight) string let out, and the horizontal distance of the kite from the flyer is 42 m. Find the height of the kite.",
+      "explanation": "Height = √(70² − 42²) = 56 m.",
+      "options": [
+        {
+          "label": "56 m",
+          "is_correct": true
+        },
+        {
+          "label": "54 m",
+          "is_correct": false
+        },
+        {
+          "label": "60 m",
+          "is_correct": false
+        },
+        {
+          "label": "58 m",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Heights and Distances",
+      "kind": "standard",
+      "difficulty": "medium",
+      "answer_type": "single",
+      "stem": "A kite is flying with 87 m of (straight) string let out, and the horizontal distance of the kite from the flyer is 60 m. Find the height of the kite.",
+      "explanation": "Height = √(87² − 60²) = 63 m.",
+      "options": [
+        {
+          "label": "63 m",
+          "is_correct": true
+        },
+        {
+          "label": "61 m",
+          "is_correct": false
+        },
+        {
+          "label": "65 m",
+          "is_correct": false
+        },
+        {
+          "label": "67 m",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Heights and Distances",
+      "kind": "standard",
+      "difficulty": "medium",
+      "answer_type": "single",
+      "stem": "A kite is flying with 30 m of (straight) string let out, and the horizontal distance of the kite from the flyer is 18 m. Find the height of the kite.",
+      "explanation": "Height = √(30² − 18²) = 24 m.",
+      "options": [
+        {
+          "label": "25 m",
+          "is_correct": false
+        },
+        {
+          "label": "26 m",
+          "is_correct": false
+        },
+        {
+          "label": "24 m",
+          "is_correct": true
+        },
+        {
+          "label": "23 m",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Heights and Distances",
+      "kind": "standard",
+      "difficulty": "medium",
+      "answer_type": "single",
+      "stem": "A ladder reaches a window 120 m above the ground, its foot being 35 m from the wall. Find the length of the ladder.",
+      "explanation": "Length = √(120² + 35²) = 125 m.",
+      "options": [
+        {
+          "label": "123 m",
+          "is_correct": false
+        },
+        {
+          "label": "127 m",
+          "is_correct": false
+        },
+        {
+          "label": "129 m",
+          "is_correct": false
+        },
+        {
+          "label": "125 m",
+          "is_correct": true
+        }
+      ]
+    },
+    {
+      "chapter": "Heights and Distances",
+      "kind": "standard",
+      "difficulty": "medium",
+      "answer_type": "single",
+      "stem": "A ladder 104 m long leans against a wall with its foot 40 m away from the wall. How high up the wall does the ladder reach?",
+      "explanation": "Height = √(104² − 40²) = 96 m.",
+      "options": [
+        {
+          "label": "98 m",
+          "is_correct": false
+        },
+        {
+          "label": "94 m",
+          "is_correct": false
+        },
+        {
+          "label": "100 m",
+          "is_correct": false
+        },
+        {
+          "label": "96 m",
+          "is_correct": true
+        }
+      ]
+    },
+    {
+      "chapter": "Heights and Distances",
+      "kind": "standard",
+      "difficulty": "medium",
+      "answer_type": "single",
+      "stem": "A ladder reaches a window 56 m above the ground, its foot being 42 m from the wall. Find the length of the ladder.",
+      "explanation": "Length = √(56² + 42²) = 70 m.",
+      "options": [
+        {
+          "label": "70 m",
+          "is_correct": true
+        },
+        {
+          "label": "74 m",
+          "is_correct": false
+        },
+        {
+          "label": "72 m",
+          "is_correct": false
+        },
+        {
+          "label": "68 m",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Heights and Distances",
+      "kind": "standard",
+      "difficulty": "medium",
+      "answer_type": "single",
+      "stem": "A ladder 200 m long leans against a wall with its foot 56 m away from the wall. How high up the wall does the ladder reach?",
+      "explanation": "Height = √(200² − 56²) = 192 m.",
+      "options": [
+        {
+          "label": "192 m",
+          "is_correct": true
+        },
+        {
+          "label": "196 m",
+          "is_correct": false
+        },
+        {
+          "label": "190 m",
+          "is_correct": false
+        },
+        {
+          "label": "194 m",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Heights and Distances",
+      "kind": "standard",
+      "difficulty": "medium",
+      "answer_type": "single",
+      "stem": "A ladder 15 m long leans against a wall with its foot 9 m away from the wall. How high up the wall does the ladder reach?",
+      "explanation": "Height = √(15² − 9²) = 12 m.",
+      "options": [
+        {
+          "label": "14 m",
+          "is_correct": false
+        },
+        {
+          "label": "13 m",
+          "is_correct": false
+        },
+        {
+          "label": "12 m",
+          "is_correct": true
+        },
+        {
+          "label": "11 m",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Heights and Distances",
+      "kind": "standard",
+      "difficulty": "medium",
+      "answer_type": "single",
+      "stem": "A ladder 34 m long leans against a wall with its foot 16 m away from the wall. How high up the wall does the ladder reach?",
+      "explanation": "Height = √(34² − 16²) = 30 m.",
+      "options": [
+        {
+          "label": "30 m",
+          "is_correct": true
+        },
+        {
+          "label": "31 m",
+          "is_correct": false
+        },
+        {
+          "label": "32 m",
+          "is_correct": false
+        },
+        {
+          "label": "29 m",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Heights and Distances",
+      "kind": "standard",
+      "difficulty": "medium",
+      "answer_type": "single",
+      "stem": "A ladder 40 m long leans against a wall with its foot 24 m away from the wall. How high up the wall does the ladder reach?",
+      "explanation": "Height = √(40² − 24²) = 32 m.",
+      "options": [
+        {
+          "label": "34 m",
+          "is_correct": false
+        },
+        {
+          "label": "33 m",
+          "is_correct": false
+        },
+        {
+          "label": "31 m",
+          "is_correct": false
+        },
+        {
+          "label": "32 m",
+          "is_correct": true
+        }
+      ]
+    },
+    {
+      "chapter": "Heights and Distances",
+      "kind": "standard",
+      "difficulty": "medium",
+      "answer_type": "single",
+      "stem": "A ladder reaches a window 48 m above the ground, its foot being 20 m from the wall. Find the length of the ladder.",
+      "explanation": "Length = √(48² + 20²) = 52 m.",
+      "options": [
+        {
+          "label": "54 m",
+          "is_correct": false
+        },
+        {
+          "label": "52 m",
+          "is_correct": true
+        },
+        {
+          "label": "56 m",
+          "is_correct": false
+        },
+        {
+          "label": "50 m",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Heights and Distances",
+      "kind": "standard",
+      "difficulty": "medium",
+      "answer_type": "single",
+      "stem": "A kite is flying with 60 m of (straight) string let out, and the horizontal distance of the kite from the flyer is 36 m. Find the height of the kite.",
+      "explanation": "Height = √(60² − 36²) = 48 m.",
+      "options": [
+        {
+          "label": "52 m",
+          "is_correct": false
+        },
+        {
+          "label": "50 m",
+          "is_correct": false
+        },
+        {
+          "label": "46 m",
+          "is_correct": false
+        },
+        {
+          "label": "48 m",
+          "is_correct": true
+        }
+      ]
+    },
+    {
+      "chapter": "Heights and Distances",
+      "kind": "standard",
+      "difficulty": "medium",
+      "answer_type": "single",
+      "stem": "A ladder reaches a window 144 m above the ground, its foot being 60 m from the wall. Find the length of the ladder.",
+      "explanation": "Length = √(144² + 60²) = 156 m.",
+      "options": [
+        {
+          "label": "160 m",
+          "is_correct": false
+        },
+        {
+          "label": "154 m",
+          "is_correct": false
+        },
+        {
+          "label": "158 m",
+          "is_correct": false
+        },
+        {
+          "label": "156 m",
+          "is_correct": true
+        }
+      ]
+    },
+    {
+      "chapter": "Heights and Distances",
+      "kind": "standard",
+      "difficulty": "medium",
+      "answer_type": "single",
+      "stem": "A ladder 82 m long leans against a wall with its foot 18 m away from the wall. How high up the wall does the ladder reach?",
+      "explanation": "Height = √(82² − 18²) = 80 m.",
+      "options": [
+        {
+          "label": "84 m",
+          "is_correct": false
+        },
+        {
+          "label": "80 m",
+          "is_correct": true
+        },
+        {
+          "label": "78 m",
+          "is_correct": false
+        },
+        {
+          "label": "82 m",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Heights and Distances",
+      "kind": "standard",
+      "difficulty": "medium",
+      "answer_type": "single",
+      "stem": "A ladder reaches a window 45 m above the ground, its foot being 24 m from the wall. Find the length of the ladder.",
+      "explanation": "Length = √(45² + 24²) = 51 m.",
+      "options": [
+        {
+          "label": "49 m",
+          "is_correct": false
+        },
+        {
+          "label": "51 m",
+          "is_correct": true
+        },
+        {
+          "label": "55 m",
+          "is_correct": false
+        },
+        {
+          "label": "53 m",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Heights and Distances",
+      "kind": "standard",
+      "difficulty": "hard",
+      "answer_type": "single",
+      "stem": "From a point 72 m from the base of a tower, the straight line of sight to the top of the tower is 120 m. Find the height of the tower.",
+      "explanation": "Height = √(120² − 72²) = 96 m.",
+      "options": [
+        {
+          "label": "94 m",
+          "is_correct": false
+        },
+        {
+          "label": "96 m",
+          "is_correct": true
+        },
+        {
+          "label": "100 m",
+          "is_correct": false
+        },
+        {
+          "label": "98 m",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Heights and Distances",
+      "kind": "standard",
+      "difficulty": "hard",
+      "answer_type": "single",
+      "stem": "The top of a tower 48 m high is observed from a point on the ground; the straight-line distance from that point to the top is 60 m. Find the horizontal distance from the point to the foot of the tower.",
+      "explanation": "Distance = √(60² − 48²) = 36 m.",
+      "options": [
+        {
+          "label": "37 m",
+          "is_correct": false
+        },
+        {
+          "label": "36 m",
+          "is_correct": true
+        },
+        {
+          "label": "38 m",
+          "is_correct": false
+        },
+        {
+          "label": "35 m",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Heights and Distances",
+      "kind": "standard",
+      "difficulty": "hard",
+      "answer_type": "single",
+      "stem": "The top of a tower 84 m high is observed from a point on the ground; the straight-line distance from that point to the top is 105 m. Find the horizontal distance from the point to the foot of the tower.",
+      "explanation": "Distance = √(105² − 84²) = 63 m.",
+      "options": [
+        {
+          "label": "67 m",
+          "is_correct": false
+        },
+        {
+          "label": "65 m",
+          "is_correct": false
+        },
+        {
+          "label": "63 m",
+          "is_correct": true
+        },
+        {
+          "label": "61 m",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Heights and Distances",
+      "kind": "standard",
+      "difficulty": "hard",
+      "answer_type": "single",
+      "stem": "A flagstaff stands on the top of a tower 11 m high. From a point on the ground 24 m from the base of the tower, the angle of elevation of the top of the flagstaff is 45°. Find the height of the flagstaff.",
+      "explanation": "At 45°, total height = 24 m; flagstaff = 24 − 11 = 13 m.",
+      "options": [
+        {
+          "label": "13 m",
+          "is_correct": true
+        },
+        {
+          "label": "15 m",
+          "is_correct": false
+        },
+        {
+          "label": "12 m",
+          "is_correct": false
+        },
+        {
+          "label": "14 m",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Heights and Distances",
+      "kind": "standard",
+      "difficulty": "hard",
+      "answer_type": "single",
+      "stem": "The top of a tower 15 m high is observed from a point on the ground; the straight-line distance from that point to the top is 17 m. Find the horizontal distance from the point to the foot of the tower.",
+      "explanation": "Distance = √(17² − 15²) = 8 m.",
+      "options": [
+        {
+          "label": "9 m",
+          "is_correct": false
+        },
+        {
+          "label": "10 m",
+          "is_correct": false
+        },
+        {
+          "label": "7 m",
+          "is_correct": false
+        },
+        {
+          "label": "8 m",
+          "is_correct": true
+        }
+      ]
+    },
+    {
+      "chapter": "Heights and Distances",
+      "kind": "standard",
+      "difficulty": "hard",
+      "answer_type": "single",
+      "stem": "A flagstaff stands on the top of a tower 12 m high. From a point on the ground 28 m from the base of the tower, the angle of elevation of the top of the flagstaff is 45°. Find the height of the flagstaff.",
+      "explanation": "At 45°, total height = 28 m; flagstaff = 28 − 12 = 16 m.",
+      "options": [
+        {
+          "label": "16 m",
+          "is_correct": true
+        },
+        {
+          "label": "15 m",
+          "is_correct": false
+        },
+        {
+          "label": "17 m",
+          "is_correct": false
+        },
+        {
+          "label": "18 m",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Heights and Distances",
+      "kind": "standard",
+      "difficulty": "hard",
+      "answer_type": "single",
+      "stem": "A flagstaff stands on the top of a tower 9 m high. From a point on the ground 37 m from the base of the tower, the angle of elevation of the top of the flagstaff is 45°. Find the height of the flagstaff.",
+      "explanation": "At 45°, total height = 37 m; flagstaff = 37 − 9 = 28 m.",
+      "options": [
+        {
+          "label": "27 m",
+          "is_correct": false
+        },
+        {
+          "label": "29 m",
+          "is_correct": false
+        },
+        {
+          "label": "28 m",
+          "is_correct": true
+        },
+        {
+          "label": "30 m",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Heights and Distances",
+      "kind": "standard",
+      "difficulty": "hard",
+      "answer_type": "single",
+      "stem": "A flagstaff stands on the top of a tower 35 m high. From a point on the ground 64 m from the base of the tower, the angle of elevation of the top of the flagstaff is 45°. Find the height of the flagstaff.",
+      "explanation": "At 45°, total height = 64 m; flagstaff = 64 − 35 = 29 m.",
+      "options": [
+        {
+          "label": "31 m",
+          "is_correct": false
+        },
+        {
+          "label": "28 m",
+          "is_correct": false
+        },
+        {
+          "label": "30 m",
+          "is_correct": false
+        },
+        {
+          "label": "29 m",
+          "is_correct": true
+        }
+      ]
+    },
+    {
+      "chapter": "Heights and Distances",
+      "kind": "standard",
+      "difficulty": "hard",
+      "answer_type": "single",
+      "stem": "The top of a tower 63 m high is observed from a point on the ground; the straight-line distance from that point to the top is 87 m. Find the horizontal distance from the point to the foot of the tower.",
+      "explanation": "Distance = √(87² − 63²) = 60 m.",
+      "options": [
+        {
+          "label": "60 m",
+          "is_correct": true
+        },
+        {
+          "label": "58 m",
+          "is_correct": false
+        },
+        {
+          "label": "62 m",
+          "is_correct": false
+        },
+        {
+          "label": "64 m",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Heights and Distances",
+      "kind": "standard",
+      "difficulty": "hard",
+      "answer_type": "single",
+      "stem": "The top of a tower 40 m high is observed from a point on the ground; the straight-line distance from that point to the top is 41 m. Find the horizontal distance from the point to the foot of the tower.",
+      "explanation": "Distance = √(41² − 40²) = 9 m.",
+      "options": [
+        {
+          "label": "10 m",
+          "is_correct": false
+        },
+        {
+          "label": "9 m",
+          "is_correct": true
+        },
+        {
+          "label": "8 m",
+          "is_correct": false
+        },
+        {
+          "label": "11 m",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Heights and Distances",
+      "kind": "standard",
+      "difficulty": "hard",
+      "answer_type": "single",
+      "stem": "A flagstaff stands on the top of a tower 12 m high. From a point on the ground 40 m from the base of the tower, the angle of elevation of the top of the flagstaff is 45°. Find the height of the flagstaff.",
+      "explanation": "At 45°, total height = 40 m; flagstaff = 40 − 12 = 28 m.",
+      "options": [
+        {
+          "label": "28 m",
+          "is_correct": true
+        },
+        {
+          "label": "27 m",
+          "is_correct": false
+        },
+        {
+          "label": "30 m",
+          "is_correct": false
+        },
+        {
+          "label": "29 m",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Heights and Distances",
+      "kind": "standard",
+      "difficulty": "hard",
+      "answer_type": "single",
+      "stem": "A flagstaff stands on the top of a tower 35 m high. From a point on the ground 52 m from the base of the tower, the angle of elevation of the top of the flagstaff is 45°. Find the height of the flagstaff.",
+      "explanation": "At 45°, total height = 52 m; flagstaff = 52 − 35 = 17 m.",
+      "options": [
+        {
+          "label": "19 m",
+          "is_correct": false
+        },
+        {
+          "label": "18 m",
+          "is_correct": false
+        },
+        {
+          "label": "17 m",
+          "is_correct": true
+        },
+        {
+          "label": "16 m",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Heights and Distances",
+      "kind": "standard",
+      "difficulty": "hard",
+      "answer_type": "single",
+      "stem": "From a point 60 m from the base of a tower, the straight line of sight to the top of the tower is 100 m. Find the height of the tower.",
+      "explanation": "Height = √(100² − 60²) = 80 m.",
+      "options": [
+        {
+          "label": "82 m",
+          "is_correct": false
+        },
+        {
+          "label": "80 m",
+          "is_correct": true
+        },
+        {
+          "label": "78 m",
+          "is_correct": false
+        },
+        {
+          "label": "84 m",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Heights and Distances",
+      "kind": "standard",
+      "difficulty": "hard",
+      "answer_type": "single",
+      "stem": "From a point 40 m from the base of a tower, the straight line of sight to the top of the tower is 104 m. Find the height of the tower.",
+      "explanation": "Height = √(104² − 40²) = 96 m.",
+      "options": [
+        {
+          "label": "96 m",
+          "is_correct": true
+        },
+        {
+          "label": "98 m",
+          "is_correct": false
+        },
+        {
+          "label": "94 m",
+          "is_correct": false
+        },
+        {
+          "label": "100 m",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Heights and Distances",
+      "kind": "standard",
+      "difficulty": "hard",
+      "answer_type": "single",
+      "stem": "A flagstaff stands on the top of a tower 39 m high. From a point on the ground 48 m from the base of the tower, the angle of elevation of the top of the flagstaff is 45°. Find the height of the flagstaff.",
+      "explanation": "At 45°, total height = 48 m; flagstaff = 48 − 39 = 9 m.",
+      "options": [
+        {
+          "label": "11 m",
+          "is_correct": false
+        },
+        {
+          "label": "10 m",
+          "is_correct": false
+        },
+        {
+          "label": "8 m",
+          "is_correct": false
+        },
+        {
+          "label": "9 m",
+          "is_correct": true
+        }
+      ]
+    },
+    {
+      "chapter": "Heights and Distances",
+      "kind": "standard",
+      "difficulty": "hard",
+      "answer_type": "single",
+      "stem": "A flagstaff stands on the top of a tower 23 m high. From a point on the ground 52 m from the base of the tower, the angle of elevation of the top of the flagstaff is 45°. Find the height of the flagstaff.",
+      "explanation": "At 45°, total height = 52 m; flagstaff = 52 − 23 = 29 m.",
+      "options": [
+        {
+          "label": "28 m",
+          "is_correct": false
+        },
+        {
+          "label": "29 m",
+          "is_correct": true
+        },
+        {
+          "label": "31 m",
+          "is_correct": false
+        },
+        {
+          "label": "30 m",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Heights and Distances",
+      "kind": "standard",
+      "difficulty": "hard",
+      "answer_type": "single",
+      "stem": "A flagstaff stands on the top of a tower 5 m high. From a point on the ground 39 m from the base of the tower, the angle of elevation of the top of the flagstaff is 45°. Find the height of the flagstaff.",
+      "explanation": "At 45°, total height = 39 m; flagstaff = 39 − 5 = 34 m.",
+      "options": [
+        {
+          "label": "36 m",
+          "is_correct": false
+        },
+        {
+          "label": "33 m",
+          "is_correct": false
+        },
+        {
+          "label": "34 m",
+          "is_correct": true
+        },
+        {
+          "label": "35 m",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Heights and Distances",
+      "kind": "standard",
+      "difficulty": "hard",
+      "answer_type": "single",
+      "stem": "The top of a tower 24 m high is observed from a point on the ground; the straight-line distance from that point to the top is 30 m. Find the horizontal distance from the point to the foot of the tower.",
+      "explanation": "Distance = √(30² − 24²) = 18 m.",
+      "options": [
+        {
+          "label": "17 m",
+          "is_correct": false
+        },
+        {
+          "label": "19 m",
+          "is_correct": false
+        },
+        {
+          "label": "18 m",
+          "is_correct": true
+        },
+        {
+          "label": "20 m",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Heights and Distances",
+      "kind": "standard",
+      "difficulty": "hard",
+      "answer_type": "single",
+      "stem": "The top of a tower 8 m high is observed from a point on the ground; the straight-line distance from that point to the top is 10 m. Find the horizontal distance from the point to the foot of the tower.",
+      "explanation": "Distance = √(10² − 8²) = 6 m.",
+      "options": [
+        {
+          "label": "8 m",
+          "is_correct": false
+        },
+        {
+          "label": "5 m",
+          "is_correct": false
+        },
+        {
+          "label": "7 m",
+          "is_correct": false
+        },
+        {
+          "label": "6 m",
+          "is_correct": true
+        }
+      ]
+    },
+    {
+      "chapter": "Heights and Distances",
+      "kind": "standard",
+      "difficulty": "hard",
+      "answer_type": "single",
+      "stem": "The top of a tower 168 m high is observed from a point on the ground; the straight-line distance from that point to the top is 175 m. Find the horizontal distance from the point to the foot of the tower.",
+      "explanation": "Distance = √(175² − 168²) = 49 m.",
+      "options": [
+        {
+          "label": "51 m",
+          "is_correct": false
+        },
+        {
+          "label": "49 m",
+          "is_correct": true
+        },
+        {
+          "label": "53 m",
+          "is_correct": false
+        },
+        {
+          "label": "47 m",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Heights and Distances",
+      "kind": "standard",
+      "difficulty": "hard",
+      "answer_type": "single",
+      "stem": "The top of a tower 42 m high is observed from a point on the ground; the straight-line distance from that point to the top is 58 m. Find the horizontal distance from the point to the foot of the tower.",
+      "explanation": "Distance = √(58² − 42²) = 40 m.",
+      "options": [
+        {
+          "label": "42 m",
+          "is_correct": false
+        },
+        {
+          "label": "44 m",
+          "is_correct": false
+        },
+        {
+          "label": "40 m",
+          "is_correct": true
+        },
+        {
+          "label": "38 m",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Heights and Distances",
+      "kind": "standard",
+      "difficulty": "hard",
+      "answer_type": "single",
+      "stem": "A flagstaff stands on the top of a tower 8 m high. From a point on the ground 47 m from the base of the tower, the angle of elevation of the top of the flagstaff is 45°. Find the height of the flagstaff.",
+      "explanation": "At 45°, total height = 47 m; flagstaff = 47 − 8 = 39 m.",
+      "options": [
+        {
+          "label": "38 m",
+          "is_correct": false
+        },
+        {
+          "label": "40 m",
+          "is_correct": false
+        },
+        {
+          "label": "41 m",
+          "is_correct": false
+        },
+        {
+          "label": "39 m",
+          "is_correct": true
+        }
+      ]
+    },
+    {
+      "chapter": "Heights and Distances",
+      "kind": "standard",
+      "difficulty": "hard",
+      "answer_type": "single",
+      "stem": "From a point 18 m from the base of a tower, the straight line of sight to the top of the tower is 30 m. Find the height of the tower.",
+      "explanation": "Height = √(30² − 18²) = 24 m.",
+      "options": [
+        {
+          "label": "24 m",
+          "is_correct": true
+        },
+        {
+          "label": "23 m",
+          "is_correct": false
+        },
+        {
+          "label": "25 m",
+          "is_correct": false
+        },
+        {
+          "label": "26 m",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Heights and Distances",
+      "kind": "standard",
+      "difficulty": "hard",
+      "answer_type": "single",
+      "stem": "A flagstaff stands on the top of a tower 26 m high. From a point on the ground 48 m from the base of the tower, the angle of elevation of the top of the flagstaff is 45°. Find the height of the flagstaff.",
+      "explanation": "At 45°, total height = 48 m; flagstaff = 48 − 26 = 22 m.",
+      "options": [
+        {
+          "label": "22 m",
+          "is_correct": true
+        },
+        {
+          "label": "21 m",
+          "is_correct": false
+        },
+        {
+          "label": "24 m",
+          "is_correct": false
+        },
+        {
+          "label": "23 m",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Heights and Distances",
+      "kind": "standard",
+      "difficulty": "hard",
+      "answer_type": "single",
+      "stem": "The top of a tower 84 m high is observed from a point on the ground; the straight-line distance from that point to the top is 91 m. Find the horizontal distance from the point to the foot of the tower.",
+      "explanation": "Distance = √(91² − 84²) = 35 m.",
+      "options": [
+        {
+          "label": "34 m",
+          "is_correct": false
+        },
+        {
+          "label": "35 m",
+          "is_correct": true
+        },
+        {
+          "label": "36 m",
+          "is_correct": false
+        },
+        {
+          "label": "37 m",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Heights and Distances",
+      "kind": "standard",
+      "difficulty": "hard",
+      "answer_type": "single",
+      "stem": "A flagstaff stands on the top of a tower 32 m high. From a point on the ground 42 m from the base of the tower, the angle of elevation of the top of the flagstaff is 45°. Find the height of the flagstaff.",
+      "explanation": "At 45°, total height = 42 m; flagstaff = 42 − 32 = 10 m.",
+      "options": [
+        {
+          "label": "9 m",
+          "is_correct": false
+        },
+        {
+          "label": "12 m",
+          "is_correct": false
+        },
+        {
+          "label": "11 m",
+          "is_correct": false
+        },
+        {
+          "label": "10 m",
+          "is_correct": true
+        }
+      ]
+    },
+    {
+      "chapter": "Heights and Distances",
+      "kind": "standard",
+      "difficulty": "hard",
+      "answer_type": "single",
+      "stem": "The top of a tower 96 m high is observed from a point on the ground; the straight-line distance from that point to the top is 120 m. Find the horizontal distance from the point to the foot of the tower.",
+      "explanation": "Distance = √(120² − 96²) = 72 m.",
+      "options": [
+        {
+          "label": "72 m",
+          "is_correct": true
+        },
+        {
+          "label": "76 m",
+          "is_correct": false
+        },
+        {
+          "label": "70 m",
+          "is_correct": false
+        },
+        {
+          "label": "74 m",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Heights and Distances",
+      "kind": "standard",
+      "difficulty": "hard",
+      "answer_type": "single",
+      "stem": "The top of a tower 240 m high is observed from a point on the ground; the straight-line distance from that point to the top is 246 m. Find the horizontal distance from the point to the foot of the tower.",
+      "explanation": "Distance = √(246² − 240²) = 54 m.",
+      "options": [
+        {
+          "label": "52 m",
+          "is_correct": false
+        },
+        {
+          "label": "54 m",
+          "is_correct": true
+        },
+        {
+          "label": "56 m",
+          "is_correct": false
+        },
+        {
+          "label": "58 m",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Heights and Distances",
+      "kind": "standard",
+      "difficulty": "hard",
+      "answer_type": "single",
+      "stem": "From a point 9 m from the base of a tower, the straight line of sight to the top of the tower is 15 m. Find the height of the tower.",
+      "explanation": "Height = √(15² − 9²) = 12 m.",
+      "options": [
+        {
+          "label": "11 m",
+          "is_correct": false
+        },
+        {
+          "label": "12 m",
+          "is_correct": true
+        },
+        {
+          "label": "13 m",
+          "is_correct": false
+        },
+        {
+          "label": "14 m",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Heights and Distances",
+      "kind": "standard",
+      "difficulty": "hard",
+      "answer_type": "single",
+      "stem": "The top of a tower 120 m high is observed from a point on the ground; the straight-line distance from that point to the top is 136 m. Find the horizontal distance from the point to the foot of the tower.",
+      "explanation": "Distance = √(136² − 120²) = 64 m.",
+      "options": [
+        {
+          "label": "68 m",
+          "is_correct": false
+        },
+        {
+          "label": "66 m",
+          "is_correct": false
+        },
+        {
+          "label": "64 m",
+          "is_correct": true
+        },
+        {
+          "label": "62 m",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Heights and Distances",
+      "kind": "standard",
+      "difficulty": "hard",
+      "answer_type": "single",
+      "stem": "A flagstaff stands on the top of a tower 21 m high. From a point on the ground 56 m from the base of the tower, the angle of elevation of the top of the flagstaff is 45°. Find the height of the flagstaff.",
+      "explanation": "At 45°, total height = 56 m; flagstaff = 56 − 21 = 35 m.",
+      "options": [
+        {
+          "label": "36 m",
+          "is_correct": false
+        },
+        {
+          "label": "34 m",
+          "is_correct": false
+        },
+        {
+          "label": "35 m",
+          "is_correct": true
+        },
+        {
+          "label": "37 m",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Heights and Distances",
+      "kind": "standard",
+      "difficulty": "hard",
+      "answer_type": "single",
+      "stem": "The top of a tower 160 m high is observed from a point on the ground; the straight-line distance from that point to the top is 164 m. Find the horizontal distance from the point to the foot of the tower.",
+      "explanation": "Distance = √(164² − 160²) = 36 m.",
+      "options": [
+        {
+          "label": "36 m",
+          "is_correct": true
+        },
+        {
+          "label": "38 m",
+          "is_correct": false
+        },
+        {
+          "label": "37 m",
+          "is_correct": false
+        },
+        {
+          "label": "35 m",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Heights and Distances",
+      "kind": "standard",
+      "difficulty": "hard",
+      "answer_type": "single",
+      "stem": "The top of a tower 72 m high is observed from a point on the ground; the straight-line distance from that point to the top is 75 m. Find the horizontal distance from the point to the foot of the tower.",
+      "explanation": "Distance = √(75² − 72²) = 21 m.",
+      "options": [
+        {
+          "label": "22 m",
+          "is_correct": false
+        },
+        {
+          "label": "20 m",
+          "is_correct": false
+        },
+        {
+          "label": "21 m",
+          "is_correct": true
+        },
+        {
+          "label": "23 m",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Heights and Distances",
+      "kind": "standard",
+      "difficulty": "hard",
+      "answer_type": "single",
+      "stem": "From a point 120 m from the base of a tower, the straight line of sight to the top of the tower is 174 m. Find the height of the tower.",
+      "explanation": "Height = √(174² − 120²) = 126 m.",
+      "options": [
+        {
+          "label": "124 m",
+          "is_correct": false
+        },
+        {
+          "label": "130 m",
+          "is_correct": false
+        },
+        {
+          "label": "128 m",
+          "is_correct": false
+        },
+        {
+          "label": "126 m",
+          "is_correct": true
+        }
+      ]
+    },
+    {
+      "chapter": "Heights and Distances",
+      "kind": "standard",
+      "difficulty": "hard",
+      "answer_type": "single",
+      "stem": "A flagstaff stands on the top of a tower 39 m high. From a point on the ground 64 m from the base of the tower, the angle of elevation of the top of the flagstaff is 45°. Find the height of the flagstaff.",
+      "explanation": "At 45°, total height = 64 m; flagstaff = 64 − 39 = 25 m.",
+      "options": [
+        {
+          "label": "27 m",
+          "is_correct": false
+        },
+        {
+          "label": "24 m",
+          "is_correct": false
+        },
+        {
+          "label": "26 m",
+          "is_correct": false
+        },
+        {
+          "label": "25 m",
+          "is_correct": true
+        }
+      ]
+    },
+    {
+      "chapter": "Heights and Distances",
+      "kind": "standard",
+      "difficulty": "hard",
+      "answer_type": "single",
+      "stem": "A flagstaff stands on the top of a tower 5 m high. From a point on the ground 29 m from the base of the tower, the angle of elevation of the top of the flagstaff is 45°. Find the height of the flagstaff.",
+      "explanation": "At 45°, total height = 29 m; flagstaff = 29 − 5 = 24 m.",
+      "options": [
+        {
+          "label": "24 m",
+          "is_correct": true
+        },
+        {
+          "label": "26 m",
+          "is_correct": false
+        },
+        {
+          "label": "25 m",
+          "is_correct": false
+        },
+        {
+          "label": "23 m",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Heights and Distances",
+      "kind": "standard",
+      "difficulty": "hard",
+      "answer_type": "single",
+      "stem": "The top of a tower 168 m high is observed from a point on the ground; the straight-line distance from that point to the top is 182 m. Find the horizontal distance from the point to the foot of the tower.",
+      "explanation": "Distance = √(182² − 168²) = 70 m.",
+      "options": [
+        {
+          "label": "74 m",
+          "is_correct": false
+        },
+        {
+          "label": "68 m",
+          "is_correct": false
+        },
+        {
+          "label": "72 m",
+          "is_correct": false
+        },
+        {
+          "label": "70 m",
+          "is_correct": true
+        }
+      ]
+    },
+    {
+      "chapter": "Heights and Distances",
+      "kind": "standard",
+      "difficulty": "hard",
+      "answer_type": "single",
+      "stem": "A flagstaff stands on the top of a tower 6 m high. From a point on the ground 13 m from the base of the tower, the angle of elevation of the top of the flagstaff is 45°. Find the height of the flagstaff.",
+      "explanation": "At 45°, total height = 13 m; flagstaff = 13 − 6 = 7 m.",
+      "options": [
+        {
+          "label": "9 m",
+          "is_correct": false
+        },
+        {
+          "label": "8 m",
+          "is_correct": false
+        },
+        {
+          "label": "7 m",
+          "is_correct": true
+        },
+        {
+          "label": "6 m",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Heights and Distances",
+      "kind": "standard",
+      "difficulty": "hard",
+      "answer_type": "single",
+      "stem": "From a point 42 m from the base of a tower, the straight line of sight to the top of the tower is 150 m. Find the height of the tower.",
+      "explanation": "Height = √(150² − 42²) = 144 m.",
+      "options": [
+        {
+          "label": "148 m",
+          "is_correct": false
+        },
+        {
+          "label": "144 m",
+          "is_correct": true
+        },
+        {
+          "label": "142 m",
+          "is_correct": false
+        },
+        {
+          "label": "146 m",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Heights and Distances",
+      "kind": "standard",
+      "difficulty": "hard",
+      "answer_type": "single",
+      "stem": "From a point 80 m from the base of a tower, the straight line of sight to the top of the tower is 116 m. Find the height of the tower.",
+      "explanation": "Height = √(116² − 80²) = 84 m.",
+      "options": [
+        {
+          "label": "88 m",
+          "is_correct": false
+        },
+        {
+          "label": "84 m",
+          "is_correct": true
+        },
+        {
+          "label": "86 m",
+          "is_correct": false
+        },
+        {
+          "label": "82 m",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Heights and Distances",
+      "kind": "standard",
+      "difficulty": "hard",
+      "answer_type": "single",
+      "stem": "From a point 100 m from the base of a tower, the straight line of sight to the top of the tower is 145 m. Find the height of the tower.",
+      "explanation": "Height = √(145² − 100²) = 105 m.",
+      "options": [
+        {
+          "label": "107 m",
+          "is_correct": false
+        },
+        {
+          "label": "109 m",
+          "is_correct": false
+        },
+        {
+          "label": "105 m",
+          "is_correct": true
+        },
+        {
+          "label": "103 m",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Heights and Distances",
+      "kind": "standard",
+      "difficulty": "hard",
+      "answer_type": "single",
+      "stem": "From a point 9 m from the base of a tower, the straight line of sight to the top of the tower is 41 m. Find the height of the tower.",
+      "explanation": "Height = √(41² − 9²) = 40 m.",
+      "options": [
+        {
+          "label": "40 m",
+          "is_correct": true
+        },
+        {
+          "label": "44 m",
+          "is_correct": false
+        },
+        {
+          "label": "38 m",
+          "is_correct": false
+        },
+        {
+          "label": "42 m",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Heights and Distances",
+      "kind": "standard",
+      "difficulty": "hard",
+      "answer_type": "single",
+      "stem": "From a point 24 m from the base of a tower, the straight line of sight to the top of the tower is 51 m. Find the height of the tower.",
+      "explanation": "Height = √(51² − 24²) = 45 m.",
+      "options": [
+        {
+          "label": "49 m",
+          "is_correct": false
+        },
+        {
+          "label": "47 m",
+          "is_correct": false
+        },
+        {
+          "label": "45 m",
+          "is_correct": true
+        },
+        {
+          "label": "43 m",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Heights and Distances",
+      "kind": "standard",
+      "difficulty": "hard",
+      "answer_type": "single",
+      "stem": "A flagstaff stands on the top of a tower 34 m high. From a point on the ground 51 m from the base of the tower, the angle of elevation of the top of the flagstaff is 45°. Find the height of the flagstaff.",
+      "explanation": "At 45°, total height = 51 m; flagstaff = 51 − 34 = 17 m.",
+      "options": [
+        {
+          "label": "16 m",
+          "is_correct": false
+        },
+        {
+          "label": "19 m",
+          "is_correct": false
+        },
+        {
+          "label": "17 m",
+          "is_correct": true
+        },
+        {
+          "label": "18 m",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Heights and Distances",
+      "kind": "standard",
+      "difficulty": "hard",
+      "answer_type": "single",
+      "stem": "From a point 18 m from the base of a tower, the straight line of sight to the top of the tower is 82 m. Find the height of the tower.",
+      "explanation": "Height = √(82² − 18²) = 80 m.",
+      "options": [
+        {
+          "label": "84 m",
+          "is_correct": false
+        },
+        {
+          "label": "78 m",
+          "is_correct": false
+        },
+        {
+          "label": "80 m",
+          "is_correct": true
+        },
+        {
+          "label": "82 m",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Heights and Distances",
+      "kind": "standard",
+      "difficulty": "hard",
+      "answer_type": "single",
+      "stem": "A flagstaff stands on the top of a tower 12 m high. From a point on the ground 29 m from the base of the tower, the angle of elevation of the top of the flagstaff is 45°. Find the height of the flagstaff.",
+      "explanation": "At 45°, total height = 29 m; flagstaff = 29 − 12 = 17 m.",
+      "options": [
+        {
+          "label": "19 m",
+          "is_correct": false
+        },
+        {
+          "label": "16 m",
+          "is_correct": false
+        },
+        {
+          "label": "18 m",
+          "is_correct": false
+        },
+        {
+          "label": "17 m",
+          "is_correct": true
+        }
+      ]
+    },
+    {
+      "chapter": "Heights and Distances",
+      "kind": "standard",
+      "difficulty": "hard",
+      "answer_type": "single",
+      "stem": "From a point 60 m from the base of a tower, the straight line of sight to the top of the tower is 156 m. Find the height of the tower.",
+      "explanation": "Height = √(156² − 60²) = 144 m.",
+      "options": [
+        {
+          "label": "148 m",
+          "is_correct": false
+        },
+        {
+          "label": "146 m",
+          "is_correct": false
+        },
+        {
+          "label": "144 m",
+          "is_correct": true
+        },
+        {
+          "label": "142 m",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Heights and Distances",
+      "kind": "standard",
+      "difficulty": "hard",
+      "answer_type": "single",
+      "stem": "A flagstaff stands on the top of a tower 19 m high. From a point on the ground 58 m from the base of the tower, the angle of elevation of the top of the flagstaff is 45°. Find the height of the flagstaff.",
+      "explanation": "At 45°, total height = 58 m; flagstaff = 58 − 19 = 39 m.",
+      "options": [
+        {
+          "label": "41 m",
+          "is_correct": false
+        },
+        {
+          "label": "40 m",
+          "is_correct": false
+        },
+        {
+          "label": "39 m",
+          "is_correct": true
+        },
+        {
+          "label": "38 m",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Heights and Distances",
+      "kind": "standard",
+      "difficulty": "hard",
+      "answer_type": "single",
+      "stem": "A flagstaff stands on the top of a tower 39 m high. From a point on the ground 53 m from the base of the tower, the angle of elevation of the top of the flagstaff is 45°. Find the height of the flagstaff.",
+      "explanation": "At 45°, total height = 53 m; flagstaff = 53 − 39 = 14 m.",
+      "options": [
+        {
+          "label": "13 m",
+          "is_correct": false
+        },
+        {
+          "label": "16 m",
+          "is_correct": false
+        },
+        {
+          "label": "14 m",
+          "is_correct": true
+        },
+        {
+          "label": "15 m",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Heights and Distances",
+      "kind": "standard",
+      "difficulty": "hard",
+      "answer_type": "single",
+      "stem": "The top of a tower 200 m high is observed from a point on the ground; the straight-line distance from that point to the top is 205 m. Find the horizontal distance from the point to the foot of the tower.",
+      "explanation": "Distance = √(205² − 200²) = 45 m.",
+      "options": [
+        {
+          "label": "49 m",
+          "is_correct": false
+        },
+        {
+          "label": "43 m",
+          "is_correct": false
+        },
+        {
+          "label": "45 m",
+          "is_correct": true
+        },
+        {
+          "label": "47 m",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Heights and Distances",
+      "kind": "standard",
+      "difficulty": "very_hard",
+      "answer_type": "single",
+      "stem": "A person standing on one bank of a river observes the top of a tree on the opposite bank at an angle of elevation of 45°. If the tree is 73 m tall, find the width of the river.",
+      "explanation": "At 45°, the width of the river equals the height of the tree = 73 m.",
+      "options": [
+        {
+          "label": "77 m",
+          "is_correct": false
+        },
+        {
+          "label": "71 m",
+          "is_correct": false
+        },
+        {
+          "label": "75 m",
+          "is_correct": false
+        },
+        {
+          "label": "73 m",
+          "is_correct": true
+        }
+      ]
+    },
+    {
+      "chapter": "Heights and Distances",
+      "kind": "standard",
+      "difficulty": "very_hard",
+      "answer_type": "single",
+      "stem": "A flagstaff stands on top of a tower. From a point on the ground 85 m from the base, the angle of elevation of the top of the flagstaff (the highest point) is 45°, and the flagstaff itself is 74 m tall. Find the height of the tower.",
+      "explanation": "At 45°, total height = 85 m; tower = 85 − 74 = 11 m.",
+      "options": [
+        {
+          "label": "10 m",
+          "is_correct": false
+        },
+        {
+          "label": "12 m",
+          "is_correct": false
+        },
+        {
+          "label": "13 m",
+          "is_correct": false
+        },
+        {
+          "label": "11 m",
+          "is_correct": true
+        }
+      ]
+    },
+    {
+      "chapter": "Heights and Distances",
+      "kind": "standard",
+      "difficulty": "very_hard",
+      "answer_type": "single",
+      "stem": "A 51 m long wire is stretched from the top of a vertical pole to a point on the ground 24 m from the foot of the pole. Find the height of the pole.",
+      "explanation": "Height = √(51² − 24²) = 45 m.",
+      "options": [
+        {
+          "label": "49 m",
+          "is_correct": false
+        },
+        {
+          "label": "47 m",
+          "is_correct": false
+        },
+        {
+          "label": "45 m",
+          "is_correct": true
+        },
+        {
+          "label": "43 m",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Heights and Distances",
+      "kind": "standard",
+      "difficulty": "very_hard",
+      "answer_type": "single",
+      "stem": "A flagstaff stands on top of a tower. From a point on the ground 36 m from the base, the angle of elevation of the top of the flagstaff (the highest point) is 45°, and the flagstaff itself is 27 m tall. Find the height of the tower.",
+      "explanation": "At 45°, total height = 36 m; tower = 36 − 27 = 9 m.",
+      "options": [
+        {
+          "label": "10 m",
+          "is_correct": false
+        },
+        {
+          "label": "11 m",
+          "is_correct": false
+        },
+        {
+          "label": "9 m",
+          "is_correct": true
+        },
+        {
+          "label": "8 m",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Heights and Distances",
+      "kind": "standard",
+      "difficulty": "very_hard",
+      "answer_type": "single",
+      "stem": "A person standing on one bank of a river observes the top of a tree on the opposite bank at an angle of elevation of 45°. If the tree is 37 m tall, find the width of the river.",
+      "explanation": "At 45°, the width of the river equals the height of the tree = 37 m.",
+      "options": [
+        {
+          "label": "37 m",
+          "is_correct": true
+        },
+        {
+          "label": "39 m",
+          "is_correct": false
+        },
+        {
+          "label": "36 m",
+          "is_correct": false
+        },
+        {
+          "label": "38 m",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Heights and Distances",
+      "kind": "standard",
+      "difficulty": "very_hard",
+      "answer_type": "single",
+      "stem": "A flagstaff stands on top of a tower. From a point on the ground 31 m from the base, the angle of elevation of the top of the flagstaff (the highest point) is 45°, and the flagstaff itself is 25 m tall. Find the height of the tower.",
+      "explanation": "At 45°, total height = 31 m; tower = 31 − 25 = 6 m.",
+      "options": [
+        {
+          "label": "8 m",
+          "is_correct": false
+        },
+        {
+          "label": "6 m",
+          "is_correct": true
+        },
+        {
+          "label": "5 m",
+          "is_correct": false
+        },
+        {
+          "label": "7 m",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Heights and Distances",
+      "kind": "standard",
+      "difficulty": "very_hard",
+      "answer_type": "single",
+      "stem": "A person standing on one bank of a river observes the top of a tree on the opposite bank at an angle of elevation of 45°. If the tree is 56 m tall, find the width of the river.",
+      "explanation": "At 45°, the width of the river equals the height of the tree = 56 m.",
+      "options": [
+        {
+          "label": "56 m",
+          "is_correct": true
+        },
+        {
+          "label": "60 m",
+          "is_correct": false
+        },
+        {
+          "label": "54 m",
+          "is_correct": false
+        },
+        {
+          "label": "58 m",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Heights and Distances",
+      "kind": "standard",
+      "difficulty": "very_hard",
+      "answer_type": "single",
+      "stem": "A person standing on one bank of a river observes the top of a tree on the opposite bank at an angle of elevation of 45°. If the tree is 74 m tall, find the width of the river.",
+      "explanation": "At 45°, the width of the river equals the height of the tree = 74 m.",
+      "options": [
+        {
+          "label": "76 m",
+          "is_correct": false
+        },
+        {
+          "label": "72 m",
+          "is_correct": false
+        },
+        {
+          "label": "74 m",
+          "is_correct": true
+        },
+        {
+          "label": "78 m",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Heights and Distances",
+      "kind": "standard",
+      "difficulty": "very_hard",
+      "answer_type": "single",
+      "stem": "A flagstaff stands on top of a tower. From a point on the ground 82 m from the base, the angle of elevation of the top of the flagstaff (the highest point) is 45°, and the flagstaff itself is 71 m tall. Find the height of the tower.",
+      "explanation": "At 45°, total height = 82 m; tower = 82 − 71 = 11 m.",
+      "options": [
+        {
+          "label": "13 m",
+          "is_correct": false
+        },
+        {
+          "label": "10 m",
+          "is_correct": false
+        },
+        {
+          "label": "11 m",
+          "is_correct": true
+        },
+        {
+          "label": "12 m",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Heights and Distances",
+      "kind": "standard",
+      "difficulty": "very_hard",
+      "answer_type": "single",
+      "stem": "A person standing on one bank of a river observes the top of a tree on the opposite bank at an angle of elevation of 45°. If the tree is 27 m tall, find the width of the river.",
+      "explanation": "At 45°, the width of the river equals the height of the tree = 27 m.",
+      "options": [
+        {
+          "label": "29 m",
+          "is_correct": false
+        },
+        {
+          "label": "28 m",
+          "is_correct": false
+        },
+        {
+          "label": "26 m",
+          "is_correct": false
+        },
+        {
+          "label": "27 m",
+          "is_correct": true
+        }
+      ]
+    },
+    {
+      "chapter": "Heights and Distances",
+      "kind": "standard",
+      "difficulty": "very_hard",
+      "answer_type": "single",
+      "stem": "A person standing on one bank of a river observes the top of a tree on the opposite bank at an angle of elevation of 45°. If the tree is 53 m tall, find the width of the river.",
+      "explanation": "At 45°, the width of the river equals the height of the tree = 53 m.",
+      "options": [
+        {
+          "label": "53 m",
+          "is_correct": true
+        },
+        {
+          "label": "57 m",
+          "is_correct": false
+        },
+        {
+          "label": "51 m",
+          "is_correct": false
+        },
+        {
+          "label": "55 m",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Heights and Distances",
+      "kind": "standard",
+      "difficulty": "very_hard",
+      "answer_type": "single",
+      "stem": "A 116 m long wire is stretched from the top of a vertical pole to a point on the ground 80 m from the foot of the pole. Find the height of the pole.",
+      "explanation": "Height = √(116² − 80²) = 84 m.",
+      "options": [
+        {
+          "label": "82 m",
+          "is_correct": false
+        },
+        {
+          "label": "84 m",
+          "is_correct": true
+        },
+        {
+          "label": "88 m",
+          "is_correct": false
+        },
+        {
+          "label": "86 m",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Heights and Distances",
+      "kind": "standard",
+      "difficulty": "very_hard",
+      "answer_type": "single",
+      "stem": "A flagstaff stands on top of a tower. From a point on the ground 73 m from the base, the angle of elevation of the top of the flagstaff (the highest point) is 45°, and the flagstaff itself is 6 m tall. Find the height of the tower.",
+      "explanation": "At 45°, total height = 73 m; tower = 73 − 6 = 67 m.",
+      "options": [
+        {
+          "label": "71 m",
+          "is_correct": false
+        },
+        {
+          "label": "65 m",
+          "is_correct": false
+        },
+        {
+          "label": "67 m",
+          "is_correct": true
+        },
+        {
+          "label": "69 m",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Heights and Distances",
+      "kind": "standard",
+      "difficulty": "very_hard",
+      "answer_type": "single",
+      "stem": "A person standing on one bank of a river observes the top of a tree on the opposite bank at an angle of elevation of 45°. If the tree is 13 m tall, find the width of the river.",
+      "explanation": "At 45°, the width of the river equals the height of the tree = 13 m.",
+      "options": [
+        {
+          "label": "14 m",
+          "is_correct": false
+        },
+        {
+          "label": "12 m",
+          "is_correct": false
+        },
+        {
+          "label": "15 m",
+          "is_correct": false
+        },
+        {
+          "label": "13 m",
+          "is_correct": true
+        }
+      ]
+    },
+    {
+      "chapter": "Heights and Distances",
+      "kind": "standard",
+      "difficulty": "very_hard",
+      "answer_type": "single",
+      "stem": "A flagstaff stands on top of a tower. From a point on the ground 88 m from the base, the angle of elevation of the top of the flagstaff (the highest point) is 45°, and the flagstaff itself is 74 m tall. Find the height of the tower.",
+      "explanation": "At 45°, total height = 88 m; tower = 88 − 74 = 14 m.",
+      "options": [
+        {
+          "label": "13 m",
+          "is_correct": false
+        },
+        {
+          "label": "15 m",
+          "is_correct": false
+        },
+        {
+          "label": "14 m",
+          "is_correct": true
+        },
+        {
+          "label": "16 m",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Heights and Distances",
+      "kind": "standard",
+      "difficulty": "very_hard",
+      "answer_type": "single",
+      "stem": "A flagstaff stands on top of a tower. From a point on the ground 58 m from the base, the angle of elevation of the top of the flagstaff (the highest point) is 45°, and the flagstaff itself is 23 m tall. Find the height of the tower.",
+      "explanation": "At 45°, total height = 58 m; tower = 58 − 23 = 35 m.",
+      "options": [
+        {
+          "label": "34 m",
+          "is_correct": false
+        },
+        {
+          "label": "36 m",
+          "is_correct": false
+        },
+        {
+          "label": "35 m",
+          "is_correct": true
+        },
+        {
+          "label": "37 m",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Heights and Distances",
+      "kind": "standard",
+      "difficulty": "very_hard",
+      "answer_type": "single",
+      "stem": "A person standing on one bank of a river observes the top of a tree on the opposite bank at an angle of elevation of 45°. If the tree is 77 m tall, find the width of the river.",
+      "explanation": "At 45°, the width of the river equals the height of the tree = 77 m.",
+      "options": [
+        {
+          "label": "81 m",
+          "is_correct": false
+        },
+        {
+          "label": "77 m",
+          "is_correct": true
+        },
+        {
+          "label": "79 m",
+          "is_correct": false
+        },
+        {
+          "label": "75 m",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Heights and Distances",
+      "kind": "standard",
+      "difficulty": "very_hard",
+      "answer_type": "single",
+      "stem": "A person standing on one bank of a river observes the top of a tree on the opposite bank at an angle of elevation of 45°. If the tree is 81 m tall, find the width of the river.",
+      "explanation": "At 45°, the width of the river equals the height of the tree = 81 m.",
+      "options": [
+        {
+          "label": "79 m",
+          "is_correct": false
+        },
+        {
+          "label": "85 m",
+          "is_correct": false
+        },
+        {
+          "label": "83 m",
+          "is_correct": false
+        },
+        {
+          "label": "81 m",
+          "is_correct": true
+        }
+      ]
+    },
+    {
+      "chapter": "Heights and Distances",
+      "kind": "standard",
+      "difficulty": "very_hard",
+      "answer_type": "single",
+      "stem": "A 41 m long wire is stretched from the top of a vertical pole to a point on the ground 9 m from the foot of the pole. Find the height of the pole.",
+      "explanation": "Height = √(41² − 9²) = 40 m.",
+      "options": [
+        {
+          "label": "42 m",
+          "is_correct": false
+        },
+        {
+          "label": "44 m",
+          "is_correct": false
+        },
+        {
+          "label": "38 m",
+          "is_correct": false
+        },
+        {
+          "label": "40 m",
+          "is_correct": true
+        }
+      ]
+    },
+    {
+      "chapter": "Heights and Distances",
+      "kind": "standard",
+      "difficulty": "very_hard",
+      "answer_type": "single",
+      "stem": "A 20 m long wire is stretched from the top of a vertical pole to a point on the ground 12 m from the foot of the pole. Find the height of the pole.",
+      "explanation": "Height = √(20² − 12²) = 16 m.",
+      "options": [
+        {
+          "label": "18 m",
+          "is_correct": false
+        },
+        {
+          "label": "17 m",
+          "is_correct": false
+        },
+        {
+          "label": "16 m",
+          "is_correct": true
+        },
+        {
+          "label": "15 m",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Heights and Distances",
+      "kind": "standard",
+      "difficulty": "very_hard",
+      "answer_type": "single",
+      "stem": "A person standing on one bank of a river observes the top of a tree on the opposite bank at an angle of elevation of 45°. If the tree is 65 m tall, find the width of the river.",
+      "explanation": "At 45°, the width of the river equals the height of the tree = 65 m.",
+      "options": [
+        {
+          "label": "67 m",
+          "is_correct": false
+        },
+        {
+          "label": "65 m",
+          "is_correct": true
+        },
+        {
+          "label": "69 m",
+          "is_correct": false
+        },
+        {
+          "label": "63 m",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Heights and Distances",
+      "kind": "standard",
+      "difficulty": "very_hard",
+      "answer_type": "single",
+      "stem": "A 156 m long wire is stretched from the top of a vertical pole to a point on the ground 60 m from the foot of the pole. Find the height of the pole.",
+      "explanation": "Height = √(156² − 60²) = 144 m.",
+      "options": [
+        {
+          "label": "142 m",
+          "is_correct": false
+        },
+        {
+          "label": "146 m",
+          "is_correct": false
+        },
+        {
+          "label": "144 m",
+          "is_correct": true
+        },
+        {
+          "label": "148 m",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Heights and Distances",
+      "kind": "standard",
+      "difficulty": "very_hard",
+      "answer_type": "single",
+      "stem": "A 29 m long wire is stretched from the top of a vertical pole to a point on the ground 20 m from the foot of the pole. Find the height of the pole.",
+      "explanation": "Height = √(29² − 20²) = 21 m.",
+      "options": [
+        {
+          "label": "21 m",
+          "is_correct": true
+        },
+        {
+          "label": "20 m",
+          "is_correct": false
+        },
+        {
+          "label": "23 m",
+          "is_correct": false
+        },
+        {
+          "label": "22 m",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Heights and Distances",
+      "kind": "standard",
+      "difficulty": "very_hard",
+      "answer_type": "single",
+      "stem": "A flagstaff stands on top of a tower. From a point on the ground 88 m from the base, the angle of elevation of the top of the flagstaff (the highest point) is 45°, and the flagstaff itself is 7 m tall. Find the height of the tower.",
+      "explanation": "At 45°, total height = 88 m; tower = 88 − 7 = 81 m.",
+      "options": [
+        {
+          "label": "85 m",
+          "is_correct": false
+        },
+        {
+          "label": "83 m",
+          "is_correct": false
+        },
+        {
+          "label": "79 m",
+          "is_correct": false
+        },
+        {
+          "label": "81 m",
+          "is_correct": true
+        }
+      ]
+    },
+    {
+      "chapter": "Heights and Distances",
+      "kind": "standard",
+      "difficulty": "very_hard",
+      "answer_type": "single",
+      "stem": "A person standing on one bank of a river observes the top of a tree on the opposite bank at an angle of elevation of 45°. If the tree is 59 m tall, find the width of the river.",
+      "explanation": "At 45°, the width of the river equals the height of the tree = 59 m.",
+      "options": [
+        {
+          "label": "63 m",
+          "is_correct": false
+        },
+        {
+          "label": "61 m",
+          "is_correct": false
+        },
+        {
+          "label": "59 m",
+          "is_correct": true
+        },
+        {
+          "label": "57 m",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Heights and Distances",
+      "kind": "standard",
+      "difficulty": "very_hard",
+      "answer_type": "single",
+      "stem": "A flagstaff stands on top of a tower. From a point on the ground 70 m from the base, the angle of elevation of the top of the flagstaff (the highest point) is 45°, and the flagstaff itself is 38 m tall. Find the height of the tower.",
+      "explanation": "At 45°, total height = 70 m; tower = 70 − 38 = 32 m.",
+      "options": [
+        {
+          "label": "33 m",
+          "is_correct": false
+        },
+        {
+          "label": "32 m",
+          "is_correct": true
+        },
+        {
+          "label": "31 m",
+          "is_correct": false
+        },
+        {
+          "label": "34 m",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Heights and Distances",
+      "kind": "standard",
+      "difficulty": "very_hard",
+      "answer_type": "single",
+      "stem": "A flagstaff stands on top of a tower. From a point on the ground 83 m from the base, the angle of elevation of the top of the flagstaff (the highest point) is 45°, and the flagstaff itself is 26 m tall. Find the height of the tower.",
+      "explanation": "At 45°, total height = 83 m; tower = 83 − 26 = 57 m.",
+      "options": [
+        {
+          "label": "55 m",
+          "is_correct": false
+        },
+        {
+          "label": "61 m",
+          "is_correct": false
+        },
+        {
+          "label": "57 m",
+          "is_correct": true
+        },
+        {
+          "label": "59 m",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Heights and Distances",
+      "kind": "standard",
+      "difficulty": "very_hard",
+      "answer_type": "single",
+      "stem": "A person standing on one bank of a river observes the top of a tree on the opposite bank at an angle of elevation of 45°. If the tree is 64 m tall, find the width of the river.",
+      "explanation": "At 45°, the width of the river equals the height of the tree = 64 m.",
+      "options": [
+        {
+          "label": "66 m",
+          "is_correct": false
+        },
+        {
+          "label": "64 m",
+          "is_correct": true
+        },
+        {
+          "label": "68 m",
+          "is_correct": false
+        },
+        {
+          "label": "62 m",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Heights and Distances",
+      "kind": "standard",
+      "difficulty": "very_hard",
+      "answer_type": "single",
+      "stem": "A 30 m long wire is stretched from the top of a vertical pole to a point on the ground 18 m from the foot of the pole. Find the height of the pole.",
+      "explanation": "Height = √(30² − 18²) = 24 m.",
+      "options": [
+        {
+          "label": "25 m",
+          "is_correct": false
+        },
+        {
+          "label": "23 m",
+          "is_correct": false
+        },
+        {
+          "label": "26 m",
+          "is_correct": false
+        },
+        {
+          "label": "24 m",
+          "is_correct": true
+        }
+      ]
+    },
+    {
+      "chapter": "Heights and Distances",
+      "kind": "standard",
+      "difficulty": "very_hard",
+      "answer_type": "single",
+      "stem": "A 68 m long wire is stretched from the top of a vertical pole to a point on the ground 32 m from the foot of the pole. Find the height of the pole.",
+      "explanation": "Height = √(68² − 32²) = 60 m.",
+      "options": [
+        {
+          "label": "60 m",
+          "is_correct": true
+        },
+        {
+          "label": "62 m",
+          "is_correct": false
+        },
+        {
+          "label": "58 m",
+          "is_correct": false
+        },
+        {
+          "label": "64 m",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Heights and Distances",
+      "kind": "standard",
+      "difficulty": "very_hard",
+      "answer_type": "single",
+      "stem": "A person standing on one bank of a river observes the top of a tree on the opposite bank at an angle of elevation of 45°. If the tree is 49 m tall, find the width of the river.",
+      "explanation": "At 45°, the width of the river equals the height of the tree = 49 m.",
+      "options": [
+        {
+          "label": "53 m",
+          "is_correct": false
+        },
+        {
+          "label": "49 m",
+          "is_correct": true
+        },
+        {
+          "label": "51 m",
+          "is_correct": false
+        },
+        {
+          "label": "47 m",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Heights and Distances",
+      "kind": "standard",
+      "difficulty": "very_hard",
+      "answer_type": "single",
+      "stem": "A flagstaff stands on top of a tower. From a point on the ground 89 m from the base, the angle of elevation of the top of the flagstaff (the highest point) is 45°, and the flagstaff itself is 14 m tall. Find the height of the tower.",
+      "explanation": "At 45°, total height = 89 m; tower = 89 − 14 = 75 m.",
+      "options": [
+        {
+          "label": "79 m",
+          "is_correct": false
+        },
+        {
+          "label": "77 m",
+          "is_correct": false
+        },
+        {
+          "label": "73 m",
+          "is_correct": false
+        },
+        {
+          "label": "75 m",
+          "is_correct": true
+        }
+      ]
+    },
+    {
+      "chapter": "Heights and Distances",
+      "kind": "standard",
+      "difficulty": "very_hard",
+      "answer_type": "single",
+      "stem": "A flagstaff stands on top of a tower. From a point on the ground 75 m from the base, the angle of elevation of the top of the flagstaff (the highest point) is 45°, and the flagstaff itself is 59 m tall. Find the height of the tower.",
+      "explanation": "At 45°, total height = 75 m; tower = 75 − 59 = 16 m.",
+      "options": [
+        {
+          "label": "17 m",
+          "is_correct": false
+        },
+        {
+          "label": "16 m",
+          "is_correct": true
+        },
+        {
+          "label": "15 m",
+          "is_correct": false
+        },
+        {
+          "label": "18 m",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Heights and Distances",
+      "kind": "standard",
+      "difficulty": "very_hard",
+      "answer_type": "single",
+      "stem": "A 80 m long wire is stretched from the top of a vertical pole to a point on the ground 48 m from the foot of the pole. Find the height of the pole.",
+      "explanation": "Height = √(80² − 48²) = 64 m.",
+      "options": [
+        {
+          "label": "68 m",
+          "is_correct": false
+        },
+        {
+          "label": "64 m",
+          "is_correct": true
+        },
+        {
+          "label": "66 m",
+          "is_correct": false
+        },
+        {
+          "label": "62 m",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Heights and Distances",
+      "kind": "standard",
+      "difficulty": "very_hard",
+      "answer_type": "single",
+      "stem": "A 75 m long wire is stretched from the top of a vertical pole to a point on the ground 21 m from the foot of the pole. Find the height of the pole.",
+      "explanation": "Height = √(75² − 21²) = 72 m.",
+      "options": [
+        {
+          "label": "70 m",
+          "is_correct": false
+        },
+        {
+          "label": "74 m",
+          "is_correct": false
+        },
+        {
+          "label": "72 m",
+          "is_correct": true
+        },
+        {
+          "label": "76 m",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Heights and Distances",
+      "kind": "standard",
+      "difficulty": "very_hard",
+      "answer_type": "single",
+      "stem": "A 102 m long wire is stretched from the top of a vertical pole to a point on the ground 48 m from the foot of the pole. Find the height of the pole.",
+      "explanation": "Height = √(102² − 48²) = 90 m.",
+      "options": [
+        {
+          "label": "88 m",
+          "is_correct": false
+        },
+        {
+          "label": "90 m",
+          "is_correct": true
+        },
+        {
+          "label": "94 m",
+          "is_correct": false
+        },
+        {
+          "label": "92 m",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Heights and Distances",
+      "kind": "standard",
+      "difficulty": "very_hard",
+      "answer_type": "single",
+      "stem": "A person standing on one bank of a river observes the top of a tree on the opposite bank at an angle of elevation of 45°. If the tree is 78 m tall, find the width of the river.",
+      "explanation": "At 45°, the width of the river equals the height of the tree = 78 m.",
+      "options": [
+        {
+          "label": "78 m",
+          "is_correct": true
+        },
+        {
+          "label": "80 m",
+          "is_correct": false
+        },
+        {
+          "label": "82 m",
+          "is_correct": false
+        },
+        {
+          "label": "76 m",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Heights and Distances",
+      "kind": "standard",
+      "difficulty": "very_hard",
+      "answer_type": "single",
+      "stem": "A 136 m long wire is stretched from the top of a vertical pole to a point on the ground 64 m from the foot of the pole. Find the height of the pole.",
+      "explanation": "Height = √(136² − 64²) = 120 m.",
+      "options": [
+        {
+          "label": "122 m",
+          "is_correct": false
+        },
+        {
+          "label": "124 m",
+          "is_correct": false
+        },
+        {
+          "label": "120 m",
+          "is_correct": true
+        },
+        {
+          "label": "118 m",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Heights and Distances",
+      "kind": "standard",
+      "difficulty": "very_hard",
+      "answer_type": "single",
+      "stem": "A person standing on one bank of a river observes the top of a tree on the opposite bank at an angle of elevation of 45°. If the tree is 11 m tall, find the width of the river.",
+      "explanation": "At 45°, the width of the river equals the height of the tree = 11 m.",
+      "options": [
+        {
+          "label": "12 m",
+          "is_correct": false
+        },
+        {
+          "label": "11 m",
+          "is_correct": true
+        },
+        {
+          "label": "10 m",
+          "is_correct": false
+        },
+        {
+          "label": "13 m",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Heights and Distances",
+      "kind": "standard",
+      "difficulty": "very_hard",
+      "answer_type": "single",
+      "stem": "A 200 m long wire is stretched from the top of a vertical pole to a point on the ground 56 m from the foot of the pole. Find the height of the pole.",
+      "explanation": "Height = √(200² − 56²) = 192 m.",
+      "options": [
+        {
+          "label": "192 m",
+          "is_correct": true
+        },
+        {
+          "label": "196 m",
+          "is_correct": false
+        },
+        {
+          "label": "194 m",
+          "is_correct": false
+        },
+        {
+          "label": "190 m",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Heights and Distances",
+      "kind": "standard",
+      "difficulty": "very_hard",
+      "answer_type": "single",
+      "stem": "A 15 m long wire is stretched from the top of a vertical pole to a point on the ground 9 m from the foot of the pole. Find the height of the pole.",
+      "explanation": "Height = √(15² − 9²) = 12 m.",
+      "options": [
+        {
+          "label": "13 m",
+          "is_correct": false
+        },
+        {
+          "label": "12 m",
+          "is_correct": true
+        },
+        {
+          "label": "11 m",
+          "is_correct": false
+        },
+        {
+          "label": "14 m",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Heights and Distances",
+      "kind": "standard",
+      "difficulty": "very_hard",
+      "answer_type": "single",
+      "stem": "A person standing on one bank of a river observes the top of a tree on the opposite bank at an angle of elevation of 45°. If the tree is 48 m tall, find the width of the river.",
+      "explanation": "At 45°, the width of the river equals the height of the tree = 48 m.",
+      "options": [
+        {
+          "label": "52 m",
+          "is_correct": false
+        },
+        {
+          "label": "50 m",
+          "is_correct": false
+        },
+        {
+          "label": "48 m",
+          "is_correct": true
+        },
+        {
+          "label": "46 m",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Heights and Distances",
+      "kind": "standard",
+      "difficulty": "very_hard",
+      "answer_type": "single",
+      "stem": "A flagstaff stands on top of a tower. From a point on the ground 54 m from the base, the angle of elevation of the top of the flagstaff (the highest point) is 45°, and the flagstaff itself is 29 m tall. Find the height of the tower.",
+      "explanation": "At 45°, total height = 54 m; tower = 54 − 29 = 25 m.",
+      "options": [
+        {
+          "label": "26 m",
+          "is_correct": false
+        },
+        {
+          "label": "25 m",
+          "is_correct": true
+        },
+        {
+          "label": "24 m",
+          "is_correct": false
+        },
+        {
+          "label": "27 m",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Heights and Distances",
+      "kind": "standard",
+      "difficulty": "very_hard",
+      "answer_type": "single",
+      "stem": "A person standing on one bank of a river observes the top of a tree on the opposite bank at an angle of elevation of 45°. If the tree is 69 m tall, find the width of the river.",
+      "explanation": "At 45°, the width of the river equals the height of the tree = 69 m.",
+      "options": [
+        {
+          "label": "71 m",
+          "is_correct": false
+        },
+        {
+          "label": "73 m",
+          "is_correct": false
+        },
+        {
+          "label": "67 m",
+          "is_correct": false
+        },
+        {
+          "label": "69 m",
+          "is_correct": true
+        }
+      ]
+    },
+    {
+      "chapter": "Heights and Distances",
+      "kind": "standard",
+      "difficulty": "very_hard",
+      "answer_type": "single",
+      "stem": "A flagstaff stands on top of a tower. From a point on the ground 70 m from the base, the angle of elevation of the top of the flagstaff (the highest point) is 45°, and the flagstaff itself is 22 m tall. Find the height of the tower.",
+      "explanation": "At 45°, total height = 70 m; tower = 70 − 22 = 48 m.",
+      "options": [
+        {
+          "label": "52 m",
+          "is_correct": false
+        },
+        {
+          "label": "50 m",
+          "is_correct": false
+        },
+        {
+          "label": "48 m",
+          "is_correct": true
+        },
+        {
+          "label": "46 m",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Heights and Distances",
+      "kind": "standard",
+      "difficulty": "very_hard",
+      "answer_type": "single",
+      "stem": "A 174 m long wire is stretched from the top of a vertical pole to a point on the ground 120 m from the foot of the pole. Find the height of the pole.",
+      "explanation": "Height = √(174² − 120²) = 126 m.",
+      "options": [
+        {
+          "label": "126 m",
+          "is_correct": true
+        },
+        {
+          "label": "130 m",
+          "is_correct": false
+        },
+        {
+          "label": "124 m",
+          "is_correct": false
+        },
+        {
+          "label": "128 m",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Heights and Distances",
+      "kind": "standard",
+      "difficulty": "very_hard",
+      "answer_type": "single",
+      "stem": "A 82 m long wire is stretched from the top of a vertical pole to a point on the ground 18 m from the foot of the pole. Find the height of the pole.",
+      "explanation": "Height = √(82² − 18²) = 80 m.",
+      "options": [
+        {
+          "label": "80 m",
+          "is_correct": true
+        },
+        {
+          "label": "84 m",
+          "is_correct": false
+        },
+        {
+          "label": "78 m",
+          "is_correct": false
+        },
+        {
+          "label": "82 m",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Heights and Distances",
+      "kind": "standard",
+      "difficulty": "very_hard",
+      "answer_type": "single",
+      "stem": "A flagstaff stands on top of a tower. From a point on the ground 51 m from the base, the angle of elevation of the top of the flagstaff (the highest point) is 45°, and the flagstaff itself is 9 m tall. Find the height of the tower.",
+      "explanation": "At 45°, total height = 51 m; tower = 51 − 9 = 42 m.",
+      "options": [
+        {
+          "label": "42 m",
+          "is_correct": true
+        },
+        {
+          "label": "40 m",
+          "is_correct": false
+        },
+        {
+          "label": "46 m",
+          "is_correct": false
+        },
+        {
+          "label": "44 m",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Heights and Distances",
+      "kind": "standard",
+      "difficulty": "very_hard",
+      "answer_type": "single",
+      "stem": "A flagstaff stands on top of a tower. From a point on the ground 67 m from the base, the angle of elevation of the top of the flagstaff (the highest point) is 45°, and the flagstaff itself is 27 m tall. Find the height of the tower.",
+      "explanation": "At 45°, total height = 67 m; tower = 67 − 27 = 40 m.",
+      "options": [
+        {
+          "label": "38 m",
+          "is_correct": false
+        },
+        {
+          "label": "42 m",
+          "is_correct": false
+        },
+        {
+          "label": "44 m",
+          "is_correct": false
+        },
+        {
+          "label": "40 m",
+          "is_correct": true
+        }
+      ]
+    },
+    {
+      "chapter": "Heights and Distances",
+      "kind": "standard",
+      "difficulty": "very_hard",
+      "answer_type": "single",
+      "stem": "A flagstaff stands on top of a tower. From a point on the ground 65 m from the base, the angle of elevation of the top of the flagstaff (the highest point) is 45°, and the flagstaff itself is 49 m tall. Find the height of the tower.",
+      "explanation": "At 45°, total height = 65 m; tower = 65 − 49 = 16 m.",
+      "options": [
+        {
+          "label": "16 m",
+          "is_correct": true
+        },
+        {
+          "label": "18 m",
+          "is_correct": false
+        },
+        {
+          "label": "17 m",
+          "is_correct": false
+        },
+        {
+          "label": "15 m",
+          "is_correct": false
+        }
+      ]
+    }
+  ]
+}

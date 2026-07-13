@@ -17,6 +17,7 @@ import {
 } from "@/components/ui/dropdown-menu";
 import type { Student, StudentStage } from "@/lib/students-query";
 import { deleteStudent } from "@/app/dashboard/students/actions";
+import { enterImpersonation } from "@/app/impersonation/actions";
 
 const stageStyles: Record<StudentStage, string> = {
   Registered: "bg-emerald-100 text-emerald-700 dark:bg-emerald-950 dark:text-emerald-300",
@@ -122,7 +123,10 @@ export const columns: ColumnDef<Student>[] = [
 // the student.delete permission) to decide whether to offer soft-delete.
 function StudentActions({ student, table }: { student: Student; table: Table<Student> }) {
   const router = useRouter();
-  const canDelete = (table.options.meta as { canDelete?: boolean } | undefined)?.canDelete ?? false;
+  const meta = table.options.meta as { canDelete?: boolean; canImpersonate?: boolean } | undefined;
+  const canDelete = meta?.canDelete ?? false;
+  // Only Registered students have an auth account (student.id is their user id).
+  const canImpersonate = (meta?.canImpersonate ?? false) && student.stage === "Registered";
 
   async function onDelete() {
     if (!confirm(`Delete ${student.name || student.email}? They'll be removed from the list.`)) return;
@@ -148,6 +152,11 @@ function StudentActions({ student, table }: { student: Student; table: Table<Stu
         <DropdownMenuItem onClick={() => router.push(`/dashboard/students/${student.id}`)}>
           View profile
         </DropdownMenuItem>
+        {canImpersonate && (
+          <DropdownMenuItem onClick={() => enterImpersonation(student.id)}>
+            View as student
+          </DropdownMenuItem>
+        )}
         {canDelete && (
           <>
             <DropdownMenuSeparator />

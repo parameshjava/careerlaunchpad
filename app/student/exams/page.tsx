@@ -1,8 +1,9 @@
 import { redirect } from "next/navigation";
 import { getAuthContext, can } from "@/lib/auth";
+import { ExamsList } from "./exams-list";
 
-// My exams — UI reset to a blank canvas; to be rebuilt against the existing
-// /api/exam/* endpoints. Access control preserved.
+// A student's assigned sittings. The list itself is a client component that
+// polls list_my_exam_sessions() every 5s (see exams-list.tsx).
 export default async function StudentExamsPage() {
   const ctx = await getAuthContext();
   if (!ctx) redirect("/auth/login");
@@ -13,11 +14,9 @@ export default async function StudentExamsPage() {
     <div className="mx-auto max-w-3xl px-4 py-6 sm:px-6">
       <header className="mb-6">
         <h1 className="text-2xl font-bold tracking-tight">My exams</h1>
-        <p className="text-muted-foreground mt-1 text-sm">This section is being rebuilt.</p>
+        <p className="text-muted-foreground mt-1 text-sm">Exams assigned to you.</p>
       </header>
-      <p className="text-muted-foreground bg-muted/40 rounded-lg border px-4 py-16 text-center text-sm">
-        Nothing here yet.
-      </p>
+      <ExamsList />
     </div>
   );
 }

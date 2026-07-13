@@ -22,6 +22,7 @@ import {
 } from "@/components/ui/select";
 import { ManageMemberDialog } from "./manage-roles-dialog";
 import { setUserStatus, resendInvite, revokeInvite, deleteMember } from "./actions";
+import { enterImpersonation } from "@/app/impersonation/actions";
 
 export type MemberRow = {
   kind: "user" | "invite";
@@ -45,6 +46,7 @@ export type Caps = {
   canDelete: boolean; // user.manage
   canOffice: boolean; // user.manage
   canResend: boolean;
+  canImpersonate: boolean; // owner / platform_admin — "View as user"
 };
 
 const ROLE_LABELS: Record<string, string> = {
@@ -288,10 +290,19 @@ function RowActions({
     );
   }
 
-  // Provisioned user: suspend/reactivate, ✏️ manage, 🗑️ delete.
+  // Provisioned user: view-as, suspend/reactivate, ✏️ manage, 🗑️ delete.
   const suspended = row.status === "suspended";
+  // Can't act as an owner/platform admin (server enforces this too).
+  const impersonable = !row.roleKeys.some((k) => k === "owner" || k === "platform_admin");
   return (
     <div className="flex flex-wrap items-center justify-end gap-2">
+      {caps.canImpersonate && !isSelf && impersonable && row.status === "active" && (
+        <form action={enterImpersonation.bind(null, row.id)}>
+          <Button type="submit" variant="outline" size="sm" title="Open the app as this user">
+            View as
+          </Button>
+        </form>
+      )}
       {caps.canSuspend && !isSelf && (
         <form action={setUserStatus}>
           <input type="hidden" name="id" value={row.id} />

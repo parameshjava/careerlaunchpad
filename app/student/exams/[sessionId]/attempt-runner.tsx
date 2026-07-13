@@ -11,9 +11,18 @@ import { createClient } from "@/lib/supabase/client";
 import { RichContent } from "@/components/exam/RichContent";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
+import {
+  Dialog,
+  DialogContent,
+  DialogDescription,
+  DialogFooter,
+  DialogHeader,
+  DialogTitle,
+} from "@/components/ui/dialog";
+import { StudentPaperPrint, type SessionPrintMeta } from "./paper-print";
 
 type Option = { id: string; label: string };
-type Question = {
+export type Question = {
   position: number;
   question_id: string;
   section_id: string;
@@ -33,20 +42,39 @@ type Cache = {
   answers: Record<string, string[]>;
 };
 
-export function AttemptRunner({ sessionId }: { sessionId: string }) {
+export function AttemptRunner({
+  sessionId,
+  meta,
+}: {
+  sessionId: string;
+  meta: SessionPrintMeta | null;
+}) {
   const router = useRouter();
   const supabase = createClient();
   const cacheKey = `cl-exam-${sessionId}`;
 
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState("");
+  // Set while the exam hasn't opened / the paper isn't generated yet — the
+  // runner keeps polling start_exam_attempt every 5s until it succeeds.
+  const [waiting, setWaiting] = useState("");
   const [attemptId, setAttemptId] = useState("");
   const [questions, setQuestions] = useState<Question[]>([]);
   const [answers, setAnswers] = useState<Record<string, string[]>>({});
   const [index, setIndex] = useState(0);
+  // Palette pagination — 10 numbers per page so 60+ question papers don't bury
+  // the question under rows of buttons on phones. Follows the current question.
+  const PALETTE_PAGE = 10;
+  const [palettePage, setPalettePage] = useState(0);
+  useEffect(() => {
+    setPalettePage(Math.floor(index / PALETTE_PAGE));
+  }, [index]);
   const [deadline, setDeadline] = useState<number | null>(null);
   const [timeLeft, setTimeLeft] = useState<number | null>(null);
   const [submitting, setSubmitting] = useState(false);
+  // Manual submit goes through a confirmation dialog (accidental-tap guard);
+  // the deadline auto-submit calls doSubmit directly.
+  const [confirmOpen, setConfirmOpen] = useState(false);
 
   const saveTimers = useRef<Record<string, ReturnType<typeof setTimeout>>>({});
   // Latest answers, readable inside doSubmit without making it depend on `answers`
@@ -85,16 +113,27 @@ export function AttemptRunner({ sessionId }: { sessionId: string }) {
       setLoading(false);
     }
 
-    (async () => {
+    let retry: ReturnType<typeof setTimeout>;
+    const tryStart = async () => {
       const { data, error: rpcErr } = await supabase.rpc("start_exam_attempt", {
         p_session_id: sessionId,
       });
       if (cancelled) return;
       if (rpcErr) {
+        // Not open yet / not opened by staff / paper not generated yet → poll
+        // every 5s until it is (server releases from 1 min before the scheduled
+        // start, and only once staff have set the sitting to "open").
+        if (!cached && /not open(ed)?|no paper/i.test(rpcErr.message)) {
+          setWaiting(rpcErr.message);
+          setLoading(false);
+          retry = setTimeout(tryStart, 5_000);
+          return;
+        }
         if (!cached) setError(rpcErr.message);
         setLoading(false);
         return;
       }
+      setWaiting("");
       const payload = data as {
         attempt_id: string;
         duration_minutes: number;
@@ -119,10 +158,12 @@ export function AttemptRunner({ sessionId }: { sessionId: string }) {
         deadline: dl,
         questions: payload.questions,
       });
-    })();
+    };
+    tryStart();
 
     return () => {
       cancelled = true;
+      clearTimeout(retry);
     };
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [sessionId]);
@@ -191,6 +232,28 @@ export function AttemptRunner({ sessionId }: { sessionId: string }) {
     }, 800);
   }
 
+  // Persist any answers still sitting in the debounce window, then navigate —
+  // moving between questions never leaves an unsaved answer behind.
+  const goTo = useCallback(
+    (i: number) => {
+      for (const qid of Object.keys(saveTimers.current)) {
+        clearTimeout(saveTimers.current[qid]);
+        supabase
+          .rpc("save_exam_answer", {
+            p_attempt_id: attemptId,
+            p_question_id: qid,
+            p_selected: answersRef.current[qid] ?? [],
+          })
+          .then(({ error: saveErr }) => {
+            if (saveErr) console.warn("autosave failed", saveErr.message);
+          });
+      }
+      saveTimers.current = {};
+      setIndex(i);
+    },
+    [attemptId, supabase],
+  );
+
   function choose(q: Question, optionId: string) {
     setAnswers((prev) => {
       const cur = prev[q.question_id] ?? [];
@@ -205,6 +268,18 @@ export function AttemptRunner({ sessionId }: { sessionId: string }) {
   }
 
   if (loading) return <p className="text-muted-foreground px-4 py-6 text-sm">Loading exam…</p>;
+  if (waiting)
+    return (
+      <div className="mx-auto max-w-md px-4 py-10 text-center">
+        <p className="text-sm font-medium">{waiting}</p>
+        <p className="text-muted-foreground mt-2 text-xs">
+          Checking again every 5 seconds — the paper unlocks 1 minute before the scheduled start.
+        </p>
+        <Button className="mt-4" variant="outline" onClick={() => router.push("/student/exams")}>
+          Back to my exams
+        </Button>
+      </div>
+    );
   if (error)
     return (
       <div className="mx-auto max-w-md px-4 py-10 text-center">
@@ -222,34 +297,67 @@ export function AttemptRunner({ sessionId }: { sessionId: string }) {
   const lowTime = timeLeft != null && timeLeft <= 60;
 
   return (
-    <div className="mx-auto max-w-2xl px-4 py-4 sm:px-6">
+    <>
+    <div className="mx-auto max-w-2xl px-4 py-4 sm:px-6 print:hidden">
       {/* Header: progress + timer */}
       <div className="bg-background sticky top-0 z-10 mb-4 flex items-center justify-between gap-4 border-b py-2">
         <span className="text-sm font-medium">
           Question {index + 1} / {questions.length}
         </span>
-        <span className={`tabular-nums text-sm font-semibold ${lowTime ? "text-destructive" : ""}`}>
-          ⏱ {mm}:{ss}
-        </span>
+        <div className="flex items-center gap-3">
+          {meta && (
+            <Button variant="outline" size="sm" onClick={() => window.print()}>
+              Print
+            </Button>
+          )}
+          <span
+            className={`tabular-nums text-sm font-semibold ${lowTime ? "text-destructive" : ""}`}
+          >
+            ⏱ {mm}:{ss}
+          </span>
+        </div>
       </div>
 
-      {/* Palette */}
-      <div className="mb-4 flex flex-wrap gap-1.5">
-        {questions.map((qq, i) => (
-          <button
-            key={qq.question_id}
-            onClick={() => setIndex(i)}
-            className={`size-8 rounded text-xs font-medium ${
-              i === index
-                ? "bg-primary text-primary-foreground"
-                : answered(qq.question_id)
-                  ? "bg-emerald-100 text-emerald-700 dark:bg-emerald-950 dark:text-emerald-300"
-                  : "bg-muted"
-            }`}
-          >
-            {i + 1}
-          </button>
-        ))}
+      {/* Palette — paginated in blocks of 10 with ‹ › arrows */}
+      <div className="mb-4 flex items-center gap-1.5">
+        <button
+          onClick={() => setPalettePage((p) => p - 1)}
+          disabled={palettePage === 0}
+          aria-label="Previous questions"
+          className="bg-muted size-8 shrink-0 rounded text-sm font-medium disabled:opacity-40"
+        >
+          ‹
+        </button>
+        <div className="flex flex-1 flex-wrap justify-center gap-1.5">
+          {questions
+            .slice(palettePage * PALETTE_PAGE, (palettePage + 1) * PALETTE_PAGE)
+            .map((qq, offset) => {
+              const i = palettePage * PALETTE_PAGE + offset;
+              return (
+                <button
+                  key={qq.question_id}
+                  onClick={() => goTo(i)}
+                  className={`size-8 rounded text-xs font-medium ${
+                    i === index
+                      ? "bg-primary text-primary-foreground"
+                      : answered(qq.question_id)
+                        ? "bg-emerald-100 text-emerald-700 dark:bg-emerald-950 dark:text-emerald-300"
+                        : "bg-muted"
+                  }`}
+                >
+                  {i + 1}
+                </button>
+              );
+            })}
+        </div>
+        <button
+          onClick={() => setPalettePage((p) => p + 1)}
+          disabled={(palettePage + 1) * PALETTE_PAGE >= questions.length}
+          aria-label="Next questions"
+          className="bg-muted size-8 shrink-0 rounded text-sm font-medium disabled:opacity-40"
+        >
+          ›
+        </button>
       </div>
 
       {/* Question */}
@@ -297,19 +405,53 @@ export function AttemptRunner({ sessionId }: { sessionId: string }) {
         </CardContent>
       </Card>
 
-      {/* Navigation */}
+      {/* Navigation — Next is disabled (not swapped for Submit) on the last
+          question so a habitual tap can't accidentally end the exam. */}
       <div className="mt-4 flex items-center justify-between gap-3">
-        <Button variant="outline" disabled={index === 0} onClick={() => setIndex((i) => i - 1)}>
+        <Button variant="outline" disabled={index === 0} onClick={() => goTo(index - 1)}>
           Previous
         </Button>
-        {index < questions.length - 1 ? (
-          <Button onClick={() => setIndex((i) => i + 1)}>Next</Button>
-        ) : (
-          <Button onClick={doSubmit} disabled={submitting}>
-            {submitting ? "Submitting…" : "Submit exam"}
+        <div className="flex items-center gap-2">
+          {index === questions.length - 1 && (
+            <Button variant="destructive" onClick={() => setConfirmOpen(true)} disabled={submitting}>
+              {submitting ? "Submitting…" : "Submit exam"}
+            </Button>
+          )}
+          <Button disabled={index === questions.length - 1} onClick={() => goTo(index + 1)}>
+            Next
           </Button>
-        )}
+        </div>
       </div>
+
+      {/* Submit confirmation */}
+      <Dialog open={confirmOpen} onOpenChange={setConfirmOpen}>
+        <DialogContent>
+          <DialogHeader>
+            <DialogTitle>Submit exam?</DialogTitle>
+            <DialogDescription>
+              You have answered {questions.filter((qq) => answered(qq.question_id)).length} of{" "}
+              {questions.length} questions. Once submitted, you cannot change your answers.
+            </DialogDescription>
+          </DialogHeader>
+          <DialogFooter className="gap-2">
+            <Button variant="outline" onClick={() => setConfirmOpen(false)}>
+              Go back &amp; review
+            </Button>
+            <Button
+              variant="destructive"
+              disabled={submitting}
+              onClick={() => {
+                setConfirmOpen(false);
+                doSubmit();
+              }}
+            >
+              {submitting ? "Submitting…" : "Submit exam"}
+            </Button>
+          </DialogFooter>
+        </DialogContent>
+      </Dialog>
     </div>
+    {meta && <StudentPaperPrint meta={meta} questions={questions} />}
+    </>
   );
 }

@@ -19,7 +19,7 @@ const founders: Founder[] = [
     linkedin: "https://www.linkedin.com/in/lakshminarayana2930/",
     photo: "/founders/lakshmi-narayana.jpg",
     message:
-      "Talent is everywhere, but opportunity often begins with the right guidance. \nDuring my recent visits to Degree, PG, and Engineering colleges, I noticed a common challenge: talented students often lack the industry guidance needed to become job-ready. \nCareerLaunchPad.ai was created to help students transform their potential into successful careers through mentorship, practical skills, and industry connections.",
+      "Talent is everywhere, but opportunity often begins with the right guidance. \nDuring my recent visits to Degree, PG, and Engineering colleges, I noticed a common challenge: talented students often lack the industry guidance needed to become job-ready. \nCareerLaunchPad was created to help students transform their potential into successful careers through mentorship, practical skills, and industry connections.",
   },
   {
     name: "Korrakuti Paramesh",

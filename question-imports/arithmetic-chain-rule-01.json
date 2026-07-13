@@ -1,0 +1,5205 @@
+{
+  "subject": "Arithmetic",
+  "questions": [
+    {
+      "chapter": "Chain Rule",
+      "kind": "standard",
+      "difficulty": "easy",
+      "answer_type": "single",
+      "stem": "If 4 men can build a wall in 8 days, how many days will 32 men take to build the same wall?",
+      "explanation": "Men and days are inversely proportional: days = 4×8/32 = 1.",
+      "options": [
+        {
+          "label": "4 days",
+          "is_correct": false
+        },
+        {
+          "label": "2 days",
+          "is_correct": false
+        },
+        {
+          "label": "3 days",
+          "is_correct": false
+        },
+        {
+          "label": "1 days",
+          "is_correct": true
+        }
+      ]
+    },
+    {
+      "chapter": "Chain Rule",
+      "kind": "standard",
+      "difficulty": "easy",
+      "answer_type": "single",
+      "stem": "If 3 pens cost ₹6, find the cost of 16 such pens.",
+      "explanation": "Cost of one pen = ₹6/3 = ₹2; cost of 16 pens = ₹32.",
+      "options": [
+        {
+          "label": "₹34",
+          "is_correct": false
+        },
+        {
+          "label": "₹33",
+          "is_correct": false
+        },
+        {
+          "label": "₹31",
+          "is_correct": false
+        },
+        {
+          "label": "₹32",
+          "is_correct": true
+        }
+      ]
+    },
+    {
+      "chapter": "Chain Rule",
+      "kind": "standard",
+      "difficulty": "easy",
+      "answer_type": "single",
+      "stem": "A machine produces 38 items in 2 minutes. How many items will it produce in 14 minutes at the same rate?",
+      "explanation": "Rate = 38/2 = 19 items/min; in 14 minutes it makes 266 items.",
+      "options": [
+        {
+          "label": "266 items",
+          "is_correct": true
+        },
+        {
+          "label": "277 items",
+          "is_correct": false
+        },
+        {
+          "label": "255 items",
+          "is_correct": false
+        },
+        {
+          "label": "288 items",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Chain Rule",
+      "kind": "standard",
+      "difficulty": "easy",
+      "answer_type": "single",
+      "stem": "If 3 pens cost ₹51, find the cost of 11 such pens.",
+      "explanation": "Cost of one pen = ₹51/3 = ₹17; cost of 11 pens = ₹187.",
+      "options": [
+        {
+          "label": "₹189",
+          "is_correct": false
+        },
+        {
+          "label": "₹187",
+          "is_correct": true
+        },
+        {
+          "label": "₹191",
+          "is_correct": false
+        },
+        {
+          "label": "₹185",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Chain Rule",
+      "kind": "standard",
+      "difficulty": "easy",
+      "answer_type": "single",
+      "stem": "If 7 pens cost ₹126, find the cost of 20 such pens.",
+      "explanation": "Cost of one pen = ₹126/7 = ₹18; cost of 20 pens = ₹360.",
+      "options": [
+        {
+          "label": "₹388",
+          "is_correct": false
+        },
+        {
+          "label": "₹360",
+          "is_correct": true
+        },
+        {
+          "label": "₹374",
+          "is_correct": false
+        },
+        {
+          "label": "₹346",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Chain Rule",
+      "kind": "standard",
+      "difficulty": "easy",
+      "answer_type": "single",
+      "stem": "A machine produces 54 items in 9 minutes. How many items will it produce in 19 minutes at the same rate?",
+      "explanation": "Rate = 54/9 = 6 items/min; in 19 minutes it makes 114 items.",
+      "options": [
+        {
+          "label": "116 items",
+          "is_correct": false
+        },
+        {
+          "label": "114 items",
+          "is_correct": true
+        },
+        {
+          "label": "118 items",
+          "is_correct": false
+        },
+        {
+          "label": "112 items",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Chain Rule",
+      "kind": "standard",
+      "difficulty": "easy",
+      "answer_type": "single",
+      "stem": "If 2 pens cost ₹38, find the cost of 3 such pens.",
+      "explanation": "Cost of one pen = ₹38/2 = ₹19; cost of 3 pens = ₹57.",
+      "options": [
+        {
+          "label": "₹55",
+          "is_correct": false
+        },
+        {
+          "label": "₹59",
+          "is_correct": false
+        },
+        {
+          "label": "₹57",
+          "is_correct": true
+        },
+        {
+          "label": "₹61",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Chain Rule",
+      "kind": "standard",
+      "difficulty": "easy",
+      "answer_type": "single",
+      "stem": "If 3 pens cost ₹18, find the cost of 3 such pens.",
+      "explanation": "Cost of one pen = ₹18/3 = ₹6; cost of 3 pens = ₹18.",
+      "options": [
+        {
+          "label": "₹19",
+          "is_correct": false
+        },
+        {
+          "label": "₹20",
+          "is_correct": false
+        },
+        {
+          "label": "₹17",
+          "is_correct": false
+        },
+        {
+          "label": "₹18",
+          "is_correct": true
+        }
+      ]
+    },
+    {
+      "chapter": "Chain Rule",
+      "kind": "standard",
+      "difficulty": "easy",
+      "answer_type": "single",
+      "stem": "If 11 pens cost ₹231, find the cost of 19 such pens.",
+      "explanation": "Cost of one pen = ₹231/11 = ₹21; cost of 19 pens = ₹399.",
+      "options": [
+        {
+          "label": "₹431",
+          "is_correct": false
+        },
+        {
+          "label": "₹383",
+          "is_correct": false
+        },
+        {
+          "label": "₹415",
+          "is_correct": false
+        },
+        {
+          "label": "₹399",
+          "is_correct": true
+        }
+      ]
+    },
+    {
+      "chapter": "Chain Rule",
+      "kind": "standard",
+      "difficulty": "easy",
+      "answer_type": "single",
+      "stem": "If 3 pens cost ₹18, find the cost of 4 such pens.",
+      "explanation": "Cost of one pen = ₹18/3 = ₹6; cost of 4 pens = ₹24.",
+      "options": [
+        {
+          "label": "₹26",
+          "is_correct": false
+        },
+        {
+          "label": "₹24",
+          "is_correct": true
+        },
+        {
+          "label": "₹25",
+          "is_correct": false
+        },
+        {
+          "label": "₹23",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Chain Rule",
+      "kind": "standard",
+      "difficulty": "easy",
+      "answer_type": "single",
+      "stem": "If 6 pens cost ₹66, find the cost of 14 such pens.",
+      "explanation": "Cost of one pen = ₹66/6 = ₹11; cost of 14 pens = ₹154.",
+      "options": [
+        {
+          "label": "₹152",
+          "is_correct": false
+        },
+        {
+          "label": "₹158",
+          "is_correct": false
+        },
+        {
+          "label": "₹154",
+          "is_correct": true
+        },
+        {
+          "label": "₹156",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Chain Rule",
+      "kind": "standard",
+      "difficulty": "easy",
+      "answer_type": "single",
+      "stem": "If 8 pens cost ₹184, find the cost of 14 such pens.",
+      "explanation": "Cost of one pen = ₹184/8 = ₹23; cost of 14 pens = ₹322.",
+      "options": [
+        {
+          "label": "₹348",
+          "is_correct": false
+        },
+        {
+          "label": "₹322",
+          "is_correct": true
+        },
+        {
+          "label": "₹335",
+          "is_correct": false
+        },
+        {
+          "label": "₹309",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Chain Rule",
+      "kind": "standard",
+      "difficulty": "easy",
+      "answer_type": "single",
+      "stem": "A machine produces 57 items in 3 minutes. How many items will it produce in 8 minutes at the same rate?",
+      "explanation": "Rate = 57/3 = 19 items/min; in 8 minutes it makes 152 items.",
+      "options": [
+        {
+          "label": "154 items",
+          "is_correct": false
+        },
+        {
+          "label": "156 items",
+          "is_correct": false
+        },
+        {
+          "label": "150 items",
+          "is_correct": false
+        },
+        {
+          "label": "152 items",
+          "is_correct": true
+        }
+      ]
+    },
+    {
+      "chapter": "Chain Rule",
+      "kind": "standard",
+      "difficulty": "easy",
+      "answer_type": "single",
+      "stem": "If 12 pens cost ₹192, find the cost of 5 such pens.",
+      "explanation": "Cost of one pen = ₹192/12 = ₹16; cost of 5 pens = ₹80.",
+      "options": [
+        {
+          "label": "₹80",
+          "is_correct": true
+        },
+        {
+          "label": "₹84",
+          "is_correct": false
+        },
+        {
+          "label": "₹82",
+          "is_correct": false
+        },
+        {
+          "label": "₹78",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Chain Rule",
+      "kind": "standard",
+      "difficulty": "easy",
+      "answer_type": "single",
+      "stem": "A machine produces 165 items in 11 minutes. How many items will it produce in 3 minutes at the same rate?",
+      "explanation": "Rate = 165/11 = 15 items/min; in 3 minutes it makes 45 items.",
+      "options": [
+        {
+          "label": "49 items",
+          "is_correct": false
+        },
+        {
+          "label": "45 items",
+          "is_correct": true
+        },
+        {
+          "label": "43 items",
+          "is_correct": false
+        },
+        {
+          "label": "47 items",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Chain Rule",
+      "kind": "standard",
+      "difficulty": "easy",
+      "answer_type": "single",
+      "stem": "If 12 pens cost ₹108, find the cost of 18 such pens.",
+      "explanation": "Cost of one pen = ₹108/12 = ₹9; cost of 18 pens = ₹162.",
+      "options": [
+        {
+          "label": "₹162",
+          "is_correct": true
+        },
+        {
+          "label": "₹160",
+          "is_correct": false
+        },
+        {
+          "label": "₹166",
+          "is_correct": false
+        },
+        {
+          "label": "₹164",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Chain Rule",
+      "kind": "standard",
+      "difficulty": "easy",
+      "answer_type": "single",
+      "stem": "A machine produces 90 items in 6 minutes. How many items will it produce in 15 minutes at the same rate?",
+      "explanation": "Rate = 90/6 = 15 items/min; in 15 minutes it makes 225 items.",
+      "options": [
+        {
+          "label": "225 items",
+          "is_correct": true
+        },
+        {
+          "label": "234 items",
+          "is_correct": false
+        },
+        {
+          "label": "216 items",
+          "is_correct": false
+        },
+        {
+          "label": "243 items",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Chain Rule",
+      "kind": "standard",
+      "difficulty": "easy",
+      "answer_type": "single",
+      "stem": "If 2 pens cost ₹52, find the cost of 7 such pens.",
+      "explanation": "Cost of one pen = ₹52/2 = ₹26; cost of 7 pens = ₹182.",
+      "options": [
+        {
+          "label": "₹184",
+          "is_correct": false
+        },
+        {
+          "label": "₹186",
+          "is_correct": false
+        },
+        {
+          "label": "₹182",
+          "is_correct": true
+        },
+        {
+          "label": "₹180",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Chain Rule",
+      "kind": "standard",
+      "difficulty": "easy",
+      "answer_type": "single",
+      "stem": "If 9 pens cost ₹126, find the cost of 4 such pens.",
+      "explanation": "Cost of one pen = ₹126/9 = ₹14; cost of 4 pens = ₹56.",
+      "options": [
+        {
+          "label": "₹56",
+          "is_correct": true
+        },
+        {
+          "label": "₹54",
+          "is_correct": false
+        },
+        {
+          "label": "₹58",
+          "is_correct": false
+        },
+        {
+          "label": "₹60",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Chain Rule",
+      "kind": "standard",
+      "difficulty": "easy",
+      "answer_type": "single",
+      "stem": "A machine produces 81 items in 9 minutes. How many items will it produce in 13 minutes at the same rate?",
+      "explanation": "Rate = 81/9 = 9 items/min; in 13 minutes it makes 117 items.",
+      "options": [
+        {
+          "label": "117 items",
+          "is_correct": true
+        },
+        {
+          "label": "115 items",
+          "is_correct": false
+        },
+        {
+          "label": "121 items",
+          "is_correct": false
+        },
+        {
+          "label": "119 items",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Chain Rule",
+      "kind": "standard",
+      "difficulty": "easy",
+      "answer_type": "single",
+      "stem": "A machine produces 6 items in 2 minutes. How many items will it produce in 3 minutes at the same rate?",
+      "explanation": "Rate = 6/2 = 3 items/min; in 3 minutes it makes 9 items.",
+      "options": [
+        {
+          "label": "11 items",
+          "is_correct": false
+        },
+        {
+          "label": "8 items",
+          "is_correct": false
+        },
+        {
+          "label": "10 items",
+          "is_correct": false
+        },
+        {
+          "label": "9 items",
+          "is_correct": true
+        }
+      ]
+    },
+    {
+      "chapter": "Chain Rule",
+      "kind": "standard",
+      "difficulty": "easy",
+      "answer_type": "single",
+      "stem": "A machine produces 24 items in 6 minutes. How many items will it produce in 2 minutes at the same rate?",
+      "explanation": "Rate = 24/6 = 4 items/min; in 2 minutes it makes 8 items.",
+      "options": [
+        {
+          "label": "7 items",
+          "is_correct": false
+        },
+        {
+          "label": "9 items",
+          "is_correct": false
+        },
+        {
+          "label": "10 items",
+          "is_correct": false
+        },
+        {
+          "label": "8 items",
+          "is_correct": true
+        }
+      ]
+    },
+    {
+      "chapter": "Chain Rule",
+      "kind": "standard",
+      "difficulty": "easy",
+      "answer_type": "single",
+      "stem": "If 10 pens cost ₹170, find the cost of 2 such pens.",
+      "explanation": "Cost of one pen = ₹170/10 = ₹17; cost of 2 pens = ₹34.",
+      "options": [
+        {
+          "label": "₹34",
+          "is_correct": true
+        },
+        {
+          "label": "₹33",
+          "is_correct": false
+        },
+        {
+          "label": "₹36",
+          "is_correct": false
+        },
+        {
+          "label": "₹35",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Chain Rule",
+      "kind": "standard",
+      "difficulty": "easy",
+      "answer_type": "single",
+      "stem": "A machine produces 44 items in 11 minutes. How many items will it produce in 19 minutes at the same rate?",
+      "explanation": "Rate = 44/11 = 4 items/min; in 19 minutes it makes 76 items.",
+      "options": [
+        {
+          "label": "76 items",
+          "is_correct": true
+        },
+        {
+          "label": "78 items",
+          "is_correct": false
+        },
+        {
+          "label": "74 items",
+          "is_correct": false
+        },
+        {
+          "label": "80 items",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Chain Rule",
+      "kind": "standard",
+      "difficulty": "easy",
+      "answer_type": "single",
+      "stem": "A machine produces 56 items in 8 minutes. How many items will it produce in 15 minutes at the same rate?",
+      "explanation": "Rate = 56/8 = 7 items/min; in 15 minutes it makes 105 items.",
+      "options": [
+        {
+          "label": "107 items",
+          "is_correct": false
+        },
+        {
+          "label": "103 items",
+          "is_correct": false
+        },
+        {
+          "label": "109 items",
+          "is_correct": false
+        },
+        {
+          "label": "105 items",
+          "is_correct": true
+        }
+      ]
+    },
+    {
+      "chapter": "Chain Rule",
+      "kind": "standard",
+      "difficulty": "easy",
+      "answer_type": "single",
+      "stem": "If 5 pens cost ₹140, find the cost of 12 such pens.",
+      "explanation": "Cost of one pen = ₹140/5 = ₹28; cost of 12 pens = ₹336.",
+      "options": [
+        {
+          "label": "₹362",
+          "is_correct": false
+        },
+        {
+          "label": "₹336",
+          "is_correct": true
+        },
+        {
+          "label": "₹323",
+          "is_correct": false
+        },
+        {
+          "label": "₹349",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Chain Rule",
+      "kind": "standard",
+      "difficulty": "easy",
+      "answer_type": "single",
+      "stem": "A machine produces 42 items in 3 minutes. How many items will it produce in 14 minutes at the same rate?",
+      "explanation": "Rate = 42/3 = 14 items/min; in 14 minutes it makes 196 items.",
+      "options": [
+        {
+          "label": "200 items",
+          "is_correct": false
+        },
+        {
+          "label": "194 items",
+          "is_correct": false
+        },
+        {
+          "label": "198 items",
+          "is_correct": false
+        },
+        {
+          "label": "196 items",
+          "is_correct": true
+        }
+      ]
+    },
+    {
+      "chapter": "Chain Rule",
+      "kind": "standard",
+      "difficulty": "easy",
+      "answer_type": "single",
+      "stem": "If 9 pens cost ₹135, find the cost of 19 such pens.",
+      "explanation": "Cost of one pen = ₹135/9 = ₹15; cost of 19 pens = ₹285.",
+      "options": [
+        {
+          "label": "₹296",
+          "is_correct": false
+        },
+        {
+          "label": "₹285",
+          "is_correct": true
+        },
+        {
+          "label": "₹307",
+          "is_correct": false
+        },
+        {
+          "label": "₹274",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Chain Rule",
+      "kind": "standard",
+      "difficulty": "easy",
+      "answer_type": "single",
+      "stem": "If 28 men can build a wall in 10 days, how many days will 7 men take to build the same wall?",
+      "explanation": "Men and days are inversely proportional: days = 28×10/7 = 40.",
+      "options": [
+        {
+          "label": "44 days",
+          "is_correct": false
+        },
+        {
+          "label": "38 days",
+          "is_correct": false
+        },
+        {
+          "label": "40 days",
+          "is_correct": true
+        },
+        {
+          "label": "42 days",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Chain Rule",
+      "kind": "standard",
+      "difficulty": "easy",
+      "answer_type": "single",
+      "stem": "A machine produces 135 items in 9 minutes. How many items will it produce in 11 minutes at the same rate?",
+      "explanation": "Rate = 135/9 = 15 items/min; in 11 minutes it makes 165 items.",
+      "options": [
+        {
+          "label": "165 items",
+          "is_correct": true
+        },
+        {
+          "label": "167 items",
+          "is_correct": false
+        },
+        {
+          "label": "163 items",
+          "is_correct": false
+        },
+        {
+          "label": "169 items",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Chain Rule",
+      "kind": "standard",
+      "difficulty": "easy",
+      "answer_type": "single",
+      "stem": "If 10 pens cost ₹150, find the cost of 14 such pens.",
+      "explanation": "Cost of one pen = ₹150/10 = ₹15; cost of 14 pens = ₹210.",
+      "options": [
+        {
+          "label": "₹202",
+          "is_correct": false
+        },
+        {
+          "label": "₹218",
+          "is_correct": false
+        },
+        {
+          "label": "₹210",
+          "is_correct": true
+        },
+        {
+          "label": "₹226",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Chain Rule",
+      "kind": "standard",
+      "difficulty": "easy",
+      "answer_type": "single",
+      "stem": "If 5 pens cost ₹45, find the cost of 5 such pens.",
+      "explanation": "Cost of one pen = ₹45/5 = ₹9; cost of 5 pens = ₹45.",
+      "options": [
+        {
+          "label": "₹45",
+          "is_correct": true
+        },
+        {
+          "label": "₹49",
+          "is_correct": false
+        },
+        {
+          "label": "₹43",
+          "is_correct": false
+        },
+        {
+          "label": "₹47",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Chain Rule",
+      "kind": "standard",
+      "difficulty": "easy",
+      "answer_type": "single",
+      "stem": "A machine produces 110 items in 10 minutes. How many items will it produce in 16 minutes at the same rate?",
+      "explanation": "Rate = 110/10 = 11 items/min; in 16 minutes it makes 176 items.",
+      "options": [
+        {
+          "label": "178 items",
+          "is_correct": false
+        },
+        {
+          "label": "176 items",
+          "is_correct": true
+        },
+        {
+          "label": "174 items",
+          "is_correct": false
+        },
+        {
+          "label": "180 items",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Chain Rule",
+      "kind": "standard",
+      "difficulty": "easy",
+      "answer_type": "single",
+      "stem": "A machine produces 220 items in 11 minutes. How many items will it produce in 14 minutes at the same rate?",
+      "explanation": "Rate = 220/11 = 20 items/min; in 14 minutes it makes 280 items.",
+      "options": [
+        {
+          "label": "280 items",
+          "is_correct": true
+        },
+        {
+          "label": "291 items",
+          "is_correct": false
+        },
+        {
+          "label": "269 items",
+          "is_correct": false
+        },
+        {
+          "label": "302 items",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Chain Rule",
+      "kind": "standard",
+      "difficulty": "easy",
+      "answer_type": "single",
+      "stem": "A machine produces 170 items in 10 minutes. How many items will it produce in 13 minutes at the same rate?",
+      "explanation": "Rate = 170/10 = 17 items/min; in 13 minutes it makes 221 items.",
+      "options": [
+        {
+          "label": "221 items",
+          "is_correct": true
+        },
+        {
+          "label": "230 items",
+          "is_correct": false
+        },
+        {
+          "label": "239 items",
+          "is_correct": false
+        },
+        {
+          "label": "212 items",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Chain Rule",
+      "kind": "standard",
+      "difficulty": "easy",
+      "answer_type": "single",
+      "stem": "A machine produces 110 items in 10 minutes. How many items will it produce in 4 minutes at the same rate?",
+      "explanation": "Rate = 110/10 = 11 items/min; in 4 minutes it makes 44 items.",
+      "options": [
+        {
+          "label": "42 items",
+          "is_correct": false
+        },
+        {
+          "label": "44 items",
+          "is_correct": true
+        },
+        {
+          "label": "48 items",
+          "is_correct": false
+        },
+        {
+          "label": "46 items",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Chain Rule",
+      "kind": "standard",
+      "difficulty": "easy",
+      "answer_type": "single",
+      "stem": "If 6 pens cost ₹120, find the cost of 17 such pens.",
+      "explanation": "Cost of one pen = ₹120/6 = ₹20; cost of 17 pens = ₹340.",
+      "options": [
+        {
+          "label": "₹340",
+          "is_correct": true
+        },
+        {
+          "label": "₹368",
+          "is_correct": false
+        },
+        {
+          "label": "₹326",
+          "is_correct": false
+        },
+        {
+          "label": "₹354",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Chain Rule",
+      "kind": "standard",
+      "difficulty": "easy",
+      "answer_type": "single",
+      "stem": "If 12 pens cost ₹156, find the cost of 7 such pens.",
+      "explanation": "Cost of one pen = ₹156/12 = ₹13; cost of 7 pens = ₹91.",
+      "options": [
+        {
+          "label": "₹95",
+          "is_correct": false
+        },
+        {
+          "label": "₹93",
+          "is_correct": false
+        },
+        {
+          "label": "₹89",
+          "is_correct": false
+        },
+        {
+          "label": "₹91",
+          "is_correct": true
+        }
+      ]
+    },
+    {
+      "chapter": "Chain Rule",
+      "kind": "standard",
+      "difficulty": "easy",
+      "answer_type": "single",
+      "stem": "A machine produces 28 items in 7 minutes. How many items will it produce in 6 minutes at the same rate?",
+      "explanation": "Rate = 28/7 = 4 items/min; in 6 minutes it makes 24 items.",
+      "options": [
+        {
+          "label": "26 items",
+          "is_correct": false
+        },
+        {
+          "label": "24 items",
+          "is_correct": true
+        },
+        {
+          "label": "25 items",
+          "is_correct": false
+        },
+        {
+          "label": "23 items",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Chain Rule",
+      "kind": "standard",
+      "difficulty": "easy",
+      "answer_type": "single",
+      "stem": "If 11 pens cost ₹286, find the cost of 12 such pens.",
+      "explanation": "Cost of one pen = ₹286/11 = ₹26; cost of 12 pens = ₹312.",
+      "options": [
+        {
+          "label": "₹324",
+          "is_correct": false
+        },
+        {
+          "label": "₹300",
+          "is_correct": false
+        },
+        {
+          "label": "₹336",
+          "is_correct": false
+        },
+        {
+          "label": "₹312",
+          "is_correct": true
+        }
+      ]
+    },
+    {
+      "chapter": "Chain Rule",
+      "kind": "standard",
+      "difficulty": "easy",
+      "answer_type": "single",
+      "stem": "A machine produces 24 items in 8 minutes. How many items will it produce in 20 minutes at the same rate?",
+      "explanation": "Rate = 24/8 = 3 items/min; in 20 minutes it makes 60 items.",
+      "options": [
+        {
+          "label": "60 items",
+          "is_correct": true
+        },
+        {
+          "label": "62 items",
+          "is_correct": false
+        },
+        {
+          "label": "58 items",
+          "is_correct": false
+        },
+        {
+          "label": "64 items",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Chain Rule",
+      "kind": "standard",
+      "difficulty": "easy",
+      "answer_type": "single",
+      "stem": "A machine produces 66 items in 11 minutes. How many items will it produce in 5 minutes at the same rate?",
+      "explanation": "Rate = 66/11 = 6 items/min; in 5 minutes it makes 30 items.",
+      "options": [
+        {
+          "label": "31 items",
+          "is_correct": false
+        },
+        {
+          "label": "32 items",
+          "is_correct": false
+        },
+        {
+          "label": "30 items",
+          "is_correct": true
+        },
+        {
+          "label": "29 items",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Chain Rule",
+      "kind": "standard",
+      "difficulty": "easy",
+      "answer_type": "single",
+      "stem": "A machine produces 140 items in 10 minutes. How many items will it produce in 17 minutes at the same rate?",
+      "explanation": "Rate = 140/10 = 14 items/min; in 17 minutes it makes 238 items.",
+      "options": [
+        {
+          "label": "228 items",
+          "is_correct": false
+        },
+        {
+          "label": "248 items",
+          "is_correct": false
+        },
+        {
+          "label": "238 items",
+          "is_correct": true
+        },
+        {
+          "label": "258 items",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Chain Rule",
+      "kind": "standard",
+      "difficulty": "easy",
+      "answer_type": "single",
+      "stem": "A machine produces 63 items in 9 minutes. How many items will it produce in 2 minutes at the same rate?",
+      "explanation": "Rate = 63/9 = 7 items/min; in 2 minutes it makes 14 items.",
+      "options": [
+        {
+          "label": "14 items",
+          "is_correct": true
+        },
+        {
+          "label": "13 items",
+          "is_correct": false
+        },
+        {
+          "label": "15 items",
+          "is_correct": false
+        },
+        {
+          "label": "16 items",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Chain Rule",
+      "kind": "standard",
+      "difficulty": "easy",
+      "answer_type": "single",
+      "stem": "A machine produces 33 items in 3 minutes. How many items will it produce in 6 minutes at the same rate?",
+      "explanation": "Rate = 33/3 = 11 items/min; in 6 minutes it makes 66 items.",
+      "options": [
+        {
+          "label": "70 items",
+          "is_correct": false
+        },
+        {
+          "label": "66 items",
+          "is_correct": true
+        },
+        {
+          "label": "64 items",
+          "is_correct": false
+        },
+        {
+          "label": "68 items",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Chain Rule",
+      "kind": "standard",
+      "difficulty": "easy",
+      "answer_type": "single",
+      "stem": "A machine produces 60 items in 3 minutes. How many items will it produce in 13 minutes at the same rate?",
+      "explanation": "Rate = 60/3 = 20 items/min; in 13 minutes it makes 260 items.",
+      "options": [
+        {
+          "label": "250 items",
+          "is_correct": false
+        },
+        {
+          "label": "270 items",
+          "is_correct": false
+        },
+        {
+          "label": "280 items",
+          "is_correct": false
+        },
+        {
+          "label": "260 items",
+          "is_correct": true
+        }
+      ]
+    },
+    {
+      "chapter": "Chain Rule",
+      "kind": "standard",
+      "difficulty": "easy",
+      "answer_type": "single",
+      "stem": "A machine produces 15 items in 3 minutes. How many items will it produce in 17 minutes at the same rate?",
+      "explanation": "Rate = 15/3 = 5 items/min; in 17 minutes it makes 85 items.",
+      "options": [
+        {
+          "label": "87 items",
+          "is_correct": false
+        },
+        {
+          "label": "89 items",
+          "is_correct": false
+        },
+        {
+          "label": "85 items",
+          "is_correct": true
+        },
+        {
+          "label": "83 items",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Chain Rule",
+      "kind": "standard",
+      "difficulty": "easy",
+      "answer_type": "single",
+      "stem": "If 14 men can build a wall in 10 days, how many days will 28 men take to build the same wall?",
+      "explanation": "Men and days are inversely proportional: days = 14×10/28 = 5.",
+      "options": [
+        {
+          "label": "7 days",
+          "is_correct": false
+        },
+        {
+          "label": "5 days",
+          "is_correct": true
+        },
+        {
+          "label": "6 days",
+          "is_correct": false
+        },
+        {
+          "label": "4 days",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Chain Rule",
+      "kind": "standard",
+      "difficulty": "easy",
+      "answer_type": "single",
+      "stem": "A machine produces 108 items in 9 minutes. How many items will it produce in 18 minutes at the same rate?",
+      "explanation": "Rate = 108/9 = 12 items/min; in 18 minutes it makes 216 items.",
+      "options": [
+        {
+          "label": "225 items",
+          "is_correct": false
+        },
+        {
+          "label": "234 items",
+          "is_correct": false
+        },
+        {
+          "label": "216 items",
+          "is_correct": true
+        },
+        {
+          "label": "207 items",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Chain Rule",
+      "kind": "standard",
+      "difficulty": "easy",
+      "answer_type": "single",
+      "stem": "A machine produces 49 items in 7 minutes. How many items will it produce in 11 minutes at the same rate?",
+      "explanation": "Rate = 49/7 = 7 items/min; in 11 minutes it makes 77 items.",
+      "options": [
+        {
+          "label": "75 items",
+          "is_correct": false
+        },
+        {
+          "label": "79 items",
+          "is_correct": false
+        },
+        {
+          "label": "81 items",
+          "is_correct": false
+        },
+        {
+          "label": "77 items",
+          "is_correct": true
+        }
+      ]
+    },
+    {
+      "chapter": "Chain Rule",
+      "kind": "standard",
+      "difficulty": "medium",
+      "answer_type": "single",
+      "stem": "A group of workers can produce 2 units in 8 days. Working at the same rate, in how many days can they produce 16 units?",
+      "explanation": "Work and time are directly proportional: days = 8 × 16/2 = 64.",
+      "options": [
+        {
+          "label": "68 days",
+          "is_correct": false
+        },
+        {
+          "label": "66 days",
+          "is_correct": false
+        },
+        {
+          "label": "62 days",
+          "is_correct": false
+        },
+        {
+          "label": "64 days",
+          "is_correct": true
+        }
+      ]
+    },
+    {
+      "chapter": "Chain Rule",
+      "kind": "standard",
+      "difficulty": "medium",
+      "answer_type": "single",
+      "stem": "A group of workers can produce 5 units in 3 days. Working at the same rate, in how many days can they produce 40 units?",
+      "explanation": "Work and time are directly proportional: days = 3 × 40/5 = 24.",
+      "options": [
+        {
+          "label": "26 days",
+          "is_correct": false
+        },
+        {
+          "label": "23 days",
+          "is_correct": false
+        },
+        {
+          "label": "24 days",
+          "is_correct": true
+        },
+        {
+          "label": "25 days",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Chain Rule",
+      "kind": "standard",
+      "difficulty": "medium",
+      "answer_type": "single",
+      "stem": "A group of workers can produce 5 units in 4 days. Working at the same rate, in how many days can they produce 20 units?",
+      "explanation": "Work and time are directly proportional: days = 4 × 20/5 = 16.",
+      "options": [
+        {
+          "label": "18 days",
+          "is_correct": false
+        },
+        {
+          "label": "17 days",
+          "is_correct": false
+        },
+        {
+          "label": "15 days",
+          "is_correct": false
+        },
+        {
+          "label": "16 days",
+          "is_correct": true
+        }
+      ]
+    },
+    {
+      "chapter": "Chain Rule",
+      "kind": "standard",
+      "difficulty": "medium",
+      "answer_type": "single",
+      "stem": "A group of workers can produce 8 units in 3 days. Working at the same rate, in how many days can they produce 64 units?",
+      "explanation": "Work and time are directly proportional: days = 3 × 64/8 = 24.",
+      "options": [
+        {
+          "label": "25 days",
+          "is_correct": false
+        },
+        {
+          "label": "23 days",
+          "is_correct": false
+        },
+        {
+          "label": "26 days",
+          "is_correct": false
+        },
+        {
+          "label": "24 days",
+          "is_correct": true
+        }
+      ]
+    },
+    {
+      "chapter": "Chain Rule",
+      "kind": "standard",
+      "difficulty": "medium",
+      "answer_type": "single",
+      "stem": "If 30 men can dig 8 metres of trench in 3 days, how many men are needed to dig 40 metres in 6 days?",
+      "explanation": "Men = (30×3×40)/(8×6) = 75.",
+      "options": [
+        {
+          "label": "73 men",
+          "is_correct": false
+        },
+        {
+          "label": "79 men",
+          "is_correct": false
+        },
+        {
+          "label": "77 men",
+          "is_correct": false
+        },
+        {
+          "label": "75 men",
+          "is_correct": true
+        }
+      ]
+    },
+    {
+      "chapter": "Chain Rule",
+      "kind": "standard",
+      "difficulty": "medium",
+      "answer_type": "single",
+      "stem": "A group of workers can produce 5 units in 3 days. Working at the same rate, in how many days can they produce 25 units?",
+      "explanation": "Work and time are directly proportional: days = 3 × 25/5 = 15.",
+      "options": [
+        {
+          "label": "17 days",
+          "is_correct": false
+        },
+        {
+          "label": "15 days",
+          "is_correct": true
+        },
+        {
+          "label": "14 days",
+          "is_correct": false
+        },
+        {
+          "label": "16 days",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Chain Rule",
+      "kind": "standard",
+      "difficulty": "medium",
+      "answer_type": "single",
+      "stem": "If 30 men can dig 10 metres of trench in 3 days, how many men are needed to dig 60 metres in 5 days?",
+      "explanation": "Men = (30×3×60)/(10×5) = 108.",
+      "options": [
+        {
+          "label": "112 men",
+          "is_correct": false
+        },
+        {
+          "label": "110 men",
+          "is_correct": false
+        },
+        {
+          "label": "106 men",
+          "is_correct": false
+        },
+        {
+          "label": "108 men",
+          "is_correct": true
+        }
+      ]
+    },
+    {
+      "chapter": "Chain Rule",
+      "kind": "standard",
+      "difficulty": "medium",
+      "answer_type": "single",
+      "stem": "If 16 men can dig 8 metres of trench in 8 days, how many men are needed to dig 48 metres in 6 days?",
+      "explanation": "Men = (16×8×48)/(8×6) = 128.",
+      "options": [
+        {
+          "label": "126 men",
+          "is_correct": false
+        },
+        {
+          "label": "132 men",
+          "is_correct": false
+        },
+        {
+          "label": "128 men",
+          "is_correct": true
+        },
+        {
+          "label": "130 men",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Chain Rule",
+      "kind": "standard",
+      "difficulty": "medium",
+      "answer_type": "single",
+      "stem": "A group of workers can produce 12 units in 8 days. Working at the same rate, in how many days can they produce 24 units?",
+      "explanation": "Work and time are directly proportional: days = 8 × 24/12 = 16.",
+      "options": [
+        {
+          "label": "18 days",
+          "is_correct": false
+        },
+        {
+          "label": "17 days",
+          "is_correct": false
+        },
+        {
+          "label": "16 days",
+          "is_correct": true
+        },
+        {
+          "label": "15 days",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Chain Rule",
+      "kind": "standard",
+      "difficulty": "medium",
+      "answer_type": "single",
+      "stem": "A group of workers can produce 5 units in 10 days. Working at the same rate, in how many days can they produce 20 units?",
+      "explanation": "Work and time are directly proportional: days = 10 × 20/5 = 40.",
+      "options": [
+        {
+          "label": "40 days",
+          "is_correct": true
+        },
+        {
+          "label": "38 days",
+          "is_correct": false
+        },
+        {
+          "label": "42 days",
+          "is_correct": false
+        },
+        {
+          "label": "44 days",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Chain Rule",
+      "kind": "standard",
+      "difficulty": "medium",
+      "answer_type": "single",
+      "stem": "If 20 men can dig 4 metres of trench in 3 days, how many men are needed to dig 24 metres in 6 days?",
+      "explanation": "Men = (20×3×24)/(4×6) = 60.",
+      "options": [
+        {
+          "label": "62 men",
+          "is_correct": false
+        },
+        {
+          "label": "60 men",
+          "is_correct": true
+        },
+        {
+          "label": "64 men",
+          "is_correct": false
+        },
+        {
+          "label": "58 men",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Chain Rule",
+      "kind": "standard",
+      "difficulty": "medium",
+      "answer_type": "single",
+      "stem": "A group of workers can produce 7 units in 13 days. Working at the same rate, in how many days can they produce 35 units?",
+      "explanation": "Work and time are directly proportional: days = 13 × 35/7 = 65.",
+      "options": [
+        {
+          "label": "63 days",
+          "is_correct": false
+        },
+        {
+          "label": "69 days",
+          "is_correct": false
+        },
+        {
+          "label": "67 days",
+          "is_correct": false
+        },
+        {
+          "label": "65 days",
+          "is_correct": true
+        }
+      ]
+    },
+    {
+      "chapter": "Chain Rule",
+      "kind": "standard",
+      "difficulty": "medium",
+      "answer_type": "single",
+      "stem": "A group of workers can produce 4 units in 6 days. Working at the same rate, in how many days can they produce 28 units?",
+      "explanation": "Work and time are directly proportional: days = 6 × 28/4 = 42.",
+      "options": [
+        {
+          "label": "44 days",
+          "is_correct": false
+        },
+        {
+          "label": "40 days",
+          "is_correct": false
+        },
+        {
+          "label": "42 days",
+          "is_correct": true
+        },
+        {
+          "label": "46 days",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Chain Rule",
+      "kind": "standard",
+      "difficulty": "medium",
+      "answer_type": "single",
+      "stem": "A group of workers can produce 2 units in 15 days. Working at the same rate, in how many days can they produce 6 units?",
+      "explanation": "Work and time are directly proportional: days = 15 × 6/2 = 45.",
+      "options": [
+        {
+          "label": "47 days",
+          "is_correct": false
+        },
+        {
+          "label": "49 days",
+          "is_correct": false
+        },
+        {
+          "label": "45 days",
+          "is_correct": true
+        },
+        {
+          "label": "43 days",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Chain Rule",
+      "kind": "standard",
+      "difficulty": "medium",
+      "answer_type": "single",
+      "stem": "A group of workers can produce 9 units in 15 days. Working at the same rate, in how many days can they produce 18 units?",
+      "explanation": "Work and time are directly proportional: days = 15 × 18/9 = 30.",
+      "options": [
+        {
+          "label": "30 days",
+          "is_correct": true
+        },
+        {
+          "label": "32 days",
+          "is_correct": false
+        },
+        {
+          "label": "31 days",
+          "is_correct": false
+        },
+        {
+          "label": "29 days",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Chain Rule",
+      "kind": "standard",
+      "difficulty": "medium",
+      "answer_type": "single",
+      "stem": "A group of workers can produce 9 units in 6 days. Working at the same rate, in how many days can they produce 72 units?",
+      "explanation": "Work and time are directly proportional: days = 6 × 72/9 = 48.",
+      "options": [
+        {
+          "label": "50 days",
+          "is_correct": false
+        },
+        {
+          "label": "48 days",
+          "is_correct": true
+        },
+        {
+          "label": "52 days",
+          "is_correct": false
+        },
+        {
+          "label": "46 days",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Chain Rule",
+      "kind": "standard",
+      "difficulty": "medium",
+      "answer_type": "single",
+      "stem": "If 15 men can dig 7 metres of trench in 5 days, how many men are needed to dig 28 metres in 10 days?",
+      "explanation": "Men = (15×5×28)/(7×10) = 30.",
+      "options": [
+        {
+          "label": "30 men",
+          "is_correct": true
+        },
+        {
+          "label": "32 men",
+          "is_correct": false
+        },
+        {
+          "label": "31 men",
+          "is_correct": false
+        },
+        {
+          "label": "29 men",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Chain Rule",
+      "kind": "standard",
+      "difficulty": "medium",
+      "answer_type": "single",
+      "stem": "If 26 men can dig 2 metres of trench in 12 days, how many men are needed to dig 12 metres in 4 days?",
+      "explanation": "Men = (26×12×12)/(2×4) = 468.",
+      "options": [
+        {
+          "label": "468 men",
+          "is_correct": true
+        },
+        {
+          "label": "487 men",
+          "is_correct": false
+        },
+        {
+          "label": "449 men",
+          "is_correct": false
+        },
+        {
+          "label": "506 men",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Chain Rule",
+      "kind": "standard",
+      "difficulty": "medium",
+      "answer_type": "single",
+      "stem": "A group of workers can produce 10 units in 9 days. Working at the same rate, in how many days can they produce 40 units?",
+      "explanation": "Work and time are directly proportional: days = 9 × 40/10 = 36.",
+      "options": [
+        {
+          "label": "37 days",
+          "is_correct": false
+        },
+        {
+          "label": "36 days",
+          "is_correct": true
+        },
+        {
+          "label": "38 days",
+          "is_correct": false
+        },
+        {
+          "label": "35 days",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Chain Rule",
+      "kind": "standard",
+      "difficulty": "medium",
+      "answer_type": "single",
+      "stem": "If 8 men can dig 2 metres of trench in 10 days, how many men are needed to dig 12 metres in 6 days?",
+      "explanation": "Men = (8×10×12)/(2×6) = 80.",
+      "options": [
+        {
+          "label": "82 men",
+          "is_correct": false
+        },
+        {
+          "label": "78 men",
+          "is_correct": false
+        },
+        {
+          "label": "84 men",
+          "is_correct": false
+        },
+        {
+          "label": "80 men",
+          "is_correct": true
+        }
+      ]
+    },
+    {
+      "chapter": "Chain Rule",
+      "kind": "standard",
+      "difficulty": "medium",
+      "answer_type": "single",
+      "stem": "A group of workers can produce 9 units in 14 days. Working at the same rate, in how many days can they produce 18 units?",
+      "explanation": "Work and time are directly proportional: days = 14 × 18/9 = 28.",
+      "options": [
+        {
+          "label": "29 days",
+          "is_correct": false
+        },
+        {
+          "label": "30 days",
+          "is_correct": false
+        },
+        {
+          "label": "28 days",
+          "is_correct": true
+        },
+        {
+          "label": "27 days",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Chain Rule",
+      "kind": "standard",
+      "difficulty": "medium",
+      "answer_type": "single",
+      "stem": "A group of workers can produce 3 units in 8 days. Working at the same rate, in how many days can they produce 24 units?",
+      "explanation": "Work and time are directly proportional: days = 8 × 24/3 = 64.",
+      "options": [
+        {
+          "label": "68 days",
+          "is_correct": false
+        },
+        {
+          "label": "62 days",
+          "is_correct": false
+        },
+        {
+          "label": "66 days",
+          "is_correct": false
+        },
+        {
+          "label": "64 days",
+          "is_correct": true
+        }
+      ]
+    },
+    {
+      "chapter": "Chain Rule",
+      "kind": "standard",
+      "difficulty": "medium",
+      "answer_type": "single",
+      "stem": "If 24 men can dig 4 metres of trench in 9 days, how many men are needed to dig 20 metres in 4 days?",
+      "explanation": "Men = (24×9×20)/(4×4) = 270.",
+      "options": [
+        {
+          "label": "281 men",
+          "is_correct": false
+        },
+        {
+          "label": "292 men",
+          "is_correct": false
+        },
+        {
+          "label": "270 men",
+          "is_correct": true
+        },
+        {
+          "label": "259 men",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Chain Rule",
+      "kind": "standard",
+      "difficulty": "medium",
+      "answer_type": "single",
+      "stem": "If 8 men can dig 3 metres of trench in 15 days, how many men are needed to dig 6 metres in 15 days?",
+      "explanation": "Men = (8×15×6)/(3×15) = 16.",
+      "options": [
+        {
+          "label": "17 men",
+          "is_correct": false
+        },
+        {
+          "label": "15 men",
+          "is_correct": false
+        },
+        {
+          "label": "16 men",
+          "is_correct": true
+        },
+        {
+          "label": "18 men",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Chain Rule",
+      "kind": "standard",
+      "difficulty": "medium",
+      "answer_type": "single",
+      "stem": "A group of workers can produce 10 units in 13 days. Working at the same rate, in how many days can they produce 50 units?",
+      "explanation": "Work and time are directly proportional: days = 13 × 50/10 = 65.",
+      "options": [
+        {
+          "label": "69 days",
+          "is_correct": false
+        },
+        {
+          "label": "63 days",
+          "is_correct": false
+        },
+        {
+          "label": "67 days",
+          "is_correct": false
+        },
+        {
+          "label": "65 days",
+          "is_correct": true
+        }
+      ]
+    },
+    {
+      "chapter": "Chain Rule",
+      "kind": "standard",
+      "difficulty": "medium",
+      "answer_type": "single",
+      "stem": "A group of workers can produce 3 units in 8 days. Working at the same rate, in how many days can they produce 6 units?",
+      "explanation": "Work and time are directly proportional: days = 8 × 6/3 = 16.",
+      "options": [
+        {
+          "label": "18 days",
+          "is_correct": false
+        },
+        {
+          "label": "17 days",
+          "is_correct": false
+        },
+        {
+          "label": "15 days",
+          "is_correct": false
+        },
+        {
+          "label": "16 days",
+          "is_correct": true
+        }
+      ]
+    },
+    {
+      "chapter": "Chain Rule",
+      "kind": "standard",
+      "difficulty": "medium",
+      "answer_type": "single",
+      "stem": "A group of workers can produce 9 units in 12 days. Working at the same rate, in how many days can they produce 27 units?",
+      "explanation": "Work and time are directly proportional: days = 12 × 27/9 = 36.",
+      "options": [
+        {
+          "label": "36 days",
+          "is_correct": true
+        },
+        {
+          "label": "37 days",
+          "is_correct": false
+        },
+        {
+          "label": "38 days",
+          "is_correct": false
+        },
+        {
+          "label": "35 days",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Chain Rule",
+      "kind": "standard",
+      "difficulty": "medium",
+      "answer_type": "single",
+      "stem": "A group of workers can produce 11 units in 14 days. Working at the same rate, in how many days can they produce 33 units?",
+      "explanation": "Work and time are directly proportional: days = 14 × 33/11 = 42.",
+      "options": [
+        {
+          "label": "46 days",
+          "is_correct": false
+        },
+        {
+          "label": "42 days",
+          "is_correct": true
+        },
+        {
+          "label": "40 days",
+          "is_correct": false
+        },
+        {
+          "label": "44 days",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Chain Rule",
+      "kind": "standard",
+      "difficulty": "medium",
+      "answer_type": "single",
+      "stem": "A stock of food is enough for 38 men for 28 days. If 18 more men join before the food is touched, for how many days will the food last?",
+      "explanation": "Total food = 38×28 man-days; with 56 men it lasts 1064/56 = 19 days.",
+      "options": [
+        {
+          "label": "21 days",
+          "is_correct": false
+        },
+        {
+          "label": "20 days",
+          "is_correct": false
+        },
+        {
+          "label": "19 days",
+          "is_correct": true
+        },
+        {
+          "label": "18 days",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Chain Rule",
+      "kind": "standard",
+      "difficulty": "medium",
+      "answer_type": "single",
+      "stem": "If 6 men can dig 6 metres of trench in 10 days, how many men are needed to dig 24 metres in 15 days?",
+      "explanation": "Men = (6×10×24)/(6×15) = 16.",
+      "options": [
+        {
+          "label": "16 men",
+          "is_correct": true
+        },
+        {
+          "label": "18 men",
+          "is_correct": false
+        },
+        {
+          "label": "15 men",
+          "is_correct": false
+        },
+        {
+          "label": "17 men",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Chain Rule",
+      "kind": "standard",
+      "difficulty": "medium",
+      "answer_type": "single",
+      "stem": "A group of workers can produce 8 units in 11 days. Working at the same rate, in how many days can they produce 40 units?",
+      "explanation": "Work and time are directly proportional: days = 11 × 40/8 = 55.",
+      "options": [
+        {
+          "label": "53 days",
+          "is_correct": false
+        },
+        {
+          "label": "57 days",
+          "is_correct": false
+        },
+        {
+          "label": "59 days",
+          "is_correct": false
+        },
+        {
+          "label": "55 days",
+          "is_correct": true
+        }
+      ]
+    },
+    {
+      "chapter": "Chain Rule",
+      "kind": "standard",
+      "difficulty": "medium",
+      "answer_type": "single",
+      "stem": "A group of workers can produce 12 units in 14 days. Working at the same rate, in how many days can they produce 60 units?",
+      "explanation": "Work and time are directly proportional: days = 14 × 60/12 = 70.",
+      "options": [
+        {
+          "label": "74 days",
+          "is_correct": false
+        },
+        {
+          "label": "72 days",
+          "is_correct": false
+        },
+        {
+          "label": "70 days",
+          "is_correct": true
+        },
+        {
+          "label": "68 days",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Chain Rule",
+      "kind": "standard",
+      "difficulty": "medium",
+      "answer_type": "single",
+      "stem": "A group of workers can produce 9 units in 11 days. Working at the same rate, in how many days can they produce 54 units?",
+      "explanation": "Work and time are directly proportional: days = 11 × 54/9 = 66.",
+      "options": [
+        {
+          "label": "68 days",
+          "is_correct": false
+        },
+        {
+          "label": "70 days",
+          "is_correct": false
+        },
+        {
+          "label": "66 days",
+          "is_correct": true
+        },
+        {
+          "label": "64 days",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Chain Rule",
+      "kind": "standard",
+      "difficulty": "medium",
+      "answer_type": "single",
+      "stem": "If 16 men can dig 8 metres of trench in 3 days, how many men are needed to dig 48 metres in 12 days?",
+      "explanation": "Men = (16×3×48)/(8×12) = 24.",
+      "options": [
+        {
+          "label": "23 men",
+          "is_correct": false
+        },
+        {
+          "label": "26 men",
+          "is_correct": false
+        },
+        {
+          "label": "25 men",
+          "is_correct": false
+        },
+        {
+          "label": "24 men",
+          "is_correct": true
+        }
+      ]
+    },
+    {
+      "chapter": "Chain Rule",
+      "kind": "standard",
+      "difficulty": "medium",
+      "answer_type": "single",
+      "stem": "A group of workers can produce 9 units in 4 days. Working at the same rate, in how many days can they produce 36 units?",
+      "explanation": "Work and time are directly proportional: days = 4 × 36/9 = 16.",
+      "options": [
+        {
+          "label": "18 days",
+          "is_correct": false
+        },
+        {
+          "label": "15 days",
+          "is_correct": false
+        },
+        {
+          "label": "17 days",
+          "is_correct": false
+        },
+        {
+          "label": "16 days",
+          "is_correct": true
+        }
+      ]
+    },
+    {
+      "chapter": "Chain Rule",
+      "kind": "standard",
+      "difficulty": "medium",
+      "answer_type": "single",
+      "stem": "A group of workers can produce 11 units in 8 days. Working at the same rate, in how many days can they produce 44 units?",
+      "explanation": "Work and time are directly proportional: days = 8 × 44/11 = 32.",
+      "options": [
+        {
+          "label": "31 days",
+          "is_correct": false
+        },
+        {
+          "label": "32 days",
+          "is_correct": true
+        },
+        {
+          "label": "33 days",
+          "is_correct": false
+        },
+        {
+          "label": "34 days",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Chain Rule",
+      "kind": "standard",
+      "difficulty": "medium",
+      "answer_type": "single",
+      "stem": "A group of workers can produce 3 units in 15 days. Working at the same rate, in how many days can they produce 6 units?",
+      "explanation": "Work and time are directly proportional: days = 15 × 6/3 = 30.",
+      "options": [
+        {
+          "label": "32 days",
+          "is_correct": false
+        },
+        {
+          "label": "30 days",
+          "is_correct": true
+        },
+        {
+          "label": "31 days",
+          "is_correct": false
+        },
+        {
+          "label": "29 days",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Chain Rule",
+      "kind": "standard",
+      "difficulty": "medium",
+      "answer_type": "single",
+      "stem": "A group of workers can produce 3 units in 5 days. Working at the same rate, in how many days can they produce 21 units?",
+      "explanation": "Work and time are directly proportional: days = 5 × 21/3 = 35.",
+      "options": [
+        {
+          "label": "37 days",
+          "is_correct": false
+        },
+        {
+          "label": "34 days",
+          "is_correct": false
+        },
+        {
+          "label": "36 days",
+          "is_correct": false
+        },
+        {
+          "label": "35 days",
+          "is_correct": true
+        }
+      ]
+    },
+    {
+      "chapter": "Chain Rule",
+      "kind": "standard",
+      "difficulty": "medium",
+      "answer_type": "single",
+      "stem": "A group of workers can produce 9 units in 8 days. Working at the same rate, in how many days can they produce 27 units?",
+      "explanation": "Work and time are directly proportional: days = 8 × 27/9 = 24.",
+      "options": [
+        {
+          "label": "23 days",
+          "is_correct": false
+        },
+        {
+          "label": "24 days",
+          "is_correct": true
+        },
+        {
+          "label": "25 days",
+          "is_correct": false
+        },
+        {
+          "label": "26 days",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Chain Rule",
+      "kind": "standard",
+      "difficulty": "medium",
+      "answer_type": "single",
+      "stem": "A group of workers can produce 2 units in 7 days. Working at the same rate, in how many days can they produce 10 units?",
+      "explanation": "Work and time are directly proportional: days = 7 × 10/2 = 35.",
+      "options": [
+        {
+          "label": "36 days",
+          "is_correct": false
+        },
+        {
+          "label": "35 days",
+          "is_correct": true
+        },
+        {
+          "label": "37 days",
+          "is_correct": false
+        },
+        {
+          "label": "34 days",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Chain Rule",
+      "kind": "standard",
+      "difficulty": "medium",
+      "answer_type": "single",
+      "stem": "A group of workers can produce 12 units in 6 days. Working at the same rate, in how many days can they produce 96 units?",
+      "explanation": "Work and time are directly proportional: days = 6 × 96/12 = 48.",
+      "options": [
+        {
+          "label": "46 days",
+          "is_correct": false
+        },
+        {
+          "label": "50 days",
+          "is_correct": false
+        },
+        {
+          "label": "52 days",
+          "is_correct": false
+        },
+        {
+          "label": "48 days",
+          "is_correct": true
+        }
+      ]
+    },
+    {
+      "chapter": "Chain Rule",
+      "kind": "standard",
+      "difficulty": "medium",
+      "answer_type": "single",
+      "stem": "A group of workers can produce 9 units in 15 days. Working at the same rate, in how many days can they produce 27 units?",
+      "explanation": "Work and time are directly proportional: days = 15 × 27/9 = 45.",
+      "options": [
+        {
+          "label": "47 days",
+          "is_correct": false
+        },
+        {
+          "label": "45 days",
+          "is_correct": true
+        },
+        {
+          "label": "43 days",
+          "is_correct": false
+        },
+        {
+          "label": "49 days",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Chain Rule",
+      "kind": "standard",
+      "difficulty": "medium",
+      "answer_type": "single",
+      "stem": "A group of workers can produce 7 units in 14 days. Working at the same rate, in how many days can they produce 56 units?",
+      "explanation": "Work and time are directly proportional: days = 14 × 56/7 = 112.",
+      "options": [
+        {
+          "label": "116 days",
+          "is_correct": false
+        },
+        {
+          "label": "110 days",
+          "is_correct": false
+        },
+        {
+          "label": "112 days",
+          "is_correct": true
+        },
+        {
+          "label": "114 days",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Chain Rule",
+      "kind": "standard",
+      "difficulty": "medium",
+      "answer_type": "single",
+      "stem": "A group of workers can produce 4 units in 3 days. Working at the same rate, in how many days can they produce 32 units?",
+      "explanation": "Work and time are directly proportional: days = 3 × 32/4 = 24.",
+      "options": [
+        {
+          "label": "23 days",
+          "is_correct": false
+        },
+        {
+          "label": "25 days",
+          "is_correct": false
+        },
+        {
+          "label": "24 days",
+          "is_correct": true
+        },
+        {
+          "label": "26 days",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Chain Rule",
+      "kind": "standard",
+      "difficulty": "medium",
+      "answer_type": "single",
+      "stem": "A group of workers can produce 3 units in 4 days. Working at the same rate, in how many days can they produce 6 units?",
+      "explanation": "Work and time are directly proportional: days = 4 × 6/3 = 8.",
+      "options": [
+        {
+          "label": "9 days",
+          "is_correct": false
+        },
+        {
+          "label": "7 days",
+          "is_correct": false
+        },
+        {
+          "label": "10 days",
+          "is_correct": false
+        },
+        {
+          "label": "8 days",
+          "is_correct": true
+        }
+      ]
+    },
+    {
+      "chapter": "Chain Rule",
+      "kind": "standard",
+      "difficulty": "medium",
+      "answer_type": "single",
+      "stem": "A group of workers can produce 5 units in 15 days. Working at the same rate, in how many days can they produce 40 units?",
+      "explanation": "Work and time are directly proportional: days = 15 × 40/5 = 120.",
+      "options": [
+        {
+          "label": "118 days",
+          "is_correct": false
+        },
+        {
+          "label": "122 days",
+          "is_correct": false
+        },
+        {
+          "label": "120 days",
+          "is_correct": true
+        },
+        {
+          "label": "124 days",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Chain Rule",
+      "kind": "standard",
+      "difficulty": "medium",
+      "answer_type": "single",
+      "stem": "A group of workers can produce 2 units in 9 days. Working at the same rate, in how many days can they produce 12 units?",
+      "explanation": "Work and time are directly proportional: days = 9 × 12/2 = 54.",
+      "options": [
+        {
+          "label": "52 days",
+          "is_correct": false
+        },
+        {
+          "label": "56 days",
+          "is_correct": false
+        },
+        {
+          "label": "54 days",
+          "is_correct": true
+        },
+        {
+          "label": "58 days",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Chain Rule",
+      "kind": "standard",
+      "difficulty": "medium",
+      "answer_type": "single",
+      "stem": "If 21 men can dig 3 metres of trench in 5 days, how many men are needed to dig 18 metres in 5 days?",
+      "explanation": "Men = (21×5×18)/(3×5) = 126.",
+      "options": [
+        {
+          "label": "130 men",
+          "is_correct": false
+        },
+        {
+          "label": "128 men",
+          "is_correct": false
+        },
+        {
+          "label": "126 men",
+          "is_correct": true
+        },
+        {
+          "label": "124 men",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Chain Rule",
+      "kind": "standard",
+      "difficulty": "medium",
+      "answer_type": "single",
+      "stem": "A group of workers can produce 12 units in 2 days. Working at the same rate, in how many days can they produce 60 units?",
+      "explanation": "Work and time are directly proportional: days = 2 × 60/12 = 10.",
+      "options": [
+        {
+          "label": "12 days",
+          "is_correct": false
+        },
+        {
+          "label": "11 days",
+          "is_correct": false
+        },
+        {
+          "label": "10 days",
+          "is_correct": true
+        },
+        {
+          "label": "9 days",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Chain Rule",
+      "kind": "standard",
+      "difficulty": "medium",
+      "answer_type": "single",
+      "stem": "A group of workers can produce 9 units in 11 days. Working at the same rate, in how many days can they produce 63 units?",
+      "explanation": "Work and time are directly proportional: days = 11 × 63/9 = 77.",
+      "options": [
+        {
+          "label": "77 days",
+          "is_correct": true
+        },
+        {
+          "label": "81 days",
+          "is_correct": false
+        },
+        {
+          "label": "75 days",
+          "is_correct": false
+        },
+        {
+          "label": "79 days",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Chain Rule",
+      "kind": "standard",
+      "difficulty": "hard",
+      "answer_type": "single",
+      "stem": "If 20 men working 7 hours a day can finish 5 units of work in 9 days, in how many days can 9 men working 7 hours a day finish 3 units?",
+      "explanation": "Days = (20×7×9×3)/(9×7×5) = 12.",
+      "options": [
+        {
+          "label": "12 days",
+          "is_correct": true
+        },
+        {
+          "label": "13 days",
+          "is_correct": false
+        },
+        {
+          "label": "14 days",
+          "is_correct": false
+        },
+        {
+          "label": "11 days",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Chain Rule",
+      "kind": "standard",
+      "difficulty": "hard",
+      "answer_type": "single",
+      "stem": "Provisions in a camp are enough for 44 men for 37 days. After 18 days, 6 men leave the camp. For how many more days will the remaining provisions last?",
+      "explanation": "Food left = 44×(37−18) man-days; with 38 men it lasts 836/38 = 22 days.",
+      "options": [
+        {
+          "label": "22 days",
+          "is_correct": true
+        },
+        {
+          "label": "23 days",
+          "is_correct": false
+        },
+        {
+          "label": "24 days",
+          "is_correct": false
+        },
+        {
+          "label": "21 days",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Chain Rule",
+      "kind": "standard",
+      "difficulty": "hard",
+      "answer_type": "single",
+      "stem": "Provisions in a camp are enough for 76 men for 34 days. After 19 days, 19 men leave the camp. For how many more days will the remaining provisions last?",
+      "explanation": "Food left = 76×(34−19) man-days; with 57 men it lasts 1140/57 = 20 days.",
+      "options": [
+        {
+          "label": "20 days",
+          "is_correct": true
+        },
+        {
+          "label": "21 days",
+          "is_correct": false
+        },
+        {
+          "label": "19 days",
+          "is_correct": false
+        },
+        {
+          "label": "22 days",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Chain Rule",
+      "kind": "standard",
+      "difficulty": "hard",
+      "answer_type": "single",
+      "stem": "If 3 pumps working 6 hours a day can empty a reservoir in 8 days, in how many days can 3 pumps working 6 hours a day empty it?",
+      "explanation": "Days = (3×6×8)/(3×6) = 8.",
+      "options": [
+        {
+          "label": "8 days",
+          "is_correct": true
+        },
+        {
+          "label": "9 days",
+          "is_correct": false
+        },
+        {
+          "label": "10 days",
+          "is_correct": false
+        },
+        {
+          "label": "7 days",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Chain Rule",
+      "kind": "standard",
+      "difficulty": "hard",
+      "answer_type": "single",
+      "stem": "If 12 pumps working 7 hours a day can empty a reservoir in 6 days, in how many days can 7 pumps working 9 hours a day empty it?",
+      "explanation": "Days = (12×7×6)/(7×9) = 8.",
+      "options": [
+        {
+          "label": "10 days",
+          "is_correct": false
+        },
+        {
+          "label": "8 days",
+          "is_correct": true
+        },
+        {
+          "label": "9 days",
+          "is_correct": false
+        },
+        {
+          "label": "7 days",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Chain Rule",
+      "kind": "standard",
+      "difficulty": "hard",
+      "answer_type": "single",
+      "stem": "Provisions in a camp are enough for 44 men for 26 days. After 17 days, 11 men leave the camp. For how many more days will the remaining provisions last?",
+      "explanation": "Food left = 44×(26−17) man-days; with 33 men it lasts 396/33 = 12 days.",
+      "options": [
+        {
+          "label": "12 days",
+          "is_correct": true
+        },
+        {
+          "label": "13 days",
+          "is_correct": false
+        },
+        {
+          "label": "11 days",
+          "is_correct": false
+        },
+        {
+          "label": "14 days",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Chain Rule",
+      "kind": "standard",
+      "difficulty": "hard",
+      "answer_type": "single",
+      "stem": "If 10 men working 7 hours a day can finish 2 units of work in 8 days, in how many days can 6 men working 5 hours a day finish 3 units?",
+      "explanation": "Days = (10×7×8×3)/(6×5×2) = 28.",
+      "options": [
+        {
+          "label": "29 days",
+          "is_correct": false
+        },
+        {
+          "label": "28 days",
+          "is_correct": true
+        },
+        {
+          "label": "30 days",
+          "is_correct": false
+        },
+        {
+          "label": "27 days",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Chain Rule",
+      "kind": "standard",
+      "difficulty": "hard",
+      "answer_type": "single",
+      "stem": "If 6 men working 10 hours a day can finish 5 units of work in 10 days, in how many days can 15 men working 8 hours a day finish 3 units?",
+      "explanation": "Days = (6×10×10×3)/(15×8×5) = 3.",
+      "options": [
+        {
+          "label": "3 days",
+          "is_correct": true
+        },
+        {
+          "label": "4 days",
+          "is_correct": false
+        },
+        {
+          "label": "5 days",
+          "is_correct": false
+        },
+        {
+          "label": "2 days",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Chain Rule",
+      "kind": "standard",
+      "difficulty": "hard",
+      "answer_type": "single",
+      "stem": "If 4 men working 5 hours a day can finish 2 units of work in 8 days, in how many days can 8 men working 6 hours a day finish 6 units?",
+      "explanation": "Days = (4×5×8×6)/(8×6×2) = 10.",
+      "options": [
+        {
+          "label": "12 days",
+          "is_correct": false
+        },
+        {
+          "label": "10 days",
+          "is_correct": true
+        },
+        {
+          "label": "9 days",
+          "is_correct": false
+        },
+        {
+          "label": "11 days",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Chain Rule",
+      "kind": "standard",
+      "difficulty": "hard",
+      "answer_type": "single",
+      "stem": "If 7 men working 9 hours a day can finish 6 units of work in 10 days, in how many days can 7 men working 9 hours a day finish 6 units?",
+      "explanation": "Days = (7×9×10×6)/(7×9×6) = 10.",
+      "options": [
+        {
+          "label": "12 days",
+          "is_correct": false
+        },
+        {
+          "label": "11 days",
+          "is_correct": false
+        },
+        {
+          "label": "10 days",
+          "is_correct": true
+        },
+        {
+          "label": "9 days",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Chain Rule",
+      "kind": "standard",
+      "difficulty": "hard",
+      "answer_type": "single",
+      "stem": "If 12 men working 6 hours a day can finish 6 units of work in 3 days, in how many days can 5 men working 9 hours a day finish 5 units?",
+      "explanation": "Days = (12×6×3×5)/(5×9×6) = 4.",
+      "options": [
+        {
+          "label": "5 days",
+          "is_correct": false
+        },
+        {
+          "label": "3 days",
+          "is_correct": false
+        },
+        {
+          "label": "4 days",
+          "is_correct": true
+        },
+        {
+          "label": "6 days",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Chain Rule",
+      "kind": "standard",
+      "difficulty": "hard",
+      "answer_type": "single",
+      "stem": "If 5 pumps working 6 hours a day can empty a reservoir in 11 days, in how many days can 11 pumps working 10 hours a day empty it?",
+      "explanation": "Days = (5×6×11)/(11×10) = 3.",
+      "options": [
+        {
+          "label": "3 days",
+          "is_correct": true
+        },
+        {
+          "label": "2 days",
+          "is_correct": false
+        },
+        {
+          "label": "4 days",
+          "is_correct": false
+        },
+        {
+          "label": "5 days",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Chain Rule",
+      "kind": "standard",
+      "difficulty": "hard",
+      "answer_type": "single",
+      "stem": "If 7 pumps working 10 hours a day can empty a reservoir in 10 days, in how many days can 4 pumps working 5 hours a day empty it?",
+      "explanation": "Days = (7×10×10)/(4×5) = 35.",
+      "options": [
+        {
+          "label": "34 days",
+          "is_correct": false
+        },
+        {
+          "label": "35 days",
+          "is_correct": true
+        },
+        {
+          "label": "36 days",
+          "is_correct": false
+        },
+        {
+          "label": "37 days",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Chain Rule",
+      "kind": "standard",
+      "difficulty": "hard",
+      "answer_type": "single",
+      "stem": "Provisions in a camp are enough for 77 men for 24 days. After 18 days, 11 men leave the camp. For how many more days will the remaining provisions last?",
+      "explanation": "Food left = 77×(24−18) man-days; with 66 men it lasts 462/66 = 7 days.",
+      "options": [
+        {
+          "label": "7 days",
+          "is_correct": true
+        },
+        {
+          "label": "6 days",
+          "is_correct": false
+        },
+        {
+          "label": "8 days",
+          "is_correct": false
+        },
+        {
+          "label": "9 days",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Chain Rule",
+      "kind": "standard",
+      "difficulty": "hard",
+      "answer_type": "single",
+      "stem": "If 15 men working 6 hours a day can finish 3 units of work in 6 days, in how many days can 18 men working 4 hours a day finish 8 units?",
+      "explanation": "Days = (15×6×6×8)/(18×4×3) = 20.",
+      "options": [
+        {
+          "label": "22 days",
+          "is_correct": false
+        },
+        {
+          "label": "20 days",
+          "is_correct": true
+        },
+        {
+          "label": "21 days",
+          "is_correct": false
+        },
+        {
+          "label": "19 days",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Chain Rule",
+      "kind": "standard",
+      "difficulty": "hard",
+      "answer_type": "single",
+      "stem": "If 3 pumps working 12 hours a day can empty a reservoir in 10 days, in how many days can 5 pumps working 9 hours a day empty it?",
+      "explanation": "Days = (3×12×10)/(5×9) = 8.",
+      "options": [
+        {
+          "label": "8 days",
+          "is_correct": true
+        },
+        {
+          "label": "10 days",
+          "is_correct": false
+        },
+        {
+          "label": "7 days",
+          "is_correct": false
+        },
+        {
+          "label": "9 days",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Chain Rule",
+      "kind": "standard",
+      "difficulty": "hard",
+      "answer_type": "single",
+      "stem": "If 15 pumps working 12 hours a day can empty a reservoir in 4 days, in how many days can 4 pumps working 9 hours a day empty it?",
+      "explanation": "Days = (15×12×4)/(4×9) = 20.",
+      "options": [
+        {
+          "label": "21 days",
+          "is_correct": false
+        },
+        {
+          "label": "22 days",
+          "is_correct": false
+        },
+        {
+          "label": "20 days",
+          "is_correct": true
+        },
+        {
+          "label": "19 days",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Chain Rule",
+      "kind": "standard",
+      "difficulty": "hard",
+      "answer_type": "single",
+      "stem": "If 15 men working 8 hours a day can finish 4 units of work in 11 days, in how many days can 10 men working 6 hours a day finish 4 units?",
+      "explanation": "Days = (15×8×11×4)/(10×6×4) = 22.",
+      "options": [
+        {
+          "label": "23 days",
+          "is_correct": false
+        },
+        {
+          "label": "22 days",
+          "is_correct": true
+        },
+        {
+          "label": "21 days",
+          "is_correct": false
+        },
+        {
+          "label": "24 days",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Chain Rule",
+      "kind": "standard",
+      "difficulty": "hard",
+      "answer_type": "single",
+      "stem": "If 8 pumps working 5 hours a day can empty a reservoir in 7 days, in how many days can 5 pumps working 8 hours a day empty it?",
+      "explanation": "Days = (8×5×7)/(5×8) = 7.",
+      "options": [
+        {
+          "label": "8 days",
+          "is_correct": false
+        },
+        {
+          "label": "9 days",
+          "is_correct": false
+        },
+        {
+          "label": "7 days",
+          "is_correct": true
+        },
+        {
+          "label": "6 days",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Chain Rule",
+      "kind": "standard",
+      "difficulty": "hard",
+      "answer_type": "single",
+      "stem": "If 4 men working 7 hours a day can finish 2 units of work in 12 days, in how many days can 9 men working 8 hours a day finish 3 units?",
+      "explanation": "Days = (4×7×12×3)/(9×8×2) = 7.",
+      "options": [
+        {
+          "label": "8 days",
+          "is_correct": false
+        },
+        {
+          "label": "7 days",
+          "is_correct": true
+        },
+        {
+          "label": "9 days",
+          "is_correct": false
+        },
+        {
+          "label": "6 days",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Chain Rule",
+      "kind": "standard",
+      "difficulty": "hard",
+      "answer_type": "single",
+      "stem": "If 8 men working 9 hours a day can finish 6 units of work in 10 days, in how many days can 6 men working 7 hours a day finish 7 units?",
+      "explanation": "Days = (8×9×10×7)/(6×7×6) = 20.",
+      "options": [
+        {
+          "label": "20 days",
+          "is_correct": true
+        },
+        {
+          "label": "22 days",
+          "is_correct": false
+        },
+        {
+          "label": "21 days",
+          "is_correct": false
+        },
+        {
+          "label": "19 days",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Chain Rule",
+      "kind": "standard",
+      "difficulty": "hard",
+      "answer_type": "single",
+      "stem": "Provisions in a camp are enough for 77 men for 51 days. After 9 days, 11 men leave the camp. For how many more days will the remaining provisions last?",
+      "explanation": "Food left = 77×(51−9) man-days; with 66 men it lasts 3234/66 = 49 days.",
+      "options": [
+        {
+          "label": "49 days",
+          "is_correct": true
+        },
+        {
+          "label": "47 days",
+          "is_correct": false
+        },
+        {
+          "label": "51 days",
+          "is_correct": false
+        },
+        {
+          "label": "53 days",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Chain Rule",
+      "kind": "standard",
+      "difficulty": "hard",
+      "answer_type": "single",
+      "stem": "If 9 pumps working 5 hours a day can empty a reservoir in 8 days, in how many days can 10 pumps working 12 hours a day empty it?",
+      "explanation": "Days = (9×5×8)/(10×12) = 3.",
+      "options": [
+        {
+          "label": "5 days",
+          "is_correct": false
+        },
+        {
+          "label": "4 days",
+          "is_correct": false
+        },
+        {
+          "label": "3 days",
+          "is_correct": true
+        },
+        {
+          "label": "2 days",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Chain Rule",
+      "kind": "standard",
+      "difficulty": "hard",
+      "answer_type": "single",
+      "stem": "If 15 pumps working 4 hours a day can empty a reservoir in 2 days, in how many days can 4 pumps working 6 hours a day empty it?",
+      "explanation": "Days = (15×4×2)/(4×6) = 5.",
+      "options": [
+        {
+          "label": "7 days",
+          "is_correct": false
+        },
+        {
+          "label": "5 days",
+          "is_correct": true
+        },
+        {
+          "label": "4 days",
+          "is_correct": false
+        },
+        {
+          "label": "6 days",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Chain Rule",
+      "kind": "standard",
+      "difficulty": "hard",
+      "answer_type": "single",
+      "stem": "If 6 men working 10 hours a day can finish 6 units of work in 8 days, in how many days can 16 men working 5 hours a day finish 3 units?",
+      "explanation": "Days = (6×10×8×3)/(16×5×6) = 3.",
+      "options": [
+        {
+          "label": "4 days",
+          "is_correct": false
+        },
+        {
+          "label": "5 days",
+          "is_correct": false
+        },
+        {
+          "label": "3 days",
+          "is_correct": true
+        },
+        {
+          "label": "2 days",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Chain Rule",
+      "kind": "standard",
+      "difficulty": "hard",
+      "answer_type": "single",
+      "stem": "If 18 men working 8 hours a day can finish 2 units of work in 3 days, in how many days can 18 men working 8 hours a day finish 6 units?",
+      "explanation": "Days = (18×8×3×6)/(18×8×2) = 9.",
+      "options": [
+        {
+          "label": "8 days",
+          "is_correct": false
+        },
+        {
+          "label": "9 days",
+          "is_correct": true
+        },
+        {
+          "label": "10 days",
+          "is_correct": false
+        },
+        {
+          "label": "11 days",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Chain Rule",
+      "kind": "standard",
+      "difficulty": "hard",
+      "answer_type": "single",
+      "stem": "If 3 pumps working 6 hours a day can empty a reservoir in 10 days, in how many days can 6 pumps working 6 hours a day empty it?",
+      "explanation": "Days = (3×6×10)/(6×6) = 5.",
+      "options": [
+        {
+          "label": "5 days",
+          "is_correct": true
+        },
+        {
+          "label": "7 days",
+          "is_correct": false
+        },
+        {
+          "label": "6 days",
+          "is_correct": false
+        },
+        {
+          "label": "4 days",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Chain Rule",
+      "kind": "standard",
+      "difficulty": "hard",
+      "answer_type": "single",
+      "stem": "If 14 pumps working 7 hours a day can empty a reservoir in 12 days, in how many days can 6 pumps working 4 hours a day empty it?",
+      "explanation": "Days = (14×7×12)/(6×4) = 49.",
+      "options": [
+        {
+          "label": "49 days",
+          "is_correct": true
+        },
+        {
+          "label": "47 days",
+          "is_correct": false
+        },
+        {
+          "label": "53 days",
+          "is_correct": false
+        },
+        {
+          "label": "51 days",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Chain Rule",
+      "kind": "standard",
+      "difficulty": "hard",
+      "answer_type": "single",
+      "stem": "Provisions in a camp are enough for 55 men for 35 days. After 15 days, 11 men leave the camp. For how many more days will the remaining provisions last?",
+      "explanation": "Food left = 55×(35−15) man-days; with 44 men it lasts 1100/44 = 25 days.",
+      "options": [
+        {
+          "label": "25 days",
+          "is_correct": true
+        },
+        {
+          "label": "27 days",
+          "is_correct": false
+        },
+        {
+          "label": "24 days",
+          "is_correct": false
+        },
+        {
+          "label": "26 days",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Chain Rule",
+      "kind": "standard",
+      "difficulty": "hard",
+      "answer_type": "single",
+      "stem": "If 11 pumps working 9 hours a day can empty a reservoir in 11 days, in how many days can 9 pumps working 11 hours a day empty it?",
+      "explanation": "Days = (11×9×11)/(9×11) = 11.",
+      "options": [
+        {
+          "label": "13 days",
+          "is_correct": false
+        },
+        {
+          "label": "10 days",
+          "is_correct": false
+        },
+        {
+          "label": "12 days",
+          "is_correct": false
+        },
+        {
+          "label": "11 days",
+          "is_correct": true
+        }
+      ]
+    },
+    {
+      "chapter": "Chain Rule",
+      "kind": "standard",
+      "difficulty": "hard",
+      "answer_type": "single",
+      "stem": "If 9 men working 8 hours a day can finish 3 units of work in 9 days, in how many days can 18 men working 4 hours a day finish 2 units?",
+      "explanation": "Days = (9×8×9×2)/(18×4×3) = 6.",
+      "options": [
+        {
+          "label": "7 days",
+          "is_correct": false
+        },
+        {
+          "label": "8 days",
+          "is_correct": false
+        },
+        {
+          "label": "6 days",
+          "is_correct": true
+        },
+        {
+          "label": "5 days",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Chain Rule",
+      "kind": "standard",
+      "difficulty": "hard",
+      "answer_type": "single",
+      "stem": "Provisions in a camp are enough for 27 men for 27 days. After 19 days, 9 men leave the camp. For how many more days will the remaining provisions last?",
+      "explanation": "Food left = 27×(27−19) man-days; with 18 men it lasts 216/18 = 12 days.",
+      "options": [
+        {
+          "label": "12 days",
+          "is_correct": true
+        },
+        {
+          "label": "13 days",
+          "is_correct": false
+        },
+        {
+          "label": "11 days",
+          "is_correct": false
+        },
+        {
+          "label": "14 days",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Chain Rule",
+      "kind": "standard",
+      "difficulty": "hard",
+      "answer_type": "single",
+      "stem": "If 6 pumps working 7 hours a day can empty a reservoir in 5 days, in how many days can 6 pumps working 7 hours a day empty it?",
+      "explanation": "Days = (6×7×5)/(6×7) = 5.",
+      "options": [
+        {
+          "label": "6 days",
+          "is_correct": false
+        },
+        {
+          "label": "4 days",
+          "is_correct": false
+        },
+        {
+          "label": "5 days",
+          "is_correct": true
+        },
+        {
+          "label": "7 days",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Chain Rule",
+      "kind": "standard",
+      "difficulty": "hard",
+      "answer_type": "single",
+      "stem": "If 11 men working 9 hours a day can finish 4 units of work in 9 days, in how many days can 18 men working 9 hours a day finish 8 units?",
+      "explanation": "Days = (11×9×9×8)/(18×9×4) = 11.",
+      "options": [
+        {
+          "label": "12 days",
+          "is_correct": false
+        },
+        {
+          "label": "10 days",
+          "is_correct": false
+        },
+        {
+          "label": "13 days",
+          "is_correct": false
+        },
+        {
+          "label": "11 days",
+          "is_correct": true
+        }
+      ]
+    },
+    {
+      "chapter": "Chain Rule",
+      "kind": "standard",
+      "difficulty": "hard",
+      "answer_type": "single",
+      "stem": "If 8 pumps working 7 hours a day can empty a reservoir in 4 days, in how many days can 4 pumps working 7 hours a day empty it?",
+      "explanation": "Days = (8×7×4)/(4×7) = 8.",
+      "options": [
+        {
+          "label": "8 days",
+          "is_correct": true
+        },
+        {
+          "label": "7 days",
+          "is_correct": false
+        },
+        {
+          "label": "9 days",
+          "is_correct": false
+        },
+        {
+          "label": "10 days",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Chain Rule",
+      "kind": "standard",
+      "difficulty": "hard",
+      "answer_type": "single",
+      "stem": "If 15 men working 4 hours a day can finish 5 units of work in 5 days, in how many days can 12 men working 4 hours a day finish 4 units?",
+      "explanation": "Days = (15×4×5×4)/(12×4×5) = 5.",
+      "options": [
+        {
+          "label": "5 days",
+          "is_correct": true
+        },
+        {
+          "label": "7 days",
+          "is_correct": false
+        },
+        {
+          "label": "4 days",
+          "is_correct": false
+        },
+        {
+          "label": "6 days",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Chain Rule",
+      "kind": "standard",
+      "difficulty": "hard",
+      "answer_type": "single",
+      "stem": "If 10 men working 5 hours a day can finish 2 units of work in 4 days, in how many days can 10 men working 7 hours a day finish 7 units?",
+      "explanation": "Days = (10×5×4×7)/(10×7×2) = 10.",
+      "options": [
+        {
+          "label": "12 days",
+          "is_correct": false
+        },
+        {
+          "label": "9 days",
+          "is_correct": false
+        },
+        {
+          "label": "10 days",
+          "is_correct": true
+        },
+        {
+          "label": "11 days",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Chain Rule",
+      "kind": "standard",
+      "difficulty": "hard",
+      "answer_type": "single",
+      "stem": "If 14 pumps working 8 hours a day can empty a reservoir in 9 days, in how many days can 6 pumps working 4 hours a day empty it?",
+      "explanation": "Days = (14×8×9)/(6×4) = 42.",
+      "options": [
+        {
+          "label": "42 days",
+          "is_correct": true
+        },
+        {
+          "label": "44 days",
+          "is_correct": false
+        },
+        {
+          "label": "46 days",
+          "is_correct": false
+        },
+        {
+          "label": "40 days",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Chain Rule",
+      "kind": "standard",
+      "difficulty": "hard",
+      "answer_type": "single",
+      "stem": "If 12 men working 7 hours a day can finish 2 units of work in 9 days, in how many days can 9 men working 6 hours a day finish 4 units?",
+      "explanation": "Days = (12×7×9×4)/(9×6×2) = 28.",
+      "options": [
+        {
+          "label": "30 days",
+          "is_correct": false
+        },
+        {
+          "label": "27 days",
+          "is_correct": false
+        },
+        {
+          "label": "29 days",
+          "is_correct": false
+        },
+        {
+          "label": "28 days",
+          "is_correct": true
+        }
+      ]
+    },
+    {
+      "chapter": "Chain Rule",
+      "kind": "standard",
+      "difficulty": "hard",
+      "answer_type": "single",
+      "stem": "If 8 men working 8 hours a day can finish 2 units of work in 12 days, in how many days can 14 men working 8 hours a day finish 7 units?",
+      "explanation": "Days = (8×8×12×7)/(14×8×2) = 24.",
+      "options": [
+        {
+          "label": "23 days",
+          "is_correct": false
+        },
+        {
+          "label": "25 days",
+          "is_correct": false
+        },
+        {
+          "label": "26 days",
+          "is_correct": false
+        },
+        {
+          "label": "24 days",
+          "is_correct": true
+        }
+      ]
+    },
+    {
+      "chapter": "Chain Rule",
+      "kind": "standard",
+      "difficulty": "hard",
+      "answer_type": "single",
+      "stem": "If 14 men working 10 hours a day can finish 2 units of work in 6 days, in how many days can 20 men working 7 hours a day finish 4 units?",
+      "explanation": "Days = (14×10×6×4)/(20×7×2) = 12.",
+      "options": [
+        {
+          "label": "11 days",
+          "is_correct": false
+        },
+        {
+          "label": "12 days",
+          "is_correct": true
+        },
+        {
+          "label": "14 days",
+          "is_correct": false
+        },
+        {
+          "label": "13 days",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Chain Rule",
+      "kind": "standard",
+      "difficulty": "hard",
+      "answer_type": "single",
+      "stem": "If 12 men working 5 hours a day can finish 5 units of work in 9 days, in how many days can 18 men working 6 hours a day finish 8 units?",
+      "explanation": "Days = (12×5×9×8)/(18×6×5) = 8.",
+      "options": [
+        {
+          "label": "8 days",
+          "is_correct": true
+        },
+        {
+          "label": "10 days",
+          "is_correct": false
+        },
+        {
+          "label": "9 days",
+          "is_correct": false
+        },
+        {
+          "label": "7 days",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Chain Rule",
+      "kind": "standard",
+      "difficulty": "hard",
+      "answer_type": "single",
+      "stem": "If 9 pumps working 10 hours a day can empty a reservoir in 4 days, in how many days can 6 pumps working 10 hours a day empty it?",
+      "explanation": "Days = (9×10×4)/(6×10) = 6.",
+      "options": [
+        {
+          "label": "8 days",
+          "is_correct": false
+        },
+        {
+          "label": "5 days",
+          "is_correct": false
+        },
+        {
+          "label": "6 days",
+          "is_correct": true
+        },
+        {
+          "label": "7 days",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Chain Rule",
+      "kind": "standard",
+      "difficulty": "hard",
+      "answer_type": "single",
+      "stem": "If 7 pumps working 8 hours a day can empty a reservoir in 10 days, in how many days can 14 pumps working 5 hours a day empty it?",
+      "explanation": "Days = (7×8×10)/(14×5) = 8.",
+      "options": [
+        {
+          "label": "9 days",
+          "is_correct": false
+        },
+        {
+          "label": "7 days",
+          "is_correct": false
+        },
+        {
+          "label": "8 days",
+          "is_correct": true
+        },
+        {
+          "label": "10 days",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Chain Rule",
+      "kind": "standard",
+      "difficulty": "hard",
+      "answer_type": "single",
+      "stem": "If 9 pumps working 12 hours a day can empty a reservoir in 12 days, in how many days can 3 pumps working 12 hours a day empty it?",
+      "explanation": "Days = (9×12×12)/(3×12) = 36.",
+      "options": [
+        {
+          "label": "38 days",
+          "is_correct": false
+        },
+        {
+          "label": "37 days",
+          "is_correct": false
+        },
+        {
+          "label": "35 days",
+          "is_correct": false
+        },
+        {
+          "label": "36 days",
+          "is_correct": true
+        }
+      ]
+    },
+    {
+      "chapter": "Chain Rule",
+      "kind": "standard",
+      "difficulty": "hard",
+      "answer_type": "single",
+      "stem": "If 12 pumps working 9 hours a day can empty a reservoir in 5 days, in how many days can 9 pumps working 10 hours a day empty it?",
+      "explanation": "Days = (12×9×5)/(9×10) = 6.",
+      "options": [
+        {
+          "label": "6 days",
+          "is_correct": true
+        },
+        {
+          "label": "8 days",
+          "is_correct": false
+        },
+        {
+          "label": "7 days",
+          "is_correct": false
+        },
+        {
+          "label": "5 days",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Chain Rule",
+      "kind": "standard",
+      "difficulty": "hard",
+      "answer_type": "single",
+      "stem": "If 6 pumps working 12 hours a day can empty a reservoir in 4 days, in how many days can 3 pumps working 12 hours a day empty it?",
+      "explanation": "Days = (6×12×4)/(3×12) = 8.",
+      "options": [
+        {
+          "label": "10 days",
+          "is_correct": false
+        },
+        {
+          "label": "9 days",
+          "is_correct": false
+        },
+        {
+          "label": "7 days",
+          "is_correct": false
+        },
+        {
+          "label": "8 days",
+          "is_correct": true
+        }
+      ]
+    },
+    {
+      "chapter": "Chain Rule",
+      "kind": "standard",
+      "difficulty": "hard",
+      "answer_type": "single",
+      "stem": "If 15 pumps working 7 hours a day can empty a reservoir in 4 days, in how many days can 6 pumps working 7 hours a day empty it?",
+      "explanation": "Days = (15×7×4)/(6×7) = 10.",
+      "options": [
+        {
+          "label": "9 days",
+          "is_correct": false
+        },
+        {
+          "label": "10 days",
+          "is_correct": true
+        },
+        {
+          "label": "11 days",
+          "is_correct": false
+        },
+        {
+          "label": "12 days",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Chain Rule",
+      "kind": "standard",
+      "difficulty": "hard",
+      "answer_type": "single",
+      "stem": "If 14 men working 10 hours a day can finish 5 units of work in 7 days, in how many days can 7 men working 4 hours a day finish 8 units?",
+      "explanation": "Days = (14×10×7×8)/(7×4×5) = 56.",
+      "options": [
+        {
+          "label": "58 days",
+          "is_correct": false
+        },
+        {
+          "label": "56 days",
+          "is_correct": true
+        },
+        {
+          "label": "60 days",
+          "is_correct": false
+        },
+        {
+          "label": "54 days",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Chain Rule",
+      "kind": "standard",
+      "difficulty": "hard",
+      "answer_type": "single",
+      "stem": "If 3 pumps working 8 hours a day can empty a reservoir in 5 days, in how many days can 6 pumps working 4 hours a day empty it?",
+      "explanation": "Days = (3×8×5)/(6×4) = 5.",
+      "options": [
+        {
+          "label": "6 days",
+          "is_correct": false
+        },
+        {
+          "label": "5 days",
+          "is_correct": true
+        },
+        {
+          "label": "4 days",
+          "is_correct": false
+        },
+        {
+          "label": "7 days",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Chain Rule",
+      "kind": "standard",
+      "difficulty": "very_hard",
+      "answer_type": "single",
+      "stem": "If 18 workers can make 6 machines in 10 days, how many days will 6 workers take to make 4 machines (at the same rate)?",
+      "explanation": "Days = (18×10×4)/(6×6) = 20.",
+      "options": [
+        {
+          "label": "19 days",
+          "is_correct": false
+        },
+        {
+          "label": "20 days",
+          "is_correct": true
+        },
+        {
+          "label": "22 days",
+          "is_correct": false
+        },
+        {
+          "label": "21 days",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Chain Rule",
+      "kind": "standard",
+      "difficulty": "very_hard",
+      "answer_type": "single",
+      "stem": "If 6 workers can make 3 machines in 5 days, how many days will 6 workers take to make 6 machines (at the same rate)?",
+      "explanation": "Days = (6×5×6)/(3×6) = 10.",
+      "options": [
+        {
+          "label": "12 days",
+          "is_correct": false
+        },
+        {
+          "label": "11 days",
+          "is_correct": false
+        },
+        {
+          "label": "9 days",
+          "is_correct": false
+        },
+        {
+          "label": "10 days",
+          "is_correct": true
+        }
+      ]
+    },
+    {
+      "chapter": "Chain Rule",
+      "kind": "standard",
+      "difficulty": "very_hard",
+      "answer_type": "single",
+      "stem": "If 9 workers can make 4 machines in 13 days, how many days will 6 workers take to make 8 machines (at the same rate)?",
+      "explanation": "Days = (9×13×8)/(4×6) = 39.",
+      "options": [
+        {
+          "label": "39 days",
+          "is_correct": true
+        },
+        {
+          "label": "40 days",
+          "is_correct": false
+        },
+        {
+          "label": "38 days",
+          "is_correct": false
+        },
+        {
+          "label": "41 days",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Chain Rule",
+      "kind": "standard",
+      "difficulty": "very_hard",
+      "answer_type": "single",
+      "stem": "If 18 workers can make 2 machines in 12 days, how many days will 18 workers take to make 6 machines (at the same rate)?",
+      "explanation": "Days = (18×12×6)/(2×18) = 36.",
+      "options": [
+        {
+          "label": "36 days",
+          "is_correct": true
+        },
+        {
+          "label": "35 days",
+          "is_correct": false
+        },
+        {
+          "label": "37 days",
+          "is_correct": false
+        },
+        {
+          "label": "38 days",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Chain Rule",
+      "kind": "standard",
+      "difficulty": "very_hard",
+      "answer_type": "single",
+      "stem": "A garrison of 660 men has provisions for 55 days. After 28 days, a reinforcement arrives and the remaining provisions now last only 22 more days. Find the number of men in the reinforcement.",
+      "explanation": "Food left = 660×(55−28) = 17820 man-days; total men now = 17820/22 = 810, so reinforcement = 810 − 660 = 150.",
+      "options": [
+        {
+          "label": "152 men",
+          "is_correct": false
+        },
+        {
+          "label": "154 men",
+          "is_correct": false
+        },
+        {
+          "label": "148 men",
+          "is_correct": false
+        },
+        {
+          "label": "150 men",
+          "is_correct": true
+        }
+      ]
+    },
+    {
+      "chapter": "Chain Rule",
+      "kind": "standard",
+      "difficulty": "very_hard",
+      "answer_type": "single",
+      "stem": "A garrison of 540 men has provisions for 41 days. After 29 days, a reinforcement arrives and the remaining provisions now last only 10 more days. Find the number of men in the reinforcement.",
+      "explanation": "Food left = 540×(41−29) = 6480 man-days; total men now = 6480/10 = 648, so reinforcement = 648 − 540 = 108.",
+      "options": [
+        {
+          "label": "110 men",
+          "is_correct": false
+        },
+        {
+          "label": "108 men",
+          "is_correct": true
+        },
+        {
+          "label": "112 men",
+          "is_correct": false
+        },
+        {
+          "label": "106 men",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Chain Rule",
+      "kind": "standard",
+      "difficulty": "very_hard",
+      "answer_type": "single",
+      "stem": "If 15 workers can make 3 machines in 7 days, how many days will 20 workers take to make 8 machines (at the same rate)?",
+      "explanation": "Days = (15×7×8)/(3×20) = 14.",
+      "options": [
+        {
+          "label": "13 days",
+          "is_correct": false
+        },
+        {
+          "label": "15 days",
+          "is_correct": false
+        },
+        {
+          "label": "14 days",
+          "is_correct": true
+        },
+        {
+          "label": "16 days",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Chain Rule",
+      "kind": "standard",
+      "difficulty": "very_hard",
+      "answer_type": "single",
+      "stem": "A garrison of 860 men has provisions for 71 days. After 46 days, a reinforcement arrives and the remaining provisions now last only 20 more days. Find the number of men in the reinforcement.",
+      "explanation": "Food left = 860×(71−46) = 21500 man-days; total men now = 21500/20 = 1075, so reinforcement = 1075 − 860 = 215.",
+      "options": [
+        {
+          "label": "233 men",
+          "is_correct": false
+        },
+        {
+          "label": "215 men",
+          "is_correct": true
+        },
+        {
+          "label": "206 men",
+          "is_correct": false
+        },
+        {
+          "label": "224 men",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Chain Rule",
+      "kind": "standard",
+      "difficulty": "very_hard",
+      "answer_type": "single",
+      "stem": "If 18 men working 5 hours a day can complete a task in 18 days, in how many days can 45 men working 4 hours a day complete the same task?",
+      "explanation": "Days = (18×18×5)/(45×4) = 9.",
+      "options": [
+        {
+          "label": "11 days",
+          "is_correct": false
+        },
+        {
+          "label": "10 days",
+          "is_correct": false
+        },
+        {
+          "label": "8 days",
+          "is_correct": false
+        },
+        {
+          "label": "9 days",
+          "is_correct": true
+        }
+      ]
+    },
+    {
+      "chapter": "Chain Rule",
+      "kind": "standard",
+      "difficulty": "very_hard",
+      "answer_type": "single",
+      "stem": "If 28 men working 10 hours a day can complete a task in 38 days, in how many days can 38 men working 4 hours a day complete the same task?",
+      "explanation": "Days = (28×38×10)/(38×4) = 70.",
+      "options": [
+        {
+          "label": "72 days",
+          "is_correct": false
+        },
+        {
+          "label": "68 days",
+          "is_correct": false
+        },
+        {
+          "label": "70 days",
+          "is_correct": true
+        },
+        {
+          "label": "74 days",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Chain Rule",
+      "kind": "standard",
+      "difficulty": "very_hard",
+      "answer_type": "single",
+      "stem": "If 10 workers can make 5 machines in 9 days, how many days will 12 workers take to make 8 machines (at the same rate)?",
+      "explanation": "Days = (10×9×8)/(5×12) = 12.",
+      "options": [
+        {
+          "label": "13 days",
+          "is_correct": false
+        },
+        {
+          "label": "12 days",
+          "is_correct": true
+        },
+        {
+          "label": "14 days",
+          "is_correct": false
+        },
+        {
+          "label": "11 days",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Chain Rule",
+      "kind": "standard",
+      "difficulty": "very_hard",
+      "answer_type": "single",
+      "stem": "A garrison of 460 men has provisions for 58 days. After 37 days, a reinforcement arrives and the remaining provisions now last only 14 more days. Find the number of men in the reinforcement.",
+      "explanation": "Food left = 460×(58−37) = 9660 man-days; total men now = 9660/14 = 690, so reinforcement = 690 − 460 = 230.",
+      "options": [
+        {
+          "label": "248 men",
+          "is_correct": false
+        },
+        {
+          "label": "230 men",
+          "is_correct": true
+        },
+        {
+          "label": "239 men",
+          "is_correct": false
+        },
+        {
+          "label": "221 men",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Chain Rule",
+      "kind": "standard",
+      "difficulty": "very_hard",
+      "answer_type": "single",
+      "stem": "If 11 workers can make 3 machines in 6 days, how many days will 6 workers take to make 3 machines (at the same rate)?",
+      "explanation": "Days = (11×6×3)/(3×6) = 11.",
+      "options": [
+        {
+          "label": "10 days",
+          "is_correct": false
+        },
+        {
+          "label": "12 days",
+          "is_correct": false
+        },
+        {
+          "label": "11 days",
+          "is_correct": true
+        },
+        {
+          "label": "13 days",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Chain Rule",
+      "kind": "standard",
+      "difficulty": "very_hard",
+      "answer_type": "single",
+      "stem": "If 44 men working 9 hours a day can complete a task in 29 days, in how many days can 33 men working 4 hours a day complete the same task?",
+      "explanation": "Days = (44×29×9)/(33×4) = 87.",
+      "options": [
+        {
+          "label": "89 days",
+          "is_correct": false
+        },
+        {
+          "label": "85 days",
+          "is_correct": false
+        },
+        {
+          "label": "87 days",
+          "is_correct": true
+        },
+        {
+          "label": "91 days",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Chain Rule",
+      "kind": "standard",
+      "difficulty": "very_hard",
+      "answer_type": "single",
+      "stem": "If 15 workers can make 3 machines in 5 days, how many days will 10 workers take to make 4 machines (at the same rate)?",
+      "explanation": "Days = (15×5×4)/(3×10) = 10.",
+      "options": [
+        {
+          "label": "9 days",
+          "is_correct": false
+        },
+        {
+          "label": "12 days",
+          "is_correct": false
+        },
+        {
+          "label": "10 days",
+          "is_correct": true
+        },
+        {
+          "label": "11 days",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Chain Rule",
+      "kind": "standard",
+      "difficulty": "very_hard",
+      "answer_type": "single",
+      "stem": "If 8 workers can make 6 machines in 4 days, how many days will 8 workers take to make 3 machines (at the same rate)?",
+      "explanation": "Days = (8×4×3)/(6×8) = 2.",
+      "options": [
+        {
+          "label": "1 days",
+          "is_correct": false
+        },
+        {
+          "label": "3 days",
+          "is_correct": false
+        },
+        {
+          "label": "2 days",
+          "is_correct": true
+        },
+        {
+          "label": "4 days",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Chain Rule",
+      "kind": "standard",
+      "difficulty": "very_hard",
+      "answer_type": "single",
+      "stem": "If 10 workers can make 3 machines in 5 days, how many days will 20 workers take to make 6 machines (at the same rate)?",
+      "explanation": "Days = (10×5×6)/(3×20) = 5.",
+      "options": [
+        {
+          "label": "5 days",
+          "is_correct": true
+        },
+        {
+          "label": "6 days",
+          "is_correct": false
+        },
+        {
+          "label": "4 days",
+          "is_correct": false
+        },
+        {
+          "label": "7 days",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Chain Rule",
+      "kind": "standard",
+      "difficulty": "very_hard",
+      "answer_type": "single",
+      "stem": "A garrison of 870 men has provisions for 42 days. After 29 days, a reinforcement arrives and the remaining provisions now last only 10 more days. Find the number of men in the reinforcement.",
+      "explanation": "Food left = 870×(42−29) = 11310 man-days; total men now = 11310/10 = 1131, so reinforcement = 1131 − 870 = 261.",
+      "options": [
+        {
+          "label": "261 men",
+          "is_correct": true
+        },
+        {
+          "label": "271 men",
+          "is_correct": false
+        },
+        {
+          "label": "251 men",
+          "is_correct": false
+        },
+        {
+          "label": "281 men",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Chain Rule",
+      "kind": "standard",
+      "difficulty": "very_hard",
+      "answer_type": "single",
+      "stem": "A garrison of 950 men has provisions for 56 days. After 26 days, a reinforcement arrives and the remaining provisions now last only 25 more days. Find the number of men in the reinforcement.",
+      "explanation": "Food left = 950×(56−26) = 28500 man-days; total men now = 28500/25 = 1140, so reinforcement = 1140 − 950 = 190.",
+      "options": [
+        {
+          "label": "188 men",
+          "is_correct": false
+        },
+        {
+          "label": "192 men",
+          "is_correct": false
+        },
+        {
+          "label": "194 men",
+          "is_correct": false
+        },
+        {
+          "label": "190 men",
+          "is_correct": true
+        }
+      ]
+    },
+    {
+      "chapter": "Chain Rule",
+      "kind": "standard",
+      "difficulty": "very_hard",
+      "answer_type": "single",
+      "stem": "A garrison of 690 men has provisions for 33 days. After 15 days, a reinforcement arrives and the remaining provisions now last only 15 more days. Find the number of men in the reinforcement.",
+      "explanation": "Food left = 690×(33−15) = 12420 man-days; total men now = 12420/15 = 828, so reinforcement = 828 − 690 = 138.",
+      "options": [
+        {
+          "label": "138 men",
+          "is_correct": true
+        },
+        {
+          "label": "140 men",
+          "is_correct": false
+        },
+        {
+          "label": "142 men",
+          "is_correct": false
+        },
+        {
+          "label": "136 men",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Chain Rule",
+      "kind": "standard",
+      "difficulty": "very_hard",
+      "answer_type": "single",
+      "stem": "If 20 workers can make 2 machines in 14 days, how many days will 8 workers take to make 4 machines (at the same rate)?",
+      "explanation": "Days = (20×14×4)/(2×8) = 70.",
+      "options": [
+        {
+          "label": "74 days",
+          "is_correct": false
+        },
+        {
+          "label": "72 days",
+          "is_correct": false
+        },
+        {
+          "label": "68 days",
+          "is_correct": false
+        },
+        {
+          "label": "70 days",
+          "is_correct": true
+        }
+      ]
+    },
+    {
+      "chapter": "Chain Rule",
+      "kind": "standard",
+      "difficulty": "very_hard",
+      "answer_type": "single",
+      "stem": "A garrison of 900 men has provisions for 77 days. After 66 days, a reinforcement arrives and the remaining provisions now last only 10 more days. Find the number of men in the reinforcement.",
+      "explanation": "Food left = 900×(77−66) = 9900 man-days; total men now = 9900/10 = 990, so reinforcement = 990 − 900 = 90.",
+      "options": [
+        {
+          "label": "94 men",
+          "is_correct": false
+        },
+        {
+          "label": "88 men",
+          "is_correct": false
+        },
+        {
+          "label": "90 men",
+          "is_correct": true
+        },
+        {
+          "label": "92 men",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Chain Rule",
+      "kind": "standard",
+      "difficulty": "very_hard",
+      "answer_type": "single",
+      "stem": "A garrison of 720 men has provisions for 59 days. After 31 days, a reinforcement arrives and the remaining provisions now last only 16 more days. Find the number of men in the reinforcement.",
+      "explanation": "Food left = 720×(59−31) = 20160 man-days; total men now = 20160/16 = 1260, so reinforcement = 1260 − 720 = 540.",
+      "options": [
+        {
+          "label": "562 men",
+          "is_correct": false
+        },
+        {
+          "label": "540 men",
+          "is_correct": true
+        },
+        {
+          "label": "584 men",
+          "is_correct": false
+        },
+        {
+          "label": "518 men",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Chain Rule",
+      "kind": "standard",
+      "difficulty": "very_hard",
+      "answer_type": "single",
+      "stem": "A garrison of 870 men has provisions for 61 days. After 35 days, a reinforcement arrives and the remaining provisions now last only 13 more days. Find the number of men in the reinforcement.",
+      "explanation": "Food left = 870×(61−35) = 22620 man-days; total men now = 22620/13 = 1740, so reinforcement = 1740 − 870 = 870.",
+      "options": [
+        {
+          "label": "940 men",
+          "is_correct": false
+        },
+        {
+          "label": "870 men",
+          "is_correct": true
+        },
+        {
+          "label": "905 men",
+          "is_correct": false
+        },
+        {
+          "label": "835 men",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Chain Rule",
+      "kind": "standard",
+      "difficulty": "very_hard",
+      "answer_type": "single",
+      "stem": "A garrison of 940 men has provisions for 59 days. After 30 days, a reinforcement arrives and the remaining provisions now last only 10 more days. Find the number of men in the reinforcement.",
+      "explanation": "Food left = 940×(59−30) = 27260 man-days; total men now = 27260/10 = 2726, so reinforcement = 2726 − 940 = 1786.",
+      "options": [
+        {
+          "label": "1928 men",
+          "is_correct": false
+        },
+        {
+          "label": "1715 men",
+          "is_correct": false
+        },
+        {
+          "label": "1786 men",
+          "is_correct": true
+        },
+        {
+          "label": "1857 men",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Chain Rule",
+      "kind": "standard",
+      "difficulty": "very_hard",
+      "answer_type": "single",
+      "stem": "If 23 men working 8 hours a day can complete a task in 22 days, in how many days can 23 men working 4 hours a day complete the same task?",
+      "explanation": "Days = (23×22×8)/(23×4) = 44.",
+      "options": [
+        {
+          "label": "46 days",
+          "is_correct": false
+        },
+        {
+          "label": "48 days",
+          "is_correct": false
+        },
+        {
+          "label": "44 days",
+          "is_correct": true
+        },
+        {
+          "label": "42 days",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Chain Rule",
+      "kind": "standard",
+      "difficulty": "very_hard",
+      "answer_type": "single",
+      "stem": "If 12 workers can make 3 machines in 9 days, how many days will 18 workers take to make 6 machines (at the same rate)?",
+      "explanation": "Days = (12×9×6)/(3×18) = 12.",
+      "options": [
+        {
+          "label": "12 days",
+          "is_correct": true
+        },
+        {
+          "label": "14 days",
+          "is_correct": false
+        },
+        {
+          "label": "13 days",
+          "is_correct": false
+        },
+        {
+          "label": "11 days",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Chain Rule",
+      "kind": "standard",
+      "difficulty": "very_hard",
+      "answer_type": "single",
+      "stem": "If 60 men working 6 hours a day can complete a task in 30 days, in how many days can 16 men working 5 hours a day complete the same task?",
+      "explanation": "Days = (60×30×6)/(16×5) = 135.",
+      "options": [
+        {
+          "label": "139 days",
+          "is_correct": false
+        },
+        {
+          "label": "137 days",
+          "is_correct": false
+        },
+        {
+          "label": "133 days",
+          "is_correct": false
+        },
+        {
+          "label": "135 days",
+          "is_correct": true
+        }
+      ]
+    },
+    {
+      "chapter": "Chain Rule",
+      "kind": "standard",
+      "difficulty": "very_hard",
+      "answer_type": "single",
+      "stem": "If 12 workers can make 4 machines in 10 days, how many days will 6 workers take to make 4 machines (at the same rate)?",
+      "explanation": "Days = (12×10×4)/(4×6) = 20.",
+      "options": [
+        {
+          "label": "20 days",
+          "is_correct": true
+        },
+        {
+          "label": "22 days",
+          "is_correct": false
+        },
+        {
+          "label": "19 days",
+          "is_correct": false
+        },
+        {
+          "label": "21 days",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Chain Rule",
+      "kind": "standard",
+      "difficulty": "very_hard",
+      "answer_type": "single",
+      "stem": "If 15 workers can make 2 machines in 8 days, how many days will 12 workers take to make 6 machines (at the same rate)?",
+      "explanation": "Days = (15×8×6)/(2×12) = 30.",
+      "options": [
+        {
+          "label": "32 days",
+          "is_correct": false
+        },
+        {
+          "label": "29 days",
+          "is_correct": false
+        },
+        {
+          "label": "30 days",
+          "is_correct": true
+        },
+        {
+          "label": "31 days",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Chain Rule",
+      "kind": "standard",
+      "difficulty": "very_hard",
+      "answer_type": "single",
+      "stem": "A garrison of 990 men has provisions for 55 days. After 29 days, a reinforcement arrives and the remaining provisions now last only 10 more days. Find the number of men in the reinforcement.",
+      "explanation": "Food left = 990×(55−29) = 25740 man-days; total men now = 25740/10 = 2574, so reinforcement = 2574 − 990 = 1584.",
+      "options": [
+        {
+          "label": "1647 men",
+          "is_correct": false
+        },
+        {
+          "label": "1710 men",
+          "is_correct": false
+        },
+        {
+          "label": "1521 men",
+          "is_correct": false
+        },
+        {
+          "label": "1584 men",
+          "is_correct": true
+        }
+      ]
+    },
+    {
+      "chapter": "Chain Rule",
+      "kind": "standard",
+      "difficulty": "very_hard",
+      "answer_type": "single",
+      "stem": "If 13 workers can make 4 machines in 12 days, how many days will 12 workers take to make 4 machines (at the same rate)?",
+      "explanation": "Days = (13×12×4)/(4×12) = 13.",
+      "options": [
+        {
+          "label": "15 days",
+          "is_correct": false
+        },
+        {
+          "label": "14 days",
+          "is_correct": false
+        },
+        {
+          "label": "12 days",
+          "is_correct": false
+        },
+        {
+          "label": "13 days",
+          "is_correct": true
+        }
+      ]
+    },
+    {
+      "chapter": "Chain Rule",
+      "kind": "standard",
+      "difficulty": "very_hard",
+      "answer_type": "single",
+      "stem": "A garrison of 570 men has provisions for 74 days. After 18 days, a reinforcement arrives and the remaining provisions now last only 38 more days. Find the number of men in the reinforcement.",
+      "explanation": "Food left = 570×(74−18) = 31920 man-days; total men now = 31920/38 = 840, so reinforcement = 840 − 570 = 270.",
+      "options": [
+        {
+          "label": "281 men",
+          "is_correct": false
+        },
+        {
+          "label": "259 men",
+          "is_correct": false
+        },
+        {
+          "label": "292 men",
+          "is_correct": false
+        },
+        {
+          "label": "270 men",
+          "is_correct": true
+        }
+      ]
+    },
+    {
+      "chapter": "Chain Rule",
+      "kind": "standard",
+      "difficulty": "very_hard",
+      "answer_type": "single",
+      "stem": "A garrison of 450 men has provisions for 68 days. After 39 days, a reinforcement arrives and the remaining provisions now last only 15 more days. Find the number of men in the reinforcement.",
+      "explanation": "Food left = 450×(68−39) = 13050 man-days; total men now = 13050/15 = 870, so reinforcement = 870 − 450 = 420.",
+      "options": [
+        {
+          "label": "420 men",
+          "is_correct": true
+        },
+        {
+          "label": "437 men",
+          "is_correct": false
+        },
+        {
+          "label": "454 men",
+          "is_correct": false
+        },
+        {
+          "label": "403 men",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Chain Rule",
+      "kind": "standard",
+      "difficulty": "very_hard",
+      "answer_type": "single",
+      "stem": "A garrison of 830 men has provisions for 50 days. After 26 days, a reinforcement arrives and the remaining provisions now last only 15 more days. Find the number of men in the reinforcement.",
+      "explanation": "Food left = 830×(50−26) = 19920 man-days; total men now = 19920/15 = 1328, so reinforcement = 1328 − 830 = 498.",
+      "options": [
+        {
+          "label": "478 men",
+          "is_correct": false
+        },
+        {
+          "label": "498 men",
+          "is_correct": true
+        },
+        {
+          "label": "518 men",
+          "is_correct": false
+        },
+        {
+          "label": "538 men",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Chain Rule",
+      "kind": "standard",
+      "difficulty": "very_hard",
+      "answer_type": "single",
+      "stem": "If 16 workers can make 4 machines in 6 days, how many days will 16 workers take to make 6 machines (at the same rate)?",
+      "explanation": "Days = (16×6×6)/(4×16) = 9.",
+      "options": [
+        {
+          "label": "11 days",
+          "is_correct": false
+        },
+        {
+          "label": "8 days",
+          "is_correct": false
+        },
+        {
+          "label": "10 days",
+          "is_correct": false
+        },
+        {
+          "label": "9 days",
+          "is_correct": true
+        }
+      ]
+    },
+    {
+      "chapter": "Chain Rule",
+      "kind": "standard",
+      "difficulty": "very_hard",
+      "answer_type": "single",
+      "stem": "A garrison of 490 men has provisions for 59 days. After 37 days, a reinforcement arrives and the remaining provisions now last only 10 more days. Find the number of men in the reinforcement.",
+      "explanation": "Food left = 490×(59−37) = 10780 man-days; total men now = 10780/10 = 1078, so reinforcement = 1078 − 490 = 588.",
+      "options": [
+        {
+          "label": "636 men",
+          "is_correct": false
+        },
+        {
+          "label": "564 men",
+          "is_correct": false
+        },
+        {
+          "label": "588 men",
+          "is_correct": true
+        },
+        {
+          "label": "612 men",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Chain Rule",
+      "kind": "standard",
+      "difficulty": "very_hard",
+      "answer_type": "single",
+      "stem": "If 20 workers can make 2 machines in 11 days, how many days will 15 workers take to make 6 machines (at the same rate)?",
+      "explanation": "Days = (20×11×6)/(2×15) = 44.",
+      "options": [
+        {
+          "label": "44 days",
+          "is_correct": true
+        },
+        {
+          "label": "42 days",
+          "is_correct": false
+        },
+        {
+          "label": "46 days",
+          "is_correct": false
+        },
+        {
+          "label": "48 days",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Chain Rule",
+      "kind": "standard",
+      "difficulty": "very_hard",
+      "answer_type": "single",
+      "stem": "A garrison of 840 men has provisions for 60 days. After 16 days, a reinforcement arrives and the remaining provisions now last only 14 more days. Find the number of men in the reinforcement.",
+      "explanation": "Food left = 840×(60−16) = 36960 man-days; total men now = 36960/14 = 2640, so reinforcement = 2640 − 840 = 1800.",
+      "options": [
+        {
+          "label": "1872 men",
+          "is_correct": false
+        },
+        {
+          "label": "1728 men",
+          "is_correct": false
+        },
+        {
+          "label": "1800 men",
+          "is_correct": true
+        },
+        {
+          "label": "1944 men",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Chain Rule",
+      "kind": "standard",
+      "difficulty": "very_hard",
+      "answer_type": "single",
+      "stem": "If 6 workers can make 4 machines in 13 days, how many days will 13 workers take to make 2 machines (at the same rate)?",
+      "explanation": "Days = (6×13×2)/(4×13) = 3.",
+      "options": [
+        {
+          "label": "4 days",
+          "is_correct": false
+        },
+        {
+          "label": "2 days",
+          "is_correct": false
+        },
+        {
+          "label": "5 days",
+          "is_correct": false
+        },
+        {
+          "label": "3 days",
+          "is_correct": true
+        }
+      ]
+    },
+    {
+      "chapter": "Chain Rule",
+      "kind": "standard",
+      "difficulty": "very_hard",
+      "answer_type": "single",
+      "stem": "If 20 workers can make 3 machines in 13 days, how many days will 10 workers take to make 3 machines (at the same rate)?",
+      "explanation": "Days = (20×13×3)/(3×10) = 26.",
+      "options": [
+        {
+          "label": "26 days",
+          "is_correct": true
+        },
+        {
+          "label": "25 days",
+          "is_correct": false
+        },
+        {
+          "label": "28 days",
+          "is_correct": false
+        },
+        {
+          "label": "27 days",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Chain Rule",
+      "kind": "standard",
+      "difficulty": "very_hard",
+      "answer_type": "single",
+      "stem": "A garrison of 970 men has provisions for 66 days. After 25 days, a reinforcement arrives and the remaining provisions now last only 10 more days. Find the number of men in the reinforcement.",
+      "explanation": "Food left = 970×(66−25) = 39770 man-days; total men now = 39770/10 = 3977, so reinforcement = 3977 − 970 = 3007.",
+      "options": [
+        {
+          "label": "2887 men",
+          "is_correct": false
+        },
+        {
+          "label": "3247 men",
+          "is_correct": false
+        },
+        {
+          "label": "3007 men",
+          "is_correct": true
+        },
+        {
+          "label": "3127 men",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Chain Rule",
+      "kind": "standard",
+      "difficulty": "very_hard",
+      "answer_type": "single",
+      "stem": "If 16 workers can make 2 machines in 6 days, how many days will 6 workers take to make 5 machines (at the same rate)?",
+      "explanation": "Days = (16×6×5)/(2×6) = 40.",
+      "options": [
+        {
+          "label": "44 days",
+          "is_correct": false
+        },
+        {
+          "label": "40 days",
+          "is_correct": true
+        },
+        {
+          "label": "38 days",
+          "is_correct": false
+        },
+        {
+          "label": "42 days",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Chain Rule",
+      "kind": "standard",
+      "difficulty": "very_hard",
+      "answer_type": "single",
+      "stem": "A garrison of 750 men has provisions for 47 days. After 17 days, a reinforcement arrives and the remaining provisions now last only 18 more days. Find the number of men in the reinforcement.",
+      "explanation": "Food left = 750×(47−17) = 22500 man-days; total men now = 22500/18 = 1250, so reinforcement = 1250 − 750 = 500.",
+      "options": [
+        {
+          "label": "480 men",
+          "is_correct": false
+        },
+        {
+          "label": "540 men",
+          "is_correct": false
+        },
+        {
+          "label": "500 men",
+          "is_correct": true
+        },
+        {
+          "label": "520 men",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Chain Rule",
+      "kind": "standard",
+      "difficulty": "very_hard",
+      "answer_type": "single",
+      "stem": "A garrison of 720 men has provisions for 73 days. After 25 days, a reinforcement arrives and the remaining provisions now last only 18 more days. Find the number of men in the reinforcement.",
+      "explanation": "Food left = 720×(73−25) = 34560 man-days; total men now = 34560/18 = 1920, so reinforcement = 1920 − 720 = 1200.",
+      "options": [
+        {
+          "label": "1248 men",
+          "is_correct": false
+        },
+        {
+          "label": "1200 men",
+          "is_correct": true
+        },
+        {
+          "label": "1296 men",
+          "is_correct": false
+        },
+        {
+          "label": "1152 men",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Chain Rule",
+      "kind": "standard",
+      "difficulty": "very_hard",
+      "answer_type": "single",
+      "stem": "A garrison of 690 men has provisions for 53 days. After 23 days, a reinforcement arrives and the remaining provisions now last only 20 more days. Find the number of men in the reinforcement.",
+      "explanation": "Food left = 690×(53−23) = 20700 man-days; total men now = 20700/20 = 1035, so reinforcement = 1035 − 690 = 345.",
+      "options": [
+        {
+          "label": "331 men",
+          "is_correct": false
+        },
+        {
+          "label": "373 men",
+          "is_correct": false
+        },
+        {
+          "label": "345 men",
+          "is_correct": true
+        },
+        {
+          "label": "359 men",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Chain Rule",
+      "kind": "standard",
+      "difficulty": "very_hard",
+      "answer_type": "single",
+      "stem": "A garrison of 940 men has provisions for 80 days. After 41 days, a reinforcement arrives and the remaining provisions now last only 20 more days. Find the number of men in the reinforcement.",
+      "explanation": "Food left = 940×(80−41) = 36660 man-days; total men now = 36660/20 = 1833, so reinforcement = 1833 − 940 = 893.",
+      "options": [
+        {
+          "label": "857 men",
+          "is_correct": false
+        },
+        {
+          "label": "929 men",
+          "is_correct": false
+        },
+        {
+          "label": "893 men",
+          "is_correct": true
+        },
+        {
+          "label": "965 men",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Chain Rule",
+      "kind": "standard",
+      "difficulty": "very_hard",
+      "answer_type": "single",
+      "stem": "A garrison of 600 men has provisions for 65 days. After 44 days, a reinforcement arrives and the remaining provisions now last only 20 more days. Find the number of men in the reinforcement.",
+      "explanation": "Food left = 600×(65−44) = 12600 man-days; total men now = 12600/20 = 630, so reinforcement = 630 − 600 = 30.",
+      "options": [
+        {
+          "label": "30 men",
+          "is_correct": true
+        },
+        {
+          "label": "29 men",
+          "is_correct": false
+        },
+        {
+          "label": "31 men",
+          "is_correct": false
+        },
+        {
+          "label": "32 men",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Chain Rule",
+      "kind": "standard",
+      "difficulty": "very_hard",
+      "answer_type": "single",
+      "stem": "A garrison of 860 men has provisions for 38 days. After 26 days, a reinforcement arrives and the remaining provisions now last only 10 more days. Find the number of men in the reinforcement.",
+      "explanation": "Food left = 860×(38−26) = 10320 man-days; total men now = 10320/10 = 1032, so reinforcement = 1032 − 860 = 172.",
+      "options": [
+        {
+          "label": "172 men",
+          "is_correct": true
+        },
+        {
+          "label": "174 men",
+          "is_correct": false
+        },
+        {
+          "label": "170 men",
+          "is_correct": false
+        },
+        {
+          "label": "176 men",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Chain Rule",
+      "kind": "standard",
+      "difficulty": "very_hard",
+      "answer_type": "single",
+      "stem": "If 16 workers can make 4 machines in 6 days, how many days will 16 workers take to make 2 machines (at the same rate)?",
+      "explanation": "Days = (16×6×2)/(4×16) = 3.",
+      "options": [
+        {
+          "label": "4 days",
+          "is_correct": false
+        },
+        {
+          "label": "5 days",
+          "is_correct": false
+        },
+        {
+          "label": "2 days",
+          "is_correct": false
+        },
+        {
+          "label": "3 days",
+          "is_correct": true
+        }
+      ]
+    }
+  ]
+}

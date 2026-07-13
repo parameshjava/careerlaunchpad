@@ -1,0 +1,5205 @@
+{
+  "subject": "Arithmetic",
+  "questions": [
+    {
+      "chapter": "True Discount",
+      "kind": "standard",
+      "difficulty": "easy",
+      "answer_type": "single",
+      "stem": "Find the true discount on ₹3000 due 1 year(s) hence at 20% per annum.",
+      "explanation": "TD = A×RT/(100+RT) = 3000×20/(100+20) = ₹500.",
+      "options": [
+        {
+          "label": "₹480",
+          "is_correct": false
+        },
+        {
+          "label": "₹500",
+          "is_correct": true
+        },
+        {
+          "label": "₹520",
+          "is_correct": false
+        },
+        {
+          "label": "₹540",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "True Discount",
+      "kind": "standard",
+      "difficulty": "easy",
+      "answer_type": "single",
+      "stem": "A sum of ₹1300 is due 3 year(s) hence. Find its present worth at 10% per annum (true discount method).",
+      "explanation": "PW = 100×A/(100+RT) = 100×1300/(100+30) = ₹1000.",
+      "options": [
+        {
+          "label": "₹1040",
+          "is_correct": false
+        },
+        {
+          "label": "₹1000",
+          "is_correct": true
+        },
+        {
+          "label": "₹960",
+          "is_correct": false
+        },
+        {
+          "label": "₹1080",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "True Discount",
+      "kind": "standard",
+      "difficulty": "easy",
+      "answer_type": "single",
+      "stem": "A sum of ₹2400 is due 2 year(s) hence. Find its present worth at 10% per annum (true discount method).",
+      "explanation": "PW = 100×A/(100+RT) = 100×2400/(100+20) = ₹2000.",
+      "options": [
+        {
+          "label": "₹2160",
+          "is_correct": false
+        },
+        {
+          "label": "₹2080",
+          "is_correct": false
+        },
+        {
+          "label": "₹1920",
+          "is_correct": false
+        },
+        {
+          "label": "₹2000",
+          "is_correct": true
+        }
+      ]
+    },
+    {
+      "chapter": "True Discount",
+      "kind": "standard",
+      "difficulty": "easy",
+      "answer_type": "single",
+      "stem": "Find the true discount on ₹2600 due 3 year(s) hence at 10% per annum.",
+      "explanation": "TD = A×RT/(100+RT) = 2600×30/(100+30) = ₹600.",
+      "options": [
+        {
+          "label": "₹600",
+          "is_correct": true
+        },
+        {
+          "label": "₹624",
+          "is_correct": false
+        },
+        {
+          "label": "₹576",
+          "is_correct": false
+        },
+        {
+          "label": "₹648",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "True Discount",
+      "kind": "standard",
+      "difficulty": "easy",
+      "answer_type": "single",
+      "stem": "A sum of ₹5500 is due 1 year(s) hence. Find its present worth at 10% per annum (true discount method).",
+      "explanation": "PW = 100×A/(100+RT) = 100×5500/(100+10) = ₹5000.",
+      "options": [
+        {
+          "label": "₹5200",
+          "is_correct": false
+        },
+        {
+          "label": "₹5000",
+          "is_correct": true
+        },
+        {
+          "label": "₹5400",
+          "is_correct": false
+        },
+        {
+          "label": "₹4800",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "True Discount",
+      "kind": "standard",
+      "difficulty": "easy",
+      "answer_type": "single",
+      "stem": "A sum of ₹2100 is due 2 year(s) hence. Find its present worth at 20% per annum (true discount method).",
+      "explanation": "PW = 100×A/(100+RT) = 100×2100/(100+40) = ₹1500.",
+      "options": [
+        {
+          "label": "₹1560",
+          "is_correct": false
+        },
+        {
+          "label": "₹1500",
+          "is_correct": true
+        },
+        {
+          "label": "₹1620",
+          "is_correct": false
+        },
+        {
+          "label": "₹1440",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "True Discount",
+      "kind": "standard",
+      "difficulty": "easy",
+      "answer_type": "single",
+      "stem": "Find the true discount on ₹2400 due 2 year(s) hence at 10% per annum.",
+      "explanation": "TD = A×RT/(100+RT) = 2400×20/(100+20) = ₹400.",
+      "options": [
+        {
+          "label": "₹416",
+          "is_correct": false
+        },
+        {
+          "label": "₹384",
+          "is_correct": false
+        },
+        {
+          "label": "₹400",
+          "is_correct": true
+        },
+        {
+          "label": "₹432",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "True Discount",
+      "kind": "standard",
+      "difficulty": "easy",
+      "answer_type": "single",
+      "stem": "Find the true discount on ₹3200 due 6 year(s) hence at 10% per annum.",
+      "explanation": "TD = A×RT/(100+RT) = 3200×60/(100+60) = ₹1200.",
+      "options": [
+        {
+          "label": "₹1200",
+          "is_correct": true
+        },
+        {
+          "label": "₹1296",
+          "is_correct": false
+        },
+        {
+          "label": "₹1248",
+          "is_correct": false
+        },
+        {
+          "label": "₹1152",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "True Discount",
+      "kind": "standard",
+      "difficulty": "easy",
+      "answer_type": "single",
+      "stem": "A sum of ₹4000 is due 3 year(s) hence. Find its present worth at 20% per annum (true discount method).",
+      "explanation": "PW = 100×A/(100+RT) = 100×4000/(100+60) = ₹2500.",
+      "options": [
+        {
+          "label": "₹2400",
+          "is_correct": false
+        },
+        {
+          "label": "₹2600",
+          "is_correct": false
+        },
+        {
+          "label": "₹2500",
+          "is_correct": true
+        },
+        {
+          "label": "₹2700",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "True Discount",
+      "kind": "standard",
+      "difficulty": "easy",
+      "answer_type": "single",
+      "stem": "The present worth of a sum due later is ₹2000 and the true discount on it is ₹800. Find the sum due.",
+      "explanation": "Sum due = present worth + true discount = ₹2000 + ₹800 = ₹2800.",
+      "options": [
+        {
+          "label": "₹2912",
+          "is_correct": false
+        },
+        {
+          "label": "₹2688",
+          "is_correct": false
+        },
+        {
+          "label": "₹3024",
+          "is_correct": false
+        },
+        {
+          "label": "₹2800",
+          "is_correct": true
+        }
+      ]
+    },
+    {
+      "chapter": "True Discount",
+      "kind": "standard",
+      "difficulty": "easy",
+      "answer_type": "single",
+      "stem": "Find the true discount on ₹3000 due 4 year(s) hence at 5% per annum.",
+      "explanation": "TD = A×RT/(100+RT) = 3000×20/(100+20) = ₹500.",
+      "options": [
+        {
+          "label": "₹480",
+          "is_correct": false
+        },
+        {
+          "label": "₹540",
+          "is_correct": false
+        },
+        {
+          "label": "₹520",
+          "is_correct": false
+        },
+        {
+          "label": "₹500",
+          "is_correct": true
+        }
+      ]
+    },
+    {
+      "chapter": "True Discount",
+      "kind": "standard",
+      "difficulty": "easy",
+      "answer_type": "single",
+      "stem": "A sum of ₹600 is due 1 year(s) hence. Find its present worth at 20% per annum (true discount method).",
+      "explanation": "PW = 100×A/(100+RT) = 100×600/(100+20) = ₹500.",
+      "options": [
+        {
+          "label": "₹520",
+          "is_correct": false
+        },
+        {
+          "label": "₹540",
+          "is_correct": false
+        },
+        {
+          "label": "₹480",
+          "is_correct": false
+        },
+        {
+          "label": "₹500",
+          "is_correct": true
+        }
+      ]
+    },
+    {
+      "chapter": "True Discount",
+      "kind": "standard",
+      "difficulty": "easy",
+      "answer_type": "single",
+      "stem": "A sum of ₹3200 is due 3 year(s) hence. Find its present worth at 20% per annum (true discount method).",
+      "explanation": "PW = 100×A/(100+RT) = 100×3200/(100+60) = ₹2000.",
+      "options": [
+        {
+          "label": "₹1920",
+          "is_correct": false
+        },
+        {
+          "label": "₹2080",
+          "is_correct": false
+        },
+        {
+          "label": "₹2000",
+          "is_correct": true
+        },
+        {
+          "label": "₹2160",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "True Discount",
+      "kind": "standard",
+      "difficulty": "easy",
+      "answer_type": "single",
+      "stem": "Find the true discount on ₹2200 due 1 year(s) hence at 10% per annum.",
+      "explanation": "TD = A×RT/(100+RT) = 2200×10/(100+10) = ₹200.",
+      "options": [
+        {
+          "label": "₹216",
+          "is_correct": false
+        },
+        {
+          "label": "₹200",
+          "is_correct": true
+        },
+        {
+          "label": "₹192",
+          "is_correct": false
+        },
+        {
+          "label": "₹208",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "True Discount",
+      "kind": "standard",
+      "difficulty": "easy",
+      "answer_type": "single",
+      "stem": "A sum of ₹400 is due 4 year(s) hence. Find its present worth at 25% per annum (true discount method).",
+      "explanation": "PW = 100×A/(100+RT) = 100×400/(100+100) = ₹200.",
+      "options": [
+        {
+          "label": "₹216",
+          "is_correct": false
+        },
+        {
+          "label": "₹200",
+          "is_correct": true
+        },
+        {
+          "label": "₹208",
+          "is_correct": false
+        },
+        {
+          "label": "₹192",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "True Discount",
+      "kind": "standard",
+      "difficulty": "easy",
+      "answer_type": "single",
+      "stem": "The present worth of a sum due later is ₹2000 and the true discount on it is ₹200. Find the sum due.",
+      "explanation": "Sum due = present worth + true discount = ₹2000 + ₹200 = ₹2200.",
+      "options": [
+        {
+          "label": "₹2288",
+          "is_correct": false
+        },
+        {
+          "label": "₹2112",
+          "is_correct": false
+        },
+        {
+          "label": "₹2200",
+          "is_correct": true
+        },
+        {
+          "label": "₹2376",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "True Discount",
+      "kind": "standard",
+      "difficulty": "easy",
+      "answer_type": "single",
+      "stem": "A sum of ₹600 is due 4 year(s) hence. Find its present worth at 5% per annum (true discount method).",
+      "explanation": "PW = 100×A/(100+RT) = 100×600/(100+20) = ₹500.",
+      "options": [
+        {
+          "label": "₹500",
+          "is_correct": true
+        },
+        {
+          "label": "₹480",
+          "is_correct": false
+        },
+        {
+          "label": "₹540",
+          "is_correct": false
+        },
+        {
+          "label": "₹520",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "True Discount",
+      "kind": "standard",
+      "difficulty": "easy",
+      "answer_type": "single",
+      "stem": "A sum of ₹300 is due 5 year(s) hence. Find its present worth at 10% per annum (true discount method).",
+      "explanation": "PW = 100×A/(100+RT) = 100×300/(100+50) = ₹200.",
+      "options": [
+        {
+          "label": "₹200",
+          "is_correct": true
+        },
+        {
+          "label": "₹192",
+          "is_correct": false
+        },
+        {
+          "label": "₹208",
+          "is_correct": false
+        },
+        {
+          "label": "₹216",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "True Discount",
+      "kind": "standard",
+      "difficulty": "easy",
+      "answer_type": "single",
+      "stem": "Find the true discount on ₹3200 due 4 year(s) hence at 15% per annum.",
+      "explanation": "TD = A×RT/(100+RT) = 3200×60/(100+60) = ₹1200.",
+      "options": [
+        {
+          "label": "₹1296",
+          "is_correct": false
+        },
+        {
+          "label": "₹1248",
+          "is_correct": false
+        },
+        {
+          "label": "₹1152",
+          "is_correct": false
+        },
+        {
+          "label": "₹1200",
+          "is_correct": true
+        }
+      ]
+    },
+    {
+      "chapter": "True Discount",
+      "kind": "standard",
+      "difficulty": "easy",
+      "answer_type": "single",
+      "stem": "A sum of ₹2200 is due 1 year(s) hence. Find its present worth at 10% per annum (true discount method).",
+      "explanation": "PW = 100×A/(100+RT) = 100×2200/(100+10) = ₹2000.",
+      "options": [
+        {
+          "label": "₹2000",
+          "is_correct": true
+        },
+        {
+          "label": "₹2080",
+          "is_correct": false
+        },
+        {
+          "label": "₹2160",
+          "is_correct": false
+        },
+        {
+          "label": "₹1920",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "True Discount",
+      "kind": "standard",
+      "difficulty": "easy",
+      "answer_type": "single",
+      "stem": "The present worth of a sum due later is ₹1000 and the true discount on it is ₹200. Find the sum due.",
+      "explanation": "Sum due = present worth + true discount = ₹1000 + ₹200 = ₹1200.",
+      "options": [
+        {
+          "label": "₹1248",
+          "is_correct": false
+        },
+        {
+          "label": "₹1152",
+          "is_correct": false
+        },
+        {
+          "label": "₹1200",
+          "is_correct": true
+        },
+        {
+          "label": "₹1296",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "True Discount",
+      "kind": "standard",
+      "difficulty": "easy",
+      "answer_type": "single",
+      "stem": "Find the true discount on ₹6500 due 3 year(s) hence at 10% per annum.",
+      "explanation": "TD = A×RT/(100+RT) = 6500×30/(100+30) = ₹1500.",
+      "options": [
+        {
+          "label": "₹1560",
+          "is_correct": false
+        },
+        {
+          "label": "₹1620",
+          "is_correct": false
+        },
+        {
+          "label": "₹1500",
+          "is_correct": true
+        },
+        {
+          "label": "₹1440",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "True Discount",
+      "kind": "standard",
+      "difficulty": "easy",
+      "answer_type": "single",
+      "stem": "The present worth of a sum due later is ₹2500 and the true discount on it is ₹500. Find the sum due.",
+      "explanation": "Sum due = present worth + true discount = ₹2500 + ₹500 = ₹3000.",
+      "options": [
+        {
+          "label": "₹3240",
+          "is_correct": false
+        },
+        {
+          "label": "₹3000",
+          "is_correct": true
+        },
+        {
+          "label": "₹2880",
+          "is_correct": false
+        },
+        {
+          "label": "₹3120",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "True Discount",
+      "kind": "standard",
+      "difficulty": "easy",
+      "answer_type": "single",
+      "stem": "Find the true discount on ₹4000 due 6 year(s) hence at 10% per annum.",
+      "explanation": "TD = A×RT/(100+RT) = 4000×60/(100+60) = ₹1500.",
+      "options": [
+        {
+          "label": "₹1500",
+          "is_correct": true
+        },
+        {
+          "label": "₹1620",
+          "is_correct": false
+        },
+        {
+          "label": "₹1560",
+          "is_correct": false
+        },
+        {
+          "label": "₹1440",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "True Discount",
+      "kind": "standard",
+      "difficulty": "easy",
+      "answer_type": "single",
+      "stem": "The present worth of a sum due later is ₹2500 and the true discount on it is ₹1500. Find the sum due.",
+      "explanation": "Sum due = present worth + true discount = ₹2500 + ₹1500 = ₹4000.",
+      "options": [
+        {
+          "label": "₹3840",
+          "is_correct": false
+        },
+        {
+          "label": "₹4160",
+          "is_correct": false
+        },
+        {
+          "label": "₹4320",
+          "is_correct": false
+        },
+        {
+          "label": "₹4000",
+          "is_correct": true
+        }
+      ]
+    },
+    {
+      "chapter": "True Discount",
+      "kind": "standard",
+      "difficulty": "easy",
+      "answer_type": "single",
+      "stem": "Find the true discount on ₹3300 due 2 year(s) hence at 5% per annum.",
+      "explanation": "TD = A×RT/(100+RT) = 3300×10/(100+10) = ₹300.",
+      "options": [
+        {
+          "label": "₹300",
+          "is_correct": true
+        },
+        {
+          "label": "₹288",
+          "is_correct": false
+        },
+        {
+          "label": "₹324",
+          "is_correct": false
+        },
+        {
+          "label": "₹312",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "True Discount",
+      "kind": "standard",
+      "difficulty": "easy",
+      "answer_type": "single",
+      "stem": "The present worth of a sum due later is ₹500 and the true discount on it is ₹100. Find the sum due.",
+      "explanation": "Sum due = present worth + true discount = ₹500 + ₹100 = ₹600.",
+      "options": [
+        {
+          "label": "₹576",
+          "is_correct": false
+        },
+        {
+          "label": "₹624",
+          "is_correct": false
+        },
+        {
+          "label": "₹648",
+          "is_correct": false
+        },
+        {
+          "label": "₹600",
+          "is_correct": true
+        }
+      ]
+    },
+    {
+      "chapter": "True Discount",
+      "kind": "standard",
+      "difficulty": "easy",
+      "answer_type": "single",
+      "stem": "The present worth of a sum due later is ₹1000 and the true discount on it is ₹100. Find the sum due.",
+      "explanation": "Sum due = present worth + true discount = ₹1000 + ₹100 = ₹1100.",
+      "options": [
+        {
+          "label": "₹1188",
+          "is_correct": false
+        },
+        {
+          "label": "₹1056",
+          "is_correct": false
+        },
+        {
+          "label": "₹1100",
+          "is_correct": true
+        },
+        {
+          "label": "₹1144",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "True Discount",
+      "kind": "standard",
+      "difficulty": "easy",
+      "answer_type": "single",
+      "stem": "A sum of ₹1400 is due 2 year(s) hence. Find its present worth at 20% per annum (true discount method).",
+      "explanation": "PW = 100×A/(100+RT) = 100×1400/(100+40) = ₹1000.",
+      "options": [
+        {
+          "label": "₹1080",
+          "is_correct": false
+        },
+        {
+          "label": "₹1000",
+          "is_correct": true
+        },
+        {
+          "label": "₹1040",
+          "is_correct": false
+        },
+        {
+          "label": "₹960",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "True Discount",
+      "kind": "standard",
+      "difficulty": "easy",
+      "answer_type": "single",
+      "stem": "A sum of ₹1500 is due 5 year(s) hence. Find its present worth at 10% per annum (true discount method).",
+      "explanation": "PW = 100×A/(100+RT) = 100×1500/(100+50) = ₹1000.",
+      "options": [
+        {
+          "label": "₹1080",
+          "is_correct": false
+        },
+        {
+          "label": "₹960",
+          "is_correct": false
+        },
+        {
+          "label": "₹1000",
+          "is_correct": true
+        },
+        {
+          "label": "₹1040",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "True Discount",
+      "kind": "standard",
+      "difficulty": "easy",
+      "answer_type": "single",
+      "stem": "Find the true discount on ₹1300 due 3 year(s) hence at 10% per annum.",
+      "explanation": "TD = A×RT/(100+RT) = 1300×30/(100+30) = ₹300.",
+      "options": [
+        {
+          "label": "₹300",
+          "is_correct": true
+        },
+        {
+          "label": "₹312",
+          "is_correct": false
+        },
+        {
+          "label": "₹288",
+          "is_correct": false
+        },
+        {
+          "label": "₹324",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "True Discount",
+      "kind": "standard",
+      "difficulty": "easy",
+      "answer_type": "single",
+      "stem": "The present worth of a sum due later is ₹4000 and the true discount on it is ₹1200. Find the sum due.",
+      "explanation": "Sum due = present worth + true discount = ₹4000 + ₹1200 = ₹5200.",
+      "options": [
+        {
+          "label": "₹5200",
+          "is_correct": true
+        },
+        {
+          "label": "₹4992",
+          "is_correct": false
+        },
+        {
+          "label": "₹5616",
+          "is_correct": false
+        },
+        {
+          "label": "₹5408",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "True Discount",
+      "kind": "standard",
+      "difficulty": "easy",
+      "answer_type": "single",
+      "stem": "A sum of ₹500 is due 1 year(s) hence. Find its present worth at 25% per annum (true discount method).",
+      "explanation": "PW = 100×A/(100+RT) = 100×500/(100+25) = ₹400.",
+      "options": [
+        {
+          "label": "₹384",
+          "is_correct": false
+        },
+        {
+          "label": "₹416",
+          "is_correct": false
+        },
+        {
+          "label": "₹432",
+          "is_correct": false
+        },
+        {
+          "label": "₹400",
+          "is_correct": true
+        }
+      ]
+    },
+    {
+      "chapter": "True Discount",
+      "kind": "standard",
+      "difficulty": "easy",
+      "answer_type": "single",
+      "stem": "Find the true discount on ₹2000 due 5 year(s) hence at 5% per annum.",
+      "explanation": "TD = A×RT/(100+RT) = 2000×25/(100+25) = ₹400.",
+      "options": [
+        {
+          "label": "₹400",
+          "is_correct": true
+        },
+        {
+          "label": "₹384",
+          "is_correct": false
+        },
+        {
+          "label": "₹432",
+          "is_correct": false
+        },
+        {
+          "label": "₹416",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "True Discount",
+      "kind": "standard",
+      "difficulty": "easy",
+      "answer_type": "single",
+      "stem": "A sum of ₹600 is due 2 year(s) hence. Find its present worth at 25% per annum (true discount method).",
+      "explanation": "PW = 100×A/(100+RT) = 100×600/(100+50) = ₹400.",
+      "options": [
+        {
+          "label": "₹384",
+          "is_correct": false
+        },
+        {
+          "label": "₹432",
+          "is_correct": false
+        },
+        {
+          "label": "₹416",
+          "is_correct": false
+        },
+        {
+          "label": "₹400",
+          "is_correct": true
+        }
+      ]
+    },
+    {
+      "chapter": "True Discount",
+      "kind": "standard",
+      "difficulty": "easy",
+      "answer_type": "single",
+      "stem": "Find the true discount on ₹800 due 4 year(s) hence at 15% per annum.",
+      "explanation": "TD = A×RT/(100+RT) = 800×60/(100+60) = ₹300.",
+      "options": [
+        {
+          "label": "₹300",
+          "is_correct": true
+        },
+        {
+          "label": "₹312",
+          "is_correct": false
+        },
+        {
+          "label": "₹324",
+          "is_correct": false
+        },
+        {
+          "label": "₹288",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "True Discount",
+      "kind": "standard",
+      "difficulty": "easy",
+      "answer_type": "single",
+      "stem": "A sum of ₹1100 is due 1 year(s) hence. Find its present worth at 10% per annum (true discount method).",
+      "explanation": "PW = 100×A/(100+RT) = 100×1100/(100+10) = ₹1000.",
+      "options": [
+        {
+          "label": "₹1000",
+          "is_correct": true
+        },
+        {
+          "label": "₹1040",
+          "is_correct": false
+        },
+        {
+          "label": "₹1080",
+          "is_correct": false
+        },
+        {
+          "label": "₹960",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "True Discount",
+      "kind": "standard",
+      "difficulty": "easy",
+      "answer_type": "single",
+      "stem": "The present worth of a sum due later is ₹2500 and the true discount on it is ₹1000. Find the sum due.",
+      "explanation": "Sum due = present worth + true discount = ₹2500 + ₹1000 = ₹3500.",
+      "options": [
+        {
+          "label": "₹3500",
+          "is_correct": true
+        },
+        {
+          "label": "₹3360",
+          "is_correct": false
+        },
+        {
+          "label": "₹3780",
+          "is_correct": false
+        },
+        {
+          "label": "₹3640",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "True Discount",
+      "kind": "standard",
+      "difficulty": "easy",
+      "answer_type": "single",
+      "stem": "A sum of ₹600 is due 4 year(s) hence. Find its present worth at 25% per annum (true discount method).",
+      "explanation": "PW = 100×A/(100+RT) = 100×600/(100+100) = ₹300.",
+      "options": [
+        {
+          "label": "₹324",
+          "is_correct": false
+        },
+        {
+          "label": "₹300",
+          "is_correct": true
+        },
+        {
+          "label": "₹312",
+          "is_correct": false
+        },
+        {
+          "label": "₹288",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "True Discount",
+      "kind": "standard",
+      "difficulty": "easy",
+      "answer_type": "single",
+      "stem": "Find the true discount on ₹1000 due 5 year(s) hence at 5% per annum.",
+      "explanation": "TD = A×RT/(100+RT) = 1000×25/(100+25) = ₹200.",
+      "options": [
+        {
+          "label": "₹200",
+          "is_correct": true
+        },
+        {
+          "label": "₹208",
+          "is_correct": false
+        },
+        {
+          "label": "₹216",
+          "is_correct": false
+        },
+        {
+          "label": "₹192",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "True Discount",
+      "kind": "standard",
+      "difficulty": "easy",
+      "answer_type": "single",
+      "stem": "Find the true discount on ₹5500 due 1 year(s) hence at 10% per annum.",
+      "explanation": "TD = A×RT/(100+RT) = 5500×10/(100+10) = ₹500.",
+      "options": [
+        {
+          "label": "₹500",
+          "is_correct": true
+        },
+        {
+          "label": "₹480",
+          "is_correct": false
+        },
+        {
+          "label": "₹540",
+          "is_correct": false
+        },
+        {
+          "label": "₹520",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "True Discount",
+      "kind": "standard",
+      "difficulty": "easy",
+      "answer_type": "single",
+      "stem": "Find the true discount on ₹3500 due 2 year(s) hence at 20% per annum.",
+      "explanation": "TD = A×RT/(100+RT) = 3500×40/(100+40) = ₹1000.",
+      "options": [
+        {
+          "label": "₹1080",
+          "is_correct": false
+        },
+        {
+          "label": "₹960",
+          "is_correct": false
+        },
+        {
+          "label": "₹1000",
+          "is_correct": true
+        },
+        {
+          "label": "₹1040",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "True Discount",
+      "kind": "standard",
+      "difficulty": "easy",
+      "answer_type": "single",
+      "stem": "A sum of ₹800 is due 5 year(s) hence. Find its present worth at 20% per annum (true discount method).",
+      "explanation": "PW = 100×A/(100+RT) = 100×800/(100+100) = ₹400.",
+      "options": [
+        {
+          "label": "₹432",
+          "is_correct": false
+        },
+        {
+          "label": "₹400",
+          "is_correct": true
+        },
+        {
+          "label": "₹416",
+          "is_correct": false
+        },
+        {
+          "label": "₹384",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "True Discount",
+      "kind": "standard",
+      "difficulty": "easy",
+      "answer_type": "single",
+      "stem": "The present worth of a sum due later is ₹1500 and the true discount on it is ₹300. Find the sum due.",
+      "explanation": "Sum due = present worth + true discount = ₹1500 + ₹300 = ₹1800.",
+      "options": [
+        {
+          "label": "₹1872",
+          "is_correct": false
+        },
+        {
+          "label": "₹1728",
+          "is_correct": false
+        },
+        {
+          "label": "₹1800",
+          "is_correct": true
+        },
+        {
+          "label": "₹1944",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "True Discount",
+      "kind": "standard",
+      "difficulty": "easy",
+      "answer_type": "single",
+      "stem": "A sum of ₹6500 is due 2 year(s) hence. Find its present worth at 15% per annum (true discount method).",
+      "explanation": "PW = 100×A/(100+RT) = 100×6500/(100+30) = ₹5000.",
+      "options": [
+        {
+          "label": "₹5000",
+          "is_correct": true
+        },
+        {
+          "label": "₹4800",
+          "is_correct": false
+        },
+        {
+          "label": "₹5200",
+          "is_correct": false
+        },
+        {
+          "label": "₹5400",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "True Discount",
+      "kind": "standard",
+      "difficulty": "easy",
+      "answer_type": "single",
+      "stem": "Find the true discount on ₹4000 due 3 year(s) hence at 20% per annum.",
+      "explanation": "TD = A×RT/(100+RT) = 4000×60/(100+60) = ₹1500.",
+      "options": [
+        {
+          "label": "₹1500",
+          "is_correct": true
+        },
+        {
+          "label": "₹1440",
+          "is_correct": false
+        },
+        {
+          "label": "₹1560",
+          "is_correct": false
+        },
+        {
+          "label": "₹1620",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "True Discount",
+      "kind": "standard",
+      "difficulty": "easy",
+      "answer_type": "single",
+      "stem": "A sum of ₹600 is due 5 year(s) hence. Find its present worth at 20% per annum (true discount method).",
+      "explanation": "PW = 100×A/(100+RT) = 100×600/(100+100) = ₹300.",
+      "options": [
+        {
+          "label": "₹324",
+          "is_correct": false
+        },
+        {
+          "label": "₹288",
+          "is_correct": false
+        },
+        {
+          "label": "₹300",
+          "is_correct": true
+        },
+        {
+          "label": "₹312",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "True Discount",
+      "kind": "standard",
+      "difficulty": "easy",
+      "answer_type": "single",
+      "stem": "Find the true discount on ₹3900 due 3 year(s) hence at 10% per annum.",
+      "explanation": "TD = A×RT/(100+RT) = 3900×30/(100+30) = ₹900.",
+      "options": [
+        {
+          "label": "₹936",
+          "is_correct": false
+        },
+        {
+          "label": "₹900",
+          "is_correct": true
+        },
+        {
+          "label": "₹864",
+          "is_correct": false
+        },
+        {
+          "label": "₹972",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "True Discount",
+      "kind": "standard",
+      "difficulty": "easy",
+      "answer_type": "single",
+      "stem": "The present worth of a sum due later is ₹200 and the true discount on it is ₹200. Find the sum due.",
+      "explanation": "Sum due = present worth + true discount = ₹200 + ₹200 = ₹400.",
+      "options": [
+        {
+          "label": "₹432",
+          "is_correct": false
+        },
+        {
+          "label": "₹416",
+          "is_correct": false
+        },
+        {
+          "label": "₹384",
+          "is_correct": false
+        },
+        {
+          "label": "₹400",
+          "is_correct": true
+        }
+      ]
+    },
+    {
+      "chapter": "True Discount",
+      "kind": "standard",
+      "difficulty": "easy",
+      "answer_type": "single",
+      "stem": "A sum of ₹3000 is due 1 year(s) hence. Find its present worth at 20% per annum (true discount method).",
+      "explanation": "PW = 100×A/(100+RT) = 100×3000/(100+20) = ₹2500.",
+      "options": [
+        {
+          "label": "₹2400",
+          "is_correct": false
+        },
+        {
+          "label": "₹2500",
+          "is_correct": true
+        },
+        {
+          "label": "₹2600",
+          "is_correct": false
+        },
+        {
+          "label": "₹2700",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "True Discount",
+      "kind": "standard",
+      "difficulty": "medium",
+      "answer_type": "single",
+      "stem": "The present worth of a bill is ₹600. Find the true discount if the rate is 10% per annum and the bill is due in 5 year(s).",
+      "explanation": "TD = PW×RT/100 = 600×50/100 = ₹300.",
+      "options": [
+        {
+          "label": "₹300",
+          "is_correct": true
+        },
+        {
+          "label": "₹288",
+          "is_correct": false
+        },
+        {
+          "label": "₹312",
+          "is_correct": false
+        },
+        {
+          "label": "₹324",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "True Discount",
+      "kind": "standard",
+      "difficulty": "medium",
+      "answer_type": "single",
+      "stem": "The true discount on a bill due 2 year(s) hence at 15% per annum is ₹600. Find the sum due (face value).",
+      "explanation": "Sum due = TD×(100+RT)/RT = 600×130/30 = ₹2600.",
+      "options": [
+        {
+          "label": "₹2704",
+          "is_correct": false
+        },
+        {
+          "label": "₹2600",
+          "is_correct": true
+        },
+        {
+          "label": "₹2496",
+          "is_correct": false
+        },
+        {
+          "label": "₹2808",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "True Discount",
+      "kind": "standard",
+      "difficulty": "medium",
+      "answer_type": "single",
+      "stem": "The true discount on a bill due 6 year(s) hence at 10% per annum is ₹1500. Find the sum due (face value).",
+      "explanation": "Sum due = TD×(100+RT)/RT = 1500×160/60 = ₹4000.",
+      "options": [
+        {
+          "label": "₹4160",
+          "is_correct": false
+        },
+        {
+          "label": "₹4000",
+          "is_correct": true
+        },
+        {
+          "label": "₹3840",
+          "is_correct": false
+        },
+        {
+          "label": "₹4320",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "True Discount",
+      "kind": "standard",
+      "difficulty": "medium",
+      "answer_type": "single",
+      "stem": "The present worth of a bill is ₹1600. Find the true discount if the rate is 25% per annum and the bill is due in 1 year(s).",
+      "explanation": "TD = PW×RT/100 = 1600×25/100 = ₹400.",
+      "options": [
+        {
+          "label": "₹432",
+          "is_correct": false
+        },
+        {
+          "label": "₹400",
+          "is_correct": true
+        },
+        {
+          "label": "₹416",
+          "is_correct": false
+        },
+        {
+          "label": "₹384",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "True Discount",
+      "kind": "standard",
+      "difficulty": "medium",
+      "answer_type": "single",
+      "stem": "The true discount on a certain sum due 1 year(s) hence at 10% per annum is ₹400. Find the present worth.",
+      "explanation": "PW = TD×100/RT = 400×100/10 = ₹4000.",
+      "options": [
+        {
+          "label": "₹4000",
+          "is_correct": true
+        },
+        {
+          "label": "₹4160",
+          "is_correct": false
+        },
+        {
+          "label": "₹3840",
+          "is_correct": false
+        },
+        {
+          "label": "₹4320",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "True Discount",
+      "kind": "standard",
+      "difficulty": "medium",
+      "answer_type": "single",
+      "stem": "The present worth of a bill is ₹1000. Find the true discount if the rate is 20% per annum and the bill is due in 3 year(s).",
+      "explanation": "TD = PW×RT/100 = 1000×60/100 = ₹600.",
+      "options": [
+        {
+          "label": "₹624",
+          "is_correct": false
+        },
+        {
+          "label": "₹648",
+          "is_correct": false
+        },
+        {
+          "label": "₹600",
+          "is_correct": true
+        },
+        {
+          "label": "₹576",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "True Discount",
+      "kind": "standard",
+      "difficulty": "medium",
+      "answer_type": "single",
+      "stem": "The true discount on a certain sum due 1 year(s) hence at 10% per annum is ₹500. Find the present worth.",
+      "explanation": "PW = TD×100/RT = 500×100/10 = ₹5000.",
+      "options": [
+        {
+          "label": "₹5200",
+          "is_correct": false
+        },
+        {
+          "label": "₹5000",
+          "is_correct": true
+        },
+        {
+          "label": "₹4800",
+          "is_correct": false
+        },
+        {
+          "label": "₹5400",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "True Discount",
+      "kind": "standard",
+      "difficulty": "medium",
+      "answer_type": "single",
+      "stem": "The true discount on a bill due 4 year(s) hence at 15% per annum is ₹600. Find the sum due (face value).",
+      "explanation": "Sum due = TD×(100+RT)/RT = 600×160/60 = ₹1600.",
+      "options": [
+        {
+          "label": "₹1728",
+          "is_correct": false
+        },
+        {
+          "label": "₹1664",
+          "is_correct": false
+        },
+        {
+          "label": "₹1600",
+          "is_correct": true
+        },
+        {
+          "label": "₹1536",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "True Discount",
+      "kind": "standard",
+      "difficulty": "medium",
+      "answer_type": "single",
+      "stem": "The true discount on a bill due 2 year(s) hence at 20% per annum is ₹800. Find the sum due (face value).",
+      "explanation": "Sum due = TD×(100+RT)/RT = 800×140/40 = ₹2800.",
+      "options": [
+        {
+          "label": "₹2688",
+          "is_correct": false
+        },
+        {
+          "label": "₹2912",
+          "is_correct": false
+        },
+        {
+          "label": "₹2800",
+          "is_correct": true
+        },
+        {
+          "label": "₹3024",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "True Discount",
+      "kind": "standard",
+      "difficulty": "medium",
+      "answer_type": "single",
+      "stem": "The true discount on a bill due 1 year(s) hence at 25% per annum is ₹200. Find the sum due (face value).",
+      "explanation": "Sum due = TD×(100+RT)/RT = 200×125/25 = ₹1000.",
+      "options": [
+        {
+          "label": "₹1080",
+          "is_correct": false
+        },
+        {
+          "label": "₹1000",
+          "is_correct": true
+        },
+        {
+          "label": "₹960",
+          "is_correct": false
+        },
+        {
+          "label": "₹1040",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "True Discount",
+      "kind": "standard",
+      "difficulty": "medium",
+      "answer_type": "single",
+      "stem": "The present worth of a bill is ₹800. Find the true discount if the rate is 5% per annum and the bill is due in 5 year(s).",
+      "explanation": "TD = PW×RT/100 = 800×25/100 = ₹200.",
+      "options": [
+        {
+          "label": "₹216",
+          "is_correct": false
+        },
+        {
+          "label": "₹208",
+          "is_correct": false
+        },
+        {
+          "label": "₹200",
+          "is_correct": true
+        },
+        {
+          "label": "₹192",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "True Discount",
+      "kind": "standard",
+      "difficulty": "medium",
+      "answer_type": "single",
+      "stem": "The true discount on a certain sum due 1 year(s) hence at 20% per annum is ₹400. Find the present worth.",
+      "explanation": "PW = TD×100/RT = 400×100/20 = ₹2000.",
+      "options": [
+        {
+          "label": "₹1920",
+          "is_correct": false
+        },
+        {
+          "label": "₹2080",
+          "is_correct": false
+        },
+        {
+          "label": "₹2160",
+          "is_correct": false
+        },
+        {
+          "label": "₹2000",
+          "is_correct": true
+        }
+      ]
+    },
+    {
+      "chapter": "True Discount",
+      "kind": "standard",
+      "difficulty": "medium",
+      "answer_type": "single",
+      "stem": "The true discount on a bill due 5 year(s) hence at 10% per annum is ₹500. Find the sum due (face value).",
+      "explanation": "Sum due = TD×(100+RT)/RT = 500×150/50 = ₹1500.",
+      "options": [
+        {
+          "label": "₹1440",
+          "is_correct": false
+        },
+        {
+          "label": "₹1620",
+          "is_correct": false
+        },
+        {
+          "label": "₹1560",
+          "is_correct": false
+        },
+        {
+          "label": "₹1500",
+          "is_correct": true
+        }
+      ]
+    },
+    {
+      "chapter": "True Discount",
+      "kind": "standard",
+      "difficulty": "medium",
+      "answer_type": "single",
+      "stem": "The present worth of a bill is ₹2500. Find the true discount if the rate is 20% per annum and the bill is due in 1 year(s).",
+      "explanation": "TD = PW×RT/100 = 2500×20/100 = ₹500.",
+      "options": [
+        {
+          "label": "₹480",
+          "is_correct": false
+        },
+        {
+          "label": "₹520",
+          "is_correct": false
+        },
+        {
+          "label": "₹540",
+          "is_correct": false
+        },
+        {
+          "label": "₹500",
+          "is_correct": true
+        }
+      ]
+    },
+    {
+      "chapter": "True Discount",
+      "kind": "standard",
+      "difficulty": "medium",
+      "answer_type": "single",
+      "stem": "The true discount on a certain sum due 1 year(s) hence at 20% per annum is ₹200. Find the present worth.",
+      "explanation": "PW = TD×100/RT = 200×100/20 = ₹1000.",
+      "options": [
+        {
+          "label": "₹1040",
+          "is_correct": false
+        },
+        {
+          "label": "₹1080",
+          "is_correct": false
+        },
+        {
+          "label": "₹1000",
+          "is_correct": true
+        },
+        {
+          "label": "₹960",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "True Discount",
+      "kind": "standard",
+      "difficulty": "medium",
+      "answer_type": "single",
+      "stem": "The true discount on a certain sum due 2 year(s) hence at 5% per annum is ₹400. Find the present worth.",
+      "explanation": "PW = TD×100/RT = 400×100/10 = ₹4000.",
+      "options": [
+        {
+          "label": "₹4000",
+          "is_correct": true
+        },
+        {
+          "label": "₹4320",
+          "is_correct": false
+        },
+        {
+          "label": "₹3840",
+          "is_correct": false
+        },
+        {
+          "label": "₹4160",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "True Discount",
+      "kind": "standard",
+      "difficulty": "medium",
+      "answer_type": "single",
+      "stem": "The true discount on a certain sum due 3 year(s) hence at 20% per annum is ₹1200. Find the present worth.",
+      "explanation": "PW = TD×100/RT = 1200×100/60 = ₹2000.",
+      "options": [
+        {
+          "label": "₹1920",
+          "is_correct": false
+        },
+        {
+          "label": "₹2080",
+          "is_correct": false
+        },
+        {
+          "label": "₹2160",
+          "is_correct": false
+        },
+        {
+          "label": "₹2000",
+          "is_correct": true
+        }
+      ]
+    },
+    {
+      "chapter": "True Discount",
+      "kind": "standard",
+      "difficulty": "medium",
+      "answer_type": "single",
+      "stem": "The true discount on a bill due 2 year(s) hence at 15% per annum is ₹1500. Find the sum due (face value).",
+      "explanation": "Sum due = TD×(100+RT)/RT = 1500×130/30 = ₹6500.",
+      "options": [
+        {
+          "label": "₹6500",
+          "is_correct": true
+        },
+        {
+          "label": "₹7020",
+          "is_correct": false
+        },
+        {
+          "label": "₹6240",
+          "is_correct": false
+        },
+        {
+          "label": "₹6760",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "True Discount",
+      "kind": "standard",
+      "difficulty": "medium",
+      "answer_type": "single",
+      "stem": "The true discount on a bill due 4 year(s) hence at 10% per annum is ₹400. Find the sum due (face value).",
+      "explanation": "Sum due = TD×(100+RT)/RT = 400×140/40 = ₹1400.",
+      "options": [
+        {
+          "label": "₹1344",
+          "is_correct": false
+        },
+        {
+          "label": "₹1456",
+          "is_correct": false
+        },
+        {
+          "label": "₹1512",
+          "is_correct": false
+        },
+        {
+          "label": "₹1400",
+          "is_correct": true
+        }
+      ]
+    },
+    {
+      "chapter": "True Discount",
+      "kind": "standard",
+      "difficulty": "medium",
+      "answer_type": "single",
+      "stem": "The present worth of a bill is ₹1500. Find the true discount if the rate is 20% per annum and the bill is due in 2 year(s).",
+      "explanation": "TD = PW×RT/100 = 1500×40/100 = ₹600.",
+      "options": [
+        {
+          "label": "₹576",
+          "is_correct": false
+        },
+        {
+          "label": "₹624",
+          "is_correct": false
+        },
+        {
+          "label": "₹648",
+          "is_correct": false
+        },
+        {
+          "label": "₹600",
+          "is_correct": true
+        }
+      ]
+    },
+    {
+      "chapter": "True Discount",
+      "kind": "standard",
+      "difficulty": "medium",
+      "answer_type": "single",
+      "stem": "The present worth of a bill is ₹1500. Find the true discount if the rate is 10% per annum and the bill is due in 2 year(s).",
+      "explanation": "TD = PW×RT/100 = 1500×20/100 = ₹300.",
+      "options": [
+        {
+          "label": "₹288",
+          "is_correct": false
+        },
+        {
+          "label": "₹312",
+          "is_correct": false
+        },
+        {
+          "label": "₹300",
+          "is_correct": true
+        },
+        {
+          "label": "₹324",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "True Discount",
+      "kind": "standard",
+      "difficulty": "medium",
+      "answer_type": "single",
+      "stem": "The true discount on a bill due 5 year(s) hence at 20% per annum is ₹300. Find the sum due (face value).",
+      "explanation": "Sum due = TD×(100+RT)/RT = 300×200/100 = ₹600.",
+      "options": [
+        {
+          "label": "₹600",
+          "is_correct": true
+        },
+        {
+          "label": "₹576",
+          "is_correct": false
+        },
+        {
+          "label": "₹624",
+          "is_correct": false
+        },
+        {
+          "label": "₹648",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "True Discount",
+      "kind": "standard",
+      "difficulty": "medium",
+      "answer_type": "single",
+      "stem": "The true discount on a bill due 2 year(s) hence at 15% per annum is ₹300. Find the sum due (face value).",
+      "explanation": "Sum due = TD×(100+RT)/RT = 300×130/30 = ₹1300.",
+      "options": [
+        {
+          "label": "₹1300",
+          "is_correct": true
+        },
+        {
+          "label": "₹1248",
+          "is_correct": false
+        },
+        {
+          "label": "₹1352",
+          "is_correct": false
+        },
+        {
+          "label": "₹1404",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "True Discount",
+      "kind": "standard",
+      "difficulty": "medium",
+      "answer_type": "single",
+      "stem": "The true discount on a certain sum due 3 year(s) hence at 10% per annum is ₹300. Find the present worth.",
+      "explanation": "PW = TD×100/RT = 300×100/30 = ₹1000.",
+      "options": [
+        {
+          "label": "₹1080",
+          "is_correct": false
+        },
+        {
+          "label": "₹1000",
+          "is_correct": true
+        },
+        {
+          "label": "₹960",
+          "is_correct": false
+        },
+        {
+          "label": "₹1040",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "True Discount",
+      "kind": "standard",
+      "difficulty": "medium",
+      "answer_type": "single",
+      "stem": "The true discount on a bill due 1 year(s) hence at 20% per annum is ₹500. Find the sum due (face value).",
+      "explanation": "Sum due = TD×(100+RT)/RT = 500×120/20 = ₹3000.",
+      "options": [
+        {
+          "label": "₹3240",
+          "is_correct": false
+        },
+        {
+          "label": "₹2880",
+          "is_correct": false
+        },
+        {
+          "label": "₹3000",
+          "is_correct": true
+        },
+        {
+          "label": "₹3120",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "True Discount",
+      "kind": "standard",
+      "difficulty": "medium",
+      "answer_type": "single",
+      "stem": "The true discount on a bill due 1 year(s) hence at 10% per annum is ₹300. Find the sum due (face value).",
+      "explanation": "Sum due = TD×(100+RT)/RT = 300×110/10 = ₹3300.",
+      "options": [
+        {
+          "label": "₹3432",
+          "is_correct": false
+        },
+        {
+          "label": "₹3564",
+          "is_correct": false
+        },
+        {
+          "label": "₹3300",
+          "is_correct": true
+        },
+        {
+          "label": "₹3168",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "True Discount",
+      "kind": "standard",
+      "difficulty": "medium",
+      "answer_type": "single",
+      "stem": "The true discount on a certain sum due 1 year(s) hence at 25% per annum is ₹200. Find the present worth.",
+      "explanation": "PW = TD×100/RT = 200×100/25 = ₹800.",
+      "options": [
+        {
+          "label": "₹832",
+          "is_correct": false
+        },
+        {
+          "label": "₹768",
+          "is_correct": false
+        },
+        {
+          "label": "₹800",
+          "is_correct": true
+        },
+        {
+          "label": "₹864",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "True Discount",
+      "kind": "standard",
+      "difficulty": "medium",
+      "answer_type": "single",
+      "stem": "The present worth of a bill is ₹100. Find the true discount if the rate is 25% per annum and the bill is due in 4 year(s).",
+      "explanation": "TD = PW×RT/100 = 100×100/100 = ₹100.",
+      "options": [
+        {
+          "label": "₹100",
+          "is_correct": true
+        },
+        {
+          "label": "₹98",
+          "is_correct": false
+        },
+        {
+          "label": "₹102",
+          "is_correct": false
+        },
+        {
+          "label": "₹104",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "True Discount",
+      "kind": "standard",
+      "difficulty": "medium",
+      "answer_type": "single",
+      "stem": "The true discount on a bill due 1 year(s) hence at 25% per annum is ₹300. Find the sum due (face value).",
+      "explanation": "Sum due = TD×(100+RT)/RT = 300×125/25 = ₹1500.",
+      "options": [
+        {
+          "label": "₹1500",
+          "is_correct": true
+        },
+        {
+          "label": "₹1440",
+          "is_correct": false
+        },
+        {
+          "label": "₹1560",
+          "is_correct": false
+        },
+        {
+          "label": "₹1620",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "True Discount",
+      "kind": "standard",
+      "difficulty": "medium",
+      "answer_type": "single",
+      "stem": "The true discount on a certain sum due 2 year(s) hence at 25% per annum is ₹300. Find the present worth.",
+      "explanation": "PW = TD×100/RT = 300×100/50 = ₹600.",
+      "options": [
+        {
+          "label": "₹576",
+          "is_correct": false
+        },
+        {
+          "label": "₹648",
+          "is_correct": false
+        },
+        {
+          "label": "₹624",
+          "is_correct": false
+        },
+        {
+          "label": "₹600",
+          "is_correct": true
+        }
+      ]
+    },
+    {
+      "chapter": "True Discount",
+      "kind": "standard",
+      "difficulty": "medium",
+      "answer_type": "single",
+      "stem": "The true discount on a bill due 2 year(s) hence at 10% per annum is ₹500. Find the sum due (face value).",
+      "explanation": "Sum due = TD×(100+RT)/RT = 500×120/20 = ₹3000.",
+      "options": [
+        {
+          "label": "₹2880",
+          "is_correct": false
+        },
+        {
+          "label": "₹3120",
+          "is_correct": false
+        },
+        {
+          "label": "₹3240",
+          "is_correct": false
+        },
+        {
+          "label": "₹3000",
+          "is_correct": true
+        }
+      ]
+    },
+    {
+      "chapter": "True Discount",
+      "kind": "standard",
+      "difficulty": "medium",
+      "answer_type": "single",
+      "stem": "The true discount on a bill due 4 year(s) hence at 25% per annum is ₹100. Find the sum due (face value).",
+      "explanation": "Sum due = TD×(100+RT)/RT = 100×200/100 = ₹200.",
+      "options": [
+        {
+          "label": "₹200",
+          "is_correct": true
+        },
+        {
+          "label": "₹208",
+          "is_correct": false
+        },
+        {
+          "label": "₹216",
+          "is_correct": false
+        },
+        {
+          "label": "₹192",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "True Discount",
+      "kind": "standard",
+      "difficulty": "medium",
+      "answer_type": "single",
+      "stem": "The true discount on a bill due 6 year(s) hence at 10% per annum is ₹300. Find the sum due (face value).",
+      "explanation": "Sum due = TD×(100+RT)/RT = 300×160/60 = ₹800.",
+      "options": [
+        {
+          "label": "₹864",
+          "is_correct": false
+        },
+        {
+          "label": "₹800",
+          "is_correct": true
+        },
+        {
+          "label": "₹832",
+          "is_correct": false
+        },
+        {
+          "label": "₹768",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "True Discount",
+      "kind": "standard",
+      "difficulty": "medium",
+      "answer_type": "single",
+      "stem": "The present worth of a bill is ₹400. Find the true discount if the rate is 10% per annum and the bill is due in 5 year(s).",
+      "explanation": "TD = PW×RT/100 = 400×50/100 = ₹200.",
+      "options": [
+        {
+          "label": "₹192",
+          "is_correct": false
+        },
+        {
+          "label": "₹216",
+          "is_correct": false
+        },
+        {
+          "label": "₹208",
+          "is_correct": false
+        },
+        {
+          "label": "₹200",
+          "is_correct": true
+        }
+      ]
+    },
+    {
+      "chapter": "True Discount",
+      "kind": "standard",
+      "difficulty": "medium",
+      "answer_type": "single",
+      "stem": "The present worth of a bill is ₹2500. Find the true discount if the rate is 15% per annum and the bill is due in 4 year(s).",
+      "explanation": "TD = PW×RT/100 = 2500×60/100 = ₹1500.",
+      "options": [
+        {
+          "label": "₹1440",
+          "is_correct": false
+        },
+        {
+          "label": "₹1620",
+          "is_correct": false
+        },
+        {
+          "label": "₹1500",
+          "is_correct": true
+        },
+        {
+          "label": "₹1560",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "True Discount",
+      "kind": "standard",
+      "difficulty": "medium",
+      "answer_type": "single",
+      "stem": "The true discount on a certain sum due 2 year(s) hence at 20% per annum is ₹600. Find the present worth.",
+      "explanation": "PW = TD×100/RT = 600×100/40 = ₹1500.",
+      "options": [
+        {
+          "label": "₹1500",
+          "is_correct": true
+        },
+        {
+          "label": "₹1620",
+          "is_correct": false
+        },
+        {
+          "label": "₹1440",
+          "is_correct": false
+        },
+        {
+          "label": "₹1560",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "True Discount",
+      "kind": "standard",
+      "difficulty": "medium",
+      "answer_type": "single",
+      "stem": "The present worth of a bill is ₹200. Find the true discount if the rate is 10% per annum and the bill is due in 5 year(s).",
+      "explanation": "TD = PW×RT/100 = 200×50/100 = ₹100.",
+      "options": [
+        {
+          "label": "₹100",
+          "is_correct": true
+        },
+        {
+          "label": "₹102",
+          "is_correct": false
+        },
+        {
+          "label": "₹98",
+          "is_correct": false
+        },
+        {
+          "label": "₹104",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "True Discount",
+      "kind": "standard",
+      "difficulty": "medium",
+      "answer_type": "single",
+      "stem": "The true discount on a certain sum due 5 year(s) hence at 5% per annum is ₹400. Find the present worth.",
+      "explanation": "PW = TD×100/RT = 400×100/25 = ₹1600.",
+      "options": [
+        {
+          "label": "₹1536",
+          "is_correct": false
+        },
+        {
+          "label": "₹1664",
+          "is_correct": false
+        },
+        {
+          "label": "₹1728",
+          "is_correct": false
+        },
+        {
+          "label": "₹1600",
+          "is_correct": true
+        }
+      ]
+    },
+    {
+      "chapter": "True Discount",
+      "kind": "standard",
+      "difficulty": "medium",
+      "answer_type": "single",
+      "stem": "The true discount on a bill due 2 year(s) hence at 10% per annum is ₹400. Find the sum due (face value).",
+      "explanation": "Sum due = TD×(100+RT)/RT = 400×120/20 = ₹2400.",
+      "options": [
+        {
+          "label": "₹2592",
+          "is_correct": false
+        },
+        {
+          "label": "₹2304",
+          "is_correct": false
+        },
+        {
+          "label": "₹2496",
+          "is_correct": false
+        },
+        {
+          "label": "₹2400",
+          "is_correct": true
+        }
+      ]
+    },
+    {
+      "chapter": "True Discount",
+      "kind": "standard",
+      "difficulty": "medium",
+      "answer_type": "single",
+      "stem": "The present worth of a bill is ₹1000. Find the true discount if the rate is 20% per annum and the bill is due in 2 year(s).",
+      "explanation": "TD = PW×RT/100 = 1000×40/100 = ₹400.",
+      "options": [
+        {
+          "label": "₹400",
+          "is_correct": true
+        },
+        {
+          "label": "₹384",
+          "is_correct": false
+        },
+        {
+          "label": "₹432",
+          "is_correct": false
+        },
+        {
+          "label": "₹416",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "True Discount",
+      "kind": "standard",
+      "difficulty": "medium",
+      "answer_type": "single",
+      "stem": "The true discount on a bill due 4 year(s) hence at 15% per annum is ₹900. Find the sum due (face value).",
+      "explanation": "Sum due = TD×(100+RT)/RT = 900×160/60 = ₹2400.",
+      "options": [
+        {
+          "label": "₹2400",
+          "is_correct": true
+        },
+        {
+          "label": "₹2304",
+          "is_correct": false
+        },
+        {
+          "label": "₹2496",
+          "is_correct": false
+        },
+        {
+          "label": "₹2592",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "True Discount",
+      "kind": "standard",
+      "difficulty": "medium",
+      "answer_type": "single",
+      "stem": "The present worth of a bill is ₹1000. Find the true discount if the rate is 25% per annum and the bill is due in 2 year(s).",
+      "explanation": "TD = PW×RT/100 = 1000×50/100 = ₹500.",
+      "options": [
+        {
+          "label": "₹500",
+          "is_correct": true
+        },
+        {
+          "label": "₹540",
+          "is_correct": false
+        },
+        {
+          "label": "₹480",
+          "is_correct": false
+        },
+        {
+          "label": "₹520",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "True Discount",
+      "kind": "standard",
+      "difficulty": "medium",
+      "answer_type": "single",
+      "stem": "The true discount on a bill due 5 year(s) hence at 20% per annum is ₹100. Find the sum due (face value).",
+      "explanation": "Sum due = TD×(100+RT)/RT = 100×200/100 = ₹200.",
+      "options": [
+        {
+          "label": "₹192",
+          "is_correct": false
+        },
+        {
+          "label": "₹208",
+          "is_correct": false
+        },
+        {
+          "label": "₹216",
+          "is_correct": false
+        },
+        {
+          "label": "₹200",
+          "is_correct": true
+        }
+      ]
+    },
+    {
+      "chapter": "True Discount",
+      "kind": "standard",
+      "difficulty": "medium",
+      "answer_type": "single",
+      "stem": "The true discount on a certain sum due 2 year(s) hence at 25% per annum is ₹200. Find the present worth.",
+      "explanation": "PW = TD×100/RT = 200×100/50 = ₹400.",
+      "options": [
+        {
+          "label": "₹384",
+          "is_correct": false
+        },
+        {
+          "label": "₹416",
+          "is_correct": false
+        },
+        {
+          "label": "₹432",
+          "is_correct": false
+        },
+        {
+          "label": "₹400",
+          "is_correct": true
+        }
+      ]
+    },
+    {
+      "chapter": "True Discount",
+      "kind": "standard",
+      "difficulty": "medium",
+      "answer_type": "single",
+      "stem": "The present worth of a bill is ₹500. Find the true discount if the rate is 10% per annum and the bill is due in 4 year(s).",
+      "explanation": "TD = PW×RT/100 = 500×40/100 = ₹200.",
+      "options": [
+        {
+          "label": "₹216",
+          "is_correct": false
+        },
+        {
+          "label": "₹200",
+          "is_correct": true
+        },
+        {
+          "label": "₹192",
+          "is_correct": false
+        },
+        {
+          "label": "₹208",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "True Discount",
+      "kind": "standard",
+      "difficulty": "medium",
+      "answer_type": "single",
+      "stem": "The true discount on a certain sum due 5 year(s) hence at 20% per annum is ₹100. Find the present worth.",
+      "explanation": "PW = TD×100/RT = 100×100/100 = ₹100.",
+      "options": [
+        {
+          "label": "₹102",
+          "is_correct": false
+        },
+        {
+          "label": "₹100",
+          "is_correct": true
+        },
+        {
+          "label": "₹104",
+          "is_correct": false
+        },
+        {
+          "label": "₹98",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "True Discount",
+      "kind": "standard",
+      "difficulty": "medium",
+      "answer_type": "single",
+      "stem": "The true discount on a certain sum due 4 year(s) hence at 10% per annum is ₹1000. Find the present worth.",
+      "explanation": "PW = TD×100/RT = 1000×100/40 = ₹2500.",
+      "options": [
+        {
+          "label": "₹2600",
+          "is_correct": false
+        },
+        {
+          "label": "₹2700",
+          "is_correct": false
+        },
+        {
+          "label": "₹2500",
+          "is_correct": true
+        },
+        {
+          "label": "₹2400",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "True Discount",
+      "kind": "standard",
+      "difficulty": "medium",
+      "answer_type": "single",
+      "stem": "The true discount on a certain sum due 4 year(s) hence at 5% per annum is ₹400. Find the present worth.",
+      "explanation": "PW = TD×100/RT = 400×100/20 = ₹2000.",
+      "options": [
+        {
+          "label": "₹2000",
+          "is_correct": true
+        },
+        {
+          "label": "₹2160",
+          "is_correct": false
+        },
+        {
+          "label": "₹1920",
+          "is_correct": false
+        },
+        {
+          "label": "₹2080",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "True Discount",
+      "kind": "standard",
+      "difficulty": "medium",
+      "answer_type": "single",
+      "stem": "The true discount on a certain sum due 2 year(s) hence at 25% per annum is ₹400. Find the present worth.",
+      "explanation": "PW = TD×100/RT = 400×100/50 = ₹800.",
+      "options": [
+        {
+          "label": "₹864",
+          "is_correct": false
+        },
+        {
+          "label": "₹832",
+          "is_correct": false
+        },
+        {
+          "label": "₹768",
+          "is_correct": false
+        },
+        {
+          "label": "₹800",
+          "is_correct": true
+        }
+      ]
+    },
+    {
+      "chapter": "True Discount",
+      "kind": "standard",
+      "difficulty": "medium",
+      "answer_type": "single",
+      "stem": "The true discount on a bill due 4 year(s) hence at 25% per annum is ₹200. Find the sum due (face value).",
+      "explanation": "Sum due = TD×(100+RT)/RT = 200×200/100 = ₹400.",
+      "options": [
+        {
+          "label": "₹400",
+          "is_correct": true
+        },
+        {
+          "label": "₹432",
+          "is_correct": false
+        },
+        {
+          "label": "₹416",
+          "is_correct": false
+        },
+        {
+          "label": "₹384",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "True Discount",
+      "kind": "standard",
+      "difficulty": "hard",
+      "answer_type": "single",
+      "stem": "A debt of ₹3500 is due 2 year(s) hence. If money is worth 20% per annum, find the present worth of the debt.",
+      "explanation": "PW = 100×3500/(100+40) = ₹2500.",
+      "options": [
+        {
+          "label": "₹2400",
+          "is_correct": false
+        },
+        {
+          "label": "₹2500",
+          "is_correct": true
+        },
+        {
+          "label": "₹2700",
+          "is_correct": false
+        },
+        {
+          "label": "₹2600",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "True Discount",
+      "kind": "standard",
+      "difficulty": "hard",
+      "answer_type": "single",
+      "stem": "The present worth of a debt due 6 year(s) hence at 10% per annum is ₹2500. Find the amount of the debt.",
+      "explanation": "Debt = PW×(100+RT)/100 = 2500×160/100 = ₹4000.",
+      "options": [
+        {
+          "label": "₹4000",
+          "is_correct": true
+        },
+        {
+          "label": "₹4160",
+          "is_correct": false
+        },
+        {
+          "label": "₹4320",
+          "is_correct": false
+        },
+        {
+          "label": "₹3840",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "True Discount",
+      "kind": "standard",
+      "difficulty": "hard",
+      "answer_type": "single",
+      "stem": "Find the true discount on a bill of ₹1600 due 6 year(s) hence, the rate of interest being 10% per annum.",
+      "explanation": "TD = 1600×60/(100+60) = ₹600.",
+      "options": [
+        {
+          "label": "₹600",
+          "is_correct": true
+        },
+        {
+          "label": "₹624",
+          "is_correct": false
+        },
+        {
+          "label": "₹576",
+          "is_correct": false
+        },
+        {
+          "label": "₹648",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "True Discount",
+      "kind": "standard",
+      "difficulty": "hard",
+      "answer_type": "single",
+      "stem": "The present worth of a debt due 5 year(s) hence at 10% per annum is ₹1000. Find the amount of the debt.",
+      "explanation": "Debt = PW×(100+RT)/100 = 1000×150/100 = ₹1500.",
+      "options": [
+        {
+          "label": "₹1440",
+          "is_correct": false
+        },
+        {
+          "label": "₹1560",
+          "is_correct": false
+        },
+        {
+          "label": "₹1620",
+          "is_correct": false
+        },
+        {
+          "label": "₹1500",
+          "is_correct": true
+        }
+      ]
+    },
+    {
+      "chapter": "True Discount",
+      "kind": "standard",
+      "difficulty": "hard",
+      "answer_type": "single",
+      "stem": "A debt of ₹600 is due 4 year(s) hence. If money is worth 25% per annum, find the present worth of the debt.",
+      "explanation": "PW = 100×600/(100+100) = ₹300.",
+      "options": [
+        {
+          "label": "₹324",
+          "is_correct": false
+        },
+        {
+          "label": "₹312",
+          "is_correct": false
+        },
+        {
+          "label": "₹300",
+          "is_correct": true
+        },
+        {
+          "label": "₹288",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "True Discount",
+      "kind": "standard",
+      "difficulty": "hard",
+      "answer_type": "single",
+      "stem": "Find the true discount on a bill of ₹700 due 4 year(s) hence, the rate of interest being 10% per annum.",
+      "explanation": "TD = 700×40/(100+40) = ₹200.",
+      "options": [
+        {
+          "label": "₹208",
+          "is_correct": false
+        },
+        {
+          "label": "₹192",
+          "is_correct": false
+        },
+        {
+          "label": "₹200",
+          "is_correct": true
+        },
+        {
+          "label": "₹216",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "True Discount",
+      "kind": "standard",
+      "difficulty": "hard",
+      "answer_type": "single",
+      "stem": "Find the true discount on a bill of ₹600 due 2 year(s) hence, the rate of interest being 10% per annum.",
+      "explanation": "TD = 600×20/(100+20) = ₹100.",
+      "options": [
+        {
+          "label": "₹102",
+          "is_correct": false
+        },
+        {
+          "label": "₹100",
+          "is_correct": true
+        },
+        {
+          "label": "₹104",
+          "is_correct": false
+        },
+        {
+          "label": "₹98",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "True Discount",
+      "kind": "standard",
+      "difficulty": "hard",
+      "answer_type": "single",
+      "stem": "The present worth of a debt due 4 year(s) hence at 5% per annum is ₹500. Find the amount of the debt.",
+      "explanation": "Debt = PW×(100+RT)/100 = 500×120/100 = ₹600.",
+      "options": [
+        {
+          "label": "₹624",
+          "is_correct": false
+        },
+        {
+          "label": "₹576",
+          "is_correct": false
+        },
+        {
+          "label": "₹648",
+          "is_correct": false
+        },
+        {
+          "label": "₹600",
+          "is_correct": true
+        }
+      ]
+    },
+    {
+      "chapter": "True Discount",
+      "kind": "standard",
+      "difficulty": "hard",
+      "answer_type": "single",
+      "stem": "The present worth of a debt due 2 year(s) hence at 10% per annum is ₹1500. Find the amount of the debt.",
+      "explanation": "Debt = PW×(100+RT)/100 = 1500×120/100 = ₹1800.",
+      "options": [
+        {
+          "label": "₹1800",
+          "is_correct": true
+        },
+        {
+          "label": "₹1728",
+          "is_correct": false
+        },
+        {
+          "label": "₹1872",
+          "is_correct": false
+        },
+        {
+          "label": "₹1944",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "True Discount",
+      "kind": "standard",
+      "difficulty": "hard",
+      "answer_type": "single",
+      "stem": "A debt of ₹1200 is due 2 year(s) hence. If money is worth 25% per annum, find the present worth of the debt.",
+      "explanation": "PW = 100×1200/(100+50) = ₹800.",
+      "options": [
+        {
+          "label": "₹768",
+          "is_correct": false
+        },
+        {
+          "label": "₹864",
+          "is_correct": false
+        },
+        {
+          "label": "₹832",
+          "is_correct": false
+        },
+        {
+          "label": "₹800",
+          "is_correct": true
+        }
+      ]
+    },
+    {
+      "chapter": "True Discount",
+      "kind": "standard",
+      "difficulty": "hard",
+      "answer_type": "single",
+      "stem": "Find the true discount on a bill of ₹1100 due 1 year(s) hence, the rate of interest being 10% per annum.",
+      "explanation": "TD = 1100×10/(100+10) = ₹100.",
+      "options": [
+        {
+          "label": "₹102",
+          "is_correct": false
+        },
+        {
+          "label": "₹98",
+          "is_correct": false
+        },
+        {
+          "label": "₹100",
+          "is_correct": true
+        },
+        {
+          "label": "₹104",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "True Discount",
+      "kind": "standard",
+      "difficulty": "hard",
+      "answer_type": "single",
+      "stem": "The present worth of a debt due 4 year(s) hence at 15% per annum is ₹500. Find the amount of the debt.",
+      "explanation": "Debt = PW×(100+RT)/100 = 500×160/100 = ₹800.",
+      "options": [
+        {
+          "label": "₹800",
+          "is_correct": true
+        },
+        {
+          "label": "₹864",
+          "is_correct": false
+        },
+        {
+          "label": "₹768",
+          "is_correct": false
+        },
+        {
+          "label": "₹832",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "True Discount",
+      "kind": "standard",
+      "difficulty": "hard",
+      "answer_type": "single",
+      "stem": "The present worth of a debt due 5 year(s) hence at 10% per annum is ₹600. Find the amount of the debt.",
+      "explanation": "Debt = PW×(100+RT)/100 = 600×150/100 = ₹900.",
+      "options": [
+        {
+          "label": "₹972",
+          "is_correct": false
+        },
+        {
+          "label": "₹864",
+          "is_correct": false
+        },
+        {
+          "label": "₹900",
+          "is_correct": true
+        },
+        {
+          "label": "₹936",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "True Discount",
+      "kind": "standard",
+      "difficulty": "hard",
+      "answer_type": "single",
+      "stem": "The present worth of a debt due 1 year(s) hence at 20% per annum is ₹1000. Find the amount of the debt.",
+      "explanation": "Debt = PW×(100+RT)/100 = 1000×120/100 = ₹1200.",
+      "options": [
+        {
+          "label": "₹1200",
+          "is_correct": true
+        },
+        {
+          "label": "₹1248",
+          "is_correct": false
+        },
+        {
+          "label": "₹1152",
+          "is_correct": false
+        },
+        {
+          "label": "₹1296",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "True Discount",
+      "kind": "standard",
+      "difficulty": "hard",
+      "answer_type": "single",
+      "stem": "Find the true discount on a bill of ₹800 due 5 year(s) hence, the rate of interest being 20% per annum.",
+      "explanation": "TD = 800×100/(100+100) = ₹400.",
+      "options": [
+        {
+          "label": "₹416",
+          "is_correct": false
+        },
+        {
+          "label": "₹384",
+          "is_correct": false
+        },
+        {
+          "label": "₹432",
+          "is_correct": false
+        },
+        {
+          "label": "₹400",
+          "is_correct": true
+        }
+      ]
+    },
+    {
+      "chapter": "True Discount",
+      "kind": "standard",
+      "difficulty": "hard",
+      "answer_type": "single",
+      "stem": "Find the true discount on a bill of ₹3000 due 1 year(s) hence, the rate of interest being 20% per annum.",
+      "explanation": "TD = 3000×20/(100+20) = ₹500.",
+      "options": [
+        {
+          "label": "₹540",
+          "is_correct": false
+        },
+        {
+          "label": "₹520",
+          "is_correct": false
+        },
+        {
+          "label": "₹500",
+          "is_correct": true
+        },
+        {
+          "label": "₹480",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "True Discount",
+      "kind": "standard",
+      "difficulty": "hard",
+      "answer_type": "single",
+      "stem": "The present worth of a debt due 5 year(s) hence at 5% per annum is ₹1600. Find the amount of the debt.",
+      "explanation": "Debt = PW×(100+RT)/100 = 1600×125/100 = ₹2000.",
+      "options": [
+        {
+          "label": "₹2000",
+          "is_correct": true
+        },
+        {
+          "label": "₹2080",
+          "is_correct": false
+        },
+        {
+          "label": "₹2160",
+          "is_correct": false
+        },
+        {
+          "label": "₹1920",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "True Discount",
+      "kind": "standard",
+      "difficulty": "hard",
+      "answer_type": "single",
+      "stem": "Find the true discount on a bill of ₹2400 due 6 year(s) hence, the rate of interest being 10% per annum.",
+      "explanation": "TD = 2400×60/(100+60) = ₹900.",
+      "options": [
+        {
+          "label": "₹972",
+          "is_correct": false
+        },
+        {
+          "label": "₹936",
+          "is_correct": false
+        },
+        {
+          "label": "₹864",
+          "is_correct": false
+        },
+        {
+          "label": "₹900",
+          "is_correct": true
+        }
+      ]
+    },
+    {
+      "chapter": "True Discount",
+      "kind": "standard",
+      "difficulty": "hard",
+      "answer_type": "single",
+      "stem": "A debt of ₹1000 is due 1 year(s) hence. If money is worth 25% per annum, find the present worth of the debt.",
+      "explanation": "PW = 100×1000/(100+25) = ₹800.",
+      "options": [
+        {
+          "label": "₹768",
+          "is_correct": false
+        },
+        {
+          "label": "₹800",
+          "is_correct": true
+        },
+        {
+          "label": "₹832",
+          "is_correct": false
+        },
+        {
+          "label": "₹864",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "True Discount",
+      "kind": "standard",
+      "difficulty": "hard",
+      "answer_type": "single",
+      "stem": "The present worth of a debt due 5 year(s) hence at 20% per annum is ₹300. Find the amount of the debt.",
+      "explanation": "Debt = PW×(100+RT)/100 = 300×200/100 = ₹600.",
+      "options": [
+        {
+          "label": "₹624",
+          "is_correct": false
+        },
+        {
+          "label": "₹600",
+          "is_correct": true
+        },
+        {
+          "label": "₹576",
+          "is_correct": false
+        },
+        {
+          "label": "₹648",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "True Discount",
+      "kind": "standard",
+      "difficulty": "hard",
+      "answer_type": "single",
+      "stem": "Find the true discount on a bill of ₹2000 due 1 year(s) hence, the rate of interest being 25% per annum.",
+      "explanation": "TD = 2000×25/(100+25) = ₹400.",
+      "options": [
+        {
+          "label": "₹384",
+          "is_correct": false
+        },
+        {
+          "label": "₹400",
+          "is_correct": true
+        },
+        {
+          "label": "₹432",
+          "is_correct": false
+        },
+        {
+          "label": "₹416",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "True Discount",
+      "kind": "standard",
+      "difficulty": "hard",
+      "answer_type": "single",
+      "stem": "A debt of ₹1500 is due 1 year(s) hence. If money is worth 25% per annum, find the present worth of the debt.",
+      "explanation": "PW = 100×1500/(100+25) = ₹1200.",
+      "options": [
+        {
+          "label": "₹1296",
+          "is_correct": false
+        },
+        {
+          "label": "₹1200",
+          "is_correct": true
+        },
+        {
+          "label": "₹1152",
+          "is_correct": false
+        },
+        {
+          "label": "₹1248",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "True Discount",
+      "kind": "standard",
+      "difficulty": "hard",
+      "answer_type": "single",
+      "stem": "A debt of ₹3200 is due 6 year(s) hence. If money is worth 10% per annum, find the present worth of the debt.",
+      "explanation": "PW = 100×3200/(100+60) = ₹2000.",
+      "options": [
+        {
+          "label": "₹2160",
+          "is_correct": false
+        },
+        {
+          "label": "₹2080",
+          "is_correct": false
+        },
+        {
+          "label": "₹2000",
+          "is_correct": true
+        },
+        {
+          "label": "₹1920",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "True Discount",
+      "kind": "standard",
+      "difficulty": "hard",
+      "answer_type": "single",
+      "stem": "Find the true discount on a bill of ₹1000 due 4 year(s) hence, the rate of interest being 25% per annum.",
+      "explanation": "TD = 1000×100/(100+100) = ₹500.",
+      "options": [
+        {
+          "label": "₹520",
+          "is_correct": false
+        },
+        {
+          "label": "₹540",
+          "is_correct": false
+        },
+        {
+          "label": "₹500",
+          "is_correct": true
+        },
+        {
+          "label": "₹480",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "True Discount",
+      "kind": "standard",
+      "difficulty": "hard",
+      "answer_type": "single",
+      "stem": "The present worth of a debt due 4 year(s) hence at 25% per annum is ₹100. Find the amount of the debt.",
+      "explanation": "Debt = PW×(100+RT)/100 = 100×200/100 = ₹200.",
+      "options": [
+        {
+          "label": "₹200",
+          "is_correct": true
+        },
+        {
+          "label": "₹216",
+          "is_correct": false
+        },
+        {
+          "label": "₹208",
+          "is_correct": false
+        },
+        {
+          "label": "₹192",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "True Discount",
+      "kind": "standard",
+      "difficulty": "hard",
+      "answer_type": "single",
+      "stem": "The present worth of a debt due 2 year(s) hence at 25% per annum is ₹1000. Find the amount of the debt.",
+      "explanation": "Debt = PW×(100+RT)/100 = 1000×150/100 = ₹1500.",
+      "options": [
+        {
+          "label": "₹1440",
+          "is_correct": false
+        },
+        {
+          "label": "₹1560",
+          "is_correct": false
+        },
+        {
+          "label": "₹1500",
+          "is_correct": true
+        },
+        {
+          "label": "₹1620",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "True Discount",
+      "kind": "standard",
+      "difficulty": "hard",
+      "answer_type": "single",
+      "stem": "The present worth of a debt due 5 year(s) hence at 20% per annum is ₹100. Find the amount of the debt.",
+      "explanation": "Debt = PW×(100+RT)/100 = 100×200/100 = ₹200.",
+      "options": [
+        {
+          "label": "₹208",
+          "is_correct": false
+        },
+        {
+          "label": "₹216",
+          "is_correct": false
+        },
+        {
+          "label": "₹192",
+          "is_correct": false
+        },
+        {
+          "label": "₹200",
+          "is_correct": true
+        }
+      ]
+    },
+    {
+      "chapter": "True Discount",
+      "kind": "standard",
+      "difficulty": "hard",
+      "answer_type": "single",
+      "stem": "The present worth of a debt due 3 year(s) hence at 20% per annum is ₹1500. Find the amount of the debt.",
+      "explanation": "Debt = PW×(100+RT)/100 = 1500×160/100 = ₹2400.",
+      "options": [
+        {
+          "label": "₹2592",
+          "is_correct": false
+        },
+        {
+          "label": "₹2496",
+          "is_correct": false
+        },
+        {
+          "label": "₹2400",
+          "is_correct": true
+        },
+        {
+          "label": "₹2304",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "True Discount",
+      "kind": "standard",
+      "difficulty": "hard",
+      "answer_type": "single",
+      "stem": "A debt of ₹3200 is due 4 year(s) hence. If money is worth 15% per annum, find the present worth of the debt.",
+      "explanation": "PW = 100×3200/(100+60) = ₹2000.",
+      "options": [
+        {
+          "label": "₹1920",
+          "is_correct": false
+        },
+        {
+          "label": "₹2000",
+          "is_correct": true
+        },
+        {
+          "label": "₹2160",
+          "is_correct": false
+        },
+        {
+          "label": "₹2080",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "True Discount",
+      "kind": "standard",
+      "difficulty": "hard",
+      "answer_type": "single",
+      "stem": "Find the true discount on a bill of ₹4400 due 2 year(s) hence, the rate of interest being 5% per annum.",
+      "explanation": "TD = 4400×10/(100+10) = ₹400.",
+      "options": [
+        {
+          "label": "₹432",
+          "is_correct": false
+        },
+        {
+          "label": "₹400",
+          "is_correct": true
+        },
+        {
+          "label": "₹416",
+          "is_correct": false
+        },
+        {
+          "label": "₹384",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "True Discount",
+      "kind": "standard",
+      "difficulty": "hard",
+      "answer_type": "single",
+      "stem": "Find the true discount on a bill of ₹5200 due 3 year(s) hence, the rate of interest being 10% per annum.",
+      "explanation": "TD = 5200×30/(100+30) = ₹1200.",
+      "options": [
+        {
+          "label": "₹1296",
+          "is_correct": false
+        },
+        {
+          "label": "₹1152",
+          "is_correct": false
+        },
+        {
+          "label": "₹1248",
+          "is_correct": false
+        },
+        {
+          "label": "₹1200",
+          "is_correct": true
+        }
+      ]
+    },
+    {
+      "chapter": "True Discount",
+      "kind": "standard",
+      "difficulty": "hard",
+      "answer_type": "single",
+      "stem": "The present worth of a debt due 2 year(s) hence at 5% per annum is ₹2000. Find the amount of the debt.",
+      "explanation": "Debt = PW×(100+RT)/100 = 2000×110/100 = ₹2200.",
+      "options": [
+        {
+          "label": "₹2376",
+          "is_correct": false
+        },
+        {
+          "label": "₹2200",
+          "is_correct": true
+        },
+        {
+          "label": "₹2112",
+          "is_correct": false
+        },
+        {
+          "label": "₹2288",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "True Discount",
+      "kind": "standard",
+      "difficulty": "hard",
+      "answer_type": "single",
+      "stem": "The present worth of a debt due 1 year(s) hence at 10% per annum is ₹5000. Find the amount of the debt.",
+      "explanation": "Debt = PW×(100+RT)/100 = 5000×110/100 = ₹5500.",
+      "options": [
+        {
+          "label": "₹5280",
+          "is_correct": false
+        },
+        {
+          "label": "₹5500",
+          "is_correct": true
+        },
+        {
+          "label": "₹5940",
+          "is_correct": false
+        },
+        {
+          "label": "₹5720",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "True Discount",
+      "kind": "standard",
+      "difficulty": "hard",
+      "answer_type": "single",
+      "stem": "The present worth of a debt due 3 year(s) hence at 10% per annum is ₹4000. Find the amount of the debt.",
+      "explanation": "Debt = PW×(100+RT)/100 = 4000×130/100 = ₹5200.",
+      "options": [
+        {
+          "label": "₹4992",
+          "is_correct": false
+        },
+        {
+          "label": "₹5616",
+          "is_correct": false
+        },
+        {
+          "label": "₹5408",
+          "is_correct": false
+        },
+        {
+          "label": "₹5200",
+          "is_correct": true
+        }
+      ]
+    },
+    {
+      "chapter": "True Discount",
+      "kind": "standard",
+      "difficulty": "hard",
+      "answer_type": "single",
+      "stem": "Find the true discount on a bill of ₹2200 due 1 year(s) hence, the rate of interest being 10% per annum.",
+      "explanation": "TD = 2200×10/(100+10) = ₹200.",
+      "options": [
+        {
+          "label": "₹192",
+          "is_correct": false
+        },
+        {
+          "label": "₹216",
+          "is_correct": false
+        },
+        {
+          "label": "₹200",
+          "is_correct": true
+        },
+        {
+          "label": "₹208",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "True Discount",
+      "kind": "standard",
+      "difficulty": "hard",
+      "answer_type": "single",
+      "stem": "The present worth of a debt due 2 year(s) hence at 15% per annum is ₹5000. Find the amount of the debt.",
+      "explanation": "Debt = PW×(100+RT)/100 = 5000×130/100 = ₹6500.",
+      "options": [
+        {
+          "label": "₹7020",
+          "is_correct": false
+        },
+        {
+          "label": "₹6500",
+          "is_correct": true
+        },
+        {
+          "label": "₹6760",
+          "is_correct": false
+        },
+        {
+          "label": "₹6240",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "True Discount",
+      "kind": "standard",
+      "difficulty": "hard",
+      "answer_type": "single",
+      "stem": "The present worth of a debt due 2 year(s) hence at 20% per annum is ₹2500. Find the amount of the debt.",
+      "explanation": "Debt = PW×(100+RT)/100 = 2500×140/100 = ₹3500.",
+      "options": [
+        {
+          "label": "₹3780",
+          "is_correct": false
+        },
+        {
+          "label": "₹3360",
+          "is_correct": false
+        },
+        {
+          "label": "₹3500",
+          "is_correct": true
+        },
+        {
+          "label": "₹3640",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "True Discount",
+      "kind": "standard",
+      "difficulty": "hard",
+      "answer_type": "single",
+      "stem": "The present worth of a debt due 1 year(s) hence at 20% per annum is ₹2000. Find the amount of the debt.",
+      "explanation": "Debt = PW×(100+RT)/100 = 2000×120/100 = ₹2400.",
+      "options": [
+        {
+          "label": "₹2592",
+          "is_correct": false
+        },
+        {
+          "label": "₹2400",
+          "is_correct": true
+        },
+        {
+          "label": "₹2496",
+          "is_correct": false
+        },
+        {
+          "label": "₹2304",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "True Discount",
+      "kind": "standard",
+      "difficulty": "hard",
+      "answer_type": "single",
+      "stem": "Find the true discount on a bill of ₹2000 due 5 year(s) hence, the rate of interest being 5% per annum.",
+      "explanation": "TD = 2000×25/(100+25) = ₹400.",
+      "options": [
+        {
+          "label": "₹432",
+          "is_correct": false
+        },
+        {
+          "label": "₹384",
+          "is_correct": false
+        },
+        {
+          "label": "₹416",
+          "is_correct": false
+        },
+        {
+          "label": "₹400",
+          "is_correct": true
+        }
+      ]
+    },
+    {
+      "chapter": "True Discount",
+      "kind": "standard",
+      "difficulty": "hard",
+      "answer_type": "single",
+      "stem": "A debt of ₹4000 is due 4 year(s) hence. If money is worth 15% per annum, find the present worth of the debt.",
+      "explanation": "PW = 100×4000/(100+60) = ₹2500.",
+      "options": [
+        {
+          "label": "₹2400",
+          "is_correct": false
+        },
+        {
+          "label": "₹2600",
+          "is_correct": false
+        },
+        {
+          "label": "₹2700",
+          "is_correct": false
+        },
+        {
+          "label": "₹2500",
+          "is_correct": true
+        }
+      ]
+    },
+    {
+      "chapter": "True Discount",
+      "kind": "standard",
+      "difficulty": "hard",
+      "answer_type": "single",
+      "stem": "The present worth of a debt due 2 year(s) hence at 25% per annum is ₹400. Find the amount of the debt.",
+      "explanation": "Debt = PW×(100+RT)/100 = 400×150/100 = ₹600.",
+      "options": [
+        {
+          "label": "₹648",
+          "is_correct": false
+        },
+        {
+          "label": "₹624",
+          "is_correct": false
+        },
+        {
+          "label": "₹600",
+          "is_correct": true
+        },
+        {
+          "label": "₹576",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "True Discount",
+      "kind": "standard",
+      "difficulty": "hard",
+      "answer_type": "single",
+      "stem": "A debt of ₹2500 is due 5 year(s) hence. If money is worth 5% per annum, find the present worth of the debt.",
+      "explanation": "PW = 100×2500/(100+25) = ₹2000.",
+      "options": [
+        {
+          "label": "₹2080",
+          "is_correct": false
+        },
+        {
+          "label": "₹2160",
+          "is_correct": false
+        },
+        {
+          "label": "₹2000",
+          "is_correct": true
+        },
+        {
+          "label": "₹1920",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "True Discount",
+      "kind": "standard",
+      "difficulty": "hard",
+      "answer_type": "single",
+      "stem": "Find the true discount on a bill of ₹900 due 5 year(s) hence, the rate of interest being 10% per annum.",
+      "explanation": "TD = 900×50/(100+50) = ₹300.",
+      "options": [
+        {
+          "label": "₹312",
+          "is_correct": false
+        },
+        {
+          "label": "₹300",
+          "is_correct": true
+        },
+        {
+          "label": "₹324",
+          "is_correct": false
+        },
+        {
+          "label": "₹288",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "True Discount",
+      "kind": "standard",
+      "difficulty": "hard",
+      "answer_type": "single",
+      "stem": "The present worth of a debt due 1 year(s) hence at 20% per annum is ₹500. Find the amount of the debt.",
+      "explanation": "Debt = PW×(100+RT)/100 = 500×120/100 = ₹600.",
+      "options": [
+        {
+          "label": "₹600",
+          "is_correct": true
+        },
+        {
+          "label": "₹624",
+          "is_correct": false
+        },
+        {
+          "label": "₹648",
+          "is_correct": false
+        },
+        {
+          "label": "₹576",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "True Discount",
+      "kind": "standard",
+      "difficulty": "hard",
+      "answer_type": "single",
+      "stem": "Find the true discount on a bill of ₹300 due 2 year(s) hence, the rate of interest being 25% per annum.",
+      "explanation": "TD = 300×50/(100+50) = ₹100.",
+      "options": [
+        {
+          "label": "₹102",
+          "is_correct": false
+        },
+        {
+          "label": "₹98",
+          "is_correct": false
+        },
+        {
+          "label": "₹104",
+          "is_correct": false
+        },
+        {
+          "label": "₹100",
+          "is_correct": true
+        }
+      ]
+    },
+    {
+      "chapter": "True Discount",
+      "kind": "standard",
+      "difficulty": "hard",
+      "answer_type": "single",
+      "stem": "The present worth of a debt due 3 year(s) hence at 10% per annum is ₹1000. Find the amount of the debt.",
+      "explanation": "Debt = PW×(100+RT)/100 = 1000×130/100 = ₹1300.",
+      "options": [
+        {
+          "label": "₹1300",
+          "is_correct": true
+        },
+        {
+          "label": "₹1404",
+          "is_correct": false
+        },
+        {
+          "label": "₹1352",
+          "is_correct": false
+        },
+        {
+          "label": "₹1248",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "True Discount",
+      "kind": "standard",
+      "difficulty": "hard",
+      "answer_type": "single",
+      "stem": "The present worth of a debt due 6 year(s) hence at 10% per annum is ₹2000. Find the amount of the debt.",
+      "explanation": "Debt = PW×(100+RT)/100 = 2000×160/100 = ₹3200.",
+      "options": [
+        {
+          "label": "₹3200",
+          "is_correct": true
+        },
+        {
+          "label": "₹3072",
+          "is_correct": false
+        },
+        {
+          "label": "₹3456",
+          "is_correct": false
+        },
+        {
+          "label": "₹3328",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "True Discount",
+      "kind": "standard",
+      "difficulty": "hard",
+      "answer_type": "single",
+      "stem": "Find the true discount on a bill of ₹2800 due 2 year(s) hence, the rate of interest being 20% per annum.",
+      "explanation": "TD = 2800×40/(100+40) = ₹800.",
+      "options": [
+        {
+          "label": "₹832",
+          "is_correct": false
+        },
+        {
+          "label": "₹768",
+          "is_correct": false
+        },
+        {
+          "label": "₹864",
+          "is_correct": false
+        },
+        {
+          "label": "₹800",
+          "is_correct": true
+        }
+      ]
+    },
+    {
+      "chapter": "True Discount",
+      "kind": "standard",
+      "difficulty": "hard",
+      "answer_type": "single",
+      "stem": "A debt of ₹4000 is due 6 year(s) hence. If money is worth 10% per annum, find the present worth of the debt.",
+      "explanation": "PW = 100×4000/(100+60) = ₹2500.",
+      "options": [
+        {
+          "label": "₹2400",
+          "is_correct": false
+        },
+        {
+          "label": "₹2600",
+          "is_correct": false
+        },
+        {
+          "label": "₹2500",
+          "is_correct": true
+        },
+        {
+          "label": "₹2700",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "True Discount",
+      "kind": "standard",
+      "difficulty": "hard",
+      "answer_type": "single",
+      "stem": "A debt of ₹1400 is due 2 year(s) hence. If money is worth 20% per annum, find the present worth of the debt.",
+      "explanation": "PW = 100×1400/(100+40) = ₹1000.",
+      "options": [
+        {
+          "label": "₹960",
+          "is_correct": false
+        },
+        {
+          "label": "₹1040",
+          "is_correct": false
+        },
+        {
+          "label": "₹1000",
+          "is_correct": true
+        },
+        {
+          "label": "₹1080",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "True Discount",
+      "kind": "standard",
+      "difficulty": "very_hard",
+      "answer_type": "single",
+      "stem": "Find the difference between the simple interest and the true discount on ₹1800 due 4 year(s) hence at 5% per annum.",
+      "explanation": "SI = ₹360, TD = ₹300, so the difference = ₹60.",
+      "options": [
+        {
+          "label": "₹62",
+          "is_correct": false
+        },
+        {
+          "label": "₹60",
+          "is_correct": true
+        },
+        {
+          "label": "₹64",
+          "is_correct": false
+        },
+        {
+          "label": "₹58",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "True Discount",
+      "kind": "standard",
+      "difficulty": "very_hard",
+      "answer_type": "single",
+      "stem": "A sum of ₹2800 due 4 year(s) hence has a present worth of ₹2000. Find the rate of interest per annum.",
+      "explanation": "TD = ₹800; rate = TD×100/(PW×T) = 800×100/(2000×4) = 10%.",
+      "options": [
+        {
+          "label": "9%",
+          "is_correct": false
+        },
+        {
+          "label": "11%",
+          "is_correct": false
+        },
+        {
+          "label": "12%",
+          "is_correct": false
+        },
+        {
+          "label": "10%",
+          "is_correct": true
+        }
+      ]
+    },
+    {
+      "chapter": "True Discount",
+      "kind": "standard",
+      "difficulty": "very_hard",
+      "answer_type": "single",
+      "stem": "Find the difference between the simple interest and the true discount on ₹700 due 4 year(s) hence at 10% per annum.",
+      "explanation": "SI = ₹280, TD = ₹200, so the difference = ₹80.",
+      "options": [
+        {
+          "label": "₹82",
+          "is_correct": false
+        },
+        {
+          "label": "₹80",
+          "is_correct": true
+        },
+        {
+          "label": "₹78",
+          "is_correct": false
+        },
+        {
+          "label": "₹84",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "True Discount",
+      "kind": "standard",
+      "difficulty": "very_hard",
+      "answer_type": "single",
+      "stem": "Find the difference between the simple interest and the true discount on ₹1100 due 2 year(s) hence at 5% per annum.",
+      "explanation": "SI = ₹110, TD = ₹100, so the difference = ₹10.",
+      "options": [
+        {
+          "label": "₹11",
+          "is_correct": false
+        },
+        {
+          "label": "₹9",
+          "is_correct": false
+        },
+        {
+          "label": "₹10",
+          "is_correct": true
+        },
+        {
+          "label": "₹12",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "True Discount",
+      "kind": "standard",
+      "difficulty": "very_hard",
+      "answer_type": "single",
+      "stem": "The simple interest on a certain sum for 2 year(s) at 25% per annum is ₹450. Find the true discount on the same sum for the same time and rate.",
+      "explanation": "TD = SI×100/(100+RT) = 450×100/150 = ₹300.",
+      "options": [
+        {
+          "label": "₹300",
+          "is_correct": true
+        },
+        {
+          "label": "₹324",
+          "is_correct": false
+        },
+        {
+          "label": "₹288",
+          "is_correct": false
+        },
+        {
+          "label": "₹312",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "True Discount",
+      "kind": "standard",
+      "difficulty": "very_hard",
+      "answer_type": "single",
+      "stem": "A sum of ₹800 due 5 year(s) hence has a present worth of ₹400. Find the rate of interest per annum.",
+      "explanation": "TD = ₹400; rate = TD×100/(PW×T) = 400×100/(400×5) = 20%.",
+      "options": [
+        {
+          "label": "20%",
+          "is_correct": true
+        },
+        {
+          "label": "19%",
+          "is_correct": false
+        },
+        {
+          "label": "21%",
+          "is_correct": false
+        },
+        {
+          "label": "22%",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "True Discount",
+      "kind": "standard",
+      "difficulty": "very_hard",
+      "answer_type": "single",
+      "stem": "Find the difference between the simple interest and the true discount on ₹3200 due 3 year(s) hence at 20% per annum.",
+      "explanation": "SI = ₹1920, TD = ₹1200, so the difference = ₹720.",
+      "options": [
+        {
+          "label": "₹749",
+          "is_correct": false
+        },
+        {
+          "label": "₹778",
+          "is_correct": false
+        },
+        {
+          "label": "₹720",
+          "is_correct": true
+        },
+        {
+          "label": "₹691",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "True Discount",
+      "kind": "standard",
+      "difficulty": "very_hard",
+      "answer_type": "single",
+      "stem": "The simple interest on a certain sum for 3 year(s) at 20% per annum is ₹1440. Find the true discount on the same sum for the same time and rate.",
+      "explanation": "TD = SI×100/(100+RT) = 1440×100/160 = ₹900.",
+      "options": [
+        {
+          "label": "₹936",
+          "is_correct": false
+        },
+        {
+          "label": "₹864",
+          "is_correct": false
+        },
+        {
+          "label": "₹900",
+          "is_correct": true
+        },
+        {
+          "label": "₹972",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "True Discount",
+      "kind": "standard",
+      "difficulty": "very_hard",
+      "answer_type": "single",
+      "stem": "A sum of ₹1600 due 3 year(s) hence has a present worth of ₹1000. Find the rate of interest per annum.",
+      "explanation": "TD = ₹600; rate = TD×100/(PW×T) = 600×100/(1000×3) = 20%.",
+      "options": [
+        {
+          "label": "21%",
+          "is_correct": false
+        },
+        {
+          "label": "20%",
+          "is_correct": true
+        },
+        {
+          "label": "22%",
+          "is_correct": false
+        },
+        {
+          "label": "19%",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "True Discount",
+      "kind": "standard",
+      "difficulty": "very_hard",
+      "answer_type": "single",
+      "stem": "A sum of ₹2800 due 2 year(s) hence has a present worth of ₹2000. Find the rate of interest per annum.",
+      "explanation": "TD = ₹800; rate = TD×100/(PW×T) = 800×100/(2000×2) = 20%.",
+      "options": [
+        {
+          "label": "20%",
+          "is_correct": true
+        },
+        {
+          "label": "21%",
+          "is_correct": false
+        },
+        {
+          "label": "22%",
+          "is_correct": false
+        },
+        {
+          "label": "19%",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "True Discount",
+      "kind": "standard",
+      "difficulty": "very_hard",
+      "answer_type": "single",
+      "stem": "Find the difference between the simple interest and the true discount on ₹2500 due 5 year(s) hence at 5% per annum.",
+      "explanation": "SI = ₹625, TD = ₹500, so the difference = ₹125.",
+      "options": [
+        {
+          "label": "₹123",
+          "is_correct": false
+        },
+        {
+          "label": "₹127",
+          "is_correct": false
+        },
+        {
+          "label": "₹125",
+          "is_correct": true
+        },
+        {
+          "label": "₹129",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "True Discount",
+      "kind": "standard",
+      "difficulty": "very_hard",
+      "answer_type": "single",
+      "stem": "The simple interest on a certain sum for 4 year(s) at 15% per annum is ₹960. Find the true discount on the same sum for the same time and rate.",
+      "explanation": "TD = SI×100/(100+RT) = 960×100/160 = ₹600.",
+      "options": [
+        {
+          "label": "₹576",
+          "is_correct": false
+        },
+        {
+          "label": "₹648",
+          "is_correct": false
+        },
+        {
+          "label": "₹600",
+          "is_correct": true
+        },
+        {
+          "label": "₹624",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "True Discount",
+      "kind": "standard",
+      "difficulty": "very_hard",
+      "answer_type": "single",
+      "stem": "Find the difference between the simple interest and the true discount on ₹4400 due 2 year(s) hence at 5% per annum.",
+      "explanation": "SI = ₹440, TD = ₹400, so the difference = ₹40.",
+      "options": [
+        {
+          "label": "₹40",
+          "is_correct": true
+        },
+        {
+          "label": "₹44",
+          "is_correct": false
+        },
+        {
+          "label": "₹42",
+          "is_correct": false
+        },
+        {
+          "label": "₹38",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "True Discount",
+      "kind": "standard",
+      "difficulty": "very_hard",
+      "answer_type": "single",
+      "stem": "Find the difference between the simple interest and the true discount on ₹2600 due 2 year(s) hence at 15% per annum.",
+      "explanation": "SI = ₹780, TD = ₹600, so the difference = ₹180.",
+      "options": [
+        {
+          "label": "₹178",
+          "is_correct": false
+        },
+        {
+          "label": "₹182",
+          "is_correct": false
+        },
+        {
+          "label": "₹184",
+          "is_correct": false
+        },
+        {
+          "label": "₹180",
+          "is_correct": true
+        }
+      ]
+    },
+    {
+      "chapter": "True Discount",
+      "kind": "standard",
+      "difficulty": "very_hard",
+      "answer_type": "single",
+      "stem": "Find the difference between the simple interest and the true discount on ₹1500 due 5 year(s) hence at 10% per annum.",
+      "explanation": "SI = ₹750, TD = ₹500, so the difference = ₹250.",
+      "options": [
+        {
+          "label": "₹260",
+          "is_correct": false
+        },
+        {
+          "label": "₹250",
+          "is_correct": true
+        },
+        {
+          "label": "₹270",
+          "is_correct": false
+        },
+        {
+          "label": "₹240",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "True Discount",
+      "kind": "standard",
+      "difficulty": "very_hard",
+      "answer_type": "single",
+      "stem": "The simple interest on a certain sum for 4 year(s) at 10% per annum is ₹840. Find the true discount on the same sum for the same time and rate.",
+      "explanation": "TD = SI×100/(100+RT) = 840×100/140 = ₹600.",
+      "options": [
+        {
+          "label": "₹600",
+          "is_correct": true
+        },
+        {
+          "label": "₹576",
+          "is_correct": false
+        },
+        {
+          "label": "₹648",
+          "is_correct": false
+        },
+        {
+          "label": "₹624",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "True Discount",
+      "kind": "standard",
+      "difficulty": "very_hard",
+      "answer_type": "single",
+      "stem": "Find the difference between the simple interest and the true discount on ₹2500 due 1 year(s) hence at 25% per annum.",
+      "explanation": "SI = ₹625, TD = ₹500, so the difference = ₹125.",
+      "options": [
+        {
+          "label": "₹125",
+          "is_correct": true
+        },
+        {
+          "label": "₹129",
+          "is_correct": false
+        },
+        {
+          "label": "₹127",
+          "is_correct": false
+        },
+        {
+          "label": "₹123",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "True Discount",
+      "kind": "standard",
+      "difficulty": "very_hard",
+      "answer_type": "single",
+      "stem": "A sum of ₹3200 due 4 year(s) hence has a present worth of ₹2000. Find the rate of interest per annum.",
+      "explanation": "TD = ₹1200; rate = TD×100/(PW×T) = 1200×100/(2000×4) = 15%.",
+      "options": [
+        {
+          "label": "17%",
+          "is_correct": false
+        },
+        {
+          "label": "16%",
+          "is_correct": false
+        },
+        {
+          "label": "14%",
+          "is_correct": false
+        },
+        {
+          "label": "15%",
+          "is_correct": true
+        }
+      ]
+    },
+    {
+      "chapter": "True Discount",
+      "kind": "standard",
+      "difficulty": "very_hard",
+      "answer_type": "single",
+      "stem": "The simple interest on a certain sum for 1 year(s) at 10% per annum is ₹330. Find the true discount on the same sum for the same time and rate.",
+      "explanation": "TD = SI×100/(100+RT) = 330×100/110 = ₹300.",
+      "options": [
+        {
+          "label": "₹300",
+          "is_correct": true
+        },
+        {
+          "label": "₹324",
+          "is_correct": false
+        },
+        {
+          "label": "₹288",
+          "is_correct": false
+        },
+        {
+          "label": "₹312",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "True Discount",
+      "kind": "standard",
+      "difficulty": "very_hard",
+      "answer_type": "single",
+      "stem": "Find the difference between the simple interest and the true discount on ₹1600 due 4 year(s) hence at 15% per annum.",
+      "explanation": "SI = ₹960, TD = ₹600, so the difference = ₹360.",
+      "options": [
+        {
+          "label": "₹374",
+          "is_correct": false
+        },
+        {
+          "label": "₹360",
+          "is_correct": true
+        },
+        {
+          "label": "₹346",
+          "is_correct": false
+        },
+        {
+          "label": "₹388",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "True Discount",
+      "kind": "standard",
+      "difficulty": "very_hard",
+      "answer_type": "single",
+      "stem": "A sum of ₹600 due 4 year(s) hence has a present worth of ₹300. Find the rate of interest per annum.",
+      "explanation": "TD = ₹300; rate = TD×100/(PW×T) = 300×100/(300×4) = 25%.",
+      "options": [
+        {
+          "label": "24%",
+          "is_correct": false
+        },
+        {
+          "label": "27%",
+          "is_correct": false
+        },
+        {
+          "label": "25%",
+          "is_correct": true
+        },
+        {
+          "label": "26%",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "True Discount",
+      "kind": "standard",
+      "difficulty": "very_hard",
+      "answer_type": "single",
+      "stem": "The simple interest on a certain sum for 3 year(s) at 10% per annum is ₹1560. Find the true discount on the same sum for the same time and rate.",
+      "explanation": "TD = SI×100/(100+RT) = 1560×100/130 = ₹1200.",
+      "options": [
+        {
+          "label": "₹1152",
+          "is_correct": false
+        },
+        {
+          "label": "₹1248",
+          "is_correct": false
+        },
+        {
+          "label": "₹1200",
+          "is_correct": true
+        },
+        {
+          "label": "₹1296",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "True Discount",
+      "kind": "standard",
+      "difficulty": "very_hard",
+      "answer_type": "single",
+      "stem": "The simple interest on a certain sum for 4 year(s) at 5% per annum is ₹240. Find the true discount on the same sum for the same time and rate.",
+      "explanation": "TD = SI×100/(100+RT) = 240×100/120 = ₹200.",
+      "options": [
+        {
+          "label": "₹192",
+          "is_correct": false
+        },
+        {
+          "label": "₹216",
+          "is_correct": false
+        },
+        {
+          "label": "₹200",
+          "is_correct": true
+        },
+        {
+          "label": "₹208",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "True Discount",
+      "kind": "standard",
+      "difficulty": "very_hard",
+      "answer_type": "single",
+      "stem": "A sum of ₹2000 due 1 year(s) hence has a present worth of ₹1600. Find the rate of interest per annum.",
+      "explanation": "TD = ₹400; rate = TD×100/(PW×T) = 400×100/(1600×1) = 25%.",
+      "options": [
+        {
+          "label": "25%",
+          "is_correct": true
+        },
+        {
+          "label": "26%",
+          "is_correct": false
+        },
+        {
+          "label": "27%",
+          "is_correct": false
+        },
+        {
+          "label": "24%",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "True Discount",
+      "kind": "standard",
+      "difficulty": "very_hard",
+      "answer_type": "single",
+      "stem": "The simple interest on a certain sum for 2 year(s) at 20% per annum is ₹1120. Find the true discount on the same sum for the same time and rate.",
+      "explanation": "TD = SI×100/(100+RT) = 1120×100/140 = ₹800.",
+      "options": [
+        {
+          "label": "₹768",
+          "is_correct": false
+        },
+        {
+          "label": "₹864",
+          "is_correct": false
+        },
+        {
+          "label": "₹800",
+          "is_correct": true
+        },
+        {
+          "label": "₹832",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "True Discount",
+      "kind": "standard",
+      "difficulty": "very_hard",
+      "answer_type": "single",
+      "stem": "A sum of ₹300 due 2 year(s) hence has a present worth of ₹200. Find the rate of interest per annum.",
+      "explanation": "TD = ₹100; rate = TD×100/(PW×T) = 100×100/(200×2) = 25%.",
+      "options": [
+        {
+          "label": "26%",
+          "is_correct": false
+        },
+        {
+          "label": "25%",
+          "is_correct": true
+        },
+        {
+          "label": "27%",
+          "is_correct": false
+        },
+        {
+          "label": "24%",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "True Discount",
+      "kind": "standard",
+      "difficulty": "very_hard",
+      "answer_type": "single",
+      "stem": "The simple interest on a certain sum for 5 year(s) at 10% per annum is ₹450. Find the true discount on the same sum for the same time and rate.",
+      "explanation": "TD = SI×100/(100+RT) = 450×100/150 = ₹300.",
+      "options": [
+        {
+          "label": "₹300",
+          "is_correct": true
+        },
+        {
+          "label": "₹312",
+          "is_correct": false
+        },
+        {
+          "label": "₹324",
+          "is_correct": false
+        },
+        {
+          "label": "₹288",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "True Discount",
+      "kind": "standard",
+      "difficulty": "very_hard",
+      "answer_type": "single",
+      "stem": "The simple interest on a certain sum for 5 year(s) at 5% per annum is ₹500. Find the true discount on the same sum for the same time and rate.",
+      "explanation": "TD = SI×100/(100+RT) = 500×100/125 = ₹400.",
+      "options": [
+        {
+          "label": "₹416",
+          "is_correct": false
+        },
+        {
+          "label": "₹432",
+          "is_correct": false
+        },
+        {
+          "label": "₹384",
+          "is_correct": false
+        },
+        {
+          "label": "₹400",
+          "is_correct": true
+        }
+      ]
+    },
+    {
+      "chapter": "True Discount",
+      "kind": "standard",
+      "difficulty": "very_hard",
+      "answer_type": "single",
+      "stem": "The simple interest on a certain sum for 2 year(s) at 5% per annum is ₹220. Find the true discount on the same sum for the same time and rate.",
+      "explanation": "TD = SI×100/(100+RT) = 220×100/110 = ₹200.",
+      "options": [
+        {
+          "label": "₹216",
+          "is_correct": false
+        },
+        {
+          "label": "₹208",
+          "is_correct": false
+        },
+        {
+          "label": "₹200",
+          "is_correct": true
+        },
+        {
+          "label": "₹192",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "True Discount",
+      "kind": "standard",
+      "difficulty": "very_hard",
+      "answer_type": "single",
+      "stem": "A sum of ₹4400 due 1 year(s) hence has a present worth of ₹4000. Find the rate of interest per annum.",
+      "explanation": "TD = ₹400; rate = TD×100/(PW×T) = 400×100/(4000×1) = 10%.",
+      "options": [
+        {
+          "label": "10%",
+          "is_correct": true
+        },
+        {
+          "label": "12%",
+          "is_correct": false
+        },
+        {
+          "label": "9%",
+          "is_correct": false
+        },
+        {
+          "label": "11%",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "True Discount",
+      "kind": "standard",
+      "difficulty": "very_hard",
+      "answer_type": "single",
+      "stem": "A sum of ₹1300 due 2 year(s) hence has a present worth of ₹1000. Find the rate of interest per annum.",
+      "explanation": "TD = ₹300; rate = TD×100/(PW×T) = 300×100/(1000×2) = 15%.",
+      "options": [
+        {
+          "label": "15%",
+          "is_correct": true
+        },
+        {
+          "label": "17%",
+          "is_correct": false
+        },
+        {
+          "label": "14%",
+          "is_correct": false
+        },
+        {
+          "label": "16%",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "True Discount",
+      "kind": "standard",
+      "difficulty": "very_hard",
+      "answer_type": "single",
+      "stem": "The simple interest on a certain sum for 4 year(s) at 25% per annum is ₹200. Find the true discount on the same sum for the same time and rate.",
+      "explanation": "TD = SI×100/(100+RT) = 200×100/200 = ₹100.",
+      "options": [
+        {
+          "label": "₹100",
+          "is_correct": true
+        },
+        {
+          "label": "₹98",
+          "is_correct": false
+        },
+        {
+          "label": "₹104",
+          "is_correct": false
+        },
+        {
+          "label": "₹102",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "True Discount",
+      "kind": "standard",
+      "difficulty": "very_hard",
+      "answer_type": "single",
+      "stem": "The simple interest on a certain sum for 1 year(s) at 10% per annum is ₹440. Find the true discount on the same sum for the same time and rate.",
+      "explanation": "TD = SI×100/(100+RT) = 440×100/110 = ₹400.",
+      "options": [
+        {
+          "label": "₹400",
+          "is_correct": true
+        },
+        {
+          "label": "₹432",
+          "is_correct": false
+        },
+        {
+          "label": "₹416",
+          "is_correct": false
+        },
+        {
+          "label": "₹384",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "True Discount",
+      "kind": "standard",
+      "difficulty": "very_hard",
+      "answer_type": "single",
+      "stem": "Find the difference between the simple interest and the true discount on ₹2400 due 4 year(s) hence at 15% per annum.",
+      "explanation": "SI = ₹1440, TD = ₹900, so the difference = ₹540.",
+      "options": [
+        {
+          "label": "₹518",
+          "is_correct": false
+        },
+        {
+          "label": "₹584",
+          "is_correct": false
+        },
+        {
+          "label": "₹540",
+          "is_correct": true
+        },
+        {
+          "label": "₹562",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "True Discount",
+      "kind": "standard",
+      "difficulty": "very_hard",
+      "answer_type": "single",
+      "stem": "The simple interest on a certain sum for 2 year(s) at 20% per annum is ₹1400. Find the true discount on the same sum for the same time and rate.",
+      "explanation": "TD = SI×100/(100+RT) = 1400×100/140 = ₹1000.",
+      "options": [
+        {
+          "label": "₹960",
+          "is_correct": false
+        },
+        {
+          "label": "₹1000",
+          "is_correct": true
+        },
+        {
+          "label": "₹1080",
+          "is_correct": false
+        },
+        {
+          "label": "₹1040",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "True Discount",
+      "kind": "standard",
+      "difficulty": "very_hard",
+      "answer_type": "single",
+      "stem": "The simple interest on a certain sum for 2 year(s) at 15% per annum is ₹1950. Find the true discount on the same sum for the same time and rate.",
+      "explanation": "TD = SI×100/(100+RT) = 1950×100/130 = ₹1500.",
+      "options": [
+        {
+          "label": "₹1500",
+          "is_correct": true
+        },
+        {
+          "label": "₹1560",
+          "is_correct": false
+        },
+        {
+          "label": "₹1440",
+          "is_correct": false
+        },
+        {
+          "label": "₹1620",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "True Discount",
+      "kind": "standard",
+      "difficulty": "very_hard",
+      "answer_type": "single",
+      "stem": "The simple interest on a certain sum for 2 year(s) at 25% per annum is ₹750. Find the true discount on the same sum for the same time and rate.",
+      "explanation": "TD = SI×100/(100+RT) = 750×100/150 = ₹500.",
+      "options": [
+        {
+          "label": "₹480",
+          "is_correct": false
+        },
+        {
+          "label": "₹540",
+          "is_correct": false
+        },
+        {
+          "label": "₹520",
+          "is_correct": false
+        },
+        {
+          "label": "₹500",
+          "is_correct": true
+        }
+      ]
+    },
+    {
+      "chapter": "True Discount",
+      "kind": "standard",
+      "difficulty": "very_hard",
+      "answer_type": "single",
+      "stem": "A sum of ₹1100 due 1 year(s) hence has a present worth of ₹1000. Find the rate of interest per annum.",
+      "explanation": "TD = ₹100; rate = TD×100/(PW×T) = 100×100/(1000×1) = 10%.",
+      "options": [
+        {
+          "label": "12%",
+          "is_correct": false
+        },
+        {
+          "label": "9%",
+          "is_correct": false
+        },
+        {
+          "label": "11%",
+          "is_correct": false
+        },
+        {
+          "label": "10%",
+          "is_correct": true
+        }
+      ]
+    },
+    {
+      "chapter": "True Discount",
+      "kind": "standard",
+      "difficulty": "very_hard",
+      "answer_type": "single",
+      "stem": "A sum of ₹1000 due 1 year(s) hence has a present worth of ₹800. Find the rate of interest per annum.",
+      "explanation": "TD = ₹200; rate = TD×100/(PW×T) = 200×100/(800×1) = 25%.",
+      "options": [
+        {
+          "label": "25%",
+          "is_correct": true
+        },
+        {
+          "label": "24%",
+          "is_correct": false
+        },
+        {
+          "label": "26%",
+          "is_correct": false
+        },
+        {
+          "label": "27%",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "True Discount",
+      "kind": "standard",
+      "difficulty": "very_hard",
+      "answer_type": "single",
+      "stem": "The simple interest on a certain sum for 6 year(s) at 10% per annum is ₹1920. Find the true discount on the same sum for the same time and rate.",
+      "explanation": "TD = SI×100/(100+RT) = 1920×100/160 = ₹1200.",
+      "options": [
+        {
+          "label": "₹1152",
+          "is_correct": false
+        },
+        {
+          "label": "₹1296",
+          "is_correct": false
+        },
+        {
+          "label": "₹1248",
+          "is_correct": false
+        },
+        {
+          "label": "₹1200",
+          "is_correct": true
+        }
+      ]
+    },
+    {
+      "chapter": "True Discount",
+      "kind": "standard",
+      "difficulty": "very_hard",
+      "answer_type": "single",
+      "stem": "A sum of ₹600 due 2 year(s) hence has a present worth of ₹400. Find the rate of interest per annum.",
+      "explanation": "TD = ₹200; rate = TD×100/(PW×T) = 200×100/(400×2) = 25%.",
+      "options": [
+        {
+          "label": "24%",
+          "is_correct": false
+        },
+        {
+          "label": "25%",
+          "is_correct": true
+        },
+        {
+          "label": "26%",
+          "is_correct": false
+        },
+        {
+          "label": "27%",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "True Discount",
+      "kind": "standard",
+      "difficulty": "very_hard",
+      "answer_type": "single",
+      "stem": "A sum of ₹2500 due 5 year(s) hence has a present worth of ₹2000. Find the rate of interest per annum.",
+      "explanation": "TD = ₹500; rate = TD×100/(PW×T) = 500×100/(2000×5) = 5%.",
+      "options": [
+        {
+          "label": "6%",
+          "is_correct": false
+        },
+        {
+          "label": "5%",
+          "is_correct": true
+        },
+        {
+          "label": "7%",
+          "is_correct": false
+        },
+        {
+          "label": "4%",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "True Discount",
+      "kind": "standard",
+      "difficulty": "very_hard",
+      "answer_type": "single",
+      "stem": "Find the difference between the simple interest and the true discount on ₹1300 due 3 year(s) hence at 10% per annum.",
+      "explanation": "SI = ₹390, TD = ₹300, so the difference = ₹90.",
+      "options": [
+        {
+          "label": "₹90",
+          "is_correct": true
+        },
+        {
+          "label": "₹92",
+          "is_correct": false
+        },
+        {
+          "label": "₹94",
+          "is_correct": false
+        },
+        {
+          "label": "₹88",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "True Discount",
+      "kind": "standard",
+      "difficulty": "very_hard",
+      "answer_type": "single",
+      "stem": "Find the difference between the simple interest and the true discount on ₹600 due 5 year(s) hence at 10% per annum.",
+      "explanation": "SI = ₹300, TD = ₹200, so the difference = ₹100.",
+      "options": [
+        {
+          "label": "₹102",
+          "is_correct": false
+        },
+        {
+          "label": "₹100",
+          "is_correct": true
+        },
+        {
+          "label": "₹98",
+          "is_correct": false
+        },
+        {
+          "label": "₹104",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "True Discount",
+      "kind": "standard",
+      "difficulty": "very_hard",
+      "answer_type": "single",
+      "stem": "A sum of ₹500 due 1 year(s) hence has a present worth of ₹400. Find the rate of interest per annum.",
+      "explanation": "TD = ₹100; rate = TD×100/(PW×T) = 100×100/(400×1) = 25%.",
+      "options": [
+        {
+          "label": "26%",
+          "is_correct": false
+        },
+        {
+          "label": "27%",
+          "is_correct": false
+        },
+        {
+          "label": "24%",
+          "is_correct": false
+        },
+        {
+          "label": "25%",
+          "is_correct": true
+        }
+      ]
+    },
+    {
+      "chapter": "True Discount",
+      "kind": "standard",
+      "difficulty": "very_hard",
+      "answer_type": "single",
+      "stem": "Find the difference between the simple interest and the true discount on ₹4000 due 3 year(s) hence at 20% per annum.",
+      "explanation": "SI = ₹2400, TD = ₹1500, so the difference = ₹900.",
+      "options": [
+        {
+          "label": "₹864",
+          "is_correct": false
+        },
+        {
+          "label": "₹972",
+          "is_correct": false
+        },
+        {
+          "label": "₹936",
+          "is_correct": false
+        },
+        {
+          "label": "₹900",
+          "is_correct": true
+        }
+      ]
+    },
+    {
+      "chapter": "True Discount",
+      "kind": "standard",
+      "difficulty": "very_hard",
+      "answer_type": "single",
+      "stem": "The simple interest on a certain sum for 3 year(s) at 10% per annum is ₹390. Find the true discount on the same sum for the same time and rate.",
+      "explanation": "TD = SI×100/(100+RT) = 390×100/130 = ₹300.",
+      "options": [
+        {
+          "label": "₹288",
+          "is_correct": false
+        },
+        {
+          "label": "₹324",
+          "is_correct": false
+        },
+        {
+          "label": "₹300",
+          "is_correct": true
+        },
+        {
+          "label": "₹312",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "True Discount",
+      "kind": "standard",
+      "difficulty": "very_hard",
+      "answer_type": "single",
+      "stem": "The simple interest on a certain sum for 2 year(s) at 5% per annum is ₹550. Find the true discount on the same sum for the same time and rate.",
+      "explanation": "TD = SI×100/(100+RT) = 550×100/110 = ₹500.",
+      "options": [
+        {
+          "label": "₹480",
+          "is_correct": false
+        },
+        {
+          "label": "₹500",
+          "is_correct": true
+        },
+        {
+          "label": "₹520",
+          "is_correct": false
+        },
+        {
+          "label": "₹540",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "True Discount",
+      "kind": "standard",
+      "difficulty": "very_hard",
+      "answer_type": "single",
+      "stem": "The simple interest on a certain sum for 3 year(s) at 10% per annum is ₹780. Find the true discount on the same sum for the same time and rate.",
+      "explanation": "TD = SI×100/(100+RT) = 780×100/130 = ₹600.",
+      "options": [
+        {
+          "label": "₹624",
+          "is_correct": false
+        },
+        {
+          "label": "₹576",
+          "is_correct": false
+        },
+        {
+          "label": "₹600",
+          "is_correct": true
+        },
+        {
+          "label": "₹648",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "True Discount",
+      "kind": "standard",
+      "difficulty": "very_hard",
+      "answer_type": "single",
+      "stem": "Find the difference between the simple interest and the true discount on ₹700 due 2 year(s) hence at 20% per annum.",
+      "explanation": "SI = ₹280, TD = ₹200, so the difference = ₹80.",
+      "options": [
+        {
+          "label": "₹78",
+          "is_correct": false
+        },
+        {
+          "label": "₹82",
+          "is_correct": false
+        },
+        {
+          "label": "₹84",
+          "is_correct": false
+        },
+        {
+          "label": "₹80",
+          "is_correct": true
+        }
+      ]
+    }
+  ]
+}

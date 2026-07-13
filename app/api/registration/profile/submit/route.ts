@@ -15,16 +15,22 @@ export async function POST() {
   const { data: { user } } = await supabase.auth.getUser();
   if (!user) return NextResponse.json({ error: "Not authenticated" }, { status: 401 });
 
+  // Fetch exactly the columns the required-field check needs (derived from
+  // REQUIRED_FIELDS so adding a required field never drifts this select), plus
+  // full_name (for the email) and status (to decide who to notify).
+  const cols = [
+    ...new Set([...REQUIRED_FIELDS.map((r) => r.field), "full_name", "status"]),
+  ].join(", ");
   const { data: profile, error } = await supabase
     .from("student_profile")
-    .select("full_name, phone, college_id, career_goal_ids, primary_career_goal_id, status")
+    .select(cols)
     .eq("user_id", user.id)
     .maybeSingle();
 
   if (error) return NextResponse.json({ ok: false, error: error.message }, { status: 500 });
   if (!profile) return NextResponse.json({ ok: false, error: "No student profile" }, { status: 404 });
 
-  const p = profile as Record<string, unknown>;
+  const p = profile as unknown as Record<string, unknown>;
   const missing = REQUIRED_FIELDS.filter(({ field }) => {
     const v = p[field];
     if (Array.isArray(v)) return v.length === 0;

@@ -89,17 +89,29 @@ export async function POST(req: NextRequest) {
     );
   }
 
-  // 3) Preload the subject's chapters (name→id) and existing stems ONCE.
-  const [{ data: chapterRows }, { data: bankRows }] = await Promise.all([
-    supabase.from("chapter").select("id, name").eq("subject_id", subjectId),
-    supabase.from("question").select("chapter_id, stem").eq("subject_id", subjectId),
-  ]);
+  // 3) Preload the subject's chapters (name→id) and ALL existing stems.
+  const { data: chapterRows } = await supabase
+    .from("chapter")
+    .select("id, name")
+    .eq("subject_id", subjectId);
   const chapters = (chapterRows ?? []) as { id: string; name: string }[];
   const chapterByName = new Map(chapters.map((c) => [norm(c.name), c.id]));
   const overrideByName = new Map(Object.entries(overrides).map(([k, v]) => [norm(k), v]));
-  const bankKey = new Set(
-    (bankRows ?? []).map((r) => `${r.chapter_id}::${norm(r.stem as string)}`),
-  );
+
+  // Fetch every existing stem for the subject, paging past Supabase's 1000-row
+  // cap — otherwise a subject with >1000 questions (e.g. Arithmetic) would leave
+  // some bank duplicates undetected in the dry-run and only fail at commit.
+  const bankKey = new Set<string>();
+  for (let from = 0; ; from += 1000) {
+    const { data } = await supabase
+      .from("question")
+      .select("chapter_id, stem")
+      .eq("subject_id", subjectId)
+      .range(from, from + 999);
+    const batch = (data ?? []) as { chapter_id: string; stem: string }[];
+    for (const r of batch) bankKey.add(`${r.chapter_id}::${norm(r.stem)}`);
+    if (batch.length < 1000) break;
+  }
 
   // Passage structural checks (blocking) + the set of valid refs.
   const fileErrors: string[] = [];
@@ -148,14 +160,16 @@ export async function POST(req: NextRequest) {
       messages.push("passage_ref: only allowed on passage questions.");
     }
 
-    // Duplicate (chapter, stem) vs the bank and within the file.
-    if (chapterId && stem) {
+    // Duplicate (chapter, stem) vs the bank and within the file. Duplicates are
+    // NOT errors — they are simply skipped on import (so a file that partially
+    // overlaps the bank still imports its new questions).
+    if (chapterId && stem && status === "ok") {
       const key = `${chapterId}::${norm(stem)}`;
       if (bankKey.has(key)) {
-        messages.push("Duplicate of a question already in the bank.");
+        messages.push("Already in the bank — will be skipped.");
         status = "duplicate";
       } else if (seenInFile.has(key)) {
-        messages.push("Duplicate of another row in this file.");
+        messages.push("Duplicate of another row in this file — will be skipped.");
         status = "duplicate";
       }
       seenInFile.add(key);
@@ -181,7 +195,8 @@ export async function POST(req: NextRequest) {
 
   const errorCount = rows.filter((r) => r.status === "error" || r.status === "unresolved").length;
   const duplicateCount = rows.filter((r) => r.status === "duplicate").length;
-  const blocking = errorCount + duplicateCount + fileErrors.length;
+  // Duplicates are skipped, not blocking — only genuine errors block the import.
+  const blocking = errorCount + fileErrors.length;
 
   const report = {
     ok: false,
@@ -189,6 +204,7 @@ export async function POST(req: NextRequest) {
     valid: rows.filter((r) => r.status === "ok").length,
     errorCount,
     duplicateCount,
+    skipped: duplicateCount,
     fileErrors,
     unresolved_chapters: [...unresolved.entries()].map(([name, count]) => ({ name, count })),
     chapters: chapters.map((c) => ({ id: c.id, name: c.name })),
@@ -198,7 +214,7 @@ export async function POST(req: NextRequest) {
   if (!commit) return NextResponse.json(report);
 
   if (blocking > 0) {
-    return NextResponse.json({ ...report, error: "Fix every issue before importing." }, { status: 422 });
+    return NextResponse.json({ ...report, error: "Fix every error before importing." }, { status: 422 });
   }
 
   const { data: inserted, error } = await supabase.rpc("import_questions", {

@@ -18,7 +18,7 @@ const SITE_URL = process.env.NEXT_PUBLIC_SITE_URL ?? "http://localhost:3000";
 // degree, branch, year_of_study, skills, interests) or ids (career goals,
 // mentor preference) — the client already resolves them via the ref data.
 type Profile = {
-  full_name?: string; phone?: string; gender?: string;
+  full_name?: string; roll_number?: string; phone?: string; gender?: string;
   city_village?: string; district?: string; state?: string;
   degree?: string; branch?: string; year_of_study?: string;
   graduation_year?: string | number; cgpa?: string | number;
@@ -67,6 +67,7 @@ export async function POST(req: NextRequest) {
   const row: Record<string, unknown> = { row: 1, email };
   const setIf = (k: string, v: unknown) => { if (v !== undefined) row[k] = v; };
   setIf("full_name", str(p.full_name));
+  setIf("roll_number", str(p.roll_number));
   setIf("phone", str(p.phone));
   setIf("gender", str(p.gender));
   setIf("city_village", str(p.city_village));

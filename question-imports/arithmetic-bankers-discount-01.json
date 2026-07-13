@@ -1,0 +1,5205 @@
+{
+  "subject": "Arithmetic",
+  "questions": [
+    {
+      "chapter": "Banker's Discount",
+      "kind": "standard",
+      "difficulty": "easy",
+      "answer_type": "single",
+      "stem": "Find the banker's gain on a bill of ₹3000 due 1 year(s) hence at 20% per annum.",
+      "explanation": "Banker's gain = BD − TD = ₹600 − ₹500 = ₹100.",
+      "options": [
+        {
+          "label": "₹98",
+          "is_correct": false
+        },
+        {
+          "label": "₹100",
+          "is_correct": true
+        },
+        {
+          "label": "₹102",
+          "is_correct": false
+        },
+        {
+          "label": "₹104",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Banker's Discount",
+      "kind": "standard",
+      "difficulty": "easy",
+      "answer_type": "single",
+      "stem": "Find the banker's discount on a bill of ₹1300 due 3 year(s) hence at 10% per annum.",
+      "explanation": "Banker's discount = simple interest on the face value = 1300×30/100 = ₹390.",
+      "options": [
+        {
+          "label": "₹406",
+          "is_correct": false
+        },
+        {
+          "label": "₹390",
+          "is_correct": true
+        },
+        {
+          "label": "₹374",
+          "is_correct": false
+        },
+        {
+          "label": "₹422",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Banker's Discount",
+      "kind": "standard",
+      "difficulty": "easy",
+      "answer_type": "single",
+      "stem": "Find the banker's discount on a bill of ₹2400 due 2 year(s) hence at 10% per annum.",
+      "explanation": "Banker's discount = simple interest on the face value = 2400×20/100 = ₹480.",
+      "options": [
+        {
+          "label": "₹518",
+          "is_correct": false
+        },
+        {
+          "label": "₹499",
+          "is_correct": false
+        },
+        {
+          "label": "₹461",
+          "is_correct": false
+        },
+        {
+          "label": "₹480",
+          "is_correct": true
+        }
+      ]
+    },
+    {
+      "chapter": "Banker's Discount",
+      "kind": "standard",
+      "difficulty": "easy",
+      "answer_type": "single",
+      "stem": "Find the banker's gain on a bill of ₹2600 due 3 year(s) hence at 10% per annum.",
+      "explanation": "Banker's gain = BD − TD = ₹780 − ₹600 = ₹180.",
+      "options": [
+        {
+          "label": "₹180",
+          "is_correct": true
+        },
+        {
+          "label": "₹182",
+          "is_correct": false
+        },
+        {
+          "label": "₹178",
+          "is_correct": false
+        },
+        {
+          "label": "₹184",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Banker's Discount",
+      "kind": "standard",
+      "difficulty": "easy",
+      "answer_type": "single",
+      "stem": "Find the banker's discount on a bill of ₹5500 due 1 year(s) hence at 10% per annum.",
+      "explanation": "Banker's discount = simple interest on the face value = 5500×10/100 = ₹550.",
+      "options": [
+        {
+          "label": "₹572",
+          "is_correct": false
+        },
+        {
+          "label": "₹550",
+          "is_correct": true
+        },
+        {
+          "label": "₹594",
+          "is_correct": false
+        },
+        {
+          "label": "₹528",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Banker's Discount",
+      "kind": "standard",
+      "difficulty": "easy",
+      "answer_type": "single",
+      "stem": "Find the banker's discount on a bill of ₹2100 due 2 year(s) hence at 20% per annum.",
+      "explanation": "Banker's discount = simple interest on the face value = 2100×40/100 = ₹840.",
+      "options": [
+        {
+          "label": "₹874",
+          "is_correct": false
+        },
+        {
+          "label": "₹840",
+          "is_correct": true
+        },
+        {
+          "label": "₹908",
+          "is_correct": false
+        },
+        {
+          "label": "₹806",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Banker's Discount",
+      "kind": "standard",
+      "difficulty": "easy",
+      "answer_type": "single",
+      "stem": "Find the banker's gain on a bill of ₹2400 due 2 year(s) hence at 10% per annum.",
+      "explanation": "Banker's gain = BD − TD = ₹480 − ₹400 = ₹80.",
+      "options": [
+        {
+          "label": "₹82",
+          "is_correct": false
+        },
+        {
+          "label": "₹78",
+          "is_correct": false
+        },
+        {
+          "label": "₹80",
+          "is_correct": true
+        },
+        {
+          "label": "₹84",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Banker's Discount",
+      "kind": "standard",
+      "difficulty": "easy",
+      "answer_type": "single",
+      "stem": "Find the banker's gain on a bill of ₹3200 due 6 year(s) hence at 10% per annum.",
+      "explanation": "Banker's gain = BD − TD = ₹1920 − ₹1200 = ₹720.",
+      "options": [
+        {
+          "label": "₹720",
+          "is_correct": true
+        },
+        {
+          "label": "₹778",
+          "is_correct": false
+        },
+        {
+          "label": "₹749",
+          "is_correct": false
+        },
+        {
+          "label": "₹691",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Banker's Discount",
+      "kind": "standard",
+      "difficulty": "easy",
+      "answer_type": "single",
+      "stem": "Find the banker's discount on a bill of ₹4000 due 3 year(s) hence at 20% per annum.",
+      "explanation": "Banker's discount = simple interest on the face value = 4000×60/100 = ₹2400.",
+      "options": [
+        {
+          "label": "₹2304",
+          "is_correct": false
+        },
+        {
+          "label": "₹2496",
+          "is_correct": false
+        },
+        {
+          "label": "₹2400",
+          "is_correct": true
+        },
+        {
+          "label": "₹2592",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Banker's Discount",
+      "kind": "standard",
+      "difficulty": "easy",
+      "answer_type": "single",
+      "stem": "The true discount on a bill is ₹800 and the banker's gain is ₹320. Find the banker's discount.",
+      "explanation": "Banker's discount = true discount + banker's gain = ₹800 + ₹320 = ₹1120.",
+      "options": [
+        {
+          "label": "₹1165",
+          "is_correct": false
+        },
+        {
+          "label": "₹1075",
+          "is_correct": false
+        },
+        {
+          "label": "₹1210",
+          "is_correct": false
+        },
+        {
+          "label": "₹1120",
+          "is_correct": true
+        }
+      ]
+    },
+    {
+      "chapter": "Banker's Discount",
+      "kind": "standard",
+      "difficulty": "easy",
+      "answer_type": "single",
+      "stem": "Find the banker's gain on a bill of ₹3000 due 4 year(s) hence at 5% per annum.",
+      "explanation": "Banker's gain = BD − TD = ₹600 − ₹500 = ₹100.",
+      "options": [
+        {
+          "label": "₹98",
+          "is_correct": false
+        },
+        {
+          "label": "₹104",
+          "is_correct": false
+        },
+        {
+          "label": "₹102",
+          "is_correct": false
+        },
+        {
+          "label": "₹100",
+          "is_correct": true
+        }
+      ]
+    },
+    {
+      "chapter": "Banker's Discount",
+      "kind": "standard",
+      "difficulty": "easy",
+      "answer_type": "single",
+      "stem": "Find the banker's discount on a bill of ₹600 due 1 year(s) hence at 20% per annum.",
+      "explanation": "Banker's discount = simple interest on the face value = 600×20/100 = ₹120.",
+      "options": [
+        {
+          "label": "₹122",
+          "is_correct": false
+        },
+        {
+          "label": "₹124",
+          "is_correct": false
+        },
+        {
+          "label": "₹118",
+          "is_correct": false
+        },
+        {
+          "label": "₹120",
+          "is_correct": true
+        }
+      ]
+    },
+    {
+      "chapter": "Banker's Discount",
+      "kind": "standard",
+      "difficulty": "easy",
+      "answer_type": "single",
+      "stem": "Find the banker's discount on a bill of ₹3200 due 3 year(s) hence at 20% per annum.",
+      "explanation": "Banker's discount = simple interest on the face value = 3200×60/100 = ₹1920.",
+      "options": [
+        {
+          "label": "₹1843",
+          "is_correct": false
+        },
+        {
+          "label": "₹1997",
+          "is_correct": false
+        },
+        {
+          "label": "₹1920",
+          "is_correct": true
+        },
+        {
+          "label": "₹2074",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Banker's Discount",
+      "kind": "standard",
+      "difficulty": "easy",
+      "answer_type": "single",
+      "stem": "Find the banker's gain on a bill of ₹2200 due 1 year(s) hence at 10% per annum.",
+      "explanation": "Banker's gain = BD − TD = ₹220 − ₹200 = ₹20.",
+      "options": [
+        {
+          "label": "₹22",
+          "is_correct": false
+        },
+        {
+          "label": "₹20",
+          "is_correct": true
+        },
+        {
+          "label": "₹19",
+          "is_correct": false
+        },
+        {
+          "label": "₹21",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Banker's Discount",
+      "kind": "standard",
+      "difficulty": "easy",
+      "answer_type": "single",
+      "stem": "Find the banker's discount on a bill of ₹400 due 4 year(s) hence at 25% per annum.",
+      "explanation": "Banker's discount = simple interest on the face value = 400×100/100 = ₹400.",
+      "options": [
+        {
+          "label": "₹432",
+          "is_correct": false
+        },
+        {
+          "label": "₹400",
+          "is_correct": true
+        },
+        {
+          "label": "₹416",
+          "is_correct": false
+        },
+        {
+          "label": "₹384",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Banker's Discount",
+      "kind": "standard",
+      "difficulty": "easy",
+      "answer_type": "single",
+      "stem": "The true discount on a bill is ₹200 and the banker's gain is ₹20. Find the banker's discount.",
+      "explanation": "Banker's discount = true discount + banker's gain = ₹200 + ₹20 = ₹220.",
+      "options": [
+        {
+          "label": "₹229",
+          "is_correct": false
+        },
+        {
+          "label": "₹211",
+          "is_correct": false
+        },
+        {
+          "label": "₹220",
+          "is_correct": true
+        },
+        {
+          "label": "₹238",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Banker's Discount",
+      "kind": "standard",
+      "difficulty": "easy",
+      "answer_type": "single",
+      "stem": "Find the banker's discount on a bill of ₹600 due 4 year(s) hence at 5% per annum.",
+      "explanation": "Banker's discount = simple interest on the face value = 600×20/100 = ₹120.",
+      "options": [
+        {
+          "label": "₹120",
+          "is_correct": true
+        },
+        {
+          "label": "₹118",
+          "is_correct": false
+        },
+        {
+          "label": "₹124",
+          "is_correct": false
+        },
+        {
+          "label": "₹122",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Banker's Discount",
+      "kind": "standard",
+      "difficulty": "easy",
+      "answer_type": "single",
+      "stem": "Find the banker's discount on a bill of ₹300 due 5 year(s) hence at 10% per annum.",
+      "explanation": "Banker's discount = simple interest on the face value = 300×50/100 = ₹150.",
+      "options": [
+        {
+          "label": "₹150",
+          "is_correct": true
+        },
+        {
+          "label": "₹148",
+          "is_correct": false
+        },
+        {
+          "label": "₹152",
+          "is_correct": false
+        },
+        {
+          "label": "₹154",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Banker's Discount",
+      "kind": "standard",
+      "difficulty": "easy",
+      "answer_type": "single",
+      "stem": "Find the banker's gain on a bill of ₹3200 due 4 year(s) hence at 15% per annum.",
+      "explanation": "Banker's gain = BD − TD = ₹1920 − ₹1200 = ₹720.",
+      "options": [
+        {
+          "label": "₹778",
+          "is_correct": false
+        },
+        {
+          "label": "₹749",
+          "is_correct": false
+        },
+        {
+          "label": "₹691",
+          "is_correct": false
+        },
+        {
+          "label": "₹720",
+          "is_correct": true
+        }
+      ]
+    },
+    {
+      "chapter": "Banker's Discount",
+      "kind": "standard",
+      "difficulty": "easy",
+      "answer_type": "single",
+      "stem": "Find the banker's discount on a bill of ₹2200 due 1 year(s) hence at 10% per annum.",
+      "explanation": "Banker's discount = simple interest on the face value = 2200×10/100 = ₹220.",
+      "options": [
+        {
+          "label": "₹220",
+          "is_correct": true
+        },
+        {
+          "label": "₹229",
+          "is_correct": false
+        },
+        {
+          "label": "₹238",
+          "is_correct": false
+        },
+        {
+          "label": "₹211",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Banker's Discount",
+      "kind": "standard",
+      "difficulty": "easy",
+      "answer_type": "single",
+      "stem": "The true discount on a bill is ₹200 and the banker's gain is ₹40. Find the banker's discount.",
+      "explanation": "Banker's discount = true discount + banker's gain = ₹200 + ₹40 = ₹240.",
+      "options": [
+        {
+          "label": "₹250",
+          "is_correct": false
+        },
+        {
+          "label": "₹230",
+          "is_correct": false
+        },
+        {
+          "label": "₹240",
+          "is_correct": true
+        },
+        {
+          "label": "₹260",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Banker's Discount",
+      "kind": "standard",
+      "difficulty": "easy",
+      "answer_type": "single",
+      "stem": "Find the banker's gain on a bill of ₹6500 due 3 year(s) hence at 10% per annum.",
+      "explanation": "Banker's gain = BD − TD = ₹1950 − ₹1500 = ₹450.",
+      "options": [
+        {
+          "label": "₹468",
+          "is_correct": false
+        },
+        {
+          "label": "₹486",
+          "is_correct": false
+        },
+        {
+          "label": "₹450",
+          "is_correct": true
+        },
+        {
+          "label": "₹432",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Banker's Discount",
+      "kind": "standard",
+      "difficulty": "easy",
+      "answer_type": "single",
+      "stem": "The true discount on a bill is ₹500 and the banker's gain is ₹100. Find the banker's discount.",
+      "explanation": "Banker's discount = true discount + banker's gain = ₹500 + ₹100 = ₹600.",
+      "options": [
+        {
+          "label": "₹648",
+          "is_correct": false
+        },
+        {
+          "label": "₹600",
+          "is_correct": true
+        },
+        {
+          "label": "₹576",
+          "is_correct": false
+        },
+        {
+          "label": "₹624",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Banker's Discount",
+      "kind": "standard",
+      "difficulty": "easy",
+      "answer_type": "single",
+      "stem": "Find the banker's gain on a bill of ₹4000 due 6 year(s) hence at 10% per annum.",
+      "explanation": "Banker's gain = BD − TD = ₹2400 − ₹1500 = ₹900.",
+      "options": [
+        {
+          "label": "₹900",
+          "is_correct": true
+        },
+        {
+          "label": "₹972",
+          "is_correct": false
+        },
+        {
+          "label": "₹936",
+          "is_correct": false
+        },
+        {
+          "label": "₹864",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Banker's Discount",
+      "kind": "standard",
+      "difficulty": "easy",
+      "answer_type": "single",
+      "stem": "The true discount on a bill is ₹1500 and the banker's gain is ₹900. Find the banker's discount.",
+      "explanation": "Banker's discount = true discount + banker's gain = ₹1500 + ₹900 = ₹2400.",
+      "options": [
+        {
+          "label": "₹2304",
+          "is_correct": false
+        },
+        {
+          "label": "₹2496",
+          "is_correct": false
+        },
+        {
+          "label": "₹2592",
+          "is_correct": false
+        },
+        {
+          "label": "₹2400",
+          "is_correct": true
+        }
+      ]
+    },
+    {
+      "chapter": "Banker's Discount",
+      "kind": "standard",
+      "difficulty": "easy",
+      "answer_type": "single",
+      "stem": "Find the banker's gain on a bill of ₹3300 due 2 year(s) hence at 5% per annum.",
+      "explanation": "Banker's gain = BD − TD = ₹330 − ₹300 = ₹30.",
+      "options": [
+        {
+          "label": "₹30",
+          "is_correct": true
+        },
+        {
+          "label": "₹29",
+          "is_correct": false
+        },
+        {
+          "label": "₹32",
+          "is_correct": false
+        },
+        {
+          "label": "₹31",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Banker's Discount",
+      "kind": "standard",
+      "difficulty": "easy",
+      "answer_type": "single",
+      "stem": "The true discount on a bill is ₹100 and the banker's gain is ₹20. Find the banker's discount.",
+      "explanation": "Banker's discount = true discount + banker's gain = ₹100 + ₹20 = ₹120.",
+      "options": [
+        {
+          "label": "₹118",
+          "is_correct": false
+        },
+        {
+          "label": "₹122",
+          "is_correct": false
+        },
+        {
+          "label": "₹124",
+          "is_correct": false
+        },
+        {
+          "label": "₹120",
+          "is_correct": true
+        }
+      ]
+    },
+    {
+      "chapter": "Banker's Discount",
+      "kind": "standard",
+      "difficulty": "easy",
+      "answer_type": "single",
+      "stem": "The true discount on a bill is ₹100 and the banker's gain is ₹10. Find the banker's discount.",
+      "explanation": "Banker's discount = true discount + banker's gain = ₹100 + ₹10 = ₹110.",
+      "options": [
+        {
+          "label": "₹114",
+          "is_correct": false
+        },
+        {
+          "label": "₹108",
+          "is_correct": false
+        },
+        {
+          "label": "₹110",
+          "is_correct": true
+        },
+        {
+          "label": "₹112",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Banker's Discount",
+      "kind": "standard",
+      "difficulty": "easy",
+      "answer_type": "single",
+      "stem": "Find the banker's discount on a bill of ₹1400 due 2 year(s) hence at 20% per annum.",
+      "explanation": "Banker's discount = simple interest on the face value = 1400×40/100 = ₹560.",
+      "options": [
+        {
+          "label": "₹604",
+          "is_correct": false
+        },
+        {
+          "label": "₹560",
+          "is_correct": true
+        },
+        {
+          "label": "₹582",
+          "is_correct": false
+        },
+        {
+          "label": "₹538",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Banker's Discount",
+      "kind": "standard",
+      "difficulty": "easy",
+      "answer_type": "single",
+      "stem": "Find the banker's discount on a bill of ₹1500 due 5 year(s) hence at 10% per annum.",
+      "explanation": "Banker's discount = simple interest on the face value = 1500×50/100 = ₹750.",
+      "options": [
+        {
+          "label": "₹810",
+          "is_correct": false
+        },
+        {
+          "label": "₹720",
+          "is_correct": false
+        },
+        {
+          "label": "₹750",
+          "is_correct": true
+        },
+        {
+          "label": "₹780",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Banker's Discount",
+      "kind": "standard",
+      "difficulty": "easy",
+      "answer_type": "single",
+      "stem": "Find the banker's gain on a bill of ₹1300 due 3 year(s) hence at 10% per annum.",
+      "explanation": "Banker's gain = BD − TD = ₹390 − ₹300 = ₹90.",
+      "options": [
+        {
+          "label": "₹90",
+          "is_correct": true
+        },
+        {
+          "label": "₹92",
+          "is_correct": false
+        },
+        {
+          "label": "₹88",
+          "is_correct": false
+        },
+        {
+          "label": "₹94",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Banker's Discount",
+      "kind": "standard",
+      "difficulty": "easy",
+      "answer_type": "single",
+      "stem": "The true discount on a bill is ₹1200 and the banker's gain is ₹360. Find the banker's discount.",
+      "explanation": "Banker's discount = true discount + banker's gain = ₹1200 + ₹360 = ₹1560.",
+      "options": [
+        {
+          "label": "₹1560",
+          "is_correct": true
+        },
+        {
+          "label": "₹1498",
+          "is_correct": false
+        },
+        {
+          "label": "₹1684",
+          "is_correct": false
+        },
+        {
+          "label": "₹1622",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Banker's Discount",
+      "kind": "standard",
+      "difficulty": "easy",
+      "answer_type": "single",
+      "stem": "Find the banker's discount on a bill of ₹500 due 1 year(s) hence at 25% per annum.",
+      "explanation": "Banker's discount = simple interest on the face value = 500×25/100 = ₹125.",
+      "options": [
+        {
+          "label": "₹123",
+          "is_correct": false
+        },
+        {
+          "label": "₹127",
+          "is_correct": false
+        },
+        {
+          "label": "₹129",
+          "is_correct": false
+        },
+        {
+          "label": "₹125",
+          "is_correct": true
+        }
+      ]
+    },
+    {
+      "chapter": "Banker's Discount",
+      "kind": "standard",
+      "difficulty": "easy",
+      "answer_type": "single",
+      "stem": "Find the banker's gain on a bill of ₹2000 due 5 year(s) hence at 5% per annum.",
+      "explanation": "Banker's gain = BD − TD = ₹500 − ₹400 = ₹100.",
+      "options": [
+        {
+          "label": "₹100",
+          "is_correct": true
+        },
+        {
+          "label": "₹98",
+          "is_correct": false
+        },
+        {
+          "label": "₹104",
+          "is_correct": false
+        },
+        {
+          "label": "₹102",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Banker's Discount",
+      "kind": "standard",
+      "difficulty": "easy",
+      "answer_type": "single",
+      "stem": "Find the banker's discount on a bill of ₹600 due 2 year(s) hence at 25% per annum.",
+      "explanation": "Banker's discount = simple interest on the face value = 600×50/100 = ₹300.",
+      "options": [
+        {
+          "label": "₹288",
+          "is_correct": false
+        },
+        {
+          "label": "₹324",
+          "is_correct": false
+        },
+        {
+          "label": "₹312",
+          "is_correct": false
+        },
+        {
+          "label": "₹300",
+          "is_correct": true
+        }
+      ]
+    },
+    {
+      "chapter": "Banker's Discount",
+      "kind": "standard",
+      "difficulty": "easy",
+      "answer_type": "single",
+      "stem": "Find the banker's gain on a bill of ₹800 due 4 year(s) hence at 15% per annum.",
+      "explanation": "Banker's gain = BD − TD = ₹480 − ₹300 = ₹180.",
+      "options": [
+        {
+          "label": "₹180",
+          "is_correct": true
+        },
+        {
+          "label": "₹182",
+          "is_correct": false
+        },
+        {
+          "label": "₹184",
+          "is_correct": false
+        },
+        {
+          "label": "₹178",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Banker's Discount",
+      "kind": "standard",
+      "difficulty": "easy",
+      "answer_type": "single",
+      "stem": "Find the banker's discount on a bill of ₹1100 due 1 year(s) hence at 10% per annum.",
+      "explanation": "Banker's discount = simple interest on the face value = 1100×10/100 = ₹110.",
+      "options": [
+        {
+          "label": "₹110",
+          "is_correct": true
+        },
+        {
+          "label": "₹112",
+          "is_correct": false
+        },
+        {
+          "label": "₹114",
+          "is_correct": false
+        },
+        {
+          "label": "₹108",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Banker's Discount",
+      "kind": "standard",
+      "difficulty": "easy",
+      "answer_type": "single",
+      "stem": "The true discount on a bill is ₹1000 and the banker's gain is ₹400. Find the banker's discount.",
+      "explanation": "Banker's discount = true discount + banker's gain = ₹1000 + ₹400 = ₹1400.",
+      "options": [
+        {
+          "label": "₹1400",
+          "is_correct": true
+        },
+        {
+          "label": "₹1344",
+          "is_correct": false
+        },
+        {
+          "label": "₹1512",
+          "is_correct": false
+        },
+        {
+          "label": "₹1456",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Banker's Discount",
+      "kind": "standard",
+      "difficulty": "easy",
+      "answer_type": "single",
+      "stem": "Find the banker's discount on a bill of ₹600 due 4 year(s) hence at 25% per annum.",
+      "explanation": "Banker's discount = simple interest on the face value = 600×100/100 = ₹600.",
+      "options": [
+        {
+          "label": "₹648",
+          "is_correct": false
+        },
+        {
+          "label": "₹600",
+          "is_correct": true
+        },
+        {
+          "label": "₹624",
+          "is_correct": false
+        },
+        {
+          "label": "₹576",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Banker's Discount",
+      "kind": "standard",
+      "difficulty": "easy",
+      "answer_type": "single",
+      "stem": "Find the banker's gain on a bill of ₹1000 due 5 year(s) hence at 5% per annum.",
+      "explanation": "Banker's gain = BD − TD = ₹250 − ₹200 = ₹50.",
+      "options": [
+        {
+          "label": "₹50",
+          "is_correct": true
+        },
+        {
+          "label": "₹52",
+          "is_correct": false
+        },
+        {
+          "label": "₹54",
+          "is_correct": false
+        },
+        {
+          "label": "₹48",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Banker's Discount",
+      "kind": "standard",
+      "difficulty": "easy",
+      "answer_type": "single",
+      "stem": "Find the banker's gain on a bill of ₹5500 due 1 year(s) hence at 10% per annum.",
+      "explanation": "Banker's gain = BD − TD = ₹550 − ₹500 = ₹50.",
+      "options": [
+        {
+          "label": "₹50",
+          "is_correct": true
+        },
+        {
+          "label": "₹48",
+          "is_correct": false
+        },
+        {
+          "label": "₹54",
+          "is_correct": false
+        },
+        {
+          "label": "₹52",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Banker's Discount",
+      "kind": "standard",
+      "difficulty": "easy",
+      "answer_type": "single",
+      "stem": "Find the banker's gain on a bill of ₹3500 due 2 year(s) hence at 20% per annum.",
+      "explanation": "Banker's gain = BD − TD = ₹1400 − ₹1000 = ₹400.",
+      "options": [
+        {
+          "label": "₹432",
+          "is_correct": false
+        },
+        {
+          "label": "₹384",
+          "is_correct": false
+        },
+        {
+          "label": "₹400",
+          "is_correct": true
+        },
+        {
+          "label": "₹416",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Banker's Discount",
+      "kind": "standard",
+      "difficulty": "easy",
+      "answer_type": "single",
+      "stem": "Find the banker's discount on a bill of ₹800 due 5 year(s) hence at 20% per annum.",
+      "explanation": "Banker's discount = simple interest on the face value = 800×100/100 = ₹800.",
+      "options": [
+        {
+          "label": "₹864",
+          "is_correct": false
+        },
+        {
+          "label": "₹800",
+          "is_correct": true
+        },
+        {
+          "label": "₹832",
+          "is_correct": false
+        },
+        {
+          "label": "₹768",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Banker's Discount",
+      "kind": "standard",
+      "difficulty": "easy",
+      "answer_type": "single",
+      "stem": "The true discount on a bill is ₹300 and the banker's gain is ₹60. Find the banker's discount.",
+      "explanation": "Banker's discount = true discount + banker's gain = ₹300 + ₹60 = ₹360.",
+      "options": [
+        {
+          "label": "₹374",
+          "is_correct": false
+        },
+        {
+          "label": "₹346",
+          "is_correct": false
+        },
+        {
+          "label": "₹360",
+          "is_correct": true
+        },
+        {
+          "label": "₹388",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Banker's Discount",
+      "kind": "standard",
+      "difficulty": "easy",
+      "answer_type": "single",
+      "stem": "Find the banker's discount on a bill of ₹6500 due 2 year(s) hence at 15% per annum.",
+      "explanation": "Banker's discount = simple interest on the face value = 6500×30/100 = ₹1950.",
+      "options": [
+        {
+          "label": "₹1950",
+          "is_correct": true
+        },
+        {
+          "label": "₹1872",
+          "is_correct": false
+        },
+        {
+          "label": "₹2028",
+          "is_correct": false
+        },
+        {
+          "label": "₹2106",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Banker's Discount",
+      "kind": "standard",
+      "difficulty": "easy",
+      "answer_type": "single",
+      "stem": "Find the banker's gain on a bill of ₹4000 due 3 year(s) hence at 20% per annum.",
+      "explanation": "Banker's gain = BD − TD = ₹2400 − ₹1500 = ₹900.",
+      "options": [
+        {
+          "label": "₹900",
+          "is_correct": true
+        },
+        {
+          "label": "₹864",
+          "is_correct": false
+        },
+        {
+          "label": "₹936",
+          "is_correct": false
+        },
+        {
+          "label": "₹972",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Banker's Discount",
+      "kind": "standard",
+      "difficulty": "easy",
+      "answer_type": "single",
+      "stem": "Find the banker's discount on a bill of ₹600 due 5 year(s) hence at 20% per annum.",
+      "explanation": "Banker's discount = simple interest on the face value = 600×100/100 = ₹600.",
+      "options": [
+        {
+          "label": "₹648",
+          "is_correct": false
+        },
+        {
+          "label": "₹576",
+          "is_correct": false
+        },
+        {
+          "label": "₹600",
+          "is_correct": true
+        },
+        {
+          "label": "₹624",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Banker's Discount",
+      "kind": "standard",
+      "difficulty": "easy",
+      "answer_type": "single",
+      "stem": "Find the banker's gain on a bill of ₹3900 due 3 year(s) hence at 10% per annum.",
+      "explanation": "Banker's gain = BD − TD = ₹1170 − ₹900 = ₹270.",
+      "options": [
+        {
+          "label": "₹281",
+          "is_correct": false
+        },
+        {
+          "label": "₹270",
+          "is_correct": true
+        },
+        {
+          "label": "₹259",
+          "is_correct": false
+        },
+        {
+          "label": "₹292",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Banker's Discount",
+      "kind": "standard",
+      "difficulty": "easy",
+      "answer_type": "single",
+      "stem": "The true discount on a bill is ₹200 and the banker's gain is ₹200. Find the banker's discount.",
+      "explanation": "Banker's discount = true discount + banker's gain = ₹200 + ₹200 = ₹400.",
+      "options": [
+        {
+          "label": "₹432",
+          "is_correct": false
+        },
+        {
+          "label": "₹416",
+          "is_correct": false
+        },
+        {
+          "label": "₹384",
+          "is_correct": false
+        },
+        {
+          "label": "₹400",
+          "is_correct": true
+        }
+      ]
+    },
+    {
+      "chapter": "Banker's Discount",
+      "kind": "standard",
+      "difficulty": "easy",
+      "answer_type": "single",
+      "stem": "Find the banker's discount on a bill of ₹3000 due 1 year(s) hence at 20% per annum.",
+      "explanation": "Banker's discount = simple interest on the face value = 3000×20/100 = ₹600.",
+      "options": [
+        {
+          "label": "₹576",
+          "is_correct": false
+        },
+        {
+          "label": "₹600",
+          "is_correct": true
+        },
+        {
+          "label": "₹624",
+          "is_correct": false
+        },
+        {
+          "label": "₹648",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Banker's Discount",
+      "kind": "standard",
+      "difficulty": "medium",
+      "answer_type": "single",
+      "stem": "The true discount on a bill due 5 year(s) hence at 10% per annum is ₹300. Find the banker's gain.",
+      "explanation": "Banker's gain = SI on the true discount = 300×50/100 = ₹150.",
+      "options": [
+        {
+          "label": "₹150",
+          "is_correct": true
+        },
+        {
+          "label": "₹148",
+          "is_correct": false
+        },
+        {
+          "label": "₹152",
+          "is_correct": false
+        },
+        {
+          "label": "₹154",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Banker's Discount",
+      "kind": "standard",
+      "difficulty": "medium",
+      "answer_type": "single",
+      "stem": "The banker's discount on a bill is ₹780 and the banker's gain is ₹180. Find the true discount.",
+      "explanation": "True discount = BD − BG = ₹780 − ₹180 = ₹600.",
+      "options": [
+        {
+          "label": "₹624",
+          "is_correct": false
+        },
+        {
+          "label": "₹600",
+          "is_correct": true
+        },
+        {
+          "label": "₹576",
+          "is_correct": false
+        },
+        {
+          "label": "₹648",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Banker's Discount",
+      "kind": "standard",
+      "difficulty": "medium",
+      "answer_type": "single",
+      "stem": "The banker's discount on a bill is ₹2400 and the banker's gain is ₹900. Find the true discount.",
+      "explanation": "True discount = BD − BG = ₹2400 − ₹900 = ₹1500.",
+      "options": [
+        {
+          "label": "₹1560",
+          "is_correct": false
+        },
+        {
+          "label": "₹1500",
+          "is_correct": true
+        },
+        {
+          "label": "₹1440",
+          "is_correct": false
+        },
+        {
+          "label": "₹1620",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Banker's Discount",
+      "kind": "standard",
+      "difficulty": "medium",
+      "answer_type": "single",
+      "stem": "The true discount on a bill due 1 year(s) hence at 25% per annum is ₹400. Find the banker's gain.",
+      "explanation": "Banker's gain = SI on the true discount = 400×25/100 = ₹100.",
+      "options": [
+        {
+          "label": "₹104",
+          "is_correct": false
+        },
+        {
+          "label": "₹100",
+          "is_correct": true
+        },
+        {
+          "label": "₹102",
+          "is_correct": false
+        },
+        {
+          "label": "₹98",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Banker's Discount",
+      "kind": "standard",
+      "difficulty": "medium",
+      "answer_type": "single",
+      "stem": "Find the banker's discount on ₹4400 for 1 year(s) at 10% per annum.",
+      "explanation": "BD = 4400×10/100 = ₹440.",
+      "options": [
+        {
+          "label": "₹440",
+          "is_correct": true
+        },
+        {
+          "label": "₹458",
+          "is_correct": false
+        },
+        {
+          "label": "₹422",
+          "is_correct": false
+        },
+        {
+          "label": "₹476",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Banker's Discount",
+      "kind": "standard",
+      "difficulty": "medium",
+      "answer_type": "single",
+      "stem": "The true discount on a bill due 3 year(s) hence at 20% per annum is ₹600. Find the banker's gain.",
+      "explanation": "Banker's gain = SI on the true discount = 600×60/100 = ₹360.",
+      "options": [
+        {
+          "label": "₹374",
+          "is_correct": false
+        },
+        {
+          "label": "₹388",
+          "is_correct": false
+        },
+        {
+          "label": "₹360",
+          "is_correct": true
+        },
+        {
+          "label": "₹346",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Banker's Discount",
+      "kind": "standard",
+      "difficulty": "medium",
+      "answer_type": "single",
+      "stem": "Find the banker's discount on ₹5500 for 1 year(s) at 10% per annum.",
+      "explanation": "BD = 5500×10/100 = ₹550.",
+      "options": [
+        {
+          "label": "₹572",
+          "is_correct": false
+        },
+        {
+          "label": "₹550",
+          "is_correct": true
+        },
+        {
+          "label": "₹528",
+          "is_correct": false
+        },
+        {
+          "label": "₹594",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Banker's Discount",
+      "kind": "standard",
+      "difficulty": "medium",
+      "answer_type": "single",
+      "stem": "The banker's discount on a bill is ₹960 and the banker's gain is ₹360. Find the true discount.",
+      "explanation": "True discount = BD − BG = ₹960 − ₹360 = ₹600.",
+      "options": [
+        {
+          "label": "₹648",
+          "is_correct": false
+        },
+        {
+          "label": "₹624",
+          "is_correct": false
+        },
+        {
+          "label": "₹600",
+          "is_correct": true
+        },
+        {
+          "label": "₹576",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Banker's Discount",
+      "kind": "standard",
+      "difficulty": "medium",
+      "answer_type": "single",
+      "stem": "The banker's discount on a bill is ₹1120 and the banker's gain is ₹320. Find the true discount.",
+      "explanation": "True discount = BD − BG = ₹1120 − ₹320 = ₹800.",
+      "options": [
+        {
+          "label": "₹768",
+          "is_correct": false
+        },
+        {
+          "label": "₹832",
+          "is_correct": false
+        },
+        {
+          "label": "₹800",
+          "is_correct": true
+        },
+        {
+          "label": "₹864",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Banker's Discount",
+      "kind": "standard",
+      "difficulty": "medium",
+      "answer_type": "single",
+      "stem": "The banker's discount on a bill is ₹250 and the banker's gain is ₹50. Find the true discount.",
+      "explanation": "True discount = BD − BG = ₹250 − ₹50 = ₹200.",
+      "options": [
+        {
+          "label": "₹216",
+          "is_correct": false
+        },
+        {
+          "label": "₹200",
+          "is_correct": true
+        },
+        {
+          "label": "₹192",
+          "is_correct": false
+        },
+        {
+          "label": "₹208",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Banker's Discount",
+      "kind": "standard",
+      "difficulty": "medium",
+      "answer_type": "single",
+      "stem": "The true discount on a bill due 5 year(s) hence at 5% per annum is ₹200. Find the banker's gain.",
+      "explanation": "Banker's gain = SI on the true discount = 200×25/100 = ₹50.",
+      "options": [
+        {
+          "label": "₹54",
+          "is_correct": false
+        },
+        {
+          "label": "₹52",
+          "is_correct": false
+        },
+        {
+          "label": "₹50",
+          "is_correct": true
+        },
+        {
+          "label": "₹48",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Banker's Discount",
+      "kind": "standard",
+      "difficulty": "medium",
+      "answer_type": "single",
+      "stem": "Find the banker's discount on ₹2400 for 1 year(s) at 20% per annum.",
+      "explanation": "BD = 2400×20/100 = ₹480.",
+      "options": [
+        {
+          "label": "₹461",
+          "is_correct": false
+        },
+        {
+          "label": "₹499",
+          "is_correct": false
+        },
+        {
+          "label": "₹518",
+          "is_correct": false
+        },
+        {
+          "label": "₹480",
+          "is_correct": true
+        }
+      ]
+    },
+    {
+      "chapter": "Banker's Discount",
+      "kind": "standard",
+      "difficulty": "medium",
+      "answer_type": "single",
+      "stem": "The banker's discount on a bill is ₹750 and the banker's gain is ₹250. Find the true discount.",
+      "explanation": "True discount = BD − BG = ₹750 − ₹250 = ₹500.",
+      "options": [
+        {
+          "label": "₹480",
+          "is_correct": false
+        },
+        {
+          "label": "₹540",
+          "is_correct": false
+        },
+        {
+          "label": "₹520",
+          "is_correct": false
+        },
+        {
+          "label": "₹500",
+          "is_correct": true
+        }
+      ]
+    },
+    {
+      "chapter": "Banker's Discount",
+      "kind": "standard",
+      "difficulty": "medium",
+      "answer_type": "single",
+      "stem": "The true discount on a bill due 1 year(s) hence at 20% per annum is ₹500. Find the banker's gain.",
+      "explanation": "Banker's gain = SI on the true discount = 500×20/100 = ₹100.",
+      "options": [
+        {
+          "label": "₹98",
+          "is_correct": false
+        },
+        {
+          "label": "₹102",
+          "is_correct": false
+        },
+        {
+          "label": "₹104",
+          "is_correct": false
+        },
+        {
+          "label": "₹100",
+          "is_correct": true
+        }
+      ]
+    },
+    {
+      "chapter": "Banker's Discount",
+      "kind": "standard",
+      "difficulty": "medium",
+      "answer_type": "single",
+      "stem": "Find the banker's discount on ₹1200 for 1 year(s) at 20% per annum.",
+      "explanation": "BD = 1200×20/100 = ₹240.",
+      "options": [
+        {
+          "label": "₹250",
+          "is_correct": false
+        },
+        {
+          "label": "₹260",
+          "is_correct": false
+        },
+        {
+          "label": "₹240",
+          "is_correct": true
+        },
+        {
+          "label": "₹230",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Banker's Discount",
+      "kind": "standard",
+      "difficulty": "medium",
+      "answer_type": "single",
+      "stem": "Find the banker's discount on ₹4400 for 2 year(s) at 5% per annum.",
+      "explanation": "BD = 4400×10/100 = ₹440.",
+      "options": [
+        {
+          "label": "₹440",
+          "is_correct": true
+        },
+        {
+          "label": "₹476",
+          "is_correct": false
+        },
+        {
+          "label": "₹422",
+          "is_correct": false
+        },
+        {
+          "label": "₹458",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Banker's Discount",
+      "kind": "standard",
+      "difficulty": "medium",
+      "answer_type": "single",
+      "stem": "Find the banker's discount on ₹3200 for 3 year(s) at 20% per annum.",
+      "explanation": "BD = 3200×60/100 = ₹1920.",
+      "options": [
+        {
+          "label": "₹1843",
+          "is_correct": false
+        },
+        {
+          "label": "₹1997",
+          "is_correct": false
+        },
+        {
+          "label": "₹2074",
+          "is_correct": false
+        },
+        {
+          "label": "₹1920",
+          "is_correct": true
+        }
+      ]
+    },
+    {
+      "chapter": "Banker's Discount",
+      "kind": "standard",
+      "difficulty": "medium",
+      "answer_type": "single",
+      "stem": "The banker's discount on a bill is ₹1950 and the banker's gain is ₹450. Find the true discount.",
+      "explanation": "True discount = BD − BG = ₹1950 − ₹450 = ₹1500.",
+      "options": [
+        {
+          "label": "₹1500",
+          "is_correct": true
+        },
+        {
+          "label": "₹1620",
+          "is_correct": false
+        },
+        {
+          "label": "₹1440",
+          "is_correct": false
+        },
+        {
+          "label": "₹1560",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Banker's Discount",
+      "kind": "standard",
+      "difficulty": "medium",
+      "answer_type": "single",
+      "stem": "The banker's discount on a bill is ₹560 and the banker's gain is ₹160. Find the true discount.",
+      "explanation": "True discount = BD − BG = ₹560 − ₹160 = ₹400.",
+      "options": [
+        {
+          "label": "₹384",
+          "is_correct": false
+        },
+        {
+          "label": "₹416",
+          "is_correct": false
+        },
+        {
+          "label": "₹432",
+          "is_correct": false
+        },
+        {
+          "label": "₹400",
+          "is_correct": true
+        }
+      ]
+    },
+    {
+      "chapter": "Banker's Discount",
+      "kind": "standard",
+      "difficulty": "medium",
+      "answer_type": "single",
+      "stem": "The true discount on a bill due 2 year(s) hence at 20% per annum is ₹600. Find the banker's gain.",
+      "explanation": "Banker's gain = SI on the true discount = 600×40/100 = ₹240.",
+      "options": [
+        {
+          "label": "₹230",
+          "is_correct": false
+        },
+        {
+          "label": "₹250",
+          "is_correct": false
+        },
+        {
+          "label": "₹260",
+          "is_correct": false
+        },
+        {
+          "label": "₹240",
+          "is_correct": true
+        }
+      ]
+    },
+    {
+      "chapter": "Banker's Discount",
+      "kind": "standard",
+      "difficulty": "medium",
+      "answer_type": "single",
+      "stem": "The true discount on a bill due 2 year(s) hence at 10% per annum is ₹300. Find the banker's gain.",
+      "explanation": "Banker's gain = SI on the true discount = 300×20/100 = ₹60.",
+      "options": [
+        {
+          "label": "₹58",
+          "is_correct": false
+        },
+        {
+          "label": "₹62",
+          "is_correct": false
+        },
+        {
+          "label": "₹60",
+          "is_correct": true
+        },
+        {
+          "label": "₹64",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Banker's Discount",
+      "kind": "standard",
+      "difficulty": "medium",
+      "answer_type": "single",
+      "stem": "The banker's discount on a bill is ₹600 and the banker's gain is ₹300. Find the true discount.",
+      "explanation": "True discount = BD − BG = ₹600 − ₹300 = ₹300.",
+      "options": [
+        {
+          "label": "₹300",
+          "is_correct": true
+        },
+        {
+          "label": "₹288",
+          "is_correct": false
+        },
+        {
+          "label": "₹312",
+          "is_correct": false
+        },
+        {
+          "label": "₹324",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Banker's Discount",
+      "kind": "standard",
+      "difficulty": "medium",
+      "answer_type": "single",
+      "stem": "The banker's discount on a bill is ₹390 and the banker's gain is ₹90. Find the true discount.",
+      "explanation": "True discount = BD − BG = ₹390 − ₹90 = ₹300.",
+      "options": [
+        {
+          "label": "₹300",
+          "is_correct": true
+        },
+        {
+          "label": "₹288",
+          "is_correct": false
+        },
+        {
+          "label": "₹312",
+          "is_correct": false
+        },
+        {
+          "label": "₹324",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Banker's Discount",
+      "kind": "standard",
+      "difficulty": "medium",
+      "answer_type": "single",
+      "stem": "Find the banker's discount on ₹1300 for 3 year(s) at 10% per annum.",
+      "explanation": "BD = 1300×30/100 = ₹390.",
+      "options": [
+        {
+          "label": "₹422",
+          "is_correct": false
+        },
+        {
+          "label": "₹390",
+          "is_correct": true
+        },
+        {
+          "label": "₹374",
+          "is_correct": false
+        },
+        {
+          "label": "₹406",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Banker's Discount",
+      "kind": "standard",
+      "difficulty": "medium",
+      "answer_type": "single",
+      "stem": "The banker's discount on a bill is ₹600 and the banker's gain is ₹100. Find the true discount.",
+      "explanation": "True discount = BD − BG = ₹600 − ₹100 = ₹500.",
+      "options": [
+        {
+          "label": "₹540",
+          "is_correct": false
+        },
+        {
+          "label": "₹480",
+          "is_correct": false
+        },
+        {
+          "label": "₹500",
+          "is_correct": true
+        },
+        {
+          "label": "₹520",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Banker's Discount",
+      "kind": "standard",
+      "difficulty": "medium",
+      "answer_type": "single",
+      "stem": "The banker's discount on a bill is ₹330 and the banker's gain is ₹30. Find the true discount.",
+      "explanation": "True discount = BD − BG = ₹330 − ₹30 = ₹300.",
+      "options": [
+        {
+          "label": "₹312",
+          "is_correct": false
+        },
+        {
+          "label": "₹324",
+          "is_correct": false
+        },
+        {
+          "label": "₹300",
+          "is_correct": true
+        },
+        {
+          "label": "₹288",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Banker's Discount",
+      "kind": "standard",
+      "difficulty": "medium",
+      "answer_type": "single",
+      "stem": "Find the banker's discount on ₹1000 for 1 year(s) at 25% per annum.",
+      "explanation": "BD = 1000×25/100 = ₹250.",
+      "options": [
+        {
+          "label": "₹260",
+          "is_correct": false
+        },
+        {
+          "label": "₹240",
+          "is_correct": false
+        },
+        {
+          "label": "₹250",
+          "is_correct": true
+        },
+        {
+          "label": "₹270",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Banker's Discount",
+      "kind": "standard",
+      "difficulty": "medium",
+      "answer_type": "single",
+      "stem": "The true discount on a bill due 4 year(s) hence at 25% per annum is ₹100. Find the banker's gain.",
+      "explanation": "Banker's gain = SI on the true discount = 100×100/100 = ₹100.",
+      "options": [
+        {
+          "label": "₹100",
+          "is_correct": true
+        },
+        {
+          "label": "₹98",
+          "is_correct": false
+        },
+        {
+          "label": "₹102",
+          "is_correct": false
+        },
+        {
+          "label": "₹104",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Banker's Discount",
+      "kind": "standard",
+      "difficulty": "medium",
+      "answer_type": "single",
+      "stem": "The banker's discount on a bill is ₹375 and the banker's gain is ₹75. Find the true discount.",
+      "explanation": "True discount = BD − BG = ₹375 − ₹75 = ₹300.",
+      "options": [
+        {
+          "label": "₹300",
+          "is_correct": true
+        },
+        {
+          "label": "₹288",
+          "is_correct": false
+        },
+        {
+          "label": "₹312",
+          "is_correct": false
+        },
+        {
+          "label": "₹324",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Banker's Discount",
+      "kind": "standard",
+      "difficulty": "medium",
+      "answer_type": "single",
+      "stem": "Find the banker's discount on ₹900 for 2 year(s) at 25% per annum.",
+      "explanation": "BD = 900×50/100 = ₹450.",
+      "options": [
+        {
+          "label": "₹432",
+          "is_correct": false
+        },
+        {
+          "label": "₹486",
+          "is_correct": false
+        },
+        {
+          "label": "₹468",
+          "is_correct": false
+        },
+        {
+          "label": "₹450",
+          "is_correct": true
+        }
+      ]
+    },
+    {
+      "chapter": "Banker's Discount",
+      "kind": "standard",
+      "difficulty": "medium",
+      "answer_type": "single",
+      "stem": "The banker's discount on a bill is ₹200 and the banker's gain is ₹100. Find the true discount.",
+      "explanation": "True discount = BD − BG = ₹200 − ₹100 = ₹100.",
+      "options": [
+        {
+          "label": "₹100",
+          "is_correct": true
+        },
+        {
+          "label": "₹102",
+          "is_correct": false
+        },
+        {
+          "label": "₹104",
+          "is_correct": false
+        },
+        {
+          "label": "₹98",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Banker's Discount",
+      "kind": "standard",
+      "difficulty": "medium",
+      "answer_type": "single",
+      "stem": "The banker's discount on a bill is ₹480 and the banker's gain is ₹180. Find the true discount.",
+      "explanation": "True discount = BD − BG = ₹480 − ₹180 = ₹300.",
+      "options": [
+        {
+          "label": "₹324",
+          "is_correct": false
+        },
+        {
+          "label": "₹300",
+          "is_correct": true
+        },
+        {
+          "label": "₹312",
+          "is_correct": false
+        },
+        {
+          "label": "₹288",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Banker's Discount",
+      "kind": "standard",
+      "difficulty": "medium",
+      "answer_type": "single",
+      "stem": "The true discount on a bill due 5 year(s) hence at 10% per annum is ₹200. Find the banker's gain.",
+      "explanation": "Banker's gain = SI on the true discount = 200×50/100 = ₹100.",
+      "options": [
+        {
+          "label": "₹98",
+          "is_correct": false
+        },
+        {
+          "label": "₹104",
+          "is_correct": false
+        },
+        {
+          "label": "₹102",
+          "is_correct": false
+        },
+        {
+          "label": "₹100",
+          "is_correct": true
+        }
+      ]
+    },
+    {
+      "chapter": "Banker's Discount",
+      "kind": "standard",
+      "difficulty": "medium",
+      "answer_type": "single",
+      "stem": "The true discount on a bill due 4 year(s) hence at 15% per annum is ₹1500. Find the banker's gain.",
+      "explanation": "Banker's gain = SI on the true discount = 1500×60/100 = ₹900.",
+      "options": [
+        {
+          "label": "₹864",
+          "is_correct": false
+        },
+        {
+          "label": "₹972",
+          "is_correct": false
+        },
+        {
+          "label": "₹900",
+          "is_correct": true
+        },
+        {
+          "label": "₹936",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Banker's Discount",
+      "kind": "standard",
+      "difficulty": "medium",
+      "answer_type": "single",
+      "stem": "Find the banker's discount on ₹2100 for 2 year(s) at 20% per annum.",
+      "explanation": "BD = 2100×40/100 = ₹840.",
+      "options": [
+        {
+          "label": "₹840",
+          "is_correct": true
+        },
+        {
+          "label": "₹908",
+          "is_correct": false
+        },
+        {
+          "label": "₹806",
+          "is_correct": false
+        },
+        {
+          "label": "₹874",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Banker's Discount",
+      "kind": "standard",
+      "difficulty": "medium",
+      "answer_type": "single",
+      "stem": "The true discount on a bill due 5 year(s) hence at 10% per annum is ₹100. Find the banker's gain.",
+      "explanation": "Banker's gain = SI on the true discount = 100×50/100 = ₹50.",
+      "options": [
+        {
+          "label": "₹50",
+          "is_correct": true
+        },
+        {
+          "label": "₹52",
+          "is_correct": false
+        },
+        {
+          "label": "₹48",
+          "is_correct": false
+        },
+        {
+          "label": "₹54",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Banker's Discount",
+      "kind": "standard",
+      "difficulty": "medium",
+      "answer_type": "single",
+      "stem": "Find the banker's discount on ₹2000 for 5 year(s) at 5% per annum.",
+      "explanation": "BD = 2000×25/100 = ₹500.",
+      "options": [
+        {
+          "label": "₹480",
+          "is_correct": false
+        },
+        {
+          "label": "₹520",
+          "is_correct": false
+        },
+        {
+          "label": "₹540",
+          "is_correct": false
+        },
+        {
+          "label": "₹500",
+          "is_correct": true
+        }
+      ]
+    },
+    {
+      "chapter": "Banker's Discount",
+      "kind": "standard",
+      "difficulty": "medium",
+      "answer_type": "single",
+      "stem": "The banker's discount on a bill is ₹480 and the banker's gain is ₹80. Find the true discount.",
+      "explanation": "True discount = BD − BG = ₹480 − ₹80 = ₹400.",
+      "options": [
+        {
+          "label": "₹432",
+          "is_correct": false
+        },
+        {
+          "label": "₹384",
+          "is_correct": false
+        },
+        {
+          "label": "₹416",
+          "is_correct": false
+        },
+        {
+          "label": "₹400",
+          "is_correct": true
+        }
+      ]
+    },
+    {
+      "chapter": "Banker's Discount",
+      "kind": "standard",
+      "difficulty": "medium",
+      "answer_type": "single",
+      "stem": "The true discount on a bill due 2 year(s) hence at 20% per annum is ₹400. Find the banker's gain.",
+      "explanation": "Banker's gain = SI on the true discount = 400×40/100 = ₹160.",
+      "options": [
+        {
+          "label": "₹160",
+          "is_correct": true
+        },
+        {
+          "label": "₹158",
+          "is_correct": false
+        },
+        {
+          "label": "₹164",
+          "is_correct": false
+        },
+        {
+          "label": "₹162",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Banker's Discount",
+      "kind": "standard",
+      "difficulty": "medium",
+      "answer_type": "single",
+      "stem": "The banker's discount on a bill is ₹1440 and the banker's gain is ₹540. Find the true discount.",
+      "explanation": "True discount = BD − BG = ₹1440 − ₹540 = ₹900.",
+      "options": [
+        {
+          "label": "₹900",
+          "is_correct": true
+        },
+        {
+          "label": "₹864",
+          "is_correct": false
+        },
+        {
+          "label": "₹936",
+          "is_correct": false
+        },
+        {
+          "label": "₹972",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Banker's Discount",
+      "kind": "standard",
+      "difficulty": "medium",
+      "answer_type": "single",
+      "stem": "The true discount on a bill due 2 year(s) hence at 25% per annum is ₹500. Find the banker's gain.",
+      "explanation": "Banker's gain = SI on the true discount = 500×50/100 = ₹250.",
+      "options": [
+        {
+          "label": "₹250",
+          "is_correct": true
+        },
+        {
+          "label": "₹270",
+          "is_correct": false
+        },
+        {
+          "label": "₹240",
+          "is_correct": false
+        },
+        {
+          "label": "₹260",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Banker's Discount",
+      "kind": "standard",
+      "difficulty": "medium",
+      "answer_type": "single",
+      "stem": "Find the banker's discount on ₹600 for 2 year(s) at 25% per annum.",
+      "explanation": "BD = 600×50/100 = ₹300.",
+      "options": [
+        {
+          "label": "₹288",
+          "is_correct": false
+        },
+        {
+          "label": "₹312",
+          "is_correct": false
+        },
+        {
+          "label": "₹324",
+          "is_correct": false
+        },
+        {
+          "label": "₹300",
+          "is_correct": true
+        }
+      ]
+    },
+    {
+      "chapter": "Banker's Discount",
+      "kind": "standard",
+      "difficulty": "medium",
+      "answer_type": "single",
+      "stem": "The true discount on a bill due 4 year(s) hence at 10% per annum is ₹200. Find the banker's gain.",
+      "explanation": "Banker's gain = SI on the true discount = 200×40/100 = ₹80.",
+      "options": [
+        {
+          "label": "₹84",
+          "is_correct": false
+        },
+        {
+          "label": "₹80",
+          "is_correct": true
+        },
+        {
+          "label": "₹78",
+          "is_correct": false
+        },
+        {
+          "label": "₹82",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Banker's Discount",
+      "kind": "standard",
+      "difficulty": "medium",
+      "answer_type": "single",
+      "stem": "Find the banker's discount on ₹200 for 5 year(s) at 20% per annum.",
+      "explanation": "BD = 200×100/100 = ₹200.",
+      "options": [
+        {
+          "label": "₹208",
+          "is_correct": false
+        },
+        {
+          "label": "₹200",
+          "is_correct": true
+        },
+        {
+          "label": "₹216",
+          "is_correct": false
+        },
+        {
+          "label": "₹192",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Banker's Discount",
+      "kind": "standard",
+      "difficulty": "medium",
+      "answer_type": "single",
+      "stem": "Find the banker's discount on ₹3500 for 4 year(s) at 10% per annum.",
+      "explanation": "BD = 3500×40/100 = ₹1400.",
+      "options": [
+        {
+          "label": "₹1456",
+          "is_correct": false
+        },
+        {
+          "label": "₹1512",
+          "is_correct": false
+        },
+        {
+          "label": "₹1400",
+          "is_correct": true
+        },
+        {
+          "label": "₹1344",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Banker's Discount",
+      "kind": "standard",
+      "difficulty": "medium",
+      "answer_type": "single",
+      "stem": "Find the banker's discount on ₹2400 for 4 year(s) at 5% per annum.",
+      "explanation": "BD = 2400×20/100 = ₹480.",
+      "options": [
+        {
+          "label": "₹480",
+          "is_correct": true
+        },
+        {
+          "label": "₹518",
+          "is_correct": false
+        },
+        {
+          "label": "₹461",
+          "is_correct": false
+        },
+        {
+          "label": "₹499",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Banker's Discount",
+      "kind": "standard",
+      "difficulty": "medium",
+      "answer_type": "single",
+      "stem": "Find the banker's discount on ₹1200 for 2 year(s) at 25% per annum.",
+      "explanation": "BD = 1200×50/100 = ₹600.",
+      "options": [
+        {
+          "label": "₹648",
+          "is_correct": false
+        },
+        {
+          "label": "₹624",
+          "is_correct": false
+        },
+        {
+          "label": "₹576",
+          "is_correct": false
+        },
+        {
+          "label": "₹600",
+          "is_correct": true
+        }
+      ]
+    },
+    {
+      "chapter": "Banker's Discount",
+      "kind": "standard",
+      "difficulty": "medium",
+      "answer_type": "single",
+      "stem": "The banker's discount on a bill is ₹400 and the banker's gain is ₹200. Find the true discount.",
+      "explanation": "True discount = BD − BG = ₹400 − ₹200 = ₹200.",
+      "options": [
+        {
+          "label": "₹200",
+          "is_correct": true
+        },
+        {
+          "label": "₹216",
+          "is_correct": false
+        },
+        {
+          "label": "₹208",
+          "is_correct": false
+        },
+        {
+          "label": "₹192",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Banker's Discount",
+      "kind": "standard",
+      "difficulty": "medium",
+      "answer_type": "single",
+      "stem": "The banker's discount on a bill is ₹1400 and the banker's gain is ₹400. Find the true discount.",
+      "explanation": "True discount = BD − BG = ₹1400 − ₹400 = ₹1000.",
+      "options": [
+        {
+          "label": "₹960",
+          "is_correct": false
+        },
+        {
+          "label": "₹1000",
+          "is_correct": true
+        },
+        {
+          "label": "₹1080",
+          "is_correct": false
+        },
+        {
+          "label": "₹1040",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Banker's Discount",
+      "kind": "standard",
+      "difficulty": "medium",
+      "answer_type": "single",
+      "stem": "Find the banker's discount on ₹4000 for 6 year(s) at 10% per annum.",
+      "explanation": "BD = 4000×60/100 = ₹2400.",
+      "options": [
+        {
+          "label": "₹2400",
+          "is_correct": true
+        },
+        {
+          "label": "₹2496",
+          "is_correct": false
+        },
+        {
+          "label": "₹2592",
+          "is_correct": false
+        },
+        {
+          "label": "₹2304",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Banker's Discount",
+      "kind": "standard",
+      "difficulty": "hard",
+      "answer_type": "single",
+      "stem": "The banker's discount on a bill due 6 year(s) hence at 10% per annum is ₹960. Find the face value of the bill.",
+      "explanation": "Face value = BD×100/RT = 960×100/60 = ₹1600.",
+      "options": [
+        {
+          "label": "₹1600",
+          "is_correct": true
+        },
+        {
+          "label": "₹1664",
+          "is_correct": false
+        },
+        {
+          "label": "₹1536",
+          "is_correct": false
+        },
+        {
+          "label": "₹1728",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Banker's Discount",
+      "kind": "standard",
+      "difficulty": "hard",
+      "answer_type": "single",
+      "stem": "A bill of ₹1500 is due 5 year(s) hence at 10% per annum. Find the banker's gain.",
+      "explanation": "BG = BD − TD = ₹750 − ₹500 = ₹250.",
+      "options": [
+        {
+          "label": "₹240",
+          "is_correct": false
+        },
+        {
+          "label": "₹260",
+          "is_correct": false
+        },
+        {
+          "label": "₹270",
+          "is_correct": false
+        },
+        {
+          "label": "₹250",
+          "is_correct": true
+        }
+      ]
+    },
+    {
+      "chapter": "Banker's Discount",
+      "kind": "standard",
+      "difficulty": "hard",
+      "answer_type": "single",
+      "stem": "The banker's discount on a bill due 4 year(s) hence at 25% per annum is ₹600. Find the true discount.",
+      "explanation": "TD = BD×100/(100+RT) = 600×100/200 = ₹300.",
+      "options": [
+        {
+          "label": "₹324",
+          "is_correct": false
+        },
+        {
+          "label": "₹312",
+          "is_correct": false
+        },
+        {
+          "label": "₹300",
+          "is_correct": true
+        },
+        {
+          "label": "₹288",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Banker's Discount",
+      "kind": "standard",
+      "difficulty": "hard",
+      "answer_type": "single",
+      "stem": "The banker's discount on a bill due 4 year(s) hence at 10% per annum is ₹280. Find the face value of the bill.",
+      "explanation": "Face value = BD×100/RT = 280×100/40 = ₹700.",
+      "options": [
+        {
+          "label": "₹728",
+          "is_correct": false
+        },
+        {
+          "label": "₹672",
+          "is_correct": false
+        },
+        {
+          "label": "₹700",
+          "is_correct": true
+        },
+        {
+          "label": "₹756",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Banker's Discount",
+      "kind": "standard",
+      "difficulty": "hard",
+      "answer_type": "single",
+      "stem": "The banker's discount on a bill due 2 year(s) hence at 10% per annum is ₹120. Find the face value of the bill.",
+      "explanation": "Face value = BD×100/RT = 120×100/20 = ₹600.",
+      "options": [
+        {
+          "label": "₹624",
+          "is_correct": false
+        },
+        {
+          "label": "₹600",
+          "is_correct": true
+        },
+        {
+          "label": "₹648",
+          "is_correct": false
+        },
+        {
+          "label": "₹576",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Banker's Discount",
+      "kind": "standard",
+      "difficulty": "hard",
+      "answer_type": "single",
+      "stem": "A bill of ₹600 is due 4 year(s) hence at 5% per annum. Find the banker's gain.",
+      "explanation": "BG = BD − TD = ₹120 − ₹100 = ₹20.",
+      "options": [
+        {
+          "label": "₹21",
+          "is_correct": false
+        },
+        {
+          "label": "₹19",
+          "is_correct": false
+        },
+        {
+          "label": "₹22",
+          "is_correct": false
+        },
+        {
+          "label": "₹20",
+          "is_correct": true
+        }
+      ]
+    },
+    {
+      "chapter": "Banker's Discount",
+      "kind": "standard",
+      "difficulty": "hard",
+      "answer_type": "single",
+      "stem": "A bill of ₹1800 is due 2 year(s) hence at 10% per annum. Find the banker's gain.",
+      "explanation": "BG = BD − TD = ₹360 − ₹300 = ₹60.",
+      "options": [
+        {
+          "label": "₹60",
+          "is_correct": true
+        },
+        {
+          "label": "₹58",
+          "is_correct": false
+        },
+        {
+          "label": "₹62",
+          "is_correct": false
+        },
+        {
+          "label": "₹64",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Banker's Discount",
+      "kind": "standard",
+      "difficulty": "hard",
+      "answer_type": "single",
+      "stem": "The banker's discount on a bill due 2 year(s) hence at 25% per annum is ₹600. Find the true discount.",
+      "explanation": "TD = BD×100/(100+RT) = 600×100/150 = ₹400.",
+      "options": [
+        {
+          "label": "₹384",
+          "is_correct": false
+        },
+        {
+          "label": "₹432",
+          "is_correct": false
+        },
+        {
+          "label": "₹416",
+          "is_correct": false
+        },
+        {
+          "label": "₹400",
+          "is_correct": true
+        }
+      ]
+    },
+    {
+      "chapter": "Banker's Discount",
+      "kind": "standard",
+      "difficulty": "hard",
+      "answer_type": "single",
+      "stem": "The banker's discount on a bill due 1 year(s) hence at 10% per annum is ₹110. Find the face value of the bill.",
+      "explanation": "Face value = BD×100/RT = 110×100/10 = ₹1100.",
+      "options": [
+        {
+          "label": "₹1144",
+          "is_correct": false
+        },
+        {
+          "label": "₹1056",
+          "is_correct": false
+        },
+        {
+          "label": "₹1100",
+          "is_correct": true
+        },
+        {
+          "label": "₹1188",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Banker's Discount",
+      "kind": "standard",
+      "difficulty": "hard",
+      "answer_type": "single",
+      "stem": "A bill of ₹800 is due 4 year(s) hence at 15% per annum. Find the banker's gain.",
+      "explanation": "BG = BD − TD = ₹480 − ₹300 = ₹180.",
+      "options": [
+        {
+          "label": "₹180",
+          "is_correct": true
+        },
+        {
+          "label": "₹184",
+          "is_correct": false
+        },
+        {
+          "label": "₹178",
+          "is_correct": false
+        },
+        {
+          "label": "₹182",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Banker's Discount",
+      "kind": "standard",
+      "difficulty": "hard",
+      "answer_type": "single",
+      "stem": "A bill of ₹900 is due 5 year(s) hence at 10% per annum. Find the banker's gain.",
+      "explanation": "BG = BD − TD = ₹450 − ₹300 = ₹150.",
+      "options": [
+        {
+          "label": "₹154",
+          "is_correct": false
+        },
+        {
+          "label": "₹148",
+          "is_correct": false
+        },
+        {
+          "label": "₹150",
+          "is_correct": true
+        },
+        {
+          "label": "₹152",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Banker's Discount",
+      "kind": "standard",
+      "difficulty": "hard",
+      "answer_type": "single",
+      "stem": "A bill of ₹1200 is due 1 year(s) hence at 20% per annum. Find the banker's gain.",
+      "explanation": "BG = BD − TD = ₹240 − ₹200 = ₹40.",
+      "options": [
+        {
+          "label": "₹40",
+          "is_correct": true
+        },
+        {
+          "label": "₹42",
+          "is_correct": false
+        },
+        {
+          "label": "₹38",
+          "is_correct": false
+        },
+        {
+          "label": "₹44",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Banker's Discount",
+      "kind": "standard",
+      "difficulty": "hard",
+      "answer_type": "single",
+      "stem": "The banker's discount on a bill due 5 year(s) hence at 20% per annum is ₹800. Find the face value of the bill.",
+      "explanation": "Face value = BD×100/RT = 800×100/100 = ₹800.",
+      "options": [
+        {
+          "label": "₹832",
+          "is_correct": false
+        },
+        {
+          "label": "₹768",
+          "is_correct": false
+        },
+        {
+          "label": "₹864",
+          "is_correct": false
+        },
+        {
+          "label": "₹800",
+          "is_correct": true
+        }
+      ]
+    },
+    {
+      "chapter": "Banker's Discount",
+      "kind": "standard",
+      "difficulty": "hard",
+      "answer_type": "single",
+      "stem": "The banker's discount on a bill due 1 year(s) hence at 20% per annum is ₹600. Find the face value of the bill.",
+      "explanation": "Face value = BD×100/RT = 600×100/20 = ₹3000.",
+      "options": [
+        {
+          "label": "₹3240",
+          "is_correct": false
+        },
+        {
+          "label": "₹3120",
+          "is_correct": false
+        },
+        {
+          "label": "₹3000",
+          "is_correct": true
+        },
+        {
+          "label": "₹2880",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Banker's Discount",
+      "kind": "standard",
+      "difficulty": "hard",
+      "answer_type": "single",
+      "stem": "A bill of ₹2000 is due 5 year(s) hence at 5% per annum. Find the banker's gain.",
+      "explanation": "BG = BD − TD = ₹500 − ₹400 = ₹100.",
+      "options": [
+        {
+          "label": "₹100",
+          "is_correct": true
+        },
+        {
+          "label": "₹102",
+          "is_correct": false
+        },
+        {
+          "label": "₹104",
+          "is_correct": false
+        },
+        {
+          "label": "₹98",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Banker's Discount",
+      "kind": "standard",
+      "difficulty": "hard",
+      "answer_type": "single",
+      "stem": "The banker's discount on a bill due 6 year(s) hence at 10% per annum is ₹1440. Find the face value of the bill.",
+      "explanation": "Face value = BD×100/RT = 1440×100/60 = ₹2400.",
+      "options": [
+        {
+          "label": "₹2592",
+          "is_correct": false
+        },
+        {
+          "label": "₹2496",
+          "is_correct": false
+        },
+        {
+          "label": "₹2304",
+          "is_correct": false
+        },
+        {
+          "label": "₹2400",
+          "is_correct": true
+        }
+      ]
+    },
+    {
+      "chapter": "Banker's Discount",
+      "kind": "standard",
+      "difficulty": "hard",
+      "answer_type": "single",
+      "stem": "The banker's discount on a bill due 1 year(s) hence at 25% per annum is ₹250. Find the true discount.",
+      "explanation": "TD = BD×100/(100+RT) = 250×100/125 = ₹200.",
+      "options": [
+        {
+          "label": "₹192",
+          "is_correct": false
+        },
+        {
+          "label": "₹200",
+          "is_correct": true
+        },
+        {
+          "label": "₹208",
+          "is_correct": false
+        },
+        {
+          "label": "₹216",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Banker's Discount",
+      "kind": "standard",
+      "difficulty": "hard",
+      "answer_type": "single",
+      "stem": "A bill of ₹600 is due 5 year(s) hence at 20% per annum. Find the banker's gain.",
+      "explanation": "BG = BD − TD = ₹600 − ₹300 = ₹300.",
+      "options": [
+        {
+          "label": "₹312",
+          "is_correct": false
+        },
+        {
+          "label": "₹300",
+          "is_correct": true
+        },
+        {
+          "label": "₹288",
+          "is_correct": false
+        },
+        {
+          "label": "₹324",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Banker's Discount",
+      "kind": "standard",
+      "difficulty": "hard",
+      "answer_type": "single",
+      "stem": "The banker's discount on a bill due 1 year(s) hence at 25% per annum is ₹500. Find the face value of the bill.",
+      "explanation": "Face value = BD×100/RT = 500×100/25 = ₹2000.",
+      "options": [
+        {
+          "label": "₹1920",
+          "is_correct": false
+        },
+        {
+          "label": "₹2000",
+          "is_correct": true
+        },
+        {
+          "label": "₹2160",
+          "is_correct": false
+        },
+        {
+          "label": "₹2080",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Banker's Discount",
+      "kind": "standard",
+      "difficulty": "hard",
+      "answer_type": "single",
+      "stem": "The banker's discount on a bill due 1 year(s) hence at 25% per annum is ₹375. Find the true discount.",
+      "explanation": "TD = BD×100/(100+RT) = 375×100/125 = ₹300.",
+      "options": [
+        {
+          "label": "₹324",
+          "is_correct": false
+        },
+        {
+          "label": "₹300",
+          "is_correct": true
+        },
+        {
+          "label": "₹288",
+          "is_correct": false
+        },
+        {
+          "label": "₹312",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Banker's Discount",
+      "kind": "standard",
+      "difficulty": "hard",
+      "answer_type": "single",
+      "stem": "The banker's discount on a bill due 6 year(s) hence at 10% per annum is ₹1920. Find the true discount.",
+      "explanation": "TD = BD×100/(100+RT) = 1920×100/160 = ₹1200.",
+      "options": [
+        {
+          "label": "₹1296",
+          "is_correct": false
+        },
+        {
+          "label": "₹1248",
+          "is_correct": false
+        },
+        {
+          "label": "₹1200",
+          "is_correct": true
+        },
+        {
+          "label": "₹1152",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Banker's Discount",
+      "kind": "standard",
+      "difficulty": "hard",
+      "answer_type": "single",
+      "stem": "The banker's discount on a bill due 4 year(s) hence at 25% per annum is ₹1000. Find the face value of the bill.",
+      "explanation": "Face value = BD×100/RT = 1000×100/100 = ₹1000.",
+      "options": [
+        {
+          "label": "₹1040",
+          "is_correct": false
+        },
+        {
+          "label": "₹1080",
+          "is_correct": false
+        },
+        {
+          "label": "₹1000",
+          "is_correct": true
+        },
+        {
+          "label": "₹960",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Banker's Discount",
+      "kind": "standard",
+      "difficulty": "hard",
+      "answer_type": "single",
+      "stem": "A bill of ₹200 is due 4 year(s) hence at 25% per annum. Find the banker's gain.",
+      "explanation": "BG = BD − TD = ₹200 − ₹100 = ₹100.",
+      "options": [
+        {
+          "label": "₹100",
+          "is_correct": true
+        },
+        {
+          "label": "₹104",
+          "is_correct": false
+        },
+        {
+          "label": "₹102",
+          "is_correct": false
+        },
+        {
+          "label": "₹98",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Banker's Discount",
+      "kind": "standard",
+      "difficulty": "hard",
+      "answer_type": "single",
+      "stem": "A bill of ₹1500 is due 2 year(s) hence at 25% per annum. Find the banker's gain.",
+      "explanation": "BG = BD − TD = ₹750 − ₹500 = ₹250.",
+      "options": [
+        {
+          "label": "₹240",
+          "is_correct": false
+        },
+        {
+          "label": "₹260",
+          "is_correct": false
+        },
+        {
+          "label": "₹250",
+          "is_correct": true
+        },
+        {
+          "label": "₹270",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Banker's Discount",
+      "kind": "standard",
+      "difficulty": "hard",
+      "answer_type": "single",
+      "stem": "A bill of ₹200 is due 5 year(s) hence at 20% per annum. Find the banker's gain.",
+      "explanation": "BG = BD − TD = ₹200 − ₹100 = ₹100.",
+      "options": [
+        {
+          "label": "₹102",
+          "is_correct": false
+        },
+        {
+          "label": "₹104",
+          "is_correct": false
+        },
+        {
+          "label": "₹98",
+          "is_correct": false
+        },
+        {
+          "label": "₹100",
+          "is_correct": true
+        }
+      ]
+    },
+    {
+      "chapter": "Banker's Discount",
+      "kind": "standard",
+      "difficulty": "hard",
+      "answer_type": "single",
+      "stem": "A bill of ₹2400 is due 3 year(s) hence at 20% per annum. Find the banker's gain.",
+      "explanation": "BG = BD − TD = ₹1440 − ₹900 = ₹540.",
+      "options": [
+        {
+          "label": "₹584",
+          "is_correct": false
+        },
+        {
+          "label": "₹562",
+          "is_correct": false
+        },
+        {
+          "label": "₹540",
+          "is_correct": true
+        },
+        {
+          "label": "₹518",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Banker's Discount",
+      "kind": "standard",
+      "difficulty": "hard",
+      "answer_type": "single",
+      "stem": "The banker's discount on a bill due 4 year(s) hence at 15% per annum is ₹1920. Find the true discount.",
+      "explanation": "TD = BD×100/(100+RT) = 1920×100/160 = ₹1200.",
+      "options": [
+        {
+          "label": "₹1152",
+          "is_correct": false
+        },
+        {
+          "label": "₹1200",
+          "is_correct": true
+        },
+        {
+          "label": "₹1296",
+          "is_correct": false
+        },
+        {
+          "label": "₹1248",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Banker's Discount",
+      "kind": "standard",
+      "difficulty": "hard",
+      "answer_type": "single",
+      "stem": "The banker's discount on a bill due 2 year(s) hence at 5% per annum is ₹440. Find the face value of the bill.",
+      "explanation": "Face value = BD×100/RT = 440×100/10 = ₹4400.",
+      "options": [
+        {
+          "label": "₹4752",
+          "is_correct": false
+        },
+        {
+          "label": "₹4400",
+          "is_correct": true
+        },
+        {
+          "label": "₹4576",
+          "is_correct": false
+        },
+        {
+          "label": "₹4224",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Banker's Discount",
+      "kind": "standard",
+      "difficulty": "hard",
+      "answer_type": "single",
+      "stem": "The banker's discount on a bill due 3 year(s) hence at 10% per annum is ₹1560. Find the face value of the bill.",
+      "explanation": "Face value = BD×100/RT = 1560×100/30 = ₹5200.",
+      "options": [
+        {
+          "label": "₹5616",
+          "is_correct": false
+        },
+        {
+          "label": "₹4992",
+          "is_correct": false
+        },
+        {
+          "label": "₹5408",
+          "is_correct": false
+        },
+        {
+          "label": "₹5200",
+          "is_correct": true
+        }
+      ]
+    },
+    {
+      "chapter": "Banker's Discount",
+      "kind": "standard",
+      "difficulty": "hard",
+      "answer_type": "single",
+      "stem": "A bill of ₹2200 is due 2 year(s) hence at 5% per annum. Find the banker's gain.",
+      "explanation": "BG = BD − TD = ₹220 − ₹200 = ₹20.",
+      "options": [
+        {
+          "label": "₹22",
+          "is_correct": false
+        },
+        {
+          "label": "₹20",
+          "is_correct": true
+        },
+        {
+          "label": "₹19",
+          "is_correct": false
+        },
+        {
+          "label": "₹21",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Banker's Discount",
+      "kind": "standard",
+      "difficulty": "hard",
+      "answer_type": "single",
+      "stem": "A bill of ₹5500 is due 1 year(s) hence at 10% per annum. Find the banker's gain.",
+      "explanation": "BG = BD − TD = ₹550 − ₹500 = ₹50.",
+      "options": [
+        {
+          "label": "₹48",
+          "is_correct": false
+        },
+        {
+          "label": "₹50",
+          "is_correct": true
+        },
+        {
+          "label": "₹54",
+          "is_correct": false
+        },
+        {
+          "label": "₹52",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Banker's Discount",
+      "kind": "standard",
+      "difficulty": "hard",
+      "answer_type": "single",
+      "stem": "A bill of ₹5200 is due 3 year(s) hence at 10% per annum. Find the banker's gain.",
+      "explanation": "BG = BD − TD = ₹1560 − ₹1200 = ₹360.",
+      "options": [
+        {
+          "label": "₹346",
+          "is_correct": false
+        },
+        {
+          "label": "₹388",
+          "is_correct": false
+        },
+        {
+          "label": "₹374",
+          "is_correct": false
+        },
+        {
+          "label": "₹360",
+          "is_correct": true
+        }
+      ]
+    },
+    {
+      "chapter": "Banker's Discount",
+      "kind": "standard",
+      "difficulty": "hard",
+      "answer_type": "single",
+      "stem": "The banker's discount on a bill due 1 year(s) hence at 10% per annum is ₹220. Find the face value of the bill.",
+      "explanation": "Face value = BD×100/RT = 220×100/10 = ₹2200.",
+      "options": [
+        {
+          "label": "₹2112",
+          "is_correct": false
+        },
+        {
+          "label": "₹2376",
+          "is_correct": false
+        },
+        {
+          "label": "₹2200",
+          "is_correct": true
+        },
+        {
+          "label": "₹2288",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Banker's Discount",
+      "kind": "standard",
+      "difficulty": "hard",
+      "answer_type": "single",
+      "stem": "A bill of ₹6500 is due 2 year(s) hence at 15% per annum. Find the banker's gain.",
+      "explanation": "BG = BD − TD = ₹1950 − ₹1500 = ₹450.",
+      "options": [
+        {
+          "label": "₹486",
+          "is_correct": false
+        },
+        {
+          "label": "₹450",
+          "is_correct": true
+        },
+        {
+          "label": "₹468",
+          "is_correct": false
+        },
+        {
+          "label": "₹432",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Banker's Discount",
+      "kind": "standard",
+      "difficulty": "hard",
+      "answer_type": "single",
+      "stem": "A bill of ₹3500 is due 2 year(s) hence at 20% per annum. Find the banker's gain.",
+      "explanation": "BG = BD − TD = ₹1400 − ₹1000 = ₹400.",
+      "options": [
+        {
+          "label": "₹432",
+          "is_correct": false
+        },
+        {
+          "label": "₹384",
+          "is_correct": false
+        },
+        {
+          "label": "₹400",
+          "is_correct": true
+        },
+        {
+          "label": "₹416",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Banker's Discount",
+      "kind": "standard",
+      "difficulty": "hard",
+      "answer_type": "single",
+      "stem": "A bill of ₹2400 is due 1 year(s) hence at 20% per annum. Find the banker's gain.",
+      "explanation": "BG = BD − TD = ₹480 − ₹400 = ₹80.",
+      "options": [
+        {
+          "label": "₹84",
+          "is_correct": false
+        },
+        {
+          "label": "₹80",
+          "is_correct": true
+        },
+        {
+          "label": "₹82",
+          "is_correct": false
+        },
+        {
+          "label": "₹78",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Banker's Discount",
+      "kind": "standard",
+      "difficulty": "hard",
+      "answer_type": "single",
+      "stem": "The banker's discount on a bill due 5 year(s) hence at 5% per annum is ₹500. Find the face value of the bill.",
+      "explanation": "Face value = BD×100/RT = 500×100/25 = ₹2000.",
+      "options": [
+        {
+          "label": "₹2160",
+          "is_correct": false
+        },
+        {
+          "label": "₹1920",
+          "is_correct": false
+        },
+        {
+          "label": "₹2080",
+          "is_correct": false
+        },
+        {
+          "label": "₹2000",
+          "is_correct": true
+        }
+      ]
+    },
+    {
+      "chapter": "Banker's Discount",
+      "kind": "standard",
+      "difficulty": "hard",
+      "answer_type": "single",
+      "stem": "The banker's discount on a bill due 4 year(s) hence at 15% per annum is ₹2400. Find the true discount.",
+      "explanation": "TD = BD×100/(100+RT) = 2400×100/160 = ₹1500.",
+      "options": [
+        {
+          "label": "₹1440",
+          "is_correct": false
+        },
+        {
+          "label": "₹1560",
+          "is_correct": false
+        },
+        {
+          "label": "₹1620",
+          "is_correct": false
+        },
+        {
+          "label": "₹1500",
+          "is_correct": true
+        }
+      ]
+    },
+    {
+      "chapter": "Banker's Discount",
+      "kind": "standard",
+      "difficulty": "hard",
+      "answer_type": "single",
+      "stem": "A bill of ₹600 is due 2 year(s) hence at 25% per annum. Find the banker's gain.",
+      "explanation": "BG = BD − TD = ₹300 − ₹200 = ₹100.",
+      "options": [
+        {
+          "label": "₹104",
+          "is_correct": false
+        },
+        {
+          "label": "₹102",
+          "is_correct": false
+        },
+        {
+          "label": "₹100",
+          "is_correct": true
+        },
+        {
+          "label": "₹98",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Banker's Discount",
+      "kind": "standard",
+      "difficulty": "hard",
+      "answer_type": "single",
+      "stem": "The banker's discount on a bill due 5 year(s) hence at 5% per annum is ₹625. Find the true discount.",
+      "explanation": "TD = BD×100/(100+RT) = 625×100/125 = ₹500.",
+      "options": [
+        {
+          "label": "₹520",
+          "is_correct": false
+        },
+        {
+          "label": "₹540",
+          "is_correct": false
+        },
+        {
+          "label": "₹500",
+          "is_correct": true
+        },
+        {
+          "label": "₹480",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Banker's Discount",
+      "kind": "standard",
+      "difficulty": "hard",
+      "answer_type": "single",
+      "stem": "The banker's discount on a bill due 5 year(s) hence at 10% per annum is ₹450. Find the face value of the bill.",
+      "explanation": "Face value = BD×100/RT = 450×100/50 = ₹900.",
+      "options": [
+        {
+          "label": "₹936",
+          "is_correct": false
+        },
+        {
+          "label": "₹900",
+          "is_correct": true
+        },
+        {
+          "label": "₹972",
+          "is_correct": false
+        },
+        {
+          "label": "₹864",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Banker's Discount",
+      "kind": "standard",
+      "difficulty": "hard",
+      "answer_type": "single",
+      "stem": "A bill of ₹600 is due 1 year(s) hence at 20% per annum. Find the banker's gain.",
+      "explanation": "BG = BD − TD = ₹120 − ₹100 = ₹20.",
+      "options": [
+        {
+          "label": "₹20",
+          "is_correct": true
+        },
+        {
+          "label": "₹21",
+          "is_correct": false
+        },
+        {
+          "label": "₹22",
+          "is_correct": false
+        },
+        {
+          "label": "₹19",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Banker's Discount",
+      "kind": "standard",
+      "difficulty": "hard",
+      "answer_type": "single",
+      "stem": "The banker's discount on a bill due 2 year(s) hence at 25% per annum is ₹150. Find the face value of the bill.",
+      "explanation": "Face value = BD×100/RT = 150×100/50 = ₹300.",
+      "options": [
+        {
+          "label": "₹312",
+          "is_correct": false
+        },
+        {
+          "label": "₹288",
+          "is_correct": false
+        },
+        {
+          "label": "₹324",
+          "is_correct": false
+        },
+        {
+          "label": "₹300",
+          "is_correct": true
+        }
+      ]
+    },
+    {
+      "chapter": "Banker's Discount",
+      "kind": "standard",
+      "difficulty": "hard",
+      "answer_type": "single",
+      "stem": "A bill of ₹1300 is due 3 year(s) hence at 10% per annum. Find the banker's gain.",
+      "explanation": "BG = BD − TD = ₹390 − ₹300 = ₹90.",
+      "options": [
+        {
+          "label": "₹90",
+          "is_correct": true
+        },
+        {
+          "label": "₹94",
+          "is_correct": false
+        },
+        {
+          "label": "₹92",
+          "is_correct": false
+        },
+        {
+          "label": "₹88",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Banker's Discount",
+      "kind": "standard",
+      "difficulty": "hard",
+      "answer_type": "single",
+      "stem": "A bill of ₹3200 is due 6 year(s) hence at 10% per annum. Find the banker's gain.",
+      "explanation": "BG = BD − TD = ₹1920 − ₹1200 = ₹720.",
+      "options": [
+        {
+          "label": "₹720",
+          "is_correct": true
+        },
+        {
+          "label": "₹691",
+          "is_correct": false
+        },
+        {
+          "label": "₹778",
+          "is_correct": false
+        },
+        {
+          "label": "₹749",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Banker's Discount",
+      "kind": "standard",
+      "difficulty": "hard",
+      "answer_type": "single",
+      "stem": "The banker's discount on a bill due 2 year(s) hence at 20% per annum is ₹1120. Find the face value of the bill.",
+      "explanation": "Face value = BD×100/RT = 1120×100/40 = ₹2800.",
+      "options": [
+        {
+          "label": "₹2912",
+          "is_correct": false
+        },
+        {
+          "label": "₹2688",
+          "is_correct": false
+        },
+        {
+          "label": "₹3024",
+          "is_correct": false
+        },
+        {
+          "label": "₹2800",
+          "is_correct": true
+        }
+      ]
+    },
+    {
+      "chapter": "Banker's Discount",
+      "kind": "standard",
+      "difficulty": "hard",
+      "answer_type": "single",
+      "stem": "The banker's discount on a bill due 6 year(s) hence at 10% per annum is ₹2400. Find the true discount.",
+      "explanation": "TD = BD×100/(100+RT) = 2400×100/160 = ₹1500.",
+      "options": [
+        {
+          "label": "₹1440",
+          "is_correct": false
+        },
+        {
+          "label": "₹1560",
+          "is_correct": false
+        },
+        {
+          "label": "₹1500",
+          "is_correct": true
+        },
+        {
+          "label": "₹1620",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Banker's Discount",
+      "kind": "standard",
+      "difficulty": "hard",
+      "answer_type": "single",
+      "stem": "The banker's discount on a bill due 2 year(s) hence at 20% per annum is ₹560. Find the true discount.",
+      "explanation": "TD = BD×100/(100+RT) = 560×100/140 = ₹400.",
+      "options": [
+        {
+          "label": "₹384",
+          "is_correct": false
+        },
+        {
+          "label": "₹416",
+          "is_correct": false
+        },
+        {
+          "label": "₹400",
+          "is_correct": true
+        },
+        {
+          "label": "₹432",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Banker's Discount",
+      "kind": "standard",
+      "difficulty": "hard",
+      "answer_type": "single",
+      "stem": "The banker's discount on a bill due 4 year(s) hence at 5% per annum is ₹360. Find the face value of the bill.",
+      "explanation": "Face value = BD×100/RT = 360×100/20 = ₹1800.",
+      "options": [
+        {
+          "label": "₹1872",
+          "is_correct": false
+        },
+        {
+          "label": "₹1800",
+          "is_correct": true
+        },
+        {
+          "label": "₹1944",
+          "is_correct": false
+        },
+        {
+          "label": "₹1728",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Banker's Discount",
+      "kind": "standard",
+      "difficulty": "hard",
+      "answer_type": "single",
+      "stem": "A bill of ₹2800 is due 4 year(s) hence at 10% per annum. Find the banker's gain.",
+      "explanation": "BG = BD − TD = ₹1120 − ₹800 = ₹320.",
+      "options": [
+        {
+          "label": "₹307",
+          "is_correct": false
+        },
+        {
+          "label": "₹333",
+          "is_correct": false
+        },
+        {
+          "label": "₹346",
+          "is_correct": false
+        },
+        {
+          "label": "₹320",
+          "is_correct": true
+        }
+      ]
+    },
+    {
+      "chapter": "Banker's Discount",
+      "kind": "standard",
+      "difficulty": "very_hard",
+      "answer_type": "single",
+      "stem": "The banker's gain on a bill due 4 year(s) hence at 10% per annum is ₹80. Find the face value of the bill.",
+      "explanation": "From BG = F·(RT)²/[100(100+RT)], the face value F = ₹700.",
+      "options": [
+        {
+          "label": "₹728",
+          "is_correct": false
+        },
+        {
+          "label": "₹700",
+          "is_correct": true
+        },
+        {
+          "label": "₹672",
+          "is_correct": false
+        },
+        {
+          "label": "₹756",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Banker's Discount",
+      "kind": "standard",
+      "difficulty": "very_hard",
+      "answer_type": "single",
+      "stem": "The banker's gain on a bill due 2 year(s) hence at 5% per annum is ₹10. Find the face value of the bill.",
+      "explanation": "From BG = F·(RT)²/[100(100+RT)], the face value F = ₹1100.",
+      "options": [
+        {
+          "label": "₹1144",
+          "is_correct": false
+        },
+        {
+          "label": "₹1056",
+          "is_correct": false
+        },
+        {
+          "label": "₹1100",
+          "is_correct": true
+        },
+        {
+          "label": "₹1188",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Banker's Discount",
+      "kind": "standard",
+      "difficulty": "very_hard",
+      "answer_type": "single",
+      "stem": "The banker's gain on a bill due 2 year(s) hence at 25% per annum is ₹150. Find the true discount.",
+      "explanation": "TD = BG×100/RT = 150×100/50 = ₹300.",
+      "options": [
+        {
+          "label": "₹300",
+          "is_correct": true
+        },
+        {
+          "label": "₹324",
+          "is_correct": false
+        },
+        {
+          "label": "₹288",
+          "is_correct": false
+        },
+        {
+          "label": "₹312",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Banker's Discount",
+      "kind": "standard",
+      "difficulty": "very_hard",
+      "answer_type": "single",
+      "stem": "The banker's discount on a bill is ₹800 and the true discount is ₹400. Find the sum due (face value).",
+      "explanation": "Face value = (BD×TD)/(BD−TD) = (800×400)/(800−400) = ₹800.",
+      "options": [
+        {
+          "label": "₹800",
+          "is_correct": true
+        },
+        {
+          "label": "₹768",
+          "is_correct": false
+        },
+        {
+          "label": "₹832",
+          "is_correct": false
+        },
+        {
+          "label": "₹864",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Banker's Discount",
+      "kind": "standard",
+      "difficulty": "very_hard",
+      "answer_type": "single",
+      "stem": "The banker's gain on a bill due 3 year(s) hence at 20% per annum is ₹720. Find the face value of the bill.",
+      "explanation": "From BG = F·(RT)²/[100(100+RT)], the face value F = ₹3200.",
+      "options": [
+        {
+          "label": "₹3328",
+          "is_correct": false
+        },
+        {
+          "label": "₹3456",
+          "is_correct": false
+        },
+        {
+          "label": "₹3200",
+          "is_correct": true
+        },
+        {
+          "label": "₹3072",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Banker's Discount",
+      "kind": "standard",
+      "difficulty": "very_hard",
+      "answer_type": "single",
+      "stem": "The banker's gain on a bill due 3 year(s) hence at 20% per annum is ₹540. Find the true discount.",
+      "explanation": "TD = BG×100/RT = 540×100/60 = ₹900.",
+      "options": [
+        {
+          "label": "₹936",
+          "is_correct": false
+        },
+        {
+          "label": "₹864",
+          "is_correct": false
+        },
+        {
+          "label": "₹900",
+          "is_correct": true
+        },
+        {
+          "label": "₹972",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Banker's Discount",
+      "kind": "standard",
+      "difficulty": "very_hard",
+      "answer_type": "single",
+      "stem": "The banker's discount on a bill is ₹960 and the true discount is ₹600. Find the sum due (face value).",
+      "explanation": "Face value = (BD×TD)/(BD−TD) = (960×600)/(960−600) = ₹1600.",
+      "options": [
+        {
+          "label": "₹1664",
+          "is_correct": false
+        },
+        {
+          "label": "₹1600",
+          "is_correct": true
+        },
+        {
+          "label": "₹1728",
+          "is_correct": false
+        },
+        {
+          "label": "₹1536",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Banker's Discount",
+      "kind": "standard",
+      "difficulty": "very_hard",
+      "answer_type": "single",
+      "stem": "The banker's discount on a bill is ₹1120 and the true discount is ₹800. Find the sum due (face value).",
+      "explanation": "Face value = (BD×TD)/(BD−TD) = (1120×800)/(1120−800) = ₹2800.",
+      "options": [
+        {
+          "label": "₹2800",
+          "is_correct": true
+        },
+        {
+          "label": "₹2912",
+          "is_correct": false
+        },
+        {
+          "label": "₹3024",
+          "is_correct": false
+        },
+        {
+          "label": "₹2688",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Banker's Discount",
+      "kind": "standard",
+      "difficulty": "very_hard",
+      "answer_type": "single",
+      "stem": "The banker's gain on a bill due 5 year(s) hence at 5% per annum is ₹125. Find the face value of the bill.",
+      "explanation": "From BG = F·(RT)²/[100(100+RT)], the face value F = ₹2500.",
+      "options": [
+        {
+          "label": "₹2400",
+          "is_correct": false
+        },
+        {
+          "label": "₹2600",
+          "is_correct": false
+        },
+        {
+          "label": "₹2500",
+          "is_correct": true
+        },
+        {
+          "label": "₹2700",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Banker's Discount",
+      "kind": "standard",
+      "difficulty": "very_hard",
+      "answer_type": "single",
+      "stem": "The banker's gain on a bill due 4 year(s) hence at 15% per annum is ₹360. Find the true discount.",
+      "explanation": "TD = BG×100/RT = 360×100/60 = ₹600.",
+      "options": [
+        {
+          "label": "₹576",
+          "is_correct": false
+        },
+        {
+          "label": "₹648",
+          "is_correct": false
+        },
+        {
+          "label": "₹600",
+          "is_correct": true
+        },
+        {
+          "label": "₹624",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Banker's Discount",
+      "kind": "standard",
+      "difficulty": "very_hard",
+      "answer_type": "single",
+      "stem": "The banker's gain on a bill due 2 year(s) hence at 5% per annum is ₹40. Find the face value of the bill.",
+      "explanation": "From BG = F·(RT)²/[100(100+RT)], the face value F = ₹4400.",
+      "options": [
+        {
+          "label": "₹4400",
+          "is_correct": true
+        },
+        {
+          "label": "₹4752",
+          "is_correct": false
+        },
+        {
+          "label": "₹4576",
+          "is_correct": false
+        },
+        {
+          "label": "₹4224",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Banker's Discount",
+      "kind": "standard",
+      "difficulty": "very_hard",
+      "answer_type": "single",
+      "stem": "The banker's gain on a bill due 2 year(s) hence at 15% per annum is ₹180. Find the face value of the bill.",
+      "explanation": "From BG = F·(RT)²/[100(100+RT)], the face value F = ₹2600.",
+      "options": [
+        {
+          "label": "₹2496",
+          "is_correct": false
+        },
+        {
+          "label": "₹2704",
+          "is_correct": false
+        },
+        {
+          "label": "₹2808",
+          "is_correct": false
+        },
+        {
+          "label": "₹2600",
+          "is_correct": true
+        }
+      ]
+    },
+    {
+      "chapter": "Banker's Discount",
+      "kind": "standard",
+      "difficulty": "very_hard",
+      "answer_type": "single",
+      "stem": "The banker's gain on a bill due 5 year(s) hence at 10% per annum is ₹250. Find the face value of the bill.",
+      "explanation": "From BG = F·(RT)²/[100(100+RT)], the face value F = ₹1500.",
+      "options": [
+        {
+          "label": "₹1560",
+          "is_correct": false
+        },
+        {
+          "label": "₹1500",
+          "is_correct": true
+        },
+        {
+          "label": "₹1620",
+          "is_correct": false
+        },
+        {
+          "label": "₹1440",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Banker's Discount",
+      "kind": "standard",
+      "difficulty": "very_hard",
+      "answer_type": "single",
+      "stem": "The banker's gain on a bill due 4 year(s) hence at 10% per annum is ₹240. Find the true discount.",
+      "explanation": "TD = BG×100/RT = 240×100/40 = ₹600.",
+      "options": [
+        {
+          "label": "₹600",
+          "is_correct": true
+        },
+        {
+          "label": "₹576",
+          "is_correct": false
+        },
+        {
+          "label": "₹648",
+          "is_correct": false
+        },
+        {
+          "label": "₹624",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Banker's Discount",
+      "kind": "standard",
+      "difficulty": "very_hard",
+      "answer_type": "single",
+      "stem": "The banker's gain on a bill due 1 year(s) hence at 25% per annum is ₹125. Find the face value of the bill.",
+      "explanation": "From BG = F·(RT)²/[100(100+RT)], the face value F = ₹2500.",
+      "options": [
+        {
+          "label": "₹2500",
+          "is_correct": true
+        },
+        {
+          "label": "₹2700",
+          "is_correct": false
+        },
+        {
+          "label": "₹2600",
+          "is_correct": false
+        },
+        {
+          "label": "₹2400",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Banker's Discount",
+      "kind": "standard",
+      "difficulty": "very_hard",
+      "answer_type": "single",
+      "stem": "The banker's discount on a bill is ₹1920 and the true discount is ₹1200. Find the sum due (face value).",
+      "explanation": "Face value = (BD×TD)/(BD−TD) = (1920×1200)/(1920−1200) = ₹3200.",
+      "options": [
+        {
+          "label": "₹3456",
+          "is_correct": false
+        },
+        {
+          "label": "₹3328",
+          "is_correct": false
+        },
+        {
+          "label": "₹3072",
+          "is_correct": false
+        },
+        {
+          "label": "₹3200",
+          "is_correct": true
+        }
+      ]
+    },
+    {
+      "chapter": "Banker's Discount",
+      "kind": "standard",
+      "difficulty": "very_hard",
+      "answer_type": "single",
+      "stem": "The banker's gain on a bill due 1 year(s) hence at 10% per annum is ₹30. Find the true discount.",
+      "explanation": "TD = BG×100/RT = 30×100/10 = ₹300.",
+      "options": [
+        {
+          "label": "₹300",
+          "is_correct": true
+        },
+        {
+          "label": "₹324",
+          "is_correct": false
+        },
+        {
+          "label": "₹288",
+          "is_correct": false
+        },
+        {
+          "label": "₹312",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Banker's Discount",
+      "kind": "standard",
+      "difficulty": "very_hard",
+      "answer_type": "single",
+      "stem": "The banker's gain on a bill due 4 year(s) hence at 15% per annum is ₹360. Find the face value of the bill.",
+      "explanation": "From BG = F·(RT)²/[100(100+RT)], the face value F = ₹1600.",
+      "options": [
+        {
+          "label": "₹1664",
+          "is_correct": false
+        },
+        {
+          "label": "₹1600",
+          "is_correct": true
+        },
+        {
+          "label": "₹1536",
+          "is_correct": false
+        },
+        {
+          "label": "₹1728",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Banker's Discount",
+      "kind": "standard",
+      "difficulty": "very_hard",
+      "answer_type": "single",
+      "stem": "The banker's discount on a bill is ₹600 and the true discount is ₹300. Find the sum due (face value).",
+      "explanation": "Face value = (BD×TD)/(BD−TD) = (600×300)/(600−300) = ₹600.",
+      "options": [
+        {
+          "label": "₹576",
+          "is_correct": false
+        },
+        {
+          "label": "₹648",
+          "is_correct": false
+        },
+        {
+          "label": "₹600",
+          "is_correct": true
+        },
+        {
+          "label": "₹624",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Banker's Discount",
+      "kind": "standard",
+      "difficulty": "very_hard",
+      "answer_type": "single",
+      "stem": "The banker's gain on a bill due 3 year(s) hence at 10% per annum is ₹360. Find the true discount.",
+      "explanation": "TD = BG×100/RT = 360×100/30 = ₹1200.",
+      "options": [
+        {
+          "label": "₹1152",
+          "is_correct": false
+        },
+        {
+          "label": "₹1248",
+          "is_correct": false
+        },
+        {
+          "label": "₹1200",
+          "is_correct": true
+        },
+        {
+          "label": "₹1296",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Banker's Discount",
+      "kind": "standard",
+      "difficulty": "very_hard",
+      "answer_type": "single",
+      "stem": "The banker's gain on a bill due 4 year(s) hence at 5% per annum is ₹40. Find the true discount.",
+      "explanation": "TD = BG×100/RT = 40×100/20 = ₹200.",
+      "options": [
+        {
+          "label": "₹192",
+          "is_correct": false
+        },
+        {
+          "label": "₹216",
+          "is_correct": false
+        },
+        {
+          "label": "₹200",
+          "is_correct": true
+        },
+        {
+          "label": "₹208",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Banker's Discount",
+      "kind": "standard",
+      "difficulty": "very_hard",
+      "answer_type": "single",
+      "stem": "The banker's discount on a bill is ₹500 and the true discount is ₹400. Find the sum due (face value).",
+      "explanation": "Face value = (BD×TD)/(BD−TD) = (500×400)/(500−400) = ₹2000.",
+      "options": [
+        {
+          "label": "₹2000",
+          "is_correct": true
+        },
+        {
+          "label": "₹2080",
+          "is_correct": false
+        },
+        {
+          "label": "₹2160",
+          "is_correct": false
+        },
+        {
+          "label": "₹1920",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Banker's Discount",
+      "kind": "standard",
+      "difficulty": "very_hard",
+      "answer_type": "single",
+      "stem": "The banker's gain on a bill due 2 year(s) hence at 20% per annum is ₹320. Find the true discount.",
+      "explanation": "TD = BG×100/RT = 320×100/40 = ₹800.",
+      "options": [
+        {
+          "label": "₹768",
+          "is_correct": false
+        },
+        {
+          "label": "₹864",
+          "is_correct": false
+        },
+        {
+          "label": "₹800",
+          "is_correct": true
+        },
+        {
+          "label": "₹832",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Banker's Discount",
+      "kind": "standard",
+      "difficulty": "very_hard",
+      "answer_type": "single",
+      "stem": "The banker's discount on a bill is ₹150 and the true discount is ₹100. Find the sum due (face value).",
+      "explanation": "Face value = (BD×TD)/(BD−TD) = (150×100)/(150−100) = ₹300.",
+      "options": [
+        {
+          "label": "₹312",
+          "is_correct": false
+        },
+        {
+          "label": "₹300",
+          "is_correct": true
+        },
+        {
+          "label": "₹324",
+          "is_correct": false
+        },
+        {
+          "label": "₹288",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Banker's Discount",
+      "kind": "standard",
+      "difficulty": "very_hard",
+      "answer_type": "single",
+      "stem": "The banker's gain on a bill due 5 year(s) hence at 10% per annum is ₹150. Find the true discount.",
+      "explanation": "TD = BG×100/RT = 150×100/50 = ₹300.",
+      "options": [
+        {
+          "label": "₹300",
+          "is_correct": true
+        },
+        {
+          "label": "₹312",
+          "is_correct": false
+        },
+        {
+          "label": "₹324",
+          "is_correct": false
+        },
+        {
+          "label": "₹288",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Banker's Discount",
+      "kind": "standard",
+      "difficulty": "very_hard",
+      "answer_type": "single",
+      "stem": "The banker's gain on a bill due 5 year(s) hence at 5% per annum is ₹100. Find the true discount.",
+      "explanation": "TD = BG×100/RT = 100×100/25 = ₹400.",
+      "options": [
+        {
+          "label": "₹416",
+          "is_correct": false
+        },
+        {
+          "label": "₹432",
+          "is_correct": false
+        },
+        {
+          "label": "₹384",
+          "is_correct": false
+        },
+        {
+          "label": "₹400",
+          "is_correct": true
+        }
+      ]
+    },
+    {
+      "chapter": "Banker's Discount",
+      "kind": "standard",
+      "difficulty": "very_hard",
+      "answer_type": "single",
+      "stem": "The banker's gain on a bill due 2 year(s) hence at 5% per annum is ₹20. Find the true discount.",
+      "explanation": "TD = BG×100/RT = 20×100/10 = ₹200.",
+      "options": [
+        {
+          "label": "₹216",
+          "is_correct": false
+        },
+        {
+          "label": "₹208",
+          "is_correct": false
+        },
+        {
+          "label": "₹200",
+          "is_correct": true
+        },
+        {
+          "label": "₹192",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Banker's Discount",
+      "kind": "standard",
+      "difficulty": "very_hard",
+      "answer_type": "single",
+      "stem": "The banker's discount on a bill is ₹440 and the true discount is ₹400. Find the sum due (face value).",
+      "explanation": "Face value = (BD×TD)/(BD−TD) = (440×400)/(440−400) = ₹4400.",
+      "options": [
+        {
+          "label": "₹4400",
+          "is_correct": true
+        },
+        {
+          "label": "₹4752",
+          "is_correct": false
+        },
+        {
+          "label": "₹4224",
+          "is_correct": false
+        },
+        {
+          "label": "₹4576",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Banker's Discount",
+      "kind": "standard",
+      "difficulty": "very_hard",
+      "answer_type": "single",
+      "stem": "The banker's discount on a bill is ₹390 and the true discount is ₹300. Find the sum due (face value).",
+      "explanation": "Face value = (BD×TD)/(BD−TD) = (390×300)/(390−300) = ₹1300.",
+      "options": [
+        {
+          "label": "₹1300",
+          "is_correct": true
+        },
+        {
+          "label": "₹1404",
+          "is_correct": false
+        },
+        {
+          "label": "₹1248",
+          "is_correct": false
+        },
+        {
+          "label": "₹1352",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Banker's Discount",
+      "kind": "standard",
+      "difficulty": "very_hard",
+      "answer_type": "single",
+      "stem": "The banker's gain on a bill due 4 year(s) hence at 25% per annum is ₹100. Find the true discount.",
+      "explanation": "TD = BG×100/RT = 100×100/100 = ₹100.",
+      "options": [
+        {
+          "label": "₹100",
+          "is_correct": true
+        },
+        {
+          "label": "₹98",
+          "is_correct": false
+        },
+        {
+          "label": "₹104",
+          "is_correct": false
+        },
+        {
+          "label": "₹102",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Banker's Discount",
+      "kind": "standard",
+      "difficulty": "very_hard",
+      "answer_type": "single",
+      "stem": "The banker's gain on a bill due 1 year(s) hence at 10% per annum is ₹40. Find the true discount.",
+      "explanation": "TD = BG×100/RT = 40×100/10 = ₹400.",
+      "options": [
+        {
+          "label": "₹400",
+          "is_correct": true
+        },
+        {
+          "label": "₹432",
+          "is_correct": false
+        },
+        {
+          "label": "₹416",
+          "is_correct": false
+        },
+        {
+          "label": "₹384",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Banker's Discount",
+      "kind": "standard",
+      "difficulty": "very_hard",
+      "answer_type": "single",
+      "stem": "The banker's gain on a bill due 4 year(s) hence at 15% per annum is ₹540. Find the face value of the bill.",
+      "explanation": "From BG = F·(RT)²/[100(100+RT)], the face value F = ₹2400.",
+      "options": [
+        {
+          "label": "₹2304",
+          "is_correct": false
+        },
+        {
+          "label": "₹2592",
+          "is_correct": false
+        },
+        {
+          "label": "₹2400",
+          "is_correct": true
+        },
+        {
+          "label": "₹2496",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Banker's Discount",
+      "kind": "standard",
+      "difficulty": "very_hard",
+      "answer_type": "single",
+      "stem": "The banker's gain on a bill due 2 year(s) hence at 20% per annum is ₹400. Find the true discount.",
+      "explanation": "TD = BG×100/RT = 400×100/40 = ₹1000.",
+      "options": [
+        {
+          "label": "₹960",
+          "is_correct": false
+        },
+        {
+          "label": "₹1000",
+          "is_correct": true
+        },
+        {
+          "label": "₹1080",
+          "is_correct": false
+        },
+        {
+          "label": "₹1040",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Banker's Discount",
+      "kind": "standard",
+      "difficulty": "very_hard",
+      "answer_type": "single",
+      "stem": "The banker's gain on a bill due 2 year(s) hence at 15% per annum is ₹450. Find the true discount.",
+      "explanation": "TD = BG×100/RT = 450×100/30 = ₹1500.",
+      "options": [
+        {
+          "label": "₹1500",
+          "is_correct": true
+        },
+        {
+          "label": "₹1560",
+          "is_correct": false
+        },
+        {
+          "label": "₹1440",
+          "is_correct": false
+        },
+        {
+          "label": "₹1620",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Banker's Discount",
+      "kind": "standard",
+      "difficulty": "very_hard",
+      "answer_type": "single",
+      "stem": "The banker's gain on a bill due 2 year(s) hence at 25% per annum is ₹250. Find the true discount.",
+      "explanation": "TD = BG×100/RT = 250×100/50 = ₹500.",
+      "options": [
+        {
+          "label": "₹480",
+          "is_correct": false
+        },
+        {
+          "label": "₹540",
+          "is_correct": false
+        },
+        {
+          "label": "₹520",
+          "is_correct": false
+        },
+        {
+          "label": "₹500",
+          "is_correct": true
+        }
+      ]
+    },
+    {
+      "chapter": "Banker's Discount",
+      "kind": "standard",
+      "difficulty": "very_hard",
+      "answer_type": "single",
+      "stem": "The banker's discount on a bill is ₹110 and the true discount is ₹100. Find the sum due (face value).",
+      "explanation": "Face value = (BD×TD)/(BD−TD) = (110×100)/(110−100) = ₹1100.",
+      "options": [
+        {
+          "label": "₹1188",
+          "is_correct": false
+        },
+        {
+          "label": "₹1056",
+          "is_correct": false
+        },
+        {
+          "label": "₹1144",
+          "is_correct": false
+        },
+        {
+          "label": "₹1100",
+          "is_correct": true
+        }
+      ]
+    },
+    {
+      "chapter": "Banker's Discount",
+      "kind": "standard",
+      "difficulty": "very_hard",
+      "answer_type": "single",
+      "stem": "The banker's discount on a bill is ₹250 and the true discount is ₹200. Find the sum due (face value).",
+      "explanation": "Face value = (BD×TD)/(BD−TD) = (250×200)/(250−200) = ₹1000.",
+      "options": [
+        {
+          "label": "₹1000",
+          "is_correct": true
+        },
+        {
+          "label": "₹960",
+          "is_correct": false
+        },
+        {
+          "label": "₹1040",
+          "is_correct": false
+        },
+        {
+          "label": "₹1080",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Banker's Discount",
+      "kind": "standard",
+      "difficulty": "very_hard",
+      "answer_type": "single",
+      "stem": "The banker's gain on a bill due 6 year(s) hence at 10% per annum is ₹720. Find the true discount.",
+      "explanation": "TD = BG×100/RT = 720×100/60 = ₹1200.",
+      "options": [
+        {
+          "label": "₹1152",
+          "is_correct": false
+        },
+        {
+          "label": "₹1296",
+          "is_correct": false
+        },
+        {
+          "label": "₹1248",
+          "is_correct": false
+        },
+        {
+          "label": "₹1200",
+          "is_correct": true
+        }
+      ]
+    },
+    {
+      "chapter": "Banker's Discount",
+      "kind": "standard",
+      "difficulty": "very_hard",
+      "answer_type": "single",
+      "stem": "The banker's discount on a bill is ₹300 and the true discount is ₹200. Find the sum due (face value).",
+      "explanation": "Face value = (BD×TD)/(BD−TD) = (300×200)/(300−200) = ₹600.",
+      "options": [
+        {
+          "label": "₹576",
+          "is_correct": false
+        },
+        {
+          "label": "₹600",
+          "is_correct": true
+        },
+        {
+          "label": "₹624",
+          "is_correct": false
+        },
+        {
+          "label": "₹648",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Banker's Discount",
+      "kind": "standard",
+      "difficulty": "very_hard",
+      "answer_type": "single",
+      "stem": "The banker's discount on a bill is ₹625 and the true discount is ₹500. Find the sum due (face value).",
+      "explanation": "Face value = (BD×TD)/(BD−TD) = (625×500)/(625−500) = ₹2500.",
+      "options": [
+        {
+          "label": "₹2600",
+          "is_correct": false
+        },
+        {
+          "label": "₹2500",
+          "is_correct": true
+        },
+        {
+          "label": "₹2700",
+          "is_correct": false
+        },
+        {
+          "label": "₹2400",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Banker's Discount",
+      "kind": "standard",
+      "difficulty": "very_hard",
+      "answer_type": "single",
+      "stem": "The banker's gain on a bill due 3 year(s) hence at 10% per annum is ₹90. Find the face value of the bill.",
+      "explanation": "From BG = F·(RT)²/[100(100+RT)], the face value F = ₹1300.",
+      "options": [
+        {
+          "label": "₹1300",
+          "is_correct": true
+        },
+        {
+          "label": "₹1352",
+          "is_correct": false
+        },
+        {
+          "label": "₹1404",
+          "is_correct": false
+        },
+        {
+          "label": "₹1248",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Banker's Discount",
+      "kind": "standard",
+      "difficulty": "very_hard",
+      "answer_type": "single",
+      "stem": "The banker's gain on a bill due 5 year(s) hence at 10% per annum is ₹100. Find the face value of the bill.",
+      "explanation": "From BG = F·(RT)²/[100(100+RT)], the face value F = ₹600.",
+      "options": [
+        {
+          "label": "₹624",
+          "is_correct": false
+        },
+        {
+          "label": "₹600",
+          "is_correct": true
+        },
+        {
+          "label": "₹576",
+          "is_correct": false
+        },
+        {
+          "label": "₹648",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Banker's Discount",
+      "kind": "standard",
+      "difficulty": "very_hard",
+      "answer_type": "single",
+      "stem": "The banker's discount on a bill is ₹125 and the true discount is ₹100. Find the sum due (face value).",
+      "explanation": "Face value = (BD×TD)/(BD−TD) = (125×100)/(125−100) = ₹500.",
+      "options": [
+        {
+          "label": "₹520",
+          "is_correct": false
+        },
+        {
+          "label": "₹540",
+          "is_correct": false
+        },
+        {
+          "label": "₹480",
+          "is_correct": false
+        },
+        {
+          "label": "₹500",
+          "is_correct": true
+        }
+      ]
+    },
+    {
+      "chapter": "Banker's Discount",
+      "kind": "standard",
+      "difficulty": "very_hard",
+      "answer_type": "single",
+      "stem": "The banker's gain on a bill due 3 year(s) hence at 20% per annum is ₹900. Find the face value of the bill.",
+      "explanation": "From BG = F·(RT)²/[100(100+RT)], the face value F = ₹4000.",
+      "options": [
+        {
+          "label": "₹3840",
+          "is_correct": false
+        },
+        {
+          "label": "₹4320",
+          "is_correct": false
+        },
+        {
+          "label": "₹4160",
+          "is_correct": false
+        },
+        {
+          "label": "₹4000",
+          "is_correct": true
+        }
+      ]
+    },
+    {
+      "chapter": "Banker's Discount",
+      "kind": "standard",
+      "difficulty": "very_hard",
+      "answer_type": "single",
+      "stem": "The banker's gain on a bill due 3 year(s) hence at 10% per annum is ₹90. Find the true discount.",
+      "explanation": "TD = BG×100/RT = 90×100/30 = ₹300.",
+      "options": [
+        {
+          "label": "₹288",
+          "is_correct": false
+        },
+        {
+          "label": "₹324",
+          "is_correct": false
+        },
+        {
+          "label": "₹300",
+          "is_correct": true
+        },
+        {
+          "label": "₹312",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Banker's Discount",
+      "kind": "standard",
+      "difficulty": "very_hard",
+      "answer_type": "single",
+      "stem": "The banker's gain on a bill due 2 year(s) hence at 5% per annum is ₹50. Find the true discount.",
+      "explanation": "TD = BG×100/RT = 50×100/10 = ₹500.",
+      "options": [
+        {
+          "label": "₹480",
+          "is_correct": false
+        },
+        {
+          "label": "₹500",
+          "is_correct": true
+        },
+        {
+          "label": "₹520",
+          "is_correct": false
+        },
+        {
+          "label": "₹540",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Banker's Discount",
+      "kind": "standard",
+      "difficulty": "very_hard",
+      "answer_type": "single",
+      "stem": "The banker's gain on a bill due 3 year(s) hence at 10% per annum is ₹180. Find the true discount.",
+      "explanation": "TD = BG×100/RT = 180×100/30 = ₹600.",
+      "options": [
+        {
+          "label": "₹624",
+          "is_correct": false
+        },
+        {
+          "label": "₹576",
+          "is_correct": false
+        },
+        {
+          "label": "₹600",
+          "is_correct": true
+        },
+        {
+          "label": "₹648",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Banker's Discount",
+      "kind": "standard",
+      "difficulty": "very_hard",
+      "answer_type": "single",
+      "stem": "The banker's gain on a bill due 2 year(s) hence at 20% per annum is ₹80. Find the face value of the bill.",
+      "explanation": "From BG = F·(RT)²/[100(100+RT)], the face value F = ₹700.",
+      "options": [
+        {
+          "label": "₹672",
+          "is_correct": false
+        },
+        {
+          "label": "₹728",
+          "is_correct": false
+        },
+        {
+          "label": "₹756",
+          "is_correct": false
+        },
+        {
+          "label": "₹700",
+          "is_correct": true
+        }
+      ]
+    },
+    {
+      "chapter": "Banker's Discount",
+      "kind": "standard",
+      "difficulty": "very_hard",
+      "answer_type": "single",
+      "stem": "The banker's discount on a bill is ₹1950 and the true discount is ₹1500. Find the sum due (face value).",
+      "explanation": "Face value = (BD×TD)/(BD−TD) = (1950×1500)/(1950−1500) = ₹6500.",
+      "options": [
+        {
+          "label": "₹6500",
+          "is_correct": true
+        },
+        {
+          "label": "₹6240",
+          "is_correct": false
+        },
+        {
+          "label": "₹7020",
+          "is_correct": false
+        },
+        {
+          "label": "₹6760",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Banker's Discount",
+      "kind": "standard",
+      "difficulty": "very_hard",
+      "answer_type": "single",
+      "stem": "The banker's discount on a bill is ₹2400 and the true discount is ₹1500. Find the sum due (face value).",
+      "explanation": "Face value = (BD×TD)/(BD−TD) = (2400×1500)/(2400−1500) = ₹4000.",
+      "options": [
+        {
+          "label": "₹4160",
+          "is_correct": false
+        },
+        {
+          "label": "₹4320",
+          "is_correct": false
+        },
+        {
+          "label": "₹3840",
+          "is_correct": false
+        },
+        {
+          "label": "₹4000",
+          "is_correct": true
+        }
+      ]
+    }
+  ]
+}

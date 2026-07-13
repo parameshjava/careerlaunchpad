@@ -19,6 +19,8 @@ export default async function DashboardPage() {
   const canReview = !!ctx && (ctx.permissions.has("*") || can(ctx, "student.review"));
   const canImport = !!ctx && (ctx.permissions.has("*") || can(ctx, "student.intake.import"));
   const canDelete = !!ctx && (ctx.permissions.has("*") || can(ctx, "student.delete"));
+  const canImpersonate =
+    !!ctx && (ctx.permissions.has("*") || ctx.roles.includes("owner") || ctx.roles.includes("platform_admin"));
 
   const supabase = await createClient();
   const data = await fetchStudents(supabase);
@@ -117,7 +119,7 @@ export default async function DashboardPage() {
             data={data}
             searchKey="name"
             searchPlaceholder="Search students…"
-            meta={{ canDelete }}
+            meta={{ canDelete, canImpersonate }}
           />
         </CardContent>
       </Card>

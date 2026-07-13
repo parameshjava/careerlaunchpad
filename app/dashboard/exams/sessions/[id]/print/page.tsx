@@ -28,6 +28,7 @@ export default async function PaperPrintPage({
     <PaperPrint
       title={session.examTitle ?? "Exam"}
       label={session.label}
+      collegeName={session.collegeName}
       durationMinutes={session.durationMinutes ?? 0}
       totalMarks={paper.totalMarks}
       questions={paper.questions}

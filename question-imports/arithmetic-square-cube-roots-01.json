@@ -1,0 +1,5205 @@
+{
+  "subject": "Arithmetic",
+  "questions": [
+    {
+      "chapter": "Square Roots and Cube Roots",
+      "kind": "standard",
+      "difficulty": "easy",
+      "answer_type": "single",
+      "stem": "Find the cube root of 64.",
+      "explanation": "4³ = 64, so ∛64 = 4.",
+      "options": [
+        {
+          "label": "4",
+          "is_correct": true
+        },
+        {
+          "label": "5",
+          "is_correct": false
+        },
+        {
+          "label": "3",
+          "is_correct": false
+        },
+        {
+          "label": "6",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Square Roots and Cube Roots",
+      "kind": "standard",
+      "difficulty": "easy",
+      "answer_type": "single",
+      "stem": "Find the square root of 196.",
+      "explanation": "14² = 196, so √196 = 14.",
+      "options": [
+        {
+          "label": "13",
+          "is_correct": false
+        },
+        {
+          "label": "15",
+          "is_correct": false
+        },
+        {
+          "label": "14",
+          "is_correct": true
+        },
+        {
+          "label": "16",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Square Roots and Cube Roots",
+      "kind": "standard",
+      "difficulty": "easy",
+      "answer_type": "single",
+      "stem": "Find the value of √16 + √25.",
+      "explanation": "√16 = 4 and √25 = 5, so the sum is 9.",
+      "options": [
+        {
+          "label": "10",
+          "is_correct": false
+        },
+        {
+          "label": "11",
+          "is_correct": false
+        },
+        {
+          "label": "8",
+          "is_correct": false
+        },
+        {
+          "label": "9",
+          "is_correct": true
+        }
+      ]
+    },
+    {
+      "chapter": "Square Roots and Cube Roots",
+      "kind": "standard",
+      "difficulty": "easy",
+      "answer_type": "single",
+      "stem": "Find the value of √784 + √289.",
+      "explanation": "√784 = 28 and √289 = 17, so the sum is 45.",
+      "options": [
+        {
+          "label": "45",
+          "is_correct": true
+        },
+        {
+          "label": "43",
+          "is_correct": false
+        },
+        {
+          "label": "47",
+          "is_correct": false
+        },
+        {
+          "label": "49",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Square Roots and Cube Roots",
+      "kind": "standard",
+      "difficulty": "easy",
+      "answer_type": "single",
+      "stem": "Find the value of √841 + √9.",
+      "explanation": "√841 = 29 and √9 = 3, so the sum is 32.",
+      "options": [
+        {
+          "label": "32",
+          "is_correct": true
+        },
+        {
+          "label": "33",
+          "is_correct": false
+        },
+        {
+          "label": "34",
+          "is_correct": false
+        },
+        {
+          "label": "31",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Square Roots and Cube Roots",
+      "kind": "standard",
+      "difficulty": "easy",
+      "answer_type": "single",
+      "stem": "Find the value of √81 + √49.",
+      "explanation": "√81 = 9 and √49 = 7, so the sum is 16.",
+      "options": [
+        {
+          "label": "16",
+          "is_correct": true
+        },
+        {
+          "label": "18",
+          "is_correct": false
+        },
+        {
+          "label": "17",
+          "is_correct": false
+        },
+        {
+          "label": "15",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Square Roots and Cube Roots",
+      "kind": "standard",
+      "difficulty": "easy",
+      "answer_type": "single",
+      "stem": "Find the value of √256 + √196.",
+      "explanation": "√256 = 16 and √196 = 14, so the sum is 30.",
+      "options": [
+        {
+          "label": "32",
+          "is_correct": false
+        },
+        {
+          "label": "31",
+          "is_correct": false
+        },
+        {
+          "label": "29",
+          "is_correct": false
+        },
+        {
+          "label": "30",
+          "is_correct": true
+        }
+      ]
+    },
+    {
+      "chapter": "Square Roots and Cube Roots",
+      "kind": "standard",
+      "difficulty": "easy",
+      "answer_type": "single",
+      "stem": "Find the square root of 400.",
+      "explanation": "20² = 400, so √400 = 20.",
+      "options": [
+        {
+          "label": "20",
+          "is_correct": true
+        },
+        {
+          "label": "21",
+          "is_correct": false
+        },
+        {
+          "label": "22",
+          "is_correct": false
+        },
+        {
+          "label": "19",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Square Roots and Cube Roots",
+      "kind": "standard",
+      "difficulty": "easy",
+      "answer_type": "single",
+      "stem": "Find the cube root of 729.",
+      "explanation": "9³ = 729, so ∛729 = 9.",
+      "options": [
+        {
+          "label": "11",
+          "is_correct": false
+        },
+        {
+          "label": "10",
+          "is_correct": false
+        },
+        {
+          "label": "9",
+          "is_correct": true
+        },
+        {
+          "label": "8",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Square Roots and Cube Roots",
+      "kind": "standard",
+      "difficulty": "easy",
+      "answer_type": "single",
+      "stem": "Find the value of √729 + √81.",
+      "explanation": "√729 = 27 and √81 = 9, so the sum is 36.",
+      "options": [
+        {
+          "label": "36",
+          "is_correct": true
+        },
+        {
+          "label": "37",
+          "is_correct": false
+        },
+        {
+          "label": "38",
+          "is_correct": false
+        },
+        {
+          "label": "35",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Square Roots and Cube Roots",
+      "kind": "standard",
+      "difficulty": "easy",
+      "answer_type": "single",
+      "stem": "Find the value of √36 + √25.",
+      "explanation": "√36 = 6 and √25 = 5, so the sum is 11.",
+      "options": [
+        {
+          "label": "10",
+          "is_correct": false
+        },
+        {
+          "label": "13",
+          "is_correct": false
+        },
+        {
+          "label": "12",
+          "is_correct": false
+        },
+        {
+          "label": "11",
+          "is_correct": true
+        }
+      ]
+    },
+    {
+      "chapter": "Square Roots and Cube Roots",
+      "kind": "standard",
+      "difficulty": "easy",
+      "answer_type": "single",
+      "stem": "Find the value of √64 + √256.",
+      "explanation": "√64 = 8 and √256 = 16, so the sum is 24.",
+      "options": [
+        {
+          "label": "25",
+          "is_correct": false
+        },
+        {
+          "label": "23",
+          "is_correct": false
+        },
+        {
+          "label": "26",
+          "is_correct": false
+        },
+        {
+          "label": "24",
+          "is_correct": true
+        }
+      ]
+    },
+    {
+      "chapter": "Square Roots and Cube Roots",
+      "kind": "standard",
+      "difficulty": "easy",
+      "answer_type": "single",
+      "stem": "Find the square root of 36.",
+      "explanation": "6² = 36, so √36 = 6.",
+      "options": [
+        {
+          "label": "5",
+          "is_correct": false
+        },
+        {
+          "label": "6",
+          "is_correct": true
+        },
+        {
+          "label": "7",
+          "is_correct": false
+        },
+        {
+          "label": "8",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Square Roots and Cube Roots",
+      "kind": "standard",
+      "difficulty": "easy",
+      "answer_type": "single",
+      "stem": "Find the value of √441 + √784.",
+      "explanation": "√441 = 21 and √784 = 28, so the sum is 49.",
+      "options": [
+        {
+          "label": "53",
+          "is_correct": false
+        },
+        {
+          "label": "47",
+          "is_correct": false
+        },
+        {
+          "label": "51",
+          "is_correct": false
+        },
+        {
+          "label": "49",
+          "is_correct": true
+        }
+      ]
+    },
+    {
+      "chapter": "Square Roots and Cube Roots",
+      "kind": "standard",
+      "difficulty": "easy",
+      "answer_type": "single",
+      "stem": "Find the cube root of 512.",
+      "explanation": "8³ = 512, so ∛512 = 8.",
+      "options": [
+        {
+          "label": "10",
+          "is_correct": false
+        },
+        {
+          "label": "8",
+          "is_correct": true
+        },
+        {
+          "label": "7",
+          "is_correct": false
+        },
+        {
+          "label": "9",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Square Roots and Cube Roots",
+      "kind": "standard",
+      "difficulty": "easy",
+      "answer_type": "single",
+      "stem": "Find the square root of 49.",
+      "explanation": "7² = 49, so √49 = 7.",
+      "options": [
+        {
+          "label": "9",
+          "is_correct": false
+        },
+        {
+          "label": "6",
+          "is_correct": false
+        },
+        {
+          "label": "8",
+          "is_correct": false
+        },
+        {
+          "label": "7",
+          "is_correct": true
+        }
+      ]
+    },
+    {
+      "chapter": "Square Roots and Cube Roots",
+      "kind": "standard",
+      "difficulty": "easy",
+      "answer_type": "single",
+      "stem": "Find the square root of 4.",
+      "explanation": "2² = 4, so √4 = 2.",
+      "options": [
+        {
+          "label": "2",
+          "is_correct": true
+        },
+        {
+          "label": "1",
+          "is_correct": false
+        },
+        {
+          "label": "4",
+          "is_correct": false
+        },
+        {
+          "label": "3",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Square Roots and Cube Roots",
+      "kind": "standard",
+      "difficulty": "easy",
+      "answer_type": "single",
+      "stem": "Find the cube root of 8.",
+      "explanation": "2³ = 8, so ∛8 = 2.",
+      "options": [
+        {
+          "label": "1",
+          "is_correct": false
+        },
+        {
+          "label": "2",
+          "is_correct": true
+        },
+        {
+          "label": "3",
+          "is_correct": false
+        },
+        {
+          "label": "4",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Square Roots and Cube Roots",
+      "kind": "standard",
+      "difficulty": "easy",
+      "answer_type": "single",
+      "stem": "Find the value of √16 + √121.",
+      "explanation": "√16 = 4 and √121 = 11, so the sum is 15.",
+      "options": [
+        {
+          "label": "16",
+          "is_correct": false
+        },
+        {
+          "label": "14",
+          "is_correct": false
+        },
+        {
+          "label": "17",
+          "is_correct": false
+        },
+        {
+          "label": "15",
+          "is_correct": true
+        }
+      ]
+    },
+    {
+      "chapter": "Square Roots and Cube Roots",
+      "kind": "standard",
+      "difficulty": "easy",
+      "answer_type": "single",
+      "stem": "Find the square root of 676.",
+      "explanation": "26² = 676, so √676 = 26.",
+      "options": [
+        {
+          "label": "26",
+          "is_correct": true
+        },
+        {
+          "label": "27",
+          "is_correct": false
+        },
+        {
+          "label": "25",
+          "is_correct": false
+        },
+        {
+          "label": "28",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Square Roots and Cube Roots",
+      "kind": "standard",
+      "difficulty": "easy",
+      "answer_type": "single",
+      "stem": "Find the cube root of 6859.",
+      "explanation": "19³ = 6859, so ∛6859 = 19.",
+      "options": [
+        {
+          "label": "21",
+          "is_correct": false
+        },
+        {
+          "label": "20",
+          "is_correct": false
+        },
+        {
+          "label": "19",
+          "is_correct": true
+        },
+        {
+          "label": "18",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Square Roots and Cube Roots",
+      "kind": "standard",
+      "difficulty": "easy",
+      "answer_type": "single",
+      "stem": "Find the cube root of 125.",
+      "explanation": "5³ = 125, so ∛125 = 5.",
+      "options": [
+        {
+          "label": "5",
+          "is_correct": true
+        },
+        {
+          "label": "7",
+          "is_correct": false
+        },
+        {
+          "label": "6",
+          "is_correct": false
+        },
+        {
+          "label": "4",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Square Roots and Cube Roots",
+      "kind": "standard",
+      "difficulty": "easy",
+      "answer_type": "single",
+      "stem": "Find the value of √484 + √729.",
+      "explanation": "√484 = 22 and √729 = 27, so the sum is 49.",
+      "options": [
+        {
+          "label": "53",
+          "is_correct": false
+        },
+        {
+          "label": "47",
+          "is_correct": false
+        },
+        {
+          "label": "51",
+          "is_correct": false
+        },
+        {
+          "label": "49",
+          "is_correct": true
+        }
+      ]
+    },
+    {
+      "chapter": "Square Roots and Cube Roots",
+      "kind": "standard",
+      "difficulty": "easy",
+      "answer_type": "single",
+      "stem": "Find the square root of 225.",
+      "explanation": "15² = 225, so √225 = 15.",
+      "options": [
+        {
+          "label": "15",
+          "is_correct": true
+        },
+        {
+          "label": "16",
+          "is_correct": false
+        },
+        {
+          "label": "17",
+          "is_correct": false
+        },
+        {
+          "label": "14",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Square Roots and Cube Roots",
+      "kind": "standard",
+      "difficulty": "easy",
+      "answer_type": "single",
+      "stem": "Find the value of √81 + √729.",
+      "explanation": "√81 = 9 and √729 = 27, so the sum is 36.",
+      "options": [
+        {
+          "label": "36",
+          "is_correct": true
+        },
+        {
+          "label": "35",
+          "is_correct": false
+        },
+        {
+          "label": "38",
+          "is_correct": false
+        },
+        {
+          "label": "37",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Square Roots and Cube Roots",
+      "kind": "standard",
+      "difficulty": "easy",
+      "answer_type": "single",
+      "stem": "Find the value of √484 + √196.",
+      "explanation": "√484 = 22 and √196 = 14, so the sum is 36.",
+      "options": [
+        {
+          "label": "36",
+          "is_correct": true
+        },
+        {
+          "label": "37",
+          "is_correct": false
+        },
+        {
+          "label": "38",
+          "is_correct": false
+        },
+        {
+          "label": "35",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Square Roots and Cube Roots",
+      "kind": "standard",
+      "difficulty": "easy",
+      "answer_type": "single",
+      "stem": "Find the value of √25 + √4.",
+      "explanation": "√25 = 5 and √4 = 2, so the sum is 7.",
+      "options": [
+        {
+          "label": "6",
+          "is_correct": false
+        },
+        {
+          "label": "8",
+          "is_correct": false
+        },
+        {
+          "label": "7",
+          "is_correct": true
+        },
+        {
+          "label": "9",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Square Roots and Cube Roots",
+      "kind": "standard",
+      "difficulty": "easy",
+      "answer_type": "single",
+      "stem": "Find the square root of 121.",
+      "explanation": "11² = 121, so √121 = 11.",
+      "options": [
+        {
+          "label": "12",
+          "is_correct": false
+        },
+        {
+          "label": "13",
+          "is_correct": false
+        },
+        {
+          "label": "10",
+          "is_correct": false
+        },
+        {
+          "label": "11",
+          "is_correct": true
+        }
+      ]
+    },
+    {
+      "chapter": "Square Roots and Cube Roots",
+      "kind": "standard",
+      "difficulty": "easy",
+      "answer_type": "single",
+      "stem": "Find the square root of 1296.",
+      "explanation": "36² = 1296, so √1296 = 36.",
+      "options": [
+        {
+          "label": "36",
+          "is_correct": true
+        },
+        {
+          "label": "38",
+          "is_correct": false
+        },
+        {
+          "label": "37",
+          "is_correct": false
+        },
+        {
+          "label": "35",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Square Roots and Cube Roots",
+      "kind": "standard",
+      "difficulty": "easy",
+      "answer_type": "single",
+      "stem": "Find the cube root of 2744.",
+      "explanation": "14³ = 2744, so ∛2744 = 14.",
+      "options": [
+        {
+          "label": "16",
+          "is_correct": false
+        },
+        {
+          "label": "15",
+          "is_correct": false
+        },
+        {
+          "label": "14",
+          "is_correct": true
+        },
+        {
+          "label": "13",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Square Roots and Cube Roots",
+      "kind": "standard",
+      "difficulty": "easy",
+      "answer_type": "single",
+      "stem": "Find the cube root of 4096.",
+      "explanation": "16³ = 4096, so ∛4096 = 16.",
+      "options": [
+        {
+          "label": "17",
+          "is_correct": false
+        },
+        {
+          "label": "15",
+          "is_correct": false
+        },
+        {
+          "label": "18",
+          "is_correct": false
+        },
+        {
+          "label": "16",
+          "is_correct": true
+        }
+      ]
+    },
+    {
+      "chapter": "Square Roots and Cube Roots",
+      "kind": "standard",
+      "difficulty": "easy",
+      "answer_type": "single",
+      "stem": "Find the square root of 529.",
+      "explanation": "23² = 529, so √529 = 23.",
+      "options": [
+        {
+          "label": "24",
+          "is_correct": false
+        },
+        {
+          "label": "23",
+          "is_correct": true
+        },
+        {
+          "label": "22",
+          "is_correct": false
+        },
+        {
+          "label": "25",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Square Roots and Cube Roots",
+      "kind": "standard",
+      "difficulty": "easy",
+      "answer_type": "single",
+      "stem": "Find the square root of 900.",
+      "explanation": "30² = 900, so √900 = 30.",
+      "options": [
+        {
+          "label": "31",
+          "is_correct": false
+        },
+        {
+          "label": "32",
+          "is_correct": false
+        },
+        {
+          "label": "30",
+          "is_correct": true
+        },
+        {
+          "label": "29",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Square Roots and Cube Roots",
+      "kind": "standard",
+      "difficulty": "easy",
+      "answer_type": "single",
+      "stem": "Find the cube root of 5832.",
+      "explanation": "18³ = 5832, so ∛5832 = 18.",
+      "options": [
+        {
+          "label": "20",
+          "is_correct": false
+        },
+        {
+          "label": "17",
+          "is_correct": false
+        },
+        {
+          "label": "18",
+          "is_correct": true
+        },
+        {
+          "label": "19",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Square Roots and Cube Roots",
+      "kind": "standard",
+      "difficulty": "easy",
+      "answer_type": "single",
+      "stem": "Find the cube root of 4913.",
+      "explanation": "17³ = 4913, so ∛4913 = 17.",
+      "options": [
+        {
+          "label": "19",
+          "is_correct": false
+        },
+        {
+          "label": "18",
+          "is_correct": false
+        },
+        {
+          "label": "16",
+          "is_correct": false
+        },
+        {
+          "label": "17",
+          "is_correct": true
+        }
+      ]
+    },
+    {
+      "chapter": "Square Roots and Cube Roots",
+      "kind": "standard",
+      "difficulty": "easy",
+      "answer_type": "single",
+      "stem": "Find the value of √841 + √625.",
+      "explanation": "√841 = 29 and √625 = 25, so the sum is 54.",
+      "options": [
+        {
+          "label": "52",
+          "is_correct": false
+        },
+        {
+          "label": "56",
+          "is_correct": false
+        },
+        {
+          "label": "54",
+          "is_correct": true
+        },
+        {
+          "label": "58",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Square Roots and Cube Roots",
+      "kind": "standard",
+      "difficulty": "easy",
+      "answer_type": "single",
+      "stem": "Find the value of √49 + √49.",
+      "explanation": "√49 = 7 and √49 = 7, so the sum is 14.",
+      "options": [
+        {
+          "label": "15",
+          "is_correct": false
+        },
+        {
+          "label": "13",
+          "is_correct": false
+        },
+        {
+          "label": "16",
+          "is_correct": false
+        },
+        {
+          "label": "14",
+          "is_correct": true
+        }
+      ]
+    },
+    {
+      "chapter": "Square Roots and Cube Roots",
+      "kind": "standard",
+      "difficulty": "easy",
+      "answer_type": "single",
+      "stem": "Find the value of √324 + √81.",
+      "explanation": "√324 = 18 and √81 = 9, so the sum is 27.",
+      "options": [
+        {
+          "label": "27",
+          "is_correct": true
+        },
+        {
+          "label": "29",
+          "is_correct": false
+        },
+        {
+          "label": "28",
+          "is_correct": false
+        },
+        {
+          "label": "26",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Square Roots and Cube Roots",
+      "kind": "standard",
+      "difficulty": "easy",
+      "answer_type": "single",
+      "stem": "Find the value of √25 + √121.",
+      "explanation": "√25 = 5 and √121 = 11, so the sum is 16.",
+      "options": [
+        {
+          "label": "15",
+          "is_correct": false
+        },
+        {
+          "label": "18",
+          "is_correct": false
+        },
+        {
+          "label": "16",
+          "is_correct": true
+        },
+        {
+          "label": "17",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Square Roots and Cube Roots",
+      "kind": "standard",
+      "difficulty": "easy",
+      "answer_type": "single",
+      "stem": "Find the cube root of 1000.",
+      "explanation": "10³ = 1000, so ∛1000 = 10.",
+      "options": [
+        {
+          "label": "9",
+          "is_correct": false
+        },
+        {
+          "label": "11",
+          "is_correct": false
+        },
+        {
+          "label": "10",
+          "is_correct": true
+        },
+        {
+          "label": "12",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Square Roots and Cube Roots",
+      "kind": "standard",
+      "difficulty": "easy",
+      "answer_type": "single",
+      "stem": "Find the value of √441 + √25.",
+      "explanation": "√441 = 21 and √25 = 5, so the sum is 26.",
+      "options": [
+        {
+          "label": "28",
+          "is_correct": false
+        },
+        {
+          "label": "27",
+          "is_correct": false
+        },
+        {
+          "label": "26",
+          "is_correct": true
+        },
+        {
+          "label": "25",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Square Roots and Cube Roots",
+      "kind": "standard",
+      "difficulty": "easy",
+      "answer_type": "single",
+      "stem": "Find the value of √361 + √9.",
+      "explanation": "√361 = 19 and √9 = 3, so the sum is 22.",
+      "options": [
+        {
+          "label": "23",
+          "is_correct": false
+        },
+        {
+          "label": "22",
+          "is_correct": true
+        },
+        {
+          "label": "21",
+          "is_correct": false
+        },
+        {
+          "label": "24",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Square Roots and Cube Roots",
+      "kind": "standard",
+      "difficulty": "easy",
+      "answer_type": "single",
+      "stem": "Find the value of √225 + √784.",
+      "explanation": "√225 = 15 and √784 = 28, so the sum is 43.",
+      "options": [
+        {
+          "label": "45",
+          "is_correct": false
+        },
+        {
+          "label": "43",
+          "is_correct": true
+        },
+        {
+          "label": "47",
+          "is_correct": false
+        },
+        {
+          "label": "41",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Square Roots and Cube Roots",
+      "kind": "standard",
+      "difficulty": "easy",
+      "answer_type": "single",
+      "stem": "Find the cube root of 2197.",
+      "explanation": "13³ = 2197, so ∛2197 = 13.",
+      "options": [
+        {
+          "label": "12",
+          "is_correct": false
+        },
+        {
+          "label": "13",
+          "is_correct": true
+        },
+        {
+          "label": "15",
+          "is_correct": false
+        },
+        {
+          "label": "14",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Square Roots and Cube Roots",
+      "kind": "standard",
+      "difficulty": "easy",
+      "answer_type": "single",
+      "stem": "Find the square root of 784.",
+      "explanation": "28² = 784, so √784 = 28.",
+      "options": [
+        {
+          "label": "29",
+          "is_correct": false
+        },
+        {
+          "label": "28",
+          "is_correct": true
+        },
+        {
+          "label": "30",
+          "is_correct": false
+        },
+        {
+          "label": "27",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Square Roots and Cube Roots",
+      "kind": "standard",
+      "difficulty": "easy",
+      "answer_type": "single",
+      "stem": "Find the value of √841 + √529.",
+      "explanation": "√841 = 29 and √529 = 23, so the sum is 52.",
+      "options": [
+        {
+          "label": "56",
+          "is_correct": false
+        },
+        {
+          "label": "52",
+          "is_correct": true
+        },
+        {
+          "label": "50",
+          "is_correct": false
+        },
+        {
+          "label": "54",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Square Roots and Cube Roots",
+      "kind": "standard",
+      "difficulty": "easy",
+      "answer_type": "single",
+      "stem": "Find the cube root of 1331.",
+      "explanation": "11³ = 1331, so ∛1331 = 11.",
+      "options": [
+        {
+          "label": "12",
+          "is_correct": false
+        },
+        {
+          "label": "10",
+          "is_correct": false
+        },
+        {
+          "label": "11",
+          "is_correct": true
+        },
+        {
+          "label": "13",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Square Roots and Cube Roots",
+      "kind": "standard",
+      "difficulty": "easy",
+      "answer_type": "single",
+      "stem": "Find the square root of 81.",
+      "explanation": "9² = 81, so √81 = 9.",
+      "options": [
+        {
+          "label": "9",
+          "is_correct": true
+        },
+        {
+          "label": "11",
+          "is_correct": false
+        },
+        {
+          "label": "8",
+          "is_correct": false
+        },
+        {
+          "label": "10",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Square Roots and Cube Roots",
+      "kind": "standard",
+      "difficulty": "easy",
+      "answer_type": "single",
+      "stem": "Find the cube root of 343.",
+      "explanation": "7³ = 343, so ∛343 = 7.",
+      "options": [
+        {
+          "label": "8",
+          "is_correct": false
+        },
+        {
+          "label": "9",
+          "is_correct": false
+        },
+        {
+          "label": "7",
+          "is_correct": true
+        },
+        {
+          "label": "6",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Square Roots and Cube Roots",
+      "kind": "standard",
+      "difficulty": "easy",
+      "answer_type": "single",
+      "stem": "Find the value of √25 + √81.",
+      "explanation": "√25 = 5 and √81 = 9, so the sum is 14.",
+      "options": [
+        {
+          "label": "14",
+          "is_correct": true
+        },
+        {
+          "label": "13",
+          "is_correct": false
+        },
+        {
+          "label": "15",
+          "is_correct": false
+        },
+        {
+          "label": "16",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Square Roots and Cube Roots",
+      "kind": "standard",
+      "difficulty": "medium",
+      "answer_type": "single",
+      "stem": "Find the value of √576 + √324 + √25.",
+      "explanation": "The three square roots are 24, 18 and 5; their sum is 47.",
+      "options": [
+        {
+          "label": "47",
+          "is_correct": true
+        },
+        {
+          "label": "49",
+          "is_correct": false
+        },
+        {
+          "label": "45",
+          "is_correct": false
+        },
+        {
+          "label": "51",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Square Roots and Cube Roots",
+      "kind": "standard",
+      "difficulty": "medium",
+      "answer_type": "single",
+      "stem": "Find the cube root of 13824.",
+      "explanation": "24³ = 13824, so ∛13824 = 24.",
+      "options": [
+        {
+          "label": "24",
+          "is_correct": true
+        },
+        {
+          "label": "23",
+          "is_correct": false
+        },
+        {
+          "label": "25",
+          "is_correct": false
+        },
+        {
+          "label": "26",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Square Roots and Cube Roots",
+      "kind": "standard",
+      "difficulty": "medium",
+      "answer_type": "single",
+      "stem": "Find the value of √400 + √289 + √256.",
+      "explanation": "The three square roots are 20, 17 and 16; their sum is 53.",
+      "options": [
+        {
+          "label": "53",
+          "is_correct": true
+        },
+        {
+          "label": "55",
+          "is_correct": false
+        },
+        {
+          "label": "51",
+          "is_correct": false
+        },
+        {
+          "label": "57",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Square Roots and Cube Roots",
+      "kind": "standard",
+      "difficulty": "medium",
+      "answer_type": "single",
+      "stem": "Find the cube root of 12167.",
+      "explanation": "23³ = 12167, so ∛12167 = 23.",
+      "options": [
+        {
+          "label": "22",
+          "is_correct": false
+        },
+        {
+          "label": "25",
+          "is_correct": false
+        },
+        {
+          "label": "24",
+          "is_correct": false
+        },
+        {
+          "label": "23",
+          "is_correct": true
+        }
+      ]
+    },
+    {
+      "chapter": "Square Roots and Cube Roots",
+      "kind": "standard",
+      "difficulty": "medium",
+      "answer_type": "single",
+      "stem": "Find the square root of 3600.",
+      "explanation": "60² = 3600, so √3600 = 60.",
+      "options": [
+        {
+          "label": "60",
+          "is_correct": true
+        },
+        {
+          "label": "58",
+          "is_correct": false
+        },
+        {
+          "label": "64",
+          "is_correct": false
+        },
+        {
+          "label": "62",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Square Roots and Cube Roots",
+      "kind": "standard",
+      "difficulty": "medium",
+      "answer_type": "single",
+      "stem": "Find the cube root of 3375.",
+      "explanation": "15³ = 3375, so ∛3375 = 15.",
+      "options": [
+        {
+          "label": "17",
+          "is_correct": false
+        },
+        {
+          "label": "16",
+          "is_correct": false
+        },
+        {
+          "label": "14",
+          "is_correct": false
+        },
+        {
+          "label": "15",
+          "is_correct": true
+        }
+      ]
+    },
+    {
+      "chapter": "Square Roots and Cube Roots",
+      "kind": "standard",
+      "difficulty": "medium",
+      "answer_type": "single",
+      "stem": "Find the value of √25 + √196 + √64.",
+      "explanation": "The three square roots are 5, 14 and 8; their sum is 27.",
+      "options": [
+        {
+          "label": "29",
+          "is_correct": false
+        },
+        {
+          "label": "27",
+          "is_correct": true
+        },
+        {
+          "label": "28",
+          "is_correct": false
+        },
+        {
+          "label": "26",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Square Roots and Cube Roots",
+      "kind": "standard",
+      "difficulty": "medium",
+      "answer_type": "single",
+      "stem": "Find the square root of 8281.",
+      "explanation": "91² = 8281, so √8281 = 91.",
+      "options": [
+        {
+          "label": "89",
+          "is_correct": false
+        },
+        {
+          "label": "91",
+          "is_correct": true
+        },
+        {
+          "label": "93",
+          "is_correct": false
+        },
+        {
+          "label": "95",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Square Roots and Cube Roots",
+      "kind": "standard",
+      "difficulty": "medium",
+      "answer_type": "single",
+      "stem": "Find the square root of 3844.",
+      "explanation": "62² = 3844, so √3844 = 62.",
+      "options": [
+        {
+          "label": "64",
+          "is_correct": false
+        },
+        {
+          "label": "62",
+          "is_correct": true
+        },
+        {
+          "label": "66",
+          "is_correct": false
+        },
+        {
+          "label": "60",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Square Roots and Cube Roots",
+      "kind": "standard",
+      "difficulty": "medium",
+      "answer_type": "single",
+      "stem": "Find the value of √16 + √289 + √625.",
+      "explanation": "The three square roots are 4, 17 and 25; their sum is 46.",
+      "options": [
+        {
+          "label": "46",
+          "is_correct": true
+        },
+        {
+          "label": "48",
+          "is_correct": false
+        },
+        {
+          "label": "44",
+          "is_correct": false
+        },
+        {
+          "label": "50",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Square Roots and Cube Roots",
+      "kind": "standard",
+      "difficulty": "medium",
+      "answer_type": "single",
+      "stem": "Find the cube root of 1728.",
+      "explanation": "12³ = 1728, so ∛1728 = 12.",
+      "options": [
+        {
+          "label": "12",
+          "is_correct": true
+        },
+        {
+          "label": "11",
+          "is_correct": false
+        },
+        {
+          "label": "13",
+          "is_correct": false
+        },
+        {
+          "label": "14",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Square Roots and Cube Roots",
+      "kind": "standard",
+      "difficulty": "medium",
+      "answer_type": "single",
+      "stem": "Find the value of √625 + √324 + √64.",
+      "explanation": "The three square roots are 25, 18 and 8; their sum is 51.",
+      "options": [
+        {
+          "label": "49",
+          "is_correct": false
+        },
+        {
+          "label": "53",
+          "is_correct": false
+        },
+        {
+          "label": "51",
+          "is_correct": true
+        },
+        {
+          "label": "55",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Square Roots and Cube Roots",
+      "kind": "standard",
+      "difficulty": "medium",
+      "answer_type": "single",
+      "stem": "Find the value of √441 + √49 + √289.",
+      "explanation": "The three square roots are 21, 7 and 17; their sum is 45.",
+      "options": [
+        {
+          "label": "43",
+          "is_correct": false
+        },
+        {
+          "label": "47",
+          "is_correct": false
+        },
+        {
+          "label": "45",
+          "is_correct": true
+        },
+        {
+          "label": "49",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Square Roots and Cube Roots",
+      "kind": "standard",
+      "difficulty": "medium",
+      "answer_type": "single",
+      "stem": "Find the square root of 9801.",
+      "explanation": "99² = 9801, so √9801 = 99.",
+      "options": [
+        {
+          "label": "99",
+          "is_correct": true
+        },
+        {
+          "label": "103",
+          "is_correct": false
+        },
+        {
+          "label": "101",
+          "is_correct": false
+        },
+        {
+          "label": "97",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Square Roots and Cube Roots",
+      "kind": "standard",
+      "difficulty": "medium",
+      "answer_type": "single",
+      "stem": "Find the value of √64 + √441 + √196.",
+      "explanation": "The three square roots are 8, 21 and 14; their sum is 43.",
+      "options": [
+        {
+          "label": "41",
+          "is_correct": false
+        },
+        {
+          "label": "47",
+          "is_correct": false
+        },
+        {
+          "label": "45",
+          "is_correct": false
+        },
+        {
+          "label": "43",
+          "is_correct": true
+        }
+      ]
+    },
+    {
+      "chapter": "Square Roots and Cube Roots",
+      "kind": "standard",
+      "difficulty": "medium",
+      "answer_type": "single",
+      "stem": "Find the value of √169 + √25 + √49.",
+      "explanation": "The three square roots are 13, 5 and 7; their sum is 25.",
+      "options": [
+        {
+          "label": "27",
+          "is_correct": false
+        },
+        {
+          "label": "25",
+          "is_correct": true
+        },
+        {
+          "label": "24",
+          "is_correct": false
+        },
+        {
+          "label": "26",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Square Roots and Cube Roots",
+      "kind": "standard",
+      "difficulty": "medium",
+      "answer_type": "single",
+      "stem": "Find the value of √576 + √25 + √256.",
+      "explanation": "The three square roots are 24, 5 and 16; their sum is 45.",
+      "options": [
+        {
+          "label": "43",
+          "is_correct": false
+        },
+        {
+          "label": "47",
+          "is_correct": false
+        },
+        {
+          "label": "49",
+          "is_correct": false
+        },
+        {
+          "label": "45",
+          "is_correct": true
+        }
+      ]
+    },
+    {
+      "chapter": "Square Roots and Cube Roots",
+      "kind": "standard",
+      "difficulty": "medium",
+      "answer_type": "single",
+      "stem": "Find the square root of 3136.",
+      "explanation": "56² = 3136, so √3136 = 56.",
+      "options": [
+        {
+          "label": "58",
+          "is_correct": false
+        },
+        {
+          "label": "60",
+          "is_correct": false
+        },
+        {
+          "label": "54",
+          "is_correct": false
+        },
+        {
+          "label": "56",
+          "is_correct": true
+        }
+      ]
+    },
+    {
+      "chapter": "Square Roots and Cube Roots",
+      "kind": "standard",
+      "difficulty": "medium",
+      "answer_type": "single",
+      "stem": "Find the square root of 8100.",
+      "explanation": "90² = 8100, so √8100 = 90.",
+      "options": [
+        {
+          "label": "92",
+          "is_correct": false
+        },
+        {
+          "label": "94",
+          "is_correct": false
+        },
+        {
+          "label": "90",
+          "is_correct": true
+        },
+        {
+          "label": "88",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Square Roots and Cube Roots",
+      "kind": "standard",
+      "difficulty": "medium",
+      "answer_type": "single",
+      "stem": "Find the value of √289 + √4 + √36.",
+      "explanation": "The three square roots are 17, 2 and 6; their sum is 25.",
+      "options": [
+        {
+          "label": "25",
+          "is_correct": true
+        },
+        {
+          "label": "27",
+          "is_correct": false
+        },
+        {
+          "label": "26",
+          "is_correct": false
+        },
+        {
+          "label": "24",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Square Roots and Cube Roots",
+      "kind": "standard",
+      "difficulty": "medium",
+      "answer_type": "single",
+      "stem": "Find the value of √121 + √400 + √196.",
+      "explanation": "The three square roots are 11, 20 and 14; their sum is 45.",
+      "options": [
+        {
+          "label": "43",
+          "is_correct": false
+        },
+        {
+          "label": "45",
+          "is_correct": true
+        },
+        {
+          "label": "49",
+          "is_correct": false
+        },
+        {
+          "label": "47",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Square Roots and Cube Roots",
+      "kind": "standard",
+      "difficulty": "medium",
+      "answer_type": "single",
+      "stem": "Find the square root of 4900.",
+      "explanation": "70² = 4900, so √4900 = 70.",
+      "options": [
+        {
+          "label": "68",
+          "is_correct": false
+        },
+        {
+          "label": "72",
+          "is_correct": false
+        },
+        {
+          "label": "70",
+          "is_correct": true
+        },
+        {
+          "label": "74",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Square Roots and Cube Roots",
+      "kind": "standard",
+      "difficulty": "medium",
+      "answer_type": "single",
+      "stem": "Find the square root of 3364.",
+      "explanation": "58² = 3364, so √3364 = 58.",
+      "options": [
+        {
+          "label": "60",
+          "is_correct": false
+        },
+        {
+          "label": "62",
+          "is_correct": false
+        },
+        {
+          "label": "58",
+          "is_correct": true
+        },
+        {
+          "label": "56",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Square Roots and Cube Roots",
+      "kind": "standard",
+      "difficulty": "medium",
+      "answer_type": "single",
+      "stem": "Find the square root of 9216.",
+      "explanation": "96² = 9216, so √9216 = 96.",
+      "options": [
+        {
+          "label": "100",
+          "is_correct": false
+        },
+        {
+          "label": "94",
+          "is_correct": false
+        },
+        {
+          "label": "96",
+          "is_correct": true
+        },
+        {
+          "label": "98",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Square Roots and Cube Roots",
+      "kind": "standard",
+      "difficulty": "medium",
+      "answer_type": "single",
+      "stem": "Find the cube root of 8000.",
+      "explanation": "20³ = 8000, so ∛8000 = 20.",
+      "options": [
+        {
+          "label": "22",
+          "is_correct": false
+        },
+        {
+          "label": "20",
+          "is_correct": true
+        },
+        {
+          "label": "21",
+          "is_correct": false
+        },
+        {
+          "label": "19",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Square Roots and Cube Roots",
+      "kind": "standard",
+      "difficulty": "medium",
+      "answer_type": "single",
+      "stem": "Find the square root of 9025.",
+      "explanation": "95² = 9025, so √9025 = 95.",
+      "options": [
+        {
+          "label": "93",
+          "is_correct": false
+        },
+        {
+          "label": "97",
+          "is_correct": false
+        },
+        {
+          "label": "99",
+          "is_correct": false
+        },
+        {
+          "label": "95",
+          "is_correct": true
+        }
+      ]
+    },
+    {
+      "chapter": "Square Roots and Cube Roots",
+      "kind": "standard",
+      "difficulty": "medium",
+      "answer_type": "single",
+      "stem": "Find the square root of 3249.",
+      "explanation": "57² = 3249, so √3249 = 57.",
+      "options": [
+        {
+          "label": "55",
+          "is_correct": false
+        },
+        {
+          "label": "61",
+          "is_correct": false
+        },
+        {
+          "label": "59",
+          "is_correct": false
+        },
+        {
+          "label": "57",
+          "is_correct": true
+        }
+      ]
+    },
+    {
+      "chapter": "Square Roots and Cube Roots",
+      "kind": "standard",
+      "difficulty": "medium",
+      "answer_type": "single",
+      "stem": "Find the value of √289 + √225 + √289.",
+      "explanation": "The three square roots are 17, 15 and 17; their sum is 49.",
+      "options": [
+        {
+          "label": "53",
+          "is_correct": false
+        },
+        {
+          "label": "47",
+          "is_correct": false
+        },
+        {
+          "label": "51",
+          "is_correct": false
+        },
+        {
+          "label": "49",
+          "is_correct": true
+        }
+      ]
+    },
+    {
+      "chapter": "Square Roots and Cube Roots",
+      "kind": "standard",
+      "difficulty": "medium",
+      "answer_type": "single",
+      "stem": "Find the square root of 6084.",
+      "explanation": "78² = 6084, so √6084 = 78.",
+      "options": [
+        {
+          "label": "80",
+          "is_correct": false
+        },
+        {
+          "label": "82",
+          "is_correct": false
+        },
+        {
+          "label": "76",
+          "is_correct": false
+        },
+        {
+          "label": "78",
+          "is_correct": true
+        }
+      ]
+    },
+    {
+      "chapter": "Square Roots and Cube Roots",
+      "kind": "standard",
+      "difficulty": "medium",
+      "answer_type": "single",
+      "stem": "Find the square root of 2401.",
+      "explanation": "49² = 2401, so √2401 = 49.",
+      "options": [
+        {
+          "label": "49",
+          "is_correct": true
+        },
+        {
+          "label": "51",
+          "is_correct": false
+        },
+        {
+          "label": "53",
+          "is_correct": false
+        },
+        {
+          "label": "47",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Square Roots and Cube Roots",
+      "kind": "standard",
+      "difficulty": "medium",
+      "answer_type": "single",
+      "stem": "Find the value of √289 + √625 + √9.",
+      "explanation": "The three square roots are 17, 25 and 3; their sum is 45.",
+      "options": [
+        {
+          "label": "49",
+          "is_correct": false
+        },
+        {
+          "label": "45",
+          "is_correct": true
+        },
+        {
+          "label": "47",
+          "is_correct": false
+        },
+        {
+          "label": "43",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Square Roots and Cube Roots",
+      "kind": "standard",
+      "difficulty": "medium",
+      "answer_type": "single",
+      "stem": "Find the cube root of 15625.",
+      "explanation": "25³ = 15625, so ∛15625 = 25.",
+      "options": [
+        {
+          "label": "27",
+          "is_correct": false
+        },
+        {
+          "label": "26",
+          "is_correct": false
+        },
+        {
+          "label": "24",
+          "is_correct": false
+        },
+        {
+          "label": "25",
+          "is_correct": true
+        }
+      ]
+    },
+    {
+      "chapter": "Square Roots and Cube Roots",
+      "kind": "standard",
+      "difficulty": "medium",
+      "answer_type": "single",
+      "stem": "Find the square root of 1681.",
+      "explanation": "41² = 1681, so √1681 = 41.",
+      "options": [
+        {
+          "label": "41",
+          "is_correct": true
+        },
+        {
+          "label": "43",
+          "is_correct": false
+        },
+        {
+          "label": "39",
+          "is_correct": false
+        },
+        {
+          "label": "45",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Square Roots and Cube Roots",
+      "kind": "standard",
+      "difficulty": "medium",
+      "answer_type": "single",
+      "stem": "Find the cube root of 9261.",
+      "explanation": "21³ = 9261, so ∛9261 = 21.",
+      "options": [
+        {
+          "label": "23",
+          "is_correct": false
+        },
+        {
+          "label": "21",
+          "is_correct": true
+        },
+        {
+          "label": "20",
+          "is_correct": false
+        },
+        {
+          "label": "22",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Square Roots and Cube Roots",
+      "kind": "standard",
+      "difficulty": "medium",
+      "answer_type": "single",
+      "stem": "Find the square root of 5041.",
+      "explanation": "71² = 5041, so √5041 = 71.",
+      "options": [
+        {
+          "label": "75",
+          "is_correct": false
+        },
+        {
+          "label": "73",
+          "is_correct": false
+        },
+        {
+          "label": "71",
+          "is_correct": true
+        },
+        {
+          "label": "69",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Square Roots and Cube Roots",
+      "kind": "standard",
+      "difficulty": "medium",
+      "answer_type": "single",
+      "stem": "Find the value of √144 + √529 + √169.",
+      "explanation": "The three square roots are 12, 23 and 13; their sum is 48.",
+      "options": [
+        {
+          "label": "50",
+          "is_correct": false
+        },
+        {
+          "label": "52",
+          "is_correct": false
+        },
+        {
+          "label": "48",
+          "is_correct": true
+        },
+        {
+          "label": "46",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Square Roots and Cube Roots",
+      "kind": "standard",
+      "difficulty": "medium",
+      "answer_type": "single",
+      "stem": "Find the value of √81 + √361 + √400.",
+      "explanation": "The three square roots are 9, 19 and 20; their sum is 48.",
+      "options": [
+        {
+          "label": "50",
+          "is_correct": false
+        },
+        {
+          "label": "46",
+          "is_correct": false
+        },
+        {
+          "label": "52",
+          "is_correct": false
+        },
+        {
+          "label": "48",
+          "is_correct": true
+        }
+      ]
+    },
+    {
+      "chapter": "Square Roots and Cube Roots",
+      "kind": "standard",
+      "difficulty": "medium",
+      "answer_type": "single",
+      "stem": "Find the value of √225 + √49 + √196.",
+      "explanation": "The three square roots are 15, 7 and 14; their sum is 36.",
+      "options": [
+        {
+          "label": "38",
+          "is_correct": false
+        },
+        {
+          "label": "35",
+          "is_correct": false
+        },
+        {
+          "label": "36",
+          "is_correct": true
+        },
+        {
+          "label": "37",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Square Roots and Cube Roots",
+      "kind": "standard",
+      "difficulty": "medium",
+      "answer_type": "single",
+      "stem": "Find the square root of 7921.",
+      "explanation": "89² = 7921, so √7921 = 89.",
+      "options": [
+        {
+          "label": "91",
+          "is_correct": false
+        },
+        {
+          "label": "87",
+          "is_correct": false
+        },
+        {
+          "label": "89",
+          "is_correct": true
+        },
+        {
+          "label": "93",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Square Roots and Cube Roots",
+      "kind": "standard",
+      "difficulty": "medium",
+      "answer_type": "single",
+      "stem": "Find the square root of 1849.",
+      "explanation": "43² = 1849, so √1849 = 43.",
+      "options": [
+        {
+          "label": "41",
+          "is_correct": false
+        },
+        {
+          "label": "45",
+          "is_correct": false
+        },
+        {
+          "label": "43",
+          "is_correct": true
+        },
+        {
+          "label": "47",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Square Roots and Cube Roots",
+      "kind": "standard",
+      "difficulty": "medium",
+      "answer_type": "single",
+      "stem": "Find the square root of 3481.",
+      "explanation": "59² = 3481, so √3481 = 59.",
+      "options": [
+        {
+          "label": "59",
+          "is_correct": true
+        },
+        {
+          "label": "57",
+          "is_correct": false
+        },
+        {
+          "label": "61",
+          "is_correct": false
+        },
+        {
+          "label": "63",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Square Roots and Cube Roots",
+      "kind": "standard",
+      "difficulty": "medium",
+      "answer_type": "single",
+      "stem": "Find the value of √225 + √484 + √324.",
+      "explanation": "The three square roots are 15, 22 and 18; their sum is 55.",
+      "options": [
+        {
+          "label": "59",
+          "is_correct": false
+        },
+        {
+          "label": "53",
+          "is_correct": false
+        },
+        {
+          "label": "57",
+          "is_correct": false
+        },
+        {
+          "label": "55",
+          "is_correct": true
+        }
+      ]
+    },
+    {
+      "chapter": "Square Roots and Cube Roots",
+      "kind": "standard",
+      "difficulty": "medium",
+      "answer_type": "single",
+      "stem": "Find the value of √64 + √361 + √9.",
+      "explanation": "The three square roots are 8, 19 and 3; their sum is 30.",
+      "options": [
+        {
+          "label": "31",
+          "is_correct": false
+        },
+        {
+          "label": "30",
+          "is_correct": true
+        },
+        {
+          "label": "29",
+          "is_correct": false
+        },
+        {
+          "label": "32",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Square Roots and Cube Roots",
+      "kind": "standard",
+      "difficulty": "medium",
+      "answer_type": "single",
+      "stem": "Find the value of √400 + √16 + √625.",
+      "explanation": "The three square roots are 20, 4 and 25; their sum is 49.",
+      "options": [
+        {
+          "label": "53",
+          "is_correct": false
+        },
+        {
+          "label": "51",
+          "is_correct": false
+        },
+        {
+          "label": "47",
+          "is_correct": false
+        },
+        {
+          "label": "49",
+          "is_correct": true
+        }
+      ]
+    },
+    {
+      "chapter": "Square Roots and Cube Roots",
+      "kind": "standard",
+      "difficulty": "medium",
+      "answer_type": "single",
+      "stem": "Find the value of √400 + √100 + √576.",
+      "explanation": "The three square roots are 20, 10 and 24; their sum is 54.",
+      "options": [
+        {
+          "label": "52",
+          "is_correct": false
+        },
+        {
+          "label": "56",
+          "is_correct": false
+        },
+        {
+          "label": "58",
+          "is_correct": false
+        },
+        {
+          "label": "54",
+          "is_correct": true
+        }
+      ]
+    },
+    {
+      "chapter": "Square Roots and Cube Roots",
+      "kind": "standard",
+      "difficulty": "medium",
+      "answer_type": "single",
+      "stem": "Find the square root of 2500.",
+      "explanation": "50² = 2500, so √2500 = 50.",
+      "options": [
+        {
+          "label": "54",
+          "is_correct": false
+        },
+        {
+          "label": "48",
+          "is_correct": false
+        },
+        {
+          "label": "50",
+          "is_correct": true
+        },
+        {
+          "label": "52",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Square Roots and Cube Roots",
+      "kind": "standard",
+      "difficulty": "medium",
+      "answer_type": "single",
+      "stem": "Find the value of √576 + √16 + √361.",
+      "explanation": "The three square roots are 24, 4 and 19; their sum is 47.",
+      "options": [
+        {
+          "label": "49",
+          "is_correct": false
+        },
+        {
+          "label": "45",
+          "is_correct": false
+        },
+        {
+          "label": "51",
+          "is_correct": false
+        },
+        {
+          "label": "47",
+          "is_correct": true
+        }
+      ]
+    },
+    {
+      "chapter": "Square Roots and Cube Roots",
+      "kind": "standard",
+      "difficulty": "medium",
+      "answer_type": "single",
+      "stem": "Find the square root of 4356.",
+      "explanation": "66² = 4356, so √4356 = 66.",
+      "options": [
+        {
+          "label": "64",
+          "is_correct": false
+        },
+        {
+          "label": "68",
+          "is_correct": false
+        },
+        {
+          "label": "66",
+          "is_correct": true
+        },
+        {
+          "label": "70",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Square Roots and Cube Roots",
+      "kind": "standard",
+      "difficulty": "medium",
+      "answer_type": "single",
+      "stem": "Find the value of √225 + √361 + √169.",
+      "explanation": "The three square roots are 15, 19 and 13; their sum is 47.",
+      "options": [
+        {
+          "label": "45",
+          "is_correct": false
+        },
+        {
+          "label": "47",
+          "is_correct": true
+        },
+        {
+          "label": "51",
+          "is_correct": false
+        },
+        {
+          "label": "49",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Square Roots and Cube Roots",
+      "kind": "standard",
+      "difficulty": "medium",
+      "answer_type": "single",
+      "stem": "Find the value of √36 + √25 + √625.",
+      "explanation": "The three square roots are 6, 5 and 25; their sum is 36.",
+      "options": [
+        {
+          "label": "37",
+          "is_correct": false
+        },
+        {
+          "label": "35",
+          "is_correct": false
+        },
+        {
+          "label": "36",
+          "is_correct": true
+        },
+        {
+          "label": "38",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Square Roots and Cube Roots",
+      "kind": "standard",
+      "difficulty": "hard",
+      "answer_type": "single",
+      "stem": "Find the value of √(2304 / 64).",
+      "explanation": "√(2304/64) = 48/8 = 6.",
+      "options": [
+        {
+          "label": "5",
+          "is_correct": false
+        },
+        {
+          "label": "6",
+          "is_correct": true
+        },
+        {
+          "label": "8",
+          "is_correct": false
+        },
+        {
+          "label": "7",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Square Roots and Cube Roots",
+      "kind": "standard",
+      "difficulty": "hard",
+      "answer_type": "single",
+      "stem": "Find the square root of 20164.",
+      "explanation": "142² = 20164, so √20164 = 142.",
+      "options": [
+        {
+          "label": "144",
+          "is_correct": false
+        },
+        {
+          "label": "146",
+          "is_correct": false
+        },
+        {
+          "label": "142",
+          "is_correct": true
+        },
+        {
+          "label": "140",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Square Roots and Cube Roots",
+      "kind": "standard",
+      "difficulty": "hard",
+      "answer_type": "single",
+      "stem": "Find the value of √(2500 / 100).",
+      "explanation": "√(2500/100) = 50/10 = 5.",
+      "options": [
+        {
+          "label": "7",
+          "is_correct": false
+        },
+        {
+          "label": "4",
+          "is_correct": false
+        },
+        {
+          "label": "6",
+          "is_correct": false
+        },
+        {
+          "label": "5",
+          "is_correct": true
+        }
+      ]
+    },
+    {
+      "chapter": "Square Roots and Cube Roots",
+      "kind": "standard",
+      "difficulty": "hard",
+      "answer_type": "single",
+      "stem": "Find the square root of 12769.",
+      "explanation": "113² = 12769, so √12769 = 113.",
+      "options": [
+        {
+          "label": "117",
+          "is_correct": false
+        },
+        {
+          "label": "111",
+          "is_correct": false
+        },
+        {
+          "label": "113",
+          "is_correct": true
+        },
+        {
+          "label": "115",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Square Roots and Cube Roots",
+      "kind": "standard",
+      "difficulty": "hard",
+      "answer_type": "single",
+      "stem": "Find the value of √(729 / 81).",
+      "explanation": "√(729/81) = 27/9 = 3.",
+      "options": [
+        {
+          "label": "4",
+          "is_correct": false
+        },
+        {
+          "label": "3",
+          "is_correct": true
+        },
+        {
+          "label": "5",
+          "is_correct": false
+        },
+        {
+          "label": "2",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Square Roots and Cube Roots",
+      "kind": "standard",
+      "difficulty": "hard",
+      "answer_type": "single",
+      "stem": "Find the value of √(4900 / 100).",
+      "explanation": "√(4900/100) = 70/10 = 7.",
+      "options": [
+        {
+          "label": "9",
+          "is_correct": false
+        },
+        {
+          "label": "8",
+          "is_correct": false
+        },
+        {
+          "label": "7",
+          "is_correct": true
+        },
+        {
+          "label": "6",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Square Roots and Cube Roots",
+      "kind": "standard",
+      "difficulty": "hard",
+      "answer_type": "single",
+      "stem": "Find the value of √(25 × 256).",
+      "explanation": "√(25×256) = √25×√256 = 5×16 = 80.",
+      "options": [
+        {
+          "label": "84",
+          "is_correct": false
+        },
+        {
+          "label": "80",
+          "is_correct": true
+        },
+        {
+          "label": "82",
+          "is_correct": false
+        },
+        {
+          "label": "78",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Square Roots and Cube Roots",
+      "kind": "standard",
+      "difficulty": "hard",
+      "answer_type": "single",
+      "stem": "Find the value of √(400 × 144).",
+      "explanation": "√(400×144) = √400×√144 = 20×12 = 240.",
+      "options": [
+        {
+          "label": "240",
+          "is_correct": true
+        },
+        {
+          "label": "260",
+          "is_correct": false
+        },
+        {
+          "label": "230",
+          "is_correct": false
+        },
+        {
+          "label": "250",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Square Roots and Cube Roots",
+      "kind": "standard",
+      "difficulty": "hard",
+      "answer_type": "single",
+      "stem": "Find the square root of 17161.",
+      "explanation": "131² = 17161, so √17161 = 131.",
+      "options": [
+        {
+          "label": "129",
+          "is_correct": false
+        },
+        {
+          "label": "133",
+          "is_correct": false
+        },
+        {
+          "label": "131",
+          "is_correct": true
+        },
+        {
+          "label": "135",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Square Roots and Cube Roots",
+      "kind": "standard",
+      "difficulty": "hard",
+      "answer_type": "single",
+      "stem": "Find the value of √(121 × 324).",
+      "explanation": "√(121×324) = √121×√324 = 11×18 = 198.",
+      "options": [
+        {
+          "label": "200",
+          "is_correct": false
+        },
+        {
+          "label": "196",
+          "is_correct": false
+        },
+        {
+          "label": "198",
+          "is_correct": true
+        },
+        {
+          "label": "202",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Square Roots and Cube Roots",
+      "kind": "standard",
+      "difficulty": "hard",
+      "answer_type": "single",
+      "stem": "Find the square root of 29929.",
+      "explanation": "173² = 29929, so √29929 = 173.",
+      "options": [
+        {
+          "label": "171",
+          "is_correct": false
+        },
+        {
+          "label": "173",
+          "is_correct": true
+        },
+        {
+          "label": "177",
+          "is_correct": false
+        },
+        {
+          "label": "175",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Square Roots and Cube Roots",
+      "kind": "standard",
+      "difficulty": "hard",
+      "answer_type": "single",
+      "stem": "Find the value of √(36 × 144).",
+      "explanation": "√(36×144) = √36×√144 = 6×12 = 72.",
+      "options": [
+        {
+          "label": "76",
+          "is_correct": false
+        },
+        {
+          "label": "72",
+          "is_correct": true
+        },
+        {
+          "label": "70",
+          "is_correct": false
+        },
+        {
+          "label": "74",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Square Roots and Cube Roots",
+      "kind": "standard",
+      "difficulty": "hard",
+      "answer_type": "single",
+      "stem": "Find the value of √(400 × 225).",
+      "explanation": "√(400×225) = √400×√225 = 20×15 = 300.",
+      "options": [
+        {
+          "label": "324",
+          "is_correct": false
+        },
+        {
+          "label": "312",
+          "is_correct": false
+        },
+        {
+          "label": "300",
+          "is_correct": true
+        },
+        {
+          "label": "288",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Square Roots and Cube Roots",
+      "kind": "standard",
+      "difficulty": "hard",
+      "answer_type": "single",
+      "stem": "Find the square root of 19881.",
+      "explanation": "141² = 19881, so √19881 = 141.",
+      "options": [
+        {
+          "label": "139",
+          "is_correct": false
+        },
+        {
+          "label": "141",
+          "is_correct": true
+        },
+        {
+          "label": "143",
+          "is_correct": false
+        },
+        {
+          "label": "145",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Square Roots and Cube Roots",
+      "kind": "standard",
+      "difficulty": "hard",
+      "answer_type": "single",
+      "stem": "Find the value of √(289 × 100).",
+      "explanation": "√(289×100) = √289×√100 = 17×10 = 170.",
+      "options": [
+        {
+          "label": "174",
+          "is_correct": false
+        },
+        {
+          "label": "168",
+          "is_correct": false
+        },
+        {
+          "label": "172",
+          "is_correct": false
+        },
+        {
+          "label": "170",
+          "is_correct": true
+        }
+      ]
+    },
+    {
+      "chapter": "Square Roots and Cube Roots",
+      "kind": "standard",
+      "difficulty": "hard",
+      "answer_type": "single",
+      "stem": "Find the value of √(400 × 64).",
+      "explanation": "√(400×64) = √400×√64 = 20×8 = 160.",
+      "options": [
+        {
+          "label": "162",
+          "is_correct": false
+        },
+        {
+          "label": "160",
+          "is_correct": true
+        },
+        {
+          "label": "158",
+          "is_correct": false
+        },
+        {
+          "label": "164",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Square Roots and Cube Roots",
+      "kind": "standard",
+      "difficulty": "hard",
+      "answer_type": "single",
+      "stem": "Find the value of √(225 × 121).",
+      "explanation": "√(225×121) = √225×√121 = 15×11 = 165.",
+      "options": [
+        {
+          "label": "163",
+          "is_correct": false
+        },
+        {
+          "label": "167",
+          "is_correct": false
+        },
+        {
+          "label": "169",
+          "is_correct": false
+        },
+        {
+          "label": "165",
+          "is_correct": true
+        }
+      ]
+    },
+    {
+      "chapter": "Square Roots and Cube Roots",
+      "kind": "standard",
+      "difficulty": "hard",
+      "answer_type": "single",
+      "stem": "Find the square root of 39601.",
+      "explanation": "199² = 39601, so √39601 = 199.",
+      "options": [
+        {
+          "label": "199",
+          "is_correct": true
+        },
+        {
+          "label": "197",
+          "is_correct": false
+        },
+        {
+          "label": "201",
+          "is_correct": false
+        },
+        {
+          "label": "203",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Square Roots and Cube Roots",
+      "kind": "standard",
+      "difficulty": "hard",
+      "answer_type": "single",
+      "stem": "Find the square root of 31329.",
+      "explanation": "177² = 31329, so √31329 = 177.",
+      "options": [
+        {
+          "label": "177",
+          "is_correct": true
+        },
+        {
+          "label": "181",
+          "is_correct": false
+        },
+        {
+          "label": "175",
+          "is_correct": false
+        },
+        {
+          "label": "179",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Square Roots and Cube Roots",
+      "kind": "standard",
+      "difficulty": "hard",
+      "answer_type": "single",
+      "stem": "Find the value of √(144 × 121).",
+      "explanation": "√(144×121) = √144×√121 = 12×11 = 132.",
+      "options": [
+        {
+          "label": "136",
+          "is_correct": false
+        },
+        {
+          "label": "134",
+          "is_correct": false
+        },
+        {
+          "label": "130",
+          "is_correct": false
+        },
+        {
+          "label": "132",
+          "is_correct": true
+        }
+      ]
+    },
+    {
+      "chapter": "Square Roots and Cube Roots",
+      "kind": "standard",
+      "difficulty": "hard",
+      "answer_type": "single",
+      "stem": "Find the value of √(169 × 64).",
+      "explanation": "√(169×64) = √169×√64 = 13×8 = 104.",
+      "options": [
+        {
+          "label": "104",
+          "is_correct": true
+        },
+        {
+          "label": "108",
+          "is_correct": false
+        },
+        {
+          "label": "102",
+          "is_correct": false
+        },
+        {
+          "label": "106",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Square Roots and Cube Roots",
+      "kind": "standard",
+      "difficulty": "hard",
+      "answer_type": "single",
+      "stem": "Find the square root of 17956.",
+      "explanation": "134² = 17956, so √17956 = 134.",
+      "options": [
+        {
+          "label": "134",
+          "is_correct": true
+        },
+        {
+          "label": "136",
+          "is_correct": false
+        },
+        {
+          "label": "132",
+          "is_correct": false
+        },
+        {
+          "label": "138",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Square Roots and Cube Roots",
+      "kind": "standard",
+      "difficulty": "hard",
+      "answer_type": "single",
+      "stem": "Find the value of √(81 × 225).",
+      "explanation": "√(81×225) = √81×√225 = 9×15 = 135.",
+      "options": [
+        {
+          "label": "135",
+          "is_correct": true
+        },
+        {
+          "label": "139",
+          "is_correct": false
+        },
+        {
+          "label": "133",
+          "is_correct": false
+        },
+        {
+          "label": "137",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Square Roots and Cube Roots",
+      "kind": "standard",
+      "difficulty": "hard",
+      "answer_type": "single",
+      "stem": "Find the value of √(625 / 25).",
+      "explanation": "√(625/25) = 25/5 = 5.",
+      "options": [
+        {
+          "label": "7",
+          "is_correct": false
+        },
+        {
+          "label": "6",
+          "is_correct": false
+        },
+        {
+          "label": "4",
+          "is_correct": false
+        },
+        {
+          "label": "5",
+          "is_correct": true
+        }
+      ]
+    },
+    {
+      "chapter": "Square Roots and Cube Roots",
+      "kind": "standard",
+      "difficulty": "hard",
+      "answer_type": "single",
+      "stem": "Find the value of √(400 / 16).",
+      "explanation": "√(400/16) = 20/4 = 5.",
+      "options": [
+        {
+          "label": "4",
+          "is_correct": false
+        },
+        {
+          "label": "7",
+          "is_correct": false
+        },
+        {
+          "label": "5",
+          "is_correct": true
+        },
+        {
+          "label": "6",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Square Roots and Cube Roots",
+      "kind": "standard",
+      "difficulty": "hard",
+      "answer_type": "single",
+      "stem": "Find the square root of 18225.",
+      "explanation": "135² = 18225, so √18225 = 135.",
+      "options": [
+        {
+          "label": "139",
+          "is_correct": false
+        },
+        {
+          "label": "133",
+          "is_correct": false
+        },
+        {
+          "label": "137",
+          "is_correct": false
+        },
+        {
+          "label": "135",
+          "is_correct": true
+        }
+      ]
+    },
+    {
+      "chapter": "Square Roots and Cube Roots",
+      "kind": "standard",
+      "difficulty": "hard",
+      "answer_type": "single",
+      "stem": "Find the value of √(5184 / 144).",
+      "explanation": "√(5184/144) = 72/12 = 6.",
+      "options": [
+        {
+          "label": "8",
+          "is_correct": false
+        },
+        {
+          "label": "7",
+          "is_correct": false
+        },
+        {
+          "label": "6",
+          "is_correct": true
+        },
+        {
+          "label": "5",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Square Roots and Cube Roots",
+      "kind": "standard",
+      "difficulty": "hard",
+      "answer_type": "single",
+      "stem": "Find the value of √(100 × 400).",
+      "explanation": "√(100×400) = √100×√400 = 10×20 = 200.",
+      "options": [
+        {
+          "label": "216",
+          "is_correct": false
+        },
+        {
+          "label": "208",
+          "is_correct": false
+        },
+        {
+          "label": "200",
+          "is_correct": true
+        },
+        {
+          "label": "192",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Square Roots and Cube Roots",
+      "kind": "standard",
+      "difficulty": "hard",
+      "answer_type": "single",
+      "stem": "Find the value of √(400 × 49).",
+      "explanation": "√(400×49) = √400×√49 = 20×7 = 140.",
+      "options": [
+        {
+          "label": "138",
+          "is_correct": false
+        },
+        {
+          "label": "144",
+          "is_correct": false
+        },
+        {
+          "label": "140",
+          "is_correct": true
+        },
+        {
+          "label": "142",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Square Roots and Cube Roots",
+      "kind": "standard",
+      "difficulty": "hard",
+      "answer_type": "single",
+      "stem": "Find the square root of 30276.",
+      "explanation": "174² = 30276, so √30276 = 174.",
+      "options": [
+        {
+          "label": "178",
+          "is_correct": false
+        },
+        {
+          "label": "174",
+          "is_correct": true
+        },
+        {
+          "label": "176",
+          "is_correct": false
+        },
+        {
+          "label": "172",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Square Roots and Cube Roots",
+      "kind": "standard",
+      "difficulty": "hard",
+      "answer_type": "single",
+      "stem": "Find the square root of 15376.",
+      "explanation": "124² = 15376, so √15376 = 124.",
+      "options": [
+        {
+          "label": "122",
+          "is_correct": false
+        },
+        {
+          "label": "126",
+          "is_correct": false
+        },
+        {
+          "label": "124",
+          "is_correct": true
+        },
+        {
+          "label": "128",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Square Roots and Cube Roots",
+      "kind": "standard",
+      "difficulty": "hard",
+      "answer_type": "single",
+      "stem": "Find the value of √(100 × 361).",
+      "explanation": "√(100×361) = √100×√361 = 10×19 = 190.",
+      "options": [
+        {
+          "label": "192",
+          "is_correct": false
+        },
+        {
+          "label": "188",
+          "is_correct": false
+        },
+        {
+          "label": "190",
+          "is_correct": true
+        },
+        {
+          "label": "194",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Square Roots and Cube Roots",
+      "kind": "standard",
+      "difficulty": "hard",
+      "answer_type": "single",
+      "stem": "Find the value of √(2304 / 144).",
+      "explanation": "√(2304/144) = 48/12 = 4.",
+      "options": [
+        {
+          "label": "3",
+          "is_correct": false
+        },
+        {
+          "label": "4",
+          "is_correct": true
+        },
+        {
+          "label": "6",
+          "is_correct": false
+        },
+        {
+          "label": "5",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Square Roots and Cube Roots",
+      "kind": "standard",
+      "difficulty": "hard",
+      "answer_type": "single",
+      "stem": "Find the value of √(121 × 49).",
+      "explanation": "√(121×49) = √121×√49 = 11×7 = 77.",
+      "options": [
+        {
+          "label": "75",
+          "is_correct": false
+        },
+        {
+          "label": "77",
+          "is_correct": true
+        },
+        {
+          "label": "79",
+          "is_correct": false
+        },
+        {
+          "label": "81",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Square Roots and Cube Roots",
+      "kind": "standard",
+      "difficulty": "hard",
+      "answer_type": "single",
+      "stem": "Find the square root of 10816.",
+      "explanation": "104² = 10816, so √10816 = 104.",
+      "options": [
+        {
+          "label": "104",
+          "is_correct": true
+        },
+        {
+          "label": "102",
+          "is_correct": false
+        },
+        {
+          "label": "108",
+          "is_correct": false
+        },
+        {
+          "label": "106",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Square Roots and Cube Roots",
+      "kind": "standard",
+      "difficulty": "hard",
+      "answer_type": "single",
+      "stem": "Find the value of √(225 / 25).",
+      "explanation": "√(225/25) = 15/5 = 3.",
+      "options": [
+        {
+          "label": "3",
+          "is_correct": true
+        },
+        {
+          "label": "2",
+          "is_correct": false
+        },
+        {
+          "label": "4",
+          "is_correct": false
+        },
+        {
+          "label": "5",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Square Roots and Cube Roots",
+      "kind": "standard",
+      "difficulty": "hard",
+      "answer_type": "single",
+      "stem": "Find the square root of 13689.",
+      "explanation": "117² = 13689, so √13689 = 117.",
+      "options": [
+        {
+          "label": "121",
+          "is_correct": false
+        },
+        {
+          "label": "119",
+          "is_correct": false
+        },
+        {
+          "label": "117",
+          "is_correct": true
+        },
+        {
+          "label": "115",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Square Roots and Cube Roots",
+      "kind": "standard",
+      "difficulty": "hard",
+      "answer_type": "single",
+      "stem": "Find the value of √(784 / 16).",
+      "explanation": "√(784/16) = 28/4 = 7.",
+      "options": [
+        {
+          "label": "8",
+          "is_correct": false
+        },
+        {
+          "label": "6",
+          "is_correct": false
+        },
+        {
+          "label": "7",
+          "is_correct": true
+        },
+        {
+          "label": "9",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Square Roots and Cube Roots",
+      "kind": "standard",
+      "difficulty": "hard",
+      "answer_type": "single",
+      "stem": "Find the value of √(324 × 361).",
+      "explanation": "√(324×361) = √324×√361 = 18×19 = 342.",
+      "options": [
+        {
+          "label": "370",
+          "is_correct": false
+        },
+        {
+          "label": "328",
+          "is_correct": false
+        },
+        {
+          "label": "342",
+          "is_correct": true
+        },
+        {
+          "label": "356",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Square Roots and Cube Roots",
+      "kind": "standard",
+      "difficulty": "hard",
+      "answer_type": "single",
+      "stem": "Find the square root of 15625.",
+      "explanation": "125² = 15625, so √15625 = 125.",
+      "options": [
+        {
+          "label": "129",
+          "is_correct": false
+        },
+        {
+          "label": "127",
+          "is_correct": false
+        },
+        {
+          "label": "123",
+          "is_correct": false
+        },
+        {
+          "label": "125",
+          "is_correct": true
+        }
+      ]
+    },
+    {
+      "chapter": "Square Roots and Cube Roots",
+      "kind": "standard",
+      "difficulty": "hard",
+      "answer_type": "single",
+      "stem": "Find the square root of 24336.",
+      "explanation": "156² = 24336, so √24336 = 156.",
+      "options": [
+        {
+          "label": "156",
+          "is_correct": true
+        },
+        {
+          "label": "160",
+          "is_correct": false
+        },
+        {
+          "label": "154",
+          "is_correct": false
+        },
+        {
+          "label": "158",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Square Roots and Cube Roots",
+      "kind": "standard",
+      "difficulty": "hard",
+      "answer_type": "single",
+      "stem": "Find the value of √(1296 / 81).",
+      "explanation": "√(1296/81) = 36/9 = 4.",
+      "options": [
+        {
+          "label": "3",
+          "is_correct": false
+        },
+        {
+          "label": "4",
+          "is_correct": true
+        },
+        {
+          "label": "6",
+          "is_correct": false
+        },
+        {
+          "label": "5",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Square Roots and Cube Roots",
+      "kind": "standard",
+      "difficulty": "hard",
+      "answer_type": "single",
+      "stem": "Find the value of √(256 × 9).",
+      "explanation": "√(256×9) = √256×√9 = 16×3 = 48.",
+      "options": [
+        {
+          "label": "52",
+          "is_correct": false
+        },
+        {
+          "label": "46",
+          "is_correct": false
+        },
+        {
+          "label": "48",
+          "is_correct": true
+        },
+        {
+          "label": "50",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Square Roots and Cube Roots",
+      "kind": "standard",
+      "difficulty": "hard",
+      "answer_type": "single",
+      "stem": "Find the square root of 11664.",
+      "explanation": "108² = 11664, so √11664 = 108.",
+      "options": [
+        {
+          "label": "110",
+          "is_correct": false
+        },
+        {
+          "label": "106",
+          "is_correct": false
+        },
+        {
+          "label": "112",
+          "is_correct": false
+        },
+        {
+          "label": "108",
+          "is_correct": true
+        }
+      ]
+    },
+    {
+      "chapter": "Square Roots and Cube Roots",
+      "kind": "standard",
+      "difficulty": "hard",
+      "answer_type": "single",
+      "stem": "Find the value of √(400 × 324).",
+      "explanation": "√(400×324) = √400×√324 = 20×18 = 360.",
+      "options": [
+        {
+          "label": "346",
+          "is_correct": false
+        },
+        {
+          "label": "374",
+          "is_correct": false
+        },
+        {
+          "label": "360",
+          "is_correct": true
+        },
+        {
+          "label": "388",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Square Roots and Cube Roots",
+      "kind": "standard",
+      "difficulty": "hard",
+      "answer_type": "single",
+      "stem": "Find the value of √(144 × 81).",
+      "explanation": "√(144×81) = √144×√81 = 12×9 = 108.",
+      "options": [
+        {
+          "label": "106",
+          "is_correct": false
+        },
+        {
+          "label": "110",
+          "is_correct": false
+        },
+        {
+          "label": "108",
+          "is_correct": true
+        },
+        {
+          "label": "112",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Square Roots and Cube Roots",
+      "kind": "standard",
+      "difficulty": "hard",
+      "answer_type": "single",
+      "stem": "Find the square root of 33856.",
+      "explanation": "184² = 33856, so √33856 = 184.",
+      "options": [
+        {
+          "label": "188",
+          "is_correct": false
+        },
+        {
+          "label": "184",
+          "is_correct": true
+        },
+        {
+          "label": "186",
+          "is_correct": false
+        },
+        {
+          "label": "182",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Square Roots and Cube Roots",
+      "kind": "standard",
+      "difficulty": "hard",
+      "answer_type": "single",
+      "stem": "Find the square root of 35721.",
+      "explanation": "189² = 35721, so √35721 = 189.",
+      "options": [
+        {
+          "label": "187",
+          "is_correct": false
+        },
+        {
+          "label": "193",
+          "is_correct": false
+        },
+        {
+          "label": "191",
+          "is_correct": false
+        },
+        {
+          "label": "189",
+          "is_correct": true
+        }
+      ]
+    },
+    {
+      "chapter": "Square Roots and Cube Roots",
+      "kind": "standard",
+      "difficulty": "hard",
+      "answer_type": "single",
+      "stem": "Find the value of √(400 / 100).",
+      "explanation": "√(400/100) = 20/10 = 2.",
+      "options": [
+        {
+          "label": "3",
+          "is_correct": false
+        },
+        {
+          "label": "4",
+          "is_correct": false
+        },
+        {
+          "label": "1",
+          "is_correct": false
+        },
+        {
+          "label": "2",
+          "is_correct": true
+        }
+      ]
+    },
+    {
+      "chapter": "Square Roots and Cube Roots",
+      "kind": "standard",
+      "difficulty": "hard",
+      "answer_type": "single",
+      "stem": "Find the value of √(100 / 4).",
+      "explanation": "√(100/4) = 10/2 = 5.",
+      "options": [
+        {
+          "label": "7",
+          "is_correct": false
+        },
+        {
+          "label": "6",
+          "is_correct": false
+        },
+        {
+          "label": "5",
+          "is_correct": true
+        },
+        {
+          "label": "4",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Square Roots and Cube Roots",
+      "kind": "standard",
+      "difficulty": "very_hard",
+      "answer_type": "single",
+      "stem": "Find the smallest number by which 539 must be multiplied to make it a perfect square.",
+      "explanation": "539 = 7²×11; the factor 11 appears to an odd power, so multiply by 11.",
+      "options": [
+        {
+          "label": "11",
+          "is_correct": true
+        },
+        {
+          "label": "10",
+          "is_correct": false
+        },
+        {
+          "label": "12",
+          "is_correct": false
+        },
+        {
+          "label": "13",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Square Roots and Cube Roots",
+      "kind": "standard",
+      "difficulty": "very_hard",
+      "answer_type": "single",
+      "stem": "Find the value of √(81 × 121 × 16).",
+      "explanation": "√(81×121×16) = 9×11×4 = 396.",
+      "options": [
+        {
+          "label": "396",
+          "is_correct": true
+        },
+        {
+          "label": "412",
+          "is_correct": false
+        },
+        {
+          "label": "380",
+          "is_correct": false
+        },
+        {
+          "label": "428",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Square Roots and Cube Roots",
+      "kind": "standard",
+      "difficulty": "very_hard",
+      "answer_type": "single",
+      "stem": "Find the smallest number by which 108 must be multiplied to make it a perfect square.",
+      "explanation": "108 = 6²×3; the factor 3 appears to an odd power, so multiply by 3.",
+      "options": [
+        {
+          "label": "3",
+          "is_correct": true
+        },
+        {
+          "label": "2",
+          "is_correct": false
+        },
+        {
+          "label": "4",
+          "is_correct": false
+        },
+        {
+          "label": "5",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Square Roots and Cube Roots",
+      "kind": "standard",
+      "difficulty": "very_hard",
+      "answer_type": "single",
+      "stem": "Find the smallest number by which 243 must be multiplied to make it a perfect square.",
+      "explanation": "243 = 9²×3; the factor 3 appears to an odd power, so multiply by 3.",
+      "options": [
+        {
+          "label": "2",
+          "is_correct": false
+        },
+        {
+          "label": "4",
+          "is_correct": false
+        },
+        {
+          "label": "3",
+          "is_correct": true
+        },
+        {
+          "label": "5",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Square Roots and Cube Roots",
+      "kind": "standard",
+      "difficulty": "very_hard",
+      "answer_type": "single",
+      "stem": "Find the value of √(16 × 100 × 49).",
+      "explanation": "√(16×100×49) = 4×10×7 = 280.",
+      "options": [
+        {
+          "label": "280",
+          "is_correct": true
+        },
+        {
+          "label": "302",
+          "is_correct": false
+        },
+        {
+          "label": "291",
+          "is_correct": false
+        },
+        {
+          "label": "269",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Square Roots and Cube Roots",
+      "kind": "standard",
+      "difficulty": "very_hard",
+      "answer_type": "single",
+      "stem": "Find the value of √(9 × 16 × 121).",
+      "explanation": "√(9×16×121) = 3×4×11 = 132.",
+      "options": [
+        {
+          "label": "130",
+          "is_correct": false
+        },
+        {
+          "label": "134",
+          "is_correct": false
+        },
+        {
+          "label": "132",
+          "is_correct": true
+        },
+        {
+          "label": "136",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Square Roots and Cube Roots",
+      "kind": "standard",
+      "difficulty": "very_hard",
+      "answer_type": "single",
+      "stem": "Find the smallest number by which 208 must be divided to make it a perfect square.",
+      "explanation": "208 = 4²×13; dividing by 13 leaves 4², a perfect square.",
+      "options": [
+        {
+          "label": "12",
+          "is_correct": false
+        },
+        {
+          "label": "15",
+          "is_correct": false
+        },
+        {
+          "label": "13",
+          "is_correct": true
+        },
+        {
+          "label": "14",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Square Roots and Cube Roots",
+      "kind": "standard",
+      "difficulty": "very_hard",
+      "answer_type": "single",
+      "stem": "Find the smallest number by which 99 must be multiplied to make it a perfect square.",
+      "explanation": "99 = 3²×11; the factor 11 appears to an odd power, so multiply by 11.",
+      "options": [
+        {
+          "label": "10",
+          "is_correct": false
+        },
+        {
+          "label": "12",
+          "is_correct": false
+        },
+        {
+          "label": "13",
+          "is_correct": false
+        },
+        {
+          "label": "11",
+          "is_correct": true
+        }
+      ]
+    },
+    {
+      "chapter": "Square Roots and Cube Roots",
+      "kind": "standard",
+      "difficulty": "very_hard",
+      "answer_type": "single",
+      "stem": "Find the smallest number by which 405 must be multiplied to make it a perfect square.",
+      "explanation": "405 = 9²×5; the factor 5 appears to an odd power, so multiply by 5.",
+      "options": [
+        {
+          "label": "6",
+          "is_correct": false
+        },
+        {
+          "label": "5",
+          "is_correct": true
+        },
+        {
+          "label": "7",
+          "is_correct": false
+        },
+        {
+          "label": "4",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Square Roots and Cube Roots",
+      "kind": "standard",
+      "difficulty": "very_hard",
+      "answer_type": "single",
+      "stem": "Find the smallest number by which 252 must be divided to make it a perfect square.",
+      "explanation": "252 = 6²×7; dividing by 7 leaves 6², a perfect square.",
+      "options": [
+        {
+          "label": "7",
+          "is_correct": true
+        },
+        {
+          "label": "6",
+          "is_correct": false
+        },
+        {
+          "label": "9",
+          "is_correct": false
+        },
+        {
+          "label": "8",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Square Roots and Cube Roots",
+      "kind": "standard",
+      "difficulty": "very_hard",
+      "answer_type": "single",
+      "stem": "Find the smallest number by which 192 must be multiplied to make it a perfect square.",
+      "explanation": "192 = 8²×3; the factor 3 appears to an odd power, so multiply by 3.",
+      "options": [
+        {
+          "label": "3",
+          "is_correct": true
+        },
+        {
+          "label": "5",
+          "is_correct": false
+        },
+        {
+          "label": "4",
+          "is_correct": false
+        },
+        {
+          "label": "2",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Square Roots and Cube Roots",
+      "kind": "standard",
+      "difficulty": "very_hard",
+      "answer_type": "single",
+      "stem": "Find the value of √(144 × 100 × 16).",
+      "explanation": "√(144×100×16) = 12×10×4 = 480.",
+      "options": [
+        {
+          "label": "499",
+          "is_correct": false
+        },
+        {
+          "label": "480",
+          "is_correct": true
+        },
+        {
+          "label": "518",
+          "is_correct": false
+        },
+        {
+          "label": "461",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Square Roots and Cube Roots",
+      "kind": "standard",
+      "difficulty": "very_hard",
+      "answer_type": "single",
+      "stem": "Find the smallest number by which 125 must be divided to make it a perfect square.",
+      "explanation": "125 = 5²×5; dividing by 5 leaves 5², a perfect square.",
+      "options": [
+        {
+          "label": "7",
+          "is_correct": false
+        },
+        {
+          "label": "5",
+          "is_correct": true
+        },
+        {
+          "label": "6",
+          "is_correct": false
+        },
+        {
+          "label": "4",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Square Roots and Cube Roots",
+      "kind": "standard",
+      "difficulty": "very_hard",
+      "answer_type": "single",
+      "stem": "Find the value of √(25 × 100 × 144).",
+      "explanation": "√(25×100×144) = 5×10×12 = 600.",
+      "options": [
+        {
+          "label": "648",
+          "is_correct": false
+        },
+        {
+          "label": "600",
+          "is_correct": true
+        },
+        {
+          "label": "576",
+          "is_correct": false
+        },
+        {
+          "label": "624",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Square Roots and Cube Roots",
+      "kind": "standard",
+      "difficulty": "very_hard",
+      "answer_type": "single",
+      "stem": "Find the smallest number by which 20 must be divided to make it a perfect square.",
+      "explanation": "20 = 2²×5; dividing by 5 leaves 2², a perfect square.",
+      "options": [
+        {
+          "label": "5",
+          "is_correct": true
+        },
+        {
+          "label": "4",
+          "is_correct": false
+        },
+        {
+          "label": "6",
+          "is_correct": false
+        },
+        {
+          "label": "7",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Square Roots and Cube Roots",
+      "kind": "standard",
+      "difficulty": "very_hard",
+      "answer_type": "single",
+      "stem": "Find the smallest number by which 12 must be multiplied to make it a perfect square.",
+      "explanation": "12 = 2²×3; the factor 3 appears to an odd power, so multiply by 3.",
+      "options": [
+        {
+          "label": "4",
+          "is_correct": false
+        },
+        {
+          "label": "3",
+          "is_correct": true
+        },
+        {
+          "label": "2",
+          "is_correct": false
+        },
+        {
+          "label": "5",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Square Roots and Cube Roots",
+      "kind": "standard",
+      "difficulty": "very_hard",
+      "answer_type": "single",
+      "stem": "Find the value of √(64 × 144 × 49).",
+      "explanation": "√(64×144×49) = 8×12×7 = 672.",
+      "options": [
+        {
+          "label": "672",
+          "is_correct": true
+        },
+        {
+          "label": "645",
+          "is_correct": false
+        },
+        {
+          "label": "726",
+          "is_correct": false
+        },
+        {
+          "label": "699",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Square Roots and Cube Roots",
+      "kind": "standard",
+      "difficulty": "very_hard",
+      "answer_type": "single",
+      "stem": "Find the smallest number by which 162 must be divided to make it a perfect square.",
+      "explanation": "162 = 9²×2; dividing by 2 leaves 9², a perfect square.",
+      "options": [
+        {
+          "label": "3",
+          "is_correct": false
+        },
+        {
+          "label": "4",
+          "is_correct": false
+        },
+        {
+          "label": "2",
+          "is_correct": true
+        },
+        {
+          "label": "1",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Square Roots and Cube Roots",
+      "kind": "standard",
+      "difficulty": "very_hard",
+      "answer_type": "single",
+      "stem": "Find the smallest number by which 176 must be divided to make it a perfect square.",
+      "explanation": "176 = 4²×11; dividing by 11 leaves 4², a perfect square.",
+      "options": [
+        {
+          "label": "13",
+          "is_correct": false
+        },
+        {
+          "label": "11",
+          "is_correct": true
+        },
+        {
+          "label": "12",
+          "is_correct": false
+        },
+        {
+          "label": "10",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Square Roots and Cube Roots",
+      "kind": "standard",
+      "difficulty": "very_hard",
+      "answer_type": "single",
+      "stem": "Find the smallest number by which 832 must be divided to make it a perfect square.",
+      "explanation": "832 = 8²×13; dividing by 13 leaves 8², a perfect square.",
+      "options": [
+        {
+          "label": "12",
+          "is_correct": false
+        },
+        {
+          "label": "15",
+          "is_correct": false
+        },
+        {
+          "label": "13",
+          "is_correct": true
+        },
+        {
+          "label": "14",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Square Roots and Cube Roots",
+      "kind": "standard",
+      "difficulty": "very_hard",
+      "answer_type": "single",
+      "stem": "Find the smallest number by which 325 must be multiplied to make it a perfect square.",
+      "explanation": "325 = 5²×13; the factor 13 appears to an odd power, so multiply by 13.",
+      "options": [
+        {
+          "label": "14",
+          "is_correct": false
+        },
+        {
+          "label": "13",
+          "is_correct": true
+        },
+        {
+          "label": "15",
+          "is_correct": false
+        },
+        {
+          "label": "12",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Square Roots and Cube Roots",
+      "kind": "standard",
+      "difficulty": "very_hard",
+      "answer_type": "single",
+      "stem": "Find the smallest number by which 108 must be divided to make it a perfect square.",
+      "explanation": "108 = 6²×3; dividing by 3 leaves 6², a perfect square.",
+      "options": [
+        {
+          "label": "3",
+          "is_correct": true
+        },
+        {
+          "label": "2",
+          "is_correct": false
+        },
+        {
+          "label": "4",
+          "is_correct": false
+        },
+        {
+          "label": "5",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Square Roots and Cube Roots",
+      "kind": "standard",
+      "difficulty": "very_hard",
+      "answer_type": "single",
+      "stem": "Find the smallest number by which 468 must be multiplied to make it a perfect square.",
+      "explanation": "468 = 6²×13; the factor 13 appears to an odd power, so multiply by 13.",
+      "options": [
+        {
+          "label": "14",
+          "is_correct": false
+        },
+        {
+          "label": "13",
+          "is_correct": true
+        },
+        {
+          "label": "12",
+          "is_correct": false
+        },
+        {
+          "label": "15",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Square Roots and Cube Roots",
+      "kind": "standard",
+      "difficulty": "very_hard",
+      "answer_type": "single",
+      "stem": "Find the smallest number by which 704 must be multiplied to make it a perfect square.",
+      "explanation": "704 = 8²×11; the factor 11 appears to an odd power, so multiply by 11.",
+      "options": [
+        {
+          "label": "13",
+          "is_correct": false
+        },
+        {
+          "label": "11",
+          "is_correct": true
+        },
+        {
+          "label": "12",
+          "is_correct": false
+        },
+        {
+          "label": "10",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Square Roots and Cube Roots",
+      "kind": "standard",
+      "difficulty": "very_hard",
+      "answer_type": "single",
+      "stem": "Find the smallest number by which 245 must be divided to make it a perfect square.",
+      "explanation": "245 = 7²×5; dividing by 5 leaves 7², a perfect square.",
+      "options": [
+        {
+          "label": "7",
+          "is_correct": false
+        },
+        {
+          "label": "5",
+          "is_correct": true
+        },
+        {
+          "label": "4",
+          "is_correct": false
+        },
+        {
+          "label": "6",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Square Roots and Cube Roots",
+      "kind": "standard",
+      "difficulty": "very_hard",
+      "answer_type": "single",
+      "stem": "Find the value of √(81 × 121 × 25).",
+      "explanation": "√(81×121×25) = 9×11×5 = 495.",
+      "options": [
+        {
+          "label": "475",
+          "is_correct": false
+        },
+        {
+          "label": "495",
+          "is_correct": true
+        },
+        {
+          "label": "515",
+          "is_correct": false
+        },
+        {
+          "label": "535",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Square Roots and Cube Roots",
+      "kind": "standard",
+      "difficulty": "very_hard",
+      "answer_type": "single",
+      "stem": "Find the smallest number by which 80 must be divided to make it a perfect square.",
+      "explanation": "80 = 4²×5; dividing by 5 leaves 4², a perfect square.",
+      "options": [
+        {
+          "label": "5",
+          "is_correct": true
+        },
+        {
+          "label": "6",
+          "is_correct": false
+        },
+        {
+          "label": "7",
+          "is_correct": false
+        },
+        {
+          "label": "4",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Square Roots and Cube Roots",
+      "kind": "standard",
+      "difficulty": "very_hard",
+      "answer_type": "single",
+      "stem": "Find the value of √(100 × 49 × 25).",
+      "explanation": "√(100×49×25) = 10×7×5 = 350.",
+      "options": [
+        {
+          "label": "364",
+          "is_correct": false
+        },
+        {
+          "label": "336",
+          "is_correct": false
+        },
+        {
+          "label": "350",
+          "is_correct": true
+        },
+        {
+          "label": "378",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Square Roots and Cube Roots",
+      "kind": "standard",
+      "difficulty": "very_hard",
+      "answer_type": "single",
+      "stem": "Find the smallest number by which 539 must be divided to make it a perfect square.",
+      "explanation": "539 = 7²×11; dividing by 11 leaves 7², a perfect square.",
+      "options": [
+        {
+          "label": "10",
+          "is_correct": false
+        },
+        {
+          "label": "12",
+          "is_correct": false
+        },
+        {
+          "label": "13",
+          "is_correct": false
+        },
+        {
+          "label": "11",
+          "is_correct": true
+        }
+      ]
+    },
+    {
+      "chapter": "Square Roots and Cube Roots",
+      "kind": "standard",
+      "difficulty": "very_hard",
+      "answer_type": "single",
+      "stem": "Find the value of √(144 × 16 × 36).",
+      "explanation": "√(144×16×36) = 12×4×6 = 288.",
+      "options": [
+        {
+          "label": "288",
+          "is_correct": true
+        },
+        {
+          "label": "276",
+          "is_correct": false
+        },
+        {
+          "label": "300",
+          "is_correct": false
+        },
+        {
+          "label": "312",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Square Roots and Cube Roots",
+      "kind": "standard",
+      "difficulty": "very_hard",
+      "answer_type": "single",
+      "stem": "Find the smallest number by which 637 must be divided to make it a perfect square.",
+      "explanation": "637 = 7²×13; dividing by 13 leaves 7², a perfect square.",
+      "options": [
+        {
+          "label": "12",
+          "is_correct": false
+        },
+        {
+          "label": "15",
+          "is_correct": false
+        },
+        {
+          "label": "14",
+          "is_correct": false
+        },
+        {
+          "label": "13",
+          "is_correct": true
+        }
+      ]
+    },
+    {
+      "chapter": "Square Roots and Cube Roots",
+      "kind": "standard",
+      "difficulty": "very_hard",
+      "answer_type": "single",
+      "stem": "Find the value of √(25 × 25 × 100).",
+      "explanation": "√(25×25×100) = 5×5×10 = 250.",
+      "options": [
+        {
+          "label": "270",
+          "is_correct": false
+        },
+        {
+          "label": "260",
+          "is_correct": false
+        },
+        {
+          "label": "250",
+          "is_correct": true
+        },
+        {
+          "label": "240",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Square Roots and Cube Roots",
+      "kind": "standard",
+      "difficulty": "very_hard",
+      "answer_type": "single",
+      "stem": "Find the value of √(9 × 64 × 100).",
+      "explanation": "√(9×64×100) = 3×8×10 = 240.",
+      "options": [
+        {
+          "label": "250",
+          "is_correct": false
+        },
+        {
+          "label": "230",
+          "is_correct": false
+        },
+        {
+          "label": "240",
+          "is_correct": true
+        },
+        {
+          "label": "260",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Square Roots and Cube Roots",
+      "kind": "standard",
+      "difficulty": "very_hard",
+      "answer_type": "single",
+      "stem": "Find the smallest number by which 704 must be divided to make it a perfect square.",
+      "explanation": "704 = 8²×11; dividing by 11 leaves 8², a perfect square.",
+      "options": [
+        {
+          "label": "12",
+          "is_correct": false
+        },
+        {
+          "label": "13",
+          "is_correct": false
+        },
+        {
+          "label": "10",
+          "is_correct": false
+        },
+        {
+          "label": "11",
+          "is_correct": true
+        }
+      ]
+    },
+    {
+      "chapter": "Square Roots and Cube Roots",
+      "kind": "standard",
+      "difficulty": "very_hard",
+      "answer_type": "single",
+      "stem": "Find the value of √(16 × 36 × 4).",
+      "explanation": "√(16×36×4) = 4×6×2 = 48.",
+      "options": [
+        {
+          "label": "52",
+          "is_correct": false
+        },
+        {
+          "label": "48",
+          "is_correct": true
+        },
+        {
+          "label": "46",
+          "is_correct": false
+        },
+        {
+          "label": "50",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Square Roots and Cube Roots",
+      "kind": "standard",
+      "difficulty": "very_hard",
+      "answer_type": "single",
+      "stem": "Find the smallest number by which 147 must be divided to make it a perfect square.",
+      "explanation": "147 = 7²×3; dividing by 3 leaves 7², a perfect square.",
+      "options": [
+        {
+          "label": "3",
+          "is_correct": true
+        },
+        {
+          "label": "4",
+          "is_correct": false
+        },
+        {
+          "label": "5",
+          "is_correct": false
+        },
+        {
+          "label": "2",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Square Roots and Cube Roots",
+      "kind": "standard",
+      "difficulty": "very_hard",
+      "answer_type": "single",
+      "stem": "Find the value of √(36 × 4 × 36).",
+      "explanation": "√(36×4×36) = 6×2×6 = 72.",
+      "options": [
+        {
+          "label": "70",
+          "is_correct": false
+        },
+        {
+          "label": "74",
+          "is_correct": false
+        },
+        {
+          "label": "72",
+          "is_correct": true
+        },
+        {
+          "label": "76",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Square Roots and Cube Roots",
+      "kind": "standard",
+      "difficulty": "very_hard",
+      "answer_type": "single",
+      "stem": "Find the smallest number by which 320 must be multiplied to make it a perfect square.",
+      "explanation": "320 = 8²×5; the factor 5 appears to an odd power, so multiply by 5.",
+      "options": [
+        {
+          "label": "7",
+          "is_correct": false
+        },
+        {
+          "label": "4",
+          "is_correct": false
+        },
+        {
+          "label": "5",
+          "is_correct": true
+        },
+        {
+          "label": "6",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Square Roots and Cube Roots",
+      "kind": "standard",
+      "difficulty": "very_hard",
+      "answer_type": "single",
+      "stem": "Find the smallest number by which 1053 must be multiplied to make it a perfect square.",
+      "explanation": "1053 = 9²×13; the factor 13 appears to an odd power, so multiply by 13.",
+      "options": [
+        {
+          "label": "14",
+          "is_correct": false
+        },
+        {
+          "label": "13",
+          "is_correct": true
+        },
+        {
+          "label": "12",
+          "is_correct": false
+        },
+        {
+          "label": "15",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Square Roots and Cube Roots",
+      "kind": "standard",
+      "difficulty": "very_hard",
+      "answer_type": "single",
+      "stem": "Find the value of √(49 × 49 × 81).",
+      "explanation": "√(49×49×81) = 7×7×9 = 441.",
+      "options": [
+        {
+          "label": "423",
+          "is_correct": false
+        },
+        {
+          "label": "459",
+          "is_correct": false
+        },
+        {
+          "label": "477",
+          "is_correct": false
+        },
+        {
+          "label": "441",
+          "is_correct": true
+        }
+      ]
+    },
+    {
+      "chapter": "Square Roots and Cube Roots",
+      "kind": "standard",
+      "difficulty": "very_hard",
+      "answer_type": "single",
+      "stem": "Find the value of √(36 × 49 × 36).",
+      "explanation": "√(36×49×36) = 6×7×6 = 252.",
+      "options": [
+        {
+          "label": "272",
+          "is_correct": false
+        },
+        {
+          "label": "252",
+          "is_correct": true
+        },
+        {
+          "label": "242",
+          "is_correct": false
+        },
+        {
+          "label": "262",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Square Roots and Cube Roots",
+      "kind": "standard",
+      "difficulty": "very_hard",
+      "answer_type": "single",
+      "stem": "Find the smallest number by which 32 must be divided to make it a perfect square.",
+      "explanation": "32 = 4²×2; dividing by 2 leaves 4², a perfect square.",
+      "options": [
+        {
+          "label": "2",
+          "is_correct": true
+        },
+        {
+          "label": "3",
+          "is_correct": false
+        },
+        {
+          "label": "4",
+          "is_correct": false
+        },
+        {
+          "label": "1",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Square Roots and Cube Roots",
+      "kind": "standard",
+      "difficulty": "very_hard",
+      "answer_type": "single",
+      "stem": "Find the value of √(25 × 49 × 4).",
+      "explanation": "√(25×49×4) = 5×7×2 = 70.",
+      "options": [
+        {
+          "label": "70",
+          "is_correct": true
+        },
+        {
+          "label": "68",
+          "is_correct": false
+        },
+        {
+          "label": "72",
+          "is_correct": false
+        },
+        {
+          "label": "74",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Square Roots and Cube Roots",
+      "kind": "standard",
+      "difficulty": "very_hard",
+      "answer_type": "single",
+      "stem": "Find the smallest number by which 147 must be multiplied to make it a perfect square.",
+      "explanation": "147 = 7²×3; the factor 3 appears to an odd power, so multiply by 3.",
+      "options": [
+        {
+          "label": "5",
+          "is_correct": false
+        },
+        {
+          "label": "2",
+          "is_correct": false
+        },
+        {
+          "label": "4",
+          "is_correct": false
+        },
+        {
+          "label": "3",
+          "is_correct": true
+        }
+      ]
+    },
+    {
+      "chapter": "Square Roots and Cube Roots",
+      "kind": "standard",
+      "difficulty": "very_hard",
+      "answer_type": "single",
+      "stem": "Find the smallest number by which 180 must be multiplied to make it a perfect square.",
+      "explanation": "180 = 6²×5; the factor 5 appears to an odd power, so multiply by 5.",
+      "options": [
+        {
+          "label": "5",
+          "is_correct": true
+        },
+        {
+          "label": "4",
+          "is_correct": false
+        },
+        {
+          "label": "7",
+          "is_correct": false
+        },
+        {
+          "label": "6",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Square Roots and Cube Roots",
+      "kind": "standard",
+      "difficulty": "very_hard",
+      "answer_type": "single",
+      "stem": "Find the value of √(100 × 64 × 81).",
+      "explanation": "√(100×64×81) = 10×8×9 = 720.",
+      "options": [
+        {
+          "label": "720",
+          "is_correct": true
+        },
+        {
+          "label": "778",
+          "is_correct": false
+        },
+        {
+          "label": "691",
+          "is_correct": false
+        },
+        {
+          "label": "749",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Square Roots and Cube Roots",
+      "kind": "standard",
+      "difficulty": "very_hard",
+      "answer_type": "single",
+      "stem": "Find the value of √(4 × 144 × 81).",
+      "explanation": "√(4×144×81) = 2×12×9 = 216.",
+      "options": [
+        {
+          "label": "216",
+          "is_correct": true
+        },
+        {
+          "label": "234",
+          "is_correct": false
+        },
+        {
+          "label": "207",
+          "is_correct": false
+        },
+        {
+          "label": "225",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Square Roots and Cube Roots",
+      "kind": "standard",
+      "difficulty": "very_hard",
+      "answer_type": "single",
+      "stem": "Find the smallest number by which 343 must be divided to make it a perfect square.",
+      "explanation": "343 = 7²×7; dividing by 7 leaves 7², a perfect square.",
+      "options": [
+        {
+          "label": "7",
+          "is_correct": true
+        },
+        {
+          "label": "6",
+          "is_correct": false
+        },
+        {
+          "label": "9",
+          "is_correct": false
+        },
+        {
+          "label": "8",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Square Roots and Cube Roots",
+      "kind": "standard",
+      "difficulty": "very_hard",
+      "answer_type": "single",
+      "stem": "Find the value of √(81 × 121 × 144).",
+      "explanation": "√(81×121×144) = 9×11×12 = 1188.",
+      "options": [
+        {
+          "label": "1188",
+          "is_correct": true
+        },
+        {
+          "label": "1236",
+          "is_correct": false
+        },
+        {
+          "label": "1140",
+          "is_correct": false
+        },
+        {
+          "label": "1284",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Square Roots and Cube Roots",
+      "kind": "standard",
+      "difficulty": "very_hard",
+      "answer_type": "single",
+      "stem": "Find the value of √(9 × 49 × 36).",
+      "explanation": "√(9×49×36) = 3×7×6 = 126.",
+      "options": [
+        {
+          "label": "130",
+          "is_correct": false
+        },
+        {
+          "label": "124",
+          "is_correct": false
+        },
+        {
+          "label": "128",
+          "is_correct": false
+        },
+        {
+          "label": "126",
+          "is_correct": true
+        }
+      ]
+    }
+  ]
+}
