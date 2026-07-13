@@ -231,13 +231,13 @@ export function QuestionsClient() {
                   {questions.map((q) => (
                   <li key={q.id} className="flex items-start justify-between gap-3 px-3 py-2">
                     <div className="min-w-0 flex-1">
-                      <div className="flex items-center gap-2">
+                      <div className="flex items-start gap-2">
                         <span
                           className={`shrink-0 rounded px-1.5 py-0.5 text-[11px] ${DIFF_STYLES[q.difficulty]}`}
                         >
                           {DIFFICULTY_LABELS[q.difficulty]}
                         </span>
-                        <span className="truncate text-sm">{q.stem}</span>
+                        <span className="min-w-0 break-words text-sm">{q.stem}</span>
                       </div>
                       <div className="text-muted-foreground mt-1 flex flex-wrap gap-x-3 gap-y-0.5 pl-0.5 text-xs">
                         {q.options.map((o, i) => (

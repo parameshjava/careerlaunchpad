@@ -1,16 +1,21 @@
 "use client";
 
-// The printable paper. A no-print toolbar offers "Print / Save as PDF"; the
-// @media print rules hide the console chrome (visibility trick) so only the
-// paper prints. Passages render once before their question block; the answer key
-// is on its own page.
-import { Printer } from "lucide-react";
+// The printable question paper / answer key, embedded in the session page:
+// hidden on screen, shown only when printing. The session page's "Print paper"
+// and "Print key" buttons call printAs(), which stamps the mode on <body> so
+// the two parts print as SEPARATE documents (offline conduct: students must
+// never receive the key). Passages render once before their question block.
 import { RichContent } from "@/components/exam/RichContent";
-import { Button } from "@/components/ui/button";
 import { LetterheadFrame } from "@/components/print/letterhead";
 import type { PrintQuestion } from "@/lib/exam-query";
 
 const LETTERS = ["A", "B", "C", "D", "E"];
+
+/** Stamp the print mode on <body> so the @media print rules show only that part. */
+export function printAs(mode: "paper" | "key") {
+  document.body.dataset.print = mode;
+  window.print();
+}
 
 function correctLetters(q: PrintQuestion): string {
   return q.options
@@ -42,20 +47,19 @@ export function PaperPrint({
         @media print {
           body * { visibility: hidden !important; }
           #exam-print, #exam-print * { visibility: visible !important; }
-          #exam-print { position: absolute; left: 0; top: 0; width: 100%; max-width: none; padding: 0; }
+          #exam-print {
+            display: block !important;
+            position: absolute; left: 0; top: 0; width: 100%; max-width: none; padding: 0;
+          }
           .no-print { display: none !important; }
           .answer-key { page-break-before: always; }
+          body[data-print="paper"] .answer-key { display: none !important; }
+          body[data-print="key"] .paper-body { display: none !important; }
+          body[data-print="key"] .answer-key { page-break-before: auto; }
         }
       `}</style>
 
-      <div className="no-print mb-4 flex items-center justify-between">
-        <p className="text-muted-foreground text-sm">Use your browser&apos;s print dialog to save as PDF.</p>
-        <Button onClick={() => window.print()}>
-          <Printer /> Print
-        </Button>
-      </div>
-
-      <div id="exam-print" className="mx-auto max-w-3xl text-black">
+      <div id="exam-print" className="hidden text-black">
         <LetterheadFrame docLabel="Question Paper">
         {/* Cover */}
         <div className="mb-6 border-b pb-4">
@@ -71,8 +75,8 @@ export function PaperPrint({
           </p>
         </div>
 
-        {/* Questions */}
-        <ol className="grid gap-5">
+        {/* Questions — hidden when printing the answer key alone */}
+        <ol className="paper-body grid gap-5">
           {questions.map((q) => {
             const showPassage = q.passageId && q.passageId !== lastPassageId;
             lastPassageId = q.passageId;
