@@ -142,6 +142,18 @@ export function can(ctx: AuthContext | null, perm: string): boolean {
 }
 
 /**
+ * College to scope console pages to — or undefined for global admins.
+ * Roles are ADDITIVE: an owner/platform admin may also hold a college-scoped
+ * role (e.g. owner + college_admin@X). Reading collegeScopes[0] directly would
+ * narrow the global admin's view to that one college; this helper never scopes
+ * users whose primary access is global.
+ */
+export function scopedCollege(ctx: AuthContext): string | undefined {
+  if (ctx.permissions.has("*") || ctx.roles.includes("platform_admin")) return undefined;
+  return ctx.collegeScopes[0];
+}
+
+/**
  * Guard for server actions / route handlers. Returns the context if the user
  * holds `perm`, otherwise throws (the DB will also reject via RLS).
  */

@@ -1,6 +1,6 @@
 import Link from "next/link";
 import { redirect } from "next/navigation";
-import { getAuthContext, can } from "@/lib/auth";
+import { getAuthContext, can, scopedCollege } from "@/lib/auth";
 import { createClient } from "@/lib/supabase/server";
 import { BlueprintEditor } from "../blueprint-editor";
 
@@ -13,8 +13,8 @@ export default async function NewBlueprintPage() {
   if (!ctx.provisioned || ctx.status === "suspended") redirect("/auth/no-access");
   if (!(ctx.permissions.has("*") || can(ctx, "exam.blueprint.manage"))) redirect("/dashboard");
 
-  const locked = ctx.collegeScopes.length === 1;
-  const lockedCollegeId = locked ? ctx.collegeScopes[0] : null;
+  const lockedCollegeId = scopedCollege(ctx) ?? null;
+  const locked = lockedCollegeId != null;
 
   const supabase = await createClient();
   let college = null;

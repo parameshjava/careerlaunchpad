@@ -1,14 +1,16 @@
 import Link from "next/link";
 import { redirect } from "next/navigation";
-import { getAuthContext, can } from "@/lib/auth";
+import { getAuthContext, can, scopedCollege } from "@/lib/auth";
 import { createClient } from "@/lib/supabase/server";
 import { fetchExamCards } from "@/lib/exam-query";
 import { Button } from "@/components/ui/button";
 import { ExamsBrowser } from "./exams-browser";
 
 // Exam papers. Lists the college's exams (blueprints) — INCLUDING drafts — with
-// search / college filter / sort and Active vs Completed tabs (in ExamsBrowser).
-// Data via fetchExamCards (RLS bounds the rows; college admins see their college).
+// search / college filter / sort and Open / Closed / Drafts tabs (in ExamsBrowser).
+// Data via fetchExamCards (RLS bounds the rows; college admins see their college,
+// global admins see all — scopedCollege keeps additive college roles from
+// narrowing an owner's view).
 export default async function ExamPapersPage() {
   const ctx = await getAuthContext();
   if (!ctx) redirect("/auth/login");
@@ -23,7 +25,7 @@ export default async function ExamPapersPage() {
   const canCreate = ctx.permissions.has("*") || can(ctx, "exam.blueprint.manage");
 
   const supabase = await createClient();
-  const exams = await fetchExamCards(supabase, ctx.collegeScopes[0]);
+  const exams = await fetchExamCards(supabase, scopedCollege(ctx));
 
   return (
     <div className="mx-auto max-w-4xl">

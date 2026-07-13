@@ -1,10 +1,57 @@
 "use client";
 
-// Enterprise "Statement of Results" sheet for a sitting. Clean letterhead, a
-// ranked results table, and a signature footer, all print-optimized. The admin
-// saves it as a PDF from the browser's print dialog.
-import { Button } from "@/components/ui/button";
-import type { RosterEntry, SessionMode, SubjectColumn } from "@/lib/exam-query";
+// Enterprise "Statement of Results" sheet for a sitting, embedded in the
+// results page: hidden on screen, shown only when printing (the page's Print
+// button calls window.print()). Letterhead frame, summary, performance charts
+// (static bars — recharts doesn't render inside a hidden print block), the
+// ranked results table, and a signature footer.
+import { LetterheadFrame } from "@/components/print/letterhead";
+import type { RosterEntry, SessionMode, SubjectAvg, SubjectColumn } from "@/lib/exam-query";
+
+const BAR_BLUE = "#1470c9"; // letterhead brand ink — paper has no dark mode
+
+// Single-series horizontal bars with direct value labels; recessive track.
+function PrintBars({
+  title,
+  data,
+}: {
+  title: string;
+  data: { label: string; value: number; max: number; valueLabel: string }[];
+}) {
+  return (
+    <div style={{ breakInside: "avoid" }} className="mb-4">
+      <div className="mb-1 text-sm font-bold">{title}</div>
+      <table className="w-full border-collapse text-xs">
+        <tbody>
+          {data.map((d) => (
+            <tr key={d.label}>
+              <td className="w-[30%] py-1 pr-2">{d.label}</td>
+              <td className="py-1">
+                <div
+                  className="relative h-2.5 rounded-sm"
+                  style={{
+                    background: "#e5e7eb",
+                    printColorAdjust: "exact",
+                    WebkitPrintColorAdjust: "exact",
+                  }}
+                >
+                  <div
+                    className="h-2.5 rounded-sm"
+                    style={{
+                      width: `${Math.min(100, (d.value / Math.max(1, d.max)) * 100)}%`,
+                      background: BAR_BLUE,
+                    }}
+                  />
+                </div>
+              </td>
+              <td className="w-[16%] py-1 pl-2 text-right tabular-nums">{d.valueLabel}</td>
+            </tr>
+          ))}
+        </tbody>
+      </table>
+    </div>
+  );
+}
 
 export function ResultsPrint({
   collegeName,
@@ -15,6 +62,7 @@ export function ResultsPrint({
   roster,
   subjects,
   subjectMarks,
+  subjectAvgs,
   printedOn,
 }: {
   collegeName: string | null;
@@ -25,6 +73,7 @@ export function ResultsPrint({
   roster: RosterEntry[];
   subjects: SubjectColumn[];
   subjectMarks: Record<string, Record<string, number>>;
+  subjectAvgs: SubjectAvg[];
   printedOn: string;
 }) {
   const graded = roster
@@ -46,29 +95,28 @@ export function ResultsPrint({
   });
 
   return (
-    <>
+    <div id="results-print" className="hidden text-black">
+      {/* Print-only: the visibility trick hides the screen UI and shows only
+          this statement when the results page's Print button fires. */}
       <style>{`
         @media print {
           body * { visibility: hidden !important; }
           #results-print, #results-print * { visibility: visible !important; }
-          #results-print { position: absolute; left: 0; top: 0; width: 100%; padding: 0; }
+          #results-print {
+            display: block !important;
+            position: absolute; left: 0; top: 0; width: 100%; max-width: none; padding: 0;
+          }
           .no-print { display: none !important; }
-          @page { margin: 16mm; }
         }
-        #results-print table { border-collapse: collapse; width: 100%; }
-        #results-print th, #results-print td { border: 1px solid #111; padding: 6px 8px; font-size: 13px; }
-        #results-print th { background: #f0f0f0; text-align: left; }
+        #results-print table.results-table { border-collapse: collapse; width: 100%; }
+        #results-print table.results-table th, #results-print table.results-table td { border: 1px solid #111; padding: 6px 8px; font-size: 13px; }
+        #results-print table.results-table th { background: #f0f0f0; text-align: left; -webkit-print-color-adjust: exact; print-color-adjust: exact; }
         #results-print td.num, #results-print th.num { text-align: center; }
       `}</style>
 
-      <div className="no-print mb-4 flex items-center justify-between">
-        <p className="text-muted-foreground text-sm">Use your browser&apos;s print dialog to save as PDF.</p>
-        <Button onClick={() => window.print()}>Print / Save as PDF</Button>
-      </div>
-
-      <div id="results-print" className="mx-auto max-w-3xl text-black">
-        {/* Letterhead */}
-        <div className="border-b-2 border-black pb-3 text-center">
+      <LetterheadFrame docLabel="Statement of Results">
+        {/* Document cover — content only; the brand frame is the letterhead */}
+        <div className="text-center">
           {collegeName && <div className="text-xl font-bold uppercase tracking-wide">{collegeName}</div>}
           <div className="mt-1 text-sm font-semibold">Statement of Results</div>
         </div>
@@ -84,15 +132,29 @@ export function ResultsPrint({
         </div>
 
         {/* Summary */}
-        <div className="mt-2 flex flex-wrap gap-x-6 gap-y-1 text-sm">
+        <div className="mt-2 mb-4 flex flex-wrap gap-x-6 gap-y-1 text-sm">
           <div><span className="font-semibold">Appeared:</span> {graded.length}</div>
           <div><span className="font-semibold">Total students:</span> {roster.length}</div>
-          <div><span className="font-semibold">Average:</span> {avg}{totalMarks && highest != null ? "" : ""}</div>
+          <div><span className="font-semibold">Average:</span> {avg}</div>
           {highest != null && <div><span className="font-semibold">Highest:</span> {highest}</div>}
         </div>
 
+        {/* Performance chart — subject averages only; a score-distribution
+            drilldown degenerates on small rosters and adds nothing here. */}
+        {subjectAvgs.length > 0 && (
+          <PrintBars
+            title="Average score by subject"
+            data={subjectAvgs.map((s) => ({
+              label: s.subject,
+              value: s.avg,
+              max: s.max,
+              valueLabel: `${s.avg} / ${s.max}`,
+            }))}
+          />
+        )}
+
         {/* Results table — subject-wise marks + total */}
-        <table className="mt-4">
+        <table className="results-table mt-2">
           <thead>
             <tr>
               <th className="num" style={{ width: "7%" }}>Rank</th>
@@ -152,13 +214,13 @@ export function ResultsPrint({
         <p className="mt-2 text-xs text-black/70">AB = Absent / not attempted. Columns show marks obtained per subject.</p>
 
         {/* Footer */}
-        <div className="mt-12 flex items-end justify-between text-sm">
+        <div className="mt-8 flex items-end justify-between text-sm" style={{ breakInside: "avoid" }}>
           <div>Date of issue: {printedOn}</div>
           <div className="text-center">
             <div className="mt-8 border-t border-black px-6 pt-1">Controller of Examinations</div>
           </div>
         </div>
-      </div>
-    </>
+      </LetterheadFrame>
+    </div>
   );
 }

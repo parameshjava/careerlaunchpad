@@ -7,6 +7,7 @@
 // (mobile-first) with a palette and a hard-stop countdown.
 import { useCallback, useEffect, useRef, useState } from "react";
 import { useRouter } from "next/navigation";
+import { Printer } from "lucide-react";
 import { createClient } from "@/lib/supabase/client";
 import { RichContent } from "@/components/exam/RichContent";
 import { Button } from "@/components/ui/button";
@@ -307,7 +308,7 @@ export function AttemptRunner({
         <div className="flex items-center gap-3">
           {meta && (
             <Button variant="outline" size="sm" onClick={() => window.print()}>
-              Print
+              <Printer /> Print
             </Button>
           )}
           <span

@@ -290,6 +290,9 @@ export type ExamCard = {
   sessionStatus: SessionStatus | null;
   opensAt: string | null;
   closesAt: string | null;
+  /** ALL sittings' statuses (not just the newest) — drives Open/Closed tabs. */
+  sessionCount: number;
+  sessionStatuses: SessionStatus[];
 };
 
 export async function fetchExamCards(
@@ -303,7 +306,20 @@ export async function fetchExamCards(
         "exam_section(num_questions), exam_session(id, status, opens_at, closes_at, created_at)",
     )
     .order("created_at", { ascending: false });
-  if (collegeId) q = q.eq("college_id", collegeId);
+  if (collegeId) {
+    // A college's papers are exams it owns OR exams conducting a sitting there —
+    // centrally created exams have a different/null college_id, so filtering on
+    // exam.college_id alone hides them from college admins.
+    const { data: sess, error: sessErr } = await supabase
+      .from("exam_session")
+      .select("exam_id")
+      .eq("college_id", collegeId);
+    if (sessErr) throw new Error(`exam_session: ${sessErr.message}`);
+    const ids = [...new Set((sess ?? []).map((r) => r.exam_id as string))];
+    q = ids.length
+      ? q.or(`college_id.eq.${collegeId},id.in.(${ids.join(",")})`)
+      : q.eq("college_id", collegeId);
+  }
   const { data, error } = await q;
   if (error) throw new Error(`exam: ${error.message}`);
   return ((data ?? []) as unknown as Record<string, unknown>[]).map((r) => {
@@ -327,6 +343,8 @@ export async function fetchExamCards(
       sessionStatus: (sess?.status as SessionStatus) ?? null,
       opensAt: (sess?.opens_at as string | null) ?? null,
       closesAt: (sess?.closes_at as string | null) ?? null,
+      sessionCount: rawSessions.length,
+      sessionStatuses: rawSessions.map((s) => s.status as SessionStatus),
     };
   });
 }

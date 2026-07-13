@@ -121,7 +121,7 @@ export function StudentResult({
         @media print {
           body * { visibility: hidden !important; }
           #result-print, #result-print * { visibility: visible !important; }
-          #result-print { position: absolute; left: 0; top: 0; width: 100%; padding: 0; }
+          #result-print { position: absolute; left: 0; top: 0; width: 100%; max-width: none; padding: 0; }
           .no-print { display: none !important; }
         }
       `}</style>

@@ -1,8 +1,15 @@
 import { notFound, redirect } from "next/navigation";
 import { getAuthContext, can } from "@/lib/auth";
 import { createClient } from "@/lib/supabase/server";
-import { fetchRoster, fetchSession, fetchSubjectAverages } from "@/lib/exam-query";
+import {
+  fetchPaperForPrint,
+  fetchRoster,
+  fetchSession,
+  fetchSubjectAverages,
+  fetchSubjectMarksByStudent,
+} from "@/lib/exam-query";
 import { ResultsClient } from "./results-client";
+import { ResultsPrint } from "./results-print";
 
 export default async function SessionResultsPage({
   params,
@@ -20,10 +27,19 @@ export default async function SessionResultsPage({
   const supabase = await createClient();
   const session = await fetchSession(supabase, id);
   if (!session) notFound();
-  const [roster, subjectAvgs] = await Promise.all([
+  const [roster, subjectAvgs, paper, subjectMarks] = await Promise.all([
     fetchRoster(supabase, id),
     fetchSubjectAverages(supabase, id),
+    fetchPaperForPrint(supabase, id),
+    fetchSubjectMarksByStudent(supabase, id),
   ]);
+
+  // Server-side date so the printed sheet is stable (no hydration mismatch).
+  const printedOn = new Date().toLocaleDateString("en-IN", {
+    day: "2-digit",
+    month: "long",
+    year: "numeric",
+  });
 
   return (
     <div className="mx-auto max-w-4xl">
@@ -40,6 +56,20 @@ export default async function SessionResultsPage({
         roster={roster}
         subjectAvgs={subjectAvgs}
         canPublish={ctx.permissions.has("*") || can(ctx, "exam.assign")}
+      />
+      {/* Print-only statement of marks on the letterhead; the Print button in
+          ResultsClient fires window.print() and only this block prints. */}
+      <ResultsPrint
+        collegeName={session.collegeName ?? null}
+        examTitle={session.examTitle ?? "Exam"}
+        label={session.label}
+        mode={session.mode}
+        totalMarks={paper?.totalMarks ?? null}
+        roster={roster}
+        subjects={subjectMarks.subjects}
+        subjectMarks={subjectMarks.byStudent}
+        subjectAvgs={subjectAvgs}
+        printedOn={printedOn}
       />
     </div>
   );

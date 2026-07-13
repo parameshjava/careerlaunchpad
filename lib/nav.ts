@@ -120,12 +120,13 @@ export function buildNav(ctx: AuthContext): NavSection[] {
     if (ctx.permissions.has("*") || can(ctx, "exam.question.manage"))
       bank.push({ label: "Questions", href: "/dashboard/questions", icon: "exams" });
 
-    // Exams — per-college conduct + evaluation.
+    // Exams — papers (create/conduct), results (read), evaluation. Sittings are
+    // reached through each paper, not a separate menu item.
     const exams: NavItem[] = [];
-    if (canConductExams(ctx)) {
+    if (canConductExams(ctx))
       exams.push({ label: "Exam papers", href: "/dashboard/exams/papers", icon: "exams" });
-      exams.push({ label: "Sessions", href: "/dashboard/exams/sittings", icon: "exams" });
-    }
+    if (ctx.permissions.has("*") || can(ctx, "exam.results.view_all"))
+      exams.push({ label: "Exam results", href: "/dashboard/exams/results", icon: "analytics" });
     if (canEvaluate) exams.push(evalItem);
 
     // Reports — read-only analytics across domains.

@@ -3,7 +3,9 @@
 // Consolidated "Statement of Results" for one exam across all its batches: a
 // college letterhead, a ranked table (all candidates from every sitting), a
 // summary, and a signature footer. Print-optimized; save as PDF from the browser.
+import { Printer } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import { LetterheadFrame } from "@/components/print/letterhead";
 import type { SubjectColumn } from "@/lib/exam-query";
 
 type Row = {
@@ -64,9 +66,8 @@ export function ConsolidatedResults({
         @media print {
           body * { visibility: hidden !important; }
           #consolidated-print, #consolidated-print * { visibility: visible !important; }
-          #consolidated-print { position: absolute; left: 0; top: 0; width: 100%; padding: 0; }
+          #consolidated-print { position: absolute; left: 0; top: 0; width: 100%; max-width: none; padding: 0; }
           .no-print { display: none !important; }
-          @page { margin: 14mm; }
         }
         #consolidated-print table { border-collapse: collapse; width: 100%; }
         #consolidated-print th, #consolidated-print td { border: 1px solid #111; padding: 5px 8px; font-size: 12.5px; }
@@ -76,12 +77,15 @@ export function ConsolidatedResults({
 
       <div className="no-print mx-auto mb-4 flex max-w-4xl items-center justify-between px-4">
         <p className="text-muted-foreground text-sm">Use your browser&apos;s print dialog to save as PDF.</p>
-        <Button onClick={() => window.print()}>Print / Save as PDF</Button>
+        <Button onClick={() => window.print()}>
+          <Printer /> Print
+        </Button>
       </div>
 
       <div id="consolidated-print" className="mx-auto max-w-4xl px-4 text-black">
-        {/* Letterhead */}
-        <div className="border-b-2 border-black pb-3 text-center">
+        <LetterheadFrame docLabel="Consolidated Statement of Results">
+        {/* Document cover — content only; the brand frame is the letterhead */}
+        <div className="text-center">
           {collegeName && <div className="text-xl font-bold uppercase tracking-wide">{collegeName}</div>}
           <div className="mt-1 text-sm font-semibold">Consolidated Statement of Results</div>
         </div>
@@ -179,6 +183,7 @@ export function ConsolidatedResults({
         <p className="mt-6 border-t border-gray-300 pt-2 text-center text-[10px] text-gray-600">
           This is a computer-generated consolidated statement of results.
         </p>
+        </LetterheadFrame>
       </div>
     </>
   );
