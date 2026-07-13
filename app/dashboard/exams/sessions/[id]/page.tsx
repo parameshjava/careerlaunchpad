@@ -30,7 +30,11 @@ export default async function SessionDetailPage({
           {session.examTitle} · {session.mode} · {session.questionCount} questions
         </p>
       </header>
-      <SessionDetailClient session={session} roster={roster} />
+      <SessionDetailClient
+        session={session}
+        roster={roster}
+        canExportPdf={ctx.permissions.has("*") || can(ctx, "exam.paper.export_pdf")}
+      />
     </div>
   );
 }

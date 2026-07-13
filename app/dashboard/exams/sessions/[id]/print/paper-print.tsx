@@ -12,6 +12,12 @@ import type { PrintQuestion } from "@/lib/exam-query";
 
 const LETTERS = ["A", "B", "C", "D", "E"];
 
+/** Stamp the print mode on <body> so the @media print rules show only that part. */
+function printAs(mode: "paper" | "key") {
+  document.body.dataset.print = mode;
+  window.print();
+}
+
 function correctLetters(q: PrintQuestion): string {
   return q.options
     .map((o, i) => (o.isCorrect ? LETTERS[i] : null))
@@ -45,14 +51,26 @@ export function PaperPrint({
           #exam-print { position: absolute; left: 0; top: 0; width: 100%; max-width: none; padding: 0; }
           .no-print { display: none !important; }
           .answer-key { page-break-before: always; }
+          /* Paper and key print as SEPARATE documents (offline conduct: students
+             must never receive the key). The buttons stamp the mode on <body>. */
+          body[data-print="paper"] .answer-key { display: none !important; }
+          body[data-print="key"] .paper-body { display: none !important; }
+          body[data-print="key"] .answer-key { page-break-before: auto; }
         }
       `}</style>
 
-      <div className="no-print mb-4 flex items-center justify-between">
-        <p className="text-muted-foreground text-sm">Use your browser&apos;s print dialog to save as PDF.</p>
-        <Button onClick={() => window.print()}>
-          <Printer /> Print
-        </Button>
+      <div className="no-print mb-4 flex flex-wrap items-center justify-between gap-3">
+        <p className="text-muted-foreground text-sm">
+          Question paper and answer key print separately — the key never goes on the paper handed to students.
+        </p>
+        <div className="flex gap-2">
+          <Button onClick={() => printAs("paper")}>
+            <Printer /> Print paper
+          </Button>
+          <Button variant="outline" onClick={() => printAs("key")}>
+            <Printer /> Print answer key
+          </Button>
+        </div>
       </div>
 
       <div id="exam-print" className="mx-auto max-w-3xl text-black">
@@ -71,8 +89,8 @@ export function PaperPrint({
           </p>
         </div>
 
-        {/* Questions */}
-        <ol className="grid gap-5">
+        {/* Questions — hidden when printing the answer key alone */}
+        <ol className="paper-body grid gap-5">
           {questions.map((q) => {
             const showPassage = q.passageId && q.passageId !== lastPassageId;
             lastPassageId = q.passageId;

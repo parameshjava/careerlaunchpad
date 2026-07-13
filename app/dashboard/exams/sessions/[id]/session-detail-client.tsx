@@ -1,8 +1,8 @@
 "use client";
 
-// Conduct a sitting: open/close it, assign students, regenerate the paper (before
-// anyone starts), and view the roster + scores. Printing lives on the Results
-// page (its Print button prints the letterhead statement directly).
+// Conduct a sitting: open/close it, assign students, print the offline question
+// paper / answer key (separate sheets, via the print page), and view the roster
+// + scores. Results printing lives on the Results page.
 import { useState } from "react";
 import Link from "next/link";
 import { useRouter } from "next/navigation";
@@ -14,9 +14,11 @@ import type { RosterEntry, SessionSummary } from "@/lib/exam-query";
 export function SessionDetailClient({
   session,
   roster,
+  canExportPdf,
 }: {
   session: SessionSummary;
   roster: RosterEntry[];
+  canExportPdf: boolean;
 }) {
   const router = useRouter();
   const [busy, setBusy] = useState("");
@@ -58,6 +60,13 @@ export function SessionDetailClient({
             {session.status !== "closed" && session.status !== "graded" && (
               <Button size="sm" variant="secondary" disabled={!!busy} onClick={() => action("close", `/api/exam/sessions/${session.id}/close`, { status: "closed" })}>
                 Close
+              </Button>
+            )}
+            {canExportPdf && (
+              <Button size="sm" variant="outline" asChild>
+                <Link href={`/dashboard/exams/sessions/${session.id}/print`} target="_blank">
+                  Print paper
+                </Link>
               </Button>
             )}
             <Button size="sm" variant="outline" asChild>
