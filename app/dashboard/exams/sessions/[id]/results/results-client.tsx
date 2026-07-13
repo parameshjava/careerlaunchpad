@@ -1,10 +1,10 @@
 "use client";
 
-// Admin results view: summary stats, a score-distribution chart, the roster with
+// Admin results view: summary stats, the subject-averages chart, the roster with
 // scores, and the publish toggle (gates whether students can see their result).
-import { useMemo, useState } from "react";
-import Link from "next/link";
+import { useState } from "react";
 import { useRouter } from "next/navigation";
+import { Printer } from "lucide-react";
 import { Bar, BarChart, CartesianGrid, ResponsiveContainer, Tooltip, XAxis, YAxis } from "recharts";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
@@ -44,24 +44,6 @@ export function ResultsClient({
   const avg = scores.length ? (scores.reduce((a, b) => a + b, 0) / scores.length).toFixed(1) : "—";
   const max = scores.length ? Math.max(...scores).toString() : "—";
 
-  // Score distribution in 5 buckets between min and max.
-  const histogram = useMemo(() => {
-    if (scores.length === 0) return [];
-    const lo = Math.min(...scores);
-    const hi = Math.max(...scores);
-    const span = Math.max(1, hi - lo);
-    const bins = 5;
-    const counts = Array.from({ length: bins }, (_, i) => ({
-      range: `${Math.round(lo + (span * i) / bins)}–${Math.round(lo + (span * (i + 1)) / bins)}`,
-      count: 0,
-    }));
-    for (const s of scores) {
-      const idx = Math.min(bins - 1, Math.floor(((s - lo) / span) * bins));
-      counts[idx].count += 1;
-    }
-    return counts;
-  }, [scores]);
-
   async function togglePublish() {
     setError("");
     setBusy(true);
@@ -81,10 +63,9 @@ export function ResultsClient({
       {error && <p className="text-destructive text-sm">{error}</p>}
 
       <div className="flex justify-end">
-        <Button variant="outline" asChild>
-          <Link href={`/dashboard/exams/sessions/${sessionId}/results/print`} target="_blank">
-            Print results
-          </Link>
+        {/* Prints the letterhead statement embedded in this page (ResultsPrint). */}
+        <Button onClick={() => window.print()}>
+          <Printer /> Print
         </Button>
       </div>
 
@@ -131,23 +112,6 @@ export function ResultsClient({
                   ]}
                 />
                 <Bar dataKey="avg" fill="var(--brand-blue)" radius={[4, 4, 0, 0]} />
-              </BarChart>
-            </ResponsiveContainer>
-          </CardContent>
-        </Card>
-      )}
-
-      {histogram.length > 0 && (
-        <Card>
-          <CardContent className="pt-6">
-            <div className="mb-2 text-sm font-medium">Score distribution</div>
-            <ResponsiveContainer width="100%" height={260}>
-              <BarChart data={histogram} margin={{ top: 8, right: 8, bottom: 8, left: -12 }}>
-                <CartesianGrid strokeDasharray="3 3" vertical={false} />
-                <XAxis dataKey="range" fontSize={12} />
-                <YAxis allowDecimals={false} fontSize={12} />
-                <Tooltip />
-                <Bar dataKey="count" fill="var(--brand-blue)" radius={[4, 4, 0, 0]} />
               </BarChart>
             </ResponsiveContainer>
           </CardContent>

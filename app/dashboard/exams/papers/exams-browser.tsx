@@ -21,7 +21,13 @@ import {
 } from "@/components/ui/select";
 import type { ExamCard } from "@/lib/exam-query";
 
-const isCompleted = (e: ExamCard) => e.sessionStatus === "closed" || e.sessionStatus === "graded";
+// A paper is Closed only when nothing about it can still run: it's archived, or
+// it has sittings and EVERY one of them is finished. Anything else is Open.
+const isFinished = (s: string) => s === "closed" || s === "graded";
+const isClosed = (e: ExamCard) =>
+  e.examStatus === "archived" ||
+  (e.sessionCount > 0 && e.sessionStatuses.every(isFinished));
+const hasResults = (e: ExamCard) => e.sessionStatuses.includes("graded");
 
 function status(e: ExamCard): { text: string; live: boolean } {
   if (e.examStatus === "draft") return { text: "Draft", live: false };
@@ -63,8 +69,10 @@ export function ExamsBrowser({ exams }: { exams: ExamCard[] }) {
     return sorted;
   }, [exams, query, college, sort]);
 
-  const active = filtered.filter((e) => !isCompleted(e));
-  const completed = filtered.filter(isCompleted);
+  // Every exam lands in exactly one tab: Draft + Active + Closed = all.
+  const drafts = filtered.filter((e) => e.examStatus === "draft");
+  const closed = filtered.filter((e) => e.examStatus !== "draft" && isClosed(e));
+  const active = filtered.filter((e) => e.examStatus !== "draft" && !isClosed(e));
 
   return (
     <>
@@ -104,15 +112,56 @@ export function ExamsBrowser({ exams }: { exams: ExamCard[] }) {
       </div>
 
       <Tabs defaultValue="active">
-        <TabsList>
-          <TabsTrigger value="active">Active ({active.length})</TabsTrigger>
-          <TabsTrigger value="completed">Completed ({completed.length})</TabsTrigger>
+        {/* Classic folder tabs: boxed triggers on the list's bottom border; the
+            active tab connects to the panel by covering the border with its bg. */}
+        <TabsList
+          variant="line"
+          className="group-data-horizontal/tabs:h-auto w-full justify-start gap-0 rounded-none border-b p-0"
+        >
+          {(
+            [
+              // Folder-tab colors: amber = in progress, emerald = live, sky = done.
+              [
+                "draft",
+                `Draft (${drafts.length})`,
+                "bg-amber-400",
+                "data-active:border-amber-300 data-active:bg-amber-50 data-active:text-amber-900 dark:data-active:border-amber-800 dark:data-active:bg-amber-950/50 dark:data-active:text-amber-200",
+              ],
+              [
+                "active",
+                `Active (${active.length})`,
+                "bg-emerald-500",
+                "data-active:border-emerald-300 data-active:bg-emerald-50 data-active:text-emerald-900 dark:data-active:border-emerald-800 dark:data-active:bg-emerald-950/50 dark:data-active:text-emerald-200",
+              ],
+              [
+                "closed",
+                `Closed (${closed.length})`,
+                "bg-sky-500",
+                "data-active:border-sky-300 data-active:bg-sky-50 data-active:text-sky-900 dark:data-active:border-sky-800 dark:data-active:bg-sky-950/50 dark:data-active:text-sky-200",
+              ],
+            ] as const
+          ).map(([value, label, dot, activeCls]) => (
+            <TabsTrigger
+              key={value}
+              value={value}
+              className={cn(
+                "-mb-px h-auto flex-none rounded-t-md rounded-b-none border border-b-0 border-transparent px-4 py-2 text-muted-foreground shadow-none after:hidden data-active:shadow-none",
+                activeCls,
+              )}
+            >
+              <span className={cn("size-2 rounded-full", dot)} aria-hidden />
+              {label}
+            </TabsTrigger>
+          ))}
         </TabsList>
-        <TabsContent value="active" className="mt-4">
-          <ExamList exams={active} empty="No exams match. Create one with “+ Exam”." />
+        <TabsContent value="draft" className="mt-4">
+          <ExamList exams={drafts} empty="No draft exams match." />
         </TabsContent>
-        <TabsContent value="completed" className="mt-4">
-          <ExamList exams={completed} empty="No completed exams match." />
+        <TabsContent value="active" className="mt-4">
+          <ExamList exams={active} empty="No active exams match. Create one with “+ Exam”." />
+        </TabsContent>
+        <TabsContent value="closed" className="mt-4">
+          <ExamList exams={closed} empty="No closed exams match." />
         </TabsContent>
       </Tabs>
     </>
@@ -162,6 +211,18 @@ function ExamList({ exams, empty }: { exams: ExamCard[]; empty: string }) {
             </Link>
             <div className="flex shrink-0 items-center gap-2">
               <Badge variant={st.live ? "default" : "secondary"}>{st.text}</Badge>
+              {hasResults(e) && (
+                <Link
+                  href={
+                    e.sessionCount > 1
+                      ? `/dashboard/exams/blueprints/${e.id}/consolidated`
+                      : `/dashboard/exams/sessions/${e.sessionId}/results`
+                  }
+                  className={cn(buttonVariants({ variant: "default", size: "sm" }))}
+                >
+                  Results
+                </Link>
+              )}
               {e.examStatus === "published" && e.sessionId && (
                 <Link
                   href={`/dashboard/exams/sessions/${e.sessionId}`}

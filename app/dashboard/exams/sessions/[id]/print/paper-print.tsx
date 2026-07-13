@@ -4,8 +4,10 @@
 // @media print rules hide the console chrome (visibility trick) so only the
 // paper prints. Passages render once before their question block; the answer key
 // is on its own page.
+import { Printer } from "lucide-react";
 import { RichContent } from "@/components/exam/RichContent";
 import { Button } from "@/components/ui/button";
+import { LetterheadFrame } from "@/components/print/letterhead";
 import type { PrintQuestion } from "@/lib/exam-query";
 
 const LETTERS = ["A", "B", "C", "D", "E"];
@@ -40,7 +42,7 @@ export function PaperPrint({
         @media print {
           body * { visibility: hidden !important; }
           #exam-print, #exam-print * { visibility: visible !important; }
-          #exam-print { position: absolute; left: 0; top: 0; width: 100%; padding: 0; }
+          #exam-print { position: absolute; left: 0; top: 0; width: 100%; max-width: none; padding: 0; }
           .no-print { display: none !important; }
           .answer-key { page-break-before: always; }
         }
@@ -48,10 +50,13 @@ export function PaperPrint({
 
       <div className="no-print mb-4 flex items-center justify-between">
         <p className="text-muted-foreground text-sm">Use your browser&apos;s print dialog to save as PDF.</p>
-        <Button onClick={() => window.print()}>Print / Save as PDF</Button>
+        <Button onClick={() => window.print()}>
+          <Printer /> Print
+        </Button>
       </div>
 
       <div id="exam-print" className="mx-auto max-w-3xl text-black">
+        <LetterheadFrame docLabel="Question Paper">
         {/* Cover */}
         <div className="mb-6 border-b pb-4">
           {collegeName && <p className="text-center text-lg font-bold">{collegeName}</p>}
@@ -117,6 +122,7 @@ export function PaperPrint({
             ))}
           </div>
         </div>
+        </LetterheadFrame>
       </div>
     </>
   );

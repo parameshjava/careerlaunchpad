@@ -1,6 +1,6 @@
 import Link from "next/link";
 import { redirect } from "next/navigation";
-import { getAuthContext, can } from "@/lib/auth";
+import { getAuthContext, can, scopedCollege } from "@/lib/auth";
 import { createClient } from "@/lib/supabase/server";
 import { fetchCollegeSessions } from "@/lib/exam-query";
 import { Card, CardContent } from "@/components/ui/card";
@@ -18,8 +18,8 @@ export default async function CollegeSittingsPage() {
   if (!allowed) redirect("/dashboard");
 
   const supabase = await createClient();
-  // College admins are scoped to their own college; admins (no scope) see all.
-  const collegeId = ctx.collegeScopes[0];
+  // College admins are scoped to their own college; global admins see all.
+  const collegeId = scopedCollege(ctx);
   const sessions = await fetchCollegeSessions(supabase, collegeId);
 
   return (
