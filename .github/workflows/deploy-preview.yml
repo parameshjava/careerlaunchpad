@@ -1,0 +1,35 @@
+name: Deploy Preview
+
+# Manually promote a ref (default: main) to the PREVIEW environment.
+#
+# preview.careerlaunchpad.ai is bound (in Vercel) to the `preview` branch, so we
+# just mirror the chosen ref onto `preview`; Vercel's native Git integration then
+# builds it and routes the custom domain to that deployment. main itself stays a
+# plain preview branch, and PRODUCTION is untouched — prod deploys only when a
+# GitHub Release is published (see deploy-prod.yml).
+on:
+  workflow_dispatch:
+    inputs:
+      ref:
+        description: "Branch, tag, or SHA to deploy to preview"
+        required: false
+        default: main
+
+# Only push access is needed — Vercel does the actual build/deploy via its Git app.
+permissions:
+  contents: write
+
+concurrency:
+  group: deploy-preview
+  cancel-in-progress: true
+
+jobs:
+  promote:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: ${{ inputs.ref }}
+          fetch-depth: 0
+      - name: Mirror ${{ inputs.ref }} -> preview branch
+        run: git push origin "HEAD:refs/heads/preview" --force
