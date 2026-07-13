@@ -2,14 +2,24 @@
 
 // Author or edit a question. Submits through /api/exam/questions (API-first).
 // A live <RichContent> preview shows exactly what the student/PDF will render
-// (Markdown + LaTeX + code). Editing a question that is already used by a paper
-// returns 409 — the bank then asks the author to archive + recreate.
-import { useCallback, useEffect, useState } from "react";
+// (Markdown + LaTeX + code). Editing a question already used by a paper returns
+// 409 — the bank then asks the author to archive + recreate. Built to
+// docs/STYLE_GUIDE.md: shadcn primitives + brand tokens, mobile-first.
+import { useCallback, useEffect, useState, type ReactNode } from "react";
 import { useRouter } from "next/navigation";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
-import { Card, CardContent } from "@/components/ui/card";
+import { Textarea } from "@/components/ui/textarea";
+import { Checkbox } from "@/components/ui/checkbox";
+import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
+import {
+  Select,
+  SelectContent,
+  SelectItem,
+  SelectTrigger,
+  SelectValue,
+} from "@/components/ui/select";
 import { RichContent } from "@/components/exam/RichContent";
 import { SearchableSelect } from "@/components/exam/SearchableSelect";
 import {
@@ -22,11 +32,6 @@ import {
   type QuestionKind,
   type Subject,
 } from "@/lib/exam-query";
-
-const selectClass =
-  "border-input bg-background h-9 w-full rounded-md border px-3 py-1 text-sm shadow-sm focus-visible:ring-1 focus-visible:outline-none";
-const areaClass =
-  "border-input bg-background min-h-24 w-full rounded-md border px-3 py-2 text-sm shadow-sm focus-visible:ring-1 focus-visible:outline-none";
 
 const KINDS: { value: QuestionKind; label: string }[] = [
   { value: "standard", label: "Standard" },
@@ -49,6 +54,35 @@ const EMPTY_OPTIONS: OptionRow[] = [
   { label: "", is_correct: false },
   { label: "", is_correct: false },
 ];
+
+// Small labeled shadcn Select wrapper — the editor has five of these.
+function SelectField({
+  id,
+  label,
+  value,
+  onValueChange,
+  placeholder = "Select…",
+  children,
+}: {
+  id: string;
+  label: string;
+  value: string;
+  onValueChange: (v: string) => void;
+  placeholder?: string;
+  children: ReactNode;
+}) {
+  return (
+    <div className="grid gap-1.5">
+      <Label htmlFor={id}>{label}</Label>
+      <Select value={value} onValueChange={onValueChange}>
+        <SelectTrigger id={id} className="w-full">
+          <SelectValue placeholder={placeholder} />
+        </SelectTrigger>
+        <SelectContent>{children}</SelectContent>
+      </Select>
+    </div>
+  );
+}
 
 export function QuestionEditor({
   mode,
@@ -125,10 +159,12 @@ export function QuestionEditor({
         setStem(q.stem);
         setStemImageUrl(q.stemImageUrl ?? "");
         setExplanation(q.explanation ?? "");
-        const opts: OptionRow[] = (q.options ?? []).map((o: { label: string; isCorrect: boolean }) => ({
-          label: o.label,
-          is_correct: o.isCorrect,
-        }));
+        const opts: OptionRow[] = (q.options ?? []).map(
+          (o: { label: string; isCorrect: boolean }) => ({
+            label: o.label,
+            is_correct: o.isCorrect,
+          }),
+        );
         while (opts.length < 4) opts.push({ label: "", is_correct: false });
         setOptions(opts.slice(0, 5));
       })
@@ -202,28 +238,34 @@ export function QuestionEditor({
 
   return (
     <div className="grid gap-6">
-      {error && <p className="text-destructive text-sm">{error}</p>}
+      {error && (
+        <p className="text-destructive bg-destructive/10 rounded-md border border-destructive/20 px-3 py-2 text-sm">
+          {error}
+        </p>
+      )}
 
       <Card>
-        <CardContent className="grid gap-4 pt-6 sm:grid-cols-2">
-          <div className="grid gap-1.5">
-            <Label htmlFor="subject">Subject</Label>
-            <select
-              id="subject"
-              className={selectClass}
-              value={subjectId}
-              onChange={(e) => {
-                setSubjectId(e.target.value);
-                setChapterId("");
-                setPassageId("");
-              }}
-            >
-              <option value="">Select…</option>
-              {subjects.map((s) => (
-                <option key={s.id} value={s.id}>{s.name}</option>
-              ))}
-            </select>
-          </div>
+        <CardHeader>
+          <CardTitle>Details</CardTitle>
+        </CardHeader>
+        <CardContent className="grid gap-4 sm:grid-cols-2">
+          <SelectField
+            id="subject"
+            label="Subject"
+            value={subjectId}
+            onValueChange={(v) => {
+              setSubjectId(v);
+              setChapterId("");
+              setPassageId("");
+            }}
+          >
+            {subjects.map((s) => (
+              <SelectItem key={s.id} value={s.id}>
+                {s.name}
+              </SelectItem>
+            ))}
+          </SelectField>
+
           <div className="grid gap-1.5">
             <Label htmlFor="chapter">Chapter</Label>
             <SearchableSelect
@@ -235,76 +277,79 @@ export function QuestionEditor({
               searchPlaceholder="Search chapters…"
             />
           </div>
-          <div className="grid gap-1.5">
-            <Label htmlFor="kind">Kind</Label>
-            <select
-              id="kind"
-              className={selectClass}
-              value={kind}
-              onChange={(e) => chooseKind(e.target.value as QuestionKind)}
-            >
-              {KINDS.map((k) => (
-                <option key={k.value} value={k.value}>{k.label}</option>
-              ))}
-            </select>
-          </div>
-          <div className="grid gap-1.5">
-            <Label htmlFor="difficulty">Difficulty</Label>
-            <select
-              id="difficulty"
-              className={selectClass}
-              value={difficulty}
-              onChange={(e) => setDifficulty(e.target.value as Difficulty)}
-            >
-              {DIFFICULTIES.map((d) => (
-                <option key={d} value={d}>{DIFFICULTY_LABELS[d]}</option>
-              ))}
-            </select>
-          </div>
-          <div className="grid gap-1.5">
-            <Label htmlFor="answer-type">Answer type</Label>
-            <select
-              id="answer-type"
-              className={selectClass}
-              value={answerType}
-              onChange={(e) => setAnswerType(e.target.value as AnswerType)}
-            >
-              <option value="single">Single correct</option>
-              <option value="multi">Multiple correct</option>
-            </select>
-          </div>
+
+          <SelectField
+            id="kind"
+            label="Kind"
+            value={kind}
+            onValueChange={(v) => chooseKind(v as QuestionKind)}
+          >
+            {KINDS.map((k) => (
+              <SelectItem key={k.value} value={k.value}>
+                {k.label}
+              </SelectItem>
+            ))}
+          </SelectField>
+
+          <SelectField
+            id="difficulty"
+            label="Difficulty"
+            value={difficulty}
+            onValueChange={(v) => setDifficulty(v as Difficulty)}
+          >
+            {DIFFICULTIES.map((d) => (
+              <SelectItem key={d} value={d}>
+                {DIFFICULTY_LABELS[d]}
+              </SelectItem>
+            ))}
+          </SelectField>
+
+          <SelectField
+            id="answer-type"
+            label="Answer type"
+            value={answerType}
+            onValueChange={(v) => setAnswerType(v as AnswerType)}
+          >
+            <SelectItem value="single">Single correct</SelectItem>
+            <SelectItem value="multi">Multiple correct</SelectItem>
+          </SelectField>
+
           {kind === "passage" && (
-            <div className="grid gap-1.5">
-              <Label htmlFor="passage">Passage</Label>
-              <select
-                id="passage"
-                className={selectClass}
-                value={passageId}
-                onChange={(e) => setPassageId(e.target.value)}
-              >
-                <option value="">Select a passage…</option>
-                {passagesForKind.map((p) => (
-                  <option key={p.id} value={p.id}>{p.title ?? p.body.slice(0, 40)}</option>
-                ))}
-              </select>
-            </div>
+            <SelectField
+              id="passage"
+              label="Passage"
+              value={passageId}
+              onValueChange={setPassageId}
+              placeholder="Select a passage…"
+            >
+              {passagesForKind.map((p) => (
+                <SelectItem key={p.id} value={p.id}>
+                  {p.title ?? p.body.slice(0, 40)}
+                </SelectItem>
+              ))}
+            </SelectField>
           )}
         </CardContent>
       </Card>
 
       {/* Stem + live preview */}
       <Card>
-        <CardContent className="grid gap-4 pt-6 md:grid-cols-2">
+        <CardHeader>
+          <CardTitle>Question</CardTitle>
+        </CardHeader>
+        <CardContent className="grid gap-4 md:grid-cols-2">
           <div className="grid gap-1.5">
             <Label htmlFor="stem">Question (Markdown · LaTeX with $…$ · code)</Label>
-            <textarea
+            <Textarea
               id="stem"
-              className={areaClass}
+              className="min-h-24"
               value={stem}
               onChange={(e) => setStem(e.target.value)}
-              placeholder="What is the value of $\\frac{1}{2} + \\frac{1}{3}$?"
+              placeholder={"What is the value of $\\frac{1}{2} + \\frac{1}{3}$?"}
             />
-            <Label htmlFor="stem-image" className="mt-2 text-xs">Image URL (optional)</Label>
+            <Label htmlFor="stem-image" className="mt-2 text-xs">
+              Image URL (optional)
+            </Label>
             <Input
               id="stem-image"
               value={stemImageUrl}
@@ -327,22 +372,17 @@ export function QuestionEditor({
 
       {/* Options */}
       <Card>
-        <CardContent className="grid gap-3 pt-6">
-          <div>
-            <h2 className="text-sm font-semibold">Options</h2>
-            <p className="text-muted-foreground text-xs">
-              4 or 5 options. Tick the correct one{answerType === "multi" ? "(s)" : ""}.
-            </p>
-          </div>
+        <CardHeader>
+          <CardTitle>Options</CardTitle>
+          <p className="text-muted-foreground text-xs">
+            4 or 5 options. Tick the correct one{answerType === "multi" ? "(s)" : ""}.
+          </p>
+        </CardHeader>
+        <CardContent className="grid gap-3">
           {options.map((o, i) => (
             <div key={i} className="flex items-start gap-3">
-              <label className="mt-2 flex shrink-0 items-center gap-1.5 text-sm">
-                <input
-                  type="checkbox"
-                  className="size-4"
-                  checked={o.is_correct}
-                  onChange={() => toggleCorrect(i)}
-                />
+              <label className="mt-2.5 flex shrink-0 items-center gap-1.5 text-sm">
+                <Checkbox checked={o.is_correct} onCheckedChange={() => toggleCorrect(i)} />
                 <span className="text-muted-foreground">{String.fromCharCode(65 + i)}</span>
               </label>
               <div className="grid flex-1 gap-1">
@@ -358,7 +398,13 @@ export function QuestionEditor({
                 )}
               </div>
               {options.length > 4 && (
-                <Button type="button" variant="ghost" size="sm" className="mt-1" onClick={() => removeOption(i)}>
+                <Button
+                  type="button"
+                  variant="ghost"
+                  size="sm"
+                  className="mt-1"
+                  onClick={() => removeOption(i)}
+                >
                   ✕
                 </Button>
               )}
@@ -376,11 +422,14 @@ export function QuestionEditor({
 
       {/* Explanation */}
       <Card>
-        <CardContent className="grid gap-1.5 pt-6">
-          <Label htmlFor="explanation">Explanation (optional)</Label>
-          <textarea
+        <CardHeader>
+          <CardTitle>Explanation</CardTitle>
+          <p className="text-muted-foreground text-xs">Optional — shown with results.</p>
+        </CardHeader>
+        <CardContent>
+          <Textarea
             id="explanation"
-            className={areaClass}
+            className="min-h-24"
             value={explanation}
             onChange={(e) => setExplanation(e.target.value)}
           />

@@ -1,7 +1,9 @@
+import Link from "next/link";
 import { notFound, redirect } from "next/navigation";
 import { getAuthContext, can } from "@/lib/auth";
 import { createClient } from "@/lib/supabase/server";
-import { fetchBlueprint } from "@/lib/exam-query";
+import { fetchBlueprint, fetchPaperForPrint } from "@/lib/exam-query";
+import { type College } from "@/components/analytics/CollegePicker";
 import { BlueprintEditor } from "../blueprint-editor";
 
 export default async function EditBlueprintPage({
@@ -19,13 +21,48 @@ export default async function EditBlueprintPage({
   const blueprint = await fetchBlueprint(supabase, id);
   if (!blueprint) notFound();
 
+  // The exam's college is fixed once created — pass it (locked) so the College
+  // step renders read-only and the wizard is the same 4 steps as in create.
+  const { data: exam } = await supabase
+    .from("exam")
+    .select(
+      "college:college_id(id, name, place, state, district, pincode, address, established_in, ownership_type, status)",
+    )
+    .eq("id", id)
+    .maybeSingle();
+  const raw = exam?.college as College | College[] | null | undefined;
+  const college: College | null = (Array.isArray(raw) ? raw[0] : raw) ?? null;
+
+  // The sitting (created at publish) carries the scheduled window + the generated
+  // paper — pass them so the wizard can prefill the schedule and preview the paper.
+  const { data: session } = await supabase
+    .from("exam_session")
+    .select("id, opens_at")
+    .eq("exam_id", id)
+    .order("created_at", { ascending: false })
+    .limit(1)
+    .maybeSingle();
+  const paper = session ? await fetchPaperForPrint(supabase, session.id) : null;
+
   return (
     <div className="mx-auto max-w-4xl">
+      <Link
+        href="/dashboard/exams/papers"
+        className="text-muted-foreground hover:text-foreground mb-4 inline-block text-sm"
+      >
+        ← Exam papers
+      </Link>
       <header className="mb-6">
         <h1 className="text-2xl font-bold tracking-tight">{blueprint.title}</h1>
         <p className="text-muted-foreground mt-1 text-sm">Status: {blueprint.status}</p>
       </header>
-      <BlueprintEditor blueprint={blueprint} />
+      <BlueprintEditor
+        blueprint={blueprint}
+        initialCollege={college}
+        collegeLocked
+        initialOpensAt={session?.opens_at ?? null}
+        paper={paper}
+      />
     </div>
   );
 }

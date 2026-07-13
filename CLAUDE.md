@@ -21,7 +21,7 @@ The only backend so far is one trivial route handler (`app/api/students/route.ts
 - **Keep copy in data, not JSX.** Section content (founders, core values, vision/mission, journey steps) lives in plain arrays at the top of each component. Edit the array, not the markup, when changing content.
 - **Use the right styling system per surface.** The two surfaces are styled differently and must stay separated (see Architecture):
   - **Marketing** (`app/(marketing)`) → plain global CSS in `app/landing.css`, semantic class names (`.navbar`, `.founder-card`, `.jf-step`). Do **not** add Tailwind utilities here.
-  - **Application** (`/dashboard`, etc.) → **Tailwind v4 + shadcn/ui**. Build from shadcn primitives and theme tokens (`bg-background`, `text-muted-foreground`, `border-border`); avoid ad-hoc hex values. Add components via `npx shadcn@latest add <name>`. Use **TanStack Table** for data grids (see `components/data-table.tsx`).
+  - **Application** (`/dashboard`, etc.) → **Tailwind v4 + shadcn/ui**. Build from shadcn primitives and theme tokens (`bg-background`, `text-muted-foreground`, `border-border`); avoid ad-hoc hex values. Add components via `npx shadcn@latest add <name>`. Use **TanStack Table** for data grids (see `components/data-table.tsx`). **Follow `docs/STYLE_GUIDE.md`** — the enforceable UI rulebook (brand tokens, page skeleton, component vocabulary) that applies to every app-surface change.
 - **Run lint and build before committing**, since CI/verification relies on them:
 
 ```bash

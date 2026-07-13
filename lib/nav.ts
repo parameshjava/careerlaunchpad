@@ -83,26 +83,9 @@ export function buildNav(ctx: AuthContext): NavSection[] {
   const evalItem: NavItem = { label: "Exam evaluation", href: "/dashboard/exams/evaluate", icon: "exams" };
   const canEvaluate = ctx.examEvaluator || can(ctx, "exam.evaluate");
 
-  if (ctx.roles.includes("student")) {
-    const items: NavItem[] = [
-      { label: "My profile", href: "/student/register", icon: "profile" },
-      { label: "My insights", href: "/student/insights", icon: "analytics" },
-    ];
-    if (can(ctx, "exam.attempt.take"))
-      items.push({ label: "My exams", href: "/student/exams", icon: "exams" });
-    if (canEvaluate) items.push(evalItem);
-    const sections: NavSection[] = [{ items }];
-    if (isMentor) sections.push({ title: "Mentoring", items: mentorItems() });
-    return sections;
-  }
-
-  if (ctx.roles.includes("employer")) {
-    const items: NavItem[] = [{ label: "Dashboard", href: "/employer", icon: "employer" }];
-    if (canEvaluate) items.push(evalItem);
-    return [{ items }];
-  }
-
-  // Console surfaces — only include items the user is actually permitted to use.
+  // Role precedence mirrors computeHomePath (lib/auth.ts): console → employer →
+  // student → mentor. Keeping the same order here means the sidebar always
+  // matches the surface a multi-role user actually lands on.
   const consoleRole = ctx.roles.some((r) =>
     ["owner", "platform_admin", "college_admin", "support", "coordinator"].includes(r),
   );
@@ -140,7 +123,7 @@ export function buildNav(ctx: AuthContext): NavSection[] {
     // Exams — per-college conduct + evaluation.
     const exams: NavItem[] = [];
     if (canConductExams(ctx))
-      exams.push({ label: "Exam papers", href: "/dashboard/exams", icon: "exams" });
+      exams.push({ label: "Exam papers", href: "/dashboard/exams/papers", icon: "exams" });
     if (canEvaluate) exams.push(evalItem);
 
     // Reports — read-only analytics across domains.
@@ -155,6 +138,25 @@ export function buildNav(ctx: AuthContext): NavSection[] {
     if (exams.length) sections.push({ title: "Exams", items: exams });
     if (reports.length) sections.push({ title: "Reports", items: reports });
     // Mentoring stays a role-specific group (the mentor's own workspace).
+    if (isMentor) sections.push({ title: "Mentoring", items: mentorItems() });
+    return sections;
+  }
+
+  if (ctx.roles.includes("employer")) {
+    const items: NavItem[] = [{ label: "Dashboard", href: "/employer", icon: "employer" }];
+    if (canEvaluate) items.push(evalItem);
+    return [{ items }];
+  }
+
+  if (ctx.roles.includes("student")) {
+    const items: NavItem[] = [
+      { label: "My profile", href: "/student/register", icon: "profile" },
+      { label: "My insights", href: "/student/insights", icon: "analytics" },
+    ];
+    if (can(ctx, "exam.attempt.take"))
+      items.push({ label: "My exams", href: "/student/exams", icon: "exams" });
+    if (canEvaluate) items.push(evalItem);
+    const sections: NavSection[] = [{ items }];
     if (isMentor) sections.push({ title: "Mentoring", items: mentorItems() });
     return sections;
   }

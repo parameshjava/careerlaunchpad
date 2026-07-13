@@ -1,0 +1,5205 @@
+{
+  "subject": "Arithmetic",
+  "questions": [
+    {
+      "chapter": "Ratio and Proportion",
+      "kind": "standard",
+      "difficulty": "easy",
+      "answer_type": "single",
+      "stem": "Find the fourth proportional to 3, 11 and 30.",
+      "explanation": "Fourth proportional = (11 × 30)/3 = 110.",
+      "options": [
+        {
+          "label": "112",
+          "is_correct": false
+        },
+        {
+          "label": "114",
+          "is_correct": false
+        },
+        {
+          "label": "110",
+          "is_correct": true
+        },
+        {
+          "label": "108",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Ratio and Proportion",
+      "kind": "standard",
+      "difficulty": "easy",
+      "answer_type": "single",
+      "stem": "Two numbers are in the ratio 2:8 and their sum is 310. Find the larger number.",
+      "explanation": "Larger = 310 × 8/10 = 248.",
+      "options": [
+        {
+          "label": "258",
+          "is_correct": false
+        },
+        {
+          "label": "238",
+          "is_correct": false
+        },
+        {
+          "label": "268",
+          "is_correct": false
+        },
+        {
+          "label": "248",
+          "is_correct": true
+        }
+      ]
+    },
+    {
+      "chapter": "Ratio and Proportion",
+      "kind": "standard",
+      "difficulty": "easy",
+      "answer_type": "single",
+      "stem": "Two numbers are in the ratio 2:8 and their sum is 370. Find the larger number.",
+      "explanation": "Larger = 370 × 8/10 = 296.",
+      "options": [
+        {
+          "label": "308",
+          "is_correct": false
+        },
+        {
+          "label": "296",
+          "is_correct": true
+        },
+        {
+          "label": "320",
+          "is_correct": false
+        },
+        {
+          "label": "284",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Ratio and Proportion",
+      "kind": "standard",
+      "difficulty": "easy",
+      "answer_type": "single",
+      "stem": "Divide ₹585 between two persons in the ratio 7:8. Find the larger share.",
+      "explanation": "Total parts = 15; larger share = ₹585 × 8/15 = ₹312.",
+      "options": [
+        {
+          "label": "₹324",
+          "is_correct": false
+        },
+        {
+          "label": "₹300",
+          "is_correct": false
+        },
+        {
+          "label": "₹312",
+          "is_correct": true
+        },
+        {
+          "label": "₹336",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Ratio and Proportion",
+      "kind": "standard",
+      "difficulty": "easy",
+      "answer_type": "single",
+      "stem": "Find the fourth proportional to 7, 7 and 56.",
+      "explanation": "Fourth proportional = (7 × 56)/7 = 56.",
+      "options": [
+        {
+          "label": "54",
+          "is_correct": false
+        },
+        {
+          "label": "56",
+          "is_correct": true
+        },
+        {
+          "label": "60",
+          "is_correct": false
+        },
+        {
+          "label": "58",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Ratio and Proportion",
+      "kind": "standard",
+      "difficulty": "easy",
+      "answer_type": "single",
+      "stem": "Two numbers are in the ratio 8:4 and their sum is 264. Find the larger number.",
+      "explanation": "Larger = 264 × 8/12 = 176.",
+      "options": [
+        {
+          "label": "176",
+          "is_correct": true
+        },
+        {
+          "label": "178",
+          "is_correct": false
+        },
+        {
+          "label": "180",
+          "is_correct": false
+        },
+        {
+          "label": "174",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Ratio and Proportion",
+      "kind": "standard",
+      "difficulty": "easy",
+      "answer_type": "single",
+      "stem": "Find the fourth proportional to 6, 7 and 12.",
+      "explanation": "Fourth proportional = (7 × 12)/6 = 14.",
+      "options": [
+        {
+          "label": "14",
+          "is_correct": true
+        },
+        {
+          "label": "15",
+          "is_correct": false
+        },
+        {
+          "label": "13",
+          "is_correct": false
+        },
+        {
+          "label": "16",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Ratio and Proportion",
+      "kind": "standard",
+      "difficulty": "easy",
+      "answer_type": "single",
+      "stem": "Divide ₹480 between two persons in the ratio 7:9. Find the larger share.",
+      "explanation": "Total parts = 16; larger share = ₹480 × 9/16 = ₹270.",
+      "options": [
+        {
+          "label": "₹281",
+          "is_correct": false
+        },
+        {
+          "label": "₹292",
+          "is_correct": false
+        },
+        {
+          "label": "₹270",
+          "is_correct": true
+        },
+        {
+          "label": "₹259",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Ratio and Proportion",
+      "kind": "standard",
+      "difficulty": "easy",
+      "answer_type": "single",
+      "stem": "Divide ₹376 between two persons in the ratio 6:2. Find the larger share.",
+      "explanation": "Total parts = 8; larger share = ₹376 × 6/8 = ₹282.",
+      "options": [
+        {
+          "label": "₹271",
+          "is_correct": false
+        },
+        {
+          "label": "₹304",
+          "is_correct": false
+        },
+        {
+          "label": "₹293",
+          "is_correct": false
+        },
+        {
+          "label": "₹282",
+          "is_correct": true
+        }
+      ]
+    },
+    {
+      "chapter": "Ratio and Proportion",
+      "kind": "standard",
+      "difficulty": "easy",
+      "answer_type": "single",
+      "stem": "Divide ₹50 between two persons in the ratio 3:2. Find the larger share.",
+      "explanation": "Total parts = 5; larger share = ₹50 × 3/5 = ₹30.",
+      "options": [
+        {
+          "label": "₹29",
+          "is_correct": false
+        },
+        {
+          "label": "₹30",
+          "is_correct": true
+        },
+        {
+          "label": "₹31",
+          "is_correct": false
+        },
+        {
+          "label": "₹32",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Ratio and Proportion",
+      "kind": "standard",
+      "difficulty": "easy",
+      "answer_type": "single",
+      "stem": "Two numbers are in the ratio 7:9 and their sum is 176. Find the larger number.",
+      "explanation": "Larger = 176 × 9/16 = 99.",
+      "options": [
+        {
+          "label": "99",
+          "is_correct": true
+        },
+        {
+          "label": "103",
+          "is_correct": false
+        },
+        {
+          "label": "101",
+          "is_correct": false
+        },
+        {
+          "label": "97",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Ratio and Proportion",
+      "kind": "standard",
+      "difficulty": "easy",
+      "answer_type": "single",
+      "stem": "Divide ₹187 between two persons in the ratio 4:7. Find the larger share.",
+      "explanation": "Total parts = 11; larger share = ₹187 × 7/11 = ₹119.",
+      "options": [
+        {
+          "label": "₹121",
+          "is_correct": false
+        },
+        {
+          "label": "₹117",
+          "is_correct": false
+        },
+        {
+          "label": "₹123",
+          "is_correct": false
+        },
+        {
+          "label": "₹119",
+          "is_correct": true
+        }
+      ]
+    },
+    {
+      "chapter": "Ratio and Proportion",
+      "kind": "standard",
+      "difficulty": "easy",
+      "answer_type": "single",
+      "stem": "Find the fourth proportional to 9, 2 and 18.",
+      "explanation": "Fourth proportional = (2 × 18)/9 = 4.",
+      "options": [
+        {
+          "label": "4",
+          "is_correct": true
+        },
+        {
+          "label": "3",
+          "is_correct": false
+        },
+        {
+          "label": "6",
+          "is_correct": false
+        },
+        {
+          "label": "5",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Ratio and Proportion",
+      "kind": "standard",
+      "difficulty": "easy",
+      "answer_type": "single",
+      "stem": "Find the fourth proportional to 2, 12 and 14.",
+      "explanation": "Fourth proportional = (12 × 14)/2 = 84.",
+      "options": [
+        {
+          "label": "88",
+          "is_correct": false
+        },
+        {
+          "label": "84",
+          "is_correct": true
+        },
+        {
+          "label": "82",
+          "is_correct": false
+        },
+        {
+          "label": "86",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Ratio and Proportion",
+      "kind": "standard",
+      "difficulty": "easy",
+      "answer_type": "single",
+      "stem": "Find the fourth proportional to 2, 2 and 4.",
+      "explanation": "Fourth proportional = (2 × 4)/2 = 4.",
+      "options": [
+        {
+          "label": "4",
+          "is_correct": true
+        },
+        {
+          "label": "3",
+          "is_correct": false
+        },
+        {
+          "label": "6",
+          "is_correct": false
+        },
+        {
+          "label": "5",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Ratio and Proportion",
+      "kind": "standard",
+      "difficulty": "easy",
+      "answer_type": "single",
+      "stem": "Two numbers are in the ratio 6:7 and their sum is 65. Find the larger number.",
+      "explanation": "Larger = 65 × 7/13 = 35.",
+      "options": [
+        {
+          "label": "36",
+          "is_correct": false
+        },
+        {
+          "label": "35",
+          "is_correct": true
+        },
+        {
+          "label": "34",
+          "is_correct": false
+        },
+        {
+          "label": "37",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Ratio and Proportion",
+      "kind": "standard",
+      "difficulty": "easy",
+      "answer_type": "single",
+      "stem": "Find the fourth proportional to 3, 10 and 15.",
+      "explanation": "Fourth proportional = (10 × 15)/3 = 50.",
+      "options": [
+        {
+          "label": "50",
+          "is_correct": true
+        },
+        {
+          "label": "54",
+          "is_correct": false
+        },
+        {
+          "label": "52",
+          "is_correct": false
+        },
+        {
+          "label": "48",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Ratio and Proportion",
+      "kind": "standard",
+      "difficulty": "easy",
+      "answer_type": "single",
+      "stem": "Two numbers are in the ratio 2:9 and their sum is 253. Find the larger number.",
+      "explanation": "Larger = 253 × 9/11 = 207.",
+      "options": [
+        {
+          "label": "199",
+          "is_correct": false
+        },
+        {
+          "label": "223",
+          "is_correct": false
+        },
+        {
+          "label": "215",
+          "is_correct": false
+        },
+        {
+          "label": "207",
+          "is_correct": true
+        }
+      ]
+    },
+    {
+      "chapter": "Ratio and Proportion",
+      "kind": "standard",
+      "difficulty": "easy",
+      "answer_type": "single",
+      "stem": "Two numbers are in the ratio 9:7 and their sum is 576. Find the larger number.",
+      "explanation": "Larger = 576 × 9/16 = 324.",
+      "options": [
+        {
+          "label": "350",
+          "is_correct": false
+        },
+        {
+          "label": "311",
+          "is_correct": false
+        },
+        {
+          "label": "337",
+          "is_correct": false
+        },
+        {
+          "label": "324",
+          "is_correct": true
+        }
+      ]
+    },
+    {
+      "chapter": "Ratio and Proportion",
+      "kind": "standard",
+      "difficulty": "easy",
+      "answer_type": "single",
+      "stem": "Divide ₹420 between two persons in the ratio 4:6. Find the larger share.",
+      "explanation": "Total parts = 10; larger share = ₹420 × 6/10 = ₹252.",
+      "options": [
+        {
+          "label": "₹242",
+          "is_correct": false
+        },
+        {
+          "label": "₹252",
+          "is_correct": true
+        },
+        {
+          "label": "₹262",
+          "is_correct": false
+        },
+        {
+          "label": "₹272",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Ratio and Proportion",
+      "kind": "standard",
+      "difficulty": "easy",
+      "answer_type": "single",
+      "stem": "Divide ₹564 between two persons in the ratio 9:3. Find the larger share.",
+      "explanation": "Total parts = 12; larger share = ₹564 × 9/12 = ₹423.",
+      "options": [
+        {
+          "label": "₹457",
+          "is_correct": false
+        },
+        {
+          "label": "₹423",
+          "is_correct": true
+        },
+        {
+          "label": "₹406",
+          "is_correct": false
+        },
+        {
+          "label": "₹440",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Ratio and Proportion",
+      "kind": "standard",
+      "difficulty": "easy",
+      "answer_type": "single",
+      "stem": "Find the fourth proportional to 12, 11 and 96.",
+      "explanation": "Fourth proportional = (11 × 96)/12 = 88.",
+      "options": [
+        {
+          "label": "88",
+          "is_correct": true
+        },
+        {
+          "label": "92",
+          "is_correct": false
+        },
+        {
+          "label": "86",
+          "is_correct": false
+        },
+        {
+          "label": "90",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Ratio and Proportion",
+      "kind": "standard",
+      "difficulty": "easy",
+      "answer_type": "single",
+      "stem": "Two numbers are in the ratio 9:3 and their sum is 60. Find the larger number.",
+      "explanation": "Larger = 60 × 9/12 = 45.",
+      "options": [
+        {
+          "label": "43",
+          "is_correct": false
+        },
+        {
+          "label": "47",
+          "is_correct": false
+        },
+        {
+          "label": "45",
+          "is_correct": true
+        },
+        {
+          "label": "49",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Ratio and Proportion",
+      "kind": "standard",
+      "difficulty": "easy",
+      "answer_type": "single",
+      "stem": "Divide ₹180 between two persons in the ratio 3:2. Find the larger share.",
+      "explanation": "Total parts = 5; larger share = ₹180 × 3/5 = ₹108.",
+      "options": [
+        {
+          "label": "₹106",
+          "is_correct": false
+        },
+        {
+          "label": "₹112",
+          "is_correct": false
+        },
+        {
+          "label": "₹108",
+          "is_correct": true
+        },
+        {
+          "label": "₹110",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Ratio and Proportion",
+      "kind": "standard",
+      "difficulty": "easy",
+      "answer_type": "single",
+      "stem": "Find the fourth proportional to 8, 10 and 40.",
+      "explanation": "Fourth proportional = (10 × 40)/8 = 50.",
+      "options": [
+        {
+          "label": "54",
+          "is_correct": false
+        },
+        {
+          "label": "50",
+          "is_correct": true
+        },
+        {
+          "label": "52",
+          "is_correct": false
+        },
+        {
+          "label": "48",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Ratio and Proportion",
+      "kind": "standard",
+      "difficulty": "easy",
+      "answer_type": "single",
+      "stem": "Find the fourth proportional to 8, 10 and 16.",
+      "explanation": "Fourth proportional = (10 × 16)/8 = 20.",
+      "options": [
+        {
+          "label": "21",
+          "is_correct": false
+        },
+        {
+          "label": "19",
+          "is_correct": false
+        },
+        {
+          "label": "22",
+          "is_correct": false
+        },
+        {
+          "label": "20",
+          "is_correct": true
+        }
+      ]
+    },
+    {
+      "chapter": "Ratio and Proportion",
+      "kind": "standard",
+      "difficulty": "easy",
+      "answer_type": "single",
+      "stem": "Find the fourth proportional to 10, 9 and 30.",
+      "explanation": "Fourth proportional = (9 × 30)/10 = 27.",
+      "options": [
+        {
+          "label": "29",
+          "is_correct": false
+        },
+        {
+          "label": "26",
+          "is_correct": false
+        },
+        {
+          "label": "27",
+          "is_correct": true
+        },
+        {
+          "label": "28",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Ratio and Proportion",
+      "kind": "standard",
+      "difficulty": "easy",
+      "answer_type": "single",
+      "stem": "Divide ₹342 between two persons in the ratio 6:3. Find the larger share.",
+      "explanation": "Total parts = 9; larger share = ₹342 × 6/9 = ₹228.",
+      "options": [
+        {
+          "label": "₹237",
+          "is_correct": false
+        },
+        {
+          "label": "₹246",
+          "is_correct": false
+        },
+        {
+          "label": "₹228",
+          "is_correct": true
+        },
+        {
+          "label": "₹219",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Ratio and Proportion",
+      "kind": "standard",
+      "difficulty": "easy",
+      "answer_type": "single",
+      "stem": "Find the fourth proportional to 11, 6 and 44.",
+      "explanation": "Fourth proportional = (6 × 44)/11 = 24.",
+      "options": [
+        {
+          "label": "24",
+          "is_correct": true
+        },
+        {
+          "label": "23",
+          "is_correct": false
+        },
+        {
+          "label": "26",
+          "is_correct": false
+        },
+        {
+          "label": "25",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Ratio and Proportion",
+      "kind": "standard",
+      "difficulty": "easy",
+      "answer_type": "single",
+      "stem": "Divide ₹714 between two persons in the ratio 8:9. Find the larger share.",
+      "explanation": "Total parts = 17; larger share = ₹714 × 9/17 = ₹378.",
+      "options": [
+        {
+          "label": "₹378",
+          "is_correct": true
+        },
+        {
+          "label": "₹393",
+          "is_correct": false
+        },
+        {
+          "label": "₹363",
+          "is_correct": false
+        },
+        {
+          "label": "₹408",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Ratio and Proportion",
+      "kind": "standard",
+      "difficulty": "easy",
+      "answer_type": "single",
+      "stem": "Divide ₹169 between two persons in the ratio 6:7. Find the larger share.",
+      "explanation": "Total parts = 13; larger share = ₹169 × 7/13 = ₹91.",
+      "options": [
+        {
+          "label": "₹93",
+          "is_correct": false
+        },
+        {
+          "label": "₹89",
+          "is_correct": false
+        },
+        {
+          "label": "₹95",
+          "is_correct": false
+        },
+        {
+          "label": "₹91",
+          "is_correct": true
+        }
+      ]
+    },
+    {
+      "chapter": "Ratio and Proportion",
+      "kind": "standard",
+      "difficulty": "easy",
+      "answer_type": "single",
+      "stem": "Divide ₹240 between two persons in the ratio 9:6. Find the larger share.",
+      "explanation": "Total parts = 15; larger share = ₹240 × 9/15 = ₹144.",
+      "options": [
+        {
+          "label": "₹144",
+          "is_correct": true
+        },
+        {
+          "label": "₹148",
+          "is_correct": false
+        },
+        {
+          "label": "₹146",
+          "is_correct": false
+        },
+        {
+          "label": "₹142",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Ratio and Proportion",
+      "kind": "standard",
+      "difficulty": "easy",
+      "answer_type": "single",
+      "stem": "Two numbers are in the ratio 3:4 and their sum is 119. Find the larger number.",
+      "explanation": "Larger = 119 × 4/7 = 68.",
+      "options": [
+        {
+          "label": "66",
+          "is_correct": false
+        },
+        {
+          "label": "72",
+          "is_correct": false
+        },
+        {
+          "label": "70",
+          "is_correct": false
+        },
+        {
+          "label": "68",
+          "is_correct": true
+        }
+      ]
+    },
+    {
+      "chapter": "Ratio and Proportion",
+      "kind": "standard",
+      "difficulty": "easy",
+      "answer_type": "single",
+      "stem": "Find the fourth proportional to 11, 2 and 88.",
+      "explanation": "Fourth proportional = (2 × 88)/11 = 16.",
+      "options": [
+        {
+          "label": "15",
+          "is_correct": false
+        },
+        {
+          "label": "16",
+          "is_correct": true
+        },
+        {
+          "label": "17",
+          "is_correct": false
+        },
+        {
+          "label": "18",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Ratio and Proportion",
+      "kind": "standard",
+      "difficulty": "easy",
+      "answer_type": "single",
+      "stem": "Find the fourth proportional to 4, 9 and 32.",
+      "explanation": "Fourth proportional = (9 × 32)/4 = 72.",
+      "options": [
+        {
+          "label": "76",
+          "is_correct": false
+        },
+        {
+          "label": "74",
+          "is_correct": false
+        },
+        {
+          "label": "72",
+          "is_correct": true
+        },
+        {
+          "label": "70",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Ratio and Proportion",
+      "kind": "standard",
+      "difficulty": "easy",
+      "answer_type": "single",
+      "stem": "Two numbers are in the ratio 4:7 and their sum is 242. Find the larger number.",
+      "explanation": "Larger = 242 × 7/11 = 154.",
+      "options": [
+        {
+          "label": "154",
+          "is_correct": true
+        },
+        {
+          "label": "152",
+          "is_correct": false
+        },
+        {
+          "label": "156",
+          "is_correct": false
+        },
+        {
+          "label": "158",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Ratio and Proportion",
+      "kind": "standard",
+      "difficulty": "easy",
+      "answer_type": "single",
+      "stem": "Find the fourth proportional to 6, 8 and 24.",
+      "explanation": "Fourth proportional = (8 × 24)/6 = 32.",
+      "options": [
+        {
+          "label": "32",
+          "is_correct": true
+        },
+        {
+          "label": "31",
+          "is_correct": false
+        },
+        {
+          "label": "34",
+          "is_correct": false
+        },
+        {
+          "label": "33",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Ratio and Proportion",
+      "kind": "standard",
+      "difficulty": "easy",
+      "answer_type": "single",
+      "stem": "Find the fourth proportional to 3, 7 and 12.",
+      "explanation": "Fourth proportional = (7 × 12)/3 = 28.",
+      "options": [
+        {
+          "label": "28",
+          "is_correct": true
+        },
+        {
+          "label": "30",
+          "is_correct": false
+        },
+        {
+          "label": "27",
+          "is_correct": false
+        },
+        {
+          "label": "29",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Ratio and Proportion",
+      "kind": "standard",
+      "difficulty": "easy",
+      "answer_type": "single",
+      "stem": "Two numbers are in the ratio 5:8 and their sum is 507. Find the larger number.",
+      "explanation": "Larger = 507 × 8/13 = 312.",
+      "options": [
+        {
+          "label": "336",
+          "is_correct": false
+        },
+        {
+          "label": "324",
+          "is_correct": false
+        },
+        {
+          "label": "312",
+          "is_correct": true
+        },
+        {
+          "label": "300",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Ratio and Proportion",
+      "kind": "standard",
+      "difficulty": "easy",
+      "answer_type": "single",
+      "stem": "Find the fourth proportional to 8, 11 and 32.",
+      "explanation": "Fourth proportional = (11 × 32)/8 = 44.",
+      "options": [
+        {
+          "label": "44",
+          "is_correct": true
+        },
+        {
+          "label": "48",
+          "is_correct": false
+        },
+        {
+          "label": "46",
+          "is_correct": false
+        },
+        {
+          "label": "42",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Ratio and Proportion",
+      "kind": "standard",
+      "difficulty": "easy",
+      "answer_type": "single",
+      "stem": "Find the fourth proportional to 12, 5 and 48.",
+      "explanation": "Fourth proportional = (5 × 48)/12 = 20.",
+      "options": [
+        {
+          "label": "22",
+          "is_correct": false
+        },
+        {
+          "label": "19",
+          "is_correct": false
+        },
+        {
+          "label": "20",
+          "is_correct": true
+        },
+        {
+          "label": "21",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Ratio and Proportion",
+      "kind": "standard",
+      "difficulty": "easy",
+      "answer_type": "single",
+      "stem": "Two numbers are in the ratio 7:4 and their sum is 154. Find the larger number.",
+      "explanation": "Larger = 154 × 7/11 = 98.",
+      "options": [
+        {
+          "label": "100",
+          "is_correct": false
+        },
+        {
+          "label": "102",
+          "is_correct": false
+        },
+        {
+          "label": "98",
+          "is_correct": true
+        },
+        {
+          "label": "96",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Ratio and Proportion",
+      "kind": "standard",
+      "difficulty": "easy",
+      "answer_type": "single",
+      "stem": "Two numbers are in the ratio 3:4 and their sum is 266. Find the larger number.",
+      "explanation": "Larger = 266 × 4/7 = 152.",
+      "options": [
+        {
+          "label": "152",
+          "is_correct": true
+        },
+        {
+          "label": "154",
+          "is_correct": false
+        },
+        {
+          "label": "156",
+          "is_correct": false
+        },
+        {
+          "label": "150",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Ratio and Proportion",
+      "kind": "standard",
+      "difficulty": "easy",
+      "answer_type": "single",
+      "stem": "Two numbers are in the ratio 7:3 and their sum is 320. Find the larger number.",
+      "explanation": "Larger = 320 × 7/10 = 224.",
+      "options": [
+        {
+          "label": "224",
+          "is_correct": true
+        },
+        {
+          "label": "233",
+          "is_correct": false
+        },
+        {
+          "label": "215",
+          "is_correct": false
+        },
+        {
+          "label": "242",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Ratio and Proportion",
+      "kind": "standard",
+      "difficulty": "easy",
+      "answer_type": "single",
+      "stem": "Two numbers are in the ratio 9:6 and their sum is 570. Find the larger number.",
+      "explanation": "Larger = 570 × 9/15 = 342.",
+      "options": [
+        {
+          "label": "342",
+          "is_correct": true
+        },
+        {
+          "label": "356",
+          "is_correct": false
+        },
+        {
+          "label": "328",
+          "is_correct": false
+        },
+        {
+          "label": "370",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Ratio and Proportion",
+      "kind": "standard",
+      "difficulty": "easy",
+      "answer_type": "single",
+      "stem": "Find the fourth proportional to 11, 12 and 110.",
+      "explanation": "Fourth proportional = (12 × 110)/11 = 120.",
+      "options": [
+        {
+          "label": "124",
+          "is_correct": false
+        },
+        {
+          "label": "120",
+          "is_correct": true
+        },
+        {
+          "label": "118",
+          "is_correct": false
+        },
+        {
+          "label": "122",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Ratio and Proportion",
+      "kind": "standard",
+      "difficulty": "easy",
+      "answer_type": "single",
+      "stem": "Find the fourth proportional to 6, 5 and 24.",
+      "explanation": "Fourth proportional = (5 × 24)/6 = 20.",
+      "options": [
+        {
+          "label": "20",
+          "is_correct": true
+        },
+        {
+          "label": "19",
+          "is_correct": false
+        },
+        {
+          "label": "22",
+          "is_correct": false
+        },
+        {
+          "label": "21",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Ratio and Proportion",
+      "kind": "standard",
+      "difficulty": "easy",
+      "answer_type": "single",
+      "stem": "Find the fourth proportional to 11, 10 and 22.",
+      "explanation": "Fourth proportional = (10 × 22)/11 = 20.",
+      "options": [
+        {
+          "label": "19",
+          "is_correct": false
+        },
+        {
+          "label": "20",
+          "is_correct": true
+        },
+        {
+          "label": "21",
+          "is_correct": false
+        },
+        {
+          "label": "22",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Ratio and Proportion",
+      "kind": "standard",
+      "difficulty": "easy",
+      "answer_type": "single",
+      "stem": "Divide ₹833 between two persons in the ratio 9:8. Find the larger share.",
+      "explanation": "Total parts = 17; larger share = ₹833 × 9/17 = ₹441.",
+      "options": [
+        {
+          "label": "₹423",
+          "is_correct": false
+        },
+        {
+          "label": "₹477",
+          "is_correct": false
+        },
+        {
+          "label": "₹459",
+          "is_correct": false
+        },
+        {
+          "label": "₹441",
+          "is_correct": true
+        }
+      ]
+    },
+    {
+      "chapter": "Ratio and Proportion",
+      "kind": "standard",
+      "difficulty": "easy",
+      "answer_type": "single",
+      "stem": "Two numbers are in the ratio 5:2 and their sum is 63. Find the larger number.",
+      "explanation": "Larger = 63 × 5/7 = 45.",
+      "options": [
+        {
+          "label": "45",
+          "is_correct": true
+        },
+        {
+          "label": "47",
+          "is_correct": false
+        },
+        {
+          "label": "43",
+          "is_correct": false
+        },
+        {
+          "label": "49",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Ratio and Proportion",
+      "kind": "standard",
+      "difficulty": "medium",
+      "answer_type": "single",
+      "stem": "₹272 is divided among three persons in the ratio 1:3:4. Find the largest share.",
+      "explanation": "Largest share = ₹272 × 4/8 = ₹136.",
+      "options": [
+        {
+          "label": "₹134",
+          "is_correct": false
+        },
+        {
+          "label": "₹136",
+          "is_correct": true
+        },
+        {
+          "label": "₹140",
+          "is_correct": false
+        },
+        {
+          "label": "₹138",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Ratio and Proportion",
+      "kind": "standard",
+      "difficulty": "medium",
+      "answer_type": "single",
+      "stem": "Find the mean proportional between 4 and 100.",
+      "explanation": "Mean proportional = √(4 × 100) = √400 = 20.",
+      "options": [
+        {
+          "label": "19",
+          "is_correct": false
+        },
+        {
+          "label": "21",
+          "is_correct": false
+        },
+        {
+          "label": "20",
+          "is_correct": true
+        },
+        {
+          "label": "22",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Ratio and Proportion",
+      "kind": "standard",
+      "difficulty": "medium",
+      "answer_type": "single",
+      "stem": "Find the mean proportional between 11 and 396.",
+      "explanation": "Mean proportional = √(11 × 396) = √4356 = 66.",
+      "options": [
+        {
+          "label": "64",
+          "is_correct": false
+        },
+        {
+          "label": "66",
+          "is_correct": true
+        },
+        {
+          "label": "68",
+          "is_correct": false
+        },
+        {
+          "label": "70",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Ratio and Proportion",
+      "kind": "standard",
+      "difficulty": "medium",
+      "answer_type": "single",
+      "stem": "₹108 is divided among three persons in the ratio 5:4:3. Find the largest share.",
+      "explanation": "Largest share = ₹108 × 5/12 = ₹45.",
+      "options": [
+        {
+          "label": "₹45",
+          "is_correct": true
+        },
+        {
+          "label": "₹43",
+          "is_correct": false
+        },
+        {
+          "label": "₹47",
+          "is_correct": false
+        },
+        {
+          "label": "₹49",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Ratio and Proportion",
+      "kind": "standard",
+      "difficulty": "medium",
+      "answer_type": "single",
+      "stem": "Find the mean proportional between 12 and 300.",
+      "explanation": "Mean proportional = √(12 × 300) = √3600 = 60.",
+      "options": [
+        {
+          "label": "64",
+          "is_correct": false
+        },
+        {
+          "label": "60",
+          "is_correct": true
+        },
+        {
+          "label": "58",
+          "is_correct": false
+        },
+        {
+          "label": "62",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Ratio and Proportion",
+      "kind": "standard",
+      "difficulty": "medium",
+      "answer_type": "single",
+      "stem": "Find the third proportional to 2 and 8.",
+      "explanation": "Third proportional = 8²/2 = 64/2 = 32.",
+      "options": [
+        {
+          "label": "32",
+          "is_correct": true
+        },
+        {
+          "label": "31",
+          "is_correct": false
+        },
+        {
+          "label": "33",
+          "is_correct": false
+        },
+        {
+          "label": "34",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Ratio and Proportion",
+      "kind": "standard",
+      "difficulty": "medium",
+      "answer_type": "single",
+      "stem": "Find the mean proportional between 11 and 99.",
+      "explanation": "Mean proportional = √(11 × 99) = √1089 = 33.",
+      "options": [
+        {
+          "label": "34",
+          "is_correct": false
+        },
+        {
+          "label": "33",
+          "is_correct": true
+        },
+        {
+          "label": "35",
+          "is_correct": false
+        },
+        {
+          "label": "32",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Ratio and Proportion",
+      "kind": "standard",
+      "difficulty": "medium",
+      "answer_type": "single",
+      "stem": "Find the mean proportional between 2 and 72.",
+      "explanation": "Mean proportional = √(2 × 72) = √144 = 12.",
+      "options": [
+        {
+          "label": "12",
+          "is_correct": true
+        },
+        {
+          "label": "14",
+          "is_correct": false
+        },
+        {
+          "label": "13",
+          "is_correct": false
+        },
+        {
+          "label": "11",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Ratio and Proportion",
+      "kind": "standard",
+      "difficulty": "medium",
+      "answer_type": "single",
+      "stem": "₹117 is divided among three persons in the ratio 5:3:1. Find the largest share.",
+      "explanation": "Largest share = ₹117 × 5/9 = ₹65.",
+      "options": [
+        {
+          "label": "₹69",
+          "is_correct": false
+        },
+        {
+          "label": "₹65",
+          "is_correct": true
+        },
+        {
+          "label": "₹63",
+          "is_correct": false
+        },
+        {
+          "label": "₹67",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Ratio and Proportion",
+      "kind": "standard",
+      "difficulty": "medium",
+      "answer_type": "single",
+      "stem": "Find the mean proportional between 12 and 48.",
+      "explanation": "Mean proportional = √(12 × 48) = √576 = 24.",
+      "options": [
+        {
+          "label": "25",
+          "is_correct": false
+        },
+        {
+          "label": "26",
+          "is_correct": false
+        },
+        {
+          "label": "24",
+          "is_correct": true
+        },
+        {
+          "label": "23",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Ratio and Proportion",
+      "kind": "standard",
+      "difficulty": "medium",
+      "answer_type": "single",
+      "stem": "Find the mean proportional between 8 and 72.",
+      "explanation": "Mean proportional = √(8 × 72) = √576 = 24.",
+      "options": [
+        {
+          "label": "25",
+          "is_correct": false
+        },
+        {
+          "label": "23",
+          "is_correct": false
+        },
+        {
+          "label": "24",
+          "is_correct": true
+        },
+        {
+          "label": "26",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Ratio and Proportion",
+      "kind": "standard",
+      "difficulty": "medium",
+      "answer_type": "single",
+      "stem": "₹99 is divided among three persons in the ratio 2:1:6. Find the largest share.",
+      "explanation": "Largest share = ₹99 × 6/9 = ₹66.",
+      "options": [
+        {
+          "label": "₹70",
+          "is_correct": false
+        },
+        {
+          "label": "₹68",
+          "is_correct": false
+        },
+        {
+          "label": "₹64",
+          "is_correct": false
+        },
+        {
+          "label": "₹66",
+          "is_correct": true
+        }
+      ]
+    },
+    {
+      "chapter": "Ratio and Proportion",
+      "kind": "standard",
+      "difficulty": "medium",
+      "answer_type": "single",
+      "stem": "₹160 is divided among three persons in the ratio 2:4:2. Find the largest share.",
+      "explanation": "Largest share = ₹160 × 4/8 = ₹80.",
+      "options": [
+        {
+          "label": "₹80",
+          "is_correct": true
+        },
+        {
+          "label": "₹82",
+          "is_correct": false
+        },
+        {
+          "label": "₹84",
+          "is_correct": false
+        },
+        {
+          "label": "₹78",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Ratio and Proportion",
+      "kind": "standard",
+      "difficulty": "medium",
+      "answer_type": "single",
+      "stem": "Find the third proportional to 10 and 50.",
+      "explanation": "Third proportional = 50²/10 = 2500/10 = 250.",
+      "options": [
+        {
+          "label": "250",
+          "is_correct": true
+        },
+        {
+          "label": "260",
+          "is_correct": false
+        },
+        {
+          "label": "270",
+          "is_correct": false
+        },
+        {
+          "label": "240",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Ratio and Proportion",
+      "kind": "standard",
+      "difficulty": "medium",
+      "answer_type": "single",
+      "stem": "₹320 is divided among three persons in the ratio 2:4:4. Find the largest share.",
+      "explanation": "Largest share = ₹320 × 4/10 = ₹128.",
+      "options": [
+        {
+          "label": "₹128",
+          "is_correct": true
+        },
+        {
+          "label": "₹126",
+          "is_correct": false
+        },
+        {
+          "label": "₹130",
+          "is_correct": false
+        },
+        {
+          "label": "₹132",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Ratio and Proportion",
+      "kind": "standard",
+      "difficulty": "medium",
+      "answer_type": "single",
+      "stem": "Find the third proportional to 5 and 25.",
+      "explanation": "Third proportional = 25²/5 = 625/5 = 125.",
+      "options": [
+        {
+          "label": "127",
+          "is_correct": false
+        },
+        {
+          "label": "123",
+          "is_correct": false
+        },
+        {
+          "label": "129",
+          "is_correct": false
+        },
+        {
+          "label": "125",
+          "is_correct": true
+        }
+      ]
+    },
+    {
+      "chapter": "Ratio and Proportion",
+      "kind": "standard",
+      "difficulty": "medium",
+      "answer_type": "single",
+      "stem": "Find the mean proportional between 5 and 80.",
+      "explanation": "Mean proportional = √(5 × 80) = √400 = 20.",
+      "options": [
+        {
+          "label": "22",
+          "is_correct": false
+        },
+        {
+          "label": "19",
+          "is_correct": false
+        },
+        {
+          "label": "20",
+          "is_correct": true
+        },
+        {
+          "label": "21",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Ratio and Proportion",
+      "kind": "standard",
+      "difficulty": "medium",
+      "answer_type": "single",
+      "stem": "Find the mean proportional between 3 and 12.",
+      "explanation": "Mean proportional = √(3 × 12) = √36 = 6.",
+      "options": [
+        {
+          "label": "8",
+          "is_correct": false
+        },
+        {
+          "label": "6",
+          "is_correct": true
+        },
+        {
+          "label": "5",
+          "is_correct": false
+        },
+        {
+          "label": "7",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Ratio and Proportion",
+      "kind": "standard",
+      "difficulty": "medium",
+      "answer_type": "single",
+      "stem": "Find the mean proportional between 7 and 112.",
+      "explanation": "Mean proportional = √(7 × 112) = √784 = 28.",
+      "options": [
+        {
+          "label": "29",
+          "is_correct": false
+        },
+        {
+          "label": "28",
+          "is_correct": true
+        },
+        {
+          "label": "30",
+          "is_correct": false
+        },
+        {
+          "label": "27",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Ratio and Proportion",
+      "kind": "standard",
+      "difficulty": "medium",
+      "answer_type": "single",
+      "stem": "Find the third proportional to 6 and 42.",
+      "explanation": "Third proportional = 42²/6 = 1764/6 = 294.",
+      "options": [
+        {
+          "label": "306",
+          "is_correct": false
+        },
+        {
+          "label": "318",
+          "is_correct": false
+        },
+        {
+          "label": "282",
+          "is_correct": false
+        },
+        {
+          "label": "294",
+          "is_correct": true
+        }
+      ]
+    },
+    {
+      "chapter": "Ratio and Proportion",
+      "kind": "standard",
+      "difficulty": "medium",
+      "answer_type": "single",
+      "stem": "Find the third proportional to 10 and 60.",
+      "explanation": "Third proportional = 60²/10 = 3600/10 = 360.",
+      "options": [
+        {
+          "label": "388",
+          "is_correct": false
+        },
+        {
+          "label": "374",
+          "is_correct": false
+        },
+        {
+          "label": "360",
+          "is_correct": true
+        },
+        {
+          "label": "346",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Ratio and Proportion",
+      "kind": "standard",
+      "difficulty": "medium",
+      "answer_type": "single",
+      "stem": "Find the third proportional to 8 and 56.",
+      "explanation": "Third proportional = 56²/8 = 3136/8 = 392.",
+      "options": [
+        {
+          "label": "376",
+          "is_correct": false
+        },
+        {
+          "label": "408",
+          "is_correct": false
+        },
+        {
+          "label": "424",
+          "is_correct": false
+        },
+        {
+          "label": "392",
+          "is_correct": true
+        }
+      ]
+    },
+    {
+      "chapter": "Ratio and Proportion",
+      "kind": "standard",
+      "difficulty": "medium",
+      "answer_type": "single",
+      "stem": "₹180 is divided among three persons in the ratio 3:1:6. Find the largest share.",
+      "explanation": "Largest share = ₹180 × 6/10 = ₹108.",
+      "options": [
+        {
+          "label": "₹106",
+          "is_correct": false
+        },
+        {
+          "label": "₹112",
+          "is_correct": false
+        },
+        {
+          "label": "₹108",
+          "is_correct": true
+        },
+        {
+          "label": "₹110",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Ratio and Proportion",
+      "kind": "standard",
+      "difficulty": "medium",
+      "answer_type": "single",
+      "stem": "Find the third proportional to 6 and 30.",
+      "explanation": "Third proportional = 30²/6 = 900/6 = 150.",
+      "options": [
+        {
+          "label": "148",
+          "is_correct": false
+        },
+        {
+          "label": "152",
+          "is_correct": false
+        },
+        {
+          "label": "154",
+          "is_correct": false
+        },
+        {
+          "label": "150",
+          "is_correct": true
+        }
+      ]
+    },
+    {
+      "chapter": "Ratio and Proportion",
+      "kind": "standard",
+      "difficulty": "medium",
+      "answer_type": "single",
+      "stem": "₹126 is divided among three persons in the ratio 2:6:1. Find the largest share.",
+      "explanation": "Largest share = ₹126 × 6/9 = ₹84.",
+      "options": [
+        {
+          "label": "₹82",
+          "is_correct": false
+        },
+        {
+          "label": "₹88",
+          "is_correct": false
+        },
+        {
+          "label": "₹86",
+          "is_correct": false
+        },
+        {
+          "label": "₹84",
+          "is_correct": true
+        }
+      ]
+    },
+    {
+      "chapter": "Ratio and Proportion",
+      "kind": "standard",
+      "difficulty": "medium",
+      "answer_type": "single",
+      "stem": "Find the mean proportional between 8 and 128.",
+      "explanation": "Mean proportional = √(8 × 128) = √1024 = 32.",
+      "options": [
+        {
+          "label": "34",
+          "is_correct": false
+        },
+        {
+          "label": "33",
+          "is_correct": false
+        },
+        {
+          "label": "32",
+          "is_correct": true
+        },
+        {
+          "label": "31",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Ratio and Proportion",
+      "kind": "standard",
+      "difficulty": "medium",
+      "answer_type": "single",
+      "stem": "Find the mean proportional between 6 and 216.",
+      "explanation": "Mean proportional = √(6 × 216) = √1296 = 36.",
+      "options": [
+        {
+          "label": "37",
+          "is_correct": false
+        },
+        {
+          "label": "38",
+          "is_correct": false
+        },
+        {
+          "label": "36",
+          "is_correct": true
+        },
+        {
+          "label": "35",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Ratio and Proportion",
+      "kind": "standard",
+      "difficulty": "medium",
+      "answer_type": "single",
+      "stem": "₹121 is divided among three persons in the ratio 4:1:6. Find the largest share.",
+      "explanation": "Largest share = ₹121 × 6/11 = ₹66.",
+      "options": [
+        {
+          "label": "₹64",
+          "is_correct": false
+        },
+        {
+          "label": "₹70",
+          "is_correct": false
+        },
+        {
+          "label": "₹66",
+          "is_correct": true
+        },
+        {
+          "label": "₹68",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Ratio and Proportion",
+      "kind": "standard",
+      "difficulty": "medium",
+      "answer_type": "single",
+      "stem": "Find the mean proportional between 9 and 36.",
+      "explanation": "Mean proportional = √(9 × 36) = √324 = 18.",
+      "options": [
+        {
+          "label": "19",
+          "is_correct": false
+        },
+        {
+          "label": "17",
+          "is_correct": false
+        },
+        {
+          "label": "18",
+          "is_correct": true
+        },
+        {
+          "label": "20",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Ratio and Proportion",
+      "kind": "standard",
+      "difficulty": "medium",
+      "answer_type": "single",
+      "stem": "Find the mean proportional between 7 and 63.",
+      "explanation": "Mean proportional = √(7 × 63) = √441 = 21.",
+      "options": [
+        {
+          "label": "23",
+          "is_correct": false
+        },
+        {
+          "label": "22",
+          "is_correct": false
+        },
+        {
+          "label": "20",
+          "is_correct": false
+        },
+        {
+          "label": "21",
+          "is_correct": true
+        }
+      ]
+    },
+    {
+      "chapter": "Ratio and Proportion",
+      "kind": "standard",
+      "difficulty": "medium",
+      "answer_type": "single",
+      "stem": "Find the mean proportional between 9 and 324.",
+      "explanation": "Mean proportional = √(9 × 324) = √2916 = 54.",
+      "options": [
+        {
+          "label": "58",
+          "is_correct": false
+        },
+        {
+          "label": "56",
+          "is_correct": false
+        },
+        {
+          "label": "52",
+          "is_correct": false
+        },
+        {
+          "label": "54",
+          "is_correct": true
+        }
+      ]
+    },
+    {
+      "chapter": "Ratio and Proportion",
+      "kind": "standard",
+      "difficulty": "medium",
+      "answer_type": "single",
+      "stem": "₹66 is divided among three persons in the ratio 1:3:2. Find the largest share.",
+      "explanation": "Largest share = ₹66 × 3/6 = ₹33.",
+      "options": [
+        {
+          "label": "₹35",
+          "is_correct": false
+        },
+        {
+          "label": "₹32",
+          "is_correct": false
+        },
+        {
+          "label": "₹33",
+          "is_correct": true
+        },
+        {
+          "label": "₹34",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Ratio and Proportion",
+      "kind": "standard",
+      "difficulty": "medium",
+      "answer_type": "single",
+      "stem": "Find the third proportional to 10 and 30.",
+      "explanation": "Third proportional = 30²/10 = 900/10 = 90.",
+      "options": [
+        {
+          "label": "92",
+          "is_correct": false
+        },
+        {
+          "label": "90",
+          "is_correct": true
+        },
+        {
+          "label": "94",
+          "is_correct": false
+        },
+        {
+          "label": "88",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Ratio and Proportion",
+      "kind": "standard",
+      "difficulty": "medium",
+      "answer_type": "single",
+      "stem": "Find the third proportional to 5 and 20.",
+      "explanation": "Third proportional = 20²/5 = 400/5 = 80.",
+      "options": [
+        {
+          "label": "82",
+          "is_correct": false
+        },
+        {
+          "label": "80",
+          "is_correct": true
+        },
+        {
+          "label": "78",
+          "is_correct": false
+        },
+        {
+          "label": "84",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Ratio and Proportion",
+      "kind": "standard",
+      "difficulty": "medium",
+      "answer_type": "single",
+      "stem": "Find the third proportional to 3 and 21.",
+      "explanation": "Third proportional = 21²/3 = 441/3 = 147.",
+      "options": [
+        {
+          "label": "147",
+          "is_correct": true
+        },
+        {
+          "label": "149",
+          "is_correct": false
+        },
+        {
+          "label": "145",
+          "is_correct": false
+        },
+        {
+          "label": "151",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Ratio and Proportion",
+      "kind": "standard",
+      "difficulty": "medium",
+      "answer_type": "single",
+      "stem": "₹304 is divided among three persons in the ratio 5:1:2. Find the largest share.",
+      "explanation": "Largest share = ₹304 × 5/8 = ₹190.",
+      "options": [
+        {
+          "label": "₹188",
+          "is_correct": false
+        },
+        {
+          "label": "₹194",
+          "is_correct": false
+        },
+        {
+          "label": "₹190",
+          "is_correct": true
+        },
+        {
+          "label": "₹192",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Ratio and Proportion",
+      "kind": "standard",
+      "difficulty": "medium",
+      "answer_type": "single",
+      "stem": "₹240 is divided among three persons in the ratio 4:5:1. Find the largest share.",
+      "explanation": "Largest share = ₹240 × 5/10 = ₹120.",
+      "options": [
+        {
+          "label": "₹124",
+          "is_correct": false
+        },
+        {
+          "label": "₹118",
+          "is_correct": false
+        },
+        {
+          "label": "₹120",
+          "is_correct": true
+        },
+        {
+          "label": "₹122",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Ratio and Proportion",
+      "kind": "standard",
+      "difficulty": "medium",
+      "answer_type": "single",
+      "stem": "Find the third proportional to 5 and 40.",
+      "explanation": "Third proportional = 40²/5 = 1600/5 = 320.",
+      "options": [
+        {
+          "label": "346",
+          "is_correct": false
+        },
+        {
+          "label": "320",
+          "is_correct": true
+        },
+        {
+          "label": "307",
+          "is_correct": false
+        },
+        {
+          "label": "333",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Ratio and Proportion",
+      "kind": "standard",
+      "difficulty": "medium",
+      "answer_type": "single",
+      "stem": "Find the mean proportional between 2 and 8.",
+      "explanation": "Mean proportional = √(2 × 8) = √16 = 4.",
+      "options": [
+        {
+          "label": "4",
+          "is_correct": true
+        },
+        {
+          "label": "6",
+          "is_correct": false
+        },
+        {
+          "label": "3",
+          "is_correct": false
+        },
+        {
+          "label": "5",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Ratio and Proportion",
+      "kind": "standard",
+      "difficulty": "medium",
+      "answer_type": "single",
+      "stem": "₹117 is divided among three persons in the ratio 4:3:2. Find the largest share.",
+      "explanation": "Largest share = ₹117 × 4/9 = ₹52.",
+      "options": [
+        {
+          "label": "₹52",
+          "is_correct": true
+        },
+        {
+          "label": "₹56",
+          "is_correct": false
+        },
+        {
+          "label": "₹50",
+          "is_correct": false
+        },
+        {
+          "label": "₹54",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Ratio and Proportion",
+      "kind": "standard",
+      "difficulty": "medium",
+      "answer_type": "single",
+      "stem": "₹200 is divided among three persons in the ratio 3:1:1. Find the largest share.",
+      "explanation": "Largest share = ₹200 × 3/5 = ₹120.",
+      "options": [
+        {
+          "label": "₹118",
+          "is_correct": false
+        },
+        {
+          "label": "₹120",
+          "is_correct": true
+        },
+        {
+          "label": "₹124",
+          "is_correct": false
+        },
+        {
+          "label": "₹122",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Ratio and Proportion",
+      "kind": "standard",
+      "difficulty": "medium",
+      "answer_type": "single",
+      "stem": "₹286 is divided among three persons in the ratio 5:3:5. Find the largest share.",
+      "explanation": "Largest share = ₹286 × 5/13 = ₹110.",
+      "options": [
+        {
+          "label": "₹114",
+          "is_correct": false
+        },
+        {
+          "label": "₹108",
+          "is_correct": false
+        },
+        {
+          "label": "₹112",
+          "is_correct": false
+        },
+        {
+          "label": "₹110",
+          "is_correct": true
+        }
+      ]
+    },
+    {
+      "chapter": "Ratio and Proportion",
+      "kind": "standard",
+      "difficulty": "medium",
+      "answer_type": "single",
+      "stem": "₹435 is divided among three persons in the ratio 5:4:6. Find the largest share.",
+      "explanation": "Largest share = ₹435 × 6/15 = ₹174.",
+      "options": [
+        {
+          "label": "₹178",
+          "is_correct": false
+        },
+        {
+          "label": "₹172",
+          "is_correct": false
+        },
+        {
+          "label": "₹176",
+          "is_correct": false
+        },
+        {
+          "label": "₹174",
+          "is_correct": true
+        }
+      ]
+    },
+    {
+      "chapter": "Ratio and Proportion",
+      "kind": "standard",
+      "difficulty": "medium",
+      "answer_type": "single",
+      "stem": "₹324 is divided among three persons in the ratio 4:2:6. Find the largest share.",
+      "explanation": "Largest share = ₹324 × 6/12 = ₹162.",
+      "options": [
+        {
+          "label": "₹160",
+          "is_correct": false
+        },
+        {
+          "label": "₹164",
+          "is_correct": false
+        },
+        {
+          "label": "₹162",
+          "is_correct": true
+        },
+        {
+          "label": "₹166",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Ratio and Proportion",
+      "kind": "standard",
+      "difficulty": "medium",
+      "answer_type": "single",
+      "stem": "₹266 is divided among three persons in the ratio 5:6:3. Find the largest share.",
+      "explanation": "Largest share = ₹266 × 6/14 = ₹114.",
+      "options": [
+        {
+          "label": "₹112",
+          "is_correct": false
+        },
+        {
+          "label": "₹118",
+          "is_correct": false
+        },
+        {
+          "label": "₹116",
+          "is_correct": false
+        },
+        {
+          "label": "₹114",
+          "is_correct": true
+        }
+      ]
+    },
+    {
+      "chapter": "Ratio and Proportion",
+      "kind": "standard",
+      "difficulty": "medium",
+      "answer_type": "single",
+      "stem": "Find the third proportional to 7 and 35.",
+      "explanation": "Third proportional = 35²/7 = 1225/7 = 175.",
+      "options": [
+        {
+          "label": "175",
+          "is_correct": true
+        },
+        {
+          "label": "173",
+          "is_correct": false
+        },
+        {
+          "label": "177",
+          "is_correct": false
+        },
+        {
+          "label": "179",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Ratio and Proportion",
+      "kind": "standard",
+      "difficulty": "medium",
+      "answer_type": "single",
+      "stem": "₹408 is divided among three persons in the ratio 6:6:5. Find the largest share.",
+      "explanation": "Largest share = ₹408 × 6/17 = ₹144.",
+      "options": [
+        {
+          "label": "₹146",
+          "is_correct": false
+        },
+        {
+          "label": "₹144",
+          "is_correct": true
+        },
+        {
+          "label": "₹142",
+          "is_correct": false
+        },
+        {
+          "label": "₹148",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Ratio and Proportion",
+      "kind": "standard",
+      "difficulty": "medium",
+      "answer_type": "single",
+      "stem": "Find the mean proportional between 4 and 144.",
+      "explanation": "Mean proportional = √(4 × 144) = √576 = 24.",
+      "options": [
+        {
+          "label": "24",
+          "is_correct": true
+        },
+        {
+          "label": "25",
+          "is_correct": false
+        },
+        {
+          "label": "23",
+          "is_correct": false
+        },
+        {
+          "label": "26",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Ratio and Proportion",
+      "kind": "standard",
+      "difficulty": "medium",
+      "answer_type": "single",
+      "stem": "Find the third proportional to 10 and 20.",
+      "explanation": "Third proportional = 20²/10 = 400/10 = 40.",
+      "options": [
+        {
+          "label": "44",
+          "is_correct": false
+        },
+        {
+          "label": "42",
+          "is_correct": false
+        },
+        {
+          "label": "38",
+          "is_correct": false
+        },
+        {
+          "label": "40",
+          "is_correct": true
+        }
+      ]
+    },
+    {
+      "chapter": "Ratio and Proportion",
+      "kind": "standard",
+      "difficulty": "medium",
+      "answer_type": "single",
+      "stem": "Find the third proportional to 6 and 36.",
+      "explanation": "Third proportional = 36²/6 = 1296/6 = 216.",
+      "options": [
+        {
+          "label": "207",
+          "is_correct": false
+        },
+        {
+          "label": "216",
+          "is_correct": true
+        },
+        {
+          "label": "234",
+          "is_correct": false
+        },
+        {
+          "label": "225",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Ratio and Proportion",
+      "kind": "standard",
+      "difficulty": "hard",
+      "answer_type": "single",
+      "stem": "Two numbers are in the ratio 3:2 and their difference is 15. Find the smaller number.",
+      "explanation": "The difference is (3−2) = 1 parts = 15, so one part = 15; smaller number = 2 × 15 = 30.",
+      "options": [
+        {
+          "label": "31",
+          "is_correct": false
+        },
+        {
+          "label": "29",
+          "is_correct": false
+        },
+        {
+          "label": "32",
+          "is_correct": false
+        },
+        {
+          "label": "30",
+          "is_correct": true
+        }
+      ]
+    },
+    {
+      "chapter": "Ratio and Proportion",
+      "kind": "standard",
+      "difficulty": "hard",
+      "answer_type": "single",
+      "stem": "If A:B = 3:4 and B:C = 1:3, and ₹114 is divided among A, B and C in the combined ratio, find C's share.",
+      "explanation": "A:B:C = 3:4:12; C's share = ₹114 × 12/19 = ₹72.",
+      "options": [
+        {
+          "label": "₹74",
+          "is_correct": false
+        },
+        {
+          "label": "₹70",
+          "is_correct": false
+        },
+        {
+          "label": "₹76",
+          "is_correct": false
+        },
+        {
+          "label": "₹72",
+          "is_correct": true
+        }
+      ]
+    },
+    {
+      "chapter": "Ratio and Proportion",
+      "kind": "standard",
+      "difficulty": "hard",
+      "answer_type": "single",
+      "stem": "Two numbers are in the ratio 9:1 and their difference is 184. Find the smaller number.",
+      "explanation": "The difference is (9−1) = 8 parts = 184, so one part = 23; smaller number = 1 × 23 = 23.",
+      "options": [
+        {
+          "label": "23",
+          "is_correct": true
+        },
+        {
+          "label": "22",
+          "is_correct": false
+        },
+        {
+          "label": "24",
+          "is_correct": false
+        },
+        {
+          "label": "25",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Ratio and Proportion",
+      "kind": "standard",
+      "difficulty": "hard",
+      "answer_type": "single",
+      "stem": "Two numbers are in the ratio 5:3 and their difference is 20. Find the smaller number.",
+      "explanation": "The difference is (5−3) = 2 parts = 20, so one part = 10; smaller number = 3 × 10 = 30.",
+      "options": [
+        {
+          "label": "31",
+          "is_correct": false
+        },
+        {
+          "label": "32",
+          "is_correct": false
+        },
+        {
+          "label": "30",
+          "is_correct": true
+        },
+        {
+          "label": "29",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Ratio and Proportion",
+      "kind": "standard",
+      "difficulty": "hard",
+      "answer_type": "single",
+      "stem": "Two numbers are in the ratio 3:2 and their difference is 11. Find the smaller number.",
+      "explanation": "The difference is (3−2) = 1 parts = 11, so one part = 11; smaller number = 2 × 11 = 22.",
+      "options": [
+        {
+          "label": "24",
+          "is_correct": false
+        },
+        {
+          "label": "23",
+          "is_correct": false
+        },
+        {
+          "label": "21",
+          "is_correct": false
+        },
+        {
+          "label": "22",
+          "is_correct": true
+        }
+      ]
+    },
+    {
+      "chapter": "Ratio and Proportion",
+      "kind": "standard",
+      "difficulty": "hard",
+      "answer_type": "single",
+      "stem": "If A:B = 2:4 and B:C = 3:3, and ₹420 is divided among A, B and C in the combined ratio, find C's share.",
+      "explanation": "A:B:C = 6:12:12; C's share = ₹420 × 12/30 = ₹168.",
+      "options": [
+        {
+          "label": "₹172",
+          "is_correct": false
+        },
+        {
+          "label": "₹168",
+          "is_correct": true
+        },
+        {
+          "label": "₹170",
+          "is_correct": false
+        },
+        {
+          "label": "₹166",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Ratio and Proportion",
+      "kind": "standard",
+      "difficulty": "hard",
+      "answer_type": "single",
+      "stem": "Two numbers are in the ratio 8:2 and their difference is 84. Find the smaller number.",
+      "explanation": "The difference is (8−2) = 6 parts = 84, so one part = 14; smaller number = 2 × 14 = 28.",
+      "options": [
+        {
+          "label": "28",
+          "is_correct": true
+        },
+        {
+          "label": "29",
+          "is_correct": false
+        },
+        {
+          "label": "27",
+          "is_correct": false
+        },
+        {
+          "label": "30",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Ratio and Proportion",
+      "kind": "standard",
+      "difficulty": "hard",
+      "answer_type": "single",
+      "stem": "If A:B = 2:4 and B:C = 1:1, and ₹150 is divided among A, B and C in the combined ratio, find C's share.",
+      "explanation": "A:B:C = 2:4:4; C's share = ₹150 × 4/10 = ₹60.",
+      "options": [
+        {
+          "label": "₹58",
+          "is_correct": false
+        },
+        {
+          "label": "₹62",
+          "is_correct": false
+        },
+        {
+          "label": "₹64",
+          "is_correct": false
+        },
+        {
+          "label": "₹60",
+          "is_correct": true
+        }
+      ]
+    },
+    {
+      "chapter": "Ratio and Proportion",
+      "kind": "standard",
+      "difficulty": "hard",
+      "answer_type": "single",
+      "stem": "A 240-litre mixture contains milk and water in the ratio 4:6. Find the quantity of water in it.",
+      "explanation": "Water = 240 × 6/10 = 144 litres.",
+      "options": [
+        {
+          "label": "148 litres",
+          "is_correct": false
+        },
+        {
+          "label": "146 litres",
+          "is_correct": false
+        },
+        {
+          "label": "142 litres",
+          "is_correct": false
+        },
+        {
+          "label": "144 litres",
+          "is_correct": true
+        }
+      ]
+    },
+    {
+      "chapter": "Ratio and Proportion",
+      "kind": "standard",
+      "difficulty": "hard",
+      "answer_type": "single",
+      "stem": "A 270-litre mixture contains milk and water in the ratio 6:3. Find the quantity of water in it.",
+      "explanation": "Water = 270 × 3/9 = 90 litres.",
+      "options": [
+        {
+          "label": "88 litres",
+          "is_correct": false
+        },
+        {
+          "label": "94 litres",
+          "is_correct": false
+        },
+        {
+          "label": "90 litres",
+          "is_correct": true
+        },
+        {
+          "label": "92 litres",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Ratio and Proportion",
+      "kind": "standard",
+      "difficulty": "hard",
+      "answer_type": "single",
+      "stem": "Two numbers are in the ratio 5:1 and their difference is 68. Find the smaller number.",
+      "explanation": "The difference is (5−1) = 4 parts = 68, so one part = 17; smaller number = 1 × 17 = 17.",
+      "options": [
+        {
+          "label": "16",
+          "is_correct": false
+        },
+        {
+          "label": "17",
+          "is_correct": true
+        },
+        {
+          "label": "18",
+          "is_correct": false
+        },
+        {
+          "label": "19",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Ratio and Proportion",
+      "kind": "standard",
+      "difficulty": "hard",
+      "answer_type": "single",
+      "stem": "A 143-litre mixture contains milk and water in the ratio 9:2. Find the quantity of water in it.",
+      "explanation": "Water = 143 × 2/11 = 26 litres.",
+      "options": [
+        {
+          "label": "25 litres",
+          "is_correct": false
+        },
+        {
+          "label": "27 litres",
+          "is_correct": false
+        },
+        {
+          "label": "26 litres",
+          "is_correct": true
+        },
+        {
+          "label": "28 litres",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Ratio and Proportion",
+      "kind": "standard",
+      "difficulty": "hard",
+      "answer_type": "single",
+      "stem": "Two numbers are in the ratio 6:5 and their difference is 38. Find the smaller number.",
+      "explanation": "The difference is (6−5) = 1 parts = 38, so one part = 38; smaller number = 5 × 38 = 190.",
+      "options": [
+        {
+          "label": "192",
+          "is_correct": false
+        },
+        {
+          "label": "188",
+          "is_correct": false
+        },
+        {
+          "label": "194",
+          "is_correct": false
+        },
+        {
+          "label": "190",
+          "is_correct": true
+        }
+      ]
+    },
+    {
+      "chapter": "Ratio and Proportion",
+      "kind": "standard",
+      "difficulty": "hard",
+      "answer_type": "single",
+      "stem": "A 140-litre mixture contains milk and water in the ratio 5:5. Find the quantity of water in it.",
+      "explanation": "Water = 140 × 5/10 = 70 litres.",
+      "options": [
+        {
+          "label": "74 litres",
+          "is_correct": false
+        },
+        {
+          "label": "72 litres",
+          "is_correct": false
+        },
+        {
+          "label": "70 litres",
+          "is_correct": true
+        },
+        {
+          "label": "68 litres",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Ratio and Proportion",
+      "kind": "standard",
+      "difficulty": "hard",
+      "answer_type": "single",
+      "stem": "Two numbers are in the ratio 9:2 and their difference is 154. Find the smaller number.",
+      "explanation": "The difference is (9−2) = 7 parts = 154, so one part = 22; smaller number = 2 × 22 = 44.",
+      "options": [
+        {
+          "label": "44",
+          "is_correct": true
+        },
+        {
+          "label": "46",
+          "is_correct": false
+        },
+        {
+          "label": "42",
+          "is_correct": false
+        },
+        {
+          "label": "48",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Ratio and Proportion",
+      "kind": "standard",
+      "difficulty": "hard",
+      "answer_type": "single",
+      "stem": "If A:B = 3:2 and B:C = 2:4, and ₹342 is divided among A, B and C in the combined ratio, find C's share.",
+      "explanation": "A:B:C = 6:4:8; C's share = ₹342 × 8/18 = ₹152.",
+      "options": [
+        {
+          "label": "₹156",
+          "is_correct": false
+        },
+        {
+          "label": "₹150",
+          "is_correct": false
+        },
+        {
+          "label": "₹154",
+          "is_correct": false
+        },
+        {
+          "label": "₹152",
+          "is_correct": true
+        }
+      ]
+    },
+    {
+      "chapter": "Ratio and Proportion",
+      "kind": "standard",
+      "difficulty": "hard",
+      "answer_type": "single",
+      "stem": "Two numbers are in the ratio 3:2 and their difference is 24. Find the smaller number.",
+      "explanation": "The difference is (3−2) = 1 parts = 24, so one part = 24; smaller number = 2 × 24 = 48.",
+      "options": [
+        {
+          "label": "50",
+          "is_correct": false
+        },
+        {
+          "label": "48",
+          "is_correct": true
+        },
+        {
+          "label": "52",
+          "is_correct": false
+        },
+        {
+          "label": "46",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Ratio and Proportion",
+      "kind": "standard",
+      "difficulty": "hard",
+      "answer_type": "single",
+      "stem": "A 189-litre mixture contains milk and water in the ratio 8:1. Find the quantity of water in it.",
+      "explanation": "Water = 189 × 1/9 = 21 litres.",
+      "options": [
+        {
+          "label": "23 litres",
+          "is_correct": false
+        },
+        {
+          "label": "21 litres",
+          "is_correct": true
+        },
+        {
+          "label": "22 litres",
+          "is_correct": false
+        },
+        {
+          "label": "20 litres",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Ratio and Proportion",
+      "kind": "standard",
+      "difficulty": "hard",
+      "answer_type": "single",
+      "stem": "If A:B = 3:1 and B:C = 4:4, and ₹380 is divided among A, B and C in the combined ratio, find C's share.",
+      "explanation": "A:B:C = 12:4:4; C's share = ₹380 × 4/20 = ₹76.",
+      "options": [
+        {
+          "label": "₹80",
+          "is_correct": false
+        },
+        {
+          "label": "₹78",
+          "is_correct": false
+        },
+        {
+          "label": "₹76",
+          "is_correct": true
+        },
+        {
+          "label": "₹74",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Ratio and Proportion",
+      "kind": "standard",
+      "difficulty": "hard",
+      "answer_type": "single",
+      "stem": "Two numbers are in the ratio 9:6 and their difference is 66. Find the smaller number.",
+      "explanation": "The difference is (9−6) = 3 parts = 66, so one part = 22; smaller number = 6 × 22 = 132.",
+      "options": [
+        {
+          "label": "136",
+          "is_correct": false
+        },
+        {
+          "label": "132",
+          "is_correct": true
+        },
+        {
+          "label": "134",
+          "is_correct": false
+        },
+        {
+          "label": "130",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Ratio and Proportion",
+      "kind": "standard",
+      "difficulty": "hard",
+      "answer_type": "single",
+      "stem": "A 240-litre mixture contains milk and water in the ratio 7:5. Find the quantity of water in it.",
+      "explanation": "Water = 240 × 5/12 = 100 litres.",
+      "options": [
+        {
+          "label": "98 litres",
+          "is_correct": false
+        },
+        {
+          "label": "104 litres",
+          "is_correct": false
+        },
+        {
+          "label": "100 litres",
+          "is_correct": true
+        },
+        {
+          "label": "102 litres",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Ratio and Proportion",
+      "kind": "standard",
+      "difficulty": "hard",
+      "answer_type": "single",
+      "stem": "A 140-litre mixture contains milk and water in the ratio 2:3. Find the quantity of water in it.",
+      "explanation": "Water = 140 × 3/5 = 84 litres.",
+      "options": [
+        {
+          "label": "86 litres",
+          "is_correct": false
+        },
+        {
+          "label": "84 litres",
+          "is_correct": true
+        },
+        {
+          "label": "82 litres",
+          "is_correct": false
+        },
+        {
+          "label": "88 litres",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Ratio and Proportion",
+      "kind": "standard",
+      "difficulty": "hard",
+      "answer_type": "single",
+      "stem": "Two numbers are in the ratio 7:2 and their difference is 170. Find the smaller number.",
+      "explanation": "The difference is (7−2) = 5 parts = 170, so one part = 34; smaller number = 2 × 34 = 68.",
+      "options": [
+        {
+          "label": "70",
+          "is_correct": false
+        },
+        {
+          "label": "68",
+          "is_correct": true
+        },
+        {
+          "label": "72",
+          "is_correct": false
+        },
+        {
+          "label": "66",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Ratio and Proportion",
+      "kind": "standard",
+      "difficulty": "hard",
+      "answer_type": "single",
+      "stem": "Two numbers are in the ratio 3:2 and their difference is 33. Find the smaller number.",
+      "explanation": "The difference is (3−2) = 1 parts = 33, so one part = 33; smaller number = 2 × 33 = 66.",
+      "options": [
+        {
+          "label": "68",
+          "is_correct": false
+        },
+        {
+          "label": "70",
+          "is_correct": false
+        },
+        {
+          "label": "66",
+          "is_correct": true
+        },
+        {
+          "label": "64",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Ratio and Proportion",
+      "kind": "standard",
+      "difficulty": "hard",
+      "answer_type": "single",
+      "stem": "If A:B = 1:3 and B:C = 1:2, and ₹80 is divided among A, B and C in the combined ratio, find C's share.",
+      "explanation": "A:B:C = 1:3:6; C's share = ₹80 × 6/10 = ₹48.",
+      "options": [
+        {
+          "label": "₹48",
+          "is_correct": true
+        },
+        {
+          "label": "₹50",
+          "is_correct": false
+        },
+        {
+          "label": "₹52",
+          "is_correct": false
+        },
+        {
+          "label": "₹46",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Ratio and Proportion",
+      "kind": "standard",
+      "difficulty": "hard",
+      "answer_type": "single",
+      "stem": "A 143-litre mixture contains milk and water in the ratio 7:6. Find the quantity of water in it.",
+      "explanation": "Water = 143 × 6/13 = 66 litres.",
+      "options": [
+        {
+          "label": "64 litres",
+          "is_correct": false
+        },
+        {
+          "label": "66 litres",
+          "is_correct": true
+        },
+        {
+          "label": "68 litres",
+          "is_correct": false
+        },
+        {
+          "label": "70 litres",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Ratio and Proportion",
+      "kind": "standard",
+      "difficulty": "hard",
+      "answer_type": "single",
+      "stem": "A 182-litre mixture contains milk and water in the ratio 6:1. Find the quantity of water in it.",
+      "explanation": "Water = 182 × 1/7 = 26 litres.",
+      "options": [
+        {
+          "label": "27 litres",
+          "is_correct": false
+        },
+        {
+          "label": "26 litres",
+          "is_correct": true
+        },
+        {
+          "label": "28 litres",
+          "is_correct": false
+        },
+        {
+          "label": "25 litres",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Ratio and Proportion",
+      "kind": "standard",
+      "difficulty": "hard",
+      "answer_type": "single",
+      "stem": "If A:B = 1:4 and B:C = 1:3, and ₹306 is divided among A, B and C in the combined ratio, find C's share.",
+      "explanation": "A:B:C = 1:4:12; C's share = ₹306 × 12/17 = ₹216.",
+      "options": [
+        {
+          "label": "₹234",
+          "is_correct": false
+        },
+        {
+          "label": "₹207",
+          "is_correct": false
+        },
+        {
+          "label": "₹216",
+          "is_correct": true
+        },
+        {
+          "label": "₹225",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Ratio and Proportion",
+      "kind": "standard",
+      "difficulty": "hard",
+      "answer_type": "single",
+      "stem": "If A:B = 4:1 and B:C = 3:3, and ₹270 is divided among A, B and C in the combined ratio, find C's share.",
+      "explanation": "A:B:C = 12:3:3; C's share = ₹270 × 3/18 = ₹45.",
+      "options": [
+        {
+          "label": "₹47",
+          "is_correct": false
+        },
+        {
+          "label": "₹45",
+          "is_correct": true
+        },
+        {
+          "label": "₹43",
+          "is_correct": false
+        },
+        {
+          "label": "₹49",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Ratio and Proportion",
+      "kind": "standard",
+      "difficulty": "hard",
+      "answer_type": "single",
+      "stem": "If A:B = 4:4 and B:C = 2:2, and ₹408 is divided among A, B and C in the combined ratio, find C's share.",
+      "explanation": "A:B:C = 8:8:8; C's share = ₹408 × 8/24 = ₹136.",
+      "options": [
+        {
+          "label": "₹134",
+          "is_correct": false
+        },
+        {
+          "label": "₹136",
+          "is_correct": true
+        },
+        {
+          "label": "₹140",
+          "is_correct": false
+        },
+        {
+          "label": "₹138",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Ratio and Proportion",
+      "kind": "standard",
+      "difficulty": "hard",
+      "answer_type": "single",
+      "stem": "If A:B = 4:3 and B:C = 2:1, and ₹85 is divided among A, B and C in the combined ratio, find C's share.",
+      "explanation": "A:B:C = 8:6:3; C's share = ₹85 × 3/17 = ₹15.",
+      "options": [
+        {
+          "label": "₹15",
+          "is_correct": true
+        },
+        {
+          "label": "₹14",
+          "is_correct": false
+        },
+        {
+          "label": "₹17",
+          "is_correct": false
+        },
+        {
+          "label": "₹16",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Ratio and Proportion",
+      "kind": "standard",
+      "difficulty": "hard",
+      "answer_type": "single",
+      "stem": "A 174-litre mixture contains milk and water in the ratio 4:2. Find the quantity of water in it.",
+      "explanation": "Water = 174 × 2/6 = 58 litres.",
+      "options": [
+        {
+          "label": "62 litres",
+          "is_correct": false
+        },
+        {
+          "label": "58 litres",
+          "is_correct": true
+        },
+        {
+          "label": "56 litres",
+          "is_correct": false
+        },
+        {
+          "label": "60 litres",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Ratio and Proportion",
+      "kind": "standard",
+      "difficulty": "hard",
+      "answer_type": "single",
+      "stem": "If A:B = 3:2 and B:C = 3:4, and ₹184 is divided among A, B and C in the combined ratio, find C's share.",
+      "explanation": "A:B:C = 9:6:8; C's share = ₹184 × 8/23 = ₹64.",
+      "options": [
+        {
+          "label": "₹66",
+          "is_correct": false
+        },
+        {
+          "label": "₹64",
+          "is_correct": true
+        },
+        {
+          "label": "₹62",
+          "is_correct": false
+        },
+        {
+          "label": "₹68",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Ratio and Proportion",
+      "kind": "standard",
+      "difficulty": "hard",
+      "answer_type": "single",
+      "stem": "If A:B = 3:4 and B:C = 4:2, and ₹432 is divided among A, B and C in the combined ratio, find C's share.",
+      "explanation": "A:B:C = 12:16:8; C's share = ₹432 × 8/36 = ₹96.",
+      "options": [
+        {
+          "label": "₹98",
+          "is_correct": false
+        },
+        {
+          "label": "₹94",
+          "is_correct": false
+        },
+        {
+          "label": "₹100",
+          "is_correct": false
+        },
+        {
+          "label": "₹96",
+          "is_correct": true
+        }
+      ]
+    },
+    {
+      "chapter": "Ratio and Proportion",
+      "kind": "standard",
+      "difficulty": "hard",
+      "answer_type": "single",
+      "stem": "If A:B = 4:4 and B:C = 1:3, and ₹280 is divided among A, B and C in the combined ratio, find C's share.",
+      "explanation": "A:B:C = 4:4:12; C's share = ₹280 × 12/20 = ₹168.",
+      "options": [
+        {
+          "label": "₹168",
+          "is_correct": true
+        },
+        {
+          "label": "₹170",
+          "is_correct": false
+        },
+        {
+          "label": "₹166",
+          "is_correct": false
+        },
+        {
+          "label": "₹172",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Ratio and Proportion",
+      "kind": "standard",
+      "difficulty": "hard",
+      "answer_type": "single",
+      "stem": "A 180-litre mixture contains milk and water in the ratio 5:4. Find the quantity of water in it.",
+      "explanation": "Water = 180 × 4/9 = 80 litres.",
+      "options": [
+        {
+          "label": "84 litres",
+          "is_correct": false
+        },
+        {
+          "label": "78 litres",
+          "is_correct": false
+        },
+        {
+          "label": "82 litres",
+          "is_correct": false
+        },
+        {
+          "label": "80 litres",
+          "is_correct": true
+        }
+      ]
+    },
+    {
+      "chapter": "Ratio and Proportion",
+      "kind": "standard",
+      "difficulty": "hard",
+      "answer_type": "single",
+      "stem": "If A:B = 2:1 and B:C = 1:1, and ₹24 is divided among A, B and C in the combined ratio, find C's share.",
+      "explanation": "A:B:C = 2:1:1; C's share = ₹24 × 1/4 = ₹6.",
+      "options": [
+        {
+          "label": "₹7",
+          "is_correct": false
+        },
+        {
+          "label": "₹5",
+          "is_correct": false
+        },
+        {
+          "label": "₹8",
+          "is_correct": false
+        },
+        {
+          "label": "₹6",
+          "is_correct": true
+        }
+      ]
+    },
+    {
+      "chapter": "Ratio and Proportion",
+      "kind": "standard",
+      "difficulty": "hard",
+      "answer_type": "single",
+      "stem": "Two numbers are in the ratio 9:8 and their difference is 34. Find the smaller number.",
+      "explanation": "The difference is (9−8) = 1 parts = 34, so one part = 34; smaller number = 8 × 34 = 272.",
+      "options": [
+        {
+          "label": "294",
+          "is_correct": false
+        },
+        {
+          "label": "283",
+          "is_correct": false
+        },
+        {
+          "label": "261",
+          "is_correct": false
+        },
+        {
+          "label": "272",
+          "is_correct": true
+        }
+      ]
+    },
+    {
+      "chapter": "Ratio and Proportion",
+      "kind": "standard",
+      "difficulty": "hard",
+      "answer_type": "single",
+      "stem": "Two numbers are in the ratio 5:4 and their difference is 12. Find the smaller number.",
+      "explanation": "The difference is (5−4) = 1 parts = 12, so one part = 12; smaller number = 4 × 12 = 48.",
+      "options": [
+        {
+          "label": "50",
+          "is_correct": false
+        },
+        {
+          "label": "52",
+          "is_correct": false
+        },
+        {
+          "label": "48",
+          "is_correct": true
+        },
+        {
+          "label": "46",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Ratio and Proportion",
+      "kind": "standard",
+      "difficulty": "hard",
+      "answer_type": "single",
+      "stem": "Two numbers are in the ratio 7:6 and their difference is 9. Find the smaller number.",
+      "explanation": "The difference is (7−6) = 1 parts = 9, so one part = 9; smaller number = 6 × 9 = 54.",
+      "options": [
+        {
+          "label": "54",
+          "is_correct": true
+        },
+        {
+          "label": "52",
+          "is_correct": false
+        },
+        {
+          "label": "56",
+          "is_correct": false
+        },
+        {
+          "label": "58",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Ratio and Proportion",
+      "kind": "standard",
+      "difficulty": "hard",
+      "answer_type": "single",
+      "stem": "If A:B = 1:4 and B:C = 1:3, and ₹136 is divided among A, B and C in the combined ratio, find C's share.",
+      "explanation": "A:B:C = 1:4:12; C's share = ₹136 × 12/17 = ₹96.",
+      "options": [
+        {
+          "label": "₹98",
+          "is_correct": false
+        },
+        {
+          "label": "₹96",
+          "is_correct": true
+        },
+        {
+          "label": "₹94",
+          "is_correct": false
+        },
+        {
+          "label": "₹100",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Ratio and Proportion",
+      "kind": "standard",
+      "difficulty": "hard",
+      "answer_type": "single",
+      "stem": "If A:B = 3:1 and B:C = 4:1, and ₹255 is divided among A, B and C in the combined ratio, find C's share.",
+      "explanation": "A:B:C = 12:4:1; C's share = ₹255 × 1/17 = ₹15.",
+      "options": [
+        {
+          "label": "₹17",
+          "is_correct": false
+        },
+        {
+          "label": "₹16",
+          "is_correct": false
+        },
+        {
+          "label": "₹15",
+          "is_correct": true
+        },
+        {
+          "label": "₹14",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Ratio and Proportion",
+      "kind": "standard",
+      "difficulty": "hard",
+      "answer_type": "single",
+      "stem": "If A:B = 3:3 and B:C = 4:2, and ₹660 is divided among A, B and C in the combined ratio, find C's share.",
+      "explanation": "A:B:C = 12:12:6; C's share = ₹660 × 6/30 = ₹132.",
+      "options": [
+        {
+          "label": "₹132",
+          "is_correct": true
+        },
+        {
+          "label": "₹130",
+          "is_correct": false
+        },
+        {
+          "label": "₹134",
+          "is_correct": false
+        },
+        {
+          "label": "₹136",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Ratio and Proportion",
+      "kind": "standard",
+      "difficulty": "hard",
+      "answer_type": "single",
+      "stem": "If A:B = 4:3 and B:C = 3:1, and ₹288 is divided among A, B and C in the combined ratio, find C's share.",
+      "explanation": "A:B:C = 12:9:3; C's share = ₹288 × 3/24 = ₹36.",
+      "options": [
+        {
+          "label": "₹37",
+          "is_correct": false
+        },
+        {
+          "label": "₹36",
+          "is_correct": true
+        },
+        {
+          "label": "₹38",
+          "is_correct": false
+        },
+        {
+          "label": "₹35",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Ratio and Proportion",
+      "kind": "standard",
+      "difficulty": "hard",
+      "answer_type": "single",
+      "stem": "A 112-litre mixture contains milk and water in the ratio 2:2. Find the quantity of water in it.",
+      "explanation": "Water = 112 × 2/4 = 56 litres.",
+      "options": [
+        {
+          "label": "54 litres",
+          "is_correct": false
+        },
+        {
+          "label": "58 litres",
+          "is_correct": false
+        },
+        {
+          "label": "56 litres",
+          "is_correct": true
+        },
+        {
+          "label": "60 litres",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Ratio and Proportion",
+      "kind": "standard",
+      "difficulty": "hard",
+      "answer_type": "single",
+      "stem": "A 180-litre mixture contains milk and water in the ratio 3:7. Find the quantity of water in it.",
+      "explanation": "Water = 180 × 7/10 = 126 litres.",
+      "options": [
+        {
+          "label": "126 litres",
+          "is_correct": true
+        },
+        {
+          "label": "130 litres",
+          "is_correct": false
+        },
+        {
+          "label": "128 litres",
+          "is_correct": false
+        },
+        {
+          "label": "124 litres",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Ratio and Proportion",
+      "kind": "standard",
+      "difficulty": "hard",
+      "answer_type": "single",
+      "stem": "A 140-litre mixture contains milk and water in the ratio 3:2. Find the quantity of water in it.",
+      "explanation": "Water = 140 × 2/5 = 56 litres.",
+      "options": [
+        {
+          "label": "54 litres",
+          "is_correct": false
+        },
+        {
+          "label": "58 litres",
+          "is_correct": false
+        },
+        {
+          "label": "56 litres",
+          "is_correct": true
+        },
+        {
+          "label": "60 litres",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Ratio and Proportion",
+      "kind": "standard",
+      "difficulty": "hard",
+      "answer_type": "single",
+      "stem": "Two numbers are in the ratio 9:3 and their difference is 120. Find the smaller number.",
+      "explanation": "The difference is (9−3) = 6 parts = 120, so one part = 20; smaller number = 3 × 20 = 60.",
+      "options": [
+        {
+          "label": "62",
+          "is_correct": false
+        },
+        {
+          "label": "64",
+          "is_correct": false
+        },
+        {
+          "label": "58",
+          "is_correct": false
+        },
+        {
+          "label": "60",
+          "is_correct": true
+        }
+      ]
+    },
+    {
+      "chapter": "Ratio and Proportion",
+      "kind": "standard",
+      "difficulty": "hard",
+      "answer_type": "single",
+      "stem": "A 221-litre mixture contains milk and water in the ratio 7:6. Find the quantity of water in it.",
+      "explanation": "Water = 221 × 6/13 = 102 litres.",
+      "options": [
+        {
+          "label": "100 litres",
+          "is_correct": false
+        },
+        {
+          "label": "104 litres",
+          "is_correct": false
+        },
+        {
+          "label": "102 litres",
+          "is_correct": true
+        },
+        {
+          "label": "106 litres",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Ratio and Proportion",
+      "kind": "standard",
+      "difficulty": "hard",
+      "answer_type": "single",
+      "stem": "If A:B = 1:1 and B:C = 4:2, and ₹140 is divided among A, B and C in the combined ratio, find C's share.",
+      "explanation": "A:B:C = 4:4:2; C's share = ₹140 × 2/10 = ₹28.",
+      "options": [
+        {
+          "label": "₹28",
+          "is_correct": true
+        },
+        {
+          "label": "₹29",
+          "is_correct": false
+        },
+        {
+          "label": "₹27",
+          "is_correct": false
+        },
+        {
+          "label": "₹30",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Ratio and Proportion",
+      "kind": "standard",
+      "difficulty": "very_hard",
+      "answer_type": "single",
+      "stem": "The ratio of two numbers is 6:5. When 15 is added to each, the ratio becomes 39:35. Find the larger of the two original numbers.",
+      "explanation": "The numbers are 24 and 20; adding 15 gives 39 and 35, i.e. 39:35. The larger original number is 24.",
+      "options": [
+        {
+          "label": "23",
+          "is_correct": false
+        },
+        {
+          "label": "25",
+          "is_correct": false
+        },
+        {
+          "label": "26",
+          "is_correct": false
+        },
+        {
+          "label": "24",
+          "is_correct": true
+        }
+      ]
+    },
+    {
+      "chapter": "Ratio and Proportion",
+      "kind": "standard",
+      "difficulty": "very_hard",
+      "answer_type": "single",
+      "stem": "A sum of money is divided among three people in the ratio 3:5:5. If the difference between the largest and the smallest share is ₹76, find the total sum.",
+      "explanation": "Difference = (5−3) = 2 parts = ₹76, so one part = ₹38; total = 13 × ₹38 = ₹494.",
+      "options": [
+        {
+          "label": "₹474",
+          "is_correct": false
+        },
+        {
+          "label": "₹514",
+          "is_correct": false
+        },
+        {
+          "label": "₹494",
+          "is_correct": true
+        },
+        {
+          "label": "₹534",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Ratio and Proportion",
+      "kind": "standard",
+      "difficulty": "very_hard",
+      "answer_type": "single",
+      "stem": "The ratio of two numbers is 5:7. When 10 is subtracted from each, the ratio becomes 5:8. Find the larger of the two original numbers.",
+      "explanation": "The numbers are 30 and 42; subtracting 10 gives 20 and 32, i.e. 5:8. The larger original number is 42.",
+      "options": [
+        {
+          "label": "46",
+          "is_correct": false
+        },
+        {
+          "label": "42",
+          "is_correct": true
+        },
+        {
+          "label": "44",
+          "is_correct": false
+        },
+        {
+          "label": "40",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Ratio and Proportion",
+      "kind": "standard",
+      "difficulty": "very_hard",
+      "answer_type": "single",
+      "stem": "The ratio of two numbers is 9:4. When 6 is subtracted from each, the ratio becomes 33:13. Find the larger of the two original numbers.",
+      "explanation": "The numbers are 72 and 32; subtracting 6 gives 66 and 26, i.e. 33:13. The larger original number is 72.",
+      "options": [
+        {
+          "label": "76",
+          "is_correct": false
+        },
+        {
+          "label": "72",
+          "is_correct": true
+        },
+        {
+          "label": "74",
+          "is_correct": false
+        },
+        {
+          "label": "70",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Ratio and Proportion",
+      "kind": "standard",
+      "difficulty": "very_hard",
+      "answer_type": "single",
+      "stem": "The ratio of two numbers is 4:9. When 2 is subtracted from each, the ratio becomes 26:61. Find the larger of the two original numbers.",
+      "explanation": "The numbers are 28 and 63; subtracting 2 gives 26 and 61, i.e. 26:61. The larger original number is 63.",
+      "options": [
+        {
+          "label": "65",
+          "is_correct": false
+        },
+        {
+          "label": "61",
+          "is_correct": false
+        },
+        {
+          "label": "67",
+          "is_correct": false
+        },
+        {
+          "label": "63",
+          "is_correct": true
+        }
+      ]
+    },
+    {
+      "chapter": "Ratio and Proportion",
+      "kind": "standard",
+      "difficulty": "very_hard",
+      "answer_type": "single",
+      "stem": "The ratio of two numbers is 5:6. When 9 is subtracted from each, the ratio becomes 26:33. Find the larger of the two original numbers.",
+      "explanation": "The numbers are 35 and 42; subtracting 9 gives 26 and 33, i.e. 26:33. The larger original number is 42.",
+      "options": [
+        {
+          "label": "46",
+          "is_correct": false
+        },
+        {
+          "label": "44",
+          "is_correct": false
+        },
+        {
+          "label": "40",
+          "is_correct": false
+        },
+        {
+          "label": "42",
+          "is_correct": true
+        }
+      ]
+    },
+    {
+      "chapter": "Ratio and Proportion",
+      "kind": "standard",
+      "difficulty": "very_hard",
+      "answer_type": "single",
+      "stem": "The ratio of two numbers is 7:4. When 6 is added to each, the ratio becomes 8:5. Find the larger of the two original numbers.",
+      "explanation": "The numbers are 42 and 24; adding 6 gives 48 and 30, i.e. 8:5. The larger original number is 42.",
+      "options": [
+        {
+          "label": "42",
+          "is_correct": true
+        },
+        {
+          "label": "40",
+          "is_correct": false
+        },
+        {
+          "label": "46",
+          "is_correct": false
+        },
+        {
+          "label": "44",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Ratio and Proportion",
+      "kind": "standard",
+      "difficulty": "very_hard",
+      "answer_type": "single",
+      "stem": "The ratio of two numbers is 5:4. When 3 is subtracted from each, the ratio becomes 37:29. Find the larger of the two original numbers.",
+      "explanation": "The numbers are 40 and 32; subtracting 3 gives 37 and 29, i.e. 37:29. The larger original number is 40.",
+      "options": [
+        {
+          "label": "40",
+          "is_correct": true
+        },
+        {
+          "label": "38",
+          "is_correct": false
+        },
+        {
+          "label": "42",
+          "is_correct": false
+        },
+        {
+          "label": "44",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Ratio and Proportion",
+      "kind": "standard",
+      "difficulty": "very_hard",
+      "answer_type": "single",
+      "stem": "The ratio of two numbers is 9:7. When 6 is subtracted from each, the ratio becomes 57:43. Find the larger of the two original numbers.",
+      "explanation": "The numbers are 63 and 49; subtracting 6 gives 57 and 43, i.e. 57:43. The larger original number is 63.",
+      "options": [
+        {
+          "label": "63",
+          "is_correct": true
+        },
+        {
+          "label": "61",
+          "is_correct": false
+        },
+        {
+          "label": "65",
+          "is_correct": false
+        },
+        {
+          "label": "67",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Ratio and Proportion",
+      "kind": "standard",
+      "difficulty": "very_hard",
+      "answer_type": "single",
+      "stem": "The ratio of two numbers is 3:4. When 10 is subtracted from each, the ratio becomes 11:18. Find the larger of the two original numbers.",
+      "explanation": "The numbers are 21 and 28; subtracting 10 gives 11 and 18, i.e. 11:18. The larger original number is 28.",
+      "options": [
+        {
+          "label": "30",
+          "is_correct": false
+        },
+        {
+          "label": "28",
+          "is_correct": true
+        },
+        {
+          "label": "29",
+          "is_correct": false
+        },
+        {
+          "label": "27",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Ratio and Proportion",
+      "kind": "standard",
+      "difficulty": "very_hard",
+      "answer_type": "single",
+      "stem": "A sum of money is divided among three people in the ratio 3:4:3. If the difference between the largest and the smallest share is ₹29, find the total sum.",
+      "explanation": "Difference = (4−3) = 1 parts = ₹29, so one part = ₹29; total = 10 × ₹29 = ₹290.",
+      "options": [
+        {
+          "label": "₹314",
+          "is_correct": false
+        },
+        {
+          "label": "₹278",
+          "is_correct": false
+        },
+        {
+          "label": "₹290",
+          "is_correct": true
+        },
+        {
+          "label": "₹302",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Ratio and Proportion",
+      "kind": "standard",
+      "difficulty": "very_hard",
+      "answer_type": "single",
+      "stem": "The ratio of two numbers is 6:7. When 15 is subtracted from each, the ratio becomes 33:41. Find the larger of the two original numbers.",
+      "explanation": "The numbers are 48 and 56; subtracting 15 gives 33 and 41, i.e. 33:41. The larger original number is 56.",
+      "options": [
+        {
+          "label": "58",
+          "is_correct": false
+        },
+        {
+          "label": "56",
+          "is_correct": true
+        },
+        {
+          "label": "60",
+          "is_correct": false
+        },
+        {
+          "label": "54",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Ratio and Proportion",
+      "kind": "standard",
+      "difficulty": "very_hard",
+      "answer_type": "single",
+      "stem": "The ratio of two numbers is 5:6. When 8 is subtracted from each, the ratio becomes 37:46. Find the larger of the two original numbers.",
+      "explanation": "The numbers are 45 and 54; subtracting 8 gives 37 and 46, i.e. 37:46. The larger original number is 54.",
+      "options": [
+        {
+          "label": "52",
+          "is_correct": false
+        },
+        {
+          "label": "54",
+          "is_correct": true
+        },
+        {
+          "label": "58",
+          "is_correct": false
+        },
+        {
+          "label": "56",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Ratio and Proportion",
+      "kind": "standard",
+      "difficulty": "very_hard",
+      "answer_type": "single",
+      "stem": "The ratio of two numbers is 5:4. When 1 is subtracted from each, the ratio becomes 44:35. Find the larger of the two original numbers.",
+      "explanation": "The numbers are 45 and 36; subtracting 1 gives 44 and 35, i.e. 44:35. The larger original number is 45.",
+      "options": [
+        {
+          "label": "45",
+          "is_correct": true
+        },
+        {
+          "label": "43",
+          "is_correct": false
+        },
+        {
+          "label": "49",
+          "is_correct": false
+        },
+        {
+          "label": "47",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Ratio and Proportion",
+      "kind": "standard",
+      "difficulty": "very_hard",
+      "answer_type": "single",
+      "stem": "A sum of money is divided among three people in the ratio 1:1:4. If the difference between the largest and the smallest share is ₹96, find the total sum.",
+      "explanation": "Difference = (4−1) = 3 parts = ₹96, so one part = ₹32; total = 6 × ₹32 = ₹192.",
+      "options": [
+        {
+          "label": "₹194",
+          "is_correct": false
+        },
+        {
+          "label": "₹190",
+          "is_correct": false
+        },
+        {
+          "label": "₹192",
+          "is_correct": true
+        },
+        {
+          "label": "₹196",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Ratio and Proportion",
+      "kind": "standard",
+      "difficulty": "very_hard",
+      "answer_type": "single",
+      "stem": "The ratio of two numbers is 7:8. When 23 is subtracted from each, the ratio becomes 19:25. Find the larger of the two original numbers.",
+      "explanation": "The numbers are 42 and 48; subtracting 23 gives 19 and 25, i.e. 19:25. The larger original number is 48.",
+      "options": [
+        {
+          "label": "50",
+          "is_correct": false
+        },
+        {
+          "label": "52",
+          "is_correct": false
+        },
+        {
+          "label": "48",
+          "is_correct": true
+        },
+        {
+          "label": "46",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Ratio and Proportion",
+      "kind": "standard",
+      "difficulty": "very_hard",
+      "answer_type": "single",
+      "stem": "The ratio of two numbers is 8:3. When 9 is added to each, the ratio becomes 73:33. Find the larger of the two original numbers.",
+      "explanation": "The numbers are 64 and 24; adding 9 gives 73 and 33, i.e. 73:33. The larger original number is 64.",
+      "options": [
+        {
+          "label": "62",
+          "is_correct": false
+        },
+        {
+          "label": "64",
+          "is_correct": true
+        },
+        {
+          "label": "66",
+          "is_correct": false
+        },
+        {
+          "label": "68",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Ratio and Proportion",
+      "kind": "standard",
+      "difficulty": "very_hard",
+      "answer_type": "single",
+      "stem": "The ratio of two numbers is 5:8. When 3 is subtracted from each, the ratio becomes 37:61. Find the larger of the two original numbers.",
+      "explanation": "The numbers are 40 and 64; subtracting 3 gives 37 and 61, i.e. 37:61. The larger original number is 64.",
+      "options": [
+        {
+          "label": "66",
+          "is_correct": false
+        },
+        {
+          "label": "62",
+          "is_correct": false
+        },
+        {
+          "label": "64",
+          "is_correct": true
+        },
+        {
+          "label": "68",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Ratio and Proportion",
+      "kind": "standard",
+      "difficulty": "very_hard",
+      "answer_type": "single",
+      "stem": "The ratio of two numbers is 9:4. When 14 is added to each, the ratio becomes 41:26. Find the larger of the two original numbers.",
+      "explanation": "The numbers are 27 and 12; adding 14 gives 41 and 26, i.e. 41:26. The larger original number is 27.",
+      "options": [
+        {
+          "label": "28",
+          "is_correct": false
+        },
+        {
+          "label": "26",
+          "is_correct": false
+        },
+        {
+          "label": "27",
+          "is_correct": true
+        },
+        {
+          "label": "29",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Ratio and Proportion",
+      "kind": "standard",
+      "difficulty": "very_hard",
+      "answer_type": "single",
+      "stem": "The ratio of two numbers is 5:8. When 8 is added to each, the ratio becomes 3:4. Find the larger of the two original numbers.",
+      "explanation": "The numbers are 10 and 16; adding 8 gives 18 and 24, i.e. 3:4. The larger original number is 16.",
+      "options": [
+        {
+          "label": "18",
+          "is_correct": false
+        },
+        {
+          "label": "15",
+          "is_correct": false
+        },
+        {
+          "label": "17",
+          "is_correct": false
+        },
+        {
+          "label": "16",
+          "is_correct": true
+        }
+      ]
+    },
+    {
+      "chapter": "Ratio and Proportion",
+      "kind": "standard",
+      "difficulty": "very_hard",
+      "answer_type": "single",
+      "stem": "The ratio of two numbers is 9:8. When 3 is subtracted from each, the ratio becomes 42:37. Find the larger of the two original numbers.",
+      "explanation": "The numbers are 45 and 40; subtracting 3 gives 42 and 37, i.e. 42:37. The larger original number is 45.",
+      "options": [
+        {
+          "label": "49",
+          "is_correct": false
+        },
+        {
+          "label": "45",
+          "is_correct": true
+        },
+        {
+          "label": "43",
+          "is_correct": false
+        },
+        {
+          "label": "47",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Ratio and Proportion",
+      "kind": "standard",
+      "difficulty": "very_hard",
+      "answer_type": "single",
+      "stem": "The ratio of two numbers is 3:4. When 4 is subtracted from each, the ratio becomes 5:7. Find the larger of the two original numbers.",
+      "explanation": "The numbers are 24 and 32; subtracting 4 gives 20 and 28, i.e. 5:7. The larger original number is 32.",
+      "options": [
+        {
+          "label": "33",
+          "is_correct": false
+        },
+        {
+          "label": "31",
+          "is_correct": false
+        },
+        {
+          "label": "34",
+          "is_correct": false
+        },
+        {
+          "label": "32",
+          "is_correct": true
+        }
+      ]
+    },
+    {
+      "chapter": "Ratio and Proportion",
+      "kind": "standard",
+      "difficulty": "very_hard",
+      "answer_type": "single",
+      "stem": "The ratio of two numbers is 2:9. When 12 is added to each, the ratio becomes 10:31. Find the larger of the two original numbers.",
+      "explanation": "The numbers are 18 and 81; adding 12 gives 30 and 93, i.e. 10:31. The larger original number is 81.",
+      "options": [
+        {
+          "label": "81",
+          "is_correct": true
+        },
+        {
+          "label": "79",
+          "is_correct": false
+        },
+        {
+          "label": "83",
+          "is_correct": false
+        },
+        {
+          "label": "85",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Ratio and Proportion",
+      "kind": "standard",
+      "difficulty": "very_hard",
+      "answer_type": "single",
+      "stem": "The ratio of two numbers is 8:9. When 2 is subtracted from each, the ratio becomes 70:79. Find the larger of the two original numbers.",
+      "explanation": "The numbers are 72 and 81; subtracting 2 gives 70 and 79, i.e. 70:79. The larger original number is 81.",
+      "options": [
+        {
+          "label": "79",
+          "is_correct": false
+        },
+        {
+          "label": "81",
+          "is_correct": true
+        },
+        {
+          "label": "83",
+          "is_correct": false
+        },
+        {
+          "label": "85",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Ratio and Proportion",
+      "kind": "standard",
+      "difficulty": "very_hard",
+      "answer_type": "single",
+      "stem": "The ratio of two numbers is 3:2. When 5 is subtracted from each, the ratio becomes 22:13. Find the larger of the two original numbers.",
+      "explanation": "The numbers are 27 and 18; subtracting 5 gives 22 and 13, i.e. 22:13. The larger original number is 27.",
+      "options": [
+        {
+          "label": "26",
+          "is_correct": false
+        },
+        {
+          "label": "27",
+          "is_correct": true
+        },
+        {
+          "label": "29",
+          "is_correct": false
+        },
+        {
+          "label": "28",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Ratio and Proportion",
+      "kind": "standard",
+      "difficulty": "very_hard",
+      "answer_type": "single",
+      "stem": "A sum of money is divided among three people in the ratio 5:3:3. If the difference between the largest and the smallest share is ₹40, find the total sum.",
+      "explanation": "Difference = (5−3) = 2 parts = ₹40, so one part = ₹20; total = 11 × ₹20 = ₹220.",
+      "options": [
+        {
+          "label": "₹211",
+          "is_correct": false
+        },
+        {
+          "label": "₹238",
+          "is_correct": false
+        },
+        {
+          "label": "₹229",
+          "is_correct": false
+        },
+        {
+          "label": "₹220",
+          "is_correct": true
+        }
+      ]
+    },
+    {
+      "chapter": "Ratio and Proportion",
+      "kind": "standard",
+      "difficulty": "very_hard",
+      "answer_type": "single",
+      "stem": "The ratio of two numbers is 4:7. When 9 is added to each, the ratio becomes 37:58. Find the larger of the two original numbers.",
+      "explanation": "The numbers are 28 and 49; adding 9 gives 37 and 58, i.e. 37:58. The larger original number is 49.",
+      "options": [
+        {
+          "label": "49",
+          "is_correct": true
+        },
+        {
+          "label": "51",
+          "is_correct": false
+        },
+        {
+          "label": "53",
+          "is_correct": false
+        },
+        {
+          "label": "47",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Ratio and Proportion",
+      "kind": "standard",
+      "difficulty": "very_hard",
+      "answer_type": "single",
+      "stem": "The ratio of two numbers is 7:5. When 7 is added to each, the ratio becomes 21:16. Find the larger of the two original numbers.",
+      "explanation": "The numbers are 35 and 25; adding 7 gives 42 and 32, i.e. 21:16. The larger original number is 35.",
+      "options": [
+        {
+          "label": "37",
+          "is_correct": false
+        },
+        {
+          "label": "35",
+          "is_correct": true
+        },
+        {
+          "label": "36",
+          "is_correct": false
+        },
+        {
+          "label": "34",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Ratio and Proportion",
+      "kind": "standard",
+      "difficulty": "very_hard",
+      "answer_type": "single",
+      "stem": "The ratio of two numbers is 3:7. When 7 is added to each, the ratio becomes 13:21. Find the larger of the two original numbers.",
+      "explanation": "The numbers are 6 and 14; adding 7 gives 13 and 21, i.e. 13:21. The larger original number is 14.",
+      "options": [
+        {
+          "label": "15",
+          "is_correct": false
+        },
+        {
+          "label": "13",
+          "is_correct": false
+        },
+        {
+          "label": "14",
+          "is_correct": true
+        },
+        {
+          "label": "16",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Ratio and Proportion",
+      "kind": "standard",
+      "difficulty": "very_hard",
+      "answer_type": "single",
+      "stem": "A sum of money is divided among three people in the ratio 2:4:4. If the difference between the largest and the smallest share is ₹58, find the total sum.",
+      "explanation": "Difference = (4−2) = 2 parts = ₹58, so one part = ₹29; total = 10 × ₹29 = ₹290.",
+      "options": [
+        {
+          "label": "₹290",
+          "is_correct": true
+        },
+        {
+          "label": "₹314",
+          "is_correct": false
+        },
+        {
+          "label": "₹302",
+          "is_correct": false
+        },
+        {
+          "label": "₹278",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Ratio and Proportion",
+      "kind": "standard",
+      "difficulty": "very_hard",
+      "answer_type": "single",
+      "stem": "The ratio of two numbers is 9:7. When 2 is added to each, the ratio becomes 65:51. Find the larger of the two original numbers.",
+      "explanation": "The numbers are 63 and 49; adding 2 gives 65 and 51, i.e. 65:51. The larger original number is 63.",
+      "options": [
+        {
+          "label": "65",
+          "is_correct": false
+        },
+        {
+          "label": "63",
+          "is_correct": true
+        },
+        {
+          "label": "61",
+          "is_correct": false
+        },
+        {
+          "label": "67",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Ratio and Proportion",
+      "kind": "standard",
+      "difficulty": "very_hard",
+      "answer_type": "single",
+      "stem": "The ratio of two numbers is 6:7. When 14 is subtracted from each, the ratio becomes 4:5. Find the larger of the two original numbers.",
+      "explanation": "The numbers are 42 and 49; subtracting 14 gives 28 and 35, i.e. 4:5. The larger original number is 49.",
+      "options": [
+        {
+          "label": "49",
+          "is_correct": true
+        },
+        {
+          "label": "47",
+          "is_correct": false
+        },
+        {
+          "label": "53",
+          "is_correct": false
+        },
+        {
+          "label": "51",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Ratio and Proportion",
+      "kind": "standard",
+      "difficulty": "very_hard",
+      "answer_type": "single",
+      "stem": "The ratio of two numbers is 7:8. When 24 is subtracted from each, the ratio becomes 13:16. Find the larger of the two original numbers.",
+      "explanation": "The numbers are 63 and 72; subtracting 24 gives 39 and 48, i.e. 13:16. The larger original number is 72.",
+      "options": [
+        {
+          "label": "70",
+          "is_correct": false
+        },
+        {
+          "label": "72",
+          "is_correct": true
+        },
+        {
+          "label": "74",
+          "is_correct": false
+        },
+        {
+          "label": "76",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Ratio and Proportion",
+      "kind": "standard",
+      "difficulty": "very_hard",
+      "answer_type": "single",
+      "stem": "The ratio of two numbers is 8:7. When 4 is subtracted from each, the ratio becomes 68:59. Find the larger of the two original numbers.",
+      "explanation": "The numbers are 72 and 63; subtracting 4 gives 68 and 59, i.e. 68:59. The larger original number is 72.",
+      "options": [
+        {
+          "label": "70",
+          "is_correct": false
+        },
+        {
+          "label": "72",
+          "is_correct": true
+        },
+        {
+          "label": "76",
+          "is_correct": false
+        },
+        {
+          "label": "74",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Ratio and Proportion",
+      "kind": "standard",
+      "difficulty": "very_hard",
+      "answer_type": "single",
+      "stem": "A sum of money is divided among three people in the ratio 6:6:4. If the difference between the largest and the smallest share is ₹56, find the total sum.",
+      "explanation": "Difference = (6−4) = 2 parts = ₹56, so one part = ₹28; total = 16 × ₹28 = ₹448.",
+      "options": [
+        {
+          "label": "₹448",
+          "is_correct": true
+        },
+        {
+          "label": "₹466",
+          "is_correct": false
+        },
+        {
+          "label": "₹430",
+          "is_correct": false
+        },
+        {
+          "label": "₹484",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Ratio and Proportion",
+      "kind": "standard",
+      "difficulty": "very_hard",
+      "answer_type": "single",
+      "stem": "The ratio of two numbers is 8:7. When 13 is added to each, the ratio becomes 53:48. Find the larger of the two original numbers.",
+      "explanation": "The numbers are 40 and 35; adding 13 gives 53 and 48, i.e. 53:48. The larger original number is 40.",
+      "options": [
+        {
+          "label": "38",
+          "is_correct": false
+        },
+        {
+          "label": "44",
+          "is_correct": false
+        },
+        {
+          "label": "40",
+          "is_correct": true
+        },
+        {
+          "label": "42",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Ratio and Proportion",
+      "kind": "standard",
+      "difficulty": "very_hard",
+      "answer_type": "single",
+      "stem": "The ratio of two numbers is 7:6. When 7 is subtracted from each, the ratio becomes 35:29. Find the larger of the two original numbers.",
+      "explanation": "The numbers are 42 and 36; subtracting 7 gives 35 and 29, i.e. 35:29. The larger original number is 42.",
+      "options": [
+        {
+          "label": "46",
+          "is_correct": false
+        },
+        {
+          "label": "42",
+          "is_correct": true
+        },
+        {
+          "label": "44",
+          "is_correct": false
+        },
+        {
+          "label": "40",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Ratio and Proportion",
+      "kind": "standard",
+      "difficulty": "very_hard",
+      "answer_type": "single",
+      "stem": "The ratio of two numbers is 2:9. When 15 is subtracted from each, the ratio becomes 1:57. Find the larger of the two original numbers.",
+      "explanation": "The numbers are 16 and 72; subtracting 15 gives 1 and 57, i.e. 1:57. The larger original number is 72.",
+      "options": [
+        {
+          "label": "74",
+          "is_correct": false
+        },
+        {
+          "label": "72",
+          "is_correct": true
+        },
+        {
+          "label": "70",
+          "is_correct": false
+        },
+        {
+          "label": "76",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Ratio and Proportion",
+      "kind": "standard",
+      "difficulty": "very_hard",
+      "answer_type": "single",
+      "stem": "A sum of money is divided among three people in the ratio 5:5:2. If the difference between the largest and the smallest share is ₹105, find the total sum.",
+      "explanation": "Difference = (5−2) = 3 parts = ₹105, so one part = ₹35; total = 12 × ₹35 = ₹420.",
+      "options": [
+        {
+          "label": "₹420",
+          "is_correct": true
+        },
+        {
+          "label": "₹403",
+          "is_correct": false
+        },
+        {
+          "label": "₹454",
+          "is_correct": false
+        },
+        {
+          "label": "₹437",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Ratio and Proportion",
+      "kind": "standard",
+      "difficulty": "very_hard",
+      "answer_type": "single",
+      "stem": "The ratio of two numbers is 5:6. When 2 is added to each, the ratio becomes 11:13. Find the larger of the two original numbers.",
+      "explanation": "The numbers are 20 and 24; adding 2 gives 22 and 26, i.e. 11:13. The larger original number is 24.",
+      "options": [
+        {
+          "label": "23",
+          "is_correct": false
+        },
+        {
+          "label": "25",
+          "is_correct": false
+        },
+        {
+          "label": "24",
+          "is_correct": true
+        },
+        {
+          "label": "26",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Ratio and Proportion",
+      "kind": "standard",
+      "difficulty": "very_hard",
+      "answer_type": "single",
+      "stem": "The ratio of two numbers is 4:5. When 3 is added to each, the ratio becomes 9:11. Find the larger of the two original numbers.",
+      "explanation": "The numbers are 24 and 30; adding 3 gives 27 and 33, i.e. 9:11. The larger original number is 30.",
+      "options": [
+        {
+          "label": "31",
+          "is_correct": false
+        },
+        {
+          "label": "29",
+          "is_correct": false
+        },
+        {
+          "label": "32",
+          "is_correct": false
+        },
+        {
+          "label": "30",
+          "is_correct": true
+        }
+      ]
+    },
+    {
+      "chapter": "Ratio and Proportion",
+      "kind": "standard",
+      "difficulty": "very_hard",
+      "answer_type": "single",
+      "stem": "A sum of money is divided among three people in the ratio 6:3:2. If the difference between the largest and the smallest share is ₹108, find the total sum.",
+      "explanation": "Difference = (6−2) = 4 parts = ₹108, so one part = ₹27; total = 11 × ₹27 = ₹297.",
+      "options": [
+        {
+          "label": "₹321",
+          "is_correct": false
+        },
+        {
+          "label": "₹297",
+          "is_correct": true
+        },
+        {
+          "label": "₹285",
+          "is_correct": false
+        },
+        {
+          "label": "₹309",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Ratio and Proportion",
+      "kind": "standard",
+      "difficulty": "very_hard",
+      "answer_type": "single",
+      "stem": "The ratio of two numbers is 3:2. When 2 is added to each, the ratio becomes 11:8. Find the larger of the two original numbers.",
+      "explanation": "The numbers are 9 and 6; adding 2 gives 11 and 8, i.e. 11:8. The larger original number is 9.",
+      "options": [
+        {
+          "label": "10",
+          "is_correct": false
+        },
+        {
+          "label": "8",
+          "is_correct": false
+        },
+        {
+          "label": "11",
+          "is_correct": false
+        },
+        {
+          "label": "9",
+          "is_correct": true
+        }
+      ]
+    },
+    {
+      "chapter": "Ratio and Proportion",
+      "kind": "standard",
+      "difficulty": "very_hard",
+      "answer_type": "single",
+      "stem": "A sum of money is divided among three people in the ratio 3:5:1. If the difference between the largest and the smallest share is ₹148, find the total sum.",
+      "explanation": "Difference = (5−1) = 4 parts = ₹148, so one part = ₹37; total = 9 × ₹37 = ₹333.",
+      "options": [
+        {
+          "label": "₹359",
+          "is_correct": false
+        },
+        {
+          "label": "₹320",
+          "is_correct": false
+        },
+        {
+          "label": "₹333",
+          "is_correct": true
+        },
+        {
+          "label": "₹346",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Ratio and Proportion",
+      "kind": "standard",
+      "difficulty": "very_hard",
+      "answer_type": "single",
+      "stem": "The ratio of two numbers is 5:7. When 2 is added to each, the ratio becomes 11:15. Find the larger of the two original numbers.",
+      "explanation": "The numbers are 20 and 28; adding 2 gives 22 and 30, i.e. 11:15. The larger original number is 28.",
+      "options": [
+        {
+          "label": "27",
+          "is_correct": false
+        },
+        {
+          "label": "30",
+          "is_correct": false
+        },
+        {
+          "label": "29",
+          "is_correct": false
+        },
+        {
+          "label": "28",
+          "is_correct": true
+        }
+      ]
+    },
+    {
+      "chapter": "Ratio and Proportion",
+      "kind": "standard",
+      "difficulty": "very_hard",
+      "answer_type": "single",
+      "stem": "The ratio of two numbers is 7:6. When 15 is added to each, the ratio becomes 43:39. Find the larger of the two original numbers.",
+      "explanation": "The numbers are 28 and 24; adding 15 gives 43 and 39, i.e. 43:39. The larger original number is 28.",
+      "options": [
+        {
+          "label": "29",
+          "is_correct": false
+        },
+        {
+          "label": "28",
+          "is_correct": true
+        },
+        {
+          "label": "27",
+          "is_correct": false
+        },
+        {
+          "label": "30",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Ratio and Proportion",
+      "kind": "standard",
+      "difficulty": "very_hard",
+      "answer_type": "single",
+      "stem": "The ratio of two numbers is 2:9. When 4 is subtracted from each, the ratio becomes 2:23. Find the larger of the two original numbers.",
+      "explanation": "The numbers are 6 and 27; subtracting 4 gives 2 and 23, i.e. 2:23. The larger original number is 27.",
+      "options": [
+        {
+          "label": "29",
+          "is_correct": false
+        },
+        {
+          "label": "26",
+          "is_correct": false
+        },
+        {
+          "label": "27",
+          "is_correct": true
+        },
+        {
+          "label": "28",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Ratio and Proportion",
+      "kind": "standard",
+      "difficulty": "very_hard",
+      "answer_type": "single",
+      "stem": "A sum of money is divided among three people in the ratio 2:3:4. If the difference between the largest and the smallest share is ₹44, find the total sum.",
+      "explanation": "Difference = (4−2) = 2 parts = ₹44, so one part = ₹22; total = 9 × ₹22 = ₹198.",
+      "options": [
+        {
+          "label": "₹196",
+          "is_correct": false
+        },
+        {
+          "label": "₹200",
+          "is_correct": false
+        },
+        {
+          "label": "₹198",
+          "is_correct": true
+        },
+        {
+          "label": "₹202",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Ratio and Proportion",
+      "kind": "standard",
+      "difficulty": "very_hard",
+      "answer_type": "single",
+      "stem": "The ratio of two numbers is 8:7. When 20 is subtracted from each, the ratio becomes 3:2. Find the larger of the two original numbers.",
+      "explanation": "The numbers are 32 and 28; subtracting 20 gives 12 and 8, i.e. 3:2. The larger original number is 32.",
+      "options": [
+        {
+          "label": "32",
+          "is_correct": true
+        },
+        {
+          "label": "33",
+          "is_correct": false
+        },
+        {
+          "label": "34",
+          "is_correct": false
+        },
+        {
+          "label": "31",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Ratio and Proportion",
+      "kind": "standard",
+      "difficulty": "very_hard",
+      "answer_type": "single",
+      "stem": "A sum of money is divided among three people in the ratio 4:2:2. If the difference between the largest and the smallest share is ₹18, find the total sum.",
+      "explanation": "Difference = (4−2) = 2 parts = ₹18, so one part = ₹9; total = 8 × ₹9 = ₹72.",
+      "options": [
+        {
+          "label": "₹72",
+          "is_correct": true
+        },
+        {
+          "label": "₹74",
+          "is_correct": false
+        },
+        {
+          "label": "₹70",
+          "is_correct": false
+        },
+        {
+          "label": "₹76",
+          "is_correct": false
+        }
+      ]
+    }
+  ]
+}

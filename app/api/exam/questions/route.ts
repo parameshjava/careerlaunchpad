@@ -21,15 +21,19 @@ export async function GET(req: NextRequest) {
     return NextResponse.json({ error: "Forbidden" }, { status: 403 });
   }
   const sp = req.nextUrl.searchParams;
+  const page = Math.max(1, Number(sp.get("page")) || 1);
+  const pageSize = Math.min(100, Math.max(1, Number(sp.get("page_size")) || 20));
   const supabase = await createClient();
   try {
-    const questions = await fetchQuestions(supabase, {
+    const { questions, total } = await fetchQuestions(supabase, {
       subjectId: sp.get("subject_id") ?? undefined,
       chapterId: sp.get("chapter_id") ?? undefined,
       difficulty: (sp.get("difficulty") as Difficulty | null) ?? undefined,
       includeArchived: sp.get("include_archived") === "true",
+      limit: pageSize,
+      offset: (page - 1) * pageSize,
     });
-    return NextResponse.json({ questions });
+    return NextResponse.json({ questions, total, page, pageSize });
   } catch (e) {
     return NextResponse.json({ error: (e as Error).message }, { status: 500 });
   }

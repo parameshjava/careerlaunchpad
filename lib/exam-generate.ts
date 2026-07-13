@@ -117,39 +117,82 @@ type Candidate = {
 // list per subject (for the no-quota even spread). One round-trip each.
 async function loadBank(supabase: SupabaseClient, blueprint: Blueprint) {
   const subjectIds = [...new Set(blueprint.sections.map((s) => s.subjectId))];
-  const [{ data: qData, error: qErr }, { data: cData, error: cErr }] = await Promise.all([
-    supabase
-      .from("question")
-      .select("id, subject_id, chapter_id, difficulty, passage_id, version")
-      .in("subject_id", subjectIds)
-      .eq("status", "active"),
-    supabase.from("chapter").select("id, subject_id").in("subject_id", subjectIds),
-  ]);
-  if (qErr) throw new Error(`question: ${qErr.message}`);
-  if (cErr) throw new Error(`chapter: ${cErr.message}`);
+  // Read via SECURITY DEFINER RPCs (migrations 098/099) so generation sees the
+  // same bank the feasibility check does — not the admin-only direct-read view.
+  const cRes = await supabase.rpc("chapter_question_counts", { p_subject_ids: subjectIds });
+  if (cRes.error) throw new Error(`chapter_question_counts: ${cRes.error.message}`);
 
+  // The question bank can exceed the API's default row cap, so PAGE through it —
+  // otherwise the tail chapters come back empty and generation falsely reports
+  // "not enough questions" for them (while the aggregated feasibility count is fine).
+  type QRow = {
+    id: string;
+    subject_id: string;
+    chapter_id: string;
+    difficulty: string;
+    passage_id: string | null;
+    version: number;
+  };
   const bySubject = new Map<string, Candidate[]>();
-  for (const r of qData ?? []) {
-    const c: Candidate = {
-      id: r.id as string,
-      chapter_id: r.chapter_id as string,
-      difficulty: r.difficulty as Difficulty,
-      passage_id: (r.passage_id as string | null) ?? null,
-      version: r.version as number,
-    };
-    const key = r.subject_id as string;
-    (bySubject.get(key) ?? bySubject.set(key, []).get(key)!).push(c);
+  const PAGE = 1000;
+  for (let from = 0; ; from += PAGE) {
+    const { data, error } = await supabase
+      .rpc("exam_bank_questions", { p_subject_ids: subjectIds })
+      .range(from, from + PAGE - 1);
+    if (error) throw new Error(`exam_bank_questions: ${error.message}`);
+    const batch = (data ?? []) as QRow[];
+    for (const r of batch) {
+      const c: Candidate = {
+        id: r.id,
+        chapter_id: r.chapter_id,
+        difficulty: r.difficulty as Difficulty,
+        passage_id: r.passage_id ?? null,
+        version: r.version,
+      };
+      (bySubject.get(r.subject_id) ?? bySubject.set(r.subject_id, []).get(r.subject_id)!).push(c);
+    }
+    if (batch.length < PAGE) break;
   }
   const chaptersBySubject = new Map<string, string[]>();
-  for (const r of cData ?? []) {
-    const key = r.subject_id as string;
-    (chaptersBySubject.get(key) ?? chaptersBySubject.set(key, []).get(key)!).push(r.id as string);
+  const seen = new Set<string>();
+  for (const r of (cRes.data ?? []) as { subject_id: string; chapter_id: string }[]) {
+    const key = `${r.subject_id}|${r.chapter_id}`;
+    if (seen.has(key)) continue;
+    seen.add(key);
+    (chaptersBySubject.get(r.subject_id) ??
+      chaptersBySubject.set(r.subject_id, []).get(r.subject_id)!).push(r.chapter_id);
   }
   return { bySubject, chaptersBySubject };
 }
 
-function countAvailable(pool: Candidate[], chapterId: string, difficulty: Difficulty): number {
-  return pool.filter((q) => q.chapter_id === chapterId && q.difficulty === difficulty).length;
+// Availability for the feasibility check, via the chapter_question_counts RPC
+// (migration 097). SECURITY DEFINER, so counts aren't blocked by the admin-only bank RLS —
+// a blueprint builder who isn't a platform-admin can still validate. Returns the
+// chapter list per subject (incl. empty chapters, so even-spread still sees them)
+// and a count per (chapterId|difficulty) cell.
+async function loadFeasibility(supabase: SupabaseClient, subjectIds: string[]) {
+  const { data, error } = await supabase.rpc("chapter_question_counts", {
+    p_subject_ids: subjectIds,
+  });
+  if (error) throw new Error(`chapter_question_counts: ${error.message}`);
+  const chaptersBySubject = new Map<string, string[]>();
+  const count = new Map<string, number>(); // key: `${chapterId}|${difficulty}`
+  const seen = new Set<string>();
+  for (const r of (data ?? []) as {
+    subject_id: string;
+    chapter_id: string;
+    difficulty: string;
+    n: number;
+  }[]) {
+    count.set(`${r.chapter_id}|${r.difficulty}`, Number(r.n));
+    const key = `${r.subject_id}|${r.chapter_id}`;
+    if (!seen.has(key)) {
+      seen.add(key);
+      (chaptersBySubject.get(r.subject_id) ??
+        chaptersBySubject.set(r.subject_id, []).get(r.subject_id)!).push(r.chapter_id);
+    }
+  }
+  return { chaptersBySubject, count };
 }
 
 // Report what the bank cannot satisfy for this blueprint. Empty array ⇒ the
@@ -161,7 +204,8 @@ export async function checkFeasibility(
   supabase: SupabaseClient,
   blueprint: Blueprint,
 ): Promise<Shortfall[]> {
-  const { bySubject, chaptersBySubject } = await loadBank(supabase, blueprint);
+  const subjectIds = [...new Set(blueprint.sections.map((s) => s.subjectId))];
+  const { chaptersBySubject, count } = await loadFeasibility(supabase, subjectIds);
   const shortfalls: Shortfall[] = [];
 
   for (const section of blueprint.sections) {
@@ -176,9 +220,8 @@ export async function checkFeasibility(
         available: planned,
       });
     }
-    const pool = bySubject.get(section.subjectId) ?? [];
     for (const cell of cells) {
-      const available = countAvailable(pool, cell.chapterId, cell.difficulty);
+      const available = count.get(`${cell.chapterId}|${cell.difficulty}`) ?? 0;
       if (available < cell.count) {
         shortfalls.push({
           subjectId: cell.subjectId,

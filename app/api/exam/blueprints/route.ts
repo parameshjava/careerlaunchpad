@@ -42,6 +42,32 @@ export async function POST(req: NextRequest) {
     return NextResponse.json({ error: "Invalid JSON body" }, { status: 400 });
   }
 
+  // Wizard draft: create a bare draft to save progress against. No full
+  // validation — publish enforces it (see exam-creation-wizard spec, R4).
+  if (body.draft === true) {
+    const draftCollege = (body.college_id as string) || ctx.collegeScopes[0];
+    if (!draftCollege)
+      return NextResponse.json({ error: "college_id: required (no college scope)" }, { status: 422 });
+    const db = await createClient();
+    const { data, error } = await db
+      .from("exam")
+      .insert({
+        college_id: draftCollege,
+        title: ((body.title as string) ?? "").trim() || "Untitled exam",
+        duration_minutes: Number(body.duration_minutes) || 60,
+        shuffle_questions: body.shuffle_questions !== false,
+        shuffle_options: body.shuffle_options !== false,
+        negative_mark_per_wrong: Number(body.negative_mark_per_wrong) || 0,
+        status: "draft",
+        draft_step: Number(body.draft_step) || 2,
+        created_by: ctx.userId,
+      })
+      .select("id")
+      .single();
+    if (error) return NextResponse.json({ ok: false, error: error.message }, { status: 500 });
+    return NextResponse.json({ ok: true, id: data.id });
+  }
+
   const { clean, errors } = validateBlueprint(body);
   if (!clean) return NextResponse.json({ ok: false, errors }, { status: 422 });
 

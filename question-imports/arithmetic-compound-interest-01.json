@@ -1,0 +1,5205 @@
+{
+  "subject": "Arithmetic",
+  "questions": [
+    {
+      "chapter": "Compound Interest",
+      "kind": "standard",
+      "difficulty": "easy",
+      "answer_type": "single",
+      "stem": "Find the compound interest on ₹288000 at 5% per annum for 3 years.",
+      "explanation": "CI = P(1+R/100)^T − P = ₹333396 − ₹288000 = ₹45396.",
+      "options": [
+        {
+          "label": "₹47212",
+          "is_correct": false
+        },
+        {
+          "label": "₹49028",
+          "is_correct": false
+        },
+        {
+          "label": "₹45396",
+          "is_correct": true
+        },
+        {
+          "label": "₹43580",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Compound Interest",
+      "kind": "standard",
+      "difficulty": "easy",
+      "answer_type": "single",
+      "stem": "Find the difference between the compound interest and the simple interest on ₹20000 at 5% per annum for 2 years.",
+      "explanation": "Difference for 2 years = P(R/100)² = 20000×(5/100)² = ₹50.",
+      "options": [
+        {
+          "label": "₹52",
+          "is_correct": false
+        },
+        {
+          "label": "₹54",
+          "is_correct": false
+        },
+        {
+          "label": "₹50",
+          "is_correct": true
+        },
+        {
+          "label": "₹48",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Compound Interest",
+      "kind": "standard",
+      "difficulty": "easy",
+      "answer_type": "single",
+      "stem": "Find the amount on ₹528 at 25% per annum compound interest for 2 years.",
+      "explanation": "Amount = P(1+R/100)^T = 528×(1+25/100)^2 = ₹825.",
+      "options": [
+        {
+          "label": "₹825",
+          "is_correct": true
+        },
+        {
+          "label": "₹792",
+          "is_correct": false
+        },
+        {
+          "label": "₹858",
+          "is_correct": false
+        },
+        {
+          "label": "₹891",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Compound Interest",
+      "kind": "standard",
+      "difficulty": "easy",
+      "answer_type": "single",
+      "stem": "Find the compound interest on ₹304 at 50% per annum for 3 years.",
+      "explanation": "CI = P(1+R/100)^T − P = ₹1026 − ₹304 = ₹722.",
+      "options": [
+        {
+          "label": "₹780",
+          "is_correct": false
+        },
+        {
+          "label": "₹693",
+          "is_correct": false
+        },
+        {
+          "label": "₹751",
+          "is_correct": false
+        },
+        {
+          "label": "₹722",
+          "is_correct": true
+        }
+      ]
+    },
+    {
+      "chapter": "Compound Interest",
+      "kind": "standard",
+      "difficulty": "easy",
+      "answer_type": "single",
+      "stem": "Find the difference between the compound interest and the simple interest on ₹60 at 50% per annum for 2 years.",
+      "explanation": "Difference for 2 years = P(R/100)² = 60×(50/100)² = ₹15.",
+      "options": [
+        {
+          "label": "₹14",
+          "is_correct": false
+        },
+        {
+          "label": "₹17",
+          "is_correct": false
+        },
+        {
+          "label": "₹16",
+          "is_correct": false
+        },
+        {
+          "label": "₹15",
+          "is_correct": true
+        }
+      ]
+    },
+    {
+      "chapter": "Compound Interest",
+      "kind": "standard",
+      "difficulty": "easy",
+      "answer_type": "single",
+      "stem": "Find the compound interest on ₹272 at 25% per annum for 2 years.",
+      "explanation": "CI = P(1+R/100)^T − P = ₹425 − ₹272 = ₹153.",
+      "options": [
+        {
+          "label": "₹157",
+          "is_correct": false
+        },
+        {
+          "label": "₹155",
+          "is_correct": false
+        },
+        {
+          "label": "₹151",
+          "is_correct": false
+        },
+        {
+          "label": "₹153",
+          "is_correct": true
+        }
+      ]
+    },
+    {
+      "chapter": "Compound Interest",
+      "kind": "standard",
+      "difficulty": "easy",
+      "answer_type": "single",
+      "stem": "Find the amount on ₹5000 at 20% per annum compound interest for 3 years.",
+      "explanation": "Amount = P(1+R/100)^T = 5000×(1+20/100)^3 = ₹8640.",
+      "options": [
+        {
+          "label": "₹9332",
+          "is_correct": false
+        },
+        {
+          "label": "₹8640",
+          "is_correct": true
+        },
+        {
+          "label": "₹8986",
+          "is_correct": false
+        },
+        {
+          "label": "₹8294",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Compound Interest",
+      "kind": "standard",
+      "difficulty": "easy",
+      "answer_type": "single",
+      "stem": "Find the compound interest on ₹320000 at 5% per annum for 3 years.",
+      "explanation": "CI = P(1+R/100)^T − P = ₹370440 − ₹320000 = ₹50440.",
+      "options": [
+        {
+          "label": "₹48422",
+          "is_correct": false
+        },
+        {
+          "label": "₹52458",
+          "is_correct": false
+        },
+        {
+          "label": "₹50440",
+          "is_correct": true
+        },
+        {
+          "label": "₹54476",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Compound Interest",
+      "kind": "standard",
+      "difficulty": "easy",
+      "answer_type": "single",
+      "stem": "Find the difference between the compound interest and the simple interest on ₹1075 at 20% per annum for 2 years.",
+      "explanation": "Difference for 2 years = P(R/100)² = 1075×(20/100)² = ₹43.",
+      "options": [
+        {
+          "label": "₹45",
+          "is_correct": false
+        },
+        {
+          "label": "₹41",
+          "is_correct": false
+        },
+        {
+          "label": "₹47",
+          "is_correct": false
+        },
+        {
+          "label": "₹43",
+          "is_correct": true
+        }
+      ]
+    },
+    {
+      "chapter": "Compound Interest",
+      "kind": "standard",
+      "difficulty": "easy",
+      "answer_type": "single",
+      "stem": "Find the compound interest on ₹80000 at 5% per annum for 3 years.",
+      "explanation": "CI = P(1+R/100)^T − P = ₹92610 − ₹80000 = ₹12610.",
+      "options": [
+        {
+          "label": "₹13114",
+          "is_correct": false
+        },
+        {
+          "label": "₹13618",
+          "is_correct": false
+        },
+        {
+          "label": "₹12610",
+          "is_correct": true
+        },
+        {
+          "label": "₹12106",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Compound Interest",
+      "kind": "standard",
+      "difficulty": "easy",
+      "answer_type": "single",
+      "stem": "Find the amount on ₹14400 at 5% per annum compound interest for 2 years.",
+      "explanation": "Amount = P(1+R/100)^T = 14400×(1+5/100)^2 = ₹15876.",
+      "options": [
+        {
+          "label": "₹15241",
+          "is_correct": false
+        },
+        {
+          "label": "₹17146",
+          "is_correct": false
+        },
+        {
+          "label": "₹15876",
+          "is_correct": true
+        },
+        {
+          "label": "₹16511",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Compound Interest",
+      "kind": "standard",
+      "difficulty": "easy",
+      "answer_type": "single",
+      "stem": "Find the compound interest on ₹84 at 50% per annum for 2 years.",
+      "explanation": "CI = P(1+R/100)^T − P = ₹189 − ₹84 = ₹105.",
+      "options": [
+        {
+          "label": "₹109",
+          "is_correct": false
+        },
+        {
+          "label": "₹105",
+          "is_correct": true
+        },
+        {
+          "label": "₹107",
+          "is_correct": false
+        },
+        {
+          "label": "₹103",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Compound Interest",
+      "kind": "standard",
+      "difficulty": "easy",
+      "answer_type": "single",
+      "stem": "Find the compound interest on ₹96 at 25% per annum for 2 years.",
+      "explanation": "CI = P(1+R/100)^T − P = ₹150 − ₹96 = ₹54.",
+      "options": [
+        {
+          "label": "₹52",
+          "is_correct": false
+        },
+        {
+          "label": "₹56",
+          "is_correct": false
+        },
+        {
+          "label": "₹58",
+          "is_correct": false
+        },
+        {
+          "label": "₹54",
+          "is_correct": true
+        }
+      ]
+    },
+    {
+      "chapter": "Compound Interest",
+      "kind": "standard",
+      "difficulty": "easy",
+      "answer_type": "single",
+      "stem": "Find the compound interest on ₹6800 at 5% per annum for 2 years.",
+      "explanation": "CI = P(1+R/100)^T − P = ₹7497 − ₹6800 = ₹697.",
+      "options": [
+        {
+          "label": "₹669",
+          "is_correct": false
+        },
+        {
+          "label": "₹697",
+          "is_correct": true
+        },
+        {
+          "label": "₹753",
+          "is_correct": false
+        },
+        {
+          "label": "₹725",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Compound Interest",
+      "kind": "standard",
+      "difficulty": "easy",
+      "answer_type": "single",
+      "stem": "Find the amount on ₹112 at 50% per annum compound interest for 3 years.",
+      "explanation": "Amount = P(1+R/100)^T = 112×(1+50/100)^3 = ₹378.",
+      "options": [
+        {
+          "label": "₹393",
+          "is_correct": false
+        },
+        {
+          "label": "₹363",
+          "is_correct": false
+        },
+        {
+          "label": "₹378",
+          "is_correct": true
+        },
+        {
+          "label": "₹408",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Compound Interest",
+      "kind": "standard",
+      "difficulty": "easy",
+      "answer_type": "single",
+      "stem": "Find the amount on ₹5200 at 5% per annum compound interest for 2 years.",
+      "explanation": "Amount = P(1+R/100)^T = 5200×(1+5/100)^2 = ₹5733.",
+      "options": [
+        {
+          "label": "₹5733",
+          "is_correct": true
+        },
+        {
+          "label": "₹5962",
+          "is_correct": false
+        },
+        {
+          "label": "₹6191",
+          "is_correct": false
+        },
+        {
+          "label": "₹5504",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Compound Interest",
+      "kind": "standard",
+      "difficulty": "easy",
+      "answer_type": "single",
+      "stem": "Find the compound interest on ₹528 at 25% per annum for 2 years.",
+      "explanation": "CI = P(1+R/100)^T − P = ₹825 − ₹528 = ₹297.",
+      "options": [
+        {
+          "label": "₹309",
+          "is_correct": false
+        },
+        {
+          "label": "₹285",
+          "is_correct": false
+        },
+        {
+          "label": "₹297",
+          "is_correct": true
+        },
+        {
+          "label": "₹321",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Compound Interest",
+      "kind": "standard",
+      "difficulty": "easy",
+      "answer_type": "single",
+      "stem": "Find the amount on ₹368 at 25% per annum compound interest for 2 years.",
+      "explanation": "Amount = P(1+R/100)^T = 368×(1+25/100)^2 = ₹575.",
+      "options": [
+        {
+          "label": "₹575",
+          "is_correct": true
+        },
+        {
+          "label": "₹598",
+          "is_correct": false
+        },
+        {
+          "label": "₹621",
+          "is_correct": false
+        },
+        {
+          "label": "₹552",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Compound Interest",
+      "kind": "standard",
+      "difficulty": "easy",
+      "answer_type": "single",
+      "stem": "Find the amount on ₹64 at 50% per annum compound interest for 3 years.",
+      "explanation": "Amount = P(1+R/100)^T = 64×(1+50/100)^3 = ₹216.",
+      "options": [
+        {
+          "label": "₹216",
+          "is_correct": true
+        },
+        {
+          "label": "₹234",
+          "is_correct": false
+        },
+        {
+          "label": "₹225",
+          "is_correct": false
+        },
+        {
+          "label": "₹207",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Compound Interest",
+      "kind": "standard",
+      "difficulty": "easy",
+      "answer_type": "single",
+      "stem": "Find the difference between the compound interest and the simple interest on ₹848 at 25% per annum for 2 years.",
+      "explanation": "Difference for 2 years = P(R/100)² = 848×(25/100)² = ₹53.",
+      "options": [
+        {
+          "label": "₹57",
+          "is_correct": false
+        },
+        {
+          "label": "₹51",
+          "is_correct": false
+        },
+        {
+          "label": "₹55",
+          "is_correct": false
+        },
+        {
+          "label": "₹53",
+          "is_correct": true
+        }
+      ]
+    },
+    {
+      "chapter": "Compound Interest",
+      "kind": "standard",
+      "difficulty": "easy",
+      "answer_type": "single",
+      "stem": "Find the amount on ₹33000 at 10% per annum compound interest for 3 years.",
+      "explanation": "Amount = P(1+R/100)^T = 33000×(1+10/100)^3 = ₹43923.",
+      "options": [
+        {
+          "label": "₹42166",
+          "is_correct": false
+        },
+        {
+          "label": "₹43923",
+          "is_correct": true
+        },
+        {
+          "label": "₹45680",
+          "is_correct": false
+        },
+        {
+          "label": "₹47437",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Compound Interest",
+      "kind": "standard",
+      "difficulty": "easy",
+      "answer_type": "single",
+      "stem": "Find the amount on ₹148 at 50% per annum compound interest for 2 years.",
+      "explanation": "Amount = P(1+R/100)^T = 148×(1+50/100)^2 = ₹333.",
+      "options": [
+        {
+          "label": "₹359",
+          "is_correct": false
+        },
+        {
+          "label": "₹333",
+          "is_correct": true
+        },
+        {
+          "label": "₹320",
+          "is_correct": false
+        },
+        {
+          "label": "₹346",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Compound Interest",
+      "kind": "standard",
+      "difficulty": "easy",
+      "answer_type": "single",
+      "stem": "Find the compound interest on ₹224 at 50% per annum for 3 years.",
+      "explanation": "CI = P(1+R/100)^T − P = ₹756 − ₹224 = ₹532.",
+      "options": [
+        {
+          "label": "₹532",
+          "is_correct": true
+        },
+        {
+          "label": "₹574",
+          "is_correct": false
+        },
+        {
+          "label": "₹511",
+          "is_correct": false
+        },
+        {
+          "label": "₹553",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Compound Interest",
+      "kind": "standard",
+      "difficulty": "easy",
+      "answer_type": "single",
+      "stem": "Find the difference between the compound interest and the simple interest on ₹32 at 50% per annum for 2 years.",
+      "explanation": "Difference for 2 years = P(R/100)² = 32×(50/100)² = ₹8.",
+      "options": [
+        {
+          "label": "₹9",
+          "is_correct": false
+        },
+        {
+          "label": "₹10",
+          "is_correct": false
+        },
+        {
+          "label": "₹7",
+          "is_correct": false
+        },
+        {
+          "label": "₹8",
+          "is_correct": true
+        }
+      ]
+    },
+    {
+      "chapter": "Compound Interest",
+      "kind": "standard",
+      "difficulty": "easy",
+      "answer_type": "single",
+      "stem": "Find the compound interest on ₹400 at 10% per annum for 2 years.",
+      "explanation": "CI = P(1+R/100)^T − P = ₹484 − ₹400 = ₹84.",
+      "options": [
+        {
+          "label": "₹88",
+          "is_correct": false
+        },
+        {
+          "label": "₹84",
+          "is_correct": true
+        },
+        {
+          "label": "₹86",
+          "is_correct": false
+        },
+        {
+          "label": "₹82",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Compound Interest",
+      "kind": "standard",
+      "difficulty": "easy",
+      "answer_type": "single",
+      "stem": "Find the difference between the compound interest and the simple interest on ₹925 at 20% per annum for 2 years.",
+      "explanation": "Difference for 2 years = P(R/100)² = 925×(20/100)² = ₹37.",
+      "options": [
+        {
+          "label": "₹37",
+          "is_correct": true
+        },
+        {
+          "label": "₹39",
+          "is_correct": false
+        },
+        {
+          "label": "₹38",
+          "is_correct": false
+        },
+        {
+          "label": "₹36",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Compound Interest",
+      "kind": "standard",
+      "difficulty": "easy",
+      "answer_type": "single",
+      "stem": "Find the compound interest on ₹23000 at 10% per annum for 3 years.",
+      "explanation": "CI = P(1+R/100)^T − P = ₹30613 − ₹23000 = ₹7613.",
+      "options": [
+        {
+          "label": "₹7918",
+          "is_correct": false
+        },
+        {
+          "label": "₹7308",
+          "is_correct": false
+        },
+        {
+          "label": "₹7613",
+          "is_correct": true
+        },
+        {
+          "label": "₹8223",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Compound Interest",
+      "kind": "standard",
+      "difficulty": "easy",
+      "answer_type": "single",
+      "stem": "Find the amount on ₹256000 at 5% per annum compound interest for 3 years.",
+      "explanation": "Amount = P(1+R/100)^T = 256000×(1+5/100)^3 = ₹296352.",
+      "options": [
+        {
+          "label": "₹308206",
+          "is_correct": false
+        },
+        {
+          "label": "₹320060",
+          "is_correct": false
+        },
+        {
+          "label": "₹296352",
+          "is_correct": true
+        },
+        {
+          "label": "₹284498",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Compound Interest",
+      "kind": "standard",
+      "difficulty": "easy",
+      "answer_type": "single",
+      "stem": "Find the amount on ₹8400 at 5% per annum compound interest for 2 years.",
+      "explanation": "Amount = P(1+R/100)^T = 8400×(1+5/100)^2 = ₹9261.",
+      "options": [
+        {
+          "label": "₹10001",
+          "is_correct": false
+        },
+        {
+          "label": "₹9631",
+          "is_correct": false
+        },
+        {
+          "label": "₹8891",
+          "is_correct": false
+        },
+        {
+          "label": "₹9261",
+          "is_correct": true
+        }
+      ]
+    },
+    {
+      "chapter": "Compound Interest",
+      "kind": "standard",
+      "difficulty": "easy",
+      "answer_type": "single",
+      "stem": "Find the amount on ₹3500 at 10% per annum compound interest for 2 years.",
+      "explanation": "Amount = P(1+R/100)^T = 3500×(1+10/100)^2 = ₹4235.",
+      "options": [
+        {
+          "label": "₹4573",
+          "is_correct": false
+        },
+        {
+          "label": "₹4066",
+          "is_correct": false
+        },
+        {
+          "label": "₹4235",
+          "is_correct": true
+        },
+        {
+          "label": "₹4404",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Compound Interest",
+      "kind": "standard",
+      "difficulty": "easy",
+      "answer_type": "single",
+      "stem": "Find the compound interest on ₹136 at 50% per annum for 2 years.",
+      "explanation": "CI = P(1+R/100)^T − P = ₹306 − ₹136 = ₹170.",
+      "options": [
+        {
+          "label": "₹170",
+          "is_correct": true
+        },
+        {
+          "label": "₹172",
+          "is_correct": false
+        },
+        {
+          "label": "₹168",
+          "is_correct": false
+        },
+        {
+          "label": "₹174",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Compound Interest",
+      "kind": "standard",
+      "difficulty": "easy",
+      "answer_type": "single",
+      "stem": "Find the difference between the compound interest and the simple interest on ₹256 at 25% per annum for 2 years.",
+      "explanation": "Difference for 2 years = P(R/100)² = 256×(25/100)² = ₹16.",
+      "options": [
+        {
+          "label": "₹17",
+          "is_correct": false
+        },
+        {
+          "label": "₹16",
+          "is_correct": true
+        },
+        {
+          "label": "₹18",
+          "is_correct": false
+        },
+        {
+          "label": "₹15",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Compound Interest",
+      "kind": "standard",
+      "difficulty": "easy",
+      "answer_type": "single",
+      "stem": "Find the amount on ₹4800 at 5% per annum compound interest for 2 years.",
+      "explanation": "Amount = P(1+R/100)^T = 4800×(1+5/100)^2 = ₹5292.",
+      "options": [
+        {
+          "label": "₹5080",
+          "is_correct": false
+        },
+        {
+          "label": "₹5292",
+          "is_correct": true
+        },
+        {
+          "label": "₹5504",
+          "is_correct": false
+        },
+        {
+          "label": "₹5716",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Compound Interest",
+      "kind": "standard",
+      "difficulty": "easy",
+      "answer_type": "single",
+      "stem": "Find the difference between the compound interest and the simple interest on ₹3900 at 10% per annum for 2 years.",
+      "explanation": "Difference for 2 years = P(R/100)² = 3900×(10/100)² = ₹39.",
+      "options": [
+        {
+          "label": "₹40",
+          "is_correct": false
+        },
+        {
+          "label": "₹38",
+          "is_correct": false
+        },
+        {
+          "label": "₹39",
+          "is_correct": true
+        },
+        {
+          "label": "₹41",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Compound Interest",
+      "kind": "standard",
+      "difficulty": "easy",
+      "answer_type": "single",
+      "stem": "Find the compound interest on ₹120000 at 5% per annum for 3 years.",
+      "explanation": "CI = P(1+R/100)^T − P = ₹138915 − ₹120000 = ₹18915.",
+      "options": [
+        {
+          "label": "₹20429",
+          "is_correct": false
+        },
+        {
+          "label": "₹18915",
+          "is_correct": true
+        },
+        {
+          "label": "₹18158",
+          "is_correct": false
+        },
+        {
+          "label": "₹19672",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Compound Interest",
+      "kind": "standard",
+      "difficulty": "easy",
+      "answer_type": "single",
+      "stem": "Find the difference between the compound interest and the simple interest on ₹160 at 50% per annum for 2 years.",
+      "explanation": "Difference for 2 years = P(R/100)² = 160×(50/100)² = ₹40.",
+      "options": [
+        {
+          "label": "₹38",
+          "is_correct": false
+        },
+        {
+          "label": "₹44",
+          "is_correct": false
+        },
+        {
+          "label": "₹42",
+          "is_correct": false
+        },
+        {
+          "label": "₹40",
+          "is_correct": true
+        }
+      ]
+    },
+    {
+      "chapter": "Compound Interest",
+      "kind": "standard",
+      "difficulty": "easy",
+      "answer_type": "single",
+      "stem": "Find the compound interest on ₹128 at 25% per annum for 3 years.",
+      "explanation": "CI = P(1+R/100)^T − P = ₹250 − ₹128 = ₹122.",
+      "options": [
+        {
+          "label": "₹124",
+          "is_correct": false
+        },
+        {
+          "label": "₹122",
+          "is_correct": true
+        },
+        {
+          "label": "₹120",
+          "is_correct": false
+        },
+        {
+          "label": "₹126",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Compound Interest",
+      "kind": "standard",
+      "difficulty": "easy",
+      "answer_type": "single",
+      "stem": "Find the difference between the compound interest and the simple interest on ₹1400 at 20% per annum for 2 years.",
+      "explanation": "Difference for 2 years = P(R/100)² = 1400×(20/100)² = ₹56.",
+      "options": [
+        {
+          "label": "₹58",
+          "is_correct": false
+        },
+        {
+          "label": "₹56",
+          "is_correct": true
+        },
+        {
+          "label": "₹60",
+          "is_correct": false
+        },
+        {
+          "label": "₹54",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Compound Interest",
+      "kind": "standard",
+      "difficulty": "easy",
+      "answer_type": "single",
+      "stem": "Find the compound interest on ₹256 at 25% per annum for 2 years.",
+      "explanation": "CI = P(1+R/100)^T − P = ₹400 − ₹256 = ₹144.",
+      "options": [
+        {
+          "label": "₹142",
+          "is_correct": false
+        },
+        {
+          "label": "₹144",
+          "is_correct": true
+        },
+        {
+          "label": "₹148",
+          "is_correct": false
+        },
+        {
+          "label": "₹146",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Compound Interest",
+      "kind": "standard",
+      "difficulty": "easy",
+      "answer_type": "single",
+      "stem": "Find the amount on ₹300 at 20% per annum compound interest for 2 years.",
+      "explanation": "Amount = P(1+R/100)^T = 300×(1+20/100)^2 = ₹432.",
+      "options": [
+        {
+          "label": "₹432",
+          "is_correct": true
+        },
+        {
+          "label": "₹449",
+          "is_correct": false
+        },
+        {
+          "label": "₹466",
+          "is_correct": false
+        },
+        {
+          "label": "₹415",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Compound Interest",
+      "kind": "standard",
+      "difficulty": "easy",
+      "answer_type": "single",
+      "stem": "Find the compound interest on ₹240 at 50% per annum for 3 years.",
+      "explanation": "CI = P(1+R/100)^T − P = ₹810 − ₹240 = ₹570.",
+      "options": [
+        {
+          "label": "₹616",
+          "is_correct": false
+        },
+        {
+          "label": "₹570",
+          "is_correct": true
+        },
+        {
+          "label": "₹547",
+          "is_correct": false
+        },
+        {
+          "label": "₹593",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Compound Interest",
+      "kind": "standard",
+      "difficulty": "easy",
+      "answer_type": "single",
+      "stem": "Find the compound interest on ₹108 at 50% per annum for 2 years.",
+      "explanation": "CI = P(1+R/100)^T − P = ₹243 − ₹108 = ₹135.",
+      "options": [
+        {
+          "label": "₹135",
+          "is_correct": true
+        },
+        {
+          "label": "₹139",
+          "is_correct": false
+        },
+        {
+          "label": "₹137",
+          "is_correct": false
+        },
+        {
+          "label": "₹133",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Compound Interest",
+      "kind": "standard",
+      "difficulty": "easy",
+      "answer_type": "single",
+      "stem": "Find the difference between the compound interest and the simple interest on ₹2000 at 10% per annum for 2 years.",
+      "explanation": "Difference for 2 years = P(R/100)² = 2000×(10/100)² = ₹20.",
+      "options": [
+        {
+          "label": "₹22",
+          "is_correct": false
+        },
+        {
+          "label": "₹19",
+          "is_correct": false
+        },
+        {
+          "label": "₹20",
+          "is_correct": true
+        },
+        {
+          "label": "₹21",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Compound Interest",
+      "kind": "standard",
+      "difficulty": "easy",
+      "answer_type": "single",
+      "stem": "Find the difference between the compound interest and the simple interest on ₹368 at 25% per annum for 2 years.",
+      "explanation": "Difference for 2 years = P(R/100)² = 368×(25/100)² = ₹23.",
+      "options": [
+        {
+          "label": "₹25",
+          "is_correct": false
+        },
+        {
+          "label": "₹23",
+          "is_correct": true
+        },
+        {
+          "label": "₹22",
+          "is_correct": false
+        },
+        {
+          "label": "₹24",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Compound Interest",
+      "kind": "standard",
+      "difficulty": "easy",
+      "answer_type": "single",
+      "stem": "Find the compound interest on ₹44 at 50% per annum for 2 years.",
+      "explanation": "CI = P(1+R/100)^T − P = ₹99 − ₹44 = ₹55.",
+      "options": [
+        {
+          "label": "₹55",
+          "is_correct": true
+        },
+        {
+          "label": "₹53",
+          "is_correct": false
+        },
+        {
+          "label": "₹57",
+          "is_correct": false
+        },
+        {
+          "label": "₹59",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Compound Interest",
+      "kind": "standard",
+      "difficulty": "easy",
+      "answer_type": "single",
+      "stem": "Find the difference between the compound interest and the simple interest on ₹168 at 50% per annum for 2 years.",
+      "explanation": "Difference for 2 years = P(R/100)² = 168×(50/100)² = ₹42.",
+      "options": [
+        {
+          "label": "₹46",
+          "is_correct": false
+        },
+        {
+          "label": "₹44",
+          "is_correct": false
+        },
+        {
+          "label": "₹40",
+          "is_correct": false
+        },
+        {
+          "label": "₹42",
+          "is_correct": true
+        }
+      ]
+    },
+    {
+      "chapter": "Compound Interest",
+      "kind": "standard",
+      "difficulty": "easy",
+      "answer_type": "single",
+      "stem": "Find the difference between the compound interest and the simple interest on ₹896 at 25% per annum for 2 years.",
+      "explanation": "Difference for 2 years = P(R/100)² = 896×(25/100)² = ₹56.",
+      "options": [
+        {
+          "label": "₹56",
+          "is_correct": true
+        },
+        {
+          "label": "₹54",
+          "is_correct": false
+        },
+        {
+          "label": "₹58",
+          "is_correct": false
+        },
+        {
+          "label": "₹60",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Compound Interest",
+      "kind": "standard",
+      "difficulty": "easy",
+      "answer_type": "single",
+      "stem": "Find the difference between the compound interest and the simple interest on ₹608 at 25% per annum for 2 years.",
+      "explanation": "Difference for 2 years = P(R/100)² = 608×(25/100)² = ₹38.",
+      "options": [
+        {
+          "label": "₹38",
+          "is_correct": true
+        },
+        {
+          "label": "₹39",
+          "is_correct": false
+        },
+        {
+          "label": "₹40",
+          "is_correct": false
+        },
+        {
+          "label": "₹37",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Compound Interest",
+      "kind": "standard",
+      "difficulty": "easy",
+      "answer_type": "single",
+      "stem": "Find the difference between the compound interest and the simple interest on ₹1225 at 20% per annum for 2 years.",
+      "explanation": "Difference for 2 years = P(R/100)² = 1225×(20/100)² = ₹49.",
+      "options": [
+        {
+          "label": "₹47",
+          "is_correct": false
+        },
+        {
+          "label": "₹53",
+          "is_correct": false
+        },
+        {
+          "label": "₹51",
+          "is_correct": false
+        },
+        {
+          "label": "₹49",
+          "is_correct": true
+        }
+      ]
+    },
+    {
+      "chapter": "Compound Interest",
+      "kind": "standard",
+      "difficulty": "easy",
+      "answer_type": "single",
+      "stem": "Find the amount on ₹2500 at 10% per annum compound interest for 2 years.",
+      "explanation": "Amount = P(1+R/100)^T = 2500×(1+10/100)^2 = ₹3025.",
+      "options": [
+        {
+          "label": "₹3025",
+          "is_correct": true
+        },
+        {
+          "label": "₹2904",
+          "is_correct": false
+        },
+        {
+          "label": "₹3146",
+          "is_correct": false
+        },
+        {
+          "label": "₹3267",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Compound Interest",
+      "kind": "standard",
+      "difficulty": "medium",
+      "answer_type": "single",
+      "stem": "A sum amounts to ₹157437 in 3 years at 5% per annum compound interest. Find the principal (the original sum).",
+      "explanation": "Principal = amount ÷ (1+R/100)^T = ₹157437 ÷ (1+5/100)^3 = ₹136000.",
+      "options": [
+        {
+          "label": "₹130560",
+          "is_correct": false
+        },
+        {
+          "label": "₹146880",
+          "is_correct": false
+        },
+        {
+          "label": "₹136000",
+          "is_correct": true
+        },
+        {
+          "label": "₹141440",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Compound Interest",
+      "kind": "standard",
+      "difficulty": "medium",
+      "answer_type": "single",
+      "stem": "A sum amounts to ₹189 in 2 years at 50% per annum compound interest. Find the principal (the original sum).",
+      "explanation": "Principal = amount ÷ (1+R/100)^T = ₹189 ÷ (1+50/100)^2 = ₹84.",
+      "options": [
+        {
+          "label": "₹88",
+          "is_correct": false
+        },
+        {
+          "label": "₹84",
+          "is_correct": true
+        },
+        {
+          "label": "₹82",
+          "is_correct": false
+        },
+        {
+          "label": "₹86",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Compound Interest",
+      "kind": "standard",
+      "difficulty": "medium",
+      "answer_type": "single",
+      "stem": "Find the amount on ₹4000000 at 10% per annum compounded half-yearly for 2 year(s).",
+      "explanation": "Half-yearly: rate 5% for 4 periods; amount = 4000000(1+5/100)^4 = ₹4862025.",
+      "options": [
+        {
+          "label": "₹5056506",
+          "is_correct": false
+        },
+        {
+          "label": "₹5250987",
+          "is_correct": false
+        },
+        {
+          "label": "₹4862025",
+          "is_correct": true
+        },
+        {
+          "label": "₹4667544",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Compound Interest",
+      "kind": "standard",
+      "difficulty": "medium",
+      "answer_type": "single",
+      "stem": "A sum of ₹5000 amounts to ₹6050 in 2 years at compound interest. Find the rate percent per annum.",
+      "explanation": "(1+R/100)² = 6050/5000, giving R = 10%.",
+      "options": [
+        {
+          "label": "10%",
+          "is_correct": true
+        },
+        {
+          "label": "9%",
+          "is_correct": false
+        },
+        {
+          "label": "11%",
+          "is_correct": false
+        },
+        {
+          "label": "12%",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Compound Interest",
+      "kind": "standard",
+      "difficulty": "medium",
+      "answer_type": "single",
+      "stem": "A sum of ₹16000 amounts to ₹25000 in 2 years at compound interest. Find the rate percent per annum.",
+      "explanation": "(1+R/100)² = 25000/16000, giving R = 25%.",
+      "options": [
+        {
+          "label": "27%",
+          "is_correct": false
+        },
+        {
+          "label": "26%",
+          "is_correct": false
+        },
+        {
+          "label": "24%",
+          "is_correct": false
+        },
+        {
+          "label": "25%",
+          "is_correct": true
+        }
+      ]
+    },
+    {
+      "chapter": "Compound Interest",
+      "kind": "standard",
+      "difficulty": "medium",
+      "answer_type": "single",
+      "stem": "Find the amount on ₹270000 at 20% per annum compounded half-yearly for 2 year(s).",
+      "explanation": "Half-yearly: rate 10% for 4 periods; amount = 270000(1+10/100)^4 = ₹395307.",
+      "options": [
+        {
+          "label": "₹411119",
+          "is_correct": false
+        },
+        {
+          "label": "₹395307",
+          "is_correct": true
+        },
+        {
+          "label": "₹379495",
+          "is_correct": false
+        },
+        {
+          "label": "₹426931",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Compound Interest",
+      "kind": "standard",
+      "difficulty": "medium",
+      "answer_type": "single",
+      "stem": "Find the amount on ₹3200000 at 10% per annum compounded half-yearly for 2 year(s).",
+      "explanation": "Half-yearly: rate 5% for 4 periods; amount = 3200000(1+5/100)^4 = ₹3889620.",
+      "options": [
+        {
+          "label": "₹3734035",
+          "is_correct": false
+        },
+        {
+          "label": "₹4200790",
+          "is_correct": false
+        },
+        {
+          "label": "₹3889620",
+          "is_correct": true
+        },
+        {
+          "label": "₹4045205",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Compound Interest",
+      "kind": "standard",
+      "difficulty": "medium",
+      "answer_type": "single",
+      "stem": "Find the amount on ₹1900 at 20% per annum compounded half-yearly for 1 year(s).",
+      "explanation": "Half-yearly: rate 10% for 2 periods; amount = 1900(1+10/100)^2 = ₹2299.",
+      "options": [
+        {
+          "label": "₹2207",
+          "is_correct": false
+        },
+        {
+          "label": "₹2391",
+          "is_correct": false
+        },
+        {
+          "label": "₹2483",
+          "is_correct": false
+        },
+        {
+          "label": "₹2299",
+          "is_correct": true
+        }
+      ]
+    },
+    {
+      "chapter": "Compound Interest",
+      "kind": "standard",
+      "difficulty": "medium",
+      "answer_type": "single",
+      "stem": "A sum of ₹4000 amounts to ₹4410 in 2 years at compound interest. Find the rate percent per annum.",
+      "explanation": "(1+R/100)² = 4410/4000, giving R = 5%.",
+      "options": [
+        {
+          "label": "7%",
+          "is_correct": false
+        },
+        {
+          "label": "5%",
+          "is_correct": true
+        },
+        {
+          "label": "4%",
+          "is_correct": false
+        },
+        {
+          "label": "6%",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Compound Interest",
+      "kind": "standard",
+      "difficulty": "medium",
+      "answer_type": "single",
+      "stem": "A sum amounts to ₹5616 in 3 years at 20% per annum compound interest. Find the principal (the original sum).",
+      "explanation": "Principal = amount ÷ (1+R/100)^T = ₹5616 ÷ (1+20/100)^3 = ₹3250.",
+      "options": [
+        {
+          "label": "₹3120",
+          "is_correct": false
+        },
+        {
+          "label": "₹3380",
+          "is_correct": false
+        },
+        {
+          "label": "₹3250",
+          "is_correct": true
+        },
+        {
+          "label": "₹3510",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Compound Interest",
+      "kind": "standard",
+      "difficulty": "medium",
+      "answer_type": "single",
+      "stem": "A sum of ₹10000 amounts to ₹12100 in 2 years at compound interest. Find the rate percent per annum.",
+      "explanation": "(1+R/100)² = 12100/10000, giving R = 10%.",
+      "options": [
+        {
+          "label": "9%",
+          "is_correct": false
+        },
+        {
+          "label": "12%",
+          "is_correct": false
+        },
+        {
+          "label": "10%",
+          "is_correct": true
+        },
+        {
+          "label": "11%",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Compound Interest",
+      "kind": "standard",
+      "difficulty": "medium",
+      "answer_type": "single",
+      "stem": "A sum of ₹8000 amounts to ₹8820 in 2 years at compound interest. Find the rate percent per annum.",
+      "explanation": "(1+R/100)² = 8820/8000, giving R = 5%.",
+      "options": [
+        {
+          "label": "4%",
+          "is_correct": false
+        },
+        {
+          "label": "6%",
+          "is_correct": false
+        },
+        {
+          "label": "7%",
+          "is_correct": false
+        },
+        {
+          "label": "5%",
+          "is_correct": true
+        }
+      ]
+    },
+    {
+      "chapter": "Compound Interest",
+      "kind": "standard",
+      "difficulty": "medium",
+      "answer_type": "single",
+      "stem": "Find the amount on ₹40000 at 20% per annum compounded half-yearly for 2 year(s).",
+      "explanation": "Half-yearly: rate 10% for 4 periods; amount = 40000(1+10/100)^4 = ₹58564.",
+      "options": [
+        {
+          "label": "₹60907",
+          "is_correct": false
+        },
+        {
+          "label": "₹63250",
+          "is_correct": false
+        },
+        {
+          "label": "₹58564",
+          "is_correct": true
+        },
+        {
+          "label": "₹56221",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Compound Interest",
+      "kind": "standard",
+      "difficulty": "medium",
+      "answer_type": "single",
+      "stem": "A sum amounts to ₹825 in 2 years at 25% per annum compound interest. Find the principal (the original sum).",
+      "explanation": "Principal = amount ÷ (1+R/100)^T = ₹825 ÷ (1+25/100)^2 = ₹528.",
+      "options": [
+        {
+          "label": "₹507",
+          "is_correct": false
+        },
+        {
+          "label": "₹570",
+          "is_correct": false
+        },
+        {
+          "label": "₹549",
+          "is_correct": false
+        },
+        {
+          "label": "₹528",
+          "is_correct": true
+        }
+      ]
+    },
+    {
+      "chapter": "Compound Interest",
+      "kind": "standard",
+      "difficulty": "medium",
+      "answer_type": "single",
+      "stem": "Find the amount on ₹960000 at 10% per annum compounded half-yearly for 2 year(s).",
+      "explanation": "Half-yearly: rate 5% for 4 periods; amount = 960000(1+5/100)^4 = ₹1166886.",
+      "options": [
+        {
+          "label": "₹1260236",
+          "is_correct": false
+        },
+        {
+          "label": "₹1213561",
+          "is_correct": false
+        },
+        {
+          "label": "₹1120211",
+          "is_correct": false
+        },
+        {
+          "label": "₹1166886",
+          "is_correct": true
+        }
+      ]
+    },
+    {
+      "chapter": "Compound Interest",
+      "kind": "standard",
+      "difficulty": "medium",
+      "answer_type": "single",
+      "stem": "Find the amount on ₹1440000 at 10% per annum compounded half-yearly for 2 year(s).",
+      "explanation": "Half-yearly: rate 5% for 4 periods; amount = 1440000(1+5/100)^4 = ₹1750329.",
+      "options": [
+        {
+          "label": "₹1750329",
+          "is_correct": true
+        },
+        {
+          "label": "₹1890355",
+          "is_correct": false
+        },
+        {
+          "label": "₹1680316",
+          "is_correct": false
+        },
+        {
+          "label": "₹1820342",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Compound Interest",
+      "kind": "standard",
+      "difficulty": "medium",
+      "answer_type": "single",
+      "stem": "A sum of ₹6250 amounts to ₹9000 in 2 years at compound interest. Find the rate percent per annum.",
+      "explanation": "(1+R/100)² = 9000/6250, giving R = 20%.",
+      "options": [
+        {
+          "label": "20%",
+          "is_correct": true
+        },
+        {
+          "label": "19%",
+          "is_correct": false
+        },
+        {
+          "label": "21%",
+          "is_correct": false
+        },
+        {
+          "label": "22%",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Compound Interest",
+      "kind": "standard",
+      "difficulty": "medium",
+      "answer_type": "single",
+      "stem": "A sum amounts to ₹225 in 2 years at 25% per annum compound interest. Find the principal (the original sum).",
+      "explanation": "Principal = amount ÷ (1+R/100)^T = ₹225 ÷ (1+25/100)^2 = ₹144.",
+      "options": [
+        {
+          "label": "₹144",
+          "is_correct": true
+        },
+        {
+          "label": "₹148",
+          "is_correct": false
+        },
+        {
+          "label": "₹146",
+          "is_correct": false
+        },
+        {
+          "label": "₹142",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Compound Interest",
+      "kind": "standard",
+      "difficulty": "medium",
+      "answer_type": "single",
+      "stem": "A sum amounts to ₹4752 in 3 years at 20% per annum compound interest. Find the principal (the original sum).",
+      "explanation": "Principal = amount ÷ (1+R/100)^T = ₹4752 ÷ (1+20/100)^3 = ₹2750.",
+      "options": [
+        {
+          "label": "₹2640",
+          "is_correct": false
+        },
+        {
+          "label": "₹2750",
+          "is_correct": true
+        },
+        {
+          "label": "₹2970",
+          "is_correct": false
+        },
+        {
+          "label": "₹2860",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Compound Interest",
+      "kind": "standard",
+      "difficulty": "medium",
+      "answer_type": "single",
+      "stem": "Find the amount on ₹1600000 at 10% per annum compounded half-yearly for 2 year(s).",
+      "explanation": "Half-yearly: rate 5% for 4 periods; amount = 1600000(1+5/100)^4 = ₹1944810.",
+      "options": [
+        {
+          "label": "₹2100394",
+          "is_correct": false
+        },
+        {
+          "label": "₹1944810",
+          "is_correct": true
+        },
+        {
+          "label": "₹2022602",
+          "is_correct": false
+        },
+        {
+          "label": "₹1867018",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Compound Interest",
+      "kind": "standard",
+      "difficulty": "medium",
+      "answer_type": "single",
+      "stem": "Find the amount on ₹200 at 20% per annum compounded half-yearly for 1 year(s).",
+      "explanation": "Half-yearly: rate 10% for 2 periods; amount = 200(1+10/100)^2 = ₹242.",
+      "options": [
+        {
+          "label": "₹262",
+          "is_correct": false
+        },
+        {
+          "label": "₹242",
+          "is_correct": true
+        },
+        {
+          "label": "₹232",
+          "is_correct": false
+        },
+        {
+          "label": "₹252",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Compound Interest",
+      "kind": "standard",
+      "difficulty": "medium",
+      "answer_type": "single",
+      "stem": "A sum amounts to ₹792 in 2 years at 20% per annum compound interest. Find the principal (the original sum).",
+      "explanation": "Principal = amount ÷ (1+R/100)^T = ₹792 ÷ (1+20/100)^2 = ₹550.",
+      "options": [
+        {
+          "label": "₹550",
+          "is_correct": true
+        },
+        {
+          "label": "₹528",
+          "is_correct": false
+        },
+        {
+          "label": "₹572",
+          "is_correct": false
+        },
+        {
+          "label": "₹594",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Compound Interest",
+      "kind": "standard",
+      "difficulty": "medium",
+      "answer_type": "single",
+      "stem": "A sum amounts to ₹4000 in 3 years at 25% per annum compound interest. Find the principal (the original sum).",
+      "explanation": "Principal = amount ÷ (1+R/100)^T = ₹4000 ÷ (1+25/100)^3 = ₹2048.",
+      "options": [
+        {
+          "label": "₹1966",
+          "is_correct": false
+        },
+        {
+          "label": "₹2130",
+          "is_correct": false
+        },
+        {
+          "label": "₹2212",
+          "is_correct": false
+        },
+        {
+          "label": "₹2048",
+          "is_correct": true
+        }
+      ]
+    },
+    {
+      "chapter": "Compound Interest",
+      "kind": "standard",
+      "difficulty": "medium",
+      "answer_type": "single",
+      "stem": "Find the amount on ₹11600 at 10% per annum compounded half-yearly for 1 year(s).",
+      "explanation": "Half-yearly: rate 5% for 2 periods; amount = 11600(1+5/100)^2 = ₹12789.",
+      "options": [
+        {
+          "label": "₹13813",
+          "is_correct": false
+        },
+        {
+          "label": "₹12277",
+          "is_correct": false
+        },
+        {
+          "label": "₹12789",
+          "is_correct": true
+        },
+        {
+          "label": "₹13301",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Compound Interest",
+      "kind": "standard",
+      "difficulty": "medium",
+      "answer_type": "single",
+      "stem": "Find the amount on ₹700 at 20% per annum compounded half-yearly for 1 year(s).",
+      "explanation": "Half-yearly: rate 10% for 2 periods; amount = 700(1+10/100)^2 = ₹847.",
+      "options": [
+        {
+          "label": "₹881",
+          "is_correct": false
+        },
+        {
+          "label": "₹813",
+          "is_correct": false
+        },
+        {
+          "label": "₹847",
+          "is_correct": true
+        },
+        {
+          "label": "₹915",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Compound Interest",
+      "kind": "standard",
+      "difficulty": "medium",
+      "answer_type": "single",
+      "stem": "Find the amount on ₹9600 at 10% per annum compounded half-yearly for 1 year(s).",
+      "explanation": "Half-yearly: rate 5% for 2 periods; amount = 9600(1+5/100)^2 = ₹10584.",
+      "options": [
+        {
+          "label": "₹10584",
+          "is_correct": true
+        },
+        {
+          "label": "₹11430",
+          "is_correct": false
+        },
+        {
+          "label": "₹11007",
+          "is_correct": false
+        },
+        {
+          "label": "₹10161",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Compound Interest",
+      "kind": "standard",
+      "difficulty": "medium",
+      "answer_type": "single",
+      "stem": "Find the amount on ₹140000 at 20% per annum compounded half-yearly for 2 year(s).",
+      "explanation": "Half-yearly: rate 10% for 4 periods; amount = 140000(1+10/100)^4 = ₹204974.",
+      "options": [
+        {
+          "label": "₹213173",
+          "is_correct": false
+        },
+        {
+          "label": "₹204974",
+          "is_correct": true
+        },
+        {
+          "label": "₹196775",
+          "is_correct": false
+        },
+        {
+          "label": "₹221372",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Compound Interest",
+      "kind": "standard",
+      "difficulty": "medium",
+      "answer_type": "single",
+      "stem": "Find the amount on ₹8800 at 10% per annum compounded half-yearly for 1 year(s).",
+      "explanation": "Half-yearly: rate 5% for 2 periods; amount = 8800(1+5/100)^2 = ₹9702.",
+      "options": [
+        {
+          "label": "₹10478",
+          "is_correct": false
+        },
+        {
+          "label": "₹9702",
+          "is_correct": true
+        },
+        {
+          "label": "₹10090",
+          "is_correct": false
+        },
+        {
+          "label": "₹9314",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Compound Interest",
+      "kind": "standard",
+      "difficulty": "medium",
+      "answer_type": "single",
+      "stem": "A sum amounts to ₹16317 in 2 years at 5% per annum compound interest. Find the principal (the original sum).",
+      "explanation": "Principal = amount ÷ (1+R/100)^T = ₹16317 ÷ (1+5/100)^2 = ₹14800.",
+      "options": [
+        {
+          "label": "₹15984",
+          "is_correct": false
+        },
+        {
+          "label": "₹14800",
+          "is_correct": true
+        },
+        {
+          "label": "₹15392",
+          "is_correct": false
+        },
+        {
+          "label": "₹14208",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Compound Interest",
+      "kind": "standard",
+      "difficulty": "medium",
+      "answer_type": "single",
+      "stem": "A sum amounts to ₹702 in 3 years at 50% per annum compound interest. Find the principal (the original sum).",
+      "explanation": "Principal = amount ÷ (1+R/100)^T = ₹702 ÷ (1+50/100)^3 = ₹208.",
+      "options": [
+        {
+          "label": "₹200",
+          "is_correct": false
+        },
+        {
+          "label": "₹216",
+          "is_correct": false
+        },
+        {
+          "label": "₹208",
+          "is_correct": true
+        },
+        {
+          "label": "₹224",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Compound Interest",
+      "kind": "standard",
+      "difficulty": "medium",
+      "answer_type": "single",
+      "stem": "Find the amount on ₹6000 at 10% per annum compounded half-yearly for 1 year(s).",
+      "explanation": "Half-yearly: rate 5% for 2 periods; amount = 6000(1+5/100)^2 = ₹6615.",
+      "options": [
+        {
+          "label": "₹7145",
+          "is_correct": false
+        },
+        {
+          "label": "₹6615",
+          "is_correct": true
+        },
+        {
+          "label": "₹6350",
+          "is_correct": false
+        },
+        {
+          "label": "₹6880",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Compound Interest",
+      "kind": "standard",
+      "difficulty": "medium",
+      "answer_type": "single",
+      "stem": "Find the amount on ₹3840000 at 10% per annum compounded half-yearly for 2 year(s).",
+      "explanation": "Half-yearly: rate 5% for 4 periods; amount = 3840000(1+5/100)^4 = ₹4667544.",
+      "options": [
+        {
+          "label": "₹5040948",
+          "is_correct": false
+        },
+        {
+          "label": "₹4667544",
+          "is_correct": true
+        },
+        {
+          "label": "₹4854246",
+          "is_correct": false
+        },
+        {
+          "label": "₹4480842",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Compound Interest",
+      "kind": "standard",
+      "difficulty": "medium",
+      "answer_type": "single",
+      "stem": "A sum amounts to ₹126 in 2 years at 50% per annum compound interest. Find the principal (the original sum).",
+      "explanation": "Principal = amount ÷ (1+R/100)^T = ₹126 ÷ (1+50/100)^2 = ₹56.",
+      "options": [
+        {
+          "label": "₹60",
+          "is_correct": false
+        },
+        {
+          "label": "₹58",
+          "is_correct": false
+        },
+        {
+          "label": "₹54",
+          "is_correct": false
+        },
+        {
+          "label": "₹56",
+          "is_correct": true
+        }
+      ]
+    },
+    {
+      "chapter": "Compound Interest",
+      "kind": "standard",
+      "difficulty": "medium",
+      "answer_type": "single",
+      "stem": "A sum amounts to ₹925 in 2 years at 25% per annum compound interest. Find the principal (the original sum).",
+      "explanation": "Principal = amount ÷ (1+R/100)^T = ₹925 ÷ (1+25/100)^2 = ₹592.",
+      "options": [
+        {
+          "label": "₹640",
+          "is_correct": false
+        },
+        {
+          "label": "₹616",
+          "is_correct": false
+        },
+        {
+          "label": "₹592",
+          "is_correct": true
+        },
+        {
+          "label": "₹568",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Compound Interest",
+      "kind": "standard",
+      "difficulty": "medium",
+      "answer_type": "single",
+      "stem": "A sum amounts to ₹7986 in 3 years at 10% per annum compound interest. Find the principal (the original sum).",
+      "explanation": "Principal = amount ÷ (1+R/100)^T = ₹7986 ÷ (1+10/100)^3 = ₹6000.",
+      "options": [
+        {
+          "label": "₹6480",
+          "is_correct": false
+        },
+        {
+          "label": "₹6000",
+          "is_correct": true
+        },
+        {
+          "label": "₹5760",
+          "is_correct": false
+        },
+        {
+          "label": "₹6240",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Compound Interest",
+      "kind": "standard",
+      "difficulty": "medium",
+      "answer_type": "single",
+      "stem": "Find the amount on ₹1600 at 20% per annum compounded half-yearly for 1 year(s).",
+      "explanation": "Half-yearly: rate 10% for 2 periods; amount = 1600(1+10/100)^2 = ₹1936.",
+      "options": [
+        {
+          "label": "₹2090",
+          "is_correct": false
+        },
+        {
+          "label": "₹2013",
+          "is_correct": false
+        },
+        {
+          "label": "₹1936",
+          "is_correct": true
+        },
+        {
+          "label": "₹1859",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Compound Interest",
+      "kind": "standard",
+      "difficulty": "medium",
+      "answer_type": "single",
+      "stem": "A sum amounts to ₹4104 in 3 years at 20% per annum compound interest. Find the principal (the original sum).",
+      "explanation": "Principal = amount ÷ (1+R/100)^T = ₹4104 ÷ (1+20/100)^3 = ₹2375.",
+      "options": [
+        {
+          "label": "₹2470",
+          "is_correct": false
+        },
+        {
+          "label": "₹2565",
+          "is_correct": false
+        },
+        {
+          "label": "₹2375",
+          "is_correct": true
+        },
+        {
+          "label": "₹2280",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Compound Interest",
+      "kind": "standard",
+      "difficulty": "medium",
+      "answer_type": "single",
+      "stem": "A sum amounts to ₹41261 in 3 years at 10% per annum compound interest. Find the principal (the original sum).",
+      "explanation": "Principal = amount ÷ (1+R/100)^T = ₹41261 ÷ (1+10/100)^3 = ₹31000.",
+      "options": [
+        {
+          "label": "₹32240",
+          "is_correct": false
+        },
+        {
+          "label": "₹29760",
+          "is_correct": false
+        },
+        {
+          "label": "₹33480",
+          "is_correct": false
+        },
+        {
+          "label": "₹31000",
+          "is_correct": true
+        }
+      ]
+    },
+    {
+      "chapter": "Compound Interest",
+      "kind": "standard",
+      "difficulty": "medium",
+      "answer_type": "single",
+      "stem": "A sum amounts to ₹756 in 2 years at 20% per annum compound interest. Find the principal (the original sum).",
+      "explanation": "Principal = amount ÷ (1+R/100)^T = ₹756 ÷ (1+20/100)^2 = ₹525.",
+      "options": [
+        {
+          "label": "₹567",
+          "is_correct": false
+        },
+        {
+          "label": "₹504",
+          "is_correct": false
+        },
+        {
+          "label": "₹525",
+          "is_correct": true
+        },
+        {
+          "label": "₹546",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Compound Interest",
+      "kind": "standard",
+      "difficulty": "medium",
+      "answer_type": "single",
+      "stem": "Find the amount on ₹100000 at 20% per annum compounded half-yearly for 2 year(s).",
+      "explanation": "Half-yearly: rate 10% for 4 periods; amount = 100000(1+10/100)^4 = ₹146410.",
+      "options": [
+        {
+          "label": "₹158122",
+          "is_correct": false
+        },
+        {
+          "label": "₹140554",
+          "is_correct": false
+        },
+        {
+          "label": "₹146410",
+          "is_correct": true
+        },
+        {
+          "label": "₹152266",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Compound Interest",
+      "kind": "standard",
+      "difficulty": "medium",
+      "answer_type": "single",
+      "stem": "A sum amounts to ₹10648 in 3 years at 10% per annum compound interest. Find the principal (the original sum).",
+      "explanation": "Principal = amount ÷ (1+R/100)^T = ₹10648 ÷ (1+10/100)^3 = ₹8000.",
+      "options": [
+        {
+          "label": "₹8640",
+          "is_correct": false
+        },
+        {
+          "label": "₹8000",
+          "is_correct": true
+        },
+        {
+          "label": "₹7680",
+          "is_correct": false
+        },
+        {
+          "label": "₹8320",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Compound Interest",
+      "kind": "standard",
+      "difficulty": "medium",
+      "answer_type": "single",
+      "stem": "A sum amounts to ₹936 in 2 years at 20% per annum compound interest. Find the principal (the original sum).",
+      "explanation": "Principal = amount ÷ (1+R/100)^T = ₹936 ÷ (1+20/100)^2 = ₹650.",
+      "options": [
+        {
+          "label": "₹624",
+          "is_correct": false
+        },
+        {
+          "label": "₹676",
+          "is_correct": false
+        },
+        {
+          "label": "₹650",
+          "is_correct": true
+        },
+        {
+          "label": "₹702",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Compound Interest",
+      "kind": "standard",
+      "difficulty": "medium",
+      "answer_type": "single",
+      "stem": "A sum amounts to ₹120393 in 3 years at 5% per annum compound interest. Find the principal (the original sum).",
+      "explanation": "Principal = amount ÷ (1+R/100)^T = ₹120393 ÷ (1+5/100)^3 = ₹104000.",
+      "options": [
+        {
+          "label": "₹104000",
+          "is_correct": true
+        },
+        {
+          "label": "₹99840",
+          "is_correct": false
+        },
+        {
+          "label": "₹108160",
+          "is_correct": false
+        },
+        {
+          "label": "₹112320",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Compound Interest",
+      "kind": "standard",
+      "difficulty": "medium",
+      "answer_type": "single",
+      "stem": "Find the amount on ₹2500 at 20% per annum compounded half-yearly for 1 year(s).",
+      "explanation": "Half-yearly: rate 10% for 2 periods; amount = 2500(1+10/100)^2 = ₹3025.",
+      "options": [
+        {
+          "label": "₹2904",
+          "is_correct": false
+        },
+        {
+          "label": "₹3025",
+          "is_correct": true
+        },
+        {
+          "label": "₹3146",
+          "is_correct": false
+        },
+        {
+          "label": "₹3267",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Compound Interest",
+      "kind": "standard",
+      "difficulty": "medium",
+      "answer_type": "single",
+      "stem": "A sum amounts to ₹6696 in 3 years at 20% per annum compound interest. Find the principal (the original sum).",
+      "explanation": "Principal = amount ÷ (1+R/100)^T = ₹6696 ÷ (1+20/100)^3 = ₹3875.",
+      "options": [
+        {
+          "label": "₹4030",
+          "is_correct": false
+        },
+        {
+          "label": "₹4185",
+          "is_correct": false
+        },
+        {
+          "label": "₹3720",
+          "is_correct": false
+        },
+        {
+          "label": "₹3875",
+          "is_correct": true
+        }
+      ]
+    },
+    {
+      "chapter": "Compound Interest",
+      "kind": "standard",
+      "difficulty": "medium",
+      "answer_type": "single",
+      "stem": "A sum amounts to ₹837 in 3 years at 50% per annum compound interest. Find the principal (the original sum).",
+      "explanation": "Principal = amount ÷ (1+R/100)^T = ₹837 ÷ (1+50/100)^3 = ₹248.",
+      "options": [
+        {
+          "label": "₹268",
+          "is_correct": false
+        },
+        {
+          "label": "₹248",
+          "is_correct": true
+        },
+        {
+          "label": "₹238",
+          "is_correct": false
+        },
+        {
+          "label": "₹258",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Compound Interest",
+      "kind": "standard",
+      "difficulty": "medium",
+      "answer_type": "single",
+      "stem": "Find the amount on ₹130000 at 20% per annum compounded half-yearly for 2 year(s).",
+      "explanation": "Half-yearly: rate 10% for 4 periods; amount = 130000(1+10/100)^4 = ₹190333.",
+      "options": [
+        {
+          "label": "₹197946",
+          "is_correct": false
+        },
+        {
+          "label": "₹190333",
+          "is_correct": true
+        },
+        {
+          "label": "₹205559",
+          "is_correct": false
+        },
+        {
+          "label": "₹182720",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Compound Interest",
+      "kind": "standard",
+      "difficulty": "medium",
+      "answer_type": "single",
+      "stem": "Find the amount on ₹400 at 10% per annum compounded half-yearly for 1 year(s).",
+      "explanation": "Half-yearly: rate 5% for 2 periods; amount = 400(1+5/100)^2 = ₹441.",
+      "options": [
+        {
+          "label": "₹477",
+          "is_correct": false
+        },
+        {
+          "label": "₹459",
+          "is_correct": false
+        },
+        {
+          "label": "₹423",
+          "is_correct": false
+        },
+        {
+          "label": "₹441",
+          "is_correct": true
+        }
+      ]
+    },
+    {
+      "chapter": "Compound Interest",
+      "kind": "standard",
+      "difficulty": "medium",
+      "answer_type": "single",
+      "stem": "Find the amount on ₹500 at 20% per annum compounded half-yearly for 1 year(s).",
+      "explanation": "Half-yearly: rate 10% for 2 periods; amount = 500(1+10/100)^2 = ₹605.",
+      "options": [
+        {
+          "label": "₹629",
+          "is_correct": false
+        },
+        {
+          "label": "₹581",
+          "is_correct": false
+        },
+        {
+          "label": "₹653",
+          "is_correct": false
+        },
+        {
+          "label": "₹605",
+          "is_correct": true
+        }
+      ]
+    },
+    {
+      "chapter": "Compound Interest",
+      "kind": "standard",
+      "difficulty": "medium",
+      "answer_type": "single",
+      "stem": "A sum amounts to ₹296352 in 3 years at 5% per annum compound interest. Find the principal (the original sum).",
+      "explanation": "Principal = amount ÷ (1+R/100)^T = ₹296352 ÷ (1+5/100)^3 = ₹256000.",
+      "options": [
+        {
+          "label": "₹266240",
+          "is_correct": false
+        },
+        {
+          "label": "₹256000",
+          "is_correct": true
+        },
+        {
+          "label": "₹276480",
+          "is_correct": false
+        },
+        {
+          "label": "₹245760",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Compound Interest",
+      "kind": "standard",
+      "difficulty": "hard",
+      "answer_type": "single",
+      "stem": "The difference between the compound interest and the simple interest on a certain sum for 2 years at 20% per annum is ₹11. Find the sum.",
+      "explanation": "Difference = P(20/100)² = ₹11, so P = ₹11 × 10000/400 = ₹275.",
+      "options": [
+        {
+          "label": "₹286",
+          "is_correct": false
+        },
+        {
+          "label": "₹297",
+          "is_correct": false
+        },
+        {
+          "label": "₹275",
+          "is_correct": true
+        },
+        {
+          "label": "₹264",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Compound Interest",
+      "kind": "standard",
+      "difficulty": "hard",
+      "answer_type": "single",
+      "stem": "Find the compound interest on ₹232000 at 5% per annum for 3 years.",
+      "explanation": "CI = 232000(1+5/100)³ − 232000 = ₹36569.",
+      "options": [
+        {
+          "label": "₹35106",
+          "is_correct": false
+        },
+        {
+          "label": "₹38032",
+          "is_correct": false
+        },
+        {
+          "label": "₹39495",
+          "is_correct": false
+        },
+        {
+          "label": "₹36569",
+          "is_correct": true
+        }
+      ]
+    },
+    {
+      "chapter": "Compound Interest",
+      "kind": "standard",
+      "difficulty": "hard",
+      "answer_type": "single",
+      "stem": "A sum of money doubles itself in 3 years at compound interest. In how many years will it become 8 times itself?",
+      "explanation": "Becoming 8 = 2^3 times takes 3 doubling periods, i.e. 3×3 = 9 years.",
+      "options": [
+        {
+          "label": "9 years",
+          "is_correct": true
+        },
+        {
+          "label": "8 years",
+          "is_correct": false
+        },
+        {
+          "label": "10 years",
+          "is_correct": false
+        },
+        {
+          "label": "11 years",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Compound Interest",
+      "kind": "standard",
+      "difficulty": "hard",
+      "answer_type": "single",
+      "stem": "Find the compound interest on ₹1875 at 20% per annum for 3 years.",
+      "explanation": "CI = 1875(1+20/100)³ − 1875 = ₹1365.",
+      "options": [
+        {
+          "label": "₹1365",
+          "is_correct": true
+        },
+        {
+          "label": "₹1310",
+          "is_correct": false
+        },
+        {
+          "label": "₹1475",
+          "is_correct": false
+        },
+        {
+          "label": "₹1420",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Compound Interest",
+      "kind": "standard",
+      "difficulty": "hard",
+      "answer_type": "single",
+      "stem": "The difference between the compound interest and the simple interest on a certain sum for 2 years at 10% per annum is ₹47. Find the sum.",
+      "explanation": "Difference = P(10/100)² = ₹47, so P = ₹47 × 10000/100 = ₹4700.",
+      "options": [
+        {
+          "label": "₹4512",
+          "is_correct": false
+        },
+        {
+          "label": "₹4700",
+          "is_correct": true
+        },
+        {
+          "label": "₹4888",
+          "is_correct": false
+        },
+        {
+          "label": "₹5076",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Compound Interest",
+      "kind": "standard",
+      "difficulty": "hard",
+      "answer_type": "single",
+      "stem": "Find the compound interest on ₹320 at 25% per annum for 3 years.",
+      "explanation": "CI = 320(1+25/100)³ − 320 = ₹305.",
+      "options": [
+        {
+          "label": "₹293",
+          "is_correct": false
+        },
+        {
+          "label": "₹329",
+          "is_correct": false
+        },
+        {
+          "label": "₹317",
+          "is_correct": false
+        },
+        {
+          "label": "₹305",
+          "is_correct": true
+        }
+      ]
+    },
+    {
+      "chapter": "Compound Interest",
+      "kind": "standard",
+      "difficulty": "hard",
+      "answer_type": "single",
+      "stem": "The difference between the compound interest and the simple interest on a certain sum for 2 years at 25% per annum is ₹44. Find the sum.",
+      "explanation": "Difference = P(25/100)² = ₹44, so P = ₹44 × 10000/625 = ₹704.",
+      "options": [
+        {
+          "label": "₹704",
+          "is_correct": true
+        },
+        {
+          "label": "₹760",
+          "is_correct": false
+        },
+        {
+          "label": "₹676",
+          "is_correct": false
+        },
+        {
+          "label": "₹732",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Compound Interest",
+      "kind": "standard",
+      "difficulty": "hard",
+      "answer_type": "single",
+      "stem": "The difference between the compound interest and the simple interest on a certain sum for 2 years at 20% per annum is ₹45. Find the sum.",
+      "explanation": "Difference = P(20/100)² = ₹45, so P = ₹45 × 10000/400 = ₹1125.",
+      "options": [
+        {
+          "label": "₹1080",
+          "is_correct": false
+        },
+        {
+          "label": "₹1125",
+          "is_correct": true
+        },
+        {
+          "label": "₹1170",
+          "is_correct": false
+        },
+        {
+          "label": "₹1215",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Compound Interest",
+      "kind": "standard",
+      "difficulty": "hard",
+      "answer_type": "single",
+      "stem": "A sum of money doubles itself in 5 years at compound interest. In how many years will it become 4 times itself?",
+      "explanation": "Becoming 4 = 2^2 times takes 2 doubling periods, i.e. 2×5 = 10 years.",
+      "options": [
+        {
+          "label": "9 years",
+          "is_correct": false
+        },
+        {
+          "label": "10 years",
+          "is_correct": true
+        },
+        {
+          "label": "11 years",
+          "is_correct": false
+        },
+        {
+          "label": "12 years",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Compound Interest",
+      "kind": "standard",
+      "difficulty": "hard",
+      "answer_type": "single",
+      "stem": "The difference between the compound interest and the simple interest on a certain sum for 2 years at 10% per annum is ₹59. Find the sum.",
+      "explanation": "Difference = P(10/100)² = ₹59, so P = ₹59 × 10000/100 = ₹5900.",
+      "options": [
+        {
+          "label": "₹6372",
+          "is_correct": false
+        },
+        {
+          "label": "₹6136",
+          "is_correct": false
+        },
+        {
+          "label": "₹5900",
+          "is_correct": true
+        },
+        {
+          "label": "₹5664",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Compound Interest",
+      "kind": "standard",
+      "difficulty": "hard",
+      "answer_type": "single",
+      "stem": "A sum of money doubles itself in 3 years at compound interest. In how many years will it become 4 times itself?",
+      "explanation": "Becoming 4 = 2^2 times takes 2 doubling periods, i.e. 2×3 = 6 years.",
+      "options": [
+        {
+          "label": "5 years",
+          "is_correct": false
+        },
+        {
+          "label": "7 years",
+          "is_correct": false
+        },
+        {
+          "label": "6 years",
+          "is_correct": true
+        },
+        {
+          "label": "8 years",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Compound Interest",
+      "kind": "standard",
+      "difficulty": "hard",
+      "answer_type": "single",
+      "stem": "Find the compound interest on ₹3250 at 20% per annum for 3 years.",
+      "explanation": "CI = 3250(1+20/100)³ − 3250 = ₹2366.",
+      "options": [
+        {
+          "label": "₹2461",
+          "is_correct": false
+        },
+        {
+          "label": "₹2271",
+          "is_correct": false
+        },
+        {
+          "label": "₹2366",
+          "is_correct": true
+        },
+        {
+          "label": "₹2556",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Compound Interest",
+      "kind": "standard",
+      "difficulty": "hard",
+      "answer_type": "single",
+      "stem": "The difference between the compound interest and the simple interest on a certain sum for 2 years at 20% per annum is ₹28. Find the sum.",
+      "explanation": "Difference = P(20/100)² = ₹28, so P = ₹28 × 10000/400 = ₹700.",
+      "options": [
+        {
+          "label": "₹700",
+          "is_correct": true
+        },
+        {
+          "label": "₹756",
+          "is_correct": false
+        },
+        {
+          "label": "₹728",
+          "is_correct": false
+        },
+        {
+          "label": "₹672",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Compound Interest",
+      "kind": "standard",
+      "difficulty": "hard",
+      "answer_type": "single",
+      "stem": "The difference between the compound interest and the simple interest on a certain sum for 2 years at 20% per annum is ₹23. Find the sum.",
+      "explanation": "Difference = P(20/100)² = ₹23, so P = ₹23 × 10000/400 = ₹575.",
+      "options": [
+        {
+          "label": "₹598",
+          "is_correct": false
+        },
+        {
+          "label": "₹552",
+          "is_correct": false
+        },
+        {
+          "label": "₹575",
+          "is_correct": true
+        },
+        {
+          "label": "₹621",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Compound Interest",
+      "kind": "standard",
+      "difficulty": "hard",
+      "answer_type": "single",
+      "stem": "A sum of money doubles itself in 6 years at compound interest. In how many years will it become 16 times itself?",
+      "explanation": "Becoming 16 = 2^4 times takes 4 doubling periods, i.e. 4×6 = 24 years.",
+      "options": [
+        {
+          "label": "23 years",
+          "is_correct": false
+        },
+        {
+          "label": "26 years",
+          "is_correct": false
+        },
+        {
+          "label": "25 years",
+          "is_correct": false
+        },
+        {
+          "label": "24 years",
+          "is_correct": true
+        }
+      ]
+    },
+    {
+      "chapter": "Compound Interest",
+      "kind": "standard",
+      "difficulty": "hard",
+      "answer_type": "single",
+      "stem": "Find the compound interest on ₹136 at 50% per annum for 3 years.",
+      "explanation": "CI = 136(1+50/100)³ − 136 = ₹323.",
+      "options": [
+        {
+          "label": "₹349",
+          "is_correct": false
+        },
+        {
+          "label": "₹310",
+          "is_correct": false
+        },
+        {
+          "label": "₹336",
+          "is_correct": false
+        },
+        {
+          "label": "₹323",
+          "is_correct": true
+        }
+      ]
+    },
+    {
+      "chapter": "Compound Interest",
+      "kind": "standard",
+      "difficulty": "hard",
+      "answer_type": "single",
+      "stem": "Find the compound interest on ₹136000 at 5% per annum for 3 years.",
+      "explanation": "CI = 136000(1+5/100)³ − 136000 = ₹21437.",
+      "options": [
+        {
+          "label": "₹21437",
+          "is_correct": true
+        },
+        {
+          "label": "₹23151",
+          "is_correct": false
+        },
+        {
+          "label": "₹22294",
+          "is_correct": false
+        },
+        {
+          "label": "₹20580",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Compound Interest",
+      "kind": "standard",
+      "difficulty": "hard",
+      "answer_type": "single",
+      "stem": "The difference between the compound interest and the simple interest on a certain sum for 2 years at 25% per annum is ₹49. Find the sum.",
+      "explanation": "Difference = P(25/100)² = ₹49, so P = ₹49 × 10000/625 = ₹784.",
+      "options": [
+        {
+          "label": "₹846",
+          "is_correct": false
+        },
+        {
+          "label": "₹753",
+          "is_correct": false
+        },
+        {
+          "label": "₹815",
+          "is_correct": false
+        },
+        {
+          "label": "₹784",
+          "is_correct": true
+        }
+      ]
+    },
+    {
+      "chapter": "Compound Interest",
+      "kind": "standard",
+      "difficulty": "hard",
+      "answer_type": "single",
+      "stem": "Find the compound interest on ₹24000 at 5% per annum for 3 years.",
+      "explanation": "CI = 24000(1+5/100)³ − 24000 = ₹3783.",
+      "options": [
+        {
+          "label": "₹4085",
+          "is_correct": false
+        },
+        {
+          "label": "₹3934",
+          "is_correct": false
+        },
+        {
+          "label": "₹3783",
+          "is_correct": true
+        },
+        {
+          "label": "₹3632",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Compound Interest",
+      "kind": "standard",
+      "difficulty": "hard",
+      "answer_type": "single",
+      "stem": "A sum of money doubles itself in 5 years at compound interest. In how many years will it become 16 times itself?",
+      "explanation": "Becoming 16 = 2^4 times takes 4 doubling periods, i.e. 4×5 = 20 years.",
+      "options": [
+        {
+          "label": "22 years",
+          "is_correct": false
+        },
+        {
+          "label": "20 years",
+          "is_correct": true
+        },
+        {
+          "label": "19 years",
+          "is_correct": false
+        },
+        {
+          "label": "21 years",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Compound Interest",
+      "kind": "standard",
+      "difficulty": "hard",
+      "answer_type": "single",
+      "stem": "A sum of money doubles itself in 6 years at compound interest. In how many years will it become 8 times itself?",
+      "explanation": "Becoming 8 = 2^3 times takes 3 doubling periods, i.e. 3×6 = 18 years.",
+      "options": [
+        {
+          "label": "20 years",
+          "is_correct": false
+        },
+        {
+          "label": "18 years",
+          "is_correct": true
+        },
+        {
+          "label": "19 years",
+          "is_correct": false
+        },
+        {
+          "label": "17 years",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Compound Interest",
+      "kind": "standard",
+      "difficulty": "hard",
+      "answer_type": "single",
+      "stem": "A sum of money doubles itself in 6 years at compound interest. In how many years will it become 4 times itself?",
+      "explanation": "Becoming 4 = 2^2 times takes 2 doubling periods, i.e. 2×6 = 12 years.",
+      "options": [
+        {
+          "label": "12 years",
+          "is_correct": true
+        },
+        {
+          "label": "14 years",
+          "is_correct": false
+        },
+        {
+          "label": "11 years",
+          "is_correct": false
+        },
+        {
+          "label": "13 years",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Compound Interest",
+      "kind": "standard",
+      "difficulty": "hard",
+      "answer_type": "single",
+      "stem": "A sum of money doubles itself in 4 years at compound interest. In how many years will it become 8 times itself?",
+      "explanation": "Becoming 8 = 2^3 times takes 3 doubling periods, i.e. 3×4 = 12 years.",
+      "options": [
+        {
+          "label": "14 years",
+          "is_correct": false
+        },
+        {
+          "label": "13 years",
+          "is_correct": false
+        },
+        {
+          "label": "12 years",
+          "is_correct": true
+        },
+        {
+          "label": "11 years",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Compound Interest",
+      "kind": "standard",
+      "difficulty": "hard",
+      "answer_type": "single",
+      "stem": "Find the compound interest on ₹88 at 50% per annum for 3 years.",
+      "explanation": "CI = 88(1+50/100)³ − 88 = ₹209.",
+      "options": [
+        {
+          "label": "₹201",
+          "is_correct": false
+        },
+        {
+          "label": "₹225",
+          "is_correct": false
+        },
+        {
+          "label": "₹209",
+          "is_correct": true
+        },
+        {
+          "label": "₹217",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Compound Interest",
+      "kind": "standard",
+      "difficulty": "hard",
+      "answer_type": "single",
+      "stem": "Find the compound interest on ₹11000 at 10% per annum for 3 years.",
+      "explanation": "CI = 11000(1+10/100)³ − 11000 = ₹3641.",
+      "options": [
+        {
+          "label": "₹3933",
+          "is_correct": false
+        },
+        {
+          "label": "₹3495",
+          "is_correct": false
+        },
+        {
+          "label": "₹3787",
+          "is_correct": false
+        },
+        {
+          "label": "₹3641",
+          "is_correct": true
+        }
+      ]
+    },
+    {
+      "chapter": "Compound Interest",
+      "kind": "standard",
+      "difficulty": "hard",
+      "answer_type": "single",
+      "stem": "A sum of money doubles itself in 8 years at compound interest. In how many years will it become 8 times itself?",
+      "explanation": "Becoming 8 = 2^3 times takes 3 doubling periods, i.e. 3×8 = 24 years.",
+      "options": [
+        {
+          "label": "26 years",
+          "is_correct": false
+        },
+        {
+          "label": "25 years",
+          "is_correct": false
+        },
+        {
+          "label": "24 years",
+          "is_correct": true
+        },
+        {
+          "label": "23 years",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Compound Interest",
+      "kind": "standard",
+      "difficulty": "hard",
+      "answer_type": "single",
+      "stem": "Find the compound interest on ₹3750 at 20% per annum for 3 years.",
+      "explanation": "CI = 3750(1+20/100)³ − 3750 = ₹2730.",
+      "options": [
+        {
+          "label": "₹2948",
+          "is_correct": false
+        },
+        {
+          "label": "₹2839",
+          "is_correct": false
+        },
+        {
+          "label": "₹2730",
+          "is_correct": true
+        },
+        {
+          "label": "₹2621",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Compound Interest",
+      "kind": "standard",
+      "difficulty": "hard",
+      "answer_type": "single",
+      "stem": "Find the compound interest on ₹64 at 50% per annum for 3 years.",
+      "explanation": "CI = 64(1+50/100)³ − 64 = ₹152.",
+      "options": [
+        {
+          "label": "₹150",
+          "is_correct": false
+        },
+        {
+          "label": "₹156",
+          "is_correct": false
+        },
+        {
+          "label": "₹152",
+          "is_correct": true
+        },
+        {
+          "label": "₹154",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Compound Interest",
+      "kind": "standard",
+      "difficulty": "hard",
+      "answer_type": "single",
+      "stem": "The difference between the compound interest and the simple interest on a certain sum for 2 years at 20% per annum is ₹32. Find the sum.",
+      "explanation": "Difference = P(20/100)² = ₹32, so P = ₹32 × 10000/400 = ₹800.",
+      "options": [
+        {
+          "label": "₹864",
+          "is_correct": false
+        },
+        {
+          "label": "₹768",
+          "is_correct": false
+        },
+        {
+          "label": "₹800",
+          "is_correct": true
+        },
+        {
+          "label": "₹832",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Compound Interest",
+      "kind": "standard",
+      "difficulty": "hard",
+      "answer_type": "single",
+      "stem": "The difference between the compound interest and the simple interest on a certain sum for 2 years at 25% per annum is ₹16. Find the sum.",
+      "explanation": "Difference = P(25/100)² = ₹16, so P = ₹16 × 10000/625 = ₹256.",
+      "options": [
+        {
+          "label": "₹276",
+          "is_correct": false
+        },
+        {
+          "label": "₹256",
+          "is_correct": true
+        },
+        {
+          "label": "₹266",
+          "is_correct": false
+        },
+        {
+          "label": "₹246",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Compound Interest",
+      "kind": "standard",
+      "difficulty": "hard",
+      "answer_type": "single",
+      "stem": "A sum of money doubles itself in 8 years at compound interest. In how many years will it become 4 times itself?",
+      "explanation": "Becoming 4 = 2^2 times takes 2 doubling periods, i.e. 2×8 = 16 years.",
+      "options": [
+        {
+          "label": "16 years",
+          "is_correct": true
+        },
+        {
+          "label": "18 years",
+          "is_correct": false
+        },
+        {
+          "label": "15 years",
+          "is_correct": false
+        },
+        {
+          "label": "17 years",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Compound Interest",
+      "kind": "standard",
+      "difficulty": "hard",
+      "answer_type": "single",
+      "stem": "The difference between the compound interest and the simple interest on a certain sum for 2 years at 10% per annum is ₹32. Find the sum.",
+      "explanation": "Difference = P(10/100)² = ₹32, so P = ₹32 × 10000/100 = ₹3200.",
+      "options": [
+        {
+          "label": "₹3072",
+          "is_correct": false
+        },
+        {
+          "label": "₹3200",
+          "is_correct": true
+        },
+        {
+          "label": "₹3456",
+          "is_correct": false
+        },
+        {
+          "label": "₹3328",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Compound Interest",
+      "kind": "standard",
+      "difficulty": "hard",
+      "answer_type": "single",
+      "stem": "The difference between the compound interest and the simple interest on a certain sum for 2 years at 25% per annum is ₹37. Find the sum.",
+      "explanation": "Difference = P(25/100)² = ₹37, so P = ₹37 × 10000/625 = ₹592.",
+      "options": [
+        {
+          "label": "₹640",
+          "is_correct": false
+        },
+        {
+          "label": "₹568",
+          "is_correct": false
+        },
+        {
+          "label": "₹592",
+          "is_correct": true
+        },
+        {
+          "label": "₹616",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Compound Interest",
+      "kind": "standard",
+      "difficulty": "hard",
+      "answer_type": "single",
+      "stem": "Find the compound interest on ₹2750 at 20% per annum for 3 years.",
+      "explanation": "CI = 2750(1+20/100)³ − 2750 = ₹2002.",
+      "options": [
+        {
+          "label": "₹1922",
+          "is_correct": false
+        },
+        {
+          "label": "₹2002",
+          "is_correct": true
+        },
+        {
+          "label": "₹2082",
+          "is_correct": false
+        },
+        {
+          "label": "₹2162",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Compound Interest",
+      "kind": "standard",
+      "difficulty": "hard",
+      "answer_type": "single",
+      "stem": "A sum of money doubles itself in 4 years at compound interest. In how many years will it become 16 times itself?",
+      "explanation": "Becoming 16 = 2^4 times takes 4 doubling periods, i.e. 4×4 = 16 years.",
+      "options": [
+        {
+          "label": "15 years",
+          "is_correct": false
+        },
+        {
+          "label": "17 years",
+          "is_correct": false
+        },
+        {
+          "label": "18 years",
+          "is_correct": false
+        },
+        {
+          "label": "16 years",
+          "is_correct": true
+        }
+      ]
+    },
+    {
+      "chapter": "Compound Interest",
+      "kind": "standard",
+      "difficulty": "hard",
+      "answer_type": "single",
+      "stem": "The difference between the compound interest and the simple interest on a certain sum for 2 years at 20% per annum is ₹59. Find the sum.",
+      "explanation": "Difference = P(20/100)² = ₹59, so P = ₹59 × 10000/400 = ₹1475.",
+      "options": [
+        {
+          "label": "₹1593",
+          "is_correct": false
+        },
+        {
+          "label": "₹1534",
+          "is_correct": false
+        },
+        {
+          "label": "₹1416",
+          "is_correct": false
+        },
+        {
+          "label": "₹1475",
+          "is_correct": true
+        }
+      ]
+    },
+    {
+      "chapter": "Compound Interest",
+      "kind": "standard",
+      "difficulty": "hard",
+      "answer_type": "single",
+      "stem": "The difference between the compound interest and the simple interest on a certain sum for 2 years at 5% per annum is ₹33. Find the sum.",
+      "explanation": "Difference = P(5/100)² = ₹33, so P = ₹33 × 10000/25 = ₹13200.",
+      "options": [
+        {
+          "label": "₹13728",
+          "is_correct": false
+        },
+        {
+          "label": "₹13200",
+          "is_correct": true
+        },
+        {
+          "label": "₹12672",
+          "is_correct": false
+        },
+        {
+          "label": "₹14256",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Compound Interest",
+      "kind": "standard",
+      "difficulty": "hard",
+      "answer_type": "single",
+      "stem": "The difference between the compound interest and the simple interest on a certain sum for 2 years at 5% per annum is ₹2. Find the sum.",
+      "explanation": "Difference = P(5/100)² = ₹2, so P = ₹2 × 10000/25 = ₹800.",
+      "options": [
+        {
+          "label": "₹768",
+          "is_correct": false
+        },
+        {
+          "label": "₹864",
+          "is_correct": false
+        },
+        {
+          "label": "₹800",
+          "is_correct": true
+        },
+        {
+          "label": "₹832",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Compound Interest",
+      "kind": "standard",
+      "difficulty": "hard",
+      "answer_type": "single",
+      "stem": "Find the compound interest on ₹64 at 25% per annum for 3 years.",
+      "explanation": "CI = 64(1+25/100)³ − 64 = ₹61.",
+      "options": [
+        {
+          "label": "₹65",
+          "is_correct": false
+        },
+        {
+          "label": "₹59",
+          "is_correct": false
+        },
+        {
+          "label": "₹61",
+          "is_correct": true
+        },
+        {
+          "label": "₹63",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Compound Interest",
+      "kind": "standard",
+      "difficulty": "hard",
+      "answer_type": "single",
+      "stem": "The difference between the compound interest and the simple interest on a certain sum for 2 years at 5% per annum is ₹10. Find the sum.",
+      "explanation": "Difference = P(5/100)² = ₹10, so P = ₹10 × 10000/25 = ₹4000.",
+      "options": [
+        {
+          "label": "₹4320",
+          "is_correct": false
+        },
+        {
+          "label": "₹3840",
+          "is_correct": false
+        },
+        {
+          "label": "₹4000",
+          "is_correct": true
+        },
+        {
+          "label": "₹4160",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Compound Interest",
+      "kind": "standard",
+      "difficulty": "hard",
+      "answer_type": "single",
+      "stem": "A sum of money doubles itself in 8 years at compound interest. In how many years will it become 16 times itself?",
+      "explanation": "Becoming 16 = 2^4 times takes 4 doubling periods, i.e. 4×8 = 32 years.",
+      "options": [
+        {
+          "label": "34 years",
+          "is_correct": false
+        },
+        {
+          "label": "33 years",
+          "is_correct": false
+        },
+        {
+          "label": "31 years",
+          "is_correct": false
+        },
+        {
+          "label": "32 years",
+          "is_correct": true
+        }
+      ]
+    },
+    {
+      "chapter": "Compound Interest",
+      "kind": "standard",
+      "difficulty": "hard",
+      "answer_type": "single",
+      "stem": "Find the compound interest on ₹28000 at 10% per annum for 3 years.",
+      "explanation": "CI = 28000(1+10/100)³ − 28000 = ₹9268.",
+      "options": [
+        {
+          "label": "₹8897",
+          "is_correct": false
+        },
+        {
+          "label": "₹10010",
+          "is_correct": false
+        },
+        {
+          "label": "₹9639",
+          "is_correct": false
+        },
+        {
+          "label": "₹9268",
+          "is_correct": true
+        }
+      ]
+    },
+    {
+      "chapter": "Compound Interest",
+      "kind": "standard",
+      "difficulty": "hard",
+      "answer_type": "single",
+      "stem": "The difference between the compound interest and the simple interest on a certain sum for 2 years at 20% per annum is ₹41. Find the sum.",
+      "explanation": "Difference = P(20/100)² = ₹41, so P = ₹41 × 10000/400 = ₹1025.",
+      "options": [
+        {
+          "label": "₹984",
+          "is_correct": false
+        },
+        {
+          "label": "₹1066",
+          "is_correct": false
+        },
+        {
+          "label": "₹1025",
+          "is_correct": true
+        },
+        {
+          "label": "₹1107",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Compound Interest",
+      "kind": "standard",
+      "difficulty": "hard",
+      "answer_type": "single",
+      "stem": "Find the compound interest on ₹448 at 25% per annum for 3 years.",
+      "explanation": "CI = 448(1+25/100)³ − 448 = ₹427.",
+      "options": [
+        {
+          "label": "₹444",
+          "is_correct": false
+        },
+        {
+          "label": "₹461",
+          "is_correct": false
+        },
+        {
+          "label": "₹410",
+          "is_correct": false
+        },
+        {
+          "label": "₹427",
+          "is_correct": true
+        }
+      ]
+    },
+    {
+      "chapter": "Compound Interest",
+      "kind": "standard",
+      "difficulty": "hard",
+      "answer_type": "single",
+      "stem": "Find the compound interest on ₹184000 at 5% per annum for 3 years.",
+      "explanation": "CI = 184000(1+5/100)³ − 184000 = ₹29003.",
+      "options": [
+        {
+          "label": "₹30163",
+          "is_correct": false
+        },
+        {
+          "label": "₹27843",
+          "is_correct": false
+        },
+        {
+          "label": "₹29003",
+          "is_correct": true
+        },
+        {
+          "label": "₹31323",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Compound Interest",
+      "kind": "standard",
+      "difficulty": "hard",
+      "answer_type": "single",
+      "stem": "A sum of money doubles itself in 3 years at compound interest. In how many years will it become 16 times itself?",
+      "explanation": "Becoming 16 = 2^4 times takes 4 doubling periods, i.e. 4×3 = 12 years.",
+      "options": [
+        {
+          "label": "14 years",
+          "is_correct": false
+        },
+        {
+          "label": "11 years",
+          "is_correct": false
+        },
+        {
+          "label": "13 years",
+          "is_correct": false
+        },
+        {
+          "label": "12 years",
+          "is_correct": true
+        }
+      ]
+    },
+    {
+      "chapter": "Compound Interest",
+      "kind": "standard",
+      "difficulty": "hard",
+      "answer_type": "single",
+      "stem": "The difference between the compound interest and the simple interest on a certain sum for 2 years at 20% per annum is ₹21. Find the sum.",
+      "explanation": "Difference = P(20/100)² = ₹21, so P = ₹21 × 10000/400 = ₹525.",
+      "options": [
+        {
+          "label": "₹525",
+          "is_correct": true
+        },
+        {
+          "label": "₹546",
+          "is_correct": false
+        },
+        {
+          "label": "₹567",
+          "is_correct": false
+        },
+        {
+          "label": "₹504",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Compound Interest",
+      "kind": "standard",
+      "difficulty": "hard",
+      "answer_type": "single",
+      "stem": "Find the compound interest on ₹1920 at 25% per annum for 3 years.",
+      "explanation": "CI = 1920(1+25/100)³ − 1920 = ₹1830.",
+      "options": [
+        {
+          "label": "₹1903",
+          "is_correct": false
+        },
+        {
+          "label": "₹1830",
+          "is_correct": true
+        },
+        {
+          "label": "₹1976",
+          "is_correct": false
+        },
+        {
+          "label": "₹1757",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Compound Interest",
+      "kind": "standard",
+      "difficulty": "hard",
+      "answer_type": "single",
+      "stem": "Find the compound interest on ₹1088 at 25% per annum for 3 years.",
+      "explanation": "CI = 1088(1+25/100)³ − 1088 = ₹1037.",
+      "options": [
+        {
+          "label": "₹1078",
+          "is_correct": false
+        },
+        {
+          "label": "₹1037",
+          "is_correct": true
+        },
+        {
+          "label": "₹996",
+          "is_correct": false
+        },
+        {
+          "label": "₹1119",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Compound Interest",
+      "kind": "standard",
+      "difficulty": "hard",
+      "answer_type": "single",
+      "stem": "The difference between the compound interest and the simple interest on a certain sum for 2 years at 25% per annum is ₹59. Find the sum.",
+      "explanation": "Difference = P(25/100)² = ₹59, so P = ₹59 × 10000/625 = ₹944.",
+      "options": [
+        {
+          "label": "₹906",
+          "is_correct": false
+        },
+        {
+          "label": "₹1020",
+          "is_correct": false
+        },
+        {
+          "label": "₹982",
+          "is_correct": false
+        },
+        {
+          "label": "₹944",
+          "is_correct": true
+        }
+      ]
+    },
+    {
+      "chapter": "Compound Interest",
+      "kind": "standard",
+      "difficulty": "very_hard",
+      "answer_type": "single",
+      "stem": "The population of a town is 900 and it grows at 10% per annum. Find the population after 2 years.",
+      "explanation": "Population = 900(1+10/100)^2 = 1089.",
+      "options": [
+        {
+          "label": "1177",
+          "is_correct": false
+        },
+        {
+          "label": "1133",
+          "is_correct": false
+        },
+        {
+          "label": "1089",
+          "is_correct": true
+        },
+        {
+          "label": "1045",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Compound Interest",
+      "kind": "standard",
+      "difficulty": "very_hard",
+      "answer_type": "single",
+      "stem": "The population of a town is 528 and it grows at 25% per annum. Find the population after 2 years.",
+      "explanation": "Population = 528(1+25/100)^2 = 825.",
+      "options": [
+        {
+          "label": "858",
+          "is_correct": false
+        },
+        {
+          "label": "891",
+          "is_correct": false
+        },
+        {
+          "label": "792",
+          "is_correct": false
+        },
+        {
+          "label": "825",
+          "is_correct": true
+        }
+      ]
+    },
+    {
+      "chapter": "Compound Interest",
+      "kind": "standard",
+      "difficulty": "very_hard",
+      "answer_type": "single",
+      "stem": "A sum of money invested at compound interest amounts to ₹1200 in one year and ₹1320 the next year. Find the rate percent per annum.",
+      "explanation": "Rate = (₹1320 − ₹1200)/₹1200 × 100 = 10%.",
+      "options": [
+        {
+          "label": "10%",
+          "is_correct": true
+        },
+        {
+          "label": "9%",
+          "is_correct": false
+        },
+        {
+          "label": "12%",
+          "is_correct": false
+        },
+        {
+          "label": "11%",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Compound Interest",
+      "kind": "standard",
+      "difficulty": "very_hard",
+      "answer_type": "single",
+      "stem": "The population of a town is 88 and it grows at 50% per annum. Find the population after 2 years.",
+      "explanation": "Population = 88(1+50/100)^2 = 198.",
+      "options": [
+        {
+          "label": "202",
+          "is_correct": false
+        },
+        {
+          "label": "198",
+          "is_correct": true
+        },
+        {
+          "label": "200",
+          "is_correct": false
+        },
+        {
+          "label": "196",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Compound Interest",
+      "kind": "standard",
+      "difficulty": "very_hard",
+      "answer_type": "single",
+      "stem": "Find the difference between the compound interest and the simple interest on ₹48000 at 5% per annum for 3 years.",
+      "explanation": "Difference for 3 years = P·R²(300+R)/10⁶ = 48000×5²×305/1000000 = ₹366.",
+      "options": [
+        {
+          "label": "₹396",
+          "is_correct": false
+        },
+        {
+          "label": "₹381",
+          "is_correct": false
+        },
+        {
+          "label": "₹351",
+          "is_correct": false
+        },
+        {
+          "label": "₹366",
+          "is_correct": true
+        }
+      ]
+    },
+    {
+      "chapter": "Compound Interest",
+      "kind": "standard",
+      "difficulty": "very_hard",
+      "answer_type": "single",
+      "stem": "Find the difference between the compound interest and the simple interest on ₹272000 at 5% per annum for 3 years.",
+      "explanation": "Difference for 3 years = P·R²(300+R)/10⁶ = 272000×5²×305/1000000 = ₹2074.",
+      "options": [
+        {
+          "label": "₹2157",
+          "is_correct": false
+        },
+        {
+          "label": "₹2074",
+          "is_correct": true
+        },
+        {
+          "label": "₹1991",
+          "is_correct": false
+        },
+        {
+          "label": "₹2240",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Compound Interest",
+      "kind": "standard",
+      "difficulty": "very_hard",
+      "answer_type": "single",
+      "stem": "The population of a town is 108 and it grows at 50% per annum. Find the population after 2 years.",
+      "explanation": "Population = 108(1+50/100)^2 = 243.",
+      "options": [
+        {
+          "label": "243",
+          "is_correct": true
+        },
+        {
+          "label": "233",
+          "is_correct": false
+        },
+        {
+          "label": "263",
+          "is_correct": false
+        },
+        {
+          "label": "253",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Compound Interest",
+      "kind": "standard",
+      "difficulty": "very_hard",
+      "answer_type": "single",
+      "stem": "Find the difference between the compound interest and the simple interest on ₹38000 at 10% per annum for 3 years.",
+      "explanation": "Difference for 3 years = P·R²(300+R)/10⁶ = 38000×10²×310/1000000 = ₹1178.",
+      "options": [
+        {
+          "label": "₹1178",
+          "is_correct": true
+        },
+        {
+          "label": "₹1272",
+          "is_correct": false
+        },
+        {
+          "label": "₹1131",
+          "is_correct": false
+        },
+        {
+          "label": "₹1225",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Compound Interest",
+      "kind": "standard",
+      "difficulty": "very_hard",
+      "answer_type": "single",
+      "stem": "A sum of money invested at compound interest amounts to ₹252 in one year and ₹315 the next year. Find the rate percent per annum.",
+      "explanation": "Rate = (₹315 − ₹252)/₹252 × 100 = 25%.",
+      "options": [
+        {
+          "label": "27%",
+          "is_correct": false
+        },
+        {
+          "label": "25%",
+          "is_correct": true
+        },
+        {
+          "label": "26%",
+          "is_correct": false
+        },
+        {
+          "label": "24%",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Compound Interest",
+      "kind": "standard",
+      "difficulty": "very_hard",
+      "answer_type": "single",
+      "stem": "The population of a town is 3125 and it grows at 20% per annum. Find the population after 3 years.",
+      "explanation": "Population = 3125(1+20/100)^3 = 5400.",
+      "options": [
+        {
+          "label": "5184",
+          "is_correct": false
+        },
+        {
+          "label": "5616",
+          "is_correct": false
+        },
+        {
+          "label": "5400",
+          "is_correct": true
+        },
+        {
+          "label": "5832",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Compound Interest",
+      "kind": "standard",
+      "difficulty": "very_hard",
+      "answer_type": "single",
+      "stem": "Find the difference between the compound interest and the simple interest on ₹10000 at 10% per annum for 3 years.",
+      "explanation": "Difference for 3 years = P·R²(300+R)/10⁶ = 10000×10²×310/1000000 = ₹310.",
+      "options": [
+        {
+          "label": "₹298",
+          "is_correct": false
+        },
+        {
+          "label": "₹334",
+          "is_correct": false
+        },
+        {
+          "label": "₹310",
+          "is_correct": true
+        },
+        {
+          "label": "₹322",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Compound Interest",
+      "kind": "standard",
+      "difficulty": "very_hard",
+      "answer_type": "single",
+      "stem": "The population of a town is 24000 and it grows at 10% per annum. Find the population after 3 years.",
+      "explanation": "Population = 24000(1+10/100)^3 = 31944.",
+      "options": [
+        {
+          "label": "30666",
+          "is_correct": false
+        },
+        {
+          "label": "31944",
+          "is_correct": true
+        },
+        {
+          "label": "33222",
+          "is_correct": false
+        },
+        {
+          "label": "34500",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Compound Interest",
+      "kind": "standard",
+      "difficulty": "very_hard",
+      "answer_type": "single",
+      "stem": "Find the difference between the compound interest and the simple interest on ₹152000 at 5% per annum for 3 years.",
+      "explanation": "Difference for 3 years = P·R²(300+R)/10⁶ = 152000×5²×305/1000000 = ₹1159.",
+      "options": [
+        {
+          "label": "₹1251",
+          "is_correct": false
+        },
+        {
+          "label": "₹1205",
+          "is_correct": false
+        },
+        {
+          "label": "₹1113",
+          "is_correct": false
+        },
+        {
+          "label": "₹1159",
+          "is_correct": true
+        }
+      ]
+    },
+    {
+      "chapter": "Compound Interest",
+      "kind": "standard",
+      "difficulty": "very_hard",
+      "answer_type": "single",
+      "stem": "A sum of money invested at compound interest amounts to ₹1400 in one year and ₹1470 the next year. Find the rate percent per annum.",
+      "explanation": "Rate = (₹1470 − ₹1400)/₹1400 × 100 = 5%.",
+      "options": [
+        {
+          "label": "7%",
+          "is_correct": false
+        },
+        {
+          "label": "6%",
+          "is_correct": false
+        },
+        {
+          "label": "5%",
+          "is_correct": true
+        },
+        {
+          "label": "4%",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Compound Interest",
+      "kind": "standard",
+      "difficulty": "very_hard",
+      "answer_type": "single",
+      "stem": "Find the difference between the compound interest and the simple interest on ₹2875 at 20% per annum for 3 years.",
+      "explanation": "Difference for 3 years = P·R²(300+R)/10⁶ = 2875×20²×320/1000000 = ₹368.",
+      "options": [
+        {
+          "label": "₹383",
+          "is_correct": false
+        },
+        {
+          "label": "₹368",
+          "is_correct": true
+        },
+        {
+          "label": "₹353",
+          "is_correct": false
+        },
+        {
+          "label": "₹398",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Compound Interest",
+      "kind": "standard",
+      "difficulty": "very_hard",
+      "answer_type": "single",
+      "stem": "A sum of money invested at compound interest amounts to ₹148 in one year and ₹185 the next year. Find the rate percent per annum.",
+      "explanation": "Rate = (₹185 − ₹148)/₹148 × 100 = 25%.",
+      "options": [
+        {
+          "label": "25%",
+          "is_correct": true
+        },
+        {
+          "label": "24%",
+          "is_correct": false
+        },
+        {
+          "label": "26%",
+          "is_correct": false
+        },
+        {
+          "label": "27%",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Compound Interest",
+      "kind": "standard",
+      "difficulty": "very_hard",
+      "answer_type": "single",
+      "stem": "The population of a town is 8000 and it grows at 10% per annum. Find the population after 3 years.",
+      "explanation": "Population = 8000(1+10/100)^3 = 10648.",
+      "options": [
+        {
+          "label": "10648",
+          "is_correct": true
+        },
+        {
+          "label": "11074",
+          "is_correct": false
+        },
+        {
+          "label": "11500",
+          "is_correct": false
+        },
+        {
+          "label": "10222",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Compound Interest",
+      "kind": "standard",
+      "difficulty": "very_hard",
+      "answer_type": "single",
+      "stem": "Find the difference between the compound interest and the simple interest on ₹37000 at 10% per annum for 3 years.",
+      "explanation": "Difference for 3 years = P·R²(300+R)/10⁶ = 37000×10²×310/1000000 = ₹1147.",
+      "options": [
+        {
+          "label": "₹1147",
+          "is_correct": true
+        },
+        {
+          "label": "₹1193",
+          "is_correct": false
+        },
+        {
+          "label": "₹1239",
+          "is_correct": false
+        },
+        {
+          "label": "₹1101",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Compound Interest",
+      "kind": "standard",
+      "difficulty": "very_hard",
+      "answer_type": "single",
+      "stem": "A sum of money invested at compound interest amounts to ₹910 in one year and ₹1001 the next year. Find the rate percent per annum.",
+      "explanation": "Rate = (₹1001 − ₹910)/₹910 × 100 = 10%.",
+      "options": [
+        {
+          "label": "9%",
+          "is_correct": false
+        },
+        {
+          "label": "10%",
+          "is_correct": true
+        },
+        {
+          "label": "11%",
+          "is_correct": false
+        },
+        {
+          "label": "12%",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Compound Interest",
+      "kind": "standard",
+      "difficulty": "very_hard",
+      "answer_type": "single",
+      "stem": "A sum of money invested at compound interest amounts to ₹600 in one year and ₹660 the next year. Find the rate percent per annum.",
+      "explanation": "Rate = (₹660 − ₹600)/₹600 × 100 = 10%.",
+      "options": [
+        {
+          "label": "10%",
+          "is_correct": true
+        },
+        {
+          "label": "12%",
+          "is_correct": false
+        },
+        {
+          "label": "11%",
+          "is_correct": false
+        },
+        {
+          "label": "9%",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Compound Interest",
+      "kind": "standard",
+      "difficulty": "very_hard",
+      "answer_type": "single",
+      "stem": "Find the difference between the compound interest and the simple interest on ₹13000 at 10% per annum for 3 years.",
+      "explanation": "Difference for 3 years = P·R²(300+R)/10⁶ = 13000×10²×310/1000000 = ₹403.",
+      "options": [
+        {
+          "label": "₹403",
+          "is_correct": true
+        },
+        {
+          "label": "₹387",
+          "is_correct": false
+        },
+        {
+          "label": "₹419",
+          "is_correct": false
+        },
+        {
+          "label": "₹435",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Compound Interest",
+      "kind": "standard",
+      "difficulty": "very_hard",
+      "answer_type": "single",
+      "stem": "The population of a town is 2240 and it grows at 25% per annum. Find the population after 3 years.",
+      "explanation": "Population = 2240(1+25/100)^3 = 4375.",
+      "options": [
+        {
+          "label": "4375",
+          "is_correct": true
+        },
+        {
+          "label": "4725",
+          "is_correct": false
+        },
+        {
+          "label": "4200",
+          "is_correct": false
+        },
+        {
+          "label": "4550",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Compound Interest",
+      "kind": "standard",
+      "difficulty": "very_hard",
+      "answer_type": "single",
+      "stem": "A sum of money invested at compound interest amounts to ₹2080 in one year and ₹2184 the next year. Find the rate percent per annum.",
+      "explanation": "Rate = (₹2184 − ₹2080)/₹2080 × 100 = 5%.",
+      "options": [
+        {
+          "label": "5%",
+          "is_correct": true
+        },
+        {
+          "label": "4%",
+          "is_correct": false
+        },
+        {
+          "label": "7%",
+          "is_correct": false
+        },
+        {
+          "label": "6%",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Compound Interest",
+      "kind": "standard",
+      "difficulty": "very_hard",
+      "answer_type": "single",
+      "stem": "Find the difference between the compound interest and the simple interest on ₹2500 at 20% per annum for 3 years.",
+      "explanation": "Difference for 3 years = P·R²(300+R)/10⁶ = 2500×20²×320/1000000 = ₹320.",
+      "options": [
+        {
+          "label": "₹320",
+          "is_correct": true
+        },
+        {
+          "label": "₹346",
+          "is_correct": false
+        },
+        {
+          "label": "₹307",
+          "is_correct": false
+        },
+        {
+          "label": "₹333",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Compound Interest",
+      "kind": "standard",
+      "difficulty": "very_hard",
+      "answer_type": "single",
+      "stem": "The population of a town is 160 and it grows at 50% per annum. Find the population after 3 years.",
+      "explanation": "Population = 160(1+50/100)^3 = 540.",
+      "options": [
+        {
+          "label": "584",
+          "is_correct": false
+        },
+        {
+          "label": "540",
+          "is_correct": true
+        },
+        {
+          "label": "518",
+          "is_correct": false
+        },
+        {
+          "label": "562",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Compound Interest",
+      "kind": "standard",
+      "difficulty": "very_hard",
+      "answer_type": "single",
+      "stem": "Find the difference between the compound interest and the simple interest on ₹4125 at 20% per annum for 3 years.",
+      "explanation": "Difference for 3 years = P·R²(300+R)/10⁶ = 4125×20²×320/1000000 = ₹528.",
+      "options": [
+        {
+          "label": "₹549",
+          "is_correct": false
+        },
+        {
+          "label": "₹570",
+          "is_correct": false
+        },
+        {
+          "label": "₹528",
+          "is_correct": true
+        },
+        {
+          "label": "₹507",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Compound Interest",
+      "kind": "standard",
+      "difficulty": "very_hard",
+      "answer_type": "single",
+      "stem": "Find the difference between the compound interest and the simple interest on ₹312000 at 5% per annum for 3 years.",
+      "explanation": "Difference for 3 years = P·R²(300+R)/10⁶ = 312000×5²×305/1000000 = ₹2379.",
+      "options": [
+        {
+          "label": "₹2569",
+          "is_correct": false
+        },
+        {
+          "label": "₹2284",
+          "is_correct": false
+        },
+        {
+          "label": "₹2474",
+          "is_correct": false
+        },
+        {
+          "label": "₹2379",
+          "is_correct": true
+        }
+      ]
+    },
+    {
+      "chapter": "Compound Interest",
+      "kind": "standard",
+      "difficulty": "very_hard",
+      "answer_type": "single",
+      "stem": "Find the difference between the compound interest and the simple interest on ₹168000 at 5% per annum for 3 years.",
+      "explanation": "Difference for 3 years = P·R²(300+R)/10⁶ = 168000×5²×305/1000000 = ₹1281.",
+      "options": [
+        {
+          "label": "₹1230",
+          "is_correct": false
+        },
+        {
+          "label": "₹1281",
+          "is_correct": true
+        },
+        {
+          "label": "₹1332",
+          "is_correct": false
+        },
+        {
+          "label": "₹1383",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Compound Interest",
+      "kind": "standard",
+      "difficulty": "very_hard",
+      "answer_type": "single",
+      "stem": "Find the difference between the compound interest and the simple interest on ₹33000 at 10% per annum for 3 years.",
+      "explanation": "Difference for 3 years = P·R²(300+R)/10⁶ = 33000×10²×310/1000000 = ₹1023.",
+      "options": [
+        {
+          "label": "₹982",
+          "is_correct": false
+        },
+        {
+          "label": "₹1105",
+          "is_correct": false
+        },
+        {
+          "label": "₹1023",
+          "is_correct": true
+        },
+        {
+          "label": "₹1064",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Compound Interest",
+      "kind": "standard",
+      "difficulty": "very_hard",
+      "answer_type": "single",
+      "stem": "Find the difference between the compound interest and the simple interest on ₹31000 at 10% per annum for 3 years.",
+      "explanation": "Difference for 3 years = P·R²(300+R)/10⁶ = 31000×10²×310/1000000 = ₹961.",
+      "options": [
+        {
+          "label": "₹1037",
+          "is_correct": false
+        },
+        {
+          "label": "₹999",
+          "is_correct": false
+        },
+        {
+          "label": "₹923",
+          "is_correct": false
+        },
+        {
+          "label": "₹961",
+          "is_correct": true
+        }
+      ]
+    },
+    {
+      "chapter": "Compound Interest",
+      "kind": "standard",
+      "difficulty": "very_hard",
+      "answer_type": "single",
+      "stem": "The population of a town is 800 and it grows at 20% per annum. Find the population after 2 years.",
+      "explanation": "Population = 800(1+20/100)^2 = 1152.",
+      "options": [
+        {
+          "label": "1244",
+          "is_correct": false
+        },
+        {
+          "label": "1106",
+          "is_correct": false
+        },
+        {
+          "label": "1198",
+          "is_correct": false
+        },
+        {
+          "label": "1152",
+          "is_correct": true
+        }
+      ]
+    },
+    {
+      "chapter": "Compound Interest",
+      "kind": "standard",
+      "difficulty": "very_hard",
+      "answer_type": "single",
+      "stem": "The population of a town is 6400 and it grows at 5% per annum. Find the population after 2 years.",
+      "explanation": "Population = 6400(1+5/100)^2 = 7056.",
+      "options": [
+        {
+          "label": "7338",
+          "is_correct": false
+        },
+        {
+          "label": "7056",
+          "is_correct": true
+        },
+        {
+          "label": "6774",
+          "is_correct": false
+        },
+        {
+          "label": "7620",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Compound Interest",
+      "kind": "standard",
+      "difficulty": "very_hard",
+      "answer_type": "single",
+      "stem": "The population of a town is 3600 and it grows at 5% per annum. Find the population after 2 years.",
+      "explanation": "Population = 3600(1+5/100)^2 = 3969.",
+      "options": [
+        {
+          "label": "3810",
+          "is_correct": false
+        },
+        {
+          "label": "3969",
+          "is_correct": true
+        },
+        {
+          "label": "4128",
+          "is_correct": false
+        },
+        {
+          "label": "4287",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Compound Interest",
+      "kind": "standard",
+      "difficulty": "very_hard",
+      "answer_type": "single",
+      "stem": "The population of a town is 68 and it grows at 50% per annum. Find the population after 2 years.",
+      "explanation": "Population = 68(1+50/100)^2 = 153.",
+      "options": [
+        {
+          "label": "157",
+          "is_correct": false
+        },
+        {
+          "label": "151",
+          "is_correct": false
+        },
+        {
+          "label": "155",
+          "is_correct": false
+        },
+        {
+          "label": "153",
+          "is_correct": true
+        }
+      ]
+    },
+    {
+      "chapter": "Compound Interest",
+      "kind": "standard",
+      "difficulty": "very_hard",
+      "answer_type": "single",
+      "stem": "A sum of money invested at compound interest amounts to ₹220 in one year and ₹264 the next year. Find the rate percent per annum.",
+      "explanation": "Rate = (₹264 − ₹220)/₹220 × 100 = 20%.",
+      "options": [
+        {
+          "label": "20%",
+          "is_correct": true
+        },
+        {
+          "label": "22%",
+          "is_correct": false
+        },
+        {
+          "label": "21%",
+          "is_correct": false
+        },
+        {
+          "label": "19%",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Compound Interest",
+      "kind": "standard",
+      "difficulty": "very_hard",
+      "answer_type": "single",
+      "stem": "The population of a town is 20 and it grows at 50% per annum. Find the population after 2 years.",
+      "explanation": "Population = 20(1+50/100)^2 = 45.",
+      "options": [
+        {
+          "label": "49",
+          "is_correct": false
+        },
+        {
+          "label": "45",
+          "is_correct": true
+        },
+        {
+          "label": "43",
+          "is_correct": false
+        },
+        {
+          "label": "47",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Compound Interest",
+      "kind": "standard",
+      "difficulty": "very_hard",
+      "answer_type": "single",
+      "stem": "The population of a town is 13600 and it grows at 5% per annum. Find the population after 2 years.",
+      "explanation": "Population = 13600(1+5/100)^2 = 14994.",
+      "options": [
+        {
+          "label": "16194",
+          "is_correct": false
+        },
+        {
+          "label": "14394",
+          "is_correct": false
+        },
+        {
+          "label": "14994",
+          "is_correct": true
+        },
+        {
+          "label": "15594",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Compound Interest",
+      "kind": "standard",
+      "difficulty": "very_hard",
+      "answer_type": "single",
+      "stem": "A sum of money invested at compound interest amounts to ₹320 in one year and ₹352 the next year. Find the rate percent per annum.",
+      "explanation": "Rate = (₹352 − ₹320)/₹320 × 100 = 10%.",
+      "options": [
+        {
+          "label": "11%",
+          "is_correct": false
+        },
+        {
+          "label": "12%",
+          "is_correct": false
+        },
+        {
+          "label": "10%",
+          "is_correct": true
+        },
+        {
+          "label": "9%",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Compound Interest",
+      "kind": "standard",
+      "difficulty": "very_hard",
+      "answer_type": "single",
+      "stem": "A sum of money invested at compound interest amounts to ₹232 in one year and ₹348 the next year. Find the rate percent per annum.",
+      "explanation": "Rate = (₹348 − ₹232)/₹232 × 100 = 50%.",
+      "options": [
+        {
+          "label": "52%",
+          "is_correct": false
+        },
+        {
+          "label": "50%",
+          "is_correct": true
+        },
+        {
+          "label": "48%",
+          "is_correct": false
+        },
+        {
+          "label": "54%",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Compound Interest",
+      "kind": "standard",
+      "difficulty": "very_hard",
+      "answer_type": "single",
+      "stem": "Find the difference between the compound interest and the simple interest on ₹256000 at 5% per annum for 3 years.",
+      "explanation": "Difference for 3 years = P·R²(300+R)/10⁶ = 256000×5²×305/1000000 = ₹1952.",
+      "options": [
+        {
+          "label": "₹2030",
+          "is_correct": false
+        },
+        {
+          "label": "₹1952",
+          "is_correct": true
+        },
+        {
+          "label": "₹1874",
+          "is_correct": false
+        },
+        {
+          "label": "₹2108",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Compound Interest",
+      "kind": "standard",
+      "difficulty": "very_hard",
+      "answer_type": "single",
+      "stem": "The population of a town is 700 and it grows at 20% per annum. Find the population after 2 years.",
+      "explanation": "Population = 700(1+20/100)^2 = 1008.",
+      "options": [
+        {
+          "label": "968",
+          "is_correct": false
+        },
+        {
+          "label": "1048",
+          "is_correct": false
+        },
+        {
+          "label": "1088",
+          "is_correct": false
+        },
+        {
+          "label": "1008",
+          "is_correct": true
+        }
+      ]
+    },
+    {
+      "chapter": "Compound Interest",
+      "kind": "standard",
+      "difficulty": "very_hard",
+      "answer_type": "single",
+      "stem": "The population of a town is 19000 and it grows at 10% per annum. Find the population after 3 years.",
+      "explanation": "Population = 19000(1+10/100)^3 = 25289.",
+      "options": [
+        {
+          "label": "27313",
+          "is_correct": false
+        },
+        {
+          "label": "25289",
+          "is_correct": true
+        },
+        {
+          "label": "24277",
+          "is_correct": false
+        },
+        {
+          "label": "26301",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Compound Interest",
+      "kind": "standard",
+      "difficulty": "very_hard",
+      "answer_type": "single",
+      "stem": "Find the difference between the compound interest and the simple interest on ₹500 at 20% per annum for 3 years.",
+      "explanation": "Difference for 3 years = P·R²(300+R)/10⁶ = 500×20²×320/1000000 = ₹64.",
+      "options": [
+        {
+          "label": "₹68",
+          "is_correct": false
+        },
+        {
+          "label": "₹62",
+          "is_correct": false
+        },
+        {
+          "label": "₹64",
+          "is_correct": true
+        },
+        {
+          "label": "₹66",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Compound Interest",
+      "kind": "standard",
+      "difficulty": "very_hard",
+      "answer_type": "single",
+      "stem": "Find the difference between the compound interest and the simple interest on ₹216000 at 5% per annum for 3 years.",
+      "explanation": "Difference for 3 years = P·R²(300+R)/10⁶ = 216000×5²×305/1000000 = ₹1647.",
+      "options": [
+        {
+          "label": "₹1713",
+          "is_correct": false
+        },
+        {
+          "label": "₹1779",
+          "is_correct": false
+        },
+        {
+          "label": "₹1581",
+          "is_correct": false
+        },
+        {
+          "label": "₹1647",
+          "is_correct": true
+        }
+      ]
+    },
+    {
+      "chapter": "Compound Interest",
+      "kind": "standard",
+      "difficulty": "very_hard",
+      "answer_type": "single",
+      "stem": "The population of a town is 4000 and it grows at 10% per annum. Find the population after 3 years.",
+      "explanation": "Population = 4000(1+10/100)^3 = 5324.",
+      "options": [
+        {
+          "label": "5324",
+          "is_correct": true
+        },
+        {
+          "label": "5111",
+          "is_correct": false
+        },
+        {
+          "label": "5537",
+          "is_correct": false
+        },
+        {
+          "label": "5750",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Compound Interest",
+      "kind": "standard",
+      "difficulty": "very_hard",
+      "answer_type": "single",
+      "stem": "Find the difference between the compound interest and the simple interest on ₹2000 at 20% per annum for 3 years.",
+      "explanation": "Difference for 3 years = P·R²(300+R)/10⁶ = 2000×20²×320/1000000 = ₹256.",
+      "options": [
+        {
+          "label": "₹276",
+          "is_correct": false
+        },
+        {
+          "label": "₹256",
+          "is_correct": true
+        },
+        {
+          "label": "₹266",
+          "is_correct": false
+        },
+        {
+          "label": "₹246",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Compound Interest",
+      "kind": "standard",
+      "difficulty": "very_hard",
+      "answer_type": "single",
+      "stem": "A sum of money invested at compound interest amounts to ₹930 in one year and ₹1023 the next year. Find the rate percent per annum.",
+      "explanation": "Rate = (₹1023 − ₹930)/₹930 × 100 = 10%.",
+      "options": [
+        {
+          "label": "12%",
+          "is_correct": false
+        },
+        {
+          "label": "9%",
+          "is_correct": false
+        },
+        {
+          "label": "11%",
+          "is_correct": false
+        },
+        {
+          "label": "10%",
+          "is_correct": true
+        }
+      ]
+    },
+    {
+      "chapter": "Compound Interest",
+      "kind": "standard",
+      "difficulty": "very_hard",
+      "answer_type": "single",
+      "stem": "A sum of money invested at compound interest amounts to ₹730 in one year and ₹803 the next year. Find the rate percent per annum.",
+      "explanation": "Rate = (₹803 − ₹730)/₹730 × 100 = 10%.",
+      "options": [
+        {
+          "label": "10%",
+          "is_correct": true
+        },
+        {
+          "label": "9%",
+          "is_correct": false
+        },
+        {
+          "label": "12%",
+          "is_correct": false
+        },
+        {
+          "label": "11%",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Compound Interest",
+      "kind": "standard",
+      "difficulty": "very_hard",
+      "answer_type": "single",
+      "stem": "The population of a town is 1856 and it grows at 25% per annum. Find the population after 3 years.",
+      "explanation": "Population = 1856(1+25/100)^3 = 3625.",
+      "options": [
+        {
+          "label": "3625",
+          "is_correct": true
+        },
+        {
+          "label": "3915",
+          "is_correct": false
+        },
+        {
+          "label": "3480",
+          "is_correct": false
+        },
+        {
+          "label": "3770",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Compound Interest",
+      "kind": "standard",
+      "difficulty": "very_hard",
+      "answer_type": "single",
+      "stem": "The population of a town is 240000 and it grows at 5% per annum. Find the population after 3 years.",
+      "explanation": "Population = 240000(1+5/100)^3 = 277830.",
+      "options": [
+        {
+          "label": "277830",
+          "is_correct": true
+        },
+        {
+          "label": "300056",
+          "is_correct": false
+        },
+        {
+          "label": "266717",
+          "is_correct": false
+        },
+        {
+          "label": "288943",
+          "is_correct": false
+        }
+      ]
+    }
+  ]
+}

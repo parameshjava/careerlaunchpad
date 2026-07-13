@@ -1,0 +1,5205 @@
+{
+  "subject": "Arithmetic",
+  "questions": [
+    {
+      "chapter": "Percentage",
+      "kind": "standard",
+      "difficulty": "easy",
+      "answer_type": "single",
+      "stem": "What percent of 460 is 69?",
+      "explanation": "(69 ÷ 460) × 100 = 15%.",
+      "options": [
+        {
+          "label": "14%",
+          "is_correct": false
+        },
+        {
+          "label": "15%",
+          "is_correct": true
+        },
+        {
+          "label": "16%",
+          "is_correct": false
+        },
+        {
+          "label": "17%",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Percentage",
+      "kind": "standard",
+      "difficulty": "easy",
+      "answer_type": "single",
+      "stem": "Find 11% of 4000.",
+      "explanation": "11% of 4000 = 11/100 × 4000 = 440.",
+      "options": [
+        {
+          "label": "458",
+          "is_correct": false
+        },
+        {
+          "label": "440",
+          "is_correct": true
+        },
+        {
+          "label": "422",
+          "is_correct": false
+        },
+        {
+          "label": "476",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Percentage",
+      "kind": "standard",
+      "difficulty": "easy",
+      "answer_type": "single",
+      "stem": "Find 75% of 200.",
+      "explanation": "75% of 200 = 75/100 × 200 = 150.",
+      "options": [
+        {
+          "label": "154",
+          "is_correct": false
+        },
+        {
+          "label": "152",
+          "is_correct": false
+        },
+        {
+          "label": "148",
+          "is_correct": false
+        },
+        {
+          "label": "150",
+          "is_correct": true
+        }
+      ]
+    },
+    {
+      "chapter": "Percentage",
+      "kind": "standard",
+      "difficulty": "easy",
+      "answer_type": "single",
+      "stem": "What percent of 200 is 160?",
+      "explanation": "(160 ÷ 200) × 100 = 80%.",
+      "options": [
+        {
+          "label": "80%",
+          "is_correct": true
+        },
+        {
+          "label": "82%",
+          "is_correct": false
+        },
+        {
+          "label": "78%",
+          "is_correct": false
+        },
+        {
+          "label": "84%",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Percentage",
+      "kind": "standard",
+      "difficulty": "easy",
+      "answer_type": "single",
+      "stem": "Find 83% of 3300.",
+      "explanation": "83% of 3300 = 83/100 × 3300 = 2739.",
+      "options": [
+        {
+          "label": "2849",
+          "is_correct": false
+        },
+        {
+          "label": "2739",
+          "is_correct": true
+        },
+        {
+          "label": "2959",
+          "is_correct": false
+        },
+        {
+          "label": "2629",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Percentage",
+      "kind": "standard",
+      "difficulty": "easy",
+      "answer_type": "single",
+      "stem": "Find 49% of 2700.",
+      "explanation": "49% of 2700 = 49/100 × 2700 = 1323.",
+      "options": [
+        {
+          "label": "1376",
+          "is_correct": false
+        },
+        {
+          "label": "1323",
+          "is_correct": true
+        },
+        {
+          "label": "1429",
+          "is_correct": false
+        },
+        {
+          "label": "1270",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Percentage",
+      "kind": "standard",
+      "difficulty": "easy",
+      "answer_type": "single",
+      "stem": "What percent of 400 is 20?",
+      "explanation": "(20 ÷ 400) × 100 = 5%.",
+      "options": [
+        {
+          "label": "6%",
+          "is_correct": false
+        },
+        {
+          "label": "4%",
+          "is_correct": false
+        },
+        {
+          "label": "5%",
+          "is_correct": true
+        },
+        {
+          "label": "7%",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Percentage",
+      "kind": "standard",
+      "difficulty": "easy",
+      "answer_type": "single",
+      "stem": "What percent of 340 is 323?",
+      "explanation": "(323 ÷ 340) × 100 = 95%.",
+      "options": [
+        {
+          "label": "95%",
+          "is_correct": true
+        },
+        {
+          "label": "99%",
+          "is_correct": false
+        },
+        {
+          "label": "97%",
+          "is_correct": false
+        },
+        {
+          "label": "93%",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Percentage",
+      "kind": "standard",
+      "difficulty": "easy",
+      "answer_type": "single",
+      "stem": "Find 94% of 4300.",
+      "explanation": "94% of 4300 = 94/100 × 4300 = 4042.",
+      "options": [
+        {
+          "label": "3880",
+          "is_correct": false
+        },
+        {
+          "label": "4204",
+          "is_correct": false
+        },
+        {
+          "label": "4042",
+          "is_correct": true
+        },
+        {
+          "label": "4366",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Percentage",
+      "kind": "standard",
+      "difficulty": "easy",
+      "answer_type": "single",
+      "stem": "If 2900 is increased by 44%, what is the new value?",
+      "explanation": "Increase = 44% of 2900 = 1276; new value = 2900 + 1276 = 4176.",
+      "options": [
+        {
+          "label": "4343",
+          "is_correct": false
+        },
+        {
+          "label": "4009",
+          "is_correct": false
+        },
+        {
+          "label": "4510",
+          "is_correct": false
+        },
+        {
+          "label": "4176",
+          "is_correct": true
+        }
+      ]
+    },
+    {
+      "chapter": "Percentage",
+      "kind": "standard",
+      "difficulty": "easy",
+      "answer_type": "single",
+      "stem": "What percent of 480 is 48?",
+      "explanation": "(48 ÷ 480) × 100 = 10%.",
+      "options": [
+        {
+          "label": "9%",
+          "is_correct": false
+        },
+        {
+          "label": "12%",
+          "is_correct": false
+        },
+        {
+          "label": "11%",
+          "is_correct": false
+        },
+        {
+          "label": "10%",
+          "is_correct": true
+        }
+      ]
+    },
+    {
+      "chapter": "Percentage",
+      "kind": "standard",
+      "difficulty": "easy",
+      "answer_type": "single",
+      "stem": "Find 10% of 900.",
+      "explanation": "10% of 900 = 10/100 × 900 = 90.",
+      "options": [
+        {
+          "label": "92",
+          "is_correct": false
+        },
+        {
+          "label": "94",
+          "is_correct": false
+        },
+        {
+          "label": "88",
+          "is_correct": false
+        },
+        {
+          "label": "90",
+          "is_correct": true
+        }
+      ]
+    },
+    {
+      "chapter": "Percentage",
+      "kind": "standard",
+      "difficulty": "easy",
+      "answer_type": "single",
+      "stem": "Find 64% of 4400.",
+      "explanation": "64% of 4400 = 64/100 × 4400 = 2816.",
+      "options": [
+        {
+          "label": "2703",
+          "is_correct": false
+        },
+        {
+          "label": "2929",
+          "is_correct": false
+        },
+        {
+          "label": "2816",
+          "is_correct": true
+        },
+        {
+          "label": "3042",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Percentage",
+      "kind": "standard",
+      "difficulty": "easy",
+      "answer_type": "single",
+      "stem": "What percent of 180 is 117?",
+      "explanation": "(117 ÷ 180) × 100 = 65%.",
+      "options": [
+        {
+          "label": "69%",
+          "is_correct": false
+        },
+        {
+          "label": "65%",
+          "is_correct": true
+        },
+        {
+          "label": "63%",
+          "is_correct": false
+        },
+        {
+          "label": "67%",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Percentage",
+      "kind": "standard",
+      "difficulty": "easy",
+      "answer_type": "single",
+      "stem": "Find 16% of 900.",
+      "explanation": "16% of 900 = 16/100 × 900 = 144.",
+      "options": [
+        {
+          "label": "148",
+          "is_correct": false
+        },
+        {
+          "label": "144",
+          "is_correct": true
+        },
+        {
+          "label": "146",
+          "is_correct": false
+        },
+        {
+          "label": "142",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Percentage",
+      "kind": "standard",
+      "difficulty": "easy",
+      "answer_type": "single",
+      "stem": "Find 36% of 2100.",
+      "explanation": "36% of 2100 = 36/100 × 2100 = 756.",
+      "options": [
+        {
+          "label": "816",
+          "is_correct": false
+        },
+        {
+          "label": "756",
+          "is_correct": true
+        },
+        {
+          "label": "786",
+          "is_correct": false
+        },
+        {
+          "label": "726",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Percentage",
+      "kind": "standard",
+      "difficulty": "easy",
+      "answer_type": "single",
+      "stem": "If 3200 is increased by 23%, what is the new value?",
+      "explanation": "Increase = 23% of 3200 = 736; new value = 3200 + 736 = 3936.",
+      "options": [
+        {
+          "label": "4093",
+          "is_correct": false
+        },
+        {
+          "label": "3779",
+          "is_correct": false
+        },
+        {
+          "label": "3936",
+          "is_correct": true
+        },
+        {
+          "label": "4250",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Percentage",
+      "kind": "standard",
+      "difficulty": "easy",
+      "answer_type": "single",
+      "stem": "Find 11% of 500.",
+      "explanation": "11% of 500 = 11/100 × 500 = 55.",
+      "options": [
+        {
+          "label": "55",
+          "is_correct": true
+        },
+        {
+          "label": "53",
+          "is_correct": false
+        },
+        {
+          "label": "59",
+          "is_correct": false
+        },
+        {
+          "label": "57",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Percentage",
+      "kind": "standard",
+      "difficulty": "easy",
+      "answer_type": "single",
+      "stem": "If 2900 is increased by 41%, what is the new value?",
+      "explanation": "Increase = 41% of 2900 = 1189; new value = 2900 + 1189 = 4089.",
+      "options": [
+        {
+          "label": "4417",
+          "is_correct": false
+        },
+        {
+          "label": "4253",
+          "is_correct": false
+        },
+        {
+          "label": "3925",
+          "is_correct": false
+        },
+        {
+          "label": "4089",
+          "is_correct": true
+        }
+      ]
+    },
+    {
+      "chapter": "Percentage",
+      "kind": "standard",
+      "difficulty": "easy",
+      "answer_type": "single",
+      "stem": "Find 17% of 1800.",
+      "explanation": "17% of 1800 = 17/100 × 1800 = 306.",
+      "options": [
+        {
+          "label": "306",
+          "is_correct": true
+        },
+        {
+          "label": "294",
+          "is_correct": false
+        },
+        {
+          "label": "318",
+          "is_correct": false
+        },
+        {
+          "label": "330",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Percentage",
+      "kind": "standard",
+      "difficulty": "easy",
+      "answer_type": "single",
+      "stem": "What percent of 380 is 342?",
+      "explanation": "(342 ÷ 380) × 100 = 90%.",
+      "options": [
+        {
+          "label": "94%",
+          "is_correct": false
+        },
+        {
+          "label": "92%",
+          "is_correct": false
+        },
+        {
+          "label": "88%",
+          "is_correct": false
+        },
+        {
+          "label": "90%",
+          "is_correct": true
+        }
+      ]
+    },
+    {
+      "chapter": "Percentage",
+      "kind": "standard",
+      "difficulty": "easy",
+      "answer_type": "single",
+      "stem": "Find 37% of 3400.",
+      "explanation": "37% of 3400 = 37/100 × 3400 = 1258.",
+      "options": [
+        {
+          "label": "1258",
+          "is_correct": true
+        },
+        {
+          "label": "1308",
+          "is_correct": false
+        },
+        {
+          "label": "1358",
+          "is_correct": false
+        },
+        {
+          "label": "1208",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Percentage",
+      "kind": "standard",
+      "difficulty": "easy",
+      "answer_type": "single",
+      "stem": "If 500 is increased by 26%, what is the new value?",
+      "explanation": "Increase = 26% of 500 = 130; new value = 500 + 130 = 630.",
+      "options": [
+        {
+          "label": "655",
+          "is_correct": false
+        },
+        {
+          "label": "605",
+          "is_correct": false
+        },
+        {
+          "label": "630",
+          "is_correct": true
+        },
+        {
+          "label": "680",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Percentage",
+      "kind": "standard",
+      "difficulty": "easy",
+      "answer_type": "single",
+      "stem": "What percent of 500 is 400?",
+      "explanation": "(400 ÷ 500) × 100 = 80%.",
+      "options": [
+        {
+          "label": "82%",
+          "is_correct": false
+        },
+        {
+          "label": "84%",
+          "is_correct": false
+        },
+        {
+          "label": "80%",
+          "is_correct": true
+        },
+        {
+          "label": "78%",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Percentage",
+      "kind": "standard",
+      "difficulty": "easy",
+      "answer_type": "single",
+      "stem": "If 800 is increased by 56%, what is the new value?",
+      "explanation": "Increase = 56% of 800 = 448; new value = 800 + 448 = 1248.",
+      "options": [
+        {
+          "label": "1348",
+          "is_correct": false
+        },
+        {
+          "label": "1248",
+          "is_correct": true
+        },
+        {
+          "label": "1198",
+          "is_correct": false
+        },
+        {
+          "label": "1298",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Percentage",
+      "kind": "standard",
+      "difficulty": "easy",
+      "answer_type": "single",
+      "stem": "What percent of 440 is 418?",
+      "explanation": "(418 ÷ 440) × 100 = 95%.",
+      "options": [
+        {
+          "label": "95%",
+          "is_correct": true
+        },
+        {
+          "label": "99%",
+          "is_correct": false
+        },
+        {
+          "label": "97%",
+          "is_correct": false
+        },
+        {
+          "label": "93%",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Percentage",
+      "kind": "standard",
+      "difficulty": "easy",
+      "answer_type": "single",
+      "stem": "If 5000 is increased by 56%, what is the new value?",
+      "explanation": "Increase = 56% of 5000 = 2800; new value = 5000 + 2800 = 7800.",
+      "options": [
+        {
+          "label": "7488",
+          "is_correct": false
+        },
+        {
+          "label": "8112",
+          "is_correct": false
+        },
+        {
+          "label": "8424",
+          "is_correct": false
+        },
+        {
+          "label": "7800",
+          "is_correct": true
+        }
+      ]
+    },
+    {
+      "chapter": "Percentage",
+      "kind": "standard",
+      "difficulty": "easy",
+      "answer_type": "single",
+      "stem": "Find 33% of 3400.",
+      "explanation": "33% of 3400 = 33/100 × 3400 = 1122.",
+      "options": [
+        {
+          "label": "1077",
+          "is_correct": false
+        },
+        {
+          "label": "1167",
+          "is_correct": false
+        },
+        {
+          "label": "1212",
+          "is_correct": false
+        },
+        {
+          "label": "1122",
+          "is_correct": true
+        }
+      ]
+    },
+    {
+      "chapter": "Percentage",
+      "kind": "standard",
+      "difficulty": "easy",
+      "answer_type": "single",
+      "stem": "What percent of 320 is 208?",
+      "explanation": "(208 ÷ 320) × 100 = 65%.",
+      "options": [
+        {
+          "label": "65%",
+          "is_correct": true
+        },
+        {
+          "label": "63%",
+          "is_correct": false
+        },
+        {
+          "label": "69%",
+          "is_correct": false
+        },
+        {
+          "label": "67%",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Percentage",
+      "kind": "standard",
+      "difficulty": "easy",
+      "answer_type": "single",
+      "stem": "If 500 is increased by 5%, what is the new value?",
+      "explanation": "Increase = 5% of 500 = 25; new value = 500 + 25 = 525.",
+      "options": [
+        {
+          "label": "504",
+          "is_correct": false
+        },
+        {
+          "label": "546",
+          "is_correct": false
+        },
+        {
+          "label": "567",
+          "is_correct": false
+        },
+        {
+          "label": "525",
+          "is_correct": true
+        }
+      ]
+    },
+    {
+      "chapter": "Percentage",
+      "kind": "standard",
+      "difficulty": "easy",
+      "answer_type": "single",
+      "stem": "If 3500 is increased by 13%, what is the new value?",
+      "explanation": "Increase = 13% of 3500 = 455; new value = 3500 + 455 = 3955.",
+      "options": [
+        {
+          "label": "4271",
+          "is_correct": false
+        },
+        {
+          "label": "3797",
+          "is_correct": false
+        },
+        {
+          "label": "3955",
+          "is_correct": true
+        },
+        {
+          "label": "4113",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Percentage",
+      "kind": "standard",
+      "difficulty": "easy",
+      "answer_type": "single",
+      "stem": "Find 25% of 2600.",
+      "explanation": "25% of 2600 = 25/100 × 2600 = 650.",
+      "options": [
+        {
+          "label": "702",
+          "is_correct": false
+        },
+        {
+          "label": "650",
+          "is_correct": true
+        },
+        {
+          "label": "676",
+          "is_correct": false
+        },
+        {
+          "label": "624",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Percentage",
+      "kind": "standard",
+      "difficulty": "easy",
+      "answer_type": "single",
+      "stem": "Find 83% of 2000.",
+      "explanation": "83% of 2000 = 83/100 × 2000 = 1660.",
+      "options": [
+        {
+          "label": "1792",
+          "is_correct": false
+        },
+        {
+          "label": "1594",
+          "is_correct": false
+        },
+        {
+          "label": "1660",
+          "is_correct": true
+        },
+        {
+          "label": "1726",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Percentage",
+      "kind": "standard",
+      "difficulty": "easy",
+      "answer_type": "single",
+      "stem": "What percent of 100 is 80?",
+      "explanation": "(80 ÷ 100) × 100 = 80%.",
+      "options": [
+        {
+          "label": "80%",
+          "is_correct": true
+        },
+        {
+          "label": "82%",
+          "is_correct": false
+        },
+        {
+          "label": "78%",
+          "is_correct": false
+        },
+        {
+          "label": "84%",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Percentage",
+      "kind": "standard",
+      "difficulty": "easy",
+      "answer_type": "single",
+      "stem": "If 4100 is increased by 49%, what is the new value?",
+      "explanation": "Increase = 49% of 4100 = 2009; new value = 4100 + 2009 = 6109.",
+      "options": [
+        {
+          "label": "6109",
+          "is_correct": true
+        },
+        {
+          "label": "5865",
+          "is_correct": false
+        },
+        {
+          "label": "6597",
+          "is_correct": false
+        },
+        {
+          "label": "6353",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Percentage",
+      "kind": "standard",
+      "difficulty": "easy",
+      "answer_type": "single",
+      "stem": "Find 12% of 1100.",
+      "explanation": "12% of 1100 = 12/100 × 1100 = 132.",
+      "options": [
+        {
+          "label": "130",
+          "is_correct": false
+        },
+        {
+          "label": "134",
+          "is_correct": false
+        },
+        {
+          "label": "136",
+          "is_correct": false
+        },
+        {
+          "label": "132",
+          "is_correct": true
+        }
+      ]
+    },
+    {
+      "chapter": "Percentage",
+      "kind": "standard",
+      "difficulty": "easy",
+      "answer_type": "single",
+      "stem": "What percent of 380 is 95?",
+      "explanation": "(95 ÷ 380) × 100 = 25%.",
+      "options": [
+        {
+          "label": "25%",
+          "is_correct": true
+        },
+        {
+          "label": "24%",
+          "is_correct": false
+        },
+        {
+          "label": "27%",
+          "is_correct": false
+        },
+        {
+          "label": "26%",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Percentage",
+      "kind": "standard",
+      "difficulty": "easy",
+      "answer_type": "single",
+      "stem": "Find 35% of 1700.",
+      "explanation": "35% of 1700 = 35/100 × 1700 = 595.",
+      "options": [
+        {
+          "label": "571",
+          "is_correct": false
+        },
+        {
+          "label": "643",
+          "is_correct": false
+        },
+        {
+          "label": "619",
+          "is_correct": false
+        },
+        {
+          "label": "595",
+          "is_correct": true
+        }
+      ]
+    },
+    {
+      "chapter": "Percentage",
+      "kind": "standard",
+      "difficulty": "easy",
+      "answer_type": "single",
+      "stem": "What percent of 60 is 54?",
+      "explanation": "(54 ÷ 60) × 100 = 90%.",
+      "options": [
+        {
+          "label": "90%",
+          "is_correct": true
+        },
+        {
+          "label": "92%",
+          "is_correct": false
+        },
+        {
+          "label": "94%",
+          "is_correct": false
+        },
+        {
+          "label": "88%",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Percentage",
+      "kind": "standard",
+      "difficulty": "easy",
+      "answer_type": "single",
+      "stem": "Find 22% of 3400.",
+      "explanation": "22% of 3400 = 22/100 × 3400 = 748.",
+      "options": [
+        {
+          "label": "748",
+          "is_correct": true
+        },
+        {
+          "label": "778",
+          "is_correct": false
+        },
+        {
+          "label": "808",
+          "is_correct": false
+        },
+        {
+          "label": "718",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Percentage",
+      "kind": "standard",
+      "difficulty": "easy",
+      "answer_type": "single",
+      "stem": "Find 74% of 4400.",
+      "explanation": "74% of 4400 = 74/100 × 4400 = 3256.",
+      "options": [
+        {
+          "label": "3516",
+          "is_correct": false
+        },
+        {
+          "label": "3256",
+          "is_correct": true
+        },
+        {
+          "label": "3126",
+          "is_correct": false
+        },
+        {
+          "label": "3386",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Percentage",
+      "kind": "standard",
+      "difficulty": "easy",
+      "answer_type": "single",
+      "stem": "If 2700 is increased by 51%, what is the new value?",
+      "explanation": "Increase = 51% of 2700 = 1377; new value = 2700 + 1377 = 4077.",
+      "options": [
+        {
+          "label": "4077",
+          "is_correct": true
+        },
+        {
+          "label": "3914",
+          "is_correct": false
+        },
+        {
+          "label": "4403",
+          "is_correct": false
+        },
+        {
+          "label": "4240",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Percentage",
+      "kind": "standard",
+      "difficulty": "easy",
+      "answer_type": "single",
+      "stem": "Find 45% of 2100.",
+      "explanation": "45% of 2100 = 45/100 × 2100 = 945.",
+      "options": [
+        {
+          "label": "1021",
+          "is_correct": false
+        },
+        {
+          "label": "945",
+          "is_correct": true
+        },
+        {
+          "label": "983",
+          "is_correct": false
+        },
+        {
+          "label": "907",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Percentage",
+      "kind": "standard",
+      "difficulty": "easy",
+      "answer_type": "single",
+      "stem": "What percent of 160 is 40?",
+      "explanation": "(40 ÷ 160) × 100 = 25%.",
+      "options": [
+        {
+          "label": "25%",
+          "is_correct": true
+        },
+        {
+          "label": "26%",
+          "is_correct": false
+        },
+        {
+          "label": "27%",
+          "is_correct": false
+        },
+        {
+          "label": "24%",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Percentage",
+      "kind": "standard",
+      "difficulty": "easy",
+      "answer_type": "single",
+      "stem": "What percent of 480 is 384?",
+      "explanation": "(384 ÷ 480) × 100 = 80%.",
+      "options": [
+        {
+          "label": "84%",
+          "is_correct": false
+        },
+        {
+          "label": "82%",
+          "is_correct": false
+        },
+        {
+          "label": "80%",
+          "is_correct": true
+        },
+        {
+          "label": "78%",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Percentage",
+      "kind": "standard",
+      "difficulty": "easy",
+      "answer_type": "single",
+      "stem": "What percent of 460 is 299?",
+      "explanation": "(299 ÷ 460) × 100 = 65%.",
+      "options": [
+        {
+          "label": "65%",
+          "is_correct": true
+        },
+        {
+          "label": "63%",
+          "is_correct": false
+        },
+        {
+          "label": "69%",
+          "is_correct": false
+        },
+        {
+          "label": "67%",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Percentage",
+      "kind": "standard",
+      "difficulty": "easy",
+      "answer_type": "single",
+      "stem": "What percent of 500 is 250?",
+      "explanation": "(250 ÷ 500) × 100 = 50%.",
+      "options": [
+        {
+          "label": "54%",
+          "is_correct": false
+        },
+        {
+          "label": "48%",
+          "is_correct": false
+        },
+        {
+          "label": "50%",
+          "is_correct": true
+        },
+        {
+          "label": "52%",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Percentage",
+      "kind": "standard",
+      "difficulty": "easy",
+      "answer_type": "single",
+      "stem": "Find 71% of 2500.",
+      "explanation": "71% of 2500 = 71/100 × 2500 = 1775.",
+      "options": [
+        {
+          "label": "1917",
+          "is_correct": false
+        },
+        {
+          "label": "1775",
+          "is_correct": true
+        },
+        {
+          "label": "1846",
+          "is_correct": false
+        },
+        {
+          "label": "1704",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Percentage",
+      "kind": "standard",
+      "difficulty": "easy",
+      "answer_type": "single",
+      "stem": "If 800 is increased by 32%, what is the new value?",
+      "explanation": "Increase = 32% of 800 = 256; new value = 800 + 256 = 1056.",
+      "options": [
+        {
+          "label": "1098",
+          "is_correct": false
+        },
+        {
+          "label": "1014",
+          "is_correct": false
+        },
+        {
+          "label": "1056",
+          "is_correct": true
+        },
+        {
+          "label": "1140",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Percentage",
+      "kind": "standard",
+      "difficulty": "easy",
+      "answer_type": "single",
+      "stem": "If 2700 is increased by 48%, what is the new value?",
+      "explanation": "Increase = 48% of 2700 = 1296; new value = 2700 + 1296 = 3996.",
+      "options": [
+        {
+          "label": "3996",
+          "is_correct": true
+        },
+        {
+          "label": "4156",
+          "is_correct": false
+        },
+        {
+          "label": "3836",
+          "is_correct": false
+        },
+        {
+          "label": "4316",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Percentage",
+      "kind": "standard",
+      "difficulty": "medium",
+      "answer_type": "single",
+      "stem": "25% of a number is 975. Find the number.",
+      "explanation": "Number = 975 × 100 / 25 = 3900.",
+      "options": [
+        {
+          "label": "3900",
+          "is_correct": true
+        },
+        {
+          "label": "3744",
+          "is_correct": false
+        },
+        {
+          "label": "4056",
+          "is_correct": false
+        },
+        {
+          "label": "4212",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Percentage",
+      "kind": "standard",
+      "difficulty": "medium",
+      "answer_type": "single",
+      "stem": "After an increase of 47%, the price of an item became ₹3381. Find the original price.",
+      "explanation": "Original × (100+47)/100 = 3381 ⇒ original = ₹2300.",
+      "options": [
+        {
+          "label": "₹2300",
+          "is_correct": true
+        },
+        {
+          "label": "₹2392",
+          "is_correct": false
+        },
+        {
+          "label": "₹2208",
+          "is_correct": false
+        },
+        {
+          "label": "₹2484",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Percentage",
+      "kind": "standard",
+      "difficulty": "medium",
+      "answer_type": "single",
+      "stem": "A student scored 80% in an examination and obtained 720 marks. Find the maximum marks.",
+      "explanation": "Maximum marks = 720 × 100 / 80 = 900.",
+      "options": [
+        {
+          "label": "900",
+          "is_correct": true
+        },
+        {
+          "label": "864",
+          "is_correct": false
+        },
+        {
+          "label": "936",
+          "is_correct": false
+        },
+        {
+          "label": "972",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Percentage",
+      "kind": "standard",
+      "difficulty": "medium",
+      "answer_type": "single",
+      "stem": "12% of a number is 288. Find the number.",
+      "explanation": "Number = 288 × 100 / 12 = 2400.",
+      "options": [
+        {
+          "label": "2592",
+          "is_correct": false
+        },
+        {
+          "label": "2304",
+          "is_correct": false
+        },
+        {
+          "label": "2400",
+          "is_correct": true
+        },
+        {
+          "label": "2496",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Percentage",
+      "kind": "standard",
+      "difficulty": "medium",
+      "answer_type": "single",
+      "stem": "A student scored 49% in an examination and obtained 441 marks. Find the maximum marks.",
+      "explanation": "Maximum marks = 441 × 100 / 49 = 900.",
+      "options": [
+        {
+          "label": "936",
+          "is_correct": false
+        },
+        {
+          "label": "900",
+          "is_correct": true
+        },
+        {
+          "label": "864",
+          "is_correct": false
+        },
+        {
+          "label": "972",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Percentage",
+      "kind": "standard",
+      "difficulty": "medium",
+      "answer_type": "single",
+      "stem": "After an increase of 18%, the price of an item became ₹2006. Find the original price.",
+      "explanation": "Original × (100+18)/100 = 2006 ⇒ original = ₹1700.",
+      "options": [
+        {
+          "label": "₹1836",
+          "is_correct": false
+        },
+        {
+          "label": "₹1768",
+          "is_correct": false
+        },
+        {
+          "label": "₹1632",
+          "is_correct": false
+        },
+        {
+          "label": "₹1700",
+          "is_correct": true
+        }
+      ]
+    },
+    {
+      "chapter": "Percentage",
+      "kind": "standard",
+      "difficulty": "medium",
+      "answer_type": "single",
+      "stem": "After an increase of 28%, the price of an item became ₹896. Find the original price.",
+      "explanation": "Original × (100+28)/100 = 896 ⇒ original = ₹700.",
+      "options": [
+        {
+          "label": "₹756",
+          "is_correct": false
+        },
+        {
+          "label": "₹700",
+          "is_correct": true
+        },
+        {
+          "label": "₹672",
+          "is_correct": false
+        },
+        {
+          "label": "₹728",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Percentage",
+      "kind": "standard",
+      "difficulty": "medium",
+      "answer_type": "single",
+      "stem": "22% of a number is 176. Find the number.",
+      "explanation": "Number = 176 × 100 / 22 = 800.",
+      "options": [
+        {
+          "label": "768",
+          "is_correct": false
+        },
+        {
+          "label": "800",
+          "is_correct": true
+        },
+        {
+          "label": "832",
+          "is_correct": false
+        },
+        {
+          "label": "864",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Percentage",
+      "kind": "standard",
+      "difficulty": "medium",
+      "answer_type": "single",
+      "stem": "15% of a number is 285. Find the number.",
+      "explanation": "Number = 285 × 100 / 15 = 1900.",
+      "options": [
+        {
+          "label": "1900",
+          "is_correct": true
+        },
+        {
+          "label": "1824",
+          "is_correct": false
+        },
+        {
+          "label": "1976",
+          "is_correct": false
+        },
+        {
+          "label": "2052",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Percentage",
+      "kind": "standard",
+      "difficulty": "medium",
+      "answer_type": "single",
+      "stem": "A student scored 32% in an examination and obtained 256 marks. Find the maximum marks.",
+      "explanation": "Maximum marks = 256 × 100 / 32 = 800.",
+      "options": [
+        {
+          "label": "832",
+          "is_correct": false
+        },
+        {
+          "label": "800",
+          "is_correct": true
+        },
+        {
+          "label": "768",
+          "is_correct": false
+        },
+        {
+          "label": "864",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Percentage",
+      "kind": "standard",
+      "difficulty": "medium",
+      "answer_type": "single",
+      "stem": "A student scored 73% in an examination and obtained 730 marks. Find the maximum marks.",
+      "explanation": "Maximum marks = 730 × 100 / 73 = 1000.",
+      "options": [
+        {
+          "label": "1040",
+          "is_correct": false
+        },
+        {
+          "label": "1000",
+          "is_correct": true
+        },
+        {
+          "label": "960",
+          "is_correct": false
+        },
+        {
+          "label": "1080",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Percentage",
+      "kind": "standard",
+      "difficulty": "medium",
+      "answer_type": "single",
+      "stem": "18% of a number is 180. Find the number.",
+      "explanation": "Number = 180 × 100 / 18 = 1000.",
+      "options": [
+        {
+          "label": "1080",
+          "is_correct": false
+        },
+        {
+          "label": "1000",
+          "is_correct": true
+        },
+        {
+          "label": "1040",
+          "is_correct": false
+        },
+        {
+          "label": "960",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Percentage",
+      "kind": "standard",
+      "difficulty": "medium",
+      "answer_type": "single",
+      "stem": "After an increase of 41%, the price of an item became ₹3807. Find the original price.",
+      "explanation": "Original × (100+41)/100 = 3807 ⇒ original = ₹2700.",
+      "options": [
+        {
+          "label": "₹2700",
+          "is_correct": true
+        },
+        {
+          "label": "₹2808",
+          "is_correct": false
+        },
+        {
+          "label": "₹2592",
+          "is_correct": false
+        },
+        {
+          "label": "₹2916",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Percentage",
+      "kind": "standard",
+      "difficulty": "medium",
+      "answer_type": "single",
+      "stem": "7% of a number is 301. Find the number.",
+      "explanation": "Number = 301 × 100 / 7 = 4300.",
+      "options": [
+        {
+          "label": "4472",
+          "is_correct": false
+        },
+        {
+          "label": "4644",
+          "is_correct": false
+        },
+        {
+          "label": "4300",
+          "is_correct": true
+        },
+        {
+          "label": "4128",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Percentage",
+      "kind": "standard",
+      "difficulty": "medium",
+      "answer_type": "single",
+      "stem": "After an increase of 42%, the price of an item became ₹3834. Find the original price.",
+      "explanation": "Original × (100+42)/100 = 3834 ⇒ original = ₹2700.",
+      "options": [
+        {
+          "label": "₹2808",
+          "is_correct": false
+        },
+        {
+          "label": "₹2700",
+          "is_correct": true
+        },
+        {
+          "label": "₹2592",
+          "is_correct": false
+        },
+        {
+          "label": "₹2916",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Percentage",
+      "kind": "standard",
+      "difficulty": "medium",
+      "answer_type": "single",
+      "stem": "A student scored 37% in an examination and obtained 370 marks. Find the maximum marks.",
+      "explanation": "Maximum marks = 370 × 100 / 37 = 1000.",
+      "options": [
+        {
+          "label": "1080",
+          "is_correct": false
+        },
+        {
+          "label": "1040",
+          "is_correct": false
+        },
+        {
+          "label": "1000",
+          "is_correct": true
+        },
+        {
+          "label": "960",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Percentage",
+      "kind": "standard",
+      "difficulty": "medium",
+      "answer_type": "single",
+      "stem": "A student scored 58% in an examination and obtained 348 marks. Find the maximum marks.",
+      "explanation": "Maximum marks = 348 × 100 / 58 = 600.",
+      "options": [
+        {
+          "label": "576",
+          "is_correct": false
+        },
+        {
+          "label": "624",
+          "is_correct": false
+        },
+        {
+          "label": "600",
+          "is_correct": true
+        },
+        {
+          "label": "648",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Percentage",
+      "kind": "standard",
+      "difficulty": "medium",
+      "answer_type": "single",
+      "stem": "A student scored 43% in an examination and obtained 129 marks. Find the maximum marks.",
+      "explanation": "Maximum marks = 129 × 100 / 43 = 300.",
+      "options": [
+        {
+          "label": "324",
+          "is_correct": false
+        },
+        {
+          "label": "300",
+          "is_correct": true
+        },
+        {
+          "label": "288",
+          "is_correct": false
+        },
+        {
+          "label": "312",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Percentage",
+      "kind": "standard",
+      "difficulty": "medium",
+      "answer_type": "single",
+      "stem": "9% of a number is 117. Find the number.",
+      "explanation": "Number = 117 × 100 / 9 = 1300.",
+      "options": [
+        {
+          "label": "1404",
+          "is_correct": false
+        },
+        {
+          "label": "1352",
+          "is_correct": false
+        },
+        {
+          "label": "1300",
+          "is_correct": true
+        },
+        {
+          "label": "1248",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Percentage",
+      "kind": "standard",
+      "difficulty": "medium",
+      "answer_type": "single",
+      "stem": "After an increase of 33%, the price of an item became ₹931. Find the original price.",
+      "explanation": "Original × (100+33)/100 = 931 ⇒ original = ₹700.",
+      "options": [
+        {
+          "label": "₹672",
+          "is_correct": false
+        },
+        {
+          "label": "₹728",
+          "is_correct": false
+        },
+        {
+          "label": "₹756",
+          "is_correct": false
+        },
+        {
+          "label": "₹700",
+          "is_correct": true
+        }
+      ]
+    },
+    {
+      "chapter": "Percentage",
+      "kind": "standard",
+      "difficulty": "medium",
+      "answer_type": "single",
+      "stem": "A student scored 69% in an examination and obtained 345 marks. Find the maximum marks.",
+      "explanation": "Maximum marks = 345 × 100 / 69 = 500.",
+      "options": [
+        {
+          "label": "480",
+          "is_correct": false
+        },
+        {
+          "label": "540",
+          "is_correct": false
+        },
+        {
+          "label": "520",
+          "is_correct": false
+        },
+        {
+          "label": "500",
+          "is_correct": true
+        }
+      ]
+    },
+    {
+      "chapter": "Percentage",
+      "kind": "standard",
+      "difficulty": "medium",
+      "answer_type": "single",
+      "stem": "24% of a number is 192. Find the number.",
+      "explanation": "Number = 192 × 100 / 24 = 800.",
+      "options": [
+        {
+          "label": "768",
+          "is_correct": false
+        },
+        {
+          "label": "832",
+          "is_correct": false
+        },
+        {
+          "label": "864",
+          "is_correct": false
+        },
+        {
+          "label": "800",
+          "is_correct": true
+        }
+      ]
+    },
+    {
+      "chapter": "Percentage",
+      "kind": "standard",
+      "difficulty": "medium",
+      "answer_type": "single",
+      "stem": "After an increase of 20%, the price of an item became ₹720. Find the original price.",
+      "explanation": "Original × (100+20)/100 = 720 ⇒ original = ₹600.",
+      "options": [
+        {
+          "label": "₹624",
+          "is_correct": false
+        },
+        {
+          "label": "₹648",
+          "is_correct": false
+        },
+        {
+          "label": "₹600",
+          "is_correct": true
+        },
+        {
+          "label": "₹576",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Percentage",
+      "kind": "standard",
+      "difficulty": "medium",
+      "answer_type": "single",
+      "stem": "After an increase of 33%, the price of an item became ₹3724. Find the original price.",
+      "explanation": "Original × (100+33)/100 = 3724 ⇒ original = ₹2800.",
+      "options": [
+        {
+          "label": "₹2800",
+          "is_correct": true
+        },
+        {
+          "label": "₹3024",
+          "is_correct": false
+        },
+        {
+          "label": "₹2688",
+          "is_correct": false
+        },
+        {
+          "label": "₹2912",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Percentage",
+      "kind": "standard",
+      "difficulty": "medium",
+      "answer_type": "single",
+      "stem": "After an increase of 34%, the price of an item became ₹4824. Find the original price.",
+      "explanation": "Original × (100+34)/100 = 4824 ⇒ original = ₹3600.",
+      "options": [
+        {
+          "label": "₹3456",
+          "is_correct": false
+        },
+        {
+          "label": "₹3744",
+          "is_correct": false
+        },
+        {
+          "label": "₹3888",
+          "is_correct": false
+        },
+        {
+          "label": "₹3600",
+          "is_correct": true
+        }
+      ]
+    },
+    {
+      "chapter": "Percentage",
+      "kind": "standard",
+      "difficulty": "medium",
+      "answer_type": "single",
+      "stem": "A student scored 71% in an examination and obtained 568 marks. Find the maximum marks.",
+      "explanation": "Maximum marks = 568 × 100 / 71 = 800.",
+      "options": [
+        {
+          "label": "800",
+          "is_correct": true
+        },
+        {
+          "label": "864",
+          "is_correct": false
+        },
+        {
+          "label": "768",
+          "is_correct": false
+        },
+        {
+          "label": "832",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Percentage",
+      "kind": "standard",
+      "difficulty": "medium",
+      "answer_type": "single",
+      "stem": "A student scored 34% in an examination and obtained 238 marks. Find the maximum marks.",
+      "explanation": "Maximum marks = 238 × 100 / 34 = 700.",
+      "options": [
+        {
+          "label": "672",
+          "is_correct": false
+        },
+        {
+          "label": "728",
+          "is_correct": false
+        },
+        {
+          "label": "756",
+          "is_correct": false
+        },
+        {
+          "label": "700",
+          "is_correct": true
+        }
+      ]
+    },
+    {
+      "chapter": "Percentage",
+      "kind": "standard",
+      "difficulty": "medium",
+      "answer_type": "single",
+      "stem": "13% of a number is 364. Find the number.",
+      "explanation": "Number = 364 × 100 / 13 = 2800.",
+      "options": [
+        {
+          "label": "2688",
+          "is_correct": false
+        },
+        {
+          "label": "2912",
+          "is_correct": false
+        },
+        {
+          "label": "3024",
+          "is_correct": false
+        },
+        {
+          "label": "2800",
+          "is_correct": true
+        }
+      ]
+    },
+    {
+      "chapter": "Percentage",
+      "kind": "standard",
+      "difficulty": "medium",
+      "answer_type": "single",
+      "stem": "13% of a number is 39. Find the number.",
+      "explanation": "Number = 39 × 100 / 13 = 300.",
+      "options": [
+        {
+          "label": "288",
+          "is_correct": false
+        },
+        {
+          "label": "312",
+          "is_correct": false
+        },
+        {
+          "label": "300",
+          "is_correct": true
+        },
+        {
+          "label": "324",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Percentage",
+      "kind": "standard",
+      "difficulty": "medium",
+      "answer_type": "single",
+      "stem": "A student scored 52% in an examination and obtained 312 marks. Find the maximum marks.",
+      "explanation": "Maximum marks = 312 × 100 / 52 = 600.",
+      "options": [
+        {
+          "label": "600",
+          "is_correct": true
+        },
+        {
+          "label": "576",
+          "is_correct": false
+        },
+        {
+          "label": "624",
+          "is_correct": false
+        },
+        {
+          "label": "648",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Percentage",
+      "kind": "standard",
+      "difficulty": "medium",
+      "answer_type": "single",
+      "stem": "A student scored 26% in an examination and obtained 208 marks. Find the maximum marks.",
+      "explanation": "Maximum marks = 208 × 100 / 26 = 800.",
+      "options": [
+        {
+          "label": "800",
+          "is_correct": true
+        },
+        {
+          "label": "768",
+          "is_correct": false
+        },
+        {
+          "label": "832",
+          "is_correct": false
+        },
+        {
+          "label": "864",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Percentage",
+      "kind": "standard",
+      "difficulty": "medium",
+      "answer_type": "single",
+      "stem": "After an increase of 32%, the price of an item became ₹3696. Find the original price.",
+      "explanation": "Original × (100+32)/100 = 3696 ⇒ original = ₹2800.",
+      "options": [
+        {
+          "label": "₹2800",
+          "is_correct": true
+        },
+        {
+          "label": "₹3024",
+          "is_correct": false
+        },
+        {
+          "label": "₹2688",
+          "is_correct": false
+        },
+        {
+          "label": "₹2912",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Percentage",
+      "kind": "standard",
+      "difficulty": "medium",
+      "answer_type": "single",
+      "stem": "After an increase of 13%, the price of an item became ₹3616. Find the original price.",
+      "explanation": "Original × (100+13)/100 = 3616 ⇒ original = ₹3200.",
+      "options": [
+        {
+          "label": "₹3456",
+          "is_correct": false
+        },
+        {
+          "label": "₹3200",
+          "is_correct": true
+        },
+        {
+          "label": "₹3072",
+          "is_correct": false
+        },
+        {
+          "label": "₹3328",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Percentage",
+      "kind": "standard",
+      "difficulty": "medium",
+      "answer_type": "single",
+      "stem": "A student scored 77% in an examination and obtained 231 marks. Find the maximum marks.",
+      "explanation": "Maximum marks = 231 × 100 / 77 = 300.",
+      "options": [
+        {
+          "label": "324",
+          "is_correct": false
+        },
+        {
+          "label": "288",
+          "is_correct": false
+        },
+        {
+          "label": "300",
+          "is_correct": true
+        },
+        {
+          "label": "312",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Percentage",
+      "kind": "standard",
+      "difficulty": "medium",
+      "answer_type": "single",
+      "stem": "A student scored 52% in an examination and obtained 364 marks. Find the maximum marks.",
+      "explanation": "Maximum marks = 364 × 100 / 52 = 700.",
+      "options": [
+        {
+          "label": "728",
+          "is_correct": false
+        },
+        {
+          "label": "756",
+          "is_correct": false
+        },
+        {
+          "label": "700",
+          "is_correct": true
+        },
+        {
+          "label": "672",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Percentage",
+      "kind": "standard",
+      "difficulty": "medium",
+      "answer_type": "single",
+      "stem": "After an increase of 14%, the price of an item became ₹912. Find the original price.",
+      "explanation": "Original × (100+14)/100 = 912 ⇒ original = ₹800.",
+      "options": [
+        {
+          "label": "₹832",
+          "is_correct": false
+        },
+        {
+          "label": "₹768",
+          "is_correct": false
+        },
+        {
+          "label": "₹800",
+          "is_correct": true
+        },
+        {
+          "label": "₹864",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Percentage",
+      "kind": "standard",
+      "difficulty": "medium",
+      "answer_type": "single",
+      "stem": "5% of a number is 105. Find the number.",
+      "explanation": "Number = 105 × 100 / 5 = 2100.",
+      "options": [
+        {
+          "label": "2100",
+          "is_correct": true
+        },
+        {
+          "label": "2016",
+          "is_correct": false
+        },
+        {
+          "label": "2184",
+          "is_correct": false
+        },
+        {
+          "label": "2268",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Percentage",
+      "kind": "standard",
+      "difficulty": "medium",
+      "answer_type": "single",
+      "stem": "A student scored 56% in an examination and obtained 168 marks. Find the maximum marks.",
+      "explanation": "Maximum marks = 168 × 100 / 56 = 300.",
+      "options": [
+        {
+          "label": "300",
+          "is_correct": true
+        },
+        {
+          "label": "288",
+          "is_correct": false
+        },
+        {
+          "label": "312",
+          "is_correct": false
+        },
+        {
+          "label": "324",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Percentage",
+      "kind": "standard",
+      "difficulty": "medium",
+      "answer_type": "single",
+      "stem": "After an increase of 27%, the price of an item became ₹1778. Find the original price.",
+      "explanation": "Original × (100+27)/100 = 1778 ⇒ original = ₹1400.",
+      "options": [
+        {
+          "label": "₹1344",
+          "is_correct": false
+        },
+        {
+          "label": "₹1512",
+          "is_correct": false
+        },
+        {
+          "label": "₹1456",
+          "is_correct": false
+        },
+        {
+          "label": "₹1400",
+          "is_correct": true
+        }
+      ]
+    },
+    {
+      "chapter": "Percentage",
+      "kind": "standard",
+      "difficulty": "medium",
+      "answer_type": "single",
+      "stem": "After an increase of 19%, the price of an item became ₹1071. Find the original price.",
+      "explanation": "Original × (100+19)/100 = 1071 ⇒ original = ₹900.",
+      "options": [
+        {
+          "label": "₹972",
+          "is_correct": false
+        },
+        {
+          "label": "₹936",
+          "is_correct": false
+        },
+        {
+          "label": "₹864",
+          "is_correct": false
+        },
+        {
+          "label": "₹900",
+          "is_correct": true
+        }
+      ]
+    },
+    {
+      "chapter": "Percentage",
+      "kind": "standard",
+      "difficulty": "medium",
+      "answer_type": "single",
+      "stem": "A student scored 71% in an examination and obtained 142 marks. Find the maximum marks.",
+      "explanation": "Maximum marks = 142 × 100 / 71 = 200.",
+      "options": [
+        {
+          "label": "192",
+          "is_correct": false
+        },
+        {
+          "label": "208",
+          "is_correct": false
+        },
+        {
+          "label": "216",
+          "is_correct": false
+        },
+        {
+          "label": "200",
+          "is_correct": true
+        }
+      ]
+    },
+    {
+      "chapter": "Percentage",
+      "kind": "standard",
+      "difficulty": "medium",
+      "answer_type": "single",
+      "stem": "A student scored 24% in an examination and obtained 120 marks. Find the maximum marks.",
+      "explanation": "Maximum marks = 120 × 100 / 24 = 500.",
+      "options": [
+        {
+          "label": "500",
+          "is_correct": true
+        },
+        {
+          "label": "520",
+          "is_correct": false
+        },
+        {
+          "label": "540",
+          "is_correct": false
+        },
+        {
+          "label": "480",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Percentage",
+      "kind": "standard",
+      "difficulty": "medium",
+      "answer_type": "single",
+      "stem": "A student scored 24% in an examination and obtained 240 marks. Find the maximum marks.",
+      "explanation": "Maximum marks = 240 × 100 / 24 = 1000.",
+      "options": [
+        {
+          "label": "1080",
+          "is_correct": false
+        },
+        {
+          "label": "1000",
+          "is_correct": true
+        },
+        {
+          "label": "1040",
+          "is_correct": false
+        },
+        {
+          "label": "960",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Percentage",
+      "kind": "standard",
+      "difficulty": "medium",
+      "answer_type": "single",
+      "stem": "8% of a number is 144. Find the number.",
+      "explanation": "Number = 144 × 100 / 8 = 1800.",
+      "options": [
+        {
+          "label": "1728",
+          "is_correct": false
+        },
+        {
+          "label": "1944",
+          "is_correct": false
+        },
+        {
+          "label": "1872",
+          "is_correct": false
+        },
+        {
+          "label": "1800",
+          "is_correct": true
+        }
+      ]
+    },
+    {
+      "chapter": "Percentage",
+      "kind": "standard",
+      "difficulty": "medium",
+      "answer_type": "single",
+      "stem": "A student scored 79% in an examination and obtained 395 marks. Find the maximum marks.",
+      "explanation": "Maximum marks = 395 × 100 / 79 = 500.",
+      "options": [
+        {
+          "label": "540",
+          "is_correct": false
+        },
+        {
+          "label": "480",
+          "is_correct": false
+        },
+        {
+          "label": "520",
+          "is_correct": false
+        },
+        {
+          "label": "500",
+          "is_correct": true
+        }
+      ]
+    },
+    {
+      "chapter": "Percentage",
+      "kind": "standard",
+      "difficulty": "medium",
+      "answer_type": "single",
+      "stem": "23% of a number is 1081. Find the number.",
+      "explanation": "Number = 1081 × 100 / 23 = 4700.",
+      "options": [
+        {
+          "label": "4512",
+          "is_correct": false
+        },
+        {
+          "label": "5076",
+          "is_correct": false
+        },
+        {
+          "label": "4700",
+          "is_correct": true
+        },
+        {
+          "label": "4888",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Percentage",
+      "kind": "standard",
+      "difficulty": "medium",
+      "answer_type": "single",
+      "stem": "After an increase of 24%, the price of an item became ₹2604. Find the original price.",
+      "explanation": "Original × (100+24)/100 = 2604 ⇒ original = ₹2100.",
+      "options": [
+        {
+          "label": "₹2100",
+          "is_correct": true
+        },
+        {
+          "label": "₹2268",
+          "is_correct": false
+        },
+        {
+          "label": "₹2016",
+          "is_correct": false
+        },
+        {
+          "label": "₹2184",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Percentage",
+      "kind": "standard",
+      "difficulty": "medium",
+      "answer_type": "single",
+      "stem": "4% of a number is 72. Find the number.",
+      "explanation": "Number = 72 × 100 / 4 = 1800.",
+      "options": [
+        {
+          "label": "1800",
+          "is_correct": true
+        },
+        {
+          "label": "1872",
+          "is_correct": false
+        },
+        {
+          "label": "1728",
+          "is_correct": false
+        },
+        {
+          "label": "1944",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Percentage",
+      "kind": "standard",
+      "difficulty": "medium",
+      "answer_type": "single",
+      "stem": "A student scored 75% in an examination and obtained 375 marks. Find the maximum marks.",
+      "explanation": "Maximum marks = 375 × 100 / 75 = 500.",
+      "options": [
+        {
+          "label": "540",
+          "is_correct": false
+        },
+        {
+          "label": "520",
+          "is_correct": false
+        },
+        {
+          "label": "500",
+          "is_correct": true
+        },
+        {
+          "label": "480",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Percentage",
+      "kind": "standard",
+      "difficulty": "medium",
+      "answer_type": "single",
+      "stem": "After an increase of 40%, the price of an item became ₹1680. Find the original price.",
+      "explanation": "Original × (100+40)/100 = 1680 ⇒ original = ₹1200.",
+      "options": [
+        {
+          "label": "₹1152",
+          "is_correct": false
+        },
+        {
+          "label": "₹1248",
+          "is_correct": false
+        },
+        {
+          "label": "₹1296",
+          "is_correct": false
+        },
+        {
+          "label": "₹1200",
+          "is_correct": true
+        }
+      ]
+    },
+    {
+      "chapter": "Percentage",
+      "kind": "standard",
+      "difficulty": "hard",
+      "answer_type": "single",
+      "stem": "A's income is 25% more than B's income. By what percent is B's income less than A's?",
+      "explanation": "Required % = 25/(100+25) × 100 = 20%.",
+      "options": [
+        {
+          "label": "22%",
+          "is_correct": false
+        },
+        {
+          "label": "21%",
+          "is_correct": false
+        },
+        {
+          "label": "20%",
+          "is_correct": true
+        },
+        {
+          "label": "19%",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Percentage",
+      "kind": "standard",
+      "difficulty": "hard",
+      "answer_type": "single",
+      "stem": "The price of sugar increases by 25%. By what percent must a family reduce its consumption so that its expenditure on sugar remains unchanged?",
+      "explanation": "Reduction % = 25/(100+25) × 100 = 20%.",
+      "options": [
+        {
+          "label": "22%",
+          "is_correct": false
+        },
+        {
+          "label": "20%",
+          "is_correct": true
+        },
+        {
+          "label": "21%",
+          "is_correct": false
+        },
+        {
+          "label": "19%",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Percentage",
+      "kind": "standard",
+      "difficulty": "hard",
+      "answer_type": "single",
+      "stem": "A's income is 300% more than B's income. By what percent is B's income less than A's?",
+      "explanation": "Required % = 300/(100+300) × 100 = 75%.",
+      "options": [
+        {
+          "label": "79%",
+          "is_correct": false
+        },
+        {
+          "label": "75%",
+          "is_correct": true
+        },
+        {
+          "label": "73%",
+          "is_correct": false
+        },
+        {
+          "label": "77%",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Percentage",
+      "kind": "standard",
+      "difficulty": "hard",
+      "answer_type": "single",
+      "stem": "The price of sugar increases by 400%. By what percent must a family reduce its consumption so that its expenditure on sugar remains unchanged?",
+      "explanation": "Reduction % = 400/(100+400) × 100 = 80%.",
+      "options": [
+        {
+          "label": "82%",
+          "is_correct": false
+        },
+        {
+          "label": "84%",
+          "is_correct": false
+        },
+        {
+          "label": "80%",
+          "is_correct": true
+        },
+        {
+          "label": "78%",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Percentage",
+      "kind": "standard",
+      "difficulty": "hard",
+      "answer_type": "single",
+      "stem": "The price of sugar increases by 100%. By what percent must a family reduce its consumption so that its expenditure on sugar remains unchanged?",
+      "explanation": "Reduction % = 100/(100+100) × 100 = 50%.",
+      "options": [
+        {
+          "label": "52%",
+          "is_correct": false
+        },
+        {
+          "label": "50%",
+          "is_correct": true
+        },
+        {
+          "label": "54%",
+          "is_correct": false
+        },
+        {
+          "label": "48%",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Percentage",
+      "kind": "standard",
+      "difficulty": "hard",
+      "answer_type": "single",
+      "stem": "The number 30000 is first increased by 27% and then the result is decreased by 21%. Find the final value.",
+      "explanation": "Final = 30000 × 127/100 × 79/100 = 30099.",
+      "options": [
+        {
+          "label": "28895",
+          "is_correct": false
+        },
+        {
+          "label": "32507",
+          "is_correct": false
+        },
+        {
+          "label": "31303",
+          "is_correct": false
+        },
+        {
+          "label": "30099",
+          "is_correct": true
+        }
+      ]
+    },
+    {
+      "chapter": "Percentage",
+      "kind": "standard",
+      "difficulty": "hard",
+      "answer_type": "single",
+      "stem": "The number 20000 is first increased by 16% and then the result is decreased by 27%. Find the final value.",
+      "explanation": "Final = 20000 × 116/100 × 73/100 = 16936.",
+      "options": [
+        {
+          "label": "17613",
+          "is_correct": false
+        },
+        {
+          "label": "16259",
+          "is_correct": false
+        },
+        {
+          "label": "16936",
+          "is_correct": true
+        },
+        {
+          "label": "18290",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Percentage",
+      "kind": "standard",
+      "difficulty": "hard",
+      "answer_type": "single",
+      "stem": "The number 10000 is first increased by 30% and then the result is decreased by 15%. Find the final value.",
+      "explanation": "Final = 10000 × 130/100 × 85/100 = 11050.",
+      "options": [
+        {
+          "label": "11492",
+          "is_correct": false
+        },
+        {
+          "label": "11934",
+          "is_correct": false
+        },
+        {
+          "label": "11050",
+          "is_correct": true
+        },
+        {
+          "label": "10608",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Percentage",
+      "kind": "standard",
+      "difficulty": "hard",
+      "answer_type": "single",
+      "stem": "A's income is 900% more than B's income. By what percent is B's income less than A's?",
+      "explanation": "Required % = 900/(100+900) × 100 = 90%.",
+      "options": [
+        {
+          "label": "94%",
+          "is_correct": false
+        },
+        {
+          "label": "92%",
+          "is_correct": false
+        },
+        {
+          "label": "88%",
+          "is_correct": false
+        },
+        {
+          "label": "90%",
+          "is_correct": true
+        }
+      ]
+    },
+    {
+      "chapter": "Percentage",
+      "kind": "standard",
+      "difficulty": "hard",
+      "answer_type": "single",
+      "stem": "The price of sugar increases by 300%. By what percent must a family reduce its consumption so that its expenditure on sugar remains unchanged?",
+      "explanation": "Reduction % = 300/(100+300) × 100 = 75%.",
+      "options": [
+        {
+          "label": "79%",
+          "is_correct": false
+        },
+        {
+          "label": "73%",
+          "is_correct": false
+        },
+        {
+          "label": "77%",
+          "is_correct": false
+        },
+        {
+          "label": "75%",
+          "is_correct": true
+        }
+      ]
+    },
+    {
+      "chapter": "Percentage",
+      "kind": "standard",
+      "difficulty": "hard",
+      "answer_type": "single",
+      "stem": "The number 40000 is first increased by 16% and then the result is decreased by 30%. Find the final value.",
+      "explanation": "Final = 40000 × 116/100 × 70/100 = 32480.",
+      "options": [
+        {
+          "label": "33779",
+          "is_correct": false
+        },
+        {
+          "label": "32480",
+          "is_correct": true
+        },
+        {
+          "label": "35078",
+          "is_correct": false
+        },
+        {
+          "label": "31181",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Percentage",
+      "kind": "standard",
+      "difficulty": "hard",
+      "answer_type": "single",
+      "stem": "A's income is 100% more than B's income. By what percent is B's income less than A's?",
+      "explanation": "Required % = 100/(100+100) × 100 = 50%.",
+      "options": [
+        {
+          "label": "50%",
+          "is_correct": true
+        },
+        {
+          "label": "54%",
+          "is_correct": false
+        },
+        {
+          "label": "52%",
+          "is_correct": false
+        },
+        {
+          "label": "48%",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Percentage",
+      "kind": "standard",
+      "difficulty": "hard",
+      "answer_type": "single",
+      "stem": "The number 50000 is first increased by 30% and then the result is decreased by 26%. Find the final value.",
+      "explanation": "Final = 50000 × 130/100 × 74/100 = 48100.",
+      "options": [
+        {
+          "label": "48100",
+          "is_correct": true
+        },
+        {
+          "label": "50024",
+          "is_correct": false
+        },
+        {
+          "label": "51948",
+          "is_correct": false
+        },
+        {
+          "label": "46176",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Percentage",
+      "kind": "standard",
+      "difficulty": "hard",
+      "answer_type": "single",
+      "stem": "The number 50000 is first increased by 14% and then the result is decreased by 28%. Find the final value.",
+      "explanation": "Final = 50000 × 114/100 × 72/100 = 41040.",
+      "options": [
+        {
+          "label": "41040",
+          "is_correct": true
+        },
+        {
+          "label": "42682",
+          "is_correct": false
+        },
+        {
+          "label": "39398",
+          "is_correct": false
+        },
+        {
+          "label": "44324",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Percentage",
+      "kind": "standard",
+      "difficulty": "hard",
+      "answer_type": "single",
+      "stem": "A's income is 150% more than B's income. By what percent is B's income less than A's?",
+      "explanation": "Required % = 150/(100+150) × 100 = 60%.",
+      "options": [
+        {
+          "label": "62%",
+          "is_correct": false
+        },
+        {
+          "label": "60%",
+          "is_correct": true
+        },
+        {
+          "label": "64%",
+          "is_correct": false
+        },
+        {
+          "label": "58%",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Percentage",
+      "kind": "standard",
+      "difficulty": "hard",
+      "answer_type": "single",
+      "stem": "The number 10000 is first increased by 15% and then the result is decreased by 10%. Find the final value.",
+      "explanation": "Final = 10000 × 115/100 × 90/100 = 10350.",
+      "options": [
+        {
+          "label": "11178",
+          "is_correct": false
+        },
+        {
+          "label": "10764",
+          "is_correct": false
+        },
+        {
+          "label": "9936",
+          "is_correct": false
+        },
+        {
+          "label": "10350",
+          "is_correct": true
+        }
+      ]
+    },
+    {
+      "chapter": "Percentage",
+      "kind": "standard",
+      "difficulty": "hard",
+      "answer_type": "single",
+      "stem": "The number 40000 is first increased by 12% and then the result is decreased by 12%. Find the final value.",
+      "explanation": "Final = 40000 × 112/100 × 88/100 = 39424.",
+      "options": [
+        {
+          "label": "41001",
+          "is_correct": false
+        },
+        {
+          "label": "37847",
+          "is_correct": false
+        },
+        {
+          "label": "42578",
+          "is_correct": false
+        },
+        {
+          "label": "39424",
+          "is_correct": true
+        }
+      ]
+    },
+    {
+      "chapter": "Percentage",
+      "kind": "standard",
+      "difficulty": "hard",
+      "answer_type": "single",
+      "stem": "The number 20000 is first increased by 27% and then the result is decreased by 21%. Find the final value.",
+      "explanation": "Final = 20000 × 127/100 × 79/100 = 20066.",
+      "options": [
+        {
+          "label": "20066",
+          "is_correct": true
+        },
+        {
+          "label": "21672",
+          "is_correct": false
+        },
+        {
+          "label": "20869",
+          "is_correct": false
+        },
+        {
+          "label": "19263",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Percentage",
+      "kind": "standard",
+      "difficulty": "hard",
+      "answer_type": "single",
+      "stem": "The number 40000 is first increased by 26% and then the result is decreased by 20%. Find the final value.",
+      "explanation": "Final = 40000 × 126/100 × 80/100 = 40320.",
+      "options": [
+        {
+          "label": "43546",
+          "is_correct": false
+        },
+        {
+          "label": "38707",
+          "is_correct": false
+        },
+        {
+          "label": "41933",
+          "is_correct": false
+        },
+        {
+          "label": "40320",
+          "is_correct": true
+        }
+      ]
+    },
+    {
+      "chapter": "Percentage",
+      "kind": "standard",
+      "difficulty": "hard",
+      "answer_type": "single",
+      "stem": "The number 10000 is first increased by 19% and then the result is decreased by 11%. Find the final value.",
+      "explanation": "Final = 10000 × 119/100 × 89/100 = 10591.",
+      "options": [
+        {
+          "label": "11439",
+          "is_correct": false
+        },
+        {
+          "label": "11015",
+          "is_correct": false
+        },
+        {
+          "label": "10167",
+          "is_correct": false
+        },
+        {
+          "label": "10591",
+          "is_correct": true
+        }
+      ]
+    },
+    {
+      "chapter": "Percentage",
+      "kind": "standard",
+      "difficulty": "hard",
+      "answer_type": "single",
+      "stem": "The number 40000 is first increased by 26% and then the result is decreased by 15%. Find the final value.",
+      "explanation": "Final = 40000 × 126/100 × 85/100 = 42840.",
+      "options": [
+        {
+          "label": "42840",
+          "is_correct": true
+        },
+        {
+          "label": "44554",
+          "is_correct": false
+        },
+        {
+          "label": "46268",
+          "is_correct": false
+        },
+        {
+          "label": "41126",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Percentage",
+      "kind": "standard",
+      "difficulty": "hard",
+      "answer_type": "single",
+      "stem": "The number 20000 is first increased by 30% and then the result is decreased by 10%. Find the final value.",
+      "explanation": "Final = 20000 × 130/100 × 90/100 = 23400.",
+      "options": [
+        {
+          "label": "22464",
+          "is_correct": false
+        },
+        {
+          "label": "23400",
+          "is_correct": true
+        },
+        {
+          "label": "24336",
+          "is_correct": false
+        },
+        {
+          "label": "25272",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Percentage",
+      "kind": "standard",
+      "difficulty": "hard",
+      "answer_type": "single",
+      "stem": "The price of sugar increases by 150%. By what percent must a family reduce its consumption so that its expenditure on sugar remains unchanged?",
+      "explanation": "Reduction % = 150/(100+150) × 100 = 60%.",
+      "options": [
+        {
+          "label": "62%",
+          "is_correct": false
+        },
+        {
+          "label": "58%",
+          "is_correct": false
+        },
+        {
+          "label": "64%",
+          "is_correct": false
+        },
+        {
+          "label": "60%",
+          "is_correct": true
+        }
+      ]
+    },
+    {
+      "chapter": "Percentage",
+      "kind": "standard",
+      "difficulty": "hard",
+      "answer_type": "single",
+      "stem": "The number 30000 is first increased by 17% and then the result is decreased by 30%. Find the final value.",
+      "explanation": "Final = 30000 × 117/100 × 70/100 = 24570.",
+      "options": [
+        {
+          "label": "26536",
+          "is_correct": false
+        },
+        {
+          "label": "23587",
+          "is_correct": false
+        },
+        {
+          "label": "25553",
+          "is_correct": false
+        },
+        {
+          "label": "24570",
+          "is_correct": true
+        }
+      ]
+    },
+    {
+      "chapter": "Percentage",
+      "kind": "standard",
+      "difficulty": "hard",
+      "answer_type": "single",
+      "stem": "The number 40000 is first increased by 24% and then the result is decreased by 19%. Find the final value.",
+      "explanation": "Final = 40000 × 124/100 × 81/100 = 40176.",
+      "options": [
+        {
+          "label": "38569",
+          "is_correct": false
+        },
+        {
+          "label": "41783",
+          "is_correct": false
+        },
+        {
+          "label": "43390",
+          "is_correct": false
+        },
+        {
+          "label": "40176",
+          "is_correct": true
+        }
+      ]
+    },
+    {
+      "chapter": "Percentage",
+      "kind": "standard",
+      "difficulty": "hard",
+      "answer_type": "single",
+      "stem": "The number 50000 is first increased by 28% and then the result is decreased by 21%. Find the final value.",
+      "explanation": "Final = 50000 × 128/100 × 79/100 = 50560.",
+      "options": [
+        {
+          "label": "54604",
+          "is_correct": false
+        },
+        {
+          "label": "52582",
+          "is_correct": false
+        },
+        {
+          "label": "50560",
+          "is_correct": true
+        },
+        {
+          "label": "48538",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Percentage",
+      "kind": "standard",
+      "difficulty": "hard",
+      "answer_type": "single",
+      "stem": "The number 20000 is first increased by 29% and then the result is decreased by 29%. Find the final value.",
+      "explanation": "Final = 20000 × 129/100 × 71/100 = 18318.",
+      "options": [
+        {
+          "label": "19784",
+          "is_correct": false
+        },
+        {
+          "label": "18318",
+          "is_correct": true
+        },
+        {
+          "label": "19051",
+          "is_correct": false
+        },
+        {
+          "label": "17585",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Percentage",
+      "kind": "standard",
+      "difficulty": "hard",
+      "answer_type": "single",
+      "stem": "The number 50000 is first increased by 19% and then the result is decreased by 18%. Find the final value.",
+      "explanation": "Final = 50000 × 119/100 × 82/100 = 48790.",
+      "options": [
+        {
+          "label": "46838",
+          "is_correct": false
+        },
+        {
+          "label": "48790",
+          "is_correct": true
+        },
+        {
+          "label": "50742",
+          "is_correct": false
+        },
+        {
+          "label": "52694",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Percentage",
+      "kind": "standard",
+      "difficulty": "hard",
+      "answer_type": "single",
+      "stem": "The number 50000 is first increased by 12% and then the result is decreased by 25%. Find the final value.",
+      "explanation": "Final = 50000 × 112/100 × 75/100 = 42000.",
+      "options": [
+        {
+          "label": "45360",
+          "is_correct": false
+        },
+        {
+          "label": "42000",
+          "is_correct": true
+        },
+        {
+          "label": "43680",
+          "is_correct": false
+        },
+        {
+          "label": "40320",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Percentage",
+      "kind": "standard",
+      "difficulty": "hard",
+      "answer_type": "single",
+      "stem": "The number 20000 is first increased by 26% and then the result is decreased by 15%. Find the final value.",
+      "explanation": "Final = 20000 × 126/100 × 85/100 = 21420.",
+      "options": [
+        {
+          "label": "23134",
+          "is_correct": false
+        },
+        {
+          "label": "21420",
+          "is_correct": true
+        },
+        {
+          "label": "22277",
+          "is_correct": false
+        },
+        {
+          "label": "20563",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Percentage",
+      "kind": "standard",
+      "difficulty": "hard",
+      "answer_type": "single",
+      "stem": "The number 10000 is first increased by 10% and then the result is decreased by 17%. Find the final value.",
+      "explanation": "Final = 10000 × 110/100 × 83/100 = 9130.",
+      "options": [
+        {
+          "label": "9130",
+          "is_correct": true
+        },
+        {
+          "label": "9860",
+          "is_correct": false
+        },
+        {
+          "label": "8765",
+          "is_correct": false
+        },
+        {
+          "label": "9495",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Percentage",
+      "kind": "standard",
+      "difficulty": "hard",
+      "answer_type": "single",
+      "stem": "The number 10000 is first increased by 22% and then the result is decreased by 16%. Find the final value.",
+      "explanation": "Final = 10000 × 122/100 × 84/100 = 10248.",
+      "options": [
+        {
+          "label": "10658",
+          "is_correct": false
+        },
+        {
+          "label": "10248",
+          "is_correct": true
+        },
+        {
+          "label": "11068",
+          "is_correct": false
+        },
+        {
+          "label": "9838",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Percentage",
+      "kind": "standard",
+      "difficulty": "hard",
+      "answer_type": "single",
+      "stem": "The number 20000 is first increased by 12% and then the result is decreased by 29%. Find the final value.",
+      "explanation": "Final = 20000 × 112/100 × 71/100 = 15904.",
+      "options": [
+        {
+          "label": "15268",
+          "is_correct": false
+        },
+        {
+          "label": "16540",
+          "is_correct": false
+        },
+        {
+          "label": "15904",
+          "is_correct": true
+        },
+        {
+          "label": "17176",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Percentage",
+      "kind": "standard",
+      "difficulty": "hard",
+      "answer_type": "single",
+      "stem": "The number 10000 is first increased by 12% and then the result is decreased by 15%. Find the final value.",
+      "explanation": "Final = 10000 × 112/100 × 85/100 = 9520.",
+      "options": [
+        {
+          "label": "10282",
+          "is_correct": false
+        },
+        {
+          "label": "9139",
+          "is_correct": false
+        },
+        {
+          "label": "9901",
+          "is_correct": false
+        },
+        {
+          "label": "9520",
+          "is_correct": true
+        }
+      ]
+    },
+    {
+      "chapter": "Percentage",
+      "kind": "standard",
+      "difficulty": "hard",
+      "answer_type": "single",
+      "stem": "The number 10000 is first increased by 21% and then the result is decreased by 24%. Find the final value.",
+      "explanation": "Final = 10000 × 121/100 × 76/100 = 9196.",
+      "options": [
+        {
+          "label": "8828",
+          "is_correct": false
+        },
+        {
+          "label": "9564",
+          "is_correct": false
+        },
+        {
+          "label": "9196",
+          "is_correct": true
+        },
+        {
+          "label": "9932",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Percentage",
+      "kind": "standard",
+      "difficulty": "hard",
+      "answer_type": "single",
+      "stem": "The number 30000 is first increased by 13% and then the result is decreased by 26%. Find the final value.",
+      "explanation": "Final = 30000 × 113/100 × 74/100 = 25086.",
+      "options": [
+        {
+          "label": "26089",
+          "is_correct": false
+        },
+        {
+          "label": "24083",
+          "is_correct": false
+        },
+        {
+          "label": "25086",
+          "is_correct": true
+        },
+        {
+          "label": "27092",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Percentage",
+      "kind": "standard",
+      "difficulty": "hard",
+      "answer_type": "single",
+      "stem": "A's income is 400% more than B's income. By what percent is B's income less than A's?",
+      "explanation": "Required % = 400/(100+400) × 100 = 80%.",
+      "options": [
+        {
+          "label": "84%",
+          "is_correct": false
+        },
+        {
+          "label": "82%",
+          "is_correct": false
+        },
+        {
+          "label": "78%",
+          "is_correct": false
+        },
+        {
+          "label": "80%",
+          "is_correct": true
+        }
+      ]
+    },
+    {
+      "chapter": "Percentage",
+      "kind": "standard",
+      "difficulty": "hard",
+      "answer_type": "single",
+      "stem": "The number 40000 is first increased by 20% and then the result is decreased by 28%. Find the final value.",
+      "explanation": "Final = 40000 × 120/100 × 72/100 = 34560.",
+      "options": [
+        {
+          "label": "33178",
+          "is_correct": false
+        },
+        {
+          "label": "34560",
+          "is_correct": true
+        },
+        {
+          "label": "37324",
+          "is_correct": false
+        },
+        {
+          "label": "35942",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Percentage",
+      "kind": "standard",
+      "difficulty": "hard",
+      "answer_type": "single",
+      "stem": "The number 20000 is first increased by 30% and then the result is decreased by 16%. Find the final value.",
+      "explanation": "Final = 20000 × 130/100 × 84/100 = 21840.",
+      "options": [
+        {
+          "label": "21840",
+          "is_correct": true
+        },
+        {
+          "label": "23588",
+          "is_correct": false
+        },
+        {
+          "label": "20966",
+          "is_correct": false
+        },
+        {
+          "label": "22714",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Percentage",
+      "kind": "standard",
+      "difficulty": "hard",
+      "answer_type": "single",
+      "stem": "The number 20000 is first increased by 16% and then the result is decreased by 11%. Find the final value.",
+      "explanation": "Final = 20000 × 116/100 × 89/100 = 20648.",
+      "options": [
+        {
+          "label": "21474",
+          "is_correct": false
+        },
+        {
+          "label": "20648",
+          "is_correct": true
+        },
+        {
+          "label": "19822",
+          "is_correct": false
+        },
+        {
+          "label": "22300",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Percentage",
+      "kind": "standard",
+      "difficulty": "hard",
+      "answer_type": "single",
+      "stem": "The number 30000 is first increased by 17% and then the result is decreased by 20%. Find the final value.",
+      "explanation": "Final = 30000 × 117/100 × 80/100 = 28080.",
+      "options": [
+        {
+          "label": "28080",
+          "is_correct": true
+        },
+        {
+          "label": "29203",
+          "is_correct": false
+        },
+        {
+          "label": "30326",
+          "is_correct": false
+        },
+        {
+          "label": "26957",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Percentage",
+      "kind": "standard",
+      "difficulty": "hard",
+      "answer_type": "single",
+      "stem": "The number 30000 is first increased by 28% and then the result is decreased by 23%. Find the final value.",
+      "explanation": "Final = 30000 × 128/100 × 77/100 = 29568.",
+      "options": [
+        {
+          "label": "31934",
+          "is_correct": false
+        },
+        {
+          "label": "30751",
+          "is_correct": false
+        },
+        {
+          "label": "29568",
+          "is_correct": true
+        },
+        {
+          "label": "28385",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Percentage",
+      "kind": "standard",
+      "difficulty": "hard",
+      "answer_type": "single",
+      "stem": "The number 50000 is first increased by 22% and then the result is decreased by 16%. Find the final value.",
+      "explanation": "Final = 50000 × 122/100 × 84/100 = 51240.",
+      "options": [
+        {
+          "label": "53290",
+          "is_correct": false
+        },
+        {
+          "label": "55340",
+          "is_correct": false
+        },
+        {
+          "label": "49190",
+          "is_correct": false
+        },
+        {
+          "label": "51240",
+          "is_correct": true
+        }
+      ]
+    },
+    {
+      "chapter": "Percentage",
+      "kind": "standard",
+      "difficulty": "hard",
+      "answer_type": "single",
+      "stem": "The number 30000 is first increased by 25% and then the result is decreased by 30%. Find the final value.",
+      "explanation": "Final = 30000 × 125/100 × 70/100 = 26250.",
+      "options": [
+        {
+          "label": "28350",
+          "is_correct": false
+        },
+        {
+          "label": "25200",
+          "is_correct": false
+        },
+        {
+          "label": "27300",
+          "is_correct": false
+        },
+        {
+          "label": "26250",
+          "is_correct": true
+        }
+      ]
+    },
+    {
+      "chapter": "Percentage",
+      "kind": "standard",
+      "difficulty": "hard",
+      "answer_type": "single",
+      "stem": "The number 30000 is first increased by 15% and then the result is decreased by 26%. Find the final value.",
+      "explanation": "Final = 30000 × 115/100 × 74/100 = 25530.",
+      "options": [
+        {
+          "label": "24509",
+          "is_correct": false
+        },
+        {
+          "label": "27572",
+          "is_correct": false
+        },
+        {
+          "label": "25530",
+          "is_correct": true
+        },
+        {
+          "label": "26551",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Percentage",
+      "kind": "standard",
+      "difficulty": "hard",
+      "answer_type": "single",
+      "stem": "The number 30000 is first increased by 26% and then the result is decreased by 26%. Find the final value.",
+      "explanation": "Final = 30000 × 126/100 × 74/100 = 27972.",
+      "options": [
+        {
+          "label": "26853",
+          "is_correct": false
+        },
+        {
+          "label": "30210",
+          "is_correct": false
+        },
+        {
+          "label": "29091",
+          "is_correct": false
+        },
+        {
+          "label": "27972",
+          "is_correct": true
+        }
+      ]
+    },
+    {
+      "chapter": "Percentage",
+      "kind": "standard",
+      "difficulty": "hard",
+      "answer_type": "single",
+      "stem": "The number 10000 is first increased by 28% and then the result is decreased by 17%. Find the final value.",
+      "explanation": "Final = 10000 × 128/100 × 83/100 = 10624.",
+      "options": [
+        {
+          "label": "11474",
+          "is_correct": false
+        },
+        {
+          "label": "11049",
+          "is_correct": false
+        },
+        {
+          "label": "10199",
+          "is_correct": false
+        },
+        {
+          "label": "10624",
+          "is_correct": true
+        }
+      ]
+    },
+    {
+      "chapter": "Percentage",
+      "kind": "standard",
+      "difficulty": "hard",
+      "answer_type": "single",
+      "stem": "The number 30000 is first increased by 10% and then the result is decreased by 18%. Find the final value.",
+      "explanation": "Final = 30000 × 110/100 × 82/100 = 27060.",
+      "options": [
+        {
+          "label": "28142",
+          "is_correct": false
+        },
+        {
+          "label": "25978",
+          "is_correct": false
+        },
+        {
+          "label": "27060",
+          "is_correct": true
+        },
+        {
+          "label": "29224",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Percentage",
+      "kind": "standard",
+      "difficulty": "hard",
+      "answer_type": "single",
+      "stem": "The number 40000 is first increased by 22% and then the result is decreased by 24%. Find the final value.",
+      "explanation": "Final = 40000 × 122/100 × 76/100 = 37088.",
+      "options": [
+        {
+          "label": "38572",
+          "is_correct": false
+        },
+        {
+          "label": "37088",
+          "is_correct": true
+        },
+        {
+          "label": "35604",
+          "is_correct": false
+        },
+        {
+          "label": "40056",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Percentage",
+      "kind": "standard",
+      "difficulty": "hard",
+      "answer_type": "single",
+      "stem": "The number 20000 is first increased by 27% and then the result is decreased by 15%. Find the final value.",
+      "explanation": "Final = 20000 × 127/100 × 85/100 = 21590.",
+      "options": [
+        {
+          "label": "22454",
+          "is_correct": false
+        },
+        {
+          "label": "20726",
+          "is_correct": false
+        },
+        {
+          "label": "21590",
+          "is_correct": true
+        },
+        {
+          "label": "23318",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Percentage",
+      "kind": "standard",
+      "difficulty": "very_hard",
+      "answer_type": "single",
+      "stem": "In an election between two candidates, the winner secured 51% of the valid votes and won by 32 votes. Find the total number of valid votes.",
+      "explanation": "Margin = (2×51−100)% of total = 32 ⇒ total = 32 × 100 / 2 = 1600.",
+      "options": [
+        {
+          "label": "1728",
+          "is_correct": false
+        },
+        {
+          "label": "1536",
+          "is_correct": false
+        },
+        {
+          "label": "1600",
+          "is_correct": true
+        },
+        {
+          "label": "1664",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Percentage",
+      "kind": "standard",
+      "difficulty": "very_hard",
+      "answer_type": "single",
+      "stem": "Find the single discount that is equivalent to two successive discounts of 25% and 20%.",
+      "explanation": "Net = [1 − (1−25/100)(1−20/100)] × 100 = 40%.",
+      "options": [
+        {
+          "label": "42%",
+          "is_correct": false
+        },
+        {
+          "label": "38%",
+          "is_correct": false
+        },
+        {
+          "label": "44%",
+          "is_correct": false
+        },
+        {
+          "label": "40%",
+          "is_correct": true
+        }
+      ]
+    },
+    {
+      "chapter": "Percentage",
+      "kind": "standard",
+      "difficulty": "very_hard",
+      "answer_type": "single",
+      "stem": "In an election between two candidates, the winner secured 73% of the valid votes and won by 1794 votes. Find the total number of valid votes.",
+      "explanation": "Margin = (2×73−100)% of total = 1794 ⇒ total = 1794 × 100 / 46 = 3900.",
+      "options": [
+        {
+          "label": "3900",
+          "is_correct": true
+        },
+        {
+          "label": "3744",
+          "is_correct": false
+        },
+        {
+          "label": "4056",
+          "is_correct": false
+        },
+        {
+          "label": "4212",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Percentage",
+      "kind": "standard",
+      "difficulty": "very_hard",
+      "answer_type": "single",
+      "stem": "In an election between two candidates, the winner secured 80% of the valid votes and won by 1920 votes. Find the total number of valid votes.",
+      "explanation": "Margin = (2×80−100)% of total = 1920 ⇒ total = 1920 × 100 / 60 = 3200.",
+      "options": [
+        {
+          "label": "3072",
+          "is_correct": false
+        },
+        {
+          "label": "3328",
+          "is_correct": false
+        },
+        {
+          "label": "3200",
+          "is_correct": true
+        },
+        {
+          "label": "3456",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Percentage",
+      "kind": "standard",
+      "difficulty": "very_hard",
+      "answer_type": "single",
+      "stem": "In an examination, 74% of the students passed and 286 students failed. Find the total number of students who appeared.",
+      "explanation": "Failures = (100−74)% of total = 286 ⇒ total = 286 × 100 / 26 = 1100.",
+      "options": [
+        {
+          "label": "1056",
+          "is_correct": false
+        },
+        {
+          "label": "1144",
+          "is_correct": false
+        },
+        {
+          "label": "1188",
+          "is_correct": false
+        },
+        {
+          "label": "1100",
+          "is_correct": true
+        }
+      ]
+    },
+    {
+      "chapter": "Percentage",
+      "kind": "standard",
+      "difficulty": "very_hard",
+      "answer_type": "single",
+      "stem": "In an election between two candidates, the winner secured 66% of the valid votes and won by 576 votes. Find the total number of valid votes.",
+      "explanation": "Margin = (2×66−100)% of total = 576 ⇒ total = 576 × 100 / 32 = 1800.",
+      "options": [
+        {
+          "label": "1800",
+          "is_correct": true
+        },
+        {
+          "label": "1728",
+          "is_correct": false
+        },
+        {
+          "label": "1944",
+          "is_correct": false
+        },
+        {
+          "label": "1872",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Percentage",
+      "kind": "standard",
+      "difficulty": "very_hard",
+      "answer_type": "single",
+      "stem": "In an examination, 61% of the students passed and 429 students failed. Find the total number of students who appeared.",
+      "explanation": "Failures = (100−61)% of total = 429 ⇒ total = 429 × 100 / 39 = 1100.",
+      "options": [
+        {
+          "label": "1056",
+          "is_correct": false
+        },
+        {
+          "label": "1188",
+          "is_correct": false
+        },
+        {
+          "label": "1144",
+          "is_correct": false
+        },
+        {
+          "label": "1100",
+          "is_correct": true
+        }
+      ]
+    },
+    {
+      "chapter": "Percentage",
+      "kind": "standard",
+      "difficulty": "very_hard",
+      "answer_type": "single",
+      "stem": "In an election between two candidates, the winner secured 69% of the valid votes and won by 950 votes. Find the total number of valid votes.",
+      "explanation": "Margin = (2×69−100)% of total = 950 ⇒ total = 950 × 100 / 38 = 2500.",
+      "options": [
+        {
+          "label": "2400",
+          "is_correct": false
+        },
+        {
+          "label": "2500",
+          "is_correct": true
+        },
+        {
+          "label": "2600",
+          "is_correct": false
+        },
+        {
+          "label": "2700",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Percentage",
+      "kind": "standard",
+      "difficulty": "very_hard",
+      "answer_type": "single",
+      "stem": "In an election between two candidates, the winner secured 73% of the valid votes and won by 690 votes. Find the total number of valid votes.",
+      "explanation": "Margin = (2×73−100)% of total = 690 ⇒ total = 690 × 100 / 46 = 1500.",
+      "options": [
+        {
+          "label": "1440",
+          "is_correct": false
+        },
+        {
+          "label": "1500",
+          "is_correct": true
+        },
+        {
+          "label": "1620",
+          "is_correct": false
+        },
+        {
+          "label": "1560",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Percentage",
+      "kind": "standard",
+      "difficulty": "very_hard",
+      "answer_type": "single",
+      "stem": "In an election between two candidates, the winner secured 72% of the valid votes and won by 1012 votes. Find the total number of valid votes.",
+      "explanation": "Margin = (2×72−100)% of total = 1012 ⇒ total = 1012 × 100 / 44 = 2300.",
+      "options": [
+        {
+          "label": "2208",
+          "is_correct": false
+        },
+        {
+          "label": "2300",
+          "is_correct": true
+        },
+        {
+          "label": "2484",
+          "is_correct": false
+        },
+        {
+          "label": "2392",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Percentage",
+      "kind": "standard",
+      "difficulty": "very_hard",
+      "answer_type": "single",
+      "stem": "In an examination, 57% of the students passed and 602 students failed. Find the total number of students who appeared.",
+      "explanation": "Failures = (100−57)% of total = 602 ⇒ total = 602 × 100 / 43 = 1400.",
+      "options": [
+        {
+          "label": "1344",
+          "is_correct": false
+        },
+        {
+          "label": "1456",
+          "is_correct": false
+        },
+        {
+          "label": "1512",
+          "is_correct": false
+        },
+        {
+          "label": "1400",
+          "is_correct": true
+        }
+      ]
+    },
+    {
+      "chapter": "Percentage",
+      "kind": "standard",
+      "difficulty": "very_hard",
+      "answer_type": "single",
+      "stem": "Find the single discount that is equivalent to two successive discounts of 20% and 20%.",
+      "explanation": "Net = [1 − (1−20/100)(1−20/100)] × 100 = 36%.",
+      "options": [
+        {
+          "label": "37%",
+          "is_correct": false
+        },
+        {
+          "label": "35%",
+          "is_correct": false
+        },
+        {
+          "label": "36%",
+          "is_correct": true
+        },
+        {
+          "label": "38%",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Percentage",
+      "kind": "standard",
+      "difficulty": "very_hard",
+      "answer_type": "single",
+      "stem": "In an examination, 69% of the students passed and 248 students failed. Find the total number of students who appeared.",
+      "explanation": "Failures = (100−69)% of total = 248 ⇒ total = 248 × 100 / 31 = 800.",
+      "options": [
+        {
+          "label": "800",
+          "is_correct": true
+        },
+        {
+          "label": "832",
+          "is_correct": false
+        },
+        {
+          "label": "864",
+          "is_correct": false
+        },
+        {
+          "label": "768",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Percentage",
+      "kind": "standard",
+      "difficulty": "very_hard",
+      "answer_type": "single",
+      "stem": "In an examination, 55% of the students passed and 675 students failed. Find the total number of students who appeared.",
+      "explanation": "Failures = (100−55)% of total = 675 ⇒ total = 675 × 100 / 45 = 1500.",
+      "options": [
+        {
+          "label": "1500",
+          "is_correct": true
+        },
+        {
+          "label": "1560",
+          "is_correct": false
+        },
+        {
+          "label": "1440",
+          "is_correct": false
+        },
+        {
+          "label": "1620",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Percentage",
+      "kind": "standard",
+      "difficulty": "very_hard",
+      "answer_type": "single",
+      "stem": "Find the single discount that is equivalent to two successive discounts of 50% and 20%.",
+      "explanation": "Net = [1 − (1−50/100)(1−20/100)] × 100 = 60%.",
+      "options": [
+        {
+          "label": "64%",
+          "is_correct": false
+        },
+        {
+          "label": "62%",
+          "is_correct": false
+        },
+        {
+          "label": "60%",
+          "is_correct": true
+        },
+        {
+          "label": "58%",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Percentage",
+      "kind": "standard",
+      "difficulty": "very_hard",
+      "answer_type": "single",
+      "stem": "In an examination, 71% of the students passed and 406 students failed. Find the total number of students who appeared.",
+      "explanation": "Failures = (100−71)% of total = 406 ⇒ total = 406 × 100 / 29 = 1400.",
+      "options": [
+        {
+          "label": "1400",
+          "is_correct": true
+        },
+        {
+          "label": "1512",
+          "is_correct": false
+        },
+        {
+          "label": "1456",
+          "is_correct": false
+        },
+        {
+          "label": "1344",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Percentage",
+      "kind": "standard",
+      "difficulty": "very_hard",
+      "answer_type": "single",
+      "stem": "In an election between two candidates, the winner secured 70% of the valid votes and won by 1560 votes. Find the total number of valid votes.",
+      "explanation": "Margin = (2×70−100)% of total = 1560 ⇒ total = 1560 × 100 / 40 = 3900.",
+      "options": [
+        {
+          "label": "3900",
+          "is_correct": true
+        },
+        {
+          "label": "4056",
+          "is_correct": false
+        },
+        {
+          "label": "3744",
+          "is_correct": false
+        },
+        {
+          "label": "4212",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Percentage",
+      "kind": "standard",
+      "difficulty": "very_hard",
+      "answer_type": "single",
+      "stem": "In an election between two candidates, the winner secured 55% of the valid votes and won by 260 votes. Find the total number of valid votes.",
+      "explanation": "Margin = (2×55−100)% of total = 260 ⇒ total = 260 × 100 / 10 = 2600.",
+      "options": [
+        {
+          "label": "2600",
+          "is_correct": true
+        },
+        {
+          "label": "2496",
+          "is_correct": false
+        },
+        {
+          "label": "2704",
+          "is_correct": false
+        },
+        {
+          "label": "2808",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Percentage",
+      "kind": "standard",
+      "difficulty": "very_hard",
+      "answer_type": "single",
+      "stem": "In an election between two candidates, the winner secured 79% of the valid votes and won by 1682 votes. Find the total number of valid votes.",
+      "explanation": "Margin = (2×79−100)% of total = 1682 ⇒ total = 1682 × 100 / 58 = 2900.",
+      "options": [
+        {
+          "label": "2784",
+          "is_correct": false
+        },
+        {
+          "label": "3132",
+          "is_correct": false
+        },
+        {
+          "label": "3016",
+          "is_correct": false
+        },
+        {
+          "label": "2900",
+          "is_correct": true
+        }
+      ]
+    },
+    {
+      "chapter": "Percentage",
+      "kind": "standard",
+      "difficulty": "very_hard",
+      "answer_type": "single",
+      "stem": "In an examination, 88% of the students passed and 240 students failed. Find the total number of students who appeared.",
+      "explanation": "Failures = (100−88)% of total = 240 ⇒ total = 240 × 100 / 12 = 2000.",
+      "options": [
+        {
+          "label": "1920",
+          "is_correct": false
+        },
+        {
+          "label": "2080",
+          "is_correct": false
+        },
+        {
+          "label": "2000",
+          "is_correct": true
+        },
+        {
+          "label": "2160",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Percentage",
+      "kind": "standard",
+      "difficulty": "very_hard",
+      "answer_type": "single",
+      "stem": "Find the single discount that is equivalent to two successive discounts of 40% and 10%.",
+      "explanation": "Net = [1 − (1−40/100)(1−10/100)] × 100 = 46%.",
+      "options": [
+        {
+          "label": "46%",
+          "is_correct": true
+        },
+        {
+          "label": "50%",
+          "is_correct": false
+        },
+        {
+          "label": "48%",
+          "is_correct": false
+        },
+        {
+          "label": "44%",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Percentage",
+      "kind": "standard",
+      "difficulty": "very_hard",
+      "answer_type": "single",
+      "stem": "In an examination, 78% of the students passed and 88 students failed. Find the total number of students who appeared.",
+      "explanation": "Failures = (100−78)% of total = 88 ⇒ total = 88 × 100 / 22 = 400.",
+      "options": [
+        {
+          "label": "400",
+          "is_correct": true
+        },
+        {
+          "label": "416",
+          "is_correct": false
+        },
+        {
+          "label": "432",
+          "is_correct": false
+        },
+        {
+          "label": "384",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Percentage",
+      "kind": "standard",
+      "difficulty": "very_hard",
+      "answer_type": "single",
+      "stem": "In an examination, 56% of the students passed and 836 students failed. Find the total number of students who appeared.",
+      "explanation": "Failures = (100−56)% of total = 836 ⇒ total = 836 × 100 / 44 = 1900.",
+      "options": [
+        {
+          "label": "1900",
+          "is_correct": true
+        },
+        {
+          "label": "2052",
+          "is_correct": false
+        },
+        {
+          "label": "1824",
+          "is_correct": false
+        },
+        {
+          "label": "1976",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Percentage",
+      "kind": "standard",
+      "difficulty": "very_hard",
+      "answer_type": "single",
+      "stem": "In an examination, 67% of the students passed and 264 students failed. Find the total number of students who appeared.",
+      "explanation": "Failures = (100−67)% of total = 264 ⇒ total = 264 × 100 / 33 = 800.",
+      "options": [
+        {
+          "label": "768",
+          "is_correct": false
+        },
+        {
+          "label": "864",
+          "is_correct": false
+        },
+        {
+          "label": "800",
+          "is_correct": true
+        },
+        {
+          "label": "832",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Percentage",
+      "kind": "standard",
+      "difficulty": "very_hard",
+      "answer_type": "single",
+      "stem": "In an election between two candidates, the winner secured 62% of the valid votes and won by 336 votes. Find the total number of valid votes.",
+      "explanation": "Margin = (2×62−100)% of total = 336 ⇒ total = 336 × 100 / 24 = 1400.",
+      "options": [
+        {
+          "label": "1456",
+          "is_correct": false
+        },
+        {
+          "label": "1400",
+          "is_correct": true
+        },
+        {
+          "label": "1512",
+          "is_correct": false
+        },
+        {
+          "label": "1344",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Percentage",
+      "kind": "standard",
+      "difficulty": "very_hard",
+      "answer_type": "single",
+      "stem": "In an election between two candidates, the winner secured 65% of the valid votes and won by 600 votes. Find the total number of valid votes.",
+      "explanation": "Margin = (2×65−100)% of total = 600 ⇒ total = 600 × 100 / 30 = 2000.",
+      "options": [
+        {
+          "label": "1920",
+          "is_correct": false
+        },
+        {
+          "label": "2080",
+          "is_correct": false
+        },
+        {
+          "label": "2000",
+          "is_correct": true
+        },
+        {
+          "label": "2160",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Percentage",
+      "kind": "standard",
+      "difficulty": "very_hard",
+      "answer_type": "single",
+      "stem": "Find the single discount that is equivalent to two successive discounts of 20% and 10%.",
+      "explanation": "Net = [1 − (1−20/100)(1−10/100)] × 100 = 28%.",
+      "options": [
+        {
+          "label": "28%",
+          "is_correct": true
+        },
+        {
+          "label": "27%",
+          "is_correct": false
+        },
+        {
+          "label": "30%",
+          "is_correct": false
+        },
+        {
+          "label": "29%",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Percentage",
+      "kind": "standard",
+      "difficulty": "very_hard",
+      "answer_type": "single",
+      "stem": "Find the single discount that is equivalent to two successive discounts of 10% and 10%.",
+      "explanation": "Net = [1 − (1−10/100)(1−10/100)] × 100 = 19%.",
+      "options": [
+        {
+          "label": "19%",
+          "is_correct": true
+        },
+        {
+          "label": "18%",
+          "is_correct": false
+        },
+        {
+          "label": "21%",
+          "is_correct": false
+        },
+        {
+          "label": "20%",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Percentage",
+      "kind": "standard",
+      "difficulty": "very_hard",
+      "answer_type": "single",
+      "stem": "In an examination, 71% of the students passed and 203 students failed. Find the total number of students who appeared.",
+      "explanation": "Failures = (100−71)% of total = 203 ⇒ total = 203 × 100 / 29 = 700.",
+      "options": [
+        {
+          "label": "756",
+          "is_correct": false
+        },
+        {
+          "label": "700",
+          "is_correct": true
+        },
+        {
+          "label": "672",
+          "is_correct": false
+        },
+        {
+          "label": "728",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Percentage",
+      "kind": "standard",
+      "difficulty": "very_hard",
+      "answer_type": "single",
+      "stem": "Find the single discount that is equivalent to two successive discounts of 30% and 10%.",
+      "explanation": "Net = [1 − (1−30/100)(1−10/100)] × 100 = 37%.",
+      "options": [
+        {
+          "label": "38%",
+          "is_correct": false
+        },
+        {
+          "label": "36%",
+          "is_correct": false
+        },
+        {
+          "label": "39%",
+          "is_correct": false
+        },
+        {
+          "label": "37%",
+          "is_correct": true
+        }
+      ]
+    },
+    {
+      "chapter": "Percentage",
+      "kind": "standard",
+      "difficulty": "very_hard",
+      "answer_type": "single",
+      "stem": "In an examination, 76% of the students passed and 192 students failed. Find the total number of students who appeared.",
+      "explanation": "Failures = (100−76)% of total = 192 ⇒ total = 192 × 100 / 24 = 800.",
+      "options": [
+        {
+          "label": "832",
+          "is_correct": false
+        },
+        {
+          "label": "864",
+          "is_correct": false
+        },
+        {
+          "label": "768",
+          "is_correct": false
+        },
+        {
+          "label": "800",
+          "is_correct": true
+        }
+      ]
+    },
+    {
+      "chapter": "Percentage",
+      "kind": "standard",
+      "difficulty": "very_hard",
+      "answer_type": "single",
+      "stem": "In an examination, 48% of the students passed and 104 students failed. Find the total number of students who appeared.",
+      "explanation": "Failures = (100−48)% of total = 104 ⇒ total = 104 × 100 / 52 = 200.",
+      "options": [
+        {
+          "label": "216",
+          "is_correct": false
+        },
+        {
+          "label": "192",
+          "is_correct": false
+        },
+        {
+          "label": "200",
+          "is_correct": true
+        },
+        {
+          "label": "208",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Percentage",
+      "kind": "standard",
+      "difficulty": "very_hard",
+      "answer_type": "single",
+      "stem": "In an election between two candidates, the winner secured 61% of the valid votes and won by 572 votes. Find the total number of valid votes.",
+      "explanation": "Margin = (2×61−100)% of total = 572 ⇒ total = 572 × 100 / 22 = 2600.",
+      "options": [
+        {
+          "label": "2600",
+          "is_correct": true
+        },
+        {
+          "label": "2704",
+          "is_correct": false
+        },
+        {
+          "label": "2496",
+          "is_correct": false
+        },
+        {
+          "label": "2808",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Percentage",
+      "kind": "standard",
+      "difficulty": "very_hard",
+      "answer_type": "single",
+      "stem": "In an examination, 67% of the students passed and 462 students failed. Find the total number of students who appeared.",
+      "explanation": "Failures = (100−67)% of total = 462 ⇒ total = 462 × 100 / 33 = 1400.",
+      "options": [
+        {
+          "label": "1344",
+          "is_correct": false
+        },
+        {
+          "label": "1456",
+          "is_correct": false
+        },
+        {
+          "label": "1512",
+          "is_correct": false
+        },
+        {
+          "label": "1400",
+          "is_correct": true
+        }
+      ]
+    },
+    {
+      "chapter": "Percentage",
+      "kind": "standard",
+      "difficulty": "very_hard",
+      "answer_type": "single",
+      "stem": "In an examination, 60% of the students passed and 280 students failed. Find the total number of students who appeared.",
+      "explanation": "Failures = (100−60)% of total = 280 ⇒ total = 280 × 100 / 40 = 700.",
+      "options": [
+        {
+          "label": "700",
+          "is_correct": true
+        },
+        {
+          "label": "756",
+          "is_correct": false
+        },
+        {
+          "label": "728",
+          "is_correct": false
+        },
+        {
+          "label": "672",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Percentage",
+      "kind": "standard",
+      "difficulty": "very_hard",
+      "answer_type": "single",
+      "stem": "In an examination, 81% of the students passed and 342 students failed. Find the total number of students who appeared.",
+      "explanation": "Failures = (100−81)% of total = 342 ⇒ total = 342 × 100 / 19 = 1800.",
+      "options": [
+        {
+          "label": "1944",
+          "is_correct": false
+        },
+        {
+          "label": "1872",
+          "is_correct": false
+        },
+        {
+          "label": "1800",
+          "is_correct": true
+        },
+        {
+          "label": "1728",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Percentage",
+      "kind": "standard",
+      "difficulty": "very_hard",
+      "answer_type": "single",
+      "stem": "In an examination, 83% of the students passed and 323 students failed. Find the total number of students who appeared.",
+      "explanation": "Failures = (100−83)% of total = 323 ⇒ total = 323 × 100 / 17 = 1900.",
+      "options": [
+        {
+          "label": "2052",
+          "is_correct": false
+        },
+        {
+          "label": "1900",
+          "is_correct": true
+        },
+        {
+          "label": "1976",
+          "is_correct": false
+        },
+        {
+          "label": "1824",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Percentage",
+      "kind": "standard",
+      "difficulty": "very_hard",
+      "answer_type": "single",
+      "stem": "In an election between two candidates, the winner secured 55% of the valid votes and won by 300 votes. Find the total number of valid votes.",
+      "explanation": "Margin = (2×55−100)% of total = 300 ⇒ total = 300 × 100 / 10 = 3000.",
+      "options": [
+        {
+          "label": "3000",
+          "is_correct": true
+        },
+        {
+          "label": "3120",
+          "is_correct": false
+        },
+        {
+          "label": "3240",
+          "is_correct": false
+        },
+        {
+          "label": "2880",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Percentage",
+      "kind": "standard",
+      "difficulty": "very_hard",
+      "answer_type": "single",
+      "stem": "In an election between two candidates, the winner secured 72% of the valid votes and won by 792 votes. Find the total number of valid votes.",
+      "explanation": "Margin = (2×72−100)% of total = 792 ⇒ total = 792 × 100 / 44 = 1800.",
+      "options": [
+        {
+          "label": "1872",
+          "is_correct": false
+        },
+        {
+          "label": "1728",
+          "is_correct": false
+        },
+        {
+          "label": "1800",
+          "is_correct": true
+        },
+        {
+          "label": "1944",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Percentage",
+      "kind": "standard",
+      "difficulty": "very_hard",
+      "answer_type": "single",
+      "stem": "In an examination, 63% of the students passed and 555 students failed. Find the total number of students who appeared.",
+      "explanation": "Failures = (100−63)% of total = 555 ⇒ total = 555 × 100 / 37 = 1500.",
+      "options": [
+        {
+          "label": "1560",
+          "is_correct": false
+        },
+        {
+          "label": "1440",
+          "is_correct": false
+        },
+        {
+          "label": "1500",
+          "is_correct": true
+        },
+        {
+          "label": "1620",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Percentage",
+      "kind": "standard",
+      "difficulty": "very_hard",
+      "answer_type": "single",
+      "stem": "In an examination, 57% of the students passed and 731 students failed. Find the total number of students who appeared.",
+      "explanation": "Failures = (100−57)% of total = 731 ⇒ total = 731 × 100 / 43 = 1700.",
+      "options": [
+        {
+          "label": "1632",
+          "is_correct": false
+        },
+        {
+          "label": "1700",
+          "is_correct": true
+        },
+        {
+          "label": "1768",
+          "is_correct": false
+        },
+        {
+          "label": "1836",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Percentage",
+      "kind": "standard",
+      "difficulty": "very_hard",
+      "answer_type": "single",
+      "stem": "In an examination, 43% of the students passed and 456 students failed. Find the total number of students who appeared.",
+      "explanation": "Failures = (100−43)% of total = 456 ⇒ total = 456 × 100 / 57 = 800.",
+      "options": [
+        {
+          "label": "768",
+          "is_correct": false
+        },
+        {
+          "label": "832",
+          "is_correct": false
+        },
+        {
+          "label": "864",
+          "is_correct": false
+        },
+        {
+          "label": "800",
+          "is_correct": true
+        }
+      ]
+    },
+    {
+      "chapter": "Percentage",
+      "kind": "standard",
+      "difficulty": "very_hard",
+      "answer_type": "single",
+      "stem": "In an election between two candidates, the winner secured 75% of the valid votes and won by 350 votes. Find the total number of valid votes.",
+      "explanation": "Margin = (2×75−100)% of total = 350 ⇒ total = 350 × 100 / 50 = 700.",
+      "options": [
+        {
+          "label": "672",
+          "is_correct": false
+        },
+        {
+          "label": "700",
+          "is_correct": true
+        },
+        {
+          "label": "756",
+          "is_correct": false
+        },
+        {
+          "label": "728",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Percentage",
+      "kind": "standard",
+      "difficulty": "very_hard",
+      "answer_type": "single",
+      "stem": "In an examination, 77% of the students passed and 299 students failed. Find the total number of students who appeared.",
+      "explanation": "Failures = (100−77)% of total = 299 ⇒ total = 299 × 100 / 23 = 1300.",
+      "options": [
+        {
+          "label": "1300",
+          "is_correct": true
+        },
+        {
+          "label": "1248",
+          "is_correct": false
+        },
+        {
+          "label": "1352",
+          "is_correct": false
+        },
+        {
+          "label": "1404",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Percentage",
+      "kind": "standard",
+      "difficulty": "very_hard",
+      "answer_type": "single",
+      "stem": "In an examination, 46% of the students passed and 972 students failed. Find the total number of students who appeared.",
+      "explanation": "Failures = (100−46)% of total = 972 ⇒ total = 972 × 100 / 54 = 1800.",
+      "options": [
+        {
+          "label": "1728",
+          "is_correct": false
+        },
+        {
+          "label": "1800",
+          "is_correct": true
+        },
+        {
+          "label": "1872",
+          "is_correct": false
+        },
+        {
+          "label": "1944",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Percentage",
+      "kind": "standard",
+      "difficulty": "very_hard",
+      "answer_type": "single",
+      "stem": "In an examination, 48% of the students passed and 208 students failed. Find the total number of students who appeared.",
+      "explanation": "Failures = (100−48)% of total = 208 ⇒ total = 208 × 100 / 52 = 400.",
+      "options": [
+        {
+          "label": "384",
+          "is_correct": false
+        },
+        {
+          "label": "416",
+          "is_correct": false
+        },
+        {
+          "label": "400",
+          "is_correct": true
+        },
+        {
+          "label": "432",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Percentage",
+      "kind": "standard",
+      "difficulty": "very_hard",
+      "answer_type": "single",
+      "stem": "In an election between two candidates, the winner secured 56% of the valid votes and won by 144 votes. Find the total number of valid votes.",
+      "explanation": "Margin = (2×56−100)% of total = 144 ⇒ total = 144 × 100 / 12 = 1200.",
+      "options": [
+        {
+          "label": "1248",
+          "is_correct": false
+        },
+        {
+          "label": "1200",
+          "is_correct": true
+        },
+        {
+          "label": "1296",
+          "is_correct": false
+        },
+        {
+          "label": "1152",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Percentage",
+      "kind": "standard",
+      "difficulty": "very_hard",
+      "answer_type": "single",
+      "stem": "In an examination, 64% of the students passed and 216 students failed. Find the total number of students who appeared.",
+      "explanation": "Failures = (100−64)% of total = 216 ⇒ total = 216 × 100 / 36 = 600.",
+      "options": [
+        {
+          "label": "648",
+          "is_correct": false
+        },
+        {
+          "label": "600",
+          "is_correct": true
+        },
+        {
+          "label": "624",
+          "is_correct": false
+        },
+        {
+          "label": "576",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Percentage",
+      "kind": "standard",
+      "difficulty": "very_hard",
+      "answer_type": "single",
+      "stem": "In an election between two candidates, the winner secured 68% of the valid votes and won by 468 votes. Find the total number of valid votes.",
+      "explanation": "Margin = (2×68−100)% of total = 468 ⇒ total = 468 × 100 / 36 = 1300.",
+      "options": [
+        {
+          "label": "1300",
+          "is_correct": true
+        },
+        {
+          "label": "1352",
+          "is_correct": false
+        },
+        {
+          "label": "1248",
+          "is_correct": false
+        },
+        {
+          "label": "1404",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Percentage",
+      "kind": "standard",
+      "difficulty": "very_hard",
+      "answer_type": "single",
+      "stem": "In an election between two candidates, the winner secured 69% of the valid votes and won by 912 votes. Find the total number of valid votes.",
+      "explanation": "Margin = (2×69−100)% of total = 912 ⇒ total = 912 × 100 / 38 = 2400.",
+      "options": [
+        {
+          "label": "2400",
+          "is_correct": true
+        },
+        {
+          "label": "2304",
+          "is_correct": false
+        },
+        {
+          "label": "2592",
+          "is_correct": false
+        },
+        {
+          "label": "2496",
+          "is_correct": false
+        }
+      ]
+    }
+  ]
+}

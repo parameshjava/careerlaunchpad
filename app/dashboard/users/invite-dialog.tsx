@@ -17,7 +17,7 @@ export function InviteDialog({ employers, canInviteOwner }: { employers: Employe
     <>
       <Button onClick={() => setOpen(true)}>Invite user</Button>
       <Dialog open={open} onOpenChange={setOpen}>
-        <DialogContent className="sm:max-w-lg">
+        <DialogContent className="sm:max-w-2xl">
           <DialogHeader>
             <DialogTitle>Invite a platform user</DialogTitle>
             <DialogDescription>

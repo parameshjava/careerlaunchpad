@@ -1,0 +1,5205 @@
+{
+  "subject": "Reasoning",
+  "questions": [
+    {
+      "chapter": "Letter Series",
+      "kind": "standard",
+      "difficulty": "easy",
+      "answer_type": "single",
+      "stem": "Find the next term in the letter series: S, T, U, V, W, ?",
+      "explanation": "The pattern: each letter moves 1 step(s) forward in the alphabet. So the next term is X.",
+      "options": [
+        {
+          "label": "W",
+          "is_correct": false
+        },
+        {
+          "label": "X",
+          "is_correct": true
+        },
+        {
+          "label": "Y",
+          "is_correct": false
+        },
+        {
+          "label": "Z",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Letter Series",
+      "kind": "standard",
+      "difficulty": "easy",
+      "answer_type": "single",
+      "stem": "Find the next term in the letter series: A, D, G, J, M, ?",
+      "explanation": "The pattern: each letter moves 3 step(s) forward in the alphabet. So the next term is P.",
+      "options": [
+        {
+          "label": "Q",
+          "is_correct": false
+        },
+        {
+          "label": "P",
+          "is_correct": true
+        },
+        {
+          "label": "O",
+          "is_correct": false
+        },
+        {
+          "label": "R",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Letter Series",
+      "kind": "standard",
+      "difficulty": "easy",
+      "answer_type": "single",
+      "stem": "Find the next term in the letter series: Q, R, S, T, U, ?",
+      "explanation": "The pattern: each letter moves 1 step(s) forward in the alphabet. So the next term is V.",
+      "options": [
+        {
+          "label": "X",
+          "is_correct": false
+        },
+        {
+          "label": "W",
+          "is_correct": false
+        },
+        {
+          "label": "U",
+          "is_correct": false
+        },
+        {
+          "label": "V",
+          "is_correct": true
+        }
+      ]
+    },
+    {
+      "chapter": "Letter Series",
+      "kind": "standard",
+      "difficulty": "easy",
+      "answer_type": "single",
+      "stem": "Find the next term in the letter series: S, P, M, J, G, ?",
+      "explanation": "The pattern: each letter moves 3 step(s) backward in the alphabet. So the next term is D.",
+      "options": [
+        {
+          "label": "D",
+          "is_correct": true
+        },
+        {
+          "label": "E",
+          "is_correct": false
+        },
+        {
+          "label": "C",
+          "is_correct": false
+        },
+        {
+          "label": "F",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Letter Series",
+      "kind": "standard",
+      "difficulty": "easy",
+      "answer_type": "single",
+      "stem": "Find the next term in the letter series: N, P, R, T, V, ?",
+      "explanation": "The pattern: each letter moves 2 step(s) forward in the alphabet. So the next term is X.",
+      "options": [
+        {
+          "label": "Y",
+          "is_correct": false
+        },
+        {
+          "label": "X",
+          "is_correct": true
+        },
+        {
+          "label": "Z",
+          "is_correct": false
+        },
+        {
+          "label": "W",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Letter Series",
+      "kind": "standard",
+      "difficulty": "easy",
+      "answer_type": "single",
+      "stem": "Find the next term in the letter series: H, J, L, N, P, ?",
+      "explanation": "The pattern: each letter moves 2 step(s) forward in the alphabet. So the next term is R.",
+      "options": [
+        {
+          "label": "S",
+          "is_correct": false
+        },
+        {
+          "label": "R",
+          "is_correct": true
+        },
+        {
+          "label": "T",
+          "is_correct": false
+        },
+        {
+          "label": "Q",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Letter Series",
+      "kind": "standard",
+      "difficulty": "easy",
+      "answer_type": "single",
+      "stem": "Find the next term in the letter series: W, T, Q, N, K, ?",
+      "explanation": "The pattern: each letter moves 3 step(s) backward in the alphabet. So the next term is H.",
+      "options": [
+        {
+          "label": "H",
+          "is_correct": true
+        },
+        {
+          "label": "J",
+          "is_correct": false
+        },
+        {
+          "label": "I",
+          "is_correct": false
+        },
+        {
+          "label": "G",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Letter Series",
+      "kind": "standard",
+      "difficulty": "easy",
+      "answer_type": "single",
+      "stem": "Find the next term in the letter series: K, N, Q, T, W, ?",
+      "explanation": "The pattern: each letter moves 3 step(s) forward in the alphabet. So the next term is Z.",
+      "options": [
+        {
+          "label": "X",
+          "is_correct": false
+        },
+        {
+          "label": "Y",
+          "is_correct": false
+        },
+        {
+          "label": "Z",
+          "is_correct": true
+        },
+        {
+          "label": "W",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Letter Series",
+      "kind": "standard",
+      "difficulty": "easy",
+      "answer_type": "single",
+      "stem": "Find the next term in the letter series: V, T, R, P, N, ?",
+      "explanation": "The pattern: each letter moves 2 step(s) backward in the alphabet. So the next term is L.",
+      "options": [
+        {
+          "label": "M",
+          "is_correct": false
+        },
+        {
+          "label": "K",
+          "is_correct": false
+        },
+        {
+          "label": "N",
+          "is_correct": false
+        },
+        {
+          "label": "L",
+          "is_correct": true
+        }
+      ]
+    },
+    {
+      "chapter": "Letter Series",
+      "kind": "standard",
+      "difficulty": "easy",
+      "answer_type": "single",
+      "stem": "Find the next term in the letter series: Y, X, W, V, U, ?",
+      "explanation": "The pattern: each letter moves 1 step(s) backward in the alphabet. So the next term is T.",
+      "options": [
+        {
+          "label": "S",
+          "is_correct": false
+        },
+        {
+          "label": "V",
+          "is_correct": false
+        },
+        {
+          "label": "U",
+          "is_correct": false
+        },
+        {
+          "label": "T",
+          "is_correct": true
+        }
+      ]
+    },
+    {
+      "chapter": "Letter Series",
+      "kind": "standard",
+      "difficulty": "easy",
+      "answer_type": "single",
+      "stem": "Find the next term in the letter series: B, C, D, E, F, ?",
+      "explanation": "The pattern: each letter moves 1 step(s) forward in the alphabet. So the next term is G.",
+      "options": [
+        {
+          "label": "H",
+          "is_correct": false
+        },
+        {
+          "label": "I",
+          "is_correct": false
+        },
+        {
+          "label": "F",
+          "is_correct": false
+        },
+        {
+          "label": "G",
+          "is_correct": true
+        }
+      ]
+    },
+    {
+      "chapter": "Letter Series",
+      "kind": "standard",
+      "difficulty": "easy",
+      "answer_type": "single",
+      "stem": "Find the next term in the letter series: H, K, N, Q, T, ?",
+      "explanation": "The pattern: each letter moves 3 step(s) forward in the alphabet. So the next term is W.",
+      "options": [
+        {
+          "label": "V",
+          "is_correct": false
+        },
+        {
+          "label": "X",
+          "is_correct": false
+        },
+        {
+          "label": "W",
+          "is_correct": true
+        },
+        {
+          "label": "Y",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Letter Series",
+      "kind": "standard",
+      "difficulty": "easy",
+      "answer_type": "single",
+      "stem": "Find the next term in the letter series: P, N, L, J, H, ?",
+      "explanation": "The pattern: each letter moves 2 step(s) backward in the alphabet. So the next term is F.",
+      "options": [
+        {
+          "label": "H",
+          "is_correct": false
+        },
+        {
+          "label": "F",
+          "is_correct": true
+        },
+        {
+          "label": "E",
+          "is_correct": false
+        },
+        {
+          "label": "G",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Letter Series",
+      "kind": "standard",
+      "difficulty": "easy",
+      "answer_type": "single",
+      "stem": "Find the next term in the letter series: C, D, E, F, G, ?",
+      "explanation": "The pattern: each letter moves 1 step(s) forward in the alphabet. So the next term is H.",
+      "options": [
+        {
+          "label": "J",
+          "is_correct": false
+        },
+        {
+          "label": "H",
+          "is_correct": true
+        },
+        {
+          "label": "I",
+          "is_correct": false
+        },
+        {
+          "label": "G",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Letter Series",
+      "kind": "standard",
+      "difficulty": "easy",
+      "answer_type": "single",
+      "stem": "Find the next term in the letter series: F, H, J, L, N, ?",
+      "explanation": "The pattern: each letter moves 2 step(s) forward in the alphabet. So the next term is P.",
+      "options": [
+        {
+          "label": "R",
+          "is_correct": false
+        },
+        {
+          "label": "P",
+          "is_correct": true
+        },
+        {
+          "label": "Q",
+          "is_correct": false
+        },
+        {
+          "label": "O",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Letter Series",
+      "kind": "standard",
+      "difficulty": "easy",
+      "answer_type": "single",
+      "stem": "Find the next term in the letter series: U, S, Q, O, M, ?",
+      "explanation": "The pattern: each letter moves 2 step(s) backward in the alphabet. So the next term is K.",
+      "options": [
+        {
+          "label": "M",
+          "is_correct": false
+        },
+        {
+          "label": "L",
+          "is_correct": false
+        },
+        {
+          "label": "J",
+          "is_correct": false
+        },
+        {
+          "label": "K",
+          "is_correct": true
+        }
+      ]
+    },
+    {
+      "chapter": "Letter Series",
+      "kind": "standard",
+      "difficulty": "easy",
+      "answer_type": "single",
+      "stem": "Find the next term in the letter series: C, E, G, I, K, ?",
+      "explanation": "The pattern: each letter moves 2 step(s) forward in the alphabet. So the next term is M.",
+      "options": [
+        {
+          "label": "M",
+          "is_correct": true
+        },
+        {
+          "label": "L",
+          "is_correct": false
+        },
+        {
+          "label": "N",
+          "is_correct": false
+        },
+        {
+          "label": "O",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Letter Series",
+      "kind": "standard",
+      "difficulty": "easy",
+      "answer_type": "single",
+      "stem": "Find the next term in the letter series: X, U, R, O, L, ?",
+      "explanation": "The pattern: each letter moves 3 step(s) backward in the alphabet. So the next term is I.",
+      "options": [
+        {
+          "label": "K",
+          "is_correct": false
+        },
+        {
+          "label": "J",
+          "is_correct": false
+        },
+        {
+          "label": "H",
+          "is_correct": false
+        },
+        {
+          "label": "I",
+          "is_correct": true
+        }
+      ]
+    },
+    {
+      "chapter": "Letter Series",
+      "kind": "standard",
+      "difficulty": "easy",
+      "answer_type": "single",
+      "stem": "Find the next term in the letter series: N, M, L, K, J, ?",
+      "explanation": "The pattern: each letter moves 1 step(s) backward in the alphabet. So the next term is I.",
+      "options": [
+        {
+          "label": "J",
+          "is_correct": false
+        },
+        {
+          "label": "H",
+          "is_correct": false
+        },
+        {
+          "label": "I",
+          "is_correct": true
+        },
+        {
+          "label": "K",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Letter Series",
+      "kind": "standard",
+      "difficulty": "easy",
+      "answer_type": "single",
+      "stem": "Find the next term in the letter series: Z, W, T, Q, N, ?",
+      "explanation": "The pattern: each letter moves 3 step(s) backward in the alphabet. So the next term is K.",
+      "options": [
+        {
+          "label": "L",
+          "is_correct": false
+        },
+        {
+          "label": "M",
+          "is_correct": false
+        },
+        {
+          "label": "K",
+          "is_correct": true
+        },
+        {
+          "label": "J",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Letter Series",
+      "kind": "standard",
+      "difficulty": "easy",
+      "answer_type": "single",
+      "stem": "Find the next term in the letter series: J, M, P, S, V, ?",
+      "explanation": "The pattern: each letter moves 3 step(s) forward in the alphabet. So the next term is Y.",
+      "options": [
+        {
+          "label": "Y",
+          "is_correct": true
+        },
+        {
+          "label": "W",
+          "is_correct": false
+        },
+        {
+          "label": "Z",
+          "is_correct": false
+        },
+        {
+          "label": "X",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Letter Series",
+      "kind": "standard",
+      "difficulty": "easy",
+      "answer_type": "single",
+      "stem": "Find the next term in the letter series: G, J, M, P, S, ?",
+      "explanation": "The pattern: each letter moves 3 step(s) forward in the alphabet. So the next term is V.",
+      "options": [
+        {
+          "label": "V",
+          "is_correct": true
+        },
+        {
+          "label": "U",
+          "is_correct": false
+        },
+        {
+          "label": "X",
+          "is_correct": false
+        },
+        {
+          "label": "W",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Letter Series",
+      "kind": "standard",
+      "difficulty": "easy",
+      "answer_type": "single",
+      "stem": "Find the next term in the letter series: F, E, D, C, B, ?",
+      "explanation": "The pattern: each letter moves 1 step(s) backward in the alphabet. So the next term is A.",
+      "options": [
+        {
+          "label": "C",
+          "is_correct": false
+        },
+        {
+          "label": "B",
+          "is_correct": false
+        },
+        {
+          "label": "D",
+          "is_correct": false
+        },
+        {
+          "label": "A",
+          "is_correct": true
+        }
+      ]
+    },
+    {
+      "chapter": "Letter Series",
+      "kind": "standard",
+      "difficulty": "easy",
+      "answer_type": "single",
+      "stem": "Find the next term in the letter series: Q, N, K, H, E, ?",
+      "explanation": "The pattern: each letter moves 3 step(s) backward in the alphabet. So the next term is B.",
+      "options": [
+        {
+          "label": "D",
+          "is_correct": false
+        },
+        {
+          "label": "A",
+          "is_correct": false
+        },
+        {
+          "label": "B",
+          "is_correct": true
+        },
+        {
+          "label": "C",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Letter Series",
+      "kind": "standard",
+      "difficulty": "easy",
+      "answer_type": "single",
+      "stem": "Find the next term in the letter series: D, F, H, J, L, ?",
+      "explanation": "The pattern: each letter moves 2 step(s) forward in the alphabet. So the next term is N.",
+      "options": [
+        {
+          "label": "P",
+          "is_correct": false
+        },
+        {
+          "label": "N",
+          "is_correct": true
+        },
+        {
+          "label": "O",
+          "is_correct": false
+        },
+        {
+          "label": "M",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Letter Series",
+      "kind": "standard",
+      "difficulty": "easy",
+      "answer_type": "single",
+      "stem": "Find the next term in the letter series: U, T, S, R, Q, ?",
+      "explanation": "The pattern: each letter moves 1 step(s) backward in the alphabet. So the next term is P.",
+      "options": [
+        {
+          "label": "P",
+          "is_correct": true
+        },
+        {
+          "label": "O",
+          "is_correct": false
+        },
+        {
+          "label": "R",
+          "is_correct": false
+        },
+        {
+          "label": "Q",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Letter Series",
+      "kind": "standard",
+      "difficulty": "easy",
+      "answer_type": "single",
+      "stem": "Find the next term in the letter series: H, I, J, K, L, ?",
+      "explanation": "The pattern: each letter moves 1 step(s) forward in the alphabet. So the next term is M.",
+      "options": [
+        {
+          "label": "L",
+          "is_correct": false
+        },
+        {
+          "label": "O",
+          "is_correct": false
+        },
+        {
+          "label": "N",
+          "is_correct": false
+        },
+        {
+          "label": "M",
+          "is_correct": true
+        }
+      ]
+    },
+    {
+      "chapter": "Letter Series",
+      "kind": "standard",
+      "difficulty": "easy",
+      "answer_type": "single",
+      "stem": "Find the next term in the letter series: I, L, O, R, U, ?",
+      "explanation": "The pattern: each letter moves 3 step(s) forward in the alphabet. So the next term is X.",
+      "options": [
+        {
+          "label": "Z",
+          "is_correct": false
+        },
+        {
+          "label": "X",
+          "is_correct": true
+        },
+        {
+          "label": "W",
+          "is_correct": false
+        },
+        {
+          "label": "Y",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Letter Series",
+      "kind": "standard",
+      "difficulty": "easy",
+      "answer_type": "single",
+      "stem": "Find the next term in the letter series: X, V, T, R, P, ?",
+      "explanation": "The pattern: each letter moves 2 step(s) backward in the alphabet. So the next term is N.",
+      "options": [
+        {
+          "label": "N",
+          "is_correct": true
+        },
+        {
+          "label": "M",
+          "is_correct": false
+        },
+        {
+          "label": "P",
+          "is_correct": false
+        },
+        {
+          "label": "O",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Letter Series",
+      "kind": "standard",
+      "difficulty": "easy",
+      "answer_type": "single",
+      "stem": "Find the next term in the letter series: F, G, H, I, J, ?",
+      "explanation": "The pattern: each letter moves 1 step(s) forward in the alphabet. So the next term is K.",
+      "options": [
+        {
+          "label": "K",
+          "is_correct": true
+        },
+        {
+          "label": "L",
+          "is_correct": false
+        },
+        {
+          "label": "M",
+          "is_correct": false
+        },
+        {
+          "label": "J",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Letter Series",
+      "kind": "standard",
+      "difficulty": "easy",
+      "answer_type": "single",
+      "stem": "Find the next term in the letter series: O, Q, S, U, W, ?",
+      "explanation": "The pattern: each letter moves 2 step(s) forward in the alphabet. So the next term is Y.",
+      "options": [
+        {
+          "label": "Y",
+          "is_correct": true
+        },
+        {
+          "label": "X",
+          "is_correct": false
+        },
+        {
+          "label": "W",
+          "is_correct": false
+        },
+        {
+          "label": "Z",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Letter Series",
+      "kind": "standard",
+      "difficulty": "easy",
+      "answer_type": "single",
+      "stem": "Find the next term in the letter series: Z, X, V, T, R, ?",
+      "explanation": "The pattern: each letter moves 2 step(s) backward in the alphabet. So the next term is P.",
+      "options": [
+        {
+          "label": "R",
+          "is_correct": false
+        },
+        {
+          "label": "O",
+          "is_correct": false
+        },
+        {
+          "label": "P",
+          "is_correct": true
+        },
+        {
+          "label": "Q",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Letter Series",
+      "kind": "standard",
+      "difficulty": "easy",
+      "answer_type": "single",
+      "stem": "Find the next term in the letter series: L, N, P, R, T, ?",
+      "explanation": "The pattern: each letter moves 2 step(s) forward in the alphabet. So the next term is V.",
+      "options": [
+        {
+          "label": "X",
+          "is_correct": false
+        },
+        {
+          "label": "V",
+          "is_correct": true
+        },
+        {
+          "label": "W",
+          "is_correct": false
+        },
+        {
+          "label": "U",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Letter Series",
+      "kind": "standard",
+      "difficulty": "easy",
+      "answer_type": "single",
+      "stem": "Find the next term in the letter series: P, O, N, M, L, ?",
+      "explanation": "The pattern: each letter moves 1 step(s) backward in the alphabet. So the next term is K.",
+      "options": [
+        {
+          "label": "L",
+          "is_correct": false
+        },
+        {
+          "label": "J",
+          "is_correct": false
+        },
+        {
+          "label": "K",
+          "is_correct": true
+        },
+        {
+          "label": "M",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Letter Series",
+      "kind": "standard",
+      "difficulty": "easy",
+      "answer_type": "single",
+      "stem": "Find the next term in the letter series: W, U, S, Q, O, ?",
+      "explanation": "The pattern: each letter moves 2 step(s) backward in the alphabet. So the next term is M.",
+      "options": [
+        {
+          "label": "M",
+          "is_correct": true
+        },
+        {
+          "label": "N",
+          "is_correct": false
+        },
+        {
+          "label": "L",
+          "is_correct": false
+        },
+        {
+          "label": "O",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Letter Series",
+      "kind": "standard",
+      "difficulty": "easy",
+      "answer_type": "single",
+      "stem": "Find the next term in the letter series: Y, W, U, S, Q, ?",
+      "explanation": "The pattern: each letter moves 2 step(s) backward in the alphabet. So the next term is O.",
+      "options": [
+        {
+          "label": "O",
+          "is_correct": true
+        },
+        {
+          "label": "P",
+          "is_correct": false
+        },
+        {
+          "label": "N",
+          "is_correct": false
+        },
+        {
+          "label": "Q",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Letter Series",
+      "kind": "standard",
+      "difficulty": "easy",
+      "answer_type": "single",
+      "stem": "Find the next term in the letter series: G, I, K, M, O, ?",
+      "explanation": "The pattern: each letter moves 2 step(s) forward in the alphabet. So the next term is Q.",
+      "options": [
+        {
+          "label": "S",
+          "is_correct": false
+        },
+        {
+          "label": "P",
+          "is_correct": false
+        },
+        {
+          "label": "Q",
+          "is_correct": true
+        },
+        {
+          "label": "R",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Letter Series",
+      "kind": "standard",
+      "difficulty": "easy",
+      "answer_type": "single",
+      "stem": "Find the next term in the letter series: U, R, O, L, I, ?",
+      "explanation": "The pattern: each letter moves 3 step(s) backward in the alphabet. So the next term is F.",
+      "options": [
+        {
+          "label": "G",
+          "is_correct": false
+        },
+        {
+          "label": "F",
+          "is_correct": true
+        },
+        {
+          "label": "E",
+          "is_correct": false
+        },
+        {
+          "label": "H",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Letter Series",
+      "kind": "standard",
+      "difficulty": "easy",
+      "answer_type": "single",
+      "stem": "Find the next term in the letter series: O, M, K, I, G, ?",
+      "explanation": "The pattern: each letter moves 2 step(s) backward in the alphabet. So the next term is E.",
+      "options": [
+        {
+          "label": "G",
+          "is_correct": false
+        },
+        {
+          "label": "F",
+          "is_correct": false
+        },
+        {
+          "label": "D",
+          "is_correct": false
+        },
+        {
+          "label": "E",
+          "is_correct": true
+        }
+      ]
+    },
+    {
+      "chapter": "Letter Series",
+      "kind": "standard",
+      "difficulty": "easy",
+      "answer_type": "single",
+      "stem": "Find the next term in the letter series: R, S, T, U, V, ?",
+      "explanation": "The pattern: each letter moves 1 step(s) forward in the alphabet. So the next term is W.",
+      "options": [
+        {
+          "label": "V",
+          "is_correct": false
+        },
+        {
+          "label": "W",
+          "is_correct": true
+        },
+        {
+          "label": "X",
+          "is_correct": false
+        },
+        {
+          "label": "Y",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Letter Series",
+      "kind": "standard",
+      "difficulty": "easy",
+      "answer_type": "single",
+      "stem": "Find the next term in the letter series: I, K, M, O, Q, ?",
+      "explanation": "The pattern: each letter moves 2 step(s) forward in the alphabet. So the next term is S.",
+      "options": [
+        {
+          "label": "S",
+          "is_correct": true
+        },
+        {
+          "label": "R",
+          "is_correct": false
+        },
+        {
+          "label": "T",
+          "is_correct": false
+        },
+        {
+          "label": "U",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Letter Series",
+      "kind": "standard",
+      "difficulty": "easy",
+      "answer_type": "single",
+      "stem": "Find the next term in the letter series: C, F, I, L, O, ?",
+      "explanation": "The pattern: each letter moves 3 step(s) forward in the alphabet. So the next term is R.",
+      "options": [
+        {
+          "label": "S",
+          "is_correct": false
+        },
+        {
+          "label": "R",
+          "is_correct": true
+        },
+        {
+          "label": "Q",
+          "is_correct": false
+        },
+        {
+          "label": "T",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Letter Series",
+      "kind": "standard",
+      "difficulty": "easy",
+      "answer_type": "single",
+      "stem": "Find the next term in the letter series: Y, V, S, P, M, ?",
+      "explanation": "The pattern: each letter moves 3 step(s) backward in the alphabet. So the next term is J.",
+      "options": [
+        {
+          "label": "K",
+          "is_correct": false
+        },
+        {
+          "label": "J",
+          "is_correct": true
+        },
+        {
+          "label": "I",
+          "is_correct": false
+        },
+        {
+          "label": "L",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Letter Series",
+      "kind": "standard",
+      "difficulty": "easy",
+      "answer_type": "single",
+      "stem": "Find the next term in the letter series: O, P, Q, R, S, ?",
+      "explanation": "The pattern: each letter moves 1 step(s) forward in the alphabet. So the next term is T.",
+      "options": [
+        {
+          "label": "V",
+          "is_correct": false
+        },
+        {
+          "label": "T",
+          "is_correct": true
+        },
+        {
+          "label": "U",
+          "is_correct": false
+        },
+        {
+          "label": "S",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Letter Series",
+      "kind": "standard",
+      "difficulty": "easy",
+      "answer_type": "single",
+      "stem": "Find the next term in the letter series: G, H, I, J, K, ?",
+      "explanation": "The pattern: each letter moves 1 step(s) forward in the alphabet. So the next term is L.",
+      "options": [
+        {
+          "label": "N",
+          "is_correct": false
+        },
+        {
+          "label": "M",
+          "is_correct": false
+        },
+        {
+          "label": "L",
+          "is_correct": true
+        },
+        {
+          "label": "K",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Letter Series",
+      "kind": "standard",
+      "difficulty": "easy",
+      "answer_type": "single",
+      "stem": "Find the next term in the letter series: R, Q, P, O, N, ?",
+      "explanation": "The pattern: each letter moves 1 step(s) backward in the alphabet. So the next term is M.",
+      "options": [
+        {
+          "label": "L",
+          "is_correct": false
+        },
+        {
+          "label": "N",
+          "is_correct": false
+        },
+        {
+          "label": "O",
+          "is_correct": false
+        },
+        {
+          "label": "M",
+          "is_correct": true
+        }
+      ]
+    },
+    {
+      "chapter": "Letter Series",
+      "kind": "standard",
+      "difficulty": "easy",
+      "answer_type": "single",
+      "stem": "Find the next term in the letter series: T, U, V, W, X, ?",
+      "explanation": "The pattern: each letter moves 1 step(s) forward in the alphabet. So the next term is Y.",
+      "options": [
+        {
+          "label": "X",
+          "is_correct": false
+        },
+        {
+          "label": "Z",
+          "is_correct": false
+        },
+        {
+          "label": "W",
+          "is_correct": false
+        },
+        {
+          "label": "Y",
+          "is_correct": true
+        }
+      ]
+    },
+    {
+      "chapter": "Letter Series",
+      "kind": "standard",
+      "difficulty": "easy",
+      "answer_type": "single",
+      "stem": "Find the next term in the letter series: L, K, J, I, H, ?",
+      "explanation": "The pattern: each letter moves 1 step(s) backward in the alphabet. So the next term is G.",
+      "options": [
+        {
+          "label": "H",
+          "is_correct": false
+        },
+        {
+          "label": "I",
+          "is_correct": false
+        },
+        {
+          "label": "G",
+          "is_correct": true
+        },
+        {
+          "label": "F",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Letter Series",
+      "kind": "standard",
+      "difficulty": "easy",
+      "answer_type": "single",
+      "stem": "Find the next term in the letter series: V, S, P, M, J, ?",
+      "explanation": "The pattern: each letter moves 3 step(s) backward in the alphabet. So the next term is G.",
+      "options": [
+        {
+          "label": "G",
+          "is_correct": true
+        },
+        {
+          "label": "I",
+          "is_correct": false
+        },
+        {
+          "label": "F",
+          "is_correct": false
+        },
+        {
+          "label": "H",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Letter Series",
+      "kind": "standard",
+      "difficulty": "easy",
+      "answer_type": "single",
+      "stem": "Find the next term in the letter series: K, L, M, N, O, ?",
+      "explanation": "The pattern: each letter moves 1 step(s) forward in the alphabet. So the next term is P.",
+      "options": [
+        {
+          "label": "O",
+          "is_correct": false
+        },
+        {
+          "label": "Q",
+          "is_correct": false
+        },
+        {
+          "label": "P",
+          "is_correct": true
+        },
+        {
+          "label": "R",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Letter Series",
+      "kind": "standard",
+      "difficulty": "medium",
+      "answer_type": "single",
+      "stem": "Find the next term in the letter series: DE, GH, JK, MN, ?",
+      "explanation": "The pattern: each pair moves 3 forward. So the next term is PQ.",
+      "options": [
+        {
+          "label": "PQ",
+          "is_correct": true
+        },
+        {
+          "label": "PP",
+          "is_correct": false
+        },
+        {
+          "label": "PR",
+          "is_correct": false
+        },
+        {
+          "label": "PS",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Letter Series",
+      "kind": "standard",
+      "difficulty": "medium",
+      "answer_type": "single",
+      "stem": "Find the next term in the letter series: MN, OP, QR, ST, ?",
+      "explanation": "The pattern: consecutive letters taken two at a time. So the next term is UV.",
+      "options": [
+        {
+          "label": "UW",
+          "is_correct": false
+        },
+        {
+          "label": "UX",
+          "is_correct": false
+        },
+        {
+          "label": "UU",
+          "is_correct": false
+        },
+        {
+          "label": "UV",
+          "is_correct": true
+        }
+      ]
+    },
+    {
+      "chapter": "Letter Series",
+      "kind": "standard",
+      "difficulty": "medium",
+      "answer_type": "single",
+      "stem": "Find the next term in the letter series: EF, IJ, MN, QR, ?",
+      "explanation": "The pattern: each pair moves 4 forward. So the next term is UV.",
+      "options": [
+        {
+          "label": "UX",
+          "is_correct": false
+        },
+        {
+          "label": "UW",
+          "is_correct": false
+        },
+        {
+          "label": "UV",
+          "is_correct": true
+        },
+        {
+          "label": "UU",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Letter Series",
+      "kind": "standard",
+      "difficulty": "medium",
+      "answer_type": "single",
+      "stem": "Find the next term in the letter series: FG, JK, NO, RS, ?",
+      "explanation": "The pattern: each pair moves 4 forward. So the next term is VW.",
+      "options": [
+        {
+          "label": "VV",
+          "is_correct": false
+        },
+        {
+          "label": "VX",
+          "is_correct": false
+        },
+        {
+          "label": "VY",
+          "is_correct": false
+        },
+        {
+          "label": "VW",
+          "is_correct": true
+        }
+      ]
+    },
+    {
+      "chapter": "Letter Series",
+      "kind": "standard",
+      "difficulty": "medium",
+      "answer_type": "single",
+      "stem": "Find the next term in the letter series: D, E, G, J, N, ?",
+      "explanation": "The pattern: the gap grows by one each time (+1, +2, +3, …). So the next term is S.",
+      "options": [
+        {
+          "label": "T",
+          "is_correct": false
+        },
+        {
+          "label": "U",
+          "is_correct": false
+        },
+        {
+          "label": "R",
+          "is_correct": false
+        },
+        {
+          "label": "S",
+          "is_correct": true
+        }
+      ]
+    },
+    {
+      "chapter": "Letter Series",
+      "kind": "standard",
+      "difficulty": "medium",
+      "answer_type": "single",
+      "stem": "Find the next term in the letter series: EF, GH, IJ, KL, ?",
+      "explanation": "The pattern: consecutive letters taken two at a time. So the next term is MN.",
+      "options": [
+        {
+          "label": "MN",
+          "is_correct": true
+        },
+        {
+          "label": "MP",
+          "is_correct": false
+        },
+        {
+          "label": "MO",
+          "is_correct": false
+        },
+        {
+          "label": "MM",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Letter Series",
+      "kind": "standard",
+      "difficulty": "medium",
+      "answer_type": "single",
+      "stem": "Find the next term in the letter series: BC, DE, FG, HI, ?",
+      "explanation": "The pattern: each pair moves 2 forward. So the next term is JK.",
+      "options": [
+        {
+          "label": "JL",
+          "is_correct": false
+        },
+        {
+          "label": "JJ",
+          "is_correct": false
+        },
+        {
+          "label": "JK",
+          "is_correct": true
+        },
+        {
+          "label": "JM",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Letter Series",
+      "kind": "standard",
+      "difficulty": "medium",
+      "answer_type": "single",
+      "stem": "Find the next term in the letter series: A, C, F, H, K, ?",
+      "explanation": "The pattern: letters advance alternately by 2 and 3. So the next term is M.",
+      "options": [
+        {
+          "label": "O",
+          "is_correct": false
+        },
+        {
+          "label": "L",
+          "is_correct": false
+        },
+        {
+          "label": "M",
+          "is_correct": true
+        },
+        {
+          "label": "N",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Letter Series",
+      "kind": "standard",
+      "difficulty": "medium",
+      "answer_type": "single",
+      "stem": "Find the next term in the letter series: I, J, L, O, S, ?",
+      "explanation": "The pattern: the gap grows by one each time (+1, +2, +3, …). So the next term is X.",
+      "options": [
+        {
+          "label": "X",
+          "is_correct": true
+        },
+        {
+          "label": "Z",
+          "is_correct": false
+        },
+        {
+          "label": "Y",
+          "is_correct": false
+        },
+        {
+          "label": "W",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Letter Series",
+      "kind": "standard",
+      "difficulty": "medium",
+      "answer_type": "single",
+      "stem": "Find the next term in the letter series: G, H, J, M, Q, ?",
+      "explanation": "The pattern: the gap grows by one each time (+1, +2, +3, …). So the next term is V.",
+      "options": [
+        {
+          "label": "V",
+          "is_correct": true
+        },
+        {
+          "label": "U",
+          "is_correct": false
+        },
+        {
+          "label": "W",
+          "is_correct": false
+        },
+        {
+          "label": "X",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Letter Series",
+      "kind": "standard",
+      "difficulty": "medium",
+      "answer_type": "single",
+      "stem": "Find the next term in the letter series: DE, FG, HI, JK, ?",
+      "explanation": "The pattern: each pair moves 2 forward. So the next term is LM.",
+      "options": [
+        {
+          "label": "LL",
+          "is_correct": false
+        },
+        {
+          "label": "LO",
+          "is_correct": false
+        },
+        {
+          "label": "LN",
+          "is_correct": false
+        },
+        {
+          "label": "LM",
+          "is_correct": true
+        }
+      ]
+    },
+    {
+      "chapter": "Letter Series",
+      "kind": "standard",
+      "difficulty": "medium",
+      "answer_type": "single",
+      "stem": "Find the next term in the letter series: B, D, G, I, L, ?",
+      "explanation": "The pattern: letters advance alternately by 2 and 3. So the next term is N.",
+      "options": [
+        {
+          "label": "M",
+          "is_correct": false
+        },
+        {
+          "label": "P",
+          "is_correct": false
+        },
+        {
+          "label": "N",
+          "is_correct": true
+        },
+        {
+          "label": "O",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Letter Series",
+      "kind": "standard",
+      "difficulty": "medium",
+      "answer_type": "single",
+      "stem": "Find the next term in the letter series: AB, DE, GH, JK, ?",
+      "explanation": "The pattern: each pair moves 3 forward. So the next term is MN.",
+      "options": [
+        {
+          "label": "MO",
+          "is_correct": false
+        },
+        {
+          "label": "MM",
+          "is_correct": false
+        },
+        {
+          "label": "MN",
+          "is_correct": true
+        },
+        {
+          "label": "MP",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Letter Series",
+      "kind": "standard",
+      "difficulty": "medium",
+      "answer_type": "single",
+      "stem": "Find the next term in the letter series: E, G, J, L, O, ?",
+      "explanation": "The pattern: letters advance alternately by 2 and 3. So the next term is Q.",
+      "options": [
+        {
+          "label": "P",
+          "is_correct": false
+        },
+        {
+          "label": "S",
+          "is_correct": false
+        },
+        {
+          "label": "Q",
+          "is_correct": true
+        },
+        {
+          "label": "R",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Letter Series",
+      "kind": "standard",
+      "difficulty": "medium",
+      "answer_type": "single",
+      "stem": "Find the next term in the letter series: I, K, N, P, S, ?",
+      "explanation": "The pattern: letters advance alternately by 2 and 3. So the next term is U.",
+      "options": [
+        {
+          "label": "V",
+          "is_correct": false
+        },
+        {
+          "label": "U",
+          "is_correct": true
+        },
+        {
+          "label": "W",
+          "is_correct": false
+        },
+        {
+          "label": "T",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Letter Series",
+      "kind": "standard",
+      "difficulty": "medium",
+      "answer_type": "single",
+      "stem": "Find the next term in the letter series: CD, FG, IJ, LM, ?",
+      "explanation": "The pattern: each pair moves 3 forward. So the next term is OP.",
+      "options": [
+        {
+          "label": "OO",
+          "is_correct": false
+        },
+        {
+          "label": "OR",
+          "is_correct": false
+        },
+        {
+          "label": "OQ",
+          "is_correct": false
+        },
+        {
+          "label": "OP",
+          "is_correct": true
+        }
+      ]
+    },
+    {
+      "chapter": "Letter Series",
+      "kind": "standard",
+      "difficulty": "medium",
+      "answer_type": "single",
+      "stem": "Find the next term in the letter series: H, J, M, O, R, ?",
+      "explanation": "The pattern: letters advance alternately by 2 and 3. So the next term is T.",
+      "options": [
+        {
+          "label": "S",
+          "is_correct": false
+        },
+        {
+          "label": "V",
+          "is_correct": false
+        },
+        {
+          "label": "T",
+          "is_correct": true
+        },
+        {
+          "label": "U",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Letter Series",
+      "kind": "standard",
+      "difficulty": "medium",
+      "answer_type": "single",
+      "stem": "Find the next term in the letter series: C, E, H, J, M, ?",
+      "explanation": "The pattern: letters advance alternately by 2 and 3. So the next term is O.",
+      "options": [
+        {
+          "label": "N",
+          "is_correct": false
+        },
+        {
+          "label": "Q",
+          "is_correct": false
+        },
+        {
+          "label": "O",
+          "is_correct": true
+        },
+        {
+          "label": "P",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Letter Series",
+      "kind": "standard",
+      "difficulty": "medium",
+      "answer_type": "single",
+      "stem": "Find the next term in the letter series: G, I, L, N, Q, ?",
+      "explanation": "The pattern: letters advance alternately by 2 and 3. So the next term is S.",
+      "options": [
+        {
+          "label": "S",
+          "is_correct": true
+        },
+        {
+          "label": "U",
+          "is_correct": false
+        },
+        {
+          "label": "T",
+          "is_correct": false
+        },
+        {
+          "label": "R",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Letter Series",
+      "kind": "standard",
+      "difficulty": "medium",
+      "answer_type": "single",
+      "stem": "Find the next term in the letter series: FG, HI, JK, LM, ?",
+      "explanation": "The pattern: consecutive letters taken two at a time. So the next term is NO.",
+      "options": [
+        {
+          "label": "NN",
+          "is_correct": false
+        },
+        {
+          "label": "NO",
+          "is_correct": true
+        },
+        {
+          "label": "NQ",
+          "is_correct": false
+        },
+        {
+          "label": "NP",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Letter Series",
+      "kind": "standard",
+      "difficulty": "medium",
+      "answer_type": "single",
+      "stem": "Find the next term in the letter series: OP, QR, ST, UV, ?",
+      "explanation": "The pattern: consecutive letters taken two at a time. So the next term is WX.",
+      "options": [
+        {
+          "label": "WY",
+          "is_correct": false
+        },
+        {
+          "label": "WW",
+          "is_correct": false
+        },
+        {
+          "label": "WX",
+          "is_correct": true
+        },
+        {
+          "label": "WZ",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Letter Series",
+      "kind": "standard",
+      "difficulty": "medium",
+      "answer_type": "single",
+      "stem": "Find the next term in the letter series: A, B, D, G, K, ?",
+      "explanation": "The pattern: the gap grows by one each time (+1, +2, +3, …). So the next term is P.",
+      "options": [
+        {
+          "label": "O",
+          "is_correct": false
+        },
+        {
+          "label": "Q",
+          "is_correct": false
+        },
+        {
+          "label": "P",
+          "is_correct": true
+        },
+        {
+          "label": "R",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Letter Series",
+      "kind": "standard",
+      "difficulty": "medium",
+      "answer_type": "single",
+      "stem": "Find the next term in the letter series: CD, EF, GH, IJ, ?",
+      "explanation": "The pattern: consecutive letters taken two at a time. So the next term is KL.",
+      "options": [
+        {
+          "label": "KM",
+          "is_correct": false
+        },
+        {
+          "label": "KL",
+          "is_correct": true
+        },
+        {
+          "label": "KN",
+          "is_correct": false
+        },
+        {
+          "label": "KK",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Letter Series",
+      "kind": "standard",
+      "difficulty": "medium",
+      "answer_type": "single",
+      "stem": "Find the next term in the letter series: FG, IJ, LM, OP, ?",
+      "explanation": "The pattern: each pair moves 3 forward. So the next term is RS.",
+      "options": [
+        {
+          "label": "RT",
+          "is_correct": false
+        },
+        {
+          "label": "RU",
+          "is_correct": false
+        },
+        {
+          "label": "RS",
+          "is_correct": true
+        },
+        {
+          "label": "RR",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Letter Series",
+      "kind": "standard",
+      "difficulty": "medium",
+      "answer_type": "single",
+      "stem": "Find the next term in the letter series: BC, FG, JK, NO, ?",
+      "explanation": "The pattern: each pair moves 4 forward. So the next term is RS.",
+      "options": [
+        {
+          "label": "RU",
+          "is_correct": false
+        },
+        {
+          "label": "RT",
+          "is_correct": false
+        },
+        {
+          "label": "RS",
+          "is_correct": true
+        },
+        {
+          "label": "RR",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Letter Series",
+      "kind": "standard",
+      "difficulty": "medium",
+      "answer_type": "single",
+      "stem": "Find the next term in the letter series: KL, MN, OP, QR, ?",
+      "explanation": "The pattern: consecutive letters taken two at a time. So the next term is ST.",
+      "options": [
+        {
+          "label": "ST",
+          "is_correct": true
+        },
+        {
+          "label": "SV",
+          "is_correct": false
+        },
+        {
+          "label": "SU",
+          "is_correct": false
+        },
+        {
+          "label": "SS",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Letter Series",
+      "kind": "standard",
+      "difficulty": "medium",
+      "answer_type": "single",
+      "stem": "Find the next term in the letter series: JK, LM, NO, PQ, ?",
+      "explanation": "The pattern: consecutive letters taken two at a time. So the next term is RS.",
+      "options": [
+        {
+          "label": "RU",
+          "is_correct": false
+        },
+        {
+          "label": "RT",
+          "is_correct": false
+        },
+        {
+          "label": "RR",
+          "is_correct": false
+        },
+        {
+          "label": "RS",
+          "is_correct": true
+        }
+      ]
+    },
+    {
+      "chapter": "Letter Series",
+      "kind": "standard",
+      "difficulty": "medium",
+      "answer_type": "single",
+      "stem": "Find the next term in the letter series: D, F, I, K, N, ?",
+      "explanation": "The pattern: letters advance alternately by 2 and 3. So the next term is P.",
+      "options": [
+        {
+          "label": "Q",
+          "is_correct": false
+        },
+        {
+          "label": "O",
+          "is_correct": false
+        },
+        {
+          "label": "P",
+          "is_correct": true
+        },
+        {
+          "label": "R",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Letter Series",
+      "kind": "standard",
+      "difficulty": "medium",
+      "answer_type": "single",
+      "stem": "Find the next term in the letter series: C, D, F, I, M, ?",
+      "explanation": "The pattern: the gap grows by one each time (+1, +2, +3, …). So the next term is R.",
+      "options": [
+        {
+          "label": "Q",
+          "is_correct": false
+        },
+        {
+          "label": "S",
+          "is_correct": false
+        },
+        {
+          "label": "T",
+          "is_correct": false
+        },
+        {
+          "label": "R",
+          "is_correct": true
+        }
+      ]
+    },
+    {
+      "chapter": "Letter Series",
+      "kind": "standard",
+      "difficulty": "medium",
+      "answer_type": "single",
+      "stem": "Find the next term in the letter series: B, C, E, H, L, ?",
+      "explanation": "The pattern: the gap grows by one each time (+1, +2, +3, …). So the next term is Q.",
+      "options": [
+        {
+          "label": "S",
+          "is_correct": false
+        },
+        {
+          "label": "Q",
+          "is_correct": true
+        },
+        {
+          "label": "P",
+          "is_correct": false
+        },
+        {
+          "label": "R",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Letter Series",
+      "kind": "standard",
+      "difficulty": "medium",
+      "answer_type": "single",
+      "stem": "Find the next term in the letter series: K, L, N, Q, U, ?",
+      "explanation": "The pattern: the gap grows by one each time (+1, +2, +3, …). So the next term is Z.",
+      "options": [
+        {
+          "label": "X",
+          "is_correct": false
+        },
+        {
+          "label": "Y",
+          "is_correct": false
+        },
+        {
+          "label": "W",
+          "is_correct": false
+        },
+        {
+          "label": "Z",
+          "is_correct": true
+        }
+      ]
+    },
+    {
+      "chapter": "Letter Series",
+      "kind": "standard",
+      "difficulty": "medium",
+      "answer_type": "single",
+      "stem": "Find the next term in the letter series: EF, HI, KL, NO, ?",
+      "explanation": "The pattern: each pair moves 3 forward. So the next term is QR.",
+      "options": [
+        {
+          "label": "QT",
+          "is_correct": false
+        },
+        {
+          "label": "QQ",
+          "is_correct": false
+        },
+        {
+          "label": "QR",
+          "is_correct": true
+        },
+        {
+          "label": "QS",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Letter Series",
+      "kind": "standard",
+      "difficulty": "medium",
+      "answer_type": "single",
+      "stem": "Find the next term in the letter series: F, G, I, L, P, ?",
+      "explanation": "The pattern: the gap grows by one each time (+1, +2, +3, …). So the next term is U.",
+      "options": [
+        {
+          "label": "V",
+          "is_correct": false
+        },
+        {
+          "label": "T",
+          "is_correct": false
+        },
+        {
+          "label": "U",
+          "is_correct": true
+        },
+        {
+          "label": "W",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Letter Series",
+      "kind": "standard",
+      "difficulty": "medium",
+      "answer_type": "single",
+      "stem": "Find the next term in the letter series: DE, HI, LM, PQ, ?",
+      "explanation": "The pattern: each pair moves 4 forward. So the next term is TU.",
+      "options": [
+        {
+          "label": "TW",
+          "is_correct": false
+        },
+        {
+          "label": "TU",
+          "is_correct": true
+        },
+        {
+          "label": "TT",
+          "is_correct": false
+        },
+        {
+          "label": "TV",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Letter Series",
+      "kind": "standard",
+      "difficulty": "medium",
+      "answer_type": "single",
+      "stem": "Find the next term in the letter series: QR, ST, UV, WX, ?",
+      "explanation": "The pattern: consecutive letters taken two at a time. So the next term is YZ.",
+      "options": [
+        {
+          "label": "YW",
+          "is_correct": false
+        },
+        {
+          "label": "YY",
+          "is_correct": false
+        },
+        {
+          "label": "YZ",
+          "is_correct": true
+        },
+        {
+          "label": "YX",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Letter Series",
+      "kind": "standard",
+      "difficulty": "medium",
+      "answer_type": "single",
+      "stem": "Find the next term in the letter series: F, H, K, M, P, ?",
+      "explanation": "The pattern: letters advance alternately by 2 and 3. So the next term is R.",
+      "options": [
+        {
+          "label": "T",
+          "is_correct": false
+        },
+        {
+          "label": "S",
+          "is_correct": false
+        },
+        {
+          "label": "R",
+          "is_correct": true
+        },
+        {
+          "label": "Q",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Letter Series",
+      "kind": "standard",
+      "difficulty": "medium",
+      "answer_type": "single",
+      "stem": "Find the next term in the letter series: PQ, RS, TU, VW, ?",
+      "explanation": "The pattern: consecutive letters taken two at a time. So the next term is XY.",
+      "options": [
+        {
+          "label": "XZ",
+          "is_correct": false
+        },
+        {
+          "label": "XY",
+          "is_correct": true
+        },
+        {
+          "label": "XX",
+          "is_correct": false
+        },
+        {
+          "label": "XW",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Letter Series",
+      "kind": "standard",
+      "difficulty": "medium",
+      "answer_type": "single",
+      "stem": "Find the next term in the letter series: LM, NO, PQ, RS, ?",
+      "explanation": "The pattern: consecutive letters taken two at a time. So the next term is TU.",
+      "options": [
+        {
+          "label": "TU",
+          "is_correct": true
+        },
+        {
+          "label": "TW",
+          "is_correct": false
+        },
+        {
+          "label": "TT",
+          "is_correct": false
+        },
+        {
+          "label": "TV",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Letter Series",
+      "kind": "standard",
+      "difficulty": "medium",
+      "answer_type": "single",
+      "stem": "Find the next term in the letter series: H, I, K, N, R, ?",
+      "explanation": "The pattern: the gap grows by one each time (+1, +2, +3, …). So the next term is W.",
+      "options": [
+        {
+          "label": "V",
+          "is_correct": false
+        },
+        {
+          "label": "Y",
+          "is_correct": false
+        },
+        {
+          "label": "X",
+          "is_correct": false
+        },
+        {
+          "label": "W",
+          "is_correct": true
+        }
+      ]
+    },
+    {
+      "chapter": "Letter Series",
+      "kind": "standard",
+      "difficulty": "medium",
+      "answer_type": "single",
+      "stem": "Find the next term in the letter series: BC, EF, HI, KL, ?",
+      "explanation": "The pattern: each pair moves 3 forward. So the next term is NO.",
+      "options": [
+        {
+          "label": "NN",
+          "is_correct": false
+        },
+        {
+          "label": "NP",
+          "is_correct": false
+        },
+        {
+          "label": "NQ",
+          "is_correct": false
+        },
+        {
+          "label": "NO",
+          "is_correct": true
+        }
+      ]
+    },
+    {
+      "chapter": "Letter Series",
+      "kind": "standard",
+      "difficulty": "medium",
+      "answer_type": "single",
+      "stem": "Find the next term in the letter series: J, K, M, P, T, ?",
+      "explanation": "The pattern: the gap grows by one each time (+1, +2, +3, …). So the next term is Y.",
+      "options": [
+        {
+          "label": "W",
+          "is_correct": false
+        },
+        {
+          "label": "Y",
+          "is_correct": true
+        },
+        {
+          "label": "Z",
+          "is_correct": false
+        },
+        {
+          "label": "X",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Letter Series",
+      "kind": "standard",
+      "difficulty": "medium",
+      "answer_type": "single",
+      "stem": "Find the next term in the letter series: IJ, KL, MN, OP, ?",
+      "explanation": "The pattern: consecutive letters taken two at a time. So the next term is QR.",
+      "options": [
+        {
+          "label": "QR",
+          "is_correct": true
+        },
+        {
+          "label": "QT",
+          "is_correct": false
+        },
+        {
+          "label": "QQ",
+          "is_correct": false
+        },
+        {
+          "label": "QS",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Letter Series",
+      "kind": "standard",
+      "difficulty": "medium",
+      "answer_type": "single",
+      "stem": "Find the next term in the letter series: GH, IJ, KL, MN, ?",
+      "explanation": "The pattern: each pair moves 2 forward. So the next term is OP.",
+      "options": [
+        {
+          "label": "OP",
+          "is_correct": true
+        },
+        {
+          "label": "OR",
+          "is_correct": false
+        },
+        {
+          "label": "OO",
+          "is_correct": false
+        },
+        {
+          "label": "OQ",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Letter Series",
+      "kind": "standard",
+      "difficulty": "medium",
+      "answer_type": "single",
+      "stem": "Find the next term in the letter series: CD, GH, KL, OP, ?",
+      "explanation": "The pattern: each pair moves 4 forward. So the next term is ST.",
+      "options": [
+        {
+          "label": "SS",
+          "is_correct": false
+        },
+        {
+          "label": "ST",
+          "is_correct": true
+        },
+        {
+          "label": "SU",
+          "is_correct": false
+        },
+        {
+          "label": "SV",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Letter Series",
+      "kind": "standard",
+      "difficulty": "medium",
+      "answer_type": "single",
+      "stem": "Find the next term in the letter series: HI, JK, LM, NO, ?",
+      "explanation": "The pattern: consecutive letters taken two at a time. So the next term is PQ.",
+      "options": [
+        {
+          "label": "PQ",
+          "is_correct": true
+        },
+        {
+          "label": "PP",
+          "is_correct": false
+        },
+        {
+          "label": "PS",
+          "is_correct": false
+        },
+        {
+          "label": "PR",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Letter Series",
+      "kind": "standard",
+      "difficulty": "medium",
+      "answer_type": "single",
+      "stem": "Find the next term in the letter series: E, F, H, K, O, ?",
+      "explanation": "The pattern: the gap grows by one each time (+1, +2, +3, …). So the next term is T.",
+      "options": [
+        {
+          "label": "V",
+          "is_correct": false
+        },
+        {
+          "label": "S",
+          "is_correct": false
+        },
+        {
+          "label": "U",
+          "is_correct": false
+        },
+        {
+          "label": "T",
+          "is_correct": true
+        }
+      ]
+    },
+    {
+      "chapter": "Letter Series",
+      "kind": "standard",
+      "difficulty": "medium",
+      "answer_type": "single",
+      "stem": "Find the next term in the letter series: AB, CD, EF, GH, ?",
+      "explanation": "The pattern: each pair moves 2 forward. So the next term is IJ.",
+      "options": [
+        {
+          "label": "IK",
+          "is_correct": false
+        },
+        {
+          "label": "IJ",
+          "is_correct": true
+        },
+        {
+          "label": "II",
+          "is_correct": false
+        },
+        {
+          "label": "IL",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Letter Series",
+      "kind": "standard",
+      "difficulty": "medium",
+      "answer_type": "single",
+      "stem": "Find the next term in the letter series: NO, PQ, RS, TU, ?",
+      "explanation": "The pattern: consecutive letters taken two at a time. So the next term is VW.",
+      "options": [
+        {
+          "label": "VY",
+          "is_correct": false
+        },
+        {
+          "label": "VV",
+          "is_correct": false
+        },
+        {
+          "label": "VX",
+          "is_correct": false
+        },
+        {
+          "label": "VW",
+          "is_correct": true
+        }
+      ]
+    },
+    {
+      "chapter": "Letter Series",
+      "kind": "standard",
+      "difficulty": "medium",
+      "answer_type": "single",
+      "stem": "Find the next term in the letter series: GH, KL, OP, ST, ?",
+      "explanation": "The pattern: each pair moves 4 forward. So the next term is WX.",
+      "options": [
+        {
+          "label": "WY",
+          "is_correct": false
+        },
+        {
+          "label": "WX",
+          "is_correct": true
+        },
+        {
+          "label": "WZ",
+          "is_correct": false
+        },
+        {
+          "label": "WW",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Letter Series",
+      "kind": "standard",
+      "difficulty": "medium",
+      "answer_type": "single",
+      "stem": "Find the next term in the letter series: GH, JK, MN, PQ, ?",
+      "explanation": "The pattern: each pair moves 3 forward. So the next term is ST.",
+      "options": [
+        {
+          "label": "SU",
+          "is_correct": false
+        },
+        {
+          "label": "SV",
+          "is_correct": false
+        },
+        {
+          "label": "SS",
+          "is_correct": false
+        },
+        {
+          "label": "ST",
+          "is_correct": true
+        }
+      ]
+    },
+    {
+      "chapter": "Letter Series",
+      "kind": "standard",
+      "difficulty": "hard",
+      "answer_type": "single",
+      "stem": "Find the next term in the letter series: HW, IU, JS, KQ, ?",
+      "explanation": "The pattern: first letter +1, second letter −2 per pair. So the next term is LO.",
+      "options": [
+        {
+          "label": "LO",
+          "is_correct": true
+        },
+        {
+          "label": "LN",
+          "is_correct": false
+        },
+        {
+          "label": "LP",
+          "is_correct": false
+        },
+        {
+          "label": "LQ",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Letter Series",
+      "kind": "standard",
+      "difficulty": "hard",
+      "answer_type": "single",
+      "stem": "Find the next term in the letter series: CX, DW, EV, FU, ?",
+      "explanation": "The pattern: the two letters are mirror images — their positions add up to 27. So the next term is GT.",
+      "options": [
+        {
+          "label": "GV",
+          "is_correct": false
+        },
+        {
+          "label": "GU",
+          "is_correct": false
+        },
+        {
+          "label": "GS",
+          "is_correct": false
+        },
+        {
+          "label": "GT",
+          "is_correct": true
+        }
+      ]
+    },
+    {
+      "chapter": "Letter Series",
+      "kind": "standard",
+      "difficulty": "hard",
+      "answer_type": "single",
+      "stem": "Find the next term in the letter series: AZ, BY, CX, DW, ?",
+      "explanation": "The pattern: the two letters are mirror images — their positions add up to 27. So the next term is EV.",
+      "options": [
+        {
+          "label": "EV",
+          "is_correct": true
+        },
+        {
+          "label": "EW",
+          "is_correct": false
+        },
+        {
+          "label": "EX",
+          "is_correct": false
+        },
+        {
+          "label": "EU",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Letter Series",
+      "kind": "standard",
+      "difficulty": "hard",
+      "answer_type": "single",
+      "stem": "Find the next term in the letter series: MS, PR, SQ, VP, ?",
+      "explanation": "The pattern: first letter +3, second letter −1 per pair. So the next term is YO.",
+      "options": [
+        {
+          "label": "YN",
+          "is_correct": false
+        },
+        {
+          "label": "YO",
+          "is_correct": true
+        },
+        {
+          "label": "YQ",
+          "is_correct": false
+        },
+        {
+          "label": "YP",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Letter Series",
+      "kind": "standard",
+      "difficulty": "hard",
+      "answer_type": "single",
+      "stem": "Find the next term in the letter series: MN, NM, OL, PK, ?",
+      "explanation": "The pattern: the two letters are mirror images — their positions add up to 27. So the next term is QJ.",
+      "options": [
+        {
+          "label": "QL",
+          "is_correct": false
+        },
+        {
+          "label": "QK",
+          "is_correct": false
+        },
+        {
+          "label": "QI",
+          "is_correct": false
+        },
+        {
+          "label": "QJ",
+          "is_correct": true
+        }
+      ]
+    },
+    {
+      "chapter": "Letter Series",
+      "kind": "standard",
+      "difficulty": "hard",
+      "answer_type": "single",
+      "stem": "Find the next term in the letter series: DEF, GHI, JKL, MNO, ?",
+      "explanation": "The pattern: consecutive letters in groups of three. So the next term is PQR.",
+      "options": [
+        {
+          "label": "PQR",
+          "is_correct": true
+        },
+        {
+          "label": "PQQ",
+          "is_correct": false
+        },
+        {
+          "label": "PQT",
+          "is_correct": false
+        },
+        {
+          "label": "PQS",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Letter Series",
+      "kind": "standard",
+      "difficulty": "hard",
+      "answer_type": "single",
+      "stem": "Find the next term in the letter series: BR, CQ, DP, EO, ?",
+      "explanation": "The pattern: first letter +1, second letter −1 per pair. So the next term is FN.",
+      "options": [
+        {
+          "label": "FO",
+          "is_correct": false
+        },
+        {
+          "label": "FN",
+          "is_correct": true
+        },
+        {
+          "label": "FM",
+          "is_correct": false
+        },
+        {
+          "label": "FP",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Letter Series",
+      "kind": "standard",
+      "difficulty": "hard",
+      "answer_type": "single",
+      "stem": "Find the next term in the letter series: KLM, NOP, QRS, TUV, ?",
+      "explanation": "The pattern: consecutive letters in groups of three. So the next term is WXY.",
+      "options": [
+        {
+          "label": "WXY",
+          "is_correct": true
+        },
+        {
+          "label": "WXX",
+          "is_correct": false
+        },
+        {
+          "label": "WXZ",
+          "is_correct": false
+        },
+        {
+          "label": "WXW",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Letter Series",
+      "kind": "standard",
+      "difficulty": "hard",
+      "answer_type": "single",
+      "stem": "Find the next term in the letter series: IJK, LMN, OPQ, RST, ?",
+      "explanation": "The pattern: consecutive letters in groups of three. So the next term is UVW.",
+      "options": [
+        {
+          "label": "UVW",
+          "is_correct": true
+        },
+        {
+          "label": "UVV",
+          "is_correct": false
+        },
+        {
+          "label": "UVY",
+          "is_correct": false
+        },
+        {
+          "label": "UVX",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Letter Series",
+      "kind": "standard",
+      "difficulty": "hard",
+      "answer_type": "single",
+      "stem": "Find the next term in the letter series: C, E, G, K, M, ?",
+      "explanation": "The pattern: letters standing at prime positions in the alphabet. So the next term is Q.",
+      "options": [
+        {
+          "label": "P",
+          "is_correct": false
+        },
+        {
+          "label": "S",
+          "is_correct": false
+        },
+        {
+          "label": "R",
+          "is_correct": false
+        },
+        {
+          "label": "Q",
+          "is_correct": true
+        }
+      ]
+    },
+    {
+      "chapter": "Letter Series",
+      "kind": "standard",
+      "difficulty": "hard",
+      "answer_type": "single",
+      "stem": "Find the next term in the letter series: EV, FU, GT, HS, ?",
+      "explanation": "The pattern: the two letters are mirror images — their positions add up to 27. So the next term is IR.",
+      "options": [
+        {
+          "label": "IT",
+          "is_correct": false
+        },
+        {
+          "label": "IS",
+          "is_correct": false
+        },
+        {
+          "label": "IR",
+          "is_correct": true
+        },
+        {
+          "label": "IQ",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Letter Series",
+      "kind": "standard",
+      "difficulty": "hard",
+      "answer_type": "single",
+      "stem": "Find the next term in the letter series: AR, DO, GL, JI, ?",
+      "explanation": "The pattern: first letter +3, second letter −3 per pair. So the next term is MF.",
+      "options": [
+        {
+          "label": "MG",
+          "is_correct": false
+        },
+        {
+          "label": "ME",
+          "is_correct": false
+        },
+        {
+          "label": "MF",
+          "is_correct": true
+        },
+        {
+          "label": "MH",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Letter Series",
+      "kind": "standard",
+      "difficulty": "hard",
+      "answer_type": "single",
+      "stem": "Find the next term in the letter series: BY, CX, DW, EV, ?",
+      "explanation": "The pattern: the two letters are mirror images — their positions add up to 27. So the next term is FU.",
+      "options": [
+        {
+          "label": "FU",
+          "is_correct": true
+        },
+        {
+          "label": "FV",
+          "is_correct": false
+        },
+        {
+          "label": "FT",
+          "is_correct": false
+        },
+        {
+          "label": "FW",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Letter Series",
+      "kind": "standard",
+      "difficulty": "hard",
+      "answer_type": "single",
+      "stem": "Find the next term in the letter series: B, C, E, G, K, ?",
+      "explanation": "The pattern: letters standing at prime positions in the alphabet. So the next term is M.",
+      "options": [
+        {
+          "label": "N",
+          "is_correct": false
+        },
+        {
+          "label": "L",
+          "is_correct": false
+        },
+        {
+          "label": "O",
+          "is_correct": false
+        },
+        {
+          "label": "M",
+          "is_correct": true
+        }
+      ]
+    },
+    {
+      "chapter": "Letter Series",
+      "kind": "standard",
+      "difficulty": "hard",
+      "answer_type": "single",
+      "stem": "Find the next term in the letter series: G, K, M, Q, S, ?",
+      "explanation": "The pattern: letters standing at prime positions in the alphabet. So the next term is W.",
+      "options": [
+        {
+          "label": "Y",
+          "is_correct": false
+        },
+        {
+          "label": "X",
+          "is_correct": false
+        },
+        {
+          "label": "V",
+          "is_correct": false
+        },
+        {
+          "label": "W",
+          "is_correct": true
+        }
+      ]
+    },
+    {
+      "chapter": "Letter Series",
+      "kind": "standard",
+      "difficulty": "hard",
+      "answer_type": "single",
+      "stem": "Find the next term in the letter series: JW, MT, PQ, SN, ?",
+      "explanation": "The pattern: first letter +3, second letter −3 per pair. So the next term is VK.",
+      "options": [
+        {
+          "label": "VM",
+          "is_correct": false
+        },
+        {
+          "label": "VJ",
+          "is_correct": false
+        },
+        {
+          "label": "VL",
+          "is_correct": false
+        },
+        {
+          "label": "VK",
+          "is_correct": true
+        }
+      ]
+    },
+    {
+      "chapter": "Letter Series",
+      "kind": "standard",
+      "difficulty": "hard",
+      "answer_type": "single",
+      "stem": "Find the next term in the letter series: JQ, KP, LO, MN, ?",
+      "explanation": "The pattern: the two letters are mirror images — their positions add up to 27. So the next term is NM.",
+      "options": [
+        {
+          "label": "NL",
+          "is_correct": false
+        },
+        {
+          "label": "NO",
+          "is_correct": false
+        },
+        {
+          "label": "NN",
+          "is_correct": false
+        },
+        {
+          "label": "NM",
+          "is_correct": true
+        }
+      ]
+    },
+    {
+      "chapter": "Letter Series",
+      "kind": "standard",
+      "difficulty": "hard",
+      "answer_type": "single",
+      "stem": "Find the next term in the letter series: LMN, OPQ, RST, UVW, ?",
+      "explanation": "The pattern: consecutive letters in groups of three. So the next term is XYZ.",
+      "options": [
+        {
+          "label": "XYW",
+          "is_correct": false
+        },
+        {
+          "label": "XYY",
+          "is_correct": false
+        },
+        {
+          "label": "XYX",
+          "is_correct": false
+        },
+        {
+          "label": "XYZ",
+          "is_correct": true
+        }
+      ]
+    },
+    {
+      "chapter": "Letter Series",
+      "kind": "standard",
+      "difficulty": "hard",
+      "answer_type": "single",
+      "stem": "Find the next term in the letter series: AR, CQ, EP, GO, ?",
+      "explanation": "The pattern: first letter +2, second letter −1 per pair. So the next term is IN.",
+      "options": [
+        {
+          "label": "IM",
+          "is_correct": false
+        },
+        {
+          "label": "IP",
+          "is_correct": false
+        },
+        {
+          "label": "IO",
+          "is_correct": false
+        },
+        {
+          "label": "IN",
+          "is_correct": true
+        }
+      ]
+    },
+    {
+      "chapter": "Letter Series",
+      "kind": "standard",
+      "difficulty": "hard",
+      "answer_type": "single",
+      "stem": "Find the next term in the letter series: ES, GP, IM, KJ, ?",
+      "explanation": "The pattern: first letter +2, second letter −3 per pair. So the next term is MG.",
+      "options": [
+        {
+          "label": "MH",
+          "is_correct": false
+        },
+        {
+          "label": "MG",
+          "is_correct": true
+        },
+        {
+          "label": "MI",
+          "is_correct": false
+        },
+        {
+          "label": "MF",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Letter Series",
+      "kind": "standard",
+      "difficulty": "hard",
+      "answer_type": "single",
+      "stem": "Find the next term in the letter series: E, G, K, M, Q, ?",
+      "explanation": "The pattern: letters standing at prime positions in the alphabet. So the next term is S.",
+      "options": [
+        {
+          "label": "S",
+          "is_correct": true
+        },
+        {
+          "label": "R",
+          "is_correct": false
+        },
+        {
+          "label": "U",
+          "is_correct": false
+        },
+        {
+          "label": "T",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Letter Series",
+      "kind": "standard",
+      "difficulty": "hard",
+      "answer_type": "single",
+      "stem": "Find the next term in the letter series: FGH, IJK, LMN, OPQ, ?",
+      "explanation": "The pattern: consecutive letters in groups of three. So the next term is RST.",
+      "options": [
+        {
+          "label": "RSS",
+          "is_correct": false
+        },
+        {
+          "label": "RSV",
+          "is_correct": false
+        },
+        {
+          "label": "RST",
+          "is_correct": true
+        },
+        {
+          "label": "RSU",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Letter Series",
+      "kind": "standard",
+      "difficulty": "hard",
+      "answer_type": "single",
+      "stem": "Find the next term in the letter series: GY, JW, MU, PS, ?",
+      "explanation": "The pattern: first letter +3, second letter −2 per pair. So the next term is SQ.",
+      "options": [
+        {
+          "label": "SR",
+          "is_correct": false
+        },
+        {
+          "label": "SQ",
+          "is_correct": true
+        },
+        {
+          "label": "SP",
+          "is_correct": false
+        },
+        {
+          "label": "SS",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Letter Series",
+      "kind": "standard",
+      "difficulty": "hard",
+      "answer_type": "single",
+      "stem": "Find the next term in the letter series: JN, KK, LH, ME, ?",
+      "explanation": "The pattern: first letter +1, second letter −3 per pair. So the next term is NB.",
+      "options": [
+        {
+          "label": "NA",
+          "is_correct": false
+        },
+        {
+          "label": "NB",
+          "is_correct": true
+        },
+        {
+          "label": "ND",
+          "is_correct": false
+        },
+        {
+          "label": "NC",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Letter Series",
+      "kind": "standard",
+      "difficulty": "hard",
+      "answer_type": "single",
+      "stem": "Find the next term in the letter series: FU, GT, HS, IR, ?",
+      "explanation": "The pattern: the two letters are mirror images — their positions add up to 27. So the next term is JQ.",
+      "options": [
+        {
+          "label": "JQ",
+          "is_correct": true
+        },
+        {
+          "label": "JS",
+          "is_correct": false
+        },
+        {
+          "label": "JP",
+          "is_correct": false
+        },
+        {
+          "label": "JR",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Letter Series",
+      "kind": "standard",
+      "difficulty": "hard",
+      "answer_type": "single",
+      "stem": "Find the next term in the letter series: HS, IR, JQ, KP, ?",
+      "explanation": "The pattern: the two letters are mirror images — their positions add up to 27. So the next term is LO.",
+      "options": [
+        {
+          "label": "LO",
+          "is_correct": true
+        },
+        {
+          "label": "LP",
+          "is_correct": false
+        },
+        {
+          "label": "LN",
+          "is_correct": false
+        },
+        {
+          "label": "LQ",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Letter Series",
+      "kind": "standard",
+      "difficulty": "hard",
+      "answer_type": "single",
+      "stem": "Find the next term in the letter series: CV, FT, IR, LP, ?",
+      "explanation": "The pattern: first letter +3, second letter −2 per pair. So the next term is ON.",
+      "options": [
+        {
+          "label": "OM",
+          "is_correct": false
+        },
+        {
+          "label": "OO",
+          "is_correct": false
+        },
+        {
+          "label": "ON",
+          "is_correct": true
+        },
+        {
+          "label": "OP",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Letter Series",
+      "kind": "standard",
+      "difficulty": "hard",
+      "answer_type": "single",
+      "stem": "Find the next term in the letter series: DW, EV, FU, GT, ?",
+      "explanation": "The pattern: the two letters are mirror images — their positions add up to 27. So the next term is HS.",
+      "options": [
+        {
+          "label": "HR",
+          "is_correct": false
+        },
+        {
+          "label": "HT",
+          "is_correct": false
+        },
+        {
+          "label": "HU",
+          "is_correct": false
+        },
+        {
+          "label": "HS",
+          "is_correct": true
+        }
+      ]
+    },
+    {
+      "chapter": "Letter Series",
+      "kind": "standard",
+      "difficulty": "hard",
+      "answer_type": "single",
+      "stem": "Find the next term in the letter series: CY, DV, ES, FP, ?",
+      "explanation": "The pattern: first letter +1, second letter −3 per pair. So the next term is GM.",
+      "options": [
+        {
+          "label": "GO",
+          "is_correct": false
+        },
+        {
+          "label": "GL",
+          "is_correct": false
+        },
+        {
+          "label": "GM",
+          "is_correct": true
+        },
+        {
+          "label": "GN",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Letter Series",
+      "kind": "standard",
+      "difficulty": "hard",
+      "answer_type": "single",
+      "stem": "Find the next term in the letter series: GHI, JKL, MNO, PQR, ?",
+      "explanation": "The pattern: consecutive letters in groups of three. So the next term is STU.",
+      "options": [
+        {
+          "label": "STV",
+          "is_correct": false
+        },
+        {
+          "label": "STU",
+          "is_correct": true
+        },
+        {
+          "label": "STT",
+          "is_correct": false
+        },
+        {
+          "label": "STW",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Letter Series",
+      "kind": "standard",
+      "difficulty": "hard",
+      "answer_type": "single",
+      "stem": "Find the next term in the letter series: IR, JQ, KP, LO, ?",
+      "explanation": "The pattern: the two letters are mirror images — their positions add up to 27. So the next term is MN.",
+      "options": [
+        {
+          "label": "MO",
+          "is_correct": false
+        },
+        {
+          "label": "MP",
+          "is_correct": false
+        },
+        {
+          "label": "MM",
+          "is_correct": false
+        },
+        {
+          "label": "MN",
+          "is_correct": true
+        }
+      ]
+    },
+    {
+      "chapter": "Letter Series",
+      "kind": "standard",
+      "difficulty": "hard",
+      "answer_type": "single",
+      "stem": "Find the next term in the letter series: GT, JS, MR, PQ, ?",
+      "explanation": "The pattern: first letter +3, second letter −1 per pair. So the next term is SP.",
+      "options": [
+        {
+          "label": "SQ",
+          "is_correct": false
+        },
+        {
+          "label": "SP",
+          "is_correct": true
+        },
+        {
+          "label": "SO",
+          "is_correct": false
+        },
+        {
+          "label": "SR",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Letter Series",
+      "kind": "standard",
+      "difficulty": "hard",
+      "answer_type": "single",
+      "stem": "Find the next term in the letter series: JKL, MNO, PQR, STU, ?",
+      "explanation": "The pattern: consecutive letters in groups of three. So the next term is VWX.",
+      "options": [
+        {
+          "label": "VWW",
+          "is_correct": false
+        },
+        {
+          "label": "VWY",
+          "is_correct": false
+        },
+        {
+          "label": "VWZ",
+          "is_correct": false
+        },
+        {
+          "label": "VWX",
+          "is_correct": true
+        }
+      ]
+    },
+    {
+      "chapter": "Letter Series",
+      "kind": "standard",
+      "difficulty": "hard",
+      "answer_type": "single",
+      "stem": "Find the next term in the letter series: KP, LO, MN, NM, ?",
+      "explanation": "The pattern: the two letters are mirror images — their positions add up to 27. So the next term is OL.",
+      "options": [
+        {
+          "label": "OL",
+          "is_correct": true
+        },
+        {
+          "label": "OM",
+          "is_correct": false
+        },
+        {
+          "label": "ON",
+          "is_correct": false
+        },
+        {
+          "label": "OK",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Letter Series",
+      "kind": "standard",
+      "difficulty": "hard",
+      "answer_type": "single",
+      "stem": "Find the next term in the letter series: IZ, LW, OT, RQ, ?",
+      "explanation": "The pattern: first letter +3, second letter −3 per pair. So the next term is UN.",
+      "options": [
+        {
+          "label": "UM",
+          "is_correct": false
+        },
+        {
+          "label": "UN",
+          "is_correct": true
+        },
+        {
+          "label": "UP",
+          "is_correct": false
+        },
+        {
+          "label": "UO",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Letter Series",
+      "kind": "standard",
+      "difficulty": "hard",
+      "answer_type": "single",
+      "stem": "Find the next term in the letter series: BCD, EFG, HIJ, KLM, ?",
+      "explanation": "The pattern: consecutive letters in groups of three. So the next term is NOP.",
+      "options": [
+        {
+          "label": "NOP",
+          "is_correct": true
+        },
+        {
+          "label": "NOQ",
+          "is_correct": false
+        },
+        {
+          "label": "NOR",
+          "is_correct": false
+        },
+        {
+          "label": "NOO",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Letter Series",
+      "kind": "standard",
+      "difficulty": "hard",
+      "answer_type": "single",
+      "stem": "Find the next term in the letter series: AN, CM, EL, GK, ?",
+      "explanation": "The pattern: first letter +2, second letter −1 per pair. So the next term is IJ.",
+      "options": [
+        {
+          "label": "IJ",
+          "is_correct": true
+        },
+        {
+          "label": "II",
+          "is_correct": false
+        },
+        {
+          "label": "IK",
+          "is_correct": false
+        },
+        {
+          "label": "IL",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Letter Series",
+      "kind": "standard",
+      "difficulty": "hard",
+      "answer_type": "single",
+      "stem": "Find the next term in the letter series: IO, KM, MK, OI, ?",
+      "explanation": "The pattern: first letter +2, second letter −2 per pair. So the next term is QG.",
+      "options": [
+        {
+          "label": "QI",
+          "is_correct": false
+        },
+        {
+          "label": "QG",
+          "is_correct": true
+        },
+        {
+          "label": "QH",
+          "is_correct": false
+        },
+        {
+          "label": "QF",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Letter Series",
+      "kind": "standard",
+      "difficulty": "hard",
+      "answer_type": "single",
+      "stem": "Find the next term in the letter series: BY, DW, FU, HS, ?",
+      "explanation": "The pattern: first letter +2, second letter −2 per pair. So the next term is JQ.",
+      "options": [
+        {
+          "label": "JQ",
+          "is_correct": true
+        },
+        {
+          "label": "JR",
+          "is_correct": false
+        },
+        {
+          "label": "JP",
+          "is_correct": false
+        },
+        {
+          "label": "JS",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Letter Series",
+      "kind": "standard",
+      "difficulty": "hard",
+      "answer_type": "single",
+      "stem": "Find the next term in the letter series: GP, IN, KL, MJ, ?",
+      "explanation": "The pattern: first letter +2, second letter −2 per pair. So the next term is OH.",
+      "options": [
+        {
+          "label": "OI",
+          "is_correct": false
+        },
+        {
+          "label": "OG",
+          "is_correct": false
+        },
+        {
+          "label": "OH",
+          "is_correct": true
+        },
+        {
+          "label": "OJ",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Letter Series",
+      "kind": "standard",
+      "difficulty": "hard",
+      "answer_type": "single",
+      "stem": "Find the next term in the letter series: ABC, DEF, GHI, JKL, ?",
+      "explanation": "The pattern: consecutive letters in groups of three. So the next term is MNO.",
+      "options": [
+        {
+          "label": "MNN",
+          "is_correct": false
+        },
+        {
+          "label": "MNP",
+          "is_correct": false
+        },
+        {
+          "label": "MNQ",
+          "is_correct": false
+        },
+        {
+          "label": "MNO",
+          "is_correct": true
+        }
+      ]
+    },
+    {
+      "chapter": "Letter Series",
+      "kind": "standard",
+      "difficulty": "hard",
+      "answer_type": "single",
+      "stem": "Find the next term in the letter series: IX, JW, KV, LU, ?",
+      "explanation": "The pattern: first letter +1, second letter −1 per pair. So the next term is MT.",
+      "options": [
+        {
+          "label": "MT",
+          "is_correct": true
+        },
+        {
+          "label": "MS",
+          "is_correct": false
+        },
+        {
+          "label": "MU",
+          "is_correct": false
+        },
+        {
+          "label": "MV",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Letter Series",
+      "kind": "standard",
+      "difficulty": "hard",
+      "answer_type": "single",
+      "stem": "Find the next term in the letter series: EFG, HIJ, KLM, NOP, ?",
+      "explanation": "The pattern: consecutive letters in groups of three. So the next term is QRS.",
+      "options": [
+        {
+          "label": "QRT",
+          "is_correct": false
+        },
+        {
+          "label": "QRU",
+          "is_correct": false
+        },
+        {
+          "label": "QRR",
+          "is_correct": false
+        },
+        {
+          "label": "QRS",
+          "is_correct": true
+        }
+      ]
+    },
+    {
+      "chapter": "Letter Series",
+      "kind": "standard",
+      "difficulty": "hard",
+      "answer_type": "single",
+      "stem": "Find the next term in the letter series: LX, MU, NR, OO, ?",
+      "explanation": "The pattern: first letter +1, second letter −3 per pair. So the next term is PL.",
+      "options": [
+        {
+          "label": "PL",
+          "is_correct": true
+        },
+        {
+          "label": "PM",
+          "is_correct": false
+        },
+        {
+          "label": "PK",
+          "is_correct": false
+        },
+        {
+          "label": "PN",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Letter Series",
+      "kind": "standard",
+      "difficulty": "hard",
+      "answer_type": "single",
+      "stem": "Find the next term in the letter series: FT, HR, JP, LN, ?",
+      "explanation": "The pattern: first letter +2, second letter −2 per pair. So the next term is NL.",
+      "options": [
+        {
+          "label": "NN",
+          "is_correct": false
+        },
+        {
+          "label": "NL",
+          "is_correct": true
+        },
+        {
+          "label": "NK",
+          "is_correct": false
+        },
+        {
+          "label": "NM",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Letter Series",
+      "kind": "standard",
+      "difficulty": "hard",
+      "answer_type": "single",
+      "stem": "Find the next term in the letter series: BO, CM, DK, EI, ?",
+      "explanation": "The pattern: first letter +1, second letter −2 per pair. So the next term is FG.",
+      "options": [
+        {
+          "label": "FH",
+          "is_correct": false
+        },
+        {
+          "label": "FI",
+          "is_correct": false
+        },
+        {
+          "label": "FG",
+          "is_correct": true
+        },
+        {
+          "label": "FF",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Letter Series",
+      "kind": "standard",
+      "difficulty": "hard",
+      "answer_type": "single",
+      "stem": "Find the next term in the letter series: HU, KS, NQ, QO, ?",
+      "explanation": "The pattern: first letter +3, second letter −2 per pair. So the next term is TM.",
+      "options": [
+        {
+          "label": "TM",
+          "is_correct": true
+        },
+        {
+          "label": "TL",
+          "is_correct": false
+        },
+        {
+          "label": "TN",
+          "is_correct": false
+        },
+        {
+          "label": "TO",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Letter Series",
+      "kind": "standard",
+      "difficulty": "hard",
+      "answer_type": "single",
+      "stem": "Find the next term in the letter series: LO, OM, RK, UI, ?",
+      "explanation": "The pattern: first letter +3, second letter −2 per pair. So the next term is XG.",
+      "options": [
+        {
+          "label": "XF",
+          "is_correct": false
+        },
+        {
+          "label": "XG",
+          "is_correct": true
+        },
+        {
+          "label": "XH",
+          "is_correct": false
+        },
+        {
+          "label": "XI",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Letter Series",
+      "kind": "standard",
+      "difficulty": "hard",
+      "answer_type": "single",
+      "stem": "Find the next term in the letter series: CDE, FGH, IJK, LMN, ?",
+      "explanation": "The pattern: consecutive letters in groups of three. So the next term is OPQ.",
+      "options": [
+        {
+          "label": "OPR",
+          "is_correct": false
+        },
+        {
+          "label": "OPP",
+          "is_correct": false
+        },
+        {
+          "label": "OPQ",
+          "is_correct": true
+        },
+        {
+          "label": "OPS",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Letter Series",
+      "kind": "standard",
+      "difficulty": "hard",
+      "answer_type": "single",
+      "stem": "Find the next term in the letter series: KR, MQ, OP, QO, ?",
+      "explanation": "The pattern: first letter +2, second letter −1 per pair. So the next term is SN.",
+      "options": [
+        {
+          "label": "SP",
+          "is_correct": false
+        },
+        {
+          "label": "SO",
+          "is_correct": false
+        },
+        {
+          "label": "SM",
+          "is_correct": false
+        },
+        {
+          "label": "SN",
+          "is_correct": true
+        }
+      ]
+    },
+    {
+      "chapter": "Letter Series",
+      "kind": "standard",
+      "difficulty": "very_hard",
+      "answer_type": "single",
+      "stem": "Find the next term in the letter series: I, Q, K, R, M, S, ?",
+      "explanation": "The pattern: two alternating sequences: one advancing by 2, the other by 1. So the next term is O.",
+      "options": [
+        {
+          "label": "N",
+          "is_correct": false
+        },
+        {
+          "label": "P",
+          "is_correct": false
+        },
+        {
+          "label": "O",
+          "is_correct": true
+        },
+        {
+          "label": "Q",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Letter Series",
+      "kind": "standard",
+      "difficulty": "very_hard",
+      "answer_type": "single",
+      "stem": "Find the next term in the letter series: I, R, L, T, O, V, ?",
+      "explanation": "The pattern: two alternating sequences: one advancing by 3, the other by 2. So the next term is R.",
+      "options": [
+        {
+          "label": "Q",
+          "is_correct": false
+        },
+        {
+          "label": "S",
+          "is_correct": false
+        },
+        {
+          "label": "T",
+          "is_correct": false
+        },
+        {
+          "label": "R",
+          "is_correct": true
+        }
+      ]
+    },
+    {
+      "chapter": "Letter Series",
+      "kind": "standard",
+      "difficulty": "very_hard",
+      "answer_type": "single",
+      "stem": "Find the next term in the letter series: FI, GK, HM, IO, ?",
+      "explanation": "The pattern: first letter +1 and second letter +2 per group. So the next term is JQ.",
+      "options": [
+        {
+          "label": "JS",
+          "is_correct": false
+        },
+        {
+          "label": "JR",
+          "is_correct": false
+        },
+        {
+          "label": "JQ",
+          "is_correct": true
+        },
+        {
+          "label": "JP",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Letter Series",
+      "kind": "standard",
+      "difficulty": "very_hard",
+      "answer_type": "single",
+      "stem": "Find the next term in the letter series: I, M, L, O, O, Q, ?",
+      "explanation": "The pattern: two alternating sequences: one advancing by 3, the other by 2. So the next term is R.",
+      "options": [
+        {
+          "label": "Q",
+          "is_correct": false
+        },
+        {
+          "label": "R",
+          "is_correct": true
+        },
+        {
+          "label": "T",
+          "is_correct": false
+        },
+        {
+          "label": "S",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Letter Series",
+      "kind": "standard",
+      "difficulty": "very_hard",
+      "answer_type": "single",
+      "stem": "Find the next term in the letter series: E, G, J, N, S, ?",
+      "explanation": "The pattern: the gap grows by one, starting at +2 (+2, +3, +4, …). So the next term is Y.",
+      "options": [
+        {
+          "label": "X",
+          "is_correct": false
+        },
+        {
+          "label": "Y",
+          "is_correct": true
+        },
+        {
+          "label": "W",
+          "is_correct": false
+        },
+        {
+          "label": "Z",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Letter Series",
+      "kind": "standard",
+      "difficulty": "very_hard",
+      "answer_type": "single",
+      "stem": "Find the next term in the letter series: E, P, G, Q, I, R, ?",
+      "explanation": "The pattern: two alternating sequences: one advancing by 2, the other by 1. So the next term is K.",
+      "options": [
+        {
+          "label": "J",
+          "is_correct": false
+        },
+        {
+          "label": "L",
+          "is_correct": false
+        },
+        {
+          "label": "M",
+          "is_correct": false
+        },
+        {
+          "label": "K",
+          "is_correct": true
+        }
+      ]
+    },
+    {
+      "chapter": "Letter Series",
+      "kind": "standard",
+      "difficulty": "very_hard",
+      "answer_type": "single",
+      "stem": "Find the next term in the letter series: B, D, G, K, P, ?",
+      "explanation": "The pattern: the gap grows by one, starting at +2 (+2, +3, +4, …). So the next term is V.",
+      "options": [
+        {
+          "label": "X",
+          "is_correct": false
+        },
+        {
+          "label": "W",
+          "is_correct": false
+        },
+        {
+          "label": "U",
+          "is_correct": false
+        },
+        {
+          "label": "V",
+          "is_correct": true
+        }
+      ]
+    },
+    {
+      "chapter": "Letter Series",
+      "kind": "standard",
+      "difficulty": "very_hard",
+      "answer_type": "single",
+      "stem": "Find the next term in the letter series: C, E, H, L, Q, ?",
+      "explanation": "The pattern: the gap grows by one, starting at +2 (+2, +3, +4, …). So the next term is W.",
+      "options": [
+        {
+          "label": "X",
+          "is_correct": false
+        },
+        {
+          "label": "W",
+          "is_correct": true
+        },
+        {
+          "label": "V",
+          "is_correct": false
+        },
+        {
+          "label": "Y",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Letter Series",
+      "kind": "standard",
+      "difficulty": "very_hard",
+      "answer_type": "single",
+      "stem": "Find the next term in the letter series: BM, CP, DS, EV, ?",
+      "explanation": "The pattern: first letter +1 and second letter +3 per group. So the next term is FY.",
+      "options": [
+        {
+          "label": "FZ",
+          "is_correct": false
+        },
+        {
+          "label": "FY",
+          "is_correct": true
+        },
+        {
+          "label": "FX",
+          "is_correct": false
+        },
+        {
+          "label": "FW",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Letter Series",
+      "kind": "standard",
+      "difficulty": "very_hard",
+      "answer_type": "single",
+      "stem": "Find the next term in the letter series: BDF, HJL, NPR, ?",
+      "explanation": "The pattern: groups of three letters two apart; each group starts 6 later. So the next term is TVX.",
+      "options": [
+        {
+          "label": "TVZ",
+          "is_correct": false
+        },
+        {
+          "label": "TVX",
+          "is_correct": true
+        },
+        {
+          "label": "TVW",
+          "is_correct": false
+        },
+        {
+          "label": "TVY",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Letter Series",
+      "kind": "standard",
+      "difficulty": "very_hard",
+      "answer_type": "single",
+      "stem": "Find the next term in the letter series: DFH, JLN, PRT, ?",
+      "explanation": "The pattern: groups of three letters two apart; each group starts 6 later. So the next term is VXZ.",
+      "options": [
+        {
+          "label": "VXZ",
+          "is_correct": true
+        },
+        {
+          "label": "VXW",
+          "is_correct": false
+        },
+        {
+          "label": "VXX",
+          "is_correct": false
+        },
+        {
+          "label": "VXY",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Letter Series",
+      "kind": "standard",
+      "difficulty": "very_hard",
+      "answer_type": "single",
+      "stem": "Find the next term in the letter series: I, J, J, L, K, N, ?",
+      "explanation": "The pattern: two alternating sequences: one advancing by 1, the other by 2. So the next term is L.",
+      "options": [
+        {
+          "label": "K",
+          "is_correct": false
+        },
+        {
+          "label": "L",
+          "is_correct": true
+        },
+        {
+          "label": "N",
+          "is_correct": false
+        },
+        {
+          "label": "M",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Letter Series",
+      "kind": "standard",
+      "difficulty": "very_hard",
+      "answer_type": "single",
+      "stem": "Find the next term in the letter series: FL, HN, JP, LR, ?",
+      "explanation": "The pattern: first letter +2 and second letter +2 per group. So the next term is NT.",
+      "options": [
+        {
+          "label": "NS",
+          "is_correct": false
+        },
+        {
+          "label": "NT",
+          "is_correct": true
+        },
+        {
+          "label": "NV",
+          "is_correct": false
+        },
+        {
+          "label": "NU",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Letter Series",
+      "kind": "standard",
+      "difficulty": "very_hard",
+      "answer_type": "single",
+      "stem": "Find the next term in the letter series: G, Q, H, T, I, W, ?",
+      "explanation": "The pattern: two alternating sequences: one advancing by 1, the other by 3. So the next term is J.",
+      "options": [
+        {
+          "label": "L",
+          "is_correct": false
+        },
+        {
+          "label": "I",
+          "is_correct": false
+        },
+        {
+          "label": "K",
+          "is_correct": false
+        },
+        {
+          "label": "J",
+          "is_correct": true
+        }
+      ]
+    },
+    {
+      "chapter": "Letter Series",
+      "kind": "standard",
+      "difficulty": "very_hard",
+      "answer_type": "single",
+      "stem": "Find the next term in the letter series: FM, HP, JS, LV, ?",
+      "explanation": "The pattern: first letter +2 and second letter +3 per group. So the next term is NY.",
+      "options": [
+        {
+          "label": "NZ",
+          "is_correct": false
+        },
+        {
+          "label": "NX",
+          "is_correct": false
+        },
+        {
+          "label": "NY",
+          "is_correct": true
+        },
+        {
+          "label": "NW",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Letter Series",
+      "kind": "standard",
+      "difficulty": "very_hard",
+      "answer_type": "single",
+      "stem": "Find the next term in the letter series: D, F, I, M, R, ?",
+      "explanation": "The pattern: the gap grows by one, starting at +2 (+2, +3, +4, …). So the next term is X.",
+      "options": [
+        {
+          "label": "W",
+          "is_correct": false
+        },
+        {
+          "label": "Y",
+          "is_correct": false
+        },
+        {
+          "label": "X",
+          "is_correct": true
+        },
+        {
+          "label": "Z",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Letter Series",
+      "kind": "standard",
+      "difficulty": "very_hard",
+      "answer_type": "single",
+      "stem": "Find the next term in the letter series: CI, EL, GO, IR, ?",
+      "explanation": "The pattern: first letter +2 and second letter +3 per group. So the next term is KU.",
+      "options": [
+        {
+          "label": "KU",
+          "is_correct": true
+        },
+        {
+          "label": "KW",
+          "is_correct": false
+        },
+        {
+          "label": "KV",
+          "is_correct": false
+        },
+        {
+          "label": "KT",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Letter Series",
+      "kind": "standard",
+      "difficulty": "very_hard",
+      "answer_type": "single",
+      "stem": "Find the next term in the letter series: H, R, I, U, J, X, ?",
+      "explanation": "The pattern: two alternating sequences: one advancing by 1, the other by 3. So the next term is K.",
+      "options": [
+        {
+          "label": "M",
+          "is_correct": false
+        },
+        {
+          "label": "J",
+          "is_correct": false
+        },
+        {
+          "label": "L",
+          "is_correct": false
+        },
+        {
+          "label": "K",
+          "is_correct": true
+        }
+      ]
+    },
+    {
+      "chapter": "Letter Series",
+      "kind": "standard",
+      "difficulty": "very_hard",
+      "answer_type": "single",
+      "stem": "Find the next term in the letter series: CEG, IKM, OQS, ?",
+      "explanation": "The pattern: groups of three letters two apart; each group starts 6 later. So the next term is UWY.",
+      "options": [
+        {
+          "label": "UWY",
+          "is_correct": true
+        },
+        {
+          "label": "UWZ",
+          "is_correct": false
+        },
+        {
+          "label": "UWW",
+          "is_correct": false
+        },
+        {
+          "label": "UWX",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Letter Series",
+      "kind": "standard",
+      "difficulty": "very_hard",
+      "answer_type": "single",
+      "stem": "Find the next term in the letter series: A, M, C, N, E, O, ?",
+      "explanation": "The pattern: two alternating sequences: one advancing by 2, the other by 1. So the next term is G.",
+      "options": [
+        {
+          "label": "H",
+          "is_correct": false
+        },
+        {
+          "label": "G",
+          "is_correct": true
+        },
+        {
+          "label": "F",
+          "is_correct": false
+        },
+        {
+          "label": "I",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Letter Series",
+      "kind": "standard",
+      "difficulty": "very_hard",
+      "answer_type": "single",
+      "stem": "Find the next term in the letter series: CK, DM, EO, FQ, ?",
+      "explanation": "The pattern: first letter +1 and second letter +2 per group. So the next term is GS.",
+      "options": [
+        {
+          "label": "GR",
+          "is_correct": false
+        },
+        {
+          "label": "GS",
+          "is_correct": true
+        },
+        {
+          "label": "GT",
+          "is_correct": false
+        },
+        {
+          "label": "GU",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Letter Series",
+      "kind": "standard",
+      "difficulty": "very_hard",
+      "answer_type": "single",
+      "stem": "Find the next term in the letter series: GK, IN, KQ, MT, ?",
+      "explanation": "The pattern: first letter +2 and second letter +3 per group. So the next term is OW.",
+      "options": [
+        {
+          "label": "OW",
+          "is_correct": true
+        },
+        {
+          "label": "OX",
+          "is_correct": false
+        },
+        {
+          "label": "OY",
+          "is_correct": false
+        },
+        {
+          "label": "OV",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Letter Series",
+      "kind": "standard",
+      "difficulty": "very_hard",
+      "answer_type": "single",
+      "stem": "Find the next term in the letter series: FJ, HL, JN, LP, ?",
+      "explanation": "The pattern: first letter +2 and second letter +2 per group. So the next term is NR.",
+      "options": [
+        {
+          "label": "NQ",
+          "is_correct": false
+        },
+        {
+          "label": "NT",
+          "is_correct": false
+        },
+        {
+          "label": "NR",
+          "is_correct": true
+        },
+        {
+          "label": "NS",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Letter Series",
+      "kind": "standard",
+      "difficulty": "very_hard",
+      "answer_type": "single",
+      "stem": "Find the next term in the letter series: I, L, J, M, K, N, ?",
+      "explanation": "The pattern: two alternating sequences: one advancing by 1, the other by 1. So the next term is L.",
+      "options": [
+        {
+          "label": "N",
+          "is_correct": false
+        },
+        {
+          "label": "L",
+          "is_correct": true
+        },
+        {
+          "label": "M",
+          "is_correct": false
+        },
+        {
+          "label": "K",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Letter Series",
+      "kind": "standard",
+      "difficulty": "very_hard",
+      "answer_type": "single",
+      "stem": "Find the next term in the letter series: EK, FM, GO, HQ, ?",
+      "explanation": "The pattern: first letter +1 and second letter +2 per group. So the next term is IS.",
+      "options": [
+        {
+          "label": "IT",
+          "is_correct": false
+        },
+        {
+          "label": "IR",
+          "is_correct": false
+        },
+        {
+          "label": "IS",
+          "is_correct": true
+        },
+        {
+          "label": "IU",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Letter Series",
+      "kind": "standard",
+      "difficulty": "very_hard",
+      "answer_type": "single",
+      "stem": "Find the next term in the letter series: I, K, J, M, K, O, ?",
+      "explanation": "The pattern: two alternating sequences: one advancing by 1, the other by 2. So the next term is L.",
+      "options": [
+        {
+          "label": "L",
+          "is_correct": true
+        },
+        {
+          "label": "M",
+          "is_correct": false
+        },
+        {
+          "label": "K",
+          "is_correct": false
+        },
+        {
+          "label": "N",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Letter Series",
+      "kind": "standard",
+      "difficulty": "very_hard",
+      "answer_type": "single",
+      "stem": "Find the next term in the letter series: A, N, C, Q, E, T, ?",
+      "explanation": "The pattern: two alternating sequences: one advancing by 2, the other by 3. So the next term is G.",
+      "options": [
+        {
+          "label": "G",
+          "is_correct": true
+        },
+        {
+          "label": "F",
+          "is_correct": false
+        },
+        {
+          "label": "H",
+          "is_correct": false
+        },
+        {
+          "label": "I",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Letter Series",
+      "kind": "standard",
+      "difficulty": "very_hard",
+      "answer_type": "single",
+      "stem": "Find the next term in the letter series: CG, EI, GK, IM, ?",
+      "explanation": "The pattern: first letter +2 and second letter +2 per group. So the next term is KO.",
+      "options": [
+        {
+          "label": "KO",
+          "is_correct": true
+        },
+        {
+          "label": "KP",
+          "is_correct": false
+        },
+        {
+          "label": "KN",
+          "is_correct": false
+        },
+        {
+          "label": "KQ",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Letter Series",
+      "kind": "standard",
+      "difficulty": "very_hard",
+      "answer_type": "single",
+      "stem": "Find the next term in the letter series: CH, EK, GN, IQ, ?",
+      "explanation": "The pattern: first letter +2 and second letter +3 per group. So the next term is KT.",
+      "options": [
+        {
+          "label": "KU",
+          "is_correct": false
+        },
+        {
+          "label": "KS",
+          "is_correct": false
+        },
+        {
+          "label": "KV",
+          "is_correct": false
+        },
+        {
+          "label": "KT",
+          "is_correct": true
+        }
+      ]
+    },
+    {
+      "chapter": "Letter Series",
+      "kind": "standard",
+      "difficulty": "very_hard",
+      "answer_type": "single",
+      "stem": "Find the next term in the letter series: A, C, F, J, O, ?",
+      "explanation": "The pattern: the gap grows by one, starting at +2 (+2, +3, +4, …). So the next term is U.",
+      "options": [
+        {
+          "label": "T",
+          "is_correct": false
+        },
+        {
+          "label": "V",
+          "is_correct": false
+        },
+        {
+          "label": "W",
+          "is_correct": false
+        },
+        {
+          "label": "U",
+          "is_correct": true
+        }
+      ]
+    },
+    {
+      "chapter": "Letter Series",
+      "kind": "standard",
+      "difficulty": "very_hard",
+      "answer_type": "single",
+      "stem": "Find the next term in the letter series: B, R, E, S, H, T, ?",
+      "explanation": "The pattern: two alternating sequences: one advancing by 3, the other by 1. So the next term is K.",
+      "options": [
+        {
+          "label": "M",
+          "is_correct": false
+        },
+        {
+          "label": "K",
+          "is_correct": true
+        },
+        {
+          "label": "J",
+          "is_correct": false
+        },
+        {
+          "label": "L",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Letter Series",
+      "kind": "standard",
+      "difficulty": "very_hard",
+      "answer_type": "single",
+      "stem": "Find the next term in the letter series: ACE, GIK, MOQ, ?",
+      "explanation": "The pattern: groups of three letters two apart; each group starts 6 later. So the next term is SUW.",
+      "options": [
+        {
+          "label": "SUW",
+          "is_correct": true
+        },
+        {
+          "label": "SUX",
+          "is_correct": false
+        },
+        {
+          "label": "SUY",
+          "is_correct": false
+        },
+        {
+          "label": "SUV",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Letter Series",
+      "kind": "standard",
+      "difficulty": "very_hard",
+      "answer_type": "single",
+      "stem": "Find the next term in the letter series: I, K, J, L, K, M, ?",
+      "explanation": "The pattern: two alternating sequences: one advancing by 1, the other by 1. So the next term is L.",
+      "options": [
+        {
+          "label": "N",
+          "is_correct": false
+        },
+        {
+          "label": "K",
+          "is_correct": false
+        },
+        {
+          "label": "L",
+          "is_correct": true
+        },
+        {
+          "label": "M",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Letter Series",
+      "kind": "standard",
+      "difficulty": "very_hard",
+      "answer_type": "single",
+      "stem": "Find the next term in the letter series: E, N, G, O, I, P, ?",
+      "explanation": "The pattern: two alternating sequences: one advancing by 2, the other by 1. So the next term is K.",
+      "options": [
+        {
+          "label": "J",
+          "is_correct": false
+        },
+        {
+          "label": "M",
+          "is_correct": false
+        },
+        {
+          "label": "L",
+          "is_correct": false
+        },
+        {
+          "label": "K",
+          "is_correct": true
+        }
+      ]
+    },
+    {
+      "chapter": "Letter Series",
+      "kind": "standard",
+      "difficulty": "very_hard",
+      "answer_type": "single",
+      "stem": "Find the next term in the letter series: H, P, K, R, N, T, ?",
+      "explanation": "The pattern: two alternating sequences: one advancing by 3, the other by 2. So the next term is Q.",
+      "options": [
+        {
+          "label": "P",
+          "is_correct": false
+        },
+        {
+          "label": "R",
+          "is_correct": false
+        },
+        {
+          "label": "S",
+          "is_correct": false
+        },
+        {
+          "label": "Q",
+          "is_correct": true
+        }
+      ]
+    },
+    {
+      "chapter": "Letter Series",
+      "kind": "standard",
+      "difficulty": "very_hard",
+      "answer_type": "single",
+      "stem": "Find the next term in the letter series: G, Q, H, R, I, S, ?",
+      "explanation": "The pattern: two alternating sequences: one advancing by 1, the other by 1. So the next term is J.",
+      "options": [
+        {
+          "label": "J",
+          "is_correct": true
+        },
+        {
+          "label": "K",
+          "is_correct": false
+        },
+        {
+          "label": "I",
+          "is_correct": false
+        },
+        {
+          "label": "L",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Letter Series",
+      "kind": "standard",
+      "difficulty": "very_hard",
+      "answer_type": "single",
+      "stem": "Find the next term in the letter series: CK, DN, EQ, FT, ?",
+      "explanation": "The pattern: first letter +1 and second letter +3 per group. So the next term is GW.",
+      "options": [
+        {
+          "label": "GY",
+          "is_correct": false
+        },
+        {
+          "label": "GX",
+          "is_correct": false
+        },
+        {
+          "label": "GV",
+          "is_correct": false
+        },
+        {
+          "label": "GW",
+          "is_correct": true
+        }
+      ]
+    },
+    {
+      "chapter": "Letter Series",
+      "kind": "standard",
+      "difficulty": "very_hard",
+      "answer_type": "single",
+      "stem": "Find the next term in the letter series: G, O, H, R, I, U, ?",
+      "explanation": "The pattern: two alternating sequences: one advancing by 1, the other by 3. So the next term is J.",
+      "options": [
+        {
+          "label": "I",
+          "is_correct": false
+        },
+        {
+          "label": "J",
+          "is_correct": true
+        },
+        {
+          "label": "K",
+          "is_correct": false
+        },
+        {
+          "label": "L",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Letter Series",
+      "kind": "standard",
+      "difficulty": "very_hard",
+      "answer_type": "single",
+      "stem": "Find the next term in the letter series: D, P, G, S, J, V, ?",
+      "explanation": "The pattern: two alternating sequences: one advancing by 3, the other by 3. So the next term is M.",
+      "options": [
+        {
+          "label": "O",
+          "is_correct": false
+        },
+        {
+          "label": "L",
+          "is_correct": false
+        },
+        {
+          "label": "N",
+          "is_correct": false
+        },
+        {
+          "label": "M",
+          "is_correct": true
+        }
+      ]
+    },
+    {
+      "chapter": "Letter Series",
+      "kind": "standard",
+      "difficulty": "very_hard",
+      "answer_type": "single",
+      "stem": "Find the next term in the letter series: F, O, I, R, L, U, ?",
+      "explanation": "The pattern: two alternating sequences: one advancing by 3, the other by 3. So the next term is O.",
+      "options": [
+        {
+          "label": "Q",
+          "is_correct": false
+        },
+        {
+          "label": "O",
+          "is_correct": true
+        },
+        {
+          "label": "P",
+          "is_correct": false
+        },
+        {
+          "label": "N",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Letter Series",
+      "kind": "standard",
+      "difficulty": "very_hard",
+      "answer_type": "single",
+      "stem": "Find the next term in the letter series: EL, GN, IP, KR, ?",
+      "explanation": "The pattern: first letter +2 and second letter +2 per group. So the next term is MT.",
+      "options": [
+        {
+          "label": "MV",
+          "is_correct": false
+        },
+        {
+          "label": "MT",
+          "is_correct": true
+        },
+        {
+          "label": "MS",
+          "is_correct": false
+        },
+        {
+          "label": "MU",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Letter Series",
+      "kind": "standard",
+      "difficulty": "very_hard",
+      "answer_type": "single",
+      "stem": "Find the next term in the letter series: D, K, G, M, J, O, ?",
+      "explanation": "The pattern: two alternating sequences: one advancing by 3, the other by 2. So the next term is M.",
+      "options": [
+        {
+          "label": "L",
+          "is_correct": false
+        },
+        {
+          "label": "N",
+          "is_correct": false
+        },
+        {
+          "label": "M",
+          "is_correct": true
+        },
+        {
+          "label": "O",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Letter Series",
+      "kind": "standard",
+      "difficulty": "very_hard",
+      "answer_type": "single",
+      "stem": "Find the next term in the letter series: C, L, F, M, I, N, ?",
+      "explanation": "The pattern: two alternating sequences: one advancing by 3, the other by 1. So the next term is L.",
+      "options": [
+        {
+          "label": "L",
+          "is_correct": true
+        },
+        {
+          "label": "M",
+          "is_correct": false
+        },
+        {
+          "label": "K",
+          "is_correct": false
+        },
+        {
+          "label": "N",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Letter Series",
+      "kind": "standard",
+      "difficulty": "very_hard",
+      "answer_type": "single",
+      "stem": "Find the next term in the letter series: C, O, F, P, I, Q, ?",
+      "explanation": "The pattern: two alternating sequences: one advancing by 3, the other by 1. So the next term is L.",
+      "options": [
+        {
+          "label": "L",
+          "is_correct": true
+        },
+        {
+          "label": "N",
+          "is_correct": false
+        },
+        {
+          "label": "M",
+          "is_correct": false
+        },
+        {
+          "label": "K",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Letter Series",
+      "kind": "standard",
+      "difficulty": "very_hard",
+      "answer_type": "single",
+      "stem": "Find the next term in the letter series: C, Q, D, S, E, U, ?",
+      "explanation": "The pattern: two alternating sequences: one advancing by 1, the other by 2. So the next term is F.",
+      "options": [
+        {
+          "label": "H",
+          "is_correct": false
+        },
+        {
+          "label": "F",
+          "is_correct": true
+        },
+        {
+          "label": "G",
+          "is_correct": false
+        },
+        {
+          "label": "E",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Letter Series",
+      "kind": "standard",
+      "difficulty": "very_hard",
+      "answer_type": "single",
+      "stem": "Find the next term in the letter series: FH, GJ, HL, IN, ?",
+      "explanation": "The pattern: first letter +1 and second letter +2 per group. So the next term is JP.",
+      "options": [
+        {
+          "label": "JO",
+          "is_correct": false
+        },
+        {
+          "label": "JP",
+          "is_correct": true
+        },
+        {
+          "label": "JR",
+          "is_correct": false
+        },
+        {
+          "label": "JQ",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Letter Series",
+      "kind": "standard",
+      "difficulty": "very_hard",
+      "answer_type": "single",
+      "stem": "Find the next term in the letter series: AJ, BM, CP, DS, ?",
+      "explanation": "The pattern: first letter +1 and second letter +3 per group. So the next term is EV.",
+      "options": [
+        {
+          "label": "EU",
+          "is_correct": false
+        },
+        {
+          "label": "EX",
+          "is_correct": false
+        },
+        {
+          "label": "EW",
+          "is_correct": false
+        },
+        {
+          "label": "EV",
+          "is_correct": true
+        }
+      ]
+    },
+    {
+      "chapter": "Letter Series",
+      "kind": "standard",
+      "difficulty": "very_hard",
+      "answer_type": "single",
+      "stem": "Find the next term in the letter series: G, O, J, Q, M, S, ?",
+      "explanation": "The pattern: two alternating sequences: one advancing by 3, the other by 2. So the next term is P.",
+      "options": [
+        {
+          "label": "P",
+          "is_correct": true
+        },
+        {
+          "label": "O",
+          "is_correct": false
+        },
+        {
+          "label": "R",
+          "is_correct": false
+        },
+        {
+          "label": "Q",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Letter Series",
+      "kind": "standard",
+      "difficulty": "very_hard",
+      "answer_type": "single",
+      "stem": "Find the next term in the letter series: G, L, I, O, K, R, ?",
+      "explanation": "The pattern: two alternating sequences: one advancing by 2, the other by 3. So the next term is M.",
+      "options": [
+        {
+          "label": "O",
+          "is_correct": false
+        },
+        {
+          "label": "N",
+          "is_correct": false
+        },
+        {
+          "label": "L",
+          "is_correct": false
+        },
+        {
+          "label": "M",
+          "is_correct": true
+        }
+      ]
+    },
+    {
+      "chapter": "Letter Series",
+      "kind": "standard",
+      "difficulty": "very_hard",
+      "answer_type": "single",
+      "stem": "Find the next term in the letter series: F, H, K, O, T, ?",
+      "explanation": "The pattern: the gap grows by one, starting at +2 (+2, +3, +4, …). So the next term is Z.",
+      "options": [
+        {
+          "label": "Y",
+          "is_correct": false
+        },
+        {
+          "label": "X",
+          "is_correct": false
+        },
+        {
+          "label": "W",
+          "is_correct": false
+        },
+        {
+          "label": "Z",
+          "is_correct": true
+        }
+      ]
+    }
+  ]
+}

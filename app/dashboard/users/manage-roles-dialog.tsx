@@ -16,13 +16,19 @@ import { Label } from "@/components/ui/label";
 import {
   Dialog, DialogContent, DialogDescription, DialogFooter, DialogHeader, DialogTitle,
 } from "@/components/ui/dialog";
-import { Pencil } from "lucide-react";
-import { updateMemberRoles, setMemberOfficeEmail, updateMemberProfile } from "./actions";
+import { Pencil, X } from "lucide-react";
+import { CollegePicker } from "@/components/analytics/CollegePicker";
+import {
+  updateMemberRoles,
+  setMemberOfficeEmail,
+  updateMemberProfile,
+  setCollegeAdmin,
+} from "./actions";
 
 // System staff roles + ladder rank (mirrors role.rank; the RPC enforces rules).
 const STAFF = [
   { key: "owner", name: "Owner", rank: 3 },
-  { key: "platform_admin", name: "Admin", rank: 2 },
+  { key: "platform_admin", name: "Platform Admin", rank: 2 },
   { key: "coordinator", name: "Coordinator", rank: 1 },
   { key: "support", name: "Support Team", rank: 1 },
   { key: "mentor", name: "Mentor (Trainer)", rank: 0 },
@@ -35,7 +41,7 @@ export function ManageMemberDialog({
   isOwner,
   canOffice,
 }: {
-  user: { id: string; email: string; fullName: string | null; phone: string | null; roleKeys: string[]; officeEmail: string | null };
+  user: { id: string; email: string; fullName: string | null; phone: string | null; roleKeys: string[]; officeEmail: string | null; collegeAdmin: { id: string; name: string }[] };
   callerRank: number;
   isOwner: boolean;
   canOffice: boolean;
@@ -46,6 +52,7 @@ export function ManageMemberDialog({
   const [fullName, setFullName] = useState("");
   const [phone, setPhone] = useState("");
   const [office, setOffice] = useState("");
+  const [admins, setAdmins] = useState<{ id: string; name: string }[]>([]);
   const [busy, setBusy] = useState(false);
   const [error, setError] = useState<string | null>(null);
   // user.manage gates editing profile fields + office email; roles use their own guard.
@@ -70,6 +77,7 @@ export function ManageMemberDialog({
     setFullName(user.fullName ?? "");
     setPhone(user.phone ?? "");
     setOffice(user.officeEmail ?? "");
+    setAdmins(user.collegeAdmin);
     setError(null);
     setOpen(true);
   }
@@ -86,6 +94,22 @@ export function ManageMemberDialog({
     const keys = STAFF.filter((r) => selected.has(r.key) && !redundant(r.rank)).map((r) => r.key);
     const roleRes = await updateMemberRoles(user.id, keys);
     if (roleRes.error) return fail(roleRes.error);
+
+    // College Admin access: grant newly-added colleges, revoke removed ones.
+    const origIds = new Set(user.collegeAdmin.map((a) => a.id));
+    const nowIds = new Set(admins.map((a) => a.id));
+    for (const a of admins) {
+      if (!origIds.has(a.id)) {
+        const r = await setCollegeAdmin(user.id, a.id, true);
+        if (r.error) return fail(r.error);
+      }
+    }
+    for (const a of user.collegeAdmin) {
+      if (!nowIds.has(a.id)) {
+        const r = await setCollegeAdmin(user.id, a.id, false);
+        if (r.error) return fail(r.error);
+      }
+    }
 
     if (canOffice && office.trim() !== (user.officeEmail ?? "")) {
       const offRes = await setMemberOfficeEmail(user.id, office);
@@ -137,9 +161,46 @@ export function ManageMemberDialog({
                   </label>
                 );
               })}
-              {scopedRoles.length > 0 && (
-                <p className="text-muted-foreground text-xs">Also holds (via invite): {scopedRoles.join(", ")}</p>
+              {scopedRoles.filter((k) => k !== "college_admin").length > 0 && (
+                <p className="text-muted-foreground text-xs">
+                  Also holds: {scopedRoles.filter((k) => k !== "college_admin").join(", ")}
+                </p>
               )}
+            </div>
+
+            <div className="grid gap-2">
+              <Label>College Admin access</Label>
+              {admins.length > 0 ? (
+                <ul className="grid gap-1.5">
+                  {admins.map((a) => (
+                    <li
+                      key={a.id}
+                      className="flex items-center justify-between gap-2 rounded-md border px-2.5 py-1.5 text-sm"
+                    >
+                      <span className="min-w-0 truncate">{a.name}</span>
+                      <button
+                        type="button"
+                        className="text-muted-foreground hover:text-destructive shrink-0"
+                        onClick={() => setAdmins((prev) => prev.filter((x) => x.id !== a.id))}
+                        title="Remove"
+                      >
+                        <X className="size-4" />
+                      </button>
+                    </li>
+                  ))}
+                </ul>
+              ) : (
+                <p className="text-muted-foreground text-xs">Not a College Admin of any college.</p>
+              )}
+              {/* Add a college → grants a scoped College Admin role on save. */}
+              <CollegePicker
+                selected={null}
+                onSelect={(c) =>
+                  setAdmins((prev) =>
+                    prev.some((x) => x.id === c.id) ? prev : [...prev, { id: c.id, name: c.name }],
+                  )
+                }
+              />
             </div>
 
             {canOffice && (

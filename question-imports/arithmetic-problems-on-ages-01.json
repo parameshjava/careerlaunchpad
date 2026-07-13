@@ -1,0 +1,5205 @@
+{
+  "subject": "Arithmetic",
+  "questions": [
+    {
+      "chapter": "Problems on Ages",
+      "kind": "standard",
+      "difficulty": "easy",
+      "answer_type": "single",
+      "stem": "A person is 27 years old today. What was his age 14 years ago?",
+      "explanation": "27 − 14 = 13 years.",
+      "options": [
+        {
+          "label": "12 years",
+          "is_correct": false
+        },
+        {
+          "label": "13 years",
+          "is_correct": true
+        },
+        {
+          "label": "14 years",
+          "is_correct": false
+        },
+        {
+          "label": "15 years",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Problems on Ages",
+      "kind": "standard",
+      "difficulty": "easy",
+      "answer_type": "single",
+      "stem": "A person's present age is 49 years. What will his age be after 2 years?",
+      "explanation": "49 + 2 = 51 years.",
+      "options": [
+        {
+          "label": "53 years",
+          "is_correct": false
+        },
+        {
+          "label": "51 years",
+          "is_correct": true
+        },
+        {
+          "label": "49 years",
+          "is_correct": false
+        },
+        {
+          "label": "55 years",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Problems on Ages",
+      "kind": "standard",
+      "difficulty": "easy",
+      "answer_type": "single",
+      "stem": "A person's present age is 5 years. What will his age be after 16 years?",
+      "explanation": "5 + 16 = 21 years.",
+      "options": [
+        {
+          "label": "23 years",
+          "is_correct": false
+        },
+        {
+          "label": "22 years",
+          "is_correct": false
+        },
+        {
+          "label": "20 years",
+          "is_correct": false
+        },
+        {
+          "label": "21 years",
+          "is_correct": true
+        }
+      ]
+    },
+    {
+      "chapter": "Problems on Ages",
+      "kind": "standard",
+      "difficulty": "easy",
+      "answer_type": "single",
+      "stem": "A person is 61 years old today. What was his age 6 years ago?",
+      "explanation": "61 − 6 = 55 years.",
+      "options": [
+        {
+          "label": "55 years",
+          "is_correct": true
+        },
+        {
+          "label": "57 years",
+          "is_correct": false
+        },
+        {
+          "label": "53 years",
+          "is_correct": false
+        },
+        {
+          "label": "59 years",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Problems on Ages",
+      "kind": "standard",
+      "difficulty": "easy",
+      "answer_type": "single",
+      "stem": "A person's present age is 41 years. What will his age be after 18 years?",
+      "explanation": "41 + 18 = 59 years.",
+      "options": [
+        {
+          "label": "61 years",
+          "is_correct": false
+        },
+        {
+          "label": "59 years",
+          "is_correct": true
+        },
+        {
+          "label": "63 years",
+          "is_correct": false
+        },
+        {
+          "label": "57 years",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Problems on Ages",
+      "kind": "standard",
+      "difficulty": "easy",
+      "answer_type": "single",
+      "stem": "A person's present age is 34 years. What will his age be after 10 years?",
+      "explanation": "34 + 10 = 44 years.",
+      "options": [
+        {
+          "label": "46 years",
+          "is_correct": false
+        },
+        {
+          "label": "44 years",
+          "is_correct": true
+        },
+        {
+          "label": "48 years",
+          "is_correct": false
+        },
+        {
+          "label": "42 years",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Problems on Ages",
+      "kind": "standard",
+      "difficulty": "easy",
+      "answer_type": "single",
+      "stem": "A person is 21 years old today. What was his age 12 years ago?",
+      "explanation": "21 − 12 = 9 years.",
+      "options": [
+        {
+          "label": "10 years",
+          "is_correct": false
+        },
+        {
+          "label": "8 years",
+          "is_correct": false
+        },
+        {
+          "label": "9 years",
+          "is_correct": true
+        },
+        {
+          "label": "11 years",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Problems on Ages",
+      "kind": "standard",
+      "difficulty": "easy",
+      "answer_type": "single",
+      "stem": "A person is 70 years old today. What was his age 10 years ago?",
+      "explanation": "70 − 10 = 60 years.",
+      "options": [
+        {
+          "label": "60 years",
+          "is_correct": true
+        },
+        {
+          "label": "64 years",
+          "is_correct": false
+        },
+        {
+          "label": "62 years",
+          "is_correct": false
+        },
+        {
+          "label": "58 years",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Problems on Ages",
+      "kind": "standard",
+      "difficulty": "easy",
+      "answer_type": "single",
+      "stem": "A person's present age is 52 years. What will his age be after 20 years?",
+      "explanation": "52 + 20 = 72 years.",
+      "options": [
+        {
+          "label": "70 years",
+          "is_correct": false
+        },
+        {
+          "label": "74 years",
+          "is_correct": false
+        },
+        {
+          "label": "72 years",
+          "is_correct": true
+        },
+        {
+          "label": "76 years",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Problems on Ages",
+      "kind": "standard",
+      "difficulty": "easy",
+      "answer_type": "single",
+      "stem": "A is 22 years older than B. If B is 30 years old, find A's age.",
+      "explanation": "30 + 22 = 52 years.",
+      "options": [
+        {
+          "label": "54 years",
+          "is_correct": false
+        },
+        {
+          "label": "50 years",
+          "is_correct": false
+        },
+        {
+          "label": "56 years",
+          "is_correct": false
+        },
+        {
+          "label": "52 years",
+          "is_correct": true
+        }
+      ]
+    },
+    {
+      "chapter": "Problems on Ages",
+      "kind": "standard",
+      "difficulty": "easy",
+      "answer_type": "single",
+      "stem": "A person is 24 years old today. What was his age 14 years ago?",
+      "explanation": "24 − 14 = 10 years.",
+      "options": [
+        {
+          "label": "9 years",
+          "is_correct": false
+        },
+        {
+          "label": "12 years",
+          "is_correct": false
+        },
+        {
+          "label": "11 years",
+          "is_correct": false
+        },
+        {
+          "label": "10 years",
+          "is_correct": true
+        }
+      ]
+    },
+    {
+      "chapter": "Problems on Ages",
+      "kind": "standard",
+      "difficulty": "easy",
+      "answer_type": "single",
+      "stem": "A person's present age is 13 years. What will his age be after 2 years?",
+      "explanation": "13 + 2 = 15 years.",
+      "options": [
+        {
+          "label": "16 years",
+          "is_correct": false
+        },
+        {
+          "label": "17 years",
+          "is_correct": false
+        },
+        {
+          "label": "14 years",
+          "is_correct": false
+        },
+        {
+          "label": "15 years",
+          "is_correct": true
+        }
+      ]
+    },
+    {
+      "chapter": "Problems on Ages",
+      "kind": "standard",
+      "difficulty": "easy",
+      "answer_type": "single",
+      "stem": "A person's present age is 53 years. What will his age be after 14 years?",
+      "explanation": "53 + 14 = 67 years.",
+      "options": [
+        {
+          "label": "65 years",
+          "is_correct": false
+        },
+        {
+          "label": "69 years",
+          "is_correct": false
+        },
+        {
+          "label": "67 years",
+          "is_correct": true
+        },
+        {
+          "label": "71 years",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Problems on Ages",
+      "kind": "standard",
+      "difficulty": "easy",
+      "answer_type": "single",
+      "stem": "A person is 53 years old today. What was his age 5 years ago?",
+      "explanation": "53 − 5 = 48 years.",
+      "options": [
+        {
+          "label": "52 years",
+          "is_correct": false
+        },
+        {
+          "label": "48 years",
+          "is_correct": true
+        },
+        {
+          "label": "46 years",
+          "is_correct": false
+        },
+        {
+          "label": "50 years",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Problems on Ages",
+      "kind": "standard",
+      "difficulty": "easy",
+      "answer_type": "single",
+      "stem": "A person's present age is 13 years. What will his age be after 3 years?",
+      "explanation": "13 + 3 = 16 years.",
+      "options": [
+        {
+          "label": "18 years",
+          "is_correct": false
+        },
+        {
+          "label": "16 years",
+          "is_correct": true
+        },
+        {
+          "label": "17 years",
+          "is_correct": false
+        },
+        {
+          "label": "15 years",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Problems on Ages",
+      "kind": "standard",
+      "difficulty": "easy",
+      "answer_type": "single",
+      "stem": "A person's present age is 27 years. What will his age be after 7 years?",
+      "explanation": "27 + 7 = 34 years.",
+      "options": [
+        {
+          "label": "36 years",
+          "is_correct": false
+        },
+        {
+          "label": "34 years",
+          "is_correct": true
+        },
+        {
+          "label": "35 years",
+          "is_correct": false
+        },
+        {
+          "label": "33 years",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Problems on Ages",
+      "kind": "standard",
+      "difficulty": "easy",
+      "answer_type": "single",
+      "stem": "A is 11 years older than B. If B is 34 years old, find A's age.",
+      "explanation": "34 + 11 = 45 years.",
+      "options": [
+        {
+          "label": "47 years",
+          "is_correct": false
+        },
+        {
+          "label": "43 years",
+          "is_correct": false
+        },
+        {
+          "label": "45 years",
+          "is_correct": true
+        },
+        {
+          "label": "49 years",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Problems on Ages",
+      "kind": "standard",
+      "difficulty": "easy",
+      "answer_type": "single",
+      "stem": "A person's present age is 9 years. What will his age be after 2 years?",
+      "explanation": "9 + 2 = 11 years.",
+      "options": [
+        {
+          "label": "11 years",
+          "is_correct": true
+        },
+        {
+          "label": "10 years",
+          "is_correct": false
+        },
+        {
+          "label": "13 years",
+          "is_correct": false
+        },
+        {
+          "label": "12 years",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Problems on Ages",
+      "kind": "standard",
+      "difficulty": "easy",
+      "answer_type": "single",
+      "stem": "A is 20 years older than B. If B is 30 years old, find A's age.",
+      "explanation": "30 + 20 = 50 years.",
+      "options": [
+        {
+          "label": "54 years",
+          "is_correct": false
+        },
+        {
+          "label": "52 years",
+          "is_correct": false
+        },
+        {
+          "label": "48 years",
+          "is_correct": false
+        },
+        {
+          "label": "50 years",
+          "is_correct": true
+        }
+      ]
+    },
+    {
+      "chapter": "Problems on Ages",
+      "kind": "standard",
+      "difficulty": "easy",
+      "answer_type": "single",
+      "stem": "A person's present age is 24 years. What will his age be after 3 years?",
+      "explanation": "24 + 3 = 27 years.",
+      "options": [
+        {
+          "label": "27 years",
+          "is_correct": true
+        },
+        {
+          "label": "26 years",
+          "is_correct": false
+        },
+        {
+          "label": "28 years",
+          "is_correct": false
+        },
+        {
+          "label": "29 years",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Problems on Ages",
+      "kind": "standard",
+      "difficulty": "easy",
+      "answer_type": "single",
+      "stem": "A person is 66 years old today. What was his age 11 years ago?",
+      "explanation": "66 − 11 = 55 years.",
+      "options": [
+        {
+          "label": "59 years",
+          "is_correct": false
+        },
+        {
+          "label": "57 years",
+          "is_correct": false
+        },
+        {
+          "label": "53 years",
+          "is_correct": false
+        },
+        {
+          "label": "55 years",
+          "is_correct": true
+        }
+      ]
+    },
+    {
+      "chapter": "Problems on Ages",
+      "kind": "standard",
+      "difficulty": "easy",
+      "answer_type": "single",
+      "stem": "A person's present age is 41 years. What will his age be after 8 years?",
+      "explanation": "41 + 8 = 49 years.",
+      "options": [
+        {
+          "label": "49 years",
+          "is_correct": true
+        },
+        {
+          "label": "51 years",
+          "is_correct": false
+        },
+        {
+          "label": "53 years",
+          "is_correct": false
+        },
+        {
+          "label": "47 years",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Problems on Ages",
+      "kind": "standard",
+      "difficulty": "easy",
+      "answer_type": "single",
+      "stem": "A is 12 years older than B. If B is 8 years old, find A's age.",
+      "explanation": "8 + 12 = 20 years.",
+      "options": [
+        {
+          "label": "21 years",
+          "is_correct": false
+        },
+        {
+          "label": "19 years",
+          "is_correct": false
+        },
+        {
+          "label": "20 years",
+          "is_correct": true
+        },
+        {
+          "label": "22 years",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Problems on Ages",
+      "kind": "standard",
+      "difficulty": "easy",
+      "answer_type": "single",
+      "stem": "A person is 61 years old today. What was his age 15 years ago?",
+      "explanation": "61 − 15 = 46 years.",
+      "options": [
+        {
+          "label": "48 years",
+          "is_correct": false
+        },
+        {
+          "label": "50 years",
+          "is_correct": false
+        },
+        {
+          "label": "46 years",
+          "is_correct": true
+        },
+        {
+          "label": "44 years",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Problems on Ages",
+      "kind": "standard",
+      "difficulty": "easy",
+      "answer_type": "single",
+      "stem": "A is 28 years older than B. If B is 11 years old, find A's age.",
+      "explanation": "11 + 28 = 39 years.",
+      "options": [
+        {
+          "label": "41 years",
+          "is_correct": false
+        },
+        {
+          "label": "39 years",
+          "is_correct": true
+        },
+        {
+          "label": "38 years",
+          "is_correct": false
+        },
+        {
+          "label": "40 years",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Problems on Ages",
+      "kind": "standard",
+      "difficulty": "easy",
+      "answer_type": "single",
+      "stem": "A person is 68 years old today. What was his age 14 years ago?",
+      "explanation": "68 − 14 = 54 years.",
+      "options": [
+        {
+          "label": "54 years",
+          "is_correct": true
+        },
+        {
+          "label": "58 years",
+          "is_correct": false
+        },
+        {
+          "label": "56 years",
+          "is_correct": false
+        },
+        {
+          "label": "52 years",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Problems on Ages",
+      "kind": "standard",
+      "difficulty": "easy",
+      "answer_type": "single",
+      "stem": "A is 28 years older than B. If B is 50 years old, find A's age.",
+      "explanation": "50 + 28 = 78 years.",
+      "options": [
+        {
+          "label": "76 years",
+          "is_correct": false
+        },
+        {
+          "label": "80 years",
+          "is_correct": false
+        },
+        {
+          "label": "82 years",
+          "is_correct": false
+        },
+        {
+          "label": "78 years",
+          "is_correct": true
+        }
+      ]
+    },
+    {
+      "chapter": "Problems on Ages",
+      "kind": "standard",
+      "difficulty": "easy",
+      "answer_type": "single",
+      "stem": "A person's present age is 41 years. What will his age be after 7 years?",
+      "explanation": "41 + 7 = 48 years.",
+      "options": [
+        {
+          "label": "46 years",
+          "is_correct": false
+        },
+        {
+          "label": "50 years",
+          "is_correct": false
+        },
+        {
+          "label": "52 years",
+          "is_correct": false
+        },
+        {
+          "label": "48 years",
+          "is_correct": true
+        }
+      ]
+    },
+    {
+      "chapter": "Problems on Ages",
+      "kind": "standard",
+      "difficulty": "easy",
+      "answer_type": "single",
+      "stem": "A person is 54 years old today. What was his age 9 years ago?",
+      "explanation": "54 − 9 = 45 years.",
+      "options": [
+        {
+          "label": "45 years",
+          "is_correct": true
+        },
+        {
+          "label": "43 years",
+          "is_correct": false
+        },
+        {
+          "label": "49 years",
+          "is_correct": false
+        },
+        {
+          "label": "47 years",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Problems on Ages",
+      "kind": "standard",
+      "difficulty": "easy",
+      "answer_type": "single",
+      "stem": "A is 1 years older than B. If B is 7 years old, find A's age.",
+      "explanation": "7 + 1 = 8 years.",
+      "options": [
+        {
+          "label": "7 years",
+          "is_correct": false
+        },
+        {
+          "label": "9 years",
+          "is_correct": false
+        },
+        {
+          "label": "10 years",
+          "is_correct": false
+        },
+        {
+          "label": "8 years",
+          "is_correct": true
+        }
+      ]
+    },
+    {
+      "chapter": "Problems on Ages",
+      "kind": "standard",
+      "difficulty": "easy",
+      "answer_type": "single",
+      "stem": "A is 5 years older than B. If B is 36 years old, find A's age.",
+      "explanation": "36 + 5 = 41 years.",
+      "options": [
+        {
+          "label": "45 years",
+          "is_correct": false
+        },
+        {
+          "label": "39 years",
+          "is_correct": false
+        },
+        {
+          "label": "41 years",
+          "is_correct": true
+        },
+        {
+          "label": "43 years",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Problems on Ages",
+      "kind": "standard",
+      "difficulty": "easy",
+      "answer_type": "single",
+      "stem": "A person's present age is 33 years. What will his age be after 5 years?",
+      "explanation": "33 + 5 = 38 years.",
+      "options": [
+        {
+          "label": "40 years",
+          "is_correct": false
+        },
+        {
+          "label": "38 years",
+          "is_correct": true
+        },
+        {
+          "label": "39 years",
+          "is_correct": false
+        },
+        {
+          "label": "37 years",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Problems on Ages",
+      "kind": "standard",
+      "difficulty": "easy",
+      "answer_type": "single",
+      "stem": "A person's present age is 25 years. What will his age be after 18 years?",
+      "explanation": "25 + 18 = 43 years.",
+      "options": [
+        {
+          "label": "47 years",
+          "is_correct": false
+        },
+        {
+          "label": "41 years",
+          "is_correct": false
+        },
+        {
+          "label": "43 years",
+          "is_correct": true
+        },
+        {
+          "label": "45 years",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Problems on Ages",
+      "kind": "standard",
+      "difficulty": "easy",
+      "answer_type": "single",
+      "stem": "A person is 61 years old today. What was his age 3 years ago?",
+      "explanation": "61 − 3 = 58 years.",
+      "options": [
+        {
+          "label": "58 years",
+          "is_correct": true
+        },
+        {
+          "label": "60 years",
+          "is_correct": false
+        },
+        {
+          "label": "56 years",
+          "is_correct": false
+        },
+        {
+          "label": "62 years",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Problems on Ages",
+      "kind": "standard",
+      "difficulty": "easy",
+      "answer_type": "single",
+      "stem": "A is 24 years older than B. If B is 41 years old, find A's age.",
+      "explanation": "41 + 24 = 65 years.",
+      "options": [
+        {
+          "label": "65 years",
+          "is_correct": true
+        },
+        {
+          "label": "63 years",
+          "is_correct": false
+        },
+        {
+          "label": "69 years",
+          "is_correct": false
+        },
+        {
+          "label": "67 years",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Problems on Ages",
+      "kind": "standard",
+      "difficulty": "easy",
+      "answer_type": "single",
+      "stem": "A person's present age is 16 years. What will his age be after 2 years?",
+      "explanation": "16 + 2 = 18 years.",
+      "options": [
+        {
+          "label": "17 years",
+          "is_correct": false
+        },
+        {
+          "label": "19 years",
+          "is_correct": false
+        },
+        {
+          "label": "20 years",
+          "is_correct": false
+        },
+        {
+          "label": "18 years",
+          "is_correct": true
+        }
+      ]
+    },
+    {
+      "chapter": "Problems on Ages",
+      "kind": "standard",
+      "difficulty": "easy",
+      "answer_type": "single",
+      "stem": "A person is 32 years old today. What was his age 12 years ago?",
+      "explanation": "32 − 12 = 20 years.",
+      "options": [
+        {
+          "label": "20 years",
+          "is_correct": true
+        },
+        {
+          "label": "19 years",
+          "is_correct": false
+        },
+        {
+          "label": "22 years",
+          "is_correct": false
+        },
+        {
+          "label": "21 years",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Problems on Ages",
+      "kind": "standard",
+      "difficulty": "easy",
+      "answer_type": "single",
+      "stem": "A person's present age is 22 years. What will his age be after 7 years?",
+      "explanation": "22 + 7 = 29 years.",
+      "options": [
+        {
+          "label": "28 years",
+          "is_correct": false
+        },
+        {
+          "label": "31 years",
+          "is_correct": false
+        },
+        {
+          "label": "30 years",
+          "is_correct": false
+        },
+        {
+          "label": "29 years",
+          "is_correct": true
+        }
+      ]
+    },
+    {
+      "chapter": "Problems on Ages",
+      "kind": "standard",
+      "difficulty": "easy",
+      "answer_type": "single",
+      "stem": "A person is 65 years old today. What was his age 2 years ago?",
+      "explanation": "65 − 2 = 63 years.",
+      "options": [
+        {
+          "label": "63 years",
+          "is_correct": true
+        },
+        {
+          "label": "65 years",
+          "is_correct": false
+        },
+        {
+          "label": "67 years",
+          "is_correct": false
+        },
+        {
+          "label": "61 years",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Problems on Ages",
+      "kind": "standard",
+      "difficulty": "easy",
+      "answer_type": "single",
+      "stem": "A person's present age is 41 years. What will his age be after 4 years?",
+      "explanation": "41 + 4 = 45 years.",
+      "options": [
+        {
+          "label": "45 years",
+          "is_correct": true
+        },
+        {
+          "label": "47 years",
+          "is_correct": false
+        },
+        {
+          "label": "49 years",
+          "is_correct": false
+        },
+        {
+          "label": "43 years",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Problems on Ages",
+      "kind": "standard",
+      "difficulty": "easy",
+      "answer_type": "single",
+      "stem": "A person's present age is 54 years. What will his age be after 16 years?",
+      "explanation": "54 + 16 = 70 years.",
+      "options": [
+        {
+          "label": "74 years",
+          "is_correct": false
+        },
+        {
+          "label": "70 years",
+          "is_correct": true
+        },
+        {
+          "label": "68 years",
+          "is_correct": false
+        },
+        {
+          "label": "72 years",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Problems on Ages",
+      "kind": "standard",
+      "difficulty": "easy",
+      "answer_type": "single",
+      "stem": "A is 26 years older than B. If B is 29 years old, find A's age.",
+      "explanation": "29 + 26 = 55 years.",
+      "options": [
+        {
+          "label": "55 years",
+          "is_correct": true
+        },
+        {
+          "label": "53 years",
+          "is_correct": false
+        },
+        {
+          "label": "59 years",
+          "is_correct": false
+        },
+        {
+          "label": "57 years",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Problems on Ages",
+      "kind": "standard",
+      "difficulty": "easy",
+      "answer_type": "single",
+      "stem": "A person's present age is 27 years. What will his age be after 9 years?",
+      "explanation": "27 + 9 = 36 years.",
+      "options": [
+        {
+          "label": "38 years",
+          "is_correct": false
+        },
+        {
+          "label": "36 years",
+          "is_correct": true
+        },
+        {
+          "label": "37 years",
+          "is_correct": false
+        },
+        {
+          "label": "35 years",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Problems on Ages",
+      "kind": "standard",
+      "difficulty": "easy",
+      "answer_type": "single",
+      "stem": "A person is 31 years old today. What was his age 5 years ago?",
+      "explanation": "31 − 5 = 26 years.",
+      "options": [
+        {
+          "label": "26 years",
+          "is_correct": true
+        },
+        {
+          "label": "27 years",
+          "is_correct": false
+        },
+        {
+          "label": "28 years",
+          "is_correct": false
+        },
+        {
+          "label": "25 years",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Problems on Ages",
+      "kind": "standard",
+      "difficulty": "easy",
+      "answer_type": "single",
+      "stem": "A person is 62 years old today. What was his age 15 years ago?",
+      "explanation": "62 − 15 = 47 years.",
+      "options": [
+        {
+          "label": "51 years",
+          "is_correct": false
+        },
+        {
+          "label": "49 years",
+          "is_correct": false
+        },
+        {
+          "label": "47 years",
+          "is_correct": true
+        },
+        {
+          "label": "45 years",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Problems on Ages",
+      "kind": "standard",
+      "difficulty": "easy",
+      "answer_type": "single",
+      "stem": "A person is 52 years old today. What was his age 14 years ago?",
+      "explanation": "52 − 14 = 38 years.",
+      "options": [
+        {
+          "label": "38 years",
+          "is_correct": true
+        },
+        {
+          "label": "37 years",
+          "is_correct": false
+        },
+        {
+          "label": "40 years",
+          "is_correct": false
+        },
+        {
+          "label": "39 years",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Problems on Ages",
+      "kind": "standard",
+      "difficulty": "easy",
+      "answer_type": "single",
+      "stem": "A person is 46 years old today. What was his age 15 years ago?",
+      "explanation": "46 − 15 = 31 years.",
+      "options": [
+        {
+          "label": "33 years",
+          "is_correct": false
+        },
+        {
+          "label": "30 years",
+          "is_correct": false
+        },
+        {
+          "label": "31 years",
+          "is_correct": true
+        },
+        {
+          "label": "32 years",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Problems on Ages",
+      "kind": "standard",
+      "difficulty": "easy",
+      "answer_type": "single",
+      "stem": "A person's present age is 31 years. What will his age be after 15 years?",
+      "explanation": "31 + 15 = 46 years.",
+      "options": [
+        {
+          "label": "50 years",
+          "is_correct": false
+        },
+        {
+          "label": "46 years",
+          "is_correct": true
+        },
+        {
+          "label": "48 years",
+          "is_correct": false
+        },
+        {
+          "label": "44 years",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Problems on Ages",
+      "kind": "standard",
+      "difficulty": "easy",
+      "answer_type": "single",
+      "stem": "A is 15 years older than B. If B is 10 years old, find A's age.",
+      "explanation": "10 + 15 = 25 years.",
+      "options": [
+        {
+          "label": "26 years",
+          "is_correct": false
+        },
+        {
+          "label": "24 years",
+          "is_correct": false
+        },
+        {
+          "label": "25 years",
+          "is_correct": true
+        },
+        {
+          "label": "27 years",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Problems on Ages",
+      "kind": "standard",
+      "difficulty": "easy",
+      "answer_type": "single",
+      "stem": "A is 24 years older than B. If B is 29 years old, find A's age.",
+      "explanation": "29 + 24 = 53 years.",
+      "options": [
+        {
+          "label": "53 years",
+          "is_correct": true
+        },
+        {
+          "label": "55 years",
+          "is_correct": false
+        },
+        {
+          "label": "51 years",
+          "is_correct": false
+        },
+        {
+          "label": "57 years",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Problems on Ages",
+      "kind": "standard",
+      "difficulty": "medium",
+      "answer_type": "single",
+      "stem": "The ages of A and B are in the ratio 8:9 and the sum of their ages is 187 years. Find the age of the elder.",
+      "explanation": "Elder's age = 187 × 9/17 = 99 years.",
+      "options": [
+        {
+          "label": "99 years",
+          "is_correct": true
+        },
+        {
+          "label": "101 years",
+          "is_correct": false
+        },
+        {
+          "label": "103 years",
+          "is_correct": false
+        },
+        {
+          "label": "97 years",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Problems on Ages",
+      "kind": "standard",
+      "difficulty": "medium",
+      "answer_type": "single",
+      "stem": "A father is 61 years old and his son is 24 years old. In how many years will the father be twice as old as his son?",
+      "explanation": "After t years: 61+t = 2(24+t) ⇒ t = 61 − 2×24 = 13 years.",
+      "options": [
+        {
+          "label": "13 years",
+          "is_correct": true
+        },
+        {
+          "label": "12 years",
+          "is_correct": false
+        },
+        {
+          "label": "14 years",
+          "is_correct": false
+        },
+        {
+          "label": "15 years",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Problems on Ages",
+      "kind": "standard",
+      "difficulty": "medium",
+      "answer_type": "single",
+      "stem": "The sum of the ages of A and B is 99 years and A is 19 years older than B. Find A's age.",
+      "explanation": "A's age = (sum + difference)/2 = (99 + 19)/2 = 59 years.",
+      "options": [
+        {
+          "label": "63 years",
+          "is_correct": false
+        },
+        {
+          "label": "59 years",
+          "is_correct": true
+        },
+        {
+          "label": "57 years",
+          "is_correct": false
+        },
+        {
+          "label": "61 years",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Problems on Ages",
+      "kind": "standard",
+      "difficulty": "medium",
+      "answer_type": "single",
+      "stem": "A father is 32 years old and his son is 13 years old. In how many years will the father be twice as old as his son?",
+      "explanation": "After t years: 32+t = 2(13+t) ⇒ t = 32 − 2×13 = 6 years.",
+      "options": [
+        {
+          "label": "6 years",
+          "is_correct": true
+        },
+        {
+          "label": "5 years",
+          "is_correct": false
+        },
+        {
+          "label": "8 years",
+          "is_correct": false
+        },
+        {
+          "label": "7 years",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Problems on Ages",
+      "kind": "standard",
+      "difficulty": "medium",
+      "answer_type": "single",
+      "stem": "The sum of the ages of A and B is 63 years and A is 19 years older than B. Find A's age.",
+      "explanation": "A's age = (sum + difference)/2 = (63 + 19)/2 = 41 years.",
+      "options": [
+        {
+          "label": "45 years",
+          "is_correct": false
+        },
+        {
+          "label": "43 years",
+          "is_correct": false
+        },
+        {
+          "label": "41 years",
+          "is_correct": true
+        },
+        {
+          "label": "39 years",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Problems on Ages",
+      "kind": "standard",
+      "difficulty": "medium",
+      "answer_type": "single",
+      "stem": "A father is 26 years old and his son is 11 years old. In how many years will the father be twice as old as his son?",
+      "explanation": "After t years: 26+t = 2(11+t) ⇒ t = 26 − 2×11 = 4 years.",
+      "options": [
+        {
+          "label": "4 years",
+          "is_correct": true
+        },
+        {
+          "label": "5 years",
+          "is_correct": false
+        },
+        {
+          "label": "3 years",
+          "is_correct": false
+        },
+        {
+          "label": "6 years",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Problems on Ages",
+      "kind": "standard",
+      "difficulty": "medium",
+      "answer_type": "single",
+      "stem": "The ages of A and B are in the ratio 7:5 and the sum of their ages is 36 years. Find the age of the elder.",
+      "explanation": "Elder's age = 36 × 7/12 = 21 years.",
+      "options": [
+        {
+          "label": "23 years",
+          "is_correct": false
+        },
+        {
+          "label": "22 years",
+          "is_correct": false
+        },
+        {
+          "label": "20 years",
+          "is_correct": false
+        },
+        {
+          "label": "21 years",
+          "is_correct": true
+        }
+      ]
+    },
+    {
+      "chapter": "Problems on Ages",
+      "kind": "standard",
+      "difficulty": "medium",
+      "answer_type": "single",
+      "stem": "A father is 12 years old and his son is 5 years old. In how many years will the father be twice as old as his son?",
+      "explanation": "After t years: 12+t = 2(5+t) ⇒ t = 12 − 2×5 = 2 years.",
+      "options": [
+        {
+          "label": "2 years",
+          "is_correct": true
+        },
+        {
+          "label": "1 years",
+          "is_correct": false
+        },
+        {
+          "label": "4 years",
+          "is_correct": false
+        },
+        {
+          "label": "3 years",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Problems on Ages",
+      "kind": "standard",
+      "difficulty": "medium",
+      "answer_type": "single",
+      "stem": "A father is 41 years old and his son is 17 years old. In how many years will the father be twice as old as his son?",
+      "explanation": "After t years: 41+t = 2(17+t) ⇒ t = 41 − 2×17 = 7 years.",
+      "options": [
+        {
+          "label": "9 years",
+          "is_correct": false
+        },
+        {
+          "label": "8 years",
+          "is_correct": false
+        },
+        {
+          "label": "7 years",
+          "is_correct": true
+        },
+        {
+          "label": "6 years",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Problems on Ages",
+      "kind": "standard",
+      "difficulty": "medium",
+      "answer_type": "single",
+      "stem": "The sum of the ages of A and B is 30 years and A is 14 years older than B. Find A's age.",
+      "explanation": "A's age = (sum + difference)/2 = (30 + 14)/2 = 22 years.",
+      "options": [
+        {
+          "label": "22 years",
+          "is_correct": true
+        },
+        {
+          "label": "23 years",
+          "is_correct": false
+        },
+        {
+          "label": "21 years",
+          "is_correct": false
+        },
+        {
+          "label": "24 years",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Problems on Ages",
+      "kind": "standard",
+      "difficulty": "medium",
+      "answer_type": "single",
+      "stem": "The sum of the ages of A and B is 41 years and A is 5 years older than B. Find A's age.",
+      "explanation": "A's age = (sum + difference)/2 = (41 + 5)/2 = 23 years.",
+      "options": [
+        {
+          "label": "25 years",
+          "is_correct": false
+        },
+        {
+          "label": "24 years",
+          "is_correct": false
+        },
+        {
+          "label": "22 years",
+          "is_correct": false
+        },
+        {
+          "label": "23 years",
+          "is_correct": true
+        }
+      ]
+    },
+    {
+      "chapter": "Problems on Ages",
+      "kind": "standard",
+      "difficulty": "medium",
+      "answer_type": "single",
+      "stem": "A father is 26 years old and his son is 7 years old. In how many years will the father be twice as old as his son?",
+      "explanation": "After t years: 26+t = 2(7+t) ⇒ t = 26 − 2×7 = 12 years.",
+      "options": [
+        {
+          "label": "12 years",
+          "is_correct": true
+        },
+        {
+          "label": "13 years",
+          "is_correct": false
+        },
+        {
+          "label": "14 years",
+          "is_correct": false
+        },
+        {
+          "label": "11 years",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Problems on Ages",
+      "kind": "standard",
+      "difficulty": "medium",
+      "answer_type": "single",
+      "stem": "The sum of the ages of A and B is 66 years and A is 6 years older than B. Find A's age.",
+      "explanation": "A's age = (sum + difference)/2 = (66 + 6)/2 = 36 years.",
+      "options": [
+        {
+          "label": "35 years",
+          "is_correct": false
+        },
+        {
+          "label": "37 years",
+          "is_correct": false
+        },
+        {
+          "label": "36 years",
+          "is_correct": true
+        },
+        {
+          "label": "38 years",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Problems on Ages",
+      "kind": "standard",
+      "difficulty": "medium",
+      "answer_type": "single",
+      "stem": "The ages of A and B are in the ratio 7:8 and the sum of their ages is 165 years. Find the age of the elder.",
+      "explanation": "Elder's age = 165 × 8/15 = 88 years.",
+      "options": [
+        {
+          "label": "86 years",
+          "is_correct": false
+        },
+        {
+          "label": "90 years",
+          "is_correct": false
+        },
+        {
+          "label": "88 years",
+          "is_correct": true
+        },
+        {
+          "label": "92 years",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Problems on Ages",
+      "kind": "standard",
+      "difficulty": "medium",
+      "answer_type": "single",
+      "stem": "The sum of the ages of A and B is 45 years and A is 15 years older than B. Find A's age.",
+      "explanation": "A's age = (sum + difference)/2 = (45 + 15)/2 = 30 years.",
+      "options": [
+        {
+          "label": "32 years",
+          "is_correct": false
+        },
+        {
+          "label": "31 years",
+          "is_correct": false
+        },
+        {
+          "label": "29 years",
+          "is_correct": false
+        },
+        {
+          "label": "30 years",
+          "is_correct": true
+        }
+      ]
+    },
+    {
+      "chapter": "Problems on Ages",
+      "kind": "standard",
+      "difficulty": "medium",
+      "answer_type": "single",
+      "stem": "A father is 49 years old and his son is 18 years old. In how many years will the father be twice as old as his son?",
+      "explanation": "After t years: 49+t = 2(18+t) ⇒ t = 49 − 2×18 = 13 years.",
+      "options": [
+        {
+          "label": "13 years",
+          "is_correct": true
+        },
+        {
+          "label": "15 years",
+          "is_correct": false
+        },
+        {
+          "label": "12 years",
+          "is_correct": false
+        },
+        {
+          "label": "14 years",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Problems on Ages",
+      "kind": "standard",
+      "difficulty": "medium",
+      "answer_type": "single",
+      "stem": "The ages of A and B are in the ratio 5:4 and the sum of their ages is 90 years. Find the age of the elder.",
+      "explanation": "Elder's age = 90 × 5/9 = 50 years.",
+      "options": [
+        {
+          "label": "54 years",
+          "is_correct": false
+        },
+        {
+          "label": "48 years",
+          "is_correct": false
+        },
+        {
+          "label": "50 years",
+          "is_correct": true
+        },
+        {
+          "label": "52 years",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Problems on Ages",
+      "kind": "standard",
+      "difficulty": "medium",
+      "answer_type": "single",
+      "stem": "The ages of A and B are in the ratio 7:3 and the sum of their ages is 90 years. Find the age of the elder.",
+      "explanation": "Elder's age = 90 × 7/10 = 63 years.",
+      "options": [
+        {
+          "label": "61 years",
+          "is_correct": false
+        },
+        {
+          "label": "65 years",
+          "is_correct": false
+        },
+        {
+          "label": "63 years",
+          "is_correct": true
+        },
+        {
+          "label": "67 years",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Problems on Ages",
+      "kind": "standard",
+      "difficulty": "medium",
+      "answer_type": "single",
+      "stem": "The ages of A and B are in the ratio 4:7 and the sum of their ages is 99 years. Find the age of the elder.",
+      "explanation": "Elder's age = 99 × 7/11 = 63 years.",
+      "options": [
+        {
+          "label": "67 years",
+          "is_correct": false
+        },
+        {
+          "label": "63 years",
+          "is_correct": true
+        },
+        {
+          "label": "61 years",
+          "is_correct": false
+        },
+        {
+          "label": "65 years",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Problems on Ages",
+      "kind": "standard",
+      "difficulty": "medium",
+      "answer_type": "single",
+      "stem": "A father is 21 years old and his son is 8 years old. In how many years will the father be twice as old as his son?",
+      "explanation": "After t years: 21+t = 2(8+t) ⇒ t = 21 − 2×8 = 5 years.",
+      "options": [
+        {
+          "label": "6 years",
+          "is_correct": false
+        },
+        {
+          "label": "7 years",
+          "is_correct": false
+        },
+        {
+          "label": "4 years",
+          "is_correct": false
+        },
+        {
+          "label": "5 years",
+          "is_correct": true
+        }
+      ]
+    },
+    {
+      "chapter": "Problems on Ages",
+      "kind": "standard",
+      "difficulty": "medium",
+      "answer_type": "single",
+      "stem": "The ages of A and B are in the ratio 8:7 and the sum of their ages is 60 years. Find the age of the elder.",
+      "explanation": "Elder's age = 60 × 8/15 = 32 years.",
+      "options": [
+        {
+          "label": "31 years",
+          "is_correct": false
+        },
+        {
+          "label": "32 years",
+          "is_correct": true
+        },
+        {
+          "label": "34 years",
+          "is_correct": false
+        },
+        {
+          "label": "33 years",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Problems on Ages",
+      "kind": "standard",
+      "difficulty": "medium",
+      "answer_type": "single",
+      "stem": "A father is 49 years old and his son is 19 years old. In how many years will the father be twice as old as his son?",
+      "explanation": "After t years: 49+t = 2(19+t) ⇒ t = 49 − 2×19 = 11 years.",
+      "options": [
+        {
+          "label": "11 years",
+          "is_correct": true
+        },
+        {
+          "label": "13 years",
+          "is_correct": false
+        },
+        {
+          "label": "12 years",
+          "is_correct": false
+        },
+        {
+          "label": "10 years",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Problems on Ages",
+      "kind": "standard",
+      "difficulty": "medium",
+      "answer_type": "single",
+      "stem": "A father is 52 years old and his son is 19 years old. In how many years will the father be twice as old as his son?",
+      "explanation": "After t years: 52+t = 2(19+t) ⇒ t = 52 − 2×19 = 14 years.",
+      "options": [
+        {
+          "label": "15 years",
+          "is_correct": false
+        },
+        {
+          "label": "16 years",
+          "is_correct": false
+        },
+        {
+          "label": "14 years",
+          "is_correct": true
+        },
+        {
+          "label": "13 years",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Problems on Ages",
+      "kind": "standard",
+      "difficulty": "medium",
+      "answer_type": "single",
+      "stem": "A father is 48 years old and his son is 18 years old. In how many years will the father be twice as old as his son?",
+      "explanation": "After t years: 48+t = 2(18+t) ⇒ t = 48 − 2×18 = 12 years.",
+      "options": [
+        {
+          "label": "12 years",
+          "is_correct": true
+        },
+        {
+          "label": "11 years",
+          "is_correct": false
+        },
+        {
+          "label": "13 years",
+          "is_correct": false
+        },
+        {
+          "label": "14 years",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Problems on Ages",
+      "kind": "standard",
+      "difficulty": "medium",
+      "answer_type": "single",
+      "stem": "A father is 35 years old and his son is 13 years old. In how many years will the father be twice as old as his son?",
+      "explanation": "After t years: 35+t = 2(13+t) ⇒ t = 35 − 2×13 = 9 years.",
+      "options": [
+        {
+          "label": "10 years",
+          "is_correct": false
+        },
+        {
+          "label": "8 years",
+          "is_correct": false
+        },
+        {
+          "label": "11 years",
+          "is_correct": false
+        },
+        {
+          "label": "9 years",
+          "is_correct": true
+        }
+      ]
+    },
+    {
+      "chapter": "Problems on Ages",
+      "kind": "standard",
+      "difficulty": "medium",
+      "answer_type": "single",
+      "stem": "The sum of the ages of A and B is 42 years and A is 12 years older than B. Find A's age.",
+      "explanation": "A's age = (sum + difference)/2 = (42 + 12)/2 = 27 years.",
+      "options": [
+        {
+          "label": "29 years",
+          "is_correct": false
+        },
+        {
+          "label": "26 years",
+          "is_correct": false
+        },
+        {
+          "label": "27 years",
+          "is_correct": true
+        },
+        {
+          "label": "28 years",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Problems on Ages",
+      "kind": "standard",
+      "difficulty": "medium",
+      "answer_type": "single",
+      "stem": "The sum of the ages of A and B is 24 years and A is 2 years older than B. Find A's age.",
+      "explanation": "A's age = (sum + difference)/2 = (24 + 2)/2 = 13 years.",
+      "options": [
+        {
+          "label": "15 years",
+          "is_correct": false
+        },
+        {
+          "label": "13 years",
+          "is_correct": true
+        },
+        {
+          "label": "12 years",
+          "is_correct": false
+        },
+        {
+          "label": "14 years",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Problems on Ages",
+      "kind": "standard",
+      "difficulty": "medium",
+      "answer_type": "single",
+      "stem": "The sum of the ages of A and B is 57 years and A is 11 years older than B. Find A's age.",
+      "explanation": "A's age = (sum + difference)/2 = (57 + 11)/2 = 34 years.",
+      "options": [
+        {
+          "label": "35 years",
+          "is_correct": false
+        },
+        {
+          "label": "34 years",
+          "is_correct": true
+        },
+        {
+          "label": "36 years",
+          "is_correct": false
+        },
+        {
+          "label": "33 years",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Problems on Ages",
+      "kind": "standard",
+      "difficulty": "medium",
+      "answer_type": "single",
+      "stem": "A father is 42 years old and his son is 15 years old. In how many years will the father be twice as old as his son?",
+      "explanation": "After t years: 42+t = 2(15+t) ⇒ t = 42 − 2×15 = 12 years.",
+      "options": [
+        {
+          "label": "13 years",
+          "is_correct": false
+        },
+        {
+          "label": "14 years",
+          "is_correct": false
+        },
+        {
+          "label": "11 years",
+          "is_correct": false
+        },
+        {
+          "label": "12 years",
+          "is_correct": true
+        }
+      ]
+    },
+    {
+      "chapter": "Problems on Ages",
+      "kind": "standard",
+      "difficulty": "medium",
+      "answer_type": "single",
+      "stem": "A father is 61 years old and his son is 25 years old. In how many years will the father be twice as old as his son?",
+      "explanation": "After t years: 61+t = 2(25+t) ⇒ t = 61 − 2×25 = 11 years.",
+      "options": [
+        {
+          "label": "13 years",
+          "is_correct": false
+        },
+        {
+          "label": "12 years",
+          "is_correct": false
+        },
+        {
+          "label": "11 years",
+          "is_correct": true
+        },
+        {
+          "label": "10 years",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Problems on Ages",
+      "kind": "standard",
+      "difficulty": "medium",
+      "answer_type": "single",
+      "stem": "A father is 55 years old and his son is 21 years old. In how many years will the father be twice as old as his son?",
+      "explanation": "After t years: 55+t = 2(21+t) ⇒ t = 55 − 2×21 = 13 years.",
+      "options": [
+        {
+          "label": "12 years",
+          "is_correct": false
+        },
+        {
+          "label": "14 years",
+          "is_correct": false
+        },
+        {
+          "label": "15 years",
+          "is_correct": false
+        },
+        {
+          "label": "13 years",
+          "is_correct": true
+        }
+      ]
+    },
+    {
+      "chapter": "Problems on Ages",
+      "kind": "standard",
+      "difficulty": "medium",
+      "answer_type": "single",
+      "stem": "The ages of A and B are in the ratio 4:3 and the sum of their ages is 84 years. Find the age of the elder.",
+      "explanation": "Elder's age = 84 × 4/7 = 48 years.",
+      "options": [
+        {
+          "label": "52 years",
+          "is_correct": false
+        },
+        {
+          "label": "46 years",
+          "is_correct": false
+        },
+        {
+          "label": "48 years",
+          "is_correct": true
+        },
+        {
+          "label": "50 years",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Problems on Ages",
+      "kind": "standard",
+      "difficulty": "medium",
+      "answer_type": "single",
+      "stem": "A father is 45 years old and his son is 18 years old. In how many years will the father be twice as old as his son?",
+      "explanation": "After t years: 45+t = 2(18+t) ⇒ t = 45 − 2×18 = 9 years.",
+      "options": [
+        {
+          "label": "10 years",
+          "is_correct": false
+        },
+        {
+          "label": "11 years",
+          "is_correct": false
+        },
+        {
+          "label": "9 years",
+          "is_correct": true
+        },
+        {
+          "label": "8 years",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Problems on Ages",
+      "kind": "standard",
+      "difficulty": "medium",
+      "answer_type": "single",
+      "stem": "The sum of the ages of A and B is 28 years and A is 6 years older than B. Find A's age.",
+      "explanation": "A's age = (sum + difference)/2 = (28 + 6)/2 = 17 years.",
+      "options": [
+        {
+          "label": "18 years",
+          "is_correct": false
+        },
+        {
+          "label": "16 years",
+          "is_correct": false
+        },
+        {
+          "label": "17 years",
+          "is_correct": true
+        },
+        {
+          "label": "19 years",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Problems on Ages",
+      "kind": "standard",
+      "difficulty": "medium",
+      "answer_type": "single",
+      "stem": "The ages of A and B are in the ratio 5:3 and the sum of their ages is 80 years. Find the age of the elder.",
+      "explanation": "Elder's age = 80 × 5/8 = 50 years.",
+      "options": [
+        {
+          "label": "50 years",
+          "is_correct": true
+        },
+        {
+          "label": "54 years",
+          "is_correct": false
+        },
+        {
+          "label": "52 years",
+          "is_correct": false
+        },
+        {
+          "label": "48 years",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Problems on Ages",
+      "kind": "standard",
+      "difficulty": "medium",
+      "answer_type": "single",
+      "stem": "The ages of A and B are in the ratio 5:8 and the sum of their ages is 130 years. Find the age of the elder.",
+      "explanation": "Elder's age = 130 × 8/13 = 80 years.",
+      "options": [
+        {
+          "label": "78 years",
+          "is_correct": false
+        },
+        {
+          "label": "80 years",
+          "is_correct": true
+        },
+        {
+          "label": "84 years",
+          "is_correct": false
+        },
+        {
+          "label": "82 years",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Problems on Ages",
+      "kind": "standard",
+      "difficulty": "medium",
+      "answer_type": "single",
+      "stem": "A father is 28 years old and his son is 7 years old. In how many years will the father be twice as old as his son?",
+      "explanation": "After t years: 28+t = 2(7+t) ⇒ t = 28 − 2×7 = 14 years.",
+      "options": [
+        {
+          "label": "15 years",
+          "is_correct": false
+        },
+        {
+          "label": "13 years",
+          "is_correct": false
+        },
+        {
+          "label": "16 years",
+          "is_correct": false
+        },
+        {
+          "label": "14 years",
+          "is_correct": true
+        }
+      ]
+    },
+    {
+      "chapter": "Problems on Ages",
+      "kind": "standard",
+      "difficulty": "medium",
+      "answer_type": "single",
+      "stem": "The sum of the ages of A and B is 72 years and A is 14 years older than B. Find A's age.",
+      "explanation": "A's age = (sum + difference)/2 = (72 + 14)/2 = 43 years.",
+      "options": [
+        {
+          "label": "45 years",
+          "is_correct": false
+        },
+        {
+          "label": "47 years",
+          "is_correct": false
+        },
+        {
+          "label": "41 years",
+          "is_correct": false
+        },
+        {
+          "label": "43 years",
+          "is_correct": true
+        }
+      ]
+    },
+    {
+      "chapter": "Problems on Ages",
+      "kind": "standard",
+      "difficulty": "medium",
+      "answer_type": "single",
+      "stem": "The ages of A and B are in the ratio 5:2 and the sum of their ages is 70 years. Find the age of the elder.",
+      "explanation": "Elder's age = 70 × 5/7 = 50 years.",
+      "options": [
+        {
+          "label": "50 years",
+          "is_correct": true
+        },
+        {
+          "label": "52 years",
+          "is_correct": false
+        },
+        {
+          "label": "48 years",
+          "is_correct": false
+        },
+        {
+          "label": "54 years",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Problems on Ages",
+      "kind": "standard",
+      "difficulty": "medium",
+      "answer_type": "single",
+      "stem": "The sum of the ages of A and B is 28 years and A is 14 years older than B. Find A's age.",
+      "explanation": "A's age = (sum + difference)/2 = (28 + 14)/2 = 21 years.",
+      "options": [
+        {
+          "label": "22 years",
+          "is_correct": false
+        },
+        {
+          "label": "23 years",
+          "is_correct": false
+        },
+        {
+          "label": "21 years",
+          "is_correct": true
+        },
+        {
+          "label": "20 years",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Problems on Ages",
+      "kind": "standard",
+      "difficulty": "medium",
+      "answer_type": "single",
+      "stem": "A father is 24 years old and his son is 10 years old. In how many years will the father be twice as old as his son?",
+      "explanation": "After t years: 24+t = 2(10+t) ⇒ t = 24 − 2×10 = 4 years.",
+      "options": [
+        {
+          "label": "6 years",
+          "is_correct": false
+        },
+        {
+          "label": "3 years",
+          "is_correct": false
+        },
+        {
+          "label": "4 years",
+          "is_correct": true
+        },
+        {
+          "label": "5 years",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Problems on Ages",
+      "kind": "standard",
+      "difficulty": "medium",
+      "answer_type": "single",
+      "stem": "A father is 54 years old and his son is 25 years old. In how many years will the father be twice as old as his son?",
+      "explanation": "After t years: 54+t = 2(25+t) ⇒ t = 54 − 2×25 = 4 years.",
+      "options": [
+        {
+          "label": "5 years",
+          "is_correct": false
+        },
+        {
+          "label": "4 years",
+          "is_correct": true
+        },
+        {
+          "label": "6 years",
+          "is_correct": false
+        },
+        {
+          "label": "3 years",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Problems on Ages",
+      "kind": "standard",
+      "difficulty": "medium",
+      "answer_type": "single",
+      "stem": "The sum of the ages of A and B is 79 years and A is 7 years older than B. Find A's age.",
+      "explanation": "A's age = (sum + difference)/2 = (79 + 7)/2 = 43 years.",
+      "options": [
+        {
+          "label": "47 years",
+          "is_correct": false
+        },
+        {
+          "label": "45 years",
+          "is_correct": false
+        },
+        {
+          "label": "41 years",
+          "is_correct": false
+        },
+        {
+          "label": "43 years",
+          "is_correct": true
+        }
+      ]
+    },
+    {
+      "chapter": "Problems on Ages",
+      "kind": "standard",
+      "difficulty": "medium",
+      "answer_type": "single",
+      "stem": "A father is 35 years old and his son is 14 years old. In how many years will the father be twice as old as his son?",
+      "explanation": "After t years: 35+t = 2(14+t) ⇒ t = 35 − 2×14 = 7 years.",
+      "options": [
+        {
+          "label": "8 years",
+          "is_correct": false
+        },
+        {
+          "label": "7 years",
+          "is_correct": true
+        },
+        {
+          "label": "6 years",
+          "is_correct": false
+        },
+        {
+          "label": "9 years",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Problems on Ages",
+      "kind": "standard",
+      "difficulty": "medium",
+      "answer_type": "single",
+      "stem": "A father is 27 years old and his son is 7 years old. In how many years will the father be twice as old as his son?",
+      "explanation": "After t years: 27+t = 2(7+t) ⇒ t = 27 − 2×7 = 13 years.",
+      "options": [
+        {
+          "label": "13 years",
+          "is_correct": true
+        },
+        {
+          "label": "14 years",
+          "is_correct": false
+        },
+        {
+          "label": "12 years",
+          "is_correct": false
+        },
+        {
+          "label": "15 years",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Problems on Ages",
+      "kind": "standard",
+      "difficulty": "medium",
+      "answer_type": "single",
+      "stem": "A father is 59 years old and his son is 24 years old. In how many years will the father be twice as old as his son?",
+      "explanation": "After t years: 59+t = 2(24+t) ⇒ t = 59 − 2×24 = 11 years.",
+      "options": [
+        {
+          "label": "13 years",
+          "is_correct": false
+        },
+        {
+          "label": "10 years",
+          "is_correct": false
+        },
+        {
+          "label": "12 years",
+          "is_correct": false
+        },
+        {
+          "label": "11 years",
+          "is_correct": true
+        }
+      ]
+    },
+    {
+      "chapter": "Problems on Ages",
+      "kind": "standard",
+      "difficulty": "medium",
+      "answer_type": "single",
+      "stem": "The ages of A and B are in the ratio 8:3 and the sum of their ages is 66 years. Find the age of the elder.",
+      "explanation": "Elder's age = 66 × 8/11 = 48 years.",
+      "options": [
+        {
+          "label": "46 years",
+          "is_correct": false
+        },
+        {
+          "label": "48 years",
+          "is_correct": true
+        },
+        {
+          "label": "50 years",
+          "is_correct": false
+        },
+        {
+          "label": "52 years",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Problems on Ages",
+      "kind": "standard",
+      "difficulty": "medium",
+      "answer_type": "single",
+      "stem": "The sum of the ages of A and B is 31 years and A is 11 years older than B. Find A's age.",
+      "explanation": "A's age = (sum + difference)/2 = (31 + 11)/2 = 21 years.",
+      "options": [
+        {
+          "label": "23 years",
+          "is_correct": false
+        },
+        {
+          "label": "22 years",
+          "is_correct": false
+        },
+        {
+          "label": "21 years",
+          "is_correct": true
+        },
+        {
+          "label": "20 years",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Problems on Ages",
+      "kind": "standard",
+      "difficulty": "medium",
+      "answer_type": "single",
+      "stem": "A father is 28 years old and his son is 11 years old. In how many years will the father be twice as old as his son?",
+      "explanation": "After t years: 28+t = 2(11+t) ⇒ t = 28 − 2×11 = 6 years.",
+      "options": [
+        {
+          "label": "6 years",
+          "is_correct": true
+        },
+        {
+          "label": "8 years",
+          "is_correct": false
+        },
+        {
+          "label": "7 years",
+          "is_correct": false
+        },
+        {
+          "label": "5 years",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Problems on Ages",
+      "kind": "standard",
+      "difficulty": "medium",
+      "answer_type": "single",
+      "stem": "A father is 56 years old and his son is 24 years old. In how many years will the father be twice as old as his son?",
+      "explanation": "After t years: 56+t = 2(24+t) ⇒ t = 56 − 2×24 = 8 years.",
+      "options": [
+        {
+          "label": "9 years",
+          "is_correct": false
+        },
+        {
+          "label": "10 years",
+          "is_correct": false
+        },
+        {
+          "label": "8 years",
+          "is_correct": true
+        },
+        {
+          "label": "7 years",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Problems on Ages",
+      "kind": "standard",
+      "difficulty": "hard",
+      "answer_type": "single",
+      "stem": "The sum of the present ages of a father and his son is 36 years. 8 years ago, the father was 4 times as old as his son. Find the son's present age.",
+      "explanation": "8 years ago: father = 4 × son. Solving with sum 36 gives the son's present age = 12 years.",
+      "options": [
+        {
+          "label": "13 years",
+          "is_correct": false
+        },
+        {
+          "label": "11 years",
+          "is_correct": false
+        },
+        {
+          "label": "14 years",
+          "is_correct": false
+        },
+        {
+          "label": "12 years",
+          "is_correct": true
+        }
+      ]
+    },
+    {
+      "chapter": "Problems on Ages",
+      "kind": "standard",
+      "difficulty": "hard",
+      "answer_type": "single",
+      "stem": "The sum of the present ages of a father and his son is 60 years. 4 years ago, the father was 3 times as old as his son. Find the son's present age.",
+      "explanation": "4 years ago: father = 3 × son. Solving with sum 60 gives the son's present age = 17 years.",
+      "options": [
+        {
+          "label": "19 years",
+          "is_correct": false
+        },
+        {
+          "label": "16 years",
+          "is_correct": false
+        },
+        {
+          "label": "17 years",
+          "is_correct": true
+        },
+        {
+          "label": "18 years",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Problems on Ages",
+      "kind": "standard",
+      "difficulty": "hard",
+      "answer_type": "single",
+      "stem": "A father is 6 times as old as his son. After 6 years, he will be 3 times as old as his son. Find the son's present age.",
+      "explanation": "Let the son be s. 6s + 6 = 3(s + 6) ⇒ s = 4 years.",
+      "options": [
+        {
+          "label": "6 years",
+          "is_correct": false
+        },
+        {
+          "label": "3 years",
+          "is_correct": false
+        },
+        {
+          "label": "4 years",
+          "is_correct": true
+        },
+        {
+          "label": "5 years",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Problems on Ages",
+      "kind": "standard",
+      "difficulty": "hard",
+      "answer_type": "single",
+      "stem": "The sum of the present ages of a father and his son is 27 years. 6 years ago, the father was 2 times as old as his son. Find the son's present age.",
+      "explanation": "6 years ago: father = 2 × son. Solving with sum 27 gives the son's present age = 11 years.",
+      "options": [
+        {
+          "label": "13 years",
+          "is_correct": false
+        },
+        {
+          "label": "11 years",
+          "is_correct": true
+        },
+        {
+          "label": "10 years",
+          "is_correct": false
+        },
+        {
+          "label": "12 years",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Problems on Ages",
+      "kind": "standard",
+      "difficulty": "hard",
+      "answer_type": "single",
+      "stem": "The sum of the present ages of a father and his son is 56 years. 2 years ago, the father was 3 times as old as his son. Find the son's present age.",
+      "explanation": "2 years ago: father = 3 × son. Solving with sum 56 gives the son's present age = 15 years.",
+      "options": [
+        {
+          "label": "14 years",
+          "is_correct": false
+        },
+        {
+          "label": "16 years",
+          "is_correct": false
+        },
+        {
+          "label": "15 years",
+          "is_correct": true
+        },
+        {
+          "label": "17 years",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Problems on Ages",
+      "kind": "standard",
+      "difficulty": "hard",
+      "answer_type": "single",
+      "stem": "The present ages of A and B are in the ratio 8:7. After 7 years, their ages will be in the ratio 23:21. Find the present age of the elder.",
+      "explanation": "Ages are 8×2 and 7×2; the elder is 16 years.",
+      "options": [
+        {
+          "label": "15 years",
+          "is_correct": false
+        },
+        {
+          "label": "17 years",
+          "is_correct": false
+        },
+        {
+          "label": "16 years",
+          "is_correct": true
+        },
+        {
+          "label": "18 years",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Problems on Ages",
+      "kind": "standard",
+      "difficulty": "hard",
+      "answer_type": "single",
+      "stem": "A father is 5 times as old as his son. After 10 years, he will be 3 times as old as his son. Find the son's present age.",
+      "explanation": "Let the son be s. 5s + 10 = 3(s + 10) ⇒ s = 10 years.",
+      "options": [
+        {
+          "label": "12 years",
+          "is_correct": false
+        },
+        {
+          "label": "10 years",
+          "is_correct": true
+        },
+        {
+          "label": "9 years",
+          "is_correct": false
+        },
+        {
+          "label": "11 years",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Problems on Ages",
+      "kind": "standard",
+      "difficulty": "hard",
+      "answer_type": "single",
+      "stem": "The sum of the present ages of a father and his son is 70 years. 11 years ago, the father was 3 times as old as his son. Find the son's present age.",
+      "explanation": "11 years ago: father = 3 × son. Solving with sum 70 gives the son's present age = 23 years.",
+      "options": [
+        {
+          "label": "22 years",
+          "is_correct": false
+        },
+        {
+          "label": "25 years",
+          "is_correct": false
+        },
+        {
+          "label": "24 years",
+          "is_correct": false
+        },
+        {
+          "label": "23 years",
+          "is_correct": true
+        }
+      ]
+    },
+    {
+      "chapter": "Problems on Ages",
+      "kind": "standard",
+      "difficulty": "hard",
+      "answer_type": "single",
+      "stem": "The present ages of A and B are in the ratio 7:6. After 5 years, their ages will be in the ratio 54:47. Find the present age of the elder.",
+      "explanation": "Ages are 7×7 and 6×7; the elder is 49 years.",
+      "options": [
+        {
+          "label": "53 years",
+          "is_correct": false
+        },
+        {
+          "label": "51 years",
+          "is_correct": false
+        },
+        {
+          "label": "49 years",
+          "is_correct": true
+        },
+        {
+          "label": "47 years",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Problems on Ages",
+      "kind": "standard",
+      "difficulty": "hard",
+      "answer_type": "single",
+      "stem": "The sum of the present ages of a father and his son is 74 years. 12 years ago, the father was 4 times as old as his son. Find the son's present age.",
+      "explanation": "12 years ago: father = 4 × son. Solving with sum 74 gives the son's present age = 22 years.",
+      "options": [
+        {
+          "label": "21 years",
+          "is_correct": false
+        },
+        {
+          "label": "23 years",
+          "is_correct": false
+        },
+        {
+          "label": "22 years",
+          "is_correct": true
+        },
+        {
+          "label": "24 years",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Problems on Ages",
+      "kind": "standard",
+      "difficulty": "hard",
+      "answer_type": "single",
+      "stem": "A father is 6 times as old as his son. After 15 years, he will be 3 times as old as his son. Find the son's present age.",
+      "explanation": "Let the son be s. 6s + 15 = 3(s + 15) ⇒ s = 10 years.",
+      "options": [
+        {
+          "label": "10 years",
+          "is_correct": true
+        },
+        {
+          "label": "9 years",
+          "is_correct": false
+        },
+        {
+          "label": "11 years",
+          "is_correct": false
+        },
+        {
+          "label": "12 years",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Problems on Ages",
+      "kind": "standard",
+      "difficulty": "hard",
+      "answer_type": "single",
+      "stem": "A father is 5 times as old as his son. After 12 years, he will be 2 times as old as his son. Find the son's present age.",
+      "explanation": "Let the son be s. 5s + 12 = 2(s + 12) ⇒ s = 4 years.",
+      "options": [
+        {
+          "label": "4 years",
+          "is_correct": true
+        },
+        {
+          "label": "3 years",
+          "is_correct": false
+        },
+        {
+          "label": "6 years",
+          "is_correct": false
+        },
+        {
+          "label": "5 years",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Problems on Ages",
+      "kind": "standard",
+      "difficulty": "hard",
+      "answer_type": "single",
+      "stem": "A father is 4 times as old as his son. After 4 years, he will be 3 times as old as his son. Find the son's present age.",
+      "explanation": "Let the son be s. 4s + 4 = 3(s + 4) ⇒ s = 8 years.",
+      "options": [
+        {
+          "label": "9 years",
+          "is_correct": false
+        },
+        {
+          "label": "10 years",
+          "is_correct": false
+        },
+        {
+          "label": "7 years",
+          "is_correct": false
+        },
+        {
+          "label": "8 years",
+          "is_correct": true
+        }
+      ]
+    },
+    {
+      "chapter": "Problems on Ages",
+      "kind": "standard",
+      "difficulty": "hard",
+      "answer_type": "single",
+      "stem": "A father is 3 times as old as his son. After 1 years, he will be 2 times as old as his son. Find the son's present age.",
+      "explanation": "Let the son be s. 3s + 1 = 2(s + 1) ⇒ s = 1 years.",
+      "options": [
+        {
+          "label": "2 years",
+          "is_correct": false
+        },
+        {
+          "label": "1 years",
+          "is_correct": true
+        },
+        {
+          "label": "4 years",
+          "is_correct": false
+        },
+        {
+          "label": "3 years",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Problems on Ages",
+      "kind": "standard",
+      "difficulty": "hard",
+      "answer_type": "single",
+      "stem": "The sum of the present ages of a father and his son is 23 years. 1 years ago, the father was 2 times as old as his son. Find the son's present age.",
+      "explanation": "1 years ago: father = 2 × son. Solving with sum 23 gives the son's present age = 8 years.",
+      "options": [
+        {
+          "label": "10 years",
+          "is_correct": false
+        },
+        {
+          "label": "7 years",
+          "is_correct": false
+        },
+        {
+          "label": "9 years",
+          "is_correct": false
+        },
+        {
+          "label": "8 years",
+          "is_correct": true
+        }
+      ]
+    },
+    {
+      "chapter": "Problems on Ages",
+      "kind": "standard",
+      "difficulty": "hard",
+      "answer_type": "single",
+      "stem": "A father is 6 times as old as his son. After 12 years, he will be 3 times as old as his son. Find the son's present age.",
+      "explanation": "Let the son be s. 6s + 12 = 3(s + 12) ⇒ s = 8 years.",
+      "options": [
+        {
+          "label": "10 years",
+          "is_correct": false
+        },
+        {
+          "label": "8 years",
+          "is_correct": true
+        },
+        {
+          "label": "9 years",
+          "is_correct": false
+        },
+        {
+          "label": "7 years",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Problems on Ages",
+      "kind": "standard",
+      "difficulty": "hard",
+      "answer_type": "single",
+      "stem": "The present ages of A and B are in the ratio 4:3. After 2 years, their ages will be in the ratio 13:10. Find the present age of the elder.",
+      "explanation": "Ages are 4×6 and 3×6; the elder is 24 years.",
+      "options": [
+        {
+          "label": "25 years",
+          "is_correct": false
+        },
+        {
+          "label": "23 years",
+          "is_correct": false
+        },
+        {
+          "label": "24 years",
+          "is_correct": true
+        },
+        {
+          "label": "26 years",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Problems on Ages",
+      "kind": "standard",
+      "difficulty": "hard",
+      "answer_type": "single",
+      "stem": "The sum of the present ages of a father and his son is 84 years. 4 years ago, the father was 3 times as old as his son. Find the son's present age.",
+      "explanation": "4 years ago: father = 3 × son. Solving with sum 84 gives the son's present age = 23 years.",
+      "options": [
+        {
+          "label": "23 years",
+          "is_correct": true
+        },
+        {
+          "label": "22 years",
+          "is_correct": false
+        },
+        {
+          "label": "24 years",
+          "is_correct": false
+        },
+        {
+          "label": "25 years",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Problems on Ages",
+      "kind": "standard",
+      "difficulty": "hard",
+      "answer_type": "single",
+      "stem": "The present ages of A and B are in the ratio 6:5. After 6 years, their ages will be in the ratio 15:13. Find the present age of the elder.",
+      "explanation": "Ages are 6×4 and 5×4; the elder is 24 years.",
+      "options": [
+        {
+          "label": "25 years",
+          "is_correct": false
+        },
+        {
+          "label": "26 years",
+          "is_correct": false
+        },
+        {
+          "label": "24 years",
+          "is_correct": true
+        },
+        {
+          "label": "23 years",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Problems on Ages",
+      "kind": "standard",
+      "difficulty": "hard",
+      "answer_type": "single",
+      "stem": "The sum of the present ages of a father and his son is 52 years. 11 years ago, the father was 2 times as old as his son. Find the son's present age.",
+      "explanation": "11 years ago: father = 2 × son. Solving with sum 52 gives the son's present age = 21 years.",
+      "options": [
+        {
+          "label": "23 years",
+          "is_correct": false
+        },
+        {
+          "label": "21 years",
+          "is_correct": true
+        },
+        {
+          "label": "20 years",
+          "is_correct": false
+        },
+        {
+          "label": "22 years",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Problems on Ages",
+      "kind": "standard",
+      "difficulty": "hard",
+      "answer_type": "single",
+      "stem": "The sum of the present ages of a father and his son is 90 years. 5 years ago, the father was 4 times as old as his son. Find the son's present age.",
+      "explanation": "5 years ago: father = 4 × son. Solving with sum 90 gives the son's present age = 21 years.",
+      "options": [
+        {
+          "label": "21 years",
+          "is_correct": true
+        },
+        {
+          "label": "22 years",
+          "is_correct": false
+        },
+        {
+          "label": "23 years",
+          "is_correct": false
+        },
+        {
+          "label": "20 years",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Problems on Ages",
+      "kind": "standard",
+      "difficulty": "hard",
+      "answer_type": "single",
+      "stem": "A father is 5 times as old as his son. After 2 years, he will be 3 times as old as his son. Find the son's present age.",
+      "explanation": "Let the son be s. 5s + 2 = 3(s + 2) ⇒ s = 2 years.",
+      "options": [
+        {
+          "label": "1 years",
+          "is_correct": false
+        },
+        {
+          "label": "2 years",
+          "is_correct": true
+        },
+        {
+          "label": "3 years",
+          "is_correct": false
+        },
+        {
+          "label": "4 years",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Problems on Ages",
+      "kind": "standard",
+      "difficulty": "hard",
+      "answer_type": "single",
+      "stem": "A father is 6 times as old as his son. After 16 years, he will be 2 times as old as his son. Find the son's present age.",
+      "explanation": "Let the son be s. 6s + 16 = 2(s + 16) ⇒ s = 4 years.",
+      "options": [
+        {
+          "label": "4 years",
+          "is_correct": true
+        },
+        {
+          "label": "6 years",
+          "is_correct": false
+        },
+        {
+          "label": "3 years",
+          "is_correct": false
+        },
+        {
+          "label": "5 years",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Problems on Ages",
+      "kind": "standard",
+      "difficulty": "hard",
+      "answer_type": "single",
+      "stem": "A father is 6 times as old as his son. After 4 years, he will be 2 times as old as his son. Find the son's present age.",
+      "explanation": "Let the son be s. 6s + 4 = 2(s + 4) ⇒ s = 1 years.",
+      "options": [
+        {
+          "label": "3 years",
+          "is_correct": false
+        },
+        {
+          "label": "1 years",
+          "is_correct": true
+        },
+        {
+          "label": "2 years",
+          "is_correct": false
+        },
+        {
+          "label": "4 years",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Problems on Ages",
+      "kind": "standard",
+      "difficulty": "hard",
+      "answer_type": "single",
+      "stem": "The sum of the present ages of a father and his son is 71 years. 1 years ago, the father was 2 times as old as his son. Find the son's present age.",
+      "explanation": "1 years ago: father = 2 × son. Solving with sum 71 gives the son's present age = 24 years.",
+      "options": [
+        {
+          "label": "25 years",
+          "is_correct": false
+        },
+        {
+          "label": "26 years",
+          "is_correct": false
+        },
+        {
+          "label": "23 years",
+          "is_correct": false
+        },
+        {
+          "label": "24 years",
+          "is_correct": true
+        }
+      ]
+    },
+    {
+      "chapter": "Problems on Ages",
+      "kind": "standard",
+      "difficulty": "hard",
+      "answer_type": "single",
+      "stem": "The present ages of A and B are in the ratio 4:9. After 7 years, their ages will be in the ratio 19:34. Find the present age of the elder.",
+      "explanation": "Ages are 4×3 and 9×3; the elder is 27 years.",
+      "options": [
+        {
+          "label": "27 years",
+          "is_correct": true
+        },
+        {
+          "label": "28 years",
+          "is_correct": false
+        },
+        {
+          "label": "26 years",
+          "is_correct": false
+        },
+        {
+          "label": "29 years",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Problems on Ages",
+      "kind": "standard",
+      "difficulty": "hard",
+      "answer_type": "single",
+      "stem": "A father is 4 times as old as his son. After 3 years, he will be 3 times as old as his son. Find the son's present age.",
+      "explanation": "Let the son be s. 4s + 3 = 3(s + 3) ⇒ s = 6 years.",
+      "options": [
+        {
+          "label": "5 years",
+          "is_correct": false
+        },
+        {
+          "label": "6 years",
+          "is_correct": true
+        },
+        {
+          "label": "7 years",
+          "is_correct": false
+        },
+        {
+          "label": "8 years",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Problems on Ages",
+      "kind": "standard",
+      "difficulty": "hard",
+      "answer_type": "single",
+      "stem": "The present ages of A and B are in the ratio 8:5. After 7 years, their ages will be in the ratio 23:17. Find the present age of the elder.",
+      "explanation": "Ages are 8×2 and 5×2; the elder is 16 years.",
+      "options": [
+        {
+          "label": "16 years",
+          "is_correct": true
+        },
+        {
+          "label": "18 years",
+          "is_correct": false
+        },
+        {
+          "label": "17 years",
+          "is_correct": false
+        },
+        {
+          "label": "15 years",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Problems on Ages",
+      "kind": "standard",
+      "difficulty": "hard",
+      "answer_type": "single",
+      "stem": "A father is 6 times as old as his son. After 3 years, he will be 3 times as old as his son. Find the son's present age.",
+      "explanation": "Let the son be s. 6s + 3 = 3(s + 3) ⇒ s = 2 years.",
+      "options": [
+        {
+          "label": "3 years",
+          "is_correct": false
+        },
+        {
+          "label": "2 years",
+          "is_correct": true
+        },
+        {
+          "label": "4 years",
+          "is_correct": false
+        },
+        {
+          "label": "1 years",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Problems on Ages",
+      "kind": "standard",
+      "difficulty": "hard",
+      "answer_type": "single",
+      "stem": "A father is 5 times as old as his son. After 6 years, he will be 2 times as old as his son. Find the son's present age.",
+      "explanation": "Let the son be s. 5s + 6 = 2(s + 6) ⇒ s = 2 years.",
+      "options": [
+        {
+          "label": "2 years",
+          "is_correct": true
+        },
+        {
+          "label": "3 years",
+          "is_correct": false
+        },
+        {
+          "label": "1 years",
+          "is_correct": false
+        },
+        {
+          "label": "4 years",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Problems on Ages",
+      "kind": "standard",
+      "difficulty": "hard",
+      "answer_type": "single",
+      "stem": "The sum of the present ages of a father and his son is 30 years. 9 years ago, the father was 3 times as old as his son. Find the son's present age.",
+      "explanation": "9 years ago: father = 3 × son. Solving with sum 30 gives the son's present age = 12 years.",
+      "options": [
+        {
+          "label": "13 years",
+          "is_correct": false
+        },
+        {
+          "label": "12 years",
+          "is_correct": true
+        },
+        {
+          "label": "11 years",
+          "is_correct": false
+        },
+        {
+          "label": "14 years",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Problems on Ages",
+      "kind": "standard",
+      "difficulty": "hard",
+      "answer_type": "single",
+      "stem": "The present ages of A and B are in the ratio 5:3. After 9 years, their ages will be in the ratio 13:9. Find the present age of the elder.",
+      "explanation": "Ages are 5×6 and 3×6; the elder is 30 years.",
+      "options": [
+        {
+          "label": "32 years",
+          "is_correct": false
+        },
+        {
+          "label": "30 years",
+          "is_correct": true
+        },
+        {
+          "label": "31 years",
+          "is_correct": false
+        },
+        {
+          "label": "29 years",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Problems on Ages",
+      "kind": "standard",
+      "difficulty": "hard",
+      "answer_type": "single",
+      "stem": "The sum of the present ages of a father and his son is 50 years. 5 years ago, the father was 4 times as old as his son. Find the son's present age.",
+      "explanation": "5 years ago: father = 4 × son. Solving with sum 50 gives the son's present age = 13 years.",
+      "options": [
+        {
+          "label": "13 years",
+          "is_correct": true
+        },
+        {
+          "label": "15 years",
+          "is_correct": false
+        },
+        {
+          "label": "12 years",
+          "is_correct": false
+        },
+        {
+          "label": "14 years",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Problems on Ages",
+      "kind": "standard",
+      "difficulty": "hard",
+      "answer_type": "single",
+      "stem": "The sum of the present ages of a father and his son is 31 years. 5 years ago, the father was 2 times as old as his son. Find the son's present age.",
+      "explanation": "5 years ago: father = 2 × son. Solving with sum 31 gives the son's present age = 12 years.",
+      "options": [
+        {
+          "label": "12 years",
+          "is_correct": true
+        },
+        {
+          "label": "13 years",
+          "is_correct": false
+        },
+        {
+          "label": "11 years",
+          "is_correct": false
+        },
+        {
+          "label": "14 years",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Problems on Ages",
+      "kind": "standard",
+      "difficulty": "hard",
+      "answer_type": "single",
+      "stem": "A father is 4 times as old as his son. After 2 years, he will be 2 times as old as his son. Find the son's present age.",
+      "explanation": "Let the son be s. 4s + 2 = 2(s + 2) ⇒ s = 1 years.",
+      "options": [
+        {
+          "label": "2 years",
+          "is_correct": false
+        },
+        {
+          "label": "4 years",
+          "is_correct": false
+        },
+        {
+          "label": "1 years",
+          "is_correct": true
+        },
+        {
+          "label": "3 years",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Problems on Ages",
+      "kind": "standard",
+      "difficulty": "hard",
+      "answer_type": "single",
+      "stem": "A father is 5 times as old as his son. After 6 years, he will be 3 times as old as his son. Find the son's present age.",
+      "explanation": "Let the son be s. 5s + 6 = 3(s + 6) ⇒ s = 6 years.",
+      "options": [
+        {
+          "label": "5 years",
+          "is_correct": false
+        },
+        {
+          "label": "6 years",
+          "is_correct": true
+        },
+        {
+          "label": "7 years",
+          "is_correct": false
+        },
+        {
+          "label": "8 years",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Problems on Ages",
+      "kind": "standard",
+      "difficulty": "hard",
+      "answer_type": "single",
+      "stem": "The sum of the present ages of a father and his son is 33 years. 15 years ago, the father was 2 times as old as his son. Find the son's present age.",
+      "explanation": "15 years ago: father = 2 × son. Solving with sum 33 gives the son's present age = 16 years.",
+      "options": [
+        {
+          "label": "15 years",
+          "is_correct": false
+        },
+        {
+          "label": "18 years",
+          "is_correct": false
+        },
+        {
+          "label": "16 years",
+          "is_correct": true
+        },
+        {
+          "label": "17 years",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Problems on Ages",
+      "kind": "standard",
+      "difficulty": "hard",
+      "answer_type": "single",
+      "stem": "The sum of the present ages of a father and his son is 28 years. 6 years ago, the father was 3 times as old as his son. Find the son's present age.",
+      "explanation": "6 years ago: father = 3 × son. Solving with sum 28 gives the son's present age = 10 years.",
+      "options": [
+        {
+          "label": "10 years",
+          "is_correct": true
+        },
+        {
+          "label": "12 years",
+          "is_correct": false
+        },
+        {
+          "label": "9 years",
+          "is_correct": false
+        },
+        {
+          "label": "11 years",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Problems on Ages",
+      "kind": "standard",
+      "difficulty": "hard",
+      "answer_type": "single",
+      "stem": "A father is 6 times as old as his son. After 24 years, he will be 2 times as old as his son. Find the son's present age.",
+      "explanation": "Let the son be s. 6s + 24 = 2(s + 24) ⇒ s = 6 years.",
+      "options": [
+        {
+          "label": "5 years",
+          "is_correct": false
+        },
+        {
+          "label": "8 years",
+          "is_correct": false
+        },
+        {
+          "label": "6 years",
+          "is_correct": true
+        },
+        {
+          "label": "7 years",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Problems on Ages",
+      "kind": "standard",
+      "difficulty": "hard",
+      "answer_type": "single",
+      "stem": "A father is 5 times as old as his son. After 4 years, he will be 3 times as old as his son. Find the son's present age.",
+      "explanation": "Let the son be s. 5s + 4 = 3(s + 4) ⇒ s = 4 years.",
+      "options": [
+        {
+          "label": "3 years",
+          "is_correct": false
+        },
+        {
+          "label": "4 years",
+          "is_correct": true
+        },
+        {
+          "label": "5 years",
+          "is_correct": false
+        },
+        {
+          "label": "6 years",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Problems on Ages",
+      "kind": "standard",
+      "difficulty": "hard",
+      "answer_type": "single",
+      "stem": "A father is 4 times as old as his son. After 6 years, he will be 2 times as old as his son. Find the son's present age.",
+      "explanation": "Let the son be s. 4s + 6 = 2(s + 6) ⇒ s = 3 years.",
+      "options": [
+        {
+          "label": "4 years",
+          "is_correct": false
+        },
+        {
+          "label": "3 years",
+          "is_correct": true
+        },
+        {
+          "label": "5 years",
+          "is_correct": false
+        },
+        {
+          "label": "2 years",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Problems on Ages",
+      "kind": "standard",
+      "difficulty": "hard",
+      "answer_type": "single",
+      "stem": "A father is 5 times as old as his son. After 12 years, he will be 3 times as old as his son. Find the son's present age.",
+      "explanation": "Let the son be s. 5s + 12 = 3(s + 12) ⇒ s = 12 years.",
+      "options": [
+        {
+          "label": "11 years",
+          "is_correct": false
+        },
+        {
+          "label": "13 years",
+          "is_correct": false
+        },
+        {
+          "label": "14 years",
+          "is_correct": false
+        },
+        {
+          "label": "12 years",
+          "is_correct": true
+        }
+      ]
+    },
+    {
+      "chapter": "Problems on Ages",
+      "kind": "standard",
+      "difficulty": "hard",
+      "answer_type": "single",
+      "stem": "A father is 6 times as old as his son. After 18 years, he will be 3 times as old as his son. Find the son's present age.",
+      "explanation": "Let the son be s. 6s + 18 = 3(s + 18) ⇒ s = 12 years.",
+      "options": [
+        {
+          "label": "14 years",
+          "is_correct": false
+        },
+        {
+          "label": "11 years",
+          "is_correct": false
+        },
+        {
+          "label": "12 years",
+          "is_correct": true
+        },
+        {
+          "label": "13 years",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Problems on Ages",
+      "kind": "standard",
+      "difficulty": "hard",
+      "answer_type": "single",
+      "stem": "A father is 3 times as old as his son. After 6 years, he will be 2 times as old as his son. Find the son's present age.",
+      "explanation": "Let the son be s. 3s + 6 = 2(s + 6) ⇒ s = 6 years.",
+      "options": [
+        {
+          "label": "5 years",
+          "is_correct": false
+        },
+        {
+          "label": "7 years",
+          "is_correct": false
+        },
+        {
+          "label": "6 years",
+          "is_correct": true
+        },
+        {
+          "label": "8 years",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Problems on Ages",
+      "kind": "standard",
+      "difficulty": "hard",
+      "answer_type": "single",
+      "stem": "The present ages of A and B are in the ratio 8:9. After 9 years, their ages will be in the ratio 73:81. Find the present age of the elder.",
+      "explanation": "Ages are 8×8 and 9×8; the elder is 72 years.",
+      "options": [
+        {
+          "label": "72 years",
+          "is_correct": true
+        },
+        {
+          "label": "70 years",
+          "is_correct": false
+        },
+        {
+          "label": "76 years",
+          "is_correct": false
+        },
+        {
+          "label": "74 years",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Problems on Ages",
+      "kind": "standard",
+      "difficulty": "hard",
+      "answer_type": "single",
+      "stem": "A father is 3 times as old as his son. After 2 years, he will be 2 times as old as his son. Find the son's present age.",
+      "explanation": "Let the son be s. 3s + 2 = 2(s + 2) ⇒ s = 2 years.",
+      "options": [
+        {
+          "label": "4 years",
+          "is_correct": false
+        },
+        {
+          "label": "1 years",
+          "is_correct": false
+        },
+        {
+          "label": "3 years",
+          "is_correct": false
+        },
+        {
+          "label": "2 years",
+          "is_correct": true
+        }
+      ]
+    },
+    {
+      "chapter": "Problems on Ages",
+      "kind": "standard",
+      "difficulty": "hard",
+      "answer_type": "single",
+      "stem": "The sum of the present ages of a father and his son is 98 years. 4 years ago, the father was 4 times as old as his son. Find the son's present age.",
+      "explanation": "4 years ago: father = 4 × son. Solving with sum 98 gives the son's present age = 22 years.",
+      "options": [
+        {
+          "label": "24 years",
+          "is_correct": false
+        },
+        {
+          "label": "22 years",
+          "is_correct": true
+        },
+        {
+          "label": "23 years",
+          "is_correct": false
+        },
+        {
+          "label": "21 years",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Problems on Ages",
+      "kind": "standard",
+      "difficulty": "hard",
+      "answer_type": "single",
+      "stem": "The sum of the present ages of a father and his son is 24 years. 6 years ago, the father was 2 times as old as his son. Find the son's present age.",
+      "explanation": "6 years ago: father = 2 × son. Solving with sum 24 gives the son's present age = 10 years.",
+      "options": [
+        {
+          "label": "12 years",
+          "is_correct": false
+        },
+        {
+          "label": "9 years",
+          "is_correct": false
+        },
+        {
+          "label": "11 years",
+          "is_correct": false
+        },
+        {
+          "label": "10 years",
+          "is_correct": true
+        }
+      ]
+    },
+    {
+      "chapter": "Problems on Ages",
+      "kind": "standard",
+      "difficulty": "hard",
+      "answer_type": "single",
+      "stem": "The sum of the present ages of a father and his son is 20 years. 6 years ago, the father was 3 times as old as his son. Find the son's present age.",
+      "explanation": "6 years ago: father = 3 × son. Solving with sum 20 gives the son's present age = 8 years.",
+      "options": [
+        {
+          "label": "9 years",
+          "is_correct": false
+        },
+        {
+          "label": "10 years",
+          "is_correct": false
+        },
+        {
+          "label": "8 years",
+          "is_correct": true
+        },
+        {
+          "label": "7 years",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Problems on Ages",
+      "kind": "standard",
+      "difficulty": "hard",
+      "answer_type": "single",
+      "stem": "A father is 4 times as old as his son. After 6 years, he will be 3 times as old as his son. Find the son's present age.",
+      "explanation": "Let the son be s. 4s + 6 = 3(s + 6) ⇒ s = 12 years.",
+      "options": [
+        {
+          "label": "14 years",
+          "is_correct": false
+        },
+        {
+          "label": "11 years",
+          "is_correct": false
+        },
+        {
+          "label": "13 years",
+          "is_correct": false
+        },
+        {
+          "label": "12 years",
+          "is_correct": true
+        }
+      ]
+    },
+    {
+      "chapter": "Problems on Ages",
+      "kind": "standard",
+      "difficulty": "very_hard",
+      "answer_type": "single",
+      "stem": "The ages of three friends are in the ratio 4:3:5 and the sum of their ages is 96 years. Find the age of the youngest.",
+      "explanation": "Youngest's age = 96 × 3/12 = 24 years.",
+      "options": [
+        {
+          "label": "24 years",
+          "is_correct": true
+        },
+        {
+          "label": "23 years",
+          "is_correct": false
+        },
+        {
+          "label": "25 years",
+          "is_correct": false
+        },
+        {
+          "label": "26 years",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Problems on Ages",
+      "kind": "standard",
+      "difficulty": "very_hard",
+      "answer_type": "single",
+      "stem": "A is 20 years older than B and is also twice as old as B. Find A's present age.",
+      "explanation": "If B = b, then b + 20 = 2b ⇒ b = 20; so A = 2 × 20 = 40 years.",
+      "options": [
+        {
+          "label": "38 years",
+          "is_correct": false
+        },
+        {
+          "label": "42 years",
+          "is_correct": false
+        },
+        {
+          "label": "40 years",
+          "is_correct": true
+        },
+        {
+          "label": "44 years",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Problems on Ages",
+      "kind": "standard",
+      "difficulty": "very_hard",
+      "answer_type": "single",
+      "stem": "A is 21 years older than B and is also twice as old as B. Find A's present age.",
+      "explanation": "If B = b, then b + 21 = 2b ⇒ b = 21; so A = 2 × 21 = 42 years.",
+      "options": [
+        {
+          "label": "40 years",
+          "is_correct": false
+        },
+        {
+          "label": "44 years",
+          "is_correct": false
+        },
+        {
+          "label": "46 years",
+          "is_correct": false
+        },
+        {
+          "label": "42 years",
+          "is_correct": true
+        }
+      ]
+    },
+    {
+      "chapter": "Problems on Ages",
+      "kind": "standard",
+      "difficulty": "very_hard",
+      "answer_type": "single",
+      "stem": "A is 16 years older than B and is also twice as old as B. Find A's present age.",
+      "explanation": "If B = b, then b + 16 = 2b ⇒ b = 16; so A = 2 × 16 = 32 years.",
+      "options": [
+        {
+          "label": "33 years",
+          "is_correct": false
+        },
+        {
+          "label": "31 years",
+          "is_correct": false
+        },
+        {
+          "label": "32 years",
+          "is_correct": true
+        },
+        {
+          "label": "34 years",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Problems on Ages",
+      "kind": "standard",
+      "difficulty": "very_hard",
+      "answer_type": "single",
+      "stem": "A is 27 years older than B and is also twice as old as B. Find A's present age.",
+      "explanation": "If B = b, then b + 27 = 2b ⇒ b = 27; so A = 2 × 27 = 54 years.",
+      "options": [
+        {
+          "label": "54 years",
+          "is_correct": true
+        },
+        {
+          "label": "52 years",
+          "is_correct": false
+        },
+        {
+          "label": "58 years",
+          "is_correct": false
+        },
+        {
+          "label": "56 years",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Problems on Ages",
+      "kind": "standard",
+      "difficulty": "very_hard",
+      "answer_type": "single",
+      "stem": "The ages of three friends are in the ratio 6:4:5 and the sum of their ages is 105 years. Find the age of the youngest.",
+      "explanation": "Youngest's age = 105 × 4/15 = 28 years.",
+      "options": [
+        {
+          "label": "29 years",
+          "is_correct": false
+        },
+        {
+          "label": "28 years",
+          "is_correct": true
+        },
+        {
+          "label": "27 years",
+          "is_correct": false
+        },
+        {
+          "label": "30 years",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Problems on Ages",
+      "kind": "standard",
+      "difficulty": "very_hard",
+      "answer_type": "single",
+      "stem": "The ages of three friends are in the ratio 7:7:1 and the sum of their ages is 105 years. Find the age of the youngest.",
+      "explanation": "Youngest's age = 105 × 1/15 = 7 years.",
+      "options": [
+        {
+          "label": "9 years",
+          "is_correct": false
+        },
+        {
+          "label": "7 years",
+          "is_correct": true
+        },
+        {
+          "label": "6 years",
+          "is_correct": false
+        },
+        {
+          "label": "8 years",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Problems on Ages",
+      "kind": "standard",
+      "difficulty": "very_hard",
+      "answer_type": "single",
+      "stem": "A father is 5 times as old as his son. After 6 years, he will be 2 times as old as his son. Find the father's present age.",
+      "explanation": "The son is 2 years old, so the father is 5 × 2 = 10 years.",
+      "options": [
+        {
+          "label": "10 years",
+          "is_correct": true
+        },
+        {
+          "label": "11 years",
+          "is_correct": false
+        },
+        {
+          "label": "12 years",
+          "is_correct": false
+        },
+        {
+          "label": "9 years",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Problems on Ages",
+      "kind": "standard",
+      "difficulty": "very_hard",
+      "answer_type": "single",
+      "stem": "A father is 4 times as old as his son. After 5 years, he will be 3 times as old as his son. Find the father's present age.",
+      "explanation": "The son is 10 years old, so the father is 4 × 10 = 40 years.",
+      "options": [
+        {
+          "label": "42 years",
+          "is_correct": false
+        },
+        {
+          "label": "38 years",
+          "is_correct": false
+        },
+        {
+          "label": "44 years",
+          "is_correct": false
+        },
+        {
+          "label": "40 years",
+          "is_correct": true
+        }
+      ]
+    },
+    {
+      "chapter": "Problems on Ages",
+      "kind": "standard",
+      "difficulty": "very_hard",
+      "answer_type": "single",
+      "stem": "A is 11 years older than B and is also twice as old as B. Find A's present age.",
+      "explanation": "If B = b, then b + 11 = 2b ⇒ b = 11; so A = 2 × 11 = 22 years.",
+      "options": [
+        {
+          "label": "22 years",
+          "is_correct": true
+        },
+        {
+          "label": "24 years",
+          "is_correct": false
+        },
+        {
+          "label": "21 years",
+          "is_correct": false
+        },
+        {
+          "label": "23 years",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Problems on Ages",
+      "kind": "standard",
+      "difficulty": "very_hard",
+      "answer_type": "single",
+      "stem": "A is 7 years older than B and is also twice as old as B. Find A's present age.",
+      "explanation": "If B = b, then b + 7 = 2b ⇒ b = 7; so A = 2 × 7 = 14 years.",
+      "options": [
+        {
+          "label": "14 years",
+          "is_correct": true
+        },
+        {
+          "label": "16 years",
+          "is_correct": false
+        },
+        {
+          "label": "15 years",
+          "is_correct": false
+        },
+        {
+          "label": "13 years",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Problems on Ages",
+      "kind": "standard",
+      "difficulty": "very_hard",
+      "answer_type": "single",
+      "stem": "A father is 6 times as old as his son. After 4 years, he will be 2 times as old as his son. Find the father's present age.",
+      "explanation": "The son is 1 years old, so the father is 6 × 1 = 6 years.",
+      "options": [
+        {
+          "label": "8 years",
+          "is_correct": false
+        },
+        {
+          "label": "7 years",
+          "is_correct": false
+        },
+        {
+          "label": "5 years",
+          "is_correct": false
+        },
+        {
+          "label": "6 years",
+          "is_correct": true
+        }
+      ]
+    },
+    {
+      "chapter": "Problems on Ages",
+      "kind": "standard",
+      "difficulty": "very_hard",
+      "answer_type": "single",
+      "stem": "A father is 6 times as old as his son. After 18 years, he will be 3 times as old as his son. Find the father's present age.",
+      "explanation": "The son is 12 years old, so the father is 6 × 12 = 72 years.",
+      "options": [
+        {
+          "label": "70 years",
+          "is_correct": false
+        },
+        {
+          "label": "74 years",
+          "is_correct": false
+        },
+        {
+          "label": "72 years",
+          "is_correct": true
+        },
+        {
+          "label": "76 years",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Problems on Ages",
+      "kind": "standard",
+      "difficulty": "very_hard",
+      "answer_type": "single",
+      "stem": "A is 14 years older than B and is also twice as old as B. Find A's present age.",
+      "explanation": "If B = b, then b + 14 = 2b ⇒ b = 14; so A = 2 × 14 = 28 years.",
+      "options": [
+        {
+          "label": "30 years",
+          "is_correct": false
+        },
+        {
+          "label": "28 years",
+          "is_correct": true
+        },
+        {
+          "label": "29 years",
+          "is_correct": false
+        },
+        {
+          "label": "27 years",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Problems on Ages",
+      "kind": "standard",
+      "difficulty": "very_hard",
+      "answer_type": "single",
+      "stem": "A is 18 years older than B and is also twice as old as B. Find A's present age.",
+      "explanation": "If B = b, then b + 18 = 2b ⇒ b = 18; so A = 2 × 18 = 36 years.",
+      "options": [
+        {
+          "label": "38 years",
+          "is_correct": false
+        },
+        {
+          "label": "36 years",
+          "is_correct": true
+        },
+        {
+          "label": "35 years",
+          "is_correct": false
+        },
+        {
+          "label": "37 years",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Problems on Ages",
+      "kind": "standard",
+      "difficulty": "very_hard",
+      "answer_type": "single",
+      "stem": "A is 30 years older than B and is also twice as old as B. Find A's present age.",
+      "explanation": "If B = b, then b + 30 = 2b ⇒ b = 30; so A = 2 × 30 = 60 years.",
+      "options": [
+        {
+          "label": "64 years",
+          "is_correct": false
+        },
+        {
+          "label": "60 years",
+          "is_correct": true
+        },
+        {
+          "label": "58 years",
+          "is_correct": false
+        },
+        {
+          "label": "62 years",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Problems on Ages",
+      "kind": "standard",
+      "difficulty": "very_hard",
+      "answer_type": "single",
+      "stem": "A father is 3 times as old as his son. After 6 years, he will be 2 times as old as his son. Find the father's present age.",
+      "explanation": "The son is 6 years old, so the father is 3 × 6 = 18 years.",
+      "options": [
+        {
+          "label": "18 years",
+          "is_correct": true
+        },
+        {
+          "label": "19 years",
+          "is_correct": false
+        },
+        {
+          "label": "20 years",
+          "is_correct": false
+        },
+        {
+          "label": "17 years",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Problems on Ages",
+      "kind": "standard",
+      "difficulty": "very_hard",
+      "answer_type": "single",
+      "stem": "The ages of three friends are in the ratio 3:1:6 and the sum of their ages is 90 years. Find the age of the youngest.",
+      "explanation": "Youngest's age = 90 × 1/10 = 9 years.",
+      "options": [
+        {
+          "label": "11 years",
+          "is_correct": false
+        },
+        {
+          "label": "10 years",
+          "is_correct": false
+        },
+        {
+          "label": "8 years",
+          "is_correct": false
+        },
+        {
+          "label": "9 years",
+          "is_correct": true
+        }
+      ]
+    },
+    {
+      "chapter": "Problems on Ages",
+      "kind": "standard",
+      "difficulty": "very_hard",
+      "answer_type": "single",
+      "stem": "A father is 6 times as old as his son. After 20 years, he will be 2 times as old as his son. Find the father's present age.",
+      "explanation": "The son is 5 years old, so the father is 6 × 5 = 30 years.",
+      "options": [
+        {
+          "label": "29 years",
+          "is_correct": false
+        },
+        {
+          "label": "32 years",
+          "is_correct": false
+        },
+        {
+          "label": "30 years",
+          "is_correct": true
+        },
+        {
+          "label": "31 years",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Problems on Ages",
+      "kind": "standard",
+      "difficulty": "very_hard",
+      "answer_type": "single",
+      "stem": "A father is 6 times as old as his son. After 9 years, he will be 3 times as old as his son. Find the father's present age.",
+      "explanation": "The son is 6 years old, so the father is 6 × 6 = 36 years.",
+      "options": [
+        {
+          "label": "38 years",
+          "is_correct": false
+        },
+        {
+          "label": "36 years",
+          "is_correct": true
+        },
+        {
+          "label": "35 years",
+          "is_correct": false
+        },
+        {
+          "label": "37 years",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Problems on Ages",
+      "kind": "standard",
+      "difficulty": "very_hard",
+      "answer_type": "single",
+      "stem": "A father is 5 times as old as his son. After 18 years, he will be 2 times as old as his son. Find the father's present age.",
+      "explanation": "The son is 6 years old, so the father is 5 × 6 = 30 years.",
+      "options": [
+        {
+          "label": "32 years",
+          "is_correct": false
+        },
+        {
+          "label": "30 years",
+          "is_correct": true
+        },
+        {
+          "label": "31 years",
+          "is_correct": false
+        },
+        {
+          "label": "29 years",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Problems on Ages",
+      "kind": "standard",
+      "difficulty": "very_hard",
+      "answer_type": "single",
+      "stem": "A is 19 years older than B and is also twice as old as B. Find A's present age.",
+      "explanation": "If B = b, then b + 19 = 2b ⇒ b = 19; so A = 2 × 19 = 38 years.",
+      "options": [
+        {
+          "label": "39 years",
+          "is_correct": false
+        },
+        {
+          "label": "38 years",
+          "is_correct": true
+        },
+        {
+          "label": "37 years",
+          "is_correct": false
+        },
+        {
+          "label": "40 years",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Problems on Ages",
+      "kind": "standard",
+      "difficulty": "very_hard",
+      "answer_type": "single",
+      "stem": "The ages of three friends are in the ratio 5:6:5 and the sum of their ages is 80 years. Find the age of the youngest.",
+      "explanation": "Youngest's age = 80 × 5/16 = 25 years.",
+      "options": [
+        {
+          "label": "24 years",
+          "is_correct": false
+        },
+        {
+          "label": "27 years",
+          "is_correct": false
+        },
+        {
+          "label": "26 years",
+          "is_correct": false
+        },
+        {
+          "label": "25 years",
+          "is_correct": true
+        }
+      ]
+    },
+    {
+      "chapter": "Problems on Ages",
+      "kind": "standard",
+      "difficulty": "very_hard",
+      "answer_type": "single",
+      "stem": "A father is 5 times as old as his son. After 9 years, he will be 2 times as old as his son. Find the father's present age.",
+      "explanation": "The son is 3 years old, so the father is 5 × 3 = 15 years.",
+      "options": [
+        {
+          "label": "14 years",
+          "is_correct": false
+        },
+        {
+          "label": "16 years",
+          "is_correct": false
+        },
+        {
+          "label": "17 years",
+          "is_correct": false
+        },
+        {
+          "label": "15 years",
+          "is_correct": true
+        }
+      ]
+    },
+    {
+      "chapter": "Problems on Ages",
+      "kind": "standard",
+      "difficulty": "very_hard",
+      "answer_type": "single",
+      "stem": "A father is 6 times as old as his son. After 15 years, he will be 3 times as old as his son. Find the father's present age.",
+      "explanation": "The son is 10 years old, so the father is 6 × 10 = 60 years.",
+      "options": [
+        {
+          "label": "62 years",
+          "is_correct": false
+        },
+        {
+          "label": "60 years",
+          "is_correct": true
+        },
+        {
+          "label": "64 years",
+          "is_correct": false
+        },
+        {
+          "label": "58 years",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Problems on Ages",
+      "kind": "standard",
+      "difficulty": "very_hard",
+      "answer_type": "single",
+      "stem": "A is 28 years older than B and is also twice as old as B. Find A's present age.",
+      "explanation": "If B = b, then b + 28 = 2b ⇒ b = 28; so A = 2 × 28 = 56 years.",
+      "options": [
+        {
+          "label": "56 years",
+          "is_correct": true
+        },
+        {
+          "label": "58 years",
+          "is_correct": false
+        },
+        {
+          "label": "54 years",
+          "is_correct": false
+        },
+        {
+          "label": "60 years",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Problems on Ages",
+      "kind": "standard",
+      "difficulty": "very_hard",
+      "answer_type": "single",
+      "stem": "A father is 3 times as old as his son. After 4 years, he will be 2 times as old as his son. Find the father's present age.",
+      "explanation": "The son is 4 years old, so the father is 3 × 4 = 12 years.",
+      "options": [
+        {
+          "label": "13 years",
+          "is_correct": false
+        },
+        {
+          "label": "12 years",
+          "is_correct": true
+        },
+        {
+          "label": "11 years",
+          "is_correct": false
+        },
+        {
+          "label": "14 years",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Problems on Ages",
+      "kind": "standard",
+      "difficulty": "very_hard",
+      "answer_type": "single",
+      "stem": "A father is 5 times as old as his son. After 10 years, he will be 3 times as old as his son. Find the father's present age.",
+      "explanation": "The son is 10 years old, so the father is 5 × 10 = 50 years.",
+      "options": [
+        {
+          "label": "50 years",
+          "is_correct": true
+        },
+        {
+          "label": "52 years",
+          "is_correct": false
+        },
+        {
+          "label": "54 years",
+          "is_correct": false
+        },
+        {
+          "label": "48 years",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Problems on Ages",
+      "kind": "standard",
+      "difficulty": "very_hard",
+      "answer_type": "single",
+      "stem": "The ages of three friends are in the ratio 4:2:6 and the sum of their ages is 48 years. Find the age of the youngest.",
+      "explanation": "Youngest's age = 48 × 2/12 = 8 years.",
+      "options": [
+        {
+          "label": "8 years",
+          "is_correct": true
+        },
+        {
+          "label": "10 years",
+          "is_correct": false
+        },
+        {
+          "label": "7 years",
+          "is_correct": false
+        },
+        {
+          "label": "9 years",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Problems on Ages",
+      "kind": "standard",
+      "difficulty": "very_hard",
+      "answer_type": "single",
+      "stem": "The ages of three friends are in the ratio 6:2:6 and the sum of their ages is 84 years. Find the age of the youngest.",
+      "explanation": "Youngest's age = 84 × 2/14 = 12 years.",
+      "options": [
+        {
+          "label": "11 years",
+          "is_correct": false
+        },
+        {
+          "label": "12 years",
+          "is_correct": true
+        },
+        {
+          "label": "13 years",
+          "is_correct": false
+        },
+        {
+          "label": "14 years",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Problems on Ages",
+      "kind": "standard",
+      "difficulty": "very_hard",
+      "answer_type": "single",
+      "stem": "A is 6 years older than B and is also twice as old as B. Find A's present age.",
+      "explanation": "If B = b, then b + 6 = 2b ⇒ b = 6; so A = 2 × 6 = 12 years.",
+      "options": [
+        {
+          "label": "12 years",
+          "is_correct": true
+        },
+        {
+          "label": "13 years",
+          "is_correct": false
+        },
+        {
+          "label": "14 years",
+          "is_correct": false
+        },
+        {
+          "label": "11 years",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Problems on Ages",
+      "kind": "standard",
+      "difficulty": "very_hard",
+      "answer_type": "single",
+      "stem": "The ages of three friends are in the ratio 3:3:6 and the sum of their ages is 108 years. Find the age of the youngest.",
+      "explanation": "Youngest's age = 108 × 3/12 = 27 years.",
+      "options": [
+        {
+          "label": "28 years",
+          "is_correct": false
+        },
+        {
+          "label": "29 years",
+          "is_correct": false
+        },
+        {
+          "label": "26 years",
+          "is_correct": false
+        },
+        {
+          "label": "27 years",
+          "is_correct": true
+        }
+      ]
+    },
+    {
+      "chapter": "Problems on Ages",
+      "kind": "standard",
+      "difficulty": "very_hard",
+      "answer_type": "single",
+      "stem": "The ages of three friends are in the ratio 2:7:3 and the sum of their ages is 36 years. Find the age of the youngest.",
+      "explanation": "Youngest's age = 36 × 2/12 = 6 years.",
+      "options": [
+        {
+          "label": "7 years",
+          "is_correct": false
+        },
+        {
+          "label": "6 years",
+          "is_correct": true
+        },
+        {
+          "label": "5 years",
+          "is_correct": false
+        },
+        {
+          "label": "8 years",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Problems on Ages",
+      "kind": "standard",
+      "difficulty": "very_hard",
+      "answer_type": "single",
+      "stem": "A father is 4 times as old as his son. After 10 years, he will be 2 times as old as his son. Find the father's present age.",
+      "explanation": "The son is 5 years old, so the father is 4 × 5 = 20 years.",
+      "options": [
+        {
+          "label": "19 years",
+          "is_correct": false
+        },
+        {
+          "label": "22 years",
+          "is_correct": false
+        },
+        {
+          "label": "21 years",
+          "is_correct": false
+        },
+        {
+          "label": "20 years",
+          "is_correct": true
+        }
+      ]
+    },
+    {
+      "chapter": "Problems on Ages",
+      "kind": "standard",
+      "difficulty": "very_hard",
+      "answer_type": "single",
+      "stem": "The ages of three friends are in the ratio 1:3:2 and the sum of their ages is 24 years. Find the age of the youngest.",
+      "explanation": "Youngest's age = 24 × 1/6 = 4 years.",
+      "options": [
+        {
+          "label": "3 years",
+          "is_correct": false
+        },
+        {
+          "label": "6 years",
+          "is_correct": false
+        },
+        {
+          "label": "5 years",
+          "is_correct": false
+        },
+        {
+          "label": "4 years",
+          "is_correct": true
+        }
+      ]
+    },
+    {
+      "chapter": "Problems on Ages",
+      "kind": "standard",
+      "difficulty": "very_hard",
+      "answer_type": "single",
+      "stem": "The ages of three friends are in the ratio 1:7:7 and the sum of their ages is 120 years. Find the age of the youngest.",
+      "explanation": "Youngest's age = 120 × 1/15 = 8 years.",
+      "options": [
+        {
+          "label": "8 years",
+          "is_correct": true
+        },
+        {
+          "label": "7 years",
+          "is_correct": false
+        },
+        {
+          "label": "9 years",
+          "is_correct": false
+        },
+        {
+          "label": "10 years",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Problems on Ages",
+      "kind": "standard",
+      "difficulty": "very_hard",
+      "answer_type": "single",
+      "stem": "A is 24 years older than B and is also twice as old as B. Find A's present age.",
+      "explanation": "If B = b, then b + 24 = 2b ⇒ b = 24; so A = 2 × 24 = 48 years.",
+      "options": [
+        {
+          "label": "50 years",
+          "is_correct": false
+        },
+        {
+          "label": "48 years",
+          "is_correct": true
+        },
+        {
+          "label": "46 years",
+          "is_correct": false
+        },
+        {
+          "label": "52 years",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Problems on Ages",
+      "kind": "standard",
+      "difficulty": "very_hard",
+      "answer_type": "single",
+      "stem": "The ages of three friends are in the ratio 7:5:3 and the sum of their ages is 90 years. Find the age of the youngest.",
+      "explanation": "Youngest's age = 90 × 3/15 = 18 years.",
+      "options": [
+        {
+          "label": "18 years",
+          "is_correct": true
+        },
+        {
+          "label": "17 years",
+          "is_correct": false
+        },
+        {
+          "label": "20 years",
+          "is_correct": false
+        },
+        {
+          "label": "19 years",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Problems on Ages",
+      "kind": "standard",
+      "difficulty": "very_hard",
+      "answer_type": "single",
+      "stem": "A father is 4 times as old as his son. After 2 years, he will be 2 times as old as his son. Find the father's present age.",
+      "explanation": "The son is 1 years old, so the father is 4 × 1 = 4 years.",
+      "options": [
+        {
+          "label": "6 years",
+          "is_correct": false
+        },
+        {
+          "label": "3 years",
+          "is_correct": false
+        },
+        {
+          "label": "4 years",
+          "is_correct": true
+        },
+        {
+          "label": "5 years",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Problems on Ages",
+      "kind": "standard",
+      "difficulty": "very_hard",
+      "answer_type": "single",
+      "stem": "A is 12 years older than B and is also twice as old as B. Find A's present age.",
+      "explanation": "If B = b, then b + 12 = 2b ⇒ b = 12; so A = 2 × 12 = 24 years.",
+      "options": [
+        {
+          "label": "26 years",
+          "is_correct": false
+        },
+        {
+          "label": "25 years",
+          "is_correct": false
+        },
+        {
+          "label": "24 years",
+          "is_correct": true
+        },
+        {
+          "label": "23 years",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Problems on Ages",
+      "kind": "standard",
+      "difficulty": "very_hard",
+      "answer_type": "single",
+      "stem": "A father is 5 times as old as his son. After 6 years, he will be 3 times as old as his son. Find the father's present age.",
+      "explanation": "The son is 6 years old, so the father is 5 × 6 = 30 years.",
+      "options": [
+        {
+          "label": "30 years",
+          "is_correct": true
+        },
+        {
+          "label": "29 years",
+          "is_correct": false
+        },
+        {
+          "label": "32 years",
+          "is_correct": false
+        },
+        {
+          "label": "31 years",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Problems on Ages",
+      "kind": "standard",
+      "difficulty": "very_hard",
+      "answer_type": "single",
+      "stem": "A father is 3 times as old as his son. After 5 years, he will be 2 times as old as his son. Find the father's present age.",
+      "explanation": "The son is 5 years old, so the father is 3 × 5 = 15 years.",
+      "options": [
+        {
+          "label": "17 years",
+          "is_correct": false
+        },
+        {
+          "label": "14 years",
+          "is_correct": false
+        },
+        {
+          "label": "16 years",
+          "is_correct": false
+        },
+        {
+          "label": "15 years",
+          "is_correct": true
+        }
+      ]
+    },
+    {
+      "chapter": "Problems on Ages",
+      "kind": "standard",
+      "difficulty": "very_hard",
+      "answer_type": "single",
+      "stem": "The ages of three friends are in the ratio 3:4:3 and the sum of their ages is 70 years. Find the age of the youngest.",
+      "explanation": "Youngest's age = 70 × 3/10 = 21 years.",
+      "options": [
+        {
+          "label": "21 years",
+          "is_correct": true
+        },
+        {
+          "label": "22 years",
+          "is_correct": false
+        },
+        {
+          "label": "23 years",
+          "is_correct": false
+        },
+        {
+          "label": "20 years",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Problems on Ages",
+      "kind": "standard",
+      "difficulty": "very_hard",
+      "answer_type": "single",
+      "stem": "A father is 4 times as old as his son. After 6 years, he will be 3 times as old as his son. Find the father's present age.",
+      "explanation": "The son is 12 years old, so the father is 4 × 12 = 48 years.",
+      "options": [
+        {
+          "label": "50 years",
+          "is_correct": false
+        },
+        {
+          "label": "48 years",
+          "is_correct": true
+        },
+        {
+          "label": "52 years",
+          "is_correct": false
+        },
+        {
+          "label": "46 years",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Problems on Ages",
+      "kind": "standard",
+      "difficulty": "very_hard",
+      "answer_type": "single",
+      "stem": "A is 23 years older than B and is also twice as old as B. Find A's present age.",
+      "explanation": "If B = b, then b + 23 = 2b ⇒ b = 23; so A = 2 × 23 = 46 years.",
+      "options": [
+        {
+          "label": "46 years",
+          "is_correct": true
+        },
+        {
+          "label": "50 years",
+          "is_correct": false
+        },
+        {
+          "label": "44 years",
+          "is_correct": false
+        },
+        {
+          "label": "48 years",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Problems on Ages",
+      "kind": "standard",
+      "difficulty": "very_hard",
+      "answer_type": "single",
+      "stem": "A father is 6 times as old as his son. After 12 years, he will be 3 times as old as his son. Find the father's present age.",
+      "explanation": "The son is 8 years old, so the father is 6 × 8 = 48 years.",
+      "options": [
+        {
+          "label": "48 years",
+          "is_correct": true
+        },
+        {
+          "label": "50 years",
+          "is_correct": false
+        },
+        {
+          "label": "52 years",
+          "is_correct": false
+        },
+        {
+          "label": "46 years",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Problems on Ages",
+      "kind": "standard",
+      "difficulty": "very_hard",
+      "answer_type": "single",
+      "stem": "A is 3 years older than B and is also twice as old as B. Find A's present age.",
+      "explanation": "If B = b, then b + 3 = 2b ⇒ b = 3; so A = 2 × 3 = 6 years.",
+      "options": [
+        {
+          "label": "5 years",
+          "is_correct": false
+        },
+        {
+          "label": "7 years",
+          "is_correct": false
+        },
+        {
+          "label": "6 years",
+          "is_correct": true
+        },
+        {
+          "label": "8 years",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Problems on Ages",
+      "kind": "standard",
+      "difficulty": "very_hard",
+      "answer_type": "single",
+      "stem": "A is 15 years older than B and is also twice as old as B. Find A's present age.",
+      "explanation": "If B = b, then b + 15 = 2b ⇒ b = 15; so A = 2 × 15 = 30 years.",
+      "options": [
+        {
+          "label": "29 years",
+          "is_correct": false
+        },
+        {
+          "label": "30 years",
+          "is_correct": true
+        },
+        {
+          "label": "31 years",
+          "is_correct": false
+        },
+        {
+          "label": "32 years",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Problems on Ages",
+      "kind": "standard",
+      "difficulty": "very_hard",
+      "answer_type": "single",
+      "stem": "A is 25 years older than B and is also twice as old as B. Find A's present age.",
+      "explanation": "If B = b, then b + 25 = 2b ⇒ b = 25; so A = 2 × 25 = 50 years.",
+      "options": [
+        {
+          "label": "50 years",
+          "is_correct": true
+        },
+        {
+          "label": "52 years",
+          "is_correct": false
+        },
+        {
+          "label": "54 years",
+          "is_correct": false
+        },
+        {
+          "label": "48 years",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Problems on Ages",
+      "kind": "standard",
+      "difficulty": "very_hard",
+      "answer_type": "single",
+      "stem": "The ages of three friends are in the ratio 3:6:6 and the sum of their ages is 60 years. Find the age of the youngest.",
+      "explanation": "Youngest's age = 60 × 3/15 = 12 years.",
+      "options": [
+        {
+          "label": "11 years",
+          "is_correct": false
+        },
+        {
+          "label": "12 years",
+          "is_correct": true
+        },
+        {
+          "label": "13 years",
+          "is_correct": false
+        },
+        {
+          "label": "14 years",
+          "is_correct": false
+        }
+      ]
+    }
+  ]
+}

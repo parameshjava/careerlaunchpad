@@ -1,0 +1,5205 @@
+{
+  "subject": "Reasoning",
+  "questions": [
+    {
+      "chapter": "Syllogism",
+      "kind": "standard",
+      "difficulty": "medium",
+      "answer_type": "single",
+      "stem": "Statements (treat as true even if they seem to contradict common facts): 1) Some tables are hills. 2) All hills are lamps. Conclusions: I) No tables are lamps. II) Some lamps are not tables. Which conclusion(s) logically follow?",
+      "explanation": "Testing every possible case: conclusion I can fail and conclusion II can fail whenever both statements hold — so neither i nor ii follows.",
+      "options": [
+        {
+          "label": "Only conclusion I follows",
+          "is_correct": false
+        },
+        {
+          "label": "Only conclusion II follows",
+          "is_correct": false
+        },
+        {
+          "label": "Both I and II follow",
+          "is_correct": false
+        },
+        {
+          "label": "Neither I nor II follows",
+          "is_correct": true
+        }
+      ]
+    },
+    {
+      "chapter": "Syllogism",
+      "kind": "standard",
+      "difficulty": "medium",
+      "answer_type": "single",
+      "stem": "Statements (treat as true even if they seem to contradict common facts): 1) All tables are hills. 2) All hills are fans. Conclusions: I) All tables are fans. II) Some fans are not tables. Which conclusion(s) logically follow?",
+      "explanation": "Testing every possible case: conclusion I must be true and conclusion II can fail whenever both statements hold — so only conclusion i follows.",
+      "options": [
+        {
+          "label": "Only conclusion I follows",
+          "is_correct": true
+        },
+        {
+          "label": "Only conclusion II follows",
+          "is_correct": false
+        },
+        {
+          "label": "Both I and II follow",
+          "is_correct": false
+        },
+        {
+          "label": "Neither I nor II follows",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Syllogism",
+      "kind": "standard",
+      "difficulty": "very_hard",
+      "answer_type": "single",
+      "stem": "Statements (treat as true even if they seem to contradict common facts): 1) Some fans are tables. 2) Some tables are not roads. Conclusions: I) No fans are roads. II) Some roads are not fans. Which conclusion(s) logically follow?",
+      "explanation": "Testing every possible case: conclusion I can fail and conclusion II can fail whenever both statements hold — so neither i nor ii follows.",
+      "options": [
+        {
+          "label": "Only conclusion I follows",
+          "is_correct": false
+        },
+        {
+          "label": "Only conclusion II follows",
+          "is_correct": false
+        },
+        {
+          "label": "Both I and II follow",
+          "is_correct": false
+        },
+        {
+          "label": "Neither I nor II follows",
+          "is_correct": true
+        }
+      ]
+    },
+    {
+      "chapter": "Syllogism",
+      "kind": "standard",
+      "difficulty": "very_hard",
+      "answer_type": "single",
+      "stem": "Statements (treat as true even if they seem to contradict common facts): 1) Some flowers are not cups. 2) Some cups are toys. Conclusions: I) Some flowers are not toys. II) All toys are flowers. Which conclusion(s) logically follow?",
+      "explanation": "Testing every possible case: conclusion I can fail and conclusion II can fail whenever both statements hold — so neither i nor ii follows.",
+      "options": [
+        {
+          "label": "Only conclusion I follows",
+          "is_correct": false
+        },
+        {
+          "label": "Only conclusion II follows",
+          "is_correct": false
+        },
+        {
+          "label": "Both I and II follow",
+          "is_correct": false
+        },
+        {
+          "label": "Neither I nor II follows",
+          "is_correct": true
+        }
+      ]
+    },
+    {
+      "chapter": "Syllogism",
+      "kind": "standard",
+      "difficulty": "very_hard",
+      "answer_type": "single",
+      "stem": "Statements (treat as true even if they seem to contradict common facts): 1) Some books are doors. 2) Some doors are hills. Conclusions: I) No books are hills. II) No hills are books. Which conclusion(s) logically follow?",
+      "explanation": "Testing every possible case: conclusion I can fail and conclusion II can fail whenever both statements hold — so neither i nor ii follows.",
+      "options": [
+        {
+          "label": "Only conclusion I follows",
+          "is_correct": false
+        },
+        {
+          "label": "Only conclusion II follows",
+          "is_correct": false
+        },
+        {
+          "label": "Both I and II follow",
+          "is_correct": false
+        },
+        {
+          "label": "Neither I nor II follows",
+          "is_correct": true
+        }
+      ]
+    },
+    {
+      "chapter": "Syllogism",
+      "kind": "standard",
+      "difficulty": "medium",
+      "answer_type": "single",
+      "stem": "Statements (treat as true even if they seem to contradict common facts): 1) No roads are bags. 2) No bags are stones. Conclusions: I) Some roads are stones. II) Some stones are not roads. Which conclusion(s) logically follow?",
+      "explanation": "Testing every possible case: conclusion I can fail and conclusion II can fail whenever both statements hold — so neither i nor ii follows.",
+      "options": [
+        {
+          "label": "Only conclusion I follows",
+          "is_correct": false
+        },
+        {
+          "label": "Only conclusion II follows",
+          "is_correct": false
+        },
+        {
+          "label": "Both I and II follow",
+          "is_correct": false
+        },
+        {
+          "label": "Neither I nor II follows",
+          "is_correct": true
+        }
+      ]
+    },
+    {
+      "chapter": "Syllogism",
+      "kind": "standard",
+      "difficulty": "medium",
+      "answer_type": "single",
+      "stem": "Statements (treat as true even if they seem to contradict common facts): 1) Some pens are trees. 2) All trees are lamps. Conclusions: I) Some pens are not lamps. II) Some lamps are not pens. Which conclusion(s) logically follow?",
+      "explanation": "Testing every possible case: conclusion I can fail and conclusion II can fail whenever both statements hold — so neither i nor ii follows.",
+      "options": [
+        {
+          "label": "Only conclusion I follows",
+          "is_correct": false
+        },
+        {
+          "label": "Only conclusion II follows",
+          "is_correct": false
+        },
+        {
+          "label": "Both I and II follow",
+          "is_correct": false
+        },
+        {
+          "label": "Neither I nor II follows",
+          "is_correct": true
+        }
+      ]
+    },
+    {
+      "chapter": "Syllogism",
+      "kind": "standard",
+      "difficulty": "very_hard",
+      "answer_type": "single",
+      "stem": "Statements (treat as true even if they seem to contradict common facts): 1) Some chairs are not tables. 2) Some tables are bags. Conclusions: I) Some chairs are bags. II) All bags are chairs. Which conclusion(s) logically follow?",
+      "explanation": "Testing every possible case: conclusion I can fail and conclusion II can fail whenever both statements hold — so neither i nor ii follows.",
+      "options": [
+        {
+          "label": "Only conclusion I follows",
+          "is_correct": false
+        },
+        {
+          "label": "Only conclusion II follows",
+          "is_correct": false
+        },
+        {
+          "label": "Both I and II follow",
+          "is_correct": false
+        },
+        {
+          "label": "Neither I nor II follows",
+          "is_correct": true
+        }
+      ]
+    },
+    {
+      "chapter": "Syllogism",
+      "kind": "standard",
+      "difficulty": "hard",
+      "answer_type": "single",
+      "stem": "Statements (treat as true even if they seem to contradict common facts): 1) All books are chairs. 2) Some chairs are not flowers. Conclusions: I) All books are flowers. II) Some flowers are books. Which conclusion(s) logically follow?",
+      "explanation": "Testing every possible case: conclusion I can fail and conclusion II can fail whenever both statements hold — so neither i nor ii follows.",
+      "options": [
+        {
+          "label": "Only conclusion I follows",
+          "is_correct": false
+        },
+        {
+          "label": "Only conclusion II follows",
+          "is_correct": false
+        },
+        {
+          "label": "Both I and II follow",
+          "is_correct": false
+        },
+        {
+          "label": "Neither I nor II follows",
+          "is_correct": true
+        }
+      ]
+    },
+    {
+      "chapter": "Syllogism",
+      "kind": "standard",
+      "difficulty": "medium",
+      "answer_type": "single",
+      "stem": "Statements (treat as true even if they seem to contradict common facts): 1) All chairs are pens. 2) All pens are roads. Conclusions: I) Some chairs are not roads. II) No roads are chairs. Which conclusion(s) logically follow?",
+      "explanation": "Testing every possible case: conclusion I can fail and conclusion II can fail whenever both statements hold — so neither i nor ii follows.",
+      "options": [
+        {
+          "label": "Only conclusion I follows",
+          "is_correct": false
+        },
+        {
+          "label": "Only conclusion II follows",
+          "is_correct": false
+        },
+        {
+          "label": "Both I and II follow",
+          "is_correct": false
+        },
+        {
+          "label": "Neither I nor II follows",
+          "is_correct": true
+        }
+      ]
+    },
+    {
+      "chapter": "Syllogism",
+      "kind": "standard",
+      "difficulty": "hard",
+      "answer_type": "single",
+      "stem": "Statements (treat as true even if they seem to contradict common facts): 1) Some roads are not birds. 2) All birds are cars. Conclusions: I) Some roads are cars. II) Some cars are roads. Which conclusion(s) logically follow?",
+      "explanation": "Testing every possible case: conclusion I can fail and conclusion II can fail whenever both statements hold — so neither i nor ii follows.",
+      "options": [
+        {
+          "label": "Only conclusion I follows",
+          "is_correct": false
+        },
+        {
+          "label": "Only conclusion II follows",
+          "is_correct": false
+        },
+        {
+          "label": "Both I and II follow",
+          "is_correct": false
+        },
+        {
+          "label": "Neither I nor II follows",
+          "is_correct": true
+        }
+      ]
+    },
+    {
+      "chapter": "Syllogism",
+      "kind": "standard",
+      "difficulty": "medium",
+      "answer_type": "single",
+      "stem": "Statements (treat as true even if they seem to contradict common facts): 1) Some birds are roads. 2) All roads are stones. Conclusions: I) All birds are stones. II) No stones are birds. Which conclusion(s) logically follow?",
+      "explanation": "Testing every possible case: conclusion I can fail and conclusion II can fail whenever both statements hold — so neither i nor ii follows.",
+      "options": [
+        {
+          "label": "Only conclusion I follows",
+          "is_correct": false
+        },
+        {
+          "label": "Only conclusion II follows",
+          "is_correct": false
+        },
+        {
+          "label": "Both I and II follow",
+          "is_correct": false
+        },
+        {
+          "label": "Neither I nor II follows",
+          "is_correct": true
+        }
+      ]
+    },
+    {
+      "chapter": "Syllogism",
+      "kind": "standard",
+      "difficulty": "hard",
+      "answer_type": "single",
+      "stem": "Statements (treat as true even if they seem to contradict common facts): 1) Some tables are not birds. 2) All birds are bags. Conclusions: I) No tables are bags. II) All bags are tables. Which conclusion(s) logically follow?",
+      "explanation": "Testing every possible case: conclusion I can fail and conclusion II can fail whenever both statements hold — so neither i nor ii follows.",
+      "options": [
+        {
+          "label": "Only conclusion I follows",
+          "is_correct": false
+        },
+        {
+          "label": "Only conclusion II follows",
+          "is_correct": false
+        },
+        {
+          "label": "Both I and II follow",
+          "is_correct": false
+        },
+        {
+          "label": "Neither I nor II follows",
+          "is_correct": true
+        }
+      ]
+    },
+    {
+      "chapter": "Syllogism",
+      "kind": "standard",
+      "difficulty": "very_hard",
+      "answer_type": "single",
+      "stem": "Statements (treat as true even if they seem to contradict common facts): 1) Some books are not hills. 2) Some hills are fans. Conclusions: I) Some books are fans. II) Some fans are books. Which conclusion(s) logically follow?",
+      "explanation": "Testing every possible case: conclusion I can fail and conclusion II can fail whenever both statements hold — so neither i nor ii follows.",
+      "options": [
+        {
+          "label": "Only conclusion I follows",
+          "is_correct": false
+        },
+        {
+          "label": "Only conclusion II follows",
+          "is_correct": false
+        },
+        {
+          "label": "Both I and II follow",
+          "is_correct": false
+        },
+        {
+          "label": "Neither I nor II follows",
+          "is_correct": true
+        }
+      ]
+    },
+    {
+      "chapter": "Syllogism",
+      "kind": "standard",
+      "difficulty": "medium",
+      "answer_type": "single",
+      "stem": "Statements (treat as true even if they seem to contradict common facts): 1) No lamps are tables. 2) Some tables are fans. Conclusions: I) Some lamps are fans. II) Some fans are not lamps. Which conclusion(s) logically follow?",
+      "explanation": "Testing every possible case: conclusion I can fail and conclusion II must be true whenever both statements hold — so only conclusion ii follows.",
+      "options": [
+        {
+          "label": "Only conclusion I follows",
+          "is_correct": false
+        },
+        {
+          "label": "Only conclusion II follows",
+          "is_correct": true
+        },
+        {
+          "label": "Both I and II follow",
+          "is_correct": false
+        },
+        {
+          "label": "Neither I nor II follows",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Syllogism",
+      "kind": "standard",
+      "difficulty": "medium",
+      "answer_type": "single",
+      "stem": "Statements (treat as true even if they seem to contradict common facts): 1) Some roads are fans. 2) All fans are lamps. Conclusions: I) Some roads are lamps. II) No lamps are roads. Which conclusion(s) logically follow?",
+      "explanation": "Testing every possible case: conclusion I must be true and conclusion II can fail whenever both statements hold — so only conclusion i follows.",
+      "options": [
+        {
+          "label": "Only conclusion I follows",
+          "is_correct": true
+        },
+        {
+          "label": "Only conclusion II follows",
+          "is_correct": false
+        },
+        {
+          "label": "Both I and II follow",
+          "is_correct": false
+        },
+        {
+          "label": "Neither I nor II follows",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Syllogism",
+      "kind": "standard",
+      "difficulty": "hard",
+      "answer_type": "single",
+      "stem": "Statements (treat as true even if they seem to contradict common facts): 1) Some cars are not birds. 2) All birds are boxes. Conclusions: I) No cars are boxes. II) Some boxes are not cars. Which conclusion(s) logically follow?",
+      "explanation": "Testing every possible case: conclusion I can fail and conclusion II can fail whenever both statements hold — so neither i nor ii follows.",
+      "options": [
+        {
+          "label": "Only conclusion I follows",
+          "is_correct": false
+        },
+        {
+          "label": "Only conclusion II follows",
+          "is_correct": false
+        },
+        {
+          "label": "Both I and II follow",
+          "is_correct": false
+        },
+        {
+          "label": "Neither I nor II follows",
+          "is_correct": true
+        }
+      ]
+    },
+    {
+      "chapter": "Syllogism",
+      "kind": "standard",
+      "difficulty": "hard",
+      "answer_type": "single",
+      "stem": "Statements (treat as true even if they seem to contradict common facts): 1) All cars are pens. 2) Some pens are not birds. Conclusions: I) All cars are birds. II) Some birds are not cars. Which conclusion(s) logically follow?",
+      "explanation": "Testing every possible case: conclusion I can fail and conclusion II can fail whenever both statements hold — so neither i nor ii follows.",
+      "options": [
+        {
+          "label": "Only conclusion I follows",
+          "is_correct": false
+        },
+        {
+          "label": "Only conclusion II follows",
+          "is_correct": false
+        },
+        {
+          "label": "Both I and II follow",
+          "is_correct": false
+        },
+        {
+          "label": "Neither I nor II follows",
+          "is_correct": true
+        }
+      ]
+    },
+    {
+      "chapter": "Syllogism",
+      "kind": "standard",
+      "difficulty": "hard",
+      "answer_type": "single",
+      "stem": "Statements (treat as true even if they seem to contradict common facts): 1) No rivers are lamps. 2) Some lamps are not doors. Conclusions: I) Some rivers are not doors. II) Some doors are rivers. Which conclusion(s) logically follow?",
+      "explanation": "Testing every possible case: conclusion I can fail and conclusion II can fail whenever both statements hold — so neither i nor ii follows.",
+      "options": [
+        {
+          "label": "Only conclusion I follows",
+          "is_correct": false
+        },
+        {
+          "label": "Only conclusion II follows",
+          "is_correct": false
+        },
+        {
+          "label": "Both I and II follow",
+          "is_correct": false
+        },
+        {
+          "label": "Neither I nor II follows",
+          "is_correct": true
+        }
+      ]
+    },
+    {
+      "chapter": "Syllogism",
+      "kind": "standard",
+      "difficulty": "very_hard",
+      "answer_type": "single",
+      "stem": "Statements (treat as true even if they seem to contradict common facts): 1) Some hills are not birds. 2) Some birds are not roads. Conclusions: I) All hills are roads. II) All roads are hills. Which conclusion(s) logically follow?",
+      "explanation": "Testing every possible case: conclusion I can fail and conclusion II can fail whenever both statements hold — so neither i nor ii follows.",
+      "options": [
+        {
+          "label": "Only conclusion I follows",
+          "is_correct": false
+        },
+        {
+          "label": "Only conclusion II follows",
+          "is_correct": false
+        },
+        {
+          "label": "Both I and II follow",
+          "is_correct": false
+        },
+        {
+          "label": "Neither I nor II follows",
+          "is_correct": true
+        }
+      ]
+    },
+    {
+      "chapter": "Syllogism",
+      "kind": "standard",
+      "difficulty": "medium",
+      "answer_type": "single",
+      "stem": "Statements (treat as true even if they seem to contradict common facts): 1) No rivers are chairs. 2) All chairs are pens. Conclusions: I) All rivers are pens. II) Some pens are rivers. Which conclusion(s) logically follow?",
+      "explanation": "Testing every possible case: conclusion I can fail and conclusion II can fail whenever both statements hold — so neither i nor ii follows.",
+      "options": [
+        {
+          "label": "Only conclusion I follows",
+          "is_correct": false
+        },
+        {
+          "label": "Only conclusion II follows",
+          "is_correct": false
+        },
+        {
+          "label": "Both I and II follow",
+          "is_correct": false
+        },
+        {
+          "label": "Neither I nor II follows",
+          "is_correct": true
+        }
+      ]
+    },
+    {
+      "chapter": "Syllogism",
+      "kind": "standard",
+      "difficulty": "very_hard",
+      "answer_type": "single",
+      "stem": "Statements (treat as true even if they seem to contradict common facts): 1) Some tables are flowers. 2) Some flowers are not boxes. Conclusions: I) All tables are boxes. II) All boxes are tables. Which conclusion(s) logically follow?",
+      "explanation": "Testing every possible case: conclusion I can fail and conclusion II can fail whenever both statements hold — so neither i nor ii follows.",
+      "options": [
+        {
+          "label": "Only conclusion I follows",
+          "is_correct": false
+        },
+        {
+          "label": "Only conclusion II follows",
+          "is_correct": false
+        },
+        {
+          "label": "Both I and II follow",
+          "is_correct": false
+        },
+        {
+          "label": "Neither I nor II follows",
+          "is_correct": true
+        }
+      ]
+    },
+    {
+      "chapter": "Syllogism",
+      "kind": "standard",
+      "difficulty": "very_hard",
+      "answer_type": "single",
+      "stem": "Statements (treat as true even if they seem to contradict common facts): 1) Some books are not flowers. 2) Some flowers are tables. Conclusions: I) All books are tables. II) No tables are books. Which conclusion(s) logically follow?",
+      "explanation": "Testing every possible case: conclusion I can fail and conclusion II can fail whenever both statements hold — so neither i nor ii follows.",
+      "options": [
+        {
+          "label": "Only conclusion I follows",
+          "is_correct": false
+        },
+        {
+          "label": "Only conclusion II follows",
+          "is_correct": false
+        },
+        {
+          "label": "Both I and II follow",
+          "is_correct": false
+        },
+        {
+          "label": "Neither I nor II follows",
+          "is_correct": true
+        }
+      ]
+    },
+    {
+      "chapter": "Syllogism",
+      "kind": "standard",
+      "difficulty": "medium",
+      "answer_type": "single",
+      "stem": "Statements (treat as true even if they seem to contradict common facts): 1) Some books are cars. 2) All cars are stones. Conclusions: I) Some books are stones. II) Some stones are books. Which conclusion(s) logically follow?",
+      "explanation": "Testing every possible case: conclusion I must be true and conclusion II must be true whenever both statements hold — so both i and ii follow.",
+      "options": [
+        {
+          "label": "Only conclusion I follows",
+          "is_correct": false
+        },
+        {
+          "label": "Only conclusion II follows",
+          "is_correct": false
+        },
+        {
+          "label": "Both I and II follow",
+          "is_correct": true
+        },
+        {
+          "label": "Neither I nor II follows",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Syllogism",
+      "kind": "standard",
+      "difficulty": "hard",
+      "answer_type": "single",
+      "stem": "Statements (treat as true even if they seem to contradict common facts): 1) Some cups are not hills. 2) No hills are flowers. Conclusions: I) No cups are flowers. II) No flowers are cups. Which conclusion(s) logically follow?",
+      "explanation": "Testing every possible case: conclusion I can fail and conclusion II can fail whenever both statements hold — so neither i nor ii follows.",
+      "options": [
+        {
+          "label": "Only conclusion I follows",
+          "is_correct": false
+        },
+        {
+          "label": "Only conclusion II follows",
+          "is_correct": false
+        },
+        {
+          "label": "Both I and II follow",
+          "is_correct": false
+        },
+        {
+          "label": "Neither I nor II follows",
+          "is_correct": true
+        }
+      ]
+    },
+    {
+      "chapter": "Syllogism",
+      "kind": "standard",
+      "difficulty": "very_hard",
+      "answer_type": "single",
+      "stem": "Statements (treat as true even if they seem to contradict common facts): 1) Some hills are not doors. 2) Some doors are not cars. Conclusions: I) Some hills are not cars. II) Some cars are not hills. Which conclusion(s) logically follow?",
+      "explanation": "Testing every possible case: conclusion I can fail and conclusion II can fail whenever both statements hold — so neither i nor ii follows.",
+      "options": [
+        {
+          "label": "Only conclusion I follows",
+          "is_correct": false
+        },
+        {
+          "label": "Only conclusion II follows",
+          "is_correct": false
+        },
+        {
+          "label": "Both I and II follow",
+          "is_correct": false
+        },
+        {
+          "label": "Neither I nor II follows",
+          "is_correct": true
+        }
+      ]
+    },
+    {
+      "chapter": "Syllogism",
+      "kind": "standard",
+      "difficulty": "very_hard",
+      "answer_type": "single",
+      "stem": "Statements (treat as true even if they seem to contradict common facts): 1) Some tables are cars. 2) Some cars are fans. Conclusions: I) All tables are fans. II) All fans are tables. Which conclusion(s) logically follow?",
+      "explanation": "Testing every possible case: conclusion I can fail and conclusion II can fail whenever both statements hold — so neither i nor ii follows.",
+      "options": [
+        {
+          "label": "Only conclusion I follows",
+          "is_correct": false
+        },
+        {
+          "label": "Only conclusion II follows",
+          "is_correct": false
+        },
+        {
+          "label": "Both I and II follow",
+          "is_correct": false
+        },
+        {
+          "label": "Neither I nor II follows",
+          "is_correct": true
+        }
+      ]
+    },
+    {
+      "chapter": "Syllogism",
+      "kind": "standard",
+      "difficulty": "very_hard",
+      "answer_type": "single",
+      "stem": "Statements (treat as true even if they seem to contradict common facts): 1) Some birds are flowers. 2) Some flowers are not boxes. Conclusions: I) All birds are boxes. II) No boxes are birds. Which conclusion(s) logically follow?",
+      "explanation": "Testing every possible case: conclusion I can fail and conclusion II can fail whenever both statements hold — so neither i nor ii follows.",
+      "options": [
+        {
+          "label": "Only conclusion I follows",
+          "is_correct": false
+        },
+        {
+          "label": "Only conclusion II follows",
+          "is_correct": false
+        },
+        {
+          "label": "Both I and II follow",
+          "is_correct": false
+        },
+        {
+          "label": "Neither I nor II follows",
+          "is_correct": true
+        }
+      ]
+    },
+    {
+      "chapter": "Syllogism",
+      "kind": "standard",
+      "difficulty": "medium",
+      "answer_type": "single",
+      "stem": "Statements (treat as true even if they seem to contradict common facts): 1) No roads are cats. 2) No cats are chairs. Conclusions: I) Some roads are not chairs. II) All chairs are roads. Which conclusion(s) logically follow?",
+      "explanation": "Testing every possible case: conclusion I can fail and conclusion II can fail whenever both statements hold — so neither i nor ii follows.",
+      "options": [
+        {
+          "label": "Only conclusion I follows",
+          "is_correct": false
+        },
+        {
+          "label": "Only conclusion II follows",
+          "is_correct": false
+        },
+        {
+          "label": "Both I and II follow",
+          "is_correct": false
+        },
+        {
+          "label": "Neither I nor II follows",
+          "is_correct": true
+        }
+      ]
+    },
+    {
+      "chapter": "Syllogism",
+      "kind": "standard",
+      "difficulty": "medium",
+      "answer_type": "single",
+      "stem": "Statements (treat as true even if they seem to contradict common facts): 1) Some boxes are books. 2) All books are pens. Conclusions: I) Some boxes are pens. II) Some pens are boxes. Which conclusion(s) logically follow?",
+      "explanation": "Testing every possible case: conclusion I must be true and conclusion II must be true whenever both statements hold — so both i and ii follow.",
+      "options": [
+        {
+          "label": "Only conclusion I follows",
+          "is_correct": false
+        },
+        {
+          "label": "Only conclusion II follows",
+          "is_correct": false
+        },
+        {
+          "label": "Both I and II follow",
+          "is_correct": true
+        },
+        {
+          "label": "Neither I nor II follows",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Syllogism",
+      "kind": "standard",
+      "difficulty": "very_hard",
+      "answer_type": "single",
+      "stem": "Statements (treat as true even if they seem to contradict common facts): 1) Some stones are not bags. 2) Some bags are cars. Conclusions: I) Some stones are not cars. II) No cars are stones. Which conclusion(s) logically follow?",
+      "explanation": "Testing every possible case: conclusion I can fail and conclusion II can fail whenever both statements hold — so neither i nor ii follows.",
+      "options": [
+        {
+          "label": "Only conclusion I follows",
+          "is_correct": false
+        },
+        {
+          "label": "Only conclusion II follows",
+          "is_correct": false
+        },
+        {
+          "label": "Both I and II follow",
+          "is_correct": false
+        },
+        {
+          "label": "Neither I nor II follows",
+          "is_correct": true
+        }
+      ]
+    },
+    {
+      "chapter": "Syllogism",
+      "kind": "standard",
+      "difficulty": "easy",
+      "answer_type": "single",
+      "stem": "Statements (treat as true even if they seem to contradict common facts): 1) All roads are toys. 2) No toys are hills. Conclusions: I) All roads are hills. II) No hills are roads. Which conclusion(s) logically follow?",
+      "explanation": "Testing every possible case: conclusion I can fail and conclusion II must be true whenever both statements hold — so only conclusion ii follows.",
+      "options": [
+        {
+          "label": "Only conclusion I follows",
+          "is_correct": false
+        },
+        {
+          "label": "Only conclusion II follows",
+          "is_correct": true
+        },
+        {
+          "label": "Both I and II follow",
+          "is_correct": false
+        },
+        {
+          "label": "Neither I nor II follows",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Syllogism",
+      "kind": "standard",
+      "difficulty": "very_hard",
+      "answer_type": "single",
+      "stem": "Statements (treat as true even if they seem to contradict common facts): 1) Some toys are not bags. 2) Some bags are pens. Conclusions: I) No toys are pens. II) Some pens are not toys. Which conclusion(s) logically follow?",
+      "explanation": "Testing every possible case: conclusion I can fail and conclusion II can fail whenever both statements hold — so neither i nor ii follows.",
+      "options": [
+        {
+          "label": "Only conclusion I follows",
+          "is_correct": false
+        },
+        {
+          "label": "Only conclusion II follows",
+          "is_correct": false
+        },
+        {
+          "label": "Both I and II follow",
+          "is_correct": false
+        },
+        {
+          "label": "Neither I nor II follows",
+          "is_correct": true
+        }
+      ]
+    },
+    {
+      "chapter": "Syllogism",
+      "kind": "standard",
+      "difficulty": "medium",
+      "answer_type": "single",
+      "stem": "Statements (treat as true even if they seem to contradict common facts): 1) No cups are cats. 2) Some cats are cars. Conclusions: I) Some cups are cars. II) Some cars are cups. Which conclusion(s) logically follow?",
+      "explanation": "Testing every possible case: conclusion I can fail and conclusion II can fail whenever both statements hold — so neither i nor ii follows.",
+      "options": [
+        {
+          "label": "Only conclusion I follows",
+          "is_correct": false
+        },
+        {
+          "label": "Only conclusion II follows",
+          "is_correct": false
+        },
+        {
+          "label": "Both I and II follow",
+          "is_correct": false
+        },
+        {
+          "label": "Neither I nor II follows",
+          "is_correct": true
+        }
+      ]
+    },
+    {
+      "chapter": "Syllogism",
+      "kind": "standard",
+      "difficulty": "easy",
+      "answer_type": "single",
+      "stem": "Statements (treat as true even if they seem to contradict common facts): 1) No lamps are roads. 2) No roads are stones. Conclusions: I) All lamps are stones. II) No stones are lamps. Which conclusion(s) logically follow?",
+      "explanation": "Testing every possible case: conclusion I can fail and conclusion II can fail whenever both statements hold — so neither i nor ii follows.",
+      "options": [
+        {
+          "label": "Only conclusion I follows",
+          "is_correct": false
+        },
+        {
+          "label": "Only conclusion II follows",
+          "is_correct": false
+        },
+        {
+          "label": "Both I and II follow",
+          "is_correct": false
+        },
+        {
+          "label": "Neither I nor II follows",
+          "is_correct": true
+        }
+      ]
+    },
+    {
+      "chapter": "Syllogism",
+      "kind": "standard",
+      "difficulty": "medium",
+      "answer_type": "single",
+      "stem": "Statements (treat as true even if they seem to contradict common facts): 1) No cats are chairs. 2) Some chairs are cars. Conclusions: I) All cats are cars. II) No cars are cats. Which conclusion(s) logically follow?",
+      "explanation": "Testing every possible case: conclusion I can fail and conclusion II can fail whenever both statements hold — so neither i nor ii follows.",
+      "options": [
+        {
+          "label": "Only conclusion I follows",
+          "is_correct": false
+        },
+        {
+          "label": "Only conclusion II follows",
+          "is_correct": false
+        },
+        {
+          "label": "Both I and II follow",
+          "is_correct": false
+        },
+        {
+          "label": "Neither I nor II follows",
+          "is_correct": true
+        }
+      ]
+    },
+    {
+      "chapter": "Syllogism",
+      "kind": "standard",
+      "difficulty": "very_hard",
+      "answer_type": "single",
+      "stem": "Statements (treat as true even if they seem to contradict common facts): 1) Some fans are not roads. 2) Some roads are chairs. Conclusions: I) Some fans are not chairs. II) Some chairs are not fans. Which conclusion(s) logically follow?",
+      "explanation": "Testing every possible case: conclusion I can fail and conclusion II can fail whenever both statements hold — so neither i nor ii follows.",
+      "options": [
+        {
+          "label": "Only conclusion I follows",
+          "is_correct": false
+        },
+        {
+          "label": "Only conclusion II follows",
+          "is_correct": false
+        },
+        {
+          "label": "Both I and II follow",
+          "is_correct": false
+        },
+        {
+          "label": "Neither I nor II follows",
+          "is_correct": true
+        }
+      ]
+    },
+    {
+      "chapter": "Syllogism",
+      "kind": "standard",
+      "difficulty": "very_hard",
+      "answer_type": "single",
+      "stem": "Statements (treat as true even if they seem to contradict common facts): 1) Some doors are not bags. 2) Some bags are not pens. Conclusions: I) Some doors are pens. II) Some pens are not doors. Which conclusion(s) logically follow?",
+      "explanation": "Testing every possible case: conclusion I can fail and conclusion II can fail whenever both statements hold — so neither i nor ii follows.",
+      "options": [
+        {
+          "label": "Only conclusion I follows",
+          "is_correct": false
+        },
+        {
+          "label": "Only conclusion II follows",
+          "is_correct": false
+        },
+        {
+          "label": "Both I and II follow",
+          "is_correct": false
+        },
+        {
+          "label": "Neither I nor II follows",
+          "is_correct": true
+        }
+      ]
+    },
+    {
+      "chapter": "Syllogism",
+      "kind": "standard",
+      "difficulty": "very_hard",
+      "answer_type": "single",
+      "stem": "Statements (treat as true even if they seem to contradict common facts): 1) Some chairs are not toys. 2) Some toys are not rivers. Conclusions: I) No chairs are rivers. II) Some rivers are not chairs. Which conclusion(s) logically follow?",
+      "explanation": "Testing every possible case: conclusion I can fail and conclusion II can fail whenever both statements hold — so neither i nor ii follows.",
+      "options": [
+        {
+          "label": "Only conclusion I follows",
+          "is_correct": false
+        },
+        {
+          "label": "Only conclusion II follows",
+          "is_correct": false
+        },
+        {
+          "label": "Both I and II follow",
+          "is_correct": false
+        },
+        {
+          "label": "Neither I nor II follows",
+          "is_correct": true
+        }
+      ]
+    },
+    {
+      "chapter": "Syllogism",
+      "kind": "standard",
+      "difficulty": "hard",
+      "answer_type": "single",
+      "stem": "Statements (treat as true even if they seem to contradict common facts): 1) All trees are fans. 2) Some fans are not pens. Conclusions: I) No trees are pens. II) No pens are trees. Which conclusion(s) logically follow?",
+      "explanation": "Testing every possible case: conclusion I can fail and conclusion II can fail whenever both statements hold — so neither i nor ii follows.",
+      "options": [
+        {
+          "label": "Only conclusion I follows",
+          "is_correct": false
+        },
+        {
+          "label": "Only conclusion II follows",
+          "is_correct": false
+        },
+        {
+          "label": "Both I and II follow",
+          "is_correct": false
+        },
+        {
+          "label": "Neither I nor II follows",
+          "is_correct": true
+        }
+      ]
+    },
+    {
+      "chapter": "Syllogism",
+      "kind": "standard",
+      "difficulty": "medium",
+      "answer_type": "single",
+      "stem": "Statements (treat as true even if they seem to contradict common facts): 1) Some pens are hills. 2) No hills are boxes. Conclusions: I) All pens are boxes. II) All boxes are pens. Which conclusion(s) logically follow?",
+      "explanation": "Testing every possible case: conclusion I can fail and conclusion II can fail whenever both statements hold — so neither i nor ii follows.",
+      "options": [
+        {
+          "label": "Only conclusion I follows",
+          "is_correct": false
+        },
+        {
+          "label": "Only conclusion II follows",
+          "is_correct": false
+        },
+        {
+          "label": "Both I and II follow",
+          "is_correct": false
+        },
+        {
+          "label": "Neither I nor II follows",
+          "is_correct": true
+        }
+      ]
+    },
+    {
+      "chapter": "Syllogism",
+      "kind": "standard",
+      "difficulty": "medium",
+      "answer_type": "single",
+      "stem": "Statements (treat as true even if they seem to contradict common facts): 1) Some tables are bags. 2) All bags are cats. Conclusions: I) Some tables are not cats. II) Some cats are not tables. Which conclusion(s) logically follow?",
+      "explanation": "Testing every possible case: conclusion I can fail and conclusion II can fail whenever both statements hold — so neither i nor ii follows.",
+      "options": [
+        {
+          "label": "Only conclusion I follows",
+          "is_correct": false
+        },
+        {
+          "label": "Only conclusion II follows",
+          "is_correct": false
+        },
+        {
+          "label": "Both I and II follow",
+          "is_correct": false
+        },
+        {
+          "label": "Neither I nor II follows",
+          "is_correct": true
+        }
+      ]
+    },
+    {
+      "chapter": "Syllogism",
+      "kind": "standard",
+      "difficulty": "very_hard",
+      "answer_type": "single",
+      "stem": "Statements (treat as true even if they seem to contradict common facts): 1) Some flowers are not roads. 2) Some roads are not bags. Conclusions: I) Some flowers are not bags. II) No bags are flowers. Which conclusion(s) logically follow?",
+      "explanation": "Testing every possible case: conclusion I can fail and conclusion II can fail whenever both statements hold — so neither i nor ii follows.",
+      "options": [
+        {
+          "label": "Only conclusion I follows",
+          "is_correct": false
+        },
+        {
+          "label": "Only conclusion II follows",
+          "is_correct": false
+        },
+        {
+          "label": "Both I and II follow",
+          "is_correct": false
+        },
+        {
+          "label": "Neither I nor II follows",
+          "is_correct": true
+        }
+      ]
+    },
+    {
+      "chapter": "Syllogism",
+      "kind": "standard",
+      "difficulty": "medium",
+      "answer_type": "single",
+      "stem": "Statements (treat as true even if they seem to contradict common facts): 1) No doors are fans. 2) All fans are cats. Conclusions: I) Some doors are not cats. II) Some cats are doors. Which conclusion(s) logically follow?",
+      "explanation": "Testing every possible case: conclusion I can fail and conclusion II can fail whenever both statements hold — so neither i nor ii follows.",
+      "options": [
+        {
+          "label": "Only conclusion I follows",
+          "is_correct": false
+        },
+        {
+          "label": "Only conclusion II follows",
+          "is_correct": false
+        },
+        {
+          "label": "Both I and II follow",
+          "is_correct": false
+        },
+        {
+          "label": "Neither I nor II follows",
+          "is_correct": true
+        }
+      ]
+    },
+    {
+      "chapter": "Syllogism",
+      "kind": "standard",
+      "difficulty": "medium",
+      "answer_type": "single",
+      "stem": "Statements (treat as true even if they seem to contradict common facts): 1) Some bags are books. 2) No books are birds. Conclusions: I) Some bags are not birds. II) All birds are bags. Which conclusion(s) logically follow?",
+      "explanation": "Testing every possible case: conclusion I must be true and conclusion II can fail whenever both statements hold — so only conclusion i follows.",
+      "options": [
+        {
+          "label": "Only conclusion I follows",
+          "is_correct": true
+        },
+        {
+          "label": "Only conclusion II follows",
+          "is_correct": false
+        },
+        {
+          "label": "Both I and II follow",
+          "is_correct": false
+        },
+        {
+          "label": "Neither I nor II follows",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Syllogism",
+      "kind": "standard",
+      "difficulty": "very_hard",
+      "answer_type": "single",
+      "stem": "Statements (treat as true even if they seem to contradict common facts): 1) Some hills are not trees. 2) Some trees are roads. Conclusions: I) Some hills are not roads. II) Some roads are not hills. Which conclusion(s) logically follow?",
+      "explanation": "Testing every possible case: conclusion I can fail and conclusion II can fail whenever both statements hold — so neither i nor ii follows.",
+      "options": [
+        {
+          "label": "Only conclusion I follows",
+          "is_correct": false
+        },
+        {
+          "label": "Only conclusion II follows",
+          "is_correct": false
+        },
+        {
+          "label": "Both I and II follow",
+          "is_correct": false
+        },
+        {
+          "label": "Neither I nor II follows",
+          "is_correct": true
+        }
+      ]
+    },
+    {
+      "chapter": "Syllogism",
+      "kind": "standard",
+      "difficulty": "hard",
+      "answer_type": "single",
+      "stem": "Statements (treat as true even if they seem to contradict common facts): 1) Some cats are not boxes. 2) No boxes are cups. Conclusions: I) Some cats are cups. II) All cups are cats. Which conclusion(s) logically follow?",
+      "explanation": "Testing every possible case: conclusion I can fail and conclusion II can fail whenever both statements hold — so neither i nor ii follows.",
+      "options": [
+        {
+          "label": "Only conclusion I follows",
+          "is_correct": false
+        },
+        {
+          "label": "Only conclusion II follows",
+          "is_correct": false
+        },
+        {
+          "label": "Both I and II follow",
+          "is_correct": false
+        },
+        {
+          "label": "Neither I nor II follows",
+          "is_correct": true
+        }
+      ]
+    },
+    {
+      "chapter": "Syllogism",
+      "kind": "standard",
+      "difficulty": "very_hard",
+      "answer_type": "single",
+      "stem": "Statements (treat as true even if they seem to contradict common facts): 1) Some cups are flowers. 2) Some flowers are not stones. Conclusions: I) No cups are stones. II) Some stones are not cups. Which conclusion(s) logically follow?",
+      "explanation": "Testing every possible case: conclusion I can fail and conclusion II can fail whenever both statements hold — so neither i nor ii follows.",
+      "options": [
+        {
+          "label": "Only conclusion I follows",
+          "is_correct": false
+        },
+        {
+          "label": "Only conclusion II follows",
+          "is_correct": false
+        },
+        {
+          "label": "Both I and II follow",
+          "is_correct": false
+        },
+        {
+          "label": "Neither I nor II follows",
+          "is_correct": true
+        }
+      ]
+    },
+    {
+      "chapter": "Syllogism",
+      "kind": "standard",
+      "difficulty": "hard",
+      "answer_type": "single",
+      "stem": "Statements (treat as true even if they seem to contradict common facts): 1) No trees are cars. 2) Some cars are not lamps. Conclusions: I) No trees are lamps. II) All lamps are trees. Which conclusion(s) logically follow?",
+      "explanation": "Testing every possible case: conclusion I can fail and conclusion II can fail whenever both statements hold — so neither i nor ii follows.",
+      "options": [
+        {
+          "label": "Only conclusion I follows",
+          "is_correct": false
+        },
+        {
+          "label": "Only conclusion II follows",
+          "is_correct": false
+        },
+        {
+          "label": "Both I and II follow",
+          "is_correct": false
+        },
+        {
+          "label": "Neither I nor II follows",
+          "is_correct": true
+        }
+      ]
+    },
+    {
+      "chapter": "Syllogism",
+      "kind": "standard",
+      "difficulty": "medium",
+      "answer_type": "single",
+      "stem": "Statements (treat as true even if they seem to contradict common facts): 1) All bags are flowers. 2) Some flowers are cars. Conclusions: I) Some bags are not cars. II) All cars are bags. Which conclusion(s) logically follow?",
+      "explanation": "Testing every possible case: conclusion I can fail and conclusion II can fail whenever both statements hold — so neither i nor ii follows.",
+      "options": [
+        {
+          "label": "Only conclusion I follows",
+          "is_correct": false
+        },
+        {
+          "label": "Only conclusion II follows",
+          "is_correct": false
+        },
+        {
+          "label": "Both I and II follow",
+          "is_correct": false
+        },
+        {
+          "label": "Neither I nor II follows",
+          "is_correct": true
+        }
+      ]
+    },
+    {
+      "chapter": "Syllogism",
+      "kind": "standard",
+      "difficulty": "very_hard",
+      "answer_type": "single",
+      "stem": "Statements (treat as true even if they seem to contradict common facts): 1) Some books are birds. 2) Some birds are flowers. Conclusions: I) No books are flowers. II) Some flowers are not books. Which conclusion(s) logically follow?",
+      "explanation": "Testing every possible case: conclusion I can fail and conclusion II can fail whenever both statements hold — so neither i nor ii follows.",
+      "options": [
+        {
+          "label": "Only conclusion I follows",
+          "is_correct": false
+        },
+        {
+          "label": "Only conclusion II follows",
+          "is_correct": false
+        },
+        {
+          "label": "Both I and II follow",
+          "is_correct": false
+        },
+        {
+          "label": "Neither I nor II follows",
+          "is_correct": true
+        }
+      ]
+    },
+    {
+      "chapter": "Syllogism",
+      "kind": "standard",
+      "difficulty": "medium",
+      "answer_type": "single",
+      "stem": "Statements (treat as true even if they seem to contradict common facts): 1) No chairs are hills. 2) All hills are lamps. Conclusions: I) Some chairs are not lamps. II) All lamps are chairs. Which conclusion(s) logically follow?",
+      "explanation": "Testing every possible case: conclusion I can fail and conclusion II can fail whenever both statements hold — so neither i nor ii follows.",
+      "options": [
+        {
+          "label": "Only conclusion I follows",
+          "is_correct": false
+        },
+        {
+          "label": "Only conclusion II follows",
+          "is_correct": false
+        },
+        {
+          "label": "Both I and II follow",
+          "is_correct": false
+        },
+        {
+          "label": "Neither I nor II follows",
+          "is_correct": true
+        }
+      ]
+    },
+    {
+      "chapter": "Syllogism",
+      "kind": "standard",
+      "difficulty": "medium",
+      "answer_type": "single",
+      "stem": "Statements (treat as true even if they seem to contradict common facts): 1) All rivers are roads. 2) No roads are bags. Conclusions: I) Some rivers are bags. II) No bags are rivers. Which conclusion(s) logically follow?",
+      "explanation": "Testing every possible case: conclusion I can fail and conclusion II must be true whenever both statements hold — so only conclusion ii follows.",
+      "options": [
+        {
+          "label": "Only conclusion I follows",
+          "is_correct": false
+        },
+        {
+          "label": "Only conclusion II follows",
+          "is_correct": true
+        },
+        {
+          "label": "Both I and II follow",
+          "is_correct": false
+        },
+        {
+          "label": "Neither I nor II follows",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Syllogism",
+      "kind": "standard",
+      "difficulty": "hard",
+      "answer_type": "single",
+      "stem": "Statements (treat as true even if they seem to contradict common facts): 1) No pens are bags. 2) Some bags are not books. Conclusions: I) Some pens are books. II) Some books are pens. Which conclusion(s) logically follow?",
+      "explanation": "Testing every possible case: conclusion I can fail and conclusion II can fail whenever both statements hold — so neither i nor ii follows.",
+      "options": [
+        {
+          "label": "Only conclusion I follows",
+          "is_correct": false
+        },
+        {
+          "label": "Only conclusion II follows",
+          "is_correct": false
+        },
+        {
+          "label": "Both I and II follow",
+          "is_correct": false
+        },
+        {
+          "label": "Neither I nor II follows",
+          "is_correct": true
+        }
+      ]
+    },
+    {
+      "chapter": "Syllogism",
+      "kind": "standard",
+      "difficulty": "medium",
+      "answer_type": "single",
+      "stem": "Statements (treat as true even if they seem to contradict common facts): 1) No cars are pens. 2) Some pens are birds. Conclusions: I) All cars are birds. II) All birds are cars. Which conclusion(s) logically follow?",
+      "explanation": "Testing every possible case: conclusion I can fail and conclusion II can fail whenever both statements hold — so neither i nor ii follows.",
+      "options": [
+        {
+          "label": "Only conclusion I follows",
+          "is_correct": false
+        },
+        {
+          "label": "Only conclusion II follows",
+          "is_correct": false
+        },
+        {
+          "label": "Both I and II follow",
+          "is_correct": false
+        },
+        {
+          "label": "Neither I nor II follows",
+          "is_correct": true
+        }
+      ]
+    },
+    {
+      "chapter": "Syllogism",
+      "kind": "standard",
+      "difficulty": "medium",
+      "answer_type": "single",
+      "stem": "Statements (treat as true even if they seem to contradict common facts): 1) Some fans are flowers. 2) No flowers are books. Conclusions: I) All fans are books. II) No books are fans. Which conclusion(s) logically follow?",
+      "explanation": "Testing every possible case: conclusion I can fail and conclusion II can fail whenever both statements hold — so neither i nor ii follows.",
+      "options": [
+        {
+          "label": "Only conclusion I follows",
+          "is_correct": false
+        },
+        {
+          "label": "Only conclusion II follows",
+          "is_correct": false
+        },
+        {
+          "label": "Both I and II follow",
+          "is_correct": false
+        },
+        {
+          "label": "Neither I nor II follows",
+          "is_correct": true
+        }
+      ]
+    },
+    {
+      "chapter": "Syllogism",
+      "kind": "standard",
+      "difficulty": "hard",
+      "answer_type": "single",
+      "stem": "Statements (treat as true even if they seem to contradict common facts): 1) No cups are toys. 2) Some toys are not pens. Conclusions: I) All cups are pens. II) Some pens are not cups. Which conclusion(s) logically follow?",
+      "explanation": "Testing every possible case: conclusion I can fail and conclusion II can fail whenever both statements hold — so neither i nor ii follows.",
+      "options": [
+        {
+          "label": "Only conclusion I follows",
+          "is_correct": false
+        },
+        {
+          "label": "Only conclusion II follows",
+          "is_correct": false
+        },
+        {
+          "label": "Both I and II follow",
+          "is_correct": false
+        },
+        {
+          "label": "Neither I nor II follows",
+          "is_correct": true
+        }
+      ]
+    },
+    {
+      "chapter": "Syllogism",
+      "kind": "standard",
+      "difficulty": "medium",
+      "answer_type": "single",
+      "stem": "Statements (treat as true even if they seem to contradict common facts): 1) No chairs are hills. 2) Some hills are rivers. Conclusions: I) No chairs are rivers. II) Some rivers are not chairs. Which conclusion(s) logically follow?",
+      "explanation": "Testing every possible case: conclusion I can fail and conclusion II must be true whenever both statements hold — so only conclusion ii follows.",
+      "options": [
+        {
+          "label": "Only conclusion I follows",
+          "is_correct": false
+        },
+        {
+          "label": "Only conclusion II follows",
+          "is_correct": true
+        },
+        {
+          "label": "Both I and II follow",
+          "is_correct": false
+        },
+        {
+          "label": "Neither I nor II follows",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Syllogism",
+      "kind": "standard",
+      "difficulty": "very_hard",
+      "answer_type": "single",
+      "stem": "Statements (treat as true even if they seem to contradict common facts): 1) Some birds are pens. 2) Some pens are not bags. Conclusions: I) Some birds are bags. II) Some bags are birds. Which conclusion(s) logically follow?",
+      "explanation": "Testing every possible case: conclusion I can fail and conclusion II can fail whenever both statements hold — so neither i nor ii follows.",
+      "options": [
+        {
+          "label": "Only conclusion I follows",
+          "is_correct": false
+        },
+        {
+          "label": "Only conclusion II follows",
+          "is_correct": false
+        },
+        {
+          "label": "Both I and II follow",
+          "is_correct": false
+        },
+        {
+          "label": "Neither I nor II follows",
+          "is_correct": true
+        }
+      ]
+    },
+    {
+      "chapter": "Syllogism",
+      "kind": "standard",
+      "difficulty": "very_hard",
+      "answer_type": "single",
+      "stem": "Statements (treat as true even if they seem to contradict common facts): 1) Some roads are not chairs. 2) Some chairs are not birds. Conclusions: I) All roads are birds. II) No birds are roads. Which conclusion(s) logically follow?",
+      "explanation": "Testing every possible case: conclusion I can fail and conclusion II can fail whenever both statements hold — so neither i nor ii follows.",
+      "options": [
+        {
+          "label": "Only conclusion I follows",
+          "is_correct": false
+        },
+        {
+          "label": "Only conclusion II follows",
+          "is_correct": false
+        },
+        {
+          "label": "Both I and II follow",
+          "is_correct": false
+        },
+        {
+          "label": "Neither I nor II follows",
+          "is_correct": true
+        }
+      ]
+    },
+    {
+      "chapter": "Syllogism",
+      "kind": "standard",
+      "difficulty": "hard",
+      "answer_type": "single",
+      "stem": "Statements (treat as true even if they seem to contradict common facts): 1) All cars are cups. 2) Some cups are not bags. Conclusions: I) No cars are bags. II) No bags are cars. Which conclusion(s) logically follow?",
+      "explanation": "Testing every possible case: conclusion I can fail and conclusion II can fail whenever both statements hold — so neither i nor ii follows.",
+      "options": [
+        {
+          "label": "Only conclusion I follows",
+          "is_correct": false
+        },
+        {
+          "label": "Only conclusion II follows",
+          "is_correct": false
+        },
+        {
+          "label": "Both I and II follow",
+          "is_correct": false
+        },
+        {
+          "label": "Neither I nor II follows",
+          "is_correct": true
+        }
+      ]
+    },
+    {
+      "chapter": "Syllogism",
+      "kind": "standard",
+      "difficulty": "very_hard",
+      "answer_type": "single",
+      "stem": "Statements (treat as true even if they seem to contradict common facts): 1) Some fans are flowers. 2) Some flowers are trees. Conclusions: I) All fans are trees. II) All trees are fans. Which conclusion(s) logically follow?",
+      "explanation": "Testing every possible case: conclusion I can fail and conclusion II can fail whenever both statements hold — so neither i nor ii follows.",
+      "options": [
+        {
+          "label": "Only conclusion I follows",
+          "is_correct": false
+        },
+        {
+          "label": "Only conclusion II follows",
+          "is_correct": false
+        },
+        {
+          "label": "Both I and II follow",
+          "is_correct": false
+        },
+        {
+          "label": "Neither I nor II follows",
+          "is_correct": true
+        }
+      ]
+    },
+    {
+      "chapter": "Syllogism",
+      "kind": "standard",
+      "difficulty": "hard",
+      "answer_type": "single",
+      "stem": "Statements (treat as true even if they seem to contradict common facts): 1) Some stones are not chairs. 2) All chairs are doors. Conclusions: I) No stones are doors. II) All doors are stones. Which conclusion(s) logically follow?",
+      "explanation": "Testing every possible case: conclusion I can fail and conclusion II can fail whenever both statements hold — so neither i nor ii follows.",
+      "options": [
+        {
+          "label": "Only conclusion I follows",
+          "is_correct": false
+        },
+        {
+          "label": "Only conclusion II follows",
+          "is_correct": false
+        },
+        {
+          "label": "Both I and II follow",
+          "is_correct": false
+        },
+        {
+          "label": "Neither I nor II follows",
+          "is_correct": true
+        }
+      ]
+    },
+    {
+      "chapter": "Syllogism",
+      "kind": "standard",
+      "difficulty": "very_hard",
+      "answer_type": "single",
+      "stem": "Statements (treat as true even if they seem to contradict common facts): 1) Some boxes are cats. 2) Some cats are rivers. Conclusions: I) Some boxes are rivers. II) All rivers are boxes. Which conclusion(s) logically follow?",
+      "explanation": "Testing every possible case: conclusion I can fail and conclusion II can fail whenever both statements hold — so neither i nor ii follows.",
+      "options": [
+        {
+          "label": "Only conclusion I follows",
+          "is_correct": false
+        },
+        {
+          "label": "Only conclusion II follows",
+          "is_correct": false
+        },
+        {
+          "label": "Both I and II follow",
+          "is_correct": false
+        },
+        {
+          "label": "Neither I nor II follows",
+          "is_correct": true
+        }
+      ]
+    },
+    {
+      "chapter": "Syllogism",
+      "kind": "standard",
+      "difficulty": "very_hard",
+      "answer_type": "single",
+      "stem": "Statements (treat as true even if they seem to contradict common facts): 1) Some books are not bags. 2) Some bags are chairs. Conclusions: I) No books are chairs. II) No chairs are books. Which conclusion(s) logically follow?",
+      "explanation": "Testing every possible case: conclusion I can fail and conclusion II can fail whenever both statements hold — so neither i nor ii follows.",
+      "options": [
+        {
+          "label": "Only conclusion I follows",
+          "is_correct": false
+        },
+        {
+          "label": "Only conclusion II follows",
+          "is_correct": false
+        },
+        {
+          "label": "Both I and II follow",
+          "is_correct": false
+        },
+        {
+          "label": "Neither I nor II follows",
+          "is_correct": true
+        }
+      ]
+    },
+    {
+      "chapter": "Syllogism",
+      "kind": "standard",
+      "difficulty": "hard",
+      "answer_type": "single",
+      "stem": "Statements (treat as true even if they seem to contradict common facts): 1) Some lamps are not roads. 2) All roads are bags. Conclusions: I) No lamps are bags. II) All bags are lamps. Which conclusion(s) logically follow?",
+      "explanation": "Testing every possible case: conclusion I can fail and conclusion II can fail whenever both statements hold — so neither i nor ii follows.",
+      "options": [
+        {
+          "label": "Only conclusion I follows",
+          "is_correct": false
+        },
+        {
+          "label": "Only conclusion II follows",
+          "is_correct": false
+        },
+        {
+          "label": "Both I and II follow",
+          "is_correct": false
+        },
+        {
+          "label": "Neither I nor II follows",
+          "is_correct": true
+        }
+      ]
+    },
+    {
+      "chapter": "Syllogism",
+      "kind": "standard",
+      "difficulty": "hard",
+      "answer_type": "single",
+      "stem": "Statements (treat as true even if they seem to contradict common facts): 1) All fans are cups. 2) Some cups are not stones. Conclusions: I) All fans are stones. II) All stones are fans. Which conclusion(s) logically follow?",
+      "explanation": "Testing every possible case: conclusion I can fail and conclusion II can fail whenever both statements hold — so neither i nor ii follows.",
+      "options": [
+        {
+          "label": "Only conclusion I follows",
+          "is_correct": false
+        },
+        {
+          "label": "Only conclusion II follows",
+          "is_correct": false
+        },
+        {
+          "label": "Both I and II follow",
+          "is_correct": false
+        },
+        {
+          "label": "Neither I nor II follows",
+          "is_correct": true
+        }
+      ]
+    },
+    {
+      "chapter": "Syllogism",
+      "kind": "standard",
+      "difficulty": "medium",
+      "answer_type": "single",
+      "stem": "Statements (treat as true even if they seem to contradict common facts): 1) All bags are cats. 2) Some cats are tables. Conclusions: I) Some bags are not tables. II) Some tables are not bags. Which conclusion(s) logically follow?",
+      "explanation": "Testing every possible case: conclusion I can fail and conclusion II can fail whenever both statements hold — so neither i nor ii follows.",
+      "options": [
+        {
+          "label": "Only conclusion I follows",
+          "is_correct": false
+        },
+        {
+          "label": "Only conclusion II follows",
+          "is_correct": false
+        },
+        {
+          "label": "Both I and II follow",
+          "is_correct": false
+        },
+        {
+          "label": "Neither I nor II follows",
+          "is_correct": true
+        }
+      ]
+    },
+    {
+      "chapter": "Syllogism",
+      "kind": "standard",
+      "difficulty": "very_hard",
+      "answer_type": "single",
+      "stem": "Statements (treat as true even if they seem to contradict common facts): 1) Some birds are cars. 2) Some cars are flowers. Conclusions: I) No birds are flowers. II) All flowers are birds. Which conclusion(s) logically follow?",
+      "explanation": "Testing every possible case: conclusion I can fail and conclusion II can fail whenever both statements hold — so neither i nor ii follows.",
+      "options": [
+        {
+          "label": "Only conclusion I follows",
+          "is_correct": false
+        },
+        {
+          "label": "Only conclusion II follows",
+          "is_correct": false
+        },
+        {
+          "label": "Both I and II follow",
+          "is_correct": false
+        },
+        {
+          "label": "Neither I nor II follows",
+          "is_correct": true
+        }
+      ]
+    },
+    {
+      "chapter": "Syllogism",
+      "kind": "standard",
+      "difficulty": "easy",
+      "answer_type": "single",
+      "stem": "Statements (treat as true even if they seem to contradict common facts): 1) No cats are flowers. 2) All flowers are bags. Conclusions: I) No cats are bags. II) No bags are cats. Which conclusion(s) logically follow?",
+      "explanation": "Testing every possible case: conclusion I can fail and conclusion II can fail whenever both statements hold — so neither i nor ii follows.",
+      "options": [
+        {
+          "label": "Only conclusion I follows",
+          "is_correct": false
+        },
+        {
+          "label": "Only conclusion II follows",
+          "is_correct": false
+        },
+        {
+          "label": "Both I and II follow",
+          "is_correct": false
+        },
+        {
+          "label": "Neither I nor II follows",
+          "is_correct": true
+        }
+      ]
+    },
+    {
+      "chapter": "Syllogism",
+      "kind": "standard",
+      "difficulty": "hard",
+      "answer_type": "single",
+      "stem": "Statements (treat as true even if they seem to contradict common facts): 1) Some cars are not books. 2) All books are fans. Conclusions: I) Some cars are not fans. II) Some fans are not cars. Which conclusion(s) logically follow?",
+      "explanation": "Testing every possible case: conclusion I can fail and conclusion II can fail whenever both statements hold — so neither i nor ii follows.",
+      "options": [
+        {
+          "label": "Only conclusion I follows",
+          "is_correct": false
+        },
+        {
+          "label": "Only conclusion II follows",
+          "is_correct": false
+        },
+        {
+          "label": "Both I and II follow",
+          "is_correct": false
+        },
+        {
+          "label": "Neither I nor II follows",
+          "is_correct": true
+        }
+      ]
+    },
+    {
+      "chapter": "Syllogism",
+      "kind": "standard",
+      "difficulty": "very_hard",
+      "answer_type": "single",
+      "stem": "Statements (treat as true even if they seem to contradict common facts): 1) Some doors are not pens. 2) Some pens are birds. Conclusions: I) No doors are birds. II) No birds are doors. Which conclusion(s) logically follow?",
+      "explanation": "Testing every possible case: conclusion I can fail and conclusion II can fail whenever both statements hold — so neither i nor ii follows.",
+      "options": [
+        {
+          "label": "Only conclusion I follows",
+          "is_correct": false
+        },
+        {
+          "label": "Only conclusion II follows",
+          "is_correct": false
+        },
+        {
+          "label": "Both I and II follow",
+          "is_correct": false
+        },
+        {
+          "label": "Neither I nor II follows",
+          "is_correct": true
+        }
+      ]
+    },
+    {
+      "chapter": "Syllogism",
+      "kind": "standard",
+      "difficulty": "very_hard",
+      "answer_type": "single",
+      "stem": "Statements (treat as true even if they seem to contradict common facts): 1) Some lamps are chairs. 2) Some chairs are roads. Conclusions: I) No lamps are roads. II) Some roads are not lamps. Which conclusion(s) logically follow?",
+      "explanation": "Testing every possible case: conclusion I can fail and conclusion II can fail whenever both statements hold — so neither i nor ii follows.",
+      "options": [
+        {
+          "label": "Only conclusion I follows",
+          "is_correct": false
+        },
+        {
+          "label": "Only conclusion II follows",
+          "is_correct": false
+        },
+        {
+          "label": "Both I and II follow",
+          "is_correct": false
+        },
+        {
+          "label": "Neither I nor II follows",
+          "is_correct": true
+        }
+      ]
+    },
+    {
+      "chapter": "Syllogism",
+      "kind": "standard",
+      "difficulty": "medium",
+      "answer_type": "single",
+      "stem": "Statements (treat as true even if they seem to contradict common facts): 1) Some birds are fans. 2) No fans are rivers. Conclusions: I) Some birds are not rivers. II) All rivers are birds. Which conclusion(s) logically follow?",
+      "explanation": "Testing every possible case: conclusion I must be true and conclusion II can fail whenever both statements hold — so only conclusion i follows.",
+      "options": [
+        {
+          "label": "Only conclusion I follows",
+          "is_correct": true
+        },
+        {
+          "label": "Only conclusion II follows",
+          "is_correct": false
+        },
+        {
+          "label": "Both I and II follow",
+          "is_correct": false
+        },
+        {
+          "label": "Neither I nor II follows",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Syllogism",
+      "kind": "standard",
+      "difficulty": "medium",
+      "answer_type": "single",
+      "stem": "Statements (treat as true even if they seem to contradict common facts): 1) All lamps are tables. 2) Some tables are boxes. Conclusions: I) All lamps are boxes. II) Some boxes are lamps. Which conclusion(s) logically follow?",
+      "explanation": "Testing every possible case: conclusion I can fail and conclusion II can fail whenever both statements hold — so neither i nor ii follows.",
+      "options": [
+        {
+          "label": "Only conclusion I follows",
+          "is_correct": false
+        },
+        {
+          "label": "Only conclusion II follows",
+          "is_correct": false
+        },
+        {
+          "label": "Both I and II follow",
+          "is_correct": false
+        },
+        {
+          "label": "Neither I nor II follows",
+          "is_correct": true
+        }
+      ]
+    },
+    {
+      "chapter": "Syllogism",
+      "kind": "standard",
+      "difficulty": "hard",
+      "answer_type": "single",
+      "stem": "Statements (treat as true even if they seem to contradict common facts): 1) No toys are boxes. 2) Some boxes are not books. Conclusions: I) No toys are books. II) Some books are not toys. Which conclusion(s) logically follow?",
+      "explanation": "Testing every possible case: conclusion I can fail and conclusion II can fail whenever both statements hold — so neither i nor ii follows.",
+      "options": [
+        {
+          "label": "Only conclusion I follows",
+          "is_correct": false
+        },
+        {
+          "label": "Only conclusion II follows",
+          "is_correct": false
+        },
+        {
+          "label": "Both I and II follow",
+          "is_correct": false
+        },
+        {
+          "label": "Neither I nor II follows",
+          "is_correct": true
+        }
+      ]
+    },
+    {
+      "chapter": "Syllogism",
+      "kind": "standard",
+      "difficulty": "hard",
+      "answer_type": "single",
+      "stem": "Statements (treat as true even if they seem to contradict common facts): 1) Some hills are not boxes. 2) All boxes are trees. Conclusions: I) All hills are trees. II) No trees are hills. Which conclusion(s) logically follow?",
+      "explanation": "Testing every possible case: conclusion I can fail and conclusion II can fail whenever both statements hold — so neither i nor ii follows.",
+      "options": [
+        {
+          "label": "Only conclusion I follows",
+          "is_correct": false
+        },
+        {
+          "label": "Only conclusion II follows",
+          "is_correct": false
+        },
+        {
+          "label": "Both I and II follow",
+          "is_correct": false
+        },
+        {
+          "label": "Neither I nor II follows",
+          "is_correct": true
+        }
+      ]
+    },
+    {
+      "chapter": "Syllogism",
+      "kind": "standard",
+      "difficulty": "medium",
+      "answer_type": "single",
+      "stem": "Statements (treat as true even if they seem to contradict common facts): 1) Some cars are hills. 2) No hills are pens. Conclusions: I) All cars are pens. II) All pens are cars. Which conclusion(s) logically follow?",
+      "explanation": "Testing every possible case: conclusion I can fail and conclusion II can fail whenever both statements hold — so neither i nor ii follows.",
+      "options": [
+        {
+          "label": "Only conclusion I follows",
+          "is_correct": false
+        },
+        {
+          "label": "Only conclusion II follows",
+          "is_correct": false
+        },
+        {
+          "label": "Both I and II follow",
+          "is_correct": false
+        },
+        {
+          "label": "Neither I nor II follows",
+          "is_correct": true
+        }
+      ]
+    },
+    {
+      "chapter": "Syllogism",
+      "kind": "standard",
+      "difficulty": "easy",
+      "answer_type": "single",
+      "stem": "Statements (treat as true even if they seem to contradict common facts): 1) No cats are cars. 2) No cars are boxes. Conclusions: I) All cats are boxes. II) All boxes are cats. Which conclusion(s) logically follow?",
+      "explanation": "Testing every possible case: conclusion I can fail and conclusion II can fail whenever both statements hold — so neither i nor ii follows.",
+      "options": [
+        {
+          "label": "Only conclusion I follows",
+          "is_correct": false
+        },
+        {
+          "label": "Only conclusion II follows",
+          "is_correct": false
+        },
+        {
+          "label": "Both I and II follow",
+          "is_correct": false
+        },
+        {
+          "label": "Neither I nor II follows",
+          "is_correct": true
+        }
+      ]
+    },
+    {
+      "chapter": "Syllogism",
+      "kind": "standard",
+      "difficulty": "hard",
+      "answer_type": "single",
+      "stem": "Statements (treat as true even if they seem to contradict common facts): 1) Some fans are not tables. 2) No tables are lamps. Conclusions: I) All fans are lamps. II) Some lamps are fans. Which conclusion(s) logically follow?",
+      "explanation": "Testing every possible case: conclusion I can fail and conclusion II can fail whenever both statements hold — so neither i nor ii follows.",
+      "options": [
+        {
+          "label": "Only conclusion I follows",
+          "is_correct": false
+        },
+        {
+          "label": "Only conclusion II follows",
+          "is_correct": false
+        },
+        {
+          "label": "Both I and II follow",
+          "is_correct": false
+        },
+        {
+          "label": "Neither I nor II follows",
+          "is_correct": true
+        }
+      ]
+    },
+    {
+      "chapter": "Syllogism",
+      "kind": "standard",
+      "difficulty": "very_hard",
+      "answer_type": "single",
+      "stem": "Statements (treat as true even if they seem to contradict common facts): 1) Some toys are pens. 2) Some pens are not tables. Conclusions: I) Some toys are tables. II) All tables are toys. Which conclusion(s) logically follow?",
+      "explanation": "Testing every possible case: conclusion I can fail and conclusion II can fail whenever both statements hold — so neither i nor ii follows.",
+      "options": [
+        {
+          "label": "Only conclusion I follows",
+          "is_correct": false
+        },
+        {
+          "label": "Only conclusion II follows",
+          "is_correct": false
+        },
+        {
+          "label": "Both I and II follow",
+          "is_correct": false
+        },
+        {
+          "label": "Neither I nor II follows",
+          "is_correct": true
+        }
+      ]
+    },
+    {
+      "chapter": "Syllogism",
+      "kind": "standard",
+      "difficulty": "medium",
+      "answer_type": "single",
+      "stem": "Statements (treat as true even if they seem to contradict common facts): 1) Some hills are cars. 2) No cars are lamps. Conclusions: I) Some hills are not lamps. II) Some lamps are hills. Which conclusion(s) logically follow?",
+      "explanation": "Testing every possible case: conclusion I must be true and conclusion II can fail whenever both statements hold — so only conclusion i follows.",
+      "options": [
+        {
+          "label": "Only conclusion I follows",
+          "is_correct": true
+        },
+        {
+          "label": "Only conclusion II follows",
+          "is_correct": false
+        },
+        {
+          "label": "Both I and II follow",
+          "is_correct": false
+        },
+        {
+          "label": "Neither I nor II follows",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Syllogism",
+      "kind": "standard",
+      "difficulty": "hard",
+      "answer_type": "single",
+      "stem": "Statements (treat as true even if they seem to contradict common facts): 1) All stones are trees. 2) Some trees are not roads. Conclusions: I) Some stones are not roads. II) No roads are stones. Which conclusion(s) logically follow?",
+      "explanation": "Testing every possible case: conclusion I can fail and conclusion II can fail whenever both statements hold — so neither i nor ii follows.",
+      "options": [
+        {
+          "label": "Only conclusion I follows",
+          "is_correct": false
+        },
+        {
+          "label": "Only conclusion II follows",
+          "is_correct": false
+        },
+        {
+          "label": "Both I and II follow",
+          "is_correct": false
+        },
+        {
+          "label": "Neither I nor II follows",
+          "is_correct": true
+        }
+      ]
+    },
+    {
+      "chapter": "Syllogism",
+      "kind": "standard",
+      "difficulty": "medium",
+      "answer_type": "single",
+      "stem": "Statements (treat as true even if they seem to contradict common facts): 1) No pens are birds. 2) Some birds are cups. Conclusions: I) Some pens are cups. II) Some cups are pens. Which conclusion(s) logically follow?",
+      "explanation": "Testing every possible case: conclusion I can fail and conclusion II can fail whenever both statements hold — so neither i nor ii follows.",
+      "options": [
+        {
+          "label": "Only conclusion I follows",
+          "is_correct": false
+        },
+        {
+          "label": "Only conclusion II follows",
+          "is_correct": false
+        },
+        {
+          "label": "Both I and II follow",
+          "is_correct": false
+        },
+        {
+          "label": "Neither I nor II follows",
+          "is_correct": true
+        }
+      ]
+    },
+    {
+      "chapter": "Syllogism",
+      "kind": "standard",
+      "difficulty": "hard",
+      "answer_type": "single",
+      "stem": "Statements (treat as true even if they seem to contradict common facts): 1) All cups are hills. 2) Some hills are not doors. Conclusions: I) Some cups are not doors. II) Some doors are not cups. Which conclusion(s) logically follow?",
+      "explanation": "Testing every possible case: conclusion I can fail and conclusion II can fail whenever both statements hold — so neither i nor ii follows.",
+      "options": [
+        {
+          "label": "Only conclusion I follows",
+          "is_correct": false
+        },
+        {
+          "label": "Only conclusion II follows",
+          "is_correct": false
+        },
+        {
+          "label": "Both I and II follow",
+          "is_correct": false
+        },
+        {
+          "label": "Neither I nor II follows",
+          "is_correct": true
+        }
+      ]
+    },
+    {
+      "chapter": "Syllogism",
+      "kind": "standard",
+      "difficulty": "hard",
+      "answer_type": "single",
+      "stem": "Statements (treat as true even if they seem to contradict common facts): 1) All pens are doors. 2) Some doors are not birds. Conclusions: I) All pens are birds. II) Some birds are not pens. Which conclusion(s) logically follow?",
+      "explanation": "Testing every possible case: conclusion I can fail and conclusion II can fail whenever both statements hold — so neither i nor ii follows.",
+      "options": [
+        {
+          "label": "Only conclusion I follows",
+          "is_correct": false
+        },
+        {
+          "label": "Only conclusion II follows",
+          "is_correct": false
+        },
+        {
+          "label": "Both I and II follow",
+          "is_correct": false
+        },
+        {
+          "label": "Neither I nor II follows",
+          "is_correct": true
+        }
+      ]
+    },
+    {
+      "chapter": "Syllogism",
+      "kind": "standard",
+      "difficulty": "hard",
+      "answer_type": "single",
+      "stem": "Statements (treat as true even if they seem to contradict common facts): 1) Some cups are not rivers. 2) All rivers are roads. Conclusions: I) All cups are roads. II) Some roads are cups. Which conclusion(s) logically follow?",
+      "explanation": "Testing every possible case: conclusion I can fail and conclusion II can fail whenever both statements hold — so neither i nor ii follows.",
+      "options": [
+        {
+          "label": "Only conclusion I follows",
+          "is_correct": false
+        },
+        {
+          "label": "Only conclusion II follows",
+          "is_correct": false
+        },
+        {
+          "label": "Both I and II follow",
+          "is_correct": false
+        },
+        {
+          "label": "Neither I nor II follows",
+          "is_correct": true
+        }
+      ]
+    },
+    {
+      "chapter": "Syllogism",
+      "kind": "standard",
+      "difficulty": "medium",
+      "answer_type": "single",
+      "stem": "Statements (treat as true even if they seem to contradict common facts): 1) No books are hills. 2) Some hills are birds. Conclusions: I) All books are birds. II) Some birds are books. Which conclusion(s) logically follow?",
+      "explanation": "Testing every possible case: conclusion I can fail and conclusion II can fail whenever both statements hold — so neither i nor ii follows.",
+      "options": [
+        {
+          "label": "Only conclusion I follows",
+          "is_correct": false
+        },
+        {
+          "label": "Only conclusion II follows",
+          "is_correct": false
+        },
+        {
+          "label": "Both I and II follow",
+          "is_correct": false
+        },
+        {
+          "label": "Neither I nor II follows",
+          "is_correct": true
+        }
+      ]
+    },
+    {
+      "chapter": "Syllogism",
+      "kind": "standard",
+      "difficulty": "easy",
+      "answer_type": "single",
+      "stem": "Statements (treat as true even if they seem to contradict common facts): 1) All roads are fans. 2) No fans are chairs. Conclusions: I) All roads are chairs. II) All chairs are roads. Which conclusion(s) logically follow?",
+      "explanation": "Testing every possible case: conclusion I can fail and conclusion II can fail whenever both statements hold — so neither i nor ii follows.",
+      "options": [
+        {
+          "label": "Only conclusion I follows",
+          "is_correct": false
+        },
+        {
+          "label": "Only conclusion II follows",
+          "is_correct": false
+        },
+        {
+          "label": "Both I and II follow",
+          "is_correct": false
+        },
+        {
+          "label": "Neither I nor II follows",
+          "is_correct": true
+        }
+      ]
+    },
+    {
+      "chapter": "Syllogism",
+      "kind": "standard",
+      "difficulty": "medium",
+      "answer_type": "single",
+      "stem": "Statements (treat as true even if they seem to contradict common facts): 1) Some chairs are rivers. 2) All rivers are fans. Conclusions: I) All chairs are fans. II) All fans are chairs. Which conclusion(s) logically follow?",
+      "explanation": "Testing every possible case: conclusion I can fail and conclusion II can fail whenever both statements hold — so neither i nor ii follows.",
+      "options": [
+        {
+          "label": "Only conclusion I follows",
+          "is_correct": false
+        },
+        {
+          "label": "Only conclusion II follows",
+          "is_correct": false
+        },
+        {
+          "label": "Both I and II follow",
+          "is_correct": false
+        },
+        {
+          "label": "Neither I nor II follows",
+          "is_correct": true
+        }
+      ]
+    },
+    {
+      "chapter": "Syllogism",
+      "kind": "standard",
+      "difficulty": "medium",
+      "answer_type": "single",
+      "stem": "Statements (treat as true even if they seem to contradict common facts): 1) All lamps are toys. 2) Some toys are birds. Conclusions: I) Some lamps are not birds. II) Some birds are lamps. Which conclusion(s) logically follow?",
+      "explanation": "Testing every possible case: conclusion I can fail and conclusion II can fail whenever both statements hold — so neither i nor ii follows.",
+      "options": [
+        {
+          "label": "Only conclusion I follows",
+          "is_correct": false
+        },
+        {
+          "label": "Only conclusion II follows",
+          "is_correct": false
+        },
+        {
+          "label": "Both I and II follow",
+          "is_correct": false
+        },
+        {
+          "label": "Neither I nor II follows",
+          "is_correct": true
+        }
+      ]
+    },
+    {
+      "chapter": "Syllogism",
+      "kind": "standard",
+      "difficulty": "medium",
+      "answer_type": "single",
+      "stem": "Statements (treat as true even if they seem to contradict common facts): 1) Some trees are bags. 2) All bags are tables. Conclusions: I) Some trees are tables. II) No tables are trees. Which conclusion(s) logically follow?",
+      "explanation": "Testing every possible case: conclusion I must be true and conclusion II can fail whenever both statements hold — so only conclusion i follows.",
+      "options": [
+        {
+          "label": "Only conclusion I follows",
+          "is_correct": true
+        },
+        {
+          "label": "Only conclusion II follows",
+          "is_correct": false
+        },
+        {
+          "label": "Both I and II follow",
+          "is_correct": false
+        },
+        {
+          "label": "Neither I nor II follows",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Syllogism",
+      "kind": "standard",
+      "difficulty": "hard",
+      "answer_type": "single",
+      "stem": "Statements (treat as true even if they seem to contradict common facts): 1) Some pens are not flowers. 2) All flowers are birds. Conclusions: I) All pens are birds. II) Some birds are not pens. Which conclusion(s) logically follow?",
+      "explanation": "Testing every possible case: conclusion I can fail and conclusion II can fail whenever both statements hold — so neither i nor ii follows.",
+      "options": [
+        {
+          "label": "Only conclusion I follows",
+          "is_correct": false
+        },
+        {
+          "label": "Only conclusion II follows",
+          "is_correct": false
+        },
+        {
+          "label": "Both I and II follow",
+          "is_correct": false
+        },
+        {
+          "label": "Neither I nor II follows",
+          "is_correct": true
+        }
+      ]
+    },
+    {
+      "chapter": "Syllogism",
+      "kind": "standard",
+      "difficulty": "medium",
+      "answer_type": "single",
+      "stem": "Statements (treat as true even if they seem to contradict common facts): 1) Some lamps are chairs. 2) No chairs are cars. Conclusions: I) No lamps are cars. II) No cars are lamps. Which conclusion(s) logically follow?",
+      "explanation": "Testing every possible case: conclusion I can fail and conclusion II can fail whenever both statements hold — so neither i nor ii follows.",
+      "options": [
+        {
+          "label": "Only conclusion I follows",
+          "is_correct": false
+        },
+        {
+          "label": "Only conclusion II follows",
+          "is_correct": false
+        },
+        {
+          "label": "Both I and II follow",
+          "is_correct": false
+        },
+        {
+          "label": "Neither I nor II follows",
+          "is_correct": true
+        }
+      ]
+    },
+    {
+      "chapter": "Syllogism",
+      "kind": "standard",
+      "difficulty": "very_hard",
+      "answer_type": "single",
+      "stem": "Statements (treat as true even if they seem to contradict common facts): 1) Some toys are not doors. 2) Some doors are not chairs. Conclusions: I) Some toys are chairs. II) All chairs are toys. Which conclusion(s) logically follow?",
+      "explanation": "Testing every possible case: conclusion I can fail and conclusion II can fail whenever both statements hold — so neither i nor ii follows.",
+      "options": [
+        {
+          "label": "Only conclusion I follows",
+          "is_correct": false
+        },
+        {
+          "label": "Only conclusion II follows",
+          "is_correct": false
+        },
+        {
+          "label": "Both I and II follow",
+          "is_correct": false
+        },
+        {
+          "label": "Neither I nor II follows",
+          "is_correct": true
+        }
+      ]
+    },
+    {
+      "chapter": "Syllogism",
+      "kind": "standard",
+      "difficulty": "easy",
+      "answer_type": "single",
+      "stem": "Statements (treat as true even if they seem to contradict common facts): 1) All pens are lamps. 2) No lamps are cars. Conclusions: I) All pens are cars. II) All cars are pens. Which conclusion(s) logically follow?",
+      "explanation": "Testing every possible case: conclusion I can fail and conclusion II can fail whenever both statements hold — so neither i nor ii follows.",
+      "options": [
+        {
+          "label": "Only conclusion I follows",
+          "is_correct": false
+        },
+        {
+          "label": "Only conclusion II follows",
+          "is_correct": false
+        },
+        {
+          "label": "Both I and II follow",
+          "is_correct": false
+        },
+        {
+          "label": "Neither I nor II follows",
+          "is_correct": true
+        }
+      ]
+    },
+    {
+      "chapter": "Syllogism",
+      "kind": "standard",
+      "difficulty": "very_hard",
+      "answer_type": "single",
+      "stem": "Statements (treat as true even if they seem to contradict common facts): 1) Some lamps are doors. 2) Some doors are not cups. Conclusions: I) All lamps are cups. II) Some cups are lamps. Which conclusion(s) logically follow?",
+      "explanation": "Testing every possible case: conclusion I can fail and conclusion II can fail whenever both statements hold — so neither i nor ii follows.",
+      "options": [
+        {
+          "label": "Only conclusion I follows",
+          "is_correct": false
+        },
+        {
+          "label": "Only conclusion II follows",
+          "is_correct": false
+        },
+        {
+          "label": "Both I and II follow",
+          "is_correct": false
+        },
+        {
+          "label": "Neither I nor II follows",
+          "is_correct": true
+        }
+      ]
+    },
+    {
+      "chapter": "Syllogism",
+      "kind": "standard",
+      "difficulty": "hard",
+      "answer_type": "single",
+      "stem": "Statements (treat as true even if they seem to contradict common facts): 1) No doors are cups. 2) Some cups are not rivers. Conclusions: I) No doors are rivers. II) All rivers are doors. Which conclusion(s) logically follow?",
+      "explanation": "Testing every possible case: conclusion I can fail and conclusion II can fail whenever both statements hold — so neither i nor ii follows.",
+      "options": [
+        {
+          "label": "Only conclusion I follows",
+          "is_correct": false
+        },
+        {
+          "label": "Only conclusion II follows",
+          "is_correct": false
+        },
+        {
+          "label": "Both I and II follow",
+          "is_correct": false
+        },
+        {
+          "label": "Neither I nor II follows",
+          "is_correct": true
+        }
+      ]
+    },
+    {
+      "chapter": "Syllogism",
+      "kind": "standard",
+      "difficulty": "hard",
+      "answer_type": "single",
+      "stem": "Statements (treat as true even if they seem to contradict common facts): 1) No birds are cats. 2) Some cats are not books. Conclusions: I) Some birds are not books. II) All books are birds. Which conclusion(s) logically follow?",
+      "explanation": "Testing every possible case: conclusion I can fail and conclusion II can fail whenever both statements hold — so neither i nor ii follows.",
+      "options": [
+        {
+          "label": "Only conclusion I follows",
+          "is_correct": false
+        },
+        {
+          "label": "Only conclusion II follows",
+          "is_correct": false
+        },
+        {
+          "label": "Both I and II follow",
+          "is_correct": false
+        },
+        {
+          "label": "Neither I nor II follows",
+          "is_correct": true
+        }
+      ]
+    },
+    {
+      "chapter": "Syllogism",
+      "kind": "standard",
+      "difficulty": "hard",
+      "answer_type": "single",
+      "stem": "Statements (treat as true even if they seem to contradict common facts): 1) Some fans are not books. 2) No books are cars. Conclusions: I) No fans are cars. II) Some cars are not fans. Which conclusion(s) logically follow?",
+      "explanation": "Testing every possible case: conclusion I can fail and conclusion II can fail whenever both statements hold — so neither i nor ii follows.",
+      "options": [
+        {
+          "label": "Only conclusion I follows",
+          "is_correct": false
+        },
+        {
+          "label": "Only conclusion II follows",
+          "is_correct": false
+        },
+        {
+          "label": "Both I and II follow",
+          "is_correct": false
+        },
+        {
+          "label": "Neither I nor II follows",
+          "is_correct": true
+        }
+      ]
+    },
+    {
+      "chapter": "Syllogism",
+      "kind": "standard",
+      "difficulty": "medium",
+      "answer_type": "single",
+      "stem": "Statements (treat as true even if they seem to contradict common facts): 1) No stones are cats. 2) Some cats are trees. Conclusions: I) All stones are trees. II) Some trees are stones. Which conclusion(s) logically follow?",
+      "explanation": "Testing every possible case: conclusion I can fail and conclusion II can fail whenever both statements hold — so neither i nor ii follows.",
+      "options": [
+        {
+          "label": "Only conclusion I follows",
+          "is_correct": false
+        },
+        {
+          "label": "Only conclusion II follows",
+          "is_correct": false
+        },
+        {
+          "label": "Both I and II follow",
+          "is_correct": false
+        },
+        {
+          "label": "Neither I nor II follows",
+          "is_correct": true
+        }
+      ]
+    },
+    {
+      "chapter": "Syllogism",
+      "kind": "standard",
+      "difficulty": "hard",
+      "answer_type": "single",
+      "stem": "Statements (treat as true even if they seem to contradict common facts): 1) No trees are bags. 2) Some bags are not birds. Conclusions: I) Some trees are birds. II) Some birds are trees. Which conclusion(s) logically follow?",
+      "explanation": "Testing every possible case: conclusion I can fail and conclusion II can fail whenever both statements hold — so neither i nor ii follows.",
+      "options": [
+        {
+          "label": "Only conclusion I follows",
+          "is_correct": false
+        },
+        {
+          "label": "Only conclusion II follows",
+          "is_correct": false
+        },
+        {
+          "label": "Both I and II follow",
+          "is_correct": false
+        },
+        {
+          "label": "Neither I nor II follows",
+          "is_correct": true
+        }
+      ]
+    },
+    {
+      "chapter": "Syllogism",
+      "kind": "standard",
+      "difficulty": "hard",
+      "answer_type": "single",
+      "stem": "Statements (treat as true even if they seem to contradict common facts): 1) No rivers are hills. 2) Some hills are not stones. Conclusions: I) Some rivers are stones. II) All stones are rivers. Which conclusion(s) logically follow?",
+      "explanation": "Testing every possible case: conclusion I can fail and conclusion II can fail whenever both statements hold — so neither i nor ii follows.",
+      "options": [
+        {
+          "label": "Only conclusion I follows",
+          "is_correct": false
+        },
+        {
+          "label": "Only conclusion II follows",
+          "is_correct": false
+        },
+        {
+          "label": "Both I and II follow",
+          "is_correct": false
+        },
+        {
+          "label": "Neither I nor II follows",
+          "is_correct": true
+        }
+      ]
+    },
+    {
+      "chapter": "Syllogism",
+      "kind": "standard",
+      "difficulty": "medium",
+      "answer_type": "single",
+      "stem": "Statements (treat as true even if they seem to contradict common facts): 1) All cats are birds. 2) Some birds are fans. Conclusions: I) Some cats are fans. II) Some fans are cats. Which conclusion(s) logically follow?",
+      "explanation": "Testing every possible case: conclusion I can fail and conclusion II can fail whenever both statements hold — so neither i nor ii follows.",
+      "options": [
+        {
+          "label": "Only conclusion I follows",
+          "is_correct": false
+        },
+        {
+          "label": "Only conclusion II follows",
+          "is_correct": false
+        },
+        {
+          "label": "Both I and II follow",
+          "is_correct": false
+        },
+        {
+          "label": "Neither I nor II follows",
+          "is_correct": true
+        }
+      ]
+    },
+    {
+      "chapter": "Syllogism",
+      "kind": "standard",
+      "difficulty": "hard",
+      "answer_type": "single",
+      "stem": "Statements (treat as true even if they seem to contradict common facts): 1) Some rivers are not books. 2) All books are tables. Conclusions: I) Some rivers are tables. II) Some tables are rivers. Which conclusion(s) logically follow?",
+      "explanation": "Testing every possible case: conclusion I can fail and conclusion II can fail whenever both statements hold — so neither i nor ii follows.",
+      "options": [
+        {
+          "label": "Only conclusion I follows",
+          "is_correct": false
+        },
+        {
+          "label": "Only conclusion II follows",
+          "is_correct": false
+        },
+        {
+          "label": "Both I and II follow",
+          "is_correct": false
+        },
+        {
+          "label": "Neither I nor II follows",
+          "is_correct": true
+        }
+      ]
+    },
+    {
+      "chapter": "Syllogism",
+      "kind": "standard",
+      "difficulty": "medium",
+      "answer_type": "single",
+      "stem": "Statements (treat as true even if they seem to contradict common facts): 1) Some boxes are lamps. 2) All lamps are birds. Conclusions: I) Some boxes are not birds. II) Some birds are not boxes. Which conclusion(s) logically follow?",
+      "explanation": "Testing every possible case: conclusion I can fail and conclusion II can fail whenever both statements hold — so neither i nor ii follows.",
+      "options": [
+        {
+          "label": "Only conclusion I follows",
+          "is_correct": false
+        },
+        {
+          "label": "Only conclusion II follows",
+          "is_correct": false
+        },
+        {
+          "label": "Both I and II follow",
+          "is_correct": false
+        },
+        {
+          "label": "Neither I nor II follows",
+          "is_correct": true
+        }
+      ]
+    },
+    {
+      "chapter": "Syllogism",
+      "kind": "standard",
+      "difficulty": "medium",
+      "answer_type": "single",
+      "stem": "Statements (treat as true even if they seem to contradict common facts): 1) No roads are bags. 2) Some bags are boxes. Conclusions: I) No roads are boxes. II) All boxes are roads. Which conclusion(s) logically follow?",
+      "explanation": "Testing every possible case: conclusion I can fail and conclusion II can fail whenever both statements hold — so neither i nor ii follows.",
+      "options": [
+        {
+          "label": "Only conclusion I follows",
+          "is_correct": false
+        },
+        {
+          "label": "Only conclusion II follows",
+          "is_correct": false
+        },
+        {
+          "label": "Both I and II follow",
+          "is_correct": false
+        },
+        {
+          "label": "Neither I nor II follows",
+          "is_correct": true
+        }
+      ]
+    },
+    {
+      "chapter": "Syllogism",
+      "kind": "standard",
+      "difficulty": "medium",
+      "answer_type": "single",
+      "stem": "Statements (treat as true even if they seem to contradict common facts): 1) Some doors are tables. 2) No tables are birds. Conclusions: I) No doors are birds. II) Some birds are not doors. Which conclusion(s) logically follow?",
+      "explanation": "Testing every possible case: conclusion I can fail and conclusion II can fail whenever both statements hold — so neither i nor ii follows.",
+      "options": [
+        {
+          "label": "Only conclusion I follows",
+          "is_correct": false
+        },
+        {
+          "label": "Only conclusion II follows",
+          "is_correct": false
+        },
+        {
+          "label": "Both I and II follow",
+          "is_correct": false
+        },
+        {
+          "label": "Neither I nor II follows",
+          "is_correct": true
+        }
+      ]
+    },
+    {
+      "chapter": "Syllogism",
+      "kind": "standard",
+      "difficulty": "medium",
+      "answer_type": "single",
+      "stem": "Statements (treat as true even if they seem to contradict common facts): 1) No bags are hills. 2) Some hills are birds. Conclusions: I) No bags are birds. II) Some birds are not bags. Which conclusion(s) logically follow?",
+      "explanation": "Testing every possible case: conclusion I can fail and conclusion II must be true whenever both statements hold — so only conclusion ii follows.",
+      "options": [
+        {
+          "label": "Only conclusion I follows",
+          "is_correct": false
+        },
+        {
+          "label": "Only conclusion II follows",
+          "is_correct": true
+        },
+        {
+          "label": "Both I and II follow",
+          "is_correct": false
+        },
+        {
+          "label": "Neither I nor II follows",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Syllogism",
+      "kind": "standard",
+      "difficulty": "medium",
+      "answer_type": "single",
+      "stem": "Statements (treat as true even if they seem to contradict common facts): 1) Some tables are roads. 2) All roads are trees. Conclusions: I) No tables are trees. II) No trees are tables. Which conclusion(s) logically follow?",
+      "explanation": "Testing every possible case: conclusion I can fail and conclusion II can fail whenever both statements hold — so neither i nor ii follows.",
+      "options": [
+        {
+          "label": "Only conclusion I follows",
+          "is_correct": false
+        },
+        {
+          "label": "Only conclusion II follows",
+          "is_correct": false
+        },
+        {
+          "label": "Both I and II follow",
+          "is_correct": false
+        },
+        {
+          "label": "Neither I nor II follows",
+          "is_correct": true
+        }
+      ]
+    },
+    {
+      "chapter": "Syllogism",
+      "kind": "standard",
+      "difficulty": "very_hard",
+      "answer_type": "single",
+      "stem": "Statements (treat as true even if they seem to contradict common facts): 1) Some cars are not hills. 2) Some hills are not toys. Conclusions: I) Some cars are toys. II) Some toys are cars. Which conclusion(s) logically follow?",
+      "explanation": "Testing every possible case: conclusion I can fail and conclusion II can fail whenever both statements hold — so neither i nor ii follows.",
+      "options": [
+        {
+          "label": "Only conclusion I follows",
+          "is_correct": false
+        },
+        {
+          "label": "Only conclusion II follows",
+          "is_correct": false
+        },
+        {
+          "label": "Both I and II follow",
+          "is_correct": false
+        },
+        {
+          "label": "Neither I nor II follows",
+          "is_correct": true
+        }
+      ]
+    },
+    {
+      "chapter": "Syllogism",
+      "kind": "standard",
+      "difficulty": "hard",
+      "answer_type": "single",
+      "stem": "Statements (treat as true even if they seem to contradict common facts): 1) No hills are cups. 2) Some cups are not cats. Conclusions: I) Some hills are cats. II) All cats are hills. Which conclusion(s) logically follow?",
+      "explanation": "Testing every possible case: conclusion I can fail and conclusion II can fail whenever both statements hold — so neither i nor ii follows.",
+      "options": [
+        {
+          "label": "Only conclusion I follows",
+          "is_correct": false
+        },
+        {
+          "label": "Only conclusion II follows",
+          "is_correct": false
+        },
+        {
+          "label": "Both I and II follow",
+          "is_correct": false
+        },
+        {
+          "label": "Neither I nor II follows",
+          "is_correct": true
+        }
+      ]
+    },
+    {
+      "chapter": "Syllogism",
+      "kind": "standard",
+      "difficulty": "medium",
+      "answer_type": "single",
+      "stem": "Statements (treat as true even if they seem to contradict common facts): 1) No chairs are lamps. 2) No lamps are cups. Conclusions: I) All chairs are cups. II) Some cups are not chairs. Which conclusion(s) logically follow?",
+      "explanation": "Testing every possible case: conclusion I can fail and conclusion II can fail whenever both statements hold — so neither i nor ii follows.",
+      "options": [
+        {
+          "label": "Only conclusion I follows",
+          "is_correct": false
+        },
+        {
+          "label": "Only conclusion II follows",
+          "is_correct": false
+        },
+        {
+          "label": "Both I and II follow",
+          "is_correct": false
+        },
+        {
+          "label": "Neither I nor II follows",
+          "is_correct": true
+        }
+      ]
+    },
+    {
+      "chapter": "Syllogism",
+      "kind": "standard",
+      "difficulty": "easy",
+      "answer_type": "single",
+      "stem": "Statements (treat as true even if they seem to contradict common facts): 1) No doors are trees. 2) All trees are roads. Conclusions: I) All doors are roads. II) All roads are doors. Which conclusion(s) logically follow?",
+      "explanation": "Testing every possible case: conclusion I can fail and conclusion II can fail whenever both statements hold — so neither i nor ii follows.",
+      "options": [
+        {
+          "label": "Only conclusion I follows",
+          "is_correct": false
+        },
+        {
+          "label": "Only conclusion II follows",
+          "is_correct": false
+        },
+        {
+          "label": "Both I and II follow",
+          "is_correct": false
+        },
+        {
+          "label": "Neither I nor II follows",
+          "is_correct": true
+        }
+      ]
+    },
+    {
+      "chapter": "Syllogism",
+      "kind": "standard",
+      "difficulty": "medium",
+      "answer_type": "single",
+      "stem": "Statements (treat as true even if they seem to contradict common facts): 1) Some trees are cars. 2) No cars are hills. Conclusions: I) Some trees are not hills. II) Some hills are not trees. Which conclusion(s) logically follow?",
+      "explanation": "Testing every possible case: conclusion I must be true and conclusion II can fail whenever both statements hold — so only conclusion i follows.",
+      "options": [
+        {
+          "label": "Only conclusion I follows",
+          "is_correct": true
+        },
+        {
+          "label": "Only conclusion II follows",
+          "is_correct": false
+        },
+        {
+          "label": "Both I and II follow",
+          "is_correct": false
+        },
+        {
+          "label": "Neither I nor II follows",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Syllogism",
+      "kind": "standard",
+      "difficulty": "medium",
+      "answer_type": "single",
+      "stem": "Statements (treat as true even if they seem to contradict common facts): 1) No hills are boxes. 2) Some boxes are birds. Conclusions: I) No hills are birds. II) All birds are hills. Which conclusion(s) logically follow?",
+      "explanation": "Testing every possible case: conclusion I can fail and conclusion II can fail whenever both statements hold — so neither i nor ii follows.",
+      "options": [
+        {
+          "label": "Only conclusion I follows",
+          "is_correct": false
+        },
+        {
+          "label": "Only conclusion II follows",
+          "is_correct": false
+        },
+        {
+          "label": "Both I and II follow",
+          "is_correct": false
+        },
+        {
+          "label": "Neither I nor II follows",
+          "is_correct": true
+        }
+      ]
+    },
+    {
+      "chapter": "Syllogism",
+      "kind": "standard",
+      "difficulty": "easy",
+      "answer_type": "single",
+      "stem": "Statements (treat as true even if they seem to contradict common facts): 1) All lamps are doors. 2) All doors are stones. Conclusions: I) No lamps are stones. II) No stones are lamps. Which conclusion(s) logically follow?",
+      "explanation": "Testing every possible case: conclusion I can fail and conclusion II can fail whenever both statements hold — so neither i nor ii follows.",
+      "options": [
+        {
+          "label": "Only conclusion I follows",
+          "is_correct": false
+        },
+        {
+          "label": "Only conclusion II follows",
+          "is_correct": false
+        },
+        {
+          "label": "Both I and II follow",
+          "is_correct": false
+        },
+        {
+          "label": "Neither I nor II follows",
+          "is_correct": true
+        }
+      ]
+    },
+    {
+      "chapter": "Syllogism",
+      "kind": "standard",
+      "difficulty": "hard",
+      "answer_type": "single",
+      "stem": "Statements (treat as true even if they seem to contradict common facts): 1) All chairs are flowers. 2) Some flowers are not boxes. Conclusions: I) No chairs are boxes. II) Some boxes are not chairs. Which conclusion(s) logically follow?",
+      "explanation": "Testing every possible case: conclusion I can fail and conclusion II can fail whenever both statements hold — so neither i nor ii follows.",
+      "options": [
+        {
+          "label": "Only conclusion I follows",
+          "is_correct": false
+        },
+        {
+          "label": "Only conclusion II follows",
+          "is_correct": false
+        },
+        {
+          "label": "Both I and II follow",
+          "is_correct": false
+        },
+        {
+          "label": "Neither I nor II follows",
+          "is_correct": true
+        }
+      ]
+    },
+    {
+      "chapter": "Syllogism",
+      "kind": "standard",
+      "difficulty": "medium",
+      "answer_type": "single",
+      "stem": "Statements (treat as true even if they seem to contradict common facts): 1) No hills are doors. 2) Some doors are flowers. Conclusions: I) Some hills are not flowers. II) All flowers are hills. Which conclusion(s) logically follow?",
+      "explanation": "Testing every possible case: conclusion I can fail and conclusion II can fail whenever both statements hold — so neither i nor ii follows.",
+      "options": [
+        {
+          "label": "Only conclusion I follows",
+          "is_correct": false
+        },
+        {
+          "label": "Only conclusion II follows",
+          "is_correct": false
+        },
+        {
+          "label": "Both I and II follow",
+          "is_correct": false
+        },
+        {
+          "label": "Neither I nor II follows",
+          "is_correct": true
+        }
+      ]
+    },
+    {
+      "chapter": "Syllogism",
+      "kind": "standard",
+      "difficulty": "medium",
+      "answer_type": "single",
+      "stem": "Statements (treat as true even if they seem to contradict common facts): 1) All birds are chairs. 2) Some chairs are books. Conclusions: I) Some birds are not books. II) Some books are not birds. Which conclusion(s) logically follow?",
+      "explanation": "Testing every possible case: conclusion I can fail and conclusion II can fail whenever both statements hold — so neither i nor ii follows.",
+      "options": [
+        {
+          "label": "Only conclusion I follows",
+          "is_correct": false
+        },
+        {
+          "label": "Only conclusion II follows",
+          "is_correct": false
+        },
+        {
+          "label": "Both I and II follow",
+          "is_correct": false
+        },
+        {
+          "label": "Neither I nor II follows",
+          "is_correct": true
+        }
+      ]
+    },
+    {
+      "chapter": "Syllogism",
+      "kind": "standard",
+      "difficulty": "medium",
+      "answer_type": "single",
+      "stem": "Statements (treat as true even if they seem to contradict common facts): 1) All cats are roads. 2) Some roads are stones. Conclusions: I) No cats are stones. II) Some stones are not cats. Which conclusion(s) logically follow?",
+      "explanation": "Testing every possible case: conclusion I can fail and conclusion II can fail whenever both statements hold — so neither i nor ii follows.",
+      "options": [
+        {
+          "label": "Only conclusion I follows",
+          "is_correct": false
+        },
+        {
+          "label": "Only conclusion II follows",
+          "is_correct": false
+        },
+        {
+          "label": "Both I and II follow",
+          "is_correct": false
+        },
+        {
+          "label": "Neither I nor II follows",
+          "is_correct": true
+        }
+      ]
+    },
+    {
+      "chapter": "Syllogism",
+      "kind": "standard",
+      "difficulty": "medium",
+      "answer_type": "single",
+      "stem": "Statements (treat as true even if they seem to contradict common facts): 1) No doors are books. 2) Some books are cars. Conclusions: I) All doors are cars. II) Some cars are doors. Which conclusion(s) logically follow?",
+      "explanation": "Testing every possible case: conclusion I can fail and conclusion II can fail whenever both statements hold — so neither i nor ii follows.",
+      "options": [
+        {
+          "label": "Only conclusion I follows",
+          "is_correct": false
+        },
+        {
+          "label": "Only conclusion II follows",
+          "is_correct": false
+        },
+        {
+          "label": "Both I and II follow",
+          "is_correct": false
+        },
+        {
+          "label": "Neither I nor II follows",
+          "is_correct": true
+        }
+      ]
+    },
+    {
+      "chapter": "Syllogism",
+      "kind": "standard",
+      "difficulty": "easy",
+      "answer_type": "single",
+      "stem": "Statements (treat as true even if they seem to contradict common facts): 1) All chairs are cars. 2) All cars are tables. Conclusions: I) All chairs are tables. II) All tables are chairs. Which conclusion(s) logically follow?",
+      "explanation": "Testing every possible case: conclusion I must be true and conclusion II can fail whenever both statements hold — so only conclusion i follows.",
+      "options": [
+        {
+          "label": "Only conclusion I follows",
+          "is_correct": true
+        },
+        {
+          "label": "Only conclusion II follows",
+          "is_correct": false
+        },
+        {
+          "label": "Both I and II follow",
+          "is_correct": false
+        },
+        {
+          "label": "Neither I nor II follows",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Syllogism",
+      "kind": "standard",
+      "difficulty": "hard",
+      "answer_type": "single",
+      "stem": "Statements (treat as true even if they seem to contradict common facts): 1) No flowers are roads. 2) Some roads are not boxes. Conclusions: I) Some flowers are not boxes. II) Some boxes are not flowers. Which conclusion(s) logically follow?",
+      "explanation": "Testing every possible case: conclusion I can fail and conclusion II can fail whenever both statements hold — so neither i nor ii follows.",
+      "options": [
+        {
+          "label": "Only conclusion I follows",
+          "is_correct": false
+        },
+        {
+          "label": "Only conclusion II follows",
+          "is_correct": false
+        },
+        {
+          "label": "Both I and II follow",
+          "is_correct": false
+        },
+        {
+          "label": "Neither I nor II follows",
+          "is_correct": true
+        }
+      ]
+    },
+    {
+      "chapter": "Syllogism",
+      "kind": "standard",
+      "difficulty": "medium",
+      "answer_type": "single",
+      "stem": "Statements (treat as true even if they seem to contradict common facts): 1) Some boxes are chairs. 2) No chairs are tables. Conclusions: I) Some boxes are not tables. II) All tables are boxes. Which conclusion(s) logically follow?",
+      "explanation": "Testing every possible case: conclusion I must be true and conclusion II can fail whenever both statements hold — so only conclusion i follows.",
+      "options": [
+        {
+          "label": "Only conclusion I follows",
+          "is_correct": true
+        },
+        {
+          "label": "Only conclusion II follows",
+          "is_correct": false
+        },
+        {
+          "label": "Both I and II follow",
+          "is_correct": false
+        },
+        {
+          "label": "Neither I nor II follows",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Syllogism",
+      "kind": "standard",
+      "difficulty": "very_hard",
+      "answer_type": "single",
+      "stem": "Statements (treat as true even if they seem to contradict common facts): 1) Some hills are bags. 2) Some bags are trees. Conclusions: I) Some hills are not trees. II) All trees are hills. Which conclusion(s) logically follow?",
+      "explanation": "Testing every possible case: conclusion I can fail and conclusion II can fail whenever both statements hold — so neither i nor ii follows.",
+      "options": [
+        {
+          "label": "Only conclusion I follows",
+          "is_correct": false
+        },
+        {
+          "label": "Only conclusion II follows",
+          "is_correct": false
+        },
+        {
+          "label": "Both I and II follow",
+          "is_correct": false
+        },
+        {
+          "label": "Neither I nor II follows",
+          "is_correct": true
+        }
+      ]
+    },
+    {
+      "chapter": "Syllogism",
+      "kind": "standard",
+      "difficulty": "hard",
+      "answer_type": "single",
+      "stem": "Statements (treat as true even if they seem to contradict common facts): 1) All flowers are doors. 2) Some doors are not chairs. Conclusions: I) All flowers are chairs. II) Some chairs are flowers. Which conclusion(s) logically follow?",
+      "explanation": "Testing every possible case: conclusion I can fail and conclusion II can fail whenever both statements hold — so neither i nor ii follows.",
+      "options": [
+        {
+          "label": "Only conclusion I follows",
+          "is_correct": false
+        },
+        {
+          "label": "Only conclusion II follows",
+          "is_correct": false
+        },
+        {
+          "label": "Both I and II follow",
+          "is_correct": false
+        },
+        {
+          "label": "Neither I nor II follows",
+          "is_correct": true
+        }
+      ]
+    },
+    {
+      "chapter": "Syllogism",
+      "kind": "standard",
+      "difficulty": "very_hard",
+      "answer_type": "single",
+      "stem": "Statements (treat as true even if they seem to contradict common facts): 1) Some hills are not lamps. 2) Some lamps are roads. Conclusions: I) Some hills are not roads. II) All roads are hills. Which conclusion(s) logically follow?",
+      "explanation": "Testing every possible case: conclusion I can fail and conclusion II can fail whenever both statements hold — so neither i nor ii follows.",
+      "options": [
+        {
+          "label": "Only conclusion I follows",
+          "is_correct": false
+        },
+        {
+          "label": "Only conclusion II follows",
+          "is_correct": false
+        },
+        {
+          "label": "Both I and II follow",
+          "is_correct": false
+        },
+        {
+          "label": "Neither I nor II follows",
+          "is_correct": true
+        }
+      ]
+    },
+    {
+      "chapter": "Syllogism",
+      "kind": "standard",
+      "difficulty": "hard",
+      "answer_type": "single",
+      "stem": "Statements (treat as true even if they seem to contradict common facts): 1) No fans are pens. 2) Some pens are not birds. Conclusions: I) All fans are birds. II) All birds are fans. Which conclusion(s) logically follow?",
+      "explanation": "Testing every possible case: conclusion I can fail and conclusion II can fail whenever both statements hold — so neither i nor ii follows.",
+      "options": [
+        {
+          "label": "Only conclusion I follows",
+          "is_correct": false
+        },
+        {
+          "label": "Only conclusion II follows",
+          "is_correct": false
+        },
+        {
+          "label": "Both I and II follow",
+          "is_correct": false
+        },
+        {
+          "label": "Neither I nor II follows",
+          "is_correct": true
+        }
+      ]
+    },
+    {
+      "chapter": "Syllogism",
+      "kind": "standard",
+      "difficulty": "very_hard",
+      "answer_type": "single",
+      "stem": "Statements (treat as true even if they seem to contradict common facts): 1) Some cups are lamps. 2) Some lamps are boxes. Conclusions: I) All cups are boxes. II) Some boxes are not cups. Which conclusion(s) logically follow?",
+      "explanation": "Testing every possible case: conclusion I can fail and conclusion II can fail whenever both statements hold — so neither i nor ii follows.",
+      "options": [
+        {
+          "label": "Only conclusion I follows",
+          "is_correct": false
+        },
+        {
+          "label": "Only conclusion II follows",
+          "is_correct": false
+        },
+        {
+          "label": "Both I and II follow",
+          "is_correct": false
+        },
+        {
+          "label": "Neither I nor II follows",
+          "is_correct": true
+        }
+      ]
+    },
+    {
+      "chapter": "Syllogism",
+      "kind": "standard",
+      "difficulty": "very_hard",
+      "answer_type": "single",
+      "stem": "Statements (treat as true even if they seem to contradict common facts): 1) Some pens are not cats. 2) Some cats are not chairs. Conclusions: I) All pens are chairs. II) All chairs are pens. Which conclusion(s) logically follow?",
+      "explanation": "Testing every possible case: conclusion I can fail and conclusion II can fail whenever both statements hold — so neither i nor ii follows.",
+      "options": [
+        {
+          "label": "Only conclusion I follows",
+          "is_correct": false
+        },
+        {
+          "label": "Only conclusion II follows",
+          "is_correct": false
+        },
+        {
+          "label": "Both I and II follow",
+          "is_correct": false
+        },
+        {
+          "label": "Neither I nor II follows",
+          "is_correct": true
+        }
+      ]
+    },
+    {
+      "chapter": "Syllogism",
+      "kind": "standard",
+      "difficulty": "very_hard",
+      "answer_type": "single",
+      "stem": "Statements (treat as true even if they seem to contradict common facts): 1) Some cups are not boxes. 2) Some boxes are toys. Conclusions: I) Some cups are not toys. II) All toys are cups. Which conclusion(s) logically follow?",
+      "explanation": "Testing every possible case: conclusion I can fail and conclusion II can fail whenever both statements hold — so neither i nor ii follows.",
+      "options": [
+        {
+          "label": "Only conclusion I follows",
+          "is_correct": false
+        },
+        {
+          "label": "Only conclusion II follows",
+          "is_correct": false
+        },
+        {
+          "label": "Both I and II follow",
+          "is_correct": false
+        },
+        {
+          "label": "Neither I nor II follows",
+          "is_correct": true
+        }
+      ]
+    },
+    {
+      "chapter": "Syllogism",
+      "kind": "standard",
+      "difficulty": "hard",
+      "answer_type": "single",
+      "stem": "Statements (treat as true even if they seem to contradict common facts): 1) No hills are boxes. 2) Some boxes are not stones. Conclusions: I) All hills are stones. II) All stones are hills. Which conclusion(s) logically follow?",
+      "explanation": "Testing every possible case: conclusion I can fail and conclusion II can fail whenever both statements hold — so neither i nor ii follows.",
+      "options": [
+        {
+          "label": "Only conclusion I follows",
+          "is_correct": false
+        },
+        {
+          "label": "Only conclusion II follows",
+          "is_correct": false
+        },
+        {
+          "label": "Both I and II follow",
+          "is_correct": false
+        },
+        {
+          "label": "Neither I nor II follows",
+          "is_correct": true
+        }
+      ]
+    },
+    {
+      "chapter": "Syllogism",
+      "kind": "standard",
+      "difficulty": "very_hard",
+      "answer_type": "single",
+      "stem": "Statements (treat as true even if they seem to contradict common facts): 1) Some flowers are not lamps. 2) Some lamps are not hills. Conclusions: I) Some flowers are not hills. II) Some hills are not flowers. Which conclusion(s) logically follow?",
+      "explanation": "Testing every possible case: conclusion I can fail and conclusion II can fail whenever both statements hold — so neither i nor ii follows.",
+      "options": [
+        {
+          "label": "Only conclusion I follows",
+          "is_correct": false
+        },
+        {
+          "label": "Only conclusion II follows",
+          "is_correct": false
+        },
+        {
+          "label": "Both I and II follow",
+          "is_correct": false
+        },
+        {
+          "label": "Neither I nor II follows",
+          "is_correct": true
+        }
+      ]
+    },
+    {
+      "chapter": "Syllogism",
+      "kind": "standard",
+      "difficulty": "hard",
+      "answer_type": "single",
+      "stem": "Statements (treat as true even if they seem to contradict common facts): 1) Some birds are not lamps. 2) No lamps are rivers. Conclusions: I) Some birds are not rivers. II) Some rivers are not birds. Which conclusion(s) logically follow?",
+      "explanation": "Testing every possible case: conclusion I can fail and conclusion II can fail whenever both statements hold — so neither i nor ii follows.",
+      "options": [
+        {
+          "label": "Only conclusion I follows",
+          "is_correct": false
+        },
+        {
+          "label": "Only conclusion II follows",
+          "is_correct": false
+        },
+        {
+          "label": "Both I and II follow",
+          "is_correct": false
+        },
+        {
+          "label": "Neither I nor II follows",
+          "is_correct": true
+        }
+      ]
+    },
+    {
+      "chapter": "Syllogism",
+      "kind": "standard",
+      "difficulty": "easy",
+      "answer_type": "single",
+      "stem": "Statements (treat as true even if they seem to contradict common facts): 1) All doors are pens. 2) All pens are trees. Conclusions: I) No doors are trees. II) All trees are doors. Which conclusion(s) logically follow?",
+      "explanation": "Testing every possible case: conclusion I can fail and conclusion II can fail whenever both statements hold — so neither i nor ii follows.",
+      "options": [
+        {
+          "label": "Only conclusion I follows",
+          "is_correct": false
+        },
+        {
+          "label": "Only conclusion II follows",
+          "is_correct": false
+        },
+        {
+          "label": "Both I and II follow",
+          "is_correct": false
+        },
+        {
+          "label": "Neither I nor II follows",
+          "is_correct": true
+        }
+      ]
+    },
+    {
+      "chapter": "Syllogism",
+      "kind": "standard",
+      "difficulty": "very_hard",
+      "answer_type": "single",
+      "stem": "Statements (treat as true even if they seem to contradict common facts): 1) Some doors are not flowers. 2) Some flowers are not cats. Conclusions: I) No doors are cats. II) No cats are doors. Which conclusion(s) logically follow?",
+      "explanation": "Testing every possible case: conclusion I can fail and conclusion II can fail whenever both statements hold — so neither i nor ii follows.",
+      "options": [
+        {
+          "label": "Only conclusion I follows",
+          "is_correct": false
+        },
+        {
+          "label": "Only conclusion II follows",
+          "is_correct": false
+        },
+        {
+          "label": "Both I and II follow",
+          "is_correct": false
+        },
+        {
+          "label": "Neither I nor II follows",
+          "is_correct": true
+        }
+      ]
+    },
+    {
+      "chapter": "Syllogism",
+      "kind": "standard",
+      "difficulty": "hard",
+      "answer_type": "single",
+      "stem": "Statements (treat as true even if they seem to contradict common facts): 1) Some stones are not lamps. 2) No lamps are pens. Conclusions: I) No stones are pens. II) No pens are stones. Which conclusion(s) logically follow?",
+      "explanation": "Testing every possible case: conclusion I can fail and conclusion II can fail whenever both statements hold — so neither i nor ii follows.",
+      "options": [
+        {
+          "label": "Only conclusion I follows",
+          "is_correct": false
+        },
+        {
+          "label": "Only conclusion II follows",
+          "is_correct": false
+        },
+        {
+          "label": "Both I and II follow",
+          "is_correct": false
+        },
+        {
+          "label": "Neither I nor II follows",
+          "is_correct": true
+        }
+      ]
+    },
+    {
+      "chapter": "Syllogism",
+      "kind": "standard",
+      "difficulty": "very_hard",
+      "answer_type": "single",
+      "stem": "Statements (treat as true even if they seem to contradict common facts): 1) Some birds are not pens. 2) Some pens are not books. Conclusions: I) Some birds are not books. II) No books are birds. Which conclusion(s) logically follow?",
+      "explanation": "Testing every possible case: conclusion I can fail and conclusion II can fail whenever both statements hold — so neither i nor ii follows.",
+      "options": [
+        {
+          "label": "Only conclusion I follows",
+          "is_correct": false
+        },
+        {
+          "label": "Only conclusion II follows",
+          "is_correct": false
+        },
+        {
+          "label": "Both I and II follow",
+          "is_correct": false
+        },
+        {
+          "label": "Neither I nor II follows",
+          "is_correct": true
+        }
+      ]
+    },
+    {
+      "chapter": "Syllogism",
+      "kind": "standard",
+      "difficulty": "very_hard",
+      "answer_type": "single",
+      "stem": "Statements (treat as true even if they seem to contradict common facts): 1) Some cats are not bags. 2) Some bags are not hills. Conclusions: I) All cats are hills. II) No hills are cats. Which conclusion(s) logically follow?",
+      "explanation": "Testing every possible case: conclusion I can fail and conclusion II can fail whenever both statements hold — so neither i nor ii follows.",
+      "options": [
+        {
+          "label": "Only conclusion I follows",
+          "is_correct": false
+        },
+        {
+          "label": "Only conclusion II follows",
+          "is_correct": false
+        },
+        {
+          "label": "Both I and II follow",
+          "is_correct": false
+        },
+        {
+          "label": "Neither I nor II follows",
+          "is_correct": true
+        }
+      ]
+    },
+    {
+      "chapter": "Syllogism",
+      "kind": "standard",
+      "difficulty": "very_hard",
+      "answer_type": "single",
+      "stem": "Statements (treat as true even if they seem to contradict common facts): 1) Some toys are cars. 2) Some cars are not hills. Conclusions: I) Some toys are hills. II) All hills are toys. Which conclusion(s) logically follow?",
+      "explanation": "Testing every possible case: conclusion I can fail and conclusion II can fail whenever both statements hold — so neither i nor ii follows.",
+      "options": [
+        {
+          "label": "Only conclusion I follows",
+          "is_correct": false
+        },
+        {
+          "label": "Only conclusion II follows",
+          "is_correct": false
+        },
+        {
+          "label": "Both I and II follow",
+          "is_correct": false
+        },
+        {
+          "label": "Neither I nor II follows",
+          "is_correct": true
+        }
+      ]
+    },
+    {
+      "chapter": "Syllogism",
+      "kind": "standard",
+      "difficulty": "very_hard",
+      "answer_type": "single",
+      "stem": "Statements (treat as true even if they seem to contradict common facts): 1) Some birds are not doors. 2) Some doors are chairs. Conclusions: I) Some birds are not chairs. II) No chairs are birds. Which conclusion(s) logically follow?",
+      "explanation": "Testing every possible case: conclusion I can fail and conclusion II can fail whenever both statements hold — so neither i nor ii follows.",
+      "options": [
+        {
+          "label": "Only conclusion I follows",
+          "is_correct": false
+        },
+        {
+          "label": "Only conclusion II follows",
+          "is_correct": false
+        },
+        {
+          "label": "Both I and II follow",
+          "is_correct": false
+        },
+        {
+          "label": "Neither I nor II follows",
+          "is_correct": true
+        }
+      ]
+    },
+    {
+      "chapter": "Syllogism",
+      "kind": "standard",
+      "difficulty": "very_hard",
+      "answer_type": "single",
+      "stem": "Statements (treat as true even if they seem to contradict common facts): 1) Some birds are stones. 2) Some stones are not hills. Conclusions: I) Some birds are not hills. II) All hills are birds. Which conclusion(s) logically follow?",
+      "explanation": "Testing every possible case: conclusion I can fail and conclusion II can fail whenever both statements hold — so neither i nor ii follows.",
+      "options": [
+        {
+          "label": "Only conclusion I follows",
+          "is_correct": false
+        },
+        {
+          "label": "Only conclusion II follows",
+          "is_correct": false
+        },
+        {
+          "label": "Both I and II follow",
+          "is_correct": false
+        },
+        {
+          "label": "Neither I nor II follows",
+          "is_correct": true
+        }
+      ]
+    },
+    {
+      "chapter": "Syllogism",
+      "kind": "standard",
+      "difficulty": "hard",
+      "answer_type": "single",
+      "stem": "Statements (treat as true even if they seem to contradict common facts): 1) Some flowers are not pens. 2) All pens are stones. Conclusions: I) Some flowers are not stones. II) All stones are flowers. Which conclusion(s) logically follow?",
+      "explanation": "Testing every possible case: conclusion I can fail and conclusion II can fail whenever both statements hold — so neither i nor ii follows.",
+      "options": [
+        {
+          "label": "Only conclusion I follows",
+          "is_correct": false
+        },
+        {
+          "label": "Only conclusion II follows",
+          "is_correct": false
+        },
+        {
+          "label": "Both I and II follow",
+          "is_correct": false
+        },
+        {
+          "label": "Neither I nor II follows",
+          "is_correct": true
+        }
+      ]
+    },
+    {
+      "chapter": "Syllogism",
+      "kind": "standard",
+      "difficulty": "hard",
+      "answer_type": "single",
+      "stem": "Statements (treat as true even if they seem to contradict common facts): 1) All rivers are books. 2) Some books are not stones. Conclusions: I) Some rivers are not stones. II) All stones are rivers. Which conclusion(s) logically follow?",
+      "explanation": "Testing every possible case: conclusion I can fail and conclusion II can fail whenever both statements hold — so neither i nor ii follows.",
+      "options": [
+        {
+          "label": "Only conclusion I follows",
+          "is_correct": false
+        },
+        {
+          "label": "Only conclusion II follows",
+          "is_correct": false
+        },
+        {
+          "label": "Both I and II follow",
+          "is_correct": false
+        },
+        {
+          "label": "Neither I nor II follows",
+          "is_correct": true
+        }
+      ]
+    },
+    {
+      "chapter": "Syllogism",
+      "kind": "standard",
+      "difficulty": "hard",
+      "answer_type": "single",
+      "stem": "Statements (treat as true even if they seem to contradict common facts): 1) Some roads are not bags. 2) All bags are cats. Conclusions: I) No roads are cats. II) All cats are roads. Which conclusion(s) logically follow?",
+      "explanation": "Testing every possible case: conclusion I can fail and conclusion II can fail whenever both statements hold — so neither i nor ii follows.",
+      "options": [
+        {
+          "label": "Only conclusion I follows",
+          "is_correct": false
+        },
+        {
+          "label": "Only conclusion II follows",
+          "is_correct": false
+        },
+        {
+          "label": "Both I and II follow",
+          "is_correct": false
+        },
+        {
+          "label": "Neither I nor II follows",
+          "is_correct": true
+        }
+      ]
+    },
+    {
+      "chapter": "Syllogism",
+      "kind": "standard",
+      "difficulty": "hard",
+      "answer_type": "single",
+      "stem": "Statements (treat as true even if they seem to contradict common facts): 1) Some hills are not cars. 2) No cars are doors. Conclusions: I) All hills are doors. II) No doors are hills. Which conclusion(s) logically follow?",
+      "explanation": "Testing every possible case: conclusion I can fail and conclusion II can fail whenever both statements hold — so neither i nor ii follows.",
+      "options": [
+        {
+          "label": "Only conclusion I follows",
+          "is_correct": false
+        },
+        {
+          "label": "Only conclusion II follows",
+          "is_correct": false
+        },
+        {
+          "label": "Both I and II follow",
+          "is_correct": false
+        },
+        {
+          "label": "Neither I nor II follows",
+          "is_correct": true
+        }
+      ]
+    },
+    {
+      "chapter": "Syllogism",
+      "kind": "standard",
+      "difficulty": "easy",
+      "answer_type": "single",
+      "stem": "Statements (treat as true even if they seem to contradict common facts): 1) All chairs are cups. 2) No cups are flowers. Conclusions: I) No chairs are flowers. II) No flowers are chairs. Which conclusion(s) logically follow?",
+      "explanation": "Testing every possible case: conclusion I must be true and conclusion II must be true whenever both statements hold — so both i and ii follow.",
+      "options": [
+        {
+          "label": "Only conclusion I follows",
+          "is_correct": false
+        },
+        {
+          "label": "Only conclusion II follows",
+          "is_correct": false
+        },
+        {
+          "label": "Both I and II follow",
+          "is_correct": true
+        },
+        {
+          "label": "Neither I nor II follows",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Syllogism",
+      "kind": "standard",
+      "difficulty": "very_hard",
+      "answer_type": "single",
+      "stem": "Statements (treat as true even if they seem to contradict common facts): 1) Some fans are books. 2) Some books are hills. Conclusions: I) Some fans are not hills. II) Some hills are not fans. Which conclusion(s) logically follow?",
+      "explanation": "Testing every possible case: conclusion I can fail and conclusion II can fail whenever both statements hold — so neither i nor ii follows.",
+      "options": [
+        {
+          "label": "Only conclusion I follows",
+          "is_correct": false
+        },
+        {
+          "label": "Only conclusion II follows",
+          "is_correct": false
+        },
+        {
+          "label": "Both I and II follow",
+          "is_correct": false
+        },
+        {
+          "label": "Neither I nor II follows",
+          "is_correct": true
+        }
+      ]
+    },
+    {
+      "chapter": "Syllogism",
+      "kind": "standard",
+      "difficulty": "easy",
+      "answer_type": "single",
+      "stem": "Statements (treat as true even if they seem to contradict common facts): 1) All boxes are books. 2) No books are cars. Conclusions: I) All boxes are cars. II) No cars are boxes. Which conclusion(s) logically follow?",
+      "explanation": "Testing every possible case: conclusion I can fail and conclusion II must be true whenever both statements hold — so only conclusion ii follows.",
+      "options": [
+        {
+          "label": "Only conclusion I follows",
+          "is_correct": false
+        },
+        {
+          "label": "Only conclusion II follows",
+          "is_correct": true
+        },
+        {
+          "label": "Both I and II follow",
+          "is_correct": false
+        },
+        {
+          "label": "Neither I nor II follows",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Syllogism",
+      "kind": "standard",
+      "difficulty": "very_hard",
+      "answer_type": "single",
+      "stem": "Statements (treat as true even if they seem to contradict common facts): 1) Some cats are roads. 2) Some roads are chairs. Conclusions: I) Some cats are chairs. II) Some chairs are cats. Which conclusion(s) logically follow?",
+      "explanation": "Testing every possible case: conclusion I can fail and conclusion II can fail whenever both statements hold — so neither i nor ii follows.",
+      "options": [
+        {
+          "label": "Only conclusion I follows",
+          "is_correct": false
+        },
+        {
+          "label": "Only conclusion II follows",
+          "is_correct": false
+        },
+        {
+          "label": "Both I and II follow",
+          "is_correct": false
+        },
+        {
+          "label": "Neither I nor II follows",
+          "is_correct": true
+        }
+      ]
+    },
+    {
+      "chapter": "Syllogism",
+      "kind": "standard",
+      "difficulty": "hard",
+      "answer_type": "single",
+      "stem": "Statements (treat as true even if they seem to contradict common facts): 1) Some cups are not tables. 2) No tables are cats. Conclusions: I) Some cups are not cats. II) No cats are cups. Which conclusion(s) logically follow?",
+      "explanation": "Testing every possible case: conclusion I can fail and conclusion II can fail whenever both statements hold — so neither i nor ii follows.",
+      "options": [
+        {
+          "label": "Only conclusion I follows",
+          "is_correct": false
+        },
+        {
+          "label": "Only conclusion II follows",
+          "is_correct": false
+        },
+        {
+          "label": "Both I and II follow",
+          "is_correct": false
+        },
+        {
+          "label": "Neither I nor II follows",
+          "is_correct": true
+        }
+      ]
+    },
+    {
+      "chapter": "Syllogism",
+      "kind": "standard",
+      "difficulty": "very_hard",
+      "answer_type": "single",
+      "stem": "Statements (treat as true even if they seem to contradict common facts): 1) Some stones are bags. 2) Some bags are birds. Conclusions: I) No stones are birds. II) No birds are stones. Which conclusion(s) logically follow?",
+      "explanation": "Testing every possible case: conclusion I can fail and conclusion II can fail whenever both statements hold — so neither i nor ii follows.",
+      "options": [
+        {
+          "label": "Only conclusion I follows",
+          "is_correct": false
+        },
+        {
+          "label": "Only conclusion II follows",
+          "is_correct": false
+        },
+        {
+          "label": "Both I and II follow",
+          "is_correct": false
+        },
+        {
+          "label": "Neither I nor II follows",
+          "is_correct": true
+        }
+      ]
+    },
+    {
+      "chapter": "Syllogism",
+      "kind": "standard",
+      "difficulty": "hard",
+      "answer_type": "single",
+      "stem": "Statements (treat as true even if they seem to contradict common facts): 1) No cups are birds. 2) Some birds are not boxes. Conclusions: I) All cups are boxes. II) No boxes are cups. Which conclusion(s) logically follow?",
+      "explanation": "Testing every possible case: conclusion I can fail and conclusion II can fail whenever both statements hold — so neither i nor ii follows.",
+      "options": [
+        {
+          "label": "Only conclusion I follows",
+          "is_correct": false
+        },
+        {
+          "label": "Only conclusion II follows",
+          "is_correct": false
+        },
+        {
+          "label": "Both I and II follow",
+          "is_correct": false
+        },
+        {
+          "label": "Neither I nor II follows",
+          "is_correct": true
+        }
+      ]
+    },
+    {
+      "chapter": "Syllogism",
+      "kind": "standard",
+      "difficulty": "very_hard",
+      "answer_type": "single",
+      "stem": "Statements (treat as true even if they seem to contradict common facts): 1) Some roads are cars. 2) Some cars are cats. Conclusions: I) Some roads are cats. II) Some cats are roads. Which conclusion(s) logically follow?",
+      "explanation": "Testing every possible case: conclusion I can fail and conclusion II can fail whenever both statements hold — so neither i nor ii follows.",
+      "options": [
+        {
+          "label": "Only conclusion I follows",
+          "is_correct": false
+        },
+        {
+          "label": "Only conclusion II follows",
+          "is_correct": false
+        },
+        {
+          "label": "Both I and II follow",
+          "is_correct": false
+        },
+        {
+          "label": "Neither I nor II follows",
+          "is_correct": true
+        }
+      ]
+    },
+    {
+      "chapter": "Syllogism",
+      "kind": "standard",
+      "difficulty": "very_hard",
+      "answer_type": "single",
+      "stem": "Statements (treat as true even if they seem to contradict common facts): 1) Some lamps are cars. 2) Some cars are doors. Conclusions: I) All lamps are doors. II) Some doors are not lamps. Which conclusion(s) logically follow?",
+      "explanation": "Testing every possible case: conclusion I can fail and conclusion II can fail whenever both statements hold — so neither i nor ii follows.",
+      "options": [
+        {
+          "label": "Only conclusion I follows",
+          "is_correct": false
+        },
+        {
+          "label": "Only conclusion II follows",
+          "is_correct": false
+        },
+        {
+          "label": "Both I and II follow",
+          "is_correct": false
+        },
+        {
+          "label": "Neither I nor II follows",
+          "is_correct": true
+        }
+      ]
+    },
+    {
+      "chapter": "Syllogism",
+      "kind": "standard",
+      "difficulty": "very_hard",
+      "answer_type": "single",
+      "stem": "Statements (treat as true even if they seem to contradict common facts): 1) Some rivers are boxes. 2) Some boxes are pens. Conclusions: I) Some rivers are pens. II) Some pens are rivers. Which conclusion(s) logically follow?",
+      "explanation": "Testing every possible case: conclusion I can fail and conclusion II can fail whenever both statements hold — so neither i nor ii follows.",
+      "options": [
+        {
+          "label": "Only conclusion I follows",
+          "is_correct": false
+        },
+        {
+          "label": "Only conclusion II follows",
+          "is_correct": false
+        },
+        {
+          "label": "Both I and II follow",
+          "is_correct": false
+        },
+        {
+          "label": "Neither I nor II follows",
+          "is_correct": true
+        }
+      ]
+    },
+    {
+      "chapter": "Syllogism",
+      "kind": "standard",
+      "difficulty": "hard",
+      "answer_type": "single",
+      "stem": "Statements (treat as true even if they seem to contradict common facts): 1) All doors are roads. 2) Some roads are not fans. Conclusions: I) Some doors are fans. II) Some fans are not doors. Which conclusion(s) logically follow?",
+      "explanation": "Testing every possible case: conclusion I can fail and conclusion II can fail whenever both statements hold — so neither i nor ii follows.",
+      "options": [
+        {
+          "label": "Only conclusion I follows",
+          "is_correct": false
+        },
+        {
+          "label": "Only conclusion II follows",
+          "is_correct": false
+        },
+        {
+          "label": "Both I and II follow",
+          "is_correct": false
+        },
+        {
+          "label": "Neither I nor II follows",
+          "is_correct": true
+        }
+      ]
+    },
+    {
+      "chapter": "Syllogism",
+      "kind": "standard",
+      "difficulty": "easy",
+      "answer_type": "single",
+      "stem": "Statements (treat as true even if they seem to contradict common facts): 1) All stones are pens. 2) No pens are cats. Conclusions: I) No stones are cats. II) All cats are stones. Which conclusion(s) logically follow?",
+      "explanation": "Testing every possible case: conclusion I must be true and conclusion II can fail whenever both statements hold — so only conclusion i follows.",
+      "options": [
+        {
+          "label": "Only conclusion I follows",
+          "is_correct": true
+        },
+        {
+          "label": "Only conclusion II follows",
+          "is_correct": false
+        },
+        {
+          "label": "Both I and II follow",
+          "is_correct": false
+        },
+        {
+          "label": "Neither I nor II follows",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Syllogism",
+      "kind": "standard",
+      "difficulty": "hard",
+      "answer_type": "single",
+      "stem": "Statements (treat as true even if they seem to contradict common facts): 1) Some lamps are not cats. 2) No cats are fans. Conclusions: I) All lamps are fans. II) Some fans are not lamps. Which conclusion(s) logically follow?",
+      "explanation": "Testing every possible case: conclusion I can fail and conclusion II can fail whenever both statements hold — so neither i nor ii follows.",
+      "options": [
+        {
+          "label": "Only conclusion I follows",
+          "is_correct": false
+        },
+        {
+          "label": "Only conclusion II follows",
+          "is_correct": false
+        },
+        {
+          "label": "Both I and II follow",
+          "is_correct": false
+        },
+        {
+          "label": "Neither I nor II follows",
+          "is_correct": true
+        }
+      ]
+    },
+    {
+      "chapter": "Syllogism",
+      "kind": "standard",
+      "difficulty": "hard",
+      "answer_type": "single",
+      "stem": "Statements (treat as true even if they seem to contradict common facts): 1) Some toys are not doors. 2) No doors are books. Conclusions: I) Some toys are not books. II) No books are toys. Which conclusion(s) logically follow?",
+      "explanation": "Testing every possible case: conclusion I can fail and conclusion II can fail whenever both statements hold — so neither i nor ii follows.",
+      "options": [
+        {
+          "label": "Only conclusion I follows",
+          "is_correct": false
+        },
+        {
+          "label": "Only conclusion II follows",
+          "is_correct": false
+        },
+        {
+          "label": "Both I and II follow",
+          "is_correct": false
+        },
+        {
+          "label": "Neither I nor II follows",
+          "is_correct": true
+        }
+      ]
+    },
+    {
+      "chapter": "Syllogism",
+      "kind": "standard",
+      "difficulty": "hard",
+      "answer_type": "single",
+      "stem": "Statements (treat as true even if they seem to contradict common facts): 1) All cars are stones. 2) Some stones are not rivers. Conclusions: I) All cars are rivers. II) Some rivers are cars. Which conclusion(s) logically follow?",
+      "explanation": "Testing every possible case: conclusion I can fail and conclusion II can fail whenever both statements hold — so neither i nor ii follows.",
+      "options": [
+        {
+          "label": "Only conclusion I follows",
+          "is_correct": false
+        },
+        {
+          "label": "Only conclusion II follows",
+          "is_correct": false
+        },
+        {
+          "label": "Both I and II follow",
+          "is_correct": false
+        },
+        {
+          "label": "Neither I nor II follows",
+          "is_correct": true
+        }
+      ]
+    },
+    {
+      "chapter": "Syllogism",
+      "kind": "standard",
+      "difficulty": "hard",
+      "answer_type": "single",
+      "stem": "Statements (treat as true even if they seem to contradict common facts): 1) Some books are not chairs. 2) All chairs are flowers. Conclusions: I) All books are flowers. II) Some flowers are books. Which conclusion(s) logically follow?",
+      "explanation": "Testing every possible case: conclusion I can fail and conclusion II can fail whenever both statements hold — so neither i nor ii follows.",
+      "options": [
+        {
+          "label": "Only conclusion I follows",
+          "is_correct": false
+        },
+        {
+          "label": "Only conclusion II follows",
+          "is_correct": false
+        },
+        {
+          "label": "Both I and II follow",
+          "is_correct": false
+        },
+        {
+          "label": "Neither I nor II follows",
+          "is_correct": true
+        }
+      ]
+    },
+    {
+      "chapter": "Syllogism",
+      "kind": "standard",
+      "difficulty": "easy",
+      "answer_type": "single",
+      "stem": "Statements (treat as true even if they seem to contradict common facts): 1) All stones are lamps. 2) All lamps are tables. Conclusions: I) No stones are tables. II) All tables are stones. Which conclusion(s) logically follow?",
+      "explanation": "Testing every possible case: conclusion I can fail and conclusion II can fail whenever both statements hold — so neither i nor ii follows.",
+      "options": [
+        {
+          "label": "Only conclusion I follows",
+          "is_correct": false
+        },
+        {
+          "label": "Only conclusion II follows",
+          "is_correct": false
+        },
+        {
+          "label": "Both I and II follow",
+          "is_correct": false
+        },
+        {
+          "label": "Neither I nor II follows",
+          "is_correct": true
+        }
+      ]
+    },
+    {
+      "chapter": "Syllogism",
+      "kind": "standard",
+      "difficulty": "easy",
+      "answer_type": "single",
+      "stem": "Statements (treat as true even if they seem to contradict common facts): 1) No cars are lamps. 2) All lamps are bags. Conclusions: I) All cars are bags. II) No bags are cars. Which conclusion(s) logically follow?",
+      "explanation": "Testing every possible case: conclusion I can fail and conclusion II can fail whenever both statements hold — so neither i nor ii follows.",
+      "options": [
+        {
+          "label": "Only conclusion I follows",
+          "is_correct": false
+        },
+        {
+          "label": "Only conclusion II follows",
+          "is_correct": false
+        },
+        {
+          "label": "Both I and II follow",
+          "is_correct": false
+        },
+        {
+          "label": "Neither I nor II follows",
+          "is_correct": true
+        }
+      ]
+    },
+    {
+      "chapter": "Syllogism",
+      "kind": "standard",
+      "difficulty": "easy",
+      "answer_type": "single",
+      "stem": "Statements (treat as true even if they seem to contradict common facts): 1) No cats are bags. 2) No bags are cups. Conclusions: I) All cats are cups. II) All cups are cats. Which conclusion(s) logically follow?",
+      "explanation": "Testing every possible case: conclusion I can fail and conclusion II can fail whenever both statements hold — so neither i nor ii follows.",
+      "options": [
+        {
+          "label": "Only conclusion I follows",
+          "is_correct": false
+        },
+        {
+          "label": "Only conclusion II follows",
+          "is_correct": false
+        },
+        {
+          "label": "Both I and II follow",
+          "is_correct": false
+        },
+        {
+          "label": "Neither I nor II follows",
+          "is_correct": true
+        }
+      ]
+    },
+    {
+      "chapter": "Syllogism",
+      "kind": "standard",
+      "difficulty": "easy",
+      "answer_type": "single",
+      "stem": "Statements (treat as true even if they seem to contradict common facts): 1) No cups are trees. 2) No trees are flowers. Conclusions: I) No cups are flowers. II) All flowers are cups. Which conclusion(s) logically follow?",
+      "explanation": "Testing every possible case: conclusion I can fail and conclusion II can fail whenever both statements hold — so neither i nor ii follows.",
+      "options": [
+        {
+          "label": "Only conclusion I follows",
+          "is_correct": false
+        },
+        {
+          "label": "Only conclusion II follows",
+          "is_correct": false
+        },
+        {
+          "label": "Both I and II follow",
+          "is_correct": false
+        },
+        {
+          "label": "Neither I nor II follows",
+          "is_correct": true
+        }
+      ]
+    },
+    {
+      "chapter": "Syllogism",
+      "kind": "standard",
+      "difficulty": "easy",
+      "answer_type": "single",
+      "stem": "Statements (treat as true even if they seem to contradict common facts): 1) All toys are trees. 2) All trees are bags. Conclusions: I) No toys are bags. II) All bags are toys. Which conclusion(s) logically follow?",
+      "explanation": "Testing every possible case: conclusion I can fail and conclusion II can fail whenever both statements hold — so neither i nor ii follows.",
+      "options": [
+        {
+          "label": "Only conclusion I follows",
+          "is_correct": false
+        },
+        {
+          "label": "Only conclusion II follows",
+          "is_correct": false
+        },
+        {
+          "label": "Both I and II follow",
+          "is_correct": false
+        },
+        {
+          "label": "Neither I nor II follows",
+          "is_correct": true
+        }
+      ]
+    },
+    {
+      "chapter": "Syllogism",
+      "kind": "standard",
+      "difficulty": "easy",
+      "answer_type": "single",
+      "stem": "Statements (treat as true even if they seem to contradict common facts): 1) No toys are cats. 2) All cats are bags. Conclusions: I) All toys are bags. II) No bags are toys. Which conclusion(s) logically follow?",
+      "explanation": "Testing every possible case: conclusion I can fail and conclusion II can fail whenever both statements hold — so neither i nor ii follows.",
+      "options": [
+        {
+          "label": "Only conclusion I follows",
+          "is_correct": false
+        },
+        {
+          "label": "Only conclusion II follows",
+          "is_correct": false
+        },
+        {
+          "label": "Both I and II follow",
+          "is_correct": false
+        },
+        {
+          "label": "Neither I nor II follows",
+          "is_correct": true
+        }
+      ]
+    },
+    {
+      "chapter": "Syllogism",
+      "kind": "standard",
+      "difficulty": "easy",
+      "answer_type": "single",
+      "stem": "Statements (treat as true even if they seem to contradict common facts): 1) No chairs are bags. 2) No bags are fans. Conclusions: I) All chairs are fans. II) All fans are chairs. Which conclusion(s) logically follow?",
+      "explanation": "Testing every possible case: conclusion I can fail and conclusion II can fail whenever both statements hold — so neither i nor ii follows.",
+      "options": [
+        {
+          "label": "Only conclusion I follows",
+          "is_correct": false
+        },
+        {
+          "label": "Only conclusion II follows",
+          "is_correct": false
+        },
+        {
+          "label": "Both I and II follow",
+          "is_correct": false
+        },
+        {
+          "label": "Neither I nor II follows",
+          "is_correct": true
+        }
+      ]
+    },
+    {
+      "chapter": "Syllogism",
+      "kind": "standard",
+      "difficulty": "easy",
+      "answer_type": "single",
+      "stem": "Statements (treat as true even if they seem to contradict common facts): 1) No doors are hills. 2) No hills are chairs. Conclusions: I) All doors are chairs. II) No chairs are doors. Which conclusion(s) logically follow?",
+      "explanation": "Testing every possible case: conclusion I can fail and conclusion II can fail whenever both statements hold — so neither i nor ii follows.",
+      "options": [
+        {
+          "label": "Only conclusion I follows",
+          "is_correct": false
+        },
+        {
+          "label": "Only conclusion II follows",
+          "is_correct": false
+        },
+        {
+          "label": "Both I and II follow",
+          "is_correct": false
+        },
+        {
+          "label": "Neither I nor II follows",
+          "is_correct": true
+        }
+      ]
+    },
+    {
+      "chapter": "Syllogism",
+      "kind": "standard",
+      "difficulty": "easy",
+      "answer_type": "single",
+      "stem": "Statements (treat as true even if they seem to contradict common facts): 1) All doors are pens. 2) All pens are fans. Conclusions: I) All doors are fans. II) All fans are doors. Which conclusion(s) logically follow?",
+      "explanation": "Testing every possible case: conclusion I must be true and conclusion II can fail whenever both statements hold — so only conclusion i follows.",
+      "options": [
+        {
+          "label": "Only conclusion I follows",
+          "is_correct": true
+        },
+        {
+          "label": "Only conclusion II follows",
+          "is_correct": false
+        },
+        {
+          "label": "Both I and II follow",
+          "is_correct": false
+        },
+        {
+          "label": "Neither I nor II follows",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Syllogism",
+      "kind": "standard",
+      "difficulty": "easy",
+      "answer_type": "single",
+      "stem": "Statements (treat as true even if they seem to contradict common facts): 1) All rivers are cats. 2) All cats are flowers. Conclusions: I) All rivers are flowers. II) All flowers are rivers. Which conclusion(s) logically follow?",
+      "explanation": "Testing every possible case: conclusion I must be true and conclusion II can fail whenever both statements hold — so only conclusion i follows.",
+      "options": [
+        {
+          "label": "Only conclusion I follows",
+          "is_correct": true
+        },
+        {
+          "label": "Only conclusion II follows",
+          "is_correct": false
+        },
+        {
+          "label": "Both I and II follow",
+          "is_correct": false
+        },
+        {
+          "label": "Neither I nor II follows",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Syllogism",
+      "kind": "standard",
+      "difficulty": "easy",
+      "answer_type": "single",
+      "stem": "Statements (treat as true even if they seem to contradict common facts): 1) No lamps are cats. 2) All cats are birds. Conclusions: I) No lamps are birds. II) All birds are lamps. Which conclusion(s) logically follow?",
+      "explanation": "Testing every possible case: conclusion I can fail and conclusion II can fail whenever both statements hold — so neither i nor ii follows.",
+      "options": [
+        {
+          "label": "Only conclusion I follows",
+          "is_correct": false
+        },
+        {
+          "label": "Only conclusion II follows",
+          "is_correct": false
+        },
+        {
+          "label": "Both I and II follow",
+          "is_correct": false
+        },
+        {
+          "label": "Neither I nor II follows",
+          "is_correct": true
+        }
+      ]
+    },
+    {
+      "chapter": "Syllogism",
+      "kind": "standard",
+      "difficulty": "easy",
+      "answer_type": "single",
+      "stem": "Statements (treat as true even if they seem to contradict common facts): 1) All flowers are boxes. 2) No boxes are cars. Conclusions: I) No flowers are cars. II) No cars are flowers. Which conclusion(s) logically follow?",
+      "explanation": "Testing every possible case: conclusion I must be true and conclusion II must be true whenever both statements hold — so both i and ii follow.",
+      "options": [
+        {
+          "label": "Only conclusion I follows",
+          "is_correct": false
+        },
+        {
+          "label": "Only conclusion II follows",
+          "is_correct": false
+        },
+        {
+          "label": "Both I and II follow",
+          "is_correct": true
+        },
+        {
+          "label": "Neither I nor II follows",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Syllogism",
+      "kind": "standard",
+      "difficulty": "easy",
+      "answer_type": "single",
+      "stem": "Statements (treat as true even if they seem to contradict common facts): 1) All fans are cars. 2) No cars are toys. Conclusions: I) All fans are toys. II) No toys are fans. Which conclusion(s) logically follow?",
+      "explanation": "Testing every possible case: conclusion I can fail and conclusion II must be true whenever both statements hold — so only conclusion ii follows.",
+      "options": [
+        {
+          "label": "Only conclusion I follows",
+          "is_correct": false
+        },
+        {
+          "label": "Only conclusion II follows",
+          "is_correct": true
+        },
+        {
+          "label": "Both I and II follow",
+          "is_correct": false
+        },
+        {
+          "label": "Neither I nor II follows",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Syllogism",
+      "kind": "standard",
+      "difficulty": "easy",
+      "answer_type": "single",
+      "stem": "Statements (treat as true even if they seem to contradict common facts): 1) All stones are cups. 2) No cups are bags. Conclusions: I) All stones are bags. II) All bags are stones. Which conclusion(s) logically follow?",
+      "explanation": "Testing every possible case: conclusion I can fail and conclusion II can fail whenever both statements hold — so neither i nor ii follows.",
+      "options": [
+        {
+          "label": "Only conclusion I follows",
+          "is_correct": false
+        },
+        {
+          "label": "Only conclusion II follows",
+          "is_correct": false
+        },
+        {
+          "label": "Both I and II follow",
+          "is_correct": false
+        },
+        {
+          "label": "Neither I nor II follows",
+          "is_correct": true
+        }
+      ]
+    },
+    {
+      "chapter": "Syllogism",
+      "kind": "standard",
+      "difficulty": "easy",
+      "answer_type": "single",
+      "stem": "Statements (treat as true even if they seem to contradict common facts): 1) No cups are chairs. 2) All chairs are tables. Conclusions: I) All cups are tables. II) No tables are cups. Which conclusion(s) logically follow?",
+      "explanation": "Testing every possible case: conclusion I can fail and conclusion II can fail whenever both statements hold — so neither i nor ii follows.",
+      "options": [
+        {
+          "label": "Only conclusion I follows",
+          "is_correct": false
+        },
+        {
+          "label": "Only conclusion II follows",
+          "is_correct": false
+        },
+        {
+          "label": "Both I and II follow",
+          "is_correct": false
+        },
+        {
+          "label": "Neither I nor II follows",
+          "is_correct": true
+        }
+      ]
+    },
+    {
+      "chapter": "Syllogism",
+      "kind": "standard",
+      "difficulty": "easy",
+      "answer_type": "single",
+      "stem": "Statements (treat as true even if they seem to contradict common facts): 1) All bags are boxes. 2) All boxes are tables. Conclusions: I) No bags are tables. II) No tables are bags. Which conclusion(s) logically follow?",
+      "explanation": "Testing every possible case: conclusion I can fail and conclusion II can fail whenever both statements hold — so neither i nor ii follows.",
+      "options": [
+        {
+          "label": "Only conclusion I follows",
+          "is_correct": false
+        },
+        {
+          "label": "Only conclusion II follows",
+          "is_correct": false
+        },
+        {
+          "label": "Both I and II follow",
+          "is_correct": false
+        },
+        {
+          "label": "Neither I nor II follows",
+          "is_correct": true
+        }
+      ]
+    },
+    {
+      "chapter": "Syllogism",
+      "kind": "standard",
+      "difficulty": "easy",
+      "answer_type": "single",
+      "stem": "Statements (treat as true even if they seem to contradict common facts): 1) No bags are cups. 2) No cups are rivers. Conclusions: I) No bags are rivers. II) All rivers are bags. Which conclusion(s) logically follow?",
+      "explanation": "Testing every possible case: conclusion I can fail and conclusion II can fail whenever both statements hold — so neither i nor ii follows.",
+      "options": [
+        {
+          "label": "Only conclusion I follows",
+          "is_correct": false
+        },
+        {
+          "label": "Only conclusion II follows",
+          "is_correct": false
+        },
+        {
+          "label": "Both I and II follow",
+          "is_correct": false
+        },
+        {
+          "label": "Neither I nor II follows",
+          "is_correct": true
+        }
+      ]
+    },
+    {
+      "chapter": "Syllogism",
+      "kind": "standard",
+      "difficulty": "easy",
+      "answer_type": "single",
+      "stem": "Statements (treat as true even if they seem to contradict common facts): 1) No hills are cups. 2) No cups are tables. Conclusions: I) No hills are tables. II) No tables are hills. Which conclusion(s) logically follow?",
+      "explanation": "Testing every possible case: conclusion I can fail and conclusion II can fail whenever both statements hold — so neither i nor ii follows.",
+      "options": [
+        {
+          "label": "Only conclusion I follows",
+          "is_correct": false
+        },
+        {
+          "label": "Only conclusion II follows",
+          "is_correct": false
+        },
+        {
+          "label": "Both I and II follow",
+          "is_correct": false
+        },
+        {
+          "label": "Neither I nor II follows",
+          "is_correct": true
+        }
+      ]
+    },
+    {
+      "chapter": "Syllogism",
+      "kind": "standard",
+      "difficulty": "easy",
+      "answer_type": "single",
+      "stem": "Statements (treat as true even if they seem to contradict common facts): 1) All roads are trees. 2) All trees are bags. Conclusions: I) No roads are bags. II) No bags are roads. Which conclusion(s) logically follow?",
+      "explanation": "Testing every possible case: conclusion I can fail and conclusion II can fail whenever both statements hold — so neither i nor ii follows.",
+      "options": [
+        {
+          "label": "Only conclusion I follows",
+          "is_correct": false
+        },
+        {
+          "label": "Only conclusion II follows",
+          "is_correct": false
+        },
+        {
+          "label": "Both I and II follow",
+          "is_correct": false
+        },
+        {
+          "label": "Neither I nor II follows",
+          "is_correct": true
+        }
+      ]
+    },
+    {
+      "chapter": "Syllogism",
+      "kind": "standard",
+      "difficulty": "easy",
+      "answer_type": "single",
+      "stem": "Statements (treat as true even if they seem to contradict common facts): 1) No tables are doors. 2) All doors are rivers. Conclusions: I) No tables are rivers. II) All rivers are tables. Which conclusion(s) logically follow?",
+      "explanation": "Testing every possible case: conclusion I can fail and conclusion II can fail whenever both statements hold — so neither i nor ii follows.",
+      "options": [
+        {
+          "label": "Only conclusion I follows",
+          "is_correct": false
+        },
+        {
+          "label": "Only conclusion II follows",
+          "is_correct": false
+        },
+        {
+          "label": "Both I and II follow",
+          "is_correct": false
+        },
+        {
+          "label": "Neither I nor II follows",
+          "is_correct": true
+        }
+      ]
+    },
+    {
+      "chapter": "Syllogism",
+      "kind": "standard",
+      "difficulty": "easy",
+      "answer_type": "single",
+      "stem": "Statements (treat as true even if they seem to contradict common facts): 1) All boxes are cats. 2) All cats are flowers. Conclusions: I) All boxes are flowers. II) No flowers are boxes. Which conclusion(s) logically follow?",
+      "explanation": "Testing every possible case: conclusion I must be true and conclusion II can fail whenever both statements hold — so only conclusion i follows.",
+      "options": [
+        {
+          "label": "Only conclusion I follows",
+          "is_correct": true
+        },
+        {
+          "label": "Only conclusion II follows",
+          "is_correct": false
+        },
+        {
+          "label": "Both I and II follow",
+          "is_correct": false
+        },
+        {
+          "label": "Neither I nor II follows",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Syllogism",
+      "kind": "standard",
+      "difficulty": "easy",
+      "answer_type": "single",
+      "stem": "Statements (treat as true even if they seem to contradict common facts): 1) No trees are fans. 2) All fans are birds. Conclusions: I) No trees are birds. II) All birds are trees. Which conclusion(s) logically follow?",
+      "explanation": "Testing every possible case: conclusion I can fail and conclusion II can fail whenever both statements hold — so neither i nor ii follows.",
+      "options": [
+        {
+          "label": "Only conclusion I follows",
+          "is_correct": false
+        },
+        {
+          "label": "Only conclusion II follows",
+          "is_correct": false
+        },
+        {
+          "label": "Both I and II follow",
+          "is_correct": false
+        },
+        {
+          "label": "Neither I nor II follows",
+          "is_correct": true
+        }
+      ]
+    },
+    {
+      "chapter": "Syllogism",
+      "kind": "standard",
+      "difficulty": "easy",
+      "answer_type": "single",
+      "stem": "Statements (treat as true even if they seem to contradict common facts): 1) All doors are cats. 2) No cats are rivers. Conclusions: I) All doors are rivers. II) No rivers are doors. Which conclusion(s) logically follow?",
+      "explanation": "Testing every possible case: conclusion I can fail and conclusion II must be true whenever both statements hold — so only conclusion ii follows.",
+      "options": [
+        {
+          "label": "Only conclusion I follows",
+          "is_correct": false
+        },
+        {
+          "label": "Only conclusion II follows",
+          "is_correct": true
+        },
+        {
+          "label": "Both I and II follow",
+          "is_correct": false
+        },
+        {
+          "label": "Neither I nor II follows",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Syllogism",
+      "kind": "standard",
+      "difficulty": "easy",
+      "answer_type": "single",
+      "stem": "Statements (treat as true even if they seem to contradict common facts): 1) No books are boxes. 2) No boxes are trees. Conclusions: I) No books are trees. II) No trees are books. Which conclusion(s) logically follow?",
+      "explanation": "Testing every possible case: conclusion I can fail and conclusion II can fail whenever both statements hold — so neither i nor ii follows.",
+      "options": [
+        {
+          "label": "Only conclusion I follows",
+          "is_correct": false
+        },
+        {
+          "label": "Only conclusion II follows",
+          "is_correct": false
+        },
+        {
+          "label": "Both I and II follow",
+          "is_correct": false
+        },
+        {
+          "label": "Neither I nor II follows",
+          "is_correct": true
+        }
+      ]
+    },
+    {
+      "chapter": "Syllogism",
+      "kind": "standard",
+      "difficulty": "easy",
+      "answer_type": "single",
+      "stem": "Statements (treat as true even if they seem to contradict common facts): 1) All boxes are chairs. 2) No chairs are tables. Conclusions: I) All boxes are tables. II) All tables are boxes. Which conclusion(s) logically follow?",
+      "explanation": "Testing every possible case: conclusion I can fail and conclusion II can fail whenever both statements hold — so neither i nor ii follows.",
+      "options": [
+        {
+          "label": "Only conclusion I follows",
+          "is_correct": false
+        },
+        {
+          "label": "Only conclusion II follows",
+          "is_correct": false
+        },
+        {
+          "label": "Both I and II follow",
+          "is_correct": false
+        },
+        {
+          "label": "Neither I nor II follows",
+          "is_correct": true
+        }
+      ]
+    },
+    {
+      "chapter": "Syllogism",
+      "kind": "standard",
+      "difficulty": "easy",
+      "answer_type": "single",
+      "stem": "Statements (treat as true even if they seem to contradict common facts): 1) No doors are birds. 2) No birds are trees. Conclusions: I) No doors are trees. II) All trees are doors. Which conclusion(s) logically follow?",
+      "explanation": "Testing every possible case: conclusion I can fail and conclusion II can fail whenever both statements hold — so neither i nor ii follows.",
+      "options": [
+        {
+          "label": "Only conclusion I follows",
+          "is_correct": false
+        },
+        {
+          "label": "Only conclusion II follows",
+          "is_correct": false
+        },
+        {
+          "label": "Both I and II follow",
+          "is_correct": false
+        },
+        {
+          "label": "Neither I nor II follows",
+          "is_correct": true
+        }
+      ]
+    },
+    {
+      "chapter": "Syllogism",
+      "kind": "standard",
+      "difficulty": "easy",
+      "answer_type": "single",
+      "stem": "Statements (treat as true even if they seem to contradict common facts): 1) All rivers are cats. 2) All cats are stones. Conclusions: I) All rivers are stones. II) No stones are rivers. Which conclusion(s) logically follow?",
+      "explanation": "Testing every possible case: conclusion I must be true and conclusion II can fail whenever both statements hold — so only conclusion i follows.",
+      "options": [
+        {
+          "label": "Only conclusion I follows",
+          "is_correct": true
+        },
+        {
+          "label": "Only conclusion II follows",
+          "is_correct": false
+        },
+        {
+          "label": "Both I and II follow",
+          "is_correct": false
+        },
+        {
+          "label": "Neither I nor II follows",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Syllogism",
+      "kind": "standard",
+      "difficulty": "easy",
+      "answer_type": "single",
+      "stem": "Statements (treat as true even if they seem to contradict common facts): 1) All fans are bags. 2) All bags are stones. Conclusions: I) No fans are stones. II) All stones are fans. Which conclusion(s) logically follow?",
+      "explanation": "Testing every possible case: conclusion I can fail and conclusion II can fail whenever both statements hold — so neither i nor ii follows.",
+      "options": [
+        {
+          "label": "Only conclusion I follows",
+          "is_correct": false
+        },
+        {
+          "label": "Only conclusion II follows",
+          "is_correct": false
+        },
+        {
+          "label": "Both I and II follow",
+          "is_correct": false
+        },
+        {
+          "label": "Neither I nor II follows",
+          "is_correct": true
+        }
+      ]
+    },
+    {
+      "chapter": "Syllogism",
+      "kind": "standard",
+      "difficulty": "easy",
+      "answer_type": "single",
+      "stem": "Statements (treat as true even if they seem to contradict common facts): 1) No pens are bags. 2) All bags are doors. Conclusions: I) No pens are doors. II) No doors are pens. Which conclusion(s) logically follow?",
+      "explanation": "Testing every possible case: conclusion I can fail and conclusion II can fail whenever both statements hold — so neither i nor ii follows.",
+      "options": [
+        {
+          "label": "Only conclusion I follows",
+          "is_correct": false
+        },
+        {
+          "label": "Only conclusion II follows",
+          "is_correct": false
+        },
+        {
+          "label": "Both I and II follow",
+          "is_correct": false
+        },
+        {
+          "label": "Neither I nor II follows",
+          "is_correct": true
+        }
+      ]
+    },
+    {
+      "chapter": "Syllogism",
+      "kind": "standard",
+      "difficulty": "easy",
+      "answer_type": "single",
+      "stem": "Statements (treat as true even if they seem to contradict common facts): 1) All books are boxes. 2) All boxes are pens. Conclusions: I) All books are pens. II) No pens are books. Which conclusion(s) logically follow?",
+      "explanation": "Testing every possible case: conclusion I must be true and conclusion II can fail whenever both statements hold — so only conclusion i follows.",
+      "options": [
+        {
+          "label": "Only conclusion I follows",
+          "is_correct": true
+        },
+        {
+          "label": "Only conclusion II follows",
+          "is_correct": false
+        },
+        {
+          "label": "Both I and II follow",
+          "is_correct": false
+        },
+        {
+          "label": "Neither I nor II follows",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Syllogism",
+      "kind": "standard",
+      "difficulty": "easy",
+      "answer_type": "single",
+      "stem": "Statements (treat as true even if they seem to contradict common facts): 1) No trees are doors. 2) No doors are hills. Conclusions: I) All trees are hills. II) No hills are trees. Which conclusion(s) logically follow?",
+      "explanation": "Testing every possible case: conclusion I can fail and conclusion II can fail whenever both statements hold — so neither i nor ii follows.",
+      "options": [
+        {
+          "label": "Only conclusion I follows",
+          "is_correct": false
+        },
+        {
+          "label": "Only conclusion II follows",
+          "is_correct": false
+        },
+        {
+          "label": "Both I and II follow",
+          "is_correct": false
+        },
+        {
+          "label": "Neither I nor II follows",
+          "is_correct": true
+        }
+      ]
+    },
+    {
+      "chapter": "Syllogism",
+      "kind": "standard",
+      "difficulty": "easy",
+      "answer_type": "single",
+      "stem": "Statements (treat as true even if they seem to contradict common facts): 1) All bags are lamps. 2) No lamps are rivers. Conclusions: I) No bags are rivers. II) No rivers are bags. Which conclusion(s) logically follow?",
+      "explanation": "Testing every possible case: conclusion I must be true and conclusion II must be true whenever both statements hold — so both i and ii follow.",
+      "options": [
+        {
+          "label": "Only conclusion I follows",
+          "is_correct": false
+        },
+        {
+          "label": "Only conclusion II follows",
+          "is_correct": false
+        },
+        {
+          "label": "Both I and II follow",
+          "is_correct": true
+        },
+        {
+          "label": "Neither I nor II follows",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Syllogism",
+      "kind": "standard",
+      "difficulty": "easy",
+      "answer_type": "single",
+      "stem": "Statements (treat as true even if they seem to contradict common facts): 1) All cats are stones. 2) No stones are roads. Conclusions: I) No cats are roads. II) All roads are cats. Which conclusion(s) logically follow?",
+      "explanation": "Testing every possible case: conclusion I must be true and conclusion II can fail whenever both statements hold — so only conclusion i follows.",
+      "options": [
+        {
+          "label": "Only conclusion I follows",
+          "is_correct": true
+        },
+        {
+          "label": "Only conclusion II follows",
+          "is_correct": false
+        },
+        {
+          "label": "Both I and II follow",
+          "is_correct": false
+        },
+        {
+          "label": "Neither I nor II follows",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Syllogism",
+      "kind": "standard",
+      "difficulty": "easy",
+      "answer_type": "single",
+      "stem": "Statements (treat as true even if they seem to contradict common facts): 1) No fans are toys. 2) All toys are roads. Conclusions: I) No fans are roads. II) All roads are fans. Which conclusion(s) logically follow?",
+      "explanation": "Testing every possible case: conclusion I can fail and conclusion II can fail whenever both statements hold — so neither i nor ii follows.",
+      "options": [
+        {
+          "label": "Only conclusion I follows",
+          "is_correct": false
+        },
+        {
+          "label": "Only conclusion II follows",
+          "is_correct": false
+        },
+        {
+          "label": "Both I and II follow",
+          "is_correct": false
+        },
+        {
+          "label": "Neither I nor II follows",
+          "is_correct": true
+        }
+      ]
+    },
+    {
+      "chapter": "Syllogism",
+      "kind": "standard",
+      "difficulty": "easy",
+      "answer_type": "single",
+      "stem": "Statements (treat as true even if they seem to contradict common facts): 1) No cups are rivers. 2) All rivers are birds. Conclusions: I) All cups are birds. II) No birds are cups. Which conclusion(s) logically follow?",
+      "explanation": "Testing every possible case: conclusion I can fail and conclusion II can fail whenever both statements hold — so neither i nor ii follows.",
+      "options": [
+        {
+          "label": "Only conclusion I follows",
+          "is_correct": false
+        },
+        {
+          "label": "Only conclusion II follows",
+          "is_correct": false
+        },
+        {
+          "label": "Both I and II follow",
+          "is_correct": false
+        },
+        {
+          "label": "Neither I nor II follows",
+          "is_correct": true
+        }
+      ]
+    },
+    {
+      "chapter": "Syllogism",
+      "kind": "standard",
+      "difficulty": "easy",
+      "answer_type": "single",
+      "stem": "Statements (treat as true even if they seem to contradict common facts): 1) All flowers are books. 2) All books are lamps. Conclusions: I) No flowers are lamps. II) All lamps are flowers. Which conclusion(s) logically follow?",
+      "explanation": "Testing every possible case: conclusion I can fail and conclusion II can fail whenever both statements hold — so neither i nor ii follows.",
+      "options": [
+        {
+          "label": "Only conclusion I follows",
+          "is_correct": false
+        },
+        {
+          "label": "Only conclusion II follows",
+          "is_correct": false
+        },
+        {
+          "label": "Both I and II follow",
+          "is_correct": false
+        },
+        {
+          "label": "Neither I nor II follows",
+          "is_correct": true
+        }
+      ]
+    },
+    {
+      "chapter": "Syllogism",
+      "kind": "standard",
+      "difficulty": "easy",
+      "answer_type": "single",
+      "stem": "Statements (treat as true even if they seem to contradict common facts): 1) No boxes are rivers. 2) No rivers are chairs. Conclusions: I) All boxes are chairs. II) All chairs are boxes. Which conclusion(s) logically follow?",
+      "explanation": "Testing every possible case: conclusion I can fail and conclusion II can fail whenever both statements hold — so neither i nor ii follows.",
+      "options": [
+        {
+          "label": "Only conclusion I follows",
+          "is_correct": false
+        },
+        {
+          "label": "Only conclusion II follows",
+          "is_correct": false
+        },
+        {
+          "label": "Both I and II follow",
+          "is_correct": false
+        },
+        {
+          "label": "Neither I nor II follows",
+          "is_correct": true
+        }
+      ]
+    }
+  ]
+}

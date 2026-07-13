@@ -1,0 +1,5205 @@
+{
+  "subject": "Reasoning",
+  "questions": [
+    {
+      "chapter": "Number Series",
+      "kind": "standard",
+      "difficulty": "easy",
+      "answer_type": "single",
+      "stem": "Find the next number in the series: 55, 46, 37, 28, 19, ?",
+      "explanation": "The pattern: each term decreases by 9. Continuing it, the next term is 10.",
+      "options": [
+        {
+          "label": "9",
+          "is_correct": false
+        },
+        {
+          "label": "10",
+          "is_correct": true
+        },
+        {
+          "label": "11",
+          "is_correct": false
+        },
+        {
+          "label": "12",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Number Series",
+      "kind": "standard",
+      "difficulty": "easy",
+      "answer_type": "single",
+      "stem": "Find the next number in the series: 82, 80, 78, 76, 74, ?",
+      "explanation": "The pattern: each term decreases by 2. Continuing it, the next term is 72.",
+      "options": [
+        {
+          "label": "73",
+          "is_correct": false
+        },
+        {
+          "label": "72",
+          "is_correct": true
+        },
+        {
+          "label": "71",
+          "is_correct": false
+        },
+        {
+          "label": "74",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Number Series",
+      "kind": "standard",
+      "difficulty": "easy",
+      "answer_type": "single",
+      "stem": "Find the next number in the series: 2, 10, 18, 26, 34, ?",
+      "explanation": "The pattern: each term increases by 8. Continuing it, the next term is 42.",
+      "options": [
+        {
+          "label": "44",
+          "is_correct": false
+        },
+        {
+          "label": "43",
+          "is_correct": false
+        },
+        {
+          "label": "41",
+          "is_correct": false
+        },
+        {
+          "label": "42",
+          "is_correct": true
+        }
+      ]
+    },
+    {
+      "chapter": "Number Series",
+      "kind": "standard",
+      "difficulty": "easy",
+      "answer_type": "single",
+      "stem": "Find the next number in the series: 5, 10, 20, 40, 80, ?",
+      "explanation": "The pattern: each term is multiplied by 2. Continuing it, the next term is 160.",
+      "options": [
+        {
+          "label": "160",
+          "is_correct": true
+        },
+        {
+          "label": "162",
+          "is_correct": false
+        },
+        {
+          "label": "159",
+          "is_correct": false
+        },
+        {
+          "label": "161",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Number Series",
+      "kind": "standard",
+      "difficulty": "easy",
+      "answer_type": "single",
+      "stem": "Find the next number in the series: 3, 6, 9, 12, 15, ?",
+      "explanation": "The pattern: consecutive multiples of 3. Continuing it, the next term is 18.",
+      "options": [
+        {
+          "label": "18",
+          "is_correct": true
+        },
+        {
+          "label": "19",
+          "is_correct": false
+        },
+        {
+          "label": "20",
+          "is_correct": false
+        },
+        {
+          "label": "17",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Number Series",
+      "kind": "standard",
+      "difficulty": "easy",
+      "answer_type": "single",
+      "stem": "Find the next number in the series: 5, 10, 15, 20, 25, ?",
+      "explanation": "The pattern: consecutive multiples of 5. Continuing it, the next term is 30.",
+      "options": [
+        {
+          "label": "29",
+          "is_correct": false
+        },
+        {
+          "label": "32",
+          "is_correct": false
+        },
+        {
+          "label": "31",
+          "is_correct": false
+        },
+        {
+          "label": "30",
+          "is_correct": true
+        }
+      ]
+    },
+    {
+      "chapter": "Number Series",
+      "kind": "standard",
+      "difficulty": "easy",
+      "answer_type": "single",
+      "stem": "Find the next number in the series: 4, 12, 36, 108, ?",
+      "explanation": "The pattern: each term is multiplied by 3. Continuing it, the next term is 324.",
+      "options": [
+        {
+          "label": "324",
+          "is_correct": true
+        },
+        {
+          "label": "323",
+          "is_correct": false
+        },
+        {
+          "label": "326",
+          "is_correct": false
+        },
+        {
+          "label": "325",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Number Series",
+      "kind": "standard",
+      "difficulty": "easy",
+      "answer_type": "single",
+      "stem": "Find the next number in the series: 10, 20, 30, 40, 50, ?",
+      "explanation": "The pattern: consecutive multiples of 10. Continuing it, the next term is 60.",
+      "options": [
+        {
+          "label": "60",
+          "is_correct": true
+        },
+        {
+          "label": "62",
+          "is_correct": false
+        },
+        {
+          "label": "61",
+          "is_correct": false
+        },
+        {
+          "label": "59",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Number Series",
+      "kind": "standard",
+      "difficulty": "easy",
+      "answer_type": "single",
+      "stem": "Find the next number in the series: 13, 22, 31, 40, 49, ?",
+      "explanation": "The pattern: each term increases by 9. Continuing it, the next term is 58.",
+      "options": [
+        {
+          "label": "57",
+          "is_correct": false
+        },
+        {
+          "label": "59",
+          "is_correct": false
+        },
+        {
+          "label": "58",
+          "is_correct": true
+        },
+        {
+          "label": "60",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Number Series",
+      "kind": "standard",
+      "difficulty": "easy",
+      "answer_type": "single",
+      "stem": "Find the next number in the series: 9, 18, 27, 36, 45, ?",
+      "explanation": "The pattern: consecutive multiples of 9. Continuing it, the next term is 54.",
+      "options": [
+        {
+          "label": "55",
+          "is_correct": false
+        },
+        {
+          "label": "56",
+          "is_correct": false
+        },
+        {
+          "label": "54",
+          "is_correct": true
+        },
+        {
+          "label": "53",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Number Series",
+      "kind": "standard",
+      "difficulty": "easy",
+      "answer_type": "single",
+      "stem": "Find the next number in the series: 10, 12, 14, 16, 18, ?",
+      "explanation": "The pattern: each term increases by 2. Continuing it, the next term is 20.",
+      "options": [
+        {
+          "label": "19",
+          "is_correct": false
+        },
+        {
+          "label": "21",
+          "is_correct": false
+        },
+        {
+          "label": "20",
+          "is_correct": true
+        },
+        {
+          "label": "22",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Number Series",
+      "kind": "standard",
+      "difficulty": "easy",
+      "answer_type": "single",
+      "stem": "Find the next number in the series: 1, 2, 4, 8, 16, ?",
+      "explanation": "The pattern: each term is multiplied by 2. Continuing it, the next term is 32.",
+      "options": [
+        {
+          "label": "32",
+          "is_correct": true
+        },
+        {
+          "label": "31",
+          "is_correct": false
+        },
+        {
+          "label": "33",
+          "is_correct": false
+        },
+        {
+          "label": "34",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Number Series",
+      "kind": "standard",
+      "difficulty": "easy",
+      "answer_type": "single",
+      "stem": "Find the next number in the series: 9, 15, 21, 27, 33, ?",
+      "explanation": "The pattern: each term increases by 6. Continuing it, the next term is 39.",
+      "options": [
+        {
+          "label": "40",
+          "is_correct": false
+        },
+        {
+          "label": "41",
+          "is_correct": false
+        },
+        {
+          "label": "39",
+          "is_correct": true
+        },
+        {
+          "label": "38",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Number Series",
+      "kind": "standard",
+      "difficulty": "easy",
+      "answer_type": "single",
+      "stem": "Find the next number in the series: 2, 6, 18, 54, ?",
+      "explanation": "The pattern: each term is multiplied by 3. Continuing it, the next term is 162.",
+      "options": [
+        {
+          "label": "163",
+          "is_correct": false
+        },
+        {
+          "label": "161",
+          "is_correct": false
+        },
+        {
+          "label": "164",
+          "is_correct": false
+        },
+        {
+          "label": "162",
+          "is_correct": true
+        }
+      ]
+    },
+    {
+      "chapter": "Number Series",
+      "kind": "standard",
+      "difficulty": "easy",
+      "answer_type": "single",
+      "stem": "Find the next number in the series: 4, 8, 16, 32, 64, ?",
+      "explanation": "The pattern: each term is multiplied by 2. Continuing it, the next term is 128.",
+      "options": [
+        {
+          "label": "129",
+          "is_correct": false
+        },
+        {
+          "label": "127",
+          "is_correct": false
+        },
+        {
+          "label": "130",
+          "is_correct": false
+        },
+        {
+          "label": "128",
+          "is_correct": true
+        }
+      ]
+    },
+    {
+      "chapter": "Number Series",
+      "kind": "standard",
+      "difficulty": "easy",
+      "answer_type": "single",
+      "stem": "Find the next number in the series: 76, 72, 68, 64, 60, ?",
+      "explanation": "The pattern: each term decreases by 4. Continuing it, the next term is 56.",
+      "options": [
+        {
+          "label": "58",
+          "is_correct": false
+        },
+        {
+          "label": "57",
+          "is_correct": false
+        },
+        {
+          "label": "55",
+          "is_correct": false
+        },
+        {
+          "label": "56",
+          "is_correct": true
+        }
+      ]
+    },
+    {
+      "chapter": "Number Series",
+      "kind": "standard",
+      "difficulty": "easy",
+      "answer_type": "single",
+      "stem": "Find the next number in the series: 84, 82, 80, 78, 76, ?",
+      "explanation": "The pattern: each term decreases by 2. Continuing it, the next term is 74.",
+      "options": [
+        {
+          "label": "76",
+          "is_correct": false
+        },
+        {
+          "label": "73",
+          "is_correct": false
+        },
+        {
+          "label": "74",
+          "is_correct": true
+        },
+        {
+          "label": "75",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Number Series",
+      "kind": "standard",
+      "difficulty": "easy",
+      "answer_type": "single",
+      "stem": "Find the next number in the series: 6, 13, 20, 27, 34, ?",
+      "explanation": "The pattern: each term increases by 7. Continuing it, the next term is 41.",
+      "options": [
+        {
+          "label": "41",
+          "is_correct": true
+        },
+        {
+          "label": "42",
+          "is_correct": false
+        },
+        {
+          "label": "40",
+          "is_correct": false
+        },
+        {
+          "label": "43",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Number Series",
+      "kind": "standard",
+      "difficulty": "easy",
+      "answer_type": "single",
+      "stem": "Find the next number in the series: 1, 3, 9, 27, ?",
+      "explanation": "The pattern: each term is multiplied by 3. Continuing it, the next term is 81.",
+      "options": [
+        {
+          "label": "82",
+          "is_correct": false
+        },
+        {
+          "label": "81",
+          "is_correct": true
+        },
+        {
+          "label": "80",
+          "is_correct": false
+        },
+        {
+          "label": "83",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Number Series",
+      "kind": "standard",
+      "difficulty": "easy",
+      "answer_type": "single",
+      "stem": "Find the next number in the series: 55, 47, 39, 31, 23, ?",
+      "explanation": "The pattern: each term decreases by 8. Continuing it, the next term is 15.",
+      "options": [
+        {
+          "label": "15",
+          "is_correct": true
+        },
+        {
+          "label": "14",
+          "is_correct": false
+        },
+        {
+          "label": "17",
+          "is_correct": false
+        },
+        {
+          "label": "16",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Number Series",
+      "kind": "standard",
+      "difficulty": "easy",
+      "answer_type": "single",
+      "stem": "Find the next number in the series: 11, 22, 33, 44, 55, ?",
+      "explanation": "The pattern: consecutive multiples of 11. Continuing it, the next term is 66.",
+      "options": [
+        {
+          "label": "68",
+          "is_correct": false
+        },
+        {
+          "label": "67",
+          "is_correct": false
+        },
+        {
+          "label": "65",
+          "is_correct": false
+        },
+        {
+          "label": "66",
+          "is_correct": true
+        }
+      ]
+    },
+    {
+      "chapter": "Number Series",
+      "kind": "standard",
+      "difficulty": "easy",
+      "answer_type": "single",
+      "stem": "Find the next number in the series: 11, 15, 19, 23, 27, ?",
+      "explanation": "The pattern: each term increases by 4. Continuing it, the next term is 31.",
+      "options": [
+        {
+          "label": "31",
+          "is_correct": true
+        },
+        {
+          "label": "32",
+          "is_correct": false
+        },
+        {
+          "label": "33",
+          "is_correct": false
+        },
+        {
+          "label": "30",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Number Series",
+      "kind": "standard",
+      "difficulty": "easy",
+      "answer_type": "single",
+      "stem": "Find the next number in the series: 74, 66, 58, 50, 42, ?",
+      "explanation": "The pattern: each term decreases by 8. Continuing it, the next term is 34.",
+      "options": [
+        {
+          "label": "33",
+          "is_correct": false
+        },
+        {
+          "label": "34",
+          "is_correct": true
+        },
+        {
+          "label": "35",
+          "is_correct": false
+        },
+        {
+          "label": "36",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Number Series",
+      "kind": "standard",
+      "difficulty": "easy",
+      "answer_type": "single",
+      "stem": "Find the next number in the series: 15, 18, 21, 24, 27, ?",
+      "explanation": "The pattern: each term increases by 3. Continuing it, the next term is 30.",
+      "options": [
+        {
+          "label": "29",
+          "is_correct": false
+        },
+        {
+          "label": "31",
+          "is_correct": false
+        },
+        {
+          "label": "30",
+          "is_correct": true
+        },
+        {
+          "label": "32",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Number Series",
+      "kind": "standard",
+      "difficulty": "easy",
+      "answer_type": "single",
+      "stem": "Find the next number in the series: 68, 59, 50, 41, 32, ?",
+      "explanation": "The pattern: each term decreases by 9. Continuing it, the next term is 23.",
+      "options": [
+        {
+          "label": "24",
+          "is_correct": false
+        },
+        {
+          "label": "23",
+          "is_correct": true
+        },
+        {
+          "label": "22",
+          "is_correct": false
+        },
+        {
+          "label": "25",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Number Series",
+      "kind": "standard",
+      "difficulty": "easy",
+      "answer_type": "single",
+      "stem": "Find the next number in the series: 13, 17, 21, 25, 29, ?",
+      "explanation": "The pattern: each term increases by 4. Continuing it, the next term is 33.",
+      "options": [
+        {
+          "label": "34",
+          "is_correct": false
+        },
+        {
+          "label": "35",
+          "is_correct": false
+        },
+        {
+          "label": "33",
+          "is_correct": true
+        },
+        {
+          "label": "32",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Number Series",
+      "kind": "standard",
+      "difficulty": "easy",
+      "answer_type": "single",
+      "stem": "Find the next number in the series: 11, 16, 21, 26, 31, ?",
+      "explanation": "The pattern: each term increases by 5. Continuing it, the next term is 36.",
+      "options": [
+        {
+          "label": "38",
+          "is_correct": false
+        },
+        {
+          "label": "37",
+          "is_correct": false
+        },
+        {
+          "label": "35",
+          "is_correct": false
+        },
+        {
+          "label": "36",
+          "is_correct": true
+        }
+      ]
+    },
+    {
+      "chapter": "Number Series",
+      "kind": "standard",
+      "difficulty": "easy",
+      "answer_type": "single",
+      "stem": "Find the next number in the series: 3, 9, 27, 81, ?",
+      "explanation": "The pattern: each term is multiplied by 3. Continuing it, the next term is 243.",
+      "options": [
+        {
+          "label": "243",
+          "is_correct": true
+        },
+        {
+          "label": "245",
+          "is_correct": false
+        },
+        {
+          "label": "242",
+          "is_correct": false
+        },
+        {
+          "label": "244",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Number Series",
+      "kind": "standard",
+      "difficulty": "easy",
+      "answer_type": "single",
+      "stem": "Find the next number in the series: 75, 69, 63, 57, 51, ?",
+      "explanation": "The pattern: each term decreases by 6. Continuing it, the next term is 45.",
+      "options": [
+        {
+          "label": "46",
+          "is_correct": false
+        },
+        {
+          "label": "44",
+          "is_correct": false
+        },
+        {
+          "label": "45",
+          "is_correct": true
+        },
+        {
+          "label": "47",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Number Series",
+      "kind": "standard",
+      "difficulty": "easy",
+      "answer_type": "single",
+      "stem": "Find the next number in the series: 4, 10, 16, 22, 28, ?",
+      "explanation": "The pattern: each term increases by 6. Continuing it, the next term is 34.",
+      "options": [
+        {
+          "label": "35",
+          "is_correct": false
+        },
+        {
+          "label": "34",
+          "is_correct": true
+        },
+        {
+          "label": "33",
+          "is_correct": false
+        },
+        {
+          "label": "36",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Number Series",
+      "kind": "standard",
+      "difficulty": "easy",
+      "answer_type": "single",
+      "stem": "Find the next number in the series: 80, 74, 68, 62, 56, ?",
+      "explanation": "The pattern: each term decreases by 6. Continuing it, the next term is 50.",
+      "options": [
+        {
+          "label": "51",
+          "is_correct": false
+        },
+        {
+          "label": "49",
+          "is_correct": false
+        },
+        {
+          "label": "52",
+          "is_correct": false
+        },
+        {
+          "label": "50",
+          "is_correct": true
+        }
+      ]
+    },
+    {
+      "chapter": "Number Series",
+      "kind": "standard",
+      "difficulty": "easy",
+      "answer_type": "single",
+      "stem": "Find the next number in the series: 7, 14, 21, 28, 35, ?",
+      "explanation": "The pattern: consecutive multiples of 7. Continuing it, the next term is 42.",
+      "options": [
+        {
+          "label": "42",
+          "is_correct": true
+        },
+        {
+          "label": "41",
+          "is_correct": false
+        },
+        {
+          "label": "44",
+          "is_correct": false
+        },
+        {
+          "label": "43",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Number Series",
+      "kind": "standard",
+      "difficulty": "easy",
+      "answer_type": "single",
+      "stem": "Find the next number in the series: 4, 8, 12, 16, 20, ?",
+      "explanation": "The pattern: consecutive multiples of 4. Continuing it, the next term is 24.",
+      "options": [
+        {
+          "label": "24",
+          "is_correct": true
+        },
+        {
+          "label": "25",
+          "is_correct": false
+        },
+        {
+          "label": "23",
+          "is_correct": false
+        },
+        {
+          "label": "26",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Number Series",
+      "kind": "standard",
+      "difficulty": "easy",
+      "answer_type": "single",
+      "stem": "Find the next number in the series: 88, 82, 76, 70, 64, ?",
+      "explanation": "The pattern: each term decreases by 6. Continuing it, the next term is 58.",
+      "options": [
+        {
+          "label": "60",
+          "is_correct": false
+        },
+        {
+          "label": "58",
+          "is_correct": true
+        },
+        {
+          "label": "57",
+          "is_correct": false
+        },
+        {
+          "label": "59",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Number Series",
+      "kind": "standard",
+      "difficulty": "easy",
+      "answer_type": "single",
+      "stem": "Find the next number in the series: 10, 14, 18, 22, 26, ?",
+      "explanation": "The pattern: each term increases by 4. Continuing it, the next term is 30.",
+      "options": [
+        {
+          "label": "32",
+          "is_correct": false
+        },
+        {
+          "label": "30",
+          "is_correct": true
+        },
+        {
+          "label": "29",
+          "is_correct": false
+        },
+        {
+          "label": "31",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Number Series",
+      "kind": "standard",
+      "difficulty": "easy",
+      "answer_type": "single",
+      "stem": "Find the next number in the series: 10, 17, 24, 31, 38, ?",
+      "explanation": "The pattern: each term increases by 7. Continuing it, the next term is 45.",
+      "options": [
+        {
+          "label": "47",
+          "is_correct": false
+        },
+        {
+          "label": "46",
+          "is_correct": false
+        },
+        {
+          "label": "45",
+          "is_correct": true
+        },
+        {
+          "label": "44",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Number Series",
+      "kind": "standard",
+      "difficulty": "easy",
+      "answer_type": "single",
+      "stem": "Find the next number in the series: 6, 12, 24, 48, 96, ?",
+      "explanation": "The pattern: each term is multiplied by 2. Continuing it, the next term is 192.",
+      "options": [
+        {
+          "label": "192",
+          "is_correct": true
+        },
+        {
+          "label": "191",
+          "is_correct": false
+        },
+        {
+          "label": "194",
+          "is_correct": false
+        },
+        {
+          "label": "193",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Number Series",
+      "kind": "standard",
+      "difficulty": "easy",
+      "answer_type": "single",
+      "stem": "Find the next number in the series: 66, 61, 56, 51, 46, ?",
+      "explanation": "The pattern: each term decreases by 5. Continuing it, the next term is 41.",
+      "options": [
+        {
+          "label": "43",
+          "is_correct": false
+        },
+        {
+          "label": "41",
+          "is_correct": true
+        },
+        {
+          "label": "42",
+          "is_correct": false
+        },
+        {
+          "label": "40",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Number Series",
+      "kind": "standard",
+      "difficulty": "easy",
+      "answer_type": "single",
+      "stem": "Find the next number in the series: 2, 4, 8, 16, 32, ?",
+      "explanation": "The pattern: each term is multiplied by 2. Continuing it, the next term is 64.",
+      "options": [
+        {
+          "label": "64",
+          "is_correct": true
+        },
+        {
+          "label": "66",
+          "is_correct": false
+        },
+        {
+          "label": "63",
+          "is_correct": false
+        },
+        {
+          "label": "65",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Number Series",
+      "kind": "standard",
+      "difficulty": "easy",
+      "answer_type": "single",
+      "stem": "Find the next number in the series: 81, 76, 71, 66, 61, ?",
+      "explanation": "The pattern: each term decreases by 5. Continuing it, the next term is 56.",
+      "options": [
+        {
+          "label": "57",
+          "is_correct": false
+        },
+        {
+          "label": "56",
+          "is_correct": true
+        },
+        {
+          "label": "58",
+          "is_correct": false
+        },
+        {
+          "label": "55",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Number Series",
+      "kind": "standard",
+      "difficulty": "easy",
+      "answer_type": "single",
+      "stem": "Find the next number in the series: 63, 59, 55, 51, 47, ?",
+      "explanation": "The pattern: each term decreases by 4. Continuing it, the next term is 43.",
+      "options": [
+        {
+          "label": "45",
+          "is_correct": false
+        },
+        {
+          "label": "42",
+          "is_correct": false
+        },
+        {
+          "label": "44",
+          "is_correct": false
+        },
+        {
+          "label": "43",
+          "is_correct": true
+        }
+      ]
+    },
+    {
+      "chapter": "Number Series",
+      "kind": "standard",
+      "difficulty": "easy",
+      "answer_type": "single",
+      "stem": "Find the next number in the series: 12, 21, 30, 39, 48, ?",
+      "explanation": "The pattern: each term increases by 9. Continuing it, the next term is 57.",
+      "options": [
+        {
+          "label": "57",
+          "is_correct": true
+        },
+        {
+          "label": "56",
+          "is_correct": false
+        },
+        {
+          "label": "58",
+          "is_correct": false
+        },
+        {
+          "label": "59",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Number Series",
+      "kind": "standard",
+      "difficulty": "easy",
+      "answer_type": "single",
+      "stem": "Find the next number in the series: 63, 58, 53, 48, 43, ?",
+      "explanation": "The pattern: each term decreases by 5. Continuing it, the next term is 38.",
+      "options": [
+        {
+          "label": "39",
+          "is_correct": false
+        },
+        {
+          "label": "38",
+          "is_correct": true
+        },
+        {
+          "label": "40",
+          "is_correct": false
+        },
+        {
+          "label": "37",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Number Series",
+      "kind": "standard",
+      "difficulty": "easy",
+      "answer_type": "single",
+      "stem": "Find the next number in the series: 58, 49, 40, 31, 22, ?",
+      "explanation": "The pattern: each term decreases by 9. Continuing it, the next term is 13.",
+      "options": [
+        {
+          "label": "14",
+          "is_correct": false
+        },
+        {
+          "label": "13",
+          "is_correct": true
+        },
+        {
+          "label": "12",
+          "is_correct": false
+        },
+        {
+          "label": "15",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Number Series",
+      "kind": "standard",
+      "difficulty": "easy",
+      "answer_type": "single",
+      "stem": "Find the next number in the series: 13, 21, 29, 37, 45, ?",
+      "explanation": "The pattern: each term increases by 8. Continuing it, the next term is 53.",
+      "options": [
+        {
+          "label": "54",
+          "is_correct": false
+        },
+        {
+          "label": "55",
+          "is_correct": false
+        },
+        {
+          "label": "53",
+          "is_correct": true
+        },
+        {
+          "label": "52",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Number Series",
+      "kind": "standard",
+      "difficulty": "easy",
+      "answer_type": "single",
+      "stem": "Find the next number in the series: 72, 64, 56, 48, 40, ?",
+      "explanation": "The pattern: each term decreases by 8. Continuing it, the next term is 32.",
+      "options": [
+        {
+          "label": "31",
+          "is_correct": false
+        },
+        {
+          "label": "32",
+          "is_correct": true
+        },
+        {
+          "label": "34",
+          "is_correct": false
+        },
+        {
+          "label": "33",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Number Series",
+      "kind": "standard",
+      "difficulty": "easy",
+      "answer_type": "single",
+      "stem": "Find the next number in the series: 57, 54, 51, 48, 45, ?",
+      "explanation": "The pattern: each term decreases by 3. Continuing it, the next term is 42.",
+      "options": [
+        {
+          "label": "44",
+          "is_correct": false
+        },
+        {
+          "label": "42",
+          "is_correct": true
+        },
+        {
+          "label": "43",
+          "is_correct": false
+        },
+        {
+          "label": "41",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Number Series",
+      "kind": "standard",
+      "difficulty": "easy",
+      "answer_type": "single",
+      "stem": "Find the next number in the series: 12, 19, 26, 33, 40, ?",
+      "explanation": "The pattern: each term increases by 7. Continuing it, the next term is 47.",
+      "options": [
+        {
+          "label": "47",
+          "is_correct": true
+        },
+        {
+          "label": "48",
+          "is_correct": false
+        },
+        {
+          "label": "46",
+          "is_correct": false
+        },
+        {
+          "label": "49",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Number Series",
+      "kind": "standard",
+      "difficulty": "easy",
+      "answer_type": "single",
+      "stem": "Find the next number in the series: 6, 14, 22, 30, 38, ?",
+      "explanation": "The pattern: each term increases by 8. Continuing it, the next term is 46.",
+      "options": [
+        {
+          "label": "46",
+          "is_correct": true
+        },
+        {
+          "label": "47",
+          "is_correct": false
+        },
+        {
+          "label": "48",
+          "is_correct": false
+        },
+        {
+          "label": "45",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Number Series",
+      "kind": "standard",
+      "difficulty": "easy",
+      "answer_type": "single",
+      "stem": "Find the next number in the series: 7, 11, 15, 19, 23, ?",
+      "explanation": "The pattern: each term increases by 4. Continuing it, the next term is 27.",
+      "options": [
+        {
+          "label": "26",
+          "is_correct": false
+        },
+        {
+          "label": "27",
+          "is_correct": true
+        },
+        {
+          "label": "28",
+          "is_correct": false
+        },
+        {
+          "label": "29",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Number Series",
+      "kind": "standard",
+      "difficulty": "medium",
+      "answer_type": "single",
+      "stem": "Find the next number in the series: 27, 64, 125, 216, ?",
+      "explanation": "The pattern: perfect cubes of 3, 4, …. Continuing it, the next term is 343.",
+      "options": [
+        {
+          "label": "345",
+          "is_correct": false
+        },
+        {
+          "label": "344",
+          "is_correct": false
+        },
+        {
+          "label": "343",
+          "is_correct": true
+        },
+        {
+          "label": "342",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Number Series",
+      "kind": "standard",
+      "difficulty": "medium",
+      "answer_type": "single",
+      "stem": "Find the next number in the series: 1, 3, 6, 10, 15, ?",
+      "explanation": "The pattern: triangular numbers (add 2, 3, 4, 5, …). Continuing it, the next term is 21.",
+      "options": [
+        {
+          "label": "22",
+          "is_correct": false
+        },
+        {
+          "label": "23",
+          "is_correct": false
+        },
+        {
+          "label": "21",
+          "is_correct": true
+        },
+        {
+          "label": "20",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Number Series",
+      "kind": "standard",
+      "difficulty": "medium",
+      "answer_type": "single",
+      "stem": "Find the next number in the series: 26, 37, 50, 65, 82, ?",
+      "explanation": "The pattern: n² + 1 for n = 5, 6, …. Continuing it, the next term is 101.",
+      "options": [
+        {
+          "label": "103",
+          "is_correct": false
+        },
+        {
+          "label": "101",
+          "is_correct": true
+        },
+        {
+          "label": "100",
+          "is_correct": false
+        },
+        {
+          "label": "102",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Number Series",
+      "kind": "standard",
+      "difficulty": "medium",
+      "answer_type": "single",
+      "stem": "Find the next number in the series: 3, 5, 8, 12, 17, ?",
+      "explanation": "The pattern: the gap grows by 1 each step (add 2, 3, 4, …). Continuing it, the next term is 23.",
+      "options": [
+        {
+          "label": "24",
+          "is_correct": false
+        },
+        {
+          "label": "22",
+          "is_correct": false
+        },
+        {
+          "label": "23",
+          "is_correct": true
+        },
+        {
+          "label": "25",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Number Series",
+      "kind": "standard",
+      "difficulty": "medium",
+      "answer_type": "single",
+      "stem": "Find the next number in the series: 8, 11, 17, 26, 38, ?",
+      "explanation": "The pattern: the gap grows by 3 each step (add 3, 6, 9, …). Continuing it, the next term is 53.",
+      "options": [
+        {
+          "label": "52",
+          "is_correct": false
+        },
+        {
+          "label": "53",
+          "is_correct": true
+        },
+        {
+          "label": "54",
+          "is_correct": false
+        },
+        {
+          "label": "55",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Number Series",
+      "kind": "standard",
+      "difficulty": "medium",
+      "answer_type": "single",
+      "stem": "Find the next number in the series: 64, 125, 216, 343, ?",
+      "explanation": "The pattern: perfect cubes of 4, 5, …. Continuing it, the next term is 512.",
+      "options": [
+        {
+          "label": "512",
+          "is_correct": true
+        },
+        {
+          "label": "513",
+          "is_correct": false
+        },
+        {
+          "label": "514",
+          "is_correct": false
+        },
+        {
+          "label": "511",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Number Series",
+      "kind": "standard",
+      "difficulty": "medium",
+      "answer_type": "single",
+      "stem": "Find the next number in the series: 7, 10, 15, 22, 31, ?",
+      "explanation": "The pattern: the gap grows by 2 each step (add 3, 5, 7, …). Continuing it, the next term is 42.",
+      "options": [
+        {
+          "label": "43",
+          "is_correct": false
+        },
+        {
+          "label": "44",
+          "is_correct": false
+        },
+        {
+          "label": "42",
+          "is_correct": true
+        },
+        {
+          "label": "41",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Number Series",
+      "kind": "standard",
+      "difficulty": "medium",
+      "answer_type": "single",
+      "stem": "Find the next number in the series: 125, 216, 343, 512, ?",
+      "explanation": "The pattern: perfect cubes of 5, 6, …. Continuing it, the next term is 729.",
+      "options": [
+        {
+          "label": "728",
+          "is_correct": false
+        },
+        {
+          "label": "729",
+          "is_correct": true
+        },
+        {
+          "label": "731",
+          "is_correct": false
+        },
+        {
+          "label": "730",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Number Series",
+      "kind": "standard",
+      "difficulty": "medium",
+      "answer_type": "single",
+      "stem": "Find the next number in the series: 8, 9, 13, 20, 30, ?",
+      "explanation": "The pattern: the gap grows by 3 each step (add 1, 4, 7, …). Continuing it, the next term is 43.",
+      "options": [
+        {
+          "label": "43",
+          "is_correct": true
+        },
+        {
+          "label": "45",
+          "is_correct": false
+        },
+        {
+          "label": "44",
+          "is_correct": false
+        },
+        {
+          "label": "42",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Number Series",
+      "kind": "standard",
+      "difficulty": "medium",
+      "answer_type": "single",
+      "stem": "Find the next number in the series: 3, 6, 10, 15, 21, ?",
+      "explanation": "The pattern: triangular numbers (add 2, 3, 4, 5, …). Continuing it, the next term is 28.",
+      "options": [
+        {
+          "label": "28",
+          "is_correct": true
+        },
+        {
+          "label": "30",
+          "is_correct": false
+        },
+        {
+          "label": "29",
+          "is_correct": false
+        },
+        {
+          "label": "27",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Number Series",
+      "kind": "standard",
+      "difficulty": "medium",
+      "answer_type": "single",
+      "stem": "Find the next number in the series: 49, 64, 81, 100, 121, ?",
+      "explanation": "The pattern: perfect squares of 7, 8, 9, …. Continuing it, the next term is 144.",
+      "options": [
+        {
+          "label": "144",
+          "is_correct": true
+        },
+        {
+          "label": "143",
+          "is_correct": false
+        },
+        {
+          "label": "146",
+          "is_correct": false
+        },
+        {
+          "label": "145",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Number Series",
+      "kind": "standard",
+      "difficulty": "medium",
+      "answer_type": "single",
+      "stem": "Find the next number in the series: 16, 25, 36, 49, 64, ?",
+      "explanation": "The pattern: perfect squares of 4, 5, 6, …. Continuing it, the next term is 81.",
+      "options": [
+        {
+          "label": "82",
+          "is_correct": false
+        },
+        {
+          "label": "83",
+          "is_correct": false
+        },
+        {
+          "label": "80",
+          "is_correct": false
+        },
+        {
+          "label": "81",
+          "is_correct": true
+        }
+      ]
+    },
+    {
+      "chapter": "Number Series",
+      "kind": "standard",
+      "difficulty": "medium",
+      "answer_type": "single",
+      "stem": "Find the next number in the series: 2, 3, 5, 7, 11, ?",
+      "explanation": "The pattern: consecutive prime numbers. Continuing it, the next term is 13.",
+      "options": [
+        {
+          "label": "14",
+          "is_correct": false
+        },
+        {
+          "label": "15",
+          "is_correct": false
+        },
+        {
+          "label": "12",
+          "is_correct": false
+        },
+        {
+          "label": "13",
+          "is_correct": true
+        }
+      ]
+    },
+    {
+      "chapter": "Number Series",
+      "kind": "standard",
+      "difficulty": "medium",
+      "answer_type": "single",
+      "stem": "Find the next number in the series: 2, 6, 12, 20, 30, ?",
+      "explanation": "The pattern: the gap grows by 2 each step (add 4, 6, 8, …). Continuing it, the next term is 42.",
+      "options": [
+        {
+          "label": "44",
+          "is_correct": false
+        },
+        {
+          "label": "42",
+          "is_correct": true
+        },
+        {
+          "label": "43",
+          "is_correct": false
+        },
+        {
+          "label": "41",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Number Series",
+      "kind": "standard",
+      "difficulty": "medium",
+      "answer_type": "single",
+      "stem": "Find the next number in the series: 11, 13, 17, 19, 23, ?",
+      "explanation": "The pattern: consecutive prime numbers. Continuing it, the next term is 29.",
+      "options": [
+        {
+          "label": "29",
+          "is_correct": true
+        },
+        {
+          "label": "31",
+          "is_correct": false
+        },
+        {
+          "label": "28",
+          "is_correct": false
+        },
+        {
+          "label": "30",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Number Series",
+      "kind": "standard",
+      "difficulty": "medium",
+      "answer_type": "single",
+      "stem": "Find the next number in the series: 37, 50, 65, 82, 101, ?",
+      "explanation": "The pattern: n² + 1 for n = 6, 7, …. Continuing it, the next term is 122.",
+      "options": [
+        {
+          "label": "122",
+          "is_correct": true
+        },
+        {
+          "label": "121",
+          "is_correct": false
+        },
+        {
+          "label": "123",
+          "is_correct": false
+        },
+        {
+          "label": "124",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Number Series",
+      "kind": "standard",
+      "difficulty": "medium",
+      "answer_type": "single",
+      "stem": "Find the next number in the series: 36, 49, 64, 81, 100, ?",
+      "explanation": "The pattern: perfect squares of 6, 7, 8, …. Continuing it, the next term is 121.",
+      "options": [
+        {
+          "label": "122",
+          "is_correct": false
+        },
+        {
+          "label": "123",
+          "is_correct": false
+        },
+        {
+          "label": "121",
+          "is_correct": true
+        },
+        {
+          "label": "120",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Number Series",
+      "kind": "standard",
+      "difficulty": "medium",
+      "answer_type": "single",
+      "stem": "Find the next number in the series: 3, 4, 7, 12, 19, ?",
+      "explanation": "The pattern: the gap grows by 2 each step (add 1, 3, 5, …). Continuing it, the next term is 28.",
+      "options": [
+        {
+          "label": "27",
+          "is_correct": false
+        },
+        {
+          "label": "30",
+          "is_correct": false
+        },
+        {
+          "label": "29",
+          "is_correct": false
+        },
+        {
+          "label": "28",
+          "is_correct": true
+        }
+      ]
+    },
+    {
+      "chapter": "Number Series",
+      "kind": "standard",
+      "difficulty": "medium",
+      "answer_type": "single",
+      "stem": "Find the next number in the series: 6, 10, 15, 21, 28, ?",
+      "explanation": "The pattern: triangular numbers (add 2, 3, 4, 5, …). Continuing it, the next term is 36.",
+      "options": [
+        {
+          "label": "35",
+          "is_correct": false
+        },
+        {
+          "label": "38",
+          "is_correct": false
+        },
+        {
+          "label": "36",
+          "is_correct": true
+        },
+        {
+          "label": "37",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Number Series",
+      "kind": "standard",
+      "difficulty": "medium",
+      "answer_type": "single",
+      "stem": "Find the next number in the series: 17, 26, 37, 50, 65, ?",
+      "explanation": "The pattern: n² + 1 for n = 4, 5, …. Continuing it, the next term is 82.",
+      "options": [
+        {
+          "label": "82",
+          "is_correct": true
+        },
+        {
+          "label": "81",
+          "is_correct": false
+        },
+        {
+          "label": "84",
+          "is_correct": false
+        },
+        {
+          "label": "83",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Number Series",
+      "kind": "standard",
+      "difficulty": "medium",
+      "answer_type": "single",
+      "stem": "Find the next number in the series: 5, 10, 17, 26, 37, ?",
+      "explanation": "The pattern: n² + 1 for n = 2, 3, …. Continuing it, the next term is 50.",
+      "options": [
+        {
+          "label": "51",
+          "is_correct": false
+        },
+        {
+          "label": "50",
+          "is_correct": true
+        },
+        {
+          "label": "52",
+          "is_correct": false
+        },
+        {
+          "label": "49",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Number Series",
+      "kind": "standard",
+      "difficulty": "medium",
+      "answer_type": "single",
+      "stem": "Find the next number in the series: 25, 36, 49, 64, 81, ?",
+      "explanation": "The pattern: perfect squares of 5, 6, 7, …. Continuing it, the next term is 100.",
+      "options": [
+        {
+          "label": "102",
+          "is_correct": false
+        },
+        {
+          "label": "99",
+          "is_correct": false
+        },
+        {
+          "label": "100",
+          "is_correct": true
+        },
+        {
+          "label": "101",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Number Series",
+      "kind": "standard",
+      "difficulty": "medium",
+      "answer_type": "single",
+      "stem": "Find the next number in the series: 5, 7, 11, 13, 17, ?",
+      "explanation": "The pattern: consecutive prime numbers. Continuing it, the next term is 19.",
+      "options": [
+        {
+          "label": "19",
+          "is_correct": true
+        },
+        {
+          "label": "18",
+          "is_correct": false
+        },
+        {
+          "label": "20",
+          "is_correct": false
+        },
+        {
+          "label": "21",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Number Series",
+      "kind": "standard",
+      "difficulty": "medium",
+      "answer_type": "single",
+      "stem": "Find the next number in the series: 6, 7, 9, 12, 16, ?",
+      "explanation": "The pattern: the gap grows by 1 each step (add 1, 2, 3, …). Continuing it, the next term is 21.",
+      "options": [
+        {
+          "label": "20",
+          "is_correct": false
+        },
+        {
+          "label": "22",
+          "is_correct": false
+        },
+        {
+          "label": "21",
+          "is_correct": true
+        },
+        {
+          "label": "23",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Number Series",
+      "kind": "standard",
+      "difficulty": "medium",
+      "answer_type": "single",
+      "stem": "Find the next number in the series: 3, 5, 7, 11, 13, ?",
+      "explanation": "The pattern: consecutive prime numbers. Continuing it, the next term is 17.",
+      "options": [
+        {
+          "label": "19",
+          "is_correct": false
+        },
+        {
+          "label": "17",
+          "is_correct": true
+        },
+        {
+          "label": "18",
+          "is_correct": false
+        },
+        {
+          "label": "16",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Number Series",
+      "kind": "standard",
+      "difficulty": "medium",
+      "answer_type": "single",
+      "stem": "Find the next number in the series: 2, 3, 7, 14, 24, ?",
+      "explanation": "The pattern: the gap grows by 3 each step (add 1, 4, 7, …). Continuing it, the next term is 37.",
+      "options": [
+        {
+          "label": "36",
+          "is_correct": false
+        },
+        {
+          "label": "37",
+          "is_correct": true
+        },
+        {
+          "label": "39",
+          "is_correct": false
+        },
+        {
+          "label": "38",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Number Series",
+      "kind": "standard",
+      "difficulty": "medium",
+      "answer_type": "single",
+      "stem": "Find the next number in the series: 10, 17, 26, 37, 50, ?",
+      "explanation": "The pattern: n² + 1 for n = 3, 4, …. Continuing it, the next term is 65.",
+      "options": [
+        {
+          "label": "67",
+          "is_correct": false
+        },
+        {
+          "label": "66",
+          "is_correct": false
+        },
+        {
+          "label": "65",
+          "is_correct": true
+        },
+        {
+          "label": "64",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Number Series",
+      "kind": "standard",
+      "difficulty": "medium",
+      "answer_type": "single",
+      "stem": "Find the next number in the series: 4, 9, 16, 25, 36, ?",
+      "explanation": "The pattern: perfect squares of 2, 3, 4, …. Continuing it, the next term is 49.",
+      "options": [
+        {
+          "label": "50",
+          "is_correct": false
+        },
+        {
+          "label": "49",
+          "is_correct": true
+        },
+        {
+          "label": "51",
+          "is_correct": false
+        },
+        {
+          "label": "48",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Number Series",
+      "kind": "standard",
+      "difficulty": "medium",
+      "answer_type": "single",
+      "stem": "Find the next number in the series: 8, 9, 12, 17, 24, ?",
+      "explanation": "The pattern: the gap grows by 2 each step (add 1, 3, 5, …). Continuing it, the next term is 33.",
+      "options": [
+        {
+          "label": "33",
+          "is_correct": true
+        },
+        {
+          "label": "32",
+          "is_correct": false
+        },
+        {
+          "label": "34",
+          "is_correct": false
+        },
+        {
+          "label": "35",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Number Series",
+      "kind": "standard",
+      "difficulty": "medium",
+      "answer_type": "single",
+      "stem": "Find the next number in the series: 4, 7, 11, 16, 22, ?",
+      "explanation": "The pattern: the gap grows by 1 each step (add 3, 4, 5, …). Continuing it, the next term is 29.",
+      "options": [
+        {
+          "label": "30",
+          "is_correct": false
+        },
+        {
+          "label": "31",
+          "is_correct": false
+        },
+        {
+          "label": "29",
+          "is_correct": true
+        },
+        {
+          "label": "28",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Number Series",
+      "kind": "standard",
+      "difficulty": "medium",
+      "answer_type": "single",
+      "stem": "Find the next number in the series: 7, 11, 13, 17, 19, ?",
+      "explanation": "The pattern: consecutive prime numbers. Continuing it, the next term is 23.",
+      "options": [
+        {
+          "label": "22",
+          "is_correct": false
+        },
+        {
+          "label": "23",
+          "is_correct": true
+        },
+        {
+          "label": "25",
+          "is_correct": false
+        },
+        {
+          "label": "24",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Number Series",
+      "kind": "standard",
+      "difficulty": "medium",
+      "answer_type": "single",
+      "stem": "Find the next number in the series: 5, 9, 16, 26, 39, ?",
+      "explanation": "The pattern: the gap grows by 3 each step (add 4, 7, 10, …). Continuing it, the next term is 55.",
+      "options": [
+        {
+          "label": "56",
+          "is_correct": false
+        },
+        {
+          "label": "54",
+          "is_correct": false
+        },
+        {
+          "label": "57",
+          "is_correct": false
+        },
+        {
+          "label": "55",
+          "is_correct": true
+        }
+      ]
+    },
+    {
+      "chapter": "Number Series",
+      "kind": "standard",
+      "difficulty": "medium",
+      "answer_type": "single",
+      "stem": "Find the next number in the series: 8, 11, 15, 20, 26, ?",
+      "explanation": "The pattern: the gap grows by 1 each step (add 3, 4, 5, …). Continuing it, the next term is 33.",
+      "options": [
+        {
+          "label": "35",
+          "is_correct": false
+        },
+        {
+          "label": "33",
+          "is_correct": true
+        },
+        {
+          "label": "32",
+          "is_correct": false
+        },
+        {
+          "label": "34",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Number Series",
+      "kind": "standard",
+      "difficulty": "medium",
+      "answer_type": "single",
+      "stem": "Find the next number in the series: 5, 7, 10, 14, 19, ?",
+      "explanation": "The pattern: the gap grows by 1 each step (add 2, 3, 4, …). Continuing it, the next term is 25.",
+      "options": [
+        {
+          "label": "25",
+          "is_correct": true
+        },
+        {
+          "label": "27",
+          "is_correct": false
+        },
+        {
+          "label": "26",
+          "is_correct": false
+        },
+        {
+          "label": "24",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Number Series",
+      "kind": "standard",
+      "difficulty": "medium",
+      "answer_type": "single",
+      "stem": "Find the next number in the series: 5, 6, 10, 17, 27, ?",
+      "explanation": "The pattern: the gap grows by 3 each step (add 1, 4, 7, …). Continuing it, the next term is 40.",
+      "options": [
+        {
+          "label": "41",
+          "is_correct": false
+        },
+        {
+          "label": "40",
+          "is_correct": true
+        },
+        {
+          "label": "39",
+          "is_correct": false
+        },
+        {
+          "label": "42",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Number Series",
+      "kind": "standard",
+      "difficulty": "medium",
+      "answer_type": "single",
+      "stem": "Find the next number in the series: 4, 5, 8, 13, 20, ?",
+      "explanation": "The pattern: the gap grows by 2 each step (add 1, 3, 5, …). Continuing it, the next term is 29.",
+      "options": [
+        {
+          "label": "28",
+          "is_correct": false
+        },
+        {
+          "label": "31",
+          "is_correct": false
+        },
+        {
+          "label": "30",
+          "is_correct": false
+        },
+        {
+          "label": "29",
+          "is_correct": true
+        }
+      ]
+    },
+    {
+      "chapter": "Number Series",
+      "kind": "standard",
+      "difficulty": "medium",
+      "answer_type": "single",
+      "stem": "Find the next number in the series: 9, 16, 25, 36, 49, ?",
+      "explanation": "The pattern: perfect squares of 3, 4, 5, …. Continuing it, the next term is 64.",
+      "options": [
+        {
+          "label": "63",
+          "is_correct": false
+        },
+        {
+          "label": "65",
+          "is_correct": false
+        },
+        {
+          "label": "64",
+          "is_correct": true
+        },
+        {
+          "label": "66",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Number Series",
+      "kind": "standard",
+      "difficulty": "medium",
+      "answer_type": "single",
+      "stem": "Find the next number in the series: 5, 8, 14, 23, 35, ?",
+      "explanation": "The pattern: the gap grows by 3 each step (add 3, 6, 9, …). Continuing it, the next term is 50.",
+      "options": [
+        {
+          "label": "49",
+          "is_correct": false
+        },
+        {
+          "label": "52",
+          "is_correct": false
+        },
+        {
+          "label": "50",
+          "is_correct": true
+        },
+        {
+          "label": "51",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Number Series",
+      "kind": "standard",
+      "difficulty": "medium",
+      "answer_type": "single",
+      "stem": "Find the next number in the series: 8, 9, 11, 14, 18, ?",
+      "explanation": "The pattern: the gap grows by 1 each step (add 1, 2, 3, …). Continuing it, the next term is 23.",
+      "options": [
+        {
+          "label": "25",
+          "is_correct": false
+        },
+        {
+          "label": "24",
+          "is_correct": false
+        },
+        {
+          "label": "23",
+          "is_correct": true
+        },
+        {
+          "label": "22",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Number Series",
+      "kind": "standard",
+      "difficulty": "medium",
+      "answer_type": "single",
+      "stem": "Find the next number in the series: 8, 27, 64, 125, ?",
+      "explanation": "The pattern: perfect cubes of 2, 3, …. Continuing it, the next term is 216.",
+      "options": [
+        {
+          "label": "217",
+          "is_correct": false
+        },
+        {
+          "label": "215",
+          "is_correct": false
+        },
+        {
+          "label": "218",
+          "is_correct": false
+        },
+        {
+          "label": "216",
+          "is_correct": true
+        }
+      ]
+    },
+    {
+      "chapter": "Number Series",
+      "kind": "standard",
+      "difficulty": "medium",
+      "answer_type": "single",
+      "stem": "Find the next number in the series: 6, 7, 10, 15, 22, ?",
+      "explanation": "The pattern: the gap grows by 2 each step (add 1, 3, 5, …). Continuing it, the next term is 31.",
+      "options": [
+        {
+          "label": "32",
+          "is_correct": false
+        },
+        {
+          "label": "30",
+          "is_correct": false
+        },
+        {
+          "label": "31",
+          "is_correct": true
+        },
+        {
+          "label": "33",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Number Series",
+      "kind": "standard",
+      "difficulty": "medium",
+      "answer_type": "single",
+      "stem": "Find the next number in the series: 5, 7, 11, 17, 25, ?",
+      "explanation": "The pattern: the gap grows by 2 each step (add 2, 4, 6, …). Continuing it, the next term is 35.",
+      "options": [
+        {
+          "label": "35",
+          "is_correct": true
+        },
+        {
+          "label": "37",
+          "is_correct": false
+        },
+        {
+          "label": "34",
+          "is_correct": false
+        },
+        {
+          "label": "36",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Number Series",
+      "kind": "standard",
+      "difficulty": "medium",
+      "answer_type": "single",
+      "stem": "Find the next number in the series: 2, 6, 13, 23, 36, ?",
+      "explanation": "The pattern: the gap grows by 3 each step (add 4, 7, 10, …). Continuing it, the next term is 52.",
+      "options": [
+        {
+          "label": "51",
+          "is_correct": false
+        },
+        {
+          "label": "54",
+          "is_correct": false
+        },
+        {
+          "label": "52",
+          "is_correct": true
+        },
+        {
+          "label": "53",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Number Series",
+      "kind": "standard",
+      "difficulty": "medium",
+      "answer_type": "single",
+      "stem": "Find the next number in the series: 4, 7, 12, 19, 28, ?",
+      "explanation": "The pattern: the gap grows by 2 each step (add 3, 5, 7, …). Continuing it, the next term is 39.",
+      "options": [
+        {
+          "label": "41",
+          "is_correct": false
+        },
+        {
+          "label": "39",
+          "is_correct": true
+        },
+        {
+          "label": "40",
+          "is_correct": false
+        },
+        {
+          "label": "38",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Number Series",
+      "kind": "standard",
+      "difficulty": "medium",
+      "answer_type": "single",
+      "stem": "Find the next number in the series: 7, 11, 18, 28, 41, ?",
+      "explanation": "The pattern: the gap grows by 3 each step (add 4, 7, 10, …). Continuing it, the next term is 57.",
+      "options": [
+        {
+          "label": "58",
+          "is_correct": false
+        },
+        {
+          "label": "57",
+          "is_correct": true
+        },
+        {
+          "label": "56",
+          "is_correct": false
+        },
+        {
+          "label": "59",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Number Series",
+      "kind": "standard",
+      "difficulty": "medium",
+      "answer_type": "single",
+      "stem": "Find the next number in the series: 5, 8, 12, 17, 23, ?",
+      "explanation": "The pattern: the gap grows by 1 each step (add 3, 4, 5, …). Continuing it, the next term is 30.",
+      "options": [
+        {
+          "label": "32",
+          "is_correct": false
+        },
+        {
+          "label": "31",
+          "is_correct": false
+        },
+        {
+          "label": "29",
+          "is_correct": false
+        },
+        {
+          "label": "30",
+          "is_correct": true
+        }
+      ]
+    },
+    {
+      "chapter": "Number Series",
+      "kind": "standard",
+      "difficulty": "medium",
+      "answer_type": "single",
+      "stem": "Find the next number in the series: 2, 4, 7, 11, 16, ?",
+      "explanation": "The pattern: the gap grows by 1 each step (add 2, 3, 4, …). Continuing it, the next term is 22.",
+      "options": [
+        {
+          "label": "21",
+          "is_correct": false
+        },
+        {
+          "label": "22",
+          "is_correct": true
+        },
+        {
+          "label": "24",
+          "is_correct": false
+        },
+        {
+          "label": "23",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Number Series",
+      "kind": "standard",
+      "difficulty": "medium",
+      "answer_type": "single",
+      "stem": "Find the next number in the series: 6, 10, 17, 27, 40, ?",
+      "explanation": "The pattern: the gap grows by 3 each step (add 4, 7, 10, …). Continuing it, the next term is 56.",
+      "options": [
+        {
+          "label": "56",
+          "is_correct": true
+        },
+        {
+          "label": "57",
+          "is_correct": false
+        },
+        {
+          "label": "58",
+          "is_correct": false
+        },
+        {
+          "label": "55",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Number Series",
+      "kind": "standard",
+      "difficulty": "medium",
+      "answer_type": "single",
+      "stem": "Find the next number in the series: 7, 8, 11, 16, 23, ?",
+      "explanation": "The pattern: the gap grows by 2 each step (add 1, 3, 5, …). Continuing it, the next term is 32.",
+      "options": [
+        {
+          "label": "33",
+          "is_correct": false
+        },
+        {
+          "label": "31",
+          "is_correct": false
+        },
+        {
+          "label": "34",
+          "is_correct": false
+        },
+        {
+          "label": "32",
+          "is_correct": true
+        }
+      ]
+    },
+    {
+      "chapter": "Number Series",
+      "kind": "standard",
+      "difficulty": "medium",
+      "answer_type": "single",
+      "stem": "Find the next number in the series: 6, 8, 11, 15, 20, ?",
+      "explanation": "The pattern: the gap grows by 1 each step (add 2, 3, 4, …). Continuing it, the next term is 26.",
+      "options": [
+        {
+          "label": "25",
+          "is_correct": false
+        },
+        {
+          "label": "27",
+          "is_correct": false
+        },
+        {
+          "label": "26",
+          "is_correct": true
+        },
+        {
+          "label": "28",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Number Series",
+      "kind": "standard",
+      "difficulty": "hard",
+      "answer_type": "single",
+      "stem": "Find the next number in the series: 2, 5, 11, 23, 47, ?",
+      "explanation": "The pattern: each term is (previous × 2) + 1. Continuing it, the next term is 95.",
+      "options": [
+        {
+          "label": "94",
+          "is_correct": false
+        },
+        {
+          "label": "95",
+          "is_correct": true
+        },
+        {
+          "label": "97",
+          "is_correct": false
+        },
+        {
+          "label": "96",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Number Series",
+      "kind": "standard",
+      "difficulty": "hard",
+      "answer_type": "single",
+      "stem": "Find the next number in the series: 2, 3, 5, 8, 13, 21, ?",
+      "explanation": "The pattern: each term is the sum of the previous two. Continuing it, the next term is 34.",
+      "options": [
+        {
+          "label": "35",
+          "is_correct": false
+        },
+        {
+          "label": "34",
+          "is_correct": true
+        },
+        {
+          "label": "36",
+          "is_correct": false
+        },
+        {
+          "label": "33",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Number Series",
+      "kind": "standard",
+      "difficulty": "hard",
+      "answer_type": "single",
+      "stem": "Find the next number in the series: 3, 7, 15, 31, 63, ?",
+      "explanation": "The pattern: each term is (previous × 2) + 1. Continuing it, the next term is 127.",
+      "options": [
+        {
+          "label": "129",
+          "is_correct": false
+        },
+        {
+          "label": "127",
+          "is_correct": true
+        },
+        {
+          "label": "126",
+          "is_correct": false
+        },
+        {
+          "label": "128",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Number Series",
+      "kind": "standard",
+      "difficulty": "hard",
+      "answer_type": "single",
+      "stem": "Find the next number in the series: 4, 2, 6, 8, 14, 22, ?",
+      "explanation": "The pattern: each term is the sum of the previous two. Continuing it, the next term is 36.",
+      "options": [
+        {
+          "label": "37",
+          "is_correct": false
+        },
+        {
+          "label": "35",
+          "is_correct": false
+        },
+        {
+          "label": "38",
+          "is_correct": false
+        },
+        {
+          "label": "36",
+          "is_correct": true
+        }
+      ]
+    },
+    {
+      "chapter": "Number Series",
+      "kind": "standard",
+      "difficulty": "hard",
+      "answer_type": "single",
+      "stem": "Find the next number in the series: 1, 3, 4, 7, 11, 18, ?",
+      "explanation": "The pattern: each term is the sum of the previous two. Continuing it, the next term is 29.",
+      "options": [
+        {
+          "label": "28",
+          "is_correct": false
+        },
+        {
+          "label": "31",
+          "is_correct": false
+        },
+        {
+          "label": "30",
+          "is_correct": false
+        },
+        {
+          "label": "29",
+          "is_correct": true
+        }
+      ]
+    },
+    {
+      "chapter": "Number Series",
+      "kind": "standard",
+      "difficulty": "hard",
+      "answer_type": "single",
+      "stem": "Find the next number in the series: 6, 12, 20, 30, 42, ?",
+      "explanation": "The pattern: n² + n for n = 2, 3, …. Continuing it, the next term is 56.",
+      "options": [
+        {
+          "label": "55",
+          "is_correct": false
+        },
+        {
+          "label": "56",
+          "is_correct": true
+        },
+        {
+          "label": "57",
+          "is_correct": false
+        },
+        {
+          "label": "58",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Number Series",
+      "kind": "standard",
+      "difficulty": "hard",
+      "answer_type": "single",
+      "stem": "Find the next number in the series: 2, 4, 6, 10, 16, 26, ?",
+      "explanation": "The pattern: each term is the sum of the previous two. Continuing it, the next term is 42.",
+      "options": [
+        {
+          "label": "44",
+          "is_correct": false
+        },
+        {
+          "label": "42",
+          "is_correct": true
+        },
+        {
+          "label": "43",
+          "is_correct": false
+        },
+        {
+          "label": "41",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Number Series",
+      "kind": "standard",
+      "difficulty": "hard",
+      "answer_type": "single",
+      "stem": "Find the next number in the series: 3, 3, 6, 9, 15, 24, ?",
+      "explanation": "The pattern: each term is the sum of the previous two. Continuing it, the next term is 39.",
+      "options": [
+        {
+          "label": "39",
+          "is_correct": true
+        },
+        {
+          "label": "41",
+          "is_correct": false
+        },
+        {
+          "label": "38",
+          "is_correct": false
+        },
+        {
+          "label": "40",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Number Series",
+      "kind": "standard",
+      "difficulty": "hard",
+      "answer_type": "single",
+      "stem": "Find the next number in the series: 4, 9, 19, 39, 79, ?",
+      "explanation": "The pattern: each term is (previous × 2) + 1. Continuing it, the next term is 159.",
+      "options": [
+        {
+          "label": "160",
+          "is_correct": false
+        },
+        {
+          "label": "159",
+          "is_correct": true
+        },
+        {
+          "label": "158",
+          "is_correct": false
+        },
+        {
+          "label": "161",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Number Series",
+      "kind": "standard",
+      "difficulty": "hard",
+      "answer_type": "single",
+      "stem": "Find the next number in the series: 20, 30, 42, 56, 72, ?",
+      "explanation": "The pattern: n² + n for n = 4, 5, …. Continuing it, the next term is 90.",
+      "options": [
+        {
+          "label": "89",
+          "is_correct": false
+        },
+        {
+          "label": "91",
+          "is_correct": false
+        },
+        {
+          "label": "92",
+          "is_correct": false
+        },
+        {
+          "label": "90",
+          "is_correct": true
+        }
+      ]
+    },
+    {
+      "chapter": "Number Series",
+      "kind": "standard",
+      "difficulty": "hard",
+      "answer_type": "single",
+      "stem": "Find the next number in the series: 1, 4, 5, 9, 14, 23, ?",
+      "explanation": "The pattern: each term is the sum of the previous two. Continuing it, the next term is 37.",
+      "options": [
+        {
+          "label": "36",
+          "is_correct": false
+        },
+        {
+          "label": "38",
+          "is_correct": false
+        },
+        {
+          "label": "39",
+          "is_correct": false
+        },
+        {
+          "label": "37",
+          "is_correct": true
+        }
+      ]
+    },
+    {
+      "chapter": "Number Series",
+      "kind": "standard",
+      "difficulty": "hard",
+      "answer_type": "single",
+      "stem": "Find the next number in the series: 5, 14, 41, 122, 365, ?",
+      "explanation": "The pattern: each term is (previous × 3) − 1. Continuing it, the next term is 1094.",
+      "options": [
+        {
+          "label": "1095",
+          "is_correct": false
+        },
+        {
+          "label": "1094",
+          "is_correct": true
+        },
+        {
+          "label": "1093",
+          "is_correct": false
+        },
+        {
+          "label": "1096",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Number Series",
+      "kind": "standard",
+      "difficulty": "hard",
+      "answer_type": "single",
+      "stem": "Find the next number in the series: 3, 8, 24, 29, 87, ?",
+      "explanation": "The pattern: alternately add 5 and multiply by 3. Continuing it, the next term is 92.",
+      "options": [
+        {
+          "label": "94",
+          "is_correct": false
+        },
+        {
+          "label": "92",
+          "is_correct": true
+        },
+        {
+          "label": "93",
+          "is_correct": false
+        },
+        {
+          "label": "91",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Number Series",
+      "kind": "standard",
+      "difficulty": "hard",
+      "answer_type": "single",
+      "stem": "Find the next number in the series: 1, 7, 8, 15, 23, 38, ?",
+      "explanation": "The pattern: each term is the sum of the previous two. Continuing it, the next term is 61.",
+      "options": [
+        {
+          "label": "61",
+          "is_correct": true
+        },
+        {
+          "label": "60",
+          "is_correct": false
+        },
+        {
+          "label": "62",
+          "is_correct": false
+        },
+        {
+          "label": "63",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Number Series",
+      "kind": "standard",
+      "difficulty": "hard",
+      "answer_type": "single",
+      "stem": "Find the next number in the series: 1, 3, 7, 15, 31, ?",
+      "explanation": "The pattern: each term is (previous × 2) + 1. Continuing it, the next term is 63.",
+      "options": [
+        {
+          "label": "62",
+          "is_correct": false
+        },
+        {
+          "label": "63",
+          "is_correct": true
+        },
+        {
+          "label": "64",
+          "is_correct": false
+        },
+        {
+          "label": "65",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Number Series",
+      "kind": "standard",
+      "difficulty": "hard",
+      "answer_type": "single",
+      "stem": "Find the next number in the series: 12, 20, 30, 42, 56, ?",
+      "explanation": "The pattern: n² + n for n = 3, 4, …. Continuing it, the next term is 72.",
+      "options": [
+        {
+          "label": "73",
+          "is_correct": false
+        },
+        {
+          "label": "72",
+          "is_correct": true
+        },
+        {
+          "label": "74",
+          "is_correct": false
+        },
+        {
+          "label": "71",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Number Series",
+      "kind": "standard",
+      "difficulty": "hard",
+      "answer_type": "single",
+      "stem": "Find the next number in the series: 4, 6, 10, 16, 26, 42, ?",
+      "explanation": "The pattern: each term is the sum of the previous two. Continuing it, the next term is 68.",
+      "options": [
+        {
+          "label": "70",
+          "is_correct": false
+        },
+        {
+          "label": "68",
+          "is_correct": true
+        },
+        {
+          "label": "67",
+          "is_correct": false
+        },
+        {
+          "label": "69",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Number Series",
+      "kind": "standard",
+      "difficulty": "hard",
+      "answer_type": "single",
+      "stem": "Find the next number in the series: 1, 5, 6, 11, 17, 28, ?",
+      "explanation": "The pattern: each term is the sum of the previous two. Continuing it, the next term is 45.",
+      "options": [
+        {
+          "label": "46",
+          "is_correct": false
+        },
+        {
+          "label": "44",
+          "is_correct": false
+        },
+        {
+          "label": "47",
+          "is_correct": false
+        },
+        {
+          "label": "45",
+          "is_correct": true
+        }
+      ]
+    },
+    {
+      "chapter": "Number Series",
+      "kind": "standard",
+      "difficulty": "hard",
+      "answer_type": "single",
+      "stem": "Find the next number in the series: 42, 56, 72, 90, 110, ?",
+      "explanation": "The pattern: n² + n for n = 6, 7, …. Continuing it, the next term is 132.",
+      "options": [
+        {
+          "label": "134",
+          "is_correct": false
+        },
+        {
+          "label": "132",
+          "is_correct": true
+        },
+        {
+          "label": "131",
+          "is_correct": false
+        },
+        {
+          "label": "133",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Number Series",
+      "kind": "standard",
+      "difficulty": "hard",
+      "answer_type": "single",
+      "stem": "Find the next number in the series: 1, 6, 7, 13, 20, 33, ?",
+      "explanation": "The pattern: each term is the sum of the previous two. Continuing it, the next term is 53.",
+      "options": [
+        {
+          "label": "54",
+          "is_correct": false
+        },
+        {
+          "label": "52",
+          "is_correct": false
+        },
+        {
+          "label": "53",
+          "is_correct": true
+        },
+        {
+          "label": "55",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Number Series",
+      "kind": "standard",
+      "difficulty": "hard",
+      "answer_type": "single",
+      "stem": "Find the next number in the series: 30, 42, 56, 72, 90, ?",
+      "explanation": "The pattern: n² + n for n = 5, 6, …. Continuing it, the next term is 110.",
+      "options": [
+        {
+          "label": "110",
+          "is_correct": true
+        },
+        {
+          "label": "109",
+          "is_correct": false
+        },
+        {
+          "label": "111",
+          "is_correct": false
+        },
+        {
+          "label": "112",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Number Series",
+      "kind": "standard",
+      "difficulty": "hard",
+      "answer_type": "single",
+      "stem": "Find the next number in the series: 5, 4, 9, 13, 22, 35, ?",
+      "explanation": "The pattern: each term is the sum of the previous two. Continuing it, the next term is 57.",
+      "options": [
+        {
+          "label": "56",
+          "is_correct": false
+        },
+        {
+          "label": "57",
+          "is_correct": true
+        },
+        {
+          "label": "59",
+          "is_correct": false
+        },
+        {
+          "label": "58",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Number Series",
+      "kind": "standard",
+      "difficulty": "hard",
+      "answer_type": "single",
+      "stem": "Find the next number in the series: 5, 2, 7, 9, 16, 25, ?",
+      "explanation": "The pattern: each term is the sum of the previous two. Continuing it, the next term is 41.",
+      "options": [
+        {
+          "label": "42",
+          "is_correct": false
+        },
+        {
+          "label": "41",
+          "is_correct": true
+        },
+        {
+          "label": "40",
+          "is_correct": false
+        },
+        {
+          "label": "43",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Number Series",
+      "kind": "standard",
+      "difficulty": "hard",
+      "answer_type": "single",
+      "stem": "Find the next number in the series: 3, 6, 9, 15, 24, 39, ?",
+      "explanation": "The pattern: each term is the sum of the previous two. Continuing it, the next term is 63.",
+      "options": [
+        {
+          "label": "62",
+          "is_correct": false
+        },
+        {
+          "label": "65",
+          "is_correct": false
+        },
+        {
+          "label": "64",
+          "is_correct": false
+        },
+        {
+          "label": "63",
+          "is_correct": true
+        }
+      ]
+    },
+    {
+      "chapter": "Number Series",
+      "kind": "standard",
+      "difficulty": "hard",
+      "answer_type": "single",
+      "stem": "Find the next number in the series: 4, 11, 32, 95, 284, ?",
+      "explanation": "The pattern: each term is (previous × 3) − 1. Continuing it, the next term is 851.",
+      "options": [
+        {
+          "label": "853",
+          "is_correct": false
+        },
+        {
+          "label": "851",
+          "is_correct": true
+        },
+        {
+          "label": "852",
+          "is_correct": false
+        },
+        {
+          "label": "850",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Number Series",
+      "kind": "standard",
+      "difficulty": "hard",
+      "answer_type": "single",
+      "stem": "Find the next number in the series: 1, 3, 6, 8, 16, ?",
+      "explanation": "The pattern: alternately add 2 and multiply by 2. Continuing it, the next term is 18.",
+      "options": [
+        {
+          "label": "19",
+          "is_correct": false
+        },
+        {
+          "label": "17",
+          "is_correct": false
+        },
+        {
+          "label": "20",
+          "is_correct": false
+        },
+        {
+          "label": "18",
+          "is_correct": true
+        }
+      ]
+    },
+    {
+      "chapter": "Number Series",
+      "kind": "standard",
+      "difficulty": "hard",
+      "answer_type": "single",
+      "stem": "Find the next number in the series: 4, 7, 11, 18, 29, 47, ?",
+      "explanation": "The pattern: each term is the sum of the previous two. Continuing it, the next term is 76.",
+      "options": [
+        {
+          "label": "78",
+          "is_correct": false
+        },
+        {
+          "label": "77",
+          "is_correct": false
+        },
+        {
+          "label": "75",
+          "is_correct": false
+        },
+        {
+          "label": "76",
+          "is_correct": true
+        }
+      ]
+    },
+    {
+      "chapter": "Number Series",
+      "kind": "standard",
+      "difficulty": "hard",
+      "answer_type": "single",
+      "stem": "Find the next number in the series: 3, 8, 23, 68, 203, ?",
+      "explanation": "The pattern: each term is (previous × 3) − 1. Continuing it, the next term is 608.",
+      "options": [
+        {
+          "label": "609",
+          "is_correct": false
+        },
+        {
+          "label": "607",
+          "is_correct": false
+        },
+        {
+          "label": "610",
+          "is_correct": false
+        },
+        {
+          "label": "608",
+          "is_correct": true
+        }
+      ]
+    },
+    {
+      "chapter": "Number Series",
+      "kind": "standard",
+      "difficulty": "hard",
+      "answer_type": "single",
+      "stem": "Find the next number in the series: 4, 8, 24, 28, 84, ?",
+      "explanation": "The pattern: alternately add 4 and multiply by 3. Continuing it, the next term is 88.",
+      "options": [
+        {
+          "label": "90",
+          "is_correct": false
+        },
+        {
+          "label": "87",
+          "is_correct": false
+        },
+        {
+          "label": "89",
+          "is_correct": false
+        },
+        {
+          "label": "88",
+          "is_correct": true
+        }
+      ]
+    },
+    {
+      "chapter": "Number Series",
+      "kind": "standard",
+      "difficulty": "hard",
+      "answer_type": "single",
+      "stem": "Find the next number in the series: 3, 7, 14, 18, 36, ?",
+      "explanation": "The pattern: alternately add 4 and multiply by 2. Continuing it, the next term is 40.",
+      "options": [
+        {
+          "label": "40",
+          "is_correct": true
+        },
+        {
+          "label": "41",
+          "is_correct": false
+        },
+        {
+          "label": "42",
+          "is_correct": false
+        },
+        {
+          "label": "39",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Number Series",
+      "kind": "standard",
+      "difficulty": "hard",
+      "answer_type": "single",
+      "stem": "Find the next number in the series: 2, 2, 4, 6, 10, 16, ?",
+      "explanation": "The pattern: each term is the sum of the previous two. Continuing it, the next term is 26.",
+      "options": [
+        {
+          "label": "27",
+          "is_correct": false
+        },
+        {
+          "label": "28",
+          "is_correct": false
+        },
+        {
+          "label": "26",
+          "is_correct": true
+        },
+        {
+          "label": "25",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Number Series",
+      "kind": "standard",
+      "difficulty": "hard",
+      "answer_type": "single",
+      "stem": "Find the next number in the series: 3, 5, 8, 13, 21, 34, ?",
+      "explanation": "The pattern: each term is the sum of the previous two. Continuing it, the next term is 55.",
+      "options": [
+        {
+          "label": "54",
+          "is_correct": false
+        },
+        {
+          "label": "57",
+          "is_correct": false
+        },
+        {
+          "label": "55",
+          "is_correct": true
+        },
+        {
+          "label": "56",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Number Series",
+      "kind": "standard",
+      "difficulty": "hard",
+      "answer_type": "single",
+      "stem": "Find the next number in the series: 4, 9, 18, 23, 46, ?",
+      "explanation": "The pattern: alternately add 5 and multiply by 2. Continuing it, the next term is 51.",
+      "options": [
+        {
+          "label": "50",
+          "is_correct": false
+        },
+        {
+          "label": "53",
+          "is_correct": false
+        },
+        {
+          "label": "51",
+          "is_correct": true
+        },
+        {
+          "label": "52",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Number Series",
+      "kind": "standard",
+      "difficulty": "hard",
+      "answer_type": "single",
+      "stem": "Find the next number in the series: 4, 6, 18, 20, 60, ?",
+      "explanation": "The pattern: alternately add 2 and multiply by 3. Continuing it, the next term is 62.",
+      "options": [
+        {
+          "label": "62",
+          "is_correct": true
+        },
+        {
+          "label": "63",
+          "is_correct": false
+        },
+        {
+          "label": "61",
+          "is_correct": false
+        },
+        {
+          "label": "64",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Number Series",
+      "kind": "standard",
+      "difficulty": "hard",
+      "answer_type": "single",
+      "stem": "Find the next number in the series: 2, 5, 10, 13, 26, ?",
+      "explanation": "The pattern: alternately add 3 and multiply by 2. Continuing it, the next term is 29.",
+      "options": [
+        {
+          "label": "28",
+          "is_correct": false
+        },
+        {
+          "label": "30",
+          "is_correct": false
+        },
+        {
+          "label": "29",
+          "is_correct": true
+        },
+        {
+          "label": "31",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Number Series",
+      "kind": "standard",
+      "difficulty": "hard",
+      "answer_type": "single",
+      "stem": "Find the next number in the series: 2, 5, 14, 41, 122, ?",
+      "explanation": "The pattern: each term is (previous × 3) − 1. Continuing it, the next term is 365.",
+      "options": [
+        {
+          "label": "366",
+          "is_correct": false
+        },
+        {
+          "label": "365",
+          "is_correct": true
+        },
+        {
+          "label": "367",
+          "is_correct": false
+        },
+        {
+          "label": "364",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Number Series",
+      "kind": "standard",
+      "difficulty": "hard",
+      "answer_type": "single",
+      "stem": "Find the next number in the series: 1, 4, 8, 11, 22, ?",
+      "explanation": "The pattern: alternately add 3 and multiply by 2. Continuing it, the next term is 25.",
+      "options": [
+        {
+          "label": "27",
+          "is_correct": false
+        },
+        {
+          "label": "24",
+          "is_correct": false
+        },
+        {
+          "label": "26",
+          "is_correct": false
+        },
+        {
+          "label": "25",
+          "is_correct": true
+        }
+      ]
+    },
+    {
+      "chapter": "Number Series",
+      "kind": "standard",
+      "difficulty": "hard",
+      "answer_type": "single",
+      "stem": "Find the next number in the series: 2, 4, 12, 14, 42, ?",
+      "explanation": "The pattern: alternately add 2 and multiply by 3. Continuing it, the next term is 44.",
+      "options": [
+        {
+          "label": "45",
+          "is_correct": false
+        },
+        {
+          "label": "46",
+          "is_correct": false
+        },
+        {
+          "label": "43",
+          "is_correct": false
+        },
+        {
+          "label": "44",
+          "is_correct": true
+        }
+      ]
+    },
+    {
+      "chapter": "Number Series",
+      "kind": "standard",
+      "difficulty": "hard",
+      "answer_type": "single",
+      "stem": "Find the next number in the series: 1, 2, 3, 5, 8, 13, ?",
+      "explanation": "The pattern: each term is the sum of the previous two. Continuing it, the next term is 21.",
+      "options": [
+        {
+          "label": "22",
+          "is_correct": false
+        },
+        {
+          "label": "23",
+          "is_correct": false
+        },
+        {
+          "label": "21",
+          "is_correct": true
+        },
+        {
+          "label": "20",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Number Series",
+      "kind": "standard",
+      "difficulty": "hard",
+      "answer_type": "single",
+      "stem": "Find the next number in the series: 4, 4, 8, 12, 20, 32, ?",
+      "explanation": "The pattern: each term is the sum of the previous two. Continuing it, the next term is 52.",
+      "options": [
+        {
+          "label": "53",
+          "is_correct": false
+        },
+        {
+          "label": "52",
+          "is_correct": true
+        },
+        {
+          "label": "51",
+          "is_correct": false
+        },
+        {
+          "label": "54",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Number Series",
+      "kind": "standard",
+      "difficulty": "hard",
+      "answer_type": "single",
+      "stem": "Find the next number in the series: 4, 7, 14, 17, 34, ?",
+      "explanation": "The pattern: alternately add 3 and multiply by 2. Continuing it, the next term is 37.",
+      "options": [
+        {
+          "label": "36",
+          "is_correct": false
+        },
+        {
+          "label": "38",
+          "is_correct": false
+        },
+        {
+          "label": "39",
+          "is_correct": false
+        },
+        {
+          "label": "37",
+          "is_correct": true
+        }
+      ]
+    },
+    {
+      "chapter": "Number Series",
+      "kind": "standard",
+      "difficulty": "hard",
+      "answer_type": "single",
+      "stem": "Find the next number in the series: 3, 4, 7, 11, 18, 29, ?",
+      "explanation": "The pattern: each term is the sum of the previous two. Continuing it, the next term is 47.",
+      "options": [
+        {
+          "label": "48",
+          "is_correct": false
+        },
+        {
+          "label": "49",
+          "is_correct": false
+        },
+        {
+          "label": "46",
+          "is_correct": false
+        },
+        {
+          "label": "47",
+          "is_correct": true
+        }
+      ]
+    },
+    {
+      "chapter": "Number Series",
+      "kind": "standard",
+      "difficulty": "hard",
+      "answer_type": "single",
+      "stem": "Find the next number in the series: 3, 7, 21, 25, 75, ?",
+      "explanation": "The pattern: alternately add 4 and multiply by 3. Continuing it, the next term is 79.",
+      "options": [
+        {
+          "label": "78",
+          "is_correct": false
+        },
+        {
+          "label": "79",
+          "is_correct": true
+        },
+        {
+          "label": "81",
+          "is_correct": false
+        },
+        {
+          "label": "80",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Number Series",
+      "kind": "standard",
+      "difficulty": "hard",
+      "answer_type": "single",
+      "stem": "Find the next number in the series: 3, 6, 12, 15, 30, ?",
+      "explanation": "The pattern: alternately add 3 and multiply by 2. Continuing it, the next term is 33.",
+      "options": [
+        {
+          "label": "35",
+          "is_correct": false
+        },
+        {
+          "label": "33",
+          "is_correct": true
+        },
+        {
+          "label": "34",
+          "is_correct": false
+        },
+        {
+          "label": "32",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Number Series",
+      "kind": "standard",
+      "difficulty": "hard",
+      "answer_type": "single",
+      "stem": "Find the next number in the series: 4, 9, 27, 32, 96, ?",
+      "explanation": "The pattern: alternately add 5 and multiply by 3. Continuing it, the next term is 101.",
+      "options": [
+        {
+          "label": "103",
+          "is_correct": false
+        },
+        {
+          "label": "102",
+          "is_correct": false
+        },
+        {
+          "label": "100",
+          "is_correct": false
+        },
+        {
+          "label": "101",
+          "is_correct": true
+        }
+      ]
+    },
+    {
+      "chapter": "Number Series",
+      "kind": "standard",
+      "difficulty": "hard",
+      "answer_type": "single",
+      "stem": "Find the next number in the series: 2, 7, 9, 16, 25, 41, ?",
+      "explanation": "The pattern: each term is the sum of the previous two. Continuing it, the next term is 66.",
+      "options": [
+        {
+          "label": "65",
+          "is_correct": false
+        },
+        {
+          "label": "67",
+          "is_correct": false
+        },
+        {
+          "label": "66",
+          "is_correct": true
+        },
+        {
+          "label": "68",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Number Series",
+      "kind": "standard",
+      "difficulty": "hard",
+      "answer_type": "single",
+      "stem": "Find the next number in the series: 3, 2, 5, 7, 12, 19, ?",
+      "explanation": "The pattern: each term is the sum of the previous two. Continuing it, the next term is 31.",
+      "options": [
+        {
+          "label": "30",
+          "is_correct": false
+        },
+        {
+          "label": "33",
+          "is_correct": false
+        },
+        {
+          "label": "31",
+          "is_correct": true
+        },
+        {
+          "label": "32",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Number Series",
+      "kind": "standard",
+      "difficulty": "hard",
+      "answer_type": "single",
+      "stem": "Find the next number in the series: 5, 5, 10, 15, 25, 40, ?",
+      "explanation": "The pattern: each term is the sum of the previous two. Continuing it, the next term is 65.",
+      "options": [
+        {
+          "label": "64",
+          "is_correct": false
+        },
+        {
+          "label": "67",
+          "is_correct": false
+        },
+        {
+          "label": "65",
+          "is_correct": true
+        },
+        {
+          "label": "66",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Number Series",
+      "kind": "standard",
+      "difficulty": "hard",
+      "answer_type": "single",
+      "stem": "Find the next number in the series: 2, 6, 8, 14, 22, 36, ?",
+      "explanation": "The pattern: each term is the sum of the previous two. Continuing it, the next term is 58.",
+      "options": [
+        {
+          "label": "60",
+          "is_correct": false
+        },
+        {
+          "label": "59",
+          "is_correct": false
+        },
+        {
+          "label": "57",
+          "is_correct": false
+        },
+        {
+          "label": "58",
+          "is_correct": true
+        }
+      ]
+    },
+    {
+      "chapter": "Number Series",
+      "kind": "standard",
+      "difficulty": "hard",
+      "answer_type": "single",
+      "stem": "Find the next number in the series: 2, 6, 18, 22, 66, ?",
+      "explanation": "The pattern: alternately add 4 and multiply by 3. Continuing it, the next term is 70.",
+      "options": [
+        {
+          "label": "69",
+          "is_correct": false
+        },
+        {
+          "label": "70",
+          "is_correct": true
+        },
+        {
+          "label": "71",
+          "is_correct": false
+        },
+        {
+          "label": "72",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Number Series",
+      "kind": "standard",
+      "difficulty": "very_hard",
+      "answer_type": "single",
+      "stem": "Find the next number in the series: 65, 129, 257, 513, 1025, 2049, ?",
+      "explanation": "The pattern: powers of 2, plus 1 (2ⁿ + 1). Continuing it, the next term is 4097.",
+      "options": [
+        {
+          "label": "4099",
+          "is_correct": false
+        },
+        {
+          "label": "4098",
+          "is_correct": false
+        },
+        {
+          "label": "4096",
+          "is_correct": false
+        },
+        {
+          "label": "4097",
+          "is_correct": true
+        }
+      ]
+    },
+    {
+      "chapter": "Number Series",
+      "kind": "standard",
+      "difficulty": "very_hard",
+      "answer_type": "single",
+      "stem": "Find the next number in the series: 16, 36, 64, 100, 144, ?",
+      "explanation": "The pattern: squares of consecutive even numbers. Continuing it, the next term is 196.",
+      "options": [
+        {
+          "label": "196",
+          "is_correct": true
+        },
+        {
+          "label": "198",
+          "is_correct": false
+        },
+        {
+          "label": "197",
+          "is_correct": false
+        },
+        {
+          "label": "195",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Number Series",
+      "kind": "standard",
+      "difficulty": "very_hard",
+      "answer_type": "single",
+      "stem": "Find the next number in the series: 350, 520, 738, 1010, 1342, ?",
+      "explanation": "The pattern: n³ + n for n = 7, 8, …. Continuing it, the next term is 1740.",
+      "options": [
+        {
+          "label": "1742",
+          "is_correct": false
+        },
+        {
+          "label": "1739",
+          "is_correct": false
+        },
+        {
+          "label": "1740",
+          "is_correct": true
+        },
+        {
+          "label": "1741",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Number Series",
+      "kind": "standard",
+      "difficulty": "very_hard",
+      "answer_type": "single",
+      "stem": "Find the next number in the series: 125, 343, 1331, 2197, 4913, ?",
+      "explanation": "The pattern: cubes of consecutive prime numbers. Continuing it, the next term is 6859.",
+      "options": [
+        {
+          "label": "6859",
+          "is_correct": true
+        },
+        {
+          "label": "6858",
+          "is_correct": false
+        },
+        {
+          "label": "6860",
+          "is_correct": false
+        },
+        {
+          "label": "6861",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Number Series",
+      "kind": "standard",
+      "difficulty": "very_hard",
+      "answer_type": "single",
+      "stem": "Find the next number in the series: 120, 210, 336, 504, 720, ?",
+      "explanation": "The pattern: n³ − n for n = 5, 6, …. Continuing it, the next term is 990.",
+      "options": [
+        {
+          "label": "990",
+          "is_correct": true
+        },
+        {
+          "label": "992",
+          "is_correct": false
+        },
+        {
+          "label": "989",
+          "is_correct": false
+        },
+        {
+          "label": "991",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Number Series",
+      "kind": "standard",
+      "difficulty": "very_hard",
+      "answer_type": "single",
+      "stem": "Find the next number in the series: 344, 513, 730, 1001, 1332, ?",
+      "explanation": "The pattern: n³ + 1 for n = 7, 8, …. Continuing it, the next term is 1729.",
+      "options": [
+        {
+          "label": "1728",
+          "is_correct": false
+        },
+        {
+          "label": "1731",
+          "is_correct": false
+        },
+        {
+          "label": "1729",
+          "is_correct": true
+        },
+        {
+          "label": "1730",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Number Series",
+      "kind": "standard",
+      "difficulty": "very_hard",
+      "answer_type": "single",
+      "stem": "Find the next number in the series: 25, 49, 81, 121, 169, ?",
+      "explanation": "The pattern: squares of consecutive odd numbers. Continuing it, the next term is 225.",
+      "options": [
+        {
+          "label": "226",
+          "is_correct": false
+        },
+        {
+          "label": "227",
+          "is_correct": false
+        },
+        {
+          "label": "224",
+          "is_correct": false
+        },
+        {
+          "label": "225",
+          "is_correct": true
+        }
+      ]
+    },
+    {
+      "chapter": "Number Series",
+      "kind": "standard",
+      "difficulty": "very_hard",
+      "answer_type": "single",
+      "stem": "Find the next number in the series: 35, 56, 84, 120, 165, ?",
+      "explanation": "The pattern: tetrahedral numbers n(n+1)(n+2)/6. Continuing it, the next term is 220.",
+      "options": [
+        {
+          "label": "219",
+          "is_correct": false
+        },
+        {
+          "label": "220",
+          "is_correct": true
+        },
+        {
+          "label": "222",
+          "is_correct": false
+        },
+        {
+          "label": "221",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Number Series",
+      "kind": "standard",
+      "difficulty": "very_hard",
+      "answer_type": "single",
+      "stem": "Find the next number in the series: 4, 9, 25, 49, 121, ?",
+      "explanation": "The pattern: squares of consecutive prime numbers. Continuing it, the next term is 169.",
+      "options": [
+        {
+          "label": "169",
+          "is_correct": true
+        },
+        {
+          "label": "170",
+          "is_correct": false
+        },
+        {
+          "label": "171",
+          "is_correct": false
+        },
+        {
+          "label": "168",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Number Series",
+      "kind": "standard",
+      "difficulty": "very_hard",
+      "answer_type": "single",
+      "stem": "Find the next number in the series: 217, 344, 513, 730, 1001, ?",
+      "explanation": "The pattern: n³ + 1 for n = 6, 7, …. Continuing it, the next term is 1332.",
+      "options": [
+        {
+          "label": "1331",
+          "is_correct": false
+        },
+        {
+          "label": "1333",
+          "is_correct": false
+        },
+        {
+          "label": "1332",
+          "is_correct": true
+        },
+        {
+          "label": "1334",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Number Series",
+      "kind": "standard",
+      "difficulty": "very_hard",
+      "answer_type": "single",
+      "stem": "Find the next number in the series: 1, 3, 7, 14, 25, ?",
+      "explanation": "The pattern: the added gap itself grows by 2, 3, 4, … (second-order differences increase). Continuing it, the next term is 41.",
+      "options": [
+        {
+          "label": "41",
+          "is_correct": true
+        },
+        {
+          "label": "42",
+          "is_correct": false
+        },
+        {
+          "label": "43",
+          "is_correct": false
+        },
+        {
+          "label": "40",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Number Series",
+      "kind": "standard",
+      "difficulty": "very_hard",
+      "answer_type": "single",
+      "stem": "Find the next number in the series: 336, 504, 720, 990, 1320, ?",
+      "explanation": "The pattern: n³ − n for n = 7, 8, …. Continuing it, the next term is 1716.",
+      "options": [
+        {
+          "label": "1718",
+          "is_correct": false
+        },
+        {
+          "label": "1717",
+          "is_correct": false
+        },
+        {
+          "label": "1716",
+          "is_correct": true
+        },
+        {
+          "label": "1715",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Number Series",
+      "kind": "standard",
+      "difficulty": "very_hard",
+      "answer_type": "single",
+      "stem": "Find the next number in the series: 1331, 2197, 4913, 6859, 12167, ?",
+      "explanation": "The pattern: cubes of consecutive prime numbers. Continuing it, the next term is 24389.",
+      "options": [
+        {
+          "label": "24390",
+          "is_correct": false
+        },
+        {
+          "label": "24389",
+          "is_correct": true
+        },
+        {
+          "label": "24388",
+          "is_correct": false
+        },
+        {
+          "label": "24391",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Number Series",
+      "kind": "standard",
+      "difficulty": "very_hard",
+      "answer_type": "single",
+      "stem": "Find the next number in the series: 3, 7, 15, 31, 63, 127, ?",
+      "explanation": "The pattern: powers of 2, minus 1 (2ⁿ − 1). Continuing it, the next term is 255.",
+      "options": [
+        {
+          "label": "255",
+          "is_correct": true
+        },
+        {
+          "label": "257",
+          "is_correct": false
+        },
+        {
+          "label": "256",
+          "is_correct": false
+        },
+        {
+          "label": "254",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Number Series",
+      "kind": "standard",
+      "difficulty": "very_hard",
+      "answer_type": "single",
+      "stem": "Find the next number in the series: 10, 20, 35, 56, 84, ?",
+      "explanation": "The pattern: tetrahedral numbers n(n+1)(n+2)/6. Continuing it, the next term is 120.",
+      "options": [
+        {
+          "label": "122",
+          "is_correct": false
+        },
+        {
+          "label": "119",
+          "is_correct": false
+        },
+        {
+          "label": "121",
+          "is_correct": false
+        },
+        {
+          "label": "120",
+          "is_correct": true
+        }
+      ]
+    },
+    {
+      "chapter": "Number Series",
+      "kind": "standard",
+      "difficulty": "very_hard",
+      "answer_type": "single",
+      "stem": "Find the next number in the series: 6, 24, 60, 120, 210, ?",
+      "explanation": "The pattern: n³ − n for n = 2, 3, …. Continuing it, the next term is 336.",
+      "options": [
+        {
+          "label": "335",
+          "is_correct": false
+        },
+        {
+          "label": "337",
+          "is_correct": false
+        },
+        {
+          "label": "336",
+          "is_correct": true
+        },
+        {
+          "label": "338",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Number Series",
+      "kind": "standard",
+      "difficulty": "very_hard",
+      "answer_type": "single",
+      "stem": "Find the next number in the series: 2, 5, 10, 18, 30, ?",
+      "explanation": "The pattern: the added gap itself grows by 2, 3, 4, … (second-order differences increase). Continuing it, the next term is 47.",
+      "options": [
+        {
+          "label": "47",
+          "is_correct": true
+        },
+        {
+          "label": "46",
+          "is_correct": false
+        },
+        {
+          "label": "49",
+          "is_correct": false
+        },
+        {
+          "label": "48",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Number Series",
+      "kind": "standard",
+      "difficulty": "very_hard",
+      "answer_type": "single",
+      "stem": "Find the next number in the series: 6, 7, 15, 42, 106, ?",
+      "explanation": "The pattern: add consecutive cubes (+1, +8, +27, +64, +125). Continuing it, the next term is 231.",
+      "options": [
+        {
+          "label": "230",
+          "is_correct": false
+        },
+        {
+          "label": "231",
+          "is_correct": true
+        },
+        {
+          "label": "233",
+          "is_correct": false
+        },
+        {
+          "label": "232",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Number Series",
+      "kind": "standard",
+      "difficulty": "very_hard",
+      "answer_type": "single",
+      "stem": "Find the next number in the series: 5, 9, 17, 33, 65, 129, ?",
+      "explanation": "The pattern: powers of 2, plus 1 (2ⁿ + 1). Continuing it, the next term is 257.",
+      "options": [
+        {
+          "label": "259",
+          "is_correct": false
+        },
+        {
+          "label": "257",
+          "is_correct": true
+        },
+        {
+          "label": "256",
+          "is_correct": false
+        },
+        {
+          "label": "258",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Number Series",
+      "kind": "standard",
+      "difficulty": "very_hard",
+      "answer_type": "single",
+      "stem": "Find the next number in the series: 22, 35, 51, 70, 92, ?",
+      "explanation": "The pattern: pentagonal numbers n(3n−1)/2. Continuing it, the next term is 117.",
+      "options": [
+        {
+          "label": "117",
+          "is_correct": true
+        },
+        {
+          "label": "116",
+          "is_correct": false
+        },
+        {
+          "label": "118",
+          "is_correct": false
+        },
+        {
+          "label": "119",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Number Series",
+      "kind": "standard",
+      "difficulty": "very_hard",
+      "answer_type": "single",
+      "stem": "Find the next number in the series: 1, 4, 9, 17, 29, ?",
+      "explanation": "The pattern: the added gap itself grows by 2, 3, 4, … (second-order differences increase). Continuing it, the next term is 46.",
+      "options": [
+        {
+          "label": "46",
+          "is_correct": true
+        },
+        {
+          "label": "48",
+          "is_correct": false
+        },
+        {
+          "label": "45",
+          "is_correct": false
+        },
+        {
+          "label": "47",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Number Series",
+      "kind": "standard",
+      "difficulty": "very_hard",
+      "answer_type": "single",
+      "stem": "Find the next number in the series: 100, 144, 196, 256, 324, ?",
+      "explanation": "The pattern: squares of consecutive even numbers. Continuing it, the next term is 400.",
+      "options": [
+        {
+          "label": "400",
+          "is_correct": true
+        },
+        {
+          "label": "402",
+          "is_correct": false
+        },
+        {
+          "label": "399",
+          "is_correct": false
+        },
+        {
+          "label": "401",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Number Series",
+      "kind": "standard",
+      "difficulty": "very_hard",
+      "answer_type": "single",
+      "stem": "Find the next number in the series: 3, 4, 12, 39, 103, ?",
+      "explanation": "The pattern: add consecutive cubes (+1, +8, +27, +64, +125). Continuing it, the next term is 228.",
+      "options": [
+        {
+          "label": "230",
+          "is_correct": false
+        },
+        {
+          "label": "227",
+          "is_correct": false
+        },
+        {
+          "label": "228",
+          "is_correct": true
+        },
+        {
+          "label": "229",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Number Series",
+      "kind": "standard",
+      "difficulty": "very_hard",
+      "answer_type": "single",
+      "stem": "Find the next number in the series: 33, 65, 129, 257, 513, 1025, ?",
+      "explanation": "The pattern: powers of 2, plus 1 (2ⁿ + 1). Continuing it, the next term is 2049.",
+      "options": [
+        {
+          "label": "2048",
+          "is_correct": false
+        },
+        {
+          "label": "2050",
+          "is_correct": false
+        },
+        {
+          "label": "2051",
+          "is_correct": false
+        },
+        {
+          "label": "2049",
+          "is_correct": true
+        }
+      ]
+    },
+    {
+      "chapter": "Number Series",
+      "kind": "standard",
+      "difficulty": "very_hard",
+      "answer_type": "single",
+      "stem": "Find the next number in the series: 3, 5, 9, 16, 27, ?",
+      "explanation": "The pattern: the added gap itself grows by 2, 3, 4, … (second-order differences increase). Continuing it, the next term is 43.",
+      "options": [
+        {
+          "label": "45",
+          "is_correct": false
+        },
+        {
+          "label": "42",
+          "is_correct": false
+        },
+        {
+          "label": "44",
+          "is_correct": false
+        },
+        {
+          "label": "43",
+          "is_correct": true
+        }
+      ]
+    },
+    {
+      "chapter": "Number Series",
+      "kind": "standard",
+      "difficulty": "very_hard",
+      "answer_type": "single",
+      "stem": "Find the next number in the series: 30, 68, 130, 222, 350, ?",
+      "explanation": "The pattern: n³ + n for n = 3, 4, …. Continuing it, the next term is 520.",
+      "options": [
+        {
+          "label": "522",
+          "is_correct": false
+        },
+        {
+          "label": "521",
+          "is_correct": false
+        },
+        {
+          "label": "520",
+          "is_correct": true
+        },
+        {
+          "label": "519",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Number Series",
+      "kind": "standard",
+      "difficulty": "very_hard",
+      "answer_type": "single",
+      "stem": "Find the next number in the series: 4, 10, 20, 35, 56, ?",
+      "explanation": "The pattern: tetrahedral numbers n(n+1)(n+2)/6. Continuing it, the next term is 84.",
+      "options": [
+        {
+          "label": "85",
+          "is_correct": false
+        },
+        {
+          "label": "84",
+          "is_correct": true
+        },
+        {
+          "label": "83",
+          "is_correct": false
+        },
+        {
+          "label": "86",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Number Series",
+      "kind": "standard",
+      "difficulty": "very_hard",
+      "answer_type": "single",
+      "stem": "Find the next number in the series: 6, 7, 11, 20, 36, ?",
+      "explanation": "The pattern: add consecutive squares (+1, +4, +9, +16, +25). Continuing it, the next term is 61.",
+      "options": [
+        {
+          "label": "61",
+          "is_correct": true
+        },
+        {
+          "label": "62",
+          "is_correct": false
+        },
+        {
+          "label": "63",
+          "is_correct": false
+        },
+        {
+          "label": "60",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Number Series",
+      "kind": "standard",
+      "difficulty": "very_hard",
+      "answer_type": "single",
+      "stem": "Find the next number in the series: 1, 5, 12, 22, 35, ?",
+      "explanation": "The pattern: pentagonal numbers n(3n−1)/2. Continuing it, the next term is 51.",
+      "options": [
+        {
+          "label": "51",
+          "is_correct": true
+        },
+        {
+          "label": "53",
+          "is_correct": false
+        },
+        {
+          "label": "50",
+          "is_correct": false
+        },
+        {
+          "label": "52",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Number Series",
+      "kind": "standard",
+      "difficulty": "very_hard",
+      "answer_type": "single",
+      "stem": "Find the next number in the series: 1, 2, 6, 24, 120, ?",
+      "explanation": "The pattern: factorials (n! = 1×2×…×n). Continuing it, the next term is 720.",
+      "options": [
+        {
+          "label": "720",
+          "is_correct": true
+        },
+        {
+          "label": "722",
+          "is_correct": false
+        },
+        {
+          "label": "721",
+          "is_correct": false
+        },
+        {
+          "label": "719",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Number Series",
+      "kind": "standard",
+      "difficulty": "very_hard",
+      "answer_type": "single",
+      "stem": "Find the next number in the series: 9, 17, 33, 65, 129, 257, ?",
+      "explanation": "The pattern: powers of 2, plus 1 (2ⁿ + 1). Continuing it, the next term is 513.",
+      "options": [
+        {
+          "label": "512",
+          "is_correct": false
+        },
+        {
+          "label": "513",
+          "is_correct": true
+        },
+        {
+          "label": "515",
+          "is_correct": false
+        },
+        {
+          "label": "514",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Number Series",
+      "kind": "standard",
+      "difficulty": "very_hard",
+      "answer_type": "single",
+      "stem": "Find the next number in the series: 6, 24, 120, 720, 5040, ?",
+      "explanation": "The pattern: factorials (n! = 1×2×…×n). Continuing it, the next term is 40320.",
+      "options": [
+        {
+          "label": "40322",
+          "is_correct": false
+        },
+        {
+          "label": "40320",
+          "is_correct": true
+        },
+        {
+          "label": "40321",
+          "is_correct": false
+        },
+        {
+          "label": "40319",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Number Series",
+      "kind": "standard",
+      "difficulty": "very_hard",
+      "answer_type": "single",
+      "stem": "Find the next number in the series: 9, 28, 65, 126, 217, ?",
+      "explanation": "The pattern: n³ + 1 for n = 2, 3, …. Continuing it, the next term is 344.",
+      "options": [
+        {
+          "label": "346",
+          "is_correct": false
+        },
+        {
+          "label": "345",
+          "is_correct": false
+        },
+        {
+          "label": "343",
+          "is_correct": false
+        },
+        {
+          "label": "344",
+          "is_correct": true
+        }
+      ]
+    },
+    {
+      "chapter": "Number Series",
+      "kind": "standard",
+      "difficulty": "very_hard",
+      "answer_type": "single",
+      "stem": "Find the next number in the series: 31, 63, 127, 255, 511, 1023, ?",
+      "explanation": "The pattern: powers of 2, minus 1 (2ⁿ − 1). Continuing it, the next term is 2047.",
+      "options": [
+        {
+          "label": "2048",
+          "is_correct": false
+        },
+        {
+          "label": "2047",
+          "is_correct": true
+        },
+        {
+          "label": "2046",
+          "is_correct": false
+        },
+        {
+          "label": "2049",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Number Series",
+      "kind": "standard",
+      "difficulty": "very_hard",
+      "answer_type": "single",
+      "stem": "Find the next number in the series: 20, 35, 56, 84, 120, ?",
+      "explanation": "The pattern: tetrahedral numbers n(n+1)(n+2)/6. Continuing it, the next term is 165.",
+      "options": [
+        {
+          "label": "167",
+          "is_correct": false
+        },
+        {
+          "label": "165",
+          "is_correct": true
+        },
+        {
+          "label": "166",
+          "is_correct": false
+        },
+        {
+          "label": "164",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Number Series",
+      "kind": "standard",
+      "difficulty": "very_hard",
+      "answer_type": "single",
+      "stem": "Find the next number in the series: 49, 81, 121, 169, 225, ?",
+      "explanation": "The pattern: squares of consecutive odd numbers. Continuing it, the next term is 289.",
+      "options": [
+        {
+          "label": "288",
+          "is_correct": false
+        },
+        {
+          "label": "289",
+          "is_correct": true
+        },
+        {
+          "label": "290",
+          "is_correct": false
+        },
+        {
+          "label": "291",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Number Series",
+      "kind": "standard",
+      "difficulty": "very_hard",
+      "answer_type": "single",
+      "stem": "Find the next number in the series: 17, 33, 65, 129, 257, 513, ?",
+      "explanation": "The pattern: powers of 2, plus 1 (2ⁿ + 1). Continuing it, the next term is 1025.",
+      "options": [
+        {
+          "label": "1025",
+          "is_correct": true
+        },
+        {
+          "label": "1026",
+          "is_correct": false
+        },
+        {
+          "label": "1027",
+          "is_correct": false
+        },
+        {
+          "label": "1024",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Number Series",
+      "kind": "standard",
+      "difficulty": "very_hard",
+      "answer_type": "single",
+      "stem": "Find the next number in the series: 2, 3, 11, 38, 102, ?",
+      "explanation": "The pattern: add consecutive cubes (+1, +8, +27, +64, +125). Continuing it, the next term is 227.",
+      "options": [
+        {
+          "label": "227",
+          "is_correct": true
+        },
+        {
+          "label": "226",
+          "is_correct": false
+        },
+        {
+          "label": "228",
+          "is_correct": false
+        },
+        {
+          "label": "229",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Number Series",
+      "kind": "standard",
+      "difficulty": "very_hard",
+      "answer_type": "single",
+      "stem": "Find the next number in the series: 25, 49, 121, 169, 289, ?",
+      "explanation": "The pattern: squares of consecutive prime numbers. Continuing it, the next term is 361.",
+      "options": [
+        {
+          "label": "360",
+          "is_correct": false
+        },
+        {
+          "label": "363",
+          "is_correct": false
+        },
+        {
+          "label": "361",
+          "is_correct": true
+        },
+        {
+          "label": "362",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Number Series",
+      "kind": "standard",
+      "difficulty": "very_hard",
+      "answer_type": "single",
+      "stem": "Find the next number in the series: 27, 125, 343, 1331, 2197, ?",
+      "explanation": "The pattern: cubes of consecutive prime numbers. Continuing it, the next term is 4913.",
+      "options": [
+        {
+          "label": "4913",
+          "is_correct": true
+        },
+        {
+          "label": "4915",
+          "is_correct": false
+        },
+        {
+          "label": "4914",
+          "is_correct": false
+        },
+        {
+          "label": "4912",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Number Series",
+      "kind": "standard",
+      "difficulty": "very_hard",
+      "answer_type": "single",
+      "stem": "Find the next number in the series: 10, 30, 68, 130, 222, ?",
+      "explanation": "The pattern: n³ + n for n = 2, 3, …. Continuing it, the next term is 350.",
+      "options": [
+        {
+          "label": "351",
+          "is_correct": false
+        },
+        {
+          "label": "349",
+          "is_correct": false
+        },
+        {
+          "label": "352",
+          "is_correct": false
+        },
+        {
+          "label": "350",
+          "is_correct": true
+        }
+      ]
+    },
+    {
+      "chapter": "Number Series",
+      "kind": "standard",
+      "difficulty": "very_hard",
+      "answer_type": "single",
+      "stem": "Find the next number in the series: 343, 1331, 2197, 4913, 6859, ?",
+      "explanation": "The pattern: cubes of consecutive prime numbers. Continuing it, the next term is 12167.",
+      "options": [
+        {
+          "label": "12169",
+          "is_correct": false
+        },
+        {
+          "label": "12166",
+          "is_correct": false
+        },
+        {
+          "label": "12167",
+          "is_correct": true
+        },
+        {
+          "label": "12168",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Number Series",
+      "kind": "standard",
+      "difficulty": "very_hard",
+      "answer_type": "single",
+      "stem": "Find the next number in the series: 15, 31, 63, 127, 255, 511, ?",
+      "explanation": "The pattern: powers of 2, minus 1 (2ⁿ − 1). Continuing it, the next term is 1023.",
+      "options": [
+        {
+          "label": "1024",
+          "is_correct": false
+        },
+        {
+          "label": "1023",
+          "is_correct": true
+        },
+        {
+          "label": "1022",
+          "is_correct": false
+        },
+        {
+          "label": "1025",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Number Series",
+      "kind": "standard",
+      "difficulty": "very_hard",
+      "answer_type": "single",
+      "stem": "Find the next number in the series: 2, 6, 12, 21, 34, ?",
+      "explanation": "The pattern: the added gap itself grows by 2, 3, 4, … (second-order differences increase). Continuing it, the next term is 52.",
+      "options": [
+        {
+          "label": "53",
+          "is_correct": false
+        },
+        {
+          "label": "51",
+          "is_correct": false
+        },
+        {
+          "label": "54",
+          "is_correct": false
+        },
+        {
+          "label": "52",
+          "is_correct": true
+        }
+      ]
+    },
+    {
+      "chapter": "Number Series",
+      "kind": "standard",
+      "difficulty": "very_hard",
+      "answer_type": "single",
+      "stem": "Find the next number in the series: 36, 64, 100, 144, 196, ?",
+      "explanation": "The pattern: squares of consecutive even numbers. Continuing it, the next term is 256.",
+      "options": [
+        {
+          "label": "255",
+          "is_correct": false
+        },
+        {
+          "label": "258",
+          "is_correct": false
+        },
+        {
+          "label": "256",
+          "is_correct": true
+        },
+        {
+          "label": "257",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Number Series",
+      "kind": "standard",
+      "difficulty": "very_hard",
+      "answer_type": "single",
+      "stem": "Find the next number in the series: 3, 4, 8, 17, 33, ?",
+      "explanation": "The pattern: add consecutive squares (+1, +4, +9, +16, +25). Continuing it, the next term is 58.",
+      "options": [
+        {
+          "label": "60",
+          "is_correct": false
+        },
+        {
+          "label": "59",
+          "is_correct": false
+        },
+        {
+          "label": "57",
+          "is_correct": false
+        },
+        {
+          "label": "58",
+          "is_correct": true
+        }
+      ]
+    },
+    {
+      "chapter": "Number Series",
+      "kind": "standard",
+      "difficulty": "very_hard",
+      "answer_type": "single",
+      "stem": "Find the next number in the series: 5, 6, 10, 19, 35, ?",
+      "explanation": "The pattern: add consecutive squares (+1, +4, +9, +16, +25). Continuing it, the next term is 60.",
+      "options": [
+        {
+          "label": "62",
+          "is_correct": false
+        },
+        {
+          "label": "61",
+          "is_correct": false
+        },
+        {
+          "label": "60",
+          "is_correct": true
+        },
+        {
+          "label": "59",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Number Series",
+      "kind": "standard",
+      "difficulty": "very_hard",
+      "answer_type": "single",
+      "stem": "Find the next number in the series: 4, 5, 9, 18, 34, ?",
+      "explanation": "The pattern: add consecutive squares (+1, +4, +9, +16, +25). Continuing it, the next term is 59.",
+      "options": [
+        {
+          "label": "60",
+          "is_correct": false
+        },
+        {
+          "label": "59",
+          "is_correct": true
+        },
+        {
+          "label": "58",
+          "is_correct": false
+        },
+        {
+          "label": "61",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Number Series",
+      "kind": "standard",
+      "difficulty": "very_hard",
+      "answer_type": "single",
+      "stem": "Find the next number in the series: 64, 100, 144, 196, 256, ?",
+      "explanation": "The pattern: squares of consecutive even numbers. Continuing it, the next term is 324.",
+      "options": [
+        {
+          "label": "326",
+          "is_correct": false
+        },
+        {
+          "label": "323",
+          "is_correct": false
+        },
+        {
+          "label": "325",
+          "is_correct": false
+        },
+        {
+          "label": "324",
+          "is_correct": true
+        }
+      ]
+    },
+    {
+      "chapter": "Number Series",
+      "kind": "standard",
+      "difficulty": "very_hard",
+      "answer_type": "single",
+      "stem": "Find the next number in the series: 7, 15, 31, 63, 127, 255, ?",
+      "explanation": "The pattern: powers of 2, minus 1 (2ⁿ − 1). Continuing it, the next term is 511.",
+      "options": [
+        {
+          "label": "511",
+          "is_correct": true
+        },
+        {
+          "label": "513",
+          "is_correct": false
+        },
+        {
+          "label": "510",
+          "is_correct": false
+        },
+        {
+          "label": "512",
+          "is_correct": false
+        }
+      ]
+    }
+  ]
+}
