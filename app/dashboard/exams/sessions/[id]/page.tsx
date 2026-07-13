@@ -1,8 +1,9 @@
 import { notFound, redirect } from "next/navigation";
 import { getAuthContext, can } from "@/lib/auth";
 import { createClient } from "@/lib/supabase/server";
-import { fetchRoster, fetchSession } from "@/lib/exam-query";
+import { fetchPaperForPrint, fetchRoster, fetchSession } from "@/lib/exam-query";
 import { SessionDetailClient } from "./session-detail-client";
+import { PaperPrint } from "./paper-print";
 
 export default async function SessionDetailPage({
   params,
@@ -20,7 +21,11 @@ export default async function SessionDetailPage({
   const supabase = await createClient();
   const session = await fetchSession(supabase, id);
   if (!session) notFound();
-  const roster = await fetchRoster(supabase, id);
+  const canExportPdf = ctx.permissions.has("*") || can(ctx, "exam.paper.export_pdf");
+  const [roster, paper] = await Promise.all([
+    fetchRoster(supabase, id),
+    canExportPdf ? fetchPaperForPrint(supabase, id) : Promise.resolve(null),
+  ]);
 
   return (
     <div className="mx-auto max-w-4xl">
@@ -33,8 +38,20 @@ export default async function SessionDetailPage({
       <SessionDetailClient
         session={session}
         roster={roster}
-        canExportPdf={ctx.permissions.has("*") || can(ctx, "exam.paper.export_pdf")}
+        canPrintPaper={canExportPdf && !!paper && paper.questions.length > 0}
       />
+      {/* Print-only question paper / answer key on the letterhead; the Print
+          paper / Print key buttons in SessionDetailClient fire window.print(). */}
+      {canExportPdf && paper && paper.questions.length > 0 && (
+        <PaperPrint
+          title={session.examTitle ?? "Exam"}
+          label={session.label}
+          collegeName={session.collegeName}
+          durationMinutes={session.durationMinutes ?? 0}
+          totalMarks={paper.totalMarks}
+          questions={paper.questions}
+        />
+      )}
     </div>
   );
 }

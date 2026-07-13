@@ -1,11 +1,14 @@
 "use client";
 
 // Conduct a sitting: open/close it, assign students, print the offline question
-// paper / answer key (separate sheets, via the print page), and view the roster
-// + scores. Results printing lives on the Results page.
+// paper / answer key directly (separate sheets — the print-only PaperPrint block
+// is embedded by the page), and view the roster + scores. Results printing lives
+// on the Results page.
 import { useState } from "react";
 import Link from "next/link";
 import { useRouter } from "next/navigation";
+import { Printer } from "lucide-react";
+import { printAs } from "./paper-print";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
@@ -14,11 +17,11 @@ import type { RosterEntry, SessionSummary } from "@/lib/exam-query";
 export function SessionDetailClient({
   session,
   roster,
-  canExportPdf,
+  canPrintPaper,
 }: {
   session: SessionSummary;
   roster: RosterEntry[];
-  canExportPdf: boolean;
+  canPrintPaper: boolean;
 }) {
   const router = useRouter();
   const [busy, setBusy] = useState("");
@@ -62,16 +65,26 @@ export function SessionDetailClient({
                 Close
               </Button>
             )}
-            {canExportPdf && (
+            {canPrintPaper && (
+              <>
+                <Button size="sm" variant="outline" onClick={() => printAs("paper")}>
+                  <Printer /> Print paper
+                </Button>
+                <Button size="sm" variant="outline" onClick={() => printAs("key")}>
+                  <Printer /> Print key
+                </Button>
+              </>
+            )}
+            {/* A scheduled sitting has no results yet. */}
+            {session.status === "scheduled" ? (
+              <Button size="sm" variant="outline" disabled title="Results appear once the exam runs">
+                Results
+              </Button>
+            ) : (
               <Button size="sm" variant="outline" asChild>
-                <Link href={`/dashboard/exams/sessions/${session.id}/print`} target="_blank">
-                  Print paper
-                </Link>
+                <Link href={`/dashboard/exams/sessions/${session.id}/results`}>Results</Link>
               </Button>
             )}
-            <Button size="sm" variant="outline" asChild>
-              <Link href={`/dashboard/exams/sessions/${session.id}/results`}>Results</Link>
-            </Button>
           </div>
         </CardContent>
       </Card>
