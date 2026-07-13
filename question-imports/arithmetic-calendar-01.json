@@ -1,0 +1,5205 @@
+{
+  "subject": "Arithmetic",
+  "questions": [
+    {
+      "chapter": "Calendar",
+      "kind": "standard",
+      "difficulty": "easy",
+      "answer_type": "single",
+      "stem": "If today is Monday, what day of the week was it 54 days ago?",
+      "explanation": "Going back 5 days from Monday gives Wednesday.",
+      "options": [
+        {
+          "label": "Thursday",
+          "is_correct": false
+        },
+        {
+          "label": "Friday",
+          "is_correct": false
+        },
+        {
+          "label": "Monday",
+          "is_correct": false
+        },
+        {
+          "label": "Wednesday",
+          "is_correct": true
+        }
+      ]
+    },
+    {
+      "chapter": "Calendar",
+      "kind": "standard",
+      "difficulty": "easy",
+      "answer_type": "single",
+      "stem": "If today is Sunday, what day of the week will it be after 1 days?",
+      "explanation": "1 mod 7 = 1, so the day advances by 1 to Monday.",
+      "options": [
+        {
+          "label": "Monday",
+          "is_correct": true
+        },
+        {
+          "label": "Tuesday",
+          "is_correct": false
+        },
+        {
+          "label": "Saturday",
+          "is_correct": false
+        },
+        {
+          "label": "Wednesday",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Calendar",
+      "kind": "standard",
+      "difficulty": "easy",
+      "answer_type": "single",
+      "stem": "If the 1st of a month falls on a Saturday, what day of the week will the 3th of that month be?",
+      "explanation": "The 3th is 2 days after the 1st; (2) mod 7 = 2, giving Monday.",
+      "options": [
+        {
+          "label": "Sunday",
+          "is_correct": false
+        },
+        {
+          "label": "Saturday",
+          "is_correct": false
+        },
+        {
+          "label": "Tuesday",
+          "is_correct": false
+        },
+        {
+          "label": "Monday",
+          "is_correct": true
+        }
+      ]
+    },
+    {
+      "chapter": "Calendar",
+      "kind": "standard",
+      "difficulty": "easy",
+      "answer_type": "single",
+      "stem": "If today is Thursday, what day of the week was it 30 days ago?",
+      "explanation": "Going back 2 days from Thursday gives Tuesday.",
+      "options": [
+        {
+          "label": "Tuesday",
+          "is_correct": true
+        },
+        {
+          "label": "Friday",
+          "is_correct": false
+        },
+        {
+          "label": "Saturday",
+          "is_correct": false
+        },
+        {
+          "label": "Monday",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Calendar",
+      "kind": "standard",
+      "difficulty": "easy",
+      "answer_type": "single",
+      "stem": "If today is Thursday, what day of the week was it 23 days ago?",
+      "explanation": "Going back 2 days from Thursday gives Tuesday.",
+      "options": [
+        {
+          "label": "Wednesday",
+          "is_correct": false
+        },
+        {
+          "label": "Friday",
+          "is_correct": false
+        },
+        {
+          "label": "Monday",
+          "is_correct": false
+        },
+        {
+          "label": "Tuesday",
+          "is_correct": true
+        }
+      ]
+    },
+    {
+      "chapter": "Calendar",
+      "kind": "standard",
+      "difficulty": "easy",
+      "answer_type": "single",
+      "stem": "If today is Thursday, what day of the week was it 10 days ago?",
+      "explanation": "Going back 3 days from Thursday gives Monday.",
+      "options": [
+        {
+          "label": "Tuesday",
+          "is_correct": false
+        },
+        {
+          "label": "Friday",
+          "is_correct": false
+        },
+        {
+          "label": "Thursday",
+          "is_correct": false
+        },
+        {
+          "label": "Monday",
+          "is_correct": true
+        }
+      ]
+    },
+    {
+      "chapter": "Calendar",
+      "kind": "standard",
+      "difficulty": "easy",
+      "answer_type": "single",
+      "stem": "If today is Monday, what day of the week will it be after 4 days?",
+      "explanation": "4 mod 7 = 4, so the day advances by 4 to Friday.",
+      "options": [
+        {
+          "label": "Tuesday",
+          "is_correct": false
+        },
+        {
+          "label": "Friday",
+          "is_correct": true
+        },
+        {
+          "label": "Saturday",
+          "is_correct": false
+        },
+        {
+          "label": "Wednesday",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Calendar",
+      "kind": "standard",
+      "difficulty": "easy",
+      "answer_type": "single",
+      "stem": "If today is Thursday, what day of the week was it 40 days ago?",
+      "explanation": "Going back 5 days from Thursday gives Saturday.",
+      "options": [
+        {
+          "label": "Wednesday",
+          "is_correct": false
+        },
+        {
+          "label": "Thursday",
+          "is_correct": false
+        },
+        {
+          "label": "Sunday",
+          "is_correct": false
+        },
+        {
+          "label": "Saturday",
+          "is_correct": true
+        }
+      ]
+    },
+    {
+      "chapter": "Calendar",
+      "kind": "standard",
+      "difficulty": "easy",
+      "answer_type": "single",
+      "stem": "If today is Sunday, what day of the week was it 1 days ago?",
+      "explanation": "Going back 1 days from Sunday gives Saturday.",
+      "options": [
+        {
+          "label": "Sunday",
+          "is_correct": false
+        },
+        {
+          "label": "Saturday",
+          "is_correct": true
+        },
+        {
+          "label": "Wednesday",
+          "is_correct": false
+        },
+        {
+          "label": "Thursday",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Calendar",
+      "kind": "standard",
+      "difficulty": "easy",
+      "answer_type": "single",
+      "stem": "If the 1st of a month falls on a Sunday, what day of the week will the 11th of that month be?",
+      "explanation": "The 11th is 10 days after the 1st; (10) mod 7 = 3, giving Wednesday.",
+      "options": [
+        {
+          "label": "Wednesday",
+          "is_correct": true
+        },
+        {
+          "label": "Tuesday",
+          "is_correct": false
+        },
+        {
+          "label": "Monday",
+          "is_correct": false
+        },
+        {
+          "label": "Thursday",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Calendar",
+      "kind": "standard",
+      "difficulty": "easy",
+      "answer_type": "single",
+      "stem": "If today is Sunday, what day of the week was it 50 days ago?",
+      "explanation": "Going back 1 days from Sunday gives Saturday.",
+      "options": [
+        {
+          "label": "Saturday",
+          "is_correct": true
+        },
+        {
+          "label": "Wednesday",
+          "is_correct": false
+        },
+        {
+          "label": "Thursday",
+          "is_correct": false
+        },
+        {
+          "label": "Tuesday",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Calendar",
+      "kind": "standard",
+      "difficulty": "easy",
+      "answer_type": "single",
+      "stem": "If the 1st of a month falls on a Friday, what day of the week will the 3th of that month be?",
+      "explanation": "The 3th is 2 days after the 1st; (2) mod 7 = 2, giving Sunday.",
+      "options": [
+        {
+          "label": "Sunday",
+          "is_correct": true
+        },
+        {
+          "label": "Friday",
+          "is_correct": false
+        },
+        {
+          "label": "Tuesday",
+          "is_correct": false
+        },
+        {
+          "label": "Thursday",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Calendar",
+      "kind": "standard",
+      "difficulty": "easy",
+      "answer_type": "single",
+      "stem": "If the 1st of a month falls on a Sunday, what day of the week will the 12th of that month be?",
+      "explanation": "The 12th is 11 days after the 1st; (11) mod 7 = 4, giving Thursday.",
+      "options": [
+        {
+          "label": "Tuesday",
+          "is_correct": false
+        },
+        {
+          "label": "Thursday",
+          "is_correct": true
+        },
+        {
+          "label": "Sunday",
+          "is_correct": false
+        },
+        {
+          "label": "Wednesday",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Calendar",
+      "kind": "standard",
+      "difficulty": "easy",
+      "answer_type": "single",
+      "stem": "If today is Saturday, what day of the week will it be after 9 days?",
+      "explanation": "9 mod 7 = 2, so the day advances by 2 to Monday.",
+      "options": [
+        {
+          "label": "Monday",
+          "is_correct": true
+        },
+        {
+          "label": "Friday",
+          "is_correct": false
+        },
+        {
+          "label": "Wednesday",
+          "is_correct": false
+        },
+        {
+          "label": "Sunday",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Calendar",
+      "kind": "standard",
+      "difficulty": "easy",
+      "answer_type": "single",
+      "stem": "If today is Thursday, what day of the week was it 47 days ago?",
+      "explanation": "Going back 5 days from Thursday gives Saturday.",
+      "options": [
+        {
+          "label": "Monday",
+          "is_correct": false
+        },
+        {
+          "label": "Saturday",
+          "is_correct": true
+        },
+        {
+          "label": "Wednesday",
+          "is_correct": false
+        },
+        {
+          "label": "Tuesday",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Calendar",
+      "kind": "standard",
+      "difficulty": "easy",
+      "answer_type": "single",
+      "stem": "If today is Sunday, what day of the week will it be after 42 days?",
+      "explanation": "42 mod 7 = 0, so the day advances by 0 to Sunday.",
+      "options": [
+        {
+          "label": "Sunday",
+          "is_correct": true
+        },
+        {
+          "label": "Tuesday",
+          "is_correct": false
+        },
+        {
+          "label": "Friday",
+          "is_correct": false
+        },
+        {
+          "label": "Saturday",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Calendar",
+      "kind": "standard",
+      "difficulty": "easy",
+      "answer_type": "single",
+      "stem": "If today is Tuesday, what day of the week was it 37 days ago?",
+      "explanation": "Going back 2 days from Tuesday gives Sunday.",
+      "options": [
+        {
+          "label": "Friday",
+          "is_correct": false
+        },
+        {
+          "label": "Wednesday",
+          "is_correct": false
+        },
+        {
+          "label": "Tuesday",
+          "is_correct": false
+        },
+        {
+          "label": "Sunday",
+          "is_correct": true
+        }
+      ]
+    },
+    {
+      "chapter": "Calendar",
+      "kind": "standard",
+      "difficulty": "easy",
+      "answer_type": "single",
+      "stem": "If the 1st of a month falls on a Monday, what day of the week will the 12th of that month be?",
+      "explanation": "The 12th is 11 days after the 1st; (11) mod 7 = 4, giving Friday.",
+      "options": [
+        {
+          "label": "Monday",
+          "is_correct": false
+        },
+        {
+          "label": "Friday",
+          "is_correct": true
+        },
+        {
+          "label": "Tuesday",
+          "is_correct": false
+        },
+        {
+          "label": "Wednesday",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Calendar",
+      "kind": "standard",
+      "difficulty": "easy",
+      "answer_type": "single",
+      "stem": "If today is Tuesday, what day of the week will it be after 52 days?",
+      "explanation": "52 mod 7 = 3, so the day advances by 3 to Friday.",
+      "options": [
+        {
+          "label": "Wednesday",
+          "is_correct": false
+        },
+        {
+          "label": "Sunday",
+          "is_correct": false
+        },
+        {
+          "label": "Saturday",
+          "is_correct": false
+        },
+        {
+          "label": "Friday",
+          "is_correct": true
+        }
+      ]
+    },
+    {
+      "chapter": "Calendar",
+      "kind": "standard",
+      "difficulty": "easy",
+      "answer_type": "single",
+      "stem": "If the 1st of a month falls on a Saturday, what day of the week will the 23th of that month be?",
+      "explanation": "The 23th is 22 days after the 1st; (22) mod 7 = 1, giving Sunday.",
+      "options": [
+        {
+          "label": "Saturday",
+          "is_correct": false
+        },
+        {
+          "label": "Monday",
+          "is_correct": false
+        },
+        {
+          "label": "Thursday",
+          "is_correct": false
+        },
+        {
+          "label": "Sunday",
+          "is_correct": true
+        }
+      ]
+    },
+    {
+      "chapter": "Calendar",
+      "kind": "standard",
+      "difficulty": "easy",
+      "answer_type": "single",
+      "stem": "If today is Saturday, what day of the week will it be after 34 days?",
+      "explanation": "34 mod 7 = 6, so the day advances by 6 to Friday.",
+      "options": [
+        {
+          "label": "Sunday",
+          "is_correct": false
+        },
+        {
+          "label": "Tuesday",
+          "is_correct": false
+        },
+        {
+          "label": "Thursday",
+          "is_correct": false
+        },
+        {
+          "label": "Friday",
+          "is_correct": true
+        }
+      ]
+    },
+    {
+      "chapter": "Calendar",
+      "kind": "standard",
+      "difficulty": "easy",
+      "answer_type": "single",
+      "stem": "If today is Thursday, what day of the week will it be after 22 days?",
+      "explanation": "22 mod 7 = 1, so the day advances by 1 to Friday.",
+      "options": [
+        {
+          "label": "Saturday",
+          "is_correct": false
+        },
+        {
+          "label": "Wednesday",
+          "is_correct": false
+        },
+        {
+          "label": "Friday",
+          "is_correct": true
+        },
+        {
+          "label": "Monday",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Calendar",
+      "kind": "standard",
+      "difficulty": "easy",
+      "answer_type": "single",
+      "stem": "If today is Thursday, what day of the week will it be after 44 days?",
+      "explanation": "44 mod 7 = 2, so the day advances by 2 to Saturday.",
+      "options": [
+        {
+          "label": "Saturday",
+          "is_correct": true
+        },
+        {
+          "label": "Tuesday",
+          "is_correct": false
+        },
+        {
+          "label": "Monday",
+          "is_correct": false
+        },
+        {
+          "label": "Thursday",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Calendar",
+      "kind": "standard",
+      "difficulty": "easy",
+      "answer_type": "single",
+      "stem": "If today is Friday, what day of the week was it 29 days ago?",
+      "explanation": "Going back 1 days from Friday gives Thursday.",
+      "options": [
+        {
+          "label": "Friday",
+          "is_correct": false
+        },
+        {
+          "label": "Thursday",
+          "is_correct": true
+        },
+        {
+          "label": "Saturday",
+          "is_correct": false
+        },
+        {
+          "label": "Sunday",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Calendar",
+      "kind": "standard",
+      "difficulty": "easy",
+      "answer_type": "single",
+      "stem": "If today is Monday, what day of the week was it 17 days ago?",
+      "explanation": "Going back 3 days from Monday gives Friday.",
+      "options": [
+        {
+          "label": "Sunday",
+          "is_correct": false
+        },
+        {
+          "label": "Friday",
+          "is_correct": true
+        },
+        {
+          "label": "Saturday",
+          "is_correct": false
+        },
+        {
+          "label": "Monday",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Calendar",
+      "kind": "standard",
+      "difficulty": "easy",
+      "answer_type": "single",
+      "stem": "If the 1st of a month falls on a Wednesday, what day of the week will the 19th of that month be?",
+      "explanation": "The 19th is 18 days after the 1st; (18) mod 7 = 4, giving Sunday.",
+      "options": [
+        {
+          "label": "Monday",
+          "is_correct": false
+        },
+        {
+          "label": "Sunday",
+          "is_correct": true
+        },
+        {
+          "label": "Friday",
+          "is_correct": false
+        },
+        {
+          "label": "Thursday",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Calendar",
+      "kind": "standard",
+      "difficulty": "easy",
+      "answer_type": "single",
+      "stem": "If today is Monday, what day of the week will it be after 13 days?",
+      "explanation": "13 mod 7 = 6, so the day advances by 6 to Sunday.",
+      "options": [
+        {
+          "label": "Friday",
+          "is_correct": false
+        },
+        {
+          "label": "Tuesday",
+          "is_correct": false
+        },
+        {
+          "label": "Sunday",
+          "is_correct": true
+        },
+        {
+          "label": "Monday",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Calendar",
+      "kind": "standard",
+      "difficulty": "easy",
+      "answer_type": "single",
+      "stem": "If the 1st of a month falls on a Sunday, what day of the week will the 8th of that month be?",
+      "explanation": "The 8th is 7 days after the 1st; (7) mod 7 = 0, giving Sunday.",
+      "options": [
+        {
+          "label": "Friday",
+          "is_correct": false
+        },
+        {
+          "label": "Monday",
+          "is_correct": false
+        },
+        {
+          "label": "Sunday",
+          "is_correct": true
+        },
+        {
+          "label": "Tuesday",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Calendar",
+      "kind": "standard",
+      "difficulty": "easy",
+      "answer_type": "single",
+      "stem": "If the 1st of a month falls on a Saturday, what day of the week will the 19th of that month be?",
+      "explanation": "The 19th is 18 days after the 1st; (18) mod 7 = 4, giving Wednesday.",
+      "options": [
+        {
+          "label": "Wednesday",
+          "is_correct": true
+        },
+        {
+          "label": "Monday",
+          "is_correct": false
+        },
+        {
+          "label": "Sunday",
+          "is_correct": false
+        },
+        {
+          "label": "Thursday",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Calendar",
+      "kind": "standard",
+      "difficulty": "easy",
+      "answer_type": "single",
+      "stem": "If the 1st of a month falls on a Saturday, what day of the week will the 27th of that month be?",
+      "explanation": "The 27th is 26 days after the 1st; (26) mod 7 = 5, giving Thursday.",
+      "options": [
+        {
+          "label": "Monday",
+          "is_correct": false
+        },
+        {
+          "label": "Wednesday",
+          "is_correct": false
+        },
+        {
+          "label": "Thursday",
+          "is_correct": true
+        },
+        {
+          "label": "Saturday",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Calendar",
+      "kind": "standard",
+      "difficulty": "easy",
+      "answer_type": "single",
+      "stem": "If today is Friday, what day of the week was it 30 days ago?",
+      "explanation": "Going back 2 days from Friday gives Wednesday.",
+      "options": [
+        {
+          "label": "Friday",
+          "is_correct": false
+        },
+        {
+          "label": "Tuesday",
+          "is_correct": false
+        },
+        {
+          "label": "Wednesday",
+          "is_correct": true
+        },
+        {
+          "label": "Monday",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Calendar",
+      "kind": "standard",
+      "difficulty": "easy",
+      "answer_type": "single",
+      "stem": "If the 1st of a month falls on a Saturday, what day of the week will the 5th of that month be?",
+      "explanation": "The 5th is 4 days after the 1st; (4) mod 7 = 4, giving Wednesday.",
+      "options": [
+        {
+          "label": "Friday",
+          "is_correct": false
+        },
+        {
+          "label": "Saturday",
+          "is_correct": false
+        },
+        {
+          "label": "Sunday",
+          "is_correct": false
+        },
+        {
+          "label": "Wednesday",
+          "is_correct": true
+        }
+      ]
+    },
+    {
+      "chapter": "Calendar",
+      "kind": "standard",
+      "difficulty": "easy",
+      "answer_type": "single",
+      "stem": "If today is Sunday, what day of the week was it 3 days ago?",
+      "explanation": "Going back 3 days from Sunday gives Thursday.",
+      "options": [
+        {
+          "label": "Monday",
+          "is_correct": false
+        },
+        {
+          "label": "Thursday",
+          "is_correct": true
+        },
+        {
+          "label": "Friday",
+          "is_correct": false
+        },
+        {
+          "label": "Sunday",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Calendar",
+      "kind": "standard",
+      "difficulty": "easy",
+      "answer_type": "single",
+      "stem": "If the 1st of a month falls on a Friday, what day of the week will the 4th of that month be?",
+      "explanation": "The 4th is 3 days after the 1st; (3) mod 7 = 3, giving Monday.",
+      "options": [
+        {
+          "label": "Wednesday",
+          "is_correct": false
+        },
+        {
+          "label": "Tuesday",
+          "is_correct": false
+        },
+        {
+          "label": "Monday",
+          "is_correct": true
+        },
+        {
+          "label": "Sunday",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Calendar",
+      "kind": "standard",
+      "difficulty": "easy",
+      "answer_type": "single",
+      "stem": "If the 1st of a month falls on a Thursday, what day of the week will the 15th of that month be?",
+      "explanation": "The 15th is 14 days after the 1st; (14) mod 7 = 0, giving Thursday.",
+      "options": [
+        {
+          "label": "Saturday",
+          "is_correct": false
+        },
+        {
+          "label": "Thursday",
+          "is_correct": true
+        },
+        {
+          "label": "Monday",
+          "is_correct": false
+        },
+        {
+          "label": "Friday",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Calendar",
+      "kind": "standard",
+      "difficulty": "easy",
+      "answer_type": "single",
+      "stem": "If the 1st of a month falls on a Monday, what day of the week will the 18th of that month be?",
+      "explanation": "The 18th is 17 days after the 1st; (17) mod 7 = 3, giving Thursday.",
+      "options": [
+        {
+          "label": "Saturday",
+          "is_correct": false
+        },
+        {
+          "label": "Thursday",
+          "is_correct": true
+        },
+        {
+          "label": "Tuesday",
+          "is_correct": false
+        },
+        {
+          "label": "Friday",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Calendar",
+      "kind": "standard",
+      "difficulty": "easy",
+      "answer_type": "single",
+      "stem": "If today is Saturday, what day of the week was it 18 days ago?",
+      "explanation": "Going back 4 days from Saturday gives Tuesday.",
+      "options": [
+        {
+          "label": "Saturday",
+          "is_correct": false
+        },
+        {
+          "label": "Tuesday",
+          "is_correct": true
+        },
+        {
+          "label": "Monday",
+          "is_correct": false
+        },
+        {
+          "label": "Wednesday",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Calendar",
+      "kind": "standard",
+      "difficulty": "easy",
+      "answer_type": "single",
+      "stem": "If the 1st of a month falls on a Wednesday, what day of the week will the 6th of that month be?",
+      "explanation": "The 6th is 5 days after the 1st; (5) mod 7 = 5, giving Monday.",
+      "options": [
+        {
+          "label": "Sunday",
+          "is_correct": false
+        },
+        {
+          "label": "Saturday",
+          "is_correct": false
+        },
+        {
+          "label": "Friday",
+          "is_correct": false
+        },
+        {
+          "label": "Monday",
+          "is_correct": true
+        }
+      ]
+    },
+    {
+      "chapter": "Calendar",
+      "kind": "standard",
+      "difficulty": "easy",
+      "answer_type": "single",
+      "stem": "If today is Thursday, what day of the week will it be after 57 days?",
+      "explanation": "57 mod 7 = 1, so the day advances by 1 to Friday.",
+      "options": [
+        {
+          "label": "Friday",
+          "is_correct": true
+        },
+        {
+          "label": "Thursday",
+          "is_correct": false
+        },
+        {
+          "label": "Tuesday",
+          "is_correct": false
+        },
+        {
+          "label": "Monday",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Calendar",
+      "kind": "standard",
+      "difficulty": "easy",
+      "answer_type": "single",
+      "stem": "If today is Tuesday, what day of the week will it be after 12 days?",
+      "explanation": "12 mod 7 = 5, so the day advances by 5 to Sunday.",
+      "options": [
+        {
+          "label": "Saturday",
+          "is_correct": false
+        },
+        {
+          "label": "Sunday",
+          "is_correct": true
+        },
+        {
+          "label": "Wednesday",
+          "is_correct": false
+        },
+        {
+          "label": "Friday",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Calendar",
+      "kind": "standard",
+      "difficulty": "easy",
+      "answer_type": "single",
+      "stem": "If today is Wednesday, what day of the week will it be after 18 days?",
+      "explanation": "18 mod 7 = 4, so the day advances by 4 to Sunday.",
+      "options": [
+        {
+          "label": "Sunday",
+          "is_correct": true
+        },
+        {
+          "label": "Monday",
+          "is_correct": false
+        },
+        {
+          "label": "Friday",
+          "is_correct": false
+        },
+        {
+          "label": "Tuesday",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Calendar",
+      "kind": "standard",
+      "difficulty": "easy",
+      "answer_type": "single",
+      "stem": "If the 1st of a month falls on a Thursday, what day of the week will the 2th of that month be?",
+      "explanation": "The 2th is 1 days after the 1st; (1) mod 7 = 1, giving Friday.",
+      "options": [
+        {
+          "label": "Friday",
+          "is_correct": true
+        },
+        {
+          "label": "Thursday",
+          "is_correct": false
+        },
+        {
+          "label": "Saturday",
+          "is_correct": false
+        },
+        {
+          "label": "Sunday",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Calendar",
+      "kind": "standard",
+      "difficulty": "easy",
+      "answer_type": "single",
+      "stem": "If today is Wednesday, what day of the week was it 15 days ago?",
+      "explanation": "Going back 1 days from Wednesday gives Tuesday.",
+      "options": [
+        {
+          "label": "Saturday",
+          "is_correct": false
+        },
+        {
+          "label": "Friday",
+          "is_correct": false
+        },
+        {
+          "label": "Tuesday",
+          "is_correct": true
+        },
+        {
+          "label": "Wednesday",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Calendar",
+      "kind": "standard",
+      "difficulty": "easy",
+      "answer_type": "single",
+      "stem": "If the 1st of a month falls on a Monday, what day of the week will the 2th of that month be?",
+      "explanation": "The 2th is 1 days after the 1st; (1) mod 7 = 1, giving Tuesday.",
+      "options": [
+        {
+          "label": "Tuesday",
+          "is_correct": true
+        },
+        {
+          "label": "Monday",
+          "is_correct": false
+        },
+        {
+          "label": "Saturday",
+          "is_correct": false
+        },
+        {
+          "label": "Thursday",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Calendar",
+      "kind": "standard",
+      "difficulty": "easy",
+      "answer_type": "single",
+      "stem": "If the 1st of a month falls on a Sunday, what day of the week will the 24th of that month be?",
+      "explanation": "The 24th is 23 days after the 1st; (23) mod 7 = 2, giving Tuesday.",
+      "options": [
+        {
+          "label": "Tuesday",
+          "is_correct": true
+        },
+        {
+          "label": "Friday",
+          "is_correct": false
+        },
+        {
+          "label": "Monday",
+          "is_correct": false
+        },
+        {
+          "label": "Sunday",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Calendar",
+      "kind": "standard",
+      "difficulty": "easy",
+      "answer_type": "single",
+      "stem": "If the 1st of a month falls on a Friday, what day of the week will the 6th of that month be?",
+      "explanation": "The 6th is 5 days after the 1st; (5) mod 7 = 5, giving Wednesday.",
+      "options": [
+        {
+          "label": "Friday",
+          "is_correct": false
+        },
+        {
+          "label": "Wednesday",
+          "is_correct": true
+        },
+        {
+          "label": "Tuesday",
+          "is_correct": false
+        },
+        {
+          "label": "Saturday",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Calendar",
+      "kind": "standard",
+      "difficulty": "easy",
+      "answer_type": "single",
+      "stem": "If today is Wednesday, what day of the week will it be after 39 days?",
+      "explanation": "39 mod 7 = 4, so the day advances by 4 to Sunday.",
+      "options": [
+        {
+          "label": "Tuesday",
+          "is_correct": false
+        },
+        {
+          "label": "Friday",
+          "is_correct": false
+        },
+        {
+          "label": "Saturday",
+          "is_correct": false
+        },
+        {
+          "label": "Sunday",
+          "is_correct": true
+        }
+      ]
+    },
+    {
+      "chapter": "Calendar",
+      "kind": "standard",
+      "difficulty": "easy",
+      "answer_type": "single",
+      "stem": "If today is Sunday, what day of the week was it 47 days ago?",
+      "explanation": "Going back 5 days from Sunday gives Tuesday.",
+      "options": [
+        {
+          "label": "Tuesday",
+          "is_correct": true
+        },
+        {
+          "label": "Monday",
+          "is_correct": false
+        },
+        {
+          "label": "Saturday",
+          "is_correct": false
+        },
+        {
+          "label": "Sunday",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Calendar",
+      "kind": "standard",
+      "difficulty": "easy",
+      "answer_type": "single",
+      "stem": "If the 1st of a month falls on a Tuesday, what day of the week will the 15th of that month be?",
+      "explanation": "The 15th is 14 days after the 1st; (14) mod 7 = 0, giving Tuesday.",
+      "options": [
+        {
+          "label": "Friday",
+          "is_correct": false
+        },
+        {
+          "label": "Wednesday",
+          "is_correct": false
+        },
+        {
+          "label": "Tuesday",
+          "is_correct": true
+        },
+        {
+          "label": "Monday",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Calendar",
+      "kind": "standard",
+      "difficulty": "easy",
+      "answer_type": "single",
+      "stem": "If the 1st of a month falls on a Monday, what day of the week will the 6th of that month be?",
+      "explanation": "The 6th is 5 days after the 1st; (5) mod 7 = 5, giving Saturday.",
+      "options": [
+        {
+          "label": "Saturday",
+          "is_correct": true
+        },
+        {
+          "label": "Thursday",
+          "is_correct": false
+        },
+        {
+          "label": "Wednesday",
+          "is_correct": false
+        },
+        {
+          "label": "Sunday",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Calendar",
+      "kind": "standard",
+      "difficulty": "medium",
+      "answer_type": "single",
+      "stem": "If 1st January 1953 is a Thursday, what day of the week will 1st January 1954 be?",
+      "explanation": "1953 is an ordinary year (365 days), so the day advances by 1 to Friday.",
+      "options": [
+        {
+          "label": "Sunday",
+          "is_correct": false
+        },
+        {
+          "label": "Tuesday",
+          "is_correct": false
+        },
+        {
+          "label": "Friday",
+          "is_correct": true
+        },
+        {
+          "label": "Saturday",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Calendar",
+      "kind": "standard",
+      "difficulty": "medium",
+      "answer_type": "single",
+      "stem": "What day of the week was 31 May 1974?",
+      "explanation": "By the calendar, 31 May 1974 was a Friday.",
+      "options": [
+        {
+          "label": "Tuesday",
+          "is_correct": false
+        },
+        {
+          "label": "Monday",
+          "is_correct": false
+        },
+        {
+          "label": "Friday",
+          "is_correct": true
+        },
+        {
+          "label": "Saturday",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Calendar",
+      "kind": "standard",
+      "difficulty": "medium",
+      "answer_type": "single",
+      "stem": "If 1st January 1988 is a Friday, what day of the week will 1st January 1989 be?",
+      "explanation": "1988 is a leap year (366 days), so the day advances by 2 to Sunday.",
+      "options": [
+        {
+          "label": "Saturday",
+          "is_correct": false
+        },
+        {
+          "label": "Sunday",
+          "is_correct": true
+        },
+        {
+          "label": "Friday",
+          "is_correct": false
+        },
+        {
+          "label": "Monday",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Calendar",
+      "kind": "standard",
+      "difficulty": "medium",
+      "answer_type": "single",
+      "stem": "If 1st January 1997 is a Wednesday, what day of the week will 1st January 1998 be?",
+      "explanation": "1997 is an ordinary year (365 days), so the day advances by 1 to Thursday.",
+      "options": [
+        {
+          "label": "Tuesday",
+          "is_correct": false
+        },
+        {
+          "label": "Saturday",
+          "is_correct": false
+        },
+        {
+          "label": "Sunday",
+          "is_correct": false
+        },
+        {
+          "label": "Thursday",
+          "is_correct": true
+        }
+      ]
+    },
+    {
+      "chapter": "Calendar",
+      "kind": "standard",
+      "difficulty": "medium",
+      "answer_type": "single",
+      "stem": "What day of the week was 10 February 1988?",
+      "explanation": "By the calendar, 10 February 1988 was a Wednesday.",
+      "options": [
+        {
+          "label": "Monday",
+          "is_correct": false
+        },
+        {
+          "label": "Wednesday",
+          "is_correct": true
+        },
+        {
+          "label": "Friday",
+          "is_correct": false
+        },
+        {
+          "label": "Thursday",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Calendar",
+      "kind": "standard",
+      "difficulty": "medium",
+      "answer_type": "single",
+      "stem": "If today is Tuesday, what day will it be after 3 weeks and 3 days?",
+      "explanation": "Whole weeks do not change the day; adding 3 days to Tuesday gives Friday.",
+      "options": [
+        {
+          "label": "Thursday",
+          "is_correct": false
+        },
+        {
+          "label": "Friday",
+          "is_correct": true
+        },
+        {
+          "label": "Monday",
+          "is_correct": false
+        },
+        {
+          "label": "Sunday",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Calendar",
+      "kind": "standard",
+      "difficulty": "medium",
+      "answer_type": "single",
+      "stem": "What day of the week was 22 April 1990?",
+      "explanation": "By the calendar, 22 April 1990 was a Sunday.",
+      "options": [
+        {
+          "label": "Tuesday",
+          "is_correct": false
+        },
+        {
+          "label": "Thursday",
+          "is_correct": false
+        },
+        {
+          "label": "Sunday",
+          "is_correct": true
+        },
+        {
+          "label": "Wednesday",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Calendar",
+      "kind": "standard",
+      "difficulty": "medium",
+      "answer_type": "single",
+      "stem": "If today is Monday, what day will it be after 2 weeks and 2 days?",
+      "explanation": "Whole weeks do not change the day; adding 2 days to Monday gives Wednesday.",
+      "options": [
+        {
+          "label": "Tuesday",
+          "is_correct": false
+        },
+        {
+          "label": "Thursday",
+          "is_correct": false
+        },
+        {
+          "label": "Sunday",
+          "is_correct": false
+        },
+        {
+          "label": "Wednesday",
+          "is_correct": true
+        }
+      ]
+    },
+    {
+      "chapter": "Calendar",
+      "kind": "standard",
+      "difficulty": "medium",
+      "answer_type": "single",
+      "stem": "If today is Monday, what day will it be after 3 weeks and 5 days?",
+      "explanation": "Whole weeks do not change the day; adding 5 days to Monday gives Saturday.",
+      "options": [
+        {
+          "label": "Wednesday",
+          "is_correct": false
+        },
+        {
+          "label": "Friday",
+          "is_correct": false
+        },
+        {
+          "label": "Saturday",
+          "is_correct": true
+        },
+        {
+          "label": "Sunday",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Calendar",
+      "kind": "standard",
+      "difficulty": "medium",
+      "answer_type": "single",
+      "stem": "If today is Friday, what day will it be after 6 weeks and 1 days?",
+      "explanation": "Whole weeks do not change the day; adding 1 days to Friday gives Saturday.",
+      "options": [
+        {
+          "label": "Saturday",
+          "is_correct": true
+        },
+        {
+          "label": "Wednesday",
+          "is_correct": false
+        },
+        {
+          "label": "Friday",
+          "is_correct": false
+        },
+        {
+          "label": "Monday",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Calendar",
+      "kind": "standard",
+      "difficulty": "medium",
+      "answer_type": "single",
+      "stem": "What day of the week was 26 January 1986?",
+      "explanation": "By the calendar, 26 January 1986 was a Sunday.",
+      "options": [
+        {
+          "label": "Sunday",
+          "is_correct": true
+        },
+        {
+          "label": "Thursday",
+          "is_correct": false
+        },
+        {
+          "label": "Monday",
+          "is_correct": false
+        },
+        {
+          "label": "Friday",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Calendar",
+      "kind": "standard",
+      "difficulty": "medium",
+      "answer_type": "single",
+      "stem": "If today is Friday, what day will it be after 3 weeks and 4 days?",
+      "explanation": "Whole weeks do not change the day; adding 4 days to Friday gives Tuesday.",
+      "options": [
+        {
+          "label": "Sunday",
+          "is_correct": false
+        },
+        {
+          "label": "Tuesday",
+          "is_correct": true
+        },
+        {
+          "label": "Saturday",
+          "is_correct": false
+        },
+        {
+          "label": "Wednesday",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Calendar",
+      "kind": "standard",
+      "difficulty": "medium",
+      "answer_type": "single",
+      "stem": "If 1st January 1959 is a Thursday, what day of the week will 1st January 1960 be?",
+      "explanation": "1959 is an ordinary year (365 days), so the day advances by 1 to Friday.",
+      "options": [
+        {
+          "label": "Monday",
+          "is_correct": false
+        },
+        {
+          "label": "Sunday",
+          "is_correct": false
+        },
+        {
+          "label": "Friday",
+          "is_correct": true
+        },
+        {
+          "label": "Tuesday",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Calendar",
+      "kind": "standard",
+      "difficulty": "medium",
+      "answer_type": "single",
+      "stem": "If 1st January 1975 is a Wednesday, what day of the week will 1st January 1976 be?",
+      "explanation": "1975 is an ordinary year (365 days), so the day advances by 1 to Thursday.",
+      "options": [
+        {
+          "label": "Monday",
+          "is_correct": false
+        },
+        {
+          "label": "Sunday",
+          "is_correct": false
+        },
+        {
+          "label": "Wednesday",
+          "is_correct": false
+        },
+        {
+          "label": "Thursday",
+          "is_correct": true
+        }
+      ]
+    },
+    {
+      "chapter": "Calendar",
+      "kind": "standard",
+      "difficulty": "medium",
+      "answer_type": "single",
+      "stem": "If 1st January 1964 is a Wednesday, what day of the week will 1st January 1965 be?",
+      "explanation": "1964 is a leap year (366 days), so the day advances by 2 to Friday.",
+      "options": [
+        {
+          "label": "Thursday",
+          "is_correct": false
+        },
+        {
+          "label": "Tuesday",
+          "is_correct": false
+        },
+        {
+          "label": "Friday",
+          "is_correct": true
+        },
+        {
+          "label": "Wednesday",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Calendar",
+      "kind": "standard",
+      "difficulty": "medium",
+      "answer_type": "single",
+      "stem": "What day of the week was 4 January 1957?",
+      "explanation": "By the calendar, 4 January 1957 was a Friday.",
+      "options": [
+        {
+          "label": "Wednesday",
+          "is_correct": false
+        },
+        {
+          "label": "Friday",
+          "is_correct": true
+        },
+        {
+          "label": "Monday",
+          "is_correct": false
+        },
+        {
+          "label": "Saturday",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Calendar",
+      "kind": "standard",
+      "difficulty": "medium",
+      "answer_type": "single",
+      "stem": "What day of the week was 17 February 1981?",
+      "explanation": "By the calendar, 17 February 1981 was a Tuesday.",
+      "options": [
+        {
+          "label": "Friday",
+          "is_correct": false
+        },
+        {
+          "label": "Thursday",
+          "is_correct": false
+        },
+        {
+          "label": "Sunday",
+          "is_correct": false
+        },
+        {
+          "label": "Tuesday",
+          "is_correct": true
+        }
+      ]
+    },
+    {
+      "chapter": "Calendar",
+      "kind": "standard",
+      "difficulty": "medium",
+      "answer_type": "single",
+      "stem": "If 1st January 1957 is a Tuesday, what day of the week will 1st January 1958 be?",
+      "explanation": "1957 is an ordinary year (365 days), so the day advances by 1 to Wednesday.",
+      "options": [
+        {
+          "label": "Thursday",
+          "is_correct": false
+        },
+        {
+          "label": "Wednesday",
+          "is_correct": true
+        },
+        {
+          "label": "Monday",
+          "is_correct": false
+        },
+        {
+          "label": "Sunday",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Calendar",
+      "kind": "standard",
+      "difficulty": "medium",
+      "answer_type": "single",
+      "stem": "If today is Friday, what day will it be after 2 weeks and 2 days?",
+      "explanation": "Whole weeks do not change the day; adding 2 days to Friday gives Sunday.",
+      "options": [
+        {
+          "label": "Tuesday",
+          "is_correct": false
+        },
+        {
+          "label": "Saturday",
+          "is_correct": false
+        },
+        {
+          "label": "Sunday",
+          "is_correct": true
+        },
+        {
+          "label": "Monday",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Calendar",
+      "kind": "standard",
+      "difficulty": "medium",
+      "answer_type": "single",
+      "stem": "If today is Sunday, what day will it be after 2 weeks and 6 days?",
+      "explanation": "Whole weeks do not change the day; adding 6 days to Sunday gives Saturday.",
+      "options": [
+        {
+          "label": "Saturday",
+          "is_correct": true
+        },
+        {
+          "label": "Friday",
+          "is_correct": false
+        },
+        {
+          "label": "Wednesday",
+          "is_correct": false
+        },
+        {
+          "label": "Sunday",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Calendar",
+      "kind": "standard",
+      "difficulty": "medium",
+      "answer_type": "single",
+      "stem": "If today is Monday, what day will it be after 8 weeks and 3 days?",
+      "explanation": "Whole weeks do not change the day; adding 3 days to Monday gives Thursday.",
+      "options": [
+        {
+          "label": "Thursday",
+          "is_correct": true
+        },
+        {
+          "label": "Monday",
+          "is_correct": false
+        },
+        {
+          "label": "Saturday",
+          "is_correct": false
+        },
+        {
+          "label": "Friday",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Calendar",
+      "kind": "standard",
+      "difficulty": "medium",
+      "answer_type": "single",
+      "stem": "What day of the week was 6 November 1992?",
+      "explanation": "By the calendar, 6 November 1992 was a Friday.",
+      "options": [
+        {
+          "label": "Friday",
+          "is_correct": true
+        },
+        {
+          "label": "Tuesday",
+          "is_correct": false
+        },
+        {
+          "label": "Wednesday",
+          "is_correct": false
+        },
+        {
+          "label": "Saturday",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Calendar",
+      "kind": "standard",
+      "difficulty": "medium",
+      "answer_type": "single",
+      "stem": "What day of the week was 23 March 1963?",
+      "explanation": "By the calendar, 23 March 1963 was a Saturday.",
+      "options": [
+        {
+          "label": "Saturday",
+          "is_correct": true
+        },
+        {
+          "label": "Wednesday",
+          "is_correct": false
+        },
+        {
+          "label": "Thursday",
+          "is_correct": false
+        },
+        {
+          "label": "Sunday",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Calendar",
+      "kind": "standard",
+      "difficulty": "medium",
+      "answer_type": "single",
+      "stem": "What day of the week was 21 December 1974?",
+      "explanation": "By the calendar, 21 December 1974 was a Saturday.",
+      "options": [
+        {
+          "label": "Wednesday",
+          "is_correct": false
+        },
+        {
+          "label": "Saturday",
+          "is_correct": true
+        },
+        {
+          "label": "Friday",
+          "is_correct": false
+        },
+        {
+          "label": "Sunday",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Calendar",
+      "kind": "standard",
+      "difficulty": "medium",
+      "answer_type": "single",
+      "stem": "If today is Friday, what day will it be after 4 weeks and 1 days?",
+      "explanation": "Whole weeks do not change the day; adding 1 days to Friday gives Saturday.",
+      "options": [
+        {
+          "label": "Monday",
+          "is_correct": false
+        },
+        {
+          "label": "Saturday",
+          "is_correct": true
+        },
+        {
+          "label": "Sunday",
+          "is_correct": false
+        },
+        {
+          "label": "Friday",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Calendar",
+      "kind": "standard",
+      "difficulty": "medium",
+      "answer_type": "single",
+      "stem": "If today is Thursday, what day will it be after 4 weeks and 1 days?",
+      "explanation": "Whole weeks do not change the day; adding 1 days to Thursday gives Friday.",
+      "options": [
+        {
+          "label": "Thursday",
+          "is_correct": false
+        },
+        {
+          "label": "Friday",
+          "is_correct": true
+        },
+        {
+          "label": "Tuesday",
+          "is_correct": false
+        },
+        {
+          "label": "Monday",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Calendar",
+      "kind": "standard",
+      "difficulty": "medium",
+      "answer_type": "single",
+      "stem": "If 1st January 1970 is a Thursday, what day of the week will 1st January 1971 be?",
+      "explanation": "1970 is an ordinary year (365 days), so the day advances by 1 to Friday.",
+      "options": [
+        {
+          "label": "Thursday",
+          "is_correct": false
+        },
+        {
+          "label": "Tuesday",
+          "is_correct": false
+        },
+        {
+          "label": "Sunday",
+          "is_correct": false
+        },
+        {
+          "label": "Friday",
+          "is_correct": true
+        }
+      ]
+    },
+    {
+      "chapter": "Calendar",
+      "kind": "standard",
+      "difficulty": "medium",
+      "answer_type": "single",
+      "stem": "If today is Thursday, what day will it be after 3 weeks and 2 days?",
+      "explanation": "Whole weeks do not change the day; adding 2 days to Thursday gives Saturday.",
+      "options": [
+        {
+          "label": "Friday",
+          "is_correct": false
+        },
+        {
+          "label": "Saturday",
+          "is_correct": true
+        },
+        {
+          "label": "Tuesday",
+          "is_correct": false
+        },
+        {
+          "label": "Monday",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Calendar",
+      "kind": "standard",
+      "difficulty": "medium",
+      "answer_type": "single",
+      "stem": "If today is Thursday, what day will it be after 3 weeks and 5 days?",
+      "explanation": "Whole weeks do not change the day; adding 5 days to Thursday gives Tuesday.",
+      "options": [
+        {
+          "label": "Tuesday",
+          "is_correct": true
+        },
+        {
+          "label": "Wednesday",
+          "is_correct": false
+        },
+        {
+          "label": "Sunday",
+          "is_correct": false
+        },
+        {
+          "label": "Saturday",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Calendar",
+      "kind": "standard",
+      "difficulty": "medium",
+      "answer_type": "single",
+      "stem": "What day of the week was 2 April 1971?",
+      "explanation": "By the calendar, 2 April 1971 was a Friday.",
+      "options": [
+        {
+          "label": "Friday",
+          "is_correct": true
+        },
+        {
+          "label": "Tuesday",
+          "is_correct": false
+        },
+        {
+          "label": "Saturday",
+          "is_correct": false
+        },
+        {
+          "label": "Sunday",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Calendar",
+      "kind": "standard",
+      "difficulty": "medium",
+      "answer_type": "single",
+      "stem": "If today is Thursday, what day will it be after 3 weeks and 6 days?",
+      "explanation": "Whole weeks do not change the day; adding 6 days to Thursday gives Wednesday.",
+      "options": [
+        {
+          "label": "Wednesday",
+          "is_correct": true
+        },
+        {
+          "label": "Sunday",
+          "is_correct": false
+        },
+        {
+          "label": "Friday",
+          "is_correct": false
+        },
+        {
+          "label": "Monday",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Calendar",
+      "kind": "standard",
+      "difficulty": "medium",
+      "answer_type": "single",
+      "stem": "What day of the week was 28 February 1964?",
+      "explanation": "By the calendar, 28 February 1964 was a Friday.",
+      "options": [
+        {
+          "label": "Saturday",
+          "is_correct": false
+        },
+        {
+          "label": "Thursday",
+          "is_correct": false
+        },
+        {
+          "label": "Monday",
+          "is_correct": false
+        },
+        {
+          "label": "Friday",
+          "is_correct": true
+        }
+      ]
+    },
+    {
+      "chapter": "Calendar",
+      "kind": "standard",
+      "difficulty": "medium",
+      "answer_type": "single",
+      "stem": "What day of the week was 14 August 1983?",
+      "explanation": "By the calendar, 14 August 1983 was a Sunday.",
+      "options": [
+        {
+          "label": "Wednesday",
+          "is_correct": false
+        },
+        {
+          "label": "Tuesday",
+          "is_correct": false
+        },
+        {
+          "label": "Sunday",
+          "is_correct": true
+        },
+        {
+          "label": "Thursday",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Calendar",
+      "kind": "standard",
+      "difficulty": "medium",
+      "answer_type": "single",
+      "stem": "If today is Monday, what day will it be after 6 weeks and 3 days?",
+      "explanation": "Whole weeks do not change the day; adding 3 days to Monday gives Thursday.",
+      "options": [
+        {
+          "label": "Wednesday",
+          "is_correct": false
+        },
+        {
+          "label": "Sunday",
+          "is_correct": false
+        },
+        {
+          "label": "Saturday",
+          "is_correct": false
+        },
+        {
+          "label": "Thursday",
+          "is_correct": true
+        }
+      ]
+    },
+    {
+      "chapter": "Calendar",
+      "kind": "standard",
+      "difficulty": "medium",
+      "answer_type": "single",
+      "stem": "If 1st January 1989 is a Sunday, what day of the week will 1st January 1990 be?",
+      "explanation": "1989 is an ordinary year (365 days), so the day advances by 1 to Monday.",
+      "options": [
+        {
+          "label": "Saturday",
+          "is_correct": false
+        },
+        {
+          "label": "Friday",
+          "is_correct": false
+        },
+        {
+          "label": "Tuesday",
+          "is_correct": false
+        },
+        {
+          "label": "Monday",
+          "is_correct": true
+        }
+      ]
+    },
+    {
+      "chapter": "Calendar",
+      "kind": "standard",
+      "difficulty": "medium",
+      "answer_type": "single",
+      "stem": "What day of the week was 6 December 1985?",
+      "explanation": "By the calendar, 6 December 1985 was a Friday.",
+      "options": [
+        {
+          "label": "Tuesday",
+          "is_correct": false
+        },
+        {
+          "label": "Friday",
+          "is_correct": true
+        },
+        {
+          "label": "Monday",
+          "is_correct": false
+        },
+        {
+          "label": "Saturday",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Calendar",
+      "kind": "standard",
+      "difficulty": "medium",
+      "answer_type": "single",
+      "stem": "What day of the week was 8 January 1956?",
+      "explanation": "By the calendar, 8 January 1956 was a Sunday.",
+      "options": [
+        {
+          "label": "Sunday",
+          "is_correct": true
+        },
+        {
+          "label": "Saturday",
+          "is_correct": false
+        },
+        {
+          "label": "Tuesday",
+          "is_correct": false
+        },
+        {
+          "label": "Wednesday",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Calendar",
+      "kind": "standard",
+      "difficulty": "medium",
+      "answer_type": "single",
+      "stem": "If 1st January 1982 is a Friday, what day of the week will 1st January 1983 be?",
+      "explanation": "1982 is an ordinary year (365 days), so the day advances by 1 to Saturday.",
+      "options": [
+        {
+          "label": "Wednesday",
+          "is_correct": false
+        },
+        {
+          "label": "Monday",
+          "is_correct": false
+        },
+        {
+          "label": "Saturday",
+          "is_correct": true
+        },
+        {
+          "label": "Sunday",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Calendar",
+      "kind": "standard",
+      "difficulty": "medium",
+      "answer_type": "single",
+      "stem": "What day of the week was 3 January 1959?",
+      "explanation": "By the calendar, 3 January 1959 was a Saturday.",
+      "options": [
+        {
+          "label": "Wednesday",
+          "is_correct": false
+        },
+        {
+          "label": "Saturday",
+          "is_correct": true
+        },
+        {
+          "label": "Tuesday",
+          "is_correct": false
+        },
+        {
+          "label": "Thursday",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Calendar",
+      "kind": "standard",
+      "difficulty": "medium",
+      "answer_type": "single",
+      "stem": "If 1st January 1978 is a Sunday, what day of the week will 1st January 1979 be?",
+      "explanation": "1978 is an ordinary year (365 days), so the day advances by 1 to Monday.",
+      "options": [
+        {
+          "label": "Friday",
+          "is_correct": false
+        },
+        {
+          "label": "Wednesday",
+          "is_correct": false
+        },
+        {
+          "label": "Sunday",
+          "is_correct": false
+        },
+        {
+          "label": "Monday",
+          "is_correct": true
+        }
+      ]
+    },
+    {
+      "chapter": "Calendar",
+      "kind": "standard",
+      "difficulty": "medium",
+      "answer_type": "single",
+      "stem": "If 1st January 1998 is a Thursday, what day of the week will 1st January 1999 be?",
+      "explanation": "1998 is an ordinary year (365 days), so the day advances by 1 to Friday.",
+      "options": [
+        {
+          "label": "Wednesday",
+          "is_correct": false
+        },
+        {
+          "label": "Monday",
+          "is_correct": false
+        },
+        {
+          "label": "Saturday",
+          "is_correct": false
+        },
+        {
+          "label": "Friday",
+          "is_correct": true
+        }
+      ]
+    },
+    {
+      "chapter": "Calendar",
+      "kind": "standard",
+      "difficulty": "medium",
+      "answer_type": "single",
+      "stem": "If today is Monday, what day will it be after 7 weeks and 5 days?",
+      "explanation": "Whole weeks do not change the day; adding 5 days to Monday gives Saturday.",
+      "options": [
+        {
+          "label": "Thursday",
+          "is_correct": false
+        },
+        {
+          "label": "Monday",
+          "is_correct": false
+        },
+        {
+          "label": "Wednesday",
+          "is_correct": false
+        },
+        {
+          "label": "Saturday",
+          "is_correct": true
+        }
+      ]
+    },
+    {
+      "chapter": "Calendar",
+      "kind": "standard",
+      "difficulty": "medium",
+      "answer_type": "single",
+      "stem": "What day of the week was 22 April 1975?",
+      "explanation": "By the calendar, 22 April 1975 was a Tuesday.",
+      "options": [
+        {
+          "label": "Sunday",
+          "is_correct": false
+        },
+        {
+          "label": "Tuesday",
+          "is_correct": true
+        },
+        {
+          "label": "Wednesday",
+          "is_correct": false
+        },
+        {
+          "label": "Thursday",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Calendar",
+      "kind": "standard",
+      "difficulty": "medium",
+      "answer_type": "single",
+      "stem": "If 1st January 1985 is a Tuesday, what day of the week will 1st January 1986 be?",
+      "explanation": "1985 is an ordinary year (365 days), so the day advances by 1 to Wednesday.",
+      "options": [
+        {
+          "label": "Saturday",
+          "is_correct": false
+        },
+        {
+          "label": "Wednesday",
+          "is_correct": true
+        },
+        {
+          "label": "Tuesday",
+          "is_correct": false
+        },
+        {
+          "label": "Friday",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Calendar",
+      "kind": "standard",
+      "difficulty": "medium",
+      "answer_type": "single",
+      "stem": "What day of the week was 10 November 1996?",
+      "explanation": "By the calendar, 10 November 1996 was a Sunday.",
+      "options": [
+        {
+          "label": "Sunday",
+          "is_correct": true
+        },
+        {
+          "label": "Wednesday",
+          "is_correct": false
+        },
+        {
+          "label": "Friday",
+          "is_correct": false
+        },
+        {
+          "label": "Tuesday",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Calendar",
+      "kind": "standard",
+      "difficulty": "medium",
+      "answer_type": "single",
+      "stem": "If 1st January 1958 is a Wednesday, what day of the week will 1st January 1959 be?",
+      "explanation": "1958 is an ordinary year (365 days), so the day advances by 1 to Thursday.",
+      "options": [
+        {
+          "label": "Sunday",
+          "is_correct": false
+        },
+        {
+          "label": "Thursday",
+          "is_correct": true
+        },
+        {
+          "label": "Saturday",
+          "is_correct": false
+        },
+        {
+          "label": "Tuesday",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Calendar",
+      "kind": "standard",
+      "difficulty": "medium",
+      "answer_type": "single",
+      "stem": "If today is Monday, what day will it be after 6 weeks and 2 days?",
+      "explanation": "Whole weeks do not change the day; adding 2 days to Monday gives Wednesday.",
+      "options": [
+        {
+          "label": "Sunday",
+          "is_correct": false
+        },
+        {
+          "label": "Monday",
+          "is_correct": false
+        },
+        {
+          "label": "Saturday",
+          "is_correct": false
+        },
+        {
+          "label": "Wednesday",
+          "is_correct": true
+        }
+      ]
+    },
+    {
+      "chapter": "Calendar",
+      "kind": "standard",
+      "difficulty": "medium",
+      "answer_type": "single",
+      "stem": "What day of the week was 10 December 1960?",
+      "explanation": "By the calendar, 10 December 1960 was a Saturday.",
+      "options": [
+        {
+          "label": "Saturday",
+          "is_correct": true
+        },
+        {
+          "label": "Wednesday",
+          "is_correct": false
+        },
+        {
+          "label": "Monday",
+          "is_correct": false
+        },
+        {
+          "label": "Sunday",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Calendar",
+      "kind": "standard",
+      "difficulty": "medium",
+      "answer_type": "single",
+      "stem": "If today is Tuesday, what day will it be after 8 weeks and 1 days?",
+      "explanation": "Whole weeks do not change the day; adding 1 days to Tuesday gives Wednesday.",
+      "options": [
+        {
+          "label": "Wednesday",
+          "is_correct": true
+        },
+        {
+          "label": "Sunday",
+          "is_correct": false
+        },
+        {
+          "label": "Thursday",
+          "is_correct": false
+        },
+        {
+          "label": "Saturday",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Calendar",
+      "kind": "standard",
+      "difficulty": "medium",
+      "answer_type": "single",
+      "stem": "What day of the week was 13 November 1986?",
+      "explanation": "By the calendar, 13 November 1986 was a Thursday.",
+      "options": [
+        {
+          "label": "Friday",
+          "is_correct": false
+        },
+        {
+          "label": "Thursday",
+          "is_correct": true
+        },
+        {
+          "label": "Saturday",
+          "is_correct": false
+        },
+        {
+          "label": "Sunday",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Calendar",
+      "kind": "standard",
+      "difficulty": "hard",
+      "answer_type": "single",
+      "stem": "If 1st January 2047 is a Tuesday, what day will 1st January 2048 be?",
+      "explanation": "2047 is an ordinary year, so 1 Jan advances to Wednesday.",
+      "options": [
+        {
+          "label": "Friday",
+          "is_correct": false
+        },
+        {
+          "label": "Tuesday",
+          "is_correct": false
+        },
+        {
+          "label": "Sunday",
+          "is_correct": false
+        },
+        {
+          "label": "Wednesday",
+          "is_correct": true
+        }
+      ]
+    },
+    {
+      "chapter": "Calendar",
+      "kind": "standard",
+      "difficulty": "hard",
+      "answer_type": "single",
+      "stem": "If 1st January 2029 is a Monday, what day will 1st January 2030 be?",
+      "explanation": "2029 is an ordinary year, so 1 Jan advances to Tuesday.",
+      "options": [
+        {
+          "label": "Wednesday",
+          "is_correct": false
+        },
+        {
+          "label": "Sunday",
+          "is_correct": false
+        },
+        {
+          "label": "Friday",
+          "is_correct": false
+        },
+        {
+          "label": "Tuesday",
+          "is_correct": true
+        }
+      ]
+    },
+    {
+      "chapter": "Calendar",
+      "kind": "standard",
+      "difficulty": "hard",
+      "answer_type": "single",
+      "stem": "If 1st January 2043 is a Thursday, what day will 1st January 2044 be?",
+      "explanation": "2043 is an ordinary year, so 1 Jan advances to Friday.",
+      "options": [
+        {
+          "label": "Friday",
+          "is_correct": true
+        },
+        {
+          "label": "Saturday",
+          "is_correct": false
+        },
+        {
+          "label": "Thursday",
+          "is_correct": false
+        },
+        {
+          "label": "Sunday",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Calendar",
+      "kind": "standard",
+      "difficulty": "hard",
+      "answer_type": "single",
+      "stem": "In the year 2002, 10 September is a Tuesday. What day of the week is 22 July 2002?",
+      "explanation": "Counting days within 2002, 22 July is a Monday.",
+      "options": [
+        {
+          "label": "Sunday",
+          "is_correct": false
+        },
+        {
+          "label": "Monday",
+          "is_correct": true
+        },
+        {
+          "label": "Friday",
+          "is_correct": false
+        },
+        {
+          "label": "Thursday",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Calendar",
+      "kind": "standard",
+      "difficulty": "hard",
+      "answer_type": "single",
+      "stem": "What day of the week will 31 March 2037 be?",
+      "explanation": "By the calendar, 31 March 2037 falls on a Tuesday.",
+      "options": [
+        {
+          "label": "Sunday",
+          "is_correct": false
+        },
+        {
+          "label": "Monday",
+          "is_correct": false
+        },
+        {
+          "label": "Friday",
+          "is_correct": false
+        },
+        {
+          "label": "Tuesday",
+          "is_correct": true
+        }
+      ]
+    },
+    {
+      "chapter": "Calendar",
+      "kind": "standard",
+      "difficulty": "hard",
+      "answer_type": "single",
+      "stem": "In the year 2033, 19 November is a Saturday. What day of the week is 5 September 2033?",
+      "explanation": "Counting days within 2033, 5 September is a Monday.",
+      "options": [
+        {
+          "label": "Sunday",
+          "is_correct": false
+        },
+        {
+          "label": "Saturday",
+          "is_correct": false
+        },
+        {
+          "label": "Wednesday",
+          "is_correct": false
+        },
+        {
+          "label": "Monday",
+          "is_correct": true
+        }
+      ]
+    },
+    {
+      "chapter": "Calendar",
+      "kind": "standard",
+      "difficulty": "hard",
+      "answer_type": "single",
+      "stem": "In the year 2024, 3 May is a Friday. What day of the week is 18 October 2024?",
+      "explanation": "Counting days within 2024, 18 October is a Friday.",
+      "options": [
+        {
+          "label": "Friday",
+          "is_correct": true
+        },
+        {
+          "label": "Monday",
+          "is_correct": false
+        },
+        {
+          "label": "Thursday",
+          "is_correct": false
+        },
+        {
+          "label": "Sunday",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Calendar",
+      "kind": "standard",
+      "difficulty": "hard",
+      "answer_type": "single",
+      "stem": "What day of the week was 13 November 2000?",
+      "explanation": "By the calendar, 13 November 2000 falls on a Monday.",
+      "options": [
+        {
+          "label": "Monday",
+          "is_correct": true
+        },
+        {
+          "label": "Saturday",
+          "is_correct": false
+        },
+        {
+          "label": "Sunday",
+          "is_correct": false
+        },
+        {
+          "label": "Wednesday",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Calendar",
+      "kind": "standard",
+      "difficulty": "hard",
+      "answer_type": "single",
+      "stem": "If 1st January 2040 is a Sunday, what day will 1st January 2041 be?",
+      "explanation": "2040 is a leap year, so 1 Jan advances to Tuesday.",
+      "options": [
+        {
+          "label": "Tuesday",
+          "is_correct": true
+        },
+        {
+          "label": "Sunday",
+          "is_correct": false
+        },
+        {
+          "label": "Saturday",
+          "is_correct": false
+        },
+        {
+          "label": "Thursday",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Calendar",
+      "kind": "standard",
+      "difficulty": "hard",
+      "answer_type": "single",
+      "stem": "In the year 2001, 24 July is a Tuesday. What day of the week is 13 March 2001?",
+      "explanation": "Counting days within 2001, 13 March is a Tuesday.",
+      "options": [
+        {
+          "label": "Sunday",
+          "is_correct": false
+        },
+        {
+          "label": "Monday",
+          "is_correct": false
+        },
+        {
+          "label": "Tuesday",
+          "is_correct": true
+        },
+        {
+          "label": "Wednesday",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Calendar",
+      "kind": "standard",
+      "difficulty": "hard",
+      "answer_type": "single",
+      "stem": "What day of the week will 9 April 2040 be?",
+      "explanation": "By the calendar, 9 April 2040 falls on a Monday.",
+      "options": [
+        {
+          "label": "Monday",
+          "is_correct": true
+        },
+        {
+          "label": "Thursday",
+          "is_correct": false
+        },
+        {
+          "label": "Tuesday",
+          "is_correct": false
+        },
+        {
+          "label": "Saturday",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Calendar",
+      "kind": "standard",
+      "difficulty": "hard",
+      "answer_type": "single",
+      "stem": "In the year 2016, 17 February is a Wednesday. What day of the week is 1 October 2016?",
+      "explanation": "Counting days within 2016, 1 October is a Saturday.",
+      "options": [
+        {
+          "label": "Thursday",
+          "is_correct": false
+        },
+        {
+          "label": "Sunday",
+          "is_correct": false
+        },
+        {
+          "label": "Saturday",
+          "is_correct": true
+        },
+        {
+          "label": "Friday",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Calendar",
+      "kind": "standard",
+      "difficulty": "hard",
+      "answer_type": "single",
+      "stem": "What day of the week will 6 May 2044 be?",
+      "explanation": "By the calendar, 6 May 2044 falls on a Friday.",
+      "options": [
+        {
+          "label": "Monday",
+          "is_correct": false
+        },
+        {
+          "label": "Friday",
+          "is_correct": true
+        },
+        {
+          "label": "Wednesday",
+          "is_correct": false
+        },
+        {
+          "label": "Tuesday",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Calendar",
+      "kind": "standard",
+      "difficulty": "hard",
+      "answer_type": "single",
+      "stem": "In the year 2012, 22 August is a Wednesday. What day of the week is 13 October 2012?",
+      "explanation": "Counting days within 2012, 13 October is a Saturday.",
+      "options": [
+        {
+          "label": "Friday",
+          "is_correct": false
+        },
+        {
+          "label": "Thursday",
+          "is_correct": false
+        },
+        {
+          "label": "Tuesday",
+          "is_correct": false
+        },
+        {
+          "label": "Saturday",
+          "is_correct": true
+        }
+      ]
+    },
+    {
+      "chapter": "Calendar",
+      "kind": "standard",
+      "difficulty": "hard",
+      "answer_type": "single",
+      "stem": "What day of the week was 9 April 2001?",
+      "explanation": "By the calendar, 9 April 2001 falls on a Monday.",
+      "options": [
+        {
+          "label": "Friday",
+          "is_correct": false
+        },
+        {
+          "label": "Saturday",
+          "is_correct": false
+        },
+        {
+          "label": "Thursday",
+          "is_correct": false
+        },
+        {
+          "label": "Monday",
+          "is_correct": true
+        }
+      ]
+    },
+    {
+      "chapter": "Calendar",
+      "kind": "standard",
+      "difficulty": "hard",
+      "answer_type": "single",
+      "stem": "If 1st January 2045 is a Sunday, what day will 1st January 2046 be?",
+      "explanation": "2045 is an ordinary year, so 1 Jan advances to Monday.",
+      "options": [
+        {
+          "label": "Tuesday",
+          "is_correct": false
+        },
+        {
+          "label": "Sunday",
+          "is_correct": false
+        },
+        {
+          "label": "Monday",
+          "is_correct": true
+        },
+        {
+          "label": "Thursday",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Calendar",
+      "kind": "standard",
+      "difficulty": "hard",
+      "answer_type": "single",
+      "stem": "In the year 2024, 4 February is a Sunday. What day of the week is 12 September 2024?",
+      "explanation": "Counting days within 2024, 12 September is a Thursday.",
+      "options": [
+        {
+          "label": "Sunday",
+          "is_correct": false
+        },
+        {
+          "label": "Thursday",
+          "is_correct": true
+        },
+        {
+          "label": "Friday",
+          "is_correct": false
+        },
+        {
+          "label": "Saturday",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Calendar",
+      "kind": "standard",
+      "difficulty": "hard",
+      "answer_type": "single",
+      "stem": "In the year 2003, 1 July is a Tuesday. What day of the week is 22 September 2003?",
+      "explanation": "Counting days within 2003, 22 September is a Monday.",
+      "options": [
+        {
+          "label": "Sunday",
+          "is_correct": false
+        },
+        {
+          "label": "Wednesday",
+          "is_correct": false
+        },
+        {
+          "label": "Monday",
+          "is_correct": true
+        },
+        {
+          "label": "Tuesday",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Calendar",
+      "kind": "standard",
+      "difficulty": "hard",
+      "answer_type": "single",
+      "stem": "In the year 2025, 17 December is a Wednesday. What day of the week is 13 May 2025?",
+      "explanation": "Counting days within 2025, 13 May is a Tuesday.",
+      "options": [
+        {
+          "label": "Friday",
+          "is_correct": false
+        },
+        {
+          "label": "Monday",
+          "is_correct": false
+        },
+        {
+          "label": "Sunday",
+          "is_correct": false
+        },
+        {
+          "label": "Tuesday",
+          "is_correct": true
+        }
+      ]
+    },
+    {
+      "chapter": "Calendar",
+      "kind": "standard",
+      "difficulty": "hard",
+      "answer_type": "single",
+      "stem": "In the year 2040, 17 May is a Thursday. What day of the week is 19 August 2040?",
+      "explanation": "Counting days within 2040, 19 August is a Sunday.",
+      "options": [
+        {
+          "label": "Sunday",
+          "is_correct": true
+        },
+        {
+          "label": "Tuesday",
+          "is_correct": false
+        },
+        {
+          "label": "Monday",
+          "is_correct": false
+        },
+        {
+          "label": "Saturday",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Calendar",
+      "kind": "standard",
+      "difficulty": "hard",
+      "answer_type": "single",
+      "stem": "What day of the week will 8 September 2049 be?",
+      "explanation": "By the calendar, 8 September 2049 falls on a Wednesday.",
+      "options": [
+        {
+          "label": "Wednesday",
+          "is_correct": true
+        },
+        {
+          "label": "Thursday",
+          "is_correct": false
+        },
+        {
+          "label": "Monday",
+          "is_correct": false
+        },
+        {
+          "label": "Sunday",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Calendar",
+      "kind": "standard",
+      "difficulty": "hard",
+      "answer_type": "single",
+      "stem": "If 1st January 2032 is a Thursday, what day will 1st January 2033 be?",
+      "explanation": "2032 is a leap year, so 1 Jan advances to Saturday.",
+      "options": [
+        {
+          "label": "Tuesday",
+          "is_correct": false
+        },
+        {
+          "label": "Sunday",
+          "is_correct": false
+        },
+        {
+          "label": "Monday",
+          "is_correct": false
+        },
+        {
+          "label": "Saturday",
+          "is_correct": true
+        }
+      ]
+    },
+    {
+      "chapter": "Calendar",
+      "kind": "standard",
+      "difficulty": "hard",
+      "answer_type": "single",
+      "stem": "If 1st January 2038 is a Friday, what day will 1st January 2039 be?",
+      "explanation": "2038 is an ordinary year, so 1 Jan advances to Saturday.",
+      "options": [
+        {
+          "label": "Monday",
+          "is_correct": false
+        },
+        {
+          "label": "Wednesday",
+          "is_correct": false
+        },
+        {
+          "label": "Tuesday",
+          "is_correct": false
+        },
+        {
+          "label": "Saturday",
+          "is_correct": true
+        }
+      ]
+    },
+    {
+      "chapter": "Calendar",
+      "kind": "standard",
+      "difficulty": "hard",
+      "answer_type": "single",
+      "stem": "If 1st January 2028 is a Saturday, what day will 1st January 2029 be?",
+      "explanation": "2028 is a leap year, so 1 Jan advances to Monday.",
+      "options": [
+        {
+          "label": "Sunday",
+          "is_correct": false
+        },
+        {
+          "label": "Tuesday",
+          "is_correct": false
+        },
+        {
+          "label": "Monday",
+          "is_correct": true
+        },
+        {
+          "label": "Wednesday",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Calendar",
+      "kind": "standard",
+      "difficulty": "hard",
+      "answer_type": "single",
+      "stem": "If 1st January 2021 is a Friday, what day will 1st January 2022 be?",
+      "explanation": "2021 is an ordinary year, so 1 Jan advances to Saturday.",
+      "options": [
+        {
+          "label": "Saturday",
+          "is_correct": true
+        },
+        {
+          "label": "Wednesday",
+          "is_correct": false
+        },
+        {
+          "label": "Monday",
+          "is_correct": false
+        },
+        {
+          "label": "Friday",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Calendar",
+      "kind": "standard",
+      "difficulty": "hard",
+      "answer_type": "single",
+      "stem": "If 1st January 2015 is a Thursday, what day will 1st January 2016 be?",
+      "explanation": "2015 is an ordinary year, so 1 Jan advances to Friday.",
+      "options": [
+        {
+          "label": "Saturday",
+          "is_correct": false
+        },
+        {
+          "label": "Friday",
+          "is_correct": true
+        },
+        {
+          "label": "Thursday",
+          "is_correct": false
+        },
+        {
+          "label": "Sunday",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Calendar",
+      "kind": "standard",
+      "difficulty": "hard",
+      "answer_type": "single",
+      "stem": "If 1st January 2005 is a Saturday, what day will 1st January 2006 be?",
+      "explanation": "2005 is an ordinary year, so 1 Jan advances to Sunday.",
+      "options": [
+        {
+          "label": "Sunday",
+          "is_correct": true
+        },
+        {
+          "label": "Tuesday",
+          "is_correct": false
+        },
+        {
+          "label": "Thursday",
+          "is_correct": false
+        },
+        {
+          "label": "Monday",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Calendar",
+      "kind": "standard",
+      "difficulty": "hard",
+      "answer_type": "single",
+      "stem": "If 1st January 2020 is a Wednesday, what day will 1st January 2021 be?",
+      "explanation": "2020 is a leap year, so 1 Jan advances to Friday.",
+      "options": [
+        {
+          "label": "Saturday",
+          "is_correct": false
+        },
+        {
+          "label": "Thursday",
+          "is_correct": false
+        },
+        {
+          "label": "Monday",
+          "is_correct": false
+        },
+        {
+          "label": "Friday",
+          "is_correct": true
+        }
+      ]
+    },
+    {
+      "chapter": "Calendar",
+      "kind": "standard",
+      "difficulty": "hard",
+      "answer_type": "single",
+      "stem": "In the year 2015, 7 October is a Wednesday. What day of the week is 12 April 2015?",
+      "explanation": "Counting days within 2015, 12 April is a Sunday.",
+      "options": [
+        {
+          "label": "Sunday",
+          "is_correct": true
+        },
+        {
+          "label": "Friday",
+          "is_correct": false
+        },
+        {
+          "label": "Thursday",
+          "is_correct": false
+        },
+        {
+          "label": "Tuesday",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Calendar",
+      "kind": "standard",
+      "difficulty": "hard",
+      "answer_type": "single",
+      "stem": "In the year 2013, 25 May is a Saturday. What day of the week is 20 January 2013?",
+      "explanation": "Counting days within 2013, 20 January is a Sunday.",
+      "options": [
+        {
+          "label": "Tuesday",
+          "is_correct": false
+        },
+        {
+          "label": "Wednesday",
+          "is_correct": false
+        },
+        {
+          "label": "Thursday",
+          "is_correct": false
+        },
+        {
+          "label": "Sunday",
+          "is_correct": true
+        }
+      ]
+    },
+    {
+      "chapter": "Calendar",
+      "kind": "standard",
+      "difficulty": "hard",
+      "answer_type": "single",
+      "stem": "In the year 2017, 26 February is a Sunday. What day of the week is 1 March 2017?",
+      "explanation": "Counting days within 2017, 1 March is a Wednesday.",
+      "options": [
+        {
+          "label": "Sunday",
+          "is_correct": false
+        },
+        {
+          "label": "Saturday",
+          "is_correct": false
+        },
+        {
+          "label": "Thursday",
+          "is_correct": false
+        },
+        {
+          "label": "Wednesday",
+          "is_correct": true
+        }
+      ]
+    },
+    {
+      "chapter": "Calendar",
+      "kind": "standard",
+      "difficulty": "hard",
+      "answer_type": "single",
+      "stem": "What day of the week will 11 August 2035 be?",
+      "explanation": "By the calendar, 11 August 2035 falls on a Saturday.",
+      "options": [
+        {
+          "label": "Sunday",
+          "is_correct": false
+        },
+        {
+          "label": "Monday",
+          "is_correct": false
+        },
+        {
+          "label": "Saturday",
+          "is_correct": true
+        },
+        {
+          "label": "Tuesday",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Calendar",
+      "kind": "standard",
+      "difficulty": "hard",
+      "answer_type": "single",
+      "stem": "What day of the week was 3 February 2017?",
+      "explanation": "By the calendar, 3 February 2017 falls on a Friday.",
+      "options": [
+        {
+          "label": "Sunday",
+          "is_correct": false
+        },
+        {
+          "label": "Tuesday",
+          "is_correct": false
+        },
+        {
+          "label": "Friday",
+          "is_correct": true
+        },
+        {
+          "label": "Saturday",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Calendar",
+      "kind": "standard",
+      "difficulty": "hard",
+      "answer_type": "single",
+      "stem": "If 1st January 2024 is a Monday, what day will 1st January 2025 be?",
+      "explanation": "2024 is a leap year, so 1 Jan advances to Wednesday.",
+      "options": [
+        {
+          "label": "Wednesday",
+          "is_correct": true
+        },
+        {
+          "label": "Thursday",
+          "is_correct": false
+        },
+        {
+          "label": "Sunday",
+          "is_correct": false
+        },
+        {
+          "label": "Monday",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Calendar",
+      "kind": "standard",
+      "difficulty": "hard",
+      "answer_type": "single",
+      "stem": "In the year 2028, 5 March is a Sunday. What day of the week is 20 October 2028?",
+      "explanation": "Counting days within 2028, 20 October is a Friday.",
+      "options": [
+        {
+          "label": "Saturday",
+          "is_correct": false
+        },
+        {
+          "label": "Monday",
+          "is_correct": false
+        },
+        {
+          "label": "Friday",
+          "is_correct": true
+        },
+        {
+          "label": "Tuesday",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Calendar",
+      "kind": "standard",
+      "difficulty": "hard",
+      "answer_type": "single",
+      "stem": "If 1st January 2025 is a Wednesday, what day will 1st January 2026 be?",
+      "explanation": "2025 is an ordinary year, so 1 Jan advances to Thursday.",
+      "options": [
+        {
+          "label": "Friday",
+          "is_correct": false
+        },
+        {
+          "label": "Saturday",
+          "is_correct": false
+        },
+        {
+          "label": "Tuesday",
+          "is_correct": false
+        },
+        {
+          "label": "Thursday",
+          "is_correct": true
+        }
+      ]
+    },
+    {
+      "chapter": "Calendar",
+      "kind": "standard",
+      "difficulty": "hard",
+      "answer_type": "single",
+      "stem": "If 1st January 2022 is a Saturday, what day will 1st January 2023 be?",
+      "explanation": "2022 is an ordinary year, so 1 Jan advances to Sunday.",
+      "options": [
+        {
+          "label": "Sunday",
+          "is_correct": true
+        },
+        {
+          "label": "Saturday",
+          "is_correct": false
+        },
+        {
+          "label": "Wednesday",
+          "is_correct": false
+        },
+        {
+          "label": "Thursday",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Calendar",
+      "kind": "standard",
+      "difficulty": "hard",
+      "answer_type": "single",
+      "stem": "What day of the week will 3 May 2031 be?",
+      "explanation": "By the calendar, 3 May 2031 falls on a Saturday.",
+      "options": [
+        {
+          "label": "Thursday",
+          "is_correct": false
+        },
+        {
+          "label": "Saturday",
+          "is_correct": true
+        },
+        {
+          "label": "Wednesday",
+          "is_correct": false
+        },
+        {
+          "label": "Monday",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Calendar",
+      "kind": "standard",
+      "difficulty": "hard",
+      "answer_type": "single",
+      "stem": "If 1st January 2002 is a Tuesday, what day will 1st January 2003 be?",
+      "explanation": "2002 is an ordinary year, so 1 Jan advances to Wednesday.",
+      "options": [
+        {
+          "label": "Wednesday",
+          "is_correct": true
+        },
+        {
+          "label": "Tuesday",
+          "is_correct": false
+        },
+        {
+          "label": "Sunday",
+          "is_correct": false
+        },
+        {
+          "label": "Thursday",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Calendar",
+      "kind": "standard",
+      "difficulty": "hard",
+      "answer_type": "single",
+      "stem": "In the year 2045, 4 March is a Saturday. What day of the week is 8 October 2045?",
+      "explanation": "Counting days within 2045, 8 October is a Sunday.",
+      "options": [
+        {
+          "label": "Saturday",
+          "is_correct": false
+        },
+        {
+          "label": "Tuesday",
+          "is_correct": false
+        },
+        {
+          "label": "Sunday",
+          "is_correct": true
+        },
+        {
+          "label": "Friday",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Calendar",
+      "kind": "standard",
+      "difficulty": "hard",
+      "answer_type": "single",
+      "stem": "In the year 2015, 5 February is a Thursday. What day of the week is 31 January 2015?",
+      "explanation": "Counting days within 2015, 31 January is a Saturday.",
+      "options": [
+        {
+          "label": "Tuesday",
+          "is_correct": false
+        },
+        {
+          "label": "Monday",
+          "is_correct": false
+        },
+        {
+          "label": "Wednesday",
+          "is_correct": false
+        },
+        {
+          "label": "Saturday",
+          "is_correct": true
+        }
+      ]
+    },
+    {
+      "chapter": "Calendar",
+      "kind": "standard",
+      "difficulty": "hard",
+      "answer_type": "single",
+      "stem": "In the year 2031, 1 June is a Sunday. What day of the week is 9 February 2031?",
+      "explanation": "Counting days within 2031, 9 February is a Sunday.",
+      "options": [
+        {
+          "label": "Sunday",
+          "is_correct": true
+        },
+        {
+          "label": "Wednesday",
+          "is_correct": false
+        },
+        {
+          "label": "Saturday",
+          "is_correct": false
+        },
+        {
+          "label": "Tuesday",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Calendar",
+      "kind": "standard",
+      "difficulty": "hard",
+      "answer_type": "single",
+      "stem": "In the year 2030, 17 May is a Friday. What day of the week is 2 March 2030?",
+      "explanation": "Counting days within 2030, 2 March is a Saturday.",
+      "options": [
+        {
+          "label": "Monday",
+          "is_correct": false
+        },
+        {
+          "label": "Friday",
+          "is_correct": false
+        },
+        {
+          "label": "Wednesday",
+          "is_correct": false
+        },
+        {
+          "label": "Saturday",
+          "is_correct": true
+        }
+      ]
+    },
+    {
+      "chapter": "Calendar",
+      "kind": "standard",
+      "difficulty": "hard",
+      "answer_type": "single",
+      "stem": "What day of the week will 18 September 2029 be?",
+      "explanation": "By the calendar, 18 September 2029 falls on a Tuesday.",
+      "options": [
+        {
+          "label": "Monday",
+          "is_correct": false
+        },
+        {
+          "label": "Thursday",
+          "is_correct": false
+        },
+        {
+          "label": "Tuesday",
+          "is_correct": true
+        },
+        {
+          "label": "Sunday",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Calendar",
+      "kind": "standard",
+      "difficulty": "hard",
+      "answer_type": "single",
+      "stem": "In the year 2045, 26 December is a Tuesday. What day of the week is 1 April 2045?",
+      "explanation": "Counting days within 2045, 1 April is a Saturday.",
+      "options": [
+        {
+          "label": "Friday",
+          "is_correct": false
+        },
+        {
+          "label": "Monday",
+          "is_correct": false
+        },
+        {
+          "label": "Thursday",
+          "is_correct": false
+        },
+        {
+          "label": "Saturday",
+          "is_correct": true
+        }
+      ]
+    },
+    {
+      "chapter": "Calendar",
+      "kind": "standard",
+      "difficulty": "hard",
+      "answer_type": "single",
+      "stem": "What day of the week was 12 March 2007?",
+      "explanation": "By the calendar, 12 March 2007 falls on a Monday.",
+      "options": [
+        {
+          "label": "Friday",
+          "is_correct": false
+        },
+        {
+          "label": "Monday",
+          "is_correct": true
+        },
+        {
+          "label": "Tuesday",
+          "is_correct": false
+        },
+        {
+          "label": "Wednesday",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Calendar",
+      "kind": "standard",
+      "difficulty": "hard",
+      "answer_type": "single",
+      "stem": "If 1st January 2034 is a Sunday, what day will 1st January 2035 be?",
+      "explanation": "2034 is an ordinary year, so 1 Jan advances to Monday.",
+      "options": [
+        {
+          "label": "Saturday",
+          "is_correct": false
+        },
+        {
+          "label": "Tuesday",
+          "is_correct": false
+        },
+        {
+          "label": "Friday",
+          "is_correct": false
+        },
+        {
+          "label": "Monday",
+          "is_correct": true
+        }
+      ]
+    },
+    {
+      "chapter": "Calendar",
+      "kind": "standard",
+      "difficulty": "hard",
+      "answer_type": "single",
+      "stem": "In the year 2011, 1 January is a Saturday. What day of the week is 7 September 2011?",
+      "explanation": "Counting days within 2011, 7 September is a Wednesday.",
+      "options": [
+        {
+          "label": "Monday",
+          "is_correct": false
+        },
+        {
+          "label": "Thursday",
+          "is_correct": false
+        },
+        {
+          "label": "Wednesday",
+          "is_correct": true
+        },
+        {
+          "label": "Tuesday",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Calendar",
+      "kind": "standard",
+      "difficulty": "hard",
+      "answer_type": "single",
+      "stem": "In the year 2035, 30 September is a Sunday. What day of the week is 27 August 2035?",
+      "explanation": "Counting days within 2035, 27 August is a Monday.",
+      "options": [
+        {
+          "label": "Friday",
+          "is_correct": false
+        },
+        {
+          "label": "Thursday",
+          "is_correct": false
+        },
+        {
+          "label": "Tuesday",
+          "is_correct": false
+        },
+        {
+          "label": "Monday",
+          "is_correct": true
+        }
+      ]
+    },
+    {
+      "chapter": "Calendar",
+      "kind": "standard",
+      "difficulty": "hard",
+      "answer_type": "single",
+      "stem": "In the year 2029, 13 April is a Friday. What day of the week is 3 October 2029?",
+      "explanation": "Counting days within 2029, 3 October is a Wednesday.",
+      "options": [
+        {
+          "label": "Thursday",
+          "is_correct": false
+        },
+        {
+          "label": "Wednesday",
+          "is_correct": true
+        },
+        {
+          "label": "Sunday",
+          "is_correct": false
+        },
+        {
+          "label": "Friday",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Calendar",
+      "kind": "standard",
+      "difficulty": "very_hard",
+      "answer_type": "single",
+      "stem": "What day of the week will 12 August 2079 be?",
+      "explanation": "By the calendar, 12 August 2079 will fall on a Saturday.",
+      "options": [
+        {
+          "label": "Saturday",
+          "is_correct": true
+        },
+        {
+          "label": "Friday",
+          "is_correct": false
+        },
+        {
+          "label": "Sunday",
+          "is_correct": false
+        },
+        {
+          "label": "Wednesday",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Calendar",
+      "kind": "standard",
+      "difficulty": "very_hard",
+      "answer_type": "single",
+      "stem": "In the year 2061, 5 June is a Sunday. On which day of the week does 2 September 2061 fall?",
+      "explanation": "Counting days within 2061, 2 September is a Friday.",
+      "options": [
+        {
+          "label": "Wednesday",
+          "is_correct": false
+        },
+        {
+          "label": "Thursday",
+          "is_correct": false
+        },
+        {
+          "label": "Sunday",
+          "is_correct": false
+        },
+        {
+          "label": "Friday",
+          "is_correct": true
+        }
+      ]
+    },
+    {
+      "chapter": "Calendar",
+      "kind": "standard",
+      "difficulty": "very_hard",
+      "answer_type": "single",
+      "stem": "In the year 2051, 14 February is a Tuesday. On which day of the week does 6 November 2051 fall?",
+      "explanation": "Counting days within 2051, 6 November is a Monday.",
+      "options": [
+        {
+          "label": "Tuesday",
+          "is_correct": false
+        },
+        {
+          "label": "Monday",
+          "is_correct": true
+        },
+        {
+          "label": "Wednesday",
+          "is_correct": false
+        },
+        {
+          "label": "Sunday",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Calendar",
+      "kind": "standard",
+      "difficulty": "very_hard",
+      "answer_type": "single",
+      "stem": "In the year 1957, 7 May is a Tuesday. On which day of the week does 5 December 1957 fall?",
+      "explanation": "Counting days within 1957, 5 December is a Thursday.",
+      "options": [
+        {
+          "label": "Thursday",
+          "is_correct": true
+        },
+        {
+          "label": "Wednesday",
+          "is_correct": false
+        },
+        {
+          "label": "Friday",
+          "is_correct": false
+        },
+        {
+          "label": "Tuesday",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Calendar",
+      "kind": "standard",
+      "difficulty": "very_hard",
+      "answer_type": "single",
+      "stem": "What day of the week will 6 November 2050 be?",
+      "explanation": "By the calendar, 6 November 2050 will fall on a Sunday.",
+      "options": [
+        {
+          "label": "Tuesday",
+          "is_correct": false
+        },
+        {
+          "label": "Thursday",
+          "is_correct": false
+        },
+        {
+          "label": "Sunday",
+          "is_correct": true
+        },
+        {
+          "label": "Friday",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Calendar",
+      "kind": "standard",
+      "difficulty": "very_hard",
+      "answer_type": "single",
+      "stem": "What day of the week will 26 June 2084 be?",
+      "explanation": "By the calendar, 26 June 2084 will fall on a Monday.",
+      "options": [
+        {
+          "label": "Tuesday",
+          "is_correct": false
+        },
+        {
+          "label": "Monday",
+          "is_correct": true
+        },
+        {
+          "label": "Wednesday",
+          "is_correct": false
+        },
+        {
+          "label": "Thursday",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Calendar",
+      "kind": "standard",
+      "difficulty": "very_hard",
+      "answer_type": "single",
+      "stem": "In the year 1901, 30 June is a Sunday. On which day of the week does 16 February 1901 fall?",
+      "explanation": "Counting days within 1901, 16 February is a Saturday.",
+      "options": [
+        {
+          "label": "Monday",
+          "is_correct": false
+        },
+        {
+          "label": "Saturday",
+          "is_correct": true
+        },
+        {
+          "label": "Wednesday",
+          "is_correct": false
+        },
+        {
+          "label": "Tuesday",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Calendar",
+      "kind": "standard",
+      "difficulty": "very_hard",
+      "answer_type": "single",
+      "stem": "What day of the week will 23 October 2055 be?",
+      "explanation": "By the calendar, 23 October 2055 will fall on a Saturday.",
+      "options": [
+        {
+          "label": "Thursday",
+          "is_correct": false
+        },
+        {
+          "label": "Monday",
+          "is_correct": false
+        },
+        {
+          "label": "Sunday",
+          "is_correct": false
+        },
+        {
+          "label": "Saturday",
+          "is_correct": true
+        }
+      ]
+    },
+    {
+      "chapter": "Calendar",
+      "kind": "standard",
+      "difficulty": "very_hard",
+      "answer_type": "single",
+      "stem": "In the year 2007, 25 October is a Thursday. On which day of the week does 2 November 2007 fall?",
+      "explanation": "Counting days within 2007, 2 November is a Friday.",
+      "options": [
+        {
+          "label": "Thursday",
+          "is_correct": false
+        },
+        {
+          "label": "Wednesday",
+          "is_correct": false
+        },
+        {
+          "label": "Tuesday",
+          "is_correct": false
+        },
+        {
+          "label": "Friday",
+          "is_correct": true
+        }
+      ]
+    },
+    {
+      "chapter": "Calendar",
+      "kind": "standard",
+      "difficulty": "very_hard",
+      "answer_type": "single",
+      "stem": "What day of the week will 21 February 2093 be?",
+      "explanation": "By the calendar, 21 February 2093 will fall on a Saturday.",
+      "options": [
+        {
+          "label": "Wednesday",
+          "is_correct": false
+        },
+        {
+          "label": "Saturday",
+          "is_correct": true
+        },
+        {
+          "label": "Friday",
+          "is_correct": false
+        },
+        {
+          "label": "Monday",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Calendar",
+      "kind": "standard",
+      "difficulty": "very_hard",
+      "answer_type": "single",
+      "stem": "What day of the week will 6 September 2050 be?",
+      "explanation": "By the calendar, 6 September 2050 will fall on a Tuesday.",
+      "options": [
+        {
+          "label": "Sunday",
+          "is_correct": false
+        },
+        {
+          "label": "Tuesday",
+          "is_correct": true
+        },
+        {
+          "label": "Wednesday",
+          "is_correct": false
+        },
+        {
+          "label": "Saturday",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Calendar",
+      "kind": "standard",
+      "difficulty": "very_hard",
+      "answer_type": "single",
+      "stem": "On which day of the week did 3 July 1905 fall?",
+      "explanation": "By the calendar, 3 July 1905 fell on a Monday.",
+      "options": [
+        {
+          "label": "Tuesday",
+          "is_correct": false
+        },
+        {
+          "label": "Sunday",
+          "is_correct": false
+        },
+        {
+          "label": "Monday",
+          "is_correct": true
+        },
+        {
+          "label": "Wednesday",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Calendar",
+      "kind": "standard",
+      "difficulty": "very_hard",
+      "answer_type": "single",
+      "stem": "In the year 2023, 17 April is a Monday. On which day of the week does 3 August 2023 fall?",
+      "explanation": "Counting days within 2023, 3 August is a Thursday.",
+      "options": [
+        {
+          "label": "Wednesday",
+          "is_correct": false
+        },
+        {
+          "label": "Saturday",
+          "is_correct": false
+        },
+        {
+          "label": "Monday",
+          "is_correct": false
+        },
+        {
+          "label": "Thursday",
+          "is_correct": true
+        }
+      ]
+    },
+    {
+      "chapter": "Calendar",
+      "kind": "standard",
+      "difficulty": "very_hard",
+      "answer_type": "single",
+      "stem": "In the year 1958, 4 November is a Tuesday. On which day of the week does 13 April 1958 fall?",
+      "explanation": "Counting days within 1958, 13 April is a Sunday.",
+      "options": [
+        {
+          "label": "Tuesday",
+          "is_correct": false
+        },
+        {
+          "label": "Sunday",
+          "is_correct": true
+        },
+        {
+          "label": "Monday",
+          "is_correct": false
+        },
+        {
+          "label": "Thursday",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Calendar",
+      "kind": "standard",
+      "difficulty": "very_hard",
+      "answer_type": "single",
+      "stem": "On which day of the week did 25 February 1919 fall?",
+      "explanation": "By the calendar, 25 February 1919 fell on a Tuesday.",
+      "options": [
+        {
+          "label": "Monday",
+          "is_correct": false
+        },
+        {
+          "label": "Tuesday",
+          "is_correct": true
+        },
+        {
+          "label": "Wednesday",
+          "is_correct": false
+        },
+        {
+          "label": "Sunday",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Calendar",
+      "kind": "standard",
+      "difficulty": "very_hard",
+      "answer_type": "single",
+      "stem": "In the year 2056, 8 February is a Tuesday. On which day of the week does 1 December 2056 fall?",
+      "explanation": "Counting days within 2056, 1 December is a Friday.",
+      "options": [
+        {
+          "label": "Friday",
+          "is_correct": true
+        },
+        {
+          "label": "Thursday",
+          "is_correct": false
+        },
+        {
+          "label": "Sunday",
+          "is_correct": false
+        },
+        {
+          "label": "Monday",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Calendar",
+      "kind": "standard",
+      "difficulty": "very_hard",
+      "answer_type": "single",
+      "stem": "What day of the week will 1 January 2098 be?",
+      "explanation": "By the calendar, 1 January 2098 will fall on a Wednesday.",
+      "options": [
+        {
+          "label": "Saturday",
+          "is_correct": false
+        },
+        {
+          "label": "Monday",
+          "is_correct": false
+        },
+        {
+          "label": "Wednesday",
+          "is_correct": true
+        },
+        {
+          "label": "Tuesday",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Calendar",
+      "kind": "standard",
+      "difficulty": "very_hard",
+      "answer_type": "single",
+      "stem": "On which day of the week did 12 October 1941 fall?",
+      "explanation": "By the calendar, 12 October 1941 fell on a Sunday.",
+      "options": [
+        {
+          "label": "Monday",
+          "is_correct": false
+        },
+        {
+          "label": "Thursday",
+          "is_correct": false
+        },
+        {
+          "label": "Saturday",
+          "is_correct": false
+        },
+        {
+          "label": "Sunday",
+          "is_correct": true
+        }
+      ]
+    },
+    {
+      "chapter": "Calendar",
+      "kind": "standard",
+      "difficulty": "very_hard",
+      "answer_type": "single",
+      "stem": "What day of the week will 31 January 2063 be?",
+      "explanation": "By the calendar, 31 January 2063 will fall on a Wednesday.",
+      "options": [
+        {
+          "label": "Sunday",
+          "is_correct": false
+        },
+        {
+          "label": "Friday",
+          "is_correct": false
+        },
+        {
+          "label": "Wednesday",
+          "is_correct": true
+        },
+        {
+          "label": "Thursday",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Calendar",
+      "kind": "standard",
+      "difficulty": "very_hard",
+      "answer_type": "single",
+      "stem": "In the year 2088, 18 July is a Sunday. On which day of the week does 20 December 2088 fall?",
+      "explanation": "Counting days within 2088, 20 December is a Monday.",
+      "options": [
+        {
+          "label": "Wednesday",
+          "is_correct": false
+        },
+        {
+          "label": "Friday",
+          "is_correct": false
+        },
+        {
+          "label": "Thursday",
+          "is_correct": false
+        },
+        {
+          "label": "Monday",
+          "is_correct": true
+        }
+      ]
+    },
+    {
+      "chapter": "Calendar",
+      "kind": "standard",
+      "difficulty": "very_hard",
+      "answer_type": "single",
+      "stem": "In the year 2093, 5 May is a Tuesday. On which day of the week does 23 May 2093 fall?",
+      "explanation": "Counting days within 2093, 23 May is a Saturday.",
+      "options": [
+        {
+          "label": "Monday",
+          "is_correct": false
+        },
+        {
+          "label": "Tuesday",
+          "is_correct": false
+        },
+        {
+          "label": "Saturday",
+          "is_correct": true
+        },
+        {
+          "label": "Wednesday",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Calendar",
+      "kind": "standard",
+      "difficulty": "very_hard",
+      "answer_type": "single",
+      "stem": "On which day of the week did 24 April 1920 fall?",
+      "explanation": "By the calendar, 24 April 1920 fell on a Saturday.",
+      "options": [
+        {
+          "label": "Tuesday",
+          "is_correct": false
+        },
+        {
+          "label": "Sunday",
+          "is_correct": false
+        },
+        {
+          "label": "Monday",
+          "is_correct": false
+        },
+        {
+          "label": "Saturday",
+          "is_correct": true
+        }
+      ]
+    },
+    {
+      "chapter": "Calendar",
+      "kind": "standard",
+      "difficulty": "very_hard",
+      "answer_type": "single",
+      "stem": "What day of the week will 4 October 2067 be?",
+      "explanation": "By the calendar, 4 October 2067 will fall on a Tuesday.",
+      "options": [
+        {
+          "label": "Sunday",
+          "is_correct": false
+        },
+        {
+          "label": "Tuesday",
+          "is_correct": true
+        },
+        {
+          "label": "Thursday",
+          "is_correct": false
+        },
+        {
+          "label": "Wednesday",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Calendar",
+      "kind": "standard",
+      "difficulty": "very_hard",
+      "answer_type": "single",
+      "stem": "On which day of the week did 14 April 1946 fall?",
+      "explanation": "By the calendar, 14 April 1946 fell on a Sunday.",
+      "options": [
+        {
+          "label": "Thursday",
+          "is_correct": false
+        },
+        {
+          "label": "Saturday",
+          "is_correct": false
+        },
+        {
+          "label": "Friday",
+          "is_correct": false
+        },
+        {
+          "label": "Sunday",
+          "is_correct": true
+        }
+      ]
+    },
+    {
+      "chapter": "Calendar",
+      "kind": "standard",
+      "difficulty": "very_hard",
+      "answer_type": "single",
+      "stem": "In the year 1906, 4 January is a Thursday. On which day of the week does 4 December 1906 fall?",
+      "explanation": "Counting days within 1906, 4 December is a Tuesday.",
+      "options": [
+        {
+          "label": "Sunday",
+          "is_correct": false
+        },
+        {
+          "label": "Tuesday",
+          "is_correct": true
+        },
+        {
+          "label": "Friday",
+          "is_correct": false
+        },
+        {
+          "label": "Wednesday",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Calendar",
+      "kind": "standard",
+      "difficulty": "very_hard",
+      "answer_type": "single",
+      "stem": "On which day of the week did 18 October 1933 fall?",
+      "explanation": "By the calendar, 18 October 1933 fell on a Wednesday.",
+      "options": [
+        {
+          "label": "Monday",
+          "is_correct": false
+        },
+        {
+          "label": "Wednesday",
+          "is_correct": true
+        },
+        {
+          "label": "Friday",
+          "is_correct": false
+        },
+        {
+          "label": "Saturday",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Calendar",
+      "kind": "standard",
+      "difficulty": "very_hard",
+      "answer_type": "single",
+      "stem": "In the year 2010, 24 February is a Wednesday. On which day of the week does 7 February 2010 fall?",
+      "explanation": "Counting days within 2010, 7 February is a Sunday.",
+      "options": [
+        {
+          "label": "Friday",
+          "is_correct": false
+        },
+        {
+          "label": "Saturday",
+          "is_correct": false
+        },
+        {
+          "label": "Monday",
+          "is_correct": false
+        },
+        {
+          "label": "Sunday",
+          "is_correct": true
+        }
+      ]
+    },
+    {
+      "chapter": "Calendar",
+      "kind": "standard",
+      "difficulty": "very_hard",
+      "answer_type": "single",
+      "stem": "In the year 2021, 10 November is a Wednesday. On which day of the week does 11 August 2021 fall?",
+      "explanation": "Counting days within 2021, 11 August is a Wednesday.",
+      "options": [
+        {
+          "label": "Sunday",
+          "is_correct": false
+        },
+        {
+          "label": "Wednesday",
+          "is_correct": true
+        },
+        {
+          "label": "Saturday",
+          "is_correct": false
+        },
+        {
+          "label": "Friday",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Calendar",
+      "kind": "standard",
+      "difficulty": "very_hard",
+      "answer_type": "single",
+      "stem": "What day of the week will 18 February 2060 be?",
+      "explanation": "By the calendar, 18 February 2060 will fall on a Wednesday.",
+      "options": [
+        {
+          "label": "Wednesday",
+          "is_correct": true
+        },
+        {
+          "label": "Tuesday",
+          "is_correct": false
+        },
+        {
+          "label": "Monday",
+          "is_correct": false
+        },
+        {
+          "label": "Friday",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Calendar",
+      "kind": "standard",
+      "difficulty": "very_hard",
+      "answer_type": "single",
+      "stem": "What day of the week will 22 July 2061 be?",
+      "explanation": "By the calendar, 22 July 2061 will fall on a Friday.",
+      "options": [
+        {
+          "label": "Wednesday",
+          "is_correct": false
+        },
+        {
+          "label": "Sunday",
+          "is_correct": false
+        },
+        {
+          "label": "Friday",
+          "is_correct": true
+        },
+        {
+          "label": "Saturday",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Calendar",
+      "kind": "standard",
+      "difficulty": "very_hard",
+      "answer_type": "single",
+      "stem": "In the year 1942, 30 April is a Thursday. On which day of the week does 1 November 1942 fall?",
+      "explanation": "Counting days within 1942, 1 November is a Sunday.",
+      "options": [
+        {
+          "label": "Friday",
+          "is_correct": false
+        },
+        {
+          "label": "Saturday",
+          "is_correct": false
+        },
+        {
+          "label": "Sunday",
+          "is_correct": true
+        },
+        {
+          "label": "Tuesday",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Calendar",
+      "kind": "standard",
+      "difficulty": "very_hard",
+      "answer_type": "single",
+      "stem": "On which day of the week did 1 January 1933 fall?",
+      "explanation": "By the calendar, 1 January 1933 fell on a Sunday.",
+      "options": [
+        {
+          "label": "Monday",
+          "is_correct": false
+        },
+        {
+          "label": "Thursday",
+          "is_correct": false
+        },
+        {
+          "label": "Saturday",
+          "is_correct": false
+        },
+        {
+          "label": "Sunday",
+          "is_correct": true
+        }
+      ]
+    },
+    {
+      "chapter": "Calendar",
+      "kind": "standard",
+      "difficulty": "very_hard",
+      "answer_type": "single",
+      "stem": "In the year 1985, 13 May is a Monday. On which day of the week does 15 September 1985 fall?",
+      "explanation": "Counting days within 1985, 15 September is a Sunday.",
+      "options": [
+        {
+          "label": "Tuesday",
+          "is_correct": false
+        },
+        {
+          "label": "Sunday",
+          "is_correct": true
+        },
+        {
+          "label": "Thursday",
+          "is_correct": false
+        },
+        {
+          "label": "Friday",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Calendar",
+      "kind": "standard",
+      "difficulty": "very_hard",
+      "answer_type": "single",
+      "stem": "What day of the week will 7 November 2095 be?",
+      "explanation": "By the calendar, 7 November 2095 will fall on a Monday.",
+      "options": [
+        {
+          "label": "Tuesday",
+          "is_correct": false
+        },
+        {
+          "label": "Monday",
+          "is_correct": true
+        },
+        {
+          "label": "Saturday",
+          "is_correct": false
+        },
+        {
+          "label": "Wednesday",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Calendar",
+      "kind": "standard",
+      "difficulty": "very_hard",
+      "answer_type": "single",
+      "stem": "On which day of the week did 21 December 1916 fall?",
+      "explanation": "By the calendar, 21 December 1916 fell on a Thursday.",
+      "options": [
+        {
+          "label": "Sunday",
+          "is_correct": false
+        },
+        {
+          "label": "Saturday",
+          "is_correct": false
+        },
+        {
+          "label": "Thursday",
+          "is_correct": true
+        },
+        {
+          "label": "Wednesday",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Calendar",
+      "kind": "standard",
+      "difficulty": "very_hard",
+      "answer_type": "single",
+      "stem": "What day of the week will 21 June 2067 be?",
+      "explanation": "By the calendar, 21 June 2067 will fall on a Tuesday.",
+      "options": [
+        {
+          "label": "Thursday",
+          "is_correct": false
+        },
+        {
+          "label": "Friday",
+          "is_correct": false
+        },
+        {
+          "label": "Saturday",
+          "is_correct": false
+        },
+        {
+          "label": "Tuesday",
+          "is_correct": true
+        }
+      ]
+    },
+    {
+      "chapter": "Calendar",
+      "kind": "standard",
+      "difficulty": "very_hard",
+      "answer_type": "single",
+      "stem": "In the year 2095, 15 January is a Saturday. On which day of the week does 9 February 2095 fall?",
+      "explanation": "Counting days within 2095, 9 February is a Wednesday.",
+      "options": [
+        {
+          "label": "Friday",
+          "is_correct": false
+        },
+        {
+          "label": "Wednesday",
+          "is_correct": true
+        },
+        {
+          "label": "Sunday",
+          "is_correct": false
+        },
+        {
+          "label": "Saturday",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Calendar",
+      "kind": "standard",
+      "difficulty": "very_hard",
+      "answer_type": "single",
+      "stem": "On which day of the week did 8 February 1919 fall?",
+      "explanation": "By the calendar, 8 February 1919 fell on a Saturday.",
+      "options": [
+        {
+          "label": "Saturday",
+          "is_correct": true
+        },
+        {
+          "label": "Tuesday",
+          "is_correct": false
+        },
+        {
+          "label": "Monday",
+          "is_correct": false
+        },
+        {
+          "label": "Sunday",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Calendar",
+      "kind": "standard",
+      "difficulty": "very_hard",
+      "answer_type": "single",
+      "stem": "On which day of the week did 24 December 1939 fall?",
+      "explanation": "By the calendar, 24 December 1939 fell on a Sunday.",
+      "options": [
+        {
+          "label": "Tuesday",
+          "is_correct": false
+        },
+        {
+          "label": "Friday",
+          "is_correct": false
+        },
+        {
+          "label": "Saturday",
+          "is_correct": false
+        },
+        {
+          "label": "Sunday",
+          "is_correct": true
+        }
+      ]
+    },
+    {
+      "chapter": "Calendar",
+      "kind": "standard",
+      "difficulty": "very_hard",
+      "answer_type": "single",
+      "stem": "In the year 2002, 16 April is a Tuesday. On which day of the week does 27 October 2002 fall?",
+      "explanation": "Counting days within 2002, 27 October is a Sunday.",
+      "options": [
+        {
+          "label": "Thursday",
+          "is_correct": false
+        },
+        {
+          "label": "Saturday",
+          "is_correct": false
+        },
+        {
+          "label": "Wednesday",
+          "is_correct": false
+        },
+        {
+          "label": "Sunday",
+          "is_correct": true
+        }
+      ]
+    },
+    {
+      "chapter": "Calendar",
+      "kind": "standard",
+      "difficulty": "very_hard",
+      "answer_type": "single",
+      "stem": "In the year 1933, 16 August is a Wednesday. On which day of the week does 19 July 1933 fall?",
+      "explanation": "Counting days within 1933, 19 July is a Wednesday.",
+      "options": [
+        {
+          "label": "Monday",
+          "is_correct": false
+        },
+        {
+          "label": "Friday",
+          "is_correct": false
+        },
+        {
+          "label": "Tuesday",
+          "is_correct": false
+        },
+        {
+          "label": "Wednesday",
+          "is_correct": true
+        }
+      ]
+    },
+    {
+      "chapter": "Calendar",
+      "kind": "standard",
+      "difficulty": "very_hard",
+      "answer_type": "single",
+      "stem": "In the year 1996, 6 May is a Monday. On which day of the week does 28 September 1996 fall?",
+      "explanation": "Counting days within 1996, 28 September is a Saturday.",
+      "options": [
+        {
+          "label": "Saturday",
+          "is_correct": true
+        },
+        {
+          "label": "Friday",
+          "is_correct": false
+        },
+        {
+          "label": "Sunday",
+          "is_correct": false
+        },
+        {
+          "label": "Thursday",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Calendar",
+      "kind": "standard",
+      "difficulty": "very_hard",
+      "answer_type": "single",
+      "stem": "In the year 2013, 22 July is a Monday. On which day of the week does 19 December 2013 fall?",
+      "explanation": "Counting days within 2013, 19 December is a Thursday.",
+      "options": [
+        {
+          "label": "Saturday",
+          "is_correct": false
+        },
+        {
+          "label": "Monday",
+          "is_correct": false
+        },
+        {
+          "label": "Wednesday",
+          "is_correct": false
+        },
+        {
+          "label": "Thursday",
+          "is_correct": true
+        }
+      ]
+    },
+    {
+      "chapter": "Calendar",
+      "kind": "standard",
+      "difficulty": "very_hard",
+      "answer_type": "single",
+      "stem": "What day of the week will 8 December 2056 be?",
+      "explanation": "By the calendar, 8 December 2056 will fall on a Friday.",
+      "options": [
+        {
+          "label": "Friday",
+          "is_correct": true
+        },
+        {
+          "label": "Saturday",
+          "is_correct": false
+        },
+        {
+          "label": "Thursday",
+          "is_correct": false
+        },
+        {
+          "label": "Tuesday",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Calendar",
+      "kind": "standard",
+      "difficulty": "very_hard",
+      "answer_type": "single",
+      "stem": "In the year 1916, 7 February is a Monday. On which day of the week does 6 December 1916 fall?",
+      "explanation": "Counting days within 1916, 6 December is a Wednesday.",
+      "options": [
+        {
+          "label": "Sunday",
+          "is_correct": false
+        },
+        {
+          "label": "Monday",
+          "is_correct": false
+        },
+        {
+          "label": "Wednesday",
+          "is_correct": true
+        },
+        {
+          "label": "Thursday",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Calendar",
+      "kind": "standard",
+      "difficulty": "very_hard",
+      "answer_type": "single",
+      "stem": "In the year 1908, 11 November is a Wednesday. On which day of the week does 4 May 1908 fall?",
+      "explanation": "Counting days within 1908, 4 May is a Monday.",
+      "options": [
+        {
+          "label": "Sunday",
+          "is_correct": false
+        },
+        {
+          "label": "Thursday",
+          "is_correct": false
+        },
+        {
+          "label": "Wednesday",
+          "is_correct": false
+        },
+        {
+          "label": "Monday",
+          "is_correct": true
+        }
+      ]
+    },
+    {
+      "chapter": "Calendar",
+      "kind": "standard",
+      "difficulty": "very_hard",
+      "answer_type": "single",
+      "stem": "On which day of the week did 30 August 1923 fall?",
+      "explanation": "By the calendar, 30 August 1923 fell on a Thursday.",
+      "options": [
+        {
+          "label": "Thursday",
+          "is_correct": true
+        },
+        {
+          "label": "Saturday",
+          "is_correct": false
+        },
+        {
+          "label": "Wednesday",
+          "is_correct": false
+        },
+        {
+          "label": "Friday",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Calendar",
+      "kind": "standard",
+      "difficulty": "very_hard",
+      "answer_type": "single",
+      "stem": "In the year 1986, 2 February is a Sunday. On which day of the week does 29 May 1986 fall?",
+      "explanation": "Counting days within 1986, 29 May is a Thursday.",
+      "options": [
+        {
+          "label": "Wednesday",
+          "is_correct": false
+        },
+        {
+          "label": "Monday",
+          "is_correct": false
+        },
+        {
+          "label": "Thursday",
+          "is_correct": true
+        },
+        {
+          "label": "Saturday",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Calendar",
+      "kind": "standard",
+      "difficulty": "very_hard",
+      "answer_type": "single",
+      "stem": "What day of the week will 10 December 2057 be?",
+      "explanation": "By the calendar, 10 December 2057 will fall on a Monday.",
+      "options": [
+        {
+          "label": "Thursday",
+          "is_correct": false
+        },
+        {
+          "label": "Friday",
+          "is_correct": false
+        },
+        {
+          "label": "Monday",
+          "is_correct": true
+        },
+        {
+          "label": "Sunday",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Calendar",
+      "kind": "standard",
+      "difficulty": "very_hard",
+      "answer_type": "single",
+      "stem": "On which day of the week did 6 December 1942 fall?",
+      "explanation": "By the calendar, 6 December 1942 fell on a Sunday.",
+      "options": [
+        {
+          "label": "Wednesday",
+          "is_correct": false
+        },
+        {
+          "label": "Friday",
+          "is_correct": false
+        },
+        {
+          "label": "Saturday",
+          "is_correct": false
+        },
+        {
+          "label": "Sunday",
+          "is_correct": true
+        }
+      ]
+    }
+  ]
+}

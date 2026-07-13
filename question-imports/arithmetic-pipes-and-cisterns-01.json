@@ -1,0 +1,5205 @@
+{
+  "subject": "Arithmetic",
+  "questions": [
+    {
+      "chapter": "Pipes and Cisterns",
+      "kind": "standard",
+      "difficulty": "easy",
+      "answer_type": "single",
+      "stem": "A pipe can fill a tank in 20 hours. In how many hours can 2 such identical pipes fill it?",
+      "explanation": "2 pipes work 2 times as fast, so time = 20/2 = 10 hours.",
+      "options": [
+        {
+          "label": "9 hours",
+          "is_correct": false
+        },
+        {
+          "label": "10 hours",
+          "is_correct": true
+        },
+        {
+          "label": "11 hours",
+          "is_correct": false
+        },
+        {
+          "label": "12 hours",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Pipes and Cisterns",
+      "kind": "standard",
+      "difficulty": "easy",
+      "answer_type": "single",
+      "stem": "Two pipes can fill a tank in 24 hours and 8 hours respectively. If both are opened together, in how many hours will the tank be filled?",
+      "explanation": "Combined one-hour work = 1/24 + 1/8, so the tank fills in 6 hours.",
+      "options": [
+        {
+          "label": "8 hours",
+          "is_correct": false
+        },
+        {
+          "label": "7 hours",
+          "is_correct": false
+        },
+        {
+          "label": "5 hours",
+          "is_correct": false
+        },
+        {
+          "label": "6 hours",
+          "is_correct": true
+        }
+      ]
+    },
+    {
+      "chapter": "Pipes and Cisterns",
+      "kind": "standard",
+      "difficulty": "easy",
+      "answer_type": "single",
+      "stem": "Two pipes can fill a tank in 20 hours and 30 hours respectively. If both are opened together, in how many hours will the tank be filled?",
+      "explanation": "Combined one-hour work = 1/20 + 1/30, so the tank fills in 12 hours.",
+      "options": [
+        {
+          "label": "13 hours",
+          "is_correct": false
+        },
+        {
+          "label": "14 hours",
+          "is_correct": false
+        },
+        {
+          "label": "11 hours",
+          "is_correct": false
+        },
+        {
+          "label": "12 hours",
+          "is_correct": true
+        }
+      ]
+    },
+    {
+      "chapter": "Pipes and Cisterns",
+      "kind": "standard",
+      "difficulty": "easy",
+      "answer_type": "single",
+      "stem": "A pipe fills exactly half of a tank in 19 hours. How long will it take to fill the whole tank?",
+      "explanation": "The full tank takes twice as long: 2 × 19 = 38 hours.",
+      "options": [
+        {
+          "label": "39 hours",
+          "is_correct": false
+        },
+        {
+          "label": "38 hours",
+          "is_correct": true
+        },
+        {
+          "label": "40 hours",
+          "is_correct": false
+        },
+        {
+          "label": "37 hours",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Pipes and Cisterns",
+      "kind": "standard",
+      "difficulty": "easy",
+      "answer_type": "single",
+      "stem": "A pipe fills exactly half of a tank in 16 hours. How long will it take to fill the whole tank?",
+      "explanation": "The full tank takes twice as long: 2 × 16 = 32 hours.",
+      "options": [
+        {
+          "label": "33 hours",
+          "is_correct": false
+        },
+        {
+          "label": "31 hours",
+          "is_correct": false
+        },
+        {
+          "label": "32 hours",
+          "is_correct": true
+        },
+        {
+          "label": "34 hours",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Pipes and Cisterns",
+      "kind": "standard",
+      "difficulty": "easy",
+      "answer_type": "single",
+      "stem": "A pipe can fill a tank in 21 hours. In how many hours can 3 such identical pipes fill it?",
+      "explanation": "3 pipes work 3 times as fast, so time = 21/3 = 7 hours.",
+      "options": [
+        {
+          "label": "9 hours",
+          "is_correct": false
+        },
+        {
+          "label": "7 hours",
+          "is_correct": true
+        },
+        {
+          "label": "8 hours",
+          "is_correct": false
+        },
+        {
+          "label": "6 hours",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Pipes and Cisterns",
+      "kind": "standard",
+      "difficulty": "easy",
+      "answer_type": "single",
+      "stem": "Two pipes can fill a tank in 36 hours and 12 hours respectively. If both are opened together, in how many hours will the tank be filled?",
+      "explanation": "Combined one-hour work = 1/36 + 1/12, so the tank fills in 9 hours.",
+      "options": [
+        {
+          "label": "10 hours",
+          "is_correct": false
+        },
+        {
+          "label": "8 hours",
+          "is_correct": false
+        },
+        {
+          "label": "9 hours",
+          "is_correct": true
+        },
+        {
+          "label": "11 hours",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Pipes and Cisterns",
+      "kind": "standard",
+      "difficulty": "easy",
+      "answer_type": "single",
+      "stem": "A pipe can fill a tank in 40 hours. In how many hours can 5 such identical pipes fill it?",
+      "explanation": "5 pipes work 5 times as fast, so time = 40/5 = 8 hours.",
+      "options": [
+        {
+          "label": "8 hours",
+          "is_correct": true
+        },
+        {
+          "label": "10 hours",
+          "is_correct": false
+        },
+        {
+          "label": "9 hours",
+          "is_correct": false
+        },
+        {
+          "label": "7 hours",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Pipes and Cisterns",
+      "kind": "standard",
+      "difficulty": "easy",
+      "answer_type": "single",
+      "stem": "Two pipes can fill a tank in 14 hours and 35 hours respectively. If both are opened together, in how many hours will the tank be filled?",
+      "explanation": "Combined one-hour work = 1/14 + 1/35, so the tank fills in 10 hours.",
+      "options": [
+        {
+          "label": "11 hours",
+          "is_correct": false
+        },
+        {
+          "label": "10 hours",
+          "is_correct": true
+        },
+        {
+          "label": "9 hours",
+          "is_correct": false
+        },
+        {
+          "label": "12 hours",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Pipes and Cisterns",
+      "kind": "standard",
+      "difficulty": "easy",
+      "answer_type": "single",
+      "stem": "Two pipes can fill a tank in 10 hours and 15 hours respectively. If both are opened together, in how many hours will the tank be filled?",
+      "explanation": "Combined one-hour work = 1/10 + 1/15, so the tank fills in 6 hours.",
+      "options": [
+        {
+          "label": "8 hours",
+          "is_correct": false
+        },
+        {
+          "label": "7 hours",
+          "is_correct": false
+        },
+        {
+          "label": "6 hours",
+          "is_correct": true
+        },
+        {
+          "label": "5 hours",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Pipes and Cisterns",
+      "kind": "standard",
+      "difficulty": "easy",
+      "answer_type": "single",
+      "stem": "Two pipes can fill a tank in 8 hours and 8 hours respectively. If both are opened together, in how many hours will the tank be filled?",
+      "explanation": "Combined one-hour work = 1/8 + 1/8, so the tank fills in 4 hours.",
+      "options": [
+        {
+          "label": "5 hours",
+          "is_correct": false
+        },
+        {
+          "label": "3 hours",
+          "is_correct": false
+        },
+        {
+          "label": "6 hours",
+          "is_correct": false
+        },
+        {
+          "label": "4 hours",
+          "is_correct": true
+        }
+      ]
+    },
+    {
+      "chapter": "Pipes and Cisterns",
+      "kind": "standard",
+      "difficulty": "easy",
+      "answer_type": "single",
+      "stem": "A pipe fills exactly half of a tank in 14 hours. How long will it take to fill the whole tank?",
+      "explanation": "The full tank takes twice as long: 2 × 14 = 28 hours.",
+      "options": [
+        {
+          "label": "27 hours",
+          "is_correct": false
+        },
+        {
+          "label": "29 hours",
+          "is_correct": false
+        },
+        {
+          "label": "28 hours",
+          "is_correct": true
+        },
+        {
+          "label": "30 hours",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Pipes and Cisterns",
+      "kind": "standard",
+      "difficulty": "easy",
+      "answer_type": "single",
+      "stem": "A pipe can fill a tank in 20 hours. In how many hours can 4 such identical pipes fill it?",
+      "explanation": "4 pipes work 4 times as fast, so time = 20/4 = 5 hours.",
+      "options": [
+        {
+          "label": "7 hours",
+          "is_correct": false
+        },
+        {
+          "label": "5 hours",
+          "is_correct": true
+        },
+        {
+          "label": "4 hours",
+          "is_correct": false
+        },
+        {
+          "label": "6 hours",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Pipes and Cisterns",
+      "kind": "standard",
+      "difficulty": "easy",
+      "answer_type": "single",
+      "stem": "Two pipes can fill a tank in 12 hours and 6 hours respectively. If both are opened together, in how many hours will the tank be filled?",
+      "explanation": "Combined one-hour work = 1/12 + 1/6, so the tank fills in 4 hours.",
+      "options": [
+        {
+          "label": "4 hours",
+          "is_correct": true
+        },
+        {
+          "label": "3 hours",
+          "is_correct": false
+        },
+        {
+          "label": "6 hours",
+          "is_correct": false
+        },
+        {
+          "label": "5 hours",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Pipes and Cisterns",
+      "kind": "standard",
+      "difficulty": "easy",
+      "answer_type": "single",
+      "stem": "Two pipes can fill a tank in 9 hours and 18 hours respectively. If both are opened together, in how many hours will the tank be filled?",
+      "explanation": "Combined one-hour work = 1/9 + 1/18, so the tank fills in 6 hours.",
+      "options": [
+        {
+          "label": "7 hours",
+          "is_correct": false
+        },
+        {
+          "label": "5 hours",
+          "is_correct": false
+        },
+        {
+          "label": "8 hours",
+          "is_correct": false
+        },
+        {
+          "label": "6 hours",
+          "is_correct": true
+        }
+      ]
+    },
+    {
+      "chapter": "Pipes and Cisterns",
+      "kind": "standard",
+      "difficulty": "easy",
+      "answer_type": "single",
+      "stem": "Two pipes can fill a tank in 18 hours and 9 hours respectively. If both are opened together, in how many hours will the tank be filled?",
+      "explanation": "Combined one-hour work = 1/18 + 1/9, so the tank fills in 6 hours.",
+      "options": [
+        {
+          "label": "6 hours",
+          "is_correct": true
+        },
+        {
+          "label": "7 hours",
+          "is_correct": false
+        },
+        {
+          "label": "5 hours",
+          "is_correct": false
+        },
+        {
+          "label": "8 hours",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Pipes and Cisterns",
+      "kind": "standard",
+      "difficulty": "easy",
+      "answer_type": "single",
+      "stem": "A pipe can fill a tank in 18 hours. In how many hours can 2 such identical pipes fill it?",
+      "explanation": "2 pipes work 2 times as fast, so time = 18/2 = 9 hours.",
+      "options": [
+        {
+          "label": "10 hours",
+          "is_correct": false
+        },
+        {
+          "label": "8 hours",
+          "is_correct": false
+        },
+        {
+          "label": "9 hours",
+          "is_correct": true
+        },
+        {
+          "label": "11 hours",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Pipes and Cisterns",
+      "kind": "standard",
+      "difficulty": "easy",
+      "answer_type": "single",
+      "stem": "A pipe fills exactly half of a tank in 15 hours. How long will it take to fill the whole tank?",
+      "explanation": "The full tank takes twice as long: 2 × 15 = 30 hours.",
+      "options": [
+        {
+          "label": "32 hours",
+          "is_correct": false
+        },
+        {
+          "label": "31 hours",
+          "is_correct": false
+        },
+        {
+          "label": "29 hours",
+          "is_correct": false
+        },
+        {
+          "label": "30 hours",
+          "is_correct": true
+        }
+      ]
+    },
+    {
+      "chapter": "Pipes and Cisterns",
+      "kind": "standard",
+      "difficulty": "easy",
+      "answer_type": "single",
+      "stem": "A pipe fills exactly half of a tank in 18 hours. How long will it take to fill the whole tank?",
+      "explanation": "The full tank takes twice as long: 2 × 18 = 36 hours.",
+      "options": [
+        {
+          "label": "38 hours",
+          "is_correct": false
+        },
+        {
+          "label": "35 hours",
+          "is_correct": false
+        },
+        {
+          "label": "37 hours",
+          "is_correct": false
+        },
+        {
+          "label": "36 hours",
+          "is_correct": true
+        }
+      ]
+    },
+    {
+      "chapter": "Pipes and Cisterns",
+      "kind": "standard",
+      "difficulty": "easy",
+      "answer_type": "single",
+      "stem": "A pipe can fill a tank in 9 hours. In how many hours can 3 such identical pipes fill it?",
+      "explanation": "3 pipes work 3 times as fast, so time = 9/3 = 3 hours.",
+      "options": [
+        {
+          "label": "2 hours",
+          "is_correct": false
+        },
+        {
+          "label": "4 hours",
+          "is_correct": false
+        },
+        {
+          "label": "3 hours",
+          "is_correct": true
+        },
+        {
+          "label": "5 hours",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Pipes and Cisterns",
+      "kind": "standard",
+      "difficulty": "easy",
+      "answer_type": "single",
+      "stem": "A pipe fills exactly half of a tank in 10 hours. How long will it take to fill the whole tank?",
+      "explanation": "The full tank takes twice as long: 2 × 10 = 20 hours.",
+      "options": [
+        {
+          "label": "22 hours",
+          "is_correct": false
+        },
+        {
+          "label": "21 hours",
+          "is_correct": false
+        },
+        {
+          "label": "19 hours",
+          "is_correct": false
+        },
+        {
+          "label": "20 hours",
+          "is_correct": true
+        }
+      ]
+    },
+    {
+      "chapter": "Pipes and Cisterns",
+      "kind": "standard",
+      "difficulty": "easy",
+      "answer_type": "single",
+      "stem": "A pipe can fill a tank in 24 hours. In how many hours can 4 such identical pipes fill it?",
+      "explanation": "4 pipes work 4 times as fast, so time = 24/4 = 6 hours.",
+      "options": [
+        {
+          "label": "8 hours",
+          "is_correct": false
+        },
+        {
+          "label": "6 hours",
+          "is_correct": true
+        },
+        {
+          "label": "7 hours",
+          "is_correct": false
+        },
+        {
+          "label": "5 hours",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Pipes and Cisterns",
+      "kind": "standard",
+      "difficulty": "easy",
+      "answer_type": "single",
+      "stem": "A pipe can fill a tank in 36 hours. In how many hours can 4 such identical pipes fill it?",
+      "explanation": "4 pipes work 4 times as fast, so time = 36/4 = 9 hours.",
+      "options": [
+        {
+          "label": "10 hours",
+          "is_correct": false
+        },
+        {
+          "label": "8 hours",
+          "is_correct": false
+        },
+        {
+          "label": "11 hours",
+          "is_correct": false
+        },
+        {
+          "label": "9 hours",
+          "is_correct": true
+        }
+      ]
+    },
+    {
+      "chapter": "Pipes and Cisterns",
+      "kind": "standard",
+      "difficulty": "easy",
+      "answer_type": "single",
+      "stem": "Two pipes can fill a tank in 30 hours and 20 hours respectively. If both are opened together, in how many hours will the tank be filled?",
+      "explanation": "Combined one-hour work = 1/30 + 1/20, so the tank fills in 12 hours.",
+      "options": [
+        {
+          "label": "13 hours",
+          "is_correct": false
+        },
+        {
+          "label": "12 hours",
+          "is_correct": true
+        },
+        {
+          "label": "11 hours",
+          "is_correct": false
+        },
+        {
+          "label": "14 hours",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Pipes and Cisterns",
+      "kind": "standard",
+      "difficulty": "easy",
+      "answer_type": "single",
+      "stem": "A pipe can fill a tank in 8 hours. In how many hours can 2 such identical pipes fill it?",
+      "explanation": "2 pipes work 2 times as fast, so time = 8/2 = 4 hours.",
+      "options": [
+        {
+          "label": "3 hours",
+          "is_correct": false
+        },
+        {
+          "label": "6 hours",
+          "is_correct": false
+        },
+        {
+          "label": "5 hours",
+          "is_correct": false
+        },
+        {
+          "label": "4 hours",
+          "is_correct": true
+        }
+      ]
+    },
+    {
+      "chapter": "Pipes and Cisterns",
+      "kind": "standard",
+      "difficulty": "easy",
+      "answer_type": "single",
+      "stem": "A pipe fills exactly half of a tank in 11 hours. How long will it take to fill the whole tank?",
+      "explanation": "The full tank takes twice as long: 2 × 11 = 22 hours.",
+      "options": [
+        {
+          "label": "23 hours",
+          "is_correct": false
+        },
+        {
+          "label": "21 hours",
+          "is_correct": false
+        },
+        {
+          "label": "24 hours",
+          "is_correct": false
+        },
+        {
+          "label": "22 hours",
+          "is_correct": true
+        }
+      ]
+    },
+    {
+      "chapter": "Pipes and Cisterns",
+      "kind": "standard",
+      "difficulty": "easy",
+      "answer_type": "single",
+      "stem": "A pipe fills exactly half of a tank in 9 hours. How long will it take to fill the whole tank?",
+      "explanation": "The full tank takes twice as long: 2 × 9 = 18 hours.",
+      "options": [
+        {
+          "label": "18 hours",
+          "is_correct": true
+        },
+        {
+          "label": "17 hours",
+          "is_correct": false
+        },
+        {
+          "label": "20 hours",
+          "is_correct": false
+        },
+        {
+          "label": "19 hours",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Pipes and Cisterns",
+      "kind": "standard",
+      "difficulty": "easy",
+      "answer_type": "single",
+      "stem": "A pipe fills exactly half of a tank in 4 hours. How long will it take to fill the whole tank?",
+      "explanation": "The full tank takes twice as long: 2 × 4 = 8 hours.",
+      "options": [
+        {
+          "label": "8 hours",
+          "is_correct": true
+        },
+        {
+          "label": "9 hours",
+          "is_correct": false
+        },
+        {
+          "label": "7 hours",
+          "is_correct": false
+        },
+        {
+          "label": "10 hours",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Pipes and Cisterns",
+      "kind": "standard",
+      "difficulty": "easy",
+      "answer_type": "single",
+      "stem": "A pipe fills exactly half of a tank in 17 hours. How long will it take to fill the whole tank?",
+      "explanation": "The full tank takes twice as long: 2 × 17 = 34 hours.",
+      "options": [
+        {
+          "label": "33 hours",
+          "is_correct": false
+        },
+        {
+          "label": "35 hours",
+          "is_correct": false
+        },
+        {
+          "label": "34 hours",
+          "is_correct": true
+        },
+        {
+          "label": "36 hours",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Pipes and Cisterns",
+      "kind": "standard",
+      "difficulty": "easy",
+      "answer_type": "single",
+      "stem": "A pipe fills exactly half of a tank in 5 hours. How long will it take to fill the whole tank?",
+      "explanation": "The full tank takes twice as long: 2 × 5 = 10 hours.",
+      "options": [
+        {
+          "label": "11 hours",
+          "is_correct": false
+        },
+        {
+          "label": "9 hours",
+          "is_correct": false
+        },
+        {
+          "label": "12 hours",
+          "is_correct": false
+        },
+        {
+          "label": "10 hours",
+          "is_correct": true
+        }
+      ]
+    },
+    {
+      "chapter": "Pipes and Cisterns",
+      "kind": "standard",
+      "difficulty": "easy",
+      "answer_type": "single",
+      "stem": "Two pipes can fill a tank in 30 hours and 45 hours respectively. If both are opened together, in how many hours will the tank be filled?",
+      "explanation": "Combined one-hour work = 1/30 + 1/45, so the tank fills in 18 hours.",
+      "options": [
+        {
+          "label": "20 hours",
+          "is_correct": false
+        },
+        {
+          "label": "19 hours",
+          "is_correct": false
+        },
+        {
+          "label": "18 hours",
+          "is_correct": true
+        },
+        {
+          "label": "17 hours",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Pipes and Cisterns",
+      "kind": "standard",
+      "difficulty": "easy",
+      "answer_type": "single",
+      "stem": "Two pipes can fill a tank in 40 hours and 10 hours respectively. If both are opened together, in how many hours will the tank be filled?",
+      "explanation": "Combined one-hour work = 1/40 + 1/10, so the tank fills in 8 hours.",
+      "options": [
+        {
+          "label": "7 hours",
+          "is_correct": false
+        },
+        {
+          "label": "8 hours",
+          "is_correct": true
+        },
+        {
+          "label": "9 hours",
+          "is_correct": false
+        },
+        {
+          "label": "10 hours",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Pipes and Cisterns",
+      "kind": "standard",
+      "difficulty": "easy",
+      "answer_type": "single",
+      "stem": "A pipe can fill a tank in 16 hours. In how many hours can 2 such identical pipes fill it?",
+      "explanation": "2 pipes work 2 times as fast, so time = 16/2 = 8 hours.",
+      "options": [
+        {
+          "label": "10 hours",
+          "is_correct": false
+        },
+        {
+          "label": "8 hours",
+          "is_correct": true
+        },
+        {
+          "label": "9 hours",
+          "is_correct": false
+        },
+        {
+          "label": "7 hours",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Pipes and Cisterns",
+      "kind": "standard",
+      "difficulty": "easy",
+      "answer_type": "single",
+      "stem": "A pipe can fill a tank in 18 hours. In how many hours can 3 such identical pipes fill it?",
+      "explanation": "3 pipes work 3 times as fast, so time = 18/3 = 6 hours.",
+      "options": [
+        {
+          "label": "5 hours",
+          "is_correct": false
+        },
+        {
+          "label": "6 hours",
+          "is_correct": true
+        },
+        {
+          "label": "8 hours",
+          "is_correct": false
+        },
+        {
+          "label": "7 hours",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Pipes and Cisterns",
+      "kind": "standard",
+      "difficulty": "easy",
+      "answer_type": "single",
+      "stem": "Two pipes can fill a tank in 12 hours and 4 hours respectively. If both are opened together, in how many hours will the tank be filled?",
+      "explanation": "Combined one-hour work = 1/12 + 1/4, so the tank fills in 3 hours.",
+      "options": [
+        {
+          "label": "2 hours",
+          "is_correct": false
+        },
+        {
+          "label": "4 hours",
+          "is_correct": false
+        },
+        {
+          "label": "5 hours",
+          "is_correct": false
+        },
+        {
+          "label": "3 hours",
+          "is_correct": true
+        }
+      ]
+    },
+    {
+      "chapter": "Pipes and Cisterns",
+      "kind": "standard",
+      "difficulty": "easy",
+      "answer_type": "single",
+      "stem": "A pipe fills exactly half of a tank in 7 hours. How long will it take to fill the whole tank?",
+      "explanation": "The full tank takes twice as long: 2 × 7 = 14 hours.",
+      "options": [
+        {
+          "label": "14 hours",
+          "is_correct": true
+        },
+        {
+          "label": "13 hours",
+          "is_correct": false
+        },
+        {
+          "label": "15 hours",
+          "is_correct": false
+        },
+        {
+          "label": "16 hours",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Pipes and Cisterns",
+      "kind": "standard",
+      "difficulty": "easy",
+      "answer_type": "single",
+      "stem": "A pipe can fill a tank in 25 hours. In how many hours can 5 such identical pipes fill it?",
+      "explanation": "5 pipes work 5 times as fast, so time = 25/5 = 5 hours.",
+      "options": [
+        {
+          "label": "7 hours",
+          "is_correct": false
+        },
+        {
+          "label": "4 hours",
+          "is_correct": false
+        },
+        {
+          "label": "5 hours",
+          "is_correct": true
+        },
+        {
+          "label": "6 hours",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Pipes and Cisterns",
+      "kind": "standard",
+      "difficulty": "easy",
+      "answer_type": "single",
+      "stem": "A pipe can fill a tank in 32 hours. In how many hours can 4 such identical pipes fill it?",
+      "explanation": "4 pipes work 4 times as fast, so time = 32/4 = 8 hours.",
+      "options": [
+        {
+          "label": "7 hours",
+          "is_correct": false
+        },
+        {
+          "label": "10 hours",
+          "is_correct": false
+        },
+        {
+          "label": "8 hours",
+          "is_correct": true
+        },
+        {
+          "label": "9 hours",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Pipes and Cisterns",
+      "kind": "standard",
+      "difficulty": "easy",
+      "answer_type": "single",
+      "stem": "A pipe can fill a tank in 50 hours. In how many hours can 5 such identical pipes fill it?",
+      "explanation": "5 pipes work 5 times as fast, so time = 50/5 = 10 hours.",
+      "options": [
+        {
+          "label": "10 hours",
+          "is_correct": true
+        },
+        {
+          "label": "11 hours",
+          "is_correct": false
+        },
+        {
+          "label": "12 hours",
+          "is_correct": false
+        },
+        {
+          "label": "9 hours",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Pipes and Cisterns",
+      "kind": "standard",
+      "difficulty": "easy",
+      "answer_type": "single",
+      "stem": "A pipe fills exactly half of a tank in 13 hours. How long will it take to fill the whole tank?",
+      "explanation": "The full tank takes twice as long: 2 × 13 = 26 hours.",
+      "options": [
+        {
+          "label": "26 hours",
+          "is_correct": true
+        },
+        {
+          "label": "27 hours",
+          "is_correct": false
+        },
+        {
+          "label": "28 hours",
+          "is_correct": false
+        },
+        {
+          "label": "25 hours",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Pipes and Cisterns",
+      "kind": "standard",
+      "difficulty": "easy",
+      "answer_type": "single",
+      "stem": "A pipe can fill a tank in 15 hours. In how many hours can 3 such identical pipes fill it?",
+      "explanation": "3 pipes work 3 times as fast, so time = 15/3 = 5 hours.",
+      "options": [
+        {
+          "label": "5 hours",
+          "is_correct": true
+        },
+        {
+          "label": "4 hours",
+          "is_correct": false
+        },
+        {
+          "label": "7 hours",
+          "is_correct": false
+        },
+        {
+          "label": "6 hours",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Pipes and Cisterns",
+      "kind": "standard",
+      "difficulty": "easy",
+      "answer_type": "single",
+      "stem": "Two pipes can fill a tank in 12 hours and 24 hours respectively. If both are opened together, in how many hours will the tank be filled?",
+      "explanation": "Combined one-hour work = 1/12 + 1/24, so the tank fills in 8 hours.",
+      "options": [
+        {
+          "label": "8 hours",
+          "is_correct": true
+        },
+        {
+          "label": "9 hours",
+          "is_correct": false
+        },
+        {
+          "label": "7 hours",
+          "is_correct": false
+        },
+        {
+          "label": "10 hours",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Pipes and Cisterns",
+      "kind": "standard",
+      "difficulty": "easy",
+      "answer_type": "single",
+      "stem": "A pipe fills exactly half of a tank in 3 hours. How long will it take to fill the whole tank?",
+      "explanation": "The full tank takes twice as long: 2 × 3 = 6 hours.",
+      "options": [
+        {
+          "label": "6 hours",
+          "is_correct": true
+        },
+        {
+          "label": "7 hours",
+          "is_correct": false
+        },
+        {
+          "label": "8 hours",
+          "is_correct": false
+        },
+        {
+          "label": "5 hours",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Pipes and Cisterns",
+      "kind": "standard",
+      "difficulty": "easy",
+      "answer_type": "single",
+      "stem": "A pipe fills exactly half of a tank in 20 hours. How long will it take to fill the whole tank?",
+      "explanation": "The full tank takes twice as long: 2 × 20 = 40 hours.",
+      "options": [
+        {
+          "label": "44 hours",
+          "is_correct": false
+        },
+        {
+          "label": "38 hours",
+          "is_correct": false
+        },
+        {
+          "label": "40 hours",
+          "is_correct": true
+        },
+        {
+          "label": "42 hours",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Pipes and Cisterns",
+      "kind": "standard",
+      "difficulty": "easy",
+      "answer_type": "single",
+      "stem": "Two pipes can fill a tank in 20 hours and 80 hours respectively. If both are opened together, in how many hours will the tank be filled?",
+      "explanation": "Combined one-hour work = 1/20 + 1/80, so the tank fills in 16 hours.",
+      "options": [
+        {
+          "label": "16 hours",
+          "is_correct": true
+        },
+        {
+          "label": "18 hours",
+          "is_correct": false
+        },
+        {
+          "label": "17 hours",
+          "is_correct": false
+        },
+        {
+          "label": "15 hours",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Pipes and Cisterns",
+      "kind": "standard",
+      "difficulty": "easy",
+      "answer_type": "single",
+      "stem": "A pipe can fill a tank in 27 hours. In how many hours can 3 such identical pipes fill it?",
+      "explanation": "3 pipes work 3 times as fast, so time = 27/3 = 9 hours.",
+      "options": [
+        {
+          "label": "11 hours",
+          "is_correct": false
+        },
+        {
+          "label": "8 hours",
+          "is_correct": false
+        },
+        {
+          "label": "9 hours",
+          "is_correct": true
+        },
+        {
+          "label": "10 hours",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Pipes and Cisterns",
+      "kind": "standard",
+      "difficulty": "easy",
+      "answer_type": "single",
+      "stem": "Two pipes can fill a tank in 20 hours and 5 hours respectively. If both are opened together, in how many hours will the tank be filled?",
+      "explanation": "Combined one-hour work = 1/20 + 1/5, so the tank fills in 4 hours.",
+      "options": [
+        {
+          "label": "4 hours",
+          "is_correct": true
+        },
+        {
+          "label": "5 hours",
+          "is_correct": false
+        },
+        {
+          "label": "6 hours",
+          "is_correct": false
+        },
+        {
+          "label": "3 hours",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Pipes and Cisterns",
+      "kind": "standard",
+      "difficulty": "easy",
+      "answer_type": "single",
+      "stem": "A pipe can fill a tank in 35 hours. In how many hours can 5 such identical pipes fill it?",
+      "explanation": "5 pipes work 5 times as fast, so time = 35/5 = 7 hours.",
+      "options": [
+        {
+          "label": "7 hours",
+          "is_correct": true
+        },
+        {
+          "label": "8 hours",
+          "is_correct": false
+        },
+        {
+          "label": "9 hours",
+          "is_correct": false
+        },
+        {
+          "label": "6 hours",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Pipes and Cisterns",
+      "kind": "standard",
+      "difficulty": "easy",
+      "answer_type": "single",
+      "stem": "A pipe can fill a tank in 6 hours. In how many hours can 2 such identical pipes fill it?",
+      "explanation": "2 pipes work 2 times as fast, so time = 6/2 = 3 hours.",
+      "options": [
+        {
+          "label": "5 hours",
+          "is_correct": false
+        },
+        {
+          "label": "3 hours",
+          "is_correct": true
+        },
+        {
+          "label": "2 hours",
+          "is_correct": false
+        },
+        {
+          "label": "4 hours",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Pipes and Cisterns",
+      "kind": "standard",
+      "difficulty": "easy",
+      "answer_type": "single",
+      "stem": "A pipe can fill a tank in 12 hours. In how many hours can 3 such identical pipes fill it?",
+      "explanation": "3 pipes work 3 times as fast, so time = 12/3 = 4 hours.",
+      "options": [
+        {
+          "label": "6 hours",
+          "is_correct": false
+        },
+        {
+          "label": "4 hours",
+          "is_correct": true
+        },
+        {
+          "label": "3 hours",
+          "is_correct": false
+        },
+        {
+          "label": "5 hours",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Pipes and Cisterns",
+      "kind": "standard",
+      "difficulty": "medium",
+      "answer_type": "single",
+      "stem": "A pipe can fill a tank in 10 hours, but a leak can empty the full tank in 30 hours. If both operate together, in how many hours will the tank be filled?",
+      "explanation": "Net one-hour work = 1/10 − 1/30, so the tank fills in 15 hours.",
+      "options": [
+        {
+          "label": "14 hours",
+          "is_correct": false
+        },
+        {
+          "label": "16 hours",
+          "is_correct": false
+        },
+        {
+          "label": "15 hours",
+          "is_correct": true
+        },
+        {
+          "label": "17 hours",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Pipes and Cisterns",
+      "kind": "standard",
+      "difficulty": "medium",
+      "answer_type": "single",
+      "stem": "Three pipes can fill a tank in 9, 12 and 18 hours respectively. If all are opened together, in how many hours will the tank be filled?",
+      "explanation": "Combined rate = 1/9 + 1/12 + 1/18, so the tank fills in 4 hours.",
+      "options": [
+        {
+          "label": "5 hours",
+          "is_correct": false
+        },
+        {
+          "label": "4 hours",
+          "is_correct": true
+        },
+        {
+          "label": "6 hours",
+          "is_correct": false
+        },
+        {
+          "label": "3 hours",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Pipes and Cisterns",
+      "kind": "standard",
+      "difficulty": "medium",
+      "answer_type": "single",
+      "stem": "Three pipes can fill a tank in 12, 15 and 20 hours respectively. If all are opened together, in how many hours will the tank be filled?",
+      "explanation": "Combined rate = 1/12 + 1/15 + 1/20, so the tank fills in 5 hours.",
+      "options": [
+        {
+          "label": "5 hours",
+          "is_correct": true
+        },
+        {
+          "label": "6 hours",
+          "is_correct": false
+        },
+        {
+          "label": "4 hours",
+          "is_correct": false
+        },
+        {
+          "label": "7 hours",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Pipes and Cisterns",
+      "kind": "standard",
+      "difficulty": "medium",
+      "answer_type": "single",
+      "stem": "A pipe can fill a tank in 6 hours, but a leak can empty the full tank in 10 hours. If both operate together, in how many hours will the tank be filled?",
+      "explanation": "Net one-hour work = 1/6 − 1/10, so the tank fills in 15 hours.",
+      "options": [
+        {
+          "label": "15 hours",
+          "is_correct": true
+        },
+        {
+          "label": "16 hours",
+          "is_correct": false
+        },
+        {
+          "label": "17 hours",
+          "is_correct": false
+        },
+        {
+          "label": "14 hours",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Pipes and Cisterns",
+      "kind": "standard",
+      "difficulty": "medium",
+      "answer_type": "single",
+      "stem": "A pipe can fill a tank in 6 hours, but a leak can empty the full tank in 18 hours. If both operate together, in how many hours will the tank be filled?",
+      "explanation": "Net one-hour work = 1/6 − 1/18, so the tank fills in 9 hours.",
+      "options": [
+        {
+          "label": "10 hours",
+          "is_correct": false
+        },
+        {
+          "label": "11 hours",
+          "is_correct": false
+        },
+        {
+          "label": "9 hours",
+          "is_correct": true
+        },
+        {
+          "label": "8 hours",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Pipes and Cisterns",
+      "kind": "standard",
+      "difficulty": "medium",
+      "answer_type": "single",
+      "stem": "A pipe can fill a tank in 8 hours, but a leak can empty the full tank in 10 hours. If both operate together, in how many hours will the tank be filled?",
+      "explanation": "Net one-hour work = 1/8 − 1/10, so the tank fills in 40 hours.",
+      "options": [
+        {
+          "label": "44 hours",
+          "is_correct": false
+        },
+        {
+          "label": "38 hours",
+          "is_correct": false
+        },
+        {
+          "label": "40 hours",
+          "is_correct": true
+        },
+        {
+          "label": "42 hours",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Pipes and Cisterns",
+      "kind": "standard",
+      "difficulty": "medium",
+      "answer_type": "single",
+      "stem": "A pipe can fill a tank in 15 hours, but a leak can empty the full tank in 30 hours. If both operate together, in how many hours will the tank be filled?",
+      "explanation": "Net one-hour work = 1/15 − 1/30, so the tank fills in 30 hours.",
+      "options": [
+        {
+          "label": "29 hours",
+          "is_correct": false
+        },
+        {
+          "label": "32 hours",
+          "is_correct": false
+        },
+        {
+          "label": "31 hours",
+          "is_correct": false
+        },
+        {
+          "label": "30 hours",
+          "is_correct": true
+        }
+      ]
+    },
+    {
+      "chapter": "Pipes and Cisterns",
+      "kind": "standard",
+      "difficulty": "medium",
+      "answer_type": "single",
+      "stem": "A cistern normally fills in 15 hours, but because of a leak it takes 60 hours. In how many hours can the leak alone empty the full cistern?",
+      "explanation": "Leak's rate = 1/15 − 1/60, so the leak empties the cistern in 20 hours.",
+      "options": [
+        {
+          "label": "22 hours",
+          "is_correct": false
+        },
+        {
+          "label": "20 hours",
+          "is_correct": true
+        },
+        {
+          "label": "21 hours",
+          "is_correct": false
+        },
+        {
+          "label": "19 hours",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Pipes and Cisterns",
+      "kind": "standard",
+      "difficulty": "medium",
+      "answer_type": "single",
+      "stem": "Three pipes can fill a tank in 6, 12 and 4 hours respectively. If all are opened together, in how many hours will the tank be filled?",
+      "explanation": "Combined rate = 1/6 + 1/12 + 1/4, so the tank fills in 2 hours.",
+      "options": [
+        {
+          "label": "2 hours",
+          "is_correct": true
+        },
+        {
+          "label": "4 hours",
+          "is_correct": false
+        },
+        {
+          "label": "1 hours",
+          "is_correct": false
+        },
+        {
+          "label": "3 hours",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Pipes and Cisterns",
+      "kind": "standard",
+      "difficulty": "medium",
+      "answer_type": "single",
+      "stem": "A cistern normally fills in 9 hours, but because of a leak it takes 18 hours. In how many hours can the leak alone empty the full cistern?",
+      "explanation": "Leak's rate = 1/9 − 1/18, so the leak empties the cistern in 18 hours.",
+      "options": [
+        {
+          "label": "17 hours",
+          "is_correct": false
+        },
+        {
+          "label": "20 hours",
+          "is_correct": false
+        },
+        {
+          "label": "18 hours",
+          "is_correct": true
+        },
+        {
+          "label": "19 hours",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Pipes and Cisterns",
+      "kind": "standard",
+      "difficulty": "medium",
+      "answer_type": "single",
+      "stem": "A pipe can fill a tank in 12 hours, but a leak can empty the full tank in 15 hours. If both operate together, in how many hours will the tank be filled?",
+      "explanation": "Net one-hour work = 1/12 − 1/15, so the tank fills in 60 hours.",
+      "options": [
+        {
+          "label": "64 hours",
+          "is_correct": false
+        },
+        {
+          "label": "60 hours",
+          "is_correct": true
+        },
+        {
+          "label": "62 hours",
+          "is_correct": false
+        },
+        {
+          "label": "58 hours",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Pipes and Cisterns",
+      "kind": "standard",
+      "difficulty": "medium",
+      "answer_type": "single",
+      "stem": "A cistern normally fills in 6 hours, but because of a leak it takes 15 hours. In how many hours can the leak alone empty the full cistern?",
+      "explanation": "Leak's rate = 1/6 − 1/15, so the leak empties the cistern in 10 hours.",
+      "options": [
+        {
+          "label": "10 hours",
+          "is_correct": true
+        },
+        {
+          "label": "9 hours",
+          "is_correct": false
+        },
+        {
+          "label": "11 hours",
+          "is_correct": false
+        },
+        {
+          "label": "12 hours",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Pipes and Cisterns",
+      "kind": "standard",
+      "difficulty": "medium",
+      "answer_type": "single",
+      "stem": "A pipe can fill a tank in 8 hours, but a leak can empty the full tank in 16 hours. If both operate together, in how many hours will the tank be filled?",
+      "explanation": "Net one-hour work = 1/8 − 1/16, so the tank fills in 16 hours.",
+      "options": [
+        {
+          "label": "17 hours",
+          "is_correct": false
+        },
+        {
+          "label": "18 hours",
+          "is_correct": false
+        },
+        {
+          "label": "16 hours",
+          "is_correct": true
+        },
+        {
+          "label": "15 hours",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Pipes and Cisterns",
+      "kind": "standard",
+      "difficulty": "medium",
+      "answer_type": "single",
+      "stem": "Three pipes can fill a tank in 8, 12 and 24 hours respectively. If all are opened together, in how many hours will the tank be filled?",
+      "explanation": "Combined rate = 1/8 + 1/12 + 1/24, so the tank fills in 4 hours.",
+      "options": [
+        {
+          "label": "3 hours",
+          "is_correct": false
+        },
+        {
+          "label": "6 hours",
+          "is_correct": false
+        },
+        {
+          "label": "5 hours",
+          "is_correct": false
+        },
+        {
+          "label": "4 hours",
+          "is_correct": true
+        }
+      ]
+    },
+    {
+      "chapter": "Pipes and Cisterns",
+      "kind": "standard",
+      "difficulty": "medium",
+      "answer_type": "single",
+      "stem": "Three pipes can fill a tank in 12, 18 and 36 hours respectively. If all are opened together, in how many hours will the tank be filled?",
+      "explanation": "Combined rate = 1/12 + 1/18 + 1/36, so the tank fills in 6 hours.",
+      "options": [
+        {
+          "label": "5 hours",
+          "is_correct": false
+        },
+        {
+          "label": "7 hours",
+          "is_correct": false
+        },
+        {
+          "label": "6 hours",
+          "is_correct": true
+        },
+        {
+          "label": "8 hours",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Pipes and Cisterns",
+      "kind": "standard",
+      "difficulty": "medium",
+      "answer_type": "single",
+      "stem": "A cistern normally fills in 6 hours, but because of a leak it takes 12 hours. In how many hours can the leak alone empty the full cistern?",
+      "explanation": "Leak's rate = 1/6 − 1/12, so the leak empties the cistern in 12 hours.",
+      "options": [
+        {
+          "label": "13 hours",
+          "is_correct": false
+        },
+        {
+          "label": "12 hours",
+          "is_correct": true
+        },
+        {
+          "label": "11 hours",
+          "is_correct": false
+        },
+        {
+          "label": "14 hours",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Pipes and Cisterns",
+      "kind": "standard",
+      "difficulty": "medium",
+      "answer_type": "single",
+      "stem": "Three pipes can fill a tank in 6, 10 and 15 hours respectively. If all are opened together, in how many hours will the tank be filled?",
+      "explanation": "Combined rate = 1/6 + 1/10 + 1/15, so the tank fills in 3 hours.",
+      "options": [
+        {
+          "label": "4 hours",
+          "is_correct": false
+        },
+        {
+          "label": "2 hours",
+          "is_correct": false
+        },
+        {
+          "label": "3 hours",
+          "is_correct": true
+        },
+        {
+          "label": "5 hours",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Pipes and Cisterns",
+      "kind": "standard",
+      "difficulty": "medium",
+      "answer_type": "single",
+      "stem": "A pipe can fill a tank in 14 hours, but a leak can empty the full tank in 42 hours. If both operate together, in how many hours will the tank be filled?",
+      "explanation": "Net one-hour work = 1/14 − 1/42, so the tank fills in 21 hours.",
+      "options": [
+        {
+          "label": "21 hours",
+          "is_correct": true
+        },
+        {
+          "label": "22 hours",
+          "is_correct": false
+        },
+        {
+          "label": "20 hours",
+          "is_correct": false
+        },
+        {
+          "label": "23 hours",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Pipes and Cisterns",
+      "kind": "standard",
+      "difficulty": "medium",
+      "answer_type": "single",
+      "stem": "Three pipes can fill a tank in 12, 16 and 48 hours respectively. If all are opened together, in how many hours will the tank be filled?",
+      "explanation": "Combined rate = 1/12 + 1/16 + 1/48, so the tank fills in 6 hours.",
+      "options": [
+        {
+          "label": "8 hours",
+          "is_correct": false
+        },
+        {
+          "label": "7 hours",
+          "is_correct": false
+        },
+        {
+          "label": "6 hours",
+          "is_correct": true
+        },
+        {
+          "label": "5 hours",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Pipes and Cisterns",
+      "kind": "standard",
+      "difficulty": "medium",
+      "answer_type": "single",
+      "stem": "A cistern normally fills in 15 hours, but because of a leak it takes 30 hours. In how many hours can the leak alone empty the full cistern?",
+      "explanation": "Leak's rate = 1/15 − 1/30, so the leak empties the cistern in 30 hours.",
+      "options": [
+        {
+          "label": "31 hours",
+          "is_correct": false
+        },
+        {
+          "label": "29 hours",
+          "is_correct": false
+        },
+        {
+          "label": "30 hours",
+          "is_correct": true
+        },
+        {
+          "label": "32 hours",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Pipes and Cisterns",
+      "kind": "standard",
+      "difficulty": "medium",
+      "answer_type": "single",
+      "stem": "A cistern normally fills in 9 hours, but because of a leak it takes 36 hours. In how many hours can the leak alone empty the full cistern?",
+      "explanation": "Leak's rate = 1/9 − 1/36, so the leak empties the cistern in 12 hours.",
+      "options": [
+        {
+          "label": "13 hours",
+          "is_correct": false
+        },
+        {
+          "label": "14 hours",
+          "is_correct": false
+        },
+        {
+          "label": "11 hours",
+          "is_correct": false
+        },
+        {
+          "label": "12 hours",
+          "is_correct": true
+        }
+      ]
+    },
+    {
+      "chapter": "Pipes and Cisterns",
+      "kind": "standard",
+      "difficulty": "medium",
+      "answer_type": "single",
+      "stem": "A pipe can fill a tank in 8 hours, but a leak can empty the full tank in 24 hours. If both operate together, in how many hours will the tank be filled?",
+      "explanation": "Net one-hour work = 1/8 − 1/24, so the tank fills in 12 hours.",
+      "options": [
+        {
+          "label": "12 hours",
+          "is_correct": true
+        },
+        {
+          "label": "14 hours",
+          "is_correct": false
+        },
+        {
+          "label": "13 hours",
+          "is_correct": false
+        },
+        {
+          "label": "11 hours",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Pipes and Cisterns",
+      "kind": "standard",
+      "difficulty": "medium",
+      "answer_type": "single",
+      "stem": "A pipe can fill a tank in 6 hours, but a leak can empty the full tank in 12 hours. If both operate together, in how many hours will the tank be filled?",
+      "explanation": "Net one-hour work = 1/6 − 1/12, so the tank fills in 12 hours.",
+      "options": [
+        {
+          "label": "12 hours",
+          "is_correct": true
+        },
+        {
+          "label": "14 hours",
+          "is_correct": false
+        },
+        {
+          "label": "11 hours",
+          "is_correct": false
+        },
+        {
+          "label": "13 hours",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Pipes and Cisterns",
+      "kind": "standard",
+      "difficulty": "medium",
+      "answer_type": "single",
+      "stem": "A pipe can fill a tank in 6 hours, but a leak can empty the full tank in 24 hours. If both operate together, in how many hours will the tank be filled?",
+      "explanation": "Net one-hour work = 1/6 − 1/24, so the tank fills in 8 hours.",
+      "options": [
+        {
+          "label": "10 hours",
+          "is_correct": false
+        },
+        {
+          "label": "7 hours",
+          "is_correct": false
+        },
+        {
+          "label": "8 hours",
+          "is_correct": true
+        },
+        {
+          "label": "9 hours",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Pipes and Cisterns",
+      "kind": "standard",
+      "difficulty": "medium",
+      "answer_type": "single",
+      "stem": "Three pipes can fill a tank in 4, 6 and 12 hours respectively. If all are opened together, in how many hours will the tank be filled?",
+      "explanation": "Combined rate = 1/4 + 1/6 + 1/12, so the tank fills in 2 hours.",
+      "options": [
+        {
+          "label": "3 hours",
+          "is_correct": false
+        },
+        {
+          "label": "2 hours",
+          "is_correct": true
+        },
+        {
+          "label": "4 hours",
+          "is_correct": false
+        },
+        {
+          "label": "1 hours",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Pipes and Cisterns",
+      "kind": "standard",
+      "difficulty": "medium",
+      "answer_type": "single",
+      "stem": "A cistern normally fills in 12 hours, but because of a leak it takes 18 hours. In how many hours can the leak alone empty the full cistern?",
+      "explanation": "Leak's rate = 1/12 − 1/18, so the leak empties the cistern in 36 hours.",
+      "options": [
+        {
+          "label": "37 hours",
+          "is_correct": false
+        },
+        {
+          "label": "36 hours",
+          "is_correct": true
+        },
+        {
+          "label": "35 hours",
+          "is_correct": false
+        },
+        {
+          "label": "38 hours",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Pipes and Cisterns",
+      "kind": "standard",
+      "difficulty": "medium",
+      "answer_type": "single",
+      "stem": "A pipe can fill a tank in 15 hours, but a leak can empty the full tank in 20 hours. If both operate together, in how many hours will the tank be filled?",
+      "explanation": "Net one-hour work = 1/15 − 1/20, so the tank fills in 60 hours.",
+      "options": [
+        {
+          "label": "60 hours",
+          "is_correct": true
+        },
+        {
+          "label": "58 hours",
+          "is_correct": false
+        },
+        {
+          "label": "64 hours",
+          "is_correct": false
+        },
+        {
+          "label": "62 hours",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Pipes and Cisterns",
+      "kind": "standard",
+      "difficulty": "medium",
+      "answer_type": "single",
+      "stem": "Three pipes can fill a tank in 4, 8 and 8 hours respectively. If all are opened together, in how many hours will the tank be filled?",
+      "explanation": "Combined rate = 1/4 + 1/8 + 1/8, so the tank fills in 2 hours.",
+      "options": [
+        {
+          "label": "1 hours",
+          "is_correct": false
+        },
+        {
+          "label": "2 hours",
+          "is_correct": true
+        },
+        {
+          "label": "4 hours",
+          "is_correct": false
+        },
+        {
+          "label": "3 hours",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Pipes and Cisterns",
+      "kind": "standard",
+      "difficulty": "medium",
+      "answer_type": "single",
+      "stem": "A cistern normally fills in 18 hours, but because of a leak it takes 72 hours. In how many hours can the leak alone empty the full cistern?",
+      "explanation": "Leak's rate = 1/18 − 1/72, so the leak empties the cistern in 24 hours.",
+      "options": [
+        {
+          "label": "24 hours",
+          "is_correct": true
+        },
+        {
+          "label": "23 hours",
+          "is_correct": false
+        },
+        {
+          "label": "25 hours",
+          "is_correct": false
+        },
+        {
+          "label": "26 hours",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Pipes and Cisterns",
+      "kind": "standard",
+      "difficulty": "medium",
+      "answer_type": "single",
+      "stem": "A cistern normally fills in 4 hours, but because of a leak it takes 12 hours. In how many hours can the leak alone empty the full cistern?",
+      "explanation": "Leak's rate = 1/4 − 1/12, so the leak empties the cistern in 6 hours.",
+      "options": [
+        {
+          "label": "5 hours",
+          "is_correct": false
+        },
+        {
+          "label": "7 hours",
+          "is_correct": false
+        },
+        {
+          "label": "6 hours",
+          "is_correct": true
+        },
+        {
+          "label": "8 hours",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Pipes and Cisterns",
+      "kind": "standard",
+      "difficulty": "medium",
+      "answer_type": "single",
+      "stem": "A cistern normally fills in 9 hours, but because of a leak it takes 12 hours. In how many hours can the leak alone empty the full cistern?",
+      "explanation": "Leak's rate = 1/9 − 1/12, so the leak empties the cistern in 36 hours.",
+      "options": [
+        {
+          "label": "36 hours",
+          "is_correct": true
+        },
+        {
+          "label": "35 hours",
+          "is_correct": false
+        },
+        {
+          "label": "37 hours",
+          "is_correct": false
+        },
+        {
+          "label": "38 hours",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Pipes and Cisterns",
+      "kind": "standard",
+      "difficulty": "medium",
+      "answer_type": "single",
+      "stem": "A pipe can fill a tank in 8 hours, but a leak can empty the full tank in 12 hours. If both operate together, in how many hours will the tank be filled?",
+      "explanation": "Net one-hour work = 1/8 − 1/12, so the tank fills in 24 hours.",
+      "options": [
+        {
+          "label": "26 hours",
+          "is_correct": false
+        },
+        {
+          "label": "24 hours",
+          "is_correct": true
+        },
+        {
+          "label": "25 hours",
+          "is_correct": false
+        },
+        {
+          "label": "23 hours",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Pipes and Cisterns",
+      "kind": "standard",
+      "difficulty": "medium",
+      "answer_type": "single",
+      "stem": "Three pipes can fill a tank in 10, 12 and 15 hours respectively. If all are opened together, in how many hours will the tank be filled?",
+      "explanation": "Combined rate = 1/10 + 1/12 + 1/15, so the tank fills in 4 hours.",
+      "options": [
+        {
+          "label": "3 hours",
+          "is_correct": false
+        },
+        {
+          "label": "4 hours",
+          "is_correct": true
+        },
+        {
+          "label": "6 hours",
+          "is_correct": false
+        },
+        {
+          "label": "5 hours",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Pipes and Cisterns",
+      "kind": "standard",
+      "difficulty": "medium",
+      "answer_type": "single",
+      "stem": "Three pipes can fill a tank in 6, 12 and 12 hours respectively. If all are opened together, in how many hours will the tank be filled?",
+      "explanation": "Combined rate = 1/6 + 1/12 + 1/12, so the tank fills in 3 hours.",
+      "options": [
+        {
+          "label": "4 hours",
+          "is_correct": false
+        },
+        {
+          "label": "2 hours",
+          "is_correct": false
+        },
+        {
+          "label": "3 hours",
+          "is_correct": true
+        },
+        {
+          "label": "5 hours",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Pipes and Cisterns",
+      "kind": "standard",
+      "difficulty": "medium",
+      "answer_type": "single",
+      "stem": "A pipe can fill a tank in 12 hours, but a leak can empty the full tank in 20 hours. If both operate together, in how many hours will the tank be filled?",
+      "explanation": "Net one-hour work = 1/12 − 1/20, so the tank fills in 30 hours.",
+      "options": [
+        {
+          "label": "31 hours",
+          "is_correct": false
+        },
+        {
+          "label": "29 hours",
+          "is_correct": false
+        },
+        {
+          "label": "32 hours",
+          "is_correct": false
+        },
+        {
+          "label": "30 hours",
+          "is_correct": true
+        }
+      ]
+    },
+    {
+      "chapter": "Pipes and Cisterns",
+      "kind": "standard",
+      "difficulty": "medium",
+      "answer_type": "single",
+      "stem": "A pipe can fill a tank in 9 hours, but a leak can empty the full tank in 12 hours. If both operate together, in how many hours will the tank be filled?",
+      "explanation": "Net one-hour work = 1/9 − 1/12, so the tank fills in 36 hours.",
+      "options": [
+        {
+          "label": "35 hours",
+          "is_correct": false
+        },
+        {
+          "label": "37 hours",
+          "is_correct": false
+        },
+        {
+          "label": "36 hours",
+          "is_correct": true
+        },
+        {
+          "label": "38 hours",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Pipes and Cisterns",
+      "kind": "standard",
+      "difficulty": "medium",
+      "answer_type": "single",
+      "stem": "Three pipes can fill a tank in 10, 15 and 30 hours respectively. If all are opened together, in how many hours will the tank be filled?",
+      "explanation": "Combined rate = 1/10 + 1/15 + 1/30, so the tank fills in 5 hours.",
+      "options": [
+        {
+          "label": "6 hours",
+          "is_correct": false
+        },
+        {
+          "label": "7 hours",
+          "is_correct": false
+        },
+        {
+          "label": "5 hours",
+          "is_correct": true
+        },
+        {
+          "label": "4 hours",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Pipes and Cisterns",
+      "kind": "standard",
+      "difficulty": "medium",
+      "answer_type": "single",
+      "stem": "A cistern normally fills in 12 hours, but because of a leak it takes 60 hours. In how many hours can the leak alone empty the full cistern?",
+      "explanation": "Leak's rate = 1/12 − 1/60, so the leak empties the cistern in 15 hours.",
+      "options": [
+        {
+          "label": "17 hours",
+          "is_correct": false
+        },
+        {
+          "label": "14 hours",
+          "is_correct": false
+        },
+        {
+          "label": "16 hours",
+          "is_correct": false
+        },
+        {
+          "label": "15 hours",
+          "is_correct": true
+        }
+      ]
+    },
+    {
+      "chapter": "Pipes and Cisterns",
+      "kind": "standard",
+      "difficulty": "medium",
+      "answer_type": "single",
+      "stem": "A cistern normally fills in 8 hours, but because of a leak it takes 24 hours. In how many hours can the leak alone empty the full cistern?",
+      "explanation": "Leak's rate = 1/8 − 1/24, so the leak empties the cistern in 12 hours.",
+      "options": [
+        {
+          "label": "11 hours",
+          "is_correct": false
+        },
+        {
+          "label": "14 hours",
+          "is_correct": false
+        },
+        {
+          "label": "13 hours",
+          "is_correct": false
+        },
+        {
+          "label": "12 hours",
+          "is_correct": true
+        }
+      ]
+    },
+    {
+      "chapter": "Pipes and Cisterns",
+      "kind": "standard",
+      "difficulty": "medium",
+      "answer_type": "single",
+      "stem": "A cistern normally fills in 12 hours, but because of a leak it takes 24 hours. In how many hours can the leak alone empty the full cistern?",
+      "explanation": "Leak's rate = 1/12 − 1/24, so the leak empties the cistern in 24 hours.",
+      "options": [
+        {
+          "label": "24 hours",
+          "is_correct": true
+        },
+        {
+          "label": "25 hours",
+          "is_correct": false
+        },
+        {
+          "label": "26 hours",
+          "is_correct": false
+        },
+        {
+          "label": "23 hours",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Pipes and Cisterns",
+      "kind": "standard",
+      "difficulty": "medium",
+      "answer_type": "single",
+      "stem": "A cistern normally fills in 6 hours, but because of a leak it takes 8 hours. In how many hours can the leak alone empty the full cistern?",
+      "explanation": "Leak's rate = 1/6 − 1/8, so the leak empties the cistern in 24 hours.",
+      "options": [
+        {
+          "label": "26 hours",
+          "is_correct": false
+        },
+        {
+          "label": "23 hours",
+          "is_correct": false
+        },
+        {
+          "label": "24 hours",
+          "is_correct": true
+        },
+        {
+          "label": "25 hours",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Pipes and Cisterns",
+      "kind": "standard",
+      "difficulty": "medium",
+      "answer_type": "single",
+      "stem": "A pipe can fill a tank in 12 hours, but a leak can empty the full tank in 24 hours. If both operate together, in how many hours will the tank be filled?",
+      "explanation": "Net one-hour work = 1/12 − 1/24, so the tank fills in 24 hours.",
+      "options": [
+        {
+          "label": "24 hours",
+          "is_correct": true
+        },
+        {
+          "label": "26 hours",
+          "is_correct": false
+        },
+        {
+          "label": "25 hours",
+          "is_correct": false
+        },
+        {
+          "label": "23 hours",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Pipes and Cisterns",
+      "kind": "standard",
+      "difficulty": "medium",
+      "answer_type": "single",
+      "stem": "A cistern normally fills in 6 hours, but because of a leak it takes 9 hours. In how many hours can the leak alone empty the full cistern?",
+      "explanation": "Leak's rate = 1/6 − 1/9, so the leak empties the cistern in 18 hours.",
+      "options": [
+        {
+          "label": "19 hours",
+          "is_correct": false
+        },
+        {
+          "label": "18 hours",
+          "is_correct": true
+        },
+        {
+          "label": "17 hours",
+          "is_correct": false
+        },
+        {
+          "label": "20 hours",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Pipes and Cisterns",
+      "kind": "standard",
+      "difficulty": "medium",
+      "answer_type": "single",
+      "stem": "A cistern normally fills in 10 hours, but because of a leak it takes 15 hours. In how many hours can the leak alone empty the full cistern?",
+      "explanation": "Leak's rate = 1/10 − 1/15, so the leak empties the cistern in 30 hours.",
+      "options": [
+        {
+          "label": "32 hours",
+          "is_correct": false
+        },
+        {
+          "label": "30 hours",
+          "is_correct": true
+        },
+        {
+          "label": "31 hours",
+          "is_correct": false
+        },
+        {
+          "label": "29 hours",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Pipes and Cisterns",
+      "kind": "standard",
+      "difficulty": "medium",
+      "answer_type": "single",
+      "stem": "A pipe can fill a tank in 9 hours, but a leak can empty the full tank in 36 hours. If both operate together, in how many hours will the tank be filled?",
+      "explanation": "Net one-hour work = 1/9 − 1/36, so the tank fills in 12 hours.",
+      "options": [
+        {
+          "label": "13 hours",
+          "is_correct": false
+        },
+        {
+          "label": "11 hours",
+          "is_correct": false
+        },
+        {
+          "label": "12 hours",
+          "is_correct": true
+        },
+        {
+          "label": "14 hours",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Pipes and Cisterns",
+      "kind": "standard",
+      "difficulty": "medium",
+      "answer_type": "single",
+      "stem": "A cistern normally fills in 8 hours, but because of a leak it takes 40 hours. In how many hours can the leak alone empty the full cistern?",
+      "explanation": "Leak's rate = 1/8 − 1/40, so the leak empties the cistern in 10 hours.",
+      "options": [
+        {
+          "label": "12 hours",
+          "is_correct": false
+        },
+        {
+          "label": "10 hours",
+          "is_correct": true
+        },
+        {
+          "label": "11 hours",
+          "is_correct": false
+        },
+        {
+          "label": "9 hours",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Pipes and Cisterns",
+      "kind": "standard",
+      "difficulty": "medium",
+      "answer_type": "single",
+      "stem": "Three pipes can fill a tank in 6, 9 and 18 hours respectively. If all are opened together, in how many hours will the tank be filled?",
+      "explanation": "Combined rate = 1/6 + 1/9 + 1/18, so the tank fills in 3 hours.",
+      "options": [
+        {
+          "label": "4 hours",
+          "is_correct": false
+        },
+        {
+          "label": "2 hours",
+          "is_correct": false
+        },
+        {
+          "label": "5 hours",
+          "is_correct": false
+        },
+        {
+          "label": "3 hours",
+          "is_correct": true
+        }
+      ]
+    },
+    {
+      "chapter": "Pipes and Cisterns",
+      "kind": "standard",
+      "difficulty": "medium",
+      "answer_type": "single",
+      "stem": "A cistern normally fills in 8 hours, but because of a leak it takes 12 hours. In how many hours can the leak alone empty the full cistern?",
+      "explanation": "Leak's rate = 1/8 − 1/12, so the leak empties the cistern in 24 hours.",
+      "options": [
+        {
+          "label": "25 hours",
+          "is_correct": false
+        },
+        {
+          "label": "23 hours",
+          "is_correct": false
+        },
+        {
+          "label": "24 hours",
+          "is_correct": true
+        },
+        {
+          "label": "26 hours",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Pipes and Cisterns",
+      "kind": "standard",
+      "difficulty": "medium",
+      "answer_type": "single",
+      "stem": "A pipe can fill a tank in 12 hours, but a leak can empty the full tank in 36 hours. If both operate together, in how many hours will the tank be filled?",
+      "explanation": "Net one-hour work = 1/12 − 1/36, so the tank fills in 18 hours.",
+      "options": [
+        {
+          "label": "18 hours",
+          "is_correct": true
+        },
+        {
+          "label": "20 hours",
+          "is_correct": false
+        },
+        {
+          "label": "17 hours",
+          "is_correct": false
+        },
+        {
+          "label": "19 hours",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Pipes and Cisterns",
+      "kind": "standard",
+      "difficulty": "medium",
+      "answer_type": "single",
+      "stem": "A cistern normally fills in 8 hours, but because of a leak it takes 16 hours. In how many hours can the leak alone empty the full cistern?",
+      "explanation": "Leak's rate = 1/8 − 1/16, so the leak empties the cistern in 16 hours.",
+      "options": [
+        {
+          "label": "16 hours",
+          "is_correct": true
+        },
+        {
+          "label": "15 hours",
+          "is_correct": false
+        },
+        {
+          "label": "18 hours",
+          "is_correct": false
+        },
+        {
+          "label": "17 hours",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Pipes and Cisterns",
+      "kind": "standard",
+      "difficulty": "hard",
+      "answer_type": "single",
+      "stem": "Two pipes can fill a tank in 10 and 20 hours, while a third pipe can empty the full tank in 20 hours. If all three are opened together, in how many hours will the tank be filled?",
+      "explanation": "Net rate = 1/10 + 1/20 − 1/20, so the tank fills in 10 hours.",
+      "options": [
+        {
+          "label": "11 hours",
+          "is_correct": false
+        },
+        {
+          "label": "9 hours",
+          "is_correct": false
+        },
+        {
+          "label": "10 hours",
+          "is_correct": true
+        },
+        {
+          "label": "12 hours",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Pipes and Cisterns",
+      "kind": "standard",
+      "difficulty": "hard",
+      "answer_type": "single",
+      "stem": "Two pipes can fill a tank in 6 and 12 hours, while a third pipe can empty the full tank in 8 hours. If all three are opened together, in how many hours will the tank be filled?",
+      "explanation": "Net rate = 1/6 + 1/12 − 1/8, so the tank fills in 8 hours.",
+      "options": [
+        {
+          "label": "9 hours",
+          "is_correct": false
+        },
+        {
+          "label": "7 hours",
+          "is_correct": false
+        },
+        {
+          "label": "10 hours",
+          "is_correct": false
+        },
+        {
+          "label": "8 hours",
+          "is_correct": true
+        }
+      ]
+    },
+    {
+      "chapter": "Pipes and Cisterns",
+      "kind": "standard",
+      "difficulty": "hard",
+      "answer_type": "single",
+      "stem": "Two pipes can fill a tank in 12 and 15 hours, while a third pipe can empty the full tank in 20 hours. If all three are opened together, in how many hours will the tank be filled?",
+      "explanation": "Net rate = 1/12 + 1/15 − 1/20, so the tank fills in 10 hours.",
+      "options": [
+        {
+          "label": "10 hours",
+          "is_correct": true
+        },
+        {
+          "label": "12 hours",
+          "is_correct": false
+        },
+        {
+          "label": "9 hours",
+          "is_correct": false
+        },
+        {
+          "label": "11 hours",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Pipes and Cisterns",
+      "kind": "standard",
+      "difficulty": "hard",
+      "answer_type": "single",
+      "stem": "A tank can be filled by a pipe in 9 hours. A leak can empty the full tank in 18 hours. How much extra time (in hours) does it take to fill the tank when the leak is also present?",
+      "explanation": "With the leak it fills in 18 hours instead of 9, i.e. 18 − 9 = 9 hours extra.",
+      "options": [
+        {
+          "label": "9 hours",
+          "is_correct": true
+        },
+        {
+          "label": "11 hours",
+          "is_correct": false
+        },
+        {
+          "label": "10 hours",
+          "is_correct": false
+        },
+        {
+          "label": "8 hours",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Pipes and Cisterns",
+      "kind": "standard",
+      "difficulty": "hard",
+      "answer_type": "single",
+      "stem": "Two pipes together can fill a tank in 18 hours. If one pipe alone fills it in 30 hours, in how many hours can the other pipe alone fill it?",
+      "explanation": "Second pipe's rate = 1/18 − 1/30, so it fills the tank in 45 hours.",
+      "options": [
+        {
+          "label": "43 hours",
+          "is_correct": false
+        },
+        {
+          "label": "49 hours",
+          "is_correct": false
+        },
+        {
+          "label": "47 hours",
+          "is_correct": false
+        },
+        {
+          "label": "45 hours",
+          "is_correct": true
+        }
+      ]
+    },
+    {
+      "chapter": "Pipes and Cisterns",
+      "kind": "standard",
+      "difficulty": "hard",
+      "answer_type": "single",
+      "stem": "A tank can be filled by a pipe in 10 hours. A leak can empty the full tank in 20 hours. How much extra time (in hours) does it take to fill the tank when the leak is also present?",
+      "explanation": "With the leak it fills in 20 hours instead of 10, i.e. 20 − 10 = 10 hours extra.",
+      "options": [
+        {
+          "label": "11 hours",
+          "is_correct": false
+        },
+        {
+          "label": "12 hours",
+          "is_correct": false
+        },
+        {
+          "label": "10 hours",
+          "is_correct": true
+        },
+        {
+          "label": "9 hours",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Pipes and Cisterns",
+      "kind": "standard",
+      "difficulty": "hard",
+      "answer_type": "single",
+      "stem": "A tank can be filled by a pipe in 12 hours. A leak can empty the full tank in 24 hours. How much extra time (in hours) does it take to fill the tank when the leak is also present?",
+      "explanation": "With the leak it fills in 24 hours instead of 12, i.e. 24 − 12 = 12 hours extra.",
+      "options": [
+        {
+          "label": "14 hours",
+          "is_correct": false
+        },
+        {
+          "label": "13 hours",
+          "is_correct": false
+        },
+        {
+          "label": "12 hours",
+          "is_correct": true
+        },
+        {
+          "label": "11 hours",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Pipes and Cisterns",
+      "kind": "standard",
+      "difficulty": "hard",
+      "answer_type": "single",
+      "stem": "A tank can be filled by a pipe in 4 hours. A leak can empty the full tank in 6 hours. How much extra time (in hours) does it take to fill the tank when the leak is also present?",
+      "explanation": "With the leak it fills in 12 hours instead of 4, i.e. 12 − 4 = 8 hours extra.",
+      "options": [
+        {
+          "label": "9 hours",
+          "is_correct": false
+        },
+        {
+          "label": "10 hours",
+          "is_correct": false
+        },
+        {
+          "label": "7 hours",
+          "is_correct": false
+        },
+        {
+          "label": "8 hours",
+          "is_correct": true
+        }
+      ]
+    },
+    {
+      "chapter": "Pipes and Cisterns",
+      "kind": "standard",
+      "difficulty": "hard",
+      "answer_type": "single",
+      "stem": "A tank can be filled by a pipe in 10 hours. A leak can empty the full tank in 15 hours. How much extra time (in hours) does it take to fill the tank when the leak is also present?",
+      "explanation": "With the leak it fills in 30 hours instead of 10, i.e. 30 − 10 = 20 hours extra.",
+      "options": [
+        {
+          "label": "19 hours",
+          "is_correct": false
+        },
+        {
+          "label": "20 hours",
+          "is_correct": true
+        },
+        {
+          "label": "22 hours",
+          "is_correct": false
+        },
+        {
+          "label": "21 hours",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Pipes and Cisterns",
+      "kind": "standard",
+      "difficulty": "hard",
+      "answer_type": "single",
+      "stem": "Two pipes together can fill a tank in 6 hours. If one pipe alone fills it in 15 hours, in how many hours can the other pipe alone fill it?",
+      "explanation": "Second pipe's rate = 1/6 − 1/15, so it fills the tank in 10 hours.",
+      "options": [
+        {
+          "label": "10 hours",
+          "is_correct": true
+        },
+        {
+          "label": "11 hours",
+          "is_correct": false
+        },
+        {
+          "label": "12 hours",
+          "is_correct": false
+        },
+        {
+          "label": "9 hours",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Pipes and Cisterns",
+      "kind": "standard",
+      "difficulty": "hard",
+      "answer_type": "single",
+      "stem": "Two pipes together can fill a tank in 8 hours. If one pipe alone fills it in 40 hours, in how many hours can the other pipe alone fill it?",
+      "explanation": "Second pipe's rate = 1/8 − 1/40, so it fills the tank in 10 hours.",
+      "options": [
+        {
+          "label": "10 hours",
+          "is_correct": true
+        },
+        {
+          "label": "9 hours",
+          "is_correct": false
+        },
+        {
+          "label": "11 hours",
+          "is_correct": false
+        },
+        {
+          "label": "12 hours",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Pipes and Cisterns",
+      "kind": "standard",
+      "difficulty": "hard",
+      "answer_type": "single",
+      "stem": "Two pipes can fill a tank in 12 and 15 hours, while a third pipe can empty the full tank in 10 hours. If all three are opened together, in how many hours will the tank be filled?",
+      "explanation": "Net rate = 1/12 + 1/15 − 1/10, so the tank fills in 20 hours.",
+      "options": [
+        {
+          "label": "22 hours",
+          "is_correct": false
+        },
+        {
+          "label": "20 hours",
+          "is_correct": true
+        },
+        {
+          "label": "21 hours",
+          "is_correct": false
+        },
+        {
+          "label": "19 hours",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Pipes and Cisterns",
+      "kind": "standard",
+      "difficulty": "hard",
+      "answer_type": "single",
+      "stem": "Two pipes can fill a tank in 20 and 30 hours, while a third pipe can empty the full tank in 60 hours. If all three are opened together, in how many hours will the tank be filled?",
+      "explanation": "Net rate = 1/20 + 1/30 − 1/60, so the tank fills in 15 hours.",
+      "options": [
+        {
+          "label": "16 hours",
+          "is_correct": false
+        },
+        {
+          "label": "15 hours",
+          "is_correct": true
+        },
+        {
+          "label": "14 hours",
+          "is_correct": false
+        },
+        {
+          "label": "17 hours",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Pipes and Cisterns",
+      "kind": "standard",
+      "difficulty": "hard",
+      "answer_type": "single",
+      "stem": "A tank can be filled by a pipe in 12 hours. A leak can empty the full tank in 36 hours. How much extra time (in hours) does it take to fill the tank when the leak is also present?",
+      "explanation": "With the leak it fills in 18 hours instead of 12, i.e. 18 − 12 = 6 hours extra.",
+      "options": [
+        {
+          "label": "7 hours",
+          "is_correct": false
+        },
+        {
+          "label": "6 hours",
+          "is_correct": true
+        },
+        {
+          "label": "5 hours",
+          "is_correct": false
+        },
+        {
+          "label": "8 hours",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Pipes and Cisterns",
+      "kind": "standard",
+      "difficulty": "hard",
+      "answer_type": "single",
+      "stem": "Two pipes together can fill a tank in 6 hours. If one pipe alone fills it in 24 hours, in how many hours can the other pipe alone fill it?",
+      "explanation": "Second pipe's rate = 1/6 − 1/24, so it fills the tank in 8 hours.",
+      "options": [
+        {
+          "label": "9 hours",
+          "is_correct": false
+        },
+        {
+          "label": "10 hours",
+          "is_correct": false
+        },
+        {
+          "label": "7 hours",
+          "is_correct": false
+        },
+        {
+          "label": "8 hours",
+          "is_correct": true
+        }
+      ]
+    },
+    {
+      "chapter": "Pipes and Cisterns",
+      "kind": "standard",
+      "difficulty": "hard",
+      "answer_type": "single",
+      "stem": "A tank can be filled by a pipe in 8 hours. A leak can empty the full tank in 16 hours. How much extra time (in hours) does it take to fill the tank when the leak is also present?",
+      "explanation": "With the leak it fills in 16 hours instead of 8, i.e. 16 − 8 = 8 hours extra.",
+      "options": [
+        {
+          "label": "7 hours",
+          "is_correct": false
+        },
+        {
+          "label": "9 hours",
+          "is_correct": false
+        },
+        {
+          "label": "8 hours",
+          "is_correct": true
+        },
+        {
+          "label": "10 hours",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Pipes and Cisterns",
+      "kind": "standard",
+      "difficulty": "hard",
+      "answer_type": "single",
+      "stem": "Two pipes together can fill a tank in 6 hours. If one pipe alone fills it in 9 hours, in how many hours can the other pipe alone fill it?",
+      "explanation": "Second pipe's rate = 1/6 − 1/9, so it fills the tank in 18 hours.",
+      "options": [
+        {
+          "label": "19 hours",
+          "is_correct": false
+        },
+        {
+          "label": "17 hours",
+          "is_correct": false
+        },
+        {
+          "label": "18 hours",
+          "is_correct": true
+        },
+        {
+          "label": "20 hours",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Pipes and Cisterns",
+      "kind": "standard",
+      "difficulty": "hard",
+      "answer_type": "single",
+      "stem": "A tank can be filled by a pipe in 9 hours. A leak can empty the full tank in 36 hours. How much extra time (in hours) does it take to fill the tank when the leak is also present?",
+      "explanation": "With the leak it fills in 12 hours instead of 9, i.e. 12 − 9 = 3 hours extra.",
+      "options": [
+        {
+          "label": "5 hours",
+          "is_correct": false
+        },
+        {
+          "label": "4 hours",
+          "is_correct": false
+        },
+        {
+          "label": "2 hours",
+          "is_correct": false
+        },
+        {
+          "label": "3 hours",
+          "is_correct": true
+        }
+      ]
+    },
+    {
+      "chapter": "Pipes and Cisterns",
+      "kind": "standard",
+      "difficulty": "hard",
+      "answer_type": "single",
+      "stem": "Two pipes together can fill a tank in 6 hours. If one pipe alone fills it in 18 hours, in how many hours can the other pipe alone fill it?",
+      "explanation": "Second pipe's rate = 1/6 − 1/18, so it fills the tank in 9 hours.",
+      "options": [
+        {
+          "label": "9 hours",
+          "is_correct": true
+        },
+        {
+          "label": "8 hours",
+          "is_correct": false
+        },
+        {
+          "label": "11 hours",
+          "is_correct": false
+        },
+        {
+          "label": "10 hours",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Pipes and Cisterns",
+      "kind": "standard",
+      "difficulty": "hard",
+      "answer_type": "single",
+      "stem": "A tank can be filled by a pipe in 6 hours. A leak can empty the full tank in 18 hours. How much extra time (in hours) does it take to fill the tank when the leak is also present?",
+      "explanation": "With the leak it fills in 9 hours instead of 6, i.e. 9 − 6 = 3 hours extra.",
+      "options": [
+        {
+          "label": "3 hours",
+          "is_correct": true
+        },
+        {
+          "label": "5 hours",
+          "is_correct": false
+        },
+        {
+          "label": "4 hours",
+          "is_correct": false
+        },
+        {
+          "label": "2 hours",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Pipes and Cisterns",
+      "kind": "standard",
+      "difficulty": "hard",
+      "answer_type": "single",
+      "stem": "Two pipes together can fill a tank in 4 hours. If one pipe alone fills it in 12 hours, in how many hours can the other pipe alone fill it?",
+      "explanation": "Second pipe's rate = 1/4 − 1/12, so it fills the tank in 6 hours.",
+      "options": [
+        {
+          "label": "6 hours",
+          "is_correct": true
+        },
+        {
+          "label": "5 hours",
+          "is_correct": false
+        },
+        {
+          "label": "7 hours",
+          "is_correct": false
+        },
+        {
+          "label": "8 hours",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Pipes and Cisterns",
+      "kind": "standard",
+      "difficulty": "hard",
+      "answer_type": "single",
+      "stem": "Two pipes together can fill a tank in 10 hours. If one pipe alone fills it in 14 hours, in how many hours can the other pipe alone fill it?",
+      "explanation": "Second pipe's rate = 1/10 − 1/14, so it fills the tank in 35 hours.",
+      "options": [
+        {
+          "label": "35 hours",
+          "is_correct": true
+        },
+        {
+          "label": "37 hours",
+          "is_correct": false
+        },
+        {
+          "label": "34 hours",
+          "is_correct": false
+        },
+        {
+          "label": "36 hours",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Pipes and Cisterns",
+      "kind": "standard",
+      "difficulty": "hard",
+      "answer_type": "single",
+      "stem": "Two pipes together can fill a tank in 3 hours. If one pipe alone fills it in 12 hours, in how many hours can the other pipe alone fill it?",
+      "explanation": "Second pipe's rate = 1/3 − 1/12, so it fills the tank in 4 hours.",
+      "options": [
+        {
+          "label": "5 hours",
+          "is_correct": false
+        },
+        {
+          "label": "4 hours",
+          "is_correct": true
+        },
+        {
+          "label": "6 hours",
+          "is_correct": false
+        },
+        {
+          "label": "3 hours",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Pipes and Cisterns",
+      "kind": "standard",
+      "difficulty": "hard",
+      "answer_type": "single",
+      "stem": "A tank can be filled by a pipe in 6 hours. A leak can empty the full tank in 10 hours. How much extra time (in hours) does it take to fill the tank when the leak is also present?",
+      "explanation": "With the leak it fills in 15 hours instead of 6, i.e. 15 − 6 = 9 hours extra.",
+      "options": [
+        {
+          "label": "8 hours",
+          "is_correct": false
+        },
+        {
+          "label": "11 hours",
+          "is_correct": false
+        },
+        {
+          "label": "9 hours",
+          "is_correct": true
+        },
+        {
+          "label": "10 hours",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Pipes and Cisterns",
+      "kind": "standard",
+      "difficulty": "hard",
+      "answer_type": "single",
+      "stem": "Two pipes can fill a tank in 6 and 8 hours, while a third pipe can empty the full tank in 24 hours. If all three are opened together, in how many hours will the tank be filled?",
+      "explanation": "Net rate = 1/6 + 1/8 − 1/24, so the tank fills in 4 hours.",
+      "options": [
+        {
+          "label": "4 hours",
+          "is_correct": true
+        },
+        {
+          "label": "3 hours",
+          "is_correct": false
+        },
+        {
+          "label": "6 hours",
+          "is_correct": false
+        },
+        {
+          "label": "5 hours",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Pipes and Cisterns",
+      "kind": "standard",
+      "difficulty": "hard",
+      "answer_type": "single",
+      "stem": "A tank can be filled by a pipe in 12 hours. A leak can empty the full tank in 20 hours. How much extra time (in hours) does it take to fill the tank when the leak is also present?",
+      "explanation": "With the leak it fills in 30 hours instead of 12, i.e. 30 − 12 = 18 hours extra.",
+      "options": [
+        {
+          "label": "17 hours",
+          "is_correct": false
+        },
+        {
+          "label": "19 hours",
+          "is_correct": false
+        },
+        {
+          "label": "20 hours",
+          "is_correct": false
+        },
+        {
+          "label": "18 hours",
+          "is_correct": true
+        }
+      ]
+    },
+    {
+      "chapter": "Pipes and Cisterns",
+      "kind": "standard",
+      "difficulty": "hard",
+      "answer_type": "single",
+      "stem": "A tank can be filled by a pipe in 20 hours. A leak can empty the full tank in 30 hours. How much extra time (in hours) does it take to fill the tank when the leak is also present?",
+      "explanation": "With the leak it fills in 60 hours instead of 20, i.e. 60 − 20 = 40 hours extra.",
+      "options": [
+        {
+          "label": "38 hours",
+          "is_correct": false
+        },
+        {
+          "label": "40 hours",
+          "is_correct": true
+        },
+        {
+          "label": "44 hours",
+          "is_correct": false
+        },
+        {
+          "label": "42 hours",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Pipes and Cisterns",
+      "kind": "standard",
+      "difficulty": "hard",
+      "answer_type": "single",
+      "stem": "A tank can be filled by a pipe in 12 hours. A leak can empty the full tank in 15 hours. How much extra time (in hours) does it take to fill the tank when the leak is also present?",
+      "explanation": "With the leak it fills in 60 hours instead of 12, i.e. 60 − 12 = 48 hours extra.",
+      "options": [
+        {
+          "label": "48 hours",
+          "is_correct": true
+        },
+        {
+          "label": "50 hours",
+          "is_correct": false
+        },
+        {
+          "label": "46 hours",
+          "is_correct": false
+        },
+        {
+          "label": "52 hours",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Pipes and Cisterns",
+      "kind": "standard",
+      "difficulty": "hard",
+      "answer_type": "single",
+      "stem": "Two pipes together can fill a tank in 9 hours. If one pipe alone fills it in 36 hours, in how many hours can the other pipe alone fill it?",
+      "explanation": "Second pipe's rate = 1/9 − 1/36, so it fills the tank in 12 hours.",
+      "options": [
+        {
+          "label": "13 hours",
+          "is_correct": false
+        },
+        {
+          "label": "11 hours",
+          "is_correct": false
+        },
+        {
+          "label": "12 hours",
+          "is_correct": true
+        },
+        {
+          "label": "14 hours",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Pipes and Cisterns",
+      "kind": "standard",
+      "difficulty": "hard",
+      "answer_type": "single",
+      "stem": "A tank can be filled by a pipe in 15 hours. A leak can empty the full tank in 20 hours. How much extra time (in hours) does it take to fill the tank when the leak is also present?",
+      "explanation": "With the leak it fills in 60 hours instead of 15, i.e. 60 − 15 = 45 hours extra.",
+      "options": [
+        {
+          "label": "45 hours",
+          "is_correct": true
+        },
+        {
+          "label": "43 hours",
+          "is_correct": false
+        },
+        {
+          "label": "47 hours",
+          "is_correct": false
+        },
+        {
+          "label": "49 hours",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Pipes and Cisterns",
+      "kind": "standard",
+      "difficulty": "hard",
+      "answer_type": "single",
+      "stem": "Two pipes together can fill a tank in 8 hours. If one pipe alone fills it in 12 hours, in how many hours can the other pipe alone fill it?",
+      "explanation": "Second pipe's rate = 1/8 − 1/12, so it fills the tank in 24 hours.",
+      "options": [
+        {
+          "label": "23 hours",
+          "is_correct": false
+        },
+        {
+          "label": "26 hours",
+          "is_correct": false
+        },
+        {
+          "label": "24 hours",
+          "is_correct": true
+        },
+        {
+          "label": "25 hours",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Pipes and Cisterns",
+      "kind": "standard",
+      "difficulty": "hard",
+      "answer_type": "single",
+      "stem": "A tank can be filled by a pipe in 14 hours. A leak can empty the full tank in 42 hours. How much extra time (in hours) does it take to fill the tank when the leak is also present?",
+      "explanation": "With the leak it fills in 21 hours instead of 14, i.e. 21 − 14 = 7 hours extra.",
+      "options": [
+        {
+          "label": "6 hours",
+          "is_correct": false
+        },
+        {
+          "label": "9 hours",
+          "is_correct": false
+        },
+        {
+          "label": "8 hours",
+          "is_correct": false
+        },
+        {
+          "label": "7 hours",
+          "is_correct": true
+        }
+      ]
+    },
+    {
+      "chapter": "Pipes and Cisterns",
+      "kind": "standard",
+      "difficulty": "hard",
+      "answer_type": "single",
+      "stem": "Two pipes together can fill a tank in 6 hours. If one pipe alone fills it in 10 hours, in how many hours can the other pipe alone fill it?",
+      "explanation": "Second pipe's rate = 1/6 − 1/10, so it fills the tank in 15 hours.",
+      "options": [
+        {
+          "label": "17 hours",
+          "is_correct": false
+        },
+        {
+          "label": "15 hours",
+          "is_correct": true
+        },
+        {
+          "label": "14 hours",
+          "is_correct": false
+        },
+        {
+          "label": "16 hours",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Pipes and Cisterns",
+      "kind": "standard",
+      "difficulty": "hard",
+      "answer_type": "single",
+      "stem": "Two pipes together can fill a tank in 12 hours. If one pipe alone fills it in 20 hours, in how many hours can the other pipe alone fill it?",
+      "explanation": "Second pipe's rate = 1/12 − 1/20, so it fills the tank in 30 hours.",
+      "options": [
+        {
+          "label": "29 hours",
+          "is_correct": false
+        },
+        {
+          "label": "31 hours",
+          "is_correct": false
+        },
+        {
+          "label": "32 hours",
+          "is_correct": false
+        },
+        {
+          "label": "30 hours",
+          "is_correct": true
+        }
+      ]
+    },
+    {
+      "chapter": "Pipes and Cisterns",
+      "kind": "standard",
+      "difficulty": "hard",
+      "answer_type": "single",
+      "stem": "A tank can be filled by a pipe in 10 hours. A leak can empty the full tank in 30 hours. How much extra time (in hours) does it take to fill the tank when the leak is also present?",
+      "explanation": "With the leak it fills in 15 hours instead of 10, i.e. 15 − 10 = 5 hours extra.",
+      "options": [
+        {
+          "label": "7 hours",
+          "is_correct": false
+        },
+        {
+          "label": "5 hours",
+          "is_correct": true
+        },
+        {
+          "label": "4 hours",
+          "is_correct": false
+        },
+        {
+          "label": "6 hours",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Pipes and Cisterns",
+      "kind": "standard",
+      "difficulty": "hard",
+      "answer_type": "single",
+      "stem": "Two pipes together can fill a tank in 12 hours. If one pipe alone fills it in 30 hours, in how many hours can the other pipe alone fill it?",
+      "explanation": "Second pipe's rate = 1/12 − 1/30, so it fills the tank in 20 hours.",
+      "options": [
+        {
+          "label": "20 hours",
+          "is_correct": true
+        },
+        {
+          "label": "21 hours",
+          "is_correct": false
+        },
+        {
+          "label": "22 hours",
+          "is_correct": false
+        },
+        {
+          "label": "19 hours",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Pipes and Cisterns",
+      "kind": "standard",
+      "difficulty": "hard",
+      "answer_type": "single",
+      "stem": "A tank can be filled by a pipe in 18 hours. A leak can empty the full tank in 24 hours. How much extra time (in hours) does it take to fill the tank when the leak is also present?",
+      "explanation": "With the leak it fills in 72 hours instead of 18, i.e. 72 − 18 = 54 hours extra.",
+      "options": [
+        {
+          "label": "52 hours",
+          "is_correct": false
+        },
+        {
+          "label": "54 hours",
+          "is_correct": true
+        },
+        {
+          "label": "56 hours",
+          "is_correct": false
+        },
+        {
+          "label": "58 hours",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Pipes and Cisterns",
+      "kind": "standard",
+      "difficulty": "hard",
+      "answer_type": "single",
+      "stem": "A tank can be filled by a pipe in 8 hours. A leak can empty the full tank in 10 hours. How much extra time (in hours) does it take to fill the tank when the leak is also present?",
+      "explanation": "With the leak it fills in 40 hours instead of 8, i.e. 40 − 8 = 32 hours extra.",
+      "options": [
+        {
+          "label": "31 hours",
+          "is_correct": false
+        },
+        {
+          "label": "33 hours",
+          "is_correct": false
+        },
+        {
+          "label": "32 hours",
+          "is_correct": true
+        },
+        {
+          "label": "34 hours",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Pipes and Cisterns",
+      "kind": "standard",
+      "difficulty": "hard",
+      "answer_type": "single",
+      "stem": "Two pipes can fill a tank in 8 and 24 hours, while a third pipe can empty the full tank in 12 hours. If all three are opened together, in how many hours will the tank be filled?",
+      "explanation": "Net rate = 1/8 + 1/24 − 1/12, so the tank fills in 12 hours.",
+      "options": [
+        {
+          "label": "12 hours",
+          "is_correct": true
+        },
+        {
+          "label": "14 hours",
+          "is_correct": false
+        },
+        {
+          "label": "13 hours",
+          "is_correct": false
+        },
+        {
+          "label": "11 hours",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Pipes and Cisterns",
+      "kind": "standard",
+      "difficulty": "hard",
+      "answer_type": "single",
+      "stem": "A tank can be filled by a pipe in 6 hours. A leak can empty the full tank in 24 hours. How much extra time (in hours) does it take to fill the tank when the leak is also present?",
+      "explanation": "With the leak it fills in 8 hours instead of 6, i.e. 8 − 6 = 2 hours extra.",
+      "options": [
+        {
+          "label": "3 hours",
+          "is_correct": false
+        },
+        {
+          "label": "1 hours",
+          "is_correct": false
+        },
+        {
+          "label": "2 hours",
+          "is_correct": true
+        },
+        {
+          "label": "4 hours",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Pipes and Cisterns",
+      "kind": "standard",
+      "difficulty": "hard",
+      "answer_type": "single",
+      "stem": "Two pipes can fill a tank in 8 and 12 hours, while a third pipe can empty the full tank in 24 hours. If all three are opened together, in how many hours will the tank be filled?",
+      "explanation": "Net rate = 1/8 + 1/12 − 1/24, so the tank fills in 6 hours.",
+      "options": [
+        {
+          "label": "5 hours",
+          "is_correct": false
+        },
+        {
+          "label": "6 hours",
+          "is_correct": true
+        },
+        {
+          "label": "8 hours",
+          "is_correct": false
+        },
+        {
+          "label": "7 hours",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Pipes and Cisterns",
+      "kind": "standard",
+      "difficulty": "hard",
+      "answer_type": "single",
+      "stem": "A tank can be filled by a pipe in 9 hours. A leak can empty the full tank in 12 hours. How much extra time (in hours) does it take to fill the tank when the leak is also present?",
+      "explanation": "With the leak it fills in 36 hours instead of 9, i.e. 36 − 9 = 27 hours extra.",
+      "options": [
+        {
+          "label": "28 hours",
+          "is_correct": false
+        },
+        {
+          "label": "26 hours",
+          "is_correct": false
+        },
+        {
+          "label": "29 hours",
+          "is_correct": false
+        },
+        {
+          "label": "27 hours",
+          "is_correct": true
+        }
+      ]
+    },
+    {
+      "chapter": "Pipes and Cisterns",
+      "kind": "standard",
+      "difficulty": "hard",
+      "answer_type": "single",
+      "stem": "Two pipes together can fill a tank in 2 hours. If one pipe alone fills it in 6 hours, in how many hours can the other pipe alone fill it?",
+      "explanation": "Second pipe's rate = 1/2 − 1/6, so it fills the tank in 3 hours.",
+      "options": [
+        {
+          "label": "3 hours",
+          "is_correct": true
+        },
+        {
+          "label": "5 hours",
+          "is_correct": false
+        },
+        {
+          "label": "2 hours",
+          "is_correct": false
+        },
+        {
+          "label": "4 hours",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Pipes and Cisterns",
+      "kind": "standard",
+      "difficulty": "hard",
+      "answer_type": "single",
+      "stem": "Two pipes together can fill a tank in 16 hours. If one pipe alone fills it in 20 hours, in how many hours can the other pipe alone fill it?",
+      "explanation": "Second pipe's rate = 1/16 − 1/20, so it fills the tank in 80 hours.",
+      "options": [
+        {
+          "label": "82 hours",
+          "is_correct": false
+        },
+        {
+          "label": "80 hours",
+          "is_correct": true
+        },
+        {
+          "label": "78 hours",
+          "is_correct": false
+        },
+        {
+          "label": "84 hours",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Pipes and Cisterns",
+      "kind": "standard",
+      "difficulty": "hard",
+      "answer_type": "single",
+      "stem": "A tank can be filled by a pipe in 15 hours. A leak can empty the full tank in 30 hours. How much extra time (in hours) does it take to fill the tank when the leak is also present?",
+      "explanation": "With the leak it fills in 30 hours instead of 15, i.e. 30 − 15 = 15 hours extra.",
+      "options": [
+        {
+          "label": "15 hours",
+          "is_correct": true
+        },
+        {
+          "label": "16 hours",
+          "is_correct": false
+        },
+        {
+          "label": "17 hours",
+          "is_correct": false
+        },
+        {
+          "label": "14 hours",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Pipes and Cisterns",
+      "kind": "standard",
+      "difficulty": "hard",
+      "answer_type": "single",
+      "stem": "Two pipes can fill a tank in 10 and 15 hours, while a third pipe can empty the full tank in 12 hours. If all three are opened together, in how many hours will the tank be filled?",
+      "explanation": "Net rate = 1/10 + 1/15 − 1/12, so the tank fills in 12 hours.",
+      "options": [
+        {
+          "label": "11 hours",
+          "is_correct": false
+        },
+        {
+          "label": "12 hours",
+          "is_correct": true
+        },
+        {
+          "label": "13 hours",
+          "is_correct": false
+        },
+        {
+          "label": "14 hours",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Pipes and Cisterns",
+      "kind": "standard",
+      "difficulty": "hard",
+      "answer_type": "single",
+      "stem": "A tank can be filled by a pipe in 6 hours. A leak can empty the full tank in 12 hours. How much extra time (in hours) does it take to fill the tank when the leak is also present?",
+      "explanation": "With the leak it fills in 12 hours instead of 6, i.e. 12 − 6 = 6 hours extra.",
+      "options": [
+        {
+          "label": "7 hours",
+          "is_correct": false
+        },
+        {
+          "label": "6 hours",
+          "is_correct": true
+        },
+        {
+          "label": "5 hours",
+          "is_correct": false
+        },
+        {
+          "label": "8 hours",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Pipes and Cisterns",
+      "kind": "standard",
+      "difficulty": "hard",
+      "answer_type": "single",
+      "stem": "Two pipes together can fill a tank in 4 hours. If one pipe alone fills it in 20 hours, in how many hours can the other pipe alone fill it?",
+      "explanation": "Second pipe's rate = 1/4 − 1/20, so it fills the tank in 5 hours.",
+      "options": [
+        {
+          "label": "6 hours",
+          "is_correct": false
+        },
+        {
+          "label": "4 hours",
+          "is_correct": false
+        },
+        {
+          "label": "7 hours",
+          "is_correct": false
+        },
+        {
+          "label": "5 hours",
+          "is_correct": true
+        }
+      ]
+    },
+    {
+      "chapter": "Pipes and Cisterns",
+      "kind": "standard",
+      "difficulty": "hard",
+      "answer_type": "single",
+      "stem": "A tank can be filled by a pipe in 8 hours. A leak can empty the full tank in 12 hours. How much extra time (in hours) does it take to fill the tank when the leak is also present?",
+      "explanation": "With the leak it fills in 24 hours instead of 8, i.e. 24 − 8 = 16 hours extra.",
+      "options": [
+        {
+          "label": "15 hours",
+          "is_correct": false
+        },
+        {
+          "label": "18 hours",
+          "is_correct": false
+        },
+        {
+          "label": "17 hours",
+          "is_correct": false
+        },
+        {
+          "label": "16 hours",
+          "is_correct": true
+        }
+      ]
+    },
+    {
+      "chapter": "Pipes and Cisterns",
+      "kind": "standard",
+      "difficulty": "hard",
+      "answer_type": "single",
+      "stem": "A tank can be filled by a pipe in 8 hours. A leak can empty the full tank in 24 hours. How much extra time (in hours) does it take to fill the tank when the leak is also present?",
+      "explanation": "With the leak it fills in 12 hours instead of 8, i.e. 12 − 8 = 4 hours extra.",
+      "options": [
+        {
+          "label": "4 hours",
+          "is_correct": true
+        },
+        {
+          "label": "6 hours",
+          "is_correct": false
+        },
+        {
+          "label": "5 hours",
+          "is_correct": false
+        },
+        {
+          "label": "3 hours",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Pipes and Cisterns",
+      "kind": "standard",
+      "difficulty": "very_hard",
+      "answer_type": "single",
+      "stem": "A leak can empty a full tank in 20 hours. When a filling pipe is also opened, the tank gets filled in 60 hours. In how many hours can the filling pipe alone fill the tank?",
+      "explanation": "Filling pipe's rate = 1/60 + 1/20, so it fills the tank in 15 hours.",
+      "options": [
+        {
+          "label": "16 hours",
+          "is_correct": false
+        },
+        {
+          "label": "14 hours",
+          "is_correct": false
+        },
+        {
+          "label": "17 hours",
+          "is_correct": false
+        },
+        {
+          "label": "15 hours",
+          "is_correct": true
+        }
+      ]
+    },
+    {
+      "chapter": "Pipes and Cisterns",
+      "kind": "standard",
+      "difficulty": "very_hard",
+      "answer_type": "single",
+      "stem": "Two pipes can fill a tank in 12 and 15 hours. With all three pipes open (including a waste pipe), the tank fills in 20 hours. In how many hours can the waste pipe alone empty the full tank?",
+      "explanation": "Waste pipe's rate = 1/12 + 1/15 − 1/20, so it empties the tank in 10 hours.",
+      "options": [
+        {
+          "label": "11 hours",
+          "is_correct": false
+        },
+        {
+          "label": "10 hours",
+          "is_correct": true
+        },
+        {
+          "label": "9 hours",
+          "is_correct": false
+        },
+        {
+          "label": "12 hours",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Pipes and Cisterns",
+      "kind": "standard",
+      "difficulty": "very_hard",
+      "answer_type": "single",
+      "stem": "A leak can empty a full tank in 6 hours. When a filling pipe is also opened, the tank gets filled in 12 hours. In how many hours can the filling pipe alone fill the tank?",
+      "explanation": "Filling pipe's rate = 1/12 + 1/6, so it fills the tank in 4 hours.",
+      "options": [
+        {
+          "label": "6 hours",
+          "is_correct": false
+        },
+        {
+          "label": "5 hours",
+          "is_correct": false
+        },
+        {
+          "label": "3 hours",
+          "is_correct": false
+        },
+        {
+          "label": "4 hours",
+          "is_correct": true
+        }
+      ]
+    },
+    {
+      "chapter": "Pipes and Cisterns",
+      "kind": "standard",
+      "difficulty": "very_hard",
+      "answer_type": "single",
+      "stem": "A leak can empty a full tank in 6 hours. An inlet pipe admits water at 6 litres per hour. With the inlet open, the full tank is emptied in 14 hours. Find the capacity of the tank.",
+      "explanation": "C/6 − 6 = C/14 ⇒ C = 6×6×14/(14−6) = 63 litres.",
+      "options": [
+        {
+          "label": "61 litres",
+          "is_correct": false
+        },
+        {
+          "label": "67 litres",
+          "is_correct": false
+        },
+        {
+          "label": "63 litres",
+          "is_correct": true
+        },
+        {
+          "label": "65 litres",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Pipes and Cisterns",
+      "kind": "standard",
+      "difficulty": "very_hard",
+      "answer_type": "single",
+      "stem": "A leak can empty a full tank in 42 hours. When a filling pipe is also opened, the tank gets filled in 21 hours. In how many hours can the filling pipe alone fill the tank?",
+      "explanation": "Filling pipe's rate = 1/21 + 1/42, so it fills the tank in 14 hours.",
+      "options": [
+        {
+          "label": "14 hours",
+          "is_correct": true
+        },
+        {
+          "label": "15 hours",
+          "is_correct": false
+        },
+        {
+          "label": "13 hours",
+          "is_correct": false
+        },
+        {
+          "label": "16 hours",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Pipes and Cisterns",
+      "kind": "standard",
+      "difficulty": "very_hard",
+      "answer_type": "single",
+      "stem": "A leak can empty a full tank in 16 hours. An inlet pipe admits water at 3 litres per hour. With the inlet open, the full tank is emptied in 22 hours. Find the capacity of the tank.",
+      "explanation": "C/16 − 3 = C/22 ⇒ C = 3×16×22/(22−16) = 176 litres.",
+      "options": [
+        {
+          "label": "180 litres",
+          "is_correct": false
+        },
+        {
+          "label": "176 litres",
+          "is_correct": true
+        },
+        {
+          "label": "174 litres",
+          "is_correct": false
+        },
+        {
+          "label": "178 litres",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Pipes and Cisterns",
+      "kind": "standard",
+      "difficulty": "very_hard",
+      "answer_type": "single",
+      "stem": "A leak can empty a full tank in 15 hours. When a filling pipe is also opened, the tank gets filled in 60 hours. In how many hours can the filling pipe alone fill the tank?",
+      "explanation": "Filling pipe's rate = 1/60 + 1/15, so it fills the tank in 12 hours.",
+      "options": [
+        {
+          "label": "11 hours",
+          "is_correct": false
+        },
+        {
+          "label": "12 hours",
+          "is_correct": true
+        },
+        {
+          "label": "14 hours",
+          "is_correct": false
+        },
+        {
+          "label": "13 hours",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Pipes and Cisterns",
+      "kind": "standard",
+      "difficulty": "very_hard",
+      "answer_type": "single",
+      "stem": "Two pipes can fill a tank in 8 and 12 hours. With all three pipes open (including a waste pipe), the tank fills in 6 hours. In how many hours can the waste pipe alone empty the full tank?",
+      "explanation": "Waste pipe's rate = 1/8 + 1/12 − 1/6, so it empties the tank in 24 hours.",
+      "options": [
+        {
+          "label": "24 hours",
+          "is_correct": true
+        },
+        {
+          "label": "23 hours",
+          "is_correct": false
+        },
+        {
+          "label": "26 hours",
+          "is_correct": false
+        },
+        {
+          "label": "25 hours",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Pipes and Cisterns",
+      "kind": "standard",
+      "difficulty": "very_hard",
+      "answer_type": "single",
+      "stem": "A leak can empty a full tank in 12 hours. An inlet pipe admits water at 7 litres per hour. With the inlet open, the full tank is emptied in 15 hours. Find the capacity of the tank.",
+      "explanation": "C/12 − 7 = C/15 ⇒ C = 7×12×15/(15−12) = 420 litres.",
+      "options": [
+        {
+          "label": "403 litres",
+          "is_correct": false
+        },
+        {
+          "label": "437 litres",
+          "is_correct": false
+        },
+        {
+          "label": "454 litres",
+          "is_correct": false
+        },
+        {
+          "label": "420 litres",
+          "is_correct": true
+        }
+      ]
+    },
+    {
+      "chapter": "Pipes and Cisterns",
+      "kind": "standard",
+      "difficulty": "very_hard",
+      "answer_type": "single",
+      "stem": "A leak can empty a full tank in 10 hours. When a filling pipe is also opened, the tank gets filled in 40 hours. In how many hours can the filling pipe alone fill the tank?",
+      "explanation": "Filling pipe's rate = 1/40 + 1/10, so it fills the tank in 8 hours.",
+      "options": [
+        {
+          "label": "9 hours",
+          "is_correct": false
+        },
+        {
+          "label": "10 hours",
+          "is_correct": false
+        },
+        {
+          "label": "7 hours",
+          "is_correct": false
+        },
+        {
+          "label": "8 hours",
+          "is_correct": true
+        }
+      ]
+    },
+    {
+      "chapter": "Pipes and Cisterns",
+      "kind": "standard",
+      "difficulty": "very_hard",
+      "answer_type": "single",
+      "stem": "A leak can empty a full tank in 30 hours. When a filling pipe is also opened, the tank gets filled in 60 hours. In how many hours can the filling pipe alone fill the tank?",
+      "explanation": "Filling pipe's rate = 1/60 + 1/30, so it fills the tank in 20 hours.",
+      "options": [
+        {
+          "label": "20 hours",
+          "is_correct": true
+        },
+        {
+          "label": "22 hours",
+          "is_correct": false
+        },
+        {
+          "label": "21 hours",
+          "is_correct": false
+        },
+        {
+          "label": "19 hours",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Pipes and Cisterns",
+      "kind": "standard",
+      "difficulty": "very_hard",
+      "answer_type": "single",
+      "stem": "Two pipes can fill a tank in 10 and 15 hours. With all three pipes open (including a waste pipe), the tank fills in 12 hours. In how many hours can the waste pipe alone empty the full tank?",
+      "explanation": "Waste pipe's rate = 1/10 + 1/15 − 1/12, so it empties the tank in 12 hours.",
+      "options": [
+        {
+          "label": "12 hours",
+          "is_correct": true
+        },
+        {
+          "label": "13 hours",
+          "is_correct": false
+        },
+        {
+          "label": "14 hours",
+          "is_correct": false
+        },
+        {
+          "label": "11 hours",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Pipes and Cisterns",
+      "kind": "standard",
+      "difficulty": "very_hard",
+      "answer_type": "single",
+      "stem": "A leak can empty a full tank in 20 hours. When a filling pipe is also opened, the tank gets filled in 20 hours. In how many hours can the filling pipe alone fill the tank?",
+      "explanation": "Filling pipe's rate = 1/20 + 1/20, so it fills the tank in 10 hours.",
+      "options": [
+        {
+          "label": "9 hours",
+          "is_correct": false
+        },
+        {
+          "label": "11 hours",
+          "is_correct": false
+        },
+        {
+          "label": "10 hours",
+          "is_correct": true
+        },
+        {
+          "label": "12 hours",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Pipes and Cisterns",
+      "kind": "standard",
+      "difficulty": "very_hard",
+      "answer_type": "single",
+      "stem": "Two pipes can fill a tank in 8 and 24 hours. With all three pipes open (including a waste pipe), the tank fills in 12 hours. In how many hours can the waste pipe alone empty the full tank?",
+      "explanation": "Waste pipe's rate = 1/8 + 1/24 − 1/12, so it empties the tank in 12 hours.",
+      "options": [
+        {
+          "label": "14 hours",
+          "is_correct": false
+        },
+        {
+          "label": "13 hours",
+          "is_correct": false
+        },
+        {
+          "label": "12 hours",
+          "is_correct": true
+        },
+        {
+          "label": "11 hours",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Pipes and Cisterns",
+      "kind": "standard",
+      "difficulty": "very_hard",
+      "answer_type": "single",
+      "stem": "Two pipes can fill a tank in 6 and 12 hours. With all three pipes open (including a waste pipe), the tank fills in 8 hours. In how many hours can the waste pipe alone empty the full tank?",
+      "explanation": "Waste pipe's rate = 1/6 + 1/12 − 1/8, so it empties the tank in 8 hours.",
+      "options": [
+        {
+          "label": "7 hours",
+          "is_correct": false
+        },
+        {
+          "label": "9 hours",
+          "is_correct": false
+        },
+        {
+          "label": "8 hours",
+          "is_correct": true
+        },
+        {
+          "label": "10 hours",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Pipes and Cisterns",
+      "kind": "standard",
+      "difficulty": "very_hard",
+      "answer_type": "single",
+      "stem": "A leak can empty a full tank in 10 hours. When a filling pipe is also opened, the tank gets filled in 15 hours. In how many hours can the filling pipe alone fill the tank?",
+      "explanation": "Filling pipe's rate = 1/15 + 1/10, so it fills the tank in 6 hours.",
+      "options": [
+        {
+          "label": "5 hours",
+          "is_correct": false
+        },
+        {
+          "label": "7 hours",
+          "is_correct": false
+        },
+        {
+          "label": "8 hours",
+          "is_correct": false
+        },
+        {
+          "label": "6 hours",
+          "is_correct": true
+        }
+      ]
+    },
+    {
+      "chapter": "Pipes and Cisterns",
+      "kind": "standard",
+      "difficulty": "very_hard",
+      "answer_type": "single",
+      "stem": "A leak can empty a full tank in 24 hours. When a filling pipe is also opened, the tank gets filled in 12 hours. In how many hours can the filling pipe alone fill the tank?",
+      "explanation": "Filling pipe's rate = 1/12 + 1/24, so it fills the tank in 8 hours.",
+      "options": [
+        {
+          "label": "10 hours",
+          "is_correct": false
+        },
+        {
+          "label": "9 hours",
+          "is_correct": false
+        },
+        {
+          "label": "7 hours",
+          "is_correct": false
+        },
+        {
+          "label": "8 hours",
+          "is_correct": true
+        }
+      ]
+    },
+    {
+      "chapter": "Pipes and Cisterns",
+      "kind": "standard",
+      "difficulty": "very_hard",
+      "answer_type": "single",
+      "stem": "A leak can empty a full tank in 14 hours. An inlet pipe admits water at 12 litres per hour. With the inlet open, the full tank is emptied in 18 hours. Find the capacity of the tank.",
+      "explanation": "C/14 − 12 = C/18 ⇒ C = 12×14×18/(18−14) = 756 litres.",
+      "options": [
+        {
+          "label": "786 litres",
+          "is_correct": false
+        },
+        {
+          "label": "756 litres",
+          "is_correct": true
+        },
+        {
+          "label": "726 litres",
+          "is_correct": false
+        },
+        {
+          "label": "816 litres",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Pipes and Cisterns",
+      "kind": "standard",
+      "difficulty": "very_hard",
+      "answer_type": "single",
+      "stem": "A leak can empty a full tank in 24 hours. When a filling pipe is also opened, the tank gets filled in 24 hours. In how many hours can the filling pipe alone fill the tank?",
+      "explanation": "Filling pipe's rate = 1/24 + 1/24, so it fills the tank in 12 hours.",
+      "options": [
+        {
+          "label": "14 hours",
+          "is_correct": false
+        },
+        {
+          "label": "11 hours",
+          "is_correct": false
+        },
+        {
+          "label": "13 hours",
+          "is_correct": false
+        },
+        {
+          "label": "12 hours",
+          "is_correct": true
+        }
+      ]
+    },
+    {
+      "chapter": "Pipes and Cisterns",
+      "kind": "standard",
+      "difficulty": "very_hard",
+      "answer_type": "single",
+      "stem": "A leak can empty a full tank in 12 hours. When a filling pipe is also opened, the tank gets filled in 12 hours. In how many hours can the filling pipe alone fill the tank?",
+      "explanation": "Filling pipe's rate = 1/12 + 1/12, so it fills the tank in 6 hours.",
+      "options": [
+        {
+          "label": "8 hours",
+          "is_correct": false
+        },
+        {
+          "label": "7 hours",
+          "is_correct": false
+        },
+        {
+          "label": "6 hours",
+          "is_correct": true
+        },
+        {
+          "label": "5 hours",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Pipes and Cisterns",
+      "kind": "standard",
+      "difficulty": "very_hard",
+      "answer_type": "single",
+      "stem": "Two pipes can fill a tank in 6 and 8 hours. With all three pipes open (including a waste pipe), the tank fills in 4 hours. In how many hours can the waste pipe alone empty the full tank?",
+      "explanation": "Waste pipe's rate = 1/6 + 1/8 − 1/4, so it empties the tank in 24 hours.",
+      "options": [
+        {
+          "label": "23 hours",
+          "is_correct": false
+        },
+        {
+          "label": "24 hours",
+          "is_correct": true
+        },
+        {
+          "label": "26 hours",
+          "is_correct": false
+        },
+        {
+          "label": "25 hours",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Pipes and Cisterns",
+      "kind": "standard",
+      "difficulty": "very_hard",
+      "answer_type": "single",
+      "stem": "A leak can empty a full tank in 18 hours. When a filling pipe is also opened, the tank gets filled in 18 hours. In how many hours can the filling pipe alone fill the tank?",
+      "explanation": "Filling pipe's rate = 1/18 + 1/18, so it fills the tank in 9 hours.",
+      "options": [
+        {
+          "label": "11 hours",
+          "is_correct": false
+        },
+        {
+          "label": "10 hours",
+          "is_correct": false
+        },
+        {
+          "label": "8 hours",
+          "is_correct": false
+        },
+        {
+          "label": "9 hours",
+          "is_correct": true
+        }
+      ]
+    },
+    {
+      "chapter": "Pipes and Cisterns",
+      "kind": "standard",
+      "difficulty": "very_hard",
+      "answer_type": "single",
+      "stem": "A leak can empty a full tank in 6 hours. An inlet pipe admits water at 12 litres per hour. With the inlet open, the full tank is emptied in 14 hours. Find the capacity of the tank.",
+      "explanation": "C/6 − 12 = C/14 ⇒ C = 12×6×14/(14−6) = 126 litres.",
+      "options": [
+        {
+          "label": "126 litres",
+          "is_correct": true
+        },
+        {
+          "label": "124 litres",
+          "is_correct": false
+        },
+        {
+          "label": "128 litres",
+          "is_correct": false
+        },
+        {
+          "label": "130 litres",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Pipes and Cisterns",
+      "kind": "standard",
+      "difficulty": "very_hard",
+      "answer_type": "single",
+      "stem": "A leak can empty a full tank in 15 hours. When a filling pipe is also opened, the tank gets filled in 30 hours. In how many hours can the filling pipe alone fill the tank?",
+      "explanation": "Filling pipe's rate = 1/30 + 1/15, so it fills the tank in 10 hours.",
+      "options": [
+        {
+          "label": "9 hours",
+          "is_correct": false
+        },
+        {
+          "label": "12 hours",
+          "is_correct": false
+        },
+        {
+          "label": "10 hours",
+          "is_correct": true
+        },
+        {
+          "label": "11 hours",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Pipes and Cisterns",
+      "kind": "standard",
+      "difficulty": "very_hard",
+      "answer_type": "single",
+      "stem": "A leak can empty a full tank in 12 hours. When a filling pipe is also opened, the tank gets filled in 36 hours. In how many hours can the filling pipe alone fill the tank?",
+      "explanation": "Filling pipe's rate = 1/36 + 1/12, so it fills the tank in 9 hours.",
+      "options": [
+        {
+          "label": "8 hours",
+          "is_correct": false
+        },
+        {
+          "label": "10 hours",
+          "is_correct": false
+        },
+        {
+          "label": "9 hours",
+          "is_correct": true
+        },
+        {
+          "label": "11 hours",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Pipes and Cisterns",
+      "kind": "standard",
+      "difficulty": "very_hard",
+      "answer_type": "single",
+      "stem": "A leak can empty a full tank in 20 hours. When a filling pipe is also opened, the tank gets filled in 30 hours. In how many hours can the filling pipe alone fill the tank?",
+      "explanation": "Filling pipe's rate = 1/30 + 1/20, so it fills the tank in 12 hours.",
+      "options": [
+        {
+          "label": "13 hours",
+          "is_correct": false
+        },
+        {
+          "label": "11 hours",
+          "is_correct": false
+        },
+        {
+          "label": "14 hours",
+          "is_correct": false
+        },
+        {
+          "label": "12 hours",
+          "is_correct": true
+        }
+      ]
+    },
+    {
+      "chapter": "Pipes and Cisterns",
+      "kind": "standard",
+      "difficulty": "very_hard",
+      "answer_type": "single",
+      "stem": "Two pipes can fill a tank in 10 and 20 hours. With all three pipes open (including a waste pipe), the tank fills in 10 hours. In how many hours can the waste pipe alone empty the full tank?",
+      "explanation": "Waste pipe's rate = 1/10 + 1/20 − 1/10, so it empties the tank in 20 hours.",
+      "options": [
+        {
+          "label": "21 hours",
+          "is_correct": false
+        },
+        {
+          "label": "22 hours",
+          "is_correct": false
+        },
+        {
+          "label": "20 hours",
+          "is_correct": true
+        },
+        {
+          "label": "19 hours",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Pipes and Cisterns",
+      "kind": "standard",
+      "difficulty": "very_hard",
+      "answer_type": "single",
+      "stem": "A leak can empty a full tank in 9 hours. An inlet pipe admits water at 10 litres per hour. With the inlet open, the full tank is emptied in 18 hours. Find the capacity of the tank.",
+      "explanation": "C/9 − 10 = C/18 ⇒ C = 10×9×18/(18−9) = 180 litres.",
+      "options": [
+        {
+          "label": "182 litres",
+          "is_correct": false
+        },
+        {
+          "label": "178 litres",
+          "is_correct": false
+        },
+        {
+          "label": "180 litres",
+          "is_correct": true
+        },
+        {
+          "label": "184 litres",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Pipes and Cisterns",
+      "kind": "standard",
+      "difficulty": "very_hard",
+      "answer_type": "single",
+      "stem": "A leak can empty a full tank in 36 hours. When a filling pipe is also opened, the tank gets filled in 12 hours. In how many hours can the filling pipe alone fill the tank?",
+      "explanation": "Filling pipe's rate = 1/12 + 1/36, so it fills the tank in 9 hours.",
+      "options": [
+        {
+          "label": "11 hours",
+          "is_correct": false
+        },
+        {
+          "label": "8 hours",
+          "is_correct": false
+        },
+        {
+          "label": "10 hours",
+          "is_correct": false
+        },
+        {
+          "label": "9 hours",
+          "is_correct": true
+        }
+      ]
+    },
+    {
+      "chapter": "Pipes and Cisterns",
+      "kind": "standard",
+      "difficulty": "very_hard",
+      "answer_type": "single",
+      "stem": "A leak can empty a full tank in 24 hours. When a filling pipe is also opened, the tank gets filled in 8 hours. In how many hours can the filling pipe alone fill the tank?",
+      "explanation": "Filling pipe's rate = 1/8 + 1/24, so it fills the tank in 6 hours.",
+      "options": [
+        {
+          "label": "5 hours",
+          "is_correct": false
+        },
+        {
+          "label": "8 hours",
+          "is_correct": false
+        },
+        {
+          "label": "6 hours",
+          "is_correct": true
+        },
+        {
+          "label": "7 hours",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Pipes and Cisterns",
+      "kind": "standard",
+      "difficulty": "very_hard",
+      "answer_type": "single",
+      "stem": "A leak can empty a full tank in 36 hours. When a filling pipe is also opened, the tank gets filled in 18 hours. In how many hours can the filling pipe alone fill the tank?",
+      "explanation": "Filling pipe's rate = 1/18 + 1/36, so it fills the tank in 12 hours.",
+      "options": [
+        {
+          "label": "12 hours",
+          "is_correct": true
+        },
+        {
+          "label": "11 hours",
+          "is_correct": false
+        },
+        {
+          "label": "13 hours",
+          "is_correct": false
+        },
+        {
+          "label": "14 hours",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Pipes and Cisterns",
+      "kind": "standard",
+      "difficulty": "very_hard",
+      "answer_type": "single",
+      "stem": "A leak can empty a full tank in 16 hours. An inlet pipe admits water at 6 litres per hour. With the inlet open, the full tank is emptied in 22 hours. Find the capacity of the tank.",
+      "explanation": "C/16 − 6 = C/22 ⇒ C = 6×16×22/(22−16) = 352 litres.",
+      "options": [
+        {
+          "label": "338 litres",
+          "is_correct": false
+        },
+        {
+          "label": "380 litres",
+          "is_correct": false
+        },
+        {
+          "label": "366 litres",
+          "is_correct": false
+        },
+        {
+          "label": "352 litres",
+          "is_correct": true
+        }
+      ]
+    },
+    {
+      "chapter": "Pipes and Cisterns",
+      "kind": "standard",
+      "difficulty": "very_hard",
+      "answer_type": "single",
+      "stem": "Two pipes can fill a tank in 20 and 30 hours. With all three pipes open (including a waste pipe), the tank fills in 15 hours. In how many hours can the waste pipe alone empty the full tank?",
+      "explanation": "Waste pipe's rate = 1/20 + 1/30 − 1/15, so it empties the tank in 60 hours.",
+      "options": [
+        {
+          "label": "64 hours",
+          "is_correct": false
+        },
+        {
+          "label": "60 hours",
+          "is_correct": true
+        },
+        {
+          "label": "62 hours",
+          "is_correct": false
+        },
+        {
+          "label": "58 hours",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Pipes and Cisterns",
+      "kind": "standard",
+      "difficulty": "very_hard",
+      "answer_type": "single",
+      "stem": "A leak can empty a full tank in 18 hours. When a filling pipe is also opened, the tank gets filled in 9 hours. In how many hours can the filling pipe alone fill the tank?",
+      "explanation": "Filling pipe's rate = 1/9 + 1/18, so it fills the tank in 6 hours.",
+      "options": [
+        {
+          "label": "5 hours",
+          "is_correct": false
+        },
+        {
+          "label": "8 hours",
+          "is_correct": false
+        },
+        {
+          "label": "7 hours",
+          "is_correct": false
+        },
+        {
+          "label": "6 hours",
+          "is_correct": true
+        }
+      ]
+    },
+    {
+      "chapter": "Pipes and Cisterns",
+      "kind": "standard",
+      "difficulty": "very_hard",
+      "answer_type": "single",
+      "stem": "A leak can empty a full tank in 24 hours. When a filling pipe is also opened, the tank gets filled in 72 hours. In how many hours can the filling pipe alone fill the tank?",
+      "explanation": "Filling pipe's rate = 1/72 + 1/24, so it fills the tank in 18 hours.",
+      "options": [
+        {
+          "label": "18 hours",
+          "is_correct": true
+        },
+        {
+          "label": "17 hours",
+          "is_correct": false
+        },
+        {
+          "label": "20 hours",
+          "is_correct": false
+        },
+        {
+          "label": "19 hours",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Pipes and Cisterns",
+      "kind": "standard",
+      "difficulty": "very_hard",
+      "answer_type": "single",
+      "stem": "Two pipes can fill a tank in 12 and 15 hours. With all three pipes open (including a waste pipe), the tank fills in 10 hours. In how many hours can the waste pipe alone empty the full tank?",
+      "explanation": "Waste pipe's rate = 1/12 + 1/15 − 1/10, so it empties the tank in 20 hours.",
+      "options": [
+        {
+          "label": "22 hours",
+          "is_correct": false
+        },
+        {
+          "label": "19 hours",
+          "is_correct": false
+        },
+        {
+          "label": "21 hours",
+          "is_correct": false
+        },
+        {
+          "label": "20 hours",
+          "is_correct": true
+        }
+      ]
+    },
+    {
+      "chapter": "Pipes and Cisterns",
+      "kind": "standard",
+      "difficulty": "very_hard",
+      "answer_type": "single",
+      "stem": "A leak can empty a full tank in 12 hours. When a filling pipe is also opened, the tank gets filled in 24 hours. In how many hours can the filling pipe alone fill the tank?",
+      "explanation": "Filling pipe's rate = 1/24 + 1/12, so it fills the tank in 8 hours.",
+      "options": [
+        {
+          "label": "7 hours",
+          "is_correct": false
+        },
+        {
+          "label": "9 hours",
+          "is_correct": false
+        },
+        {
+          "label": "10 hours",
+          "is_correct": false
+        },
+        {
+          "label": "8 hours",
+          "is_correct": true
+        }
+      ]
+    },
+    {
+      "chapter": "Pipes and Cisterns",
+      "kind": "standard",
+      "difficulty": "very_hard",
+      "answer_type": "single",
+      "stem": "A leak can empty a full tank in 10 hours. An inlet pipe admits water at 6 litres per hour. With the inlet open, the full tank is emptied in 14 hours. Find the capacity of the tank.",
+      "explanation": "C/10 − 6 = C/14 ⇒ C = 6×10×14/(14−10) = 210 litres.",
+      "options": [
+        {
+          "label": "202 litres",
+          "is_correct": false
+        },
+        {
+          "label": "210 litres",
+          "is_correct": true
+        },
+        {
+          "label": "226 litres",
+          "is_correct": false
+        },
+        {
+          "label": "218 litres",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Pipes and Cisterns",
+      "kind": "standard",
+      "difficulty": "very_hard",
+      "answer_type": "single",
+      "stem": "A leak can empty a full tank in 18 hours. An inlet pipe admits water at 8 litres per hour. With the inlet open, the full tank is emptied in 26 hours. Find the capacity of the tank.",
+      "explanation": "C/18 − 8 = C/26 ⇒ C = 8×18×26/(26−18) = 468 litres.",
+      "options": [
+        {
+          "label": "449 litres",
+          "is_correct": false
+        },
+        {
+          "label": "468 litres",
+          "is_correct": true
+        },
+        {
+          "label": "487 litres",
+          "is_correct": false
+        },
+        {
+          "label": "506 litres",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Pipes and Cisterns",
+      "kind": "standard",
+      "difficulty": "very_hard",
+      "answer_type": "single",
+      "stem": "A leak can empty a full tank in 18 hours. An inlet pipe admits water at 5 litres per hour. With the inlet open, the full tank is emptied in 22 hours. Find the capacity of the tank.",
+      "explanation": "C/18 − 5 = C/22 ⇒ C = 5×18×22/(22−18) = 495 litres.",
+      "options": [
+        {
+          "label": "495 litres",
+          "is_correct": true
+        },
+        {
+          "label": "535 litres",
+          "is_correct": false
+        },
+        {
+          "label": "515 litres",
+          "is_correct": false
+        },
+        {
+          "label": "475 litres",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Pipes and Cisterns",
+      "kind": "standard",
+      "difficulty": "very_hard",
+      "answer_type": "single",
+      "stem": "A leak can empty a full tank in 12 hours. An inlet pipe admits water at 12 litres per hour. With the inlet open, the full tank is emptied in 16 hours. Find the capacity of the tank.",
+      "explanation": "C/12 − 12 = C/16 ⇒ C = 12×12×16/(16−12) = 576 litres.",
+      "options": [
+        {
+          "label": "576 litres",
+          "is_correct": true
+        },
+        {
+          "label": "599 litres",
+          "is_correct": false
+        },
+        {
+          "label": "622 litres",
+          "is_correct": false
+        },
+        {
+          "label": "553 litres",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Pipes and Cisterns",
+      "kind": "standard",
+      "difficulty": "very_hard",
+      "answer_type": "single",
+      "stem": "A leak can empty a full tank in 16 hours. When a filling pipe is also opened, the tank gets filled in 16 hours. In how many hours can the filling pipe alone fill the tank?",
+      "explanation": "Filling pipe's rate = 1/16 + 1/16, so it fills the tank in 8 hours.",
+      "options": [
+        {
+          "label": "7 hours",
+          "is_correct": false
+        },
+        {
+          "label": "9 hours",
+          "is_correct": false
+        },
+        {
+          "label": "10 hours",
+          "is_correct": false
+        },
+        {
+          "label": "8 hours",
+          "is_correct": true
+        }
+      ]
+    },
+    {
+      "chapter": "Pipes and Cisterns",
+      "kind": "standard",
+      "difficulty": "very_hard",
+      "answer_type": "single",
+      "stem": "A leak can empty a full tank in 14 hours. An inlet pipe admits water at 5 litres per hour. With the inlet open, the full tank is emptied in 24 hours. Find the capacity of the tank.",
+      "explanation": "C/14 − 5 = C/24 ⇒ C = 5×14×24/(24−14) = 168 litres.",
+      "options": [
+        {
+          "label": "170 litres",
+          "is_correct": false
+        },
+        {
+          "label": "172 litres",
+          "is_correct": false
+        },
+        {
+          "label": "168 litres",
+          "is_correct": true
+        },
+        {
+          "label": "166 litres",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Pipes and Cisterns",
+      "kind": "standard",
+      "difficulty": "very_hard",
+      "answer_type": "single",
+      "stem": "A leak can empty a full tank in 20 hours. An inlet pipe admits water at 9 litres per hour. With the inlet open, the full tank is emptied in 30 hours. Find the capacity of the tank.",
+      "explanation": "C/20 − 9 = C/30 ⇒ C = 9×20×30/(30−20) = 540 litres.",
+      "options": [
+        {
+          "label": "584 litres",
+          "is_correct": false
+        },
+        {
+          "label": "518 litres",
+          "is_correct": false
+        },
+        {
+          "label": "540 litres",
+          "is_correct": true
+        },
+        {
+          "label": "562 litres",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Pipes and Cisterns",
+      "kind": "standard",
+      "difficulty": "very_hard",
+      "answer_type": "single",
+      "stem": "A leak can empty a full tank in 16 hours. An inlet pipe admits water at 12 litres per hour. With the inlet open, the full tank is emptied in 18 hours. Find the capacity of the tank.",
+      "explanation": "C/16 − 12 = C/18 ⇒ C = 12×16×18/(18−16) = 1728 litres.",
+      "options": [
+        {
+          "label": "1797 litres",
+          "is_correct": false
+        },
+        {
+          "label": "1866 litres",
+          "is_correct": false
+        },
+        {
+          "label": "1659 litres",
+          "is_correct": false
+        },
+        {
+          "label": "1728 litres",
+          "is_correct": true
+        }
+      ]
+    },
+    {
+      "chapter": "Pipes and Cisterns",
+      "kind": "standard",
+      "difficulty": "very_hard",
+      "answer_type": "single",
+      "stem": "A leak can empty a full tank in 14 hours. An inlet pipe admits water at 9 litres per hour. With the inlet open, the full tank is emptied in 21 hours. Find the capacity of the tank.",
+      "explanation": "C/14 − 9 = C/21 ⇒ C = 9×14×21/(21−14) = 378 litres.",
+      "options": [
+        {
+          "label": "408 litres",
+          "is_correct": false
+        },
+        {
+          "label": "393 litres",
+          "is_correct": false
+        },
+        {
+          "label": "378 litres",
+          "is_correct": true
+        },
+        {
+          "label": "363 litres",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Pipes and Cisterns",
+      "kind": "standard",
+      "difficulty": "very_hard",
+      "answer_type": "single",
+      "stem": "A leak can empty a full tank in 30 hours. When a filling pipe is also opened, the tank gets filled in 30 hours. In how many hours can the filling pipe alone fill the tank?",
+      "explanation": "Filling pipe's rate = 1/30 + 1/30, so it fills the tank in 15 hours.",
+      "options": [
+        {
+          "label": "16 hours",
+          "is_correct": false
+        },
+        {
+          "label": "14 hours",
+          "is_correct": false
+        },
+        {
+          "label": "15 hours",
+          "is_correct": true
+        },
+        {
+          "label": "17 hours",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Pipes and Cisterns",
+      "kind": "standard",
+      "difficulty": "very_hard",
+      "answer_type": "single",
+      "stem": "A leak can empty a full tank in 9 hours. An inlet pipe admits water at 9 litres per hour. With the inlet open, the full tank is emptied in 12 hours. Find the capacity of the tank.",
+      "explanation": "C/9 − 9 = C/12 ⇒ C = 9×9×12/(12−9) = 324 litres.",
+      "options": [
+        {
+          "label": "324 litres",
+          "is_correct": true
+        },
+        {
+          "label": "337 litres",
+          "is_correct": false
+        },
+        {
+          "label": "311 litres",
+          "is_correct": false
+        },
+        {
+          "label": "350 litres",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Pipes and Cisterns",
+      "kind": "standard",
+      "difficulty": "very_hard",
+      "answer_type": "single",
+      "stem": "A leak can empty a full tank in 18 hours. An inlet pipe admits water at 7 litres per hour. With the inlet open, the full tank is emptied in 24 hours. Find the capacity of the tank.",
+      "explanation": "C/18 − 7 = C/24 ⇒ C = 7×18×24/(24−18) = 504 litres.",
+      "options": [
+        {
+          "label": "484 litres",
+          "is_correct": false
+        },
+        {
+          "label": "504 litres",
+          "is_correct": true
+        },
+        {
+          "label": "544 litres",
+          "is_correct": false
+        },
+        {
+          "label": "524 litres",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Pipes and Cisterns",
+      "kind": "standard",
+      "difficulty": "very_hard",
+      "answer_type": "single",
+      "stem": "A leak can empty a full tank in 20 hours. An inlet pipe admits water at 4 litres per hour. With the inlet open, the full tank is emptied in 30 hours. Find the capacity of the tank.",
+      "explanation": "C/20 − 4 = C/30 ⇒ C = 4×20×30/(30−20) = 240 litres.",
+      "options": [
+        {
+          "label": "250 litres",
+          "is_correct": false
+        },
+        {
+          "label": "240 litres",
+          "is_correct": true
+        },
+        {
+          "label": "260 litres",
+          "is_correct": false
+        },
+        {
+          "label": "230 litres",
+          "is_correct": false
+        }
+      ]
+    }
+  ]
+}

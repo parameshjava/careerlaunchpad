@@ -160,6 +160,9 @@
 
 /* Exam rich content (Markdown + KaTeX + code), rendered by components/exam/RichContent.tsx.
    Scoped to .exam-rich so it never leaks into other app UI. */
+/* Inline variant (option labels, "1. <stem>" rows): the wrapper must flow on
+   the same line as surrounding text instead of breaking onto its own line. */
+.exam-rich-inline { display: inline; }
 .exam-rich :where(p) { margin: 0.25rem 0; }
 .exam-rich :where(p:first-child) { margin-top: 0; }
 .exam-rich :where(p:last-child) { margin-bottom: 0; }

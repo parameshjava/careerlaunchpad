@@ -18,7 +18,7 @@ export type College = { id: string; name: string; place: string | null; state?: 
 export type Form = {
   full_name: string; phone: string; gender: string;
   city_village: string; district: string; state: string;
-  college_id: string; degree: string; branch: string; year_of_study: string;
+  college_id: string; roll_number: string; degree: string; branch: string; year_of_study: string;
   graduation_year: string; cgpa: string;
   career_goal_ids: string[]; primary_career_goal_id: string;
   skill_assessment: Record<string, number>;
@@ -28,7 +28,7 @@ export type Form = {
 
 export const EMPTY: Form = {
   full_name: "", phone: "", gender: "", city_village: "", district: "", state: "",
-  college_id: "", degree: "", branch: "", year_of_study: "", graduation_year: "", cgpa: "",
+  college_id: "", roll_number: "", degree: "", branch: "", year_of_study: "", graduation_year: "", cgpa: "",
   career_goal_ids: [], primary_career_goal_id: "", skill_assessment: {},
   skills: [], interests: [], preferred_mentor_pref_id: "", biggest_challenge: "",
 };
@@ -40,6 +40,7 @@ export const FIELD_LABELS: Record<string, string> = {
   full_name: "Full name",
   phone: "Mobile number",
   college_id: "College",
+  roll_number: "Roll number",
   career_goal_ids: "Career goals",
   primary_career_goal_id: "Primary career goal",
 };
@@ -50,7 +51,7 @@ export const selectClass =
 // Fields each step owns (must match STEP_FIELDS in lib/registration.ts).
 export const STEP_PAYLOAD: Record<number, (f: Form) => Record<string, unknown>> = {
   1: (f) => ({ full_name: f.full_name, phone: f.phone, gender: f.gender, city_village: f.city_village, district: f.district, state: f.state }),
-  2: (f) => ({ college_id: f.college_id, degree: f.degree, branch: f.branch, year_of_study: f.year_of_study, graduation_year: f.graduation_year, cgpa: f.cgpa }),
+  2: (f) => ({ college_id: f.college_id, roll_number: f.roll_number, degree: f.degree, branch: f.branch, year_of_study: f.year_of_study, graduation_year: f.graduation_year, cgpa: f.cgpa }),
   3: (f) => ({ career_goal_ids: f.career_goal_ids, primary_career_goal_id: f.primary_career_goal_id }),
   4: (f) => ({ skill_assessment: f.skill_assessment }),
   5: (f) => ({ skills: f.skills, interests: f.interests }),
@@ -106,6 +107,7 @@ export function StepBody({
       <div className="sm:col-span-2">
         <CollegePicker college={college} onPick={(c) => { onPickCollege(c); set("college_id", c?.id ?? ""); }} />
       </div>
+      <Field label="Roll Number" required><Input value={f.roll_number} onChange={(e) => set("roll_number", e.target.value)} placeholder="e.g. 21B81A0512" /></Field>
       <Field label="Degree"><SelectRef value={f.degree} onChange={(v) => set("degree", v)} options={refs.degree} /></Field>
       <Field label="Branch"><SelectRef value={f.branch} onChange={(v) => set("branch", v)} options={refs.branch} /></Field>
       <Field label="Year of Study"><SelectRef value={f.year_of_study} onChange={(v) => set("year_of_study", v)} options={refs.year_of_study} /></Field>

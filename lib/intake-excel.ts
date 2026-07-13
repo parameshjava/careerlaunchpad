@@ -28,6 +28,7 @@ type BaseCol =
 const BASE_COLUMNS: BaseCol[] = [
   { key: "email", header: "Email", kind: "email" },
   { key: "full_name", header: "Full Name", kind: "text" },
+  { key: "roll_number", header: "Roll Number", kind: "text" },
   { key: "phone", header: "Mobile Number", kind: "text" },
   { key: "gender", header: "Gender", kind: "refSingle", ref: "ref_gender" },
   { key: "city_village", header: "Village / Mandal / City", kind: "text" },

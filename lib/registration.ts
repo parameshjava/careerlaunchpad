@@ -26,7 +26,7 @@ export const REF_TABLES: Record<string, string> = {
 /** student_profile columns each step may write (the form's per-step field map). */
 export const STEP_FIELDS: Record<number, string[]> = {
   1: ["full_name", "phone", "gender", "city_village", "district", "state"],
-  2: ["college_id", "degree", "branch", "year_of_study", "graduation_year", "cgpa"],
+  2: ["college_id", "roll_number", "degree", "branch", "year_of_study", "graduation_year", "cgpa"],
   3: ["career_goal_ids", "primary_career_goal_id"],
   4: ["skill_assessment"],
   5: ["skills", "interests"],
@@ -45,6 +45,7 @@ export const REQUIRED_FIELDS: { step: number; field: string }[] = [
   { step: 1, field: "full_name" },
   { step: 1, field: "phone" },
   { step: 2, field: "college_id" },
+  { step: 2, field: "roll_number" },
 ];
 
 type Refs = {
@@ -122,6 +123,13 @@ export async function validatePartial(
         const p = str(v);
         if (p && !/^[+()\d][\d\s().-]{5,19}$/.test(p)) errors.push("phone: invalid format");
         else clean[field] = p || null;
+        break;
+      }
+      case "roll_number": {
+        const s = str(v);
+        if (s && (s.length > 40 || !/^[A-Za-z0-9][A-Za-z0-9/-]*$/.test(s)))
+          errors.push("roll_number: invalid format");
+        else clean[field] = s || null;
         break;
       }
       case "gender":

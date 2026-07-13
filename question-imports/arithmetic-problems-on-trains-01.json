@@ -1,0 +1,5205 @@
+{
+  "subject": "Arithmetic",
+  "questions": [
+    {
+      "chapter": "Problems on Trains",
+      "kind": "standard",
+      "difficulty": "easy",
+      "answer_type": "single",
+      "stem": "A 266 m long train crosses a pole in 19 seconds. Find its speed.",
+      "explanation": "Speed = length/time = 266/19 = 14 m/s.",
+      "options": [
+        {
+          "label": "13 m/s",
+          "is_correct": false
+        },
+        {
+          "label": "14 m/s",
+          "is_correct": true
+        },
+        {
+          "label": "15 m/s",
+          "is_correct": false
+        },
+        {
+          "label": "16 m/s",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Problems on Trains",
+      "kind": "standard",
+      "difficulty": "easy",
+      "answer_type": "single",
+      "stem": "A train 136 m long is moving at 34 m/s. How long will it take to cross a signal pole?",
+      "explanation": "Time = length/speed = 136/34 = 4 seconds.",
+      "options": [
+        {
+          "label": "5 seconds",
+          "is_correct": false
+        },
+        {
+          "label": "4 seconds",
+          "is_correct": true
+        },
+        {
+          "label": "3 seconds",
+          "is_correct": false
+        },
+        {
+          "label": "6 seconds",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Problems on Trains",
+      "kind": "standard",
+      "difficulty": "easy",
+      "answer_type": "single",
+      "stem": "A train 160 m long is moving at 10 m/s. How long will it take to cross a signal pole?",
+      "explanation": "Time = length/speed = 160/10 = 16 seconds.",
+      "options": [
+        {
+          "label": "18 seconds",
+          "is_correct": false
+        },
+        {
+          "label": "17 seconds",
+          "is_correct": false
+        },
+        {
+          "label": "15 seconds",
+          "is_correct": false
+        },
+        {
+          "label": "16 seconds",
+          "is_correct": true
+        }
+      ]
+    },
+    {
+      "chapter": "Problems on Trains",
+      "kind": "standard",
+      "difficulty": "easy",
+      "answer_type": "single",
+      "stem": "A 340 m long train crosses a pole in 10 seconds. Find its speed.",
+      "explanation": "Speed = length/time = 340/10 = 34 m/s.",
+      "options": [
+        {
+          "label": "34 m/s",
+          "is_correct": true
+        },
+        {
+          "label": "35 m/s",
+          "is_correct": false
+        },
+        {
+          "label": "33 m/s",
+          "is_correct": false
+        },
+        {
+          "label": "36 m/s",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Problems on Trains",
+      "kind": "standard",
+      "difficulty": "easy",
+      "answer_type": "single",
+      "stem": "A train 540 m long is moving at 30 m/s. How long will it take to cross a signal pole?",
+      "explanation": "Time = length/speed = 540/30 = 18 seconds.",
+      "options": [
+        {
+          "label": "19 seconds",
+          "is_correct": false
+        },
+        {
+          "label": "18 seconds",
+          "is_correct": true
+        },
+        {
+          "label": "20 seconds",
+          "is_correct": false
+        },
+        {
+          "label": "17 seconds",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Problems on Trains",
+      "kind": "standard",
+      "difficulty": "easy",
+      "answer_type": "single",
+      "stem": "A train 286 m long is moving at 26 m/s. How long will it take to cross a signal pole?",
+      "explanation": "Time = length/speed = 286/26 = 11 seconds.",
+      "options": [
+        {
+          "label": "12 seconds",
+          "is_correct": false
+        },
+        {
+          "label": "11 seconds",
+          "is_correct": true
+        },
+        {
+          "label": "13 seconds",
+          "is_correct": false
+        },
+        {
+          "label": "10 seconds",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Problems on Trains",
+      "kind": "standard",
+      "difficulty": "easy",
+      "answer_type": "single",
+      "stem": "A 170 m long train crosses a pole in 17 seconds. Find its speed.",
+      "explanation": "Speed = length/time = 170/17 = 10 m/s.",
+      "options": [
+        {
+          "label": "11 m/s",
+          "is_correct": false
+        },
+        {
+          "label": "9 m/s",
+          "is_correct": false
+        },
+        {
+          "label": "10 m/s",
+          "is_correct": true
+        },
+        {
+          "label": "12 m/s",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Problems on Trains",
+      "kind": "standard",
+      "difficulty": "easy",
+      "answer_type": "single",
+      "stem": "A 600 m long train crosses a pole in 15 seconds. Find its speed.",
+      "explanation": "Speed = length/time = 600/15 = 40 m/s.",
+      "options": [
+        {
+          "label": "40 m/s",
+          "is_correct": true
+        },
+        {
+          "label": "44 m/s",
+          "is_correct": false
+        },
+        {
+          "label": "42 m/s",
+          "is_correct": false
+        },
+        {
+          "label": "38 m/s",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Problems on Trains",
+      "kind": "standard",
+      "difficulty": "easy",
+      "answer_type": "single",
+      "stem": "A train 720 m long is moving at 36 m/s. How long will it take to cross a signal pole?",
+      "explanation": "Time = length/speed = 720/36 = 20 seconds.",
+      "options": [
+        {
+          "label": "19 seconds",
+          "is_correct": false
+        },
+        {
+          "label": "21 seconds",
+          "is_correct": false
+        },
+        {
+          "label": "20 seconds",
+          "is_correct": true
+        },
+        {
+          "label": "22 seconds",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Problems on Trains",
+      "kind": "standard",
+      "difficulty": "easy",
+      "answer_type": "single",
+      "stem": "A train running at 27 m/s crosses a pole in 19 seconds. Find the length of the train.",
+      "explanation": "Length = speed × time = 27 × 19 = 513 m.",
+      "options": [
+        {
+          "label": "534 m",
+          "is_correct": false
+        },
+        {
+          "label": "492 m",
+          "is_correct": false
+        },
+        {
+          "label": "555 m",
+          "is_correct": false
+        },
+        {
+          "label": "513 m",
+          "is_correct": true
+        }
+      ]
+    },
+    {
+      "chapter": "Problems on Trains",
+      "kind": "standard",
+      "difficulty": "easy",
+      "answer_type": "single",
+      "stem": "A 228 m long train crosses a pole in 19 seconds. Find its speed.",
+      "explanation": "Speed = length/time = 228/19 = 12 m/s.",
+      "options": [
+        {
+          "label": "11 m/s",
+          "is_correct": false
+        },
+        {
+          "label": "14 m/s",
+          "is_correct": false
+        },
+        {
+          "label": "13 m/s",
+          "is_correct": false
+        },
+        {
+          "label": "12 m/s",
+          "is_correct": true
+        }
+      ]
+    },
+    {
+      "chapter": "Problems on Trains",
+      "kind": "standard",
+      "difficulty": "easy",
+      "answer_type": "single",
+      "stem": "A train 56 m long is moving at 14 m/s. How long will it take to cross a signal pole?",
+      "explanation": "Time = length/speed = 56/14 = 4 seconds.",
+      "options": [
+        {
+          "label": "5 seconds",
+          "is_correct": false
+        },
+        {
+          "label": "6 seconds",
+          "is_correct": false
+        },
+        {
+          "label": "3 seconds",
+          "is_correct": false
+        },
+        {
+          "label": "4 seconds",
+          "is_correct": true
+        }
+      ]
+    },
+    {
+      "chapter": "Problems on Trains",
+      "kind": "standard",
+      "difficulty": "easy",
+      "answer_type": "single",
+      "stem": "A train 504 m long is moving at 36 m/s. How long will it take to cross a signal pole?",
+      "explanation": "Time = length/speed = 504/36 = 14 seconds.",
+      "options": [
+        {
+          "label": "13 seconds",
+          "is_correct": false
+        },
+        {
+          "label": "15 seconds",
+          "is_correct": false
+        },
+        {
+          "label": "14 seconds",
+          "is_correct": true
+        },
+        {
+          "label": "16 seconds",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Problems on Trains",
+      "kind": "standard",
+      "difficulty": "easy",
+      "answer_type": "single",
+      "stem": "A 270 m long train crosses a pole in 9 seconds. Find its speed.",
+      "explanation": "Speed = length/time = 270/9 = 30 m/s.",
+      "options": [
+        {
+          "label": "32 m/s",
+          "is_correct": false
+        },
+        {
+          "label": "30 m/s",
+          "is_correct": true
+        },
+        {
+          "label": "29 m/s",
+          "is_correct": false
+        },
+        {
+          "label": "31 m/s",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Problems on Trains",
+      "kind": "standard",
+      "difficulty": "easy",
+      "answer_type": "single",
+      "stem": "A train 70 m long is moving at 14 m/s. How long will it take to cross a signal pole?",
+      "explanation": "Time = length/speed = 70/14 = 5 seconds.",
+      "options": [
+        {
+          "label": "7 seconds",
+          "is_correct": false
+        },
+        {
+          "label": "5 seconds",
+          "is_correct": true
+        },
+        {
+          "label": "6 seconds",
+          "is_correct": false
+        },
+        {
+          "label": "4 seconds",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Problems on Trains",
+      "kind": "standard",
+      "difficulty": "easy",
+      "answer_type": "single",
+      "stem": "A train 198 m long is moving at 22 m/s. How long will it take to cross a signal pole?",
+      "explanation": "Time = length/speed = 198/22 = 9 seconds.",
+      "options": [
+        {
+          "label": "11 seconds",
+          "is_correct": false
+        },
+        {
+          "label": "9 seconds",
+          "is_correct": true
+        },
+        {
+          "label": "10 seconds",
+          "is_correct": false
+        },
+        {
+          "label": "8 seconds",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Problems on Trains",
+      "kind": "standard",
+      "difficulty": "easy",
+      "answer_type": "single",
+      "stem": "A train running at 29 m/s crosses a pole in 11 seconds. Find the length of the train.",
+      "explanation": "Length = speed × time = 29 × 11 = 319 m.",
+      "options": [
+        {
+          "label": "332 m",
+          "is_correct": false
+        },
+        {
+          "label": "306 m",
+          "is_correct": false
+        },
+        {
+          "label": "319 m",
+          "is_correct": true
+        },
+        {
+          "label": "345 m",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Problems on Trains",
+      "kind": "standard",
+      "difficulty": "easy",
+      "answer_type": "single",
+      "stem": "A train 48 m long is moving at 12 m/s. How long will it take to cross a signal pole?",
+      "explanation": "Time = length/speed = 48/12 = 4 seconds.",
+      "options": [
+        {
+          "label": "4 seconds",
+          "is_correct": true
+        },
+        {
+          "label": "3 seconds",
+          "is_correct": false
+        },
+        {
+          "label": "6 seconds",
+          "is_correct": false
+        },
+        {
+          "label": "5 seconds",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Problems on Trains",
+      "kind": "standard",
+      "difficulty": "easy",
+      "answer_type": "single",
+      "stem": "A train running at 27 m/s crosses a pole in 18 seconds. Find the length of the train.",
+      "explanation": "Length = speed × time = 27 × 18 = 486 m.",
+      "options": [
+        {
+          "label": "524 m",
+          "is_correct": false
+        },
+        {
+          "label": "505 m",
+          "is_correct": false
+        },
+        {
+          "label": "467 m",
+          "is_correct": false
+        },
+        {
+          "label": "486 m",
+          "is_correct": true
+        }
+      ]
+    },
+    {
+      "chapter": "Problems on Trains",
+      "kind": "standard",
+      "difficulty": "easy",
+      "answer_type": "single",
+      "stem": "A train 100 m long is moving at 20 m/s. How long will it take to cross a signal pole?",
+      "explanation": "Time = length/speed = 100/20 = 5 seconds.",
+      "options": [
+        {
+          "label": "5 seconds",
+          "is_correct": true
+        },
+        {
+          "label": "4 seconds",
+          "is_correct": false
+        },
+        {
+          "label": "6 seconds",
+          "is_correct": false
+        },
+        {
+          "label": "7 seconds",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Problems on Trains",
+      "kind": "standard",
+      "difficulty": "easy",
+      "answer_type": "single",
+      "stem": "A 608 m long train crosses a pole in 16 seconds. Find its speed.",
+      "explanation": "Speed = length/time = 608/16 = 38 m/s.",
+      "options": [
+        {
+          "label": "40 m/s",
+          "is_correct": false
+        },
+        {
+          "label": "39 m/s",
+          "is_correct": false
+        },
+        {
+          "label": "37 m/s",
+          "is_correct": false
+        },
+        {
+          "label": "38 m/s",
+          "is_correct": true
+        }
+      ]
+    },
+    {
+      "chapter": "Problems on Trains",
+      "kind": "standard",
+      "difficulty": "easy",
+      "answer_type": "single",
+      "stem": "A train 270 m long is moving at 30 m/s. How long will it take to cross a signal pole?",
+      "explanation": "Time = length/speed = 270/30 = 9 seconds.",
+      "options": [
+        {
+          "label": "9 seconds",
+          "is_correct": true
+        },
+        {
+          "label": "10 seconds",
+          "is_correct": false
+        },
+        {
+          "label": "11 seconds",
+          "is_correct": false
+        },
+        {
+          "label": "8 seconds",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Problems on Trains",
+      "kind": "standard",
+      "difficulty": "easy",
+      "answer_type": "single",
+      "stem": "A train running at 12 m/s crosses a pole in 12 seconds. Find the length of the train.",
+      "explanation": "Length = speed × time = 12 × 12 = 144 m.",
+      "options": [
+        {
+          "label": "146 m",
+          "is_correct": false
+        },
+        {
+          "label": "142 m",
+          "is_correct": false
+        },
+        {
+          "label": "144 m",
+          "is_correct": true
+        },
+        {
+          "label": "148 m",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Problems on Trains",
+      "kind": "standard",
+      "difficulty": "easy",
+      "answer_type": "single",
+      "stem": "A 700 m long train crosses a pole in 20 seconds. Find its speed.",
+      "explanation": "Speed = length/time = 700/20 = 35 m/s.",
+      "options": [
+        {
+          "label": "36 m/s",
+          "is_correct": false
+        },
+        {
+          "label": "37 m/s",
+          "is_correct": false
+        },
+        {
+          "label": "35 m/s",
+          "is_correct": true
+        },
+        {
+          "label": "34 m/s",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Problems on Trains",
+      "kind": "standard",
+      "difficulty": "easy",
+      "answer_type": "single",
+      "stem": "A train running at 14 m/s crosses a pole in 24 seconds. Find the length of the train.",
+      "explanation": "Length = speed × time = 14 × 24 = 336 m.",
+      "options": [
+        {
+          "label": "362 m",
+          "is_correct": false
+        },
+        {
+          "label": "336 m",
+          "is_correct": true
+        },
+        {
+          "label": "323 m",
+          "is_correct": false
+        },
+        {
+          "label": "349 m",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Problems on Trains",
+      "kind": "standard",
+      "difficulty": "easy",
+      "answer_type": "single",
+      "stem": "A 702 m long train crosses a pole in 18 seconds. Find its speed.",
+      "explanation": "Speed = length/time = 702/18 = 39 m/s.",
+      "options": [
+        {
+          "label": "39 m/s",
+          "is_correct": true
+        },
+        {
+          "label": "41 m/s",
+          "is_correct": false
+        },
+        {
+          "label": "40 m/s",
+          "is_correct": false
+        },
+        {
+          "label": "38 m/s",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Problems on Trains",
+      "kind": "standard",
+      "difficulty": "easy",
+      "answer_type": "single",
+      "stem": "A train running at 40 m/s crosses a pole in 24 seconds. Find the length of the train.",
+      "explanation": "Length = speed × time = 40 × 24 = 960 m.",
+      "options": [
+        {
+          "label": "922 m",
+          "is_correct": false
+        },
+        {
+          "label": "998 m",
+          "is_correct": false
+        },
+        {
+          "label": "1036 m",
+          "is_correct": false
+        },
+        {
+          "label": "960 m",
+          "is_correct": true
+        }
+      ]
+    },
+    {
+      "chapter": "Problems on Trains",
+      "kind": "standard",
+      "difficulty": "easy",
+      "answer_type": "single",
+      "stem": "A train 240 m long is moving at 30 m/s. How long will it take to cross a signal pole?",
+      "explanation": "Time = length/speed = 240/30 = 8 seconds.",
+      "options": [
+        {
+          "label": "7 seconds",
+          "is_correct": false
+        },
+        {
+          "label": "9 seconds",
+          "is_correct": false
+        },
+        {
+          "label": "10 seconds",
+          "is_correct": false
+        },
+        {
+          "label": "8 seconds",
+          "is_correct": true
+        }
+      ]
+    },
+    {
+      "chapter": "Problems on Trains",
+      "kind": "standard",
+      "difficulty": "easy",
+      "answer_type": "single",
+      "stem": "A 420 m long train crosses a pole in 14 seconds. Find its speed.",
+      "explanation": "Speed = length/time = 420/14 = 30 m/s.",
+      "options": [
+        {
+          "label": "30 m/s",
+          "is_correct": true
+        },
+        {
+          "label": "29 m/s",
+          "is_correct": false
+        },
+        {
+          "label": "32 m/s",
+          "is_correct": false
+        },
+        {
+          "label": "31 m/s",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Problems on Trains",
+      "kind": "standard",
+      "difficulty": "easy",
+      "answer_type": "single",
+      "stem": "A train running at 11 m/s crosses a pole in 4 seconds. Find the length of the train.",
+      "explanation": "Length = speed × time = 11 × 4 = 44 m.",
+      "options": [
+        {
+          "label": "42 m",
+          "is_correct": false
+        },
+        {
+          "label": "46 m",
+          "is_correct": false
+        },
+        {
+          "label": "48 m",
+          "is_correct": false
+        },
+        {
+          "label": "44 m",
+          "is_correct": true
+        }
+      ]
+    },
+    {
+      "chapter": "Problems on Trains",
+      "kind": "standard",
+      "difficulty": "easy",
+      "answer_type": "single",
+      "stem": "A train running at 31 m/s crosses a pole in 7 seconds. Find the length of the train.",
+      "explanation": "Length = speed × time = 31 × 7 = 217 m.",
+      "options": [
+        {
+          "label": "235 m",
+          "is_correct": false
+        },
+        {
+          "label": "208 m",
+          "is_correct": false
+        },
+        {
+          "label": "217 m",
+          "is_correct": true
+        },
+        {
+          "label": "226 m",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Problems on Trains",
+      "kind": "standard",
+      "difficulty": "easy",
+      "answer_type": "single",
+      "stem": "A train 175 m long is moving at 25 m/s. How long will it take to cross a signal pole?",
+      "explanation": "Time = length/speed = 175/25 = 7 seconds.",
+      "options": [
+        {
+          "label": "9 seconds",
+          "is_correct": false
+        },
+        {
+          "label": "7 seconds",
+          "is_correct": true
+        },
+        {
+          "label": "8 seconds",
+          "is_correct": false
+        },
+        {
+          "label": "6 seconds",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Problems on Trains",
+      "kind": "standard",
+      "difficulty": "easy",
+      "answer_type": "single",
+      "stem": "A train 378 m long is moving at 21 m/s. How long will it take to cross a signal pole?",
+      "explanation": "Time = length/speed = 378/21 = 18 seconds.",
+      "options": [
+        {
+          "label": "20 seconds",
+          "is_correct": false
+        },
+        {
+          "label": "17 seconds",
+          "is_correct": false
+        },
+        {
+          "label": "18 seconds",
+          "is_correct": true
+        },
+        {
+          "label": "19 seconds",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Problems on Trains",
+      "kind": "standard",
+      "difficulty": "easy",
+      "answer_type": "single",
+      "stem": "A 204 m long train crosses a pole in 6 seconds. Find its speed.",
+      "explanation": "Speed = length/time = 204/6 = 34 m/s.",
+      "options": [
+        {
+          "label": "34 m/s",
+          "is_correct": true
+        },
+        {
+          "label": "35 m/s",
+          "is_correct": false
+        },
+        {
+          "label": "33 m/s",
+          "is_correct": false
+        },
+        {
+          "label": "36 m/s",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Problems on Trains",
+      "kind": "standard",
+      "difficulty": "easy",
+      "answer_type": "single",
+      "stem": "A train running at 34 m/s crosses a pole in 21 seconds. Find the length of the train.",
+      "explanation": "Length = speed × time = 34 × 21 = 714 m.",
+      "options": [
+        {
+          "label": "714 m",
+          "is_correct": true
+        },
+        {
+          "label": "685 m",
+          "is_correct": false
+        },
+        {
+          "label": "772 m",
+          "is_correct": false
+        },
+        {
+          "label": "743 m",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Problems on Trains",
+      "kind": "standard",
+      "difficulty": "easy",
+      "answer_type": "single",
+      "stem": "A train 64 m long is moving at 16 m/s. How long will it take to cross a signal pole?",
+      "explanation": "Time = length/speed = 64/16 = 4 seconds.",
+      "options": [
+        {
+          "label": "3 seconds",
+          "is_correct": false
+        },
+        {
+          "label": "5 seconds",
+          "is_correct": false
+        },
+        {
+          "label": "6 seconds",
+          "is_correct": false
+        },
+        {
+          "label": "4 seconds",
+          "is_correct": true
+        }
+      ]
+    },
+    {
+      "chapter": "Problems on Trains",
+      "kind": "standard",
+      "difficulty": "easy",
+      "answer_type": "single",
+      "stem": "A 272 m long train crosses a pole in 16 seconds. Find its speed.",
+      "explanation": "Speed = length/time = 272/16 = 17 m/s.",
+      "options": [
+        {
+          "label": "17 m/s",
+          "is_correct": true
+        },
+        {
+          "label": "16 m/s",
+          "is_correct": false
+        },
+        {
+          "label": "19 m/s",
+          "is_correct": false
+        },
+        {
+          "label": "18 m/s",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Problems on Trains",
+      "kind": "standard",
+      "difficulty": "easy",
+      "answer_type": "single",
+      "stem": "A train 171 m long is moving at 19 m/s. How long will it take to cross a signal pole?",
+      "explanation": "Time = length/speed = 171/19 = 9 seconds.",
+      "options": [
+        {
+          "label": "8 seconds",
+          "is_correct": false
+        },
+        {
+          "label": "11 seconds",
+          "is_correct": false
+        },
+        {
+          "label": "10 seconds",
+          "is_correct": false
+        },
+        {
+          "label": "9 seconds",
+          "is_correct": true
+        }
+      ]
+    },
+    {
+      "chapter": "Problems on Trains",
+      "kind": "standard",
+      "difficulty": "easy",
+      "answer_type": "single",
+      "stem": "A 185 m long train crosses a pole in 5 seconds. Find its speed.",
+      "explanation": "Speed = length/time = 185/5 = 37 m/s.",
+      "options": [
+        {
+          "label": "37 m/s",
+          "is_correct": true
+        },
+        {
+          "label": "38 m/s",
+          "is_correct": false
+        },
+        {
+          "label": "39 m/s",
+          "is_correct": false
+        },
+        {
+          "label": "36 m/s",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Problems on Trains",
+      "kind": "standard",
+      "difficulty": "easy",
+      "answer_type": "single",
+      "stem": "A train 180 m long is moving at 30 m/s. How long will it take to cross a signal pole?",
+      "explanation": "Time = length/speed = 180/30 = 6 seconds.",
+      "options": [
+        {
+          "label": "6 seconds",
+          "is_correct": true
+        },
+        {
+          "label": "7 seconds",
+          "is_correct": false
+        },
+        {
+          "label": "8 seconds",
+          "is_correct": false
+        },
+        {
+          "label": "5 seconds",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Problems on Trains",
+      "kind": "standard",
+      "difficulty": "easy",
+      "answer_type": "single",
+      "stem": "A train 592 m long is moving at 37 m/s. How long will it take to cross a signal pole?",
+      "explanation": "Time = length/speed = 592/37 = 16 seconds.",
+      "options": [
+        {
+          "label": "18 seconds",
+          "is_correct": false
+        },
+        {
+          "label": "16 seconds",
+          "is_correct": true
+        },
+        {
+          "label": "15 seconds",
+          "is_correct": false
+        },
+        {
+          "label": "17 seconds",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Problems on Trains",
+      "kind": "standard",
+      "difficulty": "easy",
+      "answer_type": "single",
+      "stem": "A train running at 26 m/s crosses a pole in 22 seconds. Find the length of the train.",
+      "explanation": "Length = speed × time = 26 × 22 = 572 m.",
+      "options": [
+        {
+          "label": "572 m",
+          "is_correct": true
+        },
+        {
+          "label": "549 m",
+          "is_correct": false
+        },
+        {
+          "label": "618 m",
+          "is_correct": false
+        },
+        {
+          "label": "595 m",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Problems on Trains",
+      "kind": "standard",
+      "difficulty": "easy",
+      "answer_type": "single",
+      "stem": "A train 220 m long is moving at 22 m/s. How long will it take to cross a signal pole?",
+      "explanation": "Time = length/speed = 220/22 = 10 seconds.",
+      "options": [
+        {
+          "label": "12 seconds",
+          "is_correct": false
+        },
+        {
+          "label": "10 seconds",
+          "is_correct": true
+        },
+        {
+          "label": "11 seconds",
+          "is_correct": false
+        },
+        {
+          "label": "9 seconds",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Problems on Trains",
+      "kind": "standard",
+      "difficulty": "easy",
+      "answer_type": "single",
+      "stem": "A 136 m long train crosses a pole in 8 seconds. Find its speed.",
+      "explanation": "Speed = length/time = 136/8 = 17 m/s.",
+      "options": [
+        {
+          "label": "17 m/s",
+          "is_correct": true
+        },
+        {
+          "label": "18 m/s",
+          "is_correct": false
+        },
+        {
+          "label": "19 m/s",
+          "is_correct": false
+        },
+        {
+          "label": "16 m/s",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Problems on Trains",
+      "kind": "standard",
+      "difficulty": "easy",
+      "answer_type": "single",
+      "stem": "A 551 m long train crosses a pole in 19 seconds. Find its speed.",
+      "explanation": "Speed = length/time = 551/19 = 29 m/s.",
+      "options": [
+        {
+          "label": "29 m/s",
+          "is_correct": true
+        },
+        {
+          "label": "28 m/s",
+          "is_correct": false
+        },
+        {
+          "label": "31 m/s",
+          "is_correct": false
+        },
+        {
+          "label": "30 m/s",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Problems on Trains",
+      "kind": "standard",
+      "difficulty": "easy",
+      "answer_type": "single",
+      "stem": "A 500 m long train crosses a pole in 20 seconds. Find its speed.",
+      "explanation": "Speed = length/time = 500/20 = 25 m/s.",
+      "options": [
+        {
+          "label": "27 m/s",
+          "is_correct": false
+        },
+        {
+          "label": "24 m/s",
+          "is_correct": false
+        },
+        {
+          "label": "25 m/s",
+          "is_correct": true
+        },
+        {
+          "label": "26 m/s",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Problems on Trains",
+      "kind": "standard",
+      "difficulty": "easy",
+      "answer_type": "single",
+      "stem": "A train 384 m long is moving at 24 m/s. How long will it take to cross a signal pole?",
+      "explanation": "Time = length/speed = 384/24 = 16 seconds.",
+      "options": [
+        {
+          "label": "18 seconds",
+          "is_correct": false
+        },
+        {
+          "label": "16 seconds",
+          "is_correct": true
+        },
+        {
+          "label": "17 seconds",
+          "is_correct": false
+        },
+        {
+          "label": "15 seconds",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Problems on Trains",
+      "kind": "standard",
+      "difficulty": "easy",
+      "answer_type": "single",
+      "stem": "A train running at 13 m/s crosses a pole in 14 seconds. Find the length of the train.",
+      "explanation": "Length = speed × time = 13 × 14 = 182 m.",
+      "options": [
+        {
+          "label": "184 m",
+          "is_correct": false
+        },
+        {
+          "label": "180 m",
+          "is_correct": false
+        },
+        {
+          "label": "182 m",
+          "is_correct": true
+        },
+        {
+          "label": "186 m",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Problems on Trains",
+      "kind": "standard",
+      "difficulty": "easy",
+      "answer_type": "single",
+      "stem": "A train running at 26 m/s crosses a pole in 20 seconds. Find the length of the train.",
+      "explanation": "Length = speed × time = 26 × 20 = 520 m.",
+      "options": [
+        {
+          "label": "520 m",
+          "is_correct": true
+        },
+        {
+          "label": "541 m",
+          "is_correct": false
+        },
+        {
+          "label": "499 m",
+          "is_correct": false
+        },
+        {
+          "label": "562 m",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Problems on Trains",
+      "kind": "standard",
+      "difficulty": "easy",
+      "answer_type": "single",
+      "stem": "A train 660 m long is moving at 33 m/s. How long will it take to cross a signal pole?",
+      "explanation": "Time = length/speed = 660/33 = 20 seconds.",
+      "options": [
+        {
+          "label": "20 seconds",
+          "is_correct": true
+        },
+        {
+          "label": "19 seconds",
+          "is_correct": false
+        },
+        {
+          "label": "21 seconds",
+          "is_correct": false
+        },
+        {
+          "label": "22 seconds",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Problems on Trains",
+      "kind": "standard",
+      "difficulty": "medium",
+      "answer_type": "single",
+      "stem": "A train 380 m long is moving at 72 km/h. How long will it take to cross a signal post?",
+      "explanation": "72 km/h = 20 m/s; time = 380/20 = 19 seconds.",
+      "options": [
+        {
+          "label": "19 seconds",
+          "is_correct": true
+        },
+        {
+          "label": "20 seconds",
+          "is_correct": false
+        },
+        {
+          "label": "18 seconds",
+          "is_correct": false
+        },
+        {
+          "label": "21 seconds",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Problems on Trains",
+      "kind": "standard",
+      "difficulty": "medium",
+      "answer_type": "single",
+      "stem": "A train moving at 37 m/s crosses a 555 m long platform in 40 seconds. Find the length of the train.",
+      "explanation": "Total distance = 37×40 = 1480 m; train length = 1480 − 555 = 925 m.",
+      "options": [
+        {
+          "label": "999 m",
+          "is_correct": false
+        },
+        {
+          "label": "925 m",
+          "is_correct": true
+        },
+        {
+          "label": "888 m",
+          "is_correct": false
+        },
+        {
+          "label": "962 m",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Problems on Trains",
+      "kind": "standard",
+      "difficulty": "medium",
+      "answer_type": "single",
+      "stem": "A train moving at 23 m/s crosses a 161 m long platform in 19 seconds. Find the length of the train.",
+      "explanation": "Total distance = 23×19 = 437 m; train length = 437 − 161 = 276 m.",
+      "options": [
+        {
+          "label": "276 m",
+          "is_correct": true
+        },
+        {
+          "label": "265 m",
+          "is_correct": false
+        },
+        {
+          "label": "298 m",
+          "is_correct": false
+        },
+        {
+          "label": "287 m",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Problems on Trains",
+      "kind": "standard",
+      "difficulty": "medium",
+      "answer_type": "single",
+      "stem": "A train moving at 37 m/s crosses a 111 m long platform in 32 seconds. Find the length of the train.",
+      "explanation": "Total distance = 37×32 = 1184 m; train length = 1184 − 111 = 1073 m.",
+      "options": [
+        {
+          "label": "1030 m",
+          "is_correct": false
+        },
+        {
+          "label": "1073 m",
+          "is_correct": true
+        },
+        {
+          "label": "1116 m",
+          "is_correct": false
+        },
+        {
+          "label": "1159 m",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Problems on Trains",
+      "kind": "standard",
+      "difficulty": "medium",
+      "answer_type": "single",
+      "stem": "A train 532 m long, moving at 38 m/s, crosses a platform 570 m long. Find the time taken.",
+      "explanation": "Distance = 532+570 = 1102 m; time = 1102/38 = 29 seconds.",
+      "options": [
+        {
+          "label": "28 seconds",
+          "is_correct": false
+        },
+        {
+          "label": "31 seconds",
+          "is_correct": false
+        },
+        {
+          "label": "30 seconds",
+          "is_correct": false
+        },
+        {
+          "label": "29 seconds",
+          "is_correct": true
+        }
+      ]
+    },
+    {
+      "chapter": "Problems on Trains",
+      "kind": "standard",
+      "difficulty": "medium",
+      "answer_type": "single",
+      "stem": "A train 100 m long is moving at 72 km/h. How long will it take to cross a signal post?",
+      "explanation": "72 km/h = 20 m/s; time = 100/20 = 5 seconds.",
+      "options": [
+        {
+          "label": "7 seconds",
+          "is_correct": false
+        },
+        {
+          "label": "6 seconds",
+          "is_correct": false
+        },
+        {
+          "label": "4 seconds",
+          "is_correct": false
+        },
+        {
+          "label": "5 seconds",
+          "is_correct": true
+        }
+      ]
+    },
+    {
+      "chapter": "Problems on Trains",
+      "kind": "standard",
+      "difficulty": "medium",
+      "answer_type": "single",
+      "stem": "A train moving at 11 m/s crosses a 77 m long platform in 11 seconds. Find the length of the train.",
+      "explanation": "Total distance = 11×11 = 121 m; train length = 121 − 77 = 44 m.",
+      "options": [
+        {
+          "label": "46 m",
+          "is_correct": false
+        },
+        {
+          "label": "44 m",
+          "is_correct": true
+        },
+        {
+          "label": "48 m",
+          "is_correct": false
+        },
+        {
+          "label": "42 m",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Problems on Trains",
+      "kind": "standard",
+      "difficulty": "medium",
+      "answer_type": "single",
+      "stem": "A train moving at 22 m/s crosses a 110 m long platform in 32 seconds. Find the length of the train.",
+      "explanation": "Total distance = 22×32 = 704 m; train length = 704 − 110 = 594 m.",
+      "options": [
+        {
+          "label": "618 m",
+          "is_correct": false
+        },
+        {
+          "label": "594 m",
+          "is_correct": true
+        },
+        {
+          "label": "570 m",
+          "is_correct": false
+        },
+        {
+          "label": "642 m",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Problems on Trains",
+      "kind": "standard",
+      "difficulty": "medium",
+      "answer_type": "single",
+      "stem": "A train moving at 40 m/s crosses a 600 m long platform in 37 seconds. Find the length of the train.",
+      "explanation": "Total distance = 40×37 = 1480 m; train length = 1480 − 600 = 880 m.",
+      "options": [
+        {
+          "label": "845 m",
+          "is_correct": false
+        },
+        {
+          "label": "880 m",
+          "is_correct": true
+        },
+        {
+          "label": "915 m",
+          "is_correct": false
+        },
+        {
+          "label": "950 m",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Problems on Trains",
+      "kind": "standard",
+      "difficulty": "medium",
+      "answer_type": "single",
+      "stem": "A train 341 m long, moving at 31 m/s, crosses a platform 279 m long. Find the time taken.",
+      "explanation": "Distance = 341+279 = 620 m; time = 620/31 = 20 seconds.",
+      "options": [
+        {
+          "label": "22 seconds",
+          "is_correct": false
+        },
+        {
+          "label": "21 seconds",
+          "is_correct": false
+        },
+        {
+          "label": "19 seconds",
+          "is_correct": false
+        },
+        {
+          "label": "20 seconds",
+          "is_correct": true
+        }
+      ]
+    },
+    {
+      "chapter": "Problems on Trains",
+      "kind": "standard",
+      "difficulty": "medium",
+      "answer_type": "single",
+      "stem": "A train 600 m long is moving at 108 km/h. How long will it take to cross a signal post?",
+      "explanation": "108 km/h = 30 m/s; time = 600/30 = 20 seconds.",
+      "options": [
+        {
+          "label": "22 seconds",
+          "is_correct": false
+        },
+        {
+          "label": "21 seconds",
+          "is_correct": false
+        },
+        {
+          "label": "20 seconds",
+          "is_correct": true
+        },
+        {
+          "label": "19 seconds",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Problems on Trains",
+      "kind": "standard",
+      "difficulty": "medium",
+      "answer_type": "single",
+      "stem": "A train 84 m long, moving at 28 m/s, crosses a platform 196 m long. Find the time taken.",
+      "explanation": "Distance = 84+196 = 280 m; time = 280/28 = 10 seconds.",
+      "options": [
+        {
+          "label": "10 seconds",
+          "is_correct": true
+        },
+        {
+          "label": "9 seconds",
+          "is_correct": false
+        },
+        {
+          "label": "11 seconds",
+          "is_correct": false
+        },
+        {
+          "label": "12 seconds",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Problems on Trains",
+      "kind": "standard",
+      "difficulty": "medium",
+      "answer_type": "single",
+      "stem": "A train 240 m long is moving at 108 km/h. How long will it take to cross a signal post?",
+      "explanation": "108 km/h = 30 m/s; time = 240/30 = 8 seconds.",
+      "options": [
+        {
+          "label": "9 seconds",
+          "is_correct": false
+        },
+        {
+          "label": "8 seconds",
+          "is_correct": true
+        },
+        {
+          "label": "10 seconds",
+          "is_correct": false
+        },
+        {
+          "label": "7 seconds",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Problems on Trains",
+      "kind": "standard",
+      "difficulty": "medium",
+      "answer_type": "single",
+      "stem": "A train 200 m long is moving at 36 km/h. How long will it take to cross a signal post?",
+      "explanation": "36 km/h = 10 m/s; time = 200/10 = 20 seconds.",
+      "options": [
+        {
+          "label": "20 seconds",
+          "is_correct": true
+        },
+        {
+          "label": "22 seconds",
+          "is_correct": false
+        },
+        {
+          "label": "21 seconds",
+          "is_correct": false
+        },
+        {
+          "label": "19 seconds",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Problems on Trains",
+      "kind": "standard",
+      "difficulty": "medium",
+      "answer_type": "single",
+      "stem": "A train 255 m long is moving at 54 km/h. How long will it take to cross a signal post?",
+      "explanation": "54 km/h = 15 m/s; time = 255/15 = 17 seconds.",
+      "options": [
+        {
+          "label": "18 seconds",
+          "is_correct": false
+        },
+        {
+          "label": "19 seconds",
+          "is_correct": false
+        },
+        {
+          "label": "17 seconds",
+          "is_correct": true
+        },
+        {
+          "label": "16 seconds",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Problems on Trains",
+      "kind": "standard",
+      "difficulty": "medium",
+      "answer_type": "single",
+      "stem": "A train 297 m long, moving at 33 m/s, crosses a platform 132 m long. Find the time taken.",
+      "explanation": "Distance = 297+132 = 429 m; time = 429/33 = 13 seconds.",
+      "options": [
+        {
+          "label": "12 seconds",
+          "is_correct": false
+        },
+        {
+          "label": "14 seconds",
+          "is_correct": false
+        },
+        {
+          "label": "15 seconds",
+          "is_correct": false
+        },
+        {
+          "label": "13 seconds",
+          "is_correct": true
+        }
+      ]
+    },
+    {
+      "chapter": "Problems on Trains",
+      "kind": "standard",
+      "difficulty": "medium",
+      "answer_type": "single",
+      "stem": "A train 450 m long, moving at 30 m/s, crosses a platform 120 m long. Find the time taken.",
+      "explanation": "Distance = 450+120 = 570 m; time = 570/30 = 19 seconds.",
+      "options": [
+        {
+          "label": "20 seconds",
+          "is_correct": false
+        },
+        {
+          "label": "21 seconds",
+          "is_correct": false
+        },
+        {
+          "label": "19 seconds",
+          "is_correct": true
+        },
+        {
+          "label": "18 seconds",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Problems on Trains",
+      "kind": "standard",
+      "difficulty": "medium",
+      "answer_type": "single",
+      "stem": "A train 250 m long is moving at 90 km/h. How long will it take to cross a signal post?",
+      "explanation": "90 km/h = 25 m/s; time = 250/25 = 10 seconds.",
+      "options": [
+        {
+          "label": "11 seconds",
+          "is_correct": false
+        },
+        {
+          "label": "9 seconds",
+          "is_correct": false
+        },
+        {
+          "label": "10 seconds",
+          "is_correct": true
+        },
+        {
+          "label": "12 seconds",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Problems on Trains",
+      "kind": "standard",
+      "difficulty": "medium",
+      "answer_type": "single",
+      "stem": "A train 68 m long, moving at 17 m/s, crosses a platform 238 m long. Find the time taken.",
+      "explanation": "Distance = 68+238 = 306 m; time = 306/17 = 18 seconds.",
+      "options": [
+        {
+          "label": "17 seconds",
+          "is_correct": false
+        },
+        {
+          "label": "19 seconds",
+          "is_correct": false
+        },
+        {
+          "label": "20 seconds",
+          "is_correct": false
+        },
+        {
+          "label": "18 seconds",
+          "is_correct": true
+        }
+      ]
+    },
+    {
+      "chapter": "Problems on Trains",
+      "kind": "standard",
+      "difficulty": "medium",
+      "answer_type": "single",
+      "stem": "A train 90 m long is moving at 36 km/h. How long will it take to cross a signal post?",
+      "explanation": "36 km/h = 10 m/s; time = 90/10 = 9 seconds.",
+      "options": [
+        {
+          "label": "10 seconds",
+          "is_correct": false
+        },
+        {
+          "label": "11 seconds",
+          "is_correct": false
+        },
+        {
+          "label": "9 seconds",
+          "is_correct": true
+        },
+        {
+          "label": "8 seconds",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Problems on Trains",
+      "kind": "standard",
+      "difficulty": "medium",
+      "answer_type": "single",
+      "stem": "A train 350 m long is moving at 90 km/h. How long will it take to cross a signal post?",
+      "explanation": "90 km/h = 25 m/s; time = 350/25 = 14 seconds.",
+      "options": [
+        {
+          "label": "14 seconds",
+          "is_correct": true
+        },
+        {
+          "label": "16 seconds",
+          "is_correct": false
+        },
+        {
+          "label": "13 seconds",
+          "is_correct": false
+        },
+        {
+          "label": "15 seconds",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Problems on Trains",
+      "kind": "standard",
+      "difficulty": "medium",
+      "answer_type": "single",
+      "stem": "A train 420 m long is moving at 108 km/h. How long will it take to cross a signal post?",
+      "explanation": "108 km/h = 30 m/s; time = 420/30 = 14 seconds.",
+      "options": [
+        {
+          "label": "13 seconds",
+          "is_correct": false
+        },
+        {
+          "label": "15 seconds",
+          "is_correct": false
+        },
+        {
+          "label": "16 seconds",
+          "is_correct": false
+        },
+        {
+          "label": "14 seconds",
+          "is_correct": true
+        }
+      ]
+    },
+    {
+      "chapter": "Problems on Trains",
+      "kind": "standard",
+      "difficulty": "medium",
+      "answer_type": "single",
+      "stem": "A train moving at 33 m/s crosses a 264 m long platform in 36 seconds. Find the length of the train.",
+      "explanation": "Total distance = 33×36 = 1188 m; train length = 1188 − 264 = 924 m.",
+      "options": [
+        {
+          "label": "887 m",
+          "is_correct": false
+        },
+        {
+          "label": "924 m",
+          "is_correct": true
+        },
+        {
+          "label": "961 m",
+          "is_correct": false
+        },
+        {
+          "label": "998 m",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Problems on Trains",
+      "kind": "standard",
+      "difficulty": "medium",
+      "answer_type": "single",
+      "stem": "A train moving at 17 m/s crosses a 102 m long platform in 11 seconds. Find the length of the train.",
+      "explanation": "Total distance = 17×11 = 187 m; train length = 187 − 102 = 85 m.",
+      "options": [
+        {
+          "label": "83 m",
+          "is_correct": false
+        },
+        {
+          "label": "87 m",
+          "is_correct": false
+        },
+        {
+          "label": "85 m",
+          "is_correct": true
+        },
+        {
+          "label": "89 m",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Problems on Trains",
+      "kind": "standard",
+      "difficulty": "medium",
+      "answer_type": "single",
+      "stem": "A train moving at 16 m/s crosses a 240 m long platform in 18 seconds. Find the length of the train.",
+      "explanation": "Total distance = 16×18 = 288 m; train length = 288 − 240 = 48 m.",
+      "options": [
+        {
+          "label": "50 m",
+          "is_correct": false
+        },
+        {
+          "label": "46 m",
+          "is_correct": false
+        },
+        {
+          "label": "52 m",
+          "is_correct": false
+        },
+        {
+          "label": "48 m",
+          "is_correct": true
+        }
+      ]
+    },
+    {
+      "chapter": "Problems on Trains",
+      "kind": "standard",
+      "difficulty": "medium",
+      "answer_type": "single",
+      "stem": "A train 170 m long is moving at 36 km/h. How long will it take to cross a signal post?",
+      "explanation": "36 km/h = 10 m/s; time = 170/10 = 17 seconds.",
+      "options": [
+        {
+          "label": "17 seconds",
+          "is_correct": true
+        },
+        {
+          "label": "19 seconds",
+          "is_correct": false
+        },
+        {
+          "label": "18 seconds",
+          "is_correct": false
+        },
+        {
+          "label": "16 seconds",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Problems on Trains",
+      "kind": "standard",
+      "difficulty": "medium",
+      "answer_type": "single",
+      "stem": "A train 210 m long is moving at 54 km/h. How long will it take to cross a signal post?",
+      "explanation": "54 km/h = 15 m/s; time = 210/15 = 14 seconds.",
+      "options": [
+        {
+          "label": "16 seconds",
+          "is_correct": false
+        },
+        {
+          "label": "14 seconds",
+          "is_correct": true
+        },
+        {
+          "label": "13 seconds",
+          "is_correct": false
+        },
+        {
+          "label": "15 seconds",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Problems on Trains",
+      "kind": "standard",
+      "difficulty": "medium",
+      "answer_type": "single",
+      "stem": "A train 260 m long is moving at 72 km/h. How long will it take to cross a signal post?",
+      "explanation": "72 km/h = 20 m/s; time = 260/20 = 13 seconds.",
+      "options": [
+        {
+          "label": "13 seconds",
+          "is_correct": true
+        },
+        {
+          "label": "14 seconds",
+          "is_correct": false
+        },
+        {
+          "label": "12 seconds",
+          "is_correct": false
+        },
+        {
+          "label": "15 seconds",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Problems on Trains",
+      "kind": "standard",
+      "difficulty": "medium",
+      "answer_type": "single",
+      "stem": "A train 396 m long, moving at 36 m/s, crosses a platform 468 m long. Find the time taken.",
+      "explanation": "Distance = 396+468 = 864 m; time = 864/36 = 24 seconds.",
+      "options": [
+        {
+          "label": "25 seconds",
+          "is_correct": false
+        },
+        {
+          "label": "23 seconds",
+          "is_correct": false
+        },
+        {
+          "label": "24 seconds",
+          "is_correct": true
+        },
+        {
+          "label": "26 seconds",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Problems on Trains",
+      "kind": "standard",
+      "difficulty": "medium",
+      "answer_type": "single",
+      "stem": "A train 170 m long, moving at 17 m/s, crosses a platform 187 m long. Find the time taken.",
+      "explanation": "Distance = 170+187 = 357 m; time = 357/17 = 21 seconds.",
+      "options": [
+        {
+          "label": "23 seconds",
+          "is_correct": false
+        },
+        {
+          "label": "21 seconds",
+          "is_correct": true
+        },
+        {
+          "label": "22 seconds",
+          "is_correct": false
+        },
+        {
+          "label": "20 seconds",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Problems on Trains",
+      "kind": "standard",
+      "difficulty": "medium",
+      "answer_type": "single",
+      "stem": "A train 190 m long, moving at 38 m/s, crosses a platform 190 m long. Find the time taken.",
+      "explanation": "Distance = 190+190 = 380 m; time = 380/38 = 10 seconds.",
+      "options": [
+        {
+          "label": "11 seconds",
+          "is_correct": false
+        },
+        {
+          "label": "9 seconds",
+          "is_correct": false
+        },
+        {
+          "label": "10 seconds",
+          "is_correct": true
+        },
+        {
+          "label": "12 seconds",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Problems on Trains",
+      "kind": "standard",
+      "difficulty": "medium",
+      "answer_type": "single",
+      "stem": "A train 88 m long, moving at 22 m/s, crosses a platform 286 m long. Find the time taken.",
+      "explanation": "Distance = 88+286 = 374 m; time = 374/22 = 17 seconds.",
+      "options": [
+        {
+          "label": "17 seconds",
+          "is_correct": true
+        },
+        {
+          "label": "19 seconds",
+          "is_correct": false
+        },
+        {
+          "label": "18 seconds",
+          "is_correct": false
+        },
+        {
+          "label": "16 seconds",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Problems on Trains",
+      "kind": "standard",
+      "difficulty": "medium",
+      "answer_type": "single",
+      "stem": "A train 420 m long, moving at 28 m/s, crosses a platform 224 m long. Find the time taken.",
+      "explanation": "Distance = 420+224 = 644 m; time = 644/28 = 23 seconds.",
+      "options": [
+        {
+          "label": "24 seconds",
+          "is_correct": false
+        },
+        {
+          "label": "23 seconds",
+          "is_correct": true
+        },
+        {
+          "label": "22 seconds",
+          "is_correct": false
+        },
+        {
+          "label": "25 seconds",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Problems on Trains",
+      "kind": "standard",
+      "difficulty": "medium",
+      "answer_type": "single",
+      "stem": "A train moving at 10 m/s crosses a 40 m long platform in 29 seconds. Find the length of the train.",
+      "explanation": "Total distance = 10×29 = 290 m; train length = 290 − 40 = 250 m.",
+      "options": [
+        {
+          "label": "260 m",
+          "is_correct": false
+        },
+        {
+          "label": "240 m",
+          "is_correct": false
+        },
+        {
+          "label": "250 m",
+          "is_correct": true
+        },
+        {
+          "label": "270 m",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Problems on Trains",
+      "kind": "standard",
+      "difficulty": "medium",
+      "answer_type": "single",
+      "stem": "A train 352 m long, moving at 32 m/s, crosses a platform 352 m long. Find the time taken.",
+      "explanation": "Distance = 352+352 = 704 m; time = 704/32 = 22 seconds.",
+      "options": [
+        {
+          "label": "23 seconds",
+          "is_correct": false
+        },
+        {
+          "label": "24 seconds",
+          "is_correct": false
+        },
+        {
+          "label": "21 seconds",
+          "is_correct": false
+        },
+        {
+          "label": "22 seconds",
+          "is_correct": true
+        }
+      ]
+    },
+    {
+      "chapter": "Problems on Trains",
+      "kind": "standard",
+      "difficulty": "medium",
+      "answer_type": "single",
+      "stem": "A train 342 m long, moving at 38 m/s, crosses a platform 304 m long. Find the time taken.",
+      "explanation": "Distance = 342+304 = 646 m; time = 646/38 = 17 seconds.",
+      "options": [
+        {
+          "label": "19 seconds",
+          "is_correct": false
+        },
+        {
+          "label": "18 seconds",
+          "is_correct": false
+        },
+        {
+          "label": "16 seconds",
+          "is_correct": false
+        },
+        {
+          "label": "17 seconds",
+          "is_correct": true
+        }
+      ]
+    },
+    {
+      "chapter": "Problems on Trains",
+      "kind": "standard",
+      "difficulty": "medium",
+      "answer_type": "single",
+      "stem": "A train 500 m long is moving at 90 km/h. How long will it take to cross a signal post?",
+      "explanation": "90 km/h = 25 m/s; time = 500/25 = 20 seconds.",
+      "options": [
+        {
+          "label": "22 seconds",
+          "is_correct": false
+        },
+        {
+          "label": "21 seconds",
+          "is_correct": false
+        },
+        {
+          "label": "19 seconds",
+          "is_correct": false
+        },
+        {
+          "label": "20 seconds",
+          "is_correct": true
+        }
+      ]
+    },
+    {
+      "chapter": "Problems on Trains",
+      "kind": "standard",
+      "difficulty": "medium",
+      "answer_type": "single",
+      "stem": "A train 77 m long, moving at 11 m/s, crosses a platform 66 m long. Find the time taken.",
+      "explanation": "Distance = 77+66 = 143 m; time = 143/11 = 13 seconds.",
+      "options": [
+        {
+          "label": "12 seconds",
+          "is_correct": false
+        },
+        {
+          "label": "15 seconds",
+          "is_correct": false
+        },
+        {
+          "label": "14 seconds",
+          "is_correct": false
+        },
+        {
+          "label": "13 seconds",
+          "is_correct": true
+        }
+      ]
+    },
+    {
+      "chapter": "Problems on Trains",
+      "kind": "standard",
+      "difficulty": "medium",
+      "answer_type": "single",
+      "stem": "A train moving at 21 m/s crosses a 84 m long platform in 40 seconds. Find the length of the train.",
+      "explanation": "Total distance = 21×40 = 840 m; train length = 840 − 84 = 756 m.",
+      "options": [
+        {
+          "label": "786 m",
+          "is_correct": false
+        },
+        {
+          "label": "756 m",
+          "is_correct": true
+        },
+        {
+          "label": "816 m",
+          "is_correct": false
+        },
+        {
+          "label": "726 m",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Problems on Trains",
+      "kind": "standard",
+      "difficulty": "medium",
+      "answer_type": "single",
+      "stem": "A train moving at 23 m/s crosses a 299 m long platform in 22 seconds. Find the length of the train.",
+      "explanation": "Total distance = 23×22 = 506 m; train length = 506 − 299 = 207 m.",
+      "options": [
+        {
+          "label": "215 m",
+          "is_correct": false
+        },
+        {
+          "label": "199 m",
+          "is_correct": false
+        },
+        {
+          "label": "207 m",
+          "is_correct": true
+        },
+        {
+          "label": "223 m",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Problems on Trains",
+      "kind": "standard",
+      "difficulty": "medium",
+      "answer_type": "single",
+      "stem": "A train 525 m long, moving at 35 m/s, crosses a platform 420 m long. Find the time taken.",
+      "explanation": "Distance = 525+420 = 945 m; time = 945/35 = 27 seconds.",
+      "options": [
+        {
+          "label": "27 seconds",
+          "is_correct": true
+        },
+        {
+          "label": "29 seconds",
+          "is_correct": false
+        },
+        {
+          "label": "28 seconds",
+          "is_correct": false
+        },
+        {
+          "label": "26 seconds",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Problems on Trains",
+      "kind": "standard",
+      "difficulty": "medium",
+      "answer_type": "single",
+      "stem": "A train 150 m long is moving at 36 km/h. How long will it take to cross a signal post?",
+      "explanation": "36 km/h = 10 m/s; time = 150/10 = 15 seconds.",
+      "options": [
+        {
+          "label": "17 seconds",
+          "is_correct": false
+        },
+        {
+          "label": "16 seconds",
+          "is_correct": false
+        },
+        {
+          "label": "15 seconds",
+          "is_correct": true
+        },
+        {
+          "label": "14 seconds",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Problems on Trains",
+      "kind": "standard",
+      "difficulty": "medium",
+      "answer_type": "single",
+      "stem": "A train 300 m long, moving at 20 m/s, crosses a platform 160 m long. Find the time taken.",
+      "explanation": "Distance = 300+160 = 460 m; time = 460/20 = 23 seconds.",
+      "options": [
+        {
+          "label": "24 seconds",
+          "is_correct": false
+        },
+        {
+          "label": "25 seconds",
+          "is_correct": false
+        },
+        {
+          "label": "22 seconds",
+          "is_correct": false
+        },
+        {
+          "label": "23 seconds",
+          "is_correct": true
+        }
+      ]
+    },
+    {
+      "chapter": "Problems on Trains",
+      "kind": "standard",
+      "difficulty": "medium",
+      "answer_type": "single",
+      "stem": "A train moving at 32 m/s crosses a 320 m long platform in 12 seconds. Find the length of the train.",
+      "explanation": "Total distance = 32×12 = 384 m; train length = 384 − 320 = 64 m.",
+      "options": [
+        {
+          "label": "68 m",
+          "is_correct": false
+        },
+        {
+          "label": "62 m",
+          "is_correct": false
+        },
+        {
+          "label": "64 m",
+          "is_correct": true
+        },
+        {
+          "label": "66 m",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Problems on Trains",
+      "kind": "standard",
+      "difficulty": "medium",
+      "answer_type": "single",
+      "stem": "A train moving at 23 m/s crosses a 184 m long platform in 37 seconds. Find the length of the train.",
+      "explanation": "Total distance = 23×37 = 851 m; train length = 851 − 184 = 667 m.",
+      "options": [
+        {
+          "label": "667 m",
+          "is_correct": true
+        },
+        {
+          "label": "640 m",
+          "is_correct": false
+        },
+        {
+          "label": "694 m",
+          "is_correct": false
+        },
+        {
+          "label": "721 m",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Problems on Trains",
+      "kind": "standard",
+      "difficulty": "medium",
+      "answer_type": "single",
+      "stem": "A train 247 m long, moving at 19 m/s, crosses a platform 133 m long. Find the time taken.",
+      "explanation": "Distance = 247+133 = 380 m; time = 380/19 = 20 seconds.",
+      "options": [
+        {
+          "label": "21 seconds",
+          "is_correct": false
+        },
+        {
+          "label": "20 seconds",
+          "is_correct": true
+        },
+        {
+          "label": "22 seconds",
+          "is_correct": false
+        },
+        {
+          "label": "19 seconds",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Problems on Trains",
+      "kind": "standard",
+      "difficulty": "medium",
+      "answer_type": "single",
+      "stem": "A train 325 m long, moving at 25 m/s, crosses a platform 250 m long. Find the time taken.",
+      "explanation": "Distance = 325+250 = 575 m; time = 575/25 = 23 seconds.",
+      "options": [
+        {
+          "label": "22 seconds",
+          "is_correct": false
+        },
+        {
+          "label": "25 seconds",
+          "is_correct": false
+        },
+        {
+          "label": "24 seconds",
+          "is_correct": false
+        },
+        {
+          "label": "23 seconds",
+          "is_correct": true
+        }
+      ]
+    },
+    {
+      "chapter": "Problems on Trains",
+      "kind": "standard",
+      "difficulty": "medium",
+      "answer_type": "single",
+      "stem": "A train 102 m long, moving at 17 m/s, crosses a platform 221 m long. Find the time taken.",
+      "explanation": "Distance = 102+221 = 323 m; time = 323/17 = 19 seconds.",
+      "options": [
+        {
+          "label": "20 seconds",
+          "is_correct": false
+        },
+        {
+          "label": "18 seconds",
+          "is_correct": false
+        },
+        {
+          "label": "19 seconds",
+          "is_correct": true
+        },
+        {
+          "label": "21 seconds",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Problems on Trains",
+      "kind": "standard",
+      "difficulty": "medium",
+      "answer_type": "single",
+      "stem": "A train 165 m long, moving at 11 m/s, crosses a platform 66 m long. Find the time taken.",
+      "explanation": "Distance = 165+66 = 231 m; time = 231/11 = 21 seconds.",
+      "options": [
+        {
+          "label": "22 seconds",
+          "is_correct": false
+        },
+        {
+          "label": "23 seconds",
+          "is_correct": false
+        },
+        {
+          "label": "21 seconds",
+          "is_correct": true
+        },
+        {
+          "label": "20 seconds",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Problems on Trains",
+      "kind": "standard",
+      "difficulty": "medium",
+      "answer_type": "single",
+      "stem": "A train 340 m long is moving at 72 km/h. How long will it take to cross a signal post?",
+      "explanation": "72 km/h = 20 m/s; time = 340/20 = 17 seconds.",
+      "options": [
+        {
+          "label": "16 seconds",
+          "is_correct": false
+        },
+        {
+          "label": "19 seconds",
+          "is_correct": false
+        },
+        {
+          "label": "17 seconds",
+          "is_correct": true
+        },
+        {
+          "label": "18 seconds",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Problems on Trains",
+      "kind": "standard",
+      "difficulty": "hard",
+      "answer_type": "single",
+      "stem": "A train 130 m long, moving at 17 m/s, overtakes a man walking at 4 m/s in the same direction. Find the time taken to pass him.",
+      "explanation": "Relative speed = 17−4 = 13 m/s; time = 130/13 = 10 seconds.",
+      "options": [
+        {
+          "label": "11 seconds",
+          "is_correct": false
+        },
+        {
+          "label": "10 seconds",
+          "is_correct": true
+        },
+        {
+          "label": "9 seconds",
+          "is_correct": false
+        },
+        {
+          "label": "12 seconds",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Problems on Trains",
+      "kind": "standard",
+      "difficulty": "hard",
+      "answer_type": "single",
+      "stem": "Two trains 155 m and 93 m long move in the same direction at 38 m/s and 7 m/s. How long will the faster train take to completely pass the slower one?",
+      "explanation": "Relative speed = 38−7 = 31 m/s; time = (155+93)/31 = 8 seconds.",
+      "options": [
+        {
+          "label": "8 seconds",
+          "is_correct": true
+        },
+        {
+          "label": "7 seconds",
+          "is_correct": false
+        },
+        {
+          "label": "9 seconds",
+          "is_correct": false
+        },
+        {
+          "label": "10 seconds",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Problems on Trains",
+      "kind": "standard",
+      "difficulty": "hard",
+      "answer_type": "single",
+      "stem": "Two trains 240 m and 240 m long are moving in opposite directions at 29 m/s and 11 m/s. In how many seconds will they completely cross each other?",
+      "explanation": "Relative speed = 29+11 = 40 m/s; time = (240+240)/40 = 12 seconds.",
+      "options": [
+        {
+          "label": "11 seconds",
+          "is_correct": false
+        },
+        {
+          "label": "12 seconds",
+          "is_correct": true
+        },
+        {
+          "label": "14 seconds",
+          "is_correct": false
+        },
+        {
+          "label": "13 seconds",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Problems on Trains",
+      "kind": "standard",
+      "difficulty": "hard",
+      "answer_type": "single",
+      "stem": "Two trains 55 m and 44 m long move in the same direction at 29 m/s and 18 m/s. How long will the faster train take to completely pass the slower one?",
+      "explanation": "Relative speed = 29−18 = 11 m/s; time = (55+44)/11 = 9 seconds.",
+      "options": [
+        {
+          "label": "9 seconds",
+          "is_correct": true
+        },
+        {
+          "label": "8 seconds",
+          "is_correct": false
+        },
+        {
+          "label": "10 seconds",
+          "is_correct": false
+        },
+        {
+          "label": "11 seconds",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Problems on Trains",
+      "kind": "standard",
+      "difficulty": "hard",
+      "answer_type": "single",
+      "stem": "Two trains 420 m and 280 m long are moving in opposite directions at 35 m/s and 35 m/s. In how many seconds will they completely cross each other?",
+      "explanation": "Relative speed = 35+35 = 70 m/s; time = (420+280)/70 = 10 seconds.",
+      "options": [
+        {
+          "label": "11 seconds",
+          "is_correct": false
+        },
+        {
+          "label": "10 seconds",
+          "is_correct": true
+        },
+        {
+          "label": "9 seconds",
+          "is_correct": false
+        },
+        {
+          "label": "12 seconds",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Problems on Trains",
+      "kind": "standard",
+      "difficulty": "hard",
+      "answer_type": "single",
+      "stem": "A train 210 m long, moving at 20 m/s, overtakes a man walking at 5 m/s in the same direction. Find the time taken to pass him.",
+      "explanation": "Relative speed = 20−5 = 15 m/s; time = 210/15 = 14 seconds.",
+      "options": [
+        {
+          "label": "15 seconds",
+          "is_correct": false
+        },
+        {
+          "label": "14 seconds",
+          "is_correct": true
+        },
+        {
+          "label": "13 seconds",
+          "is_correct": false
+        },
+        {
+          "label": "16 seconds",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Problems on Trains",
+      "kind": "standard",
+      "difficulty": "hard",
+      "answer_type": "single",
+      "stem": "A train 204 m long, moving at 18 m/s, overtakes a man walking at 1 m/s in the same direction. Find the time taken to pass him.",
+      "explanation": "Relative speed = 18−1 = 17 m/s; time = 204/17 = 12 seconds.",
+      "options": [
+        {
+          "label": "12 seconds",
+          "is_correct": true
+        },
+        {
+          "label": "14 seconds",
+          "is_correct": false
+        },
+        {
+          "label": "13 seconds",
+          "is_correct": false
+        },
+        {
+          "label": "11 seconds",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Problems on Trains",
+      "kind": "standard",
+      "difficulty": "hard",
+      "answer_type": "single",
+      "stem": "A train 80 m long, moving at 23 m/s, overtakes a man walking at 3 m/s in the same direction. Find the time taken to pass him.",
+      "explanation": "Relative speed = 23−3 = 20 m/s; time = 80/20 = 4 seconds.",
+      "options": [
+        {
+          "label": "6 seconds",
+          "is_correct": false
+        },
+        {
+          "label": "5 seconds",
+          "is_correct": false
+        },
+        {
+          "label": "4 seconds",
+          "is_correct": true
+        },
+        {
+          "label": "3 seconds",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Problems on Trains",
+      "kind": "standard",
+      "difficulty": "hard",
+      "answer_type": "single",
+      "stem": "Two trains 60 m and 60 m long are moving in opposite directions at 14 m/s and 16 m/s. In how many seconds will they completely cross each other?",
+      "explanation": "Relative speed = 14+16 = 30 m/s; time = (60+60)/30 = 4 seconds.",
+      "options": [
+        {
+          "label": "5 seconds",
+          "is_correct": false
+        },
+        {
+          "label": "4 seconds",
+          "is_correct": true
+        },
+        {
+          "label": "6 seconds",
+          "is_correct": false
+        },
+        {
+          "label": "3 seconds",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Problems on Trains",
+      "kind": "standard",
+      "difficulty": "hard",
+      "answer_type": "single",
+      "stem": "A train 48 m long, moving at 17 m/s, overtakes a man walking at 1 m/s in the same direction. Find the time taken to pass him.",
+      "explanation": "Relative speed = 17−1 = 16 m/s; time = 48/16 = 3 seconds.",
+      "options": [
+        {
+          "label": "5 seconds",
+          "is_correct": false
+        },
+        {
+          "label": "2 seconds",
+          "is_correct": false
+        },
+        {
+          "label": "4 seconds",
+          "is_correct": false
+        },
+        {
+          "label": "3 seconds",
+          "is_correct": true
+        }
+      ]
+    },
+    {
+      "chapter": "Problems on Trains",
+      "kind": "standard",
+      "difficulty": "hard",
+      "answer_type": "single",
+      "stem": "Two trains 212 m and 265 m long are moving in opposite directions at 23 m/s and 30 m/s. In how many seconds will they completely cross each other?",
+      "explanation": "Relative speed = 23+30 = 53 m/s; time = (212+265)/53 = 9 seconds.",
+      "options": [
+        {
+          "label": "8 seconds",
+          "is_correct": false
+        },
+        {
+          "label": "11 seconds",
+          "is_correct": false
+        },
+        {
+          "label": "9 seconds",
+          "is_correct": true
+        },
+        {
+          "label": "10 seconds",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Problems on Trains",
+      "kind": "standard",
+      "difficulty": "hard",
+      "answer_type": "single",
+      "stem": "Two trains 126 m and 210 m long are moving in opposite directions at 25 m/s and 17 m/s. In how many seconds will they completely cross each other?",
+      "explanation": "Relative speed = 25+17 = 42 m/s; time = (126+210)/42 = 8 seconds.",
+      "options": [
+        {
+          "label": "9 seconds",
+          "is_correct": false
+        },
+        {
+          "label": "10 seconds",
+          "is_correct": false
+        },
+        {
+          "label": "7 seconds",
+          "is_correct": false
+        },
+        {
+          "label": "8 seconds",
+          "is_correct": true
+        }
+      ]
+    },
+    {
+      "chapter": "Problems on Trains",
+      "kind": "standard",
+      "difficulty": "hard",
+      "answer_type": "single",
+      "stem": "Two trains 134 m and 201 m long are moving in opposite directions at 34 m/s and 33 m/s. In how many seconds will they completely cross each other?",
+      "explanation": "Relative speed = 34+33 = 67 m/s; time = (134+201)/67 = 5 seconds.",
+      "options": [
+        {
+          "label": "5 seconds",
+          "is_correct": true
+        },
+        {
+          "label": "4 seconds",
+          "is_correct": false
+        },
+        {
+          "label": "6 seconds",
+          "is_correct": false
+        },
+        {
+          "label": "7 seconds",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Problems on Trains",
+      "kind": "standard",
+      "difficulty": "hard",
+      "answer_type": "single",
+      "stem": "Two trains 45 m and 60 m long move in the same direction at 32 m/s and 17 m/s. How long will the faster train take to completely pass the slower one?",
+      "explanation": "Relative speed = 32−17 = 15 m/s; time = (45+60)/15 = 7 seconds.",
+      "options": [
+        {
+          "label": "8 seconds",
+          "is_correct": false
+        },
+        {
+          "label": "9 seconds",
+          "is_correct": false
+        },
+        {
+          "label": "7 seconds",
+          "is_correct": true
+        },
+        {
+          "label": "6 seconds",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Problems on Trains",
+      "kind": "standard",
+      "difficulty": "hard",
+      "answer_type": "single",
+      "stem": "A train 160 m long, moving at 35 m/s, overtakes a man walking at 3 m/s in the same direction. Find the time taken to pass him.",
+      "explanation": "Relative speed = 35−3 = 32 m/s; time = 160/32 = 5 seconds.",
+      "options": [
+        {
+          "label": "7 seconds",
+          "is_correct": false
+        },
+        {
+          "label": "5 seconds",
+          "is_correct": true
+        },
+        {
+          "label": "4 seconds",
+          "is_correct": false
+        },
+        {
+          "label": "6 seconds",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Problems on Trains",
+      "kind": "standard",
+      "difficulty": "hard",
+      "answer_type": "single",
+      "stem": "Two trains 64 m and 192 m long are moving in opposite directions at 21 m/s and 11 m/s. In how many seconds will they completely cross each other?",
+      "explanation": "Relative speed = 21+11 = 32 m/s; time = (64+192)/32 = 8 seconds.",
+      "options": [
+        {
+          "label": "10 seconds",
+          "is_correct": false
+        },
+        {
+          "label": "9 seconds",
+          "is_correct": false
+        },
+        {
+          "label": "8 seconds",
+          "is_correct": true
+        },
+        {
+          "label": "7 seconds",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Problems on Trains",
+      "kind": "standard",
+      "difficulty": "hard",
+      "answer_type": "single",
+      "stem": "A train 204 m long, moving at 21 m/s, overtakes a man walking at 4 m/s in the same direction. Find the time taken to pass him.",
+      "explanation": "Relative speed = 21−4 = 17 m/s; time = 204/17 = 12 seconds.",
+      "options": [
+        {
+          "label": "11 seconds",
+          "is_correct": false
+        },
+        {
+          "label": "12 seconds",
+          "is_correct": true
+        },
+        {
+          "label": "13 seconds",
+          "is_correct": false
+        },
+        {
+          "label": "14 seconds",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Problems on Trains",
+      "kind": "standard",
+      "difficulty": "hard",
+      "answer_type": "single",
+      "stem": "A train 300 m long, moving at 26 m/s, overtakes a man walking at 1 m/s in the same direction. Find the time taken to pass him.",
+      "explanation": "Relative speed = 26−1 = 25 m/s; time = 300/25 = 12 seconds.",
+      "options": [
+        {
+          "label": "14 seconds",
+          "is_correct": false
+        },
+        {
+          "label": "12 seconds",
+          "is_correct": true
+        },
+        {
+          "label": "13 seconds",
+          "is_correct": false
+        },
+        {
+          "label": "11 seconds",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Problems on Trains",
+      "kind": "standard",
+      "difficulty": "hard",
+      "answer_type": "single",
+      "stem": "Two trains 57 m and 114 m long move in the same direction at 40 m/s and 21 m/s. How long will the faster train take to completely pass the slower one?",
+      "explanation": "Relative speed = 40−21 = 19 m/s; time = (57+114)/19 = 9 seconds.",
+      "options": [
+        {
+          "label": "10 seconds",
+          "is_correct": false
+        },
+        {
+          "label": "8 seconds",
+          "is_correct": false
+        },
+        {
+          "label": "9 seconds",
+          "is_correct": true
+        },
+        {
+          "label": "11 seconds",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Problems on Trains",
+      "kind": "standard",
+      "difficulty": "hard",
+      "answer_type": "single",
+      "stem": "A train 108 m long, moving at 16 m/s, overtakes a man walking at 4 m/s in the same direction. Find the time taken to pass him.",
+      "explanation": "Relative speed = 16−4 = 12 m/s; time = 108/12 = 9 seconds.",
+      "options": [
+        {
+          "label": "9 seconds",
+          "is_correct": true
+        },
+        {
+          "label": "11 seconds",
+          "is_correct": false
+        },
+        {
+          "label": "8 seconds",
+          "is_correct": false
+        },
+        {
+          "label": "10 seconds",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Problems on Trains",
+      "kind": "standard",
+      "difficulty": "hard",
+      "answer_type": "single",
+      "stem": "Two trains 160 m and 128 m long are moving in opposite directions at 17 m/s and 15 m/s. In how many seconds will they completely cross each other?",
+      "explanation": "Relative speed = 17+15 = 32 m/s; time = (160+128)/32 = 9 seconds.",
+      "options": [
+        {
+          "label": "9 seconds",
+          "is_correct": true
+        },
+        {
+          "label": "11 seconds",
+          "is_correct": false
+        },
+        {
+          "label": "10 seconds",
+          "is_correct": false
+        },
+        {
+          "label": "8 seconds",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Problems on Trains",
+      "kind": "standard",
+      "difficulty": "hard",
+      "answer_type": "single",
+      "stem": "Two trains 252 m and 126 m long are moving in opposite directions at 23 m/s and 19 m/s. In how many seconds will they completely cross each other?",
+      "explanation": "Relative speed = 23+19 = 42 m/s; time = (252+126)/42 = 9 seconds.",
+      "options": [
+        {
+          "label": "9 seconds",
+          "is_correct": true
+        },
+        {
+          "label": "11 seconds",
+          "is_correct": false
+        },
+        {
+          "label": "8 seconds",
+          "is_correct": false
+        },
+        {
+          "label": "10 seconds",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Problems on Trains",
+      "kind": "standard",
+      "difficulty": "hard",
+      "answer_type": "single",
+      "stem": "A train 112 m long, moving at 20 m/s, overtakes a man walking at 4 m/s in the same direction. Find the time taken to pass him.",
+      "explanation": "Relative speed = 20−4 = 16 m/s; time = 112/16 = 7 seconds.",
+      "options": [
+        {
+          "label": "7 seconds",
+          "is_correct": true
+        },
+        {
+          "label": "9 seconds",
+          "is_correct": false
+        },
+        {
+          "label": "6 seconds",
+          "is_correct": false
+        },
+        {
+          "label": "8 seconds",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Problems on Trains",
+      "kind": "standard",
+      "difficulty": "hard",
+      "answer_type": "single",
+      "stem": "Two trains 153 m and 102 m long are moving in opposite directions at 20 m/s and 31 m/s. In how many seconds will they completely cross each other?",
+      "explanation": "Relative speed = 20+31 = 51 m/s; time = (153+102)/51 = 5 seconds.",
+      "options": [
+        {
+          "label": "5 seconds",
+          "is_correct": true
+        },
+        {
+          "label": "7 seconds",
+          "is_correct": false
+        },
+        {
+          "label": "6 seconds",
+          "is_correct": false
+        },
+        {
+          "label": "4 seconds",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Problems on Trains",
+      "kind": "standard",
+      "difficulty": "hard",
+      "answer_type": "single",
+      "stem": "A train 221 m long, moving at 22 m/s, overtakes a man walking at 5 m/s in the same direction. Find the time taken to pass him.",
+      "explanation": "Relative speed = 22−5 = 17 m/s; time = 221/17 = 13 seconds.",
+      "options": [
+        {
+          "label": "15 seconds",
+          "is_correct": false
+        },
+        {
+          "label": "12 seconds",
+          "is_correct": false
+        },
+        {
+          "label": "14 seconds",
+          "is_correct": false
+        },
+        {
+          "label": "13 seconds",
+          "is_correct": true
+        }
+      ]
+    },
+    {
+      "chapter": "Problems on Trains",
+      "kind": "standard",
+      "difficulty": "hard",
+      "answer_type": "single",
+      "stem": "Two trains 70 m and 42 m long move in the same direction at 20 m/s and 6 m/s. How long will the faster train take to completely pass the slower one?",
+      "explanation": "Relative speed = 20−6 = 14 m/s; time = (70+42)/14 = 8 seconds.",
+      "options": [
+        {
+          "label": "8 seconds",
+          "is_correct": true
+        },
+        {
+          "label": "9 seconds",
+          "is_correct": false
+        },
+        {
+          "label": "7 seconds",
+          "is_correct": false
+        },
+        {
+          "label": "10 seconds",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Problems on Trains",
+      "kind": "standard",
+      "difficulty": "hard",
+      "answer_type": "single",
+      "stem": "A train 152 m long, moving at 23 m/s, overtakes a man walking at 4 m/s in the same direction. Find the time taken to pass him.",
+      "explanation": "Relative speed = 23−4 = 19 m/s; time = 152/19 = 8 seconds.",
+      "options": [
+        {
+          "label": "9 seconds",
+          "is_correct": false
+        },
+        {
+          "label": "8 seconds",
+          "is_correct": true
+        },
+        {
+          "label": "7 seconds",
+          "is_correct": false
+        },
+        {
+          "label": "10 seconds",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Problems on Trains",
+      "kind": "standard",
+      "difficulty": "hard",
+      "answer_type": "single",
+      "stem": "Two trains 105 m and 105 m long move in the same direction at 29 m/s and 8 m/s. How long will the faster train take to completely pass the slower one?",
+      "explanation": "Relative speed = 29−8 = 21 m/s; time = (105+105)/21 = 10 seconds.",
+      "options": [
+        {
+          "label": "12 seconds",
+          "is_correct": false
+        },
+        {
+          "label": "10 seconds",
+          "is_correct": true
+        },
+        {
+          "label": "11 seconds",
+          "is_correct": false
+        },
+        {
+          "label": "9 seconds",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Problems on Trains",
+      "kind": "standard",
+      "difficulty": "hard",
+      "answer_type": "single",
+      "stem": "Two trains 120 m and 180 m long are moving in opposite directions at 30 m/s and 30 m/s. In how many seconds will they completely cross each other?",
+      "explanation": "Relative speed = 30+30 = 60 m/s; time = (120+180)/60 = 5 seconds.",
+      "options": [
+        {
+          "label": "5 seconds",
+          "is_correct": true
+        },
+        {
+          "label": "6 seconds",
+          "is_correct": false
+        },
+        {
+          "label": "4 seconds",
+          "is_correct": false
+        },
+        {
+          "label": "7 seconds",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Problems on Trains",
+      "kind": "standard",
+      "difficulty": "hard",
+      "answer_type": "single",
+      "stem": "Two trains 27 m and 54 m long move in the same direction at 27 m/s and 18 m/s. How long will the faster train take to completely pass the slower one?",
+      "explanation": "Relative speed = 27−18 = 9 m/s; time = (27+54)/9 = 9 seconds.",
+      "options": [
+        {
+          "label": "10 seconds",
+          "is_correct": false
+        },
+        {
+          "label": "9 seconds",
+          "is_correct": true
+        },
+        {
+          "label": "11 seconds",
+          "is_correct": false
+        },
+        {
+          "label": "8 seconds",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Problems on Trains",
+      "kind": "standard",
+      "difficulty": "hard",
+      "answer_type": "single",
+      "stem": "Two trains 36 m and 30 m long move in the same direction at 20 m/s and 14 m/s. How long will the faster train take to completely pass the slower one?",
+      "explanation": "Relative speed = 20−14 = 6 m/s; time = (36+30)/6 = 11 seconds.",
+      "options": [
+        {
+          "label": "10 seconds",
+          "is_correct": false
+        },
+        {
+          "label": "13 seconds",
+          "is_correct": false
+        },
+        {
+          "label": "12 seconds",
+          "is_correct": false
+        },
+        {
+          "label": "11 seconds",
+          "is_correct": true
+        }
+      ]
+    },
+    {
+      "chapter": "Problems on Trains",
+      "kind": "standard",
+      "difficulty": "hard",
+      "answer_type": "single",
+      "stem": "Two trains 126 m and 84 m long are moving in opposite directions at 27 m/s and 15 m/s. In how many seconds will they completely cross each other?",
+      "explanation": "Relative speed = 27+15 = 42 m/s; time = (126+84)/42 = 5 seconds.",
+      "options": [
+        {
+          "label": "5 seconds",
+          "is_correct": true
+        },
+        {
+          "label": "6 seconds",
+          "is_correct": false
+        },
+        {
+          "label": "7 seconds",
+          "is_correct": false
+        },
+        {
+          "label": "4 seconds",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Problems on Trains",
+      "kind": "standard",
+      "difficulty": "hard",
+      "answer_type": "single",
+      "stem": "A train 162 m long, moving at 31 m/s, overtakes a man walking at 4 m/s in the same direction. Find the time taken to pass him.",
+      "explanation": "Relative speed = 31−4 = 27 m/s; time = 162/27 = 6 seconds.",
+      "options": [
+        {
+          "label": "5 seconds",
+          "is_correct": false
+        },
+        {
+          "label": "6 seconds",
+          "is_correct": true
+        },
+        {
+          "label": "7 seconds",
+          "is_correct": false
+        },
+        {
+          "label": "8 seconds",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Problems on Trains",
+      "kind": "standard",
+      "difficulty": "hard",
+      "answer_type": "single",
+      "stem": "A train 377 m long, moving at 30 m/s, overtakes a man walking at 1 m/s in the same direction. Find the time taken to pass him.",
+      "explanation": "Relative speed = 30−1 = 29 m/s; time = 377/29 = 13 seconds.",
+      "options": [
+        {
+          "label": "14 seconds",
+          "is_correct": false
+        },
+        {
+          "label": "13 seconds",
+          "is_correct": true
+        },
+        {
+          "label": "15 seconds",
+          "is_correct": false
+        },
+        {
+          "label": "12 seconds",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Problems on Trains",
+      "kind": "standard",
+      "difficulty": "hard",
+      "answer_type": "single",
+      "stem": "Two trains 98 m and 245 m long are moving in opposite directions at 14 m/s and 35 m/s. In how many seconds will they completely cross each other?",
+      "explanation": "Relative speed = 14+35 = 49 m/s; time = (98+245)/49 = 7 seconds.",
+      "options": [
+        {
+          "label": "9 seconds",
+          "is_correct": false
+        },
+        {
+          "label": "7 seconds",
+          "is_correct": true
+        },
+        {
+          "label": "8 seconds",
+          "is_correct": false
+        },
+        {
+          "label": "6 seconds",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Problems on Trains",
+      "kind": "standard",
+      "difficulty": "hard",
+      "answer_type": "single",
+      "stem": "Two trains 138 m and 230 m long are moving in opposite directions at 16 m/s and 30 m/s. In how many seconds will they completely cross each other?",
+      "explanation": "Relative speed = 16+30 = 46 m/s; time = (138+230)/46 = 8 seconds.",
+      "options": [
+        {
+          "label": "8 seconds",
+          "is_correct": true
+        },
+        {
+          "label": "10 seconds",
+          "is_correct": false
+        },
+        {
+          "label": "9 seconds",
+          "is_correct": false
+        },
+        {
+          "label": "7 seconds",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Problems on Trains",
+      "kind": "standard",
+      "difficulty": "hard",
+      "answer_type": "single",
+      "stem": "A train 247 m long, moving at 21 m/s, overtakes a man walking at 2 m/s in the same direction. Find the time taken to pass him.",
+      "explanation": "Relative speed = 21−2 = 19 m/s; time = 247/19 = 13 seconds.",
+      "options": [
+        {
+          "label": "14 seconds",
+          "is_correct": false
+        },
+        {
+          "label": "12 seconds",
+          "is_correct": false
+        },
+        {
+          "label": "13 seconds",
+          "is_correct": true
+        },
+        {
+          "label": "15 seconds",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Problems on Trains",
+      "kind": "standard",
+      "difficulty": "hard",
+      "answer_type": "single",
+      "stem": "Two trains 36 m and 27 m long move in the same direction at 25 m/s and 16 m/s. How long will the faster train take to completely pass the slower one?",
+      "explanation": "Relative speed = 25−16 = 9 m/s; time = (36+27)/9 = 7 seconds.",
+      "options": [
+        {
+          "label": "6 seconds",
+          "is_correct": false
+        },
+        {
+          "label": "7 seconds",
+          "is_correct": true
+        },
+        {
+          "label": "8 seconds",
+          "is_correct": false
+        },
+        {
+          "label": "9 seconds",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Problems on Trains",
+      "kind": "standard",
+      "difficulty": "hard",
+      "answer_type": "single",
+      "stem": "Two trains 120 m and 150 m long are moving in opposite directions at 11 m/s and 19 m/s. In how many seconds will they completely cross each other?",
+      "explanation": "Relative speed = 11+19 = 30 m/s; time = (120+150)/30 = 9 seconds.",
+      "options": [
+        {
+          "label": "8 seconds",
+          "is_correct": false
+        },
+        {
+          "label": "9 seconds",
+          "is_correct": true
+        },
+        {
+          "label": "10 seconds",
+          "is_correct": false
+        },
+        {
+          "label": "11 seconds",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Problems on Trains",
+      "kind": "standard",
+      "difficulty": "hard",
+      "answer_type": "single",
+      "stem": "A train 76 m long, moving at 24 m/s, overtakes a man walking at 5 m/s in the same direction. Find the time taken to pass him.",
+      "explanation": "Relative speed = 24−5 = 19 m/s; time = 76/19 = 4 seconds.",
+      "options": [
+        {
+          "label": "3 seconds",
+          "is_correct": false
+        },
+        {
+          "label": "6 seconds",
+          "is_correct": false
+        },
+        {
+          "label": "5 seconds",
+          "is_correct": false
+        },
+        {
+          "label": "4 seconds",
+          "is_correct": true
+        }
+      ]
+    },
+    {
+      "chapter": "Problems on Trains",
+      "kind": "standard",
+      "difficulty": "hard",
+      "answer_type": "single",
+      "stem": "A train 507 m long, moving at 40 m/s, overtakes a man walking at 1 m/s in the same direction. Find the time taken to pass him.",
+      "explanation": "Relative speed = 40−1 = 39 m/s; time = 507/39 = 13 seconds.",
+      "options": [
+        {
+          "label": "14 seconds",
+          "is_correct": false
+        },
+        {
+          "label": "12 seconds",
+          "is_correct": false
+        },
+        {
+          "label": "13 seconds",
+          "is_correct": true
+        },
+        {
+          "label": "15 seconds",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Problems on Trains",
+      "kind": "standard",
+      "difficulty": "hard",
+      "answer_type": "single",
+      "stem": "Two trains 15 m and 15 m long move in the same direction at 38 m/s and 33 m/s. How long will the faster train take to completely pass the slower one?",
+      "explanation": "Relative speed = 38−33 = 5 m/s; time = (15+15)/5 = 6 seconds.",
+      "options": [
+        {
+          "label": "7 seconds",
+          "is_correct": false
+        },
+        {
+          "label": "5 seconds",
+          "is_correct": false
+        },
+        {
+          "label": "8 seconds",
+          "is_correct": false
+        },
+        {
+          "label": "6 seconds",
+          "is_correct": true
+        }
+      ]
+    },
+    {
+      "chapter": "Problems on Trains",
+      "kind": "standard",
+      "difficulty": "hard",
+      "answer_type": "single",
+      "stem": "Two trains 128 m and 256 m long are moving in opposite directions at 33 m/s and 31 m/s. In how many seconds will they completely cross each other?",
+      "explanation": "Relative speed = 33+31 = 64 m/s; time = (128+256)/64 = 6 seconds.",
+      "options": [
+        {
+          "label": "6 seconds",
+          "is_correct": true
+        },
+        {
+          "label": "8 seconds",
+          "is_correct": false
+        },
+        {
+          "label": "5 seconds",
+          "is_correct": false
+        },
+        {
+          "label": "7 seconds",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Problems on Trains",
+      "kind": "standard",
+      "difficulty": "hard",
+      "answer_type": "single",
+      "stem": "A train 240 m long, moving at 32 m/s, overtakes a man walking at 2 m/s in the same direction. Find the time taken to pass him.",
+      "explanation": "Relative speed = 32−2 = 30 m/s; time = 240/30 = 8 seconds.",
+      "options": [
+        {
+          "label": "10 seconds",
+          "is_correct": false
+        },
+        {
+          "label": "9 seconds",
+          "is_correct": false
+        },
+        {
+          "label": "8 seconds",
+          "is_correct": true
+        },
+        {
+          "label": "7 seconds",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Problems on Trains",
+      "kind": "standard",
+      "difficulty": "hard",
+      "answer_type": "single",
+      "stem": "A train 52 m long, moving at 15 m/s, overtakes a man walking at 2 m/s in the same direction. Find the time taken to pass him.",
+      "explanation": "Relative speed = 15−2 = 13 m/s; time = 52/13 = 4 seconds.",
+      "options": [
+        {
+          "label": "5 seconds",
+          "is_correct": false
+        },
+        {
+          "label": "3 seconds",
+          "is_correct": false
+        },
+        {
+          "label": "6 seconds",
+          "is_correct": false
+        },
+        {
+          "label": "4 seconds",
+          "is_correct": true
+        }
+      ]
+    },
+    {
+      "chapter": "Problems on Trains",
+      "kind": "standard",
+      "difficulty": "hard",
+      "answer_type": "single",
+      "stem": "Two trains 81 m and 162 m long are moving in opposite directions at 16 m/s and 11 m/s. In how many seconds will they completely cross each other?",
+      "explanation": "Relative speed = 16+11 = 27 m/s; time = (81+162)/27 = 9 seconds.",
+      "options": [
+        {
+          "label": "10 seconds",
+          "is_correct": false
+        },
+        {
+          "label": "9 seconds",
+          "is_correct": true
+        },
+        {
+          "label": "8 seconds",
+          "is_correct": false
+        },
+        {
+          "label": "11 seconds",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Problems on Trains",
+      "kind": "standard",
+      "difficulty": "hard",
+      "answer_type": "single",
+      "stem": "A train 189 m long, moving at 30 m/s, overtakes a man walking at 3 m/s in the same direction. Find the time taken to pass him.",
+      "explanation": "Relative speed = 30−3 = 27 m/s; time = 189/27 = 7 seconds.",
+      "options": [
+        {
+          "label": "6 seconds",
+          "is_correct": false
+        },
+        {
+          "label": "8 seconds",
+          "is_correct": false
+        },
+        {
+          "label": "7 seconds",
+          "is_correct": true
+        },
+        {
+          "label": "9 seconds",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Problems on Trains",
+      "kind": "standard",
+      "difficulty": "hard",
+      "answer_type": "single",
+      "stem": "Two trains 175 m and 210 m long are moving in opposite directions at 12 m/s and 23 m/s. In how many seconds will they completely cross each other?",
+      "explanation": "Relative speed = 12+23 = 35 m/s; time = (175+210)/35 = 11 seconds.",
+      "options": [
+        {
+          "label": "13 seconds",
+          "is_correct": false
+        },
+        {
+          "label": "12 seconds",
+          "is_correct": false
+        },
+        {
+          "label": "10 seconds",
+          "is_correct": false
+        },
+        {
+          "label": "11 seconds",
+          "is_correct": true
+        }
+      ]
+    },
+    {
+      "chapter": "Problems on Trains",
+      "kind": "standard",
+      "difficulty": "hard",
+      "answer_type": "single",
+      "stem": "Two trains 102 m and 51 m long move in the same direction at 24 m/s and 7 m/s. How long will the faster train take to completely pass the slower one?",
+      "explanation": "Relative speed = 24−7 = 17 m/s; time = (102+51)/17 = 9 seconds.",
+      "options": [
+        {
+          "label": "11 seconds",
+          "is_correct": false
+        },
+        {
+          "label": "10 seconds",
+          "is_correct": false
+        },
+        {
+          "label": "9 seconds",
+          "is_correct": true
+        },
+        {
+          "label": "8 seconds",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Problems on Trains",
+      "kind": "standard",
+      "difficulty": "hard",
+      "answer_type": "single",
+      "stem": "A train 176 m long, moving at 17 m/s, overtakes a man walking at 1 m/s in the same direction. Find the time taken to pass him.",
+      "explanation": "Relative speed = 17−1 = 16 m/s; time = 176/16 = 11 seconds.",
+      "options": [
+        {
+          "label": "12 seconds",
+          "is_correct": false
+        },
+        {
+          "label": "13 seconds",
+          "is_correct": false
+        },
+        {
+          "label": "10 seconds",
+          "is_correct": false
+        },
+        {
+          "label": "11 seconds",
+          "is_correct": true
+        }
+      ]
+    },
+    {
+      "chapter": "Problems on Trains",
+      "kind": "standard",
+      "difficulty": "very_hard",
+      "answer_type": "single",
+      "stem": "A train crosses a pole in 8 seconds and a 160 m long platform in 16 seconds. Find the length of the train.",
+      "explanation": "Speed = L/8 = (L+160)/16 ⇒ L = 160×8/(16−8) = 160 m.",
+      "options": [
+        {
+          "label": "160 m",
+          "is_correct": true
+        },
+        {
+          "label": "164 m",
+          "is_correct": false
+        },
+        {
+          "label": "158 m",
+          "is_correct": false
+        },
+        {
+          "label": "162 m",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Problems on Trains",
+      "kind": "standard",
+      "difficulty": "very_hard",
+      "answer_type": "single",
+      "stem": "A faster train 65 m long, running at 34 m/s, overtakes a slower train 195 m long in 20 seconds while both move in the same direction. Find the speed of the slower train.",
+      "explanation": "Relative speed = (65+195)/20 = 13 m/s; slower train's speed = 34 − 13 = 21 m/s.",
+      "options": [
+        {
+          "label": "20 m/s",
+          "is_correct": false
+        },
+        {
+          "label": "22 m/s",
+          "is_correct": false
+        },
+        {
+          "label": "21 m/s",
+          "is_correct": true
+        },
+        {
+          "label": "23 m/s",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Problems on Trains",
+      "kind": "standard",
+      "difficulty": "very_hard",
+      "answer_type": "single",
+      "stem": "A faster train 198 m long, running at 38 m/s, overtakes a slower train 198 m long in 12 seconds while both move in the same direction. Find the speed of the slower train.",
+      "explanation": "Relative speed = (198+198)/12 = 33 m/s; slower train's speed = 38 − 33 = 5 m/s.",
+      "options": [
+        {
+          "label": "5 m/s",
+          "is_correct": true
+        },
+        {
+          "label": "4 m/s",
+          "is_correct": false
+        },
+        {
+          "label": "6 m/s",
+          "is_correct": false
+        },
+        {
+          "label": "7 m/s",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Problems on Trains",
+      "kind": "standard",
+      "difficulty": "very_hard",
+      "answer_type": "single",
+      "stem": "Two trains 210 m and 406 m long move toward each other. One of them travels at 15 m/s and they cross each other in 14 seconds. Find the speed of the other train.",
+      "explanation": "Combined speed = (210+406)/14 = 44 m/s; other train's speed = 44 − 15 = 29 m/s.",
+      "options": [
+        {
+          "label": "30 m/s",
+          "is_correct": false
+        },
+        {
+          "label": "29 m/s",
+          "is_correct": true
+        },
+        {
+          "label": "31 m/s",
+          "is_correct": false
+        },
+        {
+          "label": "28 m/s",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Problems on Trains",
+      "kind": "standard",
+      "difficulty": "very_hard",
+      "answer_type": "single",
+      "stem": "A faster train 48 m long, running at 35 m/s, overtakes a slower train 132 m long in 15 seconds while both move in the same direction. Find the speed of the slower train.",
+      "explanation": "Relative speed = (48+132)/15 = 12 m/s; slower train's speed = 35 − 12 = 23 m/s.",
+      "options": [
+        {
+          "label": "24 m/s",
+          "is_correct": false
+        },
+        {
+          "label": "22 m/s",
+          "is_correct": false
+        },
+        {
+          "label": "23 m/s",
+          "is_correct": true
+        },
+        {
+          "label": "25 m/s",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Problems on Trains",
+      "kind": "standard",
+      "difficulty": "very_hard",
+      "answer_type": "single",
+      "stem": "A faster train 216 m long, running at 45 m/s, overtakes a slower train 360 m long in 16 seconds while both move in the same direction. Find the speed of the slower train.",
+      "explanation": "Relative speed = (216+360)/16 = 36 m/s; slower train's speed = 45 − 36 = 9 m/s.",
+      "options": [
+        {
+          "label": "10 m/s",
+          "is_correct": false
+        },
+        {
+          "label": "8 m/s",
+          "is_correct": false
+        },
+        {
+          "label": "9 m/s",
+          "is_correct": true
+        },
+        {
+          "label": "11 m/s",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Problems on Trains",
+      "kind": "standard",
+      "difficulty": "very_hard",
+      "answer_type": "single",
+      "stem": "Two trains 336 m and 120 m long move toward each other. One of them travels at 24 m/s and they cross each other in 12 seconds. Find the speed of the other train.",
+      "explanation": "Combined speed = (336+120)/12 = 38 m/s; other train's speed = 38 − 24 = 14 m/s.",
+      "options": [
+        {
+          "label": "14 m/s",
+          "is_correct": true
+        },
+        {
+          "label": "16 m/s",
+          "is_correct": false
+        },
+        {
+          "label": "15 m/s",
+          "is_correct": false
+        },
+        {
+          "label": "13 m/s",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Problems on Trains",
+      "kind": "standard",
+      "difficulty": "very_hard",
+      "answer_type": "single",
+      "stem": "Two trains 75 m and 159 m long move toward each other. One of them travels at 25 m/s and they cross each other in 6 seconds. Find the speed of the other train.",
+      "explanation": "Combined speed = (75+159)/6 = 39 m/s; other train's speed = 39 − 25 = 14 m/s.",
+      "options": [
+        {
+          "label": "15 m/s",
+          "is_correct": false
+        },
+        {
+          "label": "13 m/s",
+          "is_correct": false
+        },
+        {
+          "label": "14 m/s",
+          "is_correct": true
+        },
+        {
+          "label": "16 m/s",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Problems on Trains",
+      "kind": "standard",
+      "difficulty": "very_hard",
+      "answer_type": "single",
+      "stem": "A faster train 21 m long, running at 39 m/s, overtakes a slower train 42 m long in 9 seconds while both move in the same direction. Find the speed of the slower train.",
+      "explanation": "Relative speed = (21+42)/9 = 7 m/s; slower train's speed = 39 − 7 = 32 m/s.",
+      "options": [
+        {
+          "label": "34 m/s",
+          "is_correct": false
+        },
+        {
+          "label": "32 m/s",
+          "is_correct": true
+        },
+        {
+          "label": "33 m/s",
+          "is_correct": false
+        },
+        {
+          "label": "31 m/s",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Problems on Trains",
+      "kind": "standard",
+      "difficulty": "very_hard",
+      "answer_type": "single",
+      "stem": "A train crosses a pole in 6 seconds and a 120 m long platform in 10 seconds. Find the length of the train.",
+      "explanation": "Speed = L/6 = (L+120)/10 ⇒ L = 120×6/(10−6) = 180 m.",
+      "options": [
+        {
+          "label": "178 m",
+          "is_correct": false
+        },
+        {
+          "label": "180 m",
+          "is_correct": true
+        },
+        {
+          "label": "182 m",
+          "is_correct": false
+        },
+        {
+          "label": "184 m",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Problems on Trains",
+      "kind": "standard",
+      "difficulty": "very_hard",
+      "answer_type": "single",
+      "stem": "A faster train 14 m long, running at 42 m/s, overtakes a slower train 112 m long in 18 seconds while both move in the same direction. Find the speed of the slower train.",
+      "explanation": "Relative speed = (14+112)/18 = 7 m/s; slower train's speed = 42 − 7 = 35 m/s.",
+      "options": [
+        {
+          "label": "36 m/s",
+          "is_correct": false
+        },
+        {
+          "label": "35 m/s",
+          "is_correct": true
+        },
+        {
+          "label": "37 m/s",
+          "is_correct": false
+        },
+        {
+          "label": "34 m/s",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Problems on Trains",
+      "kind": "standard",
+      "difficulty": "very_hard",
+      "answer_type": "single",
+      "stem": "A train crosses a pole in 9 seconds and a 171 m long platform in 18 seconds. Find the length of the train.",
+      "explanation": "Speed = L/9 = (L+171)/18 ⇒ L = 171×9/(18−9) = 171 m.",
+      "options": [
+        {
+          "label": "175 m",
+          "is_correct": false
+        },
+        {
+          "label": "173 m",
+          "is_correct": false
+        },
+        {
+          "label": "171 m",
+          "is_correct": true
+        },
+        {
+          "label": "169 m",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Problems on Trains",
+      "kind": "standard",
+      "difficulty": "very_hard",
+      "answer_type": "single",
+      "stem": "Two trains 338 m and 110 m long move toward each other. One of them travels at 26 m/s and they cross each other in 8 seconds. Find the speed of the other train.",
+      "explanation": "Combined speed = (338+110)/8 = 56 m/s; other train's speed = 56 − 26 = 30 m/s.",
+      "options": [
+        {
+          "label": "29 m/s",
+          "is_correct": false
+        },
+        {
+          "label": "30 m/s",
+          "is_correct": true
+        },
+        {
+          "label": "32 m/s",
+          "is_correct": false
+        },
+        {
+          "label": "31 m/s",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Problems on Trains",
+      "kind": "standard",
+      "difficulty": "very_hard",
+      "answer_type": "single",
+      "stem": "Two trains 405 m and 253 m long move toward each other. One of them travels at 27 m/s and they cross each other in 14 seconds. Find the speed of the other train.",
+      "explanation": "Combined speed = (405+253)/14 = 47 m/s; other train's speed = 47 − 27 = 20 m/s.",
+      "options": [
+        {
+          "label": "19 m/s",
+          "is_correct": false
+        },
+        {
+          "label": "21 m/s",
+          "is_correct": false
+        },
+        {
+          "label": "20 m/s",
+          "is_correct": true
+        },
+        {
+          "label": "22 m/s",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Problems on Trains",
+      "kind": "standard",
+      "difficulty": "very_hard",
+      "answer_type": "single",
+      "stem": "A train crosses a pole in 7 seconds and a 66 m long platform in 13 seconds. Find the length of the train.",
+      "explanation": "Speed = L/7 = (L+66)/13 ⇒ L = 66×7/(13−7) = 77 m.",
+      "options": [
+        {
+          "label": "81 m",
+          "is_correct": false
+        },
+        {
+          "label": "79 m",
+          "is_correct": false
+        },
+        {
+          "label": "75 m",
+          "is_correct": false
+        },
+        {
+          "label": "77 m",
+          "is_correct": true
+        }
+      ]
+    },
+    {
+      "chapter": "Problems on Trains",
+      "kind": "standard",
+      "difficulty": "very_hard",
+      "answer_type": "single",
+      "stem": "Two trains 390 m and 315 m long move toward each other. One of them travels at 26 m/s and they cross each other in 15 seconds. Find the speed of the other train.",
+      "explanation": "Combined speed = (390+315)/15 = 47 m/s; other train's speed = 47 − 26 = 21 m/s.",
+      "options": [
+        {
+          "label": "21 m/s",
+          "is_correct": true
+        },
+        {
+          "label": "20 m/s",
+          "is_correct": false
+        },
+        {
+          "label": "23 m/s",
+          "is_correct": false
+        },
+        {
+          "label": "22 m/s",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Problems on Trains",
+      "kind": "standard",
+      "difficulty": "very_hard",
+      "answer_type": "single",
+      "stem": "A train crosses a pole in 14 seconds and a 100 m long platform in 24 seconds. Find the length of the train.",
+      "explanation": "Speed = L/14 = (L+100)/24 ⇒ L = 100×14/(24−14) = 140 m.",
+      "options": [
+        {
+          "label": "138 m",
+          "is_correct": false
+        },
+        {
+          "label": "144 m",
+          "is_correct": false
+        },
+        {
+          "label": "140 m",
+          "is_correct": true
+        },
+        {
+          "label": "142 m",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Problems on Trains",
+      "kind": "standard",
+      "difficulty": "very_hard",
+      "answer_type": "single",
+      "stem": "A faster train 42 m long, running at 31 m/s, overtakes a slower train 126 m long in 12 seconds while both move in the same direction. Find the speed of the slower train.",
+      "explanation": "Relative speed = (42+126)/12 = 14 m/s; slower train's speed = 31 − 14 = 17 m/s.",
+      "options": [
+        {
+          "label": "17 m/s",
+          "is_correct": true
+        },
+        {
+          "label": "18 m/s",
+          "is_correct": false
+        },
+        {
+          "label": "19 m/s",
+          "is_correct": false
+        },
+        {
+          "label": "16 m/s",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Problems on Trains",
+      "kind": "standard",
+      "difficulty": "very_hard",
+      "answer_type": "single",
+      "stem": "A train crosses a pole in 13 seconds and a 60 m long platform in 17 seconds. Find the length of the train.",
+      "explanation": "Speed = L/13 = (L+60)/17 ⇒ L = 60×13/(17−13) = 195 m.",
+      "options": [
+        {
+          "label": "195 m",
+          "is_correct": true
+        },
+        {
+          "label": "193 m",
+          "is_correct": false
+        },
+        {
+          "label": "197 m",
+          "is_correct": false
+        },
+        {
+          "label": "199 m",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Problems on Trains",
+      "kind": "standard",
+      "difficulty": "very_hard",
+      "answer_type": "single",
+      "stem": "A faster train 45 m long, running at 31 m/s, overtakes a slower train 105 m long in 10 seconds while both move in the same direction. Find the speed of the slower train.",
+      "explanation": "Relative speed = (45+105)/10 = 15 m/s; slower train's speed = 31 − 15 = 16 m/s.",
+      "options": [
+        {
+          "label": "16 m/s",
+          "is_correct": true
+        },
+        {
+          "label": "15 m/s",
+          "is_correct": false
+        },
+        {
+          "label": "17 m/s",
+          "is_correct": false
+        },
+        {
+          "label": "18 m/s",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Problems on Trains",
+      "kind": "standard",
+      "difficulty": "very_hard",
+      "answer_type": "single",
+      "stem": "Two trains 522 m and 192 m long move toward each other. One of them travels at 29 m/s and they cross each other in 14 seconds. Find the speed of the other train.",
+      "explanation": "Combined speed = (522+192)/14 = 51 m/s; other train's speed = 51 − 29 = 22 m/s.",
+      "options": [
+        {
+          "label": "21 m/s",
+          "is_correct": false
+        },
+        {
+          "label": "23 m/s",
+          "is_correct": false
+        },
+        {
+          "label": "24 m/s",
+          "is_correct": false
+        },
+        {
+          "label": "22 m/s",
+          "is_correct": true
+        }
+      ]
+    },
+    {
+      "chapter": "Problems on Trains",
+      "kind": "standard",
+      "difficulty": "very_hard",
+      "answer_type": "single",
+      "stem": "A faster train 40 m long, running at 37 m/s, overtakes a slower train 140 m long in 9 seconds while both move in the same direction. Find the speed of the slower train.",
+      "explanation": "Relative speed = (40+140)/9 = 20 m/s; slower train's speed = 37 − 20 = 17 m/s.",
+      "options": [
+        {
+          "label": "16 m/s",
+          "is_correct": false
+        },
+        {
+          "label": "17 m/s",
+          "is_correct": true
+        },
+        {
+          "label": "19 m/s",
+          "is_correct": false
+        },
+        {
+          "label": "18 m/s",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Problems on Trains",
+      "kind": "standard",
+      "difficulty": "very_hard",
+      "answer_type": "single",
+      "stem": "A faster train 156 m long, running at 33 m/s, overtakes a slower train 130 m long in 11 seconds while both move in the same direction. Find the speed of the slower train.",
+      "explanation": "Relative speed = (156+130)/11 = 26 m/s; slower train's speed = 33 − 26 = 7 m/s.",
+      "options": [
+        {
+          "label": "7 m/s",
+          "is_correct": true
+        },
+        {
+          "label": "9 m/s",
+          "is_correct": false
+        },
+        {
+          "label": "8 m/s",
+          "is_correct": false
+        },
+        {
+          "label": "6 m/s",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Problems on Trains",
+      "kind": "standard",
+      "difficulty": "very_hard",
+      "answer_type": "single",
+      "stem": "A faster train 27 m long, running at 38 m/s, overtakes a slower train 72 m long in 11 seconds while both move in the same direction. Find the speed of the slower train.",
+      "explanation": "Relative speed = (27+72)/11 = 9 m/s; slower train's speed = 38 − 9 = 29 m/s.",
+      "options": [
+        {
+          "label": "30 m/s",
+          "is_correct": false
+        },
+        {
+          "label": "31 m/s",
+          "is_correct": false
+        },
+        {
+          "label": "29 m/s",
+          "is_correct": true
+        },
+        {
+          "label": "28 m/s",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Problems on Trains",
+      "kind": "standard",
+      "difficulty": "very_hard",
+      "answer_type": "single",
+      "stem": "A faster train 64 m long, running at 34 m/s, overtakes a slower train 256 m long in 20 seconds while both move in the same direction. Find the speed of the slower train.",
+      "explanation": "Relative speed = (64+256)/20 = 16 m/s; slower train's speed = 34 − 16 = 18 m/s.",
+      "options": [
+        {
+          "label": "17 m/s",
+          "is_correct": false
+        },
+        {
+          "label": "18 m/s",
+          "is_correct": true
+        },
+        {
+          "label": "20 m/s",
+          "is_correct": false
+        },
+        {
+          "label": "19 m/s",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Problems on Trains",
+      "kind": "standard",
+      "difficulty": "very_hard",
+      "answer_type": "single",
+      "stem": "A faster train 27 m long, running at 43 m/s, overtakes a slower train 135 m long in 18 seconds while both move in the same direction. Find the speed of the slower train.",
+      "explanation": "Relative speed = (27+135)/18 = 9 m/s; slower train's speed = 43 − 9 = 34 m/s.",
+      "options": [
+        {
+          "label": "33 m/s",
+          "is_correct": false
+        },
+        {
+          "label": "36 m/s",
+          "is_correct": false
+        },
+        {
+          "label": "34 m/s",
+          "is_correct": true
+        },
+        {
+          "label": "35 m/s",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Problems on Trains",
+      "kind": "standard",
+      "difficulty": "very_hard",
+      "answer_type": "single",
+      "stem": "Two trains 289 m and 166 m long move toward each other. One of them travels at 17 m/s and they cross each other in 13 seconds. Find the speed of the other train.",
+      "explanation": "Combined speed = (289+166)/13 = 35 m/s; other train's speed = 35 − 17 = 18 m/s.",
+      "options": [
+        {
+          "label": "17 m/s",
+          "is_correct": false
+        },
+        {
+          "label": "19 m/s",
+          "is_correct": false
+        },
+        {
+          "label": "20 m/s",
+          "is_correct": false
+        },
+        {
+          "label": "18 m/s",
+          "is_correct": true
+        }
+      ]
+    },
+    {
+      "chapter": "Problems on Trains",
+      "kind": "standard",
+      "difficulty": "very_hard",
+      "answer_type": "single",
+      "stem": "A faster train 264 m long, running at 45 m/s, overtakes a slower train 165 m long in 13 seconds while both move in the same direction. Find the speed of the slower train.",
+      "explanation": "Relative speed = (264+165)/13 = 33 m/s; slower train's speed = 45 − 33 = 12 m/s.",
+      "options": [
+        {
+          "label": "12 m/s",
+          "is_correct": true
+        },
+        {
+          "label": "13 m/s",
+          "is_correct": false
+        },
+        {
+          "label": "14 m/s",
+          "is_correct": false
+        },
+        {
+          "label": "11 m/s",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Problems on Trains",
+      "kind": "standard",
+      "difficulty": "very_hard",
+      "answer_type": "single",
+      "stem": "A faster train 81 m long, running at 38 m/s, overtakes a slower train 297 m long in 14 seconds while both move in the same direction. Find the speed of the slower train.",
+      "explanation": "Relative speed = (81+297)/14 = 27 m/s; slower train's speed = 38 − 27 = 11 m/s.",
+      "options": [
+        {
+          "label": "12 m/s",
+          "is_correct": false
+        },
+        {
+          "label": "10 m/s",
+          "is_correct": false
+        },
+        {
+          "label": "11 m/s",
+          "is_correct": true
+        },
+        {
+          "label": "13 m/s",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Problems on Trains",
+      "kind": "standard",
+      "difficulty": "very_hard",
+      "answer_type": "single",
+      "stem": "A faster train 104 m long, running at 35 m/s, overtakes a slower train 338 m long in 17 seconds while both move in the same direction. Find the speed of the slower train.",
+      "explanation": "Relative speed = (104+338)/17 = 26 m/s; slower train's speed = 35 − 26 = 9 m/s.",
+      "options": [
+        {
+          "label": "9 m/s",
+          "is_correct": true
+        },
+        {
+          "label": "8 m/s",
+          "is_correct": false
+        },
+        {
+          "label": "10 m/s",
+          "is_correct": false
+        },
+        {
+          "label": "11 m/s",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Problems on Trains",
+      "kind": "standard",
+      "difficulty": "very_hard",
+      "answer_type": "single",
+      "stem": "A train crosses a pole in 13 seconds and a 64 m long platform in 17 seconds. Find the length of the train.",
+      "explanation": "Speed = L/13 = (L+64)/17 ⇒ L = 64×13/(17−13) = 208 m.",
+      "options": [
+        {
+          "label": "208 m",
+          "is_correct": true
+        },
+        {
+          "label": "216 m",
+          "is_correct": false
+        },
+        {
+          "label": "224 m",
+          "is_correct": false
+        },
+        {
+          "label": "200 m",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Problems on Trains",
+      "kind": "standard",
+      "difficulty": "very_hard",
+      "answer_type": "single",
+      "stem": "Two trains 391 m and 99 m long move toward each other. One of them travels at 17 m/s and they cross each other in 14 seconds. Find the speed of the other train.",
+      "explanation": "Combined speed = (391+99)/14 = 35 m/s; other train's speed = 35 − 17 = 18 m/s.",
+      "options": [
+        {
+          "label": "19 m/s",
+          "is_correct": false
+        },
+        {
+          "label": "20 m/s",
+          "is_correct": false
+        },
+        {
+          "label": "17 m/s",
+          "is_correct": false
+        },
+        {
+          "label": "18 m/s",
+          "is_correct": true
+        }
+      ]
+    },
+    {
+      "chapter": "Problems on Trains",
+      "kind": "standard",
+      "difficulty": "very_hard",
+      "answer_type": "single",
+      "stem": "Two trains 84 m and 294 m long move toward each other. One of them travels at 14 m/s and they cross each other in 9 seconds. Find the speed of the other train.",
+      "explanation": "Combined speed = (84+294)/9 = 42 m/s; other train's speed = 42 − 14 = 28 m/s.",
+      "options": [
+        {
+          "label": "29 m/s",
+          "is_correct": false
+        },
+        {
+          "label": "28 m/s",
+          "is_correct": true
+        },
+        {
+          "label": "27 m/s",
+          "is_correct": false
+        },
+        {
+          "label": "30 m/s",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Problems on Trains",
+      "kind": "standard",
+      "difficulty": "very_hard",
+      "answer_type": "single",
+      "stem": "A train crosses a pole in 9 seconds and a 100 m long platform in 19 seconds. Find the length of the train.",
+      "explanation": "Speed = L/9 = (L+100)/19 ⇒ L = 100×9/(19−9) = 90 m.",
+      "options": [
+        {
+          "label": "88 m",
+          "is_correct": false
+        },
+        {
+          "label": "94 m",
+          "is_correct": false
+        },
+        {
+          "label": "92 m",
+          "is_correct": false
+        },
+        {
+          "label": "90 m",
+          "is_correct": true
+        }
+      ]
+    },
+    {
+      "chapter": "Problems on Trains",
+      "kind": "standard",
+      "difficulty": "very_hard",
+      "answer_type": "single",
+      "stem": "A train crosses a pole in 12 seconds and a 264 m long platform in 24 seconds. Find the length of the train.",
+      "explanation": "Speed = L/12 = (L+264)/24 ⇒ L = 264×12/(24−12) = 264 m.",
+      "options": [
+        {
+          "label": "253 m",
+          "is_correct": false
+        },
+        {
+          "label": "264 m",
+          "is_correct": true
+        },
+        {
+          "label": "275 m",
+          "is_correct": false
+        },
+        {
+          "label": "286 m",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Problems on Trains",
+      "kind": "standard",
+      "difficulty": "very_hard",
+      "answer_type": "single",
+      "stem": "A train crosses a pole in 7 seconds and a 270 m long platform in 17 seconds. Find the length of the train.",
+      "explanation": "Speed = L/7 = (L+270)/17 ⇒ L = 270×7/(17−7) = 189 m.",
+      "options": [
+        {
+          "label": "193 m",
+          "is_correct": false
+        },
+        {
+          "label": "187 m",
+          "is_correct": false
+        },
+        {
+          "label": "191 m",
+          "is_correct": false
+        },
+        {
+          "label": "189 m",
+          "is_correct": true
+        }
+      ]
+    },
+    {
+      "chapter": "Problems on Trains",
+      "kind": "standard",
+      "difficulty": "very_hard",
+      "answer_type": "single",
+      "stem": "Two trains 60 m and 148 m long move toward each other. One of them travels at 10 m/s and they cross each other in 8 seconds. Find the speed of the other train.",
+      "explanation": "Combined speed = (60+148)/8 = 26 m/s; other train's speed = 26 − 10 = 16 m/s.",
+      "options": [
+        {
+          "label": "15 m/s",
+          "is_correct": false
+        },
+        {
+          "label": "18 m/s",
+          "is_correct": false
+        },
+        {
+          "label": "17 m/s",
+          "is_correct": false
+        },
+        {
+          "label": "16 m/s",
+          "is_correct": true
+        }
+      ]
+    },
+    {
+      "chapter": "Problems on Trains",
+      "kind": "standard",
+      "difficulty": "very_hard",
+      "answer_type": "single",
+      "stem": "Two trains 480 m and 150 m long move toward each other. One of them travels at 12 m/s and they cross each other in 15 seconds. Find the speed of the other train.",
+      "explanation": "Combined speed = (480+150)/15 = 42 m/s; other train's speed = 42 − 12 = 30 m/s.",
+      "options": [
+        {
+          "label": "30 m/s",
+          "is_correct": true
+        },
+        {
+          "label": "29 m/s",
+          "is_correct": false
+        },
+        {
+          "label": "31 m/s",
+          "is_correct": false
+        },
+        {
+          "label": "32 m/s",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Problems on Trains",
+      "kind": "standard",
+      "difficulty": "very_hard",
+      "answer_type": "single",
+      "stem": "A faster train 10 m long, running at 41 m/s, overtakes a slower train 85 m long in 19 seconds while both move in the same direction. Find the speed of the slower train.",
+      "explanation": "Relative speed = (10+85)/19 = 5 m/s; slower train's speed = 41 − 5 = 36 m/s.",
+      "options": [
+        {
+          "label": "35 m/s",
+          "is_correct": false
+        },
+        {
+          "label": "36 m/s",
+          "is_correct": true
+        },
+        {
+          "label": "37 m/s",
+          "is_correct": false
+        },
+        {
+          "label": "38 m/s",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Problems on Trains",
+      "kind": "standard",
+      "difficulty": "very_hard",
+      "answer_type": "single",
+      "stem": "A faster train 210 m long, running at 27 m/s, overtakes a slower train 189 m long in 19 seconds while both move in the same direction. Find the speed of the slower train.",
+      "explanation": "Relative speed = (210+189)/19 = 21 m/s; slower train's speed = 27 − 21 = 6 m/s.",
+      "options": [
+        {
+          "label": "5 m/s",
+          "is_correct": false
+        },
+        {
+          "label": "6 m/s",
+          "is_correct": true
+        },
+        {
+          "label": "8 m/s",
+          "is_correct": false
+        },
+        {
+          "label": "7 m/s",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Problems on Trains",
+      "kind": "standard",
+      "difficulty": "very_hard",
+      "answer_type": "single",
+      "stem": "A train crosses a pole in 10 seconds and a 175 m long platform in 17 seconds. Find the length of the train.",
+      "explanation": "Speed = L/10 = (L+175)/17 ⇒ L = 175×10/(17−10) = 250 m.",
+      "options": [
+        {
+          "label": "270 m",
+          "is_correct": false
+        },
+        {
+          "label": "240 m",
+          "is_correct": false
+        },
+        {
+          "label": "250 m",
+          "is_correct": true
+        },
+        {
+          "label": "260 m",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Problems on Trains",
+      "kind": "standard",
+      "difficulty": "very_hard",
+      "answer_type": "single",
+      "stem": "Two trains 60 m and 120 m long move toward each other. One of them travels at 15 m/s and they cross each other in 5 seconds. Find the speed of the other train.",
+      "explanation": "Combined speed = (60+120)/5 = 36 m/s; other train's speed = 36 − 15 = 21 m/s.",
+      "options": [
+        {
+          "label": "21 m/s",
+          "is_correct": true
+        },
+        {
+          "label": "22 m/s",
+          "is_correct": false
+        },
+        {
+          "label": "23 m/s",
+          "is_correct": false
+        },
+        {
+          "label": "20 m/s",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Problems on Trains",
+      "kind": "standard",
+      "difficulty": "very_hard",
+      "answer_type": "single",
+      "stem": "A train crosses a pole in 12 seconds and a 120 m long platform in 16 seconds. Find the length of the train.",
+      "explanation": "Speed = L/12 = (L+120)/16 ⇒ L = 120×12/(16−12) = 360 m.",
+      "options": [
+        {
+          "label": "346 m",
+          "is_correct": false
+        },
+        {
+          "label": "374 m",
+          "is_correct": false
+        },
+        {
+          "label": "360 m",
+          "is_correct": true
+        },
+        {
+          "label": "388 m",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Problems on Trains",
+      "kind": "standard",
+      "difficulty": "very_hard",
+      "answer_type": "single",
+      "stem": "A train crosses a pole in 5 seconds and a 240 m long platform in 17 seconds. Find the length of the train.",
+      "explanation": "Speed = L/5 = (L+240)/17 ⇒ L = 240×5/(17−5) = 100 m.",
+      "options": [
+        {
+          "label": "102 m",
+          "is_correct": false
+        },
+        {
+          "label": "100 m",
+          "is_correct": true
+        },
+        {
+          "label": "104 m",
+          "is_correct": false
+        },
+        {
+          "label": "98 m",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Problems on Trains",
+      "kind": "standard",
+      "difficulty": "very_hard",
+      "answer_type": "single",
+      "stem": "A train crosses a pole in 11 seconds and a 153 m long platform in 20 seconds. Find the length of the train.",
+      "explanation": "Speed = L/11 = (L+153)/20 ⇒ L = 153×11/(20−11) = 187 m.",
+      "options": [
+        {
+          "label": "191 m",
+          "is_correct": false
+        },
+        {
+          "label": "185 m",
+          "is_correct": false
+        },
+        {
+          "label": "187 m",
+          "is_correct": true
+        },
+        {
+          "label": "189 m",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Problems on Trains",
+      "kind": "standard",
+      "difficulty": "very_hard",
+      "answer_type": "single",
+      "stem": "A faster train 30 m long, running at 26 m/s, overtakes a slower train 240 m long in 18 seconds while both move in the same direction. Find the speed of the slower train.",
+      "explanation": "Relative speed = (30+240)/18 = 15 m/s; slower train's speed = 26 − 15 = 11 m/s.",
+      "options": [
+        {
+          "label": "10 m/s",
+          "is_correct": false
+        },
+        {
+          "label": "11 m/s",
+          "is_correct": true
+        },
+        {
+          "label": "13 m/s",
+          "is_correct": false
+        },
+        {
+          "label": "12 m/s",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Problems on Trains",
+      "kind": "standard",
+      "difficulty": "very_hard",
+      "answer_type": "single",
+      "stem": "A train crosses a pole in 12 seconds and a 220 m long platform in 22 seconds. Find the length of the train.",
+      "explanation": "Speed = L/12 = (L+220)/22 ⇒ L = 220×12/(22−12) = 264 m.",
+      "options": [
+        {
+          "label": "275 m",
+          "is_correct": false
+        },
+        {
+          "label": "264 m",
+          "is_correct": true
+        },
+        {
+          "label": "286 m",
+          "is_correct": false
+        },
+        {
+          "label": "253 m",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Problems on Trains",
+      "kind": "standard",
+      "difficulty": "very_hard",
+      "answer_type": "single",
+      "stem": "A faster train 36 m long, running at 39 m/s, overtakes a slower train 60 m long in 8 seconds while both move in the same direction. Find the speed of the slower train.",
+      "explanation": "Relative speed = (36+60)/8 = 12 m/s; slower train's speed = 39 − 12 = 27 m/s.",
+      "options": [
+        {
+          "label": "29 m/s",
+          "is_correct": false
+        },
+        {
+          "label": "28 m/s",
+          "is_correct": false
+        },
+        {
+          "label": "27 m/s",
+          "is_correct": true
+        },
+        {
+          "label": "26 m/s",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Problems on Trains",
+      "kind": "standard",
+      "difficulty": "very_hard",
+      "answer_type": "single",
+      "stem": "A train crosses a pole in 11 seconds and a 207 m long platform in 20 seconds. Find the length of the train.",
+      "explanation": "Speed = L/11 = (L+207)/20 ⇒ L = 207×11/(20−11) = 253 m.",
+      "options": [
+        {
+          "label": "253 m",
+          "is_correct": true
+        },
+        {
+          "label": "243 m",
+          "is_correct": false
+        },
+        {
+          "label": "273 m",
+          "is_correct": false
+        },
+        {
+          "label": "263 m",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Problems on Trains",
+      "kind": "standard",
+      "difficulty": "very_hard",
+      "answer_type": "single",
+      "stem": "A faster train 24 m long, running at 38 m/s, overtakes a slower train 136 m long in 20 seconds while both move in the same direction. Find the speed of the slower train.",
+      "explanation": "Relative speed = (24+136)/20 = 8 m/s; slower train's speed = 38 − 8 = 30 m/s.",
+      "options": [
+        {
+          "label": "29 m/s",
+          "is_correct": false
+        },
+        {
+          "label": "30 m/s",
+          "is_correct": true
+        },
+        {
+          "label": "31 m/s",
+          "is_correct": false
+        },
+        {
+          "label": "32 m/s",
+          "is_correct": false
+        }
+      ]
+    }
+  ]
+}

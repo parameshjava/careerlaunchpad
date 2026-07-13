@@ -1,0 +1,5205 @@
+{
+  "subject": "Arithmetic",
+  "questions": [
+    {
+      "chapter": "Problems on Numbers",
+      "kind": "standard",
+      "difficulty": "easy",
+      "answer_type": "single",
+      "stem": "When a number is multiplied by 3, the result is 138. Find the number.",
+      "explanation": "Number = 138 ÷ 3 = 46.",
+      "options": [
+        {
+          "label": "44",
+          "is_correct": false
+        },
+        {
+          "label": "46",
+          "is_correct": true
+        },
+        {
+          "label": "48",
+          "is_correct": false
+        },
+        {
+          "label": "50",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Problems on Numbers",
+      "kind": "standard",
+      "difficulty": "easy",
+      "answer_type": "single",
+      "stem": "The sum of two numbers is 163. If one of them is 16, find the other number.",
+      "explanation": "Other number = 163 − 16 = 147.",
+      "options": [
+        {
+          "label": "149",
+          "is_correct": false
+        },
+        {
+          "label": "147",
+          "is_correct": true
+        },
+        {
+          "label": "145",
+          "is_correct": false
+        },
+        {
+          "label": "151",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Problems on Numbers",
+      "kind": "standard",
+      "difficulty": "easy",
+      "answer_type": "single",
+      "stem": "The sum of two numbers is 21. If one of them is 14, find the other number.",
+      "explanation": "Other number = 21 − 14 = 7.",
+      "options": [
+        {
+          "label": "9",
+          "is_correct": false
+        },
+        {
+          "label": "8",
+          "is_correct": false
+        },
+        {
+          "label": "6",
+          "is_correct": false
+        },
+        {
+          "label": "7",
+          "is_correct": true
+        }
+      ]
+    },
+    {
+      "chapter": "Problems on Numbers",
+      "kind": "standard",
+      "difficulty": "easy",
+      "answer_type": "single",
+      "stem": "When a number is multiplied by 10, the result is 200. Find the number.",
+      "explanation": "Number = 200 ÷ 10 = 20.",
+      "options": [
+        {
+          "label": "20",
+          "is_correct": true
+        },
+        {
+          "label": "21",
+          "is_correct": false
+        },
+        {
+          "label": "19",
+          "is_correct": false
+        },
+        {
+          "label": "22",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Problems on Numbers",
+      "kind": "standard",
+      "difficulty": "easy",
+      "answer_type": "single",
+      "stem": "The sum of two numbers is 138. If one of them is 116, find the other number.",
+      "explanation": "Other number = 138 − 116 = 22.",
+      "options": [
+        {
+          "label": "23",
+          "is_correct": false
+        },
+        {
+          "label": "22",
+          "is_correct": true
+        },
+        {
+          "label": "24",
+          "is_correct": false
+        },
+        {
+          "label": "21",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Problems on Numbers",
+      "kind": "standard",
+      "difficulty": "easy",
+      "answer_type": "single",
+      "stem": "The sum of two numbers is 115. If one of them is 57, find the other number.",
+      "explanation": "Other number = 115 − 57 = 58.",
+      "options": [
+        {
+          "label": "60",
+          "is_correct": false
+        },
+        {
+          "label": "58",
+          "is_correct": true
+        },
+        {
+          "label": "62",
+          "is_correct": false
+        },
+        {
+          "label": "56",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Problems on Numbers",
+      "kind": "standard",
+      "difficulty": "easy",
+      "answer_type": "single",
+      "stem": "When a number is multiplied by 2, the result is 80. Find the number.",
+      "explanation": "Number = 80 ÷ 2 = 40.",
+      "options": [
+        {
+          "label": "42",
+          "is_correct": false
+        },
+        {
+          "label": "38",
+          "is_correct": false
+        },
+        {
+          "label": "40",
+          "is_correct": true
+        },
+        {
+          "label": "44",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Problems on Numbers",
+      "kind": "standard",
+      "difficulty": "easy",
+      "answer_type": "single",
+      "stem": "When a number is multiplied by 12, the result is 408. Find the number.",
+      "explanation": "Number = 408 ÷ 12 = 34.",
+      "options": [
+        {
+          "label": "34",
+          "is_correct": true
+        },
+        {
+          "label": "36",
+          "is_correct": false
+        },
+        {
+          "label": "35",
+          "is_correct": false
+        },
+        {
+          "label": "33",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Problems on Numbers",
+      "kind": "standard",
+      "difficulty": "easy",
+      "answer_type": "single",
+      "stem": "The sum of two numbers is 172. If one of them is 164, find the other number.",
+      "explanation": "Other number = 172 − 164 = 8.",
+      "options": [
+        {
+          "label": "7",
+          "is_correct": false
+        },
+        {
+          "label": "9",
+          "is_correct": false
+        },
+        {
+          "label": "8",
+          "is_correct": true
+        },
+        {
+          "label": "10",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Problems on Numbers",
+      "kind": "standard",
+      "difficulty": "easy",
+      "answer_type": "single",
+      "stem": "The difference between two numbers is 59 and the smaller number is 72. Find the larger number.",
+      "explanation": "Larger = 72 + 59 = 131.",
+      "options": [
+        {
+          "label": "133",
+          "is_correct": false
+        },
+        {
+          "label": "129",
+          "is_correct": false
+        },
+        {
+          "label": "135",
+          "is_correct": false
+        },
+        {
+          "label": "131",
+          "is_correct": true
+        }
+      ]
+    },
+    {
+      "chapter": "Problems on Numbers",
+      "kind": "standard",
+      "difficulty": "easy",
+      "answer_type": "single",
+      "stem": "When a number is multiplied by 2, the result is 94. Find the number.",
+      "explanation": "Number = 94 ÷ 2 = 47.",
+      "options": [
+        {
+          "label": "45",
+          "is_correct": false
+        },
+        {
+          "label": "51",
+          "is_correct": false
+        },
+        {
+          "label": "49",
+          "is_correct": false
+        },
+        {
+          "label": "47",
+          "is_correct": true
+        }
+      ]
+    },
+    {
+      "chapter": "Problems on Numbers",
+      "kind": "standard",
+      "difficulty": "easy",
+      "answer_type": "single",
+      "stem": "The sum of two numbers is 48. If one of them is 7, find the other number.",
+      "explanation": "Other number = 48 − 7 = 41.",
+      "options": [
+        {
+          "label": "43",
+          "is_correct": false
+        },
+        {
+          "label": "45",
+          "is_correct": false
+        },
+        {
+          "label": "39",
+          "is_correct": false
+        },
+        {
+          "label": "41",
+          "is_correct": true
+        }
+      ]
+    },
+    {
+      "chapter": "Problems on Numbers",
+      "kind": "standard",
+      "difficulty": "easy",
+      "answer_type": "single",
+      "stem": "The sum of two numbers is 175. If one of them is 114, find the other number.",
+      "explanation": "Other number = 175 − 114 = 61.",
+      "options": [
+        {
+          "label": "59",
+          "is_correct": false
+        },
+        {
+          "label": "63",
+          "is_correct": false
+        },
+        {
+          "label": "61",
+          "is_correct": true
+        },
+        {
+          "label": "65",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Problems on Numbers",
+      "kind": "standard",
+      "difficulty": "easy",
+      "answer_type": "single",
+      "stem": "When a number is multiplied by 9, the result is 162. Find the number.",
+      "explanation": "Number = 162 ÷ 9 = 18.",
+      "options": [
+        {
+          "label": "20",
+          "is_correct": false
+        },
+        {
+          "label": "18",
+          "is_correct": true
+        },
+        {
+          "label": "17",
+          "is_correct": false
+        },
+        {
+          "label": "19",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Problems on Numbers",
+      "kind": "standard",
+      "difficulty": "easy",
+      "answer_type": "single",
+      "stem": "The sum of two numbers is 47. If one of them is 9, find the other number.",
+      "explanation": "Other number = 47 − 9 = 38.",
+      "options": [
+        {
+          "label": "40",
+          "is_correct": false
+        },
+        {
+          "label": "38",
+          "is_correct": true
+        },
+        {
+          "label": "39",
+          "is_correct": false
+        },
+        {
+          "label": "37",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Problems on Numbers",
+      "kind": "standard",
+      "difficulty": "easy",
+      "answer_type": "single",
+      "stem": "The sum of two numbers is 93. If one of them is 33, find the other number.",
+      "explanation": "Other number = 93 − 33 = 60.",
+      "options": [
+        {
+          "label": "64",
+          "is_correct": false
+        },
+        {
+          "label": "60",
+          "is_correct": true
+        },
+        {
+          "label": "62",
+          "is_correct": false
+        },
+        {
+          "label": "58",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Problems on Numbers",
+      "kind": "standard",
+      "difficulty": "easy",
+      "answer_type": "single",
+      "stem": "The difference between two numbers is 65 and the smaller number is 37. Find the larger number.",
+      "explanation": "Larger = 37 + 65 = 102.",
+      "options": [
+        {
+          "label": "104",
+          "is_correct": false
+        },
+        {
+          "label": "100",
+          "is_correct": false
+        },
+        {
+          "label": "102",
+          "is_correct": true
+        },
+        {
+          "label": "106",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Problems on Numbers",
+      "kind": "standard",
+      "difficulty": "easy",
+      "answer_type": "single",
+      "stem": "The sum of two numbers is 33. If one of them is 6, find the other number.",
+      "explanation": "Other number = 33 − 6 = 27.",
+      "options": [
+        {
+          "label": "27",
+          "is_correct": true
+        },
+        {
+          "label": "26",
+          "is_correct": false
+        },
+        {
+          "label": "29",
+          "is_correct": false
+        },
+        {
+          "label": "28",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Problems on Numbers",
+      "kind": "standard",
+      "difficulty": "easy",
+      "answer_type": "single",
+      "stem": "The difference between two numbers is 58 and the smaller number is 68. Find the larger number.",
+      "explanation": "Larger = 68 + 58 = 126.",
+      "options": [
+        {
+          "label": "130",
+          "is_correct": false
+        },
+        {
+          "label": "128",
+          "is_correct": false
+        },
+        {
+          "label": "124",
+          "is_correct": false
+        },
+        {
+          "label": "126",
+          "is_correct": true
+        }
+      ]
+    },
+    {
+      "chapter": "Problems on Numbers",
+      "kind": "standard",
+      "difficulty": "easy",
+      "answer_type": "single",
+      "stem": "The sum of two numbers is 82. If one of them is 14, find the other number.",
+      "explanation": "Other number = 82 − 14 = 68.",
+      "options": [
+        {
+          "label": "68",
+          "is_correct": true
+        },
+        {
+          "label": "66",
+          "is_correct": false
+        },
+        {
+          "label": "70",
+          "is_correct": false
+        },
+        {
+          "label": "72",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Problems on Numbers",
+      "kind": "standard",
+      "difficulty": "easy",
+      "answer_type": "single",
+      "stem": "When a number is multiplied by 12, the result is 456. Find the number.",
+      "explanation": "Number = 456 ÷ 12 = 38.",
+      "options": [
+        {
+          "label": "40",
+          "is_correct": false
+        },
+        {
+          "label": "39",
+          "is_correct": false
+        },
+        {
+          "label": "37",
+          "is_correct": false
+        },
+        {
+          "label": "38",
+          "is_correct": true
+        }
+      ]
+    },
+    {
+      "chapter": "Problems on Numbers",
+      "kind": "standard",
+      "difficulty": "easy",
+      "answer_type": "single",
+      "stem": "The sum of two numbers is 139. If one of them is 51, find the other number.",
+      "explanation": "Other number = 139 − 51 = 88.",
+      "options": [
+        {
+          "label": "88",
+          "is_correct": true
+        },
+        {
+          "label": "90",
+          "is_correct": false
+        },
+        {
+          "label": "92",
+          "is_correct": false
+        },
+        {
+          "label": "86",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Problems on Numbers",
+      "kind": "standard",
+      "difficulty": "easy",
+      "answer_type": "single",
+      "stem": "The difference between two numbers is 11 and the smaller number is 42. Find the larger number.",
+      "explanation": "Larger = 42 + 11 = 53.",
+      "options": [
+        {
+          "label": "55",
+          "is_correct": false
+        },
+        {
+          "label": "51",
+          "is_correct": false
+        },
+        {
+          "label": "53",
+          "is_correct": true
+        },
+        {
+          "label": "57",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Problems on Numbers",
+      "kind": "standard",
+      "difficulty": "easy",
+      "answer_type": "single",
+      "stem": "When a number is multiplied by 10, the result is 500. Find the number.",
+      "explanation": "Number = 500 ÷ 10 = 50.",
+      "options": [
+        {
+          "label": "52",
+          "is_correct": false
+        },
+        {
+          "label": "54",
+          "is_correct": false
+        },
+        {
+          "label": "50",
+          "is_correct": true
+        },
+        {
+          "label": "48",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Problems on Numbers",
+      "kind": "standard",
+      "difficulty": "easy",
+      "answer_type": "single",
+      "stem": "The difference between two numbers is 18 and the smaller number is 92. Find the larger number.",
+      "explanation": "Larger = 92 + 18 = 110.",
+      "options": [
+        {
+          "label": "114",
+          "is_correct": false
+        },
+        {
+          "label": "110",
+          "is_correct": true
+        },
+        {
+          "label": "108",
+          "is_correct": false
+        },
+        {
+          "label": "112",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Problems on Numbers",
+      "kind": "standard",
+      "difficulty": "easy",
+      "answer_type": "single",
+      "stem": "When a number is multiplied by 12, the result is 528. Find the number.",
+      "explanation": "Number = 528 ÷ 12 = 44.",
+      "options": [
+        {
+          "label": "44",
+          "is_correct": true
+        },
+        {
+          "label": "48",
+          "is_correct": false
+        },
+        {
+          "label": "46",
+          "is_correct": false
+        },
+        {
+          "label": "42",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Problems on Numbers",
+      "kind": "standard",
+      "difficulty": "easy",
+      "answer_type": "single",
+      "stem": "The difference between two numbers is 100 and the smaller number is 92. Find the larger number.",
+      "explanation": "Larger = 92 + 100 = 192.",
+      "options": [
+        {
+          "label": "190",
+          "is_correct": false
+        },
+        {
+          "label": "194",
+          "is_correct": false
+        },
+        {
+          "label": "196",
+          "is_correct": false
+        },
+        {
+          "label": "192",
+          "is_correct": true
+        }
+      ]
+    },
+    {
+      "chapter": "Problems on Numbers",
+      "kind": "standard",
+      "difficulty": "easy",
+      "answer_type": "single",
+      "stem": "The sum of two numbers is 138. If one of them is 45, find the other number.",
+      "explanation": "Other number = 138 − 45 = 93.",
+      "options": [
+        {
+          "label": "91",
+          "is_correct": false
+        },
+        {
+          "label": "95",
+          "is_correct": false
+        },
+        {
+          "label": "97",
+          "is_correct": false
+        },
+        {
+          "label": "93",
+          "is_correct": true
+        }
+      ]
+    },
+    {
+      "chapter": "Problems on Numbers",
+      "kind": "standard",
+      "difficulty": "easy",
+      "answer_type": "single",
+      "stem": "When a number is multiplied by 9, the result is 279. Find the number.",
+      "explanation": "Number = 279 ÷ 9 = 31.",
+      "options": [
+        {
+          "label": "31",
+          "is_correct": true
+        },
+        {
+          "label": "30",
+          "is_correct": false
+        },
+        {
+          "label": "33",
+          "is_correct": false
+        },
+        {
+          "label": "32",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Problems on Numbers",
+      "kind": "standard",
+      "difficulty": "easy",
+      "answer_type": "single",
+      "stem": "The difference between two numbers is 10 and the smaller number is 5. Find the larger number.",
+      "explanation": "Larger = 5 + 10 = 15.",
+      "options": [
+        {
+          "label": "14",
+          "is_correct": false
+        },
+        {
+          "label": "16",
+          "is_correct": false
+        },
+        {
+          "label": "17",
+          "is_correct": false
+        },
+        {
+          "label": "15",
+          "is_correct": true
+        }
+      ]
+    },
+    {
+      "chapter": "Problems on Numbers",
+      "kind": "standard",
+      "difficulty": "easy",
+      "answer_type": "single",
+      "stem": "The difference between two numbers is 70 and the smaller number is 19. Find the larger number.",
+      "explanation": "Larger = 19 + 70 = 89.",
+      "options": [
+        {
+          "label": "93",
+          "is_correct": false
+        },
+        {
+          "label": "87",
+          "is_correct": false
+        },
+        {
+          "label": "89",
+          "is_correct": true
+        },
+        {
+          "label": "91",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Problems on Numbers",
+      "kind": "standard",
+      "difficulty": "easy",
+      "answer_type": "single",
+      "stem": "The sum of two numbers is 112. If one of them is 28, find the other number.",
+      "explanation": "Other number = 112 − 28 = 84.",
+      "options": [
+        {
+          "label": "88",
+          "is_correct": false
+        },
+        {
+          "label": "84",
+          "is_correct": true
+        },
+        {
+          "label": "86",
+          "is_correct": false
+        },
+        {
+          "label": "82",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Problems on Numbers",
+      "kind": "standard",
+      "difficulty": "easy",
+      "answer_type": "single",
+      "stem": "The sum of two numbers is 87. If one of them is 72, find the other number.",
+      "explanation": "Other number = 87 − 72 = 15.",
+      "options": [
+        {
+          "label": "17",
+          "is_correct": false
+        },
+        {
+          "label": "14",
+          "is_correct": false
+        },
+        {
+          "label": "15",
+          "is_correct": true
+        },
+        {
+          "label": "16",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Problems on Numbers",
+      "kind": "standard",
+      "difficulty": "easy",
+      "answer_type": "single",
+      "stem": "When a number is multiplied by 10, the result is 100. Find the number.",
+      "explanation": "Number = 100 ÷ 10 = 10.",
+      "options": [
+        {
+          "label": "10",
+          "is_correct": true
+        },
+        {
+          "label": "11",
+          "is_correct": false
+        },
+        {
+          "label": "9",
+          "is_correct": false
+        },
+        {
+          "label": "12",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Problems on Numbers",
+      "kind": "standard",
+      "difficulty": "easy",
+      "answer_type": "single",
+      "stem": "The difference between two numbers is 82 and the smaller number is 81. Find the larger number.",
+      "explanation": "Larger = 81 + 82 = 163.",
+      "options": [
+        {
+          "label": "163",
+          "is_correct": true
+        },
+        {
+          "label": "161",
+          "is_correct": false
+        },
+        {
+          "label": "167",
+          "is_correct": false
+        },
+        {
+          "label": "165",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Problems on Numbers",
+      "kind": "standard",
+      "difficulty": "easy",
+      "answer_type": "single",
+      "stem": "The sum of two numbers is 56. If one of them is 9, find the other number.",
+      "explanation": "Other number = 56 − 9 = 47.",
+      "options": [
+        {
+          "label": "45",
+          "is_correct": false
+        },
+        {
+          "label": "49",
+          "is_correct": false
+        },
+        {
+          "label": "51",
+          "is_correct": false
+        },
+        {
+          "label": "47",
+          "is_correct": true
+        }
+      ]
+    },
+    {
+      "chapter": "Problems on Numbers",
+      "kind": "standard",
+      "difficulty": "easy",
+      "answer_type": "single",
+      "stem": "When a number is multiplied by 4, the result is 152. Find the number.",
+      "explanation": "Number = 152 ÷ 4 = 38.",
+      "options": [
+        {
+          "label": "38",
+          "is_correct": true
+        },
+        {
+          "label": "37",
+          "is_correct": false
+        },
+        {
+          "label": "40",
+          "is_correct": false
+        },
+        {
+          "label": "39",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Problems on Numbers",
+      "kind": "standard",
+      "difficulty": "easy",
+      "answer_type": "single",
+      "stem": "The sum of two numbers is 77. If one of them is 27, find the other number.",
+      "explanation": "Other number = 77 − 27 = 50.",
+      "options": [
+        {
+          "label": "48",
+          "is_correct": false
+        },
+        {
+          "label": "54",
+          "is_correct": false
+        },
+        {
+          "label": "52",
+          "is_correct": false
+        },
+        {
+          "label": "50",
+          "is_correct": true
+        }
+      ]
+    },
+    {
+      "chapter": "Problems on Numbers",
+      "kind": "standard",
+      "difficulty": "easy",
+      "answer_type": "single",
+      "stem": "When a number is multiplied by 11, the result is 66. Find the number.",
+      "explanation": "Number = 66 ÷ 11 = 6.",
+      "options": [
+        {
+          "label": "6",
+          "is_correct": true
+        },
+        {
+          "label": "7",
+          "is_correct": false
+        },
+        {
+          "label": "8",
+          "is_correct": false
+        },
+        {
+          "label": "5",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Problems on Numbers",
+      "kind": "standard",
+      "difficulty": "easy",
+      "answer_type": "single",
+      "stem": "The sum of two numbers is 138. If one of them is 30, find the other number.",
+      "explanation": "Other number = 138 − 30 = 108.",
+      "options": [
+        {
+          "label": "108",
+          "is_correct": true
+        },
+        {
+          "label": "110",
+          "is_correct": false
+        },
+        {
+          "label": "112",
+          "is_correct": false
+        },
+        {
+          "label": "106",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Problems on Numbers",
+      "kind": "standard",
+      "difficulty": "easy",
+      "answer_type": "single",
+      "stem": "The sum of two numbers is 178. If one of them is 134, find the other number.",
+      "explanation": "Other number = 178 − 134 = 44.",
+      "options": [
+        {
+          "label": "48",
+          "is_correct": false
+        },
+        {
+          "label": "44",
+          "is_correct": true
+        },
+        {
+          "label": "42",
+          "is_correct": false
+        },
+        {
+          "label": "46",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Problems on Numbers",
+      "kind": "standard",
+      "difficulty": "easy",
+      "answer_type": "single",
+      "stem": "The difference between two numbers is 55 and the smaller number is 85. Find the larger number.",
+      "explanation": "Larger = 85 + 55 = 140.",
+      "options": [
+        {
+          "label": "140",
+          "is_correct": true
+        },
+        {
+          "label": "138",
+          "is_correct": false
+        },
+        {
+          "label": "144",
+          "is_correct": false
+        },
+        {
+          "label": "142",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Problems on Numbers",
+      "kind": "standard",
+      "difficulty": "easy",
+      "answer_type": "single",
+      "stem": "The sum of two numbers is 91. If one of them is 41, find the other number.",
+      "explanation": "Other number = 91 − 41 = 50.",
+      "options": [
+        {
+          "label": "54",
+          "is_correct": false
+        },
+        {
+          "label": "50",
+          "is_correct": true
+        },
+        {
+          "label": "52",
+          "is_correct": false
+        },
+        {
+          "label": "48",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Problems on Numbers",
+      "kind": "standard",
+      "difficulty": "easy",
+      "answer_type": "single",
+      "stem": "When a number is multiplied by 4, the result is 64. Find the number.",
+      "explanation": "Number = 64 ÷ 4 = 16.",
+      "options": [
+        {
+          "label": "16",
+          "is_correct": true
+        },
+        {
+          "label": "17",
+          "is_correct": false
+        },
+        {
+          "label": "18",
+          "is_correct": false
+        },
+        {
+          "label": "15",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Problems on Numbers",
+      "kind": "standard",
+      "difficulty": "easy",
+      "answer_type": "single",
+      "stem": "When a number is multiplied by 11, the result is 528. Find the number.",
+      "explanation": "Number = 528 ÷ 11 = 48.",
+      "options": [
+        {
+          "label": "52",
+          "is_correct": false
+        },
+        {
+          "label": "50",
+          "is_correct": false
+        },
+        {
+          "label": "48",
+          "is_correct": true
+        },
+        {
+          "label": "46",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Problems on Numbers",
+      "kind": "standard",
+      "difficulty": "easy",
+      "answer_type": "single",
+      "stem": "When a number is multiplied by 8, the result is 360. Find the number.",
+      "explanation": "Number = 360 ÷ 8 = 45.",
+      "options": [
+        {
+          "label": "45",
+          "is_correct": true
+        },
+        {
+          "label": "43",
+          "is_correct": false
+        },
+        {
+          "label": "49",
+          "is_correct": false
+        },
+        {
+          "label": "47",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Problems on Numbers",
+      "kind": "standard",
+      "difficulty": "easy",
+      "answer_type": "single",
+      "stem": "When a number is multiplied by 7, the result is 350. Find the number.",
+      "explanation": "Number = 350 ÷ 7 = 50.",
+      "options": [
+        {
+          "label": "54",
+          "is_correct": false
+        },
+        {
+          "label": "48",
+          "is_correct": false
+        },
+        {
+          "label": "50",
+          "is_correct": true
+        },
+        {
+          "label": "52",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Problems on Numbers",
+      "kind": "standard",
+      "difficulty": "easy",
+      "answer_type": "single",
+      "stem": "The sum of two numbers is 105. If one of them is 74, find the other number.",
+      "explanation": "Other number = 105 − 74 = 31.",
+      "options": [
+        {
+          "label": "33",
+          "is_correct": false
+        },
+        {
+          "label": "31",
+          "is_correct": true
+        },
+        {
+          "label": "32",
+          "is_correct": false
+        },
+        {
+          "label": "30",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Problems on Numbers",
+      "kind": "standard",
+      "difficulty": "easy",
+      "answer_type": "single",
+      "stem": "The difference between two numbers is 16 and the smaller number is 51. Find the larger number.",
+      "explanation": "Larger = 51 + 16 = 67.",
+      "options": [
+        {
+          "label": "69",
+          "is_correct": false
+        },
+        {
+          "label": "65",
+          "is_correct": false
+        },
+        {
+          "label": "67",
+          "is_correct": true
+        },
+        {
+          "label": "71",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Problems on Numbers",
+      "kind": "standard",
+      "difficulty": "easy",
+      "answer_type": "single",
+      "stem": "The difference between two numbers is 55 and the smaller number is 78. Find the larger number.",
+      "explanation": "Larger = 78 + 55 = 133.",
+      "options": [
+        {
+          "label": "133",
+          "is_correct": true
+        },
+        {
+          "label": "135",
+          "is_correct": false
+        },
+        {
+          "label": "131",
+          "is_correct": false
+        },
+        {
+          "label": "137",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Problems on Numbers",
+      "kind": "standard",
+      "difficulty": "medium",
+      "answer_type": "single",
+      "stem": "The sum of two numbers is 154 and their difference is 60. Find the larger number.",
+      "explanation": "Larger = (sum + difference)/2 = (154 + 60)/2 = 107.",
+      "options": [
+        {
+          "label": "107",
+          "is_correct": true
+        },
+        {
+          "label": "105",
+          "is_correct": false
+        },
+        {
+          "label": "109",
+          "is_correct": false
+        },
+        {
+          "label": "111",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Problems on Numbers",
+      "kind": "standard",
+      "difficulty": "medium",
+      "answer_type": "single",
+      "stem": "Three times a number exceeds 25 by 47. Find the number.",
+      "explanation": "3×number = 25 + 47 = 72, so the number = 72/3 = 24.",
+      "options": [
+        {
+          "label": "24",
+          "is_correct": true
+        },
+        {
+          "label": "25",
+          "is_correct": false
+        },
+        {
+          "label": "23",
+          "is_correct": false
+        },
+        {
+          "label": "26",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Problems on Numbers",
+      "kind": "standard",
+      "difficulty": "medium",
+      "answer_type": "single",
+      "stem": "One number is 6 times another. If their sum is 280, find the larger number.",
+      "explanation": "Smaller = 280/(6+1) = 40; larger = 6×40 = 240.",
+      "options": [
+        {
+          "label": "240",
+          "is_correct": true
+        },
+        {
+          "label": "230",
+          "is_correct": false
+        },
+        {
+          "label": "250",
+          "is_correct": false
+        },
+        {
+          "label": "260",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Problems on Numbers",
+      "kind": "standard",
+      "difficulty": "medium",
+      "answer_type": "single",
+      "stem": "The sum of two numbers is 89 and their difference is 27. Find the larger number.",
+      "explanation": "Larger = (sum + difference)/2 = (89 + 27)/2 = 58.",
+      "options": [
+        {
+          "label": "62",
+          "is_correct": false
+        },
+        {
+          "label": "56",
+          "is_correct": false
+        },
+        {
+          "label": "58",
+          "is_correct": true
+        },
+        {
+          "label": "60",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Problems on Numbers",
+      "kind": "standard",
+      "difficulty": "medium",
+      "answer_type": "single",
+      "stem": "One number is 6 times another. If their sum is 154, find the larger number.",
+      "explanation": "Smaller = 154/(6+1) = 22; larger = 6×22 = 132.",
+      "options": [
+        {
+          "label": "134",
+          "is_correct": false
+        },
+        {
+          "label": "132",
+          "is_correct": true
+        },
+        {
+          "label": "130",
+          "is_correct": false
+        },
+        {
+          "label": "136",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Problems on Numbers",
+      "kind": "standard",
+      "difficulty": "medium",
+      "answer_type": "single",
+      "stem": "Three times a number exceeds 38 by 16. Find the number.",
+      "explanation": "3×number = 38 + 16 = 54, so the number = 54/3 = 18.",
+      "options": [
+        {
+          "label": "20",
+          "is_correct": false
+        },
+        {
+          "label": "19",
+          "is_correct": false
+        },
+        {
+          "label": "17",
+          "is_correct": false
+        },
+        {
+          "label": "18",
+          "is_correct": true
+        }
+      ]
+    },
+    {
+      "chapter": "Problems on Numbers",
+      "kind": "standard",
+      "difficulty": "medium",
+      "answer_type": "single",
+      "stem": "The sum of two numbers is 121 and their difference is 29. Find the larger number.",
+      "explanation": "Larger = (sum + difference)/2 = (121 + 29)/2 = 75.",
+      "options": [
+        {
+          "label": "73",
+          "is_correct": false
+        },
+        {
+          "label": "77",
+          "is_correct": false
+        },
+        {
+          "label": "79",
+          "is_correct": false
+        },
+        {
+          "label": "75",
+          "is_correct": true
+        }
+      ]
+    },
+    {
+      "chapter": "Problems on Numbers",
+      "kind": "standard",
+      "difficulty": "medium",
+      "answer_type": "single",
+      "stem": "Three times a number exceeds 68 by 4. Find the number.",
+      "explanation": "3×number = 68 + 4 = 72, so the number = 72/3 = 24.",
+      "options": [
+        {
+          "label": "26",
+          "is_correct": false
+        },
+        {
+          "label": "23",
+          "is_correct": false
+        },
+        {
+          "label": "25",
+          "is_correct": false
+        },
+        {
+          "label": "24",
+          "is_correct": true
+        }
+      ]
+    },
+    {
+      "chapter": "Problems on Numbers",
+      "kind": "standard",
+      "difficulty": "medium",
+      "answer_type": "single",
+      "stem": "Three times a number exceeds 18 by 30. Find the number.",
+      "explanation": "3×number = 18 + 30 = 48, so the number = 48/3 = 16.",
+      "options": [
+        {
+          "label": "18",
+          "is_correct": false
+        },
+        {
+          "label": "16",
+          "is_correct": true
+        },
+        {
+          "label": "15",
+          "is_correct": false
+        },
+        {
+          "label": "17",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Problems on Numbers",
+      "kind": "standard",
+      "difficulty": "medium",
+      "answer_type": "single",
+      "stem": "Three times a number exceeds 93 by 6. Find the number.",
+      "explanation": "3×number = 93 + 6 = 99, so the number = 99/3 = 33.",
+      "options": [
+        {
+          "label": "33",
+          "is_correct": true
+        },
+        {
+          "label": "34",
+          "is_correct": false
+        },
+        {
+          "label": "35",
+          "is_correct": false
+        },
+        {
+          "label": "32",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Problems on Numbers",
+      "kind": "standard",
+      "difficulty": "medium",
+      "answer_type": "single",
+      "stem": "Three times a number exceeds 97 by 20. Find the number.",
+      "explanation": "3×number = 97 + 20 = 117, so the number = 117/3 = 39.",
+      "options": [
+        {
+          "label": "38",
+          "is_correct": false
+        },
+        {
+          "label": "40",
+          "is_correct": false
+        },
+        {
+          "label": "41",
+          "is_correct": false
+        },
+        {
+          "label": "39",
+          "is_correct": true
+        }
+      ]
+    },
+    {
+      "chapter": "Problems on Numbers",
+      "kind": "standard",
+      "difficulty": "medium",
+      "answer_type": "single",
+      "stem": "One number is 4 times another. If their sum is 45, find the larger number.",
+      "explanation": "Smaller = 45/(4+1) = 9; larger = 4×9 = 36.",
+      "options": [
+        {
+          "label": "36",
+          "is_correct": true
+        },
+        {
+          "label": "35",
+          "is_correct": false
+        },
+        {
+          "label": "37",
+          "is_correct": false
+        },
+        {
+          "label": "38",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Problems on Numbers",
+      "kind": "standard",
+      "difficulty": "medium",
+      "answer_type": "single",
+      "stem": "Three times a number exceeds 84 by 36. Find the number.",
+      "explanation": "3×number = 84 + 36 = 120, so the number = 120/3 = 40.",
+      "options": [
+        {
+          "label": "44",
+          "is_correct": false
+        },
+        {
+          "label": "40",
+          "is_correct": true
+        },
+        {
+          "label": "38",
+          "is_correct": false
+        },
+        {
+          "label": "42",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Problems on Numbers",
+      "kind": "standard",
+      "difficulty": "medium",
+      "answer_type": "single",
+      "stem": "One number is 2 times another. If their sum is 48, find the larger number.",
+      "explanation": "Smaller = 48/(2+1) = 16; larger = 2×16 = 32.",
+      "options": [
+        {
+          "label": "32",
+          "is_correct": true
+        },
+        {
+          "label": "31",
+          "is_correct": false
+        },
+        {
+          "label": "33",
+          "is_correct": false
+        },
+        {
+          "label": "34",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Problems on Numbers",
+      "kind": "standard",
+      "difficulty": "medium",
+      "answer_type": "single",
+      "stem": "Three times a number exceeds 88 by 14. Find the number.",
+      "explanation": "3×number = 88 + 14 = 102, so the number = 102/3 = 34.",
+      "options": [
+        {
+          "label": "35",
+          "is_correct": false
+        },
+        {
+          "label": "34",
+          "is_correct": true
+        },
+        {
+          "label": "36",
+          "is_correct": false
+        },
+        {
+          "label": "33",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Problems on Numbers",
+      "kind": "standard",
+      "difficulty": "medium",
+      "answer_type": "single",
+      "stem": "One number is 4 times another. If their sum is 135, find the larger number.",
+      "explanation": "Smaller = 135/(4+1) = 27; larger = 4×27 = 108.",
+      "options": [
+        {
+          "label": "106",
+          "is_correct": false
+        },
+        {
+          "label": "110",
+          "is_correct": false
+        },
+        {
+          "label": "108",
+          "is_correct": true
+        },
+        {
+          "label": "112",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Problems on Numbers",
+      "kind": "standard",
+      "difficulty": "medium",
+      "answer_type": "single",
+      "stem": "One number is 2 times another. If their sum is 54, find the larger number.",
+      "explanation": "Smaller = 54/(2+1) = 18; larger = 2×18 = 36.",
+      "options": [
+        {
+          "label": "38",
+          "is_correct": false
+        },
+        {
+          "label": "36",
+          "is_correct": true
+        },
+        {
+          "label": "35",
+          "is_correct": false
+        },
+        {
+          "label": "37",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Problems on Numbers",
+      "kind": "standard",
+      "difficulty": "medium",
+      "answer_type": "single",
+      "stem": "The sum of two numbers is 55 and their difference is 19. Find the larger number.",
+      "explanation": "Larger = (sum + difference)/2 = (55 + 19)/2 = 37.",
+      "options": [
+        {
+          "label": "39",
+          "is_correct": false
+        },
+        {
+          "label": "38",
+          "is_correct": false
+        },
+        {
+          "label": "37",
+          "is_correct": true
+        },
+        {
+          "label": "36",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Problems on Numbers",
+      "kind": "standard",
+      "difficulty": "medium",
+      "answer_type": "single",
+      "stem": "The sum of two numbers is 84 and their difference is 44. Find the larger number.",
+      "explanation": "Larger = (sum + difference)/2 = (84 + 44)/2 = 64.",
+      "options": [
+        {
+          "label": "64",
+          "is_correct": true
+        },
+        {
+          "label": "68",
+          "is_correct": false
+        },
+        {
+          "label": "66",
+          "is_correct": false
+        },
+        {
+          "label": "62",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Problems on Numbers",
+      "kind": "standard",
+      "difficulty": "medium",
+      "answer_type": "single",
+      "stem": "The sum of two numbers is 58 and their difference is 12. Find the larger number.",
+      "explanation": "Larger = (sum + difference)/2 = (58 + 12)/2 = 35.",
+      "options": [
+        {
+          "label": "34",
+          "is_correct": false
+        },
+        {
+          "label": "37",
+          "is_correct": false
+        },
+        {
+          "label": "35",
+          "is_correct": true
+        },
+        {
+          "label": "36",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Problems on Numbers",
+      "kind": "standard",
+      "difficulty": "medium",
+      "answer_type": "single",
+      "stem": "The sum of two numbers is 73 and their difference is 51. Find the larger number.",
+      "explanation": "Larger = (sum + difference)/2 = (73 + 51)/2 = 62.",
+      "options": [
+        {
+          "label": "64",
+          "is_correct": false
+        },
+        {
+          "label": "66",
+          "is_correct": false
+        },
+        {
+          "label": "62",
+          "is_correct": true
+        },
+        {
+          "label": "60",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Problems on Numbers",
+      "kind": "standard",
+      "difficulty": "medium",
+      "answer_type": "single",
+      "stem": "One number is 3 times another. If their sum is 80, find the larger number.",
+      "explanation": "Smaller = 80/(3+1) = 20; larger = 3×20 = 60.",
+      "options": [
+        {
+          "label": "60",
+          "is_correct": true
+        },
+        {
+          "label": "62",
+          "is_correct": false
+        },
+        {
+          "label": "64",
+          "is_correct": false
+        },
+        {
+          "label": "58",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Problems on Numbers",
+      "kind": "standard",
+      "difficulty": "medium",
+      "answer_type": "single",
+      "stem": "One number is 6 times another. If their sum is 168, find the larger number.",
+      "explanation": "Smaller = 168/(6+1) = 24; larger = 6×24 = 144.",
+      "options": [
+        {
+          "label": "144",
+          "is_correct": true
+        },
+        {
+          "label": "146",
+          "is_correct": false
+        },
+        {
+          "label": "148",
+          "is_correct": false
+        },
+        {
+          "label": "142",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Problems on Numbers",
+      "kind": "standard",
+      "difficulty": "medium",
+      "answer_type": "single",
+      "stem": "The sum of two numbers is 71 and their difference is 39. Find the larger number.",
+      "explanation": "Larger = (sum + difference)/2 = (71 + 39)/2 = 55.",
+      "options": [
+        {
+          "label": "55",
+          "is_correct": true
+        },
+        {
+          "label": "57",
+          "is_correct": false
+        },
+        {
+          "label": "59",
+          "is_correct": false
+        },
+        {
+          "label": "53",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Problems on Numbers",
+      "kind": "standard",
+      "difficulty": "medium",
+      "answer_type": "single",
+      "stem": "One number is 5 times another. If their sum is 144, find the larger number.",
+      "explanation": "Smaller = 144/(5+1) = 24; larger = 5×24 = 120.",
+      "options": [
+        {
+          "label": "118",
+          "is_correct": false
+        },
+        {
+          "label": "120",
+          "is_correct": true
+        },
+        {
+          "label": "124",
+          "is_correct": false
+        },
+        {
+          "label": "122",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Problems on Numbers",
+      "kind": "standard",
+      "difficulty": "medium",
+      "answer_type": "single",
+      "stem": "The sum of two numbers is 91 and their difference is 53. Find the larger number.",
+      "explanation": "Larger = (sum + difference)/2 = (91 + 53)/2 = 72.",
+      "options": [
+        {
+          "label": "70",
+          "is_correct": false
+        },
+        {
+          "label": "72",
+          "is_correct": true
+        },
+        {
+          "label": "76",
+          "is_correct": false
+        },
+        {
+          "label": "74",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Problems on Numbers",
+      "kind": "standard",
+      "difficulty": "medium",
+      "answer_type": "single",
+      "stem": "The sum of two numbers is 99 and their difference is 57. Find the larger number.",
+      "explanation": "Larger = (sum + difference)/2 = (99 + 57)/2 = 78.",
+      "options": [
+        {
+          "label": "80",
+          "is_correct": false
+        },
+        {
+          "label": "76",
+          "is_correct": false
+        },
+        {
+          "label": "82",
+          "is_correct": false
+        },
+        {
+          "label": "78",
+          "is_correct": true
+        }
+      ]
+    },
+    {
+      "chapter": "Problems on Numbers",
+      "kind": "standard",
+      "difficulty": "medium",
+      "answer_type": "single",
+      "stem": "One number is 4 times another. If their sum is 120, find the larger number.",
+      "explanation": "Smaller = 120/(4+1) = 24; larger = 4×24 = 96.",
+      "options": [
+        {
+          "label": "96",
+          "is_correct": true
+        },
+        {
+          "label": "94",
+          "is_correct": false
+        },
+        {
+          "label": "98",
+          "is_correct": false
+        },
+        {
+          "label": "100",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Problems on Numbers",
+      "kind": "standard",
+      "difficulty": "medium",
+      "answer_type": "single",
+      "stem": "One number is 5 times another. If their sum is 48, find the larger number.",
+      "explanation": "Smaller = 48/(5+1) = 8; larger = 5×8 = 40.",
+      "options": [
+        {
+          "label": "40",
+          "is_correct": true
+        },
+        {
+          "label": "38",
+          "is_correct": false
+        },
+        {
+          "label": "42",
+          "is_correct": false
+        },
+        {
+          "label": "44",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Problems on Numbers",
+      "kind": "standard",
+      "difficulty": "medium",
+      "answer_type": "single",
+      "stem": "Three times a number exceeds 53 by 31. Find the number.",
+      "explanation": "3×number = 53 + 31 = 84, so the number = 84/3 = 28.",
+      "options": [
+        {
+          "label": "28",
+          "is_correct": true
+        },
+        {
+          "label": "30",
+          "is_correct": false
+        },
+        {
+          "label": "27",
+          "is_correct": false
+        },
+        {
+          "label": "29",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Problems on Numbers",
+      "kind": "standard",
+      "difficulty": "medium",
+      "answer_type": "single",
+      "stem": "Three times a number exceeds 89 by 10. Find the number.",
+      "explanation": "3×number = 89 + 10 = 99, so the number = 99/3 = 33.",
+      "options": [
+        {
+          "label": "35",
+          "is_correct": false
+        },
+        {
+          "label": "33",
+          "is_correct": true
+        },
+        {
+          "label": "32",
+          "is_correct": false
+        },
+        {
+          "label": "34",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Problems on Numbers",
+      "kind": "standard",
+      "difficulty": "medium",
+      "answer_type": "single",
+      "stem": "One number is 2 times another. If their sum is 114, find the larger number.",
+      "explanation": "Smaller = 114/(2+1) = 38; larger = 2×38 = 76.",
+      "options": [
+        {
+          "label": "80",
+          "is_correct": false
+        },
+        {
+          "label": "74",
+          "is_correct": false
+        },
+        {
+          "label": "76",
+          "is_correct": true
+        },
+        {
+          "label": "78",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Problems on Numbers",
+      "kind": "standard",
+      "difficulty": "medium",
+      "answer_type": "single",
+      "stem": "One number is 5 times another. If their sum is 138, find the larger number.",
+      "explanation": "Smaller = 138/(5+1) = 23; larger = 5×23 = 115.",
+      "options": [
+        {
+          "label": "117",
+          "is_correct": false
+        },
+        {
+          "label": "119",
+          "is_correct": false
+        },
+        {
+          "label": "115",
+          "is_correct": true
+        },
+        {
+          "label": "113",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Problems on Numbers",
+      "kind": "standard",
+      "difficulty": "medium",
+      "answer_type": "single",
+      "stem": "Three times a number exceeds 15 by 12. Find the number.",
+      "explanation": "3×number = 15 + 12 = 27, so the number = 27/3 = 9.",
+      "options": [
+        {
+          "label": "10",
+          "is_correct": false
+        },
+        {
+          "label": "8",
+          "is_correct": false
+        },
+        {
+          "label": "9",
+          "is_correct": true
+        },
+        {
+          "label": "11",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Problems on Numbers",
+      "kind": "standard",
+      "difficulty": "medium",
+      "answer_type": "single",
+      "stem": "The sum of two numbers is 63 and their difference is 9. Find the larger number.",
+      "explanation": "Larger = (sum + difference)/2 = (63 + 9)/2 = 36.",
+      "options": [
+        {
+          "label": "36",
+          "is_correct": true
+        },
+        {
+          "label": "35",
+          "is_correct": false
+        },
+        {
+          "label": "37",
+          "is_correct": false
+        },
+        {
+          "label": "38",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Problems on Numbers",
+      "kind": "standard",
+      "difficulty": "medium",
+      "answer_type": "single",
+      "stem": "One number is 2 times another. If their sum is 78, find the larger number.",
+      "explanation": "Smaller = 78/(2+1) = 26; larger = 2×26 = 52.",
+      "options": [
+        {
+          "label": "52",
+          "is_correct": true
+        },
+        {
+          "label": "50",
+          "is_correct": false
+        },
+        {
+          "label": "54",
+          "is_correct": false
+        },
+        {
+          "label": "56",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Problems on Numbers",
+      "kind": "standard",
+      "difficulty": "medium",
+      "answer_type": "single",
+      "stem": "Three times a number exceeds 16 by 26. Find the number.",
+      "explanation": "3×number = 16 + 26 = 42, so the number = 42/3 = 14.",
+      "options": [
+        {
+          "label": "13",
+          "is_correct": false
+        },
+        {
+          "label": "16",
+          "is_correct": false
+        },
+        {
+          "label": "15",
+          "is_correct": false
+        },
+        {
+          "label": "14",
+          "is_correct": true
+        }
+      ]
+    },
+    {
+      "chapter": "Problems on Numbers",
+      "kind": "standard",
+      "difficulty": "medium",
+      "answer_type": "single",
+      "stem": "Three times a number exceeds 11 by 16. Find the number.",
+      "explanation": "3×number = 11 + 16 = 27, so the number = 27/3 = 9.",
+      "options": [
+        {
+          "label": "11",
+          "is_correct": false
+        },
+        {
+          "label": "10",
+          "is_correct": false
+        },
+        {
+          "label": "8",
+          "is_correct": false
+        },
+        {
+          "label": "9",
+          "is_correct": true
+        }
+      ]
+    },
+    {
+      "chapter": "Problems on Numbers",
+      "kind": "standard",
+      "difficulty": "medium",
+      "answer_type": "single",
+      "stem": "One number is 2 times another. If their sum is 105, find the larger number.",
+      "explanation": "Smaller = 105/(2+1) = 35; larger = 2×35 = 70.",
+      "options": [
+        {
+          "label": "68",
+          "is_correct": false
+        },
+        {
+          "label": "72",
+          "is_correct": false
+        },
+        {
+          "label": "74",
+          "is_correct": false
+        },
+        {
+          "label": "70",
+          "is_correct": true
+        }
+      ]
+    },
+    {
+      "chapter": "Problems on Numbers",
+      "kind": "standard",
+      "difficulty": "medium",
+      "answer_type": "single",
+      "stem": "One number is 3 times another. If their sum is 28, find the larger number.",
+      "explanation": "Smaller = 28/(3+1) = 7; larger = 3×7 = 21.",
+      "options": [
+        {
+          "label": "21",
+          "is_correct": true
+        },
+        {
+          "label": "22",
+          "is_correct": false
+        },
+        {
+          "label": "23",
+          "is_correct": false
+        },
+        {
+          "label": "20",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Problems on Numbers",
+      "kind": "standard",
+      "difficulty": "medium",
+      "answer_type": "single",
+      "stem": "One number is 6 times another. If their sum is 49, find the larger number.",
+      "explanation": "Smaller = 49/(6+1) = 7; larger = 6×7 = 42.",
+      "options": [
+        {
+          "label": "46",
+          "is_correct": false
+        },
+        {
+          "label": "42",
+          "is_correct": true
+        },
+        {
+          "label": "44",
+          "is_correct": false
+        },
+        {
+          "label": "40",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Problems on Numbers",
+      "kind": "standard",
+      "difficulty": "medium",
+      "answer_type": "single",
+      "stem": "The sum of two numbers is 63 and their difference is 17. Find the larger number.",
+      "explanation": "Larger = (sum + difference)/2 = (63 + 17)/2 = 40.",
+      "options": [
+        {
+          "label": "38",
+          "is_correct": false
+        },
+        {
+          "label": "44",
+          "is_correct": false
+        },
+        {
+          "label": "42",
+          "is_correct": false
+        },
+        {
+          "label": "40",
+          "is_correct": true
+        }
+      ]
+    },
+    {
+      "chapter": "Problems on Numbers",
+      "kind": "standard",
+      "difficulty": "medium",
+      "answer_type": "single",
+      "stem": "One number is 3 times another. If their sum is 156, find the larger number.",
+      "explanation": "Smaller = 156/(3+1) = 39; larger = 3×39 = 117.",
+      "options": [
+        {
+          "label": "121",
+          "is_correct": false
+        },
+        {
+          "label": "115",
+          "is_correct": false
+        },
+        {
+          "label": "119",
+          "is_correct": false
+        },
+        {
+          "label": "117",
+          "is_correct": true
+        }
+      ]
+    },
+    {
+      "chapter": "Problems on Numbers",
+      "kind": "standard",
+      "difficulty": "medium",
+      "answer_type": "single",
+      "stem": "The sum of two numbers is 167 and their difference is 53. Find the larger number.",
+      "explanation": "Larger = (sum + difference)/2 = (167 + 53)/2 = 110.",
+      "options": [
+        {
+          "label": "108",
+          "is_correct": false
+        },
+        {
+          "label": "114",
+          "is_correct": false
+        },
+        {
+          "label": "110",
+          "is_correct": true
+        },
+        {
+          "label": "112",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Problems on Numbers",
+      "kind": "standard",
+      "difficulty": "medium",
+      "answer_type": "single",
+      "stem": "Three times a number exceeds 43 by 23. Find the number.",
+      "explanation": "3×number = 43 + 23 = 66, so the number = 66/3 = 22.",
+      "options": [
+        {
+          "label": "22",
+          "is_correct": true
+        },
+        {
+          "label": "24",
+          "is_correct": false
+        },
+        {
+          "label": "21",
+          "is_correct": false
+        },
+        {
+          "label": "23",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Problems on Numbers",
+      "kind": "standard",
+      "difficulty": "medium",
+      "answer_type": "single",
+      "stem": "The sum of two numbers is 55 and their difference is 9. Find the larger number.",
+      "explanation": "Larger = (sum + difference)/2 = (55 + 9)/2 = 32.",
+      "options": [
+        {
+          "label": "32",
+          "is_correct": true
+        },
+        {
+          "label": "33",
+          "is_correct": false
+        },
+        {
+          "label": "31",
+          "is_correct": false
+        },
+        {
+          "label": "34",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Problems on Numbers",
+      "kind": "standard",
+      "difficulty": "medium",
+      "answer_type": "single",
+      "stem": "One number is 3 times another. If their sum is 148, find the larger number.",
+      "explanation": "Smaller = 148/(3+1) = 37; larger = 3×37 = 111.",
+      "options": [
+        {
+          "label": "115",
+          "is_correct": false
+        },
+        {
+          "label": "113",
+          "is_correct": false
+        },
+        {
+          "label": "111",
+          "is_correct": true
+        },
+        {
+          "label": "109",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Problems on Numbers",
+      "kind": "standard",
+      "difficulty": "medium",
+      "answer_type": "single",
+      "stem": "The sum of two numbers is 103 and their difference is 57. Find the larger number.",
+      "explanation": "Larger = (sum + difference)/2 = (103 + 57)/2 = 80.",
+      "options": [
+        {
+          "label": "78",
+          "is_correct": false
+        },
+        {
+          "label": "84",
+          "is_correct": false
+        },
+        {
+          "label": "80",
+          "is_correct": true
+        },
+        {
+          "label": "82",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Problems on Numbers",
+      "kind": "standard",
+      "difficulty": "medium",
+      "answer_type": "single",
+      "stem": "The sum of two numbers is 113 and their difference is 45. Find the larger number.",
+      "explanation": "Larger = (sum + difference)/2 = (113 + 45)/2 = 79.",
+      "options": [
+        {
+          "label": "77",
+          "is_correct": false
+        },
+        {
+          "label": "83",
+          "is_correct": false
+        },
+        {
+          "label": "81",
+          "is_correct": false
+        },
+        {
+          "label": "79",
+          "is_correct": true
+        }
+      ]
+    },
+    {
+      "chapter": "Problems on Numbers",
+      "kind": "standard",
+      "difficulty": "medium",
+      "answer_type": "single",
+      "stem": "The sum of two numbers is 86 and their difference is 38. Find the larger number.",
+      "explanation": "Larger = (sum + difference)/2 = (86 + 38)/2 = 62.",
+      "options": [
+        {
+          "label": "66",
+          "is_correct": false
+        },
+        {
+          "label": "62",
+          "is_correct": true
+        },
+        {
+          "label": "60",
+          "is_correct": false
+        },
+        {
+          "label": "64",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Problems on Numbers",
+      "kind": "standard",
+      "difficulty": "hard",
+      "answer_type": "single",
+      "stem": "The sum of three consecutive whole numbers is 117. Find the middle number.",
+      "explanation": "The middle number = 117 ÷ 3 = 39.",
+      "options": [
+        {
+          "label": "40",
+          "is_correct": false
+        },
+        {
+          "label": "41",
+          "is_correct": false
+        },
+        {
+          "label": "39",
+          "is_correct": true
+        },
+        {
+          "label": "38",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Problems on Numbers",
+      "kind": "standard",
+      "difficulty": "hard",
+      "answer_type": "single",
+      "stem": "The sum of three consecutive whole numbers is 84. Find the middle number.",
+      "explanation": "The middle number = 84 ÷ 3 = 28.",
+      "options": [
+        {
+          "label": "29",
+          "is_correct": false
+        },
+        {
+          "label": "28",
+          "is_correct": true
+        },
+        {
+          "label": "30",
+          "is_correct": false
+        },
+        {
+          "label": "27",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Problems on Numbers",
+      "kind": "standard",
+      "difficulty": "hard",
+      "answer_type": "single",
+      "stem": "The difference between a two-digit number and the number obtained by reversing its digits is 36. Find the difference between the two digits of the number.",
+      "explanation": "For a two-digit number, (number − reversed) = 9 × (difference of digits) = 36, so the digits differ by 4.",
+      "options": [
+        {
+          "label": "3",
+          "is_correct": false
+        },
+        {
+          "label": "4",
+          "is_correct": true
+        },
+        {
+          "label": "5",
+          "is_correct": false
+        },
+        {
+          "label": "6",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Problems on Numbers",
+      "kind": "standard",
+      "difficulty": "hard",
+      "answer_type": "single",
+      "stem": "One-third of a number is 19 more than one-fourth of the same number. Find the number.",
+      "explanation": "(1/3 − 1/4) of the number = 1/12 of it = 19, so the number = 12 × 19 = 228.",
+      "options": [
+        {
+          "label": "237",
+          "is_correct": false
+        },
+        {
+          "label": "219",
+          "is_correct": false
+        },
+        {
+          "label": "246",
+          "is_correct": false
+        },
+        {
+          "label": "228",
+          "is_correct": true
+        }
+      ]
+    },
+    {
+      "chapter": "Problems on Numbers",
+      "kind": "standard",
+      "difficulty": "hard",
+      "answer_type": "single",
+      "stem": "The sum of three consecutive whole numbers is 216. Find the middle number.",
+      "explanation": "The middle number = 216 ÷ 3 = 72.",
+      "options": [
+        {
+          "label": "70",
+          "is_correct": false
+        },
+        {
+          "label": "72",
+          "is_correct": true
+        },
+        {
+          "label": "76",
+          "is_correct": false
+        },
+        {
+          "label": "74",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Problems on Numbers",
+      "kind": "standard",
+      "difficulty": "hard",
+      "answer_type": "single",
+      "stem": "The difference between a two-digit number and the number obtained by reversing its digits is 72. Find the difference between the two digits of the number.",
+      "explanation": "For a two-digit number, (number − reversed) = 9 × (difference of digits) = 72, so the digits differ by 8.",
+      "options": [
+        {
+          "label": "7",
+          "is_correct": false
+        },
+        {
+          "label": "8",
+          "is_correct": true
+        },
+        {
+          "label": "10",
+          "is_correct": false
+        },
+        {
+          "label": "9",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Problems on Numbers",
+      "kind": "standard",
+      "difficulty": "hard",
+      "answer_type": "single",
+      "stem": "The difference between a two-digit number and the number obtained by reversing its digits is 63. Find the difference between the two digits of the number.",
+      "explanation": "For a two-digit number, (number − reversed) = 9 × (difference of digits) = 63, so the digits differ by 7.",
+      "options": [
+        {
+          "label": "9",
+          "is_correct": false
+        },
+        {
+          "label": "7",
+          "is_correct": true
+        },
+        {
+          "label": "6",
+          "is_correct": false
+        },
+        {
+          "label": "8",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Problems on Numbers",
+      "kind": "standard",
+      "difficulty": "hard",
+      "answer_type": "single",
+      "stem": "The difference between a two-digit number and the number obtained by reversing its digits is 54. Find the difference between the two digits of the number.",
+      "explanation": "For a two-digit number, (number − reversed) = 9 × (difference of digits) = 54, so the digits differ by 6.",
+      "options": [
+        {
+          "label": "5",
+          "is_correct": false
+        },
+        {
+          "label": "7",
+          "is_correct": false
+        },
+        {
+          "label": "6",
+          "is_correct": true
+        },
+        {
+          "label": "8",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Problems on Numbers",
+      "kind": "standard",
+      "difficulty": "hard",
+      "answer_type": "single",
+      "stem": "One-third of a number is 35 more than one-fourth of the same number. Find the number.",
+      "explanation": "(1/3 − 1/4) of the number = 1/12 of it = 35, so the number = 12 × 35 = 420.",
+      "options": [
+        {
+          "label": "437",
+          "is_correct": false
+        },
+        {
+          "label": "454",
+          "is_correct": false
+        },
+        {
+          "label": "420",
+          "is_correct": true
+        },
+        {
+          "label": "403",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Problems on Numbers",
+      "kind": "standard",
+      "difficulty": "hard",
+      "answer_type": "single",
+      "stem": "The sum of three consecutive whole numbers is 24. Find the middle number.",
+      "explanation": "The middle number = 24 ÷ 3 = 8.",
+      "options": [
+        {
+          "label": "10",
+          "is_correct": false
+        },
+        {
+          "label": "9",
+          "is_correct": false
+        },
+        {
+          "label": "8",
+          "is_correct": true
+        },
+        {
+          "label": "7",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Problems on Numbers",
+      "kind": "standard",
+      "difficulty": "hard",
+      "answer_type": "single",
+      "stem": "One-third of a number is 34 more than one-fourth of the same number. Find the number.",
+      "explanation": "(1/3 − 1/4) of the number = 1/12 of it = 34, so the number = 12 × 34 = 408.",
+      "options": [
+        {
+          "label": "440",
+          "is_correct": false
+        },
+        {
+          "label": "408",
+          "is_correct": true
+        },
+        {
+          "label": "392",
+          "is_correct": false
+        },
+        {
+          "label": "424",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Problems on Numbers",
+      "kind": "standard",
+      "difficulty": "hard",
+      "answer_type": "single",
+      "stem": "The sum of three consecutive whole numbers is 87. Find the middle number.",
+      "explanation": "The middle number = 87 ÷ 3 = 29.",
+      "options": [
+        {
+          "label": "31",
+          "is_correct": false
+        },
+        {
+          "label": "30",
+          "is_correct": false
+        },
+        {
+          "label": "29",
+          "is_correct": true
+        },
+        {
+          "label": "28",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Problems on Numbers",
+      "kind": "standard",
+      "difficulty": "hard",
+      "answer_type": "single",
+      "stem": "The sum of three consecutive whole numbers is 195. Find the middle number.",
+      "explanation": "The middle number = 195 ÷ 3 = 65.",
+      "options": [
+        {
+          "label": "65",
+          "is_correct": true
+        },
+        {
+          "label": "67",
+          "is_correct": false
+        },
+        {
+          "label": "69",
+          "is_correct": false
+        },
+        {
+          "label": "63",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Problems on Numbers",
+      "kind": "standard",
+      "difficulty": "hard",
+      "answer_type": "single",
+      "stem": "The sum of three consecutive whole numbers is 186. Find the middle number.",
+      "explanation": "The middle number = 186 ÷ 3 = 62.",
+      "options": [
+        {
+          "label": "66",
+          "is_correct": false
+        },
+        {
+          "label": "62",
+          "is_correct": true
+        },
+        {
+          "label": "60",
+          "is_correct": false
+        },
+        {
+          "label": "64",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Problems on Numbers",
+      "kind": "standard",
+      "difficulty": "hard",
+      "answer_type": "single",
+      "stem": "The difference between a two-digit number and the number obtained by reversing its digits is 9. Find the difference between the two digits of the number.",
+      "explanation": "For a two-digit number, (number − reversed) = 9 × (difference of digits) = 9, so the digits differ by 1.",
+      "options": [
+        {
+          "label": "2",
+          "is_correct": false
+        },
+        {
+          "label": "1",
+          "is_correct": true
+        },
+        {
+          "label": "4",
+          "is_correct": false
+        },
+        {
+          "label": "3",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Problems on Numbers",
+      "kind": "standard",
+      "difficulty": "hard",
+      "answer_type": "single",
+      "stem": "The sum of three consecutive whole numbers is 33. Find the middle number.",
+      "explanation": "The middle number = 33 ÷ 3 = 11.",
+      "options": [
+        {
+          "label": "12",
+          "is_correct": false
+        },
+        {
+          "label": "10",
+          "is_correct": false
+        },
+        {
+          "label": "13",
+          "is_correct": false
+        },
+        {
+          "label": "11",
+          "is_correct": true
+        }
+      ]
+    },
+    {
+      "chapter": "Problems on Numbers",
+      "kind": "standard",
+      "difficulty": "hard",
+      "answer_type": "single",
+      "stem": "One-third of a number is 38 more than one-fourth of the same number. Find the number.",
+      "explanation": "(1/3 − 1/4) of the number = 1/12 of it = 38, so the number = 12 × 38 = 456.",
+      "options": [
+        {
+          "label": "492",
+          "is_correct": false
+        },
+        {
+          "label": "438",
+          "is_correct": false
+        },
+        {
+          "label": "474",
+          "is_correct": false
+        },
+        {
+          "label": "456",
+          "is_correct": true
+        }
+      ]
+    },
+    {
+      "chapter": "Problems on Numbers",
+      "kind": "standard",
+      "difficulty": "hard",
+      "answer_type": "single",
+      "stem": "One-third of a number is 30 more than one-fourth of the same number. Find the number.",
+      "explanation": "(1/3 − 1/4) of the number = 1/12 of it = 30, so the number = 12 × 30 = 360.",
+      "options": [
+        {
+          "label": "346",
+          "is_correct": false
+        },
+        {
+          "label": "388",
+          "is_correct": false
+        },
+        {
+          "label": "360",
+          "is_correct": true
+        },
+        {
+          "label": "374",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Problems on Numbers",
+      "kind": "standard",
+      "difficulty": "hard",
+      "answer_type": "single",
+      "stem": "The difference between a two-digit number and the number obtained by reversing its digits is 45. Find the difference between the two digits of the number.",
+      "explanation": "For a two-digit number, (number − reversed) = 9 × (difference of digits) = 45, so the digits differ by 5.",
+      "options": [
+        {
+          "label": "4",
+          "is_correct": false
+        },
+        {
+          "label": "7",
+          "is_correct": false
+        },
+        {
+          "label": "5",
+          "is_correct": true
+        },
+        {
+          "label": "6",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Problems on Numbers",
+      "kind": "standard",
+      "difficulty": "hard",
+      "answer_type": "single",
+      "stem": "The sum of three consecutive whole numbers is 45. Find the middle number.",
+      "explanation": "The middle number = 45 ÷ 3 = 15.",
+      "options": [
+        {
+          "label": "15",
+          "is_correct": true
+        },
+        {
+          "label": "17",
+          "is_correct": false
+        },
+        {
+          "label": "14",
+          "is_correct": false
+        },
+        {
+          "label": "16",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Problems on Numbers",
+      "kind": "standard",
+      "difficulty": "hard",
+      "answer_type": "single",
+      "stem": "The sum of three consecutive whole numbers is 99. Find the middle number.",
+      "explanation": "The middle number = 99 ÷ 3 = 33.",
+      "options": [
+        {
+          "label": "35",
+          "is_correct": false
+        },
+        {
+          "label": "33",
+          "is_correct": true
+        },
+        {
+          "label": "34",
+          "is_correct": false
+        },
+        {
+          "label": "32",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Problems on Numbers",
+      "kind": "standard",
+      "difficulty": "hard",
+      "answer_type": "single",
+      "stem": "One-third of a number is 29 more than one-fourth of the same number. Find the number.",
+      "explanation": "(1/3 − 1/4) of the number = 1/12 of it = 29, so the number = 12 × 29 = 348.",
+      "options": [
+        {
+          "label": "334",
+          "is_correct": false
+        },
+        {
+          "label": "362",
+          "is_correct": false
+        },
+        {
+          "label": "376",
+          "is_correct": false
+        },
+        {
+          "label": "348",
+          "is_correct": true
+        }
+      ]
+    },
+    {
+      "chapter": "Problems on Numbers",
+      "kind": "standard",
+      "difficulty": "hard",
+      "answer_type": "single",
+      "stem": "The sum of three consecutive whole numbers is 126. Find the middle number.",
+      "explanation": "The middle number = 126 ÷ 3 = 42.",
+      "options": [
+        {
+          "label": "46",
+          "is_correct": false
+        },
+        {
+          "label": "40",
+          "is_correct": false
+        },
+        {
+          "label": "44",
+          "is_correct": false
+        },
+        {
+          "label": "42",
+          "is_correct": true
+        }
+      ]
+    },
+    {
+      "chapter": "Problems on Numbers",
+      "kind": "standard",
+      "difficulty": "hard",
+      "answer_type": "single",
+      "stem": "The difference between a two-digit number and the number obtained by reversing its digits is 18. Find the difference between the two digits of the number.",
+      "explanation": "For a two-digit number, (number − reversed) = 9 × (difference of digits) = 18, so the digits differ by 2.",
+      "options": [
+        {
+          "label": "4",
+          "is_correct": false
+        },
+        {
+          "label": "1",
+          "is_correct": false
+        },
+        {
+          "label": "2",
+          "is_correct": true
+        },
+        {
+          "label": "3",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Problems on Numbers",
+      "kind": "standard",
+      "difficulty": "hard",
+      "answer_type": "single",
+      "stem": "The sum of three consecutive whole numbers is 177. Find the middle number.",
+      "explanation": "The middle number = 177 ÷ 3 = 59.",
+      "options": [
+        {
+          "label": "59",
+          "is_correct": true
+        },
+        {
+          "label": "63",
+          "is_correct": false
+        },
+        {
+          "label": "57",
+          "is_correct": false
+        },
+        {
+          "label": "61",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Problems on Numbers",
+      "kind": "standard",
+      "difficulty": "hard",
+      "answer_type": "single",
+      "stem": "One-third of a number is 18 more than one-fourth of the same number. Find the number.",
+      "explanation": "(1/3 − 1/4) of the number = 1/12 of it = 18, so the number = 12 × 18 = 216.",
+      "options": [
+        {
+          "label": "234",
+          "is_correct": false
+        },
+        {
+          "label": "207",
+          "is_correct": false
+        },
+        {
+          "label": "225",
+          "is_correct": false
+        },
+        {
+          "label": "216",
+          "is_correct": true
+        }
+      ]
+    },
+    {
+      "chapter": "Problems on Numbers",
+      "kind": "standard",
+      "difficulty": "hard",
+      "answer_type": "single",
+      "stem": "One-third of a number is 12 more than one-fourth of the same number. Find the number.",
+      "explanation": "(1/3 − 1/4) of the number = 1/12 of it = 12, so the number = 12 × 12 = 144.",
+      "options": [
+        {
+          "label": "146",
+          "is_correct": false
+        },
+        {
+          "label": "144",
+          "is_correct": true
+        },
+        {
+          "label": "142",
+          "is_correct": false
+        },
+        {
+          "label": "148",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Problems on Numbers",
+      "kind": "standard",
+      "difficulty": "hard",
+      "answer_type": "single",
+      "stem": "One-third of a number is 9 more than one-fourth of the same number. Find the number.",
+      "explanation": "(1/3 − 1/4) of the number = 1/12 of it = 9, so the number = 12 × 9 = 108.",
+      "options": [
+        {
+          "label": "108",
+          "is_correct": true
+        },
+        {
+          "label": "112",
+          "is_correct": false
+        },
+        {
+          "label": "110",
+          "is_correct": false
+        },
+        {
+          "label": "106",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Problems on Numbers",
+      "kind": "standard",
+      "difficulty": "hard",
+      "answer_type": "single",
+      "stem": "One-third of a number is 4 more than one-fourth of the same number. Find the number.",
+      "explanation": "(1/3 − 1/4) of the number = 1/12 of it = 4, so the number = 12 × 4 = 48.",
+      "options": [
+        {
+          "label": "52",
+          "is_correct": false
+        },
+        {
+          "label": "48",
+          "is_correct": true
+        },
+        {
+          "label": "46",
+          "is_correct": false
+        },
+        {
+          "label": "50",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Problems on Numbers",
+      "kind": "standard",
+      "difficulty": "hard",
+      "answer_type": "single",
+      "stem": "The sum of three consecutive whole numbers is 111. Find the middle number.",
+      "explanation": "The middle number = 111 ÷ 3 = 37.",
+      "options": [
+        {
+          "label": "36",
+          "is_correct": false
+        },
+        {
+          "label": "38",
+          "is_correct": false
+        },
+        {
+          "label": "39",
+          "is_correct": false
+        },
+        {
+          "label": "37",
+          "is_correct": true
+        }
+      ]
+    },
+    {
+      "chapter": "Problems on Numbers",
+      "kind": "standard",
+      "difficulty": "hard",
+      "answer_type": "single",
+      "stem": "One-third of a number is 22 more than one-fourth of the same number. Find the number.",
+      "explanation": "(1/3 − 1/4) of the number = 1/12 of it = 22, so the number = 12 × 22 = 264.",
+      "options": [
+        {
+          "label": "253",
+          "is_correct": false
+        },
+        {
+          "label": "286",
+          "is_correct": false
+        },
+        {
+          "label": "264",
+          "is_correct": true
+        },
+        {
+          "label": "275",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Problems on Numbers",
+      "kind": "standard",
+      "difficulty": "hard",
+      "answer_type": "single",
+      "stem": "One-third of a number is 25 more than one-fourth of the same number. Find the number.",
+      "explanation": "(1/3 − 1/4) of the number = 1/12 of it = 25, so the number = 12 × 25 = 300.",
+      "options": [
+        {
+          "label": "312",
+          "is_correct": false
+        },
+        {
+          "label": "324",
+          "is_correct": false
+        },
+        {
+          "label": "300",
+          "is_correct": true
+        },
+        {
+          "label": "288",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Problems on Numbers",
+      "kind": "standard",
+      "difficulty": "hard",
+      "answer_type": "single",
+      "stem": "The sum of three consecutive whole numbers is 168. Find the middle number.",
+      "explanation": "The middle number = 168 ÷ 3 = 56.",
+      "options": [
+        {
+          "label": "56",
+          "is_correct": true
+        },
+        {
+          "label": "54",
+          "is_correct": false
+        },
+        {
+          "label": "60",
+          "is_correct": false
+        },
+        {
+          "label": "58",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Problems on Numbers",
+      "kind": "standard",
+      "difficulty": "hard",
+      "answer_type": "single",
+      "stem": "One-third of a number is 2 more than one-fourth of the same number. Find the number.",
+      "explanation": "(1/3 − 1/4) of the number = 1/12 of it = 2, so the number = 12 × 2 = 24.",
+      "options": [
+        {
+          "label": "24",
+          "is_correct": true
+        },
+        {
+          "label": "25",
+          "is_correct": false
+        },
+        {
+          "label": "23",
+          "is_correct": false
+        },
+        {
+          "label": "26",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Problems on Numbers",
+      "kind": "standard",
+      "difficulty": "hard",
+      "answer_type": "single",
+      "stem": "The difference between a two-digit number and the number obtained by reversing its digits is 27. Find the difference between the two digits of the number.",
+      "explanation": "For a two-digit number, (number − reversed) = 9 × (difference of digits) = 27, so the digits differ by 3.",
+      "options": [
+        {
+          "label": "5",
+          "is_correct": false
+        },
+        {
+          "label": "2",
+          "is_correct": false
+        },
+        {
+          "label": "4",
+          "is_correct": false
+        },
+        {
+          "label": "3",
+          "is_correct": true
+        }
+      ]
+    },
+    {
+      "chapter": "Problems on Numbers",
+      "kind": "standard",
+      "difficulty": "hard",
+      "answer_type": "single",
+      "stem": "The sum of three consecutive whole numbers is 234. Find the middle number.",
+      "explanation": "The middle number = 234 ÷ 3 = 78.",
+      "options": [
+        {
+          "label": "82",
+          "is_correct": false
+        },
+        {
+          "label": "78",
+          "is_correct": true
+        },
+        {
+          "label": "80",
+          "is_correct": false
+        },
+        {
+          "label": "76",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Problems on Numbers",
+      "kind": "standard",
+      "difficulty": "hard",
+      "answer_type": "single",
+      "stem": "The sum of three consecutive whole numbers is 120. Find the middle number.",
+      "explanation": "The middle number = 120 ÷ 3 = 40.",
+      "options": [
+        {
+          "label": "40",
+          "is_correct": true
+        },
+        {
+          "label": "44",
+          "is_correct": false
+        },
+        {
+          "label": "38",
+          "is_correct": false
+        },
+        {
+          "label": "42",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Problems on Numbers",
+      "kind": "standard",
+      "difficulty": "hard",
+      "answer_type": "single",
+      "stem": "One-third of a number is 15 more than one-fourth of the same number. Find the number.",
+      "explanation": "(1/3 − 1/4) of the number = 1/12 of it = 15, so the number = 12 × 15 = 180.",
+      "options": [
+        {
+          "label": "182",
+          "is_correct": false
+        },
+        {
+          "label": "178",
+          "is_correct": false
+        },
+        {
+          "label": "184",
+          "is_correct": false
+        },
+        {
+          "label": "180",
+          "is_correct": true
+        }
+      ]
+    },
+    {
+      "chapter": "Problems on Numbers",
+      "kind": "standard",
+      "difficulty": "hard",
+      "answer_type": "single",
+      "stem": "The sum of three consecutive whole numbers is 66. Find the middle number.",
+      "explanation": "The middle number = 66 ÷ 3 = 22.",
+      "options": [
+        {
+          "label": "24",
+          "is_correct": false
+        },
+        {
+          "label": "22",
+          "is_correct": true
+        },
+        {
+          "label": "23",
+          "is_correct": false
+        },
+        {
+          "label": "21",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Problems on Numbers",
+      "kind": "standard",
+      "difficulty": "hard",
+      "answer_type": "single",
+      "stem": "The sum of three consecutive whole numbers is 222. Find the middle number.",
+      "explanation": "The middle number = 222 ÷ 3 = 74.",
+      "options": [
+        {
+          "label": "72",
+          "is_correct": false
+        },
+        {
+          "label": "76",
+          "is_correct": false
+        },
+        {
+          "label": "78",
+          "is_correct": false
+        },
+        {
+          "label": "74",
+          "is_correct": true
+        }
+      ]
+    },
+    {
+      "chapter": "Problems on Numbers",
+      "kind": "standard",
+      "difficulty": "hard",
+      "answer_type": "single",
+      "stem": "One-third of a number is 39 more than one-fourth of the same number. Find the number.",
+      "explanation": "(1/3 − 1/4) of the number = 1/12 of it = 39, so the number = 12 × 39 = 468.",
+      "options": [
+        {
+          "label": "449",
+          "is_correct": false
+        },
+        {
+          "label": "487",
+          "is_correct": false
+        },
+        {
+          "label": "506",
+          "is_correct": false
+        },
+        {
+          "label": "468",
+          "is_correct": true
+        }
+      ]
+    },
+    {
+      "chapter": "Problems on Numbers",
+      "kind": "standard",
+      "difficulty": "hard",
+      "answer_type": "single",
+      "stem": "The sum of three consecutive whole numbers is 42. Find the middle number.",
+      "explanation": "The middle number = 42 ÷ 3 = 14.",
+      "options": [
+        {
+          "label": "16",
+          "is_correct": false
+        },
+        {
+          "label": "13",
+          "is_correct": false
+        },
+        {
+          "label": "15",
+          "is_correct": false
+        },
+        {
+          "label": "14",
+          "is_correct": true
+        }
+      ]
+    },
+    {
+      "chapter": "Problems on Numbers",
+      "kind": "standard",
+      "difficulty": "hard",
+      "answer_type": "single",
+      "stem": "One-third of a number is 17 more than one-fourth of the same number. Find the number.",
+      "explanation": "(1/3 − 1/4) of the number = 1/12 of it = 17, so the number = 12 × 17 = 204.",
+      "options": [
+        {
+          "label": "204",
+          "is_correct": true
+        },
+        {
+          "label": "212",
+          "is_correct": false
+        },
+        {
+          "label": "196",
+          "is_correct": false
+        },
+        {
+          "label": "220",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Problems on Numbers",
+      "kind": "standard",
+      "difficulty": "hard",
+      "answer_type": "single",
+      "stem": "One-third of a number is 31 more than one-fourth of the same number. Find the number.",
+      "explanation": "(1/3 − 1/4) of the number = 1/12 of it = 31, so the number = 12 × 31 = 372.",
+      "options": [
+        {
+          "label": "387",
+          "is_correct": false
+        },
+        {
+          "label": "357",
+          "is_correct": false
+        },
+        {
+          "label": "402",
+          "is_correct": false
+        },
+        {
+          "label": "372",
+          "is_correct": true
+        }
+      ]
+    },
+    {
+      "chapter": "Problems on Numbers",
+      "kind": "standard",
+      "difficulty": "hard",
+      "answer_type": "single",
+      "stem": "The sum of three consecutive whole numbers is 57. Find the middle number.",
+      "explanation": "The middle number = 57 ÷ 3 = 19.",
+      "options": [
+        {
+          "label": "20",
+          "is_correct": false
+        },
+        {
+          "label": "21",
+          "is_correct": false
+        },
+        {
+          "label": "19",
+          "is_correct": true
+        },
+        {
+          "label": "18",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Problems on Numbers",
+      "kind": "standard",
+      "difficulty": "hard",
+      "answer_type": "single",
+      "stem": "One-third of a number is 28 more than one-fourth of the same number. Find the number.",
+      "explanation": "(1/3 − 1/4) of the number = 1/12 of it = 28, so the number = 12 × 28 = 336.",
+      "options": [
+        {
+          "label": "323",
+          "is_correct": false
+        },
+        {
+          "label": "349",
+          "is_correct": false
+        },
+        {
+          "label": "336",
+          "is_correct": true
+        },
+        {
+          "label": "362",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Problems on Numbers",
+      "kind": "standard",
+      "difficulty": "hard",
+      "answer_type": "single",
+      "stem": "One-third of a number is 26 more than one-fourth of the same number. Find the number.",
+      "explanation": "(1/3 − 1/4) of the number = 1/12 of it = 26, so the number = 12 × 26 = 312.",
+      "options": [
+        {
+          "label": "300",
+          "is_correct": false
+        },
+        {
+          "label": "324",
+          "is_correct": false
+        },
+        {
+          "label": "336",
+          "is_correct": false
+        },
+        {
+          "label": "312",
+          "is_correct": true
+        }
+      ]
+    },
+    {
+      "chapter": "Problems on Numbers",
+      "kind": "standard",
+      "difficulty": "hard",
+      "answer_type": "single",
+      "stem": "The sum of three consecutive whole numbers is 240. Find the middle number.",
+      "explanation": "The middle number = 240 ÷ 3 = 80.",
+      "options": [
+        {
+          "label": "82",
+          "is_correct": false
+        },
+        {
+          "label": "80",
+          "is_correct": true
+        },
+        {
+          "label": "84",
+          "is_correct": false
+        },
+        {
+          "label": "78",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Problems on Numbers",
+      "kind": "standard",
+      "difficulty": "hard",
+      "answer_type": "single",
+      "stem": "The sum of three consecutive whole numbers is 54. Find the middle number.",
+      "explanation": "The middle number = 54 ÷ 3 = 18.",
+      "options": [
+        {
+          "label": "18",
+          "is_correct": true
+        },
+        {
+          "label": "17",
+          "is_correct": false
+        },
+        {
+          "label": "19",
+          "is_correct": false
+        },
+        {
+          "label": "20",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Problems on Numbers",
+      "kind": "standard",
+      "difficulty": "hard",
+      "answer_type": "single",
+      "stem": "One-third of a number is 32 more than one-fourth of the same number. Find the number.",
+      "explanation": "(1/3 − 1/4) of the number = 1/12 of it = 32, so the number = 12 × 32 = 384.",
+      "options": [
+        {
+          "label": "399",
+          "is_correct": false
+        },
+        {
+          "label": "369",
+          "is_correct": false
+        },
+        {
+          "label": "384",
+          "is_correct": true
+        },
+        {
+          "label": "414",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Problems on Numbers",
+      "kind": "standard",
+      "difficulty": "very_hard",
+      "answer_type": "single",
+      "stem": "If 6 is added to twice a number, the result is 124. Find the number.",
+      "explanation": "2×number + 6 = 124 ⇒ number = (124 − 6)/2 = 59.",
+      "options": [
+        {
+          "label": "59",
+          "is_correct": true
+        },
+        {
+          "label": "63",
+          "is_correct": false
+        },
+        {
+          "label": "61",
+          "is_correct": false
+        },
+        {
+          "label": "57",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Problems on Numbers",
+      "kind": "standard",
+      "difficulty": "very_hard",
+      "answer_type": "single",
+      "stem": "The sum of two numbers is 23 and their product is 120. Find the larger number.",
+      "explanation": "The two numbers are 8 and 15; the larger is 15.",
+      "options": [
+        {
+          "label": "17",
+          "is_correct": false
+        },
+        {
+          "label": "16",
+          "is_correct": false
+        },
+        {
+          "label": "15",
+          "is_correct": true
+        },
+        {
+          "label": "14",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Problems on Numbers",
+      "kind": "standard",
+      "difficulty": "very_hard",
+      "answer_type": "single",
+      "stem": "If 21 is added to twice a number, the result is 109. Find the number.",
+      "explanation": "2×number + 21 = 109 ⇒ number = (109 − 21)/2 = 44.",
+      "options": [
+        {
+          "label": "42",
+          "is_correct": false
+        },
+        {
+          "label": "46",
+          "is_correct": false
+        },
+        {
+          "label": "44",
+          "is_correct": true
+        },
+        {
+          "label": "48",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Problems on Numbers",
+      "kind": "standard",
+      "difficulty": "very_hard",
+      "answer_type": "single",
+      "stem": "The sum of two numbers is 14 and their product is 48. Find the larger number.",
+      "explanation": "The two numbers are 6 and 8; the larger is 8.",
+      "options": [
+        {
+          "label": "9",
+          "is_correct": false
+        },
+        {
+          "label": "7",
+          "is_correct": false
+        },
+        {
+          "label": "8",
+          "is_correct": true
+        },
+        {
+          "label": "10",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Problems on Numbers",
+      "kind": "standard",
+      "difficulty": "very_hard",
+      "answer_type": "single",
+      "stem": "If 38 is added to twice a number, the result is 124. Find the number.",
+      "explanation": "2×number + 38 = 124 ⇒ number = (124 − 38)/2 = 43.",
+      "options": [
+        {
+          "label": "47",
+          "is_correct": false
+        },
+        {
+          "label": "41",
+          "is_correct": false
+        },
+        {
+          "label": "45",
+          "is_correct": false
+        },
+        {
+          "label": "43",
+          "is_correct": true
+        }
+      ]
+    },
+    {
+      "chapter": "Problems on Numbers",
+      "kind": "standard",
+      "difficulty": "very_hard",
+      "answer_type": "single",
+      "stem": "The sum of two numbers is 23 and the sum of their squares is 269. Find the product of the two numbers.",
+      "explanation": "Product = [(sum)² − (sum of squares)]/2 = [529 − 269]/2 = 130.",
+      "options": [
+        {
+          "label": "132",
+          "is_correct": false
+        },
+        {
+          "label": "128",
+          "is_correct": false
+        },
+        {
+          "label": "130",
+          "is_correct": true
+        },
+        {
+          "label": "134",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Problems on Numbers",
+      "kind": "standard",
+      "difficulty": "very_hard",
+      "answer_type": "single",
+      "stem": "If 17 is added to twice a number, the result is 91. Find the number.",
+      "explanation": "2×number + 17 = 91 ⇒ number = (91 − 17)/2 = 37.",
+      "options": [
+        {
+          "label": "37",
+          "is_correct": true
+        },
+        {
+          "label": "38",
+          "is_correct": false
+        },
+        {
+          "label": "36",
+          "is_correct": false
+        },
+        {
+          "label": "39",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Problems on Numbers",
+      "kind": "standard",
+      "difficulty": "very_hard",
+      "answer_type": "single",
+      "stem": "If 30 is added to twice a number, the result is 56. Find the number.",
+      "explanation": "2×number + 30 = 56 ⇒ number = (56 − 30)/2 = 13.",
+      "options": [
+        {
+          "label": "13",
+          "is_correct": true
+        },
+        {
+          "label": "12",
+          "is_correct": false
+        },
+        {
+          "label": "14",
+          "is_correct": false
+        },
+        {
+          "label": "15",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Problems on Numbers",
+      "kind": "standard",
+      "difficulty": "very_hard",
+      "answer_type": "single",
+      "stem": "The sum of two numbers is 31 and the sum of their squares is 505. Find the product of the two numbers.",
+      "explanation": "Product = [(sum)² − (sum of squares)]/2 = [961 − 505]/2 = 228.",
+      "options": [
+        {
+          "label": "246",
+          "is_correct": false
+        },
+        {
+          "label": "237",
+          "is_correct": false
+        },
+        {
+          "label": "228",
+          "is_correct": true
+        },
+        {
+          "label": "219",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Problems on Numbers",
+      "kind": "standard",
+      "difficulty": "very_hard",
+      "answer_type": "single",
+      "stem": "The sum of two numbers is 54 and their product is 720. Find the larger number.",
+      "explanation": "The two numbers are 24 and 30; the larger is 30.",
+      "options": [
+        {
+          "label": "32",
+          "is_correct": false
+        },
+        {
+          "label": "30",
+          "is_correct": true
+        },
+        {
+          "label": "29",
+          "is_correct": false
+        },
+        {
+          "label": "31",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Problems on Numbers",
+      "kind": "standard",
+      "difficulty": "very_hard",
+      "answer_type": "single",
+      "stem": "The sum of two numbers is 15 and the sum of their squares is 137. Find the product of the two numbers.",
+      "explanation": "Product = [(sum)² − (sum of squares)]/2 = [225 − 137]/2 = 44.",
+      "options": [
+        {
+          "label": "44",
+          "is_correct": true
+        },
+        {
+          "label": "42",
+          "is_correct": false
+        },
+        {
+          "label": "46",
+          "is_correct": false
+        },
+        {
+          "label": "48",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Problems on Numbers",
+      "kind": "standard",
+      "difficulty": "very_hard",
+      "answer_type": "single",
+      "stem": "The sum of two numbers is 32 and the sum of their squares is 584. Find the product of the two numbers.",
+      "explanation": "Product = [(sum)² − (sum of squares)]/2 = [1024 − 584]/2 = 220.",
+      "options": [
+        {
+          "label": "211",
+          "is_correct": false
+        },
+        {
+          "label": "220",
+          "is_correct": true
+        },
+        {
+          "label": "229",
+          "is_correct": false
+        },
+        {
+          "label": "238",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Problems on Numbers",
+      "kind": "standard",
+      "difficulty": "very_hard",
+      "answer_type": "single",
+      "stem": "The sum of two numbers is 15 and their product is 44. Find the larger number.",
+      "explanation": "The two numbers are 4 and 11; the larger is 11.",
+      "options": [
+        {
+          "label": "12",
+          "is_correct": false
+        },
+        {
+          "label": "11",
+          "is_correct": true
+        },
+        {
+          "label": "10",
+          "is_correct": false
+        },
+        {
+          "label": "13",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Problems on Numbers",
+      "kind": "standard",
+      "difficulty": "very_hard",
+      "answer_type": "single",
+      "stem": "If 40 is added to twice a number, the result is 110. Find the number.",
+      "explanation": "2×number + 40 = 110 ⇒ number = (110 − 40)/2 = 35.",
+      "options": [
+        {
+          "label": "35",
+          "is_correct": true
+        },
+        {
+          "label": "37",
+          "is_correct": false
+        },
+        {
+          "label": "36",
+          "is_correct": false
+        },
+        {
+          "label": "34",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Problems on Numbers",
+      "kind": "standard",
+      "difficulty": "very_hard",
+      "answer_type": "single",
+      "stem": "If 3 is added to twice a number, the result is 61. Find the number.",
+      "explanation": "2×number + 3 = 61 ⇒ number = (61 − 3)/2 = 29.",
+      "options": [
+        {
+          "label": "30",
+          "is_correct": false
+        },
+        {
+          "label": "29",
+          "is_correct": true
+        },
+        {
+          "label": "28",
+          "is_correct": false
+        },
+        {
+          "label": "31",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Problems on Numbers",
+      "kind": "standard",
+      "difficulty": "very_hard",
+      "answer_type": "single",
+      "stem": "The sum of two numbers is 38 and their product is 357. Find the larger number.",
+      "explanation": "The two numbers are 17 and 21; the larger is 21.",
+      "options": [
+        {
+          "label": "20",
+          "is_correct": false
+        },
+        {
+          "label": "21",
+          "is_correct": true
+        },
+        {
+          "label": "23",
+          "is_correct": false
+        },
+        {
+          "label": "22",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Problems on Numbers",
+      "kind": "standard",
+      "difficulty": "very_hard",
+      "answer_type": "single",
+      "stem": "The sum of two numbers is 38 and the sum of their squares is 754. Find the product of the two numbers.",
+      "explanation": "Product = [(sum)² − (sum of squares)]/2 = [1444 − 754]/2 = 345.",
+      "options": [
+        {
+          "label": "331",
+          "is_correct": false
+        },
+        {
+          "label": "345",
+          "is_correct": true
+        },
+        {
+          "label": "359",
+          "is_correct": false
+        },
+        {
+          "label": "373",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Problems on Numbers",
+      "kind": "standard",
+      "difficulty": "very_hard",
+      "answer_type": "single",
+      "stem": "If 40 is added to twice a number, the result is 64. Find the number.",
+      "explanation": "2×number + 40 = 64 ⇒ number = (64 − 40)/2 = 12.",
+      "options": [
+        {
+          "label": "12",
+          "is_correct": true
+        },
+        {
+          "label": "11",
+          "is_correct": false
+        },
+        {
+          "label": "14",
+          "is_correct": false
+        },
+        {
+          "label": "13",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Problems on Numbers",
+      "kind": "standard",
+      "difficulty": "very_hard",
+      "answer_type": "single",
+      "stem": "The sum of two numbers is 24 and their product is 119. Find the larger number.",
+      "explanation": "The two numbers are 7 and 17; the larger is 17.",
+      "options": [
+        {
+          "label": "17",
+          "is_correct": true
+        },
+        {
+          "label": "18",
+          "is_correct": false
+        },
+        {
+          "label": "19",
+          "is_correct": false
+        },
+        {
+          "label": "16",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Problems on Numbers",
+      "kind": "standard",
+      "difficulty": "very_hard",
+      "answer_type": "single",
+      "stem": "The sum of two numbers is 33 and the sum of their squares is 657. Find the product of the two numbers.",
+      "explanation": "Product = [(sum)² − (sum of squares)]/2 = [1089 − 657]/2 = 216.",
+      "options": [
+        {
+          "label": "216",
+          "is_correct": true
+        },
+        {
+          "label": "225",
+          "is_correct": false
+        },
+        {
+          "label": "234",
+          "is_correct": false
+        },
+        {
+          "label": "207",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Problems on Numbers",
+      "kind": "standard",
+      "difficulty": "very_hard",
+      "answer_type": "single",
+      "stem": "The sum of two numbers is 33 and their product is 242. Find the larger number.",
+      "explanation": "The two numbers are 11 and 22; the larger is 22.",
+      "options": [
+        {
+          "label": "21",
+          "is_correct": false
+        },
+        {
+          "label": "22",
+          "is_correct": true
+        },
+        {
+          "label": "23",
+          "is_correct": false
+        },
+        {
+          "label": "24",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Problems on Numbers",
+      "kind": "standard",
+      "difficulty": "very_hard",
+      "answer_type": "single",
+      "stem": "The sum of two numbers is 27 and their product is 182. Find the larger number.",
+      "explanation": "The two numbers are 13 and 14; the larger is 14.",
+      "options": [
+        {
+          "label": "14",
+          "is_correct": true
+        },
+        {
+          "label": "16",
+          "is_correct": false
+        },
+        {
+          "label": "15",
+          "is_correct": false
+        },
+        {
+          "label": "13",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Problems on Numbers",
+      "kind": "standard",
+      "difficulty": "very_hard",
+      "answer_type": "single",
+      "stem": "The sum of two numbers is 14 and the sum of their squares is 106. Find the product of the two numbers.",
+      "explanation": "Product = [(sum)² − (sum of squares)]/2 = [196 − 106]/2 = 45.",
+      "options": [
+        {
+          "label": "45",
+          "is_correct": true
+        },
+        {
+          "label": "43",
+          "is_correct": false
+        },
+        {
+          "label": "47",
+          "is_correct": false
+        },
+        {
+          "label": "49",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Problems on Numbers",
+      "kind": "standard",
+      "difficulty": "very_hard",
+      "answer_type": "single",
+      "stem": "If 27 is added to twice a number, the result is 109. Find the number.",
+      "explanation": "2×number + 27 = 109 ⇒ number = (109 − 27)/2 = 41.",
+      "options": [
+        {
+          "label": "39",
+          "is_correct": false
+        },
+        {
+          "label": "43",
+          "is_correct": false
+        },
+        {
+          "label": "41",
+          "is_correct": true
+        },
+        {
+          "label": "45",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Problems on Numbers",
+      "kind": "standard",
+      "difficulty": "very_hard",
+      "answer_type": "single",
+      "stem": "The sum of two numbers is 12 and the sum of their squares is 90. Find the product of the two numbers.",
+      "explanation": "Product = [(sum)² − (sum of squares)]/2 = [144 − 90]/2 = 27.",
+      "options": [
+        {
+          "label": "27",
+          "is_correct": true
+        },
+        {
+          "label": "26",
+          "is_correct": false
+        },
+        {
+          "label": "28",
+          "is_correct": false
+        },
+        {
+          "label": "29",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Problems on Numbers",
+      "kind": "standard",
+      "difficulty": "very_hard",
+      "answer_type": "single",
+      "stem": "If 18 is added to twice a number, the result is 68. Find the number.",
+      "explanation": "2×number + 18 = 68 ⇒ number = (68 − 18)/2 = 25.",
+      "options": [
+        {
+          "label": "25",
+          "is_correct": true
+        },
+        {
+          "label": "24",
+          "is_correct": false
+        },
+        {
+          "label": "27",
+          "is_correct": false
+        },
+        {
+          "label": "26",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Problems on Numbers",
+      "kind": "standard",
+      "difficulty": "very_hard",
+      "answer_type": "single",
+      "stem": "If 34 is added to twice a number, the result is 140. Find the number.",
+      "explanation": "2×number + 34 = 140 ⇒ number = (140 − 34)/2 = 53.",
+      "options": [
+        {
+          "label": "51",
+          "is_correct": false
+        },
+        {
+          "label": "53",
+          "is_correct": true
+        },
+        {
+          "label": "55",
+          "is_correct": false
+        },
+        {
+          "label": "57",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Problems on Numbers",
+      "kind": "standard",
+      "difficulty": "very_hard",
+      "answer_type": "single",
+      "stem": "If 16 is added to twice a number, the result is 26. Find the number.",
+      "explanation": "2×number + 16 = 26 ⇒ number = (26 − 16)/2 = 5.",
+      "options": [
+        {
+          "label": "5",
+          "is_correct": true
+        },
+        {
+          "label": "7",
+          "is_correct": false
+        },
+        {
+          "label": "4",
+          "is_correct": false
+        },
+        {
+          "label": "6",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Problems on Numbers",
+      "kind": "standard",
+      "difficulty": "very_hard",
+      "answer_type": "single",
+      "stem": "The sum of two numbers is 24 and their product is 108. Find the larger number.",
+      "explanation": "The two numbers are 6 and 18; the larger is 18.",
+      "options": [
+        {
+          "label": "19",
+          "is_correct": false
+        },
+        {
+          "label": "18",
+          "is_correct": true
+        },
+        {
+          "label": "17",
+          "is_correct": false
+        },
+        {
+          "label": "20",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Problems on Numbers",
+      "kind": "standard",
+      "difficulty": "very_hard",
+      "answer_type": "single",
+      "stem": "The sum of two numbers is 42 and the sum of their squares is 914. Find the product of the two numbers.",
+      "explanation": "Product = [(sum)² − (sum of squares)]/2 = [1764 − 914]/2 = 425.",
+      "options": [
+        {
+          "label": "425",
+          "is_correct": true
+        },
+        {
+          "label": "408",
+          "is_correct": false
+        },
+        {
+          "label": "442",
+          "is_correct": false
+        },
+        {
+          "label": "459",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Problems on Numbers",
+      "kind": "standard",
+      "difficulty": "very_hard",
+      "answer_type": "single",
+      "stem": "The sum of two numbers is 22 and the sum of their squares is 260. Find the product of the two numbers.",
+      "explanation": "Product = [(sum)² − (sum of squares)]/2 = [484 − 260]/2 = 112.",
+      "options": [
+        {
+          "label": "116",
+          "is_correct": false
+        },
+        {
+          "label": "112",
+          "is_correct": true
+        },
+        {
+          "label": "110",
+          "is_correct": false
+        },
+        {
+          "label": "114",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Problems on Numbers",
+      "kind": "standard",
+      "difficulty": "very_hard",
+      "answer_type": "single",
+      "stem": "The sum of two numbers is 41 and their product is 408. Find the larger number.",
+      "explanation": "The two numbers are 17 and 24; the larger is 24.",
+      "options": [
+        {
+          "label": "25",
+          "is_correct": false
+        },
+        {
+          "label": "26",
+          "is_correct": false
+        },
+        {
+          "label": "23",
+          "is_correct": false
+        },
+        {
+          "label": "24",
+          "is_correct": true
+        }
+      ]
+    },
+    {
+      "chapter": "Problems on Numbers",
+      "kind": "standard",
+      "difficulty": "very_hard",
+      "answer_type": "single",
+      "stem": "If 37 is added to twice a number, the result is 103. Find the number.",
+      "explanation": "2×number + 37 = 103 ⇒ number = (103 − 37)/2 = 33.",
+      "options": [
+        {
+          "label": "32",
+          "is_correct": false
+        },
+        {
+          "label": "35",
+          "is_correct": false
+        },
+        {
+          "label": "33",
+          "is_correct": true
+        },
+        {
+          "label": "34",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Problems on Numbers",
+      "kind": "standard",
+      "difficulty": "very_hard",
+      "answer_type": "single",
+      "stem": "The sum of two numbers is 43 and their product is 450. Find the larger number.",
+      "explanation": "The two numbers are 18 and 25; the larger is 25.",
+      "options": [
+        {
+          "label": "26",
+          "is_correct": false
+        },
+        {
+          "label": "24",
+          "is_correct": false
+        },
+        {
+          "label": "25",
+          "is_correct": true
+        },
+        {
+          "label": "27",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Problems on Numbers",
+      "kind": "standard",
+      "difficulty": "very_hard",
+      "answer_type": "single",
+      "stem": "The sum of two numbers is 44 and the sum of their squares is 968. Find the product of the two numbers.",
+      "explanation": "Product = [(sum)² − (sum of squares)]/2 = [1936 − 968]/2 = 484.",
+      "options": [
+        {
+          "label": "503",
+          "is_correct": false
+        },
+        {
+          "label": "522",
+          "is_correct": false
+        },
+        {
+          "label": "465",
+          "is_correct": false
+        },
+        {
+          "label": "484",
+          "is_correct": true
+        }
+      ]
+    },
+    {
+      "chapter": "Problems on Numbers",
+      "kind": "standard",
+      "difficulty": "very_hard",
+      "answer_type": "single",
+      "stem": "The sum of two numbers is 36 and their product is 224. Find the larger number.",
+      "explanation": "The two numbers are 8 and 28; the larger is 28.",
+      "options": [
+        {
+          "label": "27",
+          "is_correct": false
+        },
+        {
+          "label": "30",
+          "is_correct": false
+        },
+        {
+          "label": "28",
+          "is_correct": true
+        },
+        {
+          "label": "29",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Problems on Numbers",
+      "kind": "standard",
+      "difficulty": "very_hard",
+      "answer_type": "single",
+      "stem": "If 17 is added to twice a number, the result is 47. Find the number.",
+      "explanation": "2×number + 17 = 47 ⇒ number = (47 − 17)/2 = 15.",
+      "options": [
+        {
+          "label": "17",
+          "is_correct": false
+        },
+        {
+          "label": "14",
+          "is_correct": false
+        },
+        {
+          "label": "16",
+          "is_correct": false
+        },
+        {
+          "label": "15",
+          "is_correct": true
+        }
+      ]
+    },
+    {
+      "chapter": "Problems on Numbers",
+      "kind": "standard",
+      "difficulty": "very_hard",
+      "answer_type": "single",
+      "stem": "The sum of two numbers is 25 and their product is 144. Find the larger number.",
+      "explanation": "The two numbers are 9 and 16; the larger is 16.",
+      "options": [
+        {
+          "label": "16",
+          "is_correct": true
+        },
+        {
+          "label": "18",
+          "is_correct": false
+        },
+        {
+          "label": "17",
+          "is_correct": false
+        },
+        {
+          "label": "15",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Problems on Numbers",
+      "kind": "standard",
+      "difficulty": "very_hard",
+      "answer_type": "single",
+      "stem": "If 17 is added to twice a number, the result is 117. Find the number.",
+      "explanation": "2×number + 17 = 117 ⇒ number = (117 − 17)/2 = 50.",
+      "options": [
+        {
+          "label": "54",
+          "is_correct": false
+        },
+        {
+          "label": "48",
+          "is_correct": false
+        },
+        {
+          "label": "52",
+          "is_correct": false
+        },
+        {
+          "label": "50",
+          "is_correct": true
+        }
+      ]
+    },
+    {
+      "chapter": "Problems on Numbers",
+      "kind": "standard",
+      "difficulty": "very_hard",
+      "answer_type": "single",
+      "stem": "The sum of two numbers is 31 and their product is 168. Find the larger number.",
+      "explanation": "The two numbers are 7 and 24; the larger is 24.",
+      "options": [
+        {
+          "label": "26",
+          "is_correct": false
+        },
+        {
+          "label": "24",
+          "is_correct": true
+        },
+        {
+          "label": "23",
+          "is_correct": false
+        },
+        {
+          "label": "25",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Problems on Numbers",
+      "kind": "standard",
+      "difficulty": "very_hard",
+      "answer_type": "single",
+      "stem": "The sum of two numbers is 21 and their product is 110. Find the larger number.",
+      "explanation": "The two numbers are 10 and 11; the larger is 11.",
+      "options": [
+        {
+          "label": "10",
+          "is_correct": false
+        },
+        {
+          "label": "13",
+          "is_correct": false
+        },
+        {
+          "label": "11",
+          "is_correct": true
+        },
+        {
+          "label": "12",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Problems on Numbers",
+      "kind": "standard",
+      "difficulty": "very_hard",
+      "answer_type": "single",
+      "stem": "If 24 is added to twice a number, the result is 70. Find the number.",
+      "explanation": "2×number + 24 = 70 ⇒ number = (70 − 24)/2 = 23.",
+      "options": [
+        {
+          "label": "23",
+          "is_correct": true
+        },
+        {
+          "label": "24",
+          "is_correct": false
+        },
+        {
+          "label": "25",
+          "is_correct": false
+        },
+        {
+          "label": "22",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Problems on Numbers",
+      "kind": "standard",
+      "difficulty": "very_hard",
+      "answer_type": "single",
+      "stem": "If 34 is added to twice a number, the result is 44. Find the number.",
+      "explanation": "2×number + 34 = 44 ⇒ number = (44 − 34)/2 = 5.",
+      "options": [
+        {
+          "label": "5",
+          "is_correct": true
+        },
+        {
+          "label": "4",
+          "is_correct": false
+        },
+        {
+          "label": "7",
+          "is_correct": false
+        },
+        {
+          "label": "6",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Problems on Numbers",
+      "kind": "standard",
+      "difficulty": "very_hard",
+      "answer_type": "single",
+      "stem": "The sum of two numbers is 34 and their product is 168. Find the larger number.",
+      "explanation": "The two numbers are 6 and 28; the larger is 28.",
+      "options": [
+        {
+          "label": "28",
+          "is_correct": true
+        },
+        {
+          "label": "30",
+          "is_correct": false
+        },
+        {
+          "label": "29",
+          "is_correct": false
+        },
+        {
+          "label": "27",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Problems on Numbers",
+      "kind": "standard",
+      "difficulty": "very_hard",
+      "answer_type": "single",
+      "stem": "The sum of two numbers is 32 and the sum of their squares is 530. Find the product of the two numbers.",
+      "explanation": "Product = [(sum)² − (sum of squares)]/2 = [1024 − 530]/2 = 247.",
+      "options": [
+        {
+          "label": "237",
+          "is_correct": false
+        },
+        {
+          "label": "247",
+          "is_correct": true
+        },
+        {
+          "label": "267",
+          "is_correct": false
+        },
+        {
+          "label": "257",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Problems on Numbers",
+      "kind": "standard",
+      "difficulty": "very_hard",
+      "answer_type": "single",
+      "stem": "The sum of two numbers is 19 and their product is 60. Find the larger number.",
+      "explanation": "The two numbers are 4 and 15; the larger is 15.",
+      "options": [
+        {
+          "label": "14",
+          "is_correct": false
+        },
+        {
+          "label": "15",
+          "is_correct": true
+        },
+        {
+          "label": "17",
+          "is_correct": false
+        },
+        {
+          "label": "16",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Problems on Numbers",
+      "kind": "standard",
+      "difficulty": "very_hard",
+      "answer_type": "single",
+      "stem": "The sum of two numbers is 45 and their product is 506. Find the larger number.",
+      "explanation": "The two numbers are 22 and 23; the larger is 23.",
+      "options": [
+        {
+          "label": "23",
+          "is_correct": true
+        },
+        {
+          "label": "25",
+          "is_correct": false
+        },
+        {
+          "label": "24",
+          "is_correct": false
+        },
+        {
+          "label": "22",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Problems on Numbers",
+      "kind": "standard",
+      "difficulty": "very_hard",
+      "answer_type": "single",
+      "stem": "The sum of two numbers is 26 and the sum of their squares is 466. Find the product of the two numbers.",
+      "explanation": "Product = [(sum)² − (sum of squares)]/2 = [676 − 466]/2 = 105.",
+      "options": [
+        {
+          "label": "109",
+          "is_correct": false
+        },
+        {
+          "label": "105",
+          "is_correct": true
+        },
+        {
+          "label": "103",
+          "is_correct": false
+        },
+        {
+          "label": "107",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Problems on Numbers",
+      "kind": "standard",
+      "difficulty": "very_hard",
+      "answer_type": "single",
+      "stem": "The sum of two numbers is 28 and the sum of their squares is 592. Find the product of the two numbers.",
+      "explanation": "Product = [(sum)² − (sum of squares)]/2 = [784 − 592]/2 = 96.",
+      "options": [
+        {
+          "label": "98",
+          "is_correct": false
+        },
+        {
+          "label": "96",
+          "is_correct": true
+        },
+        {
+          "label": "100",
+          "is_correct": false
+        },
+        {
+          "label": "94",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Problems on Numbers",
+      "kind": "standard",
+      "difficulty": "very_hard",
+      "answer_type": "single",
+      "stem": "The sum of two numbers is 28 and the sum of their squares is 410. Find the product of the two numbers.",
+      "explanation": "Product = [(sum)² − (sum of squares)]/2 = [784 − 410]/2 = 187.",
+      "options": [
+        {
+          "label": "191",
+          "is_correct": false
+        },
+        {
+          "label": "187",
+          "is_correct": true
+        },
+        {
+          "label": "189",
+          "is_correct": false
+        },
+        {
+          "label": "185",
+          "is_correct": false
+        }
+      ]
+    }
+  ]
+}

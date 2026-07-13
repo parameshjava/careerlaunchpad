@@ -96,6 +96,30 @@ This is the most important architectural rule — the two styling systems must n
 
 Components are React Server Components by default. Client components (`"use client"`) include `FounderAvatar.tsx` (marketing) and the data-grid pieces (`components/data-table.tsx`, `components/students/columns.tsx`) since TanStack Table uses hooks.
 
+### User impersonation ("View as user")
+
+Owners / platform admins can browse the app **as** a specific real user to
+evaluate look, feel, and RLS-scoped data. It is a **true session mint**, not a
+faked context: `app/impersonation/actions.ts#enterImpersonation` uses the
+server-only admin client (`lib/supabase/admin.ts`, keyed by `SUPABASE_SECRET_KEY`)
+to `generateLink({type:'magiclink'})` → `verifyOtp()`, swapping the browser to the
+target's real Supabase session — so the JWT, `auth_context()`, RLS, and nav all
+resolve to the target with zero synthesis. The admin's own tokens are stashed in
+an httpOnly `cl-imp-origin` cookie; **Exit** (`exitImpersonation`) restores them.
+Every enter/exit is written to `impersonation_log` (migration 101).
+
+- **`SUPABASE_SECRET_KEY` bypasses RLS** — server-only, never `NEXT_PUBLIC_`, and
+  used **only** inside `lib/supabase/admin.ts`. Must be set in Vercel (preview +
+  prod). Without it, impersonation throws.
+- Entry points: "View as" on `/dashboard/users` rows (platform members) and "View
+  as student" on Registered rows of the Students grid (`app/dashboard/page.tsx`).
+- Guardrails (server-enforced): only owner/platform_admin may enter; owners,
+  platform admins, self, suspended, and email-less targets are rejected; no
+  nesting (Exit first).
+- The `<ImpersonationBanner/>` is mounted once in the root `app/layout.tsx` (fixed
+  **bottom** strip so it never collides with the top navbar) and shows on every
+  surface while impersonating.
+
 ### Favicon pipeline (non-obvious)
 
 The favicon is `app/icon.png` (Next.js App Router file convention — it auto-emits the `<link rel="icon">`; do **not** also set `metadata.icons`, or you get duplicates). It is **generated from `public/logo.jpeg`**, not used directly: the source JPEG has a white background and JPEG cannot store transparency, so pointing the favicon at the raw `.jpeg` puts a white square in the browser tab. The committed `app/icon.png` / `public/favicon.ico` are transparent PNG/ICO versions produced by a Pillow (Python) script that trims the margin and flood-fills the background white to transparent. Regenerate via that processing — never swap in the raw JPEG.

@@ -1,0 +1,5205 @@
+{
+  "subject": "Arithmetic",
+  "questions": [
+    {
+      "chapter": "Area",
+      "kind": "standard",
+      "difficulty": "easy",
+      "answer_type": "single",
+      "stem": "Find the area of a square of side 8 cm.",
+      "explanation": "Area = side² = 8² = 64 cm².",
+      "options": [
+        {
+          "label": "64 cm²",
+          "is_correct": true
+        },
+        {
+          "label": "66 cm²",
+          "is_correct": false
+        },
+        {
+          "label": "62 cm²",
+          "is_correct": false
+        },
+        {
+          "label": "68 cm²",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Area",
+      "kind": "standard",
+      "difficulty": "easy",
+      "answer_type": "single",
+      "stem": "Find the area of a rectangle of length 16 cm and breadth 25 cm.",
+      "explanation": "Area = length × breadth = 16 × 25 = 400 cm².",
+      "options": [
+        {
+          "label": "432 cm²",
+          "is_correct": false
+        },
+        {
+          "label": "416 cm²",
+          "is_correct": false
+        },
+        {
+          "label": "384 cm²",
+          "is_correct": false
+        },
+        {
+          "label": "400 cm²",
+          "is_correct": true
+        }
+      ]
+    },
+    {
+      "chapter": "Area",
+      "kind": "standard",
+      "difficulty": "easy",
+      "answer_type": "single",
+      "stem": "Find the area of a rectangle of length 8 cm and breadth 3 cm.",
+      "explanation": "Area = length × breadth = 8 × 3 = 24 cm².",
+      "options": [
+        {
+          "label": "23 cm²",
+          "is_correct": false
+        },
+        {
+          "label": "25 cm²",
+          "is_correct": false
+        },
+        {
+          "label": "24 cm²",
+          "is_correct": true
+        },
+        {
+          "label": "26 cm²",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Area",
+      "kind": "standard",
+      "difficulty": "easy",
+      "answer_type": "single",
+      "stem": "Find the area of a circle of radius 28 cm. (Take π = 22/7.)",
+      "explanation": "Area = πr² = (22/7) × 28² = 2464 cm².",
+      "options": [
+        {
+          "label": "2464 cm²",
+          "is_correct": true
+        },
+        {
+          "label": "2365 cm²",
+          "is_correct": false
+        },
+        {
+          "label": "2563 cm²",
+          "is_correct": false
+        },
+        {
+          "label": "2662 cm²",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Area",
+      "kind": "standard",
+      "difficulty": "easy",
+      "answer_type": "single",
+      "stem": "Find the area of a circle of radius 42 cm. (Take π = 22/7.)",
+      "explanation": "Area = πr² = (22/7) × 42² = 5544 cm².",
+      "options": [
+        {
+          "label": "5988 cm²",
+          "is_correct": false
+        },
+        {
+          "label": "5322 cm²",
+          "is_correct": false
+        },
+        {
+          "label": "5766 cm²",
+          "is_correct": false
+        },
+        {
+          "label": "5544 cm²",
+          "is_correct": true
+        }
+      ]
+    },
+    {
+      "chapter": "Area",
+      "kind": "standard",
+      "difficulty": "easy",
+      "answer_type": "single",
+      "stem": "Find the area of a triangle with base 40 cm and height 9 cm.",
+      "explanation": "Area = ½ × base × height = ½ × 40 × 9 = 180 cm².",
+      "options": [
+        {
+          "label": "178 cm²",
+          "is_correct": false
+        },
+        {
+          "label": "184 cm²",
+          "is_correct": false
+        },
+        {
+          "label": "182 cm²",
+          "is_correct": false
+        },
+        {
+          "label": "180 cm²",
+          "is_correct": true
+        }
+      ]
+    },
+    {
+      "chapter": "Area",
+      "kind": "standard",
+      "difficulty": "easy",
+      "answer_type": "single",
+      "stem": "Find the area of a triangle with base 30 cm and height 16 cm.",
+      "explanation": "Area = ½ × base × height = ½ × 30 × 16 = 240 cm².",
+      "options": [
+        {
+          "label": "230 cm²",
+          "is_correct": false
+        },
+        {
+          "label": "260 cm²",
+          "is_correct": false
+        },
+        {
+          "label": "240 cm²",
+          "is_correct": true
+        },
+        {
+          "label": "250 cm²",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Area",
+      "kind": "standard",
+      "difficulty": "easy",
+      "answer_type": "single",
+      "stem": "Find the area of a circle of radius 14 cm. (Take π = 22/7.)",
+      "explanation": "Area = πr² = (22/7) × 14² = 616 cm².",
+      "options": [
+        {
+          "label": "616 cm²",
+          "is_correct": true
+        },
+        {
+          "label": "591 cm²",
+          "is_correct": false
+        },
+        {
+          "label": "666 cm²",
+          "is_correct": false
+        },
+        {
+          "label": "641 cm²",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Area",
+      "kind": "standard",
+      "difficulty": "easy",
+      "answer_type": "single",
+      "stem": "Find the area of a triangle with base 26 cm and height 13 cm.",
+      "explanation": "Area = ½ × base × height = ½ × 26 × 13 = 169 cm².",
+      "options": [
+        {
+          "label": "173 cm²",
+          "is_correct": false
+        },
+        {
+          "label": "171 cm²",
+          "is_correct": false
+        },
+        {
+          "label": "169 cm²",
+          "is_correct": true
+        },
+        {
+          "label": "167 cm²",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Area",
+      "kind": "standard",
+      "difficulty": "easy",
+      "answer_type": "single",
+      "stem": "Find the area of a triangle with base 30 cm and height 7 cm.",
+      "explanation": "Area = ½ × base × height = ½ × 30 × 7 = 105 cm².",
+      "options": [
+        {
+          "label": "103 cm²",
+          "is_correct": false
+        },
+        {
+          "label": "107 cm²",
+          "is_correct": false
+        },
+        {
+          "label": "109 cm²",
+          "is_correct": false
+        },
+        {
+          "label": "105 cm²",
+          "is_correct": true
+        }
+      ]
+    },
+    {
+      "chapter": "Area",
+      "kind": "standard",
+      "difficulty": "easy",
+      "answer_type": "single",
+      "stem": "Find the area of a rectangle of length 38 cm and breadth 9 cm.",
+      "explanation": "Area = length × breadth = 38 × 9 = 342 cm².",
+      "options": [
+        {
+          "label": "356 cm²",
+          "is_correct": false
+        },
+        {
+          "label": "370 cm²",
+          "is_correct": false
+        },
+        {
+          "label": "342 cm²",
+          "is_correct": true
+        },
+        {
+          "label": "328 cm²",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Area",
+      "kind": "standard",
+      "difficulty": "easy",
+      "answer_type": "single",
+      "stem": "Find the area of a rectangle of length 6 cm and breadth 6 cm.",
+      "explanation": "Area = length × breadth = 6 × 6 = 36 cm².",
+      "options": [
+        {
+          "label": "35 cm²",
+          "is_correct": false
+        },
+        {
+          "label": "36 cm²",
+          "is_correct": true
+        },
+        {
+          "label": "37 cm²",
+          "is_correct": false
+        },
+        {
+          "label": "38 cm²",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Area",
+      "kind": "standard",
+      "difficulty": "easy",
+      "answer_type": "single",
+      "stem": "Find the area of a triangle with base 28 cm and height 12 cm.",
+      "explanation": "Area = ½ × base × height = ½ × 28 × 12 = 168 cm².",
+      "options": [
+        {
+          "label": "172 cm²",
+          "is_correct": false
+        },
+        {
+          "label": "168 cm²",
+          "is_correct": true
+        },
+        {
+          "label": "166 cm²",
+          "is_correct": false
+        },
+        {
+          "label": "170 cm²",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Area",
+      "kind": "standard",
+      "difficulty": "easy",
+      "answer_type": "single",
+      "stem": "Find the area of a rectangle of length 9 cm and breadth 6 cm.",
+      "explanation": "Area = length × breadth = 9 × 6 = 54 cm².",
+      "options": [
+        {
+          "label": "58 cm²",
+          "is_correct": false
+        },
+        {
+          "label": "54 cm²",
+          "is_correct": true
+        },
+        {
+          "label": "56 cm²",
+          "is_correct": false
+        },
+        {
+          "label": "52 cm²",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Area",
+      "kind": "standard",
+      "difficulty": "easy",
+      "answer_type": "single",
+      "stem": "Find the area of a rectangle of length 18 cm and breadth 12 cm.",
+      "explanation": "Area = length × breadth = 18 × 12 = 216 cm².",
+      "options": [
+        {
+          "label": "234 cm²",
+          "is_correct": false
+        },
+        {
+          "label": "216 cm²",
+          "is_correct": true
+        },
+        {
+          "label": "225 cm²",
+          "is_correct": false
+        },
+        {
+          "label": "207 cm²",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Area",
+      "kind": "standard",
+      "difficulty": "easy",
+      "answer_type": "single",
+      "stem": "Find the area of a square of side 4 cm.",
+      "explanation": "Area = side² = 4² = 16 cm².",
+      "options": [
+        {
+          "label": "17 cm²",
+          "is_correct": false
+        },
+        {
+          "label": "15 cm²",
+          "is_correct": false
+        },
+        {
+          "label": "18 cm²",
+          "is_correct": false
+        },
+        {
+          "label": "16 cm²",
+          "is_correct": true
+        }
+      ]
+    },
+    {
+      "chapter": "Area",
+      "kind": "standard",
+      "difficulty": "easy",
+      "answer_type": "single",
+      "stem": "Find the area of a triangle with base 32 cm and height 21 cm.",
+      "explanation": "Area = ½ × base × height = ½ × 32 × 21 = 336 cm².",
+      "options": [
+        {
+          "label": "362 cm²",
+          "is_correct": false
+        },
+        {
+          "label": "336 cm²",
+          "is_correct": true
+        },
+        {
+          "label": "349 cm²",
+          "is_correct": false
+        },
+        {
+          "label": "323 cm²",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Area",
+      "kind": "standard",
+      "difficulty": "easy",
+      "answer_type": "single",
+      "stem": "Find the area of a circle of radius 21 cm. (Take π = 22/7.)",
+      "explanation": "Area = πr² = (22/7) × 21² = 1386 cm².",
+      "options": [
+        {
+          "label": "1386 cm²",
+          "is_correct": true
+        },
+        {
+          "label": "1496 cm²",
+          "is_correct": false
+        },
+        {
+          "label": "1441 cm²",
+          "is_correct": false
+        },
+        {
+          "label": "1331 cm²",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Area",
+      "kind": "standard",
+      "difficulty": "easy",
+      "answer_type": "single",
+      "stem": "Find the area of a triangle with base 6 cm and height 28 cm.",
+      "explanation": "Area = ½ × base × height = ½ × 6 × 28 = 84 cm².",
+      "options": [
+        {
+          "label": "88 cm²",
+          "is_correct": false
+        },
+        {
+          "label": "86 cm²",
+          "is_correct": false
+        },
+        {
+          "label": "84 cm²",
+          "is_correct": true
+        },
+        {
+          "label": "82 cm²",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Area",
+      "kind": "standard",
+      "difficulty": "easy",
+      "answer_type": "single",
+      "stem": "Find the area of a square of side 29 cm.",
+      "explanation": "Area = side² = 29² = 841 cm².",
+      "options": [
+        {
+          "label": "841 cm²",
+          "is_correct": true
+        },
+        {
+          "label": "875 cm²",
+          "is_correct": false
+        },
+        {
+          "label": "807 cm²",
+          "is_correct": false
+        },
+        {
+          "label": "909 cm²",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Area",
+      "kind": "standard",
+      "difficulty": "easy",
+      "answer_type": "single",
+      "stem": "Find the area of a rectangle of length 18 cm and breadth 24 cm.",
+      "explanation": "Area = length × breadth = 18 × 24 = 432 cm².",
+      "options": [
+        {
+          "label": "432 cm²",
+          "is_correct": true
+        },
+        {
+          "label": "415 cm²",
+          "is_correct": false
+        },
+        {
+          "label": "466 cm²",
+          "is_correct": false
+        },
+        {
+          "label": "449 cm²",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Area",
+      "kind": "standard",
+      "difficulty": "easy",
+      "answer_type": "single",
+      "stem": "Find the area of a circle of radius 7 cm. (Take π = 22/7.)",
+      "explanation": "Area = πr² = (22/7) × 7² = 154 cm².",
+      "options": [
+        {
+          "label": "152 cm²",
+          "is_correct": false
+        },
+        {
+          "label": "156 cm²",
+          "is_correct": false
+        },
+        {
+          "label": "154 cm²",
+          "is_correct": true
+        },
+        {
+          "label": "158 cm²",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Area",
+      "kind": "standard",
+      "difficulty": "easy",
+      "answer_type": "single",
+      "stem": "Find the area of a square of side 20 cm.",
+      "explanation": "Area = side² = 20² = 400 cm².",
+      "options": [
+        {
+          "label": "400 cm²",
+          "is_correct": true
+        },
+        {
+          "label": "416 cm²",
+          "is_correct": false
+        },
+        {
+          "label": "384 cm²",
+          "is_correct": false
+        },
+        {
+          "label": "432 cm²",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Area",
+      "kind": "standard",
+      "difficulty": "easy",
+      "answer_type": "single",
+      "stem": "Find the area of a square of side 30 cm.",
+      "explanation": "Area = side² = 30² = 900 cm².",
+      "options": [
+        {
+          "label": "900 cm²",
+          "is_correct": true
+        },
+        {
+          "label": "936 cm²",
+          "is_correct": false
+        },
+        {
+          "label": "864 cm²",
+          "is_correct": false
+        },
+        {
+          "label": "972 cm²",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Area",
+      "kind": "standard",
+      "difficulty": "easy",
+      "answer_type": "single",
+      "stem": "Find the area of a rectangle of length 4 cm and breadth 26 cm.",
+      "explanation": "Area = length × breadth = 4 × 26 = 104 cm².",
+      "options": [
+        {
+          "label": "102 cm²",
+          "is_correct": false
+        },
+        {
+          "label": "104 cm²",
+          "is_correct": true
+        },
+        {
+          "label": "108 cm²",
+          "is_correct": false
+        },
+        {
+          "label": "106 cm²",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Area",
+      "kind": "standard",
+      "difficulty": "easy",
+      "answer_type": "single",
+      "stem": "Find the area of a rectangle of length 7 cm and breadth 22 cm.",
+      "explanation": "Area = length × breadth = 7 × 22 = 154 cm².",
+      "options": [
+        {
+          "label": "152 cm²",
+          "is_correct": false
+        },
+        {
+          "label": "158 cm²",
+          "is_correct": false
+        },
+        {
+          "label": "154 cm²",
+          "is_correct": true
+        },
+        {
+          "label": "156 cm²",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Area",
+      "kind": "standard",
+      "difficulty": "easy",
+      "answer_type": "single",
+      "stem": "Find the area of a triangle with base 26 cm and height 23 cm.",
+      "explanation": "Area = ½ × base × height = ½ × 26 × 23 = 299 cm².",
+      "options": [
+        {
+          "label": "299 cm²",
+          "is_correct": true
+        },
+        {
+          "label": "323 cm²",
+          "is_correct": false
+        },
+        {
+          "label": "287 cm²",
+          "is_correct": false
+        },
+        {
+          "label": "311 cm²",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Area",
+      "kind": "standard",
+      "difficulty": "easy",
+      "answer_type": "single",
+      "stem": "Find the area of a square of side 26 cm.",
+      "explanation": "Area = side² = 26² = 676 cm².",
+      "options": [
+        {
+          "label": "703 cm²",
+          "is_correct": false
+        },
+        {
+          "label": "676 cm²",
+          "is_correct": true
+        },
+        {
+          "label": "730 cm²",
+          "is_correct": false
+        },
+        {
+          "label": "649 cm²",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Area",
+      "kind": "standard",
+      "difficulty": "easy",
+      "answer_type": "single",
+      "stem": "Find the area of a rectangle of length 7 cm and breadth 8 cm.",
+      "explanation": "Area = length × breadth = 7 × 8 = 56 cm².",
+      "options": [
+        {
+          "label": "56 cm²",
+          "is_correct": true
+        },
+        {
+          "label": "58 cm²",
+          "is_correct": false
+        },
+        {
+          "label": "60 cm²",
+          "is_correct": false
+        },
+        {
+          "label": "54 cm²",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Area",
+      "kind": "standard",
+      "difficulty": "easy",
+      "answer_type": "single",
+      "stem": "Find the area of a rectangle of length 18 cm and breadth 3 cm.",
+      "explanation": "Area = length × breadth = 18 × 3 = 54 cm².",
+      "options": [
+        {
+          "label": "52 cm²",
+          "is_correct": false
+        },
+        {
+          "label": "56 cm²",
+          "is_correct": false
+        },
+        {
+          "label": "58 cm²",
+          "is_correct": false
+        },
+        {
+          "label": "54 cm²",
+          "is_correct": true
+        }
+      ]
+    },
+    {
+      "chapter": "Area",
+      "kind": "standard",
+      "difficulty": "easy",
+      "answer_type": "single",
+      "stem": "Find the area of a rectangle of length 31 cm and breadth 17 cm.",
+      "explanation": "Area = length × breadth = 31 × 17 = 527 cm².",
+      "options": [
+        {
+          "label": "548 cm²",
+          "is_correct": false
+        },
+        {
+          "label": "506 cm²",
+          "is_correct": false
+        },
+        {
+          "label": "569 cm²",
+          "is_correct": false
+        },
+        {
+          "label": "527 cm²",
+          "is_correct": true
+        }
+      ]
+    },
+    {
+      "chapter": "Area",
+      "kind": "standard",
+      "difficulty": "easy",
+      "answer_type": "single",
+      "stem": "Find the area of a circle of radius 35 cm. (Take π = 22/7.)",
+      "explanation": "Area = πr² = (22/7) × 35² = 3850 cm².",
+      "options": [
+        {
+          "label": "3696 cm²",
+          "is_correct": false
+        },
+        {
+          "label": "4004 cm²",
+          "is_correct": false
+        },
+        {
+          "label": "3850 cm²",
+          "is_correct": true
+        },
+        {
+          "label": "4158 cm²",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Area",
+      "kind": "standard",
+      "difficulty": "easy",
+      "answer_type": "single",
+      "stem": "Find the area of a triangle with base 10 cm and height 8 cm.",
+      "explanation": "Area = ½ × base × height = ½ × 10 × 8 = 40 cm².",
+      "options": [
+        {
+          "label": "42 cm²",
+          "is_correct": false
+        },
+        {
+          "label": "38 cm²",
+          "is_correct": false
+        },
+        {
+          "label": "44 cm²",
+          "is_correct": false
+        },
+        {
+          "label": "40 cm²",
+          "is_correct": true
+        }
+      ]
+    },
+    {
+      "chapter": "Area",
+      "kind": "standard",
+      "difficulty": "easy",
+      "answer_type": "single",
+      "stem": "Find the area of a triangle with base 34 cm and height 6 cm.",
+      "explanation": "Area = ½ × base × height = ½ × 34 × 6 = 102 cm².",
+      "options": [
+        {
+          "label": "100 cm²",
+          "is_correct": false
+        },
+        {
+          "label": "102 cm²",
+          "is_correct": true
+        },
+        {
+          "label": "106 cm²",
+          "is_correct": false
+        },
+        {
+          "label": "104 cm²",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Area",
+      "kind": "standard",
+      "difficulty": "easy",
+      "answer_type": "single",
+      "stem": "Find the area of a triangle with base 16 cm and height 15 cm.",
+      "explanation": "Area = ½ × base × height = ½ × 16 × 15 = 120 cm².",
+      "options": [
+        {
+          "label": "118 cm²",
+          "is_correct": false
+        },
+        {
+          "label": "122 cm²",
+          "is_correct": false
+        },
+        {
+          "label": "120 cm²",
+          "is_correct": true
+        },
+        {
+          "label": "124 cm²",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Area",
+      "kind": "standard",
+      "difficulty": "easy",
+      "answer_type": "single",
+      "stem": "Find the area of a triangle with base 30 cm and height 19 cm.",
+      "explanation": "Area = ½ × base × height = ½ × 30 × 19 = 285 cm².",
+      "options": [
+        {
+          "label": "307 cm²",
+          "is_correct": false
+        },
+        {
+          "label": "296 cm²",
+          "is_correct": false
+        },
+        {
+          "label": "274 cm²",
+          "is_correct": false
+        },
+        {
+          "label": "285 cm²",
+          "is_correct": true
+        }
+      ]
+    },
+    {
+      "chapter": "Area",
+      "kind": "standard",
+      "difficulty": "easy",
+      "answer_type": "single",
+      "stem": "Find the area of a square of side 19 cm.",
+      "explanation": "Area = side² = 19² = 361 cm².",
+      "options": [
+        {
+          "label": "389 cm²",
+          "is_correct": false
+        },
+        {
+          "label": "361 cm²",
+          "is_correct": true
+        },
+        {
+          "label": "375 cm²",
+          "is_correct": false
+        },
+        {
+          "label": "347 cm²",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Area",
+      "kind": "standard",
+      "difficulty": "easy",
+      "answer_type": "single",
+      "stem": "Find the area of a square of side 11 cm.",
+      "explanation": "Area = side² = 11² = 121 cm².",
+      "options": [
+        {
+          "label": "121 cm²",
+          "is_correct": true
+        },
+        {
+          "label": "125 cm²",
+          "is_correct": false
+        },
+        {
+          "label": "119 cm²",
+          "is_correct": false
+        },
+        {
+          "label": "123 cm²",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Area",
+      "kind": "standard",
+      "difficulty": "easy",
+      "answer_type": "single",
+      "stem": "Find the area of a triangle with base 22 cm and height 26 cm.",
+      "explanation": "Area = ½ × base × height = ½ × 22 × 26 = 286 cm².",
+      "options": [
+        {
+          "label": "297 cm²",
+          "is_correct": false
+        },
+        {
+          "label": "286 cm²",
+          "is_correct": true
+        },
+        {
+          "label": "275 cm²",
+          "is_correct": false
+        },
+        {
+          "label": "308 cm²",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Area",
+      "kind": "standard",
+      "difficulty": "easy",
+      "answer_type": "single",
+      "stem": "Find the area of a triangle with base 24 cm and height 17 cm.",
+      "explanation": "Area = ½ × base × height = ½ × 24 × 17 = 204 cm².",
+      "options": [
+        {
+          "label": "212 cm²",
+          "is_correct": false
+        },
+        {
+          "label": "204 cm²",
+          "is_correct": true
+        },
+        {
+          "label": "220 cm²",
+          "is_correct": false
+        },
+        {
+          "label": "196 cm²",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Area",
+      "kind": "standard",
+      "difficulty": "easy",
+      "answer_type": "single",
+      "stem": "Find the area of a square of side 13 cm.",
+      "explanation": "Area = side² = 13² = 169 cm².",
+      "options": [
+        {
+          "label": "173 cm²",
+          "is_correct": false
+        },
+        {
+          "label": "167 cm²",
+          "is_correct": false
+        },
+        {
+          "label": "171 cm²",
+          "is_correct": false
+        },
+        {
+          "label": "169 cm²",
+          "is_correct": true
+        }
+      ]
+    },
+    {
+      "chapter": "Area",
+      "kind": "standard",
+      "difficulty": "easy",
+      "answer_type": "single",
+      "stem": "Find the area of a triangle with base 18 cm and height 10 cm.",
+      "explanation": "Area = ½ × base × height = ½ × 18 × 10 = 90 cm².",
+      "options": [
+        {
+          "label": "92 cm²",
+          "is_correct": false
+        },
+        {
+          "label": "94 cm²",
+          "is_correct": false
+        },
+        {
+          "label": "90 cm²",
+          "is_correct": true
+        },
+        {
+          "label": "88 cm²",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Area",
+      "kind": "standard",
+      "difficulty": "easy",
+      "answer_type": "single",
+      "stem": "Find the area of a triangle with base 26 cm and height 27 cm.",
+      "explanation": "Area = ½ × base × height = ½ × 26 × 27 = 351 cm².",
+      "options": [
+        {
+          "label": "365 cm²",
+          "is_correct": false
+        },
+        {
+          "label": "351 cm²",
+          "is_correct": true
+        },
+        {
+          "label": "337 cm²",
+          "is_correct": false
+        },
+        {
+          "label": "379 cm²",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Area",
+      "kind": "standard",
+      "difficulty": "easy",
+      "answer_type": "single",
+      "stem": "Find the area of a rectangle of length 23 cm and breadth 10 cm.",
+      "explanation": "Area = length × breadth = 23 × 10 = 230 cm².",
+      "options": [
+        {
+          "label": "248 cm²",
+          "is_correct": false
+        },
+        {
+          "label": "230 cm²",
+          "is_correct": true
+        },
+        {
+          "label": "239 cm²",
+          "is_correct": false
+        },
+        {
+          "label": "221 cm²",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Area",
+      "kind": "standard",
+      "difficulty": "easy",
+      "answer_type": "single",
+      "stem": "Find the area of a rectangle of length 35 cm and breadth 26 cm.",
+      "explanation": "Area = length × breadth = 35 × 26 = 910 cm².",
+      "options": [
+        {
+          "label": "946 cm²",
+          "is_correct": false
+        },
+        {
+          "label": "982 cm²",
+          "is_correct": false
+        },
+        {
+          "label": "910 cm²",
+          "is_correct": true
+        },
+        {
+          "label": "874 cm²",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Area",
+      "kind": "standard",
+      "difficulty": "easy",
+      "answer_type": "single",
+      "stem": "Find the area of a square of side 23 cm.",
+      "explanation": "Area = side² = 23² = 529 cm².",
+      "options": [
+        {
+          "label": "529 cm²",
+          "is_correct": true
+        },
+        {
+          "label": "508 cm²",
+          "is_correct": false
+        },
+        {
+          "label": "550 cm²",
+          "is_correct": false
+        },
+        {
+          "label": "571 cm²",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Area",
+      "kind": "standard",
+      "difficulty": "easy",
+      "answer_type": "single",
+      "stem": "Find the area of a rectangle of length 27 cm and breadth 30 cm.",
+      "explanation": "Area = length × breadth = 27 × 30 = 810 cm².",
+      "options": [
+        {
+          "label": "810 cm²",
+          "is_correct": true
+        },
+        {
+          "label": "842 cm²",
+          "is_correct": false
+        },
+        {
+          "label": "778 cm²",
+          "is_correct": false
+        },
+        {
+          "label": "874 cm²",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Area",
+      "kind": "standard",
+      "difficulty": "easy",
+      "answer_type": "single",
+      "stem": "Find the area of a square of side 9 cm.",
+      "explanation": "Area = side² = 9² = 81 cm².",
+      "options": [
+        {
+          "label": "85 cm²",
+          "is_correct": false
+        },
+        {
+          "label": "83 cm²",
+          "is_correct": false
+        },
+        {
+          "label": "79 cm²",
+          "is_correct": false
+        },
+        {
+          "label": "81 cm²",
+          "is_correct": true
+        }
+      ]
+    },
+    {
+      "chapter": "Area",
+      "kind": "standard",
+      "difficulty": "easy",
+      "answer_type": "single",
+      "stem": "Find the area of a square of side 7 cm.",
+      "explanation": "Area = side² = 7² = 49 cm².",
+      "options": [
+        {
+          "label": "49 cm²",
+          "is_correct": true
+        },
+        {
+          "label": "47 cm²",
+          "is_correct": false
+        },
+        {
+          "label": "51 cm²",
+          "is_correct": false
+        },
+        {
+          "label": "53 cm²",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Area",
+      "kind": "standard",
+      "difficulty": "easy",
+      "answer_type": "single",
+      "stem": "Find the area of a rectangle of length 26 cm and breadth 4 cm.",
+      "explanation": "Area = length × breadth = 26 × 4 = 104 cm².",
+      "options": [
+        {
+          "label": "104 cm²",
+          "is_correct": true
+        },
+        {
+          "label": "108 cm²",
+          "is_correct": false
+        },
+        {
+          "label": "102 cm²",
+          "is_correct": false
+        },
+        {
+          "label": "106 cm²",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Area",
+      "kind": "standard",
+      "difficulty": "medium",
+      "answer_type": "single",
+      "stem": "The perimeter of a square is 104 cm. Find its area.",
+      "explanation": "Side = 104/4 = 26 cm; area = 26² = 676 cm².",
+      "options": [
+        {
+          "label": "649 cm²",
+          "is_correct": false
+        },
+        {
+          "label": "703 cm²",
+          "is_correct": false
+        },
+        {
+          "label": "676 cm²",
+          "is_correct": true
+        },
+        {
+          "label": "730 cm²",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Area",
+      "kind": "standard",
+      "difficulty": "medium",
+      "answer_type": "single",
+      "stem": "The perimeter of a square is 44 cm. Find its area.",
+      "explanation": "Side = 44/4 = 11 cm; area = 11² = 121 cm².",
+      "options": [
+        {
+          "label": "125 cm²",
+          "is_correct": false
+        },
+        {
+          "label": "123 cm²",
+          "is_correct": false
+        },
+        {
+          "label": "121 cm²",
+          "is_correct": true
+        },
+        {
+          "label": "119 cm²",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Area",
+      "kind": "standard",
+      "difficulty": "medium",
+      "answer_type": "single",
+      "stem": "The area of a rectangle is 483 cm² and its length is 23 cm. Find its breadth.",
+      "explanation": "Breadth = area/length = 483/23 = 21 cm.",
+      "options": [
+        {
+          "label": "20 cm",
+          "is_correct": false
+        },
+        {
+          "label": "22 cm",
+          "is_correct": false
+        },
+        {
+          "label": "21 cm",
+          "is_correct": true
+        },
+        {
+          "label": "23 cm",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Area",
+      "kind": "standard",
+      "difficulty": "medium",
+      "answer_type": "single",
+      "stem": "The area of a rectangle is 154 cm² and its length is 11 cm. Find its breadth.",
+      "explanation": "Breadth = area/length = 154/11 = 14 cm.",
+      "options": [
+        {
+          "label": "16 cm",
+          "is_correct": false
+        },
+        {
+          "label": "14 cm",
+          "is_correct": true
+        },
+        {
+          "label": "13 cm",
+          "is_correct": false
+        },
+        {
+          "label": "15 cm",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Area",
+      "kind": "standard",
+      "difficulty": "medium",
+      "answer_type": "single",
+      "stem": "Find the perimeter of a rectangle of length 13 cm and breadth 11 cm.",
+      "explanation": "Perimeter = 2(length + breadth) = 2(13 + 11) = 48 cm.",
+      "options": [
+        {
+          "label": "52 cm",
+          "is_correct": false
+        },
+        {
+          "label": "50 cm",
+          "is_correct": false
+        },
+        {
+          "label": "48 cm",
+          "is_correct": true
+        },
+        {
+          "label": "46 cm",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Area",
+      "kind": "standard",
+      "difficulty": "medium",
+      "answer_type": "single",
+      "stem": "The perimeter of a square is 28 cm. Find its area.",
+      "explanation": "Side = 28/4 = 7 cm; area = 7² = 49 cm².",
+      "options": [
+        {
+          "label": "51 cm²",
+          "is_correct": false
+        },
+        {
+          "label": "53 cm²",
+          "is_correct": false
+        },
+        {
+          "label": "49 cm²",
+          "is_correct": true
+        },
+        {
+          "label": "47 cm²",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Area",
+      "kind": "standard",
+      "difficulty": "medium",
+      "answer_type": "single",
+      "stem": "The perimeter of a square is 80 cm. Find its area.",
+      "explanation": "Side = 80/4 = 20 cm; area = 20² = 400 cm².",
+      "options": [
+        {
+          "label": "432 cm²",
+          "is_correct": false
+        },
+        {
+          "label": "400 cm²",
+          "is_correct": true
+        },
+        {
+          "label": "384 cm²",
+          "is_correct": false
+        },
+        {
+          "label": "416 cm²",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Area",
+      "kind": "standard",
+      "difficulty": "medium",
+      "answer_type": "single",
+      "stem": "The area of a rectangle is 110 cm² and its length is 11 cm. Find its breadth.",
+      "explanation": "Breadth = area/length = 110/11 = 10 cm.",
+      "options": [
+        {
+          "label": "11 cm",
+          "is_correct": false
+        },
+        {
+          "label": "12 cm",
+          "is_correct": false
+        },
+        {
+          "label": "9 cm",
+          "is_correct": false
+        },
+        {
+          "label": "10 cm",
+          "is_correct": true
+        }
+      ]
+    },
+    {
+      "chapter": "Area",
+      "kind": "standard",
+      "difficulty": "medium",
+      "answer_type": "single",
+      "stem": "Find the perimeter of a rectangle of length 34 cm and breadth 23 cm.",
+      "explanation": "Perimeter = 2(length + breadth) = 2(34 + 23) = 114 cm.",
+      "options": [
+        {
+          "label": "112 cm",
+          "is_correct": false
+        },
+        {
+          "label": "116 cm",
+          "is_correct": false
+        },
+        {
+          "label": "118 cm",
+          "is_correct": false
+        },
+        {
+          "label": "114 cm",
+          "is_correct": true
+        }
+      ]
+    },
+    {
+      "chapter": "Area",
+      "kind": "standard",
+      "difficulty": "medium",
+      "answer_type": "single",
+      "stem": "Find the perimeter of a rectangle of length 20 cm and breadth 22 cm.",
+      "explanation": "Perimeter = 2(length + breadth) = 2(20 + 22) = 84 cm.",
+      "options": [
+        {
+          "label": "88 cm",
+          "is_correct": false
+        },
+        {
+          "label": "84 cm",
+          "is_correct": true
+        },
+        {
+          "label": "86 cm",
+          "is_correct": false
+        },
+        {
+          "label": "82 cm",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Area",
+      "kind": "standard",
+      "difficulty": "medium",
+      "answer_type": "single",
+      "stem": "The perimeter of a square is 72 cm. Find its area.",
+      "explanation": "Side = 72/4 = 18 cm; area = 18² = 324 cm².",
+      "options": [
+        {
+          "label": "324 cm²",
+          "is_correct": true
+        },
+        {
+          "label": "337 cm²",
+          "is_correct": false
+        },
+        {
+          "label": "350 cm²",
+          "is_correct": false
+        },
+        {
+          "label": "311 cm²",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Area",
+      "kind": "standard",
+      "difficulty": "medium",
+      "answer_type": "single",
+      "stem": "Find the perimeter of a rectangle of length 12 cm and breadth 21 cm.",
+      "explanation": "Perimeter = 2(length + breadth) = 2(12 + 21) = 66 cm.",
+      "options": [
+        {
+          "label": "66 cm",
+          "is_correct": true
+        },
+        {
+          "label": "68 cm",
+          "is_correct": false
+        },
+        {
+          "label": "70 cm",
+          "is_correct": false
+        },
+        {
+          "label": "64 cm",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Area",
+      "kind": "standard",
+      "difficulty": "medium",
+      "answer_type": "single",
+      "stem": "The area of a rectangle is 594 cm² and its length is 33 cm. Find its breadth.",
+      "explanation": "Breadth = area/length = 594/33 = 18 cm.",
+      "options": [
+        {
+          "label": "17 cm",
+          "is_correct": false
+        },
+        {
+          "label": "18 cm",
+          "is_correct": true
+        },
+        {
+          "label": "20 cm",
+          "is_correct": false
+        },
+        {
+          "label": "19 cm",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Area",
+      "kind": "standard",
+      "difficulty": "medium",
+      "answer_type": "single",
+      "stem": "Find the perimeter of a rectangle of length 14 cm and breadth 27 cm.",
+      "explanation": "Perimeter = 2(length + breadth) = 2(14 + 27) = 82 cm.",
+      "options": [
+        {
+          "label": "80 cm",
+          "is_correct": false
+        },
+        {
+          "label": "82 cm",
+          "is_correct": true
+        },
+        {
+          "label": "86 cm",
+          "is_correct": false
+        },
+        {
+          "label": "84 cm",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Area",
+      "kind": "standard",
+      "difficulty": "medium",
+      "answer_type": "single",
+      "stem": "Find the perimeter of a rectangle of length 15 cm and breadth 29 cm.",
+      "explanation": "Perimeter = 2(length + breadth) = 2(15 + 29) = 88 cm.",
+      "options": [
+        {
+          "label": "90 cm",
+          "is_correct": false
+        },
+        {
+          "label": "86 cm",
+          "is_correct": false
+        },
+        {
+          "label": "92 cm",
+          "is_correct": false
+        },
+        {
+          "label": "88 cm",
+          "is_correct": true
+        }
+      ]
+    },
+    {
+      "chapter": "Area",
+      "kind": "standard",
+      "difficulty": "medium",
+      "answer_type": "single",
+      "stem": "The perimeter of a square is 20 cm. Find its area.",
+      "explanation": "Side = 20/4 = 5 cm; area = 5² = 25 cm².",
+      "options": [
+        {
+          "label": "24 cm²",
+          "is_correct": false
+        },
+        {
+          "label": "25 cm²",
+          "is_correct": true
+        },
+        {
+          "label": "26 cm²",
+          "is_correct": false
+        },
+        {
+          "label": "27 cm²",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Area",
+      "kind": "standard",
+      "difficulty": "medium",
+      "answer_type": "single",
+      "stem": "The area of a rectangle is 481 cm² and its length is 37 cm. Find its breadth.",
+      "explanation": "Breadth = area/length = 481/37 = 13 cm.",
+      "options": [
+        {
+          "label": "13 cm",
+          "is_correct": true
+        },
+        {
+          "label": "15 cm",
+          "is_correct": false
+        },
+        {
+          "label": "14 cm",
+          "is_correct": false
+        },
+        {
+          "label": "12 cm",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Area",
+      "kind": "standard",
+      "difficulty": "medium",
+      "answer_type": "single",
+      "stem": "Find the perimeter of a rectangle of length 35 cm and breadth 15 cm.",
+      "explanation": "Perimeter = 2(length + breadth) = 2(35 + 15) = 100 cm.",
+      "options": [
+        {
+          "label": "100 cm",
+          "is_correct": true
+        },
+        {
+          "label": "102 cm",
+          "is_correct": false
+        },
+        {
+          "label": "104 cm",
+          "is_correct": false
+        },
+        {
+          "label": "98 cm",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Area",
+      "kind": "standard",
+      "difficulty": "medium",
+      "answer_type": "single",
+      "stem": "The area of a rectangle is 432 cm² and its length is 16 cm. Find its breadth.",
+      "explanation": "Breadth = area/length = 432/16 = 27 cm.",
+      "options": [
+        {
+          "label": "27 cm",
+          "is_correct": true
+        },
+        {
+          "label": "28 cm",
+          "is_correct": false
+        },
+        {
+          "label": "29 cm",
+          "is_correct": false
+        },
+        {
+          "label": "26 cm",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Area",
+      "kind": "standard",
+      "difficulty": "medium",
+      "answer_type": "single",
+      "stem": "Find the perimeter of a rectangle of length 15 cm and breadth 22 cm.",
+      "explanation": "Perimeter = 2(length + breadth) = 2(15 + 22) = 74 cm.",
+      "options": [
+        {
+          "label": "72 cm",
+          "is_correct": false
+        },
+        {
+          "label": "78 cm",
+          "is_correct": false
+        },
+        {
+          "label": "76 cm",
+          "is_correct": false
+        },
+        {
+          "label": "74 cm",
+          "is_correct": true
+        }
+      ]
+    },
+    {
+      "chapter": "Area",
+      "kind": "standard",
+      "difficulty": "medium",
+      "answer_type": "single",
+      "stem": "The perimeter of a square is 52 cm. Find its area.",
+      "explanation": "Side = 52/4 = 13 cm; area = 13² = 169 cm².",
+      "options": [
+        {
+          "label": "167 cm²",
+          "is_correct": false
+        },
+        {
+          "label": "173 cm²",
+          "is_correct": false
+        },
+        {
+          "label": "169 cm²",
+          "is_correct": true
+        },
+        {
+          "label": "171 cm²",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Area",
+      "kind": "standard",
+      "difficulty": "medium",
+      "answer_type": "single",
+      "stem": "The area of a rectangle is 391 cm² and its length is 23 cm. Find its breadth.",
+      "explanation": "Breadth = area/length = 391/23 = 17 cm.",
+      "options": [
+        {
+          "label": "16 cm",
+          "is_correct": false
+        },
+        {
+          "label": "18 cm",
+          "is_correct": false
+        },
+        {
+          "label": "19 cm",
+          "is_correct": false
+        },
+        {
+          "label": "17 cm",
+          "is_correct": true
+        }
+      ]
+    },
+    {
+      "chapter": "Area",
+      "kind": "standard",
+      "difficulty": "medium",
+      "answer_type": "single",
+      "stem": "Find the perimeter of a rectangle of length 12 cm and breadth 28 cm.",
+      "explanation": "Perimeter = 2(length + breadth) = 2(12 + 28) = 80 cm.",
+      "options": [
+        {
+          "label": "82 cm",
+          "is_correct": false
+        },
+        {
+          "label": "78 cm",
+          "is_correct": false
+        },
+        {
+          "label": "84 cm",
+          "is_correct": false
+        },
+        {
+          "label": "80 cm",
+          "is_correct": true
+        }
+      ]
+    },
+    {
+      "chapter": "Area",
+      "kind": "standard",
+      "difficulty": "medium",
+      "answer_type": "single",
+      "stem": "The area of a rectangle is 216 cm² and its length is 9 cm. Find its breadth.",
+      "explanation": "Breadth = area/length = 216/9 = 24 cm.",
+      "options": [
+        {
+          "label": "24 cm",
+          "is_correct": true
+        },
+        {
+          "label": "26 cm",
+          "is_correct": false
+        },
+        {
+          "label": "25 cm",
+          "is_correct": false
+        },
+        {
+          "label": "23 cm",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Area",
+      "kind": "standard",
+      "difficulty": "medium",
+      "answer_type": "single",
+      "stem": "Find the perimeter of a rectangle of length 26 cm and breadth 30 cm.",
+      "explanation": "Perimeter = 2(length + breadth) = 2(26 + 30) = 112 cm.",
+      "options": [
+        {
+          "label": "112 cm",
+          "is_correct": true
+        },
+        {
+          "label": "116 cm",
+          "is_correct": false
+        },
+        {
+          "label": "110 cm",
+          "is_correct": false
+        },
+        {
+          "label": "114 cm",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Area",
+      "kind": "standard",
+      "difficulty": "medium",
+      "answer_type": "single",
+      "stem": "Find the perimeter of a rectangle of length 22 cm and breadth 4 cm.",
+      "explanation": "Perimeter = 2(length + breadth) = 2(22 + 4) = 52 cm.",
+      "options": [
+        {
+          "label": "56 cm",
+          "is_correct": false
+        },
+        {
+          "label": "54 cm",
+          "is_correct": false
+        },
+        {
+          "label": "52 cm",
+          "is_correct": true
+        },
+        {
+          "label": "50 cm",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Area",
+      "kind": "standard",
+      "difficulty": "medium",
+      "answer_type": "single",
+      "stem": "Find the perimeter of a rectangle of length 15 cm and breadth 7 cm.",
+      "explanation": "Perimeter = 2(length + breadth) = 2(15 + 7) = 44 cm.",
+      "options": [
+        {
+          "label": "44 cm",
+          "is_correct": true
+        },
+        {
+          "label": "46 cm",
+          "is_correct": false
+        },
+        {
+          "label": "48 cm",
+          "is_correct": false
+        },
+        {
+          "label": "42 cm",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Area",
+      "kind": "standard",
+      "difficulty": "medium",
+      "answer_type": "single",
+      "stem": "Find the perimeter of a rectangle of length 35 cm and breadth 8 cm.",
+      "explanation": "Perimeter = 2(length + breadth) = 2(35 + 8) = 86 cm.",
+      "options": [
+        {
+          "label": "90 cm",
+          "is_correct": false
+        },
+        {
+          "label": "88 cm",
+          "is_correct": false
+        },
+        {
+          "label": "84 cm",
+          "is_correct": false
+        },
+        {
+          "label": "86 cm",
+          "is_correct": true
+        }
+      ]
+    },
+    {
+      "chapter": "Area",
+      "kind": "standard",
+      "difficulty": "medium",
+      "answer_type": "single",
+      "stem": "The area of a rectangle is 161 cm² and its length is 7 cm. Find its breadth.",
+      "explanation": "Breadth = area/length = 161/7 = 23 cm.",
+      "options": [
+        {
+          "label": "23 cm",
+          "is_correct": true
+        },
+        {
+          "label": "24 cm",
+          "is_correct": false
+        },
+        {
+          "label": "22 cm",
+          "is_correct": false
+        },
+        {
+          "label": "25 cm",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Area",
+      "kind": "standard",
+      "difficulty": "medium",
+      "answer_type": "single",
+      "stem": "Find the perimeter of a rectangle of length 17 cm and breadth 10 cm.",
+      "explanation": "Perimeter = 2(length + breadth) = 2(17 + 10) = 54 cm.",
+      "options": [
+        {
+          "label": "52 cm",
+          "is_correct": false
+        },
+        {
+          "label": "58 cm",
+          "is_correct": false
+        },
+        {
+          "label": "56 cm",
+          "is_correct": false
+        },
+        {
+          "label": "54 cm",
+          "is_correct": true
+        }
+      ]
+    },
+    {
+      "chapter": "Area",
+      "kind": "standard",
+      "difficulty": "medium",
+      "answer_type": "single",
+      "stem": "The area of a rectangle is 540 cm² and its length is 18 cm. Find its breadth.",
+      "explanation": "Breadth = area/length = 540/18 = 30 cm.",
+      "options": [
+        {
+          "label": "32 cm",
+          "is_correct": false
+        },
+        {
+          "label": "29 cm",
+          "is_correct": false
+        },
+        {
+          "label": "31 cm",
+          "is_correct": false
+        },
+        {
+          "label": "30 cm",
+          "is_correct": true
+        }
+      ]
+    },
+    {
+      "chapter": "Area",
+      "kind": "standard",
+      "difficulty": "medium",
+      "answer_type": "single",
+      "stem": "Find the perimeter of a rectangle of length 38 cm and breadth 27 cm.",
+      "explanation": "Perimeter = 2(length + breadth) = 2(38 + 27) = 130 cm.",
+      "options": [
+        {
+          "label": "128 cm",
+          "is_correct": false
+        },
+        {
+          "label": "134 cm",
+          "is_correct": false
+        },
+        {
+          "label": "130 cm",
+          "is_correct": true
+        },
+        {
+          "label": "132 cm",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Area",
+      "kind": "standard",
+      "difficulty": "medium",
+      "answer_type": "single",
+      "stem": "The perimeter of a square is 68 cm. Find its area.",
+      "explanation": "Side = 68/4 = 17 cm; area = 17² = 289 cm².",
+      "options": [
+        {
+          "label": "289 cm²",
+          "is_correct": true
+        },
+        {
+          "label": "277 cm²",
+          "is_correct": false
+        },
+        {
+          "label": "313 cm²",
+          "is_correct": false
+        },
+        {
+          "label": "301 cm²",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Area",
+      "kind": "standard",
+      "difficulty": "medium",
+      "answer_type": "single",
+      "stem": "The perimeter of a square is 48 cm. Find its area.",
+      "explanation": "Side = 48/4 = 12 cm; area = 12² = 144 cm².",
+      "options": [
+        {
+          "label": "142 cm²",
+          "is_correct": false
+        },
+        {
+          "label": "148 cm²",
+          "is_correct": false
+        },
+        {
+          "label": "144 cm²",
+          "is_correct": true
+        },
+        {
+          "label": "146 cm²",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Area",
+      "kind": "standard",
+      "difficulty": "medium",
+      "answer_type": "single",
+      "stem": "The perimeter of a square is 92 cm. Find its area.",
+      "explanation": "Side = 92/4 = 23 cm; area = 23² = 529 cm².",
+      "options": [
+        {
+          "label": "529 cm²",
+          "is_correct": true
+        },
+        {
+          "label": "571 cm²",
+          "is_correct": false
+        },
+        {
+          "label": "550 cm²",
+          "is_correct": false
+        },
+        {
+          "label": "508 cm²",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Area",
+      "kind": "standard",
+      "difficulty": "medium",
+      "answer_type": "single",
+      "stem": "The perimeter of a square is 24 cm. Find its area.",
+      "explanation": "Side = 24/4 = 6 cm; area = 6² = 36 cm².",
+      "options": [
+        {
+          "label": "37 cm²",
+          "is_correct": false
+        },
+        {
+          "label": "36 cm²",
+          "is_correct": true
+        },
+        {
+          "label": "38 cm²",
+          "is_correct": false
+        },
+        {
+          "label": "35 cm²",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Area",
+      "kind": "standard",
+      "difficulty": "medium",
+      "answer_type": "single",
+      "stem": "Find the perimeter of a rectangle of length 30 cm and breadth 8 cm.",
+      "explanation": "Perimeter = 2(length + breadth) = 2(30 + 8) = 76 cm.",
+      "options": [
+        {
+          "label": "78 cm",
+          "is_correct": false
+        },
+        {
+          "label": "76 cm",
+          "is_correct": true
+        },
+        {
+          "label": "80 cm",
+          "is_correct": false
+        },
+        {
+          "label": "74 cm",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Area",
+      "kind": "standard",
+      "difficulty": "medium",
+      "answer_type": "single",
+      "stem": "The area of a rectangle is 204 cm² and its length is 17 cm. Find its breadth.",
+      "explanation": "Breadth = area/length = 204/17 = 12 cm.",
+      "options": [
+        {
+          "label": "11 cm",
+          "is_correct": false
+        },
+        {
+          "label": "12 cm",
+          "is_correct": true
+        },
+        {
+          "label": "14 cm",
+          "is_correct": false
+        },
+        {
+          "label": "13 cm",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Area",
+      "kind": "standard",
+      "difficulty": "medium",
+      "answer_type": "single",
+      "stem": "The perimeter of a square is 64 cm. Find its area.",
+      "explanation": "Side = 64/4 = 16 cm; area = 16² = 256 cm².",
+      "options": [
+        {
+          "label": "256 cm²",
+          "is_correct": true
+        },
+        {
+          "label": "246 cm²",
+          "is_correct": false
+        },
+        {
+          "label": "266 cm²",
+          "is_correct": false
+        },
+        {
+          "label": "276 cm²",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Area",
+      "kind": "standard",
+      "difficulty": "medium",
+      "answer_type": "single",
+      "stem": "Find the perimeter of a rectangle of length 16 cm and breadth 25 cm.",
+      "explanation": "Perimeter = 2(length + breadth) = 2(16 + 25) = 82 cm.",
+      "options": [
+        {
+          "label": "82 cm",
+          "is_correct": true
+        },
+        {
+          "label": "86 cm",
+          "is_correct": false
+        },
+        {
+          "label": "80 cm",
+          "is_correct": false
+        },
+        {
+          "label": "84 cm",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Area",
+      "kind": "standard",
+      "difficulty": "medium",
+      "answer_type": "single",
+      "stem": "Find the perimeter of a rectangle of length 6 cm and breadth 17 cm.",
+      "explanation": "Perimeter = 2(length + breadth) = 2(6 + 17) = 46 cm.",
+      "options": [
+        {
+          "label": "44 cm",
+          "is_correct": false
+        },
+        {
+          "label": "46 cm",
+          "is_correct": true
+        },
+        {
+          "label": "48 cm",
+          "is_correct": false
+        },
+        {
+          "label": "50 cm",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Area",
+      "kind": "standard",
+      "difficulty": "medium",
+      "answer_type": "single",
+      "stem": "The area of a rectangle is 168 cm² and its length is 21 cm. Find its breadth.",
+      "explanation": "Breadth = area/length = 168/21 = 8 cm.",
+      "options": [
+        {
+          "label": "7 cm",
+          "is_correct": false
+        },
+        {
+          "label": "9 cm",
+          "is_correct": false
+        },
+        {
+          "label": "10 cm",
+          "is_correct": false
+        },
+        {
+          "label": "8 cm",
+          "is_correct": true
+        }
+      ]
+    },
+    {
+      "chapter": "Area",
+      "kind": "standard",
+      "difficulty": "medium",
+      "answer_type": "single",
+      "stem": "The area of a rectangle is 228 cm² and its length is 38 cm. Find its breadth.",
+      "explanation": "Breadth = area/length = 228/38 = 6 cm.",
+      "options": [
+        {
+          "label": "6 cm",
+          "is_correct": true
+        },
+        {
+          "label": "8 cm",
+          "is_correct": false
+        },
+        {
+          "label": "7 cm",
+          "is_correct": false
+        },
+        {
+          "label": "5 cm",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Area",
+      "kind": "standard",
+      "difficulty": "medium",
+      "answer_type": "single",
+      "stem": "The perimeter of a square is 16 cm. Find its area.",
+      "explanation": "Side = 16/4 = 4 cm; area = 4² = 16 cm².",
+      "options": [
+        {
+          "label": "18 cm²",
+          "is_correct": false
+        },
+        {
+          "label": "16 cm²",
+          "is_correct": true
+        },
+        {
+          "label": "15 cm²",
+          "is_correct": false
+        },
+        {
+          "label": "17 cm²",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Area",
+      "kind": "standard",
+      "difficulty": "medium",
+      "answer_type": "single",
+      "stem": "The area of a rectangle is 480 cm² and its length is 16 cm. Find its breadth.",
+      "explanation": "Breadth = area/length = 480/16 = 30 cm.",
+      "options": [
+        {
+          "label": "31 cm",
+          "is_correct": false
+        },
+        {
+          "label": "30 cm",
+          "is_correct": true
+        },
+        {
+          "label": "32 cm",
+          "is_correct": false
+        },
+        {
+          "label": "29 cm",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Area",
+      "kind": "standard",
+      "difficulty": "medium",
+      "answer_type": "single",
+      "stem": "The area of a rectangle is 252 cm² and its length is 12 cm. Find its breadth.",
+      "explanation": "Breadth = area/length = 252/12 = 21 cm.",
+      "options": [
+        {
+          "label": "21 cm",
+          "is_correct": true
+        },
+        {
+          "label": "20 cm",
+          "is_correct": false
+        },
+        {
+          "label": "23 cm",
+          "is_correct": false
+        },
+        {
+          "label": "22 cm",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Area",
+      "kind": "standard",
+      "difficulty": "medium",
+      "answer_type": "single",
+      "stem": "The area of a rectangle is 455 cm² and its length is 35 cm. Find its breadth.",
+      "explanation": "Breadth = area/length = 455/35 = 13 cm.",
+      "options": [
+        {
+          "label": "15 cm",
+          "is_correct": false
+        },
+        {
+          "label": "14 cm",
+          "is_correct": false
+        },
+        {
+          "label": "13 cm",
+          "is_correct": true
+        },
+        {
+          "label": "12 cm",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Area",
+      "kind": "standard",
+      "difficulty": "medium",
+      "answer_type": "single",
+      "stem": "The perimeter of a square is 100 cm. Find its area.",
+      "explanation": "Side = 100/4 = 25 cm; area = 25² = 625 cm².",
+      "options": [
+        {
+          "label": "625 cm²",
+          "is_correct": true
+        },
+        {
+          "label": "650 cm²",
+          "is_correct": false
+        },
+        {
+          "label": "675 cm²",
+          "is_correct": false
+        },
+        {
+          "label": "600 cm²",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Area",
+      "kind": "standard",
+      "difficulty": "medium",
+      "answer_type": "single",
+      "stem": "Find the perimeter of a rectangle of length 40 cm and breadth 9 cm.",
+      "explanation": "Perimeter = 2(length + breadth) = 2(40 + 9) = 98 cm.",
+      "options": [
+        {
+          "label": "98 cm",
+          "is_correct": true
+        },
+        {
+          "label": "100 cm",
+          "is_correct": false
+        },
+        {
+          "label": "96 cm",
+          "is_correct": false
+        },
+        {
+          "label": "102 cm",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Area",
+      "kind": "standard",
+      "difficulty": "medium",
+      "answer_type": "single",
+      "stem": "Find the perimeter of a rectangle of length 25 cm and breadth 6 cm.",
+      "explanation": "Perimeter = 2(length + breadth) = 2(25 + 6) = 62 cm.",
+      "options": [
+        {
+          "label": "66 cm",
+          "is_correct": false
+        },
+        {
+          "label": "64 cm",
+          "is_correct": false
+        },
+        {
+          "label": "62 cm",
+          "is_correct": true
+        },
+        {
+          "label": "60 cm",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Area",
+      "kind": "standard",
+      "difficulty": "hard",
+      "answer_type": "single",
+      "stem": "Find the cost of flooring a rectangular room 8 m long and 9 m wide at ₹11 per square metre.",
+      "explanation": "Area = 8×9 = 72 m²; cost = 72 × ₹11 = ₹792.",
+      "options": [
+        {
+          "label": "₹856",
+          "is_correct": false
+        },
+        {
+          "label": "₹824",
+          "is_correct": false
+        },
+        {
+          "label": "₹760",
+          "is_correct": false
+        },
+        {
+          "label": "₹792",
+          "is_correct": true
+        }
+      ]
+    },
+    {
+      "chapter": "Area",
+      "kind": "standard",
+      "difficulty": "hard",
+      "answer_type": "single",
+      "stem": "Find the cost of flooring a rectangular room 24 m long and 5 m wide at ₹19 per square metre.",
+      "explanation": "Area = 24×5 = 120 m²; cost = 120 × ₹19 = ₹2280.",
+      "options": [
+        {
+          "label": "₹2371",
+          "is_correct": false
+        },
+        {
+          "label": "₹2189",
+          "is_correct": false
+        },
+        {
+          "label": "₹2462",
+          "is_correct": false
+        },
+        {
+          "label": "₹2280",
+          "is_correct": true
+        }
+      ]
+    },
+    {
+      "chapter": "Area",
+      "kind": "standard",
+      "difficulty": "hard",
+      "answer_type": "single",
+      "stem": "Find the area of a rhombus whose diagonals are 4 cm and 23 cm.",
+      "explanation": "Area = ½ × d₁ × d₂ = ½ × 4 × 23 = 46 cm².",
+      "options": [
+        {
+          "label": "46 cm²",
+          "is_correct": true
+        },
+        {
+          "label": "44 cm²",
+          "is_correct": false
+        },
+        {
+          "label": "48 cm²",
+          "is_correct": false
+        },
+        {
+          "label": "50 cm²",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Area",
+      "kind": "standard",
+      "difficulty": "hard",
+      "answer_type": "single",
+      "stem": "Find the cost of fencing a rectangular field 17 m by 20 m at ₹13 per metre.",
+      "explanation": "Perimeter = 2(17+20) = 74 m; cost = 74 × ₹13 = ₹962.",
+      "options": [
+        {
+          "label": "₹1000",
+          "is_correct": false
+        },
+        {
+          "label": "₹1038",
+          "is_correct": false
+        },
+        {
+          "label": "₹962",
+          "is_correct": true
+        },
+        {
+          "label": "₹924",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Area",
+      "kind": "standard",
+      "difficulty": "hard",
+      "answer_type": "single",
+      "stem": "Find the cost of fencing a rectangular field 8 m by 29 m at ₹15 per metre.",
+      "explanation": "Perimeter = 2(8+29) = 74 m; cost = 74 × ₹15 = ₹1110.",
+      "options": [
+        {
+          "label": "₹1198",
+          "is_correct": false
+        },
+        {
+          "label": "₹1154",
+          "is_correct": false
+        },
+        {
+          "label": "₹1066",
+          "is_correct": false
+        },
+        {
+          "label": "₹1110",
+          "is_correct": true
+        }
+      ]
+    },
+    {
+      "chapter": "Area",
+      "kind": "standard",
+      "difficulty": "hard",
+      "answer_type": "single",
+      "stem": "Find the cost of flooring a rectangular room 13 m long and 22 m wide at ₹49 per square metre.",
+      "explanation": "Area = 13×22 = 286 m²; cost = 286 × ₹49 = ₹14014.",
+      "options": [
+        {
+          "label": "₹14014",
+          "is_correct": true
+        },
+        {
+          "label": "₹15136",
+          "is_correct": false
+        },
+        {
+          "label": "₹14575",
+          "is_correct": false
+        },
+        {
+          "label": "₹13453",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Area",
+      "kind": "standard",
+      "difficulty": "hard",
+      "answer_type": "single",
+      "stem": "Find the cost of fencing a rectangular field 17 m by 15 m at ₹45 per metre.",
+      "explanation": "Perimeter = 2(17+15) = 64 m; cost = 64 × ₹45 = ₹2880.",
+      "options": [
+        {
+          "label": "₹2765",
+          "is_correct": false
+        },
+        {
+          "label": "₹2995",
+          "is_correct": false
+        },
+        {
+          "label": "₹3110",
+          "is_correct": false
+        },
+        {
+          "label": "₹2880",
+          "is_correct": true
+        }
+      ]
+    },
+    {
+      "chapter": "Area",
+      "kind": "standard",
+      "difficulty": "hard",
+      "answer_type": "single",
+      "stem": "Find the area of a rhombus whose diagonals are 22 cm and 11 cm.",
+      "explanation": "Area = ½ × d₁ × d₂ = ½ × 22 × 11 = 121 cm².",
+      "options": [
+        {
+          "label": "125 cm²",
+          "is_correct": false
+        },
+        {
+          "label": "121 cm²",
+          "is_correct": true
+        },
+        {
+          "label": "119 cm²",
+          "is_correct": false
+        },
+        {
+          "label": "123 cm²",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Area",
+      "kind": "standard",
+      "difficulty": "hard",
+      "answer_type": "single",
+      "stem": "Find the cost of flooring a rectangular room 15 m long and 4 m wide at ₹21 per square metre.",
+      "explanation": "Area = 15×4 = 60 m²; cost = 60 × ₹21 = ₹1260.",
+      "options": [
+        {
+          "label": "₹1310",
+          "is_correct": false
+        },
+        {
+          "label": "₹1260",
+          "is_correct": true
+        },
+        {
+          "label": "₹1210",
+          "is_correct": false
+        },
+        {
+          "label": "₹1360",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Area",
+      "kind": "standard",
+      "difficulty": "hard",
+      "answer_type": "single",
+      "stem": "Find the area of a rhombus whose diagonals are 32 cm and 12 cm.",
+      "explanation": "Area = ½ × d₁ × d₂ = ½ × 32 × 12 = 192 cm².",
+      "options": [
+        {
+          "label": "192 cm²",
+          "is_correct": true
+        },
+        {
+          "label": "194 cm²",
+          "is_correct": false
+        },
+        {
+          "label": "196 cm²",
+          "is_correct": false
+        },
+        {
+          "label": "190 cm²",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Area",
+      "kind": "standard",
+      "difficulty": "hard",
+      "answer_type": "single",
+      "stem": "Find the cost of fencing a rectangular field 15 m by 30 m at ₹30 per metre.",
+      "explanation": "Perimeter = 2(15+30) = 90 m; cost = 90 × ₹30 = ₹2700.",
+      "options": [
+        {
+          "label": "₹2916",
+          "is_correct": false
+        },
+        {
+          "label": "₹2808",
+          "is_correct": false
+        },
+        {
+          "label": "₹2592",
+          "is_correct": false
+        },
+        {
+          "label": "₹2700",
+          "is_correct": true
+        }
+      ]
+    },
+    {
+      "chapter": "Area",
+      "kind": "standard",
+      "difficulty": "hard",
+      "answer_type": "single",
+      "stem": "Find the cost of fencing a rectangular field 12 m by 13 m at ₹60 per metre.",
+      "explanation": "Perimeter = 2(12+13) = 50 m; cost = 50 × ₹60 = ₹3000.",
+      "options": [
+        {
+          "label": "₹3240",
+          "is_correct": false
+        },
+        {
+          "label": "₹3120",
+          "is_correct": false
+        },
+        {
+          "label": "₹3000",
+          "is_correct": true
+        },
+        {
+          "label": "₹2880",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Area",
+      "kind": "standard",
+      "difficulty": "hard",
+      "answer_type": "single",
+      "stem": "Find the area of a rhombus whose diagonals are 10 cm and 15 cm.",
+      "explanation": "Area = ½ × d₁ × d₂ = ½ × 10 × 15 = 75 cm².",
+      "options": [
+        {
+          "label": "73 cm²",
+          "is_correct": false
+        },
+        {
+          "label": "77 cm²",
+          "is_correct": false
+        },
+        {
+          "label": "75 cm²",
+          "is_correct": true
+        },
+        {
+          "label": "79 cm²",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Area",
+      "kind": "standard",
+      "difficulty": "hard",
+      "answer_type": "single",
+      "stem": "Find the cost of fencing a rectangular field 22 m by 26 m at ₹56 per metre.",
+      "explanation": "Perimeter = 2(22+26) = 96 m; cost = 96 × ₹56 = ₹5376.",
+      "options": [
+        {
+          "label": "₹5591",
+          "is_correct": false
+        },
+        {
+          "label": "₹5161",
+          "is_correct": false
+        },
+        {
+          "label": "₹5806",
+          "is_correct": false
+        },
+        {
+          "label": "₹5376",
+          "is_correct": true
+        }
+      ]
+    },
+    {
+      "chapter": "Area",
+      "kind": "standard",
+      "difficulty": "hard",
+      "answer_type": "single",
+      "stem": "Find the area of a rhombus whose diagonals are 20 cm and 25 cm.",
+      "explanation": "Area = ½ × d₁ × d₂ = ½ × 20 × 25 = 250 cm².",
+      "options": [
+        {
+          "label": "240 cm²",
+          "is_correct": false
+        },
+        {
+          "label": "250 cm²",
+          "is_correct": true
+        },
+        {
+          "label": "270 cm²",
+          "is_correct": false
+        },
+        {
+          "label": "260 cm²",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Area",
+      "kind": "standard",
+      "difficulty": "hard",
+      "answer_type": "single",
+      "stem": "Find the cost of fencing a rectangular field 18 m by 30 m at ₹17 per metre.",
+      "explanation": "Perimeter = 2(18+30) = 96 m; cost = 96 × ₹17 = ₹1632.",
+      "options": [
+        {
+          "label": "₹1632",
+          "is_correct": true
+        },
+        {
+          "label": "₹1762",
+          "is_correct": false
+        },
+        {
+          "label": "₹1567",
+          "is_correct": false
+        },
+        {
+          "label": "₹1697",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Area",
+      "kind": "standard",
+      "difficulty": "hard",
+      "answer_type": "single",
+      "stem": "Find the area of a rhombus whose diagonals are 12 cm and 26 cm.",
+      "explanation": "Area = ½ × d₁ × d₂ = ½ × 12 × 26 = 156 cm².",
+      "options": [
+        {
+          "label": "156 cm²",
+          "is_correct": true
+        },
+        {
+          "label": "154 cm²",
+          "is_correct": false
+        },
+        {
+          "label": "160 cm²",
+          "is_correct": false
+        },
+        {
+          "label": "158 cm²",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Area",
+      "kind": "standard",
+      "difficulty": "hard",
+      "answer_type": "single",
+      "stem": "Find the cost of fencing a rectangular field 8 m by 15 m at ₹51 per metre.",
+      "explanation": "Perimeter = 2(8+15) = 46 m; cost = 46 × ₹51 = ₹2346.",
+      "options": [
+        {
+          "label": "₹2252",
+          "is_correct": false
+        },
+        {
+          "label": "₹2534",
+          "is_correct": false
+        },
+        {
+          "label": "₹2346",
+          "is_correct": true
+        },
+        {
+          "label": "₹2440",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Area",
+      "kind": "standard",
+      "difficulty": "hard",
+      "answer_type": "single",
+      "stem": "Find the cost of fencing a rectangular field 26 m by 30 m at ₹22 per metre.",
+      "explanation": "Perimeter = 2(26+30) = 112 m; cost = 112 × ₹22 = ₹2464.",
+      "options": [
+        {
+          "label": "₹2563",
+          "is_correct": false
+        },
+        {
+          "label": "₹2464",
+          "is_correct": true
+        },
+        {
+          "label": "₹2365",
+          "is_correct": false
+        },
+        {
+          "label": "₹2662",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Area",
+      "kind": "standard",
+      "difficulty": "hard",
+      "answer_type": "single",
+      "stem": "Find the cost of fencing a rectangular field 29 m by 16 m at ₹7 per metre.",
+      "explanation": "Perimeter = 2(29+16) = 90 m; cost = 90 × ₹7 = ₹630.",
+      "options": [
+        {
+          "label": "₹655",
+          "is_correct": false
+        },
+        {
+          "label": "₹680",
+          "is_correct": false
+        },
+        {
+          "label": "₹605",
+          "is_correct": false
+        },
+        {
+          "label": "₹630",
+          "is_correct": true
+        }
+      ]
+    },
+    {
+      "chapter": "Area",
+      "kind": "standard",
+      "difficulty": "hard",
+      "answer_type": "single",
+      "stem": "Find the area of a rhombus whose diagonals are 36 cm and 24 cm.",
+      "explanation": "Area = ½ × d₁ × d₂ = ½ × 36 × 24 = 432 cm².",
+      "options": [
+        {
+          "label": "466 cm²",
+          "is_correct": false
+        },
+        {
+          "label": "449 cm²",
+          "is_correct": false
+        },
+        {
+          "label": "432 cm²",
+          "is_correct": true
+        },
+        {
+          "label": "415 cm²",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Area",
+      "kind": "standard",
+      "difficulty": "hard",
+      "answer_type": "single",
+      "stem": "Find the cost of fencing a rectangular field 38 m by 22 m at ₹32 per metre.",
+      "explanation": "Perimeter = 2(38+22) = 120 m; cost = 120 × ₹32 = ₹3840.",
+      "options": [
+        {
+          "label": "₹4148",
+          "is_correct": false
+        },
+        {
+          "label": "₹3840",
+          "is_correct": true
+        },
+        {
+          "label": "₹3994",
+          "is_correct": false
+        },
+        {
+          "label": "₹3686",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Area",
+      "kind": "standard",
+      "difficulty": "hard",
+      "answer_type": "single",
+      "stem": "Find the area of a rhombus whose diagonals are 28 cm and 25 cm.",
+      "explanation": "Area = ½ × d₁ × d₂ = ½ × 28 × 25 = 350 cm².",
+      "options": [
+        {
+          "label": "364 cm²",
+          "is_correct": false
+        },
+        {
+          "label": "378 cm²",
+          "is_correct": false
+        },
+        {
+          "label": "350 cm²",
+          "is_correct": true
+        },
+        {
+          "label": "336 cm²",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Area",
+      "kind": "standard",
+      "difficulty": "hard",
+      "answer_type": "single",
+      "stem": "Find the area of a rhombus whose diagonals are 34 cm and 7 cm.",
+      "explanation": "Area = ½ × d₁ × d₂ = ½ × 34 × 7 = 119 cm².",
+      "options": [
+        {
+          "label": "119 cm²",
+          "is_correct": true
+        },
+        {
+          "label": "123 cm²",
+          "is_correct": false
+        },
+        {
+          "label": "117 cm²",
+          "is_correct": false
+        },
+        {
+          "label": "121 cm²",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Area",
+      "kind": "standard",
+      "difficulty": "hard",
+      "answer_type": "single",
+      "stem": "Find the area of a rhombus whose diagonals are 18 cm and 17 cm.",
+      "explanation": "Area = ½ × d₁ × d₂ = ½ × 18 × 17 = 153 cm².",
+      "options": [
+        {
+          "label": "157 cm²",
+          "is_correct": false
+        },
+        {
+          "label": "155 cm²",
+          "is_correct": false
+        },
+        {
+          "label": "153 cm²",
+          "is_correct": true
+        },
+        {
+          "label": "151 cm²",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Area",
+      "kind": "standard",
+      "difficulty": "hard",
+      "answer_type": "single",
+      "stem": "Find the cost of fencing a rectangular field 35 m by 13 m at ₹29 per metre.",
+      "explanation": "Perimeter = 2(35+13) = 96 m; cost = 96 × ₹29 = ₹2784.",
+      "options": [
+        {
+          "label": "₹3006",
+          "is_correct": false
+        },
+        {
+          "label": "₹2895",
+          "is_correct": false
+        },
+        {
+          "label": "₹2673",
+          "is_correct": false
+        },
+        {
+          "label": "₹2784",
+          "is_correct": true
+        }
+      ]
+    },
+    {
+      "chapter": "Area",
+      "kind": "standard",
+      "difficulty": "hard",
+      "answer_type": "single",
+      "stem": "Find the area of a rhombus whose diagonals are 12 cm and 20 cm.",
+      "explanation": "Area = ½ × d₁ × d₂ = ½ × 12 × 20 = 120 cm².",
+      "options": [
+        {
+          "label": "118 cm²",
+          "is_correct": false
+        },
+        {
+          "label": "124 cm²",
+          "is_correct": false
+        },
+        {
+          "label": "120 cm²",
+          "is_correct": true
+        },
+        {
+          "label": "122 cm²",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Area",
+      "kind": "standard",
+      "difficulty": "hard",
+      "answer_type": "single",
+      "stem": "Find the cost of flooring a rectangular room 13 m long and 6 m wide at ₹47 per square metre.",
+      "explanation": "Area = 13×6 = 78 m²; cost = 78 × ₹47 = ₹3666.",
+      "options": [
+        {
+          "label": "₹3666",
+          "is_correct": true
+        },
+        {
+          "label": "₹3813",
+          "is_correct": false
+        },
+        {
+          "label": "₹3519",
+          "is_correct": false
+        },
+        {
+          "label": "₹3960",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Area",
+      "kind": "standard",
+      "difficulty": "hard",
+      "answer_type": "single",
+      "stem": "Find the cost of fencing a rectangular field 28 m by 10 m at ₹51 per metre.",
+      "explanation": "Perimeter = 2(28+10) = 76 m; cost = 76 × ₹51 = ₹3876.",
+      "options": [
+        {
+          "label": "₹3876",
+          "is_correct": true
+        },
+        {
+          "label": "₹3721",
+          "is_correct": false
+        },
+        {
+          "label": "₹4186",
+          "is_correct": false
+        },
+        {
+          "label": "₹4031",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Area",
+      "kind": "standard",
+      "difficulty": "hard",
+      "answer_type": "single",
+      "stem": "Find the cost of fencing a rectangular field 6 m by 26 m at ₹33 per metre.",
+      "explanation": "Perimeter = 2(6+26) = 64 m; cost = 64 × ₹33 = ₹2112.",
+      "options": [
+        {
+          "label": "₹2196",
+          "is_correct": false
+        },
+        {
+          "label": "₹2028",
+          "is_correct": false
+        },
+        {
+          "label": "₹2112",
+          "is_correct": true
+        },
+        {
+          "label": "₹2280",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Area",
+      "kind": "standard",
+      "difficulty": "hard",
+      "answer_type": "single",
+      "stem": "Find the cost of flooring a rectangular room 30 m long and 5 m wide at ₹62 per square metre.",
+      "explanation": "Area = 30×5 = 150 m²; cost = 150 × ₹62 = ₹9300.",
+      "options": [
+        {
+          "label": "₹10044",
+          "is_correct": false
+        },
+        {
+          "label": "₹9300",
+          "is_correct": true
+        },
+        {
+          "label": "₹9672",
+          "is_correct": false
+        },
+        {
+          "label": "₹8928",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Area",
+      "kind": "standard",
+      "difficulty": "hard",
+      "answer_type": "single",
+      "stem": "Find the cost of flooring a rectangular room 10 m long and 21 m wide at ₹27 per square metre.",
+      "explanation": "Area = 10×21 = 210 m²; cost = 210 × ₹27 = ₹5670.",
+      "options": [
+        {
+          "label": "₹6124",
+          "is_correct": false
+        },
+        {
+          "label": "₹5670",
+          "is_correct": true
+        },
+        {
+          "label": "₹5897",
+          "is_correct": false
+        },
+        {
+          "label": "₹5443",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Area",
+      "kind": "standard",
+      "difficulty": "hard",
+      "answer_type": "single",
+      "stem": "Find the area of a rhombus whose diagonals are 38 cm and 12 cm.",
+      "explanation": "Area = ½ × d₁ × d₂ = ½ × 38 × 12 = 228 cm².",
+      "options": [
+        {
+          "label": "228 cm²",
+          "is_correct": true
+        },
+        {
+          "label": "246 cm²",
+          "is_correct": false
+        },
+        {
+          "label": "219 cm²",
+          "is_correct": false
+        },
+        {
+          "label": "237 cm²",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Area",
+      "kind": "standard",
+      "difficulty": "hard",
+      "answer_type": "single",
+      "stem": "Find the cost of flooring a rectangular room 11 m long and 14 m wide at ₹28 per square metre.",
+      "explanation": "Area = 11×14 = 154 m²; cost = 154 × ₹28 = ₹4312.",
+      "options": [
+        {
+          "label": "₹4656",
+          "is_correct": false
+        },
+        {
+          "label": "₹4312",
+          "is_correct": true
+        },
+        {
+          "label": "₹4484",
+          "is_correct": false
+        },
+        {
+          "label": "₹4140",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Area",
+      "kind": "standard",
+      "difficulty": "hard",
+      "answer_type": "single",
+      "stem": "Find the area of a rhombus whose diagonals are 26 cm and 15 cm.",
+      "explanation": "Area = ½ × d₁ × d₂ = ½ × 26 × 15 = 195 cm².",
+      "options": [
+        {
+          "label": "197 cm²",
+          "is_correct": false
+        },
+        {
+          "label": "193 cm²",
+          "is_correct": false
+        },
+        {
+          "label": "199 cm²",
+          "is_correct": false
+        },
+        {
+          "label": "195 cm²",
+          "is_correct": true
+        }
+      ]
+    },
+    {
+      "chapter": "Area",
+      "kind": "standard",
+      "difficulty": "hard",
+      "answer_type": "single",
+      "stem": "Find the cost of fencing a rectangular field 30 m by 25 m at ₹24 per metre.",
+      "explanation": "Perimeter = 2(30+25) = 110 m; cost = 110 × ₹24 = ₹2640.",
+      "options": [
+        {
+          "label": "₹2746",
+          "is_correct": false
+        },
+        {
+          "label": "₹2852",
+          "is_correct": false
+        },
+        {
+          "label": "₹2534",
+          "is_correct": false
+        },
+        {
+          "label": "₹2640",
+          "is_correct": true
+        }
+      ]
+    },
+    {
+      "chapter": "Area",
+      "kind": "standard",
+      "difficulty": "hard",
+      "answer_type": "single",
+      "stem": "Find the area of a rhombus whose diagonals are 8 cm and 10 cm.",
+      "explanation": "Area = ½ × d₁ × d₂ = ½ × 8 × 10 = 40 cm².",
+      "options": [
+        {
+          "label": "44 cm²",
+          "is_correct": false
+        },
+        {
+          "label": "42 cm²",
+          "is_correct": false
+        },
+        {
+          "label": "40 cm²",
+          "is_correct": true
+        },
+        {
+          "label": "38 cm²",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Area",
+      "kind": "standard",
+      "difficulty": "hard",
+      "answer_type": "single",
+      "stem": "Find the area of a rhombus whose diagonals are 10 cm and 33 cm.",
+      "explanation": "Area = ½ × d₁ × d₂ = ½ × 10 × 33 = 165 cm².",
+      "options": [
+        {
+          "label": "167 cm²",
+          "is_correct": false
+        },
+        {
+          "label": "163 cm²",
+          "is_correct": false
+        },
+        {
+          "label": "165 cm²",
+          "is_correct": true
+        },
+        {
+          "label": "169 cm²",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Area",
+      "kind": "standard",
+      "difficulty": "hard",
+      "answer_type": "single",
+      "stem": "Find the cost of fencing a rectangular field 36 m by 28 m at ₹23 per metre.",
+      "explanation": "Perimeter = 2(36+28) = 128 m; cost = 128 × ₹23 = ₹2944.",
+      "options": [
+        {
+          "label": "₹3180",
+          "is_correct": false
+        },
+        {
+          "label": "₹2826",
+          "is_correct": false
+        },
+        {
+          "label": "₹2944",
+          "is_correct": true
+        },
+        {
+          "label": "₹3062",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Area",
+      "kind": "standard",
+      "difficulty": "hard",
+      "answer_type": "single",
+      "stem": "Find the cost of flooring a rectangular room 7 m long and 24 m wide at ₹67 per square metre.",
+      "explanation": "Area = 7×24 = 168 m²; cost = 168 × ₹67 = ₹11256.",
+      "options": [
+        {
+          "label": "₹10806",
+          "is_correct": false
+        },
+        {
+          "label": "₹12156",
+          "is_correct": false
+        },
+        {
+          "label": "₹11706",
+          "is_correct": false
+        },
+        {
+          "label": "₹11256",
+          "is_correct": true
+        }
+      ]
+    },
+    {
+      "chapter": "Area",
+      "kind": "standard",
+      "difficulty": "hard",
+      "answer_type": "single",
+      "stem": "Find the area of a rhombus whose diagonals are 40 cm and 40 cm.",
+      "explanation": "Area = ½ × d₁ × d₂ = ½ × 40 × 40 = 800 cm².",
+      "options": [
+        {
+          "label": "864 cm²",
+          "is_correct": false
+        },
+        {
+          "label": "800 cm²",
+          "is_correct": true
+        },
+        {
+          "label": "832 cm²",
+          "is_correct": false
+        },
+        {
+          "label": "768 cm²",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Area",
+      "kind": "standard",
+      "difficulty": "hard",
+      "answer_type": "single",
+      "stem": "Find the cost of fencing a rectangular field 6 m by 18 m at ₹47 per metre.",
+      "explanation": "Perimeter = 2(6+18) = 48 m; cost = 48 × ₹47 = ₹2256.",
+      "options": [
+        {
+          "label": "₹2346",
+          "is_correct": false
+        },
+        {
+          "label": "₹2166",
+          "is_correct": false
+        },
+        {
+          "label": "₹2436",
+          "is_correct": false
+        },
+        {
+          "label": "₹2256",
+          "is_correct": true
+        }
+      ]
+    },
+    {
+      "chapter": "Area",
+      "kind": "standard",
+      "difficulty": "hard",
+      "answer_type": "single",
+      "stem": "Find the cost of flooring a rectangular room 4 m long and 4 m wide at ₹19 per square metre.",
+      "explanation": "Area = 4×4 = 16 m²; cost = 16 × ₹19 = ₹304.",
+      "options": [
+        {
+          "label": "₹328",
+          "is_correct": false
+        },
+        {
+          "label": "₹292",
+          "is_correct": false
+        },
+        {
+          "label": "₹304",
+          "is_correct": true
+        },
+        {
+          "label": "₹316",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Area",
+      "kind": "standard",
+      "difficulty": "hard",
+      "answer_type": "single",
+      "stem": "Find the area of a rhombus whose diagonals are 36 cm and 34 cm.",
+      "explanation": "Area = ½ × d₁ × d₂ = ½ × 36 × 34 = 612 cm².",
+      "options": [
+        {
+          "label": "660 cm²",
+          "is_correct": false
+        },
+        {
+          "label": "636 cm²",
+          "is_correct": false
+        },
+        {
+          "label": "588 cm²",
+          "is_correct": false
+        },
+        {
+          "label": "612 cm²",
+          "is_correct": true
+        }
+      ]
+    },
+    {
+      "chapter": "Area",
+      "kind": "standard",
+      "difficulty": "hard",
+      "answer_type": "single",
+      "stem": "Find the cost of fencing a rectangular field 18 m by 28 m at ₹16 per metre.",
+      "explanation": "Perimeter = 2(18+28) = 92 m; cost = 92 × ₹16 = ₹1472.",
+      "options": [
+        {
+          "label": "₹1531",
+          "is_correct": false
+        },
+        {
+          "label": "₹1590",
+          "is_correct": false
+        },
+        {
+          "label": "₹1472",
+          "is_correct": true
+        },
+        {
+          "label": "₹1413",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Area",
+      "kind": "standard",
+      "difficulty": "hard",
+      "answer_type": "single",
+      "stem": "Find the cost of fencing a rectangular field 29 m by 30 m at ₹11 per metre.",
+      "explanation": "Perimeter = 2(29+30) = 118 m; cost = 118 × ₹11 = ₹1298.",
+      "options": [
+        {
+          "label": "₹1298",
+          "is_correct": true
+        },
+        {
+          "label": "₹1246",
+          "is_correct": false
+        },
+        {
+          "label": "₹1350",
+          "is_correct": false
+        },
+        {
+          "label": "₹1402",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Area",
+      "kind": "standard",
+      "difficulty": "hard",
+      "answer_type": "single",
+      "stem": "Find the cost of flooring a rectangular room 7 m long and 23 m wide at ₹26 per square metre.",
+      "explanation": "Area = 7×23 = 161 m²; cost = 161 × ₹26 = ₹4186.",
+      "options": [
+        {
+          "label": "₹4520",
+          "is_correct": false
+        },
+        {
+          "label": "₹4353",
+          "is_correct": false
+        },
+        {
+          "label": "₹4186",
+          "is_correct": true
+        },
+        {
+          "label": "₹4019",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Area",
+      "kind": "standard",
+      "difficulty": "hard",
+      "answer_type": "single",
+      "stem": "Find the area of a rhombus whose diagonals are 6 cm and 7 cm.",
+      "explanation": "Area = ½ × d₁ × d₂ = ½ × 6 × 7 = 21 cm².",
+      "options": [
+        {
+          "label": "23 cm²",
+          "is_correct": false
+        },
+        {
+          "label": "22 cm²",
+          "is_correct": false
+        },
+        {
+          "label": "21 cm²",
+          "is_correct": true
+        },
+        {
+          "label": "20 cm²",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Area",
+      "kind": "standard",
+      "difficulty": "hard",
+      "answer_type": "single",
+      "stem": "Find the cost of flooring a rectangular room 15 m long and 15 m wide at ₹30 per square metre.",
+      "explanation": "Area = 15×15 = 225 m²; cost = 225 × ₹30 = ₹6750.",
+      "options": [
+        {
+          "label": "₹7290",
+          "is_correct": false
+        },
+        {
+          "label": "₹7020",
+          "is_correct": false
+        },
+        {
+          "label": "₹6750",
+          "is_correct": true
+        },
+        {
+          "label": "₹6480",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Area",
+      "kind": "standard",
+      "difficulty": "hard",
+      "answer_type": "single",
+      "stem": "Find the area of a rhombus whose diagonals are 34 cm and 20 cm.",
+      "explanation": "Area = ½ × d₁ × d₂ = ½ × 34 × 20 = 340 cm².",
+      "options": [
+        {
+          "label": "340 cm²",
+          "is_correct": true
+        },
+        {
+          "label": "354 cm²",
+          "is_correct": false
+        },
+        {
+          "label": "368 cm²",
+          "is_correct": false
+        },
+        {
+          "label": "326 cm²",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Area",
+      "kind": "standard",
+      "difficulty": "very_hard",
+      "answer_type": "single",
+      "stem": "A rectangular garden is 23 m long and 28 m wide. A path of uniform width 3 m runs all around it on the inside. Find the area of the path.",
+      "explanation": "Path area = outer − inner = 23×28 − 17×22 = 270 m².",
+      "options": [
+        {
+          "label": "281 m²",
+          "is_correct": false
+        },
+        {
+          "label": "292 m²",
+          "is_correct": false
+        },
+        {
+          "label": "270 m²",
+          "is_correct": true
+        },
+        {
+          "label": "259 m²",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Area",
+      "kind": "standard",
+      "difficulty": "very_hard",
+      "answer_type": "single",
+      "stem": "Find the length of the diagonal of a rectangle whose length is 60 cm and breadth is 63 cm.",
+      "explanation": "Diagonal = √(length² + breadth²) = √(60² + 63²) = 87 cm.",
+      "options": [
+        {
+          "label": "89 cm",
+          "is_correct": false
+        },
+        {
+          "label": "85 cm",
+          "is_correct": false
+        },
+        {
+          "label": "87 cm",
+          "is_correct": true
+        },
+        {
+          "label": "91 cm",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Area",
+      "kind": "standard",
+      "difficulty": "very_hard",
+      "answer_type": "single",
+      "stem": "A rectangular garden is 38 m long and 20 m wide. A path of uniform width 3 m runs all around it on the inside. Find the area of the path.",
+      "explanation": "Path area = outer − inner = 38×20 − 32×14 = 312 m².",
+      "options": [
+        {
+          "label": "336 m²",
+          "is_correct": false
+        },
+        {
+          "label": "324 m²",
+          "is_correct": false
+        },
+        {
+          "label": "312 m²",
+          "is_correct": true
+        },
+        {
+          "label": "300 m²",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Area",
+      "kind": "standard",
+      "difficulty": "very_hard",
+      "answer_type": "single",
+      "stem": "Find the length of the diagonal of a rectangle whose length is 21 cm and breadth is 72 cm.",
+      "explanation": "Diagonal = √(length² + breadth²) = √(21² + 72²) = 75 cm.",
+      "options": [
+        {
+          "label": "77 cm",
+          "is_correct": false
+        },
+        {
+          "label": "75 cm",
+          "is_correct": true
+        },
+        {
+          "label": "73 cm",
+          "is_correct": false
+        },
+        {
+          "label": "79 cm",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Area",
+      "kind": "standard",
+      "difficulty": "very_hard",
+      "answer_type": "single",
+      "stem": "Find the cost of painting the four walls of a room 11 m long, 10 m wide and 3 m high at ₹43 per square metre.",
+      "explanation": "Area of 4 walls = 2h(l+w) = 2×3×(11+10) = 126 m²; cost = ₹5418.",
+      "options": [
+        {
+          "label": "₹5852",
+          "is_correct": false
+        },
+        {
+          "label": "₹5418",
+          "is_correct": true
+        },
+        {
+          "label": "₹5201",
+          "is_correct": false
+        },
+        {
+          "label": "₹5635",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Area",
+      "kind": "standard",
+      "difficulty": "very_hard",
+      "answer_type": "single",
+      "stem": "Find the length of the diagonal of a rectangle whose length is 24 cm and breadth is 32 cm.",
+      "explanation": "Diagonal = √(length² + breadth²) = √(24² + 32²) = 40 cm.",
+      "options": [
+        {
+          "label": "44 cm",
+          "is_correct": false
+        },
+        {
+          "label": "42 cm",
+          "is_correct": false
+        },
+        {
+          "label": "38 cm",
+          "is_correct": false
+        },
+        {
+          "label": "40 cm",
+          "is_correct": true
+        }
+      ]
+    },
+    {
+      "chapter": "Area",
+      "kind": "standard",
+      "difficulty": "very_hard",
+      "answer_type": "single",
+      "stem": "A rectangular garden is 30 m long and 27 m wide. A path of uniform width 1 m runs all around it on the inside. Find the area of the path.",
+      "explanation": "Path area = outer − inner = 30×27 − 28×25 = 110 m².",
+      "options": [
+        {
+          "label": "112 m²",
+          "is_correct": false
+        },
+        {
+          "label": "114 m²",
+          "is_correct": false
+        },
+        {
+          "label": "110 m²",
+          "is_correct": true
+        },
+        {
+          "label": "108 m²",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Area",
+      "kind": "standard",
+      "difficulty": "very_hard",
+      "answer_type": "single",
+      "stem": "Find the cost of painting the four walls of a room 12 m long, 5 m wide and 4 m high at ₹58 per square metre.",
+      "explanation": "Area of 4 walls = 2h(l+w) = 2×4×(12+5) = 136 m²; cost = ₹7888.",
+      "options": [
+        {
+          "label": "₹8204",
+          "is_correct": false
+        },
+        {
+          "label": "₹7888",
+          "is_correct": true
+        },
+        {
+          "label": "₹8520",
+          "is_correct": false
+        },
+        {
+          "label": "₹7572",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Area",
+      "kind": "standard",
+      "difficulty": "very_hard",
+      "answer_type": "single",
+      "stem": "Find the length of the diagonal of a rectangle whose length is 27 cm and breadth is 36 cm.",
+      "explanation": "Diagonal = √(length² + breadth²) = √(27² + 36²) = 45 cm.",
+      "options": [
+        {
+          "label": "45 cm",
+          "is_correct": true
+        },
+        {
+          "label": "43 cm",
+          "is_correct": false
+        },
+        {
+          "label": "49 cm",
+          "is_correct": false
+        },
+        {
+          "label": "47 cm",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Area",
+      "kind": "standard",
+      "difficulty": "very_hard",
+      "answer_type": "single",
+      "stem": "Find the cost of painting the four walls of a room 5 m long, 9 m wide and 5 m high at ₹30 per square metre.",
+      "explanation": "Area of 4 walls = 2h(l+w) = 2×5×(5+9) = 140 m²; cost = ₹4200.",
+      "options": [
+        {
+          "label": "₹4200",
+          "is_correct": true
+        },
+        {
+          "label": "₹4368",
+          "is_correct": false
+        },
+        {
+          "label": "₹4032",
+          "is_correct": false
+        },
+        {
+          "label": "₹4536",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Area",
+      "kind": "standard",
+      "difficulty": "very_hard",
+      "answer_type": "single",
+      "stem": "A rectangular garden is 23 m long and 26 m wide. A path of uniform width 4 m runs all around it on the inside. Find the area of the path.",
+      "explanation": "Path area = outer − inner = 23×26 − 15×18 = 328 m².",
+      "options": [
+        {
+          "label": "315 m²",
+          "is_correct": false
+        },
+        {
+          "label": "328 m²",
+          "is_correct": true
+        },
+        {
+          "label": "354 m²",
+          "is_correct": false
+        },
+        {
+          "label": "341 m²",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Area",
+      "kind": "standard",
+      "difficulty": "very_hard",
+      "answer_type": "single",
+      "stem": "A rectangular garden is 40 m long and 20 m wide. A path of uniform width 3 m runs all around it on the inside. Find the area of the path.",
+      "explanation": "Path area = outer − inner = 40×20 − 34×14 = 324 m².",
+      "options": [
+        {
+          "label": "311 m²",
+          "is_correct": false
+        },
+        {
+          "label": "324 m²",
+          "is_correct": true
+        },
+        {
+          "label": "350 m²",
+          "is_correct": false
+        },
+        {
+          "label": "337 m²",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Area",
+      "kind": "standard",
+      "difficulty": "very_hard",
+      "answer_type": "single",
+      "stem": "Find the cost of painting the four walls of a room 11 m long, 7 m wide and 6 m high at ₹40 per square metre.",
+      "explanation": "Area of 4 walls = 2h(l+w) = 2×6×(11+7) = 216 m²; cost = ₹8640.",
+      "options": [
+        {
+          "label": "₹8294",
+          "is_correct": false
+        },
+        {
+          "label": "₹8986",
+          "is_correct": false
+        },
+        {
+          "label": "₹8640",
+          "is_correct": true
+        },
+        {
+          "label": "₹9332",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Area",
+      "kind": "standard",
+      "difficulty": "very_hard",
+      "answer_type": "single",
+      "stem": "Find the length of the diagonal of a rectangle whose length is 6 cm and breadth is 8 cm.",
+      "explanation": "Diagonal = √(length² + breadth²) = √(6² + 8²) = 10 cm.",
+      "options": [
+        {
+          "label": "9 cm",
+          "is_correct": false
+        },
+        {
+          "label": "12 cm",
+          "is_correct": false
+        },
+        {
+          "label": "10 cm",
+          "is_correct": true
+        },
+        {
+          "label": "11 cm",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Area",
+      "kind": "standard",
+      "difficulty": "very_hard",
+      "answer_type": "single",
+      "stem": "A rectangular garden is 24 m long and 27 m wide. A path of uniform width 3 m runs all around it on the inside. Find the area of the path.",
+      "explanation": "Path area = outer − inner = 24×27 − 18×21 = 270 m².",
+      "options": [
+        {
+          "label": "259 m²",
+          "is_correct": false
+        },
+        {
+          "label": "270 m²",
+          "is_correct": true
+        },
+        {
+          "label": "281 m²",
+          "is_correct": false
+        },
+        {
+          "label": "292 m²",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Area",
+      "kind": "standard",
+      "difficulty": "very_hard",
+      "answer_type": "single",
+      "stem": "Find the cost of painting the four walls of a room 4 m long, 7 m wide and 5 m high at ₹24 per square metre.",
+      "explanation": "Area of 4 walls = 2h(l+w) = 2×5×(4+7) = 110 m²; cost = ₹2640.",
+      "options": [
+        {
+          "label": "₹2852",
+          "is_correct": false
+        },
+        {
+          "label": "₹2640",
+          "is_correct": true
+        },
+        {
+          "label": "₹2746",
+          "is_correct": false
+        },
+        {
+          "label": "₹2534",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Area",
+      "kind": "standard",
+      "difficulty": "very_hard",
+      "answer_type": "single",
+      "stem": "Find the length of the diagonal of a rectangle whose length is 60 cm and breadth is 80 cm.",
+      "explanation": "Diagonal = √(length² + breadth²) = √(60² + 80²) = 100 cm.",
+      "options": [
+        {
+          "label": "98 cm",
+          "is_correct": false
+        },
+        {
+          "label": "104 cm",
+          "is_correct": false
+        },
+        {
+          "label": "100 cm",
+          "is_correct": true
+        },
+        {
+          "label": "102 cm",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Area",
+      "kind": "standard",
+      "difficulty": "very_hard",
+      "answer_type": "single",
+      "stem": "Find the cost of painting the four walls of a room 12 m long, 6 m wide and 5 m high at ₹46 per square metre.",
+      "explanation": "Area of 4 walls = 2h(l+w) = 2×5×(12+6) = 180 m²; cost = ₹8280.",
+      "options": [
+        {
+          "label": "₹7949",
+          "is_correct": false
+        },
+        {
+          "label": "₹8280",
+          "is_correct": true
+        },
+        {
+          "label": "₹8942",
+          "is_correct": false
+        },
+        {
+          "label": "₹8611",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Area",
+      "kind": "standard",
+      "difficulty": "very_hard",
+      "answer_type": "single",
+      "stem": "Find the length of the diagonal of a rectangle whose length is 48 cm and breadth is 64 cm.",
+      "explanation": "Diagonal = √(length² + breadth²) = √(48² + 64²) = 80 cm.",
+      "options": [
+        {
+          "label": "84 cm",
+          "is_correct": false
+        },
+        {
+          "label": "82 cm",
+          "is_correct": false
+        },
+        {
+          "label": "80 cm",
+          "is_correct": true
+        },
+        {
+          "label": "78 cm",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Area",
+      "kind": "standard",
+      "difficulty": "very_hard",
+      "answer_type": "single",
+      "stem": "Find the length of the diagonal of a rectangle whose length is 80 cm and breadth is 84 cm.",
+      "explanation": "Diagonal = √(length² + breadth²) = √(80² + 84²) = 116 cm.",
+      "options": [
+        {
+          "label": "114 cm",
+          "is_correct": false
+        },
+        {
+          "label": "118 cm",
+          "is_correct": false
+        },
+        {
+          "label": "120 cm",
+          "is_correct": false
+        },
+        {
+          "label": "116 cm",
+          "is_correct": true
+        }
+      ]
+    },
+    {
+      "chapter": "Area",
+      "kind": "standard",
+      "difficulty": "very_hard",
+      "answer_type": "single",
+      "stem": "A rectangular garden is 32 m long and 21 m wide. A path of uniform width 1 m runs all around it on the inside. Find the area of the path.",
+      "explanation": "Path area = outer − inner = 32×21 − 30×19 = 102 m².",
+      "options": [
+        {
+          "label": "102 m²",
+          "is_correct": true
+        },
+        {
+          "label": "100 m²",
+          "is_correct": false
+        },
+        {
+          "label": "106 m²",
+          "is_correct": false
+        },
+        {
+          "label": "104 m²",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Area",
+      "kind": "standard",
+      "difficulty": "very_hard",
+      "answer_type": "single",
+      "stem": "Find the length of the diagonal of a rectangle whose length is 14 cm and breadth is 48 cm.",
+      "explanation": "Diagonal = √(length² + breadth²) = √(14² + 48²) = 50 cm.",
+      "options": [
+        {
+          "label": "48 cm",
+          "is_correct": false
+        },
+        {
+          "label": "52 cm",
+          "is_correct": false
+        },
+        {
+          "label": "54 cm",
+          "is_correct": false
+        },
+        {
+          "label": "50 cm",
+          "is_correct": true
+        }
+      ]
+    },
+    {
+      "chapter": "Area",
+      "kind": "standard",
+      "difficulty": "very_hard",
+      "answer_type": "single",
+      "stem": "Find the length of the diagonal of a rectangle whose length is 28 cm and breadth is 96 cm.",
+      "explanation": "Diagonal = √(length² + breadth²) = √(28² + 96²) = 100 cm.",
+      "options": [
+        {
+          "label": "100 cm",
+          "is_correct": true
+        },
+        {
+          "label": "104 cm",
+          "is_correct": false
+        },
+        {
+          "label": "102 cm",
+          "is_correct": false
+        },
+        {
+          "label": "98 cm",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Area",
+      "kind": "standard",
+      "difficulty": "very_hard",
+      "answer_type": "single",
+      "stem": "Find the cost of painting the four walls of a room 12 m long, 7 m wide and 4 m high at ₹10 per square metre.",
+      "explanation": "Area of 4 walls = 2h(l+w) = 2×4×(12+7) = 152 m²; cost = ₹1520.",
+      "options": [
+        {
+          "label": "₹1520",
+          "is_correct": true
+        },
+        {
+          "label": "₹1459",
+          "is_correct": false
+        },
+        {
+          "label": "₹1581",
+          "is_correct": false
+        },
+        {
+          "label": "₹1642",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Area",
+      "kind": "standard",
+      "difficulty": "very_hard",
+      "answer_type": "single",
+      "stem": "A rectangular garden is 28 m long and 21 m wide. A path of uniform width 2 m runs all around it on the inside. Find the area of the path.",
+      "explanation": "Path area = outer − inner = 28×21 − 24×17 = 180 m².",
+      "options": [
+        {
+          "label": "180 m²",
+          "is_correct": true
+        },
+        {
+          "label": "184 m²",
+          "is_correct": false
+        },
+        {
+          "label": "178 m²",
+          "is_correct": false
+        },
+        {
+          "label": "182 m²",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Area",
+      "kind": "standard",
+      "difficulty": "very_hard",
+      "answer_type": "single",
+      "stem": "A rectangular garden is 37 m long and 27 m wide. A path of uniform width 2 m runs all around it on the inside. Find the area of the path.",
+      "explanation": "Path area = outer − inner = 37×27 − 33×23 = 240 m².",
+      "options": [
+        {
+          "label": "260 m²",
+          "is_correct": false
+        },
+        {
+          "label": "240 m²",
+          "is_correct": true
+        },
+        {
+          "label": "230 m²",
+          "is_correct": false
+        },
+        {
+          "label": "250 m²",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Area",
+      "kind": "standard",
+      "difficulty": "very_hard",
+      "answer_type": "single",
+      "stem": "Find the length of the diagonal of a rectangle whose length is 40 cm and breadth is 75 cm.",
+      "explanation": "Diagonal = √(length² + breadth²) = √(40² + 75²) = 85 cm.",
+      "options": [
+        {
+          "label": "87 cm",
+          "is_correct": false
+        },
+        {
+          "label": "89 cm",
+          "is_correct": false
+        },
+        {
+          "label": "85 cm",
+          "is_correct": true
+        },
+        {
+          "label": "83 cm",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Area",
+      "kind": "standard",
+      "difficulty": "very_hard",
+      "answer_type": "single",
+      "stem": "Find the length of the diagonal of a rectangle whose length is 100 cm and breadth is 105 cm.",
+      "explanation": "Diagonal = √(length² + breadth²) = √(100² + 105²) = 145 cm.",
+      "options": [
+        {
+          "label": "149 cm",
+          "is_correct": false
+        },
+        {
+          "label": "143 cm",
+          "is_correct": false
+        },
+        {
+          "label": "147 cm",
+          "is_correct": false
+        },
+        {
+          "label": "145 cm",
+          "is_correct": true
+        }
+      ]
+    },
+    {
+      "chapter": "Area",
+      "kind": "standard",
+      "difficulty": "very_hard",
+      "answer_type": "single",
+      "stem": "Find the length of the diagonal of a rectangle whose length is 25 cm and breadth is 60 cm.",
+      "explanation": "Diagonal = √(length² + breadth²) = √(25² + 60²) = 65 cm.",
+      "options": [
+        {
+          "label": "63 cm",
+          "is_correct": false
+        },
+        {
+          "label": "69 cm",
+          "is_correct": false
+        },
+        {
+          "label": "65 cm",
+          "is_correct": true
+        },
+        {
+          "label": "67 cm",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Area",
+      "kind": "standard",
+      "difficulty": "very_hard",
+      "answer_type": "single",
+      "stem": "A rectangular garden is 28 m long and 20 m wide. A path of uniform width 4 m runs all around it on the inside. Find the area of the path.",
+      "explanation": "Path area = outer − inner = 28×20 − 20×12 = 320 m².",
+      "options": [
+        {
+          "label": "346 m²",
+          "is_correct": false
+        },
+        {
+          "label": "307 m²",
+          "is_correct": false
+        },
+        {
+          "label": "333 m²",
+          "is_correct": false
+        },
+        {
+          "label": "320 m²",
+          "is_correct": true
+        }
+      ]
+    },
+    {
+      "chapter": "Area",
+      "kind": "standard",
+      "difficulty": "very_hard",
+      "answer_type": "single",
+      "stem": "A rectangular garden is 20 m long and 20 m wide. A path of uniform width 2 m runs all around it on the inside. Find the area of the path.",
+      "explanation": "Path area = outer − inner = 20×20 − 16×16 = 144 m².",
+      "options": [
+        {
+          "label": "146 m²",
+          "is_correct": false
+        },
+        {
+          "label": "144 m²",
+          "is_correct": true
+        },
+        {
+          "label": "142 m²",
+          "is_correct": false
+        },
+        {
+          "label": "148 m²",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Area",
+      "kind": "standard",
+      "difficulty": "very_hard",
+      "answer_type": "single",
+      "stem": "A rectangular garden is 23 m long and 17 m wide. A path of uniform width 1 m runs all around it on the inside. Find the area of the path.",
+      "explanation": "Path area = outer − inner = 23×17 − 21×15 = 76 m².",
+      "options": [
+        {
+          "label": "74 m²",
+          "is_correct": false
+        },
+        {
+          "label": "76 m²",
+          "is_correct": true
+        },
+        {
+          "label": "78 m²",
+          "is_correct": false
+        },
+        {
+          "label": "80 m²",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Area",
+      "kind": "standard",
+      "difficulty": "very_hard",
+      "answer_type": "single",
+      "stem": "A rectangular garden is 38 m long and 18 m wide. A path of uniform width 2 m runs all around it on the inside. Find the area of the path.",
+      "explanation": "Path area = outer − inner = 38×18 − 34×14 = 208 m².",
+      "options": [
+        {
+          "label": "224 m²",
+          "is_correct": false
+        },
+        {
+          "label": "200 m²",
+          "is_correct": false
+        },
+        {
+          "label": "216 m²",
+          "is_correct": false
+        },
+        {
+          "label": "208 m²",
+          "is_correct": true
+        }
+      ]
+    },
+    {
+      "chapter": "Area",
+      "kind": "standard",
+      "difficulty": "very_hard",
+      "answer_type": "single",
+      "stem": "Find the cost of painting the four walls of a room 8 m long, 4 m wide and 5 m high at ₹41 per square metre.",
+      "explanation": "Area of 4 walls = 2h(l+w) = 2×5×(8+4) = 120 m²; cost = ₹4920.",
+      "options": [
+        {
+          "label": "₹4920",
+          "is_correct": true
+        },
+        {
+          "label": "₹5117",
+          "is_correct": false
+        },
+        {
+          "label": "₹5314",
+          "is_correct": false
+        },
+        {
+          "label": "₹4723",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Area",
+      "kind": "standard",
+      "difficulty": "very_hard",
+      "answer_type": "single",
+      "stem": "Find the cost of painting the four walls of a room 7 m long, 9 m wide and 4 m high at ₹11 per square metre.",
+      "explanation": "Area of 4 walls = 2h(l+w) = 2×4×(7+9) = 128 m²; cost = ₹1408.",
+      "options": [
+        {
+          "label": "₹1520",
+          "is_correct": false
+        },
+        {
+          "label": "₹1352",
+          "is_correct": false
+        },
+        {
+          "label": "₹1408",
+          "is_correct": true
+        },
+        {
+          "label": "₹1464",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Area",
+      "kind": "standard",
+      "difficulty": "very_hard",
+      "answer_type": "single",
+      "stem": "Find the cost of painting the four walls of a room 8 m long, 4 m wide and 3 m high at ₹15 per square metre.",
+      "explanation": "Area of 4 walls = 2h(l+w) = 2×3×(8+4) = 72 m²; cost = ₹1080.",
+      "options": [
+        {
+          "label": "₹1080",
+          "is_correct": true
+        },
+        {
+          "label": "₹1123",
+          "is_correct": false
+        },
+        {
+          "label": "₹1037",
+          "is_correct": false
+        },
+        {
+          "label": "₹1166",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Area",
+      "kind": "standard",
+      "difficulty": "very_hard",
+      "answer_type": "single",
+      "stem": "A rectangular garden is 27 m long and 24 m wide. A path of uniform width 3 m runs all around it on the inside. Find the area of the path.",
+      "explanation": "Path area = outer − inner = 27×24 − 21×18 = 270 m².",
+      "options": [
+        {
+          "label": "270 m²",
+          "is_correct": true
+        },
+        {
+          "label": "281 m²",
+          "is_correct": false
+        },
+        {
+          "label": "259 m²",
+          "is_correct": false
+        },
+        {
+          "label": "292 m²",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Area",
+      "kind": "standard",
+      "difficulty": "very_hard",
+      "answer_type": "single",
+      "stem": "Find the cost of painting the four walls of a room 11 m long, 6 m wide and 4 m high at ₹44 per square metre.",
+      "explanation": "Area of 4 walls = 2h(l+w) = 2×4×(11+6) = 136 m²; cost = ₹5984.",
+      "options": [
+        {
+          "label": "₹5745",
+          "is_correct": false
+        },
+        {
+          "label": "₹6223",
+          "is_correct": false
+        },
+        {
+          "label": "₹6462",
+          "is_correct": false
+        },
+        {
+          "label": "₹5984",
+          "is_correct": true
+        }
+      ]
+    },
+    {
+      "chapter": "Area",
+      "kind": "standard",
+      "difficulty": "very_hard",
+      "answer_type": "single",
+      "stem": "A rectangular garden is 27 m long and 23 m wide. A path of uniform width 2 m runs all around it on the inside. Find the area of the path.",
+      "explanation": "Path area = outer − inner = 27×23 − 23×19 = 184 m².",
+      "options": [
+        {
+          "label": "188 m²",
+          "is_correct": false
+        },
+        {
+          "label": "184 m²",
+          "is_correct": true
+        },
+        {
+          "label": "182 m²",
+          "is_correct": false
+        },
+        {
+          "label": "186 m²",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Area",
+      "kind": "standard",
+      "difficulty": "very_hard",
+      "answer_type": "single",
+      "stem": "Find the length of the diagonal of a rectangle whose length is 8 cm and breadth is 15 cm.",
+      "explanation": "Diagonal = √(length² + breadth²) = √(8² + 15²) = 17 cm.",
+      "options": [
+        {
+          "label": "19 cm",
+          "is_correct": false
+        },
+        {
+          "label": "16 cm",
+          "is_correct": false
+        },
+        {
+          "label": "17 cm",
+          "is_correct": true
+        },
+        {
+          "label": "18 cm",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Area",
+      "kind": "standard",
+      "difficulty": "very_hard",
+      "answer_type": "single",
+      "stem": "A rectangular garden is 27 m long and 23 m wide. A path of uniform width 1 m runs all around it on the inside. Find the area of the path.",
+      "explanation": "Path area = outer − inner = 27×23 − 25×21 = 96 m².",
+      "options": [
+        {
+          "label": "96 m²",
+          "is_correct": true
+        },
+        {
+          "label": "94 m²",
+          "is_correct": false
+        },
+        {
+          "label": "98 m²",
+          "is_correct": false
+        },
+        {
+          "label": "100 m²",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Area",
+      "kind": "standard",
+      "difficulty": "very_hard",
+      "answer_type": "single",
+      "stem": "Find the length of the diagonal of a rectangle whose length is 16 cm and breadth is 30 cm.",
+      "explanation": "Diagonal = √(length² + breadth²) = √(16² + 30²) = 34 cm.",
+      "options": [
+        {
+          "label": "36 cm",
+          "is_correct": false
+        },
+        {
+          "label": "34 cm",
+          "is_correct": true
+        },
+        {
+          "label": "35 cm",
+          "is_correct": false
+        },
+        {
+          "label": "33 cm",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Area",
+      "kind": "standard",
+      "difficulty": "very_hard",
+      "answer_type": "single",
+      "stem": "Find the cost of painting the four walls of a room 6 m long, 8 m wide and 3 m high at ₹29 per square metre.",
+      "explanation": "Area of 4 walls = 2h(l+w) = 2×3×(6+8) = 84 m²; cost = ₹2436.",
+      "options": [
+        {
+          "label": "₹2533",
+          "is_correct": false
+        },
+        {
+          "label": "₹2339",
+          "is_correct": false
+        },
+        {
+          "label": "₹2436",
+          "is_correct": true
+        },
+        {
+          "label": "₹2630",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Area",
+      "kind": "standard",
+      "difficulty": "very_hard",
+      "answer_type": "single",
+      "stem": "Find the length of the diagonal of a rectangle whose length is 15 cm and breadth is 36 cm.",
+      "explanation": "Diagonal = √(length² + breadth²) = √(15² + 36²) = 39 cm.",
+      "options": [
+        {
+          "label": "39 cm",
+          "is_correct": true
+        },
+        {
+          "label": "40 cm",
+          "is_correct": false
+        },
+        {
+          "label": "41 cm",
+          "is_correct": false
+        },
+        {
+          "label": "38 cm",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Area",
+      "kind": "standard",
+      "difficulty": "very_hard",
+      "answer_type": "single",
+      "stem": "Find the cost of painting the four walls of a room 12 m long, 8 m wide and 4 m high at ₹49 per square metre.",
+      "explanation": "Area of 4 walls = 2h(l+w) = 2×4×(12+8) = 160 m²; cost = ₹7840.",
+      "options": [
+        {
+          "label": "₹7840",
+          "is_correct": true
+        },
+        {
+          "label": "₹8468",
+          "is_correct": false
+        },
+        {
+          "label": "₹8154",
+          "is_correct": false
+        },
+        {
+          "label": "₹7526",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Area",
+      "kind": "standard",
+      "difficulty": "very_hard",
+      "answer_type": "single",
+      "stem": "Find the length of the diagonal of a rectangle whose length is 24 cm and breadth is 45 cm.",
+      "explanation": "Diagonal = √(length² + breadth²) = √(24² + 45²) = 51 cm.",
+      "options": [
+        {
+          "label": "51 cm",
+          "is_correct": true
+        },
+        {
+          "label": "53 cm",
+          "is_correct": false
+        },
+        {
+          "label": "49 cm",
+          "is_correct": false
+        },
+        {
+          "label": "55 cm",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Area",
+      "kind": "standard",
+      "difficulty": "very_hard",
+      "answer_type": "single",
+      "stem": "A rectangular garden is 39 m long and 30 m wide. A path of uniform width 4 m runs all around it on the inside. Find the area of the path.",
+      "explanation": "Path area = outer − inner = 39×30 − 31×22 = 488 m².",
+      "options": [
+        {
+          "label": "528 m²",
+          "is_correct": false
+        },
+        {
+          "label": "508 m²",
+          "is_correct": false
+        },
+        {
+          "label": "488 m²",
+          "is_correct": true
+        },
+        {
+          "label": "468 m²",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Area",
+      "kind": "standard",
+      "difficulty": "very_hard",
+      "answer_type": "single",
+      "stem": "Find the length of the diagonal of a rectangle whose length is 35 cm and breadth is 120 cm.",
+      "explanation": "Diagonal = √(length² + breadth²) = √(35² + 120²) = 125 cm.",
+      "options": [
+        {
+          "label": "127 cm",
+          "is_correct": false
+        },
+        {
+          "label": "125 cm",
+          "is_correct": true
+        },
+        {
+          "label": "123 cm",
+          "is_correct": false
+        },
+        {
+          "label": "129 cm",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Area",
+      "kind": "standard",
+      "difficulty": "very_hard",
+      "answer_type": "single",
+      "stem": "A rectangular garden is 23 m long and 27 m wide. A path of uniform width 3 m runs all around it on the inside. Find the area of the path.",
+      "explanation": "Path area = outer − inner = 23×27 − 17×21 = 264 m².",
+      "options": [
+        {
+          "label": "286 m²",
+          "is_correct": false
+        },
+        {
+          "label": "264 m²",
+          "is_correct": true
+        },
+        {
+          "label": "253 m²",
+          "is_correct": false
+        },
+        {
+          "label": "275 m²",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Area",
+      "kind": "standard",
+      "difficulty": "very_hard",
+      "answer_type": "single",
+      "stem": "Find the cost of painting the four walls of a room 10 m long, 8 m wide and 6 m high at ₹57 per square metre.",
+      "explanation": "Area of 4 walls = 2h(l+w) = 2×6×(10+8) = 216 m²; cost = ₹12312.",
+      "options": [
+        {
+          "label": "₹12804",
+          "is_correct": false
+        },
+        {
+          "label": "₹12312",
+          "is_correct": true
+        },
+        {
+          "label": "₹13296",
+          "is_correct": false
+        },
+        {
+          "label": "₹11820",
+          "is_correct": false
+        }
+      ]
+    }
+  ]
+}

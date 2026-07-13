@@ -147,7 +147,10 @@ function ExamList({ exams, empty }: { exams: ExamCard[]; empty: string }) {
         const st = status(e);
         const isDraft = e.examStatus === "draft";
         return (
-          <li className="hover:bg-muted/50 flex items-center justify-between gap-3 px-3 py-2.5 transition">
+          <li
+            key={e.id}
+            className="hover:bg-muted/50 flex items-center justify-between gap-3 px-3 py-2.5 transition"
+          >
             {/* Title/meta → open the wizard (edit/resume). */}
             <Link href={`/dashboard/exams/blueprints/${e.id}`} className="min-w-0 flex-1">
               <div className="truncate text-sm font-medium">{e.title}</div>
@@ -159,6 +162,14 @@ function ExamList({ exams, empty }: { exams: ExamCard[]; empty: string }) {
             </Link>
             <div className="flex shrink-0 items-center gap-2">
               <Badge variant={st.live ? "default" : "secondary"}>{st.text}</Badge>
+              {e.examStatus === "published" && e.sessionId && (
+                <Link
+                  href={`/dashboard/exams/sessions/${e.sessionId}`}
+                  className={cn(buttonVariants({ variant: "outline", size: "sm" }))}
+                >
+                  Session
+                </Link>
+              )}
               {e.examStatus === "published" && (
                 <Link
                   href={`/dashboard/exams/blueprints/${e.id}/paper`}

@@ -1,0 +1,5205 @@
+{
+  "subject": "Arithmetic",
+  "questions": [
+    {
+      "chapter": "Volume and Surface Area",
+      "kind": "standard",
+      "difficulty": "easy",
+      "answer_type": "single",
+      "stem": "Find the volume of a cube of edge 4 cm.",
+      "explanation": "Volume = a³ = 4³ = 64 cm³.",
+      "options": [
+        {
+          "label": "64 cm³",
+          "is_correct": true
+        },
+        {
+          "label": "66 cm³",
+          "is_correct": false
+        },
+        {
+          "label": "62 cm³",
+          "is_correct": false
+        },
+        {
+          "label": "68 cm³",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Volume and Surface Area",
+      "kind": "standard",
+      "difficulty": "easy",
+      "answer_type": "single",
+      "stem": "Find the volume of a cuboid 8 cm long, 17 cm wide and 4 cm high.",
+      "explanation": "Volume = l×b×h = 8×17×4 = 544 cm³.",
+      "options": [
+        {
+          "label": "566 cm³",
+          "is_correct": false
+        },
+        {
+          "label": "544 cm³",
+          "is_correct": true
+        },
+        {
+          "label": "522 cm³",
+          "is_correct": false
+        },
+        {
+          "label": "588 cm³",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Volume and Surface Area",
+      "kind": "standard",
+      "difficulty": "easy",
+      "answer_type": "single",
+      "stem": "Find the volume of a cuboid 3 cm long, 16 cm wide and 4 cm high.",
+      "explanation": "Volume = l×b×h = 3×16×4 = 192 cm³.",
+      "options": [
+        {
+          "label": "192 cm³",
+          "is_correct": true
+        },
+        {
+          "label": "194 cm³",
+          "is_correct": false
+        },
+        {
+          "label": "190 cm³",
+          "is_correct": false
+        },
+        {
+          "label": "196 cm³",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Volume and Surface Area",
+      "kind": "standard",
+      "difficulty": "easy",
+      "answer_type": "single",
+      "stem": "Find the total surface area of a cube of edge 10 cm.",
+      "explanation": "Surface area = 6a² = 6×10² = 600 cm².",
+      "options": [
+        {
+          "label": "600 cm²",
+          "is_correct": true
+        },
+        {
+          "label": "624 cm²",
+          "is_correct": false
+        },
+        {
+          "label": "576 cm²",
+          "is_correct": false
+        },
+        {
+          "label": "648 cm²",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Volume and Surface Area",
+      "kind": "standard",
+      "difficulty": "easy",
+      "answer_type": "single",
+      "stem": "Find the volume of a cuboid 14 cm long, 18 cm wide and 16 cm high.",
+      "explanation": "Volume = l×b×h = 14×18×16 = 4032 cm³.",
+      "options": [
+        {
+          "label": "4193 cm³",
+          "is_correct": false
+        },
+        {
+          "label": "3871 cm³",
+          "is_correct": false
+        },
+        {
+          "label": "4032 cm³",
+          "is_correct": true
+        },
+        {
+          "label": "4354 cm³",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Volume and Surface Area",
+      "kind": "standard",
+      "difficulty": "easy",
+      "answer_type": "single",
+      "stem": "Find the volume of a cube of edge 11 cm.",
+      "explanation": "Volume = a³ = 11³ = 1331 cm³.",
+      "options": [
+        {
+          "label": "1384 cm³",
+          "is_correct": false
+        },
+        {
+          "label": "1331 cm³",
+          "is_correct": true
+        },
+        {
+          "label": "1437 cm³",
+          "is_correct": false
+        },
+        {
+          "label": "1278 cm³",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Volume and Surface Area",
+      "kind": "standard",
+      "difficulty": "easy",
+      "answer_type": "single",
+      "stem": "Find the volume of a cube of edge 2 cm.",
+      "explanation": "Volume = a³ = 2³ = 8 cm³.",
+      "options": [
+        {
+          "label": "9 cm³",
+          "is_correct": false
+        },
+        {
+          "label": "8 cm³",
+          "is_correct": true
+        },
+        {
+          "label": "7 cm³",
+          "is_correct": false
+        },
+        {
+          "label": "10 cm³",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Volume and Surface Area",
+      "kind": "standard",
+      "difficulty": "easy",
+      "answer_type": "single",
+      "stem": "Find the volume of a cube of edge 12 cm.",
+      "explanation": "Volume = a³ = 12³ = 1728 cm³.",
+      "options": [
+        {
+          "label": "1728 cm³",
+          "is_correct": true
+        },
+        {
+          "label": "1659 cm³",
+          "is_correct": false
+        },
+        {
+          "label": "1797 cm³",
+          "is_correct": false
+        },
+        {
+          "label": "1866 cm³",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Volume and Surface Area",
+      "kind": "standard",
+      "difficulty": "easy",
+      "answer_type": "single",
+      "stem": "Find the total surface area of a cube of edge 7 cm.",
+      "explanation": "Surface area = 6a² = 6×7² = 294 cm².",
+      "options": [
+        {
+          "label": "294 cm²",
+          "is_correct": true
+        },
+        {
+          "label": "306 cm²",
+          "is_correct": false
+        },
+        {
+          "label": "318 cm²",
+          "is_correct": false
+        },
+        {
+          "label": "282 cm²",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Volume and Surface Area",
+      "kind": "standard",
+      "difficulty": "easy",
+      "answer_type": "single",
+      "stem": "Find the total surface area of a cube of edge 5 cm.",
+      "explanation": "Surface area = 6a² = 6×5² = 150 cm².",
+      "options": [
+        {
+          "label": "148 cm²",
+          "is_correct": false
+        },
+        {
+          "label": "152 cm²",
+          "is_correct": false
+        },
+        {
+          "label": "154 cm²",
+          "is_correct": false
+        },
+        {
+          "label": "150 cm²",
+          "is_correct": true
+        }
+      ]
+    },
+    {
+      "chapter": "Volume and Surface Area",
+      "kind": "standard",
+      "difficulty": "easy",
+      "answer_type": "single",
+      "stem": "Find the volume of a cuboid 19 cm long, 7 cm wide and 12 cm high.",
+      "explanation": "Volume = l×b×h = 19×7×12 = 1596 cm³.",
+      "options": [
+        {
+          "label": "1660 cm³",
+          "is_correct": false
+        },
+        {
+          "label": "1532 cm³",
+          "is_correct": false
+        },
+        {
+          "label": "1724 cm³",
+          "is_correct": false
+        },
+        {
+          "label": "1596 cm³",
+          "is_correct": true
+        }
+      ]
+    },
+    {
+      "chapter": "Volume and Surface Area",
+      "kind": "standard",
+      "difficulty": "easy",
+      "answer_type": "single",
+      "stem": "Find the volume of a cuboid 5 cm long, 18 cm wide and 11 cm high.",
+      "explanation": "Volume = l×b×h = 5×18×11 = 990 cm³.",
+      "options": [
+        {
+          "label": "1070 cm³",
+          "is_correct": false
+        },
+        {
+          "label": "1030 cm³",
+          "is_correct": false
+        },
+        {
+          "label": "950 cm³",
+          "is_correct": false
+        },
+        {
+          "label": "990 cm³",
+          "is_correct": true
+        }
+      ]
+    },
+    {
+      "chapter": "Volume and Surface Area",
+      "kind": "standard",
+      "difficulty": "easy",
+      "answer_type": "single",
+      "stem": "Find the total surface area of a cube of edge 6 cm.",
+      "explanation": "Surface area = 6a² = 6×6² = 216 cm².",
+      "options": [
+        {
+          "label": "216 cm²",
+          "is_correct": true
+        },
+        {
+          "label": "234 cm²",
+          "is_correct": false
+        },
+        {
+          "label": "225 cm²",
+          "is_correct": false
+        },
+        {
+          "label": "207 cm²",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Volume and Surface Area",
+      "kind": "standard",
+      "difficulty": "easy",
+      "answer_type": "single",
+      "stem": "Find the volume of a cuboid 9 cm long, 15 cm wide and 7 cm high.",
+      "explanation": "Volume = l×b×h = 9×15×7 = 945 cm³.",
+      "options": [
+        {
+          "label": "983 cm³",
+          "is_correct": false
+        },
+        {
+          "label": "907 cm³",
+          "is_correct": false
+        },
+        {
+          "label": "1021 cm³",
+          "is_correct": false
+        },
+        {
+          "label": "945 cm³",
+          "is_correct": true
+        }
+      ]
+    },
+    {
+      "chapter": "Volume and Surface Area",
+      "kind": "standard",
+      "difficulty": "easy",
+      "answer_type": "single",
+      "stem": "Find the volume of a cube of edge 14 cm.",
+      "explanation": "Volume = a³ = 14³ = 2744 cm³.",
+      "options": [
+        {
+          "label": "2854 cm³",
+          "is_correct": false
+        },
+        {
+          "label": "2634 cm³",
+          "is_correct": false
+        },
+        {
+          "label": "2964 cm³",
+          "is_correct": false
+        },
+        {
+          "label": "2744 cm³",
+          "is_correct": true
+        }
+      ]
+    },
+    {
+      "chapter": "Volume and Surface Area",
+      "kind": "standard",
+      "difficulty": "easy",
+      "answer_type": "single",
+      "stem": "Find the volume of a cube of edge 8 cm.",
+      "explanation": "Volume = a³ = 8³ = 512 cm³.",
+      "options": [
+        {
+          "label": "532 cm³",
+          "is_correct": false
+        },
+        {
+          "label": "492 cm³",
+          "is_correct": false
+        },
+        {
+          "label": "512 cm³",
+          "is_correct": true
+        },
+        {
+          "label": "552 cm³",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Volume and Surface Area",
+      "kind": "standard",
+      "difficulty": "easy",
+      "answer_type": "single",
+      "stem": "Find the volume of a cuboid 4 cm long, 4 cm wide and 8 cm high.",
+      "explanation": "Volume = l×b×h = 4×4×8 = 128 cm³.",
+      "options": [
+        {
+          "label": "128 cm³",
+          "is_correct": true
+        },
+        {
+          "label": "130 cm³",
+          "is_correct": false
+        },
+        {
+          "label": "132 cm³",
+          "is_correct": false
+        },
+        {
+          "label": "126 cm³",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Volume and Surface Area",
+      "kind": "standard",
+      "difficulty": "easy",
+      "answer_type": "single",
+      "stem": "Find the volume of a cuboid 9 cm long, 5 cm wide and 16 cm high.",
+      "explanation": "Volume = l×b×h = 9×5×16 = 720 cm³.",
+      "options": [
+        {
+          "label": "720 cm³",
+          "is_correct": true
+        },
+        {
+          "label": "691 cm³",
+          "is_correct": false
+        },
+        {
+          "label": "778 cm³",
+          "is_correct": false
+        },
+        {
+          "label": "749 cm³",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Volume and Surface Area",
+      "kind": "standard",
+      "difficulty": "easy",
+      "answer_type": "single",
+      "stem": "Find the total surface area of a cube of edge 19 cm.",
+      "explanation": "Surface area = 6a² = 6×19² = 2166 cm².",
+      "options": [
+        {
+          "label": "2340 cm²",
+          "is_correct": false
+        },
+        {
+          "label": "2253 cm²",
+          "is_correct": false
+        },
+        {
+          "label": "2079 cm²",
+          "is_correct": false
+        },
+        {
+          "label": "2166 cm²",
+          "is_correct": true
+        }
+      ]
+    },
+    {
+      "chapter": "Volume and Surface Area",
+      "kind": "standard",
+      "difficulty": "easy",
+      "answer_type": "single",
+      "stem": "Find the volume of a cuboid 14 cm long, 9 cm wide and 15 cm high.",
+      "explanation": "Volume = l×b×h = 14×9×15 = 1890 cm³.",
+      "options": [
+        {
+          "label": "1890 cm³",
+          "is_correct": true
+        },
+        {
+          "label": "1966 cm³",
+          "is_correct": false
+        },
+        {
+          "label": "1814 cm³",
+          "is_correct": false
+        },
+        {
+          "label": "2042 cm³",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Volume and Surface Area",
+      "kind": "standard",
+      "difficulty": "easy",
+      "answer_type": "single",
+      "stem": "Find the volume of a cuboid 9 cm long, 16 cm wide and 7 cm high.",
+      "explanation": "Volume = l×b×h = 9×16×7 = 1008 cm³.",
+      "options": [
+        {
+          "label": "1008 cm³",
+          "is_correct": true
+        },
+        {
+          "label": "968 cm³",
+          "is_correct": false
+        },
+        {
+          "label": "1088 cm³",
+          "is_correct": false
+        },
+        {
+          "label": "1048 cm³",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Volume and Surface Area",
+      "kind": "standard",
+      "difficulty": "easy",
+      "answer_type": "single",
+      "stem": "Find the total surface area of a cube of edge 15 cm.",
+      "explanation": "Surface area = 6a² = 6×15² = 1350 cm².",
+      "options": [
+        {
+          "label": "1296 cm²",
+          "is_correct": false
+        },
+        {
+          "label": "1458 cm²",
+          "is_correct": false
+        },
+        {
+          "label": "1350 cm²",
+          "is_correct": true
+        },
+        {
+          "label": "1404 cm²",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Volume and Surface Area",
+      "kind": "standard",
+      "difficulty": "easy",
+      "answer_type": "single",
+      "stem": "Find the volume of a cuboid 19 cm long, 7 cm wide and 18 cm high.",
+      "explanation": "Volume = l×b×h = 19×7×18 = 2394 cm³.",
+      "options": [
+        {
+          "label": "2394 cm³",
+          "is_correct": true
+        },
+        {
+          "label": "2298 cm³",
+          "is_correct": false
+        },
+        {
+          "label": "2586 cm³",
+          "is_correct": false
+        },
+        {
+          "label": "2490 cm³",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Volume and Surface Area",
+      "kind": "standard",
+      "difficulty": "easy",
+      "answer_type": "single",
+      "stem": "Find the total surface area of a cube of edge 18 cm.",
+      "explanation": "Surface area = 6a² = 6×18² = 1944 cm².",
+      "options": [
+        {
+          "label": "1944 cm²",
+          "is_correct": true
+        },
+        {
+          "label": "2100 cm²",
+          "is_correct": false
+        },
+        {
+          "label": "1866 cm²",
+          "is_correct": false
+        },
+        {
+          "label": "2022 cm²",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Volume and Surface Area",
+      "kind": "standard",
+      "difficulty": "easy",
+      "answer_type": "single",
+      "stem": "Find the total surface area of a cube of edge 23 cm.",
+      "explanation": "Surface area = 6a² = 6×23² = 3174 cm².",
+      "options": [
+        {
+          "label": "3047 cm²",
+          "is_correct": false
+        },
+        {
+          "label": "3301 cm²",
+          "is_correct": false
+        },
+        {
+          "label": "3428 cm²",
+          "is_correct": false
+        },
+        {
+          "label": "3174 cm²",
+          "is_correct": true
+        }
+      ]
+    },
+    {
+      "chapter": "Volume and Surface Area",
+      "kind": "standard",
+      "difficulty": "easy",
+      "answer_type": "single",
+      "stem": "Find the volume of a cuboid 14 cm long, 8 cm wide and 7 cm high.",
+      "explanation": "Volume = l×b×h = 14×8×7 = 784 cm³.",
+      "options": [
+        {
+          "label": "815 cm³",
+          "is_correct": false
+        },
+        {
+          "label": "846 cm³",
+          "is_correct": false
+        },
+        {
+          "label": "753 cm³",
+          "is_correct": false
+        },
+        {
+          "label": "784 cm³",
+          "is_correct": true
+        }
+      ]
+    },
+    {
+      "chapter": "Volume and Surface Area",
+      "kind": "standard",
+      "difficulty": "easy",
+      "answer_type": "single",
+      "stem": "Find the volume of a cuboid 19 cm long, 12 cm wide and 14 cm high.",
+      "explanation": "Volume = l×b×h = 19×12×14 = 3192 cm³.",
+      "options": [
+        {
+          "label": "3192 cm³",
+          "is_correct": true
+        },
+        {
+          "label": "3448 cm³",
+          "is_correct": false
+        },
+        {
+          "label": "3320 cm³",
+          "is_correct": false
+        },
+        {
+          "label": "3064 cm³",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Volume and Surface Area",
+      "kind": "standard",
+      "difficulty": "easy",
+      "answer_type": "single",
+      "stem": "Find the volume of a cube of edge 7 cm.",
+      "explanation": "Volume = a³ = 7³ = 343 cm³.",
+      "options": [
+        {
+          "label": "343 cm³",
+          "is_correct": true
+        },
+        {
+          "label": "371 cm³",
+          "is_correct": false
+        },
+        {
+          "label": "357 cm³",
+          "is_correct": false
+        },
+        {
+          "label": "329 cm³",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Volume and Surface Area",
+      "kind": "standard",
+      "difficulty": "easy",
+      "answer_type": "single",
+      "stem": "Find the volume of a cuboid 3 cm long, 4 cm wide and 6 cm high.",
+      "explanation": "Volume = l×b×h = 3×4×6 = 72 cm³.",
+      "options": [
+        {
+          "label": "72 cm³",
+          "is_correct": true
+        },
+        {
+          "label": "74 cm³",
+          "is_correct": false
+        },
+        {
+          "label": "76 cm³",
+          "is_correct": false
+        },
+        {
+          "label": "70 cm³",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Volume and Surface Area",
+      "kind": "standard",
+      "difficulty": "easy",
+      "answer_type": "single",
+      "stem": "Find the volume of a cuboid 10 cm long, 3 cm wide and 6 cm high.",
+      "explanation": "Volume = l×b×h = 10×3×6 = 180 cm³.",
+      "options": [
+        {
+          "label": "178 cm³",
+          "is_correct": false
+        },
+        {
+          "label": "184 cm³",
+          "is_correct": false
+        },
+        {
+          "label": "182 cm³",
+          "is_correct": false
+        },
+        {
+          "label": "180 cm³",
+          "is_correct": true
+        }
+      ]
+    },
+    {
+      "chapter": "Volume and Surface Area",
+      "kind": "standard",
+      "difficulty": "easy",
+      "answer_type": "single",
+      "stem": "Find the total surface area of a cube of edge 14 cm.",
+      "explanation": "Surface area = 6a² = 6×14² = 1176 cm².",
+      "options": [
+        {
+          "label": "1223 cm²",
+          "is_correct": false
+        },
+        {
+          "label": "1129 cm²",
+          "is_correct": false
+        },
+        {
+          "label": "1270 cm²",
+          "is_correct": false
+        },
+        {
+          "label": "1176 cm²",
+          "is_correct": true
+        }
+      ]
+    },
+    {
+      "chapter": "Volume and Surface Area",
+      "kind": "standard",
+      "difficulty": "easy",
+      "answer_type": "single",
+      "stem": "Find the total surface area of a cube of edge 11 cm.",
+      "explanation": "Surface area = 6a² = 6×11² = 726 cm².",
+      "options": [
+        {
+          "label": "726 cm²",
+          "is_correct": true
+        },
+        {
+          "label": "697 cm²",
+          "is_correct": false
+        },
+        {
+          "label": "784 cm²",
+          "is_correct": false
+        },
+        {
+          "label": "755 cm²",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Volume and Surface Area",
+      "kind": "standard",
+      "difficulty": "easy",
+      "answer_type": "single",
+      "stem": "Find the total surface area of a cube of edge 21 cm.",
+      "explanation": "Surface area = 6a² = 6×21² = 2646 cm².",
+      "options": [
+        {
+          "label": "2540 cm²",
+          "is_correct": false
+        },
+        {
+          "label": "2752 cm²",
+          "is_correct": false
+        },
+        {
+          "label": "2646 cm²",
+          "is_correct": true
+        },
+        {
+          "label": "2858 cm²",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Volume and Surface Area",
+      "kind": "standard",
+      "difficulty": "easy",
+      "answer_type": "single",
+      "stem": "Find the volume of a cuboid 19 cm long, 13 cm wide and 7 cm high.",
+      "explanation": "Volume = l×b×h = 19×13×7 = 1729 cm³.",
+      "options": [
+        {
+          "label": "1729 cm³",
+          "is_correct": true
+        },
+        {
+          "label": "1867 cm³",
+          "is_correct": false
+        },
+        {
+          "label": "1798 cm³",
+          "is_correct": false
+        },
+        {
+          "label": "1660 cm³",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Volume and Surface Area",
+      "kind": "standard",
+      "difficulty": "easy",
+      "answer_type": "single",
+      "stem": "Find the total surface area of a cube of edge 25 cm.",
+      "explanation": "Surface area = 6a² = 6×25² = 3750 cm².",
+      "options": [
+        {
+          "label": "4050 cm²",
+          "is_correct": false
+        },
+        {
+          "label": "3900 cm²",
+          "is_correct": false
+        },
+        {
+          "label": "3750 cm²",
+          "is_correct": true
+        },
+        {
+          "label": "3600 cm²",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Volume and Surface Area",
+      "kind": "standard",
+      "difficulty": "easy",
+      "answer_type": "single",
+      "stem": "Find the volume of a cuboid 14 cm long, 15 cm wide and 13 cm high.",
+      "explanation": "Volume = l×b×h = 14×15×13 = 2730 cm³.",
+      "options": [
+        {
+          "label": "2948 cm³",
+          "is_correct": false
+        },
+        {
+          "label": "2839 cm³",
+          "is_correct": false
+        },
+        {
+          "label": "2621 cm³",
+          "is_correct": false
+        },
+        {
+          "label": "2730 cm³",
+          "is_correct": true
+        }
+      ]
+    },
+    {
+      "chapter": "Volume and Surface Area",
+      "kind": "standard",
+      "difficulty": "easy",
+      "answer_type": "single",
+      "stem": "Find the volume of a cuboid 15 cm long, 11 cm wide and 19 cm high.",
+      "explanation": "Volume = l×b×h = 15×11×19 = 3135 cm³.",
+      "options": [
+        {
+          "label": "3260 cm³",
+          "is_correct": false
+        },
+        {
+          "label": "3135 cm³",
+          "is_correct": true
+        },
+        {
+          "label": "3385 cm³",
+          "is_correct": false
+        },
+        {
+          "label": "3010 cm³",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Volume and Surface Area",
+      "kind": "standard",
+      "difficulty": "easy",
+      "answer_type": "single",
+      "stem": "Find the volume of a cube of edge 13 cm.",
+      "explanation": "Volume = a³ = 13³ = 2197 cm³.",
+      "options": [
+        {
+          "label": "2109 cm³",
+          "is_correct": false
+        },
+        {
+          "label": "2197 cm³",
+          "is_correct": true
+        },
+        {
+          "label": "2373 cm³",
+          "is_correct": false
+        },
+        {
+          "label": "2285 cm³",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Volume and Surface Area",
+      "kind": "standard",
+      "difficulty": "easy",
+      "answer_type": "single",
+      "stem": "Find the volume of a cube of edge 10 cm.",
+      "explanation": "Volume = a³ = 10³ = 1000 cm³.",
+      "options": [
+        {
+          "label": "960 cm³",
+          "is_correct": false
+        },
+        {
+          "label": "1080 cm³",
+          "is_correct": false
+        },
+        {
+          "label": "1040 cm³",
+          "is_correct": false
+        },
+        {
+          "label": "1000 cm³",
+          "is_correct": true
+        }
+      ]
+    },
+    {
+      "chapter": "Volume and Surface Area",
+      "kind": "standard",
+      "difficulty": "easy",
+      "answer_type": "single",
+      "stem": "Find the volume of a cuboid 15 cm long, 15 cm wide and 15 cm high.",
+      "explanation": "Volume = l×b×h = 15×15×15 = 3375 cm³.",
+      "options": [
+        {
+          "label": "3375 cm³",
+          "is_correct": true
+        },
+        {
+          "label": "3645 cm³",
+          "is_correct": false
+        },
+        {
+          "label": "3240 cm³",
+          "is_correct": false
+        },
+        {
+          "label": "3510 cm³",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Volume and Surface Area",
+      "kind": "standard",
+      "difficulty": "easy",
+      "answer_type": "single",
+      "stem": "Find the total surface area of a cube of edge 9 cm.",
+      "explanation": "Surface area = 6a² = 6×9² = 486 cm².",
+      "options": [
+        {
+          "label": "486 cm²",
+          "is_correct": true
+        },
+        {
+          "label": "467 cm²",
+          "is_correct": false
+        },
+        {
+          "label": "505 cm²",
+          "is_correct": false
+        },
+        {
+          "label": "524 cm²",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Volume and Surface Area",
+      "kind": "standard",
+      "difficulty": "easy",
+      "answer_type": "single",
+      "stem": "Find the total surface area of a cube of edge 8 cm.",
+      "explanation": "Surface area = 6a² = 6×8² = 384 cm².",
+      "options": [
+        {
+          "label": "384 cm²",
+          "is_correct": true
+        },
+        {
+          "label": "414 cm²",
+          "is_correct": false
+        },
+        {
+          "label": "399 cm²",
+          "is_correct": false
+        },
+        {
+          "label": "369 cm²",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Volume and Surface Area",
+      "kind": "standard",
+      "difficulty": "easy",
+      "answer_type": "single",
+      "stem": "Find the volume of a cube of edge 20 cm.",
+      "explanation": "Volume = a³ = 20³ = 8000 cm³.",
+      "options": [
+        {
+          "label": "8640 cm³",
+          "is_correct": false
+        },
+        {
+          "label": "7680 cm³",
+          "is_correct": false
+        },
+        {
+          "label": "8000 cm³",
+          "is_correct": true
+        },
+        {
+          "label": "8320 cm³",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Volume and Surface Area",
+      "kind": "standard",
+      "difficulty": "easy",
+      "answer_type": "single",
+      "stem": "Find the volume of a cuboid 11 cm long, 16 cm wide and 15 cm high.",
+      "explanation": "Volume = l×b×h = 11×16×15 = 2640 cm³.",
+      "options": [
+        {
+          "label": "2534 cm³",
+          "is_correct": false
+        },
+        {
+          "label": "2852 cm³",
+          "is_correct": false
+        },
+        {
+          "label": "2640 cm³",
+          "is_correct": true
+        },
+        {
+          "label": "2746 cm³",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Volume and Surface Area",
+      "kind": "standard",
+      "difficulty": "easy",
+      "answer_type": "single",
+      "stem": "Find the volume of a cuboid 11 cm long, 20 cm wide and 5 cm high.",
+      "explanation": "Volume = l×b×h = 11×20×5 = 1100 cm³.",
+      "options": [
+        {
+          "label": "1100 cm³",
+          "is_correct": true
+        },
+        {
+          "label": "1188 cm³",
+          "is_correct": false
+        },
+        {
+          "label": "1056 cm³",
+          "is_correct": false
+        },
+        {
+          "label": "1144 cm³",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Volume and Surface Area",
+      "kind": "standard",
+      "difficulty": "easy",
+      "answer_type": "single",
+      "stem": "Find the total surface area of a cube of edge 20 cm.",
+      "explanation": "Surface area = 6a² = 6×20² = 2400 cm².",
+      "options": [
+        {
+          "label": "2496 cm²",
+          "is_correct": false
+        },
+        {
+          "label": "2400 cm²",
+          "is_correct": true
+        },
+        {
+          "label": "2304 cm²",
+          "is_correct": false
+        },
+        {
+          "label": "2592 cm²",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Volume and Surface Area",
+      "kind": "standard",
+      "difficulty": "easy",
+      "answer_type": "single",
+      "stem": "Find the volume of a cube of edge 17 cm.",
+      "explanation": "Volume = a³ = 17³ = 4913 cm³.",
+      "options": [
+        {
+          "label": "4716 cm³",
+          "is_correct": false
+        },
+        {
+          "label": "5307 cm³",
+          "is_correct": false
+        },
+        {
+          "label": "5110 cm³",
+          "is_correct": false
+        },
+        {
+          "label": "4913 cm³",
+          "is_correct": true
+        }
+      ]
+    },
+    {
+      "chapter": "Volume and Surface Area",
+      "kind": "standard",
+      "difficulty": "easy",
+      "answer_type": "single",
+      "stem": "Find the volume of a cuboid 8 cm long, 10 cm wide and 14 cm high.",
+      "explanation": "Volume = l×b×h = 8×10×14 = 1120 cm³.",
+      "options": [
+        {
+          "label": "1120 cm³",
+          "is_correct": true
+        },
+        {
+          "label": "1075 cm³",
+          "is_correct": false
+        },
+        {
+          "label": "1165 cm³",
+          "is_correct": false
+        },
+        {
+          "label": "1210 cm³",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Volume and Surface Area",
+      "kind": "standard",
+      "difficulty": "easy",
+      "answer_type": "single",
+      "stem": "Find the total surface area of a cube of edge 2 cm.",
+      "explanation": "Surface area = 6a² = 6×2² = 24 cm².",
+      "options": [
+        {
+          "label": "23 cm²",
+          "is_correct": false
+        },
+        {
+          "label": "24 cm²",
+          "is_correct": true
+        },
+        {
+          "label": "25 cm²",
+          "is_correct": false
+        },
+        {
+          "label": "26 cm²",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Volume and Surface Area",
+      "kind": "standard",
+      "difficulty": "easy",
+      "answer_type": "single",
+      "stem": "Find the volume of a cuboid 19 cm long, 18 cm wide and 20 cm high.",
+      "explanation": "Volume = l×b×h = 19×18×20 = 6840 cm³.",
+      "options": [
+        {
+          "label": "6566 cm³",
+          "is_correct": false
+        },
+        {
+          "label": "7388 cm³",
+          "is_correct": false
+        },
+        {
+          "label": "7114 cm³",
+          "is_correct": false
+        },
+        {
+          "label": "6840 cm³",
+          "is_correct": true
+        }
+      ]
+    },
+    {
+      "chapter": "Volume and Surface Area",
+      "kind": "standard",
+      "difficulty": "medium",
+      "answer_type": "single",
+      "stem": "The volume of a cube is 1000 cm³. Find the length of its edge.",
+      "explanation": "Edge = ∛1000 = 10 cm.",
+      "options": [
+        {
+          "label": "9 cm",
+          "is_correct": false
+        },
+        {
+          "label": "11 cm",
+          "is_correct": false
+        },
+        {
+          "label": "12 cm",
+          "is_correct": false
+        },
+        {
+          "label": "10 cm",
+          "is_correct": true
+        }
+      ]
+    },
+    {
+      "chapter": "Volume and Surface Area",
+      "kind": "standard",
+      "difficulty": "medium",
+      "answer_type": "single",
+      "stem": "The volume of a cube is 1728 cm³. Find the length of its edge.",
+      "explanation": "Edge = ∛1728 = 12 cm.",
+      "options": [
+        {
+          "label": "13 cm",
+          "is_correct": false
+        },
+        {
+          "label": "11 cm",
+          "is_correct": false
+        },
+        {
+          "label": "14 cm",
+          "is_correct": false
+        },
+        {
+          "label": "12 cm",
+          "is_correct": true
+        }
+      ]
+    },
+    {
+      "chapter": "Volume and Surface Area",
+      "kind": "standard",
+      "difficulty": "medium",
+      "answer_type": "single",
+      "stem": "Find the total surface area of a cuboid 13 cm × 7 cm × 10 cm.",
+      "explanation": "TSA = 2(lb+bh+hl) = 2(91+70+130) = 582 cm².",
+      "options": [
+        {
+          "label": "628 cm²",
+          "is_correct": false
+        },
+        {
+          "label": "582 cm²",
+          "is_correct": true
+        },
+        {
+          "label": "559 cm²",
+          "is_correct": false
+        },
+        {
+          "label": "605 cm²",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Volume and Surface Area",
+      "kind": "standard",
+      "difficulty": "medium",
+      "answer_type": "single",
+      "stem": "The volume of a cube is 4913 cm³. Find the length of its edge.",
+      "explanation": "Edge = ∛4913 = 17 cm.",
+      "options": [
+        {
+          "label": "19 cm",
+          "is_correct": false
+        },
+        {
+          "label": "16 cm",
+          "is_correct": false
+        },
+        {
+          "label": "18 cm",
+          "is_correct": false
+        },
+        {
+          "label": "17 cm",
+          "is_correct": true
+        }
+      ]
+    },
+    {
+      "chapter": "Volume and Surface Area",
+      "kind": "standard",
+      "difficulty": "medium",
+      "answer_type": "single",
+      "stem": "The volume of a cube is 8000 cm³. Find the length of its edge.",
+      "explanation": "Edge = ∛8000 = 20 cm.",
+      "options": [
+        {
+          "label": "19 cm",
+          "is_correct": false
+        },
+        {
+          "label": "20 cm",
+          "is_correct": true
+        },
+        {
+          "label": "21 cm",
+          "is_correct": false
+        },
+        {
+          "label": "22 cm",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Volume and Surface Area",
+      "kind": "standard",
+      "difficulty": "medium",
+      "answer_type": "single",
+      "stem": "Find the volume of a cylinder of radius 28 cm and height 17 cm. (Take π = 22/7.)",
+      "explanation": "Volume = πr²h = (22/7)×28²×17 = 41888 cm³.",
+      "options": [
+        {
+          "label": "40212 cm³",
+          "is_correct": false
+        },
+        {
+          "label": "45240 cm³",
+          "is_correct": false
+        },
+        {
+          "label": "41888 cm³",
+          "is_correct": true
+        },
+        {
+          "label": "43564 cm³",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Volume and Surface Area",
+      "kind": "standard",
+      "difficulty": "medium",
+      "answer_type": "single",
+      "stem": "Find the total surface area of a cuboid 13 cm × 14 cm × 15 cm.",
+      "explanation": "TSA = 2(lb+bh+hl) = 2(182+210+195) = 1174 cm².",
+      "options": [
+        {
+          "label": "1268 cm²",
+          "is_correct": false
+        },
+        {
+          "label": "1221 cm²",
+          "is_correct": false
+        },
+        {
+          "label": "1174 cm²",
+          "is_correct": true
+        },
+        {
+          "label": "1127 cm²",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Volume and Surface Area",
+      "kind": "standard",
+      "difficulty": "medium",
+      "answer_type": "single",
+      "stem": "Find the volume of a cylinder of radius 28 cm and height 3 cm. (Take π = 22/7.)",
+      "explanation": "Volume = πr²h = (22/7)×28²×3 = 7392 cm³.",
+      "options": [
+        {
+          "label": "7392 cm³",
+          "is_correct": true
+        },
+        {
+          "label": "7984 cm³",
+          "is_correct": false
+        },
+        {
+          "label": "7096 cm³",
+          "is_correct": false
+        },
+        {
+          "label": "7688 cm³",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Volume and Surface Area",
+      "kind": "standard",
+      "difficulty": "medium",
+      "answer_type": "single",
+      "stem": "The volume of a cube is 343 cm³. Find the length of its edge.",
+      "explanation": "Edge = ∛343 = 7 cm.",
+      "options": [
+        {
+          "label": "9 cm",
+          "is_correct": false
+        },
+        {
+          "label": "8 cm",
+          "is_correct": false
+        },
+        {
+          "label": "7 cm",
+          "is_correct": true
+        },
+        {
+          "label": "6 cm",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Volume and Surface Area",
+      "kind": "standard",
+      "difficulty": "medium",
+      "answer_type": "single",
+      "stem": "Find the total surface area of a cuboid 9 cm × 11 cm × 13 cm.",
+      "explanation": "TSA = 2(lb+bh+hl) = 2(99+143+117) = 718 cm².",
+      "options": [
+        {
+          "label": "718 cm²",
+          "is_correct": true
+        },
+        {
+          "label": "776 cm²",
+          "is_correct": false
+        },
+        {
+          "label": "689 cm²",
+          "is_correct": false
+        },
+        {
+          "label": "747 cm²",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Volume and Surface Area",
+      "kind": "standard",
+      "difficulty": "medium",
+      "answer_type": "single",
+      "stem": "Find the volume of a cylinder of radius 14 cm and height 8 cm. (Take π = 22/7.)",
+      "explanation": "Volume = πr²h = (22/7)×14²×8 = 4928 cm³.",
+      "options": [
+        {
+          "label": "4731 cm³",
+          "is_correct": false
+        },
+        {
+          "label": "4928 cm³",
+          "is_correct": true
+        },
+        {
+          "label": "5125 cm³",
+          "is_correct": false
+        },
+        {
+          "label": "5322 cm³",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Volume and Surface Area",
+      "kind": "standard",
+      "difficulty": "medium",
+      "answer_type": "single",
+      "stem": "Find the volume of a cylinder of radius 14 cm and height 19 cm. (Take π = 22/7.)",
+      "explanation": "Volume = πr²h = (22/7)×14²×19 = 11704 cm³.",
+      "options": [
+        {
+          "label": "12640 cm³",
+          "is_correct": false
+        },
+        {
+          "label": "12172 cm³",
+          "is_correct": false
+        },
+        {
+          "label": "11236 cm³",
+          "is_correct": false
+        },
+        {
+          "label": "11704 cm³",
+          "is_correct": true
+        }
+      ]
+    },
+    {
+      "chapter": "Volume and Surface Area",
+      "kind": "standard",
+      "difficulty": "medium",
+      "answer_type": "single",
+      "stem": "Find the volume of a cylinder of radius 28 cm and height 7 cm. (Take π = 22/7.)",
+      "explanation": "Volume = πr²h = (22/7)×28²×7 = 17248 cm³.",
+      "options": [
+        {
+          "label": "17248 cm³",
+          "is_correct": true
+        },
+        {
+          "label": "18628 cm³",
+          "is_correct": false
+        },
+        {
+          "label": "16558 cm³",
+          "is_correct": false
+        },
+        {
+          "label": "17938 cm³",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Volume and Surface Area",
+      "kind": "standard",
+      "difficulty": "medium",
+      "answer_type": "single",
+      "stem": "Find the total surface area of a cuboid 13 cm × 3 cm × 7 cm.",
+      "explanation": "TSA = 2(lb+bh+hl) = 2(39+21+91) = 302 cm².",
+      "options": [
+        {
+          "label": "314 cm²",
+          "is_correct": false
+        },
+        {
+          "label": "290 cm²",
+          "is_correct": false
+        },
+        {
+          "label": "326 cm²",
+          "is_correct": false
+        },
+        {
+          "label": "302 cm²",
+          "is_correct": true
+        }
+      ]
+    },
+    {
+      "chapter": "Volume and Surface Area",
+      "kind": "standard",
+      "difficulty": "medium",
+      "answer_type": "single",
+      "stem": "The volume of a cube is 125 cm³. Find the length of its edge.",
+      "explanation": "Edge = ∛125 = 5 cm.",
+      "options": [
+        {
+          "label": "7 cm",
+          "is_correct": false
+        },
+        {
+          "label": "6 cm",
+          "is_correct": false
+        },
+        {
+          "label": "4 cm",
+          "is_correct": false
+        },
+        {
+          "label": "5 cm",
+          "is_correct": true
+        }
+      ]
+    },
+    {
+      "chapter": "Volume and Surface Area",
+      "kind": "standard",
+      "difficulty": "medium",
+      "answer_type": "single",
+      "stem": "Find the volume of a cylinder of radius 14 cm and height 14 cm. (Take π = 22/7.)",
+      "explanation": "Volume = πr²h = (22/7)×14²×14 = 8624 cm³.",
+      "options": [
+        {
+          "label": "8624 cm³",
+          "is_correct": true
+        },
+        {
+          "label": "8279 cm³",
+          "is_correct": false
+        },
+        {
+          "label": "9314 cm³",
+          "is_correct": false
+        },
+        {
+          "label": "8969 cm³",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Volume and Surface Area",
+      "kind": "standard",
+      "difficulty": "medium",
+      "answer_type": "single",
+      "stem": "The volume of a cube is 2197 cm³. Find the length of its edge.",
+      "explanation": "Edge = ∛2197 = 13 cm.",
+      "options": [
+        {
+          "label": "13 cm",
+          "is_correct": true
+        },
+        {
+          "label": "15 cm",
+          "is_correct": false
+        },
+        {
+          "label": "12 cm",
+          "is_correct": false
+        },
+        {
+          "label": "14 cm",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Volume and Surface Area",
+      "kind": "standard",
+      "difficulty": "medium",
+      "answer_type": "single",
+      "stem": "The volume of a cube is 5832 cm³. Find the length of its edge.",
+      "explanation": "Edge = ∛5832 = 18 cm.",
+      "options": [
+        {
+          "label": "19 cm",
+          "is_correct": false
+        },
+        {
+          "label": "20 cm",
+          "is_correct": false
+        },
+        {
+          "label": "18 cm",
+          "is_correct": true
+        },
+        {
+          "label": "17 cm",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Volume and Surface Area",
+      "kind": "standard",
+      "difficulty": "medium",
+      "answer_type": "single",
+      "stem": "Find the total surface area of a cuboid 11 cm × 12 cm × 13 cm.",
+      "explanation": "TSA = 2(lb+bh+hl) = 2(132+156+143) = 862 cm².",
+      "options": [
+        {
+          "label": "862 cm²",
+          "is_correct": true
+        },
+        {
+          "label": "930 cm²",
+          "is_correct": false
+        },
+        {
+          "label": "828 cm²",
+          "is_correct": false
+        },
+        {
+          "label": "896 cm²",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Volume and Surface Area",
+      "kind": "standard",
+      "difficulty": "medium",
+      "answer_type": "single",
+      "stem": "Find the total surface area of a cuboid 10 cm × 6 cm × 3 cm.",
+      "explanation": "TSA = 2(lb+bh+hl) = 2(60+18+30) = 216 cm².",
+      "options": [
+        {
+          "label": "234 cm²",
+          "is_correct": false
+        },
+        {
+          "label": "216 cm²",
+          "is_correct": true
+        },
+        {
+          "label": "207 cm²",
+          "is_correct": false
+        },
+        {
+          "label": "225 cm²",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Volume and Surface Area",
+      "kind": "standard",
+      "difficulty": "medium",
+      "answer_type": "single",
+      "stem": "Find the total surface area of a cuboid 9 cm × 5 cm × 6 cm.",
+      "explanation": "TSA = 2(lb+bh+hl) = 2(45+30+54) = 258 cm².",
+      "options": [
+        {
+          "label": "268 cm²",
+          "is_correct": false
+        },
+        {
+          "label": "248 cm²",
+          "is_correct": false
+        },
+        {
+          "label": "258 cm²",
+          "is_correct": true
+        },
+        {
+          "label": "278 cm²",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Volume and Surface Area",
+      "kind": "standard",
+      "difficulty": "medium",
+      "answer_type": "single",
+      "stem": "Find the total surface area of a cuboid 14 cm × 3 cm × 13 cm.",
+      "explanation": "TSA = 2(lb+bh+hl) = 2(42+39+182) = 526 cm².",
+      "options": [
+        {
+          "label": "526 cm²",
+          "is_correct": true
+        },
+        {
+          "label": "568 cm²",
+          "is_correct": false
+        },
+        {
+          "label": "547 cm²",
+          "is_correct": false
+        },
+        {
+          "label": "505 cm²",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Volume and Surface Area",
+      "kind": "standard",
+      "difficulty": "medium",
+      "answer_type": "single",
+      "stem": "The volume of a cube is 512 cm³. Find the length of its edge.",
+      "explanation": "Edge = ∛512 = 8 cm.",
+      "options": [
+        {
+          "label": "8 cm",
+          "is_correct": true
+        },
+        {
+          "label": "10 cm",
+          "is_correct": false
+        },
+        {
+          "label": "9 cm",
+          "is_correct": false
+        },
+        {
+          "label": "7 cm",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Volume and Surface Area",
+      "kind": "standard",
+      "difficulty": "medium",
+      "answer_type": "single",
+      "stem": "Find the volume of a cylinder of radius 35 cm and height 12 cm. (Take π = 22/7.)",
+      "explanation": "Volume = πr²h = (22/7)×35²×12 = 46200 cm³.",
+      "options": [
+        {
+          "label": "46200 cm³",
+          "is_correct": true
+        },
+        {
+          "label": "48048 cm³",
+          "is_correct": false
+        },
+        {
+          "label": "49896 cm³",
+          "is_correct": false
+        },
+        {
+          "label": "44352 cm³",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Volume and Surface Area",
+      "kind": "standard",
+      "difficulty": "medium",
+      "answer_type": "single",
+      "stem": "Find the total surface area of a cuboid 7 cm × 14 cm × 11 cm.",
+      "explanation": "TSA = 2(lb+bh+hl) = 2(98+154+77) = 658 cm².",
+      "options": [
+        {
+          "label": "684 cm²",
+          "is_correct": false
+        },
+        {
+          "label": "658 cm²",
+          "is_correct": true
+        },
+        {
+          "label": "632 cm²",
+          "is_correct": false
+        },
+        {
+          "label": "710 cm²",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Volume and Surface Area",
+      "kind": "standard",
+      "difficulty": "medium",
+      "answer_type": "single",
+      "stem": "Find the volume of a cylinder of radius 28 cm and height 5 cm. (Take π = 22/7.)",
+      "explanation": "Volume = πr²h = (22/7)×28²×5 = 12320 cm³.",
+      "options": [
+        {
+          "label": "11827 cm³",
+          "is_correct": false
+        },
+        {
+          "label": "13306 cm³",
+          "is_correct": false
+        },
+        {
+          "label": "12320 cm³",
+          "is_correct": true
+        },
+        {
+          "label": "12813 cm³",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Volume and Surface Area",
+      "kind": "standard",
+      "difficulty": "medium",
+      "answer_type": "single",
+      "stem": "Find the total surface area of a cuboid 7 cm × 6 cm × 10 cm.",
+      "explanation": "TSA = 2(lb+bh+hl) = 2(42+60+70) = 344 cm².",
+      "options": [
+        {
+          "label": "344 cm²",
+          "is_correct": true
+        },
+        {
+          "label": "372 cm²",
+          "is_correct": false
+        },
+        {
+          "label": "358 cm²",
+          "is_correct": false
+        },
+        {
+          "label": "330 cm²",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Volume and Surface Area",
+      "kind": "standard",
+      "difficulty": "medium",
+      "answer_type": "single",
+      "stem": "Find the volume of a cylinder of radius 14 cm and height 24 cm. (Take π = 22/7.)",
+      "explanation": "Volume = πr²h = (22/7)×14²×24 = 14784 cm³.",
+      "options": [
+        {
+          "label": "14193 cm³",
+          "is_correct": false
+        },
+        {
+          "label": "15375 cm³",
+          "is_correct": false
+        },
+        {
+          "label": "15966 cm³",
+          "is_correct": false
+        },
+        {
+          "label": "14784 cm³",
+          "is_correct": true
+        }
+      ]
+    },
+    {
+      "chapter": "Volume and Surface Area",
+      "kind": "standard",
+      "difficulty": "medium",
+      "answer_type": "single",
+      "stem": "Find the volume of a cylinder of radius 14 cm and height 7 cm. (Take π = 22/7.)",
+      "explanation": "Volume = πr²h = (22/7)×14²×7 = 4312 cm³.",
+      "options": [
+        {
+          "label": "4140 cm³",
+          "is_correct": false
+        },
+        {
+          "label": "4656 cm³",
+          "is_correct": false
+        },
+        {
+          "label": "4312 cm³",
+          "is_correct": true
+        },
+        {
+          "label": "4484 cm³",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Volume and Surface Area",
+      "kind": "standard",
+      "difficulty": "medium",
+      "answer_type": "single",
+      "stem": "Find the total surface area of a cuboid 10 cm × 11 cm × 5 cm.",
+      "explanation": "TSA = 2(lb+bh+hl) = 2(110+55+50) = 430 cm².",
+      "options": [
+        {
+          "label": "447 cm²",
+          "is_correct": false
+        },
+        {
+          "label": "430 cm²",
+          "is_correct": true
+        },
+        {
+          "label": "464 cm²",
+          "is_correct": false
+        },
+        {
+          "label": "413 cm²",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Volume and Surface Area",
+      "kind": "standard",
+      "difficulty": "medium",
+      "answer_type": "single",
+      "stem": "The volume of a cube is 4096 cm³. Find the length of its edge.",
+      "explanation": "Edge = ∛4096 = 16 cm.",
+      "options": [
+        {
+          "label": "15 cm",
+          "is_correct": false
+        },
+        {
+          "label": "16 cm",
+          "is_correct": true
+        },
+        {
+          "label": "18 cm",
+          "is_correct": false
+        },
+        {
+          "label": "17 cm",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Volume and Surface Area",
+      "kind": "standard",
+      "difficulty": "medium",
+      "answer_type": "single",
+      "stem": "Find the total surface area of a cuboid 4 cm × 14 cm × 5 cm.",
+      "explanation": "TSA = 2(lb+bh+hl) = 2(56+70+20) = 292 cm².",
+      "options": [
+        {
+          "label": "280 cm²",
+          "is_correct": false
+        },
+        {
+          "label": "316 cm²",
+          "is_correct": false
+        },
+        {
+          "label": "292 cm²",
+          "is_correct": true
+        },
+        {
+          "label": "304 cm²",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Volume and Surface Area",
+      "kind": "standard",
+      "difficulty": "medium",
+      "answer_type": "single",
+      "stem": "The volume of a cube is 2744 cm³. Find the length of its edge.",
+      "explanation": "Edge = ∛2744 = 14 cm.",
+      "options": [
+        {
+          "label": "15 cm",
+          "is_correct": false
+        },
+        {
+          "label": "16 cm",
+          "is_correct": false
+        },
+        {
+          "label": "13 cm",
+          "is_correct": false
+        },
+        {
+          "label": "14 cm",
+          "is_correct": true
+        }
+      ]
+    },
+    {
+      "chapter": "Volume and Surface Area",
+      "kind": "standard",
+      "difficulty": "medium",
+      "answer_type": "single",
+      "stem": "Find the volume of a cylinder of radius 35 cm and height 14 cm. (Take π = 22/7.)",
+      "explanation": "Volume = πr²h = (22/7)×35²×14 = 53900 cm³.",
+      "options": [
+        {
+          "label": "51744 cm³",
+          "is_correct": false
+        },
+        {
+          "label": "58212 cm³",
+          "is_correct": false
+        },
+        {
+          "label": "53900 cm³",
+          "is_correct": true
+        },
+        {
+          "label": "56056 cm³",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Volume and Surface Area",
+      "kind": "standard",
+      "difficulty": "medium",
+      "answer_type": "single",
+      "stem": "The volume of a cube is 6859 cm³. Find the length of its edge.",
+      "explanation": "Edge = ∛6859 = 19 cm.",
+      "options": [
+        {
+          "label": "20 cm",
+          "is_correct": false
+        },
+        {
+          "label": "19 cm",
+          "is_correct": true
+        },
+        {
+          "label": "21 cm",
+          "is_correct": false
+        },
+        {
+          "label": "18 cm",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Volume and Surface Area",
+      "kind": "standard",
+      "difficulty": "medium",
+      "answer_type": "single",
+      "stem": "Find the volume of a cylinder of radius 7 cm and height 10 cm. (Take π = 22/7.)",
+      "explanation": "Volume = πr²h = (22/7)×7²×10 = 1540 cm³.",
+      "options": [
+        {
+          "label": "1478 cm³",
+          "is_correct": false
+        },
+        {
+          "label": "1664 cm³",
+          "is_correct": false
+        },
+        {
+          "label": "1602 cm³",
+          "is_correct": false
+        },
+        {
+          "label": "1540 cm³",
+          "is_correct": true
+        }
+      ]
+    },
+    {
+      "chapter": "Volume and Surface Area",
+      "kind": "standard",
+      "difficulty": "medium",
+      "answer_type": "single",
+      "stem": "The volume of a cube is 64 cm³. Find the length of its edge.",
+      "explanation": "Edge = ∛64 = 4 cm.",
+      "options": [
+        {
+          "label": "5 cm",
+          "is_correct": false
+        },
+        {
+          "label": "4 cm",
+          "is_correct": true
+        },
+        {
+          "label": "6 cm",
+          "is_correct": false
+        },
+        {
+          "label": "3 cm",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Volume and Surface Area",
+      "kind": "standard",
+      "difficulty": "medium",
+      "answer_type": "single",
+      "stem": "The volume of a cube is 1331 cm³. Find the length of its edge.",
+      "explanation": "Edge = ∛1331 = 11 cm.",
+      "options": [
+        {
+          "label": "11 cm",
+          "is_correct": true
+        },
+        {
+          "label": "10 cm",
+          "is_correct": false
+        },
+        {
+          "label": "13 cm",
+          "is_correct": false
+        },
+        {
+          "label": "12 cm",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Volume and Surface Area",
+      "kind": "standard",
+      "difficulty": "medium",
+      "answer_type": "single",
+      "stem": "The volume of a cube is 3375 cm³. Find the length of its edge.",
+      "explanation": "Edge = ∛3375 = 15 cm.",
+      "options": [
+        {
+          "label": "15 cm",
+          "is_correct": true
+        },
+        {
+          "label": "17 cm",
+          "is_correct": false
+        },
+        {
+          "label": "16 cm",
+          "is_correct": false
+        },
+        {
+          "label": "14 cm",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Volume and Surface Area",
+      "kind": "standard",
+      "difficulty": "medium",
+      "answer_type": "single",
+      "stem": "The volume of a cube is 27 cm³. Find the length of its edge.",
+      "explanation": "Edge = ∛27 = 3 cm.",
+      "options": [
+        {
+          "label": "4 cm",
+          "is_correct": false
+        },
+        {
+          "label": "3 cm",
+          "is_correct": true
+        },
+        {
+          "label": "5 cm",
+          "is_correct": false
+        },
+        {
+          "label": "2 cm",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Volume and Surface Area",
+      "kind": "standard",
+      "difficulty": "medium",
+      "answer_type": "single",
+      "stem": "Find the volume of a cylinder of radius 28 cm and height 6 cm. (Take π = 22/7.)",
+      "explanation": "Volume = πr²h = (22/7)×28²×6 = 14784 cm³.",
+      "options": [
+        {
+          "label": "15375 cm³",
+          "is_correct": false
+        },
+        {
+          "label": "14784 cm³",
+          "is_correct": true
+        },
+        {
+          "label": "15966 cm³",
+          "is_correct": false
+        },
+        {
+          "label": "14193 cm³",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Volume and Surface Area",
+      "kind": "standard",
+      "difficulty": "medium",
+      "answer_type": "single",
+      "stem": "Find the total surface area of a cuboid 7 cm × 6 cm × 7 cm.",
+      "explanation": "TSA = 2(lb+bh+hl) = 2(42+42+49) = 266 cm².",
+      "options": [
+        {
+          "label": "266 cm²",
+          "is_correct": true
+        },
+        {
+          "label": "288 cm²",
+          "is_correct": false
+        },
+        {
+          "label": "277 cm²",
+          "is_correct": false
+        },
+        {
+          "label": "255 cm²",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Volume and Surface Area",
+      "kind": "standard",
+      "difficulty": "medium",
+      "answer_type": "single",
+      "stem": "Find the total surface area of a cuboid 14 cm × 9 cm × 10 cm.",
+      "explanation": "TSA = 2(lb+bh+hl) = 2(126+90+140) = 712 cm².",
+      "options": [
+        {
+          "label": "684 cm²",
+          "is_correct": false
+        },
+        {
+          "label": "740 cm²",
+          "is_correct": false
+        },
+        {
+          "label": "768 cm²",
+          "is_correct": false
+        },
+        {
+          "label": "712 cm²",
+          "is_correct": true
+        }
+      ]
+    },
+    {
+      "chapter": "Volume and Surface Area",
+      "kind": "standard",
+      "difficulty": "medium",
+      "answer_type": "single",
+      "stem": "Find the volume of a cylinder of radius 28 cm and height 20 cm. (Take π = 22/7.)",
+      "explanation": "Volume = πr²h = (22/7)×28²×20 = 49280 cm³.",
+      "options": [
+        {
+          "label": "51251 cm³",
+          "is_correct": false
+        },
+        {
+          "label": "47309 cm³",
+          "is_correct": false
+        },
+        {
+          "label": "53222 cm³",
+          "is_correct": false
+        },
+        {
+          "label": "49280 cm³",
+          "is_correct": true
+        }
+      ]
+    },
+    {
+      "chapter": "Volume and Surface Area",
+      "kind": "standard",
+      "difficulty": "medium",
+      "answer_type": "single",
+      "stem": "Find the volume of a cylinder of radius 14 cm and height 9 cm. (Take π = 22/7.)",
+      "explanation": "Volume = πr²h = (22/7)×14²×9 = 5544 cm³.",
+      "options": [
+        {
+          "label": "5766 cm³",
+          "is_correct": false
+        },
+        {
+          "label": "5544 cm³",
+          "is_correct": true
+        },
+        {
+          "label": "5322 cm³",
+          "is_correct": false
+        },
+        {
+          "label": "5988 cm³",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Volume and Surface Area",
+      "kind": "standard",
+      "difficulty": "medium",
+      "answer_type": "single",
+      "stem": "Find the total surface area of a cuboid 3 cm × 3 cm × 15 cm.",
+      "explanation": "TSA = 2(lb+bh+hl) = 2(9+45+45) = 198 cm².",
+      "options": [
+        {
+          "label": "196 cm²",
+          "is_correct": false
+        },
+        {
+          "label": "198 cm²",
+          "is_correct": true
+        },
+        {
+          "label": "202 cm²",
+          "is_correct": false
+        },
+        {
+          "label": "200 cm²",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Volume and Surface Area",
+      "kind": "standard",
+      "difficulty": "medium",
+      "answer_type": "single",
+      "stem": "Find the volume of a cylinder of radius 28 cm and height 14 cm. (Take π = 22/7.)",
+      "explanation": "Volume = πr²h = (22/7)×28²×14 = 34496 cm³.",
+      "options": [
+        {
+          "label": "33116 cm³",
+          "is_correct": false
+        },
+        {
+          "label": "34496 cm³",
+          "is_correct": true
+        },
+        {
+          "label": "35876 cm³",
+          "is_correct": false
+        },
+        {
+          "label": "37256 cm³",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Volume and Surface Area",
+      "kind": "standard",
+      "difficulty": "medium",
+      "answer_type": "single",
+      "stem": "Find the total surface area of a cuboid 15 cm × 4 cm × 12 cm.",
+      "explanation": "TSA = 2(lb+bh+hl) = 2(60+48+180) = 576 cm².",
+      "options": [
+        {
+          "label": "576 cm²",
+          "is_correct": true
+        },
+        {
+          "label": "599 cm²",
+          "is_correct": false
+        },
+        {
+          "label": "622 cm²",
+          "is_correct": false
+        },
+        {
+          "label": "553 cm²",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Volume and Surface Area",
+      "kind": "standard",
+      "difficulty": "medium",
+      "answer_type": "single",
+      "stem": "Find the volume of a cylinder of radius 21 cm and height 23 cm. (Take π = 22/7.)",
+      "explanation": "Volume = πr²h = (22/7)×21²×23 = 31878 cm³.",
+      "options": [
+        {
+          "label": "30603 cm³",
+          "is_correct": false
+        },
+        {
+          "label": "34428 cm³",
+          "is_correct": false
+        },
+        {
+          "label": "33153 cm³",
+          "is_correct": false
+        },
+        {
+          "label": "31878 cm³",
+          "is_correct": true
+        }
+      ]
+    },
+    {
+      "chapter": "Volume and Surface Area",
+      "kind": "standard",
+      "difficulty": "medium",
+      "answer_type": "single",
+      "stem": "Find the volume of a cylinder of radius 35 cm and height 23 cm. (Take π = 22/7.)",
+      "explanation": "Volume = πr²h = (22/7)×35²×23 = 88550 cm³.",
+      "options": [
+        {
+          "label": "85008 cm³",
+          "is_correct": false
+        },
+        {
+          "label": "88550 cm³",
+          "is_correct": true
+        },
+        {
+          "label": "95634 cm³",
+          "is_correct": false
+        },
+        {
+          "label": "92092 cm³",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Volume and Surface Area",
+      "kind": "standard",
+      "difficulty": "hard",
+      "answer_type": "single",
+      "stem": "Find the surface area of a sphere of radius 21 cm. (Take π = 22/7.)",
+      "explanation": "Surface area = 4πr² = 4×(22/7)×21² = 5544 cm².",
+      "options": [
+        {
+          "label": "5544 cm²",
+          "is_correct": true
+        },
+        {
+          "label": "5988 cm²",
+          "is_correct": false
+        },
+        {
+          "label": "5766 cm²",
+          "is_correct": false
+        },
+        {
+          "label": "5322 cm²",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Volume and Surface Area",
+      "kind": "standard",
+      "difficulty": "hard",
+      "answer_type": "single",
+      "stem": "The volume of a cuboid is 594 cm³. If its length is 9 cm and breadth is 11 cm, find its height.",
+      "explanation": "Height = volume/(l×b) = 594/(9×11) = 6 cm.",
+      "options": [
+        {
+          "label": "6 cm",
+          "is_correct": true
+        },
+        {
+          "label": "7 cm",
+          "is_correct": false
+        },
+        {
+          "label": "5 cm",
+          "is_correct": false
+        },
+        {
+          "label": "8 cm",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Volume and Surface Area",
+      "kind": "standard",
+      "difficulty": "hard",
+      "answer_type": "single",
+      "stem": "Find the surface area of a sphere of radius 35 cm. (Take π = 22/7.)",
+      "explanation": "Surface area = 4πr² = 4×(22/7)×35² = 15400 cm².",
+      "options": [
+        {
+          "label": "14784 cm²",
+          "is_correct": false
+        },
+        {
+          "label": "16016 cm²",
+          "is_correct": false
+        },
+        {
+          "label": "15400 cm²",
+          "is_correct": true
+        },
+        {
+          "label": "16632 cm²",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Volume and Surface Area",
+      "kind": "standard",
+      "difficulty": "hard",
+      "answer_type": "single",
+      "stem": "Find the curved (lateral) surface area of a cylinder of radius 35 cm and height 23 cm. (Take π = 22/7.)",
+      "explanation": "CSA = 2πrh = 2×(22/7)×35×23 = 5060 cm².",
+      "options": [
+        {
+          "label": "5262 cm²",
+          "is_correct": false
+        },
+        {
+          "label": "5060 cm²",
+          "is_correct": true
+        },
+        {
+          "label": "4858 cm²",
+          "is_correct": false
+        },
+        {
+          "label": "5464 cm²",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Volume and Surface Area",
+      "kind": "standard",
+      "difficulty": "hard",
+      "answer_type": "single",
+      "stem": "The volume of a cuboid is 420 cm³. If its length is 6 cm and breadth is 5 cm, find its height.",
+      "explanation": "Height = volume/(l×b) = 420/(6×5) = 14 cm.",
+      "options": [
+        {
+          "label": "14 cm",
+          "is_correct": true
+        },
+        {
+          "label": "16 cm",
+          "is_correct": false
+        },
+        {
+          "label": "15 cm",
+          "is_correct": false
+        },
+        {
+          "label": "13 cm",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Volume and Surface Area",
+      "kind": "standard",
+      "difficulty": "hard",
+      "answer_type": "single",
+      "stem": "The volume of a cuboid is 432 cm³. If its length is 9 cm and breadth is 12 cm, find its height.",
+      "explanation": "Height = volume/(l×b) = 432/(9×12) = 4 cm.",
+      "options": [
+        {
+          "label": "6 cm",
+          "is_correct": false
+        },
+        {
+          "label": "5 cm",
+          "is_correct": false
+        },
+        {
+          "label": "4 cm",
+          "is_correct": true
+        },
+        {
+          "label": "3 cm",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Volume and Surface Area",
+      "kind": "standard",
+      "difficulty": "hard",
+      "answer_type": "single",
+      "stem": "Find the curved (lateral) surface area of a cylinder of radius 7 cm and height 9 cm. (Take π = 22/7.)",
+      "explanation": "CSA = 2πrh = 2×(22/7)×7×9 = 396 cm².",
+      "options": [
+        {
+          "label": "380 cm²",
+          "is_correct": false
+        },
+        {
+          "label": "412 cm²",
+          "is_correct": false
+        },
+        {
+          "label": "428 cm²",
+          "is_correct": false
+        },
+        {
+          "label": "396 cm²",
+          "is_correct": true
+        }
+      ]
+    },
+    {
+      "chapter": "Volume and Surface Area",
+      "kind": "standard",
+      "difficulty": "hard",
+      "answer_type": "single",
+      "stem": "The volume of a cuboid is 336 cm³. If its length is 6 cm and breadth is 14 cm, find its height.",
+      "explanation": "Height = volume/(l×b) = 336/(6×14) = 4 cm.",
+      "options": [
+        {
+          "label": "5 cm",
+          "is_correct": false
+        },
+        {
+          "label": "3 cm",
+          "is_correct": false
+        },
+        {
+          "label": "6 cm",
+          "is_correct": false
+        },
+        {
+          "label": "4 cm",
+          "is_correct": true
+        }
+      ]
+    },
+    {
+      "chapter": "Volume and Surface Area",
+      "kind": "standard",
+      "difficulty": "hard",
+      "answer_type": "single",
+      "stem": "Find the surface area of a sphere of radius 42 cm. (Take π = 22/7.)",
+      "explanation": "Surface area = 4πr² = 4×(22/7)×42² = 22176 cm².",
+      "options": [
+        {
+          "label": "23950 cm²",
+          "is_correct": false
+        },
+        {
+          "label": "21289 cm²",
+          "is_correct": false
+        },
+        {
+          "label": "23063 cm²",
+          "is_correct": false
+        },
+        {
+          "label": "22176 cm²",
+          "is_correct": true
+        }
+      ]
+    },
+    {
+      "chapter": "Volume and Surface Area",
+      "kind": "standard",
+      "difficulty": "hard",
+      "answer_type": "single",
+      "stem": "Find the curved (lateral) surface area of a cylinder of radius 21 cm and height 9 cm. (Take π = 22/7.)",
+      "explanation": "CSA = 2πrh = 2×(22/7)×21×9 = 1188 cm².",
+      "options": [
+        {
+          "label": "1140 cm²",
+          "is_correct": false
+        },
+        {
+          "label": "1284 cm²",
+          "is_correct": false
+        },
+        {
+          "label": "1236 cm²",
+          "is_correct": false
+        },
+        {
+          "label": "1188 cm²",
+          "is_correct": true
+        }
+      ]
+    },
+    {
+      "chapter": "Volume and Surface Area",
+      "kind": "standard",
+      "difficulty": "hard",
+      "answer_type": "single",
+      "stem": "The volume of a cuboid is 630 cm³. If its length is 7 cm and breadth is 5 cm, find its height.",
+      "explanation": "Height = volume/(l×b) = 630/(7×5) = 18 cm.",
+      "options": [
+        {
+          "label": "19 cm",
+          "is_correct": false
+        },
+        {
+          "label": "17 cm",
+          "is_correct": false
+        },
+        {
+          "label": "18 cm",
+          "is_correct": true
+        },
+        {
+          "label": "20 cm",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Volume and Surface Area",
+      "kind": "standard",
+      "difficulty": "hard",
+      "answer_type": "single",
+      "stem": "The volume of a cuboid is 1521 cm³. If its length is 13 cm and breadth is 13 cm, find its height.",
+      "explanation": "Height = volume/(l×b) = 1521/(13×13) = 9 cm.",
+      "options": [
+        {
+          "label": "11 cm",
+          "is_correct": false
+        },
+        {
+          "label": "9 cm",
+          "is_correct": true
+        },
+        {
+          "label": "10 cm",
+          "is_correct": false
+        },
+        {
+          "label": "8 cm",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Volume and Surface Area",
+      "kind": "standard",
+      "difficulty": "hard",
+      "answer_type": "single",
+      "stem": "The volume of a cuboid is 720 cm³. If its length is 12 cm and breadth is 6 cm, find its height.",
+      "explanation": "Height = volume/(l×b) = 720/(12×6) = 10 cm.",
+      "options": [
+        {
+          "label": "11 cm",
+          "is_correct": false
+        },
+        {
+          "label": "9 cm",
+          "is_correct": false
+        },
+        {
+          "label": "10 cm",
+          "is_correct": true
+        },
+        {
+          "label": "12 cm",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Volume and Surface Area",
+      "kind": "standard",
+      "difficulty": "hard",
+      "answer_type": "single",
+      "stem": "Find the surface area of a sphere of radius 7 cm. (Take π = 22/7.)",
+      "explanation": "Surface area = 4πr² = 4×(22/7)×7² = 616 cm².",
+      "options": [
+        {
+          "label": "666 cm²",
+          "is_correct": false
+        },
+        {
+          "label": "641 cm²",
+          "is_correct": false
+        },
+        {
+          "label": "591 cm²",
+          "is_correct": false
+        },
+        {
+          "label": "616 cm²",
+          "is_correct": true
+        }
+      ]
+    },
+    {
+      "chapter": "Volume and Surface Area",
+      "kind": "standard",
+      "difficulty": "hard",
+      "answer_type": "single",
+      "stem": "Find the curved (lateral) surface area of a cylinder of radius 28 cm and height 20 cm. (Take π = 22/7.)",
+      "explanation": "CSA = 2πrh = 2×(22/7)×28×20 = 3520 cm².",
+      "options": [
+        {
+          "label": "3802 cm²",
+          "is_correct": false
+        },
+        {
+          "label": "3661 cm²",
+          "is_correct": false
+        },
+        {
+          "label": "3379 cm²",
+          "is_correct": false
+        },
+        {
+          "label": "3520 cm²",
+          "is_correct": true
+        }
+      ]
+    },
+    {
+      "chapter": "Volume and Surface Area",
+      "kind": "standard",
+      "difficulty": "hard",
+      "answer_type": "single",
+      "stem": "The volume of a cuboid is 1512 cm³. If its length is 12 cm and breadth is 7 cm, find its height.",
+      "explanation": "Height = volume/(l×b) = 1512/(12×7) = 18 cm.",
+      "options": [
+        {
+          "label": "17 cm",
+          "is_correct": false
+        },
+        {
+          "label": "20 cm",
+          "is_correct": false
+        },
+        {
+          "label": "18 cm",
+          "is_correct": true
+        },
+        {
+          "label": "19 cm",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Volume and Surface Area",
+      "kind": "standard",
+      "difficulty": "hard",
+      "answer_type": "single",
+      "stem": "Find the surface area of a sphere of radius 14 cm. (Take π = 22/7.)",
+      "explanation": "Surface area = 4πr² = 4×(22/7)×14² = 2464 cm².",
+      "options": [
+        {
+          "label": "2563 cm²",
+          "is_correct": false
+        },
+        {
+          "label": "2464 cm²",
+          "is_correct": true
+        },
+        {
+          "label": "2365 cm²",
+          "is_correct": false
+        },
+        {
+          "label": "2662 cm²",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Volume and Surface Area",
+      "kind": "standard",
+      "difficulty": "hard",
+      "answer_type": "single",
+      "stem": "Find the curved (lateral) surface area of a cylinder of radius 35 cm and height 4 cm. (Take π = 22/7.)",
+      "explanation": "CSA = 2πrh = 2×(22/7)×35×4 = 880 cm².",
+      "options": [
+        {
+          "label": "845 cm²",
+          "is_correct": false
+        },
+        {
+          "label": "880 cm²",
+          "is_correct": true
+        },
+        {
+          "label": "915 cm²",
+          "is_correct": false
+        },
+        {
+          "label": "950 cm²",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Volume and Surface Area",
+      "kind": "standard",
+      "difficulty": "hard",
+      "answer_type": "single",
+      "stem": "The volume of a cuboid is 399 cm³. If its length is 19 cm and breadth is 3 cm, find its height.",
+      "explanation": "Height = volume/(l×b) = 399/(19×3) = 7 cm.",
+      "options": [
+        {
+          "label": "8 cm",
+          "is_correct": false
+        },
+        {
+          "label": "9 cm",
+          "is_correct": false
+        },
+        {
+          "label": "6 cm",
+          "is_correct": false
+        },
+        {
+          "label": "7 cm",
+          "is_correct": true
+        }
+      ]
+    },
+    {
+      "chapter": "Volume and Surface Area",
+      "kind": "standard",
+      "difficulty": "hard",
+      "answer_type": "single",
+      "stem": "The volume of a cuboid is 1152 cm³. If its length is 16 cm and breadth is 6 cm, find its height.",
+      "explanation": "Height = volume/(l×b) = 1152/(16×6) = 12 cm.",
+      "options": [
+        {
+          "label": "12 cm",
+          "is_correct": true
+        },
+        {
+          "label": "11 cm",
+          "is_correct": false
+        },
+        {
+          "label": "14 cm",
+          "is_correct": false
+        },
+        {
+          "label": "13 cm",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Volume and Surface Area",
+      "kind": "standard",
+      "difficulty": "hard",
+      "answer_type": "single",
+      "stem": "Find the curved (lateral) surface area of a cylinder of radius 21 cm and height 15 cm. (Take π = 22/7.)",
+      "explanation": "CSA = 2πrh = 2×(22/7)×21×15 = 1980 cm².",
+      "options": [
+        {
+          "label": "2059 cm²",
+          "is_correct": false
+        },
+        {
+          "label": "1980 cm²",
+          "is_correct": true
+        },
+        {
+          "label": "2138 cm²",
+          "is_correct": false
+        },
+        {
+          "label": "1901 cm²",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Volume and Surface Area",
+      "kind": "standard",
+      "difficulty": "hard",
+      "answer_type": "single",
+      "stem": "The volume of a cuboid is 663 cm³. If its length is 17 cm and breadth is 3 cm, find its height.",
+      "explanation": "Height = volume/(l×b) = 663/(17×3) = 13 cm.",
+      "options": [
+        {
+          "label": "15 cm",
+          "is_correct": false
+        },
+        {
+          "label": "13 cm",
+          "is_correct": true
+        },
+        {
+          "label": "14 cm",
+          "is_correct": false
+        },
+        {
+          "label": "12 cm",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Volume and Surface Area",
+      "kind": "standard",
+      "difficulty": "hard",
+      "answer_type": "single",
+      "stem": "Find the curved (lateral) surface area of a cylinder of radius 28 cm and height 7 cm. (Take π = 22/7.)",
+      "explanation": "CSA = 2πrh = 2×(22/7)×28×7 = 1232 cm².",
+      "options": [
+        {
+          "label": "1232 cm²",
+          "is_correct": true
+        },
+        {
+          "label": "1281 cm²",
+          "is_correct": false
+        },
+        {
+          "label": "1183 cm²",
+          "is_correct": false
+        },
+        {
+          "label": "1330 cm²",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Volume and Surface Area",
+      "kind": "standard",
+      "difficulty": "hard",
+      "answer_type": "single",
+      "stem": "The volume of a cuboid is 1215 cm³. If its length is 9 cm and breadth is 15 cm, find its height.",
+      "explanation": "Height = volume/(l×b) = 1215/(9×15) = 9 cm.",
+      "options": [
+        {
+          "label": "10 cm",
+          "is_correct": false
+        },
+        {
+          "label": "9 cm",
+          "is_correct": true
+        },
+        {
+          "label": "8 cm",
+          "is_correct": false
+        },
+        {
+          "label": "11 cm",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Volume and Surface Area",
+      "kind": "standard",
+      "difficulty": "hard",
+      "answer_type": "single",
+      "stem": "Find the surface area of a sphere of radius 28 cm. (Take π = 22/7.)",
+      "explanation": "Surface area = 4πr² = 4×(22/7)×28² = 9856 cm².",
+      "options": [
+        {
+          "label": "9462 cm²",
+          "is_correct": false
+        },
+        {
+          "label": "10644 cm²",
+          "is_correct": false
+        },
+        {
+          "label": "9856 cm²",
+          "is_correct": true
+        },
+        {
+          "label": "10250 cm²",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Volume and Surface Area",
+      "kind": "standard",
+      "difficulty": "hard",
+      "answer_type": "single",
+      "stem": "The volume of a cuboid is 680 cm³. If its length is 5 cm and breadth is 8 cm, find its height.",
+      "explanation": "Height = volume/(l×b) = 680/(5×8) = 17 cm.",
+      "options": [
+        {
+          "label": "18 cm",
+          "is_correct": false
+        },
+        {
+          "label": "17 cm",
+          "is_correct": true
+        },
+        {
+          "label": "16 cm",
+          "is_correct": false
+        },
+        {
+          "label": "19 cm",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Volume and Surface Area",
+      "kind": "standard",
+      "difficulty": "hard",
+      "answer_type": "single",
+      "stem": "The volume of a cuboid is 243 cm³. If its length is 9 cm and breadth is 9 cm, find its height.",
+      "explanation": "Height = volume/(l×b) = 243/(9×9) = 3 cm.",
+      "options": [
+        {
+          "label": "3 cm",
+          "is_correct": true
+        },
+        {
+          "label": "4 cm",
+          "is_correct": false
+        },
+        {
+          "label": "2 cm",
+          "is_correct": false
+        },
+        {
+          "label": "5 cm",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Volume and Surface Area",
+      "kind": "standard",
+      "difficulty": "hard",
+      "answer_type": "single",
+      "stem": "Find the curved (lateral) surface area of a cylinder of radius 21 cm and height 10 cm. (Take π = 22/7.)",
+      "explanation": "CSA = 2πrh = 2×(22/7)×21×10 = 1320 cm².",
+      "options": [
+        {
+          "label": "1267 cm²",
+          "is_correct": false
+        },
+        {
+          "label": "1426 cm²",
+          "is_correct": false
+        },
+        {
+          "label": "1373 cm²",
+          "is_correct": false
+        },
+        {
+          "label": "1320 cm²",
+          "is_correct": true
+        }
+      ]
+    },
+    {
+      "chapter": "Volume and Surface Area",
+      "kind": "standard",
+      "difficulty": "hard",
+      "answer_type": "single",
+      "stem": "The volume of a cuboid is 1274 cm³. If its length is 14 cm and breadth is 13 cm, find its height.",
+      "explanation": "Height = volume/(l×b) = 1274/(14×13) = 7 cm.",
+      "options": [
+        {
+          "label": "6 cm",
+          "is_correct": false
+        },
+        {
+          "label": "7 cm",
+          "is_correct": true
+        },
+        {
+          "label": "8 cm",
+          "is_correct": false
+        },
+        {
+          "label": "9 cm",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Volume and Surface Area",
+      "kind": "standard",
+      "difficulty": "hard",
+      "answer_type": "single",
+      "stem": "The volume of a cuboid is 672 cm³. If its length is 14 cm and breadth is 3 cm, find its height.",
+      "explanation": "Height = volume/(l×b) = 672/(14×3) = 16 cm.",
+      "options": [
+        {
+          "label": "17 cm",
+          "is_correct": false
+        },
+        {
+          "label": "16 cm",
+          "is_correct": true
+        },
+        {
+          "label": "18 cm",
+          "is_correct": false
+        },
+        {
+          "label": "15 cm",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Volume and Surface Area",
+      "kind": "standard",
+      "difficulty": "hard",
+      "answer_type": "single",
+      "stem": "Find the curved (lateral) surface area of a cylinder of radius 7 cm and height 25 cm. (Take π = 22/7.)",
+      "explanation": "CSA = 2πrh = 2×(22/7)×7×25 = 1100 cm².",
+      "options": [
+        {
+          "label": "1188 cm²",
+          "is_correct": false
+        },
+        {
+          "label": "1144 cm²",
+          "is_correct": false
+        },
+        {
+          "label": "1056 cm²",
+          "is_correct": false
+        },
+        {
+          "label": "1100 cm²",
+          "is_correct": true
+        }
+      ]
+    },
+    {
+      "chapter": "Volume and Surface Area",
+      "kind": "standard",
+      "difficulty": "hard",
+      "answer_type": "single",
+      "stem": "Find the curved (lateral) surface area of a cylinder of radius 28 cm and height 16 cm. (Take π = 22/7.)",
+      "explanation": "CSA = 2πrh = 2×(22/7)×28×16 = 2816 cm².",
+      "options": [
+        {
+          "label": "2816 cm²",
+          "is_correct": true
+        },
+        {
+          "label": "3042 cm²",
+          "is_correct": false
+        },
+        {
+          "label": "2703 cm²",
+          "is_correct": false
+        },
+        {
+          "label": "2929 cm²",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Volume and Surface Area",
+      "kind": "standard",
+      "difficulty": "hard",
+      "answer_type": "single",
+      "stem": "Find the curved (lateral) surface area of a cylinder of radius 14 cm and height 22 cm. (Take π = 22/7.)",
+      "explanation": "CSA = 2πrh = 2×(22/7)×14×22 = 1936 cm².",
+      "options": [
+        {
+          "label": "2013 cm²",
+          "is_correct": false
+        },
+        {
+          "label": "1859 cm²",
+          "is_correct": false
+        },
+        {
+          "label": "1936 cm²",
+          "is_correct": true
+        },
+        {
+          "label": "2090 cm²",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Volume and Surface Area",
+      "kind": "standard",
+      "difficulty": "hard",
+      "answer_type": "single",
+      "stem": "The volume of a cuboid is 392 cm³. If its length is 14 cm and breadth is 7 cm, find its height.",
+      "explanation": "Height = volume/(l×b) = 392/(14×7) = 4 cm.",
+      "options": [
+        {
+          "label": "3 cm",
+          "is_correct": false
+        },
+        {
+          "label": "6 cm",
+          "is_correct": false
+        },
+        {
+          "label": "5 cm",
+          "is_correct": false
+        },
+        {
+          "label": "4 cm",
+          "is_correct": true
+        }
+      ]
+    },
+    {
+      "chapter": "Volume and Surface Area",
+      "kind": "standard",
+      "difficulty": "hard",
+      "answer_type": "single",
+      "stem": "The volume of a cuboid is 680 cm³. If its length is 17 cm and breadth is 8 cm, find its height.",
+      "explanation": "Height = volume/(l×b) = 680/(17×8) = 5 cm.",
+      "options": [
+        {
+          "label": "5 cm",
+          "is_correct": true
+        },
+        {
+          "label": "4 cm",
+          "is_correct": false
+        },
+        {
+          "label": "6 cm",
+          "is_correct": false
+        },
+        {
+          "label": "7 cm",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Volume and Surface Area",
+      "kind": "standard",
+      "difficulty": "hard",
+      "answer_type": "single",
+      "stem": "Find the curved (lateral) surface area of a cylinder of radius 7 cm and height 16 cm. (Take π = 22/7.)",
+      "explanation": "CSA = 2πrh = 2×(22/7)×7×16 = 704 cm².",
+      "options": [
+        {
+          "label": "704 cm²",
+          "is_correct": true
+        },
+        {
+          "label": "760 cm²",
+          "is_correct": false
+        },
+        {
+          "label": "676 cm²",
+          "is_correct": false
+        },
+        {
+          "label": "732 cm²",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Volume and Surface Area",
+      "kind": "standard",
+      "difficulty": "hard",
+      "answer_type": "single",
+      "stem": "Find the curved (lateral) surface area of a cylinder of radius 35 cm and height 20 cm. (Take π = 22/7.)",
+      "explanation": "CSA = 2πrh = 2×(22/7)×35×20 = 4400 cm².",
+      "options": [
+        {
+          "label": "4224 cm²",
+          "is_correct": false
+        },
+        {
+          "label": "4576 cm²",
+          "is_correct": false
+        },
+        {
+          "label": "4752 cm²",
+          "is_correct": false
+        },
+        {
+          "label": "4400 cm²",
+          "is_correct": true
+        }
+      ]
+    },
+    {
+      "chapter": "Volume and Surface Area",
+      "kind": "standard",
+      "difficulty": "hard",
+      "answer_type": "single",
+      "stem": "The volume of a cuboid is 1216 cm³. If its length is 19 cm and breadth is 8 cm, find its height.",
+      "explanation": "Height = volume/(l×b) = 1216/(19×8) = 8 cm.",
+      "options": [
+        {
+          "label": "9 cm",
+          "is_correct": false
+        },
+        {
+          "label": "7 cm",
+          "is_correct": false
+        },
+        {
+          "label": "10 cm",
+          "is_correct": false
+        },
+        {
+          "label": "8 cm",
+          "is_correct": true
+        }
+      ]
+    },
+    {
+      "chapter": "Volume and Surface Area",
+      "kind": "standard",
+      "difficulty": "hard",
+      "answer_type": "single",
+      "stem": "Find the curved (lateral) surface area of a cylinder of radius 35 cm and height 21 cm. (Take π = 22/7.)",
+      "explanation": "CSA = 2πrh = 2×(22/7)×35×21 = 4620 cm².",
+      "options": [
+        {
+          "label": "4435 cm²",
+          "is_correct": false
+        },
+        {
+          "label": "4990 cm²",
+          "is_correct": false
+        },
+        {
+          "label": "4805 cm²",
+          "is_correct": false
+        },
+        {
+          "label": "4620 cm²",
+          "is_correct": true
+        }
+      ]
+    },
+    {
+      "chapter": "Volume and Surface Area",
+      "kind": "standard",
+      "difficulty": "hard",
+      "answer_type": "single",
+      "stem": "The volume of a cuboid is 4680 cm³. If its length is 20 cm and breadth is 18 cm, find its height.",
+      "explanation": "Height = volume/(l×b) = 4680/(20×18) = 13 cm.",
+      "options": [
+        {
+          "label": "13 cm",
+          "is_correct": true
+        },
+        {
+          "label": "12 cm",
+          "is_correct": false
+        },
+        {
+          "label": "15 cm",
+          "is_correct": false
+        },
+        {
+          "label": "14 cm",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Volume and Surface Area",
+      "kind": "standard",
+      "difficulty": "hard",
+      "answer_type": "single",
+      "stem": "Find the curved (lateral) surface area of a cylinder of radius 21 cm and height 20 cm. (Take π = 22/7.)",
+      "explanation": "CSA = 2πrh = 2×(22/7)×21×20 = 2640 cm².",
+      "options": [
+        {
+          "label": "2746 cm²",
+          "is_correct": false
+        },
+        {
+          "label": "2534 cm²",
+          "is_correct": false
+        },
+        {
+          "label": "2852 cm²",
+          "is_correct": false
+        },
+        {
+          "label": "2640 cm²",
+          "is_correct": true
+        }
+      ]
+    },
+    {
+      "chapter": "Volume and Surface Area",
+      "kind": "standard",
+      "difficulty": "hard",
+      "answer_type": "single",
+      "stem": "Find the curved (lateral) surface area of a cylinder of radius 7 cm and height 4 cm. (Take π = 22/7.)",
+      "explanation": "CSA = 2πrh = 2×(22/7)×7×4 = 176 cm².",
+      "options": [
+        {
+          "label": "178 cm²",
+          "is_correct": false
+        },
+        {
+          "label": "174 cm²",
+          "is_correct": false
+        },
+        {
+          "label": "180 cm²",
+          "is_correct": false
+        },
+        {
+          "label": "176 cm²",
+          "is_correct": true
+        }
+      ]
+    },
+    {
+      "chapter": "Volume and Surface Area",
+      "kind": "standard",
+      "difficulty": "hard",
+      "answer_type": "single",
+      "stem": "The volume of a cuboid is 1144 cm³. If its length is 13 cm and breadth is 11 cm, find its height.",
+      "explanation": "Height = volume/(l×b) = 1144/(13×11) = 8 cm.",
+      "options": [
+        {
+          "label": "7 cm",
+          "is_correct": false
+        },
+        {
+          "label": "9 cm",
+          "is_correct": false
+        },
+        {
+          "label": "8 cm",
+          "is_correct": true
+        },
+        {
+          "label": "10 cm",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Volume and Surface Area",
+      "kind": "standard",
+      "difficulty": "hard",
+      "answer_type": "single",
+      "stem": "Find the curved (lateral) surface area of a cylinder of radius 7 cm and height 15 cm. (Take π = 22/7.)",
+      "explanation": "CSA = 2πrh = 2×(22/7)×7×15 = 660 cm².",
+      "options": [
+        {
+          "label": "686 cm²",
+          "is_correct": false
+        },
+        {
+          "label": "660 cm²",
+          "is_correct": true
+        },
+        {
+          "label": "712 cm²",
+          "is_correct": false
+        },
+        {
+          "label": "634 cm²",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Volume and Surface Area",
+      "kind": "standard",
+      "difficulty": "hard",
+      "answer_type": "single",
+      "stem": "The volume of a cuboid is 1092 cm³. If its length is 14 cm and breadth is 13 cm, find its height.",
+      "explanation": "Height = volume/(l×b) = 1092/(14×13) = 6 cm.",
+      "options": [
+        {
+          "label": "7 cm",
+          "is_correct": false
+        },
+        {
+          "label": "8 cm",
+          "is_correct": false
+        },
+        {
+          "label": "5 cm",
+          "is_correct": false
+        },
+        {
+          "label": "6 cm",
+          "is_correct": true
+        }
+      ]
+    },
+    {
+      "chapter": "Volume and Surface Area",
+      "kind": "standard",
+      "difficulty": "hard",
+      "answer_type": "single",
+      "stem": "Find the curved (lateral) surface area of a cylinder of radius 28 cm and height 3 cm. (Take π = 22/7.)",
+      "explanation": "CSA = 2πrh = 2×(22/7)×28×3 = 528 cm².",
+      "options": [
+        {
+          "label": "549 cm²",
+          "is_correct": false
+        },
+        {
+          "label": "507 cm²",
+          "is_correct": false
+        },
+        {
+          "label": "528 cm²",
+          "is_correct": true
+        },
+        {
+          "label": "570 cm²",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Volume and Surface Area",
+      "kind": "standard",
+      "difficulty": "hard",
+      "answer_type": "single",
+      "stem": "The volume of a cuboid is 2340 cm³. If its length is 18 cm and breadth is 10 cm, find its height.",
+      "explanation": "Height = volume/(l×b) = 2340/(18×10) = 13 cm.",
+      "options": [
+        {
+          "label": "13 cm",
+          "is_correct": true
+        },
+        {
+          "label": "12 cm",
+          "is_correct": false
+        },
+        {
+          "label": "14 cm",
+          "is_correct": false
+        },
+        {
+          "label": "15 cm",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Volume and Surface Area",
+      "kind": "standard",
+      "difficulty": "hard",
+      "answer_type": "single",
+      "stem": "Find the curved (lateral) surface area of a cylinder of radius 35 cm and height 19 cm. (Take π = 22/7.)",
+      "explanation": "CSA = 2πrh = 2×(22/7)×35×19 = 4180 cm².",
+      "options": [
+        {
+          "label": "4347 cm²",
+          "is_correct": false
+        },
+        {
+          "label": "4514 cm²",
+          "is_correct": false
+        },
+        {
+          "label": "4180 cm²",
+          "is_correct": true
+        },
+        {
+          "label": "4013 cm²",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Volume and Surface Area",
+      "kind": "standard",
+      "difficulty": "hard",
+      "answer_type": "single",
+      "stem": "Find the curved (lateral) surface area of a cylinder of radius 35 cm and height 22 cm. (Take π = 22/7.)",
+      "explanation": "CSA = 2πrh = 2×(22/7)×35×22 = 4840 cm².",
+      "options": [
+        {
+          "label": "4840 cm²",
+          "is_correct": true
+        },
+        {
+          "label": "4646 cm²",
+          "is_correct": false
+        },
+        {
+          "label": "5228 cm²",
+          "is_correct": false
+        },
+        {
+          "label": "5034 cm²",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Volume and Surface Area",
+      "kind": "standard",
+      "difficulty": "hard",
+      "answer_type": "single",
+      "stem": "Find the curved (lateral) surface area of a cylinder of radius 35 cm and height 14 cm. (Take π = 22/7.)",
+      "explanation": "CSA = 2πrh = 2×(22/7)×35×14 = 3080 cm².",
+      "options": [
+        {
+          "label": "3080 cm²",
+          "is_correct": true
+        },
+        {
+          "label": "3326 cm²",
+          "is_correct": false
+        },
+        {
+          "label": "3203 cm²",
+          "is_correct": false
+        },
+        {
+          "label": "2957 cm²",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Volume and Surface Area",
+      "kind": "standard",
+      "difficulty": "very_hard",
+      "answer_type": "single",
+      "stem": "Find the curved surface area of a cone of base radius 7 cm and slant height 25 cm. (Take π = 22/7.)",
+      "explanation": "CSA of a cone = πrl = (22/7)×7×25 = 550 cm².",
+      "options": [
+        {
+          "label": "594 cm²",
+          "is_correct": false
+        },
+        {
+          "label": "572 cm²",
+          "is_correct": false
+        },
+        {
+          "label": "528 cm²",
+          "is_correct": false
+        },
+        {
+          "label": "550 cm²",
+          "is_correct": true
+        }
+      ]
+    },
+    {
+      "chapter": "Volume and Surface Area",
+      "kind": "standard",
+      "difficulty": "very_hard",
+      "answer_type": "single",
+      "stem": "Find the volume of a cone of base radius 28 cm and height 15 cm. (Take π = 22/7.)",
+      "explanation": "Volume = (1/3)πr²h = (1/3)(22/7)×28²×15 = 12320 cm³.",
+      "options": [
+        {
+          "label": "12813 cm³",
+          "is_correct": false
+        },
+        {
+          "label": "11827 cm³",
+          "is_correct": false
+        },
+        {
+          "label": "12320 cm³",
+          "is_correct": true
+        },
+        {
+          "label": "13306 cm³",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Volume and Surface Area",
+      "kind": "standard",
+      "difficulty": "very_hard",
+      "answer_type": "single",
+      "stem": "Find the volume of a cone of base radius 28 cm and height 6 cm. (Take π = 22/7.)",
+      "explanation": "Volume = (1/3)πr²h = (1/3)(22/7)×28²×6 = 4928 cm³.",
+      "options": [
+        {
+          "label": "4928 cm³",
+          "is_correct": true
+        },
+        {
+          "label": "5125 cm³",
+          "is_correct": false
+        },
+        {
+          "label": "5322 cm³",
+          "is_correct": false
+        },
+        {
+          "label": "4731 cm³",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Volume and Surface Area",
+      "kind": "standard",
+      "difficulty": "very_hard",
+      "answer_type": "single",
+      "stem": "Find the volume of a sphere of radius 42 cm. (Take π = 22/7.)",
+      "explanation": "Volume = (4/3)πr³ = (4/3)(22/7)×42³ = 310464 cm³.",
+      "options": [
+        {
+          "label": "322883 cm³",
+          "is_correct": false
+        },
+        {
+          "label": "335302 cm³",
+          "is_correct": false
+        },
+        {
+          "label": "298045 cm³",
+          "is_correct": false
+        },
+        {
+          "label": "310464 cm³",
+          "is_correct": true
+        }
+      ]
+    },
+    {
+      "chapter": "Volume and Surface Area",
+      "kind": "standard",
+      "difficulty": "very_hard",
+      "answer_type": "single",
+      "stem": "Find the volume of a cone of base radius 14 cm and height 30 cm. (Take π = 22/7.)",
+      "explanation": "Volume = (1/3)πr²h = (1/3)(22/7)×14²×30 = 6160 cm³.",
+      "options": [
+        {
+          "label": "6160 cm³",
+          "is_correct": true
+        },
+        {
+          "label": "5914 cm³",
+          "is_correct": false
+        },
+        {
+          "label": "6652 cm³",
+          "is_correct": false
+        },
+        {
+          "label": "6406 cm³",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Volume and Surface Area",
+      "kind": "standard",
+      "difficulty": "very_hard",
+      "answer_type": "single",
+      "stem": "Find the curved surface area of a cone of base radius 28 cm and slant height 53 cm. (Take π = 22/7.)",
+      "explanation": "CSA of a cone = πrl = (22/7)×28×53 = 4664 cm².",
+      "options": [
+        {
+          "label": "5038 cm²",
+          "is_correct": false
+        },
+        {
+          "label": "4477 cm²",
+          "is_correct": false
+        },
+        {
+          "label": "4851 cm²",
+          "is_correct": false
+        },
+        {
+          "label": "4664 cm²",
+          "is_correct": true
+        }
+      ]
+    },
+    {
+      "chapter": "Volume and Surface Area",
+      "kind": "standard",
+      "difficulty": "very_hard",
+      "answer_type": "single",
+      "stem": "Find the volume of a sphere of radius 21 cm. (Take π = 22/7.)",
+      "explanation": "Volume = (4/3)πr³ = (4/3)(22/7)×21³ = 38808 cm³.",
+      "options": [
+        {
+          "label": "41912 cm³",
+          "is_correct": false
+        },
+        {
+          "label": "38808 cm³",
+          "is_correct": true
+        },
+        {
+          "label": "37256 cm³",
+          "is_correct": false
+        },
+        {
+          "label": "40360 cm³",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Volume and Surface Area",
+      "kind": "standard",
+      "difficulty": "very_hard",
+      "answer_type": "single",
+      "stem": "Find the volume of a cone of base radius 35 cm and height 18 cm. (Take π = 22/7.)",
+      "explanation": "Volume = (1/3)πr²h = (1/3)(22/7)×35²×18 = 23100 cm³.",
+      "options": [
+        {
+          "label": "23100 cm³",
+          "is_correct": true
+        },
+        {
+          "label": "24948 cm³",
+          "is_correct": false
+        },
+        {
+          "label": "22176 cm³",
+          "is_correct": false
+        },
+        {
+          "label": "24024 cm³",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Volume and Surface Area",
+      "kind": "standard",
+      "difficulty": "very_hard",
+      "answer_type": "single",
+      "stem": "Find the curved surface area of a cone of base radius 35 cm and slant height 37 cm. (Take π = 22/7.)",
+      "explanation": "CSA of a cone = πrl = (22/7)×35×37 = 4070 cm².",
+      "options": [
+        {
+          "label": "4396 cm²",
+          "is_correct": false
+        },
+        {
+          "label": "4233 cm²",
+          "is_correct": false
+        },
+        {
+          "label": "3907 cm²",
+          "is_correct": false
+        },
+        {
+          "label": "4070 cm²",
+          "is_correct": true
+        }
+      ]
+    },
+    {
+      "chapter": "Volume and Surface Area",
+      "kind": "standard",
+      "difficulty": "very_hard",
+      "answer_type": "single",
+      "stem": "Find the curved surface area of a cone of base radius 14 cm and slant height 50 cm. (Take π = 22/7.)",
+      "explanation": "CSA of a cone = πrl = (22/7)×14×50 = 2200 cm².",
+      "options": [
+        {
+          "label": "2200 cm²",
+          "is_correct": true
+        },
+        {
+          "label": "2376 cm²",
+          "is_correct": false
+        },
+        {
+          "label": "2288 cm²",
+          "is_correct": false
+        },
+        {
+          "label": "2112 cm²",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Volume and Surface Area",
+      "kind": "standard",
+      "difficulty": "very_hard",
+      "answer_type": "single",
+      "stem": "Find the volume of a cone of base radius 14 cm and height 12 cm. (Take π = 22/7.)",
+      "explanation": "Volume = (1/3)πr²h = (1/3)(22/7)×14²×12 = 2464 cm³.",
+      "options": [
+        {
+          "label": "2662 cm³",
+          "is_correct": false
+        },
+        {
+          "label": "2563 cm³",
+          "is_correct": false
+        },
+        {
+          "label": "2365 cm³",
+          "is_correct": false
+        },
+        {
+          "label": "2464 cm³",
+          "is_correct": true
+        }
+      ]
+    },
+    {
+      "chapter": "Volume and Surface Area",
+      "kind": "standard",
+      "difficulty": "very_hard",
+      "answer_type": "single",
+      "stem": "Find the volume of a cone of base radius 28 cm and height 18 cm. (Take π = 22/7.)",
+      "explanation": "Volume = (1/3)πr²h = (1/3)(22/7)×28²×18 = 14784 cm³.",
+      "options": [
+        {
+          "label": "14193 cm³",
+          "is_correct": false
+        },
+        {
+          "label": "14784 cm³",
+          "is_correct": true
+        },
+        {
+          "label": "15375 cm³",
+          "is_correct": false
+        },
+        {
+          "label": "15966 cm³",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Volume and Surface Area",
+      "kind": "standard",
+      "difficulty": "very_hard",
+      "answer_type": "single",
+      "stem": "Find the volume of a cone of base radius 21 cm and height 12 cm. (Take π = 22/7.)",
+      "explanation": "Volume = (1/3)πr²h = (1/3)(22/7)×21²×12 = 5544 cm³.",
+      "options": [
+        {
+          "label": "5544 cm³",
+          "is_correct": true
+        },
+        {
+          "label": "5322 cm³",
+          "is_correct": false
+        },
+        {
+          "label": "5988 cm³",
+          "is_correct": false
+        },
+        {
+          "label": "5766 cm³",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Volume and Surface Area",
+      "kind": "standard",
+      "difficulty": "very_hard",
+      "answer_type": "single",
+      "stem": "Find the curved surface area of a cone of base radius 21 cm and slant height 35 cm. (Take π = 22/7.)",
+      "explanation": "CSA of a cone = πrl = (22/7)×21×35 = 2310 cm².",
+      "options": [
+        {
+          "label": "2494 cm²",
+          "is_correct": false
+        },
+        {
+          "label": "2310 cm²",
+          "is_correct": true
+        },
+        {
+          "label": "2218 cm²",
+          "is_correct": false
+        },
+        {
+          "label": "2402 cm²",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Volume and Surface Area",
+      "kind": "standard",
+      "difficulty": "very_hard",
+      "answer_type": "single",
+      "stem": "Find the volume of a cone of base radius 7 cm and height 27 cm. (Take π = 22/7.)",
+      "explanation": "Volume = (1/3)πr²h = (1/3)(22/7)×7²×27 = 1386 cm³.",
+      "options": [
+        {
+          "label": "1386 cm³",
+          "is_correct": true
+        },
+        {
+          "label": "1331 cm³",
+          "is_correct": false
+        },
+        {
+          "label": "1496 cm³",
+          "is_correct": false
+        },
+        {
+          "label": "1441 cm³",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Volume and Surface Area",
+      "kind": "standard",
+      "difficulty": "very_hard",
+      "answer_type": "single",
+      "stem": "Find the volume of a cone of base radius 35 cm and height 3 cm. (Take π = 22/7.)",
+      "explanation": "Volume = (1/3)πr²h = (1/3)(22/7)×35²×3 = 3850 cm³.",
+      "options": [
+        {
+          "label": "3850 cm³",
+          "is_correct": true
+        },
+        {
+          "label": "3696 cm³",
+          "is_correct": false
+        },
+        {
+          "label": "4158 cm³",
+          "is_correct": false
+        },
+        {
+          "label": "4004 cm³",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Volume and Surface Area",
+      "kind": "standard",
+      "difficulty": "very_hard",
+      "answer_type": "single",
+      "stem": "Find the volume of a cone of base radius 7 cm and height 18 cm. (Take π = 22/7.)",
+      "explanation": "Volume = (1/3)πr²h = (1/3)(22/7)×7²×18 = 924 cm³.",
+      "options": [
+        {
+          "label": "961 cm³",
+          "is_correct": false
+        },
+        {
+          "label": "887 cm³",
+          "is_correct": false
+        },
+        {
+          "label": "998 cm³",
+          "is_correct": false
+        },
+        {
+          "label": "924 cm³",
+          "is_correct": true
+        }
+      ]
+    },
+    {
+      "chapter": "Volume and Surface Area",
+      "kind": "standard",
+      "difficulty": "very_hard",
+      "answer_type": "single",
+      "stem": "Find the volume of a cone of base radius 35 cm and height 15 cm. (Take π = 22/7.)",
+      "explanation": "Volume = (1/3)πr²h = (1/3)(22/7)×35²×15 = 19250 cm³.",
+      "options": [
+        {
+          "label": "20790 cm³",
+          "is_correct": false
+        },
+        {
+          "label": "19250 cm³",
+          "is_correct": true
+        },
+        {
+          "label": "18480 cm³",
+          "is_correct": false
+        },
+        {
+          "label": "20020 cm³",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Volume and Surface Area",
+      "kind": "standard",
+      "difficulty": "very_hard",
+      "answer_type": "single",
+      "stem": "Find the volume of a cone of base radius 35 cm and height 21 cm. (Take π = 22/7.)",
+      "explanation": "Volume = (1/3)πr²h = (1/3)(22/7)×35²×21 = 26950 cm³.",
+      "options": [
+        {
+          "label": "25872 cm³",
+          "is_correct": false
+        },
+        {
+          "label": "26950 cm³",
+          "is_correct": true
+        },
+        {
+          "label": "29106 cm³",
+          "is_correct": false
+        },
+        {
+          "label": "28028 cm³",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Volume and Surface Area",
+      "kind": "standard",
+      "difficulty": "very_hard",
+      "answer_type": "single",
+      "stem": "Find the volume of a cone of base radius 21 cm and height 3 cm. (Take π = 22/7.)",
+      "explanation": "Volume = (1/3)πr²h = (1/3)(22/7)×21²×3 = 1386 cm³.",
+      "options": [
+        {
+          "label": "1331 cm³",
+          "is_correct": false
+        },
+        {
+          "label": "1386 cm³",
+          "is_correct": true
+        },
+        {
+          "label": "1496 cm³",
+          "is_correct": false
+        },
+        {
+          "label": "1441 cm³",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Volume and Surface Area",
+      "kind": "standard",
+      "difficulty": "very_hard",
+      "answer_type": "single",
+      "stem": "Find the volume of a cone of base radius 28 cm and height 24 cm. (Take π = 22/7.)",
+      "explanation": "Volume = (1/3)πr²h = (1/3)(22/7)×28²×24 = 19712 cm³.",
+      "options": [
+        {
+          "label": "19712 cm³",
+          "is_correct": true
+        },
+        {
+          "label": "21288 cm³",
+          "is_correct": false
+        },
+        {
+          "label": "20500 cm³",
+          "is_correct": false
+        },
+        {
+          "label": "18924 cm³",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Volume and Surface Area",
+      "kind": "standard",
+      "difficulty": "very_hard",
+      "answer_type": "single",
+      "stem": "Find the volume of a cone of base radius 14 cm and height 27 cm. (Take π = 22/7.)",
+      "explanation": "Volume = (1/3)πr²h = (1/3)(22/7)×14²×27 = 5544 cm³.",
+      "options": [
+        {
+          "label": "5988 cm³",
+          "is_correct": false
+        },
+        {
+          "label": "5322 cm³",
+          "is_correct": false
+        },
+        {
+          "label": "5766 cm³",
+          "is_correct": false
+        },
+        {
+          "label": "5544 cm³",
+          "is_correct": true
+        }
+      ]
+    },
+    {
+      "chapter": "Volume and Surface Area",
+      "kind": "standard",
+      "difficulty": "very_hard",
+      "answer_type": "single",
+      "stem": "Find the volume of a cone of base radius 21 cm and height 18 cm. (Take π = 22/7.)",
+      "explanation": "Volume = (1/3)πr²h = (1/3)(22/7)×21²×18 = 8316 cm³.",
+      "options": [
+        {
+          "label": "8316 cm³",
+          "is_correct": true
+        },
+        {
+          "label": "8649 cm³",
+          "is_correct": false
+        },
+        {
+          "label": "8982 cm³",
+          "is_correct": false
+        },
+        {
+          "label": "7983 cm³",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Volume and Surface Area",
+      "kind": "standard",
+      "difficulty": "very_hard",
+      "answer_type": "single",
+      "stem": "Find the volume of a cone of base radius 35 cm and height 24 cm. (Take π = 22/7.)",
+      "explanation": "Volume = (1/3)πr²h = (1/3)(22/7)×35²×24 = 30800 cm³.",
+      "options": [
+        {
+          "label": "30800 cm³",
+          "is_correct": true
+        },
+        {
+          "label": "33264 cm³",
+          "is_correct": false
+        },
+        {
+          "label": "29568 cm³",
+          "is_correct": false
+        },
+        {
+          "label": "32032 cm³",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Volume and Surface Area",
+      "kind": "standard",
+      "difficulty": "very_hard",
+      "answer_type": "single",
+      "stem": "Find the volume of a cone of base radius 21 cm and height 15 cm. (Take π = 22/7.)",
+      "explanation": "Volume = (1/3)πr²h = (1/3)(22/7)×21²×15 = 6930 cm³.",
+      "options": [
+        {
+          "label": "7484 cm³",
+          "is_correct": false
+        },
+        {
+          "label": "6653 cm³",
+          "is_correct": false
+        },
+        {
+          "label": "7207 cm³",
+          "is_correct": false
+        },
+        {
+          "label": "6930 cm³",
+          "is_correct": true
+        }
+      ]
+    },
+    {
+      "chapter": "Volume and Surface Area",
+      "kind": "standard",
+      "difficulty": "very_hard",
+      "answer_type": "single",
+      "stem": "Find the volume of a cone of base radius 28 cm and height 9 cm. (Take π = 22/7.)",
+      "explanation": "Volume = (1/3)πr²h = (1/3)(22/7)×28²×9 = 7392 cm³.",
+      "options": [
+        {
+          "label": "7392 cm³",
+          "is_correct": true
+        },
+        {
+          "label": "7096 cm³",
+          "is_correct": false
+        },
+        {
+          "label": "7984 cm³",
+          "is_correct": false
+        },
+        {
+          "label": "7688 cm³",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Volume and Surface Area",
+      "kind": "standard",
+      "difficulty": "very_hard",
+      "answer_type": "single",
+      "stem": "Find the volume of a cone of base radius 7 cm and height 9 cm. (Take π = 22/7.)",
+      "explanation": "Volume = (1/3)πr²h = (1/3)(22/7)×7²×9 = 462 cm³.",
+      "options": [
+        {
+          "label": "462 cm³",
+          "is_correct": true
+        },
+        {
+          "label": "444 cm³",
+          "is_correct": false
+        },
+        {
+          "label": "498 cm³",
+          "is_correct": false
+        },
+        {
+          "label": "480 cm³",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Volume and Surface Area",
+      "kind": "standard",
+      "difficulty": "very_hard",
+      "answer_type": "single",
+      "stem": "Find the volume of a cone of base radius 7 cm and height 21 cm. (Take π = 22/7.)",
+      "explanation": "Volume = (1/3)πr²h = (1/3)(22/7)×7²×21 = 1078 cm³.",
+      "options": [
+        {
+          "label": "1121 cm³",
+          "is_correct": false
+        },
+        {
+          "label": "1035 cm³",
+          "is_correct": false
+        },
+        {
+          "label": "1164 cm³",
+          "is_correct": false
+        },
+        {
+          "label": "1078 cm³",
+          "is_correct": true
+        }
+      ]
+    },
+    {
+      "chapter": "Volume and Surface Area",
+      "kind": "standard",
+      "difficulty": "very_hard",
+      "answer_type": "single",
+      "stem": "Find the volume of a cone of base radius 7 cm and height 6 cm. (Take π = 22/7.)",
+      "explanation": "Volume = (1/3)πr²h = (1/3)(22/7)×7²×6 = 308 cm³.",
+      "options": [
+        {
+          "label": "332 cm³",
+          "is_correct": false
+        },
+        {
+          "label": "296 cm³",
+          "is_correct": false
+        },
+        {
+          "label": "308 cm³",
+          "is_correct": true
+        },
+        {
+          "label": "320 cm³",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Volume and Surface Area",
+      "kind": "standard",
+      "difficulty": "very_hard",
+      "answer_type": "single",
+      "stem": "Find the volume of a cone of base radius 7 cm and height 15 cm. (Take π = 22/7.)",
+      "explanation": "Volume = (1/3)πr²h = (1/3)(22/7)×7²×15 = 770 cm³.",
+      "options": [
+        {
+          "label": "739 cm³",
+          "is_correct": false
+        },
+        {
+          "label": "832 cm³",
+          "is_correct": false
+        },
+        {
+          "label": "770 cm³",
+          "is_correct": true
+        },
+        {
+          "label": "801 cm³",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Volume and Surface Area",
+      "kind": "standard",
+      "difficulty": "very_hard",
+      "answer_type": "single",
+      "stem": "Find the volume of a cone of base radius 28 cm and height 12 cm. (Take π = 22/7.)",
+      "explanation": "Volume = (1/3)πr²h = (1/3)(22/7)×28²×12 = 9856 cm³.",
+      "options": [
+        {
+          "label": "10250 cm³",
+          "is_correct": false
+        },
+        {
+          "label": "9462 cm³",
+          "is_correct": false
+        },
+        {
+          "label": "10644 cm³",
+          "is_correct": false
+        },
+        {
+          "label": "9856 cm³",
+          "is_correct": true
+        }
+      ]
+    },
+    {
+      "chapter": "Volume and Surface Area",
+      "kind": "standard",
+      "difficulty": "very_hard",
+      "answer_type": "single",
+      "stem": "Find the volume of a cone of base radius 28 cm and height 27 cm. (Take π = 22/7.)",
+      "explanation": "Volume = (1/3)πr²h = (1/3)(22/7)×28²×27 = 22176 cm³.",
+      "options": [
+        {
+          "label": "21289 cm³",
+          "is_correct": false
+        },
+        {
+          "label": "23063 cm³",
+          "is_correct": false
+        },
+        {
+          "label": "23950 cm³",
+          "is_correct": false
+        },
+        {
+          "label": "22176 cm³",
+          "is_correct": true
+        }
+      ]
+    },
+    {
+      "chapter": "Volume and Surface Area",
+      "kind": "standard",
+      "difficulty": "very_hard",
+      "answer_type": "single",
+      "stem": "Find the volume of a cone of base radius 21 cm and height 21 cm. (Take π = 22/7.)",
+      "explanation": "Volume = (1/3)πr²h = (1/3)(22/7)×21²×21 = 9702 cm³.",
+      "options": [
+        {
+          "label": "9314 cm³",
+          "is_correct": false
+        },
+        {
+          "label": "10478 cm³",
+          "is_correct": false
+        },
+        {
+          "label": "10090 cm³",
+          "is_correct": false
+        },
+        {
+          "label": "9702 cm³",
+          "is_correct": true
+        }
+      ]
+    },
+    {
+      "chapter": "Volume and Surface Area",
+      "kind": "standard",
+      "difficulty": "very_hard",
+      "answer_type": "single",
+      "stem": "Find the volume of a cone of base radius 7 cm and height 12 cm. (Take π = 22/7.)",
+      "explanation": "Volume = (1/3)πr²h = (1/3)(22/7)×7²×12 = 616 cm³.",
+      "options": [
+        {
+          "label": "641 cm³",
+          "is_correct": false
+        },
+        {
+          "label": "616 cm³",
+          "is_correct": true
+        },
+        {
+          "label": "591 cm³",
+          "is_correct": false
+        },
+        {
+          "label": "666 cm³",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Volume and Surface Area",
+      "kind": "standard",
+      "difficulty": "very_hard",
+      "answer_type": "single",
+      "stem": "Find the volume of a cone of base radius 14 cm and height 24 cm. (Take π = 22/7.)",
+      "explanation": "Volume = (1/3)πr²h = (1/3)(22/7)×14²×24 = 4928 cm³.",
+      "options": [
+        {
+          "label": "5322 cm³",
+          "is_correct": false
+        },
+        {
+          "label": "4731 cm³",
+          "is_correct": false
+        },
+        {
+          "label": "5125 cm³",
+          "is_correct": false
+        },
+        {
+          "label": "4928 cm³",
+          "is_correct": true
+        }
+      ]
+    },
+    {
+      "chapter": "Volume and Surface Area",
+      "kind": "standard",
+      "difficulty": "very_hard",
+      "answer_type": "single",
+      "stem": "Find the volume of a cone of base radius 28 cm and height 30 cm. (Take π = 22/7.)",
+      "explanation": "Volume = (1/3)πr²h = (1/3)(22/7)×28²×30 = 24640 cm³.",
+      "options": [
+        {
+          "label": "26612 cm³",
+          "is_correct": false
+        },
+        {
+          "label": "25626 cm³",
+          "is_correct": false
+        },
+        {
+          "label": "23654 cm³",
+          "is_correct": false
+        },
+        {
+          "label": "24640 cm³",
+          "is_correct": true
+        }
+      ]
+    },
+    {
+      "chapter": "Volume and Surface Area",
+      "kind": "standard",
+      "difficulty": "very_hard",
+      "answer_type": "single",
+      "stem": "Find the volume of a cone of base radius 21 cm and height 27 cm. (Take π = 22/7.)",
+      "explanation": "Volume = (1/3)πr²h = (1/3)(22/7)×21²×27 = 12474 cm³.",
+      "options": [
+        {
+          "label": "11975 cm³",
+          "is_correct": false
+        },
+        {
+          "label": "12973 cm³",
+          "is_correct": false
+        },
+        {
+          "label": "12474 cm³",
+          "is_correct": true
+        },
+        {
+          "label": "13472 cm³",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Volume and Surface Area",
+      "kind": "standard",
+      "difficulty": "very_hard",
+      "answer_type": "single",
+      "stem": "Find the volume of a cone of base radius 7 cm and height 24 cm. (Take π = 22/7.)",
+      "explanation": "Volume = (1/3)πr²h = (1/3)(22/7)×7²×24 = 1232 cm³.",
+      "options": [
+        {
+          "label": "1232 cm³",
+          "is_correct": true
+        },
+        {
+          "label": "1281 cm³",
+          "is_correct": false
+        },
+        {
+          "label": "1330 cm³",
+          "is_correct": false
+        },
+        {
+          "label": "1183 cm³",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Volume and Surface Area",
+      "kind": "standard",
+      "difficulty": "very_hard",
+      "answer_type": "single",
+      "stem": "Find the volume of a cone of base radius 7 cm and height 30 cm. (Take π = 22/7.)",
+      "explanation": "Volume = (1/3)πr²h = (1/3)(22/7)×7²×30 = 1540 cm³.",
+      "options": [
+        {
+          "label": "1664 cm³",
+          "is_correct": false
+        },
+        {
+          "label": "1540 cm³",
+          "is_correct": true
+        },
+        {
+          "label": "1602 cm³",
+          "is_correct": false
+        },
+        {
+          "label": "1478 cm³",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Volume and Surface Area",
+      "kind": "standard",
+      "difficulty": "very_hard",
+      "answer_type": "single",
+      "stem": "Find the volume of a cone of base radius 14 cm and height 15 cm. (Take π = 22/7.)",
+      "explanation": "Volume = (1/3)πr²h = (1/3)(22/7)×14²×15 = 3080 cm³.",
+      "options": [
+        {
+          "label": "3326 cm³",
+          "is_correct": false
+        },
+        {
+          "label": "3080 cm³",
+          "is_correct": true
+        },
+        {
+          "label": "3203 cm³",
+          "is_correct": false
+        },
+        {
+          "label": "2957 cm³",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Volume and Surface Area",
+      "kind": "standard",
+      "difficulty": "very_hard",
+      "answer_type": "single",
+      "stem": "Find the volume of a cone of base radius 14 cm and height 21 cm. (Take π = 22/7.)",
+      "explanation": "Volume = (1/3)πr²h = (1/3)(22/7)×14²×21 = 4312 cm³.",
+      "options": [
+        {
+          "label": "4656 cm³",
+          "is_correct": false
+        },
+        {
+          "label": "4140 cm³",
+          "is_correct": false
+        },
+        {
+          "label": "4312 cm³",
+          "is_correct": true
+        },
+        {
+          "label": "4484 cm³",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Volume and Surface Area",
+      "kind": "standard",
+      "difficulty": "very_hard",
+      "answer_type": "single",
+      "stem": "Find the volume of a cone of base radius 21 cm and height 9 cm. (Take π = 22/7.)",
+      "explanation": "Volume = (1/3)πr²h = (1/3)(22/7)×21²×9 = 4158 cm³.",
+      "options": [
+        {
+          "label": "4158 cm³",
+          "is_correct": true
+        },
+        {
+          "label": "4490 cm³",
+          "is_correct": false
+        },
+        {
+          "label": "4324 cm³",
+          "is_correct": false
+        },
+        {
+          "label": "3992 cm³",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Volume and Surface Area",
+      "kind": "standard",
+      "difficulty": "very_hard",
+      "answer_type": "single",
+      "stem": "Find the volume of a cone of base radius 35 cm and height 27 cm. (Take π = 22/7.)",
+      "explanation": "Volume = (1/3)πr²h = (1/3)(22/7)×35²×27 = 34650 cm³.",
+      "options": [
+        {
+          "label": "33264 cm³",
+          "is_correct": false
+        },
+        {
+          "label": "34650 cm³",
+          "is_correct": true
+        },
+        {
+          "label": "37422 cm³",
+          "is_correct": false
+        },
+        {
+          "label": "36036 cm³",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Volume and Surface Area",
+      "kind": "standard",
+      "difficulty": "very_hard",
+      "answer_type": "single",
+      "stem": "Find the volume of a cone of base radius 14 cm and height 3 cm. (Take π = 22/7.)",
+      "explanation": "Volume = (1/3)πr²h = (1/3)(22/7)×14²×3 = 616 cm³.",
+      "options": [
+        {
+          "label": "666 cm³",
+          "is_correct": false
+        },
+        {
+          "label": "641 cm³",
+          "is_correct": false
+        },
+        {
+          "label": "591 cm³",
+          "is_correct": false
+        },
+        {
+          "label": "616 cm³",
+          "is_correct": true
+        }
+      ]
+    },
+    {
+      "chapter": "Volume and Surface Area",
+      "kind": "standard",
+      "difficulty": "very_hard",
+      "answer_type": "single",
+      "stem": "Find the volume of a cone of base radius 35 cm and height 12 cm. (Take π = 22/7.)",
+      "explanation": "Volume = (1/3)πr²h = (1/3)(22/7)×35²×12 = 15400 cm³.",
+      "options": [
+        {
+          "label": "15400 cm³",
+          "is_correct": true
+        },
+        {
+          "label": "14784 cm³",
+          "is_correct": false
+        },
+        {
+          "label": "16016 cm³",
+          "is_correct": false
+        },
+        {
+          "label": "16632 cm³",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Volume and Surface Area",
+      "kind": "standard",
+      "difficulty": "very_hard",
+      "answer_type": "single",
+      "stem": "Find the volume of a cone of base radius 14 cm and height 18 cm. (Take π = 22/7.)",
+      "explanation": "Volume = (1/3)πr²h = (1/3)(22/7)×14²×18 = 3696 cm³.",
+      "options": [
+        {
+          "label": "3844 cm³",
+          "is_correct": false
+        },
+        {
+          "label": "3696 cm³",
+          "is_correct": true
+        },
+        {
+          "label": "3992 cm³",
+          "is_correct": false
+        },
+        {
+          "label": "3548 cm³",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Volume and Surface Area",
+      "kind": "standard",
+      "difficulty": "very_hard",
+      "answer_type": "single",
+      "stem": "Find the volume of a cone of base radius 28 cm and height 21 cm. (Take π = 22/7.)",
+      "explanation": "Volume = (1/3)πr²h = (1/3)(22/7)×28²×21 = 17248 cm³.",
+      "options": [
+        {
+          "label": "17938 cm³",
+          "is_correct": false
+        },
+        {
+          "label": "17248 cm³",
+          "is_correct": true
+        },
+        {
+          "label": "16558 cm³",
+          "is_correct": false
+        },
+        {
+          "label": "18628 cm³",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Volume and Surface Area",
+      "kind": "standard",
+      "difficulty": "very_hard",
+      "answer_type": "single",
+      "stem": "Find the volume of a cone of base radius 28 cm and height 3 cm. (Take π = 22/7.)",
+      "explanation": "Volume = (1/3)πr²h = (1/3)(22/7)×28²×3 = 2464 cm³.",
+      "options": [
+        {
+          "label": "2662 cm³",
+          "is_correct": false
+        },
+        {
+          "label": "2563 cm³",
+          "is_correct": false
+        },
+        {
+          "label": "2464 cm³",
+          "is_correct": true
+        },
+        {
+          "label": "2365 cm³",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Volume and Surface Area",
+      "kind": "standard",
+      "difficulty": "very_hard",
+      "answer_type": "single",
+      "stem": "Find the volume of a cone of base radius 21 cm and height 24 cm. (Take π = 22/7.)",
+      "explanation": "Volume = (1/3)πr²h = (1/3)(22/7)×21²×24 = 11088 cm³.",
+      "options": [
+        {
+          "label": "11976 cm³",
+          "is_correct": false
+        },
+        {
+          "label": "10644 cm³",
+          "is_correct": false
+        },
+        {
+          "label": "11532 cm³",
+          "is_correct": false
+        },
+        {
+          "label": "11088 cm³",
+          "is_correct": true
+        }
+      ]
+    },
+    {
+      "chapter": "Volume and Surface Area",
+      "kind": "standard",
+      "difficulty": "very_hard",
+      "answer_type": "single",
+      "stem": "Find the volume of a cone of base radius 35 cm and height 6 cm. (Take π = 22/7.)",
+      "explanation": "Volume = (1/3)πr²h = (1/3)(22/7)×35²×6 = 7700 cm³.",
+      "options": [
+        {
+          "label": "8316 cm³",
+          "is_correct": false
+        },
+        {
+          "label": "7392 cm³",
+          "is_correct": false
+        },
+        {
+          "label": "7700 cm³",
+          "is_correct": true
+        },
+        {
+          "label": "8008 cm³",
+          "is_correct": false
+        }
+      ]
+    }
+  ]
+}

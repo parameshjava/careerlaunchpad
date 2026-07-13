@@ -1,0 +1,5205 @@
+{
+  "subject": "Arithmetic",
+  "questions": [
+    {
+      "chapter": "Logarithms",
+      "kind": "standard",
+      "difficulty": "easy",
+      "answer_type": "single",
+      "stem": "Find the value of log base 3 of 3.",
+      "explanation": "log_3 3 = 1.",
+      "options": [
+        {
+          "label": "3",
+          "is_correct": false
+        },
+        {
+          "label": "1",
+          "is_correct": true
+        },
+        {
+          "label": "2",
+          "is_correct": false
+        },
+        {
+          "label": "4",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Logarithms",
+      "kind": "standard",
+      "difficulty": "easy",
+      "answer_type": "single",
+      "stem": "Find the value of log base 8 of 64.",
+      "explanation": "64 = 8^2, so log_8 64 = 2.",
+      "options": [
+        {
+          "label": "3",
+          "is_correct": false
+        },
+        {
+          "label": "2",
+          "is_correct": true
+        },
+        {
+          "label": "1",
+          "is_correct": false
+        },
+        {
+          "label": "4",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Logarithms",
+      "kind": "standard",
+      "difficulty": "easy",
+      "answer_type": "single",
+      "stem": "Find the value of log base 2 of 16.",
+      "explanation": "16 = 2^4, so log_2 16 = 4.",
+      "options": [
+        {
+          "label": "6",
+          "is_correct": false
+        },
+        {
+          "label": "5",
+          "is_correct": false
+        },
+        {
+          "label": "3",
+          "is_correct": false
+        },
+        {
+          "label": "4",
+          "is_correct": true
+        }
+      ]
+    },
+    {
+      "chapter": "Logarithms",
+      "kind": "standard",
+      "difficulty": "easy",
+      "answer_type": "single",
+      "stem": "Find the value of log base 10 of 1.",
+      "explanation": "log of 1 to any base is 0.",
+      "options": [
+        {
+          "label": "0",
+          "is_correct": true
+        },
+        {
+          "label": "1",
+          "is_correct": false
+        },
+        {
+          "label": "2",
+          "is_correct": false
+        },
+        {
+          "label": "3",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Logarithms",
+      "kind": "standard",
+      "difficulty": "easy",
+      "answer_type": "single",
+      "stem": "Find the value of log base 7 of 2401.",
+      "explanation": "2401 = 7^4, so log_7 2401 = 4.",
+      "options": [
+        {
+          "label": "5",
+          "is_correct": false
+        },
+        {
+          "label": "4",
+          "is_correct": true
+        },
+        {
+          "label": "6",
+          "is_correct": false
+        },
+        {
+          "label": "3",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Logarithms",
+      "kind": "standard",
+      "difficulty": "easy",
+      "answer_type": "single",
+      "stem": "Find the value of log base 6 of 216.",
+      "explanation": "216 = 6^3, so log_6 216 = 3.",
+      "options": [
+        {
+          "label": "4",
+          "is_correct": false
+        },
+        {
+          "label": "3",
+          "is_correct": true
+        },
+        {
+          "label": "5",
+          "is_correct": false
+        },
+        {
+          "label": "2",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Logarithms",
+      "kind": "standard",
+      "difficulty": "easy",
+      "answer_type": "single",
+      "stem": "Find the value of log base 2 of 2.",
+      "explanation": "log_2 2 = 1.",
+      "options": [
+        {
+          "label": "2",
+          "is_correct": false
+        },
+        {
+          "label": "3",
+          "is_correct": false
+        },
+        {
+          "label": "1",
+          "is_correct": true
+        },
+        {
+          "label": "4",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Logarithms",
+      "kind": "standard",
+      "difficulty": "easy",
+      "answer_type": "single",
+      "stem": "Find the value of log base 12 of 12.",
+      "explanation": "log_12 12 = 1.",
+      "options": [
+        {
+          "label": "1",
+          "is_correct": true
+        },
+        {
+          "label": "4",
+          "is_correct": false
+        },
+        {
+          "label": "2",
+          "is_correct": false
+        },
+        {
+          "label": "3",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Logarithms",
+      "kind": "standard",
+      "difficulty": "easy",
+      "answer_type": "single",
+      "stem": "Find the value of log base 8 of 4096.",
+      "explanation": "4096 = 8^4, so log_8 4096 = 4.",
+      "options": [
+        {
+          "label": "3",
+          "is_correct": false
+        },
+        {
+          "label": "5",
+          "is_correct": false
+        },
+        {
+          "label": "4",
+          "is_correct": true
+        },
+        {
+          "label": "6",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Logarithms",
+      "kind": "standard",
+      "difficulty": "easy",
+      "answer_type": "single",
+      "stem": "Find the value of log base 10 of 1000000.",
+      "explanation": "1000000 = 10^6, so log₁₀ 1000000 = 6.",
+      "options": [
+        {
+          "label": "7",
+          "is_correct": false
+        },
+        {
+          "label": "8",
+          "is_correct": false
+        },
+        {
+          "label": "6",
+          "is_correct": true
+        },
+        {
+          "label": "5",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Logarithms",
+      "kind": "standard",
+      "difficulty": "easy",
+      "answer_type": "single",
+      "stem": "Find the value of log base 6 of 36.",
+      "explanation": "36 = 6^2, so log_6 36 = 2.",
+      "options": [
+        {
+          "label": "1",
+          "is_correct": false
+        },
+        {
+          "label": "3",
+          "is_correct": false
+        },
+        {
+          "label": "2",
+          "is_correct": true
+        },
+        {
+          "label": "4",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Logarithms",
+      "kind": "standard",
+      "difficulty": "easy",
+      "answer_type": "single",
+      "stem": "Find the value of log base 3 of 9.",
+      "explanation": "9 = 3^2, so log_3 9 = 2.",
+      "options": [
+        {
+          "label": "1",
+          "is_correct": false
+        },
+        {
+          "label": "3",
+          "is_correct": false
+        },
+        {
+          "label": "4",
+          "is_correct": false
+        },
+        {
+          "label": "2",
+          "is_correct": true
+        }
+      ]
+    },
+    {
+      "chapter": "Logarithms",
+      "kind": "standard",
+      "difficulty": "easy",
+      "answer_type": "single",
+      "stem": "Find the value of log base 8 of 8.",
+      "explanation": "log_8 8 = 1.",
+      "options": [
+        {
+          "label": "1",
+          "is_correct": true
+        },
+        {
+          "label": "3",
+          "is_correct": false
+        },
+        {
+          "label": "4",
+          "is_correct": false
+        },
+        {
+          "label": "2",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Logarithms",
+      "kind": "standard",
+      "difficulty": "easy",
+      "answer_type": "single",
+      "stem": "Find the value of log base 2 of 8.",
+      "explanation": "8 = 2^3, so log_2 8 = 3.",
+      "options": [
+        {
+          "label": "2",
+          "is_correct": false
+        },
+        {
+          "label": "3",
+          "is_correct": true
+        },
+        {
+          "label": "5",
+          "is_correct": false
+        },
+        {
+          "label": "4",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Logarithms",
+      "kind": "standard",
+      "difficulty": "easy",
+      "answer_type": "single",
+      "stem": "Find the value of log base 9 of 729.",
+      "explanation": "729 = 9^3, so log_9 729 = 3.",
+      "options": [
+        {
+          "label": "5",
+          "is_correct": false
+        },
+        {
+          "label": "3",
+          "is_correct": true
+        },
+        {
+          "label": "2",
+          "is_correct": false
+        },
+        {
+          "label": "4",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Logarithms",
+      "kind": "standard",
+      "difficulty": "easy",
+      "answer_type": "single",
+      "stem": "Find the value of log base 2 of 1.",
+      "explanation": "log of 1 to any base is 0.",
+      "options": [
+        {
+          "label": "2",
+          "is_correct": false
+        },
+        {
+          "label": "1",
+          "is_correct": false
+        },
+        {
+          "label": "3",
+          "is_correct": false
+        },
+        {
+          "label": "0",
+          "is_correct": true
+        }
+      ]
+    },
+    {
+      "chapter": "Logarithms",
+      "kind": "standard",
+      "difficulty": "easy",
+      "answer_type": "single",
+      "stem": "Find the value of log base 10 of 10000000.",
+      "explanation": "10000000 = 10^7, so log₁₀ 10000000 = 7.",
+      "options": [
+        {
+          "label": "9",
+          "is_correct": false
+        },
+        {
+          "label": "7",
+          "is_correct": true
+        },
+        {
+          "label": "8",
+          "is_correct": false
+        },
+        {
+          "label": "6",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Logarithms",
+      "kind": "standard",
+      "difficulty": "easy",
+      "answer_type": "single",
+      "stem": "Find the value of log base 10 of 1000000000.",
+      "explanation": "1000000000 = 10^9, so log₁₀ 1000000000 = 9.",
+      "options": [
+        {
+          "label": "8",
+          "is_correct": false
+        },
+        {
+          "label": "11",
+          "is_correct": false
+        },
+        {
+          "label": "10",
+          "is_correct": false
+        },
+        {
+          "label": "9",
+          "is_correct": true
+        }
+      ]
+    },
+    {
+      "chapter": "Logarithms",
+      "kind": "standard",
+      "difficulty": "easy",
+      "answer_type": "single",
+      "stem": "Find the value of log base 10 of 10000.",
+      "explanation": "10000 = 10^4, so log₁₀ 10000 = 4.",
+      "options": [
+        {
+          "label": "4",
+          "is_correct": true
+        },
+        {
+          "label": "6",
+          "is_correct": false
+        },
+        {
+          "label": "5",
+          "is_correct": false
+        },
+        {
+          "label": "3",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Logarithms",
+      "kind": "standard",
+      "difficulty": "easy",
+      "answer_type": "single",
+      "stem": "Find the value of log base 10 of 10.",
+      "explanation": "10 = 10^1, so log₁₀ 10 = 1.",
+      "options": [
+        {
+          "label": "3",
+          "is_correct": false
+        },
+        {
+          "label": "1",
+          "is_correct": true
+        },
+        {
+          "label": "2",
+          "is_correct": false
+        },
+        {
+          "label": "4",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Logarithms",
+      "kind": "standard",
+      "difficulty": "easy",
+      "answer_type": "single",
+      "stem": "Find the value of log base 5 of 5.",
+      "explanation": "log_5 5 = 1.",
+      "options": [
+        {
+          "label": "1",
+          "is_correct": true
+        },
+        {
+          "label": "2",
+          "is_correct": false
+        },
+        {
+          "label": "3",
+          "is_correct": false
+        },
+        {
+          "label": "4",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Logarithms",
+      "kind": "standard",
+      "difficulty": "easy",
+      "answer_type": "single",
+      "stem": "Find the value of log base 5 of 625.",
+      "explanation": "625 = 5^4, so log_5 625 = 4.",
+      "options": [
+        {
+          "label": "4",
+          "is_correct": true
+        },
+        {
+          "label": "3",
+          "is_correct": false
+        },
+        {
+          "label": "6",
+          "is_correct": false
+        },
+        {
+          "label": "5",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Logarithms",
+      "kind": "standard",
+      "difficulty": "easy",
+      "answer_type": "single",
+      "stem": "Find the value of log base 10 of 100.",
+      "explanation": "100 = 10^2, so log₁₀ 100 = 2.",
+      "options": [
+        {
+          "label": "1",
+          "is_correct": false
+        },
+        {
+          "label": "3",
+          "is_correct": false
+        },
+        {
+          "label": "2",
+          "is_correct": true
+        },
+        {
+          "label": "4",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Logarithms",
+      "kind": "standard",
+      "difficulty": "easy",
+      "answer_type": "single",
+      "stem": "Find the value of log base 7 of 343.",
+      "explanation": "343 = 7^3, so log_7 343 = 3.",
+      "options": [
+        {
+          "label": "5",
+          "is_correct": false
+        },
+        {
+          "label": "4",
+          "is_correct": false
+        },
+        {
+          "label": "2",
+          "is_correct": false
+        },
+        {
+          "label": "3",
+          "is_correct": true
+        }
+      ]
+    },
+    {
+      "chapter": "Logarithms",
+      "kind": "standard",
+      "difficulty": "easy",
+      "answer_type": "single",
+      "stem": "Find the value of log base 6 of 1296.",
+      "explanation": "1296 = 6^4, so log_6 1296 = 4.",
+      "options": [
+        {
+          "label": "5",
+          "is_correct": false
+        },
+        {
+          "label": "6",
+          "is_correct": false
+        },
+        {
+          "label": "4",
+          "is_correct": true
+        },
+        {
+          "label": "3",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Logarithms",
+      "kind": "standard",
+      "difficulty": "easy",
+      "answer_type": "single",
+      "stem": "Find the value of log base 5 of 125.",
+      "explanation": "125 = 5^3, so log_5 125 = 3.",
+      "options": [
+        {
+          "label": "2",
+          "is_correct": false
+        },
+        {
+          "label": "4",
+          "is_correct": false
+        },
+        {
+          "label": "3",
+          "is_correct": true
+        },
+        {
+          "label": "5",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Logarithms",
+      "kind": "standard",
+      "difficulty": "easy",
+      "answer_type": "single",
+      "stem": "Find the value of log base 10 of 100000000.",
+      "explanation": "100000000 = 10^8, so log₁₀ 100000000 = 8.",
+      "options": [
+        {
+          "label": "8",
+          "is_correct": true
+        },
+        {
+          "label": "9",
+          "is_correct": false
+        },
+        {
+          "label": "7",
+          "is_correct": false
+        },
+        {
+          "label": "10",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Logarithms",
+      "kind": "standard",
+      "difficulty": "easy",
+      "answer_type": "single",
+      "stem": "Find the value of log base 4 of 256.",
+      "explanation": "256 = 4^4, so log_4 256 = 4.",
+      "options": [
+        {
+          "label": "6",
+          "is_correct": false
+        },
+        {
+          "label": "5",
+          "is_correct": false
+        },
+        {
+          "label": "4",
+          "is_correct": true
+        },
+        {
+          "label": "3",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Logarithms",
+      "kind": "standard",
+      "difficulty": "easy",
+      "answer_type": "single",
+      "stem": "Find the value of log base 9 of 9.",
+      "explanation": "log_9 9 = 1.",
+      "options": [
+        {
+          "label": "2",
+          "is_correct": false
+        },
+        {
+          "label": "3",
+          "is_correct": false
+        },
+        {
+          "label": "4",
+          "is_correct": false
+        },
+        {
+          "label": "1",
+          "is_correct": true
+        }
+      ]
+    },
+    {
+      "chapter": "Logarithms",
+      "kind": "standard",
+      "difficulty": "easy",
+      "answer_type": "single",
+      "stem": "Find the value of log base 10 of 1000.",
+      "explanation": "1000 = 10^3, so log₁₀ 1000 = 3.",
+      "options": [
+        {
+          "label": "3",
+          "is_correct": true
+        },
+        {
+          "label": "5",
+          "is_correct": false
+        },
+        {
+          "label": "4",
+          "is_correct": false
+        },
+        {
+          "label": "2",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Logarithms",
+      "kind": "standard",
+      "difficulty": "easy",
+      "answer_type": "single",
+      "stem": "Find the value of log base 11 of 1.",
+      "explanation": "log of 1 to any base is 0.",
+      "options": [
+        {
+          "label": "2",
+          "is_correct": false
+        },
+        {
+          "label": "0",
+          "is_correct": true
+        },
+        {
+          "label": "3",
+          "is_correct": false
+        },
+        {
+          "label": "1",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Logarithms",
+      "kind": "standard",
+      "difficulty": "easy",
+      "answer_type": "single",
+      "stem": "Find the value of log base 6 of 6.",
+      "explanation": "log_6 6 = 1.",
+      "options": [
+        {
+          "label": "4",
+          "is_correct": false
+        },
+        {
+          "label": "3",
+          "is_correct": false
+        },
+        {
+          "label": "1",
+          "is_correct": true
+        },
+        {
+          "label": "2",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Logarithms",
+      "kind": "standard",
+      "difficulty": "easy",
+      "answer_type": "single",
+      "stem": "Find the value of log base 7 of 7.",
+      "explanation": "log_7 7 = 1.",
+      "options": [
+        {
+          "label": "4",
+          "is_correct": false
+        },
+        {
+          "label": "3",
+          "is_correct": false
+        },
+        {
+          "label": "1",
+          "is_correct": true
+        },
+        {
+          "label": "2",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Logarithms",
+      "kind": "standard",
+      "difficulty": "easy",
+      "answer_type": "single",
+      "stem": "Find the value of log base 10 of 100000.",
+      "explanation": "100000 = 10^5, so log₁₀ 100000 = 5.",
+      "options": [
+        {
+          "label": "6",
+          "is_correct": false
+        },
+        {
+          "label": "4",
+          "is_correct": false
+        },
+        {
+          "label": "5",
+          "is_correct": true
+        },
+        {
+          "label": "7",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Logarithms",
+      "kind": "standard",
+      "difficulty": "easy",
+      "answer_type": "single",
+      "stem": "Find the value of log base 5 of 1.",
+      "explanation": "log of 1 to any base is 0.",
+      "options": [
+        {
+          "label": "0",
+          "is_correct": true
+        },
+        {
+          "label": "2",
+          "is_correct": false
+        },
+        {
+          "label": "3",
+          "is_correct": false
+        },
+        {
+          "label": "1",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Logarithms",
+      "kind": "standard",
+      "difficulty": "easy",
+      "answer_type": "single",
+      "stem": "Find the value of log base 11 of 11.",
+      "explanation": "log_11 11 = 1.",
+      "options": [
+        {
+          "label": "2",
+          "is_correct": false
+        },
+        {
+          "label": "4",
+          "is_correct": false
+        },
+        {
+          "label": "3",
+          "is_correct": false
+        },
+        {
+          "label": "1",
+          "is_correct": true
+        }
+      ]
+    },
+    {
+      "chapter": "Logarithms",
+      "kind": "standard",
+      "difficulty": "easy",
+      "answer_type": "single",
+      "stem": "Find the value of log base 3 of 81.",
+      "explanation": "81 = 3^4, so log_3 81 = 4.",
+      "options": [
+        {
+          "label": "5",
+          "is_correct": false
+        },
+        {
+          "label": "4",
+          "is_correct": true
+        },
+        {
+          "label": "3",
+          "is_correct": false
+        },
+        {
+          "label": "6",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Logarithms",
+      "kind": "standard",
+      "difficulty": "easy",
+      "answer_type": "single",
+      "stem": "Find the value of log base 4 of 4.",
+      "explanation": "log_4 4 = 1.",
+      "options": [
+        {
+          "label": "4",
+          "is_correct": false
+        },
+        {
+          "label": "3",
+          "is_correct": false
+        },
+        {
+          "label": "1",
+          "is_correct": true
+        },
+        {
+          "label": "2",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Logarithms",
+      "kind": "standard",
+      "difficulty": "easy",
+      "answer_type": "single",
+      "stem": "Find the value of log base 7 of 49.",
+      "explanation": "49 = 7^2, so log_7 49 = 2.",
+      "options": [
+        {
+          "label": "3",
+          "is_correct": false
+        },
+        {
+          "label": "2",
+          "is_correct": true
+        },
+        {
+          "label": "4",
+          "is_correct": false
+        },
+        {
+          "label": "1",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Logarithms",
+      "kind": "standard",
+      "difficulty": "easy",
+      "answer_type": "single",
+      "stem": "Find the value of log base 3 of 1.",
+      "explanation": "log of 1 to any base is 0.",
+      "options": [
+        {
+          "label": "3",
+          "is_correct": false
+        },
+        {
+          "label": "0",
+          "is_correct": true
+        },
+        {
+          "label": "1",
+          "is_correct": false
+        },
+        {
+          "label": "2",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Logarithms",
+      "kind": "standard",
+      "difficulty": "easy",
+      "answer_type": "single",
+      "stem": "Find the value of log base 9 of 81.",
+      "explanation": "81 = 9^2, so log_9 81 = 2.",
+      "options": [
+        {
+          "label": "4",
+          "is_correct": false
+        },
+        {
+          "label": "3",
+          "is_correct": false
+        },
+        {
+          "label": "1",
+          "is_correct": false
+        },
+        {
+          "label": "2",
+          "is_correct": true
+        }
+      ]
+    },
+    {
+      "chapter": "Logarithms",
+      "kind": "standard",
+      "difficulty": "easy",
+      "answer_type": "single",
+      "stem": "Find the value of log base 4 of 64.",
+      "explanation": "64 = 4^3, so log_4 64 = 3.",
+      "options": [
+        {
+          "label": "3",
+          "is_correct": true
+        },
+        {
+          "label": "2",
+          "is_correct": false
+        },
+        {
+          "label": "5",
+          "is_correct": false
+        },
+        {
+          "label": "4",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Logarithms",
+      "kind": "standard",
+      "difficulty": "easy",
+      "answer_type": "single",
+      "stem": "Find the value of log base 8 of 512.",
+      "explanation": "512 = 8^3, so log_8 512 = 3.",
+      "options": [
+        {
+          "label": "3",
+          "is_correct": true
+        },
+        {
+          "label": "2",
+          "is_correct": false
+        },
+        {
+          "label": "5",
+          "is_correct": false
+        },
+        {
+          "label": "4",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Logarithms",
+      "kind": "standard",
+      "difficulty": "easy",
+      "answer_type": "single",
+      "stem": "Find the value of log base 8 of 1.",
+      "explanation": "log of 1 to any base is 0.",
+      "options": [
+        {
+          "label": "2",
+          "is_correct": false
+        },
+        {
+          "label": "1",
+          "is_correct": false
+        },
+        {
+          "label": "0",
+          "is_correct": true
+        },
+        {
+          "label": "3",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Logarithms",
+      "kind": "standard",
+      "difficulty": "easy",
+      "answer_type": "single",
+      "stem": "Find the value of log base 12 of 1.",
+      "explanation": "log of 1 to any base is 0.",
+      "options": [
+        {
+          "label": "1",
+          "is_correct": false
+        },
+        {
+          "label": "0",
+          "is_correct": true
+        },
+        {
+          "label": "2",
+          "is_correct": false
+        },
+        {
+          "label": "3",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Logarithms",
+      "kind": "standard",
+      "difficulty": "easy",
+      "answer_type": "single",
+      "stem": "Find the value of log base 4 of 16.",
+      "explanation": "16 = 4^2, so log_4 16 = 2.",
+      "options": [
+        {
+          "label": "1",
+          "is_correct": false
+        },
+        {
+          "label": "4",
+          "is_correct": false
+        },
+        {
+          "label": "3",
+          "is_correct": false
+        },
+        {
+          "label": "2",
+          "is_correct": true
+        }
+      ]
+    },
+    {
+      "chapter": "Logarithms",
+      "kind": "standard",
+      "difficulty": "easy",
+      "answer_type": "single",
+      "stem": "Find the value of log base 9 of 6561.",
+      "explanation": "6561 = 9^4, so log_9 6561 = 4.",
+      "options": [
+        {
+          "label": "3",
+          "is_correct": false
+        },
+        {
+          "label": "6",
+          "is_correct": false
+        },
+        {
+          "label": "4",
+          "is_correct": true
+        },
+        {
+          "label": "5",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Logarithms",
+      "kind": "standard",
+      "difficulty": "easy",
+      "answer_type": "single",
+      "stem": "Find the value of log base 6 of 1.",
+      "explanation": "log of 1 to any base is 0.",
+      "options": [
+        {
+          "label": "2",
+          "is_correct": false
+        },
+        {
+          "label": "1",
+          "is_correct": false
+        },
+        {
+          "label": "3",
+          "is_correct": false
+        },
+        {
+          "label": "0",
+          "is_correct": true
+        }
+      ]
+    },
+    {
+      "chapter": "Logarithms",
+      "kind": "standard",
+      "difficulty": "easy",
+      "answer_type": "single",
+      "stem": "Find the value of log base 7 of 1.",
+      "explanation": "log of 1 to any base is 0.",
+      "options": [
+        {
+          "label": "3",
+          "is_correct": false
+        },
+        {
+          "label": "0",
+          "is_correct": true
+        },
+        {
+          "label": "2",
+          "is_correct": false
+        },
+        {
+          "label": "1",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Logarithms",
+      "kind": "standard",
+      "difficulty": "easy",
+      "answer_type": "single",
+      "stem": "Find the value of log base 4 of 1.",
+      "explanation": "log of 1 to any base is 0.",
+      "options": [
+        {
+          "label": "2",
+          "is_correct": false
+        },
+        {
+          "label": "0",
+          "is_correct": true
+        },
+        {
+          "label": "1",
+          "is_correct": false
+        },
+        {
+          "label": "3",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Logarithms",
+      "kind": "standard",
+      "difficulty": "medium",
+      "answer_type": "single",
+      "stem": "Find the value of log base 4 of (4 × 4).",
+      "explanation": "4×4 = 4^(1+1) = 4^2, so the log is 2.",
+      "options": [
+        {
+          "label": "1",
+          "is_correct": false
+        },
+        {
+          "label": "3",
+          "is_correct": false
+        },
+        {
+          "label": "2",
+          "is_correct": true
+        },
+        {
+          "label": "4",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Logarithms",
+      "kind": "standard",
+      "difficulty": "medium",
+      "answer_type": "single",
+      "stem": "If log base 3 of x equals 5, find x.",
+      "explanation": "x = 3^5 = 243.",
+      "options": [
+        {
+          "label": "253",
+          "is_correct": false
+        },
+        {
+          "label": "233",
+          "is_correct": false
+        },
+        {
+          "label": "243",
+          "is_correct": true
+        },
+        {
+          "label": "263",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Logarithms",
+      "kind": "standard",
+      "difficulty": "medium",
+      "answer_type": "single",
+      "stem": "Find the value of log base 5 of 15625.",
+      "explanation": "15625 = 5^6, so log_5 15625 = 6.",
+      "options": [
+        {
+          "label": "6",
+          "is_correct": true
+        },
+        {
+          "label": "8",
+          "is_correct": false
+        },
+        {
+          "label": "7",
+          "is_correct": false
+        },
+        {
+          "label": "5",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Logarithms",
+      "kind": "standard",
+      "difficulty": "medium",
+      "answer_type": "single",
+      "stem": "Find the value of log base 4 of 4096.",
+      "explanation": "4096 = 4^6, so log_4 4096 = 6.",
+      "options": [
+        {
+          "label": "7",
+          "is_correct": false
+        },
+        {
+          "label": "5",
+          "is_correct": false
+        },
+        {
+          "label": "6",
+          "is_correct": true
+        },
+        {
+          "label": "8",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Logarithms",
+      "kind": "standard",
+      "difficulty": "medium",
+      "answer_type": "single",
+      "stem": "Find the value of log base 4 of (64 × 4).",
+      "explanation": "64×4 = 4^(3+1) = 4^4, so the log is 4.",
+      "options": [
+        {
+          "label": "5",
+          "is_correct": false
+        },
+        {
+          "label": "6",
+          "is_correct": false
+        },
+        {
+          "label": "4",
+          "is_correct": true
+        },
+        {
+          "label": "3",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Logarithms",
+      "kind": "standard",
+      "difficulty": "medium",
+      "answer_type": "single",
+      "stem": "Find the value of log base 3 of (3 × 9).",
+      "explanation": "3×9 = 3^(1+2) = 3^3, so the log is 3.",
+      "options": [
+        {
+          "label": "2",
+          "is_correct": false
+        },
+        {
+          "label": "3",
+          "is_correct": true
+        },
+        {
+          "label": "4",
+          "is_correct": false
+        },
+        {
+          "label": "5",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Logarithms",
+      "kind": "standard",
+      "difficulty": "medium",
+      "answer_type": "single",
+      "stem": "If log base 4 of x equals 4, find x.",
+      "explanation": "x = 4^4 = 256.",
+      "options": [
+        {
+          "label": "246",
+          "is_correct": false
+        },
+        {
+          "label": "266",
+          "is_correct": false
+        },
+        {
+          "label": "256",
+          "is_correct": true
+        },
+        {
+          "label": "276",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Logarithms",
+      "kind": "standard",
+      "difficulty": "medium",
+      "answer_type": "single",
+      "stem": "Find the value of log base 2 of (4 × 8).",
+      "explanation": "4×8 = 2^(2+3) = 2^5, so the log is 5.",
+      "options": [
+        {
+          "label": "7",
+          "is_correct": false
+        },
+        {
+          "label": "4",
+          "is_correct": false
+        },
+        {
+          "label": "5",
+          "is_correct": true
+        },
+        {
+          "label": "6",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Logarithms",
+      "kind": "standard",
+      "difficulty": "medium",
+      "answer_type": "single",
+      "stem": "Find the value of log base 2 of (8 × 8).",
+      "explanation": "8×8 = 2^(3+3) = 2^6, so the log is 6.",
+      "options": [
+        {
+          "label": "7",
+          "is_correct": false
+        },
+        {
+          "label": "6",
+          "is_correct": true
+        },
+        {
+          "label": "8",
+          "is_correct": false
+        },
+        {
+          "label": "5",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Logarithms",
+      "kind": "standard",
+      "difficulty": "medium",
+      "answer_type": "single",
+      "stem": "Find the value of log base 3 of (27 × 27).",
+      "explanation": "27×27 = 3^(3+3) = 3^6, so the log is 6.",
+      "options": [
+        {
+          "label": "5",
+          "is_correct": false
+        },
+        {
+          "label": "6",
+          "is_correct": true
+        },
+        {
+          "label": "8",
+          "is_correct": false
+        },
+        {
+          "label": "7",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Logarithms",
+      "kind": "standard",
+      "difficulty": "medium",
+      "answer_type": "single",
+      "stem": "Find the value of log base 5 of 78125.",
+      "explanation": "78125 = 5^7, so log_5 78125 = 7.",
+      "options": [
+        {
+          "label": "9",
+          "is_correct": false
+        },
+        {
+          "label": "7",
+          "is_correct": true
+        },
+        {
+          "label": "8",
+          "is_correct": false
+        },
+        {
+          "label": "6",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Logarithms",
+      "kind": "standard",
+      "difficulty": "medium",
+      "answer_type": "single",
+      "stem": "Find the value of log base 5 of 390625.",
+      "explanation": "390625 = 5^8, so log_5 390625 = 8.",
+      "options": [
+        {
+          "label": "10",
+          "is_correct": false
+        },
+        {
+          "label": "7",
+          "is_correct": false
+        },
+        {
+          "label": "9",
+          "is_correct": false
+        },
+        {
+          "label": "8",
+          "is_correct": true
+        }
+      ]
+    },
+    {
+      "chapter": "Logarithms",
+      "kind": "standard",
+      "difficulty": "medium",
+      "answer_type": "single",
+      "stem": "Find the value of log base 4 of (16 × 16).",
+      "explanation": "16×16 = 4^(2+2) = 4^4, so the log is 4.",
+      "options": [
+        {
+          "label": "6",
+          "is_correct": false
+        },
+        {
+          "label": "5",
+          "is_correct": false
+        },
+        {
+          "label": "4",
+          "is_correct": true
+        },
+        {
+          "label": "3",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Logarithms",
+      "kind": "standard",
+      "difficulty": "medium",
+      "answer_type": "single",
+      "stem": "If log base 5 of x equals 3, find x.",
+      "explanation": "x = 5^3 = 125.",
+      "options": [
+        {
+          "label": "123",
+          "is_correct": false
+        },
+        {
+          "label": "129",
+          "is_correct": false
+        },
+        {
+          "label": "125",
+          "is_correct": true
+        },
+        {
+          "label": "127",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Logarithms",
+      "kind": "standard",
+      "difficulty": "medium",
+      "answer_type": "single",
+      "stem": "Find the value of log base 4 of (4 × 16).",
+      "explanation": "4×16 = 4^(1+2) = 4^3, so the log is 3.",
+      "options": [
+        {
+          "label": "2",
+          "is_correct": false
+        },
+        {
+          "label": "5",
+          "is_correct": false
+        },
+        {
+          "label": "3",
+          "is_correct": true
+        },
+        {
+          "label": "4",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Logarithms",
+      "kind": "standard",
+      "difficulty": "medium",
+      "answer_type": "single",
+      "stem": "Find the value of log base 3 of 243.",
+      "explanation": "243 = 3^5, so log_3 243 = 5.",
+      "options": [
+        {
+          "label": "5",
+          "is_correct": true
+        },
+        {
+          "label": "6",
+          "is_correct": false
+        },
+        {
+          "label": "7",
+          "is_correct": false
+        },
+        {
+          "label": "4",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Logarithms",
+      "kind": "standard",
+      "difficulty": "medium",
+      "answer_type": "single",
+      "stem": "Find the value of log base 3 of (9 × 3).",
+      "explanation": "9×3 = 3^(2+1) = 3^3, so the log is 3.",
+      "options": [
+        {
+          "label": "2",
+          "is_correct": false
+        },
+        {
+          "label": "3",
+          "is_correct": true
+        },
+        {
+          "label": "4",
+          "is_correct": false
+        },
+        {
+          "label": "5",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Logarithms",
+      "kind": "standard",
+      "difficulty": "medium",
+      "answer_type": "single",
+      "stem": "Find the value of log base 3 of (3 × 27).",
+      "explanation": "3×27 = 3^(1+3) = 3^4, so the log is 4.",
+      "options": [
+        {
+          "label": "5",
+          "is_correct": false
+        },
+        {
+          "label": "4",
+          "is_correct": true
+        },
+        {
+          "label": "6",
+          "is_correct": false
+        },
+        {
+          "label": "3",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Logarithms",
+      "kind": "standard",
+      "difficulty": "medium",
+      "answer_type": "single",
+      "stem": "Find the value of log base 2 of 256.",
+      "explanation": "256 = 2^8, so log_2 256 = 8.",
+      "options": [
+        {
+          "label": "10",
+          "is_correct": false
+        },
+        {
+          "label": "9",
+          "is_correct": false
+        },
+        {
+          "label": "7",
+          "is_correct": false
+        },
+        {
+          "label": "8",
+          "is_correct": true
+        }
+      ]
+    },
+    {
+      "chapter": "Logarithms",
+      "kind": "standard",
+      "difficulty": "medium",
+      "answer_type": "single",
+      "stem": "If log base 2 of x equals 2, find x.",
+      "explanation": "x = 2^2 = 4.",
+      "options": [
+        {
+          "label": "5",
+          "is_correct": false
+        },
+        {
+          "label": "6",
+          "is_correct": false
+        },
+        {
+          "label": "3",
+          "is_correct": false
+        },
+        {
+          "label": "4",
+          "is_correct": true
+        }
+      ]
+    },
+    {
+      "chapter": "Logarithms",
+      "kind": "standard",
+      "difficulty": "medium",
+      "answer_type": "single",
+      "stem": "If log base 4 of x equals 3, find x.",
+      "explanation": "x = 4^3 = 64.",
+      "options": [
+        {
+          "label": "66",
+          "is_correct": false
+        },
+        {
+          "label": "64",
+          "is_correct": true
+        },
+        {
+          "label": "62",
+          "is_correct": false
+        },
+        {
+          "label": "68",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Logarithms",
+      "kind": "standard",
+      "difficulty": "medium",
+      "answer_type": "single",
+      "stem": "Find the value of log base 6 of 1679616.",
+      "explanation": "1679616 = 6^8, so log_6 1679616 = 8.",
+      "options": [
+        {
+          "label": "7",
+          "is_correct": false
+        },
+        {
+          "label": "10",
+          "is_correct": false
+        },
+        {
+          "label": "8",
+          "is_correct": true
+        },
+        {
+          "label": "9",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Logarithms",
+      "kind": "standard",
+      "difficulty": "medium",
+      "answer_type": "single",
+      "stem": "Find the value of log base 2 of 32.",
+      "explanation": "32 = 2^5, so log_2 32 = 5.",
+      "options": [
+        {
+          "label": "5",
+          "is_correct": true
+        },
+        {
+          "label": "4",
+          "is_correct": false
+        },
+        {
+          "label": "7",
+          "is_correct": false
+        },
+        {
+          "label": "6",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Logarithms",
+      "kind": "standard",
+      "difficulty": "medium",
+      "answer_type": "single",
+      "stem": "Find the value of log base 2 of (2 × 2).",
+      "explanation": "2×2 = 2^(1+1) = 2^2, so the log is 2.",
+      "options": [
+        {
+          "label": "3",
+          "is_correct": false
+        },
+        {
+          "label": "1",
+          "is_correct": false
+        },
+        {
+          "label": "4",
+          "is_correct": false
+        },
+        {
+          "label": "2",
+          "is_correct": true
+        }
+      ]
+    },
+    {
+      "chapter": "Logarithms",
+      "kind": "standard",
+      "difficulty": "medium",
+      "answer_type": "single",
+      "stem": "Find the value of log base 2 of (8 × 4).",
+      "explanation": "8×4 = 2^(3+2) = 2^5, so the log is 5.",
+      "options": [
+        {
+          "label": "5",
+          "is_correct": true
+        },
+        {
+          "label": "7",
+          "is_correct": false
+        },
+        {
+          "label": "6",
+          "is_correct": false
+        },
+        {
+          "label": "4",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Logarithms",
+      "kind": "standard",
+      "difficulty": "medium",
+      "answer_type": "single",
+      "stem": "Find the value of log base 4 of 1024.",
+      "explanation": "1024 = 4^5, so log_4 1024 = 5.",
+      "options": [
+        {
+          "label": "7",
+          "is_correct": false
+        },
+        {
+          "label": "4",
+          "is_correct": false
+        },
+        {
+          "label": "6",
+          "is_correct": false
+        },
+        {
+          "label": "5",
+          "is_correct": true
+        }
+      ]
+    },
+    {
+      "chapter": "Logarithms",
+      "kind": "standard",
+      "difficulty": "medium",
+      "answer_type": "single",
+      "stem": "Find the value of log base 2 of (4 × 2).",
+      "explanation": "4×2 = 2^(2+1) = 2^3, so the log is 3.",
+      "options": [
+        {
+          "label": "4",
+          "is_correct": false
+        },
+        {
+          "label": "3",
+          "is_correct": true
+        },
+        {
+          "label": "2",
+          "is_correct": false
+        },
+        {
+          "label": "5",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Logarithms",
+      "kind": "standard",
+      "difficulty": "medium",
+      "answer_type": "single",
+      "stem": "Find the value of log base 5 of 3125.",
+      "explanation": "3125 = 5^5, so log_5 3125 = 5.",
+      "options": [
+        {
+          "label": "6",
+          "is_correct": false
+        },
+        {
+          "label": "4",
+          "is_correct": false
+        },
+        {
+          "label": "5",
+          "is_correct": true
+        },
+        {
+          "label": "7",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Logarithms",
+      "kind": "standard",
+      "difficulty": "medium",
+      "answer_type": "single",
+      "stem": "If log base 3 of x equals 4, find x.",
+      "explanation": "x = 3^4 = 81.",
+      "options": [
+        {
+          "label": "81",
+          "is_correct": true
+        },
+        {
+          "label": "85",
+          "is_correct": false
+        },
+        {
+          "label": "79",
+          "is_correct": false
+        },
+        {
+          "label": "83",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Logarithms",
+      "kind": "standard",
+      "difficulty": "medium",
+      "answer_type": "single",
+      "stem": "Find the value of log base 4 of (16 × 4).",
+      "explanation": "16×4 = 4^(2+1) = 4^3, so the log is 3.",
+      "options": [
+        {
+          "label": "3",
+          "is_correct": true
+        },
+        {
+          "label": "2",
+          "is_correct": false
+        },
+        {
+          "label": "5",
+          "is_correct": false
+        },
+        {
+          "label": "4",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Logarithms",
+      "kind": "standard",
+      "difficulty": "medium",
+      "answer_type": "single",
+      "stem": "If log base 5 of x equals 2, find x.",
+      "explanation": "x = 5^2 = 25.",
+      "options": [
+        {
+          "label": "27",
+          "is_correct": false
+        },
+        {
+          "label": "26",
+          "is_correct": false
+        },
+        {
+          "label": "24",
+          "is_correct": false
+        },
+        {
+          "label": "25",
+          "is_correct": true
+        }
+      ]
+    },
+    {
+      "chapter": "Logarithms",
+      "kind": "standard",
+      "difficulty": "medium",
+      "answer_type": "single",
+      "stem": "Find the value of log base 2 of (4 × 4).",
+      "explanation": "4×4 = 2^(2+2) = 2^4, so the log is 4.",
+      "options": [
+        {
+          "label": "5",
+          "is_correct": false
+        },
+        {
+          "label": "3",
+          "is_correct": false
+        },
+        {
+          "label": "4",
+          "is_correct": true
+        },
+        {
+          "label": "6",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Logarithms",
+      "kind": "standard",
+      "difficulty": "medium",
+      "answer_type": "single",
+      "stem": "Find the value of log base 6 of 46656.",
+      "explanation": "46656 = 6^6, so log_6 46656 = 6.",
+      "options": [
+        {
+          "label": "6",
+          "is_correct": true
+        },
+        {
+          "label": "8",
+          "is_correct": false
+        },
+        {
+          "label": "5",
+          "is_correct": false
+        },
+        {
+          "label": "7",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Logarithms",
+      "kind": "standard",
+      "difficulty": "medium",
+      "answer_type": "single",
+      "stem": "Find the value of log base 2 of (2 × 8).",
+      "explanation": "2×8 = 2^(1+3) = 2^4, so the log is 4.",
+      "options": [
+        {
+          "label": "4",
+          "is_correct": true
+        },
+        {
+          "label": "6",
+          "is_correct": false
+        },
+        {
+          "label": "5",
+          "is_correct": false
+        },
+        {
+          "label": "3",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Logarithms",
+      "kind": "standard",
+      "difficulty": "medium",
+      "answer_type": "single",
+      "stem": "If log base 3 of x equals 3, find x.",
+      "explanation": "x = 3^3 = 27.",
+      "options": [
+        {
+          "label": "29",
+          "is_correct": false
+        },
+        {
+          "label": "27",
+          "is_correct": true
+        },
+        {
+          "label": "28",
+          "is_correct": false
+        },
+        {
+          "label": "26",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Logarithms",
+      "kind": "standard",
+      "difficulty": "medium",
+      "answer_type": "single",
+      "stem": "If log base 3 of x equals 2, find x.",
+      "explanation": "x = 3^2 = 9.",
+      "options": [
+        {
+          "label": "9",
+          "is_correct": true
+        },
+        {
+          "label": "8",
+          "is_correct": false
+        },
+        {
+          "label": "10",
+          "is_correct": false
+        },
+        {
+          "label": "11",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Logarithms",
+      "kind": "standard",
+      "difficulty": "medium",
+      "answer_type": "single",
+      "stem": "Find the value of log base 3 of (27 × 9).",
+      "explanation": "27×9 = 3^(3+2) = 3^5, so the log is 5.",
+      "options": [
+        {
+          "label": "5",
+          "is_correct": true
+        },
+        {
+          "label": "4",
+          "is_correct": false
+        },
+        {
+          "label": "7",
+          "is_correct": false
+        },
+        {
+          "label": "6",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Logarithms",
+      "kind": "standard",
+      "difficulty": "medium",
+      "answer_type": "single",
+      "stem": "If log base 2 of x equals 5, find x.",
+      "explanation": "x = 2^5 = 32.",
+      "options": [
+        {
+          "label": "33",
+          "is_correct": false
+        },
+        {
+          "label": "34",
+          "is_correct": false
+        },
+        {
+          "label": "32",
+          "is_correct": true
+        },
+        {
+          "label": "31",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Logarithms",
+      "kind": "standard",
+      "difficulty": "medium",
+      "answer_type": "single",
+      "stem": "If log base 5 of x equals 5, find x.",
+      "explanation": "x = 5^5 = 3125.",
+      "options": [
+        {
+          "label": "3000",
+          "is_correct": false
+        },
+        {
+          "label": "3375",
+          "is_correct": false
+        },
+        {
+          "label": "3125",
+          "is_correct": true
+        },
+        {
+          "label": "3250",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Logarithms",
+      "kind": "standard",
+      "difficulty": "medium",
+      "answer_type": "single",
+      "stem": "If log base 2 of x equals 4, find x.",
+      "explanation": "x = 2^4 = 16.",
+      "options": [
+        {
+          "label": "16",
+          "is_correct": true
+        },
+        {
+          "label": "15",
+          "is_correct": false
+        },
+        {
+          "label": "17",
+          "is_correct": false
+        },
+        {
+          "label": "18",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Logarithms",
+      "kind": "standard",
+      "difficulty": "medium",
+      "answer_type": "single",
+      "stem": "Find the value of log base 6 of 279936.",
+      "explanation": "279936 = 6^7, so log_6 279936 = 7.",
+      "options": [
+        {
+          "label": "8",
+          "is_correct": false
+        },
+        {
+          "label": "7",
+          "is_correct": true
+        },
+        {
+          "label": "6",
+          "is_correct": false
+        },
+        {
+          "label": "9",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Logarithms",
+      "kind": "standard",
+      "difficulty": "medium",
+      "answer_type": "single",
+      "stem": "Find the value of log base 3 of 6561.",
+      "explanation": "6561 = 3^8, so log_3 6561 = 8.",
+      "options": [
+        {
+          "label": "8",
+          "is_correct": true
+        },
+        {
+          "label": "10",
+          "is_correct": false
+        },
+        {
+          "label": "9",
+          "is_correct": false
+        },
+        {
+          "label": "7",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Logarithms",
+      "kind": "standard",
+      "difficulty": "medium",
+      "answer_type": "single",
+      "stem": "Find the value of log base 3 of (27 × 3).",
+      "explanation": "27×3 = 3^(3+1) = 3^4, so the log is 4.",
+      "options": [
+        {
+          "label": "3",
+          "is_correct": false
+        },
+        {
+          "label": "4",
+          "is_correct": true
+        },
+        {
+          "label": "5",
+          "is_correct": false
+        },
+        {
+          "label": "6",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Logarithms",
+      "kind": "standard",
+      "difficulty": "medium",
+      "answer_type": "single",
+      "stem": "If log base 5 of x equals 4, find x.",
+      "explanation": "x = 5^4 = 625.",
+      "options": [
+        {
+          "label": "600",
+          "is_correct": false
+        },
+        {
+          "label": "650",
+          "is_correct": false
+        },
+        {
+          "label": "675",
+          "is_correct": false
+        },
+        {
+          "label": "625",
+          "is_correct": true
+        }
+      ]
+    },
+    {
+      "chapter": "Logarithms",
+      "kind": "standard",
+      "difficulty": "medium",
+      "answer_type": "single",
+      "stem": "If log base 4 of x equals 5, find x.",
+      "explanation": "x = 4^5 = 1024.",
+      "options": [
+        {
+          "label": "1065",
+          "is_correct": false
+        },
+        {
+          "label": "1024",
+          "is_correct": true
+        },
+        {
+          "label": "983",
+          "is_correct": false
+        },
+        {
+          "label": "1106",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Logarithms",
+      "kind": "standard",
+      "difficulty": "medium",
+      "answer_type": "single",
+      "stem": "Find the value of log base 3 of (9 × 27).",
+      "explanation": "9×27 = 3^(2+3) = 3^5, so the log is 5.",
+      "options": [
+        {
+          "label": "4",
+          "is_correct": false
+        },
+        {
+          "label": "6",
+          "is_correct": false
+        },
+        {
+          "label": "7",
+          "is_correct": false
+        },
+        {
+          "label": "5",
+          "is_correct": true
+        }
+      ]
+    },
+    {
+      "chapter": "Logarithms",
+      "kind": "standard",
+      "difficulty": "medium",
+      "answer_type": "single",
+      "stem": "Find the value of log base 3 of (9 × 9).",
+      "explanation": "9×9 = 3^(2+2) = 3^4, so the log is 4.",
+      "options": [
+        {
+          "label": "6",
+          "is_correct": false
+        },
+        {
+          "label": "4",
+          "is_correct": true
+        },
+        {
+          "label": "3",
+          "is_correct": false
+        },
+        {
+          "label": "5",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Logarithms",
+      "kind": "standard",
+      "difficulty": "medium",
+      "answer_type": "single",
+      "stem": "If log base 2 of x equals 3, find x.",
+      "explanation": "x = 2^3 = 8.",
+      "options": [
+        {
+          "label": "8",
+          "is_correct": true
+        },
+        {
+          "label": "9",
+          "is_correct": false
+        },
+        {
+          "label": "10",
+          "is_correct": false
+        },
+        {
+          "label": "7",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Logarithms",
+      "kind": "standard",
+      "difficulty": "medium",
+      "answer_type": "single",
+      "stem": "Find the value of log base 3 of 2187.",
+      "explanation": "2187 = 3^7, so log_3 2187 = 7.",
+      "options": [
+        {
+          "label": "9",
+          "is_correct": false
+        },
+        {
+          "label": "6",
+          "is_correct": false
+        },
+        {
+          "label": "8",
+          "is_correct": false
+        },
+        {
+          "label": "7",
+          "is_correct": true
+        }
+      ]
+    },
+    {
+      "chapter": "Logarithms",
+      "kind": "standard",
+      "difficulty": "medium",
+      "answer_type": "single",
+      "stem": "Find the value of log base 4 of (16 × 64).",
+      "explanation": "16×64 = 4^(2+3) = 4^5, so the log is 5.",
+      "options": [
+        {
+          "label": "5",
+          "is_correct": true
+        },
+        {
+          "label": "7",
+          "is_correct": false
+        },
+        {
+          "label": "4",
+          "is_correct": false
+        },
+        {
+          "label": "6",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Logarithms",
+      "kind": "standard",
+      "difficulty": "hard",
+      "answer_type": "single",
+      "stem": "If log base 2 of x = 6 and log base 2 of y = 5, find log base 2 of (x × y).",
+      "explanation": "log(xy) = log x + log y = 6 + 5 = 11.",
+      "options": [
+        {
+          "label": "11",
+          "is_correct": true
+        },
+        {
+          "label": "13",
+          "is_correct": false
+        },
+        {
+          "label": "10",
+          "is_correct": false
+        },
+        {
+          "label": "12",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Logarithms",
+      "kind": "standard",
+      "difficulty": "hard",
+      "answer_type": "single",
+      "stem": "Find the value of log base 4 of (1024 ÷ 16).",
+      "explanation": "1024÷16 = 4^(5−2) = 4^3, so the log is 3.",
+      "options": [
+        {
+          "label": "3",
+          "is_correct": true
+        },
+        {
+          "label": "4",
+          "is_correct": false
+        },
+        {
+          "label": "5",
+          "is_correct": false
+        },
+        {
+          "label": "2",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Logarithms",
+      "kind": "standard",
+      "difficulty": "hard",
+      "answer_type": "single",
+      "stem": "Find the value of log base 5 of (15625 ÷ 3125).",
+      "explanation": "15625÷3125 = 5^(6−5) = 5^1, so the log is 1.",
+      "options": [
+        {
+          "label": "3",
+          "is_correct": false
+        },
+        {
+          "label": "1",
+          "is_correct": true
+        },
+        {
+          "label": "2",
+          "is_correct": false
+        },
+        {
+          "label": "4",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Logarithms",
+      "kind": "standard",
+      "difficulty": "hard",
+      "answer_type": "single",
+      "stem": "If log base 6 of x = 6 and log base 6 of y = 5, find log base 6 of (x × y).",
+      "explanation": "log(xy) = log x + log y = 6 + 5 = 11.",
+      "options": [
+        {
+          "label": "12",
+          "is_correct": false
+        },
+        {
+          "label": "11",
+          "is_correct": true
+        },
+        {
+          "label": "13",
+          "is_correct": false
+        },
+        {
+          "label": "10",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Logarithms",
+      "kind": "standard",
+      "difficulty": "hard",
+      "answer_type": "single",
+      "stem": "Find the value of log base 3 of (27 ÷ 3).",
+      "explanation": "27÷3 = 3^(3−1) = 3^2, so the log is 2.",
+      "options": [
+        {
+          "label": "2",
+          "is_correct": true
+        },
+        {
+          "label": "3",
+          "is_correct": false
+        },
+        {
+          "label": "1",
+          "is_correct": false
+        },
+        {
+          "label": "4",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Logarithms",
+      "kind": "standard",
+      "difficulty": "hard",
+      "answer_type": "single",
+      "stem": "If log base 7 of x = 4 and log base 7 of y = 5, find log base 7 of (x × y).",
+      "explanation": "log(xy) = log x + log y = 4 + 5 = 9.",
+      "options": [
+        {
+          "label": "8",
+          "is_correct": false
+        },
+        {
+          "label": "11",
+          "is_correct": false
+        },
+        {
+          "label": "9",
+          "is_correct": true
+        },
+        {
+          "label": "10",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Logarithms",
+      "kind": "standard",
+      "difficulty": "hard",
+      "answer_type": "single",
+      "stem": "If log base 9 of x = 6 and log base 9 of y = 4, find log base 9 of (x × y).",
+      "explanation": "log(xy) = log x + log y = 6 + 4 = 10.",
+      "options": [
+        {
+          "label": "11",
+          "is_correct": false
+        },
+        {
+          "label": "9",
+          "is_correct": false
+        },
+        {
+          "label": "10",
+          "is_correct": true
+        },
+        {
+          "label": "12",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Logarithms",
+      "kind": "standard",
+      "difficulty": "hard",
+      "answer_type": "single",
+      "stem": "If log base 6 of x = 4 and log base 6 of y = 3, find log base 6 of (x × y).",
+      "explanation": "log(xy) = log x + log y = 4 + 3 = 7.",
+      "options": [
+        {
+          "label": "9",
+          "is_correct": false
+        },
+        {
+          "label": "7",
+          "is_correct": true
+        },
+        {
+          "label": "8",
+          "is_correct": false
+        },
+        {
+          "label": "6",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Logarithms",
+      "kind": "standard",
+      "difficulty": "hard",
+      "answer_type": "single",
+      "stem": "If log base 2 of x = 6 and log base 2 of y = 6, find log base 2 of (x × y).",
+      "explanation": "log(xy) = log x + log y = 6 + 6 = 12.",
+      "options": [
+        {
+          "label": "12",
+          "is_correct": true
+        },
+        {
+          "label": "13",
+          "is_correct": false
+        },
+        {
+          "label": "14",
+          "is_correct": false
+        },
+        {
+          "label": "11",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Logarithms",
+      "kind": "standard",
+      "difficulty": "hard",
+      "answer_type": "single",
+      "stem": "Find the value of log base 3 of 81 + log base 5 of 25.",
+      "explanation": "The two logs are 4 and 2; their sum is 6.",
+      "options": [
+        {
+          "label": "5",
+          "is_correct": false
+        },
+        {
+          "label": "6",
+          "is_correct": true
+        },
+        {
+          "label": "7",
+          "is_correct": false
+        },
+        {
+          "label": "8",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Logarithms",
+      "kind": "standard",
+      "difficulty": "hard",
+      "answer_type": "single",
+      "stem": "If log base 2 of x = 4 and log base 2 of y = 2, find log base 2 of (x × y).",
+      "explanation": "log(xy) = log x + log y = 4 + 2 = 6.",
+      "options": [
+        {
+          "label": "7",
+          "is_correct": false
+        },
+        {
+          "label": "5",
+          "is_correct": false
+        },
+        {
+          "label": "8",
+          "is_correct": false
+        },
+        {
+          "label": "6",
+          "is_correct": true
+        }
+      ]
+    },
+    {
+      "chapter": "Logarithms",
+      "kind": "standard",
+      "difficulty": "hard",
+      "answer_type": "single",
+      "stem": "Find the value of log base 3 of (27 ÷ 9).",
+      "explanation": "27÷9 = 3^(3−2) = 3^1, so the log is 1.",
+      "options": [
+        {
+          "label": "3",
+          "is_correct": false
+        },
+        {
+          "label": "4",
+          "is_correct": false
+        },
+        {
+          "label": "2",
+          "is_correct": false
+        },
+        {
+          "label": "1",
+          "is_correct": true
+        }
+      ]
+    },
+    {
+      "chapter": "Logarithms",
+      "kind": "standard",
+      "difficulty": "hard",
+      "answer_type": "single",
+      "stem": "Find the value of log base 3 of (243 ÷ 3).",
+      "explanation": "243÷3 = 3^(5−1) = 3^4, so the log is 4.",
+      "options": [
+        {
+          "label": "5",
+          "is_correct": false
+        },
+        {
+          "label": "3",
+          "is_correct": false
+        },
+        {
+          "label": "6",
+          "is_correct": false
+        },
+        {
+          "label": "4",
+          "is_correct": true
+        }
+      ]
+    },
+    {
+      "chapter": "Logarithms",
+      "kind": "standard",
+      "difficulty": "hard",
+      "answer_type": "single",
+      "stem": "Find the value of log base 5 of (625 ÷ 5).",
+      "explanation": "625÷5 = 5^(4−1) = 5^3, so the log is 3.",
+      "options": [
+        {
+          "label": "3",
+          "is_correct": true
+        },
+        {
+          "label": "5",
+          "is_correct": false
+        },
+        {
+          "label": "4",
+          "is_correct": false
+        },
+        {
+          "label": "2",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Logarithms",
+      "kind": "standard",
+      "difficulty": "hard",
+      "answer_type": "single",
+      "stem": "Find the value of log base 2 of 8 + log base 2 of 4.",
+      "explanation": "The two logs are 3 and 2; their sum is 5.",
+      "options": [
+        {
+          "label": "6",
+          "is_correct": false
+        },
+        {
+          "label": "4",
+          "is_correct": false
+        },
+        {
+          "label": "7",
+          "is_correct": false
+        },
+        {
+          "label": "5",
+          "is_correct": true
+        }
+      ]
+    },
+    {
+      "chapter": "Logarithms",
+      "kind": "standard",
+      "difficulty": "hard",
+      "answer_type": "single",
+      "stem": "Find the value of log base 3 of 9 + log base 3 of 27.",
+      "explanation": "The two logs are 2 and 3; their sum is 5.",
+      "options": [
+        {
+          "label": "7",
+          "is_correct": false
+        },
+        {
+          "label": "6",
+          "is_correct": false
+        },
+        {
+          "label": "5",
+          "is_correct": true
+        },
+        {
+          "label": "4",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Logarithms",
+      "kind": "standard",
+      "difficulty": "hard",
+      "answer_type": "single",
+      "stem": "Find the value of log base 2 of (8 ÷ 2).",
+      "explanation": "8÷2 = 2^(3−1) = 2^2, so the log is 2.",
+      "options": [
+        {
+          "label": "4",
+          "is_correct": false
+        },
+        {
+          "label": "2",
+          "is_correct": true
+        },
+        {
+          "label": "1",
+          "is_correct": false
+        },
+        {
+          "label": "3",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Logarithms",
+      "kind": "standard",
+      "difficulty": "hard",
+      "answer_type": "single",
+      "stem": "Find the value of log base 2 of 8 + log base 3 of 9.",
+      "explanation": "The two logs are 3 and 2; their sum is 5.",
+      "options": [
+        {
+          "label": "7",
+          "is_correct": false
+        },
+        {
+          "label": "5",
+          "is_correct": true
+        },
+        {
+          "label": "6",
+          "is_correct": false
+        },
+        {
+          "label": "4",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Logarithms",
+      "kind": "standard",
+      "difficulty": "hard",
+      "answer_type": "single",
+      "stem": "If log base 9 of x = 6 and log base 9 of y = 3, find log base 9 of (x × y).",
+      "explanation": "log(xy) = log x + log y = 6 + 3 = 9.",
+      "options": [
+        {
+          "label": "11",
+          "is_correct": false
+        },
+        {
+          "label": "9",
+          "is_correct": true
+        },
+        {
+          "label": "10",
+          "is_correct": false
+        },
+        {
+          "label": "8",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Logarithms",
+      "kind": "standard",
+      "difficulty": "hard",
+      "answer_type": "single",
+      "stem": "Find the value of log base 5 of 25 + log base 2 of 8.",
+      "explanation": "The two logs are 2 and 3; their sum is 5.",
+      "options": [
+        {
+          "label": "4",
+          "is_correct": false
+        },
+        {
+          "label": "6",
+          "is_correct": false
+        },
+        {
+          "label": "7",
+          "is_correct": false
+        },
+        {
+          "label": "5",
+          "is_correct": true
+        }
+      ]
+    },
+    {
+      "chapter": "Logarithms",
+      "kind": "standard",
+      "difficulty": "hard",
+      "answer_type": "single",
+      "stem": "Find the value of log base 3 of 27 + log base 3 of 81.",
+      "explanation": "The two logs are 3 and 4; their sum is 7.",
+      "options": [
+        {
+          "label": "7",
+          "is_correct": true
+        },
+        {
+          "label": "6",
+          "is_correct": false
+        },
+        {
+          "label": "9",
+          "is_correct": false
+        },
+        {
+          "label": "8",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Logarithms",
+      "kind": "standard",
+      "difficulty": "hard",
+      "answer_type": "single",
+      "stem": "Find the value of log base 5 of (3125 ÷ 625).",
+      "explanation": "3125÷625 = 5^(5−4) = 5^1, so the log is 1.",
+      "options": [
+        {
+          "label": "2",
+          "is_correct": false
+        },
+        {
+          "label": "1",
+          "is_correct": true
+        },
+        {
+          "label": "3",
+          "is_correct": false
+        },
+        {
+          "label": "4",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Logarithms",
+      "kind": "standard",
+      "difficulty": "hard",
+      "answer_type": "single",
+      "stem": "If log base 6 of x = 6 and log base 6 of y = 6, find log base 6 of (x × y).",
+      "explanation": "log(xy) = log x + log y = 6 + 6 = 12.",
+      "options": [
+        {
+          "label": "14",
+          "is_correct": false
+        },
+        {
+          "label": "12",
+          "is_correct": true
+        },
+        {
+          "label": "13",
+          "is_correct": false
+        },
+        {
+          "label": "11",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Logarithms",
+      "kind": "standard",
+      "difficulty": "hard",
+      "answer_type": "single",
+      "stem": "Find the value of log base 2 of 16 + log base 5 of 125.",
+      "explanation": "The two logs are 4 and 3; their sum is 7.",
+      "options": [
+        {
+          "label": "8",
+          "is_correct": false
+        },
+        {
+          "label": "7",
+          "is_correct": true
+        },
+        {
+          "label": "9",
+          "is_correct": false
+        },
+        {
+          "label": "6",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Logarithms",
+      "kind": "standard",
+      "difficulty": "hard",
+      "answer_type": "single",
+      "stem": "Find the value of log base 5 of (3125 ÷ 25).",
+      "explanation": "3125÷25 = 5^(5−2) = 5^3, so the log is 3.",
+      "options": [
+        {
+          "label": "5",
+          "is_correct": false
+        },
+        {
+          "label": "4",
+          "is_correct": false
+        },
+        {
+          "label": "2",
+          "is_correct": false
+        },
+        {
+          "label": "3",
+          "is_correct": true
+        }
+      ]
+    },
+    {
+      "chapter": "Logarithms",
+      "kind": "standard",
+      "difficulty": "hard",
+      "answer_type": "single",
+      "stem": "Find the value of log base 4 of 64 + log base 4 of 256.",
+      "explanation": "The two logs are 3 and 4; their sum is 7.",
+      "options": [
+        {
+          "label": "6",
+          "is_correct": false
+        },
+        {
+          "label": "8",
+          "is_correct": false
+        },
+        {
+          "label": "9",
+          "is_correct": false
+        },
+        {
+          "label": "7",
+          "is_correct": true
+        }
+      ]
+    },
+    {
+      "chapter": "Logarithms",
+      "kind": "standard",
+      "difficulty": "hard",
+      "answer_type": "single",
+      "stem": "If log base 5 of x = 5 and log base 5 of y = 3, find log base 5 of (x × y).",
+      "explanation": "log(xy) = log x + log y = 5 + 3 = 8.",
+      "options": [
+        {
+          "label": "10",
+          "is_correct": false
+        },
+        {
+          "label": "7",
+          "is_correct": false
+        },
+        {
+          "label": "9",
+          "is_correct": false
+        },
+        {
+          "label": "8",
+          "is_correct": true
+        }
+      ]
+    },
+    {
+      "chapter": "Logarithms",
+      "kind": "standard",
+      "difficulty": "hard",
+      "answer_type": "single",
+      "stem": "If log base 2 of x = 6 and log base 2 of y = 3, find log base 2 of (x × y).",
+      "explanation": "log(xy) = log x + log y = 6 + 3 = 9.",
+      "options": [
+        {
+          "label": "8",
+          "is_correct": false
+        },
+        {
+          "label": "11",
+          "is_correct": false
+        },
+        {
+          "label": "9",
+          "is_correct": true
+        },
+        {
+          "label": "10",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Logarithms",
+      "kind": "standard",
+      "difficulty": "hard",
+      "answer_type": "single",
+      "stem": "Find the value of log base 4 of (4096 ÷ 64).",
+      "explanation": "4096÷64 = 4^(6−3) = 4^3, so the log is 3.",
+      "options": [
+        {
+          "label": "4",
+          "is_correct": false
+        },
+        {
+          "label": "2",
+          "is_correct": false
+        },
+        {
+          "label": "3",
+          "is_correct": true
+        },
+        {
+          "label": "5",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Logarithms",
+      "kind": "standard",
+      "difficulty": "hard",
+      "answer_type": "single",
+      "stem": "Find the value of log base 4 of 256 + log base 2 of 4.",
+      "explanation": "The two logs are 4 and 2; their sum is 6.",
+      "options": [
+        {
+          "label": "6",
+          "is_correct": true
+        },
+        {
+          "label": "7",
+          "is_correct": false
+        },
+        {
+          "label": "8",
+          "is_correct": false
+        },
+        {
+          "label": "5",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Logarithms",
+      "kind": "standard",
+      "difficulty": "hard",
+      "answer_type": "single",
+      "stem": "Find the value of log base 5 of (125 ÷ 25).",
+      "explanation": "125÷25 = 5^(3−2) = 5^1, so the log is 1.",
+      "options": [
+        {
+          "label": "3",
+          "is_correct": false
+        },
+        {
+          "label": "4",
+          "is_correct": false
+        },
+        {
+          "label": "1",
+          "is_correct": true
+        },
+        {
+          "label": "2",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Logarithms",
+      "kind": "standard",
+      "difficulty": "hard",
+      "answer_type": "single",
+      "stem": "Find the value of log base 2 of 16 + log base 2 of 16.",
+      "explanation": "The two logs are 4 and 4; their sum is 8.",
+      "options": [
+        {
+          "label": "9",
+          "is_correct": false
+        },
+        {
+          "label": "7",
+          "is_correct": false
+        },
+        {
+          "label": "8",
+          "is_correct": true
+        },
+        {
+          "label": "10",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Logarithms",
+      "kind": "standard",
+      "difficulty": "hard",
+      "answer_type": "single",
+      "stem": "Find the value of log base 4 of (64 ÷ 16).",
+      "explanation": "64÷16 = 4^(3−2) = 4^1, so the log is 1.",
+      "options": [
+        {
+          "label": "4",
+          "is_correct": false
+        },
+        {
+          "label": "3",
+          "is_correct": false
+        },
+        {
+          "label": "2",
+          "is_correct": false
+        },
+        {
+          "label": "1",
+          "is_correct": true
+        }
+      ]
+    },
+    {
+      "chapter": "Logarithms",
+      "kind": "standard",
+      "difficulty": "hard",
+      "answer_type": "single",
+      "stem": "If log base 3 of x = 4 and log base 3 of y = 5, find log base 3 of (x × y).",
+      "explanation": "log(xy) = log x + log y = 4 + 5 = 9.",
+      "options": [
+        {
+          "label": "9",
+          "is_correct": true
+        },
+        {
+          "label": "8",
+          "is_correct": false
+        },
+        {
+          "label": "10",
+          "is_correct": false
+        },
+        {
+          "label": "11",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Logarithms",
+      "kind": "standard",
+      "difficulty": "hard",
+      "answer_type": "single",
+      "stem": "Find the value of log base 4 of (256 ÷ 16).",
+      "explanation": "256÷16 = 4^(4−2) = 4^2, so the log is 2.",
+      "options": [
+        {
+          "label": "3",
+          "is_correct": false
+        },
+        {
+          "label": "2",
+          "is_correct": true
+        },
+        {
+          "label": "4",
+          "is_correct": false
+        },
+        {
+          "label": "1",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Logarithms",
+      "kind": "standard",
+      "difficulty": "hard",
+      "answer_type": "single",
+      "stem": "Find the value of log base 3 of 9 + log base 2 of 8.",
+      "explanation": "The two logs are 2 and 3; their sum is 5.",
+      "options": [
+        {
+          "label": "7",
+          "is_correct": false
+        },
+        {
+          "label": "6",
+          "is_correct": false
+        },
+        {
+          "label": "5",
+          "is_correct": true
+        },
+        {
+          "label": "4",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Logarithms",
+      "kind": "standard",
+      "difficulty": "hard",
+      "answer_type": "single",
+      "stem": "Find the value of log base 2 of (32 ÷ 8).",
+      "explanation": "32÷8 = 2^(5−3) = 2^2, so the log is 2.",
+      "options": [
+        {
+          "label": "2",
+          "is_correct": true
+        },
+        {
+          "label": "4",
+          "is_correct": false
+        },
+        {
+          "label": "3",
+          "is_correct": false
+        },
+        {
+          "label": "1",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Logarithms",
+      "kind": "standard",
+      "difficulty": "hard",
+      "answer_type": "single",
+      "stem": "If log base 2 of x = 3 and log base 2 of y = 6, find log base 2 of (x × y).",
+      "explanation": "log(xy) = log x + log y = 3 + 6 = 9.",
+      "options": [
+        {
+          "label": "8",
+          "is_correct": false
+        },
+        {
+          "label": "10",
+          "is_correct": false
+        },
+        {
+          "label": "11",
+          "is_correct": false
+        },
+        {
+          "label": "9",
+          "is_correct": true
+        }
+      ]
+    },
+    {
+      "chapter": "Logarithms",
+      "kind": "standard",
+      "difficulty": "hard",
+      "answer_type": "single",
+      "stem": "Find the value of log base 3 of 81 + log base 2 of 4.",
+      "explanation": "The two logs are 4 and 2; their sum is 6.",
+      "options": [
+        {
+          "label": "8",
+          "is_correct": false
+        },
+        {
+          "label": "7",
+          "is_correct": false
+        },
+        {
+          "label": "5",
+          "is_correct": false
+        },
+        {
+          "label": "6",
+          "is_correct": true
+        }
+      ]
+    },
+    {
+      "chapter": "Logarithms",
+      "kind": "standard",
+      "difficulty": "hard",
+      "answer_type": "single",
+      "stem": "If log base 8 of x = 2 and log base 8 of y = 2, find log base 8 of (x × y).",
+      "explanation": "log(xy) = log x + log y = 2 + 2 = 4.",
+      "options": [
+        {
+          "label": "6",
+          "is_correct": false
+        },
+        {
+          "label": "3",
+          "is_correct": false
+        },
+        {
+          "label": "5",
+          "is_correct": false
+        },
+        {
+          "label": "4",
+          "is_correct": true
+        }
+      ]
+    },
+    {
+      "chapter": "Logarithms",
+      "kind": "standard",
+      "difficulty": "hard",
+      "answer_type": "single",
+      "stem": "If log base 3 of x = 5 and log base 3 of y = 6, find log base 3 of (x × y).",
+      "explanation": "log(xy) = log x + log y = 5 + 6 = 11.",
+      "options": [
+        {
+          "label": "12",
+          "is_correct": false
+        },
+        {
+          "label": "11",
+          "is_correct": true
+        },
+        {
+          "label": "10",
+          "is_correct": false
+        },
+        {
+          "label": "13",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Logarithms",
+      "kind": "standard",
+      "difficulty": "hard",
+      "answer_type": "single",
+      "stem": "If log base 8 of x = 5 and log base 8 of y = 5, find log base 8 of (x × y).",
+      "explanation": "log(xy) = log x + log y = 5 + 5 = 10.",
+      "options": [
+        {
+          "label": "12",
+          "is_correct": false
+        },
+        {
+          "label": "9",
+          "is_correct": false
+        },
+        {
+          "label": "11",
+          "is_correct": false
+        },
+        {
+          "label": "10",
+          "is_correct": true
+        }
+      ]
+    },
+    {
+      "chapter": "Logarithms",
+      "kind": "standard",
+      "difficulty": "hard",
+      "answer_type": "single",
+      "stem": "If log base 2 of x = 2 and log base 2 of y = 4, find log base 2 of (x × y).",
+      "explanation": "log(xy) = log x + log y = 2 + 4 = 6.",
+      "options": [
+        {
+          "label": "7",
+          "is_correct": false
+        },
+        {
+          "label": "8",
+          "is_correct": false
+        },
+        {
+          "label": "6",
+          "is_correct": true
+        },
+        {
+          "label": "5",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Logarithms",
+      "kind": "standard",
+      "difficulty": "hard",
+      "answer_type": "single",
+      "stem": "Find the value of log base 2 of 16 + log base 4 of 256.",
+      "explanation": "The two logs are 4 and 4; their sum is 8.",
+      "options": [
+        {
+          "label": "10",
+          "is_correct": false
+        },
+        {
+          "label": "9",
+          "is_correct": false
+        },
+        {
+          "label": "7",
+          "is_correct": false
+        },
+        {
+          "label": "8",
+          "is_correct": true
+        }
+      ]
+    },
+    {
+      "chapter": "Logarithms",
+      "kind": "standard",
+      "difficulty": "hard",
+      "answer_type": "single",
+      "stem": "Find the value of log base 3 of 27 + log base 4 of 16.",
+      "explanation": "The two logs are 3 and 2; their sum is 5.",
+      "options": [
+        {
+          "label": "5",
+          "is_correct": true
+        },
+        {
+          "label": "4",
+          "is_correct": false
+        },
+        {
+          "label": "7",
+          "is_correct": false
+        },
+        {
+          "label": "6",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Logarithms",
+      "kind": "standard",
+      "difficulty": "hard",
+      "answer_type": "single",
+      "stem": "Find the value of log base 5 of 125 + log base 3 of 27.",
+      "explanation": "The two logs are 3 and 3; their sum is 6.",
+      "options": [
+        {
+          "label": "7",
+          "is_correct": false
+        },
+        {
+          "label": "6",
+          "is_correct": true
+        },
+        {
+          "label": "8",
+          "is_correct": false
+        },
+        {
+          "label": "5",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Logarithms",
+      "kind": "standard",
+      "difficulty": "hard",
+      "answer_type": "single",
+      "stem": "Find the value of log base 3 of (243 ÷ 27).",
+      "explanation": "243÷27 = 3^(5−3) = 3^2, so the log is 2.",
+      "options": [
+        {
+          "label": "2",
+          "is_correct": true
+        },
+        {
+          "label": "3",
+          "is_correct": false
+        },
+        {
+          "label": "4",
+          "is_correct": false
+        },
+        {
+          "label": "1",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Logarithms",
+      "kind": "standard",
+      "difficulty": "hard",
+      "answer_type": "single",
+      "stem": "If log base 3 of x = 4 and log base 3 of y = 2, find log base 3 of (x × y).",
+      "explanation": "log(xy) = log x + log y = 4 + 2 = 6.",
+      "options": [
+        {
+          "label": "7",
+          "is_correct": false
+        },
+        {
+          "label": "6",
+          "is_correct": true
+        },
+        {
+          "label": "5",
+          "is_correct": false
+        },
+        {
+          "label": "8",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Logarithms",
+      "kind": "standard",
+      "difficulty": "hard",
+      "answer_type": "single",
+      "stem": "If log base 8 of x = 6 and log base 8 of y = 2, find log base 8 of (x × y).",
+      "explanation": "log(xy) = log x + log y = 6 + 2 = 8.",
+      "options": [
+        {
+          "label": "8",
+          "is_correct": true
+        },
+        {
+          "label": "10",
+          "is_correct": false
+        },
+        {
+          "label": "7",
+          "is_correct": false
+        },
+        {
+          "label": "9",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Logarithms",
+      "kind": "standard",
+      "difficulty": "hard",
+      "answer_type": "single",
+      "stem": "Find the value of log base 4 of 256 + log base 5 of 625.",
+      "explanation": "The two logs are 4 and 4; their sum is 8.",
+      "options": [
+        {
+          "label": "7",
+          "is_correct": false
+        },
+        {
+          "label": "8",
+          "is_correct": true
+        },
+        {
+          "label": "9",
+          "is_correct": false
+        },
+        {
+          "label": "10",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Logarithms",
+      "kind": "standard",
+      "difficulty": "very_hard",
+      "answer_type": "single",
+      "stem": "Find the value of log base 5 of 125 − log base 5 of 5.",
+      "explanation": "The logs are 3 and 1; their difference is 2.",
+      "options": [
+        {
+          "label": "4",
+          "is_correct": false
+        },
+        {
+          "label": "3",
+          "is_correct": false
+        },
+        {
+          "label": "1",
+          "is_correct": false
+        },
+        {
+          "label": "2",
+          "is_correct": true
+        }
+      ]
+    },
+    {
+      "chapter": "Logarithms",
+      "kind": "standard",
+      "difficulty": "very_hard",
+      "answer_type": "single",
+      "stem": "Find the value of log base 5 of 125 − log base 3 of 3.",
+      "explanation": "The logs are 3 and 1; their difference is 2.",
+      "options": [
+        {
+          "label": "4",
+          "is_correct": false
+        },
+        {
+          "label": "1",
+          "is_correct": false
+        },
+        {
+          "label": "3",
+          "is_correct": false
+        },
+        {
+          "label": "2",
+          "is_correct": true
+        }
+      ]
+    },
+    {
+      "chapter": "Logarithms",
+      "kind": "standard",
+      "difficulty": "very_hard",
+      "answer_type": "single",
+      "stem": "Find the value of log base 2 of (4)^3.",
+      "explanation": "(4)^3 = 2^(2×3) = 2^6, so the log is 6.",
+      "options": [
+        {
+          "label": "7",
+          "is_correct": false
+        },
+        {
+          "label": "8",
+          "is_correct": false
+        },
+        {
+          "label": "5",
+          "is_correct": false
+        },
+        {
+          "label": "6",
+          "is_correct": true
+        }
+      ]
+    },
+    {
+      "chapter": "Logarithms",
+      "kind": "standard",
+      "difficulty": "very_hard",
+      "answer_type": "single",
+      "stem": "Find the value of log base 2 of 8 − log base 4 of 4.",
+      "explanation": "The logs are 3 and 1; their difference is 2.",
+      "options": [
+        {
+          "label": "1",
+          "is_correct": false
+        },
+        {
+          "label": "3",
+          "is_correct": false
+        },
+        {
+          "label": "4",
+          "is_correct": false
+        },
+        {
+          "label": "2",
+          "is_correct": true
+        }
+      ]
+    },
+    {
+      "chapter": "Logarithms",
+      "kind": "standard",
+      "difficulty": "very_hard",
+      "answer_type": "single",
+      "stem": "Find the value of (log base 4 of 256) × (log base 2 of 4).",
+      "explanation": "= 4 × 2 = 8.",
+      "options": [
+        {
+          "label": "10",
+          "is_correct": false
+        },
+        {
+          "label": "9",
+          "is_correct": false
+        },
+        {
+          "label": "8",
+          "is_correct": true
+        },
+        {
+          "label": "7",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Logarithms",
+      "kind": "standard",
+      "difficulty": "very_hard",
+      "answer_type": "single",
+      "stem": "Find the value of (log base 3 of 81) × (log base 2 of 8).",
+      "explanation": "= 4 × 3 = 12.",
+      "options": [
+        {
+          "label": "12",
+          "is_correct": true
+        },
+        {
+          "label": "14",
+          "is_correct": false
+        },
+        {
+          "label": "11",
+          "is_correct": false
+        },
+        {
+          "label": "13",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Logarithms",
+      "kind": "standard",
+      "difficulty": "very_hard",
+      "answer_type": "single",
+      "stem": "Find the value of log base 4 of 1024 − log base 2 of 2.",
+      "explanation": "The logs are 5 and 1; their difference is 4.",
+      "options": [
+        {
+          "label": "4",
+          "is_correct": true
+        },
+        {
+          "label": "5",
+          "is_correct": false
+        },
+        {
+          "label": "6",
+          "is_correct": false
+        },
+        {
+          "label": "3",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Logarithms",
+      "kind": "standard",
+      "difficulty": "very_hard",
+      "answer_type": "single",
+      "stem": "Find the value of (log base 2 of 4) × (log base 2 of 16).",
+      "explanation": "= 2 × 4 = 8.",
+      "options": [
+        {
+          "label": "8",
+          "is_correct": true
+        },
+        {
+          "label": "9",
+          "is_correct": false
+        },
+        {
+          "label": "10",
+          "is_correct": false
+        },
+        {
+          "label": "7",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Logarithms",
+      "kind": "standard",
+      "difficulty": "very_hard",
+      "answer_type": "single",
+      "stem": "Find the value of (log base 4 of 64) × (log base 2 of 8).",
+      "explanation": "= 3 × 3 = 9.",
+      "options": [
+        {
+          "label": "9",
+          "is_correct": true
+        },
+        {
+          "label": "10",
+          "is_correct": false
+        },
+        {
+          "label": "11",
+          "is_correct": false
+        },
+        {
+          "label": "8",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Logarithms",
+      "kind": "standard",
+      "difficulty": "very_hard",
+      "answer_type": "single",
+      "stem": "Find the value of (log base 4 of 256) × (log base 2 of 16).",
+      "explanation": "= 4 × 4 = 16.",
+      "options": [
+        {
+          "label": "17",
+          "is_correct": false
+        },
+        {
+          "label": "15",
+          "is_correct": false
+        },
+        {
+          "label": "18",
+          "is_correct": false
+        },
+        {
+          "label": "16",
+          "is_correct": true
+        }
+      ]
+    },
+    {
+      "chapter": "Logarithms",
+      "kind": "standard",
+      "difficulty": "very_hard",
+      "answer_type": "single",
+      "stem": "Find the value of (log base 3 of 9) × (log base 2 of 8).",
+      "explanation": "= 2 × 3 = 6.",
+      "options": [
+        {
+          "label": "5",
+          "is_correct": false
+        },
+        {
+          "label": "8",
+          "is_correct": false
+        },
+        {
+          "label": "6",
+          "is_correct": true
+        },
+        {
+          "label": "7",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Logarithms",
+      "kind": "standard",
+      "difficulty": "very_hard",
+      "answer_type": "single",
+      "stem": "Find the value of log base 4 of 256 − log base 5 of 5.",
+      "explanation": "The logs are 4 and 1; their difference is 3.",
+      "options": [
+        {
+          "label": "2",
+          "is_correct": false
+        },
+        {
+          "label": "5",
+          "is_correct": false
+        },
+        {
+          "label": "3",
+          "is_correct": true
+        },
+        {
+          "label": "4",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Logarithms",
+      "kind": "standard",
+      "difficulty": "very_hard",
+      "answer_type": "single",
+      "stem": "Find the value of (log base 3 of 9) × (log base 2 of 16).",
+      "explanation": "= 2 × 4 = 8.",
+      "options": [
+        {
+          "label": "7",
+          "is_correct": false
+        },
+        {
+          "label": "10",
+          "is_correct": false
+        },
+        {
+          "label": "9",
+          "is_correct": false
+        },
+        {
+          "label": "8",
+          "is_correct": true
+        }
+      ]
+    },
+    {
+      "chapter": "Logarithms",
+      "kind": "standard",
+      "difficulty": "very_hard",
+      "answer_type": "single",
+      "stem": "Find the value of log base 5 of 3125 − log base 4 of 16.",
+      "explanation": "The logs are 5 and 2; their difference is 3.",
+      "options": [
+        {
+          "label": "2",
+          "is_correct": false
+        },
+        {
+          "label": "3",
+          "is_correct": true
+        },
+        {
+          "label": "5",
+          "is_correct": false
+        },
+        {
+          "label": "4",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Logarithms",
+      "kind": "standard",
+      "difficulty": "very_hard",
+      "answer_type": "single",
+      "stem": "Find the value of (log base 2 of 16) × (log base 4 of 256).",
+      "explanation": "= 4 × 4 = 16.",
+      "options": [
+        {
+          "label": "15",
+          "is_correct": false
+        },
+        {
+          "label": "16",
+          "is_correct": true
+        },
+        {
+          "label": "18",
+          "is_correct": false
+        },
+        {
+          "label": "17",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Logarithms",
+      "kind": "standard",
+      "difficulty": "very_hard",
+      "answer_type": "single",
+      "stem": "Find the value of log base 2 of 32 − log base 4 of 16.",
+      "explanation": "The logs are 5 and 2; their difference is 3.",
+      "options": [
+        {
+          "label": "3",
+          "is_correct": true
+        },
+        {
+          "label": "2",
+          "is_correct": false
+        },
+        {
+          "label": "5",
+          "is_correct": false
+        },
+        {
+          "label": "4",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Logarithms",
+      "kind": "standard",
+      "difficulty": "very_hard",
+      "answer_type": "single",
+      "stem": "Find the value of (log base 2 of 16) × (log base 3 of 9).",
+      "explanation": "= 4 × 2 = 8.",
+      "options": [
+        {
+          "label": "7",
+          "is_correct": false
+        },
+        {
+          "label": "8",
+          "is_correct": true
+        },
+        {
+          "label": "9",
+          "is_correct": false
+        },
+        {
+          "label": "10",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Logarithms",
+      "kind": "standard",
+      "difficulty": "very_hard",
+      "answer_type": "single",
+      "stem": "Find the value of (log base 2 of 16) × (log base 2 of 16).",
+      "explanation": "= 4 × 4 = 16.",
+      "options": [
+        {
+          "label": "17",
+          "is_correct": false
+        },
+        {
+          "label": "15",
+          "is_correct": false
+        },
+        {
+          "label": "16",
+          "is_correct": true
+        },
+        {
+          "label": "18",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Logarithms",
+      "kind": "standard",
+      "difficulty": "very_hard",
+      "answer_type": "single",
+      "stem": "Find the value of log base 3 of 243 − log base 3 of 9.",
+      "explanation": "The logs are 5 and 2; their difference is 3.",
+      "options": [
+        {
+          "label": "3",
+          "is_correct": true
+        },
+        {
+          "label": "4",
+          "is_correct": false
+        },
+        {
+          "label": "5",
+          "is_correct": false
+        },
+        {
+          "label": "2",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Logarithms",
+      "kind": "standard",
+      "difficulty": "very_hard",
+      "answer_type": "single",
+      "stem": "Find the value of (log base 3 of 27) × (log base 3 of 9).",
+      "explanation": "= 3 × 2 = 6.",
+      "options": [
+        {
+          "label": "6",
+          "is_correct": true
+        },
+        {
+          "label": "7",
+          "is_correct": false
+        },
+        {
+          "label": "5",
+          "is_correct": false
+        },
+        {
+          "label": "8",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Logarithms",
+      "kind": "standard",
+      "difficulty": "very_hard",
+      "answer_type": "single",
+      "stem": "Find the value of log base 2 of (8)^3.",
+      "explanation": "(8)^3 = 2^(3×3) = 2^9, so the log is 9.",
+      "options": [
+        {
+          "label": "8",
+          "is_correct": false
+        },
+        {
+          "label": "11",
+          "is_correct": false
+        },
+        {
+          "label": "9",
+          "is_correct": true
+        },
+        {
+          "label": "10",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Logarithms",
+      "kind": "standard",
+      "difficulty": "very_hard",
+      "answer_type": "single",
+      "stem": "Find the value of log base 2 of (4)^2.",
+      "explanation": "(4)^2 = 2^(2×2) = 2^4, so the log is 4.",
+      "options": [
+        {
+          "label": "5",
+          "is_correct": false
+        },
+        {
+          "label": "4",
+          "is_correct": true
+        },
+        {
+          "label": "3",
+          "is_correct": false
+        },
+        {
+          "label": "6",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Logarithms",
+      "kind": "standard",
+      "difficulty": "very_hard",
+      "answer_type": "single",
+      "stem": "Find the value of log base 4 of (64)^2.",
+      "explanation": "(64)^2 = 4^(3×2) = 4^6, so the log is 6.",
+      "options": [
+        {
+          "label": "6",
+          "is_correct": true
+        },
+        {
+          "label": "5",
+          "is_correct": false
+        },
+        {
+          "label": "8",
+          "is_correct": false
+        },
+        {
+          "label": "7",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Logarithms",
+      "kind": "standard",
+      "difficulty": "very_hard",
+      "answer_type": "single",
+      "stem": "Find the value of (log base 2 of 16) × (log base 2 of 4).",
+      "explanation": "= 4 × 2 = 8.",
+      "options": [
+        {
+          "label": "9",
+          "is_correct": false
+        },
+        {
+          "label": "10",
+          "is_correct": false
+        },
+        {
+          "label": "8",
+          "is_correct": true
+        },
+        {
+          "label": "7",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Logarithms",
+      "kind": "standard",
+      "difficulty": "very_hard",
+      "answer_type": "single",
+      "stem": "Find the value of log base 4 of 256 − log base 2 of 2.",
+      "explanation": "The logs are 4 and 1; their difference is 3.",
+      "options": [
+        {
+          "label": "3",
+          "is_correct": true
+        },
+        {
+          "label": "4",
+          "is_correct": false
+        },
+        {
+          "label": "5",
+          "is_correct": false
+        },
+        {
+          "label": "2",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Logarithms",
+      "kind": "standard",
+      "difficulty": "very_hard",
+      "answer_type": "single",
+      "stem": "Find the value of log base 2 of 8 − log base 2 of 4.",
+      "explanation": "The logs are 3 and 2; their difference is 1.",
+      "options": [
+        {
+          "label": "3",
+          "is_correct": false
+        },
+        {
+          "label": "1",
+          "is_correct": true
+        },
+        {
+          "label": "2",
+          "is_correct": false
+        },
+        {
+          "label": "4",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Logarithms",
+      "kind": "standard",
+      "difficulty": "very_hard",
+      "answer_type": "single",
+      "stem": "Find the value of (log base 4 of 256) × (log base 2 of 8).",
+      "explanation": "= 4 × 3 = 12.",
+      "options": [
+        {
+          "label": "13",
+          "is_correct": false
+        },
+        {
+          "label": "12",
+          "is_correct": true
+        },
+        {
+          "label": "14",
+          "is_correct": false
+        },
+        {
+          "label": "11",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Logarithms",
+      "kind": "standard",
+      "difficulty": "very_hard",
+      "answer_type": "single",
+      "stem": "Find the value of (log base 3 of 81) × (log base 4 of 64).",
+      "explanation": "= 4 × 3 = 12.",
+      "options": [
+        {
+          "label": "13",
+          "is_correct": false
+        },
+        {
+          "label": "11",
+          "is_correct": false
+        },
+        {
+          "label": "14",
+          "is_correct": false
+        },
+        {
+          "label": "12",
+          "is_correct": true
+        }
+      ]
+    },
+    {
+      "chapter": "Logarithms",
+      "kind": "standard",
+      "difficulty": "very_hard",
+      "answer_type": "single",
+      "stem": "Find the value of log base 3 of 27 − log base 4 of 4.",
+      "explanation": "The logs are 3 and 1; their difference is 2.",
+      "options": [
+        {
+          "label": "2",
+          "is_correct": true
+        },
+        {
+          "label": "3",
+          "is_correct": false
+        },
+        {
+          "label": "1",
+          "is_correct": false
+        },
+        {
+          "label": "4",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Logarithms",
+      "kind": "standard",
+      "difficulty": "very_hard",
+      "answer_type": "single",
+      "stem": "Find the value of (log base 2 of 8) × (log base 3 of 81).",
+      "explanation": "= 3 × 4 = 12.",
+      "options": [
+        {
+          "label": "13",
+          "is_correct": false
+        },
+        {
+          "label": "11",
+          "is_correct": false
+        },
+        {
+          "label": "12",
+          "is_correct": true
+        },
+        {
+          "label": "14",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Logarithms",
+      "kind": "standard",
+      "difficulty": "very_hard",
+      "answer_type": "single",
+      "stem": "Find the value of log base 3 of (9)^2.",
+      "explanation": "(9)^2 = 3^(2×2) = 3^4, so the log is 4.",
+      "options": [
+        {
+          "label": "6",
+          "is_correct": false
+        },
+        {
+          "label": "4",
+          "is_correct": true
+        },
+        {
+          "label": "5",
+          "is_correct": false
+        },
+        {
+          "label": "3",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Logarithms",
+      "kind": "standard",
+      "difficulty": "very_hard",
+      "answer_type": "single",
+      "stem": "Find the value of log base 5 of 3125 − log base 5 of 25.",
+      "explanation": "The logs are 5 and 2; their difference is 3.",
+      "options": [
+        {
+          "label": "4",
+          "is_correct": false
+        },
+        {
+          "label": "3",
+          "is_correct": true
+        },
+        {
+          "label": "2",
+          "is_correct": false
+        },
+        {
+          "label": "5",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Logarithms",
+      "kind": "standard",
+      "difficulty": "very_hard",
+      "answer_type": "single",
+      "stem": "Find the value of (log base 4 of 16) × (log base 3 of 9).",
+      "explanation": "= 2 × 2 = 4.",
+      "options": [
+        {
+          "label": "5",
+          "is_correct": false
+        },
+        {
+          "label": "6",
+          "is_correct": false
+        },
+        {
+          "label": "4",
+          "is_correct": true
+        },
+        {
+          "label": "3",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Logarithms",
+      "kind": "standard",
+      "difficulty": "very_hard",
+      "answer_type": "single",
+      "stem": "Find the value of log base 2 of 32 − log base 5 of 5.",
+      "explanation": "The logs are 5 and 1; their difference is 4.",
+      "options": [
+        {
+          "label": "4",
+          "is_correct": true
+        },
+        {
+          "label": "3",
+          "is_correct": false
+        },
+        {
+          "label": "5",
+          "is_correct": false
+        },
+        {
+          "label": "6",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Logarithms",
+      "kind": "standard",
+      "difficulty": "very_hard",
+      "answer_type": "single",
+      "stem": "Find the value of (log base 3 of 27) × (log base 4 of 64).",
+      "explanation": "= 3 × 3 = 9.",
+      "options": [
+        {
+          "label": "9",
+          "is_correct": true
+        },
+        {
+          "label": "11",
+          "is_correct": false
+        },
+        {
+          "label": "10",
+          "is_correct": false
+        },
+        {
+          "label": "8",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Logarithms",
+      "kind": "standard",
+      "difficulty": "very_hard",
+      "answer_type": "single",
+      "stem": "Find the value of (log base 2 of 8) × (log base 4 of 16).",
+      "explanation": "= 3 × 2 = 6.",
+      "options": [
+        {
+          "label": "7",
+          "is_correct": false
+        },
+        {
+          "label": "6",
+          "is_correct": true
+        },
+        {
+          "label": "8",
+          "is_correct": false
+        },
+        {
+          "label": "5",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Logarithms",
+      "kind": "standard",
+      "difficulty": "very_hard",
+      "answer_type": "single",
+      "stem": "Find the value of (log base 4 of 64) × (log base 4 of 16).",
+      "explanation": "= 3 × 2 = 6.",
+      "options": [
+        {
+          "label": "5",
+          "is_correct": false
+        },
+        {
+          "label": "6",
+          "is_correct": true
+        },
+        {
+          "label": "7",
+          "is_correct": false
+        },
+        {
+          "label": "8",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Logarithms",
+      "kind": "standard",
+      "difficulty": "very_hard",
+      "answer_type": "single",
+      "stem": "Find the value of log base 3 of 81 − log base 5 of 25.",
+      "explanation": "The logs are 4 and 2; their difference is 2.",
+      "options": [
+        {
+          "label": "1",
+          "is_correct": false
+        },
+        {
+          "label": "3",
+          "is_correct": false
+        },
+        {
+          "label": "2",
+          "is_correct": true
+        },
+        {
+          "label": "4",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Logarithms",
+      "kind": "standard",
+      "difficulty": "very_hard",
+      "answer_type": "single",
+      "stem": "Find the value of (log base 4 of 64) × (log base 2 of 16).",
+      "explanation": "= 3 × 4 = 12.",
+      "options": [
+        {
+          "label": "11",
+          "is_correct": false
+        },
+        {
+          "label": "14",
+          "is_correct": false
+        },
+        {
+          "label": "12",
+          "is_correct": true
+        },
+        {
+          "label": "13",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Logarithms",
+      "kind": "standard",
+      "difficulty": "very_hard",
+      "answer_type": "single",
+      "stem": "Find the value of (log base 3 of 9) × (log base 4 of 16).",
+      "explanation": "= 2 × 2 = 4.",
+      "options": [
+        {
+          "label": "3",
+          "is_correct": false
+        },
+        {
+          "label": "4",
+          "is_correct": true
+        },
+        {
+          "label": "5",
+          "is_correct": false
+        },
+        {
+          "label": "6",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Logarithms",
+      "kind": "standard",
+      "difficulty": "very_hard",
+      "answer_type": "single",
+      "stem": "Find the value of (log base 2 of 4) × (log base 2 of 8).",
+      "explanation": "= 2 × 3 = 6.",
+      "options": [
+        {
+          "label": "7",
+          "is_correct": false
+        },
+        {
+          "label": "6",
+          "is_correct": true
+        },
+        {
+          "label": "5",
+          "is_correct": false
+        },
+        {
+          "label": "8",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Logarithms",
+      "kind": "standard",
+      "difficulty": "very_hard",
+      "answer_type": "single",
+      "stem": "Find the value of log base 4 of (16)^3.",
+      "explanation": "(16)^3 = 4^(2×3) = 4^6, so the log is 6.",
+      "options": [
+        {
+          "label": "7",
+          "is_correct": false
+        },
+        {
+          "label": "5",
+          "is_correct": false
+        },
+        {
+          "label": "6",
+          "is_correct": true
+        },
+        {
+          "label": "8",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Logarithms",
+      "kind": "standard",
+      "difficulty": "very_hard",
+      "answer_type": "single",
+      "stem": "Find the value of (log base 4 of 256) × (log base 3 of 27).",
+      "explanation": "= 4 × 3 = 12.",
+      "options": [
+        {
+          "label": "13",
+          "is_correct": false
+        },
+        {
+          "label": "14",
+          "is_correct": false
+        },
+        {
+          "label": "11",
+          "is_correct": false
+        },
+        {
+          "label": "12",
+          "is_correct": true
+        }
+      ]
+    },
+    {
+      "chapter": "Logarithms",
+      "kind": "standard",
+      "difficulty": "very_hard",
+      "answer_type": "single",
+      "stem": "Find the value of log base 5 of 3125 − log base 2 of 4.",
+      "explanation": "The logs are 5 and 2; their difference is 3.",
+      "options": [
+        {
+          "label": "3",
+          "is_correct": true
+        },
+        {
+          "label": "5",
+          "is_correct": false
+        },
+        {
+          "label": "2",
+          "is_correct": false
+        },
+        {
+          "label": "4",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Logarithms",
+      "kind": "standard",
+      "difficulty": "very_hard",
+      "answer_type": "single",
+      "stem": "Find the value of log base 2 of (8)^2.",
+      "explanation": "(8)^2 = 2^(3×2) = 2^6, so the log is 6.",
+      "options": [
+        {
+          "label": "6",
+          "is_correct": true
+        },
+        {
+          "label": "8",
+          "is_correct": false
+        },
+        {
+          "label": "7",
+          "is_correct": false
+        },
+        {
+          "label": "5",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Logarithms",
+      "kind": "standard",
+      "difficulty": "very_hard",
+      "answer_type": "single",
+      "stem": "Find the value of (log base 4 of 64) × (log base 3 of 27).",
+      "explanation": "= 3 × 3 = 9.",
+      "options": [
+        {
+          "label": "9",
+          "is_correct": true
+        },
+        {
+          "label": "11",
+          "is_correct": false
+        },
+        {
+          "label": "8",
+          "is_correct": false
+        },
+        {
+          "label": "10",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Logarithms",
+      "kind": "standard",
+      "difficulty": "very_hard",
+      "answer_type": "single",
+      "stem": "Find the value of (log base 3 of 27) × (log base 2 of 8).",
+      "explanation": "= 3 × 3 = 9.",
+      "options": [
+        {
+          "label": "11",
+          "is_correct": false
+        },
+        {
+          "label": "8",
+          "is_correct": false
+        },
+        {
+          "label": "10",
+          "is_correct": false
+        },
+        {
+          "label": "9",
+          "is_correct": true
+        }
+      ]
+    },
+    {
+      "chapter": "Logarithms",
+      "kind": "standard",
+      "difficulty": "very_hard",
+      "answer_type": "single",
+      "stem": "Find the value of log base 3 of (27)^3.",
+      "explanation": "(27)^3 = 3^(3×3) = 3^9, so the log is 9.",
+      "options": [
+        {
+          "label": "8",
+          "is_correct": false
+        },
+        {
+          "label": "11",
+          "is_correct": false
+        },
+        {
+          "label": "10",
+          "is_correct": false
+        },
+        {
+          "label": "9",
+          "is_correct": true
+        }
+      ]
+    },
+    {
+      "chapter": "Logarithms",
+      "kind": "standard",
+      "difficulty": "very_hard",
+      "answer_type": "single",
+      "stem": "Find the value of log base 3 of 243 − log base 3 of 3.",
+      "explanation": "The logs are 5 and 1; their difference is 4.",
+      "options": [
+        {
+          "label": "5",
+          "is_correct": false
+        },
+        {
+          "label": "6",
+          "is_correct": false
+        },
+        {
+          "label": "3",
+          "is_correct": false
+        },
+        {
+          "label": "4",
+          "is_correct": true
+        }
+      ]
+    },
+    {
+      "chapter": "Logarithms",
+      "kind": "standard",
+      "difficulty": "very_hard",
+      "answer_type": "single",
+      "stem": "Find the value of log base 4 of (16)^2.",
+      "explanation": "(16)^2 = 4^(2×2) = 4^4, so the log is 4.",
+      "options": [
+        {
+          "label": "6",
+          "is_correct": false
+        },
+        {
+          "label": "4",
+          "is_correct": true
+        },
+        {
+          "label": "3",
+          "is_correct": false
+        },
+        {
+          "label": "5",
+          "is_correct": false
+        }
+      ]
+    }
+  ]
+}

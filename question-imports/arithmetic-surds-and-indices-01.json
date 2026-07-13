@@ -1,0 +1,5205 @@
+{
+  "subject": "Arithmetic",
+  "questions": [
+    {
+      "chapter": "Surds and Indices",
+      "kind": "standard",
+      "difficulty": "easy",
+      "answer_type": "single",
+      "stem": "Simplify: 2^6 ÷ 2^5",
+      "explanation": "2^6 ÷ 2^5 = 2^(6−5) = 2^1 = 2.",
+      "options": [
+        {
+          "label": "3",
+          "is_correct": false
+        },
+        {
+          "label": "4",
+          "is_correct": false
+        },
+        {
+          "label": "2",
+          "is_correct": true
+        },
+        {
+          "label": "1",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Surds and Indices",
+      "kind": "standard",
+      "difficulty": "easy",
+      "answer_type": "single",
+      "stem": "Simplify: (2^3)^3",
+      "explanation": "(2^3)^3 = 2^(3×3) = 2^9 = 512.",
+      "options": [
+        {
+          "label": "532",
+          "is_correct": false
+        },
+        {
+          "label": "492",
+          "is_correct": false
+        },
+        {
+          "label": "552",
+          "is_correct": false
+        },
+        {
+          "label": "512",
+          "is_correct": true
+        }
+      ]
+    },
+    {
+      "chapter": "Surds and Indices",
+      "kind": "standard",
+      "difficulty": "easy",
+      "answer_type": "single",
+      "stem": "Simplify: (4^3)^2",
+      "explanation": "(4^3)^2 = 4^(3×2) = 4^6 = 4096.",
+      "options": [
+        {
+          "label": "4096",
+          "is_correct": true
+        },
+        {
+          "label": "4260",
+          "is_correct": false
+        },
+        {
+          "label": "4424",
+          "is_correct": false
+        },
+        {
+          "label": "3932",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Surds and Indices",
+      "kind": "standard",
+      "difficulty": "easy",
+      "answer_type": "single",
+      "stem": "Simplify: (2^2)^3",
+      "explanation": "(2^2)^3 = 2^(2×3) = 2^6 = 64.",
+      "options": [
+        {
+          "label": "64",
+          "is_correct": true
+        },
+        {
+          "label": "62",
+          "is_correct": false
+        },
+        {
+          "label": "68",
+          "is_correct": false
+        },
+        {
+          "label": "66",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Surds and Indices",
+      "kind": "standard",
+      "difficulty": "easy",
+      "answer_type": "single",
+      "stem": "Simplify: 4^3 ÷ 4^2",
+      "explanation": "4^3 ÷ 4^2 = 4^(3−2) = 4^1 = 4.",
+      "options": [
+        {
+          "label": "5",
+          "is_correct": false
+        },
+        {
+          "label": "3",
+          "is_correct": false
+        },
+        {
+          "label": "4",
+          "is_correct": true
+        },
+        {
+          "label": "6",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Surds and Indices",
+      "kind": "standard",
+      "difficulty": "easy",
+      "answer_type": "single",
+      "stem": "Simplify: 6^5 ÷ 6^3",
+      "explanation": "6^5 ÷ 6^3 = 6^(5−3) = 6^2 = 36.",
+      "options": [
+        {
+          "label": "35",
+          "is_correct": false
+        },
+        {
+          "label": "36",
+          "is_correct": true
+        },
+        {
+          "label": "38",
+          "is_correct": false
+        },
+        {
+          "label": "37",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Surds and Indices",
+      "kind": "standard",
+      "difficulty": "easy",
+      "answer_type": "single",
+      "stem": "Simplify: (2^2)^2",
+      "explanation": "(2^2)^2 = 2^(2×2) = 2^4 = 16.",
+      "options": [
+        {
+          "label": "18",
+          "is_correct": false
+        },
+        {
+          "label": "17",
+          "is_correct": false
+        },
+        {
+          "label": "16",
+          "is_correct": true
+        },
+        {
+          "label": "15",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Surds and Indices",
+      "kind": "standard",
+      "difficulty": "easy",
+      "answer_type": "single",
+      "stem": "Simplify: 4^1 × 4^1",
+      "explanation": "4^1 × 4^1 = 4^(1+1) = 4^2 = 16.",
+      "options": [
+        {
+          "label": "17",
+          "is_correct": false
+        },
+        {
+          "label": "15",
+          "is_correct": false
+        },
+        {
+          "label": "18",
+          "is_correct": false
+        },
+        {
+          "label": "16",
+          "is_correct": true
+        }
+      ]
+    },
+    {
+      "chapter": "Surds and Indices",
+      "kind": "standard",
+      "difficulty": "easy",
+      "answer_type": "single",
+      "stem": "Simplify: (3^2)^3",
+      "explanation": "(3^2)^3 = 3^(2×3) = 3^6 = 729.",
+      "options": [
+        {
+          "label": "758",
+          "is_correct": false
+        },
+        {
+          "label": "729",
+          "is_correct": true
+        },
+        {
+          "label": "787",
+          "is_correct": false
+        },
+        {
+          "label": "700",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Surds and Indices",
+      "kind": "standard",
+      "difficulty": "easy",
+      "answer_type": "single",
+      "stem": "Simplify: 4^5 ÷ 4^2",
+      "explanation": "4^5 ÷ 4^2 = 4^(5−2) = 4^3 = 64.",
+      "options": [
+        {
+          "label": "68",
+          "is_correct": false
+        },
+        {
+          "label": "64",
+          "is_correct": true
+        },
+        {
+          "label": "62",
+          "is_correct": false
+        },
+        {
+          "label": "66",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Surds and Indices",
+      "kind": "standard",
+      "difficulty": "easy",
+      "answer_type": "single",
+      "stem": "Simplify: 2^1 × 2^2",
+      "explanation": "2^1 × 2^2 = 2^(1+2) = 2^3 = 8.",
+      "options": [
+        {
+          "label": "9",
+          "is_correct": false
+        },
+        {
+          "label": "10",
+          "is_correct": false
+        },
+        {
+          "label": "8",
+          "is_correct": true
+        },
+        {
+          "label": "7",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Surds and Indices",
+      "kind": "standard",
+      "difficulty": "easy",
+      "answer_type": "single",
+      "stem": "Simplify: 3^5 ÷ 3^2",
+      "explanation": "3^5 ÷ 3^2 = 3^(5−2) = 3^3 = 27.",
+      "options": [
+        {
+          "label": "29",
+          "is_correct": false
+        },
+        {
+          "label": "28",
+          "is_correct": false
+        },
+        {
+          "label": "26",
+          "is_correct": false
+        },
+        {
+          "label": "27",
+          "is_correct": true
+        }
+      ]
+    },
+    {
+      "chapter": "Surds and Indices",
+      "kind": "standard",
+      "difficulty": "easy",
+      "answer_type": "single",
+      "stem": "Simplify: 6^3 ÷ 6^1",
+      "explanation": "6^3 ÷ 6^1 = 6^(3−1) = 6^2 = 36.",
+      "options": [
+        {
+          "label": "37",
+          "is_correct": false
+        },
+        {
+          "label": "35",
+          "is_correct": false
+        },
+        {
+          "label": "38",
+          "is_correct": false
+        },
+        {
+          "label": "36",
+          "is_correct": true
+        }
+      ]
+    },
+    {
+      "chapter": "Surds and Indices",
+      "kind": "standard",
+      "difficulty": "easy",
+      "answer_type": "single",
+      "stem": "Simplify: 4^3 × 4^3",
+      "explanation": "4^3 × 4^3 = 4^(3+3) = 4^6 = 4096.",
+      "options": [
+        {
+          "label": "4424",
+          "is_correct": false
+        },
+        {
+          "label": "4096",
+          "is_correct": true
+        },
+        {
+          "label": "4260",
+          "is_correct": false
+        },
+        {
+          "label": "3932",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Surds and Indices",
+      "kind": "standard",
+      "difficulty": "easy",
+      "answer_type": "single",
+      "stem": "Simplify: (4^2)^2",
+      "explanation": "(4^2)^2 = 4^(2×2) = 4^4 = 256.",
+      "options": [
+        {
+          "label": "266",
+          "is_correct": false
+        },
+        {
+          "label": "276",
+          "is_correct": false
+        },
+        {
+          "label": "246",
+          "is_correct": false
+        },
+        {
+          "label": "256",
+          "is_correct": true
+        }
+      ]
+    },
+    {
+      "chapter": "Surds and Indices",
+      "kind": "standard",
+      "difficulty": "easy",
+      "answer_type": "single",
+      "stem": "Simplify: 5^6 ÷ 5^4",
+      "explanation": "5^6 ÷ 5^4 = 5^(6−4) = 5^2 = 25.",
+      "options": [
+        {
+          "label": "27",
+          "is_correct": false
+        },
+        {
+          "label": "26",
+          "is_correct": false
+        },
+        {
+          "label": "24",
+          "is_correct": false
+        },
+        {
+          "label": "25",
+          "is_correct": true
+        }
+      ]
+    },
+    {
+      "chapter": "Surds and Indices",
+      "kind": "standard",
+      "difficulty": "easy",
+      "answer_type": "single",
+      "stem": "Simplify: 4^2 × 4^3",
+      "explanation": "4^2 × 4^3 = 4^(2+3) = 4^5 = 1024.",
+      "options": [
+        {
+          "label": "1024",
+          "is_correct": true
+        },
+        {
+          "label": "1065",
+          "is_correct": false
+        },
+        {
+          "label": "983",
+          "is_correct": false
+        },
+        {
+          "label": "1106",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Surds and Indices",
+      "kind": "standard",
+      "difficulty": "easy",
+      "answer_type": "single",
+      "stem": "Simplify: 3^3 × 3^1",
+      "explanation": "3^3 × 3^1 = 3^(3+1) = 3^4 = 81.",
+      "options": [
+        {
+          "label": "81",
+          "is_correct": true
+        },
+        {
+          "label": "79",
+          "is_correct": false
+        },
+        {
+          "label": "85",
+          "is_correct": false
+        },
+        {
+          "label": "83",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Surds and Indices",
+      "kind": "standard",
+      "difficulty": "easy",
+      "answer_type": "single",
+      "stem": "Simplify: (3^2)^2",
+      "explanation": "(3^2)^2 = 3^(2×2) = 3^4 = 81.",
+      "options": [
+        {
+          "label": "79",
+          "is_correct": false
+        },
+        {
+          "label": "83",
+          "is_correct": false
+        },
+        {
+          "label": "81",
+          "is_correct": true
+        },
+        {
+          "label": "85",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Surds and Indices",
+      "kind": "standard",
+      "difficulty": "easy",
+      "answer_type": "single",
+      "stem": "Simplify: 5^1 × 5^2",
+      "explanation": "5^1 × 5^2 = 5^(1+2) = 5^3 = 125.",
+      "options": [
+        {
+          "label": "125",
+          "is_correct": true
+        },
+        {
+          "label": "127",
+          "is_correct": false
+        },
+        {
+          "label": "123",
+          "is_correct": false
+        },
+        {
+          "label": "129",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Surds and Indices",
+      "kind": "standard",
+      "difficulty": "easy",
+      "answer_type": "single",
+      "stem": "Simplify: 5^6 ÷ 5^5",
+      "explanation": "5^6 ÷ 5^5 = 5^(6−5) = 5^1 = 5.",
+      "options": [
+        {
+          "label": "6",
+          "is_correct": false
+        },
+        {
+          "label": "4",
+          "is_correct": false
+        },
+        {
+          "label": "5",
+          "is_correct": true
+        },
+        {
+          "label": "7",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Surds and Indices",
+      "kind": "standard",
+      "difficulty": "easy",
+      "answer_type": "single",
+      "stem": "Simplify: (2^3)^2",
+      "explanation": "(2^3)^2 = 2^(3×2) = 2^6 = 64.",
+      "options": [
+        {
+          "label": "62",
+          "is_correct": false
+        },
+        {
+          "label": "66",
+          "is_correct": false
+        },
+        {
+          "label": "68",
+          "is_correct": false
+        },
+        {
+          "label": "64",
+          "is_correct": true
+        }
+      ]
+    },
+    {
+      "chapter": "Surds and Indices",
+      "kind": "standard",
+      "difficulty": "easy",
+      "answer_type": "single",
+      "stem": "Simplify: 2^6 ÷ 2^3",
+      "explanation": "2^6 ÷ 2^3 = 2^(6−3) = 2^3 = 8.",
+      "options": [
+        {
+          "label": "9",
+          "is_correct": false
+        },
+        {
+          "label": "8",
+          "is_correct": true
+        },
+        {
+          "label": "10",
+          "is_correct": false
+        },
+        {
+          "label": "7",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Surds and Indices",
+      "kind": "standard",
+      "difficulty": "easy",
+      "answer_type": "single",
+      "stem": "Simplify: 2^3 ÷ 2^1",
+      "explanation": "2^3 ÷ 2^1 = 2^(3−1) = 2^2 = 4.",
+      "options": [
+        {
+          "label": "6",
+          "is_correct": false
+        },
+        {
+          "label": "5",
+          "is_correct": false
+        },
+        {
+          "label": "4",
+          "is_correct": true
+        },
+        {
+          "label": "3",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Surds and Indices",
+      "kind": "standard",
+      "difficulty": "easy",
+      "answer_type": "single",
+      "stem": "Simplify: 2^4 ÷ 2^2",
+      "explanation": "2^4 ÷ 2^2 = 2^(4−2) = 2^2 = 4.",
+      "options": [
+        {
+          "label": "3",
+          "is_correct": false
+        },
+        {
+          "label": "4",
+          "is_correct": true
+        },
+        {
+          "label": "5",
+          "is_correct": false
+        },
+        {
+          "label": "6",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Surds and Indices",
+      "kind": "standard",
+      "difficulty": "easy",
+      "answer_type": "single",
+      "stem": "Simplify: 4^6 ÷ 4^1",
+      "explanation": "4^6 ÷ 4^1 = 4^(6−1) = 4^5 = 1024.",
+      "options": [
+        {
+          "label": "1024",
+          "is_correct": true
+        },
+        {
+          "label": "1065",
+          "is_correct": false
+        },
+        {
+          "label": "983",
+          "is_correct": false
+        },
+        {
+          "label": "1106",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Surds and Indices",
+      "kind": "standard",
+      "difficulty": "easy",
+      "answer_type": "single",
+      "stem": "Simplify: 2^1 × 2^1",
+      "explanation": "2^1 × 2^1 = 2^(1+1) = 2^2 = 4.",
+      "options": [
+        {
+          "label": "3",
+          "is_correct": false
+        },
+        {
+          "label": "4",
+          "is_correct": true
+        },
+        {
+          "label": "5",
+          "is_correct": false
+        },
+        {
+          "label": "6",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Surds and Indices",
+      "kind": "standard",
+      "difficulty": "easy",
+      "answer_type": "single",
+      "stem": "Simplify: (3^3)^3",
+      "explanation": "(3^3)^3 = 3^(3×3) = 3^9 = 19683.",
+      "options": [
+        {
+          "label": "20470",
+          "is_correct": false
+        },
+        {
+          "label": "18896",
+          "is_correct": false
+        },
+        {
+          "label": "21257",
+          "is_correct": false
+        },
+        {
+          "label": "19683",
+          "is_correct": true
+        }
+      ]
+    },
+    {
+      "chapter": "Surds and Indices",
+      "kind": "standard",
+      "difficulty": "easy",
+      "answer_type": "single",
+      "stem": "Simplify: 4^2 × 4^2",
+      "explanation": "4^2 × 4^2 = 4^(2+2) = 4^4 = 256.",
+      "options": [
+        {
+          "label": "246",
+          "is_correct": false
+        },
+        {
+          "label": "266",
+          "is_correct": false
+        },
+        {
+          "label": "256",
+          "is_correct": true
+        },
+        {
+          "label": "276",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Surds and Indices",
+      "kind": "standard",
+      "difficulty": "easy",
+      "answer_type": "single",
+      "stem": "Simplify: 2^6 ÷ 2^4",
+      "explanation": "2^6 ÷ 2^4 = 2^(6−4) = 2^2 = 4.",
+      "options": [
+        {
+          "label": "6",
+          "is_correct": false
+        },
+        {
+          "label": "4",
+          "is_correct": true
+        },
+        {
+          "label": "3",
+          "is_correct": false
+        },
+        {
+          "label": "5",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Surds and Indices",
+      "kind": "standard",
+      "difficulty": "easy",
+      "answer_type": "single",
+      "stem": "Simplify: (3^3)^2",
+      "explanation": "(3^3)^2 = 3^(3×2) = 3^6 = 729.",
+      "options": [
+        {
+          "label": "700",
+          "is_correct": false
+        },
+        {
+          "label": "729",
+          "is_correct": true
+        },
+        {
+          "label": "787",
+          "is_correct": false
+        },
+        {
+          "label": "758",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Surds and Indices",
+      "kind": "standard",
+      "difficulty": "easy",
+      "answer_type": "single",
+      "stem": "Simplify: 4^5 ÷ 4^3",
+      "explanation": "4^5 ÷ 4^3 = 4^(5−3) = 4^2 = 16.",
+      "options": [
+        {
+          "label": "17",
+          "is_correct": false
+        },
+        {
+          "label": "15",
+          "is_correct": false
+        },
+        {
+          "label": "16",
+          "is_correct": true
+        },
+        {
+          "label": "18",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Surds and Indices",
+      "kind": "standard",
+      "difficulty": "easy",
+      "answer_type": "single",
+      "stem": "Simplify: 2^2 × 2^3",
+      "explanation": "2^2 × 2^3 = 2^(2+3) = 2^5 = 32.",
+      "options": [
+        {
+          "label": "34",
+          "is_correct": false
+        },
+        {
+          "label": "32",
+          "is_correct": true
+        },
+        {
+          "label": "33",
+          "is_correct": false
+        },
+        {
+          "label": "31",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Surds and Indices",
+      "kind": "standard",
+      "difficulty": "easy",
+      "answer_type": "single",
+      "stem": "Simplify: (4^3)^3",
+      "explanation": "(4^3)^3 = 4^(3×3) = 4^9 = 262144.",
+      "options": [
+        {
+          "label": "262144",
+          "is_correct": true
+        },
+        {
+          "label": "251658",
+          "is_correct": false
+        },
+        {
+          "label": "272630",
+          "is_correct": false
+        },
+        {
+          "label": "283116",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Surds and Indices",
+      "kind": "standard",
+      "difficulty": "easy",
+      "answer_type": "single",
+      "stem": "Simplify: 5^6 ÷ 5^3",
+      "explanation": "5^6 ÷ 5^3 = 5^(6−3) = 5^3 = 125.",
+      "options": [
+        {
+          "label": "127",
+          "is_correct": false
+        },
+        {
+          "label": "125",
+          "is_correct": true
+        },
+        {
+          "label": "123",
+          "is_correct": false
+        },
+        {
+          "label": "129",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Surds and Indices",
+      "kind": "standard",
+      "difficulty": "easy",
+      "answer_type": "single",
+      "stem": "Simplify: 4^1 × 4^3",
+      "explanation": "4^1 × 4^3 = 4^(1+3) = 4^4 = 256.",
+      "options": [
+        {
+          "label": "276",
+          "is_correct": false
+        },
+        {
+          "label": "246",
+          "is_correct": false
+        },
+        {
+          "label": "256",
+          "is_correct": true
+        },
+        {
+          "label": "266",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Surds and Indices",
+      "kind": "standard",
+      "difficulty": "easy",
+      "answer_type": "single",
+      "stem": "Simplify: 2^3 ÷ 2^2",
+      "explanation": "2^3 ÷ 2^2 = 2^(3−2) = 2^1 = 2.",
+      "options": [
+        {
+          "label": "4",
+          "is_correct": false
+        },
+        {
+          "label": "2",
+          "is_correct": true
+        },
+        {
+          "label": "3",
+          "is_correct": false
+        },
+        {
+          "label": "1",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Surds and Indices",
+      "kind": "standard",
+      "difficulty": "easy",
+      "answer_type": "single",
+      "stem": "Simplify: 5^2 × 5^1",
+      "explanation": "5^2 × 5^1 = 5^(2+1) = 5^3 = 125.",
+      "options": [
+        {
+          "label": "123",
+          "is_correct": false
+        },
+        {
+          "label": "129",
+          "is_correct": false
+        },
+        {
+          "label": "125",
+          "is_correct": true
+        },
+        {
+          "label": "127",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Surds and Indices",
+      "kind": "standard",
+      "difficulty": "easy",
+      "answer_type": "single",
+      "stem": "Simplify: 3^4 ÷ 3^3",
+      "explanation": "3^4 ÷ 3^3 = 3^(4−3) = 3^1 = 3.",
+      "options": [
+        {
+          "label": "5",
+          "is_correct": false
+        },
+        {
+          "label": "3",
+          "is_correct": true
+        },
+        {
+          "label": "4",
+          "is_correct": false
+        },
+        {
+          "label": "2",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Surds and Indices",
+      "kind": "standard",
+      "difficulty": "easy",
+      "answer_type": "single",
+      "stem": "Simplify: 4^3 ÷ 4^1",
+      "explanation": "4^3 ÷ 4^1 = 4^(3−1) = 4^2 = 16.",
+      "options": [
+        {
+          "label": "18",
+          "is_correct": false
+        },
+        {
+          "label": "16",
+          "is_correct": true
+        },
+        {
+          "label": "15",
+          "is_correct": false
+        },
+        {
+          "label": "17",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Surds and Indices",
+      "kind": "standard",
+      "difficulty": "easy",
+      "answer_type": "single",
+      "stem": "Simplify: 6^3 ÷ 6^2",
+      "explanation": "6^3 ÷ 6^2 = 6^(3−2) = 6^1 = 6.",
+      "options": [
+        {
+          "label": "6",
+          "is_correct": true
+        },
+        {
+          "label": "8",
+          "is_correct": false
+        },
+        {
+          "label": "7",
+          "is_correct": false
+        },
+        {
+          "label": "5",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Surds and Indices",
+      "kind": "standard",
+      "difficulty": "easy",
+      "answer_type": "single",
+      "stem": "Simplify: 4^6 ÷ 4^4",
+      "explanation": "4^6 ÷ 4^4 = 4^(6−4) = 4^2 = 16.",
+      "options": [
+        {
+          "label": "18",
+          "is_correct": false
+        },
+        {
+          "label": "17",
+          "is_correct": false
+        },
+        {
+          "label": "16",
+          "is_correct": true
+        },
+        {
+          "label": "15",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Surds and Indices",
+      "kind": "standard",
+      "difficulty": "easy",
+      "answer_type": "single",
+      "stem": "Simplify: 5^6 ÷ 5^1",
+      "explanation": "5^6 ÷ 5^1 = 5^(6−1) = 5^5 = 3125.",
+      "options": [
+        {
+          "label": "3375",
+          "is_correct": false
+        },
+        {
+          "label": "3125",
+          "is_correct": true
+        },
+        {
+          "label": "3000",
+          "is_correct": false
+        },
+        {
+          "label": "3250",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Surds and Indices",
+      "kind": "standard",
+      "difficulty": "easy",
+      "answer_type": "single",
+      "stem": "Simplify: 2^6 ÷ 2^2",
+      "explanation": "2^6 ÷ 2^2 = 2^(6−2) = 2^4 = 16.",
+      "options": [
+        {
+          "label": "15",
+          "is_correct": false
+        },
+        {
+          "label": "18",
+          "is_correct": false
+        },
+        {
+          "label": "16",
+          "is_correct": true
+        },
+        {
+          "label": "17",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Surds and Indices",
+      "kind": "standard",
+      "difficulty": "easy",
+      "answer_type": "single",
+      "stem": "Simplify: 4^5 ÷ 4^1",
+      "explanation": "4^5 ÷ 4^1 = 4^(5−1) = 4^4 = 256.",
+      "options": [
+        {
+          "label": "266",
+          "is_correct": false
+        },
+        {
+          "label": "276",
+          "is_correct": false
+        },
+        {
+          "label": "246",
+          "is_correct": false
+        },
+        {
+          "label": "256",
+          "is_correct": true
+        }
+      ]
+    },
+    {
+      "chapter": "Surds and Indices",
+      "kind": "standard",
+      "difficulty": "easy",
+      "answer_type": "single",
+      "stem": "Simplify: 5^1 × 5^1",
+      "explanation": "5^1 × 5^1 = 5^(1+1) = 5^2 = 25.",
+      "options": [
+        {
+          "label": "24",
+          "is_correct": false
+        },
+        {
+          "label": "27",
+          "is_correct": false
+        },
+        {
+          "label": "26",
+          "is_correct": false
+        },
+        {
+          "label": "25",
+          "is_correct": true
+        }
+      ]
+    },
+    {
+      "chapter": "Surds and Indices",
+      "kind": "standard",
+      "difficulty": "easy",
+      "answer_type": "single",
+      "stem": "Simplify: 6^5 ÷ 6^2",
+      "explanation": "6^5 ÷ 6^2 = 6^(5−2) = 6^3 = 216.",
+      "options": [
+        {
+          "label": "207",
+          "is_correct": false
+        },
+        {
+          "label": "234",
+          "is_correct": false
+        },
+        {
+          "label": "216",
+          "is_correct": true
+        },
+        {
+          "label": "225",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Surds and Indices",
+      "kind": "standard",
+      "difficulty": "easy",
+      "answer_type": "single",
+      "stem": "Simplify: 2^6 ÷ 2^1",
+      "explanation": "2^6 ÷ 2^1 = 2^(6−1) = 2^5 = 32.",
+      "options": [
+        {
+          "label": "34",
+          "is_correct": false
+        },
+        {
+          "label": "33",
+          "is_correct": false
+        },
+        {
+          "label": "31",
+          "is_correct": false
+        },
+        {
+          "label": "32",
+          "is_correct": true
+        }
+      ]
+    },
+    {
+      "chapter": "Surds and Indices",
+      "kind": "standard",
+      "difficulty": "easy",
+      "answer_type": "single",
+      "stem": "Simplify: 2^5 ÷ 2^4",
+      "explanation": "2^5 ÷ 2^4 = 2^(5−4) = 2^1 = 2.",
+      "options": [
+        {
+          "label": "2",
+          "is_correct": true
+        },
+        {
+          "label": "1",
+          "is_correct": false
+        },
+        {
+          "label": "3",
+          "is_correct": false
+        },
+        {
+          "label": "4",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Surds and Indices",
+      "kind": "standard",
+      "difficulty": "easy",
+      "answer_type": "single",
+      "stem": "Simplify: 4^2 × 4^1",
+      "explanation": "4^2 × 4^1 = 4^(2+1) = 4^3 = 64.",
+      "options": [
+        {
+          "label": "62",
+          "is_correct": false
+        },
+        {
+          "label": "68",
+          "is_correct": false
+        },
+        {
+          "label": "66",
+          "is_correct": false
+        },
+        {
+          "label": "64",
+          "is_correct": true
+        }
+      ]
+    },
+    {
+      "chapter": "Surds and Indices",
+      "kind": "standard",
+      "difficulty": "medium",
+      "answer_type": "single",
+      "stem": "If 3^x = 9, find the value of x.",
+      "explanation": "3^2 = 9, so x = 2.",
+      "options": [
+        {
+          "label": "2",
+          "is_correct": true
+        },
+        {
+          "label": "1",
+          "is_correct": false
+        },
+        {
+          "label": "4",
+          "is_correct": false
+        },
+        {
+          "label": "3",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Surds and Indices",
+      "kind": "standard",
+      "difficulty": "medium",
+      "answer_type": "single",
+      "stem": "If 4^x = 1024, find the value of x.",
+      "explanation": "4^5 = 1024, so x = 5.",
+      "options": [
+        {
+          "label": "7",
+          "is_correct": false
+        },
+        {
+          "label": "6",
+          "is_correct": false
+        },
+        {
+          "label": "4",
+          "is_correct": false
+        },
+        {
+          "label": "5",
+          "is_correct": true
+        }
+      ]
+    },
+    {
+      "chapter": "Surds and Indices",
+      "kind": "standard",
+      "difficulty": "medium",
+      "answer_type": "single",
+      "stem": "If 2^x = 32, find the value of x.",
+      "explanation": "2^5 = 32, so x = 5.",
+      "options": [
+        {
+          "label": "4",
+          "is_correct": false
+        },
+        {
+          "label": "5",
+          "is_correct": true
+        },
+        {
+          "label": "6",
+          "is_correct": false
+        },
+        {
+          "label": "7",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Surds and Indices",
+      "kind": "standard",
+      "difficulty": "medium",
+      "answer_type": "single",
+      "stem": "Simplify: √72 × √72",
+      "explanation": "√72 × √72 = 72.",
+      "options": [
+        {
+          "label": "72",
+          "is_correct": true
+        },
+        {
+          "label": "76",
+          "is_correct": false
+        },
+        {
+          "label": "74",
+          "is_correct": false
+        },
+        {
+          "label": "70",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Surds and Indices",
+      "kind": "standard",
+      "difficulty": "medium",
+      "answer_type": "single",
+      "stem": "Simplify: √13 × √13",
+      "explanation": "√13 × √13 = 13.",
+      "options": [
+        {
+          "label": "14",
+          "is_correct": false
+        },
+        {
+          "label": "13",
+          "is_correct": true
+        },
+        {
+          "label": "15",
+          "is_correct": false
+        },
+        {
+          "label": "12",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Surds and Indices",
+      "kind": "standard",
+      "difficulty": "medium",
+      "answer_type": "single",
+      "stem": "Simplify: √16 × √16",
+      "explanation": "√16 × √16 = 16.",
+      "options": [
+        {
+          "label": "18",
+          "is_correct": false
+        },
+        {
+          "label": "16",
+          "is_correct": true
+        },
+        {
+          "label": "15",
+          "is_correct": false
+        },
+        {
+          "label": "17",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Surds and Indices",
+      "kind": "standard",
+      "difficulty": "medium",
+      "answer_type": "single",
+      "stem": "If 4^x = 16, find the value of x.",
+      "explanation": "4^2 = 16, so x = 2.",
+      "options": [
+        {
+          "label": "3",
+          "is_correct": false
+        },
+        {
+          "label": "2",
+          "is_correct": true
+        },
+        {
+          "label": "4",
+          "is_correct": false
+        },
+        {
+          "label": "1",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Surds and Indices",
+      "kind": "standard",
+      "difficulty": "medium",
+      "answer_type": "single",
+      "stem": "Simplify: 3^2 × 2^2",
+      "explanation": "3^2 × 2^2 = (3×2)^2 = 6^2 = 36.",
+      "options": [
+        {
+          "label": "36",
+          "is_correct": true
+        },
+        {
+          "label": "38",
+          "is_correct": false
+        },
+        {
+          "label": "37",
+          "is_correct": false
+        },
+        {
+          "label": "35",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Surds and Indices",
+      "kind": "standard",
+      "difficulty": "medium",
+      "answer_type": "single",
+      "stem": "Simplify: 4^3 × 3^3",
+      "explanation": "4^3 × 3^3 = (4×3)^3 = 12^3 = 1728.",
+      "options": [
+        {
+          "label": "1659",
+          "is_correct": false
+        },
+        {
+          "label": "1797",
+          "is_correct": false
+        },
+        {
+          "label": "1866",
+          "is_correct": false
+        },
+        {
+          "label": "1728",
+          "is_correct": true
+        }
+      ]
+    },
+    {
+      "chapter": "Surds and Indices",
+      "kind": "standard",
+      "difficulty": "medium",
+      "answer_type": "single",
+      "stem": "Simplify: √58 × √58",
+      "explanation": "√58 × √58 = 58.",
+      "options": [
+        {
+          "label": "56",
+          "is_correct": false
+        },
+        {
+          "label": "62",
+          "is_correct": false
+        },
+        {
+          "label": "60",
+          "is_correct": false
+        },
+        {
+          "label": "58",
+          "is_correct": true
+        }
+      ]
+    },
+    {
+      "chapter": "Surds and Indices",
+      "kind": "standard",
+      "difficulty": "medium",
+      "answer_type": "single",
+      "stem": "If 2^x = 8, find the value of x.",
+      "explanation": "2^3 = 8, so x = 3.",
+      "options": [
+        {
+          "label": "4",
+          "is_correct": false
+        },
+        {
+          "label": "3",
+          "is_correct": true
+        },
+        {
+          "label": "2",
+          "is_correct": false
+        },
+        {
+          "label": "5",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Surds and Indices",
+      "kind": "standard",
+      "difficulty": "medium",
+      "answer_type": "single",
+      "stem": "Simplify: 2^3 × 2^3",
+      "explanation": "2^3 × 2^3 = (2×2)^3 = 4^3 = 64.",
+      "options": [
+        {
+          "label": "62",
+          "is_correct": false
+        },
+        {
+          "label": "64",
+          "is_correct": true
+        },
+        {
+          "label": "68",
+          "is_correct": false
+        },
+        {
+          "label": "66",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Surds and Indices",
+      "kind": "standard",
+      "difficulty": "medium",
+      "answer_type": "single",
+      "stem": "If 5^x = 125, find the value of x.",
+      "explanation": "5^3 = 125, so x = 3.",
+      "options": [
+        {
+          "label": "2",
+          "is_correct": false
+        },
+        {
+          "label": "3",
+          "is_correct": true
+        },
+        {
+          "label": "4",
+          "is_correct": false
+        },
+        {
+          "label": "5",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Surds and Indices",
+      "kind": "standard",
+      "difficulty": "medium",
+      "answer_type": "single",
+      "stem": "Simplify: 4^3 × 2^3",
+      "explanation": "4^3 × 2^3 = (4×2)^3 = 8^3 = 512.",
+      "options": [
+        {
+          "label": "512",
+          "is_correct": true
+        },
+        {
+          "label": "532",
+          "is_correct": false
+        },
+        {
+          "label": "552",
+          "is_correct": false
+        },
+        {
+          "label": "492",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Surds and Indices",
+      "kind": "standard",
+      "difficulty": "medium",
+      "answer_type": "single",
+      "stem": "If 3^x = 243, find the value of x.",
+      "explanation": "3^5 = 243, so x = 5.",
+      "options": [
+        {
+          "label": "4",
+          "is_correct": false
+        },
+        {
+          "label": "7",
+          "is_correct": false
+        },
+        {
+          "label": "6",
+          "is_correct": false
+        },
+        {
+          "label": "5",
+          "is_correct": true
+        }
+      ]
+    },
+    {
+      "chapter": "Surds and Indices",
+      "kind": "standard",
+      "difficulty": "medium",
+      "answer_type": "single",
+      "stem": "Simplify: √64 × √64",
+      "explanation": "√64 × √64 = 64.",
+      "options": [
+        {
+          "label": "62",
+          "is_correct": false
+        },
+        {
+          "label": "66",
+          "is_correct": false
+        },
+        {
+          "label": "64",
+          "is_correct": true
+        },
+        {
+          "label": "68",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Surds and Indices",
+      "kind": "standard",
+      "difficulty": "medium",
+      "answer_type": "single",
+      "stem": "If 5^x = 3125, find the value of x.",
+      "explanation": "5^5 = 3125, so x = 5.",
+      "options": [
+        {
+          "label": "4",
+          "is_correct": false
+        },
+        {
+          "label": "5",
+          "is_correct": true
+        },
+        {
+          "label": "7",
+          "is_correct": false
+        },
+        {
+          "label": "6",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Surds and Indices",
+      "kind": "standard",
+      "difficulty": "medium",
+      "answer_type": "single",
+      "stem": "Simplify: 3^3 × 3^3",
+      "explanation": "3^3 × 3^3 = (3×3)^3 = 9^3 = 729.",
+      "options": [
+        {
+          "label": "758",
+          "is_correct": false
+        },
+        {
+          "label": "729",
+          "is_correct": true
+        },
+        {
+          "label": "787",
+          "is_correct": false
+        },
+        {
+          "label": "700",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Surds and Indices",
+      "kind": "standard",
+      "difficulty": "medium",
+      "answer_type": "single",
+      "stem": "Simplify: 2^3 × 4^3",
+      "explanation": "2^3 × 4^3 = (2×4)^3 = 8^3 = 512.",
+      "options": [
+        {
+          "label": "512",
+          "is_correct": true
+        },
+        {
+          "label": "492",
+          "is_correct": false
+        },
+        {
+          "label": "532",
+          "is_correct": false
+        },
+        {
+          "label": "552",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Surds and Indices",
+      "kind": "standard",
+      "difficulty": "medium",
+      "answer_type": "single",
+      "stem": "Simplify: √77 × √77",
+      "explanation": "√77 × √77 = 77.",
+      "options": [
+        {
+          "label": "77",
+          "is_correct": true
+        },
+        {
+          "label": "75",
+          "is_correct": false
+        },
+        {
+          "label": "79",
+          "is_correct": false
+        },
+        {
+          "label": "81",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Surds and Indices",
+      "kind": "standard",
+      "difficulty": "medium",
+      "answer_type": "single",
+      "stem": "If 2^x = 16, find the value of x.",
+      "explanation": "2^4 = 16, so x = 4.",
+      "options": [
+        {
+          "label": "4",
+          "is_correct": true
+        },
+        {
+          "label": "6",
+          "is_correct": false
+        },
+        {
+          "label": "5",
+          "is_correct": false
+        },
+        {
+          "label": "3",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Surds and Indices",
+      "kind": "standard",
+      "difficulty": "medium",
+      "answer_type": "single",
+      "stem": "Simplify: √35 × √35",
+      "explanation": "√35 × √35 = 35.",
+      "options": [
+        {
+          "label": "37",
+          "is_correct": false
+        },
+        {
+          "label": "36",
+          "is_correct": false
+        },
+        {
+          "label": "35",
+          "is_correct": true
+        },
+        {
+          "label": "34",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Surds and Indices",
+      "kind": "standard",
+      "difficulty": "medium",
+      "answer_type": "single",
+      "stem": "If 2^x = 4, find the value of x.",
+      "explanation": "2^2 = 4, so x = 2.",
+      "options": [
+        {
+          "label": "4",
+          "is_correct": false
+        },
+        {
+          "label": "2",
+          "is_correct": true
+        },
+        {
+          "label": "1",
+          "is_correct": false
+        },
+        {
+          "label": "3",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Surds and Indices",
+      "kind": "standard",
+      "difficulty": "medium",
+      "answer_type": "single",
+      "stem": "If 4^x = 64, find the value of x.",
+      "explanation": "4^3 = 64, so x = 3.",
+      "options": [
+        {
+          "label": "2",
+          "is_correct": false
+        },
+        {
+          "label": "5",
+          "is_correct": false
+        },
+        {
+          "label": "4",
+          "is_correct": false
+        },
+        {
+          "label": "3",
+          "is_correct": true
+        }
+      ]
+    },
+    {
+      "chapter": "Surds and Indices",
+      "kind": "standard",
+      "difficulty": "medium",
+      "answer_type": "single",
+      "stem": "Simplify: √21 × √21",
+      "explanation": "√21 × √21 = 21.",
+      "options": [
+        {
+          "label": "23",
+          "is_correct": false
+        },
+        {
+          "label": "22",
+          "is_correct": false
+        },
+        {
+          "label": "20",
+          "is_correct": false
+        },
+        {
+          "label": "21",
+          "is_correct": true
+        }
+      ]
+    },
+    {
+      "chapter": "Surds and Indices",
+      "kind": "standard",
+      "difficulty": "medium",
+      "answer_type": "single",
+      "stem": "Simplify: √79 × √79",
+      "explanation": "√79 × √79 = 79.",
+      "options": [
+        {
+          "label": "81",
+          "is_correct": false
+        },
+        {
+          "label": "83",
+          "is_correct": false
+        },
+        {
+          "label": "79",
+          "is_correct": true
+        },
+        {
+          "label": "77",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Surds and Indices",
+      "kind": "standard",
+      "difficulty": "medium",
+      "answer_type": "single",
+      "stem": "Simplify: √18 × √18",
+      "explanation": "√18 × √18 = 18.",
+      "options": [
+        {
+          "label": "17",
+          "is_correct": false
+        },
+        {
+          "label": "20",
+          "is_correct": false
+        },
+        {
+          "label": "19",
+          "is_correct": false
+        },
+        {
+          "label": "18",
+          "is_correct": true
+        }
+      ]
+    },
+    {
+      "chapter": "Surds and Indices",
+      "kind": "standard",
+      "difficulty": "medium",
+      "answer_type": "single",
+      "stem": "If 5^x = 625, find the value of x.",
+      "explanation": "5^4 = 625, so x = 4.",
+      "options": [
+        {
+          "label": "4",
+          "is_correct": true
+        },
+        {
+          "label": "6",
+          "is_correct": false
+        },
+        {
+          "label": "3",
+          "is_correct": false
+        },
+        {
+          "label": "5",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Surds and Indices",
+      "kind": "standard",
+      "difficulty": "medium",
+      "answer_type": "single",
+      "stem": "If 4^x = 256, find the value of x.",
+      "explanation": "4^4 = 256, so x = 4.",
+      "options": [
+        {
+          "label": "3",
+          "is_correct": false
+        },
+        {
+          "label": "4",
+          "is_correct": true
+        },
+        {
+          "label": "5",
+          "is_correct": false
+        },
+        {
+          "label": "6",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Surds and Indices",
+      "kind": "standard",
+      "difficulty": "medium",
+      "answer_type": "single",
+      "stem": "Simplify: √48 × √48",
+      "explanation": "√48 × √48 = 48.",
+      "options": [
+        {
+          "label": "52",
+          "is_correct": false
+        },
+        {
+          "label": "50",
+          "is_correct": false
+        },
+        {
+          "label": "46",
+          "is_correct": false
+        },
+        {
+          "label": "48",
+          "is_correct": true
+        }
+      ]
+    },
+    {
+      "chapter": "Surds and Indices",
+      "kind": "standard",
+      "difficulty": "medium",
+      "answer_type": "single",
+      "stem": "Simplify: 2^3 × 3^3",
+      "explanation": "2^3 × 3^3 = (2×3)^3 = 6^3 = 216.",
+      "options": [
+        {
+          "label": "234",
+          "is_correct": false
+        },
+        {
+          "label": "225",
+          "is_correct": false
+        },
+        {
+          "label": "216",
+          "is_correct": true
+        },
+        {
+          "label": "207",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Surds and Indices",
+      "kind": "standard",
+      "difficulty": "medium",
+      "answer_type": "single",
+      "stem": "Simplify: √49 × √49",
+      "explanation": "√49 × √49 = 49.",
+      "options": [
+        {
+          "label": "49",
+          "is_correct": true
+        },
+        {
+          "label": "53",
+          "is_correct": false
+        },
+        {
+          "label": "47",
+          "is_correct": false
+        },
+        {
+          "label": "51",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Surds and Indices",
+      "kind": "standard",
+      "difficulty": "medium",
+      "answer_type": "single",
+      "stem": "Simplify: 3^3 × 2^3",
+      "explanation": "3^3 × 2^3 = (3×2)^3 = 6^3 = 216.",
+      "options": [
+        {
+          "label": "234",
+          "is_correct": false
+        },
+        {
+          "label": "216",
+          "is_correct": true
+        },
+        {
+          "label": "207",
+          "is_correct": false
+        },
+        {
+          "label": "225",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Surds and Indices",
+      "kind": "standard",
+      "difficulty": "medium",
+      "answer_type": "single",
+      "stem": "Simplify: 4^2 × 3^2",
+      "explanation": "4^2 × 3^2 = (4×3)^2 = 12^2 = 144.",
+      "options": [
+        {
+          "label": "148",
+          "is_correct": false
+        },
+        {
+          "label": "144",
+          "is_correct": true
+        },
+        {
+          "label": "142",
+          "is_correct": false
+        },
+        {
+          "label": "146",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Surds and Indices",
+      "kind": "standard",
+      "difficulty": "medium",
+      "answer_type": "single",
+      "stem": "Simplify: √82 × √82",
+      "explanation": "√82 × √82 = 82.",
+      "options": [
+        {
+          "label": "86",
+          "is_correct": false
+        },
+        {
+          "label": "80",
+          "is_correct": false
+        },
+        {
+          "label": "84",
+          "is_correct": false
+        },
+        {
+          "label": "82",
+          "is_correct": true
+        }
+      ]
+    },
+    {
+      "chapter": "Surds and Indices",
+      "kind": "standard",
+      "difficulty": "medium",
+      "answer_type": "single",
+      "stem": "Simplify: 3^2 × 3^2",
+      "explanation": "3^2 × 3^2 = (3×3)^2 = 9^2 = 81.",
+      "options": [
+        {
+          "label": "81",
+          "is_correct": true
+        },
+        {
+          "label": "85",
+          "is_correct": false
+        },
+        {
+          "label": "83",
+          "is_correct": false
+        },
+        {
+          "label": "79",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Surds and Indices",
+      "kind": "standard",
+      "difficulty": "medium",
+      "answer_type": "single",
+      "stem": "Simplify: √92 × √92",
+      "explanation": "√92 × √92 = 92.",
+      "options": [
+        {
+          "label": "96",
+          "is_correct": false
+        },
+        {
+          "label": "92",
+          "is_correct": true
+        },
+        {
+          "label": "94",
+          "is_correct": false
+        },
+        {
+          "label": "90",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Surds and Indices",
+      "kind": "standard",
+      "difficulty": "medium",
+      "answer_type": "single",
+      "stem": "If 5^x = 25, find the value of x.",
+      "explanation": "5^2 = 25, so x = 2.",
+      "options": [
+        {
+          "label": "4",
+          "is_correct": false
+        },
+        {
+          "label": "2",
+          "is_correct": true
+        },
+        {
+          "label": "3",
+          "is_correct": false
+        },
+        {
+          "label": "1",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Surds and Indices",
+      "kind": "standard",
+      "difficulty": "medium",
+      "answer_type": "single",
+      "stem": "Simplify: 3^3 × 4^3",
+      "explanation": "3^3 × 4^3 = (3×4)^3 = 12^3 = 1728.",
+      "options": [
+        {
+          "label": "1659",
+          "is_correct": false
+        },
+        {
+          "label": "1797",
+          "is_correct": false
+        },
+        {
+          "label": "1866",
+          "is_correct": false
+        },
+        {
+          "label": "1728",
+          "is_correct": true
+        }
+      ]
+    },
+    {
+      "chapter": "Surds and Indices",
+      "kind": "standard",
+      "difficulty": "medium",
+      "answer_type": "single",
+      "stem": "Simplify: √34 × √34",
+      "explanation": "√34 × √34 = 34.",
+      "options": [
+        {
+          "label": "33",
+          "is_correct": false
+        },
+        {
+          "label": "34",
+          "is_correct": true
+        },
+        {
+          "label": "36",
+          "is_correct": false
+        },
+        {
+          "label": "35",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Surds and Indices",
+      "kind": "standard",
+      "difficulty": "medium",
+      "answer_type": "single",
+      "stem": "If 3^x = 27, find the value of x.",
+      "explanation": "3^3 = 27, so x = 3.",
+      "options": [
+        {
+          "label": "4",
+          "is_correct": false
+        },
+        {
+          "label": "3",
+          "is_correct": true
+        },
+        {
+          "label": "5",
+          "is_correct": false
+        },
+        {
+          "label": "2",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Surds and Indices",
+      "kind": "standard",
+      "difficulty": "medium",
+      "answer_type": "single",
+      "stem": "Simplify: √9 × √9",
+      "explanation": "√9 × √9 = 9.",
+      "options": [
+        {
+          "label": "9",
+          "is_correct": true
+        },
+        {
+          "label": "11",
+          "is_correct": false
+        },
+        {
+          "label": "10",
+          "is_correct": false
+        },
+        {
+          "label": "8",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Surds and Indices",
+      "kind": "standard",
+      "difficulty": "medium",
+      "answer_type": "single",
+      "stem": "Simplify: √97 × √97",
+      "explanation": "√97 × √97 = 97.",
+      "options": [
+        {
+          "label": "101",
+          "is_correct": false
+        },
+        {
+          "label": "97",
+          "is_correct": true
+        },
+        {
+          "label": "99",
+          "is_correct": false
+        },
+        {
+          "label": "95",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Surds and Indices",
+      "kind": "standard",
+      "difficulty": "medium",
+      "answer_type": "single",
+      "stem": "Simplify: 3^2 × 4^2",
+      "explanation": "3^2 × 4^2 = (3×4)^2 = 12^2 = 144.",
+      "options": [
+        {
+          "label": "146",
+          "is_correct": false
+        },
+        {
+          "label": "148",
+          "is_correct": false
+        },
+        {
+          "label": "144",
+          "is_correct": true
+        },
+        {
+          "label": "142",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Surds and Indices",
+      "kind": "standard",
+      "difficulty": "medium",
+      "answer_type": "single",
+      "stem": "Simplify: √65 × √65",
+      "explanation": "√65 × √65 = 65.",
+      "options": [
+        {
+          "label": "63",
+          "is_correct": false
+        },
+        {
+          "label": "67",
+          "is_correct": false
+        },
+        {
+          "label": "65",
+          "is_correct": true
+        },
+        {
+          "label": "69",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Surds and Indices",
+      "kind": "standard",
+      "difficulty": "medium",
+      "answer_type": "single",
+      "stem": "Simplify: √67 × √67",
+      "explanation": "√67 × √67 = 67.",
+      "options": [
+        {
+          "label": "65",
+          "is_correct": false
+        },
+        {
+          "label": "69",
+          "is_correct": false
+        },
+        {
+          "label": "71",
+          "is_correct": false
+        },
+        {
+          "label": "67",
+          "is_correct": true
+        }
+      ]
+    },
+    {
+      "chapter": "Surds and Indices",
+      "kind": "standard",
+      "difficulty": "medium",
+      "answer_type": "single",
+      "stem": "Simplify: √87 × √87",
+      "explanation": "√87 × √87 = 87.",
+      "options": [
+        {
+          "label": "87",
+          "is_correct": true
+        },
+        {
+          "label": "85",
+          "is_correct": false
+        },
+        {
+          "label": "91",
+          "is_correct": false
+        },
+        {
+          "label": "89",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Surds and Indices",
+      "kind": "standard",
+      "difficulty": "medium",
+      "answer_type": "single",
+      "stem": "Simplify: √33 × √33",
+      "explanation": "√33 × √33 = 33.",
+      "options": [
+        {
+          "label": "33",
+          "is_correct": true
+        },
+        {
+          "label": "35",
+          "is_correct": false
+        },
+        {
+          "label": "32",
+          "is_correct": false
+        },
+        {
+          "label": "34",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Surds and Indices",
+      "kind": "standard",
+      "difficulty": "medium",
+      "answer_type": "single",
+      "stem": "Simplify: √42 × √42",
+      "explanation": "√42 × √42 = 42.",
+      "options": [
+        {
+          "label": "46",
+          "is_correct": false
+        },
+        {
+          "label": "42",
+          "is_correct": true
+        },
+        {
+          "label": "44",
+          "is_correct": false
+        },
+        {
+          "label": "40",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Surds and Indices",
+      "kind": "standard",
+      "difficulty": "medium",
+      "answer_type": "single",
+      "stem": "Simplify: √55 × √55",
+      "explanation": "√55 × √55 = 55.",
+      "options": [
+        {
+          "label": "59",
+          "is_correct": false
+        },
+        {
+          "label": "55",
+          "is_correct": true
+        },
+        {
+          "label": "53",
+          "is_correct": false
+        },
+        {
+          "label": "57",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Surds and Indices",
+      "kind": "standard",
+      "difficulty": "hard",
+      "answer_type": "single",
+      "stem": "If x^2 = 100, find the value of x.",
+      "explanation": "10^2 = 100, so x = 10.",
+      "options": [
+        {
+          "label": "10",
+          "is_correct": true
+        },
+        {
+          "label": "12",
+          "is_correct": false
+        },
+        {
+          "label": "11",
+          "is_correct": false
+        },
+        {
+          "label": "9",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Surds and Indices",
+      "kind": "standard",
+      "difficulty": "hard",
+      "answer_type": "single",
+      "stem": "If 2^(x + 3) = 64, find the value of x.",
+      "explanation": "64 = 2^6, so x + 3 = 6 ⇒ x = 3.",
+      "options": [
+        {
+          "label": "3",
+          "is_correct": true
+        },
+        {
+          "label": "2",
+          "is_correct": false
+        },
+        {
+          "label": "4",
+          "is_correct": false
+        },
+        {
+          "label": "5",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Surds and Indices",
+      "kind": "standard",
+      "difficulty": "hard",
+      "answer_type": "single",
+      "stem": "Simplify: (4^2 × 4^1) ÷ 4^1",
+      "explanation": "= 4^(2+1−1) = 4^2 = 16.",
+      "options": [
+        {
+          "label": "15",
+          "is_correct": false
+        },
+        {
+          "label": "18",
+          "is_correct": false
+        },
+        {
+          "label": "16",
+          "is_correct": true
+        },
+        {
+          "label": "17",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Surds and Indices",
+      "kind": "standard",
+      "difficulty": "hard",
+      "answer_type": "single",
+      "stem": "If x^3 = 27, find the value of x.",
+      "explanation": "3^3 = 27, so x = 3.",
+      "options": [
+        {
+          "label": "3",
+          "is_correct": true
+        },
+        {
+          "label": "4",
+          "is_correct": false
+        },
+        {
+          "label": "5",
+          "is_correct": false
+        },
+        {
+          "label": "2",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Surds and Indices",
+      "kind": "standard",
+      "difficulty": "hard",
+      "answer_type": "single",
+      "stem": "If 3^(x + 2) = 243, find the value of x.",
+      "explanation": "243 = 3^5, so x + 2 = 5 ⇒ x = 3.",
+      "options": [
+        {
+          "label": "5",
+          "is_correct": false
+        },
+        {
+          "label": "4",
+          "is_correct": false
+        },
+        {
+          "label": "2",
+          "is_correct": false
+        },
+        {
+          "label": "3",
+          "is_correct": true
+        }
+      ]
+    },
+    {
+      "chapter": "Surds and Indices",
+      "kind": "standard",
+      "difficulty": "hard",
+      "answer_type": "single",
+      "stem": "Simplify: (2^2 × 2^3) ÷ 2^2",
+      "explanation": "= 2^(2+3−2) = 2^3 = 8.",
+      "options": [
+        {
+          "label": "10",
+          "is_correct": false
+        },
+        {
+          "label": "8",
+          "is_correct": true
+        },
+        {
+          "label": "9",
+          "is_correct": false
+        },
+        {
+          "label": "7",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Surds and Indices",
+      "kind": "standard",
+      "difficulty": "hard",
+      "answer_type": "single",
+      "stem": "If 4^(x + 3) = 4096, find the value of x.",
+      "explanation": "4096 = 4^6, so x + 3 = 6 ⇒ x = 3.",
+      "options": [
+        {
+          "label": "5",
+          "is_correct": false
+        },
+        {
+          "label": "3",
+          "is_correct": true
+        },
+        {
+          "label": "2",
+          "is_correct": false
+        },
+        {
+          "label": "4",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Surds and Indices",
+      "kind": "standard",
+      "difficulty": "hard",
+      "answer_type": "single",
+      "stem": "If x^3 = 216, find the value of x.",
+      "explanation": "6^3 = 216, so x = 6.",
+      "options": [
+        {
+          "label": "8",
+          "is_correct": false
+        },
+        {
+          "label": "7",
+          "is_correct": false
+        },
+        {
+          "label": "6",
+          "is_correct": true
+        },
+        {
+          "label": "5",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Surds and Indices",
+      "kind": "standard",
+      "difficulty": "hard",
+      "answer_type": "single",
+      "stem": "Simplify: (3^3 × 3^2) ÷ 3^3",
+      "explanation": "= 3^(3+2−3) = 3^2 = 9.",
+      "options": [
+        {
+          "label": "9",
+          "is_correct": true
+        },
+        {
+          "label": "11",
+          "is_correct": false
+        },
+        {
+          "label": "8",
+          "is_correct": false
+        },
+        {
+          "label": "10",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Surds and Indices",
+      "kind": "standard",
+      "difficulty": "hard",
+      "answer_type": "single",
+      "stem": "If x^2 = 64, find the value of x.",
+      "explanation": "8^2 = 64, so x = 8.",
+      "options": [
+        {
+          "label": "8",
+          "is_correct": true
+        },
+        {
+          "label": "10",
+          "is_correct": false
+        },
+        {
+          "label": "7",
+          "is_correct": false
+        },
+        {
+          "label": "9",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Surds and Indices",
+      "kind": "standard",
+      "difficulty": "hard",
+      "answer_type": "single",
+      "stem": "If 3^(x + 1) = 9, find the value of x.",
+      "explanation": "9 = 3^2, so x + 1 = 2 ⇒ x = 1.",
+      "options": [
+        {
+          "label": "3",
+          "is_correct": false
+        },
+        {
+          "label": "1",
+          "is_correct": true
+        },
+        {
+          "label": "4",
+          "is_correct": false
+        },
+        {
+          "label": "2",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Surds and Indices",
+      "kind": "standard",
+      "difficulty": "hard",
+      "answer_type": "single",
+      "stem": "If x^2 = 25, find the value of x.",
+      "explanation": "5^2 = 25, so x = 5.",
+      "options": [
+        {
+          "label": "5",
+          "is_correct": true
+        },
+        {
+          "label": "7",
+          "is_correct": false
+        },
+        {
+          "label": "4",
+          "is_correct": false
+        },
+        {
+          "label": "6",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Surds and Indices",
+      "kind": "standard",
+      "difficulty": "hard",
+      "answer_type": "single",
+      "stem": "If 4^(x + 3) = 1024, find the value of x.",
+      "explanation": "1024 = 4^5, so x + 3 = 5 ⇒ x = 2.",
+      "options": [
+        {
+          "label": "1",
+          "is_correct": false
+        },
+        {
+          "label": "3",
+          "is_correct": false
+        },
+        {
+          "label": "2",
+          "is_correct": true
+        },
+        {
+          "label": "4",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Surds and Indices",
+      "kind": "standard",
+      "difficulty": "hard",
+      "answer_type": "single",
+      "stem": "If 2^(x + 1) = 4, find the value of x.",
+      "explanation": "4 = 2^2, so x + 1 = 2 ⇒ x = 1.",
+      "options": [
+        {
+          "label": "1",
+          "is_correct": true
+        },
+        {
+          "label": "3",
+          "is_correct": false
+        },
+        {
+          "label": "4",
+          "is_correct": false
+        },
+        {
+          "label": "2",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Surds and Indices",
+      "kind": "standard",
+      "difficulty": "hard",
+      "answer_type": "single",
+      "stem": "If 3^(x + 2) = 81, find the value of x.",
+      "explanation": "81 = 3^4, so x + 2 = 4 ⇒ x = 2.",
+      "options": [
+        {
+          "label": "2",
+          "is_correct": true
+        },
+        {
+          "label": "3",
+          "is_correct": false
+        },
+        {
+          "label": "4",
+          "is_correct": false
+        },
+        {
+          "label": "1",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Surds and Indices",
+      "kind": "standard",
+      "difficulty": "hard",
+      "answer_type": "single",
+      "stem": "If 3^(x + 4) = 729, find the value of x.",
+      "explanation": "729 = 3^6, so x + 4 = 6 ⇒ x = 2.",
+      "options": [
+        {
+          "label": "1",
+          "is_correct": false
+        },
+        {
+          "label": "3",
+          "is_correct": false
+        },
+        {
+          "label": "4",
+          "is_correct": false
+        },
+        {
+          "label": "2",
+          "is_correct": true
+        }
+      ]
+    },
+    {
+      "chapter": "Surds and Indices",
+      "kind": "standard",
+      "difficulty": "hard",
+      "answer_type": "single",
+      "stem": "Simplify: (4^1 × 4^1) ÷ 4^1",
+      "explanation": "= 4^(1+1−1) = 4^1 = 4.",
+      "options": [
+        {
+          "label": "6",
+          "is_correct": false
+        },
+        {
+          "label": "5",
+          "is_correct": false
+        },
+        {
+          "label": "4",
+          "is_correct": true
+        },
+        {
+          "label": "3",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Surds and Indices",
+      "kind": "standard",
+      "difficulty": "hard",
+      "answer_type": "single",
+      "stem": "Simplify: (4^2 × 4^3) ÷ 4^2",
+      "explanation": "= 4^(2+3−2) = 4^3 = 64.",
+      "options": [
+        {
+          "label": "68",
+          "is_correct": false
+        },
+        {
+          "label": "64",
+          "is_correct": true
+        },
+        {
+          "label": "62",
+          "is_correct": false
+        },
+        {
+          "label": "66",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Surds and Indices",
+      "kind": "standard",
+      "difficulty": "hard",
+      "answer_type": "single",
+      "stem": "If 4^(x + 1) = 4096, find the value of x.",
+      "explanation": "4096 = 4^6, so x + 1 = 6 ⇒ x = 5.",
+      "options": [
+        {
+          "label": "5",
+          "is_correct": true
+        },
+        {
+          "label": "4",
+          "is_correct": false
+        },
+        {
+          "label": "7",
+          "is_correct": false
+        },
+        {
+          "label": "6",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Surds and Indices",
+      "kind": "standard",
+      "difficulty": "hard",
+      "answer_type": "single",
+      "stem": "If 2^(x + 2) = 8, find the value of x.",
+      "explanation": "8 = 2^3, so x + 2 = 3 ⇒ x = 1.",
+      "options": [
+        {
+          "label": "3",
+          "is_correct": false
+        },
+        {
+          "label": "4",
+          "is_correct": false
+        },
+        {
+          "label": "2",
+          "is_correct": false
+        },
+        {
+          "label": "1",
+          "is_correct": true
+        }
+      ]
+    },
+    {
+      "chapter": "Surds and Indices",
+      "kind": "standard",
+      "difficulty": "hard",
+      "answer_type": "single",
+      "stem": "If 3^(x + 4) = 243, find the value of x.",
+      "explanation": "243 = 3^5, so x + 4 = 5 ⇒ x = 1.",
+      "options": [
+        {
+          "label": "3",
+          "is_correct": false
+        },
+        {
+          "label": "1",
+          "is_correct": true
+        },
+        {
+          "label": "2",
+          "is_correct": false
+        },
+        {
+          "label": "4",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Surds and Indices",
+      "kind": "standard",
+      "difficulty": "hard",
+      "answer_type": "single",
+      "stem": "If 4^(x + 2) = 64, find the value of x.",
+      "explanation": "64 = 4^3, so x + 2 = 3 ⇒ x = 1.",
+      "options": [
+        {
+          "label": "4",
+          "is_correct": false
+        },
+        {
+          "label": "3",
+          "is_correct": false
+        },
+        {
+          "label": "2",
+          "is_correct": false
+        },
+        {
+          "label": "1",
+          "is_correct": true
+        }
+      ]
+    },
+    {
+      "chapter": "Surds and Indices",
+      "kind": "standard",
+      "difficulty": "hard",
+      "answer_type": "single",
+      "stem": "Simplify: (2^1 × 2^1) ÷ 2^1",
+      "explanation": "= 2^(1+1−1) = 2^1 = 2.",
+      "options": [
+        {
+          "label": "1",
+          "is_correct": false
+        },
+        {
+          "label": "4",
+          "is_correct": false
+        },
+        {
+          "label": "3",
+          "is_correct": false
+        },
+        {
+          "label": "2",
+          "is_correct": true
+        }
+      ]
+    },
+    {
+      "chapter": "Surds and Indices",
+      "kind": "standard",
+      "difficulty": "hard",
+      "answer_type": "single",
+      "stem": "Simplify: (2^3 × 2^3) ÷ 2^4",
+      "explanation": "= 2^(3+3−4) = 2^2 = 4.",
+      "options": [
+        {
+          "label": "4",
+          "is_correct": true
+        },
+        {
+          "label": "3",
+          "is_correct": false
+        },
+        {
+          "label": "5",
+          "is_correct": false
+        },
+        {
+          "label": "6",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Surds and Indices",
+      "kind": "standard",
+      "difficulty": "hard",
+      "answer_type": "single",
+      "stem": "If x^3 = 512, find the value of x.",
+      "explanation": "8^3 = 512, so x = 8.",
+      "options": [
+        {
+          "label": "7",
+          "is_correct": false
+        },
+        {
+          "label": "9",
+          "is_correct": false
+        },
+        {
+          "label": "8",
+          "is_correct": true
+        },
+        {
+          "label": "10",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Surds and Indices",
+      "kind": "standard",
+      "difficulty": "hard",
+      "answer_type": "single",
+      "stem": "If 3^(x + 1) = 243, find the value of x.",
+      "explanation": "243 = 3^5, so x + 1 = 5 ⇒ x = 4.",
+      "options": [
+        {
+          "label": "6",
+          "is_correct": false
+        },
+        {
+          "label": "5",
+          "is_correct": false
+        },
+        {
+          "label": "3",
+          "is_correct": false
+        },
+        {
+          "label": "4",
+          "is_correct": true
+        }
+      ]
+    },
+    {
+      "chapter": "Surds and Indices",
+      "kind": "standard",
+      "difficulty": "hard",
+      "answer_type": "single",
+      "stem": "If 2^(x + 1) = 16, find the value of x.",
+      "explanation": "16 = 2^4, so x + 1 = 4 ⇒ x = 3.",
+      "options": [
+        {
+          "label": "2",
+          "is_correct": false
+        },
+        {
+          "label": "3",
+          "is_correct": true
+        },
+        {
+          "label": "5",
+          "is_correct": false
+        },
+        {
+          "label": "4",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Surds and Indices",
+      "kind": "standard",
+      "difficulty": "hard",
+      "answer_type": "single",
+      "stem": "Simplify: (4^3 × 4^2) ÷ 4^3",
+      "explanation": "= 4^(3+2−3) = 4^2 = 16.",
+      "options": [
+        {
+          "label": "15",
+          "is_correct": false
+        },
+        {
+          "label": "16",
+          "is_correct": true
+        },
+        {
+          "label": "17",
+          "is_correct": false
+        },
+        {
+          "label": "18",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Surds and Indices",
+      "kind": "standard",
+      "difficulty": "hard",
+      "answer_type": "single",
+      "stem": "If x^3 = 64, find the value of x.",
+      "explanation": "4^3 = 64, so x = 4.",
+      "options": [
+        {
+          "label": "3",
+          "is_correct": false
+        },
+        {
+          "label": "4",
+          "is_correct": true
+        },
+        {
+          "label": "6",
+          "is_correct": false
+        },
+        {
+          "label": "5",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Surds and Indices",
+      "kind": "standard",
+      "difficulty": "hard",
+      "answer_type": "single",
+      "stem": "If 3^(x + 1) = 27, find the value of x.",
+      "explanation": "27 = 3^3, so x + 1 = 3 ⇒ x = 2.",
+      "options": [
+        {
+          "label": "3",
+          "is_correct": false
+        },
+        {
+          "label": "4",
+          "is_correct": false
+        },
+        {
+          "label": "1",
+          "is_correct": false
+        },
+        {
+          "label": "2",
+          "is_correct": true
+        }
+      ]
+    },
+    {
+      "chapter": "Surds and Indices",
+      "kind": "standard",
+      "difficulty": "hard",
+      "answer_type": "single",
+      "stem": "If 4^(x + 1) = 16, find the value of x.",
+      "explanation": "16 = 4^2, so x + 1 = 2 ⇒ x = 1.",
+      "options": [
+        {
+          "label": "4",
+          "is_correct": false
+        },
+        {
+          "label": "2",
+          "is_correct": false
+        },
+        {
+          "label": "1",
+          "is_correct": true
+        },
+        {
+          "label": "3",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Surds and Indices",
+      "kind": "standard",
+      "difficulty": "hard",
+      "answer_type": "single",
+      "stem": "If x^3 = 343, find the value of x.",
+      "explanation": "7^3 = 343, so x = 7.",
+      "options": [
+        {
+          "label": "9",
+          "is_correct": false
+        },
+        {
+          "label": "7",
+          "is_correct": true
+        },
+        {
+          "label": "8",
+          "is_correct": false
+        },
+        {
+          "label": "6",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Surds and Indices",
+      "kind": "standard",
+      "difficulty": "hard",
+      "answer_type": "single",
+      "stem": "If 4^(x + 4) = 4096, find the value of x.",
+      "explanation": "4096 = 4^6, so x + 4 = 6 ⇒ x = 2.",
+      "options": [
+        {
+          "label": "2",
+          "is_correct": true
+        },
+        {
+          "label": "3",
+          "is_correct": false
+        },
+        {
+          "label": "1",
+          "is_correct": false
+        },
+        {
+          "label": "4",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Surds and Indices",
+      "kind": "standard",
+      "difficulty": "hard",
+      "answer_type": "single",
+      "stem": "If x^2 = 49, find the value of x.",
+      "explanation": "7^2 = 49, so x = 7.",
+      "options": [
+        {
+          "label": "7",
+          "is_correct": true
+        },
+        {
+          "label": "6",
+          "is_correct": false
+        },
+        {
+          "label": "8",
+          "is_correct": false
+        },
+        {
+          "label": "9",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Surds and Indices",
+      "kind": "standard",
+      "difficulty": "hard",
+      "answer_type": "single",
+      "stem": "Simplify: (3^3 × 3^3) ÷ 3^3",
+      "explanation": "= 3^(3+3−3) = 3^3 = 27.",
+      "options": [
+        {
+          "label": "27",
+          "is_correct": true
+        },
+        {
+          "label": "28",
+          "is_correct": false
+        },
+        {
+          "label": "29",
+          "is_correct": false
+        },
+        {
+          "label": "26",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Surds and Indices",
+      "kind": "standard",
+      "difficulty": "hard",
+      "answer_type": "single",
+      "stem": "If x^3 = 8, find the value of x.",
+      "explanation": "2^3 = 8, so x = 2.",
+      "options": [
+        {
+          "label": "4",
+          "is_correct": false
+        },
+        {
+          "label": "3",
+          "is_correct": false
+        },
+        {
+          "label": "1",
+          "is_correct": false
+        },
+        {
+          "label": "2",
+          "is_correct": true
+        }
+      ]
+    },
+    {
+      "chapter": "Surds and Indices",
+      "kind": "standard",
+      "difficulty": "hard",
+      "answer_type": "single",
+      "stem": "If 4^(x + 1) = 256, find the value of x.",
+      "explanation": "256 = 4^4, so x + 1 = 4 ⇒ x = 3.",
+      "options": [
+        {
+          "label": "3",
+          "is_correct": true
+        },
+        {
+          "label": "4",
+          "is_correct": false
+        },
+        {
+          "label": "2",
+          "is_correct": false
+        },
+        {
+          "label": "5",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Surds and Indices",
+      "kind": "standard",
+      "difficulty": "hard",
+      "answer_type": "single",
+      "stem": "If 3^(x + 2) = 27, find the value of x.",
+      "explanation": "27 = 3^3, so x + 2 = 3 ⇒ x = 1.",
+      "options": [
+        {
+          "label": "3",
+          "is_correct": false
+        },
+        {
+          "label": "4",
+          "is_correct": false
+        },
+        {
+          "label": "1",
+          "is_correct": true
+        },
+        {
+          "label": "2",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Surds and Indices",
+      "kind": "standard",
+      "difficulty": "hard",
+      "answer_type": "single",
+      "stem": "Simplify: (4^3 × 4^2) ÷ 4^4",
+      "explanation": "= 4^(3+2−4) = 4^1 = 4.",
+      "options": [
+        {
+          "label": "5",
+          "is_correct": false
+        },
+        {
+          "label": "3",
+          "is_correct": false
+        },
+        {
+          "label": "4",
+          "is_correct": true
+        },
+        {
+          "label": "6",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Surds and Indices",
+      "kind": "standard",
+      "difficulty": "hard",
+      "answer_type": "single",
+      "stem": "Simplify: (3^2 × 3^2) ÷ 3^1",
+      "explanation": "= 3^(2+2−1) = 3^3 = 27.",
+      "options": [
+        {
+          "label": "28",
+          "is_correct": false
+        },
+        {
+          "label": "26",
+          "is_correct": false
+        },
+        {
+          "label": "29",
+          "is_correct": false
+        },
+        {
+          "label": "27",
+          "is_correct": true
+        }
+      ]
+    },
+    {
+      "chapter": "Surds and Indices",
+      "kind": "standard",
+      "difficulty": "hard",
+      "answer_type": "single",
+      "stem": "Simplify: (2^2 × 2^1) ÷ 2^1",
+      "explanation": "= 2^(2+1−1) = 2^2 = 4.",
+      "options": [
+        {
+          "label": "5",
+          "is_correct": false
+        },
+        {
+          "label": "3",
+          "is_correct": false
+        },
+        {
+          "label": "6",
+          "is_correct": false
+        },
+        {
+          "label": "4",
+          "is_correct": true
+        }
+      ]
+    },
+    {
+      "chapter": "Surds and Indices",
+      "kind": "standard",
+      "difficulty": "hard",
+      "answer_type": "single",
+      "stem": "Simplify: (2^1 × 2^2) ÷ 2^1",
+      "explanation": "= 2^(1+2−1) = 2^2 = 4.",
+      "options": [
+        {
+          "label": "6",
+          "is_correct": false
+        },
+        {
+          "label": "5",
+          "is_correct": false
+        },
+        {
+          "label": "4",
+          "is_correct": true
+        },
+        {
+          "label": "3",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Surds and Indices",
+      "kind": "standard",
+      "difficulty": "hard",
+      "answer_type": "single",
+      "stem": "If x^3 = 1000, find the value of x.",
+      "explanation": "10^3 = 1000, so x = 10.",
+      "options": [
+        {
+          "label": "10",
+          "is_correct": true
+        },
+        {
+          "label": "12",
+          "is_correct": false
+        },
+        {
+          "label": "9",
+          "is_correct": false
+        },
+        {
+          "label": "11",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Surds and Indices",
+      "kind": "standard",
+      "difficulty": "hard",
+      "answer_type": "single",
+      "stem": "Simplify: (2^3 × 2^1) ÷ 2^1",
+      "explanation": "= 2^(3+1−1) = 2^3 = 8.",
+      "options": [
+        {
+          "label": "10",
+          "is_correct": false
+        },
+        {
+          "label": "7",
+          "is_correct": false
+        },
+        {
+          "label": "8",
+          "is_correct": true
+        },
+        {
+          "label": "9",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Surds and Indices",
+      "kind": "standard",
+      "difficulty": "hard",
+      "answer_type": "single",
+      "stem": "If 2^(x + 2) = 16, find the value of x.",
+      "explanation": "16 = 2^4, so x + 2 = 4 ⇒ x = 2.",
+      "options": [
+        {
+          "label": "4",
+          "is_correct": false
+        },
+        {
+          "label": "2",
+          "is_correct": true
+        },
+        {
+          "label": "1",
+          "is_correct": false
+        },
+        {
+          "label": "3",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Surds and Indices",
+      "kind": "standard",
+      "difficulty": "hard",
+      "answer_type": "single",
+      "stem": "If 4^(x + 3) = 256, find the value of x.",
+      "explanation": "256 = 4^4, so x + 3 = 4 ⇒ x = 1.",
+      "options": [
+        {
+          "label": "1",
+          "is_correct": true
+        },
+        {
+          "label": "2",
+          "is_correct": false
+        },
+        {
+          "label": "4",
+          "is_correct": false
+        },
+        {
+          "label": "3",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Surds and Indices",
+      "kind": "standard",
+      "difficulty": "hard",
+      "answer_type": "single",
+      "stem": "If 4^(x + 1) = 1024, find the value of x.",
+      "explanation": "1024 = 4^5, so x + 1 = 5 ⇒ x = 4.",
+      "options": [
+        {
+          "label": "4",
+          "is_correct": true
+        },
+        {
+          "label": "5",
+          "is_correct": false
+        },
+        {
+          "label": "6",
+          "is_correct": false
+        },
+        {
+          "label": "3",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Surds and Indices",
+      "kind": "standard",
+      "difficulty": "hard",
+      "answer_type": "single",
+      "stem": "Simplify: (2^3 × 2^2) ÷ 2^1",
+      "explanation": "= 2^(3+2−1) = 2^4 = 16.",
+      "options": [
+        {
+          "label": "16",
+          "is_correct": true
+        },
+        {
+          "label": "18",
+          "is_correct": false
+        },
+        {
+          "label": "17",
+          "is_correct": false
+        },
+        {
+          "label": "15",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Surds and Indices",
+      "kind": "standard",
+      "difficulty": "hard",
+      "answer_type": "single",
+      "stem": "If x^2 = 9, find the value of x.",
+      "explanation": "3^2 = 9, so x = 3.",
+      "options": [
+        {
+          "label": "4",
+          "is_correct": false
+        },
+        {
+          "label": "3",
+          "is_correct": true
+        },
+        {
+          "label": "5",
+          "is_correct": false
+        },
+        {
+          "label": "2",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Surds and Indices",
+      "kind": "standard",
+      "difficulty": "hard",
+      "answer_type": "single",
+      "stem": "If x^2 = 16, find the value of x.",
+      "explanation": "4^2 = 16, so x = 4.",
+      "options": [
+        {
+          "label": "6",
+          "is_correct": false
+        },
+        {
+          "label": "4",
+          "is_correct": true
+        },
+        {
+          "label": "3",
+          "is_correct": false
+        },
+        {
+          "label": "5",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Surds and Indices",
+      "kind": "standard",
+      "difficulty": "very_hard",
+      "answer_type": "single",
+      "stem": "Simplify: (3^1)^3 × 3^2 ÷ 3^1",
+      "explanation": "= 3^(1×3+2−1) = 3^4 = 81.",
+      "options": [
+        {
+          "label": "79",
+          "is_correct": false
+        },
+        {
+          "label": "83",
+          "is_correct": false
+        },
+        {
+          "label": "85",
+          "is_correct": false
+        },
+        {
+          "label": "81",
+          "is_correct": true
+        }
+      ]
+    },
+    {
+      "chapter": "Surds and Indices",
+      "kind": "standard",
+      "difficulty": "very_hard",
+      "answer_type": "single",
+      "stem": "If 2^x = 4^3, find the value of x.",
+      "explanation": "4 = 2^2, so 2^x = 2^(2×3) = 2^6 ⇒ x = 6.",
+      "options": [
+        {
+          "label": "8",
+          "is_correct": false
+        },
+        {
+          "label": "6",
+          "is_correct": true
+        },
+        {
+          "label": "5",
+          "is_correct": false
+        },
+        {
+          "label": "7",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Surds and Indices",
+      "kind": "standard",
+      "difficulty": "very_hard",
+      "answer_type": "single",
+      "stem": "Simplify: (2^1)^2 × 2^2 ÷ 2^2",
+      "explanation": "= 2^(1×2+2−2) = 2^2 = 4.",
+      "options": [
+        {
+          "label": "5",
+          "is_correct": false
+        },
+        {
+          "label": "4",
+          "is_correct": true
+        },
+        {
+          "label": "6",
+          "is_correct": false
+        },
+        {
+          "label": "3",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Surds and Indices",
+      "kind": "standard",
+      "difficulty": "very_hard",
+      "answer_type": "single",
+      "stem": "Simplify: (2^1)^2 × 2^3 ÷ 2^4",
+      "explanation": "= 2^(1×2+3−4) = 2^1 = 2.",
+      "options": [
+        {
+          "label": "1",
+          "is_correct": false
+        },
+        {
+          "label": "3",
+          "is_correct": false
+        },
+        {
+          "label": "4",
+          "is_correct": false
+        },
+        {
+          "label": "2",
+          "is_correct": true
+        }
+      ]
+    },
+    {
+      "chapter": "Surds and Indices",
+      "kind": "standard",
+      "difficulty": "very_hard",
+      "answer_type": "single",
+      "stem": "Simplify: (3^1)^3 × 3^1 ÷ 3^3",
+      "explanation": "= 3^(1×3+1−3) = 3^1 = 3.",
+      "options": [
+        {
+          "label": "2",
+          "is_correct": false
+        },
+        {
+          "label": "5",
+          "is_correct": false
+        },
+        {
+          "label": "3",
+          "is_correct": true
+        },
+        {
+          "label": "4",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Surds and Indices",
+      "kind": "standard",
+      "difficulty": "very_hard",
+      "answer_type": "single",
+      "stem": "If 2^x = 8^2, find the value of x.",
+      "explanation": "8 = 2^3, so 2^x = 2^(3×2) = 2^6 ⇒ x = 6.",
+      "options": [
+        {
+          "label": "7",
+          "is_correct": false
+        },
+        {
+          "label": "6",
+          "is_correct": true
+        },
+        {
+          "label": "5",
+          "is_correct": false
+        },
+        {
+          "label": "8",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Surds and Indices",
+      "kind": "standard",
+      "difficulty": "very_hard",
+      "answer_type": "single",
+      "stem": "If 3^x = 27^2, find the value of x.",
+      "explanation": "27 = 3^3, so 3^x = 3^(3×2) = 3^6 ⇒ x = 6.",
+      "options": [
+        {
+          "label": "7",
+          "is_correct": false
+        },
+        {
+          "label": "8",
+          "is_correct": false
+        },
+        {
+          "label": "6",
+          "is_correct": true
+        },
+        {
+          "label": "5",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Surds and Indices",
+      "kind": "standard",
+      "difficulty": "very_hard",
+      "answer_type": "single",
+      "stem": "If 3^x = 27 and 3^y = 9, find the value of 3^(x + y).",
+      "explanation": "3^(x+y) = 3^x × 3^y = 27 × 9 = 243.",
+      "options": [
+        {
+          "label": "253",
+          "is_correct": false
+        },
+        {
+          "label": "233",
+          "is_correct": false
+        },
+        {
+          "label": "263",
+          "is_correct": false
+        },
+        {
+          "label": "243",
+          "is_correct": true
+        }
+      ]
+    },
+    {
+      "chapter": "Surds and Indices",
+      "kind": "standard",
+      "difficulty": "very_hard",
+      "answer_type": "single",
+      "stem": "Simplify: (3^1)^3 × 3^3 ÷ 3^5",
+      "explanation": "= 3^(1×3+3−5) = 3^1 = 3.",
+      "options": [
+        {
+          "label": "3",
+          "is_correct": true
+        },
+        {
+          "label": "4",
+          "is_correct": false
+        },
+        {
+          "label": "5",
+          "is_correct": false
+        },
+        {
+          "label": "2",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Surds and Indices",
+      "kind": "standard",
+      "difficulty": "very_hard",
+      "answer_type": "single",
+      "stem": "If 2^x = 8 and 2^y = 8, find the value of 2^(x + y).",
+      "explanation": "2^(x+y) = 2^x × 2^y = 8 × 8 = 64.",
+      "options": [
+        {
+          "label": "66",
+          "is_correct": false
+        },
+        {
+          "label": "62",
+          "is_correct": false
+        },
+        {
+          "label": "64",
+          "is_correct": true
+        },
+        {
+          "label": "68",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Surds and Indices",
+      "kind": "standard",
+      "difficulty": "very_hard",
+      "answer_type": "single",
+      "stem": "If 2^x = 4 and 2^y = 8, find the value of 2^(x + y).",
+      "explanation": "2^(x+y) = 2^x × 2^y = 4 × 8 = 32.",
+      "options": [
+        {
+          "label": "34",
+          "is_correct": false
+        },
+        {
+          "label": "33",
+          "is_correct": false
+        },
+        {
+          "label": "32",
+          "is_correct": true
+        },
+        {
+          "label": "31",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Surds and Indices",
+      "kind": "standard",
+      "difficulty": "very_hard",
+      "answer_type": "single",
+      "stem": "If 2^x = 8 and 2^y = 16, find the value of 2^(x + y).",
+      "explanation": "2^(x+y) = 2^x × 2^y = 8 × 16 = 128.",
+      "options": [
+        {
+          "label": "128",
+          "is_correct": true
+        },
+        {
+          "label": "132",
+          "is_correct": false
+        },
+        {
+          "label": "130",
+          "is_correct": false
+        },
+        {
+          "label": "126",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Surds and Indices",
+      "kind": "standard",
+      "difficulty": "very_hard",
+      "answer_type": "single",
+      "stem": "Simplify: (2^1)^3 × 2^1 ÷ 2^1",
+      "explanation": "= 2^(1×3+1−1) = 2^3 = 8.",
+      "options": [
+        {
+          "label": "9",
+          "is_correct": false
+        },
+        {
+          "label": "8",
+          "is_correct": true
+        },
+        {
+          "label": "10",
+          "is_correct": false
+        },
+        {
+          "label": "7",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Surds and Indices",
+      "kind": "standard",
+      "difficulty": "very_hard",
+      "answer_type": "single",
+      "stem": "Simplify: (3^1)^2 × 3^1 ÷ 3^1",
+      "explanation": "= 3^(1×2+1−1) = 3^2 = 9.",
+      "options": [
+        {
+          "label": "11",
+          "is_correct": false
+        },
+        {
+          "label": "9",
+          "is_correct": true
+        },
+        {
+          "label": "8",
+          "is_correct": false
+        },
+        {
+          "label": "10",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Surds and Indices",
+      "kind": "standard",
+      "difficulty": "very_hard",
+      "answer_type": "single",
+      "stem": "If 2^x = 8^3, find the value of x.",
+      "explanation": "8 = 2^3, so 2^x = 2^(3×3) = 2^9 ⇒ x = 9.",
+      "options": [
+        {
+          "label": "10",
+          "is_correct": false
+        },
+        {
+          "label": "9",
+          "is_correct": true
+        },
+        {
+          "label": "11",
+          "is_correct": false
+        },
+        {
+          "label": "8",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Surds and Indices",
+      "kind": "standard",
+      "difficulty": "very_hard",
+      "answer_type": "single",
+      "stem": "Simplify: (3^2)^2 × 3^3 ÷ 3^5",
+      "explanation": "= 3^(2×2+3−5) = 3^2 = 9.",
+      "options": [
+        {
+          "label": "10",
+          "is_correct": false
+        },
+        {
+          "label": "9",
+          "is_correct": true
+        },
+        {
+          "label": "11",
+          "is_correct": false
+        },
+        {
+          "label": "8",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Surds and Indices",
+      "kind": "standard",
+      "difficulty": "very_hard",
+      "answer_type": "single",
+      "stem": "If 3^x = 27 and 3^y = 81, find the value of 3^(x + y).",
+      "explanation": "3^(x+y) = 3^x × 3^y = 27 × 81 = 2187.",
+      "options": [
+        {
+          "label": "2274",
+          "is_correct": false
+        },
+        {
+          "label": "2361",
+          "is_correct": false
+        },
+        {
+          "label": "2100",
+          "is_correct": false
+        },
+        {
+          "label": "2187",
+          "is_correct": true
+        }
+      ]
+    },
+    {
+      "chapter": "Surds and Indices",
+      "kind": "standard",
+      "difficulty": "very_hard",
+      "answer_type": "single",
+      "stem": "If 2^x = 16 and 2^y = 4, find the value of 2^(x + y).",
+      "explanation": "2^(x+y) = 2^x × 2^y = 16 × 4 = 64.",
+      "options": [
+        {
+          "label": "68",
+          "is_correct": false
+        },
+        {
+          "label": "62",
+          "is_correct": false
+        },
+        {
+          "label": "66",
+          "is_correct": false
+        },
+        {
+          "label": "64",
+          "is_correct": true
+        }
+      ]
+    },
+    {
+      "chapter": "Surds and Indices",
+      "kind": "standard",
+      "difficulty": "very_hard",
+      "answer_type": "single",
+      "stem": "If 2^x = 4^2, find the value of x.",
+      "explanation": "4 = 2^2, so 2^x = 2^(2×2) = 2^4 ⇒ x = 4.",
+      "options": [
+        {
+          "label": "4",
+          "is_correct": true
+        },
+        {
+          "label": "5",
+          "is_correct": false
+        },
+        {
+          "label": "6",
+          "is_correct": false
+        },
+        {
+          "label": "3",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Surds and Indices",
+      "kind": "standard",
+      "difficulty": "very_hard",
+      "answer_type": "single",
+      "stem": "If 3^x = 27^3, find the value of x.",
+      "explanation": "27 = 3^3, so 3^x = 3^(3×3) = 3^9 ⇒ x = 9.",
+      "options": [
+        {
+          "label": "11",
+          "is_correct": false
+        },
+        {
+          "label": "10",
+          "is_correct": false
+        },
+        {
+          "label": "8",
+          "is_correct": false
+        },
+        {
+          "label": "9",
+          "is_correct": true
+        }
+      ]
+    },
+    {
+      "chapter": "Surds and Indices",
+      "kind": "standard",
+      "difficulty": "very_hard",
+      "answer_type": "single",
+      "stem": "Simplify: (3^2)^2 × 3^2 ÷ 3^1",
+      "explanation": "= 3^(2×2+2−1) = 3^5 = 243.",
+      "options": [
+        {
+          "label": "233",
+          "is_correct": false
+        },
+        {
+          "label": "263",
+          "is_correct": false
+        },
+        {
+          "label": "253",
+          "is_correct": false
+        },
+        {
+          "label": "243",
+          "is_correct": true
+        }
+      ]
+    },
+    {
+      "chapter": "Surds and Indices",
+      "kind": "standard",
+      "difficulty": "very_hard",
+      "answer_type": "single",
+      "stem": "If 3^x = 9 and 3^y = 81, find the value of 3^(x + y).",
+      "explanation": "3^(x+y) = 3^x × 3^y = 9 × 81 = 729.",
+      "options": [
+        {
+          "label": "700",
+          "is_correct": false
+        },
+        {
+          "label": "729",
+          "is_correct": true
+        },
+        {
+          "label": "787",
+          "is_correct": false
+        },
+        {
+          "label": "758",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Surds and Indices",
+      "kind": "standard",
+      "difficulty": "very_hard",
+      "answer_type": "single",
+      "stem": "Simplify: (3^1)^2 × 3^1 ÷ 3^2",
+      "explanation": "= 3^(1×2+1−2) = 3^1 = 3.",
+      "options": [
+        {
+          "label": "5",
+          "is_correct": false
+        },
+        {
+          "label": "3",
+          "is_correct": true
+        },
+        {
+          "label": "4",
+          "is_correct": false
+        },
+        {
+          "label": "2",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Surds and Indices",
+      "kind": "standard",
+      "difficulty": "very_hard",
+      "answer_type": "single",
+      "stem": "If 2^x = 16 and 2^y = 16, find the value of 2^(x + y).",
+      "explanation": "2^(x+y) = 2^x × 2^y = 16 × 16 = 256.",
+      "options": [
+        {
+          "label": "246",
+          "is_correct": false
+        },
+        {
+          "label": "276",
+          "is_correct": false
+        },
+        {
+          "label": "266",
+          "is_correct": false
+        },
+        {
+          "label": "256",
+          "is_correct": true
+        }
+      ]
+    },
+    {
+      "chapter": "Surds and Indices",
+      "kind": "standard",
+      "difficulty": "very_hard",
+      "answer_type": "single",
+      "stem": "Simplify: (3^2)^2 × 3^2 ÷ 3^5",
+      "explanation": "= 3^(2×2+2−5) = 3^1 = 3.",
+      "options": [
+        {
+          "label": "2",
+          "is_correct": false
+        },
+        {
+          "label": "4",
+          "is_correct": false
+        },
+        {
+          "label": "3",
+          "is_correct": true
+        },
+        {
+          "label": "5",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Surds and Indices",
+      "kind": "standard",
+      "difficulty": "very_hard",
+      "answer_type": "single",
+      "stem": "Simplify: (3^2)^3 × 3^2 ÷ 3^3",
+      "explanation": "= 3^(2×3+2−3) = 3^5 = 243.",
+      "options": [
+        {
+          "label": "263",
+          "is_correct": false
+        },
+        {
+          "label": "243",
+          "is_correct": true
+        },
+        {
+          "label": "233",
+          "is_correct": false
+        },
+        {
+          "label": "253",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Surds and Indices",
+      "kind": "standard",
+      "difficulty": "very_hard",
+      "answer_type": "single",
+      "stem": "Simplify: (2^1)^3 × 2^3 ÷ 2^1",
+      "explanation": "= 2^(1×3+3−1) = 2^5 = 32.",
+      "options": [
+        {
+          "label": "33",
+          "is_correct": false
+        },
+        {
+          "label": "31",
+          "is_correct": false
+        },
+        {
+          "label": "32",
+          "is_correct": true
+        },
+        {
+          "label": "34",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Surds and Indices",
+      "kind": "standard",
+      "difficulty": "very_hard",
+      "answer_type": "single",
+      "stem": "Simplify: (2^2)^2 × 2^1 ÷ 2^1",
+      "explanation": "= 2^(2×2+1−1) = 2^4 = 16.",
+      "options": [
+        {
+          "label": "15",
+          "is_correct": false
+        },
+        {
+          "label": "18",
+          "is_correct": false
+        },
+        {
+          "label": "17",
+          "is_correct": false
+        },
+        {
+          "label": "16",
+          "is_correct": true
+        }
+      ]
+    },
+    {
+      "chapter": "Surds and Indices",
+      "kind": "standard",
+      "difficulty": "very_hard",
+      "answer_type": "single",
+      "stem": "If 3^x = 9^3, find the value of x.",
+      "explanation": "9 = 3^2, so 3^x = 3^(2×3) = 3^6 ⇒ x = 6.",
+      "options": [
+        {
+          "label": "6",
+          "is_correct": true
+        },
+        {
+          "label": "5",
+          "is_correct": false
+        },
+        {
+          "label": "8",
+          "is_correct": false
+        },
+        {
+          "label": "7",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Surds and Indices",
+      "kind": "standard",
+      "difficulty": "very_hard",
+      "answer_type": "single",
+      "stem": "Simplify: (2^1)^3 × 2^3 ÷ 2^4",
+      "explanation": "= 2^(1×3+3−4) = 2^2 = 4.",
+      "options": [
+        {
+          "label": "6",
+          "is_correct": false
+        },
+        {
+          "label": "3",
+          "is_correct": false
+        },
+        {
+          "label": "4",
+          "is_correct": true
+        },
+        {
+          "label": "5",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Surds and Indices",
+      "kind": "standard",
+      "difficulty": "very_hard",
+      "answer_type": "single",
+      "stem": "Simplify: (3^1)^3 × 3^1 ÷ 3^1",
+      "explanation": "= 3^(1×3+1−1) = 3^3 = 27.",
+      "options": [
+        {
+          "label": "26",
+          "is_correct": false
+        },
+        {
+          "label": "29",
+          "is_correct": false
+        },
+        {
+          "label": "28",
+          "is_correct": false
+        },
+        {
+          "label": "27",
+          "is_correct": true
+        }
+      ]
+    },
+    {
+      "chapter": "Surds and Indices",
+      "kind": "standard",
+      "difficulty": "very_hard",
+      "answer_type": "single",
+      "stem": "Simplify: (2^2)^2 × 2^2 ÷ 2^1",
+      "explanation": "= 2^(2×2+2−1) = 2^5 = 32.",
+      "options": [
+        {
+          "label": "31",
+          "is_correct": false
+        },
+        {
+          "label": "32",
+          "is_correct": true
+        },
+        {
+          "label": "33",
+          "is_correct": false
+        },
+        {
+          "label": "34",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Surds and Indices",
+      "kind": "standard",
+      "difficulty": "very_hard",
+      "answer_type": "single",
+      "stem": "Simplify: (3^2)^3 × 3^2 ÷ 3^5",
+      "explanation": "= 3^(2×3+2−5) = 3^3 = 27.",
+      "options": [
+        {
+          "label": "26",
+          "is_correct": false
+        },
+        {
+          "label": "29",
+          "is_correct": false
+        },
+        {
+          "label": "28",
+          "is_correct": false
+        },
+        {
+          "label": "27",
+          "is_correct": true
+        }
+      ]
+    },
+    {
+      "chapter": "Surds and Indices",
+      "kind": "standard",
+      "difficulty": "very_hard",
+      "answer_type": "single",
+      "stem": "Simplify: (3^2)^2 × 3^2 ÷ 3^2",
+      "explanation": "= 3^(2×2+2−2) = 3^4 = 81.",
+      "options": [
+        {
+          "label": "79",
+          "is_correct": false
+        },
+        {
+          "label": "83",
+          "is_correct": false
+        },
+        {
+          "label": "85",
+          "is_correct": false
+        },
+        {
+          "label": "81",
+          "is_correct": true
+        }
+      ]
+    },
+    {
+      "chapter": "Surds and Indices",
+      "kind": "standard",
+      "difficulty": "very_hard",
+      "answer_type": "single",
+      "stem": "If 3^x = 9 and 3^y = 27, find the value of 3^(x + y).",
+      "explanation": "3^(x+y) = 3^x × 3^y = 9 × 27 = 243.",
+      "options": [
+        {
+          "label": "263",
+          "is_correct": false
+        },
+        {
+          "label": "243",
+          "is_correct": true
+        },
+        {
+          "label": "253",
+          "is_correct": false
+        },
+        {
+          "label": "233",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Surds and Indices",
+      "kind": "standard",
+      "difficulty": "very_hard",
+      "answer_type": "single",
+      "stem": "Simplify: (2^1)^3 × 2^2 ÷ 2^1",
+      "explanation": "= 2^(1×3+2−1) = 2^4 = 16.",
+      "options": [
+        {
+          "label": "18",
+          "is_correct": false
+        },
+        {
+          "label": "17",
+          "is_correct": false
+        },
+        {
+          "label": "16",
+          "is_correct": true
+        },
+        {
+          "label": "15",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Surds and Indices",
+      "kind": "standard",
+      "difficulty": "very_hard",
+      "answer_type": "single",
+      "stem": "Simplify: (2^2)^3 × 2^3 ÷ 2^5",
+      "explanation": "= 2^(2×3+3−5) = 2^4 = 16.",
+      "options": [
+        {
+          "label": "16",
+          "is_correct": true
+        },
+        {
+          "label": "15",
+          "is_correct": false
+        },
+        {
+          "label": "18",
+          "is_correct": false
+        },
+        {
+          "label": "17",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Surds and Indices",
+      "kind": "standard",
+      "difficulty": "very_hard",
+      "answer_type": "single",
+      "stem": "Simplify: (3^1)^2 × 3^3 ÷ 3^4",
+      "explanation": "= 3^(1×2+3−4) = 3^1 = 3.",
+      "options": [
+        {
+          "label": "4",
+          "is_correct": false
+        },
+        {
+          "label": "2",
+          "is_correct": false
+        },
+        {
+          "label": "5",
+          "is_correct": false
+        },
+        {
+          "label": "3",
+          "is_correct": true
+        }
+      ]
+    },
+    {
+      "chapter": "Surds and Indices",
+      "kind": "standard",
+      "difficulty": "very_hard",
+      "answer_type": "single",
+      "stem": "Simplify: (3^1)^3 × 3^3 ÷ 3^3",
+      "explanation": "= 3^(1×3+3−3) = 3^3 = 27.",
+      "options": [
+        {
+          "label": "26",
+          "is_correct": false
+        },
+        {
+          "label": "29",
+          "is_correct": false
+        },
+        {
+          "label": "28",
+          "is_correct": false
+        },
+        {
+          "label": "27",
+          "is_correct": true
+        }
+      ]
+    },
+    {
+      "chapter": "Surds and Indices",
+      "kind": "standard",
+      "difficulty": "very_hard",
+      "answer_type": "single",
+      "stem": "If 3^x = 81 and 3^y = 27, find the value of 3^(x + y).",
+      "explanation": "3^(x+y) = 3^x × 3^y = 81 × 27 = 2187.",
+      "options": [
+        {
+          "label": "2100",
+          "is_correct": false
+        },
+        {
+          "label": "2187",
+          "is_correct": true
+        },
+        {
+          "label": "2274",
+          "is_correct": false
+        },
+        {
+          "label": "2361",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Surds and Indices",
+      "kind": "standard",
+      "difficulty": "very_hard",
+      "answer_type": "single",
+      "stem": "Simplify: (2^1)^3 × 2^3 ÷ 2^2",
+      "explanation": "= 2^(1×3+3−2) = 2^4 = 16.",
+      "options": [
+        {
+          "label": "16",
+          "is_correct": true
+        },
+        {
+          "label": "18",
+          "is_correct": false
+        },
+        {
+          "label": "17",
+          "is_correct": false
+        },
+        {
+          "label": "15",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Surds and Indices",
+      "kind": "standard",
+      "difficulty": "very_hard",
+      "answer_type": "single",
+      "stem": "Simplify: (3^1)^2 × 3^2 ÷ 3^1",
+      "explanation": "= 3^(1×2+2−1) = 3^3 = 27.",
+      "options": [
+        {
+          "label": "26",
+          "is_correct": false
+        },
+        {
+          "label": "29",
+          "is_correct": false
+        },
+        {
+          "label": "27",
+          "is_correct": true
+        },
+        {
+          "label": "28",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Surds and Indices",
+      "kind": "standard",
+      "difficulty": "very_hard",
+      "answer_type": "single",
+      "stem": "If 3^x = 81 and 3^y = 81, find the value of 3^(x + y).",
+      "explanation": "3^(x+y) = 3^x × 3^y = 81 × 81 = 6561.",
+      "options": [
+        {
+          "label": "6299",
+          "is_correct": false
+        },
+        {
+          "label": "7085",
+          "is_correct": false
+        },
+        {
+          "label": "6561",
+          "is_correct": true
+        },
+        {
+          "label": "6823",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Surds and Indices",
+      "kind": "standard",
+      "difficulty": "very_hard",
+      "answer_type": "single",
+      "stem": "If 3^x = 81 and 3^y = 9, find the value of 3^(x + y).",
+      "explanation": "3^(x+y) = 3^x × 3^y = 81 × 9 = 729.",
+      "options": [
+        {
+          "label": "787",
+          "is_correct": false
+        },
+        {
+          "label": "758",
+          "is_correct": false
+        },
+        {
+          "label": "700",
+          "is_correct": false
+        },
+        {
+          "label": "729",
+          "is_correct": true
+        }
+      ]
+    },
+    {
+      "chapter": "Surds and Indices",
+      "kind": "standard",
+      "difficulty": "very_hard",
+      "answer_type": "single",
+      "stem": "Simplify: (3^2)^3 × 3^3 ÷ 3^2",
+      "explanation": "= 3^(2×3+3−2) = 3^7 = 2187.",
+      "options": [
+        {
+          "label": "2361",
+          "is_correct": false
+        },
+        {
+          "label": "2187",
+          "is_correct": true
+        },
+        {
+          "label": "2274",
+          "is_correct": false
+        },
+        {
+          "label": "2100",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Surds and Indices",
+      "kind": "standard",
+      "difficulty": "very_hard",
+      "answer_type": "single",
+      "stem": "If 2^x = 8 and 2^y = 4, find the value of 2^(x + y).",
+      "explanation": "2^(x+y) = 2^x × 2^y = 8 × 4 = 32.",
+      "options": [
+        {
+          "label": "33",
+          "is_correct": false
+        },
+        {
+          "label": "34",
+          "is_correct": false
+        },
+        {
+          "label": "31",
+          "is_correct": false
+        },
+        {
+          "label": "32",
+          "is_correct": true
+        }
+      ]
+    },
+    {
+      "chapter": "Surds and Indices",
+      "kind": "standard",
+      "difficulty": "very_hard",
+      "answer_type": "single",
+      "stem": "Simplify: (3^1)^3 × 3^2 ÷ 3^4",
+      "explanation": "= 3^(1×3+2−4) = 3^1 = 3.",
+      "options": [
+        {
+          "label": "3",
+          "is_correct": true
+        },
+        {
+          "label": "2",
+          "is_correct": false
+        },
+        {
+          "label": "5",
+          "is_correct": false
+        },
+        {
+          "label": "4",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Surds and Indices",
+      "kind": "standard",
+      "difficulty": "very_hard",
+      "answer_type": "single",
+      "stem": "If 3^x = 9^2, find the value of x.",
+      "explanation": "9 = 3^2, so 3^x = 3^(2×2) = 3^4 ⇒ x = 4.",
+      "options": [
+        {
+          "label": "6",
+          "is_correct": false
+        },
+        {
+          "label": "4",
+          "is_correct": true
+        },
+        {
+          "label": "5",
+          "is_correct": false
+        },
+        {
+          "label": "3",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Surds and Indices",
+      "kind": "standard",
+      "difficulty": "very_hard",
+      "answer_type": "single",
+      "stem": "Simplify: (3^1)^3 × 3^3 ÷ 3^1",
+      "explanation": "= 3^(1×3+3−1) = 3^5 = 243.",
+      "options": [
+        {
+          "label": "263",
+          "is_correct": false
+        },
+        {
+          "label": "233",
+          "is_correct": false
+        },
+        {
+          "label": "253",
+          "is_correct": false
+        },
+        {
+          "label": "243",
+          "is_correct": true
+        }
+      ]
+    },
+    {
+      "chapter": "Surds and Indices",
+      "kind": "standard",
+      "difficulty": "very_hard",
+      "answer_type": "single",
+      "stem": "Simplify: (2^1)^2 × 2^3 ÷ 2^2",
+      "explanation": "= 2^(1×2+3−2) = 2^3 = 8.",
+      "options": [
+        {
+          "label": "10",
+          "is_correct": false
+        },
+        {
+          "label": "9",
+          "is_correct": false
+        },
+        {
+          "label": "7",
+          "is_correct": false
+        },
+        {
+          "label": "8",
+          "is_correct": true
+        }
+      ]
+    }
+  ]
+}

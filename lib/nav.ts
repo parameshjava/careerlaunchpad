@@ -122,8 +122,10 @@ export function buildNav(ctx: AuthContext): NavSection[] {
 
     // Exams — per-college conduct + evaluation.
     const exams: NavItem[] = [];
-    if (canConductExams(ctx))
+    if (canConductExams(ctx)) {
       exams.push({ label: "Exam papers", href: "/dashboard/exams/papers", icon: "exams" });
+      exams.push({ label: "Sessions", href: "/dashboard/exams/sittings", icon: "exams" });
+    }
     if (canEvaluate) exams.push(evalItem);
 
     // Reports — read-only analytics across domains.

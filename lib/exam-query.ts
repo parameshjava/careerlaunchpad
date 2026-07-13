@@ -286,6 +286,7 @@ export type ExamCard = {
   totalQuestions: number;
   draftStep: number;
   createdAt: string;
+  sessionId: string | null;
   sessionStatus: SessionStatus | null;
   opensAt: string | null;
   closesAt: string | null;
@@ -299,7 +300,7 @@ export async function fetchExamCards(
     .from("exam")
     .select(
       "id, title, duration_minutes, status, draft_step, created_at, college:college_id(name), " +
-        "exam_section(num_questions), exam_session(status, opens_at, closes_at, created_at)",
+        "exam_section(num_questions), exam_session(id, status, opens_at, closes_at, created_at)",
     )
     .order("created_at", { ascending: false });
   if (collegeId) q = q.eq("college_id", collegeId);
@@ -322,6 +323,7 @@ export async function fetchExamCards(
       totalQuestions: sections.reduce((s, x) => s + (x.num_questions ?? 0), 0),
       draftStep: (r.draft_step as number) ?? 1,
       createdAt: (r.created_at as string) ?? "",
+      sessionId: (sess?.id as string) ?? null,
       sessionStatus: (sess?.status as SessionStatus) ?? null,
       opensAt: (sess?.opens_at as string | null) ?? null,
       closesAt: (sess?.closes_at as string | null) ?? null,
@@ -404,6 +406,7 @@ export type SessionSummary = {
   id: string;
   examId: string;
   examTitle?: string | null;
+  collegeName?: string | null;
   durationMinutes?: number | null;
   label: string;
   mode: SessionMode;
@@ -420,6 +423,7 @@ export type RosterEntry = {
   studentId: string;
   name: string | null;
   email: string | null;
+  rollNumber: string | null;
   rosterStatus: "invited" | "started" | "submitted";
   attemptStatus: "in_progress" | "submitted" | "graded" | null;
   score: number | null;
@@ -433,6 +437,7 @@ function mapSessionRow(r: Record<string, unknown>): SessionSummary {
     id: r.id as string,
     examId: r.exam_id as string,
     examTitle: exam?.title ?? null,
+    collegeName: one<{ name: string | null }>(r.college as never)?.name ?? null,
     durationMinutes: exam?.duration_minutes ?? null,
     label: r.label as string,
     mode: r.mode as SessionMode,
@@ -448,6 +453,7 @@ function mapSessionRow(r: Record<string, unknown>): SessionSummary {
 
 const SESSION_SELECT =
   "id, exam_id, label, mode, opens_at, closes_at, status, results_published, " +
+  "college:college_id(name), " +
   "exam:exam_id(title, duration_minutes), exam_paper(id, exam_paper_question(count)), exam_session_student(count)";
 
 export async function fetchSessions(
@@ -562,7 +568,7 @@ export async function fetchRoster(
       ? supabase.from("app_user").select("id, email").in("id", studentIds)
       : Promise.resolve({ data: [] as Record<string, unknown>[] }),
     studentIds.length
-      ? supabase.from("student_profile").select("user_id, full_name").in("user_id", studentIds)
+      ? supabase.from("student_profile").select("user_id, full_name, roll_number").in("user_id", studentIds)
       : Promise.resolve({ data: [] as Record<string, unknown>[] }),
     supabase.from("exam_attempt").select("student_id, status, score").eq("session_id", sessionId),
   ]);
@@ -571,6 +577,9 @@ export async function fetchRoster(
   );
   const nameById = new Map<string, string | null>(
     (profiles.data ?? []).map((p) => [p.user_id as string, (p.full_name as string | null) ?? null]),
+  );
+  const rollById = new Map<string, string | null>(
+    (profiles.data ?? []).map((p) => [p.user_id as string, (p.roll_number as string | null) ?? null]),
   );
   const byStudent = new Map<string, { status: string; score: number | null }>(
     (attempts.data ?? []).map((a) => [a.student_id as string, { status: a.status as string, score: a.score as number | null }]),
@@ -583,6 +592,7 @@ export async function fetchRoster(
       studentId: sid,
       name: nameById.get(sid) ?? null,
       email: emailById.get(sid) ?? null,
+      rollNumber: rollById.get(sid) ?? null,
       rosterStatus: r.status as RosterEntry["rosterStatus"],
       attemptStatus: (attempt?.status as RosterEntry["attemptStatus"]) ?? null,
       score: attempt?.score ?? null,
@@ -590,63 +600,137 @@ export async function fetchRoster(
   });
 }
 
-// ----------------------------------------------------------------------------
-// Student-facing: my assigned sittings + my result
-// ----------------------------------------------------------------------------
+// Per-subject average score across a sitting's graded attempts (admin results
+// chart). `max` is the section's full marks so the chart can show avg vs. total.
+export type SubjectAvg = { subject: string; avg: number; max: number };
 
-export type StudentSession = {
-  sessionId: string;
-  label: string;
-  sessionStatus: SessionStatus;
-  opensAt: string | null;
-  closesAt: string | null;
-  resultsPublished: boolean;
-  // Drives the student list. Derived from the roster row only — students no
-  // longer read exam_attempt directly (that would leak score before publish;
-  // see migration 023). "submitted" means the attempt is done; the score is
-  // revealed only via get_exam_result() once results are published.
-  rosterStatus: "invited" | "started" | "submitted";
+export async function fetchSubjectAverages(
+  supabase: SupabaseClient,
+  sessionId: string,
+): Promise<SubjectAvg[]> {
+  const { data: attempts, error: aErr } = await supabase
+    .from("exam_attempt")
+    .select("id")
+    .eq("session_id", sessionId)
+    .eq("status", "graded");
+  if (aErr) throw new Error(`exam_attempt: ${aErr.message}`);
+  const ids = (attempts ?? []).map((a) => a.id as string);
+  if (!ids.length) return [];
+
+  const { data, error } = await supabase
+    .from("exam_attempt_question")
+    .select(
+      "awarded_marks, section:section_id(position, num_questions, marks_per_question, subject:subject_id(name))",
+    )
+    .in("attempt_id", ids);
+  if (error) throw new Error(`exam_attempt_question: ${error.message}`);
+
+  type Acc = { subject: string; position: number; sum: number; max: number };
+  const bySection = new Map<string, Acc>();
+  for (const r of (data ?? []) as unknown as Record<string, unknown>[]) {
+    const sec = one<{
+      position: number;
+      num_questions: number;
+      marks_per_question: number;
+      subject: unknown;
+    }>(r.section as never);
+    if (!sec) continue;
+    const subject = one<{ name: string | null }>(sec.subject as never)?.name ?? "—";
+    const acc = bySection.get(subject) ?? {
+      subject,
+      position: sec.position,
+      sum: 0,
+      max: sec.num_questions * sec.marks_per_question,
+    };
+    acc.sum += Number(r.awarded_marks ?? 0);
+    bySection.set(subject, acc);
+  }
+  return Array.from(bySection.values())
+    .sort((a, b) => a.position - b.position)
+    .map((s) => ({
+      subject: s.subject,
+      avg: Math.round((s.sum / ids.length) * 100) / 100,
+      max: s.max,
+    }));
+}
+
+// Per-student, per-subject marks for a sitting — the subject-wise breakdown on
+// the printed Statement of Results. `subjects` are the ordered columns (section
+// order) with each subject's full marks; `byStudent` maps studentId -> {subject:
+// awarded marks}. Returned as plain objects so it serializes server -> client.
+export type SubjectColumn = { subject: string; max: number };
+export type StudentSubjectMarks = {
+  subjects: SubjectColumn[];
+  byStudent: Record<string, Record<string, number>>;
 };
 
-// A student can read their roster rows + the sessions they're on (RLS in 021/023),
-// but NOT the exam table — so we surface the session label, not the exam title.
-export async function fetchStudentSessions(
+export async function fetchSubjectMarksByStudent(
   supabase: SupabaseClient,
-  studentId: string,
-): Promise<StudentSession[]> {
-  // Visibility is college-based (migration 094): RLS returns exactly the
-  // sessions of the student's college — no explicit roster needed. The caller's
-  // own roster row (if they've started) supplies the progress status.
-  const { data: sessions, error } = await supabase
-    .from("exam_session")
-    .select("id, label, status, opens_at, closes_at, results_published")
-    .order("opens_at", { ascending: true, nullsFirst: false });
-  if (error) throw new Error(`exam_session: ${error.message}`);
+  sessionId: string,
+): Promise<StudentSubjectMarks> {
+  const { data: attempts, error: aErr } = await supabase
+    .from("exam_attempt")
+    .select("id, student_id")
+    .eq("session_id", sessionId);
+  if (aErr) throw new Error(`exam_attempt: ${aErr.message}`);
+  const rows = (attempts ?? []) as { id: string; student_id: string }[];
+  const studentByAttempt = new Map(rows.map((a) => [a.id, a.student_id]));
+  const ids = rows.map((a) => a.id);
+  if (!ids.length) return { subjects: [], byStudent: {} };
 
-  const rows = (sessions ?? []) as unknown as Record<string, unknown>[];
-  const ids = rows.map((s) => s.id as string);
-  const rosterStatus = new Map<string, StudentSession["rosterStatus"]>();
-  if (ids.length) {
-    const { data: roster } = await supabase
-      .from("exam_session_student")
-      .select("session_id, status")
-      .eq("student_id", studentId)
-      .in("session_id", ids);
-    (roster ?? []).forEach((r) =>
-      rosterStatus.set(r.session_id as string, r.status as StudentSession["rosterStatus"]),
-    );
+  const { data, error } = await supabase
+    .from("exam_attempt_question")
+    .select(
+      "attempt_id, section_id, awarded_marks, section:section_id(position, num_questions, marks_per_question, subject:subject_id(name))",
+    )
+    .in("attempt_id", ids);
+  if (error) throw new Error(`exam_attempt_question: ${error.message}`);
+
+  // A section's full marks is fixed (num_questions * marks_per_question); the
+  // attempt_question rows repeat it, so dedupe by section_id before summing maxes.
+  const sectionMeta = new Map<string, { subject: string; position: number; max: number }>();
+  const byStudent: Record<string, Record<string, number>> = {};
+  for (const r of (data ?? []) as unknown as Record<string, unknown>[]) {
+    const sec = one<{
+      position: number;
+      num_questions: number;
+      marks_per_question: number;
+      subject: unknown;
+    }>(r.section as never);
+    if (!sec) continue;
+    const subject = one<{ name: string | null }>(sec.subject as never)?.name ?? "—";
+    const secId = r.section_id as string;
+    if (!sectionMeta.has(secId)) {
+      sectionMeta.set(secId, {
+        subject,
+        position: sec.position,
+        max: sec.num_questions * sec.marks_per_question,
+      });
+    }
+    const sid = studentByAttempt.get(r.attempt_id as string);
+    if (!sid) continue;
+    const rec = (byStudent[sid] ??= {});
+    rec[subject] = (rec[subject] ?? 0) + Number(r.awarded_marks ?? 0);
   }
 
-  return rows.map((s) => ({
-    sessionId: s.id as string,
-    label: s.label as string,
-    sessionStatus: s.status as SessionStatus,
-    opensAt: (s.opens_at as string | null) ?? null,
-    closesAt: (s.closes_at as string | null) ?? null,
-    resultsPublished: s.results_published as boolean,
-    rosterStatus: rosterStatus.get(s.id as string) ?? "invited",
-  }));
+  // Aggregate section maxes into subject columns (a subject can span sections).
+  const subjAgg = new Map<string, { max: number; position: number }>();
+  for (const m of sectionMeta.values()) {
+    const cur = subjAgg.get(m.subject);
+    if (cur) { cur.max += m.max; cur.position = Math.min(cur.position, m.position); }
+    else subjAgg.set(m.subject, { max: m.max, position: m.position });
+  }
+  const subjects = Array.from(subjAgg.entries())
+    .sort((a, b) => a[1].position - b[1].position)
+    .map(([subject, v]) => ({ subject, max: v.max }));
+
+  return { subjects, byStudent };
 }
+
+// ----------------------------------------------------------------------------
+// Student-facing "my exams" list lives in the list_my_exam_sessions() RPC
+// (migration 102) — students can't read the exam/exam_section tables directly.
+// ----------------------------------------------------------------------------
 
 // ----------------------------------------------------------------------------
 // Print / PDF (offline conduct) — the full hydrated paper incl. the answer key

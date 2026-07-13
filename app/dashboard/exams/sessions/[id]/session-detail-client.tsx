@@ -14,12 +14,10 @@ export function SessionDetailClient({
   session,
   roster,
   canExportPdf,
-  canGenerate,
 }: {
   session: SessionSummary;
   roster: RosterEntry[];
   canExportPdf: boolean;
-  canGenerate: boolean;
 }) {
   const router = useRouter();
   const [busy, setBusy] = useState("");
@@ -58,17 +56,9 @@ export function SessionDetailClient({
                 Open
               </Button>
             )}
-            {session.status === "open" && (
+            {session.status !== "closed" && session.status !== "graded" && (
               <Button size="sm" variant="secondary" disabled={!!busy} onClick={() => action("close", `/api/exam/sessions/${session.id}/close`, { status: "closed" })}>
                 Close
-              </Button>
-            )}
-            <Button size="sm" variant="outline" disabled={!!busy} onClick={() => action("assign", `/api/exam/sessions/${session.id}/assign`, { college_wide: true })}>
-              {busy === "assign" ? "Assigning…" : "Assign all college students"}
-            </Button>
-            {canGenerate && (
-              <Button size="sm" variant="outline" disabled={!!busy} onClick={() => action("regen", `/api/exam/sessions/${session.id}/regenerate-paper`)}>
-                Regenerate paper
               </Button>
             )}
             {canExportPdf && (

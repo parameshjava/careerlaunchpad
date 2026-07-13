@@ -7,11 +7,10 @@
  * The parsed file is held in memory so re-validate/commit don't re-upload.
  * Built to docs/STYLE_GUIDE.md: shadcn primitives + brand tokens, mobile-first.
  */
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import { cn } from "@/lib/utils";
 import { RichContent } from "@/components/exam/RichContent";
 import { Button } from "@/components/ui/button";
-import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { Badge } from "@/components/ui/badge";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
@@ -252,8 +251,9 @@ export function ImportQuestionsClient({ subjects }: { subjects: Subject[] }) {
     }
   }
 
-  const blocking = report ? report.errorCount + report.duplicateCount + report.fileErrors.length : 1;
+  const blocking = report ? report.errorCount + report.fileErrors.length : 1;
   const canValidate = !!subjectId && parsed != null && !busy;
+  const fileRef = useRef<HTMLInputElement>(null);
   const fileData = parsed as FileData | null;
 
   // Pagination — review a large import one set at a time.
@@ -398,18 +398,29 @@ export function ImportQuestionsClient({ subjects }: { subjects: Subject[] }) {
           </CardDescription>
         </CardHeader>
         <CardContent>
+          {/* Native file input is hidden; a styled Browse button triggers it so
+              the control matches the rest of the UI. Validate appears only once a
+              file has been chosen. */}
+          <input
+            ref={fileRef}
+            type="file"
+            accept=".json,application/json"
+            className="hidden"
+            onChange={(e) => onPickFile(e.target.files?.[0] ?? null)}
+          />
           <div className="flex flex-wrap items-center gap-3">
-            <Input
-              type="file"
-              accept=".json,application/json"
-              className="max-w-xs"
-              onChange={(e) => onPickFile(e.target.files?.[0] ?? null)}
-            />
-            <Button onClick={() => run(false)} disabled={!canValidate}>
-              {busy ? "Validating…" : "Validate"}
+            <Button type="button" variant="outline" onClick={() => fileRef.current?.click()}>
+              {fileName ? "Choose a different file" : "Browse…"}
             </Button>
+            <span className="text-muted-foreground text-sm">
+              {fileName ?? "No file chosen"}
+            </span>
+            {parsed != null && (
+              <Button onClick={() => run(false)} disabled={!canValidate}>
+                {busy ? "Validating…" : "Validate"}
+              </Button>
+            )}
           </div>
-          {fileName && <p className="text-muted-foreground mt-2 text-xs">Loaded: {fileName}</p>}
           {!subjectId && parsed != null && (
             <p className="text-muted-foreground mt-2 text-xs">
               Select a subject in step 1 to enable validation.
@@ -446,7 +457,7 @@ export function ImportQuestionsClient({ subjects }: { subjects: Subject[] }) {
                 Errors: <b className="text-foreground">{report.errorCount}</b>
               </span>
               <span>
-                Duplicates: <b className="text-foreground">{report.duplicateCount}</b>
+                Skipped (already in bank): <b className="text-foreground">{report.duplicateCount}</b>
               </span>
             </div>
 
@@ -581,14 +592,20 @@ export function ImportQuestionsClient({ subjects }: { subjects: Subject[] }) {
 
             {allRows.length > pageSize && PageBar()}
 
-            <div className="flex items-center gap-3">
-              <Button onClick={() => run(true)} disabled={busy || blocking > 0}>
+            <div className="flex flex-wrap items-center gap-3">
+              <Button onClick={() => run(true)} disabled={busy || blocking > 0 || report.valid === 0}>
                 {busy ? "Importing…" : `Import ${report.valid} question${report.valid === 1 ? "" : "s"}`}
               </Button>
-              {blocking > 0 && (
+              {blocking > 0 ? (
                 <span className="text-muted-foreground text-sm">
-                  Resolve all {blocking} issue{blocking === 1 ? "" : "s"} to enable import.
+                  Fix all {blocking} error{blocking === 1 ? "" : "s"} to enable import.
                 </span>
+              ) : (
+                report.duplicateCount > 0 && (
+                  <span className="text-muted-foreground text-sm">
+                    {report.duplicateCount} already in the bank will be skipped.
+                  </span>
+                )
               )}
             </div>
           </CardContent>

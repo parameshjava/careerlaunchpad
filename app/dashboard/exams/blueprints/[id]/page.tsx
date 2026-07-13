@@ -52,9 +52,17 @@ export default async function EditBlueprintPage({
       >
         ← Exam papers
       </Link>
-      <header className="mb-6">
-        <h1 className="text-2xl font-bold tracking-tight">{blueprint.title}</h1>
-        <p className="text-muted-foreground mt-1 text-sm">Status: {blueprint.status}</p>
+      <header className="mb-6 flex flex-wrap items-start justify-between gap-3">
+        <div>
+          <h1 className="text-2xl font-bold tracking-tight">{blueprint.title}</h1>
+          <p className="text-muted-foreground mt-1 text-sm">Status: {blueprint.status}</p>
+        </div>
+        <Link
+          href={`/dashboard/exams/blueprints/${id}/consolidated`}
+          className="border-input hover:bg-accent inline-flex h-9 items-center rounded-md border px-3 text-sm font-medium"
+        >
+          Consolidated results
+        </Link>
       </header>
       <BlueprintEditor
         blueprint={blueprint}

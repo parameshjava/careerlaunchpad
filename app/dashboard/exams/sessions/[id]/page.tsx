@@ -34,7 +34,6 @@ export default async function SessionDetailPage({
         session={session}
         roster={roster}
         canExportPdf={ctx.permissions.has("*") || can(ctx, "exam.paper.export_pdf")}
-        canGenerate={ctx.permissions.has("*") || can(ctx, "exam.paper.generate")}
       />
     </div>
   );

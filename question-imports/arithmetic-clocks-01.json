@@ -1,0 +1,5205 @@
+{
+  "subject": "Arithmetic",
+  "questions": [
+    {
+      "chapter": "Clocks",
+      "kind": "standard",
+      "difficulty": "easy",
+      "answer_type": "single",
+      "stem": "Through how many degrees does the hour hand of a clock move in 10 minutes?",
+      "explanation": "The hour hand moves 0.5° per minute, so in 10 min it moves 5°.",
+      "options": [
+        {
+          "label": "5°",
+          "is_correct": true
+        },
+        {
+          "label": "6°",
+          "is_correct": false
+        },
+        {
+          "label": "4°",
+          "is_correct": false
+        },
+        {
+          "label": "7°",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Clocks",
+      "kind": "standard",
+      "difficulty": "easy",
+      "answer_type": "single",
+      "stem": "Through how many degrees does the minute hand of a clock move in 20 minutes?",
+      "explanation": "The minute hand moves 360° in 60 min = 6° per min, so in 20 min it moves 120°.",
+      "options": [
+        {
+          "label": "118°",
+          "is_correct": false
+        },
+        {
+          "label": "122°",
+          "is_correct": false
+        },
+        {
+          "label": "120°",
+          "is_correct": true
+        },
+        {
+          "label": "124°",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Clocks",
+      "kind": "standard",
+      "difficulty": "easy",
+      "answer_type": "single",
+      "stem": "In 6 minutes, by how many degrees does the minute hand gain over the hour hand?",
+      "explanation": "The minute hand gains 5.5° per minute over the hour hand, so in 6 min it gains 33°.",
+      "options": [
+        {
+          "label": "32°",
+          "is_correct": false
+        },
+        {
+          "label": "34°",
+          "is_correct": false
+        },
+        {
+          "label": "35°",
+          "is_correct": false
+        },
+        {
+          "label": "33°",
+          "is_correct": true
+        }
+      ]
+    },
+    {
+      "chapter": "Clocks",
+      "kind": "standard",
+      "difficulty": "easy",
+      "answer_type": "single",
+      "stem": "Through how many degrees does the minute hand of a clock move in 49 minutes?",
+      "explanation": "The minute hand moves 360° in 60 min = 6° per min, so in 49 min it moves 294°.",
+      "options": [
+        {
+          "label": "294°",
+          "is_correct": true
+        },
+        {
+          "label": "282°",
+          "is_correct": false
+        },
+        {
+          "label": "306°",
+          "is_correct": false
+        },
+        {
+          "label": "318°",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Clocks",
+      "kind": "standard",
+      "difficulty": "easy",
+      "answer_type": "single",
+      "stem": "Through how many degrees does the hour hand of a clock move in 60 minutes?",
+      "explanation": "The hour hand moves 0.5° per minute, so in 60 min it moves 30°.",
+      "options": [
+        {
+          "label": "31°",
+          "is_correct": false
+        },
+        {
+          "label": "30°",
+          "is_correct": true
+        },
+        {
+          "label": "29°",
+          "is_correct": false
+        },
+        {
+          "label": "32°",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Clocks",
+      "kind": "standard",
+      "difficulty": "easy",
+      "answer_type": "single",
+      "stem": "Through how many degrees does the hour hand of a clock move in 52 minutes?",
+      "explanation": "The hour hand moves 0.5° per minute, so in 52 min it moves 26°.",
+      "options": [
+        {
+          "label": "27°",
+          "is_correct": false
+        },
+        {
+          "label": "26°",
+          "is_correct": true
+        },
+        {
+          "label": "28°",
+          "is_correct": false
+        },
+        {
+          "label": "25°",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Clocks",
+      "kind": "standard",
+      "difficulty": "easy",
+      "answer_type": "single",
+      "stem": "Through how many degrees does the minute hand of a clock move in 32 minutes?",
+      "explanation": "The minute hand moves 360° in 60 min = 6° per min, so in 32 min it moves 192°.",
+      "options": [
+        {
+          "label": "192°",
+          "is_correct": true
+        },
+        {
+          "label": "190°",
+          "is_correct": false
+        },
+        {
+          "label": "196°",
+          "is_correct": false
+        },
+        {
+          "label": "194°",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Clocks",
+      "kind": "standard",
+      "difficulty": "easy",
+      "answer_type": "single",
+      "stem": "Through how many degrees does the hour hand of a clock move in 26 minutes?",
+      "explanation": "The hour hand moves 0.5° per minute, so in 26 min it moves 13°.",
+      "options": [
+        {
+          "label": "15°",
+          "is_correct": false
+        },
+        {
+          "label": "14°",
+          "is_correct": false
+        },
+        {
+          "label": "12°",
+          "is_correct": false
+        },
+        {
+          "label": "13°",
+          "is_correct": true
+        }
+      ]
+    },
+    {
+      "chapter": "Clocks",
+      "kind": "standard",
+      "difficulty": "easy",
+      "answer_type": "single",
+      "stem": "Through how many degrees does the minute hand of a clock move in 29 minutes?",
+      "explanation": "The minute hand moves 360° in 60 min = 6° per min, so in 29 min it moves 174°.",
+      "options": [
+        {
+          "label": "174°",
+          "is_correct": true
+        },
+        {
+          "label": "176°",
+          "is_correct": false
+        },
+        {
+          "label": "178°",
+          "is_correct": false
+        },
+        {
+          "label": "172°",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Clocks",
+      "kind": "standard",
+      "difficulty": "easy",
+      "answer_type": "single",
+      "stem": "Through how many degrees does the hour hand of a clock move in 24 minutes?",
+      "explanation": "The hour hand moves 0.5° per minute, so in 24 min it moves 12°.",
+      "options": [
+        {
+          "label": "14°",
+          "is_correct": false
+        },
+        {
+          "label": "13°",
+          "is_correct": false
+        },
+        {
+          "label": "12°",
+          "is_correct": true
+        },
+        {
+          "label": "11°",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Clocks",
+      "kind": "standard",
+      "difficulty": "easy",
+      "answer_type": "single",
+      "stem": "In 54 minutes, by how many degrees does the minute hand gain over the hour hand?",
+      "explanation": "The minute hand gains 5.5° per minute over the hour hand, so in 54 min it gains 297°.",
+      "options": [
+        {
+          "label": "321°",
+          "is_correct": false
+        },
+        {
+          "label": "309°",
+          "is_correct": false
+        },
+        {
+          "label": "285°",
+          "is_correct": false
+        },
+        {
+          "label": "297°",
+          "is_correct": true
+        }
+      ]
+    },
+    {
+      "chapter": "Clocks",
+      "kind": "standard",
+      "difficulty": "easy",
+      "answer_type": "single",
+      "stem": "Through how many degrees does the hour hand of a clock move in 44 minutes?",
+      "explanation": "The hour hand moves 0.5° per minute, so in 44 min it moves 22°.",
+      "options": [
+        {
+          "label": "23°",
+          "is_correct": false
+        },
+        {
+          "label": "21°",
+          "is_correct": false
+        },
+        {
+          "label": "24°",
+          "is_correct": false
+        },
+        {
+          "label": "22°",
+          "is_correct": true
+        }
+      ]
+    },
+    {
+      "chapter": "Clocks",
+      "kind": "standard",
+      "difficulty": "easy",
+      "answer_type": "single",
+      "stem": "Through how many degrees does the hour hand of a clock move in 6 minutes?",
+      "explanation": "The hour hand moves 0.5° per minute, so in 6 min it moves 3°.",
+      "options": [
+        {
+          "label": "2°",
+          "is_correct": false
+        },
+        {
+          "label": "4°",
+          "is_correct": false
+        },
+        {
+          "label": "3°",
+          "is_correct": true
+        },
+        {
+          "label": "5°",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Clocks",
+      "kind": "standard",
+      "difficulty": "easy",
+      "answer_type": "single",
+      "stem": "Through how many degrees does the minute hand of a clock move in 8 minutes?",
+      "explanation": "The minute hand moves 360° in 60 min = 6° per min, so in 8 min it moves 48°.",
+      "options": [
+        {
+          "label": "50°",
+          "is_correct": false
+        },
+        {
+          "label": "46°",
+          "is_correct": false
+        },
+        {
+          "label": "52°",
+          "is_correct": false
+        },
+        {
+          "label": "48°",
+          "is_correct": true
+        }
+      ]
+    },
+    {
+      "chapter": "Clocks",
+      "kind": "standard",
+      "difficulty": "easy",
+      "answer_type": "single",
+      "stem": "In 28 minutes, by how many degrees does the minute hand gain over the hour hand?",
+      "explanation": "The minute hand gains 5.5° per minute over the hour hand, so in 28 min it gains 154°.",
+      "options": [
+        {
+          "label": "158°",
+          "is_correct": false
+        },
+        {
+          "label": "156°",
+          "is_correct": false
+        },
+        {
+          "label": "152°",
+          "is_correct": false
+        },
+        {
+          "label": "154°",
+          "is_correct": true
+        }
+      ]
+    },
+    {
+      "chapter": "Clocks",
+      "kind": "standard",
+      "difficulty": "easy",
+      "answer_type": "single",
+      "stem": "In 12 minutes, by how many degrees does the minute hand gain over the hour hand?",
+      "explanation": "The minute hand gains 5.5° per minute over the hour hand, so in 12 min it gains 66°.",
+      "options": [
+        {
+          "label": "66°",
+          "is_correct": true
+        },
+        {
+          "label": "70°",
+          "is_correct": false
+        },
+        {
+          "label": "68°",
+          "is_correct": false
+        },
+        {
+          "label": "64°",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Clocks",
+      "kind": "standard",
+      "difficulty": "easy",
+      "answer_type": "single",
+      "stem": "Through how many degrees does the minute hand of a clock move in 21 minutes?",
+      "explanation": "The minute hand moves 360° in 60 min = 6° per min, so in 21 min it moves 126°.",
+      "options": [
+        {
+          "label": "128°",
+          "is_correct": false
+        },
+        {
+          "label": "130°",
+          "is_correct": false
+        },
+        {
+          "label": "126°",
+          "is_correct": true
+        },
+        {
+          "label": "124°",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Clocks",
+      "kind": "standard",
+      "difficulty": "easy",
+      "answer_type": "single",
+      "stem": "Through how many degrees does the minute hand of a clock move in 25 minutes?",
+      "explanation": "The minute hand moves 360° in 60 min = 6° per min, so in 25 min it moves 150°.",
+      "options": [
+        {
+          "label": "148°",
+          "is_correct": false
+        },
+        {
+          "label": "150°",
+          "is_correct": true
+        },
+        {
+          "label": "154°",
+          "is_correct": false
+        },
+        {
+          "label": "152°",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Clocks",
+      "kind": "standard",
+      "difficulty": "easy",
+      "answer_type": "single",
+      "stem": "Through how many degrees does the minute hand of a clock move in 60 minutes?",
+      "explanation": "The minute hand moves 360° in 60 min = 6° per min, so in 60 min it moves 360°.",
+      "options": [
+        {
+          "label": "360°",
+          "is_correct": true
+        },
+        {
+          "label": "388°",
+          "is_correct": false
+        },
+        {
+          "label": "374°",
+          "is_correct": false
+        },
+        {
+          "label": "346°",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Clocks",
+      "kind": "standard",
+      "difficulty": "easy",
+      "answer_type": "single",
+      "stem": "Through how many degrees does the minute hand of a clock move in 38 minutes?",
+      "explanation": "The minute hand moves 360° in 60 min = 6° per min, so in 38 min it moves 228°.",
+      "options": [
+        {
+          "label": "228°",
+          "is_correct": true
+        },
+        {
+          "label": "237°",
+          "is_correct": false
+        },
+        {
+          "label": "219°",
+          "is_correct": false
+        },
+        {
+          "label": "246°",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Clocks",
+      "kind": "standard",
+      "difficulty": "easy",
+      "answer_type": "single",
+      "stem": "Through how many degrees does the hour hand of a clock move in 2 minutes?",
+      "explanation": "The hour hand moves 0.5° per minute, so in 2 min it moves 1°.",
+      "options": [
+        {
+          "label": "2°",
+          "is_correct": false
+        },
+        {
+          "label": "1°",
+          "is_correct": true
+        },
+        {
+          "label": "3°",
+          "is_correct": false
+        },
+        {
+          "label": "4°",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Clocks",
+      "kind": "standard",
+      "difficulty": "easy",
+      "answer_type": "single",
+      "stem": "Through how many degrees does the hour hand of a clock move in 56 minutes?",
+      "explanation": "The hour hand moves 0.5° per minute, so in 56 min it moves 28°.",
+      "options": [
+        {
+          "label": "30°",
+          "is_correct": false
+        },
+        {
+          "label": "29°",
+          "is_correct": false
+        },
+        {
+          "label": "28°",
+          "is_correct": true
+        },
+        {
+          "label": "27°",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Clocks",
+      "kind": "standard",
+      "difficulty": "easy",
+      "answer_type": "single",
+      "stem": "Through how many degrees does the hour hand of a clock move in 12 minutes?",
+      "explanation": "The hour hand moves 0.5° per minute, so in 12 min it moves 6°.",
+      "options": [
+        {
+          "label": "6°",
+          "is_correct": true
+        },
+        {
+          "label": "8°",
+          "is_correct": false
+        },
+        {
+          "label": "7°",
+          "is_correct": false
+        },
+        {
+          "label": "5°",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Clocks",
+      "kind": "standard",
+      "difficulty": "easy",
+      "answer_type": "single",
+      "stem": "In 44 minutes, by how many degrees does the minute hand gain over the hour hand?",
+      "explanation": "The minute hand gains 5.5° per minute over the hour hand, so in 44 min it gains 242°.",
+      "options": [
+        {
+          "label": "252°",
+          "is_correct": false
+        },
+        {
+          "label": "232°",
+          "is_correct": false
+        },
+        {
+          "label": "242°",
+          "is_correct": true
+        },
+        {
+          "label": "262°",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Clocks",
+      "kind": "standard",
+      "difficulty": "easy",
+      "answer_type": "single",
+      "stem": "In 16 minutes, by how many degrees does the minute hand gain over the hour hand?",
+      "explanation": "The minute hand gains 5.5° per minute over the hour hand, so in 16 min it gains 88°.",
+      "options": [
+        {
+          "label": "88°",
+          "is_correct": true
+        },
+        {
+          "label": "86°",
+          "is_correct": false
+        },
+        {
+          "label": "92°",
+          "is_correct": false
+        },
+        {
+          "label": "90°",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Clocks",
+      "kind": "standard",
+      "difficulty": "easy",
+      "answer_type": "single",
+      "stem": "In 36 minutes, by how many degrees does the minute hand gain over the hour hand?",
+      "explanation": "The minute hand gains 5.5° per minute over the hour hand, so in 36 min it gains 198°.",
+      "options": [
+        {
+          "label": "196°",
+          "is_correct": false
+        },
+        {
+          "label": "202°",
+          "is_correct": false
+        },
+        {
+          "label": "198°",
+          "is_correct": true
+        },
+        {
+          "label": "200°",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Clocks",
+      "kind": "standard",
+      "difficulty": "easy",
+      "answer_type": "single",
+      "stem": "Through how many degrees does the minute hand of a clock move in 55 minutes?",
+      "explanation": "The minute hand moves 360° in 60 min = 6° per min, so in 55 min it moves 330°.",
+      "options": [
+        {
+          "label": "356°",
+          "is_correct": false
+        },
+        {
+          "label": "330°",
+          "is_correct": true
+        },
+        {
+          "label": "317°",
+          "is_correct": false
+        },
+        {
+          "label": "343°",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Clocks",
+      "kind": "standard",
+      "difficulty": "easy",
+      "answer_type": "single",
+      "stem": "Through how many degrees does the hour hand of a clock move in 58 minutes?",
+      "explanation": "The hour hand moves 0.5° per minute, so in 58 min it moves 29°.",
+      "options": [
+        {
+          "label": "30°",
+          "is_correct": false
+        },
+        {
+          "label": "29°",
+          "is_correct": true
+        },
+        {
+          "label": "28°",
+          "is_correct": false
+        },
+        {
+          "label": "31°",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Clocks",
+      "kind": "standard",
+      "difficulty": "easy",
+      "answer_type": "single",
+      "stem": "In 48 minutes, by how many degrees does the minute hand gain over the hour hand?",
+      "explanation": "The minute hand gains 5.5° per minute over the hour hand, so in 48 min it gains 264°.",
+      "options": [
+        {
+          "label": "275°",
+          "is_correct": false
+        },
+        {
+          "label": "264°",
+          "is_correct": true
+        },
+        {
+          "label": "253°",
+          "is_correct": false
+        },
+        {
+          "label": "286°",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Clocks",
+      "kind": "standard",
+      "difficulty": "easy",
+      "answer_type": "single",
+      "stem": "Through how many degrees does the minute hand of a clock move in 51 minutes?",
+      "explanation": "The minute hand moves 360° in 60 min = 6° per min, so in 51 min it moves 306°.",
+      "options": [
+        {
+          "label": "294°",
+          "is_correct": false
+        },
+        {
+          "label": "306°",
+          "is_correct": true
+        },
+        {
+          "label": "330°",
+          "is_correct": false
+        },
+        {
+          "label": "318°",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Clocks",
+      "kind": "standard",
+      "difficulty": "easy",
+      "answer_type": "single",
+      "stem": "Through how many degrees does the minute hand of a clock move in 6 minutes?",
+      "explanation": "The minute hand moves 360° in 60 min = 6° per min, so in 6 min it moves 36°.",
+      "options": [
+        {
+          "label": "38°",
+          "is_correct": false
+        },
+        {
+          "label": "36°",
+          "is_correct": true
+        },
+        {
+          "label": "37°",
+          "is_correct": false
+        },
+        {
+          "label": "35°",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Clocks",
+      "kind": "standard",
+      "difficulty": "easy",
+      "answer_type": "single",
+      "stem": "In 32 minutes, by how many degrees does the minute hand gain over the hour hand?",
+      "explanation": "The minute hand gains 5.5° per minute over the hour hand, so in 32 min it gains 176°.",
+      "options": [
+        {
+          "label": "178°",
+          "is_correct": false
+        },
+        {
+          "label": "176°",
+          "is_correct": true
+        },
+        {
+          "label": "180°",
+          "is_correct": false
+        },
+        {
+          "label": "174°",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Clocks",
+      "kind": "standard",
+      "difficulty": "easy",
+      "answer_type": "single",
+      "stem": "In 4 minutes, by how many degrees does the minute hand gain over the hour hand?",
+      "explanation": "The minute hand gains 5.5° per minute over the hour hand, so in 4 min it gains 22°.",
+      "options": [
+        {
+          "label": "23°",
+          "is_correct": false
+        },
+        {
+          "label": "21°",
+          "is_correct": false
+        },
+        {
+          "label": "24°",
+          "is_correct": false
+        },
+        {
+          "label": "22°",
+          "is_correct": true
+        }
+      ]
+    },
+    {
+      "chapter": "Clocks",
+      "kind": "standard",
+      "difficulty": "easy",
+      "answer_type": "single",
+      "stem": "Through how many degrees does the hour hand of a clock move in 48 minutes?",
+      "explanation": "The hour hand moves 0.5° per minute, so in 48 min it moves 24°.",
+      "options": [
+        {
+          "label": "25°",
+          "is_correct": false
+        },
+        {
+          "label": "26°",
+          "is_correct": false
+        },
+        {
+          "label": "24°",
+          "is_correct": true
+        },
+        {
+          "label": "23°",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Clocks",
+      "kind": "standard",
+      "difficulty": "easy",
+      "answer_type": "single",
+      "stem": "Through how many degrees does the minute hand of a clock move in 11 minutes?",
+      "explanation": "The minute hand moves 360° in 60 min = 6° per min, so in 11 min it moves 66°.",
+      "options": [
+        {
+          "label": "64°",
+          "is_correct": false
+        },
+        {
+          "label": "70°",
+          "is_correct": false
+        },
+        {
+          "label": "68°",
+          "is_correct": false
+        },
+        {
+          "label": "66°",
+          "is_correct": true
+        }
+      ]
+    },
+    {
+      "chapter": "Clocks",
+      "kind": "standard",
+      "difficulty": "easy",
+      "answer_type": "single",
+      "stem": "In 24 minutes, by how many degrees does the minute hand gain over the hour hand?",
+      "explanation": "The minute hand gains 5.5° per minute over the hour hand, so in 24 min it gains 132°.",
+      "options": [
+        {
+          "label": "132°",
+          "is_correct": true
+        },
+        {
+          "label": "130°",
+          "is_correct": false
+        },
+        {
+          "label": "136°",
+          "is_correct": false
+        },
+        {
+          "label": "134°",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Clocks",
+      "kind": "standard",
+      "difficulty": "easy",
+      "answer_type": "single",
+      "stem": "In 10 minutes, by how many degrees does the minute hand gain over the hour hand?",
+      "explanation": "The minute hand gains 5.5° per minute over the hour hand, so in 10 min it gains 55°.",
+      "options": [
+        {
+          "label": "55°",
+          "is_correct": true
+        },
+        {
+          "label": "57°",
+          "is_correct": false
+        },
+        {
+          "label": "53°",
+          "is_correct": false
+        },
+        {
+          "label": "59°",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Clocks",
+      "kind": "standard",
+      "difficulty": "easy",
+      "answer_type": "single",
+      "stem": "In 50 minutes, by how many degrees does the minute hand gain over the hour hand?",
+      "explanation": "The minute hand gains 5.5° per minute over the hour hand, so in 50 min it gains 275°.",
+      "options": [
+        {
+          "label": "264°",
+          "is_correct": false
+        },
+        {
+          "label": "286°",
+          "is_correct": false
+        },
+        {
+          "label": "275°",
+          "is_correct": true
+        },
+        {
+          "label": "297°",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Clocks",
+      "kind": "standard",
+      "difficulty": "easy",
+      "answer_type": "single",
+      "stem": "Through how many degrees does the minute hand of a clock move in 56 minutes?",
+      "explanation": "The minute hand moves 360° in 60 min = 6° per min, so in 56 min it moves 336°.",
+      "options": [
+        {
+          "label": "362°",
+          "is_correct": false
+        },
+        {
+          "label": "349°",
+          "is_correct": false
+        },
+        {
+          "label": "336°",
+          "is_correct": true
+        },
+        {
+          "label": "323°",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Clocks",
+      "kind": "standard",
+      "difficulty": "easy",
+      "answer_type": "single",
+      "stem": "Through how many degrees does the hour hand of a clock move in 40 minutes?",
+      "explanation": "The hour hand moves 0.5° per minute, so in 40 min it moves 20°.",
+      "options": [
+        {
+          "label": "21°",
+          "is_correct": false
+        },
+        {
+          "label": "19°",
+          "is_correct": false
+        },
+        {
+          "label": "20°",
+          "is_correct": true
+        },
+        {
+          "label": "22°",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Clocks",
+      "kind": "standard",
+      "difficulty": "easy",
+      "answer_type": "single",
+      "stem": "Through how many degrees does the minute hand of a clock move in 40 minutes?",
+      "explanation": "The minute hand moves 360° in 60 min = 6° per min, so in 40 min it moves 240°.",
+      "options": [
+        {
+          "label": "260°",
+          "is_correct": false
+        },
+        {
+          "label": "230°",
+          "is_correct": false
+        },
+        {
+          "label": "250°",
+          "is_correct": false
+        },
+        {
+          "label": "240°",
+          "is_correct": true
+        }
+      ]
+    },
+    {
+      "chapter": "Clocks",
+      "kind": "standard",
+      "difficulty": "easy",
+      "answer_type": "single",
+      "stem": "Through how many degrees does the hour hand of a clock move in 4 minutes?",
+      "explanation": "The hour hand moves 0.5° per minute, so in 4 min it moves 2°.",
+      "options": [
+        {
+          "label": "3°",
+          "is_correct": false
+        },
+        {
+          "label": "2°",
+          "is_correct": true
+        },
+        {
+          "label": "1°",
+          "is_correct": false
+        },
+        {
+          "label": "4°",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Clocks",
+      "kind": "standard",
+      "difficulty": "easy",
+      "answer_type": "single",
+      "stem": "In 30 minutes, by how many degrees does the minute hand gain over the hour hand?",
+      "explanation": "The minute hand gains 5.5° per minute over the hour hand, so in 30 min it gains 165°.",
+      "options": [
+        {
+          "label": "165°",
+          "is_correct": true
+        },
+        {
+          "label": "163°",
+          "is_correct": false
+        },
+        {
+          "label": "167°",
+          "is_correct": false
+        },
+        {
+          "label": "169°",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Clocks",
+      "kind": "standard",
+      "difficulty": "easy",
+      "answer_type": "single",
+      "stem": "Through how many degrees does the minute hand of a clock move in 17 minutes?",
+      "explanation": "The minute hand moves 360° in 60 min = 6° per min, so in 17 min it moves 102°.",
+      "options": [
+        {
+          "label": "102°",
+          "is_correct": true
+        },
+        {
+          "label": "104°",
+          "is_correct": false
+        },
+        {
+          "label": "106°",
+          "is_correct": false
+        },
+        {
+          "label": "100°",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Clocks",
+      "kind": "standard",
+      "difficulty": "easy",
+      "answer_type": "single",
+      "stem": "Through how many degrees does the hour hand of a clock move in 50 minutes?",
+      "explanation": "The hour hand moves 0.5° per minute, so in 50 min it moves 25°.",
+      "options": [
+        {
+          "label": "26°",
+          "is_correct": false
+        },
+        {
+          "label": "25°",
+          "is_correct": true
+        },
+        {
+          "label": "24°",
+          "is_correct": false
+        },
+        {
+          "label": "27°",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Clocks",
+      "kind": "standard",
+      "difficulty": "easy",
+      "answer_type": "single",
+      "stem": "Through how many degrees does the hour hand of a clock move in 36 minutes?",
+      "explanation": "The hour hand moves 0.5° per minute, so in 36 min it moves 18°.",
+      "options": [
+        {
+          "label": "18°",
+          "is_correct": true
+        },
+        {
+          "label": "20°",
+          "is_correct": false
+        },
+        {
+          "label": "19°",
+          "is_correct": false
+        },
+        {
+          "label": "17°",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Clocks",
+      "kind": "standard",
+      "difficulty": "easy",
+      "answer_type": "single",
+      "stem": "In 42 minutes, by how many degrees does the minute hand gain over the hour hand?",
+      "explanation": "The minute hand gains 5.5° per minute over the hour hand, so in 42 min it gains 231°.",
+      "options": [
+        {
+          "label": "222°",
+          "is_correct": false
+        },
+        {
+          "label": "249°",
+          "is_correct": false
+        },
+        {
+          "label": "231°",
+          "is_correct": true
+        },
+        {
+          "label": "240°",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Clocks",
+      "kind": "standard",
+      "difficulty": "easy",
+      "answer_type": "single",
+      "stem": "Through how many degrees does the minute hand of a clock move in 30 minutes?",
+      "explanation": "The minute hand moves 360° in 60 min = 6° per min, so in 30 min it moves 180°.",
+      "options": [
+        {
+          "label": "182°",
+          "is_correct": false
+        },
+        {
+          "label": "178°",
+          "is_correct": false
+        },
+        {
+          "label": "180°",
+          "is_correct": true
+        },
+        {
+          "label": "184°",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Clocks",
+      "kind": "standard",
+      "difficulty": "easy",
+      "answer_type": "single",
+      "stem": "In 8 minutes, by how many degrees does the minute hand gain over the hour hand?",
+      "explanation": "The minute hand gains 5.5° per minute over the hour hand, so in 8 min it gains 44°.",
+      "options": [
+        {
+          "label": "44°",
+          "is_correct": true
+        },
+        {
+          "label": "46°",
+          "is_correct": false
+        },
+        {
+          "label": "42°",
+          "is_correct": false
+        },
+        {
+          "label": "48°",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Clocks",
+      "kind": "standard",
+      "difficulty": "easy",
+      "answer_type": "single",
+      "stem": "In 46 minutes, by how many degrees does the minute hand gain over the hour hand?",
+      "explanation": "The minute hand gains 5.5° per minute over the hour hand, so in 46 min it gains 253°.",
+      "options": [
+        {
+          "label": "253°",
+          "is_correct": true
+        },
+        {
+          "label": "273°",
+          "is_correct": false
+        },
+        {
+          "label": "263°",
+          "is_correct": false
+        },
+        {
+          "label": "243°",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Clocks",
+      "kind": "standard",
+      "difficulty": "medium",
+      "answer_type": "single",
+      "stem": "Through how many degrees does the hour hand turn as the time changes from 11 o'clock to 12 o'clock?",
+      "explanation": "The hour hand turns 30° per hour, so from 11 to 12 o'clock it turns 30×1 = 30°.",
+      "options": [
+        {
+          "label": "31°",
+          "is_correct": false
+        },
+        {
+          "label": "29°",
+          "is_correct": false
+        },
+        {
+          "label": "30°",
+          "is_correct": true
+        },
+        {
+          "label": "32°",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Clocks",
+      "kind": "standard",
+      "difficulty": "medium",
+      "answer_type": "single",
+      "stem": "Find the angle between the hour and minute hands of a clock at 4 o'clock.",
+      "explanation": "At 4 o'clock the hands are 4 hour-marks apart = 120°.",
+      "options": [
+        {
+          "label": "120°",
+          "is_correct": true
+        },
+        {
+          "label": "118°",
+          "is_correct": false
+        },
+        {
+          "label": "124°",
+          "is_correct": false
+        },
+        {
+          "label": "122°",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Clocks",
+      "kind": "standard",
+      "difficulty": "medium",
+      "answer_type": "single",
+      "stem": "Through how many degrees does the hour hand turn as the time changes from 6 o'clock to 12 o'clock?",
+      "explanation": "The hour hand turns 30° per hour, so from 6 to 12 o'clock it turns 30×6 = 180°.",
+      "options": [
+        {
+          "label": "184°",
+          "is_correct": false
+        },
+        {
+          "label": "182°",
+          "is_correct": false
+        },
+        {
+          "label": "180°",
+          "is_correct": true
+        },
+        {
+          "label": "178°",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Clocks",
+      "kind": "standard",
+      "difficulty": "medium",
+      "answer_type": "single",
+      "stem": "Through how many degrees does the hour hand turn as the time changes from 2 o'clock to 8 o'clock?",
+      "explanation": "The hour hand turns 30° per hour, so from 2 to 8 o'clock it turns 30×6 = 180°.",
+      "options": [
+        {
+          "label": "184°",
+          "is_correct": false
+        },
+        {
+          "label": "180°",
+          "is_correct": true
+        },
+        {
+          "label": "178°",
+          "is_correct": false
+        },
+        {
+          "label": "182°",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Clocks",
+      "kind": "standard",
+      "difficulty": "medium",
+      "answer_type": "single",
+      "stem": "Find the (smaller) angle between the hour and minute hands of a clock at 2:24.",
+      "explanation": "Angle = |30×2 − 5.5×24| = 72°; the smaller angle is 72°.",
+      "options": [
+        {
+          "label": "70°",
+          "is_correct": false
+        },
+        {
+          "label": "72°",
+          "is_correct": true
+        },
+        {
+          "label": "74°",
+          "is_correct": false
+        },
+        {
+          "label": "76°",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Clocks",
+      "kind": "standard",
+      "difficulty": "medium",
+      "answer_type": "single",
+      "stem": "Find the (smaller) angle between the hour and minute hands of a clock at 5:16.",
+      "explanation": "Angle = |30×5 − 5.5×16| = 62°; the smaller angle is 62°.",
+      "options": [
+        {
+          "label": "62°",
+          "is_correct": true
+        },
+        {
+          "label": "60°",
+          "is_correct": false
+        },
+        {
+          "label": "64°",
+          "is_correct": false
+        },
+        {
+          "label": "66°",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Clocks",
+      "kind": "standard",
+      "difficulty": "medium",
+      "answer_type": "single",
+      "stem": "Find the angle between the hour and minute hands of a clock at 9 o'clock.",
+      "explanation": "At 9 o'clock the hands are 9 hour-marks apart = 90°.",
+      "options": [
+        {
+          "label": "94°",
+          "is_correct": false
+        },
+        {
+          "label": "92°",
+          "is_correct": false
+        },
+        {
+          "label": "88°",
+          "is_correct": false
+        },
+        {
+          "label": "90°",
+          "is_correct": true
+        }
+      ]
+    },
+    {
+      "chapter": "Clocks",
+      "kind": "standard",
+      "difficulty": "medium",
+      "answer_type": "single",
+      "stem": "Find the (smaller) angle between the hour and minute hands of a clock at 8:28.",
+      "explanation": "Angle = |30×8 − 5.5×28| = 86°; the smaller angle is 86°.",
+      "options": [
+        {
+          "label": "86°",
+          "is_correct": true
+        },
+        {
+          "label": "88°",
+          "is_correct": false
+        },
+        {
+          "label": "84°",
+          "is_correct": false
+        },
+        {
+          "label": "90°",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Clocks",
+      "kind": "standard",
+      "difficulty": "medium",
+      "answer_type": "single",
+      "stem": "Find the angle between the hour and minute hands of a clock at 2 o'clock.",
+      "explanation": "At 2 o'clock the hands are 2 hour-marks apart = 60°.",
+      "options": [
+        {
+          "label": "64°",
+          "is_correct": false
+        },
+        {
+          "label": "62°",
+          "is_correct": false
+        },
+        {
+          "label": "58°",
+          "is_correct": false
+        },
+        {
+          "label": "60°",
+          "is_correct": true
+        }
+      ]
+    },
+    {
+      "chapter": "Clocks",
+      "kind": "standard",
+      "difficulty": "medium",
+      "answer_type": "single",
+      "stem": "Find the angle between the hour and minute hands of a clock at 1 o'clock.",
+      "explanation": "At 1 o'clock the hands are 1 hour-marks apart = 30°.",
+      "options": [
+        {
+          "label": "30°",
+          "is_correct": true
+        },
+        {
+          "label": "32°",
+          "is_correct": false
+        },
+        {
+          "label": "29°",
+          "is_correct": false
+        },
+        {
+          "label": "31°",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Clocks",
+      "kind": "standard",
+      "difficulty": "medium",
+      "answer_type": "single",
+      "stem": "Through how many degrees does the hour hand turn as the time changes from 10 o'clock to 12 o'clock?",
+      "explanation": "The hour hand turns 30° per hour, so from 10 to 12 o'clock it turns 30×2 = 60°.",
+      "options": [
+        {
+          "label": "64°",
+          "is_correct": false
+        },
+        {
+          "label": "58°",
+          "is_correct": false
+        },
+        {
+          "label": "62°",
+          "is_correct": false
+        },
+        {
+          "label": "60°",
+          "is_correct": true
+        }
+      ]
+    },
+    {
+      "chapter": "Clocks",
+      "kind": "standard",
+      "difficulty": "medium",
+      "answer_type": "single",
+      "stem": "Find the (smaller) angle between the hour and minute hands of a clock at 9:02.",
+      "explanation": "Angle = |30×9 − 5.5×2| = 259°; the smaller angle is 101°.",
+      "options": [
+        {
+          "label": "101°",
+          "is_correct": true
+        },
+        {
+          "label": "99°",
+          "is_correct": false
+        },
+        {
+          "label": "103°",
+          "is_correct": false
+        },
+        {
+          "label": "105°",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Clocks",
+      "kind": "standard",
+      "difficulty": "medium",
+      "answer_type": "single",
+      "stem": "Find the angle between the hour and minute hands of a clock at 10 o'clock.",
+      "explanation": "At 10 o'clock the hands are 10 hour-marks apart = 60°.",
+      "options": [
+        {
+          "label": "60°",
+          "is_correct": true
+        },
+        {
+          "label": "64°",
+          "is_correct": false
+        },
+        {
+          "label": "58°",
+          "is_correct": false
+        },
+        {
+          "label": "62°",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Clocks",
+      "kind": "standard",
+      "difficulty": "medium",
+      "answer_type": "single",
+      "stem": "Find the (smaller) angle between the hour and minute hands of a clock at 5:08.",
+      "explanation": "Angle = |30×5 − 5.5×8| = 106°; the smaller angle is 106°.",
+      "options": [
+        {
+          "label": "104°",
+          "is_correct": false
+        },
+        {
+          "label": "106°",
+          "is_correct": true
+        },
+        {
+          "label": "108°",
+          "is_correct": false
+        },
+        {
+          "label": "110°",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Clocks",
+      "kind": "standard",
+      "difficulty": "medium",
+      "answer_type": "single",
+      "stem": "Find the (smaller) angle between the hour and minute hands of a clock at 4:22.",
+      "explanation": "Angle = |30×4 − 5.5×22| = 1°; the smaller angle is 1°.",
+      "options": [
+        {
+          "label": "4°",
+          "is_correct": false
+        },
+        {
+          "label": "2°",
+          "is_correct": false
+        },
+        {
+          "label": "3°",
+          "is_correct": false
+        },
+        {
+          "label": "1°",
+          "is_correct": true
+        }
+      ]
+    },
+    {
+      "chapter": "Clocks",
+      "kind": "standard",
+      "difficulty": "medium",
+      "answer_type": "single",
+      "stem": "Find the (smaller) angle between the hour and minute hands of a clock at 8:06.",
+      "explanation": "Angle = |30×8 − 5.5×6| = 207°; the smaller angle is 153°.",
+      "options": [
+        {
+          "label": "153°",
+          "is_correct": true
+        },
+        {
+          "label": "157°",
+          "is_correct": false
+        },
+        {
+          "label": "151°",
+          "is_correct": false
+        },
+        {
+          "label": "155°",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Clocks",
+      "kind": "standard",
+      "difficulty": "medium",
+      "answer_type": "single",
+      "stem": "Find the (smaller) angle between the hour and minute hands of a clock at 2:26.",
+      "explanation": "Angle = |30×2 − 5.5×26| = 83°; the smaller angle is 83°.",
+      "options": [
+        {
+          "label": "81°",
+          "is_correct": false
+        },
+        {
+          "label": "85°",
+          "is_correct": false
+        },
+        {
+          "label": "87°",
+          "is_correct": false
+        },
+        {
+          "label": "83°",
+          "is_correct": true
+        }
+      ]
+    },
+    {
+      "chapter": "Clocks",
+      "kind": "standard",
+      "difficulty": "medium",
+      "answer_type": "single",
+      "stem": "Through how many degrees does the hour hand turn as the time changes from 2 o'clock to 6 o'clock?",
+      "explanation": "The hour hand turns 30° per hour, so from 2 to 6 o'clock it turns 30×4 = 120°.",
+      "options": [
+        {
+          "label": "122°",
+          "is_correct": false
+        },
+        {
+          "label": "124°",
+          "is_correct": false
+        },
+        {
+          "label": "120°",
+          "is_correct": true
+        },
+        {
+          "label": "118°",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Clocks",
+      "kind": "standard",
+      "difficulty": "medium",
+      "answer_type": "single",
+      "stem": "Through how many degrees does the hour hand turn as the time changes from 8 o'clock to 11 o'clock?",
+      "explanation": "The hour hand turns 30° per hour, so from 8 to 11 o'clock it turns 30×3 = 90°.",
+      "options": [
+        {
+          "label": "90°",
+          "is_correct": true
+        },
+        {
+          "label": "94°",
+          "is_correct": false
+        },
+        {
+          "label": "88°",
+          "is_correct": false
+        },
+        {
+          "label": "92°",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Clocks",
+      "kind": "standard",
+      "difficulty": "medium",
+      "answer_type": "single",
+      "stem": "Find the angle between the hour and minute hands of a clock at 5 o'clock.",
+      "explanation": "At 5 o'clock the hands are 5 hour-marks apart = 150°.",
+      "options": [
+        {
+          "label": "152°",
+          "is_correct": false
+        },
+        {
+          "label": "154°",
+          "is_correct": false
+        },
+        {
+          "label": "150°",
+          "is_correct": true
+        },
+        {
+          "label": "148°",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Clocks",
+      "kind": "standard",
+      "difficulty": "medium",
+      "answer_type": "single",
+      "stem": "Find the (smaller) angle between the hour and minute hands of a clock at 11:10.",
+      "explanation": "Angle = |30×11 − 5.5×10| = 275°; the smaller angle is 85°.",
+      "options": [
+        {
+          "label": "89°",
+          "is_correct": false
+        },
+        {
+          "label": "85°",
+          "is_correct": true
+        },
+        {
+          "label": "87°",
+          "is_correct": false
+        },
+        {
+          "label": "83°",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Clocks",
+      "kind": "standard",
+      "difficulty": "medium",
+      "answer_type": "single",
+      "stem": "Find the (smaller) angle between the hour and minute hands of a clock at 12:06.",
+      "explanation": "Angle = |30×12 − 5.5×6| = 327°; the smaller angle is 33°.",
+      "options": [
+        {
+          "label": "35°",
+          "is_correct": false
+        },
+        {
+          "label": "32°",
+          "is_correct": false
+        },
+        {
+          "label": "34°",
+          "is_correct": false
+        },
+        {
+          "label": "33°",
+          "is_correct": true
+        }
+      ]
+    },
+    {
+      "chapter": "Clocks",
+      "kind": "standard",
+      "difficulty": "medium",
+      "answer_type": "single",
+      "stem": "Find the (smaller) angle between the hour and minute hands of a clock at 10:16.",
+      "explanation": "Angle = |30×10 − 5.5×16| = 212°; the smaller angle is 148°.",
+      "options": [
+        {
+          "label": "148°",
+          "is_correct": true
+        },
+        {
+          "label": "146°",
+          "is_correct": false
+        },
+        {
+          "label": "152°",
+          "is_correct": false
+        },
+        {
+          "label": "150°",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Clocks",
+      "kind": "standard",
+      "difficulty": "medium",
+      "answer_type": "single",
+      "stem": "Find the angle between the hour and minute hands of a clock at 7 o'clock.",
+      "explanation": "At 7 o'clock the hands are 7 hour-marks apart = 150°.",
+      "options": [
+        {
+          "label": "154°",
+          "is_correct": false
+        },
+        {
+          "label": "150°",
+          "is_correct": true
+        },
+        {
+          "label": "148°",
+          "is_correct": false
+        },
+        {
+          "label": "152°",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Clocks",
+      "kind": "standard",
+      "difficulty": "medium",
+      "answer_type": "single",
+      "stem": "Through how many degrees does the hour hand turn as the time changes from 5 o'clock to 10 o'clock?",
+      "explanation": "The hour hand turns 30° per hour, so from 5 to 10 o'clock it turns 30×5 = 150°.",
+      "options": [
+        {
+          "label": "150°",
+          "is_correct": true
+        },
+        {
+          "label": "152°",
+          "is_correct": false
+        },
+        {
+          "label": "148°",
+          "is_correct": false
+        },
+        {
+          "label": "154°",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Clocks",
+      "kind": "standard",
+      "difficulty": "medium",
+      "answer_type": "single",
+      "stem": "Find the (smaller) angle between the hour and minute hands of a clock at 11:18.",
+      "explanation": "Angle = |30×11 − 5.5×18| = 231°; the smaller angle is 129°.",
+      "options": [
+        {
+          "label": "131°",
+          "is_correct": false
+        },
+        {
+          "label": "129°",
+          "is_correct": true
+        },
+        {
+          "label": "127°",
+          "is_correct": false
+        },
+        {
+          "label": "133°",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Clocks",
+      "kind": "standard",
+      "difficulty": "medium",
+      "answer_type": "single",
+      "stem": "Find the (smaller) angle between the hour and minute hands of a clock at 9:04.",
+      "explanation": "Angle = |30×9 − 5.5×4| = 248°; the smaller angle is 112°.",
+      "options": [
+        {
+          "label": "110°",
+          "is_correct": false
+        },
+        {
+          "label": "116°",
+          "is_correct": false
+        },
+        {
+          "label": "112°",
+          "is_correct": true
+        },
+        {
+          "label": "114°",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Clocks",
+      "kind": "standard",
+      "difficulty": "medium",
+      "answer_type": "single",
+      "stem": "Find the angle between the hour and minute hands of a clock at 6 o'clock.",
+      "explanation": "At 6 o'clock the hands are 6 hour-marks apart = 180°.",
+      "options": [
+        {
+          "label": "178°",
+          "is_correct": false
+        },
+        {
+          "label": "182°",
+          "is_correct": false
+        },
+        {
+          "label": "184°",
+          "is_correct": false
+        },
+        {
+          "label": "180°",
+          "is_correct": true
+        }
+      ]
+    },
+    {
+      "chapter": "Clocks",
+      "kind": "standard",
+      "difficulty": "medium",
+      "answer_type": "single",
+      "stem": "Find the (smaller) angle between the hour and minute hands of a clock at 3:26.",
+      "explanation": "Angle = |30×3 − 5.5×26| = 53°; the smaller angle is 53°.",
+      "options": [
+        {
+          "label": "55°",
+          "is_correct": false
+        },
+        {
+          "label": "51°",
+          "is_correct": false
+        },
+        {
+          "label": "57°",
+          "is_correct": false
+        },
+        {
+          "label": "53°",
+          "is_correct": true
+        }
+      ]
+    },
+    {
+      "chapter": "Clocks",
+      "kind": "standard",
+      "difficulty": "medium",
+      "answer_type": "single",
+      "stem": "Find the angle between the hour and minute hands of a clock at 3 o'clock.",
+      "explanation": "At 3 o'clock the hands are 3 hour-marks apart = 90°.",
+      "options": [
+        {
+          "label": "92°",
+          "is_correct": false
+        },
+        {
+          "label": "90°",
+          "is_correct": true
+        },
+        {
+          "label": "94°",
+          "is_correct": false
+        },
+        {
+          "label": "88°",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Clocks",
+      "kind": "standard",
+      "difficulty": "medium",
+      "answer_type": "single",
+      "stem": "Through how many degrees does the hour hand turn as the time changes from 9 o'clock to 10 o'clock?",
+      "explanation": "The hour hand turns 30° per hour, so from 9 to 10 o'clock it turns 30×1 = 30°.",
+      "options": [
+        {
+          "label": "29°",
+          "is_correct": false
+        },
+        {
+          "label": "32°",
+          "is_correct": false
+        },
+        {
+          "label": "30°",
+          "is_correct": true
+        },
+        {
+          "label": "31°",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Clocks",
+      "kind": "standard",
+      "difficulty": "medium",
+      "answer_type": "single",
+      "stem": "Find the (smaller) angle between the hour and minute hands of a clock at 11:06.",
+      "explanation": "Angle = |30×11 − 5.5×6| = 297°; the smaller angle is 63°.",
+      "options": [
+        {
+          "label": "61°",
+          "is_correct": false
+        },
+        {
+          "label": "67°",
+          "is_correct": false
+        },
+        {
+          "label": "63°",
+          "is_correct": true
+        },
+        {
+          "label": "65°",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Clocks",
+      "kind": "standard",
+      "difficulty": "medium",
+      "answer_type": "single",
+      "stem": "Through how many degrees does the hour hand turn as the time changes from 8 o'clock to 9 o'clock?",
+      "explanation": "The hour hand turns 30° per hour, so from 8 to 9 o'clock it turns 30×1 = 30°.",
+      "options": [
+        {
+          "label": "31°",
+          "is_correct": false
+        },
+        {
+          "label": "29°",
+          "is_correct": false
+        },
+        {
+          "label": "30°",
+          "is_correct": true
+        },
+        {
+          "label": "32°",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Clocks",
+      "kind": "standard",
+      "difficulty": "medium",
+      "answer_type": "single",
+      "stem": "Through how many degrees does the hour hand turn as the time changes from 6 o'clock to 9 o'clock?",
+      "explanation": "The hour hand turns 30° per hour, so from 6 to 9 o'clock it turns 30×3 = 90°.",
+      "options": [
+        {
+          "label": "94°",
+          "is_correct": false
+        },
+        {
+          "label": "92°",
+          "is_correct": false
+        },
+        {
+          "label": "88°",
+          "is_correct": false
+        },
+        {
+          "label": "90°",
+          "is_correct": true
+        }
+      ]
+    },
+    {
+      "chapter": "Clocks",
+      "kind": "standard",
+      "difficulty": "medium",
+      "answer_type": "single",
+      "stem": "Through how many degrees does the hour hand turn as the time changes from 8 o'clock to 12 o'clock?",
+      "explanation": "The hour hand turns 30° per hour, so from 8 to 12 o'clock it turns 30×4 = 120°.",
+      "options": [
+        {
+          "label": "124°",
+          "is_correct": false
+        },
+        {
+          "label": "122°",
+          "is_correct": false
+        },
+        {
+          "label": "118°",
+          "is_correct": false
+        },
+        {
+          "label": "120°",
+          "is_correct": true
+        }
+      ]
+    },
+    {
+      "chapter": "Clocks",
+      "kind": "standard",
+      "difficulty": "medium",
+      "answer_type": "single",
+      "stem": "Find the (smaller) angle between the hour and minute hands of a clock at 1:10.",
+      "explanation": "Angle = |30×1 − 5.5×10| = 25°; the smaller angle is 25°.",
+      "options": [
+        {
+          "label": "27°",
+          "is_correct": false
+        },
+        {
+          "label": "24°",
+          "is_correct": false
+        },
+        {
+          "label": "25°",
+          "is_correct": true
+        },
+        {
+          "label": "26°",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Clocks",
+      "kind": "standard",
+      "difficulty": "medium",
+      "answer_type": "single",
+      "stem": "Find the (smaller) angle between the hour and minute hands of a clock at 6:12.",
+      "explanation": "Angle = |30×6 − 5.5×12| = 114°; the smaller angle is 114°.",
+      "options": [
+        {
+          "label": "112°",
+          "is_correct": false
+        },
+        {
+          "label": "116°",
+          "is_correct": false
+        },
+        {
+          "label": "114°",
+          "is_correct": true
+        },
+        {
+          "label": "118°",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Clocks",
+      "kind": "standard",
+      "difficulty": "medium",
+      "answer_type": "single",
+      "stem": "Through how many degrees does the hour hand turn as the time changes from 1 o'clock to 12 o'clock?",
+      "explanation": "The hour hand turns 30° per hour, so from 1 to 12 o'clock it turns 30×11 = 330°.",
+      "options": [
+        {
+          "label": "343°",
+          "is_correct": false
+        },
+        {
+          "label": "317°",
+          "is_correct": false
+        },
+        {
+          "label": "330°",
+          "is_correct": true
+        },
+        {
+          "label": "356°",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Clocks",
+      "kind": "standard",
+      "difficulty": "medium",
+      "answer_type": "single",
+      "stem": "Through how many degrees does the hour hand turn as the time changes from 9 o'clock to 11 o'clock?",
+      "explanation": "The hour hand turns 30° per hour, so from 9 to 11 o'clock it turns 30×2 = 60°.",
+      "options": [
+        {
+          "label": "60°",
+          "is_correct": true
+        },
+        {
+          "label": "58°",
+          "is_correct": false
+        },
+        {
+          "label": "64°",
+          "is_correct": false
+        },
+        {
+          "label": "62°",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Clocks",
+      "kind": "standard",
+      "difficulty": "medium",
+      "answer_type": "single",
+      "stem": "Through how many degrees does the hour hand turn as the time changes from 4 o'clock to 7 o'clock?",
+      "explanation": "The hour hand turns 30° per hour, so from 4 to 7 o'clock it turns 30×3 = 90°.",
+      "options": [
+        {
+          "label": "94°",
+          "is_correct": false
+        },
+        {
+          "label": "92°",
+          "is_correct": false
+        },
+        {
+          "label": "88°",
+          "is_correct": false
+        },
+        {
+          "label": "90°",
+          "is_correct": true
+        }
+      ]
+    },
+    {
+      "chapter": "Clocks",
+      "kind": "standard",
+      "difficulty": "medium",
+      "answer_type": "single",
+      "stem": "Through how many degrees does the hour hand turn as the time changes from 7 o'clock to 9 o'clock?",
+      "explanation": "The hour hand turns 30° per hour, so from 7 to 9 o'clock it turns 30×2 = 60°.",
+      "options": [
+        {
+          "label": "62°",
+          "is_correct": false
+        },
+        {
+          "label": "60°",
+          "is_correct": true
+        },
+        {
+          "label": "58°",
+          "is_correct": false
+        },
+        {
+          "label": "64°",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Clocks",
+      "kind": "standard",
+      "difficulty": "medium",
+      "answer_type": "single",
+      "stem": "Find the (smaller) angle between the hour and minute hands of a clock at 12:14.",
+      "explanation": "Angle = |30×12 − 5.5×14| = 283°; the smaller angle is 77°.",
+      "options": [
+        {
+          "label": "79°",
+          "is_correct": false
+        },
+        {
+          "label": "81°",
+          "is_correct": false
+        },
+        {
+          "label": "75°",
+          "is_correct": false
+        },
+        {
+          "label": "77°",
+          "is_correct": true
+        }
+      ]
+    },
+    {
+      "chapter": "Clocks",
+      "kind": "standard",
+      "difficulty": "medium",
+      "answer_type": "single",
+      "stem": "Find the (smaller) angle between the hour and minute hands of a clock at 5:18.",
+      "explanation": "Angle = |30×5 − 5.5×18| = 51°; the smaller angle is 51°.",
+      "options": [
+        {
+          "label": "55°",
+          "is_correct": false
+        },
+        {
+          "label": "51°",
+          "is_correct": true
+        },
+        {
+          "label": "49°",
+          "is_correct": false
+        },
+        {
+          "label": "53°",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Clocks",
+      "kind": "standard",
+      "difficulty": "medium",
+      "answer_type": "single",
+      "stem": "Through how many degrees does the hour hand turn as the time changes from 6 o'clock to 10 o'clock?",
+      "explanation": "The hour hand turns 30° per hour, so from 6 to 10 o'clock it turns 30×4 = 120°.",
+      "options": [
+        {
+          "label": "118°",
+          "is_correct": false
+        },
+        {
+          "label": "122°",
+          "is_correct": false
+        },
+        {
+          "label": "124°",
+          "is_correct": false
+        },
+        {
+          "label": "120°",
+          "is_correct": true
+        }
+      ]
+    },
+    {
+      "chapter": "Clocks",
+      "kind": "standard",
+      "difficulty": "medium",
+      "answer_type": "single",
+      "stem": "Find the (smaller) angle between the hour and minute hands of a clock at 9:22.",
+      "explanation": "Angle = |30×9 − 5.5×22| = 149°; the smaller angle is 149°.",
+      "options": [
+        {
+          "label": "151°",
+          "is_correct": false
+        },
+        {
+          "label": "147°",
+          "is_correct": false
+        },
+        {
+          "label": "153°",
+          "is_correct": false
+        },
+        {
+          "label": "149°",
+          "is_correct": true
+        }
+      ]
+    },
+    {
+      "chapter": "Clocks",
+      "kind": "standard",
+      "difficulty": "medium",
+      "answer_type": "single",
+      "stem": "Find the (smaller) angle between the hour and minute hands of a clock at 4:24.",
+      "explanation": "Angle = |30×4 − 5.5×24| = 12°; the smaller angle is 12°.",
+      "options": [
+        {
+          "label": "13°",
+          "is_correct": false
+        },
+        {
+          "label": "11°",
+          "is_correct": false
+        },
+        {
+          "label": "12°",
+          "is_correct": true
+        },
+        {
+          "label": "14°",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Clocks",
+      "kind": "standard",
+      "difficulty": "medium",
+      "answer_type": "single",
+      "stem": "Find the (smaller) angle between the hour and minute hands of a clock at 1:28.",
+      "explanation": "Angle = |30×1 − 5.5×28| = 124°; the smaller angle is 124°.",
+      "options": [
+        {
+          "label": "122°",
+          "is_correct": false
+        },
+        {
+          "label": "124°",
+          "is_correct": true
+        },
+        {
+          "label": "128°",
+          "is_correct": false
+        },
+        {
+          "label": "126°",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Clocks",
+      "kind": "standard",
+      "difficulty": "medium",
+      "answer_type": "single",
+      "stem": "Find the (smaller) angle between the hour and minute hands of a clock at 10:14.",
+      "explanation": "Angle = |30×10 − 5.5×14| = 223°; the smaller angle is 137°.",
+      "options": [
+        {
+          "label": "135°",
+          "is_correct": false
+        },
+        {
+          "label": "137°",
+          "is_correct": true
+        },
+        {
+          "label": "139°",
+          "is_correct": false
+        },
+        {
+          "label": "141°",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Clocks",
+      "kind": "standard",
+      "difficulty": "medium",
+      "answer_type": "single",
+      "stem": "Find the angle between the hour and minute hands of a clock at 11 o'clock.",
+      "explanation": "At 11 o'clock the hands are 11 hour-marks apart = 30°.",
+      "options": [
+        {
+          "label": "32°",
+          "is_correct": false
+        },
+        {
+          "label": "31°",
+          "is_correct": false
+        },
+        {
+          "label": "29°",
+          "is_correct": false
+        },
+        {
+          "label": "30°",
+          "is_correct": true
+        }
+      ]
+    },
+    {
+      "chapter": "Clocks",
+      "kind": "standard",
+      "difficulty": "medium",
+      "answer_type": "single",
+      "stem": "Find the (smaller) angle between the hour and minute hands of a clock at 12:28.",
+      "explanation": "Angle = |30×12 − 5.5×28| = 206°; the smaller angle is 154°.",
+      "options": [
+        {
+          "label": "154°",
+          "is_correct": true
+        },
+        {
+          "label": "152°",
+          "is_correct": false
+        },
+        {
+          "label": "156°",
+          "is_correct": false
+        },
+        {
+          "label": "158°",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Clocks",
+      "kind": "standard",
+      "difficulty": "hard",
+      "answer_type": "single",
+      "stem": "Find the reflex angle between the hour and minute hands of a clock at 2 o'clock.",
+      "explanation": "The smaller angle is 60°, so the reflex angle = 360 − 60 = 300°.",
+      "options": [
+        {
+          "label": "288°",
+          "is_correct": false
+        },
+        {
+          "label": "312°",
+          "is_correct": false
+        },
+        {
+          "label": "300°",
+          "is_correct": true
+        },
+        {
+          "label": "324°",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Clocks",
+      "kind": "standard",
+      "difficulty": "hard",
+      "answer_type": "single",
+      "stem": "Find the reflex angle between the hour and minute hands of a clock at 9 o'clock.",
+      "explanation": "The smaller angle is 90°, so the reflex angle = 360 − 90 = 270°.",
+      "options": [
+        {
+          "label": "270°",
+          "is_correct": true
+        },
+        {
+          "label": "259°",
+          "is_correct": false
+        },
+        {
+          "label": "281°",
+          "is_correct": false
+        },
+        {
+          "label": "292°",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Clocks",
+      "kind": "standard",
+      "difficulty": "hard",
+      "answer_type": "single",
+      "stem": "Find the (smaller) angle between the hour and minute hands of a clock at 2:52.",
+      "explanation": "Angle = |30×2 − 5.5×52| = 226°; the smaller angle is 134°.",
+      "options": [
+        {
+          "label": "134°",
+          "is_correct": true
+        },
+        {
+          "label": "138°",
+          "is_correct": false
+        },
+        {
+          "label": "136°",
+          "is_correct": false
+        },
+        {
+          "label": "132°",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Clocks",
+      "kind": "standard",
+      "difficulty": "hard",
+      "answer_type": "single",
+      "stem": "Find the reflex angle between the hour and minute hands of a clock at 4 o'clock.",
+      "explanation": "The smaller angle is 120°, so the reflex angle = 360 − 120 = 240°.",
+      "options": [
+        {
+          "label": "260°",
+          "is_correct": false
+        },
+        {
+          "label": "250°",
+          "is_correct": false
+        },
+        {
+          "label": "240°",
+          "is_correct": true
+        },
+        {
+          "label": "230°",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Clocks",
+      "kind": "standard",
+      "difficulty": "hard",
+      "answer_type": "single",
+      "stem": "Find the (smaller) angle between the hour and minute hands of a clock at 10:38.",
+      "explanation": "Angle = |30×10 − 5.5×38| = 91°; the smaller angle is 91°.",
+      "options": [
+        {
+          "label": "93°",
+          "is_correct": false
+        },
+        {
+          "label": "89°",
+          "is_correct": false
+        },
+        {
+          "label": "95°",
+          "is_correct": false
+        },
+        {
+          "label": "91°",
+          "is_correct": true
+        }
+      ]
+    },
+    {
+      "chapter": "Clocks",
+      "kind": "standard",
+      "difficulty": "hard",
+      "answer_type": "single",
+      "stem": "Find the (smaller) angle between the hour and minute hands of a clock at 9:56.",
+      "explanation": "Angle = |30×9 − 5.5×56| = 38°; the smaller angle is 38°.",
+      "options": [
+        {
+          "label": "39°",
+          "is_correct": false
+        },
+        {
+          "label": "40°",
+          "is_correct": false
+        },
+        {
+          "label": "37°",
+          "is_correct": false
+        },
+        {
+          "label": "38°",
+          "is_correct": true
+        }
+      ]
+    },
+    {
+      "chapter": "Clocks",
+      "kind": "standard",
+      "difficulty": "hard",
+      "answer_type": "single",
+      "stem": "Find the (smaller) angle between the hour and minute hands of a clock at 1:32.",
+      "explanation": "Angle = |30×1 − 5.5×32| = 146°; the smaller angle is 146°.",
+      "options": [
+        {
+          "label": "150°",
+          "is_correct": false
+        },
+        {
+          "label": "146°",
+          "is_correct": true
+        },
+        {
+          "label": "144°",
+          "is_correct": false
+        },
+        {
+          "label": "148°",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Clocks",
+      "kind": "standard",
+      "difficulty": "hard",
+      "answer_type": "single",
+      "stem": "Through how many degrees does the minute hand move in 12 hour(s)?",
+      "explanation": "The minute hand completes 360° each hour, so in 12 hour(s) it moves 4320°.",
+      "options": [
+        {
+          "label": "4493°",
+          "is_correct": false
+        },
+        {
+          "label": "4320°",
+          "is_correct": true
+        },
+        {
+          "label": "4666°",
+          "is_correct": false
+        },
+        {
+          "label": "4147°",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Clocks",
+      "kind": "standard",
+      "difficulty": "hard",
+      "answer_type": "single",
+      "stem": "Find the (smaller) angle between the hour and minute hands of a clock at 8:34.",
+      "explanation": "Angle = |30×8 − 5.5×34| = 53°; the smaller angle is 53°.",
+      "options": [
+        {
+          "label": "55°",
+          "is_correct": false
+        },
+        {
+          "label": "57°",
+          "is_correct": false
+        },
+        {
+          "label": "53°",
+          "is_correct": true
+        },
+        {
+          "label": "51°",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Clocks",
+      "kind": "standard",
+      "difficulty": "hard",
+      "answer_type": "single",
+      "stem": "Through how many degrees does the minute hand move in 2 hour(s)?",
+      "explanation": "The minute hand completes 360° each hour, so in 2 hour(s) it moves 720°.",
+      "options": [
+        {
+          "label": "749°",
+          "is_correct": false
+        },
+        {
+          "label": "691°",
+          "is_correct": false
+        },
+        {
+          "label": "720°",
+          "is_correct": true
+        },
+        {
+          "label": "778°",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Clocks",
+      "kind": "standard",
+      "difficulty": "hard",
+      "answer_type": "single",
+      "stem": "Find the reflex angle between the hour and minute hands of a clock at 10 o'clock.",
+      "explanation": "The smaller angle is 60°, so the reflex angle = 360 − 60 = 300°.",
+      "options": [
+        {
+          "label": "324°",
+          "is_correct": false
+        },
+        {
+          "label": "288°",
+          "is_correct": false
+        },
+        {
+          "label": "312°",
+          "is_correct": false
+        },
+        {
+          "label": "300°",
+          "is_correct": true
+        }
+      ]
+    },
+    {
+      "chapter": "Clocks",
+      "kind": "standard",
+      "difficulty": "hard",
+      "answer_type": "single",
+      "stem": "Through how many degrees does the minute hand move in 11 hour(s)?",
+      "explanation": "The minute hand completes 360° each hour, so in 11 hour(s) it moves 3960°.",
+      "options": [
+        {
+          "label": "3802°",
+          "is_correct": false
+        },
+        {
+          "label": "3960°",
+          "is_correct": true
+        },
+        {
+          "label": "4276°",
+          "is_correct": false
+        },
+        {
+          "label": "4118°",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Clocks",
+      "kind": "standard",
+      "difficulty": "hard",
+      "answer_type": "single",
+      "stem": "Find the (smaller) angle between the hour and minute hands of a clock at 6:50.",
+      "explanation": "Angle = |30×6 − 5.5×50| = 95°; the smaller angle is 95°.",
+      "options": [
+        {
+          "label": "93°",
+          "is_correct": false
+        },
+        {
+          "label": "97°",
+          "is_correct": false
+        },
+        {
+          "label": "99°",
+          "is_correct": false
+        },
+        {
+          "label": "95°",
+          "is_correct": true
+        }
+      ]
+    },
+    {
+      "chapter": "Clocks",
+      "kind": "standard",
+      "difficulty": "hard",
+      "answer_type": "single",
+      "stem": "Find the reflex angle between the hour and minute hands of a clock at 6 o'clock.",
+      "explanation": "The smaller angle is 180°, so the reflex angle = 360 − 180 = 180°.",
+      "options": [
+        {
+          "label": "184°",
+          "is_correct": false
+        },
+        {
+          "label": "178°",
+          "is_correct": false
+        },
+        {
+          "label": "182°",
+          "is_correct": false
+        },
+        {
+          "label": "180°",
+          "is_correct": true
+        }
+      ]
+    },
+    {
+      "chapter": "Clocks",
+      "kind": "standard",
+      "difficulty": "hard",
+      "answer_type": "single",
+      "stem": "Find the (smaller) angle between the hour and minute hands of a clock at 2:42.",
+      "explanation": "Angle = |30×2 − 5.5×42| = 171°; the smaller angle is 171°.",
+      "options": [
+        {
+          "label": "169°",
+          "is_correct": false
+        },
+        {
+          "label": "173°",
+          "is_correct": false
+        },
+        {
+          "label": "175°",
+          "is_correct": false
+        },
+        {
+          "label": "171°",
+          "is_correct": true
+        }
+      ]
+    },
+    {
+      "chapter": "Clocks",
+      "kind": "standard",
+      "difficulty": "hard",
+      "answer_type": "single",
+      "stem": "Through how many degrees does the minute hand move in 3 hour(s)?",
+      "explanation": "The minute hand completes 360° each hour, so in 3 hour(s) it moves 1080°.",
+      "options": [
+        {
+          "label": "1080°",
+          "is_correct": true
+        },
+        {
+          "label": "1166°",
+          "is_correct": false
+        },
+        {
+          "label": "1037°",
+          "is_correct": false
+        },
+        {
+          "label": "1123°",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Clocks",
+      "kind": "standard",
+      "difficulty": "hard",
+      "answer_type": "single",
+      "stem": "Find the (smaller) angle between the hour and minute hands of a clock at 11:56.",
+      "explanation": "Angle = |30×11 − 5.5×56| = 22°; the smaller angle is 22°.",
+      "options": [
+        {
+          "label": "21°",
+          "is_correct": false
+        },
+        {
+          "label": "23°",
+          "is_correct": false
+        },
+        {
+          "label": "24°",
+          "is_correct": false
+        },
+        {
+          "label": "22°",
+          "is_correct": true
+        }
+      ]
+    },
+    {
+      "chapter": "Clocks",
+      "kind": "standard",
+      "difficulty": "hard",
+      "answer_type": "single",
+      "stem": "Find the (smaller) angle between the hour and minute hands of a clock at 10:44.",
+      "explanation": "Angle = |30×10 − 5.5×44| = 58°; the smaller angle is 58°.",
+      "options": [
+        {
+          "label": "58°",
+          "is_correct": true
+        },
+        {
+          "label": "62°",
+          "is_correct": false
+        },
+        {
+          "label": "56°",
+          "is_correct": false
+        },
+        {
+          "label": "60°",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Clocks",
+      "kind": "standard",
+      "difficulty": "hard",
+      "answer_type": "single",
+      "stem": "Find the (smaller) angle between the hour and minute hands of a clock at 4:36.",
+      "explanation": "Angle = |30×4 − 5.5×36| = 78°; the smaller angle is 78°.",
+      "options": [
+        {
+          "label": "78°",
+          "is_correct": true
+        },
+        {
+          "label": "82°",
+          "is_correct": false
+        },
+        {
+          "label": "80°",
+          "is_correct": false
+        },
+        {
+          "label": "76°",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Clocks",
+      "kind": "standard",
+      "difficulty": "hard",
+      "answer_type": "single",
+      "stem": "Through how many degrees does the minute hand move in 10 hour(s)?",
+      "explanation": "The minute hand completes 360° each hour, so in 10 hour(s) it moves 3600°.",
+      "options": [
+        {
+          "label": "3456°",
+          "is_correct": false
+        },
+        {
+          "label": "3888°",
+          "is_correct": false
+        },
+        {
+          "label": "3744°",
+          "is_correct": false
+        },
+        {
+          "label": "3600°",
+          "is_correct": true
+        }
+      ]
+    },
+    {
+      "chapter": "Clocks",
+      "kind": "standard",
+      "difficulty": "hard",
+      "answer_type": "single",
+      "stem": "Find the reflex angle between the hour and minute hands of a clock at 3 o'clock.",
+      "explanation": "The smaller angle is 90°, so the reflex angle = 360 − 90 = 270°.",
+      "options": [
+        {
+          "label": "270°",
+          "is_correct": true
+        },
+        {
+          "label": "292°",
+          "is_correct": false
+        },
+        {
+          "label": "259°",
+          "is_correct": false
+        },
+        {
+          "label": "281°",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Clocks",
+      "kind": "standard",
+      "difficulty": "hard",
+      "answer_type": "single",
+      "stem": "Find the reflex angle between the hour and minute hands of a clock at 7 o'clock.",
+      "explanation": "The smaller angle is 150°, so the reflex angle = 360 − 150 = 210°.",
+      "options": [
+        {
+          "label": "226°",
+          "is_correct": false
+        },
+        {
+          "label": "202°",
+          "is_correct": false
+        },
+        {
+          "label": "218°",
+          "is_correct": false
+        },
+        {
+          "label": "210°",
+          "is_correct": true
+        }
+      ]
+    },
+    {
+      "chapter": "Clocks",
+      "kind": "standard",
+      "difficulty": "hard",
+      "answer_type": "single",
+      "stem": "Through how many degrees does the minute hand move in 1 hour(s)?",
+      "explanation": "The minute hand completes 360° each hour, so in 1 hour(s) it moves 360°.",
+      "options": [
+        {
+          "label": "360°",
+          "is_correct": true
+        },
+        {
+          "label": "388°",
+          "is_correct": false
+        },
+        {
+          "label": "374°",
+          "is_correct": false
+        },
+        {
+          "label": "346°",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Clocks",
+      "kind": "standard",
+      "difficulty": "hard",
+      "answer_type": "single",
+      "stem": "Find the reflex angle between the hour and minute hands of a clock at 8 o'clock.",
+      "explanation": "The smaller angle is 120°, so the reflex angle = 360 − 120 = 240°.",
+      "options": [
+        {
+          "label": "260°",
+          "is_correct": false
+        },
+        {
+          "label": "240°",
+          "is_correct": true
+        },
+        {
+          "label": "250°",
+          "is_correct": false
+        },
+        {
+          "label": "230°",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Clocks",
+      "kind": "standard",
+      "difficulty": "hard",
+      "answer_type": "single",
+      "stem": "Find the (smaller) angle between the hour and minute hands of a clock at 10:52.",
+      "explanation": "Angle = |30×10 − 5.5×52| = 14°; the smaller angle is 14°.",
+      "options": [
+        {
+          "label": "16°",
+          "is_correct": false
+        },
+        {
+          "label": "13°",
+          "is_correct": false
+        },
+        {
+          "label": "15°",
+          "is_correct": false
+        },
+        {
+          "label": "14°",
+          "is_correct": true
+        }
+      ]
+    },
+    {
+      "chapter": "Clocks",
+      "kind": "standard",
+      "difficulty": "hard",
+      "answer_type": "single",
+      "stem": "Find the (smaller) angle between the hour and minute hands of a clock at 10:48.",
+      "explanation": "Angle = |30×10 − 5.5×48| = 36°; the smaller angle is 36°.",
+      "options": [
+        {
+          "label": "35°",
+          "is_correct": false
+        },
+        {
+          "label": "36°",
+          "is_correct": true
+        },
+        {
+          "label": "37°",
+          "is_correct": false
+        },
+        {
+          "label": "38°",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Clocks",
+      "kind": "standard",
+      "difficulty": "hard",
+      "answer_type": "single",
+      "stem": "Find the (smaller) angle between the hour and minute hands of a clock at 10:54.",
+      "explanation": "Angle = |30×10 − 5.5×54| = 3°; the smaller angle is 3°.",
+      "options": [
+        {
+          "label": "4°",
+          "is_correct": false
+        },
+        {
+          "label": "5°",
+          "is_correct": false
+        },
+        {
+          "label": "3°",
+          "is_correct": true
+        },
+        {
+          "label": "2°",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Clocks",
+      "kind": "standard",
+      "difficulty": "hard",
+      "answer_type": "single",
+      "stem": "Find the (smaller) angle between the hour and minute hands of a clock at 1:48.",
+      "explanation": "Angle = |30×1 − 5.5×48| = 234°; the smaller angle is 126°.",
+      "options": [
+        {
+          "label": "124°",
+          "is_correct": false
+        },
+        {
+          "label": "130°",
+          "is_correct": false
+        },
+        {
+          "label": "128°",
+          "is_correct": false
+        },
+        {
+          "label": "126°",
+          "is_correct": true
+        }
+      ]
+    },
+    {
+      "chapter": "Clocks",
+      "kind": "standard",
+      "difficulty": "hard",
+      "answer_type": "single",
+      "stem": "Through how many degrees does the minute hand move in 14 hour(s)?",
+      "explanation": "The minute hand completes 360° each hour, so in 14 hour(s) it moves 5040°.",
+      "options": [
+        {
+          "label": "5040°",
+          "is_correct": true
+        },
+        {
+          "label": "5242°",
+          "is_correct": false
+        },
+        {
+          "label": "4838°",
+          "is_correct": false
+        },
+        {
+          "label": "5444°",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Clocks",
+      "kind": "standard",
+      "difficulty": "hard",
+      "answer_type": "single",
+      "stem": "Through how many degrees does the minute hand move in 4 hour(s)?",
+      "explanation": "The minute hand completes 360° each hour, so in 4 hour(s) it moves 1440°.",
+      "options": [
+        {
+          "label": "1382°",
+          "is_correct": false
+        },
+        {
+          "label": "1440°",
+          "is_correct": true
+        },
+        {
+          "label": "1498°",
+          "is_correct": false
+        },
+        {
+          "label": "1556°",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Clocks",
+      "kind": "standard",
+      "difficulty": "hard",
+      "answer_type": "single",
+      "stem": "Find the (smaller) angle between the hour and minute hands of a clock at 9:44.",
+      "explanation": "Angle = |30×9 − 5.5×44| = 28°; the smaller angle is 28°.",
+      "options": [
+        {
+          "label": "30°",
+          "is_correct": false
+        },
+        {
+          "label": "27°",
+          "is_correct": false
+        },
+        {
+          "label": "28°",
+          "is_correct": true
+        },
+        {
+          "label": "29°",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Clocks",
+      "kind": "standard",
+      "difficulty": "hard",
+      "answer_type": "single",
+      "stem": "Find the (smaller) angle between the hour and minute hands of a clock at 10:36.",
+      "explanation": "Angle = |30×10 − 5.5×36| = 102°; the smaller angle is 102°.",
+      "options": [
+        {
+          "label": "106°",
+          "is_correct": false
+        },
+        {
+          "label": "102°",
+          "is_correct": true
+        },
+        {
+          "label": "104°",
+          "is_correct": false
+        },
+        {
+          "label": "100°",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Clocks",
+      "kind": "standard",
+      "difficulty": "hard",
+      "answer_type": "single",
+      "stem": "Find the reflex angle between the hour and minute hands of a clock at 11 o'clock.",
+      "explanation": "The smaller angle is 30°, so the reflex angle = 360 − 30 = 330°.",
+      "options": [
+        {
+          "label": "317°",
+          "is_correct": false
+        },
+        {
+          "label": "343°",
+          "is_correct": false
+        },
+        {
+          "label": "356°",
+          "is_correct": false
+        },
+        {
+          "label": "330°",
+          "is_correct": true
+        }
+      ]
+    },
+    {
+      "chapter": "Clocks",
+      "kind": "standard",
+      "difficulty": "hard",
+      "answer_type": "single",
+      "stem": "Through how many degrees does the minute hand move in 7 hour(s)?",
+      "explanation": "The minute hand completes 360° each hour, so in 7 hour(s) it moves 2520°.",
+      "options": [
+        {
+          "label": "2722°",
+          "is_correct": false
+        },
+        {
+          "label": "2621°",
+          "is_correct": false
+        },
+        {
+          "label": "2419°",
+          "is_correct": false
+        },
+        {
+          "label": "2520°",
+          "is_correct": true
+        }
+      ]
+    },
+    {
+      "chapter": "Clocks",
+      "kind": "standard",
+      "difficulty": "hard",
+      "answer_type": "single",
+      "stem": "Find the (smaller) angle between the hour and minute hands of a clock at 2:30.",
+      "explanation": "Angle = |30×2 − 5.5×30| = 105°; the smaller angle is 105°.",
+      "options": [
+        {
+          "label": "105°",
+          "is_correct": true
+        },
+        {
+          "label": "103°",
+          "is_correct": false
+        },
+        {
+          "label": "109°",
+          "is_correct": false
+        },
+        {
+          "label": "107°",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Clocks",
+      "kind": "standard",
+      "difficulty": "hard",
+      "answer_type": "single",
+      "stem": "Find the (smaller) angle between the hour and minute hands of a clock at 2:46.",
+      "explanation": "Angle = |30×2 − 5.5×46| = 193°; the smaller angle is 167°.",
+      "options": [
+        {
+          "label": "169°",
+          "is_correct": false
+        },
+        {
+          "label": "167°",
+          "is_correct": true
+        },
+        {
+          "label": "165°",
+          "is_correct": false
+        },
+        {
+          "label": "171°",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Clocks",
+      "kind": "standard",
+      "difficulty": "hard",
+      "answer_type": "single",
+      "stem": "Find the reflex angle between the hour and minute hands of a clock at 1 o'clock.",
+      "explanation": "The smaller angle is 30°, so the reflex angle = 360 − 30 = 330°.",
+      "options": [
+        {
+          "label": "330°",
+          "is_correct": true
+        },
+        {
+          "label": "356°",
+          "is_correct": false
+        },
+        {
+          "label": "343°",
+          "is_correct": false
+        },
+        {
+          "label": "317°",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Clocks",
+      "kind": "standard",
+      "difficulty": "hard",
+      "answer_type": "single",
+      "stem": "Find the (smaller) angle between the hour and minute hands of a clock at 2:34.",
+      "explanation": "Angle = |30×2 − 5.5×34| = 127°; the smaller angle is 127°.",
+      "options": [
+        {
+          "label": "129°",
+          "is_correct": false
+        },
+        {
+          "label": "125°",
+          "is_correct": false
+        },
+        {
+          "label": "131°",
+          "is_correct": false
+        },
+        {
+          "label": "127°",
+          "is_correct": true
+        }
+      ]
+    },
+    {
+      "chapter": "Clocks",
+      "kind": "standard",
+      "difficulty": "hard",
+      "answer_type": "single",
+      "stem": "Find the (smaller) angle between the hour and minute hands of a clock at 1:40.",
+      "explanation": "Angle = |30×1 − 5.5×40| = 190°; the smaller angle is 170°.",
+      "options": [
+        {
+          "label": "170°",
+          "is_correct": true
+        },
+        {
+          "label": "172°",
+          "is_correct": false
+        },
+        {
+          "label": "168°",
+          "is_correct": false
+        },
+        {
+          "label": "174°",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Clocks",
+      "kind": "standard",
+      "difficulty": "hard",
+      "answer_type": "single",
+      "stem": "Find the (smaller) angle between the hour and minute hands of a clock at 9:46.",
+      "explanation": "Angle = |30×9 − 5.5×46| = 17°; the smaller angle is 17°.",
+      "options": [
+        {
+          "label": "17°",
+          "is_correct": true
+        },
+        {
+          "label": "19°",
+          "is_correct": false
+        },
+        {
+          "label": "18°",
+          "is_correct": false
+        },
+        {
+          "label": "16°",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Clocks",
+      "kind": "standard",
+      "difficulty": "hard",
+      "answer_type": "single",
+      "stem": "Find the (smaller) angle between the hour and minute hands of a clock at 7:32.",
+      "explanation": "Angle = |30×7 − 5.5×32| = 34°; the smaller angle is 34°.",
+      "options": [
+        {
+          "label": "36°",
+          "is_correct": false
+        },
+        {
+          "label": "33°",
+          "is_correct": false
+        },
+        {
+          "label": "35°",
+          "is_correct": false
+        },
+        {
+          "label": "34°",
+          "is_correct": true
+        }
+      ]
+    },
+    {
+      "chapter": "Clocks",
+      "kind": "standard",
+      "difficulty": "hard",
+      "answer_type": "single",
+      "stem": "Find the (smaller) angle between the hour and minute hands of a clock at 2:56.",
+      "explanation": "Angle = |30×2 − 5.5×56| = 248°; the smaller angle is 112°.",
+      "options": [
+        {
+          "label": "110°",
+          "is_correct": false
+        },
+        {
+          "label": "116°",
+          "is_correct": false
+        },
+        {
+          "label": "114°",
+          "is_correct": false
+        },
+        {
+          "label": "112°",
+          "is_correct": true
+        }
+      ]
+    },
+    {
+      "chapter": "Clocks",
+      "kind": "standard",
+      "difficulty": "hard",
+      "answer_type": "single",
+      "stem": "Find the (smaller) angle between the hour and minute hands of a clock at 12:30.",
+      "explanation": "Angle = |30×12 − 5.5×30| = 195°; the smaller angle is 165°.",
+      "options": [
+        {
+          "label": "163°",
+          "is_correct": false
+        },
+        {
+          "label": "165°",
+          "is_correct": true
+        },
+        {
+          "label": "169°",
+          "is_correct": false
+        },
+        {
+          "label": "167°",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Clocks",
+      "kind": "standard",
+      "difficulty": "hard",
+      "answer_type": "single",
+      "stem": "Through how many degrees does the minute hand move in 5 hour(s)?",
+      "explanation": "The minute hand completes 360° each hour, so in 5 hour(s) it moves 1800°.",
+      "options": [
+        {
+          "label": "1800°",
+          "is_correct": true
+        },
+        {
+          "label": "1872°",
+          "is_correct": false
+        },
+        {
+          "label": "1944°",
+          "is_correct": false
+        },
+        {
+          "label": "1728°",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Clocks",
+      "kind": "standard",
+      "difficulty": "hard",
+      "answer_type": "single",
+      "stem": "Find the (smaller) angle between the hour and minute hands of a clock at 11:50.",
+      "explanation": "Angle = |30×11 − 5.5×50| = 55°; the smaller angle is 55°.",
+      "options": [
+        {
+          "label": "57°",
+          "is_correct": false
+        },
+        {
+          "label": "59°",
+          "is_correct": false
+        },
+        {
+          "label": "55°",
+          "is_correct": true
+        },
+        {
+          "label": "53°",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Clocks",
+      "kind": "standard",
+      "difficulty": "hard",
+      "answer_type": "single",
+      "stem": "Through how many degrees does the minute hand move in 13 hour(s)?",
+      "explanation": "The minute hand completes 360° each hour, so in 13 hour(s) it moves 4680°.",
+      "options": [
+        {
+          "label": "5054°",
+          "is_correct": false
+        },
+        {
+          "label": "4680°",
+          "is_correct": true
+        },
+        {
+          "label": "4493°",
+          "is_correct": false
+        },
+        {
+          "label": "4867°",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Clocks",
+      "kind": "standard",
+      "difficulty": "hard",
+      "answer_type": "single",
+      "stem": "Find the (smaller) angle between the hour and minute hands of a clock at 12:54.",
+      "explanation": "Angle = |30×12 − 5.5×54| = 63°; the smaller angle is 63°.",
+      "options": [
+        {
+          "label": "63°",
+          "is_correct": true
+        },
+        {
+          "label": "61°",
+          "is_correct": false
+        },
+        {
+          "label": "67°",
+          "is_correct": false
+        },
+        {
+          "label": "65°",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Clocks",
+      "kind": "standard",
+      "difficulty": "hard",
+      "answer_type": "single",
+      "stem": "Find the (smaller) angle between the hour and minute hands of a clock at 8:44.",
+      "explanation": "Angle = |30×8 − 5.5×44| = 2°; the smaller angle is 2°.",
+      "options": [
+        {
+          "label": "3°",
+          "is_correct": false
+        },
+        {
+          "label": "1°",
+          "is_correct": false
+        },
+        {
+          "label": "2°",
+          "is_correct": true
+        },
+        {
+          "label": "4°",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Clocks",
+      "kind": "standard",
+      "difficulty": "hard",
+      "answer_type": "single",
+      "stem": "Find the (smaller) angle between the hour and minute hands of a clock at 9:34.",
+      "explanation": "Angle = |30×9 − 5.5×34| = 83°; the smaller angle is 83°.",
+      "options": [
+        {
+          "label": "83°",
+          "is_correct": true
+        },
+        {
+          "label": "85°",
+          "is_correct": false
+        },
+        {
+          "label": "87°",
+          "is_correct": false
+        },
+        {
+          "label": "81°",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Clocks",
+      "kind": "standard",
+      "difficulty": "hard",
+      "answer_type": "single",
+      "stem": "Find the (smaller) angle between the hour and minute hands of a clock at 3:58.",
+      "explanation": "Angle = |30×3 − 5.5×58| = 229°; the smaller angle is 131°.",
+      "options": [
+        {
+          "label": "131°",
+          "is_correct": true
+        },
+        {
+          "label": "129°",
+          "is_correct": false
+        },
+        {
+          "label": "135°",
+          "is_correct": false
+        },
+        {
+          "label": "133°",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Clocks",
+      "kind": "standard",
+      "difficulty": "very_hard",
+      "answer_type": "single",
+      "stem": "Find the reflex angle between the hour and minute hands of a clock at 12:10.",
+      "explanation": "The smaller angle is 55°, so the reflex angle = 360 − 55 = 305°.",
+      "options": [
+        {
+          "label": "305°",
+          "is_correct": true
+        },
+        {
+          "label": "329°",
+          "is_correct": false
+        },
+        {
+          "label": "317°",
+          "is_correct": false
+        },
+        {
+          "label": "293°",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Clocks",
+      "kind": "standard",
+      "difficulty": "very_hard",
+      "answer_type": "single",
+      "stem": "Find the reflex angle between the hour and minute hands of a clock at 5:58.",
+      "explanation": "The smaller angle is 169°, so the reflex angle = 360 − 169 = 191°.",
+      "options": [
+        {
+          "label": "189°",
+          "is_correct": false
+        },
+        {
+          "label": "193°",
+          "is_correct": false
+        },
+        {
+          "label": "195°",
+          "is_correct": false
+        },
+        {
+          "label": "191°",
+          "is_correct": true
+        }
+      ]
+    },
+    {
+      "chapter": "Clocks",
+      "kind": "standard",
+      "difficulty": "very_hard",
+      "answer_type": "single",
+      "stem": "Find the reflex angle between the hour and minute hands of a clock at 5:46.",
+      "explanation": "The smaller angle is 103°, so the reflex angle = 360 − 103 = 257°.",
+      "options": [
+        {
+          "label": "257°",
+          "is_correct": true
+        },
+        {
+          "label": "267°",
+          "is_correct": false
+        },
+        {
+          "label": "247°",
+          "is_correct": false
+        },
+        {
+          "label": "277°",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Clocks",
+      "kind": "standard",
+      "difficulty": "very_hard",
+      "answer_type": "single",
+      "stem": "Find the reflex angle between the hour and minute hands of a clock at 9:50.",
+      "explanation": "The smaller angle is 5°, so the reflex angle = 360 − 5 = 355°.",
+      "options": [
+        {
+          "label": "341°",
+          "is_correct": false
+        },
+        {
+          "label": "355°",
+          "is_correct": true
+        },
+        {
+          "label": "383°",
+          "is_correct": false
+        },
+        {
+          "label": "369°",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Clocks",
+      "kind": "standard",
+      "difficulty": "very_hard",
+      "answer_type": "single",
+      "stem": "Find the reflex angle between the hour and minute hands of a clock at 9:32.",
+      "explanation": "The smaller angle is 94°, so the reflex angle = 360 − 94 = 266°.",
+      "options": [
+        {
+          "label": "288°",
+          "is_correct": false
+        },
+        {
+          "label": "266°",
+          "is_correct": true
+        },
+        {
+          "label": "255°",
+          "is_correct": false
+        },
+        {
+          "label": "277°",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Clocks",
+      "kind": "standard",
+      "difficulty": "very_hard",
+      "answer_type": "single",
+      "stem": "Find the reflex angle between the hour and minute hands of a clock at 12:20.",
+      "explanation": "The smaller angle is 110°, so the reflex angle = 360 − 110 = 250°.",
+      "options": [
+        {
+          "label": "250°",
+          "is_correct": true
+        },
+        {
+          "label": "270°",
+          "is_correct": false
+        },
+        {
+          "label": "260°",
+          "is_correct": false
+        },
+        {
+          "label": "240°",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Clocks",
+      "kind": "standard",
+      "difficulty": "very_hard",
+      "answer_type": "single",
+      "stem": "Find the reflex angle between the hour and minute hands of a clock at 1:50.",
+      "explanation": "The smaller angle is 115°, so the reflex angle = 360 − 115 = 245°.",
+      "options": [
+        {
+          "label": "245°",
+          "is_correct": true
+        },
+        {
+          "label": "255°",
+          "is_correct": false
+        },
+        {
+          "label": "265°",
+          "is_correct": false
+        },
+        {
+          "label": "235°",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Clocks",
+      "kind": "standard",
+      "difficulty": "very_hard",
+      "answer_type": "single",
+      "stem": "Find the reflex angle between the hour and minute hands of a clock at 4:54.",
+      "explanation": "The smaller angle is 177°, so the reflex angle = 360 − 177 = 183°.",
+      "options": [
+        {
+          "label": "185°",
+          "is_correct": false
+        },
+        {
+          "label": "187°",
+          "is_correct": false
+        },
+        {
+          "label": "183°",
+          "is_correct": true
+        },
+        {
+          "label": "181°",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Clocks",
+      "kind": "standard",
+      "difficulty": "very_hard",
+      "answer_type": "single",
+      "stem": "Find the reflex angle between the hour and minute hands of a clock at 1:46.",
+      "explanation": "The smaller angle is 137°, so the reflex angle = 360 − 137 = 223°.",
+      "options": [
+        {
+          "label": "214°",
+          "is_correct": false
+        },
+        {
+          "label": "232°",
+          "is_correct": false
+        },
+        {
+          "label": "223°",
+          "is_correct": true
+        },
+        {
+          "label": "241°",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Clocks",
+      "kind": "standard",
+      "difficulty": "very_hard",
+      "answer_type": "single",
+      "stem": "Find the reflex angle between the hour and minute hands of a clock at 12:32.",
+      "explanation": "The smaller angle is 176°, so the reflex angle = 360 − 176 = 184°.",
+      "options": [
+        {
+          "label": "184°",
+          "is_correct": true
+        },
+        {
+          "label": "182°",
+          "is_correct": false
+        },
+        {
+          "label": "188°",
+          "is_correct": false
+        },
+        {
+          "label": "186°",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Clocks",
+      "kind": "standard",
+      "difficulty": "very_hard",
+      "answer_type": "single",
+      "stem": "Find the reflex angle between the hour and minute hands of a clock at 1:52.",
+      "explanation": "The smaller angle is 104°, so the reflex angle = 360 − 104 = 256°.",
+      "options": [
+        {
+          "label": "266°",
+          "is_correct": false
+        },
+        {
+          "label": "276°",
+          "is_correct": false
+        },
+        {
+          "label": "256°",
+          "is_correct": true
+        },
+        {
+          "label": "246°",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Clocks",
+      "kind": "standard",
+      "difficulty": "very_hard",
+      "answer_type": "single",
+      "stem": "Find the reflex angle between the hour and minute hands of a clock at 9:18.",
+      "explanation": "The smaller angle is 171°, so the reflex angle = 360 − 171 = 189°.",
+      "options": [
+        {
+          "label": "193°",
+          "is_correct": false
+        },
+        {
+          "label": "189°",
+          "is_correct": true
+        },
+        {
+          "label": "191°",
+          "is_correct": false
+        },
+        {
+          "label": "187°",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Clocks",
+      "kind": "standard",
+      "difficulty": "very_hard",
+      "answer_type": "single",
+      "stem": "Find the reflex angle between the hour and minute hands of a clock at 11:52.",
+      "explanation": "The smaller angle is 44°, so the reflex angle = 360 − 44 = 316°.",
+      "options": [
+        {
+          "label": "303°",
+          "is_correct": false
+        },
+        {
+          "label": "342°",
+          "is_correct": false
+        },
+        {
+          "label": "316°",
+          "is_correct": true
+        },
+        {
+          "label": "329°",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Clocks",
+      "kind": "standard",
+      "difficulty": "very_hard",
+      "answer_type": "single",
+      "stem": "Find the reflex angle between the hour and minute hands of a clock at 12:28.",
+      "explanation": "The smaller angle is 154°, so the reflex angle = 360 − 154 = 206°.",
+      "options": [
+        {
+          "label": "214°",
+          "is_correct": false
+        },
+        {
+          "label": "206°",
+          "is_correct": true
+        },
+        {
+          "label": "222°",
+          "is_correct": false
+        },
+        {
+          "label": "198°",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Clocks",
+      "kind": "standard",
+      "difficulty": "very_hard",
+      "answer_type": "single",
+      "stem": "Find the reflex angle between the hour and minute hands of a clock at 3:32.",
+      "explanation": "The smaller angle is 86°, so the reflex angle = 360 − 86 = 274°.",
+      "options": [
+        {
+          "label": "274°",
+          "is_correct": true
+        },
+        {
+          "label": "263°",
+          "is_correct": false
+        },
+        {
+          "label": "285°",
+          "is_correct": false
+        },
+        {
+          "label": "296°",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Clocks",
+      "kind": "standard",
+      "difficulty": "very_hard",
+      "answer_type": "single",
+      "stem": "Find the reflex angle between the hour and minute hands of a clock at 11:36.",
+      "explanation": "The smaller angle is 132°, so the reflex angle = 360 − 132 = 228°.",
+      "options": [
+        {
+          "label": "237°",
+          "is_correct": false
+        },
+        {
+          "label": "228°",
+          "is_correct": true
+        },
+        {
+          "label": "219°",
+          "is_correct": false
+        },
+        {
+          "label": "246°",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Clocks",
+      "kind": "standard",
+      "difficulty": "very_hard",
+      "answer_type": "single",
+      "stem": "Find the reflex angle between the hour and minute hands of a clock at 9:44.",
+      "explanation": "The smaller angle is 28°, so the reflex angle = 360 − 28 = 332°.",
+      "options": [
+        {
+          "label": "358°",
+          "is_correct": false
+        },
+        {
+          "label": "332°",
+          "is_correct": true
+        },
+        {
+          "label": "345°",
+          "is_correct": false
+        },
+        {
+          "label": "319°",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Clocks",
+      "kind": "standard",
+      "difficulty": "very_hard",
+      "answer_type": "single",
+      "stem": "Find the reflex angle between the hour and minute hands of a clock at 5:38.",
+      "explanation": "The smaller angle is 59°, so the reflex angle = 360 − 59 = 301°.",
+      "options": [
+        {
+          "label": "325°",
+          "is_correct": false
+        },
+        {
+          "label": "301°",
+          "is_correct": true
+        },
+        {
+          "label": "289°",
+          "is_correct": false
+        },
+        {
+          "label": "313°",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Clocks",
+      "kind": "standard",
+      "difficulty": "very_hard",
+      "answer_type": "single",
+      "stem": "Find the reflex angle between the hour and minute hands of a clock at 4:48.",
+      "explanation": "The smaller angle is 144°, so the reflex angle = 360 − 144 = 216°.",
+      "options": [
+        {
+          "label": "216°",
+          "is_correct": true
+        },
+        {
+          "label": "234°",
+          "is_correct": false
+        },
+        {
+          "label": "225°",
+          "is_correct": false
+        },
+        {
+          "label": "207°",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Clocks",
+      "kind": "standard",
+      "difficulty": "very_hard",
+      "answer_type": "single",
+      "stem": "Find the reflex angle between the hour and minute hands of a clock at 8:50.",
+      "explanation": "The smaller angle is 35°, so the reflex angle = 360 − 35 = 325°.",
+      "options": [
+        {
+          "label": "325°",
+          "is_correct": true
+        },
+        {
+          "label": "351°",
+          "is_correct": false
+        },
+        {
+          "label": "312°",
+          "is_correct": false
+        },
+        {
+          "label": "338°",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Clocks",
+      "kind": "standard",
+      "difficulty": "very_hard",
+      "answer_type": "single",
+      "stem": "Find the reflex angle between the hour and minute hands of a clock at 6:28.",
+      "explanation": "The smaller angle is 26°, so the reflex angle = 360 − 26 = 334°.",
+      "options": [
+        {
+          "label": "334°",
+          "is_correct": true
+        },
+        {
+          "label": "360°",
+          "is_correct": false
+        },
+        {
+          "label": "321°",
+          "is_correct": false
+        },
+        {
+          "label": "347°",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Clocks",
+      "kind": "standard",
+      "difficulty": "very_hard",
+      "answer_type": "single",
+      "stem": "Find the reflex angle between the hour and minute hands of a clock at 10:44.",
+      "explanation": "The smaller angle is 58°, so the reflex angle = 360 − 58 = 302°.",
+      "options": [
+        {
+          "label": "290°",
+          "is_correct": false
+        },
+        {
+          "label": "326°",
+          "is_correct": false
+        },
+        {
+          "label": "302°",
+          "is_correct": true
+        },
+        {
+          "label": "314°",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Clocks",
+      "kind": "standard",
+      "difficulty": "very_hard",
+      "answer_type": "single",
+      "stem": "Find the reflex angle between the hour and minute hands of a clock at 5:24.",
+      "explanation": "The smaller angle is 18°, so the reflex angle = 360 − 18 = 342°.",
+      "options": [
+        {
+          "label": "328°",
+          "is_correct": false
+        },
+        {
+          "label": "342°",
+          "is_correct": true
+        },
+        {
+          "label": "356°",
+          "is_correct": false
+        },
+        {
+          "label": "370°",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Clocks",
+      "kind": "standard",
+      "difficulty": "very_hard",
+      "answer_type": "single",
+      "stem": "Find the reflex angle between the hour and minute hands of a clock at 7:44.",
+      "explanation": "The smaller angle is 32°, so the reflex angle = 360 − 32 = 328°.",
+      "options": [
+        {
+          "label": "341°",
+          "is_correct": false
+        },
+        {
+          "label": "315°",
+          "is_correct": false
+        },
+        {
+          "label": "328°",
+          "is_correct": true
+        },
+        {
+          "label": "354°",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Clocks",
+      "kind": "standard",
+      "difficulty": "very_hard",
+      "answer_type": "single",
+      "stem": "Find the reflex angle between the hour and minute hands of a clock at 8:48.",
+      "explanation": "The smaller angle is 24°, so the reflex angle = 360 − 24 = 336°.",
+      "options": [
+        {
+          "label": "336°",
+          "is_correct": true
+        },
+        {
+          "label": "349°",
+          "is_correct": false
+        },
+        {
+          "label": "362°",
+          "is_correct": false
+        },
+        {
+          "label": "323°",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Clocks",
+      "kind": "standard",
+      "difficulty": "very_hard",
+      "answer_type": "single",
+      "stem": "Find the reflex angle between the hour and minute hands of a clock at 6:16.",
+      "explanation": "The smaller angle is 92°, so the reflex angle = 360 − 92 = 268°.",
+      "options": [
+        {
+          "label": "279°",
+          "is_correct": false
+        },
+        {
+          "label": "257°",
+          "is_correct": false
+        },
+        {
+          "label": "268°",
+          "is_correct": true
+        },
+        {
+          "label": "290°",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Clocks",
+      "kind": "standard",
+      "difficulty": "very_hard",
+      "answer_type": "single",
+      "stem": "Find the reflex angle between the hour and minute hands of a clock at 7:10.",
+      "explanation": "The smaller angle is 155°, so the reflex angle = 360 − 155 = 205°.",
+      "options": [
+        {
+          "label": "197°",
+          "is_correct": false
+        },
+        {
+          "label": "213°",
+          "is_correct": false
+        },
+        {
+          "label": "205°",
+          "is_correct": true
+        },
+        {
+          "label": "221°",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Clocks",
+      "kind": "standard",
+      "difficulty": "very_hard",
+      "answer_type": "single",
+      "stem": "Find the reflex angle between the hour and minute hands of a clock at 11:26.",
+      "explanation": "The smaller angle is 173°, so the reflex angle = 360 − 173 = 187°.",
+      "options": [
+        {
+          "label": "191°",
+          "is_correct": false
+        },
+        {
+          "label": "187°",
+          "is_correct": true
+        },
+        {
+          "label": "185°",
+          "is_correct": false
+        },
+        {
+          "label": "189°",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Clocks",
+      "kind": "standard",
+      "difficulty": "very_hard",
+      "answer_type": "single",
+      "stem": "Find the reflex angle between the hour and minute hands of a clock at 10:48.",
+      "explanation": "The smaller angle is 36°, so the reflex angle = 360 − 36 = 324°.",
+      "options": [
+        {
+          "label": "311°",
+          "is_correct": false
+        },
+        {
+          "label": "350°",
+          "is_correct": false
+        },
+        {
+          "label": "337°",
+          "is_correct": false
+        },
+        {
+          "label": "324°",
+          "is_correct": true
+        }
+      ]
+    },
+    {
+      "chapter": "Clocks",
+      "kind": "standard",
+      "difficulty": "very_hard",
+      "answer_type": "single",
+      "stem": "Find the reflex angle between the hour and minute hands of a clock at 10:08.",
+      "explanation": "The smaller angle is 104°, so the reflex angle = 360 − 104 = 256°.",
+      "options": [
+        {
+          "label": "266°",
+          "is_correct": false
+        },
+        {
+          "label": "246°",
+          "is_correct": false
+        },
+        {
+          "label": "256°",
+          "is_correct": true
+        },
+        {
+          "label": "276°",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Clocks",
+      "kind": "standard",
+      "difficulty": "very_hard",
+      "answer_type": "single",
+      "stem": "Find the reflex angle between the hour and minute hands of a clock at 11:22.",
+      "explanation": "The smaller angle is 151°, so the reflex angle = 360 − 151 = 209°.",
+      "options": [
+        {
+          "label": "225°",
+          "is_correct": false
+        },
+        {
+          "label": "217°",
+          "is_correct": false
+        },
+        {
+          "label": "201°",
+          "is_correct": false
+        },
+        {
+          "label": "209°",
+          "is_correct": true
+        }
+      ]
+    },
+    {
+      "chapter": "Clocks",
+      "kind": "standard",
+      "difficulty": "very_hard",
+      "answer_type": "single",
+      "stem": "Find the reflex angle between the hour and minute hands of a clock at 5:04.",
+      "explanation": "The smaller angle is 128°, so the reflex angle = 360 − 128 = 232°.",
+      "options": [
+        {
+          "label": "250°",
+          "is_correct": false
+        },
+        {
+          "label": "232°",
+          "is_correct": true
+        },
+        {
+          "label": "223°",
+          "is_correct": false
+        },
+        {
+          "label": "241°",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Clocks",
+      "kind": "standard",
+      "difficulty": "very_hard",
+      "answer_type": "single",
+      "stem": "Find the reflex angle between the hour and minute hands of a clock at 3:38.",
+      "explanation": "The smaller angle is 119°, so the reflex angle = 360 − 119 = 241°.",
+      "options": [
+        {
+          "label": "241°",
+          "is_correct": true
+        },
+        {
+          "label": "251°",
+          "is_correct": false
+        },
+        {
+          "label": "261°",
+          "is_correct": false
+        },
+        {
+          "label": "231°",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Clocks",
+      "kind": "standard",
+      "difficulty": "very_hard",
+      "answer_type": "single",
+      "stem": "Find the reflex angle between the hour and minute hands of a clock at 5:06.",
+      "explanation": "The smaller angle is 117°, so the reflex angle = 360 − 117 = 243°.",
+      "options": [
+        {
+          "label": "263°",
+          "is_correct": false
+        },
+        {
+          "label": "243°",
+          "is_correct": true
+        },
+        {
+          "label": "233°",
+          "is_correct": false
+        },
+        {
+          "label": "253°",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Clocks",
+      "kind": "standard",
+      "difficulty": "very_hard",
+      "answer_type": "single",
+      "stem": "Find the reflex angle between the hour and minute hands of a clock at 3:20.",
+      "explanation": "The smaller angle is 20°, so the reflex angle = 360 − 20 = 340°.",
+      "options": [
+        {
+          "label": "354°",
+          "is_correct": false
+        },
+        {
+          "label": "326°",
+          "is_correct": false
+        },
+        {
+          "label": "340°",
+          "is_correct": true
+        },
+        {
+          "label": "368°",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Clocks",
+      "kind": "standard",
+      "difficulty": "very_hard",
+      "answer_type": "single",
+      "stem": "Find the reflex angle between the hour and minute hands of a clock at 4:16.",
+      "explanation": "The smaller angle is 32°, so the reflex angle = 360 − 32 = 328°.",
+      "options": [
+        {
+          "label": "315°",
+          "is_correct": false
+        },
+        {
+          "label": "354°",
+          "is_correct": false
+        },
+        {
+          "label": "341°",
+          "is_correct": false
+        },
+        {
+          "label": "328°",
+          "is_correct": true
+        }
+      ]
+    },
+    {
+      "chapter": "Clocks",
+      "kind": "standard",
+      "difficulty": "very_hard",
+      "answer_type": "single",
+      "stem": "Find the reflex angle between the hour and minute hands of a clock at 2:58.",
+      "explanation": "The smaller angle is 101°, so the reflex angle = 360 − 101 = 259°.",
+      "options": [
+        {
+          "label": "259°",
+          "is_correct": true
+        },
+        {
+          "label": "269°",
+          "is_correct": false
+        },
+        {
+          "label": "249°",
+          "is_correct": false
+        },
+        {
+          "label": "279°",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Clocks",
+      "kind": "standard",
+      "difficulty": "very_hard",
+      "answer_type": "single",
+      "stem": "Find the reflex angle between the hour and minute hands of a clock at 7:42.",
+      "explanation": "The smaller angle is 21°, so the reflex angle = 360 − 21 = 339°.",
+      "options": [
+        {
+          "label": "339°",
+          "is_correct": true
+        },
+        {
+          "label": "353°",
+          "is_correct": false
+        },
+        {
+          "label": "325°",
+          "is_correct": false
+        },
+        {
+          "label": "367°",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Clocks",
+      "kind": "standard",
+      "difficulty": "very_hard",
+      "answer_type": "single",
+      "stem": "Find the reflex angle between the hour and minute hands of a clock at 11:30.",
+      "explanation": "The smaller angle is 165°, so the reflex angle = 360 − 165 = 195°.",
+      "options": [
+        {
+          "label": "199°",
+          "is_correct": false
+        },
+        {
+          "label": "195°",
+          "is_correct": true
+        },
+        {
+          "label": "193°",
+          "is_correct": false
+        },
+        {
+          "label": "197°",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Clocks",
+      "kind": "standard",
+      "difficulty": "very_hard",
+      "answer_type": "single",
+      "stem": "Find the reflex angle between the hour and minute hands of a clock at 11:40.",
+      "explanation": "The smaller angle is 110°, so the reflex angle = 360 − 110 = 250°.",
+      "options": [
+        {
+          "label": "240°",
+          "is_correct": false
+        },
+        {
+          "label": "250°",
+          "is_correct": true
+        },
+        {
+          "label": "270°",
+          "is_correct": false
+        },
+        {
+          "label": "260°",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Clocks",
+      "kind": "standard",
+      "difficulty": "very_hard",
+      "answer_type": "single",
+      "stem": "Find the reflex angle between the hour and minute hands of a clock at 9:30.",
+      "explanation": "The smaller angle is 105°, so the reflex angle = 360 − 105 = 255°.",
+      "options": [
+        {
+          "label": "245°",
+          "is_correct": false
+        },
+        {
+          "label": "255°",
+          "is_correct": true
+        },
+        {
+          "label": "275°",
+          "is_correct": false
+        },
+        {
+          "label": "265°",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Clocks",
+      "kind": "standard",
+      "difficulty": "very_hard",
+      "answer_type": "single",
+      "stem": "Find the reflex angle between the hour and minute hands of a clock at 1:16.",
+      "explanation": "The smaller angle is 58°, so the reflex angle = 360 − 58 = 302°.",
+      "options": [
+        {
+          "label": "314°",
+          "is_correct": false
+        },
+        {
+          "label": "326°",
+          "is_correct": false
+        },
+        {
+          "label": "302°",
+          "is_correct": true
+        },
+        {
+          "label": "290°",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Clocks",
+      "kind": "standard",
+      "difficulty": "very_hard",
+      "answer_type": "single",
+      "stem": "Find the reflex angle between the hour and minute hands of a clock at 9:34.",
+      "explanation": "The smaller angle is 83°, so the reflex angle = 360 − 83 = 277°.",
+      "options": [
+        {
+          "label": "277°",
+          "is_correct": true
+        },
+        {
+          "label": "288°",
+          "is_correct": false
+        },
+        {
+          "label": "299°",
+          "is_correct": false
+        },
+        {
+          "label": "266°",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Clocks",
+      "kind": "standard",
+      "difficulty": "very_hard",
+      "answer_type": "single",
+      "stem": "Find the reflex angle between the hour and minute hands of a clock at 10:18.",
+      "explanation": "The smaller angle is 159°, so the reflex angle = 360 − 159 = 201°.",
+      "options": [
+        {
+          "label": "201°",
+          "is_correct": true
+        },
+        {
+          "label": "193°",
+          "is_correct": false
+        },
+        {
+          "label": "209°",
+          "is_correct": false
+        },
+        {
+          "label": "217°",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Clocks",
+      "kind": "standard",
+      "difficulty": "very_hard",
+      "answer_type": "single",
+      "stem": "Find the reflex angle between the hour and minute hands of a clock at 8:38.",
+      "explanation": "The smaller angle is 31°, so the reflex angle = 360 − 31 = 329°.",
+      "options": [
+        {
+          "label": "355°",
+          "is_correct": false
+        },
+        {
+          "label": "316°",
+          "is_correct": false
+        },
+        {
+          "label": "329°",
+          "is_correct": true
+        },
+        {
+          "label": "342°",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Clocks",
+      "kind": "standard",
+      "difficulty": "very_hard",
+      "answer_type": "single",
+      "stem": "Find the reflex angle between the hour and minute hands of a clock at 1:24.",
+      "explanation": "The smaller angle is 102°, so the reflex angle = 360 − 102 = 258°.",
+      "options": [
+        {
+          "label": "268°",
+          "is_correct": false
+        },
+        {
+          "label": "248°",
+          "is_correct": false
+        },
+        {
+          "label": "258°",
+          "is_correct": true
+        },
+        {
+          "label": "278°",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Clocks",
+      "kind": "standard",
+      "difficulty": "very_hard",
+      "answer_type": "single",
+      "stem": "Find the reflex angle between the hour and minute hands of a clock at 4:34.",
+      "explanation": "The smaller angle is 67°, so the reflex angle = 360 − 67 = 293°.",
+      "options": [
+        {
+          "label": "293°",
+          "is_correct": true
+        },
+        {
+          "label": "305°",
+          "is_correct": false
+        },
+        {
+          "label": "317°",
+          "is_correct": false
+        },
+        {
+          "label": "281°",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Clocks",
+      "kind": "standard",
+      "difficulty": "very_hard",
+      "answer_type": "single",
+      "stem": "Find the reflex angle between the hour and minute hands of a clock at 12:42.",
+      "explanation": "The smaller angle is 129°, so the reflex angle = 360 − 129 = 231°.",
+      "options": [
+        {
+          "label": "231°",
+          "is_correct": true
+        },
+        {
+          "label": "249°",
+          "is_correct": false
+        },
+        {
+          "label": "222°",
+          "is_correct": false
+        },
+        {
+          "label": "240°",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Clocks",
+      "kind": "standard",
+      "difficulty": "very_hard",
+      "answer_type": "single",
+      "stem": "Find the reflex angle between the hour and minute hands of a clock at 8:40.",
+      "explanation": "The smaller angle is 20°, so the reflex angle = 360 − 20 = 340°.",
+      "options": [
+        {
+          "label": "340°",
+          "is_correct": true
+        },
+        {
+          "label": "326°",
+          "is_correct": false
+        },
+        {
+          "label": "368°",
+          "is_correct": false
+        },
+        {
+          "label": "354°",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Clocks",
+      "kind": "standard",
+      "difficulty": "very_hard",
+      "answer_type": "single",
+      "stem": "Find the reflex angle between the hour and minute hands of a clock at 8:52.",
+      "explanation": "The smaller angle is 46°, so the reflex angle = 360 − 46 = 314°.",
+      "options": [
+        {
+          "label": "314°",
+          "is_correct": true
+        },
+        {
+          "label": "327°",
+          "is_correct": false
+        },
+        {
+          "label": "301°",
+          "is_correct": false
+        },
+        {
+          "label": "340°",
+          "is_correct": false
+        }
+      ]
+    }
+  ]
+}

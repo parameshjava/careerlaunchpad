@@ -20,12 +20,14 @@ function correctLetters(q: PrintQuestion): string {
 export function PaperPrint({
   title,
   label,
+  collegeName,
   durationMinutes,
   totalMarks,
   questions,
 }: {
   title: string;
   label: string;
+  collegeName?: string | null;
   durationMinutes: number;
   totalMarks: number;
   questions: PrintQuestion[];
@@ -52,6 +54,7 @@ export function PaperPrint({
       <div id="exam-print" className="mx-auto max-w-3xl text-black">
         {/* Cover */}
         <div className="mb-6 border-b pb-4">
+          {collegeName && <p className="text-center text-lg font-bold">{collegeName}</p>}
           <h1 className="text-xl font-bold">{title}</h1>
           <p className="text-sm">{label}</p>
           <p className="mt-1 text-sm">

@@ -1,0 +1,5205 @@
+{
+  "subject": "Arithmetic",
+  "questions": [
+    {
+      "chapter": "Permutations and Combinations",
+      "kind": "standard",
+      "difficulty": "easy",
+      "answer_type": "single",
+      "stem": "Find the number of ways of choosing 3 objects out of 4 distinct objects, i.e. C(4, 3).",
+      "explanation": "C(4,3) = 4!/(3!·1!) = 4.",
+      "options": [
+        {
+          "label": "3",
+          "is_correct": false
+        },
+        {
+          "label": "4",
+          "is_correct": true
+        },
+        {
+          "label": "5",
+          "is_correct": false
+        },
+        {
+          "label": "6",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Permutations and Combinations",
+      "kind": "standard",
+      "difficulty": "easy",
+      "answer_type": "single",
+      "stem": "Find the value of 7! (7 factorial).",
+      "explanation": "7! = 1×2×…×7 = 5040.",
+      "options": [
+        {
+          "label": "5444",
+          "is_correct": false
+        },
+        {
+          "label": "5242",
+          "is_correct": false
+        },
+        {
+          "label": "4838",
+          "is_correct": false
+        },
+        {
+          "label": "5040",
+          "is_correct": true
+        }
+      ]
+    },
+    {
+      "chapter": "Permutations and Combinations",
+      "kind": "standard",
+      "difficulty": "easy",
+      "answer_type": "single",
+      "stem": "Find the value of 3! (3 factorial).",
+      "explanation": "3! = 1×2×…×3 = 6.",
+      "options": [
+        {
+          "label": "7",
+          "is_correct": false
+        },
+        {
+          "label": "8",
+          "is_correct": false
+        },
+        {
+          "label": "5",
+          "is_correct": false
+        },
+        {
+          "label": "6",
+          "is_correct": true
+        }
+      ]
+    },
+    {
+      "chapter": "Permutations and Combinations",
+      "kind": "standard",
+      "difficulty": "easy",
+      "answer_type": "single",
+      "stem": "Find the number of ways of arranging 3 objects out of 9 distinct objects, i.e. P(9, 3).",
+      "explanation": "P(9,3) = 9!/6! = 504.",
+      "options": [
+        {
+          "label": "504",
+          "is_correct": true
+        },
+        {
+          "label": "484",
+          "is_correct": false
+        },
+        {
+          "label": "524",
+          "is_correct": false
+        },
+        {
+          "label": "544",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Permutations and Combinations",
+      "kind": "standard",
+      "difficulty": "easy",
+      "answer_type": "single",
+      "stem": "Find the number of ways of arranging 1 objects out of 9 distinct objects, i.e. P(9, 1).",
+      "explanation": "P(9,1) = 9!/8! = 9.",
+      "options": [
+        {
+          "label": "9",
+          "is_correct": true
+        },
+        {
+          "label": "10",
+          "is_correct": false
+        },
+        {
+          "label": "11",
+          "is_correct": false
+        },
+        {
+          "label": "8",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Permutations and Combinations",
+      "kind": "standard",
+      "difficulty": "easy",
+      "answer_type": "single",
+      "stem": "Find the number of ways of arranging 1 objects out of 5 distinct objects, i.e. P(5, 1).",
+      "explanation": "P(5,1) = 5!/4! = 5.",
+      "options": [
+        {
+          "label": "5",
+          "is_correct": true
+        },
+        {
+          "label": "7",
+          "is_correct": false
+        },
+        {
+          "label": "6",
+          "is_correct": false
+        },
+        {
+          "label": "4",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Permutations and Combinations",
+      "kind": "standard",
+      "difficulty": "easy",
+      "answer_type": "single",
+      "stem": "Find the number of ways of arranging 2 objects out of 6 distinct objects, i.e. P(6, 2).",
+      "explanation": "P(6,2) = 6!/4! = 30.",
+      "options": [
+        {
+          "label": "32",
+          "is_correct": false
+        },
+        {
+          "label": "31",
+          "is_correct": false
+        },
+        {
+          "label": "29",
+          "is_correct": false
+        },
+        {
+          "label": "30",
+          "is_correct": true
+        }
+      ]
+    },
+    {
+      "chapter": "Permutations and Combinations",
+      "kind": "standard",
+      "difficulty": "easy",
+      "answer_type": "single",
+      "stem": "Find the value of 5! (5 factorial).",
+      "explanation": "5! = 1×2×…×5 = 120.",
+      "options": [
+        {
+          "label": "120",
+          "is_correct": true
+        },
+        {
+          "label": "122",
+          "is_correct": false
+        },
+        {
+          "label": "124",
+          "is_correct": false
+        },
+        {
+          "label": "118",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Permutations and Combinations",
+      "kind": "standard",
+      "difficulty": "easy",
+      "answer_type": "single",
+      "stem": "Find the number of ways of choosing 3 objects out of 5 distinct objects, i.e. C(5, 3).",
+      "explanation": "C(5,3) = 5!/(3!·2!) = 10.",
+      "options": [
+        {
+          "label": "12",
+          "is_correct": false
+        },
+        {
+          "label": "11",
+          "is_correct": false
+        },
+        {
+          "label": "9",
+          "is_correct": false
+        },
+        {
+          "label": "10",
+          "is_correct": true
+        }
+      ]
+    },
+    {
+      "chapter": "Permutations and Combinations",
+      "kind": "standard",
+      "difficulty": "easy",
+      "answer_type": "single",
+      "stem": "Find the number of ways of arranging 3 objects out of 5 distinct objects, i.e. P(5, 3).",
+      "explanation": "P(5,3) = 5!/2! = 60.",
+      "options": [
+        {
+          "label": "60",
+          "is_correct": true
+        },
+        {
+          "label": "58",
+          "is_correct": false
+        },
+        {
+          "label": "62",
+          "is_correct": false
+        },
+        {
+          "label": "64",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Permutations and Combinations",
+      "kind": "standard",
+      "difficulty": "easy",
+      "answer_type": "single",
+      "stem": "Find the number of ways of arranging 4 objects out of 7 distinct objects, i.e. P(7, 4).",
+      "explanation": "P(7,4) = 7!/3! = 840.",
+      "options": [
+        {
+          "label": "908",
+          "is_correct": false
+        },
+        {
+          "label": "806",
+          "is_correct": false
+        },
+        {
+          "label": "874",
+          "is_correct": false
+        },
+        {
+          "label": "840",
+          "is_correct": true
+        }
+      ]
+    },
+    {
+      "chapter": "Permutations and Combinations",
+      "kind": "standard",
+      "difficulty": "easy",
+      "answer_type": "single",
+      "stem": "Find the number of ways of choosing 2 objects out of 5 distinct objects, i.e. C(5, 2).",
+      "explanation": "C(5,2) = 5!/(2!·3!) = 10.",
+      "options": [
+        {
+          "label": "11",
+          "is_correct": false
+        },
+        {
+          "label": "12",
+          "is_correct": false
+        },
+        {
+          "label": "10",
+          "is_correct": true
+        },
+        {
+          "label": "9",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Permutations and Combinations",
+      "kind": "standard",
+      "difficulty": "easy",
+      "answer_type": "single",
+      "stem": "Find the value of 8! (8 factorial).",
+      "explanation": "8! = 1×2×…×8 = 40320.",
+      "options": [
+        {
+          "label": "40320",
+          "is_correct": true
+        },
+        {
+          "label": "43546",
+          "is_correct": false
+        },
+        {
+          "label": "41933",
+          "is_correct": false
+        },
+        {
+          "label": "38707",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Permutations and Combinations",
+      "kind": "standard",
+      "difficulty": "easy",
+      "answer_type": "single",
+      "stem": "Find the value of 6! (6 factorial).",
+      "explanation": "6! = 1×2×…×6 = 720.",
+      "options": [
+        {
+          "label": "720",
+          "is_correct": true
+        },
+        {
+          "label": "749",
+          "is_correct": false
+        },
+        {
+          "label": "691",
+          "is_correct": false
+        },
+        {
+          "label": "778",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Permutations and Combinations",
+      "kind": "standard",
+      "difficulty": "easy",
+      "answer_type": "single",
+      "stem": "Find the number of ways of arranging 1 objects out of 8 distinct objects, i.e. P(8, 1).",
+      "explanation": "P(8,1) = 8!/7! = 8.",
+      "options": [
+        {
+          "label": "7",
+          "is_correct": false
+        },
+        {
+          "label": "8",
+          "is_correct": true
+        },
+        {
+          "label": "9",
+          "is_correct": false
+        },
+        {
+          "label": "10",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Permutations and Combinations",
+      "kind": "standard",
+      "difficulty": "easy",
+      "answer_type": "single",
+      "stem": "Find the number of ways of choosing 7 objects out of 8 distinct objects, i.e. C(8, 7).",
+      "explanation": "C(8,7) = 8!/(7!·1!) = 8.",
+      "options": [
+        {
+          "label": "9",
+          "is_correct": false
+        },
+        {
+          "label": "10",
+          "is_correct": false
+        },
+        {
+          "label": "8",
+          "is_correct": true
+        },
+        {
+          "label": "7",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Permutations and Combinations",
+      "kind": "standard",
+      "difficulty": "easy",
+      "answer_type": "single",
+      "stem": "Find the number of ways of arranging 4 objects out of 4 distinct objects, i.e. P(4, 4).",
+      "explanation": "P(4,4) = 4!/0! = 24.",
+      "options": [
+        {
+          "label": "26",
+          "is_correct": false
+        },
+        {
+          "label": "24",
+          "is_correct": true
+        },
+        {
+          "label": "23",
+          "is_correct": false
+        },
+        {
+          "label": "25",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Permutations and Combinations",
+      "kind": "standard",
+      "difficulty": "easy",
+      "answer_type": "single",
+      "stem": "Find the number of ways of arranging 4 objects out of 9 distinct objects, i.e. P(9, 4).",
+      "explanation": "P(9,4) = 9!/5! = 3024.",
+      "options": [
+        {
+          "label": "2903",
+          "is_correct": false
+        },
+        {
+          "label": "3145",
+          "is_correct": false
+        },
+        {
+          "label": "3266",
+          "is_correct": false
+        },
+        {
+          "label": "3024",
+          "is_correct": true
+        }
+      ]
+    },
+    {
+      "chapter": "Permutations and Combinations",
+      "kind": "standard",
+      "difficulty": "easy",
+      "answer_type": "single",
+      "stem": "Find the number of ways of arranging 1 objects out of 6 distinct objects, i.e. P(6, 1).",
+      "explanation": "P(6,1) = 6!/5! = 6.",
+      "options": [
+        {
+          "label": "6",
+          "is_correct": true
+        },
+        {
+          "label": "5",
+          "is_correct": false
+        },
+        {
+          "label": "7",
+          "is_correct": false
+        },
+        {
+          "label": "8",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Permutations and Combinations",
+      "kind": "standard",
+      "difficulty": "easy",
+      "answer_type": "single",
+      "stem": "Find the number of ways of arranging 3 objects out of 6 distinct objects, i.e. P(6, 3).",
+      "explanation": "P(6,3) = 6!/3! = 120.",
+      "options": [
+        {
+          "label": "124",
+          "is_correct": false
+        },
+        {
+          "label": "122",
+          "is_correct": false
+        },
+        {
+          "label": "120",
+          "is_correct": true
+        },
+        {
+          "label": "118",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Permutations and Combinations",
+      "kind": "standard",
+      "difficulty": "easy",
+      "answer_type": "single",
+      "stem": "Find the number of ways of choosing 1 objects out of 7 distinct objects, i.e. C(7, 1).",
+      "explanation": "C(7,1) = 7!/(1!·6!) = 7.",
+      "options": [
+        {
+          "label": "8",
+          "is_correct": false
+        },
+        {
+          "label": "6",
+          "is_correct": false
+        },
+        {
+          "label": "9",
+          "is_correct": false
+        },
+        {
+          "label": "7",
+          "is_correct": true
+        }
+      ]
+    },
+    {
+      "chapter": "Permutations and Combinations",
+      "kind": "standard",
+      "difficulty": "easy",
+      "answer_type": "single",
+      "stem": "Find the number of ways of choosing 5 objects out of 7 distinct objects, i.e. C(7, 5).",
+      "explanation": "C(7,5) = 7!/(5!·2!) = 21.",
+      "options": [
+        {
+          "label": "20",
+          "is_correct": false
+        },
+        {
+          "label": "23",
+          "is_correct": false
+        },
+        {
+          "label": "22",
+          "is_correct": false
+        },
+        {
+          "label": "21",
+          "is_correct": true
+        }
+      ]
+    },
+    {
+      "chapter": "Permutations and Combinations",
+      "kind": "standard",
+      "difficulty": "easy",
+      "answer_type": "single",
+      "stem": "Find the number of ways of choosing 1 objects out of 4 distinct objects, i.e. C(4, 1).",
+      "explanation": "C(4,1) = 4!/(1!·3!) = 4.",
+      "options": [
+        {
+          "label": "6",
+          "is_correct": false
+        },
+        {
+          "label": "4",
+          "is_correct": true
+        },
+        {
+          "label": "3",
+          "is_correct": false
+        },
+        {
+          "label": "5",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Permutations and Combinations",
+      "kind": "standard",
+      "difficulty": "easy",
+      "answer_type": "single",
+      "stem": "Find the value of 4! (4 factorial).",
+      "explanation": "4! = 1×2×…×4 = 24.",
+      "options": [
+        {
+          "label": "23",
+          "is_correct": false
+        },
+        {
+          "label": "26",
+          "is_correct": false
+        },
+        {
+          "label": "24",
+          "is_correct": true
+        },
+        {
+          "label": "25",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Permutations and Combinations",
+      "kind": "standard",
+      "difficulty": "easy",
+      "answer_type": "single",
+      "stem": "Find the number of ways of choosing 5 objects out of 6 distinct objects, i.e. C(6, 5).",
+      "explanation": "C(6,5) = 6!/(5!·1!) = 6.",
+      "options": [
+        {
+          "label": "8",
+          "is_correct": false
+        },
+        {
+          "label": "7",
+          "is_correct": false
+        },
+        {
+          "label": "5",
+          "is_correct": false
+        },
+        {
+          "label": "6",
+          "is_correct": true
+        }
+      ]
+    },
+    {
+      "chapter": "Permutations and Combinations",
+      "kind": "standard",
+      "difficulty": "easy",
+      "answer_type": "single",
+      "stem": "Find the number of ways of choosing 2 objects out of 4 distinct objects, i.e. C(4, 2).",
+      "explanation": "C(4,2) = 4!/(2!·2!) = 6.",
+      "options": [
+        {
+          "label": "8",
+          "is_correct": false
+        },
+        {
+          "label": "5",
+          "is_correct": false
+        },
+        {
+          "label": "7",
+          "is_correct": false
+        },
+        {
+          "label": "6",
+          "is_correct": true
+        }
+      ]
+    },
+    {
+      "chapter": "Permutations and Combinations",
+      "kind": "standard",
+      "difficulty": "easy",
+      "answer_type": "single",
+      "stem": "Find the number of ways of choosing 4 objects out of 8 distinct objects, i.e. C(8, 4).",
+      "explanation": "C(8,4) = 8!/(4!·4!) = 70.",
+      "options": [
+        {
+          "label": "68",
+          "is_correct": false
+        },
+        {
+          "label": "70",
+          "is_correct": true
+        },
+        {
+          "label": "72",
+          "is_correct": false
+        },
+        {
+          "label": "74",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Permutations and Combinations",
+      "kind": "standard",
+      "difficulty": "easy",
+      "answer_type": "single",
+      "stem": "Find the number of ways of arranging 2 objects out of 8 distinct objects, i.e. P(8, 2).",
+      "explanation": "P(8,2) = 8!/6! = 56.",
+      "options": [
+        {
+          "label": "56",
+          "is_correct": true
+        },
+        {
+          "label": "58",
+          "is_correct": false
+        },
+        {
+          "label": "54",
+          "is_correct": false
+        },
+        {
+          "label": "60",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Permutations and Combinations",
+      "kind": "standard",
+      "difficulty": "easy",
+      "answer_type": "single",
+      "stem": "Find the number of ways of arranging 2 objects out of 5 distinct objects, i.e. P(5, 2).",
+      "explanation": "P(5,2) = 5!/3! = 20.",
+      "options": [
+        {
+          "label": "22",
+          "is_correct": false
+        },
+        {
+          "label": "19",
+          "is_correct": false
+        },
+        {
+          "label": "20",
+          "is_correct": true
+        },
+        {
+          "label": "21",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Permutations and Combinations",
+      "kind": "standard",
+      "difficulty": "easy",
+      "answer_type": "single",
+      "stem": "Find the number of ways of choosing 1 objects out of 8 distinct objects, i.e. C(8, 1).",
+      "explanation": "C(8,1) = 8!/(1!·7!) = 8.",
+      "options": [
+        {
+          "label": "8",
+          "is_correct": true
+        },
+        {
+          "label": "10",
+          "is_correct": false
+        },
+        {
+          "label": "7",
+          "is_correct": false
+        },
+        {
+          "label": "9",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Permutations and Combinations",
+      "kind": "standard",
+      "difficulty": "easy",
+      "answer_type": "single",
+      "stem": "Find the number of ways of arranging 4 objects out of 8 distinct objects, i.e. P(8, 4).",
+      "explanation": "P(8,4) = 8!/4! = 1680.",
+      "options": [
+        {
+          "label": "1814",
+          "is_correct": false
+        },
+        {
+          "label": "1747",
+          "is_correct": false
+        },
+        {
+          "label": "1680",
+          "is_correct": true
+        },
+        {
+          "label": "1613",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Permutations and Combinations",
+      "kind": "standard",
+      "difficulty": "easy",
+      "answer_type": "single",
+      "stem": "Find the number of ways of arranging 2 objects out of 9 distinct objects, i.e. P(9, 2).",
+      "explanation": "P(9,2) = 9!/7! = 72.",
+      "options": [
+        {
+          "label": "74",
+          "is_correct": false
+        },
+        {
+          "label": "70",
+          "is_correct": false
+        },
+        {
+          "label": "72",
+          "is_correct": true
+        },
+        {
+          "label": "76",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Permutations and Combinations",
+      "kind": "standard",
+      "difficulty": "easy",
+      "answer_type": "single",
+      "stem": "Find the number of ways of choosing 6 objects out of 8 distinct objects, i.e. C(8, 6).",
+      "explanation": "C(8,6) = 8!/(6!·2!) = 28.",
+      "options": [
+        {
+          "label": "29",
+          "is_correct": false
+        },
+        {
+          "label": "30",
+          "is_correct": false
+        },
+        {
+          "label": "27",
+          "is_correct": false
+        },
+        {
+          "label": "28",
+          "is_correct": true
+        }
+      ]
+    },
+    {
+      "chapter": "Permutations and Combinations",
+      "kind": "standard",
+      "difficulty": "easy",
+      "answer_type": "single",
+      "stem": "Find the number of ways of choosing 2 objects out of 6 distinct objects, i.e. C(6, 2).",
+      "explanation": "C(6,2) = 6!/(2!·4!) = 15.",
+      "options": [
+        {
+          "label": "17",
+          "is_correct": false
+        },
+        {
+          "label": "16",
+          "is_correct": false
+        },
+        {
+          "label": "15",
+          "is_correct": true
+        },
+        {
+          "label": "14",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Permutations and Combinations",
+      "kind": "standard",
+      "difficulty": "easy",
+      "answer_type": "single",
+      "stem": "Find the number of ways of arranging 3 objects out of 4 distinct objects, i.e. P(4, 3).",
+      "explanation": "P(4,3) = 4!/1! = 24.",
+      "options": [
+        {
+          "label": "24",
+          "is_correct": true
+        },
+        {
+          "label": "25",
+          "is_correct": false
+        },
+        {
+          "label": "23",
+          "is_correct": false
+        },
+        {
+          "label": "26",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Permutations and Combinations",
+      "kind": "standard",
+      "difficulty": "easy",
+      "answer_type": "single",
+      "stem": "Find the number of ways of arranging 4 objects out of 5 distinct objects, i.e. P(5, 4).",
+      "explanation": "P(5,4) = 5!/1! = 120.",
+      "options": [
+        {
+          "label": "122",
+          "is_correct": false
+        },
+        {
+          "label": "124",
+          "is_correct": false
+        },
+        {
+          "label": "120",
+          "is_correct": true
+        },
+        {
+          "label": "118",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Permutations and Combinations",
+      "kind": "standard",
+      "difficulty": "easy",
+      "answer_type": "single",
+      "stem": "Find the number of ways of choosing 4 objects out of 5 distinct objects, i.e. C(5, 4).",
+      "explanation": "C(5,4) = 5!/(4!·1!) = 5.",
+      "options": [
+        {
+          "label": "4",
+          "is_correct": false
+        },
+        {
+          "label": "7",
+          "is_correct": false
+        },
+        {
+          "label": "6",
+          "is_correct": false
+        },
+        {
+          "label": "5",
+          "is_correct": true
+        }
+      ]
+    },
+    {
+      "chapter": "Permutations and Combinations",
+      "kind": "standard",
+      "difficulty": "easy",
+      "answer_type": "single",
+      "stem": "Find the number of ways of choosing 6 objects out of 7 distinct objects, i.e. C(7, 6).",
+      "explanation": "C(7,6) = 7!/(6!·1!) = 7.",
+      "options": [
+        {
+          "label": "8",
+          "is_correct": false
+        },
+        {
+          "label": "9",
+          "is_correct": false
+        },
+        {
+          "label": "7",
+          "is_correct": true
+        },
+        {
+          "label": "6",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Permutations and Combinations",
+      "kind": "standard",
+      "difficulty": "easy",
+      "answer_type": "single",
+      "stem": "Find the number of ways of choosing 3 objects out of 6 distinct objects, i.e. C(6, 3).",
+      "explanation": "C(6,3) = 6!/(3!·3!) = 20.",
+      "options": [
+        {
+          "label": "21",
+          "is_correct": false
+        },
+        {
+          "label": "19",
+          "is_correct": false
+        },
+        {
+          "label": "22",
+          "is_correct": false
+        },
+        {
+          "label": "20",
+          "is_correct": true
+        }
+      ]
+    },
+    {
+      "chapter": "Permutations and Combinations",
+      "kind": "standard",
+      "difficulty": "easy",
+      "answer_type": "single",
+      "stem": "Find the number of ways of arranging 2 objects out of 7 distinct objects, i.e. P(7, 2).",
+      "explanation": "P(7,2) = 7!/5! = 42.",
+      "options": [
+        {
+          "label": "44",
+          "is_correct": false
+        },
+        {
+          "label": "42",
+          "is_correct": true
+        },
+        {
+          "label": "46",
+          "is_correct": false
+        },
+        {
+          "label": "40",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Permutations and Combinations",
+      "kind": "standard",
+      "difficulty": "easy",
+      "answer_type": "single",
+      "stem": "Find the number of ways of choosing 4 objects out of 6 distinct objects, i.e. C(6, 4).",
+      "explanation": "C(6,4) = 6!/(4!·2!) = 15.",
+      "options": [
+        {
+          "label": "16",
+          "is_correct": false
+        },
+        {
+          "label": "17",
+          "is_correct": false
+        },
+        {
+          "label": "14",
+          "is_correct": false
+        },
+        {
+          "label": "15",
+          "is_correct": true
+        }
+      ]
+    },
+    {
+      "chapter": "Permutations and Combinations",
+      "kind": "standard",
+      "difficulty": "easy",
+      "answer_type": "single",
+      "stem": "Find the number of ways of choosing 5 objects out of 8 distinct objects, i.e. C(8, 5).",
+      "explanation": "C(8,5) = 8!/(5!·3!) = 56.",
+      "options": [
+        {
+          "label": "60",
+          "is_correct": false
+        },
+        {
+          "label": "58",
+          "is_correct": false
+        },
+        {
+          "label": "56",
+          "is_correct": true
+        },
+        {
+          "label": "54",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Permutations and Combinations",
+      "kind": "standard",
+      "difficulty": "easy",
+      "answer_type": "single",
+      "stem": "Find the number of ways of arranging 2 objects out of 4 distinct objects, i.e. P(4, 2).",
+      "explanation": "P(4,2) = 4!/2! = 12.",
+      "options": [
+        {
+          "label": "11",
+          "is_correct": false
+        },
+        {
+          "label": "14",
+          "is_correct": false
+        },
+        {
+          "label": "13",
+          "is_correct": false
+        },
+        {
+          "label": "12",
+          "is_correct": true
+        }
+      ]
+    },
+    {
+      "chapter": "Permutations and Combinations",
+      "kind": "standard",
+      "difficulty": "easy",
+      "answer_type": "single",
+      "stem": "Find the number of ways of arranging 3 objects out of 7 distinct objects, i.e. P(7, 3).",
+      "explanation": "P(7,3) = 7!/4! = 210.",
+      "options": [
+        {
+          "label": "226",
+          "is_correct": false
+        },
+        {
+          "label": "218",
+          "is_correct": false
+        },
+        {
+          "label": "210",
+          "is_correct": true
+        },
+        {
+          "label": "202",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Permutations and Combinations",
+      "kind": "standard",
+      "difficulty": "easy",
+      "answer_type": "single",
+      "stem": "Find the number of ways of arranging 4 objects out of 6 distinct objects, i.e. P(6, 4).",
+      "explanation": "P(6,4) = 6!/2! = 360.",
+      "options": [
+        {
+          "label": "374",
+          "is_correct": false
+        },
+        {
+          "label": "388",
+          "is_correct": false
+        },
+        {
+          "label": "360",
+          "is_correct": true
+        },
+        {
+          "label": "346",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Permutations and Combinations",
+      "kind": "standard",
+      "difficulty": "easy",
+      "answer_type": "single",
+      "stem": "Find the number of ways of choosing 1 objects out of 5 distinct objects, i.e. C(5, 1).",
+      "explanation": "C(5,1) = 5!/(1!·4!) = 5.",
+      "options": [
+        {
+          "label": "5",
+          "is_correct": true
+        },
+        {
+          "label": "6",
+          "is_correct": false
+        },
+        {
+          "label": "7",
+          "is_correct": false
+        },
+        {
+          "label": "4",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Permutations and Combinations",
+      "kind": "standard",
+      "difficulty": "easy",
+      "answer_type": "single",
+      "stem": "Find the number of ways of choosing 3 objects out of 8 distinct objects, i.e. C(8, 3).",
+      "explanation": "C(8,3) = 8!/(3!·5!) = 56.",
+      "options": [
+        {
+          "label": "60",
+          "is_correct": false
+        },
+        {
+          "label": "58",
+          "is_correct": false
+        },
+        {
+          "label": "56",
+          "is_correct": true
+        },
+        {
+          "label": "54",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Permutations and Combinations",
+      "kind": "standard",
+      "difficulty": "easy",
+      "answer_type": "single",
+      "stem": "Find the number of ways of arranging 3 objects out of 8 distinct objects, i.e. P(8, 3).",
+      "explanation": "P(8,3) = 8!/5! = 336.",
+      "options": [
+        {
+          "label": "349",
+          "is_correct": false
+        },
+        {
+          "label": "336",
+          "is_correct": true
+        },
+        {
+          "label": "323",
+          "is_correct": false
+        },
+        {
+          "label": "362",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Permutations and Combinations",
+      "kind": "standard",
+      "difficulty": "easy",
+      "answer_type": "single",
+      "stem": "Find the number of ways of arranging 1 objects out of 4 distinct objects, i.e. P(4, 1).",
+      "explanation": "P(4,1) = 4!/3! = 4.",
+      "options": [
+        {
+          "label": "5",
+          "is_correct": false
+        },
+        {
+          "label": "3",
+          "is_correct": false
+        },
+        {
+          "label": "6",
+          "is_correct": false
+        },
+        {
+          "label": "4",
+          "is_correct": true
+        }
+      ]
+    },
+    {
+      "chapter": "Permutations and Combinations",
+      "kind": "standard",
+      "difficulty": "easy",
+      "answer_type": "single",
+      "stem": "Find the number of ways of choosing 3 objects out of 7 distinct objects, i.e. C(7, 3).",
+      "explanation": "C(7,3) = 7!/(3!·4!) = 35.",
+      "options": [
+        {
+          "label": "34",
+          "is_correct": false
+        },
+        {
+          "label": "36",
+          "is_correct": false
+        },
+        {
+          "label": "37",
+          "is_correct": false
+        },
+        {
+          "label": "35",
+          "is_correct": true
+        }
+      ]
+    },
+    {
+      "chapter": "Permutations and Combinations",
+      "kind": "standard",
+      "difficulty": "medium",
+      "answer_type": "single",
+      "stem": "In how many ways can all the letters of the word DANGER be arranged (all letters are distinct)?",
+      "explanation": "6 distinct letters can be arranged in 6! = 720 ways.",
+      "options": [
+        {
+          "label": "720",
+          "is_correct": true
+        },
+        {
+          "label": "691",
+          "is_correct": false
+        },
+        {
+          "label": "749",
+          "is_correct": false
+        },
+        {
+          "label": "778",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Permutations and Combinations",
+      "kind": "standard",
+      "difficulty": "medium",
+      "answer_type": "single",
+      "stem": "In how many ways can all the letters of the word MONKEY be arranged (all letters are distinct)?",
+      "explanation": "6 distinct letters can be arranged in 6! = 720 ways.",
+      "options": [
+        {
+          "label": "720",
+          "is_correct": true
+        },
+        {
+          "label": "778",
+          "is_correct": false
+        },
+        {
+          "label": "691",
+          "is_correct": false
+        },
+        {
+          "label": "749",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Permutations and Combinations",
+      "kind": "standard",
+      "difficulty": "medium",
+      "answer_type": "single",
+      "stem": "Find the value of C(10, 3).",
+      "explanation": "C(10,3) = 120.",
+      "options": [
+        {
+          "label": "124",
+          "is_correct": false
+        },
+        {
+          "label": "122",
+          "is_correct": false
+        },
+        {
+          "label": "118",
+          "is_correct": false
+        },
+        {
+          "label": "120",
+          "is_correct": true
+        }
+      ]
+    },
+    {
+      "chapter": "Permutations and Combinations",
+      "kind": "standard",
+      "difficulty": "medium",
+      "answer_type": "single",
+      "stem": "Find the value of C(11, 2).",
+      "explanation": "C(11,2) = 55.",
+      "options": [
+        {
+          "label": "55",
+          "is_correct": true
+        },
+        {
+          "label": "59",
+          "is_correct": false
+        },
+        {
+          "label": "53",
+          "is_correct": false
+        },
+        {
+          "label": "57",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Permutations and Combinations",
+      "kind": "standard",
+      "difficulty": "medium",
+      "answer_type": "single",
+      "stem": "In how many ways can all the letters of the word TABLE be arranged (all letters are distinct)?",
+      "explanation": "5 distinct letters can be arranged in 5! = 120 ways.",
+      "options": [
+        {
+          "label": "120",
+          "is_correct": true
+        },
+        {
+          "label": "122",
+          "is_correct": false
+        },
+        {
+          "label": "118",
+          "is_correct": false
+        },
+        {
+          "label": "124",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Permutations and Combinations",
+      "kind": "standard",
+      "difficulty": "medium",
+      "answer_type": "single",
+      "stem": "Find the value of C(9, 4).",
+      "explanation": "C(9,4) = 126.",
+      "options": [
+        {
+          "label": "126",
+          "is_correct": true
+        },
+        {
+          "label": "130",
+          "is_correct": false
+        },
+        {
+          "label": "124",
+          "is_correct": false
+        },
+        {
+          "label": "128",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Permutations and Combinations",
+      "kind": "standard",
+      "difficulty": "medium",
+      "answer_type": "single",
+      "stem": "In how many ways can a committee of 3 members be selected from 8 people?",
+      "explanation": "Number of ways = C(8,3) = 56.",
+      "options": [
+        {
+          "label": "60",
+          "is_correct": false
+        },
+        {
+          "label": "58",
+          "is_correct": false
+        },
+        {
+          "label": "54",
+          "is_correct": false
+        },
+        {
+          "label": "56",
+          "is_correct": true
+        }
+      ]
+    },
+    {
+      "chapter": "Permutations and Combinations",
+      "kind": "standard",
+      "difficulty": "medium",
+      "answer_type": "single",
+      "stem": "In how many ways can a committee of 3 members be selected from 7 people?",
+      "explanation": "Number of ways = C(7,3) = 35.",
+      "options": [
+        {
+          "label": "34",
+          "is_correct": false
+        },
+        {
+          "label": "37",
+          "is_correct": false
+        },
+        {
+          "label": "35",
+          "is_correct": true
+        },
+        {
+          "label": "36",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Permutations and Combinations",
+      "kind": "standard",
+      "difficulty": "medium",
+      "answer_type": "single",
+      "stem": "In how many ways can a committee of 4 members be selected from 12 people?",
+      "explanation": "Number of ways = C(12,4) = 495.",
+      "options": [
+        {
+          "label": "535",
+          "is_correct": false
+        },
+        {
+          "label": "515",
+          "is_correct": false
+        },
+        {
+          "label": "495",
+          "is_correct": true
+        },
+        {
+          "label": "475",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Permutations and Combinations",
+      "kind": "standard",
+      "difficulty": "medium",
+      "answer_type": "single",
+      "stem": "Find the value of C(10, 4).",
+      "explanation": "C(10,4) = 210.",
+      "options": [
+        {
+          "label": "226",
+          "is_correct": false
+        },
+        {
+          "label": "218",
+          "is_correct": false
+        },
+        {
+          "label": "210",
+          "is_correct": true
+        },
+        {
+          "label": "202",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Permutations and Combinations",
+      "kind": "standard",
+      "difficulty": "medium",
+      "answer_type": "single",
+      "stem": "Find the value of C(12, 2).",
+      "explanation": "C(12,2) = 66.",
+      "options": [
+        {
+          "label": "64",
+          "is_correct": false
+        },
+        {
+          "label": "70",
+          "is_correct": false
+        },
+        {
+          "label": "66",
+          "is_correct": true
+        },
+        {
+          "label": "68",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Permutations and Combinations",
+      "kind": "standard",
+      "difficulty": "medium",
+      "answer_type": "single",
+      "stem": "In how many ways can all the letters of the word GARDEN be arranged (all letters are distinct)?",
+      "explanation": "6 distinct letters can be arranged in 6! = 720 ways.",
+      "options": [
+        {
+          "label": "778",
+          "is_correct": false
+        },
+        {
+          "label": "720",
+          "is_correct": true
+        },
+        {
+          "label": "749",
+          "is_correct": false
+        },
+        {
+          "label": "691",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Permutations and Combinations",
+      "kind": "standard",
+      "difficulty": "medium",
+      "answer_type": "single",
+      "stem": "In how many ways can all the letters of the word BLACK be arranged (all letters are distinct)?",
+      "explanation": "5 distinct letters can be arranged in 5! = 120 ways.",
+      "options": [
+        {
+          "label": "118",
+          "is_correct": false
+        },
+        {
+          "label": "122",
+          "is_correct": false
+        },
+        {
+          "label": "120",
+          "is_correct": true
+        },
+        {
+          "label": "124",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Permutations and Combinations",
+      "kind": "standard",
+      "difficulty": "medium",
+      "answer_type": "single",
+      "stem": "In how many ways can a committee of 3 members be selected from 12 people?",
+      "explanation": "Number of ways = C(12,3) = 220.",
+      "options": [
+        {
+          "label": "211",
+          "is_correct": false
+        },
+        {
+          "label": "220",
+          "is_correct": true
+        },
+        {
+          "label": "238",
+          "is_correct": false
+        },
+        {
+          "label": "229",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Permutations and Combinations",
+      "kind": "standard",
+      "difficulty": "medium",
+      "answer_type": "single",
+      "stem": "Find the value of C(10, 2).",
+      "explanation": "C(10,2) = 45.",
+      "options": [
+        {
+          "label": "43",
+          "is_correct": false
+        },
+        {
+          "label": "45",
+          "is_correct": true
+        },
+        {
+          "label": "47",
+          "is_correct": false
+        },
+        {
+          "label": "49",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Permutations and Combinations",
+      "kind": "standard",
+      "difficulty": "medium",
+      "answer_type": "single",
+      "stem": "In how many ways can all the letters of the word CHAIR be arranged (all letters are distinct)?",
+      "explanation": "5 distinct letters can be arranged in 5! = 120 ways.",
+      "options": [
+        {
+          "label": "120",
+          "is_correct": true
+        },
+        {
+          "label": "118",
+          "is_correct": false
+        },
+        {
+          "label": "124",
+          "is_correct": false
+        },
+        {
+          "label": "122",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Permutations and Combinations",
+      "kind": "standard",
+      "difficulty": "medium",
+      "answer_type": "single",
+      "stem": "In how many ways can a committee of 2 members be selected from 8 people?",
+      "explanation": "Number of ways = C(8,2) = 28.",
+      "options": [
+        {
+          "label": "28",
+          "is_correct": true
+        },
+        {
+          "label": "27",
+          "is_correct": false
+        },
+        {
+          "label": "29",
+          "is_correct": false
+        },
+        {
+          "label": "30",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Permutations and Combinations",
+      "kind": "standard",
+      "difficulty": "medium",
+      "answer_type": "single",
+      "stem": "In how many ways can a committee of 5 members be selected from 7 people?",
+      "explanation": "Number of ways = C(7,5) = 21.",
+      "options": [
+        {
+          "label": "22",
+          "is_correct": false
+        },
+        {
+          "label": "20",
+          "is_correct": false
+        },
+        {
+          "label": "21",
+          "is_correct": true
+        },
+        {
+          "label": "23",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Permutations and Combinations",
+      "kind": "standard",
+      "difficulty": "medium",
+      "answer_type": "single",
+      "stem": "Find the value of C(12, 4).",
+      "explanation": "C(12,4) = 495.",
+      "options": [
+        {
+          "label": "535",
+          "is_correct": false
+        },
+        {
+          "label": "475",
+          "is_correct": false
+        },
+        {
+          "label": "495",
+          "is_correct": true
+        },
+        {
+          "label": "515",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Permutations and Combinations",
+      "kind": "standard",
+      "difficulty": "medium",
+      "answer_type": "single",
+      "stem": "In how many ways can all the letters of the word PLANET be arranged (all letters are distinct)?",
+      "explanation": "6 distinct letters can be arranged in 6! = 720 ways.",
+      "options": [
+        {
+          "label": "720",
+          "is_correct": true
+        },
+        {
+          "label": "778",
+          "is_correct": false
+        },
+        {
+          "label": "691",
+          "is_correct": false
+        },
+        {
+          "label": "749",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Permutations and Combinations",
+      "kind": "standard",
+      "difficulty": "medium",
+      "answer_type": "single",
+      "stem": "In how many ways can a committee of 3 members be selected from 10 people?",
+      "explanation": "Number of ways = C(10,3) = 120.",
+      "options": [
+        {
+          "label": "118",
+          "is_correct": false
+        },
+        {
+          "label": "120",
+          "is_correct": true
+        },
+        {
+          "label": "124",
+          "is_correct": false
+        },
+        {
+          "label": "122",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Permutations and Combinations",
+      "kind": "standard",
+      "difficulty": "medium",
+      "answer_type": "single",
+      "stem": "In how many ways can a committee of 2 members be selected from 11 people?",
+      "explanation": "Number of ways = C(11,2) = 55.",
+      "options": [
+        {
+          "label": "57",
+          "is_correct": false
+        },
+        {
+          "label": "59",
+          "is_correct": false
+        },
+        {
+          "label": "53",
+          "is_correct": false
+        },
+        {
+          "label": "55",
+          "is_correct": true
+        }
+      ]
+    },
+    {
+      "chapter": "Permutations and Combinations",
+      "kind": "standard",
+      "difficulty": "medium",
+      "answer_type": "single",
+      "stem": "In how many ways can a committee of 3 members be selected from 6 people?",
+      "explanation": "Number of ways = C(6,3) = 20.",
+      "options": [
+        {
+          "label": "22",
+          "is_correct": false
+        },
+        {
+          "label": "21",
+          "is_correct": false
+        },
+        {
+          "label": "20",
+          "is_correct": true
+        },
+        {
+          "label": "19",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Permutations and Combinations",
+      "kind": "standard",
+      "difficulty": "medium",
+      "answer_type": "single",
+      "stem": "In how many ways can a committee of 2 members be selected from 10 people?",
+      "explanation": "Number of ways = C(10,2) = 45.",
+      "options": [
+        {
+          "label": "45",
+          "is_correct": true
+        },
+        {
+          "label": "43",
+          "is_correct": false
+        },
+        {
+          "label": "49",
+          "is_correct": false
+        },
+        {
+          "label": "47",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Permutations and Combinations",
+      "kind": "standard",
+      "difficulty": "medium",
+      "answer_type": "single",
+      "stem": "Find the value of C(11, 3).",
+      "explanation": "C(11,3) = 165.",
+      "options": [
+        {
+          "label": "167",
+          "is_correct": false
+        },
+        {
+          "label": "165",
+          "is_correct": true
+        },
+        {
+          "label": "163",
+          "is_correct": false
+        },
+        {
+          "label": "169",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Permutations and Combinations",
+      "kind": "standard",
+      "difficulty": "medium",
+      "answer_type": "single",
+      "stem": "In how many ways can a committee of 4 members be selected from 6 people?",
+      "explanation": "Number of ways = C(6,4) = 15.",
+      "options": [
+        {
+          "label": "16",
+          "is_correct": false
+        },
+        {
+          "label": "14",
+          "is_correct": false
+        },
+        {
+          "label": "17",
+          "is_correct": false
+        },
+        {
+          "label": "15",
+          "is_correct": true
+        }
+      ]
+    },
+    {
+      "chapter": "Permutations and Combinations",
+      "kind": "standard",
+      "difficulty": "medium",
+      "answer_type": "single",
+      "stem": "Find the value of C(11, 4).",
+      "explanation": "C(11,4) = 330.",
+      "options": [
+        {
+          "label": "343",
+          "is_correct": false
+        },
+        {
+          "label": "330",
+          "is_correct": true
+        },
+        {
+          "label": "317",
+          "is_correct": false
+        },
+        {
+          "label": "356",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Permutations and Combinations",
+      "kind": "standard",
+      "difficulty": "medium",
+      "answer_type": "single",
+      "stem": "In how many ways can a committee of 3 members be selected from 11 people?",
+      "explanation": "Number of ways = C(11,3) = 165.",
+      "options": [
+        {
+          "label": "169",
+          "is_correct": false
+        },
+        {
+          "label": "165",
+          "is_correct": true
+        },
+        {
+          "label": "167",
+          "is_correct": false
+        },
+        {
+          "label": "163",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Permutations and Combinations",
+      "kind": "standard",
+      "difficulty": "medium",
+      "answer_type": "single",
+      "stem": "In how many ways can a committee of 3 members be selected from 9 people?",
+      "explanation": "Number of ways = C(9,3) = 84.",
+      "options": [
+        {
+          "label": "82",
+          "is_correct": false
+        },
+        {
+          "label": "86",
+          "is_correct": false
+        },
+        {
+          "label": "84",
+          "is_correct": true
+        },
+        {
+          "label": "88",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Permutations and Combinations",
+      "kind": "standard",
+      "difficulty": "medium",
+      "answer_type": "single",
+      "stem": "In how many ways can a committee of 4 members be selected from 8 people?",
+      "explanation": "Number of ways = C(8,4) = 70.",
+      "options": [
+        {
+          "label": "68",
+          "is_correct": false
+        },
+        {
+          "label": "70",
+          "is_correct": true
+        },
+        {
+          "label": "74",
+          "is_correct": false
+        },
+        {
+          "label": "72",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Permutations and Combinations",
+      "kind": "standard",
+      "difficulty": "medium",
+      "answer_type": "single",
+      "stem": "In how many ways can a committee of 5 members be selected from 8 people?",
+      "explanation": "Number of ways = C(8,5) = 56.",
+      "options": [
+        {
+          "label": "58",
+          "is_correct": false
+        },
+        {
+          "label": "60",
+          "is_correct": false
+        },
+        {
+          "label": "56",
+          "is_correct": true
+        },
+        {
+          "label": "54",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Permutations and Combinations",
+      "kind": "standard",
+      "difficulty": "medium",
+      "answer_type": "single",
+      "stem": "In how many ways can a committee of 5 members be selected from 9 people?",
+      "explanation": "Number of ways = C(9,5) = 126.",
+      "options": [
+        {
+          "label": "126",
+          "is_correct": true
+        },
+        {
+          "label": "130",
+          "is_correct": false
+        },
+        {
+          "label": "128",
+          "is_correct": false
+        },
+        {
+          "label": "124",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Permutations and Combinations",
+      "kind": "standard",
+      "difficulty": "medium",
+      "answer_type": "single",
+      "stem": "In how many ways can a committee of 2 members be selected from 9 people?",
+      "explanation": "Number of ways = C(9,2) = 36.",
+      "options": [
+        {
+          "label": "37",
+          "is_correct": false
+        },
+        {
+          "label": "36",
+          "is_correct": true
+        },
+        {
+          "label": "35",
+          "is_correct": false
+        },
+        {
+          "label": "38",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Permutations and Combinations",
+      "kind": "standard",
+      "difficulty": "medium",
+      "answer_type": "single",
+      "stem": "In how many ways can a committee of 4 members be selected from 10 people?",
+      "explanation": "Number of ways = C(10,4) = 210.",
+      "options": [
+        {
+          "label": "210",
+          "is_correct": true
+        },
+        {
+          "label": "226",
+          "is_correct": false
+        },
+        {
+          "label": "202",
+          "is_correct": false
+        },
+        {
+          "label": "218",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Permutations and Combinations",
+      "kind": "standard",
+      "difficulty": "medium",
+      "answer_type": "single",
+      "stem": "In how many ways can a committee of 4 members be selected from 9 people?",
+      "explanation": "Number of ways = C(9,4) = 126.",
+      "options": [
+        {
+          "label": "124",
+          "is_correct": false
+        },
+        {
+          "label": "126",
+          "is_correct": true
+        },
+        {
+          "label": "128",
+          "is_correct": false
+        },
+        {
+          "label": "130",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Permutations and Combinations",
+      "kind": "standard",
+      "difficulty": "medium",
+      "answer_type": "single",
+      "stem": "Find the value of C(12, 3).",
+      "explanation": "C(12,3) = 220.",
+      "options": [
+        {
+          "label": "211",
+          "is_correct": false
+        },
+        {
+          "label": "229",
+          "is_correct": false
+        },
+        {
+          "label": "238",
+          "is_correct": false
+        },
+        {
+          "label": "220",
+          "is_correct": true
+        }
+      ]
+    },
+    {
+      "chapter": "Permutations and Combinations",
+      "kind": "standard",
+      "difficulty": "medium",
+      "answer_type": "single",
+      "stem": "In how many ways can a committee of 2 members be selected from 12 people?",
+      "explanation": "Number of ways = C(12,2) = 66.",
+      "options": [
+        {
+          "label": "66",
+          "is_correct": true
+        },
+        {
+          "label": "70",
+          "is_correct": false
+        },
+        {
+          "label": "64",
+          "is_correct": false
+        },
+        {
+          "label": "68",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Permutations and Combinations",
+      "kind": "standard",
+      "difficulty": "medium",
+      "answer_type": "single",
+      "stem": "Find the value of C(8, 4).",
+      "explanation": "C(8,4) = 70.",
+      "options": [
+        {
+          "label": "74",
+          "is_correct": false
+        },
+        {
+          "label": "72",
+          "is_correct": false
+        },
+        {
+          "label": "68",
+          "is_correct": false
+        },
+        {
+          "label": "70",
+          "is_correct": true
+        }
+      ]
+    },
+    {
+      "chapter": "Permutations and Combinations",
+      "kind": "standard",
+      "difficulty": "medium",
+      "answer_type": "single",
+      "stem": "In how many ways can a committee of 5 members be selected from 6 people?",
+      "explanation": "Number of ways = C(6,5) = 6.",
+      "options": [
+        {
+          "label": "7",
+          "is_correct": false
+        },
+        {
+          "label": "5",
+          "is_correct": false
+        },
+        {
+          "label": "8",
+          "is_correct": false
+        },
+        {
+          "label": "6",
+          "is_correct": true
+        }
+      ]
+    },
+    {
+      "chapter": "Permutations and Combinations",
+      "kind": "standard",
+      "difficulty": "medium",
+      "answer_type": "single",
+      "stem": "Find the value of C(8, 3).",
+      "explanation": "C(8,3) = 56.",
+      "options": [
+        {
+          "label": "58",
+          "is_correct": false
+        },
+        {
+          "label": "54",
+          "is_correct": false
+        },
+        {
+          "label": "56",
+          "is_correct": true
+        },
+        {
+          "label": "60",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Permutations and Combinations",
+      "kind": "standard",
+      "difficulty": "medium",
+      "answer_type": "single",
+      "stem": "In how many ways can a committee of 2 members be selected from 6 people?",
+      "explanation": "Number of ways = C(6,2) = 15.",
+      "options": [
+        {
+          "label": "16",
+          "is_correct": false
+        },
+        {
+          "label": "15",
+          "is_correct": true
+        },
+        {
+          "label": "14",
+          "is_correct": false
+        },
+        {
+          "label": "17",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Permutations and Combinations",
+      "kind": "standard",
+      "difficulty": "medium",
+      "answer_type": "single",
+      "stem": "Find the value of C(8, 2).",
+      "explanation": "C(8,2) = 28.",
+      "options": [
+        {
+          "label": "29",
+          "is_correct": false
+        },
+        {
+          "label": "30",
+          "is_correct": false
+        },
+        {
+          "label": "28",
+          "is_correct": true
+        },
+        {
+          "label": "27",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Permutations and Combinations",
+      "kind": "standard",
+      "difficulty": "medium",
+      "answer_type": "single",
+      "stem": "In how many ways can a committee of 5 members be selected from 12 people?",
+      "explanation": "Number of ways = C(12,5) = 792.",
+      "options": [
+        {
+          "label": "760",
+          "is_correct": false
+        },
+        {
+          "label": "792",
+          "is_correct": true
+        },
+        {
+          "label": "824",
+          "is_correct": false
+        },
+        {
+          "label": "856",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Permutations and Combinations",
+      "kind": "standard",
+      "difficulty": "medium",
+      "answer_type": "single",
+      "stem": "In how many ways can all the letters of the word NUMBER be arranged (all letters are distinct)?",
+      "explanation": "6 distinct letters can be arranged in 6! = 720 ways.",
+      "options": [
+        {
+          "label": "778",
+          "is_correct": false
+        },
+        {
+          "label": "691",
+          "is_correct": false
+        },
+        {
+          "label": "720",
+          "is_correct": true
+        },
+        {
+          "label": "749",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Permutations and Combinations",
+      "kind": "standard",
+      "difficulty": "medium",
+      "answer_type": "single",
+      "stem": "Find the value of C(9, 3).",
+      "explanation": "C(9,3) = 84.",
+      "options": [
+        {
+          "label": "82",
+          "is_correct": false
+        },
+        {
+          "label": "84",
+          "is_correct": true
+        },
+        {
+          "label": "88",
+          "is_correct": false
+        },
+        {
+          "label": "86",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Permutations and Combinations",
+      "kind": "standard",
+      "difficulty": "medium",
+      "answer_type": "single",
+      "stem": "Find the value of C(9, 2).",
+      "explanation": "C(9,2) = 36.",
+      "options": [
+        {
+          "label": "35",
+          "is_correct": false
+        },
+        {
+          "label": "37",
+          "is_correct": false
+        },
+        {
+          "label": "38",
+          "is_correct": false
+        },
+        {
+          "label": "36",
+          "is_correct": true
+        }
+      ]
+    },
+    {
+      "chapter": "Permutations and Combinations",
+      "kind": "standard",
+      "difficulty": "medium",
+      "answer_type": "single",
+      "stem": "In how many ways can a committee of 2 members be selected from 7 people?",
+      "explanation": "Number of ways = C(7,2) = 21.",
+      "options": [
+        {
+          "label": "22",
+          "is_correct": false
+        },
+        {
+          "label": "21",
+          "is_correct": true
+        },
+        {
+          "label": "23",
+          "is_correct": false
+        },
+        {
+          "label": "20",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Permutations and Combinations",
+      "kind": "standard",
+      "difficulty": "medium",
+      "answer_type": "single",
+      "stem": "In how many ways can a committee of 4 members be selected from 7 people?",
+      "explanation": "Number of ways = C(7,4) = 35.",
+      "options": [
+        {
+          "label": "35",
+          "is_correct": true
+        },
+        {
+          "label": "36",
+          "is_correct": false
+        },
+        {
+          "label": "34",
+          "is_correct": false
+        },
+        {
+          "label": "37",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Permutations and Combinations",
+      "kind": "standard",
+      "difficulty": "medium",
+      "answer_type": "single",
+      "stem": "In how many ways can a committee of 5 members be selected from 11 people?",
+      "explanation": "Number of ways = C(11,5) = 462.",
+      "options": [
+        {
+          "label": "498",
+          "is_correct": false
+        },
+        {
+          "label": "444",
+          "is_correct": false
+        },
+        {
+          "label": "462",
+          "is_correct": true
+        },
+        {
+          "label": "480",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Permutations and Combinations",
+      "kind": "standard",
+      "difficulty": "medium",
+      "answer_type": "single",
+      "stem": "In how many ways can a committee of 5 members be selected from 10 people?",
+      "explanation": "Number of ways = C(10,5) = 252.",
+      "options": [
+        {
+          "label": "252",
+          "is_correct": true
+        },
+        {
+          "label": "262",
+          "is_correct": false
+        },
+        {
+          "label": "242",
+          "is_correct": false
+        },
+        {
+          "label": "272",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Permutations and Combinations",
+      "kind": "standard",
+      "difficulty": "hard",
+      "answer_type": "single",
+      "stem": "In how many distinct ways can all the letters of the word BALLOON be arranged?",
+      "explanation": "7 letters with repeats give 7!/(2!·2!) = 1260 arrangements.",
+      "options": [
+        {
+          "label": "1260",
+          "is_correct": true
+        },
+        {
+          "label": "1360",
+          "is_correct": false
+        },
+        {
+          "label": "1310",
+          "is_correct": false
+        },
+        {
+          "label": "1210",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Permutations and Combinations",
+      "kind": "standard",
+      "difficulty": "hard",
+      "answer_type": "single",
+      "stem": "Find the value of P(8, 4).",
+      "explanation": "P(8,4) = 8!/4! = 1680.",
+      "options": [
+        {
+          "label": "1814",
+          "is_correct": false
+        },
+        {
+          "label": "1680",
+          "is_correct": true
+        },
+        {
+          "label": "1613",
+          "is_correct": false
+        },
+        {
+          "label": "1747",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Permutations and Combinations",
+      "kind": "standard",
+      "difficulty": "hard",
+      "answer_type": "single",
+      "stem": "Find the value of P(12, 2).",
+      "explanation": "P(12,2) = 12!/10! = 132.",
+      "options": [
+        {
+          "label": "134",
+          "is_correct": false
+        },
+        {
+          "label": "132",
+          "is_correct": true
+        },
+        {
+          "label": "130",
+          "is_correct": false
+        },
+        {
+          "label": "136",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Permutations and Combinations",
+      "kind": "standard",
+      "difficulty": "hard",
+      "answer_type": "single",
+      "stem": "In how many ways can 1 men be chosen from 8 men and 1 women from 4 women?",
+      "explanation": "Ways = C(8,1) × C(4,1) = 8 × 4 = 32.",
+      "options": [
+        {
+          "label": "34",
+          "is_correct": false
+        },
+        {
+          "label": "31",
+          "is_correct": false
+        },
+        {
+          "label": "33",
+          "is_correct": false
+        },
+        {
+          "label": "32",
+          "is_correct": true
+        }
+      ]
+    },
+    {
+      "chapter": "Permutations and Combinations",
+      "kind": "standard",
+      "difficulty": "hard",
+      "answer_type": "single",
+      "stem": "In how many distinct ways can all the letters of the word LETTER be arranged?",
+      "explanation": "6 letters with repeats give 6!/(2!·2!) = 180 arrangements.",
+      "options": [
+        {
+          "label": "184",
+          "is_correct": false
+        },
+        {
+          "label": "180",
+          "is_correct": true
+        },
+        {
+          "label": "178",
+          "is_correct": false
+        },
+        {
+          "label": "182",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Permutations and Combinations",
+      "kind": "standard",
+      "difficulty": "hard",
+      "answer_type": "single",
+      "stem": "In how many distinct ways can all the letters of the word BANANA be arranged?",
+      "explanation": "6 letters with repeats give 6!/(3!·2!) = 60 arrangements.",
+      "options": [
+        {
+          "label": "62",
+          "is_correct": false
+        },
+        {
+          "label": "64",
+          "is_correct": false
+        },
+        {
+          "label": "60",
+          "is_correct": true
+        },
+        {
+          "label": "58",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Permutations and Combinations",
+      "kind": "standard",
+      "difficulty": "hard",
+      "answer_type": "single",
+      "stem": "In how many ways can 3 men be chosen from 7 men and 3 women from 4 women?",
+      "explanation": "Ways = C(7,3) × C(4,3) = 35 × 4 = 140.",
+      "options": [
+        {
+          "label": "138",
+          "is_correct": false
+        },
+        {
+          "label": "144",
+          "is_correct": false
+        },
+        {
+          "label": "140",
+          "is_correct": true
+        },
+        {
+          "label": "142",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Permutations and Combinations",
+      "kind": "standard",
+      "difficulty": "hard",
+      "answer_type": "single",
+      "stem": "In how many ways can 1 men be chosen from 7 men and 2 women from 5 women?",
+      "explanation": "Ways = C(7,1) × C(5,2) = 7 × 10 = 70.",
+      "options": [
+        {
+          "label": "72",
+          "is_correct": false
+        },
+        {
+          "label": "68",
+          "is_correct": false
+        },
+        {
+          "label": "74",
+          "is_correct": false
+        },
+        {
+          "label": "70",
+          "is_correct": true
+        }
+      ]
+    },
+    {
+      "chapter": "Permutations and Combinations",
+      "kind": "standard",
+      "difficulty": "hard",
+      "answer_type": "single",
+      "stem": "Find the value of P(8, 2).",
+      "explanation": "P(8,2) = 8!/6! = 56.",
+      "options": [
+        {
+          "label": "56",
+          "is_correct": true
+        },
+        {
+          "label": "60",
+          "is_correct": false
+        },
+        {
+          "label": "54",
+          "is_correct": false
+        },
+        {
+          "label": "58",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Permutations and Combinations",
+      "kind": "standard",
+      "difficulty": "hard",
+      "answer_type": "single",
+      "stem": "Find the value of P(9, 3).",
+      "explanation": "P(9,3) = 9!/6! = 504.",
+      "options": [
+        {
+          "label": "484",
+          "is_correct": false
+        },
+        {
+          "label": "544",
+          "is_correct": false
+        },
+        {
+          "label": "504",
+          "is_correct": true
+        },
+        {
+          "label": "524",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Permutations and Combinations",
+      "kind": "standard",
+      "difficulty": "hard",
+      "answer_type": "single",
+      "stem": "In how many ways can 1 men be chosen from 4 men and 1 women from 7 women?",
+      "explanation": "Ways = C(4,1) × C(7,1) = 4 × 7 = 28.",
+      "options": [
+        {
+          "label": "30",
+          "is_correct": false
+        },
+        {
+          "label": "27",
+          "is_correct": false
+        },
+        {
+          "label": "28",
+          "is_correct": true
+        },
+        {
+          "label": "29",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Permutations and Combinations",
+      "kind": "standard",
+      "difficulty": "hard",
+      "answer_type": "single",
+      "stem": "In how many distinct ways can all the letters of the word SUCCESS be arranged?",
+      "explanation": "7 letters with repeats give 7!/(3!·2!) = 420 arrangements.",
+      "options": [
+        {
+          "label": "437",
+          "is_correct": false
+        },
+        {
+          "label": "420",
+          "is_correct": true
+        },
+        {
+          "label": "454",
+          "is_correct": false
+        },
+        {
+          "label": "403",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Permutations and Combinations",
+      "kind": "standard",
+      "difficulty": "hard",
+      "answer_type": "single",
+      "stem": "In how many distinct ways can all the letters of the word COFFEE be arranged?",
+      "explanation": "6 letters with repeats give 6!/(2!·2!) = 180 arrangements.",
+      "options": [
+        {
+          "label": "182",
+          "is_correct": false
+        },
+        {
+          "label": "180",
+          "is_correct": true
+        },
+        {
+          "label": "184",
+          "is_correct": false
+        },
+        {
+          "label": "178",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Permutations and Combinations",
+      "kind": "standard",
+      "difficulty": "hard",
+      "answer_type": "single",
+      "stem": "Find the value of P(9, 2).",
+      "explanation": "P(9,2) = 9!/7! = 72.",
+      "options": [
+        {
+          "label": "72",
+          "is_correct": true
+        },
+        {
+          "label": "74",
+          "is_correct": false
+        },
+        {
+          "label": "76",
+          "is_correct": false
+        },
+        {
+          "label": "70",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Permutations and Combinations",
+      "kind": "standard",
+      "difficulty": "hard",
+      "answer_type": "single",
+      "stem": "In how many ways can 2 men be chosen from 5 men and 2 women from 4 women?",
+      "explanation": "Ways = C(5,2) × C(4,2) = 10 × 6 = 60.",
+      "options": [
+        {
+          "label": "60",
+          "is_correct": true
+        },
+        {
+          "label": "58",
+          "is_correct": false
+        },
+        {
+          "label": "62",
+          "is_correct": false
+        },
+        {
+          "label": "64",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Permutations and Combinations",
+      "kind": "standard",
+      "difficulty": "hard",
+      "answer_type": "single",
+      "stem": "In how many distinct ways can all the letters of the word APPLE be arranged?",
+      "explanation": "5 letters with repeats give 5!/(2!) = 60 arrangements.",
+      "options": [
+        {
+          "label": "58",
+          "is_correct": false
+        },
+        {
+          "label": "60",
+          "is_correct": true
+        },
+        {
+          "label": "64",
+          "is_correct": false
+        },
+        {
+          "label": "62",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Permutations and Combinations",
+      "kind": "standard",
+      "difficulty": "hard",
+      "answer_type": "single",
+      "stem": "Find the value of P(12, 3).",
+      "explanation": "P(12,3) = 12!/9! = 1320.",
+      "options": [
+        {
+          "label": "1320",
+          "is_correct": true
+        },
+        {
+          "label": "1426",
+          "is_correct": false
+        },
+        {
+          "label": "1373",
+          "is_correct": false
+        },
+        {
+          "label": "1267",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Permutations and Combinations",
+      "kind": "standard",
+      "difficulty": "hard",
+      "answer_type": "single",
+      "stem": "Find the value of P(11, 2).",
+      "explanation": "P(11,2) = 11!/9! = 110.",
+      "options": [
+        {
+          "label": "114",
+          "is_correct": false
+        },
+        {
+          "label": "112",
+          "is_correct": false
+        },
+        {
+          "label": "110",
+          "is_correct": true
+        },
+        {
+          "label": "108",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Permutations and Combinations",
+      "kind": "standard",
+      "difficulty": "hard",
+      "answer_type": "single",
+      "stem": "In how many ways can 3 men be chosen from 7 men and 1 women from 4 women?",
+      "explanation": "Ways = C(7,3) × C(4,1) = 35 × 4 = 140.",
+      "options": [
+        {
+          "label": "142",
+          "is_correct": false
+        },
+        {
+          "label": "140",
+          "is_correct": true
+        },
+        {
+          "label": "144",
+          "is_correct": false
+        },
+        {
+          "label": "138",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Permutations and Combinations",
+      "kind": "standard",
+      "difficulty": "hard",
+      "answer_type": "single",
+      "stem": "In how many ways can 2 men be chosen from 7 men and 1 women from 7 women?",
+      "explanation": "Ways = C(7,2) × C(7,1) = 21 × 7 = 147.",
+      "options": [
+        {
+          "label": "149",
+          "is_correct": false
+        },
+        {
+          "label": "147",
+          "is_correct": true
+        },
+        {
+          "label": "151",
+          "is_correct": false
+        },
+        {
+          "label": "145",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Permutations and Combinations",
+      "kind": "standard",
+      "difficulty": "hard",
+      "answer_type": "single",
+      "stem": "In how many ways can 2 men be chosen from 5 men and 1 women from 4 women?",
+      "explanation": "Ways = C(5,2) × C(4,1) = 10 × 4 = 40.",
+      "options": [
+        {
+          "label": "38",
+          "is_correct": false
+        },
+        {
+          "label": "40",
+          "is_correct": true
+        },
+        {
+          "label": "44",
+          "is_correct": false
+        },
+        {
+          "label": "42",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Permutations and Combinations",
+      "kind": "standard",
+      "difficulty": "hard",
+      "answer_type": "single",
+      "stem": "In how many ways can 3 men be chosen from 5 men and 2 women from 4 women?",
+      "explanation": "Ways = C(5,3) × C(4,2) = 10 × 6 = 60.",
+      "options": [
+        {
+          "label": "58",
+          "is_correct": false
+        },
+        {
+          "label": "60",
+          "is_correct": true
+        },
+        {
+          "label": "62",
+          "is_correct": false
+        },
+        {
+          "label": "64",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Permutations and Combinations",
+      "kind": "standard",
+      "difficulty": "hard",
+      "answer_type": "single",
+      "stem": "Find the value of P(10, 3).",
+      "explanation": "P(10,3) = 10!/7! = 720.",
+      "options": [
+        {
+          "label": "691",
+          "is_correct": false
+        },
+        {
+          "label": "720",
+          "is_correct": true
+        },
+        {
+          "label": "778",
+          "is_correct": false
+        },
+        {
+          "label": "749",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Permutations and Combinations",
+      "kind": "standard",
+      "difficulty": "hard",
+      "answer_type": "single",
+      "stem": "In how many ways can 2 men be chosen from 7 men and 3 women from 7 women?",
+      "explanation": "Ways = C(7,2) × C(7,3) = 21 × 35 = 735.",
+      "options": [
+        {
+          "label": "735",
+          "is_correct": true
+        },
+        {
+          "label": "793",
+          "is_correct": false
+        },
+        {
+          "label": "764",
+          "is_correct": false
+        },
+        {
+          "label": "706",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Permutations and Combinations",
+      "kind": "standard",
+      "difficulty": "hard",
+      "answer_type": "single",
+      "stem": "Find the value of P(11, 3).",
+      "explanation": "P(11,3) = 11!/8! = 990.",
+      "options": [
+        {
+          "label": "1030",
+          "is_correct": false
+        },
+        {
+          "label": "990",
+          "is_correct": true
+        },
+        {
+          "label": "950",
+          "is_correct": false
+        },
+        {
+          "label": "1070",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Permutations and Combinations",
+      "kind": "standard",
+      "difficulty": "hard",
+      "answer_type": "single",
+      "stem": "In how many ways can 2 men be chosen from 6 men and 1 women from 5 women?",
+      "explanation": "Ways = C(6,2) × C(5,1) = 15 × 5 = 75.",
+      "options": [
+        {
+          "label": "73",
+          "is_correct": false
+        },
+        {
+          "label": "79",
+          "is_correct": false
+        },
+        {
+          "label": "75",
+          "is_correct": true
+        },
+        {
+          "label": "77",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Permutations and Combinations",
+      "kind": "standard",
+      "difficulty": "hard",
+      "answer_type": "single",
+      "stem": "In how many ways can 1 men be chosen from 8 men and 3 women from 5 women?",
+      "explanation": "Ways = C(8,1) × C(5,3) = 8 × 10 = 80.",
+      "options": [
+        {
+          "label": "82",
+          "is_correct": false
+        },
+        {
+          "label": "84",
+          "is_correct": false
+        },
+        {
+          "label": "78",
+          "is_correct": false
+        },
+        {
+          "label": "80",
+          "is_correct": true
+        }
+      ]
+    },
+    {
+      "chapter": "Permutations and Combinations",
+      "kind": "standard",
+      "difficulty": "hard",
+      "answer_type": "single",
+      "stem": "In how many ways can 2 men be chosen from 6 men and 2 women from 8 women?",
+      "explanation": "Ways = C(6,2) × C(8,2) = 15 × 28 = 420.",
+      "options": [
+        {
+          "label": "437",
+          "is_correct": false
+        },
+        {
+          "label": "403",
+          "is_correct": false
+        },
+        {
+          "label": "420",
+          "is_correct": true
+        },
+        {
+          "label": "454",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Permutations and Combinations",
+      "kind": "standard",
+      "difficulty": "hard",
+      "answer_type": "single",
+      "stem": "In how many ways can 3 men be chosen from 6 men and 1 women from 5 women?",
+      "explanation": "Ways = C(6,3) × C(5,1) = 20 × 5 = 100.",
+      "options": [
+        {
+          "label": "102",
+          "is_correct": false
+        },
+        {
+          "label": "104",
+          "is_correct": false
+        },
+        {
+          "label": "100",
+          "is_correct": true
+        },
+        {
+          "label": "98",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Permutations and Combinations",
+      "kind": "standard",
+      "difficulty": "hard",
+      "answer_type": "single",
+      "stem": "In how many ways can 2 men be chosen from 5 men and 3 women from 7 women?",
+      "explanation": "Ways = C(5,2) × C(7,3) = 10 × 35 = 350.",
+      "options": [
+        {
+          "label": "364",
+          "is_correct": false
+        },
+        {
+          "label": "378",
+          "is_correct": false
+        },
+        {
+          "label": "336",
+          "is_correct": false
+        },
+        {
+          "label": "350",
+          "is_correct": true
+        }
+      ]
+    },
+    {
+      "chapter": "Permutations and Combinations",
+      "kind": "standard",
+      "difficulty": "hard",
+      "answer_type": "single",
+      "stem": "In how many ways can 2 men be chosen from 8 men and 1 women from 6 women?",
+      "explanation": "Ways = C(8,2) × C(6,1) = 28 × 6 = 168.",
+      "options": [
+        {
+          "label": "166",
+          "is_correct": false
+        },
+        {
+          "label": "168",
+          "is_correct": true
+        },
+        {
+          "label": "170",
+          "is_correct": false
+        },
+        {
+          "label": "172",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Permutations and Combinations",
+      "kind": "standard",
+      "difficulty": "hard",
+      "answer_type": "single",
+      "stem": "In how many ways can 3 men be chosen from 6 men and 2 women from 7 women?",
+      "explanation": "Ways = C(6,3) × C(7,2) = 20 × 21 = 420.",
+      "options": [
+        {
+          "label": "454",
+          "is_correct": false
+        },
+        {
+          "label": "403",
+          "is_correct": false
+        },
+        {
+          "label": "437",
+          "is_correct": false
+        },
+        {
+          "label": "420",
+          "is_correct": true
+        }
+      ]
+    },
+    {
+      "chapter": "Permutations and Combinations",
+      "kind": "standard",
+      "difficulty": "hard",
+      "answer_type": "single",
+      "stem": "In how many ways can 3 men be chosen from 4 men and 1 women from 7 women?",
+      "explanation": "Ways = C(4,3) × C(7,1) = 4 × 7 = 28.",
+      "options": [
+        {
+          "label": "30",
+          "is_correct": false
+        },
+        {
+          "label": "27",
+          "is_correct": false
+        },
+        {
+          "label": "28",
+          "is_correct": true
+        },
+        {
+          "label": "29",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Permutations and Combinations",
+      "kind": "standard",
+      "difficulty": "hard",
+      "answer_type": "single",
+      "stem": "Find the value of P(12, 4).",
+      "explanation": "P(12,4) = 12!/8! = 11880.",
+      "options": [
+        {
+          "label": "11405",
+          "is_correct": false
+        },
+        {
+          "label": "11880",
+          "is_correct": true
+        },
+        {
+          "label": "12355",
+          "is_correct": false
+        },
+        {
+          "label": "12830",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Permutations and Combinations",
+      "kind": "standard",
+      "difficulty": "hard",
+      "answer_type": "single",
+      "stem": "In how many ways can 3 men be chosen from 4 men and 2 women from 8 women?",
+      "explanation": "Ways = C(4,3) × C(8,2) = 4 × 28 = 112.",
+      "options": [
+        {
+          "label": "116",
+          "is_correct": false
+        },
+        {
+          "label": "112",
+          "is_correct": true
+        },
+        {
+          "label": "110",
+          "is_correct": false
+        },
+        {
+          "label": "114",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Permutations and Combinations",
+      "kind": "standard",
+      "difficulty": "hard",
+      "answer_type": "single",
+      "stem": "Find the value of P(9, 4).",
+      "explanation": "P(9,4) = 9!/5! = 3024.",
+      "options": [
+        {
+          "label": "3145",
+          "is_correct": false
+        },
+        {
+          "label": "2903",
+          "is_correct": false
+        },
+        {
+          "label": "3266",
+          "is_correct": false
+        },
+        {
+          "label": "3024",
+          "is_correct": true
+        }
+      ]
+    },
+    {
+      "chapter": "Permutations and Combinations",
+      "kind": "standard",
+      "difficulty": "hard",
+      "answer_type": "single",
+      "stem": "In how many ways can 3 men be chosen from 8 men and 1 women from 4 women?",
+      "explanation": "Ways = C(8,3) × C(4,1) = 56 × 4 = 224.",
+      "options": [
+        {
+          "label": "224",
+          "is_correct": true
+        },
+        {
+          "label": "215",
+          "is_correct": false
+        },
+        {
+          "label": "242",
+          "is_correct": false
+        },
+        {
+          "label": "233",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Permutations and Combinations",
+      "kind": "standard",
+      "difficulty": "hard",
+      "answer_type": "single",
+      "stem": "In how many ways can 3 men be chosen from 6 men and 2 women from 4 women?",
+      "explanation": "Ways = C(6,3) × C(4,2) = 20 × 6 = 120.",
+      "options": [
+        {
+          "label": "120",
+          "is_correct": true
+        },
+        {
+          "label": "124",
+          "is_correct": false
+        },
+        {
+          "label": "118",
+          "is_correct": false
+        },
+        {
+          "label": "122",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Permutations and Combinations",
+      "kind": "standard",
+      "difficulty": "hard",
+      "answer_type": "single",
+      "stem": "In how many ways can 3 men be chosen from 4 men and 2 women from 4 women?",
+      "explanation": "Ways = C(4,3) × C(4,2) = 4 × 6 = 24.",
+      "options": [
+        {
+          "label": "25",
+          "is_correct": false
+        },
+        {
+          "label": "26",
+          "is_correct": false
+        },
+        {
+          "label": "24",
+          "is_correct": true
+        },
+        {
+          "label": "23",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Permutations and Combinations",
+      "kind": "standard",
+      "difficulty": "hard",
+      "answer_type": "single",
+      "stem": "In how many ways can 1 men be chosen from 4 men and 3 women from 8 women?",
+      "explanation": "Ways = C(4,1) × C(8,3) = 4 × 56 = 224.",
+      "options": [
+        {
+          "label": "242",
+          "is_correct": false
+        },
+        {
+          "label": "233",
+          "is_correct": false
+        },
+        {
+          "label": "224",
+          "is_correct": true
+        },
+        {
+          "label": "215",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Permutations and Combinations",
+      "kind": "standard",
+      "difficulty": "hard",
+      "answer_type": "single",
+      "stem": "In how many ways can 3 men be chosen from 6 men and 3 women from 6 women?",
+      "explanation": "Ways = C(6,3) × C(6,3) = 20 × 20 = 400.",
+      "options": [
+        {
+          "label": "432",
+          "is_correct": false
+        },
+        {
+          "label": "400",
+          "is_correct": true
+        },
+        {
+          "label": "416",
+          "is_correct": false
+        },
+        {
+          "label": "384",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Permutations and Combinations",
+      "kind": "standard",
+      "difficulty": "hard",
+      "answer_type": "single",
+      "stem": "In how many ways can 2 men be chosen from 5 men and 2 women from 8 women?",
+      "explanation": "Ways = C(5,2) × C(8,2) = 10 × 28 = 280.",
+      "options": [
+        {
+          "label": "280",
+          "is_correct": true
+        },
+        {
+          "label": "302",
+          "is_correct": false
+        },
+        {
+          "label": "291",
+          "is_correct": false
+        },
+        {
+          "label": "269",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Permutations and Combinations",
+      "kind": "standard",
+      "difficulty": "hard",
+      "answer_type": "single",
+      "stem": "Find the value of P(11, 4).",
+      "explanation": "P(11,4) = 11!/7! = 7920.",
+      "options": [
+        {
+          "label": "8554",
+          "is_correct": false
+        },
+        {
+          "label": "7603",
+          "is_correct": false
+        },
+        {
+          "label": "8237",
+          "is_correct": false
+        },
+        {
+          "label": "7920",
+          "is_correct": true
+        }
+      ]
+    },
+    {
+      "chapter": "Permutations and Combinations",
+      "kind": "standard",
+      "difficulty": "hard",
+      "answer_type": "single",
+      "stem": "Find the value of P(10, 2).",
+      "explanation": "P(10,2) = 10!/8! = 90.",
+      "options": [
+        {
+          "label": "90",
+          "is_correct": true
+        },
+        {
+          "label": "94",
+          "is_correct": false
+        },
+        {
+          "label": "88",
+          "is_correct": false
+        },
+        {
+          "label": "92",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Permutations and Combinations",
+      "kind": "standard",
+      "difficulty": "hard",
+      "answer_type": "single",
+      "stem": "In how many ways can 3 men be chosen from 6 men and 1 women from 6 women?",
+      "explanation": "Ways = C(6,3) × C(6,1) = 20 × 6 = 120.",
+      "options": [
+        {
+          "label": "124",
+          "is_correct": false
+        },
+        {
+          "label": "118",
+          "is_correct": false
+        },
+        {
+          "label": "122",
+          "is_correct": false
+        },
+        {
+          "label": "120",
+          "is_correct": true
+        }
+      ]
+    },
+    {
+      "chapter": "Permutations and Combinations",
+      "kind": "standard",
+      "difficulty": "hard",
+      "answer_type": "single",
+      "stem": "In how many ways can 3 men be chosen from 5 men and 1 women from 5 women?",
+      "explanation": "Ways = C(5,3) × C(5,1) = 10 × 5 = 50.",
+      "options": [
+        {
+          "label": "48",
+          "is_correct": false
+        },
+        {
+          "label": "52",
+          "is_correct": false
+        },
+        {
+          "label": "50",
+          "is_correct": true
+        },
+        {
+          "label": "54",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Permutations and Combinations",
+      "kind": "standard",
+      "difficulty": "hard",
+      "answer_type": "single",
+      "stem": "In how many ways can 1 men be chosen from 8 men and 3 women from 7 women?",
+      "explanation": "Ways = C(8,1) × C(7,3) = 8 × 35 = 280.",
+      "options": [
+        {
+          "label": "291",
+          "is_correct": false
+        },
+        {
+          "label": "280",
+          "is_correct": true
+        },
+        {
+          "label": "269",
+          "is_correct": false
+        },
+        {
+          "label": "302",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Permutations and Combinations",
+      "kind": "standard",
+      "difficulty": "hard",
+      "answer_type": "single",
+      "stem": "In how many ways can 1 men be chosen from 5 men and 3 women from 5 women?",
+      "explanation": "Ways = C(5,1) × C(5,3) = 5 × 10 = 50.",
+      "options": [
+        {
+          "label": "54",
+          "is_correct": false
+        },
+        {
+          "label": "52",
+          "is_correct": false
+        },
+        {
+          "label": "50",
+          "is_correct": true
+        },
+        {
+          "label": "48",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Permutations and Combinations",
+      "kind": "standard",
+      "difficulty": "hard",
+      "answer_type": "single",
+      "stem": "In how many ways can 3 men be chosen from 4 men and 2 women from 5 women?",
+      "explanation": "Ways = C(4,3) × C(5,2) = 4 × 10 = 40.",
+      "options": [
+        {
+          "label": "38",
+          "is_correct": false
+        },
+        {
+          "label": "44",
+          "is_correct": false
+        },
+        {
+          "label": "40",
+          "is_correct": true
+        },
+        {
+          "label": "42",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Permutations and Combinations",
+      "kind": "standard",
+      "difficulty": "hard",
+      "answer_type": "single",
+      "stem": "In how many ways can 3 men be chosen from 4 men and 1 women from 5 women?",
+      "explanation": "Ways = C(4,3) × C(5,1) = 4 × 5 = 20.",
+      "options": [
+        {
+          "label": "22",
+          "is_correct": false
+        },
+        {
+          "label": "21",
+          "is_correct": false
+        },
+        {
+          "label": "20",
+          "is_correct": true
+        },
+        {
+          "label": "19",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Permutations and Combinations",
+      "kind": "standard",
+      "difficulty": "very_hard",
+      "answer_type": "single",
+      "stem": "Find the number of diagonals in a polygon of 13 sides.",
+      "explanation": "Diagonals = n(n−3)/2 = 13×10/2 = 65.",
+      "options": [
+        {
+          "label": "69",
+          "is_correct": false
+        },
+        {
+          "label": "67",
+          "is_correct": false
+        },
+        {
+          "label": "63",
+          "is_correct": false
+        },
+        {
+          "label": "65",
+          "is_correct": true
+        }
+      ]
+    },
+    {
+      "chapter": "Permutations and Combinations",
+      "kind": "standard",
+      "difficulty": "very_hard",
+      "answer_type": "single",
+      "stem": "Find the number of diagonals in a polygon of 23 sides.",
+      "explanation": "Diagonals = n(n−3)/2 = 23×20/2 = 230.",
+      "options": [
+        {
+          "label": "248",
+          "is_correct": false
+        },
+        {
+          "label": "230",
+          "is_correct": true
+        },
+        {
+          "label": "221",
+          "is_correct": false
+        },
+        {
+          "label": "239",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Permutations and Combinations",
+      "kind": "standard",
+      "difficulty": "very_hard",
+      "answer_type": "single",
+      "stem": "Find the number of diagonals in a polygon of 29 sides.",
+      "explanation": "Diagonals = n(n−3)/2 = 29×26/2 = 377.",
+      "options": [
+        {
+          "label": "362",
+          "is_correct": false
+        },
+        {
+          "label": "377",
+          "is_correct": true
+        },
+        {
+          "label": "392",
+          "is_correct": false
+        },
+        {
+          "label": "407",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Permutations and Combinations",
+      "kind": "standard",
+      "difficulty": "very_hard",
+      "answer_type": "single",
+      "stem": "In how many ways can 4 people be seated around a circular table?",
+      "explanation": "Circular arrangements of 4 people = (4−1)! = 6.",
+      "options": [
+        {
+          "label": "5",
+          "is_correct": false
+        },
+        {
+          "label": "7",
+          "is_correct": false
+        },
+        {
+          "label": "6",
+          "is_correct": true
+        },
+        {
+          "label": "8",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Permutations and Combinations",
+      "kind": "standard",
+      "difficulty": "very_hard",
+      "answer_type": "single",
+      "stem": "Find the number of diagonals in a polygon of 8 sides.",
+      "explanation": "Diagonals = n(n−3)/2 = 8×5/2 = 20.",
+      "options": [
+        {
+          "label": "20",
+          "is_correct": true
+        },
+        {
+          "label": "21",
+          "is_correct": false
+        },
+        {
+          "label": "19",
+          "is_correct": false
+        },
+        {
+          "label": "22",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Permutations and Combinations",
+      "kind": "standard",
+      "difficulty": "very_hard",
+      "answer_type": "single",
+      "stem": "In how many ways can 5 people be seated around a circular table?",
+      "explanation": "Circular arrangements of 5 people = (5−1)! = 24.",
+      "options": [
+        {
+          "label": "24",
+          "is_correct": true
+        },
+        {
+          "label": "25",
+          "is_correct": false
+        },
+        {
+          "label": "26",
+          "is_correct": false
+        },
+        {
+          "label": "23",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Permutations and Combinations",
+      "kind": "standard",
+      "difficulty": "very_hard",
+      "answer_type": "single",
+      "stem": "Find the number of diagonals in a polygon of 30 sides.",
+      "explanation": "Diagonals = n(n−3)/2 = 30×27/2 = 405.",
+      "options": [
+        {
+          "label": "421",
+          "is_correct": false
+        },
+        {
+          "label": "437",
+          "is_correct": false
+        },
+        {
+          "label": "405",
+          "is_correct": true
+        },
+        {
+          "label": "389",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Permutations and Combinations",
+      "kind": "standard",
+      "difficulty": "very_hard",
+      "answer_type": "single",
+      "stem": "Find the number of diagonals in a polygon of 9 sides.",
+      "explanation": "Diagonals = n(n−3)/2 = 9×6/2 = 27.",
+      "options": [
+        {
+          "label": "29",
+          "is_correct": false
+        },
+        {
+          "label": "27",
+          "is_correct": true
+        },
+        {
+          "label": "28",
+          "is_correct": false
+        },
+        {
+          "label": "26",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Permutations and Combinations",
+      "kind": "standard",
+      "difficulty": "very_hard",
+      "answer_type": "single",
+      "stem": "Find the number of diagonals in a polygon of 27 sides.",
+      "explanation": "Diagonals = n(n−3)/2 = 27×24/2 = 324.",
+      "options": [
+        {
+          "label": "350",
+          "is_correct": false
+        },
+        {
+          "label": "324",
+          "is_correct": true
+        },
+        {
+          "label": "311",
+          "is_correct": false
+        },
+        {
+          "label": "337",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Permutations and Combinations",
+      "kind": "standard",
+      "difficulty": "very_hard",
+      "answer_type": "single",
+      "stem": "In how many ways can 10 people be seated around a circular table?",
+      "explanation": "Circular arrangements of 10 people = (10−1)! = 362880.",
+      "options": [
+        {
+          "label": "377395",
+          "is_correct": false
+        },
+        {
+          "label": "391910",
+          "is_correct": false
+        },
+        {
+          "label": "362880",
+          "is_correct": true
+        },
+        {
+          "label": "348365",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Permutations and Combinations",
+      "kind": "standard",
+      "difficulty": "very_hard",
+      "answer_type": "single",
+      "stem": "At a party, every person shakes hands with every other person exactly once. If there are 37 persons, find the total number of handshakes.",
+      "explanation": "Handshakes = C(37,2) = 37×36/2 = 666.",
+      "options": [
+        {
+          "label": "639",
+          "is_correct": false
+        },
+        {
+          "label": "693",
+          "is_correct": false
+        },
+        {
+          "label": "720",
+          "is_correct": false
+        },
+        {
+          "label": "666",
+          "is_correct": true
+        }
+      ]
+    },
+    {
+      "chapter": "Permutations and Combinations",
+      "kind": "standard",
+      "difficulty": "very_hard",
+      "answer_type": "single",
+      "stem": "At a party, every person shakes hands with every other person exactly once. If there are 32 persons, find the total number of handshakes.",
+      "explanation": "Handshakes = C(32,2) = 32×31/2 = 496.",
+      "options": [
+        {
+          "label": "496",
+          "is_correct": true
+        },
+        {
+          "label": "516",
+          "is_correct": false
+        },
+        {
+          "label": "476",
+          "is_correct": false
+        },
+        {
+          "label": "536",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Permutations and Combinations",
+      "kind": "standard",
+      "difficulty": "very_hard",
+      "answer_type": "single",
+      "stem": "In how many ways can 8 people be seated around a circular table?",
+      "explanation": "Circular arrangements of 8 people = (8−1)! = 5040.",
+      "options": [
+        {
+          "label": "5040",
+          "is_correct": true
+        },
+        {
+          "label": "5242",
+          "is_correct": false
+        },
+        {
+          "label": "4838",
+          "is_correct": false
+        },
+        {
+          "label": "5444",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Permutations and Combinations",
+      "kind": "standard",
+      "difficulty": "very_hard",
+      "answer_type": "single",
+      "stem": "Find the number of diagonals in a polygon of 7 sides.",
+      "explanation": "Diagonals = n(n−3)/2 = 7×4/2 = 14.",
+      "options": [
+        {
+          "label": "14",
+          "is_correct": true
+        },
+        {
+          "label": "13",
+          "is_correct": false
+        },
+        {
+          "label": "15",
+          "is_correct": false
+        },
+        {
+          "label": "16",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Permutations and Combinations",
+      "kind": "standard",
+      "difficulty": "very_hard",
+      "answer_type": "single",
+      "stem": "Find the number of diagonals in a polygon of 18 sides.",
+      "explanation": "Diagonals = n(n−3)/2 = 18×15/2 = 135.",
+      "options": [
+        {
+          "label": "135",
+          "is_correct": true
+        },
+        {
+          "label": "137",
+          "is_correct": false
+        },
+        {
+          "label": "139",
+          "is_correct": false
+        },
+        {
+          "label": "133",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Permutations and Combinations",
+      "kind": "standard",
+      "difficulty": "very_hard",
+      "answer_type": "single",
+      "stem": "At a party, every person shakes hands with every other person exactly once. If there are 23 persons, find the total number of handshakes.",
+      "explanation": "Handshakes = C(23,2) = 23×22/2 = 253.",
+      "options": [
+        {
+          "label": "243",
+          "is_correct": false
+        },
+        {
+          "label": "253",
+          "is_correct": true
+        },
+        {
+          "label": "263",
+          "is_correct": false
+        },
+        {
+          "label": "273",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Permutations and Combinations",
+      "kind": "standard",
+      "difficulty": "very_hard",
+      "answer_type": "single",
+      "stem": "Find the number of diagonals in a polygon of 28 sides.",
+      "explanation": "Diagonals = n(n−3)/2 = 28×25/2 = 350.",
+      "options": [
+        {
+          "label": "336",
+          "is_correct": false
+        },
+        {
+          "label": "364",
+          "is_correct": false
+        },
+        {
+          "label": "350",
+          "is_correct": true
+        },
+        {
+          "label": "378",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Permutations and Combinations",
+      "kind": "standard",
+      "difficulty": "very_hard",
+      "answer_type": "single",
+      "stem": "At a party, every person shakes hands with every other person exactly once. If there are 20 persons, find the total number of handshakes.",
+      "explanation": "Handshakes = C(20,2) = 20×19/2 = 190.",
+      "options": [
+        {
+          "label": "190",
+          "is_correct": true
+        },
+        {
+          "label": "188",
+          "is_correct": false
+        },
+        {
+          "label": "194",
+          "is_correct": false
+        },
+        {
+          "label": "192",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Permutations and Combinations",
+      "kind": "standard",
+      "difficulty": "very_hard",
+      "answer_type": "single",
+      "stem": "In how many ways can 6 people be seated around a circular table?",
+      "explanation": "Circular arrangements of 6 people = (6−1)! = 120.",
+      "options": [
+        {
+          "label": "122",
+          "is_correct": false
+        },
+        {
+          "label": "120",
+          "is_correct": true
+        },
+        {
+          "label": "118",
+          "is_correct": false
+        },
+        {
+          "label": "124",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Permutations and Combinations",
+      "kind": "standard",
+      "difficulty": "very_hard",
+      "answer_type": "single",
+      "stem": "Find the number of diagonals in a polygon of 17 sides.",
+      "explanation": "Diagonals = n(n−3)/2 = 17×14/2 = 119.",
+      "options": [
+        {
+          "label": "123",
+          "is_correct": false
+        },
+        {
+          "label": "121",
+          "is_correct": false
+        },
+        {
+          "label": "119",
+          "is_correct": true
+        },
+        {
+          "label": "117",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Permutations and Combinations",
+      "kind": "standard",
+      "difficulty": "very_hard",
+      "answer_type": "single",
+      "stem": "In how many ways can 9 people be seated around a circular table?",
+      "explanation": "Circular arrangements of 9 people = (9−1)! = 40320.",
+      "options": [
+        {
+          "label": "43546",
+          "is_correct": false
+        },
+        {
+          "label": "40320",
+          "is_correct": true
+        },
+        {
+          "label": "38707",
+          "is_correct": false
+        },
+        {
+          "label": "41933",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Permutations and Combinations",
+      "kind": "standard",
+      "difficulty": "very_hard",
+      "answer_type": "single",
+      "stem": "Find the number of diagonals in a polygon of 20 sides.",
+      "explanation": "Diagonals = n(n−3)/2 = 20×17/2 = 170.",
+      "options": [
+        {
+          "label": "170",
+          "is_correct": true
+        },
+        {
+          "label": "174",
+          "is_correct": false
+        },
+        {
+          "label": "172",
+          "is_correct": false
+        },
+        {
+          "label": "168",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Permutations and Combinations",
+      "kind": "standard",
+      "difficulty": "very_hard",
+      "answer_type": "single",
+      "stem": "Find the number of diagonals in a polygon of 22 sides.",
+      "explanation": "Diagonals = n(n−3)/2 = 22×19/2 = 209.",
+      "options": [
+        {
+          "label": "201",
+          "is_correct": false
+        },
+        {
+          "label": "217",
+          "is_correct": false
+        },
+        {
+          "label": "225",
+          "is_correct": false
+        },
+        {
+          "label": "209",
+          "is_correct": true
+        }
+      ]
+    },
+    {
+      "chapter": "Permutations and Combinations",
+      "kind": "standard",
+      "difficulty": "very_hard",
+      "answer_type": "single",
+      "stem": "At a party, every person shakes hands with every other person exactly once. If there are 31 persons, find the total number of handshakes.",
+      "explanation": "Handshakes = C(31,2) = 31×30/2 = 465.",
+      "options": [
+        {
+          "label": "503",
+          "is_correct": false
+        },
+        {
+          "label": "446",
+          "is_correct": false
+        },
+        {
+          "label": "484",
+          "is_correct": false
+        },
+        {
+          "label": "465",
+          "is_correct": true
+        }
+      ]
+    },
+    {
+      "chapter": "Permutations and Combinations",
+      "kind": "standard",
+      "difficulty": "very_hard",
+      "answer_type": "single",
+      "stem": "At a party, every person shakes hands with every other person exactly once. If there are 22 persons, find the total number of handshakes.",
+      "explanation": "Handshakes = C(22,2) = 22×21/2 = 231.",
+      "options": [
+        {
+          "label": "222",
+          "is_correct": false
+        },
+        {
+          "label": "249",
+          "is_correct": false
+        },
+        {
+          "label": "240",
+          "is_correct": false
+        },
+        {
+          "label": "231",
+          "is_correct": true
+        }
+      ]
+    },
+    {
+      "chapter": "Permutations and Combinations",
+      "kind": "standard",
+      "difficulty": "very_hard",
+      "answer_type": "single",
+      "stem": "At a party, every person shakes hands with every other person exactly once. If there are 17 persons, find the total number of handshakes.",
+      "explanation": "Handshakes = C(17,2) = 17×16/2 = 136.",
+      "options": [
+        {
+          "label": "138",
+          "is_correct": false
+        },
+        {
+          "label": "134",
+          "is_correct": false
+        },
+        {
+          "label": "136",
+          "is_correct": true
+        },
+        {
+          "label": "140",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Permutations and Combinations",
+      "kind": "standard",
+      "difficulty": "very_hard",
+      "answer_type": "single",
+      "stem": "At a party, every person shakes hands with every other person exactly once. If there are 19 persons, find the total number of handshakes.",
+      "explanation": "Handshakes = C(19,2) = 19×18/2 = 171.",
+      "options": [
+        {
+          "label": "173",
+          "is_correct": false
+        },
+        {
+          "label": "175",
+          "is_correct": false
+        },
+        {
+          "label": "171",
+          "is_correct": true
+        },
+        {
+          "label": "169",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Permutations and Combinations",
+      "kind": "standard",
+      "difficulty": "very_hard",
+      "answer_type": "single",
+      "stem": "At a party, every person shakes hands with every other person exactly once. If there are 15 persons, find the total number of handshakes.",
+      "explanation": "Handshakes = C(15,2) = 15×14/2 = 105.",
+      "options": [
+        {
+          "label": "105",
+          "is_correct": true
+        },
+        {
+          "label": "107",
+          "is_correct": false
+        },
+        {
+          "label": "103",
+          "is_correct": false
+        },
+        {
+          "label": "109",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Permutations and Combinations",
+      "kind": "standard",
+      "difficulty": "very_hard",
+      "answer_type": "single",
+      "stem": "Find the number of diagonals in a polygon of 14 sides.",
+      "explanation": "Diagonals = n(n−3)/2 = 14×11/2 = 77.",
+      "options": [
+        {
+          "label": "79",
+          "is_correct": false
+        },
+        {
+          "label": "81",
+          "is_correct": false
+        },
+        {
+          "label": "77",
+          "is_correct": true
+        },
+        {
+          "label": "75",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Permutations and Combinations",
+      "kind": "standard",
+      "difficulty": "very_hard",
+      "answer_type": "single",
+      "stem": "Find the number of diagonals in a polygon of 12 sides.",
+      "explanation": "Diagonals = n(n−3)/2 = 12×9/2 = 54.",
+      "options": [
+        {
+          "label": "52",
+          "is_correct": false
+        },
+        {
+          "label": "58",
+          "is_correct": false
+        },
+        {
+          "label": "54",
+          "is_correct": true
+        },
+        {
+          "label": "56",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Permutations and Combinations",
+      "kind": "standard",
+      "difficulty": "very_hard",
+      "answer_type": "single",
+      "stem": "At a party, every person shakes hands with every other person exactly once. If there are 8 persons, find the total number of handshakes.",
+      "explanation": "Handshakes = C(8,2) = 8×7/2 = 28.",
+      "options": [
+        {
+          "label": "30",
+          "is_correct": false
+        },
+        {
+          "label": "29",
+          "is_correct": false
+        },
+        {
+          "label": "28",
+          "is_correct": true
+        },
+        {
+          "label": "27",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Permutations and Combinations",
+      "kind": "standard",
+      "difficulty": "very_hard",
+      "answer_type": "single",
+      "stem": "At a party, every person shakes hands with every other person exactly once. If there are 7 persons, find the total number of handshakes.",
+      "explanation": "Handshakes = C(7,2) = 7×6/2 = 21.",
+      "options": [
+        {
+          "label": "21",
+          "is_correct": true
+        },
+        {
+          "label": "23",
+          "is_correct": false
+        },
+        {
+          "label": "22",
+          "is_correct": false
+        },
+        {
+          "label": "20",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Permutations and Combinations",
+      "kind": "standard",
+      "difficulty": "very_hard",
+      "answer_type": "single",
+      "stem": "Find the number of diagonals in a polygon of 5 sides.",
+      "explanation": "Diagonals = n(n−3)/2 = 5×2/2 = 5.",
+      "options": [
+        {
+          "label": "4",
+          "is_correct": false
+        },
+        {
+          "label": "6",
+          "is_correct": false
+        },
+        {
+          "label": "7",
+          "is_correct": false
+        },
+        {
+          "label": "5",
+          "is_correct": true
+        }
+      ]
+    },
+    {
+      "chapter": "Permutations and Combinations",
+      "kind": "standard",
+      "difficulty": "very_hard",
+      "answer_type": "single",
+      "stem": "At a party, every person shakes hands with every other person exactly once. If there are 38 persons, find the total number of handshakes.",
+      "explanation": "Handshakes = C(38,2) = 38×37/2 = 703.",
+      "options": [
+        {
+          "label": "759",
+          "is_correct": false
+        },
+        {
+          "label": "731",
+          "is_correct": false
+        },
+        {
+          "label": "703",
+          "is_correct": true
+        },
+        {
+          "label": "675",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Permutations and Combinations",
+      "kind": "standard",
+      "difficulty": "very_hard",
+      "answer_type": "single",
+      "stem": "At a party, every person shakes hands with every other person exactly once. If there are 16 persons, find the total number of handshakes.",
+      "explanation": "Handshakes = C(16,2) = 16×15/2 = 120.",
+      "options": [
+        {
+          "label": "118",
+          "is_correct": false
+        },
+        {
+          "label": "120",
+          "is_correct": true
+        },
+        {
+          "label": "124",
+          "is_correct": false
+        },
+        {
+          "label": "122",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Permutations and Combinations",
+      "kind": "standard",
+      "difficulty": "very_hard",
+      "answer_type": "single",
+      "stem": "Find the number of diagonals in a polygon of 19 sides.",
+      "explanation": "Diagonals = n(n−3)/2 = 19×16/2 = 152.",
+      "options": [
+        {
+          "label": "156",
+          "is_correct": false
+        },
+        {
+          "label": "154",
+          "is_correct": false
+        },
+        {
+          "label": "152",
+          "is_correct": true
+        },
+        {
+          "label": "150",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Permutations and Combinations",
+      "kind": "standard",
+      "difficulty": "very_hard",
+      "answer_type": "single",
+      "stem": "At a party, every person shakes hands with every other person exactly once. If there are 5 persons, find the total number of handshakes.",
+      "explanation": "Handshakes = C(5,2) = 5×4/2 = 10.",
+      "options": [
+        {
+          "label": "10",
+          "is_correct": true
+        },
+        {
+          "label": "9",
+          "is_correct": false
+        },
+        {
+          "label": "12",
+          "is_correct": false
+        },
+        {
+          "label": "11",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Permutations and Combinations",
+      "kind": "standard",
+      "difficulty": "very_hard",
+      "answer_type": "single",
+      "stem": "Find the number of diagonals in a polygon of 26 sides.",
+      "explanation": "Diagonals = n(n−3)/2 = 26×23/2 = 299.",
+      "options": [
+        {
+          "label": "299",
+          "is_correct": true
+        },
+        {
+          "label": "323",
+          "is_correct": false
+        },
+        {
+          "label": "311",
+          "is_correct": false
+        },
+        {
+          "label": "287",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Permutations and Combinations",
+      "kind": "standard",
+      "difficulty": "very_hard",
+      "answer_type": "single",
+      "stem": "At a party, every person shakes hands with every other person exactly once. If there are 25 persons, find the total number of handshakes.",
+      "explanation": "Handshakes = C(25,2) = 25×24/2 = 300.",
+      "options": [
+        {
+          "label": "324",
+          "is_correct": false
+        },
+        {
+          "label": "312",
+          "is_correct": false
+        },
+        {
+          "label": "288",
+          "is_correct": false
+        },
+        {
+          "label": "300",
+          "is_correct": true
+        }
+      ]
+    },
+    {
+      "chapter": "Permutations and Combinations",
+      "kind": "standard",
+      "difficulty": "very_hard",
+      "answer_type": "single",
+      "stem": "At a party, every person shakes hands with every other person exactly once. If there are 27 persons, find the total number of handshakes.",
+      "explanation": "Handshakes = C(27,2) = 27×26/2 = 351.",
+      "options": [
+        {
+          "label": "351",
+          "is_correct": true
+        },
+        {
+          "label": "365",
+          "is_correct": false
+        },
+        {
+          "label": "379",
+          "is_correct": false
+        },
+        {
+          "label": "337",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Permutations and Combinations",
+      "kind": "standard",
+      "difficulty": "very_hard",
+      "answer_type": "single",
+      "stem": "Find the number of diagonals in a polygon of 11 sides.",
+      "explanation": "Diagonals = n(n−3)/2 = 11×8/2 = 44.",
+      "options": [
+        {
+          "label": "44",
+          "is_correct": true
+        },
+        {
+          "label": "48",
+          "is_correct": false
+        },
+        {
+          "label": "46",
+          "is_correct": false
+        },
+        {
+          "label": "42",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Permutations and Combinations",
+      "kind": "standard",
+      "difficulty": "very_hard",
+      "answer_type": "single",
+      "stem": "Find the number of diagonals in a polygon of 25 sides.",
+      "explanation": "Diagonals = n(n−3)/2 = 25×22/2 = 275.",
+      "options": [
+        {
+          "label": "286",
+          "is_correct": false
+        },
+        {
+          "label": "297",
+          "is_correct": false
+        },
+        {
+          "label": "275",
+          "is_correct": true
+        },
+        {
+          "label": "264",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Permutations and Combinations",
+      "kind": "standard",
+      "difficulty": "very_hard",
+      "answer_type": "single",
+      "stem": "At a party, every person shakes hands with every other person exactly once. If there are 12 persons, find the total number of handshakes.",
+      "explanation": "Handshakes = C(12,2) = 12×11/2 = 66.",
+      "options": [
+        {
+          "label": "70",
+          "is_correct": false
+        },
+        {
+          "label": "68",
+          "is_correct": false
+        },
+        {
+          "label": "66",
+          "is_correct": true
+        },
+        {
+          "label": "64",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Permutations and Combinations",
+      "kind": "standard",
+      "difficulty": "very_hard",
+      "answer_type": "single",
+      "stem": "Find the number of diagonals in a polygon of 6 sides.",
+      "explanation": "Diagonals = n(n−3)/2 = 6×3/2 = 9.",
+      "options": [
+        {
+          "label": "11",
+          "is_correct": false
+        },
+        {
+          "label": "8",
+          "is_correct": false
+        },
+        {
+          "label": "9",
+          "is_correct": true
+        },
+        {
+          "label": "10",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Permutations and Combinations",
+      "kind": "standard",
+      "difficulty": "very_hard",
+      "answer_type": "single",
+      "stem": "In how many ways can 7 people be seated around a circular table?",
+      "explanation": "Circular arrangements of 7 people = (7−1)! = 720.",
+      "options": [
+        {
+          "label": "778",
+          "is_correct": false
+        },
+        {
+          "label": "720",
+          "is_correct": true
+        },
+        {
+          "label": "749",
+          "is_correct": false
+        },
+        {
+          "label": "691",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Permutations and Combinations",
+      "kind": "standard",
+      "difficulty": "very_hard",
+      "answer_type": "single",
+      "stem": "At a party, every person shakes hands with every other person exactly once. If there are 28 persons, find the total number of handshakes.",
+      "explanation": "Handshakes = C(28,2) = 28×27/2 = 378.",
+      "options": [
+        {
+          "label": "393",
+          "is_correct": false
+        },
+        {
+          "label": "363",
+          "is_correct": false
+        },
+        {
+          "label": "408",
+          "is_correct": false
+        },
+        {
+          "label": "378",
+          "is_correct": true
+        }
+      ]
+    },
+    {
+      "chapter": "Permutations and Combinations",
+      "kind": "standard",
+      "difficulty": "very_hard",
+      "answer_type": "single",
+      "stem": "At a party, every person shakes hands with every other person exactly once. If there are 26 persons, find the total number of handshakes.",
+      "explanation": "Handshakes = C(26,2) = 26×25/2 = 325.",
+      "options": [
+        {
+          "label": "338",
+          "is_correct": false
+        },
+        {
+          "label": "351",
+          "is_correct": false
+        },
+        {
+          "label": "325",
+          "is_correct": true
+        },
+        {
+          "label": "312",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Permutations and Combinations",
+      "kind": "standard",
+      "difficulty": "very_hard",
+      "answer_type": "single",
+      "stem": "At a party, every person shakes hands with every other person exactly once. If there are 29 persons, find the total number of handshakes.",
+      "explanation": "Handshakes = C(29,2) = 29×28/2 = 406.",
+      "options": [
+        {
+          "label": "438",
+          "is_correct": false
+        },
+        {
+          "label": "406",
+          "is_correct": true
+        },
+        {
+          "label": "422",
+          "is_correct": false
+        },
+        {
+          "label": "390",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Permutations and Combinations",
+      "kind": "standard",
+      "difficulty": "very_hard",
+      "answer_type": "single",
+      "stem": "At a party, every person shakes hands with every other person exactly once. If there are 35 persons, find the total number of handshakes.",
+      "explanation": "Handshakes = C(35,2) = 35×34/2 = 595.",
+      "options": [
+        {
+          "label": "619",
+          "is_correct": false
+        },
+        {
+          "label": "571",
+          "is_correct": false
+        },
+        {
+          "label": "595",
+          "is_correct": true
+        },
+        {
+          "label": "643",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Permutations and Combinations",
+      "kind": "standard",
+      "difficulty": "very_hard",
+      "answer_type": "single",
+      "stem": "At a party, every person shakes hands with every other person exactly once. If there are 13 persons, find the total number of handshakes.",
+      "explanation": "Handshakes = C(13,2) = 13×12/2 = 78.",
+      "options": [
+        {
+          "label": "76",
+          "is_correct": false
+        },
+        {
+          "label": "82",
+          "is_correct": false
+        },
+        {
+          "label": "80",
+          "is_correct": false
+        },
+        {
+          "label": "78",
+          "is_correct": true
+        }
+      ]
+    }
+  ]
+}
