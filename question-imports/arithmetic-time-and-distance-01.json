@@ -1,0 +1,5205 @@
+{
+  "subject": "Arithmetic",
+  "questions": [
+    {
+      "chapter": "Time and Distance",
+      "kind": "standard",
+      "difficulty": "easy",
+      "answer_type": "single",
+      "stem": "A car travels at 30 km/h for 11 hours. Find the distance covered.",
+      "explanation": "Distance = speed × time = 30 × 11 = 330 km.",
+      "options": [
+        {
+          "label": "317 km",
+          "is_correct": false
+        },
+        {
+          "label": "330 km",
+          "is_correct": true
+        },
+        {
+          "label": "343 km",
+          "is_correct": false
+        },
+        {
+          "label": "356 km",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Time and Distance",
+      "kind": "standard",
+      "difficulty": "easy",
+      "answer_type": "single",
+      "stem": "A car travels at 76 km/h for 2 hours. Find the distance covered.",
+      "explanation": "Distance = speed × time = 76 × 2 = 152 km.",
+      "options": [
+        {
+          "label": "154 km",
+          "is_correct": false
+        },
+        {
+          "label": "152 km",
+          "is_correct": true
+        },
+        {
+          "label": "150 km",
+          "is_correct": false
+        },
+        {
+          "label": "156 km",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Time and Distance",
+      "kind": "standard",
+      "difficulty": "easy",
+      "answer_type": "single",
+      "stem": "A car covers 200 km in 10 hours. Find its speed.",
+      "explanation": "Speed = distance/time = 200/10 = 20 km/h.",
+      "options": [
+        {
+          "label": "22 km/h",
+          "is_correct": false
+        },
+        {
+          "label": "21 km/h",
+          "is_correct": false
+        },
+        {
+          "label": "19 km/h",
+          "is_correct": false
+        },
+        {
+          "label": "20 km/h",
+          "is_correct": true
+        }
+      ]
+    },
+    {
+      "chapter": "Time and Distance",
+      "kind": "standard",
+      "difficulty": "easy",
+      "answer_type": "single",
+      "stem": "A car travels 385 km at a steady speed of 77 km/h. Find the time taken.",
+      "explanation": "Time = distance/speed = 385/77 = 5 hours.",
+      "options": [
+        {
+          "label": "5 hours",
+          "is_correct": true
+        },
+        {
+          "label": "6 hours",
+          "is_correct": false
+        },
+        {
+          "label": "4 hours",
+          "is_correct": false
+        },
+        {
+          "label": "7 hours",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Time and Distance",
+      "kind": "standard",
+      "difficulty": "easy",
+      "answer_type": "single",
+      "stem": "A car covers 726 km in 11 hours. Find its speed.",
+      "explanation": "Speed = distance/time = 726/11 = 66 km/h.",
+      "options": [
+        {
+          "label": "68 km/h",
+          "is_correct": false
+        },
+        {
+          "label": "66 km/h",
+          "is_correct": true
+        },
+        {
+          "label": "70 km/h",
+          "is_correct": false
+        },
+        {
+          "label": "64 km/h",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Time and Distance",
+      "kind": "standard",
+      "difficulty": "easy",
+      "answer_type": "single",
+      "stem": "A car covers 399 km in 7 hours. Find its speed.",
+      "explanation": "Speed = distance/time = 399/7 = 57 km/h.",
+      "options": [
+        {
+          "label": "59 km/h",
+          "is_correct": false
+        },
+        {
+          "label": "57 km/h",
+          "is_correct": true
+        },
+        {
+          "label": "61 km/h",
+          "is_correct": false
+        },
+        {
+          "label": "55 km/h",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Time and Distance",
+      "kind": "standard",
+      "difficulty": "easy",
+      "answer_type": "single",
+      "stem": "A car travels at 22 km/h for 10 hours. Find the distance covered.",
+      "explanation": "Distance = speed × time = 22 × 10 = 220 km.",
+      "options": [
+        {
+          "label": "229 km",
+          "is_correct": false
+        },
+        {
+          "label": "211 km",
+          "is_correct": false
+        },
+        {
+          "label": "220 km",
+          "is_correct": true
+        },
+        {
+          "label": "238 km",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Time and Distance",
+      "kind": "standard",
+      "difficulty": "easy",
+      "answer_type": "single",
+      "stem": "A car travels 801 km at a steady speed of 89 km/h. Find the time taken.",
+      "explanation": "Time = distance/speed = 801/89 = 9 hours.",
+      "options": [
+        {
+          "label": "9 hours",
+          "is_correct": true
+        },
+        {
+          "label": "11 hours",
+          "is_correct": false
+        },
+        {
+          "label": "10 hours",
+          "is_correct": false
+        },
+        {
+          "label": "8 hours",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Time and Distance",
+      "kind": "standard",
+      "difficulty": "easy",
+      "answer_type": "single",
+      "stem": "A car covers 948 km in 12 hours. Find its speed.",
+      "explanation": "Speed = distance/time = 948/12 = 79 km/h.",
+      "options": [
+        {
+          "label": "77 km/h",
+          "is_correct": false
+        },
+        {
+          "label": "81 km/h",
+          "is_correct": false
+        },
+        {
+          "label": "79 km/h",
+          "is_correct": true
+        },
+        {
+          "label": "83 km/h",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Time and Distance",
+      "kind": "standard",
+      "difficulty": "easy",
+      "answer_type": "single",
+      "stem": "Convert a speed of 90 km/h into metres per second (m/s).",
+      "explanation": "km/h → m/s: multiply by 5/18, so 90 × 5/18 = 25 m/s.",
+      "options": [
+        {
+          "label": "26 m/s",
+          "is_correct": false
+        },
+        {
+          "label": "27 m/s",
+          "is_correct": false
+        },
+        {
+          "label": "25 m/s",
+          "is_correct": true
+        },
+        {
+          "label": "24 m/s",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Time and Distance",
+      "kind": "standard",
+      "difficulty": "easy",
+      "answer_type": "single",
+      "stem": "A car covers 124 km in 2 hours. Find its speed.",
+      "explanation": "Speed = distance/time = 124/2 = 62 km/h.",
+      "options": [
+        {
+          "label": "60 km/h",
+          "is_correct": false
+        },
+        {
+          "label": "64 km/h",
+          "is_correct": false
+        },
+        {
+          "label": "62 km/h",
+          "is_correct": true
+        },
+        {
+          "label": "66 km/h",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Time and Distance",
+      "kind": "standard",
+      "difficulty": "easy",
+      "answer_type": "single",
+      "stem": "A car covers 87 km in 3 hours. Find its speed.",
+      "explanation": "Speed = distance/time = 87/3 = 29 km/h.",
+      "options": [
+        {
+          "label": "28 km/h",
+          "is_correct": false
+        },
+        {
+          "label": "30 km/h",
+          "is_correct": false
+        },
+        {
+          "label": "31 km/h",
+          "is_correct": false
+        },
+        {
+          "label": "29 km/h",
+          "is_correct": true
+        }
+      ]
+    },
+    {
+      "chapter": "Time and Distance",
+      "kind": "standard",
+      "difficulty": "easy",
+      "answer_type": "single",
+      "stem": "A car travels at 29 km/h for 11 hours. Find the distance covered.",
+      "explanation": "Distance = speed × time = 29 × 11 = 319 km.",
+      "options": [
+        {
+          "label": "332 km",
+          "is_correct": false
+        },
+        {
+          "label": "319 km",
+          "is_correct": true
+        },
+        {
+          "label": "345 km",
+          "is_correct": false
+        },
+        {
+          "label": "306 km",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Time and Distance",
+      "kind": "standard",
+      "difficulty": "easy",
+      "answer_type": "single",
+      "stem": "A car travels 558 km at a steady speed of 62 km/h. Find the time taken.",
+      "explanation": "Time = distance/speed = 558/62 = 9 hours.",
+      "options": [
+        {
+          "label": "9 hours",
+          "is_correct": true
+        },
+        {
+          "label": "8 hours",
+          "is_correct": false
+        },
+        {
+          "label": "11 hours",
+          "is_correct": false
+        },
+        {
+          "label": "10 hours",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Time and Distance",
+      "kind": "standard",
+      "difficulty": "easy",
+      "answer_type": "single",
+      "stem": "A car travels at 29 km/h for 3 hours. Find the distance covered.",
+      "explanation": "Distance = speed × time = 29 × 3 = 87 km.",
+      "options": [
+        {
+          "label": "91 km",
+          "is_correct": false
+        },
+        {
+          "label": "85 km",
+          "is_correct": false
+        },
+        {
+          "label": "89 km",
+          "is_correct": false
+        },
+        {
+          "label": "87 km",
+          "is_correct": true
+        }
+      ]
+    },
+    {
+      "chapter": "Time and Distance",
+      "kind": "standard",
+      "difficulty": "easy",
+      "answer_type": "single",
+      "stem": "A car covers 126 km in 6 hours. Find its speed.",
+      "explanation": "Speed = distance/time = 126/6 = 21 km/h.",
+      "options": [
+        {
+          "label": "20 km/h",
+          "is_correct": false
+        },
+        {
+          "label": "21 km/h",
+          "is_correct": true
+        },
+        {
+          "label": "23 km/h",
+          "is_correct": false
+        },
+        {
+          "label": "22 km/h",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Time and Distance",
+      "kind": "standard",
+      "difficulty": "easy",
+      "answer_type": "single",
+      "stem": "A car covers 720 km in 8 hours. Find its speed.",
+      "explanation": "Speed = distance/time = 720/8 = 90 km/h.",
+      "options": [
+        {
+          "label": "94 km/h",
+          "is_correct": false
+        },
+        {
+          "label": "90 km/h",
+          "is_correct": true
+        },
+        {
+          "label": "88 km/h",
+          "is_correct": false
+        },
+        {
+          "label": "92 km/h",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Time and Distance",
+      "kind": "standard",
+      "difficulty": "easy",
+      "answer_type": "single",
+      "stem": "A car travels at 23 km/h for 2 hours. Find the distance covered.",
+      "explanation": "Distance = speed × time = 23 × 2 = 46 km.",
+      "options": [
+        {
+          "label": "44 km",
+          "is_correct": false
+        },
+        {
+          "label": "48 km",
+          "is_correct": false
+        },
+        {
+          "label": "50 km",
+          "is_correct": false
+        },
+        {
+          "label": "46 km",
+          "is_correct": true
+        }
+      ]
+    },
+    {
+      "chapter": "Time and Distance",
+      "kind": "standard",
+      "difficulty": "easy",
+      "answer_type": "single",
+      "stem": "Convert a speed of 108 km/h into metres per second (m/s).",
+      "explanation": "km/h → m/s: multiply by 5/18, so 108 × 5/18 = 30 m/s.",
+      "options": [
+        {
+          "label": "32 m/s",
+          "is_correct": false
+        },
+        {
+          "label": "30 m/s",
+          "is_correct": true
+        },
+        {
+          "label": "31 m/s",
+          "is_correct": false
+        },
+        {
+          "label": "29 m/s",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Time and Distance",
+      "kind": "standard",
+      "difficulty": "easy",
+      "answer_type": "single",
+      "stem": "Convert a speed of 144 km/h into metres per second (m/s).",
+      "explanation": "km/h → m/s: multiply by 5/18, so 144 × 5/18 = 40 m/s.",
+      "options": [
+        {
+          "label": "38 m/s",
+          "is_correct": false
+        },
+        {
+          "label": "44 m/s",
+          "is_correct": false
+        },
+        {
+          "label": "42 m/s",
+          "is_correct": false
+        },
+        {
+          "label": "40 m/s",
+          "is_correct": true
+        }
+      ]
+    },
+    {
+      "chapter": "Time and Distance",
+      "kind": "standard",
+      "difficulty": "easy",
+      "answer_type": "single",
+      "stem": "Convert a speed of 72 km/h into metres per second (m/s).",
+      "explanation": "km/h → m/s: multiply by 5/18, so 72 × 5/18 = 20 m/s.",
+      "options": [
+        {
+          "label": "20 m/s",
+          "is_correct": true
+        },
+        {
+          "label": "22 m/s",
+          "is_correct": false
+        },
+        {
+          "label": "21 m/s",
+          "is_correct": false
+        },
+        {
+          "label": "19 m/s",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Time and Distance",
+      "kind": "standard",
+      "difficulty": "easy",
+      "answer_type": "single",
+      "stem": "A car travels 288 km at a steady speed of 24 km/h. Find the time taken.",
+      "explanation": "Time = distance/speed = 288/24 = 12 hours.",
+      "options": [
+        {
+          "label": "14 hours",
+          "is_correct": false
+        },
+        {
+          "label": "13 hours",
+          "is_correct": false
+        },
+        {
+          "label": "12 hours",
+          "is_correct": true
+        },
+        {
+          "label": "11 hours",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Time and Distance",
+      "kind": "standard",
+      "difficulty": "easy",
+      "answer_type": "single",
+      "stem": "A car travels at 69 km/h for 12 hours. Find the distance covered.",
+      "explanation": "Distance = speed × time = 69 × 12 = 828 km.",
+      "options": [
+        {
+          "label": "861 km",
+          "is_correct": false
+        },
+        {
+          "label": "828 km",
+          "is_correct": true
+        },
+        {
+          "label": "894 km",
+          "is_correct": false
+        },
+        {
+          "label": "795 km",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Time and Distance",
+      "kind": "standard",
+      "difficulty": "easy",
+      "answer_type": "single",
+      "stem": "A car travels at 74 km/h for 4 hours. Find the distance covered.",
+      "explanation": "Distance = speed × time = 74 × 4 = 296 km.",
+      "options": [
+        {
+          "label": "296 km",
+          "is_correct": true
+        },
+        {
+          "label": "284 km",
+          "is_correct": false
+        },
+        {
+          "label": "320 km",
+          "is_correct": false
+        },
+        {
+          "label": "308 km",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Time and Distance",
+      "kind": "standard",
+      "difficulty": "easy",
+      "answer_type": "single",
+      "stem": "A car covers 336 km in 4 hours. Find its speed.",
+      "explanation": "Speed = distance/time = 336/4 = 84 km/h.",
+      "options": [
+        {
+          "label": "86 km/h",
+          "is_correct": false
+        },
+        {
+          "label": "82 km/h",
+          "is_correct": false
+        },
+        {
+          "label": "84 km/h",
+          "is_correct": true
+        },
+        {
+          "label": "88 km/h",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Time and Distance",
+      "kind": "standard",
+      "difficulty": "easy",
+      "answer_type": "single",
+      "stem": "A car covers 414 km in 6 hours. Find its speed.",
+      "explanation": "Speed = distance/time = 414/6 = 69 km/h.",
+      "options": [
+        {
+          "label": "73 km/h",
+          "is_correct": false
+        },
+        {
+          "label": "71 km/h",
+          "is_correct": false
+        },
+        {
+          "label": "67 km/h",
+          "is_correct": false
+        },
+        {
+          "label": "69 km/h",
+          "is_correct": true
+        }
+      ]
+    },
+    {
+      "chapter": "Time and Distance",
+      "kind": "standard",
+      "difficulty": "easy",
+      "answer_type": "single",
+      "stem": "A car travels 432 km at a steady speed of 72 km/h. Find the time taken.",
+      "explanation": "Time = distance/speed = 432/72 = 6 hours.",
+      "options": [
+        {
+          "label": "8 hours",
+          "is_correct": false
+        },
+        {
+          "label": "6 hours",
+          "is_correct": true
+        },
+        {
+          "label": "7 hours",
+          "is_correct": false
+        },
+        {
+          "label": "5 hours",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Time and Distance",
+      "kind": "standard",
+      "difficulty": "easy",
+      "answer_type": "single",
+      "stem": "A car travels 590 km at a steady speed of 59 km/h. Find the time taken.",
+      "explanation": "Time = distance/speed = 590/59 = 10 hours.",
+      "options": [
+        {
+          "label": "11 hours",
+          "is_correct": false
+        },
+        {
+          "label": "9 hours",
+          "is_correct": false
+        },
+        {
+          "label": "12 hours",
+          "is_correct": false
+        },
+        {
+          "label": "10 hours",
+          "is_correct": true
+        }
+      ]
+    },
+    {
+      "chapter": "Time and Distance",
+      "kind": "standard",
+      "difficulty": "easy",
+      "answer_type": "single",
+      "stem": "A car covers 600 km in 10 hours. Find its speed.",
+      "explanation": "Speed = distance/time = 600/10 = 60 km/h.",
+      "options": [
+        {
+          "label": "62 km/h",
+          "is_correct": false
+        },
+        {
+          "label": "64 km/h",
+          "is_correct": false
+        },
+        {
+          "label": "60 km/h",
+          "is_correct": true
+        },
+        {
+          "label": "58 km/h",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Time and Distance",
+      "kind": "standard",
+      "difficulty": "easy",
+      "answer_type": "single",
+      "stem": "A car covers 64 km in 2 hours. Find its speed.",
+      "explanation": "Speed = distance/time = 64/2 = 32 km/h.",
+      "options": [
+        {
+          "label": "34 km/h",
+          "is_correct": false
+        },
+        {
+          "label": "33 km/h",
+          "is_correct": false
+        },
+        {
+          "label": "32 km/h",
+          "is_correct": true
+        },
+        {
+          "label": "31 km/h",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Time and Distance",
+      "kind": "standard",
+      "difficulty": "easy",
+      "answer_type": "single",
+      "stem": "A car travels 84 km at a steady speed of 21 km/h. Find the time taken.",
+      "explanation": "Time = distance/speed = 84/21 = 4 hours.",
+      "options": [
+        {
+          "label": "6 hours",
+          "is_correct": false
+        },
+        {
+          "label": "4 hours",
+          "is_correct": true
+        },
+        {
+          "label": "3 hours",
+          "is_correct": false
+        },
+        {
+          "label": "5 hours",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Time and Distance",
+      "kind": "standard",
+      "difficulty": "easy",
+      "answer_type": "single",
+      "stem": "A car travels at 49 km/h for 7 hours. Find the distance covered.",
+      "explanation": "Distance = speed × time = 49 × 7 = 343 km.",
+      "options": [
+        {
+          "label": "329 km",
+          "is_correct": false
+        },
+        {
+          "label": "357 km",
+          "is_correct": false
+        },
+        {
+          "label": "343 km",
+          "is_correct": true
+        },
+        {
+          "label": "371 km",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Time and Distance",
+      "kind": "standard",
+      "difficulty": "easy",
+      "answer_type": "single",
+      "stem": "Convert a speed of 126 km/h into metres per second (m/s).",
+      "explanation": "km/h → m/s: multiply by 5/18, so 126 × 5/18 = 35 m/s.",
+      "options": [
+        {
+          "label": "35 m/s",
+          "is_correct": true
+        },
+        {
+          "label": "36 m/s",
+          "is_correct": false
+        },
+        {
+          "label": "34 m/s",
+          "is_correct": false
+        },
+        {
+          "label": "37 m/s",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Time and Distance",
+      "kind": "standard",
+      "difficulty": "easy",
+      "answer_type": "single",
+      "stem": "A car travels at 64 km/h for 10 hours. Find the distance covered.",
+      "explanation": "Distance = speed × time = 64 × 10 = 640 km.",
+      "options": [
+        {
+          "label": "666 km",
+          "is_correct": false
+        },
+        {
+          "label": "614 km",
+          "is_correct": false
+        },
+        {
+          "label": "692 km",
+          "is_correct": false
+        },
+        {
+          "label": "640 km",
+          "is_correct": true
+        }
+      ]
+    },
+    {
+      "chapter": "Time and Distance",
+      "kind": "standard",
+      "difficulty": "easy",
+      "answer_type": "single",
+      "stem": "A car covers 492 km in 12 hours. Find its speed.",
+      "explanation": "Speed = distance/time = 492/12 = 41 km/h.",
+      "options": [
+        {
+          "label": "45 km/h",
+          "is_correct": false
+        },
+        {
+          "label": "43 km/h",
+          "is_correct": false
+        },
+        {
+          "label": "41 km/h",
+          "is_correct": true
+        },
+        {
+          "label": "39 km/h",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Time and Distance",
+      "kind": "standard",
+      "difficulty": "easy",
+      "answer_type": "single",
+      "stem": "A car travels at 65 km/h for 10 hours. Find the distance covered.",
+      "explanation": "Distance = speed × time = 65 × 10 = 650 km.",
+      "options": [
+        {
+          "label": "676 km",
+          "is_correct": false
+        },
+        {
+          "label": "624 km",
+          "is_correct": false
+        },
+        {
+          "label": "702 km",
+          "is_correct": false
+        },
+        {
+          "label": "650 km",
+          "is_correct": true
+        }
+      ]
+    },
+    {
+      "chapter": "Time and Distance",
+      "kind": "standard",
+      "difficulty": "easy",
+      "answer_type": "single",
+      "stem": "A car covers 305 km in 5 hours. Find its speed.",
+      "explanation": "Speed = distance/time = 305/5 = 61 km/h.",
+      "options": [
+        {
+          "label": "65 km/h",
+          "is_correct": false
+        },
+        {
+          "label": "61 km/h",
+          "is_correct": true
+        },
+        {
+          "label": "59 km/h",
+          "is_correct": false
+        },
+        {
+          "label": "63 km/h",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Time and Distance",
+      "kind": "standard",
+      "difficulty": "easy",
+      "answer_type": "single",
+      "stem": "A car travels 810 km at a steady speed of 90 km/h. Find the time taken.",
+      "explanation": "Time = distance/speed = 810/90 = 9 hours.",
+      "options": [
+        {
+          "label": "8 hours",
+          "is_correct": false
+        },
+        {
+          "label": "11 hours",
+          "is_correct": false
+        },
+        {
+          "label": "10 hours",
+          "is_correct": false
+        },
+        {
+          "label": "9 hours",
+          "is_correct": true
+        }
+      ]
+    },
+    {
+      "chapter": "Time and Distance",
+      "kind": "standard",
+      "difficulty": "easy",
+      "answer_type": "single",
+      "stem": "A car travels 568 km at a steady speed of 71 km/h. Find the time taken.",
+      "explanation": "Time = distance/speed = 568/71 = 8 hours.",
+      "options": [
+        {
+          "label": "10 hours",
+          "is_correct": false
+        },
+        {
+          "label": "9 hours",
+          "is_correct": false
+        },
+        {
+          "label": "7 hours",
+          "is_correct": false
+        },
+        {
+          "label": "8 hours",
+          "is_correct": true
+        }
+      ]
+    },
+    {
+      "chapter": "Time and Distance",
+      "kind": "standard",
+      "difficulty": "easy",
+      "answer_type": "single",
+      "stem": "A car travels at 69 km/h for 7 hours. Find the distance covered.",
+      "explanation": "Distance = speed × time = 69 × 7 = 483 km.",
+      "options": [
+        {
+          "label": "483 km",
+          "is_correct": true
+        },
+        {
+          "label": "464 km",
+          "is_correct": false
+        },
+        {
+          "label": "502 km",
+          "is_correct": false
+        },
+        {
+          "label": "521 km",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Time and Distance",
+      "kind": "standard",
+      "difficulty": "easy",
+      "answer_type": "single",
+      "stem": "A car travels at 47 km/h for 8 hours. Find the distance covered.",
+      "explanation": "Distance = speed × time = 47 × 8 = 376 km.",
+      "options": [
+        {
+          "label": "361 km",
+          "is_correct": false
+        },
+        {
+          "label": "376 km",
+          "is_correct": true
+        },
+        {
+          "label": "406 km",
+          "is_correct": false
+        },
+        {
+          "label": "391 km",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Time and Distance",
+      "kind": "standard",
+      "difficulty": "easy",
+      "answer_type": "single",
+      "stem": "A car travels 150 km at a steady speed of 50 km/h. Find the time taken.",
+      "explanation": "Time = distance/speed = 150/50 = 3 hours.",
+      "options": [
+        {
+          "label": "5 hours",
+          "is_correct": false
+        },
+        {
+          "label": "2 hours",
+          "is_correct": false
+        },
+        {
+          "label": "3 hours",
+          "is_correct": true
+        },
+        {
+          "label": "4 hours",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Time and Distance",
+      "kind": "standard",
+      "difficulty": "easy",
+      "answer_type": "single",
+      "stem": "A car travels 621 km at a steady speed of 69 km/h. Find the time taken.",
+      "explanation": "Time = distance/speed = 621/69 = 9 hours.",
+      "options": [
+        {
+          "label": "9 hours",
+          "is_correct": true
+        },
+        {
+          "label": "11 hours",
+          "is_correct": false
+        },
+        {
+          "label": "8 hours",
+          "is_correct": false
+        },
+        {
+          "label": "10 hours",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Time and Distance",
+      "kind": "standard",
+      "difficulty": "easy",
+      "answer_type": "single",
+      "stem": "A car travels 420 km at a steady speed of 42 km/h. Find the time taken.",
+      "explanation": "Time = distance/speed = 420/42 = 10 hours.",
+      "options": [
+        {
+          "label": "10 hours",
+          "is_correct": true
+        },
+        {
+          "label": "9 hours",
+          "is_correct": false
+        },
+        {
+          "label": "12 hours",
+          "is_correct": false
+        },
+        {
+          "label": "11 hours",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Time and Distance",
+      "kind": "standard",
+      "difficulty": "easy",
+      "answer_type": "single",
+      "stem": "A car travels at 67 km/h for 8 hours. Find the distance covered.",
+      "explanation": "Distance = speed × time = 67 × 8 = 536 km.",
+      "options": [
+        {
+          "label": "536 km",
+          "is_correct": true
+        },
+        {
+          "label": "578 km",
+          "is_correct": false
+        },
+        {
+          "label": "557 km",
+          "is_correct": false
+        },
+        {
+          "label": "515 km",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Time and Distance",
+      "kind": "standard",
+      "difficulty": "easy",
+      "answer_type": "single",
+      "stem": "A car travels at 43 km/h for 5 hours. Find the distance covered.",
+      "explanation": "Distance = speed × time = 43 × 5 = 215 km.",
+      "options": [
+        {
+          "label": "233 km",
+          "is_correct": false
+        },
+        {
+          "label": "206 km",
+          "is_correct": false
+        },
+        {
+          "label": "224 km",
+          "is_correct": false
+        },
+        {
+          "label": "215 km",
+          "is_correct": true
+        }
+      ]
+    },
+    {
+      "chapter": "Time and Distance",
+      "kind": "standard",
+      "difficulty": "easy",
+      "answer_type": "single",
+      "stem": "A car travels 184 km at a steady speed of 46 km/h. Find the time taken.",
+      "explanation": "Time = distance/speed = 184/46 = 4 hours.",
+      "options": [
+        {
+          "label": "5 hours",
+          "is_correct": false
+        },
+        {
+          "label": "6 hours",
+          "is_correct": false
+        },
+        {
+          "label": "4 hours",
+          "is_correct": true
+        },
+        {
+          "label": "3 hours",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Time and Distance",
+      "kind": "standard",
+      "difficulty": "easy",
+      "answer_type": "single",
+      "stem": "Convert a speed of 36 km/h into metres per second (m/s).",
+      "explanation": "km/h → m/s: multiply by 5/18, so 36 × 5/18 = 10 m/s.",
+      "options": [
+        {
+          "label": "10 m/s",
+          "is_correct": true
+        },
+        {
+          "label": "12 m/s",
+          "is_correct": false
+        },
+        {
+          "label": "9 m/s",
+          "is_correct": false
+        },
+        {
+          "label": "11 m/s",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Time and Distance",
+      "kind": "standard",
+      "difficulty": "easy",
+      "answer_type": "single",
+      "stem": "A car travels 693 km at a steady speed of 63 km/h. Find the time taken.",
+      "explanation": "Time = distance/speed = 693/63 = 11 hours.",
+      "options": [
+        {
+          "label": "12 hours",
+          "is_correct": false
+        },
+        {
+          "label": "11 hours",
+          "is_correct": true
+        },
+        {
+          "label": "10 hours",
+          "is_correct": false
+        },
+        {
+          "label": "13 hours",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Time and Distance",
+      "kind": "standard",
+      "difficulty": "easy",
+      "answer_type": "single",
+      "stem": "A car travels at 50 km/h for 8 hours. Find the distance covered.",
+      "explanation": "Distance = speed × time = 50 × 8 = 400 km.",
+      "options": [
+        {
+          "label": "400 km",
+          "is_correct": true
+        },
+        {
+          "label": "384 km",
+          "is_correct": false
+        },
+        {
+          "label": "416 km",
+          "is_correct": false
+        },
+        {
+          "label": "432 km",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Time and Distance",
+      "kind": "standard",
+      "difficulty": "medium",
+      "answer_type": "single",
+      "stem": "A car covers 30 km in 3 hours. At what speed must it travel to cover the same distance in 2 hours?",
+      "explanation": "Required speed = distance/time = 30/2 = 15 km/h.",
+      "options": [
+        {
+          "label": "14 km/h",
+          "is_correct": false
+        },
+        {
+          "label": "17 km/h",
+          "is_correct": false
+        },
+        {
+          "label": "15 km/h",
+          "is_correct": true
+        },
+        {
+          "label": "16 km/h",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Time and Distance",
+      "kind": "standard",
+      "difficulty": "medium",
+      "answer_type": "single",
+      "stem": "A car covers 180 km in 10 hours. At what speed must it travel to cover the same distance in 3 hours?",
+      "explanation": "Required speed = distance/time = 180/3 = 60 km/h.",
+      "options": [
+        {
+          "label": "64 km/h",
+          "is_correct": false
+        },
+        {
+          "label": "60 km/h",
+          "is_correct": true
+        },
+        {
+          "label": "58 km/h",
+          "is_correct": false
+        },
+        {
+          "label": "62 km/h",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Time and Distance",
+      "kind": "standard",
+      "difficulty": "medium",
+      "answer_type": "single",
+      "stem": "A car travels 189 km in 7 hours. At the same speed, how far will it travel in 9 hours?",
+      "explanation": "Speed = 189/7 = 27 km/h; distance in 9 hours = 27 × 9 = 243 km.",
+      "options": [
+        {
+          "label": "253 km",
+          "is_correct": false
+        },
+        {
+          "label": "263 km",
+          "is_correct": false
+        },
+        {
+          "label": "243 km",
+          "is_correct": true
+        },
+        {
+          "label": "233 km",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Time and Distance",
+      "kind": "standard",
+      "difficulty": "medium",
+      "answer_type": "single",
+      "stem": "Convert a speed of 25 m/s into kilometres per hour (km/h).",
+      "explanation": "m/s → km/h: multiply by 18/5, so 25 × 18/5 = 90 km/h.",
+      "options": [
+        {
+          "label": "90 km/h",
+          "is_correct": true
+        },
+        {
+          "label": "88 km/h",
+          "is_correct": false
+        },
+        {
+          "label": "92 km/h",
+          "is_correct": false
+        },
+        {
+          "label": "94 km/h",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Time and Distance",
+      "kind": "standard",
+      "difficulty": "medium",
+      "answer_type": "single",
+      "stem": "Convert a speed of 30 m/s into kilometres per hour (km/h).",
+      "explanation": "m/s → km/h: multiply by 18/5, so 30 × 18/5 = 108 km/h.",
+      "options": [
+        {
+          "label": "112 km/h",
+          "is_correct": false
+        },
+        {
+          "label": "110 km/h",
+          "is_correct": false
+        },
+        {
+          "label": "106 km/h",
+          "is_correct": false
+        },
+        {
+          "label": "108 km/h",
+          "is_correct": true
+        }
+      ]
+    },
+    {
+      "chapter": "Time and Distance",
+      "kind": "standard",
+      "difficulty": "medium",
+      "answer_type": "single",
+      "stem": "A car travels 464 km in 8 hours. At the same speed, how far will it travel in 9 hours?",
+      "explanation": "Speed = 464/8 = 58 km/h; distance in 9 hours = 58 × 9 = 522 km.",
+      "options": [
+        {
+          "label": "543 km",
+          "is_correct": false
+        },
+        {
+          "label": "522 km",
+          "is_correct": true
+        },
+        {
+          "label": "501 km",
+          "is_correct": false
+        },
+        {
+          "label": "564 km",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Time and Distance",
+      "kind": "standard",
+      "difficulty": "medium",
+      "answer_type": "single",
+      "stem": "A car travels 180 km in 6 hours. At the same speed, how far will it travel in 7 hours?",
+      "explanation": "Speed = 180/6 = 30 km/h; distance in 7 hours = 30 × 7 = 210 km.",
+      "options": [
+        {
+          "label": "202 km",
+          "is_correct": false
+        },
+        {
+          "label": "226 km",
+          "is_correct": false
+        },
+        {
+          "label": "210 km",
+          "is_correct": true
+        },
+        {
+          "label": "218 km",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Time and Distance",
+      "kind": "standard",
+      "difficulty": "medium",
+      "answer_type": "single",
+      "stem": "Convert a speed of 35 m/s into kilometres per hour (km/h).",
+      "explanation": "m/s → km/h: multiply by 18/5, so 35 × 18/5 = 126 km/h.",
+      "options": [
+        {
+          "label": "126 km/h",
+          "is_correct": true
+        },
+        {
+          "label": "128 km/h",
+          "is_correct": false
+        },
+        {
+          "label": "124 km/h",
+          "is_correct": false
+        },
+        {
+          "label": "130 km/h",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Time and Distance",
+      "kind": "standard",
+      "difficulty": "medium",
+      "answer_type": "single",
+      "stem": "A car travels 213 km in 3 hours. At the same speed, how far will it travel in 7 hours?",
+      "explanation": "Speed = 213/3 = 71 km/h; distance in 7 hours = 71 × 7 = 497 km.",
+      "options": [
+        {
+          "label": "477 km",
+          "is_correct": false
+        },
+        {
+          "label": "517 km",
+          "is_correct": false
+        },
+        {
+          "label": "537 km",
+          "is_correct": false
+        },
+        {
+          "label": "497 km",
+          "is_correct": true
+        }
+      ]
+    },
+    {
+      "chapter": "Time and Distance",
+      "kind": "standard",
+      "difficulty": "medium",
+      "answer_type": "single",
+      "stem": "Convert a speed of 40 m/s into kilometres per hour (km/h).",
+      "explanation": "m/s → km/h: multiply by 18/5, so 40 × 18/5 = 144 km/h.",
+      "options": [
+        {
+          "label": "148 km/h",
+          "is_correct": false
+        },
+        {
+          "label": "144 km/h",
+          "is_correct": true
+        },
+        {
+          "label": "142 km/h",
+          "is_correct": false
+        },
+        {
+          "label": "146 km/h",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Time and Distance",
+      "kind": "standard",
+      "difficulty": "medium",
+      "answer_type": "single",
+      "stem": "A car covers 196 km in 7 hours. At what speed must it travel to cover the same distance in 4 hours?",
+      "explanation": "Required speed = distance/time = 196/4 = 49 km/h.",
+      "options": [
+        {
+          "label": "47 km/h",
+          "is_correct": false
+        },
+        {
+          "label": "51 km/h",
+          "is_correct": false
+        },
+        {
+          "label": "49 km/h",
+          "is_correct": true
+        },
+        {
+          "label": "53 km/h",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Time and Distance",
+      "kind": "standard",
+      "difficulty": "medium",
+      "answer_type": "single",
+      "stem": "Convert a speed of 10 m/s into kilometres per hour (km/h).",
+      "explanation": "m/s → km/h: multiply by 18/5, so 10 × 18/5 = 36 km/h.",
+      "options": [
+        {
+          "label": "35 km/h",
+          "is_correct": false
+        },
+        {
+          "label": "38 km/h",
+          "is_correct": false
+        },
+        {
+          "label": "36 km/h",
+          "is_correct": true
+        },
+        {
+          "label": "37 km/h",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Time and Distance",
+      "kind": "standard",
+      "difficulty": "medium",
+      "answer_type": "single",
+      "stem": "A car travels 488 km in 8 hours. At the same speed, how far will it travel in 3 hours?",
+      "explanation": "Speed = 488/8 = 61 km/h; distance in 3 hours = 61 × 3 = 183 km.",
+      "options": [
+        {
+          "label": "185 km",
+          "is_correct": false
+        },
+        {
+          "label": "187 km",
+          "is_correct": false
+        },
+        {
+          "label": "183 km",
+          "is_correct": true
+        },
+        {
+          "label": "181 km",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Time and Distance",
+      "kind": "standard",
+      "difficulty": "medium",
+      "answer_type": "single",
+      "stem": "A car covers 189 km in 7 hours. At what speed must it travel to cover the same distance in 3 hours?",
+      "explanation": "Required speed = distance/time = 189/3 = 63 km/h.",
+      "options": [
+        {
+          "label": "61 km/h",
+          "is_correct": false
+        },
+        {
+          "label": "67 km/h",
+          "is_correct": false
+        },
+        {
+          "label": "65 km/h",
+          "is_correct": false
+        },
+        {
+          "label": "63 km/h",
+          "is_correct": true
+        }
+      ]
+    },
+    {
+      "chapter": "Time and Distance",
+      "kind": "standard",
+      "difficulty": "medium",
+      "answer_type": "single",
+      "stem": "A car travels 224 km in 8 hours. At the same speed, how far will it travel in 3 hours?",
+      "explanation": "Speed = 224/8 = 28 km/h; distance in 3 hours = 28 × 3 = 84 km.",
+      "options": [
+        {
+          "label": "88 km",
+          "is_correct": false
+        },
+        {
+          "label": "86 km",
+          "is_correct": false
+        },
+        {
+          "label": "82 km",
+          "is_correct": false
+        },
+        {
+          "label": "84 km",
+          "is_correct": true
+        }
+      ]
+    },
+    {
+      "chapter": "Time and Distance",
+      "kind": "standard",
+      "difficulty": "medium",
+      "answer_type": "single",
+      "stem": "A car travels 200 km in 5 hours. At the same speed, how far will it travel in 4 hours?",
+      "explanation": "Speed = 200/5 = 40 km/h; distance in 4 hours = 40 × 4 = 160 km.",
+      "options": [
+        {
+          "label": "160 km",
+          "is_correct": true
+        },
+        {
+          "label": "164 km",
+          "is_correct": false
+        },
+        {
+          "label": "158 km",
+          "is_correct": false
+        },
+        {
+          "label": "162 km",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Time and Distance",
+      "kind": "standard",
+      "difficulty": "medium",
+      "answer_type": "single",
+      "stem": "Convert a speed of 20 m/s into kilometres per hour (km/h).",
+      "explanation": "m/s → km/h: multiply by 18/5, so 20 × 18/5 = 72 km/h.",
+      "options": [
+        {
+          "label": "72 km/h",
+          "is_correct": true
+        },
+        {
+          "label": "70 km/h",
+          "is_correct": false
+        },
+        {
+          "label": "74 km/h",
+          "is_correct": false
+        },
+        {
+          "label": "76 km/h",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Time and Distance",
+      "kind": "standard",
+      "difficulty": "medium",
+      "answer_type": "single",
+      "stem": "A car covers 48 km in 8 hours. At what speed must it travel to cover the same distance in 2 hours?",
+      "explanation": "Required speed = distance/time = 48/2 = 24 km/h.",
+      "options": [
+        {
+          "label": "24 km/h",
+          "is_correct": true
+        },
+        {
+          "label": "26 km/h",
+          "is_correct": false
+        },
+        {
+          "label": "25 km/h",
+          "is_correct": false
+        },
+        {
+          "label": "23 km/h",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Time and Distance",
+      "kind": "standard",
+      "difficulty": "medium",
+      "answer_type": "single",
+      "stem": "A car covers 180 km in 6 hours. At what speed must it travel to cover the same distance in 5 hours?",
+      "explanation": "Required speed = distance/time = 180/5 = 36 km/h.",
+      "options": [
+        {
+          "label": "35 km/h",
+          "is_correct": false
+        },
+        {
+          "label": "36 km/h",
+          "is_correct": true
+        },
+        {
+          "label": "38 km/h",
+          "is_correct": false
+        },
+        {
+          "label": "37 km/h",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Time and Distance",
+      "kind": "standard",
+      "difficulty": "medium",
+      "answer_type": "single",
+      "stem": "A car travels 288 km in 8 hours. At the same speed, how far will it travel in 4 hours?",
+      "explanation": "Speed = 288/8 = 36 km/h; distance in 4 hours = 36 × 4 = 144 km.",
+      "options": [
+        {
+          "label": "148 km",
+          "is_correct": false
+        },
+        {
+          "label": "144 km",
+          "is_correct": true
+        },
+        {
+          "label": "146 km",
+          "is_correct": false
+        },
+        {
+          "label": "142 km",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Time and Distance",
+      "kind": "standard",
+      "difficulty": "medium",
+      "answer_type": "single",
+      "stem": "A car travels 231 km in 3 hours. At the same speed, how far will it travel in 2 hours?",
+      "explanation": "Speed = 231/3 = 77 km/h; distance in 2 hours = 77 × 2 = 154 km.",
+      "options": [
+        {
+          "label": "158 km",
+          "is_correct": false
+        },
+        {
+          "label": "154 km",
+          "is_correct": true
+        },
+        {
+          "label": "152 km",
+          "is_correct": false
+        },
+        {
+          "label": "156 km",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Time and Distance",
+      "kind": "standard",
+      "difficulty": "medium",
+      "answer_type": "single",
+      "stem": "A car covers 168 km in 7 hours. At what speed must it travel to cover the same distance in 4 hours?",
+      "explanation": "Required speed = distance/time = 168/4 = 42 km/h.",
+      "options": [
+        {
+          "label": "42 km/h",
+          "is_correct": true
+        },
+        {
+          "label": "40 km/h",
+          "is_correct": false
+        },
+        {
+          "label": "44 km/h",
+          "is_correct": false
+        },
+        {
+          "label": "46 km/h",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Time and Distance",
+      "kind": "standard",
+      "difficulty": "medium",
+      "answer_type": "single",
+      "stem": "A car covers 432 km in 8 hours. At what speed must it travel to cover the same distance in 6 hours?",
+      "explanation": "Required speed = distance/time = 432/6 = 72 km/h.",
+      "options": [
+        {
+          "label": "70 km/h",
+          "is_correct": false
+        },
+        {
+          "label": "74 km/h",
+          "is_correct": false
+        },
+        {
+          "label": "76 km/h",
+          "is_correct": false
+        },
+        {
+          "label": "72 km/h",
+          "is_correct": true
+        }
+      ]
+    },
+    {
+      "chapter": "Time and Distance",
+      "kind": "standard",
+      "difficulty": "medium",
+      "answer_type": "single",
+      "stem": "A car travels 80 km in 2 hours. At the same speed, how far will it travel in 10 hours?",
+      "explanation": "Speed = 80/2 = 40 km/h; distance in 10 hours = 40 × 10 = 400 km.",
+      "options": [
+        {
+          "label": "432 km",
+          "is_correct": false
+        },
+        {
+          "label": "384 km",
+          "is_correct": false
+        },
+        {
+          "label": "400 km",
+          "is_correct": true
+        },
+        {
+          "label": "416 km",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Time and Distance",
+      "kind": "standard",
+      "difficulty": "medium",
+      "answer_type": "single",
+      "stem": "A car covers 18 km in 3 hours. At what speed must it travel to cover the same distance in 2 hours?",
+      "explanation": "Required speed = distance/time = 18/2 = 9 km/h.",
+      "options": [
+        {
+          "label": "8 km/h",
+          "is_correct": false
+        },
+        {
+          "label": "11 km/h",
+          "is_correct": false
+        },
+        {
+          "label": "9 km/h",
+          "is_correct": true
+        },
+        {
+          "label": "10 km/h",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Time and Distance",
+      "kind": "standard",
+      "difficulty": "medium",
+      "answer_type": "single",
+      "stem": "A car covers 240 km in 6 hours. At what speed must it travel to cover the same distance in 5 hours?",
+      "explanation": "Required speed = distance/time = 240/5 = 48 km/h.",
+      "options": [
+        {
+          "label": "46 km/h",
+          "is_correct": false
+        },
+        {
+          "label": "48 km/h",
+          "is_correct": true
+        },
+        {
+          "label": "52 km/h",
+          "is_correct": false
+        },
+        {
+          "label": "50 km/h",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Time and Distance",
+      "kind": "standard",
+      "difficulty": "medium",
+      "answer_type": "single",
+      "stem": "Convert a speed of 5 m/s into kilometres per hour (km/h).",
+      "explanation": "m/s → km/h: multiply by 18/5, so 5 × 18/5 = 18 km/h.",
+      "options": [
+        {
+          "label": "19 km/h",
+          "is_correct": false
+        },
+        {
+          "label": "17 km/h",
+          "is_correct": false
+        },
+        {
+          "label": "18 km/h",
+          "is_correct": true
+        },
+        {
+          "label": "20 km/h",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Time and Distance",
+      "kind": "standard",
+      "difficulty": "medium",
+      "answer_type": "single",
+      "stem": "A car travels 384 km in 6 hours. At the same speed, how far will it travel in 7 hours?",
+      "explanation": "Speed = 384/6 = 64 km/h; distance in 7 hours = 64 × 7 = 448 km.",
+      "options": [
+        {
+          "label": "466 km",
+          "is_correct": false
+        },
+        {
+          "label": "484 km",
+          "is_correct": false
+        },
+        {
+          "label": "430 km",
+          "is_correct": false
+        },
+        {
+          "label": "448 km",
+          "is_correct": true
+        }
+      ]
+    },
+    {
+      "chapter": "Time and Distance",
+      "kind": "standard",
+      "difficulty": "medium",
+      "answer_type": "single",
+      "stem": "A car travels 441 km in 7 hours. At the same speed, how far will it travel in 10 hours?",
+      "explanation": "Speed = 441/7 = 63 km/h; distance in 10 hours = 63 × 10 = 630 km.",
+      "options": [
+        {
+          "label": "655 km",
+          "is_correct": false
+        },
+        {
+          "label": "630 km",
+          "is_correct": true
+        },
+        {
+          "label": "680 km",
+          "is_correct": false
+        },
+        {
+          "label": "605 km",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Time and Distance",
+      "kind": "standard",
+      "difficulty": "medium",
+      "answer_type": "single",
+      "stem": "A car covers 42 km in 7 hours. At what speed must it travel to cover the same distance in 3 hours?",
+      "explanation": "Required speed = distance/time = 42/3 = 14 km/h.",
+      "options": [
+        {
+          "label": "16 km/h",
+          "is_correct": false
+        },
+        {
+          "label": "13 km/h",
+          "is_correct": false
+        },
+        {
+          "label": "14 km/h",
+          "is_correct": true
+        },
+        {
+          "label": "15 km/h",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Time and Distance",
+      "kind": "standard",
+      "difficulty": "medium",
+      "answer_type": "single",
+      "stem": "A car travels 456 km in 8 hours. At the same speed, how far will it travel in 2 hours?",
+      "explanation": "Speed = 456/8 = 57 km/h; distance in 2 hours = 57 × 2 = 114 km.",
+      "options": [
+        {
+          "label": "116 km",
+          "is_correct": false
+        },
+        {
+          "label": "114 km",
+          "is_correct": true
+        },
+        {
+          "label": "112 km",
+          "is_correct": false
+        },
+        {
+          "label": "118 km",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Time and Distance",
+      "kind": "standard",
+      "difficulty": "medium",
+      "answer_type": "single",
+      "stem": "A car travels 532 km in 7 hours. At the same speed, how far will it travel in 6 hours?",
+      "explanation": "Speed = 532/7 = 76 km/h; distance in 6 hours = 76 × 6 = 456 km.",
+      "options": [
+        {
+          "label": "456 km",
+          "is_correct": true
+        },
+        {
+          "label": "438 km",
+          "is_correct": false
+        },
+        {
+          "label": "492 km",
+          "is_correct": false
+        },
+        {
+          "label": "474 km",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Time and Distance",
+      "kind": "standard",
+      "difficulty": "medium",
+      "answer_type": "single",
+      "stem": "A car covers 45 km in 5 hours. At what speed must it travel to cover the same distance in 3 hours?",
+      "explanation": "Required speed = distance/time = 45/3 = 15 km/h.",
+      "options": [
+        {
+          "label": "15 km/h",
+          "is_correct": true
+        },
+        {
+          "label": "16 km/h",
+          "is_correct": false
+        },
+        {
+          "label": "14 km/h",
+          "is_correct": false
+        },
+        {
+          "label": "17 km/h",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Time and Distance",
+      "kind": "standard",
+      "difficulty": "medium",
+      "answer_type": "single",
+      "stem": "A car travels 385 km in 5 hours. At the same speed, how far will it travel in 2 hours?",
+      "explanation": "Speed = 385/5 = 77 km/h; distance in 2 hours = 77 × 2 = 154 km.",
+      "options": [
+        {
+          "label": "158 km",
+          "is_correct": false
+        },
+        {
+          "label": "156 km",
+          "is_correct": false
+        },
+        {
+          "label": "154 km",
+          "is_correct": true
+        },
+        {
+          "label": "152 km",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Time and Distance",
+      "kind": "standard",
+      "difficulty": "medium",
+      "answer_type": "single",
+      "stem": "A car covers 36 km in 9 hours. At what speed must it travel to cover the same distance in 2 hours?",
+      "explanation": "Required speed = distance/time = 36/2 = 18 km/h.",
+      "options": [
+        {
+          "label": "18 km/h",
+          "is_correct": true
+        },
+        {
+          "label": "20 km/h",
+          "is_correct": false
+        },
+        {
+          "label": "17 km/h",
+          "is_correct": false
+        },
+        {
+          "label": "19 km/h",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Time and Distance",
+      "kind": "standard",
+      "difficulty": "medium",
+      "answer_type": "single",
+      "stem": "A car travels 255 km in 5 hours. At the same speed, how far will it travel in 3 hours?",
+      "explanation": "Speed = 255/5 = 51 km/h; distance in 3 hours = 51 × 3 = 153 km.",
+      "options": [
+        {
+          "label": "151 km",
+          "is_correct": false
+        },
+        {
+          "label": "155 km",
+          "is_correct": false
+        },
+        {
+          "label": "157 km",
+          "is_correct": false
+        },
+        {
+          "label": "153 km",
+          "is_correct": true
+        }
+      ]
+    },
+    {
+      "chapter": "Time and Distance",
+      "kind": "standard",
+      "difficulty": "medium",
+      "answer_type": "single",
+      "stem": "A car covers 30 km in 5 hours. At what speed must it travel to cover the same distance in 3 hours?",
+      "explanation": "Required speed = distance/time = 30/3 = 10 km/h.",
+      "options": [
+        {
+          "label": "11 km/h",
+          "is_correct": false
+        },
+        {
+          "label": "12 km/h",
+          "is_correct": false
+        },
+        {
+          "label": "9 km/h",
+          "is_correct": false
+        },
+        {
+          "label": "10 km/h",
+          "is_correct": true
+        }
+      ]
+    },
+    {
+      "chapter": "Time and Distance",
+      "kind": "standard",
+      "difficulty": "medium",
+      "answer_type": "single",
+      "stem": "A car covers 84 km in 6 hours. At what speed must it travel to cover the same distance in 2 hours?",
+      "explanation": "Required speed = distance/time = 84/2 = 42 km/h.",
+      "options": [
+        {
+          "label": "40 km/h",
+          "is_correct": false
+        },
+        {
+          "label": "44 km/h",
+          "is_correct": false
+        },
+        {
+          "label": "42 km/h",
+          "is_correct": true
+        },
+        {
+          "label": "46 km/h",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Time and Distance",
+      "kind": "standard",
+      "difficulty": "medium",
+      "answer_type": "single",
+      "stem": "A car covers 24 km in 3 hours. At what speed must it travel to cover the same distance in 2 hours?",
+      "explanation": "Required speed = distance/time = 24/2 = 12 km/h.",
+      "options": [
+        {
+          "label": "12 km/h",
+          "is_correct": true
+        },
+        {
+          "label": "11 km/h",
+          "is_correct": false
+        },
+        {
+          "label": "13 km/h",
+          "is_correct": false
+        },
+        {
+          "label": "14 km/h",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Time and Distance",
+      "kind": "standard",
+      "difficulty": "medium",
+      "answer_type": "single",
+      "stem": "A car travels 128 km in 2 hours. At the same speed, how far will it travel in 9 hours?",
+      "explanation": "Speed = 128/2 = 64 km/h; distance in 9 hours = 64 × 9 = 576 km.",
+      "options": [
+        {
+          "label": "553 km",
+          "is_correct": false
+        },
+        {
+          "label": "576 km",
+          "is_correct": true
+        },
+        {
+          "label": "599 km",
+          "is_correct": false
+        },
+        {
+          "label": "622 km",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Time and Distance",
+      "kind": "standard",
+      "difficulty": "medium",
+      "answer_type": "single",
+      "stem": "A car travels 300 km in 5 hours. At the same speed, how far will it travel in 7 hours?",
+      "explanation": "Speed = 300/5 = 60 km/h; distance in 7 hours = 60 × 7 = 420 km.",
+      "options": [
+        {
+          "label": "420 km",
+          "is_correct": true
+        },
+        {
+          "label": "454 km",
+          "is_correct": false
+        },
+        {
+          "label": "437 km",
+          "is_correct": false
+        },
+        {
+          "label": "403 km",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Time and Distance",
+      "kind": "standard",
+      "difficulty": "medium",
+      "answer_type": "single",
+      "stem": "A car covers 336 km in 7 hours. At what speed must it travel to cover the same distance in 6 hours?",
+      "explanation": "Required speed = distance/time = 336/6 = 56 km/h.",
+      "options": [
+        {
+          "label": "58 km/h",
+          "is_correct": false
+        },
+        {
+          "label": "60 km/h",
+          "is_correct": false
+        },
+        {
+          "label": "54 km/h",
+          "is_correct": false
+        },
+        {
+          "label": "56 km/h",
+          "is_correct": true
+        }
+      ]
+    },
+    {
+      "chapter": "Time and Distance",
+      "kind": "standard",
+      "difficulty": "medium",
+      "answer_type": "single",
+      "stem": "A car covers 640 km in 10 hours. At what speed must it travel to cover the same distance in 8 hours?",
+      "explanation": "Required speed = distance/time = 640/8 = 80 km/h.",
+      "options": [
+        {
+          "label": "84 km/h",
+          "is_correct": false
+        },
+        {
+          "label": "80 km/h",
+          "is_correct": true
+        },
+        {
+          "label": "78 km/h",
+          "is_correct": false
+        },
+        {
+          "label": "82 km/h",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Time and Distance",
+      "kind": "standard",
+      "difficulty": "medium",
+      "answer_type": "single",
+      "stem": "A car travels 42 km in 2 hours. At the same speed, how far will it travel in 8 hours?",
+      "explanation": "Speed = 42/2 = 21 km/h; distance in 8 hours = 21 × 8 = 168 km.",
+      "options": [
+        {
+          "label": "166 km",
+          "is_correct": false
+        },
+        {
+          "label": "170 km",
+          "is_correct": false
+        },
+        {
+          "label": "168 km",
+          "is_correct": true
+        },
+        {
+          "label": "172 km",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Time and Distance",
+      "kind": "standard",
+      "difficulty": "medium",
+      "answer_type": "single",
+      "stem": "A car travels 56 km in 2 hours. At the same speed, how far will it travel in 3 hours?",
+      "explanation": "Speed = 56/2 = 28 km/h; distance in 3 hours = 28 × 3 = 84 km.",
+      "options": [
+        {
+          "label": "88 km",
+          "is_correct": false
+        },
+        {
+          "label": "84 km",
+          "is_correct": true
+        },
+        {
+          "label": "82 km",
+          "is_correct": false
+        },
+        {
+          "label": "86 km",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Time and Distance",
+      "kind": "standard",
+      "difficulty": "medium",
+      "answer_type": "single",
+      "stem": "A car travels 171 km in 3 hours. At the same speed, how far will it travel in 7 hours?",
+      "explanation": "Speed = 171/3 = 57 km/h; distance in 7 hours = 57 × 7 = 399 km.",
+      "options": [
+        {
+          "label": "383 km",
+          "is_correct": false
+        },
+        {
+          "label": "431 km",
+          "is_correct": false
+        },
+        {
+          "label": "399 km",
+          "is_correct": true
+        },
+        {
+          "label": "415 km",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Time and Distance",
+      "kind": "standard",
+      "difficulty": "medium",
+      "answer_type": "single",
+      "stem": "A car covers 150 km in 10 hours. At what speed must it travel to cover the same distance in 3 hours?",
+      "explanation": "Required speed = distance/time = 150/3 = 50 km/h.",
+      "options": [
+        {
+          "label": "50 km/h",
+          "is_correct": true
+        },
+        {
+          "label": "48 km/h",
+          "is_correct": false
+        },
+        {
+          "label": "52 km/h",
+          "is_correct": false
+        },
+        {
+          "label": "54 km/h",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Time and Distance",
+      "kind": "standard",
+      "difficulty": "medium",
+      "answer_type": "single",
+      "stem": "A car covers 72 km in 4 hours. At what speed must it travel to cover the same distance in 2 hours?",
+      "explanation": "Required speed = distance/time = 72/2 = 36 km/h.",
+      "options": [
+        {
+          "label": "35 km/h",
+          "is_correct": false
+        },
+        {
+          "label": "36 km/h",
+          "is_correct": true
+        },
+        {
+          "label": "37 km/h",
+          "is_correct": false
+        },
+        {
+          "label": "38 km/h",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Time and Distance",
+      "kind": "standard",
+      "difficulty": "medium",
+      "answer_type": "single",
+      "stem": "A car travels 441 km in 7 hours. At the same speed, how far will it travel in 4 hours?",
+      "explanation": "Speed = 441/7 = 63 km/h; distance in 4 hours = 63 × 4 = 252 km.",
+      "options": [
+        {
+          "label": "252 km",
+          "is_correct": true
+        },
+        {
+          "label": "262 km",
+          "is_correct": false
+        },
+        {
+          "label": "272 km",
+          "is_correct": false
+        },
+        {
+          "label": "242 km",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Time and Distance",
+      "kind": "standard",
+      "difficulty": "medium",
+      "answer_type": "single",
+      "stem": "Convert a speed of 15 m/s into kilometres per hour (km/h).",
+      "explanation": "m/s → km/h: multiply by 18/5, so 15 × 18/5 = 54 km/h.",
+      "options": [
+        {
+          "label": "52 km/h",
+          "is_correct": false
+        },
+        {
+          "label": "54 km/h",
+          "is_correct": true
+        },
+        {
+          "label": "56 km/h",
+          "is_correct": false
+        },
+        {
+          "label": "58 km/h",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Time and Distance",
+      "kind": "standard",
+      "difficulty": "hard",
+      "answer_type": "single",
+      "stem": "A man goes to a place at 41 km/h and returns along the same road at 37 km/h. If the whole journey takes 78 hours, find the one-way distance.",
+      "explanation": "D/41 + D/37 = 78 ⇒ D = 1517 km.",
+      "options": [
+        {
+          "label": "1517 km",
+          "is_correct": true
+        },
+        {
+          "label": "1639 km",
+          "is_correct": false
+        },
+        {
+          "label": "1456 km",
+          "is_correct": false
+        },
+        {
+          "label": "1578 km",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Time and Distance",
+      "kind": "standard",
+      "difficulty": "hard",
+      "answer_type": "single",
+      "stem": "Two trains are 260 km apart and travel toward each other at 64 km/h and 66 km/h. After how many hours will they meet?",
+      "explanation": "Closing speed = 64+66 = 130 km/h; time = 260/130 = 2 hours.",
+      "options": [
+        {
+          "label": "4 hours",
+          "is_correct": false
+        },
+        {
+          "label": "2 hours",
+          "is_correct": true
+        },
+        {
+          "label": "1 hours",
+          "is_correct": false
+        },
+        {
+          "label": "3 hours",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Time and Distance",
+      "kind": "standard",
+      "difficulty": "hard",
+      "answer_type": "single",
+      "stem": "A man goes to a place at 57 km/h and returns along the same road at 21 km/h. If the whole journey takes 52 hours, find the one-way distance.",
+      "explanation": "D/57 + D/21 = 52 ⇒ D = 798 km.",
+      "options": [
+        {
+          "label": "830 km",
+          "is_correct": false
+        },
+        {
+          "label": "862 km",
+          "is_correct": false
+        },
+        {
+          "label": "766 km",
+          "is_correct": false
+        },
+        {
+          "label": "798 km",
+          "is_correct": true
+        }
+      ]
+    },
+    {
+      "chapter": "Time and Distance",
+      "kind": "standard",
+      "difficulty": "hard",
+      "answer_type": "single",
+      "stem": "A thief running at 31 km/h is spotted by a policeman 60 km behind him, who chases at 51 km/h. In how many hours will the policeman catch the thief?",
+      "explanation": "Relative speed = 51−31 = 20 km/h; time = 60/20 = 3 hours.",
+      "options": [
+        {
+          "label": "3 hours",
+          "is_correct": true
+        },
+        {
+          "label": "5 hours",
+          "is_correct": false
+        },
+        {
+          "label": "4 hours",
+          "is_correct": false
+        },
+        {
+          "label": "2 hours",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Time and Distance",
+      "kind": "standard",
+      "difficulty": "hard",
+      "answer_type": "single",
+      "stem": "Two trains are 595 km apart and travel toward each other at 50 km/h and 69 km/h. After how many hours will they meet?",
+      "explanation": "Closing speed = 50+69 = 119 km/h; time = 595/119 = 5 hours.",
+      "options": [
+        {
+          "label": "7 hours",
+          "is_correct": false
+        },
+        {
+          "label": "6 hours",
+          "is_correct": false
+        },
+        {
+          "label": "5 hours",
+          "is_correct": true
+        },
+        {
+          "label": "4 hours",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Time and Distance",
+      "kind": "standard",
+      "difficulty": "hard",
+      "answer_type": "single",
+      "stem": "Two trains are 460 km apart and travel toward each other at 46 km/h and 69 km/h. After how many hours will they meet?",
+      "explanation": "Closing speed = 46+69 = 115 km/h; time = 460/115 = 4 hours.",
+      "options": [
+        {
+          "label": "6 hours",
+          "is_correct": false
+        },
+        {
+          "label": "3 hours",
+          "is_correct": false
+        },
+        {
+          "label": "5 hours",
+          "is_correct": false
+        },
+        {
+          "label": "4 hours",
+          "is_correct": true
+        }
+      ]
+    },
+    {
+      "chapter": "Time and Distance",
+      "kind": "standard",
+      "difficulty": "hard",
+      "answer_type": "single",
+      "stem": "A thief running at 20 km/h is spotted by a policeman 95 km behind him, who chases at 39 km/h. In how many hours will the policeman catch the thief?",
+      "explanation": "Relative speed = 39−20 = 19 km/h; time = 95/19 = 5 hours.",
+      "options": [
+        {
+          "label": "6 hours",
+          "is_correct": false
+        },
+        {
+          "label": "5 hours",
+          "is_correct": true
+        },
+        {
+          "label": "7 hours",
+          "is_correct": false
+        },
+        {
+          "label": "4 hours",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Time and Distance",
+      "kind": "standard",
+      "difficulty": "hard",
+      "answer_type": "single",
+      "stem": "A man goes to a place at 53 km/h and returns along the same road at 21 km/h. If the whole journey takes 296 hours, find the one-way distance.",
+      "explanation": "D/53 + D/21 = 296 ⇒ D = 4452 km.",
+      "options": [
+        {
+          "label": "4808 km",
+          "is_correct": false
+        },
+        {
+          "label": "4452 km",
+          "is_correct": true
+        },
+        {
+          "label": "4630 km",
+          "is_correct": false
+        },
+        {
+          "label": "4274 km",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Time and Distance",
+      "kind": "standard",
+      "difficulty": "hard",
+      "answer_type": "single",
+      "stem": "Two trains are 582 km apart and travel toward each other at 59 km/h and 38 km/h. After how many hours will they meet?",
+      "explanation": "Closing speed = 59+38 = 97 km/h; time = 582/97 = 6 hours.",
+      "options": [
+        {
+          "label": "6 hours",
+          "is_correct": true
+        },
+        {
+          "label": "5 hours",
+          "is_correct": false
+        },
+        {
+          "label": "7 hours",
+          "is_correct": false
+        },
+        {
+          "label": "8 hours",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Time and Distance",
+      "kind": "standard",
+      "difficulty": "hard",
+      "answer_type": "single",
+      "stem": "Two trains are 648 km apart and travel toward each other at 61 km/h and 47 km/h. After how many hours will they meet?",
+      "explanation": "Closing speed = 61+47 = 108 km/h; time = 648/108 = 6 hours.",
+      "options": [
+        {
+          "label": "6 hours",
+          "is_correct": true
+        },
+        {
+          "label": "8 hours",
+          "is_correct": false
+        },
+        {
+          "label": "7 hours",
+          "is_correct": false
+        },
+        {
+          "label": "5 hours",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Time and Distance",
+      "kind": "standard",
+      "difficulty": "hard",
+      "answer_type": "single",
+      "stem": "A thief running at 24 km/h is spotted by a policeman 132 km behind him, who chases at 46 km/h. In how many hours will the policeman catch the thief?",
+      "explanation": "Relative speed = 46−24 = 22 km/h; time = 132/22 = 6 hours.",
+      "options": [
+        {
+          "label": "8 hours",
+          "is_correct": false
+        },
+        {
+          "label": "6 hours",
+          "is_correct": true
+        },
+        {
+          "label": "7 hours",
+          "is_correct": false
+        },
+        {
+          "label": "5 hours",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Time and Distance",
+      "kind": "standard",
+      "difficulty": "hard",
+      "answer_type": "single",
+      "stem": "Two trains are 248 km apart and travel toward each other at 62 km/h and 62 km/h. After how many hours will they meet?",
+      "explanation": "Closing speed = 62+62 = 124 km/h; time = 248/124 = 2 hours.",
+      "options": [
+        {
+          "label": "2 hours",
+          "is_correct": true
+        },
+        {
+          "label": "4 hours",
+          "is_correct": false
+        },
+        {
+          "label": "1 hours",
+          "is_correct": false
+        },
+        {
+          "label": "3 hours",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Time and Distance",
+      "kind": "standard",
+      "difficulty": "hard",
+      "answer_type": "single",
+      "stem": "A man goes to a place at 33 km/h and returns along the same road at 53 km/h. If the whole journey takes 344 hours, find the one-way distance.",
+      "explanation": "D/33 + D/53 = 344 ⇒ D = 6996 km.",
+      "options": [
+        {
+          "label": "6716 km",
+          "is_correct": false
+        },
+        {
+          "label": "6996 km",
+          "is_correct": true
+        },
+        {
+          "label": "7276 km",
+          "is_correct": false
+        },
+        {
+          "label": "7556 km",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Time and Distance",
+      "kind": "standard",
+      "difficulty": "hard",
+      "answer_type": "single",
+      "stem": "Two trains are 615 km apart and travel toward each other at 61 km/h and 62 km/h. After how many hours will they meet?",
+      "explanation": "Closing speed = 61+62 = 123 km/h; time = 615/123 = 5 hours.",
+      "options": [
+        {
+          "label": "4 hours",
+          "is_correct": false
+        },
+        {
+          "label": "7 hours",
+          "is_correct": false
+        },
+        {
+          "label": "6 hours",
+          "is_correct": false
+        },
+        {
+          "label": "5 hours",
+          "is_correct": true
+        }
+      ]
+    },
+    {
+      "chapter": "Time and Distance",
+      "kind": "standard",
+      "difficulty": "hard",
+      "answer_type": "single",
+      "stem": "Two trains are 285 km apart and travel toward each other at 57 km/h and 38 km/h. After how many hours will they meet?",
+      "explanation": "Closing speed = 57+38 = 95 km/h; time = 285/95 = 3 hours.",
+      "options": [
+        {
+          "label": "5 hours",
+          "is_correct": false
+        },
+        {
+          "label": "2 hours",
+          "is_correct": false
+        },
+        {
+          "label": "4 hours",
+          "is_correct": false
+        },
+        {
+          "label": "3 hours",
+          "is_correct": true
+        }
+      ]
+    },
+    {
+      "chapter": "Time and Distance",
+      "kind": "standard",
+      "difficulty": "hard",
+      "answer_type": "single",
+      "stem": "A man goes to a place at 59 km/h and returns along the same road at 46 km/h. If the whole journey takes 420 hours, find the one-way distance.",
+      "explanation": "D/59 + D/46 = 420 ⇒ D = 10856 km.",
+      "options": [
+        {
+          "label": "11724 km",
+          "is_correct": false
+        },
+        {
+          "label": "10856 km",
+          "is_correct": true
+        },
+        {
+          "label": "10422 km",
+          "is_correct": false
+        },
+        {
+          "label": "11290 km",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Time and Distance",
+      "kind": "standard",
+      "difficulty": "hard",
+      "answer_type": "single",
+      "stem": "A thief running at 50 km/h is spotted by a policeman 40 km behind him, who chases at 70 km/h. In how many hours will the policeman catch the thief?",
+      "explanation": "Relative speed = 70−50 = 20 km/h; time = 40/20 = 2 hours.",
+      "options": [
+        {
+          "label": "2 hours",
+          "is_correct": true
+        },
+        {
+          "label": "1 hours",
+          "is_correct": false
+        },
+        {
+          "label": "3 hours",
+          "is_correct": false
+        },
+        {
+          "label": "4 hours",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Time and Distance",
+      "kind": "standard",
+      "difficulty": "hard",
+      "answer_type": "single",
+      "stem": "Two trains are 462 km apart and travel toward each other at 41 km/h and 36 km/h. After how many hours will they meet?",
+      "explanation": "Closing speed = 41+36 = 77 km/h; time = 462/77 = 6 hours.",
+      "options": [
+        {
+          "label": "8 hours",
+          "is_correct": false
+        },
+        {
+          "label": "7 hours",
+          "is_correct": false
+        },
+        {
+          "label": "5 hours",
+          "is_correct": false
+        },
+        {
+          "label": "6 hours",
+          "is_correct": true
+        }
+      ]
+    },
+    {
+      "chapter": "Time and Distance",
+      "kind": "standard",
+      "difficulty": "hard",
+      "answer_type": "single",
+      "stem": "A thief running at 25 km/h is spotted by a policeman 27 km behind him, who chases at 34 km/h. In how many hours will the policeman catch the thief?",
+      "explanation": "Relative speed = 34−25 = 9 km/h; time = 27/9 = 3 hours.",
+      "options": [
+        {
+          "label": "2 hours",
+          "is_correct": false
+        },
+        {
+          "label": "4 hours",
+          "is_correct": false
+        },
+        {
+          "label": "3 hours",
+          "is_correct": true
+        },
+        {
+          "label": "5 hours",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Time and Distance",
+      "kind": "standard",
+      "difficulty": "hard",
+      "answer_type": "single",
+      "stem": "A thief running at 33 km/h is spotted by a policeman 224 km behind him, who chases at 61 km/h. In how many hours will the policeman catch the thief?",
+      "explanation": "Relative speed = 61−33 = 28 km/h; time = 224/28 = 8 hours.",
+      "options": [
+        {
+          "label": "7 hours",
+          "is_correct": false
+        },
+        {
+          "label": "9 hours",
+          "is_correct": false
+        },
+        {
+          "label": "10 hours",
+          "is_correct": false
+        },
+        {
+          "label": "8 hours",
+          "is_correct": true
+        }
+      ]
+    },
+    {
+      "chapter": "Time and Distance",
+      "kind": "standard",
+      "difficulty": "hard",
+      "answer_type": "single",
+      "stem": "A man goes to a place at 33 km/h and returns along the same road at 30 km/h. If the whole journey takes 63 hours, find the one-way distance.",
+      "explanation": "D/33 + D/30 = 63 ⇒ D = 990 km.",
+      "options": [
+        {
+          "label": "950 km",
+          "is_correct": false
+        },
+        {
+          "label": "990 km",
+          "is_correct": true
+        },
+        {
+          "label": "1070 km",
+          "is_correct": false
+        },
+        {
+          "label": "1030 km",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Time and Distance",
+      "kind": "standard",
+      "difficulty": "hard",
+      "answer_type": "single",
+      "stem": "Two trains are 351 km apart and travel toward each other at 63 km/h and 54 km/h. After how many hours will they meet?",
+      "explanation": "Closing speed = 63+54 = 117 km/h; time = 351/117 = 3 hours.",
+      "options": [
+        {
+          "label": "4 hours",
+          "is_correct": false
+        },
+        {
+          "label": "2 hours",
+          "is_correct": false
+        },
+        {
+          "label": "5 hours",
+          "is_correct": false
+        },
+        {
+          "label": "3 hours",
+          "is_correct": true
+        }
+      ]
+    },
+    {
+      "chapter": "Time and Distance",
+      "kind": "standard",
+      "difficulty": "hard",
+      "answer_type": "single",
+      "stem": "A thief running at 41 km/h is spotted by a policeman 100 km behind him, who chases at 66 km/h. In how many hours will the policeman catch the thief?",
+      "explanation": "Relative speed = 66−41 = 25 km/h; time = 100/25 = 4 hours.",
+      "options": [
+        {
+          "label": "5 hours",
+          "is_correct": false
+        },
+        {
+          "label": "6 hours",
+          "is_correct": false
+        },
+        {
+          "label": "3 hours",
+          "is_correct": false
+        },
+        {
+          "label": "4 hours",
+          "is_correct": true
+        }
+      ]
+    },
+    {
+      "chapter": "Time and Distance",
+      "kind": "standard",
+      "difficulty": "hard",
+      "answer_type": "single",
+      "stem": "A man goes to a place at 24 km/h and returns along the same road at 27 km/h. If the whole journey takes 51 hours, find the one-way distance.",
+      "explanation": "D/24 + D/27 = 51 ⇒ D = 648 km.",
+      "options": [
+        {
+          "label": "648 km",
+          "is_correct": true
+        },
+        {
+          "label": "700 km",
+          "is_correct": false
+        },
+        {
+          "label": "622 km",
+          "is_correct": false
+        },
+        {
+          "label": "674 km",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Time and Distance",
+      "kind": "standard",
+      "difficulty": "hard",
+      "answer_type": "single",
+      "stem": "Two trains are 248 km apart and travel toward each other at 63 km/h and 61 km/h. After how many hours will they meet?",
+      "explanation": "Closing speed = 63+61 = 124 km/h; time = 248/124 = 2 hours.",
+      "options": [
+        {
+          "label": "4 hours",
+          "is_correct": false
+        },
+        {
+          "label": "1 hours",
+          "is_correct": false
+        },
+        {
+          "label": "3 hours",
+          "is_correct": false
+        },
+        {
+          "label": "2 hours",
+          "is_correct": true
+        }
+      ]
+    },
+    {
+      "chapter": "Time and Distance",
+      "kind": "standard",
+      "difficulty": "hard",
+      "answer_type": "single",
+      "stem": "Two trains are 140 km apart and travel toward each other at 30 km/h and 40 km/h. After how many hours will they meet?",
+      "explanation": "Closing speed = 30+40 = 70 km/h; time = 140/70 = 2 hours.",
+      "options": [
+        {
+          "label": "3 hours",
+          "is_correct": false
+        },
+        {
+          "label": "2 hours",
+          "is_correct": true
+        },
+        {
+          "label": "1 hours",
+          "is_correct": false
+        },
+        {
+          "label": "4 hours",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Time and Distance",
+      "kind": "standard",
+      "difficulty": "hard",
+      "answer_type": "single",
+      "stem": "A thief running at 32 km/h is spotted by a policeman 216 km behind him, who chases at 59 km/h. In how many hours will the policeman catch the thief?",
+      "explanation": "Relative speed = 59−32 = 27 km/h; time = 216/27 = 8 hours.",
+      "options": [
+        {
+          "label": "9 hours",
+          "is_correct": false
+        },
+        {
+          "label": "8 hours",
+          "is_correct": true
+        },
+        {
+          "label": "7 hours",
+          "is_correct": false
+        },
+        {
+          "label": "10 hours",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Time and Distance",
+      "kind": "standard",
+      "difficulty": "hard",
+      "answer_type": "single",
+      "stem": "A thief running at 38 km/h is spotted by a policeman 25 km behind him, who chases at 43 km/h. In how many hours will the policeman catch the thief?",
+      "explanation": "Relative speed = 43−38 = 5 km/h; time = 25/5 = 5 hours.",
+      "options": [
+        {
+          "label": "6 hours",
+          "is_correct": false
+        },
+        {
+          "label": "4 hours",
+          "is_correct": false
+        },
+        {
+          "label": "5 hours",
+          "is_correct": true
+        },
+        {
+          "label": "7 hours",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Time and Distance",
+      "kind": "standard",
+      "difficulty": "hard",
+      "answer_type": "single",
+      "stem": "Two trains are 134 km apart and travel toward each other at 37 km/h and 30 km/h. After how many hours will they meet?",
+      "explanation": "Closing speed = 37+30 = 67 km/h; time = 134/67 = 2 hours.",
+      "options": [
+        {
+          "label": "3 hours",
+          "is_correct": false
+        },
+        {
+          "label": "1 hours",
+          "is_correct": false
+        },
+        {
+          "label": "4 hours",
+          "is_correct": false
+        },
+        {
+          "label": "2 hours",
+          "is_correct": true
+        }
+      ]
+    },
+    {
+      "chapter": "Time and Distance",
+      "kind": "standard",
+      "difficulty": "hard",
+      "answer_type": "single",
+      "stem": "A thief running at 49 km/h is spotted by a policeman 189 km behind him, who chases at 76 km/h. In how many hours will the policeman catch the thief?",
+      "explanation": "Relative speed = 76−49 = 27 km/h; time = 189/27 = 7 hours.",
+      "options": [
+        {
+          "label": "9 hours",
+          "is_correct": false
+        },
+        {
+          "label": "8 hours",
+          "is_correct": false
+        },
+        {
+          "label": "6 hours",
+          "is_correct": false
+        },
+        {
+          "label": "7 hours",
+          "is_correct": true
+        }
+      ]
+    },
+    {
+      "chapter": "Time and Distance",
+      "kind": "standard",
+      "difficulty": "hard",
+      "answer_type": "single",
+      "stem": "A thief running at 31 km/h is spotted by a policeman 84 km behind him, who chases at 59 km/h. In how many hours will the policeman catch the thief?",
+      "explanation": "Relative speed = 59−31 = 28 km/h; time = 84/28 = 3 hours.",
+      "options": [
+        {
+          "label": "4 hours",
+          "is_correct": false
+        },
+        {
+          "label": "5 hours",
+          "is_correct": false
+        },
+        {
+          "label": "3 hours",
+          "is_correct": true
+        },
+        {
+          "label": "2 hours",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Time and Distance",
+      "kind": "standard",
+      "difficulty": "hard",
+      "answer_type": "single",
+      "stem": "A thief running at 40 km/h is spotted by a policeman 60 km behind him, who chases at 70 km/h. In how many hours will the policeman catch the thief?",
+      "explanation": "Relative speed = 70−40 = 30 km/h; time = 60/30 = 2 hours.",
+      "options": [
+        {
+          "label": "2 hours",
+          "is_correct": true
+        },
+        {
+          "label": "1 hours",
+          "is_correct": false
+        },
+        {
+          "label": "3 hours",
+          "is_correct": false
+        },
+        {
+          "label": "4 hours",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Time and Distance",
+      "kind": "standard",
+      "difficulty": "hard",
+      "answer_type": "single",
+      "stem": "Two trains are 303 km apart and travel toward each other at 35 km/h and 66 km/h. After how many hours will they meet?",
+      "explanation": "Closing speed = 35+66 = 101 km/h; time = 303/101 = 3 hours.",
+      "options": [
+        {
+          "label": "5 hours",
+          "is_correct": false
+        },
+        {
+          "label": "4 hours",
+          "is_correct": false
+        },
+        {
+          "label": "3 hours",
+          "is_correct": true
+        },
+        {
+          "label": "2 hours",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Time and Distance",
+      "kind": "standard",
+      "difficulty": "hard",
+      "answer_type": "single",
+      "stem": "A man goes to a place at 20 km/h and returns along the same road at 60 km/h. If the whole journey takes 4 hours, find the one-way distance.",
+      "explanation": "D/20 + D/60 = 4 ⇒ D = 60 km.",
+      "options": [
+        {
+          "label": "58 km",
+          "is_correct": false
+        },
+        {
+          "label": "60 km",
+          "is_correct": true
+        },
+        {
+          "label": "64 km",
+          "is_correct": false
+        },
+        {
+          "label": "62 km",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Time and Distance",
+      "kind": "standard",
+      "difficulty": "hard",
+      "answer_type": "single",
+      "stem": "A thief running at 30 km/h is spotted by a policeman 138 km behind him, who chases at 53 km/h. In how many hours will the policeman catch the thief?",
+      "explanation": "Relative speed = 53−30 = 23 km/h; time = 138/23 = 6 hours.",
+      "options": [
+        {
+          "label": "6 hours",
+          "is_correct": true
+        },
+        {
+          "label": "5 hours",
+          "is_correct": false
+        },
+        {
+          "label": "7 hours",
+          "is_correct": false
+        },
+        {
+          "label": "8 hours",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Time and Distance",
+      "kind": "standard",
+      "difficulty": "hard",
+      "answer_type": "single",
+      "stem": "A man goes to a place at 46 km/h and returns along the same road at 53 km/h. If the whole journey takes 99 hours, find the one-way distance.",
+      "explanation": "D/46 + D/53 = 99 ⇒ D = 2438 km.",
+      "options": [
+        {
+          "label": "2438 km",
+          "is_correct": true
+        },
+        {
+          "label": "2536 km",
+          "is_correct": false
+        },
+        {
+          "label": "2340 km",
+          "is_correct": false
+        },
+        {
+          "label": "2634 km",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Time and Distance",
+      "kind": "standard",
+      "difficulty": "hard",
+      "answer_type": "single",
+      "stem": "Two trains are 570 km apart and travel toward each other at 43 km/h and 52 km/h. After how many hours will they meet?",
+      "explanation": "Closing speed = 43+52 = 95 km/h; time = 570/95 = 6 hours.",
+      "options": [
+        {
+          "label": "8 hours",
+          "is_correct": false
+        },
+        {
+          "label": "6 hours",
+          "is_correct": true
+        },
+        {
+          "label": "5 hours",
+          "is_correct": false
+        },
+        {
+          "label": "7 hours",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Time and Distance",
+      "kind": "standard",
+      "difficulty": "hard",
+      "answer_type": "single",
+      "stem": "Two trains are 396 km apart and travel toward each other at 67 km/h and 65 km/h. After how many hours will they meet?",
+      "explanation": "Closing speed = 67+65 = 132 km/h; time = 396/132 = 3 hours.",
+      "options": [
+        {
+          "label": "4 hours",
+          "is_correct": false
+        },
+        {
+          "label": "3 hours",
+          "is_correct": true
+        },
+        {
+          "label": "5 hours",
+          "is_correct": false
+        },
+        {
+          "label": "2 hours",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Time and Distance",
+      "kind": "standard",
+      "difficulty": "hard",
+      "answer_type": "single",
+      "stem": "A man goes to a place at 41 km/h and returns along the same road at 49 km/h. If the whole journey takes 270 hours, find the one-way distance.",
+      "explanation": "D/41 + D/49 = 270 ⇒ D = 6027 km.",
+      "options": [
+        {
+          "label": "6268 km",
+          "is_correct": false
+        },
+        {
+          "label": "6027 km",
+          "is_correct": true
+        },
+        {
+          "label": "5786 km",
+          "is_correct": false
+        },
+        {
+          "label": "6509 km",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Time and Distance",
+      "kind": "standard",
+      "difficulty": "hard",
+      "answer_type": "single",
+      "stem": "Two trains are 270 km apart and travel toward each other at 66 km/h and 69 km/h. After how many hours will they meet?",
+      "explanation": "Closing speed = 66+69 = 135 km/h; time = 270/135 = 2 hours.",
+      "options": [
+        {
+          "label": "2 hours",
+          "is_correct": true
+        },
+        {
+          "label": "4 hours",
+          "is_correct": false
+        },
+        {
+          "label": "3 hours",
+          "is_correct": false
+        },
+        {
+          "label": "1 hours",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Time and Distance",
+      "kind": "standard",
+      "difficulty": "hard",
+      "answer_type": "single",
+      "stem": "Two trains are 425 km apart and travel toward each other at 48 km/h and 37 km/h. After how many hours will they meet?",
+      "explanation": "Closing speed = 48+37 = 85 km/h; time = 425/85 = 5 hours.",
+      "options": [
+        {
+          "label": "7 hours",
+          "is_correct": false
+        },
+        {
+          "label": "6 hours",
+          "is_correct": false
+        },
+        {
+          "label": "4 hours",
+          "is_correct": false
+        },
+        {
+          "label": "5 hours",
+          "is_correct": true
+        }
+      ]
+    },
+    {
+      "chapter": "Time and Distance",
+      "kind": "standard",
+      "difficulty": "hard",
+      "answer_type": "single",
+      "stem": "A man goes to a place at 40 km/h and returns along the same road at 52 km/h. If the whole journey takes 23 hours, find the one-way distance.",
+      "explanation": "D/40 + D/52 = 23 ⇒ D = 520 km.",
+      "options": [
+        {
+          "label": "541 km",
+          "is_correct": false
+        },
+        {
+          "label": "562 km",
+          "is_correct": false
+        },
+        {
+          "label": "520 km",
+          "is_correct": true
+        },
+        {
+          "label": "499 km",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Time and Distance",
+      "kind": "standard",
+      "difficulty": "hard",
+      "answer_type": "single",
+      "stem": "Two trains are 336 km apart and travel toward each other at 70 km/h and 42 km/h. After how many hours will they meet?",
+      "explanation": "Closing speed = 70+42 = 112 km/h; time = 336/112 = 3 hours.",
+      "options": [
+        {
+          "label": "3 hours",
+          "is_correct": true
+        },
+        {
+          "label": "4 hours",
+          "is_correct": false
+        },
+        {
+          "label": "2 hours",
+          "is_correct": false
+        },
+        {
+          "label": "5 hours",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Time and Distance",
+      "kind": "standard",
+      "difficulty": "hard",
+      "answer_type": "single",
+      "stem": "Two trains are 416 km apart and travel toward each other at 51 km/h and 53 km/h. After how many hours will they meet?",
+      "explanation": "Closing speed = 51+53 = 104 km/h; time = 416/104 = 4 hours.",
+      "options": [
+        {
+          "label": "4 hours",
+          "is_correct": true
+        },
+        {
+          "label": "3 hours",
+          "is_correct": false
+        },
+        {
+          "label": "6 hours",
+          "is_correct": false
+        },
+        {
+          "label": "5 hours",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Time and Distance",
+      "kind": "standard",
+      "difficulty": "hard",
+      "answer_type": "single",
+      "stem": "Two trains are 396 km apart and travel toward each other at 37 km/h and 62 km/h. After how many hours will they meet?",
+      "explanation": "Closing speed = 37+62 = 99 km/h; time = 396/99 = 4 hours.",
+      "options": [
+        {
+          "label": "4 hours",
+          "is_correct": true
+        },
+        {
+          "label": "6 hours",
+          "is_correct": false
+        },
+        {
+          "label": "3 hours",
+          "is_correct": false
+        },
+        {
+          "label": "5 hours",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Time and Distance",
+      "kind": "standard",
+      "difficulty": "hard",
+      "answer_type": "single",
+      "stem": "A man goes to a place at 52 km/h and returns along the same road at 27 km/h. If the whole journey takes 316 hours, find the one-way distance.",
+      "explanation": "D/52 + D/27 = 316 ⇒ D = 5616 km.",
+      "options": [
+        {
+          "label": "5616 km",
+          "is_correct": true
+        },
+        {
+          "label": "5391 km",
+          "is_correct": false
+        },
+        {
+          "label": "5841 km",
+          "is_correct": false
+        },
+        {
+          "label": "6066 km",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Time and Distance",
+      "kind": "standard",
+      "difficulty": "hard",
+      "answer_type": "single",
+      "stem": "A thief running at 33 km/h is spotted by a policeman 115 km behind him, who chases at 56 km/h. In how many hours will the policeman catch the thief?",
+      "explanation": "Relative speed = 56−33 = 23 km/h; time = 115/23 = 5 hours.",
+      "options": [
+        {
+          "label": "7 hours",
+          "is_correct": false
+        },
+        {
+          "label": "5 hours",
+          "is_correct": true
+        },
+        {
+          "label": "4 hours",
+          "is_correct": false
+        },
+        {
+          "label": "6 hours",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Time and Distance",
+      "kind": "standard",
+      "difficulty": "hard",
+      "answer_type": "single",
+      "stem": "A man goes to a place at 59 km/h and returns along the same road at 33 km/h. If the whole journey takes 368 hours, find the one-way distance.",
+      "explanation": "D/59 + D/33 = 368 ⇒ D = 7788 km.",
+      "options": [
+        {
+          "label": "7476 km",
+          "is_correct": false
+        },
+        {
+          "label": "7788 km",
+          "is_correct": true
+        },
+        {
+          "label": "8412 km",
+          "is_correct": false
+        },
+        {
+          "label": "8100 km",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Time and Distance",
+      "kind": "standard",
+      "difficulty": "hard",
+      "answer_type": "single",
+      "stem": "Two trains are 696 km apart and travel toward each other at 65 km/h and 51 km/h. After how many hours will they meet?",
+      "explanation": "Closing speed = 65+51 = 116 km/h; time = 696/116 = 6 hours.",
+      "options": [
+        {
+          "label": "7 hours",
+          "is_correct": false
+        },
+        {
+          "label": "6 hours",
+          "is_correct": true
+        },
+        {
+          "label": "8 hours",
+          "is_correct": false
+        },
+        {
+          "label": "5 hours",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Time and Distance",
+      "kind": "standard",
+      "difficulty": "hard",
+      "answer_type": "single",
+      "stem": "A man goes to a place at 43 km/h and returns along the same road at 22 km/h. If the whole journey takes 130 hours, find the one-way distance.",
+      "explanation": "D/43 + D/22 = 130 ⇒ D = 1892 km.",
+      "options": [
+        {
+          "label": "1816 km",
+          "is_correct": false
+        },
+        {
+          "label": "2044 km",
+          "is_correct": false
+        },
+        {
+          "label": "1892 km",
+          "is_correct": true
+        },
+        {
+          "label": "1968 km",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Time and Distance",
+      "kind": "standard",
+      "difficulty": "very_hard",
+      "answer_type": "single",
+      "stem": "Two people start at the same time from towns A and B, 320 km apart, and walk toward each other at 28 km/h and 52 km/h respectively. Find the distance from A at which they meet.",
+      "explanation": "They meet after 320/(28+52) hours; distance from A = 28 × 320/80 = 112 km.",
+      "options": [
+        {
+          "label": "110 km",
+          "is_correct": false
+        },
+        {
+          "label": "112 km",
+          "is_correct": true
+        },
+        {
+          "label": "114 km",
+          "is_correct": false
+        },
+        {
+          "label": "116 km",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Time and Distance",
+      "kind": "standard",
+      "difficulty": "very_hard",
+      "answer_type": "single",
+      "stem": "A person travels from A to B at 49 km/h and returns at 38 km/h, taking 87 hours in all. Find the total distance travelled (to and fro).",
+      "explanation": "One-way distance = 1862 km, so the total distance both ways = 3724 km.",
+      "options": [
+        {
+          "label": "3873 km",
+          "is_correct": false
+        },
+        {
+          "label": "3724 km",
+          "is_correct": true
+        },
+        {
+          "label": "3575 km",
+          "is_correct": false
+        },
+        {
+          "label": "4022 km",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Time and Distance",
+      "kind": "standard",
+      "difficulty": "very_hard",
+      "answer_type": "single",
+      "stem": "Walking to school at 6 km/h, a student is 176 minutes late; walking at 11 km/h, he is 124 minutes early. Find the distance to the school.",
+      "explanation": "Time difference = 176+124 = 300 min = 5 h between the two speeds ⇒ distance = 66 km.",
+      "options": [
+        {
+          "label": "66 km",
+          "is_correct": true
+        },
+        {
+          "label": "64 km",
+          "is_correct": false
+        },
+        {
+          "label": "70 km",
+          "is_correct": false
+        },
+        {
+          "label": "68 km",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Time and Distance",
+      "kind": "standard",
+      "difficulty": "very_hard",
+      "answer_type": "single",
+      "stem": "Two people start at the same time from towns A and B, 276 km apart, and walk toward each other at 55 km/h and 37 km/h respectively. Find the distance from A at which they meet.",
+      "explanation": "They meet after 276/(55+37) hours; distance from A = 55 × 276/92 = 165 km.",
+      "options": [
+        {
+          "label": "163 km",
+          "is_correct": false
+        },
+        {
+          "label": "167 km",
+          "is_correct": false
+        },
+        {
+          "label": "165 km",
+          "is_correct": true
+        },
+        {
+          "label": "169 km",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Time and Distance",
+      "kind": "standard",
+      "difficulty": "very_hard",
+      "answer_type": "single",
+      "stem": "A person travels from A to B at 44 km/h and returns at 49 km/h, taking 186 hours in all. Find the total distance travelled (to and fro).",
+      "explanation": "One-way distance = 4312 km, so the total distance both ways = 8624 km.",
+      "options": [
+        {
+          "label": "9314 km",
+          "is_correct": false
+        },
+        {
+          "label": "8969 km",
+          "is_correct": false
+        },
+        {
+          "label": "8624 km",
+          "is_correct": true
+        },
+        {
+          "label": "8279 km",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Time and Distance",
+      "kind": "standard",
+      "difficulty": "very_hard",
+      "answer_type": "single",
+      "stem": "Two people start at the same time from towns A and B, 279 km apart, and walk toward each other at 46 km/h and 47 km/h respectively. Find the distance from A at which they meet.",
+      "explanation": "They meet after 279/(46+47) hours; distance from A = 46 × 279/93 = 138 km.",
+      "options": [
+        {
+          "label": "138 km",
+          "is_correct": true
+        },
+        {
+          "label": "136 km",
+          "is_correct": false
+        },
+        {
+          "label": "140 km",
+          "is_correct": false
+        },
+        {
+          "label": "142 km",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Time and Distance",
+      "kind": "standard",
+      "difficulty": "very_hard",
+      "answer_type": "single",
+      "stem": "Two people start at the same time from towns A and B, 295 km apart, and walk toward each other at 26 km/h and 33 km/h respectively. Find the distance from A at which they meet.",
+      "explanation": "They meet after 295/(26+33) hours; distance from A = 26 × 295/59 = 130 km.",
+      "options": [
+        {
+          "label": "128 km",
+          "is_correct": false
+        },
+        {
+          "label": "130 km",
+          "is_correct": true
+        },
+        {
+          "label": "132 km",
+          "is_correct": false
+        },
+        {
+          "label": "134 km",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Time and Distance",
+      "kind": "standard",
+      "difficulty": "very_hard",
+      "answer_type": "single",
+      "stem": "Walking to school at 5 km/h, a student is 177 minutes late; walking at 8 km/h, he is 183 minutes early. Find the distance to the school.",
+      "explanation": "Time difference = 177+183 = 360 min = 6 h between the two speeds ⇒ distance = 80 km.",
+      "options": [
+        {
+          "label": "84 km",
+          "is_correct": false
+        },
+        {
+          "label": "80 km",
+          "is_correct": true
+        },
+        {
+          "label": "82 km",
+          "is_correct": false
+        },
+        {
+          "label": "78 km",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Time and Distance",
+      "kind": "standard",
+      "difficulty": "very_hard",
+      "answer_type": "single",
+      "stem": "Walking to school at 7 km/h, a student is 377 minutes late; walking at 11 km/h, he is 103 minutes early. Find the distance to the school.",
+      "explanation": "Time difference = 377+103 = 480 min = 8 h between the two speeds ⇒ distance = 154 km.",
+      "options": [
+        {
+          "label": "154 km",
+          "is_correct": true
+        },
+        {
+          "label": "158 km",
+          "is_correct": false
+        },
+        {
+          "label": "156 km",
+          "is_correct": false
+        },
+        {
+          "label": "152 km",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Time and Distance",
+      "kind": "standard",
+      "difficulty": "very_hard",
+      "answer_type": "single",
+      "stem": "Walking to school at 8 km/h, a student is 1 minutes late; walking at 12 km/h, he is 59 minutes early. Find the distance to the school.",
+      "explanation": "Time difference = 1+59 = 60 min = 1 h between the two speeds ⇒ distance = 24 km.",
+      "options": [
+        {
+          "label": "24 km",
+          "is_correct": true
+        },
+        {
+          "label": "23 km",
+          "is_correct": false
+        },
+        {
+          "label": "25 km",
+          "is_correct": false
+        },
+        {
+          "label": "26 km",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Time and Distance",
+      "kind": "standard",
+      "difficulty": "very_hard",
+      "answer_type": "single",
+      "stem": "Two people start at the same time from towns A and B, 292 km apart, and walk toward each other at 36 km/h and 37 km/h respectively. Find the distance from A at which they meet.",
+      "explanation": "They meet after 292/(36+37) hours; distance from A = 36 × 292/73 = 144 km.",
+      "options": [
+        {
+          "label": "144 km",
+          "is_correct": true
+        },
+        {
+          "label": "148 km",
+          "is_correct": false
+        },
+        {
+          "label": "142 km",
+          "is_correct": false
+        },
+        {
+          "label": "146 km",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Time and Distance",
+      "kind": "standard",
+      "difficulty": "very_hard",
+      "answer_type": "single",
+      "stem": "Two people start at the same time from towns A and B, 412 km apart, and walk toward each other at 53 km/h and 50 km/h respectively. Find the distance from A at which they meet.",
+      "explanation": "They meet after 412/(53+50) hours; distance from A = 53 × 412/103 = 212 km.",
+      "options": [
+        {
+          "label": "228 km",
+          "is_correct": false
+        },
+        {
+          "label": "212 km",
+          "is_correct": true
+        },
+        {
+          "label": "204 km",
+          "is_correct": false
+        },
+        {
+          "label": "220 km",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Time and Distance",
+      "kind": "standard",
+      "difficulty": "very_hard",
+      "answer_type": "single",
+      "stem": "A person travels from A to B at 36 km/h and returns at 53 km/h, taking 356 hours in all. Find the total distance travelled (to and fro).",
+      "explanation": "One-way distance = 7632 km, so the total distance both ways = 15264 km.",
+      "options": [
+        {
+          "label": "14653 km",
+          "is_correct": false
+        },
+        {
+          "label": "15875 km",
+          "is_correct": false
+        },
+        {
+          "label": "16486 km",
+          "is_correct": false
+        },
+        {
+          "label": "15264 km",
+          "is_correct": true
+        }
+      ]
+    },
+    {
+      "chapter": "Time and Distance",
+      "kind": "standard",
+      "difficulty": "very_hard",
+      "answer_type": "single",
+      "stem": "Two people start at the same time from towns A and B, 261 km apart, and walk toward each other at 59 km/h and 28 km/h respectively. Find the distance from A at which they meet.",
+      "explanation": "They meet after 261/(59+28) hours; distance from A = 59 × 261/87 = 177 km.",
+      "options": [
+        {
+          "label": "177 km",
+          "is_correct": true
+        },
+        {
+          "label": "175 km",
+          "is_correct": false
+        },
+        {
+          "label": "179 km",
+          "is_correct": false
+        },
+        {
+          "label": "181 km",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Time and Distance",
+      "kind": "standard",
+      "difficulty": "very_hard",
+      "answer_type": "single",
+      "stem": "A person travels from A to B at 58 km/h and returns at 45 km/h, taking 206 hours in all. Find the total distance travelled (to and fro).",
+      "explanation": "One-way distance = 5220 km, so the total distance both ways = 10440 km.",
+      "options": [
+        {
+          "label": "10022 km",
+          "is_correct": false
+        },
+        {
+          "label": "11276 km",
+          "is_correct": false
+        },
+        {
+          "label": "10440 km",
+          "is_correct": true
+        },
+        {
+          "label": "10858 km",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Time and Distance",
+      "kind": "standard",
+      "difficulty": "very_hard",
+      "answer_type": "single",
+      "stem": "Walking to school at 4 km/h, a student is 97 minutes late; walking at 9 km/h, he is 503 minutes early. Find the distance to the school.",
+      "explanation": "Time difference = 97+503 = 600 min = 10 h between the two speeds ⇒ distance = 72 km.",
+      "options": [
+        {
+          "label": "70 km",
+          "is_correct": false
+        },
+        {
+          "label": "74 km",
+          "is_correct": false
+        },
+        {
+          "label": "72 km",
+          "is_correct": true
+        },
+        {
+          "label": "76 km",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Time and Distance",
+      "kind": "standard",
+      "difficulty": "very_hard",
+      "answer_type": "single",
+      "stem": "A person travels from A to B at 57 km/h and returns at 37 km/h, taking 188 hours in all. Find the total distance travelled (to and fro).",
+      "explanation": "One-way distance = 4218 km, so the total distance both ways = 8436 km.",
+      "options": [
+        {
+          "label": "8099 km",
+          "is_correct": false
+        },
+        {
+          "label": "8773 km",
+          "is_correct": false
+        },
+        {
+          "label": "8436 km",
+          "is_correct": true
+        },
+        {
+          "label": "9110 km",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Time and Distance",
+      "kind": "standard",
+      "difficulty": "very_hard",
+      "answer_type": "single",
+      "stem": "Two people start at the same time from towns A and B, 222 km apart, and walk toward each other at 53 km/h and 21 km/h respectively. Find the distance from A at which they meet.",
+      "explanation": "They meet after 222/(53+21) hours; distance from A = 53 × 222/74 = 159 km.",
+      "options": [
+        {
+          "label": "159 km",
+          "is_correct": true
+        },
+        {
+          "label": "163 km",
+          "is_correct": false
+        },
+        {
+          "label": "157 km",
+          "is_correct": false
+        },
+        {
+          "label": "161 km",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Time and Distance",
+      "kind": "standard",
+      "difficulty": "very_hard",
+      "answer_type": "single",
+      "stem": "Walking to school at 8 km/h, a student is 12 minutes late; walking at 10 km/h, he is 48 minutes early. Find the distance to the school.",
+      "explanation": "Time difference = 12+48 = 60 min = 1 h between the two speeds ⇒ distance = 40 km.",
+      "options": [
+        {
+          "label": "38 km",
+          "is_correct": false
+        },
+        {
+          "label": "40 km",
+          "is_correct": true
+        },
+        {
+          "label": "42 km",
+          "is_correct": false
+        },
+        {
+          "label": "44 km",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Time and Distance",
+      "kind": "standard",
+      "difficulty": "very_hard",
+      "answer_type": "single",
+      "stem": "Two people start at the same time from towns A and B, 336 km apart, and walk toward each other at 56 km/h and 28 km/h respectively. Find the distance from A at which they meet.",
+      "explanation": "They meet after 336/(56+28) hours; distance from A = 56 × 336/84 = 224 km.",
+      "options": [
+        {
+          "label": "242 km",
+          "is_correct": false
+        },
+        {
+          "label": "215 km",
+          "is_correct": false
+        },
+        {
+          "label": "233 km",
+          "is_correct": false
+        },
+        {
+          "label": "224 km",
+          "is_correct": true
+        }
+      ]
+    },
+    {
+      "chapter": "Time and Distance",
+      "kind": "standard",
+      "difficulty": "very_hard",
+      "answer_type": "single",
+      "stem": "Walking to school at 5 km/h, a student is 147 minutes late; walking at 7 km/h, he is 93 minutes early. Find the distance to the school.",
+      "explanation": "Time difference = 147+93 = 240 min = 4 h between the two speeds ⇒ distance = 70 km.",
+      "options": [
+        {
+          "label": "70 km",
+          "is_correct": true
+        },
+        {
+          "label": "72 km",
+          "is_correct": false
+        },
+        {
+          "label": "74 km",
+          "is_correct": false
+        },
+        {
+          "label": "68 km",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Time and Distance",
+      "kind": "standard",
+      "difficulty": "very_hard",
+      "answer_type": "single",
+      "stem": "A person travels from A to B at 23 km/h and returns at 35 km/h, taking 290 hours in all. Find the total distance travelled (to and fro).",
+      "explanation": "One-way distance = 4025 km, so the total distance both ways = 8050 km.",
+      "options": [
+        {
+          "label": "8694 km",
+          "is_correct": false
+        },
+        {
+          "label": "8050 km",
+          "is_correct": true
+        },
+        {
+          "label": "7728 km",
+          "is_correct": false
+        },
+        {
+          "label": "8372 km",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Time and Distance",
+      "kind": "standard",
+      "difficulty": "very_hard",
+      "answer_type": "single",
+      "stem": "A person travels from A to B at 53 km/h and returns at 33 km/h, taking 86 hours in all. Find the total distance travelled (to and fro).",
+      "explanation": "One-way distance = 1749 km, so the total distance both ways = 3498 km.",
+      "options": [
+        {
+          "label": "3778 km",
+          "is_correct": false
+        },
+        {
+          "label": "3358 km",
+          "is_correct": false
+        },
+        {
+          "label": "3498 km",
+          "is_correct": true
+        },
+        {
+          "label": "3638 km",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Time and Distance",
+      "kind": "standard",
+      "difficulty": "very_hard",
+      "answer_type": "single",
+      "stem": "Walking to school at 6 km/h, a student is 7 minutes late; walking at 7 km/h, he is 53 minutes early. Find the distance to the school.",
+      "explanation": "Time difference = 7+53 = 60 min = 1 h between the two speeds ⇒ distance = 42 km.",
+      "options": [
+        {
+          "label": "42 km",
+          "is_correct": true
+        },
+        {
+          "label": "44 km",
+          "is_correct": false
+        },
+        {
+          "label": "40 km",
+          "is_correct": false
+        },
+        {
+          "label": "46 km",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Time and Distance",
+      "kind": "standard",
+      "difficulty": "very_hard",
+      "answer_type": "single",
+      "stem": "Two people start at the same time from towns A and B, 385 km apart, and walk toward each other at 34 km/h and 43 km/h respectively. Find the distance from A at which they meet.",
+      "explanation": "They meet after 385/(34+43) hours; distance from A = 34 × 385/77 = 170 km.",
+      "options": [
+        {
+          "label": "170 km",
+          "is_correct": true
+        },
+        {
+          "label": "172 km",
+          "is_correct": false
+        },
+        {
+          "label": "168 km",
+          "is_correct": false
+        },
+        {
+          "label": "174 km",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Time and Distance",
+      "kind": "standard",
+      "difficulty": "very_hard",
+      "answer_type": "single",
+      "stem": "Walking to school at 8 km/h, a student is 245 minutes late; walking at 11 km/h, he is 115 minutes early. Find the distance to the school.",
+      "explanation": "Time difference = 245+115 = 360 min = 6 h between the two speeds ⇒ distance = 176 km.",
+      "options": [
+        {
+          "label": "174 km",
+          "is_correct": false
+        },
+        {
+          "label": "178 km",
+          "is_correct": false
+        },
+        {
+          "label": "180 km",
+          "is_correct": false
+        },
+        {
+          "label": "176 km",
+          "is_correct": true
+        }
+      ]
+    },
+    {
+      "chapter": "Time and Distance",
+      "kind": "standard",
+      "difficulty": "very_hard",
+      "answer_type": "single",
+      "stem": "Two people start at the same time from towns A and B, 300 km apart, and walk toward each other at 35 km/h and 40 km/h respectively. Find the distance from A at which they meet.",
+      "explanation": "They meet after 300/(35+40) hours; distance from A = 35 × 300/75 = 140 km.",
+      "options": [
+        {
+          "label": "144 km",
+          "is_correct": false
+        },
+        {
+          "label": "140 km",
+          "is_correct": true
+        },
+        {
+          "label": "138 km",
+          "is_correct": false
+        },
+        {
+          "label": "142 km",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Time and Distance",
+      "kind": "standard",
+      "difficulty": "very_hard",
+      "answer_type": "single",
+      "stem": "A person travels from A to B at 37 km/h and returns at 22 km/h, taking 177 hours in all. Find the total distance travelled (to and fro).",
+      "explanation": "One-way distance = 2442 km, so the total distance both ways = 4884 km.",
+      "options": [
+        {
+          "label": "4689 km",
+          "is_correct": false
+        },
+        {
+          "label": "5079 km",
+          "is_correct": false
+        },
+        {
+          "label": "5274 km",
+          "is_correct": false
+        },
+        {
+          "label": "4884 km",
+          "is_correct": true
+        }
+      ]
+    },
+    {
+      "chapter": "Time and Distance",
+      "kind": "standard",
+      "difficulty": "very_hard",
+      "answer_type": "single",
+      "stem": "Walking to school at 4 km/h, a student is 505 minutes late; walking at 9 km/h, he is 395 minutes early. Find the distance to the school.",
+      "explanation": "Time difference = 505+395 = 900 min = 15 h between the two speeds ⇒ distance = 108 km.",
+      "options": [
+        {
+          "label": "108 km",
+          "is_correct": true
+        },
+        {
+          "label": "110 km",
+          "is_correct": false
+        },
+        {
+          "label": "112 km",
+          "is_correct": false
+        },
+        {
+          "label": "106 km",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Time and Distance",
+      "kind": "standard",
+      "difficulty": "very_hard",
+      "answer_type": "single",
+      "stem": "Walking to school at 7 km/h, a student is 122 minutes late; walking at 9 km/h, he is 238 minutes early. Find the distance to the school.",
+      "explanation": "Time difference = 122+238 = 360 min = 6 h between the two speeds ⇒ distance = 189 km.",
+      "options": [
+        {
+          "label": "193 km",
+          "is_correct": false
+        },
+        {
+          "label": "191 km",
+          "is_correct": false
+        },
+        {
+          "label": "189 km",
+          "is_correct": true
+        },
+        {
+          "label": "187 km",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Time and Distance",
+      "kind": "standard",
+      "difficulty": "very_hard",
+      "answer_type": "single",
+      "stem": "A person travels from A to B at 49 km/h and returns at 35 km/h, taking 24 hours in all. Find the total distance travelled (to and fro).",
+      "explanation": "One-way distance = 490 km, so the total distance both ways = 980 km.",
+      "options": [
+        {
+          "label": "980 km",
+          "is_correct": true
+        },
+        {
+          "label": "941 km",
+          "is_correct": false
+        },
+        {
+          "label": "1058 km",
+          "is_correct": false
+        },
+        {
+          "label": "1019 km",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Time and Distance",
+      "kind": "standard",
+      "difficulty": "very_hard",
+      "answer_type": "single",
+      "stem": "A person travels from A to B at 27 km/h and returns at 29 km/h, taking 224 hours in all. Find the total distance travelled (to and fro).",
+      "explanation": "One-way distance = 3132 km, so the total distance both ways = 6264 km.",
+      "options": [
+        {
+          "label": "6766 km",
+          "is_correct": false
+        },
+        {
+          "label": "6013 km",
+          "is_correct": false
+        },
+        {
+          "label": "6515 km",
+          "is_correct": false
+        },
+        {
+          "label": "6264 km",
+          "is_correct": true
+        }
+      ]
+    },
+    {
+      "chapter": "Time and Distance",
+      "kind": "standard",
+      "difficulty": "very_hard",
+      "answer_type": "single",
+      "stem": "Walking to school at 5 km/h, a student is 140 minutes late; walking at 9 km/h, he is 100 minutes early. Find the distance to the school.",
+      "explanation": "Time difference = 140+100 = 240 min = 4 h between the two speeds ⇒ distance = 45 km.",
+      "options": [
+        {
+          "label": "45 km",
+          "is_correct": true
+        },
+        {
+          "label": "47 km",
+          "is_correct": false
+        },
+        {
+          "label": "49 km",
+          "is_correct": false
+        },
+        {
+          "label": "43 km",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Time and Distance",
+      "kind": "standard",
+      "difficulty": "very_hard",
+      "answer_type": "single",
+      "stem": "A person travels from A to B at 48 km/h and returns at 32 km/h, taking 25 hours in all. Find the total distance travelled (to and fro).",
+      "explanation": "One-way distance = 480 km, so the total distance both ways = 960 km.",
+      "options": [
+        {
+          "label": "998 km",
+          "is_correct": false
+        },
+        {
+          "label": "960 km",
+          "is_correct": true
+        },
+        {
+          "label": "1036 km",
+          "is_correct": false
+        },
+        {
+          "label": "922 km",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Time and Distance",
+      "kind": "standard",
+      "difficulty": "very_hard",
+      "answer_type": "single",
+      "stem": "Two people start at the same time from towns A and B, 395 km apart, and walk toward each other at 49 km/h and 30 km/h respectively. Find the distance from A at which they meet.",
+      "explanation": "They meet after 395/(49+30) hours; distance from A = 49 × 395/79 = 245 km.",
+      "options": [
+        {
+          "label": "245 km",
+          "is_correct": true
+        },
+        {
+          "label": "265 km",
+          "is_correct": false
+        },
+        {
+          "label": "255 km",
+          "is_correct": false
+        },
+        {
+          "label": "235 km",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Time and Distance",
+      "kind": "standard",
+      "difficulty": "very_hard",
+      "answer_type": "single",
+      "stem": "A person travels from A to B at 37 km/h and returns at 44 km/h, taking 405 hours in all. Find the total distance travelled (to and fro).",
+      "explanation": "One-way distance = 8140 km, so the total distance both ways = 16280 km.",
+      "options": [
+        {
+          "label": "16280 km",
+          "is_correct": true
+        },
+        {
+          "label": "15629 km",
+          "is_correct": false
+        },
+        {
+          "label": "16931 km",
+          "is_correct": false
+        },
+        {
+          "label": "17582 km",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Time and Distance",
+      "kind": "standard",
+      "difficulty": "very_hard",
+      "answer_type": "single",
+      "stem": "Two people start at the same time from towns A and B, 452 km apart, and walk toward each other at 60 km/h and 53 km/h respectively. Find the distance from A at which they meet.",
+      "explanation": "They meet after 452/(60+53) hours; distance from A = 60 × 452/113 = 240 km.",
+      "options": [
+        {
+          "label": "260 km",
+          "is_correct": false
+        },
+        {
+          "label": "250 km",
+          "is_correct": false
+        },
+        {
+          "label": "230 km",
+          "is_correct": false
+        },
+        {
+          "label": "240 km",
+          "is_correct": true
+        }
+      ]
+    },
+    {
+      "chapter": "Time and Distance",
+      "kind": "standard",
+      "difficulty": "very_hard",
+      "answer_type": "single",
+      "stem": "Two people start at the same time from towns A and B, 600 km apart, and walk toward each other at 52 km/h and 48 km/h respectively. Find the distance from A at which they meet.",
+      "explanation": "They meet after 600/(52+48) hours; distance from A = 52 × 600/100 = 312 km.",
+      "options": [
+        {
+          "label": "300 km",
+          "is_correct": false
+        },
+        {
+          "label": "336 km",
+          "is_correct": false
+        },
+        {
+          "label": "324 km",
+          "is_correct": false
+        },
+        {
+          "label": "312 km",
+          "is_correct": true
+        }
+      ]
+    },
+    {
+      "chapter": "Time and Distance",
+      "kind": "standard",
+      "difficulty": "very_hard",
+      "answer_type": "single",
+      "stem": "Walking to school at 5 km/h, a student is 618 minutes late; walking at 11 km/h, he is 462 minutes early. Find the distance to the school.",
+      "explanation": "Time difference = 618+462 = 1080 min = 18 h between the two speeds ⇒ distance = 165 km.",
+      "options": [
+        {
+          "label": "165 km",
+          "is_correct": true
+        },
+        {
+          "label": "167 km",
+          "is_correct": false
+        },
+        {
+          "label": "169 km",
+          "is_correct": false
+        },
+        {
+          "label": "163 km",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Time and Distance",
+      "kind": "standard",
+      "difficulty": "very_hard",
+      "answer_type": "single",
+      "stem": "Two people start at the same time from towns A and B, 160 km apart, and walk toward each other at 20 km/h and 60 km/h respectively. Find the distance from A at which they meet.",
+      "explanation": "They meet after 160/(20+60) hours; distance from A = 20 × 160/80 = 40 km.",
+      "options": [
+        {
+          "label": "42 km",
+          "is_correct": false
+        },
+        {
+          "label": "40 km",
+          "is_correct": true
+        },
+        {
+          "label": "38 km",
+          "is_correct": false
+        },
+        {
+          "label": "44 km",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Time and Distance",
+      "kind": "standard",
+      "difficulty": "very_hard",
+      "answer_type": "single",
+      "stem": "Two people start at the same time from towns A and B, 310 km apart, and walk toward each other at 36 km/h and 26 km/h respectively. Find the distance from A at which they meet.",
+      "explanation": "They meet after 310/(36+26) hours; distance from A = 36 × 310/62 = 180 km.",
+      "options": [
+        {
+          "label": "180 km",
+          "is_correct": true
+        },
+        {
+          "label": "182 km",
+          "is_correct": false
+        },
+        {
+          "label": "184 km",
+          "is_correct": false
+        },
+        {
+          "label": "178 km",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Time and Distance",
+      "kind": "standard",
+      "difficulty": "very_hard",
+      "answer_type": "single",
+      "stem": "A person travels from A to B at 56 km/h and returns at 33 km/h, taking 178 hours in all. Find the total distance travelled (to and fro).",
+      "explanation": "One-way distance = 3696 km, so the total distance both ways = 7392 km.",
+      "options": [
+        {
+          "label": "7392 km",
+          "is_correct": true
+        },
+        {
+          "label": "7984 km",
+          "is_correct": false
+        },
+        {
+          "label": "7688 km",
+          "is_correct": false
+        },
+        {
+          "label": "7096 km",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Time and Distance",
+      "kind": "standard",
+      "difficulty": "very_hard",
+      "answer_type": "single",
+      "stem": "A person travels from A to B at 42 km/h and returns at 35 km/h, taking 11 hours in all. Find the total distance travelled (to and fro).",
+      "explanation": "One-way distance = 210 km, so the total distance both ways = 420 km.",
+      "options": [
+        {
+          "label": "403 km",
+          "is_correct": false
+        },
+        {
+          "label": "437 km",
+          "is_correct": false
+        },
+        {
+          "label": "420 km",
+          "is_correct": true
+        },
+        {
+          "label": "454 km",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Time and Distance",
+      "kind": "standard",
+      "difficulty": "very_hard",
+      "answer_type": "single",
+      "stem": "Two people start at the same time from towns A and B, 612 km apart, and walk toward each other at 42 km/h and 60 km/h respectively. Find the distance from A at which they meet.",
+      "explanation": "They meet after 612/(42+60) hours; distance from A = 42 × 612/102 = 252 km.",
+      "options": [
+        {
+          "label": "252 km",
+          "is_correct": true
+        },
+        {
+          "label": "242 km",
+          "is_correct": false
+        },
+        {
+          "label": "272 km",
+          "is_correct": false
+        },
+        {
+          "label": "262 km",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Time and Distance",
+      "kind": "standard",
+      "difficulty": "very_hard",
+      "answer_type": "single",
+      "stem": "Two people start at the same time from towns A and B, 344 km apart, and walk toward each other at 32 km/h and 54 km/h respectively. Find the distance from A at which they meet.",
+      "explanation": "They meet after 344/(32+54) hours; distance from A = 32 × 344/86 = 128 km.",
+      "options": [
+        {
+          "label": "132 km",
+          "is_correct": false
+        },
+        {
+          "label": "128 km",
+          "is_correct": true
+        },
+        {
+          "label": "126 km",
+          "is_correct": false
+        },
+        {
+          "label": "130 km",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Time and Distance",
+      "kind": "standard",
+      "difficulty": "very_hard",
+      "answer_type": "single",
+      "stem": "A person travels from A to B at 22 km/h and returns at 20 km/h, taking 42 hours in all. Find the total distance travelled (to and fro).",
+      "explanation": "One-way distance = 440 km, so the total distance both ways = 880 km.",
+      "options": [
+        {
+          "label": "845 km",
+          "is_correct": false
+        },
+        {
+          "label": "880 km",
+          "is_correct": true
+        },
+        {
+          "label": "950 km",
+          "is_correct": false
+        },
+        {
+          "label": "915 km",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Time and Distance",
+      "kind": "standard",
+      "difficulty": "very_hard",
+      "answer_type": "single",
+      "stem": "Walking to school at 7 km/h, a student is 61 minutes late; walking at 9 km/h, he is 179 minutes early. Find the distance to the school.",
+      "explanation": "Time difference = 61+179 = 240 min = 4 h between the two speeds ⇒ distance = 126 km.",
+      "options": [
+        {
+          "label": "126 km",
+          "is_correct": true
+        },
+        {
+          "label": "124 km",
+          "is_correct": false
+        },
+        {
+          "label": "130 km",
+          "is_correct": false
+        },
+        {
+          "label": "128 km",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Time and Distance",
+      "kind": "standard",
+      "difficulty": "very_hard",
+      "answer_type": "single",
+      "stem": "Walking to school at 4 km/h, a student is 32 minutes late; walking at 6 km/h, he is 28 minutes early. Find the distance to the school.",
+      "explanation": "Time difference = 32+28 = 60 min = 1 h between the two speeds ⇒ distance = 12 km.",
+      "options": [
+        {
+          "label": "11 km",
+          "is_correct": false
+        },
+        {
+          "label": "12 km",
+          "is_correct": true
+        },
+        {
+          "label": "13 km",
+          "is_correct": false
+        },
+        {
+          "label": "14 km",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Time and Distance",
+      "kind": "standard",
+      "difficulty": "very_hard",
+      "answer_type": "single",
+      "stem": "A person travels from A to B at 35 km/h and returns at 52 km/h, taking 87 hours in all. Find the total distance travelled (to and fro).",
+      "explanation": "One-way distance = 1820 km, so the total distance both ways = 3640 km.",
+      "options": [
+        {
+          "label": "3494 km",
+          "is_correct": false
+        },
+        {
+          "label": "3932 km",
+          "is_correct": false
+        },
+        {
+          "label": "3786 km",
+          "is_correct": false
+        },
+        {
+          "label": "3640 km",
+          "is_correct": true
+        }
+      ]
+    },
+    {
+      "chapter": "Time and Distance",
+      "kind": "standard",
+      "difficulty": "very_hard",
+      "answer_type": "single",
+      "stem": "Walking to school at 3 km/h, a student is 7 minutes late; walking at 4 km/h, he is 53 minutes early. Find the distance to the school.",
+      "explanation": "Time difference = 7+53 = 60 min = 1 h between the two speeds ⇒ distance = 12 km.",
+      "options": [
+        {
+          "label": "14 km",
+          "is_correct": false
+        },
+        {
+          "label": "11 km",
+          "is_correct": false
+        },
+        {
+          "label": "12 km",
+          "is_correct": true
+        },
+        {
+          "label": "13 km",
+          "is_correct": false
+        }
+      ]
+    }
+  ]
+}

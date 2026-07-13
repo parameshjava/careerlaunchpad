@@ -1,0 +1,5205 @@
+{
+  "subject": "Arithmetic",
+  "questions": [
+    {
+      "chapter": "Number System",
+      "kind": "standard",
+      "difficulty": "easy",
+      "answer_type": "single",
+      "stem": "Find the greatest three-digit number that is exactly divisible by 8.",
+      "explanation": "⌊999/8⌋ = 124, so the number is 124×8 = 992.",
+      "options": [
+        {
+          "label": "992",
+          "is_correct": true
+        },
+        {
+          "label": "1032",
+          "is_correct": false
+        },
+        {
+          "label": "952",
+          "is_correct": false
+        },
+        {
+          "label": "1072",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Number System",
+      "kind": "standard",
+      "difficulty": "easy",
+      "answer_type": "single",
+      "stem": "Find the remainder when 3934 is divided by 16.",
+      "explanation": "3934 = 16×245 + 14, so the remainder is 14.",
+      "options": [
+        {
+          "label": "16",
+          "is_correct": false
+        },
+        {
+          "label": "15",
+          "is_correct": false
+        },
+        {
+          "label": "13",
+          "is_correct": false
+        },
+        {
+          "label": "14",
+          "is_correct": true
+        }
+      ]
+    },
+    {
+      "chapter": "Number System",
+      "kind": "standard",
+      "difficulty": "easy",
+      "answer_type": "single",
+      "stem": "Find the remainder when 2001 is divided by 3.",
+      "explanation": "2001 = 3×667 + 0, so the remainder is 0.",
+      "options": [
+        {
+          "label": "2",
+          "is_correct": false
+        },
+        {
+          "label": "1",
+          "is_correct": false
+        },
+        {
+          "label": "0",
+          "is_correct": true
+        },
+        {
+          "label": "3",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Number System",
+      "kind": "standard",
+      "difficulty": "easy",
+      "answer_type": "single",
+      "stem": "Find the sum of the first 36 odd natural numbers.",
+      "explanation": "Sum of first n odd numbers = n² = 36² = 1296.",
+      "options": [
+        {
+          "label": "1296",
+          "is_correct": true
+        },
+        {
+          "label": "1244",
+          "is_correct": false
+        },
+        {
+          "label": "1348",
+          "is_correct": false
+        },
+        {
+          "label": "1400",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Number System",
+      "kind": "standard",
+      "difficulty": "easy",
+      "answer_type": "single",
+      "stem": "Find the sum of the first 57 odd natural numbers.",
+      "explanation": "Sum of first n odd numbers = n² = 57² = 3249.",
+      "options": [
+        {
+          "label": "3509",
+          "is_correct": false
+        },
+        {
+          "label": "3119",
+          "is_correct": false
+        },
+        {
+          "label": "3379",
+          "is_correct": false
+        },
+        {
+          "label": "3249",
+          "is_correct": true
+        }
+      ]
+    },
+    {
+      "chapter": "Number System",
+      "kind": "standard",
+      "difficulty": "easy",
+      "answer_type": "single",
+      "stem": "Find the sum of the first 50 even natural numbers.",
+      "explanation": "Sum of first n even numbers = n(n+1) = 50×51 = 2550.",
+      "options": [
+        {
+          "label": "2448",
+          "is_correct": false
+        },
+        {
+          "label": "2652",
+          "is_correct": false
+        },
+        {
+          "label": "2754",
+          "is_correct": false
+        },
+        {
+          "label": "2550",
+          "is_correct": true
+        }
+      ]
+    },
+    {
+      "chapter": "Number System",
+      "kind": "standard",
+      "difficulty": "easy",
+      "answer_type": "single",
+      "stem": "Find the greatest three-digit number that is exactly divisible by 22.",
+      "explanation": "⌊999/22⌋ = 45, so the number is 45×22 = 990.",
+      "options": [
+        {
+          "label": "1070",
+          "is_correct": false
+        },
+        {
+          "label": "990",
+          "is_correct": true
+        },
+        {
+          "label": "1030",
+          "is_correct": false
+        },
+        {
+          "label": "950",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Number System",
+      "kind": "standard",
+      "difficulty": "easy",
+      "answer_type": "single",
+      "stem": "Find the remainder when 7982 is divided by 17.",
+      "explanation": "7982 = 17×469 + 9, so the remainder is 9.",
+      "options": [
+        {
+          "label": "9",
+          "is_correct": true
+        },
+        {
+          "label": "8",
+          "is_correct": false
+        },
+        {
+          "label": "11",
+          "is_correct": false
+        },
+        {
+          "label": "10",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Number System",
+      "kind": "standard",
+      "difficulty": "easy",
+      "answer_type": "single",
+      "stem": "Find the sum of the first 43 odd natural numbers.",
+      "explanation": "Sum of first n odd numbers = n² = 43² = 1849.",
+      "options": [
+        {
+          "label": "1849",
+          "is_correct": true
+        },
+        {
+          "label": "1997",
+          "is_correct": false
+        },
+        {
+          "label": "1923",
+          "is_correct": false
+        },
+        {
+          "label": "1775",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Number System",
+      "kind": "standard",
+      "difficulty": "easy",
+      "answer_type": "single",
+      "stem": "Find the remainder when 8590 is divided by 19.",
+      "explanation": "8590 = 19×452 + 2, so the remainder is 2.",
+      "options": [
+        {
+          "label": "1",
+          "is_correct": false
+        },
+        {
+          "label": "3",
+          "is_correct": false
+        },
+        {
+          "label": "2",
+          "is_correct": true
+        },
+        {
+          "label": "4",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Number System",
+      "kind": "standard",
+      "difficulty": "easy",
+      "answer_type": "single",
+      "stem": "Find the sum of the first 38 odd natural numbers.",
+      "explanation": "Sum of first n odd numbers = n² = 38² = 1444.",
+      "options": [
+        {
+          "label": "1502",
+          "is_correct": false
+        },
+        {
+          "label": "1560",
+          "is_correct": false
+        },
+        {
+          "label": "1444",
+          "is_correct": true
+        },
+        {
+          "label": "1386",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Number System",
+      "kind": "standard",
+      "difficulty": "easy",
+      "answer_type": "single",
+      "stem": "Find the remainder when 6409 is divided by 4.",
+      "explanation": "6409 = 4×1602 + 1, so the remainder is 1.",
+      "options": [
+        {
+          "label": "3",
+          "is_correct": false
+        },
+        {
+          "label": "2",
+          "is_correct": false
+        },
+        {
+          "label": "1",
+          "is_correct": true
+        },
+        {
+          "label": "4",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Number System",
+      "kind": "standard",
+      "difficulty": "easy",
+      "answer_type": "single",
+      "stem": "Find the remainder when 2198 is divided by 5.",
+      "explanation": "2198 = 5×439 + 3, so the remainder is 3.",
+      "options": [
+        {
+          "label": "2",
+          "is_correct": false
+        },
+        {
+          "label": "4",
+          "is_correct": false
+        },
+        {
+          "label": "5",
+          "is_correct": false
+        },
+        {
+          "label": "3",
+          "is_correct": true
+        }
+      ]
+    },
+    {
+      "chapter": "Number System",
+      "kind": "standard",
+      "difficulty": "easy",
+      "answer_type": "single",
+      "stem": "Find the remainder when 5635 is divided by 13.",
+      "explanation": "5635 = 13×433 + 6, so the remainder is 6.",
+      "options": [
+        {
+          "label": "7",
+          "is_correct": false
+        },
+        {
+          "label": "8",
+          "is_correct": false
+        },
+        {
+          "label": "6",
+          "is_correct": true
+        },
+        {
+          "label": "5",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Number System",
+      "kind": "standard",
+      "difficulty": "easy",
+      "answer_type": "single",
+      "stem": "Find the sum of the first 20 even natural numbers.",
+      "explanation": "Sum of first n even numbers = n(n+1) = 20×21 = 420.",
+      "options": [
+        {
+          "label": "437",
+          "is_correct": false
+        },
+        {
+          "label": "403",
+          "is_correct": false
+        },
+        {
+          "label": "454",
+          "is_correct": false
+        },
+        {
+          "label": "420",
+          "is_correct": true
+        }
+      ]
+    },
+    {
+      "chapter": "Number System",
+      "kind": "standard",
+      "difficulty": "easy",
+      "answer_type": "single",
+      "stem": "Find the sum of the first 36 even natural numbers.",
+      "explanation": "Sum of first n even numbers = n(n+1) = 36×37 = 1332.",
+      "options": [
+        {
+          "label": "1385",
+          "is_correct": false
+        },
+        {
+          "label": "1279",
+          "is_correct": false
+        },
+        {
+          "label": "1438",
+          "is_correct": false
+        },
+        {
+          "label": "1332",
+          "is_correct": true
+        }
+      ]
+    },
+    {
+      "chapter": "Number System",
+      "kind": "standard",
+      "difficulty": "easy",
+      "answer_type": "single",
+      "stem": "Find the greatest three-digit number that is exactly divisible by 27.",
+      "explanation": "⌊999/27⌋ = 37, so the number is 37×27 = 999.",
+      "options": [
+        {
+          "label": "959",
+          "is_correct": false
+        },
+        {
+          "label": "1079",
+          "is_correct": false
+        },
+        {
+          "label": "999",
+          "is_correct": true
+        },
+        {
+          "label": "1039",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Number System",
+      "kind": "standard",
+      "difficulty": "easy",
+      "answer_type": "single",
+      "stem": "Find the sum of the first 23 even natural numbers.",
+      "explanation": "Sum of first n even numbers = n(n+1) = 23×24 = 552.",
+      "options": [
+        {
+          "label": "574",
+          "is_correct": false
+        },
+        {
+          "label": "530",
+          "is_correct": false
+        },
+        {
+          "label": "552",
+          "is_correct": true
+        },
+        {
+          "label": "596",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Number System",
+      "kind": "standard",
+      "difficulty": "easy",
+      "answer_type": "single",
+      "stem": "Find the remainder when 1679 is divided by 4.",
+      "explanation": "1679 = 4×419 + 3, so the remainder is 3.",
+      "options": [
+        {
+          "label": "3",
+          "is_correct": true
+        },
+        {
+          "label": "2",
+          "is_correct": false
+        },
+        {
+          "label": "5",
+          "is_correct": false
+        },
+        {
+          "label": "4",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Number System",
+      "kind": "standard",
+      "difficulty": "easy",
+      "answer_type": "single",
+      "stem": "Find the sum of the first 33 even natural numbers.",
+      "explanation": "Sum of first n even numbers = n(n+1) = 33×34 = 1122.",
+      "options": [
+        {
+          "label": "1212",
+          "is_correct": false
+        },
+        {
+          "label": "1167",
+          "is_correct": false
+        },
+        {
+          "label": "1122",
+          "is_correct": true
+        },
+        {
+          "label": "1077",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Number System",
+      "kind": "standard",
+      "difficulty": "easy",
+      "answer_type": "single",
+      "stem": "Find the sum of the first 16 odd natural numbers.",
+      "explanation": "Sum of first n odd numbers = n² = 16² = 256.",
+      "options": [
+        {
+          "label": "246",
+          "is_correct": false
+        },
+        {
+          "label": "276",
+          "is_correct": false
+        },
+        {
+          "label": "256",
+          "is_correct": true
+        },
+        {
+          "label": "266",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Number System",
+      "kind": "standard",
+      "difficulty": "easy",
+      "answer_type": "single",
+      "stem": "Find the greatest three-digit number that is exactly divisible by 24.",
+      "explanation": "⌊999/24⌋ = 41, so the number is 41×24 = 984.",
+      "options": [
+        {
+          "label": "984",
+          "is_correct": true
+        },
+        {
+          "label": "1023",
+          "is_correct": false
+        },
+        {
+          "label": "1062",
+          "is_correct": false
+        },
+        {
+          "label": "945",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Number System",
+      "kind": "standard",
+      "difficulty": "easy",
+      "answer_type": "single",
+      "stem": "Find the remainder when 9269 is divided by 11.",
+      "explanation": "9269 = 11×842 + 7, so the remainder is 7.",
+      "options": [
+        {
+          "label": "6",
+          "is_correct": false
+        },
+        {
+          "label": "9",
+          "is_correct": false
+        },
+        {
+          "label": "8",
+          "is_correct": false
+        },
+        {
+          "label": "7",
+          "is_correct": true
+        }
+      ]
+    },
+    {
+      "chapter": "Number System",
+      "kind": "standard",
+      "difficulty": "easy",
+      "answer_type": "single",
+      "stem": "Find the sum of the first 47 even natural numbers.",
+      "explanation": "Sum of first n even numbers = n(n+1) = 47×48 = 2256.",
+      "options": [
+        {
+          "label": "2346",
+          "is_correct": false
+        },
+        {
+          "label": "2256",
+          "is_correct": true
+        },
+        {
+          "label": "2436",
+          "is_correct": false
+        },
+        {
+          "label": "2166",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Number System",
+      "kind": "standard",
+      "difficulty": "easy",
+      "answer_type": "single",
+      "stem": "Find the greatest three-digit number that is exactly divisible by 32.",
+      "explanation": "⌊999/32⌋ = 31, so the number is 31×32 = 992.",
+      "options": [
+        {
+          "label": "992",
+          "is_correct": true
+        },
+        {
+          "label": "952",
+          "is_correct": false
+        },
+        {
+          "label": "1072",
+          "is_correct": false
+        },
+        {
+          "label": "1032",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Number System",
+      "kind": "standard",
+      "difficulty": "easy",
+      "answer_type": "single",
+      "stem": "Find the sum of the first 60 odd natural numbers.",
+      "explanation": "Sum of first n odd numbers = n² = 60² = 3600.",
+      "options": [
+        {
+          "label": "3744",
+          "is_correct": false
+        },
+        {
+          "label": "3888",
+          "is_correct": false
+        },
+        {
+          "label": "3600",
+          "is_correct": true
+        },
+        {
+          "label": "3456",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Number System",
+      "kind": "standard",
+      "difficulty": "easy",
+      "answer_type": "single",
+      "stem": "Find the sum of the first 17 odd natural numbers.",
+      "explanation": "Sum of first n odd numbers = n² = 17² = 289.",
+      "options": [
+        {
+          "label": "277",
+          "is_correct": false
+        },
+        {
+          "label": "301",
+          "is_correct": false
+        },
+        {
+          "label": "289",
+          "is_correct": true
+        },
+        {
+          "label": "313",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Number System",
+      "kind": "standard",
+      "difficulty": "easy",
+      "answer_type": "single",
+      "stem": "Find the greatest three-digit number that is exactly divisible by 20.",
+      "explanation": "⌊999/20⌋ = 49, so the number is 49×20 = 980.",
+      "options": [
+        {
+          "label": "980",
+          "is_correct": true
+        },
+        {
+          "label": "1019",
+          "is_correct": false
+        },
+        {
+          "label": "941",
+          "is_correct": false
+        },
+        {
+          "label": "1058",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Number System",
+      "kind": "standard",
+      "difficulty": "easy",
+      "answer_type": "single",
+      "stem": "Find the greatest three-digit number that is exactly divisible by 30.",
+      "explanation": "⌊999/30⌋ = 33, so the number is 33×30 = 990.",
+      "options": [
+        {
+          "label": "990",
+          "is_correct": true
+        },
+        {
+          "label": "1030",
+          "is_correct": false
+        },
+        {
+          "label": "950",
+          "is_correct": false
+        },
+        {
+          "label": "1070",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Number System",
+      "kind": "standard",
+      "difficulty": "easy",
+      "answer_type": "single",
+      "stem": "Find the remainder when 1185 is divided by 17.",
+      "explanation": "1185 = 17×69 + 12, so the remainder is 12.",
+      "options": [
+        {
+          "label": "11",
+          "is_correct": false
+        },
+        {
+          "label": "12",
+          "is_correct": true
+        },
+        {
+          "label": "14",
+          "is_correct": false
+        },
+        {
+          "label": "13",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Number System",
+      "kind": "standard",
+      "difficulty": "easy",
+      "answer_type": "single",
+      "stem": "Find the remainder when 1832 is divided by 14.",
+      "explanation": "1832 = 14×130 + 12, so the remainder is 12.",
+      "options": [
+        {
+          "label": "11",
+          "is_correct": false
+        },
+        {
+          "label": "14",
+          "is_correct": false
+        },
+        {
+          "label": "12",
+          "is_correct": true
+        },
+        {
+          "label": "13",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Number System",
+      "kind": "standard",
+      "difficulty": "easy",
+      "answer_type": "single",
+      "stem": "Find the sum of the first 35 even natural numbers.",
+      "explanation": "Sum of first n even numbers = n(n+1) = 35×36 = 1260.",
+      "options": [
+        {
+          "label": "1260",
+          "is_correct": true
+        },
+        {
+          "label": "1360",
+          "is_correct": false
+        },
+        {
+          "label": "1310",
+          "is_correct": false
+        },
+        {
+          "label": "1210",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Number System",
+      "kind": "standard",
+      "difficulty": "easy",
+      "answer_type": "single",
+      "stem": "Find the sum of the first 22 even natural numbers.",
+      "explanation": "Sum of first n even numbers = n(n+1) = 22×23 = 506.",
+      "options": [
+        {
+          "label": "506",
+          "is_correct": true
+        },
+        {
+          "label": "546",
+          "is_correct": false
+        },
+        {
+          "label": "526",
+          "is_correct": false
+        },
+        {
+          "label": "486",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Number System",
+      "kind": "standard",
+      "difficulty": "easy",
+      "answer_type": "single",
+      "stem": "Find the remainder when 1071 is divided by 4.",
+      "explanation": "1071 = 4×267 + 3, so the remainder is 3.",
+      "options": [
+        {
+          "label": "5",
+          "is_correct": false
+        },
+        {
+          "label": "2",
+          "is_correct": false
+        },
+        {
+          "label": "4",
+          "is_correct": false
+        },
+        {
+          "label": "3",
+          "is_correct": true
+        }
+      ]
+    },
+    {
+      "chapter": "Number System",
+      "kind": "standard",
+      "difficulty": "easy",
+      "answer_type": "single",
+      "stem": "Find the sum of the first 16 even natural numbers.",
+      "explanation": "Sum of first n even numbers = n(n+1) = 16×17 = 272.",
+      "options": [
+        {
+          "label": "294",
+          "is_correct": false
+        },
+        {
+          "label": "261",
+          "is_correct": false
+        },
+        {
+          "label": "272",
+          "is_correct": true
+        },
+        {
+          "label": "283",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Number System",
+      "kind": "standard",
+      "difficulty": "easy",
+      "answer_type": "single",
+      "stem": "Find the remainder when 5576 is divided by 6.",
+      "explanation": "5576 = 6×929 + 2, so the remainder is 2.",
+      "options": [
+        {
+          "label": "4",
+          "is_correct": false
+        },
+        {
+          "label": "2",
+          "is_correct": true
+        },
+        {
+          "label": "3",
+          "is_correct": false
+        },
+        {
+          "label": "1",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Number System",
+      "kind": "standard",
+      "difficulty": "easy",
+      "answer_type": "single",
+      "stem": "Find the greatest three-digit number that is exactly divisible by 17.",
+      "explanation": "⌊999/17⌋ = 58, so the number is 58×17 = 986.",
+      "options": [
+        {
+          "label": "947",
+          "is_correct": false
+        },
+        {
+          "label": "986",
+          "is_correct": true
+        },
+        {
+          "label": "1025",
+          "is_correct": false
+        },
+        {
+          "label": "1064",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Number System",
+      "kind": "standard",
+      "difficulty": "easy",
+      "answer_type": "single",
+      "stem": "Find the sum of the first 52 odd natural numbers.",
+      "explanation": "Sum of first n odd numbers = n² = 52² = 2704.",
+      "options": [
+        {
+          "label": "2704",
+          "is_correct": true
+        },
+        {
+          "label": "2812",
+          "is_correct": false
+        },
+        {
+          "label": "2596",
+          "is_correct": false
+        },
+        {
+          "label": "2920",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Number System",
+      "kind": "standard",
+      "difficulty": "easy",
+      "answer_type": "single",
+      "stem": "Find the greatest three-digit number that is exactly divisible by 26.",
+      "explanation": "⌊999/26⌋ = 38, so the number is 38×26 = 988.",
+      "options": [
+        {
+          "label": "1028",
+          "is_correct": false
+        },
+        {
+          "label": "1068",
+          "is_correct": false
+        },
+        {
+          "label": "988",
+          "is_correct": true
+        },
+        {
+          "label": "948",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Number System",
+      "kind": "standard",
+      "difficulty": "easy",
+      "answer_type": "single",
+      "stem": "Find the remainder when 1627 is divided by 8.",
+      "explanation": "1627 = 8×203 + 3, so the remainder is 3.",
+      "options": [
+        {
+          "label": "2",
+          "is_correct": false
+        },
+        {
+          "label": "3",
+          "is_correct": true
+        },
+        {
+          "label": "4",
+          "is_correct": false
+        },
+        {
+          "label": "5",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Number System",
+      "kind": "standard",
+      "difficulty": "easy",
+      "answer_type": "single",
+      "stem": "Find the sum of the first 24 even natural numbers.",
+      "explanation": "Sum of first n even numbers = n(n+1) = 24×25 = 600.",
+      "options": [
+        {
+          "label": "624",
+          "is_correct": false
+        },
+        {
+          "label": "600",
+          "is_correct": true
+        },
+        {
+          "label": "648",
+          "is_correct": false
+        },
+        {
+          "label": "576",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Number System",
+      "kind": "standard",
+      "difficulty": "easy",
+      "answer_type": "single",
+      "stem": "Find the greatest three-digit number that is exactly divisible by 15.",
+      "explanation": "⌊999/15⌋ = 66, so the number is 66×15 = 990.",
+      "options": [
+        {
+          "label": "950",
+          "is_correct": false
+        },
+        {
+          "label": "1070",
+          "is_correct": false
+        },
+        {
+          "label": "1030",
+          "is_correct": false
+        },
+        {
+          "label": "990",
+          "is_correct": true
+        }
+      ]
+    },
+    {
+      "chapter": "Number System",
+      "kind": "standard",
+      "difficulty": "easy",
+      "answer_type": "single",
+      "stem": "Find the greatest three-digit number that is exactly divisible by 37.",
+      "explanation": "⌊999/37⌋ = 27, so the number is 27×37 = 999.",
+      "options": [
+        {
+          "label": "1079",
+          "is_correct": false
+        },
+        {
+          "label": "1039",
+          "is_correct": false
+        },
+        {
+          "label": "959",
+          "is_correct": false
+        },
+        {
+          "label": "999",
+          "is_correct": true
+        }
+      ]
+    },
+    {
+      "chapter": "Number System",
+      "kind": "standard",
+      "difficulty": "easy",
+      "answer_type": "single",
+      "stem": "Find the sum of the first 14 even natural numbers.",
+      "explanation": "Sum of first n even numbers = n(n+1) = 14×15 = 210.",
+      "options": [
+        {
+          "label": "226",
+          "is_correct": false
+        },
+        {
+          "label": "218",
+          "is_correct": false
+        },
+        {
+          "label": "210",
+          "is_correct": true
+        },
+        {
+          "label": "202",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Number System",
+      "kind": "standard",
+      "difficulty": "easy",
+      "answer_type": "single",
+      "stem": "Find the sum of the first 34 even natural numbers.",
+      "explanation": "Sum of first n even numbers = n(n+1) = 34×35 = 1190.",
+      "options": [
+        {
+          "label": "1286",
+          "is_correct": false
+        },
+        {
+          "label": "1238",
+          "is_correct": false
+        },
+        {
+          "label": "1142",
+          "is_correct": false
+        },
+        {
+          "label": "1190",
+          "is_correct": true
+        }
+      ]
+    },
+    {
+      "chapter": "Number System",
+      "kind": "standard",
+      "difficulty": "easy",
+      "answer_type": "single",
+      "stem": "Find the greatest three-digit number that is exactly divisible by 29.",
+      "explanation": "⌊999/29⌋ = 34, so the number is 34×29 = 986.",
+      "options": [
+        {
+          "label": "986",
+          "is_correct": true
+        },
+        {
+          "label": "1064",
+          "is_correct": false
+        },
+        {
+          "label": "947",
+          "is_correct": false
+        },
+        {
+          "label": "1025",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Number System",
+      "kind": "standard",
+      "difficulty": "easy",
+      "answer_type": "single",
+      "stem": "Find the sum of the first 34 odd natural numbers.",
+      "explanation": "Sum of first n odd numbers = n² = 34² = 1156.",
+      "options": [
+        {
+          "label": "1110",
+          "is_correct": false
+        },
+        {
+          "label": "1156",
+          "is_correct": true
+        },
+        {
+          "label": "1248",
+          "is_correct": false
+        },
+        {
+          "label": "1202",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Number System",
+      "kind": "standard",
+      "difficulty": "easy",
+      "answer_type": "single",
+      "stem": "Find the greatest three-digit number that is exactly divisible by 19.",
+      "explanation": "⌊999/19⌋ = 52, so the number is 52×19 = 988.",
+      "options": [
+        {
+          "label": "1068",
+          "is_correct": false
+        },
+        {
+          "label": "988",
+          "is_correct": true
+        },
+        {
+          "label": "1028",
+          "is_correct": false
+        },
+        {
+          "label": "948",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Number System",
+      "kind": "standard",
+      "difficulty": "easy",
+      "answer_type": "single",
+      "stem": "Find the greatest three-digit number that is exactly divisible by 11.",
+      "explanation": "⌊999/11⌋ = 90, so the number is 90×11 = 990.",
+      "options": [
+        {
+          "label": "990",
+          "is_correct": true
+        },
+        {
+          "label": "1070",
+          "is_correct": false
+        },
+        {
+          "label": "950",
+          "is_correct": false
+        },
+        {
+          "label": "1030",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Number System",
+      "kind": "standard",
+      "difficulty": "easy",
+      "answer_type": "single",
+      "stem": "Find the sum of the first 30 even natural numbers.",
+      "explanation": "Sum of first n even numbers = n(n+1) = 30×31 = 930.",
+      "options": [
+        {
+          "label": "930",
+          "is_correct": true
+        },
+        {
+          "label": "967",
+          "is_correct": false
+        },
+        {
+          "label": "893",
+          "is_correct": false
+        },
+        {
+          "label": "1004",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Number System",
+      "kind": "standard",
+      "difficulty": "medium",
+      "answer_type": "single",
+      "stem": "The sum of two numbers is 47 and their difference is 17. Find the larger of the two numbers.",
+      "explanation": "Larger number = (sum + difference)/2 = (47 + 17)/2 = 32.",
+      "options": [
+        {
+          "label": "33",
+          "is_correct": false
+        },
+        {
+          "label": "32",
+          "is_correct": true
+        },
+        {
+          "label": "34",
+          "is_correct": false
+        },
+        {
+          "label": "31",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Number System",
+      "kind": "standard",
+      "difficulty": "medium",
+      "answer_type": "single",
+      "stem": "Find the unit (last) digit of 6^22.",
+      "explanation": "The last digit of 6^22 is 6^22 mod 10 = 6.",
+      "options": [
+        {
+          "label": "7",
+          "is_correct": false
+        },
+        {
+          "label": "6",
+          "is_correct": true
+        },
+        {
+          "label": "8",
+          "is_correct": false
+        },
+        {
+          "label": "5",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Number System",
+      "kind": "standard",
+      "difficulty": "medium",
+      "answer_type": "single",
+      "stem": "The sum of two numbers is 21 and their difference is 7. Find the larger of the two numbers.",
+      "explanation": "Larger number = (sum + difference)/2 = (21 + 7)/2 = 14.",
+      "options": [
+        {
+          "label": "14",
+          "is_correct": true
+        },
+        {
+          "label": "16",
+          "is_correct": false
+        },
+        {
+          "label": "13",
+          "is_correct": false
+        },
+        {
+          "label": "15",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Number System",
+      "kind": "standard",
+      "difficulty": "medium",
+      "answer_type": "single",
+      "stem": "Find the unit (last) digit of 4^29.",
+      "explanation": "The last digit of 4^29 is 4^29 mod 10 = 4.",
+      "options": [
+        {
+          "label": "6",
+          "is_correct": false
+        },
+        {
+          "label": "3",
+          "is_correct": false
+        },
+        {
+          "label": "5",
+          "is_correct": false
+        },
+        {
+          "label": "4",
+          "is_correct": true
+        }
+      ]
+    },
+    {
+      "chapter": "Number System",
+      "kind": "standard",
+      "difficulty": "medium",
+      "answer_type": "single",
+      "stem": "The sum of two numbers is 43 and their difference is 15. Find the larger of the two numbers.",
+      "explanation": "Larger number = (sum + difference)/2 = (43 + 15)/2 = 29.",
+      "options": [
+        {
+          "label": "29",
+          "is_correct": true
+        },
+        {
+          "label": "30",
+          "is_correct": false
+        },
+        {
+          "label": "31",
+          "is_correct": false
+        },
+        {
+          "label": "28",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Number System",
+      "kind": "standard",
+      "difficulty": "medium",
+      "answer_type": "single",
+      "stem": "How many positive factors (divisors) does 40 have?",
+      "explanation": "40 = 2^3·3^0·5^1; number of factors = (3+1)(0+1)(1+1) = 8.",
+      "options": [
+        {
+          "label": "8",
+          "is_correct": true
+        },
+        {
+          "label": "9",
+          "is_correct": false
+        },
+        {
+          "label": "7",
+          "is_correct": false
+        },
+        {
+          "label": "10",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Number System",
+      "kind": "standard",
+      "difficulty": "medium",
+      "answer_type": "single",
+      "stem": "How many positive factors (divisors) does 120 have?",
+      "explanation": "120 = 2^3·3^1·5^1; number of factors = (3+1)(1+1)(1+1) = 16.",
+      "options": [
+        {
+          "label": "16",
+          "is_correct": true
+        },
+        {
+          "label": "17",
+          "is_correct": false
+        },
+        {
+          "label": "15",
+          "is_correct": false
+        },
+        {
+          "label": "18",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Number System",
+      "kind": "standard",
+      "difficulty": "medium",
+      "answer_type": "single",
+      "stem": "Find the unit (last) digit of 9^40.",
+      "explanation": "The last digit of 9^40 is 9^40 mod 10 = 1.",
+      "options": [
+        {
+          "label": "1",
+          "is_correct": true
+        },
+        {
+          "label": "3",
+          "is_correct": false
+        },
+        {
+          "label": "2",
+          "is_correct": false
+        },
+        {
+          "label": "4",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Number System",
+      "kind": "standard",
+      "difficulty": "medium",
+      "answer_type": "single",
+      "stem": "The sum of two numbers is 35 and their difference is 7. Find the larger of the two numbers.",
+      "explanation": "Larger number = (sum + difference)/2 = (35 + 7)/2 = 21.",
+      "options": [
+        {
+          "label": "23",
+          "is_correct": false
+        },
+        {
+          "label": "20",
+          "is_correct": false
+        },
+        {
+          "label": "21",
+          "is_correct": true
+        },
+        {
+          "label": "22",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Number System",
+      "kind": "standard",
+      "difficulty": "medium",
+      "answer_type": "single",
+      "stem": "Find the unit (last) digit of 8^22.",
+      "explanation": "The last digit of 8^22 is 8^22 mod 10 = 4.",
+      "options": [
+        {
+          "label": "5",
+          "is_correct": false
+        },
+        {
+          "label": "4",
+          "is_correct": true
+        },
+        {
+          "label": "3",
+          "is_correct": false
+        },
+        {
+          "label": "6",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Number System",
+      "kind": "standard",
+      "difficulty": "medium",
+      "answer_type": "single",
+      "stem": "How many positive factors (divisors) does 72 have?",
+      "explanation": "72 = 2^3·3^2·5^0; number of factors = (3+1)(2+1)(0+1) = 12.",
+      "options": [
+        {
+          "label": "14",
+          "is_correct": false
+        },
+        {
+          "label": "13",
+          "is_correct": false
+        },
+        {
+          "label": "12",
+          "is_correct": true
+        },
+        {
+          "label": "11",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Number System",
+      "kind": "standard",
+      "difficulty": "medium",
+      "answer_type": "single",
+      "stem": "Find the unit (last) digit of 2^8.",
+      "explanation": "The last digit of 2^8 is 2^8 mod 10 = 6.",
+      "options": [
+        {
+          "label": "6",
+          "is_correct": true
+        },
+        {
+          "label": "7",
+          "is_correct": false
+        },
+        {
+          "label": "5",
+          "is_correct": false
+        },
+        {
+          "label": "8",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Number System",
+      "kind": "standard",
+      "difficulty": "medium",
+      "answer_type": "single",
+      "stem": "The sum of two numbers is 18 and their difference is 6. Find the larger of the two numbers.",
+      "explanation": "Larger number = (sum + difference)/2 = (18 + 6)/2 = 12.",
+      "options": [
+        {
+          "label": "13",
+          "is_correct": false
+        },
+        {
+          "label": "12",
+          "is_correct": true
+        },
+        {
+          "label": "14",
+          "is_correct": false
+        },
+        {
+          "label": "11",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Number System",
+      "kind": "standard",
+      "difficulty": "medium",
+      "answer_type": "single",
+      "stem": "Find the unit (last) digit of 5^30.",
+      "explanation": "The last digit of 5^30 is 5^30 mod 10 = 5.",
+      "options": [
+        {
+          "label": "7",
+          "is_correct": false
+        },
+        {
+          "label": "6",
+          "is_correct": false
+        },
+        {
+          "label": "4",
+          "is_correct": false
+        },
+        {
+          "label": "5",
+          "is_correct": true
+        }
+      ]
+    },
+    {
+      "chapter": "Number System",
+      "kind": "standard",
+      "difficulty": "medium",
+      "answer_type": "single",
+      "stem": "The sum of two numbers is 57 and their difference is 3. Find the larger of the two numbers.",
+      "explanation": "Larger number = (sum + difference)/2 = (57 + 3)/2 = 30.",
+      "options": [
+        {
+          "label": "30",
+          "is_correct": true
+        },
+        {
+          "label": "31",
+          "is_correct": false
+        },
+        {
+          "label": "29",
+          "is_correct": false
+        },
+        {
+          "label": "32",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Number System",
+      "kind": "standard",
+      "difficulty": "medium",
+      "answer_type": "single",
+      "stem": "Find the unit (last) digit of 3^10.",
+      "explanation": "The last digit of 3^10 is 3^10 mod 10 = 9.",
+      "options": [
+        {
+          "label": "11",
+          "is_correct": false
+        },
+        {
+          "label": "9",
+          "is_correct": true
+        },
+        {
+          "label": "10",
+          "is_correct": false
+        },
+        {
+          "label": "8",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Number System",
+      "kind": "standard",
+      "difficulty": "medium",
+      "answer_type": "single",
+      "stem": "The sum of two numbers is 54 and their difference is 12. Find the larger of the two numbers.",
+      "explanation": "Larger number = (sum + difference)/2 = (54 + 12)/2 = 33.",
+      "options": [
+        {
+          "label": "33",
+          "is_correct": true
+        },
+        {
+          "label": "34",
+          "is_correct": false
+        },
+        {
+          "label": "32",
+          "is_correct": false
+        },
+        {
+          "label": "35",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Number System",
+      "kind": "standard",
+      "difficulty": "medium",
+      "answer_type": "single",
+      "stem": "How many positive factors (divisors) does 18 have?",
+      "explanation": "18 = 2^1·3^2·5^0; number of factors = (1+1)(2+1)(0+1) = 6.",
+      "options": [
+        {
+          "label": "7",
+          "is_correct": false
+        },
+        {
+          "label": "8",
+          "is_correct": false
+        },
+        {
+          "label": "6",
+          "is_correct": true
+        },
+        {
+          "label": "5",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Number System",
+      "kind": "standard",
+      "difficulty": "medium",
+      "answer_type": "single",
+      "stem": "How many positive factors (divisors) does 180 have?",
+      "explanation": "180 = 2^2·3^2·5^1; number of factors = (2+1)(2+1)(1+1) = 18.",
+      "options": [
+        {
+          "label": "17",
+          "is_correct": false
+        },
+        {
+          "label": "19",
+          "is_correct": false
+        },
+        {
+          "label": "18",
+          "is_correct": true
+        },
+        {
+          "label": "20",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Number System",
+      "kind": "standard",
+      "difficulty": "medium",
+      "answer_type": "single",
+      "stem": "Find the unit (last) digit of 8^14.",
+      "explanation": "The last digit of 8^14 is 8^14 mod 10 = 4.",
+      "options": [
+        {
+          "label": "3",
+          "is_correct": false
+        },
+        {
+          "label": "4",
+          "is_correct": true
+        },
+        {
+          "label": "5",
+          "is_correct": false
+        },
+        {
+          "label": "6",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Number System",
+      "kind": "standard",
+      "difficulty": "medium",
+      "answer_type": "single",
+      "stem": "Find the unit (last) digit of 4^31.",
+      "explanation": "The last digit of 4^31 is 4^31 mod 10 = 4.",
+      "options": [
+        {
+          "label": "6",
+          "is_correct": false
+        },
+        {
+          "label": "3",
+          "is_correct": false
+        },
+        {
+          "label": "4",
+          "is_correct": true
+        },
+        {
+          "label": "5",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Number System",
+      "kind": "standard",
+      "difficulty": "medium",
+      "answer_type": "single",
+      "stem": "The sum of two numbers is 37 and their difference is 25. Find the larger of the two numbers.",
+      "explanation": "Larger number = (sum + difference)/2 = (37 + 25)/2 = 31.",
+      "options": [
+        {
+          "label": "32",
+          "is_correct": false
+        },
+        {
+          "label": "31",
+          "is_correct": true
+        },
+        {
+          "label": "33",
+          "is_correct": false
+        },
+        {
+          "label": "30",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Number System",
+      "kind": "standard",
+      "difficulty": "medium",
+      "answer_type": "single",
+      "stem": "Find the unit (last) digit of 3^14.",
+      "explanation": "The last digit of 3^14 is 3^14 mod 10 = 9.",
+      "options": [
+        {
+          "label": "11",
+          "is_correct": false
+        },
+        {
+          "label": "9",
+          "is_correct": true
+        },
+        {
+          "label": "10",
+          "is_correct": false
+        },
+        {
+          "label": "8",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Number System",
+      "kind": "standard",
+      "difficulty": "medium",
+      "answer_type": "single",
+      "stem": "How many positive factors (divisors) does 6 have?",
+      "explanation": "6 = 2^1·3^1·5^0; number of factors = (1+1)(1+1)(0+1) = 4.",
+      "options": [
+        {
+          "label": "3",
+          "is_correct": false
+        },
+        {
+          "label": "6",
+          "is_correct": false
+        },
+        {
+          "label": "4",
+          "is_correct": true
+        },
+        {
+          "label": "5",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Number System",
+      "kind": "standard",
+      "difficulty": "medium",
+      "answer_type": "single",
+      "stem": "The sum of two numbers is 35 and their difference is 17. Find the larger of the two numbers.",
+      "explanation": "Larger number = (sum + difference)/2 = (35 + 17)/2 = 26.",
+      "options": [
+        {
+          "label": "27",
+          "is_correct": false
+        },
+        {
+          "label": "28",
+          "is_correct": false
+        },
+        {
+          "label": "26",
+          "is_correct": true
+        },
+        {
+          "label": "25",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Number System",
+      "kind": "standard",
+      "difficulty": "medium",
+      "answer_type": "single",
+      "stem": "Find the unit (last) digit of 4^19.",
+      "explanation": "The last digit of 4^19 is 4^19 mod 10 = 4.",
+      "options": [
+        {
+          "label": "4",
+          "is_correct": true
+        },
+        {
+          "label": "5",
+          "is_correct": false
+        },
+        {
+          "label": "6",
+          "is_correct": false
+        },
+        {
+          "label": "3",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Number System",
+      "kind": "standard",
+      "difficulty": "medium",
+      "answer_type": "single",
+      "stem": "Find the unit (last) digit of 9^24.",
+      "explanation": "The last digit of 9^24 is 9^24 mod 10 = 1.",
+      "options": [
+        {
+          "label": "1",
+          "is_correct": true
+        },
+        {
+          "label": "2",
+          "is_correct": false
+        },
+        {
+          "label": "4",
+          "is_correct": false
+        },
+        {
+          "label": "3",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Number System",
+      "kind": "standard",
+      "difficulty": "medium",
+      "answer_type": "single",
+      "stem": "The sum of two numbers is 32 and their difference is 8. Find the larger of the two numbers.",
+      "explanation": "Larger number = (sum + difference)/2 = (32 + 8)/2 = 20.",
+      "options": [
+        {
+          "label": "20",
+          "is_correct": true
+        },
+        {
+          "label": "21",
+          "is_correct": false
+        },
+        {
+          "label": "22",
+          "is_correct": false
+        },
+        {
+          "label": "19",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Number System",
+      "kind": "standard",
+      "difficulty": "medium",
+      "answer_type": "single",
+      "stem": "Find the unit (last) digit of 8^23.",
+      "explanation": "The last digit of 8^23 is 8^23 mod 10 = 2.",
+      "options": [
+        {
+          "label": "1",
+          "is_correct": false
+        },
+        {
+          "label": "2",
+          "is_correct": true
+        },
+        {
+          "label": "4",
+          "is_correct": false
+        },
+        {
+          "label": "3",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Number System",
+      "kind": "standard",
+      "difficulty": "medium",
+      "answer_type": "single",
+      "stem": "The sum of two numbers is 41 and their difference is 13. Find the larger of the two numbers.",
+      "explanation": "Larger number = (sum + difference)/2 = (41 + 13)/2 = 27.",
+      "options": [
+        {
+          "label": "26",
+          "is_correct": false
+        },
+        {
+          "label": "27",
+          "is_correct": true
+        },
+        {
+          "label": "29",
+          "is_correct": false
+        },
+        {
+          "label": "28",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Number System",
+      "kind": "standard",
+      "difficulty": "medium",
+      "answer_type": "single",
+      "stem": "The sum of two numbers is 44 and their difference is 14. Find the larger of the two numbers.",
+      "explanation": "Larger number = (sum + difference)/2 = (44 + 14)/2 = 29.",
+      "options": [
+        {
+          "label": "30",
+          "is_correct": false
+        },
+        {
+          "label": "28",
+          "is_correct": false
+        },
+        {
+          "label": "31",
+          "is_correct": false
+        },
+        {
+          "label": "29",
+          "is_correct": true
+        }
+      ]
+    },
+    {
+      "chapter": "Number System",
+      "kind": "standard",
+      "difficulty": "medium",
+      "answer_type": "single",
+      "stem": "How many positive factors (divisors) does 90 have?",
+      "explanation": "90 = 2^1·3^2·5^1; number of factors = (1+1)(2+1)(1+1) = 12.",
+      "options": [
+        {
+          "label": "12",
+          "is_correct": true
+        },
+        {
+          "label": "11",
+          "is_correct": false
+        },
+        {
+          "label": "14",
+          "is_correct": false
+        },
+        {
+          "label": "13",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Number System",
+      "kind": "standard",
+      "difficulty": "medium",
+      "answer_type": "single",
+      "stem": "Find the unit (last) digit of 7^22.",
+      "explanation": "The last digit of 7^22 is 7^22 mod 10 = 9.",
+      "options": [
+        {
+          "label": "8",
+          "is_correct": false
+        },
+        {
+          "label": "10",
+          "is_correct": false
+        },
+        {
+          "label": "9",
+          "is_correct": true
+        },
+        {
+          "label": "11",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Number System",
+      "kind": "standard",
+      "difficulty": "medium",
+      "answer_type": "single",
+      "stem": "Find the unit (last) digit of 6^39.",
+      "explanation": "The last digit of 6^39 is 6^39 mod 10 = 6.",
+      "options": [
+        {
+          "label": "8",
+          "is_correct": false
+        },
+        {
+          "label": "6",
+          "is_correct": true
+        },
+        {
+          "label": "7",
+          "is_correct": false
+        },
+        {
+          "label": "5",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Number System",
+      "kind": "standard",
+      "difficulty": "medium",
+      "answer_type": "single",
+      "stem": "The sum of two numbers is 23 and their difference is 11. Find the larger of the two numbers.",
+      "explanation": "Larger number = (sum + difference)/2 = (23 + 11)/2 = 17.",
+      "options": [
+        {
+          "label": "16",
+          "is_correct": false
+        },
+        {
+          "label": "17",
+          "is_correct": true
+        },
+        {
+          "label": "18",
+          "is_correct": false
+        },
+        {
+          "label": "19",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Number System",
+      "kind": "standard",
+      "difficulty": "medium",
+      "answer_type": "single",
+      "stem": "The sum of two numbers is 44 and their difference is 4. Find the larger of the two numbers.",
+      "explanation": "Larger number = (sum + difference)/2 = (44 + 4)/2 = 24.",
+      "options": [
+        {
+          "label": "26",
+          "is_correct": false
+        },
+        {
+          "label": "24",
+          "is_correct": true
+        },
+        {
+          "label": "25",
+          "is_correct": false
+        },
+        {
+          "label": "23",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Number System",
+      "kind": "standard",
+      "difficulty": "medium",
+      "answer_type": "single",
+      "stem": "The sum of two numbers is 45 and their difference is 31. Find the larger of the two numbers.",
+      "explanation": "Larger number = (sum + difference)/2 = (45 + 31)/2 = 38.",
+      "options": [
+        {
+          "label": "39",
+          "is_correct": false
+        },
+        {
+          "label": "40",
+          "is_correct": false
+        },
+        {
+          "label": "37",
+          "is_correct": false
+        },
+        {
+          "label": "38",
+          "is_correct": true
+        }
+      ]
+    },
+    {
+      "chapter": "Number System",
+      "kind": "standard",
+      "difficulty": "medium",
+      "answer_type": "single",
+      "stem": "The sum of two numbers is 25 and their difference is 1. Find the larger of the two numbers.",
+      "explanation": "Larger number = (sum + difference)/2 = (25 + 1)/2 = 13.",
+      "options": [
+        {
+          "label": "15",
+          "is_correct": false
+        },
+        {
+          "label": "14",
+          "is_correct": false
+        },
+        {
+          "label": "12",
+          "is_correct": false
+        },
+        {
+          "label": "13",
+          "is_correct": true
+        }
+      ]
+    },
+    {
+      "chapter": "Number System",
+      "kind": "standard",
+      "difficulty": "medium",
+      "answer_type": "single",
+      "stem": "Find the unit (last) digit of 7^11.",
+      "explanation": "The last digit of 7^11 is 7^11 mod 10 = 3.",
+      "options": [
+        {
+          "label": "4",
+          "is_correct": false
+        },
+        {
+          "label": "3",
+          "is_correct": true
+        },
+        {
+          "label": "5",
+          "is_correct": false
+        },
+        {
+          "label": "2",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Number System",
+      "kind": "standard",
+      "difficulty": "medium",
+      "answer_type": "single",
+      "stem": "How many positive factors (divisors) does 8 have?",
+      "explanation": "8 = 2^3·3^0·5^0; number of factors = (3+1)(0+1)(0+1) = 4.",
+      "options": [
+        {
+          "label": "3",
+          "is_correct": false
+        },
+        {
+          "label": "6",
+          "is_correct": false
+        },
+        {
+          "label": "5",
+          "is_correct": false
+        },
+        {
+          "label": "4",
+          "is_correct": true
+        }
+      ]
+    },
+    {
+      "chapter": "Number System",
+      "kind": "standard",
+      "difficulty": "medium",
+      "answer_type": "single",
+      "stem": "How many positive factors (divisors) does 24 have?",
+      "explanation": "24 = 2^3·3^1·5^0; number of factors = (3+1)(1+1)(0+1) = 8.",
+      "options": [
+        {
+          "label": "9",
+          "is_correct": false
+        },
+        {
+          "label": "7",
+          "is_correct": false
+        },
+        {
+          "label": "8",
+          "is_correct": true
+        },
+        {
+          "label": "10",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Number System",
+      "kind": "standard",
+      "difficulty": "medium",
+      "answer_type": "single",
+      "stem": "How many positive factors (divisors) does 12 have?",
+      "explanation": "12 = 2^2·3^1·5^0; number of factors = (2+1)(1+1)(0+1) = 6.",
+      "options": [
+        {
+          "label": "6",
+          "is_correct": true
+        },
+        {
+          "label": "7",
+          "is_correct": false
+        },
+        {
+          "label": "8",
+          "is_correct": false
+        },
+        {
+          "label": "5",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Number System",
+      "kind": "standard",
+      "difficulty": "medium",
+      "answer_type": "single",
+      "stem": "Find the unit (last) digit of 9^6.",
+      "explanation": "The last digit of 9^6 is 9^6 mod 10 = 1.",
+      "options": [
+        {
+          "label": "4",
+          "is_correct": false
+        },
+        {
+          "label": "1",
+          "is_correct": true
+        },
+        {
+          "label": "2",
+          "is_correct": false
+        },
+        {
+          "label": "3",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Number System",
+      "kind": "standard",
+      "difficulty": "medium",
+      "answer_type": "single",
+      "stem": "The sum of two numbers is 26 and their difference is 8. Find the larger of the two numbers.",
+      "explanation": "Larger number = (sum + difference)/2 = (26 + 8)/2 = 17.",
+      "options": [
+        {
+          "label": "16",
+          "is_correct": false
+        },
+        {
+          "label": "19",
+          "is_correct": false
+        },
+        {
+          "label": "18",
+          "is_correct": false
+        },
+        {
+          "label": "17",
+          "is_correct": true
+        }
+      ]
+    },
+    {
+      "chapter": "Number System",
+      "kind": "standard",
+      "difficulty": "medium",
+      "answer_type": "single",
+      "stem": "Find the unit (last) digit of 4^39.",
+      "explanation": "The last digit of 4^39 is 4^39 mod 10 = 4.",
+      "options": [
+        {
+          "label": "6",
+          "is_correct": false
+        },
+        {
+          "label": "3",
+          "is_correct": false
+        },
+        {
+          "label": "5",
+          "is_correct": false
+        },
+        {
+          "label": "4",
+          "is_correct": true
+        }
+      ]
+    },
+    {
+      "chapter": "Number System",
+      "kind": "standard",
+      "difficulty": "medium",
+      "answer_type": "single",
+      "stem": "The sum of two numbers is 65 and their difference is 11. Find the larger of the two numbers.",
+      "explanation": "Larger number = (sum + difference)/2 = (65 + 11)/2 = 38.",
+      "options": [
+        {
+          "label": "37",
+          "is_correct": false
+        },
+        {
+          "label": "40",
+          "is_correct": false
+        },
+        {
+          "label": "38",
+          "is_correct": true
+        },
+        {
+          "label": "39",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Number System",
+      "kind": "standard",
+      "difficulty": "medium",
+      "answer_type": "single",
+      "stem": "Find the unit (last) digit of 2^34.",
+      "explanation": "The last digit of 2^34 is 2^34 mod 10 = 4.",
+      "options": [
+        {
+          "label": "4",
+          "is_correct": true
+        },
+        {
+          "label": "5",
+          "is_correct": false
+        },
+        {
+          "label": "3",
+          "is_correct": false
+        },
+        {
+          "label": "6",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Number System",
+      "kind": "standard",
+      "difficulty": "medium",
+      "answer_type": "single",
+      "stem": "Find the unit (last) digit of 9^30.",
+      "explanation": "The last digit of 9^30 is 9^30 mod 10 = 1.",
+      "options": [
+        {
+          "label": "4",
+          "is_correct": false
+        },
+        {
+          "label": "3",
+          "is_correct": false
+        },
+        {
+          "label": "2",
+          "is_correct": false
+        },
+        {
+          "label": "1",
+          "is_correct": true
+        }
+      ]
+    },
+    {
+      "chapter": "Number System",
+      "kind": "standard",
+      "difficulty": "medium",
+      "answer_type": "single",
+      "stem": "The sum of two numbers is 37 and their difference is 27. Find the larger of the two numbers.",
+      "explanation": "Larger number = (sum + difference)/2 = (37 + 27)/2 = 32.",
+      "options": [
+        {
+          "label": "34",
+          "is_correct": false
+        },
+        {
+          "label": "32",
+          "is_correct": true
+        },
+        {
+          "label": "31",
+          "is_correct": false
+        },
+        {
+          "label": "33",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Number System",
+      "kind": "standard",
+      "difficulty": "medium",
+      "answer_type": "single",
+      "stem": "The sum of two numbers is 36 and their difference is 24. Find the larger of the two numbers.",
+      "explanation": "Larger number = (sum + difference)/2 = (36 + 24)/2 = 30.",
+      "options": [
+        {
+          "label": "31",
+          "is_correct": false
+        },
+        {
+          "label": "30",
+          "is_correct": true
+        },
+        {
+          "label": "32",
+          "is_correct": false
+        },
+        {
+          "label": "29",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Number System",
+      "kind": "standard",
+      "difficulty": "hard",
+      "answer_type": "single",
+      "stem": "Find the greatest number that divides 30, 58 and 107 leaving the same remainder in each case.",
+      "explanation": "The required number is the HCF of the differences (58−30) and (107−58), which is 7.",
+      "options": [
+        {
+          "label": "7",
+          "is_correct": true
+        },
+        {
+          "label": "6",
+          "is_correct": false
+        },
+        {
+          "label": "8",
+          "is_correct": false
+        },
+        {
+          "label": "9",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Number System",
+      "kind": "standard",
+      "difficulty": "hard",
+      "answer_type": "single",
+      "stem": "Find the greatest number that divides 51, 91 and 161 leaving the same remainder in each case.",
+      "explanation": "The required number is the HCF of the differences (91−51) and (161−91), which is 10.",
+      "options": [
+        {
+          "label": "11",
+          "is_correct": false
+        },
+        {
+          "label": "9",
+          "is_correct": false
+        },
+        {
+          "label": "12",
+          "is_correct": false
+        },
+        {
+          "label": "10",
+          "is_correct": true
+        }
+      ]
+    },
+    {
+      "chapter": "Number System",
+      "kind": "standard",
+      "difficulty": "hard",
+      "answer_type": "single",
+      "stem": "Find the least number which, when divided by 7, 6 and 10, leaves a remainder of 2 in each case.",
+      "explanation": "Least such number = LCM(7, 6, 10) + 2 = 210 + 2 = 212.",
+      "options": [
+        {
+          "label": "220",
+          "is_correct": false
+        },
+        {
+          "label": "204",
+          "is_correct": false
+        },
+        {
+          "label": "228",
+          "is_correct": false
+        },
+        {
+          "label": "212",
+          "is_correct": true
+        }
+      ]
+    },
+    {
+      "chapter": "Number System",
+      "kind": "standard",
+      "difficulty": "hard",
+      "answer_type": "single",
+      "stem": "Find the least number which, when divided by 9, 6 and 8, leaves a remainder of 1 in each case.",
+      "explanation": "Least such number = LCM(9, 6, 8) + 1 = 72 + 1 = 73.",
+      "options": [
+        {
+          "label": "75",
+          "is_correct": false
+        },
+        {
+          "label": "77",
+          "is_correct": false
+        },
+        {
+          "label": "71",
+          "is_correct": false
+        },
+        {
+          "label": "73",
+          "is_correct": true
+        }
+      ]
+    },
+    {
+      "chapter": "Number System",
+      "kind": "standard",
+      "difficulty": "hard",
+      "answer_type": "single",
+      "stem": "Find the greatest number that divides 32, 72 and 97 leaving the same remainder in each case.",
+      "explanation": "The required number is the HCF of the differences (72−32) and (97−72), which is 5.",
+      "options": [
+        {
+          "label": "4",
+          "is_correct": false
+        },
+        {
+          "label": "7",
+          "is_correct": false
+        },
+        {
+          "label": "5",
+          "is_correct": true
+        },
+        {
+          "label": "6",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Number System",
+      "kind": "standard",
+      "difficulty": "hard",
+      "answer_type": "single",
+      "stem": "Find the least number which, when divided by 4, 10 and 10, leaves a remainder of 3 in each case.",
+      "explanation": "Least such number = LCM(4, 10, 10) + 3 = 20 + 3 = 23.",
+      "options": [
+        {
+          "label": "24",
+          "is_correct": false
+        },
+        {
+          "label": "25",
+          "is_correct": false
+        },
+        {
+          "label": "23",
+          "is_correct": true
+        },
+        {
+          "label": "22",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Number System",
+      "kind": "standard",
+      "difficulty": "hard",
+      "answer_type": "single",
+      "stem": "Find the least number which, when divided by 4, 9 and 7, leaves a remainder of 3 in each case.",
+      "explanation": "Least such number = LCM(4, 9, 7) + 3 = 252 + 3 = 255.",
+      "options": [
+        {
+          "label": "265",
+          "is_correct": false
+        },
+        {
+          "label": "255",
+          "is_correct": true
+        },
+        {
+          "label": "275",
+          "is_correct": false
+        },
+        {
+          "label": "245",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Number System",
+      "kind": "standard",
+      "difficulty": "hard",
+      "answer_type": "single",
+      "stem": "Find the least number which, when divided by 4, 11 and 14, leaves a remainder of 2 in each case.",
+      "explanation": "Least such number = LCM(4, 11, 14) + 2 = 308 + 2 = 310.",
+      "options": [
+        {
+          "label": "298",
+          "is_correct": false
+        },
+        {
+          "label": "334",
+          "is_correct": false
+        },
+        {
+          "label": "310",
+          "is_correct": true
+        },
+        {
+          "label": "322",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Number System",
+      "kind": "standard",
+      "difficulty": "hard",
+      "answer_type": "single",
+      "stem": "Find the greatest number that divides 51, 150 and 238 leaving the same remainder in each case.",
+      "explanation": "The required number is the HCF of the differences (150−51) and (238−150), which is 11.",
+      "options": [
+        {
+          "label": "12",
+          "is_correct": false
+        },
+        {
+          "label": "11",
+          "is_correct": true
+        },
+        {
+          "label": "10",
+          "is_correct": false
+        },
+        {
+          "label": "13",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Number System",
+      "kind": "standard",
+      "difficulty": "hard",
+      "answer_type": "single",
+      "stem": "Find the least number which, when divided by 5, 12 and 14, leaves a remainder of 3 in each case.",
+      "explanation": "Least such number = LCM(5, 12, 14) + 3 = 420 + 3 = 423.",
+      "options": [
+        {
+          "label": "423",
+          "is_correct": true
+        },
+        {
+          "label": "406",
+          "is_correct": false
+        },
+        {
+          "label": "440",
+          "is_correct": false
+        },
+        {
+          "label": "457",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Number System",
+      "kind": "standard",
+      "difficulty": "hard",
+      "answer_type": "single",
+      "stem": "The product of two numbers is 672 and their HCF is 4. Find their LCM.",
+      "explanation": "LCM = product/HCF = 672/4 = 168.",
+      "options": [
+        {
+          "label": "168",
+          "is_correct": true
+        },
+        {
+          "label": "166",
+          "is_correct": false
+        },
+        {
+          "label": "172",
+          "is_correct": false
+        },
+        {
+          "label": "170",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Number System",
+      "kind": "standard",
+      "difficulty": "hard",
+      "answer_type": "single",
+      "stem": "The product of two numbers is 972 and their HCF is 9. Find their LCM.",
+      "explanation": "LCM = product/HCF = 972/9 = 108.",
+      "options": [
+        {
+          "label": "112",
+          "is_correct": false
+        },
+        {
+          "label": "106",
+          "is_correct": false
+        },
+        {
+          "label": "108",
+          "is_correct": true
+        },
+        {
+          "label": "110",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Number System",
+      "kind": "standard",
+      "difficulty": "hard",
+      "answer_type": "single",
+      "stem": "Find the least number which, when divided by 9, 5 and 12, leaves a remainder of 1 in each case.",
+      "explanation": "Least such number = LCM(9, 5, 12) + 1 = 180 + 1 = 181.",
+      "options": [
+        {
+          "label": "183",
+          "is_correct": false
+        },
+        {
+          "label": "179",
+          "is_correct": false
+        },
+        {
+          "label": "185",
+          "is_correct": false
+        },
+        {
+          "label": "181",
+          "is_correct": true
+        }
+      ]
+    },
+    {
+      "chapter": "Number System",
+      "kind": "standard",
+      "difficulty": "hard",
+      "answer_type": "single",
+      "stem": "Find the greatest number that divides 61, 151 and 256 leaving the same remainder in each case.",
+      "explanation": "The required number is the HCF of the differences (151−61) and (256−151), which is 15.",
+      "options": [
+        {
+          "label": "14",
+          "is_correct": false
+        },
+        {
+          "label": "15",
+          "is_correct": true
+        },
+        {
+          "label": "17",
+          "is_correct": false
+        },
+        {
+          "label": "16",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Number System",
+      "kind": "standard",
+      "difficulty": "hard",
+      "answer_type": "single",
+      "stem": "Find the greatest number that divides 20, 56 and 98 leaving the same remainder in each case.",
+      "explanation": "The required number is the HCF of the differences (56−20) and (98−56), which is 6.",
+      "options": [
+        {
+          "label": "8",
+          "is_correct": false
+        },
+        {
+          "label": "6",
+          "is_correct": true
+        },
+        {
+          "label": "7",
+          "is_correct": false
+        },
+        {
+          "label": "5",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Number System",
+      "kind": "standard",
+      "difficulty": "hard",
+      "answer_type": "single",
+      "stem": "Find the greatest number that divides 62, 98 and 158 leaving the same remainder in each case.",
+      "explanation": "The required number is the HCF of the differences (98−62) and (158−98), which is 12.",
+      "options": [
+        {
+          "label": "13",
+          "is_correct": false
+        },
+        {
+          "label": "11",
+          "is_correct": false
+        },
+        {
+          "label": "14",
+          "is_correct": false
+        },
+        {
+          "label": "12",
+          "is_correct": true
+        }
+      ]
+    },
+    {
+      "chapter": "Number System",
+      "kind": "standard",
+      "difficulty": "hard",
+      "answer_type": "single",
+      "stem": "The product of two numbers is 896 and their HCF is 4. Find their LCM.",
+      "explanation": "LCM = product/HCF = 896/4 = 224.",
+      "options": [
+        {
+          "label": "224",
+          "is_correct": true
+        },
+        {
+          "label": "242",
+          "is_correct": false
+        },
+        {
+          "label": "215",
+          "is_correct": false
+        },
+        {
+          "label": "233",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Number System",
+      "kind": "standard",
+      "difficulty": "hard",
+      "answer_type": "single",
+      "stem": "The product of two numbers is 8064 and their HCF is 12. Find their LCM.",
+      "explanation": "LCM = product/HCF = 8064/12 = 672.",
+      "options": [
+        {
+          "label": "726",
+          "is_correct": false
+        },
+        {
+          "label": "699",
+          "is_correct": false
+        },
+        {
+          "label": "672",
+          "is_correct": true
+        },
+        {
+          "label": "645",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Number System",
+      "kind": "standard",
+      "difficulty": "hard",
+      "answer_type": "single",
+      "stem": "Find the greatest number that divides 11, 35 and 55 leaving the same remainder in each case.",
+      "explanation": "The required number is the HCF of the differences (35−11) and (55−35), which is 4.",
+      "options": [
+        {
+          "label": "4",
+          "is_correct": true
+        },
+        {
+          "label": "6",
+          "is_correct": false
+        },
+        {
+          "label": "3",
+          "is_correct": false
+        },
+        {
+          "label": "5",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Number System",
+      "kind": "standard",
+      "difficulty": "hard",
+      "answer_type": "single",
+      "stem": "The product of two numbers is 6084 and their HCF is 13. Find their LCM.",
+      "explanation": "LCM = product/HCF = 6084/13 = 468.",
+      "options": [
+        {
+          "label": "487",
+          "is_correct": false
+        },
+        {
+          "label": "506",
+          "is_correct": false
+        },
+        {
+          "label": "449",
+          "is_correct": false
+        },
+        {
+          "label": "468",
+          "is_correct": true
+        }
+      ]
+    },
+    {
+      "chapter": "Number System",
+      "kind": "standard",
+      "difficulty": "hard",
+      "answer_type": "single",
+      "stem": "Find the greatest number that divides 64, 103 and 194 leaving the same remainder in each case.",
+      "explanation": "The required number is the HCF of the differences (103−64) and (194−103), which is 13.",
+      "options": [
+        {
+          "label": "13",
+          "is_correct": true
+        },
+        {
+          "label": "15",
+          "is_correct": false
+        },
+        {
+          "label": "14",
+          "is_correct": false
+        },
+        {
+          "label": "12",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Number System",
+      "kind": "standard",
+      "difficulty": "hard",
+      "answer_type": "single",
+      "stem": "The product of two numbers is 2916 and their HCF is 9. Find their LCM.",
+      "explanation": "LCM = product/HCF = 2916/9 = 324.",
+      "options": [
+        {
+          "label": "350",
+          "is_correct": false
+        },
+        {
+          "label": "311",
+          "is_correct": false
+        },
+        {
+          "label": "337",
+          "is_correct": false
+        },
+        {
+          "label": "324",
+          "is_correct": true
+        }
+      ]
+    },
+    {
+      "chapter": "Number System",
+      "kind": "standard",
+      "difficulty": "hard",
+      "answer_type": "single",
+      "stem": "Find the least number which, when divided by 8, 5 and 11, leaves a remainder of 1 in each case.",
+      "explanation": "Least such number = LCM(8, 5, 11) + 1 = 440 + 1 = 441.",
+      "options": [
+        {
+          "label": "441",
+          "is_correct": true
+        },
+        {
+          "label": "477",
+          "is_correct": false
+        },
+        {
+          "label": "423",
+          "is_correct": false
+        },
+        {
+          "label": "459",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Number System",
+      "kind": "standard",
+      "difficulty": "hard",
+      "answer_type": "single",
+      "stem": "The product of two numbers is 1960 and their HCF is 7. Find their LCM.",
+      "explanation": "LCM = product/HCF = 1960/7 = 280.",
+      "options": [
+        {
+          "label": "302",
+          "is_correct": false
+        },
+        {
+          "label": "269",
+          "is_correct": false
+        },
+        {
+          "label": "291",
+          "is_correct": false
+        },
+        {
+          "label": "280",
+          "is_correct": true
+        }
+      ]
+    },
+    {
+      "chapter": "Number System",
+      "kind": "standard",
+      "difficulty": "hard",
+      "answer_type": "single",
+      "stem": "Find the greatest number that divides 35, 170 and 290 leaving the same remainder in each case.",
+      "explanation": "The required number is the HCF of the differences (170−35) and (290−170), which is 15.",
+      "options": [
+        {
+          "label": "16",
+          "is_correct": false
+        },
+        {
+          "label": "15",
+          "is_correct": true
+        },
+        {
+          "label": "17",
+          "is_correct": false
+        },
+        {
+          "label": "14",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Number System",
+      "kind": "standard",
+      "difficulty": "hard",
+      "answer_type": "single",
+      "stem": "The product of two numbers is 189 and their HCF is 3. Find their LCM.",
+      "explanation": "LCM = product/HCF = 189/3 = 63.",
+      "options": [
+        {
+          "label": "63",
+          "is_correct": true
+        },
+        {
+          "label": "65",
+          "is_correct": false
+        },
+        {
+          "label": "61",
+          "is_correct": false
+        },
+        {
+          "label": "67",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Number System",
+      "kind": "standard",
+      "difficulty": "hard",
+      "answer_type": "single",
+      "stem": "Find the least number which, when divided by 5, 10 and 9, leaves a remainder of 3 in each case.",
+      "explanation": "Least such number = LCM(5, 10, 9) + 3 = 90 + 3 = 93.",
+      "options": [
+        {
+          "label": "93",
+          "is_correct": true
+        },
+        {
+          "label": "97",
+          "is_correct": false
+        },
+        {
+          "label": "95",
+          "is_correct": false
+        },
+        {
+          "label": "91",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Number System",
+      "kind": "standard",
+      "difficulty": "hard",
+      "answer_type": "single",
+      "stem": "Find the greatest number that divides 23, 51 and 75 leaving the same remainder in each case.",
+      "explanation": "The required number is the HCF of the differences (51−23) and (75−51), which is 4.",
+      "options": [
+        {
+          "label": "3",
+          "is_correct": false
+        },
+        {
+          "label": "6",
+          "is_correct": false
+        },
+        {
+          "label": "4",
+          "is_correct": true
+        },
+        {
+          "label": "5",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Number System",
+      "kind": "standard",
+      "difficulty": "hard",
+      "answer_type": "single",
+      "stem": "Find the least number which, when divided by 4, 7 and 14, leaves a remainder of 3 in each case.",
+      "explanation": "Least such number = LCM(4, 7, 14) + 3 = 28 + 3 = 31.",
+      "options": [
+        {
+          "label": "33",
+          "is_correct": false
+        },
+        {
+          "label": "31",
+          "is_correct": true
+        },
+        {
+          "label": "32",
+          "is_correct": false
+        },
+        {
+          "label": "30",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Number System",
+      "kind": "standard",
+      "difficulty": "hard",
+      "answer_type": "single",
+      "stem": "Find the least number which, when divided by 5, 11 and 11, leaves a remainder of 3 in each case.",
+      "explanation": "Least such number = LCM(5, 11, 11) + 3 = 55 + 3 = 58.",
+      "options": [
+        {
+          "label": "56",
+          "is_correct": false
+        },
+        {
+          "label": "58",
+          "is_correct": true
+        },
+        {
+          "label": "62",
+          "is_correct": false
+        },
+        {
+          "label": "60",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Number System",
+      "kind": "standard",
+      "difficulty": "hard",
+      "answer_type": "single",
+      "stem": "Find the least number which, when divided by 8, 10 and 6, leaves a remainder of 2 in each case.",
+      "explanation": "Least such number = LCM(8, 10, 6) + 2 = 120 + 2 = 122.",
+      "options": [
+        {
+          "label": "120",
+          "is_correct": false
+        },
+        {
+          "label": "126",
+          "is_correct": false
+        },
+        {
+          "label": "122",
+          "is_correct": true
+        },
+        {
+          "label": "124",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Number System",
+      "kind": "standard",
+      "difficulty": "hard",
+      "answer_type": "single",
+      "stem": "The product of two numbers is 2592 and their HCF is 6. Find their LCM.",
+      "explanation": "LCM = product/HCF = 2592/6 = 432.",
+      "options": [
+        {
+          "label": "432",
+          "is_correct": true
+        },
+        {
+          "label": "415",
+          "is_correct": false
+        },
+        {
+          "label": "449",
+          "is_correct": false
+        },
+        {
+          "label": "466",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Number System",
+      "kind": "standard",
+      "difficulty": "hard",
+      "answer_type": "single",
+      "stem": "The product of two numbers is 2366 and their HCF is 13. Find their LCM.",
+      "explanation": "LCM = product/HCF = 2366/13 = 182.",
+      "options": [
+        {
+          "label": "186",
+          "is_correct": false
+        },
+        {
+          "label": "182",
+          "is_correct": true
+        },
+        {
+          "label": "184",
+          "is_correct": false
+        },
+        {
+          "label": "180",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Number System",
+      "kind": "standard",
+      "difficulty": "hard",
+      "answer_type": "single",
+      "stem": "The product of two numbers is 600 and their HCF is 5. Find their LCM.",
+      "explanation": "LCM = product/HCF = 600/5 = 120.",
+      "options": [
+        {
+          "label": "124",
+          "is_correct": false
+        },
+        {
+          "label": "120",
+          "is_correct": true
+        },
+        {
+          "label": "122",
+          "is_correct": false
+        },
+        {
+          "label": "118",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Number System",
+      "kind": "standard",
+      "difficulty": "hard",
+      "answer_type": "single",
+      "stem": "Find the least number which, when divided by 9, 6 and 7, leaves a remainder of 3 in each case.",
+      "explanation": "Least such number = LCM(9, 6, 7) + 3 = 126 + 3 = 129.",
+      "options": [
+        {
+          "label": "131",
+          "is_correct": false
+        },
+        {
+          "label": "127",
+          "is_correct": false
+        },
+        {
+          "label": "129",
+          "is_correct": true
+        },
+        {
+          "label": "133",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Number System",
+      "kind": "standard",
+      "difficulty": "hard",
+      "answer_type": "single",
+      "stem": "Find the greatest number that divides 40, 70 and 88 leaving the same remainder in each case.",
+      "explanation": "The required number is the HCF of the differences (70−40) and (88−70), which is 6.",
+      "options": [
+        {
+          "label": "7",
+          "is_correct": false
+        },
+        {
+          "label": "8",
+          "is_correct": false
+        },
+        {
+          "label": "6",
+          "is_correct": true
+        },
+        {
+          "label": "5",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Number System",
+      "kind": "standard",
+      "difficulty": "hard",
+      "answer_type": "single",
+      "stem": "The product of two numbers is 1715 and their HCF is 7. Find their LCM.",
+      "explanation": "LCM = product/HCF = 1715/7 = 245.",
+      "options": [
+        {
+          "label": "235",
+          "is_correct": false
+        },
+        {
+          "label": "245",
+          "is_correct": true
+        },
+        {
+          "label": "255",
+          "is_correct": false
+        },
+        {
+          "label": "265",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Number System",
+      "kind": "standard",
+      "difficulty": "hard",
+      "answer_type": "single",
+      "stem": "Find the least number which, when divided by 6, 12 and 5, leaves a remainder of 1 in each case.",
+      "explanation": "Least such number = LCM(6, 12, 5) + 1 = 60 + 1 = 61.",
+      "options": [
+        {
+          "label": "65",
+          "is_correct": false
+        },
+        {
+          "label": "63",
+          "is_correct": false
+        },
+        {
+          "label": "61",
+          "is_correct": true
+        },
+        {
+          "label": "59",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Number System",
+      "kind": "standard",
+      "difficulty": "hard",
+      "answer_type": "single",
+      "stem": "Find the least number which, when divided by 5, 11 and 13, leaves a remainder of 1 in each case.",
+      "explanation": "Least such number = LCM(5, 11, 13) + 1 = 715 + 1 = 716.",
+      "options": [
+        {
+          "label": "774",
+          "is_correct": false
+        },
+        {
+          "label": "687",
+          "is_correct": false
+        },
+        {
+          "label": "745",
+          "is_correct": false
+        },
+        {
+          "label": "716",
+          "is_correct": true
+        }
+      ]
+    },
+    {
+      "chapter": "Number System",
+      "kind": "standard",
+      "difficulty": "hard",
+      "answer_type": "single",
+      "stem": "Find the least number which, when divided by 5, 6 and 5, leaves a remainder of 1 in each case.",
+      "explanation": "Least such number = LCM(5, 6, 5) + 1 = 30 + 1 = 31.",
+      "options": [
+        {
+          "label": "30",
+          "is_correct": false
+        },
+        {
+          "label": "33",
+          "is_correct": false
+        },
+        {
+          "label": "31",
+          "is_correct": true
+        },
+        {
+          "label": "32",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Number System",
+      "kind": "standard",
+      "difficulty": "hard",
+      "answer_type": "single",
+      "stem": "Find the least number which, when divided by 4, 9 and 8, leaves a remainder of 3 in each case.",
+      "explanation": "Least such number = LCM(4, 9, 8) + 3 = 72 + 3 = 75.",
+      "options": [
+        {
+          "label": "75",
+          "is_correct": true
+        },
+        {
+          "label": "77",
+          "is_correct": false
+        },
+        {
+          "label": "73",
+          "is_correct": false
+        },
+        {
+          "label": "79",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Number System",
+      "kind": "standard",
+      "difficulty": "hard",
+      "answer_type": "single",
+      "stem": "Find the greatest number that divides 21, 45 and 61 leaving the same remainder in each case.",
+      "explanation": "The required number is the HCF of the differences (45−21) and (61−45), which is 8.",
+      "options": [
+        {
+          "label": "9",
+          "is_correct": false
+        },
+        {
+          "label": "7",
+          "is_correct": false
+        },
+        {
+          "label": "10",
+          "is_correct": false
+        },
+        {
+          "label": "8",
+          "is_correct": true
+        }
+      ]
+    },
+    {
+      "chapter": "Number System",
+      "kind": "standard",
+      "difficulty": "hard",
+      "answer_type": "single",
+      "stem": "Find the greatest number that divides 88, 208 and 253 leaving the same remainder in each case.",
+      "explanation": "The required number is the HCF of the differences (208−88) and (253−208), which is 15.",
+      "options": [
+        {
+          "label": "17",
+          "is_correct": false
+        },
+        {
+          "label": "15",
+          "is_correct": true
+        },
+        {
+          "label": "16",
+          "is_correct": false
+        },
+        {
+          "label": "14",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Number System",
+      "kind": "standard",
+      "difficulty": "hard",
+      "answer_type": "single",
+      "stem": "Find the least number which, when divided by 5, 9 and 5, leaves a remainder of 1 in each case.",
+      "explanation": "Least such number = LCM(5, 9, 5) + 1 = 45 + 1 = 46.",
+      "options": [
+        {
+          "label": "46",
+          "is_correct": true
+        },
+        {
+          "label": "48",
+          "is_correct": false
+        },
+        {
+          "label": "50",
+          "is_correct": false
+        },
+        {
+          "label": "44",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Number System",
+      "kind": "standard",
+      "difficulty": "hard",
+      "answer_type": "single",
+      "stem": "The product of two numbers is 7098 and their HCF is 13. Find their LCM.",
+      "explanation": "LCM = product/HCF = 7098/13 = 546.",
+      "options": [
+        {
+          "label": "524",
+          "is_correct": false
+        },
+        {
+          "label": "568",
+          "is_correct": false
+        },
+        {
+          "label": "590",
+          "is_correct": false
+        },
+        {
+          "label": "546",
+          "is_correct": true
+        }
+      ]
+    },
+    {
+      "chapter": "Number System",
+      "kind": "standard",
+      "difficulty": "hard",
+      "answer_type": "single",
+      "stem": "The product of two numbers is 2400 and their HCF is 10. Find their LCM.",
+      "explanation": "LCM = product/HCF = 2400/10 = 240.",
+      "options": [
+        {
+          "label": "250",
+          "is_correct": false
+        },
+        {
+          "label": "230",
+          "is_correct": false
+        },
+        {
+          "label": "240",
+          "is_correct": true
+        },
+        {
+          "label": "260",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Number System",
+      "kind": "standard",
+      "difficulty": "hard",
+      "answer_type": "single",
+      "stem": "Find the least number which, when divided by 4, 12 and 4, leaves a remainder of 2 in each case.",
+      "explanation": "Least such number = LCM(4, 12, 4) + 2 = 12 + 2 = 14.",
+      "options": [
+        {
+          "label": "16",
+          "is_correct": false
+        },
+        {
+          "label": "15",
+          "is_correct": false
+        },
+        {
+          "label": "14",
+          "is_correct": true
+        },
+        {
+          "label": "13",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Number System",
+      "kind": "standard",
+      "difficulty": "hard",
+      "answer_type": "single",
+      "stem": "The product of two numbers is 6776 and their HCF is 11. Find their LCM.",
+      "explanation": "LCM = product/HCF = 6776/11 = 616.",
+      "options": [
+        {
+          "label": "616",
+          "is_correct": true
+        },
+        {
+          "label": "666",
+          "is_correct": false
+        },
+        {
+          "label": "591",
+          "is_correct": false
+        },
+        {
+          "label": "641",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Number System",
+      "kind": "standard",
+      "difficulty": "hard",
+      "answer_type": "single",
+      "stem": "Find the greatest number that divides 68, 172 and 263 leaving the same remainder in each case.",
+      "explanation": "The required number is the HCF of the differences (172−68) and (263−172), which is 13.",
+      "options": [
+        {
+          "label": "12",
+          "is_correct": false
+        },
+        {
+          "label": "14",
+          "is_correct": false
+        },
+        {
+          "label": "15",
+          "is_correct": false
+        },
+        {
+          "label": "13",
+          "is_correct": true
+        }
+      ]
+    },
+    {
+      "chapter": "Number System",
+      "kind": "standard",
+      "difficulty": "hard",
+      "answer_type": "single",
+      "stem": "Find the least number which, when divided by 6, 12 and 4, leaves a remainder of 1 in each case.",
+      "explanation": "Least such number = LCM(6, 12, 4) + 1 = 12 + 1 = 13.",
+      "options": [
+        {
+          "label": "14",
+          "is_correct": false
+        },
+        {
+          "label": "13",
+          "is_correct": true
+        },
+        {
+          "label": "12",
+          "is_correct": false
+        },
+        {
+          "label": "15",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Number System",
+      "kind": "standard",
+      "difficulty": "very_hard",
+      "answer_type": "single",
+      "stem": "Find the remainder when 7^16 is divided by 15.",
+      "explanation": "Using modular arithmetic, 7^16 mod 15 = 1.",
+      "options": [
+        {
+          "label": "1",
+          "is_correct": true
+        },
+        {
+          "label": "2",
+          "is_correct": false
+        },
+        {
+          "label": "4",
+          "is_correct": false
+        },
+        {
+          "label": "3",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Number System",
+      "kind": "standard",
+      "difficulty": "very_hard",
+      "answer_type": "single",
+      "stem": "Find the unit (last) digit of 9^8 + 3^27.",
+      "explanation": "Last digit of 9^8 is 1 and of 3^27 is 7; their sum ends in 8.",
+      "options": [
+        {
+          "label": "7",
+          "is_correct": false
+        },
+        {
+          "label": "9",
+          "is_correct": false
+        },
+        {
+          "label": "8",
+          "is_correct": true
+        },
+        {
+          "label": "10",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Number System",
+      "kind": "standard",
+      "difficulty": "very_hard",
+      "answer_type": "single",
+      "stem": "Find the remainder when 9^18 is divided by 10.",
+      "explanation": "Using modular arithmetic, 9^18 mod 10 = 1.",
+      "options": [
+        {
+          "label": "2",
+          "is_correct": false
+        },
+        {
+          "label": "4",
+          "is_correct": false
+        },
+        {
+          "label": "3",
+          "is_correct": false
+        },
+        {
+          "label": "1",
+          "is_correct": true
+        }
+      ]
+    },
+    {
+      "chapter": "Number System",
+      "kind": "standard",
+      "difficulty": "very_hard",
+      "answer_type": "single",
+      "stem": "Find the unit (last) digit of 7^23 + 5^25.",
+      "explanation": "Last digit of 7^23 is 3 and of 5^25 is 5; their sum ends in 8.",
+      "options": [
+        {
+          "label": "9",
+          "is_correct": false
+        },
+        {
+          "label": "10",
+          "is_correct": false
+        },
+        {
+          "label": "7",
+          "is_correct": false
+        },
+        {
+          "label": "8",
+          "is_correct": true
+        }
+      ]
+    },
+    {
+      "chapter": "Number System",
+      "kind": "standard",
+      "difficulty": "very_hard",
+      "answer_type": "single",
+      "stem": "Find the number of trailing zeros in 36! (36 factorial).",
+      "explanation": "Trailing zeros = ⌊36/5⌋ + ⌊36/25⌋ + ⌊36/125⌋ + … = 8.",
+      "options": [
+        {
+          "label": "9",
+          "is_correct": false
+        },
+        {
+          "label": "7",
+          "is_correct": false
+        },
+        {
+          "label": "8",
+          "is_correct": true
+        },
+        {
+          "label": "10",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Number System",
+      "kind": "standard",
+      "difficulty": "very_hard",
+      "answer_type": "single",
+      "stem": "Find the unit (last) digit of 7^28 + 3^17.",
+      "explanation": "Last digit of 7^28 is 1 and of 3^17 is 3; their sum ends in 4.",
+      "options": [
+        {
+          "label": "6",
+          "is_correct": false
+        },
+        {
+          "label": "4",
+          "is_correct": true
+        },
+        {
+          "label": "5",
+          "is_correct": false
+        },
+        {
+          "label": "3",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Number System",
+      "kind": "standard",
+      "difficulty": "very_hard",
+      "answer_type": "single",
+      "stem": "Find the remainder when 9^13 is divided by 7.",
+      "explanation": "Using modular arithmetic, 9^13 mod 7 = 2.",
+      "options": [
+        {
+          "label": "1",
+          "is_correct": false
+        },
+        {
+          "label": "2",
+          "is_correct": true
+        },
+        {
+          "label": "3",
+          "is_correct": false
+        },
+        {
+          "label": "4",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Number System",
+      "kind": "standard",
+      "difficulty": "very_hard",
+      "answer_type": "single",
+      "stem": "Find the unit (last) digit of 8^29 + 8^8.",
+      "explanation": "Last digit of 8^29 is 8 and of 8^8 is 6; their sum ends in 4.",
+      "options": [
+        {
+          "label": "5",
+          "is_correct": false
+        },
+        {
+          "label": "4",
+          "is_correct": true
+        },
+        {
+          "label": "6",
+          "is_correct": false
+        },
+        {
+          "label": "3",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Number System",
+      "kind": "standard",
+      "difficulty": "very_hard",
+      "answer_type": "single",
+      "stem": "Find the remainder when 5^23 is divided by 14.",
+      "explanation": "Using modular arithmetic, 5^23 mod 14 = 3.",
+      "options": [
+        {
+          "label": "5",
+          "is_correct": false
+        },
+        {
+          "label": "4",
+          "is_correct": false
+        },
+        {
+          "label": "3",
+          "is_correct": true
+        },
+        {
+          "label": "2",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Number System",
+      "kind": "standard",
+      "difficulty": "very_hard",
+      "answer_type": "single",
+      "stem": "Find the number of trailing zeros in 96! (96 factorial).",
+      "explanation": "Trailing zeros = ⌊96/5⌋ + ⌊96/25⌋ + ⌊96/125⌋ + … = 22.",
+      "options": [
+        {
+          "label": "21",
+          "is_correct": false
+        },
+        {
+          "label": "23",
+          "is_correct": false
+        },
+        {
+          "label": "22",
+          "is_correct": true
+        },
+        {
+          "label": "24",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Number System",
+      "kind": "standard",
+      "difficulty": "very_hard",
+      "answer_type": "single",
+      "stem": "Find the remainder when 6^20 is divided by 5.",
+      "explanation": "Using modular arithmetic, 6^20 mod 5 = 1.",
+      "options": [
+        {
+          "label": "1",
+          "is_correct": true
+        },
+        {
+          "label": "3",
+          "is_correct": false
+        },
+        {
+          "label": "2",
+          "is_correct": false
+        },
+        {
+          "label": "4",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Number System",
+      "kind": "standard",
+      "difficulty": "very_hard",
+      "answer_type": "single",
+      "stem": "Find the remainder when 8^19 is divided by 16.",
+      "explanation": "Using modular arithmetic, 8^19 mod 16 = 0.",
+      "options": [
+        {
+          "label": "1",
+          "is_correct": false
+        },
+        {
+          "label": "3",
+          "is_correct": false
+        },
+        {
+          "label": "0",
+          "is_correct": true
+        },
+        {
+          "label": "2",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Number System",
+      "kind": "standard",
+      "difficulty": "very_hard",
+      "answer_type": "single",
+      "stem": "Find the number of trailing zeros in 22! (22 factorial).",
+      "explanation": "Trailing zeros = ⌊22/5⌋ + ⌊22/25⌋ + ⌊22/125⌋ + … = 4.",
+      "options": [
+        {
+          "label": "5",
+          "is_correct": false
+        },
+        {
+          "label": "4",
+          "is_correct": true
+        },
+        {
+          "label": "3",
+          "is_correct": false
+        },
+        {
+          "label": "6",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Number System",
+      "kind": "standard",
+      "difficulty": "very_hard",
+      "answer_type": "single",
+      "stem": "Find the unit (last) digit of 6^30 + 6^16.",
+      "explanation": "Last digit of 6^30 is 6 and of 6^16 is 6; their sum ends in 2.",
+      "options": [
+        {
+          "label": "3",
+          "is_correct": false
+        },
+        {
+          "label": "2",
+          "is_correct": true
+        },
+        {
+          "label": "4",
+          "is_correct": false
+        },
+        {
+          "label": "1",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Number System",
+      "kind": "standard",
+      "difficulty": "very_hard",
+      "answer_type": "single",
+      "stem": "Find the number of trailing zeros in 109! (109 factorial).",
+      "explanation": "Trailing zeros = ⌊109/5⌋ + ⌊109/25⌋ + ⌊109/125⌋ + … = 25.",
+      "options": [
+        {
+          "label": "26",
+          "is_correct": false
+        },
+        {
+          "label": "27",
+          "is_correct": false
+        },
+        {
+          "label": "25",
+          "is_correct": true
+        },
+        {
+          "label": "24",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Number System",
+      "kind": "standard",
+      "difficulty": "very_hard",
+      "answer_type": "single",
+      "stem": "Find the remainder when 7^18 is divided by 12.",
+      "explanation": "Using modular arithmetic, 7^18 mod 12 = 1.",
+      "options": [
+        {
+          "label": "1",
+          "is_correct": true
+        },
+        {
+          "label": "3",
+          "is_correct": false
+        },
+        {
+          "label": "4",
+          "is_correct": false
+        },
+        {
+          "label": "2",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Number System",
+      "kind": "standard",
+      "difficulty": "very_hard",
+      "answer_type": "single",
+      "stem": "Find the unit (last) digit of 8^14 + 4^24.",
+      "explanation": "Last digit of 8^14 is 4 and of 4^24 is 6; their sum ends in 0.",
+      "options": [
+        {
+          "label": "1",
+          "is_correct": false
+        },
+        {
+          "label": "3",
+          "is_correct": false
+        },
+        {
+          "label": "2",
+          "is_correct": false
+        },
+        {
+          "label": "0",
+          "is_correct": true
+        }
+      ]
+    },
+    {
+      "chapter": "Number System",
+      "kind": "standard",
+      "difficulty": "very_hard",
+      "answer_type": "single",
+      "stem": "Find the remainder when 7^19 is divided by 11.",
+      "explanation": "Using modular arithmetic, 7^19 mod 11 = 8.",
+      "options": [
+        {
+          "label": "10",
+          "is_correct": false
+        },
+        {
+          "label": "7",
+          "is_correct": false
+        },
+        {
+          "label": "9",
+          "is_correct": false
+        },
+        {
+          "label": "8",
+          "is_correct": true
+        }
+      ]
+    },
+    {
+      "chapter": "Number System",
+      "kind": "standard",
+      "difficulty": "very_hard",
+      "answer_type": "single",
+      "stem": "Find the remainder when 7^18 is divided by 16.",
+      "explanation": "Using modular arithmetic, 7^18 mod 16 = 1.",
+      "options": [
+        {
+          "label": "1",
+          "is_correct": true
+        },
+        {
+          "label": "2",
+          "is_correct": false
+        },
+        {
+          "label": "4",
+          "is_correct": false
+        },
+        {
+          "label": "3",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Number System",
+      "kind": "standard",
+      "difficulty": "very_hard",
+      "answer_type": "single",
+      "stem": "Find the number of trailing zeros in 48! (48 factorial).",
+      "explanation": "Trailing zeros = ⌊48/5⌋ + ⌊48/25⌋ + ⌊48/125⌋ + … = 10.",
+      "options": [
+        {
+          "label": "10",
+          "is_correct": true
+        },
+        {
+          "label": "11",
+          "is_correct": false
+        },
+        {
+          "label": "12",
+          "is_correct": false
+        },
+        {
+          "label": "9",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Number System",
+      "kind": "standard",
+      "difficulty": "very_hard",
+      "answer_type": "single",
+      "stem": "Find the remainder when 2^21 is divided by 10.",
+      "explanation": "Using modular arithmetic, 2^21 mod 10 = 2.",
+      "options": [
+        {
+          "label": "2",
+          "is_correct": true
+        },
+        {
+          "label": "4",
+          "is_correct": false
+        },
+        {
+          "label": "3",
+          "is_correct": false
+        },
+        {
+          "label": "1",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Number System",
+      "kind": "standard",
+      "difficulty": "very_hard",
+      "answer_type": "single",
+      "stem": "Find the remainder when 2^19 is divided by 15.",
+      "explanation": "Using modular arithmetic, 2^19 mod 15 = 8.",
+      "options": [
+        {
+          "label": "8",
+          "is_correct": true
+        },
+        {
+          "label": "10",
+          "is_correct": false
+        },
+        {
+          "label": "9",
+          "is_correct": false
+        },
+        {
+          "label": "7",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Number System",
+      "kind": "standard",
+      "difficulty": "very_hard",
+      "answer_type": "single",
+      "stem": "Find the unit (last) digit of 7^27 + 4^29.",
+      "explanation": "Last digit of 7^27 is 3 and of 4^29 is 4; their sum ends in 7.",
+      "options": [
+        {
+          "label": "8",
+          "is_correct": false
+        },
+        {
+          "label": "9",
+          "is_correct": false
+        },
+        {
+          "label": "7",
+          "is_correct": true
+        },
+        {
+          "label": "6",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Number System",
+      "kind": "standard",
+      "difficulty": "very_hard",
+      "answer_type": "single",
+      "stem": "Find the unit (last) digit of 5^18 + 9^14.",
+      "explanation": "Last digit of 5^18 is 5 and of 9^14 is 1; their sum ends in 6.",
+      "options": [
+        {
+          "label": "5",
+          "is_correct": false
+        },
+        {
+          "label": "6",
+          "is_correct": true
+        },
+        {
+          "label": "8",
+          "is_correct": false
+        },
+        {
+          "label": "7",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Number System",
+      "kind": "standard",
+      "difficulty": "very_hard",
+      "answer_type": "single",
+      "stem": "Find the unit (last) digit of 9^27 + 8^24.",
+      "explanation": "Last digit of 9^27 is 9 and of 8^24 is 6; their sum ends in 5.",
+      "options": [
+        {
+          "label": "4",
+          "is_correct": false
+        },
+        {
+          "label": "7",
+          "is_correct": false
+        },
+        {
+          "label": "5",
+          "is_correct": true
+        },
+        {
+          "label": "6",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Number System",
+      "kind": "standard",
+      "difficulty": "very_hard",
+      "answer_type": "single",
+      "stem": "Find the number of trailing zeros in 55! (55 factorial).",
+      "explanation": "Trailing zeros = ⌊55/5⌋ + ⌊55/25⌋ + ⌊55/125⌋ + … = 13.",
+      "options": [
+        {
+          "label": "13",
+          "is_correct": true
+        },
+        {
+          "label": "15",
+          "is_correct": false
+        },
+        {
+          "label": "12",
+          "is_correct": false
+        },
+        {
+          "label": "14",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Number System",
+      "kind": "standard",
+      "difficulty": "very_hard",
+      "answer_type": "single",
+      "stem": "Find the number of trailing zeros in 28! (28 factorial).",
+      "explanation": "Trailing zeros = ⌊28/5⌋ + ⌊28/25⌋ + ⌊28/125⌋ + … = 6.",
+      "options": [
+        {
+          "label": "6",
+          "is_correct": true
+        },
+        {
+          "label": "7",
+          "is_correct": false
+        },
+        {
+          "label": "8",
+          "is_correct": false
+        },
+        {
+          "label": "5",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Number System",
+      "kind": "standard",
+      "difficulty": "very_hard",
+      "answer_type": "single",
+      "stem": "Find the number of trailing zeros in 57! (57 factorial).",
+      "explanation": "Trailing zeros = ⌊57/5⌋ + ⌊57/25⌋ + ⌊57/125⌋ + … = 13.",
+      "options": [
+        {
+          "label": "13",
+          "is_correct": true
+        },
+        {
+          "label": "12",
+          "is_correct": false
+        },
+        {
+          "label": "14",
+          "is_correct": false
+        },
+        {
+          "label": "15",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Number System",
+      "kind": "standard",
+      "difficulty": "very_hard",
+      "answer_type": "single",
+      "stem": "Find the remainder when 9^29 is divided by 7.",
+      "explanation": "Using modular arithmetic, 9^29 mod 7 = 4.",
+      "options": [
+        {
+          "label": "3",
+          "is_correct": false
+        },
+        {
+          "label": "6",
+          "is_correct": false
+        },
+        {
+          "label": "4",
+          "is_correct": true
+        },
+        {
+          "label": "5",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Number System",
+      "kind": "standard",
+      "difficulty": "very_hard",
+      "answer_type": "single",
+      "stem": "Find the number of trailing zeros in 45! (45 factorial).",
+      "explanation": "Trailing zeros = ⌊45/5⌋ + ⌊45/25⌋ + ⌊45/125⌋ + … = 10.",
+      "options": [
+        {
+          "label": "9",
+          "is_correct": false
+        },
+        {
+          "label": "10",
+          "is_correct": true
+        },
+        {
+          "label": "11",
+          "is_correct": false
+        },
+        {
+          "label": "12",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Number System",
+      "kind": "standard",
+      "difficulty": "very_hard",
+      "answer_type": "single",
+      "stem": "Find the unit (last) digit of 3^26 + 6^28.",
+      "explanation": "Last digit of 3^26 is 9 and of 6^28 is 6; their sum ends in 5.",
+      "options": [
+        {
+          "label": "4",
+          "is_correct": false
+        },
+        {
+          "label": "7",
+          "is_correct": false
+        },
+        {
+          "label": "5",
+          "is_correct": true
+        },
+        {
+          "label": "6",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Number System",
+      "kind": "standard",
+      "difficulty": "very_hard",
+      "answer_type": "single",
+      "stem": "Find the number of trailing zeros in 73! (73 factorial).",
+      "explanation": "Trailing zeros = ⌊73/5⌋ + ⌊73/25⌋ + ⌊73/125⌋ + … = 16.",
+      "options": [
+        {
+          "label": "17",
+          "is_correct": false
+        },
+        {
+          "label": "16",
+          "is_correct": true
+        },
+        {
+          "label": "15",
+          "is_correct": false
+        },
+        {
+          "label": "18",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Number System",
+      "kind": "standard",
+      "difficulty": "very_hard",
+      "answer_type": "single",
+      "stem": "Find the remainder when 5^35 is divided by 15.",
+      "explanation": "Using modular arithmetic, 5^35 mod 15 = 5.",
+      "options": [
+        {
+          "label": "6",
+          "is_correct": false
+        },
+        {
+          "label": "7",
+          "is_correct": false
+        },
+        {
+          "label": "4",
+          "is_correct": false
+        },
+        {
+          "label": "5",
+          "is_correct": true
+        }
+      ]
+    },
+    {
+      "chapter": "Number System",
+      "kind": "standard",
+      "difficulty": "very_hard",
+      "answer_type": "single",
+      "stem": "Find the number of trailing zeros in 35! (35 factorial).",
+      "explanation": "Trailing zeros = ⌊35/5⌋ + ⌊35/25⌋ + ⌊35/125⌋ + … = 8.",
+      "options": [
+        {
+          "label": "7",
+          "is_correct": false
+        },
+        {
+          "label": "8",
+          "is_correct": true
+        },
+        {
+          "label": "9",
+          "is_correct": false
+        },
+        {
+          "label": "10",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Number System",
+      "kind": "standard",
+      "difficulty": "very_hard",
+      "answer_type": "single",
+      "stem": "Find the unit (last) digit of 9^8 + 5^3.",
+      "explanation": "Last digit of 9^8 is 1 and of 5^3 is 5; their sum ends in 6.",
+      "options": [
+        {
+          "label": "8",
+          "is_correct": false
+        },
+        {
+          "label": "6",
+          "is_correct": true
+        },
+        {
+          "label": "5",
+          "is_correct": false
+        },
+        {
+          "label": "7",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Number System",
+      "kind": "standard",
+      "difficulty": "very_hard",
+      "answer_type": "single",
+      "stem": "Find the remainder when 3^30 is divided by 12.",
+      "explanation": "Using modular arithmetic, 3^30 mod 12 = 9.",
+      "options": [
+        {
+          "label": "9",
+          "is_correct": true
+        },
+        {
+          "label": "10",
+          "is_correct": false
+        },
+        {
+          "label": "11",
+          "is_correct": false
+        },
+        {
+          "label": "8",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Number System",
+      "kind": "standard",
+      "difficulty": "very_hard",
+      "answer_type": "single",
+      "stem": "Find the remainder when 2^21 is divided by 15.",
+      "explanation": "Using modular arithmetic, 2^21 mod 15 = 2.",
+      "options": [
+        {
+          "label": "4",
+          "is_correct": false
+        },
+        {
+          "label": "2",
+          "is_correct": true
+        },
+        {
+          "label": "1",
+          "is_correct": false
+        },
+        {
+          "label": "3",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Number System",
+      "kind": "standard",
+      "difficulty": "very_hard",
+      "answer_type": "single",
+      "stem": "Find the remainder when 8^20 is divided by 5.",
+      "explanation": "Using modular arithmetic, 8^20 mod 5 = 1.",
+      "options": [
+        {
+          "label": "4",
+          "is_correct": false
+        },
+        {
+          "label": "3",
+          "is_correct": false
+        },
+        {
+          "label": "1",
+          "is_correct": true
+        },
+        {
+          "label": "2",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Number System",
+      "kind": "standard",
+      "difficulty": "very_hard",
+      "answer_type": "single",
+      "stem": "Find the number of trailing zeros in 70! (70 factorial).",
+      "explanation": "Trailing zeros = ⌊70/5⌋ + ⌊70/25⌋ + ⌊70/125⌋ + … = 16.",
+      "options": [
+        {
+          "label": "17",
+          "is_correct": false
+        },
+        {
+          "label": "15",
+          "is_correct": false
+        },
+        {
+          "label": "18",
+          "is_correct": false
+        },
+        {
+          "label": "16",
+          "is_correct": true
+        }
+      ]
+    },
+    {
+      "chapter": "Number System",
+      "kind": "standard",
+      "difficulty": "very_hard",
+      "answer_type": "single",
+      "stem": "Find the unit (last) digit of 9^24 + 9^13.",
+      "explanation": "Last digit of 9^24 is 1 and of 9^13 is 9; their sum ends in 0.",
+      "options": [
+        {
+          "label": "0",
+          "is_correct": true
+        },
+        {
+          "label": "1",
+          "is_correct": false
+        },
+        {
+          "label": "3",
+          "is_correct": false
+        },
+        {
+          "label": "2",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Number System",
+      "kind": "standard",
+      "difficulty": "very_hard",
+      "answer_type": "single",
+      "stem": "Find the unit (last) digit of 9^4 + 8^16.",
+      "explanation": "Last digit of 9^4 is 1 and of 8^16 is 6; their sum ends in 7.",
+      "options": [
+        {
+          "label": "9",
+          "is_correct": false
+        },
+        {
+          "label": "7",
+          "is_correct": true
+        },
+        {
+          "label": "6",
+          "is_correct": false
+        },
+        {
+          "label": "8",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Number System",
+      "kind": "standard",
+      "difficulty": "very_hard",
+      "answer_type": "single",
+      "stem": "Find the number of trailing zeros in 112! (112 factorial).",
+      "explanation": "Trailing zeros = ⌊112/5⌋ + ⌊112/25⌋ + ⌊112/125⌋ + … = 26.",
+      "options": [
+        {
+          "label": "26",
+          "is_correct": true
+        },
+        {
+          "label": "28",
+          "is_correct": false
+        },
+        {
+          "label": "27",
+          "is_correct": false
+        },
+        {
+          "label": "25",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Number System",
+      "kind": "standard",
+      "difficulty": "very_hard",
+      "answer_type": "single",
+      "stem": "Find the remainder when 5^32 is divided by 11.",
+      "explanation": "Using modular arithmetic, 5^32 mod 11 = 3.",
+      "options": [
+        {
+          "label": "2",
+          "is_correct": false
+        },
+        {
+          "label": "3",
+          "is_correct": true
+        },
+        {
+          "label": "5",
+          "is_correct": false
+        },
+        {
+          "label": "4",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Number System",
+      "kind": "standard",
+      "difficulty": "very_hard",
+      "answer_type": "single",
+      "stem": "Find the remainder when 2^18 is divided by 12.",
+      "explanation": "Using modular arithmetic, 2^18 mod 12 = 4.",
+      "options": [
+        {
+          "label": "3",
+          "is_correct": false
+        },
+        {
+          "label": "5",
+          "is_correct": false
+        },
+        {
+          "label": "6",
+          "is_correct": false
+        },
+        {
+          "label": "4",
+          "is_correct": true
+        }
+      ]
+    },
+    {
+      "chapter": "Number System",
+      "kind": "standard",
+      "difficulty": "very_hard",
+      "answer_type": "single",
+      "stem": "Find the unit (last) digit of 6^20 + 9^21.",
+      "explanation": "Last digit of 6^20 is 6 and of 9^21 is 9; their sum ends in 5.",
+      "options": [
+        {
+          "label": "6",
+          "is_correct": false
+        },
+        {
+          "label": "7",
+          "is_correct": false
+        },
+        {
+          "label": "4",
+          "is_correct": false
+        },
+        {
+          "label": "5",
+          "is_correct": true
+        }
+      ]
+    },
+    {
+      "chapter": "Number System",
+      "kind": "standard",
+      "difficulty": "very_hard",
+      "answer_type": "single",
+      "stem": "Find the unit (last) digit of 4^17 + 2^29.",
+      "explanation": "Last digit of 4^17 is 4 and of 2^29 is 2; their sum ends in 6.",
+      "options": [
+        {
+          "label": "7",
+          "is_correct": false
+        },
+        {
+          "label": "6",
+          "is_correct": true
+        },
+        {
+          "label": "8",
+          "is_correct": false
+        },
+        {
+          "label": "5",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Number System",
+      "kind": "standard",
+      "difficulty": "very_hard",
+      "answer_type": "single",
+      "stem": "Find the remainder when 4^29 is divided by 13.",
+      "explanation": "Using modular arithmetic, 4^29 mod 13 = 10.",
+      "options": [
+        {
+          "label": "12",
+          "is_correct": false
+        },
+        {
+          "label": "9",
+          "is_correct": false
+        },
+        {
+          "label": "10",
+          "is_correct": true
+        },
+        {
+          "label": "11",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Number System",
+      "kind": "standard",
+      "difficulty": "very_hard",
+      "answer_type": "single",
+      "stem": "Find the unit (last) digit of 2^13 + 8^6.",
+      "explanation": "Last digit of 2^13 is 2 and of 8^6 is 4; their sum ends in 6.",
+      "options": [
+        {
+          "label": "5",
+          "is_correct": false
+        },
+        {
+          "label": "6",
+          "is_correct": true
+        },
+        {
+          "label": "8",
+          "is_correct": false
+        },
+        {
+          "label": "7",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Number System",
+      "kind": "standard",
+      "difficulty": "very_hard",
+      "answer_type": "single",
+      "stem": "Find the remainder when 6^31 is divided by 14.",
+      "explanation": "Using modular arithmetic, 6^31 mod 14 = 6.",
+      "options": [
+        {
+          "label": "7",
+          "is_correct": false
+        },
+        {
+          "label": "6",
+          "is_correct": true
+        },
+        {
+          "label": "8",
+          "is_correct": false
+        },
+        {
+          "label": "5",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Number System",
+      "kind": "standard",
+      "difficulty": "very_hard",
+      "answer_type": "single",
+      "stem": "Find the unit (last) digit of 7^23 + 2^30.",
+      "explanation": "Last digit of 7^23 is 3 and of 2^30 is 4; their sum ends in 7.",
+      "options": [
+        {
+          "label": "9",
+          "is_correct": false
+        },
+        {
+          "label": "8",
+          "is_correct": false
+        },
+        {
+          "label": "7",
+          "is_correct": true
+        },
+        {
+          "label": "6",
+          "is_correct": false
+        }
+      ]
+    }
+  ]
+}

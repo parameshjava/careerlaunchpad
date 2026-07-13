@@ -1,0 +1,5205 @@
+{
+  "subject": "Arithmetic",
+  "questions": [
+    {
+      "chapter": "Time and Work",
+      "kind": "standard",
+      "difficulty": "easy",
+      "answer_type": "single",
+      "stem": "A is 2 times as efficient as B. If B alone can finish a work in 22 days, in how many days can A finish it alone?",
+      "explanation": "A works 2 times as fast, so A takes 22/2 = 11 days.",
+      "options": [
+        {
+          "label": "10 days",
+          "is_correct": false
+        },
+        {
+          "label": "11 days",
+          "is_correct": true
+        },
+        {
+          "label": "12 days",
+          "is_correct": false
+        },
+        {
+          "label": "13 days",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Time and Work",
+      "kind": "standard",
+      "difficulty": "easy",
+      "answer_type": "single",
+      "stem": "A can do a piece of work in 10 days and B in 10 days. Working together, in how many days will they complete it?",
+      "explanation": "Together's one-day work = 1/10 + 1/10, so the time taken = 5 days.",
+      "options": [
+        {
+          "label": "7 days",
+          "is_correct": false
+        },
+        {
+          "label": "6 days",
+          "is_correct": false
+        },
+        {
+          "label": "4 days",
+          "is_correct": false
+        },
+        {
+          "label": "5 days",
+          "is_correct": true
+        }
+      ]
+    },
+    {
+      "chapter": "Time and Work",
+      "kind": "standard",
+      "difficulty": "easy",
+      "answer_type": "single",
+      "stem": "A can do a piece of work in 20 days and B in 30 days. Working together, in how many days will they complete it?",
+      "explanation": "Together's one-day work = 1/20 + 1/30, so the time taken = 12 days.",
+      "options": [
+        {
+          "label": "13 days",
+          "is_correct": false
+        },
+        {
+          "label": "14 days",
+          "is_correct": false
+        },
+        {
+          "label": "11 days",
+          "is_correct": false
+        },
+        {
+          "label": "12 days",
+          "is_correct": true
+        }
+      ]
+    },
+    {
+      "chapter": "Time and Work",
+      "kind": "standard",
+      "difficulty": "easy",
+      "answer_type": "single",
+      "stem": "A is 3 times as efficient as B. If B alone can finish a work in 36 days, in how many days can A finish it alone?",
+      "explanation": "A works 3 times as fast, so A takes 36/3 = 12 days.",
+      "options": [
+        {
+          "label": "11 days",
+          "is_correct": false
+        },
+        {
+          "label": "13 days",
+          "is_correct": false
+        },
+        {
+          "label": "12 days",
+          "is_correct": true
+        },
+        {
+          "label": "14 days",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Time and Work",
+      "kind": "standard",
+      "difficulty": "easy",
+      "answer_type": "single",
+      "stem": "A can do a piece of work in 30 days and B in 20 days. Working together, in how many days will they complete it?",
+      "explanation": "Together's one-day work = 1/30 + 1/20, so the time taken = 12 days.",
+      "options": [
+        {
+          "label": "12 days",
+          "is_correct": true
+        },
+        {
+          "label": "11 days",
+          "is_correct": false
+        },
+        {
+          "label": "14 days",
+          "is_correct": false
+        },
+        {
+          "label": "13 days",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Time and Work",
+      "kind": "standard",
+      "difficulty": "easy",
+      "answer_type": "single",
+      "stem": "A is 2 times as efficient as B. If B alone can finish a work in 6 days, in how many days can A finish it alone?",
+      "explanation": "A works 2 times as fast, so A takes 6/2 = 3 days.",
+      "options": [
+        {
+          "label": "4 days",
+          "is_correct": false
+        },
+        {
+          "label": "3 days",
+          "is_correct": true
+        },
+        {
+          "label": "2 days",
+          "is_correct": false
+        },
+        {
+          "label": "5 days",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Time and Work",
+      "kind": "standard",
+      "difficulty": "easy",
+      "answer_type": "single",
+      "stem": "A can do a piece of work in 12 days and B in 24 days. Working together, in how many days will they complete it?",
+      "explanation": "Together's one-day work = 1/12 + 1/24, so the time taken = 8 days.",
+      "options": [
+        {
+          "label": "7 days",
+          "is_correct": false
+        },
+        {
+          "label": "9 days",
+          "is_correct": false
+        },
+        {
+          "label": "10 days",
+          "is_correct": false
+        },
+        {
+          "label": "8 days",
+          "is_correct": true
+        }
+      ]
+    },
+    {
+      "chapter": "Time and Work",
+      "kind": "standard",
+      "difficulty": "easy",
+      "answer_type": "single",
+      "stem": "A is 3 times as efficient as B. If B alone can finish a work in 27 days, in how many days can A finish it alone?",
+      "explanation": "A works 3 times as fast, so A takes 27/3 = 9 days.",
+      "options": [
+        {
+          "label": "9 days",
+          "is_correct": true
+        },
+        {
+          "label": "8 days",
+          "is_correct": false
+        },
+        {
+          "label": "11 days",
+          "is_correct": false
+        },
+        {
+          "label": "10 days",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Time and Work",
+      "kind": "standard",
+      "difficulty": "easy",
+      "answer_type": "single",
+      "stem": "A is 2 times as efficient as B. If B alone can finish a work in 24 days, in how many days can A finish it alone?",
+      "explanation": "A works 2 times as fast, so A takes 24/2 = 12 days.",
+      "options": [
+        {
+          "label": "12 days",
+          "is_correct": true
+        },
+        {
+          "label": "14 days",
+          "is_correct": false
+        },
+        {
+          "label": "13 days",
+          "is_correct": false
+        },
+        {
+          "label": "11 days",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Time and Work",
+      "kind": "standard",
+      "difficulty": "easy",
+      "answer_type": "single",
+      "stem": "A can do a piece of work in 9 days and B in 18 days. Working together, in how many days will they complete it?",
+      "explanation": "Together's one-day work = 1/9 + 1/18, so the time taken = 6 days.",
+      "options": [
+        {
+          "label": "7 days",
+          "is_correct": false
+        },
+        {
+          "label": "5 days",
+          "is_correct": false
+        },
+        {
+          "label": "8 days",
+          "is_correct": false
+        },
+        {
+          "label": "6 days",
+          "is_correct": true
+        }
+      ]
+    },
+    {
+      "chapter": "Time and Work",
+      "kind": "standard",
+      "difficulty": "easy",
+      "answer_type": "single",
+      "stem": "A can do a piece of work in 40 days and B in 10 days. Working together, in how many days will they complete it?",
+      "explanation": "Together's one-day work = 1/40 + 1/10, so the time taken = 8 days.",
+      "options": [
+        {
+          "label": "8 days",
+          "is_correct": true
+        },
+        {
+          "label": "9 days",
+          "is_correct": false
+        },
+        {
+          "label": "7 days",
+          "is_correct": false
+        },
+        {
+          "label": "10 days",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Time and Work",
+      "kind": "standard",
+      "difficulty": "easy",
+      "answer_type": "single",
+      "stem": "A man can complete a job in 14 days working 10 hours a day. Working 4 hours a day, in how many days will he finish the same job?",
+      "explanation": "Total hours = 14×10 = 140; days at 4 h/day = 140/4 = 35.",
+      "options": [
+        {
+          "label": "37 days",
+          "is_correct": false
+        },
+        {
+          "label": "36 days",
+          "is_correct": false
+        },
+        {
+          "label": "35 days",
+          "is_correct": true
+        },
+        {
+          "label": "34 days",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Time and Work",
+      "kind": "standard",
+      "difficulty": "easy",
+      "answer_type": "single",
+      "stem": "A is 3 times as efficient as B. If B alone can finish a work in 15 days, in how many days can A finish it alone?",
+      "explanation": "A works 3 times as fast, so A takes 15/3 = 5 days.",
+      "options": [
+        {
+          "label": "5 days",
+          "is_correct": true
+        },
+        {
+          "label": "4 days",
+          "is_correct": false
+        },
+        {
+          "label": "7 days",
+          "is_correct": false
+        },
+        {
+          "label": "6 days",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Time and Work",
+      "kind": "standard",
+      "difficulty": "easy",
+      "answer_type": "single",
+      "stem": "A man can complete a job in 2 days working 9 hours a day. Working 6 hours a day, in how many days will he finish the same job?",
+      "explanation": "Total hours = 2×9 = 18; days at 6 h/day = 18/6 = 3.",
+      "options": [
+        {
+          "label": "2 days",
+          "is_correct": false
+        },
+        {
+          "label": "4 days",
+          "is_correct": false
+        },
+        {
+          "label": "3 days",
+          "is_correct": true
+        },
+        {
+          "label": "5 days",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Time and Work",
+      "kind": "standard",
+      "difficulty": "easy",
+      "answer_type": "single",
+      "stem": "A can do a piece of work in 30 days and B in 45 days. Working together, in how many days will they complete it?",
+      "explanation": "Together's one-day work = 1/30 + 1/45, so the time taken = 18 days.",
+      "options": [
+        {
+          "label": "18 days",
+          "is_correct": true
+        },
+        {
+          "label": "17 days",
+          "is_correct": false
+        },
+        {
+          "label": "20 days",
+          "is_correct": false
+        },
+        {
+          "label": "19 days",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Time and Work",
+      "kind": "standard",
+      "difficulty": "easy",
+      "answer_type": "single",
+      "stem": "A man can complete a job in 3 days working 12 hours a day. Working 12 hours a day, in how many days will he finish the same job?",
+      "explanation": "Total hours = 3×12 = 36; days at 12 h/day = 36/12 = 3.",
+      "options": [
+        {
+          "label": "4 days",
+          "is_correct": false
+        },
+        {
+          "label": "5 days",
+          "is_correct": false
+        },
+        {
+          "label": "2 days",
+          "is_correct": false
+        },
+        {
+          "label": "3 days",
+          "is_correct": true
+        }
+      ]
+    },
+    {
+      "chapter": "Time and Work",
+      "kind": "standard",
+      "difficulty": "easy",
+      "answer_type": "single",
+      "stem": "A is 2 times as efficient as B. If B alone can finish a work in 10 days, in how many days can A finish it alone?",
+      "explanation": "A works 2 times as fast, so A takes 10/2 = 5 days.",
+      "options": [
+        {
+          "label": "6 days",
+          "is_correct": false
+        },
+        {
+          "label": "7 days",
+          "is_correct": false
+        },
+        {
+          "label": "4 days",
+          "is_correct": false
+        },
+        {
+          "label": "5 days",
+          "is_correct": true
+        }
+      ]
+    },
+    {
+      "chapter": "Time and Work",
+      "kind": "standard",
+      "difficulty": "easy",
+      "answer_type": "single",
+      "stem": "A is 3 times as efficient as B. If B alone can finish a work in 24 days, in how many days can A finish it alone?",
+      "explanation": "A works 3 times as fast, so A takes 24/3 = 8 days.",
+      "options": [
+        {
+          "label": "8 days",
+          "is_correct": true
+        },
+        {
+          "label": "7 days",
+          "is_correct": false
+        },
+        {
+          "label": "10 days",
+          "is_correct": false
+        },
+        {
+          "label": "9 days",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Time and Work",
+      "kind": "standard",
+      "difficulty": "easy",
+      "answer_type": "single",
+      "stem": "A man can complete a job in 3 days working 4 hours a day. Working 4 hours a day, in how many days will he finish the same job?",
+      "explanation": "Total hours = 3×4 = 12; days at 4 h/day = 12/4 = 3.",
+      "options": [
+        {
+          "label": "5 days",
+          "is_correct": false
+        },
+        {
+          "label": "2 days",
+          "is_correct": false
+        },
+        {
+          "label": "4 days",
+          "is_correct": false
+        },
+        {
+          "label": "3 days",
+          "is_correct": true
+        }
+      ]
+    },
+    {
+      "chapter": "Time and Work",
+      "kind": "standard",
+      "difficulty": "easy",
+      "answer_type": "single",
+      "stem": "A can do a piece of work in 10 days and B in 15 days. Working together, in how many days will they complete it?",
+      "explanation": "Together's one-day work = 1/10 + 1/15, so the time taken = 6 days.",
+      "options": [
+        {
+          "label": "8 days",
+          "is_correct": false
+        },
+        {
+          "label": "7 days",
+          "is_correct": false
+        },
+        {
+          "label": "6 days",
+          "is_correct": true
+        },
+        {
+          "label": "5 days",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Time and Work",
+      "kind": "standard",
+      "difficulty": "easy",
+      "answer_type": "single",
+      "stem": "A can do a piece of work in 12 days and B in 4 days. Working together, in how many days will they complete it?",
+      "explanation": "Together's one-day work = 1/12 + 1/4, so the time taken = 3 days.",
+      "options": [
+        {
+          "label": "4 days",
+          "is_correct": false
+        },
+        {
+          "label": "3 days",
+          "is_correct": true
+        },
+        {
+          "label": "5 days",
+          "is_correct": false
+        },
+        {
+          "label": "2 days",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Time and Work",
+      "kind": "standard",
+      "difficulty": "easy",
+      "answer_type": "single",
+      "stem": "A man can complete a job in 3 days working 5 hours a day. Working 5 hours a day, in how many days will he finish the same job?",
+      "explanation": "Total hours = 3×5 = 15; days at 5 h/day = 15/5 = 3.",
+      "options": [
+        {
+          "label": "2 days",
+          "is_correct": false
+        },
+        {
+          "label": "4 days",
+          "is_correct": false
+        },
+        {
+          "label": "5 days",
+          "is_correct": false
+        },
+        {
+          "label": "3 days",
+          "is_correct": true
+        }
+      ]
+    },
+    {
+      "chapter": "Time and Work",
+      "kind": "standard",
+      "difficulty": "easy",
+      "answer_type": "single",
+      "stem": "A is 2 times as efficient as B. If B alone can finish a work in 20 days, in how many days can A finish it alone?",
+      "explanation": "A works 2 times as fast, so A takes 20/2 = 10 days.",
+      "options": [
+        {
+          "label": "10 days",
+          "is_correct": true
+        },
+        {
+          "label": "9 days",
+          "is_correct": false
+        },
+        {
+          "label": "12 days",
+          "is_correct": false
+        },
+        {
+          "label": "11 days",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Time and Work",
+      "kind": "standard",
+      "difficulty": "easy",
+      "answer_type": "single",
+      "stem": "A is 2 times as efficient as B. If B alone can finish a work in 18 days, in how many days can A finish it alone?",
+      "explanation": "A works 2 times as fast, so A takes 18/2 = 9 days.",
+      "options": [
+        {
+          "label": "11 days",
+          "is_correct": false
+        },
+        {
+          "label": "8 days",
+          "is_correct": false
+        },
+        {
+          "label": "10 days",
+          "is_correct": false
+        },
+        {
+          "label": "9 days",
+          "is_correct": true
+        }
+      ]
+    },
+    {
+      "chapter": "Time and Work",
+      "kind": "standard",
+      "difficulty": "easy",
+      "answer_type": "single",
+      "stem": "A is 2 times as efficient as B. If B alone can finish a work in 12 days, in how many days can A finish it alone?",
+      "explanation": "A works 2 times as fast, so A takes 12/2 = 6 days.",
+      "options": [
+        {
+          "label": "5 days",
+          "is_correct": false
+        },
+        {
+          "label": "6 days",
+          "is_correct": true
+        },
+        {
+          "label": "8 days",
+          "is_correct": false
+        },
+        {
+          "label": "7 days",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Time and Work",
+      "kind": "standard",
+      "difficulty": "easy",
+      "answer_type": "single",
+      "stem": "A can do a piece of work in 8 days and B in 8 days. Working together, in how many days will they complete it?",
+      "explanation": "Together's one-day work = 1/8 + 1/8, so the time taken = 4 days.",
+      "options": [
+        {
+          "label": "3 days",
+          "is_correct": false
+        },
+        {
+          "label": "5 days",
+          "is_correct": false
+        },
+        {
+          "label": "6 days",
+          "is_correct": false
+        },
+        {
+          "label": "4 days",
+          "is_correct": true
+        }
+      ]
+    },
+    {
+      "chapter": "Time and Work",
+      "kind": "standard",
+      "difficulty": "easy",
+      "answer_type": "single",
+      "stem": "A man can complete a job in 12 days working 10 hours a day. Working 6 hours a day, in how many days will he finish the same job?",
+      "explanation": "Total hours = 12×10 = 120; days at 6 h/day = 120/6 = 20.",
+      "options": [
+        {
+          "label": "20 days",
+          "is_correct": true
+        },
+        {
+          "label": "19 days",
+          "is_correct": false
+        },
+        {
+          "label": "22 days",
+          "is_correct": false
+        },
+        {
+          "label": "21 days",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Time and Work",
+      "kind": "standard",
+      "difficulty": "easy",
+      "answer_type": "single",
+      "stem": "A can do a piece of work in 36 days and B in 12 days. Working together, in how many days will they complete it?",
+      "explanation": "Together's one-day work = 1/36 + 1/12, so the time taken = 9 days.",
+      "options": [
+        {
+          "label": "9 days",
+          "is_correct": true
+        },
+        {
+          "label": "11 days",
+          "is_correct": false
+        },
+        {
+          "label": "10 days",
+          "is_correct": false
+        },
+        {
+          "label": "8 days",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Time and Work",
+      "kind": "standard",
+      "difficulty": "easy",
+      "answer_type": "single",
+      "stem": "A man can complete a job in 5 days working 6 hours a day. Working 6 hours a day, in how many days will he finish the same job?",
+      "explanation": "Total hours = 5×6 = 30; days at 6 h/day = 30/6 = 5.",
+      "options": [
+        {
+          "label": "7 days",
+          "is_correct": false
+        },
+        {
+          "label": "4 days",
+          "is_correct": false
+        },
+        {
+          "label": "6 days",
+          "is_correct": false
+        },
+        {
+          "label": "5 days",
+          "is_correct": true
+        }
+      ]
+    },
+    {
+      "chapter": "Time and Work",
+      "kind": "standard",
+      "difficulty": "easy",
+      "answer_type": "single",
+      "stem": "A man can complete a job in 12 days working 10 hours a day. Working 5 hours a day, in how many days will he finish the same job?",
+      "explanation": "Total hours = 12×10 = 120; days at 5 h/day = 120/5 = 24.",
+      "options": [
+        {
+          "label": "24 days",
+          "is_correct": true
+        },
+        {
+          "label": "25 days",
+          "is_correct": false
+        },
+        {
+          "label": "23 days",
+          "is_correct": false
+        },
+        {
+          "label": "26 days",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Time and Work",
+      "kind": "standard",
+      "difficulty": "easy",
+      "answer_type": "single",
+      "stem": "A man can complete a job in 8 days working 12 hours a day. Working 12 hours a day, in how many days will he finish the same job?",
+      "explanation": "Total hours = 8×12 = 96; days at 12 h/day = 96/12 = 8.",
+      "options": [
+        {
+          "label": "9 days",
+          "is_correct": false
+        },
+        {
+          "label": "7 days",
+          "is_correct": false
+        },
+        {
+          "label": "8 days",
+          "is_correct": true
+        },
+        {
+          "label": "10 days",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Time and Work",
+      "kind": "standard",
+      "difficulty": "easy",
+      "answer_type": "single",
+      "stem": "A is 3 times as efficient as B. If B alone can finish a work in 30 days, in how many days can A finish it alone?",
+      "explanation": "A works 3 times as fast, so A takes 30/3 = 10 days.",
+      "options": [
+        {
+          "label": "11 days",
+          "is_correct": false
+        },
+        {
+          "label": "12 days",
+          "is_correct": false
+        },
+        {
+          "label": "9 days",
+          "is_correct": false
+        },
+        {
+          "label": "10 days",
+          "is_correct": true
+        }
+      ]
+    },
+    {
+      "chapter": "Time and Work",
+      "kind": "standard",
+      "difficulty": "easy",
+      "answer_type": "single",
+      "stem": "A can do a piece of work in 6 days and B in 3 days. Working together, in how many days will they complete it?",
+      "explanation": "Together's one-day work = 1/6 + 1/3, so the time taken = 2 days.",
+      "options": [
+        {
+          "label": "2 days",
+          "is_correct": true
+        },
+        {
+          "label": "3 days",
+          "is_correct": false
+        },
+        {
+          "label": "1 days",
+          "is_correct": false
+        },
+        {
+          "label": "4 days",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Time and Work",
+      "kind": "standard",
+      "difficulty": "easy",
+      "answer_type": "single",
+      "stem": "A can do a piece of work in 12 days and B in 6 days. Working together, in how many days will they complete it?",
+      "explanation": "Together's one-day work = 1/12 + 1/6, so the time taken = 4 days.",
+      "options": [
+        {
+          "label": "4 days",
+          "is_correct": true
+        },
+        {
+          "label": "3 days",
+          "is_correct": false
+        },
+        {
+          "label": "6 days",
+          "is_correct": false
+        },
+        {
+          "label": "5 days",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Time and Work",
+      "kind": "standard",
+      "difficulty": "easy",
+      "answer_type": "single",
+      "stem": "A is 3 times as efficient as B. If B alone can finish a work in 18 days, in how many days can A finish it alone?",
+      "explanation": "A works 3 times as fast, so A takes 18/3 = 6 days.",
+      "options": [
+        {
+          "label": "8 days",
+          "is_correct": false
+        },
+        {
+          "label": "7 days",
+          "is_correct": false
+        },
+        {
+          "label": "6 days",
+          "is_correct": true
+        },
+        {
+          "label": "5 days",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Time and Work",
+      "kind": "standard",
+      "difficulty": "easy",
+      "answer_type": "single",
+      "stem": "A man can complete a job in 7 days working 12 hours a day. Working 12 hours a day, in how many days will he finish the same job?",
+      "explanation": "Total hours = 7×12 = 84; days at 12 h/day = 84/12 = 7.",
+      "options": [
+        {
+          "label": "6 days",
+          "is_correct": false
+        },
+        {
+          "label": "8 days",
+          "is_correct": false
+        },
+        {
+          "label": "9 days",
+          "is_correct": false
+        },
+        {
+          "label": "7 days",
+          "is_correct": true
+        }
+      ]
+    },
+    {
+      "chapter": "Time and Work",
+      "kind": "standard",
+      "difficulty": "easy",
+      "answer_type": "single",
+      "stem": "A is 2 times as efficient as B. If B alone can finish a work in 8 days, in how many days can A finish it alone?",
+      "explanation": "A works 2 times as fast, so A takes 8/2 = 4 days.",
+      "options": [
+        {
+          "label": "4 days",
+          "is_correct": true
+        },
+        {
+          "label": "3 days",
+          "is_correct": false
+        },
+        {
+          "label": "5 days",
+          "is_correct": false
+        },
+        {
+          "label": "6 days",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Time and Work",
+      "kind": "standard",
+      "difficulty": "easy",
+      "answer_type": "single",
+      "stem": "A man can complete a job in 5 days working 12 hours a day. Working 10 hours a day, in how many days will he finish the same job?",
+      "explanation": "Total hours = 5×12 = 60; days at 10 h/day = 60/10 = 6.",
+      "options": [
+        {
+          "label": "5 days",
+          "is_correct": false
+        },
+        {
+          "label": "7 days",
+          "is_correct": false
+        },
+        {
+          "label": "6 days",
+          "is_correct": true
+        },
+        {
+          "label": "8 days",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Time and Work",
+      "kind": "standard",
+      "difficulty": "easy",
+      "answer_type": "single",
+      "stem": "A can do a piece of work in 20 days and B in 5 days. Working together, in how many days will they complete it?",
+      "explanation": "Together's one-day work = 1/20 + 1/5, so the time taken = 4 days.",
+      "options": [
+        {
+          "label": "6 days",
+          "is_correct": false
+        },
+        {
+          "label": "4 days",
+          "is_correct": true
+        },
+        {
+          "label": "3 days",
+          "is_correct": false
+        },
+        {
+          "label": "5 days",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Time and Work",
+      "kind": "standard",
+      "difficulty": "easy",
+      "answer_type": "single",
+      "stem": "A man can complete a job in 10 days working 12 hours a day. Working 5 hours a day, in how many days will he finish the same job?",
+      "explanation": "Total hours = 10×12 = 120; days at 5 h/day = 120/5 = 24.",
+      "options": [
+        {
+          "label": "23 days",
+          "is_correct": false
+        },
+        {
+          "label": "25 days",
+          "is_correct": false
+        },
+        {
+          "label": "26 days",
+          "is_correct": false
+        },
+        {
+          "label": "24 days",
+          "is_correct": true
+        }
+      ]
+    },
+    {
+      "chapter": "Time and Work",
+      "kind": "standard",
+      "difficulty": "easy",
+      "answer_type": "single",
+      "stem": "A man can complete a job in 6 days working 10 hours a day. Working 5 hours a day, in how many days will he finish the same job?",
+      "explanation": "Total hours = 6×10 = 60; days at 5 h/day = 60/5 = 12.",
+      "options": [
+        {
+          "label": "13 days",
+          "is_correct": false
+        },
+        {
+          "label": "14 days",
+          "is_correct": false
+        },
+        {
+          "label": "12 days",
+          "is_correct": true
+        },
+        {
+          "label": "11 days",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Time and Work",
+      "kind": "standard",
+      "difficulty": "easy",
+      "answer_type": "single",
+      "stem": "A man can complete a job in 8 days working 5 hours a day. Working 4 hours a day, in how many days will he finish the same job?",
+      "explanation": "Total hours = 8×5 = 40; days at 4 h/day = 40/4 = 10.",
+      "options": [
+        {
+          "label": "9 days",
+          "is_correct": false
+        },
+        {
+          "label": "11 days",
+          "is_correct": false
+        },
+        {
+          "label": "10 days",
+          "is_correct": true
+        },
+        {
+          "label": "12 days",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Time and Work",
+      "kind": "standard",
+      "difficulty": "easy",
+      "answer_type": "single",
+      "stem": "A is 2 times as efficient as B. If B alone can finish a work in 16 days, in how many days can A finish it alone?",
+      "explanation": "A works 2 times as fast, so A takes 16/2 = 8 days.",
+      "options": [
+        {
+          "label": "8 days",
+          "is_correct": true
+        },
+        {
+          "label": "7 days",
+          "is_correct": false
+        },
+        {
+          "label": "9 days",
+          "is_correct": false
+        },
+        {
+          "label": "10 days",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Time and Work",
+      "kind": "standard",
+      "difficulty": "easy",
+      "answer_type": "single",
+      "stem": "A is 3 times as efficient as B. If B alone can finish a work in 12 days, in how many days can A finish it alone?",
+      "explanation": "A works 3 times as fast, so A takes 12/3 = 4 days.",
+      "options": [
+        {
+          "label": "4 days",
+          "is_correct": true
+        },
+        {
+          "label": "3 days",
+          "is_correct": false
+        },
+        {
+          "label": "5 days",
+          "is_correct": false
+        },
+        {
+          "label": "6 days",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Time and Work",
+      "kind": "standard",
+      "difficulty": "easy",
+      "answer_type": "single",
+      "stem": "A can do a piece of work in 15 days and B in 10 days. Working together, in how many days will they complete it?",
+      "explanation": "Together's one-day work = 1/15 + 1/10, so the time taken = 6 days.",
+      "options": [
+        {
+          "label": "7 days",
+          "is_correct": false
+        },
+        {
+          "label": "8 days",
+          "is_correct": false
+        },
+        {
+          "label": "6 days",
+          "is_correct": true
+        },
+        {
+          "label": "5 days",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Time and Work",
+      "kind": "standard",
+      "difficulty": "easy",
+      "answer_type": "single",
+      "stem": "A can do a piece of work in 20 days and B in 80 days. Working together, in how many days will they complete it?",
+      "explanation": "Together's one-day work = 1/20 + 1/80, so the time taken = 16 days.",
+      "options": [
+        {
+          "label": "18 days",
+          "is_correct": false
+        },
+        {
+          "label": "15 days",
+          "is_correct": false
+        },
+        {
+          "label": "16 days",
+          "is_correct": true
+        },
+        {
+          "label": "17 days",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Time and Work",
+      "kind": "standard",
+      "difficulty": "easy",
+      "answer_type": "single",
+      "stem": "A man can complete a job in 14 days working 5 hours a day. Working 5 hours a day, in how many days will he finish the same job?",
+      "explanation": "Total hours = 14×5 = 70; days at 5 h/day = 70/5 = 14.",
+      "options": [
+        {
+          "label": "15 days",
+          "is_correct": false
+        },
+        {
+          "label": "13 days",
+          "is_correct": false
+        },
+        {
+          "label": "16 days",
+          "is_correct": false
+        },
+        {
+          "label": "14 days",
+          "is_correct": true
+        }
+      ]
+    },
+    {
+      "chapter": "Time and Work",
+      "kind": "standard",
+      "difficulty": "easy",
+      "answer_type": "single",
+      "stem": "A can do a piece of work in 18 days and B in 9 days. Working together, in how many days will they complete it?",
+      "explanation": "Together's one-day work = 1/18 + 1/9, so the time taken = 6 days.",
+      "options": [
+        {
+          "label": "6 days",
+          "is_correct": true
+        },
+        {
+          "label": "5 days",
+          "is_correct": false
+        },
+        {
+          "label": "7 days",
+          "is_correct": false
+        },
+        {
+          "label": "8 days",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Time and Work",
+      "kind": "standard",
+      "difficulty": "easy",
+      "answer_type": "single",
+      "stem": "A man can complete a job in 10 days working 4 hours a day. Working 10 hours a day, in how many days will he finish the same job?",
+      "explanation": "Total hours = 10×4 = 40; days at 10 h/day = 40/10 = 4.",
+      "options": [
+        {
+          "label": "6 days",
+          "is_correct": false
+        },
+        {
+          "label": "3 days",
+          "is_correct": false
+        },
+        {
+          "label": "4 days",
+          "is_correct": true
+        },
+        {
+          "label": "5 days",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Time and Work",
+      "kind": "standard",
+      "difficulty": "easy",
+      "answer_type": "single",
+      "stem": "A man can complete a job in 8 days working 11 hours a day. Working 8 hours a day, in how many days will he finish the same job?",
+      "explanation": "Total hours = 8×11 = 88; days at 8 h/day = 88/8 = 11.",
+      "options": [
+        {
+          "label": "11 days",
+          "is_correct": true
+        },
+        {
+          "label": "13 days",
+          "is_correct": false
+        },
+        {
+          "label": "10 days",
+          "is_correct": false
+        },
+        {
+          "label": "12 days",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Time and Work",
+      "kind": "standard",
+      "difficulty": "medium",
+      "answer_type": "single",
+      "stem": "A can do a work in 9 days and B in 6 days. They complete it together for a total payment of ₹510. Find A's share of the payment.",
+      "explanation": "Payment is shared in the ratio of work done = 1/9 : 1/6 = 6:9; A's share = ₹510 × 6/15 = ₹204.",
+      "options": [
+        {
+          "label": "₹204",
+          "is_correct": true
+        },
+        {
+          "label": "₹212",
+          "is_correct": false
+        },
+        {
+          "label": "₹196",
+          "is_correct": false
+        },
+        {
+          "label": "₹220",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Time and Work",
+      "kind": "standard",
+      "difficulty": "medium",
+      "answer_type": "single",
+      "stem": "A and B together can finish a work in 16 days. A alone can finish it in 20 days. In how many days can B alone finish it?",
+      "explanation": "B's one-day work = 1/16 − 1/20, so B alone takes 80 days.",
+      "options": [
+        {
+          "label": "84 days",
+          "is_correct": false
+        },
+        {
+          "label": "82 days",
+          "is_correct": false
+        },
+        {
+          "label": "80 days",
+          "is_correct": true
+        },
+        {
+          "label": "78 days",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Time and Work",
+      "kind": "standard",
+      "difficulty": "medium",
+      "answer_type": "single",
+      "stem": "A can do a work in 19 days and B in 11 days. They complete it together for a total payment of ₹150. Find A's share of the payment.",
+      "explanation": "Payment is shared in the ratio of work done = 1/19 : 1/11 = 11:19; A's share = ₹150 × 11/30 = ₹55.",
+      "options": [
+        {
+          "label": "₹59",
+          "is_correct": false
+        },
+        {
+          "label": "₹57",
+          "is_correct": false
+        },
+        {
+          "label": "₹55",
+          "is_correct": true
+        },
+        {
+          "label": "₹53",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Time and Work",
+      "kind": "standard",
+      "difficulty": "medium",
+      "answer_type": "single",
+      "stem": "A can do a work in 9 days and B in 14 days. They complete it together for a total payment of ₹460. Find A's share of the payment.",
+      "explanation": "Payment is shared in the ratio of work done = 1/9 : 1/14 = 14:9; A's share = ₹460 × 14/23 = ₹280.",
+      "options": [
+        {
+          "label": "₹280",
+          "is_correct": true
+        },
+        {
+          "label": "₹269",
+          "is_correct": false
+        },
+        {
+          "label": "₹291",
+          "is_correct": false
+        },
+        {
+          "label": "₹302",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Time and Work",
+      "kind": "standard",
+      "difficulty": "medium",
+      "answer_type": "single",
+      "stem": "A and B together can finish a work in 6 days. A alone can finish it in 18 days. In how many days can B alone finish it?",
+      "explanation": "B's one-day work = 1/6 − 1/18, so B alone takes 9 days.",
+      "options": [
+        {
+          "label": "8 days",
+          "is_correct": false
+        },
+        {
+          "label": "10 days",
+          "is_correct": false
+        },
+        {
+          "label": "11 days",
+          "is_correct": false
+        },
+        {
+          "label": "9 days",
+          "is_correct": true
+        }
+      ]
+    },
+    {
+      "chapter": "Time and Work",
+      "kind": "standard",
+      "difficulty": "medium",
+      "answer_type": "single",
+      "stem": "A can do a work in 16 days and B in 17 days. They complete it together for a total payment of ₹165. Find A's share of the payment.",
+      "explanation": "Payment is shared in the ratio of work done = 1/16 : 1/17 = 17:16; A's share = ₹165 × 17/33 = ₹85.",
+      "options": [
+        {
+          "label": "₹89",
+          "is_correct": false
+        },
+        {
+          "label": "₹83",
+          "is_correct": false
+        },
+        {
+          "label": "₹87",
+          "is_correct": false
+        },
+        {
+          "label": "₹85",
+          "is_correct": true
+        }
+      ]
+    },
+    {
+      "chapter": "Time and Work",
+      "kind": "standard",
+      "difficulty": "medium",
+      "answer_type": "single",
+      "stem": "A and B together can finish a work in 2 days. A alone can finish it in 6 days. In how many days can B alone finish it?",
+      "explanation": "B's one-day work = 1/2 − 1/6, so B alone takes 3 days.",
+      "options": [
+        {
+          "label": "5 days",
+          "is_correct": false
+        },
+        {
+          "label": "3 days",
+          "is_correct": true
+        },
+        {
+          "label": "4 days",
+          "is_correct": false
+        },
+        {
+          "label": "2 days",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Time and Work",
+      "kind": "standard",
+      "difficulty": "medium",
+      "answer_type": "single",
+      "stem": "A can do a work in 9 days and B in 18 days. They complete it together for a total payment of ₹972. Find A's share of the payment.",
+      "explanation": "Payment is shared in the ratio of work done = 1/9 : 1/18 = 18:9; A's share = ₹972 × 18/27 = ₹648.",
+      "options": [
+        {
+          "label": "₹622",
+          "is_correct": false
+        },
+        {
+          "label": "₹648",
+          "is_correct": true
+        },
+        {
+          "label": "₹700",
+          "is_correct": false
+        },
+        {
+          "label": "₹674",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Time and Work",
+      "kind": "standard",
+      "difficulty": "medium",
+      "answer_type": "single",
+      "stem": "A can do a work in 20 days and B in 8 days. They complete it together for a total payment of ₹700. Find A's share of the payment.",
+      "explanation": "Payment is shared in the ratio of work done = 1/20 : 1/8 = 8:20; A's share = ₹700 × 8/28 = ₹200.",
+      "options": [
+        {
+          "label": "₹192",
+          "is_correct": false
+        },
+        {
+          "label": "₹208",
+          "is_correct": false
+        },
+        {
+          "label": "₹216",
+          "is_correct": false
+        },
+        {
+          "label": "₹200",
+          "is_correct": true
+        }
+      ]
+    },
+    {
+      "chapter": "Time and Work",
+      "kind": "standard",
+      "difficulty": "medium",
+      "answer_type": "single",
+      "stem": "A and B together can finish a work in 10 days. A alone can finish it in 14 days. In how many days can B alone finish it?",
+      "explanation": "B's one-day work = 1/10 − 1/14, so B alone takes 35 days.",
+      "options": [
+        {
+          "label": "34 days",
+          "is_correct": false
+        },
+        {
+          "label": "37 days",
+          "is_correct": false
+        },
+        {
+          "label": "35 days",
+          "is_correct": true
+        },
+        {
+          "label": "36 days",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Time and Work",
+      "kind": "standard",
+      "difficulty": "medium",
+      "answer_type": "single",
+      "stem": "A and B together can finish a work in 4 days. A alone can finish it in 20 days. In how many days can B alone finish it?",
+      "explanation": "B's one-day work = 1/4 − 1/20, so B alone takes 5 days.",
+      "options": [
+        {
+          "label": "4 days",
+          "is_correct": false
+        },
+        {
+          "label": "7 days",
+          "is_correct": false
+        },
+        {
+          "label": "6 days",
+          "is_correct": false
+        },
+        {
+          "label": "5 days",
+          "is_correct": true
+        }
+      ]
+    },
+    {
+      "chapter": "Time and Work",
+      "kind": "standard",
+      "difficulty": "medium",
+      "answer_type": "single",
+      "stem": "A and B together can finish a work in 9 days. A alone can finish it in 36 days. In how many days can B alone finish it?",
+      "explanation": "B's one-day work = 1/9 − 1/36, so B alone takes 12 days.",
+      "options": [
+        {
+          "label": "13 days",
+          "is_correct": false
+        },
+        {
+          "label": "12 days",
+          "is_correct": true
+        },
+        {
+          "label": "14 days",
+          "is_correct": false
+        },
+        {
+          "label": "11 days",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Time and Work",
+      "kind": "standard",
+      "difficulty": "medium",
+      "answer_type": "single",
+      "stem": "A can do a work in 19 days and B in 18 days. They complete it together for a total payment of ₹1184. Find A's share of the payment.",
+      "explanation": "Payment is shared in the ratio of work done = 1/19 : 1/18 = 18:19; A's share = ₹1184 × 18/37 = ₹576.",
+      "options": [
+        {
+          "label": "₹576",
+          "is_correct": true
+        },
+        {
+          "label": "₹553",
+          "is_correct": false
+        },
+        {
+          "label": "₹599",
+          "is_correct": false
+        },
+        {
+          "label": "₹622",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Time and Work",
+      "kind": "standard",
+      "difficulty": "medium",
+      "answer_type": "single",
+      "stem": "A can do a work in 6 days and B in 16 days. They complete it together for a total payment of ₹528. Find A's share of the payment.",
+      "explanation": "Payment is shared in the ratio of work done = 1/6 : 1/16 = 16:6; A's share = ₹528 × 16/22 = ₹384.",
+      "options": [
+        {
+          "label": "₹384",
+          "is_correct": true
+        },
+        {
+          "label": "₹369",
+          "is_correct": false
+        },
+        {
+          "label": "₹414",
+          "is_correct": false
+        },
+        {
+          "label": "₹399",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Time and Work",
+      "kind": "standard",
+      "difficulty": "medium",
+      "answer_type": "single",
+      "stem": "A can do a work in 13 days and B in 5 days. They complete it together for a total payment of ₹450. Find A's share of the payment.",
+      "explanation": "Payment is shared in the ratio of work done = 1/13 : 1/5 = 5:13; A's share = ₹450 × 5/18 = ₹125.",
+      "options": [
+        {
+          "label": "₹127",
+          "is_correct": false
+        },
+        {
+          "label": "₹129",
+          "is_correct": false
+        },
+        {
+          "label": "₹123",
+          "is_correct": false
+        },
+        {
+          "label": "₹125",
+          "is_correct": true
+        }
+      ]
+    },
+    {
+      "chapter": "Time and Work",
+      "kind": "standard",
+      "difficulty": "medium",
+      "answer_type": "single",
+      "stem": "A can do a work in 8 days and B in 4 days. They complete it together for a total payment of ₹96. Find A's share of the payment.",
+      "explanation": "Payment is shared in the ratio of work done = 1/8 : 1/4 = 4:8; A's share = ₹96 × 4/12 = ₹32.",
+      "options": [
+        {
+          "label": "₹33",
+          "is_correct": false
+        },
+        {
+          "label": "₹32",
+          "is_correct": true
+        },
+        {
+          "label": "₹34",
+          "is_correct": false
+        },
+        {
+          "label": "₹31",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Time and Work",
+      "kind": "standard",
+      "difficulty": "medium",
+      "answer_type": "single",
+      "stem": "If 7 men can do a piece of work in 4 days, how many days will 2 men take to do the same work?",
+      "explanation": "Men and days are inversely proportional: days = 7×4/2 = 14.",
+      "options": [
+        {
+          "label": "16 days",
+          "is_correct": false
+        },
+        {
+          "label": "13 days",
+          "is_correct": false
+        },
+        {
+          "label": "15 days",
+          "is_correct": false
+        },
+        {
+          "label": "14 days",
+          "is_correct": true
+        }
+      ]
+    },
+    {
+      "chapter": "Time and Work",
+      "kind": "standard",
+      "difficulty": "medium",
+      "answer_type": "single",
+      "stem": "A can do a work in 12 days and B in 17 days. They complete it together for a total payment of ₹725. Find A's share of the payment.",
+      "explanation": "Payment is shared in the ratio of work done = 1/12 : 1/17 = 17:12; A's share = ₹725 × 17/29 = ₹425.",
+      "options": [
+        {
+          "label": "₹459",
+          "is_correct": false
+        },
+        {
+          "label": "₹425",
+          "is_correct": true
+        },
+        {
+          "label": "₹442",
+          "is_correct": false
+        },
+        {
+          "label": "₹408",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Time and Work",
+      "kind": "standard",
+      "difficulty": "medium",
+      "answer_type": "single",
+      "stem": "A and B together can finish a work in 8 days. A alone can finish it in 12 days. In how many days can B alone finish it?",
+      "explanation": "B's one-day work = 1/8 − 1/12, so B alone takes 24 days.",
+      "options": [
+        {
+          "label": "25 days",
+          "is_correct": false
+        },
+        {
+          "label": "26 days",
+          "is_correct": false
+        },
+        {
+          "label": "24 days",
+          "is_correct": true
+        },
+        {
+          "label": "23 days",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Time and Work",
+      "kind": "standard",
+      "difficulty": "medium",
+      "answer_type": "single",
+      "stem": "A and B together can finish a work in 6 days. A alone can finish it in 10 days. In how many days can B alone finish it?",
+      "explanation": "B's one-day work = 1/6 − 1/10, so B alone takes 15 days.",
+      "options": [
+        {
+          "label": "16 days",
+          "is_correct": false
+        },
+        {
+          "label": "14 days",
+          "is_correct": false
+        },
+        {
+          "label": "15 days",
+          "is_correct": true
+        },
+        {
+          "label": "17 days",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Time and Work",
+      "kind": "standard",
+      "difficulty": "medium",
+      "answer_type": "single",
+      "stem": "A can do a work in 11 days and B in 16 days. They complete it together for a total payment of ₹270. Find A's share of the payment.",
+      "explanation": "Payment is shared in the ratio of work done = 1/11 : 1/16 = 16:11; A's share = ₹270 × 16/27 = ₹160.",
+      "options": [
+        {
+          "label": "₹160",
+          "is_correct": true
+        },
+        {
+          "label": "₹164",
+          "is_correct": false
+        },
+        {
+          "label": "₹158",
+          "is_correct": false
+        },
+        {
+          "label": "₹162",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Time and Work",
+      "kind": "standard",
+      "difficulty": "medium",
+      "answer_type": "single",
+      "stem": "A can do a work in 11 days and B in 5 days. They complete it together for a total payment of ₹160. Find A's share of the payment.",
+      "explanation": "Payment is shared in the ratio of work done = 1/11 : 1/5 = 5:11; A's share = ₹160 × 5/16 = ₹50.",
+      "options": [
+        {
+          "label": "₹52",
+          "is_correct": false
+        },
+        {
+          "label": "₹50",
+          "is_correct": true
+        },
+        {
+          "label": "₹48",
+          "is_correct": false
+        },
+        {
+          "label": "₹54",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Time and Work",
+      "kind": "standard",
+      "difficulty": "medium",
+      "answer_type": "single",
+      "stem": "A and B together can finish a work in 3 days. A alone can finish it in 12 days. In how many days can B alone finish it?",
+      "explanation": "B's one-day work = 1/3 − 1/12, so B alone takes 4 days.",
+      "options": [
+        {
+          "label": "6 days",
+          "is_correct": false
+        },
+        {
+          "label": "3 days",
+          "is_correct": false
+        },
+        {
+          "label": "5 days",
+          "is_correct": false
+        },
+        {
+          "label": "4 days",
+          "is_correct": true
+        }
+      ]
+    },
+    {
+      "chapter": "Time and Work",
+      "kind": "standard",
+      "difficulty": "medium",
+      "answer_type": "single",
+      "stem": "A and B together can finish a work in 6 days. A alone can finish it in 15 days. In how many days can B alone finish it?",
+      "explanation": "B's one-day work = 1/6 − 1/15, so B alone takes 10 days.",
+      "options": [
+        {
+          "label": "11 days",
+          "is_correct": false
+        },
+        {
+          "label": "10 days",
+          "is_correct": true
+        },
+        {
+          "label": "9 days",
+          "is_correct": false
+        },
+        {
+          "label": "12 days",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Time and Work",
+      "kind": "standard",
+      "difficulty": "medium",
+      "answer_type": "single",
+      "stem": "A can do a work in 20 days and B in 4 days. They complete it together for a total payment of ₹792. Find A's share of the payment.",
+      "explanation": "Payment is shared in the ratio of work done = 1/20 : 1/4 = 4:20; A's share = ₹792 × 4/24 = ₹132.",
+      "options": [
+        {
+          "label": "₹132",
+          "is_correct": true
+        },
+        {
+          "label": "₹130",
+          "is_correct": false
+        },
+        {
+          "label": "₹136",
+          "is_correct": false
+        },
+        {
+          "label": "₹134",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Time and Work",
+      "kind": "standard",
+      "difficulty": "medium",
+      "answer_type": "single",
+      "stem": "A can do a work in 12 days and B in 20 days. They complete it together for a total payment of ₹928. Find A's share of the payment.",
+      "explanation": "Payment is shared in the ratio of work done = 1/12 : 1/20 = 20:12; A's share = ₹928 × 20/32 = ₹580.",
+      "options": [
+        {
+          "label": "₹626",
+          "is_correct": false
+        },
+        {
+          "label": "₹603",
+          "is_correct": false
+        },
+        {
+          "label": "₹580",
+          "is_correct": true
+        },
+        {
+          "label": "₹557",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Time and Work",
+      "kind": "standard",
+      "difficulty": "medium",
+      "answer_type": "single",
+      "stem": "A can do a work in 10 days and B in 20 days. They complete it together for a total payment of ₹750. Find A's share of the payment.",
+      "explanation": "Payment is shared in the ratio of work done = 1/10 : 1/20 = 20:10; A's share = ₹750 × 20/30 = ₹500.",
+      "options": [
+        {
+          "label": "₹540",
+          "is_correct": false
+        },
+        {
+          "label": "₹480",
+          "is_correct": false
+        },
+        {
+          "label": "₹520",
+          "is_correct": false
+        },
+        {
+          "label": "₹500",
+          "is_correct": true
+        }
+      ]
+    },
+    {
+      "chapter": "Time and Work",
+      "kind": "standard",
+      "difficulty": "medium",
+      "answer_type": "single",
+      "stem": "A and B together can finish a work in 4 days. A alone can finish it in 12 days. In how many days can B alone finish it?",
+      "explanation": "B's one-day work = 1/4 − 1/12, so B alone takes 6 days.",
+      "options": [
+        {
+          "label": "6 days",
+          "is_correct": true
+        },
+        {
+          "label": "8 days",
+          "is_correct": false
+        },
+        {
+          "label": "7 days",
+          "is_correct": false
+        },
+        {
+          "label": "5 days",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Time and Work",
+      "kind": "standard",
+      "difficulty": "medium",
+      "answer_type": "single",
+      "stem": "A can do a work in 14 days and B in 15 days. They complete it together for a total payment of ₹609. Find A's share of the payment.",
+      "explanation": "Payment is shared in the ratio of work done = 1/14 : 1/15 = 15:14; A's share = ₹609 × 15/29 = ₹315.",
+      "options": [
+        {
+          "label": "₹302",
+          "is_correct": false
+        },
+        {
+          "label": "₹328",
+          "is_correct": false
+        },
+        {
+          "label": "₹341",
+          "is_correct": false
+        },
+        {
+          "label": "₹315",
+          "is_correct": true
+        }
+      ]
+    },
+    {
+      "chapter": "Time and Work",
+      "kind": "standard",
+      "difficulty": "medium",
+      "answer_type": "single",
+      "stem": "A can do a work in 20 days and B in 18 days. They complete it together for a total payment of ₹950. Find A's share of the payment.",
+      "explanation": "Payment is shared in the ratio of work done = 1/20 : 1/18 = 18:20; A's share = ₹950 × 18/38 = ₹450.",
+      "options": [
+        {
+          "label": "₹486",
+          "is_correct": false
+        },
+        {
+          "label": "₹468",
+          "is_correct": false
+        },
+        {
+          "label": "₹450",
+          "is_correct": true
+        },
+        {
+          "label": "₹432",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Time and Work",
+      "kind": "standard",
+      "difficulty": "medium",
+      "answer_type": "single",
+      "stem": "A and B together can finish a work in 12 days. A alone can finish it in 20 days. In how many days can B alone finish it?",
+      "explanation": "B's one-day work = 1/12 − 1/20, so B alone takes 30 days.",
+      "options": [
+        {
+          "label": "30 days",
+          "is_correct": true
+        },
+        {
+          "label": "32 days",
+          "is_correct": false
+        },
+        {
+          "label": "31 days",
+          "is_correct": false
+        },
+        {
+          "label": "29 days",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Time and Work",
+      "kind": "standard",
+      "difficulty": "medium",
+      "answer_type": "single",
+      "stem": "A and B together can finish a work in 6 days. A alone can finish it in 9 days. In how many days can B alone finish it?",
+      "explanation": "B's one-day work = 1/6 − 1/9, so B alone takes 18 days.",
+      "options": [
+        {
+          "label": "18 days",
+          "is_correct": true
+        },
+        {
+          "label": "20 days",
+          "is_correct": false
+        },
+        {
+          "label": "17 days",
+          "is_correct": false
+        },
+        {
+          "label": "19 days",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Time and Work",
+      "kind": "standard",
+      "difficulty": "medium",
+      "answer_type": "single",
+      "stem": "A can do a work in 9 days and B in 19 days. They complete it together for a total payment of ₹1064. Find A's share of the payment.",
+      "explanation": "Payment is shared in the ratio of work done = 1/9 : 1/19 = 19:9; A's share = ₹1064 × 19/28 = ₹722.",
+      "options": [
+        {
+          "label": "₹780",
+          "is_correct": false
+        },
+        {
+          "label": "₹722",
+          "is_correct": true
+        },
+        {
+          "label": "₹751",
+          "is_correct": false
+        },
+        {
+          "label": "₹693",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Time and Work",
+      "kind": "standard",
+      "difficulty": "medium",
+      "answer_type": "single",
+      "stem": "If 16 men can do a piece of work in 10 days, how many days will 2 men take to do the same work?",
+      "explanation": "Men and days are inversely proportional: days = 16×10/2 = 80.",
+      "options": [
+        {
+          "label": "80 days",
+          "is_correct": true
+        },
+        {
+          "label": "82 days",
+          "is_correct": false
+        },
+        {
+          "label": "78 days",
+          "is_correct": false
+        },
+        {
+          "label": "84 days",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Time and Work",
+      "kind": "standard",
+      "difficulty": "medium",
+      "answer_type": "single",
+      "stem": "A can do a work in 11 days and B in 9 days. They complete it together for a total payment of ₹140. Find A's share of the payment.",
+      "explanation": "Payment is shared in the ratio of work done = 1/11 : 1/9 = 9:11; A's share = ₹140 × 9/20 = ₹63.",
+      "options": [
+        {
+          "label": "₹65",
+          "is_correct": false
+        },
+        {
+          "label": "₹67",
+          "is_correct": false
+        },
+        {
+          "label": "₹63",
+          "is_correct": true
+        },
+        {
+          "label": "₹61",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Time and Work",
+      "kind": "standard",
+      "difficulty": "medium",
+      "answer_type": "single",
+      "stem": "A can do a work in 12 days and B in 18 days. They complete it together for a total payment of ₹960. Find A's share of the payment.",
+      "explanation": "Payment is shared in the ratio of work done = 1/12 : 1/18 = 18:12; A's share = ₹960 × 18/30 = ₹576.",
+      "options": [
+        {
+          "label": "₹576",
+          "is_correct": true
+        },
+        {
+          "label": "₹553",
+          "is_correct": false
+        },
+        {
+          "label": "₹599",
+          "is_correct": false
+        },
+        {
+          "label": "₹622",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Time and Work",
+      "kind": "standard",
+      "difficulty": "medium",
+      "answer_type": "single",
+      "stem": "A can do a work in 18 days and B in 12 days. They complete it together for a total payment of ₹570. Find A's share of the payment.",
+      "explanation": "Payment is shared in the ratio of work done = 1/18 : 1/12 = 12:18; A's share = ₹570 × 12/30 = ₹228.",
+      "options": [
+        {
+          "label": "₹219",
+          "is_correct": false
+        },
+        {
+          "label": "₹228",
+          "is_correct": true
+        },
+        {
+          "label": "₹237",
+          "is_correct": false
+        },
+        {
+          "label": "₹246",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Time and Work",
+      "kind": "standard",
+      "difficulty": "medium",
+      "answer_type": "single",
+      "stem": "A can do a work in 6 days and B in 20 days. They complete it together for a total payment of ₹234. Find A's share of the payment.",
+      "explanation": "Payment is shared in the ratio of work done = 1/6 : 1/20 = 20:6; A's share = ₹234 × 20/26 = ₹180.",
+      "options": [
+        {
+          "label": "₹184",
+          "is_correct": false
+        },
+        {
+          "label": "₹180",
+          "is_correct": true
+        },
+        {
+          "label": "₹182",
+          "is_correct": false
+        },
+        {
+          "label": "₹178",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Time and Work",
+      "kind": "standard",
+      "difficulty": "medium",
+      "answer_type": "single",
+      "stem": "A can do a work in 6 days and B in 8 days. They complete it together for a total payment of ₹462. Find A's share of the payment.",
+      "explanation": "Payment is shared in the ratio of work done = 1/6 : 1/8 = 8:6; A's share = ₹462 × 8/14 = ₹264.",
+      "options": [
+        {
+          "label": "₹286",
+          "is_correct": false
+        },
+        {
+          "label": "₹253",
+          "is_correct": false
+        },
+        {
+          "label": "₹275",
+          "is_correct": false
+        },
+        {
+          "label": "₹264",
+          "is_correct": true
+        }
+      ]
+    },
+    {
+      "chapter": "Time and Work",
+      "kind": "standard",
+      "difficulty": "medium",
+      "answer_type": "single",
+      "stem": "A can do a work in 10 days and B in 12 days. They complete it together for a total payment of ₹660. Find A's share of the payment.",
+      "explanation": "Payment is shared in the ratio of work done = 1/10 : 1/12 = 12:10; A's share = ₹660 × 12/22 = ₹360.",
+      "options": [
+        {
+          "label": "₹346",
+          "is_correct": false
+        },
+        {
+          "label": "₹360",
+          "is_correct": true
+        },
+        {
+          "label": "₹374",
+          "is_correct": false
+        },
+        {
+          "label": "₹388",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Time and Work",
+      "kind": "standard",
+      "difficulty": "medium",
+      "answer_type": "single",
+      "stem": "A can do a work in 14 days and B in 9 days. They complete it together for a total payment of ₹690. Find A's share of the payment.",
+      "explanation": "Payment is shared in the ratio of work done = 1/14 : 1/9 = 9:14; A's share = ₹690 × 9/23 = ₹270.",
+      "options": [
+        {
+          "label": "₹259",
+          "is_correct": false
+        },
+        {
+          "label": "₹281",
+          "is_correct": false
+        },
+        {
+          "label": "₹270",
+          "is_correct": true
+        },
+        {
+          "label": "₹292",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Time and Work",
+      "kind": "standard",
+      "difficulty": "medium",
+      "answer_type": "single",
+      "stem": "A can do a work in 4 days and B in 8 days. They complete it together for a total payment of ₹108. Find A's share of the payment.",
+      "explanation": "Payment is shared in the ratio of work done = 1/4 : 1/8 = 8:4; A's share = ₹108 × 8/12 = ₹72.",
+      "options": [
+        {
+          "label": "₹74",
+          "is_correct": false
+        },
+        {
+          "label": "₹72",
+          "is_correct": true
+        },
+        {
+          "label": "₹70",
+          "is_correct": false
+        },
+        {
+          "label": "₹76",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Time and Work",
+      "kind": "standard",
+      "difficulty": "medium",
+      "answer_type": "single",
+      "stem": "A can do a work in 13 days and B in 16 days. They complete it together for a total payment of ₹145. Find A's share of the payment.",
+      "explanation": "Payment is shared in the ratio of work done = 1/13 : 1/16 = 16:13; A's share = ₹145 × 16/29 = ₹80.",
+      "options": [
+        {
+          "label": "₹84",
+          "is_correct": false
+        },
+        {
+          "label": "₹78",
+          "is_correct": false
+        },
+        {
+          "label": "₹80",
+          "is_correct": true
+        },
+        {
+          "label": "₹82",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Time and Work",
+      "kind": "standard",
+      "difficulty": "medium",
+      "answer_type": "single",
+      "stem": "A can do a work in 5 days and B in 6 days. They complete it together for a total payment of ₹154. Find A's share of the payment.",
+      "explanation": "Payment is shared in the ratio of work done = 1/5 : 1/6 = 6:5; A's share = ₹154 × 6/11 = ₹84.",
+      "options": [
+        {
+          "label": "₹88",
+          "is_correct": false
+        },
+        {
+          "label": "₹82",
+          "is_correct": false
+        },
+        {
+          "label": "₹86",
+          "is_correct": false
+        },
+        {
+          "label": "₹84",
+          "is_correct": true
+        }
+      ]
+    },
+    {
+      "chapter": "Time and Work",
+      "kind": "standard",
+      "difficulty": "medium",
+      "answer_type": "single",
+      "stem": "A and B together can finish a work in 12 days. A alone can finish it in 30 days. In how many days can B alone finish it?",
+      "explanation": "B's one-day work = 1/12 − 1/30, so B alone takes 20 days.",
+      "options": [
+        {
+          "label": "22 days",
+          "is_correct": false
+        },
+        {
+          "label": "20 days",
+          "is_correct": true
+        },
+        {
+          "label": "19 days",
+          "is_correct": false
+        },
+        {
+          "label": "21 days",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Time and Work",
+      "kind": "standard",
+      "difficulty": "medium",
+      "answer_type": "single",
+      "stem": "A can do a work in 15 days and B in 4 days. They complete it together for a total payment of ₹760. Find A's share of the payment.",
+      "explanation": "Payment is shared in the ratio of work done = 1/15 : 1/4 = 4:15; A's share = ₹760 × 4/19 = ₹160.",
+      "options": [
+        {
+          "label": "₹164",
+          "is_correct": false
+        },
+        {
+          "label": "₹158",
+          "is_correct": false
+        },
+        {
+          "label": "₹162",
+          "is_correct": false
+        },
+        {
+          "label": "₹160",
+          "is_correct": true
+        }
+      ]
+    },
+    {
+      "chapter": "Time and Work",
+      "kind": "standard",
+      "difficulty": "medium",
+      "answer_type": "single",
+      "stem": "A can do a work in 12 days and B in 9 days. They complete it together for a total payment of ₹630. Find A's share of the payment.",
+      "explanation": "Payment is shared in the ratio of work done = 1/12 : 1/9 = 9:12; A's share = ₹630 × 9/21 = ₹270.",
+      "options": [
+        {
+          "label": "₹281",
+          "is_correct": false
+        },
+        {
+          "label": "₹270",
+          "is_correct": true
+        },
+        {
+          "label": "₹292",
+          "is_correct": false
+        },
+        {
+          "label": "₹259",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Time and Work",
+      "kind": "standard",
+      "difficulty": "medium",
+      "answer_type": "single",
+      "stem": "A can do a work in 18 days and B in 16 days. They complete it together for a total payment of ₹952. Find A's share of the payment.",
+      "explanation": "Payment is shared in the ratio of work done = 1/18 : 1/16 = 16:18; A's share = ₹952 × 16/34 = ₹448.",
+      "options": [
+        {
+          "label": "₹430",
+          "is_correct": false
+        },
+        {
+          "label": "₹466",
+          "is_correct": false
+        },
+        {
+          "label": "₹484",
+          "is_correct": false
+        },
+        {
+          "label": "₹448",
+          "is_correct": true
+        }
+      ]
+    },
+    {
+      "chapter": "Time and Work",
+      "kind": "standard",
+      "difficulty": "medium",
+      "answer_type": "single",
+      "stem": "If 21 men can do a piece of work in 20 days, how many days will 3 men take to do the same work?",
+      "explanation": "Men and days are inversely proportional: days = 21×20/3 = 140.",
+      "options": [
+        {
+          "label": "144 days",
+          "is_correct": false
+        },
+        {
+          "label": "142 days",
+          "is_correct": false
+        },
+        {
+          "label": "138 days",
+          "is_correct": false
+        },
+        {
+          "label": "140 days",
+          "is_correct": true
+        }
+      ]
+    },
+    {
+      "chapter": "Time and Work",
+      "kind": "standard",
+      "difficulty": "medium",
+      "answer_type": "single",
+      "stem": "A can do a work in 14 days and B in 15 days. They complete it together for a total payment of ₹348. Find A's share of the payment.",
+      "explanation": "Payment is shared in the ratio of work done = 1/14 : 1/15 = 15:14; A's share = ₹348 × 15/29 = ₹180.",
+      "options": [
+        {
+          "label": "₹180",
+          "is_correct": true
+        },
+        {
+          "label": "₹178",
+          "is_correct": false
+        },
+        {
+          "label": "₹182",
+          "is_correct": false
+        },
+        {
+          "label": "₹184",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Time and Work",
+      "kind": "standard",
+      "difficulty": "hard",
+      "answer_type": "single",
+      "stem": "A can do a work in 9 days, B in 12 days and C in 18 days. Working together, in how many days will they finish it?",
+      "explanation": "Combined one-day work = 1/9 + 1/12 + 1/18, so the time = 4 days.",
+      "options": [
+        {
+          "label": "5 days",
+          "is_correct": false
+        },
+        {
+          "label": "3 days",
+          "is_correct": false
+        },
+        {
+          "label": "4 days",
+          "is_correct": true
+        },
+        {
+          "label": "6 days",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Time and Work",
+      "kind": "standard",
+      "difficulty": "hard",
+      "answer_type": "single",
+      "stem": "A can do a work in 20 days, B in 30 days and C in 60 days. Working together, in how many days will they finish it?",
+      "explanation": "Combined one-day work = 1/20 + 1/30 + 1/60, so the time = 10 days.",
+      "options": [
+        {
+          "label": "9 days",
+          "is_correct": false
+        },
+        {
+          "label": "10 days",
+          "is_correct": true
+        },
+        {
+          "label": "12 days",
+          "is_correct": false
+        },
+        {
+          "label": "11 days",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Time and Work",
+      "kind": "standard",
+      "difficulty": "hard",
+      "answer_type": "single",
+      "stem": "A can do a work in 10 days. He works for 7 days and then leaves. B alone finishes the remaining work in 12 days. In how many days can B alone complete the entire work?",
+      "explanation": "A completed 7/10 of the work; B did the remaining 3/10 in 12 days, so B alone needs 10×12/3 = 40 days.",
+      "options": [
+        {
+          "label": "40 days",
+          "is_correct": true
+        },
+        {
+          "label": "44 days",
+          "is_correct": false
+        },
+        {
+          "label": "42 days",
+          "is_correct": false
+        },
+        {
+          "label": "38 days",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Time and Work",
+      "kind": "standard",
+      "difficulty": "hard",
+      "answer_type": "single",
+      "stem": "If 14 men working 12 hours a day complete a work in 15 days, in how many days will 28 men working 5 hours a day complete the same work?",
+      "explanation": "Days = (14×12×15)/(28×5) = 2520/140 = 18.",
+      "options": [
+        {
+          "label": "18 days",
+          "is_correct": true
+        },
+        {
+          "label": "20 days",
+          "is_correct": false
+        },
+        {
+          "label": "19 days",
+          "is_correct": false
+        },
+        {
+          "label": "17 days",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Time and Work",
+      "kind": "standard",
+      "difficulty": "hard",
+      "answer_type": "single",
+      "stem": "A can do a work in 10 days, B in 15 days and C in 30 days. Working together, in how many days will they finish it?",
+      "explanation": "Combined one-day work = 1/10 + 1/15 + 1/30, so the time = 5 days.",
+      "options": [
+        {
+          "label": "6 days",
+          "is_correct": false
+        },
+        {
+          "label": "4 days",
+          "is_correct": false
+        },
+        {
+          "label": "5 days",
+          "is_correct": true
+        },
+        {
+          "label": "7 days",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Time and Work",
+      "kind": "standard",
+      "difficulty": "hard",
+      "answer_type": "single",
+      "stem": "A can do a work in 20 days. He works for 8 days and then leaves. B alone finishes the remaining work in 12 days. In how many days can B alone complete the entire work?",
+      "explanation": "A completed 8/20 of the work; B did the remaining 12/20 in 12 days, so B alone needs 20×12/12 = 20 days.",
+      "options": [
+        {
+          "label": "20 days",
+          "is_correct": true
+        },
+        {
+          "label": "21 days",
+          "is_correct": false
+        },
+        {
+          "label": "19 days",
+          "is_correct": false
+        },
+        {
+          "label": "22 days",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Time and Work",
+      "kind": "standard",
+      "difficulty": "hard",
+      "answer_type": "single",
+      "stem": "A can do a work in 12 days, B in 18 days and C in 36 days. Working together, in how many days will they finish it?",
+      "explanation": "Combined one-day work = 1/12 + 1/18 + 1/36, so the time = 6 days.",
+      "options": [
+        {
+          "label": "8 days",
+          "is_correct": false
+        },
+        {
+          "label": "7 days",
+          "is_correct": false
+        },
+        {
+          "label": "6 days",
+          "is_correct": true
+        },
+        {
+          "label": "5 days",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Time and Work",
+      "kind": "standard",
+      "difficulty": "hard",
+      "answer_type": "single",
+      "stem": "A can do a work in 6 days, B in 9 days and C in 18 days. Working together, in how many days will they finish it?",
+      "explanation": "Combined one-day work = 1/6 + 1/9 + 1/18, so the time = 3 days.",
+      "options": [
+        {
+          "label": "4 days",
+          "is_correct": false
+        },
+        {
+          "label": "3 days",
+          "is_correct": true
+        },
+        {
+          "label": "2 days",
+          "is_correct": false
+        },
+        {
+          "label": "5 days",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Time and Work",
+      "kind": "standard",
+      "difficulty": "hard",
+      "answer_type": "single",
+      "stem": "A can do a work in 21 days. He works for 17 days and then leaves. B alone finishes the remaining work in 12 days. In how many days can B alone complete the entire work?",
+      "explanation": "A completed 17/21 of the work; B did the remaining 4/21 in 12 days, so B alone needs 21×12/4 = 63 days.",
+      "options": [
+        {
+          "label": "61 days",
+          "is_correct": false
+        },
+        {
+          "label": "65 days",
+          "is_correct": false
+        },
+        {
+          "label": "67 days",
+          "is_correct": false
+        },
+        {
+          "label": "63 days",
+          "is_correct": true
+        }
+      ]
+    },
+    {
+      "chapter": "Time and Work",
+      "kind": "standard",
+      "difficulty": "hard",
+      "answer_type": "single",
+      "stem": "A can do a work in 8 days, B in 12 days and C in 24 days. Working together, in how many days will they finish it?",
+      "explanation": "Combined one-day work = 1/8 + 1/12 + 1/24, so the time = 4 days.",
+      "options": [
+        {
+          "label": "4 days",
+          "is_correct": true
+        },
+        {
+          "label": "6 days",
+          "is_correct": false
+        },
+        {
+          "label": "5 days",
+          "is_correct": false
+        },
+        {
+          "label": "3 days",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Time and Work",
+      "kind": "standard",
+      "difficulty": "hard",
+      "answer_type": "single",
+      "stem": "A can do a work in 6 days, B in 12 days and C in 12 days. Working together, in how many days will they finish it?",
+      "explanation": "Combined one-day work = 1/6 + 1/12 + 1/12, so the time = 3 days.",
+      "options": [
+        {
+          "label": "3 days",
+          "is_correct": true
+        },
+        {
+          "label": "5 days",
+          "is_correct": false
+        },
+        {
+          "label": "2 days",
+          "is_correct": false
+        },
+        {
+          "label": "4 days",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Time and Work",
+      "kind": "standard",
+      "difficulty": "hard",
+      "answer_type": "single",
+      "stem": "A can do a work in 24 days. He works for 12 days and then leaves. B alone finishes the remaining work in 6 days. In how many days can B alone complete the entire work?",
+      "explanation": "A completed 12/24 of the work; B did the remaining 12/24 in 6 days, so B alone needs 24×6/12 = 12 days.",
+      "options": [
+        {
+          "label": "13 days",
+          "is_correct": false
+        },
+        {
+          "label": "11 days",
+          "is_correct": false
+        },
+        {
+          "label": "12 days",
+          "is_correct": true
+        },
+        {
+          "label": "14 days",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Time and Work",
+      "kind": "standard",
+      "difficulty": "hard",
+      "answer_type": "single",
+      "stem": "If 24 men working 6 hours a day complete a work in 18 days, in how many days will 18 men working 12 hours a day complete the same work?",
+      "explanation": "Days = (24×6×18)/(18×12) = 2592/216 = 12.",
+      "options": [
+        {
+          "label": "11 days",
+          "is_correct": false
+        },
+        {
+          "label": "14 days",
+          "is_correct": false
+        },
+        {
+          "label": "12 days",
+          "is_correct": true
+        },
+        {
+          "label": "13 days",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Time and Work",
+      "kind": "standard",
+      "difficulty": "hard",
+      "answer_type": "single",
+      "stem": "A can do a work in 4 days, B in 6 days and C in 12 days. Working together, in how many days will they finish it?",
+      "explanation": "Combined one-day work = 1/4 + 1/6 + 1/12, so the time = 2 days.",
+      "options": [
+        {
+          "label": "1 days",
+          "is_correct": false
+        },
+        {
+          "label": "3 days",
+          "is_correct": false
+        },
+        {
+          "label": "4 days",
+          "is_correct": false
+        },
+        {
+          "label": "2 days",
+          "is_correct": true
+        }
+      ]
+    },
+    {
+      "chapter": "Time and Work",
+      "kind": "standard",
+      "difficulty": "hard",
+      "answer_type": "single",
+      "stem": "A can do a work in 24 days. He works for 13 days and then leaves. B alone finishes the remaining work in 11 days. In how many days can B alone complete the entire work?",
+      "explanation": "A completed 13/24 of the work; B did the remaining 11/24 in 11 days, so B alone needs 24×11/11 = 24 days.",
+      "options": [
+        {
+          "label": "24 days",
+          "is_correct": true
+        },
+        {
+          "label": "26 days",
+          "is_correct": false
+        },
+        {
+          "label": "23 days",
+          "is_correct": false
+        },
+        {
+          "label": "25 days",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Time and Work",
+      "kind": "standard",
+      "difficulty": "hard",
+      "answer_type": "single",
+      "stem": "A can do a work in 6 days. He works for 5 days and then leaves. B alone finishes the remaining work in 12 days. In how many days can B alone complete the entire work?",
+      "explanation": "A completed 5/6 of the work; B did the remaining 1/6 in 12 days, so B alone needs 6×12/1 = 72 days.",
+      "options": [
+        {
+          "label": "72 days",
+          "is_correct": true
+        },
+        {
+          "label": "76 days",
+          "is_correct": false
+        },
+        {
+          "label": "70 days",
+          "is_correct": false
+        },
+        {
+          "label": "74 days",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Time and Work",
+      "kind": "standard",
+      "difficulty": "hard",
+      "answer_type": "single",
+      "stem": "A can do a work in 30 days. He works for 24 days and then leaves. B alone finishes the remaining work in 10 days. In how many days can B alone complete the entire work?",
+      "explanation": "A completed 24/30 of the work; B did the remaining 6/30 in 10 days, so B alone needs 30×10/6 = 50 days.",
+      "options": [
+        {
+          "label": "54 days",
+          "is_correct": false
+        },
+        {
+          "label": "52 days",
+          "is_correct": false
+        },
+        {
+          "label": "48 days",
+          "is_correct": false
+        },
+        {
+          "label": "50 days",
+          "is_correct": true
+        }
+      ]
+    },
+    {
+      "chapter": "Time and Work",
+      "kind": "standard",
+      "difficulty": "hard",
+      "answer_type": "single",
+      "stem": "If 25 men working 5 hours a day complete a work in 14 days, in how many days will 10 men working 7 hours a day complete the same work?",
+      "explanation": "Days = (25×5×14)/(10×7) = 1750/70 = 25.",
+      "options": [
+        {
+          "label": "24 days",
+          "is_correct": false
+        },
+        {
+          "label": "25 days",
+          "is_correct": true
+        },
+        {
+          "label": "27 days",
+          "is_correct": false
+        },
+        {
+          "label": "26 days",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Time and Work",
+      "kind": "standard",
+      "difficulty": "hard",
+      "answer_type": "single",
+      "stem": "If 9 men working 6 hours a day complete a work in 12 days, in how many days will 27 men working 8 hours a day complete the same work?",
+      "explanation": "Days = (9×6×12)/(27×8) = 648/216 = 3.",
+      "options": [
+        {
+          "label": "2 days",
+          "is_correct": false
+        },
+        {
+          "label": "3 days",
+          "is_correct": true
+        },
+        {
+          "label": "5 days",
+          "is_correct": false
+        },
+        {
+          "label": "4 days",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Time and Work",
+      "kind": "standard",
+      "difficulty": "hard",
+      "answer_type": "single",
+      "stem": "If 7 men working 4 hours a day complete a work in 5 days, in how many days will 4 men working 5 hours a day complete the same work?",
+      "explanation": "Days = (7×4×5)/(4×5) = 140/20 = 7.",
+      "options": [
+        {
+          "label": "9 days",
+          "is_correct": false
+        },
+        {
+          "label": "6 days",
+          "is_correct": false
+        },
+        {
+          "label": "7 days",
+          "is_correct": true
+        },
+        {
+          "label": "8 days",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Time and Work",
+      "kind": "standard",
+      "difficulty": "hard",
+      "answer_type": "single",
+      "stem": "A can do a work in 10 days. He works for 9 days and then leaves. B alone finishes the remaining work in 9 days. In how many days can B alone complete the entire work?",
+      "explanation": "A completed 9/10 of the work; B did the remaining 1/10 in 9 days, so B alone needs 10×9/1 = 90 days.",
+      "options": [
+        {
+          "label": "90 days",
+          "is_correct": true
+        },
+        {
+          "label": "92 days",
+          "is_correct": false
+        },
+        {
+          "label": "88 days",
+          "is_correct": false
+        },
+        {
+          "label": "94 days",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Time and Work",
+      "kind": "standard",
+      "difficulty": "hard",
+      "answer_type": "single",
+      "stem": "A can do a work in 21 days. He works for 14 days and then leaves. B alone finishes the remaining work in 11 days. In how many days can B alone complete the entire work?",
+      "explanation": "A completed 14/21 of the work; B did the remaining 7/21 in 11 days, so B alone needs 21×11/7 = 33 days.",
+      "options": [
+        {
+          "label": "35 days",
+          "is_correct": false
+        },
+        {
+          "label": "32 days",
+          "is_correct": false
+        },
+        {
+          "label": "34 days",
+          "is_correct": false
+        },
+        {
+          "label": "33 days",
+          "is_correct": true
+        }
+      ]
+    },
+    {
+      "chapter": "Time and Work",
+      "kind": "standard",
+      "difficulty": "hard",
+      "answer_type": "single",
+      "stem": "A can do a work in 16 days. He works for 14 days and then leaves. B alone finishes the remaining work in 4 days. In how many days can B alone complete the entire work?",
+      "explanation": "A completed 14/16 of the work; B did the remaining 2/16 in 4 days, so B alone needs 16×4/2 = 32 days.",
+      "options": [
+        {
+          "label": "31 days",
+          "is_correct": false
+        },
+        {
+          "label": "33 days",
+          "is_correct": false
+        },
+        {
+          "label": "34 days",
+          "is_correct": false
+        },
+        {
+          "label": "32 days",
+          "is_correct": true
+        }
+      ]
+    },
+    {
+      "chapter": "Time and Work",
+      "kind": "standard",
+      "difficulty": "hard",
+      "answer_type": "single",
+      "stem": "A can do a work in 7 days. He works for 2 days and then leaves. B alone finishes the remaining work in 10 days. In how many days can B alone complete the entire work?",
+      "explanation": "A completed 2/7 of the work; B did the remaining 5/7 in 10 days, so B alone needs 7×10/5 = 14 days.",
+      "options": [
+        {
+          "label": "13 days",
+          "is_correct": false
+        },
+        {
+          "label": "15 days",
+          "is_correct": false
+        },
+        {
+          "label": "14 days",
+          "is_correct": true
+        },
+        {
+          "label": "16 days",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Time and Work",
+      "kind": "standard",
+      "difficulty": "hard",
+      "answer_type": "single",
+      "stem": "If 15 men working 12 hours a day complete a work in 5 days, in how many days will 5 men working 5 hours a day complete the same work?",
+      "explanation": "Days = (15×12×5)/(5×5) = 900/25 = 36.",
+      "options": [
+        {
+          "label": "36 days",
+          "is_correct": true
+        },
+        {
+          "label": "37 days",
+          "is_correct": false
+        },
+        {
+          "label": "35 days",
+          "is_correct": false
+        },
+        {
+          "label": "38 days",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Time and Work",
+      "kind": "standard",
+      "difficulty": "hard",
+      "answer_type": "single",
+      "stem": "A can do a work in 26 days. He works for 25 days and then leaves. B alone finishes the remaining work in 6 days. In how many days can B alone complete the entire work?",
+      "explanation": "A completed 25/26 of the work; B did the remaining 1/26 in 6 days, so B alone needs 26×6/1 = 156 days.",
+      "options": [
+        {
+          "label": "156 days",
+          "is_correct": true
+        },
+        {
+          "label": "158 days",
+          "is_correct": false
+        },
+        {
+          "label": "154 days",
+          "is_correct": false
+        },
+        {
+          "label": "160 days",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Time and Work",
+      "kind": "standard",
+      "difficulty": "hard",
+      "answer_type": "single",
+      "stem": "A can do a work in 10 days. He works for 5 days and then leaves. B alone finishes the remaining work in 12 days. In how many days can B alone complete the entire work?",
+      "explanation": "A completed 5/10 of the work; B did the remaining 5/10 in 12 days, so B alone needs 10×12/5 = 24 days.",
+      "options": [
+        {
+          "label": "25 days",
+          "is_correct": false
+        },
+        {
+          "label": "24 days",
+          "is_correct": true
+        },
+        {
+          "label": "26 days",
+          "is_correct": false
+        },
+        {
+          "label": "23 days",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Time and Work",
+      "kind": "standard",
+      "difficulty": "hard",
+      "answer_type": "single",
+      "stem": "A can do a work in 22 days. He works for 11 days and then leaves. B alone finishes the remaining work in 14 days. In how many days can B alone complete the entire work?",
+      "explanation": "A completed 11/22 of the work; B did the remaining 11/22 in 14 days, so B alone needs 22×14/11 = 28 days.",
+      "options": [
+        {
+          "label": "29 days",
+          "is_correct": false
+        },
+        {
+          "label": "28 days",
+          "is_correct": true
+        },
+        {
+          "label": "27 days",
+          "is_correct": false
+        },
+        {
+          "label": "30 days",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Time and Work",
+      "kind": "standard",
+      "difficulty": "hard",
+      "answer_type": "single",
+      "stem": "If 16 men working 11 hours a day complete a work in 18 days, in how many days will 9 men working 8 hours a day complete the same work?",
+      "explanation": "Days = (16×11×18)/(9×8) = 3168/72 = 44.",
+      "options": [
+        {
+          "label": "44 days",
+          "is_correct": true
+        },
+        {
+          "label": "46 days",
+          "is_correct": false
+        },
+        {
+          "label": "42 days",
+          "is_correct": false
+        },
+        {
+          "label": "48 days",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Time and Work",
+      "kind": "standard",
+      "difficulty": "hard",
+      "answer_type": "single",
+      "stem": "A can do a work in 15 days. He works for 6 days and then leaves. B alone finishes the remaining work in 6 days. In how many days can B alone complete the entire work?",
+      "explanation": "A completed 6/15 of the work; B did the remaining 9/15 in 6 days, so B alone needs 15×6/9 = 10 days.",
+      "options": [
+        {
+          "label": "9 days",
+          "is_correct": false
+        },
+        {
+          "label": "11 days",
+          "is_correct": false
+        },
+        {
+          "label": "10 days",
+          "is_correct": true
+        },
+        {
+          "label": "12 days",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Time and Work",
+      "kind": "standard",
+      "difficulty": "hard",
+      "answer_type": "single",
+      "stem": "A can do a work in 10 days. He works for 8 days and then leaves. B alone finishes the remaining work in 7 days. In how many days can B alone complete the entire work?",
+      "explanation": "A completed 8/10 of the work; B did the remaining 2/10 in 7 days, so B alone needs 10×7/2 = 35 days.",
+      "options": [
+        {
+          "label": "36 days",
+          "is_correct": false
+        },
+        {
+          "label": "34 days",
+          "is_correct": false
+        },
+        {
+          "label": "37 days",
+          "is_correct": false
+        },
+        {
+          "label": "35 days",
+          "is_correct": true
+        }
+      ]
+    },
+    {
+      "chapter": "Time and Work",
+      "kind": "standard",
+      "difficulty": "hard",
+      "answer_type": "single",
+      "stem": "A can do a work in 6 days. He works for 3 days and then leaves. B alone finishes the remaining work in 8 days. In how many days can B alone complete the entire work?",
+      "explanation": "A completed 3/6 of the work; B did the remaining 3/6 in 8 days, so B alone needs 6×8/3 = 16 days.",
+      "options": [
+        {
+          "label": "17 days",
+          "is_correct": false
+        },
+        {
+          "label": "16 days",
+          "is_correct": true
+        },
+        {
+          "label": "15 days",
+          "is_correct": false
+        },
+        {
+          "label": "18 days",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Time and Work",
+      "kind": "standard",
+      "difficulty": "hard",
+      "answer_type": "single",
+      "stem": "A can do a work in 6 days. He works for 5 days and then leaves. B alone finishes the remaining work in 2 days. In how many days can B alone complete the entire work?",
+      "explanation": "A completed 5/6 of the work; B did the remaining 1/6 in 2 days, so B alone needs 6×2/1 = 12 days.",
+      "options": [
+        {
+          "label": "13 days",
+          "is_correct": false
+        },
+        {
+          "label": "11 days",
+          "is_correct": false
+        },
+        {
+          "label": "14 days",
+          "is_correct": false
+        },
+        {
+          "label": "12 days",
+          "is_correct": true
+        }
+      ]
+    },
+    {
+      "chapter": "Time and Work",
+      "kind": "standard",
+      "difficulty": "hard",
+      "answer_type": "single",
+      "stem": "If 6 men working 4 hours a day complete a work in 20 days, in how many days will 20 men working 8 hours a day complete the same work?",
+      "explanation": "Days = (6×4×20)/(20×8) = 480/160 = 3.",
+      "options": [
+        {
+          "label": "3 days",
+          "is_correct": true
+        },
+        {
+          "label": "2 days",
+          "is_correct": false
+        },
+        {
+          "label": "5 days",
+          "is_correct": false
+        },
+        {
+          "label": "4 days",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Time and Work",
+      "kind": "standard",
+      "difficulty": "hard",
+      "answer_type": "single",
+      "stem": "If 28 men working 6 hours a day complete a work in 15 days, in how many days will 28 men working 5 hours a day complete the same work?",
+      "explanation": "Days = (28×6×15)/(28×5) = 2520/140 = 18.",
+      "options": [
+        {
+          "label": "19 days",
+          "is_correct": false
+        },
+        {
+          "label": "17 days",
+          "is_correct": false
+        },
+        {
+          "label": "20 days",
+          "is_correct": false
+        },
+        {
+          "label": "18 days",
+          "is_correct": true
+        }
+      ]
+    },
+    {
+      "chapter": "Time and Work",
+      "kind": "standard",
+      "difficulty": "hard",
+      "answer_type": "single",
+      "stem": "A can do a work in 28 days. He works for 7 days and then leaves. B alone finishes the remaining work in 12 days. In how many days can B alone complete the entire work?",
+      "explanation": "A completed 7/28 of the work; B did the remaining 21/28 in 12 days, so B alone needs 28×12/21 = 16 days.",
+      "options": [
+        {
+          "label": "15 days",
+          "is_correct": false
+        },
+        {
+          "label": "16 days",
+          "is_correct": true
+        },
+        {
+          "label": "17 days",
+          "is_correct": false
+        },
+        {
+          "label": "18 days",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Time and Work",
+      "kind": "standard",
+      "difficulty": "hard",
+      "answer_type": "single",
+      "stem": "A can do a work in 15 days. He works for 12 days and then leaves. B alone finishes the remaining work in 9 days. In how many days can B alone complete the entire work?",
+      "explanation": "A completed 12/15 of the work; B did the remaining 3/15 in 9 days, so B alone needs 15×9/3 = 45 days.",
+      "options": [
+        {
+          "label": "43 days",
+          "is_correct": false
+        },
+        {
+          "label": "45 days",
+          "is_correct": true
+        },
+        {
+          "label": "49 days",
+          "is_correct": false
+        },
+        {
+          "label": "47 days",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Time and Work",
+      "kind": "standard",
+      "difficulty": "hard",
+      "answer_type": "single",
+      "stem": "A can do a work in 30 days. He works for 28 days and then leaves. B alone finishes the remaining work in 13 days. In how many days can B alone complete the entire work?",
+      "explanation": "A completed 28/30 of the work; B did the remaining 2/30 in 13 days, so B alone needs 30×13/2 = 195 days.",
+      "options": [
+        {
+          "label": "199 days",
+          "is_correct": false
+        },
+        {
+          "label": "197 days",
+          "is_correct": false
+        },
+        {
+          "label": "193 days",
+          "is_correct": false
+        },
+        {
+          "label": "195 days",
+          "is_correct": true
+        }
+      ]
+    },
+    {
+      "chapter": "Time and Work",
+      "kind": "standard",
+      "difficulty": "hard",
+      "answer_type": "single",
+      "stem": "If 30 men working 11 hours a day complete a work in 18 days, in how many days will 4 men working 9 hours a day complete the same work?",
+      "explanation": "Days = (30×11×18)/(4×9) = 5940/36 = 165.",
+      "options": [
+        {
+          "label": "169 days",
+          "is_correct": false
+        },
+        {
+          "label": "167 days",
+          "is_correct": false
+        },
+        {
+          "label": "163 days",
+          "is_correct": false
+        },
+        {
+          "label": "165 days",
+          "is_correct": true
+        }
+      ]
+    },
+    {
+      "chapter": "Time and Work",
+      "kind": "standard",
+      "difficulty": "hard",
+      "answer_type": "single",
+      "stem": "A can do a work in 18 days. He works for 15 days and then leaves. B alone finishes the remaining work in 15 days. In how many days can B alone complete the entire work?",
+      "explanation": "A completed 15/18 of the work; B did the remaining 3/18 in 15 days, so B alone needs 18×15/3 = 90 days.",
+      "options": [
+        {
+          "label": "92 days",
+          "is_correct": false
+        },
+        {
+          "label": "88 days",
+          "is_correct": false
+        },
+        {
+          "label": "94 days",
+          "is_correct": false
+        },
+        {
+          "label": "90 days",
+          "is_correct": true
+        }
+      ]
+    },
+    {
+      "chapter": "Time and Work",
+      "kind": "standard",
+      "difficulty": "hard",
+      "answer_type": "single",
+      "stem": "A can do a work in 25 days. He works for 20 days and then leaves. B alone finishes the remaining work in 3 days. In how many days can B alone complete the entire work?",
+      "explanation": "A completed 20/25 of the work; B did the remaining 5/25 in 3 days, so B alone needs 25×3/5 = 15 days.",
+      "options": [
+        {
+          "label": "15 days",
+          "is_correct": true
+        },
+        {
+          "label": "17 days",
+          "is_correct": false
+        },
+        {
+          "label": "14 days",
+          "is_correct": false
+        },
+        {
+          "label": "16 days",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Time and Work",
+      "kind": "standard",
+      "difficulty": "hard",
+      "answer_type": "single",
+      "stem": "A can do a work in 20 days. He works for 19 days and then leaves. B alone finishes the remaining work in 9 days. In how many days can B alone complete the entire work?",
+      "explanation": "A completed 19/20 of the work; B did the remaining 1/20 in 9 days, so B alone needs 20×9/1 = 180 days.",
+      "options": [
+        {
+          "label": "184 days",
+          "is_correct": false
+        },
+        {
+          "label": "182 days",
+          "is_correct": false
+        },
+        {
+          "label": "180 days",
+          "is_correct": true
+        },
+        {
+          "label": "178 days",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Time and Work",
+      "kind": "standard",
+      "difficulty": "hard",
+      "answer_type": "single",
+      "stem": "If 30 men working 6 hours a day complete a work in 13 days, in how many days will 13 men working 6 hours a day complete the same work?",
+      "explanation": "Days = (30×6×13)/(13×6) = 2340/78 = 30.",
+      "options": [
+        {
+          "label": "31 days",
+          "is_correct": false
+        },
+        {
+          "label": "32 days",
+          "is_correct": false
+        },
+        {
+          "label": "30 days",
+          "is_correct": true
+        },
+        {
+          "label": "29 days",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Time and Work",
+      "kind": "standard",
+      "difficulty": "hard",
+      "answer_type": "single",
+      "stem": "A can do a work in 13 days. He works for 11 days and then leaves. B alone finishes the remaining work in 8 days. In how many days can B alone complete the entire work?",
+      "explanation": "A completed 11/13 of the work; B did the remaining 2/13 in 8 days, so B alone needs 13×8/2 = 52 days.",
+      "options": [
+        {
+          "label": "52 days",
+          "is_correct": true
+        },
+        {
+          "label": "50 days",
+          "is_correct": false
+        },
+        {
+          "label": "56 days",
+          "is_correct": false
+        },
+        {
+          "label": "54 days",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Time and Work",
+      "kind": "standard",
+      "difficulty": "hard",
+      "answer_type": "single",
+      "stem": "A can do a work in 24 days. He works for 21 days and then leaves. B alone finishes the remaining work in 15 days. In how many days can B alone complete the entire work?",
+      "explanation": "A completed 21/24 of the work; B did the remaining 3/24 in 15 days, so B alone needs 24×15/3 = 120 days.",
+      "options": [
+        {
+          "label": "124 days",
+          "is_correct": false
+        },
+        {
+          "label": "122 days",
+          "is_correct": false
+        },
+        {
+          "label": "120 days",
+          "is_correct": true
+        },
+        {
+          "label": "118 days",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Time and Work",
+      "kind": "standard",
+      "difficulty": "hard",
+      "answer_type": "single",
+      "stem": "If 22 men working 8 hours a day complete a work in 10 days, in how many days will 8 men working 11 hours a day complete the same work?",
+      "explanation": "Days = (22×8×10)/(8×11) = 1760/88 = 20.",
+      "options": [
+        {
+          "label": "22 days",
+          "is_correct": false
+        },
+        {
+          "label": "20 days",
+          "is_correct": true
+        },
+        {
+          "label": "19 days",
+          "is_correct": false
+        },
+        {
+          "label": "21 days",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Time and Work",
+      "kind": "standard",
+      "difficulty": "hard",
+      "answer_type": "single",
+      "stem": "A can do a work in 12 days. He works for 3 days and then leaves. B alone finishes the remaining work in 6 days. In how many days can B alone complete the entire work?",
+      "explanation": "A completed 3/12 of the work; B did the remaining 9/12 in 6 days, so B alone needs 12×6/9 = 8 days.",
+      "options": [
+        {
+          "label": "8 days",
+          "is_correct": true
+        },
+        {
+          "label": "9 days",
+          "is_correct": false
+        },
+        {
+          "label": "7 days",
+          "is_correct": false
+        },
+        {
+          "label": "10 days",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Time and Work",
+      "kind": "standard",
+      "difficulty": "hard",
+      "answer_type": "single",
+      "stem": "If 26 men working 9 hours a day complete a work in 12 days, in how many days will 6 men working 9 hours a day complete the same work?",
+      "explanation": "Days = (26×9×12)/(6×9) = 2808/54 = 52.",
+      "options": [
+        {
+          "label": "50 days",
+          "is_correct": false
+        },
+        {
+          "label": "54 days",
+          "is_correct": false
+        },
+        {
+          "label": "56 days",
+          "is_correct": false
+        },
+        {
+          "label": "52 days",
+          "is_correct": true
+        }
+      ]
+    },
+    {
+      "chapter": "Time and Work",
+      "kind": "standard",
+      "difficulty": "hard",
+      "answer_type": "single",
+      "stem": "A can do a work in 18 days. He works for 16 days and then leaves. B alone finishes the remaining work in 6 days. In how many days can B alone complete the entire work?",
+      "explanation": "A completed 16/18 of the work; B did the remaining 2/18 in 6 days, so B alone needs 18×6/2 = 54 days.",
+      "options": [
+        {
+          "label": "56 days",
+          "is_correct": false
+        },
+        {
+          "label": "52 days",
+          "is_correct": false
+        },
+        {
+          "label": "54 days",
+          "is_correct": true
+        },
+        {
+          "label": "58 days",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Time and Work",
+      "kind": "standard",
+      "difficulty": "hard",
+      "answer_type": "single",
+      "stem": "A can do a work in 10 days. He works for 9 days and then leaves. B alone finishes the remaining work in 15 days. In how many days can B alone complete the entire work?",
+      "explanation": "A completed 9/10 of the work; B did the remaining 1/10 in 15 days, so B alone needs 10×15/1 = 150 days.",
+      "options": [
+        {
+          "label": "148 days",
+          "is_correct": false
+        },
+        {
+          "label": "150 days",
+          "is_correct": true
+        },
+        {
+          "label": "152 days",
+          "is_correct": false
+        },
+        {
+          "label": "154 days",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Time and Work",
+      "kind": "standard",
+      "difficulty": "very_hard",
+      "answer_type": "single",
+      "stem": "A and B can do a work in 8 days, B and C in 12 days, and C and A in 24 days. In how many days can all three working together finish it?",
+      "explanation": "Adding the three pair-rates gives twice the combined rate, so all three together take 8 days.",
+      "options": [
+        {
+          "label": "9 days",
+          "is_correct": false
+        },
+        {
+          "label": "10 days",
+          "is_correct": false
+        },
+        {
+          "label": "8 days",
+          "is_correct": true
+        },
+        {
+          "label": "7 days",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Time and Work",
+      "kind": "standard",
+      "difficulty": "very_hard",
+      "answer_type": "single",
+      "stem": "A is 3 times as efficient as B, and together they can finish a work in 15 days. In how many days can A alone finish it?",
+      "explanation": "A and B together = (3+1) times B's rate; A alone takes (3+1)×15/3 = 20 days.",
+      "options": [
+        {
+          "label": "21 days",
+          "is_correct": false
+        },
+        {
+          "label": "20 days",
+          "is_correct": true
+        },
+        {
+          "label": "19 days",
+          "is_correct": false
+        },
+        {
+          "label": "22 days",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Time and Work",
+      "kind": "standard",
+      "difficulty": "very_hard",
+      "answer_type": "single",
+      "stem": "A is 3 times as efficient as B, and together they can finish a work in 9 days. In how many days can A alone finish it?",
+      "explanation": "A and B together = (3+1) times B's rate; A alone takes (3+1)×9/3 = 12 days.",
+      "options": [
+        {
+          "label": "12 days",
+          "is_correct": true
+        },
+        {
+          "label": "13 days",
+          "is_correct": false
+        },
+        {
+          "label": "11 days",
+          "is_correct": false
+        },
+        {
+          "label": "14 days",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Time and Work",
+      "kind": "standard",
+      "difficulty": "very_hard",
+      "answer_type": "single",
+      "stem": "A and B can do a work in 20 days, B and C in 30 days, and C and A in 60 days. In how many days can all three working together finish it?",
+      "explanation": "Adding the three pair-rates gives twice the combined rate, so all three together take 20 days.",
+      "options": [
+        {
+          "label": "20 days",
+          "is_correct": true
+        },
+        {
+          "label": "21 days",
+          "is_correct": false
+        },
+        {
+          "label": "22 days",
+          "is_correct": false
+        },
+        {
+          "label": "19 days",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Time and Work",
+      "kind": "standard",
+      "difficulty": "very_hard",
+      "answer_type": "single",
+      "stem": "A is 2 times as efficient as B, and together they can finish a work in 8 days. In how many days can A alone finish it?",
+      "explanation": "A and B together = (2+1) times B's rate; A alone takes (2+1)×8/2 = 12 days.",
+      "options": [
+        {
+          "label": "11 days",
+          "is_correct": false
+        },
+        {
+          "label": "13 days",
+          "is_correct": false
+        },
+        {
+          "label": "12 days",
+          "is_correct": true
+        },
+        {
+          "label": "14 days",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Time and Work",
+      "kind": "standard",
+      "difficulty": "very_hard",
+      "answer_type": "single",
+      "stem": "A and B can do a work in 10 days, B and C in 15 days, and C and A in 30 days. In how many days can all three working together finish it?",
+      "explanation": "Adding the three pair-rates gives twice the combined rate, so all three together take 10 days.",
+      "options": [
+        {
+          "label": "11 days",
+          "is_correct": false
+        },
+        {
+          "label": "9 days",
+          "is_correct": false
+        },
+        {
+          "label": "12 days",
+          "is_correct": false
+        },
+        {
+          "label": "10 days",
+          "is_correct": true
+        }
+      ]
+    },
+    {
+      "chapter": "Time and Work",
+      "kind": "standard",
+      "difficulty": "very_hard",
+      "answer_type": "single",
+      "stem": "A is 3 times as efficient as B, and together they can finish a work in 21 days. In how many days can A alone finish it?",
+      "explanation": "A and B together = (3+1) times B's rate; A alone takes (3+1)×21/3 = 28 days.",
+      "options": [
+        {
+          "label": "28 days",
+          "is_correct": true
+        },
+        {
+          "label": "29 days",
+          "is_correct": false
+        },
+        {
+          "label": "27 days",
+          "is_correct": false
+        },
+        {
+          "label": "30 days",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Time and Work",
+      "kind": "standard",
+      "difficulty": "very_hard",
+      "answer_type": "single",
+      "stem": "A and B together can do a work in 8 days. They work together for 7 days, after which A leaves. B alone completes the remaining work in 12 days. In how many days can B alone do the entire work?",
+      "explanation": "Together they finished 7/8 of the work; B did the remaining 1/8 in 12 days, so B alone needs 8×12/1 = 96 days.",
+      "options": [
+        {
+          "label": "96 days",
+          "is_correct": true
+        },
+        {
+          "label": "94 days",
+          "is_correct": false
+        },
+        {
+          "label": "98 days",
+          "is_correct": false
+        },
+        {
+          "label": "100 days",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Time and Work",
+      "kind": "standard",
+      "difficulty": "very_hard",
+      "answer_type": "single",
+      "stem": "A is 2 times as efficient as B, and together they can finish a work in 4 days. In how many days can A alone finish it?",
+      "explanation": "A and B together = (2+1) times B's rate; A alone takes (2+1)×4/2 = 6 days.",
+      "options": [
+        {
+          "label": "6 days",
+          "is_correct": true
+        },
+        {
+          "label": "7 days",
+          "is_correct": false
+        },
+        {
+          "label": "5 days",
+          "is_correct": false
+        },
+        {
+          "label": "8 days",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Time and Work",
+      "kind": "standard",
+      "difficulty": "very_hard",
+      "answer_type": "single",
+      "stem": "A is 2 times as efficient as B, and together they can finish a work in 16 days. In how many days can A alone finish it?",
+      "explanation": "A and B together = (2+1) times B's rate; A alone takes (2+1)×16/2 = 24 days.",
+      "options": [
+        {
+          "label": "25 days",
+          "is_correct": false
+        },
+        {
+          "label": "26 days",
+          "is_correct": false
+        },
+        {
+          "label": "23 days",
+          "is_correct": false
+        },
+        {
+          "label": "24 days",
+          "is_correct": true
+        }
+      ]
+    },
+    {
+      "chapter": "Time and Work",
+      "kind": "standard",
+      "difficulty": "very_hard",
+      "answer_type": "single",
+      "stem": "A and B together can do a work in 6 days. They work together for 3 days, after which A leaves. B alone completes the remaining work in 11 days. In how many days can B alone do the entire work?",
+      "explanation": "Together they finished 3/6 of the work; B did the remaining 3/6 in 11 days, so B alone needs 6×11/3 = 22 days.",
+      "options": [
+        {
+          "label": "22 days",
+          "is_correct": true
+        },
+        {
+          "label": "23 days",
+          "is_correct": false
+        },
+        {
+          "label": "21 days",
+          "is_correct": false
+        },
+        {
+          "label": "24 days",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Time and Work",
+      "kind": "standard",
+      "difficulty": "very_hard",
+      "answer_type": "single",
+      "stem": "A is 2 times as efficient as B, and together they can finish a work in 6 days. In how many days can A alone finish it?",
+      "explanation": "A and B together = (2+1) times B's rate; A alone takes (2+1)×6/2 = 9 days.",
+      "options": [
+        {
+          "label": "11 days",
+          "is_correct": false
+        },
+        {
+          "label": "9 days",
+          "is_correct": true
+        },
+        {
+          "label": "10 days",
+          "is_correct": false
+        },
+        {
+          "label": "8 days",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Time and Work",
+      "kind": "standard",
+      "difficulty": "very_hard",
+      "answer_type": "single",
+      "stem": "A is 4 times as efficient as B, and together they can finish a work in 16 days. In how many days can A alone finish it?",
+      "explanation": "A and B together = (4+1) times B's rate; A alone takes (4+1)×16/4 = 20 days.",
+      "options": [
+        {
+          "label": "19 days",
+          "is_correct": false
+        },
+        {
+          "label": "22 days",
+          "is_correct": false
+        },
+        {
+          "label": "20 days",
+          "is_correct": true
+        },
+        {
+          "label": "21 days",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Time and Work",
+      "kind": "standard",
+      "difficulty": "very_hard",
+      "answer_type": "single",
+      "stem": "A and B together can do a work in 6 days. They work together for 3 days, after which A leaves. B alone completes the remaining work in 6 days. In how many days can B alone do the entire work?",
+      "explanation": "Together they finished 3/6 of the work; B did the remaining 3/6 in 6 days, so B alone needs 6×6/3 = 12 days.",
+      "options": [
+        {
+          "label": "11 days",
+          "is_correct": false
+        },
+        {
+          "label": "13 days",
+          "is_correct": false
+        },
+        {
+          "label": "14 days",
+          "is_correct": false
+        },
+        {
+          "label": "12 days",
+          "is_correct": true
+        }
+      ]
+    },
+    {
+      "chapter": "Time and Work",
+      "kind": "standard",
+      "difficulty": "very_hard",
+      "answer_type": "single",
+      "stem": "A and B together can do a work in 7 days. They work together for 6 days, after which A leaves. B alone completes the remaining work in 3 days. In how many days can B alone do the entire work?",
+      "explanation": "Together they finished 6/7 of the work; B did the remaining 1/7 in 3 days, so B alone needs 7×3/1 = 21 days.",
+      "options": [
+        {
+          "label": "22 days",
+          "is_correct": false
+        },
+        {
+          "label": "23 days",
+          "is_correct": false
+        },
+        {
+          "label": "20 days",
+          "is_correct": false
+        },
+        {
+          "label": "21 days",
+          "is_correct": true
+        }
+      ]
+    },
+    {
+      "chapter": "Time and Work",
+      "kind": "standard",
+      "difficulty": "very_hard",
+      "answer_type": "single",
+      "stem": "A and B can do a work in 6 days, B and C in 9 days, and C and A in 18 days. In how many days can all three working together finish it?",
+      "explanation": "Adding the three pair-rates gives twice the combined rate, so all three together take 6 days.",
+      "options": [
+        {
+          "label": "7 days",
+          "is_correct": false
+        },
+        {
+          "label": "5 days",
+          "is_correct": false
+        },
+        {
+          "label": "8 days",
+          "is_correct": false
+        },
+        {
+          "label": "6 days",
+          "is_correct": true
+        }
+      ]
+    },
+    {
+      "chapter": "Time and Work",
+      "kind": "standard",
+      "difficulty": "very_hard",
+      "answer_type": "single",
+      "stem": "A and B together can do a work in 4 days. They work together for 3 days, after which A leaves. B alone completes the remaining work in 3 days. In how many days can B alone do the entire work?",
+      "explanation": "Together they finished 3/4 of the work; B did the remaining 1/4 in 3 days, so B alone needs 4×3/1 = 12 days.",
+      "options": [
+        {
+          "label": "14 days",
+          "is_correct": false
+        },
+        {
+          "label": "13 days",
+          "is_correct": false
+        },
+        {
+          "label": "11 days",
+          "is_correct": false
+        },
+        {
+          "label": "12 days",
+          "is_correct": true
+        }
+      ]
+    },
+    {
+      "chapter": "Time and Work",
+      "kind": "standard",
+      "difficulty": "very_hard",
+      "answer_type": "single",
+      "stem": "A and B together can do a work in 15 days. They work together for 13 days, after which A leaves. B alone completes the remaining work in 14 days. In how many days can B alone do the entire work?",
+      "explanation": "Together they finished 13/15 of the work; B did the remaining 2/15 in 14 days, so B alone needs 15×14/2 = 105 days.",
+      "options": [
+        {
+          "label": "109 days",
+          "is_correct": false
+        },
+        {
+          "label": "107 days",
+          "is_correct": false
+        },
+        {
+          "label": "103 days",
+          "is_correct": false
+        },
+        {
+          "label": "105 days",
+          "is_correct": true
+        }
+      ]
+    },
+    {
+      "chapter": "Time and Work",
+      "kind": "standard",
+      "difficulty": "very_hard",
+      "answer_type": "single",
+      "stem": "A and B can do a work in 12 days, B and C in 15 days, and C and A in 20 days. In how many days can all three working together finish it?",
+      "explanation": "Adding the three pair-rates gives twice the combined rate, so all three together take 10 days.",
+      "options": [
+        {
+          "label": "10 days",
+          "is_correct": true
+        },
+        {
+          "label": "9 days",
+          "is_correct": false
+        },
+        {
+          "label": "11 days",
+          "is_correct": false
+        },
+        {
+          "label": "12 days",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Time and Work",
+      "kind": "standard",
+      "difficulty": "very_hard",
+      "answer_type": "single",
+      "stem": "A is 3 times as efficient as B, and together they can finish a work in 6 days. In how many days can A alone finish it?",
+      "explanation": "A and B together = (3+1) times B's rate; A alone takes (3+1)×6/3 = 8 days.",
+      "options": [
+        {
+          "label": "8 days",
+          "is_correct": true
+        },
+        {
+          "label": "9 days",
+          "is_correct": false
+        },
+        {
+          "label": "7 days",
+          "is_correct": false
+        },
+        {
+          "label": "10 days",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Time and Work",
+      "kind": "standard",
+      "difficulty": "very_hard",
+      "answer_type": "single",
+      "stem": "A and B together can do a work in 4 days. They work together for 3 days, after which A leaves. B alone completes the remaining work in 5 days. In how many days can B alone do the entire work?",
+      "explanation": "Together they finished 3/4 of the work; B did the remaining 1/4 in 5 days, so B alone needs 4×5/1 = 20 days.",
+      "options": [
+        {
+          "label": "20 days",
+          "is_correct": true
+        },
+        {
+          "label": "22 days",
+          "is_correct": false
+        },
+        {
+          "label": "21 days",
+          "is_correct": false
+        },
+        {
+          "label": "19 days",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Time and Work",
+      "kind": "standard",
+      "difficulty": "very_hard",
+      "answer_type": "single",
+      "stem": "A is 4 times as efficient as B, and together they can finish a work in 40 days. In how many days can A alone finish it?",
+      "explanation": "A and B together = (4+1) times B's rate; A alone takes (4+1)×40/4 = 50 days.",
+      "options": [
+        {
+          "label": "54 days",
+          "is_correct": false
+        },
+        {
+          "label": "48 days",
+          "is_correct": false
+        },
+        {
+          "label": "52 days",
+          "is_correct": false
+        },
+        {
+          "label": "50 days",
+          "is_correct": true
+        }
+      ]
+    },
+    {
+      "chapter": "Time and Work",
+      "kind": "standard",
+      "difficulty": "very_hard",
+      "answer_type": "single",
+      "stem": "A and B together can do a work in 5 days. They work together for 3 days, after which A leaves. B alone completes the remaining work in 10 days. In how many days can B alone do the entire work?",
+      "explanation": "Together they finished 3/5 of the work; B did the remaining 2/5 in 10 days, so B alone needs 5×10/2 = 25 days.",
+      "options": [
+        {
+          "label": "27 days",
+          "is_correct": false
+        },
+        {
+          "label": "24 days",
+          "is_correct": false
+        },
+        {
+          "label": "25 days",
+          "is_correct": true
+        },
+        {
+          "label": "26 days",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Time and Work",
+      "kind": "standard",
+      "difficulty": "very_hard",
+      "answer_type": "single",
+      "stem": "A is 4 times as efficient as B, and together they can finish a work in 28 days. In how many days can A alone finish it?",
+      "explanation": "A and B together = (4+1) times B's rate; A alone takes (4+1)×28/4 = 35 days.",
+      "options": [
+        {
+          "label": "34 days",
+          "is_correct": false
+        },
+        {
+          "label": "36 days",
+          "is_correct": false
+        },
+        {
+          "label": "35 days",
+          "is_correct": true
+        },
+        {
+          "label": "37 days",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Time and Work",
+      "kind": "standard",
+      "difficulty": "very_hard",
+      "answer_type": "single",
+      "stem": "A is 2 times as efficient as B, and together they can finish a work in 10 days. In how many days can A alone finish it?",
+      "explanation": "A and B together = (2+1) times B's rate; A alone takes (2+1)×10/2 = 15 days.",
+      "options": [
+        {
+          "label": "16 days",
+          "is_correct": false
+        },
+        {
+          "label": "17 days",
+          "is_correct": false
+        },
+        {
+          "label": "15 days",
+          "is_correct": true
+        },
+        {
+          "label": "14 days",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Time and Work",
+      "kind": "standard",
+      "difficulty": "very_hard",
+      "answer_type": "single",
+      "stem": "A is 4 times as efficient as B, and together they can finish a work in 24 days. In how many days can A alone finish it?",
+      "explanation": "A and B together = (4+1) times B's rate; A alone takes (4+1)×24/4 = 30 days.",
+      "options": [
+        {
+          "label": "30 days",
+          "is_correct": true
+        },
+        {
+          "label": "32 days",
+          "is_correct": false
+        },
+        {
+          "label": "29 days",
+          "is_correct": false
+        },
+        {
+          "label": "31 days",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Time and Work",
+      "kind": "standard",
+      "difficulty": "very_hard",
+      "answer_type": "single",
+      "stem": "A is 4 times as efficient as B, and together they can finish a work in 20 days. In how many days can A alone finish it?",
+      "explanation": "A and B together = (4+1) times B's rate; A alone takes (4+1)×20/4 = 25 days.",
+      "options": [
+        {
+          "label": "27 days",
+          "is_correct": false
+        },
+        {
+          "label": "24 days",
+          "is_correct": false
+        },
+        {
+          "label": "25 days",
+          "is_correct": true
+        },
+        {
+          "label": "26 days",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Time and Work",
+      "kind": "standard",
+      "difficulty": "very_hard",
+      "answer_type": "single",
+      "stem": "A and B together can do a work in 14 days. They work together for 13 days, after which A leaves. B alone completes the remaining work in 3 days. In how many days can B alone do the entire work?",
+      "explanation": "Together they finished 13/14 of the work; B did the remaining 1/14 in 3 days, so B alone needs 14×3/1 = 42 days.",
+      "options": [
+        {
+          "label": "46 days",
+          "is_correct": false
+        },
+        {
+          "label": "40 days",
+          "is_correct": false
+        },
+        {
+          "label": "42 days",
+          "is_correct": true
+        },
+        {
+          "label": "44 days",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Time and Work",
+      "kind": "standard",
+      "difficulty": "very_hard",
+      "answer_type": "single",
+      "stem": "A and B together can do a work in 7 days. They work together for 5 days, after which A leaves. B alone completes the remaining work in 14 days. In how many days can B alone do the entire work?",
+      "explanation": "Together they finished 5/7 of the work; B did the remaining 2/7 in 14 days, so B alone needs 7×14/2 = 49 days.",
+      "options": [
+        {
+          "label": "47 days",
+          "is_correct": false
+        },
+        {
+          "label": "53 days",
+          "is_correct": false
+        },
+        {
+          "label": "51 days",
+          "is_correct": false
+        },
+        {
+          "label": "49 days",
+          "is_correct": true
+        }
+      ]
+    },
+    {
+      "chapter": "Time and Work",
+      "kind": "standard",
+      "difficulty": "very_hard",
+      "answer_type": "single",
+      "stem": "A is 3 times as efficient as B, and together they can finish a work in 12 days. In how many days can A alone finish it?",
+      "explanation": "A and B together = (3+1) times B's rate; A alone takes (3+1)×12/3 = 16 days.",
+      "options": [
+        {
+          "label": "17 days",
+          "is_correct": false
+        },
+        {
+          "label": "15 days",
+          "is_correct": false
+        },
+        {
+          "label": "18 days",
+          "is_correct": false
+        },
+        {
+          "label": "16 days",
+          "is_correct": true
+        }
+      ]
+    },
+    {
+      "chapter": "Time and Work",
+      "kind": "standard",
+      "difficulty": "very_hard",
+      "answer_type": "single",
+      "stem": "A is 3 times as efficient as B, and together they can finish a work in 27 days. In how many days can A alone finish it?",
+      "explanation": "A and B together = (3+1) times B's rate; A alone takes (3+1)×27/3 = 36 days.",
+      "options": [
+        {
+          "label": "37 days",
+          "is_correct": false
+        },
+        {
+          "label": "36 days",
+          "is_correct": true
+        },
+        {
+          "label": "38 days",
+          "is_correct": false
+        },
+        {
+          "label": "35 days",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Time and Work",
+      "kind": "standard",
+      "difficulty": "very_hard",
+      "answer_type": "single",
+      "stem": "A and B together can do a work in 9 days. They work together for 6 days, after which A leaves. B alone completes the remaining work in 7 days. In how many days can B alone do the entire work?",
+      "explanation": "Together they finished 6/9 of the work; B did the remaining 3/9 in 7 days, so B alone needs 9×7/3 = 21 days.",
+      "options": [
+        {
+          "label": "23 days",
+          "is_correct": false
+        },
+        {
+          "label": "21 days",
+          "is_correct": true
+        },
+        {
+          "label": "22 days",
+          "is_correct": false
+        },
+        {
+          "label": "20 days",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Time and Work",
+      "kind": "standard",
+      "difficulty": "very_hard",
+      "answer_type": "single",
+      "stem": "A and B together can do a work in 4 days. They work together for 2 days, after which A leaves. B alone completes the remaining work in 5 days. In how many days can B alone do the entire work?",
+      "explanation": "Together they finished 2/4 of the work; B did the remaining 2/4 in 5 days, so B alone needs 4×5/2 = 10 days.",
+      "options": [
+        {
+          "label": "10 days",
+          "is_correct": true
+        },
+        {
+          "label": "9 days",
+          "is_correct": false
+        },
+        {
+          "label": "12 days",
+          "is_correct": false
+        },
+        {
+          "label": "11 days",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Time and Work",
+      "kind": "standard",
+      "difficulty": "very_hard",
+      "answer_type": "single",
+      "stem": "A is 3 times as efficient as B, and together they can finish a work in 18 days. In how many days can A alone finish it?",
+      "explanation": "A and B together = (3+1) times B's rate; A alone takes (3+1)×18/3 = 24 days.",
+      "options": [
+        {
+          "label": "25 days",
+          "is_correct": false
+        },
+        {
+          "label": "24 days",
+          "is_correct": true
+        },
+        {
+          "label": "26 days",
+          "is_correct": false
+        },
+        {
+          "label": "23 days",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Time and Work",
+      "kind": "standard",
+      "difficulty": "very_hard",
+      "answer_type": "single",
+      "stem": "A and B together can do a work in 6 days. They work together for 5 days, after which A leaves. B alone completes the remaining work in 10 days. In how many days can B alone do the entire work?",
+      "explanation": "Together they finished 5/6 of the work; B did the remaining 1/6 in 10 days, so B alone needs 6×10/1 = 60 days.",
+      "options": [
+        {
+          "label": "64 days",
+          "is_correct": false
+        },
+        {
+          "label": "62 days",
+          "is_correct": false
+        },
+        {
+          "label": "58 days",
+          "is_correct": false
+        },
+        {
+          "label": "60 days",
+          "is_correct": true
+        }
+      ]
+    },
+    {
+      "chapter": "Time and Work",
+      "kind": "standard",
+      "difficulty": "very_hard",
+      "answer_type": "single",
+      "stem": "A is 2 times as efficient as B, and together they can finish a work in 14 days. In how many days can A alone finish it?",
+      "explanation": "A and B together = (2+1) times B's rate; A alone takes (2+1)×14/2 = 21 days.",
+      "options": [
+        {
+          "label": "21 days",
+          "is_correct": true
+        },
+        {
+          "label": "20 days",
+          "is_correct": false
+        },
+        {
+          "label": "22 days",
+          "is_correct": false
+        },
+        {
+          "label": "23 days",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Time and Work",
+      "kind": "standard",
+      "difficulty": "very_hard",
+      "answer_type": "single",
+      "stem": "A and B together can do a work in 12 days. They work together for 5 days, after which A leaves. B alone completes the remaining work in 14 days. In how many days can B alone do the entire work?",
+      "explanation": "Together they finished 5/12 of the work; B did the remaining 7/12 in 14 days, so B alone needs 12×14/7 = 24 days.",
+      "options": [
+        {
+          "label": "26 days",
+          "is_correct": false
+        },
+        {
+          "label": "24 days",
+          "is_correct": true
+        },
+        {
+          "label": "25 days",
+          "is_correct": false
+        },
+        {
+          "label": "23 days",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Time and Work",
+      "kind": "standard",
+      "difficulty": "very_hard",
+      "answer_type": "single",
+      "stem": "A is 2 times as efficient as B, and together they can finish a work in 18 days. In how many days can A alone finish it?",
+      "explanation": "A and B together = (2+1) times B's rate; A alone takes (2+1)×18/2 = 27 days.",
+      "options": [
+        {
+          "label": "29 days",
+          "is_correct": false
+        },
+        {
+          "label": "28 days",
+          "is_correct": false
+        },
+        {
+          "label": "26 days",
+          "is_correct": false
+        },
+        {
+          "label": "27 days",
+          "is_correct": true
+        }
+      ]
+    },
+    {
+      "chapter": "Time and Work",
+      "kind": "standard",
+      "difficulty": "very_hard",
+      "answer_type": "single",
+      "stem": "A and B together can do a work in 4 days. They work together for 1 days, after which A leaves. B alone completes the remaining work in 15 days. In how many days can B alone do the entire work?",
+      "explanation": "Together they finished 1/4 of the work; B did the remaining 3/4 in 15 days, so B alone needs 4×15/3 = 20 days.",
+      "options": [
+        {
+          "label": "19 days",
+          "is_correct": false
+        },
+        {
+          "label": "21 days",
+          "is_correct": false
+        },
+        {
+          "label": "20 days",
+          "is_correct": true
+        },
+        {
+          "label": "22 days",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Time and Work",
+      "kind": "standard",
+      "difficulty": "very_hard",
+      "answer_type": "single",
+      "stem": "A and B together can do a work in 4 days. They work together for 3 days, after which A leaves. B alone completes the remaining work in 7 days. In how many days can B alone do the entire work?",
+      "explanation": "Together they finished 3/4 of the work; B did the remaining 1/4 in 7 days, so B alone needs 4×7/1 = 28 days.",
+      "options": [
+        {
+          "label": "27 days",
+          "is_correct": false
+        },
+        {
+          "label": "29 days",
+          "is_correct": false
+        },
+        {
+          "label": "28 days",
+          "is_correct": true
+        },
+        {
+          "label": "30 days",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Time and Work",
+      "kind": "standard",
+      "difficulty": "very_hard",
+      "answer_type": "single",
+      "stem": "A and B together can do a work in 4 days. They work together for 3 days, after which A leaves. B alone completes the remaining work in 15 days. In how many days can B alone do the entire work?",
+      "explanation": "Together they finished 3/4 of the work; B did the remaining 1/4 in 15 days, so B alone needs 4×15/1 = 60 days.",
+      "options": [
+        {
+          "label": "60 days",
+          "is_correct": true
+        },
+        {
+          "label": "58 days",
+          "is_correct": false
+        },
+        {
+          "label": "64 days",
+          "is_correct": false
+        },
+        {
+          "label": "62 days",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Time and Work",
+      "kind": "standard",
+      "difficulty": "very_hard",
+      "answer_type": "single",
+      "stem": "A and B together can do a work in 4 days. They work together for 1 days, after which A leaves. B alone completes the remaining work in 6 days. In how many days can B alone do the entire work?",
+      "explanation": "Together they finished 1/4 of the work; B did the remaining 3/4 in 6 days, so B alone needs 4×6/3 = 8 days.",
+      "options": [
+        {
+          "label": "9 days",
+          "is_correct": false
+        },
+        {
+          "label": "10 days",
+          "is_correct": false
+        },
+        {
+          "label": "8 days",
+          "is_correct": true
+        },
+        {
+          "label": "7 days",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Time and Work",
+      "kind": "standard",
+      "difficulty": "very_hard",
+      "answer_type": "single",
+      "stem": "A and B together can do a work in 5 days. They work together for 4 days, after which A leaves. B alone completes the remaining work in 8 days. In how many days can B alone do the entire work?",
+      "explanation": "Together they finished 4/5 of the work; B did the remaining 1/5 in 8 days, so B alone needs 5×8/1 = 40 days.",
+      "options": [
+        {
+          "label": "42 days",
+          "is_correct": false
+        },
+        {
+          "label": "44 days",
+          "is_correct": false
+        },
+        {
+          "label": "38 days",
+          "is_correct": false
+        },
+        {
+          "label": "40 days",
+          "is_correct": true
+        }
+      ]
+    },
+    {
+      "chapter": "Time and Work",
+      "kind": "standard",
+      "difficulty": "very_hard",
+      "answer_type": "single",
+      "stem": "A is 4 times as efficient as B, and together they can finish a work in 8 days. In how many days can A alone finish it?",
+      "explanation": "A and B together = (4+1) times B's rate; A alone takes (4+1)×8/4 = 10 days.",
+      "options": [
+        {
+          "label": "9 days",
+          "is_correct": false
+        },
+        {
+          "label": "11 days",
+          "is_correct": false
+        },
+        {
+          "label": "12 days",
+          "is_correct": false
+        },
+        {
+          "label": "10 days",
+          "is_correct": true
+        }
+      ]
+    },
+    {
+      "chapter": "Time and Work",
+      "kind": "standard",
+      "difficulty": "very_hard",
+      "answer_type": "single",
+      "stem": "A and B together can do a work in 6 days. They work together for 3 days, after which A leaves. B alone completes the remaining work in 4 days. In how many days can B alone do the entire work?",
+      "explanation": "Together they finished 3/6 of the work; B did the remaining 3/6 in 4 days, so B alone needs 6×4/3 = 8 days.",
+      "options": [
+        {
+          "label": "9 days",
+          "is_correct": false
+        },
+        {
+          "label": "7 days",
+          "is_correct": false
+        },
+        {
+          "label": "10 days",
+          "is_correct": false
+        },
+        {
+          "label": "8 days",
+          "is_correct": true
+        }
+      ]
+    },
+    {
+      "chapter": "Time and Work",
+      "kind": "standard",
+      "difficulty": "very_hard",
+      "answer_type": "single",
+      "stem": "A and B together can do a work in 9 days. They work together for 6 days, after which A leaves. B alone completes the remaining work in 5 days. In how many days can B alone do the entire work?",
+      "explanation": "Together they finished 6/9 of the work; B did the remaining 3/9 in 5 days, so B alone needs 9×5/3 = 15 days.",
+      "options": [
+        {
+          "label": "17 days",
+          "is_correct": false
+        },
+        {
+          "label": "14 days",
+          "is_correct": false
+        },
+        {
+          "label": "16 days",
+          "is_correct": false
+        },
+        {
+          "label": "15 days",
+          "is_correct": true
+        }
+      ]
+    },
+    {
+      "chapter": "Time and Work",
+      "kind": "standard",
+      "difficulty": "very_hard",
+      "answer_type": "single",
+      "stem": "A is 2 times as efficient as B, and together they can finish a work in 12 days. In how many days can A alone finish it?",
+      "explanation": "A and B together = (2+1) times B's rate; A alone takes (2+1)×12/2 = 18 days.",
+      "options": [
+        {
+          "label": "17 days",
+          "is_correct": false
+        },
+        {
+          "label": "18 days",
+          "is_correct": true
+        },
+        {
+          "label": "20 days",
+          "is_correct": false
+        },
+        {
+          "label": "19 days",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Time and Work",
+      "kind": "standard",
+      "difficulty": "very_hard",
+      "answer_type": "single",
+      "stem": "A is 4 times as efficient as B, and together they can finish a work in 12 days. In how many days can A alone finish it?",
+      "explanation": "A and B together = (4+1) times B's rate; A alone takes (4+1)×12/4 = 15 days.",
+      "options": [
+        {
+          "label": "14 days",
+          "is_correct": false
+        },
+        {
+          "label": "16 days",
+          "is_correct": false
+        },
+        {
+          "label": "15 days",
+          "is_correct": true
+        },
+        {
+          "label": "17 days",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Time and Work",
+      "kind": "standard",
+      "difficulty": "very_hard",
+      "answer_type": "single",
+      "stem": "A and B together can do a work in 15 days. They work together for 10 days, after which A leaves. B alone completes the remaining work in 3 days. In how many days can B alone do the entire work?",
+      "explanation": "Together they finished 10/15 of the work; B did the remaining 5/15 in 3 days, so B alone needs 15×3/5 = 9 days.",
+      "options": [
+        {
+          "label": "11 days",
+          "is_correct": false
+        },
+        {
+          "label": "10 days",
+          "is_correct": false
+        },
+        {
+          "label": "9 days",
+          "is_correct": true
+        },
+        {
+          "label": "8 days",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Time and Work",
+      "kind": "standard",
+      "difficulty": "very_hard",
+      "answer_type": "single",
+      "stem": "A and B together can do a work in 6 days. They work together for 4 days, after which A leaves. B alone completes the remaining work in 6 days. In how many days can B alone do the entire work?",
+      "explanation": "Together they finished 4/6 of the work; B did the remaining 2/6 in 6 days, so B alone needs 6×6/2 = 18 days.",
+      "options": [
+        {
+          "label": "19 days",
+          "is_correct": false
+        },
+        {
+          "label": "20 days",
+          "is_correct": false
+        },
+        {
+          "label": "18 days",
+          "is_correct": true
+        },
+        {
+          "label": "17 days",
+          "is_correct": false
+        }
+      ]
+    }
+  ]
+}

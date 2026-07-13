@@ -13,7 +13,11 @@ export async function GET(req: NextRequest) {
 
   const { data, error } = await supabase
     .from("college")
-    .select("id, name, place, state")
+    // Include the detail columns so pickers can show the full college (no
+    // separate college.manage-gated fetch needed).
+    .select(
+      "id, name, place, state, district, pincode, address, established_in, ownership_type, status",
+    )
     .ilike("name", `%${q}%`)
     .order("name")
     .limit(20);

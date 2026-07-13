@@ -1,0 +1,5205 @@
+{
+  "subject": "Arithmetic",
+  "questions": [
+    {
+      "chapter": "H.C.F. and L.C.M. of Numbers",
+      "kind": "standard",
+      "difficulty": "easy",
+      "answer_type": "single",
+      "stem": "Find the LCM (least common multiple) of 6 and 33.",
+      "explanation": "LCM = HCF × (2×11) = 3×22 = 66.",
+      "options": [
+        {
+          "label": "68",
+          "is_correct": false
+        },
+        {
+          "label": "70",
+          "is_correct": false
+        },
+        {
+          "label": "66",
+          "is_correct": true
+        },
+        {
+          "label": "64",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "H.C.F. and L.C.M. of Numbers",
+      "kind": "standard",
+      "difficulty": "easy",
+      "answer_type": "single",
+      "stem": "Find the HCF (greatest common divisor) of 110 and 70.",
+      "explanation": "110 = 10×11, 70 = 10×7, and 11, 7 share no common factor, so HCF = 10.",
+      "options": [
+        {
+          "label": "10",
+          "is_correct": true
+        },
+        {
+          "label": "9",
+          "is_correct": false
+        },
+        {
+          "label": "11",
+          "is_correct": false
+        },
+        {
+          "label": "12",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "H.C.F. and L.C.M. of Numbers",
+      "kind": "standard",
+      "difficulty": "easy",
+      "answer_type": "single",
+      "stem": "Find the HCF of 18, 81 and 99.",
+      "explanation": "Each number is a multiple of 9 and the co-factors 2, 9, 11 share no common factor, so HCF = 9.",
+      "options": [
+        {
+          "label": "10",
+          "is_correct": false
+        },
+        {
+          "label": "9",
+          "is_correct": true
+        },
+        {
+          "label": "11",
+          "is_correct": false
+        },
+        {
+          "label": "8",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "H.C.F. and L.C.M. of Numbers",
+      "kind": "standard",
+      "difficulty": "easy",
+      "answer_type": "single",
+      "stem": "Find the HCF (greatest common divisor) of 63 and 49.",
+      "explanation": "63 = 7×9, 49 = 7×7, and 9, 7 share no common factor, so HCF = 7.",
+      "options": [
+        {
+          "label": "6",
+          "is_correct": false
+        },
+        {
+          "label": "9",
+          "is_correct": false
+        },
+        {
+          "label": "7",
+          "is_correct": true
+        },
+        {
+          "label": "8",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "H.C.F. and L.C.M. of Numbers",
+      "kind": "standard",
+      "difficulty": "easy",
+      "answer_type": "single",
+      "stem": "Find the HCF of 28, 8 and 44.",
+      "explanation": "Each number is a multiple of 4 and the co-factors 7, 2, 11 share no common factor, so HCF = 4.",
+      "options": [
+        {
+          "label": "5",
+          "is_correct": false
+        },
+        {
+          "label": "4",
+          "is_correct": true
+        },
+        {
+          "label": "3",
+          "is_correct": false
+        },
+        {
+          "label": "6",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "H.C.F. and L.C.M. of Numbers",
+      "kind": "standard",
+      "difficulty": "easy",
+      "answer_type": "single",
+      "stem": "Find the HCF of 63, 18 and 27.",
+      "explanation": "Each number is a multiple of 9 and the co-factors 7, 2, 3 share no common factor, so HCF = 9.",
+      "options": [
+        {
+          "label": "10",
+          "is_correct": false
+        },
+        {
+          "label": "8",
+          "is_correct": false
+        },
+        {
+          "label": "11",
+          "is_correct": false
+        },
+        {
+          "label": "9",
+          "is_correct": true
+        }
+      ]
+    },
+    {
+      "chapter": "H.C.F. and L.C.M. of Numbers",
+      "kind": "standard",
+      "difficulty": "easy",
+      "answer_type": "single",
+      "stem": "Find the HCF of 40, 45 and 25.",
+      "explanation": "Each number is a multiple of 5 and the co-factors 8, 9, 5 share no common factor, so HCF = 5.",
+      "options": [
+        {
+          "label": "7",
+          "is_correct": false
+        },
+        {
+          "label": "5",
+          "is_correct": true
+        },
+        {
+          "label": "4",
+          "is_correct": false
+        },
+        {
+          "label": "6",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "H.C.F. and L.C.M. of Numbers",
+      "kind": "standard",
+      "difficulty": "easy",
+      "answer_type": "single",
+      "stem": "Find the HCF (greatest common divisor) of 9 and 21.",
+      "explanation": "9 = 3×3, 21 = 3×7, and 3, 7 share no common factor, so HCF = 3.",
+      "options": [
+        {
+          "label": "4",
+          "is_correct": false
+        },
+        {
+          "label": "5",
+          "is_correct": false
+        },
+        {
+          "label": "3",
+          "is_correct": true
+        },
+        {
+          "label": "2",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "H.C.F. and L.C.M. of Numbers",
+      "kind": "standard",
+      "difficulty": "easy",
+      "answer_type": "single",
+      "stem": "Find the LCM (least common multiple) of 40 and 25.",
+      "explanation": "LCM = HCF × (8×5) = 5×40 = 200.",
+      "options": [
+        {
+          "label": "208",
+          "is_correct": false
+        },
+        {
+          "label": "192",
+          "is_correct": false
+        },
+        {
+          "label": "200",
+          "is_correct": true
+        },
+        {
+          "label": "216",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "H.C.F. and L.C.M. of Numbers",
+      "kind": "standard",
+      "difficulty": "easy",
+      "answer_type": "single",
+      "stem": "Find the HCF (greatest common divisor) of 4 and 10.",
+      "explanation": "4 = 2×2, 10 = 2×5, and 2, 5 share no common factor, so HCF = 2.",
+      "options": [
+        {
+          "label": "2",
+          "is_correct": true
+        },
+        {
+          "label": "3",
+          "is_correct": false
+        },
+        {
+          "label": "4",
+          "is_correct": false
+        },
+        {
+          "label": "1",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "H.C.F. and L.C.M. of Numbers",
+      "kind": "standard",
+      "difficulty": "easy",
+      "answer_type": "single",
+      "stem": "Find the LCM (least common multiple) of 14 and 77.",
+      "explanation": "LCM = HCF × (2×11) = 7×22 = 154.",
+      "options": [
+        {
+          "label": "156",
+          "is_correct": false
+        },
+        {
+          "label": "152",
+          "is_correct": false
+        },
+        {
+          "label": "154",
+          "is_correct": true
+        },
+        {
+          "label": "158",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "H.C.F. and L.C.M. of Numbers",
+      "kind": "standard",
+      "difficulty": "easy",
+      "answer_type": "single",
+      "stem": "Find the HCF (greatest common divisor) of 50 and 80.",
+      "explanation": "50 = 10×5, 80 = 10×8, and 5, 8 share no common factor, so HCF = 10.",
+      "options": [
+        {
+          "label": "10",
+          "is_correct": true
+        },
+        {
+          "label": "11",
+          "is_correct": false
+        },
+        {
+          "label": "12",
+          "is_correct": false
+        },
+        {
+          "label": "9",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "H.C.F. and L.C.M. of Numbers",
+      "kind": "standard",
+      "difficulty": "easy",
+      "answer_type": "single",
+      "stem": "Find the HCF (greatest common divisor) of 84 and 48.",
+      "explanation": "84 = 12×7, 48 = 12×4, and 7, 4 share no common factor, so HCF = 12.",
+      "options": [
+        {
+          "label": "12",
+          "is_correct": true
+        },
+        {
+          "label": "14",
+          "is_correct": false
+        },
+        {
+          "label": "13",
+          "is_correct": false
+        },
+        {
+          "label": "11",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "H.C.F. and L.C.M. of Numbers",
+      "kind": "standard",
+      "difficulty": "easy",
+      "answer_type": "single",
+      "stem": "Find the HCF of 28, 77 and 35.",
+      "explanation": "Each number is a multiple of 7 and the co-factors 4, 11, 5 share no common factor, so HCF = 7.",
+      "options": [
+        {
+          "label": "7",
+          "is_correct": true
+        },
+        {
+          "label": "9",
+          "is_correct": false
+        },
+        {
+          "label": "6",
+          "is_correct": false
+        },
+        {
+          "label": "8",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "H.C.F. and L.C.M. of Numbers",
+      "kind": "standard",
+      "difficulty": "easy",
+      "answer_type": "single",
+      "stem": "Find the HCF of 55, 25 and 45.",
+      "explanation": "Each number is a multiple of 5 and the co-factors 11, 5, 9 share no common factor, so HCF = 5.",
+      "options": [
+        {
+          "label": "7",
+          "is_correct": false
+        },
+        {
+          "label": "4",
+          "is_correct": false
+        },
+        {
+          "label": "5",
+          "is_correct": true
+        },
+        {
+          "label": "6",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "H.C.F. and L.C.M. of Numbers",
+      "kind": "standard",
+      "difficulty": "easy",
+      "answer_type": "single",
+      "stem": "Find the HCF of 15, 55 and 35.",
+      "explanation": "Each number is a multiple of 5 and the co-factors 3, 11, 7 share no common factor, so HCF = 5.",
+      "options": [
+        {
+          "label": "6",
+          "is_correct": false
+        },
+        {
+          "label": "5",
+          "is_correct": true
+        },
+        {
+          "label": "7",
+          "is_correct": false
+        },
+        {
+          "label": "4",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "H.C.F. and L.C.M. of Numbers",
+      "kind": "standard",
+      "difficulty": "easy",
+      "answer_type": "single",
+      "stem": "Find the HCF of 42, 60 and 18.",
+      "explanation": "Each number is a multiple of 6 and the co-factors 7, 10, 3 share no common factor, so HCF = 6.",
+      "options": [
+        {
+          "label": "6",
+          "is_correct": true
+        },
+        {
+          "label": "7",
+          "is_correct": false
+        },
+        {
+          "label": "5",
+          "is_correct": false
+        },
+        {
+          "label": "8",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "H.C.F. and L.C.M. of Numbers",
+      "kind": "standard",
+      "difficulty": "easy",
+      "answer_type": "single",
+      "stem": "Find the HCF of 40, 48 and 88.",
+      "explanation": "Each number is a multiple of 8 and the co-factors 5, 6, 11 share no common factor, so HCF = 8.",
+      "options": [
+        {
+          "label": "10",
+          "is_correct": false
+        },
+        {
+          "label": "9",
+          "is_correct": false
+        },
+        {
+          "label": "7",
+          "is_correct": false
+        },
+        {
+          "label": "8",
+          "is_correct": true
+        }
+      ]
+    },
+    {
+      "chapter": "H.C.F. and L.C.M. of Numbers",
+      "kind": "standard",
+      "difficulty": "easy",
+      "answer_type": "single",
+      "stem": "Find the LCM (least common multiple) of 18 and 8.",
+      "explanation": "LCM = HCF × (9×4) = 2×36 = 72.",
+      "options": [
+        {
+          "label": "72",
+          "is_correct": true
+        },
+        {
+          "label": "74",
+          "is_correct": false
+        },
+        {
+          "label": "76",
+          "is_correct": false
+        },
+        {
+          "label": "70",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "H.C.F. and L.C.M. of Numbers",
+      "kind": "standard",
+      "difficulty": "easy",
+      "answer_type": "single",
+      "stem": "Find the HCF (greatest common divisor) of 99 and 77.",
+      "explanation": "99 = 11×9, 77 = 11×7, and 9, 7 share no common factor, so HCF = 11.",
+      "options": [
+        {
+          "label": "11",
+          "is_correct": true
+        },
+        {
+          "label": "10",
+          "is_correct": false
+        },
+        {
+          "label": "12",
+          "is_correct": false
+        },
+        {
+          "label": "13",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "H.C.F. and L.C.M. of Numbers",
+      "kind": "standard",
+      "difficulty": "easy",
+      "answer_type": "single",
+      "stem": "Find the LCM (least common multiple) of 15 and 35.",
+      "explanation": "LCM = HCF × (3×7) = 5×21 = 105.",
+      "options": [
+        {
+          "label": "103",
+          "is_correct": false
+        },
+        {
+          "label": "107",
+          "is_correct": false
+        },
+        {
+          "label": "109",
+          "is_correct": false
+        },
+        {
+          "label": "105",
+          "is_correct": true
+        }
+      ]
+    },
+    {
+      "chapter": "H.C.F. and L.C.M. of Numbers",
+      "kind": "standard",
+      "difficulty": "easy",
+      "answer_type": "single",
+      "stem": "Find the HCF of 49, 77 and 84.",
+      "explanation": "Each number is a multiple of 7 and the co-factors 7, 11, 12 share no common factor, so HCF = 7.",
+      "options": [
+        {
+          "label": "9",
+          "is_correct": false
+        },
+        {
+          "label": "8",
+          "is_correct": false
+        },
+        {
+          "label": "7",
+          "is_correct": true
+        },
+        {
+          "label": "6",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "H.C.F. and L.C.M. of Numbers",
+      "kind": "standard",
+      "difficulty": "easy",
+      "answer_type": "single",
+      "stem": "Find the LCM (least common multiple) of 77 and 35.",
+      "explanation": "LCM = HCF × (11×5) = 7×55 = 385.",
+      "options": [
+        {
+          "label": "385",
+          "is_correct": true
+        },
+        {
+          "label": "415",
+          "is_correct": false
+        },
+        {
+          "label": "400",
+          "is_correct": false
+        },
+        {
+          "label": "370",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "H.C.F. and L.C.M. of Numbers",
+      "kind": "standard",
+      "difficulty": "easy",
+      "answer_type": "single",
+      "stem": "Find the LCM (least common multiple) of 50 and 40.",
+      "explanation": "LCM = HCF × (5×4) = 10×20 = 200.",
+      "options": [
+        {
+          "label": "200",
+          "is_correct": true
+        },
+        {
+          "label": "216",
+          "is_correct": false
+        },
+        {
+          "label": "192",
+          "is_correct": false
+        },
+        {
+          "label": "208",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "H.C.F. and L.C.M. of Numbers",
+      "kind": "standard",
+      "difficulty": "easy",
+      "answer_type": "single",
+      "stem": "Find the LCM (least common multiple) of 28 and 48.",
+      "explanation": "LCM = HCF × (7×12) = 4×84 = 336.",
+      "options": [
+        {
+          "label": "323",
+          "is_correct": false
+        },
+        {
+          "label": "349",
+          "is_correct": false
+        },
+        {
+          "label": "362",
+          "is_correct": false
+        },
+        {
+          "label": "336",
+          "is_correct": true
+        }
+      ]
+    },
+    {
+      "chapter": "H.C.F. and L.C.M. of Numbers",
+      "kind": "standard",
+      "difficulty": "easy",
+      "answer_type": "single",
+      "stem": "Find the LCM (least common multiple) of 88 and 72.",
+      "explanation": "LCM = HCF × (11×9) = 8×99 = 792.",
+      "options": [
+        {
+          "label": "792",
+          "is_correct": true
+        },
+        {
+          "label": "824",
+          "is_correct": false
+        },
+        {
+          "label": "760",
+          "is_correct": false
+        },
+        {
+          "label": "856",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "H.C.F. and L.C.M. of Numbers",
+      "kind": "standard",
+      "difficulty": "easy",
+      "answer_type": "single",
+      "stem": "Find the HCF of 56, 80 and 24.",
+      "explanation": "Each number is a multiple of 8 and the co-factors 7, 10, 3 share no common factor, so HCF = 8.",
+      "options": [
+        {
+          "label": "7",
+          "is_correct": false
+        },
+        {
+          "label": "8",
+          "is_correct": true
+        },
+        {
+          "label": "10",
+          "is_correct": false
+        },
+        {
+          "label": "9",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "H.C.F. and L.C.M. of Numbers",
+      "kind": "standard",
+      "difficulty": "easy",
+      "answer_type": "single",
+      "stem": "Find the HCF (greatest common divisor) of 42 and 66.",
+      "explanation": "42 = 6×7, 66 = 6×11, and 7, 11 share no common factor, so HCF = 6.",
+      "options": [
+        {
+          "label": "8",
+          "is_correct": false
+        },
+        {
+          "label": "7",
+          "is_correct": false
+        },
+        {
+          "label": "6",
+          "is_correct": true
+        },
+        {
+          "label": "5",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "H.C.F. and L.C.M. of Numbers",
+      "kind": "standard",
+      "difficulty": "easy",
+      "answer_type": "single",
+      "stem": "Find the LCM (least common multiple) of 44 and 48.",
+      "explanation": "LCM = HCF × (11×12) = 4×132 = 528.",
+      "options": [
+        {
+          "label": "507",
+          "is_correct": false
+        },
+        {
+          "label": "570",
+          "is_correct": false
+        },
+        {
+          "label": "549",
+          "is_correct": false
+        },
+        {
+          "label": "528",
+          "is_correct": true
+        }
+      ]
+    },
+    {
+      "chapter": "H.C.F. and L.C.M. of Numbers",
+      "kind": "standard",
+      "difficulty": "easy",
+      "answer_type": "single",
+      "stem": "Find the HCF of 10, 25 and 35.",
+      "explanation": "Each number is a multiple of 5 and the co-factors 2, 5, 7 share no common factor, so HCF = 5.",
+      "options": [
+        {
+          "label": "5",
+          "is_correct": true
+        },
+        {
+          "label": "4",
+          "is_correct": false
+        },
+        {
+          "label": "6",
+          "is_correct": false
+        },
+        {
+          "label": "7",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "H.C.F. and L.C.M. of Numbers",
+      "kind": "standard",
+      "difficulty": "easy",
+      "answer_type": "single",
+      "stem": "Find the LCM (least common multiple) of 88 and 96.",
+      "explanation": "LCM = HCF × (11×12) = 8×132 = 1056.",
+      "options": [
+        {
+          "label": "1014",
+          "is_correct": false
+        },
+        {
+          "label": "1056",
+          "is_correct": true
+        },
+        {
+          "label": "1098",
+          "is_correct": false
+        },
+        {
+          "label": "1140",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "H.C.F. and L.C.M. of Numbers",
+      "kind": "standard",
+      "difficulty": "easy",
+      "answer_type": "single",
+      "stem": "Find the HCF (greatest common divisor) of 81 and 63.",
+      "explanation": "81 = 9×9, 63 = 9×7, and 9, 7 share no common factor, so HCF = 9.",
+      "options": [
+        {
+          "label": "11",
+          "is_correct": false
+        },
+        {
+          "label": "10",
+          "is_correct": false
+        },
+        {
+          "label": "8",
+          "is_correct": false
+        },
+        {
+          "label": "9",
+          "is_correct": true
+        }
+      ]
+    },
+    {
+      "chapter": "H.C.F. and L.C.M. of Numbers",
+      "kind": "standard",
+      "difficulty": "easy",
+      "answer_type": "single",
+      "stem": "Find the HCF of 18, 45 and 99.",
+      "explanation": "Each number is a multiple of 9 and the co-factors 2, 5, 11 share no common factor, so HCF = 9.",
+      "options": [
+        {
+          "label": "9",
+          "is_correct": true
+        },
+        {
+          "label": "10",
+          "is_correct": false
+        },
+        {
+          "label": "11",
+          "is_correct": false
+        },
+        {
+          "label": "8",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "H.C.F. and L.C.M. of Numbers",
+      "kind": "standard",
+      "difficulty": "easy",
+      "answer_type": "single",
+      "stem": "Find the HCF of 24, 21 and 27.",
+      "explanation": "Each number is a multiple of 3 and the co-factors 8, 7, 9 share no common factor, so HCF = 3.",
+      "options": [
+        {
+          "label": "2",
+          "is_correct": false
+        },
+        {
+          "label": "4",
+          "is_correct": false
+        },
+        {
+          "label": "3",
+          "is_correct": true
+        },
+        {
+          "label": "5",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "H.C.F. and L.C.M. of Numbers",
+      "kind": "standard",
+      "difficulty": "easy",
+      "answer_type": "single",
+      "stem": "Find the LCM (least common multiple) of 30 and 21.",
+      "explanation": "LCM = HCF × (10×7) = 3×70 = 210.",
+      "options": [
+        {
+          "label": "218",
+          "is_correct": false
+        },
+        {
+          "label": "202",
+          "is_correct": false
+        },
+        {
+          "label": "226",
+          "is_correct": false
+        },
+        {
+          "label": "210",
+          "is_correct": true
+        }
+      ]
+    },
+    {
+      "chapter": "H.C.F. and L.C.M. of Numbers",
+      "kind": "standard",
+      "difficulty": "easy",
+      "answer_type": "single",
+      "stem": "Find the HCF of 24, 9 and 15.",
+      "explanation": "Each number is a multiple of 3 and the co-factors 8, 3, 5 share no common factor, so HCF = 3.",
+      "options": [
+        {
+          "label": "5",
+          "is_correct": false
+        },
+        {
+          "label": "3",
+          "is_correct": true
+        },
+        {
+          "label": "4",
+          "is_correct": false
+        },
+        {
+          "label": "2",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "H.C.F. and L.C.M. of Numbers",
+      "kind": "standard",
+      "difficulty": "easy",
+      "answer_type": "single",
+      "stem": "Find the HCF of 6, 22 and 20.",
+      "explanation": "Each number is a multiple of 2 and the co-factors 3, 11, 10 share no common factor, so HCF = 2.",
+      "options": [
+        {
+          "label": "1",
+          "is_correct": false
+        },
+        {
+          "label": "3",
+          "is_correct": false
+        },
+        {
+          "label": "4",
+          "is_correct": false
+        },
+        {
+          "label": "2",
+          "is_correct": true
+        }
+      ]
+    },
+    {
+      "chapter": "H.C.F. and L.C.M. of Numbers",
+      "kind": "standard",
+      "difficulty": "easy",
+      "answer_type": "single",
+      "stem": "Find the HCF (greatest common divisor) of 54 and 66.",
+      "explanation": "54 = 6×9, 66 = 6×11, and 9, 11 share no common factor, so HCF = 6.",
+      "options": [
+        {
+          "label": "7",
+          "is_correct": false
+        },
+        {
+          "label": "8",
+          "is_correct": false
+        },
+        {
+          "label": "6",
+          "is_correct": true
+        },
+        {
+          "label": "5",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "H.C.F. and L.C.M. of Numbers",
+      "kind": "standard",
+      "difficulty": "easy",
+      "answer_type": "single",
+      "stem": "Find the LCM (least common multiple) of 70 and 77.",
+      "explanation": "LCM = HCF × (10×11) = 7×110 = 770.",
+      "options": [
+        {
+          "label": "770",
+          "is_correct": true
+        },
+        {
+          "label": "832",
+          "is_correct": false
+        },
+        {
+          "label": "739",
+          "is_correct": false
+        },
+        {
+          "label": "801",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "H.C.F. and L.C.M. of Numbers",
+      "kind": "standard",
+      "difficulty": "easy",
+      "answer_type": "single",
+      "stem": "Find the LCM (least common multiple) of 28 and 77.",
+      "explanation": "LCM = HCF × (4×11) = 7×44 = 308.",
+      "options": [
+        {
+          "label": "296",
+          "is_correct": false
+        },
+        {
+          "label": "308",
+          "is_correct": true
+        },
+        {
+          "label": "332",
+          "is_correct": false
+        },
+        {
+          "label": "320",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "H.C.F. and L.C.M. of Numbers",
+      "kind": "standard",
+      "difficulty": "easy",
+      "answer_type": "single",
+      "stem": "Find the HCF (greatest common divisor) of 10 and 35.",
+      "explanation": "10 = 5×2, 35 = 5×7, and 2, 7 share no common factor, so HCF = 5.",
+      "options": [
+        {
+          "label": "4",
+          "is_correct": false
+        },
+        {
+          "label": "6",
+          "is_correct": false
+        },
+        {
+          "label": "5",
+          "is_correct": true
+        },
+        {
+          "label": "7",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "H.C.F. and L.C.M. of Numbers",
+      "kind": "standard",
+      "difficulty": "easy",
+      "answer_type": "single",
+      "stem": "Find the LCM (least common multiple) of 42 and 66.",
+      "explanation": "LCM = HCF × (7×11) = 6×77 = 462.",
+      "options": [
+        {
+          "label": "444",
+          "is_correct": false
+        },
+        {
+          "label": "462",
+          "is_correct": true
+        },
+        {
+          "label": "498",
+          "is_correct": false
+        },
+        {
+          "label": "480",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "H.C.F. and L.C.M. of Numbers",
+      "kind": "standard",
+      "difficulty": "easy",
+      "answer_type": "single",
+      "stem": "Find the HCF of 10, 22 and 16.",
+      "explanation": "Each number is a multiple of 2 and the co-factors 5, 11, 8 share no common factor, so HCF = 2.",
+      "options": [
+        {
+          "label": "3",
+          "is_correct": false
+        },
+        {
+          "label": "2",
+          "is_correct": true
+        },
+        {
+          "label": "1",
+          "is_correct": false
+        },
+        {
+          "label": "4",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "H.C.F. and L.C.M. of Numbers",
+      "kind": "standard",
+      "difficulty": "easy",
+      "answer_type": "single",
+      "stem": "Find the HCF (greatest common divisor) of 27 and 45.",
+      "explanation": "27 = 9×3, 45 = 9×5, and 3, 5 share no common factor, so HCF = 9.",
+      "options": [
+        {
+          "label": "10",
+          "is_correct": false
+        },
+        {
+          "label": "11",
+          "is_correct": false
+        },
+        {
+          "label": "8",
+          "is_correct": false
+        },
+        {
+          "label": "9",
+          "is_correct": true
+        }
+      ]
+    },
+    {
+      "chapter": "H.C.F. and L.C.M. of Numbers",
+      "kind": "standard",
+      "difficulty": "easy",
+      "answer_type": "single",
+      "stem": "Find the HCF (greatest common divisor) of 32 and 36.",
+      "explanation": "32 = 4×8, 36 = 4×9, and 8, 9 share no common factor, so HCF = 4.",
+      "options": [
+        {
+          "label": "6",
+          "is_correct": false
+        },
+        {
+          "label": "4",
+          "is_correct": true
+        },
+        {
+          "label": "5",
+          "is_correct": false
+        },
+        {
+          "label": "3",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "H.C.F. and L.C.M. of Numbers",
+      "kind": "standard",
+      "difficulty": "easy",
+      "answer_type": "single",
+      "stem": "Find the HCF (greatest common divisor) of 36 and 48.",
+      "explanation": "36 = 12×3, 48 = 12×4, and 3, 4 share no common factor, so HCF = 12.",
+      "options": [
+        {
+          "label": "13",
+          "is_correct": false
+        },
+        {
+          "label": "11",
+          "is_correct": false
+        },
+        {
+          "label": "12",
+          "is_correct": true
+        },
+        {
+          "label": "14",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "H.C.F. and L.C.M. of Numbers",
+      "kind": "standard",
+      "difficulty": "easy",
+      "answer_type": "single",
+      "stem": "Find the HCF (greatest common divisor) of 18 and 60.",
+      "explanation": "18 = 6×3, 60 = 6×10, and 3, 10 share no common factor, so HCF = 6.",
+      "options": [
+        {
+          "label": "6",
+          "is_correct": true
+        },
+        {
+          "label": "8",
+          "is_correct": false
+        },
+        {
+          "label": "7",
+          "is_correct": false
+        },
+        {
+          "label": "5",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "H.C.F. and L.C.M. of Numbers",
+      "kind": "standard",
+      "difficulty": "easy",
+      "answer_type": "single",
+      "stem": "Find the HCF (greatest common divisor) of 40 and 56.",
+      "explanation": "40 = 8×5, 56 = 8×7, and 5, 7 share no common factor, so HCF = 8.",
+      "options": [
+        {
+          "label": "7",
+          "is_correct": false
+        },
+        {
+          "label": "10",
+          "is_correct": false
+        },
+        {
+          "label": "9",
+          "is_correct": false
+        },
+        {
+          "label": "8",
+          "is_correct": true
+        }
+      ]
+    },
+    {
+      "chapter": "H.C.F. and L.C.M. of Numbers",
+      "kind": "standard",
+      "difficulty": "easy",
+      "answer_type": "single",
+      "stem": "Find the HCF of 33, 21 and 18.",
+      "explanation": "Each number is a multiple of 3 and the co-factors 11, 7, 6 share no common factor, so HCF = 3.",
+      "options": [
+        {
+          "label": "5",
+          "is_correct": false
+        },
+        {
+          "label": "4",
+          "is_correct": false
+        },
+        {
+          "label": "2",
+          "is_correct": false
+        },
+        {
+          "label": "3",
+          "is_correct": true
+        }
+      ]
+    },
+    {
+      "chapter": "H.C.F. and L.C.M. of Numbers",
+      "kind": "standard",
+      "difficulty": "easy",
+      "answer_type": "single",
+      "stem": "Find the HCF of 35, 21 and 49.",
+      "explanation": "Each number is a multiple of 7 and the co-factors 5, 3, 7 share no common factor, so HCF = 7.",
+      "options": [
+        {
+          "label": "9",
+          "is_correct": false
+        },
+        {
+          "label": "7",
+          "is_correct": true
+        },
+        {
+          "label": "6",
+          "is_correct": false
+        },
+        {
+          "label": "8",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "H.C.F. and L.C.M. of Numbers",
+      "kind": "standard",
+      "difficulty": "medium",
+      "answer_type": "single",
+      "stem": "The HCF of two numbers is 15 and their LCM is 825. If one of the numbers is 165, find the other number.",
+      "explanation": "Other number = HCF×LCM/(one number) = 15×825/165 = 75.",
+      "options": [
+        {
+          "label": "79",
+          "is_correct": false
+        },
+        {
+          "label": "77",
+          "is_correct": false
+        },
+        {
+          "label": "73",
+          "is_correct": false
+        },
+        {
+          "label": "75",
+          "is_correct": true
+        }
+      ]
+    },
+    {
+      "chapter": "H.C.F. and L.C.M. of Numbers",
+      "kind": "standard",
+      "difficulty": "medium",
+      "answer_type": "single",
+      "stem": "The HCF of two numbers is 8 and their LCM is 440. If one of the numbers is 88, find the other number.",
+      "explanation": "Other number = HCF×LCM/(one number) = 8×440/88 = 40.",
+      "options": [
+        {
+          "label": "38",
+          "is_correct": false
+        },
+        {
+          "label": "44",
+          "is_correct": false
+        },
+        {
+          "label": "40",
+          "is_correct": true
+        },
+        {
+          "label": "42",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "H.C.F. and L.C.M. of Numbers",
+      "kind": "standard",
+      "difficulty": "medium",
+      "answer_type": "single",
+      "stem": "Find the greatest length (in cm) that can exactly measure lengths of 132 cm and 108 cm.",
+      "explanation": "The greatest such length is the HCF of 132 and 108, which is 12 cm.",
+      "options": [
+        {
+          "label": "14 cm",
+          "is_correct": false
+        },
+        {
+          "label": "11 cm",
+          "is_correct": false
+        },
+        {
+          "label": "13 cm",
+          "is_correct": false
+        },
+        {
+          "label": "12 cm",
+          "is_correct": true
+        }
+      ]
+    },
+    {
+      "chapter": "H.C.F. and L.C.M. of Numbers",
+      "kind": "standard",
+      "difficulty": "medium",
+      "answer_type": "single",
+      "stem": "Find the LCM of 10, 5 and 8.",
+      "explanation": "LCM(10, 5, 8) = 40.",
+      "options": [
+        {
+          "label": "38",
+          "is_correct": false
+        },
+        {
+          "label": "40",
+          "is_correct": true
+        },
+        {
+          "label": "42",
+          "is_correct": false
+        },
+        {
+          "label": "44",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "H.C.F. and L.C.M. of Numbers",
+      "kind": "standard",
+      "difficulty": "medium",
+      "answer_type": "single",
+      "stem": "Find the greatest length (in cm) that can exactly measure lengths of 35 cm and 50 cm.",
+      "explanation": "The greatest such length is the HCF of 35 and 50, which is 5 cm.",
+      "options": [
+        {
+          "label": "4 cm",
+          "is_correct": false
+        },
+        {
+          "label": "7 cm",
+          "is_correct": false
+        },
+        {
+          "label": "6 cm",
+          "is_correct": false
+        },
+        {
+          "label": "5 cm",
+          "is_correct": true
+        }
+      ]
+    },
+    {
+      "chapter": "H.C.F. and L.C.M. of Numbers",
+      "kind": "standard",
+      "difficulty": "medium",
+      "answer_type": "single",
+      "stem": "Find the LCM of 7, 11 and 10.",
+      "explanation": "LCM(7, 11, 10) = 770.",
+      "options": [
+        {
+          "label": "770",
+          "is_correct": true
+        },
+        {
+          "label": "739",
+          "is_correct": false
+        },
+        {
+          "label": "801",
+          "is_correct": false
+        },
+        {
+          "label": "832",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "H.C.F. and L.C.M. of Numbers",
+      "kind": "standard",
+      "difficulty": "medium",
+      "answer_type": "single",
+      "stem": "The HCF of two numbers is 10 and their LCM is 100. If one of the numbers is 20, find the other number.",
+      "explanation": "Other number = HCF×LCM/(one number) = 10×100/20 = 50.",
+      "options": [
+        {
+          "label": "48",
+          "is_correct": false
+        },
+        {
+          "label": "52",
+          "is_correct": false
+        },
+        {
+          "label": "50",
+          "is_correct": true
+        },
+        {
+          "label": "54",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "H.C.F. and L.C.M. of Numbers",
+      "kind": "standard",
+      "difficulty": "medium",
+      "answer_type": "single",
+      "stem": "Find the greatest length (in cm) that can exactly measure lengths of 6 cm and 21 cm.",
+      "explanation": "The greatest such length is the HCF of 6 and 21, which is 3 cm.",
+      "options": [
+        {
+          "label": "2 cm",
+          "is_correct": false
+        },
+        {
+          "label": "3 cm",
+          "is_correct": true
+        },
+        {
+          "label": "4 cm",
+          "is_correct": false
+        },
+        {
+          "label": "5 cm",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "H.C.F. and L.C.M. of Numbers",
+      "kind": "standard",
+      "difficulty": "medium",
+      "answer_type": "single",
+      "stem": "The HCF of two numbers is 8 and their LCM is 96. If one of the numbers is 24, find the other number.",
+      "explanation": "Other number = HCF×LCM/(one number) = 8×96/24 = 32.",
+      "options": [
+        {
+          "label": "32",
+          "is_correct": true
+        },
+        {
+          "label": "34",
+          "is_correct": false
+        },
+        {
+          "label": "31",
+          "is_correct": false
+        },
+        {
+          "label": "33",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "H.C.F. and L.C.M. of Numbers",
+      "kind": "standard",
+      "difficulty": "medium",
+      "answer_type": "single",
+      "stem": "Find the LCM of 7, 4 and 4.",
+      "explanation": "LCM(7, 4, 4) = 28.",
+      "options": [
+        {
+          "label": "27",
+          "is_correct": false
+        },
+        {
+          "label": "29",
+          "is_correct": false
+        },
+        {
+          "label": "28",
+          "is_correct": true
+        },
+        {
+          "label": "30",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "H.C.F. and L.C.M. of Numbers",
+      "kind": "standard",
+      "difficulty": "medium",
+      "answer_type": "single",
+      "stem": "Find the LCM of 6, 13 and 11.",
+      "explanation": "LCM(6, 13, 11) = 858.",
+      "options": [
+        {
+          "label": "824",
+          "is_correct": false
+        },
+        {
+          "label": "858",
+          "is_correct": true
+        },
+        {
+          "label": "892",
+          "is_correct": false
+        },
+        {
+          "label": "926",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "H.C.F. and L.C.M. of Numbers",
+      "kind": "standard",
+      "difficulty": "medium",
+      "answer_type": "single",
+      "stem": "The HCF of two numbers is 15 and their LCM is 450. If one of the numbers is 45, find the other number.",
+      "explanation": "Other number = HCF×LCM/(one number) = 15×450/45 = 150.",
+      "options": [
+        {
+          "label": "150",
+          "is_correct": true
+        },
+        {
+          "label": "152",
+          "is_correct": false
+        },
+        {
+          "label": "154",
+          "is_correct": false
+        },
+        {
+          "label": "148",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "H.C.F. and L.C.M. of Numbers",
+      "kind": "standard",
+      "difficulty": "medium",
+      "answer_type": "single",
+      "stem": "Find the LCM of 8, 14 and 5.",
+      "explanation": "LCM(8, 14, 5) = 280.",
+      "options": [
+        {
+          "label": "302",
+          "is_correct": false
+        },
+        {
+          "label": "291",
+          "is_correct": false
+        },
+        {
+          "label": "280",
+          "is_correct": true
+        },
+        {
+          "label": "269",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "H.C.F. and L.C.M. of Numbers",
+      "kind": "standard",
+      "difficulty": "medium",
+      "answer_type": "single",
+      "stem": "The HCF of two numbers is 13 and their LCM is 286. If one of the numbers is 26, find the other number.",
+      "explanation": "Other number = HCF×LCM/(one number) = 13×286/26 = 143.",
+      "options": [
+        {
+          "label": "141",
+          "is_correct": false
+        },
+        {
+          "label": "143",
+          "is_correct": true
+        },
+        {
+          "label": "145",
+          "is_correct": false
+        },
+        {
+          "label": "147",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "H.C.F. and L.C.M. of Numbers",
+      "kind": "standard",
+      "difficulty": "medium",
+      "answer_type": "single",
+      "stem": "Find the LCM of 9, 9 and 13.",
+      "explanation": "LCM(9, 9, 13) = 117.",
+      "options": [
+        {
+          "label": "117",
+          "is_correct": true
+        },
+        {
+          "label": "121",
+          "is_correct": false
+        },
+        {
+          "label": "119",
+          "is_correct": false
+        },
+        {
+          "label": "115",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "H.C.F. and L.C.M. of Numbers",
+      "kind": "standard",
+      "difficulty": "medium",
+      "answer_type": "single",
+      "stem": "The HCF of two numbers is 9 and their LCM is 270. If one of the numbers is 90, find the other number.",
+      "explanation": "Other number = HCF×LCM/(one number) = 9×270/90 = 27.",
+      "options": [
+        {
+          "label": "26",
+          "is_correct": false
+        },
+        {
+          "label": "28",
+          "is_correct": false
+        },
+        {
+          "label": "27",
+          "is_correct": true
+        },
+        {
+          "label": "29",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "H.C.F. and L.C.M. of Numbers",
+      "kind": "standard",
+      "difficulty": "medium",
+      "answer_type": "single",
+      "stem": "Find the greatest length (in cm) that can exactly measure lengths of 39 cm and 130 cm.",
+      "explanation": "The greatest such length is the HCF of 39 and 130, which is 13 cm.",
+      "options": [
+        {
+          "label": "13 cm",
+          "is_correct": true
+        },
+        {
+          "label": "15 cm",
+          "is_correct": false
+        },
+        {
+          "label": "14 cm",
+          "is_correct": false
+        },
+        {
+          "label": "12 cm",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "H.C.F. and L.C.M. of Numbers",
+      "kind": "standard",
+      "difficulty": "medium",
+      "answer_type": "single",
+      "stem": "Find the greatest length (in cm) that can exactly measure lengths of 56 cm and 21 cm.",
+      "explanation": "The greatest such length is the HCF of 56 and 21, which is 7 cm.",
+      "options": [
+        {
+          "label": "9 cm",
+          "is_correct": false
+        },
+        {
+          "label": "8 cm",
+          "is_correct": false
+        },
+        {
+          "label": "7 cm",
+          "is_correct": true
+        },
+        {
+          "label": "6 cm",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "H.C.F. and L.C.M. of Numbers",
+      "kind": "standard",
+      "difficulty": "medium",
+      "answer_type": "single",
+      "stem": "Find the LCM of 5, 7 and 4.",
+      "explanation": "LCM(5, 7, 4) = 140.",
+      "options": [
+        {
+          "label": "144",
+          "is_correct": false
+        },
+        {
+          "label": "142",
+          "is_correct": false
+        },
+        {
+          "label": "138",
+          "is_correct": false
+        },
+        {
+          "label": "140",
+          "is_correct": true
+        }
+      ]
+    },
+    {
+      "chapter": "H.C.F. and L.C.M. of Numbers",
+      "kind": "standard",
+      "difficulty": "medium",
+      "answer_type": "single",
+      "stem": "Find the LCM of 10, 5 and 6.",
+      "explanation": "LCM(10, 5, 6) = 30.",
+      "options": [
+        {
+          "label": "31",
+          "is_correct": false
+        },
+        {
+          "label": "29",
+          "is_correct": false
+        },
+        {
+          "label": "32",
+          "is_correct": false
+        },
+        {
+          "label": "30",
+          "is_correct": true
+        }
+      ]
+    },
+    {
+      "chapter": "H.C.F. and L.C.M. of Numbers",
+      "kind": "standard",
+      "difficulty": "medium",
+      "answer_type": "single",
+      "stem": "Find the greatest length (in cm) that can exactly measure lengths of 21 cm and 30 cm.",
+      "explanation": "The greatest such length is the HCF of 21 and 30, which is 3 cm.",
+      "options": [
+        {
+          "label": "4 cm",
+          "is_correct": false
+        },
+        {
+          "label": "3 cm",
+          "is_correct": true
+        },
+        {
+          "label": "5 cm",
+          "is_correct": false
+        },
+        {
+          "label": "2 cm",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "H.C.F. and L.C.M. of Numbers",
+      "kind": "standard",
+      "difficulty": "medium",
+      "answer_type": "single",
+      "stem": "Find the LCM of 9, 5 and 12.",
+      "explanation": "LCM(9, 5, 12) = 180.",
+      "options": [
+        {
+          "label": "178",
+          "is_correct": false
+        },
+        {
+          "label": "184",
+          "is_correct": false
+        },
+        {
+          "label": "180",
+          "is_correct": true
+        },
+        {
+          "label": "182",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "H.C.F. and L.C.M. of Numbers",
+      "kind": "standard",
+      "difficulty": "medium",
+      "answer_type": "single",
+      "stem": "Find the LCM of 12, 6 and 6.",
+      "explanation": "LCM(12, 6, 6) = 12.",
+      "options": [
+        {
+          "label": "13",
+          "is_correct": false
+        },
+        {
+          "label": "12",
+          "is_correct": true
+        },
+        {
+          "label": "11",
+          "is_correct": false
+        },
+        {
+          "label": "14",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "H.C.F. and L.C.M. of Numbers",
+      "kind": "standard",
+      "difficulty": "medium",
+      "answer_type": "single",
+      "stem": "The HCF of two numbers is 13 and their LCM is 936. If one of the numbers is 104, find the other number.",
+      "explanation": "Other number = HCF×LCM/(one number) = 13×936/104 = 117.",
+      "options": [
+        {
+          "label": "115",
+          "is_correct": false
+        },
+        {
+          "label": "117",
+          "is_correct": true
+        },
+        {
+          "label": "121",
+          "is_correct": false
+        },
+        {
+          "label": "119",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "H.C.F. and L.C.M. of Numbers",
+      "kind": "standard",
+      "difficulty": "medium",
+      "answer_type": "single",
+      "stem": "Find the LCM of 7, 12 and 6.",
+      "explanation": "LCM(7, 12, 6) = 84.",
+      "options": [
+        {
+          "label": "84",
+          "is_correct": true
+        },
+        {
+          "label": "88",
+          "is_correct": false
+        },
+        {
+          "label": "82",
+          "is_correct": false
+        },
+        {
+          "label": "86",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "H.C.F. and L.C.M. of Numbers",
+      "kind": "standard",
+      "difficulty": "medium",
+      "answer_type": "single",
+      "stem": "The HCF of two numbers is 4 and their LCM is 280. If one of the numbers is 28, find the other number.",
+      "explanation": "Other number = HCF×LCM/(one number) = 4×280/28 = 40.",
+      "options": [
+        {
+          "label": "42",
+          "is_correct": false
+        },
+        {
+          "label": "38",
+          "is_correct": false
+        },
+        {
+          "label": "44",
+          "is_correct": false
+        },
+        {
+          "label": "40",
+          "is_correct": true
+        }
+      ]
+    },
+    {
+      "chapter": "H.C.F. and L.C.M. of Numbers",
+      "kind": "standard",
+      "difficulty": "medium",
+      "answer_type": "single",
+      "stem": "Find the LCM of 5, 14 and 14.",
+      "explanation": "LCM(5, 14, 14) = 70.",
+      "options": [
+        {
+          "label": "70",
+          "is_correct": true
+        },
+        {
+          "label": "74",
+          "is_correct": false
+        },
+        {
+          "label": "68",
+          "is_correct": false
+        },
+        {
+          "label": "72",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "H.C.F. and L.C.M. of Numbers",
+      "kind": "standard",
+      "difficulty": "medium",
+      "answer_type": "single",
+      "stem": "Find the LCM of 10, 12 and 15.",
+      "explanation": "LCM(10, 12, 15) = 60.",
+      "options": [
+        {
+          "label": "64",
+          "is_correct": false
+        },
+        {
+          "label": "62",
+          "is_correct": false
+        },
+        {
+          "label": "60",
+          "is_correct": true
+        },
+        {
+          "label": "58",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "H.C.F. and L.C.M. of Numbers",
+      "kind": "standard",
+      "difficulty": "medium",
+      "answer_type": "single",
+      "stem": "The HCF of two numbers is 3 and their LCM is 210. If one of the numbers is 30, find the other number.",
+      "explanation": "Other number = HCF×LCM/(one number) = 3×210/30 = 21.",
+      "options": [
+        {
+          "label": "23",
+          "is_correct": false
+        },
+        {
+          "label": "20",
+          "is_correct": false
+        },
+        {
+          "label": "21",
+          "is_correct": true
+        },
+        {
+          "label": "22",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "H.C.F. and L.C.M. of Numbers",
+      "kind": "standard",
+      "difficulty": "medium",
+      "answer_type": "single",
+      "stem": "Find the greatest length (in cm) that can exactly measure lengths of 40 cm and 110 cm.",
+      "explanation": "The greatest such length is the HCF of 40 and 110, which is 10 cm.",
+      "options": [
+        {
+          "label": "11 cm",
+          "is_correct": false
+        },
+        {
+          "label": "9 cm",
+          "is_correct": false
+        },
+        {
+          "label": "10 cm",
+          "is_correct": true
+        },
+        {
+          "label": "12 cm",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "H.C.F. and L.C.M. of Numbers",
+      "kind": "standard",
+      "difficulty": "medium",
+      "answer_type": "single",
+      "stem": "Find the greatest length (in cm) that can exactly measure lengths of 30 cm and 21 cm.",
+      "explanation": "The greatest such length is the HCF of 30 and 21, which is 3 cm.",
+      "options": [
+        {
+          "label": "3 cm",
+          "is_correct": true
+        },
+        {
+          "label": "5 cm",
+          "is_correct": false
+        },
+        {
+          "label": "2 cm",
+          "is_correct": false
+        },
+        {
+          "label": "4 cm",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "H.C.F. and L.C.M. of Numbers",
+      "kind": "standard",
+      "difficulty": "medium",
+      "answer_type": "single",
+      "stem": "Find the LCM of 6, 6 and 14.",
+      "explanation": "LCM(6, 6, 14) = 42.",
+      "options": [
+        {
+          "label": "40",
+          "is_correct": false
+        },
+        {
+          "label": "42",
+          "is_correct": true
+        },
+        {
+          "label": "46",
+          "is_correct": false
+        },
+        {
+          "label": "44",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "H.C.F. and L.C.M. of Numbers",
+      "kind": "standard",
+      "difficulty": "medium",
+      "answer_type": "single",
+      "stem": "The HCF of two numbers is 4 and their LCM is 140. If one of the numbers is 28, find the other number.",
+      "explanation": "Other number = HCF×LCM/(one number) = 4×140/28 = 20.",
+      "options": [
+        {
+          "label": "21",
+          "is_correct": false
+        },
+        {
+          "label": "19",
+          "is_correct": false
+        },
+        {
+          "label": "20",
+          "is_correct": true
+        },
+        {
+          "label": "22",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "H.C.F. and L.C.M. of Numbers",
+      "kind": "standard",
+      "difficulty": "medium",
+      "answer_type": "single",
+      "stem": "Find the greatest length (in cm) that can exactly measure lengths of 108 cm and 48 cm.",
+      "explanation": "The greatest such length is the HCF of 108 and 48, which is 12 cm.",
+      "options": [
+        {
+          "label": "13 cm",
+          "is_correct": false
+        },
+        {
+          "label": "14 cm",
+          "is_correct": false
+        },
+        {
+          "label": "12 cm",
+          "is_correct": true
+        },
+        {
+          "label": "11 cm",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "H.C.F. and L.C.M. of Numbers",
+      "kind": "standard",
+      "difficulty": "medium",
+      "answer_type": "single",
+      "stem": "Find the greatest length (in cm) that can exactly measure lengths of 110 cm and 60 cm.",
+      "explanation": "The greatest such length is the HCF of 110 and 60, which is 10 cm.",
+      "options": [
+        {
+          "label": "12 cm",
+          "is_correct": false
+        },
+        {
+          "label": "9 cm",
+          "is_correct": false
+        },
+        {
+          "label": "11 cm",
+          "is_correct": false
+        },
+        {
+          "label": "10 cm",
+          "is_correct": true
+        }
+      ]
+    },
+    {
+      "chapter": "H.C.F. and L.C.M. of Numbers",
+      "kind": "standard",
+      "difficulty": "medium",
+      "answer_type": "single",
+      "stem": "The HCF of two numbers is 15 and their LCM is 900. If one of the numbers is 75, find the other number.",
+      "explanation": "Other number = HCF×LCM/(one number) = 15×900/75 = 180.",
+      "options": [
+        {
+          "label": "178",
+          "is_correct": false
+        },
+        {
+          "label": "182",
+          "is_correct": false
+        },
+        {
+          "label": "180",
+          "is_correct": true
+        },
+        {
+          "label": "184",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "H.C.F. and L.C.M. of Numbers",
+      "kind": "standard",
+      "difficulty": "medium",
+      "answer_type": "single",
+      "stem": "Find the greatest length (in cm) that can exactly measure lengths of 81 cm and 36 cm.",
+      "explanation": "The greatest such length is the HCF of 81 and 36, which is 9 cm.",
+      "options": [
+        {
+          "label": "9 cm",
+          "is_correct": true
+        },
+        {
+          "label": "10 cm",
+          "is_correct": false
+        },
+        {
+          "label": "8 cm",
+          "is_correct": false
+        },
+        {
+          "label": "11 cm",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "H.C.F. and L.C.M. of Numbers",
+      "kind": "standard",
+      "difficulty": "medium",
+      "answer_type": "single",
+      "stem": "Find the greatest length (in cm) that can exactly measure lengths of 49 cm and 21 cm.",
+      "explanation": "The greatest such length is the HCF of 49 and 21, which is 7 cm.",
+      "options": [
+        {
+          "label": "7 cm",
+          "is_correct": true
+        },
+        {
+          "label": "9 cm",
+          "is_correct": false
+        },
+        {
+          "label": "8 cm",
+          "is_correct": false
+        },
+        {
+          "label": "6 cm",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "H.C.F. and L.C.M. of Numbers",
+      "kind": "standard",
+      "difficulty": "medium",
+      "answer_type": "single",
+      "stem": "The HCF of two numbers is 6 and their LCM is 360. If one of the numbers is 30, find the other number.",
+      "explanation": "Other number = HCF×LCM/(one number) = 6×360/30 = 72.",
+      "options": [
+        {
+          "label": "74",
+          "is_correct": false
+        },
+        {
+          "label": "72",
+          "is_correct": true
+        },
+        {
+          "label": "70",
+          "is_correct": false
+        },
+        {
+          "label": "76",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "H.C.F. and L.C.M. of Numbers",
+      "kind": "standard",
+      "difficulty": "medium",
+      "answer_type": "single",
+      "stem": "The HCF of two numbers is 11 and their LCM is 605. If one of the numbers is 55, find the other number.",
+      "explanation": "Other number = HCF×LCM/(one number) = 11×605/55 = 121.",
+      "options": [
+        {
+          "label": "123",
+          "is_correct": false
+        },
+        {
+          "label": "121",
+          "is_correct": true
+        },
+        {
+          "label": "125",
+          "is_correct": false
+        },
+        {
+          "label": "119",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "H.C.F. and L.C.M. of Numbers",
+      "kind": "standard",
+      "difficulty": "medium",
+      "answer_type": "single",
+      "stem": "The HCF of two numbers is 2 and their LCM is 60. If one of the numbers is 12, find the other number.",
+      "explanation": "Other number = HCF×LCM/(one number) = 2×60/12 = 10.",
+      "options": [
+        {
+          "label": "9",
+          "is_correct": false
+        },
+        {
+          "label": "12",
+          "is_correct": false
+        },
+        {
+          "label": "11",
+          "is_correct": false
+        },
+        {
+          "label": "10",
+          "is_correct": true
+        }
+      ]
+    },
+    {
+      "chapter": "H.C.F. and L.C.M. of Numbers",
+      "kind": "standard",
+      "difficulty": "medium",
+      "answer_type": "single",
+      "stem": "The HCF of two numbers is 4 and their LCM is 308. If one of the numbers is 28, find the other number.",
+      "explanation": "Other number = HCF×LCM/(one number) = 4×308/28 = 44.",
+      "options": [
+        {
+          "label": "44",
+          "is_correct": true
+        },
+        {
+          "label": "46",
+          "is_correct": false
+        },
+        {
+          "label": "42",
+          "is_correct": false
+        },
+        {
+          "label": "48",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "H.C.F. and L.C.M. of Numbers",
+      "kind": "standard",
+      "difficulty": "medium",
+      "answer_type": "single",
+      "stem": "The HCF of two numbers is 5 and their LCM is 385. If one of the numbers is 55, find the other number.",
+      "explanation": "Other number = HCF×LCM/(one number) = 5×385/55 = 35.",
+      "options": [
+        {
+          "label": "35",
+          "is_correct": true
+        },
+        {
+          "label": "37",
+          "is_correct": false
+        },
+        {
+          "label": "34",
+          "is_correct": false
+        },
+        {
+          "label": "36",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "H.C.F. and L.C.M. of Numbers",
+      "kind": "standard",
+      "difficulty": "medium",
+      "answer_type": "single",
+      "stem": "Find the LCM of 11, 10 and 18.",
+      "explanation": "LCM(11, 10, 18) = 990.",
+      "options": [
+        {
+          "label": "1070",
+          "is_correct": false
+        },
+        {
+          "label": "950",
+          "is_correct": false
+        },
+        {
+          "label": "990",
+          "is_correct": true
+        },
+        {
+          "label": "1030",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "H.C.F. and L.C.M. of Numbers",
+      "kind": "standard",
+      "difficulty": "medium",
+      "answer_type": "single",
+      "stem": "Find the greatest length (in cm) that can exactly measure lengths of 40 cm and 28 cm.",
+      "explanation": "The greatest such length is the HCF of 40 and 28, which is 4 cm.",
+      "options": [
+        {
+          "label": "6 cm",
+          "is_correct": false
+        },
+        {
+          "label": "3 cm",
+          "is_correct": false
+        },
+        {
+          "label": "4 cm",
+          "is_correct": true
+        },
+        {
+          "label": "5 cm",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "H.C.F. and L.C.M. of Numbers",
+      "kind": "standard",
+      "difficulty": "medium",
+      "answer_type": "single",
+      "stem": "Find the LCM of 11, 6 and 13.",
+      "explanation": "LCM(11, 6, 13) = 858.",
+      "options": [
+        {
+          "label": "858",
+          "is_correct": true
+        },
+        {
+          "label": "926",
+          "is_correct": false
+        },
+        {
+          "label": "892",
+          "is_correct": false
+        },
+        {
+          "label": "824",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "H.C.F. and L.C.M. of Numbers",
+      "kind": "standard",
+      "difficulty": "medium",
+      "answer_type": "single",
+      "stem": "Find the greatest length (in cm) that can exactly measure lengths of 24 cm and 66 cm.",
+      "explanation": "The greatest such length is the HCF of 24 and 66, which is 6 cm.",
+      "options": [
+        {
+          "label": "7 cm",
+          "is_correct": false
+        },
+        {
+          "label": "5 cm",
+          "is_correct": false
+        },
+        {
+          "label": "6 cm",
+          "is_correct": true
+        },
+        {
+          "label": "8 cm",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "H.C.F. and L.C.M. of Numbers",
+      "kind": "standard",
+      "difficulty": "medium",
+      "answer_type": "single",
+      "stem": "The HCF of two numbers is 5 and their LCM is 220. If one of the numbers is 20, find the other number.",
+      "explanation": "Other number = HCF×LCM/(one number) = 5×220/20 = 55.",
+      "options": [
+        {
+          "label": "57",
+          "is_correct": false
+        },
+        {
+          "label": "59",
+          "is_correct": false
+        },
+        {
+          "label": "55",
+          "is_correct": true
+        },
+        {
+          "label": "53",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "H.C.F. and L.C.M. of Numbers",
+      "kind": "standard",
+      "difficulty": "medium",
+      "answer_type": "single",
+      "stem": "Find the LCM of 7, 9 and 14.",
+      "explanation": "LCM(7, 9, 14) = 126.",
+      "options": [
+        {
+          "label": "124",
+          "is_correct": false
+        },
+        {
+          "label": "126",
+          "is_correct": true
+        },
+        {
+          "label": "128",
+          "is_correct": false
+        },
+        {
+          "label": "130",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "H.C.F. and L.C.M. of Numbers",
+      "kind": "standard",
+      "difficulty": "medium",
+      "answer_type": "single",
+      "stem": "Find the greatest length (in cm) that can exactly measure lengths of 21 cm and 56 cm.",
+      "explanation": "The greatest such length is the HCF of 21 and 56, which is 7 cm.",
+      "options": [
+        {
+          "label": "7 cm",
+          "is_correct": true
+        },
+        {
+          "label": "9 cm",
+          "is_correct": false
+        },
+        {
+          "label": "6 cm",
+          "is_correct": false
+        },
+        {
+          "label": "8 cm",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "H.C.F. and L.C.M. of Numbers",
+      "kind": "standard",
+      "difficulty": "hard",
+      "answer_type": "single",
+      "stem": "Find the least number that is exactly divisible by 11, 13 and 6.",
+      "explanation": "The least such number is LCM(11, 13, 6) = 858.",
+      "options": [
+        {
+          "label": "926",
+          "is_correct": false
+        },
+        {
+          "label": "824",
+          "is_correct": false
+        },
+        {
+          "label": "892",
+          "is_correct": false
+        },
+        {
+          "label": "858",
+          "is_correct": true
+        }
+      ]
+    },
+    {
+      "chapter": "H.C.F. and L.C.M. of Numbers",
+      "kind": "standard",
+      "difficulty": "hard",
+      "answer_type": "single",
+      "stem": "Three bells ring at intervals of 9, 10 and 7 seconds respectively. If they ring together now, after how many seconds will they next ring together?",
+      "explanation": "They ring together after LCM(9, 10, 7) = 630 seconds.",
+      "options": [
+        {
+          "label": "655 seconds",
+          "is_correct": false
+        },
+        {
+          "label": "605 seconds",
+          "is_correct": false
+        },
+        {
+          "label": "680 seconds",
+          "is_correct": false
+        },
+        {
+          "label": "630 seconds",
+          "is_correct": true
+        }
+      ]
+    },
+    {
+      "chapter": "H.C.F. and L.C.M. of Numbers",
+      "kind": "standard",
+      "difficulty": "hard",
+      "answer_type": "single",
+      "stem": "Three bells ring at intervals of 17, 5 and 19 seconds respectively. If they ring together now, after how many seconds will they next ring together?",
+      "explanation": "They ring together after LCM(17, 5, 19) = 1615 seconds.",
+      "options": [
+        {
+          "label": "1615 seconds",
+          "is_correct": true
+        },
+        {
+          "label": "1745 seconds",
+          "is_correct": false
+        },
+        {
+          "label": "1550 seconds",
+          "is_correct": false
+        },
+        {
+          "label": "1680 seconds",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "H.C.F. and L.C.M. of Numbers",
+      "kind": "standard",
+      "difficulty": "hard",
+      "answer_type": "single",
+      "stem": "Three bells ring at intervals of 15, 12 and 14 seconds respectively. If they ring together now, after how many seconds will they next ring together?",
+      "explanation": "They ring together after LCM(15, 12, 14) = 420 seconds.",
+      "options": [
+        {
+          "label": "454 seconds",
+          "is_correct": false
+        },
+        {
+          "label": "437 seconds",
+          "is_correct": false
+        },
+        {
+          "label": "420 seconds",
+          "is_correct": true
+        },
+        {
+          "label": "403 seconds",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "H.C.F. and L.C.M. of Numbers",
+      "kind": "standard",
+      "difficulty": "hard",
+      "answer_type": "single",
+      "stem": "Three bells ring at intervals of 4, 9 and 7 seconds respectively. If they ring together now, after how many seconds will they next ring together?",
+      "explanation": "They ring together after LCM(4, 9, 7) = 252 seconds.",
+      "options": [
+        {
+          "label": "262 seconds",
+          "is_correct": false
+        },
+        {
+          "label": "242 seconds",
+          "is_correct": false
+        },
+        {
+          "label": "272 seconds",
+          "is_correct": false
+        },
+        {
+          "label": "252 seconds",
+          "is_correct": true
+        }
+      ]
+    },
+    {
+      "chapter": "H.C.F. and L.C.M. of Numbers",
+      "kind": "standard",
+      "difficulty": "hard",
+      "answer_type": "single",
+      "stem": "Find the least number that is exactly divisible by 6, 4 and 9.",
+      "explanation": "The least such number is LCM(6, 4, 9) = 36.",
+      "options": [
+        {
+          "label": "36",
+          "is_correct": true
+        },
+        {
+          "label": "37",
+          "is_correct": false
+        },
+        {
+          "label": "35",
+          "is_correct": false
+        },
+        {
+          "label": "38",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "H.C.F. and L.C.M. of Numbers",
+      "kind": "standard",
+      "difficulty": "hard",
+      "answer_type": "single",
+      "stem": "Find the least number that is exactly divisible by 10, 10 and 12.",
+      "explanation": "The least such number is LCM(10, 10, 12) = 60.",
+      "options": [
+        {
+          "label": "64",
+          "is_correct": false
+        },
+        {
+          "label": "60",
+          "is_correct": true
+        },
+        {
+          "label": "58",
+          "is_correct": false
+        },
+        {
+          "label": "62",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "H.C.F. and L.C.M. of Numbers",
+      "kind": "standard",
+      "difficulty": "hard",
+      "answer_type": "single",
+      "stem": "Find the greatest four-digit number that is exactly divisible by 5, 5 and 12.",
+      "explanation": "LCM = 60; greatest 4-digit multiple = ⌊9999/60⌋×60 = 9960.",
+      "options": [
+        {
+          "label": "10358",
+          "is_correct": false
+        },
+        {
+          "label": "9960",
+          "is_correct": true
+        },
+        {
+          "label": "10756",
+          "is_correct": false
+        },
+        {
+          "label": "9562",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "H.C.F. and L.C.M. of Numbers",
+      "kind": "standard",
+      "difficulty": "hard",
+      "answer_type": "single",
+      "stem": "Three bells ring at intervals of 14, 17 and 9 seconds respectively. If they ring together now, after how many seconds will they next ring together?",
+      "explanation": "They ring together after LCM(14, 17, 9) = 2142 seconds.",
+      "options": [
+        {
+          "label": "2228 seconds",
+          "is_correct": false
+        },
+        {
+          "label": "2314 seconds",
+          "is_correct": false
+        },
+        {
+          "label": "2056 seconds",
+          "is_correct": false
+        },
+        {
+          "label": "2142 seconds",
+          "is_correct": true
+        }
+      ]
+    },
+    {
+      "chapter": "H.C.F. and L.C.M. of Numbers",
+      "kind": "standard",
+      "difficulty": "hard",
+      "answer_type": "single",
+      "stem": "Find the greatest four-digit number that is exactly divisible by 5, 13 and 15.",
+      "explanation": "LCM = 195; greatest 4-digit multiple = ⌊9999/195⌋×195 = 9945.",
+      "options": [
+        {
+          "label": "9547",
+          "is_correct": false
+        },
+        {
+          "label": "10343",
+          "is_correct": false
+        },
+        {
+          "label": "10741",
+          "is_correct": false
+        },
+        {
+          "label": "9945",
+          "is_correct": true
+        }
+      ]
+    },
+    {
+      "chapter": "H.C.F. and L.C.M. of Numbers",
+      "kind": "standard",
+      "difficulty": "hard",
+      "answer_type": "single",
+      "stem": "Find the least number that is exactly divisible by 12, 4 and 10.",
+      "explanation": "The least such number is LCM(12, 4, 10) = 60.",
+      "options": [
+        {
+          "label": "64",
+          "is_correct": false
+        },
+        {
+          "label": "62",
+          "is_correct": false
+        },
+        {
+          "label": "60",
+          "is_correct": true
+        },
+        {
+          "label": "58",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "H.C.F. and L.C.M. of Numbers",
+      "kind": "standard",
+      "difficulty": "hard",
+      "answer_type": "single",
+      "stem": "Find the least number that is exactly divisible by 10, 12 and 16.",
+      "explanation": "The least such number is LCM(10, 12, 16) = 240.",
+      "options": [
+        {
+          "label": "240",
+          "is_correct": true
+        },
+        {
+          "label": "260",
+          "is_correct": false
+        },
+        {
+          "label": "230",
+          "is_correct": false
+        },
+        {
+          "label": "250",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "H.C.F. and L.C.M. of Numbers",
+      "kind": "standard",
+      "difficulty": "hard",
+      "answer_type": "single",
+      "stem": "Find the greatest four-digit number that is exactly divisible by 11, 6 and 16.",
+      "explanation": "LCM = 528; greatest 4-digit multiple = ⌊9999/528⌋×528 = 9504.",
+      "options": [
+        {
+          "label": "10264",
+          "is_correct": false
+        },
+        {
+          "label": "9504",
+          "is_correct": true
+        },
+        {
+          "label": "9884",
+          "is_correct": false
+        },
+        {
+          "label": "9124",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "H.C.F. and L.C.M. of Numbers",
+      "kind": "standard",
+      "difficulty": "hard",
+      "answer_type": "single",
+      "stem": "Find the least number that is exactly divisible by 8, 14 and 11.",
+      "explanation": "The least such number is LCM(8, 14, 11) = 616.",
+      "options": [
+        {
+          "label": "641",
+          "is_correct": false
+        },
+        {
+          "label": "591",
+          "is_correct": false
+        },
+        {
+          "label": "616",
+          "is_correct": true
+        },
+        {
+          "label": "666",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "H.C.F. and L.C.M. of Numbers",
+      "kind": "standard",
+      "difficulty": "hard",
+      "answer_type": "single",
+      "stem": "Three bells ring at intervals of 18, 10 and 20 seconds respectively. If they ring together now, after how many seconds will they next ring together?",
+      "explanation": "They ring together after LCM(18, 10, 20) = 180 seconds.",
+      "options": [
+        {
+          "label": "184 seconds",
+          "is_correct": false
+        },
+        {
+          "label": "182 seconds",
+          "is_correct": false
+        },
+        {
+          "label": "180 seconds",
+          "is_correct": true
+        },
+        {
+          "label": "178 seconds",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "H.C.F. and L.C.M. of Numbers",
+      "kind": "standard",
+      "difficulty": "hard",
+      "answer_type": "single",
+      "stem": "Find the greatest four-digit number that is exactly divisible by 10, 10 and 15.",
+      "explanation": "LCM = 30; greatest 4-digit multiple = ⌊9999/30⌋×30 = 9990.",
+      "options": [
+        {
+          "label": "10390",
+          "is_correct": false
+        },
+        {
+          "label": "9590",
+          "is_correct": false
+        },
+        {
+          "label": "9990",
+          "is_correct": true
+        },
+        {
+          "label": "10790",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "H.C.F. and L.C.M. of Numbers",
+      "kind": "standard",
+      "difficulty": "hard",
+      "answer_type": "single",
+      "stem": "Three bells ring at intervals of 20, 6 and 21 seconds respectively. If they ring together now, after how many seconds will they next ring together?",
+      "explanation": "They ring together after LCM(20, 6, 21) = 420 seconds.",
+      "options": [
+        {
+          "label": "454 seconds",
+          "is_correct": false
+        },
+        {
+          "label": "420 seconds",
+          "is_correct": true
+        },
+        {
+          "label": "403 seconds",
+          "is_correct": false
+        },
+        {
+          "label": "437 seconds",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "H.C.F. and L.C.M. of Numbers",
+      "kind": "standard",
+      "difficulty": "hard",
+      "answer_type": "single",
+      "stem": "Find the greatest four-digit number that is exactly divisible by 5, 12 and 6.",
+      "explanation": "LCM = 60; greatest 4-digit multiple = ⌊9999/60⌋×60 = 9960.",
+      "options": [
+        {
+          "label": "9960",
+          "is_correct": true
+        },
+        {
+          "label": "10358",
+          "is_correct": false
+        },
+        {
+          "label": "10756",
+          "is_correct": false
+        },
+        {
+          "label": "9562",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "H.C.F. and L.C.M. of Numbers",
+      "kind": "standard",
+      "difficulty": "hard",
+      "answer_type": "single",
+      "stem": "Find the greatest four-digit number that is exactly divisible by 11, 4 and 15.",
+      "explanation": "LCM = 660; greatest 4-digit multiple = ⌊9999/660⌋×660 = 9900.",
+      "options": [
+        {
+          "label": "10296",
+          "is_correct": false
+        },
+        {
+          "label": "9504",
+          "is_correct": false
+        },
+        {
+          "label": "10692",
+          "is_correct": false
+        },
+        {
+          "label": "9900",
+          "is_correct": true
+        }
+      ]
+    },
+    {
+      "chapter": "H.C.F. and L.C.M. of Numbers",
+      "kind": "standard",
+      "difficulty": "hard",
+      "answer_type": "single",
+      "stem": "Three bells ring at intervals of 9, 11 and 29 seconds respectively. If they ring together now, after how many seconds will they next ring together?",
+      "explanation": "They ring together after LCM(9, 11, 29) = 2871 seconds.",
+      "options": [
+        {
+          "label": "2986 seconds",
+          "is_correct": false
+        },
+        {
+          "label": "2871 seconds",
+          "is_correct": true
+        },
+        {
+          "label": "3101 seconds",
+          "is_correct": false
+        },
+        {
+          "label": "2756 seconds",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "H.C.F. and L.C.M. of Numbers",
+      "kind": "standard",
+      "difficulty": "hard",
+      "answer_type": "single",
+      "stem": "Find the greatest four-digit number that is exactly divisible by 9, 10 and 10.",
+      "explanation": "LCM = 90; greatest 4-digit multiple = ⌊9999/90⌋×90 = 9990.",
+      "options": [
+        {
+          "label": "10790",
+          "is_correct": false
+        },
+        {
+          "label": "9990",
+          "is_correct": true
+        },
+        {
+          "label": "9590",
+          "is_correct": false
+        },
+        {
+          "label": "10390",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "H.C.F. and L.C.M. of Numbers",
+      "kind": "standard",
+      "difficulty": "hard",
+      "answer_type": "single",
+      "stem": "Find the least number that is exactly divisible by 11, 11 and 9.",
+      "explanation": "The least such number is LCM(11, 11, 9) = 99.",
+      "options": [
+        {
+          "label": "99",
+          "is_correct": true
+        },
+        {
+          "label": "101",
+          "is_correct": false
+        },
+        {
+          "label": "97",
+          "is_correct": false
+        },
+        {
+          "label": "103",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "H.C.F. and L.C.M. of Numbers",
+      "kind": "standard",
+      "difficulty": "hard",
+      "answer_type": "single",
+      "stem": "Three bells ring at intervals of 7, 19 and 26 seconds respectively. If they ring together now, after how many seconds will they next ring together?",
+      "explanation": "They ring together after LCM(7, 19, 26) = 3458 seconds.",
+      "options": [
+        {
+          "label": "3320 seconds",
+          "is_correct": false
+        },
+        {
+          "label": "3458 seconds",
+          "is_correct": true
+        },
+        {
+          "label": "3734 seconds",
+          "is_correct": false
+        },
+        {
+          "label": "3596 seconds",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "H.C.F. and L.C.M. of Numbers",
+      "kind": "standard",
+      "difficulty": "hard",
+      "answer_type": "single",
+      "stem": "Find the greatest four-digit number that is exactly divisible by 10, 10 and 8.",
+      "explanation": "LCM = 40; greatest 4-digit multiple = ⌊9999/40⌋×40 = 9960.",
+      "options": [
+        {
+          "label": "9562",
+          "is_correct": false
+        },
+        {
+          "label": "10358",
+          "is_correct": false
+        },
+        {
+          "label": "9960",
+          "is_correct": true
+        },
+        {
+          "label": "10756",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "H.C.F. and L.C.M. of Numbers",
+      "kind": "standard",
+      "difficulty": "hard",
+      "answer_type": "single",
+      "stem": "Three bells ring at intervals of 9, 19 and 15 seconds respectively. If they ring together now, after how many seconds will they next ring together?",
+      "explanation": "They ring together after LCM(9, 19, 15) = 855 seconds.",
+      "options": [
+        {
+          "label": "923 seconds",
+          "is_correct": false
+        },
+        {
+          "label": "855 seconds",
+          "is_correct": true
+        },
+        {
+          "label": "889 seconds",
+          "is_correct": false
+        },
+        {
+          "label": "821 seconds",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "H.C.F. and L.C.M. of Numbers",
+      "kind": "standard",
+      "difficulty": "hard",
+      "answer_type": "single",
+      "stem": "Three bells ring at intervals of 12, 21 and 20 seconds respectively. If they ring together now, after how many seconds will they next ring together?",
+      "explanation": "They ring together after LCM(12, 21, 20) = 420 seconds.",
+      "options": [
+        {
+          "label": "403 seconds",
+          "is_correct": false
+        },
+        {
+          "label": "437 seconds",
+          "is_correct": false
+        },
+        {
+          "label": "420 seconds",
+          "is_correct": true
+        },
+        {
+          "label": "454 seconds",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "H.C.F. and L.C.M. of Numbers",
+      "kind": "standard",
+      "difficulty": "hard",
+      "answer_type": "single",
+      "stem": "Find the greatest four-digit number that is exactly divisible by 4, 6 and 8.",
+      "explanation": "LCM = 24; greatest 4-digit multiple = ⌊9999/24⌋×24 = 9984.",
+      "options": [
+        {
+          "label": "10782",
+          "is_correct": false
+        },
+        {
+          "label": "10383",
+          "is_correct": false
+        },
+        {
+          "label": "9585",
+          "is_correct": false
+        },
+        {
+          "label": "9984",
+          "is_correct": true
+        }
+      ]
+    },
+    {
+      "chapter": "H.C.F. and L.C.M. of Numbers",
+      "kind": "standard",
+      "difficulty": "hard",
+      "answer_type": "single",
+      "stem": "Find the least number that is exactly divisible by 11, 10 and 18.",
+      "explanation": "The least such number is LCM(11, 10, 18) = 990.",
+      "options": [
+        {
+          "label": "990",
+          "is_correct": true
+        },
+        {
+          "label": "1070",
+          "is_correct": false
+        },
+        {
+          "label": "1030",
+          "is_correct": false
+        },
+        {
+          "label": "950",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "H.C.F. and L.C.M. of Numbers",
+      "kind": "standard",
+      "difficulty": "hard",
+      "answer_type": "single",
+      "stem": "Three bells ring at intervals of 11, 4 and 27 seconds respectively. If they ring together now, after how many seconds will they next ring together?",
+      "explanation": "They ring together after LCM(11, 4, 27) = 1188 seconds.",
+      "options": [
+        {
+          "label": "1236 seconds",
+          "is_correct": false
+        },
+        {
+          "label": "1284 seconds",
+          "is_correct": false
+        },
+        {
+          "label": "1188 seconds",
+          "is_correct": true
+        },
+        {
+          "label": "1140 seconds",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "H.C.F. and L.C.M. of Numbers",
+      "kind": "standard",
+      "difficulty": "hard",
+      "answer_type": "single",
+      "stem": "Find the greatest four-digit number that is exactly divisible by 10, 7 and 12.",
+      "explanation": "LCM = 420; greatest 4-digit multiple = ⌊9999/420⌋×420 = 9660.",
+      "options": [
+        {
+          "label": "9660",
+          "is_correct": true
+        },
+        {
+          "label": "9274",
+          "is_correct": false
+        },
+        {
+          "label": "10432",
+          "is_correct": false
+        },
+        {
+          "label": "10046",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "H.C.F. and L.C.M. of Numbers",
+      "kind": "standard",
+      "difficulty": "hard",
+      "answer_type": "single",
+      "stem": "Three bells ring at intervals of 18, 12 and 11 seconds respectively. If they ring together now, after how many seconds will they next ring together?",
+      "explanation": "They ring together after LCM(18, 12, 11) = 396 seconds.",
+      "options": [
+        {
+          "label": "380 seconds",
+          "is_correct": false
+        },
+        {
+          "label": "412 seconds",
+          "is_correct": false
+        },
+        {
+          "label": "396 seconds",
+          "is_correct": true
+        },
+        {
+          "label": "428 seconds",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "H.C.F. and L.C.M. of Numbers",
+      "kind": "standard",
+      "difficulty": "hard",
+      "answer_type": "single",
+      "stem": "Find the greatest four-digit number that is exactly divisible by 9, 12 and 8.",
+      "explanation": "LCM = 72; greatest 4-digit multiple = ⌊9999/72⌋×72 = 9936.",
+      "options": [
+        {
+          "label": "10730",
+          "is_correct": false
+        },
+        {
+          "label": "10333",
+          "is_correct": false
+        },
+        {
+          "label": "9936",
+          "is_correct": true
+        },
+        {
+          "label": "9539",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "H.C.F. and L.C.M. of Numbers",
+      "kind": "standard",
+      "difficulty": "hard",
+      "answer_type": "single",
+      "stem": "Three bells ring at intervals of 15, 17 and 11 seconds respectively. If they ring together now, after how many seconds will they next ring together?",
+      "explanation": "They ring together after LCM(15, 17, 11) = 2805 seconds.",
+      "options": [
+        {
+          "label": "2805 seconds",
+          "is_correct": true
+        },
+        {
+          "label": "2693 seconds",
+          "is_correct": false
+        },
+        {
+          "label": "2917 seconds",
+          "is_correct": false
+        },
+        {
+          "label": "3029 seconds",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "H.C.F. and L.C.M. of Numbers",
+      "kind": "standard",
+      "difficulty": "hard",
+      "answer_type": "single",
+      "stem": "Three bells ring at intervals of 6, 10 and 23 seconds respectively. If they ring together now, after how many seconds will they next ring together?",
+      "explanation": "They ring together after LCM(6, 10, 23) = 690 seconds.",
+      "options": [
+        {
+          "label": "662 seconds",
+          "is_correct": false
+        },
+        {
+          "label": "690 seconds",
+          "is_correct": true
+        },
+        {
+          "label": "718 seconds",
+          "is_correct": false
+        },
+        {
+          "label": "746 seconds",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "H.C.F. and L.C.M. of Numbers",
+      "kind": "standard",
+      "difficulty": "hard",
+      "answer_type": "single",
+      "stem": "Find the least number that is exactly divisible by 7, 8 and 13.",
+      "explanation": "The least such number is LCM(7, 8, 13) = 728.",
+      "options": [
+        {
+          "label": "786",
+          "is_correct": false
+        },
+        {
+          "label": "728",
+          "is_correct": true
+        },
+        {
+          "label": "699",
+          "is_correct": false
+        },
+        {
+          "label": "757",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "H.C.F. and L.C.M. of Numbers",
+      "kind": "standard",
+      "difficulty": "hard",
+      "answer_type": "single",
+      "stem": "Find the least number that is exactly divisible by 6, 13 and 12.",
+      "explanation": "The least such number is LCM(6, 13, 12) = 156.",
+      "options": [
+        {
+          "label": "156",
+          "is_correct": true
+        },
+        {
+          "label": "158",
+          "is_correct": false
+        },
+        {
+          "label": "160",
+          "is_correct": false
+        },
+        {
+          "label": "154",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "H.C.F. and L.C.M. of Numbers",
+      "kind": "standard",
+      "difficulty": "hard",
+      "answer_type": "single",
+      "stem": "Find the greatest four-digit number that is exactly divisible by 11, 7 and 18.",
+      "explanation": "LCM = 1386; greatest 4-digit multiple = ⌊9999/1386⌋×1386 = 9702.",
+      "options": [
+        {
+          "label": "10090",
+          "is_correct": false
+        },
+        {
+          "label": "10478",
+          "is_correct": false
+        },
+        {
+          "label": "9702",
+          "is_correct": true
+        },
+        {
+          "label": "9314",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "H.C.F. and L.C.M. of Numbers",
+      "kind": "standard",
+      "difficulty": "hard",
+      "answer_type": "single",
+      "stem": "Three bells ring at intervals of 11, 15 and 29 seconds respectively. If they ring together now, after how many seconds will they next ring together?",
+      "explanation": "They ring together after LCM(11, 15, 29) = 4785 seconds.",
+      "options": [
+        {
+          "label": "4594 seconds",
+          "is_correct": false
+        },
+        {
+          "label": "4785 seconds",
+          "is_correct": true
+        },
+        {
+          "label": "5167 seconds",
+          "is_correct": false
+        },
+        {
+          "label": "4976 seconds",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "H.C.F. and L.C.M. of Numbers",
+      "kind": "standard",
+      "difficulty": "hard",
+      "answer_type": "single",
+      "stem": "Find the greatest four-digit number that is exactly divisible by 10, 14 and 17.",
+      "explanation": "LCM = 1190; greatest 4-digit multiple = ⌊9999/1190⌋×1190 = 9520.",
+      "options": [
+        {
+          "label": "9901",
+          "is_correct": false
+        },
+        {
+          "label": "9520",
+          "is_correct": true
+        },
+        {
+          "label": "9139",
+          "is_correct": false
+        },
+        {
+          "label": "10282",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "H.C.F. and L.C.M. of Numbers",
+      "kind": "standard",
+      "difficulty": "hard",
+      "answer_type": "single",
+      "stem": "Find the least number that is exactly divisible by 11, 4 and 9.",
+      "explanation": "The least such number is LCM(11, 4, 9) = 396.",
+      "options": [
+        {
+          "label": "396",
+          "is_correct": true
+        },
+        {
+          "label": "428",
+          "is_correct": false
+        },
+        {
+          "label": "380",
+          "is_correct": false
+        },
+        {
+          "label": "412",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "H.C.F. and L.C.M. of Numbers",
+      "kind": "standard",
+      "difficulty": "hard",
+      "answer_type": "single",
+      "stem": "Find the least number that is exactly divisible by 5, 10 and 15.",
+      "explanation": "The least such number is LCM(5, 10, 15) = 30.",
+      "options": [
+        {
+          "label": "31",
+          "is_correct": false
+        },
+        {
+          "label": "29",
+          "is_correct": false
+        },
+        {
+          "label": "30",
+          "is_correct": true
+        },
+        {
+          "label": "32",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "H.C.F. and L.C.M. of Numbers",
+      "kind": "standard",
+      "difficulty": "hard",
+      "answer_type": "single",
+      "stem": "Three bells ring at intervals of 14, 20 and 17 seconds respectively. If they ring together now, after how many seconds will they next ring together?",
+      "explanation": "They ring together after LCM(14, 20, 17) = 2380 seconds.",
+      "options": [
+        {
+          "label": "2285 seconds",
+          "is_correct": false
+        },
+        {
+          "label": "2380 seconds",
+          "is_correct": true
+        },
+        {
+          "label": "2475 seconds",
+          "is_correct": false
+        },
+        {
+          "label": "2570 seconds",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "H.C.F. and L.C.M. of Numbers",
+      "kind": "standard",
+      "difficulty": "hard",
+      "answer_type": "single",
+      "stem": "Find the greatest four-digit number that is exactly divisible by 6, 13 and 8.",
+      "explanation": "LCM = 312; greatest 4-digit multiple = ⌊9999/312⌋×312 = 9984.",
+      "options": [
+        {
+          "label": "9984",
+          "is_correct": true
+        },
+        {
+          "label": "10782",
+          "is_correct": false
+        },
+        {
+          "label": "9585",
+          "is_correct": false
+        },
+        {
+          "label": "10383",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "H.C.F. and L.C.M. of Numbers",
+      "kind": "standard",
+      "difficulty": "hard",
+      "answer_type": "single",
+      "stem": "Find the least number that is exactly divisible by 10, 6 and 16.",
+      "explanation": "The least such number is LCM(10, 6, 16) = 240.",
+      "options": [
+        {
+          "label": "250",
+          "is_correct": false
+        },
+        {
+          "label": "240",
+          "is_correct": true
+        },
+        {
+          "label": "260",
+          "is_correct": false
+        },
+        {
+          "label": "230",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "H.C.F. and L.C.M. of Numbers",
+      "kind": "standard",
+      "difficulty": "hard",
+      "answer_type": "single",
+      "stem": "Find the least number that is exactly divisible by 11, 5 and 12.",
+      "explanation": "The least such number is LCM(11, 5, 12) = 660.",
+      "options": [
+        {
+          "label": "686",
+          "is_correct": false
+        },
+        {
+          "label": "660",
+          "is_correct": true
+        },
+        {
+          "label": "634",
+          "is_correct": false
+        },
+        {
+          "label": "712",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "H.C.F. and L.C.M. of Numbers",
+      "kind": "standard",
+      "difficulty": "hard",
+      "answer_type": "single",
+      "stem": "Find the greatest four-digit number that is exactly divisible by 7, 13 and 16.",
+      "explanation": "LCM = 1456; greatest 4-digit multiple = ⌊9999/1456⌋×1456 = 8736.",
+      "options": [
+        {
+          "label": "9085",
+          "is_correct": false
+        },
+        {
+          "label": "9434",
+          "is_correct": false
+        },
+        {
+          "label": "8387",
+          "is_correct": false
+        },
+        {
+          "label": "8736",
+          "is_correct": true
+        }
+      ]
+    },
+    {
+      "chapter": "H.C.F. and L.C.M. of Numbers",
+      "kind": "standard",
+      "difficulty": "hard",
+      "answer_type": "single",
+      "stem": "Find the least number that is exactly divisible by 5, 14 and 9.",
+      "explanation": "The least such number is LCM(5, 14, 9) = 630.",
+      "options": [
+        {
+          "label": "680",
+          "is_correct": false
+        },
+        {
+          "label": "655",
+          "is_correct": false
+        },
+        {
+          "label": "605",
+          "is_correct": false
+        },
+        {
+          "label": "630",
+          "is_correct": true
+        }
+      ]
+    },
+    {
+      "chapter": "H.C.F. and L.C.M. of Numbers",
+      "kind": "standard",
+      "difficulty": "hard",
+      "answer_type": "single",
+      "stem": "Find the least number that is exactly divisible by 7, 4 and 9.",
+      "explanation": "The least such number is LCM(7, 4, 9) = 252.",
+      "options": [
+        {
+          "label": "262",
+          "is_correct": false
+        },
+        {
+          "label": "242",
+          "is_correct": false
+        },
+        {
+          "label": "252",
+          "is_correct": true
+        },
+        {
+          "label": "272",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "H.C.F. and L.C.M. of Numbers",
+      "kind": "standard",
+      "difficulty": "hard",
+      "answer_type": "single",
+      "stem": "Find the least number that is exactly divisible by 9, 11 and 14.",
+      "explanation": "The least such number is LCM(9, 11, 14) = 1386.",
+      "options": [
+        {
+          "label": "1441",
+          "is_correct": false
+        },
+        {
+          "label": "1386",
+          "is_correct": true
+        },
+        {
+          "label": "1331",
+          "is_correct": false
+        },
+        {
+          "label": "1496",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "H.C.F. and L.C.M. of Numbers",
+      "kind": "standard",
+      "difficulty": "hard",
+      "answer_type": "single",
+      "stem": "Find the least number that is exactly divisible by 7, 13 and 7.",
+      "explanation": "The least such number is LCM(7, 13, 7) = 91.",
+      "options": [
+        {
+          "label": "93",
+          "is_correct": false
+        },
+        {
+          "label": "89",
+          "is_correct": false
+        },
+        {
+          "label": "91",
+          "is_correct": true
+        },
+        {
+          "label": "95",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "H.C.F. and L.C.M. of Numbers",
+      "kind": "standard",
+      "difficulty": "very_hard",
+      "answer_type": "single",
+      "stem": "The HCF and LCM of two numbers are 7 and 42 respectively. Find the product of the two numbers.",
+      "explanation": "Product of two numbers = HCF × LCM = 7 × 42 = 294.",
+      "options": [
+        {
+          "label": "318",
+          "is_correct": false
+        },
+        {
+          "label": "282",
+          "is_correct": false
+        },
+        {
+          "label": "294",
+          "is_correct": true
+        },
+        {
+          "label": "306",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "H.C.F. and L.C.M. of Numbers",
+      "kind": "standard",
+      "difficulty": "very_hard",
+      "answer_type": "single",
+      "stem": "Two numbers are in the ratio 7:3 and their HCF is 5. Find their LCM.",
+      "explanation": "The numbers are 35 and 15; LCM = 5×7×3 = 105.",
+      "options": [
+        {
+          "label": "109",
+          "is_correct": false
+        },
+        {
+          "label": "107",
+          "is_correct": false
+        },
+        {
+          "label": "103",
+          "is_correct": false
+        },
+        {
+          "label": "105",
+          "is_correct": true
+        }
+      ]
+    },
+    {
+      "chapter": "H.C.F. and L.C.M. of Numbers",
+      "kind": "standard",
+      "difficulty": "very_hard",
+      "answer_type": "single",
+      "stem": "The HCF and LCM of two numbers are 17 and 255 respectively. Find the product of the two numbers.",
+      "explanation": "Product of two numbers = HCF × LCM = 17 × 255 = 4335.",
+      "options": [
+        {
+          "label": "4335",
+          "is_correct": true
+        },
+        {
+          "label": "4508",
+          "is_correct": false
+        },
+        {
+          "label": "4681",
+          "is_correct": false
+        },
+        {
+          "label": "4162",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "H.C.F. and L.C.M. of Numbers",
+      "kind": "standard",
+      "difficulty": "very_hard",
+      "answer_type": "single",
+      "stem": "The HCF and LCM of two numbers are 17 and 102 respectively. Find the product of the two numbers.",
+      "explanation": "Product of two numbers = HCF × LCM = 17 × 102 = 1734.",
+      "options": [
+        {
+          "label": "1665",
+          "is_correct": false
+        },
+        {
+          "label": "1734",
+          "is_correct": true
+        },
+        {
+          "label": "1803",
+          "is_correct": false
+        },
+        {
+          "label": "1872",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "H.C.F. and L.C.M. of Numbers",
+      "kind": "standard",
+      "difficulty": "very_hard",
+      "answer_type": "single",
+      "stem": "The HCF and LCM of two numbers are 4 and 32 respectively. Find the product of the two numbers.",
+      "explanation": "Product of two numbers = HCF × LCM = 4 × 32 = 128.",
+      "options": [
+        {
+          "label": "130",
+          "is_correct": false
+        },
+        {
+          "label": "128",
+          "is_correct": true
+        },
+        {
+          "label": "126",
+          "is_correct": false
+        },
+        {
+          "label": "132",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "H.C.F. and L.C.M. of Numbers",
+      "kind": "standard",
+      "difficulty": "very_hard",
+      "answer_type": "single",
+      "stem": "Find the least number which, when divided by 8, 9 and 15, leaves remainders 6, 7 and 13 respectively.",
+      "explanation": "Each divisor exceeds its remainder by 2, so the number = LCM(8, 9, 15) − 2 = 360 − 2 = 358.",
+      "options": [
+        {
+          "label": "344",
+          "is_correct": false
+        },
+        {
+          "label": "358",
+          "is_correct": true
+        },
+        {
+          "label": "386",
+          "is_correct": false
+        },
+        {
+          "label": "372",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "H.C.F. and L.C.M. of Numbers",
+      "kind": "standard",
+      "difficulty": "very_hard",
+      "answer_type": "single",
+      "stem": "Find the least number which, when divided by 5, 7 and 12, leaves remainders 4, 6 and 11 respectively.",
+      "explanation": "Each divisor exceeds its remainder by 1, so the number = LCM(5, 7, 12) − 1 = 420 − 1 = 419.",
+      "options": [
+        {
+          "label": "419",
+          "is_correct": true
+        },
+        {
+          "label": "453",
+          "is_correct": false
+        },
+        {
+          "label": "402",
+          "is_correct": false
+        },
+        {
+          "label": "436",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "H.C.F. and L.C.M. of Numbers",
+      "kind": "standard",
+      "difficulty": "very_hard",
+      "answer_type": "single",
+      "stem": "Find the least number which, when divided by 9, 15 and 14, leaves remainders 8, 14 and 13 respectively.",
+      "explanation": "Each divisor exceeds its remainder by 1, so the number = LCM(9, 15, 14) − 1 = 630 − 1 = 629.",
+      "options": [
+        {
+          "label": "604",
+          "is_correct": false
+        },
+        {
+          "label": "654",
+          "is_correct": false
+        },
+        {
+          "label": "629",
+          "is_correct": true
+        },
+        {
+          "label": "679",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "H.C.F. and L.C.M. of Numbers",
+      "kind": "standard",
+      "difficulty": "very_hard",
+      "answer_type": "single",
+      "stem": "Find the least number which, when divided by 9, 5 and 18, leaves remainders 6, 2 and 15 respectively.",
+      "explanation": "Each divisor exceeds its remainder by 3, so the number = LCM(9, 5, 18) − 3 = 90 − 3 = 87.",
+      "options": [
+        {
+          "label": "91",
+          "is_correct": false
+        },
+        {
+          "label": "87",
+          "is_correct": true
+        },
+        {
+          "label": "89",
+          "is_correct": false
+        },
+        {
+          "label": "85",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "H.C.F. and L.C.M. of Numbers",
+      "kind": "standard",
+      "difficulty": "very_hard",
+      "answer_type": "single",
+      "stem": "Find the least number which, when divided by 10, 12 and 9, leaves remainders 9, 11 and 8 respectively.",
+      "explanation": "Each divisor exceeds its remainder by 1, so the number = LCM(10, 12, 9) − 1 = 180 − 1 = 179.",
+      "options": [
+        {
+          "label": "181",
+          "is_correct": false
+        },
+        {
+          "label": "183",
+          "is_correct": false
+        },
+        {
+          "label": "177",
+          "is_correct": false
+        },
+        {
+          "label": "179",
+          "is_correct": true
+        }
+      ]
+    },
+    {
+      "chapter": "H.C.F. and L.C.M. of Numbers",
+      "kind": "standard",
+      "difficulty": "very_hard",
+      "answer_type": "single",
+      "stem": "Find the least number which, when divided by 11, 6 and 10, leaves remainders 8, 3 and 7 respectively.",
+      "explanation": "Each divisor exceeds its remainder by 3, so the number = LCM(11, 6, 10) − 3 = 330 − 3 = 327.",
+      "options": [
+        {
+          "label": "327",
+          "is_correct": true
+        },
+        {
+          "label": "314",
+          "is_correct": false
+        },
+        {
+          "label": "353",
+          "is_correct": false
+        },
+        {
+          "label": "340",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "H.C.F. and L.C.M. of Numbers",
+      "kind": "standard",
+      "difficulty": "very_hard",
+      "answer_type": "single",
+      "stem": "The HCF and LCM of two numbers are 14 and 266 respectively. Find the product of the two numbers.",
+      "explanation": "Product of two numbers = HCF × LCM = 14 × 266 = 3724.",
+      "options": [
+        {
+          "label": "4022",
+          "is_correct": false
+        },
+        {
+          "label": "3873",
+          "is_correct": false
+        },
+        {
+          "label": "3724",
+          "is_correct": true
+        },
+        {
+          "label": "3575",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "H.C.F. and L.C.M. of Numbers",
+      "kind": "standard",
+      "difficulty": "very_hard",
+      "answer_type": "single",
+      "stem": "The HCF and LCM of two numbers are 14 and 84 respectively. Find the product of the two numbers.",
+      "explanation": "Product of two numbers = HCF × LCM = 14 × 84 = 1176.",
+      "options": [
+        {
+          "label": "1223",
+          "is_correct": false
+        },
+        {
+          "label": "1176",
+          "is_correct": true
+        },
+        {
+          "label": "1129",
+          "is_correct": false
+        },
+        {
+          "label": "1270",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "H.C.F. and L.C.M. of Numbers",
+      "kind": "standard",
+      "difficulty": "very_hard",
+      "answer_type": "single",
+      "stem": "The HCF and LCM of two numbers are 11 and 242 respectively. Find the product of the two numbers.",
+      "explanation": "Product of two numbers = HCF × LCM = 11 × 242 = 2662.",
+      "options": [
+        {
+          "label": "2874",
+          "is_correct": false
+        },
+        {
+          "label": "2662",
+          "is_correct": true
+        },
+        {
+          "label": "2768",
+          "is_correct": false
+        },
+        {
+          "label": "2556",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "H.C.F. and L.C.M. of Numbers",
+      "kind": "standard",
+      "difficulty": "very_hard",
+      "answer_type": "single",
+      "stem": "Find the least number which, when divided by 12, 15 and 14, leaves remainders 8, 11 and 10 respectively.",
+      "explanation": "Each divisor exceeds its remainder by 4, so the number = LCM(12, 15, 14) − 4 = 420 − 4 = 416.",
+      "options": [
+        {
+          "label": "416",
+          "is_correct": true
+        },
+        {
+          "label": "433",
+          "is_correct": false
+        },
+        {
+          "label": "399",
+          "is_correct": false
+        },
+        {
+          "label": "450",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "H.C.F. and L.C.M. of Numbers",
+      "kind": "standard",
+      "difficulty": "very_hard",
+      "answer_type": "single",
+      "stem": "Find the least number which, when divided by 6, 15 and 12, leaves remainders 2, 11 and 8 respectively.",
+      "explanation": "Each divisor exceeds its remainder by 4, so the number = LCM(6, 15, 12) − 4 = 60 − 4 = 56.",
+      "options": [
+        {
+          "label": "56",
+          "is_correct": true
+        },
+        {
+          "label": "58",
+          "is_correct": false
+        },
+        {
+          "label": "54",
+          "is_correct": false
+        },
+        {
+          "label": "60",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "H.C.F. and L.C.M. of Numbers",
+      "kind": "standard",
+      "difficulty": "very_hard",
+      "answer_type": "single",
+      "stem": "Two numbers are in the ratio 7:6 and their HCF is 3. Find their LCM.",
+      "explanation": "The numbers are 21 and 18; LCM = 3×7×6 = 126.",
+      "options": [
+        {
+          "label": "126",
+          "is_correct": true
+        },
+        {
+          "label": "130",
+          "is_correct": false
+        },
+        {
+          "label": "124",
+          "is_correct": false
+        },
+        {
+          "label": "128",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "H.C.F. and L.C.M. of Numbers",
+      "kind": "standard",
+      "difficulty": "very_hard",
+      "answer_type": "single",
+      "stem": "Find the least number which, when divided by 10, 15 and 18, leaves remainders 6, 11 and 14 respectively.",
+      "explanation": "Each divisor exceeds its remainder by 4, so the number = LCM(10, 15, 18) − 4 = 90 − 4 = 86.",
+      "options": [
+        {
+          "label": "88",
+          "is_correct": false
+        },
+        {
+          "label": "90",
+          "is_correct": false
+        },
+        {
+          "label": "84",
+          "is_correct": false
+        },
+        {
+          "label": "86",
+          "is_correct": true
+        }
+      ]
+    },
+    {
+      "chapter": "H.C.F. and L.C.M. of Numbers",
+      "kind": "standard",
+      "difficulty": "very_hard",
+      "answer_type": "single",
+      "stem": "The HCF and LCM of two numbers are 14 and 238 respectively. Find the product of the two numbers.",
+      "explanation": "Product of two numbers = HCF × LCM = 14 × 238 = 3332.",
+      "options": [
+        {
+          "label": "3199",
+          "is_correct": false
+        },
+        {
+          "label": "3332",
+          "is_correct": true
+        },
+        {
+          "label": "3465",
+          "is_correct": false
+        },
+        {
+          "label": "3598",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "H.C.F. and L.C.M. of Numbers",
+      "kind": "standard",
+      "difficulty": "very_hard",
+      "answer_type": "single",
+      "stem": "The HCF and LCM of two numbers are 14 and 406 respectively. Find the product of the two numbers.",
+      "explanation": "Product of two numbers = HCF × LCM = 14 × 406 = 5684.",
+      "options": [
+        {
+          "label": "5684",
+          "is_correct": true
+        },
+        {
+          "label": "5457",
+          "is_correct": false
+        },
+        {
+          "label": "5911",
+          "is_correct": false
+        },
+        {
+          "label": "6138",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "H.C.F. and L.C.M. of Numbers",
+      "kind": "standard",
+      "difficulty": "very_hard",
+      "answer_type": "single",
+      "stem": "Two numbers are in the ratio 5:9 and their HCF is 12. Find their LCM.",
+      "explanation": "The numbers are 60 and 108; LCM = 12×5×9 = 540.",
+      "options": [
+        {
+          "label": "540",
+          "is_correct": true
+        },
+        {
+          "label": "584",
+          "is_correct": false
+        },
+        {
+          "label": "562",
+          "is_correct": false
+        },
+        {
+          "label": "518",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "H.C.F. and L.C.M. of Numbers",
+      "kind": "standard",
+      "difficulty": "very_hard",
+      "answer_type": "single",
+      "stem": "Find the least number which, when divided by 5, 14 and 6, leaves remainders 1, 10 and 2 respectively.",
+      "explanation": "Each divisor exceeds its remainder by 4, so the number = LCM(5, 14, 6) − 4 = 210 − 4 = 206.",
+      "options": [
+        {
+          "label": "206",
+          "is_correct": true
+        },
+        {
+          "label": "198",
+          "is_correct": false
+        },
+        {
+          "label": "214",
+          "is_correct": false
+        },
+        {
+          "label": "222",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "H.C.F. and L.C.M. of Numbers",
+      "kind": "standard",
+      "difficulty": "very_hard",
+      "answer_type": "single",
+      "stem": "The HCF and LCM of two numbers are 6 and 90 respectively. Find the product of the two numbers.",
+      "explanation": "Product of two numbers = HCF × LCM = 6 × 90 = 540.",
+      "options": [
+        {
+          "label": "562",
+          "is_correct": false
+        },
+        {
+          "label": "540",
+          "is_correct": true
+        },
+        {
+          "label": "584",
+          "is_correct": false
+        },
+        {
+          "label": "518",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "H.C.F. and L.C.M. of Numbers",
+      "kind": "standard",
+      "difficulty": "very_hard",
+      "answer_type": "single",
+      "stem": "The HCF and LCM of two numbers are 9 and 153 respectively. Find the product of the two numbers.",
+      "explanation": "Product of two numbers = HCF × LCM = 9 × 153 = 1377.",
+      "options": [
+        {
+          "label": "1322",
+          "is_correct": false
+        },
+        {
+          "label": "1432",
+          "is_correct": false
+        },
+        {
+          "label": "1377",
+          "is_correct": true
+        },
+        {
+          "label": "1487",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "H.C.F. and L.C.M. of Numbers",
+      "kind": "standard",
+      "difficulty": "very_hard",
+      "answer_type": "single",
+      "stem": "Two numbers are in the ratio 2:5 and their HCF is 10. Find their LCM.",
+      "explanation": "The numbers are 20 and 50; LCM = 10×2×5 = 100.",
+      "options": [
+        {
+          "label": "102",
+          "is_correct": false
+        },
+        {
+          "label": "104",
+          "is_correct": false
+        },
+        {
+          "label": "100",
+          "is_correct": true
+        },
+        {
+          "label": "98",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "H.C.F. and L.C.M. of Numbers",
+      "kind": "standard",
+      "difficulty": "very_hard",
+      "answer_type": "single",
+      "stem": "The HCF and LCM of two numbers are 5 and 105 respectively. Find the product of the two numbers.",
+      "explanation": "Product of two numbers = HCF × LCM = 5 × 105 = 525.",
+      "options": [
+        {
+          "label": "504",
+          "is_correct": false
+        },
+        {
+          "label": "525",
+          "is_correct": true
+        },
+        {
+          "label": "567",
+          "is_correct": false
+        },
+        {
+          "label": "546",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "H.C.F. and L.C.M. of Numbers",
+      "kind": "standard",
+      "difficulty": "very_hard",
+      "answer_type": "single",
+      "stem": "Find the least number which, when divided by 6, 6 and 7, leaves remainders 4, 4 and 5 respectively.",
+      "explanation": "Each divisor exceeds its remainder by 2, so the number = LCM(6, 6, 7) − 2 = 42 − 2 = 40.",
+      "options": [
+        {
+          "label": "42",
+          "is_correct": false
+        },
+        {
+          "label": "40",
+          "is_correct": true
+        },
+        {
+          "label": "44",
+          "is_correct": false
+        },
+        {
+          "label": "38",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "H.C.F. and L.C.M. of Numbers",
+      "kind": "standard",
+      "difficulty": "very_hard",
+      "answer_type": "single",
+      "stem": "Two numbers are in the ratio 10:3 and their HCF is 2. Find their LCM.",
+      "explanation": "The numbers are 20 and 6; LCM = 2×10×3 = 60.",
+      "options": [
+        {
+          "label": "62",
+          "is_correct": false
+        },
+        {
+          "label": "64",
+          "is_correct": false
+        },
+        {
+          "label": "60",
+          "is_correct": true
+        },
+        {
+          "label": "58",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "H.C.F. and L.C.M. of Numbers",
+      "kind": "standard",
+      "difficulty": "very_hard",
+      "answer_type": "single",
+      "stem": "Two numbers are in the ratio 3:2 and their HCF is 4. Find their LCM.",
+      "explanation": "The numbers are 12 and 8; LCM = 4×3×2 = 24.",
+      "options": [
+        {
+          "label": "26",
+          "is_correct": false
+        },
+        {
+          "label": "23",
+          "is_correct": false
+        },
+        {
+          "label": "24",
+          "is_correct": true
+        },
+        {
+          "label": "25",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "H.C.F. and L.C.M. of Numbers",
+      "kind": "standard",
+      "difficulty": "very_hard",
+      "answer_type": "single",
+      "stem": "Find the least number which, when divided by 10, 5 and 17, leaves remainders 8, 3 and 15 respectively.",
+      "explanation": "Each divisor exceeds its remainder by 2, so the number = LCM(10, 5, 17) − 2 = 170 − 2 = 168.",
+      "options": [
+        {
+          "label": "170",
+          "is_correct": false
+        },
+        {
+          "label": "166",
+          "is_correct": false
+        },
+        {
+          "label": "172",
+          "is_correct": false
+        },
+        {
+          "label": "168",
+          "is_correct": true
+        }
+      ]
+    },
+    {
+      "chapter": "H.C.F. and L.C.M. of Numbers",
+      "kind": "standard",
+      "difficulty": "very_hard",
+      "answer_type": "single",
+      "stem": "Find the least number which, when divided by 10, 9 and 5, leaves remainders 9, 8 and 4 respectively.",
+      "explanation": "Each divisor exceeds its remainder by 1, so the number = LCM(10, 9, 5) − 1 = 90 − 1 = 89.",
+      "options": [
+        {
+          "label": "93",
+          "is_correct": false
+        },
+        {
+          "label": "87",
+          "is_correct": false
+        },
+        {
+          "label": "89",
+          "is_correct": true
+        },
+        {
+          "label": "91",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "H.C.F. and L.C.M. of Numbers",
+      "kind": "standard",
+      "difficulty": "very_hard",
+      "answer_type": "single",
+      "stem": "The HCF and LCM of two numbers are 12 and 168 respectively. Find the product of the two numbers.",
+      "explanation": "Product of two numbers = HCF × LCM = 12 × 168 = 2016.",
+      "options": [
+        {
+          "label": "2016",
+          "is_correct": true
+        },
+        {
+          "label": "2097",
+          "is_correct": false
+        },
+        {
+          "label": "1935",
+          "is_correct": false
+        },
+        {
+          "label": "2178",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "H.C.F. and L.C.M. of Numbers",
+      "kind": "standard",
+      "difficulty": "very_hard",
+      "answer_type": "single",
+      "stem": "Find the least number which, when divided by 10, 10 and 6, leaves remainders 9, 9 and 5 respectively.",
+      "explanation": "Each divisor exceeds its remainder by 1, so the number = LCM(10, 10, 6) − 1 = 30 − 1 = 29.",
+      "options": [
+        {
+          "label": "30",
+          "is_correct": false
+        },
+        {
+          "label": "28",
+          "is_correct": false
+        },
+        {
+          "label": "29",
+          "is_correct": true
+        },
+        {
+          "label": "31",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "H.C.F. and L.C.M. of Numbers",
+      "kind": "standard",
+      "difficulty": "very_hard",
+      "answer_type": "single",
+      "stem": "Find the least number which, when divided by 6, 5 and 13, leaves remainders 4, 3 and 11 respectively.",
+      "explanation": "Each divisor exceeds its remainder by 2, so the number = LCM(6, 5, 13) − 2 = 390 − 2 = 388.",
+      "options": [
+        {
+          "label": "372",
+          "is_correct": false
+        },
+        {
+          "label": "388",
+          "is_correct": true
+        },
+        {
+          "label": "420",
+          "is_correct": false
+        },
+        {
+          "label": "404",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "H.C.F. and L.C.M. of Numbers",
+      "kind": "standard",
+      "difficulty": "very_hard",
+      "answer_type": "single",
+      "stem": "The HCF and LCM of two numbers are 6 and 120 respectively. Find the product of the two numbers.",
+      "explanation": "Product of two numbers = HCF × LCM = 6 × 120 = 720.",
+      "options": [
+        {
+          "label": "720",
+          "is_correct": true
+        },
+        {
+          "label": "691",
+          "is_correct": false
+        },
+        {
+          "label": "749",
+          "is_correct": false
+        },
+        {
+          "label": "778",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "H.C.F. and L.C.M. of Numbers",
+      "kind": "standard",
+      "difficulty": "very_hard",
+      "answer_type": "single",
+      "stem": "Find the least number which, when divided by 12, 13 and 15, leaves remainders 11, 12 and 14 respectively.",
+      "explanation": "Each divisor exceeds its remainder by 1, so the number = LCM(12, 13, 15) − 1 = 780 − 1 = 779.",
+      "options": [
+        {
+          "label": "779",
+          "is_correct": true
+        },
+        {
+          "label": "748",
+          "is_correct": false
+        },
+        {
+          "label": "810",
+          "is_correct": false
+        },
+        {
+          "label": "841",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "H.C.F. and L.C.M. of Numbers",
+      "kind": "standard",
+      "difficulty": "very_hard",
+      "answer_type": "single",
+      "stem": "The HCF and LCM of two numbers are 11 and 220 respectively. Find the product of the two numbers.",
+      "explanation": "Product of two numbers = HCF × LCM = 11 × 220 = 2420.",
+      "options": [
+        {
+          "label": "2517",
+          "is_correct": false
+        },
+        {
+          "label": "2323",
+          "is_correct": false
+        },
+        {
+          "label": "2614",
+          "is_correct": false
+        },
+        {
+          "label": "2420",
+          "is_correct": true
+        }
+      ]
+    },
+    {
+      "chapter": "H.C.F. and L.C.M. of Numbers",
+      "kind": "standard",
+      "difficulty": "very_hard",
+      "answer_type": "single",
+      "stem": "The HCF and LCM of two numbers are 15 and 315 respectively. Find the product of the two numbers.",
+      "explanation": "Product of two numbers = HCF × LCM = 15 × 315 = 4725.",
+      "options": [
+        {
+          "label": "4914",
+          "is_correct": false
+        },
+        {
+          "label": "4725",
+          "is_correct": true
+        },
+        {
+          "label": "5103",
+          "is_correct": false
+        },
+        {
+          "label": "4536",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "H.C.F. and L.C.M. of Numbers",
+      "kind": "standard",
+      "difficulty": "very_hard",
+      "answer_type": "single",
+      "stem": "Find the least number which, when divided by 11, 12 and 8, leaves remainders 10, 11 and 7 respectively.",
+      "explanation": "Each divisor exceeds its remainder by 1, so the number = LCM(11, 12, 8) − 1 = 264 − 1 = 263.",
+      "options": [
+        {
+          "label": "252",
+          "is_correct": false
+        },
+        {
+          "label": "263",
+          "is_correct": true
+        },
+        {
+          "label": "274",
+          "is_correct": false
+        },
+        {
+          "label": "285",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "H.C.F. and L.C.M. of Numbers",
+      "kind": "standard",
+      "difficulty": "very_hard",
+      "answer_type": "single",
+      "stem": "The HCF and LCM of two numbers are 8 and 192 respectively. Find the product of the two numbers.",
+      "explanation": "Product of two numbers = HCF × LCM = 8 × 192 = 1536.",
+      "options": [
+        {
+          "label": "1597",
+          "is_correct": false
+        },
+        {
+          "label": "1475",
+          "is_correct": false
+        },
+        {
+          "label": "1536",
+          "is_correct": true
+        },
+        {
+          "label": "1658",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "H.C.F. and L.C.M. of Numbers",
+      "kind": "standard",
+      "difficulty": "very_hard",
+      "answer_type": "single",
+      "stem": "Find the least number which, when divided by 10, 10 and 15, leaves remainders 8, 8 and 13 respectively.",
+      "explanation": "Each divisor exceeds its remainder by 2, so the number = LCM(10, 10, 15) − 2 = 30 − 2 = 28.",
+      "options": [
+        {
+          "label": "30",
+          "is_correct": false
+        },
+        {
+          "label": "27",
+          "is_correct": false
+        },
+        {
+          "label": "29",
+          "is_correct": false
+        },
+        {
+          "label": "28",
+          "is_correct": true
+        }
+      ]
+    },
+    {
+      "chapter": "H.C.F. and L.C.M. of Numbers",
+      "kind": "standard",
+      "difficulty": "very_hard",
+      "answer_type": "single",
+      "stem": "Find the least number which, when divided by 11, 12 and 8, leaves remainders 8, 9 and 5 respectively.",
+      "explanation": "Each divisor exceeds its remainder by 3, so the number = LCM(11, 12, 8) − 3 = 264 − 3 = 261.",
+      "options": [
+        {
+          "label": "281",
+          "is_correct": false
+        },
+        {
+          "label": "251",
+          "is_correct": false
+        },
+        {
+          "label": "261",
+          "is_correct": true
+        },
+        {
+          "label": "271",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "H.C.F. and L.C.M. of Numbers",
+      "kind": "standard",
+      "difficulty": "very_hard",
+      "answer_type": "single",
+      "stem": "Two numbers are in the ratio 4:5 and their HCF is 14. Find their LCM.",
+      "explanation": "The numbers are 56 and 70; LCM = 14×4×5 = 280.",
+      "options": [
+        {
+          "label": "302",
+          "is_correct": false
+        },
+        {
+          "label": "280",
+          "is_correct": true
+        },
+        {
+          "label": "269",
+          "is_correct": false
+        },
+        {
+          "label": "291",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "H.C.F. and L.C.M. of Numbers",
+      "kind": "standard",
+      "difficulty": "very_hard",
+      "answer_type": "single",
+      "stem": "The HCF and LCM of two numbers are 6 and 102 respectively. Find the product of the two numbers.",
+      "explanation": "Product of two numbers = HCF × LCM = 6 × 102 = 612.",
+      "options": [
+        {
+          "label": "660",
+          "is_correct": false
+        },
+        {
+          "label": "588",
+          "is_correct": false
+        },
+        {
+          "label": "636",
+          "is_correct": false
+        },
+        {
+          "label": "612",
+          "is_correct": true
+        }
+      ]
+    },
+    {
+      "chapter": "H.C.F. and L.C.M. of Numbers",
+      "kind": "standard",
+      "difficulty": "very_hard",
+      "answer_type": "single",
+      "stem": "The HCF and LCM of two numbers are 18 and 288 respectively. Find the product of the two numbers.",
+      "explanation": "Product of two numbers = HCF × LCM = 18 × 288 = 5184.",
+      "options": [
+        {
+          "label": "5391",
+          "is_correct": false
+        },
+        {
+          "label": "4977",
+          "is_correct": false
+        },
+        {
+          "label": "5184",
+          "is_correct": true
+        },
+        {
+          "label": "5598",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "H.C.F. and L.C.M. of Numbers",
+      "kind": "standard",
+      "difficulty": "very_hard",
+      "answer_type": "single",
+      "stem": "Two numbers are in the ratio 9:10 and their HCF is 6. Find their LCM.",
+      "explanation": "The numbers are 54 and 60; LCM = 6×9×10 = 540.",
+      "options": [
+        {
+          "label": "584",
+          "is_correct": false
+        },
+        {
+          "label": "518",
+          "is_correct": false
+        },
+        {
+          "label": "562",
+          "is_correct": false
+        },
+        {
+          "label": "540",
+          "is_correct": true
+        }
+      ]
+    },
+    {
+      "chapter": "H.C.F. and L.C.M. of Numbers",
+      "kind": "standard",
+      "difficulty": "very_hard",
+      "answer_type": "single",
+      "stem": "The HCF and LCM of two numbers are 8 and 216 respectively. Find the product of the two numbers.",
+      "explanation": "Product of two numbers = HCF × LCM = 8 × 216 = 1728.",
+      "options": [
+        {
+          "label": "1797",
+          "is_correct": false
+        },
+        {
+          "label": "1866",
+          "is_correct": false
+        },
+        {
+          "label": "1659",
+          "is_correct": false
+        },
+        {
+          "label": "1728",
+          "is_correct": true
+        }
+      ]
+    },
+    {
+      "chapter": "H.C.F. and L.C.M. of Numbers",
+      "kind": "standard",
+      "difficulty": "very_hard",
+      "answer_type": "single",
+      "stem": "Two numbers are in the ratio 9:4 and their HCF is 14. Find their LCM.",
+      "explanation": "The numbers are 126 and 56; LCM = 14×9×4 = 504.",
+      "options": [
+        {
+          "label": "544",
+          "is_correct": false
+        },
+        {
+          "label": "484",
+          "is_correct": false
+        },
+        {
+          "label": "524",
+          "is_correct": false
+        },
+        {
+          "label": "504",
+          "is_correct": true
+        }
+      ]
+    },
+    {
+      "chapter": "H.C.F. and L.C.M. of Numbers",
+      "kind": "standard",
+      "difficulty": "very_hard",
+      "answer_type": "single",
+      "stem": "Find the least number which, when divided by 8, 5 and 5, leaves remainders 7, 4 and 4 respectively.",
+      "explanation": "Each divisor exceeds its remainder by 1, so the number = LCM(8, 5, 5) − 1 = 40 − 1 = 39.",
+      "options": [
+        {
+          "label": "39",
+          "is_correct": true
+        },
+        {
+          "label": "41",
+          "is_correct": false
+        },
+        {
+          "label": "38",
+          "is_correct": false
+        },
+        {
+          "label": "40",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "H.C.F. and L.C.M. of Numbers",
+      "kind": "standard",
+      "difficulty": "very_hard",
+      "answer_type": "single",
+      "stem": "Two numbers are in the ratio 11:7 and their HCF is 13. Find their LCM.",
+      "explanation": "The numbers are 143 and 91; LCM = 13×11×7 = 1001.",
+      "options": [
+        {
+          "label": "1001",
+          "is_correct": true
+        },
+        {
+          "label": "961",
+          "is_correct": false
+        },
+        {
+          "label": "1081",
+          "is_correct": false
+        },
+        {
+          "label": "1041",
+          "is_correct": false
+        }
+      ]
+    }
+  ]
+}

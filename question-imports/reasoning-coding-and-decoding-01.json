@@ -1,0 +1,5205 @@
+{
+  "subject": "Reasoning",
+  "questions": [
+    {
+      "chapter": "Coding and Decoding",
+      "kind": "standard",
+      "difficulty": "easy",
+      "answer_type": "single",
+      "stem": "In a certain code language, SHIP is written as RGHO. How is BOAT written in that code?",
+      "explanation": "Rule: each letter is moved 1 place(s) backward in the alphabet. Applying it to BOAT gives ANZS.",
+      "options": [
+        {
+          "label": "ANZU",
+          "is_correct": false
+        },
+        {
+          "label": "ANZT",
+          "is_correct": false
+        },
+        {
+          "label": "ANZR",
+          "is_correct": false
+        },
+        {
+          "label": "ANZS",
+          "is_correct": true
+        }
+      ]
+    },
+    {
+      "chapter": "Coding and Decoding",
+      "kind": "standard",
+      "difficulty": "easy",
+      "answer_type": "single",
+      "stem": "In a certain code language, CAT is written as DBU. How is MINT written in that code?",
+      "explanation": "Rule: each letter is moved 1 place(s) forward in the alphabet. Applying it to MINT gives NJOU.",
+      "options": [
+        {
+          "label": "NJOW",
+          "is_correct": false
+        },
+        {
+          "label": "NJOV",
+          "is_correct": false
+        },
+        {
+          "label": "NJOT",
+          "is_correct": false
+        },
+        {
+          "label": "NJOU",
+          "is_correct": true
+        }
+      ]
+    },
+    {
+      "chapter": "Coding and Decoding",
+      "kind": "standard",
+      "difficulty": "easy",
+      "answer_type": "single",
+      "stem": "In a certain code language, WIND is written as TFKA. How is VASE written in that code?",
+      "explanation": "Rule: each letter is moved 3 place(s) backward in the alphabet. Applying it to VASE gives SXPB.",
+      "options": [
+        {
+          "label": "SXPC",
+          "is_correct": false
+        },
+        {
+          "label": "SXPB",
+          "is_correct": true
+        },
+        {
+          "label": "SXPA",
+          "is_correct": false
+        },
+        {
+          "label": "SXPD",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Coding and Decoding",
+      "kind": "standard",
+      "difficulty": "easy",
+      "answer_type": "single",
+      "stem": "In a certain code language, REED is written as OBBA. How is YARN written in that code?",
+      "explanation": "Rule: each letter is moved 3 place(s) backward in the alphabet. Applying it to YARN gives VXOK.",
+      "options": [
+        {
+          "label": "VXOJ",
+          "is_correct": false
+        },
+        {
+          "label": "VXOL",
+          "is_correct": false
+        },
+        {
+          "label": "VXOM",
+          "is_correct": false
+        },
+        {
+          "label": "VXOK",
+          "is_correct": true
+        }
+      ]
+    },
+    {
+      "chapter": "Coding and Decoding",
+      "kind": "standard",
+      "difficulty": "easy",
+      "answer_type": "single",
+      "stem": "In a certain code language, IRON is written as GPML. How is CAKE written in that code?",
+      "explanation": "Rule: each letter is moved 2 place(s) backward in the alphabet. Applying it to CAKE gives AYIC.",
+      "options": [
+        {
+          "label": "AYIB",
+          "is_correct": false
+        },
+        {
+          "label": "AYIE",
+          "is_correct": false
+        },
+        {
+          "label": "AYIC",
+          "is_correct": true
+        },
+        {
+          "label": "AYID",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Coding and Decoding",
+      "kind": "standard",
+      "difficulty": "easy",
+      "answer_type": "single",
+      "stem": "In a certain code language, RICE is written as ECIR. How is BELL written in that code?",
+      "explanation": "Rule: the letters are written in reverse order. Applying it to BELL gives LLEB.",
+      "options": [
+        {
+          "label": "LLEB",
+          "is_correct": true
+        },
+        {
+          "label": "LLEC",
+          "is_correct": false
+        },
+        {
+          "label": "LLED",
+          "is_correct": false
+        },
+        {
+          "label": "LLEA",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Coding and Decoding",
+      "kind": "standard",
+      "difficulty": "easy",
+      "answer_type": "single",
+      "stem": "In a certain code language, NEST is written as LCQR. How is STAR written in that code?",
+      "explanation": "Rule: each letter is moved 2 place(s) backward in the alphabet. Applying it to STAR gives QRYP.",
+      "options": [
+        {
+          "label": "QRYP",
+          "is_correct": true
+        },
+        {
+          "label": "QRYQ",
+          "is_correct": false
+        },
+        {
+          "label": "QRYO",
+          "is_correct": false
+        },
+        {
+          "label": "QRYR",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Coding and Decoding",
+      "kind": "standard",
+      "difficulty": "easy",
+      "answer_type": "single",
+      "stem": "In a certain code language, PARK is written as SDUN. How is DUCK written in that code?",
+      "explanation": "Rule: each letter is moved 3 place(s) forward in the alphabet. Applying it to DUCK gives GXFN.",
+      "options": [
+        {
+          "label": "GXFO",
+          "is_correct": false
+        },
+        {
+          "label": "GXFP",
+          "is_correct": false
+        },
+        {
+          "label": "GXFN",
+          "is_correct": true
+        },
+        {
+          "label": "GXFM",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Coding and Decoding",
+      "kind": "standard",
+      "difficulty": "easy",
+      "answer_type": "single",
+      "stem": "In a certain code language, BOOK is written as DQQM. How is PARK written in that code?",
+      "explanation": "Rule: each letter is moved 2 place(s) forward in the alphabet. Applying it to PARK gives RCTM.",
+      "options": [
+        {
+          "label": "RCTL",
+          "is_correct": false
+        },
+        {
+          "label": "RCTO",
+          "is_correct": false
+        },
+        {
+          "label": "RCTN",
+          "is_correct": false
+        },
+        {
+          "label": "RCTM",
+          "is_correct": true
+        }
+      ]
+    },
+    {
+      "chapter": "Coding and Decoding",
+      "kind": "standard",
+      "difficulty": "easy",
+      "answer_type": "single",
+      "stem": "In a certain code language, SUN is written as TVO. How is FISH written in that code?",
+      "explanation": "Rule: each letter is moved 1 place(s) forward in the alphabet. Applying it to FISH gives GJTI.",
+      "options": [
+        {
+          "label": "GJTH",
+          "is_correct": false
+        },
+        {
+          "label": "GJTI",
+          "is_correct": true
+        },
+        {
+          "label": "GJTJ",
+          "is_correct": false
+        },
+        {
+          "label": "GJTK",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Coding and Decoding",
+      "kind": "standard",
+      "difficulty": "easy",
+      "answer_type": "single",
+      "stem": "In a certain code language, SILK is written as KLIS. How is MOON written in that code?",
+      "explanation": "Rule: the letters are written in reverse order. Applying it to MOON gives NOOM.",
+      "options": [
+        {
+          "label": "NOOO",
+          "is_correct": false
+        },
+        {
+          "label": "NOOL",
+          "is_correct": false
+        },
+        {
+          "label": "NOON",
+          "is_correct": false
+        },
+        {
+          "label": "NOOM",
+          "is_correct": true
+        }
+      ]
+    },
+    {
+      "chapter": "Coding and Decoding",
+      "kind": "standard",
+      "difficulty": "easy",
+      "answer_type": "single",
+      "stem": "In a certain code language, ROAD is written as QNZC. How is COAL written in that code?",
+      "explanation": "Rule: each letter is moved 1 place(s) backward in the alphabet. Applying it to COAL gives BNZK.",
+      "options": [
+        {
+          "label": "BNZM",
+          "is_correct": false
+        },
+        {
+          "label": "BNZJ",
+          "is_correct": false
+        },
+        {
+          "label": "BNZK",
+          "is_correct": true
+        },
+        {
+          "label": "BNZL",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Coding and Decoding",
+      "kind": "standard",
+      "difficulty": "easy",
+      "answer_type": "single",
+      "stem": "In a certain code language, SILK is written as UKNM. How is DOG written in that code?",
+      "explanation": "Rule: each letter is moved 2 place(s) forward in the alphabet. Applying it to DOG gives FQI.",
+      "options": [
+        {
+          "label": "FQH",
+          "is_correct": false
+        },
+        {
+          "label": "FQK",
+          "is_correct": false
+        },
+        {
+          "label": "FQJ",
+          "is_correct": false
+        },
+        {
+          "label": "FQI",
+          "is_correct": true
+        }
+      ]
+    },
+    {
+      "chapter": "Coding and Decoding",
+      "kind": "standard",
+      "difficulty": "easy",
+      "answer_type": "single",
+      "stem": "In a certain code language, CAT is written as AYR. How is YARN written in that code?",
+      "explanation": "Rule: each letter is moved 2 place(s) backward in the alphabet. Applying it to YARN gives WYPL.",
+      "options": [
+        {
+          "label": "WYPL",
+          "is_correct": true
+        },
+        {
+          "label": "WYPN",
+          "is_correct": false
+        },
+        {
+          "label": "WYPM",
+          "is_correct": false
+        },
+        {
+          "label": "WYPK",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Coding and Decoding",
+      "kind": "standard",
+      "difficulty": "easy",
+      "answer_type": "single",
+      "stem": "In a certain code language, SUN is written as UWP. How is STAR written in that code?",
+      "explanation": "Rule: each letter is moved 2 place(s) forward in the alphabet. Applying it to STAR gives UVCT.",
+      "options": [
+        {
+          "label": "UVCS",
+          "is_correct": false
+        },
+        {
+          "label": "UVCU",
+          "is_correct": false
+        },
+        {
+          "label": "UVCV",
+          "is_correct": false
+        },
+        {
+          "label": "UVCT",
+          "is_correct": true
+        }
+      ]
+    },
+    {
+      "chapter": "Coding and Decoding",
+      "kind": "standard",
+      "difficulty": "easy",
+      "answer_type": "single",
+      "stem": "In a certain code language, COAL is written as LAOC. How is DUCK written in that code?",
+      "explanation": "Rule: the letters are written in reverse order. Applying it to DUCK gives KCUD.",
+      "options": [
+        {
+          "label": "KCUF",
+          "is_correct": false
+        },
+        {
+          "label": "KCUE",
+          "is_correct": false
+        },
+        {
+          "label": "KCUD",
+          "is_correct": true
+        },
+        {
+          "label": "KCUC",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Coding and Decoding",
+      "kind": "standard",
+      "difficulty": "easy",
+      "answer_type": "single",
+      "stem": "In a certain code language, FISH is written as HSIF. How is ROAD written in that code?",
+      "explanation": "Rule: the letters are written in reverse order. Applying it to ROAD gives DAOR.",
+      "options": [
+        {
+          "label": "DAOS",
+          "is_correct": false
+        },
+        {
+          "label": "DAOT",
+          "is_correct": false
+        },
+        {
+          "label": "DAOQ",
+          "is_correct": false
+        },
+        {
+          "label": "DAOR",
+          "is_correct": true
+        }
+      ]
+    },
+    {
+      "chapter": "Coding and Decoding",
+      "kind": "standard",
+      "difficulty": "easy",
+      "answer_type": "single",
+      "stem": "In a certain code language, MOON is written as KMML. How is PALM written in that code?",
+      "explanation": "Rule: each letter is moved 2 place(s) backward in the alphabet. Applying it to PALM gives NYJK.",
+      "options": [
+        {
+          "label": "NYJM",
+          "is_correct": false
+        },
+        {
+          "label": "NYJL",
+          "is_correct": false
+        },
+        {
+          "label": "NYJJ",
+          "is_correct": false
+        },
+        {
+          "label": "NYJK",
+          "is_correct": true
+        }
+      ]
+    },
+    {
+      "chapter": "Coding and Decoding",
+      "kind": "standard",
+      "difficulty": "easy",
+      "answer_type": "single",
+      "stem": "In a certain code language, ROAD is written as TQCF. How is IRON written in that code?",
+      "explanation": "Rule: each letter is moved 2 place(s) forward in the alphabet. Applying it to IRON gives KTQP.",
+      "options": [
+        {
+          "label": "KTQP",
+          "is_correct": true
+        },
+        {
+          "label": "KTQQ",
+          "is_correct": false
+        },
+        {
+          "label": "KTQO",
+          "is_correct": false
+        },
+        {
+          "label": "KTQR",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Coding and Decoding",
+      "kind": "standard",
+      "difficulty": "easy",
+      "answer_type": "single",
+      "stem": "In a certain code language, MINT is written as OKPV. How is LION written in that code?",
+      "explanation": "Rule: each letter is moved 2 place(s) forward in the alphabet. Applying it to LION gives NKQP.",
+      "options": [
+        {
+          "label": "NKQP",
+          "is_correct": true
+        },
+        {
+          "label": "NKQO",
+          "is_correct": false
+        },
+        {
+          "label": "NKQR",
+          "is_correct": false
+        },
+        {
+          "label": "NKQQ",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Coding and Decoding",
+      "kind": "standard",
+      "difficulty": "easy",
+      "answer_type": "single",
+      "stem": "In a certain code language, BEAR is written as RAEB. How is SHIP written in that code?",
+      "explanation": "Rule: the letters are written in reverse order. Applying it to SHIP gives PIHS.",
+      "options": [
+        {
+          "label": "PIHT",
+          "is_correct": false
+        },
+        {
+          "label": "PIHU",
+          "is_correct": false
+        },
+        {
+          "label": "PIHR",
+          "is_correct": false
+        },
+        {
+          "label": "PIHS",
+          "is_correct": true
+        }
+      ]
+    },
+    {
+      "chapter": "Coding and Decoding",
+      "kind": "standard",
+      "difficulty": "easy",
+      "answer_type": "single",
+      "stem": "In a certain code language, LION is written as NOIL. How is KNOT written in that code?",
+      "explanation": "Rule: the letters are written in reverse order. Applying it to KNOT gives TONK.",
+      "options": [
+        {
+          "label": "TONK",
+          "is_correct": true
+        },
+        {
+          "label": "TONJ",
+          "is_correct": false
+        },
+        {
+          "label": "TONM",
+          "is_correct": false
+        },
+        {
+          "label": "TONL",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Coding and Decoding",
+      "kind": "standard",
+      "difficulty": "easy",
+      "answer_type": "single",
+      "stem": "In a certain code language, IRON is written as NORI. How is LEAF written in that code?",
+      "explanation": "Rule: the letters are written in reverse order. Applying it to LEAF gives FAEL.",
+      "options": [
+        {
+          "label": "FAEL",
+          "is_correct": true
+        },
+        {
+          "label": "FAEM",
+          "is_correct": false
+        },
+        {
+          "label": "FAEN",
+          "is_correct": false
+        },
+        {
+          "label": "FAEK",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Coding and Decoding",
+      "kind": "standard",
+      "difficulty": "easy",
+      "answer_type": "single",
+      "stem": "In a certain code language, FISH is written as HSIF. How is DOG written in that code?",
+      "explanation": "Rule: the letters are written in reverse order. Applying it to DOG gives GOD.",
+      "options": [
+        {
+          "label": "GOC",
+          "is_correct": false
+        },
+        {
+          "label": "GOE",
+          "is_correct": false
+        },
+        {
+          "label": "GOD",
+          "is_correct": true
+        },
+        {
+          "label": "GOF",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Coding and Decoding",
+      "kind": "standard",
+      "difficulty": "easy",
+      "answer_type": "single",
+      "stem": "In a certain code language, BOOK is written as CPPL. How is IRON written in that code?",
+      "explanation": "Rule: each letter is moved 1 place(s) forward in the alphabet. Applying it to IRON gives JSPO.",
+      "options": [
+        {
+          "label": "JSPN",
+          "is_correct": false
+        },
+        {
+          "label": "JSPQ",
+          "is_correct": false
+        },
+        {
+          "label": "JSPO",
+          "is_correct": true
+        },
+        {
+          "label": "JSPP",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Coding and Decoding",
+      "kind": "standard",
+      "difficulty": "easy",
+      "answer_type": "single",
+      "stem": "In a certain code language, PALM is written as NYJK. How is WIND written in that code?",
+      "explanation": "Rule: each letter is moved 2 place(s) backward in the alphabet. Applying it to WIND gives UGLB.",
+      "options": [
+        {
+          "label": "UGLD",
+          "is_correct": false
+        },
+        {
+          "label": "UGLB",
+          "is_correct": true
+        },
+        {
+          "label": "UGLC",
+          "is_correct": false
+        },
+        {
+          "label": "UGLA",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Coding and Decoding",
+      "kind": "standard",
+      "difficulty": "easy",
+      "answer_type": "single",
+      "stem": "In a certain code language, REED is written as PCCB. How is STAR written in that code?",
+      "explanation": "Rule: each letter is moved 2 place(s) backward in the alphabet. Applying it to STAR gives QRYP.",
+      "options": [
+        {
+          "label": "QRYQ",
+          "is_correct": false
+        },
+        {
+          "label": "QRYO",
+          "is_correct": false
+        },
+        {
+          "label": "QRYR",
+          "is_correct": false
+        },
+        {
+          "label": "QRYP",
+          "is_correct": true
+        }
+      ]
+    },
+    {
+      "chapter": "Coding and Decoding",
+      "kind": "standard",
+      "difficulty": "easy",
+      "answer_type": "single",
+      "stem": "In a certain code language, IRON is written as FOLK. How is BIRD written in that code?",
+      "explanation": "Rule: each letter is moved 3 place(s) backward in the alphabet. Applying it to BIRD gives YFOA.",
+      "options": [
+        {
+          "label": "YFOC",
+          "is_correct": false
+        },
+        {
+          "label": "YFOZ",
+          "is_correct": false
+        },
+        {
+          "label": "YFOA",
+          "is_correct": true
+        },
+        {
+          "label": "YFOB",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Coding and Decoding",
+      "kind": "standard",
+      "difficulty": "easy",
+      "answer_type": "single",
+      "stem": "In a certain code language, GOLD is written as IQNF. How is PALM written in that code?",
+      "explanation": "Rule: each letter is moved 2 place(s) forward in the alphabet. Applying it to PALM gives RCNO.",
+      "options": [
+        {
+          "label": "RCNP",
+          "is_correct": false
+        },
+        {
+          "label": "RCNQ",
+          "is_correct": false
+        },
+        {
+          "label": "RCNO",
+          "is_correct": true
+        },
+        {
+          "label": "RCNN",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Coding and Decoding",
+      "kind": "standard",
+      "difficulty": "easy",
+      "answer_type": "single",
+      "stem": "In a certain code language, FIRE is written as CFOB. How is MILK written in that code?",
+      "explanation": "Rule: each letter is moved 3 place(s) backward in the alphabet. Applying it to MILK gives JFIH.",
+      "options": [
+        {
+          "label": "JFIH",
+          "is_correct": true
+        },
+        {
+          "label": "JFIG",
+          "is_correct": false
+        },
+        {
+          "label": "JFIJ",
+          "is_correct": false
+        },
+        {
+          "label": "JFII",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Coding and Decoding",
+      "kind": "standard",
+      "difficulty": "easy",
+      "answer_type": "single",
+      "stem": "In a certain code language, PARK is written as SDUN. How is GATE written in that code?",
+      "explanation": "Rule: each letter is moved 3 place(s) forward in the alphabet. Applying it to GATE gives JDWH.",
+      "options": [
+        {
+          "label": "JDWH",
+          "is_correct": true
+        },
+        {
+          "label": "JDWI",
+          "is_correct": false
+        },
+        {
+          "label": "JDWG",
+          "is_correct": false
+        },
+        {
+          "label": "JDWJ",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Coding and Decoding",
+      "kind": "standard",
+      "difficulty": "easy",
+      "answer_type": "single",
+      "stem": "In a certain code language, PALM is written as RCNO. How is LAMP written in that code?",
+      "explanation": "Rule: each letter is moved 2 place(s) forward in the alphabet. Applying it to LAMP gives NCOR.",
+      "options": [
+        {
+          "label": "NCOS",
+          "is_correct": false
+        },
+        {
+          "label": "NCOQ",
+          "is_correct": false
+        },
+        {
+          "label": "NCOT",
+          "is_correct": false
+        },
+        {
+          "label": "NCOR",
+          "is_correct": true
+        }
+      ]
+    },
+    {
+      "chapter": "Coding and Decoding",
+      "kind": "standard",
+      "difficulty": "easy",
+      "answer_type": "single",
+      "stem": "In a certain code language, DUCK is written as GXFN. How is KING written in that code?",
+      "explanation": "Rule: each letter is moved 3 place(s) forward in the alphabet. Applying it to KING gives NLQJ.",
+      "options": [
+        {
+          "label": "NLQJ",
+          "is_correct": true
+        },
+        {
+          "label": "NLQL",
+          "is_correct": false
+        },
+        {
+          "label": "NLQK",
+          "is_correct": false
+        },
+        {
+          "label": "NLQI",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Coding and Decoding",
+      "kind": "standard",
+      "difficulty": "easy",
+      "answer_type": "single",
+      "stem": "In a certain code language, FISH is written as HSIF. How is MILK written in that code?",
+      "explanation": "Rule: the letters are written in reverse order. Applying it to MILK gives KLIM.",
+      "options": [
+        {
+          "label": "KLIL",
+          "is_correct": false
+        },
+        {
+          "label": "KLIO",
+          "is_correct": false
+        },
+        {
+          "label": "KLIM",
+          "is_correct": true
+        },
+        {
+          "label": "KLIN",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Coding and Decoding",
+      "kind": "standard",
+      "difficulty": "easy",
+      "answer_type": "single",
+      "stem": "In a certain code language, MOON is written as KMML. How is STAR written in that code?",
+      "explanation": "Rule: each letter is moved 2 place(s) backward in the alphabet. Applying it to STAR gives QRYP.",
+      "options": [
+        {
+          "label": "QRYP",
+          "is_correct": true
+        },
+        {
+          "label": "QRYQ",
+          "is_correct": false
+        },
+        {
+          "label": "QRYR",
+          "is_correct": false
+        },
+        {
+          "label": "QRYO",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Coding and Decoding",
+      "kind": "standard",
+      "difficulty": "easy",
+      "answer_type": "single",
+      "stem": "In a certain code language, DESK is written as FGUM. How is SILK written in that code?",
+      "explanation": "Rule: each letter is moved 2 place(s) forward in the alphabet. Applying it to SILK gives UKNM.",
+      "options": [
+        {
+          "label": "UKNO",
+          "is_correct": false
+        },
+        {
+          "label": "UKNM",
+          "is_correct": true
+        },
+        {
+          "label": "UKNN",
+          "is_correct": false
+        },
+        {
+          "label": "UKNL",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Coding and Decoding",
+      "kind": "standard",
+      "difficulty": "easy",
+      "answer_type": "single",
+      "stem": "In a certain code language, MINT is written as TNIM. How is RICE written in that code?",
+      "explanation": "Rule: the letters are written in reverse order. Applying it to RICE gives ECIR.",
+      "options": [
+        {
+          "label": "ECIR",
+          "is_correct": true
+        },
+        {
+          "label": "ECIT",
+          "is_correct": false
+        },
+        {
+          "label": "ECIS",
+          "is_correct": false
+        },
+        {
+          "label": "ECIQ",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Coding and Decoding",
+      "kind": "standard",
+      "difficulty": "easy",
+      "answer_type": "single",
+      "stem": "In a certain code language, BELL is written as YBII. How is FIRE written in that code?",
+      "explanation": "Rule: each letter is moved 3 place(s) backward in the alphabet. Applying it to FIRE gives CFOB.",
+      "options": [
+        {
+          "label": "CFOC",
+          "is_correct": false
+        },
+        {
+          "label": "CFOD",
+          "is_correct": false
+        },
+        {
+          "label": "CFOB",
+          "is_correct": true
+        },
+        {
+          "label": "CFOA",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Coding and Decoding",
+      "kind": "standard",
+      "difficulty": "easy",
+      "answer_type": "single",
+      "stem": "In a certain code language, HAND is written as FYLB. How is FISH written in that code?",
+      "explanation": "Rule: each letter is moved 2 place(s) backward in the alphabet. Applying it to FISH gives DGQF.",
+      "options": [
+        {
+          "label": "DGQH",
+          "is_correct": false
+        },
+        {
+          "label": "DGQE",
+          "is_correct": false
+        },
+        {
+          "label": "DGQF",
+          "is_correct": true
+        },
+        {
+          "label": "DGQG",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Coding and Decoding",
+      "kind": "standard",
+      "difficulty": "easy",
+      "answer_type": "single",
+      "stem": "In a certain code language, QUIZ is written as NRFW. How is REED written in that code?",
+      "explanation": "Rule: each letter is moved 3 place(s) backward in the alphabet. Applying it to REED gives OBBA.",
+      "options": [
+        {
+          "label": "OBBC",
+          "is_correct": false
+        },
+        {
+          "label": "OBBA",
+          "is_correct": true
+        },
+        {
+          "label": "OBBZ",
+          "is_correct": false
+        },
+        {
+          "label": "OBBB",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Coding and Decoding",
+      "kind": "standard",
+      "difficulty": "easy",
+      "answer_type": "single",
+      "stem": "In a certain code language, RICE is written as OFZB. How is COAL written in that code?",
+      "explanation": "Rule: each letter is moved 3 place(s) backward in the alphabet. Applying it to COAL gives ZLXI.",
+      "options": [
+        {
+          "label": "ZLXI",
+          "is_correct": true
+        },
+        {
+          "label": "ZLXK",
+          "is_correct": false
+        },
+        {
+          "label": "ZLXJ",
+          "is_correct": false
+        },
+        {
+          "label": "ZLXH",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Coding and Decoding",
+      "kind": "standard",
+      "difficulty": "easy",
+      "answer_type": "single",
+      "stem": "In a certain code language, RICE is written as ECIR. How is SHIP written in that code?",
+      "explanation": "Rule: the letters are written in reverse order. Applying it to SHIP gives PIHS.",
+      "options": [
+        {
+          "label": "PIHU",
+          "is_correct": false
+        },
+        {
+          "label": "PIHR",
+          "is_correct": false
+        },
+        {
+          "label": "PIHS",
+          "is_correct": true
+        },
+        {
+          "label": "PIHT",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Coding and Decoding",
+      "kind": "standard",
+      "difficulty": "easy",
+      "answer_type": "single",
+      "stem": "In a certain code language, COAL is written as LAOC. How is WIND written in that code?",
+      "explanation": "Rule: the letters are written in reverse order. Applying it to WIND gives DNIW.",
+      "options": [
+        {
+          "label": "DNIY",
+          "is_correct": false
+        },
+        {
+          "label": "DNIW",
+          "is_correct": true
+        },
+        {
+          "label": "DNIV",
+          "is_correct": false
+        },
+        {
+          "label": "DNIX",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Coding and Decoding",
+      "kind": "standard",
+      "difficulty": "easy",
+      "answer_type": "single",
+      "stem": "In a certain code language, FISH is written as CFPE. How is KING written in that code?",
+      "explanation": "Rule: each letter is moved 3 place(s) backward in the alphabet. Applying it to KING gives HFKD.",
+      "options": [
+        {
+          "label": "HFKD",
+          "is_correct": true
+        },
+        {
+          "label": "HFKC",
+          "is_correct": false
+        },
+        {
+          "label": "HFKE",
+          "is_correct": false
+        },
+        {
+          "label": "HFKF",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Coding and Decoding",
+      "kind": "standard",
+      "difficulty": "easy",
+      "answer_type": "single",
+      "stem": "In a certain code language, PARK is written as KRAP. How is IRON written in that code?",
+      "explanation": "Rule: the letters are written in reverse order. Applying it to IRON gives NORI.",
+      "options": [
+        {
+          "label": "NORK",
+          "is_correct": false
+        },
+        {
+          "label": "NORJ",
+          "is_correct": false
+        },
+        {
+          "label": "NORH",
+          "is_correct": false
+        },
+        {
+          "label": "NORI",
+          "is_correct": true
+        }
+      ]
+    },
+    {
+      "chapter": "Coding and Decoding",
+      "kind": "standard",
+      "difficulty": "easy",
+      "answer_type": "single",
+      "stem": "In a certain code language, SILK is written as KLIS. How is PARK written in that code?",
+      "explanation": "Rule: the letters are written in reverse order. Applying it to PARK gives KRAP.",
+      "options": [
+        {
+          "label": "KRAP",
+          "is_correct": true
+        },
+        {
+          "label": "KRAO",
+          "is_correct": false
+        },
+        {
+          "label": "KRAQ",
+          "is_correct": false
+        },
+        {
+          "label": "KRAR",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Coding and Decoding",
+      "kind": "standard",
+      "difficulty": "easy",
+      "answer_type": "single",
+      "stem": "In a certain code language, MINT is written as TNIM. How is SALT written in that code?",
+      "explanation": "Rule: the letters are written in reverse order. Applying it to SALT gives TLAS.",
+      "options": [
+        {
+          "label": "TLAS",
+          "is_correct": true
+        },
+        {
+          "label": "TLAT",
+          "is_correct": false
+        },
+        {
+          "label": "TLAU",
+          "is_correct": false
+        },
+        {
+          "label": "TLAR",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Coding and Decoding",
+      "kind": "standard",
+      "difficulty": "easy",
+      "answer_type": "single",
+      "stem": "In a certain code language, CAKE is written as EKAC. How is CARD written in that code?",
+      "explanation": "Rule: the letters are written in reverse order. Applying it to CARD gives DRAC.",
+      "options": [
+        {
+          "label": "DRAB",
+          "is_correct": false
+        },
+        {
+          "label": "DRAE",
+          "is_correct": false
+        },
+        {
+          "label": "DRAD",
+          "is_correct": false
+        },
+        {
+          "label": "DRAC",
+          "is_correct": true
+        }
+      ]
+    },
+    {
+      "chapter": "Coding and Decoding",
+      "kind": "standard",
+      "difficulty": "easy",
+      "answer_type": "single",
+      "stem": "In a certain code language, HAND is written as IBOE. How is SALT written in that code?",
+      "explanation": "Rule: each letter is moved 1 place(s) forward in the alphabet. Applying it to SALT gives TBMU.",
+      "options": [
+        {
+          "label": "TBMU",
+          "is_correct": true
+        },
+        {
+          "label": "TBMT",
+          "is_correct": false
+        },
+        {
+          "label": "TBMV",
+          "is_correct": false
+        },
+        {
+          "label": "TBMW",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Coding and Decoding",
+      "kind": "standard",
+      "difficulty": "easy",
+      "answer_type": "single",
+      "stem": "In a certain code language, DOG is written as GOD. How is VASE written in that code?",
+      "explanation": "Rule: the letters are written in reverse order. Applying it to VASE gives ESAV.",
+      "options": [
+        {
+          "label": "ESAX",
+          "is_correct": false
+        },
+        {
+          "label": "ESAU",
+          "is_correct": false
+        },
+        {
+          "label": "ESAV",
+          "is_correct": true
+        },
+        {
+          "label": "ESAW",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Coding and Decoding",
+      "kind": "standard",
+      "difficulty": "medium",
+      "answer_type": "single",
+      "stem": "In a certain code language, HILL is written as SROO. How is VASE written in that code?",
+      "explanation": "Rule: each letter is replaced by its opposite (A↔Z, B↔Y, C↔X, …). Applying it to VASE gives EZHV.",
+      "options": [
+        {
+          "label": "EZHU",
+          "is_correct": false
+        },
+        {
+          "label": "EZHX",
+          "is_correct": false
+        },
+        {
+          "label": "EZHW",
+          "is_correct": false
+        },
+        {
+          "label": "EZHV",
+          "is_correct": true
+        }
+      ]
+    },
+    {
+      "chapter": "Coding and Decoding",
+      "kind": "standard",
+      "difficulty": "medium",
+      "answer_type": "single",
+      "stem": "In a certain code language, BELL is written as YVOO. How is BOOK written in that code?",
+      "explanation": "Rule: each letter is replaced by its opposite (A↔Z, B↔Y, C↔X, …). Applying it to BOOK gives YLLP.",
+      "options": [
+        {
+          "label": "YLLR",
+          "is_correct": false
+        },
+        {
+          "label": "YLLQ",
+          "is_correct": false
+        },
+        {
+          "label": "YLLO",
+          "is_correct": false
+        },
+        {
+          "label": "YLLP",
+          "is_correct": true
+        }
+      ]
+    },
+    {
+      "chapter": "Coding and Decoding",
+      "kind": "standard",
+      "difficulty": "medium",
+      "answer_type": "single",
+      "stem": "In a certain code language, DOG is written as ZKC. How is WIND written in that code?",
+      "explanation": "Rule: each letter is moved 4 places backward. Applying it to WIND gives SEJZ.",
+      "options": [
+        {
+          "label": "SEJA",
+          "is_correct": false
+        },
+        {
+          "label": "SEJZ",
+          "is_correct": true
+        },
+        {
+          "label": "SEJB",
+          "is_correct": false
+        },
+        {
+          "label": "SEJY",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Coding and Decoding",
+      "kind": "standard",
+      "difficulty": "medium",
+      "answer_type": "single",
+      "stem": "In a certain code language, PALM is written as KVGH. How is RAIN written in that code?",
+      "explanation": "Rule: each letter is moved 5 places backward. Applying it to RAIN gives MVDI.",
+      "options": [
+        {
+          "label": "MVDJ",
+          "is_correct": false
+        },
+        {
+          "label": "MVDI",
+          "is_correct": true
+        },
+        {
+          "label": "MVDH",
+          "is_correct": false
+        },
+        {
+          "label": "MVDK",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Coding and Decoding",
+      "kind": "standard",
+      "difficulty": "medium",
+      "answer_type": "single",
+      "stem": "In a certain code language, KNOT is written as DGHM. How is VASE written in that code?",
+      "explanation": "Rule: each letter is moved 7 places backward. Applying it to VASE gives OTLX.",
+      "options": [
+        {
+          "label": "OTLW",
+          "is_correct": false
+        },
+        {
+          "label": "OTLX",
+          "is_correct": true
+        },
+        {
+          "label": "OTLY",
+          "is_correct": false
+        },
+        {
+          "label": "OTLZ",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Coding and Decoding",
+      "kind": "standard",
+      "difficulty": "medium",
+      "answer_type": "single",
+      "stem": "In a certain code language, SILK is written as YORQ. How is CAKE written in that code?",
+      "explanation": "Rule: each letter is moved 6 places forward. Applying it to CAKE gives IGQK.",
+      "options": [
+        {
+          "label": "IGQM",
+          "is_correct": false
+        },
+        {
+          "label": "IGQL",
+          "is_correct": false
+        },
+        {
+          "label": "IGQJ",
+          "is_correct": false
+        },
+        {
+          "label": "IGQK",
+          "is_correct": true
+        }
+      ]
+    },
+    {
+      "chapter": "Coding and Decoding",
+      "kind": "standard",
+      "difficulty": "medium",
+      "answer_type": "single",
+      "stem": "In a certain code language, PARK is written as KZIP. How is YARN written in that code?",
+      "explanation": "Rule: each letter is replaced by its opposite (A↔Z, B↔Y, C↔X, …). Applying it to YARN gives BZIM.",
+      "options": [
+        {
+          "label": "BZIO",
+          "is_correct": false
+        },
+        {
+          "label": "BZIN",
+          "is_correct": false
+        },
+        {
+          "label": "BZIM",
+          "is_correct": true
+        },
+        {
+          "label": "BZIL",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Coding and Decoding",
+      "kind": "standard",
+      "difficulty": "medium",
+      "answer_type": "single",
+      "stem": "In a certain code language, SUN is written as YAT. How is SHIP written in that code?",
+      "explanation": "Rule: each letter is moved 6 places forward. Applying it to SHIP gives YNOV.",
+      "options": [
+        {
+          "label": "YNOV",
+          "is_correct": true
+        },
+        {
+          "label": "YNOU",
+          "is_correct": false
+        },
+        {
+          "label": "YNOW",
+          "is_correct": false
+        },
+        {
+          "label": "YNOX",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Coding and Decoding",
+      "kind": "standard",
+      "difficulty": "medium",
+      "answer_type": "single",
+      "stem": "In a certain code language, GATE is written as TZGV. How is KING written in that code?",
+      "explanation": "Rule: each letter is replaced by its opposite (A↔Z, B↔Y, C↔X, …). Applying it to KING gives PRMT.",
+      "options": [
+        {
+          "label": "PRMU",
+          "is_correct": false
+        },
+        {
+          "label": "PRMT",
+          "is_correct": true
+        },
+        {
+          "label": "PRMV",
+          "is_correct": false
+        },
+        {
+          "label": "PRMS",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Coding and Decoding",
+      "kind": "standard",
+      "difficulty": "medium",
+      "answer_type": "single",
+      "stem": "In a certain code language, CAT is written as XZG. How is YARN written in that code?",
+      "explanation": "Rule: each letter is replaced by its opposite (A↔Z, B↔Y, C↔X, …). Applying it to YARN gives BZIM.",
+      "options": [
+        {
+          "label": "BZIM",
+          "is_correct": true
+        },
+        {
+          "label": "BZIO",
+          "is_correct": false
+        },
+        {
+          "label": "BZIN",
+          "is_correct": false
+        },
+        {
+          "label": "BZIL",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Coding and Decoding",
+      "kind": "standard",
+      "difficulty": "medium",
+      "answer_type": "single",
+      "stem": "In a certain code language, LION is written as ORLM. How is BOAT written in that code?",
+      "explanation": "Rule: each letter is replaced by its opposite (A↔Z, B↔Y, C↔X, …). Applying it to BOAT gives YLZG.",
+      "options": [
+        {
+          "label": "YLZH",
+          "is_correct": false
+        },
+        {
+          "label": "YLZI",
+          "is_correct": false
+        },
+        {
+          "label": "YLZG",
+          "is_correct": true
+        },
+        {
+          "label": "YLZF",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Coding and Decoding",
+      "kind": "standard",
+      "difficulty": "medium",
+      "answer_type": "single",
+      "stem": "In a certain code language, CAKE is written as JHRL. How is BIRD written in that code?",
+      "explanation": "Rule: each letter is moved 7 places forward. Applying it to BIRD gives IPYK.",
+      "options": [
+        {
+          "label": "IPYJ",
+          "is_correct": false
+        },
+        {
+          "label": "IPYL",
+          "is_correct": false
+        },
+        {
+          "label": "IPYM",
+          "is_correct": false
+        },
+        {
+          "label": "IPYK",
+          "is_correct": true
+        }
+      ]
+    },
+    {
+      "chapter": "Coding and Decoding",
+      "kind": "standard",
+      "difficulty": "medium",
+      "answer_type": "single",
+      "stem": "In a certain code language, QUIZ is written as WAOF. How is FISH written in that code?",
+      "explanation": "Rule: each letter is moved 6 places forward. Applying it to FISH gives LOYN.",
+      "options": [
+        {
+          "label": "LOYO",
+          "is_correct": false
+        },
+        {
+          "label": "LOYP",
+          "is_correct": false
+        },
+        {
+          "label": "LOYN",
+          "is_correct": true
+        },
+        {
+          "label": "LOYM",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Coding and Decoding",
+      "kind": "standard",
+      "difficulty": "medium",
+      "answer_type": "single",
+      "stem": "In a certain code language, CORN is written as XLIM. How is WIND written in that code?",
+      "explanation": "Rule: each letter is replaced by its opposite (A↔Z, B↔Y, C↔X, …). Applying it to WIND gives DRMW.",
+      "options": [
+        {
+          "label": "DRMX",
+          "is_correct": false
+        },
+        {
+          "label": "DRMV",
+          "is_correct": false
+        },
+        {
+          "label": "DRMW",
+          "is_correct": true
+        },
+        {
+          "label": "DRMY",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Coding and Decoding",
+      "kind": "standard",
+      "difficulty": "medium",
+      "answer_type": "single",
+      "stem": "In a certain code language, BIRD is written as GNWI. How is MOON written in that code?",
+      "explanation": "Rule: each letter is moved 5 places forward. Applying it to MOON gives RTTS.",
+      "options": [
+        {
+          "label": "RTTR",
+          "is_correct": false
+        },
+        {
+          "label": "RTTT",
+          "is_correct": false
+        },
+        {
+          "label": "RTTU",
+          "is_correct": false
+        },
+        {
+          "label": "RTTS",
+          "is_correct": true
+        }
+      ]
+    },
+    {
+      "chapter": "Coding and Decoding",
+      "kind": "standard",
+      "difficulty": "medium",
+      "answer_type": "single",
+      "stem": "In a certain code language, FISH is written as URHS. How is SHIP written in that code?",
+      "explanation": "Rule: each letter is replaced by its opposite (A↔Z, B↔Y, C↔X, …). Applying it to SHIP gives HSRK.",
+      "options": [
+        {
+          "label": "HSRL",
+          "is_correct": false
+        },
+        {
+          "label": "HSRM",
+          "is_correct": false
+        },
+        {
+          "label": "HSRK",
+          "is_correct": true
+        },
+        {
+          "label": "HSRJ",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Coding and Decoding",
+      "kind": "standard",
+      "difficulty": "medium",
+      "answer_type": "single",
+      "stem": "In a certain code language, IRON is written as RILM. How is SALT written in that code?",
+      "explanation": "Rule: each letter is replaced by its opposite (A↔Z, B↔Y, C↔X, …). Applying it to SALT gives HZOG.",
+      "options": [
+        {
+          "label": "HZOG",
+          "is_correct": true
+        },
+        {
+          "label": "HZOI",
+          "is_correct": false
+        },
+        {
+          "label": "HZOF",
+          "is_correct": false
+        },
+        {
+          "label": "HZOH",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Coding and Decoding",
+      "kind": "standard",
+      "difficulty": "medium",
+      "answer_type": "single",
+      "stem": "In a certain code language, JUMP is written as QFNK. How is SILK written in that code?",
+      "explanation": "Rule: each letter is replaced by its opposite (A↔Z, B↔Y, C↔X, …). Applying it to SILK gives HROP.",
+      "options": [
+        {
+          "label": "HROO",
+          "is_correct": false
+        },
+        {
+          "label": "HROQ",
+          "is_correct": false
+        },
+        {
+          "label": "HROR",
+          "is_correct": false
+        },
+        {
+          "label": "HROP",
+          "is_correct": true
+        }
+      ]
+    },
+    {
+      "chapter": "Coding and Decoding",
+      "kind": "standard",
+      "difficulty": "medium",
+      "answer_type": "single",
+      "stem": "In a certain code language, HILL is written as ABEE. How is LEAF written in that code?",
+      "explanation": "Rule: each letter is moved 7 places backward. Applying it to LEAF gives EXTY.",
+      "options": [
+        {
+          "label": "EXTX",
+          "is_correct": false
+        },
+        {
+          "label": "EXTY",
+          "is_correct": true
+        },
+        {
+          "label": "EXTZ",
+          "is_correct": false
+        },
+        {
+          "label": "EXTA",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Coding and Decoding",
+      "kind": "standard",
+      "difficulty": "medium",
+      "answer_type": "single",
+      "stem": "In a certain code language, SUN is written as OQJ. How is LION written in that code?",
+      "explanation": "Rule: each letter is moved 4 places backward. Applying it to LION gives HEKJ.",
+      "options": [
+        {
+          "label": "HEKI",
+          "is_correct": false
+        },
+        {
+          "label": "HEKK",
+          "is_correct": false
+        },
+        {
+          "label": "HEKJ",
+          "is_correct": true
+        },
+        {
+          "label": "HEKL",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Coding and Decoding",
+      "kind": "standard",
+      "difficulty": "medium",
+      "answer_type": "single",
+      "stem": "In a certain code language, RICE is written as NEYA. How is QUIZ written in that code?",
+      "explanation": "Rule: each letter is moved 4 places backward. Applying it to QUIZ gives MQEV.",
+      "options": [
+        {
+          "label": "MQEW",
+          "is_correct": false
+        },
+        {
+          "label": "MQEU",
+          "is_correct": false
+        },
+        {
+          "label": "MQEX",
+          "is_correct": false
+        },
+        {
+          "label": "MQEV",
+          "is_correct": true
+        }
+      ]
+    },
+    {
+      "chapter": "Coding and Decoding",
+      "kind": "standard",
+      "difficulty": "medium",
+      "answer_type": "single",
+      "stem": "In a certain code language, SUN is written as HFM. How is GATE written in that code?",
+      "explanation": "Rule: each letter is replaced by its opposite (A↔Z, B↔Y, C↔X, …). Applying it to GATE gives TZGV.",
+      "options": [
+        {
+          "label": "TZGV",
+          "is_correct": true
+        },
+        {
+          "label": "TZGX",
+          "is_correct": false
+        },
+        {
+          "label": "TZGW",
+          "is_correct": false
+        },
+        {
+          "label": "TZGU",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Coding and Decoding",
+      "kind": "standard",
+      "difficulty": "medium",
+      "answer_type": "single",
+      "stem": "In a certain code language, ROAD is written as ILZW. How is SALT written in that code?",
+      "explanation": "Rule: each letter is replaced by its opposite (A↔Z, B↔Y, C↔X, …). Applying it to SALT gives HZOG.",
+      "options": [
+        {
+          "label": "HZOI",
+          "is_correct": false
+        },
+        {
+          "label": "HZOG",
+          "is_correct": true
+        },
+        {
+          "label": "HZOF",
+          "is_correct": false
+        },
+        {
+          "label": "HZOH",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Coding and Decoding",
+      "kind": "standard",
+      "difficulty": "medium",
+      "answer_type": "single",
+      "stem": "In a certain code language, LEAF is written as OVZU. How is DUCK written in that code?",
+      "explanation": "Rule: each letter is replaced by its opposite (A↔Z, B↔Y, C↔X, …). Applying it to DUCK gives WFXP.",
+      "options": [
+        {
+          "label": "WFXP",
+          "is_correct": true
+        },
+        {
+          "label": "WFXQ",
+          "is_correct": false
+        },
+        {
+          "label": "WFXO",
+          "is_correct": false
+        },
+        {
+          "label": "WFXR",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Coding and Decoding",
+      "kind": "standard",
+      "difficulty": "medium",
+      "answer_type": "single",
+      "stem": "In a certain code language, SALT is written as ZHSA. How is MINT written in that code?",
+      "explanation": "Rule: each letter is moved 7 places forward. Applying it to MINT gives TPUA.",
+      "options": [
+        {
+          "label": "TPUB",
+          "is_correct": false
+        },
+        {
+          "label": "TPUZ",
+          "is_correct": false
+        },
+        {
+          "label": "TPUA",
+          "is_correct": true
+        },
+        {
+          "label": "TPUC",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Coding and Decoding",
+      "kind": "standard",
+      "difficulty": "medium",
+      "answer_type": "single",
+      "stem": "In a certain code language, WOLF is written as BTQK. How is SALT written in that code?",
+      "explanation": "Rule: each letter is moved 5 places forward. Applying it to SALT gives XFQY.",
+      "options": [
+        {
+          "label": "XFQA",
+          "is_correct": false
+        },
+        {
+          "label": "XFQY",
+          "is_correct": true
+        },
+        {
+          "label": "XFQZ",
+          "is_correct": false
+        },
+        {
+          "label": "XFQX",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Coding and Decoding",
+      "kind": "standard",
+      "difficulty": "medium",
+      "answer_type": "single",
+      "stem": "In a certain code language, LAMP is written as SHTW. How is RAIN written in that code?",
+      "explanation": "Rule: each letter is moved 7 places forward. Applying it to RAIN gives YHPU.",
+      "options": [
+        {
+          "label": "YHPV",
+          "is_correct": false
+        },
+        {
+          "label": "YHPT",
+          "is_correct": false
+        },
+        {
+          "label": "YHPU",
+          "is_correct": true
+        },
+        {
+          "label": "YHPW",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Coding and Decoding",
+      "kind": "standard",
+      "difficulty": "medium",
+      "answer_type": "single",
+      "stem": "In a certain code language, FISH is written as KNXM. How is MINT written in that code?",
+      "explanation": "Rule: each letter is moved 5 places forward. Applying it to MINT gives RNSY.",
+      "options": [
+        {
+          "label": "RNSY",
+          "is_correct": true
+        },
+        {
+          "label": "RNSA",
+          "is_correct": false
+        },
+        {
+          "label": "RNSZ",
+          "is_correct": false
+        },
+        {
+          "label": "RNSX",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Coding and Decoding",
+      "kind": "standard",
+      "difficulty": "medium",
+      "answer_type": "single",
+      "stem": "In a certain code language, VASE is written as BGYK. How is HAND written in that code?",
+      "explanation": "Rule: each letter is moved 6 places forward. Applying it to HAND gives NGTJ.",
+      "options": [
+        {
+          "label": "NGTK",
+          "is_correct": false
+        },
+        {
+          "label": "NGTJ",
+          "is_correct": true
+        },
+        {
+          "label": "NGTI",
+          "is_correct": false
+        },
+        {
+          "label": "NGTL",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Coding and Decoding",
+      "kind": "standard",
+      "difficulty": "medium",
+      "answer_type": "single",
+      "stem": "In a certain code language, SALT is written as OWHP. How is TREE written in that code?",
+      "explanation": "Rule: each letter is moved 4 places backward. Applying it to TREE gives PNAA.",
+      "options": [
+        {
+          "label": "PNAB",
+          "is_correct": false
+        },
+        {
+          "label": "PNAZ",
+          "is_correct": false
+        },
+        {
+          "label": "PNAA",
+          "is_correct": true
+        },
+        {
+          "label": "PNAC",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Coding and Decoding",
+      "kind": "standard",
+      "difficulty": "medium",
+      "answer_type": "single",
+      "stem": "In a certain code language, COAL is written as IUGR. How is SILK written in that code?",
+      "explanation": "Rule: each letter is moved 6 places forward. Applying it to SILK gives YORQ.",
+      "options": [
+        {
+          "label": "YORR",
+          "is_correct": false
+        },
+        {
+          "label": "YORS",
+          "is_correct": false
+        },
+        {
+          "label": "YORP",
+          "is_correct": false
+        },
+        {
+          "label": "YORQ",
+          "is_correct": true
+        }
+      ]
+    },
+    {
+      "chapter": "Coding and Decoding",
+      "kind": "standard",
+      "difficulty": "medium",
+      "answer_type": "single",
+      "stem": "In a certain code language, NEST is written as ULZA. How is FIRE written in that code?",
+      "explanation": "Rule: each letter is moved 7 places forward. Applying it to FIRE gives MPYL.",
+      "options": [
+        {
+          "label": "MPYN",
+          "is_correct": false
+        },
+        {
+          "label": "MPYM",
+          "is_correct": false
+        },
+        {
+          "label": "MPYK",
+          "is_correct": false
+        },
+        {
+          "label": "MPYL",
+          "is_correct": true
+        }
+      ]
+    },
+    {
+      "chapter": "Coding and Decoding",
+      "kind": "standard",
+      "difficulty": "medium",
+      "answer_type": "single",
+      "stem": "In a certain code language, SALT is written as HZOG. How is YARN written in that code?",
+      "explanation": "Rule: each letter is replaced by its opposite (A↔Z, B↔Y, C↔X, …). Applying it to YARN gives BZIM.",
+      "options": [
+        {
+          "label": "BZIO",
+          "is_correct": false
+        },
+        {
+          "label": "BZIN",
+          "is_correct": false
+        },
+        {
+          "label": "BZIL",
+          "is_correct": false
+        },
+        {
+          "label": "BZIM",
+          "is_correct": true
+        }
+      ]
+    },
+    {
+      "chapter": "Coding and Decoding",
+      "kind": "standard",
+      "difficulty": "medium",
+      "answer_type": "single",
+      "stem": "In a certain code language, SHIP is written as WLMT. How is KING written in that code?",
+      "explanation": "Rule: each letter is moved 4 places forward. Applying it to KING gives OMRK.",
+      "options": [
+        {
+          "label": "OMRJ",
+          "is_correct": false
+        },
+        {
+          "label": "OMRM",
+          "is_correct": false
+        },
+        {
+          "label": "OMRL",
+          "is_correct": false
+        },
+        {
+          "label": "OMRK",
+          "is_correct": true
+        }
+      ]
+    },
+    {
+      "chapter": "Coding and Decoding",
+      "kind": "standard",
+      "difficulty": "medium",
+      "answer_type": "single",
+      "stem": "In a certain code language, VASE is written as QVNZ. How is BIRD written in that code?",
+      "explanation": "Rule: each letter is moved 5 places backward. Applying it to BIRD gives WDMY.",
+      "options": [
+        {
+          "label": "WDMZ",
+          "is_correct": false
+        },
+        {
+          "label": "WDMY",
+          "is_correct": true
+        },
+        {
+          "label": "WDMA",
+          "is_correct": false
+        },
+        {
+          "label": "WDMX",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Coding and Decoding",
+      "kind": "standard",
+      "difficulty": "medium",
+      "answer_type": "single",
+      "stem": "In a certain code language, JUMP is written as QFNK. How is RICE written in that code?",
+      "explanation": "Rule: each letter is replaced by its opposite (A↔Z, B↔Y, C↔X, …). Applying it to RICE gives IRXV.",
+      "options": [
+        {
+          "label": "IRXX",
+          "is_correct": false
+        },
+        {
+          "label": "IRXW",
+          "is_correct": false
+        },
+        {
+          "label": "IRXU",
+          "is_correct": false
+        },
+        {
+          "label": "IRXV",
+          "is_correct": true
+        }
+      ]
+    },
+    {
+      "chapter": "Coding and Decoding",
+      "kind": "standard",
+      "difficulty": "medium",
+      "answer_type": "single",
+      "stem": "In a certain code language, FIRE is written as ADMZ. How is MINT written in that code?",
+      "explanation": "Rule: each letter is moved 5 places backward. Applying it to MINT gives HDIO.",
+      "options": [
+        {
+          "label": "HDIP",
+          "is_correct": false
+        },
+        {
+          "label": "HDIN",
+          "is_correct": false
+        },
+        {
+          "label": "HDIO",
+          "is_correct": true
+        },
+        {
+          "label": "HDIQ",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Coding and Decoding",
+      "kind": "standard",
+      "difficulty": "medium",
+      "answer_type": "single",
+      "stem": "In a certain code language, VASE is written as CHZL. How is ROSE written in that code?",
+      "explanation": "Rule: each letter is moved 7 places forward. Applying it to ROSE gives YVZL.",
+      "options": [
+        {
+          "label": "YVZL",
+          "is_correct": true
+        },
+        {
+          "label": "YVZN",
+          "is_correct": false
+        },
+        {
+          "label": "YVZM",
+          "is_correct": false
+        },
+        {
+          "label": "YVZK",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Coding and Decoding",
+      "kind": "standard",
+      "difficulty": "medium",
+      "answer_type": "single",
+      "stem": "In a certain code language, TREE is written as GIVV. How is SILK written in that code?",
+      "explanation": "Rule: each letter is replaced by its opposite (A↔Z, B↔Y, C↔X, …). Applying it to SILK gives HROP.",
+      "options": [
+        {
+          "label": "HROR",
+          "is_correct": false
+        },
+        {
+          "label": "HROQ",
+          "is_correct": false
+        },
+        {
+          "label": "HROP",
+          "is_correct": true
+        },
+        {
+          "label": "HROO",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Coding and Decoding",
+      "kind": "standard",
+      "difficulty": "medium",
+      "answer_type": "single",
+      "stem": "In a certain code language, PARK is written as UFWP. How is DOOR written in that code?",
+      "explanation": "Rule: each letter is moved 5 places forward. Applying it to DOOR gives ITTW.",
+      "options": [
+        {
+          "label": "ITTX",
+          "is_correct": false
+        },
+        {
+          "label": "ITTY",
+          "is_correct": false
+        },
+        {
+          "label": "ITTV",
+          "is_correct": false
+        },
+        {
+          "label": "ITTW",
+          "is_correct": true
+        }
+      ]
+    },
+    {
+      "chapter": "Coding and Decoding",
+      "kind": "standard",
+      "difficulty": "medium",
+      "answer_type": "single",
+      "stem": "In a certain code language, STAR is written as MNUL. How is WOLF written in that code?",
+      "explanation": "Rule: each letter is moved 6 places backward. Applying it to WOLF gives QIFZ.",
+      "options": [
+        {
+          "label": "QIFB",
+          "is_correct": false
+        },
+        {
+          "label": "QIFY",
+          "is_correct": false
+        },
+        {
+          "label": "QIFZ",
+          "is_correct": true
+        },
+        {
+          "label": "QIFA",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Coding and Decoding",
+      "kind": "standard",
+      "difficulty": "medium",
+      "answer_type": "single",
+      "stem": "In a certain code language, MOON is written as HJJI. How is DOOR written in that code?",
+      "explanation": "Rule: each letter is moved 5 places backward. Applying it to DOOR gives YJJM.",
+      "options": [
+        {
+          "label": "YJJM",
+          "is_correct": true
+        },
+        {
+          "label": "YJJL",
+          "is_correct": false
+        },
+        {
+          "label": "YJJN",
+          "is_correct": false
+        },
+        {
+          "label": "YJJO",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Coding and Decoding",
+      "kind": "standard",
+      "difficulty": "medium",
+      "answer_type": "single",
+      "stem": "In a certain code language, CARD is written as HFWI. How is SHIP written in that code?",
+      "explanation": "Rule: each letter is moved 5 places forward. Applying it to SHIP gives XMNU.",
+      "options": [
+        {
+          "label": "XMNV",
+          "is_correct": false
+        },
+        {
+          "label": "XMNU",
+          "is_correct": true
+        },
+        {
+          "label": "XMNW",
+          "is_correct": false
+        },
+        {
+          "label": "XMNT",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Coding and Decoding",
+      "kind": "standard",
+      "difficulty": "medium",
+      "answer_type": "single",
+      "stem": "In a certain code language, GATE is written as LFYJ. How is DUCK written in that code?",
+      "explanation": "Rule: each letter is moved 5 places forward. Applying it to DUCK gives IZHP.",
+      "options": [
+        {
+          "label": "IZHO",
+          "is_correct": false
+        },
+        {
+          "label": "IZHR",
+          "is_correct": false
+        },
+        {
+          "label": "IZHQ",
+          "is_correct": false
+        },
+        {
+          "label": "IZHP",
+          "is_correct": true
+        }
+      ]
+    },
+    {
+      "chapter": "Coding and Decoding",
+      "kind": "standard",
+      "difficulty": "medium",
+      "answer_type": "single",
+      "stem": "In a certain code language, RICE is written as VMGI. How is GATE written in that code?",
+      "explanation": "Rule: each letter is moved 4 places forward. Applying it to GATE gives KEXI.",
+      "options": [
+        {
+          "label": "KEXJ",
+          "is_correct": false
+        },
+        {
+          "label": "KEXH",
+          "is_correct": false
+        },
+        {
+          "label": "KEXI",
+          "is_correct": true
+        },
+        {
+          "label": "KEXK",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Coding and Decoding",
+      "kind": "standard",
+      "difficulty": "medium",
+      "answer_type": "single",
+      "stem": "In a certain code language, YARN is written as CEVR. How is LION written in that code?",
+      "explanation": "Rule: each letter is moved 4 places forward. Applying it to LION gives PMSR.",
+      "options": [
+        {
+          "label": "PMSS",
+          "is_correct": false
+        },
+        {
+          "label": "PMST",
+          "is_correct": false
+        },
+        {
+          "label": "PMSR",
+          "is_correct": true
+        },
+        {
+          "label": "PMSQ",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Coding and Decoding",
+      "kind": "standard",
+      "difficulty": "medium",
+      "answer_type": "single",
+      "stem": "In a certain code language, CAKE is written as XZPV. How is CARD written in that code?",
+      "explanation": "Rule: each letter is replaced by its opposite (A↔Z, B↔Y, C↔X, …). Applying it to CARD gives XZIW.",
+      "options": [
+        {
+          "label": "XZIV",
+          "is_correct": false
+        },
+        {
+          "label": "XZIY",
+          "is_correct": false
+        },
+        {
+          "label": "XZIW",
+          "is_correct": true
+        },
+        {
+          "label": "XZIX",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Coding and Decoding",
+      "kind": "standard",
+      "difficulty": "medium",
+      "answer_type": "single",
+      "stem": "In a certain code language, BOOK is written as YLLP. How is PALM written in that code?",
+      "explanation": "Rule: each letter is replaced by its opposite (A↔Z, B↔Y, C↔X, …). Applying it to PALM gives KZON.",
+      "options": [
+        {
+          "label": "KZON",
+          "is_correct": true
+        },
+        {
+          "label": "KZOO",
+          "is_correct": false
+        },
+        {
+          "label": "KZOP",
+          "is_correct": false
+        },
+        {
+          "label": "KZOM",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Coding and Decoding",
+      "kind": "standard",
+      "difficulty": "medium",
+      "answer_type": "single",
+      "stem": "In a certain code language, KNOT is written as PSTY. How is STAR written in that code?",
+      "explanation": "Rule: each letter is moved 5 places forward. Applying it to STAR gives XYFW.",
+      "options": [
+        {
+          "label": "XYFY",
+          "is_correct": false
+        },
+        {
+          "label": "XYFX",
+          "is_correct": false
+        },
+        {
+          "label": "XYFW",
+          "is_correct": true
+        },
+        {
+          "label": "XYFV",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Coding and Decoding",
+      "kind": "standard",
+      "difficulty": "medium",
+      "answer_type": "single",
+      "stem": "In a certain code language, RICE is written as KBVX. How is PALM written in that code?",
+      "explanation": "Rule: each letter is moved 7 places backward. Applying it to PALM gives ITEF.",
+      "options": [
+        {
+          "label": "ITEH",
+          "is_correct": false
+        },
+        {
+          "label": "ITEG",
+          "is_correct": false
+        },
+        {
+          "label": "ITEE",
+          "is_correct": false
+        },
+        {
+          "label": "ITEF",
+          "is_correct": true
+        }
+      ]
+    },
+    {
+      "chapter": "Coding and Decoding",
+      "kind": "standard",
+      "difficulty": "hard",
+      "answer_type": "single",
+      "stem": "In a certain code language, FIRE is written as GKUI. How is RAIN written in that code?",
+      "explanation": "Rule: the 1st letter moves 1 place, the 2nd moves 2 places, the 3rd moves 3, and so on. Applying it to RAIN gives SCLR.",
+      "options": [
+        {
+          "label": "SCLR",
+          "is_correct": true
+        },
+        {
+          "label": "SCLT",
+          "is_correct": false
+        },
+        {
+          "label": "SCLS",
+          "is_correct": false
+        },
+        {
+          "label": "SCLQ",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Coding and Decoding",
+      "kind": "standard",
+      "difficulty": "hard",
+      "answer_type": "single",
+      "stem": "In a certain code language, NEST is written as OGVX. How is HILL written in that code?",
+      "explanation": "Rule: the 1st letter moves 1 place, the 2nd moves 2 places, the 3rd moves 3, and so on. Applying it to HILL gives IKOP.",
+      "options": [
+        {
+          "label": "IKOO",
+          "is_correct": false
+        },
+        {
+          "label": "IKOP",
+          "is_correct": true
+        },
+        {
+          "label": "IKOR",
+          "is_correct": false
+        },
+        {
+          "label": "IKOQ",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Coding and Decoding",
+      "kind": "standard",
+      "difficulty": "hard",
+      "answer_type": "single",
+      "stem": "In a certain code language, CARD is written as GWVZ. How is WOLF written in that code?",
+      "explanation": "Rule: letters in odd positions move 4 forward, letters in even positions move 4 backward. Applying it to WOLF gives AKPB.",
+      "options": [
+        {
+          "label": "AKPC",
+          "is_correct": false
+        },
+        {
+          "label": "AKPB",
+          "is_correct": true
+        },
+        {
+          "label": "AKPA",
+          "is_correct": false
+        },
+        {
+          "label": "AKPD",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Coding and Decoding",
+      "kind": "standard",
+      "difficulty": "hard",
+      "answer_type": "single",
+      "stem": "In a certain code language, MOON is written as OMQL. How is JUMP written in that code?",
+      "explanation": "Rule: letters in odd positions move 2 forward, letters in even positions move 2 backward. Applying it to JUMP gives LSON.",
+      "options": [
+        {
+          "label": "LSOO",
+          "is_correct": false
+        },
+        {
+          "label": "LSON",
+          "is_correct": true
+        },
+        {
+          "label": "LSOM",
+          "is_correct": false
+        },
+        {
+          "label": "LSOP",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Coding and Decoding",
+      "kind": "standard",
+      "difficulty": "hard",
+      "answer_type": "single",
+      "stem": "In a certain code language, BIRD is written as DGTB. How is REED written in that code?",
+      "explanation": "Rule: letters in odd positions move 2 forward, letters in even positions move 2 backward. Applying it to REED gives TCGB.",
+      "options": [
+        {
+          "label": "TCGB",
+          "is_correct": true
+        },
+        {
+          "label": "TCGD",
+          "is_correct": false
+        },
+        {
+          "label": "TCGC",
+          "is_correct": false
+        },
+        {
+          "label": "TCGA",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Coding and Decoding",
+      "kind": "standard",
+      "difficulty": "hard",
+      "answer_type": "single",
+      "stem": "In a certain code language, DUCK is written as FSEI. How is BOOK written in that code?",
+      "explanation": "Rule: letters in odd positions move 2 forward, letters in even positions move 2 backward. Applying it to BOOK gives DMQI.",
+      "options": [
+        {
+          "label": "DMQK",
+          "is_correct": false
+        },
+        {
+          "label": "DMQJ",
+          "is_correct": false
+        },
+        {
+          "label": "DMQI",
+          "is_correct": true
+        },
+        {
+          "label": "DMQH",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Coding and Decoding",
+      "kind": "standard",
+      "difficulty": "hard",
+      "answer_type": "single",
+      "stem": "In a certain code language, LION is written as OPJM. How is DOG written in that code?",
+      "explanation": "Rule: the word is reversed and then each letter is moved 1 place(s) forward. Applying it to DOG gives HPE.",
+      "options": [
+        {
+          "label": "HPG",
+          "is_correct": false
+        },
+        {
+          "label": "HPF",
+          "is_correct": false
+        },
+        {
+          "label": "HPD",
+          "is_correct": false
+        },
+        {
+          "label": "HPE",
+          "is_correct": true
+        }
+      ]
+    },
+    {
+      "chapter": "Coding and Decoding",
+      "kind": "standard",
+      "difficulty": "hard",
+      "answer_type": "single",
+      "stem": "In a certain code language, TREE is written as HHUW. How is BIRD written in that code?",
+      "explanation": "Rule: the word is reversed and then each letter is moved 3 place(s) forward. Applying it to BIRD gives GULE.",
+      "options": [
+        {
+          "label": "GULF",
+          "is_correct": false
+        },
+        {
+          "label": "GULD",
+          "is_correct": false
+        },
+        {
+          "label": "GULG",
+          "is_correct": false
+        },
+        {
+          "label": "GULE",
+          "is_correct": true
+        }
+      ]
+    },
+    {
+      "chapter": "Coding and Decoding",
+      "kind": "standard",
+      "difficulty": "hard",
+      "answer_type": "single",
+      "stem": "In a certain code language, FROG is written as HPQE. How is MINT written in that code?",
+      "explanation": "Rule: letters in odd positions move 2 forward, letters in even positions move 2 backward. Applying it to MINT gives OGPR.",
+      "options": [
+        {
+          "label": "OGPS",
+          "is_correct": false
+        },
+        {
+          "label": "OGPR",
+          "is_correct": true
+        },
+        {
+          "label": "OGPT",
+          "is_correct": false
+        },
+        {
+          "label": "OGPQ",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Coding and Decoding",
+      "kind": "standard",
+      "difficulty": "hard",
+      "answer_type": "single",
+      "stem": "In a certain code language, LAMP is written as ROCN. How is BEAR written in that code?",
+      "explanation": "Rule: the word is reversed and then each letter is moved 2 place(s) forward. Applying it to BEAR gives TCGD.",
+      "options": [
+        {
+          "label": "TCGC",
+          "is_correct": false
+        },
+        {
+          "label": "TCGF",
+          "is_correct": false
+        },
+        {
+          "label": "TCGD",
+          "is_correct": true
+        },
+        {
+          "label": "TCGE",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Coding and Decoding",
+      "kind": "standard",
+      "difficulty": "hard",
+      "answer_type": "single",
+      "stem": "In a certain code language, DESK is written as NVHG. How is BIRD written in that code?",
+      "explanation": "Rule: the word is reversed and then each letter is moved 3 place(s) forward. Applying it to BIRD gives GULE.",
+      "options": [
+        {
+          "label": "GULF",
+          "is_correct": false
+        },
+        {
+          "label": "GULE",
+          "is_correct": true
+        },
+        {
+          "label": "GULD",
+          "is_correct": false
+        },
+        {
+          "label": "GULG",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Coding and Decoding",
+      "kind": "standard",
+      "difficulty": "hard",
+      "answer_type": "single",
+      "stem": "In a certain code language, HILL is written as IKOP. How is WOLF written in that code?",
+      "explanation": "Rule: the 1st letter moves 1 place, the 2nd moves 2 places, the 3rd moves 3, and so on. Applying it to WOLF gives XQOJ.",
+      "options": [
+        {
+          "label": "XQOJ",
+          "is_correct": true
+        },
+        {
+          "label": "XQOL",
+          "is_correct": false
+        },
+        {
+          "label": "XQOK",
+          "is_correct": false
+        },
+        {
+          "label": "XQOI",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Coding and Decoding",
+      "kind": "standard",
+      "difficulty": "hard",
+      "answer_type": "single",
+      "stem": "In a certain code language, SHIP is written as TJLT. How is HAND written in that code?",
+      "explanation": "Rule: the 1st letter moves 1 place, the 2nd moves 2 places, the 3rd moves 3, and so on. Applying it to HAND gives ICQH.",
+      "options": [
+        {
+          "label": "ICQI",
+          "is_correct": false
+        },
+        {
+          "label": "ICQJ",
+          "is_correct": false
+        },
+        {
+          "label": "ICQH",
+          "is_correct": true
+        },
+        {
+          "label": "ICQG",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Coding and Decoding",
+      "kind": "standard",
+      "difficulty": "hard",
+      "answer_type": "single",
+      "stem": "In a certain code language, FROG is written as JNSC. How is DESK written in that code?",
+      "explanation": "Rule: letters in odd positions move 4 forward, letters in even positions move 4 backward. Applying it to DESK gives HAWG.",
+      "options": [
+        {
+          "label": "HAWI",
+          "is_correct": false
+        },
+        {
+          "label": "HAWG",
+          "is_correct": true
+        },
+        {
+          "label": "HAWF",
+          "is_correct": false
+        },
+        {
+          "label": "HAWH",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Coding and Decoding",
+      "kind": "standard",
+      "difficulty": "hard",
+      "answer_type": "single",
+      "stem": "In a certain code language, SUN is written as PWU. How is LAMP written in that code?",
+      "explanation": "Rule: the word is reversed and then each letter is moved 2 place(s) forward. Applying it to LAMP gives ROCN.",
+      "options": [
+        {
+          "label": "ROCO",
+          "is_correct": false
+        },
+        {
+          "label": "ROCN",
+          "is_correct": true
+        },
+        {
+          "label": "ROCM",
+          "is_correct": false
+        },
+        {
+          "label": "ROCP",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Coding and Decoding",
+      "kind": "standard",
+      "difficulty": "hard",
+      "answer_type": "single",
+      "stem": "In a certain code language, KING is written as OERC. How is PALM written in that code?",
+      "explanation": "Rule: letters in odd positions move 4 forward, letters in even positions move 4 backward. Applying it to PALM gives TWPI.",
+      "options": [
+        {
+          "label": "TWPI",
+          "is_correct": true
+        },
+        {
+          "label": "TWPJ",
+          "is_correct": false
+        },
+        {
+          "label": "TWPK",
+          "is_correct": false
+        },
+        {
+          "label": "TWPH",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Coding and Decoding",
+      "kind": "standard",
+      "difficulty": "hard",
+      "answer_type": "single",
+      "stem": "In a certain code language, BELL is written as OOHE. How is TREE written in that code?",
+      "explanation": "Rule: the word is reversed and then each letter is moved 3 place(s) forward. Applying it to TREE gives HHUW.",
+      "options": [
+        {
+          "label": "HHUV",
+          "is_correct": false
+        },
+        {
+          "label": "HHUW",
+          "is_correct": true
+        },
+        {
+          "label": "HHUX",
+          "is_correct": false
+        },
+        {
+          "label": "HHUY",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Coding and Decoding",
+      "kind": "standard",
+      "difficulty": "hard",
+      "answer_type": "single",
+      "stem": "In a certain code language, YARN is written as PTCA. How is FROG written in that code?",
+      "explanation": "Rule: the word is reversed and then each letter is moved 2 place(s) forward. Applying it to FROG gives IQTH.",
+      "options": [
+        {
+          "label": "IQTH",
+          "is_correct": true
+        },
+        {
+          "label": "IQTJ",
+          "is_correct": false
+        },
+        {
+          "label": "IQTG",
+          "is_correct": false
+        },
+        {
+          "label": "IQTI",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Coding and Decoding",
+      "kind": "standard",
+      "difficulty": "hard",
+      "answer_type": "single",
+      "stem": "In a certain code language, QUIZ is written as AJVR. How is SUN written in that code?",
+      "explanation": "Rule: the word is reversed and then each letter is moved 1 place(s) forward. Applying it to SUN gives OVT.",
+      "options": [
+        {
+          "label": "OVS",
+          "is_correct": false
+        },
+        {
+          "label": "OVT",
+          "is_correct": true
+        },
+        {
+          "label": "OVU",
+          "is_correct": false
+        },
+        {
+          "label": "OVV",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Coding and Decoding",
+      "kind": "standard",
+      "difficulty": "hard",
+      "answer_type": "single",
+      "stem": "In a certain code language, DOG is written as HKK. How is LION written in that code?",
+      "explanation": "Rule: letters in odd positions move 4 forward, letters in even positions move 4 backward. Applying it to LION gives PESJ.",
+      "options": [
+        {
+          "label": "PESK",
+          "is_correct": false
+        },
+        {
+          "label": "PESL",
+          "is_correct": false
+        },
+        {
+          "label": "PESI",
+          "is_correct": false
+        },
+        {
+          "label": "PESJ",
+          "is_correct": true
+        }
+      ]
+    },
+    {
+      "chapter": "Coding and Decoding",
+      "kind": "standard",
+      "difficulty": "hard",
+      "answer_type": "single",
+      "stem": "In a certain code language, WIND is written as XKQH. How is CORN written in that code?",
+      "explanation": "Rule: the 1st letter moves 1 place, the 2nd moves 2 places, the 3rd moves 3, and so on. Applying it to CORN gives DQUR.",
+      "options": [
+        {
+          "label": "DQUQ",
+          "is_correct": false
+        },
+        {
+          "label": "DQUT",
+          "is_correct": false
+        },
+        {
+          "label": "DQUS",
+          "is_correct": false
+        },
+        {
+          "label": "DQUR",
+          "is_correct": true
+        }
+      ]
+    },
+    {
+      "chapter": "Coding and Decoding",
+      "kind": "standard",
+      "difficulty": "hard",
+      "answer_type": "single",
+      "stem": "In a certain code language, CAKE is written as EYMC. How is VASE written in that code?",
+      "explanation": "Rule: letters in odd positions move 2 forward, letters in even positions move 2 backward. Applying it to VASE gives XYUC.",
+      "options": [
+        {
+          "label": "XYUD",
+          "is_correct": false
+        },
+        {
+          "label": "XYUC",
+          "is_correct": true
+        },
+        {
+          "label": "XYUE",
+          "is_correct": false
+        },
+        {
+          "label": "XYUB",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Coding and Decoding",
+      "kind": "standard",
+      "difficulty": "hard",
+      "answer_type": "single",
+      "stem": "In a certain code language, MILK is written as NKOO. How is LEAF written in that code?",
+      "explanation": "Rule: the 1st letter moves 1 place, the 2nd moves 2 places, the 3rd moves 3, and so on. Applying it to LEAF gives MGDJ.",
+      "options": [
+        {
+          "label": "MGDI",
+          "is_correct": false
+        },
+        {
+          "label": "MGDJ",
+          "is_correct": true
+        },
+        {
+          "label": "MGDK",
+          "is_correct": false
+        },
+        {
+          "label": "MGDL",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Coding and Decoding",
+      "kind": "standard",
+      "difficulty": "hard",
+      "answer_type": "single",
+      "stem": "In a certain code language, GATE is written as HCWI. How is FIRE written in that code?",
+      "explanation": "Rule: the 1st letter moves 1 place, the 2nd moves 2 places, the 3rd moves 3, and so on. Applying it to FIRE gives GKUI.",
+      "options": [
+        {
+          "label": "GKUK",
+          "is_correct": false
+        },
+        {
+          "label": "GKUH",
+          "is_correct": false
+        },
+        {
+          "label": "GKUJ",
+          "is_correct": false
+        },
+        {
+          "label": "GKUI",
+          "is_correct": true
+        }
+      ]
+    },
+    {
+      "chapter": "Coding and Decoding",
+      "kind": "standard",
+      "difficulty": "hard",
+      "answer_type": "single",
+      "stem": "In a certain code language, YARN is written as ZCUR. How is MILK written in that code?",
+      "explanation": "Rule: the 1st letter moves 1 place, the 2nd moves 2 places, the 3rd moves 3, and so on. Applying it to MILK gives NKOO.",
+      "options": [
+        {
+          "label": "NKOP",
+          "is_correct": false
+        },
+        {
+          "label": "NKOO",
+          "is_correct": true
+        },
+        {
+          "label": "NKON",
+          "is_correct": false
+        },
+        {
+          "label": "NKOQ",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Coding and Decoding",
+      "kind": "standard",
+      "difficulty": "hard",
+      "answer_type": "single",
+      "stem": "In a certain code language, IRON is written as JTRR. How is DOOR written in that code?",
+      "explanation": "Rule: the 1st letter moves 1 place, the 2nd moves 2 places, the 3rd moves 3, and so on. Applying it to DOOR gives EQRV.",
+      "options": [
+        {
+          "label": "EQRU",
+          "is_correct": false
+        },
+        {
+          "label": "EQRW",
+          "is_correct": false
+        },
+        {
+          "label": "EQRX",
+          "is_correct": false
+        },
+        {
+          "label": "EQRV",
+          "is_correct": true
+        }
+      ]
+    },
+    {
+      "chapter": "Coding and Decoding",
+      "kind": "standard",
+      "difficulty": "hard",
+      "answer_type": "single",
+      "stem": "In a certain code language, JUMP is written as SPXM. How is DUCK written in that code?",
+      "explanation": "Rule: the word is reversed and then each letter is moved 3 place(s) forward. Applying it to DUCK gives NFXG.",
+      "options": [
+        {
+          "label": "NFXI",
+          "is_correct": false
+        },
+        {
+          "label": "NFXH",
+          "is_correct": false
+        },
+        {
+          "label": "NFXG",
+          "is_correct": true
+        },
+        {
+          "label": "NFXF",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Coding and Decoding",
+      "kind": "standard",
+      "difficulty": "hard",
+      "answer_type": "single",
+      "stem": "In a certain code language, QUIZ is written as RWLD. How is IRON written in that code?",
+      "explanation": "Rule: the 1st letter moves 1 place, the 2nd moves 2 places, the 3rd moves 3, and so on. Applying it to IRON gives JTRR.",
+      "options": [
+        {
+          "label": "JTRQ",
+          "is_correct": false
+        },
+        {
+          "label": "JTRR",
+          "is_correct": true
+        },
+        {
+          "label": "JTRT",
+          "is_correct": false
+        },
+        {
+          "label": "JTRS",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Coding and Decoding",
+      "kind": "standard",
+      "difficulty": "hard",
+      "answer_type": "single",
+      "stem": "In a certain code language, SILK is written as NOLV. How is BEAR written in that code?",
+      "explanation": "Rule: the word is reversed and then each letter is moved 3 place(s) forward. Applying it to BEAR gives UDHE.",
+      "options": [
+        {
+          "label": "UDHF",
+          "is_correct": false
+        },
+        {
+          "label": "UDHG",
+          "is_correct": false
+        },
+        {
+          "label": "UDHE",
+          "is_correct": true
+        },
+        {
+          "label": "UDHD",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Coding and Decoding",
+      "kind": "standard",
+      "difficulty": "hard",
+      "answer_type": "single",
+      "stem": "In a certain code language, BOOK is written as FKSG. How is SHIP written in that code?",
+      "explanation": "Rule: letters in odd positions move 4 forward, letters in even positions move 4 backward. Applying it to SHIP gives WDML.",
+      "options": [
+        {
+          "label": "WDML",
+          "is_correct": true
+        },
+        {
+          "label": "WDMM",
+          "is_correct": false
+        },
+        {
+          "label": "WDMK",
+          "is_correct": false
+        },
+        {
+          "label": "WDMN",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Coding and Decoding",
+      "kind": "standard",
+      "difficulty": "hard",
+      "answer_type": "single",
+      "stem": "In a certain code language, WIND is written as XKQH. How is IRON written in that code?",
+      "explanation": "Rule: the 1st letter moves 1 place, the 2nd moves 2 places, the 3rd moves 3, and so on. Applying it to IRON gives JTRR.",
+      "options": [
+        {
+          "label": "JTRR",
+          "is_correct": true
+        },
+        {
+          "label": "JTRT",
+          "is_correct": false
+        },
+        {
+          "label": "JTRQ",
+          "is_correct": false
+        },
+        {
+          "label": "JTRS",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Coding and Decoding",
+      "kind": "standard",
+      "difficulty": "hard",
+      "answer_type": "single",
+      "stem": "In a certain code language, HAND is written as KXQA. How is CAT written in that code?",
+      "explanation": "Rule: letters in odd positions move 3 forward, letters in even positions move 3 backward. Applying it to CAT gives FXW.",
+      "options": [
+        {
+          "label": "FXW",
+          "is_correct": true
+        },
+        {
+          "label": "FXX",
+          "is_correct": false
+        },
+        {
+          "label": "FXV",
+          "is_correct": false
+        },
+        {
+          "label": "FXY",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Coding and Decoding",
+      "kind": "standard",
+      "difficulty": "hard",
+      "answer_type": "single",
+      "stem": "In a certain code language, MILK is written as MNKO. How is STAR written in that code?",
+      "explanation": "Rule: the word is reversed and then each letter is moved 2 place(s) forward. Applying it to STAR gives TCVU.",
+      "options": [
+        {
+          "label": "TCVV",
+          "is_correct": false
+        },
+        {
+          "label": "TCVW",
+          "is_correct": false
+        },
+        {
+          "label": "TCVU",
+          "is_correct": true
+        },
+        {
+          "label": "TCVT",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Coding and Decoding",
+      "kind": "standard",
+      "difficulty": "hard",
+      "answer_type": "single",
+      "stem": "In a certain code language, JUMP is written as ROWL. How is REED written in that code?",
+      "explanation": "Rule: the word is reversed and then each letter is moved 2 place(s) forward. Applying it to REED gives FGGT.",
+      "options": [
+        {
+          "label": "FGGT",
+          "is_correct": true
+        },
+        {
+          "label": "FGGS",
+          "is_correct": false
+        },
+        {
+          "label": "FGGU",
+          "is_correct": false
+        },
+        {
+          "label": "FGGV",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Coding and Decoding",
+      "kind": "standard",
+      "difficulty": "hard",
+      "answer_type": "single",
+      "stem": "In a certain code language, BELL is written as OOHE. How is LEAF written in that code?",
+      "explanation": "Rule: the word is reversed and then each letter is moved 3 place(s) forward. Applying it to LEAF gives IDHO.",
+      "options": [
+        {
+          "label": "IDHN",
+          "is_correct": false
+        },
+        {
+          "label": "IDHO",
+          "is_correct": true
+        },
+        {
+          "label": "IDHP",
+          "is_correct": false
+        },
+        {
+          "label": "IDHQ",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Coding and Decoding",
+      "kind": "standard",
+      "difficulty": "hard",
+      "answer_type": "single",
+      "stem": "In a certain code language, VASE is written as YXVB. How is LION written in that code?",
+      "explanation": "Rule: letters in odd positions move 3 forward, letters in even positions move 3 backward. Applying it to LION gives OFRK.",
+      "options": [
+        {
+          "label": "OFRJ",
+          "is_correct": false
+        },
+        {
+          "label": "OFRM",
+          "is_correct": false
+        },
+        {
+          "label": "OFRK",
+          "is_correct": true
+        },
+        {
+          "label": "OFRL",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Coding and Decoding",
+      "kind": "standard",
+      "difficulty": "hard",
+      "answer_type": "single",
+      "stem": "In a certain code language, FROG is written as JRUI. How is ROAD written in that code?",
+      "explanation": "Rule: the word is reversed and then each letter is moved 3 place(s) forward. Applying it to ROAD gives GDRU.",
+      "options": [
+        {
+          "label": "GDRV",
+          "is_correct": false
+        },
+        {
+          "label": "GDRT",
+          "is_correct": false
+        },
+        {
+          "label": "GDRW",
+          "is_correct": false
+        },
+        {
+          "label": "GDRU",
+          "is_correct": true
+        }
+      ]
+    },
+    {
+      "chapter": "Coding and Decoding",
+      "kind": "standard",
+      "difficulty": "hard",
+      "answer_type": "single",
+      "stem": "In a certain code language, COAL is written as EMCJ. How is BEAR written in that code?",
+      "explanation": "Rule: letters in odd positions move 2 forward, letters in even positions move 2 backward. Applying it to BEAR gives DCCP.",
+      "options": [
+        {
+          "label": "DCCP",
+          "is_correct": true
+        },
+        {
+          "label": "DCCR",
+          "is_correct": false
+        },
+        {
+          "label": "DCCO",
+          "is_correct": false
+        },
+        {
+          "label": "DCCQ",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Coding and Decoding",
+      "kind": "standard",
+      "difficulty": "hard",
+      "answer_type": "single",
+      "stem": "In a certain code language, HILL is written as MMJI. How is MOON written in that code?",
+      "explanation": "Rule: the word is reversed and then each letter is moved 1 place(s) forward. Applying it to MOON gives OPPN.",
+      "options": [
+        {
+          "label": "OPPM",
+          "is_correct": false
+        },
+        {
+          "label": "OPPP",
+          "is_correct": false
+        },
+        {
+          "label": "OPPN",
+          "is_correct": true
+        },
+        {
+          "label": "OPPO",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Coding and Decoding",
+      "kind": "standard",
+      "difficulty": "hard",
+      "answer_type": "single",
+      "stem": "In a certain code language, DOOR is written as TQQF. How is GOLD written in that code?",
+      "explanation": "Rule: the word is reversed and then each letter is moved 2 place(s) forward. Applying it to GOLD gives FNQI.",
+      "options": [
+        {
+          "label": "FNQH",
+          "is_correct": false
+        },
+        {
+          "label": "FNQI",
+          "is_correct": true
+        },
+        {
+          "label": "FNQJ",
+          "is_correct": false
+        },
+        {
+          "label": "FNQK",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Coding and Decoding",
+      "kind": "standard",
+      "difficulty": "hard",
+      "answer_type": "single",
+      "stem": "In a certain code language, WIND is written as EOJX. How is CAKE written in that code?",
+      "explanation": "Rule: the word is reversed and then each letter is moved 1 place(s) forward. Applying it to CAKE gives FLBD.",
+      "options": [
+        {
+          "label": "FLBE",
+          "is_correct": false
+        },
+        {
+          "label": "FLBD",
+          "is_correct": true
+        },
+        {
+          "label": "FLBF",
+          "is_correct": false
+        },
+        {
+          "label": "FLBC",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Coding and Decoding",
+      "kind": "standard",
+      "difficulty": "hard",
+      "answer_type": "single",
+      "stem": "In a certain code language, ROAD is written as GDRU. How is VASE written in that code?",
+      "explanation": "Rule: the word is reversed and then each letter is moved 3 place(s) forward. Applying it to VASE gives HVDY.",
+      "options": [
+        {
+          "label": "HVDX",
+          "is_correct": false
+        },
+        {
+          "label": "HVDZ",
+          "is_correct": false
+        },
+        {
+          "label": "HVDA",
+          "is_correct": false
+        },
+        {
+          "label": "HVDY",
+          "is_correct": true
+        }
+      ]
+    },
+    {
+      "chapter": "Coding and Decoding",
+      "kind": "standard",
+      "difficulty": "hard",
+      "answer_type": "single",
+      "stem": "In a certain code language, VASE is written as HVDY. How is DESK written in that code?",
+      "explanation": "Rule: the word is reversed and then each letter is moved 3 place(s) forward. Applying it to DESK gives NVHG.",
+      "options": [
+        {
+          "label": "NVHH",
+          "is_correct": false
+        },
+        {
+          "label": "NVHG",
+          "is_correct": true
+        },
+        {
+          "label": "NVHF",
+          "is_correct": false
+        },
+        {
+          "label": "NVHI",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Coding and Decoding",
+      "kind": "standard",
+      "difficulty": "hard",
+      "answer_type": "single",
+      "stem": "In a certain code language, KNOT is written as VQPM. How is MOON written in that code?",
+      "explanation": "Rule: the word is reversed and then each letter is moved 2 place(s) forward. Applying it to MOON gives PQQO.",
+      "options": [
+        {
+          "label": "PQQQ",
+          "is_correct": false
+        },
+        {
+          "label": "PQQN",
+          "is_correct": false
+        },
+        {
+          "label": "PQQO",
+          "is_correct": true
+        },
+        {
+          "label": "PQQP",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Coding and Decoding",
+      "kind": "standard",
+      "difficulty": "hard",
+      "answer_type": "single",
+      "stem": "In a certain code language, FISH is written as ITJG. How is PARK written in that code?",
+      "explanation": "Rule: the word is reversed and then each letter is moved 1 place(s) forward. Applying it to PARK gives LSBQ.",
+      "options": [
+        {
+          "label": "LSBP",
+          "is_correct": false
+        },
+        {
+          "label": "LSBR",
+          "is_correct": false
+        },
+        {
+          "label": "LSBQ",
+          "is_correct": true
+        },
+        {
+          "label": "LSBS",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Coding and Decoding",
+      "kind": "standard",
+      "difficulty": "hard",
+      "answer_type": "single",
+      "stem": "In a certain code language, HILL is written as IKOP. How is VASE written in that code?",
+      "explanation": "Rule: the 1st letter moves 1 place, the 2nd moves 2 places, the 3rd moves 3, and so on. Applying it to VASE gives WCVI.",
+      "options": [
+        {
+          "label": "WCVJ",
+          "is_correct": false
+        },
+        {
+          "label": "WCVI",
+          "is_correct": true
+        },
+        {
+          "label": "WCVH",
+          "is_correct": false
+        },
+        {
+          "label": "WCVK",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Coding and Decoding",
+      "kind": "standard",
+      "difficulty": "hard",
+      "answer_type": "single",
+      "stem": "In a certain code language, CORN is written as DQUR. How is CAT written in that code?",
+      "explanation": "Rule: the 1st letter moves 1 place, the 2nd moves 2 places, the 3rd moves 3, and so on. Applying it to CAT gives DCW.",
+      "options": [
+        {
+          "label": "DCX",
+          "is_correct": false
+        },
+        {
+          "label": "DCW",
+          "is_correct": true
+        },
+        {
+          "label": "DCY",
+          "is_correct": false
+        },
+        {
+          "label": "DCV",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Coding and Decoding",
+      "kind": "standard",
+      "difficulty": "hard",
+      "answer_type": "single",
+      "stem": "In a certain code language, DESK is written as LTFE. How is CAT written in that code?",
+      "explanation": "Rule: the word is reversed and then each letter is moved 1 place(s) forward. Applying it to CAT gives UBD.",
+      "options": [
+        {
+          "label": "UBE",
+          "is_correct": false
+        },
+        {
+          "label": "UBC",
+          "is_correct": false
+        },
+        {
+          "label": "UBF",
+          "is_correct": false
+        },
+        {
+          "label": "UBD",
+          "is_correct": true
+        }
+      ]
+    },
+    {
+      "chapter": "Coding and Decoding",
+      "kind": "standard",
+      "difficulty": "hard",
+      "answer_type": "single",
+      "stem": "In a certain code language, QUIZ is written as BKWS. How is KNOT written in that code?",
+      "explanation": "Rule: the word is reversed and then each letter is moved 2 place(s) forward. Applying it to KNOT gives VQPM.",
+      "options": [
+        {
+          "label": "VQPL",
+          "is_correct": false
+        },
+        {
+          "label": "VQPN",
+          "is_correct": false
+        },
+        {
+          "label": "VQPM",
+          "is_correct": true
+        },
+        {
+          "label": "VQPO",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Coding and Decoding",
+      "kind": "standard",
+      "difficulty": "hard",
+      "answer_type": "single",
+      "stem": "In a certain code language, NEST is written as OGVX. How is WIND written in that code?",
+      "explanation": "Rule: the 1st letter moves 1 place, the 2nd moves 2 places, the 3rd moves 3, and so on. Applying it to WIND gives XKQH.",
+      "options": [
+        {
+          "label": "XKQG",
+          "is_correct": false
+        },
+        {
+          "label": "XKQI",
+          "is_correct": false
+        },
+        {
+          "label": "XKQH",
+          "is_correct": true
+        },
+        {
+          "label": "XKQJ",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Coding and Decoding",
+      "kind": "standard",
+      "difficulty": "very_hard",
+      "answer_type": "single",
+      "stem": "In a certain code language, NEST is written as NWIH. How is COAL written in that code?",
+      "explanation": "Rule: each letter is replaced by its opposite (A↔Z) and then moved 1 place(s) forward. Applying it to COAL gives YMAP.",
+      "options": [
+        {
+          "label": "YMAO",
+          "is_correct": false
+        },
+        {
+          "label": "YMAQ",
+          "is_correct": false
+        },
+        {
+          "label": "YMAP",
+          "is_correct": true
+        },
+        {
+          "label": "YMAR",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Coding and Decoding",
+      "kind": "standard",
+      "difficulty": "very_hard",
+      "answer_type": "single",
+      "stem": "In a certain code language, SALT is written as GOZH. How is RAIN written in that code?",
+      "explanation": "Rule: the word is reversed and then each letter is replaced by its opposite (A↔Z). Applying it to RAIN gives MRZI.",
+      "options": [
+        {
+          "label": "MRZJ",
+          "is_correct": false
+        },
+        {
+          "label": "MRZK",
+          "is_correct": false
+        },
+        {
+          "label": "MRZH",
+          "is_correct": false
+        },
+        {
+          "label": "MRZI",
+          "is_correct": true
+        }
+      ]
+    },
+    {
+      "chapter": "Coding and Decoding",
+      "kind": "standard",
+      "difficulty": "very_hard",
+      "answer_type": "single",
+      "stem": "In a certain code language, LAMP is written as KNZO. How is MINT written in that code?",
+      "explanation": "Rule: the word is reversed and then each letter is replaced by its opposite (A↔Z). Applying it to MINT gives GMRN.",
+      "options": [
+        {
+          "label": "GMRO",
+          "is_correct": false
+        },
+        {
+          "label": "GMRM",
+          "is_correct": false
+        },
+        {
+          "label": "GMRN",
+          "is_correct": true
+        },
+        {
+          "label": "GMRP",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Coding and Decoding",
+      "kind": "standard",
+      "difficulty": "very_hard",
+      "answer_type": "single",
+      "stem": "In a certain code language, CAT is written as GZX. How is VASE written in that code?",
+      "explanation": "Rule: the word is reversed and then each letter is replaced by its opposite (A↔Z). Applying it to VASE gives VHZE.",
+      "options": [
+        {
+          "label": "VHZG",
+          "is_correct": false
+        },
+        {
+          "label": "VHZD",
+          "is_correct": false
+        },
+        {
+          "label": "VHZF",
+          "is_correct": false
+        },
+        {
+          "label": "VHZE",
+          "is_correct": true
+        }
+      ]
+    },
+    {
+      "chapter": "Coding and Decoding",
+      "kind": "standard",
+      "difficulty": "very_hard",
+      "answer_type": "single",
+      "stem": "In a certain code language, FROG is written as HVUO. How is SHIP written in that code?",
+      "explanation": "Rule: the 1st letter moves 2 places, the 2nd moves 4, the 3rd moves 6, and so on. Applying it to SHIP gives ULOX.",
+      "options": [
+        {
+          "label": "ULOX",
+          "is_correct": true
+        },
+        {
+          "label": "ULOY",
+          "is_correct": false
+        },
+        {
+          "label": "ULOZ",
+          "is_correct": false
+        },
+        {
+          "label": "ULOW",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Coding and Decoding",
+      "kind": "standard",
+      "difficulty": "very_hard",
+      "answer_type": "single",
+      "stem": "In a certain code language, COAL is written as ESGT. How is YARN written in that code?",
+      "explanation": "Rule: the 1st letter moves 2 places, the 2nd moves 4, the 3rd moves 6, and so on. Applying it to YARN gives AEXV.",
+      "options": [
+        {
+          "label": "AEXW",
+          "is_correct": false
+        },
+        {
+          "label": "AEXV",
+          "is_correct": true
+        },
+        {
+          "label": "AEXX",
+          "is_correct": false
+        },
+        {
+          "label": "AEXU",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Coding and Decoding",
+      "kind": "standard",
+      "difficulty": "very_hard",
+      "answer_type": "single",
+      "stem": "In a certain code language, SILK is written as WOPQ. How is CAT written in that code?",
+      "explanation": "Rule: letters in odd positions move 4 forward and letters in even positions move 6 forward. Applying it to CAT gives GGX.",
+      "options": [
+        {
+          "label": "GGX",
+          "is_correct": true
+        },
+        {
+          "label": "GGW",
+          "is_correct": false
+        },
+        {
+          "label": "GGZ",
+          "is_correct": false
+        },
+        {
+          "label": "GGY",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Coding and Decoding",
+      "kind": "standard",
+      "difficulty": "very_hard",
+      "answer_type": "single",
+      "stem": "In a certain code language, VASE is written as XEYM. How is DOG written in that code?",
+      "explanation": "Rule: the 1st letter moves 2 places, the 2nd moves 4, the 3rd moves 6, and so on. Applying it to DOG gives FSM.",
+      "options": [
+        {
+          "label": "FSO",
+          "is_correct": false
+        },
+        {
+          "label": "FSN",
+          "is_correct": false
+        },
+        {
+          "label": "FSL",
+          "is_correct": false
+        },
+        {
+          "label": "FSM",
+          "is_correct": true
+        }
+      ]
+    },
+    {
+      "chapter": "Coding and Decoding",
+      "kind": "standard",
+      "difficulty": "very_hard",
+      "answer_type": "single",
+      "stem": "In a certain code language, SALT is written as UERB. How is COAL written in that code?",
+      "explanation": "Rule: the 1st letter moves 2 places, the 2nd moves 4, the 3rd moves 6, and so on. Applying it to COAL gives ESGT.",
+      "options": [
+        {
+          "label": "ESGV",
+          "is_correct": false
+        },
+        {
+          "label": "ESGU",
+          "is_correct": false
+        },
+        {
+          "label": "ESGS",
+          "is_correct": false
+        },
+        {
+          "label": "ESGT",
+          "is_correct": true
+        }
+      ]
+    },
+    {
+      "chapter": "Coding and Decoding",
+      "kind": "standard",
+      "difficulty": "very_hard",
+      "answer_type": "single",
+      "stem": "In a certain code language, WOLF is written as UOLD. How is MINT written in that code?",
+      "explanation": "Rule: the word is reversed and then each letter is replaced by its opposite (A↔Z). Applying it to MINT gives GMRN.",
+      "options": [
+        {
+          "label": "GMRO",
+          "is_correct": false
+        },
+        {
+          "label": "GMRM",
+          "is_correct": false
+        },
+        {
+          "label": "GMRN",
+          "is_correct": true
+        },
+        {
+          "label": "GMRP",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Coding and Decoding",
+      "kind": "standard",
+      "difficulty": "very_hard",
+      "answer_type": "single",
+      "stem": "In a certain code language, TREE is written as YYJL. How is SILK written in that code?",
+      "explanation": "Rule: letters in odd positions move 5 forward and letters in even positions move 7 forward. Applying it to SILK gives XPQR.",
+      "options": [
+        {
+          "label": "XPQT",
+          "is_correct": false
+        },
+        {
+          "label": "XPQR",
+          "is_correct": true
+        },
+        {
+          "label": "XPQQ",
+          "is_correct": false
+        },
+        {
+          "label": "XPQS",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Coding and Decoding",
+      "kind": "standard",
+      "difficulty": "very_hard",
+      "answer_type": "single",
+      "stem": "In a certain code language, DESK is written as FIYS. How is ROSE written in that code?",
+      "explanation": "Rule: the 1st letter moves 2 places, the 2nd moves 4, the 3rd moves 6, and so on. Applying it to ROSE gives TSYM.",
+      "options": [
+        {
+          "label": "TSYO",
+          "is_correct": false
+        },
+        {
+          "label": "TSYN",
+          "is_correct": false
+        },
+        {
+          "label": "TSYL",
+          "is_correct": false
+        },
+        {
+          "label": "TSYM",
+          "is_correct": true
+        }
+      ]
+    },
+    {
+      "chapter": "Coding and Decoding",
+      "kind": "standard",
+      "difficulty": "very_hard",
+      "answer_type": "single",
+      "stem": "In a certain code language, CAKE is written as VPZX. How is BOAT written in that code?",
+      "explanation": "Rule: the word is reversed and then each letter is replaced by its opposite (A↔Z). Applying it to BOAT gives GZLY.",
+      "options": [
+        {
+          "label": "GZLZ",
+          "is_correct": false
+        },
+        {
+          "label": "GZLA",
+          "is_correct": false
+        },
+        {
+          "label": "GZLX",
+          "is_correct": false
+        },
+        {
+          "label": "GZLY",
+          "is_correct": true
+        }
+      ]
+    },
+    {
+      "chapter": "Coding and Decoding",
+      "kind": "standard",
+      "difficulty": "very_hard",
+      "answer_type": "single",
+      "stem": "In a certain code language, YARN is written as CAJN. How is MILK written in that code?",
+      "explanation": "Rule: each letter is replaced by its opposite (A↔Z) and then moved 1 place(s) forward. Applying it to MILK gives OSPQ.",
+      "options": [
+        {
+          "label": "OSPQ",
+          "is_correct": true
+        },
+        {
+          "label": "OSPS",
+          "is_correct": false
+        },
+        {
+          "label": "OSPP",
+          "is_correct": false
+        },
+        {
+          "label": "OSPR",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Coding and Decoding",
+      "kind": "standard",
+      "difficulty": "very_hard",
+      "answer_type": "single",
+      "stem": "In a certain code language, FROG is written as HVQK. How is DUCK written in that code?",
+      "explanation": "Rule: letters in odd positions move 2 forward and letters in even positions move 4 forward. Applying it to DUCK gives FYEO.",
+      "options": [
+        {
+          "label": "FYEQ",
+          "is_correct": false
+        },
+        {
+          "label": "FYEO",
+          "is_correct": true
+        },
+        {
+          "label": "FYEP",
+          "is_correct": false
+        },
+        {
+          "label": "FYEN",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Coding and Decoding",
+      "kind": "standard",
+      "difficulty": "very_hard",
+      "answer_type": "single",
+      "stem": "In a certain code language, DESK is written as FIUO. How is CARD written in that code?",
+      "explanation": "Rule: letters in odd positions move 2 forward and letters in even positions move 4 forward. Applying it to CARD gives EETH.",
+      "options": [
+        {
+          "label": "EETH",
+          "is_correct": true
+        },
+        {
+          "label": "EETJ",
+          "is_correct": false
+        },
+        {
+          "label": "EETI",
+          "is_correct": false
+        },
+        {
+          "label": "EETG",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Coding and Decoding",
+      "kind": "standard",
+      "difficulty": "very_hard",
+      "answer_type": "single",
+      "stem": "In a certain code language, BOAT is written as GVFA. How is DESK written in that code?",
+      "explanation": "Rule: letters in odd positions move 5 forward and letters in even positions move 7 forward. Applying it to DESK gives ILXR.",
+      "options": [
+        {
+          "label": "ILXS",
+          "is_correct": false
+        },
+        {
+          "label": "ILXR",
+          "is_correct": true
+        },
+        {
+          "label": "ILXT",
+          "is_correct": false
+        },
+        {
+          "label": "ILXQ",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Coding and Decoding",
+      "kind": "standard",
+      "difficulty": "very_hard",
+      "answer_type": "single",
+      "stem": "In a certain code language, WOLF is written as UOLD. How is RICE written in that code?",
+      "explanation": "Rule: the word is reversed and then each letter is replaced by its opposite (A↔Z). Applying it to RICE gives VXRI.",
+      "options": [
+        {
+          "label": "VXRH",
+          "is_correct": false
+        },
+        {
+          "label": "VXRJ",
+          "is_correct": false
+        },
+        {
+          "label": "VXRI",
+          "is_correct": true
+        },
+        {
+          "label": "VXRK",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Coding and Decoding",
+      "kind": "standard",
+      "difficulty": "very_hard",
+      "answer_type": "single",
+      "stem": "In a certain code language, REED is written as UJHI. How is HAND written in that code?",
+      "explanation": "Rule: letters in odd positions move 3 forward and letters in even positions move 5 forward. Applying it to HAND gives KFQI.",
+      "options": [
+        {
+          "label": "KFQK",
+          "is_correct": false
+        },
+        {
+          "label": "KFQI",
+          "is_correct": true
+        },
+        {
+          "label": "KFQJ",
+          "is_correct": false
+        },
+        {
+          "label": "KFQH",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Coding and Decoding",
+      "kind": "standard",
+      "difficulty": "very_hard",
+      "answer_type": "single",
+      "stem": "In a certain code language, GATE is written as KGXK. How is CORN written in that code?",
+      "explanation": "Rule: letters in odd positions move 4 forward and letters in even positions move 6 forward. Applying it to CORN gives GUVT.",
+      "options": [
+        {
+          "label": "GUVS",
+          "is_correct": false
+        },
+        {
+          "label": "GUVU",
+          "is_correct": false
+        },
+        {
+          "label": "GUVT",
+          "is_correct": true
+        },
+        {
+          "label": "GUVV",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Coding and Decoding",
+      "kind": "standard",
+      "difficulty": "very_hard",
+      "answer_type": "single",
+      "stem": "In a certain code language, STAR is written as IZGH. How is RAIN written in that code?",
+      "explanation": "Rule: the word is reversed and then each letter is replaced by its opposite (A↔Z). Applying it to RAIN gives MRZI.",
+      "options": [
+        {
+          "label": "MRZH",
+          "is_correct": false
+        },
+        {
+          "label": "MRZK",
+          "is_correct": false
+        },
+        {
+          "label": "MRZI",
+          "is_correct": true
+        },
+        {
+          "label": "MRZJ",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Coding and Decoding",
+      "kind": "standard",
+      "difficulty": "very_hard",
+      "answer_type": "single",
+      "stem": "In a certain code language, BOAT is written as DSCX. How is DUCK written in that code?",
+      "explanation": "Rule: letters in odd positions move 2 forward and letters in even positions move 4 forward. Applying it to DUCK gives FYEO.",
+      "options": [
+        {
+          "label": "FYEN",
+          "is_correct": false
+        },
+        {
+          "label": "FYEO",
+          "is_correct": true
+        },
+        {
+          "label": "FYEP",
+          "is_correct": false
+        },
+        {
+          "label": "FYEQ",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Coding and Decoding",
+      "kind": "standard",
+      "difficulty": "very_hard",
+      "answer_type": "single",
+      "stem": "In a certain code language, ROSE is written as VHLI. How is DOOR written in that code?",
+      "explanation": "Rule: the word is reversed and then each letter is replaced by its opposite (A↔Z). Applying it to DOOR gives ILLW.",
+      "options": [
+        {
+          "label": "ILLY",
+          "is_correct": false
+        },
+        {
+          "label": "ILLX",
+          "is_correct": false
+        },
+        {
+          "label": "ILLV",
+          "is_correct": false
+        },
+        {
+          "label": "ILLW",
+          "is_correct": true
+        }
+      ]
+    },
+    {
+      "chapter": "Coding and Decoding",
+      "kind": "standard",
+      "difficulty": "very_hard",
+      "answer_type": "single",
+      "stem": "In a certain code language, STAR is written as UXGZ. How is FROG written in that code?",
+      "explanation": "Rule: the 1st letter moves 2 places, the 2nd moves 4, the 3rd moves 6, and so on. Applying it to FROG gives HVUO.",
+      "options": [
+        {
+          "label": "HVUQ",
+          "is_correct": false
+        },
+        {
+          "label": "HVUP",
+          "is_correct": false
+        },
+        {
+          "label": "HVUO",
+          "is_correct": true
+        },
+        {
+          "label": "HVUN",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Coding and Decoding",
+      "kind": "standard",
+      "difficulty": "very_hard",
+      "answer_type": "single",
+      "stem": "In a certain code language, CAKE is written as EEQM. How is WOLF written in that code?",
+      "explanation": "Rule: the 1st letter moves 2 places, the 2nd moves 4, the 3rd moves 6, and so on. Applying it to WOLF gives YSRN.",
+      "options": [
+        {
+          "label": "YSRO",
+          "is_correct": false
+        },
+        {
+          "label": "YSRN",
+          "is_correct": true
+        },
+        {
+          "label": "YSRM",
+          "is_correct": false
+        },
+        {
+          "label": "YSRP",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Coding and Decoding",
+      "kind": "standard",
+      "difficulty": "very_hard",
+      "answer_type": "single",
+      "stem": "In a certain code language, REED is written as TIKL. How is LAMP written in that code?",
+      "explanation": "Rule: the 1st letter moves 2 places, the 2nd moves 4, the 3rd moves 6, and so on. Applying it to LAMP gives NESX.",
+      "options": [
+        {
+          "label": "NESX",
+          "is_correct": true
+        },
+        {
+          "label": "NESW",
+          "is_correct": false
+        },
+        {
+          "label": "NESY",
+          "is_correct": false
+        },
+        {
+          "label": "NESZ",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Coding and Decoding",
+      "kind": "standard",
+      "difficulty": "very_hard",
+      "answer_type": "single",
+      "stem": "In a certain code language, RICE is written as VXRI. How is FROG written in that code?",
+      "explanation": "Rule: the word is reversed and then each letter is replaced by its opposite (A↔Z). Applying it to FROG gives TLIU.",
+      "options": [
+        {
+          "label": "TLIW",
+          "is_correct": false
+        },
+        {
+          "label": "TLIT",
+          "is_correct": false
+        },
+        {
+          "label": "TLIV",
+          "is_correct": false
+        },
+        {
+          "label": "TLIU",
+          "is_correct": true
+        }
+      ]
+    },
+    {
+      "chapter": "Coding and Decoding",
+      "kind": "standard",
+      "difficulty": "very_hard",
+      "answer_type": "single",
+      "stem": "In a certain code language, COAL is written as OZLX. How is RICE written in that code?",
+      "explanation": "Rule: the word is reversed and then each letter is replaced by its opposite (A↔Z). Applying it to RICE gives VXRI.",
+      "options": [
+        {
+          "label": "VXRI",
+          "is_correct": true
+        },
+        {
+          "label": "VXRH",
+          "is_correct": false
+        },
+        {
+          "label": "VXRJ",
+          "is_correct": false
+        },
+        {
+          "label": "VXRK",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Coding and Decoding",
+      "kind": "standard",
+      "difficulty": "very_hard",
+      "answer_type": "single",
+      "stem": "In a certain code language, LAMP is written as KNZO. How is MILK written in that code?",
+      "explanation": "Rule: the word is reversed and then each letter is replaced by its opposite (A↔Z). Applying it to MILK gives PORN.",
+      "options": [
+        {
+          "label": "PORN",
+          "is_correct": true
+        },
+        {
+          "label": "PORO",
+          "is_correct": false
+        },
+        {
+          "label": "PORP",
+          "is_correct": false
+        },
+        {
+          "label": "PORM",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Coding and Decoding",
+      "kind": "standard",
+      "difficulty": "very_hard",
+      "answer_type": "single",
+      "stem": "In a certain code language, TREE is written as VVKM. How is WIND written in that code?",
+      "explanation": "Rule: the 1st letter moves 2 places, the 2nd moves 4, the 3rd moves 6, and so on. Applying it to WIND gives YMTL.",
+      "options": [
+        {
+          "label": "YMTK",
+          "is_correct": false
+        },
+        {
+          "label": "YMTL",
+          "is_correct": true
+        },
+        {
+          "label": "YMTN",
+          "is_correct": false
+        },
+        {
+          "label": "YMTM",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Coding and Decoding",
+      "kind": "standard",
+      "difficulty": "very_hard",
+      "answer_type": "single",
+      "stem": "In a certain code language, FIRE is written as VIRU. How is BOOK written in that code?",
+      "explanation": "Rule: the word is reversed and then each letter is replaced by its opposite (A↔Z). Applying it to BOOK gives PLLY.",
+      "options": [
+        {
+          "label": "PLLY",
+          "is_correct": true
+        },
+        {
+          "label": "PLLA",
+          "is_correct": false
+        },
+        {
+          "label": "PLLX",
+          "is_correct": false
+        },
+        {
+          "label": "PLLZ",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Coding and Decoding",
+      "kind": "standard",
+      "difficulty": "very_hard",
+      "answer_type": "single",
+      "stem": "In a certain code language, BOAT is written as GZLY. How is COAL written in that code?",
+      "explanation": "Rule: the word is reversed and then each letter is replaced by its opposite (A↔Z). Applying it to COAL gives OZLX.",
+      "options": [
+        {
+          "label": "OZLY",
+          "is_correct": false
+        },
+        {
+          "label": "OZLX",
+          "is_correct": true
+        },
+        {
+          "label": "OZLZ",
+          "is_correct": false
+        },
+        {
+          "label": "OZLW",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Coding and Decoding",
+      "kind": "standard",
+      "difficulty": "very_hard",
+      "answer_type": "single",
+      "stem": "In a certain code language, RICE is written as VOGK. How is CAT written in that code?",
+      "explanation": "Rule: letters in odd positions move 4 forward and letters in even positions move 6 forward. Applying it to CAT gives GGX.",
+      "options": [
+        {
+          "label": "GGX",
+          "is_correct": true
+        },
+        {
+          "label": "GGW",
+          "is_correct": false
+        },
+        {
+          "label": "GGY",
+          "is_correct": false
+        },
+        {
+          "label": "GGZ",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Coding and Decoding",
+      "kind": "standard",
+      "difficulty": "very_hard",
+      "answer_type": "single",
+      "stem": "In a certain code language, HAND is written as KFQI. How is BELL written in that code?",
+      "explanation": "Rule: letters in odd positions move 3 forward and letters in even positions move 5 forward. Applying it to BELL gives EJOQ.",
+      "options": [
+        {
+          "label": "EJOQ",
+          "is_correct": true
+        },
+        {
+          "label": "EJOS",
+          "is_correct": false
+        },
+        {
+          "label": "EJOP",
+          "is_correct": false
+        },
+        {
+          "label": "EJOR",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Coding and Decoding",
+      "kind": "standard",
+      "difficulty": "very_hard",
+      "answer_type": "single",
+      "stem": "In a certain code language, REED is written as WLJK. How is CAKE written in that code?",
+      "explanation": "Rule: letters in odd positions move 5 forward and letters in even positions move 7 forward. Applying it to CAKE gives HHPL.",
+      "options": [
+        {
+          "label": "HHPN",
+          "is_correct": false
+        },
+        {
+          "label": "HHPL",
+          "is_correct": true
+        },
+        {
+          "label": "HHPK",
+          "is_correct": false
+        },
+        {
+          "label": "HHPM",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Coding and Decoding",
+      "kind": "standard",
+      "difficulty": "very_hard",
+      "answer_type": "single",
+      "stem": "In a certain code language, LEAF is written as NIGN. How is CARD written in that code?",
+      "explanation": "Rule: the 1st letter moves 2 places, the 2nd moves 4, the 3rd moves 6, and so on. Applying it to CARD gives EEXL.",
+      "options": [
+        {
+          "label": "EEXM",
+          "is_correct": false
+        },
+        {
+          "label": "EEXN",
+          "is_correct": false
+        },
+        {
+          "label": "EEXL",
+          "is_correct": true
+        },
+        {
+          "label": "EEXK",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Coding and Decoding",
+      "kind": "standard",
+      "difficulty": "very_hard",
+      "answer_type": "single",
+      "stem": "In a certain code language, REED is written as WVVI. How is VASE written in that code?",
+      "explanation": "Rule: the word is reversed and then each letter is replaced by its opposite (A↔Z). Applying it to VASE gives VHZE.",
+      "options": [
+        {
+          "label": "VHZG",
+          "is_correct": false
+        },
+        {
+          "label": "VHZD",
+          "is_correct": false
+        },
+        {
+          "label": "VHZF",
+          "is_correct": false
+        },
+        {
+          "label": "VHZE",
+          "is_correct": true
+        }
+      ]
+    },
+    {
+      "chapter": "Coding and Decoding",
+      "kind": "standard",
+      "difficulty": "very_hard",
+      "answer_type": "single",
+      "stem": "In a certain code language, CARD is written as WIZX. How is FROG written in that code?",
+      "explanation": "Rule: the word is reversed and then each letter is replaced by its opposite (A↔Z). Applying it to FROG gives TLIU.",
+      "options": [
+        {
+          "label": "TLIT",
+          "is_correct": false
+        },
+        {
+          "label": "TLIU",
+          "is_correct": true
+        },
+        {
+          "label": "TLIV",
+          "is_correct": false
+        },
+        {
+          "label": "TLIW",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Coding and Decoding",
+      "kind": "standard",
+      "difficulty": "very_hard",
+      "answer_type": "single",
+      "stem": "In a certain code language, LION is written as NMUV. How is CARD written in that code?",
+      "explanation": "Rule: the 1st letter moves 2 places, the 2nd moves 4, the 3rd moves 6, and so on. Applying it to CARD gives EEXL.",
+      "options": [
+        {
+          "label": "EEXK",
+          "is_correct": false
+        },
+        {
+          "label": "EEXN",
+          "is_correct": false
+        },
+        {
+          "label": "EEXL",
+          "is_correct": true
+        },
+        {
+          "label": "EEXM",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Coding and Decoding",
+      "kind": "standard",
+      "difficulty": "very_hard",
+      "answer_type": "single",
+      "stem": "In a certain code language, LAMP is written as KNZO. How is REED written in that code?",
+      "explanation": "Rule: the word is reversed and then each letter is replaced by its opposite (A↔Z). Applying it to REED gives WVVI.",
+      "options": [
+        {
+          "label": "WVVK",
+          "is_correct": false
+        },
+        {
+          "label": "WVVJ",
+          "is_correct": false
+        },
+        {
+          "label": "WVVH",
+          "is_correct": false
+        },
+        {
+          "label": "WVVI",
+          "is_correct": true
+        }
+      ]
+    },
+    {
+      "chapter": "Coding and Decoding",
+      "kind": "standard",
+      "difficulty": "very_hard",
+      "answer_type": "single",
+      "stem": "In a certain code language, SHIP is written as VMLU. How is MINT written in that code?",
+      "explanation": "Rule: letters in odd positions move 3 forward and letters in even positions move 5 forward. Applying it to MINT gives PNQY.",
+      "options": [
+        {
+          "label": "PNQA",
+          "is_correct": false
+        },
+        {
+          "label": "PNQX",
+          "is_correct": false
+        },
+        {
+          "label": "PNQZ",
+          "is_correct": false
+        },
+        {
+          "label": "PNQY",
+          "is_correct": true
+        }
+      ]
+    },
+    {
+      "chapter": "Coding and Decoding",
+      "kind": "standard",
+      "difficulty": "very_hard",
+      "answer_type": "single",
+      "stem": "In a certain code language, SHIP is written as ULKT. How is FIRE written in that code?",
+      "explanation": "Rule: letters in odd positions move 2 forward and letters in even positions move 4 forward. Applying it to FIRE gives HMTI.",
+      "options": [
+        {
+          "label": "HMTJ",
+          "is_correct": false
+        },
+        {
+          "label": "HMTI",
+          "is_correct": true
+        },
+        {
+          "label": "HMTH",
+          "is_correct": false
+        },
+        {
+          "label": "HMTK",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Coding and Decoding",
+      "kind": "standard",
+      "difficulty": "very_hard",
+      "answer_type": "single",
+      "stem": "In a certain code language, LAMP is written as NEOT. How is DESK written in that code?",
+      "explanation": "Rule: letters in odd positions move 2 forward and letters in even positions move 4 forward. Applying it to DESK gives FIUO.",
+      "options": [
+        {
+          "label": "FIUN",
+          "is_correct": false
+        },
+        {
+          "label": "FIUO",
+          "is_correct": true
+        },
+        {
+          "label": "FIUP",
+          "is_correct": false
+        },
+        {
+          "label": "FIUQ",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Coding and Decoding",
+      "kind": "standard",
+      "difficulty": "very_hard",
+      "answer_type": "single",
+      "stem": "In a certain code language, RAIN is written as WHNU. How is LEAF written in that code?",
+      "explanation": "Rule: letters in odd positions move 5 forward and letters in even positions move 7 forward. Applying it to LEAF gives QLFM.",
+      "options": [
+        {
+          "label": "QLFO",
+          "is_correct": false
+        },
+        {
+          "label": "QLFL",
+          "is_correct": false
+        },
+        {
+          "label": "QLFN",
+          "is_correct": false
+        },
+        {
+          "label": "QLFM",
+          "is_correct": true
+        }
+      ]
+    },
+    {
+      "chapter": "Coding and Decoding",
+      "kind": "standard",
+      "difficulty": "very_hard",
+      "answer_type": "single",
+      "stem": "In a certain code language, KING is written as RTOV. How is SILK written in that code?",
+      "explanation": "Rule: each letter is replaced by its opposite (A↔Z) and then moved 2 place(s) forward. Applying it to SILK gives JTQR.",
+      "options": [
+        {
+          "label": "JTQR",
+          "is_correct": true
+        },
+        {
+          "label": "JTQS",
+          "is_correct": false
+        },
+        {
+          "label": "JTQT",
+          "is_correct": false
+        },
+        {
+          "label": "JTQQ",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Coding and Decoding",
+      "kind": "standard",
+      "difficulty": "very_hard",
+      "answer_type": "single",
+      "stem": "In a certain code language, BOOK is written as ETRP. How is WIND written in that code?",
+      "explanation": "Rule: letters in odd positions move 3 forward and letters in even positions move 5 forward. Applying it to WIND gives ZNQI.",
+      "options": [
+        {
+          "label": "ZNQH",
+          "is_correct": false
+        },
+        {
+          "label": "ZNQJ",
+          "is_correct": false
+        },
+        {
+          "label": "ZNQI",
+          "is_correct": true
+        },
+        {
+          "label": "ZNQK",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Coding and Decoding",
+      "kind": "standard",
+      "difficulty": "very_hard",
+      "answer_type": "single",
+      "stem": "In a certain code language, GATE is written as VBIX. How is SHIP written in that code?",
+      "explanation": "Rule: each letter is replaced by its opposite (A↔Z) and then moved 2 place(s) forward. Applying it to SHIP gives JUTM.",
+      "options": [
+        {
+          "label": "JUTN",
+          "is_correct": false
+        },
+        {
+          "label": "JUTL",
+          "is_correct": false
+        },
+        {
+          "label": "JUTO",
+          "is_correct": false
+        },
+        {
+          "label": "JUTM",
+          "is_correct": true
+        }
+      ]
+    },
+    {
+      "chapter": "Coding and Decoding",
+      "kind": "standard",
+      "difficulty": "very_hard",
+      "answer_type": "single",
+      "stem": "In a certain code language, FISH is written as HMYP. How is NEST written in that code?",
+      "explanation": "Rule: the 1st letter moves 2 places, the 2nd moves 4, the 3rd moves 6, and so on. Applying it to NEST gives PIYB.",
+      "options": [
+        {
+          "label": "PIYC",
+          "is_correct": false
+        },
+        {
+          "label": "PIYA",
+          "is_correct": false
+        },
+        {
+          "label": "PIYD",
+          "is_correct": false
+        },
+        {
+          "label": "PIYB",
+          "is_correct": true
+        }
+      ]
+    },
+    {
+      "chapter": "Coding and Decoding",
+      "kind": "standard",
+      "difficulty": "very_hard",
+      "answer_type": "single",
+      "stem": "In a certain code language, MINT is written as RPSA. How is PARK written in that code?",
+      "explanation": "Rule: letters in odd positions move 5 forward and letters in even positions move 7 forward. Applying it to PARK gives UHWR.",
+      "options": [
+        {
+          "label": "UHWR",
+          "is_correct": true
+        },
+        {
+          "label": "UHWQ",
+          "is_correct": false
+        },
+        {
+          "label": "UHWT",
+          "is_correct": false
+        },
+        {
+          "label": "UHWS",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Coding and Decoding",
+      "kind": "standard",
+      "difficulty": "very_hard",
+      "answer_type": "single",
+      "stem": "In a certain code language, MOON is written as RVTU. How is DOG written in that code?",
+      "explanation": "Rule: letters in odd positions move 5 forward and letters in even positions move 7 forward. Applying it to DOG gives IVL.",
+      "options": [
+        {
+          "label": "IVK",
+          "is_correct": false
+        },
+        {
+          "label": "IVL",
+          "is_correct": true
+        },
+        {
+          "label": "IVM",
+          "is_correct": false
+        },
+        {
+          "label": "IVN",
+          "is_correct": false
+        }
+      ]
+    }
+  ]
+}

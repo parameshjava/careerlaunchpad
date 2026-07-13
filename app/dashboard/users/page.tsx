@@ -35,12 +35,12 @@ export default async function UsersPage() {
     supabase.from("employer").select("id, name").order("name"),
     supabase
       .from("invite")
-      .select("id, email, status, created_at, role:role_id(key,name)")
+      .select("id, email, status, created_at, scope_college_id, role:role_id(key,name), college:scope_college_id(name)")
       .eq("status", "pending")
       .order("created_at", { ascending: false }),
     supabase
       .from("app_user")
-      .select("id, email, status, full_name, phone, user_role(role:role_id(key,name)), notification_email(email,kind,active), mentor_profile!user_id(full_name,phone)")
+      .select("id, email, status, full_name, phone, user_role(scope_college_id, role:role_id(key,name), college:scope_college_id(name)), notification_email(email,kind,active), mentor_profile!user_id(full_name,phone)")
       .neq("status", "deleted")
       .order("created_at", { ascending: false }),
   ]);
@@ -49,9 +49,21 @@ export default async function UsersPage() {
   // platform role still shows). One row each; office email from notification_email.
   const userRows: MemberRow[] = (users ?? [])
     .map((u) => {
-      const roleRows = (u.user_role ?? []) as { role: Role | Role[] }[];
+      const roleRows = (u.user_role ?? []) as {
+        role: Role | Role[];
+        scope_college_id?: string | null;
+        college?: { name?: string } | { name?: string }[] | null;
+      }[];
       const roles = roleRows.map((ur) => one(ur.role)).filter((r): r is Role => !!r);
       const roleKeys = roles.map((r) => r.key).filter((k): k is string => !!k);
+      const collegeNames = Array.from(
+        new Set(roleRows.map((ur) => one(ur.college)?.name).filter((n): n is string => !!n)),
+      );
+      // The specific colleges this user is a College Admin of (id + name) — for
+      // the Manage-member "College Admin access" editor.
+      const collegeAdmin = roleRows
+        .filter((ur) => one(ur.role)?.key === "college_admin" && ur.scope_college_id)
+        .map((ur) => ({ id: ur.scope_college_id as string, name: one(ur.college)?.name ?? "College" }));
       const officeRow = ((u.notification_email ?? []) as { email: string; kind: string; active: boolean }[])
         .find((n) => n.kind === "office" && n.active);
       // A mentor's own profile carries their name/phone; fall back to it when the
@@ -66,6 +78,8 @@ export default async function UsersPage() {
         officeEmail: officeRow?.email ?? null,
         roleKeys,
         roleLabel: roles.map((r) => r.name).filter(Boolean).join(", "),
+        collegeNames,
+        collegeAdmin,
         status: (u.status as "active" | "suspended") ?? "active",
       };
     })
@@ -73,12 +87,13 @@ export default async function UsersPage() {
 
   // Pending, non-student invites → "Pending" rows.
   const inviteRows: MemberRow[] = (invites ?? [])
-    .map((inv) => {
-      const role = one(inv.role as Role | Role[]);
-      return { role, inv };
-    })
+    .map((inv) => ({
+      role: one(inv.role as Role | Role[]),
+      college: one((inv as { college?: { name?: string } | { name?: string }[] | null }).college),
+      inv,
+    }))
     .filter(({ role }) => role?.key !== "student")
-    .map(({ role, inv }) => ({
+    .map(({ role, college, inv }) => ({
       kind: "invite" as const,
       id: inv.id as string,
       fullName: null,
@@ -87,6 +102,8 @@ export default async function UsersPage() {
       officeEmail: null,
       roleKeys: role?.key ? [role.key] : [],
       roleLabel: role?.name ?? "",
+      collegeNames: college?.name ? [college.name] : [],
+      collegeAdmin: [],
       status: "pending" as const,
     }));
 

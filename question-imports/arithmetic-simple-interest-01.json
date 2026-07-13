@@ -1,0 +1,5205 @@
+{
+  "subject": "Arithmetic",
+  "questions": [
+    {
+      "chapter": "Simple Interest",
+      "kind": "standard",
+      "difficulty": "easy",
+      "answer_type": "single",
+      "stem": "Find the simple interest on ₹7000 at 14% per annum for 6 years.",
+      "explanation": "SI = P×R×T/100 = 7000×14×6/100 = ₹5880.",
+      "options": [
+        {
+          "label": "₹6115",
+          "is_correct": false
+        },
+        {
+          "label": "₹6350",
+          "is_correct": false
+        },
+        {
+          "label": "₹5880",
+          "is_correct": true
+        },
+        {
+          "label": "₹5645",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Simple Interest",
+      "kind": "standard",
+      "difficulty": "easy",
+      "answer_type": "single",
+      "stem": "A sum of ₹4000 is invested at 13% per annum simple interest for 5 years. Find the total amount.",
+      "explanation": "SI = 4000×13×5/100 = ₹2600; amount = ₹4000 + ₹2600 = ₹6600.",
+      "options": [
+        {
+          "label": "₹6864",
+          "is_correct": false
+        },
+        {
+          "label": "₹6336",
+          "is_correct": false
+        },
+        {
+          "label": "₹7128",
+          "is_correct": false
+        },
+        {
+          "label": "₹6600",
+          "is_correct": true
+        }
+      ]
+    },
+    {
+      "chapter": "Simple Interest",
+      "kind": "standard",
+      "difficulty": "easy",
+      "answer_type": "single",
+      "stem": "A sum of ₹4000 is invested at 13% per annum simple interest for 6 years. Find the total amount.",
+      "explanation": "SI = 4000×13×6/100 = ₹3120; amount = ₹4000 + ₹3120 = ₹7120.",
+      "options": [
+        {
+          "label": "₹7405",
+          "is_correct": false
+        },
+        {
+          "label": "₹7120",
+          "is_correct": true
+        },
+        {
+          "label": "₹7690",
+          "is_correct": false
+        },
+        {
+          "label": "₹6835",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Simple Interest",
+      "kind": "standard",
+      "difficulty": "easy",
+      "answer_type": "single",
+      "stem": "A sum of ₹38000 is invested at 15% per annum simple interest for 1 years. Find the total amount.",
+      "explanation": "SI = 38000×15×1/100 = ₹5700; amount = ₹38000 + ₹5700 = ₹43700.",
+      "options": [
+        {
+          "label": "₹43700",
+          "is_correct": true
+        },
+        {
+          "label": "₹45448",
+          "is_correct": false
+        },
+        {
+          "label": "₹47196",
+          "is_correct": false
+        },
+        {
+          "label": "₹41952",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Simple Interest",
+      "kind": "standard",
+      "difficulty": "easy",
+      "answer_type": "single",
+      "stem": "A sum of ₹11000 is invested at 4% per annum simple interest for 4 years. Find the total amount.",
+      "explanation": "SI = 11000×4×4/100 = ₹1760; amount = ₹11000 + ₹1760 = ₹12760.",
+      "options": [
+        {
+          "label": "₹12760",
+          "is_correct": true
+        },
+        {
+          "label": "₹12250",
+          "is_correct": false
+        },
+        {
+          "label": "₹13780",
+          "is_correct": false
+        },
+        {
+          "label": "₹13270",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Simple Interest",
+      "kind": "standard",
+      "difficulty": "easy",
+      "answer_type": "single",
+      "stem": "Find the simple interest on ₹18000 at 2% per annum for 5 years.",
+      "explanation": "SI = P×R×T/100 = 18000×2×5/100 = ₹1800.",
+      "options": [
+        {
+          "label": "₹1872",
+          "is_correct": false
+        },
+        {
+          "label": "₹1728",
+          "is_correct": false
+        },
+        {
+          "label": "₹1800",
+          "is_correct": true
+        },
+        {
+          "label": "₹1944",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Simple Interest",
+      "kind": "standard",
+      "difficulty": "easy",
+      "answer_type": "single",
+      "stem": "A sum of ₹40000 is invested at 11% per annum simple interest for 4 years. Find the total amount.",
+      "explanation": "SI = 40000×11×4/100 = ₹17600; amount = ₹40000 + ₹17600 = ₹57600.",
+      "options": [
+        {
+          "label": "₹55296",
+          "is_correct": false
+        },
+        {
+          "label": "₹57600",
+          "is_correct": true
+        },
+        {
+          "label": "₹62208",
+          "is_correct": false
+        },
+        {
+          "label": "₹59904",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Simple Interest",
+      "kind": "standard",
+      "difficulty": "easy",
+      "answer_type": "single",
+      "stem": "A sum of ₹40000 is invested at 14% per annum simple interest for 2 years. Find the total amount.",
+      "explanation": "SI = 40000×14×2/100 = ₹11200; amount = ₹40000 + ₹11200 = ₹51200.",
+      "options": [
+        {
+          "label": "₹51200",
+          "is_correct": true
+        },
+        {
+          "label": "₹53248",
+          "is_correct": false
+        },
+        {
+          "label": "₹55296",
+          "is_correct": false
+        },
+        {
+          "label": "₹49152",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Simple Interest",
+      "kind": "standard",
+      "difficulty": "easy",
+      "answer_type": "single",
+      "stem": "A sum of ₹8000 is invested at 3% per annum simple interest for 1 years. Find the total amount.",
+      "explanation": "SI = 8000×3×1/100 = ₹240; amount = ₹8000 + ₹240 = ₹8240.",
+      "options": [
+        {
+          "label": "₹8900",
+          "is_correct": false
+        },
+        {
+          "label": "₹8570",
+          "is_correct": false
+        },
+        {
+          "label": "₹8240",
+          "is_correct": true
+        },
+        {
+          "label": "₹7910",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Simple Interest",
+      "kind": "standard",
+      "difficulty": "easy",
+      "answer_type": "single",
+      "stem": "Find the simple interest on ₹21000 at 2% per annum for 1 years.",
+      "explanation": "SI = P×R×T/100 = 21000×2×1/100 = ₹420.",
+      "options": [
+        {
+          "label": "₹437",
+          "is_correct": false
+        },
+        {
+          "label": "₹403",
+          "is_correct": false
+        },
+        {
+          "label": "₹454",
+          "is_correct": false
+        },
+        {
+          "label": "₹420",
+          "is_correct": true
+        }
+      ]
+    },
+    {
+      "chapter": "Simple Interest",
+      "kind": "standard",
+      "difficulty": "easy",
+      "answer_type": "single",
+      "stem": "A sum of ₹20000 is invested at 3% per annum simple interest for 6 years. Find the total amount.",
+      "explanation": "SI = 20000×3×6/100 = ₹3600; amount = ₹20000 + ₹3600 = ₹23600.",
+      "options": [
+        {
+          "label": "₹24544",
+          "is_correct": false
+        },
+        {
+          "label": "₹23600",
+          "is_correct": true
+        },
+        {
+          "label": "₹25488",
+          "is_correct": false
+        },
+        {
+          "label": "₹22656",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Simple Interest",
+      "kind": "standard",
+      "difficulty": "easy",
+      "answer_type": "single",
+      "stem": "A sum of ₹25000 is invested at 11% per annum simple interest for 2 years. Find the total amount.",
+      "explanation": "SI = 25000×11×2/100 = ₹5500; amount = ₹25000 + ₹5500 = ₹30500.",
+      "options": [
+        {
+          "label": "₹32940",
+          "is_correct": false
+        },
+        {
+          "label": "₹30500",
+          "is_correct": true
+        },
+        {
+          "label": "₹29280",
+          "is_correct": false
+        },
+        {
+          "label": "₹31720",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Simple Interest",
+      "kind": "standard",
+      "difficulty": "easy",
+      "answer_type": "single",
+      "stem": "Find the simple interest on ₹7000 at 3% per annum for 4 years.",
+      "explanation": "SI = P×R×T/100 = 7000×3×4/100 = ₹840.",
+      "options": [
+        {
+          "label": "₹874",
+          "is_correct": false
+        },
+        {
+          "label": "₹908",
+          "is_correct": false
+        },
+        {
+          "label": "₹840",
+          "is_correct": true
+        },
+        {
+          "label": "₹806",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Simple Interest",
+      "kind": "standard",
+      "difficulty": "easy",
+      "answer_type": "single",
+      "stem": "Find the simple interest on ₹15000 at 11% per annum for 3 years.",
+      "explanation": "SI = P×R×T/100 = 15000×11×3/100 = ₹4950.",
+      "options": [
+        {
+          "label": "₹5346",
+          "is_correct": false
+        },
+        {
+          "label": "₹5148",
+          "is_correct": false
+        },
+        {
+          "label": "₹4752",
+          "is_correct": false
+        },
+        {
+          "label": "₹4950",
+          "is_correct": true
+        }
+      ]
+    },
+    {
+      "chapter": "Simple Interest",
+      "kind": "standard",
+      "difficulty": "easy",
+      "answer_type": "single",
+      "stem": "Find the simple interest on ₹34000 at 3% per annum for 3 years.",
+      "explanation": "SI = P×R×T/100 = 34000×3×3/100 = ₹3060.",
+      "options": [
+        {
+          "label": "₹3182",
+          "is_correct": false
+        },
+        {
+          "label": "₹2938",
+          "is_correct": false
+        },
+        {
+          "label": "₹3304",
+          "is_correct": false
+        },
+        {
+          "label": "₹3060",
+          "is_correct": true
+        }
+      ]
+    },
+    {
+      "chapter": "Simple Interest",
+      "kind": "standard",
+      "difficulty": "easy",
+      "answer_type": "single",
+      "stem": "Find the simple interest on ₹26000 at 12% per annum for 5 years.",
+      "explanation": "SI = P×R×T/100 = 26000×12×5/100 = ₹15600.",
+      "options": [
+        {
+          "label": "₹16848",
+          "is_correct": false
+        },
+        {
+          "label": "₹15600",
+          "is_correct": true
+        },
+        {
+          "label": "₹16224",
+          "is_correct": false
+        },
+        {
+          "label": "₹14976",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Simple Interest",
+      "kind": "standard",
+      "difficulty": "easy",
+      "answer_type": "single",
+      "stem": "A sum of ₹37000 is invested at 3% per annum simple interest for 3 years. Find the total amount.",
+      "explanation": "SI = 37000×3×3/100 = ₹3330; amount = ₹37000 + ₹3330 = ₹40330.",
+      "options": [
+        {
+          "label": "₹41943",
+          "is_correct": false
+        },
+        {
+          "label": "₹43556",
+          "is_correct": false
+        },
+        {
+          "label": "₹38717",
+          "is_correct": false
+        },
+        {
+          "label": "₹40330",
+          "is_correct": true
+        }
+      ]
+    },
+    {
+      "chapter": "Simple Interest",
+      "kind": "standard",
+      "difficulty": "easy",
+      "answer_type": "single",
+      "stem": "A sum of ₹25000 is invested at 14% per annum simple interest for 5 years. Find the total amount.",
+      "explanation": "SI = 25000×14×5/100 = ₹17500; amount = ₹25000 + ₹17500 = ₹42500.",
+      "options": [
+        {
+          "label": "₹45900",
+          "is_correct": false
+        },
+        {
+          "label": "₹44200",
+          "is_correct": false
+        },
+        {
+          "label": "₹40800",
+          "is_correct": false
+        },
+        {
+          "label": "₹42500",
+          "is_correct": true
+        }
+      ]
+    },
+    {
+      "chapter": "Simple Interest",
+      "kind": "standard",
+      "difficulty": "easy",
+      "answer_type": "single",
+      "stem": "Find the simple interest on ₹27000 at 7% per annum for 5 years.",
+      "explanation": "SI = P×R×T/100 = 27000×7×5/100 = ₹9450.",
+      "options": [
+        {
+          "label": "₹9450",
+          "is_correct": true
+        },
+        {
+          "label": "₹9828",
+          "is_correct": false
+        },
+        {
+          "label": "₹9072",
+          "is_correct": false
+        },
+        {
+          "label": "₹10206",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Simple Interest",
+      "kind": "standard",
+      "difficulty": "easy",
+      "answer_type": "single",
+      "stem": "Find the simple interest on ₹17000 at 12% per annum for 2 years.",
+      "explanation": "SI = P×R×T/100 = 17000×12×2/100 = ₹4080.",
+      "options": [
+        {
+          "label": "₹4080",
+          "is_correct": true
+        },
+        {
+          "label": "₹3917",
+          "is_correct": false
+        },
+        {
+          "label": "₹4406",
+          "is_correct": false
+        },
+        {
+          "label": "₹4243",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Simple Interest",
+      "kind": "standard",
+      "difficulty": "easy",
+      "answer_type": "single",
+      "stem": "A sum of ₹24000 is invested at 6% per annum simple interest for 1 years. Find the total amount.",
+      "explanation": "SI = 24000×6×1/100 = ₹1440; amount = ₹24000 + ₹1440 = ₹25440.",
+      "options": [
+        {
+          "label": "₹24422",
+          "is_correct": false
+        },
+        {
+          "label": "₹26458",
+          "is_correct": false
+        },
+        {
+          "label": "₹25440",
+          "is_correct": true
+        },
+        {
+          "label": "₹27476",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Simple Interest",
+      "kind": "standard",
+      "difficulty": "easy",
+      "answer_type": "single",
+      "stem": "Find the simple interest on ₹36000 at 6% per annum for 3 years.",
+      "explanation": "SI = P×R×T/100 = 36000×6×3/100 = ₹6480.",
+      "options": [
+        {
+          "label": "₹6480",
+          "is_correct": true
+        },
+        {
+          "label": "₹6739",
+          "is_correct": false
+        },
+        {
+          "label": "₹6221",
+          "is_correct": false
+        },
+        {
+          "label": "₹6998",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Simple Interest",
+      "kind": "standard",
+      "difficulty": "easy",
+      "answer_type": "single",
+      "stem": "Find the simple interest on ₹29000 at 12% per annum for 6 years.",
+      "explanation": "SI = P×R×T/100 = 29000×12×6/100 = ₹20880.",
+      "options": [
+        {
+          "label": "₹21715",
+          "is_correct": false
+        },
+        {
+          "label": "₹20045",
+          "is_correct": false
+        },
+        {
+          "label": "₹20880",
+          "is_correct": true
+        },
+        {
+          "label": "₹22550",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Simple Interest",
+      "kind": "standard",
+      "difficulty": "easy",
+      "answer_type": "single",
+      "stem": "A sum of ₹13000 is invested at 11% per annum simple interest for 2 years. Find the total amount.",
+      "explanation": "SI = 13000×11×2/100 = ₹2860; amount = ₹13000 + ₹2860 = ₹15860.",
+      "options": [
+        {
+          "label": "₹15226",
+          "is_correct": false
+        },
+        {
+          "label": "₹16494",
+          "is_correct": false
+        },
+        {
+          "label": "₹17128",
+          "is_correct": false
+        },
+        {
+          "label": "₹15860",
+          "is_correct": true
+        }
+      ]
+    },
+    {
+      "chapter": "Simple Interest",
+      "kind": "standard",
+      "difficulty": "easy",
+      "answer_type": "single",
+      "stem": "Find the simple interest on ₹7000 at 14% per annum for 4 years.",
+      "explanation": "SI = P×R×T/100 = 7000×14×4/100 = ₹3920.",
+      "options": [
+        {
+          "label": "₹4077",
+          "is_correct": false
+        },
+        {
+          "label": "₹3920",
+          "is_correct": true
+        },
+        {
+          "label": "₹4234",
+          "is_correct": false
+        },
+        {
+          "label": "₹3763",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Simple Interest",
+      "kind": "standard",
+      "difficulty": "easy",
+      "answer_type": "single",
+      "stem": "A sum of ₹24000 is invested at 6% per annum simple interest for 4 years. Find the total amount.",
+      "explanation": "SI = 24000×6×4/100 = ₹5760; amount = ₹24000 + ₹5760 = ₹29760.",
+      "options": [
+        {
+          "label": "₹30950",
+          "is_correct": false
+        },
+        {
+          "label": "₹29760",
+          "is_correct": true
+        },
+        {
+          "label": "₹32140",
+          "is_correct": false
+        },
+        {
+          "label": "₹28570",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Simple Interest",
+      "kind": "standard",
+      "difficulty": "easy",
+      "answer_type": "single",
+      "stem": "Find the simple interest on ₹5000 at 4% per annum for 4 years.",
+      "explanation": "SI = P×R×T/100 = 5000×4×4/100 = ₹800.",
+      "options": [
+        {
+          "label": "₹832",
+          "is_correct": false
+        },
+        {
+          "label": "₹800",
+          "is_correct": true
+        },
+        {
+          "label": "₹768",
+          "is_correct": false
+        },
+        {
+          "label": "₹864",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Simple Interest",
+      "kind": "standard",
+      "difficulty": "easy",
+      "answer_type": "single",
+      "stem": "Find the simple interest on ₹2000 at 4% per annum for 1 years.",
+      "explanation": "SI = P×R×T/100 = 2000×4×1/100 = ₹80.",
+      "options": [
+        {
+          "label": "₹84",
+          "is_correct": false
+        },
+        {
+          "label": "₹82",
+          "is_correct": false
+        },
+        {
+          "label": "₹80",
+          "is_correct": true
+        },
+        {
+          "label": "₹78",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Simple Interest",
+      "kind": "standard",
+      "difficulty": "easy",
+      "answer_type": "single",
+      "stem": "A sum of ₹2000 is invested at 5% per annum simple interest for 3 years. Find the total amount.",
+      "explanation": "SI = 2000×5×3/100 = ₹300; amount = ₹2000 + ₹300 = ₹2300.",
+      "options": [
+        {
+          "label": "₹2208",
+          "is_correct": false
+        },
+        {
+          "label": "₹2300",
+          "is_correct": true
+        },
+        {
+          "label": "₹2392",
+          "is_correct": false
+        },
+        {
+          "label": "₹2484",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Simple Interest",
+      "kind": "standard",
+      "difficulty": "easy",
+      "answer_type": "single",
+      "stem": "Find the simple interest on ₹21000 at 13% per annum for 1 years.",
+      "explanation": "SI = P×R×T/100 = 21000×13×1/100 = ₹2730.",
+      "options": [
+        {
+          "label": "₹2730",
+          "is_correct": true
+        },
+        {
+          "label": "₹2839",
+          "is_correct": false
+        },
+        {
+          "label": "₹2621",
+          "is_correct": false
+        },
+        {
+          "label": "₹2948",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Simple Interest",
+      "kind": "standard",
+      "difficulty": "easy",
+      "answer_type": "single",
+      "stem": "A sum of ₹33000 is invested at 13% per annum simple interest for 2 years. Find the total amount.",
+      "explanation": "SI = 33000×13×2/100 = ₹8580; amount = ₹33000 + ₹8580 = ₹41580.",
+      "options": [
+        {
+          "label": "₹43243",
+          "is_correct": false
+        },
+        {
+          "label": "₹41580",
+          "is_correct": true
+        },
+        {
+          "label": "₹44906",
+          "is_correct": false
+        },
+        {
+          "label": "₹39917",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Simple Interest",
+      "kind": "standard",
+      "difficulty": "easy",
+      "answer_type": "single",
+      "stem": "Find the simple interest on ₹5000 at 2% per annum for 2 years.",
+      "explanation": "SI = P×R×T/100 = 5000×2×2/100 = ₹200.",
+      "options": [
+        {
+          "label": "₹192",
+          "is_correct": false
+        },
+        {
+          "label": "₹200",
+          "is_correct": true
+        },
+        {
+          "label": "₹208",
+          "is_correct": false
+        },
+        {
+          "label": "₹216",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Simple Interest",
+      "kind": "standard",
+      "difficulty": "easy",
+      "answer_type": "single",
+      "stem": "A sum of ₹15000 is invested at 10% per annum simple interest for 5 years. Find the total amount.",
+      "explanation": "SI = 15000×10×5/100 = ₹7500; amount = ₹15000 + ₹7500 = ₹22500.",
+      "options": [
+        {
+          "label": "₹23400",
+          "is_correct": false
+        },
+        {
+          "label": "₹21600",
+          "is_correct": false
+        },
+        {
+          "label": "₹24300",
+          "is_correct": false
+        },
+        {
+          "label": "₹22500",
+          "is_correct": true
+        }
+      ]
+    },
+    {
+      "chapter": "Simple Interest",
+      "kind": "standard",
+      "difficulty": "easy",
+      "answer_type": "single",
+      "stem": "Find the simple interest on ₹24000 at 7% per annum for 3 years.",
+      "explanation": "SI = P×R×T/100 = 24000×7×3/100 = ₹5040.",
+      "options": [
+        {
+          "label": "₹4838",
+          "is_correct": false
+        },
+        {
+          "label": "₹5242",
+          "is_correct": false
+        },
+        {
+          "label": "₹5040",
+          "is_correct": true
+        },
+        {
+          "label": "₹5444",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Simple Interest",
+      "kind": "standard",
+      "difficulty": "easy",
+      "answer_type": "single",
+      "stem": "A sum of ₹27000 is invested at 3% per annum simple interest for 4 years. Find the total amount.",
+      "explanation": "SI = 27000×3×4/100 = ₹3240; amount = ₹27000 + ₹3240 = ₹30240.",
+      "options": [
+        {
+          "label": "₹32660",
+          "is_correct": false
+        },
+        {
+          "label": "₹29030",
+          "is_correct": false
+        },
+        {
+          "label": "₹31450",
+          "is_correct": false
+        },
+        {
+          "label": "₹30240",
+          "is_correct": true
+        }
+      ]
+    },
+    {
+      "chapter": "Simple Interest",
+      "kind": "standard",
+      "difficulty": "easy",
+      "answer_type": "single",
+      "stem": "A sum of ₹3000 is invested at 14% per annum simple interest for 5 years. Find the total amount.",
+      "explanation": "SI = 3000×14×5/100 = ₹2100; amount = ₹3000 + ₹2100 = ₹5100.",
+      "options": [
+        {
+          "label": "₹5508",
+          "is_correct": false
+        },
+        {
+          "label": "₹5100",
+          "is_correct": true
+        },
+        {
+          "label": "₹4896",
+          "is_correct": false
+        },
+        {
+          "label": "₹5304",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Simple Interest",
+      "kind": "standard",
+      "difficulty": "easy",
+      "answer_type": "single",
+      "stem": "A sum of ₹22000 is invested at 13% per annum simple interest for 3 years. Find the total amount.",
+      "explanation": "SI = 22000×13×3/100 = ₹8580; amount = ₹22000 + ₹8580 = ₹30580.",
+      "options": [
+        {
+          "label": "₹29357",
+          "is_correct": false
+        },
+        {
+          "label": "₹30580",
+          "is_correct": true
+        },
+        {
+          "label": "₹33026",
+          "is_correct": false
+        },
+        {
+          "label": "₹31803",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Simple Interest",
+      "kind": "standard",
+      "difficulty": "easy",
+      "answer_type": "single",
+      "stem": "Find the simple interest on ₹19000 at 11% per annum for 3 years.",
+      "explanation": "SI = P×R×T/100 = 19000×11×3/100 = ₹6270.",
+      "options": [
+        {
+          "label": "₹6019",
+          "is_correct": false
+        },
+        {
+          "label": "₹6772",
+          "is_correct": false
+        },
+        {
+          "label": "₹6521",
+          "is_correct": false
+        },
+        {
+          "label": "₹6270",
+          "is_correct": true
+        }
+      ]
+    },
+    {
+      "chapter": "Simple Interest",
+      "kind": "standard",
+      "difficulty": "easy",
+      "answer_type": "single",
+      "stem": "Find the simple interest on ₹28000 at 11% per annum for 5 years.",
+      "explanation": "SI = P×R×T/100 = 28000×11×5/100 = ₹15400.",
+      "options": [
+        {
+          "label": "₹15400",
+          "is_correct": true
+        },
+        {
+          "label": "₹16632",
+          "is_correct": false
+        },
+        {
+          "label": "₹14784",
+          "is_correct": false
+        },
+        {
+          "label": "₹16016",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Simple Interest",
+      "kind": "standard",
+      "difficulty": "easy",
+      "answer_type": "single",
+      "stem": "A sum of ₹14000 is invested at 12% per annum simple interest for 3 years. Find the total amount.",
+      "explanation": "SI = 14000×12×3/100 = ₹5040; amount = ₹14000 + ₹5040 = ₹19040.",
+      "options": [
+        {
+          "label": "₹19802",
+          "is_correct": false
+        },
+        {
+          "label": "₹19040",
+          "is_correct": true
+        },
+        {
+          "label": "₹20564",
+          "is_correct": false
+        },
+        {
+          "label": "₹18278",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Simple Interest",
+      "kind": "standard",
+      "difficulty": "easy",
+      "answer_type": "single",
+      "stem": "A sum of ₹24000 is invested at 9% per annum simple interest for 4 years. Find the total amount.",
+      "explanation": "SI = 24000×9×4/100 = ₹8640; amount = ₹24000 + ₹8640 = ₹32640.",
+      "options": [
+        {
+          "label": "₹33946",
+          "is_correct": false
+        },
+        {
+          "label": "₹31334",
+          "is_correct": false
+        },
+        {
+          "label": "₹32640",
+          "is_correct": true
+        },
+        {
+          "label": "₹35252",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Simple Interest",
+      "kind": "standard",
+      "difficulty": "easy",
+      "answer_type": "single",
+      "stem": "Find the simple interest on ₹9000 at 8% per annum for 5 years.",
+      "explanation": "SI = P×R×T/100 = 9000×8×5/100 = ₹3600.",
+      "options": [
+        {
+          "label": "₹3888",
+          "is_correct": false
+        },
+        {
+          "label": "₹3600",
+          "is_correct": true
+        },
+        {
+          "label": "₹3744",
+          "is_correct": false
+        },
+        {
+          "label": "₹3456",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Simple Interest",
+      "kind": "standard",
+      "difficulty": "easy",
+      "answer_type": "single",
+      "stem": "A sum of ₹6000 is invested at 8% per annum simple interest for 6 years. Find the total amount.",
+      "explanation": "SI = 6000×8×6/100 = ₹2880; amount = ₹6000 + ₹2880 = ₹8880.",
+      "options": [
+        {
+          "label": "₹8525",
+          "is_correct": false
+        },
+        {
+          "label": "₹9235",
+          "is_correct": false
+        },
+        {
+          "label": "₹9590",
+          "is_correct": false
+        },
+        {
+          "label": "₹8880",
+          "is_correct": true
+        }
+      ]
+    },
+    {
+      "chapter": "Simple Interest",
+      "kind": "standard",
+      "difficulty": "easy",
+      "answer_type": "single",
+      "stem": "A sum of ₹32000 is invested at 12% per annum simple interest for 6 years. Find the total amount.",
+      "explanation": "SI = 32000×12×6/100 = ₹23040; amount = ₹32000 + ₹23040 = ₹55040.",
+      "options": [
+        {
+          "label": "₹59444",
+          "is_correct": false
+        },
+        {
+          "label": "₹57242",
+          "is_correct": false
+        },
+        {
+          "label": "₹55040",
+          "is_correct": true
+        },
+        {
+          "label": "₹52838",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Simple Interest",
+      "kind": "standard",
+      "difficulty": "easy",
+      "answer_type": "single",
+      "stem": "A sum of ₹36000 is invested at 11% per annum simple interest for 6 years. Find the total amount.",
+      "explanation": "SI = 36000×11×6/100 = ₹23760; amount = ₹36000 + ₹23760 = ₹59760.",
+      "options": [
+        {
+          "label": "₹59760",
+          "is_correct": true
+        },
+        {
+          "label": "₹57370",
+          "is_correct": false
+        },
+        {
+          "label": "₹62150",
+          "is_correct": false
+        },
+        {
+          "label": "₹64540",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Simple Interest",
+      "kind": "standard",
+      "difficulty": "easy",
+      "answer_type": "single",
+      "stem": "A sum of ₹31000 is invested at 10% per annum simple interest for 4 years. Find the total amount.",
+      "explanation": "SI = 31000×10×4/100 = ₹12400; amount = ₹31000 + ₹12400 = ₹43400.",
+      "options": [
+        {
+          "label": "₹43400",
+          "is_correct": true
+        },
+        {
+          "label": "₹45136",
+          "is_correct": false
+        },
+        {
+          "label": "₹41664",
+          "is_correct": false
+        },
+        {
+          "label": "₹46872",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Simple Interest",
+      "kind": "standard",
+      "difficulty": "easy",
+      "answer_type": "single",
+      "stem": "Find the simple interest on ₹33000 at 3% per annum for 3 years.",
+      "explanation": "SI = P×R×T/100 = 33000×3×3/100 = ₹2970.",
+      "options": [
+        {
+          "label": "₹3208",
+          "is_correct": false
+        },
+        {
+          "label": "₹2851",
+          "is_correct": false
+        },
+        {
+          "label": "₹2970",
+          "is_correct": true
+        },
+        {
+          "label": "₹3089",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Simple Interest",
+      "kind": "standard",
+      "difficulty": "easy",
+      "answer_type": "single",
+      "stem": "Find the simple interest on ₹26000 at 13% per annum for 3 years.",
+      "explanation": "SI = P×R×T/100 = 26000×13×3/100 = ₹10140.",
+      "options": [
+        {
+          "label": "₹10546",
+          "is_correct": false
+        },
+        {
+          "label": "₹10140",
+          "is_correct": true
+        },
+        {
+          "label": "₹9734",
+          "is_correct": false
+        },
+        {
+          "label": "₹10952",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Simple Interest",
+      "kind": "standard",
+      "difficulty": "easy",
+      "answer_type": "single",
+      "stem": "A sum of ₹17000 is invested at 6% per annum simple interest for 2 years. Find the total amount.",
+      "explanation": "SI = 17000×6×2/100 = ₹2040; amount = ₹17000 + ₹2040 = ₹19040.",
+      "options": [
+        {
+          "label": "₹19040",
+          "is_correct": true
+        },
+        {
+          "label": "₹19802",
+          "is_correct": false
+        },
+        {
+          "label": "₹18278",
+          "is_correct": false
+        },
+        {
+          "label": "₹20564",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Simple Interest",
+      "kind": "standard",
+      "difficulty": "easy",
+      "answer_type": "single",
+      "stem": "Find the simple interest on ₹22000 at 5% per annum for 5 years.",
+      "explanation": "SI = P×R×T/100 = 22000×5×5/100 = ₹5500.",
+      "options": [
+        {
+          "label": "₹5940",
+          "is_correct": false
+        },
+        {
+          "label": "₹5280",
+          "is_correct": false
+        },
+        {
+          "label": "₹5500",
+          "is_correct": true
+        },
+        {
+          "label": "₹5720",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Simple Interest",
+      "kind": "standard",
+      "difficulty": "medium",
+      "answer_type": "single",
+      "stem": "₹34000 at 8% per annum simple interest earns ₹2720 as interest. Find the time in years.",
+      "explanation": "Time = 100×SI/(P×R) = 100×2720/(34000×8) = 1 years.",
+      "options": [
+        {
+          "label": "4 years",
+          "is_correct": false
+        },
+        {
+          "label": "3 years",
+          "is_correct": false
+        },
+        {
+          "label": "2 years",
+          "is_correct": false
+        },
+        {
+          "label": "1 years",
+          "is_correct": true
+        }
+      ]
+    },
+    {
+      "chapter": "Simple Interest",
+      "kind": "standard",
+      "difficulty": "medium",
+      "answer_type": "single",
+      "stem": "₹16000 at 8% per annum simple interest earns ₹5120 as interest. Find the time in years.",
+      "explanation": "Time = 100×SI/(P×R) = 100×5120/(16000×8) = 4 years.",
+      "options": [
+        {
+          "label": "6 years",
+          "is_correct": false
+        },
+        {
+          "label": "5 years",
+          "is_correct": false
+        },
+        {
+          "label": "4 years",
+          "is_correct": true
+        },
+        {
+          "label": "3 years",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Simple Interest",
+      "kind": "standard",
+      "difficulty": "medium",
+      "answer_type": "single",
+      "stem": "₹5000 at 8% per annum simple interest earns ₹3200 as interest. Find the time in years.",
+      "explanation": "Time = 100×SI/(P×R) = 100×3200/(5000×8) = 8 years.",
+      "options": [
+        {
+          "label": "8 years",
+          "is_correct": true
+        },
+        {
+          "label": "9 years",
+          "is_correct": false
+        },
+        {
+          "label": "7 years",
+          "is_correct": false
+        },
+        {
+          "label": "10 years",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Simple Interest",
+      "kind": "standard",
+      "difficulty": "medium",
+      "answer_type": "single",
+      "stem": "₹8000 lent for 5 years at simple interest earns ₹1600. Find the rate percent per annum.",
+      "explanation": "Rate = 100×SI/(P×T) = 100×1600/(8000×5) = 4%.",
+      "options": [
+        {
+          "label": "6%",
+          "is_correct": false
+        },
+        {
+          "label": "4%",
+          "is_correct": true
+        },
+        {
+          "label": "5%",
+          "is_correct": false
+        },
+        {
+          "label": "3%",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Simple Interest",
+      "kind": "standard",
+      "difficulty": "medium",
+      "answer_type": "single",
+      "stem": "₹27000 at 10% per annum simple interest earns ₹21600 as interest. Find the time in years.",
+      "explanation": "Time = 100×SI/(P×R) = 100×21600/(27000×10) = 8 years.",
+      "options": [
+        {
+          "label": "9 years",
+          "is_correct": false
+        },
+        {
+          "label": "8 years",
+          "is_correct": true
+        },
+        {
+          "label": "7 years",
+          "is_correct": false
+        },
+        {
+          "label": "10 years",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Simple Interest",
+      "kind": "standard",
+      "difficulty": "medium",
+      "answer_type": "single",
+      "stem": "₹10000 at 8% per annum simple interest earns ₹800 as interest. Find the time in years.",
+      "explanation": "Time = 100×SI/(P×R) = 100×800/(10000×8) = 1 years.",
+      "options": [
+        {
+          "label": "1 years",
+          "is_correct": true
+        },
+        {
+          "label": "4 years",
+          "is_correct": false
+        },
+        {
+          "label": "3 years",
+          "is_correct": false
+        },
+        {
+          "label": "2 years",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Simple Interest",
+      "kind": "standard",
+      "difficulty": "medium",
+      "answer_type": "single",
+      "stem": "₹34000 at 11% per annum simple interest earns ₹7480 as interest. Find the time in years.",
+      "explanation": "Time = 100×SI/(P×R) = 100×7480/(34000×11) = 2 years.",
+      "options": [
+        {
+          "label": "3 years",
+          "is_correct": false
+        },
+        {
+          "label": "2 years",
+          "is_correct": true
+        },
+        {
+          "label": "4 years",
+          "is_correct": false
+        },
+        {
+          "label": "1 years",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Simple Interest",
+      "kind": "standard",
+      "difficulty": "medium",
+      "answer_type": "single",
+      "stem": "₹2000 at 12% per annum simple interest earns ₹1200 as interest. Find the time in years.",
+      "explanation": "Time = 100×SI/(P×R) = 100×1200/(2000×12) = 5 years.",
+      "options": [
+        {
+          "label": "5 years",
+          "is_correct": true
+        },
+        {
+          "label": "7 years",
+          "is_correct": false
+        },
+        {
+          "label": "6 years",
+          "is_correct": false
+        },
+        {
+          "label": "4 years",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Simple Interest",
+      "kind": "standard",
+      "difficulty": "medium",
+      "answer_type": "single",
+      "stem": "A sum lent at 9% per annum simple interest earns ₹5940 as interest in 2 years. Find the sum.",
+      "explanation": "Sum = 100×SI/(R×T) = 100×5940/(9×2) = ₹33000.",
+      "options": [
+        {
+          "label": "₹31680",
+          "is_correct": false
+        },
+        {
+          "label": "₹35640",
+          "is_correct": false
+        },
+        {
+          "label": "₹33000",
+          "is_correct": true
+        },
+        {
+          "label": "₹34320",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Simple Interest",
+      "kind": "standard",
+      "difficulty": "medium",
+      "answer_type": "single",
+      "stem": "₹7000 lent for 2 years at simple interest earns ₹700. Find the rate percent per annum.",
+      "explanation": "Rate = 100×SI/(P×T) = 100×700/(7000×2) = 5%.",
+      "options": [
+        {
+          "label": "7%",
+          "is_correct": false
+        },
+        {
+          "label": "6%",
+          "is_correct": false
+        },
+        {
+          "label": "5%",
+          "is_correct": true
+        },
+        {
+          "label": "4%",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Simple Interest",
+      "kind": "standard",
+      "difficulty": "medium",
+      "answer_type": "single",
+      "stem": "₹7000 at 8% per annum simple interest earns ₹1120 as interest. Find the time in years.",
+      "explanation": "Time = 100×SI/(P×R) = 100×1120/(7000×8) = 2 years.",
+      "options": [
+        {
+          "label": "2 years",
+          "is_correct": true
+        },
+        {
+          "label": "4 years",
+          "is_correct": false
+        },
+        {
+          "label": "1 years",
+          "is_correct": false
+        },
+        {
+          "label": "3 years",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Simple Interest",
+      "kind": "standard",
+      "difficulty": "medium",
+      "answer_type": "single",
+      "stem": "₹33000 lent for 3 years at simple interest earns ₹1980. Find the rate percent per annum.",
+      "explanation": "Rate = 100×SI/(P×T) = 100×1980/(33000×3) = 2%.",
+      "options": [
+        {
+          "label": "3%",
+          "is_correct": false
+        },
+        {
+          "label": "1%",
+          "is_correct": false
+        },
+        {
+          "label": "4%",
+          "is_correct": false
+        },
+        {
+          "label": "2%",
+          "is_correct": true
+        }
+      ]
+    },
+    {
+      "chapter": "Simple Interest",
+      "kind": "standard",
+      "difficulty": "medium",
+      "answer_type": "single",
+      "stem": "₹8000 at 3% per annum simple interest earns ₹1680 as interest. Find the time in years.",
+      "explanation": "Time = 100×SI/(P×R) = 100×1680/(8000×3) = 7 years.",
+      "options": [
+        {
+          "label": "8 years",
+          "is_correct": false
+        },
+        {
+          "label": "9 years",
+          "is_correct": false
+        },
+        {
+          "label": "7 years",
+          "is_correct": true
+        },
+        {
+          "label": "6 years",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Simple Interest",
+      "kind": "standard",
+      "difficulty": "medium",
+      "answer_type": "single",
+      "stem": "₹13000 lent for 5 years at simple interest earns ₹4550. Find the rate percent per annum.",
+      "explanation": "Rate = 100×SI/(P×T) = 100×4550/(13000×5) = 7%.",
+      "options": [
+        {
+          "label": "9%",
+          "is_correct": false
+        },
+        {
+          "label": "7%",
+          "is_correct": true
+        },
+        {
+          "label": "8%",
+          "is_correct": false
+        },
+        {
+          "label": "6%",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Simple Interest",
+      "kind": "standard",
+      "difficulty": "medium",
+      "answer_type": "single",
+      "stem": "₹23000 at 9% per annum simple interest earns ₹14490 as interest. Find the time in years.",
+      "explanation": "Time = 100×SI/(P×R) = 100×14490/(23000×9) = 7 years.",
+      "options": [
+        {
+          "label": "8 years",
+          "is_correct": false
+        },
+        {
+          "label": "9 years",
+          "is_correct": false
+        },
+        {
+          "label": "7 years",
+          "is_correct": true
+        },
+        {
+          "label": "6 years",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Simple Interest",
+      "kind": "standard",
+      "difficulty": "medium",
+      "answer_type": "single",
+      "stem": "₹26000 lent for 6 years at simple interest earns ₹18720. Find the rate percent per annum.",
+      "explanation": "Rate = 100×SI/(P×T) = 100×18720/(26000×6) = 12%.",
+      "options": [
+        {
+          "label": "12%",
+          "is_correct": true
+        },
+        {
+          "label": "14%",
+          "is_correct": false
+        },
+        {
+          "label": "11%",
+          "is_correct": false
+        },
+        {
+          "label": "13%",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Simple Interest",
+      "kind": "standard",
+      "difficulty": "medium",
+      "answer_type": "single",
+      "stem": "₹23000 lent for 1 years at simple interest earns ₹1150. Find the rate percent per annum.",
+      "explanation": "Rate = 100×SI/(P×T) = 100×1150/(23000×1) = 5%.",
+      "options": [
+        {
+          "label": "7%",
+          "is_correct": false
+        },
+        {
+          "label": "5%",
+          "is_correct": true
+        },
+        {
+          "label": "4%",
+          "is_correct": false
+        },
+        {
+          "label": "6%",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Simple Interest",
+      "kind": "standard",
+      "difficulty": "medium",
+      "answer_type": "single",
+      "stem": "₹21000 lent for 2 years at simple interest earns ₹1680. Find the rate percent per annum.",
+      "explanation": "Rate = 100×SI/(P×T) = 100×1680/(21000×2) = 4%.",
+      "options": [
+        {
+          "label": "5%",
+          "is_correct": false
+        },
+        {
+          "label": "3%",
+          "is_correct": false
+        },
+        {
+          "label": "4%",
+          "is_correct": true
+        },
+        {
+          "label": "6%",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Simple Interest",
+      "kind": "standard",
+      "difficulty": "medium",
+      "answer_type": "single",
+      "stem": "₹35000 lent for 5 years at simple interest earns ₹3500. Find the rate percent per annum.",
+      "explanation": "Rate = 100×SI/(P×T) = 100×3500/(35000×5) = 2%.",
+      "options": [
+        {
+          "label": "2%",
+          "is_correct": true
+        },
+        {
+          "label": "4%",
+          "is_correct": false
+        },
+        {
+          "label": "3%",
+          "is_correct": false
+        },
+        {
+          "label": "1%",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Simple Interest",
+      "kind": "standard",
+      "difficulty": "medium",
+      "answer_type": "single",
+      "stem": "₹15000 at 8% per annum simple interest earns ₹4800 as interest. Find the time in years.",
+      "explanation": "Time = 100×SI/(P×R) = 100×4800/(15000×8) = 4 years.",
+      "options": [
+        {
+          "label": "3 years",
+          "is_correct": false
+        },
+        {
+          "label": "5 years",
+          "is_correct": false
+        },
+        {
+          "label": "4 years",
+          "is_correct": true
+        },
+        {
+          "label": "6 years",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Simple Interest",
+      "kind": "standard",
+      "difficulty": "medium",
+      "answer_type": "single",
+      "stem": "₹24000 lent for 5 years at simple interest earns ₹18000. Find the rate percent per annum.",
+      "explanation": "Rate = 100×SI/(P×T) = 100×18000/(24000×5) = 15%.",
+      "options": [
+        {
+          "label": "17%",
+          "is_correct": false
+        },
+        {
+          "label": "16%",
+          "is_correct": false
+        },
+        {
+          "label": "15%",
+          "is_correct": true
+        },
+        {
+          "label": "14%",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Simple Interest",
+      "kind": "standard",
+      "difficulty": "medium",
+      "answer_type": "single",
+      "stem": "₹32000 lent for 2 years at simple interest earns ₹8320. Find the rate percent per annum.",
+      "explanation": "Rate = 100×SI/(P×T) = 100×8320/(32000×2) = 13%.",
+      "options": [
+        {
+          "label": "15%",
+          "is_correct": false
+        },
+        {
+          "label": "13%",
+          "is_correct": true
+        },
+        {
+          "label": "12%",
+          "is_correct": false
+        },
+        {
+          "label": "14%",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Simple Interest",
+      "kind": "standard",
+      "difficulty": "medium",
+      "answer_type": "single",
+      "stem": "₹7000 lent for 3 years at simple interest earns ₹3150. Find the rate percent per annum.",
+      "explanation": "Rate = 100×SI/(P×T) = 100×3150/(7000×3) = 15%.",
+      "options": [
+        {
+          "label": "14%",
+          "is_correct": false
+        },
+        {
+          "label": "17%",
+          "is_correct": false
+        },
+        {
+          "label": "15%",
+          "is_correct": true
+        },
+        {
+          "label": "16%",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Simple Interest",
+      "kind": "standard",
+      "difficulty": "medium",
+      "answer_type": "single",
+      "stem": "₹22000 lent for 2 years at simple interest earns ₹3960. Find the rate percent per annum.",
+      "explanation": "Rate = 100×SI/(P×T) = 100×3960/(22000×2) = 9%.",
+      "options": [
+        {
+          "label": "10%",
+          "is_correct": false
+        },
+        {
+          "label": "11%",
+          "is_correct": false
+        },
+        {
+          "label": "8%",
+          "is_correct": false
+        },
+        {
+          "label": "9%",
+          "is_correct": true
+        }
+      ]
+    },
+    {
+      "chapter": "Simple Interest",
+      "kind": "standard",
+      "difficulty": "medium",
+      "answer_type": "single",
+      "stem": "A sum lent at 2% per annum simple interest earns ₹1480 as interest in 2 years. Find the sum.",
+      "explanation": "Sum = 100×SI/(R×T) = 100×1480/(2×2) = ₹37000.",
+      "options": [
+        {
+          "label": "₹35520",
+          "is_correct": false
+        },
+        {
+          "label": "₹39960",
+          "is_correct": false
+        },
+        {
+          "label": "₹38480",
+          "is_correct": false
+        },
+        {
+          "label": "₹37000",
+          "is_correct": true
+        }
+      ]
+    },
+    {
+      "chapter": "Simple Interest",
+      "kind": "standard",
+      "difficulty": "medium",
+      "answer_type": "single",
+      "stem": "₹26000 at 8% per annum simple interest earns ₹12480 as interest. Find the time in years.",
+      "explanation": "Time = 100×SI/(P×R) = 100×12480/(26000×8) = 6 years.",
+      "options": [
+        {
+          "label": "8 years",
+          "is_correct": false
+        },
+        {
+          "label": "5 years",
+          "is_correct": false
+        },
+        {
+          "label": "7 years",
+          "is_correct": false
+        },
+        {
+          "label": "6 years",
+          "is_correct": true
+        }
+      ]
+    },
+    {
+      "chapter": "Simple Interest",
+      "kind": "standard",
+      "difficulty": "medium",
+      "answer_type": "single",
+      "stem": "₹33000 lent for 2 years at simple interest earns ₹7920. Find the rate percent per annum.",
+      "explanation": "Rate = 100×SI/(P×T) = 100×7920/(33000×2) = 12%.",
+      "options": [
+        {
+          "label": "11%",
+          "is_correct": false
+        },
+        {
+          "label": "14%",
+          "is_correct": false
+        },
+        {
+          "label": "12%",
+          "is_correct": true
+        },
+        {
+          "label": "13%",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Simple Interest",
+      "kind": "standard",
+      "difficulty": "medium",
+      "answer_type": "single",
+      "stem": "A sum lent at 4% per annum simple interest earns ₹2880 as interest in 2 years. Find the sum.",
+      "explanation": "Sum = 100×SI/(R×T) = 100×2880/(4×2) = ₹36000.",
+      "options": [
+        {
+          "label": "₹38880",
+          "is_correct": false
+        },
+        {
+          "label": "₹37440",
+          "is_correct": false
+        },
+        {
+          "label": "₹34560",
+          "is_correct": false
+        },
+        {
+          "label": "₹36000",
+          "is_correct": true
+        }
+      ]
+    },
+    {
+      "chapter": "Simple Interest",
+      "kind": "standard",
+      "difficulty": "medium",
+      "answer_type": "single",
+      "stem": "₹3000 lent for 2 years at simple interest earns ₹780. Find the rate percent per annum.",
+      "explanation": "Rate = 100×SI/(P×T) = 100×780/(3000×2) = 13%.",
+      "options": [
+        {
+          "label": "15%",
+          "is_correct": false
+        },
+        {
+          "label": "14%",
+          "is_correct": false
+        },
+        {
+          "label": "12%",
+          "is_correct": false
+        },
+        {
+          "label": "13%",
+          "is_correct": true
+        }
+      ]
+    },
+    {
+      "chapter": "Simple Interest",
+      "kind": "standard",
+      "difficulty": "medium",
+      "answer_type": "single",
+      "stem": "₹4000 lent for 6 years at simple interest earns ₹2640. Find the rate percent per annum.",
+      "explanation": "Rate = 100×SI/(P×T) = 100×2640/(4000×6) = 11%.",
+      "options": [
+        {
+          "label": "11%",
+          "is_correct": true
+        },
+        {
+          "label": "10%",
+          "is_correct": false
+        },
+        {
+          "label": "12%",
+          "is_correct": false
+        },
+        {
+          "label": "13%",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Simple Interest",
+      "kind": "standard",
+      "difficulty": "medium",
+      "answer_type": "single",
+      "stem": "A sum lent at 10% per annum simple interest earns ₹5600 as interest in 2 years. Find the sum.",
+      "explanation": "Sum = 100×SI/(R×T) = 100×5600/(10×2) = ₹28000.",
+      "options": [
+        {
+          "label": "₹26880",
+          "is_correct": false
+        },
+        {
+          "label": "₹30240",
+          "is_correct": false
+        },
+        {
+          "label": "₹29120",
+          "is_correct": false
+        },
+        {
+          "label": "₹28000",
+          "is_correct": true
+        }
+      ]
+    },
+    {
+      "chapter": "Simple Interest",
+      "kind": "standard",
+      "difficulty": "medium",
+      "answer_type": "single",
+      "stem": "A sum lent at 3% per annum simple interest earns ₹1350 as interest in 3 years. Find the sum.",
+      "explanation": "Sum = 100×SI/(R×T) = 100×1350/(3×3) = ₹15000.",
+      "options": [
+        {
+          "label": "₹16200",
+          "is_correct": false
+        },
+        {
+          "label": "₹15000",
+          "is_correct": true
+        },
+        {
+          "label": "₹14400",
+          "is_correct": false
+        },
+        {
+          "label": "₹15600",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Simple Interest",
+      "kind": "standard",
+      "difficulty": "medium",
+      "answer_type": "single",
+      "stem": "₹40000 lent for 6 years at simple interest earns ₹4800. Find the rate percent per annum.",
+      "explanation": "Rate = 100×SI/(P×T) = 100×4800/(40000×6) = 2%.",
+      "options": [
+        {
+          "label": "3%",
+          "is_correct": false
+        },
+        {
+          "label": "1%",
+          "is_correct": false
+        },
+        {
+          "label": "2%",
+          "is_correct": true
+        },
+        {
+          "label": "4%",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Simple Interest",
+      "kind": "standard",
+      "difficulty": "medium",
+      "answer_type": "single",
+      "stem": "₹32000 at 7% per annum simple interest earns ₹8960 as interest. Find the time in years.",
+      "explanation": "Time = 100×SI/(P×R) = 100×8960/(32000×7) = 4 years.",
+      "options": [
+        {
+          "label": "4 years",
+          "is_correct": true
+        },
+        {
+          "label": "6 years",
+          "is_correct": false
+        },
+        {
+          "label": "3 years",
+          "is_correct": false
+        },
+        {
+          "label": "5 years",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Simple Interest",
+      "kind": "standard",
+      "difficulty": "medium",
+      "answer_type": "single",
+      "stem": "A sum lent at 3% per annum simple interest earns ₹2250 as interest in 5 years. Find the sum.",
+      "explanation": "Sum = 100×SI/(R×T) = 100×2250/(3×5) = ₹15000.",
+      "options": [
+        {
+          "label": "₹15000",
+          "is_correct": true
+        },
+        {
+          "label": "₹15600",
+          "is_correct": false
+        },
+        {
+          "label": "₹14400",
+          "is_correct": false
+        },
+        {
+          "label": "₹16200",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Simple Interest",
+      "kind": "standard",
+      "difficulty": "medium",
+      "answer_type": "single",
+      "stem": "₹37000 lent for 1 years at simple interest earns ₹4070. Find the rate percent per annum.",
+      "explanation": "Rate = 100×SI/(P×T) = 100×4070/(37000×1) = 11%.",
+      "options": [
+        {
+          "label": "12%",
+          "is_correct": false
+        },
+        {
+          "label": "11%",
+          "is_correct": true
+        },
+        {
+          "label": "13%",
+          "is_correct": false
+        },
+        {
+          "label": "10%",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Simple Interest",
+      "kind": "standard",
+      "difficulty": "medium",
+      "answer_type": "single",
+      "stem": "₹7000 at 5% per annum simple interest earns ₹2800 as interest. Find the time in years.",
+      "explanation": "Time = 100×SI/(P×R) = 100×2800/(7000×5) = 8 years.",
+      "options": [
+        {
+          "label": "7 years",
+          "is_correct": false
+        },
+        {
+          "label": "10 years",
+          "is_correct": false
+        },
+        {
+          "label": "8 years",
+          "is_correct": true
+        },
+        {
+          "label": "9 years",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Simple Interest",
+      "kind": "standard",
+      "difficulty": "medium",
+      "answer_type": "single",
+      "stem": "A sum lent at 12% per annum simple interest earns ₹2640 as interest in 1 years. Find the sum.",
+      "explanation": "Sum = 100×SI/(R×T) = 100×2640/(12×1) = ₹22000.",
+      "options": [
+        {
+          "label": "₹23760",
+          "is_correct": false
+        },
+        {
+          "label": "₹22000",
+          "is_correct": true
+        },
+        {
+          "label": "₹22880",
+          "is_correct": false
+        },
+        {
+          "label": "₹21120",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Simple Interest",
+      "kind": "standard",
+      "difficulty": "medium",
+      "answer_type": "single",
+      "stem": "₹26000 lent for 6 years at simple interest earns ₹10920. Find the rate percent per annum.",
+      "explanation": "Rate = 100×SI/(P×T) = 100×10920/(26000×6) = 7%.",
+      "options": [
+        {
+          "label": "9%",
+          "is_correct": false
+        },
+        {
+          "label": "7%",
+          "is_correct": true
+        },
+        {
+          "label": "6%",
+          "is_correct": false
+        },
+        {
+          "label": "8%",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Simple Interest",
+      "kind": "standard",
+      "difficulty": "medium",
+      "answer_type": "single",
+      "stem": "₹3000 lent for 5 years at simple interest earns ₹900. Find the rate percent per annum.",
+      "explanation": "Rate = 100×SI/(P×T) = 100×900/(3000×5) = 6%.",
+      "options": [
+        {
+          "label": "6%",
+          "is_correct": true
+        },
+        {
+          "label": "8%",
+          "is_correct": false
+        },
+        {
+          "label": "5%",
+          "is_correct": false
+        },
+        {
+          "label": "7%",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Simple Interest",
+      "kind": "standard",
+      "difficulty": "medium",
+      "answer_type": "single",
+      "stem": "A sum lent at 8% per annum simple interest earns ₹1200 as interest in 5 years. Find the sum.",
+      "explanation": "Sum = 100×SI/(R×T) = 100×1200/(8×5) = ₹3000.",
+      "options": [
+        {
+          "label": "₹3240",
+          "is_correct": false
+        },
+        {
+          "label": "₹3120",
+          "is_correct": false
+        },
+        {
+          "label": "₹3000",
+          "is_correct": true
+        },
+        {
+          "label": "₹2880",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Simple Interest",
+      "kind": "standard",
+      "difficulty": "medium",
+      "answer_type": "single",
+      "stem": "₹8000 lent for 2 years at simple interest earns ₹800. Find the rate percent per annum.",
+      "explanation": "Rate = 100×SI/(P×T) = 100×800/(8000×2) = 5%.",
+      "options": [
+        {
+          "label": "6%",
+          "is_correct": false
+        },
+        {
+          "label": "5%",
+          "is_correct": true
+        },
+        {
+          "label": "4%",
+          "is_correct": false
+        },
+        {
+          "label": "7%",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Simple Interest",
+      "kind": "standard",
+      "difficulty": "medium",
+      "answer_type": "single",
+      "stem": "₹3000 lent for 6 years at simple interest earns ₹360. Find the rate percent per annum.",
+      "explanation": "Rate = 100×SI/(P×T) = 100×360/(3000×6) = 2%.",
+      "options": [
+        {
+          "label": "1%",
+          "is_correct": false
+        },
+        {
+          "label": "2%",
+          "is_correct": true
+        },
+        {
+          "label": "4%",
+          "is_correct": false
+        },
+        {
+          "label": "3%",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Simple Interest",
+      "kind": "standard",
+      "difficulty": "medium",
+      "answer_type": "single",
+      "stem": "A sum lent at 8% per annum simple interest earns ₹13200 as interest in 5 years. Find the sum.",
+      "explanation": "Sum = 100×SI/(R×T) = 100×13200/(8×5) = ₹33000.",
+      "options": [
+        {
+          "label": "₹31680",
+          "is_correct": false
+        },
+        {
+          "label": "₹35640",
+          "is_correct": false
+        },
+        {
+          "label": "₹33000",
+          "is_correct": true
+        },
+        {
+          "label": "₹34320",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Simple Interest",
+      "kind": "standard",
+      "difficulty": "medium",
+      "answer_type": "single",
+      "stem": "₹5000 at 10% per annum simple interest earns ₹2500 as interest. Find the time in years.",
+      "explanation": "Time = 100×SI/(P×R) = 100×2500/(5000×10) = 5 years.",
+      "options": [
+        {
+          "label": "6 years",
+          "is_correct": false
+        },
+        {
+          "label": "5 years",
+          "is_correct": true
+        },
+        {
+          "label": "4 years",
+          "is_correct": false
+        },
+        {
+          "label": "7 years",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Simple Interest",
+      "kind": "standard",
+      "difficulty": "medium",
+      "answer_type": "single",
+      "stem": "₹36000 lent for 4 years at simple interest earns ₹4320. Find the rate percent per annum.",
+      "explanation": "Rate = 100×SI/(P×T) = 100×4320/(36000×4) = 3%.",
+      "options": [
+        {
+          "label": "3%",
+          "is_correct": true
+        },
+        {
+          "label": "5%",
+          "is_correct": false
+        },
+        {
+          "label": "2%",
+          "is_correct": false
+        },
+        {
+          "label": "4%",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Simple Interest",
+      "kind": "standard",
+      "difficulty": "medium",
+      "answer_type": "single",
+      "stem": "₹13000 at 10% per annum simple interest earns ₹1300 as interest. Find the time in years.",
+      "explanation": "Time = 100×SI/(P×R) = 100×1300/(13000×10) = 1 years.",
+      "options": [
+        {
+          "label": "2 years",
+          "is_correct": false
+        },
+        {
+          "label": "1 years",
+          "is_correct": true
+        },
+        {
+          "label": "3 years",
+          "is_correct": false
+        },
+        {
+          "label": "4 years",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Simple Interest",
+      "kind": "standard",
+      "difficulty": "medium",
+      "answer_type": "single",
+      "stem": "₹10000 lent for 3 years at simple interest earns ₹3300. Find the rate percent per annum.",
+      "explanation": "Rate = 100×SI/(P×T) = 100×3300/(10000×3) = 11%.",
+      "options": [
+        {
+          "label": "11%",
+          "is_correct": true
+        },
+        {
+          "label": "13%",
+          "is_correct": false
+        },
+        {
+          "label": "12%",
+          "is_correct": false
+        },
+        {
+          "label": "10%",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Simple Interest",
+      "kind": "standard",
+      "difficulty": "medium",
+      "answer_type": "single",
+      "stem": "₹15000 at 8% per annum simple interest earns ₹2400 as interest. Find the time in years.",
+      "explanation": "Time = 100×SI/(P×R) = 100×2400/(15000×8) = 2 years.",
+      "options": [
+        {
+          "label": "2 years",
+          "is_correct": true
+        },
+        {
+          "label": "3 years",
+          "is_correct": false
+        },
+        {
+          "label": "1 years",
+          "is_correct": false
+        },
+        {
+          "label": "4 years",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Simple Interest",
+      "kind": "standard",
+      "difficulty": "medium",
+      "answer_type": "single",
+      "stem": "₹33000 lent for 1 years at simple interest earns ₹3960. Find the rate percent per annum.",
+      "explanation": "Rate = 100×SI/(P×T) = 100×3960/(33000×1) = 12%.",
+      "options": [
+        {
+          "label": "11%",
+          "is_correct": false
+        },
+        {
+          "label": "13%",
+          "is_correct": false
+        },
+        {
+          "label": "12%",
+          "is_correct": true
+        },
+        {
+          "label": "14%",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Simple Interest",
+      "kind": "standard",
+      "difficulty": "hard",
+      "answer_type": "single",
+      "stem": "In how many years will ₹24000 amount to ₹31200 at 10% per annum simple interest?",
+      "explanation": "Interest = ₹31200 − ₹24000 = ₹7200; time = 100×7200/(24000×10) = 3 years.",
+      "options": [
+        {
+          "label": "4 years",
+          "is_correct": false
+        },
+        {
+          "label": "2 years",
+          "is_correct": false
+        },
+        {
+          "label": "3 years",
+          "is_correct": true
+        },
+        {
+          "label": "5 years",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Simple Interest",
+      "kind": "standard",
+      "difficulty": "hard",
+      "answer_type": "single",
+      "stem": "In how many years will ₹17000 amount to ₹22100 at 6% per annum simple interest?",
+      "explanation": "Interest = ₹22100 − ₹17000 = ₹5100; time = 100×5100/(17000×6) = 5 years.",
+      "options": [
+        {
+          "label": "7 years",
+          "is_correct": false
+        },
+        {
+          "label": "6 years",
+          "is_correct": false
+        },
+        {
+          "label": "5 years",
+          "is_correct": true
+        },
+        {
+          "label": "4 years",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Simple Interest",
+      "kind": "standard",
+      "difficulty": "hard",
+      "answer_type": "single",
+      "stem": "At what rate of simple interest per annum will a sum of money become 3 times itself in 4 years?",
+      "explanation": "To become 3 times, the interest must equal 2 times the principal, so R = 100×2/4 = 50%.",
+      "options": [
+        {
+          "label": "52%",
+          "is_correct": false
+        },
+        {
+          "label": "48%",
+          "is_correct": false
+        },
+        {
+          "label": "50%",
+          "is_correct": true
+        },
+        {
+          "label": "54%",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Simple Interest",
+      "kind": "standard",
+      "difficulty": "hard",
+      "answer_type": "single",
+      "stem": "At what rate of simple interest per annum will a sum of money become 2 times itself in 4 years?",
+      "explanation": "To become 2 times, the interest must equal 1 times the principal, so R = 100×1/4 = 25%.",
+      "options": [
+        {
+          "label": "26%",
+          "is_correct": false
+        },
+        {
+          "label": "25%",
+          "is_correct": true
+        },
+        {
+          "label": "27%",
+          "is_correct": false
+        },
+        {
+          "label": "24%",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Simple Interest",
+      "kind": "standard",
+      "difficulty": "hard",
+      "answer_type": "single",
+      "stem": "In how many years will ₹5000 amount to ₹5150 at 3% per annum simple interest?",
+      "explanation": "Interest = ₹5150 − ₹5000 = ₹150; time = 100×150/(5000×3) = 1 years.",
+      "options": [
+        {
+          "label": "4 years",
+          "is_correct": false
+        },
+        {
+          "label": "3 years",
+          "is_correct": false
+        },
+        {
+          "label": "2 years",
+          "is_correct": false
+        },
+        {
+          "label": "1 years",
+          "is_correct": true
+        }
+      ]
+    },
+    {
+      "chapter": "Simple Interest",
+      "kind": "standard",
+      "difficulty": "hard",
+      "answer_type": "single",
+      "stem": "At what rate of simple interest per annum will a sum of money become 3 times itself in 25 years?",
+      "explanation": "To become 3 times, the interest must equal 2 times the principal, so R = 100×2/25 = 8%.",
+      "options": [
+        {
+          "label": "9%",
+          "is_correct": false
+        },
+        {
+          "label": "8%",
+          "is_correct": true
+        },
+        {
+          "label": "10%",
+          "is_correct": false
+        },
+        {
+          "label": "7%",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Simple Interest",
+      "kind": "standard",
+      "difficulty": "hard",
+      "answer_type": "single",
+      "stem": "At what rate of simple interest per annum will a sum of money become 3 times itself in 5 years?",
+      "explanation": "To become 3 times, the interest must equal 2 times the principal, so R = 100×2/5 = 40%.",
+      "options": [
+        {
+          "label": "42%",
+          "is_correct": false
+        },
+        {
+          "label": "44%",
+          "is_correct": false
+        },
+        {
+          "label": "40%",
+          "is_correct": true
+        },
+        {
+          "label": "38%",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Simple Interest",
+      "kind": "standard",
+      "difficulty": "hard",
+      "answer_type": "single",
+      "stem": "A sum of ₹4000 amounts to ₹4960 in 2 years at simple interest. Find the rate percent per annum.",
+      "explanation": "Interest = ₹4960 − ₹4000 = ₹960; rate = 100×960/(4000×2) = 12%.",
+      "options": [
+        {
+          "label": "14%",
+          "is_correct": false
+        },
+        {
+          "label": "13%",
+          "is_correct": false
+        },
+        {
+          "label": "11%",
+          "is_correct": false
+        },
+        {
+          "label": "12%",
+          "is_correct": true
+        }
+      ]
+    },
+    {
+      "chapter": "Simple Interest",
+      "kind": "standard",
+      "difficulty": "hard",
+      "answer_type": "single",
+      "stem": "A sum of ₹16000 amounts to ₹18400 in 3 years at simple interest. Find the rate percent per annum.",
+      "explanation": "Interest = ₹18400 − ₹16000 = ₹2400; rate = 100×2400/(16000×3) = 5%.",
+      "options": [
+        {
+          "label": "6%",
+          "is_correct": false
+        },
+        {
+          "label": "7%",
+          "is_correct": false
+        },
+        {
+          "label": "5%",
+          "is_correct": true
+        },
+        {
+          "label": "4%",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Simple Interest",
+      "kind": "standard",
+      "difficulty": "hard",
+      "answer_type": "single",
+      "stem": "In how many years will ₹24000 amount to ₹27360 at 7% per annum simple interest?",
+      "explanation": "Interest = ₹27360 − ₹24000 = ₹3360; time = 100×3360/(24000×7) = 2 years.",
+      "options": [
+        {
+          "label": "4 years",
+          "is_correct": false
+        },
+        {
+          "label": "2 years",
+          "is_correct": true
+        },
+        {
+          "label": "1 years",
+          "is_correct": false
+        },
+        {
+          "label": "3 years",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Simple Interest",
+      "kind": "standard",
+      "difficulty": "hard",
+      "answer_type": "single",
+      "stem": "At what rate of simple interest per annum will a sum of money become 4 times itself in 25 years?",
+      "explanation": "To become 4 times, the interest must equal 3 times the principal, so R = 100×3/25 = 12%.",
+      "options": [
+        {
+          "label": "14%",
+          "is_correct": false
+        },
+        {
+          "label": "13%",
+          "is_correct": false
+        },
+        {
+          "label": "11%",
+          "is_correct": false
+        },
+        {
+          "label": "12%",
+          "is_correct": true
+        }
+      ]
+    },
+    {
+      "chapter": "Simple Interest",
+      "kind": "standard",
+      "difficulty": "hard",
+      "answer_type": "single",
+      "stem": "In how many years will ₹16000 amount to ₹22400 at 5% per annum simple interest?",
+      "explanation": "Interest = ₹22400 − ₹16000 = ₹6400; time = 100×6400/(16000×5) = 8 years.",
+      "options": [
+        {
+          "label": "7 years",
+          "is_correct": false
+        },
+        {
+          "label": "10 years",
+          "is_correct": false
+        },
+        {
+          "label": "8 years",
+          "is_correct": true
+        },
+        {
+          "label": "9 years",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Simple Interest",
+      "kind": "standard",
+      "difficulty": "hard",
+      "answer_type": "single",
+      "stem": "A sum of ₹14000 amounts to ₹15680 in 3 years at simple interest. Find the rate percent per annum.",
+      "explanation": "Interest = ₹15680 − ₹14000 = ₹1680; rate = 100×1680/(14000×3) = 4%.",
+      "options": [
+        {
+          "label": "3%",
+          "is_correct": false
+        },
+        {
+          "label": "4%",
+          "is_correct": true
+        },
+        {
+          "label": "5%",
+          "is_correct": false
+        },
+        {
+          "label": "6%",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Simple Interest",
+      "kind": "standard",
+      "difficulty": "hard",
+      "answer_type": "single",
+      "stem": "In how many years will ₹28000 amount to ₹31360 at 4% per annum simple interest?",
+      "explanation": "Interest = ₹31360 − ₹28000 = ₹3360; time = 100×3360/(28000×4) = 3 years.",
+      "options": [
+        {
+          "label": "2 years",
+          "is_correct": false
+        },
+        {
+          "label": "4 years",
+          "is_correct": false
+        },
+        {
+          "label": "3 years",
+          "is_correct": true
+        },
+        {
+          "label": "5 years",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Simple Interest",
+      "kind": "standard",
+      "difficulty": "hard",
+      "answer_type": "single",
+      "stem": "A sum of ₹15000 amounts to ₹24900 in 6 years at simple interest. Find the rate percent per annum.",
+      "explanation": "Interest = ₹24900 − ₹15000 = ₹9900; rate = 100×9900/(15000×6) = 11%.",
+      "options": [
+        {
+          "label": "12%",
+          "is_correct": false
+        },
+        {
+          "label": "10%",
+          "is_correct": false
+        },
+        {
+          "label": "13%",
+          "is_correct": false
+        },
+        {
+          "label": "11%",
+          "is_correct": true
+        }
+      ]
+    },
+    {
+      "chapter": "Simple Interest",
+      "kind": "standard",
+      "difficulty": "hard",
+      "answer_type": "single",
+      "stem": "In how many years will ₹14000 amount to ₹17360 at 8% per annum simple interest?",
+      "explanation": "Interest = ₹17360 − ₹14000 = ₹3360; time = 100×3360/(14000×8) = 3 years.",
+      "options": [
+        {
+          "label": "5 years",
+          "is_correct": false
+        },
+        {
+          "label": "4 years",
+          "is_correct": false
+        },
+        {
+          "label": "3 years",
+          "is_correct": true
+        },
+        {
+          "label": "2 years",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Simple Interest",
+      "kind": "standard",
+      "difficulty": "hard",
+      "answer_type": "single",
+      "stem": "A sum of ₹29000 amounts to ₹32480 in 3 years at simple interest. Find the rate percent per annum.",
+      "explanation": "Interest = ₹32480 − ₹29000 = ₹3480; rate = 100×3480/(29000×3) = 4%.",
+      "options": [
+        {
+          "label": "4%",
+          "is_correct": true
+        },
+        {
+          "label": "5%",
+          "is_correct": false
+        },
+        {
+          "label": "3%",
+          "is_correct": false
+        },
+        {
+          "label": "6%",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Simple Interest",
+      "kind": "standard",
+      "difficulty": "hard",
+      "answer_type": "single",
+      "stem": "At what rate of simple interest per annum will a sum of money become 3 times itself in 8 years?",
+      "explanation": "To become 3 times, the interest must equal 2 times the principal, so R = 100×2/8 = 25%.",
+      "options": [
+        {
+          "label": "25%",
+          "is_correct": true
+        },
+        {
+          "label": "27%",
+          "is_correct": false
+        },
+        {
+          "label": "24%",
+          "is_correct": false
+        },
+        {
+          "label": "26%",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Simple Interest",
+      "kind": "standard",
+      "difficulty": "hard",
+      "answer_type": "single",
+      "stem": "A sum of ₹19000 amounts to ₹23560 in 2 years at simple interest. Find the rate percent per annum.",
+      "explanation": "Interest = ₹23560 − ₹19000 = ₹4560; rate = 100×4560/(19000×2) = 12%.",
+      "options": [
+        {
+          "label": "13%",
+          "is_correct": false
+        },
+        {
+          "label": "12%",
+          "is_correct": true
+        },
+        {
+          "label": "11%",
+          "is_correct": false
+        },
+        {
+          "label": "14%",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Simple Interest",
+      "kind": "standard",
+      "difficulty": "hard",
+      "answer_type": "single",
+      "stem": "A sum of ₹21000 amounts to ₹22260 in 1 years at simple interest. Find the rate percent per annum.",
+      "explanation": "Interest = ₹22260 − ₹21000 = ₹1260; rate = 100×1260/(21000×1) = 6%.",
+      "options": [
+        {
+          "label": "7%",
+          "is_correct": false
+        },
+        {
+          "label": "8%",
+          "is_correct": false
+        },
+        {
+          "label": "5%",
+          "is_correct": false
+        },
+        {
+          "label": "6%",
+          "is_correct": true
+        }
+      ]
+    },
+    {
+      "chapter": "Simple Interest",
+      "kind": "standard",
+      "difficulty": "hard",
+      "answer_type": "single",
+      "stem": "In how many years will ₹26000 amount to ₹38480 at 8% per annum simple interest?",
+      "explanation": "Interest = ₹38480 − ₹26000 = ₹12480; time = 100×12480/(26000×8) = 6 years.",
+      "options": [
+        {
+          "label": "8 years",
+          "is_correct": false
+        },
+        {
+          "label": "6 years",
+          "is_correct": true
+        },
+        {
+          "label": "5 years",
+          "is_correct": false
+        },
+        {
+          "label": "7 years",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Simple Interest",
+      "kind": "standard",
+      "difficulty": "hard",
+      "answer_type": "single",
+      "stem": "In how many years will ₹21000 amount to ₹28350 at 7% per annum simple interest?",
+      "explanation": "Interest = ₹28350 − ₹21000 = ₹7350; time = 100×7350/(21000×7) = 5 years.",
+      "options": [
+        {
+          "label": "4 years",
+          "is_correct": false
+        },
+        {
+          "label": "7 years",
+          "is_correct": false
+        },
+        {
+          "label": "5 years",
+          "is_correct": true
+        },
+        {
+          "label": "6 years",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Simple Interest",
+      "kind": "standard",
+      "difficulty": "hard",
+      "answer_type": "single",
+      "stem": "A sum of ₹19000 amounts to ₹22040 in 2 years at simple interest. Find the rate percent per annum.",
+      "explanation": "Interest = ₹22040 − ₹19000 = ₹3040; rate = 100×3040/(19000×2) = 8%.",
+      "options": [
+        {
+          "label": "8%",
+          "is_correct": true
+        },
+        {
+          "label": "10%",
+          "is_correct": false
+        },
+        {
+          "label": "7%",
+          "is_correct": false
+        },
+        {
+          "label": "9%",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Simple Interest",
+      "kind": "standard",
+      "difficulty": "hard",
+      "answer_type": "single",
+      "stem": "At what rate of simple interest per annum will a sum of money become 3 times itself in 50 years?",
+      "explanation": "To become 3 times, the interest must equal 2 times the principal, so R = 100×2/50 = 4%.",
+      "options": [
+        {
+          "label": "5%",
+          "is_correct": false
+        },
+        {
+          "label": "4%",
+          "is_correct": true
+        },
+        {
+          "label": "3%",
+          "is_correct": false
+        },
+        {
+          "label": "6%",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Simple Interest",
+      "kind": "standard",
+      "difficulty": "hard",
+      "answer_type": "single",
+      "stem": "A sum of ₹21000 amounts to ₹26250 in 5 years at simple interest. Find the rate percent per annum.",
+      "explanation": "Interest = ₹26250 − ₹21000 = ₹5250; rate = 100×5250/(21000×5) = 5%.",
+      "options": [
+        {
+          "label": "6%",
+          "is_correct": false
+        },
+        {
+          "label": "5%",
+          "is_correct": true
+        },
+        {
+          "label": "7%",
+          "is_correct": false
+        },
+        {
+          "label": "4%",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Simple Interest",
+      "kind": "standard",
+      "difficulty": "hard",
+      "answer_type": "single",
+      "stem": "A sum of ₹2000 amounts to ₹3000 in 5 years at simple interest. Find the rate percent per annum.",
+      "explanation": "Interest = ₹3000 − ₹2000 = ₹1000; rate = 100×1000/(2000×5) = 10%.",
+      "options": [
+        {
+          "label": "11%",
+          "is_correct": false
+        },
+        {
+          "label": "12%",
+          "is_correct": false
+        },
+        {
+          "label": "10%",
+          "is_correct": true
+        },
+        {
+          "label": "9%",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Simple Interest",
+      "kind": "standard",
+      "difficulty": "hard",
+      "answer_type": "single",
+      "stem": "At what rate of simple interest per annum will a sum of money become 2 times itself in 20 years?",
+      "explanation": "To become 2 times, the interest must equal 1 times the principal, so R = 100×1/20 = 5%.",
+      "options": [
+        {
+          "label": "4%",
+          "is_correct": false
+        },
+        {
+          "label": "7%",
+          "is_correct": false
+        },
+        {
+          "label": "6%",
+          "is_correct": false
+        },
+        {
+          "label": "5%",
+          "is_correct": true
+        }
+      ]
+    },
+    {
+      "chapter": "Simple Interest",
+      "kind": "standard",
+      "difficulty": "hard",
+      "answer_type": "single",
+      "stem": "A sum of ₹27000 amounts to ₹43200 in 6 years at simple interest. Find the rate percent per annum.",
+      "explanation": "Interest = ₹43200 − ₹27000 = ₹16200; rate = 100×16200/(27000×6) = 10%.",
+      "options": [
+        {
+          "label": "12%",
+          "is_correct": false
+        },
+        {
+          "label": "10%",
+          "is_correct": true
+        },
+        {
+          "label": "11%",
+          "is_correct": false
+        },
+        {
+          "label": "9%",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Simple Interest",
+      "kind": "standard",
+      "difficulty": "hard",
+      "answer_type": "single",
+      "stem": "In how many years will ₹15000 amount to ₹22200 at 6% per annum simple interest?",
+      "explanation": "Interest = ₹22200 − ₹15000 = ₹7200; time = 100×7200/(15000×6) = 8 years.",
+      "options": [
+        {
+          "label": "10 years",
+          "is_correct": false
+        },
+        {
+          "label": "9 years",
+          "is_correct": false
+        },
+        {
+          "label": "8 years",
+          "is_correct": true
+        },
+        {
+          "label": "7 years",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Simple Interest",
+      "kind": "standard",
+      "difficulty": "hard",
+      "answer_type": "single",
+      "stem": "A sum of ₹30000 amounts to ₹32400 in 2 years at simple interest. Find the rate percent per annum.",
+      "explanation": "Interest = ₹32400 − ₹30000 = ₹2400; rate = 100×2400/(30000×2) = 4%.",
+      "options": [
+        {
+          "label": "5%",
+          "is_correct": false
+        },
+        {
+          "label": "6%",
+          "is_correct": false
+        },
+        {
+          "label": "3%",
+          "is_correct": false
+        },
+        {
+          "label": "4%",
+          "is_correct": true
+        }
+      ]
+    },
+    {
+      "chapter": "Simple Interest",
+      "kind": "standard",
+      "difficulty": "hard",
+      "answer_type": "single",
+      "stem": "In how many years will ₹17000 amount to ₹18700 at 5% per annum simple interest?",
+      "explanation": "Interest = ₹18700 − ₹17000 = ₹1700; time = 100×1700/(17000×5) = 2 years.",
+      "options": [
+        {
+          "label": "1 years",
+          "is_correct": false
+        },
+        {
+          "label": "3 years",
+          "is_correct": false
+        },
+        {
+          "label": "4 years",
+          "is_correct": false
+        },
+        {
+          "label": "2 years",
+          "is_correct": true
+        }
+      ]
+    },
+    {
+      "chapter": "Simple Interest",
+      "kind": "standard",
+      "difficulty": "hard",
+      "answer_type": "single",
+      "stem": "At what rate of simple interest per annum will a sum of money become 3 times itself in 20 years?",
+      "explanation": "To become 3 times, the interest must equal 2 times the principal, so R = 100×2/20 = 10%.",
+      "options": [
+        {
+          "label": "10%",
+          "is_correct": true
+        },
+        {
+          "label": "12%",
+          "is_correct": false
+        },
+        {
+          "label": "9%",
+          "is_correct": false
+        },
+        {
+          "label": "11%",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Simple Interest",
+      "kind": "standard",
+      "difficulty": "hard",
+      "answer_type": "single",
+      "stem": "At what rate of simple interest per annum will a sum of money become 2 times itself in 25 years?",
+      "explanation": "To become 2 times, the interest must equal 1 times the principal, so R = 100×1/25 = 4%.",
+      "options": [
+        {
+          "label": "5%",
+          "is_correct": false
+        },
+        {
+          "label": "3%",
+          "is_correct": false
+        },
+        {
+          "label": "4%",
+          "is_correct": true
+        },
+        {
+          "label": "6%",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Simple Interest",
+      "kind": "standard",
+      "difficulty": "hard",
+      "answer_type": "single",
+      "stem": "A sum of ₹9000 amounts to ₹11430 in 3 years at simple interest. Find the rate percent per annum.",
+      "explanation": "Interest = ₹11430 − ₹9000 = ₹2430; rate = 100×2430/(9000×3) = 9%.",
+      "options": [
+        {
+          "label": "11%",
+          "is_correct": false
+        },
+        {
+          "label": "10%",
+          "is_correct": false
+        },
+        {
+          "label": "8%",
+          "is_correct": false
+        },
+        {
+          "label": "9%",
+          "is_correct": true
+        }
+      ]
+    },
+    {
+      "chapter": "Simple Interest",
+      "kind": "standard",
+      "difficulty": "hard",
+      "answer_type": "single",
+      "stem": "In how many years will ₹12000 amount to ₹14880 at 3% per annum simple interest?",
+      "explanation": "Interest = ₹14880 − ₹12000 = ₹2880; time = 100×2880/(12000×3) = 8 years.",
+      "options": [
+        {
+          "label": "10 years",
+          "is_correct": false
+        },
+        {
+          "label": "8 years",
+          "is_correct": true
+        },
+        {
+          "label": "7 years",
+          "is_correct": false
+        },
+        {
+          "label": "9 years",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Simple Interest",
+      "kind": "standard",
+      "difficulty": "hard",
+      "answer_type": "single",
+      "stem": "In how many years will ₹24000 amount to ₹25440 at 3% per annum simple interest?",
+      "explanation": "Interest = ₹25440 − ₹24000 = ₹1440; time = 100×1440/(24000×3) = 2 years.",
+      "options": [
+        {
+          "label": "2 years",
+          "is_correct": true
+        },
+        {
+          "label": "3 years",
+          "is_correct": false
+        },
+        {
+          "label": "4 years",
+          "is_correct": false
+        },
+        {
+          "label": "1 years",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Simple Interest",
+      "kind": "standard",
+      "difficulty": "hard",
+      "answer_type": "single",
+      "stem": "In how many years will ₹25000 amount to ₹27500 at 2% per annum simple interest?",
+      "explanation": "Interest = ₹27500 − ₹25000 = ₹2500; time = 100×2500/(25000×2) = 5 years.",
+      "options": [
+        {
+          "label": "5 years",
+          "is_correct": true
+        },
+        {
+          "label": "7 years",
+          "is_correct": false
+        },
+        {
+          "label": "4 years",
+          "is_correct": false
+        },
+        {
+          "label": "6 years",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Simple Interest",
+      "kind": "standard",
+      "difficulty": "hard",
+      "answer_type": "single",
+      "stem": "In how many years will ₹21000 amount to ₹26040 at 6% per annum simple interest?",
+      "explanation": "Interest = ₹26040 − ₹21000 = ₹5040; time = 100×5040/(21000×6) = 4 years.",
+      "options": [
+        {
+          "label": "6 years",
+          "is_correct": false
+        },
+        {
+          "label": "5 years",
+          "is_correct": false
+        },
+        {
+          "label": "4 years",
+          "is_correct": true
+        },
+        {
+          "label": "3 years",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Simple Interest",
+      "kind": "standard",
+      "difficulty": "hard",
+      "answer_type": "single",
+      "stem": "In how many years will ₹2000 amount to ₹2080 at 4% per annum simple interest?",
+      "explanation": "Interest = ₹2080 − ₹2000 = ₹80; time = 100×80/(2000×4) = 1 years.",
+      "options": [
+        {
+          "label": "2 years",
+          "is_correct": false
+        },
+        {
+          "label": "3 years",
+          "is_correct": false
+        },
+        {
+          "label": "4 years",
+          "is_correct": false
+        },
+        {
+          "label": "1 years",
+          "is_correct": true
+        }
+      ]
+    },
+    {
+      "chapter": "Simple Interest",
+      "kind": "standard",
+      "difficulty": "hard",
+      "answer_type": "single",
+      "stem": "In how many years will ₹7000 amount to ₹10150 at 9% per annum simple interest?",
+      "explanation": "Interest = ₹10150 − ₹7000 = ₹3150; time = 100×3150/(7000×9) = 5 years.",
+      "options": [
+        {
+          "label": "5 years",
+          "is_correct": true
+        },
+        {
+          "label": "7 years",
+          "is_correct": false
+        },
+        {
+          "label": "6 years",
+          "is_correct": false
+        },
+        {
+          "label": "4 years",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Simple Interest",
+      "kind": "standard",
+      "difficulty": "hard",
+      "answer_type": "single",
+      "stem": "In how many years will ₹5000 amount to ₹7750 at 11% per annum simple interest?",
+      "explanation": "Interest = ₹7750 − ₹5000 = ₹2750; time = 100×2750/(5000×11) = 5 years.",
+      "options": [
+        {
+          "label": "6 years",
+          "is_correct": false
+        },
+        {
+          "label": "7 years",
+          "is_correct": false
+        },
+        {
+          "label": "5 years",
+          "is_correct": true
+        },
+        {
+          "label": "4 years",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Simple Interest",
+      "kind": "standard",
+      "difficulty": "hard",
+      "answer_type": "single",
+      "stem": "In how many years will ₹8000 amount to ₹9280 at 8% per annum simple interest?",
+      "explanation": "Interest = ₹9280 − ₹8000 = ₹1280; time = 100×1280/(8000×8) = 2 years.",
+      "options": [
+        {
+          "label": "3 years",
+          "is_correct": false
+        },
+        {
+          "label": "2 years",
+          "is_correct": true
+        },
+        {
+          "label": "1 years",
+          "is_correct": false
+        },
+        {
+          "label": "4 years",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Simple Interest",
+      "kind": "standard",
+      "difficulty": "hard",
+      "answer_type": "single",
+      "stem": "At what rate of simple interest per annum will a sum of money become 4 times itself in 4 years?",
+      "explanation": "To become 4 times, the interest must equal 3 times the principal, so R = 100×3/4 = 75%.",
+      "options": [
+        {
+          "label": "77%",
+          "is_correct": false
+        },
+        {
+          "label": "73%",
+          "is_correct": false
+        },
+        {
+          "label": "75%",
+          "is_correct": true
+        },
+        {
+          "label": "79%",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Simple Interest",
+      "kind": "standard",
+      "difficulty": "hard",
+      "answer_type": "single",
+      "stem": "A sum of ₹10000 amounts to ₹11400 in 2 years at simple interest. Find the rate percent per annum.",
+      "explanation": "Interest = ₹11400 − ₹10000 = ₹1400; rate = 100×1400/(10000×2) = 7%.",
+      "options": [
+        {
+          "label": "7%",
+          "is_correct": true
+        },
+        {
+          "label": "8%",
+          "is_correct": false
+        },
+        {
+          "label": "9%",
+          "is_correct": false
+        },
+        {
+          "label": "6%",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Simple Interest",
+      "kind": "standard",
+      "difficulty": "hard",
+      "answer_type": "single",
+      "stem": "A sum of ₹21000 amounts to ₹31080 in 4 years at simple interest. Find the rate percent per annum.",
+      "explanation": "Interest = ₹31080 − ₹21000 = ₹10080; rate = 100×10080/(21000×4) = 12%.",
+      "options": [
+        {
+          "label": "11%",
+          "is_correct": false
+        },
+        {
+          "label": "13%",
+          "is_correct": false
+        },
+        {
+          "label": "12%",
+          "is_correct": true
+        },
+        {
+          "label": "14%",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Simple Interest",
+      "kind": "standard",
+      "difficulty": "hard",
+      "answer_type": "single",
+      "stem": "In how many years will ₹21000 amount to ₹22260 at 2% per annum simple interest?",
+      "explanation": "Interest = ₹22260 − ₹21000 = ₹1260; time = 100×1260/(21000×2) = 3 years.",
+      "options": [
+        {
+          "label": "4 years",
+          "is_correct": false
+        },
+        {
+          "label": "3 years",
+          "is_correct": true
+        },
+        {
+          "label": "5 years",
+          "is_correct": false
+        },
+        {
+          "label": "2 years",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Simple Interest",
+      "kind": "standard",
+      "difficulty": "hard",
+      "answer_type": "single",
+      "stem": "In how many years will ₹2000 amount to ₹2640 at 4% per annum simple interest?",
+      "explanation": "Interest = ₹2640 − ₹2000 = ₹640; time = 100×640/(2000×4) = 8 years.",
+      "options": [
+        {
+          "label": "7 years",
+          "is_correct": false
+        },
+        {
+          "label": "9 years",
+          "is_correct": false
+        },
+        {
+          "label": "8 years",
+          "is_correct": true
+        },
+        {
+          "label": "10 years",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Simple Interest",
+      "kind": "standard",
+      "difficulty": "hard",
+      "answer_type": "single",
+      "stem": "In how many years will ₹7000 amount to ₹10500 at 10% per annum simple interest?",
+      "explanation": "Interest = ₹10500 − ₹7000 = ₹3500; time = 100×3500/(7000×10) = 5 years.",
+      "options": [
+        {
+          "label": "5 years",
+          "is_correct": true
+        },
+        {
+          "label": "7 years",
+          "is_correct": false
+        },
+        {
+          "label": "6 years",
+          "is_correct": false
+        },
+        {
+          "label": "4 years",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Simple Interest",
+      "kind": "standard",
+      "difficulty": "hard",
+      "answer_type": "single",
+      "stem": "In how many years will ₹7000 amount to ₹9240 at 4% per annum simple interest?",
+      "explanation": "Interest = ₹9240 − ₹7000 = ₹2240; time = 100×2240/(7000×4) = 8 years.",
+      "options": [
+        {
+          "label": "7 years",
+          "is_correct": false
+        },
+        {
+          "label": "9 years",
+          "is_correct": false
+        },
+        {
+          "label": "8 years",
+          "is_correct": true
+        },
+        {
+          "label": "10 years",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Simple Interest",
+      "kind": "standard",
+      "difficulty": "hard",
+      "answer_type": "single",
+      "stem": "A sum of ₹28000 amounts to ₹32200 in 3 years at simple interest. Find the rate percent per annum.",
+      "explanation": "Interest = ₹32200 − ₹28000 = ₹4200; rate = 100×4200/(28000×3) = 5%.",
+      "options": [
+        {
+          "label": "6%",
+          "is_correct": false
+        },
+        {
+          "label": "7%",
+          "is_correct": false
+        },
+        {
+          "label": "4%",
+          "is_correct": false
+        },
+        {
+          "label": "5%",
+          "is_correct": true
+        }
+      ]
+    },
+    {
+      "chapter": "Simple Interest",
+      "kind": "standard",
+      "difficulty": "very_hard",
+      "answer_type": "single",
+      "stem": "The simple interest on a certain sum for some years is 9/100 of the sum. If the number of years is equal to the rate percent per annum, find the rate percent.",
+      "explanation": "SI = P·R·T/100 with R = T gives R² = 100×9/100 = 9, so R = 3%.",
+      "options": [
+        {
+          "label": "3%",
+          "is_correct": true
+        },
+        {
+          "label": "5%",
+          "is_correct": false
+        },
+        {
+          "label": "4%",
+          "is_correct": false
+        },
+        {
+          "label": "2%",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Simple Interest",
+      "kind": "standard",
+      "difficulty": "very_hard",
+      "answer_type": "single",
+      "stem": "A sum of money at simple interest amounts to ₹16800 in 2 years and to ₹17600 in 4 years. Find the sum.",
+      "explanation": "Interest for (4−2) years = ₹800, so annual interest = ₹400; sum = ₹16800 − 2×₹400 = ₹16000.",
+      "options": [
+        {
+          "label": "₹16640",
+          "is_correct": false
+        },
+        {
+          "label": "₹15360",
+          "is_correct": false
+        },
+        {
+          "label": "₹16000",
+          "is_correct": true
+        },
+        {
+          "label": "₹17280",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Simple Interest",
+      "kind": "standard",
+      "difficulty": "very_hard",
+      "answer_type": "single",
+      "stem": "The simple interest on a certain sum for some years is 49/100 of the sum. If the number of years is equal to the rate percent per annum, find the rate percent.",
+      "explanation": "SI = P·R·T/100 with R = T gives R² = 100×49/100 = 49, so R = 7%.",
+      "options": [
+        {
+          "label": "6%",
+          "is_correct": false
+        },
+        {
+          "label": "8%",
+          "is_correct": false
+        },
+        {
+          "label": "7%",
+          "is_correct": true
+        },
+        {
+          "label": "9%",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Simple Interest",
+      "kind": "standard",
+      "difficulty": "very_hard",
+      "answer_type": "single",
+      "stem": "A sum at simple interest amounts to ₹13310 in 3 years and ₹17160 in 8 years. Find the rate percent per annum.",
+      "explanation": "Annual interest = (₹17160 − ₹13310)/(8−3) = ₹770; sum = ₹11000; rate = 100×770/11000 = 7%.",
+      "options": [
+        {
+          "label": "6%",
+          "is_correct": false
+        },
+        {
+          "label": "8%",
+          "is_correct": false
+        },
+        {
+          "label": "9%",
+          "is_correct": false
+        },
+        {
+          "label": "7%",
+          "is_correct": true
+        }
+      ]
+    },
+    {
+      "chapter": "Simple Interest",
+      "kind": "standard",
+      "difficulty": "very_hard",
+      "answer_type": "single",
+      "stem": "A sum at simple interest amounts to ₹12600 in 4 years and ₹17100 in 9 years. Find the rate percent per annum.",
+      "explanation": "Annual interest = (₹17100 − ₹12600)/(9−4) = ₹900; sum = ₹9000; rate = 100×900/9000 = 10%.",
+      "options": [
+        {
+          "label": "9%",
+          "is_correct": false
+        },
+        {
+          "label": "11%",
+          "is_correct": false
+        },
+        {
+          "label": "10%",
+          "is_correct": true
+        },
+        {
+          "label": "12%",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Simple Interest",
+      "kind": "standard",
+      "difficulty": "very_hard",
+      "answer_type": "single",
+      "stem": "The simple interest on a certain sum for some years is 1/4 of the sum. If the number of years is equal to the rate percent per annum, find the rate percent.",
+      "explanation": "SI = P·R·T/100 with R = T gives R² = 100×1/4 = 25, so R = 5%.",
+      "options": [
+        {
+          "label": "7%",
+          "is_correct": false
+        },
+        {
+          "label": "5%",
+          "is_correct": true
+        },
+        {
+          "label": "6%",
+          "is_correct": false
+        },
+        {
+          "label": "4%",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Simple Interest",
+      "kind": "standard",
+      "difficulty": "very_hard",
+      "answer_type": "single",
+      "stem": "The simple interest on a certain sum for some years is 1/25 of the sum. If the number of years is equal to the rate percent per annum, find the rate percent.",
+      "explanation": "SI = P·R·T/100 with R = T gives R² = 100×1/25 = 4, so R = 2%.",
+      "options": [
+        {
+          "label": "4%",
+          "is_correct": false
+        },
+        {
+          "label": "2%",
+          "is_correct": true
+        },
+        {
+          "label": "1%",
+          "is_correct": false
+        },
+        {
+          "label": "3%",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Simple Interest",
+      "kind": "standard",
+      "difficulty": "very_hard",
+      "answer_type": "single",
+      "stem": "The simple interest on a certain sum for some years is 4/25 of the sum. If the number of years is equal to the rate percent per annum, find the rate percent.",
+      "explanation": "SI = P·R·T/100 with R = T gives R² = 100×4/25 = 16, so R = 4%.",
+      "options": [
+        {
+          "label": "6%",
+          "is_correct": false
+        },
+        {
+          "label": "4%",
+          "is_correct": true
+        },
+        {
+          "label": "3%",
+          "is_correct": false
+        },
+        {
+          "label": "5%",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Simple Interest",
+      "kind": "standard",
+      "difficulty": "very_hard",
+      "answer_type": "single",
+      "stem": "A sum at simple interest amounts to ₹8640 in 4 years and ₹9280 in 8 years. Find the rate percent per annum.",
+      "explanation": "Annual interest = (₹9280 − ₹8640)/(8−4) = ₹160; sum = ₹8000; rate = 100×160/8000 = 2%.",
+      "options": [
+        {
+          "label": "2%",
+          "is_correct": true
+        },
+        {
+          "label": "1%",
+          "is_correct": false
+        },
+        {
+          "label": "3%",
+          "is_correct": false
+        },
+        {
+          "label": "4%",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Simple Interest",
+      "kind": "standard",
+      "difficulty": "very_hard",
+      "answer_type": "single",
+      "stem": "A sum of money at simple interest amounts to ₹20800 in 2 years and to ₹22600 in 4 years. Find the sum.",
+      "explanation": "Interest for (4−2) years = ₹1800, so annual interest = ₹900; sum = ₹20800 − 2×₹900 = ₹19000.",
+      "options": [
+        {
+          "label": "₹18240",
+          "is_correct": false
+        },
+        {
+          "label": "₹20520",
+          "is_correct": false
+        },
+        {
+          "label": "₹19000",
+          "is_correct": true
+        },
+        {
+          "label": "₹19760",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Simple Interest",
+      "kind": "standard",
+      "difficulty": "very_hard",
+      "answer_type": "single",
+      "stem": "The simple interest on a certain sum for some years is 9/25 of the sum. If the number of years is equal to the rate percent per annum, find the rate percent.",
+      "explanation": "SI = P·R·T/100 with R = T gives R² = 100×9/25 = 36, so R = 6%.",
+      "options": [
+        {
+          "label": "6%",
+          "is_correct": true
+        },
+        {
+          "label": "5%",
+          "is_correct": false
+        },
+        {
+          "label": "7%",
+          "is_correct": false
+        },
+        {
+          "label": "8%",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Simple Interest",
+      "kind": "standard",
+      "difficulty": "very_hard",
+      "answer_type": "single",
+      "stem": "A sum at simple interest amounts to ₹14520 in 4 years and ₹17160 in 7 years. Find the rate percent per annum.",
+      "explanation": "Annual interest = (₹17160 − ₹14520)/(7−4) = ₹880; sum = ₹11000; rate = 100×880/11000 = 8%.",
+      "options": [
+        {
+          "label": "10%",
+          "is_correct": false
+        },
+        {
+          "label": "9%",
+          "is_correct": false
+        },
+        {
+          "label": "7%",
+          "is_correct": false
+        },
+        {
+          "label": "8%",
+          "is_correct": true
+        }
+      ]
+    },
+    {
+      "chapter": "Simple Interest",
+      "kind": "standard",
+      "difficulty": "very_hard",
+      "answer_type": "single",
+      "stem": "A sum of money at simple interest amounts to ₹6200 in 4 years and to ₹8600 in 7 years. Find the sum.",
+      "explanation": "Interest for (7−4) years = ₹2400, so annual interest = ₹800; sum = ₹6200 − 4×₹800 = ₹3000.",
+      "options": [
+        {
+          "label": "₹3240",
+          "is_correct": false
+        },
+        {
+          "label": "₹3000",
+          "is_correct": true
+        },
+        {
+          "label": "₹3120",
+          "is_correct": false
+        },
+        {
+          "label": "₹2880",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Simple Interest",
+      "kind": "standard",
+      "difficulty": "very_hard",
+      "answer_type": "single",
+      "stem": "A sum at simple interest amounts to ₹25270 in 3 years and ₹31540 in 6 years. Find the rate percent per annum.",
+      "explanation": "Annual interest = (₹31540 − ₹25270)/(6−3) = ₹2090; sum = ₹19000; rate = 100×2090/19000 = 11%.",
+      "options": [
+        {
+          "label": "10%",
+          "is_correct": false
+        },
+        {
+          "label": "12%",
+          "is_correct": false
+        },
+        {
+          "label": "11%",
+          "is_correct": true
+        },
+        {
+          "label": "13%",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Simple Interest",
+      "kind": "standard",
+      "difficulty": "very_hard",
+      "answer_type": "single",
+      "stem": "A sum at simple interest amounts to ₹15340 in 2 years and ₹20020 in 6 years. Find the rate percent per annum.",
+      "explanation": "Annual interest = (₹20020 − ₹15340)/(6−2) = ₹1170; sum = ₹13000; rate = 100×1170/13000 = 9%.",
+      "options": [
+        {
+          "label": "11%",
+          "is_correct": false
+        },
+        {
+          "label": "8%",
+          "is_correct": false
+        },
+        {
+          "label": "10%",
+          "is_correct": false
+        },
+        {
+          "label": "9%",
+          "is_correct": true
+        }
+      ]
+    },
+    {
+      "chapter": "Simple Interest",
+      "kind": "standard",
+      "difficulty": "very_hard",
+      "answer_type": "single",
+      "stem": "A sum at simple interest amounts to ₹16800 in 4 years and ₹19600 in 8 years. Find the rate percent per annum.",
+      "explanation": "Annual interest = (₹19600 − ₹16800)/(8−4) = ₹700; sum = ₹14000; rate = 100×700/14000 = 5%.",
+      "options": [
+        {
+          "label": "6%",
+          "is_correct": false
+        },
+        {
+          "label": "5%",
+          "is_correct": true
+        },
+        {
+          "label": "4%",
+          "is_correct": false
+        },
+        {
+          "label": "7%",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Simple Interest",
+      "kind": "standard",
+      "difficulty": "very_hard",
+      "answer_type": "single",
+      "stem": "A sum of money at simple interest amounts to ₹18600 in 3 years and to ₹22200 in 6 years. Find the sum.",
+      "explanation": "Interest for (6−3) years = ₹3600, so annual interest = ₹1200; sum = ₹18600 − 3×₹1200 = ₹15000.",
+      "options": [
+        {
+          "label": "₹14400",
+          "is_correct": false
+        },
+        {
+          "label": "₹16200",
+          "is_correct": false
+        },
+        {
+          "label": "₹15600",
+          "is_correct": false
+        },
+        {
+          "label": "₹15000",
+          "is_correct": true
+        }
+      ]
+    },
+    {
+      "chapter": "Simple Interest",
+      "kind": "standard",
+      "difficulty": "very_hard",
+      "answer_type": "single",
+      "stem": "A sum at simple interest amounts to ₹13970 in 3 years and ₹15950 in 5 years. Find the rate percent per annum.",
+      "explanation": "Annual interest = (₹15950 − ₹13970)/(5−3) = ₹990; sum = ₹11000; rate = 100×990/11000 = 9%.",
+      "options": [
+        {
+          "label": "9%",
+          "is_correct": true
+        },
+        {
+          "label": "11%",
+          "is_correct": false
+        },
+        {
+          "label": "8%",
+          "is_correct": false
+        },
+        {
+          "label": "10%",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Simple Interest",
+      "kind": "standard",
+      "difficulty": "very_hard",
+      "answer_type": "single",
+      "stem": "A sum at simple interest amounts to ₹20320 in 3 years and ₹27520 in 8 years. Find the rate percent per annum.",
+      "explanation": "Annual interest = (₹27520 − ₹20320)/(8−3) = ₹1440; sum = ₹16000; rate = 100×1440/16000 = 9%.",
+      "options": [
+        {
+          "label": "9%",
+          "is_correct": true
+        },
+        {
+          "label": "11%",
+          "is_correct": false
+        },
+        {
+          "label": "8%",
+          "is_correct": false
+        },
+        {
+          "label": "10%",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Simple Interest",
+      "kind": "standard",
+      "difficulty": "very_hard",
+      "answer_type": "single",
+      "stem": "A sum of money at simple interest amounts to ₹5900 in 3 years and to ₹11100 in 7 years. Find the sum.",
+      "explanation": "Interest for (7−3) years = ₹5200, so annual interest = ₹1300; sum = ₹5900 − 3×₹1300 = ₹2000.",
+      "options": [
+        {
+          "label": "₹1920",
+          "is_correct": false
+        },
+        {
+          "label": "₹2000",
+          "is_correct": true
+        },
+        {
+          "label": "₹2080",
+          "is_correct": false
+        },
+        {
+          "label": "₹2160",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Simple Interest",
+      "kind": "standard",
+      "difficulty": "very_hard",
+      "answer_type": "single",
+      "stem": "A sum at simple interest amounts to ₹11200 in 4 years and ₹15200 in 9 years. Find the rate percent per annum.",
+      "explanation": "Annual interest = (₹15200 − ₹11200)/(9−4) = ₹800; sum = ₹8000; rate = 100×800/8000 = 10%.",
+      "options": [
+        {
+          "label": "11%",
+          "is_correct": false
+        },
+        {
+          "label": "10%",
+          "is_correct": true
+        },
+        {
+          "label": "9%",
+          "is_correct": false
+        },
+        {
+          "label": "12%",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Simple Interest",
+      "kind": "standard",
+      "difficulty": "very_hard",
+      "answer_type": "single",
+      "stem": "A sum of money at simple interest amounts to ₹18300 in 3 years and to ₹18600 in 6 years. Find the sum.",
+      "explanation": "Interest for (6−3) years = ₹300, so annual interest = ₹100; sum = ₹18300 − 3×₹100 = ₹18000.",
+      "options": [
+        {
+          "label": "₹17280",
+          "is_correct": false
+        },
+        {
+          "label": "₹18000",
+          "is_correct": true
+        },
+        {
+          "label": "₹18720",
+          "is_correct": false
+        },
+        {
+          "label": "₹19440",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Simple Interest",
+      "kind": "standard",
+      "difficulty": "very_hard",
+      "answer_type": "single",
+      "stem": "A sum of money at simple interest amounts to ₹16800 in 4 years and to ₹19200 in 6 years. Find the sum.",
+      "explanation": "Interest for (6−4) years = ₹2400, so annual interest = ₹1200; sum = ₹16800 − 4×₹1200 = ₹12000.",
+      "options": [
+        {
+          "label": "₹12000",
+          "is_correct": true
+        },
+        {
+          "label": "₹12960",
+          "is_correct": false
+        },
+        {
+          "label": "₹11520",
+          "is_correct": false
+        },
+        {
+          "label": "₹12480",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Simple Interest",
+      "kind": "standard",
+      "difficulty": "very_hard",
+      "answer_type": "single",
+      "stem": "A sum at simple interest amounts to ₹8400 in 2 years and ₹10500 in 5 years. Find the rate percent per annum.",
+      "explanation": "Annual interest = (₹10500 − ₹8400)/(5−2) = ₹700; sum = ₹7000; rate = 100×700/7000 = 10%.",
+      "options": [
+        {
+          "label": "9%",
+          "is_correct": false
+        },
+        {
+          "label": "10%",
+          "is_correct": true
+        },
+        {
+          "label": "11%",
+          "is_correct": false
+        },
+        {
+          "label": "12%",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Simple Interest",
+      "kind": "standard",
+      "difficulty": "very_hard",
+      "answer_type": "single",
+      "stem": "A sum at simple interest amounts to ₹9600 in 2 years and ₹12800 in 6 years. Find the rate percent per annum.",
+      "explanation": "Annual interest = (₹12800 − ₹9600)/(6−2) = ₹800; sum = ₹8000; rate = 100×800/8000 = 10%.",
+      "options": [
+        {
+          "label": "11%",
+          "is_correct": false
+        },
+        {
+          "label": "10%",
+          "is_correct": true
+        },
+        {
+          "label": "9%",
+          "is_correct": false
+        },
+        {
+          "label": "12%",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Simple Interest",
+      "kind": "standard",
+      "difficulty": "very_hard",
+      "answer_type": "single",
+      "stem": "A sum at simple interest amounts to ₹12960 in 4 years and ₹14940 in 6 years. Find the rate percent per annum.",
+      "explanation": "Annual interest = (₹14940 − ₹12960)/(6−4) = ₹990; sum = ₹9000; rate = 100×990/9000 = 11%.",
+      "options": [
+        {
+          "label": "12%",
+          "is_correct": false
+        },
+        {
+          "label": "10%",
+          "is_correct": false
+        },
+        {
+          "label": "11%",
+          "is_correct": true
+        },
+        {
+          "label": "13%",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Simple Interest",
+      "kind": "standard",
+      "difficulty": "very_hard",
+      "answer_type": "single",
+      "stem": "A sum of money at simple interest amounts to ₹20200 in 2 years and to ₹23200 in 7 years. Find the sum.",
+      "explanation": "Interest for (7−2) years = ₹3000, so annual interest = ₹600; sum = ₹20200 − 2×₹600 = ₹19000.",
+      "options": [
+        {
+          "label": "₹19760",
+          "is_correct": false
+        },
+        {
+          "label": "₹18240",
+          "is_correct": false
+        },
+        {
+          "label": "₹19000",
+          "is_correct": true
+        },
+        {
+          "label": "₹20520",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Simple Interest",
+      "kind": "standard",
+      "difficulty": "very_hard",
+      "answer_type": "single",
+      "stem": "A sum of money at simple interest amounts to ₹11400 in 2 years and to ₹15000 in 5 years. Find the sum.",
+      "explanation": "Interest for (5−2) years = ₹3600, so annual interest = ₹1200; sum = ₹11400 − 2×₹1200 = ₹9000.",
+      "options": [
+        {
+          "label": "₹9720",
+          "is_correct": false
+        },
+        {
+          "label": "₹8640",
+          "is_correct": false
+        },
+        {
+          "label": "₹9360",
+          "is_correct": false
+        },
+        {
+          "label": "₹9000",
+          "is_correct": true
+        }
+      ]
+    },
+    {
+      "chapter": "Simple Interest",
+      "kind": "standard",
+      "difficulty": "very_hard",
+      "answer_type": "single",
+      "stem": "A sum at simple interest amounts to ₹19720 in 4 years and ₹21080 in 6 years. Find the rate percent per annum.",
+      "explanation": "Annual interest = (₹21080 − ₹19720)/(6−4) = ₹680; sum = ₹17000; rate = 100×680/17000 = 4%.",
+      "options": [
+        {
+          "label": "6%",
+          "is_correct": false
+        },
+        {
+          "label": "4%",
+          "is_correct": true
+        },
+        {
+          "label": "3%",
+          "is_correct": false
+        },
+        {
+          "label": "5%",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Simple Interest",
+      "kind": "standard",
+      "difficulty": "very_hard",
+      "answer_type": "single",
+      "stem": "A sum of money at simple interest amounts to ₹8000 in 2 years and to ₹9000 in 4 years. Find the sum.",
+      "explanation": "Interest for (4−2) years = ₹1000, so annual interest = ₹500; sum = ₹8000 − 2×₹500 = ₹7000.",
+      "options": [
+        {
+          "label": "₹7280",
+          "is_correct": false
+        },
+        {
+          "label": "₹7560",
+          "is_correct": false
+        },
+        {
+          "label": "₹7000",
+          "is_correct": true
+        },
+        {
+          "label": "₹6720",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Simple Interest",
+      "kind": "standard",
+      "difficulty": "very_hard",
+      "answer_type": "single",
+      "stem": "A sum of money at simple interest amounts to ₹26000 in 4 years and to ₹33500 in 9 years. Find the sum.",
+      "explanation": "Interest for (9−4) years = ₹7500, so annual interest = ₹1500; sum = ₹26000 − 4×₹1500 = ₹20000.",
+      "options": [
+        {
+          "label": "₹20000",
+          "is_correct": true
+        },
+        {
+          "label": "₹19200",
+          "is_correct": false
+        },
+        {
+          "label": "₹21600",
+          "is_correct": false
+        },
+        {
+          "label": "₹20800",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Simple Interest",
+      "kind": "standard",
+      "difficulty": "very_hard",
+      "answer_type": "single",
+      "stem": "A sum at simple interest amounts to ₹12980 in 2 years and ₹14960 in 4 years. Find the rate percent per annum.",
+      "explanation": "Annual interest = (₹14960 − ₹12980)/(4−2) = ₹990; sum = ₹11000; rate = 100×990/11000 = 9%.",
+      "options": [
+        {
+          "label": "10%",
+          "is_correct": false
+        },
+        {
+          "label": "9%",
+          "is_correct": true
+        },
+        {
+          "label": "8%",
+          "is_correct": false
+        },
+        {
+          "label": "11%",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Simple Interest",
+      "kind": "standard",
+      "difficulty": "very_hard",
+      "answer_type": "single",
+      "stem": "A sum at simple interest amounts to ₹12400 in 4 years and ₹14200 in 7 years. Find the rate percent per annum.",
+      "explanation": "Annual interest = (₹14200 − ₹12400)/(7−4) = ₹600; sum = ₹10000; rate = 100×600/10000 = 6%.",
+      "options": [
+        {
+          "label": "5%",
+          "is_correct": false
+        },
+        {
+          "label": "6%",
+          "is_correct": true
+        },
+        {
+          "label": "8%",
+          "is_correct": false
+        },
+        {
+          "label": "7%",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Simple Interest",
+      "kind": "standard",
+      "difficulty": "very_hard",
+      "answer_type": "single",
+      "stem": "A sum at simple interest amounts to ₹3360 in 3 years and ₹3600 in 5 years. Find the rate percent per annum.",
+      "explanation": "Annual interest = (₹3600 − ₹3360)/(5−3) = ₹120; sum = ₹3000; rate = 100×120/3000 = 4%.",
+      "options": [
+        {
+          "label": "4%",
+          "is_correct": true
+        },
+        {
+          "label": "6%",
+          "is_correct": false
+        },
+        {
+          "label": "3%",
+          "is_correct": false
+        },
+        {
+          "label": "5%",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Simple Interest",
+      "kind": "standard",
+      "difficulty": "very_hard",
+      "answer_type": "single",
+      "stem": "A sum at simple interest amounts to ₹17680 in 3 years and ₹20800 in 5 years. Find the rate percent per annum.",
+      "explanation": "Annual interest = (₹20800 − ₹17680)/(5−3) = ₹1560; sum = ₹13000; rate = 100×1560/13000 = 12%.",
+      "options": [
+        {
+          "label": "11%",
+          "is_correct": false
+        },
+        {
+          "label": "13%",
+          "is_correct": false
+        },
+        {
+          "label": "12%",
+          "is_correct": true
+        },
+        {
+          "label": "14%",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Simple Interest",
+      "kind": "standard",
+      "difficulty": "very_hard",
+      "answer_type": "single",
+      "stem": "A sum at simple interest amounts to ₹11880 in 4 years and ₹12760 in 8 years. Find the rate percent per annum.",
+      "explanation": "Annual interest = (₹12760 − ₹11880)/(8−4) = ₹220; sum = ₹11000; rate = 100×220/11000 = 2%.",
+      "options": [
+        {
+          "label": "4%",
+          "is_correct": false
+        },
+        {
+          "label": "2%",
+          "is_correct": true
+        },
+        {
+          "label": "3%",
+          "is_correct": false
+        },
+        {
+          "label": "1%",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Simple Interest",
+      "kind": "standard",
+      "difficulty": "very_hard",
+      "answer_type": "single",
+      "stem": "A sum at simple interest amounts to ₹16510 in 3 years and ₹18850 in 5 years. Find the rate percent per annum.",
+      "explanation": "Annual interest = (₹18850 − ₹16510)/(5−3) = ₹1170; sum = ₹13000; rate = 100×1170/13000 = 9%.",
+      "options": [
+        {
+          "label": "10%",
+          "is_correct": false
+        },
+        {
+          "label": "11%",
+          "is_correct": false
+        },
+        {
+          "label": "8%",
+          "is_correct": false
+        },
+        {
+          "label": "9%",
+          "is_correct": true
+        }
+      ]
+    },
+    {
+      "chapter": "Simple Interest",
+      "kind": "standard",
+      "difficulty": "very_hard",
+      "answer_type": "single",
+      "stem": "A sum at simple interest amounts to ₹18530 in 3 years and ₹20570 in 7 years. Find the rate percent per annum.",
+      "explanation": "Annual interest = (₹20570 − ₹18530)/(7−3) = ₹510; sum = ₹17000; rate = 100×510/17000 = 3%.",
+      "options": [
+        {
+          "label": "3%",
+          "is_correct": true
+        },
+        {
+          "label": "2%",
+          "is_correct": false
+        },
+        {
+          "label": "5%",
+          "is_correct": false
+        },
+        {
+          "label": "4%",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Simple Interest",
+      "kind": "standard",
+      "difficulty": "very_hard",
+      "answer_type": "single",
+      "stem": "A sum at simple interest amounts to ₹16520 in 3 years and ₹20720 in 8 years. Find the rate percent per annum.",
+      "explanation": "Annual interest = (₹20720 − ₹16520)/(8−3) = ₹840; sum = ₹14000; rate = 100×840/14000 = 6%.",
+      "options": [
+        {
+          "label": "6%",
+          "is_correct": true
+        },
+        {
+          "label": "5%",
+          "is_correct": false
+        },
+        {
+          "label": "7%",
+          "is_correct": false
+        },
+        {
+          "label": "8%",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Simple Interest",
+      "kind": "standard",
+      "difficulty": "very_hard",
+      "answer_type": "single",
+      "stem": "A sum at simple interest amounts to ₹24480 in 3 years and ₹33120 in 7 years. Find the rate percent per annum.",
+      "explanation": "Annual interest = (₹33120 − ₹24480)/(7−3) = ₹2160; sum = ₹18000; rate = 100×2160/18000 = 12%.",
+      "options": [
+        {
+          "label": "12%",
+          "is_correct": true
+        },
+        {
+          "label": "13%",
+          "is_correct": false
+        },
+        {
+          "label": "11%",
+          "is_correct": false
+        },
+        {
+          "label": "14%",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Simple Interest",
+      "kind": "standard",
+      "difficulty": "very_hard",
+      "answer_type": "single",
+      "stem": "A sum of money at simple interest amounts to ₹21200 in 4 years and to ₹22400 in 8 years. Find the sum.",
+      "explanation": "Interest for (8−4) years = ₹1200, so annual interest = ₹300; sum = ₹21200 − 4×₹300 = ₹20000.",
+      "options": [
+        {
+          "label": "₹21600",
+          "is_correct": false
+        },
+        {
+          "label": "₹20000",
+          "is_correct": true
+        },
+        {
+          "label": "₹19200",
+          "is_correct": false
+        },
+        {
+          "label": "₹20800",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Simple Interest",
+      "kind": "standard",
+      "difficulty": "very_hard",
+      "answer_type": "single",
+      "stem": "A sum of money at simple interest amounts to ₹20400 in 4 years and to ₹25900 in 9 years. Find the sum.",
+      "explanation": "Interest for (9−4) years = ₹5500, so annual interest = ₹1100; sum = ₹20400 − 4×₹1100 = ₹16000.",
+      "options": [
+        {
+          "label": "₹16640",
+          "is_correct": false
+        },
+        {
+          "label": "₹16000",
+          "is_correct": true
+        },
+        {
+          "label": "₹17280",
+          "is_correct": false
+        },
+        {
+          "label": "₹15360",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Simple Interest",
+      "kind": "standard",
+      "difficulty": "very_hard",
+      "answer_type": "single",
+      "stem": "A sum of money at simple interest amounts to ₹17700 in 3 years and to ₹20400 in 6 years. Find the sum.",
+      "explanation": "Interest for (6−3) years = ₹2700, so annual interest = ₹900; sum = ₹17700 − 3×₹900 = ₹15000.",
+      "options": [
+        {
+          "label": "₹16200",
+          "is_correct": false
+        },
+        {
+          "label": "₹15000",
+          "is_correct": true
+        },
+        {
+          "label": "₹15600",
+          "is_correct": false
+        },
+        {
+          "label": "₹14400",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Simple Interest",
+      "kind": "standard",
+      "difficulty": "very_hard",
+      "answer_type": "single",
+      "stem": "The simple interest on a certain sum for some years is 16/25 of the sum. If the number of years is equal to the rate percent per annum, find the rate percent.",
+      "explanation": "SI = P·R·T/100 with R = T gives R² = 100×16/25 = 64, so R = 8%.",
+      "options": [
+        {
+          "label": "8%",
+          "is_correct": true
+        },
+        {
+          "label": "9%",
+          "is_correct": false
+        },
+        {
+          "label": "7%",
+          "is_correct": false
+        },
+        {
+          "label": "10%",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Simple Interest",
+      "kind": "standard",
+      "difficulty": "very_hard",
+      "answer_type": "single",
+      "stem": "A sum of money at simple interest amounts to ₹11800 in 2 years and to ₹13600 in 4 years. Find the sum.",
+      "explanation": "Interest for (4−2) years = ₹1800, so annual interest = ₹900; sum = ₹11800 − 2×₹900 = ₹10000.",
+      "options": [
+        {
+          "label": "₹9600",
+          "is_correct": false
+        },
+        {
+          "label": "₹10400",
+          "is_correct": false
+        },
+        {
+          "label": "₹10000",
+          "is_correct": true
+        },
+        {
+          "label": "₹10800",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Simple Interest",
+      "kind": "standard",
+      "difficulty": "very_hard",
+      "answer_type": "single",
+      "stem": "A sum of money at simple interest amounts to ₹11100 in 3 years and to ₹12500 in 5 years. Find the sum.",
+      "explanation": "Interest for (5−3) years = ₹1400, so annual interest = ₹700; sum = ₹11100 − 3×₹700 = ₹9000.",
+      "options": [
+        {
+          "label": "₹9360",
+          "is_correct": false
+        },
+        {
+          "label": "₹8640",
+          "is_correct": false
+        },
+        {
+          "label": "₹9720",
+          "is_correct": false
+        },
+        {
+          "label": "₹9000",
+          "is_correct": true
+        }
+      ]
+    },
+    {
+      "chapter": "Simple Interest",
+      "kind": "standard",
+      "difficulty": "very_hard",
+      "answer_type": "single",
+      "stem": "A sum at simple interest amounts to ₹20520 in 2 years and ₹25560 in 6 years. Find the rate percent per annum.",
+      "explanation": "Annual interest = (₹25560 − ₹20520)/(6−2) = ₹1260; sum = ₹18000; rate = 100×1260/18000 = 7%.",
+      "options": [
+        {
+          "label": "9%",
+          "is_correct": false
+        },
+        {
+          "label": "7%",
+          "is_correct": true
+        },
+        {
+          "label": "6%",
+          "is_correct": false
+        },
+        {
+          "label": "8%",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Simple Interest",
+      "kind": "standard",
+      "difficulty": "very_hard",
+      "answer_type": "single",
+      "stem": "A sum of money at simple interest amounts to ₹13200 in 2 years and to ₹13400 in 4 years. Find the sum.",
+      "explanation": "Interest for (4−2) years = ₹200, so annual interest = ₹100; sum = ₹13200 − 2×₹100 = ₹13000.",
+      "options": [
+        {
+          "label": "₹13520",
+          "is_correct": false
+        },
+        {
+          "label": "₹12480",
+          "is_correct": false
+        },
+        {
+          "label": "₹14040",
+          "is_correct": false
+        },
+        {
+          "label": "₹13000",
+          "is_correct": true
+        }
+      ]
+    },
+    {
+      "chapter": "Simple Interest",
+      "kind": "standard",
+      "difficulty": "very_hard",
+      "answer_type": "single",
+      "stem": "A sum of money at simple interest amounts to ₹4800 in 3 years and to ₹7200 in 7 years. Find the sum.",
+      "explanation": "Interest for (7−3) years = ₹2400, so annual interest = ₹600; sum = ₹4800 − 3×₹600 = ₹3000.",
+      "options": [
+        {
+          "label": "₹3120",
+          "is_correct": false
+        },
+        {
+          "label": "₹3240",
+          "is_correct": false
+        },
+        {
+          "label": "₹2880",
+          "is_correct": false
+        },
+        {
+          "label": "₹3000",
+          "is_correct": true
+        }
+      ]
+    },
+    {
+      "chapter": "Simple Interest",
+      "kind": "standard",
+      "difficulty": "very_hard",
+      "answer_type": "single",
+      "stem": "A sum of money at simple interest amounts to ₹3200 in 3 years and to ₹4800 in 7 years. Find the sum.",
+      "explanation": "Interest for (7−3) years = ₹1600, so annual interest = ₹400; sum = ₹3200 − 3×₹400 = ₹2000.",
+      "options": [
+        {
+          "label": "₹2160",
+          "is_correct": false
+        },
+        {
+          "label": "₹1920",
+          "is_correct": false
+        },
+        {
+          "label": "₹2000",
+          "is_correct": true
+        },
+        {
+          "label": "₹2080",
+          "is_correct": false
+        }
+      ]
+    }
+  ]
+}

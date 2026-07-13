@@ -1,0 +1,453 @@
+{
+  "subject": "Reasoning",
+  "questions": [
+    {
+      "chapter": "Blood Relations",
+      "kind": "standard",
+      "difficulty": "easy",
+      "answer_type": "single",
+      "stem": "Pointing to a man, Rekha said, \"He is the son of my mother.\" How is the man related to Rekha?",
+      "explanation": "The son of Rekha's mother is Rekha's brother.",
+      "options": [
+        { "label": "Brother", "is_correct": true },
+        { "label": "Father", "is_correct": false },
+        { "label": "Uncle", "is_correct": false },
+        { "label": "Cousin", "is_correct": false }
+      ]
+    },
+    {
+      "chapter": "Blood Relations",
+      "kind": "standard",
+      "difficulty": "easy",
+      "answer_type": "single",
+      "stem": "A is the father of B, and B is the daughter of A. How is A's wife related to B?",
+      "explanation": "A is B's father, so A's wife is B's mother.",
+      "options": [
+        { "label": "Sister", "is_correct": false },
+        { "label": "Mother", "is_correct": true },
+        { "label": "Aunt", "is_correct": false },
+        { "label": "Daughter", "is_correct": false }
+      ]
+    },
+    {
+      "chapter": "Blood Relations",
+      "kind": "standard",
+      "difficulty": "easy",
+      "answer_type": "single",
+      "stem": "P is the brother of Q, and Q is the sister of R. How is P related to R?",
+      "explanation": "P, Q and R are siblings. Since P is male (brother of Q), P is the brother of R regardless of R's gender.",
+      "options": [
+        { "label": "Brother", "is_correct": true },
+        { "label": "Uncle", "is_correct": false },
+        { "label": "Father", "is_correct": false },
+        { "label": "Cousin", "is_correct": false }
+      ]
+    },
+    {
+      "chapter": "Blood Relations",
+      "kind": "standard",
+      "difficulty": "easy",
+      "answer_type": "single",
+      "stem": "X is the mother of Y, and Y is the son of Z. If Z is a male, how is Z related to X?",
+      "explanation": "X is Y's mother and Z is Y's father, so X and Z are the parents of Y — i.e. Z is X's husband.",
+      "options": [
+        { "label": "Husband", "is_correct": true },
+        { "label": "Brother", "is_correct": false },
+        { "label": "Father", "is_correct": false },
+        { "label": "Son", "is_correct": false }
+      ]
+    },
+    {
+      "chapter": "Blood Relations",
+      "kind": "standard",
+      "difficulty": "easy",
+      "answer_type": "single",
+      "stem": "Sita is the daughter of my grandfather's only son. How is Sita related to me?",
+      "explanation": "My grandfather's only son is my father, so his daughter Sita is my sister.",
+      "options": [
+        { "label": "Sister", "is_correct": true },
+        { "label": "Cousin", "is_correct": false },
+        { "label": "Aunt", "is_correct": false },
+        { "label": "Mother", "is_correct": false }
+      ]
+    },
+    {
+      "chapter": "Blood Relations",
+      "kind": "standard",
+      "difficulty": "easy",
+      "answer_type": "single",
+      "stem": "A woman introduces a man as the son of the brother of her mother. How is the man related to the woman?",
+      "explanation": "The brother of her mother is her maternal uncle; his son is her cousin.",
+      "options": [
+        { "label": "Cousin", "is_correct": true },
+        { "label": "Nephew", "is_correct": false },
+        { "label": "Uncle", "is_correct": false },
+        { "label": "Brother", "is_correct": false }
+      ]
+    },
+    {
+      "chapter": "Blood Relations",
+      "kind": "standard",
+      "difficulty": "easy",
+      "answer_type": "single",
+      "stem": "If P is the husband of Q, and R is the mother of Q, how is R related to P?",
+      "explanation": "R is the mother of P's wife, so R is P's mother-in-law.",
+      "options": [
+        { "label": "Mother-in-law", "is_correct": true },
+        { "label": "Aunt", "is_correct": false },
+        { "label": "Sister-in-law", "is_correct": false },
+        { "label": "Grandmother", "is_correct": false }
+      ]
+    },
+    {
+      "chapter": "Blood Relations",
+      "kind": "standard",
+      "difficulty": "easy",
+      "answer_type": "single",
+      "stem": "M is the son of N. N is the wife of O. How is O related to M?",
+      "explanation": "O is the husband of N, and N is M's mother, so O is M's father.",
+      "options": [
+        { "label": "Father", "is_correct": true },
+        { "label": "Uncle", "is_correct": false },
+        { "label": "Brother", "is_correct": false },
+        { "label": "Son", "is_correct": false }
+      ]
+    },
+    {
+      "chapter": "Blood Relations",
+      "kind": "standard",
+      "difficulty": "medium",
+      "answer_type": "single",
+      "stem": "Pointing to a photograph, a man said, \"I have no brother or sister, but that man's father is my father's son.\" Whose photograph was it?",
+      "explanation": "Having no brother, \"my father's son\" is the man himself. So that man's father is the speaker, which makes the man in the photograph his son.",
+      "options": [
+        { "label": "His son", "is_correct": true },
+        { "label": "His father", "is_correct": false },
+        { "label": "His nephew", "is_correct": false },
+        { "label": "Himself", "is_correct": false }
+      ]
+    },
+    {
+      "chapter": "Blood Relations",
+      "kind": "standard",
+      "difficulty": "medium",
+      "answer_type": "single",
+      "stem": "A is B's sister. C is B's mother. D is C's father. E is D's mother. How is A related to D?",
+      "explanation": "D is the father of C, and C is A's mother, so D is A's grandfather. Therefore A is D's granddaughter.",
+      "options": [
+        { "label": "Grandmother", "is_correct": false },
+        { "label": "Granddaughter", "is_correct": true },
+        { "label": "Daughter", "is_correct": false },
+        { "label": "Grandfather", "is_correct": false }
+      ]
+    },
+    {
+      "chapter": "Blood Relations",
+      "kind": "standard",
+      "difficulty": "medium",
+      "answer_type": "single",
+      "stem": "P is the son of Q. Q is the daughter of R. R is the mother of S. If S is a male, how is S related to P?",
+      "explanation": "Q is R's daughter and S is R's son, so S is Q's brother. P is Q's son, so S is P's maternal uncle.",
+      "options": [
+        { "label": "Uncle", "is_correct": true },
+        { "label": "Father", "is_correct": false },
+        { "label": "Brother", "is_correct": false },
+        { "label": "Grandfather", "is_correct": false }
+      ]
+    },
+    {
+      "chapter": "Blood Relations",
+      "kind": "standard",
+      "difficulty": "medium",
+      "answer_type": "single",
+      "stem": "'A + B' means A is the mother of B; 'A − B' means A is the brother of B; 'A × B' means A is the father of B. Which of the following means P is the grandfather of Q?",
+      "explanation": "In 'P × R + Q': P × R means P is the father of R, and R + Q means R is the mother of Q. So P is the father of Q's mother, i.e. Q's grandfather.",
+      "options": [
+        { "label": "P × R − Q", "is_correct": false },
+        { "label": "P + R − Q", "is_correct": false },
+        { "label": "P − R × Q", "is_correct": false },
+        { "label": "P × R + Q", "is_correct": true }
+      ]
+    },
+    {
+      "chapter": "Blood Relations",
+      "kind": "standard",
+      "difficulty": "medium",
+      "answer_type": "single",
+      "stem": "Introducing a man, a woman said, \"His wife is the only daughter of my father.\" How is the man related to the woman?",
+      "explanation": "The only daughter of the woman's father is the woman herself. So his wife is the woman, meaning the man is her husband.",
+      "options": [
+        { "label": "Husband", "is_correct": true },
+        { "label": "Father", "is_correct": false },
+        { "label": "Brother", "is_correct": false },
+        { "label": "Father-in-law", "is_correct": false }
+      ]
+    },
+    {
+      "chapter": "Blood Relations",
+      "kind": "standard",
+      "difficulty": "medium",
+      "answer_type": "single",
+      "stem": "A family consists of a man, his wife, their four sons and the sons' wives. Each son has exactly three children. How many female members are there in the family?",
+      "explanation": "Confirmed females are the wife and the four sons' wives (5). The genders of the twelve grandchildren are not given, so the total number of females cannot be determined.",
+      "options": [
+        { "label": "6", "is_correct": false },
+        { "label": "12", "is_correct": false },
+        { "label": "17", "is_correct": false },
+        { "label": "Cannot be determined", "is_correct": true }
+      ]
+    },
+    {
+      "chapter": "Blood Relations",
+      "kind": "standard",
+      "difficulty": "medium",
+      "answer_type": "single",
+      "stem": "Deepak is the brother of Ravi. Pooja is the sister of Atul. Ravi is the son of Pooja. How is Deepak related to Pooja?",
+      "explanation": "Ravi is Pooja's son, and Deepak is Ravi's brother, so Deepak is also Pooja's son.",
+      "options": [
+        { "label": "Son", "is_correct": true },
+        { "label": "Brother", "is_correct": false },
+        { "label": "Nephew", "is_correct": false },
+        { "label": "Father", "is_correct": false }
+      ]
+    },
+    {
+      "chapter": "Blood Relations",
+      "kind": "standard",
+      "difficulty": "medium",
+      "answer_type": "single",
+      "stem": "A is the father of C. D is the son of B. E is the brother of A. If C is the sister of D, how is B related to E?",
+      "explanation": "C and D are siblings (C is D's sister), children of A and B, so B is A's wife. E is A's brother, so B is E's sister-in-law.",
+      "options": [
+        { "label": "Sister-in-law", "is_correct": true },
+        { "label": "Wife", "is_correct": false },
+        { "label": "Sister", "is_correct": false },
+        { "label": "Cousin", "is_correct": false }
+      ]
+    },
+    {
+      "chapter": "Blood Relations",
+      "kind": "standard",
+      "difficulty": "hard",
+      "answer_type": "single",
+      "stem": "'P * Q' means P is the sister of Q; 'P $ Q' means P is the father of Q; 'P # Q' means P is the mother of Q. Which of the following means M is the aunt of N?",
+      "explanation": "In 'M * K $ N': M * K means M is the sister of K, and K $ N means K is the father of N. So M is the sister of N's father, i.e. N's aunt.",
+      "options": [
+        { "label": "M * K $ N", "is_correct": true },
+        { "label": "M # K * N", "is_correct": false },
+        { "label": "M $ K * N", "is_correct": false },
+        { "label": "K * M # N", "is_correct": false }
+      ]
+    },
+    {
+      "chapter": "Blood Relations",
+      "kind": "standard",
+      "difficulty": "hard",
+      "answer_type": "single",
+      "stem": "A is the mother of B and C. B is the husband of D. E is the son of C. If F is the daughter of B, how is F related to A?",
+      "explanation": "B is A's son, and F is B's daughter, so F is A's granddaughter.",
+      "options": [
+        { "label": "Granddaughter", "is_correct": true },
+        { "label": "Daughter", "is_correct": false },
+        { "label": "Niece", "is_correct": false },
+        { "label": "Grandmother", "is_correct": false }
+      ]
+    },
+    {
+      "chapter": "Blood Relations",
+      "kind": "standard",
+      "difficulty": "hard",
+      "answer_type": "single",
+      "stem": "Pointing to a photograph, Neha (a girl) said, \"He is the only son of the only son of my grandmother.\" How is the man in the photograph related to Neha?",
+      "explanation": "Her grandmother's only son is Neha's father; his only son is Neha's brother.",
+      "options": [
+        { "label": "Brother", "is_correct": true },
+        { "label": "Father", "is_correct": false },
+        { "label": "Uncle", "is_correct": false },
+        { "label": "Cousin", "is_correct": false }
+      ]
+    },
+    {
+      "chapter": "Blood Relations",
+      "kind": "standard",
+      "difficulty": "hard",
+      "answer_type": "single",
+      "stem": "'A × B' means A is the father of B; 'A ÷ B' means A is the mother of B. What does 'P × Q ÷ R' indicate about P and R?",
+      "explanation": "P × Q means P is the father of Q; Q ÷ R means Q is the mother of R. So P is the father of R's mother, i.e. R's (maternal) grandfather.",
+      "options": [
+        { "label": "P is the grandfather of R", "is_correct": true },
+        { "label": "P is the father of R", "is_correct": false },
+        { "label": "P is the grandmother of R", "is_correct": false },
+        { "label": "P is the grandson of R", "is_correct": false }
+      ]
+    },
+    {
+      "chapter": "Blood Relations",
+      "kind": "standard",
+      "difficulty": "hard",
+      "answer_type": "single",
+      "stem": "Reena's mother is the sister of Ram. Ram's mother is Kavita. How is Kavita related to Reena?",
+      "explanation": "Reena's mother is Ram's sister, so Ram's mother Kavita is also the mother of Reena's mother — i.e. Reena's maternal grandmother.",
+      "options": [
+        { "label": "Mother", "is_correct": false },
+        { "label": "Grandmother", "is_correct": true },
+        { "label": "Aunt", "is_correct": false },
+        { "label": "Sister", "is_correct": false }
+      ]
+    },
+    {
+      "chapter": "Blood Relations",
+      "kind": "standard",
+      "difficulty": "hard",
+      "answer_type": "single",
+      "stem": "'A + B' means A is the son of B; 'A − B' means A is the wife of B; 'A × B' means A is the brother of B. In 'P × Q + R − S', how is P related to S?",
+      "explanation": "R − S means R is the wife of S (so S is male); Q + R means Q is the son of R (and of S); P × Q means P is the brother of Q, so P is also a son of S.",
+      "options": [
+        { "label": "Son", "is_correct": true },
+        { "label": "Daughter", "is_correct": false },
+        { "label": "Brother", "is_correct": false },
+        { "label": "Husband", "is_correct": false }
+      ]
+    },
+    {
+      "chapter": "Blood Relations",
+      "kind": "standard",
+      "difficulty": "hard",
+      "answer_type": "single",
+      "stem": "A family has father P, his wife Q, sons R and S, R's wife T, and one child U of R and T. If S is female, how many male members are in the family?",
+      "explanation": "Confirmed males are P and R. Q, T are female and S is female. U's gender is not stated, so the number of male members cannot be fixed.",
+      "options": [
+        { "label": "2", "is_correct": false },
+        { "label": "3", "is_correct": false },
+        { "label": "4", "is_correct": false },
+        { "label": "Cannot be determined", "is_correct": true }
+      ]
+    },
+    {
+      "chapter": "Blood Relations",
+      "kind": "standard",
+      "difficulty": "hard",
+      "answer_type": "single",
+      "stem": "A is the daughter of B. B is the son of C. C is the father of D. D is the sister of B. How is A related to D?",
+      "explanation": "B and D are both children of C (D is B's sister). A is B's daughter, so D is A's paternal aunt and A is D's niece.",
+      "options": [
+        { "label": "Niece", "is_correct": true },
+        { "label": "Daughter", "is_correct": false },
+        { "label": "Aunt", "is_correct": false },
+        { "label": "Cousin", "is_correct": false }
+      ]
+    },
+    {
+      "chapter": "Blood Relations",
+      "kind": "standard",
+      "difficulty": "very_hard",
+      "answer_type": "single",
+      "stem": "'A − B' means A is the sister of B; 'A × B' means A is the father of B; 'A + B' means A is the son of B. In 'M − N × O + P', how is M related to P?",
+      "explanation": "O + P means O is the son of P; N × O means N is the father of O, so P (the other parent) is O's mother and N's wife; M − N means M is the sister of N. So M is the sister of P's husband — P's sister-in-law.",
+      "options": [
+        { "label": "Sister-in-law", "is_correct": true },
+        { "label": "Sister", "is_correct": false },
+        { "label": "Aunt", "is_correct": false },
+        { "label": "Mother-in-law", "is_correct": false }
+      ]
+    },
+    {
+      "chapter": "Blood Relations",
+      "kind": "standard",
+      "difficulty": "very_hard",
+      "answer_type": "single",
+      "stem": "In a family of five, B is the son of A but A is not the mother of B. C is the wife of A. D is the brother of B. E is the daughter of C. How many daughters does C have?",
+      "explanation": "A is B's parent but not his mother, so A is the father and C (A's wife) is the mother. The children are B (son), D (brother of B, male) and E (daughter). Only E is a daughter of C.",
+      "options": [
+        { "label": "1", "is_correct": true },
+        { "label": "2", "is_correct": false },
+        { "label": "3", "is_correct": false },
+        { "label": "Cannot be determined", "is_correct": false }
+      ]
+    },
+    {
+      "chapter": "Blood Relations",
+      "kind": "standard",
+      "difficulty": "very_hard",
+      "answer_type": "single",
+      "stem": "Pointing to a man in a photograph, Asha said, \"His mother is the only daughter of my mother.\" How is Asha related to the man?",
+      "explanation": "The only daughter of Asha's mother is Asha herself, so the man's mother is Asha — Asha is his mother.",
+      "options": [
+        { "label": "Mother", "is_correct": true },
+        { "label": "Aunt", "is_correct": false },
+        { "label": "Sister", "is_correct": false },
+        { "label": "Grandmother", "is_correct": false }
+      ]
+    },
+    {
+      "chapter": "Blood Relations",
+      "kind": "standard",
+      "difficulty": "very_hard",
+      "answer_type": "single",
+      "stem": "P is the brother of Q. R is the mother of Q. S is the father of R. T is the mother of S. How is P related to T?",
+      "explanation": "R is P's mother (P is Q's brother); S is R's father, i.e. P's grandfather; T is S's mother, i.e. P's great-grandmother. So P is T's great-grandson.",
+      "options": [
+        { "label": "Grandson", "is_correct": false },
+        { "label": "Great-grandson", "is_correct": true },
+        { "label": "Son", "is_correct": false },
+        { "label": "Great-grandfather", "is_correct": false }
+      ]
+    },
+    {
+      "chapter": "Blood Relations",
+      "kind": "standard",
+      "difficulty": "very_hard",
+      "answer_type": "single",
+      "stem": "A joint family has a grandfather and grandmother, their three sons, the three sons' wives, and two children per son. If exactly half of the grandchildren are girls, how many male members are in the family?",
+      "explanation": "Grandchildren = 6, half girls means 3 boys and 3 girls. Males = grandfather (1) + three sons (3) + three grandsons (3) = 7.",
+      "options": [
+        { "label": "6", "is_correct": false },
+        { "label": "7", "is_correct": true },
+        { "label": "8", "is_correct": false },
+        { "label": "Cannot be determined", "is_correct": false }
+      ]
+    },
+    {
+      "chapter": "Blood Relations",
+      "kind": "standard",
+      "difficulty": "very_hard",
+      "answer_type": "single",
+      "stem": "'A + B' means A is the husband of B; 'A − B' means A is the daughter of B; 'A × B' means A is the sister of B. In 'P + Q − R × T', how is T related to Q?",
+      "explanation": "Q − R means Q is the daughter of R; R × T means R is the sister of T. So T is the sibling of Q's mother — Q's maternal aunt.",
+      "options": [
+        { "label": "Aunt", "is_correct": true },
+        { "label": "Mother", "is_correct": false },
+        { "label": "Sister", "is_correct": false },
+        { "label": "Grandmother", "is_correct": false }
+      ]
+    },
+    {
+      "chapter": "Blood Relations",
+      "kind": "standard",
+      "difficulty": "very_hard",
+      "answer_type": "single",
+      "stem": "M is the son of N. N is not the mother of M. P is the father of N. Q is the daughter of M. How is P related to Q?",
+      "explanation": "N is M's parent but not his mother, so N is M's father; P is N's father, i.e. M's grandfather. Q is M's daughter, so P is Q's great-grandfather.",
+      "options": [
+        { "label": "Grandfather", "is_correct": false },
+        { "label": "Great-grandfather", "is_correct": true },
+        { "label": "Father", "is_correct": false },
+        { "label": "Grandmother", "is_correct": false }
+      ]
+    },
+    {
+      "chapter": "Blood Relations",
+      "kind": "standard",
+      "difficulty": "very_hard",
+      "answer_type": "single",
+      "stem": "P and Q are children of the same parents. R is the mother of Q. S is the son of R. T is the brother of P. If the family has exactly four children — P, Q, S and T — how many sons do R and her husband have?",
+      "explanation": "R is the mother of all four children. S is a son and T (brother of P) is male, so both are sons. The genders of P and Q are not given, so the exact number of sons cannot be determined.",
+      "options": [
+        { "label": "2", "is_correct": false },
+        { "label": "3", "is_correct": false },
+        { "label": "4", "is_correct": false },
+        { "label": "Cannot be determined", "is_correct": true }
+      ]
+    }
+  ]
+}

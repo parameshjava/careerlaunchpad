@@ -1,0 +1,5205 @@
+{
+  "subject": "Reasoning",
+  "questions": [
+    {
+      "chapter": "Direction Sense",
+      "kind": "standard",
+      "difficulty": "easy",
+      "answer_type": "single",
+      "stem": "A person starts from a point and walks 11 m towards the West, then walks 8 m towards the North. In which direction is he now from the starting point?",
+      "explanation": "Tracking the moves, the net displacement is -11 m East and 8 m North of the start, i.e. towards North-West.",
+      "options": [
+        {
+          "label": "South-East",
+          "is_correct": false
+        },
+        {
+          "label": "South",
+          "is_correct": false
+        },
+        {
+          "label": "South-West",
+          "is_correct": false
+        },
+        {
+          "label": "North-West",
+          "is_correct": true
+        }
+      ]
+    },
+    {
+      "chapter": "Direction Sense",
+      "kind": "standard",
+      "difficulty": "easy",
+      "answer_type": "single",
+      "stem": "A person starts from a point and walks 11 m towards the South, then walks 10 m towards the East. In which direction is he now from the starting point?",
+      "explanation": "Tracking the moves, the net displacement is 10 m East and -11 m North of the start, i.e. towards South-East.",
+      "options": [
+        {
+          "label": "West",
+          "is_correct": false
+        },
+        {
+          "label": "South-East",
+          "is_correct": true
+        },
+        {
+          "label": "South",
+          "is_correct": false
+        },
+        {
+          "label": "East",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Direction Sense",
+      "kind": "standard",
+      "difficulty": "easy",
+      "answer_type": "single",
+      "stem": "A person starts from a point and walks 7 m towards the South, then walks 9 m towards the East. In which direction is he now from the starting point?",
+      "explanation": "Tracking the moves, the net displacement is 9 m East and -7 m North of the start, i.e. towards South-East.",
+      "options": [
+        {
+          "label": "South-East",
+          "is_correct": true
+        },
+        {
+          "label": "South",
+          "is_correct": false
+        },
+        {
+          "label": "North-West",
+          "is_correct": false
+        },
+        {
+          "label": "South-West",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Direction Sense",
+      "kind": "standard",
+      "difficulty": "easy",
+      "answer_type": "single",
+      "stem": "A man is initially facing South. He turns 90° clockwise. Which direction is he facing now?",
+      "explanation": "Starting from South and applying the turns in order, he ends up facing West.",
+      "options": [
+        {
+          "label": "West",
+          "is_correct": true
+        },
+        {
+          "label": "North",
+          "is_correct": false
+        },
+        {
+          "label": "East",
+          "is_correct": false
+        },
+        {
+          "label": "South",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Direction Sense",
+      "kind": "standard",
+      "difficulty": "easy",
+      "answer_type": "single",
+      "stem": "A person starts from a point and walks 12 m towards the South, then walks 9 m towards the North. In which direction is he now from the starting point?",
+      "explanation": "Tracking the moves, the net displacement is 0 m East and -3 m North of the start, i.e. towards South.",
+      "options": [
+        {
+          "label": "East",
+          "is_correct": false
+        },
+        {
+          "label": "West",
+          "is_correct": false
+        },
+        {
+          "label": "South",
+          "is_correct": true
+        },
+        {
+          "label": "North-West",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Direction Sense",
+      "kind": "standard",
+      "difficulty": "easy",
+      "answer_type": "single",
+      "stem": "A person starts from a point and walks 3 m towards the West, then walks 7 m towards the North. In which direction is he now from the starting point?",
+      "explanation": "Tracking the moves, the net displacement is -3 m East and 7 m North of the start, i.e. towards North-West.",
+      "options": [
+        {
+          "label": "South-East",
+          "is_correct": false
+        },
+        {
+          "label": "South",
+          "is_correct": false
+        },
+        {
+          "label": "North-West",
+          "is_correct": true
+        },
+        {
+          "label": "East",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Direction Sense",
+      "kind": "standard",
+      "difficulty": "easy",
+      "answer_type": "single",
+      "stem": "A man is initially facing North. He turns 90° clockwise. Which direction is he facing now?",
+      "explanation": "Starting from North and applying the turns in order, he ends up facing East.",
+      "options": [
+        {
+          "label": "West",
+          "is_correct": false
+        },
+        {
+          "label": "South",
+          "is_correct": false
+        },
+        {
+          "label": "North",
+          "is_correct": false
+        },
+        {
+          "label": "East",
+          "is_correct": true
+        }
+      ]
+    },
+    {
+      "chapter": "Direction Sense",
+      "kind": "standard",
+      "difficulty": "easy",
+      "answer_type": "single",
+      "stem": "A person starts from a point and walks 6 m towards the East, then walks 9 m towards the East. In which direction is he now from the starting point?",
+      "explanation": "Tracking the moves, the net displacement is 15 m East and 0 m North of the start, i.e. towards East.",
+      "options": [
+        {
+          "label": "West",
+          "is_correct": false
+        },
+        {
+          "label": "South-West",
+          "is_correct": false
+        },
+        {
+          "label": "East",
+          "is_correct": true
+        },
+        {
+          "label": "North-West",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Direction Sense",
+      "kind": "standard",
+      "difficulty": "easy",
+      "answer_type": "single",
+      "stem": "A person starts from a point and walks 8 m towards the West, then walks 9 m towards the South. In which direction is he now from the starting point?",
+      "explanation": "Tracking the moves, the net displacement is -8 m East and -9 m North of the start, i.e. towards South-West.",
+      "options": [
+        {
+          "label": "South",
+          "is_correct": false
+        },
+        {
+          "label": "North-West",
+          "is_correct": false
+        },
+        {
+          "label": "East",
+          "is_correct": false
+        },
+        {
+          "label": "South-West",
+          "is_correct": true
+        }
+      ]
+    },
+    {
+      "chapter": "Direction Sense",
+      "kind": "standard",
+      "difficulty": "easy",
+      "answer_type": "single",
+      "stem": "A person starts from a point and walks 12 m towards the South, then walks 2 m towards the West. In which direction is he now from the starting point?",
+      "explanation": "Tracking the moves, the net displacement is -2 m East and -12 m North of the start, i.e. towards South-West.",
+      "options": [
+        {
+          "label": "North",
+          "is_correct": false
+        },
+        {
+          "label": "South-West",
+          "is_correct": true
+        },
+        {
+          "label": "East",
+          "is_correct": false
+        },
+        {
+          "label": "North-East",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Direction Sense",
+      "kind": "standard",
+      "difficulty": "easy",
+      "answer_type": "single",
+      "stem": "A person starts from a point and walks 4 m towards the East, then walks 8 m towards the West. In which direction is he now from the starting point?",
+      "explanation": "Tracking the moves, the net displacement is -4 m East and 0 m North of the start, i.e. towards West.",
+      "options": [
+        {
+          "label": "South-East",
+          "is_correct": false
+        },
+        {
+          "label": "North-West",
+          "is_correct": false
+        },
+        {
+          "label": "West",
+          "is_correct": true
+        },
+        {
+          "label": "East",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Direction Sense",
+      "kind": "standard",
+      "difficulty": "easy",
+      "answer_type": "single",
+      "stem": "A person starts from a point and walks 12 m towards the West, then walks 9 m towards the East. In which direction is he now from the starting point?",
+      "explanation": "Tracking the moves, the net displacement is -3 m East and 0 m North of the start, i.e. towards West.",
+      "options": [
+        {
+          "label": "East",
+          "is_correct": false
+        },
+        {
+          "label": "South",
+          "is_correct": false
+        },
+        {
+          "label": "West",
+          "is_correct": true
+        },
+        {
+          "label": "North",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Direction Sense",
+      "kind": "standard",
+      "difficulty": "easy",
+      "answer_type": "single",
+      "stem": "A person starts from a point and walks 3 m towards the South, then walks 6 m towards the North. In which direction is he now from the starting point?",
+      "explanation": "Tracking the moves, the net displacement is 0 m East and 3 m North of the start, i.e. towards North.",
+      "options": [
+        {
+          "label": "East",
+          "is_correct": false
+        },
+        {
+          "label": "South",
+          "is_correct": false
+        },
+        {
+          "label": "North",
+          "is_correct": true
+        },
+        {
+          "label": "North-West",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Direction Sense",
+      "kind": "standard",
+      "difficulty": "easy",
+      "answer_type": "single",
+      "stem": "A person starts from a point and walks 2 m towards the North, then walks 3 m towards the North. In which direction is he now from the starting point?",
+      "explanation": "Tracking the moves, the net displacement is 0 m East and 5 m North of the start, i.e. towards North.",
+      "options": [
+        {
+          "label": "South-East",
+          "is_correct": false
+        },
+        {
+          "label": "West",
+          "is_correct": false
+        },
+        {
+          "label": "East",
+          "is_correct": false
+        },
+        {
+          "label": "North",
+          "is_correct": true
+        }
+      ]
+    },
+    {
+      "chapter": "Direction Sense",
+      "kind": "standard",
+      "difficulty": "easy",
+      "answer_type": "single",
+      "stem": "A person starts from a point and walks 7 m towards the North, then walks 4 m towards the East. In which direction is he now from the starting point?",
+      "explanation": "Tracking the moves, the net displacement is 4 m East and 7 m North of the start, i.e. towards North-East.",
+      "options": [
+        {
+          "label": "West",
+          "is_correct": false
+        },
+        {
+          "label": "North",
+          "is_correct": false
+        },
+        {
+          "label": "South-East",
+          "is_correct": false
+        },
+        {
+          "label": "North-East",
+          "is_correct": true
+        }
+      ]
+    },
+    {
+      "chapter": "Direction Sense",
+      "kind": "standard",
+      "difficulty": "easy",
+      "answer_type": "single",
+      "stem": "A man is initially facing West. He turns 90° anticlockwise, then 90° clockwise. Which direction is he facing now?",
+      "explanation": "Starting from West and applying the turns in order, he ends up facing West.",
+      "options": [
+        {
+          "label": "North",
+          "is_correct": false
+        },
+        {
+          "label": "West",
+          "is_correct": true
+        },
+        {
+          "label": "South",
+          "is_correct": false
+        },
+        {
+          "label": "East",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Direction Sense",
+      "kind": "standard",
+      "difficulty": "easy",
+      "answer_type": "single",
+      "stem": "A person starts from a point and walks 2 m towards the East, then walks 12 m towards the South. In which direction is he now from the starting point?",
+      "explanation": "Tracking the moves, the net displacement is 2 m East and -12 m North of the start, i.e. towards South-East.",
+      "options": [
+        {
+          "label": "North",
+          "is_correct": false
+        },
+        {
+          "label": "South-East",
+          "is_correct": true
+        },
+        {
+          "label": "West",
+          "is_correct": false
+        },
+        {
+          "label": "North-West",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Direction Sense",
+      "kind": "standard",
+      "difficulty": "easy",
+      "answer_type": "single",
+      "stem": "A person starts from a point and walks 6 m towards the West, then walks 2 m towards the South. In which direction is he now from the starting point?",
+      "explanation": "Tracking the moves, the net displacement is -6 m East and -2 m North of the start, i.e. towards South-West.",
+      "options": [
+        {
+          "label": "North-East",
+          "is_correct": false
+        },
+        {
+          "label": "South-West",
+          "is_correct": true
+        },
+        {
+          "label": "North-West",
+          "is_correct": false
+        },
+        {
+          "label": "South",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Direction Sense",
+      "kind": "standard",
+      "difficulty": "easy",
+      "answer_type": "single",
+      "stem": "A man is initially facing East. He turns 90° anticlockwise, then 90° clockwise. Which direction is he facing now?",
+      "explanation": "Starting from East and applying the turns in order, he ends up facing East.",
+      "options": [
+        {
+          "label": "East",
+          "is_correct": true
+        },
+        {
+          "label": "South",
+          "is_correct": false
+        },
+        {
+          "label": "North",
+          "is_correct": false
+        },
+        {
+          "label": "West",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Direction Sense",
+      "kind": "standard",
+      "difficulty": "easy",
+      "answer_type": "single",
+      "stem": "A person starts from a point and walks 8 m towards the East, then walks 6 m towards the East. In which direction is he now from the starting point?",
+      "explanation": "Tracking the moves, the net displacement is 14 m East and 0 m North of the start, i.e. towards East.",
+      "options": [
+        {
+          "label": "East",
+          "is_correct": true
+        },
+        {
+          "label": "North-East",
+          "is_correct": false
+        },
+        {
+          "label": "South-West",
+          "is_correct": false
+        },
+        {
+          "label": "South-East",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Direction Sense",
+      "kind": "standard",
+      "difficulty": "easy",
+      "answer_type": "single",
+      "stem": "A person starts from a point and walks 12 m towards the South, then walks 5 m towards the West. In which direction is he now from the starting point?",
+      "explanation": "Tracking the moves, the net displacement is -5 m East and -12 m North of the start, i.e. towards South-West.",
+      "options": [
+        {
+          "label": "South-West",
+          "is_correct": true
+        },
+        {
+          "label": "North-West",
+          "is_correct": false
+        },
+        {
+          "label": "North",
+          "is_correct": false
+        },
+        {
+          "label": "East",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Direction Sense",
+      "kind": "standard",
+      "difficulty": "easy",
+      "answer_type": "single",
+      "stem": "A person starts from a point and walks 5 m towards the North, then walks 7 m towards the South. In which direction is he now from the starting point?",
+      "explanation": "Tracking the moves, the net displacement is 0 m East and -2 m North of the start, i.e. towards South.",
+      "options": [
+        {
+          "label": "South-West",
+          "is_correct": false
+        },
+        {
+          "label": "North-East",
+          "is_correct": false
+        },
+        {
+          "label": "South",
+          "is_correct": true
+        },
+        {
+          "label": "North",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Direction Sense",
+      "kind": "standard",
+      "difficulty": "easy",
+      "answer_type": "single",
+      "stem": "A man is initially facing West. He turns 90° anticlockwise, then 90° anticlockwise. Which direction is he facing now?",
+      "explanation": "Starting from West and applying the turns in order, he ends up facing East.",
+      "options": [
+        {
+          "label": "West",
+          "is_correct": false
+        },
+        {
+          "label": "North",
+          "is_correct": false
+        },
+        {
+          "label": "East",
+          "is_correct": true
+        },
+        {
+          "label": "South",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Direction Sense",
+      "kind": "standard",
+      "difficulty": "easy",
+      "answer_type": "single",
+      "stem": "A man is initially facing South. He turns 90° anticlockwise, then 90° anticlockwise. Which direction is he facing now?",
+      "explanation": "Starting from South and applying the turns in order, he ends up facing North.",
+      "options": [
+        {
+          "label": "North",
+          "is_correct": true
+        },
+        {
+          "label": "East",
+          "is_correct": false
+        },
+        {
+          "label": "West",
+          "is_correct": false
+        },
+        {
+          "label": "South",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Direction Sense",
+      "kind": "standard",
+      "difficulty": "easy",
+      "answer_type": "single",
+      "stem": "A person starts from a point and walks 6 m towards the East, then walks 5 m towards the East. In which direction is he now from the starting point?",
+      "explanation": "Tracking the moves, the net displacement is 11 m East and 0 m North of the start, i.e. towards East.",
+      "options": [
+        {
+          "label": "North",
+          "is_correct": false
+        },
+        {
+          "label": "East",
+          "is_correct": true
+        },
+        {
+          "label": "South",
+          "is_correct": false
+        },
+        {
+          "label": "South-East",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Direction Sense",
+      "kind": "standard",
+      "difficulty": "easy",
+      "answer_type": "single",
+      "stem": "A person starts from a point and walks 11 m towards the West, then walks 3 m towards the South. In which direction is he now from the starting point?",
+      "explanation": "Tracking the moves, the net displacement is -11 m East and -3 m North of the start, i.e. towards South-West.",
+      "options": [
+        {
+          "label": "South-East",
+          "is_correct": false
+        },
+        {
+          "label": "South-West",
+          "is_correct": true
+        },
+        {
+          "label": "North-West",
+          "is_correct": false
+        },
+        {
+          "label": "West",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Direction Sense",
+      "kind": "standard",
+      "difficulty": "easy",
+      "answer_type": "single",
+      "stem": "A person starts from a point and walks 7 m towards the West, then walks 5 m towards the South. In which direction is he now from the starting point?",
+      "explanation": "Tracking the moves, the net displacement is -7 m East and -5 m North of the start, i.e. towards South-West.",
+      "options": [
+        {
+          "label": "South-West",
+          "is_correct": true
+        },
+        {
+          "label": "North-West",
+          "is_correct": false
+        },
+        {
+          "label": "South-East",
+          "is_correct": false
+        },
+        {
+          "label": "North",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Direction Sense",
+      "kind": "standard",
+      "difficulty": "easy",
+      "answer_type": "single",
+      "stem": "A man is initially facing East. He turns 90° clockwise, then 90° clockwise. Which direction is he facing now?",
+      "explanation": "Starting from East and applying the turns in order, he ends up facing West.",
+      "options": [
+        {
+          "label": "South",
+          "is_correct": false
+        },
+        {
+          "label": "West",
+          "is_correct": true
+        },
+        {
+          "label": "North",
+          "is_correct": false
+        },
+        {
+          "label": "East",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Direction Sense",
+      "kind": "standard",
+      "difficulty": "easy",
+      "answer_type": "single",
+      "stem": "A person starts from a point and walks 9 m towards the West, then walks 12 m towards the West. In which direction is he now from the starting point?",
+      "explanation": "Tracking the moves, the net displacement is -21 m East and 0 m North of the start, i.e. towards West.",
+      "options": [
+        {
+          "label": "West",
+          "is_correct": true
+        },
+        {
+          "label": "South-East",
+          "is_correct": false
+        },
+        {
+          "label": "North-East",
+          "is_correct": false
+        },
+        {
+          "label": "East",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Direction Sense",
+      "kind": "standard",
+      "difficulty": "easy",
+      "answer_type": "single",
+      "stem": "A man is initially facing West. He turns 90° clockwise, then 90° anticlockwise. Which direction is he facing now?",
+      "explanation": "Starting from West and applying the turns in order, he ends up facing West.",
+      "options": [
+        {
+          "label": "East",
+          "is_correct": false
+        },
+        {
+          "label": "North",
+          "is_correct": false
+        },
+        {
+          "label": "West",
+          "is_correct": true
+        },
+        {
+          "label": "South",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Direction Sense",
+      "kind": "standard",
+      "difficulty": "easy",
+      "answer_type": "single",
+      "stem": "A person starts from a point and walks 8 m towards the South, then walks 9 m towards the West. In which direction is he now from the starting point?",
+      "explanation": "Tracking the moves, the net displacement is -9 m East and -8 m North of the start, i.e. towards South-West.",
+      "options": [
+        {
+          "label": "West",
+          "is_correct": false
+        },
+        {
+          "label": "South-West",
+          "is_correct": true
+        },
+        {
+          "label": "North-West",
+          "is_correct": false
+        },
+        {
+          "label": "South-East",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Direction Sense",
+      "kind": "standard",
+      "difficulty": "easy",
+      "answer_type": "single",
+      "stem": "A person starts from a point and walks 10 m towards the North, then walks 9 m towards the West. In which direction is he now from the starting point?",
+      "explanation": "Tracking the moves, the net displacement is -9 m East and 10 m North of the start, i.e. towards North-West.",
+      "options": [
+        {
+          "label": "East",
+          "is_correct": false
+        },
+        {
+          "label": "North-West",
+          "is_correct": true
+        },
+        {
+          "label": "South-East",
+          "is_correct": false
+        },
+        {
+          "label": "North-East",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Direction Sense",
+      "kind": "standard",
+      "difficulty": "easy",
+      "answer_type": "single",
+      "stem": "A person starts from a point and walks 4 m towards the North, then walks 12 m towards the North. In which direction is he now from the starting point?",
+      "explanation": "Tracking the moves, the net displacement is 0 m East and 16 m North of the start, i.e. towards North.",
+      "options": [
+        {
+          "label": "North",
+          "is_correct": true
+        },
+        {
+          "label": "East",
+          "is_correct": false
+        },
+        {
+          "label": "South-East",
+          "is_correct": false
+        },
+        {
+          "label": "West",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Direction Sense",
+      "kind": "standard",
+      "difficulty": "easy",
+      "answer_type": "single",
+      "stem": "A man is initially facing East. He turns 90° anticlockwise, then 90° anticlockwise. Which direction is he facing now?",
+      "explanation": "Starting from East and applying the turns in order, he ends up facing West.",
+      "options": [
+        {
+          "label": "West",
+          "is_correct": true
+        },
+        {
+          "label": "North",
+          "is_correct": false
+        },
+        {
+          "label": "South",
+          "is_correct": false
+        },
+        {
+          "label": "East",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Direction Sense",
+      "kind": "standard",
+      "difficulty": "easy",
+      "answer_type": "single",
+      "stem": "A person starts from a point and walks 8 m towards the South, then walks 10 m towards the West. In which direction is he now from the starting point?",
+      "explanation": "Tracking the moves, the net displacement is -10 m East and -8 m North of the start, i.e. towards South-West.",
+      "options": [
+        {
+          "label": "North",
+          "is_correct": false
+        },
+        {
+          "label": "North-West",
+          "is_correct": false
+        },
+        {
+          "label": "West",
+          "is_correct": false
+        },
+        {
+          "label": "South-West",
+          "is_correct": true
+        }
+      ]
+    },
+    {
+      "chapter": "Direction Sense",
+      "kind": "standard",
+      "difficulty": "easy",
+      "answer_type": "single",
+      "stem": "A person starts from a point and walks 7 m towards the North, then walks 5 m towards the West. In which direction is he now from the starting point?",
+      "explanation": "Tracking the moves, the net displacement is -5 m East and 7 m North of the start, i.e. towards North-West.",
+      "options": [
+        {
+          "label": "North-West",
+          "is_correct": true
+        },
+        {
+          "label": "South-East",
+          "is_correct": false
+        },
+        {
+          "label": "North-East",
+          "is_correct": false
+        },
+        {
+          "label": "South-West",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Direction Sense",
+      "kind": "standard",
+      "difficulty": "easy",
+      "answer_type": "single",
+      "stem": "A person starts from a point and walks 12 m towards the South, then walks 8 m towards the East. In which direction is he now from the starting point?",
+      "explanation": "Tracking the moves, the net displacement is 8 m East and -12 m North of the start, i.e. towards South-East.",
+      "options": [
+        {
+          "label": "South",
+          "is_correct": false
+        },
+        {
+          "label": "North",
+          "is_correct": false
+        },
+        {
+          "label": "South-East",
+          "is_correct": true
+        },
+        {
+          "label": "East",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Direction Sense",
+      "kind": "standard",
+      "difficulty": "easy",
+      "answer_type": "single",
+      "stem": "A person starts from a point and walks 6 m towards the East, then walks 4 m towards the South. In which direction is he now from the starting point?",
+      "explanation": "Tracking the moves, the net displacement is 6 m East and -4 m North of the start, i.e. towards South-East.",
+      "options": [
+        {
+          "label": "South",
+          "is_correct": false
+        },
+        {
+          "label": "South-West",
+          "is_correct": false
+        },
+        {
+          "label": "North-West",
+          "is_correct": false
+        },
+        {
+          "label": "South-East",
+          "is_correct": true
+        }
+      ]
+    },
+    {
+      "chapter": "Direction Sense",
+      "kind": "standard",
+      "difficulty": "easy",
+      "answer_type": "single",
+      "stem": "A person starts from a point and walks 4 m towards the East, then walks 3 m towards the West. In which direction is he now from the starting point?",
+      "explanation": "Tracking the moves, the net displacement is 1 m East and 0 m North of the start, i.e. towards East.",
+      "options": [
+        {
+          "label": "East",
+          "is_correct": true
+        },
+        {
+          "label": "South",
+          "is_correct": false
+        },
+        {
+          "label": "West",
+          "is_correct": false
+        },
+        {
+          "label": "South-West",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Direction Sense",
+      "kind": "standard",
+      "difficulty": "easy",
+      "answer_type": "single",
+      "stem": "A person starts from a point and walks 2 m towards the South, then walks 3 m towards the West. In which direction is he now from the starting point?",
+      "explanation": "Tracking the moves, the net displacement is -3 m East and -2 m North of the start, i.e. towards South-West.",
+      "options": [
+        {
+          "label": "North-East",
+          "is_correct": false
+        },
+        {
+          "label": "West",
+          "is_correct": false
+        },
+        {
+          "label": "North-West",
+          "is_correct": false
+        },
+        {
+          "label": "South-West",
+          "is_correct": true
+        }
+      ]
+    },
+    {
+      "chapter": "Direction Sense",
+      "kind": "standard",
+      "difficulty": "easy",
+      "answer_type": "single",
+      "stem": "A person starts from a point and walks 7 m towards the East, then walks 2 m towards the South. In which direction is he now from the starting point?",
+      "explanation": "Tracking the moves, the net displacement is 7 m East and -2 m North of the start, i.e. towards South-East.",
+      "options": [
+        {
+          "label": "East",
+          "is_correct": false
+        },
+        {
+          "label": "North",
+          "is_correct": false
+        },
+        {
+          "label": "South-East",
+          "is_correct": true
+        },
+        {
+          "label": "South",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Direction Sense",
+      "kind": "standard",
+      "difficulty": "easy",
+      "answer_type": "single",
+      "stem": "A person starts from a point and walks 4 m towards the East, then walks 3 m towards the East. In which direction is he now from the starting point?",
+      "explanation": "Tracking the moves, the net displacement is 7 m East and 0 m North of the start, i.e. towards East.",
+      "options": [
+        {
+          "label": "South",
+          "is_correct": false
+        },
+        {
+          "label": "East",
+          "is_correct": true
+        },
+        {
+          "label": "North-West",
+          "is_correct": false
+        },
+        {
+          "label": "North-East",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Direction Sense",
+      "kind": "standard",
+      "difficulty": "easy",
+      "answer_type": "single",
+      "stem": "A person starts from a point and walks 10 m towards the South, then walks 6 m towards the East. In which direction is he now from the starting point?",
+      "explanation": "Tracking the moves, the net displacement is 6 m East and -10 m North of the start, i.e. towards South-East.",
+      "options": [
+        {
+          "label": "South-East",
+          "is_correct": true
+        },
+        {
+          "label": "East",
+          "is_correct": false
+        },
+        {
+          "label": "West",
+          "is_correct": false
+        },
+        {
+          "label": "North",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Direction Sense",
+      "kind": "standard",
+      "difficulty": "easy",
+      "answer_type": "single",
+      "stem": "A person starts from a point and walks 3 m towards the East, then walks 12 m towards the East. In which direction is he now from the starting point?",
+      "explanation": "Tracking the moves, the net displacement is 15 m East and 0 m North of the start, i.e. towards East.",
+      "options": [
+        {
+          "label": "North-East",
+          "is_correct": false
+        },
+        {
+          "label": "East",
+          "is_correct": true
+        },
+        {
+          "label": "South",
+          "is_correct": false
+        },
+        {
+          "label": "South-East",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Direction Sense",
+      "kind": "standard",
+      "difficulty": "easy",
+      "answer_type": "single",
+      "stem": "A person starts from a point and walks 6 m towards the West, then walks 7 m towards the West. In which direction is he now from the starting point?",
+      "explanation": "Tracking the moves, the net displacement is -13 m East and 0 m North of the start, i.e. towards West.",
+      "options": [
+        {
+          "label": "South-East",
+          "is_correct": false
+        },
+        {
+          "label": "West",
+          "is_correct": true
+        },
+        {
+          "label": "East",
+          "is_correct": false
+        },
+        {
+          "label": "North-West",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Direction Sense",
+      "kind": "standard",
+      "difficulty": "easy",
+      "answer_type": "single",
+      "stem": "A person starts from a point and walks 11 m towards the South, then walks 4 m towards the South. In which direction is he now from the starting point?",
+      "explanation": "Tracking the moves, the net displacement is 0 m East and -15 m North of the start, i.e. towards South.",
+      "options": [
+        {
+          "label": "South-West",
+          "is_correct": false
+        },
+        {
+          "label": "South",
+          "is_correct": true
+        },
+        {
+          "label": "West",
+          "is_correct": false
+        },
+        {
+          "label": "North",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Direction Sense",
+      "kind": "standard",
+      "difficulty": "easy",
+      "answer_type": "single",
+      "stem": "A person starts from a point and walks 5 m towards the South, then walks 4 m towards the East. In which direction is he now from the starting point?",
+      "explanation": "Tracking the moves, the net displacement is 4 m East and -5 m North of the start, i.e. towards South-East.",
+      "options": [
+        {
+          "label": "West",
+          "is_correct": false
+        },
+        {
+          "label": "South-West",
+          "is_correct": false
+        },
+        {
+          "label": "South-East",
+          "is_correct": true
+        },
+        {
+          "label": "North",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Direction Sense",
+      "kind": "standard",
+      "difficulty": "easy",
+      "answer_type": "single",
+      "stem": "A person starts from a point and walks 9 m towards the North, then walks 7 m towards the West. In which direction is he now from the starting point?",
+      "explanation": "Tracking the moves, the net displacement is -7 m East and 9 m North of the start, i.e. towards North-West.",
+      "options": [
+        {
+          "label": "North-East",
+          "is_correct": false
+        },
+        {
+          "label": "North-West",
+          "is_correct": true
+        },
+        {
+          "label": "East",
+          "is_correct": false
+        },
+        {
+          "label": "South-West",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Direction Sense",
+      "kind": "standard",
+      "difficulty": "easy",
+      "answer_type": "single",
+      "stem": "A person starts from a point and walks 7 m towards the South, then walks 5 m towards the South. In which direction is he now from the starting point?",
+      "explanation": "Tracking the moves, the net displacement is 0 m East and -12 m North of the start, i.e. towards South.",
+      "options": [
+        {
+          "label": "North-West",
+          "is_correct": false
+        },
+        {
+          "label": "West",
+          "is_correct": false
+        },
+        {
+          "label": "South",
+          "is_correct": true
+        },
+        {
+          "label": "East",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Direction Sense",
+      "kind": "standard",
+      "difficulty": "easy",
+      "answer_type": "single",
+      "stem": "A man is initially facing North. He turns 90° anticlockwise, then 90° clockwise. Which direction is he facing now?",
+      "explanation": "Starting from North and applying the turns in order, he ends up facing North.",
+      "options": [
+        {
+          "label": "East",
+          "is_correct": false
+        },
+        {
+          "label": "South",
+          "is_correct": false
+        },
+        {
+          "label": "West",
+          "is_correct": false
+        },
+        {
+          "label": "North",
+          "is_correct": true
+        }
+      ]
+    },
+    {
+      "chapter": "Direction Sense",
+      "kind": "standard",
+      "difficulty": "medium",
+      "answer_type": "single",
+      "stem": "A person starts from a point and walks 2 m towards the South, then walks 10 m towards the South, then walks 9 m towards the East. In which direction is he now from the starting point?",
+      "explanation": "Tracking the moves, the net displacement is 9 m East and -12 m North of the start, i.e. towards South-East.",
+      "options": [
+        {
+          "label": "North-East",
+          "is_correct": false
+        },
+        {
+          "label": "South",
+          "is_correct": false
+        },
+        {
+          "label": "South-East",
+          "is_correct": true
+        },
+        {
+          "label": "North-West",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Direction Sense",
+      "kind": "standard",
+      "difficulty": "medium",
+      "answer_type": "single",
+      "stem": "A person starts from a point and walks 12 m towards the West, then walks 3 m towards the East, then walks 11 m towards the South. In which direction is he now from the starting point?",
+      "explanation": "Tracking the moves, the net displacement is -9 m East and -11 m North of the start, i.e. towards South-West.",
+      "options": [
+        {
+          "label": "West",
+          "is_correct": false
+        },
+        {
+          "label": "North",
+          "is_correct": false
+        },
+        {
+          "label": "South-West",
+          "is_correct": true
+        },
+        {
+          "label": "South-East",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Direction Sense",
+      "kind": "standard",
+      "difficulty": "medium",
+      "answer_type": "single",
+      "stem": "A man is initially facing South. He turns 90° clockwise, then 90° clockwise, then 90° anticlockwise. Which direction is he facing now?",
+      "explanation": "Starting from South and applying the turns in order, he ends up facing West.",
+      "options": [
+        {
+          "label": "North",
+          "is_correct": false
+        },
+        {
+          "label": "East",
+          "is_correct": false
+        },
+        {
+          "label": "South",
+          "is_correct": false
+        },
+        {
+          "label": "West",
+          "is_correct": true
+        }
+      ]
+    },
+    {
+      "chapter": "Direction Sense",
+      "kind": "standard",
+      "difficulty": "medium",
+      "answer_type": "single",
+      "stem": "A person starts from a point and walks 11 m towards the South, then walks 5 m towards the South, then walks 10 m towards the North. In which direction is he now from the starting point?",
+      "explanation": "Tracking the moves, the net displacement is 0 m East and -6 m North of the start, i.e. towards South.",
+      "options": [
+        {
+          "label": "East",
+          "is_correct": false
+        },
+        {
+          "label": "North",
+          "is_correct": false
+        },
+        {
+          "label": "South",
+          "is_correct": true
+        },
+        {
+          "label": "South-West",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Direction Sense",
+      "kind": "standard",
+      "difficulty": "medium",
+      "answer_type": "single",
+      "stem": "A person starts from a point and walks 5 m towards the West, then walks 7 m towards the East. How far (in metres, straight line) is he from the starting point?",
+      "explanation": "Net displacement is 2 m horizontally and 0 m vertically, so the straight-line distance is √(4 + 0) = 2 m.",
+      "options": [
+        {
+          "label": "3",
+          "is_correct": false
+        },
+        {
+          "label": "2",
+          "is_correct": true
+        },
+        {
+          "label": "1",
+          "is_correct": false
+        },
+        {
+          "label": "4",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Direction Sense",
+      "kind": "standard",
+      "difficulty": "medium",
+      "answer_type": "single",
+      "stem": "A person starts from a point and walks 2 m towards the West, then walks 7 m towards the East, then walks 11 m towards the West. In which direction is he now from the starting point?",
+      "explanation": "Tracking the moves, the net displacement is -6 m East and 0 m North of the start, i.e. towards West.",
+      "options": [
+        {
+          "label": "North-East",
+          "is_correct": false
+        },
+        {
+          "label": "West",
+          "is_correct": true
+        },
+        {
+          "label": "North-West",
+          "is_correct": false
+        },
+        {
+          "label": "South-West",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Direction Sense",
+      "kind": "standard",
+      "difficulty": "medium",
+      "answer_type": "single",
+      "stem": "A person starts from a point and walks 5 m towards the East, then walks 12 m towards the South. How far (in metres, straight line) is he from the starting point?",
+      "explanation": "Net displacement is 5 m horizontally and 12 m vertically, so the straight-line distance is √(25 + 144) = 13 m.",
+      "options": [
+        {
+          "label": "15",
+          "is_correct": false
+        },
+        {
+          "label": "12",
+          "is_correct": false
+        },
+        {
+          "label": "14",
+          "is_correct": false
+        },
+        {
+          "label": "13",
+          "is_correct": true
+        }
+      ]
+    },
+    {
+      "chapter": "Direction Sense",
+      "kind": "standard",
+      "difficulty": "medium",
+      "answer_type": "single",
+      "stem": "A person starts from a point and walks 7 m towards the South, then walks 8 m towards the West, then walks 5 m towards the West. In which direction is he now from the starting point?",
+      "explanation": "Tracking the moves, the net displacement is -13 m East and -7 m North of the start, i.e. towards South-West.",
+      "options": [
+        {
+          "label": "North-East",
+          "is_correct": false
+        },
+        {
+          "label": "South",
+          "is_correct": false
+        },
+        {
+          "label": "South-East",
+          "is_correct": false
+        },
+        {
+          "label": "South-West",
+          "is_correct": true
+        }
+      ]
+    },
+    {
+      "chapter": "Direction Sense",
+      "kind": "standard",
+      "difficulty": "medium",
+      "answer_type": "single",
+      "stem": "A man is initially facing South. He turns 90° anticlockwise, then 90° clockwise, then 90° anticlockwise. Which direction is he facing now?",
+      "explanation": "Starting from South and applying the turns in order, he ends up facing East.",
+      "options": [
+        {
+          "label": "East",
+          "is_correct": true
+        },
+        {
+          "label": "West",
+          "is_correct": false
+        },
+        {
+          "label": "South",
+          "is_correct": false
+        },
+        {
+          "label": "North",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Direction Sense",
+      "kind": "standard",
+      "difficulty": "medium",
+      "answer_type": "single",
+      "stem": "A person starts from a point and walks 7 m towards the North, then walks 9 m towards the South, then walks 8 m towards the South. In which direction is he now from the starting point?",
+      "explanation": "Tracking the moves, the net displacement is 0 m East and -10 m North of the start, i.e. towards South.",
+      "options": [
+        {
+          "label": "South",
+          "is_correct": true
+        },
+        {
+          "label": "South-East",
+          "is_correct": false
+        },
+        {
+          "label": "South-West",
+          "is_correct": false
+        },
+        {
+          "label": "North",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Direction Sense",
+      "kind": "standard",
+      "difficulty": "medium",
+      "answer_type": "single",
+      "stem": "A person starts from a point and walks 9 m towards the East, then walks 11 m towards the South, then walks 11 m towards the East. In which direction is he now from the starting point?",
+      "explanation": "Tracking the moves, the net displacement is 20 m East and -11 m North of the start, i.e. towards South-East.",
+      "options": [
+        {
+          "label": "East",
+          "is_correct": false
+        },
+        {
+          "label": "North-West",
+          "is_correct": false
+        },
+        {
+          "label": "South-East",
+          "is_correct": true
+        },
+        {
+          "label": "South",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Direction Sense",
+      "kind": "standard",
+      "difficulty": "medium",
+      "answer_type": "single",
+      "stem": "A man is initially facing South. He turns 90° clockwise, then 90° anticlockwise, then 90° clockwise. Which direction is he facing now?",
+      "explanation": "Starting from South and applying the turns in order, he ends up facing West.",
+      "options": [
+        {
+          "label": "West",
+          "is_correct": true
+        },
+        {
+          "label": "South",
+          "is_correct": false
+        },
+        {
+          "label": "East",
+          "is_correct": false
+        },
+        {
+          "label": "North",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Direction Sense",
+      "kind": "standard",
+      "difficulty": "medium",
+      "answer_type": "single",
+      "stem": "A person starts from a point and walks 7 m towards the West, then walks 4 m towards the East, then walks 3 m towards the West. In which direction is he now from the starting point?",
+      "explanation": "Tracking the moves, the net displacement is -6 m East and 0 m North of the start, i.e. towards West.",
+      "options": [
+        {
+          "label": "North-East",
+          "is_correct": false
+        },
+        {
+          "label": "South-West",
+          "is_correct": false
+        },
+        {
+          "label": "South-East",
+          "is_correct": false
+        },
+        {
+          "label": "West",
+          "is_correct": true
+        }
+      ]
+    },
+    {
+      "chapter": "Direction Sense",
+      "kind": "standard",
+      "difficulty": "medium",
+      "answer_type": "single",
+      "stem": "A person starts from a point and walks 12 m towards the West, then walks 4 m towards the East, then walks 11 m towards the West. How far (in metres, straight line) is he from the starting point?",
+      "explanation": "Net displacement is 19 m horizontally and 0 m vertically, so the straight-line distance is √(361 + 0) = 19 m.",
+      "options": [
+        {
+          "label": "18",
+          "is_correct": false
+        },
+        {
+          "label": "21",
+          "is_correct": false
+        },
+        {
+          "label": "19",
+          "is_correct": true
+        },
+        {
+          "label": "20",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Direction Sense",
+      "kind": "standard",
+      "difficulty": "medium",
+      "answer_type": "single",
+      "stem": "A person starts from a point and walks 7 m towards the South, then walks 10 m towards the East, then walks 3 m towards the West. In which direction is he now from the starting point?",
+      "explanation": "Tracking the moves, the net displacement is 7 m East and -7 m North of the start, i.e. towards South-East.",
+      "options": [
+        {
+          "label": "South-West",
+          "is_correct": false
+        },
+        {
+          "label": "South-East",
+          "is_correct": true
+        },
+        {
+          "label": "South",
+          "is_correct": false
+        },
+        {
+          "label": "West",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Direction Sense",
+      "kind": "standard",
+      "difficulty": "medium",
+      "answer_type": "single",
+      "stem": "A man is initially facing North. He turns 90° clockwise, then 90° anticlockwise, then 90° anticlockwise. Which direction is he facing now?",
+      "explanation": "Starting from North and applying the turns in order, he ends up facing West.",
+      "options": [
+        {
+          "label": "North",
+          "is_correct": false
+        },
+        {
+          "label": "East",
+          "is_correct": false
+        },
+        {
+          "label": "West",
+          "is_correct": true
+        },
+        {
+          "label": "South",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Direction Sense",
+      "kind": "standard",
+      "difficulty": "medium",
+      "answer_type": "single",
+      "stem": "A person starts from a point and walks 4 m towards the North, then walks 12 m towards the West, then walks 2 m towards the South. In which direction is he now from the starting point?",
+      "explanation": "Tracking the moves, the net displacement is -12 m East and 2 m North of the start, i.e. towards North-West.",
+      "options": [
+        {
+          "label": "North",
+          "is_correct": false
+        },
+        {
+          "label": "North-West",
+          "is_correct": true
+        },
+        {
+          "label": "South-West",
+          "is_correct": false
+        },
+        {
+          "label": "South",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Direction Sense",
+      "kind": "standard",
+      "difficulty": "medium",
+      "answer_type": "single",
+      "stem": "A person starts from a point and walks 4 m towards the North, then walks 4 m towards the North, then walks 2 m towards the North. How far (in metres, straight line) is he from the starting point?",
+      "explanation": "Net displacement is 0 m horizontally and 10 m vertically, so the straight-line distance is √(0 + 100) = 10 m.",
+      "options": [
+        {
+          "label": "12",
+          "is_correct": false
+        },
+        {
+          "label": "9",
+          "is_correct": false
+        },
+        {
+          "label": "10",
+          "is_correct": true
+        },
+        {
+          "label": "11",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Direction Sense",
+      "kind": "standard",
+      "difficulty": "medium",
+      "answer_type": "single",
+      "stem": "A man is initially facing West. He turns 90° clockwise, then 90° anticlockwise, then 90° anticlockwise. Which direction is he facing now?",
+      "explanation": "Starting from West and applying the turns in order, he ends up facing South.",
+      "options": [
+        {
+          "label": "South",
+          "is_correct": true
+        },
+        {
+          "label": "West",
+          "is_correct": false
+        },
+        {
+          "label": "North",
+          "is_correct": false
+        },
+        {
+          "label": "East",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Direction Sense",
+      "kind": "standard",
+      "difficulty": "medium",
+      "answer_type": "single",
+      "stem": "A person starts from a point and walks 3 m towards the North, then walks 7 m towards the South, then walks 12 m towards the North. In which direction is he now from the starting point?",
+      "explanation": "Tracking the moves, the net displacement is 0 m East and 8 m North of the start, i.e. towards North.",
+      "options": [
+        {
+          "label": "East",
+          "is_correct": false
+        },
+        {
+          "label": "North-West",
+          "is_correct": false
+        },
+        {
+          "label": "West",
+          "is_correct": false
+        },
+        {
+          "label": "North",
+          "is_correct": true
+        }
+      ]
+    },
+    {
+      "chapter": "Direction Sense",
+      "kind": "standard",
+      "difficulty": "medium",
+      "answer_type": "single",
+      "stem": "A man is initially facing North. He turns 90° clockwise, then 90° anticlockwise, then 90° clockwise. Which direction is he facing now?",
+      "explanation": "Starting from North and applying the turns in order, he ends up facing East.",
+      "options": [
+        {
+          "label": "North",
+          "is_correct": false
+        },
+        {
+          "label": "South",
+          "is_correct": false
+        },
+        {
+          "label": "East",
+          "is_correct": true
+        },
+        {
+          "label": "West",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Direction Sense",
+      "kind": "standard",
+      "difficulty": "medium",
+      "answer_type": "single",
+      "stem": "A person starts from a point and walks 12 m towards the South, then walks 11 m towards the North, then walks 11 m towards the South. In which direction is he now from the starting point?",
+      "explanation": "Tracking the moves, the net displacement is 0 m East and -12 m North of the start, i.e. towards South.",
+      "options": [
+        {
+          "label": "South-West",
+          "is_correct": false
+        },
+        {
+          "label": "South-East",
+          "is_correct": false
+        },
+        {
+          "label": "South",
+          "is_correct": true
+        },
+        {
+          "label": "North-East",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Direction Sense",
+      "kind": "standard",
+      "difficulty": "medium",
+      "answer_type": "single",
+      "stem": "A man is initially facing East. He turns 90° anticlockwise, then 90° anticlockwise, then 90° clockwise. Which direction is he facing now?",
+      "explanation": "Starting from East and applying the turns in order, he ends up facing North.",
+      "options": [
+        {
+          "label": "North",
+          "is_correct": true
+        },
+        {
+          "label": "South",
+          "is_correct": false
+        },
+        {
+          "label": "East",
+          "is_correct": false
+        },
+        {
+          "label": "West",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Direction Sense",
+      "kind": "standard",
+      "difficulty": "medium",
+      "answer_type": "single",
+      "stem": "A person starts from a point and walks 3 m towards the North, then walks 11 m towards the West, then walks 3 m towards the South. How far (in metres, straight line) is he from the starting point?",
+      "explanation": "Net displacement is 11 m horizontally and 0 m vertically, so the straight-line distance is √(121 + 0) = 11 m.",
+      "options": [
+        {
+          "label": "13",
+          "is_correct": false
+        },
+        {
+          "label": "11",
+          "is_correct": true
+        },
+        {
+          "label": "10",
+          "is_correct": false
+        },
+        {
+          "label": "12",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Direction Sense",
+      "kind": "standard",
+      "difficulty": "medium",
+      "answer_type": "single",
+      "stem": "A person starts from a point and walks 9 m towards the North, then walks 9 m towards the South, then walks 9 m towards the East. In which direction is he now from the starting point?",
+      "explanation": "Tracking the moves, the net displacement is 9 m East and 0 m North of the start, i.e. towards East.",
+      "options": [
+        {
+          "label": "South",
+          "is_correct": false
+        },
+        {
+          "label": "West",
+          "is_correct": false
+        },
+        {
+          "label": "East",
+          "is_correct": true
+        },
+        {
+          "label": "North-West",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Direction Sense",
+      "kind": "standard",
+      "difficulty": "medium",
+      "answer_type": "single",
+      "stem": "A man is initially facing North. He turns 90° anticlockwise, then 90° anticlockwise. Which direction is he facing now?",
+      "explanation": "Starting from North and applying the turns in order, he ends up facing South.",
+      "options": [
+        {
+          "label": "South",
+          "is_correct": true
+        },
+        {
+          "label": "West",
+          "is_correct": false
+        },
+        {
+          "label": "East",
+          "is_correct": false
+        },
+        {
+          "label": "North",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Direction Sense",
+      "kind": "standard",
+      "difficulty": "medium",
+      "answer_type": "single",
+      "stem": "A man is initially facing North. He turns 90° anticlockwise, then 90° anticlockwise, then 90° clockwise. Which direction is he facing now?",
+      "explanation": "Starting from North and applying the turns in order, he ends up facing West.",
+      "options": [
+        {
+          "label": "South",
+          "is_correct": false
+        },
+        {
+          "label": "West",
+          "is_correct": true
+        },
+        {
+          "label": "North",
+          "is_correct": false
+        },
+        {
+          "label": "East",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Direction Sense",
+      "kind": "standard",
+      "difficulty": "medium",
+      "answer_type": "single",
+      "stem": "A person starts from a point and walks 5 m towards the North, then walks 11 m towards the South, then walks 11 m towards the South. In which direction is he now from the starting point?",
+      "explanation": "Tracking the moves, the net displacement is 0 m East and -17 m North of the start, i.e. towards South.",
+      "options": [
+        {
+          "label": "North-East",
+          "is_correct": false
+        },
+        {
+          "label": "North",
+          "is_correct": false
+        },
+        {
+          "label": "South",
+          "is_correct": true
+        },
+        {
+          "label": "South-West",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Direction Sense",
+      "kind": "standard",
+      "difficulty": "medium",
+      "answer_type": "single",
+      "stem": "A person starts from a point and walks 11 m towards the South, then walks 5 m towards the North. How far (in metres, straight line) is he from the starting point?",
+      "explanation": "Net displacement is 0 m horizontally and 6 m vertically, so the straight-line distance is √(0 + 36) = 6 m.",
+      "options": [
+        {
+          "label": "7",
+          "is_correct": false
+        },
+        {
+          "label": "6",
+          "is_correct": true
+        },
+        {
+          "label": "8",
+          "is_correct": false
+        },
+        {
+          "label": "5",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Direction Sense",
+      "kind": "standard",
+      "difficulty": "medium",
+      "answer_type": "single",
+      "stem": "A person starts from a point and walks 8 m towards the West, then walks 11 m towards the East. How far (in metres, straight line) is he from the starting point?",
+      "explanation": "Net displacement is 3 m horizontally and 0 m vertically, so the straight-line distance is √(9 + 0) = 3 m.",
+      "options": [
+        {
+          "label": "5",
+          "is_correct": false
+        },
+        {
+          "label": "3",
+          "is_correct": true
+        },
+        {
+          "label": "2",
+          "is_correct": false
+        },
+        {
+          "label": "4",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Direction Sense",
+      "kind": "standard",
+      "difficulty": "medium",
+      "answer_type": "single",
+      "stem": "A man is initially facing South. He turns 90° anticlockwise, then 90° clockwise. Which direction is he facing now?",
+      "explanation": "Starting from South and applying the turns in order, he ends up facing South.",
+      "options": [
+        {
+          "label": "West",
+          "is_correct": false
+        },
+        {
+          "label": "North",
+          "is_correct": false
+        },
+        {
+          "label": "South",
+          "is_correct": true
+        },
+        {
+          "label": "East",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Direction Sense",
+      "kind": "standard",
+      "difficulty": "medium",
+      "answer_type": "single",
+      "stem": "A man is initially facing South. He turns 90° clockwise, then 90° anticlockwise, then 90° anticlockwise. Which direction is he facing now?",
+      "explanation": "Starting from South and applying the turns in order, he ends up facing East.",
+      "options": [
+        {
+          "label": "North",
+          "is_correct": false
+        },
+        {
+          "label": "East",
+          "is_correct": true
+        },
+        {
+          "label": "South",
+          "is_correct": false
+        },
+        {
+          "label": "West",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Direction Sense",
+      "kind": "standard",
+      "difficulty": "medium",
+      "answer_type": "single",
+      "stem": "A person starts from a point and walks 10 m towards the South, then walks 6 m towards the North, then walks 6 m towards the East. In which direction is he now from the starting point?",
+      "explanation": "Tracking the moves, the net displacement is 6 m East and -4 m North of the start, i.e. towards South-East.",
+      "options": [
+        {
+          "label": "South-East",
+          "is_correct": true
+        },
+        {
+          "label": "North-West",
+          "is_correct": false
+        },
+        {
+          "label": "South-West",
+          "is_correct": false
+        },
+        {
+          "label": "North",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Direction Sense",
+      "kind": "standard",
+      "difficulty": "medium",
+      "answer_type": "single",
+      "stem": "A person starts from a point and walks 10 m towards the South, then walks 2 m towards the North, then walks 8 m towards the West. In which direction is he now from the starting point?",
+      "explanation": "Tracking the moves, the net displacement is -8 m East and -8 m North of the start, i.e. towards South-West.",
+      "options": [
+        {
+          "label": "South-West",
+          "is_correct": true
+        },
+        {
+          "label": "North",
+          "is_correct": false
+        },
+        {
+          "label": "North-East",
+          "is_correct": false
+        },
+        {
+          "label": "East",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Direction Sense",
+      "kind": "standard",
+      "difficulty": "medium",
+      "answer_type": "single",
+      "stem": "A person starts from a point and walks 4 m towards the West, then walks 5 m towards the East, then walks 10 m towards the South. In which direction is he now from the starting point?",
+      "explanation": "Tracking the moves, the net displacement is 1 m East and -10 m North of the start, i.e. towards South-East.",
+      "options": [
+        {
+          "label": "East",
+          "is_correct": false
+        },
+        {
+          "label": "North-West",
+          "is_correct": false
+        },
+        {
+          "label": "South-East",
+          "is_correct": true
+        },
+        {
+          "label": "North",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Direction Sense",
+      "kind": "standard",
+      "difficulty": "medium",
+      "answer_type": "single",
+      "stem": "A person starts from a point and walks 10 m towards the West, then walks 2 m towards the East, then walks 6 m towards the West. In which direction is he now from the starting point?",
+      "explanation": "Tracking the moves, the net displacement is -14 m East and 0 m North of the start, i.e. towards West.",
+      "options": [
+        {
+          "label": "East",
+          "is_correct": false
+        },
+        {
+          "label": "West",
+          "is_correct": true
+        },
+        {
+          "label": "South",
+          "is_correct": false
+        },
+        {
+          "label": "North-East",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Direction Sense",
+      "kind": "standard",
+      "difficulty": "medium",
+      "answer_type": "single",
+      "stem": "A man is initially facing North. He turns 90° clockwise, then 90° clockwise, then 90° clockwise. Which direction is he facing now?",
+      "explanation": "Starting from North and applying the turns in order, he ends up facing West.",
+      "options": [
+        {
+          "label": "North",
+          "is_correct": false
+        },
+        {
+          "label": "East",
+          "is_correct": false
+        },
+        {
+          "label": "West",
+          "is_correct": true
+        },
+        {
+          "label": "South",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Direction Sense",
+      "kind": "standard",
+      "difficulty": "medium",
+      "answer_type": "single",
+      "stem": "A person starts from a point and walks 8 m towards the South, then walks 12 m towards the West, then walks 6 m towards the North. In which direction is he now from the starting point?",
+      "explanation": "Tracking the moves, the net displacement is -12 m East and -2 m North of the start, i.e. towards South-West.",
+      "options": [
+        {
+          "label": "North-West",
+          "is_correct": false
+        },
+        {
+          "label": "South-East",
+          "is_correct": false
+        },
+        {
+          "label": "South-West",
+          "is_correct": true
+        },
+        {
+          "label": "North",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Direction Sense",
+      "kind": "standard",
+      "difficulty": "medium",
+      "answer_type": "single",
+      "stem": "A person starts from a point and walks 4 m towards the North, then walks 7 m towards the North, then walks 4 m towards the North. In which direction is he now from the starting point?",
+      "explanation": "Tracking the moves, the net displacement is 0 m East and 15 m North of the start, i.e. towards North.",
+      "options": [
+        {
+          "label": "North",
+          "is_correct": true
+        },
+        {
+          "label": "South",
+          "is_correct": false
+        },
+        {
+          "label": "East",
+          "is_correct": false
+        },
+        {
+          "label": "West",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Direction Sense",
+      "kind": "standard",
+      "difficulty": "medium",
+      "answer_type": "single",
+      "stem": "A man is initially facing West. He turns 90° clockwise, then 90° clockwise. Which direction is he facing now?",
+      "explanation": "Starting from West and applying the turns in order, he ends up facing East.",
+      "options": [
+        {
+          "label": "North",
+          "is_correct": false
+        },
+        {
+          "label": "West",
+          "is_correct": false
+        },
+        {
+          "label": "East",
+          "is_correct": true
+        },
+        {
+          "label": "South",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Direction Sense",
+      "kind": "standard",
+      "difficulty": "medium",
+      "answer_type": "single",
+      "stem": "A man is initially facing East. He turns 90° anticlockwise, then 90° clockwise, then 90° clockwise. Which direction is he facing now?",
+      "explanation": "Starting from East and applying the turns in order, he ends up facing South.",
+      "options": [
+        {
+          "label": "West",
+          "is_correct": false
+        },
+        {
+          "label": "South",
+          "is_correct": true
+        },
+        {
+          "label": "North",
+          "is_correct": false
+        },
+        {
+          "label": "East",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Direction Sense",
+      "kind": "standard",
+      "difficulty": "medium",
+      "answer_type": "single",
+      "stem": "A person starts from a point and walks 6 m towards the North, then walks 4 m towards the South, then walks 2 m towards the East. In which direction is he now from the starting point?",
+      "explanation": "Tracking the moves, the net displacement is 2 m East and 2 m North of the start, i.e. towards North-East.",
+      "options": [
+        {
+          "label": "North",
+          "is_correct": false
+        },
+        {
+          "label": "West",
+          "is_correct": false
+        },
+        {
+          "label": "South",
+          "is_correct": false
+        },
+        {
+          "label": "North-East",
+          "is_correct": true
+        }
+      ]
+    },
+    {
+      "chapter": "Direction Sense",
+      "kind": "standard",
+      "difficulty": "medium",
+      "answer_type": "single",
+      "stem": "A man is initially facing South. He turns 90° clockwise, then 90° anticlockwise. Which direction is he facing now?",
+      "explanation": "Starting from South and applying the turns in order, he ends up facing South.",
+      "options": [
+        {
+          "label": "North",
+          "is_correct": false
+        },
+        {
+          "label": "South",
+          "is_correct": true
+        },
+        {
+          "label": "West",
+          "is_correct": false
+        },
+        {
+          "label": "East",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Direction Sense",
+      "kind": "standard",
+      "difficulty": "medium",
+      "answer_type": "single",
+      "stem": "A person starts from a point and walks 8 m towards the South, then walks 5 m towards the North, then walks 4 m towards the South. In which direction is he now from the starting point?",
+      "explanation": "Tracking the moves, the net displacement is 0 m East and -7 m North of the start, i.e. towards South.",
+      "options": [
+        {
+          "label": "South",
+          "is_correct": true
+        },
+        {
+          "label": "South-East",
+          "is_correct": false
+        },
+        {
+          "label": "East",
+          "is_correct": false
+        },
+        {
+          "label": "North-East",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Direction Sense",
+      "kind": "standard",
+      "difficulty": "medium",
+      "answer_type": "single",
+      "stem": "A man is initially facing East. He turns 90° anticlockwise, then 90° anticlockwise, then 90° anticlockwise. Which direction is he facing now?",
+      "explanation": "Starting from East and applying the turns in order, he ends up facing South.",
+      "options": [
+        {
+          "label": "West",
+          "is_correct": false
+        },
+        {
+          "label": "South",
+          "is_correct": true
+        },
+        {
+          "label": "North",
+          "is_correct": false
+        },
+        {
+          "label": "East",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Direction Sense",
+      "kind": "standard",
+      "difficulty": "medium",
+      "answer_type": "single",
+      "stem": "A person starts from a point and walks 8 m towards the West, then walks 10 m towards the South, then walks 12 m towards the North. In which direction is he now from the starting point?",
+      "explanation": "Tracking the moves, the net displacement is -8 m East and 2 m North of the start, i.e. towards North-West.",
+      "options": [
+        {
+          "label": "North-West",
+          "is_correct": true
+        },
+        {
+          "label": "South-East",
+          "is_correct": false
+        },
+        {
+          "label": "North-East",
+          "is_correct": false
+        },
+        {
+          "label": "South-West",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Direction Sense",
+      "kind": "standard",
+      "difficulty": "medium",
+      "answer_type": "single",
+      "stem": "A man is initially facing North. He turns 90° anticlockwise, then 90° clockwise, then 90° anticlockwise. Which direction is he facing now?",
+      "explanation": "Starting from North and applying the turns in order, he ends up facing West.",
+      "options": [
+        {
+          "label": "West",
+          "is_correct": true
+        },
+        {
+          "label": "South",
+          "is_correct": false
+        },
+        {
+          "label": "North",
+          "is_correct": false
+        },
+        {
+          "label": "East",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Direction Sense",
+      "kind": "standard",
+      "difficulty": "medium",
+      "answer_type": "single",
+      "stem": "A person starts from a point and walks 10 m towards the South, then walks 12 m towards the West, then walks 7 m towards the West. In which direction is he now from the starting point?",
+      "explanation": "Tracking the moves, the net displacement is -19 m East and -10 m North of the start, i.e. towards South-West.",
+      "options": [
+        {
+          "label": "North-West",
+          "is_correct": false
+        },
+        {
+          "label": "South-West",
+          "is_correct": true
+        },
+        {
+          "label": "North-East",
+          "is_correct": false
+        },
+        {
+          "label": "North",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Direction Sense",
+      "kind": "standard",
+      "difficulty": "medium",
+      "answer_type": "single",
+      "stem": "A person starts from a point and walks 10 m towards the East, then walks 11 m towards the East, then walks 7 m towards the West. In which direction is he now from the starting point?",
+      "explanation": "Tracking the moves, the net displacement is 14 m East and 0 m North of the start, i.e. towards East.",
+      "options": [
+        {
+          "label": "South",
+          "is_correct": false
+        },
+        {
+          "label": "South-East",
+          "is_correct": false
+        },
+        {
+          "label": "East",
+          "is_correct": true
+        },
+        {
+          "label": "West",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Direction Sense",
+      "kind": "standard",
+      "difficulty": "medium",
+      "answer_type": "single",
+      "stem": "A man is initially facing South. He turns 90° clockwise, then 90° clockwise. Which direction is he facing now?",
+      "explanation": "Starting from South and applying the turns in order, he ends up facing North.",
+      "options": [
+        {
+          "label": "South",
+          "is_correct": false
+        },
+        {
+          "label": "North",
+          "is_correct": true
+        },
+        {
+          "label": "West",
+          "is_correct": false
+        },
+        {
+          "label": "East",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Direction Sense",
+      "kind": "standard",
+      "difficulty": "hard",
+      "answer_type": "single",
+      "stem": "A man is walking. He turns to his right and walks 5 m, then turns to his left and walks 11 m, then turns to his right and walks 5 m, then turns to his right and walks 6 m. In which direction is he now from the starting point?",
+      "explanation": "Tracking the moves, the net displacement is 10 m East and 5 m North of the start, i.e. towards North-East.",
+      "options": [
+        {
+          "label": "South",
+          "is_correct": false
+        },
+        {
+          "label": "East",
+          "is_correct": false
+        },
+        {
+          "label": "North-West",
+          "is_correct": false
+        },
+        {
+          "label": "North-East",
+          "is_correct": true
+        }
+      ]
+    },
+    {
+      "chapter": "Direction Sense",
+      "kind": "standard",
+      "difficulty": "hard",
+      "answer_type": "single",
+      "stem": "A man is walking. He turns to his left and walks 6 m, then turns to his left and walks 9 m, then turns to his left and walks 11 m, then turns to his left and walks 4 m. In which direction is he now from the starting point?",
+      "explanation": "Tracking the moves, the net displacement is 5 m East and -5 m North of the start, i.e. towards South-East.",
+      "options": [
+        {
+          "label": "North",
+          "is_correct": false
+        },
+        {
+          "label": "North-West",
+          "is_correct": false
+        },
+        {
+          "label": "South-East",
+          "is_correct": true
+        },
+        {
+          "label": "North-East",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Direction Sense",
+      "kind": "standard",
+      "difficulty": "hard",
+      "answer_type": "single",
+      "stem": "A person starts from a point and walks 12 m towards the West, then walks 12 m towards the East, then walks 9 m towards the South, then walks 2 m towards the North. How far (in metres, straight line) is he from the starting point?",
+      "explanation": "Net displacement is 0 m horizontally and 7 m vertically, so the straight-line distance is √(0 + 49) = 7 m.",
+      "options": [
+        {
+          "label": "8",
+          "is_correct": false
+        },
+        {
+          "label": "6",
+          "is_correct": false
+        },
+        {
+          "label": "7",
+          "is_correct": true
+        },
+        {
+          "label": "9",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Direction Sense",
+      "kind": "standard",
+      "difficulty": "hard",
+      "answer_type": "single",
+      "stem": "A man is walking. He turns to his right and walks 2 m, then turns to his left and walks 5 m, then turns to his left and walks 8 m, then turns to his left and walks 12 m. In which direction is he now from the starting point?",
+      "explanation": "Tracking the moves, the net displacement is -6 m East and -7 m North of the start, i.e. towards South-West.",
+      "options": [
+        {
+          "label": "North",
+          "is_correct": false
+        },
+        {
+          "label": "South-West",
+          "is_correct": true
+        },
+        {
+          "label": "South-East",
+          "is_correct": false
+        },
+        {
+          "label": "South",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Direction Sense",
+      "kind": "standard",
+      "difficulty": "hard",
+      "answer_type": "single",
+      "stem": "A person starts from a point and walks 12 m towards the West, then walks 8 m towards the South, then walks 4 m towards the North, then walks 3 m towards the West. In which direction is he now from the starting point?",
+      "explanation": "Tracking the moves, the net displacement is -15 m East and -4 m North of the start, i.e. towards South-West.",
+      "options": [
+        {
+          "label": "South",
+          "is_correct": false
+        },
+        {
+          "label": "South-West",
+          "is_correct": true
+        },
+        {
+          "label": "North-East",
+          "is_correct": false
+        },
+        {
+          "label": "North",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Direction Sense",
+      "kind": "standard",
+      "difficulty": "hard",
+      "answer_type": "single",
+      "stem": "A man is walking. He turns to his left and walks 7 m, then turns to his left and walks 9 m, then turns to his right and walks 10 m, then turns to his left and walks 4 m. In which direction is he now from the starting point?",
+      "explanation": "Tracking the moves, the net displacement is 13 m East and -17 m North of the start, i.e. towards South-East.",
+      "options": [
+        {
+          "label": "North",
+          "is_correct": false
+        },
+        {
+          "label": "South-East",
+          "is_correct": true
+        },
+        {
+          "label": "North-West",
+          "is_correct": false
+        },
+        {
+          "label": "South",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Direction Sense",
+      "kind": "standard",
+      "difficulty": "hard",
+      "answer_type": "single",
+      "stem": "A person starts from a point and walks 4 m towards the South, then walks 5 m towards the North, then walks 2 m towards the North, then walks 8 m towards the North. In which direction is he now from the starting point?",
+      "explanation": "Tracking the moves, the net displacement is 0 m East and 11 m North of the start, i.e. towards North.",
+      "options": [
+        {
+          "label": "North-West",
+          "is_correct": false
+        },
+        {
+          "label": "South",
+          "is_correct": false
+        },
+        {
+          "label": "North",
+          "is_correct": true
+        },
+        {
+          "label": "South-East",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Direction Sense",
+      "kind": "standard",
+      "difficulty": "hard",
+      "answer_type": "single",
+      "stem": "A man is walking. He turns to his right and walks 8 m, then turns to his left and walks 12 m, then turns to his left and walks 11 m, then turns to his left and walks 3 m. In which direction is he now from the starting point?",
+      "explanation": "Tracking the moves, the net displacement is 3 m East and -9 m North of the start, i.e. towards South-East.",
+      "options": [
+        {
+          "label": "South-East",
+          "is_correct": true
+        },
+        {
+          "label": "East",
+          "is_correct": false
+        },
+        {
+          "label": "West",
+          "is_correct": false
+        },
+        {
+          "label": "North-West",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Direction Sense",
+      "kind": "standard",
+      "difficulty": "hard",
+      "answer_type": "single",
+      "stem": "A man is walking. He turns to his left and walks 6 m, then turns to his left and walks 9 m, then turns to his right and walks 3 m, then turns to his right and walks 2 m. In which direction is he now from the starting point?",
+      "explanation": "Tracking the moves, the net displacement is 7 m East and -9 m North of the start, i.e. towards South-East.",
+      "options": [
+        {
+          "label": "North-West",
+          "is_correct": false
+        },
+        {
+          "label": "West",
+          "is_correct": false
+        },
+        {
+          "label": "South-East",
+          "is_correct": true
+        },
+        {
+          "label": "North-East",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Direction Sense",
+      "kind": "standard",
+      "difficulty": "hard",
+      "answer_type": "single",
+      "stem": "A person starts from a point and walks 8 m towards the West, then walks 7 m towards the South, then walks 6 m towards the East, then walks 7 m towards the West. In which direction is he now from the starting point?",
+      "explanation": "Tracking the moves, the net displacement is -9 m East and -7 m North of the start, i.e. towards South-West.",
+      "options": [
+        {
+          "label": "West",
+          "is_correct": false
+        },
+        {
+          "label": "South-East",
+          "is_correct": false
+        },
+        {
+          "label": "South-West",
+          "is_correct": true
+        },
+        {
+          "label": "North-East",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Direction Sense",
+      "kind": "standard",
+      "difficulty": "hard",
+      "answer_type": "single",
+      "stem": "A person starts from a point and walks 9 m towards the South, then walks 5 m towards the West, then walks 9 m towards the North. How far (in metres, straight line) is he from the starting point?",
+      "explanation": "Net displacement is 5 m horizontally and 0 m vertically, so the straight-line distance is √(25 + 0) = 5 m.",
+      "options": [
+        {
+          "label": "7",
+          "is_correct": false
+        },
+        {
+          "label": "5",
+          "is_correct": true
+        },
+        {
+          "label": "4",
+          "is_correct": false
+        },
+        {
+          "label": "6",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Direction Sense",
+      "kind": "standard",
+      "difficulty": "hard",
+      "answer_type": "single",
+      "stem": "A man is walking. He turns to his left and walks 12 m, then turns to his right and walks 12 m, then turns to his left and walks 6 m, then turns to his left and walks 2 m. In which direction is he now from the starting point?",
+      "explanation": "Tracking the moves, the net displacement is 18 m East and -10 m North of the start, i.e. towards South-East.",
+      "options": [
+        {
+          "label": "South-East",
+          "is_correct": true
+        },
+        {
+          "label": "East",
+          "is_correct": false
+        },
+        {
+          "label": "South",
+          "is_correct": false
+        },
+        {
+          "label": "South-West",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Direction Sense",
+      "kind": "standard",
+      "difficulty": "hard",
+      "answer_type": "single",
+      "stem": "A man is walking. He turns to his left and walks 4 m, then turns to his right and walks 11 m, then turns to his right and walks 3 m, then turns to his right and walks 12 m. In which direction is he now from the starting point?",
+      "explanation": "Tracking the moves, the net displacement is -1 m East and -1 m North of the start, i.e. towards South-West.",
+      "options": [
+        {
+          "label": "East",
+          "is_correct": false
+        },
+        {
+          "label": "North-West",
+          "is_correct": false
+        },
+        {
+          "label": "North",
+          "is_correct": false
+        },
+        {
+          "label": "South-West",
+          "is_correct": true
+        }
+      ]
+    },
+    {
+      "chapter": "Direction Sense",
+      "kind": "standard",
+      "difficulty": "hard",
+      "answer_type": "single",
+      "stem": "A person starts from a point and walks 2 m towards the North, then walks 10 m towards the South, then walks 10 m towards the North. How far (in metres, straight line) is he from the starting point?",
+      "explanation": "Net displacement is 0 m horizontally and 2 m vertically, so the straight-line distance is √(0 + 4) = 2 m.",
+      "options": [
+        {
+          "label": "2",
+          "is_correct": true
+        },
+        {
+          "label": "1",
+          "is_correct": false
+        },
+        {
+          "label": "3",
+          "is_correct": false
+        },
+        {
+          "label": "4",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Direction Sense",
+      "kind": "standard",
+      "difficulty": "hard",
+      "answer_type": "single",
+      "stem": "A man is walking. He turns to his right and walks 12 m, then turns to his right and walks 9 m, then turns to his left and walks 6 m, then turns to his left and walks 2 m. In which direction is he now from the starting point?",
+      "explanation": "Tracking the moves, the net displacement is -18 m East and 7 m North of the start, i.e. towards North-West.",
+      "options": [
+        {
+          "label": "West",
+          "is_correct": false
+        },
+        {
+          "label": "South",
+          "is_correct": false
+        },
+        {
+          "label": "North-West",
+          "is_correct": true
+        },
+        {
+          "label": "North-East",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Direction Sense",
+      "kind": "standard",
+      "difficulty": "hard",
+      "answer_type": "single",
+      "stem": "A man is walking. He turns to his left and walks 8 m, then turns to his right and walks 5 m, then turns to his left and walks 8 m, then turns to his right and walks 9 m. In which direction is he now from the starting point?",
+      "explanation": "Tracking the moves, the net displacement is 16 m East and -14 m North of the start, i.e. towards South-East.",
+      "options": [
+        {
+          "label": "North",
+          "is_correct": false
+        },
+        {
+          "label": "South",
+          "is_correct": false
+        },
+        {
+          "label": "East",
+          "is_correct": false
+        },
+        {
+          "label": "South-East",
+          "is_correct": true
+        }
+      ]
+    },
+    {
+      "chapter": "Direction Sense",
+      "kind": "standard",
+      "difficulty": "hard",
+      "answer_type": "single",
+      "stem": "A man is walking. He turns to his left and walks 7 m, then turns to his right and walks 9 m, then turns to his left and walks 3 m, then turns to his right and walks 7 m. In which direction is he now from the starting point?",
+      "explanation": "Tracking the moves, the net displacement is 16 m East and 10 m North of the start, i.e. towards North-East.",
+      "options": [
+        {
+          "label": "East",
+          "is_correct": false
+        },
+        {
+          "label": "West",
+          "is_correct": false
+        },
+        {
+          "label": "North-West",
+          "is_correct": false
+        },
+        {
+          "label": "North-East",
+          "is_correct": true
+        }
+      ]
+    },
+    {
+      "chapter": "Direction Sense",
+      "kind": "standard",
+      "difficulty": "hard",
+      "answer_type": "single",
+      "stem": "A person starts from a point and walks 12 m towards the East, then walks 6 m towards the East, then walks 11 m towards the East, then walks 12 m towards the East. In which direction is he now from the starting point?",
+      "explanation": "Tracking the moves, the net displacement is 41 m East and 0 m North of the start, i.e. towards East.",
+      "options": [
+        {
+          "label": "West",
+          "is_correct": false
+        },
+        {
+          "label": "North-East",
+          "is_correct": false
+        },
+        {
+          "label": "East",
+          "is_correct": true
+        },
+        {
+          "label": "South-West",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Direction Sense",
+      "kind": "standard",
+      "difficulty": "hard",
+      "answer_type": "single",
+      "stem": "A man is walking. He turns to his left and walks 2 m, then turns to his right and walks 2 m, then turns to his right and walks 6 m, then turns to his left and walks 10 m. In which direction is he now from the starting point?",
+      "explanation": "Tracking the moves, the net displacement is -4 m East and -12 m North of the start, i.e. towards South-West.",
+      "options": [
+        {
+          "label": "North-West",
+          "is_correct": false
+        },
+        {
+          "label": "North-East",
+          "is_correct": false
+        },
+        {
+          "label": "South-West",
+          "is_correct": true
+        },
+        {
+          "label": "South-East",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Direction Sense",
+      "kind": "standard",
+      "difficulty": "hard",
+      "answer_type": "single",
+      "stem": "A man is walking. He turns to his left and walks 3 m, then turns to his right and walks 10 m, then turns to his right and walks 12 m, then turns to his right and walks 8 m. In which direction is he now from the starting point?",
+      "explanation": "Tracking the moves, the net displacement is 9 m East and 2 m North of the start, i.e. towards North-East.",
+      "options": [
+        {
+          "label": "North-East",
+          "is_correct": true
+        },
+        {
+          "label": "South-East",
+          "is_correct": false
+        },
+        {
+          "label": "West",
+          "is_correct": false
+        },
+        {
+          "label": "South",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Direction Sense",
+      "kind": "standard",
+      "difficulty": "hard",
+      "answer_type": "single",
+      "stem": "A man is walking. He turns to his left and walks 2 m, then turns to his left and walks 3 m, then turns to his left and walks 5 m, then turns to his right and walks 2 m. In which direction is he now from the starting point?",
+      "explanation": "Tracking the moves, the net displacement is 5 m East and 3 m North of the start, i.e. towards North-East.",
+      "options": [
+        {
+          "label": "South",
+          "is_correct": false
+        },
+        {
+          "label": "West",
+          "is_correct": false
+        },
+        {
+          "label": "North-East",
+          "is_correct": true
+        },
+        {
+          "label": "South-West",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Direction Sense",
+      "kind": "standard",
+      "difficulty": "hard",
+      "answer_type": "single",
+      "stem": "A man is walking. He turns to his left and walks 5 m, then turns to his left and walks 5 m, then turns to his left and walks 9 m, then turns to his left and walks 9 m. In which direction is he now from the starting point?",
+      "explanation": "Tracking the moves, the net displacement is -4 m East and 4 m North of the start, i.e. towards North-West.",
+      "options": [
+        {
+          "label": "North-East",
+          "is_correct": false
+        },
+        {
+          "label": "South",
+          "is_correct": false
+        },
+        {
+          "label": "North-West",
+          "is_correct": true
+        },
+        {
+          "label": "North",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Direction Sense",
+      "kind": "standard",
+      "difficulty": "hard",
+      "answer_type": "single",
+      "stem": "A man is walking. He turns to his right and walks 12 m, then turns to his left and walks 5 m, then turns to his left and walks 5 m, then turns to his right and walks 2 m. In which direction is he now from the starting point?",
+      "explanation": "Tracking the moves, the net displacement is -7 m East and -7 m North of the start, i.e. towards South-West.",
+      "options": [
+        {
+          "label": "North",
+          "is_correct": false
+        },
+        {
+          "label": "South-East",
+          "is_correct": false
+        },
+        {
+          "label": "North-West",
+          "is_correct": false
+        },
+        {
+          "label": "South-West",
+          "is_correct": true
+        }
+      ]
+    },
+    {
+      "chapter": "Direction Sense",
+      "kind": "standard",
+      "difficulty": "hard",
+      "answer_type": "single",
+      "stem": "A man is walking. He turns to his left and walks 7 m, then turns to his left and walks 7 m, then turns to his left and walks 11 m, then turns to his right and walks 9 m. In which direction is he now from the starting point?",
+      "explanation": "Tracking the moves, the net displacement is 16 m East and 4 m North of the start, i.e. towards North-East.",
+      "options": [
+        {
+          "label": "North-East",
+          "is_correct": true
+        },
+        {
+          "label": "East",
+          "is_correct": false
+        },
+        {
+          "label": "West",
+          "is_correct": false
+        },
+        {
+          "label": "South-West",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Direction Sense",
+      "kind": "standard",
+      "difficulty": "hard",
+      "answer_type": "single",
+      "stem": "A person starts from a point and walks 8 m towards the East, then walks 3 m towards the West, then walks 10 m towards the West. How far (in metres, straight line) is he from the starting point?",
+      "explanation": "Net displacement is 5 m horizontally and 0 m vertically, so the straight-line distance is √(25 + 0) = 5 m.",
+      "options": [
+        {
+          "label": "4",
+          "is_correct": false
+        },
+        {
+          "label": "6",
+          "is_correct": false
+        },
+        {
+          "label": "5",
+          "is_correct": true
+        },
+        {
+          "label": "7",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Direction Sense",
+      "kind": "standard",
+      "difficulty": "hard",
+      "answer_type": "single",
+      "stem": "A person starts from a point and walks 5 m towards the West, then walks 10 m towards the North, then walks 3 m towards the East, then walks 12 m towards the West. In which direction is he now from the starting point?",
+      "explanation": "Tracking the moves, the net displacement is -14 m East and 10 m North of the start, i.e. towards North-West.",
+      "options": [
+        {
+          "label": "North-West",
+          "is_correct": true
+        },
+        {
+          "label": "North-East",
+          "is_correct": false
+        },
+        {
+          "label": "South-West",
+          "is_correct": false
+        },
+        {
+          "label": "South",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Direction Sense",
+      "kind": "standard",
+      "difficulty": "hard",
+      "answer_type": "single",
+      "stem": "A man is walking. He turns to his right and walks 9 m, then turns to his left and walks 10 m, then turns to his right and walks 10 m, then turns to his left and walks 4 m. In which direction is he now from the starting point?",
+      "explanation": "Tracking the moves, the net displacement is 14 m East and -19 m North of the start, i.e. towards South-East.",
+      "options": [
+        {
+          "label": "West",
+          "is_correct": false
+        },
+        {
+          "label": "South",
+          "is_correct": false
+        },
+        {
+          "label": "North-East",
+          "is_correct": false
+        },
+        {
+          "label": "South-East",
+          "is_correct": true
+        }
+      ]
+    },
+    {
+      "chapter": "Direction Sense",
+      "kind": "standard",
+      "difficulty": "hard",
+      "answer_type": "single",
+      "stem": "A person starts from a point and walks 11 m towards the West, then walks 3 m towards the East, then walks 9 m towards the West. How far (in metres, straight line) is he from the starting point?",
+      "explanation": "Net displacement is 17 m horizontally and 0 m vertically, so the straight-line distance is √(289 + 0) = 17 m.",
+      "options": [
+        {
+          "label": "17",
+          "is_correct": true
+        },
+        {
+          "label": "16",
+          "is_correct": false
+        },
+        {
+          "label": "19",
+          "is_correct": false
+        },
+        {
+          "label": "18",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Direction Sense",
+      "kind": "standard",
+      "difficulty": "hard",
+      "answer_type": "single",
+      "stem": "A person starts from a point and walks 8 m towards the North, then walks 3 m towards the East, then walks 2 m towards the East, then walks 4 m towards the South. In which direction is he now from the starting point?",
+      "explanation": "Tracking the moves, the net displacement is 5 m East and 4 m North of the start, i.e. towards North-East.",
+      "options": [
+        {
+          "label": "North-East",
+          "is_correct": true
+        },
+        {
+          "label": "South",
+          "is_correct": false
+        },
+        {
+          "label": "South-West",
+          "is_correct": false
+        },
+        {
+          "label": "North",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Direction Sense",
+      "kind": "standard",
+      "difficulty": "hard",
+      "answer_type": "single",
+      "stem": "A person starts from a point and walks 3 m towards the West, then walks 7 m towards the East, then walks 2 m towards the South, then walks 6 m towards the East. In which direction is he now from the starting point?",
+      "explanation": "Tracking the moves, the net displacement is 10 m East and -2 m North of the start, i.e. towards South-East.",
+      "options": [
+        {
+          "label": "South-West",
+          "is_correct": false
+        },
+        {
+          "label": "North",
+          "is_correct": false
+        },
+        {
+          "label": "South-East",
+          "is_correct": true
+        },
+        {
+          "label": "East",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Direction Sense",
+      "kind": "standard",
+      "difficulty": "hard",
+      "answer_type": "single",
+      "stem": "A person starts from a point and walks 9 m towards the North, then walks 7 m towards the South, then walks 10 m towards the North. How far (in metres, straight line) is he from the starting point?",
+      "explanation": "Net displacement is 0 m horizontally and 12 m vertically, so the straight-line distance is √(0 + 144) = 12 m.",
+      "options": [
+        {
+          "label": "14",
+          "is_correct": false
+        },
+        {
+          "label": "11",
+          "is_correct": false
+        },
+        {
+          "label": "12",
+          "is_correct": true
+        },
+        {
+          "label": "13",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Direction Sense",
+      "kind": "standard",
+      "difficulty": "hard",
+      "answer_type": "single",
+      "stem": "A man is walking. He turns to his right and walks 8 m, then turns to his right and walks 3 m, then turns to his left and walks 5 m, then turns to his left and walks 4 m. In which direction is he now from the starting point?",
+      "explanation": "Tracking the moves, the net displacement is -13 m East and -1 m North of the start, i.e. towards South-West.",
+      "options": [
+        {
+          "label": "South-West",
+          "is_correct": true
+        },
+        {
+          "label": "North",
+          "is_correct": false
+        },
+        {
+          "label": "South",
+          "is_correct": false
+        },
+        {
+          "label": "East",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Direction Sense",
+      "kind": "standard",
+      "difficulty": "hard",
+      "answer_type": "single",
+      "stem": "A man is walking. He turns to his left and walks 5 m, then turns to his left and walks 9 m, then turns to his left and walks 6 m, then turns to his left and walks 11 m. In which direction is he now from the starting point?",
+      "explanation": "Tracking the moves, the net displacement is -2 m East and 1 m North of the start, i.e. towards North-West.",
+      "options": [
+        {
+          "label": "North",
+          "is_correct": false
+        },
+        {
+          "label": "East",
+          "is_correct": false
+        },
+        {
+          "label": "South-East",
+          "is_correct": false
+        },
+        {
+          "label": "North-West",
+          "is_correct": true
+        }
+      ]
+    },
+    {
+      "chapter": "Direction Sense",
+      "kind": "standard",
+      "difficulty": "hard",
+      "answer_type": "single",
+      "stem": "A man is walking. He turns to his right and walks 5 m, then turns to his right and walks 10 m, then turns to his right and walks 2 m, then turns to his right and walks 3 m. In which direction is he now from the starting point?",
+      "explanation": "Tracking the moves, the net displacement is -3 m East and 7 m North of the start, i.e. towards North-West.",
+      "options": [
+        {
+          "label": "East",
+          "is_correct": false
+        },
+        {
+          "label": "West",
+          "is_correct": false
+        },
+        {
+          "label": "North-West",
+          "is_correct": true
+        },
+        {
+          "label": "South",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Direction Sense",
+      "kind": "standard",
+      "difficulty": "hard",
+      "answer_type": "single",
+      "stem": "A person starts from a point and walks 9 m towards the North, then walks 8 m towards the North, then walks 9 m towards the South, then walks 11 m towards the East. In which direction is he now from the starting point?",
+      "explanation": "Tracking the moves, the net displacement is 11 m East and 8 m North of the start, i.e. towards North-East.",
+      "options": [
+        {
+          "label": "North",
+          "is_correct": false
+        },
+        {
+          "label": "North-East",
+          "is_correct": true
+        },
+        {
+          "label": "North-West",
+          "is_correct": false
+        },
+        {
+          "label": "South",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Direction Sense",
+      "kind": "standard",
+      "difficulty": "hard",
+      "answer_type": "single",
+      "stem": "A man is walking. He turns to his right and walks 12 m, then turns to his right and walks 6 m, then turns to his left and walks 11 m, then turns to his left and walks 6 m. In which direction is he now from the starting point?",
+      "explanation": "Tracking the moves, the net displacement is -23 m East and 0 m North of the start, i.e. towards West.",
+      "options": [
+        {
+          "label": "South-East",
+          "is_correct": false
+        },
+        {
+          "label": "West",
+          "is_correct": true
+        },
+        {
+          "label": "South",
+          "is_correct": false
+        },
+        {
+          "label": "North",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Direction Sense",
+      "kind": "standard",
+      "difficulty": "hard",
+      "answer_type": "single",
+      "stem": "A man is walking. He turns to his left and walks 5 m, then turns to his left and walks 9 m, then turns to his right and walks 4 m, then turns to his left and walks 6 m. In which direction is he now from the starting point?",
+      "explanation": "Tracking the moves, the net displacement is -9 m East and -15 m North of the start, i.e. towards South-West.",
+      "options": [
+        {
+          "label": "North-West",
+          "is_correct": false
+        },
+        {
+          "label": "South-East",
+          "is_correct": false
+        },
+        {
+          "label": "South",
+          "is_correct": false
+        },
+        {
+          "label": "South-West",
+          "is_correct": true
+        }
+      ]
+    },
+    {
+      "chapter": "Direction Sense",
+      "kind": "standard",
+      "difficulty": "hard",
+      "answer_type": "single",
+      "stem": "A man is walking. He turns to his left and walks 9 m, then turns to his right and walks 9 m, then turns to his right and walks 3 m, then turns to his left and walks 11 m. In which direction is he now from the starting point?",
+      "explanation": "Tracking the moves, the net displacement is 20 m East and 6 m North of the start, i.e. towards North-East.",
+      "options": [
+        {
+          "label": "North-West",
+          "is_correct": false
+        },
+        {
+          "label": "West",
+          "is_correct": false
+        },
+        {
+          "label": "North-East",
+          "is_correct": true
+        },
+        {
+          "label": "South-East",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Direction Sense",
+      "kind": "standard",
+      "difficulty": "hard",
+      "answer_type": "single",
+      "stem": "A person starts from a point and walks 7 m towards the South, then walks 10 m towards the West, then walks 10 m towards the North, then walks 6 m towards the West. In which direction is he now from the starting point?",
+      "explanation": "Tracking the moves, the net displacement is -16 m East and 3 m North of the start, i.e. towards North-West.",
+      "options": [
+        {
+          "label": "North",
+          "is_correct": false
+        },
+        {
+          "label": "North-East",
+          "is_correct": false
+        },
+        {
+          "label": "North-West",
+          "is_correct": true
+        },
+        {
+          "label": "South-West",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Direction Sense",
+      "kind": "standard",
+      "difficulty": "hard",
+      "answer_type": "single",
+      "stem": "A person starts from a point and walks 11 m towards the South, then walks 6 m towards the North, then walks 4 m towards the North. How far (in metres, straight line) is he from the starting point?",
+      "explanation": "Net displacement is 0 m horizontally and 1 m vertically, so the straight-line distance is √(0 + 1) = 1 m.",
+      "options": [
+        {
+          "label": "4",
+          "is_correct": false
+        },
+        {
+          "label": "2",
+          "is_correct": false
+        },
+        {
+          "label": "3",
+          "is_correct": false
+        },
+        {
+          "label": "1",
+          "is_correct": true
+        }
+      ]
+    },
+    {
+      "chapter": "Direction Sense",
+      "kind": "standard",
+      "difficulty": "hard",
+      "answer_type": "single",
+      "stem": "A person starts from a point and walks 9 m towards the South, then walks 7 m towards the North, then walks 8 m towards the South, then walks 12 m towards the South. In which direction is he now from the starting point?",
+      "explanation": "Tracking the moves, the net displacement is 0 m East and -22 m North of the start, i.e. towards South.",
+      "options": [
+        {
+          "label": "South",
+          "is_correct": true
+        },
+        {
+          "label": "West",
+          "is_correct": false
+        },
+        {
+          "label": "South-East",
+          "is_correct": false
+        },
+        {
+          "label": "East",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Direction Sense",
+      "kind": "standard",
+      "difficulty": "hard",
+      "answer_type": "single",
+      "stem": "A man is walking. He turns to his right and walks 5 m, then turns to his right and walks 12 m, then turns to his right and walks 5 m, then turns to his right and walks 8 m. In which direction is he now from the starting point?",
+      "explanation": "Tracking the moves, the net displacement is 0 m East and -4 m North of the start, i.e. towards South.",
+      "options": [
+        {
+          "label": "North",
+          "is_correct": false
+        },
+        {
+          "label": "South",
+          "is_correct": true
+        },
+        {
+          "label": "East",
+          "is_correct": false
+        },
+        {
+          "label": "North-West",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Direction Sense",
+      "kind": "standard",
+      "difficulty": "hard",
+      "answer_type": "single",
+      "stem": "A person starts from a point and walks 9 m towards the North, then walks 9 m towards the East, then walks 6 m towards the North, then walks 8 m towards the North. In which direction is he now from the starting point?",
+      "explanation": "Tracking the moves, the net displacement is 9 m East and 23 m North of the start, i.e. towards North-East.",
+      "options": [
+        {
+          "label": "West",
+          "is_correct": false
+        },
+        {
+          "label": "South",
+          "is_correct": false
+        },
+        {
+          "label": "East",
+          "is_correct": false
+        },
+        {
+          "label": "North-East",
+          "is_correct": true
+        }
+      ]
+    },
+    {
+      "chapter": "Direction Sense",
+      "kind": "standard",
+      "difficulty": "hard",
+      "answer_type": "single",
+      "stem": "A man is walking. He turns to his right and walks 9 m, then turns to his left and walks 2 m, then turns to his left and walks 3 m, then turns to his right and walks 6 m. In which direction is he now from the starting point?",
+      "explanation": "Tracking the moves, the net displacement is -6 m East and -8 m North of the start, i.e. towards South-West.",
+      "options": [
+        {
+          "label": "North",
+          "is_correct": false
+        },
+        {
+          "label": "South-East",
+          "is_correct": false
+        },
+        {
+          "label": "South-West",
+          "is_correct": true
+        },
+        {
+          "label": "West",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Direction Sense",
+      "kind": "standard",
+      "difficulty": "hard",
+      "answer_type": "single",
+      "stem": "A person starts from a point and walks 7 m towards the West, then walks 5 m towards the West, then walks 5 m towards the North, then walks 5 m towards the West. In which direction is he now from the starting point?",
+      "explanation": "Tracking the moves, the net displacement is -17 m East and 5 m North of the start, i.e. towards North-West.",
+      "options": [
+        {
+          "label": "North-West",
+          "is_correct": true
+        },
+        {
+          "label": "North-East",
+          "is_correct": false
+        },
+        {
+          "label": "South-West",
+          "is_correct": false
+        },
+        {
+          "label": "West",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Direction Sense",
+      "kind": "standard",
+      "difficulty": "hard",
+      "answer_type": "single",
+      "stem": "A person starts from a point and walks 5 m towards the North, then walks 10 m towards the South, then walks 7 m towards the South, then walks 12 m towards the South. In which direction is he now from the starting point?",
+      "explanation": "Tracking the moves, the net displacement is 0 m East and -24 m North of the start, i.e. towards South.",
+      "options": [
+        {
+          "label": "South",
+          "is_correct": true
+        },
+        {
+          "label": "North-East",
+          "is_correct": false
+        },
+        {
+          "label": "South-West",
+          "is_correct": false
+        },
+        {
+          "label": "South-East",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Direction Sense",
+      "kind": "standard",
+      "difficulty": "hard",
+      "answer_type": "single",
+      "stem": "A man is walking. He turns to his right and walks 5 m, then turns to his right and walks 3 m, then turns to his left and walks 3 m, then turns to his left and walks 12 m. In which direction is he now from the starting point?",
+      "explanation": "Tracking the moves, the net displacement is 8 m East and 9 m North of the start, i.e. towards North-East.",
+      "options": [
+        {
+          "label": "North",
+          "is_correct": false
+        },
+        {
+          "label": "South",
+          "is_correct": false
+        },
+        {
+          "label": "West",
+          "is_correct": false
+        },
+        {
+          "label": "North-East",
+          "is_correct": true
+        }
+      ]
+    },
+    {
+      "chapter": "Direction Sense",
+      "kind": "standard",
+      "difficulty": "hard",
+      "answer_type": "single",
+      "stem": "A person starts from a point and walks 3 m towards the North, then walks 3 m towards the West, then walks 3 m towards the East, then walks 4 m towards the East. In which direction is he now from the starting point?",
+      "explanation": "Tracking the moves, the net displacement is 4 m East and 3 m North of the start, i.e. towards North-East.",
+      "options": [
+        {
+          "label": "South",
+          "is_correct": false
+        },
+        {
+          "label": "North-East",
+          "is_correct": true
+        },
+        {
+          "label": "North-West",
+          "is_correct": false
+        },
+        {
+          "label": "West",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Direction Sense",
+      "kind": "standard",
+      "difficulty": "hard",
+      "answer_type": "single",
+      "stem": "A man is walking. He turns to his left and walks 3 m, then turns to his right and walks 2 m, then turns to his right and walks 4 m, then turns to his left and walks 3 m. In which direction is he now from the starting point?",
+      "explanation": "Tracking the moves, the net displacement is -5 m East and 1 m North of the start, i.e. towards North-West.",
+      "options": [
+        {
+          "label": "South",
+          "is_correct": false
+        },
+        {
+          "label": "South-West",
+          "is_correct": false
+        },
+        {
+          "label": "South-East",
+          "is_correct": false
+        },
+        {
+          "label": "North-West",
+          "is_correct": true
+        }
+      ]
+    },
+    {
+      "chapter": "Direction Sense",
+      "kind": "standard",
+      "difficulty": "hard",
+      "answer_type": "single",
+      "stem": "A person starts from a point and walks 12 m towards the South, then walks 4 m towards the South, then walks 6 m towards the South, then walks 4 m towards the West. In which direction is he now from the starting point?",
+      "explanation": "Tracking the moves, the net displacement is -4 m East and -22 m North of the start, i.e. towards South-West.",
+      "options": [
+        {
+          "label": "South-West",
+          "is_correct": true
+        },
+        {
+          "label": "North-West",
+          "is_correct": false
+        },
+        {
+          "label": "West",
+          "is_correct": false
+        },
+        {
+          "label": "North",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Direction Sense",
+      "kind": "standard",
+      "difficulty": "very_hard",
+      "answer_type": "single",
+      "stem": "A man is initially facing East. He turns 90° clockwise, then 90° anticlockwise, then 90° anticlockwise, then 90° clockwise. Which direction is he facing now?",
+      "explanation": "Starting from East and applying the turns in order, he ends up facing East.",
+      "options": [
+        {
+          "label": "North",
+          "is_correct": false
+        },
+        {
+          "label": "West",
+          "is_correct": false
+        },
+        {
+          "label": "East",
+          "is_correct": true
+        },
+        {
+          "label": "South",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Direction Sense",
+      "kind": "standard",
+      "difficulty": "very_hard",
+      "answer_type": "single",
+      "stem": "A man is initially facing West. He turns 90° anticlockwise, then 90° anticlockwise, then 90° anticlockwise. Which direction is he facing now?",
+      "explanation": "Starting from West and applying the turns in order, he ends up facing North.",
+      "options": [
+        {
+          "label": "West",
+          "is_correct": false
+        },
+        {
+          "label": "North",
+          "is_correct": true
+        },
+        {
+          "label": "East",
+          "is_correct": false
+        },
+        {
+          "label": "South",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Direction Sense",
+      "kind": "standard",
+      "difficulty": "very_hard",
+      "answer_type": "single",
+      "stem": "A man is initially facing South. He turns 90° clockwise, then 90° clockwise, then 90° clockwise. Which direction is he facing now?",
+      "explanation": "Starting from South and applying the turns in order, he ends up facing East.",
+      "options": [
+        {
+          "label": "East",
+          "is_correct": true
+        },
+        {
+          "label": "North",
+          "is_correct": false
+        },
+        {
+          "label": "South",
+          "is_correct": false
+        },
+        {
+          "label": "West",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Direction Sense",
+      "kind": "standard",
+      "difficulty": "very_hard",
+      "answer_type": "single",
+      "stem": "A man is walking. He turns to his right and walks 5 m, then turns to his left and walks 9 m, then turns to his left and walks 9 m, then turns to his right and walks 3 m, then turns to his right and walks 4 m, then turns to his right and walks 9 m. In which direction is he now from the starting point?",
+      "explanation": "Tracking the moves, the net displacement is 0 m East and 3 m North of the start, i.e. towards North.",
+      "options": [
+        {
+          "label": "North-West",
+          "is_correct": false
+        },
+        {
+          "label": "North",
+          "is_correct": true
+        },
+        {
+          "label": "West",
+          "is_correct": false
+        },
+        {
+          "label": "South-East",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Direction Sense",
+      "kind": "standard",
+      "difficulty": "very_hard",
+      "answer_type": "single",
+      "stem": "A man is initially facing East. He turns 90° clockwise, then 90° clockwise, then 90° anticlockwise, then 90° clockwise, then 90° anticlockwise. Which direction is he facing now?",
+      "explanation": "Starting from East and applying the turns in order, he ends up facing South.",
+      "options": [
+        {
+          "label": "East",
+          "is_correct": false
+        },
+        {
+          "label": "West",
+          "is_correct": false
+        },
+        {
+          "label": "North",
+          "is_correct": false
+        },
+        {
+          "label": "South",
+          "is_correct": true
+        }
+      ]
+    },
+    {
+      "chapter": "Direction Sense",
+      "kind": "standard",
+      "difficulty": "very_hard",
+      "answer_type": "single",
+      "stem": "A man is initially facing North. He turns 90° clockwise, then 90° clockwise, then 90° anticlockwise. Which direction is he facing now?",
+      "explanation": "Starting from North and applying the turns in order, he ends up facing East.",
+      "options": [
+        {
+          "label": "East",
+          "is_correct": true
+        },
+        {
+          "label": "South",
+          "is_correct": false
+        },
+        {
+          "label": "North",
+          "is_correct": false
+        },
+        {
+          "label": "West",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Direction Sense",
+      "kind": "standard",
+      "difficulty": "very_hard",
+      "answer_type": "single",
+      "stem": "A man is walking. He turns to his left and walks 3 m, then turns to his left and walks 3 m, then turns to his left and walks 11 m, then turns to his right and walks 12 m, then turns to his right and walks 7 m, then turns to his right and walks 5 m. In which direction is he now from the starting point?",
+      "explanation": "Tracking the moves, the net displacement is 1 m East and -10 m North of the start, i.e. towards South-East.",
+      "options": [
+        {
+          "label": "North-West",
+          "is_correct": false
+        },
+        {
+          "label": "South-East",
+          "is_correct": true
+        },
+        {
+          "label": "North-East",
+          "is_correct": false
+        },
+        {
+          "label": "West",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Direction Sense",
+      "kind": "standard",
+      "difficulty": "very_hard",
+      "answer_type": "single",
+      "stem": "A man is initially facing West. He turns 90° clockwise, then 90° clockwise, then 90° clockwise, then 90° anticlockwise, then 90° anticlockwise. Which direction is he facing now?",
+      "explanation": "Starting from West and applying the turns in order, he ends up facing North.",
+      "options": [
+        {
+          "label": "South",
+          "is_correct": false
+        },
+        {
+          "label": "East",
+          "is_correct": false
+        },
+        {
+          "label": "West",
+          "is_correct": false
+        },
+        {
+          "label": "North",
+          "is_correct": true
+        }
+      ]
+    },
+    {
+      "chapter": "Direction Sense",
+      "kind": "standard",
+      "difficulty": "very_hard",
+      "answer_type": "single",
+      "stem": "A man is initially facing East. He turns 90° clockwise, then 90° anticlockwise, then 90° clockwise, then 90° anticlockwise. Which direction is he facing now?",
+      "explanation": "Starting from East and applying the turns in order, he ends up facing East.",
+      "options": [
+        {
+          "label": "West",
+          "is_correct": false
+        },
+        {
+          "label": "East",
+          "is_correct": true
+        },
+        {
+          "label": "North",
+          "is_correct": false
+        },
+        {
+          "label": "South",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Direction Sense",
+      "kind": "standard",
+      "difficulty": "very_hard",
+      "answer_type": "single",
+      "stem": "A man is walking. He turns to his right and walks 11 m, then turns to his left and walks 4 m, then turns to his right and walks 8 m, then turns to his left and walks 8 m, then turns to his right and walks 4 m. In which direction is he now from the starting point?",
+      "explanation": "Tracking the moves, the net displacement is -12 m East and 23 m North of the start, i.e. towards North-West.",
+      "options": [
+        {
+          "label": "East",
+          "is_correct": false
+        },
+        {
+          "label": "North-West",
+          "is_correct": true
+        },
+        {
+          "label": "North-East",
+          "is_correct": false
+        },
+        {
+          "label": "South",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Direction Sense",
+      "kind": "standard",
+      "difficulty": "very_hard",
+      "answer_type": "single",
+      "stem": "A man is walking. He turns to his right and walks 12 m, then turns to his left and walks 7 m, then turns to his right and walks 7 m, then turns to his right and walks 5 m, then turns to his left and walks 3 m, then turns to his left and walks 7 m. In which direction is he now from the starting point?",
+      "explanation": "Tracking the moves, the net displacement is 22 m East and 9 m North of the start, i.e. towards North-East.",
+      "options": [
+        {
+          "label": "North-East",
+          "is_correct": true
+        },
+        {
+          "label": "North",
+          "is_correct": false
+        },
+        {
+          "label": "North-West",
+          "is_correct": false
+        },
+        {
+          "label": "West",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Direction Sense",
+      "kind": "standard",
+      "difficulty": "very_hard",
+      "answer_type": "single",
+      "stem": "A man is walking. He turns to his left and walks 10 m, then turns to his left and walks 12 m, then turns to his left and walks 6 m, then turns to his left and walks 4 m, then turns to his left and walks 8 m, then turns to his right and walks 3 m. In which direction is he now from the starting point?",
+      "explanation": "Tracking the moves, the net displacement is 5 m East and -12 m North of the start, i.e. towards South-East.",
+      "options": [
+        {
+          "label": "South-East",
+          "is_correct": true
+        },
+        {
+          "label": "East",
+          "is_correct": false
+        },
+        {
+          "label": "West",
+          "is_correct": false
+        },
+        {
+          "label": "North-West",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Direction Sense",
+      "kind": "standard",
+      "difficulty": "very_hard",
+      "answer_type": "single",
+      "stem": "A man is walking. He turns to his left and walks 12 m, then turns to his left and walks 11 m, then turns to his right and walks 6 m, then turns to his right and walks 12 m, then turns to his left and walks 12 m, then turns to his left and walks 2 m. In which direction is he now from the starting point?",
+      "explanation": "Tracking the moves, the net displacement is -30 m East and -1 m North of the start, i.e. towards South-West.",
+      "options": [
+        {
+          "label": "South",
+          "is_correct": false
+        },
+        {
+          "label": "South-East",
+          "is_correct": false
+        },
+        {
+          "label": "North-West",
+          "is_correct": false
+        },
+        {
+          "label": "South-West",
+          "is_correct": true
+        }
+      ]
+    },
+    {
+      "chapter": "Direction Sense",
+      "kind": "standard",
+      "difficulty": "very_hard",
+      "answer_type": "single",
+      "stem": "A man is walking. He turns to his left and walks 12 m, then turns to his right and walks 6 m, then turns to his right and walks 9 m, then turns to his right and walks 7 m, then turns to his right and walks 4 m. In which direction is he now from the starting point?",
+      "explanation": "Tracking the moves, the net displacement is -7 m East and -1 m North of the start, i.e. towards South-West.",
+      "options": [
+        {
+          "label": "South",
+          "is_correct": false
+        },
+        {
+          "label": "North-West",
+          "is_correct": false
+        },
+        {
+          "label": "South-West",
+          "is_correct": true
+        },
+        {
+          "label": "West",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Direction Sense",
+      "kind": "standard",
+      "difficulty": "very_hard",
+      "answer_type": "single",
+      "stem": "A man is walking. He turns to his left and walks 2 m, then turns to his right and walks 9 m, then turns to his right and walks 5 m, then turns to his left and walks 3 m, then turns to his left and walks 10 m. In which direction is he now from the starting point?",
+      "explanation": "Tracking the moves, the net displacement is 12 m East and 7 m North of the start, i.e. towards North-East.",
+      "options": [
+        {
+          "label": "North-East",
+          "is_correct": true
+        },
+        {
+          "label": "South",
+          "is_correct": false
+        },
+        {
+          "label": "West",
+          "is_correct": false
+        },
+        {
+          "label": "East",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Direction Sense",
+      "kind": "standard",
+      "difficulty": "very_hard",
+      "answer_type": "single",
+      "stem": "A man is walking. He turns to his right and walks 11 m, then turns to his right and walks 2 m, then turns to his right and walks 4 m, then turns to his right and walks 8 m, then turns to his right and walks 7 m, then turns to his left and walks 12 m. In which direction is he now from the starting point?",
+      "explanation": "Tracking the moves, the net displacement is -18 m East and 14 m North of the start, i.e. towards North-West.",
+      "options": [
+        {
+          "label": "South",
+          "is_correct": false
+        },
+        {
+          "label": "East",
+          "is_correct": false
+        },
+        {
+          "label": "North-West",
+          "is_correct": true
+        },
+        {
+          "label": "South-West",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Direction Sense",
+      "kind": "standard",
+      "difficulty": "very_hard",
+      "answer_type": "single",
+      "stem": "A man is walking. He turns to his left and walks 11 m, then turns to his right and walks 5 m, then turns to his left and walks 12 m, then turns to his left and walks 3 m, then turns to his right and walks 8 m. In which direction is he now from the starting point?",
+      "explanation": "Tracking the moves, the net displacement is 2 m East and 31 m North of the start, i.e. towards North-East.",
+      "options": [
+        {
+          "label": "South-West",
+          "is_correct": false
+        },
+        {
+          "label": "North-East",
+          "is_correct": true
+        },
+        {
+          "label": "East",
+          "is_correct": false
+        },
+        {
+          "label": "South",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Direction Sense",
+      "kind": "standard",
+      "difficulty": "very_hard",
+      "answer_type": "single",
+      "stem": "A man is walking. He turns to his right and walks 11 m, then turns to his right and walks 5 m, then turns to his left and walks 12 m, then turns to his right and walks 9 m, then turns to his right and walks 2 m. In which direction is he now from the starting point?",
+      "explanation": "Tracking the moves, the net displacement is -14 m East and -21 m North of the start, i.e. towards South-West.",
+      "options": [
+        {
+          "label": "South-West",
+          "is_correct": true
+        },
+        {
+          "label": "East",
+          "is_correct": false
+        },
+        {
+          "label": "North-East",
+          "is_correct": false
+        },
+        {
+          "label": "South-East",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Direction Sense",
+      "kind": "standard",
+      "difficulty": "very_hard",
+      "answer_type": "single",
+      "stem": "A man is walking. He turns to his right and walks 8 m, then turns to his left and walks 6 m, then turns to his right and walks 6 m, then turns to his left and walks 6 m, then turns to his left and walks 2 m. In which direction is he now from the starting point?",
+      "explanation": "Tracking the moves, the net displacement is 12 m East and 12 m North of the start, i.e. towards North-East.",
+      "options": [
+        {
+          "label": "North-East",
+          "is_correct": true
+        },
+        {
+          "label": "North-West",
+          "is_correct": false
+        },
+        {
+          "label": "East",
+          "is_correct": false
+        },
+        {
+          "label": "South",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Direction Sense",
+      "kind": "standard",
+      "difficulty": "very_hard",
+      "answer_type": "single",
+      "stem": "A man is walking. He turns to his left and walks 4 m, then turns to his left and walks 6 m, then turns to his left and walks 9 m, then turns to his left and walks 3 m, then turns to his left and walks 2 m, then turns to his right and walks 6 m. In which direction is he now from the starting point?",
+      "explanation": "Tracking the moves, the net displacement is -3 m East and 3 m North of the start, i.e. towards North-West.",
+      "options": [
+        {
+          "label": "North-West",
+          "is_correct": true
+        },
+        {
+          "label": "East",
+          "is_correct": false
+        },
+        {
+          "label": "South",
+          "is_correct": false
+        },
+        {
+          "label": "South-West",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Direction Sense",
+      "kind": "standard",
+      "difficulty": "very_hard",
+      "answer_type": "single",
+      "stem": "A man is walking. He turns to his left and walks 3 m, then turns to his left and walks 11 m, then turns to his left and walks 9 m, then turns to his left and walks 6 m, then turns to his right and walks 9 m. In which direction is he now from the starting point?",
+      "explanation": "Tracking the moves, the net displacement is -5 m East and -15 m North of the start, i.e. towards South-West.",
+      "options": [
+        {
+          "label": "North-West",
+          "is_correct": false
+        },
+        {
+          "label": "West",
+          "is_correct": false
+        },
+        {
+          "label": "South-East",
+          "is_correct": false
+        },
+        {
+          "label": "South-West",
+          "is_correct": true
+        }
+      ]
+    },
+    {
+      "chapter": "Direction Sense",
+      "kind": "standard",
+      "difficulty": "very_hard",
+      "answer_type": "single",
+      "stem": "A man is initially facing North. He turns 90° anticlockwise, then 90° anticlockwise, then 90° clockwise, then 90° anticlockwise, then 90° anticlockwise. Which direction is he facing now?",
+      "explanation": "Starting from North and applying the turns in order, he ends up facing East.",
+      "options": [
+        {
+          "label": "East",
+          "is_correct": true
+        },
+        {
+          "label": "West",
+          "is_correct": false
+        },
+        {
+          "label": "North",
+          "is_correct": false
+        },
+        {
+          "label": "South",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Direction Sense",
+      "kind": "standard",
+      "difficulty": "very_hard",
+      "answer_type": "single",
+      "stem": "A person starts from a point and turns to his left and walks 7 m, then turns to his left and walks 11 m, then turns to his right and walks 10 m, then turns to his right and walks 3 m, then turns to his right and walks 2 m. How far (in metres, straight line) is he from the starting point?",
+      "explanation": "Net displacement is 8 m horizontally and 15 m vertically, so the straight-line distance is √(64 + 225) = 17 m.",
+      "options": [
+        {
+          "label": "18",
+          "is_correct": false
+        },
+        {
+          "label": "16",
+          "is_correct": false
+        },
+        {
+          "label": "19",
+          "is_correct": false
+        },
+        {
+          "label": "17",
+          "is_correct": true
+        }
+      ]
+    },
+    {
+      "chapter": "Direction Sense",
+      "kind": "standard",
+      "difficulty": "very_hard",
+      "answer_type": "single",
+      "stem": "A man is initially facing North. He turns 90° anticlockwise, then 90° clockwise, then 90° clockwise. Which direction is he facing now?",
+      "explanation": "Starting from North and applying the turns in order, he ends up facing East.",
+      "options": [
+        {
+          "label": "North",
+          "is_correct": false
+        },
+        {
+          "label": "East",
+          "is_correct": true
+        },
+        {
+          "label": "South",
+          "is_correct": false
+        },
+        {
+          "label": "West",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Direction Sense",
+      "kind": "standard",
+      "difficulty": "very_hard",
+      "answer_type": "single",
+      "stem": "A man is initially facing North. He turns 90° clockwise, then 90° clockwise, then 90° clockwise, then 90° clockwise, then 90° anticlockwise. Which direction is he facing now?",
+      "explanation": "Starting from North and applying the turns in order, he ends up facing West.",
+      "options": [
+        {
+          "label": "West",
+          "is_correct": true
+        },
+        {
+          "label": "North",
+          "is_correct": false
+        },
+        {
+          "label": "East",
+          "is_correct": false
+        },
+        {
+          "label": "South",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Direction Sense",
+      "kind": "standard",
+      "difficulty": "very_hard",
+      "answer_type": "single",
+      "stem": "A man is initially facing West. He turns 90° clockwise, then 90° clockwise, then 90° anticlockwise, then 90° clockwise, then 90° anticlockwise. Which direction is he facing now?",
+      "explanation": "Starting from West and applying the turns in order, he ends up facing North.",
+      "options": [
+        {
+          "label": "South",
+          "is_correct": false
+        },
+        {
+          "label": "East",
+          "is_correct": false
+        },
+        {
+          "label": "North",
+          "is_correct": true
+        },
+        {
+          "label": "West",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Direction Sense",
+      "kind": "standard",
+      "difficulty": "very_hard",
+      "answer_type": "single",
+      "stem": "A man is walking. He turns to his right and walks 12 m, then turns to his right and walks 2 m, then turns to his left and walks 12 m, then turns to his right and walks 7 m, then turns to his left and walks 2 m, then turns to his left and walks 3 m. In which direction is he now from the starting point?",
+      "explanation": "Tracking the moves, the net displacement is 26 m East and -6 m North of the start, i.e. towards South-East.",
+      "options": [
+        {
+          "label": "West",
+          "is_correct": false
+        },
+        {
+          "label": "South-West",
+          "is_correct": false
+        },
+        {
+          "label": "North-West",
+          "is_correct": false
+        },
+        {
+          "label": "South-East",
+          "is_correct": true
+        }
+      ]
+    },
+    {
+      "chapter": "Direction Sense",
+      "kind": "standard",
+      "difficulty": "very_hard",
+      "answer_type": "single",
+      "stem": "A man is walking. He turns to his left and walks 5 m, then turns to his left and walks 3 m, then turns to his right and walks 6 m, then turns to his left and walks 3 m, then turns to his right and walks 5 m, then turns to his right and walks 10 m. In which direction is he now from the starting point?",
+      "explanation": "Tracking the moves, the net displacement is -16 m East and 4 m North of the start, i.e. towards North-West.",
+      "options": [
+        {
+          "label": "West",
+          "is_correct": false
+        },
+        {
+          "label": "North",
+          "is_correct": false
+        },
+        {
+          "label": "North-East",
+          "is_correct": false
+        },
+        {
+          "label": "North-West",
+          "is_correct": true
+        }
+      ]
+    },
+    {
+      "chapter": "Direction Sense",
+      "kind": "standard",
+      "difficulty": "very_hard",
+      "answer_type": "single",
+      "stem": "A man is walking. He turns to his left and walks 4 m, then turns to his right and walks 5 m, then turns to his left and walks 10 m, then turns to his left and walks 2 m, then turns to his left and walks 10 m. In which direction is he now from the starting point?",
+      "explanation": "Tracking the moves, the net displacement is -4 m East and 3 m North of the start, i.e. towards North-West.",
+      "options": [
+        {
+          "label": "South-East",
+          "is_correct": false
+        },
+        {
+          "label": "West",
+          "is_correct": false
+        },
+        {
+          "label": "North-West",
+          "is_correct": true
+        },
+        {
+          "label": "North",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Direction Sense",
+      "kind": "standard",
+      "difficulty": "very_hard",
+      "answer_type": "single",
+      "stem": "A man is initially facing West. He turns 90° clockwise, then 90° anticlockwise, then 90° clockwise. Which direction is he facing now?",
+      "explanation": "Starting from West and applying the turns in order, he ends up facing North.",
+      "options": [
+        {
+          "label": "East",
+          "is_correct": false
+        },
+        {
+          "label": "North",
+          "is_correct": true
+        },
+        {
+          "label": "South",
+          "is_correct": false
+        },
+        {
+          "label": "West",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Direction Sense",
+      "kind": "standard",
+      "difficulty": "very_hard",
+      "answer_type": "single",
+      "stem": "A person starts from a point and turns to his right and walks 12 m, then turns to his right and walks 3 m, then turns to his right and walks 2 m, then turns to his right and walks 3 m, then turns to his left and walks 3 m. How far (in metres, straight line) is he from the starting point?",
+      "explanation": "Net displacement is 7 m horizontally and 0 m vertically, so the straight-line distance is √(49 + 0) = 7 m.",
+      "options": [
+        {
+          "label": "7",
+          "is_correct": true
+        },
+        {
+          "label": "9",
+          "is_correct": false
+        },
+        {
+          "label": "6",
+          "is_correct": false
+        },
+        {
+          "label": "8",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Direction Sense",
+      "kind": "standard",
+      "difficulty": "very_hard",
+      "answer_type": "single",
+      "stem": "A man is walking. He turns to his left and walks 9 m, then turns to his right and walks 4 m, then turns to his left and walks 12 m, then turns to his right and walks 8 m, then turns to his left and walks 10 m. In which direction is he now from the starting point?",
+      "explanation": "Tracking the moves, the net displacement is 31 m East and -12 m North of the start, i.e. towards South-East.",
+      "options": [
+        {
+          "label": "North",
+          "is_correct": false
+        },
+        {
+          "label": "East",
+          "is_correct": false
+        },
+        {
+          "label": "North-West",
+          "is_correct": false
+        },
+        {
+          "label": "South-East",
+          "is_correct": true
+        }
+      ]
+    },
+    {
+      "chapter": "Direction Sense",
+      "kind": "standard",
+      "difficulty": "very_hard",
+      "answer_type": "single",
+      "stem": "A man is walking. He turns to his right and walks 7 m, then turns to his right and walks 3 m, then turns to his left and walks 10 m, then turns to his left and walks 8 m, then turns to his left and walks 9 m. In which direction is he now from the starting point?",
+      "explanation": "Tracking the moves, the net displacement is -8 m East and -5 m North of the start, i.e. towards South-West.",
+      "options": [
+        {
+          "label": "South-East",
+          "is_correct": false
+        },
+        {
+          "label": "South-West",
+          "is_correct": true
+        },
+        {
+          "label": "North-East",
+          "is_correct": false
+        },
+        {
+          "label": "West",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Direction Sense",
+      "kind": "standard",
+      "difficulty": "very_hard",
+      "answer_type": "single",
+      "stem": "A man is initially facing West. He turns 90° anticlockwise, then 90° anticlockwise, then 90° clockwise. Which direction is he facing now?",
+      "explanation": "Starting from West and applying the turns in order, he ends up facing South.",
+      "options": [
+        {
+          "label": "North",
+          "is_correct": false
+        },
+        {
+          "label": "East",
+          "is_correct": false
+        },
+        {
+          "label": "South",
+          "is_correct": true
+        },
+        {
+          "label": "West",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Direction Sense",
+      "kind": "standard",
+      "difficulty": "very_hard",
+      "answer_type": "single",
+      "stem": "A man is walking. He turns to his left and walks 8 m, then turns to his left and walks 10 m, then turns to his right and walks 9 m, then turns to his left and walks 6 m, then turns to his right and walks 12 m. In which direction is he now from the starting point?",
+      "explanation": "Tracking the moves, the net displacement is -29 m East and -16 m North of the start, i.e. towards South-West.",
+      "options": [
+        {
+          "label": "West",
+          "is_correct": false
+        },
+        {
+          "label": "North-East",
+          "is_correct": false
+        },
+        {
+          "label": "North",
+          "is_correct": false
+        },
+        {
+          "label": "South-West",
+          "is_correct": true
+        }
+      ]
+    },
+    {
+      "chapter": "Direction Sense",
+      "kind": "standard",
+      "difficulty": "very_hard",
+      "answer_type": "single",
+      "stem": "A man is walking. He turns to his left and walks 6 m, then turns to his left and walks 9 m, then turns to his left and walks 9 m, then turns to his left and walks 9 m, then turns to his right and walks 8 m. In which direction is he now from the starting point?",
+      "explanation": "Tracking the moves, the net displacement is 11 m East and 0 m North of the start, i.e. towards East.",
+      "options": [
+        {
+          "label": "South",
+          "is_correct": false
+        },
+        {
+          "label": "North-East",
+          "is_correct": false
+        },
+        {
+          "label": "North",
+          "is_correct": false
+        },
+        {
+          "label": "East",
+          "is_correct": true
+        }
+      ]
+    },
+    {
+      "chapter": "Direction Sense",
+      "kind": "standard",
+      "difficulty": "very_hard",
+      "answer_type": "single",
+      "stem": "A man is walking. He turns to his right and walks 8 m, then turns to his left and walks 3 m, then turns to his right and walks 4 m, then turns to his right and walks 10 m, then turns to his right and walks 6 m, then turns to his left and walks 9 m. In which direction is he now from the starting point?",
+      "explanation": "Tracking the moves, the net displacement is -16 m East and -6 m North of the start, i.e. towards South-West.",
+      "options": [
+        {
+          "label": "North-East",
+          "is_correct": false
+        },
+        {
+          "label": "West",
+          "is_correct": false
+        },
+        {
+          "label": "South-West",
+          "is_correct": true
+        },
+        {
+          "label": "North",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Direction Sense",
+      "kind": "standard",
+      "difficulty": "very_hard",
+      "answer_type": "single",
+      "stem": "A man is walking. He turns to his left and walks 12 m, then turns to his right and walks 8 m, then turns to his left and walks 8 m, then turns to his left and walks 5 m, then turns to his left and walks 3 m, then turns to his right and walks 8 m. In which direction is he now from the starting point?",
+      "explanation": "Tracking the moves, the net displacement is 5 m East and -17 m North of the start, i.e. towards South-East.",
+      "options": [
+        {
+          "label": "East",
+          "is_correct": false
+        },
+        {
+          "label": "South-East",
+          "is_correct": true
+        },
+        {
+          "label": "North-West",
+          "is_correct": false
+        },
+        {
+          "label": "West",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Direction Sense",
+      "kind": "standard",
+      "difficulty": "very_hard",
+      "answer_type": "single",
+      "stem": "A man is initially facing West. He turns 90° clockwise, then 90° clockwise, then 90° clockwise, then 90° anticlockwise. Which direction is he facing now?",
+      "explanation": "Starting from West and applying the turns in order, he ends up facing East.",
+      "options": [
+        {
+          "label": "North",
+          "is_correct": false
+        },
+        {
+          "label": "South",
+          "is_correct": false
+        },
+        {
+          "label": "East",
+          "is_correct": true
+        },
+        {
+          "label": "West",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Direction Sense",
+      "kind": "standard",
+      "difficulty": "very_hard",
+      "answer_type": "single",
+      "stem": "A man is initially facing East. He turns 90° anticlockwise, then 90° clockwise, then 90° anticlockwise, then 90° anticlockwise, then 90° anticlockwise. Which direction is he facing now?",
+      "explanation": "Starting from East and applying the turns in order, he ends up facing South.",
+      "options": [
+        {
+          "label": "North",
+          "is_correct": false
+        },
+        {
+          "label": "West",
+          "is_correct": false
+        },
+        {
+          "label": "East",
+          "is_correct": false
+        },
+        {
+          "label": "South",
+          "is_correct": true
+        }
+      ]
+    },
+    {
+      "chapter": "Direction Sense",
+      "kind": "standard",
+      "difficulty": "very_hard",
+      "answer_type": "single",
+      "stem": "A man is walking. He turns to his right and walks 2 m, then turns to his right and walks 6 m, then turns to his right and walks 8 m, then turns to his right and walks 4 m, then turns to his left and walks 8 m, then turns to his right and walks 2 m. In which direction is he now from the starting point?",
+      "explanation": "Tracking the moves, the net displacement is 0 m East and 14 m North of the start, i.e. towards North.",
+      "options": [
+        {
+          "label": "East",
+          "is_correct": false
+        },
+        {
+          "label": "North",
+          "is_correct": true
+        },
+        {
+          "label": "West",
+          "is_correct": false
+        },
+        {
+          "label": "South-East",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Direction Sense",
+      "kind": "standard",
+      "difficulty": "very_hard",
+      "answer_type": "single",
+      "stem": "A man is walking. He turns to his left and walks 7 m, then turns to his right and walks 7 m, then turns to his left and walks 6 m, then turns to his right and walks 12 m, then turns to his left and walks 2 m, then turns to his left and walks 5 m. In which direction is he now from the starting point?",
+      "explanation": "Tracking the moves, the net displacement is 15 m East and -14 m North of the start, i.e. towards South-East.",
+      "options": [
+        {
+          "label": "South",
+          "is_correct": false
+        },
+        {
+          "label": "East",
+          "is_correct": false
+        },
+        {
+          "label": "North",
+          "is_correct": false
+        },
+        {
+          "label": "South-East",
+          "is_correct": true
+        }
+      ]
+    },
+    {
+      "chapter": "Direction Sense",
+      "kind": "standard",
+      "difficulty": "very_hard",
+      "answer_type": "single",
+      "stem": "A man is walking. He turns to his left and walks 11 m, then turns to his right and walks 5 m, then turns to his right and walks 8 m, then turns to his right and walks 4 m, then turns to his right and walks 12 m, then turns to his right and walks 6 m. In which direction is he now from the starting point?",
+      "explanation": "Tracking the moves, the net displacement is -7 m East and -15 m North of the start, i.e. towards South-West.",
+      "options": [
+        {
+          "label": "North",
+          "is_correct": false
+        },
+        {
+          "label": "South-West",
+          "is_correct": true
+        },
+        {
+          "label": "West",
+          "is_correct": false
+        },
+        {
+          "label": "North-West",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Direction Sense",
+      "kind": "standard",
+      "difficulty": "very_hard",
+      "answer_type": "single",
+      "stem": "A man is walking. He turns to his left and walks 3 m, then turns to his left and walks 8 m, then turns to his right and walks 5 m, then turns to his left and walks 5 m, then turns to his right and walks 10 m. In which direction is he now from the starting point?",
+      "explanation": "Tracking the moves, the net displacement is 18 m East and 13 m North of the start, i.e. towards North-East.",
+      "options": [
+        {
+          "label": "South",
+          "is_correct": false
+        },
+        {
+          "label": "North-West",
+          "is_correct": false
+        },
+        {
+          "label": "North-East",
+          "is_correct": true
+        },
+        {
+          "label": "East",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Direction Sense",
+      "kind": "standard",
+      "difficulty": "very_hard",
+      "answer_type": "single",
+      "stem": "A person starts from a point and turns to his right and walks 10 m, then turns to his left and walks 10 m, then turns to his left and walks 2 m, then turns to his right and walks 12 m, then turns to his left and walks 8 m, then turns to his left and walks 12 m. How far (in metres, straight line) is he from the starting point?",
+      "explanation": "Net displacement is 10 m horizontally and 0 m vertically, so the straight-line distance is √(100 + 0) = 10 m.",
+      "options": [
+        {
+          "label": "10",
+          "is_correct": true
+        },
+        {
+          "label": "9",
+          "is_correct": false
+        },
+        {
+          "label": "12",
+          "is_correct": false
+        },
+        {
+          "label": "11",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Direction Sense",
+      "kind": "standard",
+      "difficulty": "very_hard",
+      "answer_type": "single",
+      "stem": "A man is walking. He turns to his left and walks 5 m, then turns to his left and walks 10 m, then turns to his left and walks 12 m, then turns to his right and walks 2 m, then turns to his right and walks 4 m. In which direction is he now from the starting point?",
+      "explanation": "Tracking the moves, the net displacement is -3 m East and 12 m North of the start, i.e. towards North-West.",
+      "options": [
+        {
+          "label": "North-East",
+          "is_correct": false
+        },
+        {
+          "label": "North-West",
+          "is_correct": true
+        },
+        {
+          "label": "West",
+          "is_correct": false
+        },
+        {
+          "label": "South-West",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Direction Sense",
+      "kind": "standard",
+      "difficulty": "very_hard",
+      "answer_type": "single",
+      "stem": "A man is walking. He turns to his left and walks 12 m, then turns to his left and walks 4 m, then turns to his left and walks 3 m, then turns to his left and walks 10 m, then turns to his right and walks 7 m. In which direction is he now from the starting point?",
+      "explanation": "Tracking the moves, the net displacement is 2 m East and -6 m North of the start, i.e. towards South-East.",
+      "options": [
+        {
+          "label": "North",
+          "is_correct": false
+        },
+        {
+          "label": "South-East",
+          "is_correct": true
+        },
+        {
+          "label": "North-East",
+          "is_correct": false
+        },
+        {
+          "label": "West",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Direction Sense",
+      "kind": "standard",
+      "difficulty": "very_hard",
+      "answer_type": "single",
+      "stem": "A man is initially facing North. He turns 90° anticlockwise, then 90° anticlockwise, then 90° anticlockwise, then 90° anticlockwise. Which direction is he facing now?",
+      "explanation": "Starting from North and applying the turns in order, he ends up facing North.",
+      "options": [
+        {
+          "label": "West",
+          "is_correct": false
+        },
+        {
+          "label": "South",
+          "is_correct": false
+        },
+        {
+          "label": "North",
+          "is_correct": true
+        },
+        {
+          "label": "East",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Direction Sense",
+      "kind": "standard",
+      "difficulty": "very_hard",
+      "answer_type": "single",
+      "stem": "A man is initially facing South. He turns 90° clockwise, then 90° anticlockwise, then 90° anticlockwise, then 90° anticlockwise. Which direction is he facing now?",
+      "explanation": "Starting from South and applying the turns in order, he ends up facing North.",
+      "options": [
+        {
+          "label": "East",
+          "is_correct": false
+        },
+        {
+          "label": "South",
+          "is_correct": false
+        },
+        {
+          "label": "North",
+          "is_correct": true
+        },
+        {
+          "label": "West",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Direction Sense",
+      "kind": "standard",
+      "difficulty": "very_hard",
+      "answer_type": "single",
+      "stem": "A man is walking. He turns to his left and walks 5 m, then turns to his left and walks 6 m, then turns to his left and walks 12 m, then turns to his right and walks 2 m, then turns to his right and walks 2 m. In which direction is he now from the starting point?",
+      "explanation": "Tracking the moves, the net displacement is 5 m East and -8 m North of the start, i.e. towards South-East.",
+      "options": [
+        {
+          "label": "East",
+          "is_correct": false
+        },
+        {
+          "label": "South-East",
+          "is_correct": true
+        },
+        {
+          "label": "North-East",
+          "is_correct": false
+        },
+        {
+          "label": "North-West",
+          "is_correct": false
+        }
+      ]
+    }
+  ]
+}

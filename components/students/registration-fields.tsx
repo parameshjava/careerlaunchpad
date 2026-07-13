@@ -169,10 +169,19 @@ export function StepBody({
 }
 
 /** Stepper rail — completed steps are clickable to jump back. */
-export function Stepper({ step, onJump }: { step: number; onJump: (n: number) => void }) {
+export function Stepper({
+  step,
+  onJump,
+  steps = STEPS,
+}: {
+  step: number;
+  onJump: (n: number) => void;
+  /** Override the rail labels (defaults to the student STEPS). */
+  steps?: string[];
+}) {
   return (
     <ol className="mb-7 flex items-start">
-      {STEPS.map((label, i) => {
+      {steps.map((label, i) => {
         const n = i + 1;
         const active = n === step;
         const done = n < step;

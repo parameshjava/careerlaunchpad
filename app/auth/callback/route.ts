@@ -20,6 +20,10 @@ export async function GET(request: NextRequest) {
   if (code) {
     const { error } = await supabase.auth.exchangeCodeForSession(code);
     if (!error) {
+      // Consume any pending invites addressed to this user's email — including
+      // ones created AFTER their account already existed (migration 095), which
+      // the first-sign-in trigger can't catch. Idempotent.
+      await supabase.rpc("consume_pending_invites");
       // Route by role. Unprovisioned (no invite) → /auth/no-access via homePath.
       const ctx = await getAuthContext();
       return NextResponse.redirect(`${origin}${ctx?.homePath ?? "/auth/no-access"}`);

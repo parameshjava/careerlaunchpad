@@ -45,10 +45,53 @@ export async function PATCH(req: NextRequest, { params }: { params: Promise<{ id
     return NextResponse.json({ error: "Invalid JSON body" }, { status: 400 });
   }
 
+  const supabase = await createClient();
+
+  // Once the exam's sitting has opened, it's locked (spec D6/R9).
+  const { data: opened } = await supabase
+    .from("exam_session")
+    .select("id")
+    .eq("exam_id", id)
+    .not("opens_at", "is", null)
+    .lte("opens_at", new Date().toISOString())
+    .limit(1);
+  if (opened && opened.length)
+    return NextResponse.json(
+      { error: "This exam has started and can no longer be edited." },
+      { status: 409 },
+    );
+
+  // Wizard draft save: lenient. Persist exam-level fields + draft_step always;
+  // replace sections only if the provided set is valid (partial edits don't
+  // block saving progress). Full validation is deferred to publish (R4).
+  if (body.draft === true) {
+    const patch: Record<string, unknown> = {};
+    if (typeof body.title === "string") patch.title = body.title.trim() || "Untitled exam";
+    if (body.duration_minutes != null) patch.duration_minutes = Number(body.duration_minutes);
+    if (body.shuffle_questions != null) patch.shuffle_questions = body.shuffle_questions === true;
+    if (body.shuffle_options != null) patch.shuffle_options = body.shuffle_options === true;
+    if (body.negative_mark_per_wrong != null)
+      patch.negative_mark_per_wrong = Number(body.negative_mark_per_wrong);
+    if (body.draft_step != null) patch.draft_step = Number(body.draft_step);
+    if (Object.keys(patch).length) {
+      const { error } = await supabase.from("exam").update(patch).eq("id", id);
+      if (error) return NextResponse.json({ ok: false, error: error.message }, { status: 500 });
+    }
+    if (Array.isArray(body.sections) && body.sections.length) {
+      const { clean } = validateBlueprint(body);
+      if (clean) {
+        await supabase.rpc("replace_blueprint_sections", {
+          p_exam_id: id,
+          p_sections: clean.sections,
+        });
+      }
+    }
+    return NextResponse.json({ ok: true, id });
+  }
+
   const { clean, errors } = validateBlueprint(body);
   if (!clean) return NextResponse.json({ ok: false, errors }, { status: 422 });
 
-  const supabase = await createClient();
   const existing = await fetchBlueprint(supabase, id);
   if (!existing) return NextResponse.json({ error: "Not found" }, { status: 404 });
 
@@ -86,4 +129,34 @@ export async function PATCH(req: NextRequest, { params }: { params: Promise<{ id
   if (rpcErr) return NextResponse.json({ ok: false, error: rpcErr.message }, { status: 500 });
 
   return NextResponse.json({ ok: true, id });
+}
+
+// Delete an exam. Cascades to sections, sittings, papers and any attempts.
+// Refused once the exam's window has opened (it may have student attempts). RLS
+// enforces exam-admin rights again.
+export async function DELETE(_req: NextRequest, { params }: { params: Promise<{ id: string }> }) {
+  try {
+    await requirePermission("exam.blueprint.manage");
+  } catch {
+    return NextResponse.json({ error: "Forbidden" }, { status: 403 });
+  }
+  const { id } = await params;
+  const supabase = await createClient();
+
+  const { data: opened } = await supabase
+    .from("exam_session")
+    .select("id")
+    .eq("exam_id", id)
+    .not("opens_at", "is", null)
+    .lte("opens_at", new Date().toISOString())
+    .limit(1);
+  if (opened && opened.length)
+    return NextResponse.json(
+      { error: "This exam has started — it can no longer be deleted." },
+      { status: 409 },
+    );
+
+  const { error } = await supabase.from("exam").delete().eq("id", id);
+  if (error) return NextResponse.json({ ok: false, error: error.message }, { status: 500 });
+  return NextResponse.json({ ok: true });
 }

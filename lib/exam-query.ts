@@ -82,6 +82,28 @@ export async function fetchSubjects(
   }));
 }
 
+export type ChapterCounts = Record<
+  string,
+  { easy: number; medium: number; hard: number; very_hard: number }
+>;
+
+/** Active-question counts per chapter, split by difficulty (migration 097). */
+export async function fetchChapterCounts(
+  supabase: SupabaseClient,
+  subjectId: string,
+): Promise<ChapterCounts> {
+  const { data, error } = await supabase.rpc("chapter_question_counts", {
+    p_subject_ids: [subjectId],
+  });
+  if (error) throw new Error(`chapter_question_counts: ${error.message}`);
+  const out: ChapterCounts = {};
+  for (const r of (data ?? []) as { chapter_id: string; difficulty: string; n: number }[]) {
+    const c = (out[r.chapter_id] ??= { easy: 0, medium: 0, hard: 0, very_hard: 0 });
+    if (r.difficulty in c) c[r.difficulty as keyof typeof c] = Number(r.n);
+  }
+  return out;
+}
+
 export async function fetchChapters(
   supabase: SupabaseClient,
   subjectId: string,
@@ -123,24 +145,28 @@ export type QuestionFilters = {
   difficulty?: Difficulty;
   includeArchived?: boolean;
   limit?: number;
+  offset?: number;
 };
 
 export async function fetchQuestions(
   supabase: SupabaseClient,
   filters: QuestionFilters = {},
-): Promise<QuestionListItem[]> {
+): Promise<{ questions: QuestionListItem[]; total: number }> {
+  const limit = filters.limit ?? 200;
+  const offset = filters.offset ?? 0;
   let q = supabase
     .from("question")
     .select(
       "id, subject_id, chapter_id, kind, difficulty, answer_type, stem, status, version",
+      { count: "exact" },
     )
     .order("created_at", { ascending: false })
-    .limit(filters.limit ?? 200);
+    .range(offset, offset + limit - 1);
   if (filters.subjectId) q = q.eq("subject_id", filters.subjectId);
   if (filters.chapterId) q = q.eq("chapter_id", filters.chapterId);
   if (filters.difficulty) q = q.eq("difficulty", filters.difficulty);
   if (!filters.includeArchived) q = q.eq("status", "active");
-  const { data, error } = await q;
+  const { data, error, count } = await q;
   if (error) throw new Error(`question: ${error.message}`);
   const rows = data ?? [];
   const names = await chapterNameMap(supabase, rows.map((r) => r.chapter_id as string));
@@ -162,7 +188,7 @@ export async function fetchQuestions(
     }
   }
 
-  return rows.map((r) => {
+  const questions = rows.map((r) => {
     const options = (optsByQ.get(r.id as string) ?? [])
       .sort((a, b) => a.position - b.position)
       .map((o) => ({ label: o.label, isCorrect: o.isCorrect }));
@@ -180,6 +206,7 @@ export async function fetchQuestions(
       options,
     };
   });
+  return { questions, total: count ?? questions.length };
 }
 
 // ----------------------------------------------------------------------------
@@ -213,6 +240,8 @@ export type Blueprint = {
   shuffleOptions: boolean;
   negativeMarkPerWrong: number;
   status: BlueprintStatus;
+  /** Wizard resume point (migration 094). 1-based; 1 = start. */
+  draftStep: number;
   sections: BlueprintSection[];
 };
 
@@ -244,6 +273,62 @@ export async function fetchBlueprints(supabase: SupabaseClient): Promise<Bluepri
   });
 }
 
+// A row for the "Exam papers" list: an exam (blueprint) joined to its sitting,
+// so DRAFTS (no sitting yet) also appear — they were previously invisible
+// because that list only queried sessions.
+export type ExamCard = {
+  id: string;
+  title: string;
+  collegeName: string | null;
+  examStatus: BlueprintStatus; // draft | published | archived
+  durationMinutes: number;
+  sectionCount: number;
+  totalQuestions: number;
+  draftStep: number;
+  createdAt: string;
+  sessionStatus: SessionStatus | null;
+  opensAt: string | null;
+  closesAt: string | null;
+};
+
+export async function fetchExamCards(
+  supabase: SupabaseClient,
+  collegeId?: string,
+): Promise<ExamCard[]> {
+  let q = supabase
+    .from("exam")
+    .select(
+      "id, title, duration_minutes, status, draft_step, created_at, college:college_id(name), " +
+        "exam_section(num_questions), exam_session(status, opens_at, closes_at, created_at)",
+    )
+    .order("created_at", { ascending: false });
+  if (collegeId) q = q.eq("college_id", collegeId);
+  const { data, error } = await q;
+  if (error) throw new Error(`exam: ${error.message}`);
+  return ((data ?? []) as unknown as Record<string, unknown>[]).map((r) => {
+    const sections = (r.exam_section as { num_questions: number }[] | null) ?? [];
+    const rawSessions = (r.exam_session as Record<string, unknown>[] | null) ?? [];
+    // The wizard owns one sitting per exam; if several exist take the newest.
+    const sess = rawSessions
+      .slice()
+      .sort((a, b) => String(b.created_at ?? "").localeCompare(String(a.created_at ?? "")))[0];
+    return {
+      id: r.id as string,
+      title: r.title as string,
+      collegeName: one<{ name: string | null }>(r.college as never)?.name ?? null,
+      examStatus: r.status as BlueprintStatus,
+      durationMinutes: r.duration_minutes as number,
+      sectionCount: sections.length,
+      totalQuestions: sections.reduce((s, x) => s + (x.num_questions ?? 0), 0),
+      draftStep: (r.draft_step as number) ?? 1,
+      createdAt: (r.created_at as string) ?? "",
+      sessionStatus: (sess?.status as SessionStatus) ?? null,
+      opensAt: (sess?.opens_at as string | null) ?? null,
+      closesAt: (sess?.closes_at as string | null) ?? null,
+    };
+  });
+}
+
 export async function fetchBlueprint(
   supabase: SupabaseClient,
   id: string,
@@ -251,7 +336,7 @@ export async function fetchBlueprint(
   const { data, error } = await supabase
     .from("exam")
     .select(
-      "id, title, duration_minutes, generation_strategy, shuffle_questions, shuffle_options, negative_mark_per_wrong, status, " +
+      "id, title, duration_minutes, generation_strategy, shuffle_questions, shuffle_options, negative_mark_per_wrong, status, draft_step, " +
         "exam_section(id, subject_id, num_questions, marks_per_question, pct_easy, pct_medium, pct_hard, pct_very_hard, position, subject:subject_id(name), exam_section_chapter(chapter_id, pct))",
     )
     .eq("id", id)
@@ -303,6 +388,7 @@ export async function fetchBlueprint(
     shuffleOptions: row.shuffle_options as boolean,
     negativeMarkPerWrong: Number(row.negative_mark_per_wrong),
     status: row.status as BlueprintStatus,
+    draftStep: (row.draft_step as number) ?? 1,
     sections,
   };
 }
@@ -528,27 +614,38 @@ export async function fetchStudentSessions(
   supabase: SupabaseClient,
   studentId: string,
 ): Promise<StudentSession[]> {
-  const { data, error } = await supabase
-    .from("exam_session_student")
-    .select("status, session:session_id(id, label, status, opens_at, closes_at, results_published)")
-    .eq("student_id", studentId);
-  if (error) throw new Error(`exam_session_student: ${error.message}`);
+  // Visibility is college-based (migration 094): RLS returns exactly the
+  // sessions of the student's college — no explicit roster needed. The caller's
+  // own roster row (if they've started) supplies the progress status.
+  const { data: sessions, error } = await supabase
+    .from("exam_session")
+    .select("id, label, status, opens_at, closes_at, results_published")
+    .order("opens_at", { ascending: true, nullsFirst: false });
+  if (error) throw new Error(`exam_session: ${error.message}`);
 
-  return ((data ?? []) as unknown as Record<string, unknown>[])
-    .map((r) => {
-      const s = one<Record<string, unknown>>(r.session as never);
-      if (!s) return null;
-      return {
-        sessionId: s.id as string,
-        label: s.label as string,
-        sessionStatus: s.status as SessionStatus,
-        opensAt: (s.opens_at as string | null) ?? null,
-        closesAt: (s.closes_at as string | null) ?? null,
-        resultsPublished: s.results_published as boolean,
-        rosterStatus: r.status as StudentSession["rosterStatus"],
-      } as StudentSession;
-    })
-    .filter((x): x is StudentSession => x !== null);
+  const rows = (sessions ?? []) as unknown as Record<string, unknown>[];
+  const ids = rows.map((s) => s.id as string);
+  const rosterStatus = new Map<string, StudentSession["rosterStatus"]>();
+  if (ids.length) {
+    const { data: roster } = await supabase
+      .from("exam_session_student")
+      .select("session_id, status")
+      .eq("student_id", studentId)
+      .in("session_id", ids);
+    (roster ?? []).forEach((r) =>
+      rosterStatus.set(r.session_id as string, r.status as StudentSession["rosterStatus"]),
+    );
+  }
+
+  return rows.map((s) => ({
+    sessionId: s.id as string,
+    label: s.label as string,
+    sessionStatus: s.status as SessionStatus,
+    opensAt: (s.opens_at as string | null) ?? null,
+    closesAt: (s.closes_at as string | null) ?? null,
+    resultsPublished: s.results_published as boolean,
+    rosterStatus: rosterStatus.get(s.id as string) ?? "invited",
+  }));
 }
 
 // ----------------------------------------------------------------------------
@@ -597,8 +694,12 @@ export async function fetchPaperForPrint(
   if (error) throw new Error(`exam_paper_question: ${error.message}`);
 
   let totalMarks = 0;
-  const questions: PrintQuestion[] = ((data ?? []) as unknown as Record<string, unknown>[]).map((r) => {
-    const q = one<Record<string, unknown>>(r.question as never)!;
+  const questions: PrintQuestion[] = [];
+  for (const r of (data ?? []) as unknown as Record<string, unknown>[]) {
+    // The embedded question can be null when the caller lacks bank-read rights
+    // (question RLS is admin-only). Skip rather than crash the page.
+    const q = one<Record<string, unknown>>(r.question as never);
+    if (!q) continue;
     const section = one<{ marks_per_question: number }>(r.section as never);
     const passage = one<{ title: string | null; body: string }>(q.passage as never);
     const marks = Number(section?.marks_per_question ?? 1);
@@ -610,7 +711,7 @@ export async function fetchPaperForPrint(
         position: o.position as number,
       }))
       .sort((a, b) => a.position - b.position);
-    return {
+    questions.push({
       position: r.position as number,
       stem: q.stem as string,
       stemImageUrl: (q.stem_image_url as string | null) ?? null,
@@ -622,8 +723,8 @@ export async function fetchPaperForPrint(
       passageTitle: passage?.title ?? null,
       passageBody: passage?.body ?? null,
       options,
-    };
-  });
+    });
+  }
 
   return { questions, totalMarks };
 }

@@ -1,0 +1,453 @@
+{
+  "subject": "Reasoning",
+  "questions": [
+    {
+      "chapter": "Analogy",
+      "kind": "standard",
+      "difficulty": "easy",
+      "answer_type": "single",
+      "stem": "Doctor : Hospital :: Teacher : ?",
+      "explanation": "A doctor's usual place of work is a hospital; a teacher's usual place of work is a school. The relationship is person : workplace.",
+      "options": [
+        { "label": "School", "is_correct": true },
+        { "label": "Student", "is_correct": false },
+        { "label": "Book", "is_correct": false },
+        { "label": "Lesson", "is_correct": false }
+      ]
+    },
+    {
+      "chapter": "Analogy",
+      "kind": "standard",
+      "difficulty": "easy",
+      "answer_type": "single",
+      "stem": "Pen : Write :: Knife : ?",
+      "explanation": "A pen is a tool used to write; a knife is a tool used to cut. The relationship is instrument : primary function.",
+      "options": [
+        { "label": "Sharp", "is_correct": false },
+        { "label": "Cut", "is_correct": true },
+        { "label": "Blade", "is_correct": false },
+        { "label": "Kitchen", "is_correct": false }
+      ]
+    },
+    {
+      "chapter": "Analogy",
+      "kind": "standard",
+      "difficulty": "easy",
+      "answer_type": "single",
+      "stem": "Cub : Bear :: Foal : ?",
+      "explanation": "A cub is the young of a bear; a foal is the young of a horse. The relationship is young one : adult animal.",
+      "options": [
+        { "label": "Dog", "is_correct": false },
+        { "label": "Horse", "is_correct": true },
+        { "label": "Sheep", "is_correct": false },
+        { "label": "Cow", "is_correct": false }
+      ]
+    },
+    {
+      "chapter": "Analogy",
+      "kind": "standard",
+      "difficulty": "easy",
+      "answer_type": "single",
+      "stem": "Fish : Water :: Camel : ?",
+      "explanation": "A fish's natural habitat is water; a camel's natural habitat is the desert. The relationship is creature : habitat.",
+      "options": [
+        { "label": "Sand", "is_correct": false },
+        { "label": "Desert", "is_correct": true },
+        { "label": "Hump", "is_correct": false },
+        { "label": "Zoo", "is_correct": false }
+      ]
+    },
+    {
+      "chapter": "Analogy",
+      "kind": "standard",
+      "difficulty": "easy",
+      "answer_type": "single",
+      "stem": "Needle : Tailor :: Chisel : ?",
+      "explanation": "A needle is the characteristic tool of a tailor; a chisel is the characteristic tool of a carpenter. The relationship is tool : the worker who uses it.",
+      "options": [
+        { "label": "Wood", "is_correct": false },
+        { "label": "Carpenter", "is_correct": true },
+        { "label": "Hammer", "is_correct": false },
+        { "label": "Cutting", "is_correct": false }
+      ]
+    },
+    {
+      "chapter": "Analogy",
+      "kind": "standard",
+      "difficulty": "easy",
+      "answer_type": "single",
+      "stem": "Dawn : Dusk :: Sunrise : ?",
+      "explanation": "Dawn and dusk mark the opposite ends of daylight; sunrise and sunset are the matching opposite pair. The relationship is start-of-day event : end-of-day event.",
+      "options": [
+        { "label": "Morning", "is_correct": false },
+        { "label": "Sunset", "is_correct": true },
+        { "label": "Noon", "is_correct": false },
+        { "label": "Evening", "is_correct": false }
+      ]
+    },
+    {
+      "chapter": "Analogy",
+      "kind": "standard",
+      "difficulty": "easy",
+      "answer_type": "single",
+      "stem": "Book : Author :: Painting : ?",
+      "explanation": "A book is produced by its author; a painting is produced by an artist. The relationship is creation : creator.",
+      "options": [
+        { "label": "Canvas", "is_correct": false },
+        { "label": "Artist", "is_correct": true },
+        { "label": "Colour", "is_correct": false },
+        { "label": "Museum", "is_correct": false }
+      ]
+    },
+    {
+      "chapter": "Analogy",
+      "kind": "standard",
+      "difficulty": "easy",
+      "answer_type": "single",
+      "stem": "Petrol : Car :: Food : ?",
+      "explanation": "Petrol is the fuel that powers a car; food is the fuel that powers the human body. The relationship is fuel : consumer.",
+      "options": [
+        { "label": "Cook", "is_correct": false },
+        { "label": "Human body", "is_correct": true },
+        { "label": "Restaurant", "is_correct": false },
+        { "label": "Hunger", "is_correct": false }
+      ]
+    },
+    {
+      "chapter": "Analogy",
+      "kind": "standard",
+      "difficulty": "medium",
+      "answer_type": "single",
+      "stem": "Ornithologist : Birds :: Entomologist : ?",
+      "explanation": "An ornithologist studies birds; an entomologist studies insects. The relationship is specialist : subject of study.",
+      "options": [
+        { "label": "Plants", "is_correct": false },
+        { "label": "Insects", "is_correct": true },
+        { "label": "Reptiles", "is_correct": false },
+        { "label": "Fossils", "is_correct": false }
+      ]
+    },
+    {
+      "chapter": "Analogy",
+      "kind": "standard",
+      "difficulty": "medium",
+      "answer_type": "single",
+      "stem": "Oasis : Desert :: Island : ?",
+      "explanation": "An oasis is a patch of water/greenery surrounded by desert; an island is a patch of land surrounded by ocean. Each is a feature enclosed by its contrasting environment.",
+      "options": [
+        { "label": "Sand", "is_correct": false },
+        { "label": "Ocean", "is_correct": true },
+        { "label": "Beach", "is_correct": false },
+        { "label": "Land", "is_correct": false }
+      ]
+    },
+    {
+      "chapter": "Analogy",
+      "kind": "standard",
+      "difficulty": "medium",
+      "answer_type": "single",
+      "stem": "Thermometer : Temperature :: Barometer : ?",
+      "explanation": "A thermometer measures temperature; a barometer measures atmospheric pressure. The relationship is instrument : quantity measured.",
+      "options": [
+        { "label": "Humidity", "is_correct": false },
+        { "label": "Pressure", "is_correct": true },
+        { "label": "Altitude", "is_correct": false },
+        { "label": "Rainfall", "is_correct": false }
+      ]
+    },
+    {
+      "chapter": "Analogy",
+      "kind": "standard",
+      "difficulty": "medium",
+      "answer_type": "single",
+      "stem": "Cardiology : Heart :: Nephrology : ?",
+      "explanation": "Cardiology is the branch of medicine dealing with the heart; nephrology deals with the kidneys. The relationship is medical field : organ.",
+      "options": [
+        { "label": "Liver", "is_correct": false },
+        { "label": "Kidney", "is_correct": true },
+        { "label": "Brain", "is_correct": false },
+        { "label": "Lungs", "is_correct": false }
+      ]
+    },
+    {
+      "chapter": "Analogy",
+      "kind": "standard",
+      "difficulty": "medium",
+      "answer_type": "single",
+      "stem": "Famine : Food :: Drought : ?",
+      "explanation": "A famine is an extreme scarcity of food; a drought is an extreme scarcity of water/rainfall. The relationship is calamity : the resource that is scarce.",
+      "options": [
+        { "label": "Heat", "is_correct": false },
+        { "label": "Water", "is_correct": true },
+        { "label": "Desert", "is_correct": false },
+        { "label": "Crop", "is_correct": false }
+      ]
+    },
+    {
+      "chapter": "Analogy",
+      "kind": "standard",
+      "difficulty": "medium",
+      "answer_type": "single",
+      "stem": "Sculptor : Statue :: Poet : ?",
+      "explanation": "A sculptor creates a statue; a poet creates a poem. A 'verse' is only a part of a poem, so 'poem' is the exact counterpart of the finished 'statue'.",
+      "options": [
+        { "label": "Verse", "is_correct": false },
+        { "label": "Poem", "is_correct": true },
+        { "label": "Rhythm", "is_correct": false },
+        { "label": "Stage", "is_correct": false }
+      ]
+    },
+    {
+      "chapter": "Analogy",
+      "kind": "standard",
+      "difficulty": "medium",
+      "answer_type": "single",
+      "stem": "Lion : Den :: Rabbit : ?",
+      "explanation": "A lion lives in a den; a rabbit lives in a burrow. The relationship is animal : its dwelling.",
+      "options": [
+        { "label": "Hole", "is_correct": false },
+        { "label": "Burrow", "is_correct": true },
+        { "label": "Nest", "is_correct": false },
+        { "label": "Cage", "is_correct": false }
+      ]
+    },
+    {
+      "chapter": "Analogy",
+      "kind": "standard",
+      "difficulty": "medium",
+      "answer_type": "single",
+      "stem": "Novel : Chapters :: Journey : ?",
+      "explanation": "A novel is divided into chapters; a journey is divided into stages (legs). The relationship is whole : the parts it is broken into.",
+      "options": [
+        { "label": "Road", "is_correct": false },
+        { "label": "Stages", "is_correct": true },
+        { "label": "Destination", "is_correct": false },
+        { "label": "Traveller", "is_correct": false }
+      ]
+    },
+    {
+      "chapter": "Analogy",
+      "kind": "standard",
+      "difficulty": "hard",
+      "answer_type": "single",
+      "stem": "Botany : Plants :: Mycology : ?",
+      "explanation": "Botany is the study of plants; mycology is the study of fungi. Algae and mosses fall under phycology and bryology, so 'fungi' is the correct match.",
+      "options": [
+        { "label": "Algae", "is_correct": false },
+        { "label": "Fungi", "is_correct": true },
+        { "label": "Bacteria", "is_correct": false },
+        { "label": "Mosses", "is_correct": false }
+      ]
+    },
+    {
+      "chapter": "Analogy",
+      "kind": "standard",
+      "difficulty": "hard",
+      "answer_type": "single",
+      "stem": "Philately : Stamps :: Numismatics : ?",
+      "explanation": "Philately is the collection/study of postage stamps; numismatics is the collection/study of coins and currency. The relationship is hobby : object collected.",
+      "options": [
+        { "label": "Coins", "is_correct": true },
+        { "label": "Maps", "is_correct": false },
+        { "label": "Metals", "is_correct": false },
+        { "label": "Antiques", "is_correct": false }
+      ]
+    },
+    {
+      "chapter": "Analogy",
+      "kind": "standard",
+      "difficulty": "hard",
+      "answer_type": "single",
+      "stem": "Genocide : Race :: Regicide : ?",
+      "explanation": "Genocide is the killing of a race/people; regicide is the killing of a king (Latin 'rex'). The relationship is '-cide' word : the victim named by its root.",
+      "options": [
+        { "label": "Country", "is_correct": false },
+        { "label": "King", "is_correct": true },
+        { "label": "Oneself", "is_correct": false },
+        { "label": "Brother", "is_correct": false }
+      ]
+    },
+    {
+      "chapter": "Analogy",
+      "kind": "standard",
+      "difficulty": "hard",
+      "answer_type": "single",
+      "stem": "Meticulous : Careless :: Frugal : ?",
+      "explanation": "Meticulous is the opposite of careless; frugal (thrifty) is the opposite of extravagant. 'Thrifty' and 'economical' are synonyms of frugal, planted as traps.",
+      "options": [
+        { "label": "Thrifty", "is_correct": false },
+        { "label": "Extravagant", "is_correct": true },
+        { "label": "Economical", "is_correct": false },
+        { "label": "Miserly", "is_correct": false }
+      ]
+    },
+    {
+      "chapter": "Analogy",
+      "kind": "standard",
+      "difficulty": "hard",
+      "answer_type": "single",
+      "stem": "Herpetology : Reptiles :: Ichthyology : ?",
+      "explanation": "Herpetology is the study of reptiles and amphibians; ichthyology is the study of fishes. The relationship is branch of zoology : animal group.",
+      "options": [
+        { "label": "Birds", "is_correct": false },
+        { "label": "Fishes", "is_correct": true },
+        { "label": "Amphibians", "is_correct": false },
+        { "label": "Insects", "is_correct": false }
+      ]
+    },
+    {
+      "chapter": "Analogy",
+      "kind": "standard",
+      "difficulty": "hard",
+      "answer_type": "single",
+      "stem": "Gaggle : Geese :: Pride : ?",
+      "explanation": "A 'gaggle' is the collective noun for geese; a 'pride' is the collective noun for lions. The relationship is collective noun : the animal it counts.",
+      "options": [
+        { "label": "Wolves", "is_correct": false },
+        { "label": "Lions", "is_correct": true },
+        { "label": "Crows", "is_correct": false },
+        { "label": "Fish", "is_correct": false }
+      ]
+    },
+    {
+      "chapter": "Analogy",
+      "kind": "standard",
+      "difficulty": "hard",
+      "answer_type": "single",
+      "stem": "Conflagration : Fire :: Deluge : ?",
+      "explanation": "A conflagration is a great, destructive fire; a deluge is a great, destructive flood of water. The relationship is intensified form : the element involved.",
+      "options": [
+        { "label": "Storm", "is_correct": false },
+        { "label": "Flood", "is_correct": true },
+        { "label": "Drizzle", "is_correct": false },
+        { "label": "Wind", "is_correct": false }
+      ]
+    },
+    {
+      "chapter": "Analogy",
+      "kind": "standard",
+      "difficulty": "hard",
+      "answer_type": "single",
+      "stem": "Insomnia : Sleep :: Amnesia : ?",
+      "explanation": "Insomnia is the inability to sleep; amnesia is the loss of memory. The relationship is medical condition : the faculty that is lost.",
+      "options": [
+        { "label": "Sight", "is_correct": false },
+        { "label": "Memory", "is_correct": true },
+        { "label": "Speech", "is_correct": false },
+        { "label": "Hearing", "is_correct": false }
+      ]
+    },
+    {
+      "chapter": "Analogy",
+      "kind": "standard",
+      "difficulty": "very_hard",
+      "answer_type": "single",
+      "stem": "Effrontery : Shame :: Temerity : ?",
+      "explanation": "Effrontery is shameless boldness — conduct marked by an absence of shame. Temerity is reckless boldness — marked by an absence of fear. The relationship is quality : the restraint it conspicuously lacks.",
+      "options": [
+        { "label": "Caution", "is_correct": false },
+        { "label": "Fear", "is_correct": true },
+        { "label": "Doubt", "is_correct": false },
+        { "label": "Anger", "is_correct": false }
+      ]
+    },
+    {
+      "chapter": "Analogy",
+      "kind": "standard",
+      "difficulty": "very_hard",
+      "answer_type": "single",
+      "stem": "Maverick : Conformity :: Zealot : ?",
+      "explanation": "A maverick is defined by a lack of conformity; a zealot is defined by a lack of indifference (they are fervently committed). The relationship is person : the trait they conspicuously do NOT possess.",
+      "options": [
+        { "label": "Passion", "is_correct": false },
+        { "label": "Indifference", "is_correct": true },
+        { "label": "Belief", "is_correct": false },
+        { "label": "Loyalty", "is_correct": false }
+      ]
+    },
+    {
+      "chapter": "Analogy",
+      "kind": "standard",
+      "difficulty": "very_hard",
+      "answer_type": "single",
+      "stem": "Trickle : Torrent :: Whisper : ?",
+      "explanation": "A trickle and a torrent are the same flow at the low and high extremes of intensity; a whisper and a roar are the low and high extremes of vocal loudness. The relationship is faint degree : intense degree.",
+      "options": [
+        { "label": "Sound", "is_correct": false },
+        { "label": "Roar", "is_correct": true },
+        { "label": "Voice", "is_correct": false },
+        { "label": "Silence", "is_correct": false }
+      ]
+    },
+    {
+      "chapter": "Analogy",
+      "kind": "standard",
+      "difficulty": "very_hard",
+      "answer_type": "single",
+      "stem": "Sycophant : Flatter :: Miser : ?",
+      "explanation": "A sycophant is defined by the habit of flattering; a miser is defined by the habit of hoarding. 'Save' is neutral and prudent, whereas 'hoard' captures the miser's excess, so it is the exact match.",
+      "options": [
+        { "label": "Spend", "is_correct": false },
+        { "label": "Hoard", "is_correct": true },
+        { "label": "Beg", "is_correct": false },
+        { "label": "Save", "is_correct": false }
+      ]
+    },
+    {
+      "chapter": "Analogy",
+      "kind": "standard",
+      "difficulty": "very_hard",
+      "answer_type": "single",
+      "stem": "Ephemeral : Permanence :: Nomadic : ?",
+      "explanation": "Something ephemeral lacks permanence (it is short-lived); something nomadic lacks settlement (it is constantly moving). The relationship is adjective : the quality it negates.",
+      "options": [
+        { "label": "Travel", "is_correct": false },
+        { "label": "Settlement", "is_correct": true },
+        { "label": "Tribe", "is_correct": false },
+        { "label": "Movement", "is_correct": false }
+      ]
+    },
+    {
+      "chapter": "Analogy",
+      "kind": "standard",
+      "difficulty": "very_hard",
+      "answer_type": "single",
+      "stem": "Cacophony : Harmony :: Chaos : ?",
+      "explanation": "Cacophony (harsh discord) is the opposite of harmony; chaos (total disorder) is the opposite of order. The relationship is a state of disorder : its orderly antonym.",
+      "options": [
+        { "label": "Noise", "is_correct": false },
+        { "label": "Order", "is_correct": true },
+        { "label": "War", "is_correct": false },
+        { "label": "Peace", "is_correct": false }
+      ]
+    },
+    {
+      "chapter": "Analogy",
+      "kind": "standard",
+      "difficulty": "very_hard",
+      "answer_type": "single",
+      "stem": "Pusillanimous : Courage :: Taciturn : ?",
+      "explanation": "A pusillanimous person lacks courage (is timid); a taciturn person lacks talkativeness (says little). The relationship is trait : the quality it denotes an absence of.",
+      "options": [
+        { "label": "Silence", "is_correct": false },
+        { "label": "Talkativeness", "is_correct": true },
+        { "label": "Wisdom", "is_correct": false },
+        { "label": "Energy", "is_correct": false }
+      ]
+    },
+    {
+      "chapter": "Analogy",
+      "kind": "standard",
+      "difficulty": "very_hard",
+      "answer_type": "single",
+      "stem": "Camouflage : Conceal :: Beacon : ?",
+      "explanation": "The purpose of camouflage is to conceal; the purpose of a beacon is to guide (signal and show the way). The relationship is device : its intended function.",
+      "options": [
+        { "label": "Hide", "is_correct": false },
+        { "label": "Guide", "is_correct": true },
+        { "label": "Warn", "is_correct": false },
+        { "label": "Burn", "is_correct": false }
+      ]
+    }
+  ]
+}

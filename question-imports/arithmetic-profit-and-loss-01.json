@@ -1,0 +1,5205 @@
+{
+  "subject": "Arithmetic",
+  "questions": [
+    {
+      "chapter": "Profit and Loss",
+      "kind": "standard",
+      "difficulty": "easy",
+      "answer_type": "single",
+      "stem": "An article costing ₹600 is sold for ₹822. Find the profit percent.",
+      "explanation": "Profit% = (SP − CP)/CP × 100 = (822 − 600)/600 × 100 = 37%.",
+      "options": [
+        {
+          "label": "36%",
+          "is_correct": false
+        },
+        {
+          "label": "37%",
+          "is_correct": true
+        },
+        {
+          "label": "38%",
+          "is_correct": false
+        },
+        {
+          "label": "39%",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Profit and Loss",
+      "kind": "standard",
+      "difficulty": "easy",
+      "answer_type": "single",
+      "stem": "An article is bought for ₹400 and sold for ₹420. Find the profit.",
+      "explanation": "Profit = SP − CP = ₹420 − ₹400 = ₹20.",
+      "options": [
+        {
+          "label": "₹21",
+          "is_correct": false
+        },
+        {
+          "label": "₹20",
+          "is_correct": true
+        },
+        {
+          "label": "₹19",
+          "is_correct": false
+        },
+        {
+          "label": "₹22",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Profit and Loss",
+      "kind": "standard",
+      "difficulty": "easy",
+      "answer_type": "single",
+      "stem": "An article is bought for ₹20 and sold for ₹180. Find the profit.",
+      "explanation": "Profit = SP − CP = ₹180 − ₹20 = ₹160.",
+      "options": [
+        {
+          "label": "₹164",
+          "is_correct": false
+        },
+        {
+          "label": "₹162",
+          "is_correct": false
+        },
+        {
+          "label": "₹158",
+          "is_correct": false
+        },
+        {
+          "label": "₹160",
+          "is_correct": true
+        }
+      ]
+    },
+    {
+      "chapter": "Profit and Loss",
+      "kind": "standard",
+      "difficulty": "easy",
+      "answer_type": "single",
+      "stem": "An article costing ₹3300 is sold for ₹3894. Find the profit percent.",
+      "explanation": "Profit% = (SP − CP)/CP × 100 = (3894 − 3300)/3300 × 100 = 18%.",
+      "options": [
+        {
+          "label": "18%",
+          "is_correct": true
+        },
+        {
+          "label": "19%",
+          "is_correct": false
+        },
+        {
+          "label": "17%",
+          "is_correct": false
+        },
+        {
+          "label": "20%",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Profit and Loss",
+      "kind": "standard",
+      "difficulty": "easy",
+      "answer_type": "single",
+      "stem": "An article is bought for ₹330 and sold for ₹510. Find the profit.",
+      "explanation": "Profit = SP − CP = ₹510 − ₹330 = ₹180.",
+      "options": [
+        {
+          "label": "₹182",
+          "is_correct": false
+        },
+        {
+          "label": "₹180",
+          "is_correct": true
+        },
+        {
+          "label": "₹184",
+          "is_correct": false
+        },
+        {
+          "label": "₹178",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Profit and Loss",
+      "kind": "standard",
+      "difficulty": "easy",
+      "answer_type": "single",
+      "stem": "An article is bought for ₹270 and sold for ₹370. Find the profit.",
+      "explanation": "Profit = SP − CP = ₹370 − ₹270 = ₹100.",
+      "options": [
+        {
+          "label": "₹102",
+          "is_correct": false
+        },
+        {
+          "label": "₹100",
+          "is_correct": true
+        },
+        {
+          "label": "₹104",
+          "is_correct": false
+        },
+        {
+          "label": "₹98",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Profit and Loss",
+      "kind": "standard",
+      "difficulty": "easy",
+      "answer_type": "single",
+      "stem": "An article costing ₹200 is sold for ₹264. Find the profit percent.",
+      "explanation": "Profit% = (SP − CP)/CP × 100 = (264 − 200)/200 × 100 = 32%.",
+      "options": [
+        {
+          "label": "33%",
+          "is_correct": false
+        },
+        {
+          "label": "31%",
+          "is_correct": false
+        },
+        {
+          "label": "32%",
+          "is_correct": true
+        },
+        {
+          "label": "34%",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Profit and Loss",
+      "kind": "standard",
+      "difficulty": "easy",
+      "answer_type": "single",
+      "stem": "An article costing ₹4000 is sold for ₹5120. Find the profit percent.",
+      "explanation": "Profit% = (SP − CP)/CP × 100 = (5120 − 4000)/4000 × 100 = 28%.",
+      "options": [
+        {
+          "label": "28%",
+          "is_correct": true
+        },
+        {
+          "label": "30%",
+          "is_correct": false
+        },
+        {
+          "label": "29%",
+          "is_correct": false
+        },
+        {
+          "label": "27%",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Profit and Loss",
+      "kind": "standard",
+      "difficulty": "easy",
+      "answer_type": "single",
+      "stem": "An article is bought for ₹430 and sold for ₹630. Find the profit.",
+      "explanation": "Profit = SP − CP = ₹630 − ₹430 = ₹200.",
+      "options": [
+        {
+          "label": "₹192",
+          "is_correct": false
+        },
+        {
+          "label": "₹208",
+          "is_correct": false
+        },
+        {
+          "label": "₹200",
+          "is_correct": true
+        },
+        {
+          "label": "₹216",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Profit and Loss",
+      "kind": "standard",
+      "difficulty": "easy",
+      "answer_type": "single",
+      "stem": "Find the selling price of an article bought for ₹2300 and sold at a profit of 37%.",
+      "explanation": "SP = CP × (100+37)/100 = ₹3151.",
+      "options": [
+        {
+          "label": "₹3277",
+          "is_correct": false
+        },
+        {
+          "label": "₹3025",
+          "is_correct": false
+        },
+        {
+          "label": "₹3403",
+          "is_correct": false
+        },
+        {
+          "label": "₹3151",
+          "is_correct": true
+        }
+      ]
+    },
+    {
+      "chapter": "Profit and Loss",
+      "kind": "standard",
+      "difficulty": "easy",
+      "answer_type": "single",
+      "stem": "An article costing ₹400 is sold for ₹552. Find the profit percent.",
+      "explanation": "Profit% = (SP − CP)/CP × 100 = (552 − 400)/400 × 100 = 38%.",
+      "options": [
+        {
+          "label": "37%",
+          "is_correct": false
+        },
+        {
+          "label": "40%",
+          "is_correct": false
+        },
+        {
+          "label": "39%",
+          "is_correct": false
+        },
+        {
+          "label": "38%",
+          "is_correct": true
+        }
+      ]
+    },
+    {
+      "chapter": "Profit and Loss",
+      "kind": "standard",
+      "difficulty": "easy",
+      "answer_type": "single",
+      "stem": "An article is bought for ₹90 and sold for ₹110. Find the profit.",
+      "explanation": "Profit = SP − CP = ₹110 − ₹90 = ₹20.",
+      "options": [
+        {
+          "label": "₹21",
+          "is_correct": false
+        },
+        {
+          "label": "₹22",
+          "is_correct": false
+        },
+        {
+          "label": "₹19",
+          "is_correct": false
+        },
+        {
+          "label": "₹20",
+          "is_correct": true
+        }
+      ]
+    },
+    {
+      "chapter": "Profit and Loss",
+      "kind": "standard",
+      "difficulty": "easy",
+      "answer_type": "single",
+      "stem": "An article is bought for ₹440 and sold for ₹580. Find the profit.",
+      "explanation": "Profit = SP − CP = ₹580 − ₹440 = ₹140.",
+      "options": [
+        {
+          "label": "₹138",
+          "is_correct": false
+        },
+        {
+          "label": "₹142",
+          "is_correct": false
+        },
+        {
+          "label": "₹140",
+          "is_correct": true
+        },
+        {
+          "label": "₹144",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Profit and Loss",
+      "kind": "standard",
+      "difficulty": "easy",
+      "answer_type": "single",
+      "stem": "An article costing ₹2700 is sold for ₹3132. Find the profit percent.",
+      "explanation": "Profit% = (SP − CP)/CP × 100 = (3132 − 2700)/2700 × 100 = 16%.",
+      "options": [
+        {
+          "label": "18%",
+          "is_correct": false
+        },
+        {
+          "label": "16%",
+          "is_correct": true
+        },
+        {
+          "label": "15%",
+          "is_correct": false
+        },
+        {
+          "label": "17%",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Profit and Loss",
+      "kind": "standard",
+      "difficulty": "easy",
+      "answer_type": "single",
+      "stem": "An article is bought for ₹90 and sold for ₹120. Find the profit.",
+      "explanation": "Profit = SP − CP = ₹120 − ₹90 = ₹30.",
+      "options": [
+        {
+          "label": "₹32",
+          "is_correct": false
+        },
+        {
+          "label": "₹30",
+          "is_correct": true
+        },
+        {
+          "label": "₹31",
+          "is_correct": false
+        },
+        {
+          "label": "₹29",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Profit and Loss",
+      "kind": "standard",
+      "difficulty": "easy",
+      "answer_type": "single",
+      "stem": "An article is bought for ₹210 and sold for ₹280. Find the profit.",
+      "explanation": "Profit = SP − CP = ₹280 − ₹210 = ₹70.",
+      "options": [
+        {
+          "label": "₹74",
+          "is_correct": false
+        },
+        {
+          "label": "₹70",
+          "is_correct": true
+        },
+        {
+          "label": "₹72",
+          "is_correct": false
+        },
+        {
+          "label": "₹68",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Profit and Loss",
+      "kind": "standard",
+      "difficulty": "easy",
+      "answer_type": "single",
+      "stem": "Find the selling price of an article bought for ₹2600 and sold at a profit of 20%.",
+      "explanation": "SP = CP × (100+20)/100 = ₹3120.",
+      "options": [
+        {
+          "label": "₹3245",
+          "is_correct": false
+        },
+        {
+          "label": "₹2995",
+          "is_correct": false
+        },
+        {
+          "label": "₹3120",
+          "is_correct": true
+        },
+        {
+          "label": "₹3370",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Profit and Loss",
+      "kind": "standard",
+      "difficulty": "easy",
+      "answer_type": "single",
+      "stem": "An article is bought for ₹50 and sold for ₹70. Find the profit.",
+      "explanation": "Profit = SP − CP = ₹70 − ₹50 = ₹20.",
+      "options": [
+        {
+          "label": "₹20",
+          "is_correct": true
+        },
+        {
+          "label": "₹19",
+          "is_correct": false
+        },
+        {
+          "label": "₹22",
+          "is_correct": false
+        },
+        {
+          "label": "₹21",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Profit and Loss",
+      "kind": "standard",
+      "difficulty": "easy",
+      "answer_type": "single",
+      "stem": "Find the selling price of an article bought for ₹2300 and sold at a profit of 35%.",
+      "explanation": "SP = CP × (100+35)/100 = ₹3105.",
+      "options": [
+        {
+          "label": "₹3353",
+          "is_correct": false
+        },
+        {
+          "label": "₹3229",
+          "is_correct": false
+        },
+        {
+          "label": "₹2981",
+          "is_correct": false
+        },
+        {
+          "label": "₹3105",
+          "is_correct": true
+        }
+      ]
+    },
+    {
+      "chapter": "Profit and Loss",
+      "kind": "standard",
+      "difficulty": "easy",
+      "answer_type": "single",
+      "stem": "An article is bought for ₹180 and sold for ₹210. Find the profit.",
+      "explanation": "Profit = SP − CP = ₹210 − ₹180 = ₹30.",
+      "options": [
+        {
+          "label": "₹30",
+          "is_correct": true
+        },
+        {
+          "label": "₹29",
+          "is_correct": false
+        },
+        {
+          "label": "₹31",
+          "is_correct": false
+        },
+        {
+          "label": "₹32",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Profit and Loss",
+      "kind": "standard",
+      "difficulty": "easy",
+      "answer_type": "single",
+      "stem": "An article costing ₹3700 is sold for ₹4847. Find the profit percent.",
+      "explanation": "Profit% = (SP − CP)/CP × 100 = (4847 − 3700)/3700 × 100 = 31%.",
+      "options": [
+        {
+          "label": "33%",
+          "is_correct": false
+        },
+        {
+          "label": "32%",
+          "is_correct": false
+        },
+        {
+          "label": "30%",
+          "is_correct": false
+        },
+        {
+          "label": "31%",
+          "is_correct": true
+        }
+      ]
+    },
+    {
+      "chapter": "Profit and Loss",
+      "kind": "standard",
+      "difficulty": "easy",
+      "answer_type": "single",
+      "stem": "An article is bought for ₹340 and sold for ₹420. Find the profit.",
+      "explanation": "Profit = SP − CP = ₹420 − ₹340 = ₹80.",
+      "options": [
+        {
+          "label": "₹80",
+          "is_correct": true
+        },
+        {
+          "label": "₹82",
+          "is_correct": false
+        },
+        {
+          "label": "₹84",
+          "is_correct": false
+        },
+        {
+          "label": "₹78",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Profit and Loss",
+      "kind": "standard",
+      "difficulty": "easy",
+      "answer_type": "single",
+      "stem": "Find the selling price of an article bought for ₹300 and sold at a profit of 22%.",
+      "explanation": "SP = CP × (100+22)/100 = ₹366.",
+      "options": [
+        {
+          "label": "₹381",
+          "is_correct": false
+        },
+        {
+          "label": "₹351",
+          "is_correct": false
+        },
+        {
+          "label": "₹366",
+          "is_correct": true
+        },
+        {
+          "label": "₹396",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Profit and Loss",
+      "kind": "standard",
+      "difficulty": "easy",
+      "answer_type": "single",
+      "stem": "An article costing ₹3300 is sold for ₹4620. Find the profit percent.",
+      "explanation": "Profit% = (SP − CP)/CP × 100 = (4620 − 3300)/3300 × 100 = 40%.",
+      "options": [
+        {
+          "label": "42%",
+          "is_correct": false
+        },
+        {
+          "label": "44%",
+          "is_correct": false
+        },
+        {
+          "label": "40%",
+          "is_correct": true
+        },
+        {
+          "label": "38%",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Profit and Loss",
+      "kind": "standard",
+      "difficulty": "easy",
+      "answer_type": "single",
+      "stem": "Find the selling price of an article bought for ₹600 and sold at a profit of 47%.",
+      "explanation": "SP = CP × (100+47)/100 = ₹882.",
+      "options": [
+        {
+          "label": "₹952",
+          "is_correct": false
+        },
+        {
+          "label": "₹882",
+          "is_correct": true
+        },
+        {
+          "label": "₹847",
+          "is_correct": false
+        },
+        {
+          "label": "₹917",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Profit and Loss",
+      "kind": "standard",
+      "difficulty": "easy",
+      "answer_type": "single",
+      "stem": "An article costing ₹3900 is sold for ₹5304. Find the profit percent.",
+      "explanation": "Profit% = (SP − CP)/CP × 100 = (5304 − 3900)/3900 × 100 = 36%.",
+      "options": [
+        {
+          "label": "36%",
+          "is_correct": true
+        },
+        {
+          "label": "38%",
+          "is_correct": false
+        },
+        {
+          "label": "37%",
+          "is_correct": false
+        },
+        {
+          "label": "35%",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Profit and Loss",
+      "kind": "standard",
+      "difficulty": "easy",
+      "answer_type": "single",
+      "stem": "Find the selling price of an article bought for ₹4000 and sold at a profit of 47%.",
+      "explanation": "SP = CP × (100+47)/100 = ₹5880.",
+      "options": [
+        {
+          "label": "₹5645",
+          "is_correct": false
+        },
+        {
+          "label": "₹6115",
+          "is_correct": false
+        },
+        {
+          "label": "₹6350",
+          "is_correct": false
+        },
+        {
+          "label": "₹5880",
+          "is_correct": true
+        }
+      ]
+    },
+    {
+      "chapter": "Profit and Loss",
+      "kind": "standard",
+      "difficulty": "easy",
+      "answer_type": "single",
+      "stem": "An article is bought for ₹340 and sold for ₹410. Find the profit.",
+      "explanation": "Profit = SP − CP = ₹410 − ₹340 = ₹70.",
+      "options": [
+        {
+          "label": "₹68",
+          "is_correct": false
+        },
+        {
+          "label": "₹72",
+          "is_correct": false
+        },
+        {
+          "label": "₹74",
+          "is_correct": false
+        },
+        {
+          "label": "₹70",
+          "is_correct": true
+        }
+      ]
+    },
+    {
+      "chapter": "Profit and Loss",
+      "kind": "standard",
+      "difficulty": "easy",
+      "answer_type": "single",
+      "stem": "An article costing ₹2700 is sold for ₹3402. Find the profit percent.",
+      "explanation": "Profit% = (SP − CP)/CP × 100 = (3402 − 2700)/2700 × 100 = 26%.",
+      "options": [
+        {
+          "label": "26%",
+          "is_correct": true
+        },
+        {
+          "label": "25%",
+          "is_correct": false
+        },
+        {
+          "label": "28%",
+          "is_correct": false
+        },
+        {
+          "label": "27%",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Profit and Loss",
+      "kind": "standard",
+      "difficulty": "easy",
+      "answer_type": "single",
+      "stem": "Find the selling price of an article bought for ₹300 and sold at a profit of 5%.",
+      "explanation": "SP = CP × (100+5)/100 = ₹315.",
+      "options": [
+        {
+          "label": "₹302",
+          "is_correct": false
+        },
+        {
+          "label": "₹328",
+          "is_correct": false
+        },
+        {
+          "label": "₹341",
+          "is_correct": false
+        },
+        {
+          "label": "₹315",
+          "is_correct": true
+        }
+      ]
+    },
+    {
+      "chapter": "Profit and Loss",
+      "kind": "standard",
+      "difficulty": "easy",
+      "answer_type": "single",
+      "stem": "Find the selling price of an article bought for ₹2800 and sold at a profit of 11%.",
+      "explanation": "SP = CP × (100+11)/100 = ₹3108.",
+      "options": [
+        {
+          "label": "₹3356",
+          "is_correct": false
+        },
+        {
+          "label": "₹2984",
+          "is_correct": false
+        },
+        {
+          "label": "₹3108",
+          "is_correct": true
+        },
+        {
+          "label": "₹3232",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Profit and Loss",
+      "kind": "standard",
+      "difficulty": "easy",
+      "answer_type": "single",
+      "stem": "An article is bought for ₹260 and sold for ₹310. Find the profit.",
+      "explanation": "Profit = SP − CP = ₹310 − ₹260 = ₹50.",
+      "options": [
+        {
+          "label": "₹54",
+          "is_correct": false
+        },
+        {
+          "label": "₹50",
+          "is_correct": true
+        },
+        {
+          "label": "₹52",
+          "is_correct": false
+        },
+        {
+          "label": "₹48",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Profit and Loss",
+      "kind": "standard",
+      "difficulty": "easy",
+      "answer_type": "single",
+      "stem": "An article is bought for ₹200 and sold for ₹380. Find the profit.",
+      "explanation": "Profit = SP − CP = ₹380 − ₹200 = ₹180.",
+      "options": [
+        {
+          "label": "₹184",
+          "is_correct": false
+        },
+        {
+          "label": "₹178",
+          "is_correct": false
+        },
+        {
+          "label": "₹180",
+          "is_correct": true
+        },
+        {
+          "label": "₹182",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Profit and Loss",
+      "kind": "standard",
+      "difficulty": "easy",
+      "answer_type": "single",
+      "stem": "An article costing ₹3300 is sold for ₹3630. Find the profit percent.",
+      "explanation": "Profit% = (SP − CP)/CP × 100 = (3630 − 3300)/3300 × 100 = 10%.",
+      "options": [
+        {
+          "label": "10%",
+          "is_correct": true
+        },
+        {
+          "label": "11%",
+          "is_correct": false
+        },
+        {
+          "label": "9%",
+          "is_correct": false
+        },
+        {
+          "label": "12%",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Profit and Loss",
+      "kind": "standard",
+      "difficulty": "easy",
+      "answer_type": "single",
+      "stem": "Find the selling price of an article bought for ₹3300 and sold at a profit of 41%.",
+      "explanation": "SP = CP × (100+41)/100 = ₹4653.",
+      "options": [
+        {
+          "label": "₹4653",
+          "is_correct": true
+        },
+        {
+          "label": "₹4467",
+          "is_correct": false
+        },
+        {
+          "label": "₹5025",
+          "is_correct": false
+        },
+        {
+          "label": "₹4839",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Profit and Loss",
+      "kind": "standard",
+      "difficulty": "easy",
+      "answer_type": "single",
+      "stem": "An article is bought for ₹110 and sold for ₹130. Find the profit.",
+      "explanation": "Profit = SP − CP = ₹130 − ₹110 = ₹20.",
+      "options": [
+        {
+          "label": "₹19",
+          "is_correct": false
+        },
+        {
+          "label": "₹21",
+          "is_correct": false
+        },
+        {
+          "label": "₹22",
+          "is_correct": false
+        },
+        {
+          "label": "₹20",
+          "is_correct": true
+        }
+      ]
+    },
+    {
+      "chapter": "Profit and Loss",
+      "kind": "standard",
+      "difficulty": "easy",
+      "answer_type": "single",
+      "stem": "An article costing ₹1100 is sold for ₹1441. Find the profit percent.",
+      "explanation": "Profit% = (SP − CP)/CP × 100 = (1441 − 1100)/1100 × 100 = 31%.",
+      "options": [
+        {
+          "label": "31%",
+          "is_correct": true
+        },
+        {
+          "label": "30%",
+          "is_correct": false
+        },
+        {
+          "label": "33%",
+          "is_correct": false
+        },
+        {
+          "label": "32%",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Profit and Loss",
+      "kind": "standard",
+      "difficulty": "easy",
+      "answer_type": "single",
+      "stem": "An article is bought for ₹170 and sold for ₹240. Find the profit.",
+      "explanation": "Profit = SP − CP = ₹240 − ₹170 = ₹70.",
+      "options": [
+        {
+          "label": "₹68",
+          "is_correct": false
+        },
+        {
+          "label": "₹74",
+          "is_correct": false
+        },
+        {
+          "label": "₹72",
+          "is_correct": false
+        },
+        {
+          "label": "₹70",
+          "is_correct": true
+        }
+      ]
+    },
+    {
+      "chapter": "Profit and Loss",
+      "kind": "standard",
+      "difficulty": "easy",
+      "answer_type": "single",
+      "stem": "An article costing ₹3700 is sold for ₹3959. Find the profit percent.",
+      "explanation": "Profit% = (SP − CP)/CP × 100 = (3959 − 3700)/3700 × 100 = 7%.",
+      "options": [
+        {
+          "label": "7%",
+          "is_correct": true
+        },
+        {
+          "label": "8%",
+          "is_correct": false
+        },
+        {
+          "label": "9%",
+          "is_correct": false
+        },
+        {
+          "label": "6%",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Profit and Loss",
+      "kind": "standard",
+      "difficulty": "easy",
+      "answer_type": "single",
+      "stem": "An article is bought for ₹340 and sold for ₹380. Find the profit.",
+      "explanation": "Profit = SP − CP = ₹380 − ₹340 = ₹40.",
+      "options": [
+        {
+          "label": "₹40",
+          "is_correct": true
+        },
+        {
+          "label": "₹42",
+          "is_correct": false
+        },
+        {
+          "label": "₹44",
+          "is_correct": false
+        },
+        {
+          "label": "₹38",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Profit and Loss",
+      "kind": "standard",
+      "difficulty": "easy",
+      "answer_type": "single",
+      "stem": "An article is bought for ₹440 and sold for ₹600. Find the profit.",
+      "explanation": "Profit = SP − CP = ₹600 − ₹440 = ₹160.",
+      "options": [
+        {
+          "label": "₹164",
+          "is_correct": false
+        },
+        {
+          "label": "₹160",
+          "is_correct": true
+        },
+        {
+          "label": "₹158",
+          "is_correct": false
+        },
+        {
+          "label": "₹162",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Profit and Loss",
+      "kind": "standard",
+      "difficulty": "easy",
+      "answer_type": "single",
+      "stem": "Find the selling price of an article bought for ₹2100 and sold at a profit of 43%.",
+      "explanation": "SP = CP × (100+43)/100 = ₹3003.",
+      "options": [
+        {
+          "label": "₹3003",
+          "is_correct": true
+        },
+        {
+          "label": "₹2883",
+          "is_correct": false
+        },
+        {
+          "label": "₹3243",
+          "is_correct": false
+        },
+        {
+          "label": "₹3123",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Profit and Loss",
+      "kind": "standard",
+      "difficulty": "easy",
+      "answer_type": "single",
+      "stem": "An article is bought for ₹210 and sold for ₹300. Find the profit.",
+      "explanation": "Profit = SP − CP = ₹300 − ₹210 = ₹90.",
+      "options": [
+        {
+          "label": "₹94",
+          "is_correct": false
+        },
+        {
+          "label": "₹90",
+          "is_correct": true
+        },
+        {
+          "label": "₹92",
+          "is_correct": false
+        },
+        {
+          "label": "₹88",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Profit and Loss",
+      "kind": "standard",
+      "difficulty": "easy",
+      "answer_type": "single",
+      "stem": "An article costing ₹1000 is sold for ₹1150. Find the profit percent.",
+      "explanation": "Profit% = (SP − CP)/CP × 100 = (1150 − 1000)/1000 × 100 = 15%.",
+      "options": [
+        {
+          "label": "15%",
+          "is_correct": true
+        },
+        {
+          "label": "16%",
+          "is_correct": false
+        },
+        {
+          "label": "17%",
+          "is_correct": false
+        },
+        {
+          "label": "14%",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Profit and Loss",
+      "kind": "standard",
+      "difficulty": "easy",
+      "answer_type": "single",
+      "stem": "An article costing ₹3400 is sold for ₹4726. Find the profit percent.",
+      "explanation": "Profit% = (SP − CP)/CP × 100 = (4726 − 3400)/3400 × 100 = 39%.",
+      "options": [
+        {
+          "label": "41%",
+          "is_correct": false
+        },
+        {
+          "label": "40%",
+          "is_correct": false
+        },
+        {
+          "label": "39%",
+          "is_correct": true
+        },
+        {
+          "label": "38%",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Profit and Loss",
+      "kind": "standard",
+      "difficulty": "easy",
+      "answer_type": "single",
+      "stem": "An article costing ₹2600 is sold for ₹3536. Find the profit percent.",
+      "explanation": "Profit% = (SP − CP)/CP × 100 = (3536 − 2600)/2600 × 100 = 36%.",
+      "options": [
+        {
+          "label": "36%",
+          "is_correct": true
+        },
+        {
+          "label": "35%",
+          "is_correct": false
+        },
+        {
+          "label": "38%",
+          "is_correct": false
+        },
+        {
+          "label": "37%",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Profit and Loss",
+      "kind": "standard",
+      "difficulty": "easy",
+      "answer_type": "single",
+      "stem": "An article costing ₹2100 is sold for ₹2940. Find the profit percent.",
+      "explanation": "Profit% = (SP − CP)/CP × 100 = (2940 − 2100)/2100 × 100 = 40%.",
+      "options": [
+        {
+          "label": "44%",
+          "is_correct": false
+        },
+        {
+          "label": "38%",
+          "is_correct": false
+        },
+        {
+          "label": "40%",
+          "is_correct": true
+        },
+        {
+          "label": "42%",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Profit and Loss",
+      "kind": "standard",
+      "difficulty": "easy",
+      "answer_type": "single",
+      "stem": "An article is bought for ₹250 and sold for ₹400. Find the profit.",
+      "explanation": "Profit = SP − CP = ₹400 − ₹250 = ₹150.",
+      "options": [
+        {
+          "label": "₹154",
+          "is_correct": false
+        },
+        {
+          "label": "₹150",
+          "is_correct": true
+        },
+        {
+          "label": "₹152",
+          "is_correct": false
+        },
+        {
+          "label": "₹148",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Profit and Loss",
+      "kind": "standard",
+      "difficulty": "easy",
+      "answer_type": "single",
+      "stem": "Find the selling price of an article bought for ₹500 and sold at a profit of 27%.",
+      "explanation": "SP = CP × (100+27)/100 = ₹635.",
+      "options": [
+        {
+          "label": "₹660",
+          "is_correct": false
+        },
+        {
+          "label": "₹610",
+          "is_correct": false
+        },
+        {
+          "label": "₹635",
+          "is_correct": true
+        },
+        {
+          "label": "₹685",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Profit and Loss",
+      "kind": "standard",
+      "difficulty": "easy",
+      "answer_type": "single",
+      "stem": "Find the selling price of an article bought for ₹2200 and sold at a profit of 40%.",
+      "explanation": "SP = CP × (100+40)/100 = ₹3080.",
+      "options": [
+        {
+          "label": "₹3080",
+          "is_correct": true
+        },
+        {
+          "label": "₹3203",
+          "is_correct": false
+        },
+        {
+          "label": "₹2957",
+          "is_correct": false
+        },
+        {
+          "label": "₹3326",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Profit and Loss",
+      "kind": "standard",
+      "difficulty": "medium",
+      "answer_type": "single",
+      "stem": "By selling an article for ₹4650, a man gains 50%. Find the cost price.",
+      "explanation": "CP = SP × 100/(100+50) = 4650 × 100/150 = ₹3100.",
+      "options": [
+        {
+          "label": "₹3100",
+          "is_correct": true
+        },
+        {
+          "label": "₹2976",
+          "is_correct": false
+        },
+        {
+          "label": "₹3224",
+          "is_correct": false
+        },
+        {
+          "label": "₹3348",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Profit and Loss",
+      "kind": "standard",
+      "difficulty": "medium",
+      "answer_type": "single",
+      "stem": "By selling an article for ₹1426, a man loses 38%. Find the cost price.",
+      "explanation": "CP = SP × 100/(100−38) = 1426 × 100/62 = ₹2300.",
+      "options": [
+        {
+          "label": "₹2300",
+          "is_correct": true
+        },
+        {
+          "label": "₹2392",
+          "is_correct": false
+        },
+        {
+          "label": "₹2208",
+          "is_correct": false
+        },
+        {
+          "label": "₹2484",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Profit and Loss",
+      "kind": "standard",
+      "difficulty": "medium",
+      "answer_type": "single",
+      "stem": "An article costing ₹3600 is sold for ₹2160. Find the loss percent.",
+      "explanation": "Loss% = (CP − SP)/CP × 100 = (3600 − 2160)/3600 × 100 = 40%.",
+      "options": [
+        {
+          "label": "40%",
+          "is_correct": true
+        },
+        {
+          "label": "38%",
+          "is_correct": false
+        },
+        {
+          "label": "42%",
+          "is_correct": false
+        },
+        {
+          "label": "44%",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Profit and Loss",
+      "kind": "standard",
+      "difficulty": "medium",
+      "answer_type": "single",
+      "stem": "By selling an article for ₹2356, a man gains 24%. Find the cost price.",
+      "explanation": "CP = SP × 100/(100+24) = 2356 × 100/124 = ₹1900.",
+      "options": [
+        {
+          "label": "₹2052",
+          "is_correct": false
+        },
+        {
+          "label": "₹1824",
+          "is_correct": false
+        },
+        {
+          "label": "₹1900",
+          "is_correct": true
+        },
+        {
+          "label": "₹1976",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Profit and Loss",
+      "kind": "standard",
+      "difficulty": "medium",
+      "answer_type": "single",
+      "stem": "An article costing ₹3300 is sold for ₹2574. Find the loss percent.",
+      "explanation": "Loss% = (CP − SP)/CP × 100 = (3300 − 2574)/3300 × 100 = 22%.",
+      "options": [
+        {
+          "label": "23%",
+          "is_correct": false
+        },
+        {
+          "label": "22%",
+          "is_correct": true
+        },
+        {
+          "label": "21%",
+          "is_correct": false
+        },
+        {
+          "label": "24%",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Profit and Loss",
+      "kind": "standard",
+      "difficulty": "medium",
+      "answer_type": "single",
+      "stem": "By selling an article for ₹1445, a man loses 15%. Find the cost price.",
+      "explanation": "CP = SP × 100/(100−15) = 1445 × 100/85 = ₹1700.",
+      "options": [
+        {
+          "label": "₹1836",
+          "is_correct": false
+        },
+        {
+          "label": "₹1768",
+          "is_correct": false
+        },
+        {
+          "label": "₹1632",
+          "is_correct": false
+        },
+        {
+          "label": "₹1700",
+          "is_correct": true
+        }
+      ]
+    },
+    {
+      "chapter": "Profit and Loss",
+      "kind": "standard",
+      "difficulty": "medium",
+      "answer_type": "single",
+      "stem": "By selling an article for ₹539, a man loses 23%. Find the cost price.",
+      "explanation": "CP = SP × 100/(100−23) = 539 × 100/77 = ₹700.",
+      "options": [
+        {
+          "label": "₹756",
+          "is_correct": false
+        },
+        {
+          "label": "₹700",
+          "is_correct": true
+        },
+        {
+          "label": "₹672",
+          "is_correct": false
+        },
+        {
+          "label": "₹728",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Profit and Loss",
+      "kind": "standard",
+      "difficulty": "medium",
+      "answer_type": "single",
+      "stem": "By selling an article for ₹864, a man gains 44%. Find the cost price.",
+      "explanation": "CP = SP × 100/(100+44) = 864 × 100/144 = ₹600.",
+      "options": [
+        {
+          "label": "₹576",
+          "is_correct": false
+        },
+        {
+          "label": "₹600",
+          "is_correct": true
+        },
+        {
+          "label": "₹624",
+          "is_correct": false
+        },
+        {
+          "label": "₹648",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Profit and Loss",
+      "kind": "standard",
+      "difficulty": "medium",
+      "answer_type": "single",
+      "stem": "By selling an article for ₹1950, a man gains 30%. Find the cost price.",
+      "explanation": "CP = SP × 100/(100+30) = 1950 × 100/130 = ₹1500.",
+      "options": [
+        {
+          "label": "₹1500",
+          "is_correct": true
+        },
+        {
+          "label": "₹1440",
+          "is_correct": false
+        },
+        {
+          "label": "₹1560",
+          "is_correct": false
+        },
+        {
+          "label": "₹1620",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Profit and Loss",
+      "kind": "standard",
+      "difficulty": "medium",
+      "answer_type": "single",
+      "stem": "An article costing ₹3000 is sold for ₹2640. Find the loss percent.",
+      "explanation": "Loss% = (CP − SP)/CP × 100 = (3000 − 2640)/3000 × 100 = 12%.",
+      "options": [
+        {
+          "label": "13%",
+          "is_correct": false
+        },
+        {
+          "label": "12%",
+          "is_correct": true
+        },
+        {
+          "label": "11%",
+          "is_correct": false
+        },
+        {
+          "label": "14%",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Profit and Loss",
+      "kind": "standard",
+      "difficulty": "medium",
+      "answer_type": "single",
+      "stem": "An article costing ₹4000 is sold for ₹2560. Find the loss percent.",
+      "explanation": "Loss% = (CP − SP)/CP × 100 = (4000 − 2560)/4000 × 100 = 36%.",
+      "options": [
+        {
+          "label": "37%",
+          "is_correct": false
+        },
+        {
+          "label": "36%",
+          "is_correct": true
+        },
+        {
+          "label": "35%",
+          "is_correct": false
+        },
+        {
+          "label": "38%",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Profit and Loss",
+      "kind": "standard",
+      "difficulty": "medium",
+      "answer_type": "single",
+      "stem": "By selling an article for ₹1096, a man gains 37%. Find the cost price.",
+      "explanation": "CP = SP × 100/(100+37) = 1096 × 100/137 = ₹800.",
+      "options": [
+        {
+          "label": "₹864",
+          "is_correct": false
+        },
+        {
+          "label": "₹800",
+          "is_correct": true
+        },
+        {
+          "label": "₹832",
+          "is_correct": false
+        },
+        {
+          "label": "₹768",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Profit and Loss",
+      "kind": "standard",
+      "difficulty": "medium",
+      "answer_type": "single",
+      "stem": "By selling an article for ₹1809, a man loses 33%. Find the cost price.",
+      "explanation": "CP = SP × 100/(100−33) = 1809 × 100/67 = ₹2700.",
+      "options": [
+        {
+          "label": "₹2700",
+          "is_correct": true
+        },
+        {
+          "label": "₹2808",
+          "is_correct": false
+        },
+        {
+          "label": "₹2592",
+          "is_correct": false
+        },
+        {
+          "label": "₹2916",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Profit and Loss",
+      "kind": "standard",
+      "difficulty": "medium",
+      "answer_type": "single",
+      "stem": "By selling an article for ₹3990, a man gains 14%. Find the cost price.",
+      "explanation": "CP = SP × 100/(100+14) = 3990 × 100/114 = ₹3500.",
+      "options": [
+        {
+          "label": "₹3640",
+          "is_correct": false
+        },
+        {
+          "label": "₹3780",
+          "is_correct": false
+        },
+        {
+          "label": "₹3500",
+          "is_correct": true
+        },
+        {
+          "label": "₹3360",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Profit and Loss",
+      "kind": "standard",
+      "difficulty": "medium",
+      "answer_type": "single",
+      "stem": "By selling an article for ₹1782, a man loses 34%. Find the cost price.",
+      "explanation": "CP = SP × 100/(100−34) = 1782 × 100/66 = ₹2700.",
+      "options": [
+        {
+          "label": "₹2808",
+          "is_correct": false
+        },
+        {
+          "label": "₹2700",
+          "is_correct": true
+        },
+        {
+          "label": "₹2592",
+          "is_correct": false
+        },
+        {
+          "label": "₹2916",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Profit and Loss",
+      "kind": "standard",
+      "difficulty": "medium",
+      "answer_type": "single",
+      "stem": "An article costing ₹3800 is sold for ₹3230. Find the loss percent.",
+      "explanation": "Loss% = (CP − SP)/CP × 100 = (3800 − 3230)/3800 × 100 = 15%.",
+      "options": [
+        {
+          "label": "17%",
+          "is_correct": false
+        },
+        {
+          "label": "16%",
+          "is_correct": false
+        },
+        {
+          "label": "15%",
+          "is_correct": true
+        },
+        {
+          "label": "14%",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Profit and Loss",
+      "kind": "standard",
+      "difficulty": "medium",
+      "answer_type": "single",
+      "stem": "An article costing ₹2200 is sold for ₹1606. Find the loss percent.",
+      "explanation": "Loss% = (CP − SP)/CP × 100 = (2200 − 1606)/2200 × 100 = 27%.",
+      "options": [
+        {
+          "label": "26%",
+          "is_correct": false
+        },
+        {
+          "label": "28%",
+          "is_correct": false
+        },
+        {
+          "label": "27%",
+          "is_correct": true
+        },
+        {
+          "label": "29%",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Profit and Loss",
+      "kind": "standard",
+      "difficulty": "medium",
+      "answer_type": "single",
+      "stem": "An article costing ₹800 is sold for ₹656. Find the loss percent.",
+      "explanation": "Loss% = (CP − SP)/CP × 100 = (800 − 656)/800 × 100 = 18%.",
+      "options": [
+        {
+          "label": "20%",
+          "is_correct": false
+        },
+        {
+          "label": "18%",
+          "is_correct": true
+        },
+        {
+          "label": "17%",
+          "is_correct": false
+        },
+        {
+          "label": "19%",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Profit and Loss",
+      "kind": "standard",
+      "difficulty": "medium",
+      "answer_type": "single",
+      "stem": "By selling an article for ₹1180, a man gains 18%. Find the cost price.",
+      "explanation": "CP = SP × 100/(100+18) = 1180 × 100/118 = ₹1000.",
+      "options": [
+        {
+          "label": "₹1080",
+          "is_correct": false
+        },
+        {
+          "label": "₹1040",
+          "is_correct": false
+        },
+        {
+          "label": "₹1000",
+          "is_correct": true
+        },
+        {
+          "label": "₹960",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Profit and Loss",
+      "kind": "standard",
+      "difficulty": "medium",
+      "answer_type": "single",
+      "stem": "By selling an article for ₹511, a man loses 27%. Find the cost price.",
+      "explanation": "CP = SP × 100/(100−27) = 511 × 100/73 = ₹700.",
+      "options": [
+        {
+          "label": "₹672",
+          "is_correct": false
+        },
+        {
+          "label": "₹728",
+          "is_correct": false
+        },
+        {
+          "label": "₹756",
+          "is_correct": false
+        },
+        {
+          "label": "₹700",
+          "is_correct": true
+        }
+      ]
+    },
+    {
+      "chapter": "Profit and Loss",
+      "kind": "standard",
+      "difficulty": "medium",
+      "answer_type": "single",
+      "stem": "An article costing ₹1600 is sold for ₹1056. Find the loss percent.",
+      "explanation": "Loss% = (CP − SP)/CP × 100 = (1600 − 1056)/1600 × 100 = 34%.",
+      "options": [
+        {
+          "label": "33%",
+          "is_correct": false
+        },
+        {
+          "label": "36%",
+          "is_correct": false
+        },
+        {
+          "label": "35%",
+          "is_correct": false
+        },
+        {
+          "label": "34%",
+          "is_correct": true
+        }
+      ]
+    },
+    {
+      "chapter": "Profit and Loss",
+      "kind": "standard",
+      "difficulty": "medium",
+      "answer_type": "single",
+      "stem": "By selling an article for ₹882, a man gains 47%. Find the cost price.",
+      "explanation": "CP = SP × 100/(100+47) = 882 × 100/147 = ₹600.",
+      "options": [
+        {
+          "label": "₹576",
+          "is_correct": false
+        },
+        {
+          "label": "₹624",
+          "is_correct": false
+        },
+        {
+          "label": "₹648",
+          "is_correct": false
+        },
+        {
+          "label": "₹600",
+          "is_correct": true
+        }
+      ]
+    },
+    {
+      "chapter": "Profit and Loss",
+      "kind": "standard",
+      "difficulty": "medium",
+      "answer_type": "single",
+      "stem": "By selling an article for ₹504, a man loses 16%. Find the cost price.",
+      "explanation": "CP = SP × 100/(100−16) = 504 × 100/84 = ₹600.",
+      "options": [
+        {
+          "label": "₹624",
+          "is_correct": false
+        },
+        {
+          "label": "₹648",
+          "is_correct": false
+        },
+        {
+          "label": "₹600",
+          "is_correct": true
+        },
+        {
+          "label": "₹576",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Profit and Loss",
+      "kind": "standard",
+      "difficulty": "medium",
+      "answer_type": "single",
+      "stem": "By selling an article for ₹2044, a man loses 27%. Find the cost price.",
+      "explanation": "CP = SP × 100/(100−27) = 2044 × 100/73 = ₹2800.",
+      "options": [
+        {
+          "label": "₹2800",
+          "is_correct": true
+        },
+        {
+          "label": "₹3024",
+          "is_correct": false
+        },
+        {
+          "label": "₹2688",
+          "is_correct": false
+        },
+        {
+          "label": "₹2912",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Profit and Loss",
+      "kind": "standard",
+      "difficulty": "medium",
+      "answer_type": "single",
+      "stem": "By selling an article for ₹2592, a man loses 28%. Find the cost price.",
+      "explanation": "CP = SP × 100/(100−28) = 2592 × 100/72 = ₹3600.",
+      "options": [
+        {
+          "label": "₹3456",
+          "is_correct": false
+        },
+        {
+          "label": "₹3744",
+          "is_correct": false
+        },
+        {
+          "label": "₹3888",
+          "is_correct": false
+        },
+        {
+          "label": "₹3600",
+          "is_correct": true
+        }
+      ]
+    },
+    {
+      "chapter": "Profit and Loss",
+      "kind": "standard",
+      "difficulty": "medium",
+      "answer_type": "single",
+      "stem": "An article costing ₹3100 is sold for ₹2015. Find the loss percent.",
+      "explanation": "Loss% = (CP − SP)/CP × 100 = (3100 − 2015)/3100 × 100 = 35%.",
+      "options": [
+        {
+          "label": "35%",
+          "is_correct": true
+        },
+        {
+          "label": "37%",
+          "is_correct": false
+        },
+        {
+          "label": "34%",
+          "is_correct": false
+        },
+        {
+          "label": "36%",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Profit and Loss",
+      "kind": "standard",
+      "difficulty": "medium",
+      "answer_type": "single",
+      "stem": "An article costing ₹2300 is sold for ₹2001. Find the loss percent.",
+      "explanation": "Loss% = (CP − SP)/CP × 100 = (2300 − 2001)/2300 × 100 = 13%.",
+      "options": [
+        {
+          "label": "12%",
+          "is_correct": false
+        },
+        {
+          "label": "14%",
+          "is_correct": false
+        },
+        {
+          "label": "15%",
+          "is_correct": false
+        },
+        {
+          "label": "13%",
+          "is_correct": true
+        }
+      ]
+    },
+    {
+      "chapter": "Profit and Loss",
+      "kind": "standard",
+      "difficulty": "medium",
+      "answer_type": "single",
+      "stem": "By selling an article for ₹2794, a man gains 27%. Find the cost price.",
+      "explanation": "CP = SP × 100/(100+27) = 2794 × 100/127 = ₹2200.",
+      "options": [
+        {
+          "label": "₹2112",
+          "is_correct": false
+        },
+        {
+          "label": "₹2288",
+          "is_correct": false
+        },
+        {
+          "label": "₹2376",
+          "is_correct": false
+        },
+        {
+          "label": "₹2200",
+          "is_correct": true
+        }
+      ]
+    },
+    {
+      "chapter": "Profit and Loss",
+      "kind": "standard",
+      "difficulty": "medium",
+      "answer_type": "single",
+      "stem": "By selling an article for ₹254, a man gains 27%. Find the cost price.",
+      "explanation": "CP = SP × 100/(100+27) = 254 × 100/127 = ₹200.",
+      "options": [
+        {
+          "label": "₹192",
+          "is_correct": false
+        },
+        {
+          "label": "₹208",
+          "is_correct": false
+        },
+        {
+          "label": "₹200",
+          "is_correct": true
+        },
+        {
+          "label": "₹216",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Profit and Loss",
+      "kind": "standard",
+      "difficulty": "medium",
+      "answer_type": "single",
+      "stem": "An article costing ₹2000 is sold for ₹1520. Find the loss percent.",
+      "explanation": "Loss% = (CP − SP)/CP × 100 = (2000 − 1520)/2000 × 100 = 24%.",
+      "options": [
+        {
+          "label": "24%",
+          "is_correct": true
+        },
+        {
+          "label": "23%",
+          "is_correct": false
+        },
+        {
+          "label": "25%",
+          "is_correct": false
+        },
+        {
+          "label": "26%",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Profit and Loss",
+      "kind": "standard",
+      "difficulty": "medium",
+      "answer_type": "single",
+      "stem": "An article costing ₹3100 is sold for ₹2852. Find the loss percent.",
+      "explanation": "Loss% = (CP − SP)/CP × 100 = (3100 − 2852)/3100 × 100 = 8%.",
+      "options": [
+        {
+          "label": "8%",
+          "is_correct": true
+        },
+        {
+          "label": "7%",
+          "is_correct": false
+        },
+        {
+          "label": "9%",
+          "is_correct": false
+        },
+        {
+          "label": "10%",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Profit and Loss",
+      "kind": "standard",
+      "difficulty": "medium",
+      "answer_type": "single",
+      "stem": "By selling an article for ₹2072, a man loses 26%. Find the cost price.",
+      "explanation": "CP = SP × 100/(100−26) = 2072 × 100/74 = ₹2800.",
+      "options": [
+        {
+          "label": "₹2800",
+          "is_correct": true
+        },
+        {
+          "label": "₹3024",
+          "is_correct": false
+        },
+        {
+          "label": "₹2688",
+          "is_correct": false
+        },
+        {
+          "label": "₹2912",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Profit and Loss",
+      "kind": "standard",
+      "difficulty": "medium",
+      "answer_type": "single",
+      "stem": "By selling an article for ₹2848, a man loses 11%. Find the cost price.",
+      "explanation": "CP = SP × 100/(100−11) = 2848 × 100/89 = ₹3200.",
+      "options": [
+        {
+          "label": "₹3456",
+          "is_correct": false
+        },
+        {
+          "label": "₹3200",
+          "is_correct": true
+        },
+        {
+          "label": "₹3072",
+          "is_correct": false
+        },
+        {
+          "label": "₹3328",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Profit and Loss",
+      "kind": "standard",
+      "difficulty": "medium",
+      "answer_type": "single",
+      "stem": "An article costing ₹700 is sold for ₹434. Find the loss percent.",
+      "explanation": "Loss% = (CP − SP)/CP × 100 = (700 − 434)/700 × 100 = 38%.",
+      "options": [
+        {
+          "label": "40%",
+          "is_correct": false
+        },
+        {
+          "label": "37%",
+          "is_correct": false
+        },
+        {
+          "label": "38%",
+          "is_correct": true
+        },
+        {
+          "label": "39%",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Profit and Loss",
+      "kind": "standard",
+      "difficulty": "medium",
+      "answer_type": "single",
+      "stem": "An article costing ₹2600 is sold for ₹2002. Find the loss percent.",
+      "explanation": "Loss% = (CP − SP)/CP × 100 = (2600 − 2002)/2600 × 100 = 23%.",
+      "options": [
+        {
+          "label": "24%",
+          "is_correct": false
+        },
+        {
+          "label": "25%",
+          "is_correct": false
+        },
+        {
+          "label": "23%",
+          "is_correct": true
+        },
+        {
+          "label": "22%",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Profit and Loss",
+      "kind": "standard",
+      "difficulty": "medium",
+      "answer_type": "single",
+      "stem": "By selling an article for ₹704, a man loses 12%. Find the cost price.",
+      "explanation": "CP = SP × 100/(100−12) = 704 × 100/88 = ₹800.",
+      "options": [
+        {
+          "label": "₹832",
+          "is_correct": false
+        },
+        {
+          "label": "₹768",
+          "is_correct": false
+        },
+        {
+          "label": "₹800",
+          "is_correct": true
+        },
+        {
+          "label": "₹864",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Profit and Loss",
+      "kind": "standard",
+      "difficulty": "medium",
+      "answer_type": "single",
+      "stem": "By selling an article for ₹1776, a man gains 11%. Find the cost price.",
+      "explanation": "CP = SP × 100/(100+11) = 1776 × 100/111 = ₹1600.",
+      "options": [
+        {
+          "label": "₹1600",
+          "is_correct": true
+        },
+        {
+          "label": "₹1536",
+          "is_correct": false
+        },
+        {
+          "label": "₹1664",
+          "is_correct": false
+        },
+        {
+          "label": "₹1728",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Profit and Loss",
+      "kind": "standard",
+      "difficulty": "medium",
+      "answer_type": "single",
+      "stem": "An article costing ₹900 is sold for ₹666. Find the loss percent.",
+      "explanation": "Loss% = (CP − SP)/CP × 100 = (900 − 666)/900 × 100 = 26%.",
+      "options": [
+        {
+          "label": "26%",
+          "is_correct": true
+        },
+        {
+          "label": "25%",
+          "is_correct": false
+        },
+        {
+          "label": "27%",
+          "is_correct": false
+        },
+        {
+          "label": "28%",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Profit and Loss",
+      "kind": "standard",
+      "difficulty": "medium",
+      "answer_type": "single",
+      "stem": "By selling an article for ₹1092, a man loses 22%. Find the cost price.",
+      "explanation": "CP = SP × 100/(100−22) = 1092 × 100/78 = ₹1400.",
+      "options": [
+        {
+          "label": "₹1344",
+          "is_correct": false
+        },
+        {
+          "label": "₹1512",
+          "is_correct": false
+        },
+        {
+          "label": "₹1456",
+          "is_correct": false
+        },
+        {
+          "label": "₹1400",
+          "is_correct": true
+        }
+      ]
+    },
+    {
+      "chapter": "Profit and Loss",
+      "kind": "standard",
+      "difficulty": "medium",
+      "answer_type": "single",
+      "stem": "By selling an article for ₹765, a man loses 15%. Find the cost price.",
+      "explanation": "CP = SP × 100/(100−15) = 765 × 100/85 = ₹900.",
+      "options": [
+        {
+          "label": "₹972",
+          "is_correct": false
+        },
+        {
+          "label": "₹936",
+          "is_correct": false
+        },
+        {
+          "label": "₹864",
+          "is_correct": false
+        },
+        {
+          "label": "₹900",
+          "is_correct": true
+        }
+      ]
+    },
+    {
+      "chapter": "Profit and Loss",
+      "kind": "standard",
+      "difficulty": "medium",
+      "answer_type": "single",
+      "stem": "An article costing ₹300 is sold for ₹195. Find the loss percent.",
+      "explanation": "Loss% = (CP − SP)/CP × 100 = (300 − 195)/300 × 100 = 35%.",
+      "options": [
+        {
+          "label": "34%",
+          "is_correct": false
+        },
+        {
+          "label": "36%",
+          "is_correct": false
+        },
+        {
+          "label": "37%",
+          "is_correct": false
+        },
+        {
+          "label": "35%",
+          "is_correct": true
+        }
+      ]
+    },
+    {
+      "chapter": "Profit and Loss",
+      "kind": "standard",
+      "difficulty": "medium",
+      "answer_type": "single",
+      "stem": "An article costing ₹1700 is sold for ₹1581. Find the loss percent.",
+      "explanation": "Loss% = (CP − SP)/CP × 100 = (1700 − 1581)/1700 × 100 = 7%.",
+      "options": [
+        {
+          "label": "7%",
+          "is_correct": true
+        },
+        {
+          "label": "8%",
+          "is_correct": false
+        },
+        {
+          "label": "9%",
+          "is_correct": false
+        },
+        {
+          "label": "6%",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Profit and Loss",
+      "kind": "standard",
+      "difficulty": "medium",
+      "answer_type": "single",
+      "stem": "An article costing ₹4000 is sold for ₹3720. Find the loss percent.",
+      "explanation": "Loss% = (CP − SP)/CP × 100 = (4000 − 3720)/4000 × 100 = 7%.",
+      "options": [
+        {
+          "label": "9%",
+          "is_correct": false
+        },
+        {
+          "label": "7%",
+          "is_correct": true
+        },
+        {
+          "label": "8%",
+          "is_correct": false
+        },
+        {
+          "label": "6%",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Profit and Loss",
+      "kind": "standard",
+      "difficulty": "medium",
+      "answer_type": "single",
+      "stem": "By selling an article for ₹1624, a man gains 16%. Find the cost price.",
+      "explanation": "CP = SP × 100/(100+16) = 1624 × 100/116 = ₹1400.",
+      "options": [
+        {
+          "label": "₹1344",
+          "is_correct": false
+        },
+        {
+          "label": "₹1512",
+          "is_correct": false
+        },
+        {
+          "label": "₹1456",
+          "is_correct": false
+        },
+        {
+          "label": "₹1400",
+          "is_correct": true
+        }
+      ]
+    },
+    {
+      "chapter": "Profit and Loss",
+      "kind": "standard",
+      "difficulty": "medium",
+      "answer_type": "single",
+      "stem": "An article costing ₹1600 is sold for ₹976. Find the loss percent.",
+      "explanation": "Loss% = (CP − SP)/CP × 100 = (1600 − 976)/1600 × 100 = 39%.",
+      "options": [
+        {
+          "label": "41%",
+          "is_correct": false
+        },
+        {
+          "label": "38%",
+          "is_correct": false
+        },
+        {
+          "label": "40%",
+          "is_correct": false
+        },
+        {
+          "label": "39%",
+          "is_correct": true
+        }
+      ]
+    },
+    {
+      "chapter": "Profit and Loss",
+      "kind": "standard",
+      "difficulty": "medium",
+      "answer_type": "single",
+      "stem": "By selling an article for ₹5510, a man gains 45%. Find the cost price.",
+      "explanation": "CP = SP × 100/(100+45) = 5510 × 100/145 = ₹3800.",
+      "options": [
+        {
+          "label": "₹3648",
+          "is_correct": false
+        },
+        {
+          "label": "₹4104",
+          "is_correct": false
+        },
+        {
+          "label": "₹3800",
+          "is_correct": true
+        },
+        {
+          "label": "₹3952",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Profit and Loss",
+      "kind": "standard",
+      "difficulty": "medium",
+      "answer_type": "single",
+      "stem": "By selling an article for ₹1680, a man loses 20%. Find the cost price.",
+      "explanation": "CP = SP × 100/(100−20) = 1680 × 100/80 = ₹2100.",
+      "options": [
+        {
+          "label": "₹2100",
+          "is_correct": true
+        },
+        {
+          "label": "₹2268",
+          "is_correct": false
+        },
+        {
+          "label": "₹2016",
+          "is_correct": false
+        },
+        {
+          "label": "₹2184",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Profit and Loss",
+      "kind": "standard",
+      "difficulty": "medium",
+      "answer_type": "single",
+      "stem": "By selling an article for ₹1540, a man gains 10%. Find the cost price.",
+      "explanation": "CP = SP × 100/(100+10) = 1540 × 100/110 = ₹1400.",
+      "options": [
+        {
+          "label": "₹1400",
+          "is_correct": true
+        },
+        {
+          "label": "₹1456",
+          "is_correct": false
+        },
+        {
+          "label": "₹1344",
+          "is_correct": false
+        },
+        {
+          "label": "₹1512",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Profit and Loss",
+      "kind": "standard",
+      "difficulty": "medium",
+      "answer_type": "single",
+      "stem": "An article costing ₹1600 is sold for ₹1008. Find the loss percent.",
+      "explanation": "Loss% = (CP − SP)/CP × 100 = (1600 − 1008)/1600 × 100 = 37%.",
+      "options": [
+        {
+          "label": "39%",
+          "is_correct": false
+        },
+        {
+          "label": "38%",
+          "is_correct": false
+        },
+        {
+          "label": "37%",
+          "is_correct": true
+        },
+        {
+          "label": "36%",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Profit and Loss",
+      "kind": "standard",
+      "difficulty": "medium",
+      "answer_type": "single",
+      "stem": "By selling an article for ₹816, a man loses 32%. Find the cost price.",
+      "explanation": "CP = SP × 100/(100−32) = 816 × 100/68 = ₹1200.",
+      "options": [
+        {
+          "label": "₹1152",
+          "is_correct": false
+        },
+        {
+          "label": "₹1248",
+          "is_correct": false
+        },
+        {
+          "label": "₹1296",
+          "is_correct": false
+        },
+        {
+          "label": "₹1200",
+          "is_correct": true
+        }
+      ]
+    },
+    {
+      "chapter": "Profit and Loss",
+      "kind": "standard",
+      "difficulty": "hard",
+      "answer_type": "single",
+      "stem": "Two articles are sold at the same price. On one there is a gain of 10% and on the other a loss of 10%. Find the overall loss percent.",
+      "explanation": "When gain% = loss% = 10, there is always a net loss of (10/10)² = 1%.",
+      "options": [
+        {
+          "label": "4%",
+          "is_correct": false
+        },
+        {
+          "label": "2%",
+          "is_correct": false
+        },
+        {
+          "label": "1%",
+          "is_correct": true
+        },
+        {
+          "label": "3%",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Profit and Loss",
+      "kind": "standard",
+      "difficulty": "hard",
+      "answer_type": "single",
+      "stem": "The cost price of 25 articles is equal to the selling price of 20 articles. Find the gain percent.",
+      "explanation": "Gain% = (25 − 20)/20 × 100 = 25%.",
+      "options": [
+        {
+          "label": "27%",
+          "is_correct": false
+        },
+        {
+          "label": "25%",
+          "is_correct": true
+        },
+        {
+          "label": "26%",
+          "is_correct": false
+        },
+        {
+          "label": "24%",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Profit and Loss",
+      "kind": "standard",
+      "difficulty": "hard",
+      "answer_type": "single",
+      "stem": "Two articles are sold at the same price. On one there is a gain of 40% and on the other a loss of 40%. Find the overall loss percent.",
+      "explanation": "When gain% = loss% = 40, there is always a net loss of (40/10)² = 16%.",
+      "options": [
+        {
+          "label": "18%",
+          "is_correct": false
+        },
+        {
+          "label": "16%",
+          "is_correct": true
+        },
+        {
+          "label": "15%",
+          "is_correct": false
+        },
+        {
+          "label": "17%",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Profit and Loss",
+      "kind": "standard",
+      "difficulty": "hard",
+      "answer_type": "single",
+      "stem": "The cost price of 15 articles is equal to the selling price of 12 articles. Find the gain percent.",
+      "explanation": "Gain% = (15 − 12)/12 × 100 = 25%.",
+      "options": [
+        {
+          "label": "26%",
+          "is_correct": false
+        },
+        {
+          "label": "27%",
+          "is_correct": false
+        },
+        {
+          "label": "25%",
+          "is_correct": true
+        },
+        {
+          "label": "24%",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Profit and Loss",
+      "kind": "standard",
+      "difficulty": "hard",
+      "answer_type": "single",
+      "stem": "The cost price of 12 articles is equal to the selling price of 10 articles. Find the gain percent.",
+      "explanation": "Gain% = (12 − 10)/10 × 100 = 20%.",
+      "options": [
+        {
+          "label": "21%",
+          "is_correct": false
+        },
+        {
+          "label": "20%",
+          "is_correct": true
+        },
+        {
+          "label": "22%",
+          "is_correct": false
+        },
+        {
+          "label": "19%",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Profit and Loss",
+      "kind": "standard",
+      "difficulty": "hard",
+      "answer_type": "single",
+      "stem": "By selling an article, a man loses 16%. Had he sold it for ₹608 more, he would have gained 22%. Find the cost price.",
+      "explanation": "₹608 corresponds to (22+16)% = 38% of CP, so CP = 608 × 100/38 = ₹1600.",
+      "options": [
+        {
+          "label": "₹1536",
+          "is_correct": false
+        },
+        {
+          "label": "₹1728",
+          "is_correct": false
+        },
+        {
+          "label": "₹1664",
+          "is_correct": false
+        },
+        {
+          "label": "₹1600",
+          "is_correct": true
+        }
+      ]
+    },
+    {
+      "chapter": "Profit and Loss",
+      "kind": "standard",
+      "difficulty": "hard",
+      "answer_type": "single",
+      "stem": "By selling an article, a man loses 22%. Had he sold it for ₹297 more, he would have gained 11%. Find the cost price.",
+      "explanation": "₹297 corresponds to (11+22)% = 33% of CP, so CP = 297 × 100/33 = ₹900.",
+      "options": [
+        {
+          "label": "₹936",
+          "is_correct": false
+        },
+        {
+          "label": "₹864",
+          "is_correct": false
+        },
+        {
+          "label": "₹900",
+          "is_correct": true
+        },
+        {
+          "label": "₹972",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Profit and Loss",
+      "kind": "standard",
+      "difficulty": "hard",
+      "answer_type": "single",
+      "stem": "By selling an article, a man loses 10%. Had he sold it for ₹105 more, he would have gained 25%. Find the cost price.",
+      "explanation": "₹105 corresponds to (25+10)% = 35% of CP, so CP = 105 × 100/35 = ₹300.",
+      "options": [
+        {
+          "label": "₹312",
+          "is_correct": false
+        },
+        {
+          "label": "₹324",
+          "is_correct": false
+        },
+        {
+          "label": "₹300",
+          "is_correct": true
+        },
+        {
+          "label": "₹288",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Profit and Loss",
+      "kind": "standard",
+      "difficulty": "hard",
+      "answer_type": "single",
+      "stem": "Two articles are sold at the same price. On one there is a gain of 50% and on the other a loss of 50%. Find the overall loss percent.",
+      "explanation": "When gain% = loss% = 50, there is always a net loss of (50/10)² = 25%.",
+      "options": [
+        {
+          "label": "27%",
+          "is_correct": false
+        },
+        {
+          "label": "26%",
+          "is_correct": false
+        },
+        {
+          "label": "24%",
+          "is_correct": false
+        },
+        {
+          "label": "25%",
+          "is_correct": true
+        }
+      ]
+    },
+    {
+      "chapter": "Profit and Loss",
+      "kind": "standard",
+      "difficulty": "hard",
+      "answer_type": "single",
+      "stem": "The cost price of 6 articles is equal to the selling price of 5 articles. Find the gain percent.",
+      "explanation": "Gain% = (6 − 5)/5 × 100 = 20%.",
+      "options": [
+        {
+          "label": "22%",
+          "is_correct": false
+        },
+        {
+          "label": "19%",
+          "is_correct": false
+        },
+        {
+          "label": "21%",
+          "is_correct": false
+        },
+        {
+          "label": "20%",
+          "is_correct": true
+        }
+      ]
+    },
+    {
+      "chapter": "Profit and Loss",
+      "kind": "standard",
+      "difficulty": "hard",
+      "answer_type": "single",
+      "stem": "By selling an article, a man loses 25%. Had he sold it for ₹720 more, he would have gained 11%. Find the cost price.",
+      "explanation": "₹720 corresponds to (11+25)% = 36% of CP, so CP = 720 × 100/36 = ₹2000.",
+      "options": [
+        {
+          "label": "₹2080",
+          "is_correct": false
+        },
+        {
+          "label": "₹2000",
+          "is_correct": true
+        },
+        {
+          "label": "₹2160",
+          "is_correct": false
+        },
+        {
+          "label": "₹1920",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Profit and Loss",
+      "kind": "standard",
+      "difficulty": "hard",
+      "answer_type": "single",
+      "stem": "Two articles are sold at the same price. On one there is a gain of 20% and on the other a loss of 20%. Find the overall loss percent.",
+      "explanation": "When gain% = loss% = 20, there is always a net loss of (20/10)² = 4%.",
+      "options": [
+        {
+          "label": "4%",
+          "is_correct": true
+        },
+        {
+          "label": "6%",
+          "is_correct": false
+        },
+        {
+          "label": "5%",
+          "is_correct": false
+        },
+        {
+          "label": "3%",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Profit and Loss",
+      "kind": "standard",
+      "difficulty": "hard",
+      "answer_type": "single",
+      "stem": "Two articles are sold at the same price. On one there is a gain of 30% and on the other a loss of 30%. Find the overall loss percent.",
+      "explanation": "When gain% = loss% = 30, there is always a net loss of (30/10)² = 9%.",
+      "options": [
+        {
+          "label": "9%",
+          "is_correct": true
+        },
+        {
+          "label": "8%",
+          "is_correct": false
+        },
+        {
+          "label": "10%",
+          "is_correct": false
+        },
+        {
+          "label": "11%",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Profit and Loss",
+      "kind": "standard",
+      "difficulty": "hard",
+      "answer_type": "single",
+      "stem": "By selling an article, a man loses 21%. Had he sold it for ₹1380 more, he would have gained 25%. Find the cost price.",
+      "explanation": "₹1380 corresponds to (25+21)% = 46% of CP, so CP = 1380 × 100/46 = ₹3000.",
+      "options": [
+        {
+          "label": "₹3000",
+          "is_correct": true
+        },
+        {
+          "label": "₹3120",
+          "is_correct": false
+        },
+        {
+          "label": "₹3240",
+          "is_correct": false
+        },
+        {
+          "label": "₹2880",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Profit and Loss",
+      "kind": "standard",
+      "difficulty": "hard",
+      "answer_type": "single",
+      "stem": "By selling an article, a man loses 23%. Had he sold it for ₹960 more, he would have gained 9%. Find the cost price.",
+      "explanation": "₹960 corresponds to (9+23)% = 32% of CP, so CP = 960 × 100/32 = ₹3000.",
+      "options": [
+        {
+          "label": "₹3000",
+          "is_correct": true
+        },
+        {
+          "label": "₹3120",
+          "is_correct": false
+        },
+        {
+          "label": "₹2880",
+          "is_correct": false
+        },
+        {
+          "label": "₹3240",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Profit and Loss",
+      "kind": "standard",
+      "difficulty": "hard",
+      "answer_type": "single",
+      "stem": "By selling an article, a man loses 5%. Had he sold it for ₹90 more, he would have gained 10%. Find the cost price.",
+      "explanation": "₹90 corresponds to (10+5)% = 15% of CP, so CP = 90 × 100/15 = ₹600.",
+      "options": [
+        {
+          "label": "₹648",
+          "is_correct": false
+        },
+        {
+          "label": "₹624",
+          "is_correct": false
+        },
+        {
+          "label": "₹576",
+          "is_correct": false
+        },
+        {
+          "label": "₹600",
+          "is_correct": true
+        }
+      ]
+    },
+    {
+      "chapter": "Profit and Loss",
+      "kind": "standard",
+      "difficulty": "hard",
+      "answer_type": "single",
+      "stem": "By selling an article, a man loses 7%. Had he sold it for ₹322 more, he would have gained 7%. Find the cost price.",
+      "explanation": "₹322 corresponds to (7+7)% = 14% of CP, so CP = 322 × 100/14 = ₹2300.",
+      "options": [
+        {
+          "label": "₹2392",
+          "is_correct": false
+        },
+        {
+          "label": "₹2208",
+          "is_correct": false
+        },
+        {
+          "label": "₹2484",
+          "is_correct": false
+        },
+        {
+          "label": "₹2300",
+          "is_correct": true
+        }
+      ]
+    },
+    {
+      "chapter": "Profit and Loss",
+      "kind": "standard",
+      "difficulty": "hard",
+      "answer_type": "single",
+      "stem": "By selling an article, a man loses 16%. Had he sold it for ₹418 more, he would have gained 22%. Find the cost price.",
+      "explanation": "₹418 corresponds to (22+16)% = 38% of CP, so CP = 418 × 100/38 = ₹1100.",
+      "options": [
+        {
+          "label": "₹1100",
+          "is_correct": true
+        },
+        {
+          "label": "₹1188",
+          "is_correct": false
+        },
+        {
+          "label": "₹1144",
+          "is_correct": false
+        },
+        {
+          "label": "₹1056",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Profit and Loss",
+      "kind": "standard",
+      "difficulty": "hard",
+      "answer_type": "single",
+      "stem": "By selling an article, a man loses 15%. Had he sold it for ₹864 more, he would have gained 21%. Find the cost price.",
+      "explanation": "₹864 corresponds to (21+15)% = 36% of CP, so CP = 864 × 100/36 = ₹2400.",
+      "options": [
+        {
+          "label": "₹2592",
+          "is_correct": false
+        },
+        {
+          "label": "₹2304",
+          "is_correct": false
+        },
+        {
+          "label": "₹2496",
+          "is_correct": false
+        },
+        {
+          "label": "₹2400",
+          "is_correct": true
+        }
+      ]
+    },
+    {
+      "chapter": "Profit and Loss",
+      "kind": "standard",
+      "difficulty": "hard",
+      "answer_type": "single",
+      "stem": "By selling an article, a man loses 6%. Had he sold it for ₹100 more, he would have gained 14%. Find the cost price.",
+      "explanation": "₹100 corresponds to (14+6)% = 20% of CP, so CP = 100 × 100/20 = ₹500.",
+      "options": [
+        {
+          "label": "₹540",
+          "is_correct": false
+        },
+        {
+          "label": "₹520",
+          "is_correct": false
+        },
+        {
+          "label": "₹480",
+          "is_correct": false
+        },
+        {
+          "label": "₹500",
+          "is_correct": true
+        }
+      ]
+    },
+    {
+      "chapter": "Profit and Loss",
+      "kind": "standard",
+      "difficulty": "hard",
+      "answer_type": "single",
+      "stem": "By selling an article, a man loses 10%. Had he sold it for ₹682 more, he would have gained 21%. Find the cost price.",
+      "explanation": "₹682 corresponds to (21+10)% = 31% of CP, so CP = 682 × 100/31 = ₹2200.",
+      "options": [
+        {
+          "label": "₹2200",
+          "is_correct": true
+        },
+        {
+          "label": "₹2288",
+          "is_correct": false
+        },
+        {
+          "label": "₹2376",
+          "is_correct": false
+        },
+        {
+          "label": "₹2112",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Profit and Loss",
+      "kind": "standard",
+      "difficulty": "hard",
+      "answer_type": "single",
+      "stem": "By selling an article, a man loses 5%. Had he sold it for ₹330 more, he would have gained 25%. Find the cost price.",
+      "explanation": "₹330 corresponds to (25+5)% = 30% of CP, so CP = 330 × 100/30 = ₹1100.",
+      "options": [
+        {
+          "label": "₹1056",
+          "is_correct": false
+        },
+        {
+          "label": "₹1100",
+          "is_correct": true
+        },
+        {
+          "label": "₹1144",
+          "is_correct": false
+        },
+        {
+          "label": "₹1188",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Profit and Loss",
+      "kind": "standard",
+      "difficulty": "hard",
+      "answer_type": "single",
+      "stem": "The cost price of 21 articles is equal to the selling price of 20 articles. Find the gain percent.",
+      "explanation": "Gain% = (21 − 20)/20 × 100 = 5%.",
+      "options": [
+        {
+          "label": "6%",
+          "is_correct": false
+        },
+        {
+          "label": "4%",
+          "is_correct": false
+        },
+        {
+          "label": "7%",
+          "is_correct": false
+        },
+        {
+          "label": "5%",
+          "is_correct": true
+        }
+      ]
+    },
+    {
+      "chapter": "Profit and Loss",
+      "kind": "standard",
+      "difficulty": "hard",
+      "answer_type": "single",
+      "stem": "By selling an article, a man loses 25%. Had he sold it for ₹592 more, he would have gained 12%. Find the cost price.",
+      "explanation": "₹592 corresponds to (12+25)% = 37% of CP, so CP = 592 × 100/37 = ₹1600.",
+      "options": [
+        {
+          "label": "₹1728",
+          "is_correct": false
+        },
+        {
+          "label": "₹1536",
+          "is_correct": false
+        },
+        {
+          "label": "₹1664",
+          "is_correct": false
+        },
+        {
+          "label": "₹1600",
+          "is_correct": true
+        }
+      ]
+    },
+    {
+      "chapter": "Profit and Loss",
+      "kind": "standard",
+      "difficulty": "hard",
+      "answer_type": "single",
+      "stem": "By selling an article, a man loses 14%. Had he sold it for ₹660 more, he would have gained 19%. Find the cost price.",
+      "explanation": "₹660 corresponds to (19+14)% = 33% of CP, so CP = 660 × 100/33 = ₹2000.",
+      "options": [
+        {
+          "label": "₹1920",
+          "is_correct": false
+        },
+        {
+          "label": "₹2080",
+          "is_correct": false
+        },
+        {
+          "label": "₹2160",
+          "is_correct": false
+        },
+        {
+          "label": "₹2000",
+          "is_correct": true
+        }
+      ]
+    },
+    {
+      "chapter": "Profit and Loss",
+      "kind": "standard",
+      "difficulty": "hard",
+      "answer_type": "single",
+      "stem": "By selling an article, a man loses 16%. Had he sold it for ₹1170 more, he would have gained 23%. Find the cost price.",
+      "explanation": "₹1170 corresponds to (23+16)% = 39% of CP, so CP = 1170 × 100/39 = ₹3000.",
+      "options": [
+        {
+          "label": "₹3240",
+          "is_correct": false
+        },
+        {
+          "label": "₹3120",
+          "is_correct": false
+        },
+        {
+          "label": "₹3000",
+          "is_correct": true
+        },
+        {
+          "label": "₹2880",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Profit and Loss",
+      "kind": "standard",
+      "difficulty": "hard",
+      "answer_type": "single",
+      "stem": "By selling an article, a man loses 24%. Had he sold it for ₹528 more, he would have gained 24%. Find the cost price.",
+      "explanation": "₹528 corresponds to (24+24)% = 48% of CP, so CP = 528 × 100/48 = ₹1100.",
+      "options": [
+        {
+          "label": "₹1188",
+          "is_correct": false
+        },
+        {
+          "label": "₹1100",
+          "is_correct": true
+        },
+        {
+          "label": "₹1144",
+          "is_correct": false
+        },
+        {
+          "label": "₹1056",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Profit and Loss",
+      "kind": "standard",
+      "difficulty": "hard",
+      "answer_type": "single",
+      "stem": "By selling an article, a man loses 13%. Had he sold it for ₹702 more, he would have gained 14%. Find the cost price.",
+      "explanation": "₹702 corresponds to (14+13)% = 27% of CP, so CP = 702 × 100/27 = ₹2600.",
+      "options": [
+        {
+          "label": "₹2496",
+          "is_correct": false
+        },
+        {
+          "label": "₹2600",
+          "is_correct": true
+        },
+        {
+          "label": "₹2704",
+          "is_correct": false
+        },
+        {
+          "label": "₹2808",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Profit and Loss",
+      "kind": "standard",
+      "difficulty": "hard",
+      "answer_type": "single",
+      "stem": "By selling an article, a man loses 20%. Had he sold it for ₹783 more, he would have gained 7%. Find the cost price.",
+      "explanation": "₹783 corresponds to (7+20)% = 27% of CP, so CP = 783 × 100/27 = ₹2900.",
+      "options": [
+        {
+          "label": "₹3132",
+          "is_correct": false
+        },
+        {
+          "label": "₹2900",
+          "is_correct": true
+        },
+        {
+          "label": "₹3016",
+          "is_correct": false
+        },
+        {
+          "label": "₹2784",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Profit and Loss",
+      "kind": "standard",
+      "difficulty": "hard",
+      "answer_type": "single",
+      "stem": "By selling an article, a man loses 10%. Had he sold it for ₹279 more, he would have gained 21%. Find the cost price.",
+      "explanation": "₹279 corresponds to (21+10)% = 31% of CP, so CP = 279 × 100/31 = ₹900.",
+      "options": [
+        {
+          "label": "₹972",
+          "is_correct": false
+        },
+        {
+          "label": "₹900",
+          "is_correct": true
+        },
+        {
+          "label": "₹936",
+          "is_correct": false
+        },
+        {
+          "label": "₹864",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Profit and Loss",
+      "kind": "standard",
+      "difficulty": "hard",
+      "answer_type": "single",
+      "stem": "By selling an article, a man loses 12%. Had he sold it for ₹85 more, he would have gained 5%. Find the cost price.",
+      "explanation": "₹85 corresponds to (5+12)% = 17% of CP, so CP = 85 × 100/17 = ₹500.",
+      "options": [
+        {
+          "label": "₹500",
+          "is_correct": true
+        },
+        {
+          "label": "₹540",
+          "is_correct": false
+        },
+        {
+          "label": "₹480",
+          "is_correct": false
+        },
+        {
+          "label": "₹520",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Profit and Loss",
+      "kind": "standard",
+      "difficulty": "hard",
+      "answer_type": "single",
+      "stem": "By selling an article, a man loses 11%. Had he sold it for ₹196 more, he would have gained 17%. Find the cost price.",
+      "explanation": "₹196 corresponds to (17+11)% = 28% of CP, so CP = 196 × 100/28 = ₹700.",
+      "options": [
+        {
+          "label": "₹728",
+          "is_correct": false
+        },
+        {
+          "label": "₹700",
+          "is_correct": true
+        },
+        {
+          "label": "₹756",
+          "is_correct": false
+        },
+        {
+          "label": "₹672",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Profit and Loss",
+      "kind": "standard",
+      "difficulty": "hard",
+      "answer_type": "single",
+      "stem": "By selling an article, a man loses 24%. Had he sold it for ₹279 more, he would have gained 7%. Find the cost price.",
+      "explanation": "₹279 corresponds to (7+24)% = 31% of CP, so CP = 279 × 100/31 = ₹900.",
+      "options": [
+        {
+          "label": "₹864",
+          "is_correct": false
+        },
+        {
+          "label": "₹936",
+          "is_correct": false
+        },
+        {
+          "label": "₹900",
+          "is_correct": true
+        },
+        {
+          "label": "₹972",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Profit and Loss",
+      "kind": "standard",
+      "difficulty": "hard",
+      "answer_type": "single",
+      "stem": "By selling an article, a man loses 10%. Had he sold it for ₹68 more, he would have gained 7%. Find the cost price.",
+      "explanation": "₹68 corresponds to (7+10)% = 17% of CP, so CP = 68 × 100/17 = ₹400.",
+      "options": [
+        {
+          "label": "₹432",
+          "is_correct": false
+        },
+        {
+          "label": "₹384",
+          "is_correct": false
+        },
+        {
+          "label": "₹416",
+          "is_correct": false
+        },
+        {
+          "label": "₹400",
+          "is_correct": true
+        }
+      ]
+    },
+    {
+      "chapter": "Profit and Loss",
+      "kind": "standard",
+      "difficulty": "hard",
+      "answer_type": "single",
+      "stem": "By selling an article, a man loses 19%. Had he sold it for ₹140 more, he would have gained 16%. Find the cost price.",
+      "explanation": "₹140 corresponds to (16+19)% = 35% of CP, so CP = 140 × 100/35 = ₹400.",
+      "options": [
+        {
+          "label": "₹384",
+          "is_correct": false
+        },
+        {
+          "label": "₹416",
+          "is_correct": false
+        },
+        {
+          "label": "₹400",
+          "is_correct": true
+        },
+        {
+          "label": "₹432",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Profit and Loss",
+      "kind": "standard",
+      "difficulty": "hard",
+      "answer_type": "single",
+      "stem": "By selling an article, a man loses 21%. Had he sold it for ₹522 more, he would have gained 8%. Find the cost price.",
+      "explanation": "₹522 corresponds to (8+21)% = 29% of CP, so CP = 522 × 100/29 = ₹1800.",
+      "options": [
+        {
+          "label": "₹1872",
+          "is_correct": false
+        },
+        {
+          "label": "₹1728",
+          "is_correct": false
+        },
+        {
+          "label": "₹1800",
+          "is_correct": true
+        },
+        {
+          "label": "₹1944",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Profit and Loss",
+      "kind": "standard",
+      "difficulty": "hard",
+      "answer_type": "single",
+      "stem": "By selling an article, a man loses 23%. Had he sold it for ₹760 more, he would have gained 15%. Find the cost price.",
+      "explanation": "₹760 corresponds to (15+23)% = 38% of CP, so CP = 760 × 100/38 = ₹2000.",
+      "options": [
+        {
+          "label": "₹1920",
+          "is_correct": false
+        },
+        {
+          "label": "₹2000",
+          "is_correct": true
+        },
+        {
+          "label": "₹2160",
+          "is_correct": false
+        },
+        {
+          "label": "₹2080",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Profit and Loss",
+      "kind": "standard",
+      "difficulty": "hard",
+      "answer_type": "single",
+      "stem": "By selling an article, a man loses 11%. Had he sold it for ₹252 more, he would have gained 25%. Find the cost price.",
+      "explanation": "₹252 corresponds to (25+11)% = 36% of CP, so CP = 252 × 100/36 = ₹700.",
+      "options": [
+        {
+          "label": "₹700",
+          "is_correct": true
+        },
+        {
+          "label": "₹756",
+          "is_correct": false
+        },
+        {
+          "label": "₹672",
+          "is_correct": false
+        },
+        {
+          "label": "₹728",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Profit and Loss",
+      "kind": "standard",
+      "difficulty": "hard",
+      "answer_type": "single",
+      "stem": "By selling an article, a man loses 6%. Had he sold it for ₹136 more, he would have gained 11%. Find the cost price.",
+      "explanation": "₹136 corresponds to (11+6)% = 17% of CP, so CP = 136 × 100/17 = ₹800.",
+      "options": [
+        {
+          "label": "₹832",
+          "is_correct": false
+        },
+        {
+          "label": "₹800",
+          "is_correct": true
+        },
+        {
+          "label": "₹768",
+          "is_correct": false
+        },
+        {
+          "label": "₹864",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Profit and Loss",
+      "kind": "standard",
+      "difficulty": "hard",
+      "answer_type": "single",
+      "stem": "By selling an article, a man loses 15%. Had he sold it for ₹486 more, he would have gained 12%. Find the cost price.",
+      "explanation": "₹486 corresponds to (12+15)% = 27% of CP, so CP = 486 × 100/27 = ₹1800.",
+      "options": [
+        {
+          "label": "₹1800",
+          "is_correct": true
+        },
+        {
+          "label": "₹1872",
+          "is_correct": false
+        },
+        {
+          "label": "₹1944",
+          "is_correct": false
+        },
+        {
+          "label": "₹1728",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Profit and Loss",
+      "kind": "standard",
+      "difficulty": "hard",
+      "answer_type": "single",
+      "stem": "By selling an article, a man loses 18%. Had he sold it for ₹697 more, he would have gained 23%. Find the cost price.",
+      "explanation": "₹697 corresponds to (23+18)% = 41% of CP, so CP = 697 × 100/41 = ₹1700.",
+      "options": [
+        {
+          "label": "₹1836",
+          "is_correct": false
+        },
+        {
+          "label": "₹1768",
+          "is_correct": false
+        },
+        {
+          "label": "₹1700",
+          "is_correct": true
+        },
+        {
+          "label": "₹1632",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Profit and Loss",
+      "kind": "standard",
+      "difficulty": "hard",
+      "answer_type": "single",
+      "stem": "By selling an article, a man loses 11%. Had he sold it for ₹812 more, he would have gained 17%. Find the cost price.",
+      "explanation": "₹812 corresponds to (17+11)% = 28% of CP, so CP = 812 × 100/28 = ₹2900.",
+      "options": [
+        {
+          "label": "₹3016",
+          "is_correct": false
+        },
+        {
+          "label": "₹3132",
+          "is_correct": false
+        },
+        {
+          "label": "₹2784",
+          "is_correct": false
+        },
+        {
+          "label": "₹2900",
+          "is_correct": true
+        }
+      ]
+    },
+    {
+      "chapter": "Profit and Loss",
+      "kind": "standard",
+      "difficulty": "hard",
+      "answer_type": "single",
+      "stem": "By selling an article, a man loses 25%. Had he sold it for ₹765 more, he would have gained 20%. Find the cost price.",
+      "explanation": "₹765 corresponds to (20+25)% = 45% of CP, so CP = 765 × 100/45 = ₹1700.",
+      "options": [
+        {
+          "label": "₹1836",
+          "is_correct": false
+        },
+        {
+          "label": "₹1632",
+          "is_correct": false
+        },
+        {
+          "label": "₹1768",
+          "is_correct": false
+        },
+        {
+          "label": "₹1700",
+          "is_correct": true
+        }
+      ]
+    },
+    {
+      "chapter": "Profit and Loss",
+      "kind": "standard",
+      "difficulty": "hard",
+      "answer_type": "single",
+      "stem": "By selling an article, a man loses 21%. Had he sold it for ₹496 more, he would have gained 10%. Find the cost price.",
+      "explanation": "₹496 corresponds to (10+21)% = 31% of CP, so CP = 496 × 100/31 = ₹1600.",
+      "options": [
+        {
+          "label": "₹1536",
+          "is_correct": false
+        },
+        {
+          "label": "₹1728",
+          "is_correct": false
+        },
+        {
+          "label": "₹1600",
+          "is_correct": true
+        },
+        {
+          "label": "₹1664",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Profit and Loss",
+      "kind": "standard",
+      "difficulty": "hard",
+      "answer_type": "single",
+      "stem": "By selling an article, a man loses 21%. Had he sold it for ₹756 more, he would have gained 21%. Find the cost price.",
+      "explanation": "₹756 corresponds to (21+21)% = 42% of CP, so CP = 756 × 100/42 = ₹1800.",
+      "options": [
+        {
+          "label": "₹1728",
+          "is_correct": false
+        },
+        {
+          "label": "₹1944",
+          "is_correct": false
+        },
+        {
+          "label": "₹1872",
+          "is_correct": false
+        },
+        {
+          "label": "₹1800",
+          "is_correct": true
+        }
+      ]
+    },
+    {
+      "chapter": "Profit and Loss",
+      "kind": "standard",
+      "difficulty": "hard",
+      "answer_type": "single",
+      "stem": "By selling an article, a man loses 12%. Had he sold it for ₹245 more, he would have gained 23%. Find the cost price.",
+      "explanation": "₹245 corresponds to (23+12)% = 35% of CP, so CP = 245 × 100/35 = ₹700.",
+      "options": [
+        {
+          "label": "₹756",
+          "is_correct": false
+        },
+        {
+          "label": "₹728",
+          "is_correct": false
+        },
+        {
+          "label": "₹672",
+          "is_correct": false
+        },
+        {
+          "label": "₹700",
+          "is_correct": true
+        }
+      ]
+    },
+    {
+      "chapter": "Profit and Loss",
+      "kind": "standard",
+      "difficulty": "hard",
+      "answer_type": "single",
+      "stem": "By selling an article, a man loses 13%. Had he sold it for ₹234 more, he would have gained 5%. Find the cost price.",
+      "explanation": "₹234 corresponds to (5+13)% = 18% of CP, so CP = 234 × 100/18 = ₹1300.",
+      "options": [
+        {
+          "label": "₹1352",
+          "is_correct": false
+        },
+        {
+          "label": "₹1248",
+          "is_correct": false
+        },
+        {
+          "label": "₹1300",
+          "is_correct": true
+        },
+        {
+          "label": "₹1404",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Profit and Loss",
+      "kind": "standard",
+      "difficulty": "hard",
+      "answer_type": "single",
+      "stem": "By selling an article, a man loses 19%. Had he sold it for ₹720 more, he would have gained 17%. Find the cost price.",
+      "explanation": "₹720 corresponds to (17+19)% = 36% of CP, so CP = 720 × 100/36 = ₹2000.",
+      "options": [
+        {
+          "label": "₹2080",
+          "is_correct": false
+        },
+        {
+          "label": "₹2000",
+          "is_correct": true
+        },
+        {
+          "label": "₹1920",
+          "is_correct": false
+        },
+        {
+          "label": "₹2160",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Profit and Loss",
+      "kind": "standard",
+      "difficulty": "hard",
+      "answer_type": "single",
+      "stem": "By selling an article, a man loses 10%. Had he sold it for ₹384 more, he would have gained 22%. Find the cost price.",
+      "explanation": "₹384 corresponds to (22+10)% = 32% of CP, so CP = 384 × 100/32 = ₹1200.",
+      "options": [
+        {
+          "label": "₹1248",
+          "is_correct": false
+        },
+        {
+          "label": "₹1152",
+          "is_correct": false
+        },
+        {
+          "label": "₹1200",
+          "is_correct": true
+        },
+        {
+          "label": "₹1296",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Profit and Loss",
+      "kind": "standard",
+      "difficulty": "hard",
+      "answer_type": "single",
+      "stem": "By selling an article, a man loses 8%. Had he sold it for ₹120 more, he would have gained 16%. Find the cost price.",
+      "explanation": "₹120 corresponds to (16+8)% = 24% of CP, so CP = 120 × 100/24 = ₹500.",
+      "options": [
+        {
+          "label": "₹480",
+          "is_correct": false
+        },
+        {
+          "label": "₹520",
+          "is_correct": false
+        },
+        {
+          "label": "₹540",
+          "is_correct": false
+        },
+        {
+          "label": "₹500",
+          "is_correct": true
+        }
+      ]
+    },
+    {
+      "chapter": "Profit and Loss",
+      "kind": "standard",
+      "difficulty": "very_hard",
+      "answer_type": "single",
+      "stem": "A merchant sells one-third of his goods at a profit of 21% and the remaining two-thirds at a profit of 24%. Find his overall profit percent on the whole lot.",
+      "explanation": "Overall profit% = (1/3)×21 + (2/3)×24 = (21 + 48)/3 = 23%.",
+      "options": [
+        {
+          "label": "23%",
+          "is_correct": true
+        },
+        {
+          "label": "22%",
+          "is_correct": false
+        },
+        {
+          "label": "25%",
+          "is_correct": false
+        },
+        {
+          "label": "24%",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Profit and Loss",
+      "kind": "standard",
+      "difficulty": "very_hard",
+      "answer_type": "single",
+      "stem": "A shopkeeper marks his goods 60% above cost price and then allows a discount of 25%. Find his profit percent.",
+      "explanation": "Profit% = [(100+60)/100 × (100−25)/100 − 1] × 100 = 20%.",
+      "options": [
+        {
+          "label": "20%",
+          "is_correct": true
+        },
+        {
+          "label": "19%",
+          "is_correct": false
+        },
+        {
+          "label": "22%",
+          "is_correct": false
+        },
+        {
+          "label": "21%",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Profit and Loss",
+      "kind": "standard",
+      "difficulty": "very_hard",
+      "answer_type": "single",
+      "stem": "A shopkeeper marks his goods 40% above cost price and then allows a discount of 10%. Find his profit percent.",
+      "explanation": "Profit% = [(100+40)/100 × (100−10)/100 − 1] × 100 = 26%.",
+      "options": [
+        {
+          "label": "27%",
+          "is_correct": false
+        },
+        {
+          "label": "26%",
+          "is_correct": true
+        },
+        {
+          "label": "25%",
+          "is_correct": false
+        },
+        {
+          "label": "28%",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Profit and Loss",
+      "kind": "standard",
+      "difficulty": "very_hard",
+      "answer_type": "single",
+      "stem": "A dishonest dealer sells his goods at cost price but uses a weight of 625 grams in place of 1 kilogram. Find his gain percent.",
+      "explanation": "Gain% = (1000 − 625)/625 × 100 = 60%.",
+      "options": [
+        {
+          "label": "64%",
+          "is_correct": false
+        },
+        {
+          "label": "60%",
+          "is_correct": true
+        },
+        {
+          "label": "58%",
+          "is_correct": false
+        },
+        {
+          "label": "62%",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Profit and Loss",
+      "kind": "standard",
+      "difficulty": "very_hard",
+      "answer_type": "single",
+      "stem": "A shopkeeper marks his goods 30% above cost price and then allows a discount of 10%. Find his profit percent.",
+      "explanation": "Profit% = [(100+30)/100 × (100−10)/100 − 1] × 100 = 17%.",
+      "options": [
+        {
+          "label": "16%",
+          "is_correct": false
+        },
+        {
+          "label": "18%",
+          "is_correct": false
+        },
+        {
+          "label": "19%",
+          "is_correct": false
+        },
+        {
+          "label": "17%",
+          "is_correct": true
+        }
+      ]
+    },
+    {
+      "chapter": "Profit and Loss",
+      "kind": "standard",
+      "difficulty": "very_hard",
+      "answer_type": "single",
+      "stem": "A merchant sells one-third of his goods at a profit of 15% and the remaining two-thirds at a profit of 18%. Find his overall profit percent on the whole lot.",
+      "explanation": "Overall profit% = (1/3)×15 + (2/3)×18 = (15 + 36)/3 = 17%.",
+      "options": [
+        {
+          "label": "16%",
+          "is_correct": false
+        },
+        {
+          "label": "17%",
+          "is_correct": true
+        },
+        {
+          "label": "18%",
+          "is_correct": false
+        },
+        {
+          "label": "19%",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Profit and Loss",
+      "kind": "standard",
+      "difficulty": "very_hard",
+      "answer_type": "single",
+      "stem": "A merchant sells one-third of his goods at a profit of 12% and the remaining two-thirds at a profit of 21%. Find his overall profit percent on the whole lot.",
+      "explanation": "Overall profit% = (1/3)×12 + (2/3)×21 = (12 + 42)/3 = 18%.",
+      "options": [
+        {
+          "label": "17%",
+          "is_correct": false
+        },
+        {
+          "label": "18%",
+          "is_correct": true
+        },
+        {
+          "label": "20%",
+          "is_correct": false
+        },
+        {
+          "label": "19%",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Profit and Loss",
+      "kind": "standard",
+      "difficulty": "very_hard",
+      "answer_type": "single",
+      "stem": "A merchant sells one-third of his goods at a profit of 15% and the remaining two-thirds at a profit of 21%. Find his overall profit percent on the whole lot.",
+      "explanation": "Overall profit% = (1/3)×15 + (2/3)×21 = (15 + 42)/3 = 19%.",
+      "options": [
+        {
+          "label": "18%",
+          "is_correct": false
+        },
+        {
+          "label": "19%",
+          "is_correct": true
+        },
+        {
+          "label": "21%",
+          "is_correct": false
+        },
+        {
+          "label": "20%",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Profit and Loss",
+      "kind": "standard",
+      "difficulty": "very_hard",
+      "answer_type": "single",
+      "stem": "A merchant sells one-third of his goods at a profit of 6% and the remaining two-thirds at a profit of 12%. Find his overall profit percent on the whole lot.",
+      "explanation": "Overall profit% = (1/3)×6 + (2/3)×12 = (6 + 24)/3 = 10%.",
+      "options": [
+        {
+          "label": "11%",
+          "is_correct": false
+        },
+        {
+          "label": "9%",
+          "is_correct": false
+        },
+        {
+          "label": "10%",
+          "is_correct": true
+        },
+        {
+          "label": "12%",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Profit and Loss",
+      "kind": "standard",
+      "difficulty": "very_hard",
+      "answer_type": "single",
+      "stem": "A dishonest dealer sells his goods at cost price but uses a weight of 800 grams in place of 1 kilogram. Find his gain percent.",
+      "explanation": "Gain% = (1000 − 800)/800 × 100 = 25%.",
+      "options": [
+        {
+          "label": "25%",
+          "is_correct": true
+        },
+        {
+          "label": "27%",
+          "is_correct": false
+        },
+        {
+          "label": "26%",
+          "is_correct": false
+        },
+        {
+          "label": "24%",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Profit and Loss",
+      "kind": "standard",
+      "difficulty": "very_hard",
+      "answer_type": "single",
+      "stem": "A merchant sells one-third of his goods at a profit of 6% and the remaining two-thirds at a profit of 24%. Find his overall profit percent on the whole lot.",
+      "explanation": "Overall profit% = (1/3)×6 + (2/3)×24 = (6 + 48)/3 = 18%.",
+      "options": [
+        {
+          "label": "20%",
+          "is_correct": false
+        },
+        {
+          "label": "19%",
+          "is_correct": false
+        },
+        {
+          "label": "18%",
+          "is_correct": true
+        },
+        {
+          "label": "17%",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Profit and Loss",
+      "kind": "standard",
+      "difficulty": "very_hard",
+      "answer_type": "single",
+      "stem": "A dishonest dealer sells his goods at cost price but uses a weight of 500 grams in place of 1 kilogram. Find his gain percent.",
+      "explanation": "Gain% = (1000 − 500)/500 × 100 = 100%.",
+      "options": [
+        {
+          "label": "100%",
+          "is_correct": true
+        },
+        {
+          "label": "98%",
+          "is_correct": false
+        },
+        {
+          "label": "102%",
+          "is_correct": false
+        },
+        {
+          "label": "104%",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Profit and Loss",
+      "kind": "standard",
+      "difficulty": "very_hard",
+      "answer_type": "single",
+      "stem": "A merchant sells one-third of his goods at a profit of 24% and the remaining two-thirds at a profit of 21%. Find his overall profit percent on the whole lot.",
+      "explanation": "Overall profit% = (1/3)×24 + (2/3)×21 = (24 + 42)/3 = 22%.",
+      "options": [
+        {
+          "label": "24%",
+          "is_correct": false
+        },
+        {
+          "label": "23%",
+          "is_correct": false
+        },
+        {
+          "label": "22%",
+          "is_correct": true
+        },
+        {
+          "label": "21%",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Profit and Loss",
+      "kind": "standard",
+      "difficulty": "very_hard",
+      "answer_type": "single",
+      "stem": "A shopkeeper marks his goods 50% above cost price and then allows a discount of 20%. Find his profit percent.",
+      "explanation": "Profit% = [(100+50)/100 × (100−20)/100 − 1] × 100 = 20%.",
+      "options": [
+        {
+          "label": "22%",
+          "is_correct": false
+        },
+        {
+          "label": "19%",
+          "is_correct": false
+        },
+        {
+          "label": "20%",
+          "is_correct": true
+        },
+        {
+          "label": "21%",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Profit and Loss",
+      "kind": "standard",
+      "difficulty": "very_hard",
+      "answer_type": "single",
+      "stem": "A merchant sells one-third of his goods at a profit of 24% and the remaining two-thirds at a profit of 18%. Find his overall profit percent on the whole lot.",
+      "explanation": "Overall profit% = (1/3)×24 + (2/3)×18 = (24 + 36)/3 = 20%.",
+      "options": [
+        {
+          "label": "20%",
+          "is_correct": true
+        },
+        {
+          "label": "21%",
+          "is_correct": false
+        },
+        {
+          "label": "22%",
+          "is_correct": false
+        },
+        {
+          "label": "19%",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Profit and Loss",
+      "kind": "standard",
+      "difficulty": "very_hard",
+      "answer_type": "single",
+      "stem": "A merchant sells one-third of his goods at a profit of 21% and the remaining two-thirds at a profit of 12%. Find his overall profit percent on the whole lot.",
+      "explanation": "Overall profit% = (1/3)×21 + (2/3)×12 = (21 + 24)/3 = 15%.",
+      "options": [
+        {
+          "label": "14%",
+          "is_correct": false
+        },
+        {
+          "label": "15%",
+          "is_correct": true
+        },
+        {
+          "label": "16%",
+          "is_correct": false
+        },
+        {
+          "label": "17%",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Profit and Loss",
+      "kind": "standard",
+      "difficulty": "very_hard",
+      "answer_type": "single",
+      "stem": "A merchant sells one-third of his goods at a profit of 6% and the remaining two-thirds at a profit of 15%. Find his overall profit percent on the whole lot.",
+      "explanation": "Overall profit% = (1/3)×6 + (2/3)×15 = (6 + 30)/3 = 12%.",
+      "options": [
+        {
+          "label": "13%",
+          "is_correct": false
+        },
+        {
+          "label": "11%",
+          "is_correct": false
+        },
+        {
+          "label": "14%",
+          "is_correct": false
+        },
+        {
+          "label": "12%",
+          "is_correct": true
+        }
+      ]
+    },
+    {
+      "chapter": "Profit and Loss",
+      "kind": "standard",
+      "difficulty": "very_hard",
+      "answer_type": "single",
+      "stem": "A shopkeeper marks his goods 20% above cost price and then allows a discount of 10%. Find his profit percent.",
+      "explanation": "Profit% = [(100+20)/100 × (100−10)/100 − 1] × 100 = 8%.",
+      "options": [
+        {
+          "label": "7%",
+          "is_correct": false
+        },
+        {
+          "label": "10%",
+          "is_correct": false
+        },
+        {
+          "label": "9%",
+          "is_correct": false
+        },
+        {
+          "label": "8%",
+          "is_correct": true
+        }
+      ]
+    },
+    {
+      "chapter": "Profit and Loss",
+      "kind": "standard",
+      "difficulty": "very_hard",
+      "answer_type": "single",
+      "stem": "A merchant sells one-third of his goods at a profit of 21% and the remaining two-thirds at a profit of 18%. Find his overall profit percent on the whole lot.",
+      "explanation": "Overall profit% = (1/3)×21 + (2/3)×18 = (21 + 36)/3 = 19%.",
+      "options": [
+        {
+          "label": "20%",
+          "is_correct": false
+        },
+        {
+          "label": "19%",
+          "is_correct": true
+        },
+        {
+          "label": "21%",
+          "is_correct": false
+        },
+        {
+          "label": "18%",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Profit and Loss",
+      "kind": "standard",
+      "difficulty": "very_hard",
+      "answer_type": "single",
+      "stem": "A merchant sells one-third of his goods at a profit of 15% and the remaining two-thirds at a profit of 6%. Find his overall profit percent on the whole lot.",
+      "explanation": "Overall profit% = (1/3)×15 + (2/3)×6 = (15 + 12)/3 = 9%.",
+      "options": [
+        {
+          "label": "9%",
+          "is_correct": true
+        },
+        {
+          "label": "11%",
+          "is_correct": false
+        },
+        {
+          "label": "10%",
+          "is_correct": false
+        },
+        {
+          "label": "8%",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Profit and Loss",
+      "kind": "standard",
+      "difficulty": "very_hard",
+      "answer_type": "single",
+      "stem": "A merchant sells one-third of his goods at a profit of 9% and the remaining two-thirds at a profit of 6%. Find his overall profit percent on the whole lot.",
+      "explanation": "Overall profit% = (1/3)×9 + (2/3)×6 = (9 + 12)/3 = 7%.",
+      "options": [
+        {
+          "label": "8%",
+          "is_correct": false
+        },
+        {
+          "label": "7%",
+          "is_correct": true
+        },
+        {
+          "label": "9%",
+          "is_correct": false
+        },
+        {
+          "label": "6%",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Profit and Loss",
+      "kind": "standard",
+      "difficulty": "very_hard",
+      "answer_type": "single",
+      "stem": "A merchant sells one-third of his goods at a profit of 12% and the remaining two-thirds at a profit of 24%. Find his overall profit percent on the whole lot.",
+      "explanation": "Overall profit% = (1/3)×12 + (2/3)×24 = (12 + 48)/3 = 20%.",
+      "options": [
+        {
+          "label": "21%",
+          "is_correct": false
+        },
+        {
+          "label": "22%",
+          "is_correct": false
+        },
+        {
+          "label": "19%",
+          "is_correct": false
+        },
+        {
+          "label": "20%",
+          "is_correct": true
+        }
+      ]
+    },
+    {
+      "chapter": "Profit and Loss",
+      "kind": "standard",
+      "difficulty": "very_hard",
+      "answer_type": "single",
+      "stem": "A merchant sells one-third of his goods at a profit of 15% and the remaining two-thirds at a profit of 24%. Find his overall profit percent on the whole lot.",
+      "explanation": "Overall profit% = (1/3)×15 + (2/3)×24 = (15 + 48)/3 = 21%.",
+      "options": [
+        {
+          "label": "22%",
+          "is_correct": false
+        },
+        {
+          "label": "20%",
+          "is_correct": false
+        },
+        {
+          "label": "23%",
+          "is_correct": false
+        },
+        {
+          "label": "21%",
+          "is_correct": true
+        }
+      ]
+    },
+    {
+      "chapter": "Profit and Loss",
+      "kind": "standard",
+      "difficulty": "very_hard",
+      "answer_type": "single",
+      "stem": "A merchant sells one-third of his goods at a profit of 21% and the remaining two-thirds at a profit of 9%. Find his overall profit percent on the whole lot.",
+      "explanation": "Overall profit% = (1/3)×21 + (2/3)×9 = (21 + 18)/3 = 13%.",
+      "options": [
+        {
+          "label": "15%",
+          "is_correct": false
+        },
+        {
+          "label": "12%",
+          "is_correct": false
+        },
+        {
+          "label": "14%",
+          "is_correct": false
+        },
+        {
+          "label": "13%",
+          "is_correct": true
+        }
+      ]
+    },
+    {
+      "chapter": "Profit and Loss",
+      "kind": "standard",
+      "difficulty": "very_hard",
+      "answer_type": "single",
+      "stem": "A merchant sells one-third of his goods at a profit of 18% and the remaining two-thirds at a profit of 6%. Find his overall profit percent on the whole lot.",
+      "explanation": "Overall profit% = (1/3)×18 + (2/3)×6 = (18 + 12)/3 = 10%.",
+      "options": [
+        {
+          "label": "12%",
+          "is_correct": false
+        },
+        {
+          "label": "10%",
+          "is_correct": true
+        },
+        {
+          "label": "9%",
+          "is_correct": false
+        },
+        {
+          "label": "11%",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Profit and Loss",
+      "kind": "standard",
+      "difficulty": "very_hard",
+      "answer_type": "single",
+      "stem": "A merchant sells one-third of his goods at a profit of 6% and the remaining two-thirds at a profit of 9%. Find his overall profit percent on the whole lot.",
+      "explanation": "Overall profit% = (1/3)×6 + (2/3)×9 = (6 + 18)/3 = 8%.",
+      "options": [
+        {
+          "label": "10%",
+          "is_correct": false
+        },
+        {
+          "label": "7%",
+          "is_correct": false
+        },
+        {
+          "label": "9%",
+          "is_correct": false
+        },
+        {
+          "label": "8%",
+          "is_correct": true
+        }
+      ]
+    },
+    {
+      "chapter": "Profit and Loss",
+      "kind": "standard",
+      "difficulty": "very_hard",
+      "answer_type": "single",
+      "stem": "A merchant sells one-third of his goods at a profit of 9% and the remaining two-thirds at a profit of 21%. Find his overall profit percent on the whole lot.",
+      "explanation": "Overall profit% = (1/3)×9 + (2/3)×21 = (9 + 42)/3 = 17%.",
+      "options": [
+        {
+          "label": "17%",
+          "is_correct": true
+        },
+        {
+          "label": "18%",
+          "is_correct": false
+        },
+        {
+          "label": "16%",
+          "is_correct": false
+        },
+        {
+          "label": "19%",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Profit and Loss",
+      "kind": "standard",
+      "difficulty": "very_hard",
+      "answer_type": "single",
+      "stem": "A shopkeeper marks his goods 25% above cost price and then allows a discount of 4%. Find his profit percent.",
+      "explanation": "Profit% = [(100+25)/100 × (100−4)/100 − 1] × 100 = 20%.",
+      "options": [
+        {
+          "label": "19%",
+          "is_correct": false
+        },
+        {
+          "label": "22%",
+          "is_correct": false
+        },
+        {
+          "label": "21%",
+          "is_correct": false
+        },
+        {
+          "label": "20%",
+          "is_correct": true
+        }
+      ]
+    },
+    {
+      "chapter": "Profit and Loss",
+      "kind": "standard",
+      "difficulty": "very_hard",
+      "answer_type": "single",
+      "stem": "A merchant sells one-third of his goods at a profit of 18% and the remaining two-thirds at a profit of 15%. Find his overall profit percent on the whole lot.",
+      "explanation": "Overall profit% = (1/3)×18 + (2/3)×15 = (18 + 30)/3 = 16%.",
+      "options": [
+        {
+          "label": "16%",
+          "is_correct": true
+        },
+        {
+          "label": "17%",
+          "is_correct": false
+        },
+        {
+          "label": "15%",
+          "is_correct": false
+        },
+        {
+          "label": "18%",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Profit and Loss",
+      "kind": "standard",
+      "difficulty": "very_hard",
+      "answer_type": "single",
+      "stem": "A merchant sells one-third of his goods at a profit of 12% and the remaining two-thirds at a profit of 9%. Find his overall profit percent on the whole lot.",
+      "explanation": "Overall profit% = (1/3)×12 + (2/3)×9 = (12 + 18)/3 = 10%.",
+      "options": [
+        {
+          "label": "11%",
+          "is_correct": false
+        },
+        {
+          "label": "10%",
+          "is_correct": true
+        },
+        {
+          "label": "12%",
+          "is_correct": false
+        },
+        {
+          "label": "9%",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Profit and Loss",
+      "kind": "standard",
+      "difficulty": "very_hard",
+      "answer_type": "single",
+      "stem": "A merchant sells one-third of his goods at a profit of 24% and the remaining two-thirds at a profit of 12%. Find his overall profit percent on the whole lot.",
+      "explanation": "Overall profit% = (1/3)×24 + (2/3)×12 = (24 + 24)/3 = 16%.",
+      "options": [
+        {
+          "label": "17%",
+          "is_correct": false
+        },
+        {
+          "label": "18%",
+          "is_correct": false
+        },
+        {
+          "label": "15%",
+          "is_correct": false
+        },
+        {
+          "label": "16%",
+          "is_correct": true
+        }
+      ]
+    },
+    {
+      "chapter": "Profit and Loss",
+      "kind": "standard",
+      "difficulty": "very_hard",
+      "answer_type": "single",
+      "stem": "A merchant sells one-third of his goods at a profit of 12% and the remaining two-thirds at a profit of 6%. Find his overall profit percent on the whole lot.",
+      "explanation": "Overall profit% = (1/3)×12 + (2/3)×6 = (12 + 12)/3 = 8%.",
+      "options": [
+        {
+          "label": "7%",
+          "is_correct": false
+        },
+        {
+          "label": "9%",
+          "is_correct": false
+        },
+        {
+          "label": "10%",
+          "is_correct": false
+        },
+        {
+          "label": "8%",
+          "is_correct": true
+        }
+      ]
+    },
+    {
+      "chapter": "Profit and Loss",
+      "kind": "standard",
+      "difficulty": "very_hard",
+      "answer_type": "single",
+      "stem": "A merchant sells one-third of his goods at a profit of 21% and the remaining two-thirds at a profit of 6%. Find his overall profit percent on the whole lot.",
+      "explanation": "Overall profit% = (1/3)×21 + (2/3)×6 = (21 + 12)/3 = 11%.",
+      "options": [
+        {
+          "label": "10%",
+          "is_correct": false
+        },
+        {
+          "label": "13%",
+          "is_correct": false
+        },
+        {
+          "label": "12%",
+          "is_correct": false
+        },
+        {
+          "label": "11%",
+          "is_correct": true
+        }
+      ]
+    },
+    {
+      "chapter": "Profit and Loss",
+      "kind": "standard",
+      "difficulty": "very_hard",
+      "answer_type": "single",
+      "stem": "A merchant sells one-third of his goods at a profit of 6% and the remaining two-thirds at a profit of 21%. Find his overall profit percent on the whole lot.",
+      "explanation": "Overall profit% = (1/3)×6 + (2/3)×21 = (6 + 42)/3 = 16%.",
+      "options": [
+        {
+          "label": "18%",
+          "is_correct": false
+        },
+        {
+          "label": "16%",
+          "is_correct": true
+        },
+        {
+          "label": "15%",
+          "is_correct": false
+        },
+        {
+          "label": "17%",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Profit and Loss",
+      "kind": "standard",
+      "difficulty": "very_hard",
+      "answer_type": "single",
+      "stem": "A merchant sells one-third of his goods at a profit of 15% and the remaining two-thirds at a profit of 9%. Find his overall profit percent on the whole lot.",
+      "explanation": "Overall profit% = (1/3)×15 + (2/3)×9 = (15 + 18)/3 = 11%.",
+      "options": [
+        {
+          "label": "13%",
+          "is_correct": false
+        },
+        {
+          "label": "12%",
+          "is_correct": false
+        },
+        {
+          "label": "11%",
+          "is_correct": true
+        },
+        {
+          "label": "10%",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Profit and Loss",
+      "kind": "standard",
+      "difficulty": "very_hard",
+      "answer_type": "single",
+      "stem": "A merchant sells one-third of his goods at a profit of 24% and the remaining two-thirds at a profit of 9%. Find his overall profit percent on the whole lot.",
+      "explanation": "Overall profit% = (1/3)×24 + (2/3)×9 = (24 + 18)/3 = 14%.",
+      "options": [
+        {
+          "label": "15%",
+          "is_correct": false
+        },
+        {
+          "label": "14%",
+          "is_correct": true
+        },
+        {
+          "label": "16%",
+          "is_correct": false
+        },
+        {
+          "label": "13%",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Profit and Loss",
+      "kind": "standard",
+      "difficulty": "very_hard",
+      "answer_type": "single",
+      "stem": "A merchant sells one-third of his goods at a profit of 15% and the remaining two-thirds at a profit of 12%. Find his overall profit percent on the whole lot.",
+      "explanation": "Overall profit% = (1/3)×15 + (2/3)×12 = (15 + 24)/3 = 13%.",
+      "options": [
+        {
+          "label": "14%",
+          "is_correct": false
+        },
+        {
+          "label": "15%",
+          "is_correct": false
+        },
+        {
+          "label": "12%",
+          "is_correct": false
+        },
+        {
+          "label": "13%",
+          "is_correct": true
+        }
+      ]
+    },
+    {
+      "chapter": "Profit and Loss",
+      "kind": "standard",
+      "difficulty": "very_hard",
+      "answer_type": "single",
+      "stem": "A merchant sells one-third of his goods at a profit of 12% and the remaining two-thirds at a profit of 15%. Find his overall profit percent on the whole lot.",
+      "explanation": "Overall profit% = (1/3)×12 + (2/3)×15 = (12 + 30)/3 = 14%.",
+      "options": [
+        {
+          "label": "13%",
+          "is_correct": false
+        },
+        {
+          "label": "16%",
+          "is_correct": false
+        },
+        {
+          "label": "15%",
+          "is_correct": false
+        },
+        {
+          "label": "14%",
+          "is_correct": true
+        }
+      ]
+    },
+    {
+      "chapter": "Profit and Loss",
+      "kind": "standard",
+      "difficulty": "very_hard",
+      "answer_type": "single",
+      "stem": "A merchant sells one-third of his goods at a profit of 6% and the remaining two-thirds at a profit of 18%. Find his overall profit percent on the whole lot.",
+      "explanation": "Overall profit% = (1/3)×6 + (2/3)×18 = (6 + 36)/3 = 14%.",
+      "options": [
+        {
+          "label": "13%",
+          "is_correct": false
+        },
+        {
+          "label": "14%",
+          "is_correct": true
+        },
+        {
+          "label": "15%",
+          "is_correct": false
+        },
+        {
+          "label": "16%",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Profit and Loss",
+      "kind": "standard",
+      "difficulty": "very_hard",
+      "answer_type": "single",
+      "stem": "A merchant sells one-third of his goods at a profit of 18% and the remaining two-thirds at a profit of 9%. Find his overall profit percent on the whole lot.",
+      "explanation": "Overall profit% = (1/3)×18 + (2/3)×9 = (18 + 18)/3 = 12%.",
+      "options": [
+        {
+          "label": "13%",
+          "is_correct": false
+        },
+        {
+          "label": "11%",
+          "is_correct": false
+        },
+        {
+          "label": "12%",
+          "is_correct": true
+        },
+        {
+          "label": "14%",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Profit and Loss",
+      "kind": "standard",
+      "difficulty": "very_hard",
+      "answer_type": "single",
+      "stem": "A merchant sells one-third of his goods at a profit of 24% and the remaining two-thirds at a profit of 6%. Find his overall profit percent on the whole lot.",
+      "explanation": "Overall profit% = (1/3)×24 + (2/3)×6 = (24 + 12)/3 = 12%.",
+      "options": [
+        {
+          "label": "11%",
+          "is_correct": false
+        },
+        {
+          "label": "14%",
+          "is_correct": false
+        },
+        {
+          "label": "12%",
+          "is_correct": true
+        },
+        {
+          "label": "13%",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Profit and Loss",
+      "kind": "standard",
+      "difficulty": "very_hard",
+      "answer_type": "single",
+      "stem": "A merchant sells one-third of his goods at a profit of 9% and the remaining two-thirds at a profit of 12%. Find his overall profit percent on the whole lot.",
+      "explanation": "Overall profit% = (1/3)×9 + (2/3)×12 = (9 + 24)/3 = 11%.",
+      "options": [
+        {
+          "label": "10%",
+          "is_correct": false
+        },
+        {
+          "label": "13%",
+          "is_correct": false
+        },
+        {
+          "label": "12%",
+          "is_correct": false
+        },
+        {
+          "label": "11%",
+          "is_correct": true
+        }
+      ]
+    },
+    {
+      "chapter": "Profit and Loss",
+      "kind": "standard",
+      "difficulty": "very_hard",
+      "answer_type": "single",
+      "stem": "A merchant sells one-third of his goods at a profit of 9% and the remaining two-thirds at a profit of 24%. Find his overall profit percent on the whole lot.",
+      "explanation": "Overall profit% = (1/3)×9 + (2/3)×24 = (9 + 48)/3 = 19%.",
+      "options": [
+        {
+          "label": "18%",
+          "is_correct": false
+        },
+        {
+          "label": "19%",
+          "is_correct": true
+        },
+        {
+          "label": "20%",
+          "is_correct": false
+        },
+        {
+          "label": "21%",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Profit and Loss",
+      "kind": "standard",
+      "difficulty": "very_hard",
+      "answer_type": "single",
+      "stem": "A merchant sells one-third of his goods at a profit of 18% and the remaining two-thirds at a profit of 12%. Find his overall profit percent on the whole lot.",
+      "explanation": "Overall profit% = (1/3)×18 + (2/3)×12 = (18 + 24)/3 = 14%.",
+      "options": [
+        {
+          "label": "15%",
+          "is_correct": false
+        },
+        {
+          "label": "13%",
+          "is_correct": false
+        },
+        {
+          "label": "16%",
+          "is_correct": false
+        },
+        {
+          "label": "14%",
+          "is_correct": true
+        }
+      ]
+    },
+    {
+      "chapter": "Profit and Loss",
+      "kind": "standard",
+      "difficulty": "very_hard",
+      "answer_type": "single",
+      "stem": "A merchant sells one-third of his goods at a profit of 24% and the remaining two-thirds at a profit of 15%. Find his overall profit percent on the whole lot.",
+      "explanation": "Overall profit% = (1/3)×24 + (2/3)×15 = (24 + 30)/3 = 18%.",
+      "options": [
+        {
+          "label": "18%",
+          "is_correct": true
+        },
+        {
+          "label": "17%",
+          "is_correct": false
+        },
+        {
+          "label": "19%",
+          "is_correct": false
+        },
+        {
+          "label": "20%",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Profit and Loss",
+      "kind": "standard",
+      "difficulty": "very_hard",
+      "answer_type": "single",
+      "stem": "A merchant sells one-third of his goods at a profit of 9% and the remaining two-thirds at a profit of 15%. Find his overall profit percent on the whole lot.",
+      "explanation": "Overall profit% = (1/3)×9 + (2/3)×15 = (9 + 30)/3 = 13%.",
+      "options": [
+        {
+          "label": "15%",
+          "is_correct": false
+        },
+        {
+          "label": "12%",
+          "is_correct": false
+        },
+        {
+          "label": "13%",
+          "is_correct": true
+        },
+        {
+          "label": "14%",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Profit and Loss",
+      "kind": "standard",
+      "difficulty": "very_hard",
+      "answer_type": "single",
+      "stem": "A merchant sells one-third of his goods at a profit of 21% and the remaining two-thirds at a profit of 15%. Find his overall profit percent on the whole lot.",
+      "explanation": "Overall profit% = (1/3)×21 + (2/3)×15 = (21 + 30)/3 = 17%.",
+      "options": [
+        {
+          "label": "16%",
+          "is_correct": false
+        },
+        {
+          "label": "19%",
+          "is_correct": false
+        },
+        {
+          "label": "17%",
+          "is_correct": true
+        },
+        {
+          "label": "18%",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Profit and Loss",
+      "kind": "standard",
+      "difficulty": "very_hard",
+      "answer_type": "single",
+      "stem": "A merchant sells one-third of his goods at a profit of 18% and the remaining two-thirds at a profit of 21%. Find his overall profit percent on the whole lot.",
+      "explanation": "Overall profit% = (1/3)×18 + (2/3)×21 = (18 + 42)/3 = 20%.",
+      "options": [
+        {
+          "label": "20%",
+          "is_correct": true
+        },
+        {
+          "label": "21%",
+          "is_correct": false
+        },
+        {
+          "label": "19%",
+          "is_correct": false
+        },
+        {
+          "label": "22%",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Profit and Loss",
+      "kind": "standard",
+      "difficulty": "very_hard",
+      "answer_type": "single",
+      "stem": "A merchant sells one-third of his goods at a profit of 9% and the remaining two-thirds at a profit of 18%. Find his overall profit percent on the whole lot.",
+      "explanation": "Overall profit% = (1/3)×9 + (2/3)×18 = (9 + 36)/3 = 15%.",
+      "options": [
+        {
+          "label": "15%",
+          "is_correct": true
+        },
+        {
+          "label": "17%",
+          "is_correct": false
+        },
+        {
+          "label": "14%",
+          "is_correct": false
+        },
+        {
+          "label": "16%",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Profit and Loss",
+      "kind": "standard",
+      "difficulty": "very_hard",
+      "answer_type": "single",
+      "stem": "A merchant sells one-third of his goods at a profit of 12% and the remaining two-thirds at a profit of 18%. Find his overall profit percent on the whole lot.",
+      "explanation": "Overall profit% = (1/3)×12 + (2/3)×18 = (12 + 36)/3 = 16%.",
+      "options": [
+        {
+          "label": "15%",
+          "is_correct": false
+        },
+        {
+          "label": "16%",
+          "is_correct": true
+        },
+        {
+          "label": "18%",
+          "is_correct": false
+        },
+        {
+          "label": "17%",
+          "is_correct": false
+        }
+      ]
+    }
+  ]
+}

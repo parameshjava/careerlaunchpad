@@ -1,14 +1,14 @@
 "use client";
 
-import { useEffect, useRef, useState } from "react";
+import { useState } from "react";
 import { useActionState } from "react";
 import { createInvite, type InviteState } from "./actions";
 import { createEmployer } from "../employers/actions";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
+import { CollegePicker, type College } from "@/components/analytics/CollegePicker";
 
-type College = { id: string; name: string; place: string | null; state?: string | null };
 type Employer = { id: string; name: string };
 
 // Platform-user roles only. Students are onboarded via the Students section
@@ -17,7 +17,7 @@ const ROLES = [
   { key: "college_admin", label: "College Admin" },
   { key: "employer", label: "Employer" },
   { key: "mentor", label: "Mentor" },
-  { key: "platform_admin", label: "Admin" },
+  { key: "platform_admin", label: "Platform Admin" },
   { key: "coordinator", label: "Coordinator" },
   { key: "support", label: "Support Team" },
 ];
@@ -96,7 +96,14 @@ export function InviteForm({ employers, canInviteOwner = false }: { employers: E
         </select>
       </div>
 
-      {needsCollege && <CollegePicker value={college} onPick={setCollege} />}
+      {needsCollege && (
+        <div className="grid gap-1.5 sm:col-span-2">
+          {/* Hidden field carries the id to the server action; the picker shows
+              the full college details once one is chosen. */}
+          <input type="hidden" name="college_id" value={college?.id ?? ""} required />
+          <CollegePicker selected={college} onSelect={setCollege} onClear={() => setCollege(null)} />
+        </div>
+      )}
 
       {needsEmployer && (
         <div className="grid gap-1.5">
@@ -150,71 +157,3 @@ export function InviteForm({ employers, canInviteOwner = false }: { employers: E
   );
 }
 
-/** Typeahead for picking a college (the table has ~10k rows). Controlled by the
- * parent so it can tell when a college has been chosen; submits the chosen id
- * via a hidden `college_id` input. */
-function CollegePicker({
-  value,
-  onPick,
-}: {
-  value: College | null;
-  onPick: (c: College | null) => void;
-}) {
-  const [query, setQuery] = useState("");
-  const [results, setResults] = useState<College[]>([]);
-  const [open, setOpen] = useState(false);
-  const debounce = useRef<ReturnType<typeof setTimeout> | null>(null);
-
-  useEffect(() => {
-    if (value || query.trim().length < 2) {
-      setResults([]);
-      return;
-    }
-    if (debounce.current) clearTimeout(debounce.current);
-    debounce.current = setTimeout(async () => {
-      const res = await fetch(`/api/colleges/search?q=${encodeURIComponent(query)}`);
-      if (res.ok) {
-        const { results } = await res.json();
-        setResults(results);
-        setOpen(true);
-      }
-    }, 250);
-  }, [query, value]);
-
-  return (
-    <div className="relative grid gap-1.5">
-      <Label htmlFor="college_search">College</Label>
-      <input type="hidden" name="college_id" value={value?.id ?? ""} required />
-      <Input
-        id="college_search"
-        autoComplete="off"
-        placeholder="Search colleges…"
-        value={value ? `${value.name}${value.place ? ` — ${value.place}` : ""}` : query}
-        onChange={(e) => {
-          onPick(null);
-          setQuery(e.target.value);
-        }}
-        onFocus={() => results.length && setOpen(true)}
-      />
-      {open && !value && results.length > 0 && (
-        <ul className="border-input bg-background absolute top-full z-50 mt-1 max-h-56 w-full overflow-auto rounded-md border text-sm shadow-md">
-          {results.map((c) => (
-            <li key={c.id}>
-              <button
-                type="button"
-                className="hover:bg-muted w-full px-3 py-2 text-left"
-                onClick={() => {
-                  onPick(c);
-                  setOpen(false);
-                }}
-              >
-                {c.name}
-                {c.place ? <span className="text-muted-foreground"> — {c.place}{c.state ? `, ${c.state}` : ""}</span> : null}
-              </button>
-            </li>
-          ))}
-        </ul>
-      )}
-    </div>
-  );
-}

@@ -17,7 +17,7 @@ import { cn } from "@/lib/utils";
 
 // Search results carry only the light columns; a selected college (from the
 // server) carries the full record for the details panel.
-type College = {
+export type College = {
   id: string;
   name: string;
   place?: string | null;
@@ -103,9 +103,15 @@ function titleCase(s: string) {
 export function CollegePicker({
   selected,
   disabled = false,
+  onSelect,
+  onClear: onClearProp,
 }: {
   selected: College | null;
   disabled?: boolean;
+  /** Controlled mode: called with the picked college instead of navigating. */
+  onSelect?: (c: College) => void;
+  /** Controlled mode: called when the selection is cleared. */
+  onClear?: () => void;
 }) {
   const router = useRouter();
   const pathname = usePathname();
@@ -145,17 +151,19 @@ export function CollegePicker({
     setOpen(false);
     setEditing(false);
     setQuery("");
+    if (onSelect) return onSelect(c); // controlled — no navigation
     const params = new URLSearchParams(searchParams.toString());
     params.set("college", c.id);
     router.push(`?${params.toString()}`);
   }
 
-  // Clear the selection → drop the ?college param and reset the page to the
-  // empty (search) state.
+  // Clear the selection → controlled callback, or drop the ?college param and
+  // reset the page to the empty (search) state.
   function clear() {
     setOpen(false);
     setEditing(false);
     setQuery("");
+    if (onClearProp) return onClearProp();
     const params = new URLSearchParams(searchParams.toString());
     params.delete("college");
     const qs = params.toString();

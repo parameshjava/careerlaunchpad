@@ -1,0 +1,5205 @@
+{
+  "subject": "Arithmetic",
+  "questions": [
+    {
+      "chapter": "Simplification",
+      "kind": "standard",
+      "difficulty": "easy",
+      "answer_type": "single",
+      "stem": "Simplify: (6 + 28) × 11",
+      "explanation": "(6+28) = 34; 34 × 11 = 374.",
+      "options": [
+        {
+          "label": "389",
+          "is_correct": false
+        },
+        {
+          "label": "404",
+          "is_correct": false
+        },
+        {
+          "label": "374",
+          "is_correct": true
+        },
+        {
+          "label": "359",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Simplification",
+      "kind": "standard",
+      "difficulty": "easy",
+      "answer_type": "single",
+      "stem": "Simplify: 1/2 of 32",
+      "explanation": "1/2 × 32 = 16.",
+      "options": [
+        {
+          "label": "17",
+          "is_correct": false
+        },
+        {
+          "label": "15",
+          "is_correct": false
+        },
+        {
+          "label": "18",
+          "is_correct": false
+        },
+        {
+          "label": "16",
+          "is_correct": true
+        }
+      ]
+    },
+    {
+      "chapter": "Simplification",
+      "kind": "standard",
+      "difficulty": "easy",
+      "answer_type": "single",
+      "stem": "Simplify: 1/2 of 38",
+      "explanation": "1/2 × 38 = 19.",
+      "options": [
+        {
+          "label": "20",
+          "is_correct": false
+        },
+        {
+          "label": "19",
+          "is_correct": true
+        },
+        {
+          "label": "21",
+          "is_correct": false
+        },
+        {
+          "label": "18",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Simplification",
+      "kind": "standard",
+      "difficulty": "easy",
+      "answer_type": "single",
+      "stem": "Simplify: 5/6 of 24",
+      "explanation": "5/6 × 24 = 20.",
+      "options": [
+        {
+          "label": "20",
+          "is_correct": true
+        },
+        {
+          "label": "21",
+          "is_correct": false
+        },
+        {
+          "label": "22",
+          "is_correct": false
+        },
+        {
+          "label": "19",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Simplification",
+      "kind": "standard",
+      "difficulty": "easy",
+      "answer_type": "single",
+      "stem": "Simplify: 1/3 of 36",
+      "explanation": "1/3 × 36 = 12.",
+      "options": [
+        {
+          "label": "12",
+          "is_correct": true
+        },
+        {
+          "label": "11",
+          "is_correct": false
+        },
+        {
+          "label": "14",
+          "is_correct": false
+        },
+        {
+          "label": "13",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Simplification",
+      "kind": "standard",
+      "difficulty": "easy",
+      "answer_type": "single",
+      "stem": "Simplify: (14 + 2) × 10",
+      "explanation": "(14+2) = 16; 16 × 10 = 160.",
+      "options": [
+        {
+          "label": "162",
+          "is_correct": false
+        },
+        {
+          "label": "158",
+          "is_correct": false
+        },
+        {
+          "label": "160",
+          "is_correct": true
+        },
+        {
+          "label": "164",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Simplification",
+      "kind": "standard",
+      "difficulty": "easy",
+      "answer_type": "single",
+      "stem": "Simplify: (30 + 20) × 8",
+      "explanation": "(30+20) = 50; 50 × 8 = 400.",
+      "options": [
+        {
+          "label": "384",
+          "is_correct": false
+        },
+        {
+          "label": "400",
+          "is_correct": true
+        },
+        {
+          "label": "432",
+          "is_correct": false
+        },
+        {
+          "label": "416",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Simplification",
+      "kind": "standard",
+      "difficulty": "easy",
+      "answer_type": "single",
+      "stem": "Simplify: 5/6 of 42",
+      "explanation": "5/6 × 42 = 35.",
+      "options": [
+        {
+          "label": "35",
+          "is_correct": true
+        },
+        {
+          "label": "36",
+          "is_correct": false
+        },
+        {
+          "label": "37",
+          "is_correct": false
+        },
+        {
+          "label": "34",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Simplification",
+      "kind": "standard",
+      "difficulty": "easy",
+      "answer_type": "single",
+      "stem": "Simplify: 1/2 of 8",
+      "explanation": "1/2 × 8 = 4.",
+      "options": [
+        {
+          "label": "6",
+          "is_correct": false
+        },
+        {
+          "label": "5",
+          "is_correct": false
+        },
+        {
+          "label": "4",
+          "is_correct": true
+        },
+        {
+          "label": "3",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Simplification",
+      "kind": "standard",
+      "difficulty": "easy",
+      "answer_type": "single",
+      "stem": "Simplify: 33 + 2 × 3",
+      "explanation": "By BODMAS, 2×3 = 6, then 33 + 6 = 39.",
+      "options": [
+        {
+          "label": "40",
+          "is_correct": false
+        },
+        {
+          "label": "38",
+          "is_correct": false
+        },
+        {
+          "label": "41",
+          "is_correct": false
+        },
+        {
+          "label": "39",
+          "is_correct": true
+        }
+      ]
+    },
+    {
+      "chapter": "Simplification",
+      "kind": "standard",
+      "difficulty": "easy",
+      "answer_type": "single",
+      "stem": "Simplify: 1/4 of 72",
+      "explanation": "1/4 × 72 = 18.",
+      "options": [
+        {
+          "label": "19",
+          "is_correct": false
+        },
+        {
+          "label": "18",
+          "is_correct": true
+        },
+        {
+          "label": "20",
+          "is_correct": false
+        },
+        {
+          "label": "17",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Simplification",
+      "kind": "standard",
+      "difficulty": "easy",
+      "answer_type": "single",
+      "stem": "Simplify: (19 + 21) × 5",
+      "explanation": "(19+21) = 40; 40 × 5 = 200.",
+      "options": [
+        {
+          "label": "216",
+          "is_correct": false
+        },
+        {
+          "label": "200",
+          "is_correct": true
+        },
+        {
+          "label": "192",
+          "is_correct": false
+        },
+        {
+          "label": "208",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Simplification",
+      "kind": "standard",
+      "difficulty": "easy",
+      "answer_type": "single",
+      "stem": "Simplify: 13 + 3 × 7",
+      "explanation": "By BODMAS, 3×7 = 21, then 13 + 21 = 34.",
+      "options": [
+        {
+          "label": "35",
+          "is_correct": false
+        },
+        {
+          "label": "36",
+          "is_correct": false
+        },
+        {
+          "label": "34",
+          "is_correct": true
+        },
+        {
+          "label": "33",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Simplification",
+      "kind": "standard",
+      "difficulty": "easy",
+      "answer_type": "single",
+      "stem": "Simplify: (11 + 20) × 6",
+      "explanation": "(11+20) = 31; 31 × 6 = 186.",
+      "options": [
+        {
+          "label": "190",
+          "is_correct": false
+        },
+        {
+          "label": "188",
+          "is_correct": false
+        },
+        {
+          "label": "184",
+          "is_correct": false
+        },
+        {
+          "label": "186",
+          "is_correct": true
+        }
+      ]
+    },
+    {
+      "chapter": "Simplification",
+      "kind": "standard",
+      "difficulty": "easy",
+      "answer_type": "single",
+      "stem": "Simplify: (26 + 4) × 5",
+      "explanation": "(26+4) = 30; 30 × 5 = 150.",
+      "options": [
+        {
+          "label": "152",
+          "is_correct": false
+        },
+        {
+          "label": "148",
+          "is_correct": false
+        },
+        {
+          "label": "154",
+          "is_correct": false
+        },
+        {
+          "label": "150",
+          "is_correct": true
+        }
+      ]
+    },
+    {
+      "chapter": "Simplification",
+      "kind": "standard",
+      "difficulty": "easy",
+      "answer_type": "single",
+      "stem": "Simplify: 40 + 10 × 9",
+      "explanation": "By BODMAS, 10×9 = 90, then 40 + 90 = 130.",
+      "options": [
+        {
+          "label": "134",
+          "is_correct": false
+        },
+        {
+          "label": "130",
+          "is_correct": true
+        },
+        {
+          "label": "132",
+          "is_correct": false
+        },
+        {
+          "label": "128",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Simplification",
+      "kind": "standard",
+      "difficulty": "easy",
+      "answer_type": "single",
+      "stem": "Simplify: 1/6 of 54",
+      "explanation": "1/6 × 54 = 9.",
+      "options": [
+        {
+          "label": "10",
+          "is_correct": false
+        },
+        {
+          "label": "11",
+          "is_correct": false
+        },
+        {
+          "label": "8",
+          "is_correct": false
+        },
+        {
+          "label": "9",
+          "is_correct": true
+        }
+      ]
+    },
+    {
+      "chapter": "Simplification",
+      "kind": "standard",
+      "difficulty": "easy",
+      "answer_type": "single",
+      "stem": "Simplify: (19 + 28) × 10",
+      "explanation": "(19+28) = 47; 47 × 10 = 470.",
+      "options": [
+        {
+          "label": "508",
+          "is_correct": false
+        },
+        {
+          "label": "489",
+          "is_correct": false
+        },
+        {
+          "label": "451",
+          "is_correct": false
+        },
+        {
+          "label": "470",
+          "is_correct": true
+        }
+      ]
+    },
+    {
+      "chapter": "Simplification",
+      "kind": "standard",
+      "difficulty": "easy",
+      "answer_type": "single",
+      "stem": "Simplify: 41 + 5 × 9",
+      "explanation": "By BODMAS, 5×9 = 45, then 41 + 45 = 86.",
+      "options": [
+        {
+          "label": "86",
+          "is_correct": true
+        },
+        {
+          "label": "88",
+          "is_correct": false
+        },
+        {
+          "label": "84",
+          "is_correct": false
+        },
+        {
+          "label": "90",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Simplification",
+      "kind": "standard",
+      "difficulty": "easy",
+      "answer_type": "single",
+      "stem": "Simplify: 26 + 10 × 4",
+      "explanation": "By BODMAS, 10×4 = 40, then 26 + 40 = 66.",
+      "options": [
+        {
+          "label": "66",
+          "is_correct": true
+        },
+        {
+          "label": "64",
+          "is_correct": false
+        },
+        {
+          "label": "70",
+          "is_correct": false
+        },
+        {
+          "label": "68",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Simplification",
+      "kind": "standard",
+      "difficulty": "easy",
+      "answer_type": "single",
+      "stem": "Simplify: 1/4 of 12",
+      "explanation": "1/4 × 12 = 3.",
+      "options": [
+        {
+          "label": "2",
+          "is_correct": false
+        },
+        {
+          "label": "4",
+          "is_correct": false
+        },
+        {
+          "label": "3",
+          "is_correct": true
+        },
+        {
+          "label": "5",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Simplification",
+      "kind": "standard",
+      "difficulty": "easy",
+      "answer_type": "single",
+      "stem": "Simplify: 54 + 5 × 7",
+      "explanation": "By BODMAS, 5×7 = 35, then 54 + 35 = 89.",
+      "options": [
+        {
+          "label": "89",
+          "is_correct": true
+        },
+        {
+          "label": "91",
+          "is_correct": false
+        },
+        {
+          "label": "87",
+          "is_correct": false
+        },
+        {
+          "label": "93",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Simplification",
+      "kind": "standard",
+      "difficulty": "easy",
+      "answer_type": "single",
+      "stem": "Simplify: (22 + 24) × 12",
+      "explanation": "(22+24) = 46; 46 × 12 = 552.",
+      "options": [
+        {
+          "label": "574",
+          "is_correct": false
+        },
+        {
+          "label": "530",
+          "is_correct": false
+        },
+        {
+          "label": "552",
+          "is_correct": true
+        },
+        {
+          "label": "596",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Simplification",
+      "kind": "standard",
+      "difficulty": "easy",
+      "answer_type": "single",
+      "stem": "Simplify: 2/3 of 24",
+      "explanation": "2/3 × 24 = 16.",
+      "options": [
+        {
+          "label": "15",
+          "is_correct": false
+        },
+        {
+          "label": "17",
+          "is_correct": false
+        },
+        {
+          "label": "18",
+          "is_correct": false
+        },
+        {
+          "label": "16",
+          "is_correct": true
+        }
+      ]
+    },
+    {
+      "chapter": "Simplification",
+      "kind": "standard",
+      "difficulty": "easy",
+      "answer_type": "single",
+      "stem": "Simplify: (6 + 28) × 7",
+      "explanation": "(6+28) = 34; 34 × 7 = 238.",
+      "options": [
+        {
+          "label": "248",
+          "is_correct": false
+        },
+        {
+          "label": "238",
+          "is_correct": true
+        },
+        {
+          "label": "258",
+          "is_correct": false
+        },
+        {
+          "label": "228",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Simplification",
+      "kind": "standard",
+      "difficulty": "easy",
+      "answer_type": "single",
+      "stem": "Simplify: 1/4 of 52",
+      "explanation": "1/4 × 52 = 13.",
+      "options": [
+        {
+          "label": "14",
+          "is_correct": false
+        },
+        {
+          "label": "13",
+          "is_correct": true
+        },
+        {
+          "label": "15",
+          "is_correct": false
+        },
+        {
+          "label": "12",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Simplification",
+      "kind": "standard",
+      "difficulty": "easy",
+      "answer_type": "single",
+      "stem": "Simplify: 10 + 4 × 8",
+      "explanation": "By BODMAS, 4×8 = 32, then 10 + 32 = 42.",
+      "options": [
+        {
+          "label": "44",
+          "is_correct": false
+        },
+        {
+          "label": "42",
+          "is_correct": true
+        },
+        {
+          "label": "40",
+          "is_correct": false
+        },
+        {
+          "label": "46",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Simplification",
+      "kind": "standard",
+      "difficulty": "easy",
+      "answer_type": "single",
+      "stem": "Simplify: (2 + 7) × 2",
+      "explanation": "(2+7) = 9; 9 × 2 = 18.",
+      "options": [
+        {
+          "label": "20",
+          "is_correct": false
+        },
+        {
+          "label": "19",
+          "is_correct": false
+        },
+        {
+          "label": "18",
+          "is_correct": true
+        },
+        {
+          "label": "17",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Simplification",
+      "kind": "standard",
+      "difficulty": "easy",
+      "answer_type": "single",
+      "stem": "Simplify: (2 + 9) × 6",
+      "explanation": "(2+9) = 11; 11 × 6 = 66.",
+      "options": [
+        {
+          "label": "64",
+          "is_correct": false
+        },
+        {
+          "label": "66",
+          "is_correct": true
+        },
+        {
+          "label": "68",
+          "is_correct": false
+        },
+        {
+          "label": "70",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Simplification",
+      "kind": "standard",
+      "difficulty": "easy",
+      "answer_type": "single",
+      "stem": "Simplify: (16 + 25) × 3",
+      "explanation": "(16+25) = 41; 41 × 3 = 123.",
+      "options": [
+        {
+          "label": "123",
+          "is_correct": true
+        },
+        {
+          "label": "125",
+          "is_correct": false
+        },
+        {
+          "label": "121",
+          "is_correct": false
+        },
+        {
+          "label": "127",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Simplification",
+      "kind": "standard",
+      "difficulty": "easy",
+      "answer_type": "single",
+      "stem": "Simplify: 4/6 of 42",
+      "explanation": "4/6 × 42 = 28.",
+      "options": [
+        {
+          "label": "29",
+          "is_correct": false
+        },
+        {
+          "label": "28",
+          "is_correct": true
+        },
+        {
+          "label": "30",
+          "is_correct": false
+        },
+        {
+          "label": "27",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Simplification",
+      "kind": "standard",
+      "difficulty": "easy",
+      "answer_type": "single",
+      "stem": "Simplify: 9 + 2 × 5",
+      "explanation": "By BODMAS, 2×5 = 10, then 9 + 10 = 19.",
+      "options": [
+        {
+          "label": "18",
+          "is_correct": false
+        },
+        {
+          "label": "19",
+          "is_correct": true
+        },
+        {
+          "label": "20",
+          "is_correct": false
+        },
+        {
+          "label": "21",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Simplification",
+      "kind": "standard",
+      "difficulty": "easy",
+      "answer_type": "single",
+      "stem": "Simplify: 2/3 of 51",
+      "explanation": "2/3 × 51 = 34.",
+      "options": [
+        {
+          "label": "35",
+          "is_correct": false
+        },
+        {
+          "label": "33",
+          "is_correct": false
+        },
+        {
+          "label": "36",
+          "is_correct": false
+        },
+        {
+          "label": "34",
+          "is_correct": true
+        }
+      ]
+    },
+    {
+      "chapter": "Simplification",
+      "kind": "standard",
+      "difficulty": "easy",
+      "answer_type": "single",
+      "stem": "Simplify: 37 + 5 × 6",
+      "explanation": "By BODMAS, 5×6 = 30, then 37 + 30 = 67.",
+      "options": [
+        {
+          "label": "65",
+          "is_correct": false
+        },
+        {
+          "label": "69",
+          "is_correct": false
+        },
+        {
+          "label": "67",
+          "is_correct": true
+        },
+        {
+          "label": "71",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Simplification",
+      "kind": "standard",
+      "difficulty": "easy",
+      "answer_type": "single",
+      "stem": "Simplify: 1/5 of 70",
+      "explanation": "1/5 × 70 = 14.",
+      "options": [
+        {
+          "label": "16",
+          "is_correct": false
+        },
+        {
+          "label": "13",
+          "is_correct": false
+        },
+        {
+          "label": "15",
+          "is_correct": false
+        },
+        {
+          "label": "14",
+          "is_correct": true
+        }
+      ]
+    },
+    {
+      "chapter": "Simplification",
+      "kind": "standard",
+      "difficulty": "easy",
+      "answer_type": "single",
+      "stem": "Simplify: (3 + 27) × 10",
+      "explanation": "(3+27) = 30; 30 × 10 = 300.",
+      "options": [
+        {
+          "label": "324",
+          "is_correct": false
+        },
+        {
+          "label": "300",
+          "is_correct": true
+        },
+        {
+          "label": "288",
+          "is_correct": false
+        },
+        {
+          "label": "312",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Simplification",
+      "kind": "standard",
+      "difficulty": "easy",
+      "answer_type": "single",
+      "stem": "Simplify: 3/4 of 44",
+      "explanation": "3/4 × 44 = 33.",
+      "options": [
+        {
+          "label": "32",
+          "is_correct": false
+        },
+        {
+          "label": "33",
+          "is_correct": true
+        },
+        {
+          "label": "35",
+          "is_correct": false
+        },
+        {
+          "label": "34",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Simplification",
+      "kind": "standard",
+      "difficulty": "easy",
+      "answer_type": "single",
+      "stem": "Simplify: (14 + 20) × 6",
+      "explanation": "(14+20) = 34; 34 × 6 = 204.",
+      "options": [
+        {
+          "label": "196",
+          "is_correct": false
+        },
+        {
+          "label": "220",
+          "is_correct": false
+        },
+        {
+          "label": "212",
+          "is_correct": false
+        },
+        {
+          "label": "204",
+          "is_correct": true
+        }
+      ]
+    },
+    {
+      "chapter": "Simplification",
+      "kind": "standard",
+      "difficulty": "easy",
+      "answer_type": "single",
+      "stem": "Simplify: 42 + 9 × 9",
+      "explanation": "By BODMAS, 9×9 = 81, then 42 + 81 = 123.",
+      "options": [
+        {
+          "label": "123",
+          "is_correct": true
+        },
+        {
+          "label": "127",
+          "is_correct": false
+        },
+        {
+          "label": "121",
+          "is_correct": false
+        },
+        {
+          "label": "125",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Simplification",
+      "kind": "standard",
+      "difficulty": "easy",
+      "answer_type": "single",
+      "stem": "Simplify: 2/3 of 33",
+      "explanation": "2/3 × 33 = 22.",
+      "options": [
+        {
+          "label": "23",
+          "is_correct": false
+        },
+        {
+          "label": "22",
+          "is_correct": true
+        },
+        {
+          "label": "24",
+          "is_correct": false
+        },
+        {
+          "label": "21",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Simplification",
+      "kind": "standard",
+      "difficulty": "easy",
+      "answer_type": "single",
+      "stem": "Simplify: (18 + 16) × 7",
+      "explanation": "(18+16) = 34; 34 × 7 = 238.",
+      "options": [
+        {
+          "label": "248",
+          "is_correct": false
+        },
+        {
+          "label": "228",
+          "is_correct": false
+        },
+        {
+          "label": "238",
+          "is_correct": true
+        },
+        {
+          "label": "258",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Simplification",
+      "kind": "standard",
+      "difficulty": "easy",
+      "answer_type": "single",
+      "stem": "Simplify: 16 + 7 × 9",
+      "explanation": "By BODMAS, 7×9 = 63, then 16 + 63 = 79.",
+      "options": [
+        {
+          "label": "83",
+          "is_correct": false
+        },
+        {
+          "label": "79",
+          "is_correct": true
+        },
+        {
+          "label": "81",
+          "is_correct": false
+        },
+        {
+          "label": "77",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Simplification",
+      "kind": "standard",
+      "difficulty": "easy",
+      "answer_type": "single",
+      "stem": "Simplify: 1/2 of 40",
+      "explanation": "1/2 × 40 = 20.",
+      "options": [
+        {
+          "label": "19",
+          "is_correct": false
+        },
+        {
+          "label": "21",
+          "is_correct": false
+        },
+        {
+          "label": "22",
+          "is_correct": false
+        },
+        {
+          "label": "20",
+          "is_correct": true
+        }
+      ]
+    },
+    {
+      "chapter": "Simplification",
+      "kind": "standard",
+      "difficulty": "easy",
+      "answer_type": "single",
+      "stem": "Simplify: (24 + 24) × 12",
+      "explanation": "(24+24) = 48; 48 × 12 = 576.",
+      "options": [
+        {
+          "label": "622",
+          "is_correct": false
+        },
+        {
+          "label": "599",
+          "is_correct": false
+        },
+        {
+          "label": "576",
+          "is_correct": true
+        },
+        {
+          "label": "553",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Simplification",
+      "kind": "standard",
+      "difficulty": "easy",
+      "answer_type": "single",
+      "stem": "Simplify: 4/6 of 114",
+      "explanation": "4/6 × 114 = 76.",
+      "options": [
+        {
+          "label": "76",
+          "is_correct": true
+        },
+        {
+          "label": "74",
+          "is_correct": false
+        },
+        {
+          "label": "78",
+          "is_correct": false
+        },
+        {
+          "label": "80",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Simplification",
+      "kind": "standard",
+      "difficulty": "easy",
+      "answer_type": "single",
+      "stem": "Simplify: 3/5 of 70",
+      "explanation": "3/5 × 70 = 42.",
+      "options": [
+        {
+          "label": "42",
+          "is_correct": true
+        },
+        {
+          "label": "44",
+          "is_correct": false
+        },
+        {
+          "label": "40",
+          "is_correct": false
+        },
+        {
+          "label": "46",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Simplification",
+      "kind": "standard",
+      "difficulty": "easy",
+      "answer_type": "single",
+      "stem": "Simplify: (25 + 5) × 7",
+      "explanation": "(25+5) = 30; 30 × 7 = 210.",
+      "options": [
+        {
+          "label": "226",
+          "is_correct": false
+        },
+        {
+          "label": "202",
+          "is_correct": false
+        },
+        {
+          "label": "210",
+          "is_correct": true
+        },
+        {
+          "label": "218",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Simplification",
+      "kind": "standard",
+      "difficulty": "easy",
+      "answer_type": "single",
+      "stem": "Simplify: (20 + 25) × 7",
+      "explanation": "(20+25) = 45; 45 × 7 = 315.",
+      "options": [
+        {
+          "label": "328",
+          "is_correct": false
+        },
+        {
+          "label": "315",
+          "is_correct": true
+        },
+        {
+          "label": "302",
+          "is_correct": false
+        },
+        {
+          "label": "341",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Simplification",
+      "kind": "standard",
+      "difficulty": "easy",
+      "answer_type": "single",
+      "stem": "Simplify: 1/4 of 24",
+      "explanation": "1/4 × 24 = 6.",
+      "options": [
+        {
+          "label": "6",
+          "is_correct": true
+        },
+        {
+          "label": "7",
+          "is_correct": false
+        },
+        {
+          "label": "5",
+          "is_correct": false
+        },
+        {
+          "label": "8",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Simplification",
+      "kind": "standard",
+      "difficulty": "easy",
+      "answer_type": "single",
+      "stem": "Simplify: 33 + 4 × 10",
+      "explanation": "By BODMAS, 4×10 = 40, then 33 + 40 = 73.",
+      "options": [
+        {
+          "label": "77",
+          "is_correct": false
+        },
+        {
+          "label": "71",
+          "is_correct": false
+        },
+        {
+          "label": "73",
+          "is_correct": true
+        },
+        {
+          "label": "75",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Simplification",
+      "kind": "standard",
+      "difficulty": "medium",
+      "answer_type": "single",
+      "stem": "Simplify: 36% of 1700 + 13",
+      "explanation": "36% of 1700 = 612; adding 13 gives 625.",
+      "options": [
+        {
+          "label": "675",
+          "is_correct": false
+        },
+        {
+          "label": "600",
+          "is_correct": false
+        },
+        {
+          "label": "650",
+          "is_correct": false
+        },
+        {
+          "label": "625",
+          "is_correct": true
+        }
+      ]
+    },
+    {
+      "chapter": "Simplification",
+      "kind": "standard",
+      "difficulty": "medium",
+      "answer_type": "single",
+      "stem": "Simplify: 38% of 800 + 45",
+      "explanation": "38% of 800 = 304; adding 45 gives 349.",
+      "options": [
+        {
+          "label": "377",
+          "is_correct": false
+        },
+        {
+          "label": "363",
+          "is_correct": false
+        },
+        {
+          "label": "349",
+          "is_correct": true
+        },
+        {
+          "label": "335",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Simplification",
+      "kind": "standard",
+      "difficulty": "medium",
+      "answer_type": "single",
+      "stem": "Simplify: 40% of 300 + 99",
+      "explanation": "40% of 300 = 120; adding 99 gives 219.",
+      "options": [
+        {
+          "label": "219",
+          "is_correct": true
+        },
+        {
+          "label": "228",
+          "is_correct": false
+        },
+        {
+          "label": "210",
+          "is_correct": false
+        },
+        {
+          "label": "237",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Simplification",
+      "kind": "standard",
+      "difficulty": "medium",
+      "answer_type": "single",
+      "stem": "Simplify: 19 + 3 × 9 − 27",
+      "explanation": "3×9 = 27; 19 + 27 − 27 = 19.",
+      "options": [
+        {
+          "label": "18",
+          "is_correct": false
+        },
+        {
+          "label": "21",
+          "is_correct": false
+        },
+        {
+          "label": "19",
+          "is_correct": true
+        },
+        {
+          "label": "20",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Simplification",
+      "kind": "standard",
+      "difficulty": "medium",
+      "answer_type": "single",
+      "stem": "Simplify: 50 + 12 × 12 − 29",
+      "explanation": "12×12 = 144; 50 + 144 − 29 = 165.",
+      "options": [
+        {
+          "label": "169",
+          "is_correct": false
+        },
+        {
+          "label": "165",
+          "is_correct": true
+        },
+        {
+          "label": "163",
+          "is_correct": false
+        },
+        {
+          "label": "167",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Simplification",
+      "kind": "standard",
+      "difficulty": "medium",
+      "answer_type": "single",
+      "stem": "Simplify: 12 + 5 × 11 − 27",
+      "explanation": "5×11 = 55; 12 + 55 − 27 = 40.",
+      "options": [
+        {
+          "label": "40",
+          "is_correct": true
+        },
+        {
+          "label": "42",
+          "is_correct": false
+        },
+        {
+          "label": "38",
+          "is_correct": false
+        },
+        {
+          "label": "44",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Simplification",
+      "kind": "standard",
+      "difficulty": "medium",
+      "answer_type": "single",
+      "stem": "Simplify: 15 × 12 − 45 ÷ 5",
+      "explanation": "45÷5 = 9 and 15×12 = 180, so 180 − 9 = 171.",
+      "options": [
+        {
+          "label": "175",
+          "is_correct": false
+        },
+        {
+          "label": "173",
+          "is_correct": false
+        },
+        {
+          "label": "169",
+          "is_correct": false
+        },
+        {
+          "label": "171",
+          "is_correct": true
+        }
+      ]
+    },
+    {
+      "chapter": "Simplification",
+      "kind": "standard",
+      "difficulty": "medium",
+      "answer_type": "single",
+      "stem": "Simplify: 42 + 11 × 4 − 33",
+      "explanation": "11×4 = 44; 42 + 44 − 33 = 53.",
+      "options": [
+        {
+          "label": "55",
+          "is_correct": false
+        },
+        {
+          "label": "57",
+          "is_correct": false
+        },
+        {
+          "label": "53",
+          "is_correct": true
+        },
+        {
+          "label": "51",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Simplification",
+      "kind": "standard",
+      "difficulty": "medium",
+      "answer_type": "single",
+      "stem": "Simplify: 16 × 7 − 12 ÷ 3",
+      "explanation": "12÷3 = 4 and 16×7 = 112, so 112 − 4 = 108.",
+      "options": [
+        {
+          "label": "112",
+          "is_correct": false
+        },
+        {
+          "label": "108",
+          "is_correct": true
+        },
+        {
+          "label": "106",
+          "is_correct": false
+        },
+        {
+          "label": "110",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Simplification",
+      "kind": "standard",
+      "difficulty": "medium",
+      "answer_type": "single",
+      "stem": "Simplify: 12% of 2000 + 66",
+      "explanation": "12% of 2000 = 240; adding 66 gives 306.",
+      "options": [
+        {
+          "label": "294",
+          "is_correct": false
+        },
+        {
+          "label": "318",
+          "is_correct": false
+        },
+        {
+          "label": "330",
+          "is_correct": false
+        },
+        {
+          "label": "306",
+          "is_correct": true
+        }
+      ]
+    },
+    {
+      "chapter": "Simplification",
+      "kind": "standard",
+      "difficulty": "medium",
+      "answer_type": "single",
+      "stem": "Simplify: 28 + 10 × 2 − 15",
+      "explanation": "10×2 = 20; 28 + 20 − 15 = 33.",
+      "options": [
+        {
+          "label": "34",
+          "is_correct": false
+        },
+        {
+          "label": "32",
+          "is_correct": false
+        },
+        {
+          "label": "35",
+          "is_correct": false
+        },
+        {
+          "label": "33",
+          "is_correct": true
+        }
+      ]
+    },
+    {
+      "chapter": "Simplification",
+      "kind": "standard",
+      "difficulty": "medium",
+      "answer_type": "single",
+      "stem": "Simplify: 11% of 500 + 85",
+      "explanation": "11% of 500 = 55; adding 85 gives 140.",
+      "options": [
+        {
+          "label": "142",
+          "is_correct": false
+        },
+        {
+          "label": "144",
+          "is_correct": false
+        },
+        {
+          "label": "140",
+          "is_correct": true
+        },
+        {
+          "label": "138",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Simplification",
+      "kind": "standard",
+      "difficulty": "medium",
+      "answer_type": "single",
+      "stem": "Simplify: 24 + 6 × 9 − 28",
+      "explanation": "6×9 = 54; 24 + 54 − 28 = 50.",
+      "options": [
+        {
+          "label": "50",
+          "is_correct": true
+        },
+        {
+          "label": "54",
+          "is_correct": false
+        },
+        {
+          "label": "52",
+          "is_correct": false
+        },
+        {
+          "label": "48",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Simplification",
+      "kind": "standard",
+      "difficulty": "medium",
+      "answer_type": "single",
+      "stem": "Simplify: 45 + 11 × 9 − 2",
+      "explanation": "11×9 = 99; 45 + 99 − 2 = 142.",
+      "options": [
+        {
+          "label": "146",
+          "is_correct": false
+        },
+        {
+          "label": "140",
+          "is_correct": false
+        },
+        {
+          "label": "144",
+          "is_correct": false
+        },
+        {
+          "label": "142",
+          "is_correct": true
+        }
+      ]
+    },
+    {
+      "chapter": "Simplification",
+      "kind": "standard",
+      "difficulty": "medium",
+      "answer_type": "single",
+      "stem": "Simplify: 27% of 1800 + 80",
+      "explanation": "27% of 1800 = 486; adding 80 gives 566.",
+      "options": [
+        {
+          "label": "566",
+          "is_correct": true
+        },
+        {
+          "label": "612",
+          "is_correct": false
+        },
+        {
+          "label": "589",
+          "is_correct": false
+        },
+        {
+          "label": "543",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Simplification",
+      "kind": "standard",
+      "difficulty": "medium",
+      "answer_type": "single",
+      "stem": "Simplify: 4 × 4 − 55 ÷ 11",
+      "explanation": "55÷11 = 5 and 4×4 = 16, so 16 − 5 = 11.",
+      "options": [
+        {
+          "label": "13",
+          "is_correct": false
+        },
+        {
+          "label": "11",
+          "is_correct": true
+        },
+        {
+          "label": "12",
+          "is_correct": false
+        },
+        {
+          "label": "10",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Simplification",
+      "kind": "standard",
+      "difficulty": "medium",
+      "answer_type": "single",
+      "stem": "Simplify: 20 × 3 − 14 ÷ 2",
+      "explanation": "14÷2 = 7 and 20×3 = 60, so 60 − 7 = 53.",
+      "options": [
+        {
+          "label": "51",
+          "is_correct": false
+        },
+        {
+          "label": "55",
+          "is_correct": false
+        },
+        {
+          "label": "53",
+          "is_correct": true
+        },
+        {
+          "label": "57",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Simplification",
+      "kind": "standard",
+      "difficulty": "medium",
+      "answer_type": "single",
+      "stem": "Simplify: 34 + 7 × 11 − 15",
+      "explanation": "7×11 = 77; 34 + 77 − 15 = 96.",
+      "options": [
+        {
+          "label": "96",
+          "is_correct": true
+        },
+        {
+          "label": "100",
+          "is_correct": false
+        },
+        {
+          "label": "98",
+          "is_correct": false
+        },
+        {
+          "label": "94",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Simplification",
+      "kind": "standard",
+      "difficulty": "medium",
+      "answer_type": "single",
+      "stem": "Simplify: 18 × 6 − 96 ÷ 8",
+      "explanation": "96÷8 = 12 and 18×6 = 108, so 108 − 12 = 96.",
+      "options": [
+        {
+          "label": "100",
+          "is_correct": false
+        },
+        {
+          "label": "96",
+          "is_correct": true
+        },
+        {
+          "label": "98",
+          "is_correct": false
+        },
+        {
+          "label": "94",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Simplification",
+      "kind": "standard",
+      "difficulty": "medium",
+      "answer_type": "single",
+      "stem": "Simplify: 48% of 1300 + 82",
+      "explanation": "48% of 1300 = 624; adding 82 gives 706.",
+      "options": [
+        {
+          "label": "678",
+          "is_correct": false
+        },
+        {
+          "label": "734",
+          "is_correct": false
+        },
+        {
+          "label": "762",
+          "is_correct": false
+        },
+        {
+          "label": "706",
+          "is_correct": true
+        }
+      ]
+    },
+    {
+      "chapter": "Simplification",
+      "kind": "standard",
+      "difficulty": "medium",
+      "answer_type": "single",
+      "stem": "Simplify: 9 × 3 − 72 ÷ 12",
+      "explanation": "72÷12 = 6 and 9×3 = 27, so 27 − 6 = 21.",
+      "options": [
+        {
+          "label": "20",
+          "is_correct": false
+        },
+        {
+          "label": "23",
+          "is_correct": false
+        },
+        {
+          "label": "21",
+          "is_correct": true
+        },
+        {
+          "label": "22",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Simplification",
+      "kind": "standard",
+      "difficulty": "medium",
+      "answer_type": "single",
+      "stem": "Simplify: 36 + 7 × 3 − 11",
+      "explanation": "7×3 = 21; 36 + 21 − 11 = 46.",
+      "options": [
+        {
+          "label": "48",
+          "is_correct": false
+        },
+        {
+          "label": "44",
+          "is_correct": false
+        },
+        {
+          "label": "46",
+          "is_correct": true
+        },
+        {
+          "label": "50",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Simplification",
+      "kind": "standard",
+      "difficulty": "medium",
+      "answer_type": "single",
+      "stem": "Simplify: 20% of 200 + 28",
+      "explanation": "20% of 200 = 40; adding 28 gives 68.",
+      "options": [
+        {
+          "label": "66",
+          "is_correct": false
+        },
+        {
+          "label": "72",
+          "is_correct": false
+        },
+        {
+          "label": "68",
+          "is_correct": true
+        },
+        {
+          "label": "70",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Simplification",
+      "kind": "standard",
+      "difficulty": "medium",
+      "answer_type": "single",
+      "stem": "Simplify: 38 + 9 × 4 − 25",
+      "explanation": "9×4 = 36; 38 + 36 − 25 = 49.",
+      "options": [
+        {
+          "label": "49",
+          "is_correct": true
+        },
+        {
+          "label": "47",
+          "is_correct": false
+        },
+        {
+          "label": "51",
+          "is_correct": false
+        },
+        {
+          "label": "53",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Simplification",
+      "kind": "standard",
+      "difficulty": "medium",
+      "answer_type": "single",
+      "stem": "Simplify: 32% of 700 + 10",
+      "explanation": "32% of 700 = 224; adding 10 gives 234.",
+      "options": [
+        {
+          "label": "252",
+          "is_correct": false
+        },
+        {
+          "label": "243",
+          "is_correct": false
+        },
+        {
+          "label": "234",
+          "is_correct": true
+        },
+        {
+          "label": "225",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Simplification",
+      "kind": "standard",
+      "difficulty": "medium",
+      "answer_type": "single",
+      "stem": "Simplify: 9 × 3 − 81 ÷ 9",
+      "explanation": "81÷9 = 9 and 9×3 = 27, so 27 − 9 = 18.",
+      "options": [
+        {
+          "label": "20",
+          "is_correct": false
+        },
+        {
+          "label": "19",
+          "is_correct": false
+        },
+        {
+          "label": "18",
+          "is_correct": true
+        },
+        {
+          "label": "17",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Simplification",
+      "kind": "standard",
+      "difficulty": "medium",
+      "answer_type": "single",
+      "stem": "Simplify: 6 × 11 − 42 ÷ 7",
+      "explanation": "42÷7 = 6 and 6×11 = 66, so 66 − 6 = 60.",
+      "options": [
+        {
+          "label": "64",
+          "is_correct": false
+        },
+        {
+          "label": "62",
+          "is_correct": false
+        },
+        {
+          "label": "58",
+          "is_correct": false
+        },
+        {
+          "label": "60",
+          "is_correct": true
+        }
+      ]
+    },
+    {
+      "chapter": "Simplification",
+      "kind": "standard",
+      "difficulty": "medium",
+      "answer_type": "single",
+      "stem": "Simplify: 60% of 1400 + 16",
+      "explanation": "60% of 1400 = 840; adding 16 gives 856.",
+      "options": [
+        {
+          "label": "924",
+          "is_correct": false
+        },
+        {
+          "label": "856",
+          "is_correct": true
+        },
+        {
+          "label": "890",
+          "is_correct": false
+        },
+        {
+          "label": "822",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Simplification",
+      "kind": "standard",
+      "difficulty": "medium",
+      "answer_type": "single",
+      "stem": "Simplify: 9 × 4 − 20 ÷ 4",
+      "explanation": "20÷4 = 5 and 9×4 = 36, so 36 − 5 = 31.",
+      "options": [
+        {
+          "label": "30",
+          "is_correct": false
+        },
+        {
+          "label": "33",
+          "is_correct": false
+        },
+        {
+          "label": "32",
+          "is_correct": false
+        },
+        {
+          "label": "31",
+          "is_correct": true
+        }
+      ]
+    },
+    {
+      "chapter": "Simplification",
+      "kind": "standard",
+      "difficulty": "medium",
+      "answer_type": "single",
+      "stem": "Simplify: 39% of 400 + 100",
+      "explanation": "39% of 400 = 156; adding 100 gives 256.",
+      "options": [
+        {
+          "label": "276",
+          "is_correct": false
+        },
+        {
+          "label": "266",
+          "is_correct": false
+        },
+        {
+          "label": "246",
+          "is_correct": false
+        },
+        {
+          "label": "256",
+          "is_correct": true
+        }
+      ]
+    },
+    {
+      "chapter": "Simplification",
+      "kind": "standard",
+      "difficulty": "medium",
+      "answer_type": "single",
+      "stem": "Simplify: 4 × 12 − 70 ÷ 10",
+      "explanation": "70÷10 = 7 and 4×12 = 48, so 48 − 7 = 41.",
+      "options": [
+        {
+          "label": "41",
+          "is_correct": true
+        },
+        {
+          "label": "39",
+          "is_correct": false
+        },
+        {
+          "label": "45",
+          "is_correct": false
+        },
+        {
+          "label": "43",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Simplification",
+      "kind": "standard",
+      "difficulty": "medium",
+      "answer_type": "single",
+      "stem": "Simplify: 23% of 800 + 20",
+      "explanation": "23% of 800 = 184; adding 20 gives 204.",
+      "options": [
+        {
+          "label": "204",
+          "is_correct": true
+        },
+        {
+          "label": "212",
+          "is_correct": false
+        },
+        {
+          "label": "196",
+          "is_correct": false
+        },
+        {
+          "label": "220",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Simplification",
+      "kind": "standard",
+      "difficulty": "medium",
+      "answer_type": "single",
+      "stem": "Simplify: 29 + 11 × 9 − 6",
+      "explanation": "11×9 = 99; 29 + 99 − 6 = 122.",
+      "options": [
+        {
+          "label": "124",
+          "is_correct": false
+        },
+        {
+          "label": "122",
+          "is_correct": true
+        },
+        {
+          "label": "126",
+          "is_correct": false
+        },
+        {
+          "label": "120",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Simplification",
+      "kind": "standard",
+      "difficulty": "medium",
+      "answer_type": "single",
+      "stem": "Simplify: 23% of 400 + 95",
+      "explanation": "23% of 400 = 92; adding 95 gives 187.",
+      "options": [
+        {
+          "label": "185",
+          "is_correct": false
+        },
+        {
+          "label": "191",
+          "is_correct": false
+        },
+        {
+          "label": "187",
+          "is_correct": true
+        },
+        {
+          "label": "189",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Simplification",
+      "kind": "standard",
+      "difficulty": "medium",
+      "answer_type": "single",
+      "stem": "Simplify: 12 × 10 − 16 ÷ 2",
+      "explanation": "16÷2 = 8 and 12×10 = 120, so 120 − 8 = 112.",
+      "options": [
+        {
+          "label": "116",
+          "is_correct": false
+        },
+        {
+          "label": "110",
+          "is_correct": false
+        },
+        {
+          "label": "112",
+          "is_correct": true
+        },
+        {
+          "label": "114",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Simplification",
+      "kind": "standard",
+      "difficulty": "medium",
+      "answer_type": "single",
+      "stem": "Simplify: 31 + 11 × 7 − 37",
+      "explanation": "11×7 = 77; 31 + 77 − 37 = 71.",
+      "options": [
+        {
+          "label": "69",
+          "is_correct": false
+        },
+        {
+          "label": "71",
+          "is_correct": true
+        },
+        {
+          "label": "75",
+          "is_correct": false
+        },
+        {
+          "label": "73",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Simplification",
+      "kind": "standard",
+      "difficulty": "medium",
+      "answer_type": "single",
+      "stem": "Simplify: 17 × 5 − 90 ÷ 9",
+      "explanation": "90÷9 = 10 and 17×5 = 85, so 85 − 10 = 75.",
+      "options": [
+        {
+          "label": "77",
+          "is_correct": false
+        },
+        {
+          "label": "73",
+          "is_correct": false
+        },
+        {
+          "label": "79",
+          "is_correct": false
+        },
+        {
+          "label": "75",
+          "is_correct": true
+        }
+      ]
+    },
+    {
+      "chapter": "Simplification",
+      "kind": "standard",
+      "difficulty": "medium",
+      "answer_type": "single",
+      "stem": "Simplify: 17% of 1200 + 57",
+      "explanation": "17% of 1200 = 204; adding 57 gives 261.",
+      "options": [
+        {
+          "label": "281",
+          "is_correct": false
+        },
+        {
+          "label": "251",
+          "is_correct": false
+        },
+        {
+          "label": "261",
+          "is_correct": true
+        },
+        {
+          "label": "271",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Simplification",
+      "kind": "standard",
+      "difficulty": "medium",
+      "answer_type": "single",
+      "stem": "Simplify: 18 × 11 − 30 ÷ 5",
+      "explanation": "30÷5 = 6 and 18×11 = 198, so 198 − 6 = 192.",
+      "options": [
+        {
+          "label": "190",
+          "is_correct": false
+        },
+        {
+          "label": "194",
+          "is_correct": false
+        },
+        {
+          "label": "196",
+          "is_correct": false
+        },
+        {
+          "label": "192",
+          "is_correct": true
+        }
+      ]
+    },
+    {
+      "chapter": "Simplification",
+      "kind": "standard",
+      "difficulty": "medium",
+      "answer_type": "single",
+      "stem": "Simplify: 13 × 4 − 50 ÷ 5",
+      "explanation": "50÷5 = 10 and 13×4 = 52, so 52 − 10 = 42.",
+      "options": [
+        {
+          "label": "46",
+          "is_correct": false
+        },
+        {
+          "label": "42",
+          "is_correct": true
+        },
+        {
+          "label": "40",
+          "is_correct": false
+        },
+        {
+          "label": "44",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Simplification",
+      "kind": "standard",
+      "difficulty": "medium",
+      "answer_type": "single",
+      "stem": "Simplify: 14 × 12 − 30 ÷ 3",
+      "explanation": "30÷3 = 10 and 14×12 = 168, so 168 − 10 = 158.",
+      "options": [
+        {
+          "label": "158",
+          "is_correct": true
+        },
+        {
+          "label": "160",
+          "is_correct": false
+        },
+        {
+          "label": "162",
+          "is_correct": false
+        },
+        {
+          "label": "156",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Simplification",
+      "kind": "standard",
+      "difficulty": "medium",
+      "answer_type": "single",
+      "stem": "Simplify: 11 × 11 − 18 ÷ 2",
+      "explanation": "18÷2 = 9 and 11×11 = 121, so 121 − 9 = 112.",
+      "options": [
+        {
+          "label": "112",
+          "is_correct": true
+        },
+        {
+          "label": "116",
+          "is_correct": false
+        },
+        {
+          "label": "110",
+          "is_correct": false
+        },
+        {
+          "label": "114",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Simplification",
+      "kind": "standard",
+      "difficulty": "medium",
+      "answer_type": "single",
+      "stem": "Simplify: 46% of 700 + 14",
+      "explanation": "46% of 700 = 322; adding 14 gives 336.",
+      "options": [
+        {
+          "label": "349",
+          "is_correct": false
+        },
+        {
+          "label": "336",
+          "is_correct": true
+        },
+        {
+          "label": "323",
+          "is_correct": false
+        },
+        {
+          "label": "362",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Simplification",
+      "kind": "standard",
+      "difficulty": "medium",
+      "answer_type": "single",
+      "stem": "Simplify: 20 + 9 × 7 − 26",
+      "explanation": "9×7 = 63; 20 + 63 − 26 = 57.",
+      "options": [
+        {
+          "label": "57",
+          "is_correct": true
+        },
+        {
+          "label": "61",
+          "is_correct": false
+        },
+        {
+          "label": "59",
+          "is_correct": false
+        },
+        {
+          "label": "55",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Simplification",
+      "kind": "standard",
+      "difficulty": "medium",
+      "answer_type": "single",
+      "stem": "Simplify: 38 + 4 × 12 − 40",
+      "explanation": "4×12 = 48; 38 + 48 − 40 = 46.",
+      "options": [
+        {
+          "label": "46",
+          "is_correct": true
+        },
+        {
+          "label": "44",
+          "is_correct": false
+        },
+        {
+          "label": "48",
+          "is_correct": false
+        },
+        {
+          "label": "50",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Simplification",
+      "kind": "standard",
+      "difficulty": "medium",
+      "answer_type": "single",
+      "stem": "Simplify: 60% of 300 + 28",
+      "explanation": "60% of 300 = 180; adding 28 gives 208.",
+      "options": [
+        {
+          "label": "208",
+          "is_correct": true
+        },
+        {
+          "label": "216",
+          "is_correct": false
+        },
+        {
+          "label": "200",
+          "is_correct": false
+        },
+        {
+          "label": "224",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Simplification",
+      "kind": "standard",
+      "difficulty": "medium",
+      "answer_type": "single",
+      "stem": "Simplify: 58% of 800 + 22",
+      "explanation": "58% of 800 = 464; adding 22 gives 486.",
+      "options": [
+        {
+          "label": "524",
+          "is_correct": false
+        },
+        {
+          "label": "505",
+          "is_correct": false
+        },
+        {
+          "label": "467",
+          "is_correct": false
+        },
+        {
+          "label": "486",
+          "is_correct": true
+        }
+      ]
+    },
+    {
+      "chapter": "Simplification",
+      "kind": "standard",
+      "difficulty": "medium",
+      "answer_type": "single",
+      "stem": "Simplify: 36 + 9 × 5 − 24",
+      "explanation": "9×5 = 45; 36 + 45 − 24 = 57.",
+      "options": [
+        {
+          "label": "55",
+          "is_correct": false
+        },
+        {
+          "label": "61",
+          "is_correct": false
+        },
+        {
+          "label": "59",
+          "is_correct": false
+        },
+        {
+          "label": "57",
+          "is_correct": true
+        }
+      ]
+    },
+    {
+      "chapter": "Simplification",
+      "kind": "standard",
+      "difficulty": "medium",
+      "answer_type": "single",
+      "stem": "Simplify: 14% of 700 + 33",
+      "explanation": "14% of 700 = 98; adding 33 gives 131.",
+      "options": [
+        {
+          "label": "129",
+          "is_correct": false
+        },
+        {
+          "label": "133",
+          "is_correct": false
+        },
+        {
+          "label": "135",
+          "is_correct": false
+        },
+        {
+          "label": "131",
+          "is_correct": true
+        }
+      ]
+    },
+    {
+      "chapter": "Simplification",
+      "kind": "standard",
+      "difficulty": "medium",
+      "answer_type": "single",
+      "stem": "Simplify: 46% of 400 + 19",
+      "explanation": "46% of 400 = 184; adding 19 gives 203.",
+      "options": [
+        {
+          "label": "211",
+          "is_correct": false
+        },
+        {
+          "label": "195",
+          "is_correct": false
+        },
+        {
+          "label": "219",
+          "is_correct": false
+        },
+        {
+          "label": "203",
+          "is_correct": true
+        }
+      ]
+    },
+    {
+      "chapter": "Simplification",
+      "kind": "standard",
+      "difficulty": "hard",
+      "answer_type": "single",
+      "stem": "Simplify: 15² + 2 × 7",
+      "explanation": "15² = 225; 2×7 = 14; sum = 239.",
+      "options": [
+        {
+          "label": "239",
+          "is_correct": true
+        },
+        {
+          "label": "229",
+          "is_correct": false
+        },
+        {
+          "label": "249",
+          "is_correct": false
+        },
+        {
+          "label": "259",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Simplification",
+      "kind": "standard",
+      "difficulty": "hard",
+      "answer_type": "single",
+      "stem": "Simplify: 7² + 8 × 3",
+      "explanation": "7² = 49; 8×3 = 24; sum = 73.",
+      "options": [
+        {
+          "label": "75",
+          "is_correct": false
+        },
+        {
+          "label": "77",
+          "is_correct": false
+        },
+        {
+          "label": "73",
+          "is_correct": true
+        },
+        {
+          "label": "71",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Simplification",
+      "kind": "standard",
+      "difficulty": "hard",
+      "answer_type": "single",
+      "stem": "Simplify: 4² + 12 × 4",
+      "explanation": "4² = 16; 12×4 = 48; sum = 64.",
+      "options": [
+        {
+          "label": "68",
+          "is_correct": false
+        },
+        {
+          "label": "66",
+          "is_correct": false
+        },
+        {
+          "label": "62",
+          "is_correct": false
+        },
+        {
+          "label": "64",
+          "is_correct": true
+        }
+      ]
+    },
+    {
+      "chapter": "Simplification",
+      "kind": "standard",
+      "difficulty": "hard",
+      "answer_type": "single",
+      "stem": "Simplify: 23 + 11 × 8 − 54 ÷ 9",
+      "explanation": "11×8=88, 54÷9=6; 23 + 88 − 6 = 105.",
+      "options": [
+        {
+          "label": "109",
+          "is_correct": false
+        },
+        {
+          "label": "105",
+          "is_correct": true
+        },
+        {
+          "label": "107",
+          "is_correct": false
+        },
+        {
+          "label": "103",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Simplification",
+      "kind": "standard",
+      "difficulty": "hard",
+      "answer_type": "single",
+      "stem": "Simplify: 12² + 3 × 4",
+      "explanation": "12² = 144; 3×4 = 12; sum = 156.",
+      "options": [
+        {
+          "label": "156",
+          "is_correct": true
+        },
+        {
+          "label": "158",
+          "is_correct": false
+        },
+        {
+          "label": "154",
+          "is_correct": false
+        },
+        {
+          "label": "160",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Simplification",
+      "kind": "standard",
+      "difficulty": "hard",
+      "answer_type": "single",
+      "stem": "Simplify: 28 + 10 × 3 − 18 ÷ 3",
+      "explanation": "10×3=30, 18÷3=6; 28 + 30 − 6 = 52.",
+      "options": [
+        {
+          "label": "50",
+          "is_correct": false
+        },
+        {
+          "label": "54",
+          "is_correct": false
+        },
+        {
+          "label": "56",
+          "is_correct": false
+        },
+        {
+          "label": "52",
+          "is_correct": true
+        }
+      ]
+    },
+    {
+      "chapter": "Simplification",
+      "kind": "standard",
+      "difficulty": "hard",
+      "answer_type": "single",
+      "stem": "Simplify: (7 + 15) × 10 − 40 ÷ 4",
+      "explanation": "(7+15)×10 = 220; 40÷4 = 10; result = 210.",
+      "options": [
+        {
+          "label": "210",
+          "is_correct": true
+        },
+        {
+          "label": "218",
+          "is_correct": false
+        },
+        {
+          "label": "226",
+          "is_correct": false
+        },
+        {
+          "label": "202",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Simplification",
+      "kind": "standard",
+      "difficulty": "hard",
+      "answer_type": "single",
+      "stem": "Simplify: 50 + 7 × 3 − 70 ÷ 10",
+      "explanation": "7×3=21, 70÷10=7; 50 + 21 − 7 = 64.",
+      "options": [
+        {
+          "label": "68",
+          "is_correct": false
+        },
+        {
+          "label": "62",
+          "is_correct": false
+        },
+        {
+          "label": "64",
+          "is_correct": true
+        },
+        {
+          "label": "66",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Simplification",
+      "kind": "standard",
+      "difficulty": "hard",
+      "answer_type": "single",
+      "stem": "Simplify: (11 + 6) × 11 − 44 ÷ 11",
+      "explanation": "(11+6)×11 = 187; 44÷11 = 4; result = 183.",
+      "options": [
+        {
+          "label": "187",
+          "is_correct": false
+        },
+        {
+          "label": "183",
+          "is_correct": true
+        },
+        {
+          "label": "181",
+          "is_correct": false
+        },
+        {
+          "label": "185",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Simplification",
+      "kind": "standard",
+      "difficulty": "hard",
+      "answer_type": "single",
+      "stem": "Simplify: (11 + 10) × 11 − 24 ÷ 12",
+      "explanation": "(11+10)×11 = 231; 24÷12 = 2; result = 229.",
+      "options": [
+        {
+          "label": "220",
+          "is_correct": false
+        },
+        {
+          "label": "247",
+          "is_correct": false
+        },
+        {
+          "label": "229",
+          "is_correct": true
+        },
+        {
+          "label": "238",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Simplification",
+      "kind": "standard",
+      "difficulty": "hard",
+      "answer_type": "single",
+      "stem": "Simplify: 10² + 6 × 8",
+      "explanation": "10² = 100; 6×8 = 48; sum = 148.",
+      "options": [
+        {
+          "label": "146",
+          "is_correct": false
+        },
+        {
+          "label": "152",
+          "is_correct": false
+        },
+        {
+          "label": "150",
+          "is_correct": false
+        },
+        {
+          "label": "148",
+          "is_correct": true
+        }
+      ]
+    },
+    {
+      "chapter": "Simplification",
+      "kind": "standard",
+      "difficulty": "hard",
+      "answer_type": "single",
+      "stem": "Simplify: (6 + 11) × 12 − 81 ÷ 9",
+      "explanation": "(6+11)×12 = 204; 81÷9 = 9; result = 195.",
+      "options": [
+        {
+          "label": "193",
+          "is_correct": false
+        },
+        {
+          "label": "199",
+          "is_correct": false
+        },
+        {
+          "label": "197",
+          "is_correct": false
+        },
+        {
+          "label": "195",
+          "is_correct": true
+        }
+      ]
+    },
+    {
+      "chapter": "Simplification",
+      "kind": "standard",
+      "difficulty": "hard",
+      "answer_type": "single",
+      "stem": "Simplify: 15² + 8 × 2",
+      "explanation": "15² = 225; 8×2 = 16; sum = 241.",
+      "options": [
+        {
+          "label": "261",
+          "is_correct": false
+        },
+        {
+          "label": "241",
+          "is_correct": true
+        },
+        {
+          "label": "231",
+          "is_correct": false
+        },
+        {
+          "label": "251",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Simplification",
+      "kind": "standard",
+      "difficulty": "hard",
+      "answer_type": "single",
+      "stem": "Simplify: 32 + 8 × 8 − 60 ÷ 12",
+      "explanation": "8×8=64, 60÷12=5; 32 + 64 − 5 = 91.",
+      "options": [
+        {
+          "label": "93",
+          "is_correct": false
+        },
+        {
+          "label": "91",
+          "is_correct": true
+        },
+        {
+          "label": "89",
+          "is_correct": false
+        },
+        {
+          "label": "95",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Simplification",
+      "kind": "standard",
+      "difficulty": "hard",
+      "answer_type": "single",
+      "stem": "Simplify: 11² + 6 × 2",
+      "explanation": "11² = 121; 6×2 = 12; sum = 133.",
+      "options": [
+        {
+          "label": "135",
+          "is_correct": false
+        },
+        {
+          "label": "137",
+          "is_correct": false
+        },
+        {
+          "label": "131",
+          "is_correct": false
+        },
+        {
+          "label": "133",
+          "is_correct": true
+        }
+      ]
+    },
+    {
+      "chapter": "Simplification",
+      "kind": "standard",
+      "difficulty": "hard",
+      "answer_type": "single",
+      "stem": "Simplify: (18 + 12) × 10 − 50 ÷ 5",
+      "explanation": "(18+12)×10 = 300; 50÷5 = 10; result = 290.",
+      "options": [
+        {
+          "label": "290",
+          "is_correct": true
+        },
+        {
+          "label": "314",
+          "is_correct": false
+        },
+        {
+          "label": "278",
+          "is_correct": false
+        },
+        {
+          "label": "302",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Simplification",
+      "kind": "standard",
+      "difficulty": "hard",
+      "answer_type": "single",
+      "stem": "Simplify: 9² + 7 × 3",
+      "explanation": "9² = 81; 7×3 = 21; sum = 102.",
+      "options": [
+        {
+          "label": "102",
+          "is_correct": true
+        },
+        {
+          "label": "106",
+          "is_correct": false
+        },
+        {
+          "label": "104",
+          "is_correct": false
+        },
+        {
+          "label": "100",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Simplification",
+      "kind": "standard",
+      "difficulty": "hard",
+      "answer_type": "single",
+      "stem": "Simplify: 7² + 5 × 10",
+      "explanation": "7² = 49; 5×10 = 50; sum = 99.",
+      "options": [
+        {
+          "label": "101",
+          "is_correct": false
+        },
+        {
+          "label": "97",
+          "is_correct": false
+        },
+        {
+          "label": "99",
+          "is_correct": true
+        },
+        {
+          "label": "103",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Simplification",
+      "kind": "standard",
+      "difficulty": "hard",
+      "answer_type": "single",
+      "stem": "Simplify: (19 + 14) × 6 − 54 ÷ 6",
+      "explanation": "(19+14)×6 = 198; 54÷6 = 9; result = 189.",
+      "options": [
+        {
+          "label": "189",
+          "is_correct": true
+        },
+        {
+          "label": "193",
+          "is_correct": false
+        },
+        {
+          "label": "187",
+          "is_correct": false
+        },
+        {
+          "label": "191",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Simplification",
+      "kind": "standard",
+      "difficulty": "hard",
+      "answer_type": "single",
+      "stem": "Simplify: (8 + 10) × 2 − 100 ÷ 10",
+      "explanation": "(8+10)×2 = 36; 100÷10 = 10; result = 26.",
+      "options": [
+        {
+          "label": "27",
+          "is_correct": false
+        },
+        {
+          "label": "28",
+          "is_correct": false
+        },
+        {
+          "label": "26",
+          "is_correct": true
+        },
+        {
+          "label": "25",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Simplification",
+      "kind": "standard",
+      "difficulty": "hard",
+      "answer_type": "single",
+      "stem": "Simplify: 12 + 9 × 4 − 15 ÷ 5",
+      "explanation": "9×4=36, 15÷5=3; 12 + 36 − 3 = 45.",
+      "options": [
+        {
+          "label": "45",
+          "is_correct": true
+        },
+        {
+          "label": "47",
+          "is_correct": false
+        },
+        {
+          "label": "49",
+          "is_correct": false
+        },
+        {
+          "label": "43",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Simplification",
+      "kind": "standard",
+      "difficulty": "hard",
+      "answer_type": "single",
+      "stem": "Simplify: (14 + 14) × 4 − 77 ÷ 11",
+      "explanation": "(14+14)×4 = 112; 77÷11 = 7; result = 105.",
+      "options": [
+        {
+          "label": "105",
+          "is_correct": true
+        },
+        {
+          "label": "109",
+          "is_correct": false
+        },
+        {
+          "label": "103",
+          "is_correct": false
+        },
+        {
+          "label": "107",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Simplification",
+      "kind": "standard",
+      "difficulty": "hard",
+      "answer_type": "single",
+      "stem": "Simplify: 44 + 7 × 12 − 20 ÷ 4",
+      "explanation": "7×12=84, 20÷4=5; 44 + 84 − 5 = 123.",
+      "options": [
+        {
+          "label": "125",
+          "is_correct": false
+        },
+        {
+          "label": "127",
+          "is_correct": false
+        },
+        {
+          "label": "121",
+          "is_correct": false
+        },
+        {
+          "label": "123",
+          "is_correct": true
+        }
+      ]
+    },
+    {
+      "chapter": "Simplification",
+      "kind": "standard",
+      "difficulty": "hard",
+      "answer_type": "single",
+      "stem": "Simplify: (11 + 8) × 3 − 12 ÷ 3",
+      "explanation": "(11+8)×3 = 57; 12÷3 = 4; result = 53.",
+      "options": [
+        {
+          "label": "51",
+          "is_correct": false
+        },
+        {
+          "label": "55",
+          "is_correct": false
+        },
+        {
+          "label": "53",
+          "is_correct": true
+        },
+        {
+          "label": "57",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Simplification",
+      "kind": "standard",
+      "difficulty": "hard",
+      "answer_type": "single",
+      "stem": "Simplify: 8² + 12 × 12",
+      "explanation": "8² = 64; 12×12 = 144; sum = 208.",
+      "options": [
+        {
+          "label": "200",
+          "is_correct": false
+        },
+        {
+          "label": "216",
+          "is_correct": false
+        },
+        {
+          "label": "224",
+          "is_correct": false
+        },
+        {
+          "label": "208",
+          "is_correct": true
+        }
+      ]
+    },
+    {
+      "chapter": "Simplification",
+      "kind": "standard",
+      "difficulty": "hard",
+      "answer_type": "single",
+      "stem": "Simplify: (8 + 6) × 7 − 36 ÷ 4",
+      "explanation": "(8+6)×7 = 98; 36÷4 = 9; result = 89.",
+      "options": [
+        {
+          "label": "87",
+          "is_correct": false
+        },
+        {
+          "label": "93",
+          "is_correct": false
+        },
+        {
+          "label": "89",
+          "is_correct": true
+        },
+        {
+          "label": "91",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Simplification",
+      "kind": "standard",
+      "difficulty": "hard",
+      "answer_type": "single",
+      "stem": "Simplify: 6² + 3 × 2",
+      "explanation": "6² = 36; 3×2 = 6; sum = 42.",
+      "options": [
+        {
+          "label": "42",
+          "is_correct": true
+        },
+        {
+          "label": "40",
+          "is_correct": false
+        },
+        {
+          "label": "46",
+          "is_correct": false
+        },
+        {
+          "label": "44",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Simplification",
+      "kind": "standard",
+      "difficulty": "hard",
+      "answer_type": "single",
+      "stem": "Simplify: (8 + 5) × 12 − 60 ÷ 5",
+      "explanation": "(8+5)×12 = 156; 60÷5 = 12; result = 144.",
+      "options": [
+        {
+          "label": "142",
+          "is_correct": false
+        },
+        {
+          "label": "146",
+          "is_correct": false
+        },
+        {
+          "label": "148",
+          "is_correct": false
+        },
+        {
+          "label": "144",
+          "is_correct": true
+        }
+      ]
+    },
+    {
+      "chapter": "Simplification",
+      "kind": "standard",
+      "difficulty": "hard",
+      "answer_type": "single",
+      "stem": "Simplify: 38 + 12 × 4 − 100 ÷ 10",
+      "explanation": "12×4=48, 100÷10=10; 38 + 48 − 10 = 76.",
+      "options": [
+        {
+          "label": "74",
+          "is_correct": false
+        },
+        {
+          "label": "78",
+          "is_correct": false
+        },
+        {
+          "label": "80",
+          "is_correct": false
+        },
+        {
+          "label": "76",
+          "is_correct": true
+        }
+      ]
+    },
+    {
+      "chapter": "Simplification",
+      "kind": "standard",
+      "difficulty": "hard",
+      "answer_type": "single",
+      "stem": "Simplify: (19 + 8) × 5 − 6 ÷ 3",
+      "explanation": "(19+8)×5 = 135; 6÷3 = 2; result = 133.",
+      "options": [
+        {
+          "label": "131",
+          "is_correct": false
+        },
+        {
+          "label": "137",
+          "is_correct": false
+        },
+        {
+          "label": "133",
+          "is_correct": true
+        },
+        {
+          "label": "135",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Simplification",
+      "kind": "standard",
+      "difficulty": "hard",
+      "answer_type": "single",
+      "stem": "Simplify: (3 + 12) × 6 − 132 ÷ 11",
+      "explanation": "(3+12)×6 = 90; 132÷11 = 12; result = 78.",
+      "options": [
+        {
+          "label": "80",
+          "is_correct": false
+        },
+        {
+          "label": "78",
+          "is_correct": true
+        },
+        {
+          "label": "76",
+          "is_correct": false
+        },
+        {
+          "label": "82",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Simplification",
+      "kind": "standard",
+      "difficulty": "hard",
+      "answer_type": "single",
+      "stem": "Simplify: 10² + 2 × 8",
+      "explanation": "10² = 100; 2×8 = 16; sum = 116.",
+      "options": [
+        {
+          "label": "118",
+          "is_correct": false
+        },
+        {
+          "label": "114",
+          "is_correct": false
+        },
+        {
+          "label": "116",
+          "is_correct": true
+        },
+        {
+          "label": "120",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Simplification",
+      "kind": "standard",
+      "difficulty": "hard",
+      "answer_type": "single",
+      "stem": "Simplify: 17 + 2 × 2 − 12 ÷ 3",
+      "explanation": "2×2=4, 12÷3=4; 17 + 4 − 4 = 17.",
+      "options": [
+        {
+          "label": "19",
+          "is_correct": false
+        },
+        {
+          "label": "16",
+          "is_correct": false
+        },
+        {
+          "label": "18",
+          "is_correct": false
+        },
+        {
+          "label": "17",
+          "is_correct": true
+        }
+      ]
+    },
+    {
+      "chapter": "Simplification",
+      "kind": "standard",
+      "difficulty": "hard",
+      "answer_type": "single",
+      "stem": "Simplify: (17 + 5) × 9 − 56 ÷ 8",
+      "explanation": "(17+5)×9 = 198; 56÷8 = 7; result = 191.",
+      "options": [
+        {
+          "label": "195",
+          "is_correct": false
+        },
+        {
+          "label": "191",
+          "is_correct": true
+        },
+        {
+          "label": "189",
+          "is_correct": false
+        },
+        {
+          "label": "193",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Simplification",
+      "kind": "standard",
+      "difficulty": "hard",
+      "answer_type": "single",
+      "stem": "Simplify: 4² + 2 × 7",
+      "explanation": "4² = 16; 2×7 = 14; sum = 30.",
+      "options": [
+        {
+          "label": "31",
+          "is_correct": false
+        },
+        {
+          "label": "30",
+          "is_correct": true
+        },
+        {
+          "label": "32",
+          "is_correct": false
+        },
+        {
+          "label": "29",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Simplification",
+      "kind": "standard",
+      "difficulty": "hard",
+      "answer_type": "single",
+      "stem": "Simplify: (13 + 14) × 4 − 33 ÷ 3",
+      "explanation": "(13+14)×4 = 108; 33÷3 = 11; result = 97.",
+      "options": [
+        {
+          "label": "95",
+          "is_correct": false
+        },
+        {
+          "label": "101",
+          "is_correct": false
+        },
+        {
+          "label": "99",
+          "is_correct": false
+        },
+        {
+          "label": "97",
+          "is_correct": true
+        }
+      ]
+    },
+    {
+      "chapter": "Simplification",
+      "kind": "standard",
+      "difficulty": "hard",
+      "answer_type": "single",
+      "stem": "Simplify: (16 + 3) × 3 − 18 ÷ 9",
+      "explanation": "(16+3)×3 = 57; 18÷9 = 2; result = 55.",
+      "options": [
+        {
+          "label": "57",
+          "is_correct": false
+        },
+        {
+          "label": "53",
+          "is_correct": false
+        },
+        {
+          "label": "55",
+          "is_correct": true
+        },
+        {
+          "label": "59",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Simplification",
+      "kind": "standard",
+      "difficulty": "hard",
+      "answer_type": "single",
+      "stem": "Simplify: 6² + 7 × 5",
+      "explanation": "6² = 36; 7×5 = 35; sum = 71.",
+      "options": [
+        {
+          "label": "71",
+          "is_correct": true
+        },
+        {
+          "label": "73",
+          "is_correct": false
+        },
+        {
+          "label": "75",
+          "is_correct": false
+        },
+        {
+          "label": "69",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Simplification",
+      "kind": "standard",
+      "difficulty": "hard",
+      "answer_type": "single",
+      "stem": "Simplify: 11² + 12 × 9",
+      "explanation": "11² = 121; 12×9 = 108; sum = 229.",
+      "options": [
+        {
+          "label": "220",
+          "is_correct": false
+        },
+        {
+          "label": "238",
+          "is_correct": false
+        },
+        {
+          "label": "229",
+          "is_correct": true
+        },
+        {
+          "label": "247",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Simplification",
+      "kind": "standard",
+      "difficulty": "hard",
+      "answer_type": "single",
+      "stem": "Simplify: (14 + 2) × 5 − 88 ÷ 8",
+      "explanation": "(14+2)×5 = 80; 88÷8 = 11; result = 69.",
+      "options": [
+        {
+          "label": "73",
+          "is_correct": false
+        },
+        {
+          "label": "69",
+          "is_correct": true
+        },
+        {
+          "label": "67",
+          "is_correct": false
+        },
+        {
+          "label": "71",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Simplification",
+      "kind": "standard",
+      "difficulty": "hard",
+      "answer_type": "single",
+      "stem": "Simplify: 47 + 11 × 5 − 72 ÷ 8",
+      "explanation": "11×5=55, 72÷8=9; 47 + 55 − 9 = 93.",
+      "options": [
+        {
+          "label": "97",
+          "is_correct": false
+        },
+        {
+          "label": "95",
+          "is_correct": false
+        },
+        {
+          "label": "91",
+          "is_correct": false
+        },
+        {
+          "label": "93",
+          "is_correct": true
+        }
+      ]
+    },
+    {
+      "chapter": "Simplification",
+      "kind": "standard",
+      "difficulty": "hard",
+      "answer_type": "single",
+      "stem": "Simplify: (12 + 16) × 12 − 12 ÷ 3",
+      "explanation": "(12+16)×12 = 336; 12÷3 = 4; result = 332.",
+      "options": [
+        {
+          "label": "345",
+          "is_correct": false
+        },
+        {
+          "label": "332",
+          "is_correct": true
+        },
+        {
+          "label": "319",
+          "is_correct": false
+        },
+        {
+          "label": "358",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Simplification",
+      "kind": "standard",
+      "difficulty": "hard",
+      "answer_type": "single",
+      "stem": "Simplify: 9² + 11 × 5",
+      "explanation": "9² = 81; 11×5 = 55; sum = 136.",
+      "options": [
+        {
+          "label": "134",
+          "is_correct": false
+        },
+        {
+          "label": "140",
+          "is_correct": false
+        },
+        {
+          "label": "136",
+          "is_correct": true
+        },
+        {
+          "label": "138",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Simplification",
+      "kind": "standard",
+      "difficulty": "hard",
+      "answer_type": "single",
+      "stem": "Simplify: 38 + 9 × 9 − 70 ÷ 7",
+      "explanation": "9×9=81, 70÷7=10; 38 + 81 − 10 = 109.",
+      "options": [
+        {
+          "label": "111",
+          "is_correct": false
+        },
+        {
+          "label": "113",
+          "is_correct": false
+        },
+        {
+          "label": "107",
+          "is_correct": false
+        },
+        {
+          "label": "109",
+          "is_correct": true
+        }
+      ]
+    },
+    {
+      "chapter": "Simplification",
+      "kind": "standard",
+      "difficulty": "hard",
+      "answer_type": "single",
+      "stem": "Simplify: 18 + 12 × 5 − 72 ÷ 6",
+      "explanation": "12×5=60, 72÷6=12; 18 + 60 − 12 = 66.",
+      "options": [
+        {
+          "label": "68",
+          "is_correct": false
+        },
+        {
+          "label": "66",
+          "is_correct": true
+        },
+        {
+          "label": "70",
+          "is_correct": false
+        },
+        {
+          "label": "64",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Simplification",
+      "kind": "standard",
+      "difficulty": "hard",
+      "answer_type": "single",
+      "stem": "Simplify: 10² + 7 × 7",
+      "explanation": "10² = 100; 7×7 = 49; sum = 149.",
+      "options": [
+        {
+          "label": "153",
+          "is_correct": false
+        },
+        {
+          "label": "149",
+          "is_correct": true
+        },
+        {
+          "label": "147",
+          "is_correct": false
+        },
+        {
+          "label": "151",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Simplification",
+      "kind": "standard",
+      "difficulty": "hard",
+      "answer_type": "single",
+      "stem": "Simplify: 42 + 8 × 6 − 110 ÷ 10",
+      "explanation": "8×6=48, 110÷10=11; 42 + 48 − 11 = 79.",
+      "options": [
+        {
+          "label": "81",
+          "is_correct": false
+        },
+        {
+          "label": "79",
+          "is_correct": true
+        },
+        {
+          "label": "77",
+          "is_correct": false
+        },
+        {
+          "label": "83",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Simplification",
+      "kind": "standard",
+      "difficulty": "hard",
+      "answer_type": "single",
+      "stem": "Simplify: (17 + 9) × 9 − 36 ÷ 6",
+      "explanation": "(17+9)×9 = 234; 36÷6 = 6; result = 228.",
+      "options": [
+        {
+          "label": "246",
+          "is_correct": false
+        },
+        {
+          "label": "228",
+          "is_correct": true
+        },
+        {
+          "label": "237",
+          "is_correct": false
+        },
+        {
+          "label": "219",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Simplification",
+      "kind": "standard",
+      "difficulty": "hard",
+      "answer_type": "single",
+      "stem": "Simplify: (7 + 16) × 12 − 50 ÷ 5",
+      "explanation": "(7+16)×12 = 276; 50÷5 = 10; result = 266.",
+      "options": [
+        {
+          "label": "255",
+          "is_correct": false
+        },
+        {
+          "label": "266",
+          "is_correct": true
+        },
+        {
+          "label": "288",
+          "is_correct": false
+        },
+        {
+          "label": "277",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Simplification",
+      "kind": "standard",
+      "difficulty": "hard",
+      "answer_type": "single",
+      "stem": "Simplify: 45 + 7 × 11 − 88 ÷ 8",
+      "explanation": "7×11=77, 88÷8=11; 45 + 77 − 11 = 111.",
+      "options": [
+        {
+          "label": "111",
+          "is_correct": true
+        },
+        {
+          "label": "115",
+          "is_correct": false
+        },
+        {
+          "label": "109",
+          "is_correct": false
+        },
+        {
+          "label": "113",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Simplification",
+      "kind": "standard",
+      "difficulty": "very_hard",
+      "answer_type": "single",
+      "stem": "Simplify: (81 + 7 × 7) ÷ 10 − 12",
+      "explanation": "7×7=49; (81+49) = 130; ÷10 = 13; minus 12 = 1.",
+      "options": [
+        {
+          "label": "2",
+          "is_correct": false
+        },
+        {
+          "label": "1",
+          "is_correct": true
+        },
+        {
+          "label": "4",
+          "is_correct": false
+        },
+        {
+          "label": "3",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Simplification",
+      "kind": "standard",
+      "difficulty": "very_hard",
+      "answer_type": "single",
+      "stem": "Simplify: (162 + 2 × 7) ÷ 11 − 5",
+      "explanation": "2×7=14; (162+14) = 176; ÷11 = 16; minus 5 = 11.",
+      "options": [
+        {
+          "label": "13",
+          "is_correct": false
+        },
+        {
+          "label": "12",
+          "is_correct": false
+        },
+        {
+          "label": "11",
+          "is_correct": true
+        },
+        {
+          "label": "10",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Simplification",
+      "kind": "standard",
+      "difficulty": "very_hard",
+      "answer_type": "single",
+      "stem": "Simplify: 8 × 9 + 14 × 14 − 6 × 5",
+      "explanation": "72 + 196 − 30 = 238.",
+      "options": [
+        {
+          "label": "228",
+          "is_correct": false
+        },
+        {
+          "label": "248",
+          "is_correct": false
+        },
+        {
+          "label": "238",
+          "is_correct": true
+        },
+        {
+          "label": "258",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Simplification",
+      "kind": "standard",
+      "difficulty": "very_hard",
+      "answer_type": "single",
+      "stem": "Simplify: 10 × 11 + 6 × 9 − 3 × 7",
+      "explanation": "110 + 54 − 21 = 143.",
+      "options": [
+        {
+          "label": "143",
+          "is_correct": true
+        },
+        {
+          "label": "141",
+          "is_correct": false
+        },
+        {
+          "label": "145",
+          "is_correct": false
+        },
+        {
+          "label": "147",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Simplification",
+      "kind": "standard",
+      "difficulty": "very_hard",
+      "answer_type": "single",
+      "stem": "Simplify: (126 + 10 × 3) ÷ 12 − 11",
+      "explanation": "10×3=30; (126+30) = 156; ÷12 = 13; minus 11 = 2.",
+      "options": [
+        {
+          "label": "2",
+          "is_correct": true
+        },
+        {
+          "label": "4",
+          "is_correct": false
+        },
+        {
+          "label": "1",
+          "is_correct": false
+        },
+        {
+          "label": "3",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Simplification",
+      "kind": "standard",
+      "difficulty": "very_hard",
+      "answer_type": "single",
+      "stem": "Simplify: 8 × 3 + 7 × 7 − 8 × 7",
+      "explanation": "24 + 49 − 56 = 17.",
+      "options": [
+        {
+          "label": "19",
+          "is_correct": false
+        },
+        {
+          "label": "17",
+          "is_correct": true
+        },
+        {
+          "label": "18",
+          "is_correct": false
+        },
+        {
+          "label": "16",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Simplification",
+      "kind": "standard",
+      "difficulty": "very_hard",
+      "answer_type": "single",
+      "stem": "Simplify: (40 + 10 × 9) ÷ 10 − 8",
+      "explanation": "10×9=90; (40+90) = 130; ÷10 = 13; minus 8 = 5.",
+      "options": [
+        {
+          "label": "6",
+          "is_correct": false
+        },
+        {
+          "label": "5",
+          "is_correct": true
+        },
+        {
+          "label": "7",
+          "is_correct": false
+        },
+        {
+          "label": "4",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Simplification",
+      "kind": "standard",
+      "difficulty": "very_hard",
+      "answer_type": "single",
+      "stem": "Simplify: [(2 + 13) × 6 − 42] ÷ 8",
+      "explanation": "(2+13)×6 = 90; minus 42 = 48; ÷ 8 = 6.",
+      "options": [
+        {
+          "label": "7",
+          "is_correct": false
+        },
+        {
+          "label": "6",
+          "is_correct": true
+        },
+        {
+          "label": "8",
+          "is_correct": false
+        },
+        {
+          "label": "5",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Simplification",
+      "kind": "standard",
+      "difficulty": "very_hard",
+      "answer_type": "single",
+      "stem": "Simplify: 8 × 7 + 12 × 14 − 11 × 11",
+      "explanation": "56 + 168 − 121 = 103.",
+      "options": [
+        {
+          "label": "101",
+          "is_correct": false
+        },
+        {
+          "label": "103",
+          "is_correct": true
+        },
+        {
+          "label": "105",
+          "is_correct": false
+        },
+        {
+          "label": "107",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Simplification",
+      "kind": "standard",
+      "difficulty": "very_hard",
+      "answer_type": "single",
+      "stem": "Simplify: [(7 + 13) × 8 − 146] ÷ 2",
+      "explanation": "(7+13)×8 = 160; minus 146 = 14; ÷ 2 = 7.",
+      "options": [
+        {
+          "label": "6",
+          "is_correct": false
+        },
+        {
+          "label": "8",
+          "is_correct": false
+        },
+        {
+          "label": "9",
+          "is_correct": false
+        },
+        {
+          "label": "7",
+          "is_correct": true
+        }
+      ]
+    },
+    {
+      "chapter": "Simplification",
+      "kind": "standard",
+      "difficulty": "very_hard",
+      "answer_type": "single",
+      "stem": "Simplify: [(7 + 15) × 8 − 116] ÷ 12",
+      "explanation": "(7+15)×8 = 176; minus 116 = 60; ÷ 12 = 5.",
+      "options": [
+        {
+          "label": "5",
+          "is_correct": true
+        },
+        {
+          "label": "4",
+          "is_correct": false
+        },
+        {
+          "label": "6",
+          "is_correct": false
+        },
+        {
+          "label": "7",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Simplification",
+      "kind": "standard",
+      "difficulty": "very_hard",
+      "answer_type": "single",
+      "stem": "Simplify: 5 × 8 + 5 × 13 − 5 × 5",
+      "explanation": "40 + 65 − 25 = 80.",
+      "options": [
+        {
+          "label": "78",
+          "is_correct": false
+        },
+        {
+          "label": "80",
+          "is_correct": true
+        },
+        {
+          "label": "82",
+          "is_correct": false
+        },
+        {
+          "label": "84",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Simplification",
+      "kind": "standard",
+      "difficulty": "very_hard",
+      "answer_type": "single",
+      "stem": "Simplify: [(9 + 14) × 6 − 86] ÷ 4",
+      "explanation": "(9+14)×6 = 138; minus 86 = 52; ÷ 4 = 13.",
+      "options": [
+        {
+          "label": "15",
+          "is_correct": false
+        },
+        {
+          "label": "13",
+          "is_correct": true
+        },
+        {
+          "label": "12",
+          "is_correct": false
+        },
+        {
+          "label": "14",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Simplification",
+      "kind": "standard",
+      "difficulty": "very_hard",
+      "answer_type": "single",
+      "stem": "Simplify: 13 × 13 + 2 × 6 − 6 × 11",
+      "explanation": "169 + 12 − 66 = 115.",
+      "options": [
+        {
+          "label": "113",
+          "is_correct": false
+        },
+        {
+          "label": "117",
+          "is_correct": false
+        },
+        {
+          "label": "115",
+          "is_correct": true
+        },
+        {
+          "label": "119",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Simplification",
+      "kind": "standard",
+      "difficulty": "very_hard",
+      "answer_type": "single",
+      "stem": "Simplify: [(5 + 11) × 8 − 101] ÷ 3",
+      "explanation": "(5+11)×8 = 128; minus 101 = 27; ÷ 3 = 9.",
+      "options": [
+        {
+          "label": "9",
+          "is_correct": true
+        },
+        {
+          "label": "10",
+          "is_correct": false
+        },
+        {
+          "label": "11",
+          "is_correct": false
+        },
+        {
+          "label": "8",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Simplification",
+      "kind": "standard",
+      "difficulty": "very_hard",
+      "answer_type": "single",
+      "stem": "Simplify: 3 × 7 + 13 × 5 − 10 × 3",
+      "explanation": "21 + 65 − 30 = 56.",
+      "options": [
+        {
+          "label": "60",
+          "is_correct": false
+        },
+        {
+          "label": "56",
+          "is_correct": true
+        },
+        {
+          "label": "54",
+          "is_correct": false
+        },
+        {
+          "label": "58",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Simplification",
+      "kind": "standard",
+      "difficulty": "very_hard",
+      "answer_type": "single",
+      "stem": "Simplify: (19 + 3 × 7) ÷ 5 − 2",
+      "explanation": "3×7=21; (19+21) = 40; ÷5 = 8; minus 2 = 6.",
+      "options": [
+        {
+          "label": "7",
+          "is_correct": false
+        },
+        {
+          "label": "5",
+          "is_correct": false
+        },
+        {
+          "label": "8",
+          "is_correct": false
+        },
+        {
+          "label": "6",
+          "is_correct": true
+        }
+      ]
+    },
+    {
+      "chapter": "Simplification",
+      "kind": "standard",
+      "difficulty": "very_hard",
+      "answer_type": "single",
+      "stem": "Simplify: [(15 + 7) × 8 − 32] ÷ 12",
+      "explanation": "(15+7)×8 = 176; minus 32 = 144; ÷ 12 = 12.",
+      "options": [
+        {
+          "label": "12",
+          "is_correct": true
+        },
+        {
+          "label": "13",
+          "is_correct": false
+        },
+        {
+          "label": "14",
+          "is_correct": false
+        },
+        {
+          "label": "11",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Simplification",
+      "kind": "standard",
+      "difficulty": "very_hard",
+      "answer_type": "single",
+      "stem": "Simplify: [(8 + 8) × 9 − 118] ÷ 2",
+      "explanation": "(8+8)×9 = 144; minus 118 = 26; ÷ 2 = 13.",
+      "options": [
+        {
+          "label": "12",
+          "is_correct": false
+        },
+        {
+          "label": "14",
+          "is_correct": false
+        },
+        {
+          "label": "15",
+          "is_correct": false
+        },
+        {
+          "label": "13",
+          "is_correct": true
+        }
+      ]
+    },
+    {
+      "chapter": "Simplification",
+      "kind": "standard",
+      "difficulty": "very_hard",
+      "answer_type": "single",
+      "stem": "Simplify: [(8 + 8) × 9 − 90] ÷ 6",
+      "explanation": "(8+8)×9 = 144; minus 90 = 54; ÷ 6 = 9.",
+      "options": [
+        {
+          "label": "8",
+          "is_correct": false
+        },
+        {
+          "label": "9",
+          "is_correct": true
+        },
+        {
+          "label": "11",
+          "is_correct": false
+        },
+        {
+          "label": "10",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Simplification",
+      "kind": "standard",
+      "difficulty": "very_hard",
+      "answer_type": "single",
+      "stem": "Simplify: (8 + 8 × 2) ÷ 6 − 1",
+      "explanation": "8×2=16; (8+16) = 24; ÷6 = 4; minus 1 = 3.",
+      "options": [
+        {
+          "label": "3",
+          "is_correct": true
+        },
+        {
+          "label": "5",
+          "is_correct": false
+        },
+        {
+          "label": "2",
+          "is_correct": false
+        },
+        {
+          "label": "4",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Simplification",
+      "kind": "standard",
+      "difficulty": "very_hard",
+      "answer_type": "single",
+      "stem": "Simplify: 10 × 15 + 11 × 3 − 11 × 5",
+      "explanation": "150 + 33 − 55 = 128.",
+      "options": [
+        {
+          "label": "128",
+          "is_correct": true
+        },
+        {
+          "label": "126",
+          "is_correct": false
+        },
+        {
+          "label": "130",
+          "is_correct": false
+        },
+        {
+          "label": "132",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Simplification",
+      "kind": "standard",
+      "difficulty": "very_hard",
+      "answer_type": "single",
+      "stem": "Simplify: (108 + 6 × 6) ÷ 12 − 8",
+      "explanation": "6×6=36; (108+36) = 144; ÷12 = 12; minus 8 = 4.",
+      "options": [
+        {
+          "label": "4",
+          "is_correct": true
+        },
+        {
+          "label": "3",
+          "is_correct": false
+        },
+        {
+          "label": "6",
+          "is_correct": false
+        },
+        {
+          "label": "5",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Simplification",
+      "kind": "standard",
+      "difficulty": "very_hard",
+      "answer_type": "single",
+      "stem": "Simplify: (8 + 8 × 8) ÷ 6 − 4",
+      "explanation": "8×8=64; (8+64) = 72; ÷6 = 12; minus 4 = 8.",
+      "options": [
+        {
+          "label": "8",
+          "is_correct": true
+        },
+        {
+          "label": "9",
+          "is_correct": false
+        },
+        {
+          "label": "10",
+          "is_correct": false
+        },
+        {
+          "label": "7",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Simplification",
+      "kind": "standard",
+      "difficulty": "very_hard",
+      "answer_type": "single",
+      "stem": "Simplify: [(12 + 9) × 9 − 135] ÷ 9",
+      "explanation": "(12+9)×9 = 189; minus 135 = 54; ÷ 9 = 6.",
+      "options": [
+        {
+          "label": "8",
+          "is_correct": false
+        },
+        {
+          "label": "6",
+          "is_correct": true
+        },
+        {
+          "label": "7",
+          "is_correct": false
+        },
+        {
+          "label": "5",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Simplification",
+      "kind": "standard",
+      "difficulty": "very_hard",
+      "answer_type": "single",
+      "stem": "Simplify: 14 × 15 + 11 × 14 − 12 × 12",
+      "explanation": "210 + 154 − 144 = 220.",
+      "options": [
+        {
+          "label": "211",
+          "is_correct": false
+        },
+        {
+          "label": "220",
+          "is_correct": true
+        },
+        {
+          "label": "229",
+          "is_correct": false
+        },
+        {
+          "label": "238",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Simplification",
+      "kind": "standard",
+      "difficulty": "very_hard",
+      "answer_type": "single",
+      "stem": "Simplify: [(13 + 11) × 12 − 176] ÷ 8",
+      "explanation": "(13+11)×12 = 288; minus 176 = 112; ÷ 8 = 14.",
+      "options": [
+        {
+          "label": "13",
+          "is_correct": false
+        },
+        {
+          "label": "16",
+          "is_correct": false
+        },
+        {
+          "label": "15",
+          "is_correct": false
+        },
+        {
+          "label": "14",
+          "is_correct": true
+        }
+      ]
+    },
+    {
+      "chapter": "Simplification",
+      "kind": "standard",
+      "difficulty": "very_hard",
+      "answer_type": "single",
+      "stem": "Simplify: (18 + 8 × 9) ÷ 5 − 17",
+      "explanation": "8×9=72; (18+72) = 90; ÷5 = 18; minus 17 = 1.",
+      "options": [
+        {
+          "label": "1",
+          "is_correct": true
+        },
+        {
+          "label": "2",
+          "is_correct": false
+        },
+        {
+          "label": "3",
+          "is_correct": false
+        },
+        {
+          "label": "4",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Simplification",
+      "kind": "standard",
+      "difficulty": "very_hard",
+      "answer_type": "single",
+      "stem": "Simplify: [(12 + 12) × 12 − 264] ÷ 6",
+      "explanation": "(12+12)×12 = 288; minus 264 = 24; ÷ 6 = 4.",
+      "options": [
+        {
+          "label": "4",
+          "is_correct": true
+        },
+        {
+          "label": "3",
+          "is_correct": false
+        },
+        {
+          "label": "5",
+          "is_correct": false
+        },
+        {
+          "label": "6",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Simplification",
+      "kind": "standard",
+      "difficulty": "very_hard",
+      "answer_type": "single",
+      "stem": "Simplify: (40 + 7 × 5) ÷ 5 − 9",
+      "explanation": "7×5=35; (40+35) = 75; ÷5 = 15; minus 9 = 6.",
+      "options": [
+        {
+          "label": "8",
+          "is_correct": false
+        },
+        {
+          "label": "6",
+          "is_correct": true
+        },
+        {
+          "label": "7",
+          "is_correct": false
+        },
+        {
+          "label": "5",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Simplification",
+      "kind": "standard",
+      "difficulty": "very_hard",
+      "answer_type": "single",
+      "stem": "Simplify: [(13 + 9) × 12 − 219] ÷ 3",
+      "explanation": "(13+9)×12 = 264; minus 219 = 45; ÷ 3 = 15.",
+      "options": [
+        {
+          "label": "16",
+          "is_correct": false
+        },
+        {
+          "label": "14",
+          "is_correct": false
+        },
+        {
+          "label": "15",
+          "is_correct": true
+        },
+        {
+          "label": "17",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Simplification",
+      "kind": "standard",
+      "difficulty": "very_hard",
+      "answer_type": "single",
+      "stem": "Simplify: [(13 + 7) × 7 − 80] ÷ 10",
+      "explanation": "(13+7)×7 = 140; minus 80 = 60; ÷ 10 = 6.",
+      "options": [
+        {
+          "label": "5",
+          "is_correct": false
+        },
+        {
+          "label": "7",
+          "is_correct": false
+        },
+        {
+          "label": "6",
+          "is_correct": true
+        },
+        {
+          "label": "8",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Simplification",
+      "kind": "standard",
+      "difficulty": "very_hard",
+      "answer_type": "single",
+      "stem": "Simplify: (36 + 4 × 6) ÷ 10 − 4",
+      "explanation": "4×6=24; (36+24) = 60; ÷10 = 6; minus 4 = 2.",
+      "options": [
+        {
+          "label": "1",
+          "is_correct": false
+        },
+        {
+          "label": "2",
+          "is_correct": true
+        },
+        {
+          "label": "4",
+          "is_correct": false
+        },
+        {
+          "label": "3",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Simplification",
+      "kind": "standard",
+      "difficulty": "very_hard",
+      "answer_type": "single",
+      "stem": "Simplify: (66 + 3 × 2) ÷ 8 − 7",
+      "explanation": "3×2=6; (66+6) = 72; ÷8 = 9; minus 7 = 2.",
+      "options": [
+        {
+          "label": "3",
+          "is_correct": false
+        },
+        {
+          "label": "4",
+          "is_correct": false
+        },
+        {
+          "label": "2",
+          "is_correct": true
+        },
+        {
+          "label": "1",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Simplification",
+      "kind": "standard",
+      "difficulty": "very_hard",
+      "answer_type": "single",
+      "stem": "Simplify: (1 + 4 × 2) ÷ 3 − 1",
+      "explanation": "4×2=8; (1+8) = 9; ÷3 = 3; minus 1 = 2.",
+      "options": [
+        {
+          "label": "2",
+          "is_correct": true
+        },
+        {
+          "label": "1",
+          "is_correct": false
+        },
+        {
+          "label": "4",
+          "is_correct": false
+        },
+        {
+          "label": "3",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Simplification",
+      "kind": "standard",
+      "difficulty": "very_hard",
+      "answer_type": "single",
+      "stem": "Simplify: (113 + 2 × 4) ÷ 11 − 3",
+      "explanation": "2×4=8; (113+8) = 121; ÷11 = 11; minus 3 = 8.",
+      "options": [
+        {
+          "label": "10",
+          "is_correct": false
+        },
+        {
+          "label": "8",
+          "is_correct": true
+        },
+        {
+          "label": "7",
+          "is_correct": false
+        },
+        {
+          "label": "9",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Simplification",
+      "kind": "standard",
+      "difficulty": "very_hard",
+      "answer_type": "single",
+      "stem": "Simplify: 6 × 15 + 15 × 15 − 6 × 9",
+      "explanation": "90 + 225 − 54 = 261.",
+      "options": [
+        {
+          "label": "271",
+          "is_correct": false
+        },
+        {
+          "label": "281",
+          "is_correct": false
+        },
+        {
+          "label": "261",
+          "is_correct": true
+        },
+        {
+          "label": "251",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Simplification",
+      "kind": "standard",
+      "difficulty": "very_hard",
+      "answer_type": "single",
+      "stem": "Simplify: [(6 + 3) × 2 − 6] ÷ 3",
+      "explanation": "(6+3)×2 = 18; minus 6 = 12; ÷ 3 = 4.",
+      "options": [
+        {
+          "label": "5",
+          "is_correct": false
+        },
+        {
+          "label": "6",
+          "is_correct": false
+        },
+        {
+          "label": "4",
+          "is_correct": true
+        },
+        {
+          "label": "3",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Simplification",
+      "kind": "standard",
+      "difficulty": "very_hard",
+      "answer_type": "single",
+      "stem": "Simplify: 8 × 15 + 5 × 10 − 12 × 8",
+      "explanation": "120 + 50 − 96 = 74.",
+      "options": [
+        {
+          "label": "74",
+          "is_correct": true
+        },
+        {
+          "label": "72",
+          "is_correct": false
+        },
+        {
+          "label": "76",
+          "is_correct": false
+        },
+        {
+          "label": "78",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Simplification",
+      "kind": "standard",
+      "difficulty": "very_hard",
+      "answer_type": "single",
+      "stem": "Simplify: [(14 + 9) × 12 − 226] ÷ 10",
+      "explanation": "(14+9)×12 = 276; minus 226 = 50; ÷ 10 = 5.",
+      "options": [
+        {
+          "label": "5",
+          "is_correct": true
+        },
+        {
+          "label": "4",
+          "is_correct": false
+        },
+        {
+          "label": "6",
+          "is_correct": false
+        },
+        {
+          "label": "7",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Simplification",
+      "kind": "standard",
+      "difficulty": "very_hard",
+      "answer_type": "single",
+      "stem": "Simplify: [(10 + 13) × 9 − 171] ÷ 9",
+      "explanation": "(10+13)×9 = 207; minus 171 = 36; ÷ 9 = 4.",
+      "options": [
+        {
+          "label": "3",
+          "is_correct": false
+        },
+        {
+          "label": "6",
+          "is_correct": false
+        },
+        {
+          "label": "4",
+          "is_correct": true
+        },
+        {
+          "label": "5",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Simplification",
+      "kind": "standard",
+      "difficulty": "very_hard",
+      "answer_type": "single",
+      "stem": "Simplify: 2 × 11 + 7 × 12 − 12 × 4",
+      "explanation": "22 + 84 − 48 = 58.",
+      "options": [
+        {
+          "label": "62",
+          "is_correct": false
+        },
+        {
+          "label": "56",
+          "is_correct": false
+        },
+        {
+          "label": "60",
+          "is_correct": false
+        },
+        {
+          "label": "58",
+          "is_correct": true
+        }
+      ]
+    },
+    {
+      "chapter": "Simplification",
+      "kind": "standard",
+      "difficulty": "very_hard",
+      "answer_type": "single",
+      "stem": "Simplify: 12 × 5 + 4 × 6 − 10 × 5",
+      "explanation": "60 + 24 − 50 = 34.",
+      "options": [
+        {
+          "label": "33",
+          "is_correct": false
+        },
+        {
+          "label": "34",
+          "is_correct": true
+        },
+        {
+          "label": "35",
+          "is_correct": false
+        },
+        {
+          "label": "36",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Simplification",
+      "kind": "standard",
+      "difficulty": "very_hard",
+      "answer_type": "single",
+      "stem": "Simplify: 7 × 2 + 2 × 4 − 8 × 2",
+      "explanation": "14 + 8 − 16 = 6.",
+      "options": [
+        {
+          "label": "8",
+          "is_correct": false
+        },
+        {
+          "label": "5",
+          "is_correct": false
+        },
+        {
+          "label": "7",
+          "is_correct": false
+        },
+        {
+          "label": "6",
+          "is_correct": true
+        }
+      ]
+    },
+    {
+      "chapter": "Simplification",
+      "kind": "standard",
+      "difficulty": "very_hard",
+      "answer_type": "single",
+      "stem": "Simplify: 14 × 2 + 13 × 6 − 6 × 2",
+      "explanation": "28 + 78 − 12 = 94.",
+      "options": [
+        {
+          "label": "94",
+          "is_correct": true
+        },
+        {
+          "label": "98",
+          "is_correct": false
+        },
+        {
+          "label": "96",
+          "is_correct": false
+        },
+        {
+          "label": "92",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Simplification",
+      "kind": "standard",
+      "difficulty": "very_hard",
+      "answer_type": "single",
+      "stem": "Simplify: [(2 + 10) × 9 − 48] ÷ 10",
+      "explanation": "(2+10)×9 = 108; minus 48 = 60; ÷ 10 = 6.",
+      "options": [
+        {
+          "label": "6",
+          "is_correct": true
+        },
+        {
+          "label": "5",
+          "is_correct": false
+        },
+        {
+          "label": "7",
+          "is_correct": false
+        },
+        {
+          "label": "8",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Simplification",
+      "kind": "standard",
+      "difficulty": "very_hard",
+      "answer_type": "single",
+      "stem": "Simplify: (93 + 9 × 3) ÷ 12 − 3",
+      "explanation": "9×3=27; (93+27) = 120; ÷12 = 10; minus 3 = 7.",
+      "options": [
+        {
+          "label": "8",
+          "is_correct": false
+        },
+        {
+          "label": "9",
+          "is_correct": false
+        },
+        {
+          "label": "6",
+          "is_correct": false
+        },
+        {
+          "label": "7",
+          "is_correct": true
+        }
+      ]
+    },
+    {
+      "chapter": "Simplification",
+      "kind": "standard",
+      "difficulty": "very_hard",
+      "answer_type": "single",
+      "stem": "Simplify: [(4 + 10) × 9 − 66] ÷ 12",
+      "explanation": "(4+10)×9 = 126; minus 66 = 60; ÷ 12 = 5.",
+      "options": [
+        {
+          "label": "4",
+          "is_correct": false
+        },
+        {
+          "label": "7",
+          "is_correct": false
+        },
+        {
+          "label": "6",
+          "is_correct": false
+        },
+        {
+          "label": "5",
+          "is_correct": true
+        }
+      ]
+    },
+    {
+      "chapter": "Simplification",
+      "kind": "standard",
+      "difficulty": "very_hard",
+      "answer_type": "single",
+      "stem": "Simplify: 10 × 10 + 8 × 2 − 2 × 3",
+      "explanation": "100 + 16 − 6 = 110.",
+      "options": [
+        {
+          "label": "110",
+          "is_correct": true
+        },
+        {
+          "label": "114",
+          "is_correct": false
+        },
+        {
+          "label": "108",
+          "is_correct": false
+        },
+        {
+          "label": "112",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Simplification",
+      "kind": "standard",
+      "difficulty": "very_hard",
+      "answer_type": "single",
+      "stem": "Simplify: (40 + 8 × 11) ÷ 8 − 14",
+      "explanation": "8×11=88; (40+88) = 128; ÷8 = 16; minus 14 = 2.",
+      "options": [
+        {
+          "label": "4",
+          "is_correct": false
+        },
+        {
+          "label": "2",
+          "is_correct": true
+        },
+        {
+          "label": "3",
+          "is_correct": false
+        },
+        {
+          "label": "1",
+          "is_correct": false
+        }
+      ]
+    }
+  ]
+}

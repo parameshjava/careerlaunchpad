@@ -1,0 +1,453 @@
+{
+  "subject": "Reasoning",
+  "questions": [
+    {
+      "chapter": "Classification",
+      "kind": "standard",
+      "difficulty": "easy",
+      "answer_type": "single",
+      "stem": "Find the odd one out: Rose, Lotus, Lily, Mango.",
+      "explanation": "Rose, lotus and lily are flowers; mango is a fruit.",
+      "options": [
+        { "label": "Rose", "is_correct": false },
+        { "label": "Lotus", "is_correct": false },
+        { "label": "Lily", "is_correct": false },
+        { "label": "Mango", "is_correct": true }
+      ]
+    },
+    {
+      "chapter": "Classification",
+      "kind": "standard",
+      "difficulty": "easy",
+      "answer_type": "single",
+      "stem": "Find the odd one out: Apple, Banana, Carrot, Guava.",
+      "explanation": "Apple, banana and guava are fruits; carrot is a vegetable.",
+      "options": [
+        { "label": "Apple", "is_correct": false },
+        { "label": "Banana", "is_correct": false },
+        { "label": "Carrot", "is_correct": true },
+        { "label": "Guava", "is_correct": false }
+      ]
+    },
+    {
+      "chapter": "Classification",
+      "kind": "standard",
+      "difficulty": "easy",
+      "answer_type": "single",
+      "stem": "Find the odd one out: Dog, Cat, Lion, Cow.",
+      "explanation": "Dog, cat and cow are domestic animals; the lion is a wild animal.",
+      "options": [
+        { "label": "Dog", "is_correct": false },
+        { "label": "Cat", "is_correct": false },
+        { "label": "Lion", "is_correct": true },
+        { "label": "Cow", "is_correct": false }
+      ]
+    },
+    {
+      "chapter": "Classification",
+      "kind": "standard",
+      "difficulty": "easy",
+      "answer_type": "single",
+      "stem": "Find the odd one out: Copper, Iron, Silver, Diamond.",
+      "explanation": "Copper, iron and silver are metals; diamond is a non-metal (a form of carbon).",
+      "options": [
+        { "label": "Copper", "is_correct": false },
+        { "label": "Iron", "is_correct": false },
+        { "label": "Silver", "is_correct": false },
+        { "label": "Diamond", "is_correct": true }
+      ]
+    },
+    {
+      "chapter": "Classification",
+      "kind": "standard",
+      "difficulty": "easy",
+      "answer_type": "single",
+      "stem": "Find the odd one out: Square, Circle, Triangle, Cube.",
+      "explanation": "Square, circle and triangle are two-dimensional figures; a cube is a three-dimensional solid.",
+      "options": [
+        { "label": "Square", "is_correct": false },
+        { "label": "Circle", "is_correct": false },
+        { "label": "Triangle", "is_correct": false },
+        { "label": "Cube", "is_correct": true }
+      ]
+    },
+    {
+      "chapter": "Classification",
+      "kind": "standard",
+      "difficulty": "easy",
+      "answer_type": "single",
+      "stem": "Find the odd one out: January, March, May, Sunday.",
+      "explanation": "January, March and May are months; Sunday is a day of the week.",
+      "options": [
+        { "label": "January", "is_correct": false },
+        { "label": "March", "is_correct": false },
+        { "label": "May", "is_correct": false },
+        { "label": "Sunday", "is_correct": true }
+      ]
+    },
+    {
+      "chapter": "Classification",
+      "kind": "standard",
+      "difficulty": "easy",
+      "answer_type": "single",
+      "stem": "Find the odd one out: Cricket, Football, Hockey, Chess.",
+      "explanation": "Cricket, football and hockey are outdoor field sports; chess is an indoor board game.",
+      "options": [
+        { "label": "Cricket", "is_correct": false },
+        { "label": "Football", "is_correct": false },
+        { "label": "Hockey", "is_correct": false },
+        { "label": "Chess", "is_correct": true }
+      ]
+    },
+    {
+      "chapter": "Classification",
+      "kind": "standard",
+      "difficulty": "easy",
+      "answer_type": "single",
+      "stem": "Find the odd one out: Delhi, Mumbai, Chennai, Ganga.",
+      "explanation": "Delhi, Mumbai and Chennai are cities; the Ganga is a river.",
+      "options": [
+        { "label": "Delhi", "is_correct": false },
+        { "label": "Mumbai", "is_correct": false },
+        { "label": "Chennai", "is_correct": false },
+        { "label": "Ganga", "is_correct": true }
+      ]
+    },
+    {
+      "chapter": "Classification",
+      "kind": "standard",
+      "difficulty": "medium",
+      "answer_type": "single",
+      "stem": "Find the odd one out: 3, 5, 9, 11.",
+      "explanation": "3, 5 and 11 are prime numbers; 9 = 3 × 3 is composite.",
+      "options": [
+        { "label": "3", "is_correct": false },
+        { "label": "5", "is_correct": false },
+        { "label": "9", "is_correct": true },
+        { "label": "11", "is_correct": false }
+      ]
+    },
+    {
+      "chapter": "Classification",
+      "kind": "standard",
+      "difficulty": "medium",
+      "answer_type": "single",
+      "stem": "Find the odd one out: 121, 144, 168, 169.",
+      "explanation": "121 = 11², 144 = 12², 169 = 13² are perfect squares; 168 is not a perfect square.",
+      "options": [
+        { "label": "121", "is_correct": false },
+        { "label": "144", "is_correct": false },
+        { "label": "168", "is_correct": true },
+        { "label": "169", "is_correct": false }
+      ]
+    },
+    {
+      "chapter": "Classification",
+      "kind": "standard",
+      "difficulty": "medium",
+      "answer_type": "single",
+      "stem": "Find the odd one out: Triangle, Pentagon, Hexagon, Circle.",
+      "explanation": "Triangle, pentagon and hexagon are polygons with straight sides; a circle has no straight sides or vertices.",
+      "options": [
+        { "label": "Triangle", "is_correct": false },
+        { "label": "Pentagon", "is_correct": false },
+        { "label": "Hexagon", "is_correct": false },
+        { "label": "Circle", "is_correct": true }
+      ]
+    },
+    {
+      "chapter": "Classification",
+      "kind": "standard",
+      "difficulty": "medium",
+      "answer_type": "single",
+      "stem": "Find the odd one out: Lizard, Crocodile, Snake, Frog.",
+      "explanation": "Lizard, crocodile and snake are reptiles; the frog is an amphibian.",
+      "options": [
+        { "label": "Lizard", "is_correct": false },
+        { "label": "Crocodile", "is_correct": false },
+        { "label": "Snake", "is_correct": false },
+        { "label": "Frog", "is_correct": true }
+      ]
+    },
+    {
+      "chapter": "Classification",
+      "kind": "standard",
+      "difficulty": "medium",
+      "answer_type": "single",
+      "stem": "Find the odd one out: Mercury, Venus, Earth, Moon.",
+      "explanation": "Mercury, Venus and Earth are planets; the Moon is a natural satellite.",
+      "options": [
+        { "label": "Mercury", "is_correct": false },
+        { "label": "Venus", "is_correct": false },
+        { "label": "Earth", "is_correct": false },
+        { "label": "Moon", "is_correct": true }
+      ]
+    },
+    {
+      "chapter": "Classification",
+      "kind": "standard",
+      "difficulty": "medium",
+      "answer_type": "single",
+      "stem": "Find the odd one out: Metre, Centimetre, Kilometre, Kilogram.",
+      "explanation": "Metre, centimetre and kilometre are units of length; the kilogram is a unit of mass.",
+      "options": [
+        { "label": "Metre", "is_correct": false },
+        { "label": "Centimetre", "is_correct": false },
+        { "label": "Kilometre", "is_correct": false },
+        { "label": "Kilogram", "is_correct": true }
+      ]
+    },
+    {
+      "chapter": "Classification",
+      "kind": "standard",
+      "difficulty": "medium",
+      "answer_type": "single",
+      "stem": "Find the odd one out: Guitar, Flute, Violin, Sitar.",
+      "explanation": "Guitar, violin and sitar are stringed instruments; the flute is a wind instrument.",
+      "options": [
+        { "label": "Guitar", "is_correct": false },
+        { "label": "Flute", "is_correct": true },
+        { "label": "Violin", "is_correct": false },
+        { "label": "Sitar", "is_correct": false }
+      ]
+    },
+    {
+      "chapter": "Classification",
+      "kind": "standard",
+      "difficulty": "medium",
+      "answer_type": "single",
+      "stem": "Find the odd one out: Cobra, Viper, Krait, Eel.",
+      "explanation": "Cobra, viper and krait are snakes; the eel is a fish.",
+      "options": [
+        { "label": "Cobra", "is_correct": false },
+        { "label": "Viper", "is_correct": false },
+        { "label": "Krait", "is_correct": false },
+        { "label": "Eel", "is_correct": true }
+      ]
+    },
+    {
+      "chapter": "Classification",
+      "kind": "standard",
+      "difficulty": "hard",
+      "answer_type": "single",
+      "stem": "Find the odd one out: India, China, Japan, Paris.",
+      "explanation": "India, China and Japan are countries; Paris is a city.",
+      "options": [
+        { "label": "India", "is_correct": false },
+        { "label": "China", "is_correct": false },
+        { "label": "Japan", "is_correct": false },
+        { "label": "Paris", "is_correct": true }
+      ]
+    },
+    {
+      "chapter": "Classification",
+      "kind": "standard",
+      "difficulty": "hard",
+      "answer_type": "single",
+      "stem": "Find the odd one out: Rupee, Dollar, Euro, Bank.",
+      "explanation": "Rupee, dollar and euro are currencies; a bank is a financial institution.",
+      "options": [
+        { "label": "Rupee", "is_correct": false },
+        { "label": "Dollar", "is_correct": false },
+        { "label": "Euro", "is_correct": false },
+        { "label": "Bank", "is_correct": true }
+      ]
+    },
+    {
+      "chapter": "Classification",
+      "kind": "standard",
+      "difficulty": "hard",
+      "answer_type": "single",
+      "stem": "Find the odd one out: BD, FH, JL, MO.",
+      "explanation": "Within each pair the letters differ by 2 (B→D, F→H, J→L, M→O). But the first letters run B(2), F(6), J(10), then should be N(14) — 'MO' starts at M(13), breaking the +4 step, so MO is the odd pair.",
+      "options": [
+        { "label": "BD", "is_correct": false },
+        { "label": "FH", "is_correct": false },
+        { "label": "JL", "is_correct": false },
+        { "label": "MO", "is_correct": true }
+      ]
+    },
+    {
+      "chapter": "Classification",
+      "kind": "standard",
+      "difficulty": "hard",
+      "answer_type": "single",
+      "stem": "Find the odd one out: AZ, BY, CX, DV.",
+      "explanation": "In AZ, BY, CX the two letters are symmetric from the ends of the alphabet and their position-values sum to 27 (1+26, 2+25, 3+24). DV gives 4+22 = 26, so it breaks the rule (it should be DW).",
+      "options": [
+        { "label": "AZ", "is_correct": false },
+        { "label": "BY", "is_correct": false },
+        { "label": "CX", "is_correct": false },
+        { "label": "DV", "is_correct": true }
+      ]
+    },
+    {
+      "chapter": "Classification",
+      "kind": "standard",
+      "difficulty": "hard",
+      "answer_type": "single",
+      "stem": "Find the odd one out: 24, 36, 48, 50.",
+      "explanation": "24, 36 and 48 are multiples of 12; 50 is not.",
+      "options": [
+        { "label": "24", "is_correct": false },
+        { "label": "36", "is_correct": false },
+        { "label": "48", "is_correct": false },
+        { "label": "50", "is_correct": true }
+      ]
+    },
+    {
+      "chapter": "Classification",
+      "kind": "standard",
+      "difficulty": "hard",
+      "answer_type": "single",
+      "stem": "Find the odd one out: 8, 27, 64, 100.",
+      "explanation": "8 = 2³, 27 = 3³ and 64 = 4³ are perfect cubes; 100 = 10² is a perfect square, not a cube.",
+      "options": [
+        { "label": "8", "is_correct": false },
+        { "label": "27", "is_correct": false },
+        { "label": "64", "is_correct": false },
+        { "label": "100", "is_correct": true }
+      ]
+    },
+    {
+      "chapter": "Classification",
+      "kind": "standard",
+      "difficulty": "hard",
+      "answer_type": "single",
+      "stem": "Find the odd one out: Copper, Bronze, Brass, Steel.",
+      "explanation": "Bronze, brass and steel are alloys (mixtures); copper is a pure metallic element.",
+      "options": [
+        { "label": "Copper", "is_correct": true },
+        { "label": "Bronze", "is_correct": false },
+        { "label": "Brass", "is_correct": false },
+        { "label": "Steel", "is_correct": false }
+      ]
+    },
+    {
+      "chapter": "Classification",
+      "kind": "standard",
+      "difficulty": "hard",
+      "answer_type": "single",
+      "stem": "Find the odd one out: Radius, Diameter, Circumference, Volume.",
+      "explanation": "Radius, diameter and circumference are properties of a two-dimensional circle; volume is a property of a three-dimensional solid.",
+      "options": [
+        { "label": "Radius", "is_correct": false },
+        { "label": "Diameter", "is_correct": false },
+        { "label": "Circumference", "is_correct": false },
+        { "label": "Volume", "is_correct": true }
+      ]
+    },
+    {
+      "chapter": "Classification",
+      "kind": "standard",
+      "difficulty": "very_hard",
+      "answer_type": "single",
+      "stem": "Find the odd one out: 343, 512, 1000, 1330.",
+      "explanation": "343 = 7³, 512 = 8³ and 1000 = 10³ are perfect cubes; 1330 is not a cube (11³ = 1331).",
+      "options": [
+        { "label": "343", "is_correct": false },
+        { "label": "512", "is_correct": false },
+        { "label": "1000", "is_correct": false },
+        { "label": "1330", "is_correct": true }
+      ]
+    },
+    {
+      "chapter": "Classification",
+      "kind": "standard",
+      "difficulty": "very_hard",
+      "answer_type": "single",
+      "stem": "Find the odd one out: Trumpet, Trombone, Tuba, Cello.",
+      "explanation": "Trumpet, trombone and tuba are brass wind instruments; the cello is a stringed instrument.",
+      "options": [
+        { "label": "Trumpet", "is_correct": false },
+        { "label": "Trombone", "is_correct": false },
+        { "label": "Tuba", "is_correct": false },
+        { "label": "Cello", "is_correct": true }
+      ]
+    },
+    {
+      "chapter": "Classification",
+      "kind": "standard",
+      "difficulty": "very_hard",
+      "answer_type": "single",
+      "stem": "Find the odd one out: ACE, BDF, CEG, DGI.",
+      "explanation": "In ACE, BDF and CEG each letter increases by 2 (A,C,E; B,D,F; C,E,G). DGI jumps D→G (by 3), so it breaks the +2, +2 rule (it should be DFH).",
+      "options": [
+        { "label": "ACE", "is_correct": false },
+        { "label": "BDF", "is_correct": false },
+        { "label": "CEG", "is_correct": false },
+        { "label": "DGI", "is_correct": true }
+      ]
+    },
+    {
+      "chapter": "Classification",
+      "kind": "standard",
+      "difficulty": "very_hard",
+      "answer_type": "single",
+      "stem": "Find the odd one out: 121, 132, 143, 150.",
+      "explanation": "121 (11×11), 132 (11×12) and 143 (11×13) are multiples of 11; 150 is not divisible by 11.",
+      "options": [
+        { "label": "121", "is_correct": false },
+        { "label": "132", "is_correct": false },
+        { "label": "143", "is_correct": false },
+        { "label": "150", "is_correct": true }
+      ]
+    },
+    {
+      "chapter": "Classification",
+      "kind": "standard",
+      "difficulty": "very_hard",
+      "answer_type": "single",
+      "stem": "Find the odd one out: Square, Rhombus, Rectangle, Trapezium.",
+      "explanation": "A square, rhombus and rectangle are parallelograms (both pairs of opposite sides parallel); a trapezium has only one pair of parallel sides.",
+      "options": [
+        { "label": "Square", "is_correct": false },
+        { "label": "Rhombus", "is_correct": false },
+        { "label": "Rectangle", "is_correct": false },
+        { "label": "Trapezium", "is_correct": true }
+      ]
+    },
+    {
+      "chapter": "Classification",
+      "kind": "standard",
+      "difficulty": "very_hard",
+      "answer_type": "single",
+      "stem": "Find the odd one out: Nitrogen, Oxygen, Hydrogen, Mercury.",
+      "explanation": "At room temperature nitrogen, oxygen and hydrogen are gases; mercury is a liquid metal.",
+      "options": [
+        { "label": "Nitrogen", "is_correct": false },
+        { "label": "Oxygen", "is_correct": false },
+        { "label": "Hydrogen", "is_correct": false },
+        { "label": "Mercury", "is_correct": true }
+      ]
+    },
+    {
+      "chapter": "Classification",
+      "kind": "standard",
+      "difficulty": "very_hard",
+      "answer_type": "single",
+      "stem": "Find the odd one out: 7, 13, 19, 25.",
+      "explanation": "The numbers look like an arithmetic sequence (+6), but classified by type, 7, 13 and 19 are prime while 25 = 5 × 5 is composite.",
+      "options": [
+        { "label": "7", "is_correct": false },
+        { "label": "13", "is_correct": false },
+        { "label": "19", "is_correct": false },
+        { "label": "25", "is_correct": true }
+      ]
+    },
+    {
+      "chapter": "Classification",
+      "kind": "standard",
+      "difficulty": "very_hard",
+      "answer_type": "single",
+      "stem": "Find the odd one out: Almirah, Table, Chair, Wood.",
+      "explanation": "An almirah, table and chair are pieces of furniture; wood is the raw material from which they are made.",
+      "options": [
+        { "label": "Almirah", "is_correct": false },
+        { "label": "Table", "is_correct": false },
+        { "label": "Chair", "is_correct": false },
+        { "label": "Wood", "is_correct": true }
+      ]
+    }
+  ]
+}

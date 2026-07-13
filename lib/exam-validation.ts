@@ -69,6 +69,7 @@ export function validateQuestionFields(
 
   const stemImageUrl = data.stem_image_url == null ? null : str(data.stem_image_url) || null;
   const explanation = data.explanation == null ? null : str(data.explanation) || null;
+  if (!explanation) errors.push("explanation: required");
 
   // Options: 4 or 5 (the source bank uses a 5th "None of these"), each labelled,
   // ≥1 correct; single ⇒ exactly 1 correct.

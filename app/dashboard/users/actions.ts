@@ -126,6 +126,29 @@ export async function updateMemberRoles(
   return { ok: true };
 }
 
+/** Grant or revoke a scoped College Admin role for an existing user (spec #3).
+ * Gated on role.assign (the RPC re-checks). */
+export async function setCollegeAdmin(
+  userId: string,
+  collegeId: string,
+  grant: boolean,
+): Promise<{ ok?: boolean; error?: string }> {
+  try {
+    await requirePermission("role.assign");
+  } catch {
+    return { error: "You don't have permission to assign roles." };
+  }
+  const supabase = await createClient();
+  const { error } = await supabase.rpc("set_college_admin", {
+    p_user_id: userId,
+    p_college_id: collegeId,
+    p_grant: grant,
+  });
+  if (error) return { error: error.message };
+  revalidatePath("/dashboard/users");
+  return { ok: true };
+}
+
 /** Set (or clear) a member's office notification email. Empty string clears it.
  * notification_email RLS is user.manage, so the direct writes are authorized. */
 export async function setMemberOfficeEmail(
