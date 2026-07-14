@@ -22,11 +22,11 @@ export const viewport: Viewport = {
 export const metadata: Metadata = {
   metadataBase: new URL(siteUrl),
   title: {
-    default: "CareerLaunchPad — Connecting Rural Talent with Global Opportunities",
-    template: "%s | CareerLaunchPad",
+    default: "CareerLaunchpad — Connecting Rural Talent with Global Opportunities",
+    template: "%s | CareerLaunchpad",
   },
   description,
-  applicationName: "CareerLaunchPad",
+  applicationName: "CareerLaunchpad",
   // iOS standalone "Add to Home Screen": opens chromeless with this title/status bar.
   appleWebApp: {
     capable: true,
@@ -53,8 +53,8 @@ export const metadata: Metadata = {
   ],
   openGraph: {
     type: "website",
-    siteName: "CareerLaunchPad",
-    title: "CareerLaunchPad — Connecting Rural Talent with Global Opportunities",
+    siteName: "CareerLaunchpad",
+    title: "CareerLaunchpad — Connecting Rural Talent with Global Opportunities",
     description,
     url: "/",
     locale: "en_US",
@@ -65,14 +65,14 @@ export const metadata: Metadata = {
         url: "/social-logo.png",
         width: 240,
         height: 240,
-        alt: "CareerLaunchPad",
+        alt: "CareerLaunchpad",
       },
     ],
   },
   twitter: {
     // "summary" renders the logo as a small thumbnail beside the title/description.
     card: "summary",
-    title: "CareerLaunchPad — Connecting Rural Talent with Global Opportunities",
+    title: "CareerLaunchpad — Connecting Rural Talent with Global Opportunities",
     description,
     images: ["/social-logo.png"],
   },
@@ -81,7 +81,7 @@ export const metadata: Metadata = {
 const jsonLd = {
   "@context": "https://schema.org",
   "@type": "EducationalOrganization",
-  name: "CareerLaunchPad",
+  name: "CareerLaunchpad",
   url: siteUrl,
   logo: `${siteUrl}/letterhead-logo.png`,
   slogan: "Connecting Rural Talent with Global Opportunities",

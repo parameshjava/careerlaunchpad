@@ -969,7 +969,7 @@
   }
 }
 
-/* ---------- Why CareerLaunchPad (problem → answer + belief quote) ----------
+/* ---------- Why CareerLaunchpad (problem → answer + belief quote) ----------
    Breaks out to the journey-panel width like .about below. The answer card and
    the quote band carry the brand treatment; the problem card stays neutral. */
 .why {
@@ -1076,21 +1076,101 @@
   scroll-margin-top: 96px;
 }
 
-/* Founder + Co-Founder pair (equal-height profile cards) */
+/* ---------- Vision & Mission (two statement cards) ---------- */
+.vm-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px;
+  margin-top: 24px;
+}
+
+.vm-card {
+  --vm-accent: var(--brand-blue);
+  background: var(--surface);
+  border: 1px solid var(--line);
+  border-top: 3px solid var(--vm-accent);
+  border-radius: 16px;
+  padding: 24px;
+  text-align: left;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.05);
+}
+
+.vm-head {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.vm-icon {
+  flex: 0 0 auto;
+  width: 42px;
+  height: 42px;
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--vm-accent);
+  background: color-mix(in srgb, var(--vm-accent) 10%, #fff);
+}
+
+.vm-icon svg {
+  width: 26px;
+  height: 26px;
+}
+
+.vm-label {
+  font-size: 1.1rem;
+  font-weight: 700;
+  margin: 0;
+}
+
+.vm-text {
+  margin: 14px 0 0;
+  color: var(--text-muted);
+  line-height: 1.7;
+  font-size: 0.95rem;
+}
+
+@media (max-width: 760px) {
+  .vm-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* Founder + Co-Founder pair — "A Team With a Mission" profile cards.
+   Each card: photo + expertise checklist on the left; role badge, name,
+   story, and pull-quote on the right. --fc-accent (set inline per card)
+   drives the badge, checkmarks, underline, and quote tint. */
+.team-head {
+  text-align: center;
+  margin-top: clamp(40px, 8vw, 56px);
+}
+
+.team-head .section-title {
+  margin-top: 14px;
+}
+
+.team-sub {
+  margin: 10px auto 0;
+  max-width: 560px;
+  color: var(--text-muted);
+  line-height: 1.6;
+}
+
 .team-grid {
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: 20px;
-  margin-top: 20px;
+  margin-top: 28px;
 }
 
-/* Testimonial layout: the message sits on top; the person (avatar + name +
-   role) is a footer pinned to the bottom so both cards' footers align. */
 .founder-card {
-  display: flex;
-  flex-direction: column;
+  --fc-accent: var(--brand-blue);
+  display: grid;
+  grid-template-columns: minmax(150px, 190px) 1fr;
+  gap: 20px 24px;
+  align-items: start;
   text-align: left;
-  gap: 22px;
   background: var(--surface);
   border: 1px solid var(--line);
   border-radius: 16px;
@@ -1098,15 +1178,94 @@
   box-shadow: 0 6px 20px rgba(0, 0, 0, 0.05);
 }
 
-/* Attribution footer: avatar beside the name/role, at the card bottom. */
-.founder-attrib {
+/* Left column: portrait + expertise checklist */
+.founder-side {
   display: flex;
-  align-items: center;
-  gap: 14px;
+  flex-direction: column;
+  gap: 12px;
+  min-width: 0;
 }
 
-.founder-attrib-text {
+.founder-expertise-title {
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--fc-accent);
+  border-top: 1px solid var(--line);
+  padding-top: 12px;
+  margin: 0;
+}
+
+.founder-expertise {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.founder-expertise li {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 0.85rem;
+  font-weight: 600;
+}
+
+.founder-expertise li::before {
+  content: "✓";
+  flex: 0 0 auto;
+  width: 16px;
+  height: 16px;
+  border-radius: 50%;
+  background: var(--fc-accent);
+  color: #fff;
+  font-size: 0.62rem;
+  font-weight: 700;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Right column: badge → name → story → pull-quote */
+.founder-main {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
   min-width: 0;
+}
+
+.founder-badge {
+  align-self: flex-start;
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--fc-accent);
+  background: color-mix(in srgb, var(--fc-accent) 9%, #fff);
+  border-radius: 999px;
+  padding: 6px 12px;
+}
+
+.founder-quote {
+  margin: 0;
+  padding: 14px 16px;
+  border-radius: 10px;
+  background: color-mix(in srgb, var(--fc-accent) 7%, #fff);
+  font-weight: 600;
+  line-height: 1.5;
+}
+
+.founder-quote::before {
+  content: "\201C";
+  color: var(--fc-accent);
+  font-size: 1.6rem;
+  font-weight: 800;
+  line-height: 0;
+  vertical-align: -0.3em;
+  margin-right: 6px;
 }
 
 .avatar {
@@ -1138,26 +1297,18 @@
   filter: brightness(1.08);
 }
 
-.founder-role {
-  font-size: 0.8rem;
-  text-transform: uppercase;
-  letter-spacing: 0.08em;
-  color: var(--brand-violet);
-  font-weight: 700;
-}
-
-/* In the founder card the role is a plain, muted subtitle (like the testimonial
-   reference) — NOT the brand-violet uppercase used for the shared VM labels. */
-.founder-attrib .founder-role {
-  color: var(--text-muted);
-  text-transform: none;
-  letter-spacing: normal;
-  font-weight: 500;
-  margin-top: 2px;
+/* Card-sized portrait: rounded rectangle instead of the small circle */
+.avatar-card {
+  width: 100%;
+  max-width: 200px;
+  height: auto;
+  aspect-ratio: 1 / 1.05;
+  border-radius: 14px;
+  font-size: 2.6rem;
 }
 
 .founder-name {
-  font-size: 1.05rem;
+  font-size: 1.35rem;
   margin: 0;
 }
 
@@ -1170,11 +1321,147 @@
   text-decoration: underline;
 }
 
+/* Short accent underline beneath the name, as in the reference design */
+.founder-name::after {
+  content: "";
+  display: block;
+  width: 44px;
+  height: 3px;
+  border-radius: 2px;
+  background: var(--fc-accent);
+  margin-top: 10px;
+}
+
 .founder-message {
   margin: 0;
-  flex: 1 1 auto; /* grow so the attribution footer aligns at the card bottom */
   color: var(--text-muted);
   line-height: 1.7;
+  font-size: 0.95rem;
+}
+
+/* ---------- Origin story ("Why We Started CareerLaunchpad") ---------- */
+/* Tinted panel with a five-step icon flow; dotted arrows connect the steps
+   on desktop, and the flow stacks vertically on phones/tablets. */
+.origin-panel {
+  margin-top: clamp(32px, 6vw, 48px);
+  padding: clamp(24px, 5vw, 40px) clamp(16px, 4vw, 36px);
+  border-radius: 20px;
+  background: linear-gradient(180deg, #f1f1fc 0%, #ecebfa 100%);
+  border: 1px solid #e3e2f5;
+}
+
+.origin-title {
+  text-align: center;
+  font-size: clamp(1.25rem, 3.8vw, 1.5rem);
+  font-weight: 700;
+  margin: 0;
+}
+
+/* Short green underline beneath the brand name, as in the reference */
+.origin-brand {
+  display: inline-block;
+}
+
+.origin-brand::after {
+  content: "";
+  display: block;
+  width: 56px;
+  height: 3px;
+  border-radius: 2px;
+  background: #16a34a;
+  margin: 6px auto 0;
+}
+
+.origin-flow {
+  list-style: none;
+  margin: clamp(24px, 4vw, 36px) 0 0;
+  padding: 0;
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 8px;
+}
+
+.origin-step {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  gap: 4px;
+  padding: 0 6px;
+}
+
+.origin-icon {
+  width: 54px;
+  height: 54px;
+  border-radius: 50%;
+  background: var(--surface);
+  box-shadow: 0 4px 12px rgba(76, 29, 149, 0.12);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--brand-blue);
+  margin-bottom: 8px;
+}
+
+/* Alternate icon colors blue → green across the flow */
+.origin-step:nth-child(even) .origin-icon {
+  color: #16a34a;
+}
+
+.origin-icon svg {
+  width: 30px;
+  height: 30px;
+}
+
+.origin-step-title {
+  font-weight: 700;
+  font-size: 0.88rem;
+  line-height: 1.35;
+}
+
+.origin-step-detail {
+  font-size: 0.8rem;
+  color: var(--text-muted);
+  line-height: 1.4;
+}
+
+/* Dotted arrow connector between steps (line + arrowhead), desktop only */
+@media (min-width: 901px) {
+  .origin-step:not(:last-child)::after {
+    content: "";
+    position: absolute;
+    top: 26px;
+    left: calc(50% + 38px);
+    width: calc(100% - 76px);
+    border-top: 2px dashed #b9bede;
+  }
+
+  .origin-step:not(:last-child)::before {
+    content: "";
+    position: absolute;
+    top: 22px;
+    right: calc(-50% + 32px);
+    border-left: 7px solid #b9bede;
+    border-top: 5px solid transparent;
+    border-bottom: 5px solid transparent;
+  }
+}
+
+/* Stack the flow vertically on phones/tablets with a dashed connector above
+   each step instead of the horizontal arrows. */
+@media (max-width: 900px) {
+  .origin-flow {
+    grid-template-columns: 1fr;
+    gap: 0;
+  }
+
+  .origin-step + .origin-step::before {
+    content: "";
+    height: 22px;
+    border-left: 2px dashed #b9bede;
+    margin-bottom: 10px;
+  }
 }
 
 /* ---------- Core Values ---------- */
@@ -1285,11 +1572,31 @@
   padding: 6px 14px;
 }
 
+/* The founder cards are wide (photo + text columns), so they stack to one
+   per row earlier than the other paired grids. */
+@media (max-width: 1024px) {
+  .team-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
 /* Stack the paired rows on narrow screens */
 @media (max-width: 760px) {
-  .team-grid,
   .values-row {
     grid-template-columns: 1fr;
+  }
+}
+
+/* Inside a founder card, drop to a single column on phones: photo, then
+   expertise, then the story. */
+@media (max-width: 560px) {
+  .founder-card {
+    grid-template-columns: 1fr;
+    padding: 22px 18px;
+  }
+
+  .avatar-card {
+    max-width: 240px;
   }
 }
 
@@ -1310,12 +1617,6 @@
      without forcing horizontal overflow on small screens. */
   .nav-actions {
     gap: 12px;
-  }
-
-  /* Tighten padding/gap on phones; layout stays vertical (message → footer) */
-  .founder-card {
-    padding: 22px 18px;
-    gap: 18px;
   }
 
 }
@@ -1382,7 +1683,15 @@
   box-shadow: var(--shadow-lg);
 }
 
+/* Icon and title share one header row; a long title wraps beside the icon */
+.program-head {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
 .program-icon {
+  flex: 0 0 auto;
   width: 44px;
   height: 44px;
   border-radius: 13px;

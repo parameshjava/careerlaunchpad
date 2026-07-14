@@ -6,7 +6,7 @@ const story: { label: string; text: string; answer?: boolean }[] = [
   },
   {
     label: "Our answer",
-    text: "CareerLaunchPad brings industry mentors, structured learning, assessments and career opportunities directly to students while they are still in college — so they become job-ready before graduation, without migrating for expensive coaching.",
+    text: "CareerLaunchpad brings industry mentors, structured learning, assessments and career opportunities directly to students while they are still in college — so they become job-ready before graduation, without migrating for expensive coaching.",
     answer: true,
   },
 ];
@@ -18,7 +18,7 @@ const belief =
 export default function WhyStory() {
   return (
     <section className="why" id="why">
-      <h2 className="section-title">Why CareerLaunchPad</h2>
+      <h2 className="section-title">Why CareerLaunchpad</h2>
       <div className="why-grid">
         {story.map((s) => (
           <article
@@ -32,7 +32,7 @@ export default function WhyStory() {
       </div>
       <figure className="quote-band">
         <blockquote>&ldquo;{belief}&rdquo;</blockquote>
-        <figcaption>Why CareerLaunchPad.ai exists</figcaption>
+        <figcaption>Why CareerLaunchpad.ai exists</figcaption>
       </figure>
     </section>
   );

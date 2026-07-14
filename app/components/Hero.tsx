@@ -10,7 +10,7 @@ const hero = {
   secondary: { label: "Partner with us", href: "/contact" },
 };
 
-// The page's opening statement: what CareerLaunchPad is, who it serves, and
+// The page's opening statement: what CareerLaunchpad is, who it serves, and
 // how to act on it — shown before the journey diagram.
 export default function Hero() {
   return (

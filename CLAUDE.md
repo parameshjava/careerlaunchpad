@@ -4,7 +4,7 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 
 ## Project Overview
 
-CareerLaunchPad is a platform that bridges the gap between academic learning and industry expectations ("College to Corporate"), built on **Next.js 15 (App Router) + React 19 + TypeScript**. It has **two distinct surfaces**:
+CareerLaunchpad is a platform that bridges the gap between academic learning and industry expectations ("College to Corporate"), built on **Next.js 15 (App Router) + React 19 + TypeScript**. It has **two distinct surfaces**:
 
 - **Marketing site** (`/`, in the `app/(marketing)` route group) — the bespoke landing page. Content-and-presentation work: layout, copy, visual polish, hand-authored SVG.
 - **Application console** (`/dashboard`, etc.) — the enterprise app surfaces (student management, data grids), built with **Tailwind CSS v4 + shadcn/ui (Radix base) + TanStack Table**.

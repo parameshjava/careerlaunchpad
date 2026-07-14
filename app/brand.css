@@ -1,4 +1,4 @@
-/* Brand token layer — the SINGLE source of truth for CareerLaunchPad's visual
+/* Brand token layer — the SINGLE source of truth for CareerLaunchpad's visual
    identity. Imported by the ROOT layout so BOTH surfaces (marketing plain CSS
    and the shadcn/Tailwind console) read the same values. Contains ONLY custom
    property definitions — no resets, no element rules — so it never bleeds
