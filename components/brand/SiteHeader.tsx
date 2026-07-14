@@ -38,10 +38,10 @@ export function SiteHeader({
         {/* /home resolves per-user: signed-in → their dashboard, else → marketing home. */}
         <Link href="/home" className="flex min-w-0 items-center gap-3">
           <Image
-            src="/logo-transparent.png"
+            src="/letterhead-logo.png"
             alt="CareerLaunchpad"
-            width={84}
-            height={86}
+            width={530}
+            height={600}
             className="h-[clamp(40px,9vw,84px)] w-auto shrink-0"
             priority
           />

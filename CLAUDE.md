@@ -120,9 +120,9 @@ Every enter/exit is written to `impersonation_log` (migration 101).
   **bottom** strip so it never collides with the top navbar) and shows on every
   surface while impersonating.
 
-### Favicon pipeline (non-obvious)
+### Logo & favicon pipeline (non-obvious)
 
-The favicon is `app/icon.png` (Next.js App Router file convention — it auto-emits the `<link rel="icon">`; do **not** also set `metadata.icons`, or you get duplicates). It is **generated from `public/logo.jpeg`**, not used directly: the source JPEG has a white background and JPEG cannot store transparency, so pointing the favicon at the raw `.jpeg` puts a white square in the browser tab. The committed `app/icon.png` / `public/favicon.ico` are transparent PNG/ICO versions produced by a Pillow (Python) script that trims the margin and flood-fills the background white to transparent. Regenerate via that processing — never swap in the raw JPEG.
+The single brand logo source is **`public/letterhead-logo.png`** (transparent hexagonal mark) — used by the navbar (`Brand.tsx`, `SiteHeader.tsx`), the print letterhead, and JSON-LD. Derived assets are generated from it with Pillow (trim the alpha bounding box, center on a square canvas, resize): `app/icon.png` (256², transparent — the Next.js App Router favicon convention; do **not** also set `metadata.icons`, or you get duplicates), `public/favicon.ico` (16/32/48), and `public/social-logo.png` (240², **white** background — OG/Twitter thumbnail, since transparency renders black in some chat clients). Regenerate all three from the source PNG rather than editing them; don't reintroduce the retired circular badge (`logo-transparent.png`/`logo-mark.png`/`logo.jpeg`, deleted 2026-07). `public/bimi-logo.svg` is a separate hand-authored BIMI mark (must stay SVG tiny-ps).
 
 ### Founder photos
 
@@ -134,7 +134,7 @@ Profile photos live in `public/founders/` with filenames referenced in the `foun
 - **Building app/console UI** → compose shadcn primitives + Tailwind tokens under `app/dashboard/` (or new app routes); add missing components via `npx shadcn@latest add <name>`. For tables use the `DataTable` in `components/data-table.tsx`. Wide grids should scroll inside their own container — never let the page scroll sideways.
 - **Changing the top navbar** → it must stay identical on every surface. Edit **both** `components/brand/SiteHeader.tsx` (app surfaces) **and** the `.navbar`/`.brand*`/`.nav-cta` rules in `app/landing.css` + `app/components/Navbar.tsx` (marketing) so they keep matching — see Architecture → "The top navbar". Per-page changes belong in `SiteHeader`'s `nav`/`right` slots, not in a new navbar. Verify the right-side action stays visible (no horizontal overflow) at ~320–390px.
 - **Changing copy/content** → edit the data array at the top of the component (e.g. `founders`, `teamValues`, `visionMission`), not the JSX loop.
-- **Working with the logo or favicon** → remember JPEG has no transparency; produce a transparent PNG/ICO rather than referencing the JPEG directly.
+- **Working with the logo or favicon** → everything derives from `public/letterhead-logo.png`; regenerate `app/icon.png`, `public/favicon.ico`, and `public/social-logo.png` from it (see Logo & favicon pipeline) rather than swapping in new files ad hoc.
 - **Adding/replacing founder photos** → drop the file in `public/founders/` matching the path in the `founders` array; the avatar surfaces it automatically and falls back to initials if absent.
 
 ## Conventions

@@ -15,10 +15,10 @@ export function Brand({
     <Link href={href} className="brand">
       <Image
         className="brand-logo"
-        src="/logo-transparent.png"
+        src="/letterhead-logo.png"
         alt="Career Launchpad logo"
-        width={1209}
-        height={1235}
+        width={530}
+        height={600}
         priority
       />
       <span className="brand-text">
