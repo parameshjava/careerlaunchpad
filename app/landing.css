@@ -59,7 +59,7 @@
 }
 
 .brand-logo {
-  height: clamp(40px, 9vw, 84px);
+  height: clamp(34px, 9vw, 84px);
   width: auto;
   display: block;
   flex: 0 0 auto;
@@ -78,7 +78,9 @@
   display: inline-flex;
   align-items: baseline;
   gap: 0;
-  font-size: clamp(1.15rem, 4.5vw, 2.5rem);
+  /* Low 0.85rem floor: keeps the wordmark fluid on narrow phones so its glyphs
+     never paint past the shrunken flex box into the nav actions (~409px down) */
+  font-size: clamp(0.85rem, 4.5vw, 2.5rem);
   font-weight: 800;
   letter-spacing: -0.022em;
   line-height: 1;
@@ -217,24 +219,6 @@
   font-size: var(--text-lead);
   line-height: 1.6;
   color: var(--text-muted);
-}
-
-.hero-cta {
-  display: inline-block;
-  margin-top: 26px;
-  background: var(--brand-gradient);
-  color: #fff;
-  font-weight: 600;
-  font-size: clamp(0.95rem, 2.6vw, 1.05rem);
-  padding: 12px 26px;
-  border-radius: 12px;
-  text-decoration: none;
-  box-shadow: var(--shadow-brand);
-  transition: filter 0.15s ease;
-}
-
-.hero-cta:hover {
-  filter: brightness(1.07);
 }
 
 .section-title {
@@ -924,14 +908,6 @@
   scroll-margin-top: 96px;
 }
 
-/* Vision + Mission pair */
-.vm-grid {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 20px;
-  margin-top: 24px;
-}
-
 /* Founder + Co-Founder pair (equal-height profile cards) */
 .team-grid {
   display: grid;
@@ -1135,48 +1111,8 @@
   padding: 6px 14px;
 }
 
-/* ---------- Vision & Mission ---------- */
-.vm-card {
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  text-align: left;
-  gap: 18px;
-  padding: 22px 24px;
-  border-radius: 16px;
-  border: 1px solid #e7e2f8;
-  background: linear-gradient(135deg, #f6f2fe, #eef3ff);
-  box-shadow: 0 6px 20px rgba(76, 29, 149, 0.06);
-}
-
-.vm-body {
-  flex: 1 1 auto;
-  min-width: 0;
-}
-
-.vm-badge {
-  flex: 0 0 auto;
-  width: 54px;
-  height: 54px;
-  border-radius: 50%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-size: 1.5rem;
-  background: var(--brand-gradient-135);
-  box-shadow: 0 8px 20px rgba(124, 58, 237, 0.26);
-}
-
-.vm-text {
-  margin-top: 2px;
-  color: #334155;
-  font-size: 0.98rem;
-  line-height: 1.55;
-}
-
 /* Stack the paired rows on narrow screens */
 @media (max-width: 760px) {
-  .vm-grid,
   .team-grid,
   .values-row {
     grid-template-columns: 1fr;
@@ -1202,33 +1138,28 @@
     gap: 12px;
   }
 
-  .greeting {
-    font-size: 2rem;
-  }
-
-  .intro-title {
-    font-size: 1.7rem;
-  }
-
-  .intro-lead {
-    font-size: 1rem;
-  }
-
   /* Tighten padding/gap on phones; layout stays vertical (message → footer) */
   .founder-card {
     padding: 22px 18px;
     gap: 18px;
   }
 
-  .vm-card {
-    padding: 22px 18px;
-    gap: 16px;
+}
+
+/* On the narrowest phones the full "Contact Us" collides with the wordmark;
+   drop the "Us" so the link compacts to "Contact" (same target), and pull the
+   lockup/action gaps in a notch. */
+@media (max-width: 420px) {
+  .nav-link-us {
+    display: none;
   }
 
-  .vm-badge {
-    width: 50px;
-    height: 50px;
-    font-size: 1.4rem;
+  .brand {
+    gap: 8px;
+  }
+
+  .nav-actions {
+    gap: 10px;
   }
 }
 

@@ -36,17 +36,19 @@ export function SiteHeader({
           the bar looks identical on the marketing and app surfaces. */}
       <div className="flex items-center gap-3 px-[clamp(16px,4vw,28px)] py-2">
         {/* /home resolves per-user: signed-in → their dashboard, else → marketing home. */}
-        <Link href="/home" className="flex min-w-0 items-center gap-3">
+        <Link href="/home" className="flex min-w-0 items-center gap-3 max-[420px]:gap-2">
           <Image
-            src="/logo-transparent.png"
+            src="/letterhead-logo.png"
             alt="CareerLaunchpad"
-            width={84}
-            height={86}
-            className="h-[clamp(40px,9vw,84px)] w-auto shrink-0"
+            width={530}
+            height={600}
+            className="h-[clamp(34px,9vw,84px)] w-auto shrink-0"
             priority
           />
           <span className="flex min-w-0 flex-col justify-center gap-1">
-            <span className="text-[clamp(1.15rem,4.5vw,2.5rem)] font-extrabold leading-none tracking-[-0.022em]">
+            {/* 0.85rem floor (matches landing.css): stays fluid on narrow phones so
+                the wordmark never paints past its flex box into the right slot. */}
+            <span className="text-[clamp(0.85rem,4.5vw,2.5rem)] font-extrabold leading-none tracking-[-0.022em]">
               Career
               <span className="bg-gradient-to-r from-[#2563eb] to-[#7c3aed] bg-clip-text text-transparent">
                 Launchpad

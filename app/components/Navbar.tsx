@@ -11,7 +11,7 @@ export default function Navbar() {
             boxed button) with a gradient underline on hover, so the gradient
             "Get Started" stays the single prominent CTA — see modern SaaS navs. */}
         <Link href="/contact" className="nav-link">
-          Contact Us
+          Contact<span className="nav-link-us"> Us</span>
         </Link>
         <Link href="/auth/login" className="nav-cta">
           Login

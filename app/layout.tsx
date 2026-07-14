@@ -62,7 +62,7 @@ export const metadata: Metadata = {
       {
         // Kept small (240²) so WhatsApp/iMessage render the inline side-by-side
         // thumbnail card instead of a full-width banner.
-        url: "/logo-mark.png",
+        url: "/social-logo.png",
         width: 240,
         height: 240,
         alt: "CareerLaunchPad",
@@ -74,7 +74,7 @@ export const metadata: Metadata = {
     card: "summary",
     title: "CareerLaunchPad — Connecting Rural Talent with Global Opportunities",
     description,
-    images: ["/logo-mark.png"],
+    images: ["/social-logo.png"],
   },
 };
 
@@ -83,7 +83,7 @@ const jsonLd = {
   "@type": "EducationalOrganization",
   name: "CareerLaunchPad",
   url: siteUrl,
-  logo: `${siteUrl}/logo-transparent.png`,
+  logo: `${siteUrl}/letterhead-logo.png`,
   slogan: "Connecting Rural Talent with Global Opportunities",
   description,
   knowsAbout: [
