@@ -53,19 +53,6 @@ const promises: { icon: string; title: string; detail: string }[] = [
   },
 ];
 
-const visionMission: { icon: string; label: string; text: string }[] = [
-  {
-    icon: "🔭",
-    label: "Vision",
-    text: "Empower students from Tier-2, Tier-3 and rural India with industry mentorship, practical skills and career opportunities — job-ready before graduation, without migrating to metro cities for expensive coaching.",
-  },
-  {
-    icon: "🧭",
-    label: "Mission",
-    text: "Bridge the gap between academic education and industry expectations: identify skill gaps, deliver personalized mentorship and industry-led learning, measure career readiness, and connect students with employment opportunities.",
-  },
-];
-
 // Long-term impact goals, plus the national programs the platform supports.
 const impacts: string[] = [
   "Reduce unemployment among graduates",
@@ -79,34 +66,15 @@ const impacts: string[] = [
 const programs = ["Digital India", "Skill India", "Startup India"];
 
 // The "About" cluster of the landing page. Per IA best practice, it follows the
-// product story (the Journey above) in the order purpose → principles → people:
-//   1. Vision & Mission  (why we exist)
-//   2. Our Promise       (what we commit to)
-//   3. Impact            (what changes if we succeed)
-//   4. Founders          (who's behind it)
+// product story (the Journey above) in the order commitments → outcomes → people:
+//   1. Our Promise  (what we commit to)
+//   2. Impact       (what changes if we succeed)
+//   3. Founders     (who's behind it)
 // Each is its OWN titled, anchored section rather than an unlabeled card stack.
 export default function FoundersMessage() {
   return (
     <div className="about">
-      {/* 1) Vision & Mission — the purpose, right after the product story */}
-      <section id="vision-mission">
-        <h2 className="section-title">Our Vision &amp; Mission</h2>
-        <div className="vm-grid">
-          {visionMission.map((vm) => (
-            <article className="vm-card" key={vm.label}>
-              <span className="vm-badge" aria-hidden="true">
-                {vm.icon}
-              </span>
-              <div className="vm-body">
-                <p className="founder-role">{vm.label}</p>
-                <p className="vm-text">{vm.text}</p>
-              </div>
-            </article>
-          ))}
-        </div>
-      </section>
-
-      {/* 2) Our Promise — the commitments, as three parallel tiles */}
+      {/* 1) Our Promise — the commitments, as three parallel tiles */}
       <section id="promise">
         <h2 className="section-title">Our Promise</h2>
         <ul className="values-row">
@@ -124,7 +92,7 @@ export default function FoundersMessage() {
         </ul>
       </section>
 
-      {/* 3) Impact — the long-term goals, as checkmark tiles + program badges */}
+      {/* 2) Impact — the long-term goals, as checkmark tiles + program badges */}
       <section id="impact">
         <h2 className="section-title">The Long-Term Impact</h2>
         <ul className="impact-grid">
@@ -143,7 +111,7 @@ export default function FoundersMessage() {
         </p>
       </section>
 
-      {/* 4) Founders — the people, equal-height profile cards */}
+      {/* 3) Founders — the people, equal-height profile cards */}
       <section id="founders">
         <h2 className="section-title">Our Team</h2>
         <div className="team-grid">
