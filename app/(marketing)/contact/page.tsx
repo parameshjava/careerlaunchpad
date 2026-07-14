@@ -1,17 +1,11 @@
 import type { Metadata } from "next";
-
-// Single source of truth for the company contact details (also feeds the JSON-LD
-// below). Keep address/phone/email here, not duplicated in the JSX.
-const ADDRESS_LINES = [
-  "CareerLaunchPad Pvt Ltd, Plot 30",
-  "Near Cinema Hall Centre, Yerrabalem Village",
-  "Mangalagiri Mandal, Guntur District – 522502",
-];
-const ADDRESS_ONE_LINE = ADDRESS_LINES.join(", ");
-const PHONE_DISPLAY = "+91 99635 49926";
-const PHONE_TEL = "+919963549926";
-const EMAIL = "contact@careerlaunchpad.ai";
-const MAPS_URL = `https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(ADDRESS_ONE_LINE)}`;
+import {
+  ADDRESS_LINES,
+  PHONE_DISPLAY,
+  PHONE_TEL,
+  EMAIL,
+  MAPS_URL,
+} from "@/lib/contact";
 
 export const metadata: Metadata = {
   title: "Contact Us — CareerLaunchPad",
