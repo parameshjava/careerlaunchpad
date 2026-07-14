@@ -37,10 +37,12 @@ export default function Programs() {
       <div className="programs-grid">
         {programs.map((p) => (
           <article className="program-card" key={p.title}>
-            <span className="program-icon" aria-hidden="true">
-              <p.icon />
+            <span className="program-head">
+              <span className="program-icon" aria-hidden="true">
+                <p.icon />
+              </span>
+              <h3 className="program-title">{p.title}</h3>
             </span>
-            <h3 className="program-title">{p.title}</h3>
             <p className="program-detail">{p.detail}</p>
           </article>
         ))}

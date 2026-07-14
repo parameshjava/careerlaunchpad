@@ -75,7 +75,7 @@ const STATUS_VARIANT: Record<RowStatus, "default" | "destructive" | "secondary" 
 function buildSchema(subject: string, chapterNames: string[]) {
   return {
     $schema: "https://json-schema.org/draft/2020-12/schema",
-    title: `CareerLaunchPad question import — ${subject}`,
+    title: `CareerLaunchpad question import — ${subject}`,
     description:
       "One subject per file. `subject` is fixed to the selected subject; `chapter` must be one of the enumerated chapters (they must already exist in the bank).",
     type: "object",

@@ -2,7 +2,7 @@
 -- 021_exam_core.sql  (clean, final model)
 -- Exam module schema. Two clearly separated halves:
 --
---   GLOBAL QUESTION BANK — a CareerLaunchPad asset, NOT tied to any college:
+--   GLOBAL QUESTION BANK — a CareerLaunchpad asset, NOT tied to any college:
 --     subject -> chapter -> question -> question_option, plus passage.
 --     Curated centrally (Owner / platform admin). Read by exam staff; students
 --     never read it directly (they go through the SECURITY DEFINER RPCs in 022).

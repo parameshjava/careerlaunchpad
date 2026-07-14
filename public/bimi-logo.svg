@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <svg version="1.2" baseProfile="tiny-ps" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" width="512" height="512">
-  <title>CareerLaunchPad</title>
+  <title>CareerLaunchpad</title>
   <defs>
     <linearGradient id="ring" x1="120" y1="104" x2="396" y2="430" gradientUnits="userSpaceOnUse">
       <stop offset="0" stop-color="#1f6fd0"/>
@@ -13,7 +13,7 @@
   <rect width="512" height="512" fill="#ffffff"/>
 
   <!-- Brand ring: blue (top-left) sweeping to green (bottom-right), matching the
-       CareerLaunchPad badge. -->
+       CareerLaunchpad badge. -->
   <circle cx="256" cy="256" r="170" fill="#ffffff" stroke="url(#ring)" stroke-width="44"/>
 
   <!-- Open book = education / learning. -->

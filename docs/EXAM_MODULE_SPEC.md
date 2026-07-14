@@ -1,4 +1,4 @@
-# CareerLaunchPad — Exam Module Requirement Specification
+# CareerLaunchpad — Exam Module Requirement Specification
 
 **Status:** Draft for review
 **Date:** 2026-06-27

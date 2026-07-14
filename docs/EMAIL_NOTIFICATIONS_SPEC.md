@@ -14,7 +14,7 @@ resolution, DB reads/writes, and the mailer function before any UI is built.
 | 1 | Admin bulk-imports student profiles | each **student** | "Sign in to the portal" — **already built** (`sendStudentImportedEmail`); only the sender changes (§3). |
 | 2 | A **student** submits registration | all **owners + admins** | "A student is awaiting approval." Student now waits on an **approval gate** (§5). On approval → student gets an email. |
 | 3 | A **mentor** submits registration | all **owners + admins** | "A mentor is awaiting approval." (Mentor approval gate already exists.) On approval → mentor gets the existing approved email. |
-| 4 | Owner/admin **invites a mentor** | the **mentor** | "Sign in to CareerLaunchPad." Requires adding `mentor` to the invitable roles. |
+| 4 | Owner/admin **invites a mentor** | the **mentor** | "Sign in to CareerLaunchpad." Requires adding `mentor` to the invitable roles. |
 
 Decisions locked with the requester (2026-06-26):
 - **Student approval gate is real** — students stay *pending* after submit and cannot
@@ -24,7 +24,7 @@ Decisions locked with the requester (2026-06-26):
   person may have extra addresses (one office `@careerlaunchpad.ai`, one personal),
   each independently **toggleable** so a personal address can be turned off later (§4).
 - **Office `@careerlaunchpad.ai` addresses belong only to owners, platform admins, and
-  mentors** — i.e. internal CareerLaunchPad people. **College admins** are external
+  mentors** — i.e. internal CareerLaunchpad people. **College admins** are external
   college staff and use their **own** email, and **students** likewise only ever have
   their own login/personal email. So only owner / platform_admin / mentor are eligible
   for an office address; everyone else uses their personal address only.
@@ -63,7 +63,7 @@ SMTP_PORT=465                    # 465 = SSL (secure:true); 587 = STARTTLS (secu
 SMTP_USER=noreply@careerlaunchpad.ai
 SMTP_PASSWORD=                   # Zoho app-specific password (2FA on the mailbox)
 MAIL_FROM_ADDRESS=noreply@careerlaunchpad.ai
-MAIL_FROM_NAME=CareerLaunchPad
+MAIL_FROM_NAME=CareerLaunchpad
 ```
 
 Notes / gotchas:
@@ -243,7 +243,7 @@ All keep the never-throw, console-fallback contract. `sendRegistrationPendingEma
   body: who registered, college, link to `/dashboard/students`.
 - Mentor pending (to admins): `New mentor registration awaiting approval — {name}` → link
   to `/dashboard/mentors`.
-- Student approved (to student): `Your CareerLaunchPad profile is approved` → link `/student`.
+- Student approved (to student): `Your CareerLaunchpad profile is approved` → link `/student`.
 - (Reword) Student submitted (to student): `We've received your registration — pending approval`.
 
 ## 9. Cross-cutting

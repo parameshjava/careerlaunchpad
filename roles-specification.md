@@ -1,4 +1,4 @@
-# CareerLaunchPad — Roles & Permissions Specification
+# CareerLaunchpad — Roles & Permissions Specification
 
 **Status:** Draft for review
 **Date:** 2026-06-21
@@ -8,7 +8,7 @@
 
 ## 1. Overview
 
-CareerLaunchPad is evolving from a static marketing site into a multi-tenant platform that bridges college students and employers. Today the site has no database and no authentication — this spec defines the role system that the platform will be built around.
+CareerLaunchpad is evolving from a static marketing site into a multi-tenant platform that bridges college students and employers. Today the site has no database and no authentication — this spec defines the role system that the platform will be built around.
 
 **Every account is provisioned by an Owner through an invite** — there is no self-serve registration for any role. Invited users sign in with a social identity provider (Google, Facebook, LinkedIn, GitHub; more can be added later). The user's role (and, for students, their college) is fixed by the invite, not chosen by the user.
 

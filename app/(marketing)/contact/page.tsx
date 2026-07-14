@@ -8,9 +8,9 @@ import {
 } from "@/lib/contact";
 
 export const metadata: Metadata = {
-  title: "Contact Us — CareerLaunchPad",
+  title: "Contact Us — CareerLaunchpad",
   description:
-    "Get in touch with CareerLaunchPad. Find our address in Guntur, phone number and email — we'd love to hear from you.",
+    "Get in touch with CareerLaunchpad. Find our address in Guntur, phone number and email — we'd love to hear from you.",
   alternates: { canonical: "/contact" },
 };
 
@@ -19,7 +19,7 @@ export const metadata: Metadata = {
 const jsonLd = {
   "@context": "https://schema.org",
   "@type": "Organization",
-  name: "CareerLaunchPad Pvt Ltd",
+  name: "CareerLaunchpad Pvt Ltd",
   url: "https://careerlaunchpad.ai",
   email: EMAIL,
   telephone: PHONE_TEL,

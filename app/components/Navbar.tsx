@@ -7,7 +7,7 @@ import { Brand } from "@/components/brand/Brand";
 const menu = [
   { label: "Programs", href: "/#programs" },
   { label: "How it works", href: "/#journey" },
-  { label: "Why us", href: "/#why" },
+  { label: "Why us", href: "/#why-we-started" },
   { label: "Contact Us", href: "/contact" },
 ];
 

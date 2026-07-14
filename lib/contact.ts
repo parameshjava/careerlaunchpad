@@ -1,7 +1,7 @@
 // Single source of truth for the company contact details, shared by the
 // marketing top bar, footer and the /contact page (incl. its JSON-LD).
 export const ADDRESS_LINES = [
-  "CareerLaunchPad Pvt Ltd, Plot 30",
+  "CareerLaunchpad Pvt Ltd, Plot 30",
   "Near Cinema Hall Centre, Yerrabalem Village",
   "Mangalagiri Mandal, Guntur District – 522502",
 ];

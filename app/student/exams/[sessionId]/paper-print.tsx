@@ -1,6 +1,6 @@
 "use client";
 
-// Printable student question paper, matching the CareerLaunchPad assessment
+// Printable student question paper, matching the CareerLaunchpad assessment
 // docx template: branded header, fill-in info table (name / roll number),
 // instructions, "Question Paper Pattern" table, then sections with ☐ A–D
 // checkbox options. No answer key — this is the student-facing paper.

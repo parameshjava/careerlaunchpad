@@ -27,7 +27,7 @@ const SMTP_PASSWORD = process.env.SMTP_PASSWORD;
 // The visible From: a friendly name + the sending address. The address must be a
 // mailbox/alias the SMTP account is allowed to send as (Zoho rewrites others), so it
 // defaults to SMTP_USER when MAIL_FROM_ADDRESS isn't set explicitly.
-const FROM_NAME = process.env.MAIL_FROM_NAME ?? "CareerLaunchPad";
+const FROM_NAME = process.env.MAIL_FROM_NAME ?? "CareerLaunchpad";
 const FROM_ADDRESS = process.env.MAIL_FROM_ADDRESS ?? SMTP_USER;
 
 let transporter: Transporter | null = null;
@@ -66,7 +66,7 @@ async function deliver(tag: string, to: string, subject: string, text: string, h
 
 export async function sendInviteEmail({ to, roleName, invitedBy, loginUrl }: InviteEmail): Promise<void> {
   const by = invitedBy ? ` by ${invitedBy}` : "";
-  const subject = `You've been added to CareerLaunchPad as ${roleName}`;
+  const subject = `You've been added to CareerLaunchpad as ${roleName}`;
   const text =
     `You've been added as "${roleName}"${by}.\n\n` +
     `Sign in with this email address (${to}) at:\n${loginUrl}\n`;
@@ -82,7 +82,7 @@ type ApprovalEmail = { to: string; name?: string | null; loginUrl: string };
 /** Mentor profile approved by a reviewer — invite them back into the mentor hub. */
 export async function sendMentorApprovedEmail({ to, name, loginUrl }: ApprovalEmail): Promise<void> {
   const hi = name ? `Hi ${name},` : "Hi,";
-  const subject = "Your CareerLaunchPad mentor profile is approved";
+  const subject = "Your CareerLaunchpad mentor profile is approved";
   const text =
     `${hi}\n\n` +
     `Good news — your mentor profile has been approved. You can now start mentoring.\n\n` +
@@ -99,14 +99,14 @@ export async function sendMentorApprovedEmail({ to, name, loginUrl }: ApprovalEm
  * so they can access and complete their profile. */
 export async function sendStudentImportedEmail({ to, name, loginUrl }: ApprovalEmail): Promise<void> {
   const hi = name ? `Hi ${name},` : "Hi,";
-  const subject = "You're registered with CareerLaunchPad — access your profile";
+  const subject = "You're registered with CareerLaunchpad — access your profile";
   const text =
     `${hi}\n\n` +
-    `You've been registered with CareerLaunchPad by your college.\n\n` +
+    `You've been registered with CareerLaunchpad by your college.\n\n` +
     `Sign in with this email address (${to}) to access and complete your profile:\n${loginUrl}\n`;
   const html =
     `<p>${hi}</p>` +
-    `<p>You've been registered with <strong>CareerLaunchPad</strong> by your college.</p>` +
+    `<p>You've been registered with <strong>CareerLaunchpad</strong> by your college.</p>` +
     `<p>Sign in with this email address (<strong>${to}</strong>) to access and complete your profile:</p>` +
     `<p><a href="${loginUrl}">Access your profile</a></p>`;
   await deliver("student-imported", to, subject, text, html);
@@ -115,14 +115,14 @@ export async function sendStudentImportedEmail({ to, name, loginUrl }: ApprovalE
 /** Student finished registration — confirm we received it and it's pending approval. */
 export async function sendStudentSubmittedEmail({ to, name, loginUrl }: ApprovalEmail): Promise<void> {
   const hi = name ? `Hi ${name},` : "Hi,";
-  const subject = "We've received your CareerLaunchPad registration — pending approval";
+  const subject = "We've received your CareerLaunchpad registration — pending approval";
   const text =
     `${hi}\n\n` +
-    `Thanks for registering with CareerLaunchPad — your registration has been submitted and is now pending approval.\n\n` +
+    `Thanks for registering with CareerLaunchpad — your registration has been submitted and is now pending approval.\n\n` +
     `We'll email you as soon as it's approved. You can sign in any time to view or update your profile:\n${loginUrl}\n`;
   const html =
     `<p>${hi}</p>` +
-    `<p>Thanks for registering with CareerLaunchPad — your registration has been <strong>submitted and is now pending approval</strong>.</p>` +
+    `<p>Thanks for registering with CareerLaunchpad — your registration has been <strong>submitted and is now pending approval</strong>.</p>` +
     `<p>We'll email you as soon as it's approved.</p>` +
     `<p><a href="${loginUrl}">View your profile</a></p>`;
   await deliver("student-submitted", to, subject, text, html);
@@ -131,14 +131,14 @@ export async function sendStudentSubmittedEmail({ to, name, loginUrl }: Approval
 /** Mentor finished registration — confirm we received it and it's pending approval. */
 export async function sendMentorSubmittedEmail({ to, name, loginUrl }: ApprovalEmail): Promise<void> {
   const hi = name ? `Hi ${name},` : "Hi,";
-  const subject = "We've received your CareerLaunchPad mentor registration — pending approval";
+  const subject = "We've received your CareerLaunchpad mentor registration — pending approval";
   const text =
     `${hi}\n\n` +
-    `Thanks for registering as a mentor with CareerLaunchPad — your registration has been submitted and is now pending approval.\n\n` +
+    `Thanks for registering as a mentor with CareerLaunchpad — your registration has been submitted and is now pending approval.\n\n` +
     `We'll email you as soon as it's approved. You can sign in any time to view or update your profile:\n${loginUrl}\n`;
   const html =
     `<p>${hi}</p>` +
-    `<p>Thanks for registering as a mentor with CareerLaunchPad — your registration has been <strong>submitted and is now pending approval</strong>.</p>` +
+    `<p>Thanks for registering as a mentor with CareerLaunchpad — your registration has been <strong>submitted and is now pending approval</strong>.</p>` +
     `<p>We'll email you as soon as it's approved.</p>` +
     `<p><a href="${loginUrl}">View your profile</a></p>`;
   await deliver("mentor-submitted", to, subject, text, html);
@@ -147,14 +147,14 @@ export async function sendMentorSubmittedEmail({ to, name, loginUrl }: ApprovalE
 /** Student profile approved by a reviewer — invite them into their portal. */
 export async function sendStudentApprovedEmail({ to, name, loginUrl }: ApprovalEmail): Promise<void> {
   const hi = name ? `Hi ${name},` : "Hi,";
-  const subject = "Your CareerLaunchPad profile is approved";
+  const subject = "Your CareerLaunchpad profile is approved";
   const text =
     `${hi}\n\n` +
-    `Good news — your profile has been approved. You now have full access to CareerLaunchPad.\n\n` +
+    `Good news — your profile has been approved. You now have full access to CareerLaunchpad.\n\n` +
     `Sign in here:\n${loginUrl}\n`;
   const html =
     `<p>${hi}</p>` +
-    `<p>Good news — your profile has been <strong>approved</strong>. You now have full access to CareerLaunchPad.</p>` +
+    `<p>Good news — your profile has been <strong>approved</strong>. You now have full access to CareerLaunchpad.</p>` +
     `<p><a href="${loginUrl}">Open your portal</a></p>`;
   await deliver("student-approved", to, subject, text, html);
 }
@@ -218,9 +218,9 @@ export async function sendTestEmail(to: string): Promise<TestResult> {
     const info = await mailer.sendMail({
       from: `"${FROM_NAME}" <${FROM_ADDRESS}>`,
       to,
-      subject: "CareerLaunchPad email test",
-      text: "This is a test email confirming SMTP is configured correctly for CareerLaunchPad.",
-      html: "<p>This is a <strong>test email</strong> confirming SMTP is configured correctly for CareerLaunchPad. 🎉</p>",
+      subject: "CareerLaunchpad email test",
+      text: "This is a test email confirming SMTP is configured correctly for CareerLaunchpad.",
+      html: "<p>This is a <strong>test email</strong> confirming SMTP is configured correctly for CareerLaunchpad. 🎉</p>",
     });
     return { ok: true, messageId: info.messageId };
   } catch (err) {

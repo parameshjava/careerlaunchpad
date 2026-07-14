@@ -1,10 +1,10 @@
-// The official CareerLaunchPad letterhead as print furniture. Every printable
+// The official CareerLaunchpad letterhead as print furniture. Every printable
 // surface (question papers, results, statements) wraps its content in
 // LetterheadFrame so the printout lands on letterhead paper: the brand header
 // (navy logo corner + blue→green band with phone/website) repeats at the top
 // of every printed page via <thead>, and the address footer repeats at the
 // bottom via <tfoot>. Hidden on screen; shown only when printing.
-// Source of truth for the design: public/CareerLaunchPad-Letterhead.html.
+// Source of truth for the design: public/CareerLaunchpad-Letterhead.html.
 // Brand colors are fixed print inks — paper doesn't have a dark mode.
 
 const NAVY = "#0e2f55";

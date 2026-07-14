@@ -1,4 +1,4 @@
-# CareerLaunchPad — UI Style Guide (console / app surfaces)
+# CareerLaunchpad — UI Style Guide (console / app surfaces)
 
 **Apply this to every app-surface UI change** (`/dashboard`, `/student`, `/employer`, `/mentor`, `/account`, auth). The marketing surface (`app/(marketing)`) keeps its own bespoke plain CSS — this guide does **not** govern it (see `CLAUDE.md` → "Styling: surface-scoped, NEVER mixed").
 

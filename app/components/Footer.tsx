@@ -14,7 +14,7 @@ const blurb =
 const explore = [
   { label: "Programs", href: "/#programs" },
   { label: "How it works", href: "/#journey" },
-  { label: "Why CareerLaunchPad", href: "/#why" },
+  { label: "Why CareerLaunchpad", href: "/#why-we-started" },
   { label: "Our team", href: "/#founders" },
   { label: "Contact Us", href: "/contact" },
 ];
@@ -86,7 +86,7 @@ export default function Footer() {
       </div>
 
       <p className="footer-legal">
-        © {new Date().getFullYear()} CareerLaunchPad Pvt Ltd. All rights reserved.
+        © {new Date().getFullYear()} CareerLaunchpad Pvt Ltd. All rights reserved.
       </p>
     </footer>
   );

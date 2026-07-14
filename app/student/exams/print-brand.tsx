@@ -1,5 +1,5 @@
 // Shared print furniture for student-facing printouts (question paper and
-// result). The page frame is the official CareerLaunchPad letterhead
+// result). The page frame is the official CareerLaunchpad letterhead
 // (components/print/letterhead.tsx) — the content blocks below carry no brand
 // chrome of their own, only document content:
 //   - PrintFrame: letterhead wrapper (running page header/footer).
