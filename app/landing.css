@@ -34,6 +34,56 @@
   }
 }
 
+/* ---------- Utility top bar (above the navbar; scrolls away) ---------- */
+.topbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  padding: 7px clamp(16px, 4vw, 28px);
+  background: #14142a;
+  font-size: 0.82rem;
+}
+
+.topbar-contacts {
+  display: flex;
+  align-items: center;
+  gap: clamp(14px, 3vw, 26px);
+  min-width: 0;
+}
+
+.topbar-item {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  color: rgba(255, 255, 255, 0.78);
+  font-weight: 500;
+  text-decoration: none;
+  white-space: nowrap;
+}
+
+.topbar-item:hover {
+  color: #fff;
+}
+
+.topbar-item svg {
+  width: 13px;
+  height: 13px;
+  flex: 0 0 auto;
+}
+
+.topbar-notice {
+  color: #fff;
+  font-weight: 600;
+  text-decoration: none;
+  white-space: nowrap;
+  flex: 0 0 auto;
+}
+
+.topbar-notice:hover {
+  text-decoration: underline;
+}
+
 /* ---------- Navbar ---------- */
 .navbar {
   position: sticky;
@@ -103,6 +153,23 @@
   -webkit-background-clip: text;
   background-clip: text;
   -webkit-text-fill-color: transparent;
+}
+
+/* In-bar menu links, between the lockup and the actions. The homepage sections
+   are one scroll away on phones, so below 900px the menu is dropped rather
+   than folded into a hamburger. */
+.nav-menu {
+  display: flex;
+  align-items: center;
+  gap: clamp(16px, 2.5vw, 30px);
+  margin-left: auto;
+  padding-right: clamp(4px, 1.5vw, 16px);
+}
+
+@media (max-width: 900px) {
+  .nav-menu {
+    display: none;
+  }
 }
 
 /* Trailing actions: text menu-link(s) + the single gradient CTA. */
@@ -221,6 +288,106 @@
   color: var(--text-muted);
 }
 
+/* CTA row — shared by the hero, the programs section and the closing band. */
+.hero-ctas {
+  margin-top: 26px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 14px;
+}
+
+.hero-cta {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 13px clamp(20px, 4vw, 30px);
+  border-radius: 12px;
+  font-weight: 700;
+  font-size: clamp(0.92rem, 2.5vw, 1rem);
+  text-decoration: none;
+  white-space: nowrap;
+  color: #fff;
+  background: var(--brand-gradient);
+  box-shadow: 0 10px 26px rgba(124, 58, 237, 0.28);
+  transition: filter 0.15s ease, transform 0.15s ease;
+}
+
+.hero-cta:hover {
+  filter: brightness(1.07);
+  transform: translateY(-1px);
+}
+
+/* Quiet secondary next to the gradient primary */
+.hero-cta--ghost {
+  color: var(--ink);
+  background: var(--surface);
+  border: 1.5px solid var(--line);
+  box-shadow: var(--shadow-md);
+}
+
+/* On the gradient closing band: white primary, outlined secondary */
+.hero-cta--inverse {
+  color: var(--brand-violet);
+  background: #fff;
+  box-shadow: 0 10px 26px rgba(20, 20, 42, 0.22);
+}
+
+.hero-cta--outline {
+  background: transparent;
+  border: 1.5px solid rgba(255, 255, 255, 0.65);
+  box-shadow: none;
+}
+
+/* ---------- Stat strip (verifiable platform facts under the hero) ---------- */
+.stat-strip {
+  list-style: none;
+  margin: 0 auto;
+  padding: 0;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 14px;
+}
+
+.stat-card {
+  background: var(--surface);
+  border: 1px solid var(--line);
+  border-radius: 16px;
+  padding: 18px 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  box-shadow: var(--shadow-md);
+}
+
+.stat-value {
+  font-size: clamp(1.5rem, 4vw, 1.9rem);
+  font-weight: 800;
+  letter-spacing: -0.02em;
+  background: var(--brand-gradient);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.stat-label {
+  font-size: 0.88rem;
+  line-height: 1.4;
+  color: var(--text-muted);
+}
+
+@media (max-width: 860px) {
+  .stat-strip {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 380px) {
+  .stat-strip {
+    grid-template-columns: 1fr;
+  }
+}
+
 .section-title {
   font-size: clamp(1.5rem, 4.5vw, 1.8rem);
   font-weight: 700;
@@ -234,6 +401,7 @@
   width: min(1180px, calc(100vw - 48px));
   margin-left: 50%;
   transform: translateX(-50%);
+  scroll-margin-top: 96px;
 }
 
 /* Outer container: the whole journey — students enter from the left, pass
@@ -1037,8 +1205,14 @@
 }
 
 .value-tile-icon {
-  font-size: 1.25rem;
-  line-height: 1;
+  display: flex;
+  align-items: center;
+  color: var(--brand-violet);
+}
+
+.value-tile-icon svg {
+  width: 21px;
+  height: 21px;
 }
 
 .value-tile-title {
@@ -1146,11 +1320,11 @@
 
 }
 
-/* On the narrowest phones the full "Contact Us" collides with the wordmark;
-   drop the "Us" so the link compacts to "Contact" (same target), and pull the
-   lockup/action gaps in a notch. */
+/* On the narrowest phones "Register Now" collides with the wordmark; drop the
+   "Now" so the CTA compacts to "Register" (same target), and pull the
+   lockup/action gaps in a notch. The email hides too — phone + notice fit. */
 @media (max-width: 420px) {
-  .nav-link-us {
+  .nav-cta-now {
     display: none;
   }
 
@@ -1160,6 +1334,234 @@
 
   .nav-actions {
     gap: 10px;
+  }
+}
+
+@media (max-width: 600px) {
+  .topbar-item--mail {
+    display: none;
+  }
+}
+
+@media (max-width: 480px) {
+  .topbar-notice-year {
+    display: none;
+  }
+}
+
+/* ---------- Programs (the concrete student offer) ---------- */
+.programs {
+  width: min(1180px, calc(100vw - 48px));
+  margin-left: 50%;
+  transform: translateX(-50%);
+  scroll-margin-top: 96px;
+}
+
+.programs-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 16px;
+  margin-top: 24px;
+  text-align: left;
+}
+
+.program-card {
+  background: var(--surface);
+  border: 1px solid var(--line);
+  border-radius: 16px;
+  padding: 22px 20px;
+  box-shadow: var(--shadow-md);
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  transition: transform 0.15s ease, box-shadow 0.15s ease;
+}
+
+.program-card:hover {
+  transform: translateY(-3px);
+  box-shadow: var(--shadow-lg);
+}
+
+.program-icon {
+  width: 44px;
+  height: 44px;
+  border-radius: 13px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #fff;
+  background: var(--brand-gradient-135);
+  box-shadow: 0 6px 14px rgba(124, 58, 237, 0.28);
+}
+
+.program-icon svg {
+  width: 22px;
+  height: 22px;
+}
+
+.program-title {
+  font-size: 1.02rem;
+  font-weight: 700;
+  color: var(--text);
+  line-height: 1.3;
+}
+
+.program-detail {
+  font-size: 0.92rem;
+  line-height: 1.55;
+  color: var(--text-muted);
+}
+
+.programs-cta {
+  margin-top: 26px;
+  text-align: center;
+}
+
+@media (max-width: 1000px) {
+  .programs-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 560px) {
+  .programs-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* ---------- Closing CTA band ---------- */
+.cta-band {
+  width: min(1180px, calc(100vw - 48px));
+  margin-left: 50%;
+  transform: translateX(-50%);
+  margin-top: clamp(48px, 9vw, 72px);
+  background: var(--brand-gradient-135);
+  border-radius: 20px;
+  padding: clamp(32px, 6vw, 56px) clamp(20px, 5vw, 64px);
+  text-align: center;
+  box-shadow: var(--shadow-brand);
+}
+
+.cta-band-title {
+  color: #fff;
+  font-size: clamp(1.4rem, 4.5vw, 2rem);
+  font-weight: 800;
+  letter-spacing: -0.015em;
+  line-height: 1.25;
+}
+
+.cta-band-sub {
+  margin: 12px auto 0;
+  max-width: 560px;
+  color: rgba(255, 255, 255, 0.85);
+  font-size: var(--text-lead);
+  line-height: 1.6;
+}
+
+/* ---------- Footer ---------- */
+.footer {
+  margin-top: clamp(48px, 9vw, 80px);
+  background: #14142a;
+  color: rgba(255, 255, 255, 0.72);
+  padding: clamp(36px, 6vw, 56px) clamp(20px, 4vw, 28px) 28px;
+}
+
+.footer-grid {
+  max-width: 1180px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 2fr 1fr 1fr 1.4fr;
+  gap: clamp(24px, 4vw, 48px);
+  text-align: left;
+}
+
+.footer-wordmark {
+  font-size: 1.4rem;
+  font-weight: 800;
+  letter-spacing: -0.022em;
+}
+
+.footer-mark {
+  color: #fff;
+}
+
+.footer-accent {
+  background: var(--brand-gradient);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.footer-blurb {
+  margin-top: 12px;
+  max-width: 320px;
+  font-size: 0.92rem;
+  line-height: 1.65;
+}
+
+.footer-col {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.footer-col-title {
+  color: #fff;
+  font-size: 0.82rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  margin-bottom: 4px;
+}
+
+.footer-link {
+  color: rgba(255, 255, 255, 0.72);
+  font-size: 0.92rem;
+  text-decoration: none;
+  line-height: 1.5;
+  width: fit-content;
+}
+
+.footer-link:hover {
+  color: #fff;
+}
+
+/* Contact rows: small icon beside the text */
+.footer-contact {
+  display: flex;
+  align-items: flex-start;
+  gap: 9px;
+}
+
+.footer-contact svg {
+  width: 15px;
+  height: 15px;
+  flex: 0 0 auto;
+  margin-top: 3px;
+}
+
+.footer-addr-line {
+  display: block;
+}
+
+.footer-legal {
+  max-width: 1180px;
+  margin: 32px auto 0;
+  padding-top: 18px;
+  border-top: 1px solid rgba(255, 255, 255, 0.12);
+  font-size: 0.82rem;
+  text-align: center;
+}
+
+@media (max-width: 860px) {
+  .footer-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+@media (max-width: 480px) {
+  .footer-grid {
+    grid-template-columns: 1fr;
   }
 }
 

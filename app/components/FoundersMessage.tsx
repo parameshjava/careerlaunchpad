@@ -1,3 +1,4 @@
+import { Target, Handshake, Rocket } from "lucide-react";
 import FounderAvatar from "./FounderAvatar";
 
 type Founder = {
@@ -33,20 +34,20 @@ const founders: Founder[] = [
 ];
 
 // Our Promise — the three commitments we make to every student.
-const promises: { icon: string; title: string; detail: string }[] = [
+const promises: { icon: React.ElementType; title: string; detail: string }[] = [
   {
-    icon: "📍",
+    icon: Target,
     title: "Identify Potential",
     detail: "We discover talented students through career readiness assessments.",
   },
   {
-    icon: "🤝",
+    icon: Handshake,
     title: "Guide with Purpose",
     detail:
       "Every selected student is matched with industry mentors and a structured learning path.",
   },
   {
-    icon: "🚀",
+    icon: Rocket,
     title: "Launch Careers",
     detail:
       "Practical skills, mentorship and employer connections make students job-ready before graduation.",
@@ -82,7 +83,7 @@ export default function FoundersMessage() {
             <li className="value-tile" key={v.title}>
               <span className="value-tile-head">
                 <span className="value-tile-icon" aria-hidden="true">
-                  {v.icon}
+                  <v.icon />
                 </span>
                 <span className="value-tile-title">{v.title}</span>
               </span>
