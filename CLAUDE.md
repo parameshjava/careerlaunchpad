@@ -77,7 +77,7 @@ are kept pixel-matched**:
     a node → custom (e.g. email + Sign out on signed-in pages).
 
 **Keeping them matched:** the lockup dimensions are shared `clamp()` values — logo
-`clamp(40px,9vw,84px)`, wordmark `clamp(1.15rem,4.5vw,2.5rem)`, tagline
+`clamp(34px,9vw,84px)`, wordmark `clamp(0.85rem,4.5vw,2.5rem)`, tagline
 `clamp(0.72rem,2.3vw,1rem)`, brand gradient `#2563eb→#7c3aed`. These are duplicated in
 `SiteHeader.tsx` and the `.brand*` rules in `landing.css`. **If you change the lockup
 in one, change the other to match.** The tagline is **hidden below 600px** in both
