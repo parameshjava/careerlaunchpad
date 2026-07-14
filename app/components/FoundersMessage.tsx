@@ -32,22 +32,24 @@ const founders: Founder[] = [
   },
 ];
 
-// Core values that define the student journey on CareerLaunchPad.
-const teamValues: { icon: string; title: string; detail: string }[] = [
+// Our Promise — the three commitments we make to every student.
+const promises: { icon: string; title: string; detail: string }[] = [
   {
-    icon: "🎯",
-    title: "Aspire",
-    detail: "Dream bigger than your circumstances.",
+    icon: "📍",
+    title: "Identify Potential",
+    detail: "We discover talented students through career readiness assessments.",
   },
   {
-    icon: "📚",
-    title: "Prepare",
-    detail: "Develop the skills that industry demands.",
+    icon: "🤝",
+    title: "Guide with Purpose",
+    detail:
+      "Every selected student is matched with industry mentors and a structured learning path.",
   },
   {
     icon: "🚀",
-    title: "Launch",
-    detail: "Start a successful and meaningful career.",
+    title: "Launch Careers",
+    detail:
+      "Practical skills, mentorship and employer connections make students job-ready before graduation.",
   },
 ];
 
@@ -55,20 +57,33 @@ const visionMission: { icon: string; label: string; text: string }[] = [
   {
     icon: "🔭",
     label: "Vision",
-    text: "Empowering students to dream bigger, learn smarter, and launch successful careers.",
+    text: "Empower students from Tier-2, Tier-3 and rural India with industry mentorship, practical skills and career opportunities — job-ready before graduation, without migrating to metro cities for expensive coaching.",
   },
   {
     icon: "🧭",
     label: "Mission",
-    text: "Connecting students with mentors, skills, and opportunities to become job-ready and future-ready.",
+    text: "Bridge the gap between academic education and industry expectations: identify skill gaps, deliver personalized mentorship and industry-led learning, measure career readiness, and connect students with employment opportunities.",
   },
 ];
+
+// Long-term impact goals, plus the national programs the platform supports.
+const impacts: string[] = [
+  "Reduce unemployment among graduates",
+  "Improve employability in Tier-2 & Tier-3 colleges",
+  "Minimize migration to metros for coaching",
+  "Reduce the financial burden on students and parents",
+  "Connect industry experts with aspiring students",
+  "A measurable Career Readiness Index for institutions",
+];
+
+const programs = ["Digital India", "Skill India", "Startup India"];
 
 // The "About" cluster of the landing page. Per IA best practice, it follows the
 // product story (the Journey above) in the order purpose → principles → people:
 //   1. Vision & Mission  (why we exist)
-//   2. Core Values       (how we operate)
-//   3. Founders          (who's behind it)
+//   2. Our Promise       (what we commit to)
+//   3. Impact            (what changes if we succeed)
+//   4. Founders          (who's behind it)
 // Each is its OWN titled, anchored section rather than an unlabeled card stack.
 export default function FoundersMessage() {
   return (
@@ -91,11 +106,11 @@ export default function FoundersMessage() {
         </div>
       </section>
 
-      {/* 2) Core Values — the principles, as three parallel tiles */}
-      <section id="values">
-        <h2 className="section-title">Our Core Values</h2>
+      {/* 2) Our Promise — the commitments, as three parallel tiles */}
+      <section id="promise">
+        <h2 className="section-title">Our Promise</h2>
         <ul className="values-row">
-          {teamValues.map((v) => (
+          {promises.map((v) => (
             <li className="value-tile" key={v.title}>
               <span className="value-tile-head">
                 <span className="value-tile-icon" aria-hidden="true">
@@ -109,7 +124,26 @@ export default function FoundersMessage() {
         </ul>
       </section>
 
-      {/* 3) Founders — the people, equal-height profile cards */}
+      {/* 3) Impact — the long-term goals, as checkmark tiles + program badges */}
+      <section id="impact">
+        <h2 className="section-title">The Long-Term Impact</h2>
+        <ul className="impact-grid">
+          {impacts.map((t) => (
+            <li className="impact-tile" key={t}>
+              {t}
+            </li>
+          ))}
+        </ul>
+        <p className="impact-badges">
+          {programs.map((p) => (
+            <span className="impact-badge" key={p}>
+              {p}
+            </span>
+          ))}
+        </p>
+      </section>
+
+      {/* 4) Founders — the people, equal-height profile cards */}
       <section id="founders">
         <h2 className="section-title">Our Team</h2>
         <div className="team-grid">
