@@ -348,14 +348,21 @@ export function BlueprintEditor({
   async function runFeasibility() {
     if (!savedId || busy) return;
     setError("");
+    setFeasibility(null);
     setChecking(true);
     try {
       const res = await fetch(`/api/exam/blueprints/${savedId}/feasibility`, { method: "POST" });
-      const data = await res.json();
-      if (!res.ok) return setError(data.error ?? "Feasibility check failed");
+      const data = await res.json().catch(() => ({}));
+      if (!res.ok) {
+        setError(data.error ?? `Feasibility check failed (${res.status})`);
+        return;
+      }
       const shortfalls: Shortfall[] = data.shortfalls ?? [];
       setFeasibility({ ok: data.ok, shortfalls });
       loadShortfallChapters(shortfalls);
+    } catch (e) {
+      // Network / parse failure — surface it instead of silently doing nothing.
+      setError(e instanceof Error ? e.message : "Feasibility check failed");
     } finally {
       setChecking(false);
     }

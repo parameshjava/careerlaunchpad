@@ -20,10 +20,14 @@ export async function POST(_req: NextRequest, { params }: { params: Promise<{ id
   const { id } = await params;
   const supabase = await createClient();
 
-  const blueprint = await fetchBlueprint(supabase, id);
-  if (!blueprint) return NextResponse.json({ error: "Not found" }, { status: 404 });
-
+  // Wrap the whole body (not just checkFeasibility): fetchBlueprint or the
+  // feasibility RPC can throw, and an uncaught throw returns a non-JSON 500 that
+  // the client can't parse — which surfaced as "clicking Check feasibility does
+  // nothing". Always return JSON with the real message.
   try {
+    const blueprint = await fetchBlueprint(supabase, id);
+    if (!blueprint) return NextResponse.json({ error: "Not found" }, { status: 404 });
+
     const shortfalls = await checkFeasibility(supabase, blueprint);
     return NextResponse.json({
       ok: shortfalls.length === 0,
@@ -36,6 +40,10 @@ export async function POST(_req: NextRequest, { params }: { params: Promise<{ id
       })),
     });
   } catch (e) {
-    return NextResponse.json({ error: (e as Error).message }, { status: 500 });
+    console.error("[feasibility] check failed:", e);
+    return NextResponse.json(
+      { error: (e as Error).message || "Feasibility check failed" },
+      { status: 500 },
+    );
   }
 }
