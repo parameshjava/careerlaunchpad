@@ -7,7 +7,7 @@
 // (mobile-first) with a palette and a hard-stop countdown.
 import { useCallback, useEffect, useRef, useState } from "react";
 import { useRouter } from "next/navigation";
-import { Printer } from "lucide-react";
+import { CheckCircle2, TriangleAlert, Printer } from "lucide-react";
 import { createClient } from "@/lib/supabase/client";
 import { RichContent } from "@/components/exam/RichContent";
 import { Button } from "@/components/ui/button";
@@ -557,20 +557,62 @@ export function AttemptRunner({
 
       {/* Submit confirmation */}
       <Dialog open={confirmOpen} onOpenChange={setConfirmOpen}>
-        <DialogContent>
+        <DialogContent className="sm:max-w-md">
           <DialogHeader>
             <DialogTitle>Submit exam?</DialogTitle>
-            <DialogDescription>
-              You have answered {questions.filter((qq) => answered(qq.question_id)).length} of{" "}
-              {questions.length} questions. Once submitted, you cannot change your answers.
-            </DialogDescription>
           </DialogHeader>
+          {(() => {
+            const answeredCount = questions.filter((qq) => answered(qq.question_id)).length;
+            const total = questions.length;
+            const unanswered = total - answeredCount;
+            const allDone = unanswered === 0;
+            const pct = total ? Math.round((answeredCount / total) * 100) : 0;
+            return (
+              <div className="flex items-start gap-3">
+                <span
+                  className={
+                    allDone
+                      ? "flex size-10 shrink-0 items-center justify-center rounded-full bg-emerald-100 text-emerald-600 dark:bg-emerald-950 dark:text-emerald-400"
+                      : "flex size-10 shrink-0 items-center justify-center rounded-full bg-amber-100 text-amber-600 dark:bg-amber-950 dark:text-amber-400"
+                  }
+                >
+                  {allDone ? <CheckCircle2 className="size-5" /> : <TriangleAlert className="size-5" />}
+                </span>
+                <div className="min-w-0 flex-1 space-y-2">
+                  <p className="text-sm">
+                    You&apos;ve answered{" "}
+                    <strong className="tabular-nums">
+                      {answeredCount} of {total}
+                    </strong>{" "}
+                    questions
+                    {unanswered > 0 && (
+                      <>
+                        {" "}
+                        — <span className="font-medium text-amber-600 dark:text-amber-400">
+                          {unanswered} still unanswered
+                        </span>
+                      </>
+                    )}
+                    .
+                  </p>
+                  <div className="bg-muted h-1.5 w-full overflow-hidden rounded-full">
+                    <div
+                      className={allDone ? "h-full rounded-full bg-emerald-500" : "h-full rounded-full bg-primary"}
+                      style={{ width: `${pct}%` }}
+                    />
+                  </div>
+                  <DialogDescription>
+                    Once submitted, you can&apos;t change your answers.
+                  </DialogDescription>
+                </div>
+              </div>
+            );
+          })()}
           <DialogFooter className="gap-2">
             <Button variant="outline" onClick={() => setConfirmOpen(false)}>
               Go back &amp; review
             </Button>
             <Button
-              variant="destructive"
               disabled={submitting}
               onClick={() => {
                 setConfirmOpen(false);
