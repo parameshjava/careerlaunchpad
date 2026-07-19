@@ -50,6 +50,28 @@ Raw brand vars (`var(--brand-gradient)`, `var(--brand-gradient-135)`) are reserv
 - **Status:** `Badge` — `variant="default"` for live/positive, `"secondary"` otherwise.
 - **Icons:** `lucide-react` at default sizes.
 
+## Dialogs & confirmations
+
+Uniform across the app — the look is built into `components/ui/dialog.tsx`, so don't restyle per dialog:
+
+- **`DialogHeader` is a tinted title band** (muted bg, bottom divider, rounded top); **`DialogFooter` is a divider band** with right-aligned actions. Put **only the title** (optionally a one-line subtitle) in `DialogHeader`; everything else — description, icon, fields — goes in the **body** between header and footer.
+
+```tsx
+<Dialog open={open} onOpenChange={setOpen}>
+  <DialogContent className="sm:max-w-md">
+    <DialogHeader><DialogTitle>Title</DialogTitle></DialogHeader>
+    {/* body: <DialogDescription>, inputs, etc. */}
+    <DialogFooter>
+      <Button variant="outline" onClick={() => setOpen(false)}>Cancel</Button>
+      <Button onClick={confirm}>Confirm</Button>
+    </DialogFooter>
+  </DialogContent>
+</Dialog>
+```
+
+- **Destructive confirmation:** in the body, a `TriangleAlert` in a `bg-destructive/10 text-destructive` circle beside the description; primary action is `variant="destructive"`.
+- **Irreversible deletes:** require **type-to-confirm** — an `Input` that must exactly match the resource name, with the confirm button `disabled` until it matches. Never use the browser `confirm()`/`alert()`.
+
 ## Governance
 
 - Keep this doc and the code in sync — if a pattern changes, update here in the same PR.

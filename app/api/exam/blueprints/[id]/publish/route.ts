@@ -62,8 +62,9 @@ export async function POST(_req: NextRequest, { params }: { params: Promise<{ id
       { status: 409 },
     );
 
-  await supabase.from("exam").update({ status: "published" }).eq("id", id);
-
+  // NOTE: generating the paper does NOT publish the exam. It stays in Draft
+  // until the Schedule step runs (…/schedule sets status='published'), so an
+  // unscheduled exam never looks live.
   const seed = Math.floor(Math.random() * 2_000_000_000);
   try {
     let sessionId: string;

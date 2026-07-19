@@ -83,7 +83,7 @@ export function ExamsList() {
 
   const now = Date.now();
   return (
-    <ul className="grid gap-3">
+    <ul className="grid gap-2">
       {sessions.map((s) => {
         const done = s.roster_status === "submitted";
         const opens = s.opens_at ? new Date(s.opens_at).getTime() : null;
@@ -96,70 +96,65 @@ export function ExamsList() {
 
         return (
           <li key={s.session_id}>
-            <Card>
-              <CardContent className="grid gap-3 pt-6">
-                <div className="flex flex-col gap-3 sm:flex-row sm:items-start sm:justify-between">
-                  <div className="min-w-0">
-                    <div className="truncate font-semibold">{s.exam_title}</div>
+            <Card size="sm">
+              <CardContent className="flex items-center justify-between gap-3">
+                {/* Left: title + a single wrapping meta line + section chips */}
+                <div className="grid min-w-0 gap-1">
+                  <div className="flex flex-wrap items-baseline gap-x-2">
+                    <span className="truncate font-semibold">{s.exam_title}</span>
                     {s.label !== s.exam_title && (
-                      <div className="text-muted-foreground truncate text-sm">{s.label}</div>
+                      <span className="text-muted-foreground truncate text-xs">{s.label}</span>
                     )}
                   </div>
-                  <div className="flex shrink-0 items-center gap-2">
-                    {canOpen && (
-                      <Button asChild>
-                        <Link href={`/student/exams/${s.session_id}`}>
-                          {s.roster_status === "started" ? "Resume exam" : "Open exam"}
-                        </Link>
-                      </Button>
-                    )}
-                    {done && s.results_published && (
-                      <Button variant="outline" asChild>
-                        <Link href={`/student/exams/${s.session_id}/result`}>View result</Link>
-                      </Button>
-                    )}
-                    {done && !s.results_published && <Badge variant="secondary">Submitted</Badge>}
-                    {!done && beforeWindow && <Badge variant="outline">Scheduled</Badge>}
-                    {!done && afterWindow && <Badge variant="outline">Closed</Badge>}
-                  </div>
-                </div>
 
-                {s.opens_at && (
-                  <div className="text-sm">
-                    <span className="font-medium">{fmtDate(s.opens_at)}</span>
-                    <span className="text-muted-foreground">
-                      {" · "}
-                      {fmtTime(s.opens_at)}
-                      {s.closes_at ? ` – ${fmtTime(s.closes_at)}` : ""}
-                    </span>
+                  <div className="text-muted-foreground flex flex-wrap items-center gap-x-3 gap-y-0.5 text-xs">
+                    {s.opens_at && (
+                      <span className="text-foreground font-medium">
+                        {fmtDate(s.opens_at)} · {fmtTime(s.opens_at)}
+                        {s.closes_at ? `–${fmtTime(s.closes_at)}` : ""}
+                      </span>
+                    )}
+                    <span>⏱ {s.duration_minutes} min</span>
+                    <span>{s.total_questions} questions</span>
+                    <span>{s.total_marks} marks</span>
+                    {Number(s.negative_mark_per_wrong) > 0 && (
+                      <span>−{s.negative_mark_per_wrong}/wrong</span>
+                    )}
                   </div>
-                )}
 
-                {/* Exam pattern */}
-                <div className="text-muted-foreground flex flex-wrap gap-x-4 gap-y-1 text-xs">
-                  <span>⏱ {s.duration_minutes} min</span>
-                  <span>{s.total_questions} questions</span>
-                  <span>{s.total_marks} marks</span>
-                  {Number(s.negative_mark_per_wrong) > 0 && (
-                    <span>−{s.negative_mark_per_wrong} per wrong answer</span>
+                  {s.sections.length > 0 && (
+                    <div className="flex flex-wrap gap-1">
+                      {s.sections.map((sec, i) => (
+                        <Badge
+                          key={i}
+                          variant="secondary"
+                          className="px-1.5 py-0 text-[11px] font-normal"
+                        >
+                          {sec.subject}: {sec.num_questions} × {sec.marks_per_question}m
+                        </Badge>
+                      ))}
+                    </div>
                   )}
                 </div>
-                {s.sections.length > 0 && (
-                  <div className="flex flex-wrap gap-1.5">
-                    {s.sections.map((sec, i) => (
-                      <Badge key={i} variant="secondary" className="font-normal">
-                        {sec.subject}: {sec.num_questions} × {sec.marks_per_question}m
-                      </Badge>
-                    ))}
-                  </div>
-                )}
 
-                {!done && beforeWindow && s.opens_at && (
-                  <p className="text-muted-foreground text-xs">
-                    You can open the exam now and wait — questions load 1 minute before start
-                    time.
-                  </p>
-                )}
+                {/* Right: the one relevant action / status, stacked */}
+                <div className="flex shrink-0 flex-col items-end gap-1">
+                  {canOpen && (
+                    <Button size="sm" asChild>
+                      <Link href={`/student/exams/${s.session_id}`}>
+                        {s.roster_status === "started" ? "Resume" : "Open exam"}
+                      </Link>
+                    </Button>
+                  )}
+                  {done && s.results_published && (
+                    <Button size="sm" variant="outline" asChild>
+                      <Link href={`/student/exams/${s.session_id}/result`}>View result</Link>
+                    </Button>
+                  )}
+                  {done && !s.results_published && <Badge variant="secondary">Submitted</Badge>}
+                  {!done && beforeWindow && <Badge variant="outline">Scheduled</Badge>}
+                  {!done && afterWindow && <Badge variant="outline">Closed</Badge>}
+                </div>
               </CardContent>
             </Card>
           </li>

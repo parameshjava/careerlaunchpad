@@ -9,6 +9,7 @@
  */
 import { useCallback, useEffect, useState } from "react";
 import { Button } from "@/components/ui/button";
+import { profileCompleteness } from "@/lib/registration";
 import {
   type Form, type RefData, type Ref, type College,
   EMPTY, FIELD_LABELS, STEP_PAYLOAD, StepBody, Stepper,
@@ -116,12 +117,24 @@ export function RegistrationForm({
   // Mandatory fields (steps 1–2). Steps 3–6 are optional, so Submit unlocks once these are set.
   const canSubmit = Boolean(f.full_name.trim() && f.phone.trim() && f.college_id);
 
+  // Live profile completeness (same 0–100 scale the admin grid + approval email
+  // use), so students see how much richer their profile can still get on every step.
+  const pct = profileCompleteness(f as unknown as Record<string, unknown>);
+
   return (
     <div>
       <Stepper step={step} onJump={setStep} />
 
       <div className="bg-card overflow-hidden rounded-3xl border p-5 shadow-xl shadow-[#7c3aed]/5 sm:p-8">
-        <p className="-mx-5 -mt-5 mb-6 bg-gradient-to-r from-[#2563eb] to-[#7c3aed] px-5 py-3 text-sm font-bold tracking-[0.04em] text-white sm:-mx-8 sm:-mt-8 sm:px-8">Step {step} of 6</p>
+        <div className="-mx-5 -mt-5 mb-6 flex items-center justify-between gap-3 bg-gradient-to-r from-[#2563eb] to-[#7c3aed] px-5 py-3 text-white sm:-mx-8 sm:-mt-8 sm:px-8">
+          <p className="text-sm font-bold tracking-[0.04em]">Step {step} of 6</p>
+          <div className="flex items-center gap-2" title={`Your profile is ${pct}% complete`}>
+            <div className="h-1.5 w-20 overflow-hidden rounded-full bg-white/25 sm:w-28">
+              <div className="h-full rounded-full bg-white transition-all" style={{ width: `${pct}%` }} />
+            </div>
+            <span className="text-xs font-semibold tabular-nums whitespace-nowrap">{pct}% complete</span>
+          </div>
+        </div>
         <StepBody
           step={step}
           f={f}
@@ -206,6 +219,7 @@ export function ProfileSummary({
   const location = [f.city_village, f.district, f.state].filter(Boolean).join(", ");
   const collegeText = college ? `${college.name}${college.place ? ` — ${college.place}` : ""}` : "";
   const ratedCats = assessCats.filter((c) => (f.skill_assessment[c.slug] ?? 0) > 0);
+  const pct = profileCompleteness(f as unknown as Record<string, unknown>);
 
   return (
     <div className="bg-card rounded-3xl border p-5 shadow-xl shadow-[#7c3aed]/5 sm:p-8">
@@ -222,6 +236,15 @@ export function ProfileSummary({
           )}
           <h2 className="mt-2 truncate text-xl font-bold">{f.full_name || "Your profile"}</h2>
           {email && <p className="text-muted-foreground truncate text-sm">{email}</p>}
+          <div className="mt-3 flex items-center gap-2" title={`Profile ${pct}% complete`}>
+            <div className="bg-muted h-1.5 w-36 overflow-hidden rounded-full">
+              <div
+                className={pct === 100 ? "h-full rounded-full bg-emerald-500" : "h-full rounded-full bg-primary"}
+                style={{ width: `${pct}%` }}
+              />
+            </div>
+            <span className="text-muted-foreground text-xs font-semibold tabular-nums">{pct}% complete</span>
+          </div>
         </div>
         {onEdit && (
           <Button

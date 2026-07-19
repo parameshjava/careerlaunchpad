@@ -7,6 +7,7 @@
 // Reads are guarded by RLS (student_intake needs student.intake.import; the Owner's
 // '*' satisfies it), so an unauthorized caller simply gets an empty list.
 import type { SupabaseClient } from "@supabase/supabase-js";
+import { PROFILE_SELECT, profileCompleteness } from "@/lib/registration";
 
 export type StudentStage = "Imported" | "Invited" | "Registered";
 export type ReviewStatus = "pending_review" | "approved" | "suspended";
@@ -28,6 +29,9 @@ export type Student = {
   skills: string[];
   goalIds: string[];
   primaryGoalId: string | null;
+  // Profile completeness 0–100 for registered students; null for imported/invited
+  // rows that have no student_profile yet.
+  completeness: number | null;
 };
 
 // Supabase types a to-one embed as a possible array; normalize to a single row.
@@ -57,11 +61,12 @@ export async function fetchStudents(
     .in("status", ["pending", "invited"])
     .order("created_at", { ascending: false });
 
-  // Registered students.
+  // Registered students. Selects the full profile (PROFILE_SELECT) so we can
+  // compute completeness alongside the grid fields.
   let profileQ = supabase
     .from("student_profile")
     .select(
-      "user_id, full_name, degree, branch, updated_at, skills, career_goal_ids, primary_career_goal_id, status, registration_status, college:college_id(name), app_user:user_id(email, status)",
+      `user_id, updated_at, status, registration_status, ${PROFILE_SELECT}, college:college_id(name), app_user:user_id(email, status)`,
     )
     .order("updated_at", { ascending: false });
 
@@ -91,10 +96,14 @@ export async function fetchStudents(
       skills: (r.skills as string[] | null) ?? [],
       goalIds: (r.career_goal_ids as string[] | null) ?? [],
       primaryGoalId: (r.primary_career_goal_id as string | null) ?? null,
+      completeness: null, // no student_profile yet
     };
   });
 
-  const registered: Student[] = (profiles.data ?? [])
+  // The `${PROFILE_SELECT}` interpolation defeats supabase-js's select-string
+  // type parser, so treat profile rows as untyped records.
+  const profileRows = (profiles.data ?? []) as unknown as Record<string, unknown>[];
+  const registered: Student[] = profileRows
     // Soft-deleted users (app_user.status='deleted') are hidden from the grid.
     .filter((r) => one<{ status?: string }>(r.app_user as never)?.status !== "deleted")
     .map((r) => {
@@ -113,6 +122,7 @@ export async function fetchStudents(
       skills: (r.skills as string[] | null) ?? [],
       goalIds: (r.career_goal_ids as string[] | null) ?? [],
       primaryGoalId: (r.primary_career_goal_id as string | null) ?? null,
+      completeness: profileCompleteness(r as Record<string, unknown>),
     };
   });
 

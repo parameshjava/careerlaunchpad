@@ -1,4 +1,5 @@
 import { notFound, redirect } from "next/navigation";
+import Link from "next/link";
 import { getAuthContext, can } from "@/lib/auth";
 import { createClient } from "@/lib/supabase/server";
 import { fetchPaperForPrint, fetchRoster, fetchSession } from "@/lib/exam-query";
@@ -29,6 +30,14 @@ export default async function SessionDetailPage({
 
   return (
     <div className="mx-auto max-w-4xl">
+      <Link
+        href={`/dashboard/exams/papers?tab=${
+          session.status === "closed" || session.status === "graded" ? "closed" : "active"
+        }`}
+        className="text-muted-foreground hover:text-foreground mb-4 inline-block text-sm print:hidden"
+      >
+        ← Exam papers
+      </Link>
       <header className="mb-6">
         <h1 className="text-2xl font-bold tracking-tight">{session.label}</h1>
         <p className="text-muted-foreground mt-1 text-sm">

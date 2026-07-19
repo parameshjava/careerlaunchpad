@@ -293,6 +293,10 @@ export type ExamCard = {
   /** ALL sittings' statuses (not just the newest) — drives Open/Closed tabs. */
   sessionCount: number;
   sessionStatuses: SessionStatus[];
+  /** Whether the newest sitting's results are visible to students. */
+  resultsPublished: boolean;
+  /** Student attempts across all sittings — 0 means the exam is safe to delete. */
+  attemptCount: number;
 };
 
 export async function fetchExamCards(
@@ -303,7 +307,7 @@ export async function fetchExamCards(
     .from("exam")
     .select(
       "id, title, duration_minutes, status, draft_step, created_at, college:college_id(name), " +
-        "exam_section(num_questions), exam_session(id, status, opens_at, closes_at, created_at)",
+        "exam_section(num_questions), exam_session(id, status, opens_at, closes_at, results_published, created_at, exam_attempt(count))",
     )
     .order("created_at", { ascending: false });
   if (collegeId) {
@@ -345,6 +349,11 @@ export async function fetchExamCards(
       closesAt: (sess?.closes_at as string | null) ?? null,
       sessionCount: rawSessions.length,
       sessionStatuses: rawSessions.map((s) => s.status as SessionStatus),
+      resultsPublished: (sess?.results_published as boolean) ?? false,
+      attemptCount: rawSessions.reduce(
+        (n, s) => n + Number((s.exam_attempt as { count: number }[] | null)?.[0]?.count ?? 0),
+        0,
+      ),
     };
   });
 }

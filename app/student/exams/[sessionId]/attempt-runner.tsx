@@ -77,6 +77,19 @@ export function AttemptRunner({
   // the deadline auto-submit calls doSubmit directly.
   const [confirmOpen, setConfirmOpen] = useState(false);
 
+  // Anti-cheat: leaving the exam window (Alt+Tab / Cmd+Tab / app-switch /
+  // minimise) fires window `blur` / `visibilitychange` — the only signal a web
+  // page gets (the OS switch itself can't be blocked). First leave → warning;
+  // second → auto-submit + no resume. A single switch fires BOTH events, so we
+  // coalesce them within a short window (lastLeaveRef).
+  const [strikes, setStrikes] = useState(0);
+  const [warnOpen, setWarnOpen] = useState(false);
+  const [closedForSwitch, setClosedForSwitch] = useState(false);
+  const strikesRef = useRef(0);
+  strikesRef.current = strikes;
+  const lastLeaveRef = useRef(0);
+  const suppressLeaveRef = useRef(false); // true briefly around window.print()
+
   const saveTimers = useRef<Record<string, ReturnType<typeof setTimeout>>>({});
   // Latest answers, readable inside doSubmit without making it depend on `answers`
   // (which would re-create the countdown effect on every keystroke).
@@ -169,7 +182,7 @@ export function AttemptRunner({
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [sessionId]);
 
-  const doSubmit = useCallback(async () => {
+  const doSubmit = useCallback(async ({ redirect = true }: { redirect?: boolean } = {}) => {
     if (!attemptId || submitting) return;
     setSubmitting(true);
     // Flush any pending debounced saves so a last-second answer (or one changed
@@ -200,7 +213,7 @@ export function AttemptRunner({
     } catch {
       /* ignore */
     }
-    router.push(`/student/exams/${sessionId}/result`);
+    if (redirect) router.push(`/student/exams/${sessionId}/result`);
   }, [attemptId, submitting, supabase, cacheKey, router, sessionId]);
 
   // Countdown → hard auto-submit at zero.
@@ -215,6 +228,37 @@ export function AttemptRunner({
     const t = setInterval(tick, 1000);
     return () => clearInterval(t);
   }, [deadline, doSubmit]);
+
+  // Anti-cheat: detect the student leaving the exam window. Active only while an
+  // attempt is live. First leave warns; the second submits as-is and shows the
+  // closed screen — start_exam_attempt won't re-hand a non-in_progress attempt,
+  // so it can't be resumed.
+  useEffect(() => {
+    if (!attemptId || closedForSwitch) return;
+    const registerLeave = () => {
+      if (suppressLeaveRef.current) return;
+      const now = Date.now();
+      if (now - lastLeaveRef.current < 1500) return; // one switch fires blur+visibility → one strike
+      lastLeaveRef.current = now;
+      const n = strikesRef.current + 1;
+      setStrikes(n);
+      if (n >= 2) {
+        setClosedForSwitch(true);
+        doSubmit({ redirect: false });
+      } else {
+        setWarnOpen(true);
+      }
+    };
+    const onVisibility = () => {
+      if (document.visibilityState === "hidden") registerLeave();
+    };
+    window.addEventListener("blur", registerLeave);
+    document.addEventListener("visibilitychange", onVisibility);
+    return () => {
+      window.removeEventListener("blur", registerLeave);
+      document.removeEventListener("visibilitychange", onVisibility);
+    };
+  }, [attemptId, closedForSwitch, doSubmit]);
 
   function scheduleSave(questionId: string, selected: string[]) {
     clearTimeout(saveTimers.current[questionId]);
@@ -268,15 +312,77 @@ export function AttemptRunner({
     });
   }
 
-  if (loading) return <p className="text-muted-foreground px-4 py-6 text-sm">Loading exam…</p>;
-  if (waiting)
+  if (closedForSwitch)
     return (
       <div className="mx-auto max-w-md px-4 py-10 text-center">
-        <p className="text-sm font-medium">{waiting}</p>
-        <p className="text-muted-foreground mt-2 text-xs">
-          Checking again every 5 seconds — the paper unlocks 1 minute before the scheduled start.
+        <p className="text-destructive text-base font-semibold">Exam closed</p>
+        <p className="text-muted-foreground mt-2 text-sm">
+          You left the exam window after a warning. Your answers have been submitted
+          automatically and this attempt cannot be resumed.
         </p>
         <Button className="mt-4" variant="outline" onClick={() => router.push("/student/exams")}>
+          Back to my exams
+        </Button>
+      </div>
+    );
+  if (loading) return <p className="text-muted-foreground px-4 py-6 text-sm">Loading exam…</p>;
+  const opensAtDate = meta?.opens_at ? new Date(meta.opens_at) : null;
+  const opensInFuture = !!opensAtDate && opensAtDate.getTime() > Date.now();
+  if (waiting)
+    return (
+      <div className="mx-auto flex max-w-md flex-col items-center px-4 py-12 text-center">
+        {/* Fidget-spinner: 5 violet lobes + metallic bearings, spinning. */}
+        <svg
+          viewBox="0 0 100 100"
+          className="size-20 animate-spin motion-reduce:animate-none"
+          style={{ animationDuration: "0.9s" }}
+          role="img"
+          aria-label="Waiting for the exam to open"
+        >
+          <defs>
+            <radialGradient id="cl-bearing" cx="40%" cy="35%" r="70%">
+              <stop offset="0%" stopColor="#f8fafc" />
+              <stop offset="45%" stopColor="#cbd5e1" />
+              <stop offset="100%" stopColor="#475569" />
+            </radialGradient>
+          </defs>
+          {/* Body: central hub + 5 lobes, overlapping so they read as one piece. */}
+          <g fill="#a78bfa">
+            <circle cx="50" cy="22" r="15" />
+            <circle cx="76.6" cy="41.4" r="15" />
+            <circle cx="66.5" cy="72.7" r="15" />
+            <circle cx="33.5" cy="72.7" r="15" />
+            <circle cx="23.4" cy="41.4" r="15" />
+            <circle cx="50" cy="50" r="20" />
+          </g>
+          {/* Metallic bearings on each lobe + the hub. */}
+          <g fill="url(#cl-bearing)">
+            <circle cx="50" cy="22" r="8" />
+            <circle cx="76.6" cy="41.4" r="8" />
+            <circle cx="66.5" cy="72.7" r="8" />
+            <circle cx="33.5" cy="72.7" r="8" />
+            <circle cx="23.4" cy="41.4" r="8" />
+            <circle cx="50" cy="50" r="10" />
+          </g>
+          <circle cx="50" cy="50" r="4" fill="#a78bfa" />
+        </svg>
+        <p className="mt-6 text-base font-semibold">
+          {opensInFuture
+            ? `Exam will begin at ${opensAtDate!.toLocaleString(undefined, {
+                dateStyle: "medium",
+                timeStyle: "short",
+              })}`
+            : "Your exam is being prepared"}
+        </p>
+        <p className="text-muted-foreground mt-2 text-sm">
+          Please wait — the question paper will open automatically. This screen updates
+          every few seconds.
+        </p>
+        <p className="mt-4 max-w-sm rounded-md border border-amber-300 bg-amber-50 p-3 text-xs leading-relaxed text-amber-900 dark:border-amber-900/60 dark:bg-amber-950/40 dark:text-amber-200">
+          Once the exam begins, moving away from this screen — switching tabs or apps,
+          Alt+Tab / Cmd+Tab, or minimising — will submit your exam, for security reasons.
+        </p>
+        <Button className="mt-6" variant="outline" onClick={() => router.push("/student/exams")}>
           Back to my exams
         </Button>
       </div>
@@ -299,7 +405,14 @@ export function AttemptRunner({
 
   return (
     <>
-    <div className="mx-auto max-w-2xl px-4 py-4 sm:px-6 print:hidden">
+    <div
+      className="mx-auto max-w-2xl px-4 py-4 select-none sm:px-6 print:hidden"
+      // Copy disabled: block the copy/cut/context-menu events and non-selectable
+      // text (select-none) so Ctrl/Cmd+C has nothing to lift.
+      onCopy={(e) => e.preventDefault()}
+      onCut={(e) => e.preventDefault()}
+      onContextMenu={(e) => e.preventDefault()}
+    >
       {/* Header: progress + timer */}
       <div className="bg-background sticky top-0 z-10 mb-4 flex items-center justify-between gap-4 border-b py-2">
         <span className="text-sm font-medium">
@@ -307,7 +420,17 @@ export function AttemptRunner({
         </span>
         <div className="flex items-center gap-3">
           {meta && (
-            <Button variant="outline" size="sm" onClick={() => window.print()}>
+            <Button
+              size="sm"
+              onClick={() => {
+                // The OS print dialog blurs the window — don't count it as leaving.
+                suppressLeaveRef.current = true;
+                window.print();
+                setTimeout(() => {
+                  suppressLeaveRef.current = false;
+                }, 2000);
+              }}
+            >
               <Printer /> Print
             </Button>
           )}
@@ -317,6 +440,14 @@ export function AttemptRunner({
             ⏱ {mm}:{ss}
           </span>
         </div>
+      </div>
+
+      {/* Anti-cheat notice — kept visible for the whole exam. */}
+      <div className="mb-4 rounded-md border border-amber-300 bg-amber-50 p-3 text-xs leading-relaxed text-amber-900 dark:border-amber-900/60 dark:bg-amber-950/40 dark:text-amber-200">
+        <strong>Stay on this screen.</strong> Pressing Alt+Tab or Cmd+Tab, switching
+        apps, or minimising the window will close your exam. You get{" "}
+        <strong>one warning</strong> — the next time, your exam is submitted
+        automatically and <strong>cannot be resumed</strong>. Copying is disabled.
       </div>
 
       {/* Palette — paginated in blocks of 10 with ‹ › arrows */}
@@ -448,6 +579,24 @@ export function AttemptRunner({
             >
               {submitting ? "Submitting…" : "Submit exam"}
             </Button>
+          </DialogFooter>
+        </DialogContent>
+      </Dialog>
+
+      {/* First switch-away warning. The second leave auto-submits (see effect). */}
+      <Dialog open={warnOpen} onOpenChange={setWarnOpen}>
+        <DialogContent>
+          <DialogHeader>
+            <DialogTitle>⚠️ Don’t leave the exam</DialogTitle>
+            <DialogDescription>
+              You switched away from the exam window. This is your{" "}
+              <strong>only warning</strong> — if you leave again (Alt+Tab, Cmd+Tab,
+              switching apps, or minimising the window), your exam will be submitted
+              automatically and you will not be able to resume.
+            </DialogDescription>
+          </DialogHeader>
+          <DialogFooter>
+            <Button onClick={() => setWarnOpen(false)}>I understand — continue</Button>
           </DialogFooter>
         </DialogContent>
       </Dialog>

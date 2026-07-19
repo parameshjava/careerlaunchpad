@@ -6,12 +6,20 @@
 import { useMemo, useState } from "react";
 import { useRouter } from "next/navigation";
 import Link from "next/link";
-import { Trash2 } from "lucide-react";
+import { ChartColumnIncreasing, Eye, FileText, Trash2, TriangleAlert } from "lucide-react";
 import { Input } from "@/components/ui/input";
 import { Badge } from "@/components/ui/badge";
 import { Button, buttonVariants } from "@/components/ui/button";
 import { cn } from "@/lib/utils";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
+import {
+  Dialog,
+  DialogContent,
+  DialogDescription,
+  DialogFooter,
+  DialogHeader,
+  DialogTitle,
+} from "@/components/ui/dialog";
 import {
   Select,
   SelectContent,
@@ -27,10 +35,11 @@ const isFinished = (s: string) => s === "closed" || s === "graded";
 const isClosed = (e: ExamCard) =>
   e.examStatus === "archived" ||
   (e.sessionCount > 0 && e.sessionStatuses.every(isFinished));
-const hasResults = (e: ExamCard) => e.sessionStatuses.includes("graded");
 
 function status(e: ExamCard): { text: string; live: boolean } {
   if (e.examStatus === "draft") return { text: "Draft", live: false };
+  // Published but never scheduled — still incomplete, not live.
+  if (e.examStatus === "published" && !e.opensAt) return { text: "Not scheduled", live: false };
   if (!e.sessionStatus) return { text: "Published", live: false };
   if (e.sessionStatus === "scheduled") {
     if (e.opensAt && new Date(e.opensAt) > new Date()) return { text: "Scheduled", live: false };
@@ -42,7 +51,13 @@ function status(e: ExamCard): { text: string; live: boolean } {
 
 type Sort = "newest" | "oldest" | "title" | "questions";
 
-export function ExamsBrowser({ exams }: { exams: ExamCard[] }) {
+export function ExamsBrowser({
+  exams,
+  initialTab = "active",
+}: {
+  exams: ExamCard[];
+  initialTab?: "draft" | "active" | "closed";
+}) {
   const [query, setQuery] = useState("");
   const [college, setCollege] = useState("all");
   const [sort, setSort] = useState<Sort>("newest");
@@ -69,10 +84,13 @@ export function ExamsBrowser({ exams }: { exams: ExamCard[] }) {
     return sorted;
   }, [exams, query, college, sort]);
 
+  // An exam published but never given a start time is still incomplete — it
+  // belongs with drafts, not active, since nothing can run without a schedule.
+  const unscheduled = (e: ExamCard) => e.examStatus === "published" && !e.opensAt;
   // Every exam lands in exactly one tab: Draft + Active + Closed = all.
-  const drafts = filtered.filter((e) => e.examStatus === "draft");
-  const closed = filtered.filter((e) => e.examStatus !== "draft" && isClosed(e));
-  const active = filtered.filter((e) => e.examStatus !== "draft" && !isClosed(e));
+  const drafts = filtered.filter((e) => e.examStatus === "draft" || unscheduled(e));
+  const closed = filtered.filter((e) => e.examStatus !== "draft" && !unscheduled(e) && isClosed(e));
+  const active = filtered.filter((e) => e.examStatus !== "draft" && !unscheduled(e) && !isClosed(e));
 
   return (
     <>
@@ -111,7 +129,7 @@ export function ExamsBrowser({ exams }: { exams: ExamCard[] }) {
         </Select>
       </div>
 
-      <Tabs defaultValue="active">
+      <Tabs defaultValue={initialTab}>
         {/* Classic folder tabs: boxed triggers on the list's bottom border; the
             active tab connects to the panel by covering the border with its bg. */}
         <TabsList
@@ -171,17 +189,44 @@ export function ExamsBrowser({ exams }: { exams: ExamCard[] }) {
 function ExamList({ exams, empty }: { exams: ExamCard[]; empty: string }) {
   const router = useRouter();
   const [deleting, setDeleting] = useState<string | null>(null);
+  const [publishing, setPublishing] = useState<string | null>(null);
+  const [toDelete, setToDelete] = useState<ExamCard | null>(null);
+  const [delError, setDelError] = useState("");
+  // Type-to-confirm (AWS/GCP style): Delete stays disabled until this exactly
+  // matches the exam title.
+  const [confirmText, setConfirmText] = useState("");
 
-  async function del(e: ExamCard) {
-    if (!confirm(`Delete “${e.title}”? This removes the exam and its paper — this can't be undone.`))
-      return;
-    setDeleting(e.id);
-    const res = await fetch(`/api/exam/blueprints/${e.id}`, { method: "DELETE" });
+  // Toggle student-visible results without leaving the list.
+  async function togglePublish(e: ExamCard) {
+    if (!e.sessionId) return;
+    setPublishing(e.sessionId);
+    const res = await fetch(`/api/exam/sessions/${e.sessionId}/publish-results`, {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({ published: !e.resultsPublished }),
+    });
     const data = await res.json().catch(() => ({}));
-    setDeleting(null);
-    if (!res.ok) return alert(data.error ?? "Could not delete the exam.");
+    setPublishing(null);
+    if (!res.ok) return alert(data.error ?? "Could not update results visibility.");
     router.refresh();
   }
+
+  async function confirmDelete() {
+    if (!toDelete) return;
+    setDelError("");
+    setDeleting(toDelete.id);
+    const res = await fetch(`/api/exam/blueprints/${toDelete.id}`, { method: "DELETE" });
+    const data = await res.json().catch(() => ({}));
+    setDeleting(null);
+    if (!res.ok) {
+      setDelError(data.error ?? "Could not delete the exam.");
+      return;
+    }
+    setToDelete(null);
+    router.refresh();
+  }
+
+  const matched = confirmText === (toDelete?.title ?? "");
 
   if (exams.length === 0) {
     return (
@@ -191,10 +236,16 @@ function ExamList({ exams, empty }: { exams: ExamCard[]; empty: string }) {
     );
   }
   return (
+    <>
     <ul className="divide-y rounded-md border">
       {exams.map((e) => {
         const st = status(e);
         const isDraft = e.examStatus === "draft";
+        const finished = isClosed(e); // closed/graded — results exist, can't be re-run
+        // Deletable only while no student has attempted it — draft, scheduled/
+        // upcoming, and closed-with-nobody all qualify; anything with submissions
+        // is protected.
+        const canDelete = e.attemptCount === 0;
         return (
           <li
             key={e.id}
@@ -210,19 +261,48 @@ function ExamList({ exams, empty }: { exams: ExamCard[]; empty: string }) {
               </div>
             </Link>
             <div className="flex shrink-0 items-center gap-2">
-              <Badge variant={st.live ? "default" : "secondary"}>{st.text}</Badge>
-              {hasResults(e) && (
-                <Link
-                  href={
-                    e.sessionCount > 1
-                      ? `/dashboard/exams/blueprints/${e.id}/consolidated`
-                      : `/dashboard/exams/sessions/${e.sessionId}/results`
-                  }
-                  className={cn(buttonVariants({ variant: "default", size: "sm" }))}
-                >
-                  Results
-                </Link>
+              {/* Status badge only while not finished — on the Closed tab it's redundant. */}
+              {!finished && <Badge variant={st.live ? "default" : "secondary"}>{st.text}</Badge>}
+
+              {/* Finished exam: publish results to students + view them. */}
+              {finished && e.sessionId && (
+                <>
+                  <Button
+                    size="sm"
+                    variant={e.resultsPublished ? "default" : "outline"}
+                    disabled={publishing === e.sessionId}
+                    onClick={() => togglePublish(e)}
+                    title={
+                      e.resultsPublished
+                        ? "Results are visible to students — click to hide"
+                        : "Make results visible to students"
+                    }
+                  >
+                    {publishing === e.sessionId ? (
+                      "…"
+                    ) : e.resultsPublished ? (
+                      <>
+                        <ChartColumnIncreasing className="size-4" /> published ✓
+                      </>
+                    ) : (
+                      <>
+                        Publish <ChartColumnIncreasing className="size-4" />
+                      </>
+                    )}
+                  </Button>
+                  <Link
+                    href={
+                      e.sessionCount > 1
+                        ? `/dashboard/exams/blueprints/${e.id}/consolidated`
+                        : `/dashboard/exams/sessions/${e.sessionId}/results`
+                    }
+                    className={cn(buttonVariants({ variant: "outline", size: "sm" }))}
+                  >
+                    Results
+                  </Link>
+                </>
               )}
+
               {e.examStatus === "published" && e.sessionId && (
                 <Link
                   href={`/dashboard/exams/sessions/${e.sessionId}`}
@@ -234,23 +314,40 @@ function ExamList({ exams, empty }: { exams: ExamCard[]; empty: string }) {
               {e.examStatus === "published" && (
                 <Link
                   href={`/dashboard/exams/blueprints/${e.id}/paper`}
+                  title="View paper"
+                  aria-label="View paper"
                   className={cn(buttonVariants({ variant: "outline", size: "sm" }))}
                 >
-                  View paper
+                  <Eye className="size-4" />
+                  <FileText className="size-4" />
                 </Link>
               )}
-              <Link
-                href={`/dashboard/exams/blueprints/${e.id}`}
-                className={cn(buttonVariants({ variant: isDraft ? "default" : "outline", size: "sm" }))}
-              >
-                {isDraft ? "Resume" : "Edit"}
-              </Link>
+
+              {/* Edit/Resume only while not finished — a closed exam can't be re-run. */}
+              {!finished && (
+                <Link
+                  href={`/dashboard/exams/blueprints/${e.id}`}
+                  className={cn(buttonVariants({ variant: isDraft ? "default" : "outline", size: "sm" }))}
+                >
+                  {isDraft ? "Resume" : "Edit"}
+                </Link>
+              )}
+
+              {/* Always render the slot so every row's buttons line up; hide it
+                  (keeping its width) when the exam can't be deleted. */}
               <Button
                 variant="ghost"
                 size="sm"
-                className="text-destructive"
-                disabled={deleting === e.id}
-                onClick={() => del(e)}
+                className={cn("text-destructive", !canDelete && "invisible")}
+                disabled={!canDelete || deleting === e.id}
+                aria-hidden={!canDelete}
+                tabIndex={canDelete ? undefined : -1}
+                onClick={() => {
+                  if (!canDelete) return;
+                  setDelError("");
+                  setConfirmText("");
+                  setToDelete(e);
+                }}
                 title="Delete exam"
               >
                 <Trash2 className="size-4" />
@@ -260,5 +357,62 @@ function ExamList({ exams, empty }: { exams: ExamCard[]; empty: string }) {
         );
       })}
     </ul>
+
+    <Dialog open={toDelete !== null} onOpenChange={(o) => !o && setToDelete(null)}>
+      <DialogContent className="sm:max-w-md">
+        <DialogHeader>
+          <DialogTitle>Delete this exam?</DialogTitle>
+        </DialogHeader>
+
+        <div className="flex items-start gap-3">
+          <span className="bg-destructive/10 text-destructive flex size-10 shrink-0 items-center justify-center rounded-full">
+            <TriangleAlert className="size-5" />
+          </span>
+          <DialogDescription>
+            This permanently removes{" "}
+            <span className="text-foreground font-medium">{toDelete?.title}</span> and its
+            generated paper. This action can’t be undone.
+          </DialogDescription>
+        </div>
+
+        <div className="grid gap-2">
+          <label htmlFor="confirm-delete" className="text-muted-foreground text-sm">
+            To confirm, type{" "}
+            <code className="bg-muted text-foreground rounded px-1.5 py-0.5 font-mono text-[0.85em] font-semibold break-all">
+              {toDelete?.title}
+            </code>
+          </label>
+          <Input
+            id="confirm-delete"
+            value={confirmText}
+            onChange={(ev) => setConfirmText(ev.target.value)}
+            placeholder="Type the exam name"
+            autoComplete="off"
+            autoFocus
+            className={cn(matched && "border-destructive focus-visible:ring-destructive/30")}
+          />
+        </div>
+
+        {delError && (
+          <p className="bg-destructive/10 text-destructive rounded-md px-3 py-2 text-sm">
+            {delError}
+          </p>
+        )}
+
+        <DialogFooter className="gap-2">
+          <Button variant="outline" onClick={() => setToDelete(null)} disabled={deleting !== null}>
+            Cancel
+          </Button>
+          <Button
+            variant="destructive"
+            onClick={confirmDelete}
+            disabled={deleting !== null || !matched}
+          >
+            {deleting !== null ? "Deleting…" : "Delete exam"}
+          </Button>
+        </DialogFooter>
+      </DialogContent>
+    </Dialog>
+    </>
   );
 }

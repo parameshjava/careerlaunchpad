@@ -1,4 +1,6 @@
 import { notFound, redirect } from "next/navigation";
+import Link from "next/link";
+import { ChartColumnIncreasing } from "lucide-react";
 import { getAuthContext, can } from "@/lib/auth";
 import { createClient } from "@/lib/supabase/server";
 import {
@@ -43,12 +45,25 @@ export default async function SessionResultsPage({
 
   return (
     <div className="mx-auto max-w-4xl">
-      <header className="mb-6">
-        {session.collegeName && (
-          <p className="text-sm font-semibold tracking-tight">{session.collegeName}</p>
-        )}
-        <h1 className="text-2xl font-bold tracking-tight">Results — {session.label}</h1>
-        <p className="text-muted-foreground mt-1 text-sm">{session.examTitle}</p>
+      <Link
+        href={`/dashboard/exams/papers?tab=${
+          session.status === "closed" || session.status === "graded" ? "closed" : "active"
+        }`}
+        className="text-muted-foreground hover:text-foreground mb-4 inline-block text-sm print:hidden"
+      >
+        ← Exam papers
+      </Link>
+      <header className="mb-6 flex items-center gap-4">
+        <span className="flex size-12 shrink-0 items-center justify-center rounded-full bg-emerald-500 text-white print:hidden">
+          <ChartColumnIncreasing className="size-6" />
+        </span>
+        <div className="min-w-0">
+          {session.collegeName && (
+            <p className="text-sm font-semibold tracking-tight">{session.collegeName}</p>
+          )}
+          <h1 className="text-2xl font-bold tracking-tight">Results — {session.label}</h1>
+          <p className="text-muted-foreground mt-1 text-sm">{session.examTitle}</p>
+        </div>
       </header>
       <ResultsClient
         sessionId={id}

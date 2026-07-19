@@ -38,6 +38,25 @@ export const ALL_FIELDS = Object.values(STEP_FIELDS).flat();
 /** The columns returned by GET /api/registration/profile. */
 export const PROFILE_SELECT = [...ALL_FIELDS, "college_id"].join(", ");
 
+/**
+ * Profile completeness as a 0–100 %: how many of the profile fields (all 6 steps)
+ * carry a value. One source of truth for the admin grid and the approval email's
+ * "complete your profile" nudge. A field counts as filled when it's a non-empty
+ * string/number, a non-empty array, or a non-empty object (skill_assessment).
+ */
+export function profileCompleteness(profile: Record<string, unknown> | null | undefined): number {
+  if (!profile) return 0;
+  const filled = ALL_FIELDS.filter((f) => {
+    const v = profile[f];
+    if (v == null) return false;
+    if (Array.isArray(v)) return v.length > 0;
+    if (typeof v === "object") return Object.keys(v).length > 0;
+    if (typeof v === "string") return v.trim() !== "";
+    return true; // numbers / booleans
+  }).length;
+  return Math.round((filled / ALL_FIELDS.length) * 100);
+}
+
 /** Fields required before registration can be marked 'submitted'. Only the first
  * two steps are mandatory — career goals, self-assessment, skills and mentor
  * (steps 3–6) are optional, so a student can submit right after Academics. */

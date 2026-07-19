@@ -144,18 +144,57 @@ export async function sendMentorSubmittedEmail({ to, name, loginUrl }: ApprovalE
   await deliver("mentor-submitted", to, subject, text, html);
 }
 
-/** Student profile approved by a reviewer — invite them into their portal. */
-export async function sendStudentApprovedEmail({ to, name, loginUrl }: ApprovalEmail): Promise<void> {
-  const hi = name ? `Hi ${name},` : "Hi,";
-  const subject = "Your CareerLaunchpad profile is approved";
+type StudentApprovalEmail = {
+  to: string;
+  name?: string | null;
+  dashboardUrl: string;
+  profileUrl: string;
+  /** 0–100 profile completeness. Below 100 adds the "complete your profile" nudge. */
+  completeness: number;
+};
+
+/**
+ * Student profile approved by a reviewer — the welcome/congrats email. When the
+ * profile isn't yet 100% complete we include the completion nudge + link;
+ * otherwise we skip it and just point them at their dashboard.
+ */
+export async function sendStudentApprovedEmail({
+  to,
+  name,
+  dashboardUrl,
+  profileUrl,
+  completeness,
+}: StudentApprovalEmail): Promise<void> {
+  const first = (name ?? "").trim();
+  const greeting = first ? `Congratulations, ${first}!` : "Congratulations!";
+  const subject = first
+    ? `Congratulations, ${first}!`
+    : "Congratulations — your CareerLaunchPad registration is approved!";
+  const incomplete = completeness < 100;
+
+  const profileText = incomplete
+    ? `Your profile is now active. Please take a moment to log in and ensure your profile details are 100% complete (currently ${completeness}%) so you do not miss out on any personalized opportunities:\n${profileUrl}\n\n`
+    : `Your profile is now active and 100% complete.\n\n`;
   const text =
-    `${hi}\n\n` +
-    `Good news — your profile has been approved. You now have full access to CareerLaunchpad.\n\n` +
-    `Sign in here:\n${loginUrl}\n`;
+    `${greeting}\n\n` +
+    `We are excited to inform you that your registration with CareerLaunchPad has been officially approved by our admin team! Welcome to our training institute.\n\n` +
+    profileText +
+    `What's next?\nStay tuned! We will send you updates shortly regarding your upcoming training schedules, batch details, and exclusive learning resources.\n\n` +
+    `Go to My Dashboard:\n${dashboardUrl}\n\n` +
+    `To your success,\nThe CareerLaunchPad Team\n`;
+
+  const profileHtml = incomplete
+    ? `<p>Your profile is now active. Please take a moment to log in and ensure your profile details are <strong>100% complete</strong> (currently ${completeness}%) so you do not miss out on any personalized opportunities.</p>` +
+      `<p><a href="${profileUrl}">Complete your profile</a></p>`
+    : `<p>Your profile is now active and <strong>100% complete</strong>.</p>`;
   const html =
-    `<p>${hi}</p>` +
-    `<p>Good news — your profile has been <strong>approved</strong>. You now have full access to CareerLaunchpad.</p>` +
-    `<p><a href="${loginUrl}">Open your portal</a></p>`;
+    `<p>${first ? `Congratulations, <strong>${first}</strong>!` : "Congratulations!"}</p>` +
+    `<p>We are excited to inform you that your registration with <strong>CareerLaunchPad</strong> has been officially approved by our admin team! Welcome to our training institute.</p>` +
+    profileHtml +
+    `<p><strong>What's next?</strong><br/>Stay tuned! We will send you updates shortly regarding your upcoming training schedules, batch details, and exclusive learning resources.</p>` +
+    `<p><a href="${dashboardUrl}">Go to My Dashboard</a></p>` +
+    `<p>To your success,<br/>The CareerLaunchPad Team</p>`;
+
   await deliver("student-approved", to, subject, text, html);
 }
 
