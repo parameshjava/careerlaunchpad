@@ -1,14 +1,23 @@
 "use client";
 
-// Student "My exams" grid. Polls list_my_exam_sessions() every 5s so the Open
-// button appears the moment the window opens (1 min before opens_at) without a
-// manual reload. Rendered via the shared DataTable — sortable, searchable, and
-// filterable by status; defaults to newest-scheduled first.
+// Student "My exams", split into Upcoming and Past tabs. Polls
+// list_my_exam_sessions() every 5s so the Open button appears the moment the
+// window opens (1 min before opens_at) without a manual reload. Each tab is the
+// shared DataTable — sortable, searchable, status-filterable. Past exams show the
+// student's score.
 import { useEffect, useMemo, useState } from "react";
 import { createClient } from "@/lib/supabase/client";
 import { DataTable } from "@/components/data-table";
-import { examColumns, EXAM_STATUSES, type ExamRow, type Session } from "./exam-columns";
-import { decorate } from "./exam-status";
+import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
+import {
+  upcomingColumns,
+  pastColumns,
+  UPCOMING_STATUSES,
+  PAST_STATUSES,
+  type ExamRow,
+  type Session,
+} from "./exam-columns";
+import { decorate, isUpcoming } from "./exam-status";
 
 const POLL_MS = 5_000;
 
@@ -47,6 +56,8 @@ export function ExamsList() {
     () => (sessions ?? []).map((s) => decorate(s, Date.now())),
     [sessions],
   );
+  const upcoming = useMemo(() => rows.filter(isUpcoming), [rows]);
+  const past = useMemo(() => rows.filter((r) => !isUpcoming(r)), [rows]);
 
   if (error) return <p className="text-destructive px-1 text-sm">{error}</p>;
   if (sessions == null)
@@ -59,20 +70,47 @@ export function ExamsList() {
     );
 
   return (
-    <DataTable
-      columns={examColumns}
-      data={rows}
-      searchKey="exam_title"
-      searchPlaceholder="Search exams…"
-      filters={[
-        {
-          columnId: "statusLabel",
-          title: "Status",
-          options: EXAM_STATUSES.map((s) => ({ label: s, value: s })),
-        },
-      ]}
-      // Newest scheduled exam first (undated rows sort last).
-      initialSorting={[{ id: "opens_at", desc: true }]}
-    />
+    <Tabs defaultValue="upcoming" className="gap-4">
+      <TabsList>
+        <TabsTrigger value="upcoming">Upcoming ({upcoming.length})</TabsTrigger>
+        <TabsTrigger value="past">Past ({past.length})</TabsTrigger>
+      </TabsList>
+
+      <TabsContent value="upcoming" className="min-w-0">
+        <DataTable
+          columns={upcomingColumns}
+          data={upcoming}
+          searchKey="exam_title"
+          searchPlaceholder="Search exams…"
+          filters={[
+            {
+              columnId: "statusLabel",
+              title: "Status",
+              options: UPCOMING_STATUSES.map((s) => ({ label: s, value: s })),
+            },
+          ]}
+          // Soonest exam first — the next one to take.
+          initialSorting={[{ id: "opens_at", desc: false }]}
+        />
+      </TabsContent>
+
+      <TabsContent value="past" className="min-w-0">
+        <DataTable
+          columns={pastColumns}
+          data={past}
+          searchKey="exam_title"
+          searchPlaceholder="Search exams…"
+          filters={[
+            {
+              columnId: "statusLabel",
+              title: "Status",
+              options: PAST_STATUSES.map((s) => ({ label: s, value: s })),
+            },
+          ]}
+          // Most recent first.
+          initialSorting={[{ id: "opens_at", desc: true }]}
+        />
+      </TabsContent>
+    </Tabs>
   );
 }
