@@ -715,14 +715,20 @@ export function AttemptRunner({
       <Dialog open={warnOpen} onOpenChange={setWarnOpen}>
         <DialogContent>
           <DialogHeader>
-            <DialogTitle>⚠️ Don’t leave the exam</DialogTitle>
-            <DialogDescription>
-              You switched away from the exam window. This is your{" "}
-              <strong>only warning</strong> — if you leave again (Alt+Tab, Cmd+Tab,
-              switching apps, or minimising the window), your exam will be submitted
-              automatically and you will not be able to resume.
-            </DialogDescription>
+            <DialogTitle>Don’t leave the exam</DialogTitle>
           </DialogHeader>
+          <div className="flex items-start gap-3">
+            <span className="flex size-10 shrink-0 items-center justify-center rounded-full bg-amber-100 text-amber-600 dark:bg-amber-950 dark:text-amber-400">
+              <TriangleAlert className="size-5" />
+            </span>
+            <DialogDescription className="flex-1">
+              You switched away from the exam window. This is your{" "}
+              <strong className="font-medium text-foreground">only warning</strong> — if
+              you leave again (Alt+Tab, Cmd+Tab, switching apps, or minimising the
+              window), your exam will be submitted automatically and you will not be
+              able to resume.
+            </DialogDescription>
+          </div>
           <DialogFooter>
             <Button onClick={() => setWarnOpen(false)}>I understand — continue</Button>
           </DialogFooter>
