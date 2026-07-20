@@ -103,9 +103,31 @@ export function SessionDetailClient({
                     <div className="truncate">{r.name ?? r.email ?? r.studentId}</div>
                     <div className="text-muted-foreground text-xs">{r.email}</div>
                   </div>
-                  <div className="flex items-center gap-3">
-                    <Badge variant="outline">{r.rosterStatus}</Badge>
-                    {r.score != null && <span className="tabular-nums">{r.score}</span>}
+                  <div className="flex flex-col items-end gap-1">
+                    <div className="flex items-center gap-3">
+                      {r.attemptStatus === "aborted" ? (
+                        <Badge variant="destructive">Aborted</Badge>
+                      ) : (
+                        <Badge variant="outline">{r.rosterStatus}</Badge>
+                      )}
+                      {r.score != null && <span className="tabular-nums">{r.score}</span>}
+                      {r.attemptId && r.attemptStatus === "aborted" && r.resumeCount < 2 && (
+                        <Button
+                          size="sm"
+                          variant="secondary"
+                          disabled={!!busy}
+                          onClick={() => action(`resume-${r.studentId}`, `/api/exam/attempts/${r.attemptId}/resume`)}
+                        >
+                          Resume
+                        </Button>
+                      )}
+                    </div>
+                    {(r.leaveCount > 0 || r.abortCount > 0) && (
+                      <span className="text-muted-foreground text-xs">
+                        Alt-Tab ×{r.leaveCount} · aborted ×{r.abortCount}
+                        {r.resumeCount > 0 && ` · resumed ×${r.resumeCount}`}
+                      </span>
+                    )}
                   </div>
                 </li>
               ))}

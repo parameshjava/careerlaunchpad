@@ -452,8 +452,12 @@ export type RosterEntry = {
   email: string | null;
   rollNumber: string | null;
   rosterStatus: "invited" | "started" | "submitted";
-  attemptStatus: "in_progress" | "submitted" | "graded" | null;
+  attemptId: string | null;
+  attemptStatus: "in_progress" | "submitted" | "graded" | "aborted" | null;
   score: number | null;
+  leaveCount: number;
+  abortCount: number;
+  resumeCount: number;
 };
 
 function mapSessionRow(r: Record<string, unknown>): SessionSummary {
@@ -597,7 +601,7 @@ export async function fetchRoster(
     studentIds.length
       ? supabase.from("student_profile").select("user_id, full_name, roll_number").in("user_id", studentIds)
       : Promise.resolve({ data: [] as Record<string, unknown>[] }),
-    supabase.from("exam_attempt").select("student_id, status, score").eq("session_id", sessionId),
+    supabase.from("exam_attempt").select("id, student_id, status, score, leave_count, abort_count, resume_count").eq("session_id", sessionId),
   ]);
   const emailById = new Map<string, string | null>(
     (accounts.data ?? []).map((a) => [a.id as string, (a.email as string | null) ?? null]),
@@ -608,8 +612,15 @@ export async function fetchRoster(
   const rollById = new Map<string, string | null>(
     (profiles.data ?? []).map((p) => [p.user_id as string, (p.roll_number as string | null) ?? null]),
   );
-  const byStudent = new Map<string, { status: string; score: number | null }>(
-    (attempts.data ?? []).map((a) => [a.student_id as string, { status: a.status as string, score: a.score as number | null }]),
+  const byStudent = new Map<string, { attemptId: string; status: string; score: number | null; leaveCount: number; abortCount: number; resumeCount: number }>(
+    (attempts.data ?? []).map((a) => [a.student_id as string, {
+      attemptId: a.id as string,
+      status: a.status as string,
+      score: a.score as number | null,
+      leaveCount: (a.leave_count as number) ?? 0,
+      abortCount: (a.abort_count as number) ?? 0,
+      resumeCount: (a.resume_count as number) ?? 0,
+    }]),
   );
 
   return ((data ?? []) as unknown as Record<string, unknown>[]).map((r) => {
@@ -621,8 +632,12 @@ export async function fetchRoster(
       email: emailById.get(sid) ?? null,
       rollNumber: rollById.get(sid) ?? null,
       rosterStatus: r.status as RosterEntry["rosterStatus"],
+      attemptId: attempt?.attemptId ?? null,
       attemptStatus: (attempt?.status as RosterEntry["attemptStatus"]) ?? null,
       score: attempt?.score ?? null,
+      leaveCount: attempt?.leaveCount ?? 0,
+      abortCount: attempt?.abortCount ?? 0,
+      resumeCount: attempt?.resumeCount ?? 0,
     };
   });
 }
