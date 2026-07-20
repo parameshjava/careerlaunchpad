@@ -7,6 +7,7 @@
 // student's score.
 import { useEffect, useMemo, useState } from "react";
 import { createClient } from "@/lib/supabase/client";
+import { cn } from "@/lib/utils";
 import { DataTable } from "@/components/data-table";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import {
@@ -70,13 +71,44 @@ export function ExamsList() {
     );
 
   return (
-    <Tabs defaultValue="upcoming" className="gap-4">
-      <TabsList>
-        <TabsTrigger value="upcoming">Upcoming ({upcoming.length})</TabsTrigger>
-        <TabsTrigger value="past">Past ({past.length})</TabsTrigger>
+    <Tabs defaultValue="upcoming">
+      {/* Folder tabs matching the exam-papers surface (STYLE_GUIDE): boxed
+          triggers on the list's bottom border, coloured status dot. */}
+      <TabsList
+        variant="line"
+        className="group-data-horizontal/tabs:h-auto w-full justify-start gap-0 rounded-none border-b p-0"
+      >
+        {(
+          [
+            [
+              "upcoming",
+              `Upcoming (${upcoming.length})`,
+              "bg-emerald-500",
+              "data-active:border-emerald-300 data-active:bg-emerald-50 data-active:text-emerald-900 dark:data-active:border-emerald-800 dark:data-active:bg-emerald-950/50 dark:data-active:text-emerald-200",
+            ],
+            [
+              "past",
+              `Past (${past.length})`,
+              "bg-sky-500",
+              "data-active:border-sky-300 data-active:bg-sky-50 data-active:text-sky-900 dark:data-active:border-sky-800 dark:data-active:bg-sky-950/50 dark:data-active:text-sky-200",
+            ],
+          ] as const
+        ).map(([value, label, dot, activeCls]) => (
+          <TabsTrigger
+            key={value}
+            value={value}
+            className={cn(
+              "-mb-px h-auto flex-none rounded-t-md rounded-b-none border border-b-0 border-transparent px-4 py-2 text-muted-foreground shadow-none after:hidden data-active:shadow-none",
+              activeCls,
+            )}
+          >
+            <span className={cn("size-2 rounded-full", dot)} aria-hidden />
+            {label}
+          </TabsTrigger>
+        ))}
       </TabsList>
 
-      <TabsContent value="upcoming" className="min-w-0">
+      <TabsContent value="upcoming" className="mt-4 min-w-0">
         <DataTable
           columns={upcomingColumns}
           data={upcoming}
@@ -94,7 +126,7 @@ export function ExamsList() {
         />
       </TabsContent>
 
-      <TabsContent value="past" className="min-w-0">
+      <TabsContent value="past" className="mt-4 min-w-0">
         <DataTable
           columns={pastColumns}
           data={past}
