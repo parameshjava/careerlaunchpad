@@ -106,7 +106,9 @@ export function AttemptRunner({
   // coalesce them within a short window (lastLeaveRef).
   const [strikes, setStrikes] = useState(0);
   const [warnOpen, setWarnOpen] = useState(false);
-  const [closedForSwitch, setClosedForSwitch] = useState(false);
+  // null while live; set when the anti-cheat closes the paper. `final` = graded
+  // (no resumes left); otherwise the attempt is `aborted` and recoverable.
+  const [abortInfo, setAbortInfo] = useState<{ final: boolean; resumeCount: number } | null>(null);
   const strikesRef = useRef(0);
   strikesRef.current = strikes;
   const lastLeaveRef = useRef(0);
@@ -265,17 +267,29 @@ export function AttemptRunner({
   // closed screen — start_exam_attempt won't re-hand a non-in_progress attempt,
   // so it can't be resumed.
   useEffect(() => {
-    if (!attemptId || closedForSwitch) return;
+    if (!attemptId || abortInfo) return;
     const registerLeave = () => {
       if (suppressLeaveRef.current) return;
       const now = Date.now();
       if (now - lastLeaveRef.current < 1500) return; // one switch fires blur+visibility → one strike
       lastLeaveRef.current = now;
+      // Persist the switch-away for staff (Alt-Tab metric). Fire-and-forget.
+      supabase.rpc("record_exam_leave", { p_attempt_id: attemptId }).then(({ error: e }) => {
+        if (e) console.warn("record_exam_leave failed", e.message);
+      });
       const n = strikesRef.current + 1;
       setStrikes(n);
       if (n >= 2) {
-        setClosedForSwitch(true);
-        doSubmit({ redirect: false });
+        // Second strike: abort (recoverable) or finalize if resumes are spent.
+        // Flush pending saves first so answers-so-far are graded/kept.
+        Object.values(saveTimers.current).forEach(clearTimeout);
+        saveTimers.current = {};
+        supabase.rpc("abort_exam_attempt", { p_attempt_id: attemptId }).then(({ data, error: e }) => {
+          if (e) { setError(e.message); return; }
+          const info = (data as { final?: boolean; resume_count?: number }) ?? {};
+          setAbortInfo({ final: !!info.final, resumeCount: info.resume_count ?? 0 });
+          try { localStorage.removeItem(cacheKey); } catch { /* ignore */ }
+        });
       } else {
         setWarnOpen(true);
       }
@@ -289,7 +303,7 @@ export function AttemptRunner({
       window.removeEventListener("blur", registerLeave);
       document.removeEventListener("visibilitychange", onVisibility);
     };
-  }, [attemptId, closedForSwitch, doSubmit]);
+  }, [attemptId, abortInfo, supabase, cacheKey]);
 
   function scheduleSave(questionId: string, selected: string[]) {
     clearTimeout(saveTimers.current[questionId]);
@@ -343,13 +357,18 @@ export function AttemptRunner({
     });
   }
 
-  if (closedForSwitch)
+  if (abortInfo)
     return (
       <div className="mx-auto max-w-md px-4 py-10 text-center">
         <p className="text-destructive text-base font-semibold">Exam closed</p>
         <p className="text-muted-foreground mt-2 text-sm">
-          You left the exam window after a warning. Your answers have been submitted
-          automatically and this attempt cannot be resumed.
+          {abortInfo.final ? (
+            <>You left the exam window again. Your answers have been submitted automatically and this attempt cannot be resumed.</>
+          ) : abortInfo.resumeCount === 0 ? (
+            <>You left the exam window after a warning, so the exam was closed. You can reopen it <strong>once</strong> yourself from My exams — do it now to continue where you left off.</>
+          ) : (
+            <>You left the exam window after a warning, so the exam was closed. Please <strong>ask your administrator</strong> to let you resume.</>
+          )}
         </p>
         <Button className="mt-4" variant="outline" onClick={() => router.push("/student/exams")}>
           Back to my exams
