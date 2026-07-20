@@ -45,6 +45,7 @@ type Cache = {
   questions: Question[];
   answers: Record<string, string[]>;
   seen: string[];
+  lastPosition: number;
 };
 
 // Emphasised keyboard-shortcut chip for the anti-cheat notices (amber context).
@@ -97,14 +98,20 @@ export function AttemptRunner({
   useEffect(() => {
     currentCellRef.current?.scrollIntoView({ block: "nearest" });
   }, [index]);
-  // On first load, open the first UNANSWERED question so a resumed student lands
-  // where they left off (their answers are server-persisted and restored on
-  // resume) instead of back at Q1 — saving them from re-navigating. Runs once,
-  // after questions + answers are loaded. Falls back to Q1 if all are answered.
+  // On first load, restore the student's cursor so a resumed student lands
+  // exactly where they left off. Prefer the persisted last_position (server +
+  // cache, survives an abort); fall back to the first unanswered question, then
+  // Q1. Runs once, after questions + answers are loaded.
   const initedIndexRef = useRef(false);
+  const lastPositionRef = useRef<number | null>(null);
   useEffect(() => {
     if (initedIndexRef.current || loading || questions.length === 0) return;
     initedIndexRef.current = true;
+    const saved = lastPositionRef.current;
+    if (saved != null && saved > 0 && saved < questions.length) {
+      setIndex(saved);
+      return;
+    }
     const firstUnanswered = questions.findIndex((qq) => !(answers[qq.question_id]?.length));
     if (firstUnanswered > 0) setIndex(firstUnanswered);
   }, [loading, questions, answers]);
@@ -174,6 +181,7 @@ export function AttemptRunner({
       setAnswers(cached.answers ?? {});
       setSeen(new Set(cached.seen ?? []));
       setDeadline(cached.deadline ?? null);
+      if (cached.lastPosition != null) lastPositionRef.current = cached.lastPosition;
       setLoading(false);
     }
 
@@ -202,8 +210,11 @@ export function AttemptRunner({
         attempt_id: string;
         duration_minutes: number;
         ends_at?: string;
+        last_position?: number | null;
         questions: Question[];
       };
+      // Server cursor wins over a stale cache (e.g. resumed on another device).
+      if (payload.last_position != null) lastPositionRef.current = payload.last_position;
       const serverAnswers: Record<string, string[]> = {};
       for (const q of payload.questions) serverAnswers[q.question_id] = q.selected_option_ids ?? [];
       // Server-authoritative deadline (duration clamped to the session close);
@@ -380,8 +391,15 @@ export function AttemptRunner({
       }
       saveTimers.current = {};
       setIndex(i);
+      // Persist the cursor so a resume lands exactly here (server = durable
+      // across abort/device; cache = instant restore on a plain reload).
+      lastPositionRef.current = i;
+      persist({ lastPosition: i });
+      supabase.rpc("save_exam_position", { p_attempt_id: attemptId, p_position: i }).then(({ error: e }) => {
+        if (e) console.warn("save_exam_position failed", e.message);
+      });
     },
-    [attemptId, supabase],
+    [attemptId, supabase, persist],
   );
 
   function choose(q: Question, optionId: string) {
