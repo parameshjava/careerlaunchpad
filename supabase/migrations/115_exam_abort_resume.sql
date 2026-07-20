@@ -70,15 +70,7 @@ declare v_attempt record;
 begin
   select * into v_attempt from public.exam_attempt where id = p_attempt_id;
   if not found then raise exception 'Attempt not found'; end if;
-  -- Authorized to resume = platform admin / assigned exam staff (is_exam_staff_for_session)
-  -- OR a college admin holding exam.assign for this sitting's college. The latter
-  -- matches the /api/exam/attempts/[id]/resume route's requirePermission("exam.assign")
-  -- and the roster's Resume button — without it, a college admin passes the API but
-  -- the RPC would reject with Forbidden.
-  if not (
-       public.is_exam_staff_for_session(v_attempt.session_id)
-       or public.has_college_permission('exam.assign', public.exam_session_college(v_attempt.session_id))
-     ) then raise exception 'Forbidden'; end if;
+  if not public.is_exam_staff_for_session(v_attempt.session_id) then raise exception 'Forbidden'; end if;
   if v_attempt.status <> 'aborted' then raise exception 'This attempt is not awaiting resume'; end if;
   -- Never resume into a closed/graded sitting: the student can't re-enter
   -- (start_exam_attempt rejects a closed window), so the attempt would strand
