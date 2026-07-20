@@ -7,48 +7,10 @@
 import { useEffect, useMemo, useState } from "react";
 import { createClient } from "@/lib/supabase/client";
 import { DataTable } from "@/components/data-table";
-import {
-  examColumns,
-  EXAM_STATUSES,
-  type ExamRow,
-  type ExamStatus,
-  type ExamAction,
-  type Session,
-} from "./exam-columns";
+import { examColumns, EXAM_STATUSES, type ExamRow, type Session } from "./exam-columns";
+import { decorate } from "./exam-status";
 
-const GRACE_MS = 60_000; // fetch from opens_at-1min; submit until closes_at+1min
 const POLL_MS = 5_000;
-
-// Derive the single status + primary action for a session, given the clock.
-function decorate(s: Session, now: number): ExamRow {
-  const done = s.roster_status === "submitted";
-  const opens = s.opens_at ? new Date(s.opens_at).getTime() : null;
-  const closes = s.closes_at ? new Date(s.closes_at).getTime() : null;
-  const beforeWindow = opens == null || now < opens - GRACE_MS;
-  const afterWindow = closes != null && now > closes + GRACE_MS;
-
-  let statusLabel: ExamStatus;
-  let action: ExamAction = null;
-  if (done) {
-    if (s.results_published) {
-      statusLabel = "Result ready";
-      action = "result";
-    } else {
-      statusLabel = "Submitted";
-    }
-  } else if (afterWindow) {
-    statusLabel = "Closed";
-  } else if (opens != null && !beforeWindow) {
-    statusLabel = "Open";
-    action = s.roster_status === "started" ? "resume" : "open";
-  } else {
-    // Scheduled: students may enter the waiting room early (the attempt page
-    // polls and the server releases questions at opens-1min).
-    statusLabel = "Scheduled";
-    if (opens != null) action = "open";
-  }
-  return { ...s, statusLabel, action };
-}
 
 export function ExamsList() {
   const [sessions, setSessions] = useState<Session[] | null>(null);

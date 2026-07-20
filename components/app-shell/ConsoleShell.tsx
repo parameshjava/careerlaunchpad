@@ -35,6 +35,7 @@ import {
 
 import { cn } from "@/lib/utils";
 import type { NavIcon, NavSection } from "@/lib/nav";
+import { ExamCountBadge } from "@/app/student/exams/ExamCountBadge";
 
 const ICONS: Record<NavIcon, React.ComponentType<{ className?: string }>> = {
   students: GraduationCap,
@@ -137,6 +138,7 @@ function NavLinks({
                   >
                     <Icon className="size-4 shrink-0" />
                     {!collapsed && item.label}
+                    {item.badge === "exams" && <ExamCountBadge collapsed={collapsed} />}
                   </Link>
                 );
               })}

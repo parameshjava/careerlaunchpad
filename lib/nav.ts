@@ -19,7 +19,10 @@ export type NavIcon =
   | "exams"
   | "college";
 
-export type NavItem = { label: string; href: string; icon: NavIcon };
+/** Live badge keys understood by SidebarNav (resolved to a client widget). */
+export type NavBadge = "exams";
+
+export type NavItem = { label: string; href: string; icon: NavIcon; badge?: NavBadge };
 export type NavSection = { title?: string; items: NavItem[] };
 
 /** True if the user can see student records at all (drives the Students item). */
@@ -157,7 +160,7 @@ export function buildNav(ctx: AuthContext): NavSection[] {
       { label: "My insights", href: "/student/insights", icon: "analytics" },
     ];
     if (can(ctx, "exam.attempt.take"))
-      items.push({ label: "My exams", href: "/student/exams", icon: "exams" });
+      items.push({ label: "My exams", href: "/student/exams", icon: "exams", badge: "exams" });
     if (canEvaluate) items.push(evalItem);
     const sections: NavSection[] = [{ items }];
     if (isMentor) sections.push({ title: "Mentoring", items: mentorItems() });
