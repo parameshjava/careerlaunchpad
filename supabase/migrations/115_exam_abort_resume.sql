@@ -48,7 +48,9 @@ begin
   end if;
 
   if v_attempt.resume_count >= 2 then
-    -- No resumes left: finalize as a graded submission.
+    -- No resumes left: count this final abort in the metric, then grade. Bump
+    -- abort_count BEFORE grading so the staff metric reflects every abort.
+    update public.exam_attempt set abort_count = abort_count + 1 where id = p_attempt_id;
     perform public._grade_attempts(array[p_attempt_id]);
     return jsonb_build_object('final', true, 'resume_count', v_attempt.resume_count);
   end if;
@@ -181,6 +183,60 @@ begin
     ), '[]'::jsonb));
 end;
 $$;
+
+-- 6a. _grade_attempts: finalize `aborted` attempts too, not only in_progress --
+-- Migration 022's version only wrote the attempt-level status/score/submitted_at
+-- for status='in_progress', so feeding it an aborted attempt (via the widened
+-- grade_session_in_progress below, or a close) computed per-question marks but
+-- left the attempt stuck `aborted` with score=NULL. Widen the finalize filter to
+-- cover `aborted` too. The 3rd-abort finalize path (abort_exam_attempt) grades
+-- while status is still in_progress, so it stays covered. Otherwise identical to
+-- migration 022. Idempotent.
+create or replace function public._grade_attempts(p_attempt_ids uuid[])
+returns void language plpgsql security definer set search_path = public as $$
+begin
+  update public.exam_attempt_question aq
+  set awarded_marks = g.award
+  from (
+    select x.attempt_id, x.position,
+      case
+        when x.correct_ids is not null and array_length(x.correct_ids, 1) is not null
+             and x.selected_option_ids <@ x.correct_ids
+             and x.correct_ids <@ x.selected_option_ids
+          then x.marks
+        when array_length(x.selected_option_ids, 1) is not null then -x.neg
+        else 0
+      end as award
+    from (
+      select aq2.attempt_id, aq2.position, aq2.selected_option_ids,
+             es.marks_per_question as marks,
+             coalesce(e.negative_mark_per_wrong, 0) as neg,
+             (select array_agg(o.id) from public.question_option o
+              where o.question_id = aq2.question_id and o.is_correct) as correct_ids
+      from public.exam_attempt_question aq2
+      join public.exam_attempt a   on a.id = aq2.attempt_id
+      join public.exam_session s   on s.id = a.session_id
+      join public.exam e           on e.id = s.exam_id
+      join public.exam_section es  on es.id = aq2.section_id
+      where aq2.attempt_id = any(p_attempt_ids)
+    ) x
+  ) g
+  where aq.attempt_id = g.attempt_id and aq.position = g.position;
+
+  update public.exam_attempt a
+  set score = coalesce((select sum(aq.awarded_marks)
+                        from public.exam_attempt_question aq where aq.attempt_id = a.id), 0),
+      status = 'graded', submitted_at = now()
+  where a.id = any(p_attempt_ids) and a.status in ('in_progress','aborted');
+
+  update public.exam_session_student ss
+  set status = 'submitted'
+  from public.exam_attempt a
+  where a.id = any(p_attempt_ids)
+    and ss.session_id = a.session_id and ss.student_id = a.student_id;
+end;
+$$;
+revoke all on function public._grade_attempts(uuid[]) from public;
 
 -- 6. grade_session_in_progress: also finalize aborted attempts on close -------
 create or replace function public.grade_session_in_progress(p_session_id uuid)
