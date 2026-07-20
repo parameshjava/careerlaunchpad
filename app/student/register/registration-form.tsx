@@ -57,6 +57,7 @@ export function RegistrationForm({
           setF((p) => ({
             ...p,
             ...Object.fromEntries(Object.entries(profile).filter(([, v]) => v != null && (Array.isArray(v) ? true : typeof v !== "object"))),
+            preferred_category_slugs: profile.preferred_category_slugs ?? [],
             career_goal_ids: profile.career_goal_ids ?? [],
             skills: profile.skills ?? [],
             interests: profile.interests ?? [],
@@ -210,7 +211,9 @@ export function ProfileSummary({
   const degreeLabel = bySlug(refs?.degree).get(f.degree) ?? f.degree;
   const branchLabel = bySlug(refs?.branch).get(f.branch) ?? f.branch;
   const yearLabel = bySlug(refs?.year_of_study).get(f.year_of_study) ?? f.year_of_study;
-  const goalLabel = byId(refs?.career_goal);
+  const categoryName = new Map(
+    ((refs?.preference_category ?? []) as unknown as { slug: string; name: string }[]).map((c) => [c.slug, c.name]),
+  );
   const skillLabel = bySlug(refs?.skill);
   const interestLabel = bySlug(refs?.interest);
   const mentorLabel = byId(refs?.mentor_preference).get(f.preferred_mentor_pref_id) ?? "";
@@ -273,25 +276,19 @@ export function ProfileSummary({
         <SummaryItem label="CGPA / %" value={f.cgpa} />
       </SummarySection>
 
-      <SummarySection title="Career Goals">
-        {f.career_goal_ids.length === 0 ? (
+      <SummarySection title="Career Paths">
+        {f.preferred_category_slugs.length === 0 ? (
           <Empty />
         ) : (
           <div className="flex flex-wrap gap-2 sm:col-span-2">
-            {f.career_goal_ids.map((id) => {
-              const isPrimary = id === f.primary_career_goal_id;
-              return (
-                <span
-                  key={id}
-                  className={`rounded-full border px-3 py-1 text-sm font-medium ${
-                    isPrimary ? "border-transparent bg-primary text-primary-foreground" : "bg-background"
-                  }`}
-                >
-                  {isPrimary && "★ "}
-                  {goalLabel.get(id) ?? id}
-                </span>
-              );
-            })}
+            {f.preferred_category_slugs.map((slug) => (
+              <span
+                key={slug}
+                className="border-transparent bg-primary text-primary-foreground rounded-full border px-3 py-1 text-sm font-medium"
+              >
+                {categoryName.get(slug) ?? slug}
+              </span>
+            ))}
           </div>
         )}
       </SummarySection>

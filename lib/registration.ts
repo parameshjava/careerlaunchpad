@@ -27,7 +27,7 @@ export const REF_TABLES: Record<string, string> = {
 export const STEP_FIELDS: Record<number, string[]> = {
   1: ["full_name", "phone", "gender", "city_village", "district", "state"],
   2: ["college_id", "roll_number", "degree", "branch", "year_of_study", "graduation_year", "cgpa"],
-  3: ["career_goal_ids", "primary_career_goal_id"],
+  3: ["preferred_category_slugs"],
   4: ["skill_assessment"],
   5: ["skills", "interests"],
   6: ["preferred_mentor_pref_id", "biggest_challenge"],
@@ -35,8 +35,14 @@ export const STEP_FIELDS: Record<number, string[]> = {
 
 export const ALL_FIELDS = Object.values(STEP_FIELDS).flat();
 
+/** Grandfathered columns the wizard no longer writes (Step 3 moved to
+ * preference categories in #42) but the admin grid / analytics / Excel intake
+ * still read + write. Kept OUT of ALL_FIELDS so student completeness ignores
+ * them, but still selected and validatable. */
+export const LEGACY_FIELDS = ["career_goal_ids", "primary_career_goal_id"];
+
 /** The columns returned by GET /api/registration/profile. */
-export const PROFILE_SELECT = [...ALL_FIELDS, "college_id"].join(", ");
+export const PROFILE_SELECT = [...ALL_FIELDS, "college_id", ...LEGACY_FIELDS].join(", ");
 
 /**
  * Profile completeness as a 0–100 %: how many of the profile fields (all 6 steps)
@@ -71,6 +77,7 @@ type Refs = {
   slugSets: Record<string, Set<string>>; // gender/degree/branch/year_of_study/skill/interest/skill_assessment_category
   goalIds: Set<string>;
   mentorIds: Set<string>;
+  categorySlugs: Set<string>; // ref_preference_category.slug (Step 3)
 };
 
 const UUID_RE = /^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$/i;
@@ -104,7 +111,12 @@ async function loadRefs(supabase: SupabaseClient, fields: string[]): Promise<Ref
     const { data } = await supabase.from("ref_mentor_preference").select("id");
     mentorIds = new Set((data ?? []).map((r: { id: string }) => r.id));
   }
-  return { slugSets, goalIds, mentorIds };
+  let categorySlugs = new Set<string>();
+  if (fields.includes("preferred_category_slugs")) {
+    const { data } = await supabase.from("ref_preference_category").select("slug");
+    categorySlugs = new Set((data ?? []).map((r: { slug: string }) => r.slug));
+  }
+  return { slugSets, goalIds, mentorIds, categorySlugs };
 }
 
 export type ValidationResult = {
@@ -121,7 +133,8 @@ export async function validatePartial(
   supabase: SupabaseClient,
   data: Record<string, unknown>,
 ): Promise<ValidationResult> {
-  const fields = Object.keys(data).filter((f) => ALL_FIELDS.includes(f));
+  const writable = new Set([...ALL_FIELDS, ...LEGACY_FIELDS]);
+  const fields = Object.keys(data).filter((f) => writable.has(f));
   const refs = await loadRefs(supabase, fields);
   const clean: Record<string, unknown> = {};
   const errors: string[] = [];
@@ -180,6 +193,15 @@ export async function validatePartial(
         const bad = ids.filter((id) => !UUID_RE.test(id) || !refs.goalIds.has(id));
         if (bad.length) errors.push(`career_goal_ids: unknown goal(s)`);
         else clean[field] = ids;
+        break;
+      }
+      case "preferred_category_slugs": {
+        if (!Array.isArray(v)) { errors.push("preferred_category_slugs: must be a list"); break; }
+        const vals = v.map(str).filter(Boolean);
+        if (vals.length > 2) { errors.push("preferred_category_slugs: pick at most 2"); break; }
+        const bad = vals.filter((s) => !refs.categorySlugs.has(s));
+        if (bad.length) errors.push(`preferred_category_slugs: unknown value(s): ${bad.join(", ")}`);
+        else clean[field] = vals;
         break;
       }
       case "skills":

@@ -21,8 +21,7 @@ const REQUIRED: { step: number; check: (f: Form, email: string) => boolean; labe
   { step: 1, check: (_f, email) => /^[^@\s]+@[^@\s]+\.[^@\s]+$/.test(email), label: "Step 1: A valid email is required" },
   { step: 1, check: (f) => !!f.phone.trim(), label: "Step 1: Mobile number is required" },
   { step: 2, check: (f) => !!f.college_id, label: "Step 2: College is required" },
-  { step: 3, check: (f) => f.career_goal_ids.length > 0, label: "Step 3: Pick at least one career goal" },
-  { step: 3, check: (f) => !!f.primary_career_goal_id, label: "Step 3: Mark a primary career goal" },
+  { step: 3, check: (f) => f.preferred_category_slugs.length > 0, label: "Step 3: Pick at least one career path" },
 ];
 
 export function AddStudentWizard() {

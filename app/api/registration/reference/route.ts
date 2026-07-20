@@ -11,7 +11,7 @@
 import { NextResponse } from "next/server";
 import { createClient } from "@/lib/supabase/server";
 import { REF_TABLES } from "@/lib/registration";
-import { getRefData } from "@/lib/ref-cache";
+import { getRefData, getPreferenceData } from "@/lib/ref-cache";
 
 export async function GET() {
   const supabase = await createClient();
@@ -19,7 +19,11 @@ export async function GET() {
   if (!user) return NextResponse.json({ error: "Not authenticated" }, { status: 401 });
 
   try {
-    return NextResponse.json(await getRefData(REF_TABLES, "registration"));
+    const [refData, preference] = await Promise.all([
+      getRefData(REF_TABLES, "registration"),
+      getPreferenceData(),
+    ]);
+    return NextResponse.json({ ...refData, ...preference });
   } catch (e) {
     return NextResponse.json({ error: (e as Error).message }, { status: 500 });
   }

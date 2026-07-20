@@ -74,6 +74,7 @@ function SortHeader({ column, label }: { column: { toggleSorting: (d?: boolean) 
 
 const colExam: ColumnDef<ExamRow> = {
   accessorKey: "exam_title",
+  meta: { label: "Exam" },
   header: ({ column }) => <SortHeader column={column} label="Exam" />,
   cell: ({ row }) => {
     const { exam_title, label } = row.original;
@@ -91,6 +92,7 @@ const colExam: ColumnDef<ExamRow> = {
 const colScheduled: ColumnDef<ExamRow> = {
   // Numeric timestamp so date sorting is correct; undated rows sort last.
   id: "opens_at",
+  meta: { label: "Scheduled" },
   accessorFn: (r) => (r.opens_at ? new Date(r.opens_at).getTime() : undefined),
   header: ({ column }) => <SortHeader column={column} label="Scheduled" />,
   sortUndefined: "last",
@@ -111,24 +113,28 @@ const colScheduled: ColumnDef<ExamRow> = {
 
 const colDuration: ColumnDef<ExamRow> = {
   accessorKey: "duration_minutes",
+  meta: { label: "Duration" },
   header: ({ column }) => <SortHeader column={column} label="Duration" />,
   cell: ({ row }) => <span className="tabular-nums whitespace-nowrap">{row.original.duration_minutes} min</span>,
 };
 
 const colQuestions: ColumnDef<ExamRow> = {
   accessorKey: "total_questions",
+  meta: { label: "Questions" },
   header: ({ column }) => <SortHeader column={column} label="Questions" />,
   cell: ({ row }) => <span className="tabular-nums">{row.original.total_questions}</span>,
 };
 
 const colMarks: ColumnDef<ExamRow> = {
   accessorKey: "total_marks",
+  meta: { label: "Marks" },
   header: ({ column }) => <SortHeader column={column} label="Marks" />,
   cell: ({ row }) => <span className="tabular-nums">{row.original.total_marks}</span>,
 };
 
 const colScore: ColumnDef<ExamRow> = {
   accessorKey: "score",
+  meta: { label: "Score" },
   header: ({ column }) => <SortHeader column={column} label="Score" />,
   sortUndefined: "last",
   cell: ({ row }) => {
