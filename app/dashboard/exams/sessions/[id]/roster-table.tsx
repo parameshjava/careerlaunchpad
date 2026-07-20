@@ -104,34 +104,34 @@ export const rosterColumns: ColumnDef<RosterEntry>[] = [
     meta: { label: "Progress" },
   },
   {
-    accessorKey: "leaveCount",
-    header: ({ column }) => <SortHeader column={column} label="Alt-Tab" />,
-    cell: ({ row }) => <span className="tabular-nums">{row.original.leaveCount || "—"}</span>,
-    meta: { label: "Alt-Tab count" },
+    // Anti-cheat counts folded into one column (sort by aborts, the key signal).
+    id: "antiCheat",
+    accessorFn: (r) => r.abortCount,
+    header: ({ column }) => <SortHeader column={column} label="Anti-cheat" />,
+    cell: ({ row }) => {
+      const { leaveCount, abortCount, resumeCount } = row.original;
+      if (!leaveCount && !abortCount && !resumeCount) return <span className="text-muted-foreground">—</span>;
+      return (
+        <span className="text-muted-foreground tabular-nums whitespace-nowrap text-xs">
+          <span className="text-foreground">⇥{leaveCount}</span> · abort {abortCount}
+          {resumeCount > 0 && ` · resume ${resumeCount}`}
+        </span>
+      );
+    },
+    meta: { label: "Anti-cheat (Alt-Tab · aborts · resumes)" },
   },
   {
-    accessorKey: "abortCount",
-    header: ({ column }) => <SortHeader column={column} label="Aborts" />,
-    cell: ({ row }) => <span className="tabular-nums">{row.original.abortCount || "—"}</span>,
-    meta: { label: "Abort count" },
-  },
-  {
-    accessorKey: "resumeCount",
-    header: ({ column }) => <SortHeader column={column} label="Resumes" />,
-    cell: ({ row }) => <span className="tabular-nums">{row.original.resumeCount || "—"}</span>,
-    meta: { label: "Resume count" },
-  },
-  {
-    accessorKey: "startedAt",
-    header: ({ column }) => <SortHeader column={column} label="Started" />,
-    cell: ({ row }) => <TimeCell iso={row.original.startedAt} />,
-    meta: { label: "Started at" },
-  },
-  {
-    accessorKey: "submittedAt",
-    header: ({ column }) => <SortHeader column={column} label="Submitted" />,
-    cell: ({ row }) => <TimeCell iso={row.original.submittedAt} />,
-    meta: { label: "Submitted at" },
+    // Started / submitted stacked into one column.
+    id: "timing",
+    accessorFn: (r) => r.startedAt ?? "",
+    header: ({ column }) => <SortHeader column={column} label="Timing" />,
+    cell: ({ row }) => (
+      <div className="flex flex-col text-xs leading-tight">
+        <span className="whitespace-nowrap"><span className="text-muted-foreground">start </span><TimeCell iso={row.original.startedAt} /></span>
+        <span className="whitespace-nowrap"><span className="text-muted-foreground">sub&nbsp;&nbsp;&nbsp;</span><TimeCell iso={row.original.submittedAt} /></span>
+      </div>
+    ),
+    meta: { label: "Timing (started / submitted)" },
   },
   {
     id: "actions",
