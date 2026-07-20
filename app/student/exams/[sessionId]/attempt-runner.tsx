@@ -379,9 +379,9 @@ export function AttemptRunner({
           Please wait — the question paper will open automatically. This screen updates
           every few seconds.
         </p>
-        <div className="mt-4 flex max-w-sm flex-col items-center gap-3 sm:flex-row">
-          <NoTabSwitch className="h-16 w-auto shrink-0" />
-          <p className="rounded-md border border-amber-300 bg-amber-50 p-3 text-xs leading-relaxed text-amber-900 dark:border-amber-900/60 dark:bg-amber-950/40 dark:text-amber-200">
+        <div className="mt-4 flex max-w-sm items-center gap-3 rounded-md border border-amber-300 bg-amber-50 p-3 text-amber-900 dark:border-amber-900/60 dark:bg-amber-950/40 dark:text-amber-200">
+          <NoTabSwitch className="size-14 shrink-0" />
+          <p className="text-xs leading-relaxed">
             Once the exam begins, moving away from this screen — switching tabs or apps,
             Alt+Tab / Cmd+Tab, or minimising — will submit your exam, for security reasons.
           </p>
