@@ -28,6 +28,8 @@ export type Question = {
   position: number;
   question_id: string;
   section_id: string;
+  section_title: string | null;
+  section_position: number | null;
   kind: string;
   answer_type: "single" | "multi";
   stem: string;
@@ -42,6 +44,7 @@ type Cache = {
   deadline: number;
   questions: Question[];
   answers: Record<string, string[]>;
+  seen: string[];
 };
 
 // Emphasised keyboard-shortcut chip for the anti-cheat notices (amber context).
@@ -84,13 +87,15 @@ export function AttemptRunner({
   const [attemptId, setAttemptId] = useState("");
   const [questions, setQuestions] = useState<Question[]>([]);
   const [answers, setAnswers] = useState<Record<string, string[]>>({});
+  // Question ids the student has landed on — drives the amber "seen but not
+  // answered" palette state. Persisted like answers so it survives a resume.
+  const [seen, setSeen] = useState<Set<string>>(new Set());
   const [index, setIndex] = useState(0);
-  // Palette pagination — 10 numbers per page so 60+ question papers don't bury
-  // the question under rows of buttons on phones. Follows the current question.
-  const PALETTE_PAGE = 10;
-  const [palettePage, setPalettePage] = useState(0);
+  // Keep the active palette chip in view as the student moves through a long,
+  // scrollable palette (60+ questions no longer paginate — they all render).
+  const currentCellRef = useRef<HTMLButtonElement>(null);
   useEffect(() => {
-    setPalettePage(Math.floor(index / PALETTE_PAGE));
+    currentCellRef.current?.scrollIntoView({ block: "nearest" });
   }, [index]);
   const [deadline, setDeadline] = useState<number | null>(null);
   const [timeLeft, setTimeLeft] = useState<number | null>(null);
@@ -106,7 +111,9 @@ export function AttemptRunner({
   // coalesce them within a short window (lastLeaveRef).
   const [strikes, setStrikes] = useState(0);
   const [warnOpen, setWarnOpen] = useState(false);
-  const [closedForSwitch, setClosedForSwitch] = useState(false);
+  // null while live; set when the anti-cheat closes the paper. `final` = graded
+  // (no resumes left); otherwise the attempt is `aborted` and recoverable.
+  const [abortInfo, setAbortInfo] = useState<{ final: boolean; resumeCount: number } | null>(null);
   const strikesRef = useRef(0);
   strikesRef.current = strikes;
   const lastLeaveRef = useRef(0);
@@ -154,6 +161,7 @@ export function AttemptRunner({
       setAttemptId(cached.attemptId);
       setQuestions(cached.questions);
       setAnswers(cached.answers ?? {});
+      setSeen(new Set(cached.seen ?? []));
       setDeadline(cached.deadline ?? null);
       setLoading(false);
     }
@@ -260,22 +268,57 @@ export function AttemptRunner({
     return () => clearInterval(t);
   }, [deadline, doSubmit]);
 
+  // Mark the current question as "seen" the moment it's shown.
+  useEffect(() => {
+    const qid = questions[index]?.question_id;
+    if (!qid || seen.has(qid)) return;
+    const next = new Set(seen).add(qid);
+    setSeen(next);
+    persist({ seen: [...next] });
+  }, [index, questions, seen, persist]);
+
   // Anti-cheat: detect the student leaving the exam window. Active only while an
   // attempt is live. First leave warns; the second submits as-is and shows the
   // closed screen — start_exam_attempt won't re-hand a non-in_progress attempt,
   // so it can't be resumed.
   useEffect(() => {
-    if (!attemptId || closedForSwitch) return;
+    if (!attemptId || abortInfo) return;
     const registerLeave = () => {
       if (suppressLeaveRef.current) return;
       const now = Date.now();
       if (now - lastLeaveRef.current < 1500) return; // one switch fires blur+visibility → one strike
       lastLeaveRef.current = now;
+      // Persist the switch-away for staff (Alt-Tab metric). Fire-and-forget.
+      supabase.rpc("record_exam_leave", { p_attempt_id: attemptId }).then(({ error: e }) => {
+        if (e) console.warn("record_exam_leave failed", e.message);
+      });
       const n = strikesRef.current + 1;
       setStrikes(n);
       if (n >= 2) {
-        setClosedForSwitch(true);
-        doSubmit({ redirect: false });
+        // Second strike: flush answers-so-far (like doSubmit), then abort
+        // (recoverable) or finalize if resumes are spent.
+        void (async () => {
+          Object.values(saveTimers.current).forEach(clearTimeout);
+          saveTimers.current = {};
+          try {
+            await Promise.all(
+              Object.entries(answersRef.current).map(([qid, sel]) =>
+                supabase.rpc("save_exam_answer", {
+                  p_attempt_id: attemptId,
+                  p_question_id: qid,
+                  p_selected: sel,
+                }),
+              ),
+            );
+          } catch {
+            /* non-fatal — abort uses whatever persisted */
+          }
+          const { data, error: e } = await supabase.rpc("abort_exam_attempt", { p_attempt_id: attemptId });
+          if (e) { setError(e.message); return; }
+          const info = (data as { final?: boolean; resume_count?: number }) ?? {};
+          setAbortInfo({ final: !!info.final, resumeCount: info.resume_count ?? 0 });
+          try { localStorage.removeItem(cacheKey); } catch { /* ignore */ }
+        })();
       } else {
         setWarnOpen(true);
       }
@@ -289,7 +332,7 @@ export function AttemptRunner({
       window.removeEventListener("blur", registerLeave);
       document.removeEventListener("visibilitychange", onVisibility);
     };
-  }, [attemptId, closedForSwitch, doSubmit]);
+  }, [attemptId, abortInfo, supabase, cacheKey]);
 
   function scheduleSave(questionId: string, selected: string[]) {
     clearTimeout(saveTimers.current[questionId]);
@@ -343,13 +386,18 @@ export function AttemptRunner({
     });
   }
 
-  if (closedForSwitch)
+  if (abortInfo)
     return (
       <div className="mx-auto max-w-md px-4 py-10 text-center">
         <p className="text-destructive text-base font-semibold">Exam closed</p>
         <p className="text-muted-foreground mt-2 text-sm">
-          You left the exam window after a warning. Your answers have been submitted
-          automatically and this attempt cannot be resumed.
+          {abortInfo.final ? (
+            <>You left the exam window again. Your answers have been submitted automatically and this attempt cannot be resumed.</>
+          ) : abortInfo.resumeCount === 0 ? (
+            <>You left the exam window after a warning, so the exam was closed. You can reopen it <strong>once</strong> yourself from My exams — do it now to continue where you left off.</>
+          ) : (
+            <>You left the exam window after a warning, so the exam was closed. Please <strong>ask your administrator</strong> to let you resume.</>
+          )}
         </p>
         <Button className="mt-4" variant="outline" onClick={() => router.push("/student/exams")}>
           Back to my exams
@@ -488,6 +536,22 @@ export function AttemptRunner({
   const ss = timeLeft != null ? String(timeLeft % 60).padStart(2, "0") : "--";
   const lowTime = timeLeft != null && timeLeft <= 60;
 
+  // Palette counts (whole paper) + per-subject bands. Questions arrive ordered by
+  // position and each section is contiguous, so grouping in encounter order keeps
+  // the subjects in their exam order. Papers without sections fall into one band.
+  const answeredCount = questions.filter((qq) => answered(qq.question_id)).length;
+  const seenCount = questions.filter(
+    (qq) => !answered(qq.question_id) && seen.has(qq.question_id),
+  ).length;
+  const notVisitedCount = questions.length - answeredCount - seenCount;
+  const bands: { id: string; title: string | null; items: { qq: Question; i: number }[] }[] = [];
+  questions.forEach((qq, i) => {
+    const last = bands[bands.length - 1];
+    if (last && last.id === qq.section_id) last.items.push({ qq, i });
+    else bands.push({ id: qq.section_id, title: qq.section_title, items: [{ qq, i }] });
+  });
+  const multiSection = bands.length > 1;
+
   return (
     <>
     <div
@@ -500,8 +564,11 @@ export function AttemptRunner({
     >
       {/* Header: progress + timer */}
       <div className="bg-background sticky top-0 z-10 mb-4 flex items-center justify-between gap-4 border-b py-2">
-        <span className="text-sm font-medium">
+        <span className="min-w-0 truncate text-sm font-medium">
           Question {index + 1} / {questions.length}
+          {q.section_title && (
+            <span className="text-muted-foreground"> · {q.section_title}</span>
+          )}
         </span>
         <div className="flex items-center gap-3">
           {meta && (
@@ -536,46 +603,59 @@ export function AttemptRunner({
         automatically and <strong>cannot be resumed</strong>. Copying is disabled.
       </div>
 
-      {/* Palette — paginated in blocks of 10 with ‹ › arrows */}
-      <div className="mb-4 flex items-center gap-1.5">
-        <button
-          onClick={() => setPalettePage((p) => p - 1)}
-          disabled={palettePage === 0}
-          aria-label="Previous questions"
-          className="bg-muted size-8 shrink-0 rounded text-sm font-medium disabled:opacity-40"
-        >
-          ‹
-        </button>
-        <div className="flex flex-1 flex-wrap justify-center gap-1.5">
-          {questions
-            .slice(palettePage * PALETTE_PAGE, (palettePage + 1) * PALETTE_PAGE)
-            .map((qq, offset) => {
-              const i = palettePage * PALETTE_PAGE + offset;
-              return (
+      {/* Palette — summary counts double as the legend, then every question in
+          one scrollable grid, banded by subject. */}
+      <div className="mb-2 grid grid-cols-3 gap-2 text-xs">
+        <div className="flex items-center gap-2 rounded-md border p-2">
+          <span className="size-3 shrink-0 rounded-sm bg-emerald-500" />
+          <span className="tabular-nums font-semibold">{answeredCount}</span>
+          <span className="text-muted-foreground">Answered</span>
+        </div>
+        <div className="flex items-center gap-2 rounded-md border p-2">
+          <span className="size-3 shrink-0 rounded-sm border-2 border-amber-400 bg-amber-50 dark:bg-amber-950/40" />
+          <span className="tabular-nums font-semibold">{seenCount}</span>
+          <span className="text-muted-foreground">Seen</span>
+        </div>
+        <div className="flex items-center gap-2 rounded-md border p-2">
+          <span className="bg-muted size-3 shrink-0 rounded-sm border" />
+          <span className="tabular-nums font-semibold">{notVisitedCount}</span>
+          <span className="text-muted-foreground">Left</span>
+        </div>
+      </div>
+
+      <div className="bg-muted/30 mb-4 max-h-52 overflow-y-auto rounded-md border p-2">
+        {bands.map((band) => (
+          <div key={band.id}>
+            {/* Subject header — only when the paper actually has sections. */}
+            {multiSection && band.title && (
+              <div className="bg-muted/30 text-muted-foreground sticky top-0 z-10 -mx-2 mb-2 flex items-center justify-between gap-2 px-2 py-1.5 text-xs font-semibold backdrop-blur">
+                <span className="truncate">{band.title}</span>
+                <span className="tabular-nums whitespace-nowrap">
+                  {band.items.filter(({ qq }) => answered(qq.question_id)).length}/
+                  {band.items.length}
+                </span>
+              </div>
+            )}
+            <div className="mb-2 grid grid-cols-[repeat(auto-fill,minmax(2rem,1fr))] gap-1.5">
+              {band.items.map(({ qq, i }) => (
                 <button
                   key={qq.question_id}
+                  ref={i === index ? currentCellRef : null}
                   onClick={() => goTo(i)}
-                  className={`size-8 rounded text-xs font-medium ${
-                    i === index
-                      ? "bg-primary text-primary-foreground"
-                      : answered(qq.question_id)
-                        ? "bg-emerald-100 text-emerald-700 dark:bg-emerald-950 dark:text-emerald-300"
-                        : "bg-muted"
-                  }`}
+                  className={`flex aspect-square items-center justify-center rounded-md border text-xs font-medium tabular-nums transition ${
+                    answered(qq.question_id)
+                      ? "border-emerald-500 bg-emerald-500 text-white dark:border-emerald-600 dark:bg-emerald-600"
+                      : seen.has(qq.question_id)
+                        ? "border-amber-400 bg-amber-50 text-amber-700 dark:border-amber-700 dark:bg-amber-950/40 dark:text-amber-300"
+                        : "bg-background"
+                  } ${i === index ? "ring-primary border-primary ring-2" : ""}`}
                 >
                   {i + 1}
                 </button>
-              );
-            })}
-        </div>
-        <button
-          onClick={() => setPalettePage((p) => p + 1)}
-          disabled={(palettePage + 1) * PALETTE_PAGE >= questions.length}
-          aria-label="Next questions"
-          className="bg-muted size-8 shrink-0 rounded text-sm font-medium disabled:opacity-40"
-        >
-          ›
-        </button>
+              ))}
+            </div>
+          </div>
+        ))}
       </div>
 
       {/* Question */}
@@ -587,8 +667,13 @@ export function AttemptRunner({
               <RichContent content={q.passage.body} />
             </div>
           )}
-          <div className="font-medium">
-            <RichContent content={q.stem} />
+          <div className="flex gap-2.5 font-medium">
+            <span className="text-primary bg-primary/10 h-fit shrink-0 rounded-md px-2 py-0.5 text-sm font-bold tabular-nums">
+              Q{index + 1}
+            </span>
+            <div className="min-w-0 flex-1">
+              <RichContent content={q.stem} />
+            </div>
           </div>
           {q.stem_image_url && (
             // eslint-disable-next-line @next/next/no-img-element
@@ -715,14 +800,20 @@ export function AttemptRunner({
       <Dialog open={warnOpen} onOpenChange={setWarnOpen}>
         <DialogContent>
           <DialogHeader>
-            <DialogTitle>⚠️ Don’t leave the exam</DialogTitle>
-            <DialogDescription>
-              You switched away from the exam window. This is your{" "}
-              <strong>only warning</strong> — if you leave again (Alt+Tab, Cmd+Tab,
-              switching apps, or minimising the window), your exam will be submitted
-              automatically and you will not be able to resume.
-            </DialogDescription>
+            <DialogTitle>Don’t leave the exam</DialogTitle>
           </DialogHeader>
+          <div className="flex items-start gap-3">
+            <span className="flex size-10 shrink-0 items-center justify-center rounded-full bg-amber-100 text-amber-600 dark:bg-amber-950 dark:text-amber-400">
+              <TriangleAlert className="size-5" />
+            </span>
+            <DialogDescription className="flex-1">
+              You switched away from the exam window. This is your{" "}
+              <strong className="font-medium text-foreground">only warning</strong> — if
+              you leave again (Alt+Tab, Cmd+Tab, switching apps, or minimising the
+              window), your exam will be submitted automatically and you will not be
+              able to resume.
+            </DialogDescription>
+          </div>
           <DialogFooter>
             <Button onClick={() => setWarnOpen(false)}>I understand — continue</Button>
           </DialogFooter>

@@ -132,6 +132,7 @@ export function ResultsClient({
                     <div className="text-muted-foreground text-xs">{r.email}</div>
                   </div>
                   <div className="flex items-center gap-3">
+                    {r.abortCount > 0 && <Badge variant="destructive">AB ×{r.abortCount}</Badge>}
                     <Badge variant="outline">{r.rosterStatus}</Badge>
                     <span className="tabular-nums font-medium">{r.score ?? "—"}</span>
                   </div>

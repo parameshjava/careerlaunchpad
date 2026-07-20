@@ -241,6 +241,14 @@ function ExamList({ exams, empty }: { exams: ExamCard[]; empty: string }) {
                 {e.sectionCount} section{e.sectionCount === 1 ? "" : "s"} · {e.totalQuestions} Q ·{" "}
                 {e.durationMinutes} min
               </div>
+              {e.opensAt && (
+                <div className="text-muted-foreground truncate text-xs">
+                  {new Date(e.opensAt).toLocaleString(undefined, {
+                    dateStyle: "medium",
+                    timeStyle: "short",
+                  })}
+                </div>
+              )}
             </Link>
             <div className="flex shrink-0 items-center gap-2">
               {/* Status badge only while not finished — on the Closed tab it's redundant. */}

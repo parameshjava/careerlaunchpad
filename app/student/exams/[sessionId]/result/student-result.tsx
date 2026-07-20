@@ -46,6 +46,18 @@ export function StudentResult({
   const supabase = createClient();
   const [result, setResult] = useState<Result | null>(null);
   const [error, setError] = useState("");
+  // Which document to print. Set by the two Print buttons; a print-scoped CSS
+  // rule (below) then hides the other half so the result and the answer key
+  // each save as their own PDF. Reset after the dialog closes.
+  const [printMode, setPrintMode] = useState<null | "result" | "paper">(null);
+
+  useEffect(() => {
+    if (!printMode) return;
+    const done = () => setPrintMode(null);
+    window.addEventListener("afterprint", done, { once: true });
+    window.print();
+    return () => window.removeEventListener("afterprint", done);
+  }, [printMode]);
 
   useEffect(() => {
     supabase
@@ -116,29 +128,37 @@ export function StudentResult({
   }
 
   return (
-    <div id="result-print" className="mx-auto max-w-2xl px-4 py-6 sm:px-6">
+    <div id="result-print" data-print={printMode ?? undefined} className="mx-auto max-w-2xl px-4 py-6 sm:px-6">
       <style>{`
         @media print {
           body * { visibility: hidden !important; }
           #result-print, #result-print * { visibility: visible !important; }
           #result-print { position: absolute; left: 0; top: 0; width: 100%; max-width: none; padding: 0; }
           .no-print { display: none !important; }
+          /* Split prints: hide the half we're not saving. */
+          #result-print[data-print="result"] #print-paper { display: none !important; }
+          #result-print[data-print="paper"] #print-result { display: none !important; }
         }
       `}</style>
-      <div className="no-print mb-4 flex items-center justify-between gap-3">
+      <div className="no-print mb-4 flex flex-wrap items-center justify-between gap-3">
         <Button variant="outline" asChild>
           <Link href="/student/exams">
             <ArrowLeft /> Back
           </Link>
         </Button>
-        <Button onClick={() => window.print()}>
-          <Printer /> Print
-        </Button>
+        <div className="flex flex-wrap gap-2">
+          <Button onClick={() => setPrintMode("result")}>
+            <Printer /> Print result
+          </Button>
+          <Button onClick={() => setPrintMode("paper")}>
+            <Printer /> Print answer key
+          </Button>
+        </div>
       </div>
 
       <PrintFrame docLabel="Result">
-      {/* Branded print cover — an official "Statement of Marks" (hidden on screen). */}
-      <div className="print-chrome">
+      {/* ── Statement of Marks (its own PDF via "Print result") ── */}
+      <div id="print-result" className="print-chrome">
         <BrandBlock
           collegeName={collegeName || undefined}
           title={meta?.exam_title ?? "Assessment Test"}
@@ -242,9 +262,6 @@ export function StudentResult({
           </>
         )}
 
-        <div className="mb-2 border-t border-gray-300 pt-2 text-sm font-bold uppercase tracking-wide text-gray-900">
-          Detailed Answer Key
-        </div>
       </div>
 
       <header className="no-print mb-6">
@@ -278,6 +295,34 @@ export function StudentResult({
           </CardContent>
         </Card>
       )}
+
+      {/* ── Detailed Answer Key (its own PDF via "Print answer key") ── */}
+      <div id="print-paper">
+      {/* Branded cover so the answer key stands alone as a document. */}
+      <div className="print-chrome">
+        <BrandBlock
+          collegeName={collegeName || undefined}
+          title={meta?.exam_title ?? "Assessment Test"}
+          subline={
+            meta
+              ? `${meta.sections.map((s) => s.subject).join(", ")} | Multiple Choice Pattern`
+              : "Answer Key"
+          }
+        />
+        <InfoTable>
+          <tr>
+            <InfoCell label="Student Name" value={studentName} />
+            <InfoCell label="Roll Number" value={rollNumber || "—"} />
+          </tr>
+          <tr>
+            <InfoCell label="Examination" value={meta?.exam_title ?? "—"} />
+            <InfoCell label="Sitting" value={meta?.label ?? "—"} />
+          </tr>
+        </InfoTable>
+        <div className="mb-2 border-t border-gray-300 pt-2 text-sm font-bold uppercase tracking-wide text-gray-900">
+          Detailed Answer Key
+        </div>
+      </div>
 
       {Array.from(sections, ([subject, qs]) => (
         <section key={subject} className="mb-6">
@@ -332,9 +377,10 @@ export function StudentResult({
           </ol>
         </section>
       ))}
+      </div>
 
       <div className="print-chrome mt-6 border-t border-gray-300 pt-2 text-center text-[10px] text-gray-600">
-        Date of issue: {printedOn} · This is a computer-generated statement of marks and does not require a signature.
+        Date of issue: {printedOn} · This is a computer-generated document and does not require a signature.
       </div>
 
       </PrintFrame>
