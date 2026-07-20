@@ -81,11 +81,11 @@ Recipe (matches Exam papers + student My exams):
 </Tabs>
 ```
 
-**Colours by meaning** (reuse the status ramp): amber = draft / in-progress · emerald = live / upcoming · sky = done / past · violet = results. The dot is `bg-<hue>-500`; the active tab tints to match, e.g. for emerald:
+**Colours by meaning** (reuse the status ramp): amber = draft / in-progress · emerald = live / upcoming · sky = done / past · violet = results. Make the tabs read as clearly coloured, not near-white — **every** trigger carries its hue (coloured dot + coloured label), and the **active** tab fills with a visible `-100` tint. Drop `text-muted-foreground` from the base trigger; put the colour on each trigger, e.g. for emerald:
 
 ```
-data-active:border-emerald-300 data-active:bg-emerald-50 data-active:text-emerald-900
-dark:data-active:border-emerald-800 dark:data-active:bg-emerald-950/50 dark:data-active:text-emerald-200
+text-emerald-700 hover:text-emerald-800 data-active:border-emerald-400 data-active:bg-emerald-100 data-active:text-emerald-900
+dark:text-emerald-400 dark:hover:text-emerald-300 dark:data-active:border-emerald-600 dark:data-active:bg-emerald-900/60 dark:data-active:text-emerald-100
 ```
 
 ## Dialogs & confirmations
