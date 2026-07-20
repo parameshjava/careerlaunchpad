@@ -111,7 +111,8 @@ export function SessionDetailClient({
                         <Badge variant="outline">{r.rosterStatus}</Badge>
                       )}
                       {r.score != null && <span className="tabular-nums">{r.score}</span>}
-                      {r.attemptId && r.attemptStatus === "aborted" && r.resumeCount < 2 && (
+                      {/* Resume budget = 3 total (mirrors migration 119's cap). */}
+                      {r.attemptId && r.attemptStatus === "aborted" && r.resumeCount < 3 && (
                         <Button
                           size="sm"
                           variant="secondary"
