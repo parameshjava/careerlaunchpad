@@ -16,17 +16,17 @@ Full design rationale: `docs/superpowers/specs/2026-06-22-ui-style-guide-design.
 
 Brand values live in `app/brand.css`; `app/globals.css` maps them onto shadcn tokens. In JSX, use the **Tailwind/shadcn token classes**, not the CSS vars directly:
 
-| Use | Class | Resolves to |
-| --- | --- | --- |
-| Primary action / links / focus ring | `bg-primary` `text-primary` `ring-ring` | brand blue `#2563eb` |
-| Accent / secondary emphasis | `bg-accent` `text-accent-foreground` | violet tint / brand violet |
-| Page & card background | `bg-background` `bg-card` | surface |
-| Muted panels / empty states | `bg-muted` `bg-muted/40` | neutral wash |
-| Body text | `text-foreground` | ink |
-| Secondary text / captions | `text-muted-foreground` | muted |
-| Hairline borders | `border` `border-border` | line |
-| Errors | `text-destructive` | red |
-| Charts | `--chart-1..5` (blue→violet ramp) | via shadcn |
+| Use                                 | Class                                   | Resolves to                |
+| ----------------------------------- | --------------------------------------- | -------------------------- |
+| Primary action / links / focus ring | `bg-primary` `text-primary` `ring-ring` | brand blue `#2563eb`       |
+| Accent / secondary emphasis         | `bg-accent` `text-accent-foreground`    | violet tint / brand violet |
+| Page & card background              | `bg-background` `bg-card`               | surface                    |
+| Muted panels / empty states         | `bg-muted` `bg-muted/40`                | neutral wash               |
+| Body text                           | `text-foreground`                       | ink                        |
+| Secondary text / captions           | `text-muted-foreground`                 | muted                      |
+| Hairline borders                    | `border` `border-border`                | line                       |
+| Errors                              | `text-destructive`                      | red                        |
+| Charts                              | `--chart-1..5` (blue→violet ramp)       | via shadcn                 |
 
 Raw brand vars (`var(--brand-gradient)`, `var(--brand-gradient-135)`) are reserved for **gradient accents** (CTAs, avatars, badges) where a token can't express a gradient — not for ordinary fills.
 
@@ -43,12 +43,50 @@ Raw brand vars (`var(--brand-gradient)`, `var(--brand-gradient-135)`) are reserv
 ```
 
 - **Section container:** `Card` + `CardContent` (`pt-6` when there's no `CardHeader`).
-- **Tabs:** `components/ui/tabs` with a count in the trigger, e.g. `Active ({n})`.
+- **Tabs:** **coloured folder tabs** with a count in the trigger, e.g. `Active ({n})` — see **Tabs** below. Don't use the plain default pill `TabsList`.
 - **Data grids:** `components/data-table.tsx` (TanStack) — never a hand-rolled table for sortable/filterable data.
 - **Forms:** `Label` + `Input`/`Select` in `grid gap-1.5`; primary submit is `<Button>`; validation/error message in `text-destructive text-sm`.
 - **Empty state:** `text-muted-foreground bg-muted/40 rounded-lg border px-4 py-10 text-center text-sm`.
 - **Status:** `Badge` — `variant="default"` for live/positive, `"secondary"` otherwise.
 - **Icons:** `lucide-react` at default sizes.
+
+## Tabs
+
+Use **coloured folder tabs** everywhere — never the default pill `TabsList`. The segmented pills read as generic dev-tool controls; on user-facing surfaces (students especially) the folder tabs with a status dot are far easier to recognise. `components/ui/tabs` with `variant="line"`, boxed triggers on a full-width bottom border, and a small coloured dot per tab. Put the count in each trigger, e.g. `Upcoming ({n})`.
+
+Recipe (matches Exam papers + student My exams):
+
+```tsx
+<Tabs defaultValue="…">
+  <TabsList
+    variant="line"
+    className="group-data-horizontal/tabs:h-auto w-full justify-start gap-0 rounded-none border-b p-0"
+  >
+    {TABS.map(([value, label, dot, activeCls]) => (
+      <TabsTrigger
+        key={value}
+        value={value}
+        className={cn(
+          "-mb-px h-auto flex-none rounded-t-md rounded-b-none border border-b-0 border-transparent px-4 py-2 text-muted-foreground shadow-none after:hidden data-active:shadow-none",
+          activeCls,
+        )}
+      >
+        <span className={cn("size-2 rounded-full", dot)} aria-hidden />
+        {label}
+      </TabsTrigger>
+    ))}
+  </TabsList>
+  {/* <TabsContent className="mt-4 min-w-0"> — min-w-0 lets a wide DataTable scroll
+      inside its container instead of overflowing the page on mobile. */}
+</Tabs>
+```
+
+**Colours by meaning** (reuse the status ramp): amber = draft / in-progress · emerald = live / upcoming · sky = done / past · violet = results. The dot is `bg-<hue>-500`; the active tab tints to match, e.g. for emerald:
+
+```
+data-active:border-emerald-300 data-active:bg-emerald-50 data-active:text-emerald-900
+dark:data-active:border-emerald-800 dark:data-active:bg-emerald-950/50 dark:data-active:text-emerald-200
+```
 
 ## Dialogs & confirmations
 
