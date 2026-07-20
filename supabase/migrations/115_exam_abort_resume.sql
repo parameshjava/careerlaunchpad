@@ -70,12 +70,15 @@ begin
   if not found then raise exception 'Attempt not found'; end if;
   if not public.is_exam_staff_for_session(v_attempt.session_id) then raise exception 'Forbidden'; end if;
   if v_attempt.status <> 'aborted' then raise exception 'This attempt is not awaiting resume'; end if;
-  if v_attempt.resume_count >= 2 then raise exception 'Resume limit reached for this attempt'; end if;
 
+  -- Atomic cap enforcement: the guard lives in the UPDATE's WHERE so two
+  -- concurrent resume calls (e.g. a double-click) can't both push past 2.
   update public.exam_attempt
     set status = 'in_progress', resume_count = resume_count + 1
-    where id = p_attempt_id;
-  return jsonb_build_object('resume_count', v_attempt.resume_count + 1);
+    where id = p_attempt_id and status = 'aborted' and resume_count < 2
+    returning * into v_attempt;
+  if not found then raise exception 'Resume limit reached for this attempt'; end if;
+  return jsonb_build_object('resume_count', v_attempt.resume_count);
 end;
 $$;
 grant execute on function public.resume_exam_attempt(uuid) to authenticated;
