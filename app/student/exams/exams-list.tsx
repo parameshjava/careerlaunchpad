@@ -7,7 +7,6 @@
 // student's score.
 import { useEffect, useMemo, useState } from "react";
 import { createClient } from "@/lib/supabase/client";
-import { cn } from "@/lib/utils";
 import { DataTable } from "@/components/data-table";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import {
@@ -21,6 +20,14 @@ import {
 import { decorate, isUpcoming } from "./exam-status";
 
 const POLL_MS = 5_000;
+
+// Connected folder tabs (STYLE_GUIDE): every tab is bordered; inactive tabs are
+// muted with a bottom border (underline); the active tab is a solid brand fill
+// with NO bottom border, so it connects into the page. The `line` variant forces
+// bg-transparent, hence the `!` on the fills.
+const TAB_CLS =
+  "-mb-px h-auto flex-none rounded-t-md rounded-b-none border border-border bg-muted! px-4 py-2 font-medium text-muted-foreground shadow-none transition-colors after:hidden hover:bg-muted/70 " +
+  "data-active:border-primary! data-active:border-b-0 data-active:bg-primary! data-active:text-primary-foreground! data-active:font-semibold data-active:shadow-none";
 
 export function ExamsList() {
   const [sessions, setSessions] = useState<Session[] | null>(null);
@@ -80,26 +87,11 @@ export function ExamsList() {
       >
         {(
           [
-            [
-              "upcoming",
-              `Upcoming (${upcoming.length})`,
-              "bg-emerald-600! text-white! border-emerald-600! hover:bg-emerald-700! data-active:bg-card! data-active:text-emerald-700! data-active:border-emerald-500! dark:data-active:text-emerald-300!",
-            ],
-            [
-              "past",
-              `Past (${past.length})`,
-              "bg-sky-600! text-white! border-sky-600! hover:bg-sky-700! data-active:bg-card! data-active:text-sky-700! data-active:border-sky-500! dark:data-active:text-sky-300!",
-            ],
+            ["upcoming", `Upcoming (${upcoming.length})`],
+            ["past", `Past (${past.length})`],
           ] as const
-        ).map(([value, label, colorCls]) => (
-          <TabsTrigger
-            key={value}
-            value={value}
-            className={cn(
-              "-mb-px h-auto flex-none rounded-t-md rounded-b-none border border-b-0 px-4 py-2 font-medium shadow-none transition-colors after:hidden data-active:font-semibold data-active:shadow-none",
-              colorCls,
-            )}
-          >
+        ).map(([value, label]) => (
+          <TabsTrigger key={value} value={value} className={TAB_CLS}>
             {label}
           </TabsTrigger>
         ))}

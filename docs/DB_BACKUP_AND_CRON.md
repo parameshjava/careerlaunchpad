@@ -51,12 +51,12 @@ snapshots). Dumps contain real data, so they never live in this source repo.
 4. **Add the repo secrets** (this repo → **Settings → Secrets and variables →
    Actions → New repository secret**):
 
-   | Secret | Value |
-   |---|---|
-   | `PROD_DB_URL` | Prod Session-pooler connection string (with password) |
-   | `PREVIEW_DB_URL` | Preview Session-pooler connection string (with password) |
-   | `BACKUP_REPO_TOKEN` | The token from step 2 |
-   | `BACKUP_REPO` | *(optional)* `owner/careerlaunchpad-db-backups` if not same owner |
+   | Secret              | Value                                                             |
+   | ------------------- | ----------------------------------------------------------------- |
+   | `PROD_DB_URL`       | Prod Session-pooler connection string (with password)             |
+   | `PREVIEW_DB_URL`    | Preview Session-pooler connection string (with password)          |
+   | `BACKUP_REPO_TOKEN` | The token from step 2                                             |
+   | `BACKUP_REPO`       | *(optional)* `owner/careerlaunchpad-db-backups` if not same owner |
 
 5. **Merge to `main`.** Scheduled (`cron`) workflows only fire from the default
    branch — the workflow won't run from a feature branch.
