@@ -599,8 +599,11 @@ export function AttemptRunner({
       onCut={(e) => e.preventDefault()}
       onContextMenu={(e) => e.preventDefault()}
     >
-      {/* Header: progress + timer */}
-      <div className="bg-background sticky top-0 z-10 mb-4 flex items-center justify-between gap-4 border-b py-2">
+      {/* Header: progress + timer. Bleeds over the container's px/py padding
+          (-mx / -mt + re-pad) so its opaque background fully masks content
+          scrolling underneath — otherwise the amber banner peeks above/beside
+          it on scroll. z-20 keeps it above the palette's own sticky subheaders. */}
+      <div className="bg-background sticky top-0 z-20 mb-4 -mx-4 -mt-4 flex items-center justify-between gap-4 border-b px-4 pt-4 pb-2 sm:-mx-6 sm:px-6">
         <span className="min-w-0 truncate text-sm font-medium">
           Question {index + 1} / {questions.length}
           {currentSubject && (
@@ -663,9 +666,11 @@ export function AttemptRunner({
       <div className="bg-muted/30 mb-4 max-h-52 overflow-y-auto rounded-md border p-2">
         {bands.map((band) => (
           <div key={band.id}>
-            {/* Subject header — only when the paper actually has sections. */}
+            {/* Subject header — only when the paper actually has sections.
+                Bold, brand-tinted highlight bar with a left accent so each
+                section reads as a clear divider in the palette. */}
             {multiSection && band.label && (
-              <div className="bg-muted/30 text-muted-foreground sticky top-0 z-10 -mx-2 mb-2 flex items-center justify-between gap-2 px-2 py-1.5 text-xs font-semibold backdrop-blur">
+              <div className="bg-primary/10 text-primary sticky top-0 z-10 -mx-2 mb-2 flex items-center justify-between gap-2 border-l-4 border-primary px-2 py-1.5 text-xs font-bold uppercase tracking-wide backdrop-blur">
                 <span className="truncate">{band.label}</span>
                 <span className="tabular-nums whitespace-nowrap">
                   {band.items.filter(({ qq }) => answered(qq.question_id)).length}/
