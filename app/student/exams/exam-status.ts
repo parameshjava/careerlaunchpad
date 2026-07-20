@@ -14,8 +14,18 @@ export function decorate(s: Session, now: number): ExamRow {
   const beforeWindow = opens == null || now < opens - GRACE_MS;
   const afterWindow = closes != null && now > closes + GRACE_MS;
 
-  // Anti-cheat close: an aborted attempt is locked. resume_count 0 → the student
-  // may reopen it once themselves (in window); otherwise it's admin-only.
+  // Published results are viewable by anyone with a finalized attempt — including
+  // an aborted one (its partial marks are graded on close). This MUST come before
+  // the aborted-locked branch below, or an aborted student could never open their
+  // published result.
+  const hasFinalizedAttempt = s.attempt_status != null && s.attempt_status !== "in_progress";
+  if (s.results_published && hasFinalizedAttempt) {
+    return { ...s, statusLabel: "Result ready", action: "result" };
+  }
+
+  // Anti-cheat close (results not yet out): an aborted attempt is locked.
+  // resume_count 0 → the student may reopen it once themselves (in window);
+  // otherwise it's admin-only.
   if (s.attempt_status === "aborted") {
     const selfResumable = (s.resume_count ?? 0) === 0 && !beforeWindow && !afterWindow;
     return {
