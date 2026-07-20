@@ -97,6 +97,17 @@ export function AttemptRunner({
   useEffect(() => {
     currentCellRef.current?.scrollIntoView({ block: "nearest" });
   }, [index]);
+  // On first load, open the first UNANSWERED question so a resumed student lands
+  // where they left off (their answers are server-persisted and restored on
+  // resume) instead of back at Q1 — saving them from re-navigating. Runs once,
+  // after questions + answers are loaded. Falls back to Q1 if all are answered.
+  const initedIndexRef = useRef(false);
+  useEffect(() => {
+    if (initedIndexRef.current || loading || questions.length === 0) return;
+    initedIndexRef.current = true;
+    const firstUnanswered = questions.findIndex((qq) => !(answers[qq.question_id]?.length));
+    if (firstUnanswered > 0) setIndex(firstUnanswered);
+  }, [loading, questions, answers]);
   const [deadline, setDeadline] = useState<number | null>(null);
   const [timeLeft, setTimeLeft] = useState<number | null>(null);
   const [submitting, setSubmitting] = useState(false);
