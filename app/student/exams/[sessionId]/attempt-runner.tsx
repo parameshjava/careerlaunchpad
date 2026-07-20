@@ -7,7 +7,7 @@
 // (mobile-first) with a palette and a hard-stop countdown.
 import { useCallback, useEffect, useRef, useState } from "react";
 import { useRouter } from "next/navigation";
-import { CheckCircle2, TriangleAlert, Printer } from "lucide-react";
+import { Check, CheckCircle2, TriangleAlert, Printer } from "lucide-react";
 import { WarningSign } from "../warning-sign";
 import { createClient } from "@/lib/supabase/client";
 import { RichContent } from "@/components/exam/RichContent";
@@ -684,7 +684,7 @@ export function AttemptRunner({
                   key={qq.question_id}
                   ref={i === index ? currentCellRef : null}
                   onClick={() => goTo(i)}
-                  className={`flex aspect-square items-center justify-center rounded-md border text-xs font-medium tabular-nums transition ${
+                  className={`relative flex aspect-square items-center justify-center rounded-md border text-xs font-medium tabular-nums transition ${
                     answered(qq.question_id)
                       ? "border-emerald-500 bg-emerald-500 text-white dark:border-emerald-600 dark:bg-emerald-600"
                       : seen.has(qq.question_id)
@@ -693,6 +693,12 @@ export function AttemptRunner({
                   } ${i === index ? "ring-primary border-primary ring-2" : ""}`}
                 >
                   {i + 1}
+                  {/* Answered → corner tick, so "done" reads even in greyscale. */}
+                  {answered(qq.question_id) && (
+                    <span className="bg-background text-emerald-600 dark:bg-background absolute -top-1 -right-1 flex size-3.5 items-center justify-center rounded-full">
+                      <Check className="size-2.5" strokeWidth={3.5} />
+                    </span>
+                  )}
                 </button>
               ))}
             </div>
