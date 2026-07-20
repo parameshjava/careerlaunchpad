@@ -171,6 +171,7 @@ export function ResultsPrint({
                 {totalMarks != null && <div className="text-[10px] font-normal">/{totalMarks}</div>}
               </th>
               {totalMarks != null && <th className="num" style={{ width: "10%" }}>%</th>}
+              <th style={{ width: "12%" }}>Remarks</th>
             </tr>
           </thead>
           <tbody>
@@ -186,6 +187,7 @@ export function ResultsPrint({
                   ))}
                   <td className="num font-semibold">{r.score}</td>
                   {totalMarks != null && <td className="num">{pct(r.score as number)}</td>}
+                  <td>{r.abortCount > 0 ? "AB" : "—"}</td>
                 </tr>
               );
             })}
@@ -197,13 +199,14 @@ export function ResultsPrint({
                 {subjects.map((s) => (
                   <td key={s.subject} className="num">—</td>
                 ))}
-                <td className="num">AB</td>
+                <td className="num">—</td>
                 {totalMarks != null && <td className="num">—</td>}
+                <td>{r.abortCount > 0 ? "AB" : "Absent"}</td>
               </tr>
             ))}
             {roster.length === 0 && (
               <tr>
-                <td colSpan={4 + subjects.length + (totalMarks != null ? 1 : 0)} style={{ textAlign: "center" }}>
+                <td colSpan={5 + subjects.length + (totalMarks != null ? 1 : 0)} style={{ textAlign: "center" }}>
                   No students assigned to this sitting.
                 </td>
               </tr>
@@ -211,7 +214,7 @@ export function ResultsPrint({
           </tbody>
         </table>
 
-        <p className="mt-2 text-xs text-black/70">AB = Absent / not attempted. Columns show marks obtained per subject.</p>
+        <p className="mt-2 text-xs text-black/70">AB = attempt aborted — partial marks shown for questions answered. Absent = did not attempt. Columns show marks obtained per subject.</p>
 
         {/* Footer */}
         <div className="mt-8 flex items-end justify-between text-sm" style={{ breakInside: "avoid" }}>
