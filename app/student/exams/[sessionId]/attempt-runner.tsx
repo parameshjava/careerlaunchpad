@@ -544,13 +544,21 @@ export function AttemptRunner({
     (qq) => !answered(qq.question_id) && seen.has(qq.question_id),
   ).length;
   const notVisitedCount = questions.length - answeredCount - seenCount;
-  const bands: { id: string; title: string | null; items: { qq: Question; i: number }[] }[] = [];
+  const rawBands: { id: string; title: string | null; items: { qq: Question; i: number }[] }[] = [];
   questions.forEach((qq, i) => {
-    const last = bands[bands.length - 1];
+    const last = rawBands[rawBands.length - 1];
     if (last && last.id === qq.section_id) last.items.push({ qq, i });
-    else bands.push({ id: qq.section_id, title: qq.section_title, items: [{ qq, i }] });
+    else rawBands.push({ id: qq.section_id, title: qq.section_title, items: [{ qq, i }] });
   });
+  // Subject label: from the question payload (migration 116) if present, else
+  // fall back to meta.sections — same paper order, contiguous — so bands are
+  // labelled even before that migration reaches the DB.
+  const bands = rawBands.map((b, bi) => ({
+    ...b,
+    label: b.title ?? meta?.sections[bi]?.subject ?? null,
+  }));
   const multiSection = bands.length > 1;
+  const currentSubject = bands.find((b) => b.items.some((it) => it.i === index))?.label ?? null;
 
   return (
     <>
@@ -566,8 +574,8 @@ export function AttemptRunner({
       <div className="bg-background sticky top-0 z-10 mb-4 flex items-center justify-between gap-4 border-b py-2">
         <span className="min-w-0 truncate text-sm font-medium">
           Question {index + 1} / {questions.length}
-          {q.section_title && (
-            <span className="text-muted-foreground"> · {q.section_title}</span>
+          {currentSubject && (
+            <span className="text-muted-foreground"> · {currentSubject}</span>
           )}
         </span>
         <div className="flex items-center gap-3">
@@ -627,9 +635,9 @@ export function AttemptRunner({
         {bands.map((band) => (
           <div key={band.id}>
             {/* Subject header — only when the paper actually has sections. */}
-            {multiSection && band.title && (
+            {multiSection && band.label && (
               <div className="bg-muted/30 text-muted-foreground sticky top-0 z-10 -mx-2 mb-2 flex items-center justify-between gap-2 px-2 py-1.5 text-xs font-semibold backdrop-blur">
-                <span className="truncate">{band.title}</span>
+                <span className="truncate">{band.label}</span>
                 <span className="tabular-nums whitespace-nowrap">
                   {band.items.filter(({ qq }) => answered(qq.question_id)).length}/
                   {band.items.length}
