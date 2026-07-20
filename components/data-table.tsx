@@ -22,9 +22,11 @@ import {
   DropdownMenuCheckboxItem,
   DropdownMenuContent,
   DropdownMenuItem,
+  DropdownMenuLabel,
   DropdownMenuSeparator,
   DropdownMenuTrigger,
 } from "@/components/ui/dropdown-menu";
+import type { Column } from "@tanstack/react-table";
 import {
   Table,
   TableBody,
@@ -54,6 +56,21 @@ export function arrIncludes<TData>(
   return selected.includes(String(row.getValue(columnId)));
 }
 
+/** Human-readable label for the columns menu. Prefer an explicit `meta.label`
+ * on the column, then a string header, then a prettified id
+ * (`opens_at` → "Opens At", `statusLabel` → "Status Label") — never the raw id. */
+function columnLabel<TData, TValue>(column: Column<TData, TValue>): string {
+  const label = (column.columnDef.meta as { label?: string } | undefined)?.label;
+  if (label) return label;
+  const header = column.columnDef.header;
+  if (typeof header === "string" && header.trim()) return header;
+  return column.id
+    .replace(/([a-z0-9])([A-Z])/g, "$1 $2")
+    .replace(/[_-]+/g, " ")
+    .trim()
+    .replace(/\b\w/g, (c) => c.toUpperCase());
+}
+
 interface DataTableProps<TData, TValue> {
   columns: ColumnDef<TData, TValue>[];
   data: TData[];
@@ -66,6 +83,9 @@ interface DataTableProps<TData, TValue> {
   filters?: DataTableFilter[];
   /** Optional default sort applied on first render (users can still re-sort). */
   initialSorting?: SortingState;
+  /** Columns hidden on first render (users can re-show via the Columns menu).
+   * Keyed by column id → false to hide. */
+  initialColumnVisibility?: VisibilityState;
 }
 
 export function DataTable<TData, TValue>({
@@ -76,13 +96,14 @@ export function DataTable<TData, TValue>({
   meta,
   filters,
   initialSorting = [],
+  initialColumnVisibility = {},
 }: DataTableProps<TData, TValue>) {
   const [sorting, setSorting] = React.useState<SortingState>(initialSorting);
   const [columnFilters, setColumnFilters] = React.useState<ColumnFiltersState>(
     [],
   );
   const [columnVisibility, setColumnVisibility] =
-    React.useState<VisibilityState>({});
+    React.useState<VisibilityState>(initialColumnVisibility);
   const [rowSelection, setRowSelection] = React.useState({});
 
   const table = useReactTable({
@@ -173,20 +194,21 @@ export function DataTable<TData, TValue>({
               Columns <ChevronDown className="size-4" />
             </Button>
           </DropdownMenuTrigger>
-          <DropdownMenuContent align="end">
+          <DropdownMenuContent align="end" className="w-52">
+            <DropdownMenuLabel>Toggle columns</DropdownMenuLabel>
+            <DropdownMenuSeparator />
             {table
               .getAllColumns()
               .filter((c) => c.getCanHide())
               .map((column) => (
                 <DropdownMenuCheckboxItem
                   key={column.id}
-                  className="capitalize"
                   checked={column.getIsVisible()}
                   onCheckedChange={(value) =>
                     column.toggleVisibility(!!value)
                   }
                 >
-                  {column.id}
+                  {columnLabel(column)}
                 </DropdownMenuCheckboxItem>
               ))}
           </DropdownMenuContent>

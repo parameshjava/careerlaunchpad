@@ -7,7 +7,7 @@
 // (mobile-first) with a palette and a hard-stop countdown.
 import { useCallback, useEffect, useRef, useState } from "react";
 import { useRouter } from "next/navigation";
-import { CheckCircle2, TriangleAlert, Printer } from "lucide-react";
+import { Check, CheckCircle2, TriangleAlert, Printer } from "lucide-react";
 import { WarningSign } from "../warning-sign";
 import { createClient } from "@/lib/supabase/client";
 import { RichContent } from "@/components/exam/RichContent";
@@ -45,6 +45,7 @@ type Cache = {
   questions: Question[];
   answers: Record<string, string[]>;
   seen: string[];
+  lastPosition: number;
 };
 
 // Emphasised keyboard-shortcut chip for the anti-cheat notices (amber context).
@@ -97,6 +98,23 @@ export function AttemptRunner({
   useEffect(() => {
     currentCellRef.current?.scrollIntoView({ block: "nearest" });
   }, [index]);
+  // On first load, restore the student's cursor so a resumed student lands
+  // exactly where they left off. Prefer the persisted last_position (server +
+  // cache, survives an abort); fall back to the first unanswered question, then
+  // Q1. Runs once, after questions + answers are loaded.
+  const initedIndexRef = useRef(false);
+  const lastPositionRef = useRef<number | null>(null);
+  useEffect(() => {
+    if (initedIndexRef.current || loading || questions.length === 0) return;
+    initedIndexRef.current = true;
+    const saved = lastPositionRef.current;
+    if (saved != null && saved > 0 && saved < questions.length) {
+      setIndex(saved);
+      return;
+    }
+    const firstUnanswered = questions.findIndex((qq) => !(answers[qq.question_id]?.length));
+    if (firstUnanswered > 0) setIndex(firstUnanswered);
+  }, [loading, questions, answers]);
   const [deadline, setDeadline] = useState<number | null>(null);
   const [timeLeft, setTimeLeft] = useState<number | null>(null);
   const [submitting, setSubmitting] = useState(false);
@@ -163,6 +181,7 @@ export function AttemptRunner({
       setAnswers(cached.answers ?? {});
       setSeen(new Set(cached.seen ?? []));
       setDeadline(cached.deadline ?? null);
+      if (cached.lastPosition != null) lastPositionRef.current = cached.lastPosition;
       setLoading(false);
     }
 
@@ -191,8 +210,11 @@ export function AttemptRunner({
         attempt_id: string;
         duration_minutes: number;
         ends_at?: string;
+        last_position?: number | null;
         questions: Question[];
       };
+      // Server cursor wins over a stale cache (e.g. resumed on another device).
+      if (payload.last_position != null) lastPositionRef.current = payload.last_position;
       const serverAnswers: Record<string, string[]> = {};
       for (const q of payload.questions) serverAnswers[q.question_id] = q.selected_option_ids ?? [];
       // Server-authoritative deadline (duration clamped to the session close);
@@ -369,8 +391,15 @@ export function AttemptRunner({
       }
       saveTimers.current = {};
       setIndex(i);
+      // Persist the cursor so a resume lands exactly here (server = durable
+      // across abort/device; cache = instant restore on a plain reload).
+      lastPositionRef.current = i;
+      persist({ lastPosition: i });
+      supabase.rpc("save_exam_position", { p_attempt_id: attemptId, p_position: i }).then(({ error: e }) => {
+        if (e) console.warn("save_exam_position failed", e.message);
+      });
     },
-    [attemptId, supabase],
+    [attemptId, supabase, persist],
   );
 
   function choose(q: Question, optionId: string) {
@@ -544,13 +573,21 @@ export function AttemptRunner({
     (qq) => !answered(qq.question_id) && seen.has(qq.question_id),
   ).length;
   const notVisitedCount = questions.length - answeredCount - seenCount;
-  const bands: { id: string; title: string | null; items: { qq: Question; i: number }[] }[] = [];
+  const rawBands: { id: string; title: string | null; items: { qq: Question; i: number }[] }[] = [];
   questions.forEach((qq, i) => {
-    const last = bands[bands.length - 1];
+    const last = rawBands[rawBands.length - 1];
     if (last && last.id === qq.section_id) last.items.push({ qq, i });
-    else bands.push({ id: qq.section_id, title: qq.section_title, items: [{ qq, i }] });
+    else rawBands.push({ id: qq.section_id, title: qq.section_title, items: [{ qq, i }] });
   });
+  // Subject label: from the question payload (migration 116) if present, else
+  // fall back to meta.sections — same paper order, contiguous — so bands are
+  // labelled even before that migration reaches the DB.
+  const bands = rawBands.map((b, bi) => ({
+    ...b,
+    label: b.title ?? meta?.sections[bi]?.subject ?? null,
+  }));
   const multiSection = bands.length > 1;
+  const currentSubject = bands.find((b) => b.items.some((it) => it.i === index))?.label ?? null;
 
   return (
     <>
@@ -562,12 +599,15 @@ export function AttemptRunner({
       onCut={(e) => e.preventDefault()}
       onContextMenu={(e) => e.preventDefault()}
     >
-      {/* Header: progress + timer */}
-      <div className="bg-background sticky top-0 z-10 mb-4 flex items-center justify-between gap-4 border-b py-2">
+      {/* Header: progress + timer. Bleeds over the container's px/py padding
+          (-mx / -mt + re-pad) so its opaque background fully masks content
+          scrolling underneath — otherwise the amber banner peeks above/beside
+          it on scroll. z-20 keeps it above the palette's own sticky subheaders. */}
+      <div className="bg-background sticky top-0 z-20 mb-4 -mx-4 -mt-4 flex items-center justify-between gap-4 border-b px-4 pt-4 pb-2 sm:-mx-6 sm:px-6">
         <span className="min-w-0 truncate text-sm font-medium">
           Question {index + 1} / {questions.length}
-          {q.section_title && (
-            <span className="text-muted-foreground"> · {q.section_title}</span>
+          {currentSubject && (
+            <span className="text-muted-foreground"> · {currentSubject}</span>
           )}
         </span>
         <div className="flex items-center gap-3">
@@ -626,10 +666,12 @@ export function AttemptRunner({
       <div className="bg-muted/30 mb-4 max-h-52 overflow-y-auto rounded-md border p-2">
         {bands.map((band) => (
           <div key={band.id}>
-            {/* Subject header — only when the paper actually has sections. */}
-            {multiSection && band.title && (
-              <div className="bg-muted/30 text-muted-foreground sticky top-0 z-10 -mx-2 mb-2 flex items-center justify-between gap-2 px-2 py-1.5 text-xs font-semibold backdrop-blur">
-                <span className="truncate">{band.title}</span>
+            {/* Subject header — only when the paper actually has sections.
+                Bold, brand-tinted highlight bar with a left accent so each
+                section reads as a clear divider in the palette. */}
+            {multiSection && band.label && (
+              <div className="bg-primary/10 text-primary sticky top-0 z-10 -mx-2 mb-2 flex items-center justify-between gap-2 border-l-4 border-primary px-2 py-1.5 text-xs font-bold uppercase tracking-wide backdrop-blur">
+                <span className="truncate">{band.label}</span>
                 <span className="tabular-nums whitespace-nowrap">
                   {band.items.filter(({ qq }) => answered(qq.question_id)).length}/
                   {band.items.length}
@@ -642,7 +684,7 @@ export function AttemptRunner({
                   key={qq.question_id}
                   ref={i === index ? currentCellRef : null}
                   onClick={() => goTo(i)}
-                  className={`flex aspect-square items-center justify-center rounded-md border text-xs font-medium tabular-nums transition ${
+                  className={`relative flex aspect-square items-center justify-center rounded-md border text-xs font-medium tabular-nums transition ${
                     answered(qq.question_id)
                       ? "border-emerald-500 bg-emerald-500 text-white dark:border-emerald-600 dark:bg-emerald-600"
                       : seen.has(qq.question_id)
@@ -651,6 +693,12 @@ export function AttemptRunner({
                   } ${i === index ? "ring-primary border-primary ring-2" : ""}`}
                 >
                   {i + 1}
+                  {/* Answered → corner tick, so "done" reads even in greyscale. */}
+                  {answered(qq.question_id) && (
+                    <span className="bg-background text-emerald-600 dark:bg-background absolute -top-1 -right-1 flex size-3.5 items-center justify-center rounded-full">
+                      <Check className="size-2.5" strokeWidth={3.5} />
+                    </span>
+                  )}
                 </button>
               ))}
             </div>
