@@ -72,6 +72,14 @@ begin
   if not found then raise exception 'Attempt not found'; end if;
   if not public.is_exam_staff_for_session(v_attempt.session_id) then raise exception 'Forbidden'; end if;
   if v_attempt.status <> 'aborted' then raise exception 'This attempt is not awaiting resume'; end if;
+  -- Never resume into a closed/graded sitting: the student can't re-enter
+  -- (start_exam_attempt rejects a closed window), so the attempt would strand
+  -- in_progress and ungraded in a closed session (that exact bug is what left an
+  -- aborted student unable to see published results).
+  if exists (select 1 from public.exam_session
+             where id = v_attempt.session_id and status in ('closed','graded')) then
+    raise exception 'This sitting is closed — resume is no longer possible.';
+  end if;
 
   -- Atomic cap enforcement: the guard lives in the UPDATE's WHERE so two
   -- concurrent resume calls (e.g. a double-click) can't both push past 2.
@@ -333,3 +341,21 @@ returns jsonb language sql stable security definer set search_path = public as $
     );
 $$;
 grant execute on function public.list_my_exam_sessions() to authenticated;
+
+-- 8. Backfill: finalize attempts stranded ungraded in already-closed/graded
+-- sittings. Two ways this happens: (a) a sitting closed before the grading
+-- fixes above landed, leaving aborted attempts ungraded; (b) an attempt was
+-- resumed after the sitting closed (now blocked by resume_exam_attempt), leaving
+-- it in_progress in a closed sitting. Either way, grade it so its partial marks
+-- and published results appear. Idempotent — re-running only touches attempts
+-- still in a non-terminal state.
+do $$
+declare v_ids uuid[];
+begin
+  select array_agg(a.id) into v_ids
+  from public.exam_attempt a
+  join public.exam_session s on s.id = a.session_id
+  where a.status in ('in_progress','aborted')
+    and s.status in ('closed','graded');
+  if v_ids is not null then perform public._grade_attempts(v_ids); end if;
+end $$;
