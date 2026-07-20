@@ -31,6 +31,9 @@ export type Session = {
   sections: Section[];
   // Student's obtained score — only present once results are published (RPC 114).
   score: number | null;
+  // Anti-cheat close state (RPC 115). `aborted` + resume_count 0 = self-resumable.
+  attempt_status?: string | null;
+  resume_count?: number;
 };
 
 export type ExamStatus = "Open" | "Scheduled" | "Submitted" | "Result ready" | "Closed";
@@ -149,8 +152,15 @@ const colStatus: ColumnDef<ExamRow> = {
   header: "Status",
   filterFn: arrIncludes,
   cell: ({ row }) => {
-    const s = row.original.statusLabel;
-    return <Badge variant="secondary" className={STATUS_STYLES[s]}>{s}</Badge>;
+    const { statusLabel: s, attempt_status, resume_count } = row.original;
+    return (
+      <div>
+        <Badge variant="secondary" className={STATUS_STYLES[s]}>{s}</Badge>
+        {attempt_status === "aborted" && (resume_count ?? 0) > 0 && (
+          <span className="text-muted-foreground mt-0.5 block text-xs">Ask your administrator to resume</span>
+        )}
+      </div>
+    );
   },
 };
 

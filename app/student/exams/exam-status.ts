@@ -14,6 +14,17 @@ export function decorate(s: Session, now: number): ExamRow {
   const beforeWindow = opens == null || now < opens - GRACE_MS;
   const afterWindow = closes != null && now > closes + GRACE_MS;
 
+  // Anti-cheat close: an aborted attempt is locked. resume_count 0 → the student
+  // may reopen it once themselves (in window); otherwise it's admin-only.
+  if (s.attempt_status === "aborted") {
+    const selfResumable = (s.resume_count ?? 0) === 0 && !beforeWindow && !afterWindow;
+    return {
+      ...s,
+      statusLabel: selfResumable ? "Open" : "Closed",
+      action: selfResumable ? "resume" : null,
+    };
+  }
+
   let statusLabel: ExamStatus;
   let action: ExamAction = null;
   if (done) {
