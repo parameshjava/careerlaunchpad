@@ -8,7 +8,6 @@ import { StudentComparisonView } from "@/components/analytics/StudentComparisonV
 import { getAuthContext } from "@/lib/auth";
 import { createClient } from "@/lib/supabase/server";
 import { fetchStudentComparison } from "@/lib/analytics-query";
-import { UpcomingExamsBanner } from "@/app/student/exams/UpcomingExamsBanner";
 
 export const metadata: Metadata = { title: "My Insights" };
 
@@ -40,8 +39,6 @@ export default async function StudentInsightsPage() {
 
   return (
     <div className="mx-auto w-full max-w-5xl space-y-6">
-      <UpcomingExamsBanner />
-
       <div className="flex flex-col gap-3 sm:flex-row sm:items-center sm:justify-between">
         <div>
           <h1 className="text-2xl font-semibold tracking-tight">My Insights</h1>

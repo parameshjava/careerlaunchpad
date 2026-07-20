@@ -152,9 +152,13 @@ function NavLinks({
 export function ConsoleShell({
   nav,
   children,
+  banner,
 }: {
   nav: NavSection[];
   children: React.ReactNode;
+  /** Optional constant bar pinned above the scrolling content, on every page of
+   * this surface (e.g. the student upcoming-exams banner). */
+  banner?: React.ReactNode;
 }) {
   const pathname = usePathname();
   const [open, setOpen] = useState(false); // mobile drawer
@@ -225,6 +229,9 @@ export function ConsoleShell({
             </button>
           </div>
         )}
+
+        {/* Constant top bar (above the scroll area) — visible on every page. */}
+        {banner}
 
         <main className="min-h-0 flex-1 overflow-y-auto px-4 py-6 sm:px-6 sm:py-8">
           <div className="mx-auto max-w-screen-2xl">{children}</div>
