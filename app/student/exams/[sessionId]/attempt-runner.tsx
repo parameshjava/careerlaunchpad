@@ -8,7 +8,7 @@
 import { useCallback, useEffect, useRef, useState } from "react";
 import { useRouter } from "next/navigation";
 import { CheckCircle2, TriangleAlert, Printer } from "lucide-react";
-import { NoTabSwitch } from "../no-tab-switch";
+import { WarningSign } from "../warning-sign";
 import { createClient } from "@/lib/supabase/client";
 import { RichContent } from "@/components/exam/RichContent";
 import { Button } from "@/components/ui/button";
@@ -380,7 +380,7 @@ export function AttemptRunner({
           every few seconds.
         </p>
         <div className="mt-4 flex max-w-sm items-center gap-3 rounded-md border border-amber-300 bg-amber-50 p-3 text-amber-900 dark:border-amber-900/60 dark:bg-amber-950/40 dark:text-amber-200">
-          <NoTabSwitch className="size-20 shrink-0" />
+          <WarningSign className="size-12 shrink-0" />
           <p className="text-xs leading-relaxed">
             Once the exam begins, moving away from this screen — switching tabs or apps,
             Alt+Tab / Cmd+Tab, or minimising — will submit your exam, for security reasons.
