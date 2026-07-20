@@ -87,6 +87,7 @@ export const columns: ColumnDef<Student>[] = [
   },
   {
     accessorKey: "completeness",
+    meta: { label: "Profile" },
     header: ({ column }) => (
       <Button
         variant="ghost"
@@ -129,6 +130,7 @@ export const columns: ColumnDef<Student>[] = [
   },
   {
     accessorKey: "joinedAt",
+    meta: { label: "Joined" },
     header: ({ column }) => (
       <Button
         variant="ghost"
