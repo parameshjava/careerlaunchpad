@@ -42,6 +42,7 @@ type Cache = {
   deadline: number;
   questions: Question[];
   answers: Record<string, string[]>;
+  seen: string[];
 };
 
 // Emphasised keyboard-shortcut chip for the anti-cheat notices (amber context).
@@ -84,6 +85,9 @@ export function AttemptRunner({
   const [attemptId, setAttemptId] = useState("");
   const [questions, setQuestions] = useState<Question[]>([]);
   const [answers, setAnswers] = useState<Record<string, string[]>>({});
+  // Question ids the student has landed on — drives the amber "seen but not
+  // answered" palette state. Persisted like answers so it survives a resume.
+  const [seen, setSeen] = useState<Set<string>>(new Set());
   const [index, setIndex] = useState(0);
   // Palette pagination — 10 numbers per page so 60+ question papers don't bury
   // the question under rows of buttons on phones. Follows the current question.
@@ -156,6 +160,7 @@ export function AttemptRunner({
       setAttemptId(cached.attemptId);
       setQuestions(cached.questions);
       setAnswers(cached.answers ?? {});
+      setSeen(new Set(cached.seen ?? []));
       setDeadline(cached.deadline ?? null);
       setLoading(false);
     }
@@ -261,6 +266,15 @@ export function AttemptRunner({
     const t = setInterval(tick, 1000);
     return () => clearInterval(t);
   }, [deadline, doSubmit]);
+
+  // Mark the current question as "seen" the moment it's shown.
+  useEffect(() => {
+    const qid = questions[index]?.question_id;
+    if (!qid || seen.has(qid)) return;
+    const next = new Set(seen).add(qid);
+    setSeen(next);
+    persist({ seen: [...next] });
+  }, [index, questions, seen, persist]);
 
   // Anti-cheat: detect the student leaving the exam window. Active only while an
   // attempt is live. First leave warns; the second submits as-is and shows the
@@ -593,7 +607,9 @@ export function AttemptRunner({
                       ? "bg-primary text-primary-foreground"
                       : answered(qq.question_id)
                         ? "bg-emerald-100 text-emerald-700 dark:bg-emerald-950 dark:text-emerald-300"
-                        : "bg-muted"
+                        : seen.has(qq.question_id)
+                          ? "bg-amber-100 text-amber-700 dark:bg-amber-950 dark:text-amber-300"
+                          : "bg-muted"
                   }`}
                 >
                   {i + 1}
@@ -609,6 +625,19 @@ export function AttemptRunner({
         >
           ›
         </button>
+      </div>
+
+      {/* Palette legend */}
+      <div className="text-muted-foreground mb-4 flex flex-wrap justify-center gap-x-4 gap-y-1 text-xs">
+        <span className="flex items-center gap-1.5">
+          <span className="size-3 rounded-sm bg-emerald-100 dark:bg-emerald-950" /> Answered
+        </span>
+        <span className="flex items-center gap-1.5">
+          <span className="size-3 rounded-sm bg-amber-100 dark:bg-amber-950" /> Seen
+        </span>
+        <span className="flex items-center gap-1.5">
+          <span className="bg-muted size-3 rounded-sm" /> Not visited
+        </span>
       </div>
 
       {/* Question */}
