@@ -27,6 +27,11 @@ on:
         required: false
         default: ''
 
+# This workflow never uses the default GITHUB_TOKEN (it pushes to the separate
+# backup repo with BACKUP_REPO_TOKEN and makes no API/checkout calls against this
+# repo), so grant it no permissions at all (CodeQL: least-privilege token).
+permissions: {}
+
 concurrency:
   group: db-backup
   cancel-in-progress: false
