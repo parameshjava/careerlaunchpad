@@ -253,6 +253,39 @@ begin
 end;
 $$;
 
+-- 6b. close_expired_sessions: the pg_cron auto-close (migration 111) is the
+-- dominant close path (sittings expire on their own). Its version graded only
+-- `in_progress` attempts, so an auto-closed sitting left `aborted` attempts
+-- ungraded forever (no partial marks, permanently "absent" on results). Widen it
+-- to grade `aborted` too. Same body as 111 otherwise; the cron schedule keeps
+-- pointing at this function by name. Idempotent.
+create or replace function public.close_expired_sessions()
+returns integer language plpgsql security definer set search_path = public as $$
+declare
+  v_session_id uuid;
+  v_attempts uuid[];
+  v_closed integer := 0;
+begin
+  for v_session_id in
+    select id from public.exam_session
+    where status in ('scheduled', 'open')
+      and closes_at is not null
+      and now() > closes_at + interval '2 minutes'
+  loop
+    -- Finalize anyone who answered but never submitted, plus aborted attempts
+    -- (blank/unanswered questions score 0 via _grade_attempts).
+    select array_agg(id) into v_attempts
+      from public.exam_attempt
+      where session_id = v_session_id and status in ('in_progress','aborted');
+    if v_attempts is not null then
+      perform public._grade_attempts(v_attempts);
+    end if;
+    update public.exam_session set status = 'closed' where id = v_session_id;
+    v_closed := v_closed + 1;
+  end loop;
+  return v_closed;
+end $$;
+
 -- 7. list_my_exam_sessions: expose attempt_status + resume_count --------------
 -- Identical to migration 114 plus two keys.
 create or replace function public.list_my_exam_sessions()
