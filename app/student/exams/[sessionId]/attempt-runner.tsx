@@ -8,6 +8,7 @@
 import { useCallback, useEffect, useRef, useState } from "react";
 import { useRouter } from "next/navigation";
 import { CheckCircle2, TriangleAlert, Printer } from "lucide-react";
+import { NoTabSwitch } from "../no-tab-switch";
 import { createClient } from "@/lib/supabase/client";
 import { RichContent } from "@/components/exam/RichContent";
 import { Button } from "@/components/ui/button";
@@ -378,10 +379,13 @@ export function AttemptRunner({
           Please wait — the question paper will open automatically. This screen updates
           every few seconds.
         </p>
-        <p className="mt-4 max-w-sm rounded-md border border-amber-300 bg-amber-50 p-3 text-xs leading-relaxed text-amber-900 dark:border-amber-900/60 dark:bg-amber-950/40 dark:text-amber-200">
-          Once the exam begins, moving away from this screen — switching tabs or apps,
-          Alt+Tab / Cmd+Tab, or minimising — will submit your exam, for security reasons.
-        </p>
+        <div className="mt-4 flex max-w-sm flex-col items-center gap-3 sm:flex-row">
+          <NoTabSwitch className="h-16 w-auto shrink-0" />
+          <p className="rounded-md border border-amber-300 bg-amber-50 p-3 text-xs leading-relaxed text-amber-900 dark:border-amber-900/60 dark:bg-amber-950/40 dark:text-amber-200">
+            Once the exam begins, moving away from this screen — switching tabs or apps,
+            Alt+Tab / Cmd+Tab, or minimising — will submit your exam, for security reasons.
+          </p>
+        </div>
         <Button className="mt-6" variant="outline" onClick={() => router.push("/student/exams")}>
           Back to my exams
         </Button>
