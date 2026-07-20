@@ -52,7 +52,7 @@ Raw brand vars (`var(--brand-gradient)`, `var(--brand-gradient-135)`) are reserv
 
 ## Tabs
 
-Use **coloured folder tabs** everywhere — never the default pill `TabsList`. The segmented pills read as generic dev-tool controls; on user-facing surfaces (students especially) the folder tabs with a status dot are far easier to recognise. `components/ui/tabs` with `variant="line"`, boxed triggers on a full-width bottom border, and a small coloured dot per tab. Put the count in each trigger, e.g. `Upcoming ({n})`.
+Use **coloured folder tabs** everywhere — never the default pill `TabsList`. The segmented pills read as generic dev-tool controls; on user-facing surfaces (students especially) the folder tabs are far easier to recognise. Pattern: **inactive tabs are solid-filled in their hue** (white label); the **active tab is the card colour** (white/`bg-card`) with a coloured label, so it reads as the open folder connecting to the content. `components/ui/tabs` with `variant="line"`, boxed triggers on a full-width bottom border. Put the count in each trigger, e.g. `Upcoming ({n})`.
 
 Recipe (matches Exam papers + student My exams):
 
@@ -62,16 +62,15 @@ Recipe (matches Exam papers + student My exams):
     variant="line"
     className="group-data-horizontal/tabs:h-auto w-full justify-start gap-0 rounded-none border-b p-0"
   >
-    {TABS.map(([value, label, dot, activeCls]) => (
+    {TABS.map(([value, label, colorCls]) => (
       <TabsTrigger
         key={value}
         value={value}
         className={cn(
-          "-mb-px h-auto flex-none rounded-t-md rounded-b-none border border-b-0 border-transparent px-4 py-2 text-muted-foreground shadow-none after:hidden data-active:shadow-none",
-          activeCls,
+          "-mb-px h-auto flex-none rounded-t-md rounded-b-none border border-b-0 px-4 py-2 font-medium shadow-none transition-colors after:hidden data-active:font-semibold data-active:shadow-none",
+          colorCls,
         )}
       >
-        <span className={cn("size-2 rounded-full", dot)} aria-hidden />
         {label}
       </TabsTrigger>
     ))}
@@ -81,11 +80,11 @@ Recipe (matches Exam papers + student My exams):
 </Tabs>
 ```
 
-**Colours by meaning** (reuse the status ramp): amber = draft / in-progress · emerald = live / upcoming · sky = done / past · violet = results. Make the tabs read as clearly coloured, not near-white — **every** trigger carries its hue (coloured dot + coloured label), and the **active** tab fills with a visible `-100` tint. Drop `text-muted-foreground` from the base trigger; put the colour on each trigger, e.g. for emerald:
+**Colours by meaning** (reuse the status ramp): amber = draft / in-progress · emerald = live / upcoming · sky = done / past · violet = results. Inactive = `-600` fill + white label; active = `bg-card` + `-700` label (`-300` in dark). The `line` variant forces `bg-transparent`, so the fills need the `!` important suffix. e.g. for emerald:
 
 ```
-text-emerald-700 hover:text-emerald-800 data-active:border-emerald-400 data-active:bg-emerald-100 data-active:text-emerald-900
-dark:text-emerald-400 dark:hover:text-emerald-300 dark:data-active:border-emerald-600 dark:data-active:bg-emerald-900/60 dark:data-active:text-emerald-100
+bg-emerald-600! text-white! border-emerald-600! hover:bg-emerald-700!
+data-active:bg-card! data-active:text-emerald-700! data-active:border-emerald-500! dark:data-active:text-emerald-300!
 ```
 
 ## Dialogs & confirmations

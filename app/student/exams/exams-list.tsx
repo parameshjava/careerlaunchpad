@@ -83,26 +83,23 @@ export function ExamsList() {
             [
               "upcoming",
               `Upcoming (${upcoming.length})`,
-              "bg-emerald-500",
-              "text-emerald-700 hover:text-emerald-800 data-active:border-emerald-400 data-active:bg-emerald-100 data-active:text-emerald-900 dark:text-emerald-400 dark:hover:text-emerald-300 dark:data-active:border-emerald-600 dark:data-active:bg-emerald-900/60 dark:data-active:text-emerald-100",
+              "bg-emerald-600! text-white! border-emerald-600! hover:bg-emerald-700! data-active:bg-card! data-active:text-emerald-700! data-active:border-emerald-500! dark:data-active:text-emerald-300!",
             ],
             [
               "past",
               `Past (${past.length})`,
-              "bg-sky-500",
-              "text-sky-700 hover:text-sky-800 data-active:border-sky-400 data-active:bg-sky-100 data-active:text-sky-900 dark:text-sky-400 dark:hover:text-sky-300 dark:data-active:border-sky-600 dark:data-active:bg-sky-900/60 dark:data-active:text-sky-100",
+              "bg-sky-600! text-white! border-sky-600! hover:bg-sky-700! data-active:bg-card! data-active:text-sky-700! data-active:border-sky-500! dark:data-active:text-sky-300!",
             ],
           ] as const
-        ).map(([value, label, dot, colorCls]) => (
+        ).map(([value, label, colorCls]) => (
           <TabsTrigger
             key={value}
             value={value}
             className={cn(
-              "-mb-px h-auto flex-none rounded-t-md rounded-b-none border border-b-0 border-transparent px-4 py-2 font-medium shadow-none after:hidden data-active:font-semibold data-active:shadow-none",
+              "-mb-px h-auto flex-none rounded-t-md rounded-b-none border border-b-0 px-4 py-2 font-medium shadow-none transition-colors after:hidden data-active:font-semibold data-active:shadow-none",
               colorCls,
             )}
           >
-            <span className={cn("size-2 rounded-full", dot)} aria-hidden />
             {label}
           </TabsTrigger>
         ))}
