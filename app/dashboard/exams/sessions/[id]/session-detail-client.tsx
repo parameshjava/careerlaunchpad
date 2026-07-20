@@ -12,6 +12,7 @@ import { printAs } from "./paper-print";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
+import { RosterTable } from "./roster-table";
 import type { RosterEntry, SessionSummary } from "@/lib/exam-query";
 
 export function SessionDetailClient({
@@ -131,43 +132,7 @@ export function SessionDetailClient({
           {roster.length === 0 ? (
             <p className="text-muted-foreground text-sm">No students assigned yet.</p>
           ) : (
-            <ul className="grid gap-2">
-              {roster.map((r) => (
-                <li key={r.studentId} className="flex items-center justify-between rounded-md border p-2 text-sm">
-                  <div className="min-w-0">
-                    <div className="truncate">{r.name ?? r.email ?? r.studentId}</div>
-                    <div className="text-muted-foreground text-xs">{r.email}</div>
-                  </div>
-                  <div className="flex flex-col items-end gap-1">
-                    <div className="flex items-center gap-3">
-                      {r.attemptStatus === "aborted" ? (
-                        <Badge variant="destructive">Aborted</Badge>
-                      ) : (
-                        <Badge variant="outline">{r.rosterStatus}</Badge>
-                      )}
-                      {r.score != null && <span className="tabular-nums">{r.score}</span>}
-                      {/* Resume budget = 3 total (mirrors migration 119's cap). */}
-                      {r.attemptId && r.attemptStatus === "aborted" && r.resumeCount < 3 && (
-                        <Button
-                          size="sm"
-                          variant="secondary"
-                          disabled={!!busy}
-                          onClick={() => action(`resume-${r.studentId}`, `/api/exam/attempts/${r.attemptId}/resume`)}
-                        >
-                          Resume
-                        </Button>
-                      )}
-                    </div>
-                    {(r.leaveCount > 0 || r.abortCount > 0) && (
-                      <span className="text-muted-foreground text-xs">
-                        Alt-Tab ×{r.leaveCount} · aborted ×{r.abortCount}
-                        {r.resumeCount > 0 && ` · resumed ×${r.resumeCount}`}
-                      </span>
-                    )}
-                  </div>
-                </li>
-              ))}
-            </ul>
+            <RosterTable roster={roster} sessionId={session.id} questionCount={session.questionCount} />
           )}
         </CardContent>
       </Card>

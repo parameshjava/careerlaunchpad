@@ -458,6 +458,9 @@ export type RosterEntry = {
   leaveCount: number;
   abortCount: number;
   resumeCount: number;
+  lastPosition: number | null;
+  startedAt: string | null;
+  submittedAt: string | null;
 };
 
 function mapSessionRow(r: Record<string, unknown>): SessionSummary {
@@ -601,7 +604,7 @@ export async function fetchRoster(
     studentIds.length
       ? supabase.from("student_profile").select("user_id, full_name, roll_number").in("user_id", studentIds)
       : Promise.resolve({ data: [] as Record<string, unknown>[] }),
-    supabase.from("exam_attempt").select("id, student_id, status, score, leave_count, abort_count, resume_count").eq("session_id", sessionId),
+    supabase.from("exam_attempt").select("id, student_id, status, score, leave_count, abort_count, resume_count, last_position, started_at, submitted_at").eq("session_id", sessionId),
   ]);
   const emailById = new Map<string, string | null>(
     (accounts.data ?? []).map((a) => [a.id as string, (a.email as string | null) ?? null]),
@@ -612,7 +615,7 @@ export async function fetchRoster(
   const rollById = new Map<string, string | null>(
     (profiles.data ?? []).map((p) => [p.user_id as string, (p.roll_number as string | null) ?? null]),
   );
-  const byStudent = new Map<string, { attemptId: string; status: string; score: number | null; leaveCount: number; abortCount: number; resumeCount: number }>(
+  const byStudent = new Map<string, { attemptId: string; status: string; score: number | null; leaveCount: number; abortCount: number; resumeCount: number; lastPosition: number | null; startedAt: string | null; submittedAt: string | null }>(
     (attempts.data ?? []).map((a) => [a.student_id as string, {
       attemptId: a.id as string,
       status: a.status as string,
@@ -620,6 +623,9 @@ export async function fetchRoster(
       leaveCount: (a.leave_count as number) ?? 0,
       abortCount: (a.abort_count as number) ?? 0,
       resumeCount: (a.resume_count as number) ?? 0,
+      lastPosition: (a.last_position as number | null) ?? null,
+      startedAt: (a.started_at as string | null) ?? null,
+      submittedAt: (a.submitted_at as string | null) ?? null,
     }]),
   );
 
@@ -638,6 +644,9 @@ export async function fetchRoster(
       leaveCount: attempt?.leaveCount ?? 0,
       abortCount: attempt?.abortCount ?? 0,
       resumeCount: attempt?.resumeCount ?? 0,
+      lastPosition: attempt?.lastPosition ?? null,
+      startedAt: attempt?.startedAt ?? null,
+      submittedAt: attempt?.submittedAt ?? null,
     };
   });
 }
