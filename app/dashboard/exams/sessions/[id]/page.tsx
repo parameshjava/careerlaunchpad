@@ -29,7 +29,7 @@ export default async function SessionDetailPage({
   ]);
 
   return (
-    <div className="mx-auto max-w-4xl">
+    <div className="mx-auto max-w-7xl">
       <Link
         href={`/dashboard/exams/papers?tab=${
           session.status === "closed" || session.status === "graded" ? "closed" : "active"
