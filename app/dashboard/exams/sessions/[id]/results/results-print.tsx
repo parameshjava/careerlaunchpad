@@ -187,7 +187,7 @@ export function ResultsPrint({
                   ))}
                   <td className="num font-semibold">{r.score}</td>
                   {totalMarks != null && <td className="num">{pct(r.score as number)}</td>}
-                  <td>{r.abortCount > 0 ? "AB" : "—"}</td>
+                  <td>{r.abortCount > 0 ? `AB (aborted ×${r.abortCount})` : "—"}</td>
                 </tr>
               );
             })}
@@ -201,7 +201,7 @@ export function ResultsPrint({
                 ))}
                 <td className="num">—</td>
                 {totalMarks != null && <td className="num">—</td>}
-                <td>{r.abortCount > 0 ? "AB" : "Absent"}</td>
+                <td>{r.abortCount > 0 ? `AB (aborted ×${r.abortCount})` : "Absent"}</td>
               </tr>
             ))}
             {roster.length === 0 && (
@@ -214,7 +214,7 @@ export function ResultsPrint({
           </tbody>
         </table>
 
-        <p className="mt-2 text-xs text-black/70">AB = attempt aborted — partial marks shown for questions answered. Absent = did not attempt. Columns show marks obtained per subject.</p>
+        <p className="mt-2 text-xs text-black/70">AB (aborted ×N) = the exam was force-closed N time(s) for leaving the window; partial marks shown for questions answered. Absent = did not attempt. Columns show marks obtained per subject.</p>
 
         {/* Footer */}
         <div className="mt-8 flex items-end justify-between text-sm" style={{ breakInside: "avoid" }}>
