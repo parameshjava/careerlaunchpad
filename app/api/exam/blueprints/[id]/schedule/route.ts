@@ -48,9 +48,12 @@ export async function POST(req: NextRequest, { params }: { params: Promise<{ id:
       { status: 409 },
     );
 
+  // Scheduling is the final step: set the duration AND publish the exam. Until
+  // now it stayed in Draft (the paper is generated at …/publish but not made
+  // live), so an unscheduled exam is never shown as published.
   const { error: eErr } = await supabase
     .from("exam")
-    .update({ duration_minutes: duration })
+    .update({ duration_minutes: duration, status: "published" })
     .eq("id", id);
   if (eErr) return NextResponse.json({ ok: false, error: eErr.message }, { status: 500 });
 

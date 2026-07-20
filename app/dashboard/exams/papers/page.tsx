@@ -11,7 +11,17 @@ import { ExamsBrowser } from "./exams-browser";
 // Data via fetchExamCards (RLS bounds the rows; college admins see their college,
 // global admins see all — scopedCollege keeps additive college roles from
 // narrowing an owner's view).
-export default async function ExamPapersPage() {
+const TABS = ["draft", "active", "closed"] as const;
+
+export default async function ExamPapersPage({
+  searchParams,
+}: {
+  searchParams: Promise<{ tab?: string }>;
+}) {
+  const { tab } = await searchParams;
+  const initialTab = (TABS as readonly string[]).includes(tab ?? "")
+    ? (tab as "draft" | "active" | "closed")
+    : "active";
   const ctx = await getAuthContext();
   if (!ctx) redirect("/auth/login");
   if (!ctx.provisioned || ctx.status === "suspended") redirect("/auth/no-access");
@@ -43,7 +53,7 @@ export default async function ExamPapersPage() {
         )}
       </header>
 
-      <ExamsBrowser exams={exams} />
+      <ExamsBrowser exams={exams} initialTab={initialTab} />
     </div>
   );
 }

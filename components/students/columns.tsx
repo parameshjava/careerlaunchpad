@@ -86,6 +86,36 @@ export const columns: ColumnDef<Student>[] = [
     ),
   },
   {
+    accessorKey: "completeness",
+    header: ({ column }) => (
+      <Button
+        variant="ghost"
+        className="-ml-3 h-8"
+        onClick={() => column.toggleSorting(column.getIsSorted() === "asc")}
+      >
+        Profile <ArrowUpDown className="size-3.5" />
+      </Button>
+    ),
+    // Imported/invited rows have no profile yet → sort them last, show "—".
+    sortUndefined: "last",
+    cell: ({ row }) => {
+      const pct = row.getValue("completeness") as number | null;
+      if (pct == null) return <span className="text-muted-foreground">—</span>;
+      const done = pct === 100;
+      return (
+        <div className="flex items-center gap-2">
+          <div className="bg-muted h-1.5 w-16 overflow-hidden rounded-full">
+            <div
+              className={done ? "h-full rounded-full bg-emerald-500" : "h-full rounded-full bg-primary"}
+              style={{ width: `${pct}%` }}
+            />
+          </div>
+          <span className="text-muted-foreground w-9 text-right text-xs tabular-nums">{pct}%</span>
+        </div>
+      );
+    },
+  },
+  {
     accessorKey: "stage",
     header: "Status",
     cell: ({ row }) => {

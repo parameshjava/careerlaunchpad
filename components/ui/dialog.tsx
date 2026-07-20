@@ -86,10 +86,15 @@ function DialogContent({
 }
 
 function DialogHeader({ className, ...props }: React.ComponentProps<"div">) {
+  // Tinted title band: bleeds to the content edges, rounded top, bottom divider.
+  // `pr-12` clears the close (×) button. Put only the title here; body goes below.
   return (
     <div
       data-slot="dialog-header"
-      className={cn("flex flex-col gap-2", className)}
+      className={cn(
+        "-mx-4 -mt-4 flex flex-col gap-1 rounded-t-xl border-b bg-muted/50 px-4 py-3 pr-12",
+        className
+      )}
       {...props}
     />
   )

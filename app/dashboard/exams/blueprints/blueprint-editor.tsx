@@ -33,9 +33,11 @@ import { CollegePicker, type College } from "@/components/analytics/CollegePicke
 import { DateTimePicker } from "@/components/ui/date-time-picker";
 import { Stepper } from "@/components/students/registration-fields";
 import { RichContent } from "@/components/exam/RichContent";
+import { createClient } from "@/lib/supabase/client";
 import {
   DIFFICULTIES,
   DIFFICULTY_LABELS,
+  fetchPaperForPrint,
   type Blueprint,
   type Chapter,
   type Difficulty,
@@ -93,7 +95,7 @@ export function BlueprintEditor({
   initialCollege = null,
   collegeLocked = false,
   initialOpensAt = null,
-  paper = null,
+  paper: initialPaper = null,
 }: {
   blueprint?: Blueprint;
   /** Create flow: college prefilled (locked admins) or null (owner/admin picks). */
@@ -102,10 +104,14 @@ export function BlueprintEditor({
   collegeLocked?: boolean;
   /** Edit mode: the sitting's scheduled start (ISO) — prefills the Schedule step. */
   initialOpensAt?: string | null;
-  /** Edit mode: the generated paper, for the read-only preview on Review. */
+  /** The generated paper (edit mode: from the server), shown inline on Review. */
   paper?: PrintPaper | null;
 }) {
   const router = useRouter();
+  // Seeded from the prop (edit mode); re-fetched client-side right after publish
+  // so the generated paper appears inline on Review with no navigation — this
+  // also covers the create flow, where router.refresh() can't supply it.
+  const [paper, setPaper] = useState<PrintPaper | null>(initialPaper);
 
   // Same 4 steps whether creating or editing — and no staff step (spec D3).
   const STEP_LABELS = ["College", "Exam details", "Sections", "Review & publish", "Schedule"];
@@ -286,6 +292,8 @@ export function BlueprintEditor({
       });
       const data = await res.json().catch(() => ({}));
       if (!res.ok) return setError(data.error ?? "Could not schedule");
+      // Scheduling is the final step — only now is the exam fully published.
+      setStatus("published");
       setScheduled(true);
       router.refresh();
     } finally {
@@ -340,14 +348,21 @@ export function BlueprintEditor({
   async function runFeasibility() {
     if (!savedId || busy) return;
     setError("");
+    setFeasibility(null);
     setChecking(true);
     try {
       const res = await fetch(`/api/exam/blueprints/${savedId}/feasibility`, { method: "POST" });
-      const data = await res.json();
-      if (!res.ok) return setError(data.error ?? "Feasibility check failed");
+      const data = await res.json().catch(() => ({}));
+      if (!res.ok) {
+        setError(data.error ?? `Feasibility check failed (${res.status})`);
+        return;
+      }
       const shortfalls: Shortfall[] = data.shortfalls ?? [];
       setFeasibility({ ok: data.ok, shortfalls });
       loadShortfallChapters(shortfalls);
+    } catch (e) {
+      // Network / parse failure — surface it instead of silently doing nothing.
+      setError(e instanceof Error ? e.message : "Feasibility check failed");
     } finally {
       setChecking(false);
     }
@@ -364,14 +379,22 @@ export function BlueprintEditor({
       const res = await fetch(`/api/exam/blueprints/${savedId}/publish`, { method: "POST" });
       const data = await res.json();
       if (!res.ok) {
-        setError(data.error ?? "Could not publish");
+        setError(data.error ?? "Could not generate the paper");
         if (data.shortfalls) {
           setFeasibility({ ok: false, shortfalls: data.shortfalls });
           loadShortfallChapters(data.shortfalls);
         }
         return;
       }
-      setStatus("published");
+      // Show the generated paper inline (no navigation). The exam stays in Draft
+      // until the Schedule step is completed — see schedule().
+      if (data.session_id) {
+        try {
+          setPaper(await fetchPaperForPrint(createClient(), data.session_id as string));
+        } catch {
+          /* inline preview is best-effort — the paper was generated regardless */
+        }
+      }
       router.refresh();
     } finally {
       setPublishing(false);
@@ -685,13 +708,10 @@ export function BlueprintEditor({
                 <Button variant="outline" onClick={runFeasibility} disabled={busy}>
                   {checking ? "Checking…" : "Check feasibility"}
                 </Button>
-                {status === "published" && savedId && (
-                  <Button variant="outline" asChild>
-                    <Link href={`/dashboard/exams/blueprints/${savedId}/paper`}>View paper</Link>
-                  </Button>
-                )}
-                {status === "published" && !dirty && (
-                  <span className="text-xs text-emerald-600 dark:text-emerald-400">Published</span>
+                {paper && !dirty && (
+                  <span className="text-xs text-emerald-600 dark:text-emerald-400">
+                    Paper generated — shown below
+                  </span>
                 )}
                 {dirty && (
                   <span className="text-muted-foreground text-xs">
@@ -801,9 +821,9 @@ export function BlueprintEditor({
         {/* ---- Schedule (start time + duration) ---- */}
         {label === "Schedule" && (
           <div className="grid gap-4">
-            {status !== "published" ? (
+            {!paper ? (
               <p className="text-muted-foreground bg-muted/40 rounded-lg border px-4 py-6 text-center text-sm">
-                Publish the exam on the previous step first — scheduling needs the generated paper.
+                Generate the paper on the previous step first — scheduling needs it.
               </p>
             ) : scheduled ? (
               <p className="rounded-md border border-emerald-600/20 bg-emerald-600/10 px-3 py-2 text-sm text-emerald-700 dark:text-emerald-400">
@@ -918,15 +938,11 @@ export function BlueprintEditor({
                   onClick={publish}
                   disabled={busy || dirty}
                 >
-                  {publishing
-                    ? "Working…"
-                    : status === "published"
-                      ? "Re-publish (regenerate paper)"
-                      : "Publish"}
+                  {publishing ? "Working…" : paper ? "Regenerate paper" : "Generate paper"}
                 </Button>
                 <Button
                   onClick={() => setStep((s) => Math.min(lastStep, s + 1))}
-                  disabled={status !== "published"}
+                  disabled={!paper}
                   className={PRIMARY_BTN}
                 >
                   Next →
@@ -942,7 +958,7 @@ export function BlueprintEditor({
               ) : (
                 <Button
                   onClick={schedule}
-                  disabled={scheduling || status !== "published" || !startAt}
+                  disabled={scheduling || !paper || !startAt}
                   className={PRIMARY_BTN}
                 >
                   {scheduling ? "Scheduling…" : "Schedule exam"}

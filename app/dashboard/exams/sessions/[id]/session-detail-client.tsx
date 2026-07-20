@@ -55,22 +55,19 @@ export function SessionDetailClient({
             <Badge variant={session.status === "open" ? "default" : "secondary"}>{session.status}</Badge>
           </div>
           <div className="flex flex-wrap gap-2">
-            {session.status !== "open" && (
-              <Button size="sm" disabled={!!busy} onClick={() => action("open", `/api/exam/sessions/${session.id}/close`, { status: "open" })}>
-                Open
-              </Button>
-            )}
+            {/* Opening is automatic at the start time; there is no manual Open,
+                and a closed sitting is final. Close is only an early-stop. */}
             {session.status !== "closed" && session.status !== "graded" && (
               <Button size="sm" variant="secondary" disabled={!!busy} onClick={() => action("close", `/api/exam/sessions/${session.id}/close`, { status: "closed" })}>
-                Close
+                Close now
               </Button>
             )}
             {canPrintPaper && (
               <>
-                <Button size="sm" variant="outline" onClick={() => printAs("paper")}>
+                <Button size="sm" onClick={() => printAs("paper")}>
                   <Printer /> Print paper
                 </Button>
-                <Button size="sm" variant="outline" onClick={() => printAs("key")}>
+                <Button size="sm" onClick={() => printAs("key")}>
                   <Printer /> Print key
                 </Button>
               </>

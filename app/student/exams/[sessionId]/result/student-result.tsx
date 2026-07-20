@@ -131,7 +131,7 @@ export function StudentResult({
             <ArrowLeft /> Back
           </Link>
         </Button>
-        <Button variant="outline" onClick={() => window.print()}>
+        <Button onClick={() => window.print()}>
           <Printer /> Print
         </Button>
       </div>

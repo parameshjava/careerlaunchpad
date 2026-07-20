@@ -143,18 +143,25 @@ export async function DELETE(_req: NextRequest, { params }: { params: Promise<{ 
   const { id } = await params;
   const supabase = await createClient();
 
-  const { data: opened } = await supabase
+  // Deletable only while no student has attempted it (draft, scheduled/upcoming,
+  // or closed-with-nobody). An exam with any attempt holds student submissions/
+  // results, so it's protected.
+  const { data: sessions } = await supabase
     .from("exam_session")
     .select("id")
-    .eq("exam_id", id)
-    .not("opens_at", "is", null)
-    .lte("opens_at", new Date().toISOString())
-    .limit(1);
-  if (opened && opened.length)
-    return NextResponse.json(
-      { error: "This exam has started — it can no longer be deleted." },
-      { status: 409 },
-    );
+    .eq("exam_id", id);
+  const sessionIds = (sessions ?? []).map((s) => s.id as string);
+  if (sessionIds.length) {
+    const { count } = await supabase
+      .from("exam_attempt")
+      .select("*", { count: "exact", head: true })
+      .in("session_id", sessionIds);
+    if (count && count > 0)
+      return NextResponse.json(
+        { error: "Students have attempted this exam — it can no longer be deleted." },
+        { status: 409 },
+      );
+  }
 
   const { error } = await supabase.from("exam").delete().eq("id", id);
   if (error) return NextResponse.json({ ok: false, error: error.message }, { status: 500 });

@@ -24,16 +24,20 @@ export async function POST(
   const { id } = await params;
   const supabase = await createClient();
 
+  // Select exactly the required-field columns (derived from REQUIRED_FIELDS so a
+  // newly-required field never drifts out of this select — the bug that made
+  // roll_number always read as missing here).
+  const cols = [...new Set(REQUIRED_FIELDS.map((r) => r.field))].join(", ");
   const { data: profile, error } = await supabase
     .from("student_profile")
-    .select("full_name, phone, college_id, career_goal_ids, primary_career_goal_id, status")
+    .select(cols)
     .eq("user_id", id)
     .maybeSingle();
 
   if (error) return NextResponse.json({ ok: false, error: error.message }, { status: 500 });
   if (!profile) return NextResponse.json({ ok: false, error: "No student profile" }, { status: 404 });
 
-  const p = profile as Record<string, unknown>;
+  const p = profile as unknown as Record<string, unknown>;
   const missing = REQUIRED_FIELDS.filter(({ field }) => {
     const v = p[field];
     if (Array.isArray(v)) return v.length === 0;

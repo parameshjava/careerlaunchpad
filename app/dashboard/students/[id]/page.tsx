@@ -5,6 +5,8 @@ import { createClient } from "@/lib/supabase/server";
 import { PROFILE_SELECT, REF_TABLES } from "@/lib/registration";
 import { EMPTY, type Form, type RefData, type College } from "@/components/students/registration-fields";
 import { ProfileSummary, RegistrationForm } from "@/app/student/register/registration-form";
+import { Button } from "@/components/ui/button";
+import { setStudentStatus } from "../actions";
 
 // Console-side student profile. Platform staff (student.profile.manage) get the
 // registration wizard pointed at the admin API, which does its own load → summary
@@ -21,12 +23,19 @@ export default async function StudentProfilePage({ params }: { params: Promise<{
   const { data: row } = await supabase
     .from("student_profile")
     .select(
-      `${PROFILE_SELECT}, registration_status,
+      `${PROFILE_SELECT}, registration_status, status,
        college:college_id ( id, name, place, state ),
        app_user:user_id ( email )`,
     )
     .eq("user_id", id)
     .maybeSingle();
+
+  // Reviewers see an Approve/Suspend bar above the profile while the student is
+  // still awaiting review (moved off the dashboard list so the decision is made
+  // after seeing the full profile).
+  const canReview = can(ctx, "student.review") || ctx.permissions.has("*");
+  const reviewRow = row as { status?: string | null; full_name?: string | null } | null;
+  const awaitingReview = canReview && (reviewRow?.status ?? "approved") === "pending_review";
 
   if (!row) {
     return (
@@ -47,6 +56,7 @@ export default async function StudentProfilePage({ params }: { params: Promise<{
     return (
       <div className="mx-auto w-full max-w-2xl">
         <BackLink />
+        {awaitingReview && <ApprovalBar id={id} name={reviewRow?.full_name ?? ""} />}
         <RegistrationForm
           reviewFirst
           endpoints={{
@@ -107,7 +117,35 @@ export default async function StudentProfilePage({ params }: { params: Promise<{
   return (
     <div className="mx-auto w-full max-w-2xl">
       <BackLink />
+      {awaitingReview && <ApprovalBar id={id} name={f.full_name} />}
       <ProfileSummary f={f} refs={refs} email={email} college={college} status={status} />
+    </div>
+  );
+}
+
+// Reviewer action bar for a student still awaiting approval. Approve/Suspend go
+// through setStudentStatus (RLS-enforced) which redirects back to the list.
+function ApprovalBar({ id, name }: { id: string; name: string }) {
+  return (
+    <div className="mb-4 flex flex-col gap-3 rounded-lg border border-amber-200 bg-amber-50 p-4 sm:flex-row sm:items-center sm:justify-between dark:border-amber-900/50 dark:bg-amber-950/30">
+      <div className="min-w-0">
+        <p className="font-medium text-amber-900 dark:text-amber-200">Awaiting your approval</p>
+        <p className="text-sm text-amber-700 dark:text-amber-300/80">
+          Review {name || "this student"}’s details below, then approve to grant full access.
+        </p>
+      </div>
+      <div className="flex shrink-0 gap-2">
+        <form action={setStudentStatus}>
+          <input type="hidden" name="user_id" value={id} />
+          <input type="hidden" name="status" value="approved" />
+          <Button type="submit" size="sm">Approve</Button>
+        </form>
+        <form action={setStudentStatus}>
+          <input type="hidden" name="user_id" value={id} />
+          <input type="hidden" name="status" value="suspended" />
+          <Button type="submit" size="sm" variant="outline">Suspend</Button>
+        </form>
+      </div>
     </div>
   );
 }

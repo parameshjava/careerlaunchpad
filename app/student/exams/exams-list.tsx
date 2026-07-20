@@ -1,46 +1,33 @@
 "use client";
 
-// Student "My exams" list. Polls list_my_exam_sessions() every 5s so the
-// Open button appears the moment the window opens (1 min before opens_at)
-// without a manual reload.
-import { useEffect, useState } from "react";
-import Link from "next/link";
+// Student "My exams", split into Upcoming and Past tabs. Polls
+// list_my_exam_sessions() every 5s so the Open button appears the moment the
+// window opens (1 min before opens_at) without a manual reload. Each tab is the
+// shared DataTable — sortable, searchable, status-filterable. Past exams show the
+// student's score.
+import { useEffect, useMemo, useState } from "react";
 import { createClient } from "@/lib/supabase/client";
-import { Button } from "@/components/ui/button";
-import { Card, CardContent } from "@/components/ui/card";
-import { Badge } from "@/components/ui/badge";
+import { DataTable } from "@/components/data-table";
+import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
+import {
+  upcomingColumns,
+  pastColumns,
+  UPCOMING_STATUSES,
+  PAST_STATUSES,
+  type ExamRow,
+  type Session,
+} from "./exam-columns";
+import { decorate, isUpcoming } from "./exam-status";
 
-const GRACE_MS = 60_000; // fetch from opens_at-1min; submit until closes_at+1min
 const POLL_MS = 5_000;
 
-type Section = { subject: string; num_questions: number; marks_per_question: number };
-type Session = {
-  session_id: string;
-  label: string;
-  status: string;
-  opens_at: string | null;
-  closes_at: string | null;
-  results_published: boolean;
-  roster_status: "invited" | "started" | "submitted";
-  exam_title: string;
-  duration_minutes: number;
-  negative_mark_per_wrong: number;
-  total_questions: number;
-  total_marks: number;
-  sections: Section[];
-};
-
-function fmtDate(iso: string) {
-  return new Date(iso).toLocaleDateString(undefined, {
-    weekday: "short",
-    day: "numeric",
-    month: "short",
-    year: "numeric",
-  });
-}
-function fmtTime(iso: string) {
-  return new Date(iso).toLocaleTimeString(undefined, { hour: "numeric", minute: "2-digit" });
-}
+// Connected folder tabs (STYLE_GUIDE): every tab is bordered; inactive tabs are
+// muted with a bottom border (underline); the active tab is a solid brand fill
+// with NO bottom border, so it connects into the page. The `line` variant forces
+// bg-transparent, hence the `!` on the fills.
+const TAB_CLS =
+  "-mb-px h-auto flex-none rounded-t-md rounded-b-none border border-border bg-muted! px-4 py-2 font-medium text-muted-foreground shadow-none transition-colors after:hidden hover:bg-muted/70 " +
+  "data-active:border-primary! data-active:border-b-0 data-active:bg-primary! data-active:text-primary-foreground! data-active:font-semibold data-active:shadow-none";
 
 export function ExamsList() {
   const [sessions, setSessions] = useState<Session[] | null>(null);
@@ -71,6 +58,15 @@ export function ExamsList() {
     };
   }, []);
 
+  // Recompute status/action each render (poll drives re-render, so the clock is
+  // fresh enough); Date.now() is fine here (client component, not SSR).
+  const rows = useMemo<ExamRow[]>(
+    () => (sessions ?? []).map((s) => decorate(s, Date.now())),
+    [sessions],
+  );
+  const upcoming = useMemo(() => rows.filter(isUpcoming), [rows]);
+  const past = useMemo(() => rows.filter((r) => !isUpcoming(r)), [rows]);
+
   if (error) return <p className="text-destructive px-1 text-sm">{error}</p>;
   if (sessions == null)
     return <p className="text-muted-foreground px-1 text-sm">Loading exams…</p>;
@@ -81,90 +77,61 @@ export function ExamsList() {
       </p>
     );
 
-  const now = Date.now();
   return (
-    <ul className="grid gap-3">
-      {sessions.map((s) => {
-        const done = s.roster_status === "submitted";
-        const opens = s.opens_at ? new Date(s.opens_at).getTime() : null;
-        const closes = s.closes_at ? new Date(s.closes_at).getTime() : null;
-        const beforeWindow = opens == null || now < opens - GRACE_MS;
-        const afterWindow = closes != null && now > closes + GRACE_MS;
-        // Students may enter the waiting room any time before the window; the
-        // attempt page polls and the server releases questions at opens-1min.
-        const canOpen = !done && !afterWindow && opens != null;
+    <Tabs defaultValue="upcoming">
+      {/* Folder tabs matching the exam-papers surface (STYLE_GUIDE): boxed
+          triggers on the list's bottom border, coloured status dot. */}
+      <TabsList
+        variant="line"
+        className="group-data-horizontal/tabs:h-auto w-full justify-start gap-0 rounded-none border-b p-0"
+      >
+        {(
+          [
+            ["upcoming", `Upcoming (${upcoming.length})`],
+            ["past", `Past (${past.length})`],
+          ] as const
+        ).map(([value, label]) => (
+          <TabsTrigger key={value} value={value} className={TAB_CLS}>
+            {label}
+          </TabsTrigger>
+        ))}
+      </TabsList>
 
-        return (
-          <li key={s.session_id}>
-            <Card>
-              <CardContent className="grid gap-3 pt-6">
-                <div className="flex flex-col gap-3 sm:flex-row sm:items-start sm:justify-between">
-                  <div className="min-w-0">
-                    <div className="truncate font-semibold">{s.exam_title}</div>
-                    {s.label !== s.exam_title && (
-                      <div className="text-muted-foreground truncate text-sm">{s.label}</div>
-                    )}
-                  </div>
-                  <div className="flex shrink-0 items-center gap-2">
-                    {canOpen && (
-                      <Button asChild>
-                        <Link href={`/student/exams/${s.session_id}`}>
-                          {s.roster_status === "started" ? "Resume exam" : "Open exam"}
-                        </Link>
-                      </Button>
-                    )}
-                    {done && s.results_published && (
-                      <Button variant="outline" asChild>
-                        <Link href={`/student/exams/${s.session_id}/result`}>View result</Link>
-                      </Button>
-                    )}
-                    {done && !s.results_published && <Badge variant="secondary">Submitted</Badge>}
-                    {!done && beforeWindow && <Badge variant="outline">Scheduled</Badge>}
-                    {!done && afterWindow && <Badge variant="outline">Closed</Badge>}
-                  </div>
-                </div>
+      <TabsContent value="upcoming" className="mt-4 min-w-0">
+        <DataTable
+          columns={upcomingColumns}
+          data={upcoming}
+          searchKey="exam_title"
+          searchPlaceholder="Search exams…"
+          filters={[
+            {
+              columnId: "statusLabel",
+              title: "Status",
+              options: UPCOMING_STATUSES.map((s) => ({ label: s, value: s })),
+            },
+          ]}
+          // Soonest exam first — the next one to take.
+          initialSorting={[{ id: "opens_at", desc: false }]}
+        />
+      </TabsContent>
 
-                {s.opens_at && (
-                  <div className="text-sm">
-                    <span className="font-medium">{fmtDate(s.opens_at)}</span>
-                    <span className="text-muted-foreground">
-                      {" · "}
-                      {fmtTime(s.opens_at)}
-                      {s.closes_at ? ` – ${fmtTime(s.closes_at)}` : ""}
-                    </span>
-                  </div>
-                )}
-
-                {/* Exam pattern */}
-                <div className="text-muted-foreground flex flex-wrap gap-x-4 gap-y-1 text-xs">
-                  <span>⏱ {s.duration_minutes} min</span>
-                  <span>{s.total_questions} questions</span>
-                  <span>{s.total_marks} marks</span>
-                  {Number(s.negative_mark_per_wrong) > 0 && (
-                    <span>−{s.negative_mark_per_wrong} per wrong answer</span>
-                  )}
-                </div>
-                {s.sections.length > 0 && (
-                  <div className="flex flex-wrap gap-1.5">
-                    {s.sections.map((sec, i) => (
-                      <Badge key={i} variant="secondary" className="font-normal">
-                        {sec.subject}: {sec.num_questions} × {sec.marks_per_question}m
-                      </Badge>
-                    ))}
-                  </div>
-                )}
-
-                {!done && beforeWindow && s.opens_at && (
-                  <p className="text-muted-foreground text-xs">
-                    You can open the exam now and wait — questions load 1 minute before start
-                    time.
-                  </p>
-                )}
-              </CardContent>
-            </Card>
-          </li>
-        );
-      })}
-    </ul>
+      <TabsContent value="past" className="mt-4 min-w-0">
+        <DataTable
+          columns={pastColumns}
+          data={past}
+          searchKey="exam_title"
+          searchPlaceholder="Search exams…"
+          filters={[
+            {
+              columnId: "statusLabel",
+              title: "Status",
+              options: PAST_STATUSES.map((s) => ({ label: s, value: s })),
+            },
+          ]}
+          // Most recent first.
+          initialSorting={[{ id: "opens_at", desc: true }]}
+        />
+      </TabsContent>
+    </Tabs>
   );
 }

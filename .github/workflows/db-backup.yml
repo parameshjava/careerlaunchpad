@@ -1,0 +1,173 @@
+name: DB Backup — weekly pg_dump → private repo
+
+# Weekly logical backup of BOTH Supabase `public` schemas (prod + preview).
+# Each dump (gzipped, timestamped) is pushed to a SEPARATE PRIVATE repo,
+# <owner>/careerlaunchpad-db-backups, into its own folder:
+#   dumps/prod/cl-<stamp>.sql.gz
+#   dumps/preview/cl-<stamp>.sql.gz
+# Dumps hold real data, so they never live in this (source) repo.
+#
+# Required secrets:
+#   PROD_DB_URL        Prod Postgres connection string (Session pooler, :5432 —
+#                      the direct db.<ref>.supabase.co host is IPv6-only and
+#                      GitHub runners are IPv4, so use the pooler URL w/ password).
+#   PREVIEW_DB_URL     Preview Postgres connection string (same, for the preview project).
+#   BACKUP_REPO_TOKEN  PAT with contents:write on careerlaunchpad-db-backups.
+# The backup repo owner defaults to this repo's owner; override with the
+# optional BACKUP_REPO secret (owner/name) if it lives elsewhere.
+
+on:
+  schedule:
+    # Every Sunday at 03:00 UTC (08:30 IST Sunday morning).
+    - cron: '0 3 * * 0'
+  workflow_dispatch:
+    inputs:
+      note:
+        description: 'Optional note appended to the commit message (e.g., "pre-migration")'
+        required: false
+        default: ''
+
+# This workflow never uses the default GITHUB_TOKEN (it pushes to the separate
+# backup repo with BACKUP_REPO_TOKEN and makes no API/checkout calls against this
+# repo), so grant it no permissions at all (CodeQL: least-privilege token).
+permissions: {}
+
+concurrency:
+  group: db-backup
+  cancel-in-progress: false
+
+jobs:
+  dump:
+    name: pg_dump prod + preview → private repo
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+
+    steps:
+      - name: Install PostgreSQL 17 client
+        run: |
+          set -euo pipefail
+          sudo install -d /usr/share/postgresql-common/pgdg
+          sudo curl -fsSL -o /usr/share/postgresql-common/pgdg/apt.postgresql.org.asc \
+            https://www.postgresql.org/media/keys/ACCC4CF8.asc
+          . /etc/os-release
+          echo "deb [signed-by=/usr/share/postgresql-common/pgdg/apt.postgresql.org.asc] https://apt.postgresql.org/pub/repos/apt ${VERSION_CODENAME}-pgdg main" \
+            | sudo tee /etc/apt/sources.list.d/pgdg.list >/dev/null
+          sudo apt-get update
+          sudo apt-get install -y postgresql-client-17
+
+          # PGDG installs to /usr/lib/postgresql/17/bin/. The runner pre-ships
+          # postgresql-client-16, so /usr/bin/pg_dump (a pg_wrapper symlink) may
+          # still route to v16 unless we front the versioned bin dir on PATH.
+          echo "/usr/lib/postgresql/17/bin" >> "$GITHUB_PATH"
+
+          /usr/lib/postgresql/17/bin/pg_dump --version
+          PG_MAJOR=$(/usr/lib/postgresql/17/bin/pg_dump --version | awk '{print $3}' | cut -d. -f1)
+          if [ "${PG_MAJOR}" != "17" ]; then
+            echo "::error::Expected pg_dump 17, got ${PG_MAJOR}"
+            exit 1
+          fi
+
+      - name: Run pg_dump (prod + preview)
+        env:
+          PROD_DB_URL: ${{ secrets.PROD_DB_URL }}
+          PREVIEW_DB_URL: ${{ secrets.PREVIEW_DB_URL }}
+        run: |
+          set -euo pipefail
+          STAMP=$(date -u +"%Y-%m-%dT%H-%M-%SZ")
+          echo "STAMP=${STAMP}" >> "$GITHUB_ENV"
+
+          for ENVNAME in prod preview; do
+            case "$ENVNAME" in
+              prod)    URL="${PROD_DB_URL:-}" ;;
+              preview) URL="${PREVIEW_DB_URL:-}" ;;
+            esac
+            if [ -z "$URL" ]; then
+              echo "::error::$(echo "$ENVNAME" | tr a-z A-Z)_DB_URL secret is missing"
+              exit 1
+            fi
+
+            mkdir -p "out/${ENVNAME}"
+            FILE="out/${ENVNAME}/cl-${STAMP}.sql.gz"
+            echo "Dumping ${ENVNAME} public schema to ${FILE}"
+            # Absolute path to the v17 binary — defense in depth against a stray v16 wrapper.
+            /usr/lib/postgresql/17/bin/pg_dump \
+              --schema=public \
+              --no-owner \
+              --no-privileges \
+              --no-comments \
+              --clean \
+              --if-exists \
+              --quote-all-identifiers \
+              "${URL}" \
+              | gzip -9 > "${FILE}"
+            ls -lh "${FILE}"
+            # Sanity check: a <1 KB file means an empty/failed dump.
+            SIZE=$(stat -c%s "${FILE}")
+            if [ "${SIZE}" -lt 1024 ]; then
+              echo "::error::${ENVNAME} backup is suspiciously small (${SIZE} bytes). Aborting."
+              exit 1
+            fi
+          done
+
+      - name: Push to private backup repo
+        env:
+          BACKUP_REPO: ${{ secrets.BACKUP_REPO }}
+          BACKUP_REPO_TOKEN: ${{ secrets.BACKUP_REPO_TOKEN }}
+          OWNER: ${{ github.repository_owner }}
+          NOTE: ${{ github.event.inputs.note }}
+        run: |
+          set -euo pipefail
+          if [ -z "${BACKUP_REPO_TOKEN:-}" ]; then
+            echo "::error::BACKUP_REPO_TOKEN secret is required"
+            exit 1
+          fi
+          # Default to <this repo's owner>/careerlaunchpad-db-backups.
+          BACKUP_REPO="${BACKUP_REPO:-${OWNER}/careerlaunchpad-db-backups}"
+
+          git config --global user.name  "cl-backup-bot"
+          git config --global user.email "cl-backup-bot@users.noreply.github.com"
+
+          # Short-lived token URL; never echoed.
+          REMOTE="https://x-access-token:${BACKUP_REPO_TOKEN}@github.com/${BACKUP_REPO}.git"
+
+          # Shallow clone — we don't need prior dump history on the runner.
+          git clone --depth 1 "${REMOTE}" backup-repo 2>/dev/null \
+            || { echo "First-time push detected; initializing empty repo."
+                 mkdir backup-repo && cd backup-repo \
+                 && git init -b main && git remote add origin "${REMOTE}" \
+                 && cd ..; }
+
+          for ENVNAME in prod preview; do
+            mkdir -p "backup-repo/dumps/${ENVNAME}"
+            cp "out/${ENVNAME}/cl-${STAMP}.sql.gz" "backup-repo/dumps/${ENVNAME}/"
+            # Retention: keep the latest 12 dumps per env (~3 months weekly).
+            (
+              cd "backup-repo/dumps/${ENVNAME}"
+              ls -1 cl-*.sql.gz 2>/dev/null | sort -r | tail -n +13 | xargs -r rm -v
+            )
+          done
+
+          cd backup-repo
+          git add dumps/
+          if git diff --cached --quiet; then
+            echo "No changes to commit. Skipping."
+            exit 0
+          fi
+
+          COMMIT_MSG="backup: ${STAMP}"
+          if [ -n "${NOTE:-}" ]; then
+            COMMIT_MSG="${COMMIT_MSG} (${NOTE})"
+          fi
+          git commit -m "${COMMIT_MSG}"
+          git push origin HEAD:main
+
+      - name: Summary
+        if: success()
+        run: |
+          {
+            echo "### Backup complete — ${STAMP}"
+            echo ""
+            echo "- \`dumps/prod/cl-${STAMP}.sql.gz\`"
+            echo "- \`dumps/preview/cl-${STAMP}.sql.gz\`"
+            echo "- Retention: 12 most-recent dumps per env"
+          } >> "$GITHUB_STEP_SUMMARY"

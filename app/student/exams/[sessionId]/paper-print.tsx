@@ -23,6 +23,7 @@ export type PrintSectionMeta = {
 export type SessionPrintMeta = {
   session_id: string;
   label: string;
+  opens_at: string | null;
   exam_title: string;
   duration_minutes: number;
   negative_mark_per_wrong: number;

@@ -8,7 +8,6 @@ import { columns } from "@/components/students/columns";
 import { createClient } from "@/lib/supabase/server";
 import { getAuthContext, can } from "@/lib/auth";
 import { fetchStudents } from "@/lib/students-query";
-import { setStudentStatus } from "./students/actions";
 
 export const metadata: Metadata = {
   title: "Students Console",
@@ -95,16 +94,9 @@ export default async function DashboardPage() {
                   </div>
                 </div>
                 <div className="flex shrink-0 gap-2">
-                  <form action={setStudentStatus}>
-                    <input type="hidden" name="user_id" value={s.id} />
-                    <input type="hidden" name="status" value="approved" />
-                    <Button type="submit" size="sm">Approve</Button>
-                  </form>
-                  <form action={setStudentStatus}>
-                    <input type="hidden" name="user_id" value={s.id} />
-                    <input type="hidden" name="status" value="suspended" />
-                    <Button type="submit" size="sm" variant="outline">Suspend</Button>
-                  </form>
+                  <Button asChild size="sm" variant="outline">
+                    <Link href={`/dashboard/students/${s.id}`}>Review details</Link>
+                  </Button>
                 </div>
               </div>
             ))}
