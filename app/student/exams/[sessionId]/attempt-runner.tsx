@@ -280,16 +280,30 @@ export function AttemptRunner({
       const n = strikesRef.current + 1;
       setStrikes(n);
       if (n >= 2) {
-        // Second strike: abort (recoverable) or finalize if resumes are spent.
-        // Flush pending saves first so answers-so-far are graded/kept.
-        Object.values(saveTimers.current).forEach(clearTimeout);
-        saveTimers.current = {};
-        supabase.rpc("abort_exam_attempt", { p_attempt_id: attemptId }).then(({ data, error: e }) => {
+        // Second strike: flush answers-so-far (like doSubmit), then abort
+        // (recoverable) or finalize if resumes are spent.
+        void (async () => {
+          Object.values(saveTimers.current).forEach(clearTimeout);
+          saveTimers.current = {};
+          try {
+            await Promise.all(
+              Object.entries(answersRef.current).map(([qid, sel]) =>
+                supabase.rpc("save_exam_answer", {
+                  p_attempt_id: attemptId,
+                  p_question_id: qid,
+                  p_selected: sel,
+                }),
+              ),
+            );
+          } catch {
+            /* non-fatal — abort uses whatever persisted */
+          }
+          const { data, error: e } = await supabase.rpc("abort_exam_attempt", { p_attempt_id: attemptId });
           if (e) { setError(e.message); return; }
           const info = (data as { final?: boolean; resume_count?: number }) ?? {};
           setAbortInfo({ final: !!info.final, resumeCount: info.resume_count ?? 0 });
           try { localStorage.removeItem(cacheKey); } catch { /* ignore */ }
-        });
+        })();
       } else {
         setWarnOpen(true);
       }
