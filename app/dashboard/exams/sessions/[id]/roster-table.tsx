@@ -177,6 +177,20 @@ export function RosterTable({
   const router = useRouter();
   const [busy, setBusy] = useState("");
 
+  // Hide the dense Anti-cheat + Timing columns by default on phones (users can
+  // re-show them from the Columns menu). Starts false so SSR and the first client
+  // render agree (all columns visible → no hydration mismatch); a mount effect
+  // then flips it, and the changed `key` remounts DataTable with the seeded
+  // visibility applied.
+  const [isMobile, setIsMobile] = useState(false);
+  useEffect(() => {
+    const mq = window.matchMedia("(max-width: 767px)");
+    const sync = () => setIsMobile(mq.matches);
+    sync();
+    mq.addEventListener("change", sync);
+    return () => mq.removeEventListener("change", sync);
+  }, []);
+
   async function onResume(attemptId: string) {
     setBusy(attemptId);
     const res = await fetch(`/api/exam/attempts/${attemptId}/resume`, { method: "POST" });
@@ -186,12 +200,14 @@ export function RosterTable({
 
   return (
     <DataTable
+      key={isMobile ? "m" : "d"}
       columns={rosterColumns as ColumnDef<RosterEntry, unknown>[]}
       data={roster}
       searchKey="name"
       searchPlaceholder="Search students…"
       filters={FILTERS}
       initialSorting={[{ id: "name", desc: false }]}
+      initialColumnVisibility={isMobile ? { antiCheat: false, timing: false } : {}}
       meta={{ onResume, busy, questionCount } satisfies RosterMeta}
     />
   );
