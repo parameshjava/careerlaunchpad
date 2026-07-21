@@ -44,12 +44,16 @@ async function fetchRefTables(tables: Record<string, string>) {
 
 /**
  * `cacheKey` distinguishes the registration vs mentor option sets so they cache
- * separately. 1-hour revalidate is plenty for seed data; if an admin edit path
- * for `ref_*` is ever added, wrap it with revalidateTag and add a `tags` entry.
- * ponytail: time-based revalidate only — no tag until a write path exists.
+ * separately. The sorted table-key set is folded into the cache key too, so that
+ * ADDING or removing a `ref_*` table (e.g. the Step 6 "Tell Us" tables) changes
+ * the key and busts the Vercel Data Cache on deploy — otherwise the persisted
+ * pre-deploy payload (missing the new keys) would keep serving for up to an hour.
+ * 1-hour revalidate is plenty for seed data; if an admin edit path for `ref_*`
+ * is ever added, wrap it with revalidateTag and add a `tags` entry.
  */
 export function getRefData(tables: Record<string, string>, cacheKey: string) {
-  return unstable_cache(() => fetchRefTables(tables), ["ref-data", cacheKey], {
+  const tableSetKey = Object.keys(tables).sort().join(",");
+  return unstable_cache(() => fetchRefTables(tables), ["ref-data", cacheKey, tableSetKey], {
     revalidate: 3600,
   })();
 }

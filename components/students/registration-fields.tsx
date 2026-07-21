@@ -11,6 +11,7 @@ import { useEffect, useRef, useState } from "react";
 import { Check, Plus } from "lucide-react";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
+import { TellUsStep } from "./tell-us-step";
 
 export type Ref = { id: string; slug: string; label: string; category: string | null };
 export type RefData = Record<string, Ref[]>;
@@ -23,20 +24,34 @@ export type Form = {
   graduation_year: string; cgpa: string;
   preferred_category_slugs: string[]; // Step 3 (#42): up to 2 preference categories
   career_goal_ids: string[]; primary_career_goal_id: string; // grandfathered (admin/analytics)
+  preferred_mentor_pref_id: string; // grandfathered — no longer collected in the wizard, but set by Excel intake & shown read-only
   skill_assessment: Record<string, number>;
   skills: string[]; interests: string[];
-  preferred_mentor_pref_id: string; biggest_challenge: string;
+  // Step 6 "Tell Us"
+  is_first_generation: string; // "yes" | "no" | ""
+  date_of_birth: string;
+  languages: string[];
+  caste_certificate_status: string; // ref_caste_certificate_status.slug
+  reservation_category: string;     // ref_reservation_category.slug (only when cert = "has")
+  income_band: string;              // ref_income_band.slug
+  family_members: { relation: string; occupation: string }[];
+  hobbies: string[];
+  custom_hobbies: string[];
+  biggest_challenge: string;        // Markdown
 };
 
 export const EMPTY: Form = {
   full_name: "", phone: "", gender: "", city_village: "", district: "", state: "",
   college_id: "", roll_number: "", degree: "", branch: "", year_of_study: "", graduation_year: "", cgpa: "",
   preferred_category_slugs: [],
-  career_goal_ids: [], primary_career_goal_id: "", skill_assessment: {},
-  skills: [], interests: [], preferred_mentor_pref_id: "", biggest_challenge: "",
+  career_goal_ids: [], primary_career_goal_id: "", preferred_mentor_pref_id: "", skill_assessment: {},
+  skills: [], interests: [],
+  is_first_generation: "", date_of_birth: "", languages: [],
+  caste_certificate_status: "", reservation_category: "", income_band: "",
+  family_members: [], hobbies: [], custom_hobbies: [], biggest_challenge: "",
 };
 
-export const STEPS = ["Basic Info", "Academics", "Career Goals", "Self Assess", "Skills", "Mentor"];
+export const STEPS = ["Basic Info", "Academics", "Career Goals", "Self Assess", "Skills", "Tell Us"];
 
 // Friendly labels for the submit-time "X is required" messages.
 export const FIELD_LABELS: Record<string, string> = {
@@ -57,7 +72,19 @@ export const STEP_PAYLOAD: Record<number, (f: Form) => Record<string, unknown>> 
   3: (f) => ({ preferred_category_slugs: f.preferred_category_slugs }),
   4: (f) => ({ skill_assessment: f.skill_assessment }),
   5: (f) => ({ skills: f.skills, interests: f.interests }),
-  6: (f) => ({ preferred_mentor_pref_id: f.preferred_mentor_pref_id, biggest_challenge: f.biggest_challenge }),
+  6: (f) => ({
+    is_first_generation: f.is_first_generation === "" ? null : f.is_first_generation === "yes",
+    date_of_birth: f.date_of_birth || null,
+    languages: f.languages,
+    caste_certificate_status: f.caste_certificate_status,
+    // Only send a category when they actually hold a certificate.
+    reservation_category: f.caste_certificate_status === "has" ? f.reservation_category : "",
+    income_band: f.income_band,
+    family_members: f.family_members.filter((m) => m.relation || m.occupation),
+    hobbies: f.hobbies,
+    custom_hobbies: f.custom_hobbies,
+    biggest_challenge: f.biggest_challenge,
+  }),
 };
 
 export type SetForm = <K extends keyof Form>(k: K, v: Form[K]) => void;
@@ -154,21 +181,7 @@ export function StepBody({
     </Step>
   );
 
-  return (
-    <Step title="Mentor Matching" hint="Help us match you with the right mentor.">
-      <div className="sm:col-span-2">
-        <Label className="mb-2 block">Preferred Mentor Type</Label>
-        <ChipSingle options={refs.mentor_preference} selected={f.preferred_mentor_pref_id} onChange={(v) => set("preferred_mentor_pref_id", v)} valueKey="id" />
-        <Label className="mt-5 mb-2 block">Biggest Challenge</Label>
-        <textarea
-          className={`${selectClass} min-h-24 py-2`}
-          value={f.biggest_challenge}
-          onChange={(e) => set("biggest_challenge", e.target.value)}
-          placeholder="What is the biggest obstacle preventing you from achieving your career goal?"
-        />
-      </div>
-    </Step>
-  );
+  return <TellUsStep f={f} set={set} refs={refs} />;
 }
 
 /** Stepper rail — completed steps are clickable to jump back. */
@@ -318,29 +331,6 @@ function GroupedChipMulti({ options, selected, onChange, fallback = "Other" }: {
               })}
             </div>
           </div>
-        );
-      })}
-    </div>
-  );
-}
-
-function ChipSingle({ options, selected, onChange, valueKey = "slug" }: { options: Ref[]; selected: string; onChange: (v: string) => void; valueKey?: "slug" | "id" }) {
-  return (
-    <div className="flex flex-wrap gap-2">
-      {options.map((o) => {
-        const val = o[valueKey];
-        const on = selected === val;
-        return (
-          <button
-            key={val}
-            type="button"
-            onClick={() => onChange(on ? "" : val)}
-            className={`rounded-full border px-4 py-1.5 text-sm font-medium transition ${
-              on ? "border-transparent bg-primary text-primary-foreground" : "bg-background hover:border-primary/50"
-            }`}
-          >
-            {o.label}
-          </button>
         );
       })}
     </div>
