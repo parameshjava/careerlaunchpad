@@ -182,7 +182,9 @@ Per-step field map (request `data` keys by step):
 | 3 Career Goals | `career_goal_ids`* (≥1), `primary_career_goal_id`* (∈ career_goal_ids) |
 | 4 Self-Assessment | `skill_assessment` (slug→1..5 for each `ref_skill_assessment_category`) |
 | 5 Skills & Interests | `skills[]`, `interests[]` |
-| 6 Mentor | `preferred_mentor_pref_id`, `biggest_challenge` |
+| 6 Tell Us | `is_first_generation` (bool), `date_of_birth`, `languages[]` (ref_language), `caste_certificate_status` (ref_caste_certificate_status), `reservation_category` (ref_reservation_category, only when cert = `has`), `income_band` (ref_income_band), `family_members` (jsonb `[{relation, occupation}]` — ref_family_relation / ref_family_occupation), `hobbies[]` (ref_hobby), `custom_hobbies[]` (free text), `biggest_challenge` (Markdown) |
+
+> Step 6 was reworked from "Mentor" → "Tell Us" (migration `121_tell_us_step.sql`). `preferred_mentor_pref_id` is retired from the wizard (moved to `LEGACY_FIELDS`) but the column + `ref_mentor_preference` stay for the Excel-intake pipeline. All Step-6 fields are optional.
 
 Validation is **per-step and lenient**: only validates the fields present; FK slugs/ids checked against `ref_*`; `primary_career_goal_id ∈ career_goal_ids`; ratings 1–5; cgpa range. Missing fields are *not* errors on PATCH (that's what makes it resumable).
 

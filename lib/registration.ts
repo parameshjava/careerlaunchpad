@@ -20,7 +20,15 @@ export const REF_TABLES: Record<string, string> = {
   skill_assessment_category: "ref_skill_assessment_category",
   skill: "ref_skill",
   interest: "ref_interest",
-  mentor_preference: "ref_mentor_preference",
+  mentor_preference: "ref_mentor_preference", // legacy (Excel intake/analytics)
+  // Step 6 "Tell Us"
+  language: "ref_language",
+  family_relation: "ref_family_relation",
+  family_occupation: "ref_family_occupation",
+  income_band: "ref_income_band",
+  reservation_category: "ref_reservation_category",
+  caste_certificate_status: "ref_caste_certificate_status",
+  hobby: "ref_hobby",
 };
 
 /** student_profile columns each step may write (the form's per-step field map). */
@@ -30,29 +38,49 @@ export const STEP_FIELDS: Record<number, string[]> = {
   3: ["preferred_category_slugs"],
   4: ["skill_assessment"],
   5: ["skills", "interests"],
-  6: ["preferred_mentor_pref_id", "biggest_challenge"],
+  // Step 6 "Tell Us" (all optional)
+  6: [
+    "is_first_generation", "date_of_birth", "languages",
+    "caste_certificate_status", "reservation_category", "income_band",
+    "family_members", "hobbies", "custom_hobbies", "biggest_challenge",
+  ],
 };
 
+/** Minimum student age (years). Students must have completed 12th standard to be
+ * here, so a DOB younger than this is rejected by both the picker and the API. */
+export const MIN_AGE_YEARS = 17;
+
 export const ALL_FIELDS = Object.values(STEP_FIELDS).flat();
+
+/** Fields that count toward profileCompleteness (steps 1–5). Step 6 "Tell Us" is
+ * optional background enrichment ("share what you're comfortable with"), and much
+ * of it is conditional — e.g. reservation_category only applies to students who
+ * hold a caste certificate, and custom_hobbies is a niche write-in escape hatch.
+ * Counting those would make 100% structurally unreachable for most students and
+ * mis-fire the approval email's "complete your profile" nudge, so the metric
+ * deliberately ignores Step 6 (the fields still round-trip via ALL_FIELDS). */
+export const COMPLETENESS_FIELDS = Object.entries(STEP_FIELDS)
+  .filter(([step]) => Number(step) !== 6)
+  .flatMap(([, fields]) => fields);
 
 /** Grandfathered columns the wizard no longer writes (Step 3 moved to
  * preference categories in #42) but the admin grid / analytics / Excel intake
  * still read + write. Kept OUT of ALL_FIELDS so student completeness ignores
  * them, but still selected and validatable. */
-export const LEGACY_FIELDS = ["career_goal_ids", "primary_career_goal_id"];
+export const LEGACY_FIELDS = ["career_goal_ids", "primary_career_goal_id", "preferred_mentor_pref_id"];
 
 /** The columns returned by GET /api/registration/profile. */
 export const PROFILE_SELECT = [...ALL_FIELDS, "college_id", ...LEGACY_FIELDS].join(", ");
 
 /**
- * Profile completeness as a 0–100 %: how many of the profile fields (all 6 steps)
- * carry a value. One source of truth for the admin grid and the approval email's
- * "complete your profile" nudge. A field counts as filled when it's a non-empty
- * string/number, a non-empty array, or a non-empty object (skill_assessment).
+ * Profile completeness as a 0–100 %: how many of the core profile fields (steps
+ * 1–5, see COMPLETENESS_FIELDS) carry a value. One source of truth for the admin
+ * grid and the approval email's "complete your profile" nudge. A field counts as
+ * filled when it's a non-empty string/number, array, or object (skill_assessment).
  */
 export function profileCompleteness(profile: Record<string, unknown> | null | undefined): number {
   if (!profile) return 0;
-  const filled = ALL_FIELDS.filter((f) => {
+  const filled = COMPLETENESS_FIELDS.filter((f) => {
     const v = profile[f];
     if (v == null) return false;
     if (Array.isArray(v)) return v.length > 0;
@@ -60,7 +88,7 @@ export function profileCompleteness(profile: Record<string, unknown> | null | un
     if (typeof v === "string") return v.trim() !== "";
     return true; // numbers / booleans
   }).length;
-  return Math.round((filled / ALL_FIELDS.length) * 100);
+  return Math.round((filled / COMPLETENESS_FIELDS.length) * 100);
 }
 
 /** Fields required before registration can be marked 'submitted'. Only the first
@@ -93,6 +121,16 @@ async function loadRefs(supabase: SupabaseClient, fields: string[]): Promise<Ref
   if (fields.includes("skills")) wantSlug.push(["skill", "ref_skill"]);
   if (fields.includes("interests")) wantSlug.push(["interest", "ref_interest"]);
   if (fields.includes("skill_assessment")) wantSlug.push(["skill_assessment_category", "ref_skill_assessment_category"]);
+  // Step 6 "Tell Us"
+  if (fields.includes("languages")) wantSlug.push(["language", "ref_language"]);
+  if (fields.includes("hobbies")) wantSlug.push(["hobby", "ref_hobby"]);
+  if (fields.includes("caste_certificate_status")) wantSlug.push(["caste_certificate_status", "ref_caste_certificate_status"]);
+  if (fields.includes("reservation_category")) wantSlug.push(["reservation_category", "ref_reservation_category"]);
+  if (fields.includes("income_band")) wantSlug.push(["income_band", "ref_income_band"]);
+  if (fields.includes("family_members")) {
+    wantSlug.push(["family_relation", "ref_family_relation"]);
+    wantSlug.push(["family_occupation", "ref_family_occupation"]);
+  }
 
   await Promise.all(
     wantSlug.map(async ([key, table]) => {
@@ -148,9 +186,15 @@ export async function validatePartial(
       case "city_village":
       case "district":
       case "state":
-      case "biggest_challenge":
         clean[field] = str(v) || null;
         break;
+      case "biggest_challenge": {
+        // Free text authored as Markdown; cap length as a safety bound.
+        const t = str(v);
+        if (t.length > 5000) errors.push("biggest_challenge: too long (max 5000 chars)");
+        else clean[field] = t || null;
+        break;
+      }
       case "phone": {
         const p = str(v);
         if (p && !/^[+()\d][\d\s().-]{5,19}$/.test(p)) errors.push("phone: invalid format");
@@ -212,6 +256,84 @@ export async function validatePartial(
         const bad = vals.filter((s) => !refs.slugSets[setKey]?.has(s));
         if (bad.length) errors.push(`${field}: unknown value(s): ${bad.join(", ")}`);
         else clean[field] = vals;
+        break;
+      }
+      // ---- Step 6 "Tell Us" ---------------------------------------------
+      case "is_first_generation": {
+        if (v === "" || v == null) { clean[field] = null; break; }
+        if (typeof v === "boolean") { clean[field] = v; break; }
+        const s = str(v).toLowerCase();
+        if (s === "yes" || s === "true") clean[field] = true;
+        else if (s === "no" || s === "false") clean[field] = false;
+        else errors.push("is_first_generation: must be yes/no");
+        break;
+      }
+      case "date_of_birth": {
+        if (v === "" || v == null) { clean[field] = null; break; }
+        const s = str(v);
+        if (!/^\d{4}-\d{2}-\d{2}$/.test(s) || Number.isNaN(Date.parse(s))) {
+          errors.push("date_of_birth: must be YYYY-MM-DD");
+          break;
+        }
+        // The picker enforces the same range, but a direct API call bypasses it —
+        // bound it server-side too. Students must be at least 17 (they need to have
+        // completed 12th standard to be here), which also rules out future dates.
+        const dob = new Date(`${s}T00:00:00Z`);
+        const now = new Date();
+        const maxDob = Date.UTC(now.getUTCFullYear() - MIN_AGE_YEARS, now.getUTCMonth(), now.getUTCDate());
+        if (dob.getUTCFullYear() < 1900) errors.push("date_of_birth: year is out of range");
+        else if (dob.getTime() > maxDob) errors.push(`date_of_birth: you must be at least ${MIN_AGE_YEARS} years old`);
+        else clean[field] = s;
+        break;
+      }
+      case "caste_certificate_status":
+      case "reservation_category":
+      case "income_band": {
+        const s = str(v);
+        if (!s) { clean[field] = null; break; }
+        if (!refs.slugSets[field]?.has(s)) errors.push(`${field}: '${s}' is not a valid option`);
+        else clean[field] = s;
+        break;
+      }
+      case "languages":
+      case "hobbies": {
+        if (!Array.isArray(v)) { errors.push(`${field}: must be a list`); break; }
+        const setKey = field === "languages" ? "language" : "hobby";
+        const vals = v.map(str).filter(Boolean);
+        const bad = vals.filter((s) => !refs.slugSets[setKey]?.has(s));
+        if (bad.length) errors.push(`${field}: unknown value(s): ${bad.join(", ")}`);
+        else clean[field] = vals;
+        break;
+      }
+      case "custom_hobbies": {
+        // Free-text write-ins (not in ref_hobby). Trim, drop blanks, dedupe.
+        // Reject (don't silently truncate) over-length entries or too many —
+        // the UI caps both (maxLength 60, max 20), so this only guards direct API use.
+        if (!Array.isArray(v)) { errors.push("custom_hobbies: must be a list"); break; }
+        const vals = Array.from(new Set(v.map(str).filter(Boolean)));
+        if (vals.some((s) => s.length > 100)) errors.push("custom_hobbies: each hobby must be 100 characters or fewer");
+        else if (vals.length > 20) errors.push("custom_hobbies: too many (max 20)");
+        else clean[field] = vals;
+        break;
+      }
+      case "family_members": {
+        if (!Array.isArray(v)) { errors.push("family_members: must be a list"); break; }
+        if (v.length > 12) { errors.push("family_members: too many (max 12)"); break; }
+        const rel = refs.slugSets["family_relation"];
+        const occ = refs.slugSets["family_occupation"];
+        const out: { relation: string; occupation: string }[] = [];
+        let bad = false;
+        for (const m of v) {
+          if (typeof m !== "object" || m == null) { bad = true; continue; }
+          const relation = str((m as Record<string, unknown>).relation);
+          const occupation = str((m as Record<string, unknown>).occupation);
+          if (!relation && !occupation) continue; // skip empty rows
+          if (relation && rel && !rel.has(relation)) { errors.push(`family_members: unknown relation '${relation}'`); bad = true; }
+          if (occupation && occ && !occ.has(occupation)) { errors.push(`family_members: unknown occupation '${occupation}'`); bad = true; }
+          out.push({ relation, occupation });
+        }
+        if (bad) { errors.push("family_members: invalid entries"); break; }
+        clean[field] = out;
         break;
       }
       case "graduation_year": {

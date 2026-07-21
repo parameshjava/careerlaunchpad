@@ -94,7 +94,16 @@ export default async function StudentProfilePage({ params }: { params: Promise<{
     skill_assessment: (r.skill_assessment as Record<string, number>) ?? {},
     skills: (r.skills as string[]) ?? [],
     interests: (r.interests as string[]) ?? [],
-    preferred_mentor_pref_id: (r.preferred_mentor_pref_id as string) ?? "",
+    // Step 6 "Tell Us"
+    is_first_generation: r.is_first_generation == null ? "" : (r.is_first_generation ? "yes" : "no"),
+    date_of_birth: (r.date_of_birth as string) ?? "",
+    languages: (r.languages as string[]) ?? [],
+    caste_certificate_status: (r.caste_certificate_status as string) ?? "",
+    reservation_category: (r.reservation_category as string) ?? "",
+    income_band: (r.income_band as string) ?? "",
+    family_members: (r.family_members as { relation: string; occupation: string }[]) ?? [],
+    hobbies: (r.hobbies as string[]) ?? [],
+    custom_hobbies: (r.custom_hobbies as string[]) ?? [],
     biggest_challenge: (r.biggest_challenge as string) ?? "",
   };
 

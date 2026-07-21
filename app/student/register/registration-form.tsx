@@ -7,8 +7,9 @@
  * step saves incrementally via PATCH /api/registration/profile; the final step
  * calls POST …/submit. See docs/REGISTRATION_AND_INTAKE_API.md.
  */
-import { useCallback, useEffect, useState } from "react";
+import { useCallback, useEffect, useRef, useState } from "react";
 import { Button } from "@/components/ui/button";
+import { RichContent } from "@/components/exam/RichContent";
 import { profileCompleteness } from "@/lib/registration";
 import {
   type Form, type RefData, type Ref, type College,
@@ -43,6 +44,16 @@ export function RegistrationForm({
 
   const set = useCallback(<K extends keyof Form>(k: K, v: Form[K]) => setF((p) => ({ ...p, [k]: v })), []);
 
+  // Scroll the top of the wizard into view whenever the step changes (Next,
+  // Submit-jump-back, or a Stepper jump). The app shell — not window — is the
+  // scroll container here, so window.scrollTo is a no-op; scrollIntoView on a
+  // top anchor scrolls whichever ancestor actually scrolls. Without this, tall
+  // steps (e.g. "Tell Us") open scrolled to the bottom (on the Next/Submit row).
+  const topRef = useRef<HTMLDivElement>(null);
+  useEffect(() => {
+    topRef.current?.scrollIntoView({ behavior: "smooth", block: "start" });
+  }, [step]);
+
   useEffect(() => {
     (async () => {
       const [refRes, profRes] = await Promise.all([
@@ -67,6 +78,12 @@ export function RegistrationForm({
             primary_career_goal_id: profile.primary_career_goal_id ?? "",
             preferred_mentor_pref_id: profile.preferred_mentor_pref_id ?? "",
             college_id: profile.college_id ?? "",
+            // Step 6 "Tell Us"
+            is_first_generation: profile.is_first_generation == null ? "" : (profile.is_first_generation ? "yes" : "no"),
+            languages: profile.languages ?? [],
+            family_members: profile.family_members ?? [],
+            hobbies: profile.hobbies ?? [],
+            custom_hobbies: profile.custom_hobbies ?? [],
           }));
           if (profile.college) setCollege(profile.college);
         }
@@ -99,12 +116,10 @@ export function RegistrationForm({
       if (body.missing?.length) {
         setErrors(body.missing.map((m: { step: number; field: string }) => `Step ${m.step}: ${FIELD_LABELS[m.field] ?? m.field.replace(/_/g, " ")} is required`));
         setStep(body.missing[0].step);
-        window.scrollTo({ top: 0, behavior: "smooth" });
       } else setErrors([body.error ?? "Could not submit."]);
       return;
     }
     setStep(target);
-    window.scrollTo({ top: 0, behavior: "smooth" });
   }
 
   if (loading) return <p className="text-muted-foreground py-20 text-center text-sm">Loading your registration…</p>;
@@ -124,6 +139,8 @@ export function RegistrationForm({
 
   return (
     <div>
+      {/* Scroll anchor — the app shell scrolls this into view on every step change. */}
+      <div ref={topRef} className="scroll-mt-4" aria-hidden />
       <Stepper step={step} onJump={setStep} />
 
       <div className="bg-card overflow-hidden rounded-3xl border p-5 shadow-xl shadow-[#7c3aed]/5 sm:p-8">
@@ -205,7 +222,6 @@ export function ProfileSummary({
   onEdit?: () => void; status?: "submitted" | "in_progress";
 }) {
   const bySlug = (list?: Ref[]) => new Map((list ?? []).map((r) => [r.slug, r.label]));
-  const byId = (list?: Ref[]) => new Map((list ?? []).map((r) => [r.id, r.label]));
 
   const genderLabel = bySlug(refs?.gender).get(f.gender) ?? f.gender;
   const degreeLabel = bySlug(refs?.degree).get(f.degree) ?? f.degree;
@@ -216,8 +232,24 @@ export function ProfileSummary({
   );
   const skillLabel = bySlug(refs?.skill);
   const interestLabel = bySlug(refs?.interest);
-  const mentorLabel = byId(refs?.mentor_preference).get(f.preferred_mentor_pref_id) ?? "";
   const assessCats = refs?.skill_assessment_category ?? [];
+  // Step 6 "Tell Us" label maps
+  const firstGenLabel = f.is_first_generation === "yes" ? "Yes" : f.is_first_generation === "no" ? "No" : "";
+  const certLabel = bySlug(refs?.caste_certificate_status).get(f.caste_certificate_status) ?? "";
+  const categoryLabel = bySlug(refs?.reservation_category).get(f.reservation_category) ?? "";
+  const incomeLabel = bySlug(refs?.income_band).get(f.income_band) ?? "";
+  const relLabel = bySlug(refs?.family_relation);
+  const occLabel = bySlug(refs?.family_occupation);
+  const langLabel = bySlug(refs?.language);
+  const hobbyLabel = bySlug(refs?.hobby);
+  // Grandfathered: no longer collected in the wizard, but Excel intake still
+  // records it, so surface it read-only for admins when present.
+  const mentorLabel = bySlug(refs?.mentor_preference).get(f.preferred_mentor_pref_id) ?? "";
+  const familyRows = f.family_members.filter((m) => m.relation || m.occupation);
+  const hobbyItems = [
+    ...f.hobbies.map((s) => hobbyLabel.get(s) ?? s),
+    ...f.custom_hobbies,
+  ];
 
   const location = [f.city_village, f.district, f.state].filter(Boolean).join(", ");
   const collegeText = college ? `${college.name}${college.place ? ` — ${college.place}` : ""}` : "";
@@ -317,9 +349,44 @@ export function ProfileSummary({
         </div>
       </SummarySection>
 
-      <SummarySection title="Mentor">
-        <SummaryItem label="Preferred mentor type" value={mentorLabel} />
-        <SummaryItem label="Biggest challenge" value={f.biggest_challenge} className="sm:col-span-2" />
+      <SummarySection title="Tell Us">
+        <SummaryItem label="First-generation learner" value={firstGenLabel} />
+        <SummaryItem label="Date of birth" value={f.date_of_birth} />
+        <SummaryItem label="Caste / community certificate" value={certLabel} />
+        {f.caste_certificate_status === "has" && <SummaryItem label="Reservation category" value={categoryLabel} />}
+        <SummaryItem label="Household income" value={incomeLabel} />
+        {f.preferred_mentor_pref_id && <SummaryItem label="Preferred mentor type" value={mentorLabel} />}
+        <div className="sm:col-span-2">
+          <dt className="text-muted-foreground text-xs">Languages</dt>
+          <dd className="mt-1"><ChipList items={f.languages.map((s) => langLabel.get(s) ?? s)} /></dd>
+        </div>
+        <div className="sm:col-span-2">
+          <dt className="text-muted-foreground text-xs">Family members</dt>
+          <dd className="mt-1">
+            {familyRows.length === 0 ? (
+              <p className="text-muted-foreground/60 text-sm">—</p>
+            ) : (
+              <ul className="space-y-1 text-sm">
+                {familyRows.map((m, i) => (
+                  <li key={i}>
+                    <span className="font-medium">{relLabel.get(m.relation) ?? m.relation ?? "—"}</span>
+                    {m.occupation ? <span className="text-muted-foreground"> — {occLabel.get(m.occupation) ?? m.occupation}</span> : null}
+                  </li>
+                ))}
+              </ul>
+            )}
+          </dd>
+        </div>
+        <div className="sm:col-span-2">
+          <dt className="text-muted-foreground text-xs">Hobbies &amp; interests</dt>
+          <dd className="mt-1"><ChipList items={hobbyItems} /></dd>
+        </div>
+        <div className="sm:col-span-2">
+          <dt className="text-muted-foreground text-xs">Biggest challenge</dt>
+          <dd className={`mt-1 text-sm ${f.biggest_challenge ? "" : "text-muted-foreground/60"}`}>
+            {f.biggest_challenge ? <RichContent content={f.biggest_challenge} math={false} /> : "—"}
+          </dd>
+        </div>
       </SummarySection>
     </div>
   );

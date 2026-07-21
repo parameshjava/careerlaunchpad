@@ -14,8 +14,10 @@ import "katex/dist/katex.min.css";
 
 import { cn } from "@/lib/utils";
 
-const REMARK = [remarkGfm, remarkMath];
-const REHYPE = [rehypeKatex];
+const REMARK_MATH = [remarkGfm, remarkMath];
+const REMARK_PLAIN = [remarkGfm];
+const REHYPE_MATH = [rehypeKatex];
+const REHYPE_PLAIN: [] = [];
 
 // When `inline` is set (e.g. an option label), paragraphs are unwrapped so the
 // text flows on the same line as surrounding UI instead of forming a block.
@@ -27,16 +29,21 @@ export function RichContent({
   content,
   className,
   inline = false,
+  math = true,
 }: {
   content: string;
   className?: string;
   inline?: boolean;
+  /** Parse $…$ / $$…$$ as LaTeX math (KaTeX). On for authored exam content; turn
+   * OFF for user-entered prose (e.g. a student's free text), where a literal "$"
+   * would otherwise be swallowed into a math span and rendered as garbled KaTeX. */
+  math?: boolean;
 }) {
   return (
     <div className={cn("exam-rich", inline && "exam-rich-inline", className)}>
       <Markdown
-        remarkPlugins={REMARK}
-        rehypePlugins={REHYPE}
+        remarkPlugins={math ? REMARK_MATH : REMARK_PLAIN}
+        rehypePlugins={math ? REHYPE_MATH : REHYPE_PLAIN}
         components={inline ? INLINE_COMPONENTS : undefined}
       >
         {content}
