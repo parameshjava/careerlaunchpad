@@ -22,6 +22,7 @@ type Profile = {
   city_village?: string; district?: string; state?: string;
   degree?: string; branch?: string; year_of_study?: string;
   graduation_year?: string | number; cgpa?: string | number;
+  preferred_category_slugs?: string[];
   career_goal_ids?: string[]; primary_career_goal_id?: string;
   skill_assessment?: Record<string, number>;
   skills?: string[]; interests?: string[];
@@ -81,6 +82,7 @@ export async function POST(req: NextRequest) {
   setIf("primary_career_goal_id", str(p.primary_career_goal_id));
   setIf("preferred_mentor_pref_id", str(p.preferred_mentor_pref_id));
   setIf("biggest_challenge", str(p.biggest_challenge));
+  if (p.preferred_category_slugs?.length) row.preferred_category_slugs = p.preferred_category_slugs;
   if (p.career_goal_ids?.length) row.career_goal_ids = p.career_goal_ids;
   if (p.skills?.length) row.skills = p.skills;
   if (p.interests?.length) row.interests = p.interests;

@@ -53,3 +53,30 @@ export function getRefData(tables: Record<string, string>, cacheKey: string) {
     revalidate: 3600,
   })();
 }
+
+/**
+ * Preference categories (registration Step 3, #42). Richer than the flat ref_*
+ * tables (category has guidance; exams + the category→skill coaching map are
+ * separate relations), so they can't ride through fetchRefTables' fixed select.
+ * Returns { preference_category, exam, preference_category_skill }; skills
+ * themselves come via REF_TABLES.skill (grouped client-side by ref_skill.category).
+ */
+async function fetchPreference() {
+  const [cats, exams, map] = await Promise.all([
+    anon.from("ref_preference_category").select("slug, name, group_label, guidance, sort_order").eq("is_active", true).order("sort_order"),
+    anon.from("ref_exam").select("slug, label, category_slug, sort_order").eq("is_active", true).order("sort_order"),
+    anon.from("ref_preference_category_skill").select("category_slug, skill_slug, sort_order").order("sort_order"),
+  ]);
+  if (cats.error) throw new Error(`ref_preference_category: ${cats.error.message}`);
+  if (exams.error) throw new Error(`ref_exam: ${exams.error.message}`);
+  if (map.error) throw new Error(`ref_preference_category_skill: ${map.error.message}`);
+  return {
+    preference_category: cats.data ?? [],
+    exam: exams.data ?? [],
+    preference_category_skill: map.data ?? [],
+  };
+}
+
+export function getPreferenceData() {
+  return unstable_cache(fetchPreference, ["ref-data", "preference"], { revalidate: 3600 })();
+}

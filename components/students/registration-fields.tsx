@@ -8,6 +8,7 @@
  * inputs, and the stepper. Flow (how it's saved/submitted) lives in each caller.
  */
 import { useEffect, useRef, useState } from "react";
+import { Check, Plus } from "lucide-react";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 
@@ -20,7 +21,8 @@ export type Form = {
   city_village: string; district: string; state: string;
   college_id: string; roll_number: string; degree: string; branch: string; year_of_study: string;
   graduation_year: string; cgpa: string;
-  career_goal_ids: string[]; primary_career_goal_id: string;
+  preferred_category_slugs: string[]; // Step 3 (#42): up to 2 preference categories
+  career_goal_ids: string[]; primary_career_goal_id: string; // grandfathered (admin/analytics)
   skill_assessment: Record<string, number>;
   skills: string[]; interests: string[];
   preferred_mentor_pref_id: string; biggest_challenge: string;
@@ -29,6 +31,7 @@ export type Form = {
 export const EMPTY: Form = {
   full_name: "", phone: "", gender: "", city_village: "", district: "", state: "",
   college_id: "", roll_number: "", degree: "", branch: "", year_of_study: "", graduation_year: "", cgpa: "",
+  preferred_category_slugs: [],
   career_goal_ids: [], primary_career_goal_id: "", skill_assessment: {},
   skills: [], interests: [], preferred_mentor_pref_id: "", biggest_challenge: "",
 };
@@ -41,8 +44,7 @@ export const FIELD_LABELS: Record<string, string> = {
   phone: "Mobile number",
   college_id: "College",
   roll_number: "Roll number",
-  career_goal_ids: "Career goals",
-  primary_career_goal_id: "Primary career goal",
+  preferred_category_slugs: "Career paths",
 };
 
 export const selectClass =
@@ -52,7 +54,7 @@ export const selectClass =
 export const STEP_PAYLOAD: Record<number, (f: Form) => Record<string, unknown>> = {
   1: (f) => ({ full_name: f.full_name, phone: f.phone, gender: f.gender, city_village: f.city_village, district: f.district, state: f.state }),
   2: (f) => ({ college_id: f.college_id, roll_number: f.roll_number, degree: f.degree, branch: f.branch, year_of_study: f.year_of_study, graduation_year: f.graduation_year, cgpa: f.cgpa }),
-  3: (f) => ({ career_goal_ids: f.career_goal_ids, primary_career_goal_id: f.primary_career_goal_id }),
+  3: (f) => ({ preferred_category_slugs: f.preferred_category_slugs }),
   4: (f) => ({ skill_assessment: f.skill_assessment }),
   5: (f) => ({ skills: f.skills, interests: f.interests }),
   6: (f) => ({ preferred_mentor_pref_id: f.preferred_mentor_pref_id, biggest_challenge: f.biggest_challenge }),
@@ -117,13 +119,12 @@ export function StepBody({
   );
 
   if (step === 3) return (
-    <Step title="Career Aspirations" hint="Pick every goal you're aiming for, then tap the ★ to set one as primary.">
+    <Step title="Which paths interest you?" hint="Pick up to 2 areas to prepare for. We coach you across each — you can enroll in any specific exam later.">
       <div className="sm:col-span-2">
-        <GoalPicker
-          goals={refs.career_goal}
-          selected={f.career_goal_ids}
-          primary={f.primary_career_goal_id}
-          onChange={(ids, primary) => { set("career_goal_ids", ids); set("primary_career_goal_id", primary); }}
+        <PreferencePicker
+          refs={refs}
+          selected={f.preferred_category_slugs}
+          onChange={(v) => set("preferred_category_slugs", v)}
         />
       </div>
     </Step>
@@ -146,9 +147,9 @@ export function StepBody({
     <Step title="Skills & Interests" hint="Pick everything that applies — tap to toggle.">
       <div className="sm:col-span-2">
         <Label className="mb-2 block">Skills</Label>
-        <ChipMulti options={refs.skill} selected={f.skills} onChange={(v) => set("skills", v)} />
+        <GroupedChipMulti options={refs.skill} selected={f.skills} onChange={(v) => set("skills", v)} />
         <Label className="mt-5 mb-2 block">Interests</Label>
-        <ChipMulti options={refs.interest} selected={f.interests} onChange={(v) => set("interests", v)} />
+        <GroupedChipMulti options={refs.interest} selected={f.interests} onChange={(v) => set("interests", v)} fallback="Interests" />
       </div>
     </Step>
   );
@@ -265,22 +266,58 @@ function Rating({ value, onChange }: { value: number; onChange: (v: number) => v
   );
 }
 
-function ChipMulti({ options, selected, onChange }: { options: Ref[]; selected: string[]; onChange: (v: string[]) => void }) {
+
+/** Chip multi-select grouped into bordered section cards by `category`
+ * (competency domain) — a job-portal-style skill picker (Naukri/Shine): each
+ * domain is a titled card with a live selected-count, and every chip carries a
+ * +/✓ affordance so selection is unambiguous and the rows read as intentional. */
+function GroupedChipMulti({ options, selected, onChange, fallback = "Other" }: { options: Ref[]; selected: string[]; onChange: (v: string[]) => void; fallback?: string }) {
+  // Bucket by category, preserving first-seen order (options arrive sort_order'd).
+  // Uncategorised options (e.g. interests) collapse into one `fallback` card.
+  const groups: { name: string; items: Ref[] }[] = [];
+  for (const o of options) {
+    const key = o.category ?? fallback;
+    let g = groups.find((x) => x.name === key);
+    if (!g) { g = { name: key, items: [] }; groups.push(g); }
+    g.items.push(o);
+  }
+  const toggle = (slug: string) =>
+    onChange(selected.includes(slug) ? selected.filter((s) => s !== slug) : [...selected, slug]);
+
   return (
-    <div className="flex flex-wrap gap-2">
-      {options.map((o) => {
-        const on = selected.includes(o.slug);
+    <div className="space-y-3">
+      {groups.map((g) => {
+        const count = g.items.filter((i) => selected.includes(i.slug)).length;
         return (
-          <button
-            key={o.slug}
-            type="button"
-            onClick={() => onChange(on ? selected.filter((s) => s !== o.slug) : [...selected, o.slug])}
-            className={`rounded-full border px-4 py-1.5 text-sm font-medium transition ${
-              on ? "border-transparent bg-primary text-primary-foreground" : "bg-background hover:border-primary/50"
-            }`}
-          >
-            {o.label}
-          </button>
+          <div key={g.name} className="overflow-hidden rounded-xl border">
+            <div className="bg-muted/40 flex items-center justify-between gap-2 border-b px-3.5 py-2">
+              <span className="text-[0.72rem] font-bold tracking-[0.05em] text-[#7c3aed] uppercase">{g.name}</span>
+              <span className="text-muted-foreground text-[0.7rem] font-medium tabular-nums">
+                {count > 0 ? <span className="text-primary font-semibold">{count} selected</span> : g.items.length}
+              </span>
+            </div>
+            <div className="flex flex-wrap gap-2 p-3.5">
+              {g.items.map((o) => {
+                const on = selected.includes(o.slug);
+                return (
+                  <button
+                    key={o.slug}
+                    type="button"
+                    onClick={() => toggle(o.slug)}
+                    aria-pressed={on}
+                    className={`inline-flex items-center gap-1.5 rounded-full border py-1.5 pr-3.5 pl-2.5 text-sm font-medium transition ${
+                      on
+                        ? "border-primary bg-primary text-primary-foreground shadow-sm"
+                        : "border-border bg-background text-foreground hover:border-primary/50 hover:bg-muted/40"
+                    }`}
+                  >
+                    {on ? <Check className="size-3.5" /> : <Plus className="size-3.5 opacity-50" />}
+                    {o.label}
+                  </button>
+                );
+              })}
+            </div>
+          </div>
         );
       })}
     </div>
@@ -310,68 +347,132 @@ function ChipSingle({ options, selected, onChange, valueKey = "slug" }: { option
   );
 }
 
-/** Multi-select career goals grouped by category, with one starred as primary. */
-function GoalPicker({ goals, selected, primary, onChange }: {
-  goals: Ref[]; selected: string[]; primary: string; onChange: (ids: string[], primary: string) => void;
-}) {
-  const categories = Array.from(new Set(goals.map((g) => g.category ?? "Other")));
-  const byId = new Map(goals.map((g) => [g.id, g]));
+// Preference-category rows from the reference API (#42) — richer than flat Ref.
+type PrefCategory = { slug: string; name: string; group_label: string | null; guidance: string };
+type ExamRow = { slug: string; label: string; category_slug: string };
+type CatSkill = { category_slug: string; skill_slug: string };
 
-  function toggle(id: string) {
-    if (selected.includes(id)) {
-      const next = selected.filter((s) => s !== id);
-      const nextPrimary = primary === id ? (next[0] ?? "") : primary;
-      onChange(next, nextPrimary);
-    } else {
-      const next = [...selected, id];
-      onChange(next, primary || id); // first pick becomes primary
+const MAX_CATEGORIES = 2;
+
+/**
+ * Step 3 (#42): pick up to 2 preference categories. Each card lists the exams it
+ * covers (enroll later) and the whole selection yields a consolidated-coaching
+ * preview grouped by competency domain (ref_skill.category).
+ */
+function PreferencePicker({ refs, selected, onChange }: {
+  refs: RefData; selected: string[]; onChange: (v: string[]) => void;
+}) {
+  const cats = (refs.preference_category ?? []) as unknown as PrefCategory[];
+  const exams = (refs.exam ?? []) as unknown as ExamRow[];
+  const map = (refs.preference_category_skill ?? []) as unknown as CatSkill[];
+  const skills = refs.skill ?? [];
+
+  const [capHit, setCapHit] = useState(false);
+  const skillBySlug = new Map(skills.map((s) => [s.slug, s]));
+  const examsByCat = (slug: string) => exams.filter((e) => e.category_slug === slug);
+
+  function toggle(slug: string) {
+    if (selected.includes(slug)) { onChange(selected.filter((s) => s !== slug)); setCapHit(false); }
+    else if (selected.length >= MAX_CATEGORIES) { setCapHit(true); }
+    else { onChange([...selected, slug]); }
+  }
+
+  // Consolidated coaching: union of chosen categories' skills, grouped by domain.
+  const chosenSkills = new Set(map.filter((m) => selected.includes(m.category_slug)).map((m) => m.skill_slug));
+  const domains: { name: string; items: string[] }[] = [];
+  for (const s of skills) {
+    if (!chosenSkills.has(s.slug)) continue;
+    const dom = s.category ?? "Other";
+    let band = domains.find((d) => d.name === dom);
+    if (!band) { band = { name: dom, items: [] }; domains.push(band); }
+    band.items.push(s.label);
+  }
+  const examCount = new Set(
+    exams.filter((e) => selected.includes(e.category_slug)).map((e) => e.slug),
+  ).size;
+
+  // Render categories in order, inserting a heading when group_label changes.
+  const rows: React.ReactNode[] = [];
+  let lastGroup: string | null | undefined = undefined;
+  cats.forEach((c) => {
+    if (c.group_label && c.group_label !== lastGroup) {
+      rows.push(
+        <p key={`g-${c.group_label}`} className="text-[0.7rem] font-bold tracking-[0.06em] text-[#7c3aed] uppercase mt-4 first:mt-0">
+          {c.group_label}
+        </p>,
+      );
     }
-  }
-  function star(id: string) {
-    const next = selected.includes(id) ? selected : [...selected, id];
-    onChange(next, id);
-  }
+    lastGroup = c.group_label;
+    const on = selected.includes(c.slug);
+    const disabled = !on && selected.length >= MAX_CATEGORIES;
+    rows.push(
+      <button
+        key={c.slug}
+        type="button"
+        onClick={() => toggle(c.slug)}
+        aria-pressed={on}
+        disabled={disabled}
+        className={`w-full rounded-xl border p-3.5 text-left transition ${
+          on ? "border-primary bg-primary/5 ring-1 ring-primary" : "hover:border-primary/40"
+        } ${disabled ? "opacity-50" : ""}`}
+      >
+        <div className="flex items-center gap-2.5">
+          <span className="flex-1 text-sm font-semibold">{c.name}</span>
+          <span className={`flex size-5 shrink-0 items-center justify-center rounded-md border text-xs ${on ? "border-primary bg-primary text-primary-foreground" : ""}`}>
+            {on ? "✓" : ""}
+          </span>
+        </div>
+        <p className="text-muted-foreground mt-1 text-xs">Coaching: <span className="text-foreground font-medium">{c.guidance}</span></p>
+        <div className="mt-2 flex flex-wrap gap-1.5">
+          {examsByCat(c.slug).map((e) => (
+            <span key={e.slug} className="bg-muted text-muted-foreground rounded px-1.5 py-0.5 text-[0.7rem]">{e.label}</span>
+          ))}
+        </div>
+        {examsByCat(c.slug).length > 0 && (
+          <p className="text-muted-foreground mt-2 text-[0.7rem] italic">Enroll in any of these exams later — no need to decide now.</p>
+        )}
+      </button>,
+    );
+  });
 
   return (
-    <div className="space-y-4">
-      {categories.map((cat) => (
-        // fieldset/legend so the sector label straddles the top border (native notch).
-        <fieldset key={cat} className="bg-muted/30 rounded-xl border px-4 pt-1 pb-4">
-          <legend className="ml-1 px-2 text-base font-bold tracking-[0.08em] text-[#7c3aed] uppercase">{cat}</legend>
-          <div className="grid grid-cols-2 gap-2 sm:grid-cols-3">
-            {goals.filter((g) => (g.category ?? "Other") === cat).map((g) => {
-              const on = selected.includes(g.id);
-              const isPrimary = primary === g.id;
-              return (
-                <span
-                  key={g.id}
-                  className={`flex items-center overflow-hidden rounded-full border text-sm font-medium transition ${
-                    on
-                      ? "border-transparent bg-primary text-primary-foreground shadow-sm"
-                      : "border-border/60 text-muted-foreground hover:border-primary/40 hover:text-foreground hover:bg-background"
-                  } ${isPrimary ? "ring-2 ring-primary ring-offset-1" : ""}`}
-                >
-                  <button type="button" onClick={() => toggle(g.id)} className="min-w-0 flex-1 truncate py-1.5 pr-2 pl-4 text-left whitespace-nowrap" title={g.label}>{g.label}</button>
-                  {on && (
-                    <button
-                      type="button"
-                      onClick={() => star(g.id)}
-                      title="Set as primary goal"
-                      className="self-stretch border-l border-white/40 bg-white/15 px-2 hover:bg-white/30"
-                    >
-                      {isPrimary ? "★" : "☆"}
-                    </button>
-                  )}
-                </span>
-              );
-            })}
-          </div>
-        </fieldset>
-      ))}
-      <p className="text-muted-foreground pt-1 text-sm">
-        {selected.length === 0 ? "No goals selected yet."
-          : <>{selected.length} goal{selected.length > 1 ? "s" : ""} selected · Primary: <b className="text-primary">{byId.get(primary)?.label ?? "—"}</b></>}
+    <div>
+      <div className="space-y-2">{rows}</div>
+
+      <p className="text-muted-foreground mt-3 text-sm">
+        {selected.length
+          ? <>{selected.length} path{selected.length > 1 ? "s" : ""} selected</>
+          : "No paths selected yet."}
+        <span className={`float-right font-bold tabular-nums ${selected.length === MAX_CATEGORIES ? "text-emerald-600" : ""}`}>
+          {selected.length} / {MAX_CATEGORIES}
+        </span>
       </p>
+      {capHit && (
+        <p className="mt-2 rounded-md border border-amber-300 bg-amber-50 px-3 py-1.5 text-xs text-amber-800 dark:border-amber-900/60 dark:bg-amber-950/40 dark:text-amber-200">
+          You can pick up to 2 paths for now. Remove one to add another.
+        </p>
+      )}
+
+      {selected.length > 0 && (
+        <div className="mt-5 rounded-xl border p-4">
+          <p className="text-[0.7rem] font-bold tracking-[0.06em] text-[#7c3aed] uppercase">Consolidated coaching you'll receive</p>
+          <p className="text-muted-foreground mt-1 text-xs">
+            <b className="text-foreground">{examCount}</b> exams you can enroll in later · <b className="text-foreground">{chosenSkills.size}</b> topics across <b className="text-foreground">{domains.length}</b> skill areas
+          </p>
+          <div className="mt-3 space-y-3">
+            {domains.map((d) => (
+              <div key={d.name}>
+                <p className="text-muted-foreground text-[0.7rem] font-semibold tracking-wide uppercase">{d.name}</p>
+                <div className="mt-1 flex flex-wrap gap-1.5">
+                  {d.items.map((label) => (
+                    <span key={label} className="bg-muted rounded-md px-2 py-1 text-xs">{label}</span>
+                  ))}
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+      )}
     </div>
   );
 }
