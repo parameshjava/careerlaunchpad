@@ -1,5 +1,6 @@
 import { redirect } from "next/navigation";
 import { getAuthContext, can } from "@/lib/auth";
+import { requireApprovedStudent } from "@/lib/student-approval";
 import { createClient } from "@/lib/supabase/server";
 import { AttemptRunner } from "./attempt-runner";
 import type { SessionPrintMeta } from "./paper-print";
@@ -17,6 +18,7 @@ export default async function TakeExamPage({
   if (!ctx) redirect("/auth/login");
   if (!ctx.provisioned || ctx.status === "suspended") redirect("/auth/no-access");
   if (!can(ctx, "exam.attempt.take")) redirect("/student");
+  await requireApprovedStudent(ctx.userId);
 
   const { sessionId } = await params;
   const supabase = await createClient();
