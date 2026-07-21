@@ -1,5 +1,6 @@
 import { redirect } from "next/navigation";
 import { getAuthContext, can } from "@/lib/auth";
+import { requireApprovedStudent } from "@/lib/student-approval";
 import { ExamsList } from "./exams-list";
 
 // A student's assigned sittings. The list itself is a client component that
@@ -9,6 +10,7 @@ export default async function StudentExamsPage() {
   if (!ctx) redirect("/auth/login");
   if (!ctx.provisioned || ctx.status === "suspended") redirect("/auth/no-access");
   if (!can(ctx, "exam.attempt.take")) redirect("/student");
+  await requireApprovedStudent(ctx.userId);
 
   return (
     <div className="mx-auto max-w-5xl px-4 py-6 sm:px-6">

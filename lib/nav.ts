@@ -79,7 +79,10 @@ function canConductExams(ctx: AuthContext): boolean {
  * Administration + Insights groups, filtered to what their permissions allow.
  * Students and employers get their own short menu.
  */
-export function buildNav(ctx: AuthContext): NavSection[] {
+export function buildNav(ctx: AuthContext, opts: { studentApproved?: boolean } = {}): NavSection[] {
+  // Students still awaiting review don't get the "My exams" item — exams are
+  // approval-gated (#45). Defaults to true so non-student surfaces are unaffected.
+  const { studentApproved = true } = opts;
   const isMentor = ctx.roles.includes("mentor");
   // Shown to assigned exam staff AND blanket evaluators (mentors/employers with
   // exam.evaluate), regardless of their primary role.
@@ -159,7 +162,7 @@ export function buildNav(ctx: AuthContext): NavSection[] {
       { label: "My profile", href: "/student/register", icon: "profile" },
       { label: "My insights", href: "/student/insights", icon: "analytics" },
     ];
-    if (can(ctx, "exam.attempt.take"))
+    if (can(ctx, "exam.attempt.take") && studentApproved)
       items.push({ label: "My exams", href: "/student/exams", icon: "exams", badge: "exams" });
     if (canEvaluate) items.push(evalItem);
     const sections: NavSection[] = [{ items }];
