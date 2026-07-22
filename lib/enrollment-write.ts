@@ -188,12 +188,16 @@ export async function recordPayment(
 
   const { data: enr, error: ee } = await supabase
     .from("student_enrollment")
-    .select("id, student_id, batch_id, college_id, net_fee_paise")
+    .select("id, student_id, batch_id, college_id, net_fee_paise, status")
     .eq("id", enrollmentId)
     .maybeSingle();
   if (ee) return { ok: false, error: ee.message, status: 500 };
   if (!enr) return { ok: false, error: "Enrolment not found", status: 404 };
-  const e = enr as { id: string; student_id: string; batch_id: string; college_id: string | null; net_fee_paise: number };
+  const e = enr as { id: string; student_id: string; batch_id: string; college_id: string | null; net_fee_paise: number; status: string };
+  if (e.status === "pending")
+    return { ok: false, error: "This enrolment is awaiting approval — approve it before recording a payment.", status: 409 };
+  if (e.status === "cancelled")
+    return { ok: false, error: "This enrolment has been cancelled.", status: 409 };
 
   const { data: bal, error: be } = await supabase
     .from("enrollment_balance")

@@ -8,6 +8,8 @@
 --   * the batch is associated with the student's own college (batch_college),
 --   * no self-granted concession — always full fee (gross snapshot),
 --   * no duplicate enrolment.
+-- The enrolment is created as 'pending' — a finance admin approves it (→ active)
+-- or rejects it (→ cancelled) from the batch roster before any payment is taken.
 -- Returns the new enrolment id. Idempotent (create or replace).
 -- ============================================================================
 
@@ -66,7 +68,7 @@ begin
     concession_type, concession_paise, payment_option, status, created_by
   ) values (
     v_uid, p_batch_id, v_college, v_gross,
-    'none', 0, 'full', 'active', v_uid
+    'none', 0, 'full', 'pending', v_uid
   )
   returning id into v_enrollment;
 

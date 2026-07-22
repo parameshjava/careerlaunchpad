@@ -30,6 +30,13 @@ const INSTALLMENT_BADGE: Record<MyFeeEnrollment["installments"][number]["status"
   due: "secondary",
 };
 
+const STATUS_LABEL: Record<string, string> = {
+  pending: "Pending approval",
+  active: "Active",
+  completed: "Paid",
+  cancelled: "Cancelled",
+};
+
 function Stat({ label, value, accent }: { label: string; value: string; accent?: boolean }) {
   return (
     <div>
@@ -61,10 +68,15 @@ export function MyFees({ enrollments }: { enrollments: MyFeeEnrollment[] }) {
               </p>
             </div>
             <Badge variant={e.status === "completed" ? "default" : "secondary"}>
-              {e.status === "completed" ? "Paid" : e.status}
+              {STATUS_LABEL[e.status] ?? e.status}
             </Badge>
           </CardHeader>
           <CardContent className="grid gap-5">
+            {e.status === "pending" && (
+              <p className="text-muted-foreground bg-muted/40 rounded-lg border px-3 py-2 text-sm">
+                Your enrolment is awaiting approval from your college. Once approved, you can pay the fee.
+              </p>
+            )}
             {/* Money summary */}
             <div className="flex flex-wrap gap-x-10 gap-y-3">
               <Stat label="Total fee" value={formatINR(e.netFeePaise)} />

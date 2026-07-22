@@ -7,7 +7,7 @@
 import { useState } from "react";
 import { useRouter } from "next/navigation";
 import Link from "next/link";
-import { IndianRupee, Loader2, UserPlus } from "lucide-react";
+import { Check, IndianRupee, Loader2, UserPlus, X } from "lucide-react";
 
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
@@ -47,6 +47,12 @@ import {
 import type { BatchFee, RosterRow } from "@/lib/enrollment-query";
 
 const MODES: PaymentMode[] = ["cash", "upi", "card", "online"];
+const STATUS_LABEL: Record<string, string> = {
+  pending: "Pending approval",
+  active: "Active",
+  completed: "Paid",
+  cancelled: "Cancelled",
+};
 
 export function BatchRoster({
   batchId,
@@ -58,6 +64,8 @@ export function BatchRoster({
   roster: RosterRow[];
 }) {
   const router = useRouter();
+  const [busyId, setBusyId] = useState<string | null>(null);
+  const [rowErr, setRowErr] = useState("");
   const [payFor, setPayFor] = useState<RosterRow | null>(null);
   const [payAmount, setPayAmount] = useState("");
   const [payMode, setPayMode] = useState<PaymentMode>("cash");
@@ -65,6 +73,25 @@ export function BatchRoster({
   const [payDate, setPayDate] = useState("");
   const [payErr, setPayErr] = useState("");
   const [payBusy, setPayBusy] = useState(false);
+
+  async function setEnrollmentStatus(id: string, status: "active" | "cancelled") {
+    setBusyId(id);
+    setRowErr("");
+    try {
+      const res = await fetch(`/api/admin/enrollments/${id}`, {
+        method: "PATCH",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ status }),
+      });
+      const json = await res.json();
+      if (!res.ok) throw new Error(json.error ?? "Update failed");
+      router.refresh();
+    } catch (e) {
+      setRowErr((e as Error).message);
+    } finally {
+      setBusyId(null);
+    }
+  }
 
   function openPay(row: RosterRow) {
     setPayFor(row);
@@ -114,6 +141,8 @@ export function BatchRoster({
         </Button>
       </div>
 
+      {rowErr && <p className="text-destructive text-sm">{rowErr}</p>}
+
       {roster.length === 0 ? (
         <div className="text-muted-foreground bg-muted/40 rounded-lg border px-4 py-10 text-center text-sm">
           No students enrolled yet. Enrol students to start recording payments.
@@ -145,13 +174,26 @@ export function BatchRoster({
                   <TableCell className="text-right tabular-nums font-medium">{formatINR(r.balancePaise)}</TableCell>
                   <TableCell>
                     <Badge variant={r.status === "completed" ? "default" : "secondary"}>
-                      {r.status === "completed" ? "Paid" : r.status}
+                      {STATUS_LABEL[r.status] ?? r.status}
                     </Badge>
                   </TableCell>
                   <TableCell className="text-right">
-                    <Button variant="outline" size="sm" disabled={r.balancePaise <= 0} onClick={() => openPay(r)}>
-                      <IndianRupee /> Record payment
-                    </Button>
+                    {r.status === "pending" ? (
+                      <div className="flex justify-end gap-1">
+                        <Button variant="outline" size="sm" disabled={busyId === r.enrollmentId} onClick={() => setEnrollmentStatus(r.enrollmentId, "active")}>
+                          <Check /> Approve
+                        </Button>
+                        <Button variant="ghost" size="sm" disabled={busyId === r.enrollmentId} onClick={() => setEnrollmentStatus(r.enrollmentId, "cancelled")} className="text-muted-foreground hover:text-destructive">
+                          <X /> Reject
+                        </Button>
+                      </div>
+                    ) : r.status === "cancelled" ? (
+                      <span className="text-muted-foreground text-xs">—</span>
+                    ) : (
+                      <Button variant="outline" size="sm" disabled={r.balancePaise <= 0} onClick={() => openPay(r)}>
+                        <IndianRupee /> Record payment
+                      </Button>
+                    )}
                   </TableCell>
                 </TableRow>
               ))}

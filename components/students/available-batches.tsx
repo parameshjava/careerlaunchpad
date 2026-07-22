@@ -98,10 +98,11 @@ export function AvailableBatches({ batches }: { batches: OpenBatch[] }) {
           {confirm && (
             <div className="grid gap-3 text-sm">
               <p>
-                You&apos;re about to enrol in <span className="font-medium">{confirm.courseName}</span>
-                {" "}({confirm.name}). The course fee is{" "}
-                <span className="font-semibold">{formatINR(confirm.feePaise)}</span>, payable as per your
-                college&apos;s process. Your balance will appear under <b>My fees</b>.
+                You&apos;re requesting to enrol in <span className="font-medium">{confirm.courseName}</span>
+                {" "}({confirm.name}). Your request is sent to your college for <b>approval</b>; once
+                approved, the course fee of{" "}
+                <span className="font-semibold">{formatINR(confirm.feePaise)}</span> becomes payable and
+                shows under <b>My fees</b>.
               </p>
               {error && <p className="text-destructive">{error}</p>}
             </div>
