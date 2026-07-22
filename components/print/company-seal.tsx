@@ -3,15 +3,15 @@
 // it renders identically on screen and paper.
 //
 // A simple single-ring seal: two concentric circles with the company name curved
-// across the top and the region across the bottom, separated by a star on each
-// side, and an EMPTY centre. Single royal-blue ink, like a wet stamp.
+// across the top and the region across the bottom (vertically centred in the
+// band via dominant-baseline), a star on each side, and the payment date in the
+// centre. Single royal-blue ink, like a wet stamp.
 
 const BLUE = "#1d4ed8";
 
-// Text baseline radius (viewBox 0 0 200 200, centre 100,100). Top arc runs
-// left→right over the top; bottom arc runs right→left under the bottom so its
-// text stays upright to the reader.
-const R = 86;
+// Text baseline radius = the mid-line of the band between the two circles
+// (r 75 → 95). With dominant-baseline:central the glyphs sit centred on it.
+const R = 85;
 const arcTop = `M ${100 - R} 100 A ${R} ${R} 0 0 1 ${100 + R} 100`;
 const arcBottom = `M ${100 + R} 100 A ${R} ${R} 0 0 1 ${100 - R} 100`;
 
@@ -19,13 +19,14 @@ export function CompanySeal({
   size = 132,
   companyName = "CAREER LAUNCHPAD",
   region = "ANDHRA PRADESH",
+  /** Shown in the centre of the seal (e.g. the payment date). Empty ⇒ blank centre. */
+  centerText,
   className,
 }: {
   size?: number;
-  /** Curved across the top of the ring. */
   companyName?: string;
-  /** Curved across the bottom of the ring. */
   region?: string;
+  centerText?: string;
   className?: string;
 }) {
   const font = "ui-sans-serif, system-ui, Segoe UI, Roboto, Helvetica, Arial, sans-serif";
@@ -45,24 +46,35 @@ export function CompanySeal({
         <path id="cl-seal-bottom" d={arcBottom} fill="none" />
       </defs>
 
-      {/* Two rings; the centre stays empty. */}
-      <circle cx="100" cy="100" r="96" fill="none" stroke={BLUE} strokeWidth="2.5" />
-      <circle cx="100" cy="100" r="74" fill="none" stroke={BLUE} strokeWidth="2" />
+      <circle cx="100" cy="100" r="95" fill="none" stroke={BLUE} strokeWidth="2.5" />
+      <circle cx="100" cy="100" r="75" fill="none" stroke={BLUE} strokeWidth="2" />
 
-      <text fontFamily={font} fontSize="14" fontWeight="800" letterSpacing="2">
+      <text fontFamily={font} fontSize="13" fontWeight="800" letterSpacing="1.6" dominantBaseline="central">
         <textPath href="#cl-seal-top" startOffset="50%" textAnchor="middle">
           {companyName}
         </textPath>
       </text>
-      <text fontFamily={font} fontSize="14" fontWeight="800" letterSpacing="2">
+      <text fontFamily={font} fontSize="13" fontWeight="800" letterSpacing="1.6" dominantBaseline="central">
         <textPath href="#cl-seal-bottom" startOffset="50%" textAnchor="middle">
           {region}
         </textPath>
       </text>
 
       {/* Star separators at the sides, between the top and bottom labels. */}
-      <text x="14" y="100" fontSize="16" textAnchor="middle" dominantBaseline="central">★</text>
-      <text x="186" y="100" fontSize="16" textAnchor="middle" dominantBaseline="central">★</text>
+      <text x="15" y="100" fontSize="15" textAnchor="middle" dominantBaseline="central">★</text>
+      <text x="185" y="100" fontSize="15" textAnchor="middle" dominantBaseline="central">★</text>
+
+      {/* Centre: the payment date. */}
+      {centerText && (
+        <>
+          <text x="100" y="93" fontFamily={font} fontSize="6.5" fontWeight="700" letterSpacing="1.5" textAnchor="middle">
+            PAID ON
+          </text>
+          <text x="100" y="107" fontFamily={font} fontSize="12" fontWeight="800" textAnchor="middle">
+            {centerText}
+          </text>
+        </>
+      )}
     </svg>
   );
 }

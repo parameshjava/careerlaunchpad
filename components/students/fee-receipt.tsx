@@ -442,7 +442,7 @@ export function FeeReceiptView({
                 </small>
               </div>
             </div>
-            <CompanySeal className="fr-seal" />
+            <CompanySeal className="fr-seal" centerText={fmtDate(receipt.paidOn)} />
           </div>
               </td>
             </tr>
