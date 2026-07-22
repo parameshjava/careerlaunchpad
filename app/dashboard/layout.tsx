@@ -4,6 +4,7 @@ import { SiteHeader } from "@/components/brand/SiteHeader";
 import { AccountMenu } from "@/components/brand/AccountMenu";
 import { ConsoleShell } from "@/components/app-shell/ConsoleShell";
 import { buildNav } from "@/lib/nav";
+import { navStudentApproved } from "@/lib/student-approval";
 
 // Application shell for the (token-themed) console surfaces. Server component:
 // gated by the RBAC context, so only signed-in + provisioned users get in. The
@@ -23,7 +24,7 @@ export default async function DashboardLayout({
       <SiteHeader
         right={<AccountMenu email={ctx.email} name={ctx.name} avatarUrl={ctx.avatarUrl} profileHref={ctx.profilePath} />}
       />
-      <ConsoleShell nav={buildNav(ctx)}>{children}</ConsoleShell>
+      <ConsoleShell nav={buildNav(ctx, { studentApproved: await navStudentApproved(ctx) })}>{children}</ConsoleShell>
     </div>
   );
 }

@@ -4,6 +4,7 @@ import { SiteHeader } from "@/components/brand/SiteHeader";
 import { AccountMenu } from "@/components/brand/AccountMenu";
 import { ConsoleShell } from "@/components/app-shell/ConsoleShell";
 import { buildNav } from "@/lib/nav";
+import { navStudentApproved } from "@/lib/student-approval";
 
 // Shell for the signed-in mentor surfaces: shared brand bar + account menu and
 // the role-aware sidebar. `mentor` is an additive role, so the sidebar may also
@@ -20,7 +21,7 @@ export default async function MentorLayout({ children }: { children: React.React
       <SiteHeader
         right={<AccountMenu email={ctx.email} name={ctx.name} avatarUrl={ctx.avatarUrl} profileHref={ctx.profilePath} />}
       />
-      <ConsoleShell nav={buildNav(ctx)}>{children}</ConsoleShell>
+      <ConsoleShell nav={buildNav(ctx, { studentApproved: await navStudentApproved(ctx) })}>{children}</ConsoleShell>
     </div>
   );
 }

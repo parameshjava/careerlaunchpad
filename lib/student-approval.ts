@@ -1,4 +1,5 @@
 import { redirect } from "next/navigation";
+import type { AuthContext } from "@/lib/auth";
 import { createClient } from "@/lib/supabase/server";
 
 /**
@@ -11,21 +12,32 @@ import { createClient } from "@/lib/supabase/server";
  * these helpers. Imported/invited students are auto-approved (020), so this only
  * ever stops a self-registered student who hasn't been reviewed yet.
  *
- * A missing profile row is treated as "not blocked" (matches the insights page):
- * such a caller has no exams anyway, so there's nothing to hide.
+ * Fails CLOSED: on a query error or a MISSING profile row, the student is treated
+ * as NOT approved. This keeps the app-layer gate consistent with the DB gate
+ * (is_student_of_college, migration 123), which requires an existing approved
+ * row — so an errored/rowless student is routed to /student/pending rather than
+ * shown an exams surface that would render empty.
  */
 export async function isStudentApproved(userId: string): Promise<boolean> {
   const supabase = await createClient();
-  const { data } = await supabase
+  const { data, error } = await supabase
     .from("student_profile")
     .select("status")
     .eq("user_id", userId)
     .maybeSingle();
-  return !data || data.status === "approved";
+  if (error || !data) return false;
+  return data.status === "approved";
 }
 
 /** Server-component guard: send unapproved students to the pending screen. Call
  * after the base auth guard on any exam surface. */
 export async function requireApprovedStudent(userId: string): Promise<void> {
   if (!(await isStudentApproved(userId))) redirect("/student/pending");
+}
+
+/** Approval flag for buildNav on NON-student surfaces (mentor / dashboard /
+ * employer): a dual-role student must still be approval-gated there. Skips the
+ * query (returns true) for users who aren't students. */
+export async function navStudentApproved(ctx: AuthContext): Promise<boolean> {
+  return ctx.roles.includes("student") ? isStudentApproved(ctx.userId) : true;
 }

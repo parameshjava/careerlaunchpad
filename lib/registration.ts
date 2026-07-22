@@ -34,7 +34,7 @@ export const REF_TABLES: Record<string, string> = {
 /** student_profile columns each step may write (the form's per-step field map). */
 export const STEP_FIELDS: Record<number, string[]> = {
   1: ["full_name", "phone", "gender", "city_village", "district", "state"],
-  2: ["college_id", "roll_number", "degree", "branch", "year_of_study", "graduation_year", "cgpa"],
+  2: ["college_id", "roll_number", "registration_number", "apaar_id", "degree", "branch", "year_of_study", "graduation_year", "cgpa"],
   3: ["preferred_category_slugs"],
   4: ["skill_assessment"],
   5: ["skills", "interests"],
@@ -59,9 +59,17 @@ export const ALL_FIELDS = Object.values(STEP_FIELDS).flat();
  * Counting those would make 100% structurally unreachable for most students and
  * mis-fire the approval email's "complete your profile" nudge, so the metric
  * deliberately ignores Step 6 (the fields still round-trip via ALL_FIELDS). */
+/** Optional identity fields that must NOT count toward completeness. Like Step 6,
+ * these have no `required` prop and many students won't have them (a university
+ * registration number isn't universal; APAAR/ABC ID is explicitly "leave blank if
+ * you don't have one yet") — counting them would make 100% structurally
+ * unreachable and mis-fire the "complete your profile" nudge. */
+export const COMPLETENESS_EXCLUDE = new Set(["registration_number", "apaar_id"]);
+
 export const COMPLETENESS_FIELDS = Object.entries(STEP_FIELDS)
   .filter(([step]) => Number(step) !== 6)
-  .flatMap(([, fields]) => fields);
+  .flatMap(([, fields]) => fields)
+  .filter((f) => !COMPLETENESS_EXCLUDE.has(f));
 
 /** Grandfathered columns the wizard no longer writes (Step 3 moved to
  * preference categories in #42) but the admin grid / analytics / Excel intake
@@ -100,6 +108,51 @@ export const REQUIRED_FIELDS: { step: number; field: string }[] = [
   { step: 2, field: "college_id" },
   { step: 2, field: "roll_number" },
 ];
+
+/**
+ * Human-friendly field names for user-facing validation messages, so a raw
+ * column name (e.g. `apaar_id`) never reaches a student. One source of truth for
+ * the messages built in validatePartial(); `labelFor` falls back to a
+ * title-cased, de-underscored slug for any field not listed.
+ */
+export const FIELD_LABELS: Record<string, string> = {
+  full_name: "Full name",
+  phone: "Mobile number",
+  gender: "Gender",
+  city_village: "Village / Mandal / City",
+  district: "District",
+  state: "State",
+  college_id: "College",
+  roll_number: "Roll number",
+  registration_number: "University registration number",
+  apaar_id: "APAAR / ABC ID",
+  degree: "Degree",
+  branch: "Branch",
+  year_of_study: "Year of study",
+  graduation_year: "Graduation year",
+  cgpa: "CGPA / percentage",
+  preferred_category_slugs: "Career paths",
+  career_goal_ids: "Career goals",
+  primary_career_goal_id: "Primary career goal",
+  preferred_mentor_pref_id: "Preferred mentor type",
+  skills: "Skills",
+  interests: "Interests",
+  skill_assessment: "Skill assessment",
+  is_first_generation: "First-generation learner",
+  date_of_birth: "Date of birth",
+  languages: "Languages",
+  caste_certificate_status: "Caste certificate status",
+  reservation_category: "Reservation category",
+  income_band: "Family income",
+  family_members: "Family members",
+  hobbies: "Hobbies",
+  custom_hobbies: "Hobbies",
+  biggest_challenge: "Your biggest challenge",
+};
+
+export const labelFor = (field: string): string =>
+  FIELD_LABELS[field] ??
+  field.replace(/_/g, " ").replace(/^\w/, (c) => c.toUpperCase());
 
 type Refs = {
   slugSets: Record<string, Set<string>>; // gender/degree/branch/year_of_study/skill/interest/skill_assessment_category
@@ -191,20 +244,31 @@ export async function validatePartial(
       case "biggest_challenge": {
         // Free text authored as Markdown; cap length as a safety bound.
         const t = str(v);
-        if (t.length > 5000) errors.push("biggest_challenge: too long (max 5000 chars)");
+        if (t.length > 5000) errors.push(`${labelFor("biggest_challenge")} is too long (maximum 5000 characters).`);
         else clean[field] = t || null;
         break;
       }
       case "phone": {
         const p = str(v);
-        if (p && !/^[+()\d][\d\s().-]{5,19}$/.test(p)) errors.push("phone: invalid format");
+        if (p && !/^[+()\d][\d\s().-]{5,19}$/.test(p)) errors.push("Please enter a valid mobile number.");
         else clean[field] = p || null;
         break;
       }
-      case "roll_number": {
+      case "roll_number":
+      case "registration_number": {
+        // Roll number (class/exam id) and university registration/enrollment no.
+        // share the same lenient free-text rule: alphanumeric + '/' and '-'.
         const s = str(v);
         if (s && (s.length > 40 || !/^[A-Za-z0-9][A-Za-z0-9/-]*$/.test(s)))
-          errors.push("roll_number: invalid format");
+          errors.push(`Please enter a valid ${labelFor(field).toLowerCase()} (letters, numbers, / and - only).`);
+        else clean[field] = s || null;
+        break;
+      }
+      case "apaar_id": {
+        // APAAR / ABC ID — a 12-digit number. Accept as typed (with spaces or
+        // hyphens) and store digits-only; validated only when a value is given.
+        const s = str(v).replace(/[\s-]/g, "");
+        if (s && !/^\d{12}$/.test(s)) errors.push(`${labelFor("apaar_id")} must be a 12-digit number.`);
         else clean[field] = s || null;
         break;
       }
@@ -214,7 +278,7 @@ export async function validatePartial(
       case "year_of_study": {
         const s = str(v);
         if (s && !refs.slugSets[field === "year_of_study" ? "year_of_study" : field]?.has(s))
-          errors.push(`${field}: '${s}' is not a valid option`);
+          errors.push(`Please choose a valid ${labelFor(field).toLowerCase()}.`);
         else clean[field] = s || null;
         break;
       }
@@ -223,38 +287,38 @@ export async function validatePartial(
       case "preferred_mentor_pref_id": {
         const s = str(v);
         if (!s) { clean[field] = null; break; }
-        if (!UUID_RE.test(s)) { errors.push(`${field}: not a valid id`); break; }
+        if (!UUID_RE.test(s)) { errors.push(`Please select a valid ${labelFor(field).toLowerCase()}.`); break; }
         if (field === "primary_career_goal_id" && !refs.goalIds.has(s))
-          errors.push("primary_career_goal_id: unknown career goal");
+          errors.push(`Please select a valid ${labelFor("primary_career_goal_id").toLowerCase()}.`);
         else if (field === "preferred_mentor_pref_id" && !refs.mentorIds.has(s))
-          errors.push("preferred_mentor_pref_id: unknown mentor preference");
+          errors.push(`Please select a valid ${labelFor("preferred_mentor_pref_id").toLowerCase()}.`);
         else clean[field] = s;
         break;
       }
       case "career_goal_ids": {
-        if (!Array.isArray(v)) { errors.push("career_goal_ids: must be a list"); break; }
+        if (!Array.isArray(v)) { errors.push(`${labelFor("career_goal_ids")} must be a list.`); break; }
         const ids = v.map(str).filter(Boolean);
         const bad = ids.filter((id) => !UUID_RE.test(id) || !refs.goalIds.has(id));
-        if (bad.length) errors.push(`career_goal_ids: unknown goal(s)`);
+        if (bad.length) errors.push("One or more selected career goals are invalid.");
         else clean[field] = ids;
         break;
       }
       case "preferred_category_slugs": {
-        if (!Array.isArray(v)) { errors.push("preferred_category_slugs: must be a list"); break; }
+        if (!Array.isArray(v)) { errors.push(`${labelFor("preferred_category_slugs")} must be a list.`); break; }
         const vals = v.map(str).filter(Boolean);
-        if (vals.length > 2) { errors.push("preferred_category_slugs: pick at most 2"); break; }
+        if (vals.length > 2) { errors.push("Please pick at most 2 career paths."); break; }
         const bad = vals.filter((s) => !refs.categorySlugs.has(s));
-        if (bad.length) errors.push(`preferred_category_slugs: unknown value(s): ${bad.join(", ")}`);
+        if (bad.length) errors.push("One or more selected career paths are invalid.");
         else clean[field] = vals;
         break;
       }
       case "skills":
       case "interests": {
-        if (!Array.isArray(v)) { errors.push(`${field}: must be a list`); break; }
+        if (!Array.isArray(v)) { errors.push(`${labelFor(field)} must be a list.`); break; }
         const setKey = field === "skills" ? "skill" : "interest";
         const vals = v.map(str).filter(Boolean);
         const bad = vals.filter((s) => !refs.slugSets[setKey]?.has(s));
-        if (bad.length) errors.push(`${field}: unknown value(s): ${bad.join(", ")}`);
+        if (bad.length) errors.push(`One or more selected ${labelFor(field).toLowerCase()} are invalid.`);
         else clean[field] = vals;
         break;
       }
@@ -265,14 +329,14 @@ export async function validatePartial(
         const s = str(v).toLowerCase();
         if (s === "yes" || s === "true") clean[field] = true;
         else if (s === "no" || s === "false") clean[field] = false;
-        else errors.push("is_first_generation: must be yes/no");
+        else errors.push("Please select yes or no.");
         break;
       }
       case "date_of_birth": {
         if (v === "" || v == null) { clean[field] = null; break; }
         const s = str(v);
         if (!/^\d{4}-\d{2}-\d{2}$/.test(s) || Number.isNaN(Date.parse(s))) {
-          errors.push("date_of_birth: must be YYYY-MM-DD");
+          errors.push("Please enter a valid date of birth.");
           break;
         }
         // The picker enforces the same range, but a direct API call bypasses it —
@@ -281,8 +345,8 @@ export async function validatePartial(
         const dob = new Date(`${s}T00:00:00Z`);
         const now = new Date();
         const maxDob = Date.UTC(now.getUTCFullYear() - MIN_AGE_YEARS, now.getUTCMonth(), now.getUTCDate());
-        if (dob.getUTCFullYear() < 1900) errors.push("date_of_birth: year is out of range");
-        else if (dob.getTime() > maxDob) errors.push(`date_of_birth: you must be at least ${MIN_AGE_YEARS} years old`);
+        if (dob.getUTCFullYear() < 1900) errors.push("Please enter a valid date of birth.");
+        else if (dob.getTime() > maxDob) errors.push(`You must be at least ${MIN_AGE_YEARS} years old.`);
         else clean[field] = s;
         break;
       }
@@ -291,17 +355,17 @@ export async function validatePartial(
       case "income_band": {
         const s = str(v);
         if (!s) { clean[field] = null; break; }
-        if (!refs.slugSets[field]?.has(s)) errors.push(`${field}: '${s}' is not a valid option`);
+        if (!refs.slugSets[field]?.has(s)) errors.push(`Please choose a valid ${labelFor(field).toLowerCase()}.`);
         else clean[field] = s;
         break;
       }
       case "languages":
       case "hobbies": {
-        if (!Array.isArray(v)) { errors.push(`${field}: must be a list`); break; }
+        if (!Array.isArray(v)) { errors.push(`${labelFor(field)} must be a list.`); break; }
         const setKey = field === "languages" ? "language" : "hobby";
         const vals = v.map(str).filter(Boolean);
         const bad = vals.filter((s) => !refs.slugSets[setKey]?.has(s));
-        if (bad.length) errors.push(`${field}: unknown value(s): ${bad.join(", ")}`);
+        if (bad.length) errors.push(`One or more selected ${labelFor(field).toLowerCase()} are invalid.`);
         else clean[field] = vals;
         break;
       }
@@ -309,16 +373,16 @@ export async function validatePartial(
         // Free-text write-ins (not in ref_hobby). Trim, drop blanks, dedupe.
         // Reject (don't silently truncate) over-length entries or too many —
         // the UI caps both (maxLength 60, max 20), so this only guards direct API use.
-        if (!Array.isArray(v)) { errors.push("custom_hobbies: must be a list"); break; }
+        if (!Array.isArray(v)) { errors.push("Hobbies must be a list."); break; }
         const vals = Array.from(new Set(v.map(str).filter(Boolean)));
-        if (vals.some((s) => s.length > 100)) errors.push("custom_hobbies: each hobby must be 100 characters or fewer");
-        else if (vals.length > 20) errors.push("custom_hobbies: too many (max 20)");
+        if (vals.some((s) => s.length > 100)) errors.push("Each hobby must be 100 characters or fewer.");
+        else if (vals.length > 20) errors.push("Please add at most 20 hobbies.");
         else clean[field] = vals;
         break;
       }
       case "family_members": {
-        if (!Array.isArray(v)) { errors.push("family_members: must be a list"); break; }
-        if (v.length > 12) { errors.push("family_members: too many (max 12)"); break; }
+        if (!Array.isArray(v)) { errors.push(`${labelFor("family_members")} must be a list.`); break; }
+        if (v.length > 12) { errors.push("Please add at most 12 family members."); break; }
         const rel = refs.slugSets["family_relation"];
         const occ = refs.slugSets["family_occupation"];
         const out: { relation: string; occupation: string }[] = [];
@@ -328,39 +392,39 @@ export async function validatePartial(
           const relation = str((m as Record<string, unknown>).relation);
           const occupation = str((m as Record<string, unknown>).occupation);
           if (!relation && !occupation) continue; // skip empty rows
-          if (relation && rel && !rel.has(relation)) { errors.push(`family_members: unknown relation '${relation}'`); bad = true; }
-          if (occupation && occ && !occ.has(occupation)) { errors.push(`family_members: unknown occupation '${occupation}'`); bad = true; }
+          if (relation && rel && !rel.has(relation)) { errors.push(`'${relation}' is not a valid family relation.`); bad = true; }
+          if (occupation && occ && !occ.has(occupation)) { errors.push(`'${occupation}' is not a valid occupation.`); bad = true; }
           out.push({ relation, occupation });
         }
-        if (bad) { errors.push("family_members: invalid entries"); break; }
+        if (bad) { errors.push("Some family member entries are invalid."); break; }
         clean[field] = out;
         break;
       }
       case "graduation_year": {
         const n = Number(v);
         if (v === "" || v == null) { clean[field] = null; break; }
-        if (!Number.isInteger(n) || n < 1950 || n > 2100) errors.push("graduation_year: out of range");
+        if (!Number.isInteger(n) || n < 1950 || n > 2100) errors.push(`${labelFor("graduation_year")} must be between 1950 and 2100.`);
         else clean[field] = n;
         break;
       }
       case "cgpa": {
         if (v === "" || v == null) { clean[field] = null; break; }
         const n = Number(v);
-        if (Number.isNaN(n) || n < 0 || n > 100) errors.push("cgpa: out of range (0–100)");
+        if (Number.isNaN(n) || n < 0 || n > 100) errors.push(`${labelFor("cgpa")} must be between 0 and 100.`);
         else clean[field] = n;
         break;
       }
       case "skill_assessment": {
         if (typeof v !== "object" || v == null || Array.isArray(v)) {
-          errors.push("skill_assessment: must be an object");
+          errors.push(`${labelFor("skill_assessment")} is invalid.`);
           break;
         }
         const cats = refs.slugSets["skill_assessment_category"];
         const obj: Record<string, number> = {};
         for (const [k, raw] of Object.entries(v as Record<string, unknown>)) {
-          if (cats && !cats.has(k)) { errors.push(`skill_assessment: unknown category '${k}'`); continue; }
+          if (cats && !cats.has(k)) { errors.push(`'${k}' is not a valid skill category.`); continue; }
           const n = Number(raw);
-          if (!Number.isInteger(n) || n < 1 || n > 5) { errors.push(`skill_assessment.${k}: must be 1–5`); continue; }
+          if (!Number.isInteger(n) || n < 1 || n > 5) { errors.push("Each skill rating must be between 1 and 5."); continue; }
           obj[k] = n;
         }
         clean[field] = obj;
@@ -373,7 +437,7 @@ export async function validatePartial(
   const goals = (clean.career_goal_ids as string[] | undefined) ?? (data.career_goal_ids as string[] | undefined);
   const primary = (clean.primary_career_goal_id as string | undefined) ?? (data.primary_career_goal_id as string | undefined);
   if (primary && Array.isArray(goals) && !goals.includes(primary)) {
-    errors.push("primary_career_goal_id must be one of career_goal_ids");
+    errors.push("Your primary career goal must be one of your selected career goals.");
   }
 
   return { clean, errors };

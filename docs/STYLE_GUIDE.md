@@ -45,7 +45,7 @@ Raw brand vars (`var(--brand-gradient)`, `var(--brand-gradient-135)`) are reserv
 - **Section container:** `Card` + `CardContent` (`pt-6` when there's no `CardHeader`).
 - **Tabs:** **coloured folder tabs** with a count in the trigger, e.g. `Active ({n})` — see **Tabs** below. Don't use the plain default pill `TabsList`.
 - **Data grids:** `components/data-table.tsx` (TanStack) — never a hand-rolled table for sortable/filterable data.
-- **Forms:** `Label` + `Input`/`Select` in `grid gap-1.5`; primary submit is `<Button>`; validation/error message in `text-destructive text-sm`.
+- **Forms:** `Label` + `Input`/`Select` in `grid gap-1.5`; primary submit is `<Button>`; validation/error message in `text-destructive text-sm`. For a field users may not recognise (e.g. an ID/number), add a `<InfoTooltip>` next to the label explaining what it is and where to find it — see **Tooltips** below. Don't hide required guidance in a tooltip; it only supplements.
 - **Empty state:** `text-muted-foreground bg-muted/40 rounded-lg border px-4 py-10 text-center text-sm`.
 - **Status:** `Badge` — `variant="default"` for live/positive, `"secondary"` otherwise.
 - **Icons:** `lucide-react` at default sizes.
@@ -97,6 +97,29 @@ Uniform across the app — the look is built into `components/ui/dialog.tsx`, so
 
 - **Destructive confirmation:** in the body, a `TriangleAlert` in a `bg-destructive/10 text-destructive` circle beside the description; primary action is `variant="destructive"`.
 - **Irreversible deletes:** require **type-to-confirm** — an `Input` that must exactly match the resource name, with the confirm button `disabled` until it matches. Never use the browser `confirm()`/`alert()`.
+
+## Tooltips (help / "what is this?")
+
+Uniform across the app — the look is built into `components/ui/tooltip.tsx` (Radix base), so don't hand-roll a tooltip or restyle per use.
+
+- **Deep-violet header, light body — via brand tokens.** A rounded light card (`bg-tooltip` soft violet-white, `text-tooltip-foreground`, `ring-1 ring-black/10` + `shadow-xl` for a crisp edge). The **header** is a **solid deep-violet band** — `bg-tooltip-header` / `text-tooltip-header-foreground`: the same brand family as the registration/console header, but deliberately **darker than its bright gradient** so the tooltip header never merges into that banner. The **body** stays light with dark readable text (`text-tooltip-foreground`). All four colours are defined once in `app/brand.css` (`--tooltip-*`) and mapped to Tailwind in `globals.css` — no ad-hoc hex in the component.
+- **Always header + body.** Every rich tooltip carries a short bold header (its own band) and a one/two-line body — never a bare string. An `Info` icon sits beside the header by default.
+- **Position: top, then auto-flip.** Defaults to `side="top"`; Radix `avoidCollisions` flips/shifts it when there's no room. Don't force a side unless you have a reason.
+- **Works on touch.** The default trigger is a tappable ⓘ button — hover/focus on desktop, tap-to-toggle on mobile (hover doesn't exist on phones). Keep the important content visible in the UI; the tooltip only supplements it.
+
+Use the `InfoTooltip` composite (default ⓘ trigger), or the `Tooltip`/`TooltipTrigger`/`TooltipContent` primitives with a custom `trigger`:
+
+```tsx
+import { InfoTooltip } from "@/components/ui/tooltip";
+
+<Label className="flex items-center gap-1">
+  APAAR / ABC ID
+  <InfoTooltip title="APAAR / ABC ID">
+    A 12-digit national student ID (Academic Bank of Credits) under NEP 2020,
+    stored in your DigiLocker account.
+  </InfoTooltip>
+</Label>
+```
 
 ## Governance
 

@@ -18,7 +18,7 @@ const SITE_URL = process.env.NEXT_PUBLIC_SITE_URL ?? "http://localhost:3000";
 // degree, branch, year_of_study, skills, interests) or ids (career goals,
 // mentor preference) — the client already resolves them via the ref data.
 type Profile = {
-  full_name?: string; roll_number?: string; phone?: string; gender?: string;
+  full_name?: string; roll_number?: string; registration_number?: string; apaar_id?: string; phone?: string; gender?: string;
   city_village?: string; district?: string; state?: string;
   degree?: string; branch?: string; year_of_study?: string;
   graduation_year?: string | number; cgpa?: string | number;
@@ -69,6 +69,14 @@ export async function POST(req: NextRequest) {
   const setIf = (k: string, v: unknown) => { if (v !== undefined) row[k] = v; };
   setIf("full_name", str(p.full_name));
   setIf("roll_number", str(p.roll_number));
+  setIf("registration_number", str(p.registration_number));
+  // APAAR / ABC ID: normalize to digits-only and require 12 digits (same rule as
+  // self-registration, lib/registration.ts) so it's stored consistently whether
+  // a student self-registers or an admin stages them.
+  const apaar = str(p.apaar_id)?.replace(/[\s-]/g, "");
+  if (apaar && !/^\d{12}$/.test(apaar))
+    return NextResponse.json({ error: "APAAR / ABC ID must be a 12-digit number" }, { status: 422 });
+  setIf("apaar_id", apaar);
   setIf("phone", str(p.phone));
   setIf("gender", str(p.gender));
   setIf("city_village", str(p.city_village));
