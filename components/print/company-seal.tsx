@@ -64,13 +64,33 @@ export function CompanySeal({
       <text x="15" y="100" fontSize="15" textAnchor="middle" dominantBaseline="central">★</text>
       <text x="185" y="100" fontSize="15" textAnchor="middle" dominantBaseline="central">★</text>
 
-      {/* Centre: the payment date. */}
+      {/* Centre emblem — the CL monogram anchors it as a seal; the payment date
+          sits neatly beneath, under a hairline. */}
+      <text
+        x="100"
+        y={centerText ? 92 : 100}
+        fontFamily={font}
+        fontSize="30"
+        fontWeight="800"
+        letterSpacing="-1"
+        textAnchor="middle"
+        dominantBaseline="central"
+      >
+        CL
+      </text>
       {centerText && (
         <>
-          <text x="100" y="93" fontFamily={font} fontSize="6.5" fontWeight="700" letterSpacing="1.5" textAnchor="middle">
-            PAID ON
-          </text>
-          <text x="100" y="107" fontFamily={font} fontSize="12" fontWeight="800" textAnchor="middle">
+          <line x1="80" y1="106" x2="120" y2="106" stroke={BLUE} strokeWidth="0.8" />
+          <text
+            x="100"
+            y="114"
+            fontFamily={font}
+            fontSize="8.5"
+            fontWeight="700"
+            letterSpacing="0.5"
+            textAnchor="middle"
+            dominantBaseline="central"
+          >
             {centerText}
           </text>
         </>
