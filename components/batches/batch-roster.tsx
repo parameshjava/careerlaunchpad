@@ -1,0 +1,214 @@
+"use client";
+
+// Batch roster (issue #49, Phase 4): enrolled students with balances + per-row
+// "Record payment". Enrolment itself lives on the dedicated full-page screen
+// (/dashboard/batches/[id]/enrol) so it scales to thousands of students and
+// supports multi-select. Talks to /api/admin/enrollments/[id]/payments.
+import { useState } from "react";
+import { useRouter } from "next/navigation";
+import Link from "next/link";
+import { IndianRupee, Loader2, UserPlus } from "lucide-react";
+
+import { Badge } from "@/components/ui/badge";
+import { Button } from "@/components/ui/button";
+import { DatePicker } from "@/components/ui/date-picker";
+import {
+  Dialog,
+  DialogContent,
+  DialogFooter,
+  DialogHeader,
+  DialogTitle,
+} from "@/components/ui/dialog";
+import { Input } from "@/components/ui/input";
+import { Label } from "@/components/ui/label";
+import {
+  Select,
+  SelectContent,
+  SelectItem,
+  SelectTrigger,
+  SelectValue,
+} from "@/components/ui/select";
+import {
+  Table,
+  TableBody,
+  TableCell,
+  TableHead,
+  TableHeader,
+  TableRow,
+} from "@/components/ui/table";
+import { rupeesToPaise } from "@/lib/course-query";
+import {
+  CONCESSION_LABEL,
+  formatINR,
+  MODE_LABELS,
+  MODE_REFERENCE_LABEL,
+  type PaymentMode,
+} from "@/lib/fee-receipt";
+import type { BatchFee, RosterRow } from "@/lib/enrollment-query";
+
+const MODES: PaymentMode[] = ["cash", "upi", "card", "online"];
+
+export function BatchRoster({
+  batchId,
+  batch,
+  roster,
+}: {
+  batchId: string;
+  batch: BatchFee;
+  roster: RosterRow[];
+}) {
+  const router = useRouter();
+  const [payFor, setPayFor] = useState<RosterRow | null>(null);
+  const [payAmount, setPayAmount] = useState("");
+  const [payMode, setPayMode] = useState<PaymentMode>("cash");
+  const [payRef, setPayRef] = useState("");
+  const [payDate, setPayDate] = useState("");
+  const [payErr, setPayErr] = useState("");
+  const [payBusy, setPayBusy] = useState(false);
+
+  function openPay(row: RosterRow) {
+    setPayFor(row);
+    setPayAmount("");
+    setPayMode("cash");
+    setPayRef("");
+    setPayDate("");
+    setPayErr("");
+  }
+
+  async function submitPay() {
+    if (!payFor) return;
+    setPayErr("");
+    const amountPaise = rupeesToPaise(payAmount);
+    if (!Number.isFinite(amountPaise) || amountPaise <= 0) return setPayErr("Enter a valid amount.");
+    setPayBusy(true);
+    try {
+      const res = await fetch(`/api/admin/enrollments/${payFor.enrollmentId}/payments`, {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({
+          amountPaise,
+          mode: payMode,
+          referenceNo: payMode === "cash" ? null : payRef.trim() || null,
+          paidOn: payDate || null,
+        }),
+      });
+      const json = await res.json();
+      if (!res.ok) throw new Error(json.error ?? "Could not record payment");
+      router.push(`/dashboard/payments/${json.receiptId}`);
+    } catch (e) {
+      setPayErr((e as Error).message);
+      setPayBusy(false);
+    }
+  }
+
+  return (
+    <div className="grid gap-4">
+      <div className="flex items-center justify-between gap-3">
+        <p className="text-muted-foreground text-sm">
+          {roster.length} enrolled · batch fee {formatINR(batch.grossPaise)}
+        </p>
+        <Button asChild>
+          <Link href={`/dashboard/batches/${batchId}/enrol`}>
+            <UserPlus /> Enrol students
+          </Link>
+        </Button>
+      </div>
+
+      {roster.length === 0 ? (
+        <div className="text-muted-foreground bg-muted/40 rounded-lg border px-4 py-10 text-center text-sm">
+          No students enrolled yet. Enrol students to start recording payments.
+        </div>
+      ) : (
+        <div className="overflow-x-auto rounded-lg border">
+          <Table>
+            <TableHeader>
+              <TableRow>
+                <TableHead>Student</TableHead>
+                <TableHead className="text-right">Net fee</TableHead>
+                <TableHead className="text-right">Paid</TableHead>
+                <TableHead className="text-right">Balance</TableHead>
+                <TableHead>Status</TableHead>
+                <TableHead className="text-right">Action</TableHead>
+              </TableRow>
+            </TableHeader>
+            <TableBody>
+              {roster.map((r) => (
+                <TableRow key={r.enrollmentId}>
+                  <TableCell>
+                    <div className="font-medium">{r.studentName}</div>
+                    {r.concessionType !== "none" && (
+                      <div className="text-muted-foreground text-xs">{CONCESSION_LABEL[r.concessionType]}</div>
+                    )}
+                  </TableCell>
+                  <TableCell className="text-right tabular-nums">{formatINR(r.netFeePaise)}</TableCell>
+                  <TableCell className="text-right tabular-nums">{formatINR(r.paidPaise)}</TableCell>
+                  <TableCell className="text-right tabular-nums font-medium">{formatINR(r.balancePaise)}</TableCell>
+                  <TableCell>
+                    <Badge variant={r.status === "completed" ? "default" : "secondary"}>
+                      {r.status === "completed" ? "Paid" : r.status}
+                    </Badge>
+                  </TableCell>
+                  <TableCell className="text-right">
+                    <Button variant="outline" size="sm" disabled={r.balancePaise <= 0} onClick={() => openPay(r)}>
+                      <IndianRupee /> Record payment
+                    </Button>
+                  </TableCell>
+                </TableRow>
+              ))}
+            </TableBody>
+          </Table>
+        </div>
+      )}
+
+      {/* Record payment dialog */}
+      <Dialog open={Boolean(payFor)} onOpenChange={(o) => !o && setPayFor(null)}>
+        <DialogContent className="sm:max-w-md">
+          <DialogHeader>
+            <DialogTitle>Record payment</DialogTitle>
+          </DialogHeader>
+          {payFor && (
+            <div className="grid gap-4">
+              <div className="text-muted-foreground text-sm">
+                {payFor.studentName} · balance <span className="text-foreground font-medium">{formatINR(payFor.balancePaise)}</span>
+              </div>
+              <div className="grid gap-4 sm:grid-cols-2">
+                <div className="grid gap-1.5">
+                  <Label>Amount (₹)</Label>
+                  <Input inputMode="decimal" value={payAmount} onChange={(e) => setPayAmount(e.target.value)} placeholder="0" />
+                </div>
+                <div className="grid gap-1.5">
+                  <Label>Mode</Label>
+                  <Select value={payMode} onValueChange={(v) => setPayMode(v as PaymentMode)}>
+                    <SelectTrigger><SelectValue /></SelectTrigger>
+                    <SelectContent>
+                      {MODES.map((m) => (
+                        <SelectItem key={m} value={m}>{MODE_LABELS[m]}</SelectItem>
+                      ))}
+                    </SelectContent>
+                  </Select>
+                </div>
+              </div>
+              {payMode !== "cash" && (
+                <div className="grid gap-1.5">
+                  <Label>{MODE_REFERENCE_LABEL[payMode]}</Label>
+                  <Input value={payRef} onChange={(e) => setPayRef(e.target.value)} />
+                </div>
+              )}
+              <div className="grid gap-1.5">
+                <Label>Payment date</Label>
+                <DatePicker value={payDate} onChange={setPayDate} placeholder="Today" clearable />
+              </div>
+              {payErr && <p className="text-destructive text-sm">{payErr}</p>}
+            </div>
+          )}
+          <DialogFooter>
+            <Button variant="outline" onClick={() => setPayFor(null)}>Cancel</Button>
+            <Button onClick={submitPay} disabled={payBusy}>
+              {payBusy ? <Loader2 className="animate-spin" /> : <IndianRupee />} Record &amp; get receipt
+            </Button>
+          </DialogFooter>
+        </DialogContent>
+      </Dialog>
+    </div>
+  );
+}

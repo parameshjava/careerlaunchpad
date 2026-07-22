@@ -17,7 +17,9 @@ export type NavIcon =
   | "mentor"
   | "mail"
   | "exams"
-  | "college";
+  | "college"
+  | "courses"
+  | "fees";
 
 /** Live badge keys understood by SidebarNav (resolved to a client widget). */
 export type NavBadge = "exams";
@@ -118,6 +120,15 @@ export function buildNav(ctx: AuthContext, opts: { studentApproved?: boolean } =
     if (ctx.permissions.has("*"))
       platform.push({ label: "Test Email", href: "/dashboard/email-test", icon: "mail" });
 
+    // Courses & Fees — the course catalog (and, in later phases, batches,
+    // enrolment, and payments). All gated on the central finance permission.
+    const finance: NavItem[] = [];
+    if (ctx.permissions.has("*") || can(ctx, "finance.manage")) {
+      finance.push({ label: "Courses", href: "/dashboard/courses", icon: "courses" });
+      finance.push({ label: "Competitive Exams", href: "/dashboard/competitive-exams", icon: "exams" });
+      finance.push({ label: "Batches", href: "/dashboard/batches", icon: "courses" });
+    }
+
     // Question Bank — split: the taxonomy (subjects/chapters/passages) vs the
     // questions themselves, gated by their respective permissions.
     const bank: NavItem[] = [];
@@ -143,6 +154,7 @@ export function buildNav(ctx: AuthContext, opts: { studentApproved?: boolean } =
     const sections: NavSection[] = [];
     if (students.length) sections.push({ title: "Students", items: students });
     if (platform.length) sections.push({ title: "Platform", items: platform });
+    if (finance.length) sections.push({ title: "Courses & Fees", items: finance });
     if (bank.length) sections.push({ title: "Question Bank", items: bank });
     if (exams.length) sections.push({ title: "Exams", items: exams });
     if (reports.length) sections.push({ title: "Reports", items: reports });
@@ -161,6 +173,7 @@ export function buildNav(ctx: AuthContext, opts: { studentApproved?: boolean } =
     const items: NavItem[] = [
       { label: "My profile", href: "/student/register", icon: "profile" },
       { label: "My insights", href: "/student/insights", icon: "analytics" },
+      { label: "My fees", href: "/student/fees", icon: "fees" },
     ];
     if (can(ctx, "exam.attempt.take") && studentApproved)
       items.push({ label: "My exams", href: "/student/exams", icon: "exams", badge: "exams" });

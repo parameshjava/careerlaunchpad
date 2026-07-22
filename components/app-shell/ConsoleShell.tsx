@@ -17,6 +17,7 @@ import Link from "next/link";
 import { usePathname } from "next/navigation";
 import {
   BarChart3,
+  BookOpen,
   Building2,
   ChevronDown,
   ClipboardList,
@@ -30,6 +31,7 @@ import {
   Upload,
   UserRound,
   Users,
+  Wallet,
   X,
 } from "lucide-react";
 
@@ -48,6 +50,8 @@ const ICONS: Record<NavIcon, React.ComponentType<{ className?: string }>> = {
   mail: Mail,
   exams: ClipboardList,
   college: Building2,
+  courses: BookOpen,
+  fees: Wallet,
 };
 
 const COLLAPSE_KEY = "cl-sidebar-collapsed";
