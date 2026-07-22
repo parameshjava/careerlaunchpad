@@ -15,7 +15,6 @@ import { ArrowLeft, Printer, ReceiptIndianRupee } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { CompanySeal } from "@/components/print/company-seal";
 import {
-  CONCESSION_LABEL,
   formatINR,
   MODE_LABELS,
   MODE_REFERENCE_LABEL,
@@ -57,7 +56,7 @@ export function FeeReceiptView({
   backHref?: string;
   backLabel?: string;
 }) {
-  const { student, lineItems, mode } = receipt;
+  const { student, mode } = receipt;
   const isCash = mode === "cash";
   const paidInFull = receipt.balancePaise <= 0;
 
@@ -164,6 +163,8 @@ export function FeeReceiptView({
         .fr-mode { display: inline-flex; align-items: center; gap: 6px; background: var(--label-bg); color: var(--navy);
           border-radius: 6px; padding: 2px 9px; font-size: 11.5px; font-weight: 800; letter-spacing: .03em; text-transform: uppercase; }
         .fr-pay .bal dd { color: var(--green-ink); }
+        .fr-acct { border-top: 1px dashed var(--line-strong); margin-top: 12px; padding-top: 8px; }
+        .fr-acct .fr-section { margin: 0 0 6px; }
 
         .fr-signoff-wrap { position: relative; }
         .fr-signoff { display: grid; grid-template-columns: 1fr auto; gap: 24px; align-items: end; padding: 24px 40px 24px; margin-top: 8px; }
@@ -352,8 +353,10 @@ export function FeeReceiptView({
               </tbody>
             </table>
 
-            {/* Particulars */}
-            <div className="fr-section">Particulars</div>
+            {/* Payment received — this receipt is an acknowledgement of THIS
+                payment; the fee-structure breakdown lives elsewhere (course/batch
+                + the student's My fees), not on every receipt. */}
+            <div className="fr-section">Payment received</div>
             <table className="fr-part">
               <thead>
                 <tr>
@@ -363,43 +366,31 @@ export function FeeReceiptView({
                 </tr>
               </thead>
               <tbody>
-                {lineItems.map((li, i) => (
-                  <tr key={i}>
-                    <td className="cnt">{i + 1}</td>
-                    <td>
-                      {li.description}
-                      {li.note && <span className="muted">{li.note}</span>}
-                    </td>
-                    <td className="num">{formatINR(li.amountPaise).replace("₹ ", "")}</td>
-                  </tr>
-                ))}
+                <tr>
+                  <td className="cnt">1</td>
+                  <td>
+                    Fee payment{receipt.courseName ? ` — ${receipt.courseName}` : ""}
+                    {(receipt.batchName || receipt.academicYear) && (
+                      <span className="muted">
+                        {[receipt.batchName, receipt.academicYear].filter(Boolean).join(" · ")}
+                      </span>
+                    )}
+                  </td>
+                  <td className="num">{formatINR(receipt.thisPaymentPaise).replace("₹ ", "")}</td>
+                </tr>
               </tbody>
               <tfoot>
-                {receipt.concessionPaise > 0 && (
-                  <>
-                    <tr>
-                      <td />
-                      <td className="lbl">Sub-total</td>
-                      <td className="num">{formatINR(receipt.grossFeePaise).replace("₹ ", "")}</td>
-                    </tr>
-                    <tr>
-                      <td />
-                      <td className="lbl">{CONCESSION_LABEL[receipt.concessionType]}</td>
-                      <td className="num">− {formatINR(receipt.concessionPaise).replace("₹ ", "")}</td>
-                    </tr>
-                  </>
-                )}
                 <tr className="grand">
                   <td />
-                  <td className="lbl">Total fee</td>
-                  <td className="num">{formatINR(receipt.totalFeePaise)}</td>
+                  <td className="lbl">Amount received</td>
+                  <td className="num">{formatINR(receipt.thisPaymentPaise)}</td>
                 </tr>
               </tfoot>
             </table>
 
             <div className="fr-split">
               <div className="fr-words">
-                <div className="fr-section">Amount in words (this payment)</div>
+                <div className="fr-section">Amount in words</div>
                 <p>{rupeesInWords(receipt.thisPaymentPaise)}</p>
               </div>
               <div className="fr-pay">
@@ -413,15 +404,21 @@ export function FeeReceiptView({
                   <dd>{isCash ? "—" : receipt.referenceNo || "—"}</dd>
                   <dt>Payment date</dt>
                   <dd>{fmtDate(receipt.paidOn)}</dd>
-                  <dt>Previously paid</dt>
-                  <dd>{formatINR(receipt.previouslyPaidPaise)}</dd>
-                  <dt>This payment</dt>
-                  <dd>{formatINR(receipt.thisPaymentPaise)}</dd>
-                  <div className="bal" style={{ display: "contents" }}>
-                    <dt>Balance due</dt>
-                    <dd>{formatINR(Math.max(0, receipt.balancePaise))}</dd>
-                  </div>
                 </dl>
+                {/* Small account context — not the fee structure, just the standing. */}
+                <div className="fr-acct">
+                  <div className="fr-section">Account status</div>
+                  <dl>
+                    <dt>Total course fee</dt>
+                    <dd>{formatINR(receipt.totalFeePaise)}</dd>
+                    <dt>Paid to date</dt>
+                    <dd>{formatINR(receipt.previouslyPaidPaise + receipt.thisPaymentPaise)}</dd>
+                    <div className="bal" style={{ display: "contents" }}>
+                      <dt>Balance due</dt>
+                      <dd>{formatINR(Math.max(0, receipt.balancePaise))}</dd>
+                    </div>
+                  </dl>
+                </div>
               </div>
             </div>
           </div>
