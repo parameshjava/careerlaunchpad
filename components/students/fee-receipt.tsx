@@ -10,7 +10,7 @@
 // `FeeReceipt` (lib/fee-receipt.ts); nothing is hard-coded here.
 
 import Link from "next/link";
-import { useEffect, useState } from "react";
+import { useRef } from "react";
 import { ArrowLeft, Printer, ReceiptIndianRupee } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { CompanySeal } from "@/components/print/company-seal";
@@ -60,18 +60,72 @@ export function FeeReceiptView({
   const isCash = mode === "cash";
   const paidInFull = receipt.balancePaise <= 0;
 
-  // Print on demand; reset nothing — the receipt is the only printable content.
-  const [printing, setPrinting] = useState(false);
-  useEffect(() => {
-    if (!printing) return;
-    const done = () => setPrinting(false);
-    window.addEventListener("afterprint", done, { once: true });
-    window.print();
-    return () => window.removeEventListener("afterprint", done);
-  }, [printing]);
+  // Print the receipt in an isolated iframe rather than window.print(). Printing
+  // the live document breaks when the receipt is shown inside a modal (the Radix
+  // dialog is fixed + transformed + clipped, so the absolutely-positioned sheet
+  // lands on the wrong page). A throwaway iframe containing only the receipt has
+  // no surrounding layout to fight, so it prints identically everywhere. We copy
+  // the page's stylesheets + <base> so Tailwind, the brand font, and the logo all
+  // resolve inside the frame.
+  const pageRef = useRef<HTMLDivElement>(null);
+  function handlePrint() {
+    const node = pageRef.current;
+    if (!node) return;
+    const iframe = document.createElement("iframe");
+    iframe.setAttribute("aria-hidden", "true");
+    Object.assign(iframe.style, {
+      position: "fixed",
+      right: "0",
+      bottom: "0",
+      width: "0",
+      height: "0",
+      border: "0",
+      visibility: "hidden",
+    });
+    document.body.appendChild(iframe);
+    const cw = iframe.contentWindow;
+    const doc = cw?.document;
+    if (!cw || !doc) {
+      iframe.remove();
+      return;
+    }
+
+    const headStyles = Array.from(
+      document.querySelectorAll('style, link[rel="stylesheet"]')
+    )
+      .map((n) => n.outerHTML)
+      .join("");
+
+    let cleaned = false;
+    const cleanup = () => {
+      if (cleaned) return;
+      cleaned = true;
+      iframe.remove();
+    };
+    cw.addEventListener("afterprint", cleanup);
+
+    iframe.onload = () => {
+      // Give the copied stylesheets/fonts a tick to apply before printing.
+      cw.setTimeout(() => {
+        cw.focus();
+        cw.print();
+        // Safety net if a browser never fires afterprint (won't fire while the
+        // print dialog is still open, so keep it long).
+        cw.setTimeout(cleanup, 60000);
+      }, 150);
+    };
+
+    doc.open();
+    doc.write(
+      `<!doctype html><html class="${document.documentElement.className}">` +
+        `<head><meta charset="utf-8"><base href="${window.location.origin}/">${headStyles}</head>` +
+        `<body class="${document.body.className}">${node.outerHTML}</body></html>`
+    );
+    doc.close();
+  }
 
   return (
-    <div className="fr-page">
+    <div className="fr-page" ref={pageRef}>
       <style>{`
         .fr-page { --navy:${NAVY}; --blue:${BLUE}; --green:${GREEN}; --green-ink:${GREEN_INK};
           --label-bg:${LABEL_BG}; --line:${LINE}; --line-strong:${LINE_STRONG};
@@ -202,21 +256,11 @@ export function FeeReceiptView({
              into, so those disappear; the brand bands run edge-to-edge and page
              margins are provided inside the content instead. */
           @page { size: A4 portrait; margin: 0; }
-          html, body { width: 210mm; background: #fff; overflow: visible !important; }
+          html, body { width: 210mm; background: #fff; }
           body * { visibility: hidden !important; }
           .fr-doc-print, .fr-doc-print * { visibility: visible !important; }
           .fr-toolbar { display: none !important; }
           .fr-doc-print { position: absolute; left: 0; top: 0; width: 100%; }
-          /* When the receipt is shown inside a modal (admin roster), the Radix
-             dialog wrapper is fixed + transformed + clipped, which would trap the
-             absolutely-positioned sheet and print it blank. Neutralise it so the
-             receipt prints as a full page exactly like the standalone view. */
-          .fr-print-modal { position: static !important; transform: none !important;
-            inset: auto !important; margin: 0 !important; padding: 0 !important;
-            max-width: none !important; width: auto !important;
-            max-height: none !important; height: auto !important;
-            overflow: visible !important; box-shadow: none !important;
-            border: 0 !important; background: transparent !important; }
           .fr-sheet { width: 100%; max-width: none; box-shadow: none; }
           /* Header repeats at the top of every page (thead). */
           .fr-sheet thead { display: table-header-group; }
@@ -249,7 +293,7 @@ export function FeeReceiptView({
         ) : (
           <span />
         )}
-        <Button onClick={() => setPrinting(true)}>
+        <Button onClick={handlePrint}>
           <Printer /> Print / Download PDF
         </Button>
       </div>
