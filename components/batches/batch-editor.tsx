@@ -1,0 +1,466 @@
+"use client";
+
+// Batch editor (issue #49, Phase 3). Create or edit a batch — a dated run of a
+// course: pick the course (its default fee lines copy in), associate colleges,
+// set optional dates, tweak the batch's own fee, and move it through its status
+// lifecycle. Talks only to /api/admin/batches*.
+import { useCallback, useEffect, useMemo, useState } from "react";
+import { useRouter } from "next/navigation";
+import Link from "next/link";
+import { ArrowLeft, Copy, Loader2, Plus, Save, Trash2, X } from "lucide-react";
+
+import { Button } from "@/components/ui/button";
+import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
+import { DatePicker } from "@/components/ui/date-picker";
+import { Input } from "@/components/ui/input";
+import { Label } from "@/components/ui/label";
+import {
+  Select,
+  SelectContent,
+  SelectItem,
+  SelectTrigger,
+  SelectValue,
+} from "@/components/ui/select";
+import { formatINR } from "@/lib/fee-receipt";
+import { paiseToRupeeInput, rupeesToPaise } from "@/lib/course-query";
+import {
+  BATCH_STATUSES,
+  BATCH_STATUS_LABELS,
+  type BatchDetail,
+  type BatchStatus,
+  type CourseOption,
+} from "@/lib/batch-query";
+
+type FeeRow = { label: string; amount: string };
+
+export function BatchEditor({ batchId }: { batchId?: string }) {
+  const router = useRouter();
+  const editing = Boolean(batchId);
+
+  const [loading, setLoading] = useState(true);
+  const [loadError, setLoadError] = useState("");
+  const [saving, setSaving] = useState(false);
+  const [formError, setFormError] = useState("");
+
+  const [coursesRef, setCoursesRef] = useState<CourseOption[]>([]);
+
+  const [courseId, setCourseId] = useState("");
+  const [name, setName] = useState("");
+  const [code, setCode] = useState("");
+  const [academicYear, setAcademicYear] = useState("");
+  const [deliveryMode, setDeliveryMode] = useState("");
+  const [startDate, setStartDate] = useState("");
+  const [endDate, setEndDate] = useState("");
+  const [currency, setCurrency] = useState("INR");
+  const [status, setStatus] = useState<BatchStatus>("draft");
+  const [feeRows, setFeeRows] = useState<FeeRow[]>([]);
+
+  // Colleges: typeahead search (the college table has ~10k rows) + selected chips.
+  const [colleges, setColleges] = useState<{ id: string; name: string }[]>([]);
+  const [collegeQuery, setCollegeQuery] = useState("");
+  const [collegeResults, setCollegeResults] = useState<{ id: string; name: string }[]>([]);
+  const [searchingColleges, setSearchingColleges] = useState(false);
+
+  useEffect(() => {
+    let cancelled = false;
+    (async () => {
+      try {
+        const refRes = await fetch("/api/admin/batches/reference");
+        const ref = await refRes.json();
+        if (!refRes.ok) throw new Error(ref.error ?? "Could not load options");
+        if (cancelled) return;
+        setCoursesRef(ref.courses ?? []);
+
+        if (batchId) {
+          const res = await fetch(`/api/admin/batches/${batchId}`);
+          const json = await res.json();
+          if (!res.ok) throw new Error(json.error ?? "Could not load batch");
+          if (cancelled) return;
+          const bt = json.batch as BatchDetail;
+          setCourseId(bt.courseId);
+          setName(bt.name);
+          setCode(bt.code);
+          setAcademicYear(bt.academicYear ?? "");
+          setDeliveryMode(bt.deliveryMode ?? "");
+          setStartDate(bt.startDate ?? "");
+          setEndDate(bt.endDate ?? "");
+          setCurrency(bt.currency);
+          setStatus(bt.status);
+          setColleges(bt.colleges);
+          setFeeRows(bt.feeLines.map((f) => ({ label: f.label, amount: paiseToRupeeInput(f.amountPaise) })));
+        }
+      } catch (e) {
+        if (!cancelled) setLoadError((e as Error).message);
+      } finally {
+        if (!cancelled) setLoading(false);
+      }
+    })();
+    return () => {
+      cancelled = true;
+    };
+  }, [batchId]);
+
+  const selectedCourse = useMemo(
+    () => coursesRef.find((c) => c.id === courseId),
+    [coursesRef, courseId]
+  );
+
+  const copyFeeFromCourse = useCallback(
+    (course?: CourseOption) => {
+      const src = course ?? selectedCourse;
+      if (!src) return;
+      setFeeRows(src.feeLines.map((f) => ({ label: f.label, amount: paiseToRupeeInput(f.amountPaise) })));
+    },
+    [selectedCourse]
+  );
+
+  const onCourseChange = (id: string) => {
+    setCourseId(id);
+    // On first pick (new batch, no fee lines yet) copy the course's defaults.
+    if (!editing && feeRows.length === 0) copyFeeFromCourse(coursesRef.find((c) => c.id === id));
+  };
+
+  async function searchColleges(q: string) {
+    setCollegeQuery(q);
+    if (q.trim().length < 2) {
+      setCollegeResults([]);
+      return;
+    }
+    setSearchingColleges(true);
+    try {
+      const res = await fetch(`/api/colleges/search?q=${encodeURIComponent(q.trim())}`);
+      const json = await res.json();
+      const results = (json.results ?? []) as { id: string; name: string }[];
+      setCollegeResults(results.map((r) => ({ id: r.id, name: r.name })));
+    } catch {
+      setCollegeResults([]);
+    } finally {
+      setSearchingColleges(false);
+    }
+  }
+  const addCollege = (c: { id: string; name: string }) => {
+    setColleges((prev) => (prev.some((x) => x.id === c.id) ? prev : [...prev, c]));
+    setCollegeQuery("");
+    setCollegeResults([]);
+  };
+  const removeCollege = (id: string) => setColleges((prev) => prev.filter((x) => x.id !== id));
+
+  const addFee = () => setFeeRows((p) => [...p, { label: "", amount: "" }]);
+  const removeFee = (i: number) => setFeeRows((p) => p.filter((_, idx) => idx !== i));
+  const setFee = (i: number, patch: Partial<FeeRow>) =>
+    setFeeRows((p) => p.map((r, idx) => (idx === i ? { ...r, ...patch } : r)));
+
+  const totalPaise = useMemo(
+    () => feeRows.reduce((s, r) => s + (Number.isFinite(rupeesToPaise(r.amount)) ? rupeesToPaise(r.amount) : 0), 0),
+    [feeRows]
+  );
+
+  async function save() {
+    setFormError("");
+    if (!courseId) return setFormError("Pick a course for this batch.");
+    if (!name.trim()) return setFormError("Batch name is required.");
+    if (!code.trim()) return setFormError("A batch code is required.");
+
+    const feeLines: { label: string; amountPaise: number }[] = [];
+    for (const r of feeRows) {
+      if (!r.label.trim() && !r.amount.trim()) continue;
+      if (!r.label.trim()) return setFormError("Every fee line needs a label.");
+      const paise = rupeesToPaise(r.amount);
+      if (!Number.isFinite(paise)) return setFormError(`Fee amount for "${r.label}" is not a valid number.`);
+      feeLines.push({ label: r.label.trim(), amountPaise: paise });
+    }
+
+    const payload = {
+      courseId,
+      name: name.trim(),
+      code: code.trim(),
+      academicYear: academicYear.trim() || null,
+      deliveryMode: deliveryMode || null,
+      startDate: startDate || null,
+      endDate: endDate || null,
+      currency: currency.trim() || "INR",
+      status,
+      collegeIds: colleges.map((c) => c.id),
+      feeLines,
+    };
+
+    setSaving(true);
+    try {
+      const res = await fetch(editing ? `/api/admin/batches/${batchId}` : "/api/admin/batches", {
+        method: editing ? "PATCH" : "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(payload),
+      });
+      const json = await res.json();
+      if (!res.ok) throw new Error(json.error ?? "Save failed");
+      router.push("/dashboard/batches");
+      router.refresh();
+    } catch (e) {
+      setFormError((e as Error).message);
+      setSaving(false);
+    }
+  }
+
+  if (loading)
+    return (
+      <div className="text-muted-foreground flex items-center gap-2 py-10 text-sm">
+        <Loader2 className="size-4 animate-spin" /> Loading…
+      </div>
+    );
+  if (loadError)
+    return (
+      <div className="mx-auto max-w-md py-10 text-center">
+        <p className="text-destructive text-sm">{loadError}</p>
+        <Button className="mt-4" variant="outline" asChild>
+          <Link href="/dashboard/batches">Back to batches</Link>
+        </Button>
+      </div>
+    );
+
+  return (
+    <div className="mx-auto max-w-3xl">
+      <header className="mb-6 flex items-start justify-between gap-3">
+        <div>
+          <h1 className="text-2xl font-bold tracking-tight">{editing ? "Edit batch" : "New batch"}</h1>
+          <p className="text-muted-foreground mt-1 text-sm">
+            A dated run of a course — associated colleges, its own fee, and a status you move through
+            to close.
+          </p>
+        </div>
+        <Button variant="outline" asChild>
+          <Link href="/dashboard/batches">
+            <ArrowLeft /> Back
+          </Link>
+        </Button>
+      </header>
+
+      <div className="grid gap-6">
+        {/* Details */}
+        <Card>
+          <CardHeader>
+            <CardTitle className="text-base">Details</CardTitle>
+          </CardHeader>
+          <CardContent className="grid gap-4">
+            <div className="grid gap-4 sm:grid-cols-2">
+              <div className="grid gap-1.5">
+                <Label htmlFor="b-course">
+                  Course <span className="text-primary">*</span>
+                </Label>
+                <Select value={courseId || undefined} onValueChange={onCourseChange}>
+                  <SelectTrigger id="b-course">
+                    <SelectValue placeholder="Select a course" />
+                  </SelectTrigger>
+                  <SelectContent>
+                    {coursesRef.map((c) => (
+                      <SelectItem key={c.id} value={c.id}>
+                        {c.name}
+                      </SelectItem>
+                    ))}
+                  </SelectContent>
+                </Select>
+                {coursesRef.length === 0 && (
+                  <p className="text-muted-foreground text-xs">
+                    No active courses. Create one under Courses first.
+                  </p>
+                )}
+              </div>
+              <div className="grid gap-1.5">
+                <Label htmlFor="b-status">Status</Label>
+                <Select value={status} onValueChange={(v) => setStatus(v as BatchStatus)}>
+                  <SelectTrigger id="b-status">
+                    <SelectValue />
+                  </SelectTrigger>
+                  <SelectContent>
+                    {BATCH_STATUSES.map((s) => (
+                      <SelectItem key={s} value={s}>
+                        {BATCH_STATUS_LABELS[s]}
+                      </SelectItem>
+                    ))}
+                  </SelectContent>
+                </Select>
+              </div>
+            </div>
+            <div className="grid gap-4 sm:grid-cols-2">
+              <div className="grid gap-1.5">
+                <Label htmlFor="b-name">
+                  Batch name <span className="text-primary">*</span>
+                </Label>
+                <Input id="b-name" value={name} onChange={(e) => setName(e.target.value)} placeholder="e.g. SVEC · Aug 2026" />
+              </div>
+              <div className="grid gap-1.5">
+                <Label htmlFor="b-code">
+                  Code <span className="text-primary">*</span>
+                </Label>
+                <Input id="b-code" value={code} onChange={(e) => setCode(e.target.value)} placeholder="e.g. PRP-SVEC-2608" />
+              </div>
+            </div>
+            <div className="grid gap-4 sm:grid-cols-3">
+              <div className="grid gap-1.5">
+                <Label htmlFor="b-ay">Academic year</Label>
+                <Input id="b-ay" value={academicYear} onChange={(e) => setAcademicYear(e.target.value)} placeholder="2026-27" />
+              </div>
+              <div className="grid gap-1.5">
+                <Label htmlFor="b-mode">Delivery</Label>
+                <Select value={deliveryMode || undefined} onValueChange={setDeliveryMode}>
+                  <SelectTrigger id="b-mode">
+                    <SelectValue placeholder="—" />
+                  </SelectTrigger>
+                  <SelectContent>
+                    <SelectItem value="online">Online</SelectItem>
+                    <SelectItem value="offline">Offline</SelectItem>
+                    <SelectItem value="hybrid">Hybrid</SelectItem>
+                  </SelectContent>
+                </Select>
+              </div>
+              <div className="grid gap-1.5">
+                <Label htmlFor="b-cur">Currency</Label>
+                <Input id="b-cur" value={currency} onChange={(e) => setCurrency(e.target.value)} />
+              </div>
+            </div>
+            <div className="grid gap-4 sm:grid-cols-2">
+              <div className="grid gap-1.5">
+                <Label htmlFor="b-start">Start date</Label>
+                <DatePicker id="b-start" value={startDate} onChange={setStartDate} placeholder="Pick a start date" clearable />
+              </div>
+              <div className="grid gap-1.5">
+                <Label htmlFor="b-end">End date</Label>
+                <DatePicker id="b-end" value={endDate} onChange={setEndDate} placeholder="Open-ended" clearable />
+                <p className="text-muted-foreground text-xs">Optional — leave open until you close the batch.</p>
+              </div>
+            </div>
+          </CardContent>
+        </Card>
+
+        {/* Colleges */}
+        <Card>
+          <CardHeader>
+            <CardTitle className="text-base">Associated colleges</CardTitle>
+          </CardHeader>
+          <CardContent className="grid gap-3">
+            <div className="relative">
+              <Input
+                value={collegeQuery}
+                onChange={(e) => searchColleges(e.target.value)}
+                placeholder="Search colleges by name (type 2+ letters)…"
+              />
+              {(collegeResults.length > 0 || (collegeQuery.trim().length >= 2 && !searchingColleges)) && (
+                <div className="bg-popover absolute z-10 mt-1 max-h-56 w-full overflow-y-auto rounded-lg border shadow-md">
+                  {collegeResults.length === 0 ? (
+                    <p className="text-muted-foreground p-3 text-sm">No matches.</p>
+                  ) : (
+                    <ul className="divide-y">
+                      {collegeResults.map((c) => (
+                        <li key={c.id}>
+                          <button
+                            type="button"
+                            onClick={() => addCollege(c)}
+                            className="hover:bg-muted w-full px-3 py-2 text-left text-sm"
+                          >
+                            {c.name}
+                          </button>
+                        </li>
+                      ))}
+                    </ul>
+                  )}
+                </div>
+              )}
+            </div>
+            {searchingColleges && <p className="text-muted-foreground text-xs">Searching…</p>}
+
+            {colleges.length === 0 ? (
+              <p className="text-muted-foreground text-sm">No colleges associated yet.</p>
+            ) : (
+              <div className="flex flex-wrap gap-2">
+                {colleges.map((c) => (
+                  <span
+                    key={c.id}
+                    className="bg-muted inline-flex items-center gap-1.5 rounded-full py-1 pl-3 pr-1.5 text-sm"
+                  >
+                    {c.name}
+                    <button
+                      type="button"
+                      onClick={() => removeCollege(c.id)}
+                      aria-label={`Remove ${c.name}`}
+                      className="text-muted-foreground hover:text-destructive rounded-full"
+                    >
+                      <X className="size-3.5" />
+                    </button>
+                  </span>
+                ))}
+              </div>
+            )}
+          </CardContent>
+        </Card>
+
+        {/* Fee */}
+        <Card>
+          <CardHeader className="flex-row items-center justify-between gap-2 space-y-0">
+            <CardTitle className="text-base">Batch fee</CardTitle>
+            <div className="flex gap-2">
+              <Button
+                type="button"
+                variant="outline"
+                size="sm"
+                onClick={() => copyFeeFromCourse()}
+                disabled={!selectedCourse || selectedCourse.feeLines.length === 0}
+              >
+                <Copy /> Copy from course
+              </Button>
+              <Button type="button" variant="outline" size="sm" onClick={addFee}>
+                <Plus /> Add line
+              </Button>
+            </div>
+          </CardHeader>
+          <CardContent className="grid gap-3">
+            {feeRows.length === 0 ? (
+              <p className="text-muted-foreground text-sm">
+                No fee lines. Copy the course default or add lines. A free batch can have none.
+              </p>
+            ) : (
+              <>
+                {feeRows.map((row, i) => (
+                  <div key={i} className="flex items-end gap-2">
+                    <div className="grid flex-1 gap-1.5">
+                      {i === 0 && <Label className="text-xs">Item</Label>}
+                      <Input value={row.label} onChange={(e) => setFee(i, { label: e.target.value })} placeholder="e.g. Tuition" />
+                    </div>
+                    <div className="grid w-36 gap-1.5">
+                      {i === 0 && <Label className="text-xs">Amount (₹)</Label>}
+                      <Input inputMode="decimal" value={row.amount} onChange={(e) => setFee(i, { amount: e.target.value })} placeholder="0" />
+                    </div>
+                    <Button
+                      type="button"
+                      variant="ghost"
+                      size="icon"
+                      onClick={() => removeFee(i)}
+                      aria-label="Remove fee line"
+                      className="text-muted-foreground hover:text-destructive"
+                    >
+                      <Trash2 className="size-4" />
+                    </Button>
+                  </div>
+                ))}
+                <div className="flex justify-between border-t pt-2 text-sm font-semibold">
+                  <span>Total</span>
+                  <span className="tabular-nums">{formatINR(totalPaise)}</span>
+                </div>
+              </>
+            )}
+          </CardContent>
+        </Card>
+
+        {formError && <p className="text-destructive text-sm">{formError}</p>}
+
+        <div className="flex items-center justify-end gap-2">
+          <Button variant="outline" asChild>
+            <Link href="/dashboard/batches">Cancel</Link>
+          </Button>
+          <Button onClick={save} disabled={saving}>
+            {saving ? <Loader2 className="animate-spin" /> : <Save />}
+            {editing ? "Save changes" : "Create batch"}
+          </Button>
+        </div>
+      </div>
+    </div>
+  );
+}
