@@ -286,7 +286,7 @@ export function FeeReceiptView({
                   <ReceiptIndianRupee className="size-6" />
                 </span>
                 <div>
-                  <p className="fr-kicker">Official Payment Receipt · Accounts</p>
+                  <p className="fr-kicker">Official Payment Receipt</p>
                   <h2>Fee Receipt</h2>
                   <p className="fr-college">
                     {receipt.courseName}

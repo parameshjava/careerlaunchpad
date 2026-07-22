@@ -31,6 +31,7 @@ export type RosterRow = {
   concessionType: ConcessionType;
   paymentOption: "full" | "installments";
   status: string;
+  rejectionReason: string | null;
   netFeePaise: number;
   paidPaise: number;
   balancePaise: number;
@@ -135,13 +136,13 @@ export async function fetchBatchFee(supabase: SupabaseClient, batchId: string): 
 export async function fetchBatchRoster(supabase: SupabaseClient, batchId: string): Promise<RosterRow[]> {
   const { data: enr, error } = await supabase
     .from("student_enrollment")
-    .select("id, student_id, concession_type, payment_option, status, net_fee_paise")
+    .select("id, student_id, concession_type, payment_option, status, rejection_reason, net_fee_paise")
     .eq("batch_id", batchId)
     .order("enrolled_on", { ascending: false });
   if (error) throw new Error(`student_enrollment: ${error.message}`);
   const rows = (enr ?? []) as {
     id: string; student_id: string; concession_type: ConcessionType;
-    payment_option: "full" | "installments"; status: string; net_fee_paise: number;
+    payment_option: "full" | "installments"; status: string; rejection_reason: string | null; net_fee_paise: number;
   }[];
   if (rows.length === 0) return [];
 
@@ -167,6 +168,7 @@ export async function fetchBatchRoster(supabase: SupabaseClient, batchId: string
     concessionType: r.concession_type,
     paymentOption: r.payment_option,
     status: r.status,
+    rejectionReason: r.rejection_reason,
     netFeePaise: r.net_fee_paise,
     paidPaise: balById.get(r.id)?.paid_to_date_paise ?? 0,
     balancePaise: balById.get(r.id)?.balance_paise ?? r.net_fee_paise,
@@ -281,6 +283,7 @@ export type MyFeeEnrollment = {
   batchName: string;
   academicYear: string | null;
   status: string;
+  rejectionReason: string | null;
   grossFeePaise: number;
   concessionType: import("@/lib/fee-receipt").ConcessionType;
   concessionPaise: number;
@@ -300,13 +303,13 @@ export async function fetchStudentFees(
 ): Promise<MyFeeEnrollment[]> {
   const { data: enr, error } = await supabase
     .from("student_enrollment")
-    .select("id, batch_id, gross_fee_paise, concession_type, concession_paise, net_fee_paise, status, payment_option")
+    .select("id, batch_id, gross_fee_paise, concession_type, concession_paise, net_fee_paise, status, rejection_reason, payment_option")
     .eq("student_id", studentId)
     .order("enrolled_on", { ascending: false });
   if (error) throw new Error(`student_enrollment: ${error.message}`);
   const rows = (enr ?? []) as {
     id: string; batch_id: string; gross_fee_paise: number; concession_type: MyFeeEnrollment["concessionType"];
-    concession_paise: number; net_fee_paise: number; status: string; payment_option: "full" | "installments";
+    concession_paise: number; net_fee_paise: number; status: string; rejection_reason: string | null; payment_option: "full" | "installments";
   }[];
   if (rows.length === 0) return [];
 
@@ -362,6 +365,7 @@ export async function fetchStudentFees(
       batchName: batch?.name ?? "",
       academicYear: batch?.academic_year ?? null,
       status: r.status,
+      rejectionReason: r.rejection_reason,
       grossFeePaise: r.gross_fee_paise,
       concessionType: r.concession_type,
       concessionPaise: r.concession_paise,

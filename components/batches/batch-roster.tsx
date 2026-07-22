@@ -21,6 +21,7 @@ import {
 } from "@/components/ui/dialog";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
+import { Textarea } from "@/components/ui/textarea";
 import {
   Select,
   SelectContent,
@@ -66,6 +67,10 @@ export function BatchRoster({
   const router = useRouter();
   const [busyId, setBusyId] = useState<string | null>(null);
   const [rowErr, setRowErr] = useState("");
+  const [rejectFor, setRejectFor] = useState<RosterRow | null>(null);
+  const [rejectReason, setRejectReason] = useState("");
+  const [rejectBusy, setRejectBusy] = useState(false);
+  const [rejectErr, setRejectErr] = useState("");
   const [payFor, setPayFor] = useState<RosterRow | null>(null);
   const [payAmount, setPayAmount] = useState("");
   const [payMode, setPayMode] = useState<PaymentMode>("cash");
@@ -74,23 +79,39 @@ export function BatchRoster({
   const [payErr, setPayErr] = useState("");
   const [payBusy, setPayBusy] = useState(false);
 
-  async function setEnrollmentStatus(id: string, status: "active" | "cancelled") {
+  async function setEnrollmentStatus(id: string, status: "active" | "cancelled", reason?: string): Promise<boolean> {
     setBusyId(id);
     setRowErr("");
     try {
       const res = await fetch(`/api/admin/enrollments/${id}`, {
         method: "PATCH",
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ status }),
+        body: JSON.stringify({ status, reason }),
       });
       const json = await res.json();
       if (!res.ok) throw new Error(json.error ?? "Update failed");
       router.refresh();
+      return true;
     } catch (e) {
       setRowErr((e as Error).message);
+      return false;
     } finally {
       setBusyId(null);
     }
+  }
+
+  function openReject(row: RosterRow) {
+    setRejectFor(row);
+    setRejectReason("");
+    setRejectErr("");
+  }
+  async function submitReject() {
+    if (!rejectFor) return;
+    if (!rejectReason.trim()) return setRejectErr("Please enter a reason for rejection.");
+    setRejectBusy(true);
+    const ok = await setEnrollmentStatus(rejectFor.enrollmentId, "cancelled", rejectReason.trim());
+    setRejectBusy(false);
+    if (ok) setRejectFor(null);
   }
 
   function openPay(row: RosterRow) {
@@ -168,6 +189,9 @@ export function BatchRoster({
                     {r.concessionType !== "none" && (
                       <div className="text-muted-foreground text-xs">{CONCESSION_LABEL[r.concessionType]}</div>
                     )}
+                    {r.status === "cancelled" && r.rejectionReason && (
+                      <div className="text-destructive/80 text-xs">Rejected: {r.rejectionReason}</div>
+                    )}
                   </TableCell>
                   <TableCell className="text-right tabular-nums">{formatINR(r.netFeePaise)}</TableCell>
                   <TableCell className="text-right tabular-nums">{formatINR(r.paidPaise)}</TableCell>
@@ -183,7 +207,7 @@ export function BatchRoster({
                         <Button variant="outline" size="sm" disabled={busyId === r.enrollmentId} onClick={() => setEnrollmentStatus(r.enrollmentId, "active")}>
                           <Check /> Approve
                         </Button>
-                        <Button variant="ghost" size="sm" disabled={busyId === r.enrollmentId} onClick={() => setEnrollmentStatus(r.enrollmentId, "cancelled")} className="text-muted-foreground hover:text-destructive">
+                        <Button variant="ghost" size="sm" disabled={busyId === r.enrollmentId} onClick={() => openReject(r)} className="text-muted-foreground hover:text-destructive">
                           <X /> Reject
                         </Button>
                       </div>
@@ -201,6 +225,39 @@ export function BatchRoster({
           </Table>
         </div>
       )}
+
+      {/* Reject dialog — reason required */}
+      <Dialog open={Boolean(rejectFor)} onOpenChange={(o) => !o && setRejectFor(null)}>
+        <DialogContent className="sm:max-w-md">
+          <DialogHeader>
+            <DialogTitle>Reject enrolment</DialogTitle>
+          </DialogHeader>
+          {rejectFor && (
+            <div className="grid gap-3">
+              <p className="text-muted-foreground text-sm">
+                Rejecting {rejectFor.studentName}&apos;s enrolment. The reason is shared with the
+                student under My fees.
+              </p>
+              <div className="grid gap-1.5">
+                <Label>Reason / remarks</Label>
+                <Textarea
+                  value={rejectReason}
+                  onChange={(e) => setRejectReason(e.target.value)}
+                  rows={3}
+                  placeholder="e.g. Seats full for this batch; please apply to the next one."
+                />
+              </div>
+              {rejectErr && <p className="text-destructive text-sm">{rejectErr}</p>}
+            </div>
+          )}
+          <DialogFooter>
+            <Button variant="outline" onClick={() => setRejectFor(null)}>Cancel</Button>
+            <Button variant="destructive" onClick={submitReject} disabled={rejectBusy}>
+              {rejectBusy ? <Loader2 className="animate-spin" /> : <X />} Reject
+            </Button>
+          </DialogFooter>
+        </DialogContent>
+      </Dialog>
 
       {/* Record payment dialog */}
       <Dialog open={Boolean(payFor)} onOpenChange={(o) => !o && setPayFor(null)}>

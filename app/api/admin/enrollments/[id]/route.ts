@@ -12,7 +12,7 @@ export async function PATCH(req: NextRequest, { params }: { params: Promise<{ id
     return NextResponse.json({ error: "Forbidden" }, { status: 403 });
   }
 
-  let body: { status?: string };
+  let body: { status?: string; reason?: string };
   try {
     body = await req.json();
   } catch {
@@ -22,10 +22,19 @@ export async function PATCH(req: NextRequest, { params }: { params: Promise<{ id
   if (body.status !== "active" && body.status !== "cancelled")
     return NextResponse.json({ error: "status must be active or cancelled." }, { status: 422 });
 
+  const reason = (body.reason ?? "").trim();
+  if (body.status === "cancelled" && !reason)
+    return NextResponse.json({ error: "A reason is required to reject an enrolment." }, { status: 422 });
+
   const supabase = await createClient();
   const { error } = await supabase
     .from("student_enrollment")
-    .update({ status: body.status, updated_at: new Date().toISOString() })
+    .update({
+      status: body.status,
+      // Keep the reason on reject; clear it on approve.
+      rejection_reason: body.status === "cancelled" ? reason : null,
+      updated_at: new Date().toISOString(),
+    })
     .eq("id", id);
   if (error) return NextResponse.json({ error: error.message }, { status: 500 });
   return NextResponse.json({ ok: true });
