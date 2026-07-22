@@ -276,6 +276,47 @@ export async function getFeeReceipt(supabase: SupabaseClient, receiptId: string)
   };
 }
 
+// ---- admin: one enrolment's ledger (installments + receipts) ---------------
+
+export type EnrollmentLedger = {
+  installments: MyFeeInstallment[];
+  payments: MyFeePayment[];
+};
+
+/** The installment schedule + issued receipts for a single enrolment, for the
+ * admin batch roster's per-student detail. Same shape the student sees under My
+ * fees; RLS lets finance staff read any enrolment's rows. */
+export async function fetchEnrollmentLedger(
+  supabase: SupabaseClient,
+  enrollmentId: string
+): Promise<EnrollmentLedger> {
+  const [balRes, payRes, instRes] = await Promise.all([
+    supabase.from("enrollment_balance").select("paid_to_date_paise").eq("enrollment_id", enrollmentId).maybeSingle(),
+    supabase.from("payment").select("id, receipt_no, amount_paise, mode, paid_on").eq("enrollment_id", enrollmentId).order("created_at"),
+    supabase.from("installment").select("seq, due_on, amount_paise").eq("enrollment_id", enrollmentId).order("seq"),
+  ]);
+  if (balRes.error) throw new Error(`enrollment_balance: ${balRes.error.message}`);
+  if (payRes.error) throw new Error(`payment: ${payRes.error.message}`);
+  if (instRes.error) throw new Error(`installment: ${instRes.error.message}`);
+
+  const paid = (balRes.data as { paid_to_date_paise?: number } | null)?.paid_to_date_paise ?? 0;
+  const payments: MyFeePayment[] = ((payRes.data ?? []) as {
+    id: string; receipt_no: string; amount_paise: number; mode: MyFeePayment["mode"]; paid_on: string;
+  }[]).map((p) => ({ receiptId: p.id, receiptNo: p.receipt_no, amountPaise: p.amount_paise, mode: p.mode, paidOn: p.paid_on }));
+
+  const today = istToday();
+  let cum = 0;
+  const installments: MyFeeInstallment[] = ((instRes.data ?? []) as { seq: number; due_on: string; amount_paise: number }[])
+    .sort((a, b) => a.seq - b.seq)
+    .map((i) => {
+      cum += i.amount_paise;
+      const status: MyFeeInstallment["status"] = paid >= cum ? "paid" : i.due_on < today ? "overdue" : "due";
+      return { seq: i.seq, dueOn: i.due_on, amountPaise: i.amount_paise, status };
+    });
+
+  return { installments, payments };
+}
+
 // ---- student "My fees" -----------------------------------------------------
 
 export type MyFeeInstallment = {
