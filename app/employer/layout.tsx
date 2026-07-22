@@ -4,6 +4,7 @@ import { SiteHeader } from "@/components/brand/SiteHeader";
 import { AccountMenu } from "@/components/brand/AccountMenu";
 import { ConsoleShell } from "@/components/app-shell/ConsoleShell";
 import { buildNav } from "@/lib/nav";
+import { navStudentApproved } from "@/lib/student-approval";
 
 // Shell for the signed-in employer surfaces: shared brand bar + account menu and
 // the role-aware left sidebar (built per role in lib/nav.ts).
@@ -16,7 +17,7 @@ export default async function EmployerLayout({ children }: { children: React.Rea
       <SiteHeader
         right={<AccountMenu email={ctx.email} name={ctx.name} avatarUrl={ctx.avatarUrl} profileHref={ctx.profilePath} />}
       />
-      <ConsoleShell nav={buildNav(ctx)}>{children}</ConsoleShell>
+      <ConsoleShell nav={buildNav(ctx, { studentApproved: await navStudentApproved(ctx) })}>{children}</ConsoleShell>
     </div>
   );
 }

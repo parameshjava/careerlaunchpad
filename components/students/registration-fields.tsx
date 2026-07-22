@@ -11,6 +11,7 @@ import { useEffect, useRef, useState } from "react";
 import { Check, Plus } from "lucide-react";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
+import { InfoTooltip } from "@/components/ui/tooltip";
 import { TellUsStep } from "./tell-us-step";
 
 export type Ref = { id: string; slug: string; label: string; category: string | null };
@@ -20,7 +21,8 @@ export type College = { id: string; name: string; place: string | null; state?: 
 export type Form = {
   full_name: string; phone: string; gender: string;
   city_village: string; district: string; state: string;
-  college_id: string; roll_number: string; degree: string; branch: string; year_of_study: string;
+  college_id: string; roll_number: string; registration_number: string; apaar_id: string;
+  degree: string; branch: string; year_of_study: string;
   graduation_year: string; cgpa: string;
   preferred_category_slugs: string[]; // Step 3 (#42): up to 2 preference categories
   career_goal_ids: string[]; primary_career_goal_id: string; // grandfathered (admin/analytics)
@@ -42,7 +44,7 @@ export type Form = {
 
 export const EMPTY: Form = {
   full_name: "", phone: "", gender: "", city_village: "", district: "", state: "",
-  college_id: "", roll_number: "", degree: "", branch: "", year_of_study: "", graduation_year: "", cgpa: "",
+  college_id: "", roll_number: "", registration_number: "", apaar_id: "", degree: "", branch: "", year_of_study: "", graduation_year: "", cgpa: "",
   preferred_category_slugs: [],
   career_goal_ids: [], primary_career_goal_id: "", preferred_mentor_pref_id: "", skill_assessment: {},
   skills: [], interests: [],
@@ -68,7 +70,7 @@ export const selectClass =
 // Fields each step owns (must match STEP_FIELDS in lib/registration.ts).
 export const STEP_PAYLOAD: Record<number, (f: Form) => Record<string, unknown>> = {
   1: (f) => ({ full_name: f.full_name, phone: f.phone, gender: f.gender, city_village: f.city_village, district: f.district, state: f.state }),
-  2: (f) => ({ college_id: f.college_id, roll_number: f.roll_number, degree: f.degree, branch: f.branch, year_of_study: f.year_of_study, graduation_year: f.graduation_year, cgpa: f.cgpa }),
+  2: (f) => ({ college_id: f.college_id, roll_number: f.roll_number, registration_number: f.registration_number, apaar_id: f.apaar_id, degree: f.degree, branch: f.branch, year_of_study: f.year_of_study, graduation_year: f.graduation_year, cgpa: f.cgpa }),
   3: (f) => ({ preferred_category_slugs: f.preferred_category_slugs }),
   4: (f) => ({ skill_assessment: f.skill_assessment }),
   5: (f) => ({ skills: f.skills, interests: f.interests }),
@@ -137,6 +139,18 @@ export function StepBody({
         <CollegePicker college={college} onPick={(c) => { onPickCollege(c); set("college_id", c?.id ?? ""); }} />
       </div>
       <Field label="Roll Number" required><Input value={f.roll_number} onChange={(e) => set("roll_number", e.target.value)} placeholder="e.g. 21B81A0512" /></Field>
+      <Field
+        label="University Registration No."
+        info="The registration/enrollment number your university assigned when you were admitted. It's printed on your admission letter, ID card, or marks memo — and is different from your class roll number."
+      >
+        <Input value={f.registration_number} onChange={(e) => set("registration_number", e.target.value)} placeholder="e.g. 2021CS0456" />
+      </Field>
+      <Field
+        label="APAAR / ABC ID"
+        info={<>A 12-digit national student ID (Academic Bank of Credits) under NEP 2020, stored in your DigiLocker account. Optional — leave blank if you don&apos;t have one yet.</>}
+      >
+        <Input inputMode="numeric" value={f.apaar_id} onChange={(e) => set("apaar_id", e.target.value)} placeholder="12-digit number" />
+      </Field>
       <Field label="Degree"><SelectRef value={f.degree} onChange={(v) => set("degree", v)} options={refs.degree} /></Field>
       <Field label="Branch"><SelectRef value={f.branch} onChange={(v) => set("branch", v)} options={refs.branch} /></Field>
       <Field label="Year of Study"><SelectRef value={f.year_of_study} onChange={(v) => set("year_of_study", v)} options={refs.year_of_study} /></Field>
@@ -242,10 +256,16 @@ export function Step({ title, hint, children }: { title: string; hint: string; c
   );
 }
 
-export function Field({ label, required, children }: { label: string; required?: boolean; children: React.ReactNode }) {
+export function Field({ label, required, info, children }: { label: string; required?: boolean; info?: React.ReactNode; children: React.ReactNode }) {
   return (
     <div className="grid gap-1.5">
-      <Label>{label}{required && <span className="text-primary"> *</span>}</Label>
+      {/* The info trigger is a SIBLING of the label, not inside it — a native
+          <label> forwards clicks on its text to its first labelable descendant,
+          so nesting the ⓘ button would let label taps toggle the tooltip. */}
+      <div className="flex items-center gap-1">
+        <Label>{label}{required && <span className="text-primary"> *</span>}</Label>
+        {info && <InfoTooltip title={label}>{info}</InfoTooltip>}
+      </div>
       {children}
     </div>
   );

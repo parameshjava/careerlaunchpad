@@ -15,6 +15,14 @@
   --brand-violet-tint-from: #f1ebfe;
   --brand-violet-tint-to: #e9e2fd;
 
+  /* Info tooltip — deep-violet header on a light body. Deliberately constant
+     across light/dark (a light card that always contrasts); a single source of
+     truth so the look isn't hand-synced as ad-hoc hex in the component. */
+  --tooltip-header: #5b21b6;
+  --tooltip-header-foreground: #ffffff;
+  --tooltip-surface: #f5f3ff;
+  --tooltip-surface-foreground: #475569;
+
   /* Ink, text, surface — light defaults */
   --ink: #16162b;
   --text: #1a1a2e;

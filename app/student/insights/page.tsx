@@ -7,6 +7,7 @@ import { AnalyticsView } from "@/components/analytics/AnalyticsView";
 import { StudentComparisonView } from "@/components/analytics/StudentComparisonView";
 import { getAuthContext } from "@/lib/auth";
 import { createClient } from "@/lib/supabase/server";
+import { requireApprovedStudent } from "@/lib/student-approval";
 import { fetchStudentComparison } from "@/lib/analytics-query";
 
 export const metadata: Metadata = { title: "My Insights" };
@@ -22,18 +23,13 @@ export default async function StudentInsightsPage() {
   if (!ctx) redirect("/auth/login");
   if (!ctx.provisioned || ctx.status === "suspended") redirect("/auth/no-access");
 
-  const supabase = await createClient();
-
   // Insights are gated behind approval — students not yet approved wait on the
   // pending screen. (Imported/invited students are auto-approved, so this only
-  // ever stops a self-registered student who's awaiting review.)
-  const { data: gate } = await supabase
-    .from("student_profile")
-    .select("status")
-    .eq("user_id", ctx.userId)
-    .maybeSingle();
-  if (gate && gate.status !== "approved") redirect("/student/pending");
+  // ever stops a self-registered student who's awaiting review.) Shared with the
+  // exam surfaces so the gate can't drift.
+  await requireApprovedStudent(ctx.userId);
 
+  const supabase = await createClient();
   const cmp = await fetchStudentComparison(supabase, ctx.userId);
   const hasCollege = !!cmp.collegeName;
 
