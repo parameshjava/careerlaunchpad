@@ -28,6 +28,24 @@ export type RecordPaymentInput = {
 
 type Result<T> = { ok: true; value: T } | { ok: false; error: string; status?: number };
 
+// The platform operates in India; receipts, installment due dates, and paid-on
+// dates use the IST (UTC+5:30) calendar day, not the server's UTC day (which is
+// a day behind between midnight and 05:30 IST). `istDate()` returns today's IST
+// date as YYYY-MM-DD; `istMonthsFromToday(n)` shifts by whole months.
+const IST_OFFSET_MS = 5.5 * 60 * 60 * 1000;
+function istToday(): Date {
+  const ist = new Date(Date.now() + IST_OFFSET_MS);
+  return new Date(Date.UTC(ist.getUTCFullYear(), ist.getUTCMonth(), ist.getUTCDate()));
+}
+function istDate(): string {
+  return istToday().toISOString().slice(0, 10);
+}
+function istMonthsFromToday(base: Date, months: number): string {
+  const d = new Date(base);
+  d.setUTCMonth(d.getUTCMonth() + months);
+  return d.toISOString().slice(0, 10);
+}
+
 /** Enrol a student into a batch (+ optional installment schedule). */
 export async function enrolStudent(
   supabase: SupabaseClient,
@@ -58,7 +76,9 @@ export async function enrolStudent(
       concession_paise: concession,
       concession_reason: input.concessionReason ?? null,
       payment_option: input.paymentOption,
-      status: "active",
+      // A fully-waived (net 0) enrolment is settled on enrolment — no payment
+      // will ever be recorded to advance it, so mark it completed now.
+      status: net === 0 ? "completed" : "active",
       created_by: userId,
     })
     .select("id")
@@ -69,22 +89,18 @@ export async function enrolStudent(
     return { ok: false, error: error.message, status: 500 };
   }
 
-  // Even installment schedule (monthly from today), only when asked and owed.
+  // Even installment schedule (monthly from today, IST), only when asked and owed.
   const count = input.installmentCount ?? 0;
   if (input.paymentOption === "installments" && count >= 2 && net > 0) {
     const base = Math.floor(net / count);
-    const today = new Date();
-    const rows = Array.from({ length: count }, (_, i) => {
-      const d = new Date(today);
-      d.setMonth(d.getMonth() + i);
-      return {
-        enrollment_id: enr.id,
-        seq: i + 1,
-        due_on: d.toISOString().slice(0, 10),
-        amount_paise: i === count - 1 ? net - base * (count - 1) : base,
-        status: "pending",
-      };
-    });
+    const today = istToday();
+    const rows = Array.from({ length: count }, (_, i) => ({
+      enrollment_id: enr.id,
+      seq: i + 1,
+      due_on: istMonthsFromToday(today, i),
+      amount_paise: i === count - 1 ? net - base * (count - 1) : base,
+      status: "pending",
+    }));
     const { error: ie } = await supabase.from("installment").insert(rows);
     if (ie) {
       await supabase.from("student_enrollment").delete().eq("id", enr.id);
@@ -139,7 +155,8 @@ export async function enrolStudentsBulk(
         concession_paise: concession,
         concession_reason: item.concessionReason ?? null,
         payment_option: item.paymentOption,
-        status: "active",
+        // Fully-waived (net 0) enrolments are settled at enrolment (see enrolStudent).
+        status: net === 0 ? "completed" : "active",
         created_by: userId,
       })
       .select("id")
@@ -155,19 +172,21 @@ export async function enrolStudentsBulk(
     const count = item.installmentCount ?? 0;
     if (item.paymentOption === "installments" && count >= 2 && net > 0) {
       const base = Math.floor(net / count);
-      const today = new Date();
-      const rows = Array.from({ length: count }, (_, i) => {
-        const d = new Date(today);
-        d.setMonth(d.getMonth() + i);
-        return {
-          enrollment_id: enr.id,
-          seq: i + 1,
-          due_on: d.toISOString().slice(0, 10),
-          amount_paise: i === count - 1 ? net - base * (count - 1) : base,
-          status: "pending",
-        };
-      });
-      await supabase.from("installment").insert(rows);
+      const today = istToday();
+      const rows = Array.from({ length: count }, (_, i) => ({
+        enrollment_id: enr.id,
+        seq: i + 1,
+        due_on: istMonthsFromToday(today, i),
+        amount_paise: i === count - 1 ? net - base * (count - 1) : base,
+        status: "pending",
+      }));
+      const { error: ie } = await supabase.from("installment").insert(rows);
+      if (ie) {
+        // Don't leave an enrolment with a missing schedule — undo it and report.
+        await supabase.from("student_enrollment").delete().eq("id", enr.id);
+        skipped.push({ studentId: item.studentId, reason: `installments: ${ie.message}` });
+        continue;
+      }
     }
     enrolled += 1;
   }
@@ -175,78 +194,42 @@ export async function enrolStudentsBulk(
   return { ok: true, value: { enrolled, skipped } };
 }
 
-/** Record a payment against an enrolment; mints a receipt number, advances status. */
+// Postgres SQLSTATE → HTTP status for record_payment's raised exceptions.
+const PG_ERR_STATUS: Record<string, number> = {
+  "42501": 403, // insufficient_privilege (finance.manage check)
+  "22023": 422, // invalid_parameter_value (bad amount/mode/status/over-balance)
+  P0002: 404, // no_data_found (enrolment not found)
+};
+
+/** Record a payment against an enrolment. Delegates to the record_payment RPC
+ * (migration 131), which mints the receipt number, advances status, and — under
+ * a row lock — checks the balance atomically so concurrent payments can't race
+ * past it. `userId` is unused here (the RPC stamps created_by from auth.uid()). */
 export async function recordPayment(
   supabase: SupabaseClient,
   enrollmentId: string,
   input: RecordPaymentInput,
-  userId: string
+  _userId: string
 ): Promise<Result<{ paymentId: string; receiptNo: string }>> {
   const amount = Math.round(input.amountPaise || 0);
   if (!Number.isInteger(amount) || amount <= 0)
     return { ok: false, error: "Enter a valid payment amount.", status: 422 };
 
-  const { data: enr, error: ee } = await supabase
-    .from("student_enrollment")
-    .select("id, student_id, batch_id, college_id, net_fee_paise, status")
-    .eq("id", enrollmentId)
-    .maybeSingle();
-  if (ee) return { ok: false, error: ee.message, status: 500 };
-  if (!enr) return { ok: false, error: "Enrolment not found", status: 404 };
-  const e = enr as { id: string; student_id: string; batch_id: string; college_id: string | null; net_fee_paise: number; status: string };
-  if (e.status === "pending")
-    return { ok: false, error: "This enrolment is awaiting approval — approve it before recording a payment.", status: 409 };
-  if (e.status === "cancelled")
-    return { ok: false, error: "This enrolment has been cancelled.", status: 409 };
-
-  const { data: bal, error: be } = await supabase
-    .from("enrollment_balance")
-    .select("paid_to_date_paise, balance_paise")
-    .eq("enrollment_id", enrollmentId)
-    .maybeSingle();
-  if (be) return { ok: false, error: be.message, status: 500 };
-  const paidToDate = (bal as { paid_to_date_paise?: number } | null)?.paid_to_date_paise ?? 0;
-  const balance = (bal as { balance_paise?: number } | null)?.balance_paise ?? e.net_fee_paise;
-  if (amount > balance)
-    return { ok: false, error: `Amount exceeds the outstanding balance.`, status: 422 };
-
-  const { data: batch, error: bErr } = await supabase
-    .from("batch")
-    .select("academic_year")
-    .eq("id", e.batch_id)
-    .maybeSingle();
-  if (bErr) return { ok: false, error: bErr.message, status: 500 };
-  const academicYear = (batch as { academic_year?: string | null } | null)?.academic_year ?? null;
-
-  const { data: receiptNo, error: rErr } = await supabase.rpc("next_fee_receipt_no", {
-    p_academic_year: academicYear,
+  const { data, error } = await supabase.rpc("record_payment", {
+    p_enrollment_id: enrollmentId,
+    p_amount_paise: amount,
+    p_mode: input.mode,
+    p_reference_no: input.referenceNo ?? null,
+    // Default to the IST calendar day (never the DB's UTC current_date).
+    p_paid_on: input.paidOn || istDate(),
+    p_notes: input.notes ?? null,
   });
-  if (rErr) return { ok: false, error: `receipt no: ${rErr.message}`, status: 500 };
-
-  const { data: pay, error: pErr } = await supabase
-    .from("payment")
-    .insert({
-      enrollment_id: enrollmentId,
-      student_id: e.student_id,
-      college_id: e.college_id,
-      receipt_no: receiptNo as string,
-      amount_paise: amount,
-      mode: input.mode,
-      reference_no: input.referenceNo ?? null,
-      paid_on: input.paidOn || new Date().toISOString().slice(0, 10),
-      notes: input.notes ?? null,
-      created_by: userId,
-    })
-    .select("id")
-    .single();
-  if (pErr) return { ok: false, error: pErr.message, status: 500 };
-
-  // Advance status: fully paid → completed, else active.
-  const nextStatus = paidToDate + amount >= e.net_fee_paise ? "completed" : "active";
-  await supabase
-    .from("student_enrollment")
-    .update({ status: nextStatus, updated_at: new Date().toISOString() })
-    .eq("id", enrollmentId);
-
-  return { ok: true, value: { paymentId: pay.id, receiptNo: receiptNo as string } };
+  if (error) {
+    return { ok: false, error: error.message, status: PG_ERR_STATUS[error.code ?? ""] ?? 500 };
+  }
+  const row = (Array.isArray(data) ? data[0] : data) as
+    | { payment_id: string; receipt_no: string }
+    | undefined;
+  if (!row) return { ok: false, error: "Payment could not be recorded.", status: 500 };
+  return { ok: true, value: { paymentId: row.payment_id, receiptNo: row.receipt_no } };
 }

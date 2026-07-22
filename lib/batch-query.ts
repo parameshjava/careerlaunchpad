@@ -61,17 +61,35 @@ export async function fetchBatches(supabase: SupabaseClient): Promise<BatchListR
     .from("batch")
     .select(
       "id, code, name, academic_year, delivery_mode, start_date, status, created_at, " +
-        "course(name), batch_college(count), student_enrollment(count), fee_component(amount_paise)"
+        "course(name), batch_college(count), fee_component(amount_paise)"
     )
     .order("created_at", { ascending: false });
   if (error) throw new Error(`batch: ${error.message}`);
   type CountRow = { count: number }[];
+
+  // Student count = real enrolments only. Cancelled (rejected/withdrawn) and
+  // pending (unapproved) rows must not inflate the batch's headcount, so tally
+  // them separately with a status filter rather than an unfiltered embed count.
+  const batchIds = (data ?? []).map((b) => (b as unknown as { id: string }).id);
+  const studentCount = new Map<string, number>();
+  if (batchIds.length) {
+    const { data: enr, error: ee } = await supabase
+      .from("student_enrollment")
+      .select("batch_id")
+      .in("batch_id", batchIds)
+      .in("status", ["active", "completed"]);
+    if (ee) throw new Error(`student_enrollment: ${ee.message}`);
+    for (const r of (enr ?? []) as { batch_id: string }[]) {
+      studentCount.set(r.batch_id, (studentCount.get(r.batch_id) ?? 0) + 1);
+    }
+  }
+
   return (data ?? []).map((b) => {
     const row = b as unknown as {
       id: string; code: string; name: string; academic_year: string | null;
       delivery_mode: string | null; start_date: string | null; status: BatchStatus;
       course: { name: string } | null;
-      batch_college: CountRow; student_enrollment: CountRow;
+      batch_college: CountRow;
       fee_component: { amount_paise: number }[];
     };
     return {
@@ -84,7 +102,7 @@ export async function fetchBatches(supabase: SupabaseClient): Promise<BatchListR
       startDate: row.start_date,
       status: row.status,
       collegeCount: row.batch_college?.[0]?.count ?? 0,
-      studentCount: row.student_enrollment?.[0]?.count ?? 0,
+      studentCount: studentCount.get(row.id) ?? 0,
       feeTotalPaise: (row.fee_component ?? []).reduce((s, f) => s + f.amount_paise, 0),
     };
   });

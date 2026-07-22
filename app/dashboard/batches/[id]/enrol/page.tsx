@@ -30,7 +30,11 @@ export default async function EnrolPage({ params }: { params: Promise<{ id: stri
 
   return (
     <div className="p-1 sm:p-2">
-      <EnrolStudents batchId={id} batch={batch} enrolledIds={roster.map((r) => r.studentId)} />
+      <EnrolStudents
+        batchId={id}
+        batch={batch}
+        enrolledIds={roster.filter((r) => r.status !== "cancelled").map((r) => r.studentId)}
+      />
     </div>
   );
 }

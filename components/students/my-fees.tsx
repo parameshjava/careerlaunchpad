@@ -58,7 +58,12 @@ export function MyFees({ enrollments }: { enrollments: MyFeeEnrollment[] }) {
   }
 
   const active = enrollments.filter((e) => e.status !== "cancelled");
-  const outstanding = active.reduce((s, e) => s + Math.max(0, e.balancePaise), 0);
+  // Only approved enrolments are payable — a 'pending' one isn't owed until the
+  // college accepts it (and payment is refused until then), so it doesn't count
+  // toward Outstanding.
+  const outstanding = enrollments
+    .filter((e) => e.status === "active" || e.status === "completed")
+    .reduce((s, e) => s + Math.max(0, e.balancePaise), 0);
   const paid = enrollments.reduce((s, e) => s + e.paidPaise, 0);
 
   return (

@@ -113,14 +113,5 @@ export async function writeBatchChildren(
   }
   return {};
 }
-
-export async function deleteBatchChildren(
-  supabase: SupabaseClient,
-  batchId: string
-): Promise<{ error?: string }> {
-  for (const table of ["batch_college", "fee_component"]) {
-    const { error } = await supabase.from(table).delete().eq("batch_id", batchId);
-    if (error) return { error: `${table}: ${error.message}` };
-  }
-  return {};
-}
+// NOTE: batch UPDATE no longer deletes children in JS — it calls the atomic
+// `replace_batch_children` RPC (migration 130) so a failed reinsert rolls back.

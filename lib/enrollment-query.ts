@@ -51,6 +51,16 @@ function money(rows: { amount_paise: number }[]): number {
   return rows.reduce((s, r) => s + r.amount_paise, 0);
 }
 
+// Today's date on the IST (UTC+5:30) calendar as YYYY-MM-DD. The server runs in
+// UTC, whose date lags IST between midnight and 05:30 — using it would flag an
+// installment due today as "overdue" hours early. Matches lib/enrollment-write.ts.
+function istToday(): string {
+  const ist = new Date(Date.now() + 5.5 * 60 * 60 * 1000);
+  return new Date(Date.UTC(ist.getUTCFullYear(), ist.getUTCMonth(), ist.getUTCDate()))
+    .toISOString()
+    .slice(0, 10);
+}
+
 function courseOf(degree: string | null, branch: string | null): string | null {
   return [degree, branch].filter(Boolean).join(" · ") || null;
 }
@@ -206,14 +216,18 @@ export async function getFeeReceipt(supabase: SupabaseClient, receiptId: string)
 
   const batch = await fetchBatchFee(supabase, e.batch_id);
 
-  // Previously paid = payments on this enrolment created before this one.
+  // Previously paid = payments on this enrolment ordered before this one. Order
+  // by (created_at, id) so payments sharing an identical timestamp are still
+  // counted deterministically — a strict `created_at <` would silently drop
+  // them and overstate the printed balance.
   const { data: prior, error: priErr } = await supabase
     .from("payment")
-    .select("amount_paise")
-    .eq("enrollment_id", e.id)
-    .lt("created_at", p.created_at);
+    .select("id, amount_paise, created_at")
+    .eq("enrollment_id", e.id);
   if (priErr) throw new Error(`payment: ${priErr.message}`);
-  const previouslyPaidPaise = money((prior ?? []) as { amount_paise: number }[]);
+  const previouslyPaidPaise = ((prior ?? []) as { id: string; amount_paise: number; created_at: string }[])
+    .filter((q) => q.created_at < p.created_at || (q.created_at === p.created_at && q.id < p.id))
+    .reduce((s, q) => s + q.amount_paise, 0);
 
   const { data: sp, error: spErr } = await supabase
     .from("student_profile")
@@ -346,7 +360,7 @@ export async function fetchStudentFees(
     instByEnr.set(i.enrollment_id, list);
   }
 
-  const today = new Date().toISOString().slice(0, 10);
+  const today = istToday();
   return rows.map((r) => {
     const paid = balById.get(r.id)?.paid_to_date_paise ?? 0;
     const balance = balById.get(r.id)?.balance_paise ?? r.net_fee_paise;
@@ -417,11 +431,14 @@ export async function fetchOpenBatchesForStudent(
     .order("start_date", { ascending: true, nullsFirst: true });
   if (error) throw new Error(`batch: ${error.message}`);
 
+  // Only a live enrolment marks a batch "already enrolled"; a rejected
+  // (cancelled) one leaves the student free to enrol again.
   const { data: enr } = await supabase
     .from("student_enrollment")
     .select("batch_id")
     .eq("student_id", studentId)
-    .in("batch_id", batchIds);
+    .in("batch_id", batchIds)
+    .neq("status", "cancelled");
   const enrolledSet = new Set(((enr ?? []) as { batch_id: string }[]).map((x) => x.batch_id));
 
   return ((batches ?? []) as unknown as {

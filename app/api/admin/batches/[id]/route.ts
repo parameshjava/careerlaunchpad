@@ -2,7 +2,7 @@ import { NextResponse, type NextRequest } from "next/server";
 import { getAuthContext, can, requirePermission } from "@/lib/auth";
 import { createClient } from "@/lib/supabase/server";
 import { fetchBatch, type BatchStatus } from "@/lib/batch-query";
-import { parseBatchPayload, writeBatchChildren, deleteBatchChildren } from "@/lib/batch-write";
+import { parseBatchPayload } from "@/lib/batch-write";
 
 const STATUSES: BatchStatus[] = ["draft", "open", "running", "closed", "cancelled"];
 
@@ -91,10 +91,18 @@ export async function PATCH(req: NextRequest, { params }: { params: Promise<{ id
     );
   }
 
-  const del = await deleteBatchChildren(supabase, id);
-  if (del.error) return NextResponse.json({ error: del.error }, { status: 500 });
-  const write = await writeBatchChildren(supabase, id, p);
-  if (write.error) return NextResponse.json({ error: write.error }, { status: 500 });
+  // Replace colleges + fee lines atomically (one transaction inside the RPC), so
+  // a failed reinsert can never leave the batch stripped of its children.
+  const { error: rerr } = await supabase.rpc("replace_batch_children", {
+    p_batch_id: id,
+    p_college_ids: p.collegeIds,
+    p_fee_lines: p.feeLines.map((f, i) => ({
+      label: f.label,
+      amount_paise: f.amountPaise,
+      sort_order: i,
+    })),
+  });
+  if (rerr) return NextResponse.json({ error: rerr.message }, { status: 500 });
 
   return NextResponse.json({ ok: true, id });
 }
