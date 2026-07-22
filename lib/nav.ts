@@ -173,6 +173,7 @@ export function buildNav(ctx: AuthContext, opts: { studentApproved?: boolean } =
     const items: NavItem[] = [
       { label: "My profile", href: "/student/register", icon: "profile" },
       { label: "My insights", href: "/student/insights", icon: "analytics" },
+      { label: "Courses", href: "/student/courses", icon: "courses" },
       { label: "My fees", href: "/student/fees", icon: "fees" },
     ];
     if (can(ctx, "exam.attempt.take") && studentApproved)
