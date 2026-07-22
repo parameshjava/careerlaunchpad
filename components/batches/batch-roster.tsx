@@ -475,7 +475,7 @@ export function BatchRoster({
 
       {/* Receipt preview dialog — keeps the admin on the roster */}
       <Dialog open={receiptOpen} onOpenChange={(o) => { setReceiptOpen(o); if (!o) setReceipt(null); }}>
-        <DialogContent className="max-h-[92vh] overflow-auto p-4 sm:max-w-[880px]">
+        <DialogContent className="fr-print-modal max-h-[92vh] overflow-auto p-4 sm:max-w-[880px]">
           <DialogHeader className="sr-only">
             <DialogTitle>Payment receipt</DialogTitle>
           </DialogHeader>

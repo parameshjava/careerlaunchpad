@@ -202,11 +202,21 @@ export function FeeReceiptView({
              into, so those disappear; the brand bands run edge-to-edge and page
              margins are provided inside the content instead. */
           @page { size: A4 portrait; margin: 0; }
-          html, body { width: 210mm; background: #fff; }
+          html, body { width: 210mm; background: #fff; overflow: visible !important; }
           body * { visibility: hidden !important; }
           .fr-doc-print, .fr-doc-print * { visibility: visible !important; }
           .fr-toolbar { display: none !important; }
           .fr-doc-print { position: absolute; left: 0; top: 0; width: 100%; }
+          /* When the receipt is shown inside a modal (admin roster), the Radix
+             dialog wrapper is fixed + transformed + clipped, which would trap the
+             absolutely-positioned sheet and print it blank. Neutralise it so the
+             receipt prints as a full page exactly like the standalone view. */
+          .fr-print-modal { position: static !important; transform: none !important;
+            inset: auto !important; margin: 0 !important; padding: 0 !important;
+            max-width: none !important; width: auto !important;
+            max-height: none !important; height: auto !important;
+            overflow: visible !important; box-shadow: none !important;
+            border: 0 !important; background: transparent !important; }
           .fr-sheet { width: 100%; max-width: none; box-shadow: none; }
           /* Header repeats at the top of every page (thead). */
           .fr-sheet thead { display: table-header-group; }
