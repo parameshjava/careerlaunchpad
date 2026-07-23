@@ -78,6 +78,9 @@ export function BatchSchedule({ batchId, embedded = false }: { batchId: string; 
   const [cancelFor, setCancelFor] = useState<{ sessionId: string; title: string; choice: boolean } | null>(null);
   const [cancelBusy, setCancelBusy] = useState(false);
   const [cancelErr, setCancelErr] = useState("");
+  // Typed confirmation guards against accidental cancels.
+  const [cancelConfirm, setCancelConfirm] = useState("");
+  const cancelConfirmed = cancelConfirm.trim().toUpperCase() === "CANCEL";
 
   const sessionsUrl = `/api/admin/batches/${batchId}/sessions`;
 
@@ -493,6 +496,7 @@ export function BatchSchedule({ batchId, embedded = false }: { batchId: string; 
                       className="text-muted-foreground hover:text-destructive"
                       onClick={() => {
                         setCancelErr("");
+                        setCancelConfirm("");
                         setCancelFor({ sessionId: s.id, title: s.title, choice: true });
                       }}
                     >
@@ -508,6 +512,7 @@ export function BatchSchedule({ batchId, embedded = false }: { batchId: string; 
                     className="text-muted-foreground hover:text-destructive"
                     onClick={() => {
                       setCancelErr("");
+                      setCancelConfirm("");
                       setCancelFor({ sessionId: s.id, title: s.title, choice: Boolean(s.seriesId) });
                     }}
                   >
@@ -539,16 +544,29 @@ export function BatchSchedule({ batchId, embedded = false }: { batchId: string; 
               </>
             )}
           </p>
+          {/* Typed confirmation to prevent accidental cancels. */}
+          <div className="grid gap-1.5">
+            <Label htmlFor="cancel-confirm">
+              Type <span className="text-foreground font-semibold">CANCEL</span> to confirm
+            </Label>
+            <Input
+              id="cancel-confirm"
+              value={cancelConfirm}
+              onChange={(e) => setCancelConfirm(e.target.value)}
+              placeholder="CANCEL"
+              autoComplete="off"
+            />
+          </div>
           {cancelErr && <p className="text-destructive text-sm">{cancelErr}</p>}
           {cancelFor?.choice ? (
             <div className="grid gap-2">
-              <Button variant="outline" className="justify-start" onClick={() => confirmCancel("single")} disabled={cancelBusy}>
+              <Button variant="outline" className="justify-start" onClick={() => confirmCancel("single")} disabled={cancelBusy || !cancelConfirmed}>
                 <Trash2 /> This class only
               </Button>
-              <Button variant="outline" className="justify-start" onClick={() => confirmCancel("following")} disabled={cancelBusy}>
+              <Button variant="outline" className="justify-start" onClick={() => confirmCancel("following")} disabled={cancelBusy || !cancelConfirmed}>
                 <Trash2 /> This and all following
               </Button>
-              <Button variant="destructive" className="justify-start" onClick={() => confirmCancel("series")} disabled={cancelBusy}>
+              <Button variant="destructive" className="justify-start" onClick={() => confirmCancel("series")} disabled={cancelBusy || !cancelConfirmed}>
                 {cancelBusy ? <Loader2 className="animate-spin" /> : <Trash2 />}
                 The whole series (all upcoming)
               </Button>
@@ -561,7 +579,7 @@ export function BatchSchedule({ batchId, embedded = false }: { batchId: string; 
               <Button variant="outline" onClick={() => setCancelFor(null)} disabled={cancelBusy}>
                 Keep it
               </Button>
-              <Button variant="destructive" onClick={() => confirmCancel("single")} disabled={cancelBusy}>
+              <Button variant="destructive" onClick={() => confirmCancel("single")} disabled={cancelBusy || !cancelConfirmed}>
                 {cancelBusy ? <Loader2 className="animate-spin" /> : <Trash2 />}
                 Cancel class
               </Button>
