@@ -6,7 +6,7 @@
 // /api/admin/batches/[id]/{subjects,sessions}.
 import { useCallback, useEffect, useMemo, useState } from "react";
 import Link from "next/link";
-import { ArrowLeft, CalendarPlus, Loader2, Pencil, Trash2, Video, X } from "lucide-react";
+import { ArrowLeft, CalendarPlus, Loader2, Pencil, Repeat, Save, Trash2, Video, X } from "lucide-react";
 
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
@@ -44,6 +44,15 @@ const fmtDay = (iso: string) =>
   new Intl.DateTimeFormat("en-IN", { timeZone: TZ, weekday: "short", day: "2-digit", month: "short" }).format(new Date(iso));
 const fmtTime = (iso: string) =>
   new Intl.DateTimeFormat("en-IN", { timeZone: TZ, hour: "2-digit", minute: "2-digit", hour12: true }).format(new Date(iso));
+// ISO instant → DateTimePicker value "YYYY-MM-DDTHH:mm" in IST wall-clock.
+const toLocalInput = (iso: string) => {
+  const p = new Intl.DateTimeFormat("en-CA", {
+    timeZone: TZ, year: "numeric", month: "2-digit", day: "2-digit",
+    hour: "2-digit", minute: "2-digit", hourCycle: "h23",
+  }).formatToParts(new Date(iso));
+  const g = (t: string) => p.find((x) => x.type === t)?.value ?? "00";
+  return `${g("year")}-${g("month")}-${g("day")}T${g("hour")}:${g("minute")}`;
+};
 
 export function BatchSchedule({ batchId, embedded = false }: { batchId: string; embedded?: boolean }) {
   const [loading, setLoading] = useState(true);
@@ -81,6 +90,14 @@ export function BatchSchedule({ batchId, embedded = false }: { batchId: string; 
   // Typed confirmation guards against accidental cancels.
   const [cancelConfirm, setCancelConfirm] = useState("");
   const cancelConfirmed = cancelConfirm.trim().toUpperCase() === "CANCEL";
+
+  // Edit a single occurrence (reschedule / prepone / postpone one class).
+  const [editOccFor, setEditOccFor] = useState<{ sessionId: string } | null>(null);
+  const [editTitle, setEditTitle] = useState("");
+  const [editStart, setEditStart] = useState("");
+  const [editDur, setEditDur] = useState("90");
+  const [editBusy, setEditBusy] = useState(false);
+  const [editErr, setEditErr] = useState("");
 
   const sessionsUrl = `/api/admin/batches/${batchId}/sessions`;
 
@@ -232,6 +249,41 @@ export function BatchSchedule({ batchId, embedded = false }: { batchId: string; 
       setFormError((e as Error).message);
     } finally {
       setSaving(false);
+    }
+  }
+
+  function openEditOccurrence(s: CalendarSession) {
+    setEditErr("");
+    setEditOccFor({ sessionId: s.id });
+    setEditTitle(s.title);
+    setEditStart(toLocalInput(s.startsAt));
+    setEditDur(String(Math.max(1, Math.round((Date.parse(s.endsAt) - Date.parse(s.startsAt)) / 60_000))));
+  }
+
+  async function saveEditOccurrence() {
+    if (!editOccFor) return;
+    setEditErr("");
+    if (!editTitle.trim()) return setEditErr("Enter a class title.");
+    if (!editStart) return setEditErr("Pick the class date & time.");
+    const dur = Number(editDur);
+    if (!Number.isInteger(dur) || dur < 1) return setEditErr("Enter a valid duration in minutes.");
+    const startsAt = `${editStart}:00+05:30`; // entered time is IST
+    const endsAt = new Date(Date.parse(startsAt) + dur * 60_000).toISOString();
+    setEditBusy(true);
+    try {
+      const res = await fetch(`/api/admin/batches/${batchId}/sessions/${editOccFor.sessionId}`, {
+        method: "PATCH",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ title: editTitle.trim(), startsAt, endsAt }),
+      });
+      const json = await res.json().catch(() => ({}));
+      if (!res.ok) throw new Error(json.error ?? "Could not update the class");
+      setEditOccFor(null);
+      await reloadSessions();
+    } catch (e) {
+      setEditErr((e as Error).message);
+    } finally {
+      setEditBusy(false);
     }
   }
 
@@ -483,47 +535,72 @@ export function BatchSchedule({ batchId, embedded = false }: { batchId: string; 
                     </a>
                   </Button>
                 )}
-                {s.seriesId && seriesAnchorIds.has(s.id) ? (
-                  // Series representative row: edit the series, or cancel (dialog
-                  // then offers this-occurrence-only vs whole-series).
-                  <>
-                    <Button variant="outline" size="sm" onClick={() => startEditSeries(s.seriesId!)}>
-                      <Pencil /> Edit series
-                    </Button>
-                    <Button
-                      variant="ghost"
-                      size="sm"
-                      className="text-muted-foreground hover:text-destructive"
-                      onClick={() => {
-                        setCancelErr("");
-                        setCancelConfirm("");
-                        setCancelFor({ sessionId: s.id, title: s.title, choice: true });
-                      }}
-                    >
-                      <Trash2 /> Cancel
-                    </Button>
-                  </>
-                ) : (
-                  // Individual occurrence (series → offers "this / all following";
-                  // one-off → single cancel).
-                  <Button
-                    variant="ghost"
-                    size="sm"
-                    className="text-muted-foreground hover:text-destructive"
-                    onClick={() => {
-                      setCancelErr("");
-                      setCancelConfirm("");
-                      setCancelFor({ sessionId: s.id, title: s.title, choice: Boolean(s.seriesId) });
-                    }}
-                  >
-                    <Trash2 /> Cancel
+                {/* Edit just this class (reschedule / prepone / postpone). */}
+                <Button variant="outline" size="sm" onClick={() => openEditOccurrence(s)}>
+                  <Pencil /> Edit
+                </Button>
+                {/* Series representative row also edits the recurrence pattern. */}
+                {s.seriesId && seriesAnchorIds.has(s.id) && (
+                  <Button variant="outline" size="sm" onClick={() => startEditSeries(s.seriesId!)}>
+                    <Repeat /> Edit series
                   </Button>
                 )}
+                <Button
+                  variant="ghost"
+                  size="sm"
+                  className="text-muted-foreground hover:text-destructive"
+                  onClick={() => {
+                    setCancelErr("");
+                    setCancelConfirm("");
+                    setCancelFor({ sessionId: s.id, title: s.title, choice: Boolean(s.seriesId) });
+                  }}
+                >
+                  <Trash2 /> Cancel
+                </Button>
               </div>
             ))
           )}
         </CardContent>
       </Card>
+
+      {/* Edit a single occurrence */}
+      <Dialog open={Boolean(editOccFor)} onOpenChange={(o) => !o && setEditOccFor(null)}>
+        <DialogContent className="sm:max-w-md">
+          <DialogHeader>
+            <DialogTitle>Edit this class</DialogTitle>
+          </DialogHeader>
+          <p className="text-muted-foreground text-sm">
+            Reschedule just this occurrence — the rest of the series is unchanged. The subject&apos;s mentors
+            get an updated calendar invite.
+          </p>
+          <div className="grid gap-4">
+            <div className="grid gap-1.5">
+              <Label htmlFor="edit-title">Class title</Label>
+              <Input id="edit-title" value={editTitle} onChange={(e) => setEditTitle(e.target.value)} />
+            </div>
+            <div className="grid gap-4 sm:grid-cols-2">
+              <div className="grid gap-1.5">
+                <Label>Date &amp; time (IST)</Label>
+                <DateTimePicker value={editStart} onChange={setEditStart} />
+              </div>
+              <div className="grid gap-1.5">
+                <Label htmlFor="edit-dur">Duration (minutes)</Label>
+                <Input id="edit-dur" inputMode="numeric" value={editDur} onChange={(e) => setEditDur(e.target.value)} />
+              </div>
+            </div>
+            {editErr && <p className="text-destructive text-sm">{editErr}</p>}
+          </div>
+          <DialogFooter>
+            <Button variant="outline" onClick={() => setEditOccFor(null)} disabled={editBusy}>
+              Cancel
+            </Button>
+            <Button onClick={saveEditOccurrence} disabled={editBusy}>
+              {editBusy ? <Loader2 className="animate-spin" /> : <Save />}
+              Save changes
+            </Button>
+          </DialogFooter>
+        </DialogContent>
+      </Dialog>
 
       {/* Cancel confirmation */}
       <Dialog open={Boolean(cancelFor)} onOpenChange={(o) => !o && setCancelFor(null)}>

@@ -456,7 +456,11 @@ export async function updateClassSession(
   const mentors = await mentorsOf(supabase, s.batch_id, s.subject_id);
 
   let meetingWarning: string | null = null;
-  if (s.zoom_meeting_id && zoom.zoomConfigured()) {
+  // Only patch Zoom for a one-off. A series shares ONE recurring meeting, so
+  // moving a single occurrence must NOT rewrite the whole meeting's time — the
+  // recurring join link still works, and the .ics exception (RECURRENCE-ID)
+  // moves just this instance on the mentor's calendar.
+  if (!s.series_id && s.zoom_meeting_id && zoom.zoomConfigured()) {
     try {
       await zoom.updateMeeting(s.zoom_meeting_id, {
         topic: `${args.subjectName}: ${title}`,
