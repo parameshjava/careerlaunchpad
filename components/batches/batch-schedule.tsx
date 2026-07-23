@@ -23,6 +23,7 @@ import {
   SelectTrigger,
   SelectValue,
 } from "@/components/ui/select";
+import { cachedGet, invalidate } from "@/lib/fetch-cache";
 import type { CalendarSession } from "@/lib/calendar-query";
 
 const TZ = "Asia/Kolkata";
@@ -64,21 +65,26 @@ export function BatchSchedule({ batchId, embedded = false }: { batchId: string; 
   // Editing an existing series (null = creating a new class).
   const [editingSeriesId, setEditingSeriesId] = useState<string | null>(null);
 
-  const loadSessions = useCallback(async () => {
-    const res = await fetch(`/api/admin/batches/${batchId}/sessions`);
-    const json = await res.json();
-    if (res.ok) setSessions(json.sessions ?? []);
-  }, [batchId]);
+  const sessionsUrl = `/api/admin/batches/${batchId}/sessions`;
+
+  // Refresh sessions after a mutation: drop the cache, then reload.
+  const reloadSessions = useCallback(async () => {
+    invalidate(sessionsUrl);
+    const json = await cachedGet<{ sessions: CalendarSession[] }>(sessionsUrl);
+    setSessions(json.sessions ?? []);
+  }, [sessionsUrl]);
 
   useEffect(() => {
     let cancelled = false;
     (async () => {
       try {
-        const [subRes] = await Promise.all([fetch(`/api/admin/batches/${batchId}/subjects`), loadSessions()]);
-        const subJson = await subRes.json();
-        if (!subRes.ok) throw new Error(subJson.error ?? "Could not load subjects");
+        const [subJson, sesJson] = await Promise.all([
+          cachedGet<{ subjects: { subjectId: string; name: string }[] }>(`/api/admin/batches/${batchId}/subjects`),
+          cachedGet<{ sessions: CalendarSession[] }>(sessionsUrl),
+        ]);
         if (cancelled) return;
-        setSubjects((subJson.subjects ?? []).map((s: { subjectId: string; name: string }) => ({ subjectId: s.subjectId, name: s.name })));
+        setSubjects((subJson.subjects ?? []).map((s) => ({ subjectId: s.subjectId, name: s.name })));
+        setSessions(sesJson.sessions ?? []);
       } catch (e) {
         if (!cancelled) setLoadError((e as Error).message);
       } finally {
@@ -88,7 +94,7 @@ export function BatchSchedule({ batchId, embedded = false }: { batchId: string; 
     return () => {
       cancelled = true;
     };
-  }, [batchId, loadSessions]);
+  }, [batchId, sessionsUrl]);
 
   const toggleWeekday = (dow: number) =>
     setByWeekday((prev) => (prev.includes(dow) ? prev.filter((d) => d !== dow) : [...prev, dow]));
@@ -191,7 +197,7 @@ export function BatchSchedule({ batchId, embedded = false }: { batchId: string; 
       const warn = json.meetingWarning ? ` — note: ${json.meetingWarning}` : "";
       setNotice(editing ? `Series updated${warn}.` : `Class scheduled${warn}.`);
       resetForm();
-      await loadSessions();
+      await reloadSessions();
     } catch (e) {
       setFormError((e as Error).message);
     } finally {
@@ -203,7 +209,7 @@ export function BatchSchedule({ batchId, embedded = false }: { batchId: string; 
     if (!confirm(scopeSeries ? "Cancel all future classes in this series?" : "Cancel this class?")) return;
     const qs = scopeSeries ? "?scope=series" : "";
     const res = await fetch(`/api/admin/batches/${batchId}/sessions/${sessionId}${qs}`, { method: "DELETE" });
-    if (res.ok) await loadSessions();
+    if (res.ok) await reloadSessions();
   }
 
   if (loading)

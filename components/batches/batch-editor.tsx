@@ -30,6 +30,7 @@ import {
   type BatchStatus,
   type CourseOption,
 } from "@/lib/batch-query";
+import { cachedGet, invalidate } from "@/lib/fetch-cache";
 
 type FeeRow = { label: string; amount: string };
 
@@ -66,16 +67,12 @@ export function BatchEditor({ batchId, embedded = false }: { batchId?: string; e
     let cancelled = false;
     (async () => {
       try {
-        const refRes = await fetch("/api/admin/batches/reference");
-        const ref = await refRes.json();
-        if (!refRes.ok) throw new Error(ref.error ?? "Could not load options");
+        const ref = await cachedGet<{ courses?: CourseOption[] }>("/api/admin/batches/reference");
         if (cancelled) return;
         setCoursesRef(ref.courses ?? []);
 
         if (batchId) {
-          const res = await fetch(`/api/admin/batches/${batchId}`);
-          const json = await res.json();
-          if (!res.ok) throw new Error(json.error ?? "Could not load batch");
+          const json = await cachedGet<{ batch: BatchDetail }>(`/api/admin/batches/${batchId}`);
           if (cancelled) return;
           const bt = json.batch as BatchDetail;
           setCourseId(bt.courseId);
@@ -194,6 +191,12 @@ export function BatchEditor({ batchId, embedded = false }: { batchId?: string; e
       });
       const json = await res.json();
       if (!res.ok) throw new Error(json.error ?? "Save failed");
+      if (editing) {
+        // Batch changed → refresh its cached detail; a course change alters the
+        // syllabus, so drop the cached subjects too.
+        invalidate(`/api/admin/batches/${batchId}`);
+        invalidate(`/api/admin/batches/${batchId}/subjects`);
+      }
       if (embedded) {
         setSaved(true);
         setSaving(false);

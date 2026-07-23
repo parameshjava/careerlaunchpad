@@ -20,6 +20,7 @@ import {
   SelectTrigger,
   SelectValue,
 } from "@/components/ui/select";
+import { cachedGet, invalidate } from "@/lib/fetch-cache";
 import type {
   BatchSubjectRow,
   EligibleMentor,
@@ -52,13 +53,12 @@ export function BatchSubjectsEditor({ batchId, embedded = false }: { batchId: st
     let cancelled = false;
     (async () => {
       try {
-        const [subRes, batchRes] = await Promise.all([
-          fetch(`/api/admin/batches/${batchId}/subjects`),
-          fetch(`/api/admin/batches/${batchId}`),
+        const [data, batchJson] = await Promise.all([
+          cachedGet<{ subjects: BatchSubjectRow[]; syllabusSubjects: unknown[]; eligibleMentors: unknown[] }>(
+            `/api/admin/batches/${batchId}/subjects`
+          ),
+          cachedGet<{ batch?: { name?: string } }>(`/api/admin/batches/${batchId}`).catch(() => ({})),
         ]);
-        const data = await subRes.json();
-        if (!subRes.ok) throw new Error(data.error ?? "Could not load subjects");
-        const batchJson = await batchRes.json().catch(() => ({}));
         if (cancelled) return;
 
         setSubjects(
@@ -68,9 +68,9 @@ export function BatchSubjectsEditor({ batchId, embedded = false }: { batchId: st
             mentors: s.mentors,
           }))
         );
-        setSyllabus(data.syllabusSubjects ?? []);
-        setMentors(data.eligibleMentors ?? []);
-        if (batchRes.ok) setBatchName(batchJson.batch?.name ?? "");
+        setSyllabus((data.syllabusSubjects ?? []) as typeof syllabus);
+        setMentors((data.eligibleMentors ?? []) as typeof mentors);
+        setBatchName((batchJson as { batch?: { name?: string } }).batch?.name ?? "");
       } catch (e) {
         if (!cancelled) setLoadError((e as Error).message);
       } finally {
@@ -147,6 +147,9 @@ export function BatchSubjectsEditor({ batchId, embedded = false }: { batchId: st
       });
       const json = await res.json();
       if (!res.ok) throw new Error(json.error ?? "Save failed");
+      // Subjects changed → drop the cached subjects (this section + the
+      // schedule's subject picker read the same endpoint).
+      invalidate(`/api/admin/batches/${batchId}/subjects`);
       setSaved(true);
       router.refresh();
     } catch (e) {

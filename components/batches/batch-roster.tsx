@@ -73,10 +73,15 @@ export function BatchRoster({
   batchId,
   batch,
   roster,
+  onChanged,
 }: {
   batchId: string;
   batch: BatchFee;
   roster: RosterRow[];
+  /** Called after a change (approve/reject, payment) so a client-fetched host
+   * (the workspace) can invalidate its cache + refetch. The standalone page
+   * relies on router.refresh() instead. */
+  onChanged?: () => void;
 }) {
   const router = useRouter();
   const [busyId, setBusyId] = useState<string | null>(null);
@@ -154,6 +159,7 @@ export function BatchRoster({
       const json = await res.json();
       if (!res.ok) throw new Error(json.error ?? "Update failed");
       router.refresh();
+      onChanged?.();
       return true;
     } catch (e) {
       setRowErr((e as Error).message);
@@ -209,6 +215,7 @@ export function BatchRoster({
       setPayFor(null);
       setPayBusy(false);
       router.refresh();
+      onChanged?.();
       openReceipt(json.receiptId);
     } catch (e) {
       setPayErr((e as Error).message);
