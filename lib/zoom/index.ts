@@ -82,14 +82,37 @@ function recurrencePayload(rec: NonNullable<CreateMeetingInput["recurrence"]>) {
   };
 }
 
-function meetingSettings(altHostEmails?: string[]) {
+function meetingSettings() {
   return {
     join_before_host: false,
     waiting_room: true,
-    ...(altHostEmails && altHostEmails.length
-      ? { alternative_hosts: altHostEmails.join(";"), alternative_hosts_email_notification: true }
-      : {}),
   };
+}
+
+/**
+ * Best-effort alternative-host assignment. Zoom only allows alt-hosts who are
+ * users in the SAME Zoom account (error 1114 otherwise — e.g. a mentor's
+ * personal Gmail), so this NEVER throws: a rejected alt-host must not block
+ * creating/updating the meeting. Mentors still get the join link via the .ics
+ * invite; alt-host (ability to start the class) is a bonus when they happen to
+ * be Zoom users on this account.
+ */
+async function trySetAltHosts(meetingId: string, altHostEmails?: string[]): Promise<void> {
+  const emails = (altHostEmails ?? []).filter(Boolean);
+  if (!emails.length) return;
+  try {
+    const token = await getToken();
+    const res = await fetch(`https://api.zoom.us/v2/meetings/${meetingId}`, {
+      method: "PATCH",
+      headers: { Authorization: `Bearer ${token}`, "Content-Type": "application/json" },
+      body: JSON.stringify({
+        settings: { alternative_hosts: emails.join(";"), alternative_hosts_email_notification: true },
+      }),
+    });
+    if (!res.ok) console.warn(`Zoom: alternative hosts not set (${res.status}): ${await res.text()}`);
+  } catch (e) {
+    console.warn("Zoom: alternative hosts not set:", e);
+  }
 }
 
 export async function createMeeting(input: CreateMeetingInput): Promise<ZoomMeeting> {
@@ -102,7 +125,7 @@ export async function createMeeting(input: CreateMeetingInput): Promise<ZoomMeet
     timezone: input.timezone,
     agenda: input.agenda ?? undefined,
     ...(input.recurrence ? { recurrence: recurrencePayload(input.recurrence) } : {}),
-    settings: meetingSettings(input.altHostEmails),
+    settings: meetingSettings(),
   };
   const res = await fetch("https://api.zoom.us/v2/users/me/meetings", {
     method: "POST",
@@ -111,6 +134,8 @@ export async function createMeeting(input: CreateMeetingInput): Promise<ZoomMeet
   });
   if (!res.ok) throw new Error(`Zoom create failed (${res.status}): ${await res.text()}`);
   const json = (await res.json()) as { id: number; join_url: string; start_url: string };
+  // Alt-hosts are set separately so a rejected one can't fail meeting creation.
+  await trySetAltHosts(String(json.id), input.altHostEmails);
   return { meetingId: String(json.id), joinUrl: json.join_url, startUrl: json.start_url };
 }
 
@@ -135,16 +160,19 @@ export async function updateMeeting(meetingId: string, patch: UpdateMeetingInput
     ...(patch.timezone ? { timezone: patch.timezone } : {}),
     // type must accompany a recurrence change so Zoom keeps it a recurring meeting.
     ...(patch.recurrence ? { type: 8, recurrence: recurrencePayload(patch.recurrence) } : {}),
-    ...(patch.altHostEmails ? { settings: meetingSettings(patch.altHostEmails) } : {}),
   };
-  const res = await fetch(`https://api.zoom.us/v2/meetings/${meetingId}`, {
-    method: "PATCH",
-    headers: { Authorization: `Bearer ${token}`, "Content-Type": "application/json" },
-    body: JSON.stringify(body),
-  });
-  // 204 = updated. 404 = already gone — treat as success (idempotent).
-  if (!res.ok && res.status !== 404)
-    throw new Error(`Zoom update failed (${res.status}): ${await res.text()}`);
+  if (Object.keys(body).length) {
+    const res = await fetch(`https://api.zoom.us/v2/meetings/${meetingId}`, {
+      method: "PATCH",
+      headers: { Authorization: `Bearer ${token}`, "Content-Type": "application/json" },
+      body: JSON.stringify(body),
+    });
+    // 204 = updated. 404 = already gone — treat as success (idempotent).
+    if (!res.ok && res.status !== 404)
+      throw new Error(`Zoom update failed (${res.status}): ${await res.text()}`);
+  }
+  // Alt-hosts set separately (best-effort) so a rejected one can't fail the edit.
+  await trySetAltHosts(meetingId, patch.altHostEmails);
 }
 
 export async function deleteMeeting(meetingId: string): Promise<void> {

@@ -107,4 +107,22 @@ prefix with `NEXT_PUBLIC_`. Redeploy after adding them.
 - **The `.ics` invite** to mentors is sent over SMTP, configured separately — see
   the Email section of [`.env.example`](../.env.example). Without SMTP the meeting
   is still created; only the email is skipped.
-- Mentors must be **approved** with an account email for the invite/alt-host to work.
+- Mentors must be **approved** with an account email for the invite to work.
+
+### Alternative hosts (error 1114)
+
+> `Unable to assign "…@gmail.com" as an alternative host because the user cannot
+> be selected at this time` (code **1114**).
+
+Zoom only allows **alternative hosts who are users on the same Zoom account**
+(and typically licensed) — a mentor's personal Gmail can't be an alt-host. We
+therefore set alt-hosts **best-effort and decoupled from meeting creation**: the
+meeting is always created and the join link always works; if an alt-host can't be
+assigned, it's skipped (logged as a warning), not failed. Mentors still receive
+the class on their calendar via the `.ics` invite and join with the link.
+
+**To make mentors actual alternative hosts** (able to *start* the class), add
+them as **users on your Zoom account** (Zoom Admin → User Management → Users →
+Add) with the same email you use in CareerLaunchpad, then reschedule/edit the
+class. Otherwise the join-link + calendar-invite flow is the intended experience
+and needs no Zoom account per mentor.
