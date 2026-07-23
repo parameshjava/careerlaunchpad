@@ -356,16 +356,29 @@ export function BatchSchedule({ batchId, embedded = false }: { batchId: string; 
           </CardContent>
         </Card>
       ) : (
-        <Card className="mb-6">
-          <CardHeader className="flex-row items-center justify-between gap-2 space-y-0">
-            <CardTitle className="text-base">{editingSeriesId ? "Edit series" : "Schedule a class"}</CardTitle>
+        <Card className="mb-6 overflow-hidden">
+          <CardHeader className="flex-row items-start justify-between gap-3 space-y-0 border-b bg-muted/30">
+            <div className="flex items-center gap-3">
+              <span
+                className="grid size-9 shrink-0 place-items-center rounded-lg text-white shadow-sm"
+                style={{ backgroundImage: "var(--brand-gradient-135)" }}
+              >
+                <CalendarPlus className="size-5" />
+              </span>
+              <div>
+                <CardTitle className="text-base">{editingSeriesId ? "Edit series" : "Schedule a class"}</CardTitle>
+                <p className="text-muted-foreground mt-0.5 text-xs">
+                  {editingSeriesId ? "Update this weekly series" : "A one-off or weekly class for a subject"}
+                </p>
+              </div>
+            </div>
             {editingSeriesId && (
               <Button variant="ghost" size="sm" onClick={resetForm}>
                 <X /> Cancel edit
               </Button>
             )}
           </CardHeader>
-          <CardContent className="grid gap-4">
+          <CardContent className="grid gap-5 pt-5">
             <div className="grid gap-4 sm:grid-cols-2">
               <div className="grid gap-1.5">
                 <Label>Subject</Label>
@@ -386,9 +399,6 @@ export function BatchSchedule({ batchId, embedded = false }: { batchId: string; 
                 <Label htmlFor="s-title">Class title</Label>
                 <Input id="s-title" value={title} onChange={(e) => setTitle(e.target.value)} placeholder="e.g. Ratios & Averages" />
               </div>
-            </div>
-
-            <div className="grid gap-4 sm:grid-cols-2">
               <div className="grid gap-1.5">
                 <Label>Delivery</Label>
                 <Select value={deliveryMode} onValueChange={(v) => setDeliveryMode(v as typeof deliveryMode)}>
@@ -408,64 +418,96 @@ export function BatchSchedule({ batchId, embedded = false }: { batchId: string; 
               </div>
             </div>
 
-            <label className="flex items-center gap-2 text-sm">
-              <Checkbox
-                checked={repeat || Boolean(editingSeriesId)}
-                disabled={Boolean(editingSeriesId)}
-                onCheckedChange={(v) => setRepeat(Boolean(v))}
-              />
-              Repeat weekly
-            </label>
-
-            {!repeat && !editingSeriesId ? (
-              <div className="grid gap-1.5">
-                <Label>Date &amp; time (IST)</Label>
-                <DateTimePicker value={startLocal} onChange={setStartLocal} />
-              </div>
-            ) : (
-              <div className="grid gap-4">
-                <div className="grid gap-1.5">
-                  <Label>Repeat on</Label>
-                  <div className="flex flex-wrap gap-1.5">
-                    {WEEKDAYS.map((w) => (
+            {/* When */}
+            <div className="grid gap-4 rounded-xl border bg-muted/20 p-4">
+              <div className="flex flex-wrap items-center justify-between gap-2">
+                <span className="text-muted-foreground text-xs font-semibold uppercase tracking-wide">When</span>
+                {editingSeriesId ? (
+                  <Badge variant="outline" className="gap-1">
+                    <Repeat className="size-3" /> Weekly
+                  </Badge>
+                ) : (
+                  <div className="bg-background inline-flex rounded-lg border p-0.5">
+                    {[
+                      { v: false, label: "One-off" },
+                      { v: true, label: "Weekly" },
+                    ].map((o) => (
                       <button
-                        key={w.dow}
+                        key={o.label}
                         type="button"
-                        onClick={() => toggleWeekday(w.dow)}
-                        aria-pressed={byWeekday.includes(w.dow)}
-                        className={`size-9 rounded-full border text-sm font-medium transition-colors ${
-                          byWeekday.includes(w.dow)
-                            ? "border-transparent bg-primary text-primary-foreground"
-                            : "bg-background hover:bg-muted"
+                        onClick={() => setRepeat(o.v)}
+                        aria-pressed={repeat === o.v}
+                        className={`rounded-md px-3 py-1 text-sm font-medium transition-colors ${
+                          repeat === o.v ? "text-white" : "text-muted-foreground hover:text-foreground"
                         }`}
+                        style={repeat === o.v ? { backgroundImage: "var(--brand-gradient-135)" } : undefined}
                       >
-                        {w.label}
+                        {o.label}
                       </button>
                     ))}
                   </div>
-                </div>
-                <div className="grid gap-4 sm:grid-cols-3">
-                  <div className="grid gap-1.5">
-                    <Label htmlFor="s-tod">Time (IST)</Label>
-                    <Input id="s-tod" type="time" value={timeOfDay} onChange={(e) => setTimeOfDay(e.target.value)} />
-                  </div>
-                  <div className="grid gap-1.5">
-                    <Label>Starts on</Label>
-                    <DatePicker value={startsOn} onChange={setStartsOn} placeholder="First class date" />
-                  </div>
-                  <div className="grid gap-1.5">
-                    <Label>Until</Label>
-                    <DatePicker value={until} onChange={setUntil} placeholder="Batch end" clearable />
-                  </div>
-                </div>
+                )}
               </div>
-            )}
 
+              {!repeat && !editingSeriesId ? (
+                <div className="grid gap-1.5">
+                  <Label>Date &amp; time (IST)</Label>
+                  <DateTimePicker value={startLocal} onChange={setStartLocal} />
+                </div>
+              ) : (
+                <div className="grid gap-4">
+                  <div className="grid gap-1.5">
+                    <Label>Repeat on</Label>
+                    <div className="flex flex-wrap gap-1.5">
+                      {WEEKDAYS.map((w) => (
+                        <button
+                          key={w.dow}
+                          type="button"
+                          onClick={() => toggleWeekday(w.dow)}
+                          aria-pressed={byWeekday.includes(w.dow)}
+                          className={`size-9 rounded-full border text-sm font-medium transition-colors ${
+                            byWeekday.includes(w.dow)
+                              ? "border-transparent text-white"
+                              : "bg-background hover:bg-muted"
+                          }`}
+                          style={byWeekday.includes(w.dow) ? { backgroundImage: "var(--brand-gradient-135)" } : undefined}
+                        >
+                          {w.label}
+                        </button>
+                      ))}
+                    </div>
+                  </div>
+                  <div className="grid gap-4 sm:grid-cols-3">
+                    <div className="grid gap-1.5">
+                      <Label htmlFor="s-tod">Time (IST)</Label>
+                      <Input id="s-tod" type="time" value={timeOfDay} onChange={(e) => setTimeOfDay(e.target.value)} />
+                    </div>
+                    <div className="grid gap-1.5">
+                      <Label>Starts on</Label>
+                      <DatePicker value={startsOn} onChange={setStartsOn} placeholder="First class date" />
+                    </div>
+                    <div className="grid gap-1.5">
+                      <Label>Until</Label>
+                      <DatePicker value={until} onChange={setUntil} placeholder="Batch end" clearable />
+                    </div>
+                  </div>
+                </div>
+              )}
+            </div>
+
+            {/* Online meeting */}
             {online && (
-              <div className="grid gap-3">
-                <label className="flex items-center gap-2 text-sm">
-                  <Checkbox checked={createZoom} onCheckedChange={(v) => setCreateZoom(Boolean(v))} />
-                  <Video className="size-4" /> Create a Zoom meeting automatically
+              <div className="grid gap-3 rounded-xl border p-4">
+                <label className="flex items-start gap-2.5">
+                  <Checkbox className="mt-0.5" checked={createZoom} onCheckedChange={(v) => setCreateZoom(Boolean(v))} />
+                  <span className="grid gap-0.5">
+                    <span className="flex items-center gap-1.5 text-sm font-medium">
+                      <Video className="size-4" /> Create a Zoom meeting automatically
+                    </span>
+                    <span className="text-muted-foreground text-xs">
+                      A join link is generated and the subject&apos;s mentors are emailed a calendar invite.
+                    </span>
+                  </span>
                 </label>
                 {!createZoom && (
                   <div className="grid gap-1.5">
@@ -479,7 +521,7 @@ export function BatchSchedule({ batchId, embedded = false }: { batchId: string; 
             {formError && <p className="text-destructive text-sm">{formError}</p>}
             {notice && <p className="text-sm text-emerald-600">{notice}</p>}
 
-            <div className="flex justify-end">
+            <div className="flex justify-end border-t pt-4">
               <Button onClick={submit} disabled={saving}>
                 {saving ? <Loader2 className="animate-spin" /> : <CalendarPlus />}
                 {editingSeriesId ? "Save series" : "Schedule class"}
