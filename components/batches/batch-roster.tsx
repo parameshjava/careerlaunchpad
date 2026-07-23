@@ -263,6 +263,7 @@ export function BatchRoster({
                 batch={batch}
                 enrolledIds={enrolledIds}
                 embedded
+                onClose={() => setEnrolOpen(false)}
                 onDone={() => {
                   setEnrolOpen(false);
                   onChanged?.();

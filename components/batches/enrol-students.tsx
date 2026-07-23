@@ -43,6 +43,7 @@ export function EnrolStudents({
   enrolledIds,
   embedded = false,
   onDone,
+  onClose,
 }: {
   batchId: string;
   batch: BatchFee;
@@ -51,7 +52,10 @@ export function EnrolStudents({
    * finish via onDone (close the drawer + refresh the roster) instead of the
    * "Back to roster" link. */
   embedded?: boolean;
+  /** After a successful enrol — close the drawer and refresh the roster. */
   onDone?: () => void;
+  /** Cancel/dismiss — close the drawer without refetching. */
+  onClose?: () => void;
 }) {
   const router = useRouter();
   const gross = batch.grossPaise;
@@ -398,9 +402,15 @@ export function EnrolStudents({
           {error && <p className="text-destructive text-sm">{error}</p>}
 
           <div className="flex items-center justify-end gap-2">
-            <Button variant="outline" asChild>
-              <Link href={backHref}>Cancel</Link>
-            </Button>
+            {embedded ? (
+              <Button variant="outline" onClick={() => onClose?.()}>
+                Cancel
+              </Button>
+            ) : (
+              <Button variant="outline" asChild>
+                <Link href={backHref}>Cancel</Link>
+              </Button>
+            )}
             <Button onClick={submit} disabled={submitting || basket.length === 0}>
               {submitting ? <Loader2 className="animate-spin" /> : <UserPlus />}
               Enrol {basket.length || ""}
