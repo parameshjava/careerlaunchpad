@@ -12,6 +12,13 @@ import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Checkbox } from "@/components/ui/checkbox";
+import {
+  Dialog,
+  DialogContent,
+  DialogFooter,
+  DialogHeader,
+  DialogTitle,
+} from "@/components/ui/dialog";
 import { DatePicker } from "@/components/ui/date-picker";
 import { DateTimePicker } from "@/components/ui/date-time-picker";
 import { Input } from "@/components/ui/input";
@@ -64,6 +71,11 @@ export function BatchSchedule({ batchId, embedded = false }: { batchId: string; 
 
   // Editing an existing series (null = creating a new class).
   const [editingSeriesId, setEditingSeriesId] = useState<string | null>(null);
+
+  // Cancel-confirmation dialog (replaces the browser confirm()).
+  const [cancelFor, setCancelFor] = useState<{ sessionId: string; isSeries: boolean; title: string } | null>(null);
+  const [cancelBusy, setCancelBusy] = useState(false);
+  const [cancelErr, setCancelErr] = useState("");
 
   const sessionsUrl = `/api/admin/batches/${batchId}/sessions`;
 
@@ -205,11 +217,24 @@ export function BatchSchedule({ batchId, embedded = false }: { batchId: string; 
     }
   }
 
-  async function cancel(sessionId: string, scopeSeries: boolean) {
-    if (!confirm(scopeSeries ? "Cancel all future classes in this series?" : "Cancel this class?")) return;
-    const qs = scopeSeries ? "?scope=series" : "";
-    const res = await fetch(`/api/admin/batches/${batchId}/sessions/${sessionId}${qs}`, { method: "DELETE" });
-    if (res.ok) await reloadSessions();
+  async function confirmCancel(series: boolean) {
+    if (!cancelFor) return;
+    setCancelErr("");
+    setCancelBusy(true);
+    try {
+      const qs = series ? "?scope=series" : "";
+      const res = await fetch(`/api/admin/batches/${batchId}/sessions/${cancelFor.sessionId}${qs}`, {
+        method: "DELETE",
+      });
+      const json = await res.json().catch(() => ({}));
+      if (!res.ok) throw new Error(json.error ?? "Could not cancel");
+      setCancelFor(null);
+      await reloadSessions();
+    } catch (e) {
+      setCancelErr((e as Error).message);
+    } finally {
+      setCancelBusy(false);
+    }
   }
 
   if (loading)
@@ -434,15 +459,64 @@ export function BatchSchedule({ batchId, embedded = false }: { batchId: string; 
                   variant="ghost"
                   size="sm"
                   className="text-muted-foreground hover:text-destructive"
-                  onClick={() => cancel(s.id, Boolean(s.seriesId))}
+                  onClick={() => {
+                    setCancelErr("");
+                    setCancelFor({ sessionId: s.id, isSeries: Boolean(s.seriesId), title: s.title });
+                  }}
                 >
-                  <Trash2 /> {s.seriesId ? "Cancel series" : "Cancel"}
+                  <Trash2 /> Cancel
                 </Button>
               </div>
             ))
           )}
         </CardContent>
       </Card>
+
+      {/* Cancel confirmation */}
+      <Dialog open={Boolean(cancelFor)} onOpenChange={(o) => !o && setCancelFor(null)}>
+        <DialogContent className="sm:max-w-md">
+          <DialogHeader>
+            <DialogTitle>Cancel class?</DialogTitle>
+          </DialogHeader>
+          <p className="text-muted-foreground text-sm">
+            {cancelFor?.isSeries ? (
+              <>
+                <span className="text-foreground font-medium">{cancelFor?.title}</span> is a weekly class.
+                Cancel just this one occurrence, or all future occurrences in the series? The Zoom meeting and
+                mentors are updated accordingly. This can&apos;t be undone.
+              </>
+            ) : (
+              <>
+                <span className="text-foreground font-medium">{cancelFor?.title}</span> will be cancelled, its
+                Zoom meeting deleted, and the mentors notified. This can&apos;t be undone.
+              </>
+            )}
+          </p>
+          {cancelErr && <p className="text-destructive text-sm">{cancelErr}</p>}
+          <DialogFooter className="flex-col gap-2 sm:flex-row sm:justify-end">
+            <Button variant="outline" onClick={() => setCancelFor(null)} disabled={cancelBusy}>
+              Keep it
+            </Button>
+            {cancelFor?.isSeries ? (
+              <>
+                <Button variant="outline" onClick={() => confirmCancel(false)} disabled={cancelBusy}>
+                  {cancelBusy ? <Loader2 className="animate-spin" /> : <Trash2 />}
+                  This class only
+                </Button>
+                <Button variant="destructive" onClick={() => confirmCancel(true)} disabled={cancelBusy}>
+                  {cancelBusy ? <Loader2 className="animate-spin" /> : <Trash2 />}
+                  Whole series
+                </Button>
+              </>
+            ) : (
+              <Button variant="destructive" onClick={() => confirmCancel(false)} disabled={cancelBusy}>
+                {cancelBusy ? <Loader2 className="animate-spin" /> : <Trash2 />}
+                Cancel class
+              </Button>
+            )}
+          </DialogFooter>
+        </DialogContent>
+      </Dialog>
     </div>
   );
 }
