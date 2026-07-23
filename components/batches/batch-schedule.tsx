@@ -242,7 +242,7 @@ export function BatchSchedule({ batchId, embedded = false }: { batchId: string; 
             </p>
           </div>
           <Button variant="outline" asChild>
-            <Link href={`/dashboard/batches/${batchId}/subjects`}>
+            <Link href={`/dashboard/batches/${batchId}#subjects`}>
               <ArrowLeft /> Subjects &amp; mentors
             </Link>
           </Button>
@@ -255,7 +255,7 @@ export function BatchSchedule({ batchId, embedded = false }: { batchId: string; 
             Add subjects &amp; mentors to this batch first, then schedule classes for them.
             <div className="mt-4">
               <Button variant="outline" asChild>
-                <Link href={`/dashboard/batches/${batchId}/subjects`}>Set up subjects</Link>
+                <Link href={`/dashboard/batches/${batchId}#subjects`}>Set up subjects</Link>
               </Button>
             </div>
           </CardContent>

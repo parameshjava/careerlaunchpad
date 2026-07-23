@@ -167,7 +167,7 @@ export function EnrolStudents({
     }
   }
 
-  const backHref = `/dashboard/batches/${batchId}/enrollments`;
+  const backHref = `/dashboard/batches/${batchId}#students`;
 
   if (summary) {
     const skippedNames = summary.skipped.map((s) => {

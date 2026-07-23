@@ -1,9 +1,9 @@
 "use client";
 
 // Batch roster (issue #49, Phase 4): enrolled students with balances + per-row
-// "Record payment". Enrolment itself lives on the dedicated full-page screen
-// (/dashboard/batches/[id]/enrol) so it scales to thousands of students and
-// supports multi-select. Talks to /api/admin/enrollments/[id]/payments.
+// "Record payment" and a money summary. Enrolment opens in a right-side drawer
+// (EnrolStudents in embedded mode) so staff stay in the Students tab; it scales
+// to thousands via server-side search. Talks to /api/admin/enrollments/[id]/payments.
 import { Fragment, useMemo, useState } from "react";
 import { useRouter } from "next/navigation";
 import { Check, ChevronDown, ChevronRight, IndianRupee, Loader2, Receipt, UserPlus, X } from "lucide-react";
