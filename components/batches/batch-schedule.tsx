@@ -219,7 +219,9 @@ export function BatchSchedule({ batchId, embedded = false }: { batchId: string; 
       </div>
     );
   if (loadError)
-    return (
+    return embedded ? (
+      <p className="text-destructive py-6 text-sm">{loadError}</p>
+    ) : (
       <div className="mx-auto max-w-md py-10 text-center">
         <p className="text-destructive text-sm">{loadError}</p>
         <Button className="mt-4" variant="outline" asChild>
