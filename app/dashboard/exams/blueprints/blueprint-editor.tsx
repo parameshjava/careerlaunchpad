@@ -272,7 +272,10 @@ export function BlueprintEditor({
   const dirty = savedFp !== null && currentFp !== savedFp;
   const busy = saving || publishing || checking;
   const canCreate = title.trim().length > 0 && Boolean(collegeId);
-  const canSubmit = !busy && (creating ? canCreate : dirty);
+  // Title is required in BOTH modes — not just gated on the Exam-details Next
+  // button, since the Stepper lets you jump past it. Without this, an edit-mode
+  // save could blank the title and the API silently renames it "Untitled exam".
+  const canSubmit = !busy && title.trim().length > 0 && (creating ? Boolean(collegeId) : dirty);
 
   async function schedule() {
     if (!savedId || scheduling) return;

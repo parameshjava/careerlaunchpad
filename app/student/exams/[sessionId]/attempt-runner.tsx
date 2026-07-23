@@ -145,7 +145,7 @@ export function AttemptRunner({
   const strikesRef = useRef(0);
   strikesRef.current = strikes;
   const lastLeaveRef = useRef(0);
-  const suppressLeaveRef = useRef(false); // true briefly around window.print()
+  const suppressLeaveRef = useRef(false); // true while a print dialog is open (see print-block effect)
 
   const saveTimers = useRef<Record<string, ReturnType<typeof setTimeout>>>({});
   // Latest answers, readable inside doSubmit without making it depend on `answers`
@@ -366,6 +366,32 @@ export function AttemptRunner({
       document.removeEventListener("visibilitychange", onVisibility);
     };
   }, [attemptId, abortInfo, supabase, cacheKey]);
+
+  // Printing is disabled during an attempt (the paper is print:hidden with no
+  // print-visible component). Block the Ctrl/Cmd+P shortcut so no dialog opens,
+  // and — for a forced print via the browser menu — suppress the print-dialog
+  // blur so it can't be mistaken for leaving the exam (which would strike the
+  // student). `beforeprint` fires before that blur, so the guard is set in time.
+  useEffect(() => {
+    if (!attemptId || abortInfo) return;
+    const onKeyDown = (e: KeyboardEvent) => {
+      if ((e.metaKey || e.ctrlKey) && e.key.toLowerCase() === "p") e.preventDefault();
+    };
+    const onBeforePrint = () => {
+      suppressLeaveRef.current = true;
+    };
+    const onAfterPrint = () => {
+      suppressLeaveRef.current = false;
+    };
+    window.addEventListener("keydown", onKeyDown);
+    window.addEventListener("beforeprint", onBeforePrint);
+    window.addEventListener("afterprint", onAfterPrint);
+    return () => {
+      window.removeEventListener("keydown", onKeyDown);
+      window.removeEventListener("beforeprint", onBeforePrint);
+      window.removeEventListener("afterprint", onAfterPrint);
+    };
+  }, [attemptId, abortInfo]);
 
   function scheduleSave(questionId: string, selected: string[]) {
     clearTimeout(saveTimers.current[questionId]);
