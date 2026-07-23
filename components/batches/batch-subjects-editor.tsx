@@ -12,7 +12,6 @@ import { ArrowLeft, BookOpen, Loader2, Plus, Save, UserPlus, X } from "lucide-re
 
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
-import { Label } from "@/components/ui/label";
 import {
   Select,
   SelectContent,
@@ -194,128 +193,123 @@ export function BatchSubjectsEditor({ batchId, embedded = false }: { batchId: st
         </header>
       )}
 
-      {/* Add subject */}
-      <Card className="mb-6">
-        <CardHeader>
-          <CardTitle className="text-base">Add a subject</CardTitle>
+      <Card>
+        <CardHeader className="flex-row flex-wrap items-center justify-between gap-3 space-y-0">
+          <div>
+            <CardTitle className="text-base">Subjects &amp; mentors</CardTitle>
+            <p className="text-muted-foreground mt-0.5 text-xs">
+              {subjects.length} subject{subjects.length === 1 ? "" : "s"} · assign a mentor to each
+            </p>
+          </div>
+          {syllabus.length > 0 && availableSubjects.length > 0 && (
+            <Select key={`add-${pickerNonce}`} value="" onValueChange={addSubject}>
+              <SelectTrigger className="h-9 w-[220px]">
+                <span className="inline-flex items-center gap-1.5">
+                  <Plus className="size-3.5" />
+                  <SelectValue placeholder="Add a subject" />
+                </span>
+              </SelectTrigger>
+              <SelectContent>
+                {availableSubjects.map((s) => (
+                  <SelectItem key={s.subjectId} value={s.subjectId}>
+                    {s.name}
+                    {s.examCode ? ` · ${s.examCode}` : ""}
+                  </SelectItem>
+                ))}
+              </SelectContent>
+            </Select>
+          )}
         </CardHeader>
-        <CardContent className="grid gap-2">
+
+        <CardContent className="pt-0">
           {syllabus.length === 0 ? (
-            <p className="text-muted-foreground text-sm">
+            <p className="text-muted-foreground py-4 text-sm">
               This batch&apos;s course has no competitive-exam subjects yet. Add exams to the course
               under Courses first.
             </p>
-          ) : availableSubjects.length === 0 ? (
-            <p className="text-muted-foreground text-sm">
-              All syllabus subjects have been added.
-            </p>
-          ) : (
-            <div className="max-w-sm">
-              <Select key={`add-${pickerNonce}`} value="" onValueChange={addSubject}>
-                <SelectTrigger>
-                  <SelectValue placeholder="Pick a subject to add…" />
-                </SelectTrigger>
-                <SelectContent>
-                  {availableSubjects.map((s) => (
-                    <SelectItem key={s.subjectId} value={s.subjectId}>
-                      {s.name}
-                      {s.examCode ? ` · ${s.examCode}` : ""}
-                    </SelectItem>
-                  ))}
-                </SelectContent>
-              </Select>
+          ) : subjects.length === 0 ? (
+            <div className="text-muted-foreground flex flex-col items-center gap-2 py-10 text-center text-sm">
+              <BookOpen className="size-6 opacity-60" />
+              No subjects yet. Add one from the picker above.
             </div>
+          ) : (
+            <ul className="divide-y">
+              {subjects.map((s) => {
+                const availableMentors = mentors.filter(
+                  (m) => !s.mentors.some((x) => x.mentorId === m.mentorId)
+                );
+                return (
+                  <li
+                    key={s.subjectId}
+                    className="flex items-start justify-between gap-3 py-3 first:pt-1 last:pb-1"
+                  >
+                    <div className="min-w-0 flex-1">
+                      <div className="font-medium">{s.name}</div>
+                      <div className="mt-2 flex flex-wrap items-center gap-1.5">
+                        {s.mentors.map((m) => (
+                          <span
+                            key={m.mentorId}
+                            className="bg-muted inline-flex items-center gap-1 rounded-full py-0.5 pr-1 pl-2.5 text-xs"
+                          >
+                            {m.fullName ?? "Mentor"}
+                            <button
+                              type="button"
+                              onClick={() => removeMentor(s.subjectId, m.mentorId)}
+                              aria-label={`Remove ${m.fullName ?? "mentor"}`}
+                              className="text-muted-foreground hover:text-destructive rounded-full"
+                            >
+                              <X className="size-3" />
+                            </button>
+                          </span>
+                        ))}
+
+                        {mentors.length === 0 ? (
+                          <span className="text-muted-foreground text-xs">
+                            No approved mentors — add under Users → Mentors.
+                          </span>
+                        ) : availableMentors.length > 0 ? (
+                          <Select
+                            key={`m-${s.subjectId}-${pickerNonce}`}
+                            value=""
+                            onValueChange={(v) => addMentor(s.subjectId, v)}
+                          >
+                            <SelectTrigger className="text-muted-foreground h-7 w-auto gap-1 rounded-full border-dashed px-2.5 text-xs">
+                              <span className="inline-flex items-center gap-1">
+                                <UserPlus className="size-3" />
+                                <SelectValue placeholder="Assign mentor" />
+                              </span>
+                            </SelectTrigger>
+                            <SelectContent>
+                              {availableMentors.map((m) => (
+                                <SelectItem key={m.mentorId} value={m.mentorId}>
+                                  {m.fullName ?? "Mentor"}
+                                  <span className="text-muted-foreground"> · {m.email}</span>
+                                </SelectItem>
+                              ))}
+                            </SelectContent>
+                          </Select>
+                        ) : (
+                          <span className="text-muted-foreground text-xs">All mentors assigned</span>
+                        )}
+                      </div>
+                    </div>
+                    <Button
+                      type="button"
+                      variant="ghost"
+                      size="icon"
+                      onClick={() => removeSubject(s.subjectId)}
+                      aria-label={`Remove ${s.name}`}
+                      className="text-muted-foreground hover:text-destructive size-8 shrink-0"
+                    >
+                      <X className="size-4" />
+                    </Button>
+                  </li>
+                );
+              })}
+            </ul>
           )}
         </CardContent>
       </Card>
-
-      {/* Assigned subjects */}
-      {subjects.length === 0 ? (
-        <Card>
-          <CardContent className="text-muted-foreground flex flex-col items-center gap-2 py-10 text-center text-sm">
-            <BookOpen className="size-6 opacity-60" />
-            No subjects yet. Add one above to start assigning mentors.
-          </CardContent>
-        </Card>
-      ) : (
-        <div className="grid gap-4">
-          {subjects.map((s) => {
-            const availableMentors = mentors.filter(
-              (m) => !s.mentors.some((x) => x.mentorId === m.mentorId)
-            );
-            return (
-              <Card key={s.subjectId}>
-                <CardHeader className="flex-row items-center justify-between gap-2 space-y-0">
-                  <CardTitle className="text-base">{s.name}</CardTitle>
-                  <Button
-                    type="button"
-                    variant="ghost"
-                    size="sm"
-                    onClick={() => removeSubject(s.subjectId)}
-                    className="text-muted-foreground hover:text-destructive"
-                  >
-                    <X className="size-4" /> Remove
-                  </Button>
-                </CardHeader>
-                <CardContent className="grid gap-3">
-                  <Label className="text-muted-foreground text-xs">Mentors</Label>
-                  {s.mentors.length === 0 ? (
-                    <p className="text-muted-foreground text-sm">No mentors assigned yet.</p>
-                  ) : (
-                    <div className="flex flex-wrap gap-2">
-                      {s.mentors.map((m) => (
-                        <span
-                          key={m.mentorId}
-                          className="bg-muted inline-flex items-center gap-1.5 rounded-full py-1 pl-3 pr-1.5 text-sm"
-                        >
-                          {m.fullName ?? "Mentor"}
-                          <button
-                            type="button"
-                            onClick={() => removeMentor(s.subjectId, m.mentorId)}
-                            aria-label={`Remove ${m.fullName ?? "mentor"}`}
-                            className="text-muted-foreground hover:text-destructive rounded-full"
-                          >
-                            <X className="size-3.5" />
-                          </button>
-                        </span>
-                      ))}
-                    </div>
-                  )}
-
-                  {mentors.length === 0 ? (
-                    <p className="text-muted-foreground text-xs">
-                      No approved mentors available. Approve mentors under Users → Mentors first.
-                    </p>
-                  ) : availableMentors.length > 0 ? (
-                    <div className="max-w-sm">
-                      <Select
-                        key={`m-${s.subjectId}-${pickerNonce}`}
-                        value=""
-                        onValueChange={(v) => addMentor(s.subjectId, v)}
-                      >
-                        <SelectTrigger>
-                          <span className="text-muted-foreground inline-flex items-center gap-1.5">
-                            <UserPlus className="size-3.5" />
-                            <SelectValue placeholder="Assign a mentor…" />
-                          </span>
-                        </SelectTrigger>
-                        <SelectContent>
-                          {availableMentors.map((m) => (
-                            <SelectItem key={m.mentorId} value={m.mentorId}>
-                              {m.fullName ?? "Mentor"}
-                              <span className="text-muted-foreground"> · {m.email}</span>
-                            </SelectItem>
-                          ))}
-                        </SelectContent>
-                      </Select>
-                    </div>
-                  ) : null}
-                </CardContent>
-              </Card>
-            );
-          })}
-        </div>
-      )}
 
       {formError && <p className="text-destructive mt-4 text-sm">{formError}</p>}
       {saved && !formError && <p className="mt-4 text-sm text-emerald-600">Saved.</p>}
