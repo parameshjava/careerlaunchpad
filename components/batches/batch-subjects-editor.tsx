@@ -32,7 +32,7 @@ type SubjectState = {
   mentors: { mentorId: string; fullName: string | null }[];
 };
 
-export function BatchSubjectsEditor({ batchId }: { batchId: string }) {
+export function BatchSubjectsEditor({ batchId, embedded = false }: { batchId: string; embedded?: boolean }) {
   const router = useRouter();
 
   const [loading, setLoading] = useState(true);
@@ -173,21 +173,23 @@ export function BatchSubjectsEditor({ batchId }: { batchId: string }) {
     );
 
   return (
-    <div className="mx-auto max-w-3xl">
-      <header className="mb-6 flex flex-wrap items-start justify-between gap-3">
-        <div>
-          <h1 className="text-2xl font-bold tracking-tight">Subjects &amp; mentors</h1>
-          <p className="text-muted-foreground mt-1 text-sm">
-            {batchName ? <span className="font-medium">{batchName}</span> : "This batch"} — choose the
-            subjects taught and assign a mentor to each. Classes are then scheduled per subject.
-          </p>
-        </div>
-        <Button variant="outline" asChild>
-          <Link href={`/dashboard/batches/${batchId}`}>
-            <ArrowLeft /> Back to batch
-          </Link>
-        </Button>
-      </header>
+    <div className={embedded ? undefined : "mx-auto max-w-3xl"}>
+      {!embedded && (
+        <header className="mb-6 flex flex-wrap items-start justify-between gap-3">
+          <div>
+            <h1 className="text-2xl font-bold tracking-tight">Subjects &amp; mentors</h1>
+            <p className="text-muted-foreground mt-1 text-sm">
+              {batchName ? <span className="font-medium">{batchName}</span> : "This batch"} — choose the
+              subjects taught and assign a mentor to each. Classes are then scheduled per subject.
+            </p>
+          </div>
+          <Button variant="outline" asChild>
+            <Link href={`/dashboard/batches/${batchId}`}>
+              <ArrowLeft /> Back to batch
+            </Link>
+          </Button>
+        </header>
+      )}
 
       {/* Add subject */}
       <Card className="mb-6">
@@ -316,9 +318,11 @@ export function BatchSubjectsEditor({ batchId }: { batchId: string }) {
       {saved && !formError && <p className="mt-4 text-sm text-emerald-600">Saved.</p>}
 
       <div className="mt-6 flex items-center justify-end gap-2">
-        <Button variant="outline" asChild>
-          <Link href={`/dashboard/batches/${batchId}`}>Cancel</Link>
-        </Button>
+        {!embedded && (
+          <Button variant="outline" asChild>
+            <Link href={`/dashboard/batches/${batchId}`}>Cancel</Link>
+          </Button>
+        )}
         <Button onClick={save} disabled={saving}>
           {saving ? <Loader2 className="animate-spin" /> : <Save />}
           Save

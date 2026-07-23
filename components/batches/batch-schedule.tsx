@@ -37,7 +37,7 @@ const fmtDay = (iso: string) =>
 const fmtTime = (iso: string) =>
   new Intl.DateTimeFormat("en-IN", { timeZone: TZ, hour: "2-digit", minute: "2-digit", hour12: true }).format(new Date(iso));
 
-export function BatchSchedule({ batchId }: { batchId: string }) {
+export function BatchSchedule({ batchId, embedded = false }: { batchId: string; embedded?: boolean }) {
   const [loading, setLoading] = useState(true);
   const [loadError, setLoadError] = useState("");
   const [subjects, setSubjects] = useState<Subject[]>([]);
@@ -223,21 +223,23 @@ export function BatchSchedule({ batchId }: { batchId: string }) {
     );
 
   return (
-    <div className="mx-auto max-w-3xl">
-      <header className="mb-6 flex flex-wrap items-start justify-between gap-3">
-        <div>
-          <h1 className="text-2xl font-bold tracking-tight">Class schedule</h1>
-          <p className="text-muted-foreground mt-1 text-sm">
-            Schedule online classes per subject. Enrolled students see them on their calendar; the
-            subject&apos;s mentors get a Zoom invite.
-          </p>
-        </div>
-        <Button variant="outline" asChild>
-          <Link href={`/dashboard/batches/${batchId}/subjects`}>
-            <ArrowLeft /> Subjects &amp; mentors
-          </Link>
-        </Button>
-      </header>
+    <div className={embedded ? undefined : "mx-auto max-w-3xl"}>
+      {!embedded && (
+        <header className="mb-6 flex flex-wrap items-start justify-between gap-3">
+          <div>
+            <h1 className="text-2xl font-bold tracking-tight">Class schedule</h1>
+            <p className="text-muted-foreground mt-1 text-sm">
+              Schedule online classes per subject. Enrolled students see them on their calendar; the
+              subject&apos;s mentors get a Zoom invite.
+            </p>
+          </div>
+          <Button variant="outline" asChild>
+            <Link href={`/dashboard/batches/${batchId}/subjects`}>
+              <ArrowLeft /> Subjects &amp; mentors
+            </Link>
+          </Button>
+        </header>
+      )}
 
       {subjects.length === 0 ? (
         <Card>

@@ -107,16 +107,16 @@ export function BatchesList({ batches }: { batches: BatchListRow[] }) {
                     <TableCell className="text-right">
                       <div className="flex justify-end gap-1">
                         <Button variant="outline" size="sm" asChild>
-                          <Link href={`/dashboard/batches/${b.id}/enrollments`}>Students</Link>
+                          <Link href={`/dashboard/batches/${b.id}#students`}>Students</Link>
                         </Button>
                         <Button variant="outline" size="sm" asChild>
-                          <Link href={`/dashboard/batches/${b.id}/subjects`}>Subjects</Link>
+                          <Link href={`/dashboard/batches/${b.id}#subjects`}>Subjects</Link>
                         </Button>
                         <Button variant="outline" size="sm" asChild>
-                          <Link href={`/dashboard/batches/${b.id}/schedule`}>Schedule</Link>
+                          <Link href={`/dashboard/batches/${b.id}#schedule`}>Schedule</Link>
                         </Button>
                         <Button variant="outline" size="sm" asChild>
-                          <Link href={`/dashboard/batches/${b.id}`}>Edit</Link>
+                          <Link href={`/dashboard/batches/${b.id}`}>Open</Link>
                         </Button>
                         {b.status === "closed" ? (
                           <Button variant="ghost" size="sm" disabled={busyId === b.id} onClick={() => setStatus(b, "open")}>
