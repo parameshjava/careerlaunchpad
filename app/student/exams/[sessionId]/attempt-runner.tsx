@@ -7,7 +7,7 @@
 // (mobile-first) with a palette and a hard-stop countdown.
 import { useCallback, useEffect, useRef, useState } from "react";
 import { useRouter } from "next/navigation";
-import { Check, CheckCircle2, TriangleAlert, Printer, Flag, Eraser, ChevronDown } from "lucide-react";
+import { Check, CheckCircle2, TriangleAlert, Flag, Eraser, ChevronDown } from "lucide-react";
 import { WarningSign } from "../warning-sign";
 import { createClient } from "@/lib/supabase/client";
 import { RichContent } from "@/components/exam/RichContent";
@@ -21,7 +21,7 @@ import {
   DialogHeader,
   DialogTitle,
 } from "@/components/ui/dialog";
-import { StudentPaperPrint, type SessionPrintMeta } from "./paper-print";
+import { type SessionPrintMeta } from "./paper-print";
 
 type Option = { id: string; label: string };
 export type Question = {
@@ -145,7 +145,7 @@ export function AttemptRunner({
   const strikesRef = useRef(0);
   strikesRef.current = strikes;
   const lastLeaveRef = useRef(0);
-  const suppressLeaveRef = useRef(false); // true briefly around window.print()
+  const suppressLeaveRef = useRef(false); // true while a print dialog is open (see print-block effect)
 
   const saveTimers = useRef<Record<string, ReturnType<typeof setTimeout>>>({});
   // Latest answers, readable inside doSubmit without making it depend on `answers`
@@ -366,6 +366,32 @@ export function AttemptRunner({
       document.removeEventListener("visibilitychange", onVisibility);
     };
   }, [attemptId, abortInfo, supabase, cacheKey]);
+
+  // Printing is disabled during an attempt (the paper is print:hidden with no
+  // print-visible component). Block the Ctrl/Cmd+P shortcut so no dialog opens,
+  // and — for a forced print via the browser menu — suppress the print-dialog
+  // blur so it can't be mistaken for leaving the exam (which would strike the
+  // student). `beforeprint` fires before that blur, so the guard is set in time.
+  useEffect(() => {
+    if (!attemptId || abortInfo) return;
+    const onKeyDown = (e: KeyboardEvent) => {
+      if ((e.metaKey || e.ctrlKey) && e.key.toLowerCase() === "p") e.preventDefault();
+    };
+    const onBeforePrint = () => {
+      suppressLeaveRef.current = true;
+    };
+    const onAfterPrint = () => {
+      suppressLeaveRef.current = false;
+    };
+    window.addEventListener("keydown", onKeyDown);
+    window.addEventListener("beforeprint", onBeforePrint);
+    window.addEventListener("afterprint", onAfterPrint);
+    return () => {
+      window.removeEventListener("keydown", onKeyDown);
+      window.removeEventListener("beforeprint", onBeforePrint);
+      window.removeEventListener("afterprint", onAfterPrint);
+    };
+  }, [attemptId, abortInfo]);
 
   function scheduleSave(questionId: string, selected: string[]) {
     clearTimeout(saveTimers.current[questionId]);
@@ -663,21 +689,6 @@ export function AttemptRunner({
           )}
         </span>
         <div className="flex items-center gap-3">
-          {meta && (
-            <Button
-              size="sm"
-              onClick={() => {
-                // The OS print dialog blurs the window — don't count it as leaving.
-                suppressLeaveRef.current = true;
-                window.print();
-                setTimeout(() => {
-                  suppressLeaveRef.current = false;
-                }, 2000);
-              }}
-            >
-              <Printer /> Print
-            </Button>
-          )}
           <span
             className={`tabular-nums text-sm font-semibold ${lowTime ? "text-destructive" : ""}`}
           >
@@ -762,45 +773,54 @@ export function AttemptRunner({
         </CardContent>
       </Card>
 
-      {/* Per-question actions — Clear response (un-answer, so a student can dodge
-          the negative mark) + Mark for review (violet palette flag). */}
-      <div className="mt-3 flex flex-wrap items-center gap-2">
-        <Button
-          variant="outline"
-          size="sm"
-          onClick={() => clearAnswer(q)}
-          disabled={!answered(q.question_id)}
-        >
-          <Eraser /> Clear response
-        </Button>
-        <Button
-          variant="outline"
-          size="sm"
-          aria-pressed={marked.has(q.question_id)}
-          onClick={() => toggleMark(q.question_id)}
-          className={
-            marked.has(q.question_id)
-              ? "border-violet-400 bg-violet-100 text-violet-700 hover:bg-violet-100 hover:text-violet-700 dark:border-violet-700 dark:bg-violet-950/50 dark:text-violet-300 dark:hover:bg-violet-950/50"
-              : ""
-          }
-        >
-          <Flag /> {marked.has(q.question_id) ? "Marked for review" : "Mark for review"}
-        </Button>
-      </div>
+      {/* Action bar — question actions (Clear / Mark) on the left, navigation on
+          the right. All four sit on ONE line on desktop; on mobile they stack as
+          two 2-column rows (actions, then nav) with shortened labels so nothing
+          overflows at ~320px. */}
+      <div className="mt-4 flex flex-col gap-2 sm:flex-row sm:items-center sm:justify-between sm:gap-3">
+        {/* Per-question actions — Clear response (un-answer, so a student can dodge
+            the negative mark) + Mark for review (violet palette flag). */}
+        <div className="grid grid-cols-2 gap-2 sm:flex sm:gap-3">
+          <Button
+            variant="outline"
+            size="sm"
+            onClick={() => clearAnswer(q)}
+            disabled={!answered(q.question_id)}
+          >
+            <Eraser /> Clear<span className="hidden sm:inline">&nbsp;response</span>
+          </Button>
+          <Button
+            variant="outline"
+            size="sm"
+            aria-pressed={marked.has(q.question_id)}
+            onClick={() => toggleMark(q.question_id)}
+            className={
+              marked.has(q.question_id)
+                ? "border-violet-400 bg-violet-100 text-violet-700 hover:bg-violet-100 hover:text-violet-700 dark:border-violet-700 dark:bg-violet-950/50 dark:text-violet-300 dark:hover:bg-violet-950/50"
+                : ""
+            }
+          >
+            <Flag /> {marked.has(q.question_id) ? "Marked" : "Mark"}
+            <span className="hidden sm:inline">&nbsp;for review</span>
+          </Button>
+        </div>
 
-      {/* Navigation — Next is disabled (not swapped for Submit) on the last
-          question so a habitual tap can't accidentally end the exam. */}
-      <div className="mt-4 flex items-center justify-between gap-3">
-        <Button variant="outline" disabled={index === 0} onClick={() => goTo(index - 1)}>
-          Previous
-        </Button>
-        <div className="flex items-center gap-2">
-          {index === questions.length - 1 && (
-            <Button variant="destructive" onClick={() => setConfirmOpen(true)} disabled={submitting}>
-              {submitting ? "Submitting…" : "Submit exam"}
-            </Button>
-          )}
-          <Button disabled={index === questions.length - 1} onClick={() => goTo(index + 1)}>
+        {/* Navigation between questions. Submit lives in the navigator panel so
+            it's reachable from any question (no need to walk to the last one). */}
+        <div className="grid grid-cols-2 gap-2 sm:flex sm:gap-3">
+          <Button
+            variant="outline"
+            size="sm"
+            disabled={index === 0}
+            onClick={() => goTo(index - 1)}
+          >
+            Previous
+          </Button>
+          <Button
+            size="sm"
+            disabled={index === questions.length - 1}
+            onClick={() => goTo(index + 1)}
+          >
             Next
           </Button>
         </div>
@@ -921,6 +941,17 @@ export function AttemptRunner({
               );
             })}
           </div>
+
+          {/* Submit lives in the navigator so it's reachable from ANY question —
+              always enabled; the confirmation dialog guards accidental taps and
+              shows the attempted / marked / unanswered breakdown. */}
+          <Button
+            onClick={() => setConfirmOpen(true)}
+            disabled={submitting}
+            className="mt-3 w-full bg-emerald-600 font-semibold text-white shadow-sm hover:bg-emerald-700 dark:bg-emerald-600 dark:hover:bg-emerald-500"
+          >
+            <CheckCircle2 /> {submitting ? "Submitting…" : "Submit exam"}
+          </Button>
         </aside>
       </div>
 
@@ -931,49 +962,101 @@ export function AttemptRunner({
             <DialogTitle>Submit exam?</DialogTitle>
           </DialogHeader>
           {(() => {
-            const answeredCount = questions.filter((qq) => answered(qq.question_id)).length;
             const total = questions.length;
-            const unanswered = total - answeredCount;
+            const attempted = questions.filter((qq) => answered(qq.question_id)).length;
+            const unanswered = total - attempted;
+            const markedForReview = questions.filter((qq) => marked.has(qq.question_id)).length;
             const allDone = unanswered === 0;
-            const pct = total ? Math.round((answeredCount / total) * 100) : 0;
+            const pct = total ? Math.round((attempted / total) * 100) : 0;
+            // Breakdown rows so the student can weigh submitting now vs. going back.
+            // The whole row — dot, label and value — carries the state colour.
+            const rows = [
+              { label: "Attempted", value: attempted, dot: "bg-emerald-500", text: "text-emerald-700 dark:text-emerald-400" },
+              { label: "Marked for review", value: markedForReview, dot: "bg-violet-500", text: "text-violet-700 dark:text-violet-400" },
+              {
+                label: "Unanswered",
+                value: unanswered,
+                dot: "bg-amber-500",
+                text: unanswered > 0 ? "text-amber-700 dark:text-amber-400" : "text-muted-foreground",
+              },
+            ];
             return (
-              <div className="flex items-start gap-3">
-                <span
-                  className={
-                    allDone
-                      ? "flex size-10 shrink-0 items-center justify-center rounded-full bg-emerald-100 text-emerald-600 dark:bg-emerald-950 dark:text-emerald-400"
-                      : "flex size-10 shrink-0 items-center justify-center rounded-full bg-amber-100 text-amber-600 dark:bg-amber-950 dark:text-amber-400"
-                  }
-                >
-                  {allDone ? <CheckCircle2 className="size-5" /> : <TriangleAlert className="size-5" />}
-                </span>
-                <div className="min-w-0 flex-1 space-y-2">
-                  <p className="text-sm">
-                    You&apos;ve answered{" "}
-                    <strong className="tabular-nums">
-                      {answeredCount} of {total}
-                    </strong>{" "}
-                    questions
-                    {unanswered > 0 && (
+              <div className="space-y-4">
+                <div className="flex items-center gap-3">
+                  <span
+                    className={
+                      allDone
+                        ? "flex size-9 shrink-0 items-center justify-center rounded-full bg-emerald-100 text-emerald-600 dark:bg-emerald-950 dark:text-emerald-400"
+                        : "flex size-9 shrink-0 items-center justify-center rounded-full bg-amber-100 text-amber-600 dark:bg-amber-950 dark:text-amber-400"
+                    }
+                  >
+                    {allDone ? <CheckCircle2 className="size-5" /> : <TriangleAlert className="size-5" />}
+                  </span>
+                  <p className="min-w-0 flex-1 text-sm">
+                    {allDone ? (
+                      <>You&apos;ve answered <strong>every question</strong>.</>
+                    ) : (
                       <>
-                        {" "}
-                        — <span className="font-medium text-amber-600 dark:text-amber-400">
-                          {unanswered} still unanswered
+                        You still have{" "}
+                        <span className="font-semibold text-amber-700 dark:text-amber-400">
+                          {unanswered} unanswered
                         </span>
+                        {markedForReview > 0 && (
+                          <>
+                            {" "}
+                            and{" "}
+                            <span className="font-semibold text-violet-700 dark:text-violet-400">
+                              {markedForReview} marked for review
+                            </span>
+                          </>
+                        )}
+                        .
                       </>
                     )}
-                    .
                   </p>
-                  <div className="bg-muted h-1.5 w-full overflow-hidden rounded-full">
-                    <div
-                      className={allDone ? "h-full rounded-full bg-emerald-500" : "h-full rounded-full bg-primary"}
-                      style={{ width: `${pct}%` }}
-                    />
-                  </div>
-                  <DialogDescription>
-                    Once submitted, you can&apos;t change your answers.
-                  </DialogDescription>
                 </div>
+
+                {/* Breakdown table — Total header row, then coloured state rows. */}
+                <div className="overflow-hidden rounded-lg border">
+                  <table className="w-full text-sm">
+                    <tbody>
+                      <tr className="bg-muted/50 border-b">
+                        <th scope="row" className="px-3 py-2 text-left font-semibold">
+                          Total questions
+                        </th>
+                        <td className="px-3 py-2 text-right text-base font-bold tabular-nums">
+                          {total}
+                        </td>
+                      </tr>
+                      {rows.map((r) => (
+                        <tr key={r.label} className="border-b last:border-b-0">
+                          <th scope="row" className={`px-3 py-2 text-left font-medium ${r.text}`}>
+                            <span className="flex items-center gap-2">
+                              <span className={`size-2.5 shrink-0 rounded-full ${r.dot}`} />
+                              {r.label}
+                            </span>
+                          </th>
+                          <td className={`px-3 py-2 text-right text-base font-bold tabular-nums ${r.text}`}>
+                            {r.value}
+                          </td>
+                        </tr>
+                      ))}
+                    </tbody>
+                  </table>
+                </div>
+
+                <div className="bg-muted h-1.5 w-full overflow-hidden rounded-full">
+                  <div
+                    className={allDone ? "h-full rounded-full bg-emerald-500" : "h-full rounded-full bg-primary"}
+                    style={{ width: `${pct}%` }}
+                  />
+                </div>
+
+                <DialogDescription>
+                  Once submitted, you can&apos;t change your answers.
+                  {(unanswered > 0 || markedForReview > 0) &&
+                    " Go back and review them if you're not sure."}
+                </DialogDescription>
               </div>
             );
           })()}
@@ -1018,7 +1101,6 @@ export function AttemptRunner({
         </DialogContent>
       </Dialog>
     </div>
-    {meta && <StudentPaperPrint meta={meta} questions={questions} />}
     </>
   );
 }

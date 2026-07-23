@@ -272,7 +272,10 @@ export function BlueprintEditor({
   const dirty = savedFp !== null && currentFp !== savedFp;
   const busy = saving || publishing || checking;
   const canCreate = title.trim().length > 0 && Boolean(collegeId);
-  const canSubmit = !busy && (creating ? canCreate : dirty);
+  // Title is required in BOTH modes — not just gated on the Exam-details Next
+  // button, since the Stepper lets you jump past it. Without this, an edit-mode
+  // save could blank the title and the API silently renames it "Untitled exam".
+  const canSubmit = !busy && title.trim().length > 0 && (creating ? Boolean(collegeId) : dirty);
 
   async function schedule() {
     if (!savedId || scheduling) return;
@@ -437,12 +440,15 @@ export function BlueprintEditor({
         {label === "Exam details" && (
           <div className="grid gap-4 sm:grid-cols-2">
             <div className="grid gap-1.5 sm:col-span-2">
-              <Label htmlFor="title">Title</Label>
+              <Label htmlFor="title">
+                Title <span className="text-destructive">*</span>
+              </Label>
               <Input
                 id="title"
                 value={title}
                 onChange={(e) => setTitle(e.target.value)}
                 placeholder="ICET Mock — Batch 2026"
+                aria-required="true"
               />
             </div>
             <div className="grid gap-1.5">
@@ -909,7 +915,11 @@ export function BlueprintEditor({
             )}
 
             {label === "Exam details" && (
-              <Button onClick={() => setStep((s) => Math.min(lastStep, s + 1))} className={PRIMARY_BTN}>
+              <Button
+                onClick={() => setStep((s) => Math.min(lastStep, s + 1))}
+                disabled={!title.trim()}
+                className={PRIMARY_BTN}
+              >
                 Next →
               </Button>
             )}
