@@ -19,6 +19,7 @@ import {
   BarChart3,
   BookOpen,
   Building2,
+  CalendarDays,
   ChevronDown,
   ClipboardList,
   GraduationCap,
@@ -52,6 +53,7 @@ const ICONS: Record<NavIcon, React.ComponentType<{ className?: string }>> = {
   college: Building2,
   courses: BookOpen,
   fees: Wallet,
+  calendar: CalendarDays,
 };
 
 const COLLAPSE_KEY = "cl-sidebar-collapsed";

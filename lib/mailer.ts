@@ -241,6 +241,75 @@ export function mailerStatus(): { configured: boolean; from: string | null } {
   return { configured: Boolean(SMTP_HOST && SMTP_USER && SMTP_PASSWORD), from: FROM_ADDRESS ?? null };
 }
 
+type ClassInviteEmail = {
+  to: string;
+  mentorName?: string | null;
+  batchName: string;
+  subjectName: string;
+  title: string;
+  /** Human-readable date/time, e.g. "Mon 20 Jul 2026, 10:00–11:30 (IST)". */
+  whenLabel: string;
+  joinUrl?: string | null;
+  /** The .ics body from lib/ics.ts. */
+  ics: string;
+  /** REQUEST for a new/updated invite, CANCEL to withdraw it. */
+  method: "REQUEST" | "CANCEL";
+};
+
+/**
+ * Email a subject mentor their class calendar invite, with the .ics attached as
+ * an `icalEvent` so it opens/updates natively in Outlook/Google/Apple Calendar.
+ * Fire-and-forget: NEVER throws (a mail outage must not fail scheduling). Returns
+ * whether delivery was attempted so the caller can log invite state.
+ */
+export async function sendClassInviteEmail(input: ClassInviteEmail): Promise<{ sent: boolean; error?: string }> {
+  const cancelled = input.method === "CANCEL";
+  const hi = input.mentorName ? `Hi ${input.mentorName},` : "Hi,";
+  const verb = cancelled ? "cancelled" : "scheduled";
+  const subject = `${cancelled ? "Cancelled: " : ""}${input.subjectName} class — ${input.title} (${input.batchName})`;
+  const joinLine = input.joinUrl && !cancelled ? `Join: ${input.joinUrl}\n` : "";
+  const text =
+    `${hi}\n\n` +
+    `A ${input.subjectName} class for ${input.batchName} has been ${verb}.\n\n` +
+    `Class: ${input.title}\nWhen: ${input.whenLabel}\n${joinLine}\n` +
+    `The calendar invite is attached.\n`;
+
+  // Escape every interpolated value — titles/names are staff-entered free text.
+  const esc = (s: string) =>
+    s.replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;").replace(/"/g, "&quot;");
+  const joinHtml =
+    input.joinUrl && !cancelled
+      ? `<p><a href="${esc(input.joinUrl)}">Join the Zoom class</a></p>`
+      : "";
+  const html =
+    `<p>${esc(hi)}</p>` +
+    `<p>A <strong>${esc(input.subjectName)}</strong> class for <strong>${esc(input.batchName)}</strong> has been ${verb}.</p>` +
+    `<p><strong>${esc(input.title)}</strong><br/>${esc(input.whenLabel)}</p>` +
+    joinHtml +
+    `<p>The calendar invite is attached.</p>`;
+
+  const mailer = getTransporter();
+  if (!mailer) {
+    console.info(`[class-invite] would email ${input.to}: ${subject}`);
+    return { sent: false, error: "SMTP not configured" };
+  }
+  try {
+    await mailer.sendMail({
+      from: `"${FROM_NAME}" <${FROM_ADDRESS}>`,
+      to: input.to,
+      subject,
+      text,
+      html,
+      icalEvent: { method: input.method, content: input.ics, filename: "invite.ics" },
+    });
+    return { sent: true };
+  } catch (err) {
+    const error = err instanceof Error ? err.message : String(err);
+    console.error(`[class-invite] failed to email ${input.to}:`, err);
+    return { sent: false, error };
+  }
+}
+
 export type TestResult = { ok: boolean; messageId?: string; error?: string };
 
 /**

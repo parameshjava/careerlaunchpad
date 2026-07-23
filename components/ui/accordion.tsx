@@ -68,7 +68,11 @@ function AccordionContent({
     >
       <div
         className={cn(
-          "h-(--radix-accordion-content-height) pt-0 pb-2.5 [&_a]:underline [&_a]:underline-offset-3 [&_a]:hover:text-foreground [&_p:not(:last-child)]:mb-4",
+          // No fixed height here — the open/close animation uses the
+          // --radix-accordion-content-height var in the keyframes only. Pinning
+          // the inner div to that measured height clips content that grows after
+          // open (e.g. a section that renders a loader first, then a tall form).
+          "pt-0 pb-2.5 [&_a]:underline [&_a]:underline-offset-3 [&_a]:hover:text-foreground [&_p:not(:last-child)]:mb-4",
           className
         )}
       >

@@ -7,7 +7,7 @@
 import { useCallback, useEffect, useMemo, useState } from "react";
 import { useRouter } from "next/navigation";
 import Link from "next/link";
-import { ArrowLeft, Copy, Loader2, Plus, Save, Trash2, X } from "lucide-react";
+import { ArrowLeft, Copy, Loader2, Lock, Plus, RotateCcw, Save, Trash2, X } from "lucide-react";
 
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
@@ -30,12 +30,15 @@ import {
   type BatchStatus,
   type CourseOption,
 } from "@/lib/batch-query";
+import { cachedGet, invalidate } from "@/lib/fetch-cache";
 
 type FeeRow = { label: string; amount: string };
 
-export function BatchEditor({ batchId }: { batchId?: string }) {
+export function BatchEditor({ batchId, embedded = false }: { batchId?: string; embedded?: boolean }) {
   const router = useRouter();
   const editing = Boolean(batchId);
+  const [saved, setSaved] = useState(false);
+  const [statusBusy, setStatusBusy] = useState(false);
 
   const [loading, setLoading] = useState(true);
   const [loadError, setLoadError] = useState("");
@@ -65,16 +68,12 @@ export function BatchEditor({ batchId }: { batchId?: string }) {
     let cancelled = false;
     (async () => {
       try {
-        const refRes = await fetch("/api/admin/batches/reference");
-        const ref = await refRes.json();
-        if (!refRes.ok) throw new Error(ref.error ?? "Could not load options");
+        const ref = await cachedGet<{ courses?: CourseOption[] }>("/api/admin/batches/reference");
         if (cancelled) return;
         setCoursesRef(ref.courses ?? []);
 
         if (batchId) {
-          const res = await fetch(`/api/admin/batches/${batchId}`);
-          const json = await res.json();
-          if (!res.ok) throw new Error(json.error ?? "Could not load batch");
+          const json = await cachedGet<{ batch: BatchDetail }>(`/api/admin/batches/${batchId}`);
           if (cancelled) return;
           const bt = json.batch as BatchDetail;
           setCourseId(bt.courseId);
@@ -193,11 +192,47 @@ export function BatchEditor({ batchId }: { batchId?: string }) {
       });
       const json = await res.json();
       if (!res.ok) throw new Error(json.error ?? "Save failed");
-      router.push("/dashboard/batches");
-      router.refresh();
+      if (editing) {
+        // Batch changed → refresh its cached detail; a course change alters the
+        // syllabus, so drop the cached subjects too.
+        invalidate(`/api/admin/batches/${batchId}`);
+        invalidate(`/api/admin/batches/${batchId}/subjects`);
+      }
+      if (embedded) {
+        setSaved(true);
+        setSaving(false);
+        router.refresh();
+      } else {
+        router.push("/dashboard/batches");
+        router.refresh();
+      }
     } catch (e) {
       setFormError((e as Error).message);
       setSaving(false);
+    }
+  }
+
+  // Deliberate lifecycle action (lives here in the Details tab, not the list, so
+  // it can't be clicked by accident). Status-only PATCH, mirrors the old list.
+  async function changeStatus(next: BatchStatus) {
+    if (next === "closed" && !confirm("Close this batch? No new students can be enrolled while it's closed.")) return;
+    setFormError("");
+    setStatusBusy(true);
+    try {
+      const res = await fetch(`/api/admin/batches/${batchId}`, {
+        method: "PATCH",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ status: next }),
+      });
+      const json = await res.json();
+      if (!res.ok) throw new Error(json.error ?? "Could not update status");
+      setStatus(next);
+      invalidate(`/api/admin/batches/${batchId}`);
+      router.refresh();
+    } catch (e) {
+      setFormError((e as Error).message);
+    } finally {
+      setStatusBusy(false);
     }
   }
 
@@ -208,7 +243,9 @@ export function BatchEditor({ batchId }: { batchId?: string }) {
       </div>
     );
   if (loadError)
-    return (
+    return embedded ? (
+      <p className="text-destructive py-6 text-sm">{loadError}</p>
+    ) : (
       <div className="mx-auto max-w-md py-10 text-center">
         <p className="text-destructive text-sm">{loadError}</p>
         <Button className="mt-4" variant="outline" asChild>
@@ -218,21 +255,23 @@ export function BatchEditor({ batchId }: { batchId?: string }) {
     );
 
   return (
-    <div className="mx-auto max-w-3xl">
-      <header className="mb-6 flex items-start justify-between gap-3">
-        <div>
-          <h1 className="text-2xl font-bold tracking-tight">{editing ? "Edit batch" : "New batch"}</h1>
-          <p className="text-muted-foreground mt-1 text-sm">
-            A dated run of a course — associated colleges, its own fee, and a status you move through
-            to close.
-          </p>
-        </div>
-        <Button variant="outline" asChild>
-          <Link href="/dashboard/batches">
-            <ArrowLeft /> Back
-          </Link>
-        </Button>
-      </header>
+    <div className={embedded ? undefined : "mx-auto max-w-3xl"}>
+      {!embedded && (
+        <header className="mb-6 flex items-start justify-between gap-3">
+          <div>
+            <h1 className="text-2xl font-bold tracking-tight">{editing ? "Edit batch" : "New batch"}</h1>
+            <p className="text-muted-foreground mt-1 text-sm">
+              A dated run of a course — associated colleges, its own fee, and a status you move through
+              to close.
+            </p>
+          </div>
+          <Button variant="outline" asChild>
+            <Link href="/dashboard/batches">
+              <ArrowLeft /> Back
+            </Link>
+          </Button>
+        </header>
+      )}
 
       <div className="grid gap-6">
         {/* Details */}
@@ -247,7 +286,7 @@ export function BatchEditor({ batchId }: { batchId?: string }) {
                   Course <span className="text-primary">*</span>
                 </Label>
                 <Select value={courseId || undefined} onValueChange={onCourseChange}>
-                  <SelectTrigger id="b-course">
+                  <SelectTrigger id="b-course" className="w-full">
                     <SelectValue placeholder="Select a course" />
                   </SelectTrigger>
                   <SelectContent>
@@ -267,7 +306,7 @@ export function BatchEditor({ batchId }: { batchId?: string }) {
               <div className="grid gap-1.5">
                 <Label htmlFor="b-status">Status</Label>
                 <Select value={status} onValueChange={(v) => setStatus(v as BatchStatus)}>
-                  <SelectTrigger id="b-status">
+                  <SelectTrigger id="b-status" className="w-full">
                     <SelectValue />
                   </SelectTrigger>
                   <SelectContent>
@@ -302,7 +341,7 @@ export function BatchEditor({ batchId }: { batchId?: string }) {
               <div className="grid gap-1.5">
                 <Label htmlFor="b-mode">Delivery</Label>
                 <Select value={deliveryMode || undefined} onValueChange={setDeliveryMode}>
-                  <SelectTrigger id="b-mode">
+                  <SelectTrigger id="b-mode" className="w-full">
                     <SelectValue placeholder="—" />
                   </SelectTrigger>
                   <SelectContent>
@@ -450,15 +489,37 @@ export function BatchEditor({ batchId }: { batchId?: string }) {
         </Card>
 
         {formError && <p className="text-destructive text-sm">{formError}</p>}
+        {saved && !formError && <p className="text-sm text-emerald-600">Saved.</p>}
 
-        <div className="flex items-center justify-end gap-2">
-          <Button variant="outline" asChild>
-            <Link href="/dashboard/batches">Cancel</Link>
-          </Button>
-          <Button onClick={save} disabled={saving}>
-            {saving ? <Loader2 className="animate-spin" /> : <Save />}
-            {editing ? "Save changes" : "Create batch"}
-          </Button>
+        <div className="flex flex-wrap items-center gap-2">
+          {editing &&
+            (status === "closed" ? (
+              <Button variant="outline" onClick={() => changeStatus("open")} disabled={statusBusy}>
+                {statusBusy ? <Loader2 className="animate-spin" /> : <RotateCcw />}
+                Reopen batch
+              </Button>
+            ) : status !== "cancelled" ? (
+              <Button
+                variant="outline"
+                onClick={() => changeStatus("closed")}
+                disabled={statusBusy}
+                className="text-destructive hover:text-destructive"
+              >
+                {statusBusy ? <Loader2 className="animate-spin" /> : <Lock />}
+                Close batch
+              </Button>
+            ) : null)}
+          <div className="ml-auto flex gap-2">
+            {!embedded && (
+              <Button variant="outline" asChild>
+                <Link href="/dashboard/batches">Cancel</Link>
+              </Button>
+            )}
+            <Button onClick={save} disabled={saving}>
+              {saving ? <Loader2 className="animate-spin" /> : <Save />}
+              {editing ? "Save changes" : "Create batch"}
+            </Button>
+          </div>
         </div>
       </div>
     </div>

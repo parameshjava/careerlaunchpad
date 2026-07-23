@@ -11,7 +11,7 @@
 
 import Link from "next/link";
 import { useRef } from "react";
-import { ArrowLeft, Printer, ReceiptIndianRupee } from "lucide-react";
+import { ArrowLeft, Printer, ReceiptIndianRupee, X } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { CompanySeal } from "@/components/print/company-seal";
 import {
@@ -51,10 +51,13 @@ export function FeeReceiptView({
   receipt,
   backHref,
   backLabel = "Back",
+  onClose,
 }: {
   receipt: FeeReceipt;
   backHref?: string;
   backLabel?: string;
+  /** When shown in a dialog: render a visible Close button in the toolbar. */
+  onClose?: () => void;
 }) {
   const { student, mode } = receipt;
   const isCash = mode === "cash";
@@ -132,6 +135,7 @@ export function FeeReceiptView({
           --ink:${INK}; --ink-soft:${INK_SOFT}; --ink-faint:${INK_FAINT}; }
         .fr-toolbar { max-width: 820px; margin: 0 auto 16px; display: flex; align-items: center;
           justify-content: space-between; gap: 12px; flex-wrap: wrap; }
+        .fr-actions { display: flex; align-items: center; gap: 8px; margin-left: auto; }
         /* The sheet is a <table> so the letterhead header (thead) and the address
            footer (tfoot) repeat on EVERY printed page. */
         .fr-sheet { width: 100%; max-width: 820px; margin: 0 auto; background: #fff; color: var(--ink);
@@ -293,9 +297,16 @@ export function FeeReceiptView({
         ) : (
           <span />
         )}
-        <Button onClick={handlePrint}>
-          <Printer /> Print / Download PDF
-        </Button>
+        <div className="fr-actions">
+          <Button onClick={handlePrint}>
+            <Printer /> Print / Download PDF
+          </Button>
+          {onClose && (
+            <Button variant="outline" onClick={onClose}>
+              <X /> Close
+            </Button>
+          )}
+        </div>
       </div>
 
       <div className="fr-doc-print">

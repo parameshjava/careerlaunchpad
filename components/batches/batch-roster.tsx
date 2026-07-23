@@ -1,12 +1,11 @@
 "use client";
 
 // Batch roster (issue #49, Phase 4): enrolled students with balances + per-row
-// "Record payment". Enrolment itself lives on the dedicated full-page screen
-// (/dashboard/batches/[id]/enrol) so it scales to thousands of students and
-// supports multi-select. Talks to /api/admin/enrollments/[id]/payments.
-import { Fragment, useState } from "react";
+// "Record payment" and a money summary. Enrolment opens in a right-side drawer
+// (EnrolStudents in embedded mode) so staff stay in the Students tab; it scales
+// to thousands via server-side search. Talks to /api/admin/enrollments/[id]/payments.
+import { Fragment, useMemo, useState } from "react";
 import { useRouter } from "next/navigation";
-import Link from "next/link";
 import { Check, ChevronDown, ChevronRight, IndianRupee, Loader2, Receipt, UserPlus, X } from "lucide-react";
 
 import { Badge } from "@/components/ui/badge";
@@ -37,7 +36,14 @@ import {
   TableHeader,
   TableRow,
 } from "@/components/ui/table";
-import { rupeesToPaise } from "@/lib/course-query";
+import { paiseToRupeeInput, rupeesToPaise } from "@/lib/course-query";
+import {
+  Sheet,
+  SheetContent,
+  SheetHeader,
+  SheetTitle,
+} from "@/components/ui/sheet";
+import { EnrolStudents } from "@/components/batches/enrol-students";
 import {
   CONCESSION_LABEL,
   type FeeReceipt,
@@ -73,10 +79,15 @@ export function BatchRoster({
   batchId,
   batch,
   roster,
+  onChanged,
 }: {
   batchId: string;
   batch: BatchFee;
   roster: RosterRow[];
+  /** Called after a change (approve/reject, payment) so a client-fetched host
+   * (the workspace) can invalidate its cache + refetch. The standalone page
+   * relies on router.refresh() instead. */
+  onChanged?: () => void;
 }) {
   const router = useRouter();
   const [busyId, setBusyId] = useState<string | null>(null);
@@ -112,6 +123,7 @@ export function BatchRoster({
   const [rejectReason, setRejectReason] = useState("");
   const [rejectBusy, setRejectBusy] = useState(false);
   const [rejectErr, setRejectErr] = useState("");
+  const [enrolOpen, setEnrolOpen] = useState(false);
   const [payFor, setPayFor] = useState<RosterRow | null>(null);
   const [payAmount, setPayAmount] = useState("");
   const [payMode, setPayMode] = useState<PaymentMode>("cash");
@@ -154,6 +166,7 @@ export function BatchRoster({
       const json = await res.json();
       if (!res.ok) throw new Error(json.error ?? "Update failed");
       router.refresh();
+      onChanged?.();
       return true;
     } catch (e) {
       setRowErr((e as Error).message);
@@ -177,9 +190,9 @@ export function BatchRoster({
     if (ok) setRejectFor(null);
   }
 
-  function openPay(row: RosterRow) {
+  function openPay(row: RosterRow, full = false) {
     setPayFor(row);
-    setPayAmount("");
+    setPayAmount(full ? paiseToRupeeInput(row.balancePaise) : "");
     setPayMode("cash");
     setPayRef("");
     setPayDate("");
@@ -209,6 +222,7 @@ export function BatchRoster({
       setPayFor(null);
       setPayBusy(false);
       router.refresh();
+      onChanged?.();
       openReceipt(json.receiptId);
     } catch (e) {
       setPayErr((e as Error).message);
@@ -216,18 +230,71 @@ export function BatchRoster({
     }
   }
 
+  const active = roster.filter((r) => r.status !== "cancelled");
+  const totals = active.reduce(
+    (t, r) => ({ net: t.net + r.netFeePaise, paid: t.paid + r.paidPaise, bal: t.bal + r.balancePaise }),
+    { net: 0, paid: 0, bal: 0 }
+  );
+  const enrolledIds = useMemo(
+    () => roster.filter((r) => r.status !== "cancelled").map((r) => r.studentId),
+    [roster]
+  );
+
   return (
     <div className="grid gap-4">
-      <div className="flex items-center justify-between gap-3">
+      <div className="flex flex-wrap items-center justify-between gap-3">
         <p className="text-muted-foreground text-sm">
-          {roster.length} enrolled · batch fee {formatINR(batch.grossPaise)}
+          {active.length} enrolled · batch fee {formatINR(batch.grossPaise)} / student
         </p>
-        <Button asChild>
-          <Link href={`/dashboard/batches/${batchId}/enrol`}>
+        <Sheet open={enrolOpen} onOpenChange={setEnrolOpen}>
+          <Button onClick={() => setEnrolOpen(true)}>
             <UserPlus /> Enrol students
-          </Link>
-        </Button>
+          </Button>
+          <SheetContent side="right" className="w-full sm:max-w-2xl">
+            <SheetHeader>
+              <SheetTitle>Enrol students</SheetTitle>
+              <p className="text-muted-foreground text-sm">
+                {batch.name} · fee {formatINR(batch.grossPaise)} / student
+              </p>
+            </SheetHeader>
+            <div className="flex-1 overflow-y-auto p-4">
+              <EnrolStudents
+                batchId={batchId}
+                batch={batch}
+                enrolledIds={enrolledIds}
+                embedded
+                onClose={() => setEnrolOpen(false)}
+                onDone={() => {
+                  setEnrolOpen(false);
+                  onChanged?.();
+                }}
+              />
+            </div>
+          </SheetContent>
+        </Sheet>
       </div>
+
+      {/* Money summary */}
+      {active.length > 0 && (
+        <div className="grid grid-cols-3 gap-3">
+          {[
+            { label: "Net fee", value: totals.net },
+            { label: "Collected", value: totals.paid },
+            { label: "Outstanding", value: totals.bal },
+          ].map((t) => (
+            <div key={t.label} className="bg-card rounded-lg border p-3">
+              <div className="text-muted-foreground text-xs">{t.label}</div>
+              <div
+                className={`mt-0.5 text-base font-semibold tabular-nums ${
+                  t.label === "Outstanding" && t.value > 0 ? "text-destructive" : ""
+                }`}
+              >
+                {formatINR(t.value)}
+              </div>
+            </div>
+          ))}
+        </div>
+      )}
 
       {rowErr && <p className="text-destructive text-sm">{rowErr}</p>}
 
@@ -292,9 +359,20 @@ export function BatchRoster({
                         ) : r.status === "cancelled" ? (
                           <span className="text-muted-foreground text-xs">—</span>
                         ) : (
-                          <Button variant="outline" size="sm" disabled={r.balancePaise <= 0} onClick={() => openPay(r)}>
-                            <IndianRupee /> Record payment
-                          </Button>
+                          <div className="flex justify-end gap-1">
+                            <Button
+                              variant="ghost"
+                              size="sm"
+                              disabled={r.balancePaise <= 0}
+                              onClick={() => openPay(r, true)}
+                              className="text-muted-foreground"
+                            >
+                              <Check /> Paid in full
+                            </Button>
+                            <Button variant="outline" size="sm" disabled={r.balancePaise <= 0} onClick={() => openPay(r)}>
+                              <IndianRupee /> Record payment
+                            </Button>
+                          </div>
                         )}
                       </TableCell>
                     </TableRow>
@@ -475,18 +553,32 @@ export function BatchRoster({
 
       {/* Receipt preview dialog — keeps the admin on the roster */}
       <Dialog open={receiptOpen} onOpenChange={(o) => { setReceiptOpen(o); if (!o) setReceipt(null); }}>
-        <DialogContent className="max-h-[92vh] overflow-auto p-4 sm:max-w-[880px]">
+        <DialogContent showCloseButton={false} className="max-h-[92vh] overflow-auto p-4 sm:max-w-[880px]">
           <DialogHeader className="sr-only">
             <DialogTitle>Payment receipt</DialogTitle>
           </DialogHeader>
           {receiptBusy ? (
-            <div className="text-muted-foreground flex items-center justify-center gap-2 py-20 text-sm">
-              <Loader2 className="size-4 animate-spin" /> Loading receipt…
+            <div>
+              <div className="flex justify-end">
+                <Button variant="outline" onClick={() => setReceiptOpen(false)}>
+                  <X /> Close
+                </Button>
+              </div>
+              <div className="text-muted-foreground flex items-center justify-center gap-2 py-16 text-sm">
+                <Loader2 className="size-4 animate-spin" /> Loading receipt…
+              </div>
             </div>
           ) : receiptErr ? (
-            <p className="text-destructive py-20 text-center text-sm">{receiptErr}</p>
+            <div>
+              <div className="flex justify-end">
+                <Button variant="outline" onClick={() => setReceiptOpen(false)}>
+                  <X /> Close
+                </Button>
+              </div>
+              <p className="text-destructive py-16 text-center text-sm">{receiptErr}</p>
+            </div>
           ) : receipt ? (
-            <FeeReceiptView receipt={receipt} />
+            <FeeReceiptView receipt={receipt} onClose={() => setReceiptOpen(false)} />
           ) : null}
         </DialogContent>
       </Dialog>
