@@ -232,12 +232,12 @@ export function BatchSchedule({ batchId, embedded = false }: { batchId: string; 
     }
   }
 
-  async function confirmCancel(scope: "single" | "following") {
+  async function confirmCancel(scope: "single" | "following" | "series") {
     if (!cancelFor) return;
     setCancelErr("");
     setCancelBusy(true);
     try {
-      const qs = scope === "following" ? "?scope=following" : "";
+      const qs = scope === "single" ? "" : `?scope=${scope}`;
       const res = await fetch(`/api/admin/batches/${batchId}/sessions/${cancelFor.sessionId}${qs}`, {
         method: "DELETE",
       });
@@ -529,9 +529,8 @@ export function BatchSchedule({ batchId, embedded = false }: { batchId: string; 
           <p className="text-muted-foreground text-sm">
             {cancelFor?.choice ? (
               <>
-                <span className="text-foreground font-medium">{cancelFor?.title}</span> is a weekly class.
-                Cancel just this occurrence, or this one and every later occurrence in the series (earlier
-                classes are kept)? Zoom and the mentors are updated accordingly. This can&apos;t be undone.
+                <span className="text-foreground font-medium">{cancelFor?.title}</span> is a weekly class. Choose
+                what to cancel — Zoom and the mentors are updated accordingly. This can&apos;t be undone.
               </>
             ) : (
               <>
@@ -541,28 +540,33 @@ export function BatchSchedule({ batchId, embedded = false }: { batchId: string; 
             )}
           </p>
           {cancelErr && <p className="text-destructive text-sm">{cancelErr}</p>}
-          <DialogFooter className="flex-col gap-2 sm:flex-row sm:justify-end">
-            <Button variant="outline" onClick={() => setCancelFor(null)} disabled={cancelBusy}>
-              Keep it
-            </Button>
-            {cancelFor?.choice ? (
-              <>
-                <Button variant="outline" onClick={() => confirmCancel("single")} disabled={cancelBusy}>
-                  {cancelBusy ? <Loader2 className="animate-spin" /> : <Trash2 />}
-                  This occurrence only
-                </Button>
-                <Button variant="destructive" onClick={() => confirmCancel("following")} disabled={cancelBusy}>
-                  {cancelBusy ? <Loader2 className="animate-spin" /> : <Trash2 />}
-                  This &amp; all following
-                </Button>
-              </>
-            ) : (
+          {cancelFor?.choice ? (
+            <div className="grid gap-2">
+              <Button variant="outline" className="justify-start" onClick={() => confirmCancel("single")} disabled={cancelBusy}>
+                <Trash2 /> This class only
+              </Button>
+              <Button variant="outline" className="justify-start" onClick={() => confirmCancel("following")} disabled={cancelBusy}>
+                <Trash2 /> This and all following
+              </Button>
+              <Button variant="destructive" className="justify-start" onClick={() => confirmCancel("series")} disabled={cancelBusy}>
+                {cancelBusy ? <Loader2 className="animate-spin" /> : <Trash2 />}
+                The whole series (all upcoming)
+              </Button>
+              <Button variant="ghost" onClick={() => setCancelFor(null)} disabled={cancelBusy}>
+                Keep it
+              </Button>
+            </div>
+          ) : (
+            <DialogFooter>
+              <Button variant="outline" onClick={() => setCancelFor(null)} disabled={cancelBusy}>
+                Keep it
+              </Button>
               <Button variant="destructive" onClick={() => confirmCancel("single")} disabled={cancelBusy}>
                 {cancelBusy ? <Loader2 className="animate-spin" /> : <Trash2 />}
                 Cancel class
               </Button>
-            )}
-          </DialogFooter>
+            </DialogFooter>
+          )}
         </DialogContent>
       </Dialog>
     </div>
