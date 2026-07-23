@@ -42,6 +42,20 @@ function firstOccurrenceDate(startsOn: string, byWeekday: number[]): string {
   return startsOn;
 }
 
+/** Local calendar date (YYYY-MM-DD) of an instant in a timezone. */
+function localDate(iso: string, tz: string): string {
+  const p = new Intl.DateTimeFormat("en-CA", {
+    timeZone: tz, year: "numeric", month: "2-digit", day: "2-digit",
+  }).formatToParts(new Date(iso));
+  const g = (t: string) => p.find((x) => x.type === t)?.value ?? "";
+  return `${g("year")}-${g("month")}-${g("day")}`;
+}
+
+/** Add n days to a YYYY-MM-DD string (via UTC-noon to dodge DST edges). */
+function addDaysStr(d: string, n: number): string {
+  return new Date(new Date(`${d}T12:00:00Z`).getTime() + n * 86_400_000).toISOString().slice(0, 10);
+}
+
 function whenLabel(start: Date, end: Date, tz: string): string {
   const date = new Intl.DateTimeFormat("en-IN", {
     timeZone: tz, weekday: "short", day: "2-digit", month: "short", year: "numeric",
@@ -634,4 +648,118 @@ export async function cancelClassSeries(
     .from("batch_session_invite")
     .update({ status: "cancelled" })
     .in("session_id", occ.map((o) => o.id));
+}
+
+/** Truncate a series from a given occurrence onward: cancel that occurrence and
+ * every later one, shorten the series' `until` (so expansion won't recreate
+ * them) and the recurring Zoom meeting, and send mentors ONE update that
+ * shortens their recurring event (or a CANCEL if nothing remains). Earlier
+ * occurrences are kept. Falls back to a single-occurrence cancel for a one-off. */
+export async function truncateClassSeries(
+  supabase: SupabaseClient,
+  args: { fromSessionId: string; batchName: string; subjectName: string }
+): Promise<void> {
+  const s = await loadSession(supabase, args.fromSessionId);
+  if (!s) return;
+  if (!s.series_id) {
+    await cancelClassSession(supabase, {
+      sessionId: args.fromSessionId,
+      batchName: args.batchName,
+      subjectName: args.subjectName,
+    });
+    return;
+  }
+
+  const { data: seriesRow } = await supabase
+    .from("batch_session_series")
+    .select("id, batch_id, subject_id, title, description, by_weekday, time_of_day, duration_min, timezone, starts_on, zoom_meeting_id, join_url")
+    .eq("id", s.series_id)
+    .maybeSingle();
+  if (!seriesRow) return;
+  const ser = seriesRow as {
+    id: string; batch_id: string; subject_id: string; title: string; description: string | null;
+    by_weekday: number[]; time_of_day: string; duration_min: number; timezone: string;
+    starts_on: string; zoom_meeting_id: string | null; join_url: string | null;
+  };
+  const tz = ser.timezone ?? "Asia/Kolkata";
+  const cutoff = s.starts_at;
+  const nowIso = new Date().toISOString();
+
+  // Keep everything before this occurrence; series now ends the day before it.
+  const newUntil = addDaysStr(localDate(cutoff, tz), -1);
+
+  // 1) Stop future expansion beyond the new end.
+  await supabase
+    .from("batch_session_series")
+    .update({ until: newUntil, updated_at: nowIso })
+    .eq("id", ser.id);
+
+  // 2) Cancel this occurrence + all later ones.
+  const { data: toCancel } = await supabase
+    .from("batch_session")
+    .select("id")
+    .eq("series_id", ser.id)
+    .neq("status", "cancelled")
+    .gte("starts_at", cutoff);
+  const cancelledIds = (toCancel ?? []).map((r) => (r as { id: string }).id);
+  if (cancelledIds.length) {
+    await supabase
+      .from("batch_session")
+      .update({ status: "cancelled", updated_at: nowIso })
+      .in("id", cancelledIds);
+  }
+
+  // Anything still upcoming after the truncation?
+  const { count } = await supabase
+    .from("batch_session")
+    .select("id", { count: "exact", head: true })
+    .eq("series_id", ser.id)
+    .neq("status", "cancelled")
+    .gte("starts_at", nowIso);
+  const nothingLeft = (count ?? 0) === 0;
+
+  // 3) Zoom: shorten (or delete) the shared recurring meeting.
+  if (ser.zoom_meeting_id && zoom.zoomConfigured()) {
+    try {
+      if (nothingLeft) await zoom.deleteMeeting(ser.zoom_meeting_id);
+      else
+        await zoom.updateMeeting(ser.zoom_meeting_id, {
+          recurrence: { byWeekday: ser.by_weekday, until: new Date(`${newUntil}T23:59:59Z`) },
+        });
+    } catch {
+      /* non-fatal */
+    }
+  }
+
+  // 4) Notify mentors: a shortened recurring event (REQUEST) or a full CANCEL.
+  const firstDate = firstOccurrenceDate(ser.starts_on, ser.by_weekday);
+  const start = zonedToUtc(firstDate, ser.time_of_day.slice(0, 5), tz);
+  const end = new Date(start.getTime() + ser.duration_min * 60_000);
+  const uid = `series-${ser.id}@careerlaunchpad.ai`;
+  const method: IcsMethod = nothingLeft ? "CANCEL" : "REQUEST";
+  const rrule = nothingLeft ? null : weeklyRrule(ser.by_weekday, new Date(`${newUntil}T23:59:59Z`));
+  const seq = nextSequence();
+  const mentors = await mentorsOf(supabase, ser.batch_id, ser.subject_id);
+
+  for (const m of mentors) {
+    if (!m.email) continue;
+    const ics = buildClassIcs({
+      uid, sequence: seq, method,
+      title: `${args.subjectName}: ${ser.title}`, description: ser.description,
+      joinUrl: nothingLeft ? null : ser.join_url, start, end, rrule, timezone: tz,
+      organizer: ORGANIZER, attendee: { name: m.full_name, email: m.email },
+    });
+    await sendClassInviteEmail({
+      to: m.email, mentorName: m.full_name, batchName: args.batchName, subjectName: args.subjectName,
+      title: ser.title, whenLabel: whenLabel(start, end, tz) + " (weekly)",
+      joinUrl: nothingLeft ? null : ser.join_url, ics, method,
+    });
+  }
+
+  if (cancelledIds.length) {
+    await supabase
+      .from("batch_session_invite")
+      .update({ status: "cancelled" })
+      .in("session_id", cancelledIds);
+  }
 }

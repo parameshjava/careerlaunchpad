@@ -1,7 +1,12 @@
 import { NextResponse, type NextRequest } from "next/server";
 import { requirePermission } from "@/lib/auth";
 import { createClient } from "@/lib/supabase/server";
-import { cancelClassSession, cancelClassSeries, updateClassSession } from "@/lib/session-schedule";
+import {
+  cancelClassSession,
+  cancelClassSeries,
+  truncateClassSeries,
+  updateClassSession,
+} from "@/lib/session-schedule";
 
 type Params = { params: Promise<{ id: string; sessionId: string }> };
 
@@ -88,8 +93,15 @@ export async function DELETE(req: NextRequest, { params }: Params) {
 
   const scope = new URL(req.url).searchParams.get("scope");
   try {
-    if (scope === "series" && ctx.seriesId) {
-      // One series-level cancel: single Zoom delete + one CANCEL email per mentor.
+    if (scope === "following" && ctx.seriesId) {
+      // Cancel this occurrence + all later ones (truncate the series here).
+      await truncateClassSeries(supabase, {
+        fromSessionId: sessionId,
+        batchName: ctx.batchName,
+        subjectName: ctx.subjectName,
+      });
+    } else if (scope === "series" && ctx.seriesId) {
+      // Cancel every future occurrence of the series.
       await cancelClassSeries(supabase, {
         seriesId: ctx.seriesId,
         batchName: ctx.batchName,

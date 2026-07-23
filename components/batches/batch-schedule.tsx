@@ -232,12 +232,12 @@ export function BatchSchedule({ batchId, embedded = false }: { batchId: string; 
     }
   }
 
-  async function confirmCancel(series: boolean) {
+  async function confirmCancel(scope: "single" | "following") {
     if (!cancelFor) return;
     setCancelErr("");
     setCancelBusy(true);
     try {
-      const qs = series ? "?scope=series" : "";
+      const qs = scope === "following" ? "?scope=following" : "";
       const res = await fetch(`/api/admin/batches/${batchId}/sessions/${cancelFor.sessionId}${qs}`, {
         method: "DELETE",
       });
@@ -500,14 +500,15 @@ export function BatchSchedule({ batchId, embedded = false }: { batchId: string; 
                     </Button>
                   </>
                 ) : (
-                  // Individual occurrence (or one-off): cancel just this class.
+                  // Individual occurrence (series → offers "this / all following";
+                  // one-off → single cancel).
                   <Button
                     variant="ghost"
                     size="sm"
                     className="text-muted-foreground hover:text-destructive"
                     onClick={() => {
                       setCancelErr("");
-                      setCancelFor({ sessionId: s.id, title: s.title, choice: false });
+                      setCancelFor({ sessionId: s.id, title: s.title, choice: Boolean(s.seriesId) });
                     }}
                   >
                     <Trash2 /> Cancel
@@ -529,8 +530,8 @@ export function BatchSchedule({ batchId, embedded = false }: { batchId: string; 
             {cancelFor?.choice ? (
               <>
                 <span className="text-foreground font-medium">{cancelFor?.title}</span> is a weekly class.
-                Cancel just this occurrence, or all future occurrences in the series? Zoom and the mentors are
-                updated accordingly. This can&apos;t be undone.
+                Cancel just this occurrence, or this one and every later occurrence in the series (earlier
+                classes are kept)? Zoom and the mentors are updated accordingly. This can&apos;t be undone.
               </>
             ) : (
               <>
@@ -546,17 +547,17 @@ export function BatchSchedule({ batchId, embedded = false }: { batchId: string; 
             </Button>
             {cancelFor?.choice ? (
               <>
-                <Button variant="outline" onClick={() => confirmCancel(false)} disabled={cancelBusy}>
+                <Button variant="outline" onClick={() => confirmCancel("single")} disabled={cancelBusy}>
                   {cancelBusy ? <Loader2 className="animate-spin" /> : <Trash2 />}
                   This occurrence only
                 </Button>
-                <Button variant="destructive" onClick={() => confirmCancel(true)} disabled={cancelBusy}>
+                <Button variant="destructive" onClick={() => confirmCancel("following")} disabled={cancelBusy}>
                   {cancelBusy ? <Loader2 className="animate-spin" /> : <Trash2 />}
-                  Whole series
+                  This &amp; all following
                 </Button>
               </>
             ) : (
-              <Button variant="destructive" onClick={() => confirmCancel(false)} disabled={cancelBusy}>
+              <Button variant="destructive" onClick={() => confirmCancel("single")} disabled={cancelBusy}>
                 {cancelBusy ? <Loader2 className="animate-spin" /> : <Trash2 />}
                 Cancel class
               </Button>
