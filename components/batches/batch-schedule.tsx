@@ -73,7 +73,7 @@ export function BatchSchedule({ batchId, embedded = false }: { batchId: string; 
   const [editingSeriesId, setEditingSeriesId] = useState<string | null>(null);
 
   // Cancel-confirmation dialog (replaces the browser confirm()).
-  const [cancelFor, setCancelFor] = useState<{ sessionId: string; isSeries: boolean; title: string } | null>(null);
+  const [cancelFor, setCancelFor] = useState<{ sessionId: string; series: boolean; title: string } | null>(null);
   const [cancelBusy, setCancelBusy] = useState(false);
   const [cancelErr, setCancelErr] = useState("");
 
@@ -217,12 +217,12 @@ export function BatchSchedule({ batchId, embedded = false }: { batchId: string; 
     }
   }
 
-  async function confirmCancel(series: boolean) {
+  async function confirmCancel() {
     if (!cancelFor) return;
     setCancelErr("");
     setCancelBusy(true);
     try {
-      const qs = series ? "?scope=series" : "";
+      const qs = cancelFor.series ? "?scope=series" : "";
       const res = await fetch(`/api/admin/batches/${batchId}/sessions/${cancelFor.sessionId}${qs}`, {
         method: "DELETE",
       });
@@ -450,22 +450,38 @@ export function BatchSchedule({ batchId, embedded = false }: { batchId: string; 
                     </a>
                   </Button>
                 )}
-                {s.seriesId && seriesAnchorIds.has(s.id) && (
-                  <Button variant="outline" size="sm" onClick={() => startEditSeries(s.seriesId!)}>
-                    <Pencil /> Edit series
+                {s.seriesId && seriesAnchorIds.has(s.id) ? (
+                  // Series representative row: series-level actions.
+                  <>
+                    <Button variant="outline" size="sm" onClick={() => startEditSeries(s.seriesId!)}>
+                      <Pencil /> Edit series
+                    </Button>
+                    <Button
+                      variant="ghost"
+                      size="sm"
+                      className="text-muted-foreground hover:text-destructive"
+                      onClick={() => {
+                        setCancelErr("");
+                        setCancelFor({ sessionId: s.id, series: true, title: s.title });
+                      }}
+                    >
+                      <Trash2 /> Cancel series
+                    </Button>
+                  </>
+                ) : (
+                  // Individual occurrence (or one-off): cancel just this class.
+                  <Button
+                    variant="ghost"
+                    size="sm"
+                    className="text-muted-foreground hover:text-destructive"
+                    onClick={() => {
+                      setCancelErr("");
+                      setCancelFor({ sessionId: s.id, series: false, title: s.title });
+                    }}
+                  >
+                    <Trash2 /> Cancel
                   </Button>
                 )}
-                <Button
-                  variant="ghost"
-                  size="sm"
-                  className="text-muted-foreground hover:text-destructive"
-                  onClick={() => {
-                    setCancelErr("");
-                    setCancelFor({ sessionId: s.id, isSeries: Boolean(s.seriesId), title: s.title });
-                  }}
-                >
-                  <Trash2 /> Cancel
-                </Button>
               </div>
             ))
           )}
@@ -476,44 +492,31 @@ export function BatchSchedule({ batchId, embedded = false }: { batchId: string; 
       <Dialog open={Boolean(cancelFor)} onOpenChange={(o) => !o && setCancelFor(null)}>
         <DialogContent className="sm:max-w-md">
           <DialogHeader>
-            <DialogTitle>Cancel class?</DialogTitle>
+            <DialogTitle>{cancelFor?.series ? "Cancel this series?" : "Cancel this class?"}</DialogTitle>
           </DialogHeader>
           <p className="text-muted-foreground text-sm">
-            {cancelFor?.isSeries ? (
+            {cancelFor?.series ? (
               <>
-                <span className="text-foreground font-medium">{cancelFor?.title}</span> is a weekly class.
-                Cancel just this one occurrence, or all future occurrences in the series? The Zoom meeting and
-                mentors are updated accordingly. This can&apos;t be undone.
+                All <span className="text-foreground font-medium">future</span> classes of{" "}
+                <span className="text-foreground font-medium">{cancelFor?.title}</span> will be cancelled, the
+                Zoom meeting deleted, and the mentors notified. Past classes are kept. This can&apos;t be undone.
               </>
             ) : (
               <>
-                <span className="text-foreground font-medium">{cancelFor?.title}</span> will be cancelled, its
-                Zoom meeting deleted, and the mentors notified. This can&apos;t be undone.
+                <span className="text-foreground font-medium">{cancelFor?.title}</span> will be cancelled and the
+                mentors notified. This can&apos;t be undone.
               </>
             )}
           </p>
           {cancelErr && <p className="text-destructive text-sm">{cancelErr}</p>}
-          <DialogFooter className="flex-col gap-2 sm:flex-row sm:justify-end">
+          <DialogFooter>
             <Button variant="outline" onClick={() => setCancelFor(null)} disabled={cancelBusy}>
               Keep it
             </Button>
-            {cancelFor?.isSeries ? (
-              <>
-                <Button variant="outline" onClick={() => confirmCancel(false)} disabled={cancelBusy}>
-                  {cancelBusy ? <Loader2 className="animate-spin" /> : <Trash2 />}
-                  This class only
-                </Button>
-                <Button variant="destructive" onClick={() => confirmCancel(true)} disabled={cancelBusy}>
-                  {cancelBusy ? <Loader2 className="animate-spin" /> : <Trash2 />}
-                  Whole series
-                </Button>
-              </>
-            ) : (
-              <Button variant="destructive" onClick={() => confirmCancel(false)} disabled={cancelBusy}>
-                {cancelBusy ? <Loader2 className="animate-spin" /> : <Trash2 />}
-                Cancel class
-              </Button>
-            )}
+            <Button variant="destructive" onClick={confirmCancel} disabled={cancelBusy}>
+              {cancelBusy ? <Loader2 className="animate-spin" /> : <Trash2 />}
+              {cancelFor?.series ? "Cancel series" : "Cancel class"}
+            </Button>
           </DialogFooter>
         </DialogContent>
       </Dialog>
