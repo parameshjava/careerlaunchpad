@@ -383,7 +383,7 @@ export function BatchSchedule({ batchId, embedded = false }: { batchId: string; 
               <div className="grid gap-1.5">
                 <Label>Subject</Label>
                 <Select value={subjectId || undefined} onValueChange={setSubjectId} disabled={Boolean(editingSeriesId)}>
-                  <SelectTrigger>
+                  <SelectTrigger className="w-full">
                     <SelectValue placeholder="Pick a subject" />
                   </SelectTrigger>
                   <SelectContent>
@@ -402,7 +402,7 @@ export function BatchSchedule({ batchId, embedded = false }: { batchId: string; 
               <div className="grid gap-1.5">
                 <Label>Delivery</Label>
                 <Select value={deliveryMode} onValueChange={(v) => setDeliveryMode(v as typeof deliveryMode)}>
-                  <SelectTrigger>
+                  <SelectTrigger className="w-full">
                     <SelectValue />
                   </SelectTrigger>
                   <SelectContent>

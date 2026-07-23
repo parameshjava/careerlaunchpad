@@ -286,7 +286,7 @@ export function BatchEditor({ batchId, embedded = false }: { batchId?: string; e
                   Course <span className="text-primary">*</span>
                 </Label>
                 <Select value={courseId || undefined} onValueChange={onCourseChange}>
-                  <SelectTrigger id="b-course">
+                  <SelectTrigger id="b-course" className="w-full">
                     <SelectValue placeholder="Select a course" />
                   </SelectTrigger>
                   <SelectContent>
@@ -306,7 +306,7 @@ export function BatchEditor({ batchId, embedded = false }: { batchId?: string; e
               <div className="grid gap-1.5">
                 <Label htmlFor="b-status">Status</Label>
                 <Select value={status} onValueChange={(v) => setStatus(v as BatchStatus)}>
-                  <SelectTrigger id="b-status">
+                  <SelectTrigger id="b-status" className="w-full">
                     <SelectValue />
                   </SelectTrigger>
                   <SelectContent>
@@ -341,7 +341,7 @@ export function BatchEditor({ batchId, embedded = false }: { batchId?: string; e
               <div className="grid gap-1.5">
                 <Label htmlFor="b-mode">Delivery</Label>
                 <Select value={deliveryMode || undefined} onValueChange={setDeliveryMode}>
-                  <SelectTrigger id="b-mode">
+                  <SelectTrigger id="b-mode" className="w-full">
                     <SelectValue placeholder="—" />
                   </SelectTrigger>
                   <SelectContent>
