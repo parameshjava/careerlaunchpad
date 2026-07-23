@@ -109,6 +109,22 @@ prefix with `NEXT_PUBLIC_`. Redeploy after adding them.
   is still created; only the email is skipped.
 - Mentors must be **approved** with an account email for the invite to work.
 
+### Who starts a class
+
+Class meetings use **join-before-host** (`join_before_host: true`, `jbh_time: 0`,
+waiting room off), so **no org host has to start the class** — the mentor or any
+student can open the room with the join link at class time. There's no designated
+host and no host-only controls (mute-all, admit, host-gated recording).
+
+> **Enable it account-wide:** for join-before-host to take effect, it must also be
+> **on at the Zoom account level** — Zoom Admin → Account Management → Account
+> Settings → *Join before host* (and *Waiting room* off / allowed to be turned
+> off per meeting). Otherwise Zoom silently ignores the per-meeting flag and the
+> account owner still has to start the meeting.
+
+If you later want a real host (host controls, recording), add mentors as Zoom
+users (below) so they can be alternative hosts / start the class.
+
 ### Alternative hosts (error 1114)
 
 > `Unable to assign "…@gmail.com" as an alternative host because the user cannot

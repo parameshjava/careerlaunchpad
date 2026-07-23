@@ -83,9 +83,14 @@ function recurrencePayload(rec: NonNullable<CreateMeetingInput["recurrence"]>) {
 }
 
 function meetingSettings() {
+  // No org host has to start the class: anyone with the link (mentor or student)
+  // can open the room. jbh_time:0 = joinable anytime; waiting room off so the
+  // first joiner isn't stuck waiting. (join_before_host must also be enabled at
+  // the Zoom account level for this to take effect.)
   return {
-    join_before_host: false,
-    waiting_room: true,
+    join_before_host: true,
+    jbh_time: 0,
+    waiting_room: false,
   };
 }
 
