@@ -339,29 +339,30 @@ function GridView({
   const showNow = nowMin >= START_HOUR * 60 && nowMin <= END_HOUR * 60;
   return (
     <div style={{ ["--slc-cols" as string]: days.length }}>
-      {/* Day-name header */}
-      <div className="slc-daynames border-b">
-        <div />
-        {days.map((d) => {
-          const isToday = d === today;
-          return (
-            <div key={d} className="border-l py-2 text-center">
-              <div className={`text-[0.65rem] font-semibold uppercase tracking-wider ${isToday ? "text-primary" : "text-muted-foreground"}`}>
-                {fmt(d, { weekday: "short" })}
-              </div>
-              <div
-                className={`mt-0.5 inline-flex h-7 min-w-7 items-center justify-center rounded-full px-1.5 text-base font-semibold tabular-nums ${isToday ? "text-white" : ""}`}
-                style={isToday ? { backgroundImage: "var(--brand-gradient-135)" } : undefined}
-              >
-                {fmt(d, { day: "numeric" })}
-              </div>
-            </div>
-          );
-        })}
-      </div>
-
-      {/* Scrollable body */}
+      {/* Header + body share one scroll container so both reserve the scrollbar
+          width identically — dates stay aligned with the grid columns. */}
       <div className="max-h-[560px] overflow-y-auto">
+        {/* Sticky day-name header */}
+        <div className="slc-daynames border-b">
+          <div />
+          {days.map((d) => {
+            const isToday = d === today;
+            return (
+              <div key={d} className="border-l py-2 text-center">
+                <div className={`text-[0.65rem] font-semibold uppercase tracking-wider ${isToday ? "text-primary" : "text-muted-foreground"}`}>
+                  {fmt(d, { weekday: "short" })}
+                </div>
+                <div
+                  className={`mt-0.5 inline-flex h-7 min-w-7 items-center justify-center rounded-full px-1.5 text-base font-semibold tabular-nums ${isToday ? "text-white" : ""}`}
+                  style={isToday ? { backgroundImage: "var(--brand-gradient-135)" } : undefined}
+                >
+                  {fmt(d, { day: "numeric" })}
+                </div>
+              </div>
+            );
+          })}
+        </div>
+
         <div className="slc-body">
           <div>
             {Array.from({ length: ROWS }, (_, r) => {

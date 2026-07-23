@@ -16,10 +16,16 @@
   }
 }
 
-/* Column headers */
+/* Column headers — sticky inside the scroll area so they share the body's
+   column widths (both sit inside the same scrollbar-reserving box, keeping the
+   dates aligned with the grid) and stay visible while scrolling. */
 .slc-daynames {
   display: grid;
   grid-template-columns: var(--slc-gutter) repeat(var(--slc-cols), minmax(0, 1fr));
+  position: sticky;
+  top: 0;
+  z-index: 10;
+  background: var(--card);
 }
 .slc-body {
   display: grid;
