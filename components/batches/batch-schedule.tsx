@@ -30,10 +30,16 @@ import {
   SelectTrigger,
   SelectValue,
 } from "@/components/ui/select";
+import { Tabs, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { cachedGet, invalidate } from "@/lib/fetch-cache";
 import type { CalendarSession } from "@/lib/calendar-query";
 
 const TZ = "Asia/Kolkata";
+
+// Style-guide folder tabs (docs/STYLE_GUIDE.md), compact for the in-card filter.
+const SUBJECT_TAB_CLS =
+  "-mb-px h-auto flex-none rounded-t-md rounded-b-none border border-border bg-muted! px-3 py-1.5 text-sm font-medium text-muted-foreground shadow-none transition-colors after:hidden hover:bg-muted/70 " +
+  "data-active:border-primary! data-active:border-b-0 data-active:bg-primary! data-active:text-primary-foreground! data-active:font-semibold data-active:shadow-none";
 const WEEKDAYS = [
   { dow: 1, label: "M" }, { dow: 2, label: "T" }, { dow: 3, label: "W" },
   { dow: 4, label: "T" }, { dow: 5, label: "F" }, { dow: 6, label: "S" }, { dow: 0, label: "S" },
@@ -73,7 +79,9 @@ export function BatchSchedule({ batchId, embedded = false }: { batchId: string; 
   const [editingSeriesId, setEditingSeriesId] = useState<string | null>(null);
 
   // Cancel-confirmation dialog (replaces the browser confirm()).
-  const [cancelFor, setCancelFor] = useState<{ sessionId: string; series: boolean; title: string } | null>(null);
+  // choice=true → offer "this occurrence only" vs "whole series" (series anchor);
+  // choice=false → single-occurrence cancel (individual occurrence / one-off).
+  const [cancelFor, setCancelFor] = useState<{ sessionId: string; title: string; choice: boolean } | null>(null);
   const [cancelBusy, setCancelBusy] = useState(false);
   const [cancelErr, setCancelErr] = useState("");
 
@@ -152,6 +160,19 @@ export function BatchSchedule({ batchId, embedded = false }: { batchId: string; 
     () => sessions.filter((s) => s.status !== "cancelled").sort((a, b) => a.startsAt.localeCompare(b.startsAt)),
     [sessions]
   );
+  // Filter the (chronological) upcoming list by subject so a multi-subject batch
+  // reads as one subject at a time instead of a zigzag.
+  const [subjectFilter, setSubjectFilter] = useState("all");
+  const subjectTabs = useMemo(() => {
+    const seen = new Map<string, string>();
+    for (const s of upcoming) if (s.subjectName && !seen.has(s.subjectId)) seen.set(s.subjectId, s.subjectName);
+    return [...seen.entries()].map(([id, name]) => ({ id, name }));
+  }, [upcoming]);
+  const filtered = useMemo(
+    () => (subjectFilter === "all" ? upcoming : upcoming.filter((s) => s.subjectId === subjectFilter)),
+    [upcoming, subjectFilter]
+  );
+
   // The earliest occurrence of each series carries the "Edit series" action.
   const seriesAnchorIds = useMemo(() => {
     const seen = new Set<string>();
@@ -217,12 +238,12 @@ export function BatchSchedule({ batchId, embedded = false }: { batchId: string; 
     }
   }
 
-  async function confirmCancel() {
+  async function confirmCancel(series: boolean) {
     if (!cancelFor) return;
     setCancelErr("");
     setCancelBusy(true);
     try {
-      const qs = cancelFor.series ? "?scope=series" : "";
+      const qs = series ? "?scope=series" : "";
       const res = await fetch(`/api/admin/batches/${batchId}/sessions/${cancelFor.sessionId}${qs}`, {
         method: "DELETE",
       });
@@ -425,10 +446,27 @@ export function BatchSchedule({ batchId, embedded = false }: { batchId: string; 
           <CardTitle className="text-base">Upcoming classes</CardTitle>
         </CardHeader>
         <CardContent className="grid gap-2">
+          {subjectTabs.length > 1 && (
+            <Tabs value={subjectFilter} onValueChange={setSubjectFilter} className="mb-2">
+              <TabsList
+                variant="line"
+                className="group-data-horizontal/tabs:h-auto w-full justify-start gap-0 overflow-x-auto rounded-none border-b p-0"
+              >
+                <TabsTrigger value="all" className={SUBJECT_TAB_CLS}>
+                  All
+                </TabsTrigger>
+                {subjectTabs.map((t) => (
+                  <TabsTrigger key={t.id} value={t.id} className={SUBJECT_TAB_CLS}>
+                    {t.name}
+                  </TabsTrigger>
+                ))}
+              </TabsList>
+            </Tabs>
+          )}
           {upcoming.length === 0 ? (
             <p className="text-muted-foreground text-sm">No classes scheduled yet.</p>
           ) : (
-            upcoming.map((s) => (
+            filtered.map((s) => (
               <div key={s.id} className="flex flex-wrap items-center gap-x-3 gap-y-1 rounded-lg border p-3">
                 <div className="min-w-0 flex-1">
                   <div className="flex flex-wrap items-center gap-2">
@@ -451,7 +489,8 @@ export function BatchSchedule({ batchId, embedded = false }: { batchId: string; 
                   </Button>
                 )}
                 {s.seriesId && seriesAnchorIds.has(s.id) ? (
-                  // Series representative row: series-level actions.
+                  // Series representative row: edit the series, or cancel (dialog
+                  // then offers this-occurrence-only vs whole-series).
                   <>
                     <Button variant="outline" size="sm" onClick={() => startEditSeries(s.seriesId!)}>
                       <Pencil /> Edit series
@@ -462,10 +501,10 @@ export function BatchSchedule({ batchId, embedded = false }: { batchId: string; 
                       className="text-muted-foreground hover:text-destructive"
                       onClick={() => {
                         setCancelErr("");
-                        setCancelFor({ sessionId: s.id, series: true, title: s.title });
+                        setCancelFor({ sessionId: s.id, title: s.title, choice: true });
                       }}
                     >
-                      <Trash2 /> Cancel series
+                      <Trash2 /> Cancel
                     </Button>
                   </>
                 ) : (
@@ -476,7 +515,7 @@ export function BatchSchedule({ batchId, embedded = false }: { batchId: string; 
                     className="text-muted-foreground hover:text-destructive"
                     onClick={() => {
                       setCancelErr("");
-                      setCancelFor({ sessionId: s.id, series: false, title: s.title });
+                      setCancelFor({ sessionId: s.id, title: s.title, choice: false });
                     }}
                   >
                     <Trash2 /> Cancel
@@ -492,14 +531,14 @@ export function BatchSchedule({ batchId, embedded = false }: { batchId: string; 
       <Dialog open={Boolean(cancelFor)} onOpenChange={(o) => !o && setCancelFor(null)}>
         <DialogContent className="sm:max-w-md">
           <DialogHeader>
-            <DialogTitle>{cancelFor?.series ? "Cancel this series?" : "Cancel this class?"}</DialogTitle>
+            <DialogTitle>Cancel class?</DialogTitle>
           </DialogHeader>
           <p className="text-muted-foreground text-sm">
-            {cancelFor?.series ? (
+            {cancelFor?.choice ? (
               <>
-                All <span className="text-foreground font-medium">future</span> classes of{" "}
-                <span className="text-foreground font-medium">{cancelFor?.title}</span> will be cancelled, the
-                Zoom meeting deleted, and the mentors notified. Past classes are kept. This can&apos;t be undone.
+                <span className="text-foreground font-medium">{cancelFor?.title}</span> is a weekly class.
+                Cancel just this occurrence, or all future occurrences in the series? Zoom and the mentors are
+                updated accordingly. This can&apos;t be undone.
               </>
             ) : (
               <>
@@ -509,14 +548,27 @@ export function BatchSchedule({ batchId, embedded = false }: { batchId: string; 
             )}
           </p>
           {cancelErr && <p className="text-destructive text-sm">{cancelErr}</p>}
-          <DialogFooter>
+          <DialogFooter className="flex-col gap-2 sm:flex-row sm:justify-end">
             <Button variant="outline" onClick={() => setCancelFor(null)} disabled={cancelBusy}>
               Keep it
             </Button>
-            <Button variant="destructive" onClick={confirmCancel} disabled={cancelBusy}>
-              {cancelBusy ? <Loader2 className="animate-spin" /> : <Trash2 />}
-              {cancelFor?.series ? "Cancel series" : "Cancel class"}
-            </Button>
+            {cancelFor?.choice ? (
+              <>
+                <Button variant="outline" onClick={() => confirmCancel(false)} disabled={cancelBusy}>
+                  {cancelBusy ? <Loader2 className="animate-spin" /> : <Trash2 />}
+                  This occurrence only
+                </Button>
+                <Button variant="destructive" onClick={() => confirmCancel(true)} disabled={cancelBusy}>
+                  {cancelBusy ? <Loader2 className="animate-spin" /> : <Trash2 />}
+                  Whole series
+                </Button>
+              </>
+            ) : (
+              <Button variant="destructive" onClick={() => confirmCancel(false)} disabled={cancelBusy}>
+                {cancelBusy ? <Loader2 className="animate-spin" /> : <Trash2 />}
+                Cancel class
+              </Button>
+            )}
           </DialogFooter>
         </DialogContent>
       </Dialog>
