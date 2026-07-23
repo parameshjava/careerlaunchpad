@@ -135,6 +135,7 @@ export function FeeReceiptView({
           --ink:${INK}; --ink-soft:${INK_SOFT}; --ink-faint:${INK_FAINT}; }
         .fr-toolbar { max-width: 820px; margin: 0 auto 16px; display: flex; align-items: center;
           justify-content: space-between; gap: 12px; flex-wrap: wrap; }
+        .fr-actions { display: flex; align-items: center; gap: 8px; margin-left: auto; }
         /* The sheet is a <table> so the letterhead header (thead) and the address
            footer (tfoot) repeat on EVERY printed page. */
         .fr-sheet { width: 100%; max-width: 820px; margin: 0 auto; background: #fff; color: var(--ink);
@@ -287,11 +288,7 @@ export function FeeReceiptView({
       `}</style>
 
       <div className="fr-toolbar">
-        {onClose ? (
-          <Button variant="outline" onClick={onClose}>
-            <X /> Close
-          </Button>
-        ) : backHref ? (
+        {backHref ? (
           <Button variant="outline" asChild>
             <Link href={backHref}>
               <ArrowLeft /> {backLabel}
@@ -300,9 +297,16 @@ export function FeeReceiptView({
         ) : (
           <span />
         )}
-        <Button onClick={handlePrint}>
-          <Printer /> Print / Download PDF
-        </Button>
+        <div className="fr-actions">
+          <Button onClick={handlePrint}>
+            <Printer /> Print / Download PDF
+          </Button>
+          {onClose && (
+            <Button variant="outline" onClick={onClose}>
+              <X /> Close
+            </Button>
+          )}
+        </div>
       </div>
 
       <div className="fr-doc-print">

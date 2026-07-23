@@ -563,9 +563,11 @@ export function BatchRoster({
             </div>
           ) : receiptErr ? (
             <div>
-              <Button variant="outline" onClick={() => setReceiptOpen(false)}>
-                <X /> Close
-              </Button>
+              <div className="flex justify-end">
+                <Button variant="outline" onClick={() => setReceiptOpen(false)}>
+                  <X /> Close
+                </Button>
+              </div>
               <p className="text-destructive py-16 text-center text-sm">{receiptErr}</p>
             </div>
           ) : receipt ? (
