@@ -273,12 +273,18 @@ export async function sendClassInviteEmail(input: ClassInviteEmail): Promise<{ s
     `A ${input.subjectName} class for ${input.batchName} has been ${verb}.\n\n` +
     `Class: ${input.title}\nWhen: ${input.whenLabel}\n${joinLine}\n` +
     `The calendar invite is attached.\n`;
+
+  // Escape every interpolated value — titles/names are staff-entered free text.
+  const esc = (s: string) =>
+    s.replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;").replace(/"/g, "&quot;");
   const joinHtml =
-    input.joinUrl && !cancelled ? `<p><a href="${input.joinUrl}">Join the Zoom class</a></p>` : "";
+    input.joinUrl && !cancelled
+      ? `<p><a href="${esc(input.joinUrl)}">Join the Zoom class</a></p>`
+      : "";
   const html =
-    `<p>${hi}</p>` +
-    `<p>A <strong>${input.subjectName}</strong> class for <strong>${input.batchName}</strong> has been ${verb}.</p>` +
-    `<p><strong>${input.title}</strong><br/>${input.whenLabel}</p>` +
+    `<p>${esc(hi)}</p>` +
+    `<p>A <strong>${esc(input.subjectName)}</strong> class for <strong>${esc(input.batchName)}</strong> has been ${verb}.</p>` +
+    `<p><strong>${esc(input.title)}</strong><br/>${esc(input.whenLabel)}</p>` +
     joinHtml +
     `<p>The calendar invite is attached.</p>`;
 

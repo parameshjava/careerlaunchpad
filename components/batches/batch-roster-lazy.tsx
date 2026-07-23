@@ -39,9 +39,11 @@ export function BatchRosterLazy({ batchId }: { batchId: string }) {
     };
   }, [load]);
 
+  // Refresh silently — do NOT flip to the loading spinner, which would unmount
+  // <BatchRoster> and discard its open receipt dialog (the receipt is shown
+  // right after recording a payment). load() swaps in fresh data on resolve.
   const onChanged = useCallback(() => {
     invalidate(url);
-    setLoading(true);
     load();
   }, [url, load]);
 

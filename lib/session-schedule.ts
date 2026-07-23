@@ -148,6 +148,12 @@ export async function createClassSchedule(
     seriesId = series.id;
 
     await supabase.rpc("expand_batch_session_series", { p_series_id: seriesId });
+    // expand derives each occurrence's meeting_status from join_url only, so a
+    // failed/manual Zoom outcome would silently show as "pending". Stamp the real
+    // status onto the generated occurrences so the "No Zoom" badge appears.
+    if (meetingStatus === "failed" || meetingStatus === "manual") {
+      await supabase.from("batch_session").update({ meeting_status: meetingStatus }).eq("series_id", seriesId);
+    }
     const { data: occ } = await supabase
       .from("batch_session")
       .select("id")
@@ -193,7 +199,7 @@ export async function createClassSchedule(
         uid, sequence: 0, method: "REQUEST" as IcsMethod,
         title: `${subjectName}: ${payload.title}`,
         description: payload.description,
-        joinUrl, start, end, rrule,
+        joinUrl, start, end, rrule, timezone: tz,
         organizer: ORGANIZER,
         attendee: { name: m.full_name, email: m.email },
       });
@@ -334,7 +340,7 @@ export async function updateClassSeries(
     const ics = buildClassIcs({
       uid, sequence: seq, method: "REQUEST" as IcsMethod,
       title: `${subjectName}: ${payload.title}`, description: payload.description,
-      joinUrl, start, end, rrule, organizer: ORGANIZER, attendee: { name: m.full_name, email: m.email },
+      joinUrl, start, end, rrule, timezone: tz, organizer: ORGANIZER, attendee: { name: m.full_name, email: m.email },
     });
     const res = await sendClassInviteEmail({
       to: m.email, mentorName: m.full_name, batchName, subjectName,
@@ -361,6 +367,7 @@ type SessionRow = {
   id: string;
   batch_id: string;
   subject_id: string;
+  series_id: string | null;
   title: string;
   description: string | null;
   starts_at: string;
@@ -375,11 +382,22 @@ async function loadSession(supabase: SupabaseClient, sessionId: string): Promise
   const { data } = await supabase
     .from("batch_session")
     .select(
-      "id, batch_id, subject_id, title, description, starts_at, ends_at, delivery_mode, status, zoom_meeting_id, join_url"
+      "id, batch_id, subject_id, series_id, title, description, starts_at, ends_at, delivery_mode, status, zoom_meeting_id, join_url"
     )
     .eq("id", sessionId)
     .maybeSingle();
   return (data as SessionRow | null) ?? null;
+}
+
+/** The timezone a session should be shown in: its series' tz, else IST default. */
+async function sessionTimezone(supabase: SupabaseClient, seriesId: string | null): Promise<string> {
+  if (!seriesId) return "Asia/Kolkata";
+  const { data } = await supabase
+    .from("batch_session_series")
+    .select("timezone")
+    .eq("id", seriesId)
+    .maybeSingle();
+  return (data as { timezone?: string } | null)?.timezone ?? "Asia/Kolkata";
 }
 
 async function mentorsOf(supabase: SupabaseClient, batchId: string, subjectId: string): Promise<MentorContact[]> {
@@ -417,7 +435,10 @@ export async function updateClassSession(
 
   const start = new Date(startsAt);
   const end = new Date(endsAt);
-  const tz = "Asia/Kolkata";
+  const tz = await sessionTimezone(supabase, s.series_id);
+  // For a series occurrence, target just this instance (its original start) so
+  // the mentor's whole recurring series isn't rewritten.
+  const recurrenceId = s.series_id ? new Date(s.starts_at) : null;
   const mentors = await mentorsOf(supabase, s.batch_id, s.subject_id);
 
   let meetingWarning: string | null = null;
@@ -467,6 +488,7 @@ export async function updateClassSession(
     const ics = buildClassIcs({
       uid, sequence: seq, method: "REQUEST" as IcsMethod,
       title: `${args.subjectName}: ${title}`, description, joinUrl, start, end, rrule: null,
+      timezone: tz, recurrenceId,
       organizer: ORGANIZER, attendee: { name: m.full_name, email: m.email },
     });
     const res = await sendClassInviteEmail({
@@ -494,7 +516,10 @@ export async function cancelClassSession(
   const s = await loadSession(supabase, args.sessionId);
   if (!s || s.status === "cancelled") return;
 
-  if (s.zoom_meeting_id && zoom.zoomConfigured()) {
+  // Only delete the Zoom meeting for a one-off. A series shares ONE meeting
+  // across all occurrences, so deleting it here would break the others — the
+  // CANCEL invite (with RECURRENCE-ID) removes just this instance.
+  if (!s.series_id && s.zoom_meeting_id && zoom.zoomConfigured()) {
     try {
       await zoom.deleteMeeting(s.zoom_meeting_id);
     } catch {
@@ -509,6 +534,8 @@ export async function cancelClassSession(
 
   const start = new Date(s.starts_at);
   const end = new Date(s.ends_at);
+  const tz = await sessionTimezone(supabase, s.series_id);
+  const recurrenceId = s.series_id ? new Date(s.starts_at) : null;
   const mentors = await mentorsOf(supabase, s.batch_id, s.subject_id);
   const { data: invites } = await supabase
     .from("batch_session_invite")
@@ -525,15 +552,86 @@ export async function cancelClassSession(
     const ics = buildClassIcs({
       uid, sequence: seq, method: "CANCEL" as IcsMethod,
       title: `${args.subjectName}: ${s.title}`, description: s.description, joinUrl: null, start, end, rrule: null,
+      timezone: tz, recurrenceId,
       organizer: ORGANIZER, attendee: { name: m.full_name, email: m.email },
     });
     await sendClassInviteEmail({
       to: m.email, mentorName: m.full_name, batchName: args.batchName, subjectName: args.subjectName,
-      title: s.title, whenLabel: whenLabel(start, end, "Asia/Kolkata"), joinUrl: null, ics, method: "CANCEL",
+      title: s.title, whenLabel: whenLabel(start, end, tz), joinUrl: null, ics, method: "CANCEL",
     });
   }
   await supabase
     .from("batch_session_invite")
     .update({ status: "cancelled" })
     .eq("session_id", args.sessionId);
+}
+
+/** Cancel a whole recurring series in one shot: delete the (shared) Zoom
+ * meeting once, mark all future occurrences cancelled, and send ONE
+ * METHOD:CANCEL per mentor for the series master (no RECURRENCE-ID → the whole
+ * recurring event is removed from their calendar). Avoids per-occurrence email
+ * and Zoom-delete fan-out. */
+export async function cancelClassSeries(
+  supabase: SupabaseClient,
+  args: { seriesId: string; batchName: string; subjectName: string }
+): Promise<void> {
+  const { data: series } = await supabase
+    .from("batch_session_series")
+    .select("id, batch_id, subject_id, title, description, timezone, zoom_meeting_id, join_url")
+    .eq("id", args.seriesId)
+    .maybeSingle();
+  if (!series) return;
+  const s = series as {
+    batch_id: string; subject_id: string; title: string; description: string | null;
+    timezone: string; zoom_meeting_id: string | null;
+  };
+
+  if (s.zoom_meeting_id && zoom.zoomConfigured()) {
+    try {
+      await zoom.deleteMeeting(s.zoom_meeting_id);
+    } catch {
+      /* non-fatal */
+    }
+  }
+
+  const nowIso = new Date().toISOString();
+  const { data: future } = await supabase
+    .from("batch_session")
+    .select("id, starts_at, ends_at")
+    .eq("series_id", args.seriesId)
+    .neq("status", "cancelled")
+    .gte("starts_at", nowIso)
+    .order("starts_at");
+  const occ = (future ?? []) as { id: string; starts_at: string; ends_at: string }[];
+  if (occ.length === 0) return;
+
+  await supabase
+    .from("batch_session")
+    .update({ status: "cancelled", updated_at: nowIso })
+    .in("id", occ.map((o) => o.id));
+
+  const uid = `series-${args.seriesId}@careerlaunchpad.ai`;
+  const start = new Date(occ[0].starts_at);
+  const end = new Date(occ[0].ends_at);
+  const tz = s.timezone ?? "Asia/Kolkata";
+  const mentors = await mentorsOf(supabase, s.batch_id, s.subject_id);
+  const seq = nextSequence();
+
+  for (const m of mentors) {
+    if (!m.email) continue;
+    const ics = buildClassIcs({
+      uid, sequence: seq, method: "CANCEL" as IcsMethod,
+      title: `${args.subjectName}: ${s.title}`, description: s.description, joinUrl: null, start, end, rrule: null,
+      timezone: tz,
+      organizer: ORGANIZER, attendee: { name: m.full_name, email: m.email },
+    });
+    await sendClassInviteEmail({
+      to: m.email, mentorName: m.full_name, batchName: args.batchName, subjectName: args.subjectName,
+      title: s.title, whenLabel: whenLabel(start, end, tz) + " (weekly)", joinUrl: null, ics, method: "CANCEL",
+    });
+  }
+  await supabase
+    .from("batch_session_invite")
+    .update({ status: "cancelled" })
+    .in("session_id", occ.map((o) => o.id));
 }

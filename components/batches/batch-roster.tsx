@@ -558,8 +558,15 @@ export function BatchRoster({
             <DialogTitle>Payment receipt</DialogTitle>
           </DialogHeader>
           {receiptBusy ? (
-            <div className="text-muted-foreground flex items-center justify-center gap-2 py-20 text-sm">
-              <Loader2 className="size-4 animate-spin" /> Loading receipt…
+            <div>
+              <div className="flex justify-end">
+                <Button variant="outline" onClick={() => setReceiptOpen(false)}>
+                  <X /> Close
+                </Button>
+              </div>
+              <div className="text-muted-foreground flex items-center justify-center gap-2 py-16 text-sm">
+                <Loader2 className="size-4 animate-spin" /> Loading receipt…
+              </div>
             </div>
           ) : receiptErr ? (
             <div>

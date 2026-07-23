@@ -1,7 +1,7 @@
 import { NextResponse, type NextRequest } from "next/server";
 import { requirePermission } from "@/lib/auth";
 import { createClient } from "@/lib/supabase/server";
-import { cancelClassSession, updateClassSession } from "@/lib/session-schedule";
+import { cancelClassSession, cancelClassSeries, updateClassSession } from "@/lib/session-schedule";
 
 type Params = { params: Promise<{ id: string; sessionId: string }> };
 
@@ -89,15 +89,12 @@ export async function DELETE(req: NextRequest, { params }: Params) {
   const scope = new URL(req.url).searchParams.get("scope");
   try {
     if (scope === "series" && ctx.seriesId) {
-      const { data: future } = await supabase
-        .from("batch_session")
-        .select("id")
-        .eq("series_id", ctx.seriesId)
-        .neq("status", "cancelled")
-        .gte("starts_at", new Date().toISOString());
-      for (const row of (future ?? []) as { id: string }[]) {
-        await cancelClassSession(supabase, { sessionId: row.id, batchName: ctx.batchName, subjectName: ctx.subjectName });
-      }
+      // One series-level cancel: single Zoom delete + one CANCEL email per mentor.
+      await cancelClassSeries(supabase, {
+        seriesId: ctx.seriesId,
+        batchName: ctx.batchName,
+        subjectName: ctx.subjectName,
+      });
     } else {
       await cancelClassSession(supabase, { sessionId, batchName: ctx.batchName, subjectName: ctx.subjectName });
     }

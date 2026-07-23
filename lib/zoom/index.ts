@@ -68,12 +68,17 @@ function zoomWeeklyDays(byWeekday: number[]): string {
   return byWeekday.map((d) => d + 1).join(",");
 }
 
+// Zoom wants yyyy-MM-ddTHH:mm:ssZ (no fractional seconds).
+function zoomUtc(d: Date): string {
+  return d.toISOString().replace(/\.\d{3}Z$/, "Z");
+}
+
 function recurrencePayload(rec: NonNullable<CreateMeetingInput["recurrence"]>) {
   return {
     type: 2, // weekly
     repeat_interval: 1,
     weekly_days: zoomWeeklyDays(rec.byWeekday),
-    ...(rec.until ? { end_date_time: rec.until.toISOString() } : { end_times: 12 }),
+    ...(rec.until ? { end_date_time: zoomUtc(rec.until) } : { end_times: 12 }),
   };
 }
 
@@ -92,7 +97,7 @@ export async function createMeeting(input: CreateMeetingInput): Promise<ZoomMeet
   const body = {
     topic: input.topic,
     type: input.recurrence ? 8 : 2, // 8 = recurring with fixed time, 2 = scheduled
-    start_time: input.start.toISOString(),
+    start_time: zoomUtc(input.start),
     duration: input.durationMin,
     timezone: input.timezone,
     agenda: input.agenda ?? undefined,
@@ -125,7 +130,7 @@ export async function updateMeeting(meetingId: string, patch: UpdateMeetingInput
   const body = {
     ...(patch.topic ? { topic: patch.topic } : {}),
     ...(patch.agenda !== undefined ? { agenda: patch.agenda ?? "" } : {}),
-    ...(patch.start ? { start_time: patch.start.toISOString() } : {}),
+    ...(patch.start ? { start_time: zoomUtc(patch.start) } : {}),
     ...(patch.durationMin ? { duration: patch.durationMin } : {}),
     ...(patch.timezone ? { timezone: patch.timezone } : {}),
     // type must accompany a recurrence change so Zoom keeps it a recurring meeting.

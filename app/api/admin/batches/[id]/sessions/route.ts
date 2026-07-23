@@ -8,7 +8,7 @@ import { createClassSchedule } from "@/lib/session-schedule";
 const DAY = 86_400_000;
 
 // GET /api/admin/batches/[id]/sessions?from=&to= — the batch's class sessions.
-// Defaults the window to [now-30d, now+120d] when not supplied.
+// Defaults to [now-14d, now+45d] (59d) — must stay within parseWindow's 62-day cap.
 export async function GET(req: NextRequest, { params }: { params: Promise<{ id: string }> }) {
   const { id } = await params;
   const ctx = await getAuthContext();
@@ -17,8 +17,8 @@ export async function GET(req: NextRequest, { params }: { params: Promise<{ id: 
 
   const url = new URL(req.url);
   const now = Date.now();
-  const from = url.searchParams.get("from") ?? new Date(now - 30 * DAY).toISOString();
-  const to = url.searchParams.get("to") ?? new Date(now + 120 * DAY).toISOString();
+  const from = url.searchParams.get("from") ?? new Date(now - 14 * DAY).toISOString();
+  const to = url.searchParams.get("to") ?? new Date(now + 45 * DAY).toISOString();
   const win = parseWindow(from, to);
   if (!win.ok) return NextResponse.json({ error: win.error }, { status: 400 });
 
