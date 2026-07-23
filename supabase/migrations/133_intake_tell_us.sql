@@ -88,7 +88,10 @@ begin
       nullif(r->>'city_village', ''), nullif(r->>'district', ''), nullif(r->>'state', ''),
       nullif(r->>'degree', ''), nullif(r->>'branch', ''), nullif(r->>'year_of_study', ''),
       (nullif(r->>'graduation_year', ''))::int, (nullif(r->>'cgpa', ''))::numeric,
-      coalesce((select array_agg(x) from jsonb_array_elements_text(coalesce(r->'preferred_category_slugs', '[]'::jsonb)) x), '{}'),
+      -- Cap Career Paths at 2 here (not just in the Excel normalizer) so the
+      -- single-student intake caller is also safe — student_profile enforces a
+      -- max-2 CHECK, and an over-cap array would abort the claim-time merge.
+      (coalesce((select array_agg(x) from jsonb_array_elements_text(coalesce(r->'preferred_category_slugs', '[]'::jsonb)) x), '{}'))[1:2],
       coalesce((select array_agg(x::uuid) from jsonb_array_elements_text(coalesce(r->'career_goal_ids', '[]'::jsonb)) x), '{}'),
       (nullif(r->>'primary_career_goal_id', ''))::uuid,
       coalesce(r->'skill_assessment', '{}'::jsonb),
@@ -190,7 +193,9 @@ begin
     year_of_study = coalesce(intk.year_of_study, sp.year_of_study),
     graduation_year = coalesce(intk.graduation_year, sp.graduation_year),
     cgpa          = coalesce(intk.cgpa, sp.cgpa),
-    preferred_category_slugs = case when intk.preferred_category_slugs = '{}' then sp.preferred_category_slugs else intk.preferred_category_slugs end,
+    -- Clamp to 2 (student_profile.preferred_category_slugs has a max-2 CHECK) so
+    -- a legacy/over-cap intake row can't abort the merge and lock the student out.
+    preferred_category_slugs = case when intk.preferred_category_slugs = '{}' then sp.preferred_category_slugs else intk.preferred_category_slugs[1:2] end,
     career_goal_ids = case when intk.career_goal_ids = '{}' then sp.career_goal_ids else intk.career_goal_ids end,
     primary_career_goal_id = coalesce(intk.primary_career_goal_id, sp.primary_career_goal_id),
     skill_assessment = case when intk.skill_assessment = '{}'::jsonb then sp.skill_assessment else intk.skill_assessment end,
@@ -220,7 +225,10 @@ begin
           if array_length(intk.skills, 1) >= 1 or array_length(intk.interests, 1) >= 1 then
             v_step := 5;
             -- Step 6 "Tell Us" — any of the imported optional fields counts.
+            -- (preferred_mentor_pref_id is retained from the legacy Step 6 so an
+            -- intake row from an older import isn't regressed from 6 back to 5.)
             if intk.biggest_challenge is not null
+               or intk.preferred_mentor_pref_id is not null
                or intk.is_first_generation is not null
                or intk.date_of_birth is not null
                or array_length(intk.languages, 1) >= 1

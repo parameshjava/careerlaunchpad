@@ -187,8 +187,12 @@ export async function buildTemplateWorkbook(
 // ---------------------------------------------------------------------------
 function cellText(v: ExcelJS.CellValue): string {
   if (v == null) return "";
-  // Excel date cells come back as JS Dates — normalize to YYYY-MM-DD (UTC) so a
-  // date the admin typed round-trips to the date_of_birth column unchanged.
+  // Excel date cells come back as JS Dates. Excel/Sheets store dates as
+  // timezone-less serials, which ExcelJS materializes at UTC midnight, so UTC
+  // extraction (toISOString) yields the displayed calendar day in ANY server
+  // timezone. Do NOT switch to local getDate()/getFullYear() — that reintroduces
+  // an off-by-one in negative-offset zones (verified: a UTC-midnight date reads
+  // as the previous day under America/Los_Angeles via local components).
   if (v instanceof Date) return v.toISOString().slice(0, 10);
   if (typeof v === "object") {
     if ("text" in v && typeof v.text === "string") return v.text;
@@ -234,7 +238,21 @@ export async function parseWorkbook(buffer: ArrayBuffer, refData: RefData): Prom
   return { collegeId, rows };
 }
 
-export type NormalizedRow = { row: number; errors: string[]; data: Record<string, unknown> };
+/** True only for a real calendar date in strict YYYY-MM-DD form. Date.parse
+ * silently rolls over day-overflow values (2024-02-30 → Mar 1, 2023-02-29 →
+ * Mar 1), which would then reach Postgres `::date` and abort the whole import
+ * batch — so round-trip the components and require an exact match. */
+function isValidYmd(s: string): boolean {
+  if (!/^\d{4}-\d{2}-\d{2}$/.test(s)) return false;
+  const [y, m, d] = s.split("-").map(Number);
+  const dt = new Date(Date.UTC(y, m - 1, d));
+  return dt.getUTCFullYear() === y && dt.getUTCMonth() === m - 1 && dt.getUTCDate() === d;
+}
+
+/** A normalized row. `errors` are BLOCKING (the import route rejects the row so
+ * no bad record/invite is created); `warnings` are advisory (the row is still
+ * imported, e.g. an over-cap Career Paths list that was truncated). */
+export type NormalizedRow = { row: number; errors: string[]; warnings: string[]; data: Record<string, unknown> };
 
 /** Resolve labels -> slugs into the shape import_student_intake() expects. */
 export function normalizeRows(
@@ -252,9 +270,17 @@ export function normalizeRows(
   const slugMaps: Record<string, Map<string, string>> = {};
 
   return parsed.map(({ row, cells }) => {
-    const data: Record<string, unknown> = { row, email: cells["email"] };
+    const email = (cells["email"] ?? "").trim();
+    const data: Record<string, unknown> = { row, email };
     const errors: string[] = [];
+    const warnings: string[] = [];
     const assessment: Record<string, number> = {};
+
+    // Email is the reconciliation key + the invite address, so a malformed value
+    // would create an unclaimable record and a bounced invite — validate it as a
+    // blocking error up front rather than letting the raw string through.
+    if (!email) errors.push("Email is required");
+    else if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) errors.push(`Email: '${email}' is not a valid address`);
 
     for (const [key, raw] of Object.entries(cells)) {
       if (key === "email") continue;
@@ -278,10 +304,10 @@ export function normalizeRows(
         }
         case "date": {
           // cellText already yields YYYY-MM-DD for real Excel date cells; also
-          // accept an admin-typed YYYY-MM-DD string.
+          // accept an admin-typed YYYY-MM-DD string. isValidYmd rejects
+          // day-overflow dates that Date.parse would silently roll over.
           const s = raw.slice(0, 10);
-          if (!/^\d{4}-\d{2}-\d{2}$/.test(s) || Number.isNaN(Date.parse(s)))
-            errors.push(`${col.header}: use YYYY-MM-DD`);
+          if (!isValidYmd(s)) errors.push(`${col.header}: use a valid date (YYYY-MM-DD)`);
           else data[key] = s;
           break;
         }
@@ -304,7 +330,9 @@ export function normalizeRows(
           // a downstream DB CHECK (student_profile.preferred_category_slugs) can't
           // reject the row when the imported student later claims their profile.
           if (col.max && slugs.length > col.max) {
-            errors.push(`${col.header}: choose at most ${col.max} (extra values ignored)`);
+            // Advisory (non-blocking): keep the row but truncate to the cap so a
+            // downstream DB CHECK can't reject the claimed profile.
+            warnings.push(`${col.header}: kept first ${col.max}, extra values ignored`);
             data[key] = slugs.slice(0, col.max);
           } else {
             data[key] = slugs;
@@ -322,6 +350,6 @@ export function normalizeRows(
 
     if (Object.keys(assessment).length) data["skill_assessment"] = assessment;
 
-    return { row, errors, data };
+    return { row, errors, warnings, data };
   });
 }

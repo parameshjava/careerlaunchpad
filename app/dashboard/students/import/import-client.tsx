@@ -12,7 +12,7 @@ import { CollegePicker, type College } from "@/components/students/college-picke
 
 type ReportRow = { row: number; email: string | null; result: string; invite?: string; warnings?: string[] };
 type Report = {
-  total: number; created: number; updated: number; invited: number; invite_skipped: number; rows: ReportRow[];
+  total: number; created: number; updated: number; invited: number; invite_skipped: number; rejected?: number; rows: ReportRow[];
 };
 
 export function ImportClient() {
@@ -38,9 +38,12 @@ export function ImportClient() {
         throw new Error(body.error ?? `Download failed (${res.status}).`);
       }
       const blob = await res.blob();
+      // The server always sends a college-specific filename via Content-Disposition;
+      // the static fallback is only for the unlikely case that header is stripped
+      // (avoids duplicating the server's name-sanitization logic here).
       const cd = res.headers.get("Content-Disposition") ?? "";
       const match = /filename="?([^";]+)"?/.exec(cd);
-      const filename = match?.[1] ?? `intake_${college.name.replace(/[^a-z0-9]+/gi, "_").slice(0, 40)}.xlsx`;
+      const filename = match?.[1] ?? "intake-template.xlsx";
       const url = URL.createObjectURL(blob);
       const a = document.createElement("a");
       a.href = url;
@@ -48,7 +51,10 @@ export function ImportClient() {
       document.body.appendChild(a);
       a.click();
       a.remove();
-      URL.revokeObjectURL(url);
+      // Defer the revoke: revoking synchronously right after click() can cancel
+      // the download on some browsers (notably iOS/mobile Safari) before they've
+      // committed it. A short timeout lets the download start first.
+      setTimeout(() => URL.revokeObjectURL(url), 10_000);
     } catch (e) {
       setDlError(e instanceof Error ? e.message : "Could not download the template.");
     } finally {
@@ -122,7 +128,15 @@ export function ImportClient() {
             <span>Updated: <b className="text-foreground">{report.updated}</b></span>
             <span>Invited: <b className="text-foreground">{report.invited}</b></span>
             <span>Invites skipped: <b className="text-foreground">{report.invite_skipped}</b></span>
+            {!!report.rejected && (
+              <span>Rejected: <b className="text-destructive">{report.rejected}</b></span>
+            )}
           </div>
+          {!!report.rejected && (
+            <p className="text-muted-foreground mt-2 text-sm">
+              {report.rejected} row{report.rejected === 1 ? "" : "s"} were not imported because of the errors noted below — fix them and re-upload (re-uploading updates existing rows).
+            </p>
+          )}
           <div className="mt-4 overflow-x-auto">
             <table className="w-full min-w-[480px] text-sm">
               <thead className="text-muted-foreground border-b text-left">
