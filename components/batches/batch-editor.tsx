@@ -7,7 +7,7 @@
 import { useCallback, useEffect, useMemo, useState } from "react";
 import { useRouter } from "next/navigation";
 import Link from "next/link";
-import { ArrowLeft, Copy, Loader2, Plus, Save, Trash2, X } from "lucide-react";
+import { ArrowLeft, Copy, Loader2, Lock, Plus, RotateCcw, Save, Trash2, X } from "lucide-react";
 
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
@@ -38,6 +38,7 @@ export function BatchEditor({ batchId, embedded = false }: { batchId?: string; e
   const router = useRouter();
   const editing = Boolean(batchId);
   const [saved, setSaved] = useState(false);
+  const [statusBusy, setStatusBusy] = useState(false);
 
   const [loading, setLoading] = useState(true);
   const [loadError, setLoadError] = useState("");
@@ -208,6 +209,30 @@ export function BatchEditor({ batchId, embedded = false }: { batchId?: string; e
     } catch (e) {
       setFormError((e as Error).message);
       setSaving(false);
+    }
+  }
+
+  // Deliberate lifecycle action (lives here in the Details tab, not the list, so
+  // it can't be clicked by accident). Status-only PATCH, mirrors the old list.
+  async function changeStatus(next: BatchStatus) {
+    if (next === "closed" && !confirm("Close this batch? No new students can be enrolled while it's closed.")) return;
+    setFormError("");
+    setStatusBusy(true);
+    try {
+      const res = await fetch(`/api/admin/batches/${batchId}`, {
+        method: "PATCH",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ status: next }),
+      });
+      const json = await res.json();
+      if (!res.ok) throw new Error(json.error ?? "Could not update status");
+      setStatus(next);
+      invalidate(`/api/admin/batches/${batchId}`);
+      router.refresh();
+    } catch (e) {
+      setFormError((e as Error).message);
+    } finally {
+      setStatusBusy(false);
     }
   }
 
@@ -464,16 +489,35 @@ export function BatchEditor({ batchId, embedded = false }: { batchId?: string; e
         {formError && <p className="text-destructive text-sm">{formError}</p>}
         {saved && !formError && <p className="text-sm text-emerald-600">Saved.</p>}
 
-        <div className="flex items-center justify-end gap-2">
-          {!embedded && (
-            <Button variant="outline" asChild>
-              <Link href="/dashboard/batches">Cancel</Link>
+        <div className="flex flex-wrap items-center gap-2">
+          {editing &&
+            (status === "closed" ? (
+              <Button variant="outline" onClick={() => changeStatus("open")} disabled={statusBusy}>
+                {statusBusy ? <Loader2 className="animate-spin" /> : <RotateCcw />}
+                Reopen batch
+              </Button>
+            ) : status !== "cancelled" ? (
+              <Button
+                variant="outline"
+                onClick={() => changeStatus("closed")}
+                disabled={statusBusy}
+                className="text-destructive hover:text-destructive"
+              >
+                {statusBusy ? <Loader2 className="animate-spin" /> : <Lock />}
+                Close batch
+              </Button>
+            ) : null)}
+          <div className="ml-auto flex gap-2">
+            {!embedded && (
+              <Button variant="outline" asChild>
+                <Link href="/dashboard/batches">Cancel</Link>
+              </Button>
+            )}
+            <Button onClick={save} disabled={saving}>
+              {saving ? <Loader2 className="animate-spin" /> : <Save />}
+              {editing ? "Save changes" : "Create batch"}
             </Button>
-          )}
-          <Button onClick={save} disabled={saving}>
-            {saving ? <Loader2 className="animate-spin" /> : <Save />}
-            {editing ? "Save changes" : "Create batch"}
-          </Button>
+          </div>
         </div>
       </div>
     </div>

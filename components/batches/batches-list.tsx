@@ -1,12 +1,11 @@
 "use client";
 
-// Batches list (issue #49, Phase 3). Rows link to the editor; quick actions
-// Close a running batch or reopen a closed one via PATCH { status }. Talks only
-// to /api/admin/batches*.
-import { useState } from "react";
+// Batches list (issue #49, Phase 3). Each row opens the batch workspace on click
+// (details, subjects, schedule, students — and Close lives there, so it can't be
+// hit by accident from the list).
 import Link from "next/link";
 import { useRouter } from "next/navigation";
-import { Lock, Plus, RotateCcw } from "lucide-react";
+import { Plus } from "lucide-react";
 
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
@@ -25,27 +24,6 @@ const ACTIVE = new Set(["open", "running"]);
 
 export function BatchesList({ batches }: { batches: BatchListRow[] }) {
   const router = useRouter();
-  const [busyId, setBusyId] = useState<string | null>(null);
-  const [error, setError] = useState("");
-
-  async function setStatus(b: BatchListRow, status: "closed" | "open") {
-    setBusyId(b.id);
-    setError("");
-    try {
-      const res = await fetch(`/api/admin/batches/${b.id}`, {
-        method: "PATCH",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ status }),
-      });
-      const json = await res.json();
-      if (!res.ok) throw new Error(json.error ?? "Update failed");
-      router.refresh();
-    } catch (e) {
-      setError((e as Error).message);
-    } finally {
-      setBusyId(null);
-    }
-  }
 
   return (
     <div className="grid gap-4">
@@ -59,8 +37,6 @@ export function BatchesList({ batches }: { batches: BatchListRow[] }) {
           </Link>
         </Button>
       </div>
-
-      {error && <p className="text-destructive text-sm">{error}</p>}
 
       {batches.length === 0 ? (
         <div className="text-muted-foreground bg-muted/40 rounded-lg border px-4 py-10 text-center text-sm">
@@ -79,18 +55,28 @@ export function BatchesList({ batches }: { batches: BatchListRow[] }) {
                 <TableHead className="text-center">Students</TableHead>
                 <TableHead className="text-right">Fee</TableHead>
                 <TableHead>Status</TableHead>
-                <TableHead className="text-right">Actions</TableHead>
               </TableRow>
             </TableHeader>
             <TableBody>
               {batches.map((b) => {
-                const closable = ACTIVE.has(b.status) || b.status === "draft";
+                const open = () => router.push(`/dashboard/batches/${b.id}`);
                 return (
-                  <TableRow key={b.id}>
+                  <TableRow
+                    key={b.id}
+                    onClick={open}
+                    onKeyDown={(e) => {
+                      if (e.key === "Enter" || e.key === " ") {
+                        e.preventDefault();
+                        open();
+                      }
+                    }}
+                    tabIndex={0}
+                    role="button"
+                    aria-label={`Open ${b.name}`}
+                    className="hover:bg-muted/50 focus-visible:bg-muted/50 cursor-pointer outline-none"
+                  >
                     <TableCell>
-                      <Link href={`/dashboard/batches/${b.id}`} className="font-medium hover:underline">
-                        {b.name}
-                      </Link>
+                      <div className="font-medium">{b.name}</div>
                       <div className="text-muted-foreground text-xs">{b.code}</div>
                     </TableCell>
                     <TableCell className="text-muted-foreground">{b.courseName ?? "—"}</TableCell>
@@ -103,33 +89,6 @@ export function BatchesList({ batches }: { batches: BatchListRow[] }) {
                       <Badge variant={ACTIVE.has(b.status) ? "default" : "secondary"}>
                         {BATCH_STATUS_LABELS[b.status]}
                       </Badge>
-                    </TableCell>
-                    <TableCell className="text-right">
-                      <div className="flex justify-end gap-1">
-                        <Button variant="outline" size="sm" asChild>
-                          <Link href={`/dashboard/batches/${b.id}#students`}>Students</Link>
-                        </Button>
-                        <Button variant="outline" size="sm" asChild>
-                          <Link href={`/dashboard/batches/${b.id}#subjects`}>Subjects</Link>
-                        </Button>
-                        <Button variant="outline" size="sm" asChild>
-                          <Link href={`/dashboard/batches/${b.id}#schedule`}>Schedule</Link>
-                        </Button>
-                        <Button variant="outline" size="sm" asChild>
-                          <Link href={`/dashboard/batches/${b.id}`}>Open</Link>
-                        </Button>
-                        {b.status === "closed" ? (
-                          <Button variant="ghost" size="sm" disabled={busyId === b.id} onClick={() => setStatus(b, "open")}>
-                            <RotateCcw /> Reopen
-                          </Button>
-                        ) : (
-                          closable && (
-                            <Button variant="ghost" size="sm" disabled={busyId === b.id} onClick={() => setStatus(b, "closed")}>
-                              <Lock /> Close
-                            </Button>
-                          )
-                        )}
-                      </div>
                     </TableCell>
                   </TableRow>
                 );
