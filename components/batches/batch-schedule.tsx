@@ -6,7 +6,7 @@
 // /api/admin/batches/[id]/{subjects,sessions}.
 import { useCallback, useEffect, useMemo, useState } from "react";
 import Link from "next/link";
-import { ArrowLeft, CalendarPlus, Loader2, Trash2, Video } from "lucide-react";
+import { ArrowLeft, CalendarPlus, Loader2, Pencil, Trash2, Video, X } from "lucide-react";
 
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
@@ -61,6 +61,9 @@ export function BatchSchedule({ batchId }: { batchId: string }) {
   const [formError, setFormError] = useState("");
   const [notice, setNotice] = useState("");
 
+  // Editing an existing series (null = creating a new class).
+  const [editingSeriesId, setEditingSeriesId] = useState<string | null>(null);
+
   const loadSessions = useCallback(async () => {
     const res = await fetch(`/api/admin/batches/${batchId}/sessions`);
     const json = await res.json();
@@ -90,11 +93,59 @@ export function BatchSchedule({ batchId }: { batchId: string }) {
   const toggleWeekday = (dow: number) =>
     setByWeekday((prev) => (prev.includes(dow) ? prev.filter((d) => d !== dow) : [...prev, dow]));
 
+  function resetForm() {
+    setEditingSeriesId(null);
+    setTitle("");
+    setStartLocal("");
+    setRepeat(false);
+    setByWeekday([]);
+    setUntil("");
+    setStartsOn("");
+    setFormError("");
+  }
+
+  async function startEditSeries(seriesId: string) {
+    setFormError("");
+    setNotice("");
+    try {
+      const res = await fetch(`/api/admin/batches/${batchId}/series/${seriesId}`);
+      const json = await res.json();
+      if (!res.ok) throw new Error(json.error ?? "Could not load the series");
+      const s = json.series;
+      setEditingSeriesId(seriesId);
+      setSubjectId(s.subjectId);
+      setTitle(s.title ?? "");
+      setDeliveryMode(s.deliveryMode ?? "online");
+      setRepeat(true);
+      setByWeekday(s.byWeekday ?? []);
+      setTimeOfDay(s.timeOfDay ?? "10:00");
+      setDurationMin(String(s.durationMin ?? 90));
+      setStartsOn(s.startsOn ?? "");
+      setUntil(s.until ?? "");
+      setCreateZoom(s.hasZoom || s.deliveryMode !== "offline");
+      if (typeof window !== "undefined") window.scrollTo({ top: 0, behavior: "smooth" });
+    } catch (e) {
+      setFormError((e as Error).message);
+    }
+  }
+
   const online = deliveryMode !== "offline";
   const upcoming = useMemo(
     () => sessions.filter((s) => s.status !== "cancelled").sort((a, b) => a.startsAt.localeCompare(b.startsAt)),
     [sessions]
   );
+  // The earliest occurrence of each series carries the "Edit series" action.
+  const seriesAnchorIds = useMemo(() => {
+    const seen = new Set<string>();
+    const anchors = new Set<string>();
+    for (const s of upcoming) {
+      if (s.seriesId && !seen.has(s.seriesId)) {
+        seen.add(s.seriesId);
+        anchors.add(s.id);
+      }
+    }
+    return anchors;
+  }, [upcoming]);
 
   async function submit() {
     setFormError("");
@@ -105,8 +156,9 @@ export function BatchSchedule({ batchId }: { batchId: string }) {
     const dur = Number(durationMin);
     if (!Number.isInteger(dur) || dur < 1) return setFormError("Enter a valid duration in minutes.");
 
+    const editing = Boolean(editingSeriesId);
     let payload: Record<string, unknown>;
-    if (repeat) {
+    if (repeat || editing) {
       if (byWeekday.length === 0) return setFormError("Pick at least one weekday.");
       if (!startsOn) return setFormError("Pick a start date for the repeat.");
       payload = {
@@ -126,20 +178,19 @@ export function BatchSchedule({ batchId }: { batchId: string }) {
 
     setSaving(true);
     try {
-      const res = await fetch(`/api/admin/batches/${batchId}/sessions`, {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify(payload),
-      });
-      const json = await res.json();
-      if (!res.ok) throw new Error(json.error ?? "Could not schedule the class");
-      setNotice(
-        json.meetingWarning
-          ? `Class scheduled — note: ${json.meetingWarning}`
-          : `Class scheduled${json.invitedMentorIds?.length ? ` — ${json.invitedMentorIds.length} mentor invite(s) sent` : ""}.`
+      const res = await fetch(
+        editing ? `/api/admin/batches/${batchId}/series/${editingSeriesId}` : `/api/admin/batches/${batchId}/sessions`,
+        {
+          method: editing ? "PATCH" : "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify(payload),
+        }
       );
-      setTitle("");
-      setStartLocal("");
+      const json = await res.json();
+      if (!res.ok) throw new Error(json.error ?? (editing ? "Could not update the series" : "Could not schedule the class"));
+      const warn = json.meetingWarning ? ` — note: ${json.meetingWarning}` : "";
+      setNotice(editing ? `Series updated${warn}.` : `Class scheduled${warn}.`);
+      resetForm();
       await loadSessions();
     } catch (e) {
       setFormError((e as Error).message);
@@ -201,14 +252,19 @@ export function BatchSchedule({ batchId }: { batchId: string }) {
         </Card>
       ) : (
         <Card className="mb-6">
-          <CardHeader>
-            <CardTitle className="text-base">Schedule a class</CardTitle>
+          <CardHeader className="flex-row items-center justify-between gap-2 space-y-0">
+            <CardTitle className="text-base">{editingSeriesId ? "Edit series" : "Schedule a class"}</CardTitle>
+            {editingSeriesId && (
+              <Button variant="ghost" size="sm" onClick={resetForm}>
+                <X /> Cancel edit
+              </Button>
+            )}
           </CardHeader>
           <CardContent className="grid gap-4">
             <div className="grid gap-4 sm:grid-cols-2">
               <div className="grid gap-1.5">
                 <Label>Subject</Label>
-                <Select value={subjectId || undefined} onValueChange={setSubjectId}>
+                <Select value={subjectId || undefined} onValueChange={setSubjectId} disabled={Boolean(editingSeriesId)}>
                   <SelectTrigger>
                     <SelectValue placeholder="Pick a subject" />
                   </SelectTrigger>
@@ -248,11 +304,15 @@ export function BatchSchedule({ batchId }: { batchId: string }) {
             </div>
 
             <label className="flex items-center gap-2 text-sm">
-              <Checkbox checked={repeat} onCheckedChange={(v) => setRepeat(Boolean(v))} />
+              <Checkbox
+                checked={repeat || Boolean(editingSeriesId)}
+                disabled={Boolean(editingSeriesId)}
+                onCheckedChange={(v) => setRepeat(Boolean(v))}
+              />
               Repeat weekly
             </label>
 
-            {!repeat ? (
+            {!repeat && !editingSeriesId ? (
               <div className="grid gap-1.5">
                 <Label>Date &amp; time (IST)</Label>
                 <DateTimePicker value={startLocal} onChange={setStartLocal} />
@@ -317,7 +377,7 @@ export function BatchSchedule({ batchId }: { batchId: string }) {
             <div className="flex justify-end">
               <Button onClick={submit} disabled={saving}>
                 {saving ? <Loader2 className="animate-spin" /> : <CalendarPlus />}
-                Schedule class
+                {editingSeriesId ? "Save series" : "Schedule class"}
               </Button>
             </div>
           </CardContent>
@@ -339,6 +399,7 @@ export function BatchSchedule({ batchId }: { batchId: string }) {
                   <div className="flex flex-wrap items-center gap-2">
                     <span className="font-medium">{s.title}</span>
                     {s.subjectName && <Badge variant="secondary">{s.subjectName}</Badge>}
+                    {s.seriesId && <Badge variant="outline">Weekly</Badge>}
                     {s.status === "live" && <Badge>Live</Badge>}
                     {s.meetingStatus === "failed" && <Badge variant="destructive">No Zoom</Badge>}
                   </div>
@@ -354,13 +415,18 @@ export function BatchSchedule({ batchId }: { batchId: string }) {
                     </a>
                   </Button>
                 )}
+                {s.seriesId && seriesAnchorIds.has(s.id) && (
+                  <Button variant="outline" size="sm" onClick={() => startEditSeries(s.seriesId!)}>
+                    <Pencil /> Edit series
+                  </Button>
+                )}
                 <Button
                   variant="ghost"
                   size="sm"
                   className="text-muted-foreground hover:text-destructive"
-                  onClick={() => cancel(s.id, false)}
+                  onClick={() => cancel(s.id, Boolean(s.seriesId))}
                 >
-                  <Trash2 /> Cancel
+                  <Trash2 /> {s.seriesId ? "Cancel series" : "Cancel"}
                 </Button>
               </div>
             ))

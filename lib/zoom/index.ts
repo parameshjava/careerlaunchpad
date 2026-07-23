@@ -116,6 +116,8 @@ export type UpdateMeetingInput = {
   durationMin?: number;
   timezone?: string;
   altHostEmails?: string[];
+  /** Present ⇒ change the weekly recurrence (a series edit). */
+  recurrence?: { byWeekday: number[]; until?: Date | null } | null;
 };
 
 export async function updateMeeting(meetingId: string, patch: UpdateMeetingInput): Promise<void> {
@@ -126,6 +128,8 @@ export async function updateMeeting(meetingId: string, patch: UpdateMeetingInput
     ...(patch.start ? { start_time: patch.start.toISOString() } : {}),
     ...(patch.durationMin ? { duration: patch.durationMin } : {}),
     ...(patch.timezone ? { timezone: patch.timezone } : {}),
+    // type must accompany a recurrence change so Zoom keeps it a recurring meeting.
+    ...(patch.recurrence ? { type: 8, recurrence: recurrencePayload(patch.recurrence) } : {}),
     ...(patch.altHostEmails ? { settings: meetingSettings(patch.altHostEmails) } : {}),
   };
   const res = await fetch(`https://api.zoom.us/v2/meetings/${meetingId}`, {

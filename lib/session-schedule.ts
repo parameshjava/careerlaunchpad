@@ -218,6 +218,145 @@ export async function createClassSchedule(
   return { seriesId, sessionIds, invitedMentorIds, meetingWarning };
 }
 
+type SeriesRow = {
+  id: string;
+  batch_id: string;
+  subject_id: string;
+  zoom_meeting_id: string | null;
+  join_url: string | null;
+  start_url: string | null;
+};
+
+/** Edit a whole recurring series: persist the new spec, update (or create) the
+ * recurring Zoom meeting, re-expand FUTURE non-overridden occurrences, and
+ * re-send the recurring invite (METHOD:REQUEST) to the subject's mentors. Past
+ * and hand-edited occurrences are left untouched (applyTo = "future"). */
+export async function updateClassSeries(
+  supabase: SupabaseClient,
+  args: { seriesId: string; batchName: string; subjectName: string; payload: SessionPayload; userId: string }
+): Promise<ScheduleResult> {
+  const { seriesId, batchName, subjectName, payload } = args;
+  const rec = payload.recurrence;
+  if (!rec) throw new Error("A series edit needs a weekly repeat.");
+
+  const { data: existing } = await supabase
+    .from("batch_session_series")
+    .select("id, batch_id, subject_id, zoom_meeting_id, join_url, start_url")
+    .eq("id", seriesId)
+    .maybeSingle();
+  if (!existing) throw new Error("Series not found");
+  const series = existing as SeriesRow;
+
+  const tz = rec.timezone;
+  const firstDate = firstOccurrenceDate(rec.startsOn, rec.byWeekday);
+  const start = zonedToUtc(firstDate, rec.timeOfDay, tz);
+  const end = new Date(start.getTime() + rec.durationMin * 60_000);
+  const untilDate = rec.until ? new Date(`${rec.until}T23:59:59Z`) : null;
+  const mentors = await mentorsOf(supabase, series.batch_id, series.subject_id);
+  const altHostEmails = mentors.map((m) => m.email).filter(Boolean);
+
+  // Update (or create) the recurring Zoom meeting.
+  let zoomMeetingId = series.zoom_meeting_id;
+  let joinUrl = payload.meetingUrl ?? series.join_url;
+  let startUrl = series.start_url;
+  let meetingWarning: string | null = null;
+
+  if (payload.deliveryMode !== "offline" && payload.createZoomMeeting && zoom.zoomConfigured()) {
+    try {
+      if (zoomMeetingId) {
+        await zoom.updateMeeting(zoomMeetingId, {
+          topic: `${subjectName}: ${payload.title}`,
+          agenda: payload.description,
+          start,
+          durationMin: rec.durationMin,
+          timezone: tz,
+          altHostEmails,
+          recurrence: { byWeekday: rec.byWeekday, until: untilDate },
+        });
+      } else {
+        const m = await zoom.createMeeting({
+          topic: `${subjectName}: ${payload.title}`,
+          agenda: payload.description,
+          start,
+          durationMin: rec.durationMin,
+          timezone: tz,
+          altHostEmails,
+          recurrence: { byWeekday: rec.byWeekday, until: untilDate },
+        });
+        zoomMeetingId = m.meetingId;
+        joinUrl = m.joinUrl;
+        startUrl = m.startUrl;
+      }
+    } catch (e) {
+      meetingWarning = `Zoom update failed: ${(e as Error).message}`;
+    }
+  }
+
+  const { error: uerr } = await supabase
+    .from("batch_session_series")
+    .update({
+      title: payload.title,
+      description: payload.description,
+      delivery_mode: payload.deliveryMode,
+      by_weekday: rec.byWeekday,
+      time_of_day: rec.timeOfDay,
+      duration_min: rec.durationMin,
+      timezone: tz,
+      starts_on: rec.startsOn,
+      until: rec.until,
+      zoom_meeting_id: zoomMeetingId,
+      join_url: joinUrl,
+      start_url: startUrl,
+      updated_at: new Date().toISOString(),
+    })
+    .eq("id", seriesId);
+  if (uerr) throw new Error(uerr.message);
+
+  // Regenerate future, non-overridden occurrences from the new spec.
+  await supabase.rpc("expand_batch_session_series", { p_series_id: seriesId });
+  const { data: occ } = await supabase
+    .from("batch_session")
+    .select("id")
+    .eq("series_id", seriesId)
+    .gte("starts_at", new Date().toISOString())
+    .order("starts_at");
+  const sessionIds = (occ ?? []).map((r) => (r as { id: string }).id);
+
+  // Re-send the recurring invite (UPDATE) to the subject's mentors.
+  const invitedMentorIds: string[] = [];
+  const uid = `series-${seriesId}@careerlaunchpad.ai`;
+  const rrule = weeklyRrule(rec.byWeekday, untilDate);
+  const label = whenLabel(start, end, tz) + " (weekly)";
+  const seq = nextSequence();
+
+  for (const m of mentors) {
+    if (!m.email) continue;
+    const ics = buildClassIcs({
+      uid, sequence: seq, method: "REQUEST" as IcsMethod,
+      title: `${subjectName}: ${payload.title}`, description: payload.description,
+      joinUrl, start, end, rrule, organizer: ORGANIZER, attendee: { name: m.full_name, email: m.email },
+    });
+    const res = await sendClassInviteEmail({
+      to: m.email, mentorName: m.full_name, batchName, subjectName,
+      title: payload.title, whenLabel: label, joinUrl, ics, method: "REQUEST",
+    });
+    invitedMentorIds.push(m.mentor_id);
+    if (sessionIds.length) {
+      await supabase.from("batch_session_invite").upsert(
+        sessionIds.map((sid) => ({
+          session_id: sid, mentor_id: m.mentor_id, ics_uid: uid,
+          status: res.sent ? "sent" : "failed",
+          zoom_alt_host: Boolean(zoomMeetingId),
+          email_sent_at: res.sent ? new Date().toISOString() : null, last_error: res.error ?? null,
+        })),
+        { onConflict: "session_id,mentor_id" }
+      );
+    }
+  }
+
+  return { seriesId, sessionIds, invitedMentorIds, meetingWarning };
+}
+
 type SessionRow = {
   id: string;
   batch_id: string;

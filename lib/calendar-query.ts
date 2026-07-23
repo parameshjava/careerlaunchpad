@@ -13,6 +13,7 @@ export type CalendarSession = {
   batchName: string | null;
   subjectId: string;
   subjectName: string | null;
+  seriesId: string | null;
   title: string;
   description: string | null;
   startsAt: string;
@@ -45,6 +46,7 @@ type SessionRow = {
   id: string;
   batch_id: string;
   subject_id: string;
+  series_id: string | null;
   title: string;
   description: string | null;
   starts_at: string;
@@ -70,7 +72,7 @@ export async function fetchCalendarSessions(
   let q = supabase
     .from("batch_session")
     .select(
-      "id, batch_id, subject_id, title, description, starts_at, ends_at, delivery_mode, status, join_url, meeting_status, batch:batch_id(name)"
+      "id, batch_id, subject_id, series_id, title, description, starts_at, ends_at, delivery_mode, status, join_url, meeting_status, batch:batch_id(name)"
     )
     .gte("starts_at", window.from)
     .lt("starts_at", window.to)
@@ -109,6 +111,7 @@ export async function fetchCalendarSessions(
       batchName: one<{ name: string | null }>(r.batch)?.name ?? null,
       subjectId: r.subject_id,
       subjectName: subjectName.get(key) ?? null,
+      seriesId: r.series_id,
       title: r.title,
       description: r.description,
       startsAt: r.starts_at,

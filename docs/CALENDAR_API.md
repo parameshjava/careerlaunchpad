@@ -232,7 +232,7 @@ to mentors. `?scope=series` cancels all future occurrences.
 | `app/api/calendar/sessions/route.ts` | student self-view `GET` — **done** |
 | `app/api/admin/batches/[id]/sessions/route.ts` | staff `GET` + `POST` — **done** |
 | `app/api/admin/batches/[id]/sessions/[sessionId]/route.ts` | staff `PATCH` + `DELETE` (+ `?scope=series`) — **done** |
-| `app/api/admin/batches/[id]/series/[seriesId]/route.ts` | series `PATCH` — *deferred* |
+| `app/api/admin/batches/[id]/series/[seriesId]/route.ts` | series `GET` (prefill) + `PATCH` (re-expands future, non-overridden occurrences; updates Zoom + re-invites) — **done** |
 | `lib/session-write.ts` | shared payload parser/validator + types — **done** |
 | `lib/session-schedule.ts` | create/update/cancel orchestration (Zoom + DB + invites) — **done** |
 | `lib/calendar-query.ts` | session fetch + subject/mentor join for both surfaces — **done** |
