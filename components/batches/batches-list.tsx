@@ -110,6 +110,12 @@ export function BatchesList({ batches }: { batches: BatchListRow[] }) {
                           <Link href={`/dashboard/batches/${b.id}/enrollments`}>Students</Link>
                         </Button>
                         <Button variant="outline" size="sm" asChild>
+                          <Link href={`/dashboard/batches/${b.id}/subjects`}>Subjects</Link>
+                        </Button>
+                        <Button variant="outline" size="sm" asChild>
+                          <Link href={`/dashboard/batches/${b.id}/schedule`}>Schedule</Link>
+                        </Button>
+                        <Button variant="outline" size="sm" asChild>
                           <Link href={`/dashboard/batches/${b.id}`}>Edit</Link>
                         </Button>
                         {b.status === "closed" ? (

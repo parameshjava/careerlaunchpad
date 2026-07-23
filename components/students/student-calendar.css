@@ -1,0 +1,184 @@
+/* Custom student class calendar (issue #64) — the time-grid primitives that are
+   awkward in utility classes (repeating gridlines, absolutely-positioned event
+   cards, the "now" line, the live pulse). Everything is scoped under `.slc` and
+   themed through the app's shadcn tokens so it follows light/dark automatically.
+   Layout chrome (toolbar, header, cards) is Tailwind in the component. */
+
+/* --slc-rowh is fixed (must equal ROW_H in the component so JS event positions
+   line up with the CSS gridlines); only the time gutter narrows on phones. */
+.slc {
+  --slc-rowh: 44px;
+  --slc-gutter: 60px;
+}
+@media (max-width: 860px) {
+  .slc {
+    --slc-gutter: 52px;
+  }
+}
+
+/* Column headers */
+.slc-daynames {
+  display: grid;
+  grid-template-columns: var(--slc-gutter) repeat(var(--slc-cols), minmax(0, 1fr));
+}
+.slc-body {
+  display: grid;
+  grid-template-columns: var(--slc-gutter) repeat(var(--slc-cols), minmax(0, 1fr));
+  position: relative;
+}
+
+/* Time gutter */
+.slc-tick {
+  height: var(--slc-rowh);
+  position: relative;
+  border-right: 1px solid var(--border);
+}
+.slc-tick > span {
+  position: absolute;
+  top: -0.6em;
+  right: 8px;
+  font-size: 0.68rem;
+  color: var(--muted-foreground);
+  background: var(--card);
+  padding: 0 2px;
+  font-variant-numeric: tabular-nums;
+}
+
+/* Day columns: half-hour + hour gridlines drawn with the theme border colour */
+.slc-col {
+  position: relative;
+  border-right: 1px solid var(--border);
+  background-image:
+    repeating-linear-gradient(
+      to bottom,
+      transparent 0,
+      transparent calc(var(--slc-rowh) - 1px),
+      color-mix(in oklch, var(--border) 55%, transparent) calc(var(--slc-rowh) - 1px),
+      color-mix(in oklch, var(--border) 55%, transparent) var(--slc-rowh)
+    ),
+    repeating-linear-gradient(
+      to bottom,
+      transparent 0,
+      transparent calc(var(--slc-rowh) * 2 - 1px),
+      var(--border) calc(var(--slc-rowh) * 2 - 1px),
+      var(--border) calc(var(--slc-rowh) * 2)
+    );
+}
+.slc-col.slc-today {
+  background-color: color-mix(in oklch, var(--brand-blue) 5%, transparent);
+}
+
+/* Now indicator */
+.slc-now {
+  position: absolute;
+  left: 0;
+  right: 0;
+  height: 0;
+  border-top: 2px solid #ef4444;
+  z-index: 5;
+}
+.slc-now::before {
+  content: "";
+  position: absolute;
+  left: -3px;
+  top: -5px;
+  width: 8px;
+  height: 8px;
+  border-radius: 9999px;
+  background: #ef4444;
+}
+
+/* Event card */
+.slc-ev {
+  position: absolute;
+  border-radius: 9px;
+  padding: 5px 8px;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  gap: 1px;
+  cursor: pointer;
+  z-index: 3;
+  border: 1px solid color-mix(in oklch, var(--slc-hue) 32%, transparent);
+  border-left: 3px solid var(--slc-hue);
+  background: color-mix(in oklch, var(--slc-hue) 14%, var(--card));
+  transition: transform 0.12s ease, box-shadow 0.12s ease;
+}
+.slc-ev:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 8px 24px -12px rgba(15, 23, 42, 0.4);
+  z-index: 6;
+}
+.slc-ev-title {
+  font-size: 0.76rem;
+  font-weight: 700;
+  line-height: 1.15;
+  letter-spacing: -0.01em;
+  color: var(--foreground);
+}
+.slc-ev-meta {
+  font-size: 0.67rem;
+  color: var(--muted-foreground);
+  font-variant-numeric: tabular-nums;
+}
+.slc-ev-join {
+  align-self: flex-start;
+  margin-top: 2px;
+  font-size: 0.66rem;
+  font-weight: 700;
+  padding: 2px 7px;
+  border-radius: 6px;
+  color: #fff;
+  background: var(--slc-hue);
+  border: 0;
+  cursor: pointer;
+}
+.slc-ev.slc-completed {
+  opacity: 0.6;
+}
+.slc-ev.slc-live {
+  box-shadow: 0 0 0 2px color-mix(in oklch, var(--slc-hue) 55%, transparent);
+}
+.slc-live-dot {
+  width: 7px;
+  height: 7px;
+  border-radius: 9999px;
+  background: var(--slc-hue);
+  animation: slc-pulse 1.4s infinite;
+}
+@keyframes slc-pulse {
+  0% { box-shadow: 0 0 0 0 color-mix(in oklch, var(--slc-hue) 70%, transparent); }
+  70% { box-shadow: 0 0 0 6px transparent; }
+  100% { box-shadow: 0 0 0 0 transparent; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .slc-ev { transition: none; }
+  .slc-live-dot { animation: none; }
+}
+
+/* Month grid */
+.slc-month {
+  display: grid;
+  grid-template-columns: repeat(7, minmax(0, 1fr));
+}
+.slc-mcell {
+  min-height: 96px;
+  border-right: 1px solid var(--border);
+  border-bottom: 1px solid var(--border);
+  padding: 4px;
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+}
+.slc-mchip {
+  font-size: 0.66rem;
+  font-weight: 600;
+  padding: 1px 6px;
+  border-radius: 6px;
+  color: #fff;
+  background: var(--slc-hue);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  cursor: pointer;
+}

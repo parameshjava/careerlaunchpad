@@ -19,7 +19,8 @@ export type NavIcon =
   | "exams"
   | "college"
   | "courses"
-  | "fees";
+  | "fees"
+  | "calendar";
 
 /** Live badge keys understood by SidebarNav (resolved to a client widget). */
 export type NavBadge = "exams";
@@ -176,6 +177,8 @@ export function buildNav(ctx: AuthContext, opts: { studentApproved?: boolean } =
       { label: "Courses", href: "/student/courses", icon: "courses" },
       { label: "My fees", href: "/student/fees", icon: "fees" },
     ];
+    if (studentApproved)
+      items.push({ label: "My calendar", href: "/student/calendar", icon: "calendar" });
     if (can(ctx, "exam.attempt.take") && studentApproved)
       items.push({ label: "My exams", href: "/student/exams", icon: "exams", badge: "exams" });
     if (canEvaluate) items.push(evalItem);

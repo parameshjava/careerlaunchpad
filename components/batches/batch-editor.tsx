@@ -7,7 +7,7 @@
 import { useCallback, useEffect, useMemo, useState } from "react";
 import { useRouter } from "next/navigation";
 import Link from "next/link";
-import { ArrowLeft, Copy, Loader2, Plus, Save, Trash2, X } from "lucide-react";
+import { ArrowLeft, BookOpen, CalendarPlus, Copy, Loader2, Plus, Save, Trash2, X } from "lucide-react";
 
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
@@ -227,11 +227,27 @@ export function BatchEditor({ batchId }: { batchId?: string }) {
             to close.
           </p>
         </div>
-        <Button variant="outline" asChild>
-          <Link href="/dashboard/batches">
-            <ArrowLeft /> Back
-          </Link>
-        </Button>
+        <div className="flex flex-wrap justify-end gap-2">
+          {editing && (
+            <>
+              <Button variant="outline" asChild>
+                <Link href={`/dashboard/batches/${batchId}/subjects`}>
+                  <BookOpen /> Subjects &amp; mentors
+                </Link>
+              </Button>
+              <Button variant="outline" asChild>
+                <Link href={`/dashboard/batches/${batchId}/schedule`}>
+                  <CalendarPlus /> Schedule
+                </Link>
+              </Button>
+            </>
+          )}
+          <Button variant="outline" asChild>
+            <Link href="/dashboard/batches">
+              <ArrowLeft /> Back
+            </Link>
+          </Button>
+        </div>
       </header>
 
       <div className="grid gap-6">
