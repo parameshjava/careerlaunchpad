@@ -437,12 +437,15 @@ export function BlueprintEditor({
         {label === "Exam details" && (
           <div className="grid gap-4 sm:grid-cols-2">
             <div className="grid gap-1.5 sm:col-span-2">
-              <Label htmlFor="title">Title</Label>
+              <Label htmlFor="title">
+                Title <span className="text-destructive">*</span>
+              </Label>
               <Input
                 id="title"
                 value={title}
                 onChange={(e) => setTitle(e.target.value)}
                 placeholder="ICET Mock — Batch 2026"
+                aria-required="true"
               />
             </div>
             <div className="grid gap-1.5">
@@ -909,7 +912,11 @@ export function BlueprintEditor({
             )}
 
             {label === "Exam details" && (
-              <Button onClick={() => setStep((s) => Math.min(lastStep, s + 1))} className={PRIMARY_BTN}>
+              <Button
+                onClick={() => setStep((s) => Math.min(lastStep, s + 1))}
+                disabled={!title.trim()}
+                className={PRIMARY_BTN}
+              >
                 Next →
               </Button>
             )}
