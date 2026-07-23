@@ -243,6 +243,7 @@ to mentors. `?scope=series` cancels all future occurrences.
 | `app/student/calendar/page.tsx` · `components/students/my-calendar.tsx` · `components/students/student-calendar.css` | student calendar — custom Day/Week/Month/Agenda grid built to the approved mock (no external calendar lib) — **done** |
 
 **Env required before Zoom works** (Vercel preview + prod, never `NEXT_PUBLIC_`):
-`ZOOM_ACCOUNT_ID`, `ZOOM_CLIENT_ID`, `ZOOM_CLIENT_SECRET`. Without them, classes
-still schedule (with `meeting_status='failed'` or a manual link) — Zoom is
-non-blocking. Mentor `.ics` emails use the existing SMTP config.
+`ZOOM_ACCOUNT_ID`, `ZOOM_CLIENT_ID`, `ZOOM_CLIENT_SECRET` — see the step-by-step
+setup in [`ZOOM_SETUP.md`](./ZOOM_SETUP.md). Without them, classes still schedule
+(with `meeting_status='failed'` or a manual link) — Zoom is non-blocking. Mentor
+`.ics` emails use the existing SMTP config.
