@@ -78,7 +78,7 @@ export function BatchWorkspace({
         type="multiple"
         value={open}
         onValueChange={(v) => setOpen(v as Section[])}
-        className="grid gap-3"
+        className="bg-card overflow-hidden rounded-xl border"
       >
         <Section id="details" icon={<Settings2 className="size-4" />} title="Details" hint="Course, colleges, dates & fee">
           <BatchEditor batchId={batchId} embedded />
@@ -119,15 +119,15 @@ function Section({
   children: React.ReactNode;
 }) {
   return (
-    <AccordionItem value={id} className="bg-card rounded-xl border not-last:border-b">
-      <AccordionTrigger className="px-4 hover:no-underline">
+    <AccordionItem value={id} className="not-last:border-b">
+      <AccordionTrigger className="items-center px-4 hover:no-underline data-open:border-b data-open:border-border">
         <span className="flex items-center gap-2.5">
           <span className="text-muted-foreground">{icon}</span>
           <span className="font-semibold">{title}</span>
           <span className="text-muted-foreground hidden text-xs font-normal sm:inline">— {hint}</span>
         </span>
       </AccordionTrigger>
-      <AccordionContent className="border-t px-4 pt-4">{children}</AccordionContent>
+      <AccordionContent className="px-4 pt-4">{children}</AccordionContent>
     </AccordionItem>
   );
 }
