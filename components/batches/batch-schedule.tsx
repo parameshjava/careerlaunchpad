@@ -30,16 +30,10 @@ import {
   SelectTrigger,
   SelectValue,
 } from "@/components/ui/select";
-import { Tabs, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { cachedGet, invalidate } from "@/lib/fetch-cache";
 import type { CalendarSession } from "@/lib/calendar-query";
 
 const TZ = "Asia/Kolkata";
-
-// Style-guide folder tabs (docs/STYLE_GUIDE.md), compact for the in-card filter.
-const SUBJECT_TAB_CLS =
-  "-mb-px h-auto flex-none rounded-t-md rounded-b-none border border-border bg-muted! px-3 py-1.5 text-sm font-medium text-muted-foreground shadow-none transition-colors after:hidden hover:bg-muted/70 " +
-  "data-active:border-primary! data-active:border-b-0 data-active:bg-primary! data-active:text-primary-foreground! data-active:font-semibold data-active:shadow-none";
 const WEEKDAYS = [
   { dow: 1, label: "M" }, { dow: 2, label: "T" }, { dow: 3, label: "W" },
   { dow: 4, label: "T" }, { dow: 5, label: "F" }, { dow: 6, label: "S" }, { dow: 0, label: "S" },
@@ -163,7 +157,7 @@ export function BatchSchedule({ batchId, embedded = false }: { batchId: string; 
   // Filter the (chronological) upcoming list by subject so a multi-subject batch
   // reads as one subject at a time instead of a zigzag.
   const [subjectFilter, setSubjectFilter] = useState("all");
-  const subjectTabs = useMemo(() => {
+  const subjectOptions = useMemo(() => {
     const seen = new Map<string, string>();
     for (const s of upcoming) if (s.subjectName && !seen.has(s.subjectId)) seen.set(s.subjectId, s.subjectName);
     return [...seen.entries()].map(([id, name]) => ({ id, name }));
@@ -442,27 +436,25 @@ export function BatchSchedule({ batchId, embedded = false }: { batchId: string; 
 
       {/* Upcoming */}
       <Card>
-        <CardHeader>
+        <CardHeader className="flex-row flex-wrap items-center justify-between gap-3 space-y-0">
           <CardTitle className="text-base">Upcoming classes</CardTitle>
+          {subjectOptions.length > 1 && (
+            <Select value={subjectFilter} onValueChange={setSubjectFilter}>
+              <SelectTrigger className="h-9 w-[220px]">
+                <SelectValue />
+              </SelectTrigger>
+              <SelectContent>
+                <SelectItem value="all">All subjects</SelectItem>
+                {subjectOptions.map((t) => (
+                  <SelectItem key={t.id} value={t.id}>
+                    {t.name}
+                  </SelectItem>
+                ))}
+              </SelectContent>
+            </Select>
+          )}
         </CardHeader>
         <CardContent className="grid gap-2">
-          {subjectTabs.length > 1 && (
-            <Tabs value={subjectFilter} onValueChange={setSubjectFilter} className="mb-2">
-              <TabsList
-                variant="line"
-                className="group-data-horizontal/tabs:h-auto w-full justify-start gap-0 overflow-x-auto rounded-none border-b p-0"
-              >
-                <TabsTrigger value="all" className={SUBJECT_TAB_CLS}>
-                  All
-                </TabsTrigger>
-                {subjectTabs.map((t) => (
-                  <TabsTrigger key={t.id} value={t.id} className={SUBJECT_TAB_CLS}>
-                    {t.name}
-                  </TabsTrigger>
-                ))}
-              </TabsList>
-            </Tabs>
-          )}
           {upcoming.length === 0 ? (
             <p className="text-muted-foreground text-sm">No classes scheduled yet.</p>
           ) : (
