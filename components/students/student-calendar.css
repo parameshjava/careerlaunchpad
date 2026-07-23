@@ -130,6 +130,9 @@
 .slc-ev-join {
   align-self: flex-start;
   margin-top: 2px;
+  display: inline-flex;
+  align-items: center;
+  gap: 3px;
   font-size: 0.66rem;
   font-weight: 700;
   padding: 2px 7px;

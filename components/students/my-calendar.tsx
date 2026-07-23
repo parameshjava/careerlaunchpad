@@ -414,7 +414,7 @@ function GridView({
                             onJoin(e.joinUrl);
                           }}
                         >
-                          ▶ Join
+                          <Video className="size-3" /> Join
                         </button>
                       )}
                     </div>
