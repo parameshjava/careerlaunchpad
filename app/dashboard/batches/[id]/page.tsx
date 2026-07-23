@@ -7,8 +7,9 @@ import { type BatchStatus } from "@/lib/batch-query";
 import { Button } from "@/components/ui/button";
 import { BatchWorkspace } from "@/components/batches/batch-workspace";
 
-// One screen for everything about a batch — details, subjects & mentors,
-// schedule, and students — each in a collapsible section (see BatchWorkspace).
+// One screen for everything about a batch — a summary header + tabs for Details,
+// Subjects & mentors, Schedule, and Students (see BatchWorkspace). Only the
+// lightweight header/counts load here; each tab fetches its own data on demand.
 export default async function EditBatchPage({ params }: { params: Promise<{ id: string }> }) {
   const { id } = await params;
   const ctx = await getAuthContext();
@@ -17,11 +18,15 @@ export default async function EditBatchPage({ params }: { params: Promise<{ id: 
   if (!(ctx.permissions.has("*") || can(ctx, "finance.manage"))) redirect("/dashboard");
 
   const supabase = await createClient();
-  // Only the lightweight header on load — each section fetches its own data when
-  // its accordion is expanded (see BatchWorkspace).
-  const [batch, statusRow] = await Promise.all([
+  const [batch, statusRow, colleges, students] = await Promise.all([
     fetchBatchFee(supabase, id),
     supabase.from("batch").select("status").eq("id", id).maybeSingle(),
+    supabase.from("batch_college").select("college_id", { count: "exact", head: true }).eq("batch_id", id),
+    supabase
+      .from("student_enrollment")
+      .select("id", { count: "exact", head: true })
+      .eq("batch_id", id)
+      .in("status", ["active", "completed"]),
   ]);
 
   if (!batch) {
@@ -35,8 +40,21 @@ export default async function EditBatchPage({ params }: { params: Promise<{ id: 
     );
   }
 
-  const subtitle = [batch.courseName, batch.code, batch.academicYear].filter(Boolean).join(" · ");
   const status = ((statusRow.data as { status: BatchStatus } | null)?.status ?? "draft") as BatchStatus;
 
-  return <BatchWorkspace batchId={id} name={batch.name} subtitle={subtitle} status={status} />;
+  return (
+    <BatchWorkspace
+      batchId={id}
+      name={batch.name}
+      status={status}
+      facts={{
+        courseName: batch.courseName,
+        academicYear: batch.academicYear,
+        code: batch.code,
+        collegeCount: colleges.count ?? 0,
+        studentCount: students.count ?? 0,
+        grossPaise: batch.grossPaise,
+      }}
+    />
+  );
 }

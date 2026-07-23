@@ -1,133 +1,120 @@
 "use client";
 
-// Unified batch workspace (issue #64 follow-up): one screen for everything about
-// a batch — details, subjects & mentors, class schedule, and the student roster —
-// each in an independently collapsible accordion section. Staff expand only what
-// they're working on, or open everything to oversee the whole batch. Each section
-// reuses its existing component in `embedded` mode (no per-page header/nav), and
-// Radix only mounts a section's content when it's open, so data loads lazily.
+// Unified batch workspace (issue #64 follow-up): one compact screen for
+// everything about a batch. A slim summary header (course, year, colleges,
+// students, fee, status) stays visible; the working areas — Details, Subjects &
+// mentors, Schedule, Students — are tabs, so only one panel occupies space at a
+// time. Each panel reuses its existing component in `embedded` mode; Radix only
+// mounts the active tab, and the section GETs are cached (lib/fetch-cache), so
+// switching tabs is lazy on first open and instant thereafter.
 import { useEffect, useState } from "react";
 import Link from "next/link";
 import { ArrowLeft, BookOpen, CalendarDays, GraduationCap, Settings2 } from "lucide-react";
 
-import {
-  Accordion,
-  AccordionContent,
-  AccordionItem,
-  AccordionTrigger,
-} from "@/components/ui/accordion";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
+import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { BATCH_STATUS_LABELS, type BatchStatus } from "@/lib/batch-query";
+import { formatINR } from "@/lib/fee-receipt";
 import { BatchEditor } from "@/components/batches/batch-editor";
 import { BatchSubjectsEditor } from "@/components/batches/batch-subjects-editor";
 import { BatchSchedule } from "@/components/batches/batch-schedule";
 import { BatchRosterLazy } from "@/components/batches/batch-roster-lazy";
 
-const SECTIONS = ["details", "subjects", "schedule", "students"] as const;
-type Section = (typeof SECTIONS)[number];
-
+const TABS = ["details", "subjects", "schedule", "students"] as const;
+type TabKey = (typeof TABS)[number];
 const ACTIVE = new Set<BatchStatus>(["open", "running"]);
+
+const plural = (n: number, one: string, many = `${one}s`) => `${n} ${n === 1 ? one : many}`;
 
 export function BatchWorkspace({
   batchId,
   name,
-  subtitle,
   status,
+  facts,
 }: {
   batchId: string;
   name: string;
-  subtitle: string;
   status: BatchStatus;
+  facts: {
+    courseName: string | null;
+    academicYear: string | null;
+    code: string;
+    collegeCount: number;
+    studentCount: number;
+    grossPaise: number;
+  };
 }) {
-  const [open, setOpen] = useState<Section[]>(["details"]);
+  const [tab, setTab] = useState<TabKey>("details");
 
-  // Deep-link: /dashboard/batches/[id]#schedule opens that section.
+  // Deep-link: /dashboard/batches/[id]#schedule opens that tab; keep the hash in
+  // sync so a refresh stays on the same tab.
   useEffect(() => {
-    const h = window.location.hash.replace("#", "") as Section;
-    if (SECTIONS.includes(h)) setOpen((prev) => (prev.includes(h) ? prev : [...prev, h]));
+    const h = window.location.hash.replace("#", "") as TabKey;
+    if (TABS.includes(h)) setTab(h);
   }, []);
+  const onTab = (v: string) => {
+    setTab(v as TabKey);
+    history.replaceState(null, "", `#${v}`);
+  };
 
-  const meta = (
-    <div className="text-muted-foreground text-sm">{subtitle}</div>
-  );
+  const summary = [
+    facts.courseName,
+    facts.academicYear,
+    facts.code,
+    plural(facts.collegeCount, "college"),
+    plural(facts.studentCount, "student"),
+    formatINR(facts.grossPaise),
+  ]
+    .filter(Boolean)
+    .join(" · ");
 
   return (
     <div className="mx-auto max-w-4xl">
-      <header className="mb-6 flex flex-wrap items-start justify-between gap-3">
-        <div>
+      <header className="mb-4 flex flex-wrap items-start justify-between gap-3">
+        <div className="min-w-0">
           <div className="flex flex-wrap items-center gap-2">
-            <h1 className="text-2xl font-bold tracking-tight">{name}</h1>
+            <h1 className="truncate text-2xl font-bold tracking-tight">{name}</h1>
             <Badge variant={ACTIVE.has(status) ? "default" : "secondary"}>{BATCH_STATUS_LABELS[status]}</Badge>
           </div>
-          <div className="mt-1">{meta}</div>
+          <p className="text-muted-foreground mt-1 text-sm">{summary}</p>
         </div>
-        <div className="flex items-center gap-2">
-          <Button variant="ghost" size="sm" onClick={() => setOpen(open.length === SECTIONS.length ? [] : [...SECTIONS])}>
-            {open.length === SECTIONS.length ? "Collapse all" : "Expand all"}
-          </Button>
-          <Button variant="outline" asChild>
-            <Link href="/dashboard/batches">
-              <ArrowLeft /> Batches
-            </Link>
-          </Button>
-        </div>
+        <Button variant="outline" size="sm" asChild>
+          <Link href="/dashboard/batches">
+            <ArrowLeft /> Batches
+          </Link>
+        </Button>
       </header>
 
-      <Accordion
-        type="multiple"
-        value={open}
-        onValueChange={(v) => setOpen(v as Section[])}
-        className="bg-card overflow-hidden rounded-xl border"
-      >
-        <Section id="details" icon={<Settings2 className="size-4" />} title="Details" hint="Course, colleges, dates & fee">
+      <Tabs value={tab} onValueChange={onTab}>
+        <TabsList className="mb-4 flex w-full justify-start overflow-x-auto">
+          <TabsTrigger value="details">
+            <Settings2 className="size-4" /> Details
+          </TabsTrigger>
+          <TabsTrigger value="subjects">
+            <BookOpen className="size-4" /> Subjects &amp; mentors
+          </TabsTrigger>
+          <TabsTrigger value="schedule">
+            <CalendarDays className="size-4" /> Schedule
+          </TabsTrigger>
+          <TabsTrigger value="students">
+            <GraduationCap className="size-4" /> Students
+          </TabsTrigger>
+        </TabsList>
+
+        <TabsContent value="details">
           <BatchEditor batchId={batchId} embedded />
-        </Section>
-
-        <Section id="subjects" icon={<BookOpen className="size-4" />} title="Subjects & mentors" hint="Subjects taught and their mentors">
+        </TabsContent>
+        <TabsContent value="subjects">
           <BatchSubjectsEditor batchId={batchId} embedded />
-        </Section>
-
-        <Section id="schedule" icon={<CalendarDays className="size-4" />} title="Class schedule" hint="Timetable & Zoom classes">
+        </TabsContent>
+        <TabsContent value="schedule">
           <BatchSchedule batchId={batchId} embedded />
-        </Section>
-
-        <Section
-          id="students"
-          icon={<GraduationCap className="size-4" />}
-          title="Students"
-          hint="Enrolments & payments"
-        >
+        </TabsContent>
+        <TabsContent value="students">
           <BatchRosterLazy batchId={batchId} />
-        </Section>
-      </Accordion>
+        </TabsContent>
+      </Tabs>
     </div>
-  );
-}
-
-function Section({
-  id,
-  icon,
-  title,
-  hint,
-  children,
-}: {
-  id: Section;
-  icon: React.ReactNode;
-  title: string;
-  hint: string;
-  children: React.ReactNode;
-}) {
-  return (
-    <AccordionItem value={id} className="not-last:border-b">
-      <AccordionTrigger className="items-center px-4 hover:no-underline data-open:border-b data-open:border-border">
-        <span className="flex items-center gap-2.5">
-          <span className="text-muted-foreground">{icon}</span>
-          <span className="font-semibold">{title}</span>
-          <span className="text-muted-foreground hidden text-xs font-normal sm:inline">— {hint}</span>
-        </span>
-      </AccordionTrigger>
-      <AccordionContent className="px-4 pt-4">{children}</AccordionContent>
-    </AccordionItem>
   );
 }
