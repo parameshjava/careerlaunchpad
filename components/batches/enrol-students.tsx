@@ -41,10 +41,17 @@ export function EnrolStudents({
   batchId,
   batch,
   enrolledIds,
+  embedded = false,
+  onDone,
 }: {
   batchId: string;
   batch: BatchFee;
   enrolledIds: string[];
+  /** Rendered inside the Students-tab drawer: drop the page header/back link and
+   * finish via onDone (close the drawer + refresh the roster) instead of the
+   * "Back to roster" link. */
+  embedded?: boolean;
+  onDone?: () => void;
 }) {
   const router = useRouter();
   const gross = batch.grossPaise;
@@ -179,9 +186,13 @@ export function EnrolStudents({
           </div>
         )}
         <div className="mt-6 flex justify-center gap-2">
-          <Button asChild>
-            <Link href={backHref}>Back to roster</Link>
-          </Button>
+          {embedded ? (
+            <Button onClick={() => onDone?.()}>Done</Button>
+          ) : (
+            <Button asChild>
+              <Link href={backHref}>Back to roster</Link>
+            </Button>
+          )}
           <Button variant="outline" onClick={() => setSummary(null)}>
             Enrol more
           </Button>
@@ -191,22 +202,24 @@ export function EnrolStudents({
   }
 
   return (
-    <div className="mx-auto max-w-6xl">
-      <header className="mb-6 flex items-start justify-between gap-3">
-        <div>
-          <h1 className="text-2xl font-bold tracking-tight">Enrol students</h1>
-          <p className="text-muted-foreground mt-1 text-sm">
-            {batch.name} · fee {formatINR(gross)} / student — search, select, set concessions, enrol.
-          </p>
-        </div>
-        <Button variant="outline" asChild>
-          <Link href={backHref}>
-            <ArrowLeft /> Back
-          </Link>
-        </Button>
-      </header>
+    <div className={embedded ? undefined : "mx-auto max-w-6xl"}>
+      {!embedded && (
+        <header className="mb-6 flex items-start justify-between gap-3">
+          <div>
+            <h1 className="text-2xl font-bold tracking-tight">Enrol students</h1>
+            <p className="text-muted-foreground mt-1 text-sm">
+              {batch.name} · fee {formatINR(gross)} / student — search, select, set concessions, enrol.
+            </p>
+          </div>
+          <Button variant="outline" asChild>
+            <Link href={backHref}>
+              <ArrowLeft /> Back
+            </Link>
+          </Button>
+        </header>
+      )}
 
-      <div className="grid gap-6 lg:grid-cols-[1fr_1.1fr]">
+      <div className={embedded ? "grid gap-6" : "grid gap-6 lg:grid-cols-[1fr_1.1fr]"}>
         {/* Find students */}
         <section className="grid content-start gap-3 rounded-lg border p-4">
           <h2 className="text-sm font-semibold">Find students</h2>
