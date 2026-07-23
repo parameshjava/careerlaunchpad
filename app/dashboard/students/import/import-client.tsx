@@ -21,6 +21,40 @@ export function ImportClient() {
   const [busy, setBusy] = useState(false);
   const [error, setError] = useState<string | null>(null);
   const [report, setReport] = useState<Report | null>(null);
+  const [dlBusy, setDlBusy] = useState(false);
+  const [dlError, setDlError] = useState<string | null>(null);
+
+  // Download the template via fetch → Blob → synthetic <a download> click rather
+  // than a plain <a href> navigation to the API route: the latter silently does
+  // nothing when the request fails (or is blocked), whereas this surfaces the
+  // server's error message and forces a real file save with the right filename.
+  async function downloadTemplate() {
+    if (!college) { setDlError("Please choose a college first (step 1)."); return; }
+    setDlBusy(true); setDlError(null);
+    try {
+      const res = await fetch(`/api/admin/intake/template?college_id=${college.id}`);
+      if (!res.ok) {
+        const body = await res.json().catch(() => ({}));
+        throw new Error(body.error ?? `Download failed (${res.status}).`);
+      }
+      const blob = await res.blob();
+      const cd = res.headers.get("Content-Disposition") ?? "";
+      const match = /filename="?([^";]+)"?/.exec(cd);
+      const filename = match?.[1] ?? `intake_${college.name.replace(/[^a-z0-9]+/gi, "_").slice(0, 40)}.xlsx`;
+      const url = URL.createObjectURL(blob);
+      const a = document.createElement("a");
+      a.href = url;
+      a.download = filename;
+      document.body.appendChild(a);
+      a.click();
+      a.remove();
+      URL.revokeObjectURL(url);
+    } catch (e) {
+      setDlError(e instanceof Error ? e.message : "Could not download the template.");
+    } finally {
+      setDlBusy(false);
+    }
+  }
 
   async function upload() {
     if (!college || !file) return;
@@ -38,12 +72,14 @@ export function ImportClient() {
   return (
     <div className="grid gap-6">
       <section className="bg-card rounded-xl border p-5 shadow-sm">
-        <h2 className="font-semibold">1 · Choose a college</h2>
+        <h2 className="font-semibold">
+          1 · Choose a college <span className="text-destructive" aria-hidden="true">*</span>
+        </h2>
         <p className="text-muted-foreground mt-0.5 mb-4 text-sm">
-          The template and every imported student will be tied to this college.
+          Required — the template and every imported student will be tied to this college.
         </p>
         <div className="max-w-md">
-          <CollegePicker college={college} onPick={(c) => { setCollege(c); setReport(null); }} />
+          <CollegePicker college={college} onPick={(c) => { setCollege(c); setReport(null); setDlError(null); }} />
         </div>
       </section>
 
@@ -52,11 +88,10 @@ export function ImportClient() {
         <p className="text-muted-foreground mt-0.5 mb-4 text-sm">
           Fill one row per student. Only <b>Email</b> is required; everything else can be filled later by the student.
         </p>
-        <Button asChild disabled={!college} variant="outline">
-          <a href={college ? `/api/admin/intake/template?college_id=${college.id}` : undefined} aria-disabled={!college}>
-            ⬇ Download Excel template
-          </a>
+        <Button onClick={downloadTemplate} disabled={dlBusy} variant="outline">
+          {dlBusy ? "Preparing…" : "⬇ Download Excel template"}
         </Button>
+        {dlError && <p className="text-destructive mt-3 text-sm">{dlError}</p>}
       </section>
 
       <section className="bg-card rounded-xl border p-5 shadow-sm">

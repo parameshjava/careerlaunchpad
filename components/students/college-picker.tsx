@@ -38,7 +38,7 @@ export function CollegePicker({
     const location = [college.place, college.state].filter(Boolean).join(", ");
     return (
       <div className="grid gap-1.5">
-        <Label>College</Label>
+        <Label>College <span className="text-destructive" aria-hidden="true">*</span><span className="sr-only">(required)</span></Label>
         <div className="border-input bg-muted/30 flex items-start justify-between gap-3 rounded-md border p-3">
           <div className="min-w-0">
             <p className="font-medium break-words">{college.name}</p>

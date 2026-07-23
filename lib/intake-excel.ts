@@ -2,13 +2,21 @@
  * Admin Excel intake — template generation + parsing/normalization.
  *
  * The template's columns map 1:1 to the registration model (lib/registration.ts
- * / student_profile). Enumerated columns (gender, degree, branch, year, mentor,
- * the 1–5 self-assessment) get in-cell dropdowns sourced from the `ref_*` tables
- * via a hidden "Lists" sheet. Multi-value columns (career goals, skills,
- * interests) are comma-separated text validated on import. A hidden "_meta"
- * sheet carries the chosen college so re-upload is unambiguous.
+ * / student_profile). Enumerated single-select columns (gender, degree, branch,
+ * year, caste/reservation/income, first-generation, the 1–5 self-assessment) get
+ * in-cell dropdowns sourced from the `ref_*` tables via a hidden "Lists" sheet.
+ * Multi-value columns (career paths, skills, interests, languages, hobbies) are
+ * comma-separated text validated on import, with the valid labels listed in a
+ * cell note. A hidden "_meta" sheet carries the chosen college so re-upload is
+ * unambiguous.
  *
- * normalizeRows() resolves human labels back to slugs/ids (the shape the
+ * The column set mirrors the current registration wizard: Step 3 is the
+ * preference-category "Career Paths" picker (issue #42), and Step 6 collects the
+ * "Tell Us" background fields (issue #44). The legacy career-goals / primary-goal
+ * / mentor-preference columns were retired from the template — the DB columns
+ * remain but the wizard no longer collects them.
+ *
+ * normalizeRows() resolves human labels back to slugs (the shape the
  * import_student_intake() SQL function expects) and reports per-row errors.
  */
 import ExcelJS from "exceljs";
@@ -18,12 +26,9 @@ export type RefRow = { id: string; slug: string; label: string; category: string
 export type RefData = Record<string, RefRow[]>;
 
 type BaseCol =
-  | { key: string; header: string; kind: "email" | "text" | "number" }
+  | { key: string; header: string; kind: "email" | "text" | "number" | "date" | "yesno" }
   | { key: string; header: string; kind: "refSingle"; ref: string } // stores slug
-  | { key: string; header: string; kind: "refMulti"; ref: string } // stores slug[]
-  | { key: string; header: string; kind: "goalSingle" } // -> primary_career_goal_id
-  | { key: string; header: string; kind: "goalMulti" } // -> career_goal_ids[]
-  | { key: string; header: string; kind: "mentorSingle" }; // -> preferred_mentor_pref_id
+  | { key: string; header: string; kind: "refMulti"; ref: string; max?: number }; // stores slug[]
 
 const BASE_COLUMNS: BaseCol[] = [
   { key: "email", header: "Email", kind: "email" },
@@ -41,30 +46,52 @@ const BASE_COLUMNS: BaseCol[] = [
   { key: "year_of_study", header: "Year of Study", kind: "refSingle", ref: "ref_year_of_study" },
   { key: "graduation_year", header: "Graduation Year", kind: "number" },
   { key: "cgpa", header: "CGPA / Percentage", kind: "number" },
-  { key: "career_goals", header: "Career Goals (comma-separated)", kind: "goalMulti" },
-  { key: "primary_career_goal", header: "Primary Career Goal", kind: "goalSingle" },
+  // Step 3 — Career Paths (preference categories; up to 2). Stored as slug[] in
+  // student_profile.preferred_category_slugs (capped at 2 by a DB CHECK).
+  { key: "preferred_category_slugs", header: "Career Paths (up to 2, comma-separated)", kind: "refMulti", ref: "ref_preference_category", max: 2 },
+  // Step 5 — skills & interests
   { key: "skills", header: "Skills (comma-separated)", kind: "refMulti", ref: "ref_skill" },
   { key: "interests", header: "Interests (comma-separated)", kind: "refMulti", ref: "ref_interest" },
-  { key: "mentor_preference", header: "Preferred Mentor Type", kind: "mentorSingle" },
+  // Step 6 — "Tell Us" (all optional). family_members & custom_hobbies are
+  // intentionally omitted here (collected later in the student's own form).
+  { key: "is_first_generation", header: "First-generation Learner (Yes/No)", kind: "yesno" },
+  { key: "date_of_birth", header: "Date of Birth (YYYY-MM-DD)", kind: "date" },
+  { key: "languages", header: "Languages (comma-separated)", kind: "refMulti", ref: "ref_language" },
+  { key: "caste_certificate_status", header: "Caste Certificate Status", kind: "refSingle", ref: "ref_caste_certificate_status" },
+  { key: "reservation_category", header: "Reservation Category", kind: "refSingle", ref: "ref_reservation_category" },
+  { key: "income_band", header: "Household Income (annual)", kind: "refSingle", ref: "ref_income_band" },
+  { key: "hobbies", header: "Hobbies (comma-separated)", kind: "refMulti", ref: "ref_hobby" },
   { key: "biggest_challenge", header: "Biggest Challenge", kind: "text" },
 ];
 
 /** Ref tables the template/import need, keyed for RefData lookups. */
 export const INTAKE_REF_TABLES = [
   "ref_gender", "ref_degree", "ref_branch", "ref_year_of_study",
-  "ref_career_goal", "ref_skill", "ref_interest", "ref_mentor_preference",
+  "ref_preference_category", "ref_skill", "ref_interest",
   "ref_skill_assessment_category",
+  // Step 6 "Tell Us"
+  "ref_language", "ref_caste_certificate_status", "ref_reservation_category",
+  "ref_income_band", "ref_hobby",
 ];
 
 export async function loadRefData(supabase: SupabaseClient): Promise<RefData> {
   const out: RefData = {};
   await Promise.all(
     INTAKE_REF_TABLES.map(async (t) => {
+      // ref_preference_category uses name/group_label rather than the shared
+      // label/category column names — normalize it to the RefRow shape.
+      const isPrefCat = t === "ref_preference_category";
+      const cols = isPrefCat
+        ? "id, slug, name, group_label, sort_order"
+        : "id, slug, label, category, sort_order";
       const { data, error } = await supabase
-        .from(t).select("id, slug, label, category, sort_order")
-        .eq("is_active", true).order("sort_order");
+        .from(t).select(cols).eq("is_active", true).order("sort_order");
       if (error) throw new Error(`${t}: ${error.message}`);
-      out[t] = (data ?? []) as RefRow[];
+      out[t] = ((data ?? []) as Record<string, unknown>[]).map((r) =>
+        isPrefCat
+          ? { id: r.id as string, slug: r.slug as string, label: r.name as string, category: (r.group_label as string) ?? null }
+          : (r as unknown as RefRow),
+      );
     }),
   );
   return out;
@@ -107,12 +134,9 @@ export async function buildTemplateWorkbook(
     listRanges[key] = `Lists!$${letter}$2:$${letter}$${values.length + 1}`;
   };
   addList("__rating", ["1", "2", "3", "4", "5"]);
+  addList("__yesno", ["Yes", "No"]);
   for (const c of cols) {
     if (c.kind === "refSingle") addList(c.key, (refData[c.ref] ?? []).map((r) => r.label));
-    if (c.kind === "goalSingle" || c.kind === "goalMulti") {
-      if (!listRanges["__goal"]) addList("__goal", (refData["ref_career_goal"] ?? []).map((r) => r.label));
-    }
-    if (c.kind === "mentorSingle") addList(c.key, (refData["ref_mentor_preference"] ?? []).map((r) => r.label));
   }
 
   const ws = wb.addWorksheet("Students", { views: [{ state: "frozen", ySplit: 1 }] });
@@ -125,10 +149,9 @@ export async function buildTemplateWorkbook(
   const LAST = 1000; // validate the first ~1000 data rows
   cols.forEach((c, i) => {
     const letter = ws.getColumn(i + 1).letter;
-    const range = `${letter}2:${letter}${LAST}`;
     let formula: string | undefined;
-    if (c.kind === "refSingle" || c.kind === "mentorSingle") formula = listRanges[c.key];
-    else if (c.kind === "goalSingle") formula = listRanges["__goal"];
+    if (c.kind === "refSingle") formula = listRanges[c.key];
+    else if (c.kind === "yesno") formula = listRanges["__yesno"];
     else if (c.kind === "assessment") formula = listRanges["__rating"];
     if (formula) {
       for (let r = 2; r <= LAST; r++) {
@@ -137,11 +160,14 @@ export async function buildTemplateWorkbook(
         };
       }
     }
-    // Helpful notes on free-text multi-value columns.
-    if (c.kind === "goalMulti" || c.kind === "refMulti") {
+    // Multi-value columns can't use an in-cell dropdown; list the exact labels
+    // to type (comma-separated) in the header note instead.
+    if (c.kind === "refMulti") {
+      const labels = (refData[c.ref] ?? []).map((r) => r.label).join(", ");
       ws.getCell(`${letter}1`).note =
-        "Comma-separated. Use exact labels from the dropdowns / Lists sheet.";
+        `Comma-separated${c.max ? ` (choose up to ${c.max})` : ""}. Use exact labels: ${labels}`.slice(0, 32000);
     }
+    if (c.kind === "date") ws.getCell(`${letter}1`).note = "Format: YYYY-MM-DD (e.g. 2004-08-15).";
     if (c.key === "email") ws.getCell(`${letter}1`).note = "Required — the student's sign-in email.";
   });
 
@@ -161,6 +187,9 @@ export async function buildTemplateWorkbook(
 // ---------------------------------------------------------------------------
 function cellText(v: ExcelJS.CellValue): string {
   if (v == null) return "";
+  // Excel date cells come back as JS Dates — normalize to YYYY-MM-DD (UTC) so a
+  // date the admin typed round-trips to the date_of_birth column unchanged.
+  if (v instanceof Date) return v.toISOString().slice(0, 10);
   if (typeof v === "object") {
     if ("text" in v && typeof v.text === "string") return v.text;
     if ("result" in v && v.result != null) return String(v.result);
@@ -207,7 +236,7 @@ export async function parseWorkbook(buffer: ArrayBuffer, refData: RefData): Prom
 
 export type NormalizedRow = { row: number; errors: string[]; data: Record<string, unknown> };
 
-/** Resolve labels -> slugs/ids into the shape import_student_intake() expects. */
+/** Resolve labels -> slugs into the shape import_student_intake() expects. */
 export function normalizeRows(
   parsed: { row: number; cells: Record<string, string> }[],
   refData: RefData,
@@ -220,19 +249,11 @@ export function normalizeRows(
     (refData[table] ?? []).forEach((r) => m.set(norm(r.label), r.slug));
     return m;
   };
-  const labelToId = (table: string) => {
-    const m = new Map<string, string>();
-    (refData[table] ?? []).forEach((r) => m.set(norm(r.label), r.id));
-    return m;
-  };
-  const goalId = labelToId("ref_career_goal");
-  const mentorId = labelToId("ref_mentor_preference");
   const slugMaps: Record<string, Map<string, string>> = {};
 
   return parsed.map(({ row, cells }) => {
     const data: Record<string, unknown> = { row, email: cells["email"] };
     const errors: string[] = [];
-    const goalIds: string[] = [];
     const assessment: Record<string, number> = {};
 
     for (const [key, raw] of Object.entries(cells)) {
@@ -245,7 +266,23 @@ export function normalizeRows(
         case "number": {
           const n = Number(raw);
           if (Number.isNaN(n)) errors.push(`${col.header}: not a number`);
-          else data[key === "graduation_year" ? "graduation_year" : "cgpa"] = key === "graduation_year" ? Math.trunc(n) : n;
+          else data[key] = key === "graduation_year" ? Math.trunc(n) : n;
+          break;
+        }
+        case "yesno": {
+          const s = norm(raw);
+          if (["yes", "true", "y", "1"].includes(s)) data[key] = true;
+          else if (["no", "false", "n", "0"].includes(s)) data[key] = false;
+          else errors.push(`${col.header}: enter Yes or No`);
+          break;
+        }
+        case "date": {
+          // cellText already yields YYYY-MM-DD for real Excel date cells; also
+          // accept an admin-typed YYYY-MM-DD string.
+          const s = raw.slice(0, 10);
+          if (!/^\d{4}-\d{2}-\d{2}$/.test(s) || Number.isNaN(Date.parse(s)))
+            errors.push(`${col.header}: use YYYY-MM-DD`);
+          else data[key] = s;
           break;
         }
         case "refSingle": {
@@ -261,29 +298,17 @@ export function normalizeRows(
           for (const part of raw.split(",").map((s) => s.trim()).filter(Boolean)) {
             const slug = slugMaps[col.ref].get(norm(part));
             if (!slug) errors.push(`${col.header}: '${part}' not valid`);
-            else slugs.push(slug);
+            else if (!slugs.includes(slug)) slugs.push(slug);
           }
-          data[key === "skills" ? "skills" : "interests"] = slugs;
-          break;
-        }
-        case "goalMulti": {
-          for (const part of raw.split(",").map((s) => s.trim()).filter(Boolean)) {
-            const id = goalId.get(norm(part));
-            if (!id) errors.push(`Career Goals: '${part}' not valid`);
-            else if (!goalIds.includes(id)) goalIds.push(id);
+          // Enforce the max (e.g. Career Paths ≤ 2) and truncate the stored set so
+          // a downstream DB CHECK (student_profile.preferred_category_slugs) can't
+          // reject the row when the imported student later claims their profile.
+          if (col.max && slugs.length > col.max) {
+            errors.push(`${col.header}: choose at most ${col.max} (extra values ignored)`);
+            data[key] = slugs.slice(0, col.max);
+          } else {
+            data[key] = slugs;
           }
-          break;
-        }
-        case "goalSingle": {
-          const id = goalId.get(norm(raw));
-          if (!id) errors.push(`Primary Career Goal: '${raw}' not valid`);
-          else data["primary_career_goal_id"] = id;
-          break;
-        }
-        case "mentorSingle": {
-          const id = mentorId.get(norm(raw));
-          if (!id) errors.push(`Preferred Mentor Type: '${raw}' not valid`);
-          else data["preferred_mentor_pref_id"] = id;
           break;
         }
         case "assessment": {
@@ -295,10 +320,6 @@ export function normalizeRows(
       }
     }
 
-    // Ensure the primary goal is part of the selected goals.
-    const primary = data["primary_career_goal_id"] as string | undefined;
-    if (primary && !goalIds.includes(primary)) goalIds.push(primary);
-    if (goalIds.length) data["career_goal_ids"] = goalIds;
     if (Object.keys(assessment).length) data["skill_assessment"] = assessment;
 
     return { row, errors, data };
