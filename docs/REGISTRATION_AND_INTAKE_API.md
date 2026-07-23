@@ -204,7 +204,8 @@ Streams an `.xlsx` template:
 
 - **Header row** = human labels matching the registration fields; a second, hidden machine-key row (or a `_meta` sheet) carries the stable column keys + the chosen `college_id` + college name, so re-upload is unambiguous.
 - **Pre-filled college**: the picked college's name shows in a locked cell / header; its `id` is embedded in `_meta`.
-- **Dropdown validation** on enumerated columns (gender, degree, branch, year_of_study, mentor_preference, and a primary-goal column) sourced from the `ref_*` tables, so admins pick valid values offline. Career goals: a comma-separated multi-select column (`career_goals`) plus a single `primary_career_goal` column; both validated against `ref_career_goal` labels on import.
+- **Dropdown validation** on single-select enumerated columns (gender, degree, branch, year_of_study, caste_certificate_status, reservation_category, income_band, first-generation Yes/No, and the 1–5 self-assessment) sourced from the `ref_*` tables, so admins pick valid values offline. Multi-select columns can't use an in-cell dropdown, so their valid labels are listed in a header note and typed comma-separated: **Career Paths** (`preferred_category_slugs`, `ref_preference_category`, ≤ 2 — extra values are dropped with a per-row warning so the downstream `student_profile` CHECK can't reject the claimed profile), **Skills** (`ref_skill`), **Interests** (`ref_interest`), **Languages** (`ref_language`), **Hobbies** (`ref_hobby`). `date_of_birth` is a free-text `YYYY-MM-DD` column.
+- The template mirrors the **current** wizard: Step 3 is the preference-category "Career Paths" picker (issue #42) and Step 6 carries the "Tell Us" background fields (issue #44). The legacy **Career Goals / Primary Career Goal / Preferred Mentor Type** columns were removed from the template (the DB columns + `ref_career_goal`/`ref_mentor_preference` remain for analytics; the wizard and template simply stopped collecting them). `family_members` (nested) and `custom_hobbies` (write-ins) are intentionally **not** in the template — students add those later in their own form.
 - One row per student; `email` is the only required column. Everything else is optional → partial rows are fine.
 
 ### `POST /api/admin/intake/import`  (multipart: `file` + `college_id`)
@@ -255,7 +256,7 @@ Per CLAUDE.md, these use **shadcn/Tailwind** on the app surface (the `mockups/st
 
 ## 8. Resolved decisions
 
-1. **Career goals in Excel** — one comma-separated `career_goals` cell + one `primary_career_goal` cell (validated against `ref_career_goal` labels on import). [confirmed]
+1. **Career aspirations in Excel** — originally one comma-separated `career_goals` cell + a `primary_career_goal` cell. Superseded: Step 3 became preference categories (issue #42), so the template now has a single comma-separated **Career Paths** cell (`preferred_category_slugs`, ≤ 2, validated against `ref_preference_category`). The template's Step-6 "Tell Us" columns were added in migration `133_intake_tell_us.sql`. [superseded 2026-07]
 2. **Who can import** — **Owner**, **CareerLaunchpad Admin** (`platform_admin`, a new distinct role), **Support**, and **College Admin** (scoped to their own college). [confirmed]
 3. **Auto-invite on import** — import **auto-issues an individual invite per imported email** and sends it (folded into `POST …/import`, §5 step 5). [confirmed]
 4. **Excel breadth** — the template carries the **full** field set, including self-assessment, skills, interests, and mentor columns (all optional; map 1:1 to the model). [confirmed]
