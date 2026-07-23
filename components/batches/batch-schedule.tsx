@@ -528,6 +528,12 @@ export function BatchSchedule({ batchId, embedded = false }: { batchId: string; 
                     {s.mentors.length ? ` · ${s.mentors.join(", ")}` : ""}
                   </p>
                 </div>
+                {/* Series representative row: edit the recurrence pattern (first). */}
+                {s.seriesId && seriesAnchorIds.has(s.id) && (
+                  <Button variant="outline" size="sm" onClick={() => startEditSeries(s.seriesId!)}>
+                    <Repeat /> Edit series
+                  </Button>
+                )}
                 {s.joinUrl && (
                   <Button variant="outline" size="sm" asChild>
                     <a href={s.joinUrl} target="_blank" rel="noreferrer">
@@ -539,12 +545,6 @@ export function BatchSchedule({ batchId, embedded = false }: { batchId: string; 
                 <Button variant="outline" size="sm" onClick={() => openEditOccurrence(s)}>
                   <Pencil /> Edit
                 </Button>
-                {/* Series representative row also edits the recurrence pattern. */}
-                {s.seriesId && seriesAnchorIds.has(s.id) && (
-                  <Button variant="outline" size="sm" onClick={() => startEditSeries(s.seriesId!)}>
-                    <Repeat /> Edit series
-                  </Button>
-                )}
                 <Button
                   variant="ghost"
                   size="sm"
