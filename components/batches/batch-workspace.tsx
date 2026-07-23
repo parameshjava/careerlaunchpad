@@ -25,6 +25,12 @@ const TABS = ["details", "subjects", "schedule", "students"] as const;
 type TabKey = (typeof TABS)[number];
 const ACTIVE = new Set<BatchStatus>(["open", "running"]);
 
+// Style-guide "connected folder tabs" (docs/STYLE_GUIDE.md → Tabs): bordered,
+// muted inactive with the underline, solid brand fill when active.
+const TAB_CLS =
+  "-mb-px h-auto flex-none rounded-t-md rounded-b-none border border-border bg-muted! px-4 py-2 font-medium text-muted-foreground shadow-none transition-colors after:hidden hover:bg-muted/70 " +
+  "data-active:border-primary! data-active:border-b-0 data-active:bg-primary! data-active:text-primary-foreground! data-active:font-semibold data-active:shadow-none";
+
 const plural = (n: number, one: string, many = `${one}s`) => `${n} ${n === 1 ? one : many}`;
 
 export function BatchWorkspace({
@@ -87,31 +93,34 @@ export function BatchWorkspace({
       </header>
 
       <Tabs value={tab} onValueChange={onTab}>
-        <TabsList className="mb-4 flex w-full justify-start overflow-x-auto">
-          <TabsTrigger value="details">
+        <TabsList
+          variant="line"
+          className="group-data-horizontal/tabs:h-auto w-full justify-start gap-0 overflow-x-auto rounded-none border-b p-0"
+        >
+          <TabsTrigger value="details" className={TAB_CLS}>
             <Settings2 className="size-4" /> Details
           </TabsTrigger>
-          <TabsTrigger value="subjects">
+          <TabsTrigger value="subjects" className={TAB_CLS}>
             <BookOpen className="size-4" /> Subjects &amp; mentors
           </TabsTrigger>
-          <TabsTrigger value="schedule">
+          <TabsTrigger value="schedule" className={TAB_CLS}>
             <CalendarDays className="size-4" /> Schedule
           </TabsTrigger>
-          <TabsTrigger value="students">
+          <TabsTrigger value="students" className={TAB_CLS}>
             <GraduationCap className="size-4" /> Students
           </TabsTrigger>
         </TabsList>
 
-        <TabsContent value="details">
+        <TabsContent value="details" className="mt-4 min-w-0">
           <BatchEditor batchId={batchId} embedded />
         </TabsContent>
-        <TabsContent value="subjects">
+        <TabsContent value="subjects" className="mt-4 min-w-0">
           <BatchSubjectsEditor batchId={batchId} embedded />
         </TabsContent>
-        <TabsContent value="schedule">
+        <TabsContent value="schedule" className="mt-4 min-w-0">
           <BatchSchedule batchId={batchId} embedded />
         </TabsContent>
-        <TabsContent value="students">
+        <TabsContent value="students" className="mt-4 min-w-0">
           <BatchRosterLazy batchId={batchId} />
         </TabsContent>
       </Tabs>
