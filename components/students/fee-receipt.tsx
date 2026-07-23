@@ -11,7 +11,7 @@
 
 import Link from "next/link";
 import { useRef } from "react";
-import { ArrowLeft, Printer, ReceiptIndianRupee } from "lucide-react";
+import { ArrowLeft, Printer, ReceiptIndianRupee, X } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { CompanySeal } from "@/components/print/company-seal";
 import {
@@ -51,10 +51,13 @@ export function FeeReceiptView({
   receipt,
   backHref,
   backLabel = "Back",
+  onClose,
 }: {
   receipt: FeeReceipt;
   backHref?: string;
   backLabel?: string;
+  /** When shown in a dialog: render a visible Close button in the toolbar. */
+  onClose?: () => void;
 }) {
   const { student, mode } = receipt;
   const isCash = mode === "cash";
@@ -284,7 +287,11 @@ export function FeeReceiptView({
       `}</style>
 
       <div className="fr-toolbar">
-        {backHref ? (
+        {onClose ? (
+          <Button variant="outline" onClick={onClose}>
+            <X /> Close
+          </Button>
+        ) : backHref ? (
           <Button variant="outline" asChild>
             <Link href={backHref}>
               <ArrowLeft /> {backLabel}

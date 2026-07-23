@@ -553,7 +553,7 @@ export function BatchRoster({
 
       {/* Receipt preview dialog — keeps the admin on the roster */}
       <Dialog open={receiptOpen} onOpenChange={(o) => { setReceiptOpen(o); if (!o) setReceipt(null); }}>
-        <DialogContent className="max-h-[92vh] overflow-auto p-4 sm:max-w-[880px]">
+        <DialogContent showCloseButton={false} className="max-h-[92vh] overflow-auto p-4 sm:max-w-[880px]">
           <DialogHeader className="sr-only">
             <DialogTitle>Payment receipt</DialogTitle>
           </DialogHeader>
@@ -562,9 +562,14 @@ export function BatchRoster({
               <Loader2 className="size-4 animate-spin" /> Loading receipt…
             </div>
           ) : receiptErr ? (
-            <p className="text-destructive py-20 text-center text-sm">{receiptErr}</p>
+            <div>
+              <Button variant="outline" onClick={() => setReceiptOpen(false)}>
+                <X /> Close
+              </Button>
+              <p className="text-destructive py-16 text-center text-sm">{receiptErr}</p>
+            </div>
           ) : receipt ? (
-            <FeeReceiptView receipt={receipt} />
+            <FeeReceiptView receipt={receipt} onClose={() => setReceiptOpen(false)} />
           ) : null}
         </DialogContent>
       </Dialog>
