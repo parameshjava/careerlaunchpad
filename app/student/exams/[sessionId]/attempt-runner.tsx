@@ -7,7 +7,7 @@
 // (mobile-first) with a palette and a hard-stop countdown.
 import { useCallback, useEffect, useRef, useState } from "react";
 import { useRouter } from "next/navigation";
-import { Check, CheckCircle2, TriangleAlert, Printer } from "lucide-react";
+import { Check, CheckCircle2, TriangleAlert, Printer, Flag, Eraser, ChevronDown } from "lucide-react";
 import { WarningSign } from "../warning-sign";
 import { createClient } from "@/lib/supabase/client";
 import { RichContent } from "@/components/exam/RichContent";
@@ -45,6 +45,10 @@ type Cache = {
   questions: Question[];
   answers: Record<string, string[]>;
   seen: string[];
+  // Questions the student flagged with "Mark for review". Persisted like `seen`
+  // (localStorage only) so it survives a plain reload; an aborted attempt clears
+  // the cache, exactly as seen does.
+  marked: string[];
   lastPosition: number;
 };
 
@@ -91,6 +95,12 @@ export function AttemptRunner({
   // Question ids the student has landed on — drives the amber "seen but not
   // answered" palette state. Persisted like answers so it survives a resume.
   const [seen, setSeen] = useState<Set<string>>(new Set());
+  // Question ids the student flagged with "Mark for review" — a violet palette
+  // state so they can triage and come back. Persisted like `seen`.
+  const [marked, setMarked] = useState<Set<string>>(new Set());
+  // Subject section ids the student has collapsed in the palette accordion.
+  // Empty by default (all expanded); the active section is always force-expanded.
+  const [collapsed, setCollapsed] = useState<Set<string>>(new Set());
   const [index, setIndex] = useState(0);
   // Keep the active palette chip in view as the student moves through a long,
   // scrollable palette (60+ questions no longer paginate — they all render).
@@ -180,6 +190,7 @@ export function AttemptRunner({
       setQuestions(cached.questions);
       setAnswers(cached.answers ?? {});
       setSeen(new Set(cached.seen ?? []));
+      setMarked(new Set(cached.marked ?? []));
       setDeadline(cached.deadline ?? null);
       if (cached.lastPosition != null) lastPositionRef.current = cached.lastPosition;
       setLoading(false);
@@ -415,6 +426,40 @@ export function AttemptRunner({
     });
   }
 
+  // Clear response: empty the selection so the question reverts to "not answered"
+  // (grey/seen). Essential with negative marking — a student can un-commit a risky
+  // guess instead of being forced to keep an answer once tapped.
+  function clearAnswer(q: Question) {
+    if (!(answers[q.question_id]?.length)) return; // already blank
+    setAnswers((prev) => {
+      const updated = { ...prev, [q.question_id]: [] };
+      persist({ answers: updated });
+      scheduleSave(q.question_id, []); // persist the clear server-side too
+      return updated;
+    });
+  }
+
+  // Toggle "Mark for review" on the current question (client-side, like `seen`).
+  function toggleMark(questionId: string) {
+    setMarked((prev) => {
+      const next = new Set(prev);
+      if (next.has(questionId)) next.delete(questionId);
+      else next.add(questionId);
+      persist({ marked: [...next] });
+      return next;
+    });
+  }
+
+  // Collapse / expand a subject band in the palette accordion.
+  function toggleSection(sectionId: string) {
+    setCollapsed((prev) => {
+      const next = new Set(prev);
+      if (next.has(sectionId)) next.delete(sectionId);
+      else next.add(sectionId);
+      return next;
+    });
+  }
+
   if (abortInfo)
     return (
       <div className="mx-auto max-w-md px-4 py-10 text-center">
@@ -568,11 +613,18 @@ export function AttemptRunner({
   // Palette counts (whole paper) + per-subject bands. Questions arrive ordered by
   // position and each section is contiguous, so grouping in encounter order keeps
   // the subjects in their exam order. Papers without sections fall into one band.
-  const answeredCount = questions.filter((qq) => answered(qq.question_id)).length;
-  const seenCount = questions.filter(
-    (qq) => !answered(qq.question_id) && seen.has(qq.question_id),
+  // Palette buckets, assigned by priority marked > answered > seen > not-visited,
+  // so the four counts always sum to the paper length. The submit dialog computes
+  // its own has-answer count separately — this bucketing is palette-only.
+  const markedCount = questions.filter((qq) => marked.has(qq.question_id)).length;
+  const answeredCount = questions.filter(
+    (qq) => answered(qq.question_id) && !marked.has(qq.question_id),
   ).length;
-  const notVisitedCount = questions.length - answeredCount - seenCount;
+  const seenCount = questions.filter(
+    (qq) =>
+      !answered(qq.question_id) && !marked.has(qq.question_id) && seen.has(qq.question_id),
+  ).length;
+  const notVisitedCount = questions.length - markedCount - answeredCount - seenCount;
   const rawBands: { id: string; title: string | null; items: { qq: Question; i: number }[] }[] = [];
   questions.forEach((qq, i) => {
     const last = rawBands[rawBands.length - 1];
@@ -592,7 +644,7 @@ export function AttemptRunner({
   return (
     <>
     <div
-      className="mx-auto max-w-2xl px-4 py-4 select-none sm:px-6 print:hidden"
+      className="mx-auto max-w-6xl px-4 py-4 select-none sm:px-6 print:hidden"
       // Copy disabled: block the copy/cut/context-menu events and non-selectable
       // text (select-none) so Ctrl/Cmd+C has nothing to lift.
       onCopy={(e) => e.preventDefault()}
@@ -634,77 +686,31 @@ export function AttemptRunner({
         </div>
       </div>
 
-      {/* Anti-cheat notice — kept visible for the whole exam. */}
-      <div className="mb-4 rounded-md border border-amber-300 bg-amber-50 p-3 text-xs leading-relaxed text-amber-900 dark:border-amber-900/60 dark:bg-amber-950/40 dark:text-amber-200">
-        <strong>Stay on this screen.</strong> Pressing <Kbd>Alt + Tab</Kbd> or{" "}
-        <Kbd>Cmd + Tab</Kbd>, switching apps, or minimising the window will close your
-        exam. You get{" "}
-        <strong>one warning</strong> — the next time, your exam is submitted
-        automatically and <strong>cannot be resumed</strong>. Copying is disabled.
-      </div>
+      {/* Anti-cheat notice — collapsed to a slim persistent strip (was a tall
+          block) so the question gets more room; full detail behind "Details". */}
+      <details className="group mb-4 rounded-md border border-amber-300 bg-amber-50 px-3 py-2 text-xs text-amber-900 dark:border-amber-900/60 dark:bg-amber-950/40 dark:text-amber-200">
+        <summary className="flex cursor-pointer list-none items-center gap-2 font-medium [&::-webkit-details-marker]:hidden">
+          <TriangleAlert className="size-4 shrink-0" />
+          <span className="min-w-0 flex-1 truncate">
+            Stay on this screen — leaving closes your exam (one warning only).
+          </span>
+          <span className="shrink-0 underline group-open:hidden">Details</span>
+          <span className="hidden shrink-0 underline group-open:inline">Less</span>
+        </summary>
+        <div className="mt-2 leading-relaxed">
+          Pressing <Kbd>Alt + Tab</Kbd> or <Kbd>Cmd + Tab</Kbd>, switching apps, or
+          minimising the window will close your exam. You get{" "}
+          <strong>one warning</strong> — the next time, your exam is submitted
+          automatically and <strong>cannot be resumed</strong>. Copying is disabled.
+        </div>
+      </details>
 
-      {/* Palette — summary counts double as the legend, then every question in
-          one scrollable grid, banded by subject. */}
-      <div className="mb-2 grid grid-cols-3 gap-2 text-xs">
-        <div className="flex items-center gap-2 rounded-md border p-2">
-          <span className="size-3 shrink-0 rounded-sm bg-emerald-500" />
-          <span className="tabular-nums font-semibold">{answeredCount}</span>
-          <span className="text-muted-foreground">Answered</span>
-        </div>
-        <div className="flex items-center gap-2 rounded-md border p-2">
-          <span className="size-3 shrink-0 rounded-sm border-2 border-amber-400 bg-amber-50 dark:bg-amber-950/40" />
-          <span className="tabular-nums font-semibold">{seenCount}</span>
-          <span className="text-muted-foreground">Seen</span>
-        </div>
-        <div className="flex items-center gap-2 rounded-md border p-2">
-          <span className="bg-muted size-3 shrink-0 rounded-sm border" />
-          <span className="tabular-nums font-semibold">{notVisitedCount}</span>
-          <span className="text-muted-foreground">Left</span>
-        </div>
-      </div>
-
-      <div className="bg-muted/30 mb-4 max-h-52 overflow-y-auto rounded-md border p-2">
-        {bands.map((band) => (
-          <div key={band.id}>
-            {/* Subject header — only when the paper actually has sections.
-                Bold, brand-tinted highlight bar with a left accent so each
-                section reads as a clear divider in the palette. */}
-            {multiSection && band.label && (
-              <div className="bg-primary/10 text-primary sticky top-0 z-10 -mx-2 mb-2 flex items-center justify-between gap-2 border-l-4 border-primary px-2 py-1.5 text-xs font-bold uppercase tracking-wide backdrop-blur">
-                <span className="truncate">{band.label}</span>
-                <span className="tabular-nums whitespace-nowrap">
-                  {band.items.filter(({ qq }) => answered(qq.question_id)).length}/
-                  {band.items.length}
-                </span>
-              </div>
-            )}
-            <div className="mb-2 grid grid-cols-[repeat(auto-fill,minmax(2rem,1fr))] gap-1.5">
-              {band.items.map(({ qq, i }) => (
-                <button
-                  key={qq.question_id}
-                  ref={i === index ? currentCellRef : null}
-                  onClick={() => goTo(i)}
-                  className={`relative flex aspect-square items-center justify-center rounded-md border text-xs font-medium tabular-nums transition ${
-                    answered(qq.question_id)
-                      ? "border-emerald-500 bg-emerald-500 text-white dark:border-emerald-600 dark:bg-emerald-600"
-                      : seen.has(qq.question_id)
-                        ? "border-amber-400 bg-amber-50 text-amber-700 dark:border-amber-700 dark:bg-amber-950/40 dark:text-amber-300"
-                        : "bg-background"
-                  } ${i === index ? "ring-primary border-primary ring-2" : ""}`}
-                >
-                  {i + 1}
-                  {/* Answered → corner tick, so "done" reads even in greyscale. */}
-                  {answered(qq.question_id) && (
-                    <span className="bg-background text-emerald-600 dark:bg-background absolute -top-1 -right-1 flex size-3.5 items-center justify-center rounded-full">
-                      <Check className="size-2.5" strokeWidth={3.5} />
-                    </span>
-                  )}
-                </button>
-              ))}
-            </div>
-          </div>
-        ))}
-      </div>
+      {/* Desktop fills the width: the question sits in a wide main column with the
+          palette as a persistent right sidebar. On mobile it stacks — the question
+          first, then the navigator below. */}
+      <div className="lg:grid lg:grid-cols-[minmax(0,1fr)_20rem] lg:items-start lg:gap-6">
+        {/* Main column — question + per-question actions + navigation. */}
+        <div className="min-w-0">
 
       {/* Question */}
       <Card>
@@ -756,6 +762,32 @@ export function AttemptRunner({
         </CardContent>
       </Card>
 
+      {/* Per-question actions — Clear response (un-answer, so a student can dodge
+          the negative mark) + Mark for review (violet palette flag). */}
+      <div className="mt-3 flex flex-wrap items-center gap-2">
+        <Button
+          variant="outline"
+          size="sm"
+          onClick={() => clearAnswer(q)}
+          disabled={!answered(q.question_id)}
+        >
+          <Eraser /> Clear response
+        </Button>
+        <Button
+          variant="outline"
+          size="sm"
+          aria-pressed={marked.has(q.question_id)}
+          onClick={() => toggleMark(q.question_id)}
+          className={
+            marked.has(q.question_id)
+              ? "border-violet-400 bg-violet-100 text-violet-700 hover:bg-violet-100 hover:text-violet-700 dark:border-violet-700 dark:bg-violet-950/50 dark:text-violet-300 dark:hover:bg-violet-950/50"
+              : ""
+          }
+        >
+          <Flag /> {marked.has(q.question_id) ? "Marked for review" : "Mark for review"}
+        </Button>
+      </div>
+
       {/* Navigation — Next is disabled (not swapped for Submit) on the last
           question so a habitual tap can't accidentally end the exam. */}
       <div className="mt-4 flex items-center justify-between gap-3">
@@ -772,6 +804,124 @@ export function AttemptRunner({
             Next
           </Button>
         </div>
+      </div>
+
+        </div>
+        {/* Palette sidebar — legend + accordion of subject sections. On mobile it
+            sits below the question; on desktop it is a sticky right rail. */}
+        <aside className="mt-6 lg:sticky lg:top-20 lg:mt-0">
+          {/* Summary counts double as the legend. */}
+          <div className="mb-2 grid grid-cols-2 gap-2 text-xs">
+            <div className="flex items-center gap-2 rounded-md border p-2">
+              <span className="size-3 shrink-0 rounded-sm bg-emerald-500" />
+              <span className="tabular-nums font-semibold">{answeredCount}</span>
+              <span className="text-muted-foreground">Answered</span>
+            </div>
+            <div className="flex items-center gap-2 rounded-md border p-2">
+              <span className="size-3 shrink-0 rounded-sm bg-violet-500" />
+              <span className="tabular-nums font-semibold">{markedCount}</span>
+              <span className="text-muted-foreground">Marked</span>
+            </div>
+            <div className="flex items-center gap-2 rounded-md border p-2">
+              <span className="size-3 shrink-0 rounded-sm border-2 border-amber-400 bg-amber-50 dark:bg-amber-950/40" />
+              <span className="tabular-nums font-semibold">{seenCount}</span>
+              <span className="text-muted-foreground">Seen</span>
+            </div>
+            <div className="flex items-center gap-2 rounded-md border p-2">
+              <span className="bg-muted size-3 shrink-0 rounded-sm border" />
+              <span className="tabular-nums font-semibold">{notVisitedCount}</span>
+              <span className="text-muted-foreground">Left</span>
+            </div>
+          </div>
+
+          {/* Collapse / expand every section at once (sectioned papers only). */}
+          {multiSection && (
+            <div className="mb-2 flex justify-end">
+              <button
+                type="button"
+                onClick={() =>
+                  setCollapsed((prev) =>
+                    prev.size >= bands.length ? new Set() : new Set(bands.map((b) => b.id)),
+                  )
+                }
+                className="text-primary text-xs font-medium hover:underline"
+              >
+                {collapsed.size >= bands.length ? "Expand all" : "Collapse all"}
+              </button>
+            </div>
+          )}
+
+          <div className="bg-muted/30 max-h-[22rem] overflow-y-auto rounded-md border p-2 lg:max-h-[calc(100vh-16rem)]">
+            {bands.map((band) => {
+              const hasCurrent = band.items.some((it) => it.i === index);
+              // A section is open unless collapsed — but the one holding the current
+              // question is always shown, so "where am I" can never be hidden.
+              const open = !multiSection || !collapsed.has(band.id) || hasCurrent;
+              return (
+                <div key={band.id}>
+                  {/* Subject header — a tap-to-collapse accordion row (sectioned
+                      papers only); chevron rotates, count shows answered/total. */}
+                  {multiSection && band.label && (
+                    <button
+                      type="button"
+                      onClick={() => toggleSection(band.id)}
+                      className="bg-primary/10 text-primary sticky top-0 z-10 mb-2 flex w-full items-center justify-between gap-2 rounded-sm border-l-4 border-primary px-2 py-1.5 text-xs font-bold tracking-wide uppercase backdrop-blur"
+                    >
+                      <span className="flex min-w-0 items-center gap-1.5">
+                        <ChevronDown
+                          className={`size-3.5 shrink-0 transition-transform ${open ? "" : "-rotate-90"}`}
+                        />
+                        <span className="truncate">{band.label}</span>
+                      </span>
+                      <span className="tabular-nums whitespace-nowrap">
+                        {band.items.filter(({ qq }) => answered(qq.question_id)).length}/
+                        {band.items.length}
+                      </span>
+                    </button>
+                  )}
+                  {open && (
+                    <div className="mb-2 grid grid-cols-[repeat(auto-fill,minmax(2rem,1fr))] gap-1.5">
+                      {band.items.map(({ qq, i }) => {
+                        const mk = marked.has(qq.question_id);
+                        const ans = answered(qq.question_id);
+                        const sn = seen.has(qq.question_id);
+                        return (
+                          <button
+                            key={qq.question_id}
+                            ref={i === index ? currentCellRef : null}
+                            onClick={() => goTo(i)}
+                            className={`relative flex aspect-square items-center justify-center rounded-md border text-xs font-medium tabular-nums transition ${
+                              mk
+                                ? "border-violet-500 bg-violet-500 text-white dark:border-violet-600 dark:bg-violet-600"
+                                : ans
+                                  ? "border-emerald-500 bg-emerald-500 text-white dark:border-emerald-600 dark:bg-emerald-600"
+                                  : sn
+                                    ? "border-amber-400 bg-amber-50 text-amber-700 dark:border-amber-700 dark:bg-amber-950/40 dark:text-amber-300"
+                                    : "bg-background"
+                            } ${i === index ? "ring-primary border-primary ring-2" : ""}`}
+                          >
+                            {i + 1}
+                            {/* Corner badge: a flag when marked, else a tick when
+                                answered — so state reads even in greyscale. */}
+                            {mk ? (
+                              <span className="bg-background absolute -top-1 -right-1 flex size-3.5 items-center justify-center rounded-full text-violet-600 dark:bg-background">
+                                <Flag className="size-2.5" strokeWidth={3} />
+                              </span>
+                            ) : ans ? (
+                              <span className="bg-background absolute -top-1 -right-1 flex size-3.5 items-center justify-center rounded-full text-emerald-600 dark:bg-background">
+                                <Check className="size-2.5" strokeWidth={3.5} />
+                              </span>
+                            ) : null}
+                          </button>
+                        );
+                      })}
+                    </div>
+                  )}
+                </div>
+              );
+            })}
+          </div>
+        </aside>
       </div>
 
       {/* Submit confirmation */}
