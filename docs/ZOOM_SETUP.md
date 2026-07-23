@@ -15,11 +15,11 @@ or consent screen is involved.
 
 Three server-only environment variables:
 
-| Variable | What it is |
-|----------|------------|
-| `ZOOM_ACCOUNT_ID` | Your Zoom account ID |
-| `ZOOM_CLIENT_ID` | The Server-to-Server OAuth app's Client ID |
-| `ZOOM_CLIENT_SECRET` | That app's Client Secret |
+| Variable             | What it is                                 |
+| -------------------- | ------------------------------------------ |
+| `ZOOM_ACCOUNT_ID`    | Your Zoom account ID                       |
+| `ZOOM_CLIENT_ID`     | The Server-to-Server OAuth app's Client ID |
+| `ZOOM_CLIENT_SECRET` | That app's Client Secret                   |
 
 > **Zoom is optional.** If these are unset, scheduling still works — a class saves
 > with `meeting_status='failed'` (or `manual` if staff pasted a link), and nothing
