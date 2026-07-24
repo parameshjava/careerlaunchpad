@@ -12,6 +12,7 @@ import { ArrowLeft, Copy, Loader2, Lock, Plus, RotateCcw, Save, Trash2 } from "l
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { CollegePicker, type College } from "@/components/colleges/college-picker";
+import { ConfirmDialog } from "@/components/ui/confirm-dialog";
 import { DatePicker } from "@/components/ui/date-picker";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
@@ -43,6 +44,7 @@ export function BatchEditor({ batchId, embedded = false }: { batchId?: string; e
   const editing = Boolean(batchId);
   const [saved, setSaved] = useState(false);
   const [statusBusy, setStatusBusy] = useState(false);
+  const [confirmClose, setConfirmClose] = useState(false);
 
   const [loading, setLoading] = useState(true);
   const [loadError, setLoadError] = useState("");
@@ -193,8 +195,9 @@ export function BatchEditor({ batchId, embedded = false }: { batchId?: string; e
 
   // Deliberate lifecycle action (lives here in the Details tab, not the list, so
   // it can't be clicked by accident). Status-only PATCH, mirrors the old list.
+  // Used for non-close transitions (e.g. reopening); closing goes through the
+  // ConfirmDialog below via doClose().
   async function changeStatus(next: BatchStatus) {
-    if (next === "closed" && !confirm("Close this batch? No new students can be enrolled while it's closed.")) return;
     setFormError("");
     setStatusBusy(true);
     try {
@@ -213,6 +216,22 @@ export function BatchEditor({ batchId, embedded = false }: { batchId?: string; e
     } finally {
       setStatusBusy(false);
     }
+  }
+
+  // Close transition — driven by the ConfirmDialog: throws on failure so the
+  // dialog surfaces the error inline and auto-closes on success.
+  async function doClose() {
+    setFormError("");
+    const res = await fetch(`/api/admin/batches/${batchId}`, {
+      method: "PATCH",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({ status: "closed" }),
+    });
+    const json = await res.json().catch(() => ({}));
+    if (!res.ok) throw new Error(json.error ?? "Could not close the batch");
+    setStatus("closed");
+    invalidate(`/api/admin/batches/${batchId}`);
+    router.refresh();
   }
 
   if (loading)
@@ -457,7 +476,7 @@ export function BatchEditor({ batchId, embedded = false }: { batchId?: string; e
             ) : status !== "cancelled" ? (
               <Button
                 variant="outline"
-                onClick={() => changeStatus("closed")}
+                onClick={() => setConfirmClose(true)}
                 disabled={statusBusy}
                 className="text-destructive hover:text-destructive"
               >
@@ -478,6 +497,18 @@ export function BatchEditor({ batchId, embedded = false }: { batchId?: string; e
           </div>
         </div>
       </div>
+
+      <ConfirmDialog
+        open={confirmClose}
+        onOpenChange={setConfirmClose}
+        destructive
+        title="Close batch"
+        description={
+          <>Close this batch? No new students can be enrolled while it&apos;s closed. You can reopen it later.</>
+        }
+        confirmLabel="Close batch"
+        onConfirm={doClose}
+      />
     </div>
   );
 }

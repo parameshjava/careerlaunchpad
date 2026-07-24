@@ -29,6 +29,7 @@ import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { Badge } from "@/components/ui/badge";
+import { ConfirmDialog } from "@/components/ui/confirm-dialog";
 import { StatusBadge } from "@/components/data-table-parts";
 import {
   Dialog,
@@ -163,6 +164,9 @@ export function CollegesManager() {
   const [form, setForm] = useState<FormFields>(EMPTY_FORM);
   const [saving, setSaving] = useState(false);
   const [formError, setFormError] = useState<string | null>(null);
+
+  // Delete confirmation (type-to-confirm, since a delete is irreversible).
+  const [deleteTarget, setDeleteTarget] = useState<College | null>(null);
 
   const debounce = useRef<ReturnType<typeof setTimeout> | null>(null);
 
@@ -299,18 +303,13 @@ export function CollegesManager() {
     }
   }
 
+  // Irreversible delete → type-to-confirm dialog (throws so the dialog surfaces
+  // the error inline and stays open on failure).
   async function remove(c: College) {
-    // ponytail: native confirm() is the zero-dep guard for a destructive action.
-    if (!window.confirm(`Delete "${c.name}"? This permanently removes it and can't be undone.`))
-      return;
-    try {
-      const res = await fetch(`/api/colleges/${c.id}`, { method: "DELETE" });
-      const json = await res.json();
-      if (!res.ok) throw new Error(json.error ?? "Delete failed");
-      await load();
-    } catch (e) {
-      setListError((e as Error).message);
-    }
+    const res = await fetch(`/api/colleges/${c.id}`, { method: "DELETE" });
+    const json = await res.json().catch(() => ({}));
+    if (!res.ok) throw new Error(json.error ?? "Delete failed");
+    await load();
   }
 
   const totalPages = Math.max(1, Math.ceil(total / pageSize));
@@ -487,6 +486,23 @@ export function CollegesManager() {
         </DialogContent>
       </Dialog>
 
+      {/* Delete confirmation — irreversible, so type-to-confirm the name */}
+      <ConfirmDialog
+        open={!!deleteTarget}
+        onOpenChange={(o) => !o && setDeleteTarget(null)}
+        destructive
+        title="Delete college"
+        description={
+          <>
+            This permanently removes <span className="text-foreground font-semibold">{deleteTarget?.name}</span>{" "}
+            and can&apos;t be undone.
+          </>
+        }
+        confirmPhrase={deleteTarget?.name}
+        confirmLabel="Delete college"
+        onConfirm={() => remove(deleteTarget!)}
+      />
+
       {/* Filters */}
       <div className="grid gap-3 sm:grid-cols-2 lg:grid-cols-5">
         <div className="sm:col-span-2 lg:col-span-1">
@@ -650,7 +666,7 @@ export function CollegesManager() {
                         className="text-destructive hover:text-destructive h-8 w-8"
                         title="Delete"
                         aria-label={`Delete ${c.name}`}
-                        onClick={() => remove(c)}
+                        onClick={() => setDeleteTarget(c)}
                       >
                         <Trash2 className="h-4 w-4" />
                       </Button>

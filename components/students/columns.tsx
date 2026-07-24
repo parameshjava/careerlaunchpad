@@ -3,9 +3,11 @@
 import { ColumnDef, type Table } from "@tanstack/react-table";
 import { MoreHorizontal } from "lucide-react";
 import { useRouter } from "next/navigation";
+import { useState } from "react";
 
 import { Button } from "@/components/ui/button";
 import { Checkbox } from "@/components/ui/checkbox";
+import { ConfirmDialog } from "@/components/ui/confirm-dialog";
 import {
   DropdownMenu,
   DropdownMenuContent,
@@ -127,20 +129,21 @@ export const columns: ColumnDef<Student>[] = [
 // the student.delete permission) to decide whether to offer soft-delete.
 function StudentActions({ student, table }: { student: Student; table: Table<Student> }) {
   const router = useRouter();
+  const [confirmOpen, setConfirmOpen] = useState(false);
   const meta = table.options.meta as { canDelete?: boolean; canImpersonate?: boolean } | undefined;
   const canDelete = meta?.canDelete ?? false;
   // Only Registered students have an auth account (student.id is their user id).
   const canImpersonate = (meta?.canImpersonate ?? false) && student.stage === "Registered";
 
   async function onDelete() {
-    if (!confirm(`Delete ${student.name || student.email}? They'll be removed from the list.`)) return;
     const kind = student.stage === "Registered" ? "registered" : "intake";
     const res = await deleteStudent(student.id, kind);
-    if (res.error) { alert(res.error); return; }
+    if (res.error) throw new Error(res.error);
     router.refresh();
   }
 
   return (
+    <>
     <DropdownMenu>
       <DropdownMenuTrigger asChild>
         <Button variant="ghost" className="size-8 p-0">
@@ -165,7 +168,7 @@ function StudentActions({ student, table }: { student: Student; table: Table<Stu
           <>
             <DropdownMenuSeparator />
             <DropdownMenuItem
-              onClick={onDelete}
+              onClick={() => setConfirmOpen(true)}
               className="text-destructive focus:text-destructive"
             >
               Delete
@@ -174,5 +177,15 @@ function StudentActions({ student, table }: { student: Student; table: Table<Stu
         )}
       </DropdownMenuContent>
     </DropdownMenu>
+    <ConfirmDialog
+      open={confirmOpen}
+      onOpenChange={setConfirmOpen}
+      destructive
+      title="Delete student"
+      description={<>Delete <span className="text-foreground font-semibold">{student.name || student.email}</span>? They&apos;ll be removed from the list.</>}
+      confirmLabel="Delete"
+      onConfirm={onDelete}
+    />
+    </>
   );
 }

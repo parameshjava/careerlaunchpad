@@ -16,6 +16,7 @@ import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 import { DataTable, arrIncludes, type DataTableFilter } from "@/components/data-table";
 import { SortHeader, StatusBadge, type StatusTone } from "@/components/data-table-parts";
+import { ConfirmDialog } from "@/components/ui/confirm-dialog";
 import { ManageMemberDialog } from "./manage-roles-dialog";
 import { setUserStatus, resendInvite, revokeInvite, deleteMember } from "./actions";
 import { enterImpersonation } from "@/app/impersonation/actions";
@@ -255,15 +256,12 @@ function RowActions({
   row: MemberRow; caps: Caps; callerRank: number; isOwner: boolean; isSelf: boolean;
 }) {
   const router = useRouter();
-  const [busy, setBusy] = useState(false);
+  const [confirmOpen, setConfirmOpen] = useState(false);
 
+  // Users only; invites use the revoke form below. The dialog owns busy/error.
   async function onDelete() {
-    const what = row.kind === "invite" ? "Revoke this invite?" : `Delete ${row.fullName || row.email}? They'll lose access (reversible by an owner).`;
-    if (!confirm(what)) return;
-    setBusy(true);
-    const res = await deleteMember(row.id); // users only; invites use the form below
-    setBusy(false);
-    if (res.error) { alert(res.error); return; }
+    const res = await deleteMember(row.id);
+    if (res.error) throw new Error(res.error);
     router.refresh();
   }
 
@@ -294,6 +292,7 @@ function RowActions({
   // Can't act as an owner/platform admin (server enforces this too).
   const impersonable = !row.roleKeys.some((k) => k === "owner" || k === "platform_admin");
   return (
+    <>
     <div className="flex flex-wrap items-center justify-end gap-2">
       {caps.canImpersonate && !isSelf && impersonable && row.status === "active" && (
         <form action={enterImpersonation.bind(null, row.id)}>
@@ -318,10 +317,20 @@ function RowActions({
         />
       )}
       {caps.canDelete && !isSelf && (
-        <Button variant="ghost" size="sm" onClick={onDelete} disabled={busy} title="Delete member" className="text-destructive">
+        <Button variant="ghost" size="sm" onClick={() => setConfirmOpen(true)} title="Delete member" className="text-destructive">
           <Trash2 className="size-3.5" />
         </Button>
       )}
     </div>
+    <ConfirmDialog
+      open={confirmOpen}
+      onOpenChange={setConfirmOpen}
+      destructive
+      title="Remove member"
+      description={<>Remove <span className="text-foreground font-semibold">{row.fullName || row.email}</span>? They&apos;ll lose access (reversible by an owner).</>}
+      confirmLabel="Remove"
+      onConfirm={onDelete}
+    />
+    </>
   );
 }

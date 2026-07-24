@@ -174,6 +174,7 @@ function ExamList({ exams, empty }: { exams: ExamCard[]; empty: string }) {
   const [publishing, setPublishing] = useState<string | null>(null);
   const [toDelete, setToDelete] = useState<ExamCard | null>(null);
   const [delError, setDelError] = useState("");
+  const [publishError, setPublishError] = useState("");
   // Type-to-confirm (AWS/GCP style): Delete stays disabled until this exactly
   // matches the exam title.
   const [confirmText, setConfirmText] = useState("");
@@ -181,6 +182,7 @@ function ExamList({ exams, empty }: { exams: ExamCard[]; empty: string }) {
   // Toggle student-visible results without leaving the list.
   async function togglePublish(e: ExamCard) {
     if (!e.sessionId) return;
+    setPublishError("");
     setPublishing(e.sessionId);
     const res = await fetch(`/api/exam/sessions/${e.sessionId}/publish-results`, {
       method: "POST",
@@ -189,7 +191,10 @@ function ExamList({ exams, empty }: { exams: ExamCard[]; empty: string }) {
     });
     const data = await res.json().catch(() => ({}));
     setPublishing(null);
-    if (!res.ok) return alert(data.error ?? "Could not update results visibility.");
+    if (!res.ok) {
+      setPublishError(data.error ?? "Could not update results visibility.");
+      return;
+    }
     router.refresh();
   }
 
@@ -219,6 +224,11 @@ function ExamList({ exams, empty }: { exams: ExamCard[]; empty: string }) {
   }
   return (
     <>
+    {publishError && (
+      <p className="text-destructive mb-3 text-sm" role="alert">
+        {publishError}
+      </p>
+    )}
     <ul className="divide-y rounded-md border">
       {exams.map((e) => {
         const st = status(e);

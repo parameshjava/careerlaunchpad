@@ -112,6 +112,17 @@ Uniform across the app — the look is built into `components/ui/dialog.tsx`, so
 
 - **Destructive confirmation:** in the body, a `TriangleAlert` in a `bg-destructive/10 text-destructive` circle beside the description; primary action is `variant="destructive"`.
 - **Irreversible deletes:** require **type-to-confirm** — an `Input` that must exactly match the resource name, with the confirm button `disabled` until it matches. Never use the browser `confirm()`/`alert()`.
+- **Use `<ConfirmDialog>`** (`components/ui/confirm-dialog.tsx`) rather than hand-rolling any of the above. It renders the destructive badge (`destructive`), optional **type-to-confirm** (`confirmPhrase` — required for irreversible deletes), and an async `onConfirm` that shows a busy state, surfaces a thrown `Error` inline, and auto-closes on success. Errors from an action go **inline** in the dialog (or a `text-destructive` line on the page) — never `alert()`.
+
+```tsx
+const [open, setOpen] = useState(false);
+<ConfirmDialog
+  open={open} onOpenChange={setOpen} destructive
+  title="Delete college" confirmPhrase={college.name} confirmLabel="Delete college"
+  description={<>This permanently removes <b>{college.name}</b> and can’t be undone.</>}
+  onConfirm={async () => { const r = await fetch(`/api/colleges/${id}`, {method:"DELETE"}); if(!r.ok) throw new Error("Delete failed"); await reload(); }}
+/>
+```
 
 ## Tooltips (help / "what is this?")
 
