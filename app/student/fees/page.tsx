@@ -3,6 +3,7 @@ import { getAuthContext } from "@/lib/auth";
 import { createClient } from "@/lib/supabase/server";
 import { fetchStudentFees } from "@/lib/enrollment-query";
 import { MyFees } from "@/components/students/my-fees";
+import { PageContainer } from "@/components/app-shell/page-container";
 
 // Student "My fees" (issue #49, Phase 5). RLS scopes everything to the signed-in
 // student, so this simply reads their own enrolments/payments.
@@ -14,7 +15,7 @@ export default async function MyFeesPage() {
   const enrollments = await fetchStudentFees(supabase, ctx.userId);
 
   return (
-    <div className="mx-auto max-w-3xl">
+    <PageContainer variant="reading">
       <header className="mb-6">
         <h1 className="text-2xl font-bold tracking-tight">My fees</h1>
         <p className="text-muted-foreground mt-1 text-sm">
@@ -22,6 +23,6 @@ export default async function MyFeesPage() {
         </p>
       </header>
       <MyFees enrollments={enrollments} />
-    </div>
+    </PageContainer>
   );
 }

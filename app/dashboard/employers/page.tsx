@@ -1,6 +1,7 @@
 import { redirect } from "next/navigation";
 import { getAuthContext, can } from "@/lib/auth";
 import { createClient } from "@/lib/supabase/server";
+import { PageContainer } from "@/components/app-shell/page-container";
 import { EmployersManager, type Employer } from "./employers-manager";
 
 // Employer (organization) management. Owner / Admin (user.manage).
@@ -17,7 +18,7 @@ export default async function EmployersPage() {
     .order("name");
 
   return (
-    <div className="mx-auto max-w-4xl">
+    <PageContainer variant="full">
       <header className="mb-6">
         <h1 className="text-2xl font-bold tracking-tight">Organizations</h1>
         <p className="text-muted-foreground mt-1 text-sm">
@@ -26,6 +27,6 @@ export default async function EmployersPage() {
         </p>
       </header>
       <EmployersManager employers={(data ?? []) as Employer[]} />
-    </div>
+    </PageContainer>
   );
 }

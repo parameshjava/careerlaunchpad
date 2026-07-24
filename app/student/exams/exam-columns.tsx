@@ -6,12 +6,12 @@
 // in exams-list.tsx (they depend on the current time / poll), so these columns
 // stay pure presentation.
 import { ColumnDef } from "@tanstack/react-table";
-import { ArrowUpDown } from "lucide-react";
 import Link from "next/link";
 
 import { Button } from "@/components/ui/button";
-import { Badge } from "@/components/ui/badge";
 import { arrIncludes } from "@/components/data-table";
+import { SortHeader, StatusBadge, type StatusTone } from "@/components/data-table-parts";
+import { formatDate, formatTimeRange } from "@/lib/format-date";
 
 export type Section = { subject: string; num_questions: number; marks_per_question: number };
 
@@ -45,37 +45,23 @@ export type ExamRow = Session & { statusLabel: ExamStatus; action: ExamAction };
 export const UPCOMING_STATUSES: ExamStatus[] = ["Open", "Scheduled"];
 export const PAST_STATUSES: ExamStatus[] = ["Result ready", "Submitted", "Closed"];
 
-const STATUS_STYLES: Record<ExamStatus, string> = {
-  Open: "bg-emerald-100 text-emerald-700 dark:bg-emerald-950 dark:text-emerald-300",
-  Scheduled: "bg-blue-100 text-blue-700 dark:bg-blue-950 dark:text-blue-300",
-  Submitted: "bg-amber-100 text-amber-700 dark:bg-amber-950 dark:text-amber-300",
-  "Result ready": "bg-violet-100 text-violet-700 dark:bg-violet-950 dark:text-violet-300",
-  Closed: "bg-muted text-muted-foreground",
+const STATUS_TONES: Record<ExamStatus, StatusTone> = {
+  Open: "emerald",
+  Scheduled: "blue",
+  Submitted: "amber",
+  "Result ready": "violet",
+  Closed: "slate",
 };
 
-function fmtDate(iso: string) {
-  return new Date(iso).toLocaleDateString(undefined, { day: "numeric", month: "short", year: "numeric" });
-}
-function fmtTime(iso: string) {
-  return new Date(iso).toLocaleTimeString(undefined, { hour: "numeric", minute: "2-digit" });
-}
 // Trim trailing zeros: 8.00 -> "8", 7.50 -> "7.5".
 function fmtScore(n: number) {
   return Number(n.toFixed(2)).toString();
 }
 
-function SortHeader({ column, label }: { column: { toggleSorting: (d?: boolean) => void; getIsSorted: () => false | "asc" | "desc" }; label: string }) {
-  return (
-    <Button variant="ghost" className="-ml-3 h-8" onClick={() => column.toggleSorting(column.getIsSorted() === "asc")}>
-      {label} <ArrowUpDown className="size-3.5" />
-    </Button>
-  );
-}
-
 const colExam: ColumnDef<ExamRow> = {
   accessorKey: "exam_title",
   meta: { label: "Exam" },
-  header: ({ column }) => <SortHeader column={column} label="Exam" />,
+  header: ({ column }) => <SortHeader column={column}>Exam</SortHeader>,
   cell: ({ row }) => {
     const { exam_title, label } = row.original;
     return (
@@ -94,17 +80,16 @@ const colScheduled: ColumnDef<ExamRow> = {
   id: "opens_at",
   meta: { label: "Scheduled" },
   accessorFn: (r) => (r.opens_at ? new Date(r.opens_at).getTime() : undefined),
-  header: ({ column }) => <SortHeader column={column} label="Scheduled" />,
+  header: ({ column }) => <SortHeader column={column}>Scheduled</SortHeader>,
   sortUndefined: "last",
   cell: ({ row }) => {
     const { opens_at, closes_at } = row.original;
     if (!opens_at) return <span className="text-muted-foreground">—</span>;
     return (
       <div className="flex flex-col whitespace-nowrap">
-        <span>{fmtDate(opens_at)}</span>
+        <span>{formatDate(opens_at)}</span>
         <span className="text-muted-foreground text-xs tabular-nums">
-          {fmtTime(opens_at)}
-          {closes_at ? `–${fmtTime(closes_at)}` : ""}
+          {formatTimeRange(opens_at, closes_at)}
         </span>
       </div>
     );
@@ -114,28 +99,28 @@ const colScheduled: ColumnDef<ExamRow> = {
 const colDuration: ColumnDef<ExamRow> = {
   accessorKey: "duration_minutes",
   meta: { label: "Duration" },
-  header: ({ column }) => <SortHeader column={column} label="Duration" />,
+  header: ({ column }) => <SortHeader column={column}>Duration</SortHeader>,
   cell: ({ row }) => <span className="tabular-nums whitespace-nowrap">{row.original.duration_minutes} min</span>,
 };
 
 const colQuestions: ColumnDef<ExamRow> = {
   accessorKey: "total_questions",
   meta: { label: "Questions" },
-  header: ({ column }) => <SortHeader column={column} label="Questions" />,
+  header: ({ column }) => <SortHeader column={column}>Questions</SortHeader>,
   cell: ({ row }) => <span className="tabular-nums">{row.original.total_questions}</span>,
 };
 
 const colMarks: ColumnDef<ExamRow> = {
   accessorKey: "total_marks",
   meta: { label: "Marks" },
-  header: ({ column }) => <SortHeader column={column} label="Marks" />,
+  header: ({ column }) => <SortHeader column={column}>Marks</SortHeader>,
   cell: ({ row }) => <span className="tabular-nums">{row.original.total_marks}</span>,
 };
 
 const colScore: ColumnDef<ExamRow> = {
   accessorKey: "score",
   meta: { label: "Score" },
-  header: ({ column }) => <SortHeader column={column} label="Score" />,
+  header: ({ column }) => <SortHeader column={column}>Score</SortHeader>,
   sortUndefined: "last",
   cell: ({ row }) => {
     const { score, total_marks, statusLabel } = row.original;
@@ -161,7 +146,7 @@ const colStatus: ColumnDef<ExamRow> = {
     const { statusLabel: s, attempt_status, resume_count } = row.original;
     return (
       <div>
-        <Badge variant="secondary" className={STATUS_STYLES[s]}>{s}</Badge>
+        <StatusBadge tone={STATUS_TONES[s]}>{s}</StatusBadge>
         {attempt_status === "aborted" && (resume_count ?? 0) > 0 && (
           <span className="text-muted-foreground mt-0.5 block text-xs">Ask your administrator to resume</span>
         )}

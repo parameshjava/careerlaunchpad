@@ -8,6 +8,7 @@ import { columns } from "@/components/students/columns";
 import { createClient } from "@/lib/supabase/server";
 import { getAuthContext, can } from "@/lib/auth";
 import { fetchStudents } from "@/lib/students-query";
+import { PageContainer } from "@/components/app-shell/page-container";
 
 export const metadata: Metadata = {
   title: "Students Console",
@@ -41,7 +42,7 @@ export default async function DashboardPage() {
   ];
 
   return (
-    <div className="space-y-6">
+    <PageContainer variant="full" className="space-y-6">
       <div className="flex items-start justify-between gap-3">
         <div>
           <h1 className="text-2xl font-semibold tracking-tight">Students</h1>
@@ -115,6 +116,6 @@ export default async function DashboardPage() {
           />
         </CardContent>
       </Card>
-    </div>
+    </PageContainer>
   );
 }

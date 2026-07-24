@@ -5,6 +5,7 @@ import { createClient } from "@/lib/supabase/server";
 import { fetchExamCards } from "@/lib/exam-query";
 import { Button } from "@/components/ui/button";
 import { ExamsBrowser } from "./exams-browser";
+import { PageContainer } from "@/components/app-shell/page-container";
 
 // Exam papers. Lists the college's exams (blueprints) — INCLUDING drafts — with
 // search / college filter / sort and Open / Closed / Drafts tabs (in ExamsBrowser).
@@ -38,7 +39,7 @@ export default async function ExamPapersPage({
   const exams = await fetchExamCards(supabase, scopedCollege(ctx));
 
   return (
-    <div className="mx-auto max-w-4xl">
+    <PageContainer variant="full">
       <header className="mb-6 flex flex-wrap items-start justify-between gap-3">
         <div>
           <h1 className="text-2xl font-bold tracking-tight">Exam papers</h1>
@@ -54,6 +55,6 @@ export default async function ExamPapersPage({
       </header>
 
       <ExamsBrowser exams={exams} initialTab={initialTab} />
-    </div>
+    </PageContainer>
   );
 }

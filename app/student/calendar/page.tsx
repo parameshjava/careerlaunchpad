@@ -1,7 +1,7 @@
 import { redirect } from "next/navigation";
 import { getAuthContext } from "@/lib/auth";
 import { isStudentApproved } from "@/lib/student-approval";
-import { MyCalendar } from "@/components/students/my-calendar";
+import { ScheduleCalendar } from "@/components/calendar/schedule-calendar";
 
 // A student's class calendar (issue #64). Approval-gated like exams — only an
 // approved (hence enrollable) student has classes. Data is fetched client-side
@@ -11,5 +11,5 @@ export default async function StudentCalendarPage() {
   if (!ctx) redirect("/auth/login");
   if (!(await isStudentApproved(ctx.userId))) redirect("/student/pending");
 
-  return <MyCalendar />;
+  return <ScheduleCalendar />;
 }

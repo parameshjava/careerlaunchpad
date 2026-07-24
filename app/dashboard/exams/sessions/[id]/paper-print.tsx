@@ -1,21 +1,21 @@
 "use client";
 
-// The printable question paper / answer key, embedded in the session page:
-// hidden on screen, shown only when printing. The session page's "Print paper"
-// and "Print key" buttons call printAs(), which stamps the mode on <body> so
-// the two parts print as SEPARATE documents (offline conduct: students must
-// never receive the key). Passages render once before their question block.
+// The printable question paper / answer key, embedded in the session page and
+// shown VISIBLE on screen as an A4 preview (below the session management UI).
+// The toolbar's "Print paper" / "Print key" buttons call print(part), which
+// clones the letterhead document into an isolated iframe and stamps the part on
+// its <body> so the two halves print as SEPARATE documents (offline conduct:
+// students must never receive the key). Passages render once before their
+// question block.
 import { RichContent } from "@/components/exam/RichContent";
-import { LetterheadFrame } from "@/components/print/letterhead";
+import { Button } from "@/components/ui/button";
+import { PrintDocument } from "@/components/print/print-document";
+import { PrintToolbar } from "@/components/print/blocks";
+import { usePrint } from "@/lib/use-print";
+import { Printer } from "lucide-react";
 import type { PrintQuestion } from "@/lib/exam-query";
 
 const LETTERS = ["A", "B", "C", "D", "E"];
-
-/** Stamp the print mode on <body> so the @media print rules show only that part. */
-export function printAs(mode: "paper" | "key") {
-  document.body.dataset.print = mode;
-  window.print();
-}
 
 function correctLetters(q: PrintQuestion): string {
   return q.options
@@ -39,28 +39,31 @@ export function PaperPrint({
   totalMarks: number;
   questions: PrintQuestion[];
 }) {
+  const { printRef, print } = usePrint();
   let lastPassageId: string | null = null;
 
   return (
     <>
-      <style>{`
-        @media print {
-          body * { visibility: hidden !important; }
-          #exam-print, #exam-print * { visibility: visible !important; }
-          #exam-print {
-            display: block !important;
-            position: absolute; left: 0; top: 0; width: 100%; max-width: none; padding: 0;
-          }
-          .no-print { display: none !important; }
-          .answer-key { page-break-before: always; }
-          body[data-print="paper"] .answer-key { display: none !important; }
-          body[data-print="key"] .paper-body { display: none !important; }
-          body[data-print="key"] .answer-key { page-break-before: auto; }
-        }
-      `}</style>
+      <PrintToolbar>
+        <Button onClick={() => print("paper")}>
+          <Printer /> Print paper
+        </Button>
+        <Button onClick={() => print("key")}>
+          <Printer /> Print key
+        </Button>
+      </PrintToolbar>
 
-      <div id="exam-print" className="hidden text-black">
-        <LetterheadFrame docLabel="Question Paper">
+      <PrintDocument ref={printRef} docLabel="Question Paper">
+        {/* Split-document CSS — a child of PrintDocument so it is cloned into
+            the print iframe. print("paper") hides the key; print("key") hides
+            the questions. */}
+        <style>{`
+          .answer-key { page-break-before: always; }
+          [data-print-part="paper"] .answer-key { display: none !important; }
+          [data-print-part="key"] .paper-body { display: none !important; }
+          [data-print-part="key"] .answer-key { page-break-before: auto; }
+        `}</style>
+
         {/* Cover */}
         <div className="mb-6 border-b pb-4">
           {collegeName && <p className="text-center text-lg font-bold">{collegeName}</p>}
@@ -126,8 +129,7 @@ export function PaperPrint({
             ))}
           </div>
         </div>
-        </LetterheadFrame>
-      </div>
+      </PrintDocument>
     </>
   );
 }

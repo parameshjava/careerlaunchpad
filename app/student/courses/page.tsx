@@ -4,6 +4,7 @@ import { getAuthContext } from "@/lib/auth";
 import { createClient } from "@/lib/supabase/server";
 import { fetchOpenCoursesForStudent } from "@/lib/course-query";
 import { AvailableCourses } from "@/components/students/available-courses";
+import { PageContainer } from "@/components/app-shell/page-container";
 
 // Student self-enrolment (issue #49): browse the COURSES open for enrolment at
 // your college. Each course card opens its details page, where the individual
@@ -16,7 +17,7 @@ export default async function StudentCoursesPage() {
   const courses = await fetchOpenCoursesForStudent(supabase, ctx.userId);
 
   return (
-    <div className="mx-auto max-w-6xl">
+    <PageContainer variant="full">
       <header className="mb-6">
         <h1 className="text-2xl font-bold tracking-tight">Courses</h1>
         <p className="text-muted-foreground mt-1 text-sm">
@@ -26,6 +27,6 @@ export default async function StudentCoursesPage() {
         </p>
       </header>
       <AvailableCourses courses={courses} />
-    </div>
+    </PageContainer>
   );
 }

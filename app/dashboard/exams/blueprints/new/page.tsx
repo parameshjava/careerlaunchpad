@@ -3,6 +3,7 @@ import { redirect } from "next/navigation";
 import { getAuthContext, can, scopedCollege } from "@/lib/auth";
 import { createClient } from "@/lib/supabase/server";
 import { BlueprintEditor } from "../blueprint-editor";
+import { PageContainer } from "@/components/app-shell/page-container";
 
 // A new blueprint is per-college. College selection is the wizard's first step:
 // a College Admin is locked to their own college (prefilled); an Owner /
@@ -30,7 +31,7 @@ export default async function NewBlueprintPage() {
   }
 
   return (
-    <div className="mx-auto max-w-4xl">
+    <PageContainer variant="form">
       <Link
         href="/dashboard/exams/papers"
         className="text-muted-foreground hover:text-foreground mb-4 inline-block text-sm"
@@ -41,6 +42,6 @@ export default async function NewBlueprintPage() {
         <h1 className="text-2xl font-bold tracking-tight">New exam</h1>
       </header>
       <BlueprintEditor initialCollege={college} collegeLocked={locked} />
-    </div>
+    </PageContainer>
   );
 }

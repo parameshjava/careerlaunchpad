@@ -1,6 +1,7 @@
 import { redirect } from "next/navigation";
 import { getAuthContext } from "@/lib/auth";
 import { RegistrationForm } from "./registration-form";
+import { PageContainer } from "@/components/app-shell/page-container";
 
 // Student registration / profile editor. The form (client) loads reference data
 // + the existing profile from the API and resumes where the student left off,
@@ -11,7 +12,7 @@ export default async function StudentRegisterPage() {
   if (!ctx.provisioned || ctx.status === "suspended") redirect("/auth/no-access");
 
   return (
-    <div className="mx-auto w-full max-w-2xl">
+    <PageContainer variant="form">
       <header className="mb-6 text-center">
         <h1 className="text-2xl font-bold tracking-tight">🎓 Student Registration</h1>
         <p className="text-muted-foreground mt-1 text-sm">
@@ -19,6 +20,6 @@ export default async function StudentRegisterPage() {
         </p>
       </header>
       <RegistrationForm />
-    </div>
+    </PageContainer>
   );
 }

@@ -6,20 +6,13 @@
 import { useMemo, useState } from "react";
 import { useRouter } from "next/navigation";
 import Link from "next/link";
-import { ChartColumnIncreasing, Eye, FileText, Trash2, TriangleAlert } from "lucide-react";
+import { ChartColumnIncreasing, Eye, FileText, Trash2 } from "lucide-react";
 import { Input } from "@/components/ui/input";
 import { Badge } from "@/components/ui/badge";
 import { Button, buttonVariants } from "@/components/ui/button";
 import { cn } from "@/lib/utils";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
-import {
-  Dialog,
-  DialogContent,
-  DialogDescription,
-  DialogFooter,
-  DialogHeader,
-  DialogTitle,
-} from "@/components/ui/dialog";
+import { ConfirmDialog } from "@/components/ui/confirm-dialog";
 import {
   Select,
   SelectContent,
@@ -170,17 +163,13 @@ export function ExamsBrowser({
 
 function ExamList({ exams, empty }: { exams: ExamCard[]; empty: string }) {
   const router = useRouter();
-  const [deleting, setDeleting] = useState<string | null>(null);
   const [publishing, setPublishing] = useState<string | null>(null);
   const [toDelete, setToDelete] = useState<ExamCard | null>(null);
-  const [delError, setDelError] = useState("");
-  // Type-to-confirm (AWS/GCP style): Delete stays disabled until this exactly
-  // matches the exam title.
-  const [confirmText, setConfirmText] = useState("");
-
+  const [publishError, setPublishError] = useState("");
   // Toggle student-visible results without leaving the list.
   async function togglePublish(e: ExamCard) {
     if (!e.sessionId) return;
+    setPublishError("");
     setPublishing(e.sessionId);
     const res = await fetch(`/api/exam/sessions/${e.sessionId}/publish-results`, {
       method: "POST",
@@ -189,26 +178,22 @@ function ExamList({ exams, empty }: { exams: ExamCard[]; empty: string }) {
     });
     const data = await res.json().catch(() => ({}));
     setPublishing(null);
-    if (!res.ok) return alert(data.error ?? "Could not update results visibility.");
-    router.refresh();
-  }
-
-  async function confirmDelete() {
-    if (!toDelete) return;
-    setDelError("");
-    setDeleting(toDelete.id);
-    const res = await fetch(`/api/exam/blueprints/${toDelete.id}`, { method: "DELETE" });
-    const data = await res.json().catch(() => ({}));
-    setDeleting(null);
     if (!res.ok) {
-      setDelError(data.error ?? "Could not delete the exam.");
+      setPublishError(data.error ?? "Could not update results visibility.");
       return;
     }
-    setToDelete(null);
     router.refresh();
   }
 
-  const matched = confirmText === (toDelete?.title ?? "");
+  // Throw on failure so the ConfirmDialog surfaces the error inline and keeps
+  // the dialog open; success auto-closes it.
+  async function confirmDelete() {
+    if (!toDelete) return;
+    const res = await fetch(`/api/exam/blueprints/${toDelete.id}`, { method: "DELETE" });
+    const data = await res.json().catch(() => ({}));
+    if (!res.ok) throw new Error(data.error ?? "Could not delete the exam.");
+    router.refresh();
+  }
 
   if (exams.length === 0) {
     return (
@@ -219,6 +204,11 @@ function ExamList({ exams, empty }: { exams: ExamCard[]; empty: string }) {
   }
   return (
     <>
+    {publishError && (
+      <p className="text-destructive mb-3 text-sm" role="alert">
+        {publishError}
+      </p>
+    )}
     <ul className="divide-y rounded-md border">
       {exams.map((e) => {
         const st = status(e);
@@ -329,13 +319,11 @@ function ExamList({ exams, empty }: { exams: ExamCard[]; empty: string }) {
                 variant="ghost"
                 size="sm"
                 className={cn("text-destructive", !canDelete && "invisible")}
-                disabled={!canDelete || deleting === e.id}
+                disabled={!canDelete}
                 aria-hidden={!canDelete}
                 tabIndex={canDelete ? undefined : -1}
                 onClick={() => {
                   if (!canDelete) return;
-                  setDelError("");
-                  setConfirmText("");
                   setToDelete(e);
                 }}
                 title="Delete exam"
@@ -348,61 +336,22 @@ function ExamList({ exams, empty }: { exams: ExamCard[]; empty: string }) {
       })}
     </ul>
 
-    <Dialog open={toDelete !== null} onOpenChange={(o) => !o && setToDelete(null)}>
-      <DialogContent className="sm:max-w-md">
-        <DialogHeader>
-          <DialogTitle>Delete this exam?</DialogTitle>
-        </DialogHeader>
-
-        <div className="flex items-start gap-3">
-          <span className="bg-destructive/10 text-destructive flex size-10 shrink-0 items-center justify-center rounded-full">
-            <TriangleAlert className="size-5" />
-          </span>
-          <DialogDescription>
-            This permanently removes{" "}
-            <span className="text-foreground font-medium">{toDelete?.title}</span> and its
-            generated paper. This action can’t be undone.
-          </DialogDescription>
-        </div>
-
-        <div className="grid gap-2">
-          <label htmlFor="confirm-delete" className="text-muted-foreground text-sm">
-            To confirm, type{" "}
-            <code className="bg-muted text-foreground rounded px-1.5 py-0.5 font-mono text-[0.85em] font-semibold break-all">
-              {toDelete?.title}
-            </code>
-          </label>
-          <Input
-            id="confirm-delete"
-            value={confirmText}
-            onChange={(ev) => setConfirmText(ev.target.value)}
-            placeholder="Type the exam name"
-            autoComplete="off"
-            autoFocus
-            className={cn(matched && "border-destructive focus-visible:ring-destructive/30")}
-          />
-        </div>
-
-        {delError && (
-          <p className="bg-destructive/10 text-destructive rounded-md px-3 py-2 text-sm">
-            {delError}
-          </p>
-        )}
-
-        <DialogFooter className="gap-2">
-          <Button variant="outline" onClick={() => setToDelete(null)} disabled={deleting !== null}>
-            Cancel
-          </Button>
-          <Button
-            variant="destructive"
-            onClick={confirmDelete}
-            disabled={deleting !== null || !matched}
-          >
-            {deleting !== null ? "Deleting…" : "Delete exam"}
-          </Button>
-        </DialogFooter>
-      </DialogContent>
-    </Dialog>
+    <ConfirmDialog
+      open={toDelete !== null}
+      onOpenChange={(o) => !o && setToDelete(null)}
+      destructive
+      title="Delete this exam?"
+      description={
+        <>
+          This permanently removes{" "}
+          <span className="text-foreground font-medium">{toDelete?.title}</span> and its generated
+          paper. This action can&rsquo;t be undone.
+        </>
+      }
+      confirmPhrase={toDelete?.title}
+      confirmLabel="Delete exam"
+      onConfirm={confirmDelete}
+    />
     </>
   );
 }

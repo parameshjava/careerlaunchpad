@@ -29,6 +29,9 @@ import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { Badge } from "@/components/ui/badge";
+import { ConfirmDialog } from "@/components/ui/confirm-dialog";
+import { RefSelect } from "@/components/ui/ref-select";
+import { StatusBadge } from "@/components/data-table-parts";
 import {
   Dialog,
   DialogContent,
@@ -43,9 +46,6 @@ import {
   TableHeader,
   TableRow,
 } from "@/components/ui/table";
-
-const selectClass =
-  "border-input bg-background h-9 w-full rounded-md border px-3 py-1 text-sm shadow-sm focus-visible:ring-1 focus-visible:outline-none";
 
 const PAGE_SIZE_OPTIONS = [25, 50, 100];
 
@@ -162,6 +162,9 @@ export function CollegesManager() {
   const [form, setForm] = useState<FormFields>(EMPTY_FORM);
   const [saving, setSaving] = useState(false);
   const [formError, setFormError] = useState<string | null>(null);
+
+  // Delete confirmation (type-to-confirm, since a delete is irreversible).
+  const [deleteTarget, setDeleteTarget] = useState<College | null>(null);
 
   const debounce = useRef<ReturnType<typeof setTimeout> | null>(null);
 
@@ -298,18 +301,13 @@ export function CollegesManager() {
     }
   }
 
+  // Irreversible delete → type-to-confirm dialog (throws so the dialog surfaces
+  // the error inline and stays open on failure).
   async function remove(c: College) {
-    // ponytail: native confirm() is the zero-dep guard for a destructive action.
-    if (!window.confirm(`Delete "${c.name}"? This permanently removes it and can't be undone.`))
-      return;
-    try {
-      const res = await fetch(`/api/colleges/${c.id}`, { method: "DELETE" });
-      const json = await res.json();
-      if (!res.ok) throw new Error(json.error ?? "Delete failed");
-      await load();
-    } catch (e) {
-      setListError((e as Error).message);
-    }
+    const res = await fetch(`/api/colleges/${c.id}`, { method: "DELETE" });
+    const json = await res.json().catch(() => ({}));
+    if (!res.ok) throw new Error(json.error ?? "Delete failed");
+    await load();
   }
 
   const totalPages = Math.max(1, Math.ceil(total / pageSize));
@@ -402,34 +400,28 @@ export function CollegesManager() {
                 </Field>
 
                 <Field label="Ownership">
-                  <select
-                    className={selectClass}
+                  <RefSelect
                     value={form.ownership_type}
-                    onChange={(e) =>
-                      setForm({ ...form, ownership_type: e.target.value as "" | OwnershipType })
+                    onChange={(v) =>
+                      setForm({ ...form, ownership_type: v as "" | OwnershipType })
                     }
-                  >
-                    <option value="">—</option>
-                    {OWNERSHIP_TYPES.map((o) => (
-                      <option key={o} value={o}>
-                        {o === "GOVERNMENT" ? "Government" : "Private"}
-                      </option>
-                    ))}
-                  </select>
+                    emptyLabel="—"
+                    options={OWNERSHIP_TYPES.map((o) => ({
+                      value: o,
+                      label: o === "GOVERNMENT" ? "Government" : "Private",
+                    }))}
+                  />
                 </Field>
 
                 <Field label="Status">
-                  <select
-                    className={selectClass}
+                  <RefSelect
                     value={form.status}
-                    onChange={(e) => setForm({ ...form, status: e.target.value as CollegeStatus })}
-                  >
-                    {COLLEGE_STATUSES.map((s) => (
-                      <option key={s} value={s}>
-                        {s === "active" ? "Active" : "Archived"}
-                      </option>
-                    ))}
-                  </select>
+                    onChange={(v) => setForm({ ...form, status: v as CollegeStatus })}
+                    options={COLLEGE_STATUSES.map((s) => ({
+                      value: s,
+                      label: s === "active" ? "Active" : "Archived",
+                    }))}
+                  />
                 </Field>
 
                 {/* University association — optional. A row can EITHER be a
@@ -451,20 +443,16 @@ export function CollegesManager() {
                   </label>
 
                   <Field label="Affiliating university">
-                    <select
-                      className={selectClass}
+                    <RefSelect
                       value={form.university_id}
+                      onChange={(v) => setForm({ ...form, university_id: v })}
                       disabled={form.isUniversity}
-                      onChange={(e) => setForm({ ...form, university_id: e.target.value })}
-                    >
-                      <option value="">— None —</option>
-                      {universities.map((u) => (
-                        <option key={u.id} value={u.id}>
-                          {u.name}
-                          {u.state ? ` · ${u.state}` : ""}
-                        </option>
-                      ))}
-                    </select>
+                      emptyLabel="— None —"
+                      options={universities.map((u) => ({
+                        value: u.id,
+                        label: u.name + (u.state ? ` · ${u.state}` : ""),
+                      }))}
+                    />
                     {form.isUniversity && (
                       <p className="text-muted-foreground text-xs">
                         Disabled — a university is associated to itself.
@@ -486,6 +474,23 @@ export function CollegesManager() {
         </DialogContent>
       </Dialog>
 
+      {/* Delete confirmation — irreversible, so type-to-confirm the name */}
+      <ConfirmDialog
+        open={!!deleteTarget}
+        onOpenChange={(o) => !o && setDeleteTarget(null)}
+        destructive
+        title="Delete college"
+        description={
+          <>
+            This permanently removes <span className="text-foreground font-semibold">{deleteTarget?.name}</span>{" "}
+            and can&apos;t be undone.
+          </>
+        }
+        confirmPhrase={deleteTarget?.name}
+        confirmLabel="Delete college"
+        onConfirm={() => remove(deleteTarget!)}
+      />
+
       {/* Filters */}
       <div className="grid gap-3 sm:grid-cols-2 lg:grid-cols-5">
         <div className="sm:col-span-2 lg:col-span-1">
@@ -495,45 +500,40 @@ export function CollegesManager() {
             onChange={(e) => setQ(e.target.value)}
           />
         </div>
-        <select
-          className={selectClass}
+        <RefSelect
           value={stateFilter}
-          onChange={(e) => setStateFilter(e.target.value)}
-        >
-          <option value="">All states</option>
-          {states.map((s) => (
-            <option key={s} value={s}>{s}</option>
-          ))}
-        </select>
-        <select
-          className={selectClass}
+          onChange={setStateFilter}
+          emptyLabel="All states"
+          aria-label="Filter by state"
+          options={states.map((s) => ({ value: s, label: s }))}
+        />
+        <RefSelect
           value={ownershipFilter}
-          onChange={(e) => setOwnershipFilter(e.target.value)}
-        >
-          <option value="">All ownership</option>
-          {OWNERSHIP_TYPES.map((o) => (
-            <option key={o} value={o}>{o === "GOVERNMENT" ? "Government" : "Private"}</option>
-          ))}
-        </select>
-        <select
-          className={selectClass}
+          onChange={setOwnershipFilter}
+          emptyLabel="All ownership"
+          aria-label="Filter by ownership"
+          options={OWNERSHIP_TYPES.map((o) => ({
+            value: o,
+            label: o === "GOVERNMENT" ? "Government" : "Private",
+          }))}
+        />
+        <RefSelect
           value={statusFilter}
-          onChange={(e) => setStatusFilter(e.target.value as CollegeStatus | "all")}
-        >
-          <option value="active">Active</option>
-          <option value="archived">Archived</option>
-          <option value="all">All statuses</option>
-        </select>
-        <select
-          className={selectClass}
+          onChange={(v) => setStatusFilter(v as CollegeStatus | "all")}
+          aria-label="Filter by status"
+          options={[
+            { value: "active", label: "Active" },
+            { value: "archived", label: "Archived" },
+            { value: "all", label: "All statuses" },
+          ]}
+        />
+        <RefSelect
           value={universityFilter}
-          onChange={(e) => setUniversityFilter(e.target.value)}
-        >
-          <option value="">All universities</option>
-          {universities.map((u) => (
-            <option key={u.id} value={u.id}>{u.name}</option>
-          ))}
-        </select>
+          onChange={setUniversityFilter}
+          emptyLabel="All universities"
+          aria-label="Filter by university"
+          options={universities.map((u) => ({ value: u.id, label: u.name }))}
+        />
       </div>
 
       {/* Result count + rows-per-page */}
@@ -547,15 +547,16 @@ export function CollegesManager() {
         </span>
         <label className="flex items-center gap-2">
           <span>Rows per page</span>
-          <select
-            className={`${selectClass} h-8 w-auto`}
-            value={pageSize}
-            onChange={(e) => setPageSize(Number(e.target.value))}
-          >
-            {PAGE_SIZE_OPTIONS.map((n) => (
-              <option key={n} value={n}>{n}</option>
-            ))}
-          </select>
+          <RefSelect
+            value={String(pageSize)}
+            onChange={(v) => setPageSize(Number(v))}
+            aria-label="Rows per page"
+            className="h-8 w-auto"
+            options={PAGE_SIZE_OPTIONS.map((n) => ({
+              value: String(n),
+              label: String(n),
+            }))}
+          />
         </label>
       </div>
 
@@ -613,9 +614,9 @@ export function CollegesManager() {
                       : "—"}
                   </TableCell>
                   <TableCell>
-                    <Badge variant={c.status === "active" ? "secondary" : "outline"}>
+                    <StatusBadge tone={c.status === "active" ? "emerald" : "slate"}>
                       {c.status === "active" ? "Active" : "Archived"}
-                    </Badge>
+                    </StatusBadge>
                   </TableCell>
                   <TableCell className="text-right whitespace-nowrap">
                     <div className="flex items-center justify-end gap-0.5">
@@ -649,7 +650,7 @@ export function CollegesManager() {
                         className="text-destructive hover:text-destructive h-8 w-8"
                         title="Delete"
                         aria-label={`Delete ${c.name}`}
-                        onClick={() => remove(c)}
+                        onClick={() => setDeleteTarget(c)}
                       >
                         <Trash2 className="h-4 w-4" />
                       </Button>

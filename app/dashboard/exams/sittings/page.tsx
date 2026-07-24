@@ -5,6 +5,7 @@ import { createClient } from "@/lib/supabase/server";
 import { fetchCollegeSessions } from "@/lib/exam-query";
 import { Card, CardContent } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
+import { PageContainer } from "@/components/app-shell/page-container";
 
 // Sittings for a College Admin: every conduct event for their college, across
 // all exams. From here they open a sitting to manage its roster and view results.
@@ -23,7 +24,7 @@ export default async function CollegeSittingsPage() {
   const sessions = await fetchCollegeSessions(supabase, collegeId);
 
   return (
-    <div className="mx-auto max-w-4xl">
+    <PageContainer variant="full">
       <header className="mb-6">
         <h1 className="text-2xl font-bold tracking-tight">Sittings</h1>
         <p className="text-muted-foreground mt-1 text-sm">
@@ -57,6 +58,6 @@ export default async function CollegeSittingsPage() {
           ))}
         </ul>
       )}
-    </div>
+    </PageContainer>
   );
 }

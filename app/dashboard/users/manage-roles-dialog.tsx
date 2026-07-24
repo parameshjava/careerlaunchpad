@@ -17,7 +17,7 @@ import {
   Dialog, DialogContent, DialogDescription, DialogFooter, DialogHeader, DialogTitle,
 } from "@/components/ui/dialog";
 import { Pencil, X } from "lucide-react";
-import { CollegePicker } from "@/components/analytics/CollegePicker";
+import { CollegePicker } from "@/components/colleges/college-picker";
 import {
   updateMemberRoles,
   setMemberOfficeEmail,
@@ -194,8 +194,10 @@ export function ManageMemberDialog({
               )}
               {/* Add a college → grants a scoped College Admin role on save. */}
               <CollegePicker
-                selected={null}
-                onSelect={(c) =>
+                value={null}
+                label={null}
+                onChange={(c) =>
+                  c &&
                   setAdmins((prev) =>
                     prev.some((x) => x.id === c.id) ? prev : [...prev, { id: c.id, name: c.name }],
                   )

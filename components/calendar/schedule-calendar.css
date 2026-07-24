@@ -1,4 +1,4 @@
-/* Custom student class calendar (issue #64) — the time-grid primitives that are
+/* Shared class calendar (issue #64) — the time-grid primitives that are
    awkward in utility classes (repeating gridlines, absolutely-positioned event
    cards, the "now" line, the live pulse). Everything is scoped under `.slc` and
    themed through the app's shadcn tokens so it follows light/dark automatically.

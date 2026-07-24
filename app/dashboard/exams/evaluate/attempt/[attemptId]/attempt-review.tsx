@@ -10,6 +10,7 @@ import { RichContent } from "@/components/exam/RichContent";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Card, CardContent } from "@/components/ui/card";
+import { PageContainer } from "@/components/app-shell/page-container";
 
 const LETTERS = ["A", "B", "C", "D", "E"];
 
@@ -89,7 +90,7 @@ export function AttemptReview({ attemptId }: { attemptId: string }) {
   const total = review.questions.reduce((s, q) => s + (Number(marks[q.position]) || 0), 0);
 
   return (
-    <div className="mx-auto max-w-2xl">
+    <PageContainer variant="reading">
       <header className="mb-6">
         <h1 className="text-2xl font-bold tracking-tight">{review.name ?? review.email ?? "Attempt"}</h1>
         <p className="text-muted-foreground mt-1 text-sm">
@@ -159,6 +160,6 @@ export function AttemptReview({ attemptId }: { attemptId: string }) {
           <Link href="/dashboard/exams/evaluate">Back</Link>
         </Button>
       </div>
-    </div>
+    </PageContainer>
   );
 }

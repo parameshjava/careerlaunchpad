@@ -53,6 +53,7 @@ import {
   type PaymentMode,
 } from "@/lib/fee-receipt";
 import { FeeReceiptView } from "@/components/students/fee-receipt";
+import { formatDate as fmtDate } from "@/lib/format-date";
 import type { BatchFee, EnrollmentLedger, RosterRow } from "@/lib/enrollment-query";
 
 const MODES: PaymentMode[] = ["cash", "upi", "card", "online"];
@@ -67,12 +68,6 @@ const INSTALLMENT_BADGE: Record<EnrollmentLedger["installments"][number]["status
   paid: "default",
   overdue: "destructive",
   due: "secondary",
-};
-
-const DATE = new Intl.DateTimeFormat("en-IN", { day: "2-digit", month: "short", year: "numeric", timeZone: "UTC" });
-const fmtDate = (iso: string) => {
-  const d = new Date(iso);
-  return Number.isNaN(d.getTime()) ? iso : DATE.format(d);
 };
 
 export function BatchRoster({
@@ -321,7 +316,11 @@ export function BatchRoster({
                 const led = ledgers[r.enrollmentId];
                 return (
                   <Fragment key={r.enrollmentId}>
-                    <TableRow className="cursor-pointer" onClick={() => toggleDetail(r.enrollmentId)}>
+                    <TableRow
+                      className="cursor-pointer"
+                      onClick={() => toggleDetail(r.enrollmentId)}
+                      aria-expanded={isOpen}
+                    >
                       <TableCell>
                         <div className="flex items-start gap-2">
                           <span className="text-muted-foreground mt-0.5 shrink-0" aria-hidden>

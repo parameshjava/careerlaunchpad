@@ -9,6 +9,7 @@ import { getAuthContext } from "@/lib/auth";
 import { createClient } from "@/lib/supabase/server";
 import { requireApprovedStudent } from "@/lib/student-approval";
 import { fetchStudentComparison } from "@/lib/analytics-query";
+import { PageContainer } from "@/components/app-shell/page-container";
 
 export const metadata: Metadata = { title: "My Insights" };
 
@@ -34,7 +35,7 @@ export default async function StudentInsightsPage() {
   const hasCollege = !!cmp.collegeName;
 
   return (
-    <div className="mx-auto w-full max-w-5xl space-y-6">
+    <PageContainer variant="full" className="space-y-6">
       <div className="flex flex-col gap-3 sm:flex-row sm:items-center sm:justify-between">
         <div>
           <h1 className="text-2xl font-semibold tracking-tight">My Insights</h1>
@@ -68,6 +69,6 @@ export default async function StudentInsightsPage() {
           <AnalyticsView data={cmp.self} mode="self" />
         </>
       )}
-    </div>
+    </PageContainer>
   );
 }

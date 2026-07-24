@@ -12,6 +12,7 @@ import {
 } from "@/lib/exam-query";
 import { ResultsClient } from "./results-client";
 import { ResultsPrint } from "./results-print";
+import { PageContainer } from "@/components/app-shell/page-container";
 
 export default async function SessionResultsPage({
   params,
@@ -44,7 +45,7 @@ export default async function SessionResultsPage({
   });
 
   return (
-    <div className="mx-auto max-w-4xl">
+    <PageContainer variant="full">
       <Link
         href={`/dashboard/exams/papers?tab=${
           session.status === "closed" || session.status === "graded" ? "closed" : "active"
@@ -72,8 +73,8 @@ export default async function SessionResultsPage({
         subjectAvgs={subjectAvgs}
         canPublish={ctx.permissions.has("*") || can(ctx, "exam.assign")}
       />
-      {/* Print-only statement of marks on the letterhead; the Print button in
-          ResultsClient fires window.print() and only this block prints. */}
+      {/* Statement of marks on the letterhead — a self-contained A4 preview with
+          its own Print / Download PDF button (via the shared print system). */}
       <ResultsPrint
         collegeName={session.collegeName ?? null}
         examTitle={session.examTitle ?? "Exam"}
@@ -86,6 +87,6 @@ export default async function SessionResultsPage({
         subjectAvgs={subjectAvgs}
         printedOn={printedOn}
       />
-    </div>
+    </PageContainer>
   );
 }

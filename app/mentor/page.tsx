@@ -5,6 +5,7 @@ import { redirect } from "next/navigation";
 import { Button } from "@/components/ui/button";
 import { getAuthContext } from "@/lib/auth";
 import { createClient } from "@/lib/supabase/server";
+import { PageContainer } from "@/components/app-shell/page-container";
 
 export const metadata: Metadata = { title: "Mentor hub" };
 
@@ -50,7 +51,7 @@ export default async function MentorHome() {
   const s = STATUS[data.status as string] ?? STATUS.pending_review;
 
   return (
-    <div className="mx-auto w-full max-w-3xl space-y-6">
+    <PageContainer variant="reading" className="space-y-6">
       <div>
         <h1 className="text-2xl font-semibold tracking-tight">
           Welcome{data.full_name ? `, ${data.full_name}` : ""} 👋
@@ -75,6 +76,6 @@ export default async function MentorHome() {
           <Link href="/mentor/register">View / edit profile</Link>
         </Button>
       </div>
-    </div>
+    </PageContainer>
   );
 }

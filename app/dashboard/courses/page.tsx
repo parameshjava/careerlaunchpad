@@ -3,6 +3,7 @@ import { getAuthContext, can } from "@/lib/auth";
 import { createClient } from "@/lib/supabase/server";
 import { fetchCourses } from "@/lib/course-query";
 import { CoursesList } from "@/components/courses/courses-list";
+import { PageContainer } from "@/components/app-shell/page-container";
 
 // Courses catalog (issue #49). Gated on the central finance permission.
 export default async function CoursesPage() {
@@ -15,7 +16,7 @@ export default async function CoursesPage() {
   const courses = await fetchCourses(supabase);
 
   return (
-    <div className="mx-auto max-w-5xl">
+    <PageContainer variant="full">
       <header className="mb-6">
         <h1 className="text-2xl font-bold tracking-tight">Courses</h1>
         <p className="text-muted-foreground mt-1 text-sm">
@@ -24,6 +25,6 @@ export default async function CoursesPage() {
         </p>
       </header>
       <CoursesList courses={courses} />
-    </div>
+    </PageContainer>
   );
 }

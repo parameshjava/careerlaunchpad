@@ -4,6 +4,7 @@ import { getAuthContext, can } from "@/lib/auth";
 import { createClient } from "@/lib/supabase/server";
 import { fetchPaperForPrint } from "@/lib/exam-query";
 import { RichContent } from "@/components/exam/RichContent";
+import { PageContainer } from "@/components/app-shell/page-container";
 
 const LETTERS = ["A", "B", "C", "D", "E"];
 
@@ -34,7 +35,7 @@ export default async function ExamPaperPage({ params }: { params: Promise<{ id: 
   const paper = session ? await fetchPaperForPrint(supabase, session.id) : null;
 
   return (
-    <div className="mx-auto max-w-3xl">
+    <PageContainer variant="reading">
       <Link
         href="/dashboard/exams/papers"
         className="text-muted-foreground hover:text-foreground mb-4 inline-block text-sm"
@@ -96,6 +97,6 @@ export default async function ExamPaperPage({ params }: { params: Promise<{ id: 
           ))}
         </ol>
       )}
-    </div>
+    </PageContainer>
   );
 }

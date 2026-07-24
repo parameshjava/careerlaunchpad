@@ -62,7 +62,8 @@ export async function fetchMentors(supabase: SupabaseClient): Promise<MentorRow[
         `user_id, full_name, status, mentor_kind, registration_status, graduation_year,
          current_company, current_title, industry_id, years_experience,
          mentoring_area_ids, skills, mentor_mode_id, contribution_type_id, updated_at,
-         college:college_id(name), app_user:user_id(email)`,
+         college:college_id(name),
+         app_user:app_user!mentor_profile_user_id_fkey(email)`,
       )
       .order("updated_at", { ascending: false }),
   ]);

@@ -8,9 +8,11 @@ import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { RichContent } from "@/components/exam/RichContent";
 import { EnrolButton } from "@/components/students/enrol-button";
+import { formatDate } from "@/lib/format-date";
 
-const DATE = new Intl.DateTimeFormat("en-IN", { day: "2-digit", month: "short", year: "numeric", timeZone: "UTC" });
-const fmtDate = (iso: string | null) => (iso ? DATE.format(new Date(iso)) : null);
+// Keep the null-returning shape so callers can gate the "Starts …" line on a
+// real date; formatting itself is delegated to the shared formatter.
+const fmtDate = (iso: string | null) => (iso ? formatDate(iso) : null);
 const titleCase = (s: string | null) => (s ? s.charAt(0).toUpperCase() + s.slice(1) : null);
 
 // Presentational course-details view (issue #49). Full-width horizontal tiles:

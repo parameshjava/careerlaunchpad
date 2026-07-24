@@ -5,27 +5,14 @@
 // timestamps) plus the admin Resume action. Built on the shared DataTable.
 import { useState, useEffect } from "react";
 import { useRouter } from "next/navigation";
-import { ColumnDef, type Column } from "@tanstack/react-table";
-import { ArrowUpDown } from "lucide-react";
+import { ColumnDef } from "@tanstack/react-table";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import { DataTable, arrIncludes, type DataTableFilter } from "@/components/data-table";
+import { SortHeader, StatusBadge, type StatusTone } from "@/components/data-table-parts";
 import type { RosterEntry } from "@/lib/exam-query";
 
 type RosterMeta = { onResume: (attemptId: string) => void; busy: string; questionCount: number };
-
-// Sortable column header (ghost button + arrow) — matches the students grid.
-function SortHeader<TData>({ column, label }: { column: Column<TData>; label: string }) {
-  return (
-    <Button
-      variant="ghost"
-      className="-ml-3 h-8"
-      onClick={() => column.toggleSorting(column.getIsSorted() === "asc")}
-    >
-      {label} <ArrowUpDown className="size-3.5" />
-    </Button>
-  );
-}
 
 // Local timestamp, formatted only after mount so SSR (UTC) and the client (local
 // TZ) can't disagree — avoids a hydration mismatch on dates.
@@ -40,16 +27,16 @@ function TimeCell({ iso }: { iso: string | null }) {
   return <span className="tabular-nums whitespace-nowrap">{text || "…"}</span>;
 }
 
-const rosterStatusStyles: Record<string, string> = {
-  submitted: "bg-emerald-100 text-emerald-700 dark:bg-emerald-950 dark:text-emerald-300",
-  started: "bg-blue-100 text-blue-700 dark:bg-blue-950 dark:text-blue-300",
-  invited: "bg-muted text-muted-foreground",
+const rosterStatusTones: Record<string, StatusTone> = {
+  submitted: "emerald",
+  started: "blue",
+  invited: "slate",
 };
 
 export const rosterColumns: ColumnDef<RosterEntry>[] = [
   {
     accessorKey: "name",
-    header: ({ column }) => <SortHeader column={column} label="Student" />,
+    header: ({ column }) => <SortHeader column={column}>Student</SortHeader>,
     cell: ({ row }) => (
       <div className="flex min-w-0 flex-col">
         <span className="truncate font-medium">{row.original.name ?? row.original.email ?? row.original.studentId}</span>
@@ -59,7 +46,7 @@ export const rosterColumns: ColumnDef<RosterEntry>[] = [
   },
   {
     accessorKey: "rollNumber",
-    header: ({ column }) => <SortHeader column={column} label="Roll No." />,
+    header: ({ column }) => <SortHeader column={column}>Roll No.</SortHeader>,
     cell: ({ row }) => <span className="tabular-nums">{row.original.rollNumber ?? "—"}</span>,
     meta: { label: "Roll No." },
   },
@@ -69,7 +56,7 @@ export const rosterColumns: ColumnDef<RosterEntry>[] = [
     filterFn: arrIncludes,
     cell: ({ row }) => {
       const s = row.original.rosterStatus;
-      return <Badge className={rosterStatusStyles[s] ?? ""} variant="outline">{s}</Badge>;
+      return <StatusBadge tone={rosterStatusTones[s] ?? "slate"}>{s}</StatusBadge>;
     },
     meta: { label: "Roster status" },
   },
@@ -88,14 +75,14 @@ export const rosterColumns: ColumnDef<RosterEntry>[] = [
   },
   {
     accessorKey: "score",
-    header: ({ column }) => <SortHeader column={column} label="Score" />,
+    header: ({ column }) => <SortHeader column={column}>Score</SortHeader>,
     cell: ({ row }) => <span className="tabular-nums font-medium">{row.original.score ?? "—"}</span>,
     sortUndefined: "last",
   },
   {
     id: "progress",
     accessorFn: (r) => r.lastPosition ?? -1,
-    header: ({ column }) => <SortHeader column={column} label="Progress" />,
+    header: ({ column }) => <SortHeader column={column}>Progress</SortHeader>,
     cell: ({ row, table }) => {
       const lp = row.original.lastPosition;
       const total = (table.options.meta as RosterMeta).questionCount;
@@ -107,7 +94,7 @@ export const rosterColumns: ColumnDef<RosterEntry>[] = [
     // Anti-cheat counts folded into one column (sort by aborts, the key signal).
     id: "antiCheat",
     accessorFn: (r) => r.abortCount,
-    header: ({ column }) => <SortHeader column={column} label="Anti-cheat" />,
+    header: ({ column }) => <SortHeader column={column}>Anti-cheat</SortHeader>,
     cell: ({ row }) => {
       const { leaveCount, abortCount, resumeCount } = row.original;
       if (!leaveCount && !abortCount && !resumeCount) return <span className="text-muted-foreground">—</span>;
@@ -124,7 +111,7 @@ export const rosterColumns: ColumnDef<RosterEntry>[] = [
     // Started / submitted stacked into one column.
     id: "timing",
     accessorFn: (r) => r.startedAt ?? "",
-    header: ({ column }) => <SortHeader column={column} label="Timing" />,
+    header: ({ column }) => <SortHeader column={column}>Timing</SortHeader>,
     cell: ({ row }) => (
       <div className="flex flex-col text-xs leading-tight">
         <span className="whitespace-nowrap"><span className="text-muted-foreground">start </span><TimeCell iso={row.original.startedAt} /></span>

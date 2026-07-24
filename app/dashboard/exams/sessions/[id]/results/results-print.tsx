@@ -1,14 +1,19 @@
 "use client";
 
 // Enterprise "Statement of Results" sheet for a sitting, embedded in the
-// results page: hidden on screen, shown only when printing (the page's Print
-// button calls window.print()). Letterhead frame, summary, performance charts
-// (static bars — recharts doesn't render inside a hidden print block), the
-// ranked results table, and a signature footer.
-import { LetterheadFrame } from "@/components/print/letterhead";
+// results page: a self-contained, on-screen A4 preview that also prints via the
+// shared print system (PrintDocument + usePrint). Letterhead frame, summary,
+// performance charts (static bars — recharts is intentionally not used here),
+// the ranked results table, and a signature footer.
+import { Printer } from "lucide-react";
+import { Button } from "@/components/ui/button";
+import { PrintDocument } from "@/components/print/print-document";
+import { PrintToolbar, SignatureLine } from "@/components/print/blocks";
+import { usePrint } from "@/lib/use-print";
+import { PRINT_INK } from "@/lib/print-brand";
 import type { RosterEntry, SessionMode, SubjectAvg, SubjectColumn } from "@/lib/exam-query";
 
-const BAR_BLUE = "#1470c9"; // letterhead brand ink — paper has no dark mode
+const BAR_BLUE = PRINT_INK.blue; // letterhead brand ink — paper has no dark mode
 
 // Single-series horizontal bars with direct value labels; recessive track.
 function PrintBars({
@@ -94,27 +99,26 @@ export function ResultsPrint({
     return { ...r, rank };
   });
 
-  return (
-    <div id="results-print" className="hidden text-black">
-      {/* Print-only: the visibility trick hides the screen UI and shows only
-          this statement when the results page's Print button fires. */}
-      <style>{`
-        @media print {
-          body * { visibility: hidden !important; }
-          #results-print, #results-print * { visibility: visible !important; }
-          #results-print {
-            display: block !important;
-            position: absolute; left: 0; top: 0; width: 100%; max-width: none; padding: 0;
-          }
-          .no-print { display: none !important; }
-        }
-        #results-print table.results-table { border-collapse: collapse; width: 100%; }
-        #results-print table.results-table th, #results-print table.results-table td { border: 1px solid #111; padding: 6px 8px; font-size: 13px; }
-        #results-print table.results-table th { background: #f0f0f0; text-align: left; -webkit-print-color-adjust: exact; print-color-adjust: exact; }
-        #results-print td.num, #results-print th.num { text-align: center; }
-      `}</style>
+  const { printRef, print } = usePrint();
 
-      <LetterheadFrame docLabel="Statement of Results">
+  return (
+    <>
+      {/* On-screen action bar — sits OUTSIDE the ref'd node so it never prints. */}
+      <PrintToolbar>
+        <Button onClick={() => print()}>
+          <Printer /> Print / Download PDF
+        </Button>
+      </PrintToolbar>
+
+      <PrintDocument ref={printRef} docLabel="Statement of Results">
+        {/* Table styling for the ranked results grid; scoped to .results-table. */}
+        <style>{`
+          .results-table { border-collapse: collapse; width: 100%; }
+          .results-table th, .results-table td { border: 1px solid #111; padding: 6px 8px; font-size: 13px; }
+          .results-table th { background: #f0f0f0; text-align: left; -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+          .results-table td.num, .results-table th.num { text-align: center; }
+        `}</style>
+
         {/* Document cover — content only; the brand frame is the letterhead */}
         <div className="text-center">
           {collegeName && <div className="text-xl font-bold uppercase tracking-wide">{collegeName}</div>}
@@ -154,7 +158,7 @@ export function ResultsPrint({
         )}
 
         {/* Results table — subject-wise marks + total */}
-        <table className="results-table mt-2">
+        <table className="results-table pd-repeat-head mt-2">
           <thead>
             <tr>
               <th className="num" style={{ width: "7%" }}>Rank</th>
@@ -219,11 +223,9 @@ export function ResultsPrint({
         {/* Footer */}
         <div className="mt-8 flex items-end justify-between text-sm" style={{ breakInside: "avoid" }}>
           <div>Date of issue: {printedOn}</div>
-          <div className="text-center">
-            <div className="mt-8 border-t border-black px-6 pt-1">Controller of Examinations</div>
-          </div>
+          <SignatureLine label="Controller of Examinations" />
         </div>
-      </LetterheadFrame>
-    </div>
+      </PrintDocument>
+    </>
   );
 }

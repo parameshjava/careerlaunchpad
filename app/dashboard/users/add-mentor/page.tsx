@@ -1,6 +1,7 @@
 import { redirect } from "next/navigation";
 import { getAuthContext, can } from "@/lib/auth";
 import { AddMentorWizard } from "./add-mentor-wizard";
+import { PageContainer } from "@/components/app-shell/page-container";
 
 // Add a mentor with their full profile (same wizard as mentor self-registration),
 // staged + invited in one shot. Owner / Admin (user.invite).
@@ -11,7 +12,7 @@ export default async function AddMentorPage() {
   if (!can(ctx, "user.invite")) redirect("/dashboard");
 
   return (
-    <div className="mx-auto max-w-3xl">
+    <PageContainer variant="form">
       <header className="mb-6">
         <h1 className="text-2xl font-bold tracking-tight">Add a mentor</h1>
         <p className="text-muted-foreground mt-1 text-sm">
@@ -21,6 +22,6 @@ export default async function AddMentorPage() {
         </p>
       </header>
       <AddMentorWizard />
-    </div>
+    </PageContainer>
   );
 }

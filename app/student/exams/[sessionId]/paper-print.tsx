@@ -4,9 +4,13 @@
 // docx template: branded header, fill-in info table (name / roll number),
 // instructions, "Question Paper Pattern" table, then sections with ☐ A–D
 // checkbox options. No answer key — this is the student-facing paper.
-// Hidden on screen; shown only when printing (the runner UI is print:hidden).
+// Renders its content on the shared letterhead (<PrintDocument>). Currently not
+// mounted anywhere (the live attempt UI is print:hidden); kept for the exported
+// SessionPrintMeta type and for future wiring. To print it, a caller would wrap
+// it with usePrint()/PrintToolbar — this component provides no print trigger itself.
 import { RichContent } from "@/components/exam/RichContent";
-import { BrandBlock, InfoCell, InfoTable, PrintFrame } from "../print-brand";
+import { BrandBlock, InfoCell, InfoTable } from "@/components/print/blocks";
+import { PrintDocument } from "@/components/print/print-document";
 import type { Question } from "./attempt-runner";
 
 const LETTERS = ["A", "B", "C", "D", "E", "F"];
@@ -80,21 +84,7 @@ export function StudentPaperPrint({
   let lastPassageKey: string | null = null;
 
   return (
-    <div id="student-paper" className="hidden text-black">
-      {/* The Tailwind print: variant proved unreliable across the app shell, so
-          the show/hide is done with an explicit @media print visibility trick —
-          the same proven pattern as the admin paper print. */}
-      <style>{`
-        @media print {
-          body * { visibility: hidden !important; }
-          #student-paper, #student-paper * { visibility: visible !important; }
-          #student-paper {
-            display: block !important;
-            position: absolute; left: 0; top: 0; width: 100%; padding: 0;
-          }
-        }
-      `}</style>
-      <PrintFrame docLabel="Question Paper">
+    <PrintDocument docLabel="Question Paper" className="text-black">
       <BrandBlock
         title={meta.exam_title}
         subline={`${meta.sections.map((s) => s.subject).join(", ")} | Multiple Choice Pattern`}
@@ -231,7 +221,6 @@ export function StudentPaperPrint({
           </div>
         </div>
       ))}
-      </PrintFrame>
-    </div>
+    </PrintDocument>
   );
 }

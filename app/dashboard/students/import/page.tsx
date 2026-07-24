@@ -1,6 +1,7 @@
 import { redirect } from "next/navigation";
 import { getAuthContext, can } from "@/lib/auth";
 import { ImportClient } from "./import-client";
+import { PageContainer } from "@/components/app-shell/page-container";
 
 // Bulk-import students from an Excel file (Owner / Support / College Admin).
 export default async function ImportStudentsPage() {
@@ -10,7 +11,7 @@ export default async function ImportStudentsPage() {
   if (!can(ctx, "student.intake.import")) redirect("/dashboard");
 
   return (
-    <div className="mx-auto max-w-3xl">
+    <PageContainer variant="form">
       <header className="mb-6">
         <h1 className="text-2xl font-bold tracking-tight">Import students</h1>
         <p className="text-muted-foreground mt-1 text-sm">
@@ -19,6 +20,6 @@ export default async function ImportStudentsPage() {
         </p>
       </header>
       <ImportClient />
-    </div>
+    </PageContainer>
   );
 }

@@ -8,13 +8,14 @@
  * (how it saves/submits) lives in each caller. Email is editable when
  * onEmailChange is given (admin) and read-only otherwise (self-registration).
  */
-import { useEffect, useRef, useState } from "react";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
+import { RefSelect } from "@/components/ui/ref-select";
+import { CollegePicker, type College } from "@/components/colleges/college-picker";
 
 export type Ref = { id: string; slug: string; label: string; category: string | null };
 export type RefData = Record<string, Ref[]>;
-export type College = { id: string; name: string; place: string | null; state?: string | null };
+export type { College };
 
 export type Form = {
   full_name: string; phone: string; linkedin_url: string; bio: string;
@@ -131,7 +132,7 @@ export function MentorStepBody({
   if (step === 2) return (
     <Step title="Your Background" hint="Where you studied and what you do now — this helps us match you with the right students (e.g. your own college's juniors).">
       <div className="sm:col-span-2">
-        <CollegePicker college={college} onPick={(c) => { onPickCollege(c); set("college_id", c?.id ?? ""); }} />
+        <CollegePicker value={college} onChange={(c) => { onPickCollege(c); set("college_id", c?.id ?? ""); }} label="College (where you studied)" />
       </div>
       <Field label="Graduation Year"><Input type="number" value={f.graduation_year} onChange={(e) => set("graduation_year", e.target.value)} placeholder="2019" /></Field>
       <Field label="Degree"><SelectRef value={f.degree} onChange={(v) => set("degree", v)} options={refs.degree} /></Field>
@@ -188,10 +189,13 @@ function SelectRef({ value, onChange, options, placeholder = "Select…", valueK
   value: string; onChange: (v: string) => void; options: Ref[]; placeholder?: string; valueKey?: "slug" | "id";
 }) {
   return (
-    <select className={selectClass} value={value} onChange={(e) => onChange(e.target.value)}>
-      <option value="">{placeholder}</option>
-      {options.map((o) => <option key={o[valueKey]} value={o[valueKey]}>{o.label}</option>)}
-    </select>
+    <RefSelect
+      value={value}
+      onChange={onChange}
+      placeholder={placeholder}
+      emptyLabel={placeholder}
+      options={options.map((o) => ({ value: o[valueKey], label: o.label }))}
+    />
   );
 }
 
@@ -231,46 +235,6 @@ function ChipSingle({ options, selected, onChange, valueKey = "slug" }: {
           </button>
         );
       })}
-    </div>
-  );
-}
-
-function CollegePicker({ college, onPick }: { college: College | null; onPick: (c: College | null) => void }) {
-  const [query, setQuery] = useState("");
-  const [results, setResults] = useState<College[]>([]);
-  const [open, setOpen] = useState(false);
-  const debounce = useRef<ReturnType<typeof setTimeout> | null>(null);
-
-  useEffect(() => {
-    if (college || query.trim().length < 2) { setResults([]); return; }
-    if (debounce.current) clearTimeout(debounce.current);
-    debounce.current = setTimeout(async () => {
-      const res = await fetch(`/api/colleges/search?q=${encodeURIComponent(query)}`);
-      if (res.ok) { setResults((await res.json()).results); setOpen(true); }
-    }, 250);
-  }, [query, college]);
-
-  return (
-    <div className="relative grid gap-1.5">
-      <Label>College (where you studied)</Label>
-      <Input
-        autoComplete="off"
-        placeholder="Search your college…"
-        value={college ? `${college.name}${college.place ? ` — ${college.place}` : ""}` : query}
-        onChange={(e) => { onPick(null); setQuery(e.target.value); }}
-        onFocus={() => results.length && setOpen(true)}
-      />
-      {open && !college && results.length > 0 && (
-        <ul className="border-input bg-background absolute top-full z-10 mt-1 max-h-56 w-full overflow-auto rounded-md border text-sm shadow-md">
-          {results.map((c) => (
-            <li key={c.id}>
-              <button type="button" className="hover:bg-muted w-full px-3 py-2 text-left" onClick={() => { onPick(c); setOpen(false); }}>
-                {c.name}{c.place ? <span className="text-muted-foreground"> — {c.place}{c.state ? `, ${c.state}` : ""}</span> : null}
-              </button>
-            </li>
-          ))}
-        </ul>
-      )}
     </div>
   );
 }

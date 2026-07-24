@@ -15,15 +15,19 @@
  * self-registration and the console per-student editor.
  */
 import { useState } from "react";
-import { Check, Plus, X, ChevronDown, CalendarIcon } from "lucide-react";
-import { Button } from "@/components/ui/button";
-import { Calendar } from "@/components/ui/calendar";
+import { Check, Plus, X } from "lucide-react";
+import {
+  Accordion,
+  AccordionContent,
+  AccordionItem,
+  AccordionTrigger,
+} from "@/components/ui/accordion";
+import { DatePicker } from "@/components/ui/date-picker";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { MarkdownEditor } from "@/components/ui/markdown-editor";
-import { Popover, PopoverContent, PopoverTrigger } from "@/components/ui/popover";
-import { cn } from "@/lib/utils";
-import { Step, selectClass, type Form, type SetForm, type RefData, type Ref } from "./registration-fields";
+import { RefSelect } from "@/components/ui/ref-select";
+import { Step, type Form, type SetForm, type RefData, type Ref } from "./registration-fields";
 import { MIN_AGE_YEARS } from "@/lib/registration";
 
 export type FamilyMember = { relation: string; occupation: string };
@@ -62,9 +66,13 @@ export function TellUsStep({ f, set, refs }: { f: Form; set: SetForm; refs: RefD
       title="Tell us a little about you"
       hint="This helps us understand your background so we can guide and support you better. Everything here is optional — share what you're comfortable with."
     >
-      <div className="space-y-5 sm:col-span-2">
+      <Accordion
+        type="multiple"
+        defaultValue={["about", "family", "hobbies", "challenge"]}
+        className="gap-5 sm:col-span-2"
+      >
         {/* ---- About you ---- */}
-        <SectionCard name="About you">
+        <SectionCard value="about" name="About you">
           <div className="space-y-4 p-3.5">
             <div>
               <Label className="mb-2 block">Are you the first in your family to attend college?</Label>
@@ -94,16 +102,13 @@ export function TellUsStep({ f, set, refs }: { f: Form; set: SetForm; refs: RefD
               {f.caste_certificate_status === "has" && (
                 <div className="border-primary/30 bg-primary/[0.03] mt-3 rounded-lg border p-3">
                   <Label className="mb-1.5 block">Which category is on your certificate?</Label>
-                  <select
-                    className={selectClass}
+                  <RefSelect
                     value={f.reservation_category}
-                    onChange={(e) => set("reservation_category", e.target.value)}
-                  >
-                    <option value="">Select your category…</option>
-                    {(refs.reservation_category ?? []).map((c) => (
-                      <option key={c.slug} value={c.slug}>{c.label}</option>
-                    ))}
-                  </select>
+                    onChange={(v) => set("reservation_category", v)}
+                    placeholder="Select your category…"
+                    emptyLabel="Select your category…"
+                    options={(refs.reservation_category ?? []).map((c) => ({ value: c.slug, label: c.label }))}
+                  />
                   <p className="text-muted-foreground mt-1.5 text-xs">
                     As printed on your certificate — this is what determines your reservation group.
                   </p>
@@ -124,7 +129,7 @@ export function TellUsStep({ f, set, refs }: { f: Form; set: SetForm; refs: RefD
         </SectionCard>
 
         {/* ---- Your family ---- */}
-        <SectionCard name="Your family">
+        <SectionCard value="family" name="Your family">
           <div className="space-y-3 p-3.5">
             <p className="text-muted-foreground text-xs">
               Who&apos;s in your household and what they do — helps us understand your support system.
@@ -139,17 +144,23 @@ export function TellUsStep({ f, set, refs }: { f: Form; set: SetForm; refs: RefD
               <div key={i} className="grid gap-2 sm:grid-cols-[1fr_1fr_auto] sm:items-end">
                 <div className="grid gap-1.5">
                   <Label className="text-xs">Relation</Label>
-                  <select className={selectClass} value={m.relation} onChange={(e) => setMember(i, { relation: e.target.value })}>
-                    <option value="">Select…</option>
-                    {relationOptions.map((r) => <option key={r.slug} value={r.slug}>{r.label}</option>)}
-                  </select>
+                  <RefSelect
+                    value={m.relation}
+                    onChange={(v) => setMember(i, { relation: v })}
+                    placeholder="Select…"
+                    emptyLabel="Select…"
+                    options={relationOptions.map((r) => ({ value: r.slug, label: r.label }))}
+                  />
                 </div>
                 <div className="grid gap-1.5">
                   <Label className="text-xs">What they do</Label>
-                  <select className={selectClass} value={m.occupation} onChange={(e) => setMember(i, { occupation: e.target.value })}>
-                    <option value="">Select…</option>
-                    {(refs.family_occupation ?? []).map((o) => <option key={o.slug} value={o.slug}>{o.label}</option>)}
-                  </select>
+                  <RefSelect
+                    value={m.occupation}
+                    onChange={(v) => setMember(i, { occupation: v })}
+                    placeholder="Select…"
+                    emptyLabel="Select…"
+                    options={(refs.family_occupation ?? []).map((o) => ({ value: o.slug, label: o.label }))}
+                  />
                 </div>
                 <button
                   type="button"
@@ -195,7 +206,7 @@ export function TellUsStep({ f, set, refs }: { f: Form; set: SetForm; refs: RefD
         </SectionCard>
 
         {/* ---- Hobbies ---- */}
-        <SectionCard name="Hobbies & interests (outside academics)">
+        <SectionCard value="hobbies" name="Hobbies & interests (outside academics)">
           <div className="space-y-3 p-3.5">
             <HobbyPicker
               options={refs.hobby ?? []}
@@ -208,7 +219,7 @@ export function TellUsStep({ f, set, refs }: { f: Form; set: SetForm; refs: RefD
         </SectionCard>
 
         {/* ---- Biggest challenge (Markdown editor) ---- */}
-        <SectionCard name="Your biggest challenge">
+        <SectionCard value="challenge" name="Your biggest challenge">
           <div className="p-3.5">
             <Label className="mb-2 block">What&apos;s the biggest challenge you&apos;re facing right now?</Label>
             <MarkdownEditor
@@ -221,30 +232,23 @@ export function TellUsStep({ f, set, refs }: { f: Form; set: SetForm; refs: RefD
             </p>
           </div>
         </SectionCard>
-      </div>
+      </Accordion>
     </Step>
   );
 }
 
 // ---- building blocks -------------------------------------------------------
 
-function SectionCard({ name, children, defaultOpen = true }: { name: string; children: React.ReactNode; defaultOpen?: boolean }) {
-  const [open, setOpen] = useState(defaultOpen);
+// A registration section card built on the shared Accordion — the tinted header
+// band + the standard circled-chevron affordance come from AccordionTrigger.
+function SectionCard({ value, name, children }: { value: string; name: string; children: React.ReactNode }) {
   return (
-    <div className="overflow-hidden rounded-xl border">
-      <button
-        type="button"
-        onClick={() => setOpen((o) => !o)}
-        aria-expanded={open}
-        className={`flex w-full items-center justify-between gap-2 bg-gradient-to-r from-[#2563eb]/5 to-[#7c3aed]/5 px-3.5 py-2.5 text-left transition hover:from-[#2563eb]/10 hover:to-[#7c3aed]/10 ${open ? "border-b" : ""}`}
-      >
+    <AccordionItem value={value} className="overflow-hidden rounded-xl border">
+      <AccordionTrigger className="bg-primary/5 hover:bg-primary/10 rounded-none px-3.5">
         <span className="text-sm font-bold">{name}</span>
-        <span className="border-[#7c3aed]/30 bg-background flex size-7 shrink-0 items-center justify-center rounded-full border shadow-sm">
-          <ChevronDown className={`size-4 text-[#7c3aed] transition-transform duration-300 ${open ? "rotate-180" : ""}`} aria-hidden />
-        </span>
-      </button>
-      {open && children}
-    </div>
+      </AccordionTrigger>
+      <AccordionContent className="border-t p-0">{children}</AccordionContent>
+    </AccordionItem>
   );
 }
 
@@ -296,49 +300,28 @@ function ChipMulti({ options, selected, onChange }: { options: Pick<Ref, "slug" 
   );
 }
 
-/** Date-of-birth picker — the shared shadcn Calendar in a Popover (same pattern
- * as DateTimePicker, minus the time). Month/year dropdowns make picking a birth
- * year quick; dates that would make the student younger than MIN_AGE_YEARS are
- * disabled (they must have finished 12th standard). Stores/reads "YYYY-MM-DD". */
+/** Date-of-birth picker — the shared DatePicker with react-day-picker's DOB
+ * knobs wired up: month/year dropdowns make picking a birth year quick, and
+ * dates that would make the student younger than MIN_AGE_YEARS are disabled
+ * (they must have finished 12th standard). Stores/reads "YYYY-MM-DD". */
 function DobPicker({ value, onChange }: { value: string; onChange: (v: string) => void }) {
-  const [open, setOpen] = useState(false);
-  const parse = (s: string) => {
-    const [y, m, d] = s.split("-").map(Number);
-    return y && m && d ? new Date(y, m - 1, d) : undefined;
-  };
-  const pad = (n: number) => String(n).padStart(2, "0");
-  const fmt = (d: Date) => `${d.getFullYear()}-${pad(d.getMonth() + 1)}-${pad(d.getDate())}`;
-  const date = value ? parse(value) : undefined;
   const now = new Date();
   // Newest allowed DOB: exactly MIN_AGE_YEARS ago today.
   const maxDob = new Date(now.getFullYear() - MIN_AGE_YEARS, now.getMonth(), now.getDate());
 
   return (
-    <Popover open={open} onOpenChange={setOpen}>
-      <PopoverTrigger asChild>
-        <Button
-          type="button"
-          variant="outline"
-          className={cn("w-full justify-start gap-2 font-normal", !date && "text-muted-foreground")}
-        >
-          <CalendarIcon className="size-4 shrink-0 opacity-70" />
-          {date ? date.toLocaleDateString(undefined, { dateStyle: "medium" }) : "Pick your date of birth"}
-        </Button>
-      </PopoverTrigger>
-      <PopoverContent className="w-auto p-0" align="start">
-        <Calendar
-          mode="single"
-          selected={date}
-          defaultMonth={date ?? maxDob}
-          captionLayout="dropdown"
-          startMonth={new Date(1950, 0)}
-          endMonth={new Date(maxDob.getFullYear(), 11)}
-          disabled={{ after: maxDob }}
-          onSelect={(d) => { if (d) { onChange(fmt(d)); setOpen(false); } }}
-          className="p-3"
-        />
-      </PopoverContent>
-    </Popover>
+    <DatePicker
+      value={value}
+      onChange={onChange}
+      placeholder="Pick your date of birth"
+      captionLayout="dropdown"
+      startMonth={new Date(1950, 0)}
+      endMonth={new Date(maxDob.getFullYear(), 11)}
+      // With no DOB yet, open the calendar at the newest allowed birth month
+      // rather than today; once set, DatePicker jumps to the selected date.
+      defaultMonth={value ? undefined : maxDob}
+      disabled={{ after: maxDob }}
+    />
   );
 }
 
@@ -381,7 +364,7 @@ function HobbyPicker({
         return (
           <div key={g.name} className="overflow-hidden rounded-xl border">
             <div className="bg-muted/40 flex items-center justify-between gap-2 border-b px-3.5 py-2">
-              <span className="text-[0.72rem] font-bold tracking-[0.05em] text-[#7c3aed] uppercase">{g.name}</span>
+              <span className="text-primary text-[0.72rem] font-bold tracking-[0.05em] uppercase">{g.name}</span>
               <span className="text-muted-foreground text-[0.7rem] font-medium tabular-nums">
                 {count > 0 ? <span className="text-primary font-semibold">{count} selected</span> : g.items.length}
               </span>
@@ -412,7 +395,7 @@ function HobbyPicker({
       {/* Escape hatch: anything not in the curated lists */}
       <div className="overflow-hidden rounded-xl border border-dashed">
         <div className="bg-muted/40 border-b px-3.5 py-2">
-          <span className="text-[0.72rem] font-bold tracking-[0.05em] text-[#7c3aed] uppercase">Something else? Add your own</span>
+          <span className="text-primary text-[0.72rem] font-bold tracking-[0.05em] uppercase">Something else? Add your own</span>
         </div>
         <div className="p-3.5">
           <div className="flex gap-2">
@@ -429,7 +412,7 @@ function HobbyPicker({
               type="button"
               onClick={add}
               disabled={!input.trim() || atCustomCap}
-              className="h-9 shrink-0 rounded-md bg-gradient-to-r from-[#2563eb] to-[#7c3aed] px-4 text-sm font-semibold text-white disabled:opacity-50"
+              className="bg-primary text-primary-foreground h-9 shrink-0 rounded-md px-4 text-sm font-semibold disabled:opacity-50"
             >
               Add
             </button>

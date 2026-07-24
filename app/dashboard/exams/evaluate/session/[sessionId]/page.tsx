@@ -5,6 +5,7 @@ import { createClient } from "@/lib/supabase/server";
 import { Card, CardContent } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { AnswerKey } from "./answer-key";
+import { PageContainer } from "@/components/app-shell/page-container";
 
 type Result = {
   student_id: string;
@@ -40,7 +41,7 @@ export default async function EvaluateSessionPage({
   const submitted = results.filter((r) => r.roster_status === "submitted").length;
 
   return (
-    <div className="mx-auto max-w-3xl">
+    <PageContainer variant="wide">
       <header className="mb-6">
         <h1 className="text-2xl font-bold tracking-tight">Sitting results</h1>
         <p className="text-muted-foreground mt-1 text-sm">
@@ -88,6 +89,6 @@ export default async function EvaluateSessionPage({
           )}
         </CardContent>
       </Card>
-    </div>
+    </PageContainer>
   );
 }

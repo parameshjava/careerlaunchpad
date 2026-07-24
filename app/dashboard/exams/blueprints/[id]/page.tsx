@@ -3,8 +3,9 @@ import { notFound, redirect } from "next/navigation";
 import { getAuthContext, can } from "@/lib/auth";
 import { createClient } from "@/lib/supabase/server";
 import { fetchBlueprint, fetchPaperForPrint } from "@/lib/exam-query";
-import { type College } from "@/components/analytics/CollegePicker";
+import { type College } from "@/components/colleges/college-picker";
 import { BlueprintEditor } from "../blueprint-editor";
+import { PageContainer } from "@/components/app-shell/page-container";
 
 export default async function EditBlueprintPage({
   params,
@@ -45,7 +46,7 @@ export default async function EditBlueprintPage({
   const paper = session ? await fetchPaperForPrint(supabase, session.id) : null;
 
   return (
-    <div className="mx-auto max-w-4xl">
+    <PageContainer variant="wide">
       <Link
         href="/dashboard/exams/papers"
         className="text-muted-foreground hover:text-foreground mb-4 inline-block text-sm"
@@ -71,6 +72,6 @@ export default async function EditBlueprintPage({
         initialOpensAt={session?.opens_at ?? null}
         paper={paper}
       />
-    </div>
+    </PageContainer>
   );
 }

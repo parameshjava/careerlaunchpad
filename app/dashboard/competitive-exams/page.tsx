@@ -3,6 +3,7 @@ import { getAuthContext, can } from "@/lib/auth";
 import { createClient } from "@/lib/supabase/server";
 import { fetchCompetitiveExams } from "@/lib/competitive-exam-query";
 import { CompetitiveExamsList } from "@/components/competitive-exams/competitive-exams-list";
+import { PageContainer } from "@/components/app-shell/page-container";
 
 // Competitive exams (ICET, MAT, Bank PO…) and their syllabi. Gated on finance.manage.
 export default async function CompetitiveExamsPage() {
@@ -15,7 +16,7 @@ export default async function CompetitiveExamsPage() {
   const exams = await fetchCompetitiveExams(supabase);
 
   return (
-    <div className="mx-auto max-w-5xl">
+    <PageContainer variant="full">
       <header className="mb-6">
         <h1 className="text-2xl font-bold tracking-tight">Competitive exams</h1>
         <p className="text-muted-foreground mt-1 text-sm">
@@ -24,6 +25,6 @@ export default async function CompetitiveExamsPage() {
         </p>
       </header>
       <CompetitiveExamsList exams={exams} />
-    </div>
+    </PageContainer>
   );
 }

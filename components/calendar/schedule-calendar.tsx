@@ -1,24 +1,29 @@
 "use client";
 
-// Student class calendar (issue #64) — a custom Outlook/Google-style calendar
+// Shared class calendar (issue #64) — a custom Outlook/Google-style calendar
 // built to the approved mock: Day/Week/Month/Agenda, a 30-minute time grid with
 // subject-coloured cards (left accent), a live-now pulse + red "now" line, and
-// Join-Zoom actions. Reads /api/calendar/sessions (RLS-scoped to the student's
-// batches). Mobile: the week view collapses to a single day with a day-chip
-// strip. Themed through the app's shadcn tokens, so it follows light/dark.
+// Join-Zoom actions. Mobile: the week view collapses to a single day with a
+// day-chip strip. Themed through the app's shadcn tokens, so it follows
+// light/dark.
+//
+// Used by BOTH surfaces:
+//  • Student (/student/calendar) — uncontrolled: fetches /api/calendar/sessions
+//    (RLS-scoped to the student's batches) as the visible window changes.
+//  • Admin (batch schedule) — controlled: pass `sessions` and the grid renders
+//    them read-only alongside the scheduling form; no internal fetch.
 import { useCallback, useEffect, useMemo, useState } from "react";
-import Link from "next/link";
 import { ChevronLeft, ChevronRight, Loader2, Video } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import type { CalendarSession } from "@/lib/calendar-query";
-import "./student-calendar.css";
+import "./schedule-calendar.css";
 
 const TZ = "Asia/Kolkata";
 const DAY = 86_400_000;
 const START_HOUR = 7;
 const END_HOUR = 21;
 const ROW_MIN = 30;
-const ROW_H = 44; // must equal --slc-rowh in student-calendar.css
+const ROW_H = 44; // must equal --slc-rowh in schedule-calendar.css
 const ROWS = ((END_HOUR - START_HOUR) * 60) / ROW_MIN;
 const GRID_H = ROWS * ROW_H;
 
@@ -113,15 +118,36 @@ function packDay(evs: CalendarSession[]): Positioned[] {
   return out;
 }
 
-export function MyCalendar() {
+export type ScheduleCalendarProps = {
+  /** Controlled mode (admin): render these sessions and skip the internal fetch.
+   *  Omit for uncontrolled mode (student): the grid fetches its own window from
+   *  /api/calendar/sessions. */
+  sessions?: CalendarSession[];
+  /** Header title. `null` hides the header entirely (e.g. embedded in a page
+   *  that already has its own heading). */
+  title?: string | null;
+  /** Header subtitle, shown under the title. */
+  description?: string;
+  /** Wrapper classes; defaults to a centered max-width column. */
+  className?: string;
+};
+
+export function ScheduleCalendar({
+  sessions: sessionsProp,
+  title = "My calendar",
+  description = "Your scheduled classes. Tap a class to join its Zoom room.",
+  className = "mx-auto max-w-5xl",
+}: ScheduleCalendarProps = {}) {
+  const controlled = sessionsProp !== undefined;
   const [view, setView] = useState<View>("week");
   const [anchor, setAnchor] = useState<string>(todayIst());
   const [narrow, setNarrow] = useState(false);
-  const [sessions, setSessions] = useState<CalendarSession[]>([]);
-  const [loading, setLoading] = useState(true);
+  const [fetched, setFetched] = useState<CalendarSession[]>([]);
+  const [loading, setLoading] = useState(!controlled);
   const [error, setError] = useState("");
   const [nowMin, setNowMin] = useState(nowMinutesIst());
   const today = todayIst();
+  const sessions = controlled ? sessionsProp! : fetched;
 
   useEffect(() => {
     const mq = window.matchMedia("(max-width: 860px)");
@@ -151,6 +177,7 @@ export function MyCalendar() {
   }, [view, anchor, today]);
 
   useEffect(() => {
+    if (controlled) return; // admin supplies sessions; no internal fetch
     let cancelled = false;
     setLoading(true);
     (async () => {
@@ -158,7 +185,7 @@ export function MyCalendar() {
         const res = await fetch(`/api/calendar/sessions?from=${encodeURIComponent(win.from)}&to=${encodeURIComponent(win.to)}`);
         const json = await res.json();
         if (!res.ok) throw new Error(json.error ?? "Could not load your calendar");
-        if (!cancelled) setSessions(json.sessions ?? []);
+        if (!cancelled) setFetched(json.sessions ?? []);
       } catch (e) {
         if (!cancelled) setError((e as Error).message);
       } finally {
@@ -168,7 +195,7 @@ export function MyCalendar() {
     return () => {
       cancelled = true;
     };
-  }, [win]);
+  }, [win, controlled]);
 
   const weekDays = useMemo(() => Array.from({ length: 7 }, (_, i) => addDays(mondayOf(anchor), i)), [anchor]);
   const gridDays = view === "day" || (view === "week" && narrow) ? [anchor] : weekDays;
@@ -212,11 +239,13 @@ export function MyCalendar() {
   const openZoom = (url?: string | null) => url && window.open(url, "_blank", "noopener");
 
   return (
-    <div className="slc mx-auto max-w-5xl">
-      <header className="mb-4">
-        <h1 className="text-2xl font-bold tracking-tight">My calendar</h1>
-        <p className="text-muted-foreground mt-1 text-sm">Your scheduled classes. Tap a class to join its Zoom room.</p>
-      </header>
+    <div className={`slc ${className}`.trim()}>
+      {title !== null && (
+        <header className="mb-4">
+          <h1 className="text-2xl font-bold tracking-tight">{title}</h1>
+          {description && <p className="text-muted-foreground mt-1 text-sm">{description}</p>}
+        </header>
+      )}
 
       {/* Toolbar */}
       <div className="bg-card mb-3 flex flex-wrap items-center gap-2 rounded-xl border p-2.5 shadow-sm">

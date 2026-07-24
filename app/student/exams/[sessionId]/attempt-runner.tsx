@@ -21,6 +21,7 @@ import {
   DialogHeader,
   DialogTitle,
 } from "@/components/ui/dialog";
+import { formatDateTime } from "@/lib/format-date";
 import { type SessionPrintMeta } from "./paper-print";
 
 type Option = { id: string; label: string };
@@ -574,7 +575,7 @@ export function AttemptRunner({
                 {formatCountdown(remainingMs)}
               </p>
               <p className="text-muted-foreground mt-2 text-sm">
-                {opensAtDate!.toLocaleString(undefined, { dateStyle: "medium", timeStyle: "short" })}
+                {formatDateTime(opensAtDate)}
               </p>
             </>
           ) : (
@@ -885,6 +886,7 @@ export function AttemptRunner({
                     <button
                       type="button"
                       onClick={() => toggleSection(band.id)}
+                      aria-expanded={open}
                       className="bg-primary/10 text-primary sticky top-0 z-10 mb-2 flex w-full items-center justify-between gap-2 rounded-sm border-l-4 border-primary px-2 py-1.5 text-xs font-bold tracking-wide uppercase backdrop-blur"
                     >
                       <span className="flex min-w-0 items-center gap-1.5">

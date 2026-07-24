@@ -7,6 +7,7 @@ import { getAuthContext, can } from "@/lib/auth";
 import { createClient } from "@/lib/supabase/server";
 import { fetchMentors } from "@/lib/mentors-query";
 import { MentorReviewTable } from "@/components/mentors/MentorReviewTable";
+import { PageContainer } from "@/components/app-shell/page-container";
 import { becomeMentor } from "./actions";
 
 export const metadata: Metadata = { title: "Mentors" };
@@ -29,7 +30,7 @@ export default async function MentorsPage() {
   const isMentor = ctx.roles.includes("mentor");
 
   return (
-    <div className="mx-auto w-full max-w-6xl space-y-6">
+    <PageContainer variant="full" className="space-y-6">
       <div className="flex flex-col gap-3 sm:flex-row sm:items-center sm:justify-between">
         <div>
           <h1 className="text-2xl font-semibold tracking-tight">Mentors</h1>
@@ -54,6 +55,6 @@ export default async function MentorsPage() {
         )}
       </div>
       <MentorReviewTable mentors={mentors} canReview={canReview} />
-    </div>
+    </PageContainer>
   );
 }

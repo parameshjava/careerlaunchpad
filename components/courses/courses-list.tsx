@@ -2,23 +2,89 @@
 
 // Courses catalog list (issue #49, Phase 2). Rows link to the editor; the row
 // action archives/restores a course via PATCH { status }. Talks only to
-// /api/admin/courses*.
+// /api/admin/courses*. Built on the shared DataTable.
 import { useState } from "react";
 import Link from "next/link";
 import { useRouter } from "next/navigation";
 import { Archive, ArchiveRestore, Plus } from "lucide-react";
+import type { ColumnDef } from "@tanstack/react-table";
 
-import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
-import {
-  Table,
-  TableBody,
-  TableCell,
-  TableHead,
-  TableHeader,
-  TableRow,
-} from "@/components/ui/table";
+import { DataTable } from "@/components/data-table";
+import { SortHeader, StatusBadge } from "@/components/data-table-parts";
 import type { CourseListRow } from "@/lib/course-query";
+
+type CoursesMeta = { onToggle: (c: CourseListRow) => void; busyId: string | null };
+
+const columns: ColumnDef<CourseListRow>[] = [
+  {
+    accessorKey: "name",
+    meta: { label: "Course" },
+    header: ({ column }) => <SortHeader column={column}>Course</SortHeader>,
+    cell: ({ row }) => (
+      <div className="flex flex-col">
+        <Link href={`/dashboard/courses/${row.original.id}`} className="font-medium hover:underline">
+          {row.original.name}
+        </Link>
+        <span className="text-muted-foreground text-xs">{row.original.slug}</span>
+      </div>
+    ),
+  },
+  {
+    accessorKey: "category",
+    header: "Category",
+    cell: ({ row }) => <span className="text-muted-foreground">{row.original.category ?? "—"}</span>,
+  },
+  {
+    accessorKey: "competitiveExamCount",
+    meta: { label: "Exams" },
+    header: ({ column }) => <SortHeader column={column}>Exams</SortHeader>,
+    cell: ({ row }) => <span className="tabular-nums">{row.original.competitiveExamCount}</span>,
+  },
+  {
+    accessorKey: "batchCount",
+    meta: { label: "Batches" },
+    header: ({ column }) => <SortHeader column={column}>Batches</SortHeader>,
+    cell: ({ row }) => <span className="tabular-nums">{row.original.batchCount}</span>,
+  },
+  {
+    accessorKey: "status",
+    header: "Status",
+    cell: ({ row }) =>
+      row.original.status === "active" ? (
+        <StatusBadge tone="emerald">Active</StatusBadge>
+      ) : (
+        <StatusBadge tone="slate">Archived</StatusBadge>
+      ),
+  },
+  {
+    id: "actions",
+    enableHiding: false,
+    enableSorting: false,
+    cell: ({ row, table }) => {
+      const c = row.original;
+      const { onToggle, busyId } = table.options.meta as CoursesMeta;
+      return (
+        <div className="flex justify-end gap-1">
+          <Button variant="outline" size="sm" asChild>
+            <Link href={`/dashboard/courses/${c.id}`}>Edit</Link>
+          </Button>
+          <Button variant="ghost" size="sm" disabled={busyId === c.id} onClick={() => onToggle(c)}>
+            {c.status === "active" ? (
+              <>
+                <Archive /> Archive
+              </>
+            ) : (
+              <>
+                <ArchiveRestore /> Restore
+              </>
+            )}
+          </Button>
+        </div>
+      );
+    },
+  },
+];
 
 export function CoursesList({ courses }: { courses: CourseListRow[] }) {
   const router = useRouter();
@@ -60,69 +126,13 @@ export function CoursesList({ courses }: { courses: CourseListRow[] }) {
 
       {error && <p className="text-destructive text-sm">{error}</p>}
 
-      {courses.length === 0 ? (
-        <div className="text-muted-foreground bg-muted/40 rounded-lg border px-4 py-10 text-center text-sm">
-          No courses yet. Create your first course template to get started.
-        </div>
-      ) : (
-        <div className="overflow-x-auto rounded-lg border">
-          <Table>
-            <TableHeader>
-              <TableRow>
-                <TableHead>Course</TableHead>
-                <TableHead>Category</TableHead>
-                <TableHead className="text-center">Exams</TableHead>
-                <TableHead className="text-center">Batches</TableHead>
-                <TableHead>Status</TableHead>
-                <TableHead className="text-right">Actions</TableHead>
-              </TableRow>
-            </TableHeader>
-            <TableBody>
-              {courses.map((c) => (
-                <TableRow key={c.id}>
-                  <TableCell>
-                    <Link href={`/dashboard/courses/${c.id}`} className="font-medium hover:underline">
-                      {c.name}
-                    </Link>
-                    <div className="text-muted-foreground text-xs">{c.slug}</div>
-                  </TableCell>
-                  <TableCell className="text-muted-foreground">{c.category ?? "—"}</TableCell>
-                  <TableCell className="text-center tabular-nums">{c.competitiveExamCount}</TableCell>
-                  <TableCell className="text-center tabular-nums">{c.batchCount}</TableCell>
-                  <TableCell>
-                    <Badge variant={c.status === "active" ? "default" : "secondary"}>
-                      {c.status === "active" ? "Active" : "Archived"}
-                    </Badge>
-                  </TableCell>
-                  <TableCell className="text-right">
-                    <div className="flex justify-end gap-1">
-                      <Button variant="outline" size="sm" asChild>
-                        <Link href={`/dashboard/courses/${c.id}`}>Edit</Link>
-                      </Button>
-                      <Button
-                        variant="ghost"
-                        size="sm"
-                        disabled={busyId === c.id}
-                        onClick={() => toggleStatus(c)}
-                      >
-                        {c.status === "active" ? (
-                          <>
-                            <Archive /> Archive
-                          </>
-                        ) : (
-                          <>
-                            <ArchiveRestore /> Restore
-                          </>
-                        )}
-                      </Button>
-                    </div>
-                  </TableCell>
-                </TableRow>
-              ))}
-            </TableBody>
-          </Table>
-        </div>
-      )}
+      <DataTable
+        columns={columns as ColumnDef<CourseListRow, unknown>[]}
+        data={courses}
+        searchKey="name"
+        searchPlaceholder="Search courses…"
+        meta={{ onToggle: toggleStatus, busyId } satisfies CoursesMeta}
+      />
     </div>
   );
 }

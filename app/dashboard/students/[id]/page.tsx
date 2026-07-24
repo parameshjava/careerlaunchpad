@@ -6,6 +6,7 @@ import { PROFILE_SELECT, REF_TABLES } from "@/lib/registration";
 import { EMPTY, type Form, type RefData, type College } from "@/components/students/registration-fields";
 import { ProfileSummary, RegistrationForm } from "@/app/student/register/registration-form";
 import { Button } from "@/components/ui/button";
+import { PageContainer } from "@/components/app-shell/page-container";
 import { setStudentStatus } from "../actions";
 
 // Console-side student profile. Platform staff (student.profile.manage) get the
@@ -39,12 +40,12 @@ export default async function StudentProfilePage({ params }: { params: Promise<{
 
   if (!row) {
     return (
-      <div className="mx-auto w-full max-w-2xl">
+      <PageContainer variant="reading">
         <BackLink />
         <p className="text-muted-foreground py-20 text-center text-sm">
           This student hasn’t started registration yet — no profile to show.
         </p>
-      </div>
+      </PageContainer>
     );
   }
 
@@ -54,7 +55,7 @@ export default async function StudentProfilePage({ params }: { params: Promise<{
   // fetched (that was the existence gate).
   if (can(ctx, "student.profile.manage")) {
     return (
-      <div className="mx-auto w-full max-w-2xl">
+      <PageContainer variant="reading">
         <BackLink />
         {awaitingReview && <ApprovalBar id={id} name={reviewRow?.full_name ?? ""} />}
         <RegistrationForm
@@ -64,7 +65,7 @@ export default async function StudentProfilePage({ params }: { params: Promise<{
             submit: `/api/students/${id}/profile/submit`,
           }}
         />
-      </div>
+      </PageContainer>
     );
   }
 
@@ -124,11 +125,11 @@ export default async function StudentProfilePage({ params }: { params: Promise<{
   const status = r.registration_status === "submitted" ? "submitted" : "in_progress";
 
   return (
-    <div className="mx-auto w-full max-w-2xl">
+    <PageContainer variant="reading">
       <BackLink />
       {awaitingReview && <ApprovalBar id={id} name={f.full_name} />}
       <ProfileSummary f={f} refs={refs} email={email} college={college} status={status} />
-    </div>
+    </PageContainer>
   );
 }
 

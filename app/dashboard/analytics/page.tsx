@@ -2,8 +2,9 @@ import type { Metadata } from "next";
 import { redirect } from "next/navigation";
 
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
+import { PageContainer } from "@/components/app-shell/page-container";
 import { InteractiveAnalytics } from "@/components/analytics/InteractiveAnalytics";
-import { CollegePicker } from "@/components/analytics/CollegePicker";
+import { CollegeNavPicker } from "@/components/analytics/college-nav-picker";
 import { getAuthContext, can } from "@/lib/auth";
 import { createClient } from "@/lib/supabase/server";
 import { fetchCollegeAnalytics } from "@/lib/analytics-query";
@@ -43,15 +44,15 @@ export default async function AnalyticsPage({
   // Nothing selected yet (owner/admin landing) → prompt to choose a college.
   if (!collegeId) {
     return (
-      <div className="space-y-6">
+      <PageContainer variant="full" className="space-y-6">
         <Header />
-        <CollegePicker selected={null} />
+        <CollegeNavPicker selected={null} />
         <Card>
           <CardContent className="text-muted-foreground py-16 text-center text-sm">
             Search and select a college above to view its insights.
           </CardContent>
         </Card>
-      </div>
+      </PageContainer>
     );
   }
 
@@ -68,10 +69,10 @@ export default async function AnalyticsPage({
   ];
 
   return (
-    <div className="space-y-6">
+    <PageContainer variant="full" className="space-y-6">
       <Header collegeName={analytics.college?.name ?? null} />
 
-      <CollegePicker selected={analytics.college} disabled={isCollegeAdmin} />
+      <CollegeNavPicker selected={analytics.college} disabled={isCollegeAdmin} />
 
       <div className="grid grid-cols-2 gap-4 lg:grid-cols-4">
         {stats.map((s) => (
@@ -88,7 +89,7 @@ export default async function AnalyticsPage({
       </div>
 
       <InteractiveAnalytics analytics={analytics} students={students} />
-    </div>
+    </PageContainer>
   );
 }
 

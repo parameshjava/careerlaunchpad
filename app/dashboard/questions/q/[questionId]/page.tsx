@@ -1,6 +1,7 @@
 import { redirect } from "next/navigation";
 import { getAuthContext, can } from "@/lib/auth";
 import { QuestionEditor } from "../../question-editor";
+import { PageContainer } from "@/components/app-shell/page-container";
 
 export default async function EditQuestionPage({
   params,
@@ -15,11 +16,11 @@ export default async function EditQuestionPage({
   const { questionId } = await params;
 
   return (
-    <div className="mx-auto max-w-5xl">
+    <PageContainer variant="reading">
       <header className="mb-6">
         <h1 className="text-2xl font-bold tracking-tight">Edit question</h1>
       </header>
       <QuestionEditor mode="edit" questionId={questionId} />
-    </div>
+    </PageContainer>
   );
 }

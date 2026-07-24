@@ -23,6 +23,7 @@ import { DatePicker } from "@/components/ui/date-picker";
 import { DateTimePicker } from "@/components/ui/date-time-picker";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
+import { ConfirmDialog } from "@/components/ui/confirm-dialog";
 import {
   Select,
   SelectContent,
@@ -31,7 +32,9 @@ import {
   SelectValue,
 } from "@/components/ui/select";
 import { cachedGet, invalidate } from "@/lib/fetch-cache";
+import { formatDate, formatTimeRange, formatWeekdayShort } from "@/lib/format-date";
 import type { CalendarSession } from "@/lib/calendar-query";
+import { ScheduleCalendar } from "@/components/calendar/schedule-calendar";
 
 const TZ = "Asia/Kolkata";
 const WEEKDAYS = [
@@ -40,10 +43,6 @@ const WEEKDAYS = [
 ];
 type Subject = { subjectId: string; name: string };
 
-const fmtDay = (iso: string) =>
-  new Intl.DateTimeFormat("en-IN", { timeZone: TZ, weekday: "short", day: "2-digit", month: "short" }).format(new Date(iso));
-const fmtTime = (iso: string) =>
-  new Intl.DateTimeFormat("en-IN", { timeZone: TZ, hour: "2-digit", minute: "2-digit", hour12: true }).format(new Date(iso));
 // ISO instant → DateTimePicker value "YYYY-MM-DDTHH:mm" in IST wall-clock.
 const toLocalInput = (iso: string) => {
   const p = new Intl.DateTimeFormat("en-CA", {
@@ -85,11 +84,8 @@ export function BatchSchedule({ batchId, embedded = false }: { batchId: string; 
   // choice=true → offer "this occurrence only" vs "whole series" (series anchor);
   // choice=false → single-occurrence cancel (individual occurrence / one-off).
   const [cancelFor, setCancelFor] = useState<{ sessionId: string; title: string; choice: boolean } | null>(null);
-  const [cancelBusy, setCancelBusy] = useState(false);
-  const [cancelErr, setCancelErr] = useState("");
-  // Typed confirmation guards against accidental cancels.
-  const [cancelConfirm, setCancelConfirm] = useState("");
-  const cancelConfirmed = cancelConfirm.trim().toUpperCase() === "CANCEL";
+  // For a weekly class: which occurrences to cancel. (Single occurrence → always "single".)
+  const [cancelScope, setCancelScope] = useState<"single" | "following" | "series">("single");
 
   // Edit a single occurrence (reschedule / prepone / postpone one class).
   const [editOccFor, setEditOccFor] = useState<{ sessionId: string } | null>(null);
@@ -287,24 +283,17 @@ export function BatchSchedule({ batchId, embedded = false }: { batchId: string; 
     }
   }
 
+  // Throws on failure so the ConfirmDialog shows the error inline; success
+  // auto-closes the dialog (→ setCancelFor(null)).
   async function confirmCancel(scope: "single" | "following" | "series") {
     if (!cancelFor) return;
-    setCancelErr("");
-    setCancelBusy(true);
-    try {
-      const qs = scope === "single" ? "" : `?scope=${scope}`;
-      const res = await fetch(`/api/admin/batches/${batchId}/sessions/${cancelFor.sessionId}${qs}`, {
-        method: "DELETE",
-      });
-      const json = await res.json().catch(() => ({}));
-      if (!res.ok) throw new Error(json.error ?? "Could not cancel");
-      setCancelFor(null);
-      await reloadSessions();
-    } catch (e) {
-      setCancelErr((e as Error).message);
-    } finally {
-      setCancelBusy(false);
-    }
+    const qs = scope === "single" ? "" : `?scope=${scope}`;
+    const res = await fetch(`/api/admin/batches/${batchId}/sessions/${cancelFor.sessionId}${qs}`, {
+      method: "DELETE",
+    });
+    const json = await res.json().catch(() => ({}));
+    if (!res.ok) throw new Error(json.error ?? "Could not cancel");
+    await reloadSessions();
   }
 
   if (loading)
@@ -531,6 +520,16 @@ export function BatchSchedule({ batchId, embedded = false }: { batchId: string; 
         </Card>
       )}
 
+      {/* Calendar grid — the same shared calendar students see, rendered
+          read-only (controlled) from the sessions loaded above. The list below
+          keeps the per-class edit / cancel actions the grid doesn't offer. */}
+      {sessions.length > 0 && (
+        <div className="mb-6">
+          <h2 className="mb-3 text-base font-semibold tracking-tight">Class calendar</h2>
+          <ScheduleCalendar sessions={sessions} title={null} className="" />
+        </div>
+      )}
+
       {/* Upcoming */}
       <Card>
         <CardHeader className="flex-row flex-wrap items-center justify-between gap-3 space-y-0">
@@ -566,7 +565,7 @@ export function BatchSchedule({ batchId, embedded = false }: { batchId: string; 
                     {s.meetingStatus === "failed" && <Badge variant="destructive">No Zoom</Badge>}
                   </div>
                   <p className="text-muted-foreground text-sm tabular-nums">
-                    {fmtDay(s.startsAt)} · {fmtTime(s.startsAt)}–{fmtTime(s.endsAt)}
+                    {formatWeekdayShort(s.startsAt)}, {formatDate(s.startsAt)} · {formatTimeRange(s.startsAt, s.endsAt)}
                     {s.mentors.length ? ` · ${s.mentors.join(", ")}` : ""}
                   </p>
                 </div>
@@ -592,8 +591,7 @@ export function BatchSchedule({ batchId, embedded = false }: { batchId: string; 
                   size="sm"
                   className="text-muted-foreground hover:text-destructive"
                   onClick={() => {
-                    setCancelErr("");
-                    setCancelConfirm("");
+                    setCancelScope("single");
                     setCancelFor({ sessionId: s.id, title: s.title, choice: Boolean(s.seriesId) });
                   }}
                 >
@@ -644,68 +642,55 @@ export function BatchSchedule({ batchId, embedded = false }: { batchId: string; 
         </DialogContent>
       </Dialog>
 
-      {/* Cancel confirmation */}
-      <Dialog open={Boolean(cancelFor)} onOpenChange={(o) => !o && setCancelFor(null)}>
-        <DialogContent className="sm:max-w-md">
-          <DialogHeader>
-            <DialogTitle>Cancel class?</DialogTitle>
-          </DialogHeader>
-          <p className="text-muted-foreground text-sm">
-            {cancelFor?.choice ? (
-              <>
-                <span className="text-foreground font-medium">{cancelFor?.title}</span> is a weekly class. Choose
-                what to cancel — Zoom and the mentors are updated accordingly. This can&apos;t be undone.
-              </>
-            ) : (
-              <>
-                <span className="text-foreground font-medium">{cancelFor?.title}</span> will be cancelled and the
-                mentors notified. This can&apos;t be undone.
-              </>
-            )}
-          </p>
-          {/* Typed confirmation to prevent accidental cancels. */}
-          <div className="grid gap-1.5">
-            <Label htmlFor="cancel-confirm">
-              Type <span className="text-foreground font-semibold">CANCEL</span> to confirm
-            </Label>
-            <Input
-              id="cancel-confirm"
-              value={cancelConfirm}
-              onChange={(e) => setCancelConfirm(e.target.value)}
-              placeholder="CANCEL"
-              autoComplete="off"
-            />
-          </div>
-          {cancelErr && <p className="text-destructive text-sm">{cancelErr}</p>}
-          {cancelFor?.choice ? (
-            <div className="grid gap-2">
-              <Button variant="outline" className="justify-start" onClick={() => confirmCancel("single")} disabled={cancelBusy || !cancelConfirmed}>
-                <Trash2 /> This class only
-              </Button>
-              <Button variant="outline" className="justify-start" onClick={() => confirmCancel("following")} disabled={cancelBusy || !cancelConfirmed}>
-                <Trash2 /> This and all following
-              </Button>
-              <Button variant="destructive" className="justify-start" onClick={() => confirmCancel("series")} disabled={cancelBusy || !cancelConfirmed}>
-                {cancelBusy ? <Loader2 className="animate-spin" /> : <Trash2 />}
-                The whole series (all upcoming)
-              </Button>
-              <Button variant="ghost" onClick={() => setCancelFor(null)} disabled={cancelBusy}>
-                Keep it
-              </Button>
-            </div>
+      {/* Cancel confirmation — type-to-confirm; a weekly class adds a scope choice */}
+      <ConfirmDialog
+        open={Boolean(cancelFor)}
+        onOpenChange={(o) => !o && setCancelFor(null)}
+        destructive
+        title="Cancel class?"
+        description={
+          cancelFor?.choice ? (
+            <>
+              <span className="text-foreground font-medium">{cancelFor?.title}</span> is a weekly class.
+              Choose what to cancel — Zoom and the mentors are updated accordingly. This can&apos;t be
+              undone.
+            </>
           ) : (
-            <DialogFooter>
-              <Button variant="outline" onClick={() => setCancelFor(null)} disabled={cancelBusy}>
-                Keep it
-              </Button>
-              <Button variant="destructive" onClick={() => confirmCancel("single")} disabled={cancelBusy || !cancelConfirmed}>
-                {cancelBusy ? <Loader2 className="animate-spin" /> : <Trash2 />}
-                Cancel class
-              </Button>
-            </DialogFooter>
-          )}
-        </DialogContent>
-      </Dialog>
+            <>
+              <span className="text-foreground font-medium">{cancelFor?.title}</span> will be cancelled
+              and the mentors notified. This can&apos;t be undone.
+            </>
+          )
+        }
+        confirmPhrase="CANCEL"
+        confirmLabel="Cancel class"
+        cancelLabel="Keep it"
+        onConfirm={() => confirmCancel(cancelFor?.choice ? cancelScope : "single")}
+      >
+        {cancelFor?.choice && (
+          <fieldset className="grid gap-2">
+            <legend className="mb-1 text-sm font-medium">What to cancel</legend>
+            {(
+              [
+                ["single", "This class only"],
+                ["following", "This and all following"],
+                ["series", "The whole series (all upcoming)"],
+              ] as const
+            ).map(([value, label]) => (
+              <label key={value} className="flex items-center gap-2 text-sm">
+                <input
+                  type="radio"
+                  name="cancel-scope"
+                  className="size-4"
+                  checked={cancelScope === value}
+                  onChange={() => setCancelScope(value)}
+                />
+                {label}
+              </label>
+            ))}
+          </fieldset>
+        )}
+      </ConfirmDialog>
     </div>
   );
 }

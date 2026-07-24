@@ -1,6 +1,7 @@
 import { redirect } from "next/navigation";
 import { getAuthContext } from "@/lib/auth";
 import { MentorForm } from "./mentor-form";
+import { PageContainer } from "@/components/app-shell/page-container";
 
 // Mentor registration / profile editor. The form (client) loads reference data
 // + the existing profile from the API and resumes where the mentor left off,
@@ -12,7 +13,7 @@ export default async function MentorRegisterPage() {
   if (!ctx.roles.includes("mentor") && !ctx.permissions.has("*")) redirect(ctx.homePath);
 
   return (
-    <div className="mx-auto w-full max-w-2xl">
+    <PageContainer variant="form">
       <header className="mb-6 text-center">
         <h1 className="text-2xl font-bold tracking-tight">🤝 Mentor Registration</h1>
         <p className="text-muted-foreground mt-1 text-sm">
@@ -20,6 +21,6 @@ export default async function MentorRegisterPage() {
         </p>
       </header>
       <MentorForm />
-    </div>
+    </PageContainer>
   );
 }
