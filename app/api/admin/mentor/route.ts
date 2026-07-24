@@ -20,7 +20,21 @@ const STR_KEYS = [
   "degree", "branch", "current_company", "current_title", "industry_id",
   "years_experience", "mentor_mode_id", "contribution_type_id", "availability",
 ] as const;
-const ARR_KEYS = ["mentoring_area_ids", "skills", "career_goal_ids"] as const;
+const ARR_KEYS = ["mentoring_area_ids", "skills", "teachable_subject_ids", "career_goal_ids"] as const;
+
+/** Build the whitelisted staged_profile from a raw profile payload. */
+function buildStaged(profile: Record<string, unknown>): Record<string, unknown> {
+  const staged: Record<string, unknown> = {};
+  for (const k of STR_KEYS) {
+    const v = String(profile[k] ?? "").trim();
+    if (v) staged[k] = v;
+  }
+  for (const k of ARR_KEYS) {
+    const v = profile[k];
+    staged[k] = Array.isArray(v) ? v.filter((x) => typeof x === "string") : [];
+  }
+  return staged;
+}
 
 export async function POST(req: NextRequest) {
   let ctx;
@@ -37,15 +51,7 @@ export async function POST(req: NextRequest) {
     return NextResponse.json({ error: "A valid email is required" }, { status: 422 });
   }
 
-  const staged: Record<string, unknown> = {};
-  for (const k of STR_KEYS) {
-    const v = String(profile[k] ?? "").trim();
-    if (v) staged[k] = v;
-  }
-  for (const k of ARR_KEYS) {
-    const v = profile[k];
-    staged[k] = Array.isArray(v) ? v.filter((x) => typeof x === "string") : [];
-  }
+  const staged = buildStaged(profile);
 
   const supabase = await createClient();
   const { data: role, error: roleErr } = await supabase
@@ -73,6 +79,58 @@ export async function POST(req: NextRequest) {
     invitedBy: ctx.email,
     loginUrl: `${SITE_URL}/auth/login`,
   });
+
+  return NextResponse.json({ ok: true, email });
+}
+
+/**
+ * PATCH /api/admin/mentor   body: { inviteId, email, profile }
+ * Edit an invited mentor BEFORE they sign in — updates the pending invite's
+ * staged profile (and email) in place. Once they sign in the invite is consumed
+ * and this no longer applies (edit their live profile instead). Auth: user.invite.
+ */
+export async function PATCH(req: NextRequest) {
+  try {
+    await requirePermission("user.invite");
+  } catch {
+    return NextResponse.json({ error: "Forbidden" }, { status: 403 });
+  }
+
+  const body = await req.json().catch(() => null);
+  const inviteId = String(body?.inviteId ?? "");
+  const email = String(body?.email ?? "").trim().toLowerCase();
+  const profile = (body?.profile ?? {}) as Record<string, unknown>;
+  if (!inviteId) return NextResponse.json({ error: "inviteId is required" }, { status: 422 });
+  if (!/^[^\s@]+@[^\s@.]+(?:\.[^\s@.]+)+$/.test(email)) {
+    return NextResponse.json({ error: "A valid email is required" }, { status: 422 });
+  }
+
+  const supabase = await createClient();
+  const { data: inv } = await supabase
+    .from("invite")
+    .select("id, status, role:role_id(key)")
+    .eq("id", inviteId)
+    .maybeSingle();
+  if (!inv) return NextResponse.json({ error: "Invite not found." }, { status: 404 });
+  if (inv.status !== "pending") {
+    return NextResponse.json({ error: "This invite is no longer pending and can't be edited." }, { status: 409 });
+  }
+  const roleKey = Array.isArray(inv.role) ? inv.role[0]?.key : (inv.role as { key?: string } | null)?.key;
+  if (roleKey !== "mentor") {
+    return NextResponse.json({ error: "Only mentor invites carry an editable profile." }, { status: 400 });
+  }
+
+  const { error } = await supabase
+    .from("invite")
+    .update({ email, staged_profile: buildStaged(profile) })
+    .eq("id", inviteId);
+  if (error) {
+    const status = error.code === "23505" ? 409 : 500;
+    return NextResponse.json(
+      { error: status === 409 ? "Another invite already uses this email." : error.message },
+      { status },
+    );
+  }
 
   return NextResponse.json({ ok: true, email });
 }

@@ -53,5 +53,5 @@ export async function setMentorStatus(userId: string, status: "approved" | "susp
     }
   }
 
-  revalidatePath("/dashboard/mentors");
+  revalidatePath("/dashboard/team");
 }

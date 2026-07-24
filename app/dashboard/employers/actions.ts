@@ -27,7 +27,7 @@ export async function createEmployer(
     .single();
   if (error) return { error: error.message };
   revalidatePath("/dashboard/employers");
-  revalidatePath("/dashboard/users"); // the invite form's employer list
+  revalidatePath("/dashboard/team"); // the invite form's employer list
   return { ok: true, id: data.id, name: data.name };
 }
 
@@ -51,7 +51,7 @@ export async function updateEmployer(
     .eq("id", id);
   if (error) return { error: error.message };
   revalidatePath("/dashboard/employers");
-  revalidatePath("/dashboard/users");
+  revalidatePath("/dashboard/team");
   return { ok: true };
 }
 

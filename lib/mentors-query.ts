@@ -21,6 +21,7 @@ export type MentorRow = {
   experience: number | null;
   mentoringAreas: string[];
   skills: string[];
+  teachableSubjects: string[];
   mode: string | null;
   contribution: string | null;
   submittedAt: string; // YYYY-MM-DD
@@ -35,12 +36,15 @@ const joinNonEmpty = (parts: (string | null | undefined)[], sep: string) =>
 
 /** Load the id/slug → label maps the review grid needs (public ref tables). */
 async function loadRefMaps(supabase: SupabaseClient) {
-  const [areas, industries, modes, contributions, skills] = await Promise.all([
+  const [areas, industries, modes, contributions, skills, subjects] = await Promise.all([
     supabase.from("ref_mentoring_area").select("id, label"),
     supabase.from("ref_industry").select("id, label"),
     supabase.from("ref_mentor_mode").select("id, label"),
     supabase.from("ref_contribution_type").select("id, label"),
     supabase.from("ref_skill").select("slug, label"),
+    // Subjects live in the exam-staff-only `subject` table; the RPC (140) exposes
+    // active subject names to any reviewer regardless of exam-staff status.
+    supabase.rpc("mentor_teachable_subjects"),
   ]);
   const map = <T extends { label: string }>(rows: T[] | null, key: "id" | "slug") =>
     new Map((rows ?? []).map((r) => [(r as Record<string, string>)[key], r.label]));
@@ -50,6 +54,7 @@ async function loadRefMaps(supabase: SupabaseClient) {
     mode: map(modes.data as { id: string; label: string }[] | null, "id"),
     contribution: map(contributions.data as { id: string; label: string }[] | null, "id"),
     skill: map(skills.data as { slug: string; label: string }[] | null, "slug"),
+    subject: new Map(((subjects.data ?? []) as { id: string; name: string }[]).map((s) => [s.id, s.name])),
   };
 }
 
@@ -61,7 +66,7 @@ export async function fetchMentors(supabase: SupabaseClient): Promise<MentorRow[
       .select(
         `user_id, full_name, status, mentor_kind, registration_status, graduation_year,
          current_company, current_title, industry_id, years_experience,
-         mentoring_area_ids, skills, mentor_mode_id, contribution_type_id, updated_at,
+         mentoring_area_ids, skills, teachable_subject_ids, mentor_mode_id, contribution_type_id, updated_at,
          college:college_id(name),
          app_user:app_user!mentor_profile_user_id_fkey(email)`,
       )
@@ -87,6 +92,7 @@ export async function fetchMentors(supabase: SupabaseClient): Promise<MentorRow[
       experience: (r.years_experience as number | null) ?? null,
       mentoringAreas: ((r.mentoring_area_ids as string[] | null) ?? []).map((id) => refs.area.get(id) ?? id),
       skills: ((r.skills as string[] | null) ?? []).map((s) => refs.skill.get(s) ?? s),
+      teachableSubjects: ((r.teachable_subject_ids as string[] | null) ?? []).map((id) => refs.subject.get(id) ?? id),
       mode: refs.mode.get(r.mentor_mode_id as string) ?? null,
       contribution: refs.contribution.get(r.contribution_type_id as string) ?? null,
       submittedAt: day(r.updated_at as string | null),

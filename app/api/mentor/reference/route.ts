@@ -20,7 +20,21 @@ export async function GET() {
   if (!user) return NextResponse.json({ error: "Not authenticated" }, { status: 401 });
 
   try {
-    return NextResponse.json(await getRefData(REF_TABLES, "mentor"));
+    // ref_* option sets (cached) + the teachable-subjects list. Subjects live in
+    // the exam-staff-only `subject` table, so they can't ride the cookieless
+    // ref-cache; fetch them here through the SECURITY DEFINER RPC (per-request,
+    // authed) and shape them like a ref row so the form's chip picker reuses.
+    const [refData, subjectsRes] = await Promise.all([
+      getRefData(REF_TABLES, "mentor"),
+      supabase.rpc("mentor_teachable_subjects"),
+    ]);
+    const subject = ((subjectsRes.data ?? []) as { id: string; name: string }[]).map((s) => ({
+      id: s.id,
+      slug: s.id,
+      label: s.name,
+      category: null,
+    }));
+    return NextResponse.json({ ...refData, subject });
   } catch (e) {
     return NextResponse.json({ error: (e as Error).message }, { status: 500 });
   }

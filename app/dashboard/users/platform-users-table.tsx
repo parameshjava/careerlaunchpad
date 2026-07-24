@@ -5,20 +5,29 @@
  * shared DataTable — search (name / email / college), faceted filters (role,
  * college, status), sortable headers and pagination. Columns: #, Full Name,
  * Email, Phone, Office Email, Role (badges + scoped college), Status, Actions.
- * Actions: Suspend/Reactivate, ✏️ Manage member, 🗑️ delete / revoke invite.
- * Guardrails are enforced in the server actions/RPCs.
+ * Actions collapse into a single ⋯ menu (Manage roles & profile, View as,
+ * Suspend/Reactivate, Remove — or Resend/Revoke for invites) so the column
+ * stays one line. Guardrails are enforced in the server actions/RPCs.
  */
-import { useMemo, useState } from "react";
+import { useMemo, useState, useTransition } from "react";
 import { useRouter } from "next/navigation";
-import { Trash2 } from "lucide-react";
+import { MoreHorizontal } from "lucide-react";
 import type { ColumnDef, FilterFn } from "@tanstack/react-table";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
+import {
+  DropdownMenu,
+  DropdownMenuContent,
+  DropdownMenuItem,
+  DropdownMenuLabel,
+  DropdownMenuSeparator,
+  DropdownMenuTrigger,
+} from "@/components/ui/dropdown-menu";
 import { DataTable, arrIncludes, type DataTableFilter } from "@/components/data-table";
 import { SortHeader, StatusBadge, type StatusTone } from "@/components/data-table-parts";
 import { ConfirmDialog } from "@/components/ui/confirm-dialog";
 import { ManageMemberDialog } from "./manage-roles-dialog";
-import { setUserStatus, resendInvite, revokeInvite, deleteMember } from "./actions";
+import { setUserStatus, resendInvite, revokeInvite, deleteMember, activateInvite } from "./actions";
 import { enterImpersonation } from "@/app/impersonation/actions";
 
 export type MemberRow = {
@@ -43,6 +52,7 @@ export type Caps = {
   canDelete: boolean; // user.manage
   canOffice: boolean; // user.manage
   canResend: boolean;
+  canInvite: boolean; // user.invite — also gates editing a pending invite
   canImpersonate: boolean; // owner / platform_admin — "View as user"
 };
 
@@ -257,80 +267,159 @@ function RowActions({
 }) {
   const router = useRouter();
   const [confirmOpen, setConfirmOpen] = useState(false);
+  const [activateOpen, setActivateOpen] = useState(false);
+  const [manageOpen, setManageOpen] = useState(false);
+  const [, startTransition] = useTransition();
 
-  // Users only; invites use the revoke form below. The dialog owns busy/error.
+  // Run a FormData server action (suspend / resend / revoke), then refresh.
+  const submit = (action: (fd: FormData) => Promise<void>, fields: Record<string, string>) =>
+    startTransition(async () => {
+      const fd = new FormData();
+      for (const [k, v] of Object.entries(fields)) fd.set(k, v);
+      await action(fd);
+      router.refresh();
+    });
+
+  // The ConfirmDialog owns busy/error for delete.
   async function onDelete() {
     const res = await deleteMember(row.id);
     if (res.error) throw new Error(res.error);
     router.refresh();
   }
 
-  // Pending invite: resend + revoke.
+  // Activate a pending invite now (provision the account without first sign-in).
+  async function onActivate() {
+    const res = await activateInvite(row.id);
+    if (res.error) throw new Error(res.error);
+    router.refresh();
+  }
+
+  const trigger = (
+    <DropdownMenuTrigger asChild>
+      <Button variant="ghost" className="size-8 p-0">
+        <span className="sr-only">Open menu</span>
+        <MoreHorizontal className="size-4" />
+      </Button>
+    </DropdownMenuTrigger>
+  );
+
+  // Pending invite: activate / resend / revoke.
   if (row.kind === "invite") {
+    if (!caps.canResend) return <span className="text-muted-foreground">—</span>;
     return (
-      <div className="flex flex-wrap justify-end gap-2">
-        {caps.canResend && (
-          <form action={resendInvite}>
-            <input type="hidden" name="id" value={row.id} />
-            <Button type="submit" variant="outline" size="sm">Resend</Button>
-          </form>
-        )}
-        {caps.canResend && (
-          <form action={revokeInvite}>
-            <input type="hidden" name="id" value={row.id} />
-            <Button type="submit" variant="ghost" size="sm" title="Revoke invite">
-              <Trash2 className="size-3.5" />
-            </Button>
-          </form>
-        )}
+      <div className="flex justify-end">
+        <DropdownMenu>
+          {trigger}
+          <DropdownMenuContent align="end">
+            <DropdownMenuLabel>Invite</DropdownMenuLabel>
+            {/* Provision the account now instead of waiting for first sign-in. */}
+            {caps.canInvite && (
+              <DropdownMenuItem onClick={() => setActivateOpen(true)}>
+                Activate now
+              </DropdownMenuItem>
+            )}
+            {/* Mentor invites carry an editable staged profile — let admins fix
+                details before the mentor signs in. */}
+            {caps.canInvite && row.roleKeys.includes("mentor") && (
+              <DropdownMenuItem onClick={() => router.push(`/dashboard/users/add-mentor?invite=${row.id}`)}>
+                Edit details
+              </DropdownMenuItem>
+            )}
+            <DropdownMenuItem onClick={() => submit(resendInvite, { id: row.id })}>
+              Resend invite
+            </DropdownMenuItem>
+            <DropdownMenuSeparator />
+            <DropdownMenuItem
+              className="text-destructive focus:text-destructive"
+              onClick={() => submit(revokeInvite, { id: row.id })}
+            >
+              Revoke invite
+            </DropdownMenuItem>
+          </DropdownMenuContent>
+        </DropdownMenu>
+
+        <ConfirmDialog
+          open={activateOpen}
+          onOpenChange={setActivateOpen}
+          title="Activate now"
+          description={
+            <>
+              Activate <span className="text-foreground font-semibold">{row.email}</span> now? Their
+              account is created immediately with the invited role, so they appear as active without
+              waiting to sign in. They can still sign in anytime with this email.
+            </>
+          }
+          confirmLabel="Activate"
+          onConfirm={onActivate}
+        />
       </div>
     );
   }
 
-  // Provisioned user: view-as, suspend/reactivate, ✏️ manage, 🗑️ delete.
+  // Provisioned user: manage, view-as, suspend/reactivate, remove — one menu.
   const suspended = row.status === "suspended";
   // Can't act as an owner/platform admin (server enforces this too).
   const impersonable = !row.roleKeys.some((k) => k === "owner" || k === "platform_admin");
+  const showImpersonate = caps.canImpersonate && !isSelf && impersonable && row.status === "active";
+  const showSuspend = caps.canSuspend && !isSelf;
+  const showManage = caps.canAssignRoles;
+  const showDelete = caps.canDelete && !isSelf;
+
+  if (!showImpersonate && !showSuspend && !showManage && !showDelete)
+    return <span className="text-muted-foreground">—</span>;
+
   return (
-    <>
-    <div className="flex flex-wrap items-center justify-end gap-2">
-      {caps.canImpersonate && !isSelf && impersonable && row.status === "active" && (
-        <form action={enterImpersonation.bind(null, row.id)}>
-          <Button type="submit" variant="outline" size="sm" title="Open the app as this user">
-            View as
-          </Button>
-        </form>
-      )}
-      {caps.canSuspend && !isSelf && (
-        <form action={setUserStatus}>
-          <input type="hidden" name="id" value={row.id} />
-          <input type="hidden" name="status" value={suspended ? "active" : "suspended"} />
-          <Button type="submit" variant="outline" size="sm">{suspended ? "Reactivate" : "Suspend"}</Button>
-        </form>
-      )}
-      {caps.canAssignRoles && (
+    <div className="flex justify-end">
+      <DropdownMenu>
+        {trigger}
+        <DropdownMenuContent align="end">
+          <DropdownMenuLabel>Actions</DropdownMenuLabel>
+          {showManage && (
+            <DropdownMenuItem onClick={() => setManageOpen(true)}>Manage roles &amp; profile</DropdownMenuItem>
+          )}
+          {showImpersonate && (
+            <DropdownMenuItem onClick={() => enterImpersonation(row.id)}>View as user</DropdownMenuItem>
+          )}
+          {showSuspend && (
+            <DropdownMenuItem
+              onClick={() => submit(setUserStatus, { id: row.id, status: suspended ? "active" : "suspended" })}
+            >
+              {suspended ? "Reactivate" : "Suspend"}
+            </DropdownMenuItem>
+          )}
+          {showDelete && (
+            <>
+              <DropdownMenuSeparator />
+              <DropdownMenuItem
+                className="text-destructive focus:text-destructive"
+                onClick={() => setConfirmOpen(true)}
+              >
+                Remove member
+              </DropdownMenuItem>
+            </>
+          )}
+        </DropdownMenuContent>
+      </DropdownMenu>
+
+      {showManage && (
         <ManageMemberDialog
+          open={manageOpen}
+          onOpenChange={setManageOpen}
           user={{ id: row.id, email: row.email, fullName: row.fullName, phone: row.phone, roleKeys: row.roleKeys, officeEmail: row.officeEmail, collegeAdmin: row.collegeAdmin }}
           callerRank={callerRank}
           isOwner={isOwner}
           canOffice={caps.canOffice}
         />
       )}
-      {caps.canDelete && !isSelf && (
-        <Button variant="ghost" size="sm" onClick={() => setConfirmOpen(true)} title="Delete member" className="text-destructive">
-          <Trash2 className="size-3.5" />
-        </Button>
-      )}
+      <ConfirmDialog
+        open={confirmOpen}
+        onOpenChange={setConfirmOpen}
+        destructive
+        title="Remove member"
+        description={<>Remove <span className="text-foreground font-semibold">{row.fullName || row.email}</span>? They&apos;ll lose access (reversible by an owner).</>}
+        confirmLabel="Remove"
+        onConfirm={onDelete}
+      />
     </div>
-    <ConfirmDialog
-      open={confirmOpen}
-      onOpenChange={setConfirmOpen}
-      destructive
-      title="Remove member"
-      description={<>Remove <span className="text-foreground font-semibold">{row.fullName || row.email}</span>? They&apos;ll lose access (reversible by an owner).</>}
-      confirmLabel="Remove"
-      onConfirm={onDelete}
-    />
-    </>
   );
 }

@@ -21,7 +21,7 @@ export type Form = {
   full_name: string; phone: string; linkedin_url: string; bio: string;
   college_id: string; graduation_year: string; degree: string; branch: string;
   current_company: string; current_title: string; industry_id: string; years_experience: string;
-  mentoring_area_ids: string[]; skills: string[]; career_goal_ids: string[];
+  mentoring_area_ids: string[]; skills: string[]; teachable_subject_ids: string[]; career_goal_ids: string[];
   mentor_mode_id: string; contribution_type_id: string; availability: string;
 };
 
@@ -29,7 +29,7 @@ export const EMPTY: Form = {
   full_name: "", phone: "", linkedin_url: "", bio: "",
   college_id: "", graduation_year: "", degree: "", branch: "",
   current_company: "", current_title: "", industry_id: "", years_experience: "",
-  mentoring_area_ids: [], skills: [], career_goal_ids: [],
+  mentoring_area_ids: [], skills: [], teachable_subject_ids: [], career_goal_ids: [],
   mentor_mode_id: "", contribution_type_id: "", availability: "",
 };
 
@@ -53,7 +53,8 @@ export const STEP_PAYLOAD: Record<number, (f: Form) => Record<string, unknown>> 
     industry_id: f.industry_id, years_experience: f.years_experience,
   }),
   3: (f) => ({
-    mentoring_area_ids: f.mentoring_area_ids, skills: f.skills, career_goal_ids: f.career_goal_ids,
+    mentoring_area_ids: f.mentoring_area_ids, skills: f.skills,
+    teachable_subject_ids: f.teachable_subject_ids, career_goal_ids: f.career_goal_ids,
     mentor_mode_id: f.mentor_mode_id, contribution_type_id: f.contribution_type_id, availability: f.availability,
   }),
 };
@@ -146,19 +147,41 @@ export function MentorStepBody({
 
   return (
     <Step title="What You Can Teach" hint="Pick the areas and skills you're happy to mentor on, and how you'd like to help.">
-      <div className="sm:col-span-2">
-        <Label className="mb-2 block">Mentoring Areas <span className="text-primary">*</span></Label>
-        <ChipMulti options={refs.mentoring_area} selected={f.mentoring_area_ids} onChange={(v) => set("mentoring_area_ids", v)} valueKey="id" />
-        <Label className="mt-5 mb-2 block">Skills You Can Teach</Label>
-        <ChipMulti options={refs.skill} selected={f.skills} onChange={(v) => set("skills", v)} />
-        <Label className="mt-5 mb-2 block">Career Goals You Can Guide</Label>
-        <ChipMulti options={refs.career_goal} selected={f.career_goal_ids} onChange={(v) => set("career_goal_ids", v)} valueKey="id" />
-        <Label className="mt-5 mb-2 block">Preferred Mode <span className="text-primary">*</span></Label>
-        <ChipSingle options={refs.mentor_mode} selected={f.mentor_mode_id} onChange={(v) => set("mentor_mode_id", v)} valueKey="id" />
-        <Label className="mt-5 mb-2 block">How You'd Like to Contribute</Label>
-        <ChipSingle options={refs.contribution_type} selected={f.contribution_type_id} onChange={(v) => set("contribution_type_id", v)} valueKey="id" />
-        <Label className="mt-5 mb-2 block">Availability</Label>
-        <Input value={f.availability} onChange={(e) => set("availability", e.target.value)} placeholder="e.g. 2 hours a week, weekends" />
+      {/* Each offering lives in its own titled card so the sections read as
+          distinct groups instead of one long run of chips. */}
+      <div className="space-y-4 sm:col-span-2">
+        <FieldGroup title="Mentoring Areas" required hint="The broad areas you'll guide students in.">
+          <ChipMulti options={refs.mentoring_area} selected={f.mentoring_area_ids} onChange={(v) => set("mentoring_area_ids", v)} valueKey="id" />
+        </FieldGroup>
+
+        <FieldGroup title="Skills You Can Teach" hint="Specific skills you're comfortable coaching on.">
+          <ChipMulti options={refs.skill} selected={f.skills} onChange={(v) => set("skills", v)} />
+        </FieldGroup>
+
+        <FieldGroup title="Subjects You Can Teach" hint="Academy subjects you can take classes on (used to match you to batches).">
+          {refs.subject && refs.subject.length > 0 ? (
+            <ChipMulti options={refs.subject} selected={f.teachable_subject_ids} onChange={(v) => set("teachable_subject_ids", v)} valueKey="id" />
+          ) : (
+            <p className="text-muted-foreground text-sm">No subjects are set up yet — an admin can add them under Subjects &amp; Chapters.</p>
+          )}
+        </FieldGroup>
+
+        <FieldGroup title="Career Goals You Can Guide" hint="Destinations you can help students work toward.">
+          <ChipMulti options={refs.career_goal} selected={f.career_goal_ids} onChange={(v) => set("career_goal_ids", v)} valueKey="id" />
+        </FieldGroup>
+
+        <div className="grid gap-4 sm:grid-cols-2">
+          <FieldGroup title="Preferred Mode" required>
+            <ChipSingle options={refs.mentor_mode} selected={f.mentor_mode_id} onChange={(v) => set("mentor_mode_id", v)} valueKey="id" />
+          </FieldGroup>
+          <FieldGroup title="How You'd Like to Contribute">
+            <ChipSingle options={refs.contribution_type} selected={f.contribution_type_id} onChange={(v) => set("contribution_type_id", v)} valueKey="id" />
+          </FieldGroup>
+        </div>
+
+        <FieldGroup title="Availability" hint="Roughly how much time you can give, and when.">
+          <Input value={f.availability} onChange={(e) => set("availability", e.target.value)} placeholder="e.g. 2 hours a week, weekends" />
+        </FieldGroup>
       </div>
     </Step>
   );
@@ -182,6 +205,23 @@ function Field({ label, required, children }: { label: string; required?: boolea
       <Label>{label}{required && <span className="text-primary"> *</span>}</Label>
       {children}
     </div>
+  );
+}
+
+// A titled, bordered block for one group of chips/inputs — keeps the Step 3
+// offerings (areas / skills / subjects / goals / mode / contribution) visually
+// separated instead of blurring into each other.
+function FieldGroup({ title, required, hint, children }: {
+  title: string; required?: boolean; hint?: string; children: React.ReactNode;
+}) {
+  return (
+    <section className="bg-muted/20 rounded-xl border p-4">
+      <h3 className="text-sm font-semibold">
+        {title}{required && <span className="text-primary"> *</span>}
+      </h3>
+      {hint && <p className="text-muted-foreground mt-0.5 mb-3 text-xs">{hint}</p>}
+      <div className={hint ? "" : "mt-3"}>{children}</div>
+    </section>
   );
 }
 
