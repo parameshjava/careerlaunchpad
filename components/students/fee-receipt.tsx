@@ -138,6 +138,8 @@ export function FeeReceiptView({
         }
 
         @media print {
+          /* Keep these blocks whole if the receipt ever spills to a 2nd page. */
+          .fr-docband, .fr-signoff-wrap, .fr-words { break-inside: avoid; }
           /* Tighten so a typical receipt fits one A4 page. */
           .fr-metastrip { padding-top: 10px; }
           .fr-body { padding-top: 2px; }

@@ -74,7 +74,7 @@ export function ConsolidatedResults({
         </Button>
       </PrintToolbar>
 
-      <PrintDocument ref={printRef} docLabel="Consolidated Statement of Results">
+      <PrintDocument ref={printRef} docLabel="Consolidated Statement of Results" orientation="landscape">
         <style>{`
           .results-table { border-collapse: collapse; width: 100%; }
           .results-table th, .results-table td { border: 1px solid #111; padding: 5px 8px; font-size: 12.5px; }
@@ -103,7 +103,7 @@ export function ConsolidatedResults({
         </div>
 
         <div className="overflow-x-auto">
-        <table className="results-table mt-4">
+        <table className="results-table pd-repeat-head mt-4">
           <thead>
             <tr>
               <th className="num" style={{ width: "7%" }}>Rank</th>

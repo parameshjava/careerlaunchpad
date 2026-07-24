@@ -158,7 +158,7 @@ export function ResultsPrint({
         )}
 
         {/* Results table — subject-wise marks + total */}
-        <table className="results-table mt-2">
+        <table className="results-table pd-repeat-head mt-2">
           <thead>
             <tr>
               <th className="num" style={{ width: "7%" }}>Rank</th>

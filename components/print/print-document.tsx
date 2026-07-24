@@ -38,6 +38,9 @@ ${printInkVars(".pd-page")}
   border-collapse: collapse; table-layout: fixed;
   box-shadow: 0 1px 2px rgba(15,23,42,.06), 0 24px 60px -20px rgba(15,23,42,.28);
   print-color-adjust: exact; -webkit-print-color-adjust: exact; }
+/* A landscape document previews on a wider sheet so the on-screen shape matches
+   the printed A4 landscape page. */
+.pd-page[data-orientation="landscape"] .pd-sheet { max-width: 1120px; }
 .pd-cell { padding: 0; }
 .pd-body { padding: 22px 40px 10px; }
 
@@ -82,12 +85,7 @@ ${printInkVars(".pd-page")}
 }
 
 @media print {
-  /* Pin to A4 with NO page margin, regardless of the printer's default paper
-     size. Zero margin means no margin box for the browser to inject its own
-     URL/date header/footer into, so those disappear; the brand bands run
-     edge-to-edge and the text margin lives inside .pd-body instead. */
-  @page { size: A4 portrait; margin: 0; }
-  html, body { width: 210mm; background: #fff; }
+  html, body { background: #fff; }
   .pd-page { background: none; padding: 0; }
   .pd-sheet { max-width: none; box-shadow: none; }
   /* Header/footer repeat on every printed page. */
@@ -97,21 +95,47 @@ ${printInkVars(".pd-page")}
      never overlaps the fixed band. */
   .pd-foot-spacer { display: block; height: 16mm; }
   .pd-foot { position: fixed; left: 0; right: 0; bottom: 0; }
+  /* Content pagination: keep table rows and marked blocks from splitting across
+     a page break; long inner tables still break between rows, and a table
+     marked .pd-repeat-head repeats its own column header on each page. */
+  .pd-body tr { break-inside: avoid; }
+  .pd-body .break-inside-avoid, .pd-body .break-avoid { break-inside: avoid; }
+  .pd-body .pd-repeat-head thead { display: table-header-group; }
 }
 `;
+
+// The @page rule is orientation-specific and kept separate from the base CSS so
+// a wide statement can opt into A4 landscape. Zero page margin means no margin
+// box for the browser to inject its own URL/date header/footer into (so those
+// disappear); the brand bands run edge-to-edge and the text margin lives inside
+// .pd-body instead. The body width is pinned so the layout is independent of the
+// printer's default paper size.
+function pageRule(orientation: "portrait" | "landscape"): string {
+  const width = orientation === "landscape" ? "297mm" : "210mm";
+  return `@media print { @page { size: A4 ${orientation}; margin: 0; } html, body { width: ${width}; } }`;
+}
 
 export const PrintDocument = forwardRef<
   HTMLDivElement,
   {
     /** Small uppercase document-type line under the header, e.g. "Question Paper". */
     docLabel?: string;
+    /** A4 orientation. Default "portrait"; use "landscape" for wide statements. */
+    orientation?: "portrait" | "landscape";
     className?: string;
     children: React.ReactNode;
   }
->(function PrintDocument({ docLabel, className, children }, ref) {
+>(function PrintDocument({ docLabel, orientation = "portrait", className, children }, ref) {
   return (
-    <div ref={ref} className={cn("pd-page", className)}>
+    <div
+      ref={ref}
+      className={cn("pd-page", className)}
+      data-orientation={orientation}
+      role="document"
+      aria-label={docLabel ? `${docLabel} — CareerLaunchpad` : "CareerLaunchpad document"}
+    >
       <style>{PD_CSS}</style>
+      <style>{pageRule(orientation)}</style>
       <table className="pd-sheet">
         <thead>
           <tr>

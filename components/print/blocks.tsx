@@ -36,7 +36,11 @@ export function PrintToolbar({
   children: React.ReactNode;
 }) {
   return (
-    <div className="mx-auto mb-4 flex max-w-[820px] flex-wrap items-center justify-between gap-3 print:hidden">
+    <div
+      role="toolbar"
+      aria-label="Document actions"
+      className="mx-auto mb-4 flex max-w-[820px] flex-wrap items-center justify-between gap-3 print:hidden"
+    >
       {backHref ? (
         <Button variant="outline" asChild>
           <Link href={backHref}>
