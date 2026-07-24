@@ -102,7 +102,7 @@ export function MyFees({ enrollments }: { enrollments: MyFeeEnrollment[] }) {
             <CardContent className="grid gap-5 p-5">
               {e.status === "pending" && (
                 <p className="text-muted-foreground bg-muted/40 rounded-lg border px-3 py-2 text-sm">
-                  Your enrolment is awaiting approval from your college. Once approved, you can pay the fee.
+                  Your enrolment is awaiting approval. Once approved, you can pay the fee.
                 </p>
               )}
               {cancelled && e.rejectionReason && (
