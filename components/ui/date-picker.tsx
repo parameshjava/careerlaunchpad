@@ -14,7 +14,7 @@ import { CalendarIcon, X } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Calendar } from "@/components/ui/calendar";
 import { Popover, PopoverContent, PopoverTrigger } from "@/components/ui/popover";
-import { formatDate } from "@/lib/format-date";
+import { formatISODate } from "@/lib/format-date";
 import { cn } from "@/lib/utils";
 
 const pad = (n: number) => String(n).padStart(2, "0");
@@ -58,7 +58,7 @@ export function DatePicker({
           className={cn("w-full justify-start gap-2 font-normal", !date && "text-muted-foreground")}
         >
           <CalendarIcon className="size-4 shrink-0 opacity-70" />
-          {date ? formatDate(date) : placeholder}
+          {value ? formatISODate(value) : placeholder}
         </Button>
       </PopoverTrigger>
       <PopoverContent className="w-auto p-0" align="start">

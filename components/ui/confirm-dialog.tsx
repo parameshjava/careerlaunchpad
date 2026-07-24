@@ -67,7 +67,10 @@ export function ConfirmDialog({
     }
   }, [open]);
 
-  const phraseOk = !confirmPhrase || typed.trim() === confirmPhrase.trim();
+  // Case-insensitive so "cancel" matches "CANCEL" (the common type-to-confirm
+  // convention, and preserves behaviour from the dialogs migrated onto this).
+  const phraseOk =
+    !confirmPhrase || typed.trim().toLowerCase() === confirmPhrase.trim().toLowerCase();
 
   async function handleConfirm() {
     setError("");

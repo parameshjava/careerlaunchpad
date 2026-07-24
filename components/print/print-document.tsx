@@ -32,9 +32,13 @@ const ADDRESS =
 
 const PD_CSS = `
 ${printInkVars(".pd-page")}
+/* On screen the fixed-geometry A4 sheet scrolls inside its own box so it never
+   forces the whole page to scroll sideways on mobile (min-width keeps the
+   letterhead/tables readable rather than crushed). In print this is neutralised. */
+.pd-scroll { overflow-x: auto; }
 /* The sheet is a <table> so the letterhead header (thead) and address footer
    (tfoot) repeat on EVERY printed page. */
-.pd-sheet { width: 100%; max-width: 820px; margin: 0 auto; background: #fff; color: var(--pd-ink);
+.pd-sheet { width: 100%; min-width: 680px; max-width: 820px; margin: 0 auto; background: #fff; color: var(--pd-ink);
   border-collapse: collapse; table-layout: fixed;
   box-shadow: 0 1px 2px rgba(15,23,42,.06), 0 24px 60px -20px rgba(15,23,42,.28);
   print-color-adjust: exact; -webkit-print-color-adjust: exact; }
@@ -87,7 +91,8 @@ ${printInkVars(".pd-page")}
 @media print {
   html, body { background: #fff; }
   .pd-page { background: none; padding: 0; }
-  .pd-sheet { max-width: none; box-shadow: none; }
+  .pd-scroll { overflow: visible; }
+  .pd-sheet { min-width: 0; max-width: none; box-shadow: none; }
   /* Header/footer repeat on every printed page. */
   .pd-sheet thead { display: table-header-group; }
   .pd-sheet tfoot { display: table-footer-group; }
@@ -136,6 +141,7 @@ export const PrintDocument = forwardRef<
     >
       <style>{PD_CSS}</style>
       <style>{pageRule(orientation)}</style>
+      <div className="pd-scroll">
       <table className="pd-sheet">
         <thead>
           <tr>
@@ -190,6 +196,7 @@ export const PrintDocument = forwardRef<
           </tr>
         </tbody>
       </table>
+      </div>
     </div>
   );
 });

@@ -4,7 +4,10 @@
 // docx template: branded header, fill-in info table (name / roll number),
 // instructions, "Question Paper Pattern" table, then sections with ☐ A–D
 // checkbox options. No answer key — this is the student-facing paper.
-// Rendered on the shared letterhead via <PrintDocument>; printed with usePrint().
+// Renders its content on the shared letterhead (<PrintDocument>). Currently not
+// mounted anywhere (the live attempt UI is print:hidden); kept for the exported
+// SessionPrintMeta type and for future wiring. To print it, a caller would wrap
+// it with usePrint()/PrintToolbar — this component provides no print trigger itself.
 import { RichContent } from "@/components/exam/RichContent";
 import { BrandBlock, InfoCell, InfoTable } from "@/components/print/blocks";
 import { PrintDocument } from "@/components/print/print-document";

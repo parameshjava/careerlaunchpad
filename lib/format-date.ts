@@ -37,6 +37,22 @@ const WEEKDAY_LONG = new Intl.DateTimeFormat("en-IN", {
   timeZone: "Asia/Kolkata",
 });
 
+const WEEKDAY_SHORT = new Intl.DateTimeFormat("en-IN", {
+  weekday: "short",
+  timeZone: "Asia/Kolkata",
+});
+
+// For date-ONLY calendar values ("YYYY-MM-DD") we must NOT apply a timezone —
+// the date has no instant, so shifting it by IST (or any zone) would move it a
+// day for viewers in other zones. Parse + format at UTC so the calendar date
+// reads identically everywhere.
+const DATE_ONLY = new Intl.DateTimeFormat("en-IN", {
+  day: "2-digit",
+  month: "short",
+  year: "numeric",
+  timeZone: "UTC",
+});
+
 export type DateInput = string | number | Date | null | undefined;
 
 /** Coerce any accepted input to a valid Date, or null. */
@@ -68,4 +84,21 @@ export function formatTime(value: DateInput, fallback = "—"): string {
 export function formatWeekday(value: DateInput, fallback = "—"): string {
   const d = toDate(value);
   return d ? WEEKDAY_LONG.format(d) : fallback;
+}
+
+/** "Fri" (IST). */
+export function formatWeekdayShort(value: DateInput, fallback = "—"): string {
+  const d = toDate(value);
+  return d ? WEEKDAY_SHORT.format(d) : fallback;
+}
+
+/**
+ * Format a date-ONLY string ("YYYY-MM-DD") by its calendar components with NO
+ * timezone shift — "15 May 2000" reads the same for every viewer. Use for stored
+ * calendar dates (DOB, issue dates); use formatDate() for real instants.
+ */
+export function formatISODate(value: string | null | undefined, fallback = "—"): string {
+  if (!value) return fallback;
+  const d = new Date(`${value}T00:00:00Z`);
+  return Number.isNaN(d.getTime()) ? fallback : DATE_ONLY.format(d);
 }

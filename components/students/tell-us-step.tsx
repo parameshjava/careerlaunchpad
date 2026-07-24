@@ -106,6 +106,7 @@ export function TellUsStep({ f, set, refs }: { f: Form; set: SetForm; refs: RefD
                     value={f.reservation_category}
                     onChange={(v) => set("reservation_category", v)}
                     placeholder="Select your category…"
+                    emptyLabel="Select your category…"
                     options={(refs.reservation_category ?? []).map((c) => ({ value: c.slug, label: c.label }))}
                   />
                   <p className="text-muted-foreground mt-1.5 text-xs">
@@ -147,6 +148,7 @@ export function TellUsStep({ f, set, refs }: { f: Form; set: SetForm; refs: RefD
                     value={m.relation}
                     onChange={(v) => setMember(i, { relation: v })}
                     placeholder="Select…"
+                    emptyLabel="Select…"
                     options={relationOptions.map((r) => ({ value: r.slug, label: r.label }))}
                   />
                 </div>
@@ -156,6 +158,7 @@ export function TellUsStep({ f, set, refs }: { f: Form; set: SetForm; refs: RefD
                     value={m.occupation}
                     onChange={(v) => setMember(i, { occupation: v })}
                     placeholder="Select…"
+                    emptyLabel="Select…"
                     options={(refs.family_occupation ?? []).map((o) => ({ value: o.slug, label: o.label }))}
                   />
                 </div>

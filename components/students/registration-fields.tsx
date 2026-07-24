@@ -276,6 +276,7 @@ function SelectRef({ value, onChange, options, placeholder = "Select…" }: { va
       value={value}
       onChange={onChange}
       placeholder={placeholder}
+      emptyLabel={placeholder}
       options={options.map((o) => ({ value: o.slug, label: o.label }))}
     />
   );

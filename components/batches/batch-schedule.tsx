@@ -32,7 +32,7 @@ import {
   SelectValue,
 } from "@/components/ui/select";
 import { cachedGet, invalidate } from "@/lib/fetch-cache";
-import { formatDate, formatTime } from "@/lib/format-date";
+import { formatDate, formatTime, formatWeekdayShort } from "@/lib/format-date";
 import type { CalendarSession } from "@/lib/calendar-query";
 import { ScheduleCalendar } from "@/components/calendar/schedule-calendar";
 
@@ -565,7 +565,7 @@ export function BatchSchedule({ batchId, embedded = false }: { batchId: string; 
                     {s.meetingStatus === "failed" && <Badge variant="destructive">No Zoom</Badge>}
                   </div>
                   <p className="text-muted-foreground text-sm tabular-nums">
-                    {formatDate(s.startsAt)} · {formatTime(s.startsAt)}–{formatTime(s.endsAt)}
+                    {formatWeekdayShort(s.startsAt)}, {formatDate(s.startsAt)} · {formatTime(s.startsAt)}–{formatTime(s.endsAt)}
                     {s.mentors.length ? ` · ${s.mentors.join(", ")}` : ""}
                   </p>
                 </div>

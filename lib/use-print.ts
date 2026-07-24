@@ -61,10 +61,13 @@ export function usePrint<T extends HTMLElement = HTMLDivElement>() {
     const cleanup = () => {
       if (cleaned) return;
       cleaned = true;
+      window.removeEventListener("focus", onParentFocus);
       iframe.remove();
     };
-    // afterprint won't fire while the print dialog is open, so also keep a long
-    // safety-net timer in case a browser never fires it at all.
+    // The parent window regains focus when the OS print/save dialog closes — a
+    // reliable cleanup signal even on browsers where print() does NOT block the
+    // main thread, so we never tear the iframe down while the dialog is open.
+    const onParentFocus = () => cleanup();
     cw.addEventListener("afterprint", cleanup);
 
     iframe.onload = () => {
@@ -72,7 +75,10 @@ export function usePrint<T extends HTMLElement = HTMLDivElement>() {
       cw.setTimeout(() => {
         cw.focus();
         cw.print();
-        cw.setTimeout(cleanup, 60000);
+        // Attach only after print() so an unrelated earlier focus can't fire it.
+        window.addEventListener("focus", onParentFocus);
+        // Last-resort fallback if neither afterprint nor focus ever fires.
+        cw.setTimeout(cleanup, 10 * 60 * 1000);
       }, 150);
     };
 
