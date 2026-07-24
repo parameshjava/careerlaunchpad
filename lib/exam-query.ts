@@ -56,10 +56,11 @@ function one<T>(v: T | T[] | null | undefined): T | null {
   return v ?? null;
 }
 
-// Map chapter ids → names. `question`/`exam_section_chapter` reference `chapter`
-// via a COMPOSITE foreign key (chapter_id, subject_id), which PostgREST can't
-// embed by `chapter_id` alone, so we resolve names with a plain lookup instead.
-async function chapterNameMap(
+// Map chapter ids → names. `question`/`exam_section_chapter`/`assessment_question`
+// reference `chapter` via a COMPOSITE foreign key (chapter_id, subject_id), which
+// PostgREST can't embed by `chapter_id` alone, so we resolve names with a plain
+// lookup instead. Shared with the assessment bank (lib/assessment-query.ts).
+export async function chapterNameMap(
   supabase: SupabaseClient,
   ids: string[],
 ): Promise<Map<string, string>> {

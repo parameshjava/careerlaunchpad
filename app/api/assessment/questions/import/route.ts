@@ -124,9 +124,12 @@ export async function POST(req: NextRequest) {
     const { errors: fieldErrors, fields } = validateQuestionFields(q);
     messages.push(...fieldErrors);
 
-    // Assessment bank: no passages (Q10).
+    // Assessment bank: no passages (Q10). Flag passage-kind AND a stray passage_ref
+    // so silently-dropped data is reported rather than swallowed.
     if (fields && fields.kind === "passage")
       messages.push("kind: passage-based questions are not supported in assessments");
+    if (q.passage_ref != null && String(q.passage_ref).trim() !== "")
+      messages.push("passage_ref: not supported for assessment questions.");
 
     // Resolve chapter by name → override.
     const chapterId = chapterByName.get(norm(chapterName)) ?? overrideByName.get(norm(chapterName));

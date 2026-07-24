@@ -7,6 +7,7 @@
 import type { SupabaseClient } from "@supabase/supabase-js";
 
 import {
+  chapterNameMap,
   type ActiveStatus,
   type AnswerType,
   type Difficulty,
@@ -39,25 +40,6 @@ export type AssessmentQuestionFull = AssessmentQuestionListItem & {
   explanation: string | null;
   options: QuestionOption[];
 };
-
-// Supabase types a to-one embed as a possible array; normalize to a single row.
-function one<T>(v: T | T[] | null | undefined): T | null {
-  if (Array.isArray(v)) return v[0] ?? null;
-  return v ?? null;
-}
-
-// Map chapter ids → names. assessment_question references `chapter` via a
-// COMPOSITE FK (chapter_id, subject_id), which PostgREST can't embed by
-// chapter_id alone, so resolve names with a plain lookup (same as exam-query).
-async function chapterNameMap(
-  supabase: SupabaseClient,
-  ids: string[],
-): Promise<Map<string, string>> {
-  const uniq = [...new Set(ids.filter(Boolean))];
-  if (uniq.length === 0) return new Map();
-  const { data } = await supabase.from("chapter").select("id, name").in("id", uniq);
-  return new Map((data ?? []).map((c) => [c.id as string, c.name as string]));
-}
 
 export type AssessmentQuestionFilters = {
   subjectId?: string;
@@ -144,9 +126,8 @@ export async function fetchAssessmentQuestionFull(
   if (error) throw new Error(`assessment_question: ${error.message}`);
   if (!data) return null;
 
-  const chapterName = one(
-    (await supabase.from("chapter").select("name").eq("id", data.chapter_id).maybeSingle()).data,
-  )?.name as string | undefined;
+  const names = await chapterNameMap(supabase, [data.chapter_id as string]);
+  const chapterName = names.get(data.chapter_id as string) ?? null;
 
   const options = ((data.assessment_question_option ?? []) as {
     id: string;

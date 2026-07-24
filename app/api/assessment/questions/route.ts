@@ -42,9 +42,8 @@ export async function GET(req: NextRequest) {
 }
 
 export async function POST(req: NextRequest) {
-  let ctx;
   try {
-    ctx = await requirePermission("exam.question.manage");
+    await requirePermission("exam.question.manage");
   } catch {
     return NextResponse.json({ error: "Forbidden" }, { status: 403 });
   }
@@ -60,39 +59,27 @@ export async function POST(req: NextRequest) {
   const { clean, errors } = await validateAssessmentQuestion(supabase, body);
   if (!clean) return NextResponse.json({ ok: false, errors }, { status: 422 });
 
-  // Insert the question, then its options. supabase-js has no transaction; on an
-  // options failure we delete the orphan question so the bank stays consistent.
-  const { data: q, error: qErr } = await supabase
-    .from("assessment_question")
-    .insert({
-      subject_id: clean.subject_id,
-      chapter_id: clean.chapter_id,
-      kind: clean.kind,
-      difficulty: clean.difficulty,
-      answer_type: clean.answer_type,
-      stem: clean.stem,
-      stem_image_url: clean.stem_image_url,
-      explanation: clean.explanation,
-      source: clean.source,
-      source_year: clean.source_year,
-      created_by: ctx.userId,
-    })
-    .select("id")
-    .single();
-  if (qErr) return NextResponse.json({ ok: false, error: qErr.message }, { status: 500 });
-
-  const { error: oErr } = await supabase.from("assessment_question_option").insert(
-    clean.options.map((o) => ({
-      question_id: q.id,
-      label: o.label,
-      is_correct: o.is_correct,
-      position: o.position,
-    })),
-  );
-  if (oErr) {
-    await supabase.from("assessment_question").delete().eq("id", q.id);
-    return NextResponse.json({ ok: false, error: oErr.message }, { status: 500 });
+  // Create the question + its options atomically via the SECURITY DEFINER RPC
+  // (supabase-js has no transactions), so a mid-write failure can't leave a
+  // question with zero options.
+  const { data: id, error } = await supabase.rpc("save_assessment_question", {
+    p_id: null,
+    p_subject_id: clean.subject_id,
+    p_chapter_id: clean.chapter_id,
+    p_kind: clean.kind,
+    p_difficulty: clean.difficulty,
+    p_answer_type: clean.answer_type,
+    p_stem: clean.stem,
+    p_stem_image_url: clean.stem_image_url,
+    p_explanation: clean.explanation,
+    p_source: clean.source,
+    p_source_year: clean.source_year,
+    p_options: clean.options,
+  });
+  if (error) {
+    const status = error.message.includes("Forbidden") ? 403 : 500;
+    return NextResponse.json({ ok: false, error: error.message }, { status });
   }
 
-  return NextResponse.json({ ok: true, id: q.id });
+  return NextResponse.json({ ok: true, id });
 }
