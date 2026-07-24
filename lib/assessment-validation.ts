@@ -21,6 +21,8 @@ export type CleanAssessmentQuestion = {
   stem: string;
   stem_image_url: string | null;
   explanation: string | null;
+  source: string | null;
+  source_year: number | null;
   options: { label: string; is_correct: boolean; position: number }[];
 };
 
@@ -64,6 +66,8 @@ export async function validateAssessmentQuestion(
       stem: fields.stem,
       stem_image_url: fields.stem_image_url,
       explanation: fields.explanation,
+      source: fields.source,
+      source_year: fields.source_year,
       options: fields.options,
     },
     errors,

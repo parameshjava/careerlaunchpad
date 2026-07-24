@@ -103,6 +103,8 @@ export function AssessmentQuestionEditor({
   const [stem, setStem] = useState("");
   const [stemImageUrl, setStemImageUrl] = useState("");
   const [explanation, setExplanation] = useState("");
+  const [source, setSource] = useState("");
+  const [sourceYear, setSourceYear] = useState("");
   const [options, setOptions] = useState<OptionRow[]>(EMPTY_OPTIONS);
 
   const [loading, setLoading] = useState(mode === "edit");
@@ -149,6 +151,8 @@ export function AssessmentQuestionEditor({
         setStem(q.stem);
         setStemImageUrl(q.stemImageUrl ?? "");
         setExplanation(q.explanation ?? "");
+        setSource(q.source ?? "");
+        setSourceYear(q.sourceYear != null ? String(q.sourceYear) : "");
         const opts: OptionRow[] = (q.options ?? []).map(
           (o: { label: string; isCorrect: boolean }) => ({
             label: o.label,
@@ -203,6 +207,8 @@ export function AssessmentQuestionEditor({
       stem,
       stem_image_url: stemImageUrl || null,
       explanation: explanation || null,
+      source: source || null,
+      source_year: sourceYear ? Number(sourceYear) : null,
       options,
     };
     const url =
@@ -300,6 +306,28 @@ export function AssessmentQuestionEditor({
             <SelectItem value="single">Single correct</SelectItem>
             <SelectItem value="multi">Multiple correct</SelectItem>
           </SelectField>
+
+          <div className="grid gap-1.5">
+            <Label htmlFor="source">Source (optional)</Label>
+            <Input
+              id="source"
+              value={source}
+              onChange={(e) => setSource(e.target.value)}
+              placeholder="e.g. ICET 2019 - Slot 2"
+            />
+          </div>
+
+          <div className="grid gap-1.5">
+            <Label htmlFor="source-year">Source year (optional)</Label>
+            <Input
+              id="source-year"
+              type="number"
+              inputMode="numeric"
+              value={sourceYear}
+              onChange={(e) => setSourceYear(e.target.value)}
+              placeholder="e.g. 2019"
+            />
+          </div>
         </CardContent>
       </Card>
 

@@ -73,6 +73,8 @@ export async function POST(req: NextRequest) {
       stem: clean.stem,
       stem_image_url: clean.stem_image_url,
       explanation: clean.explanation,
+      source: clean.source,
+      source_year: clean.source_year,
       created_by: ctx.userId,
     })
     .select("id")

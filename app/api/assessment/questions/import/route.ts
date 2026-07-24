@@ -162,6 +162,8 @@ export async function POST(req: NextRequest) {
         stem: fields.stem,
         stem_image_url: fields.stem_image_url,
         explanation: fields.explanation,
+        source: fields.source,
+        source_year: fields.source_year,
         options: fields.options,
       });
     }

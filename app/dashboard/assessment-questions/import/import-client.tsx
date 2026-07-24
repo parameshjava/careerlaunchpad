@@ -126,6 +126,16 @@ function buildSchema(subject: string, chapterNames: string[]) {
               minLength: 1,
               description: "Required. Worked solution (Markdown + LaTeX).",
             },
+            source: {
+              type: "string",
+              description: 'Optional. The paper/test this question appeared in, e.g. "ICET 2019 - Slot 2".',
+            },
+            source_year: {
+              type: "integer",
+              minimum: 1900,
+              maximum: 2100,
+              description: "Optional. The year of that paper, e.g. 2019.",
+            },
             options: {
               type: "array",
               minItems: 4,
@@ -181,6 +191,8 @@ function buildSample(subject: string, chapterNames: string[]) {
         answer_type: "single",
         stem: "Single-correct example. What is $2 + 2$?",
         explanation: "Replace with the worked solution.",
+        source: "ICET 2019 - Slot 2",
+        source_year: 2019,
         options: [
           { label: "4", is_correct: true },
           { label: "3", is_correct: false },

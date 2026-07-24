@@ -27,6 +27,9 @@ export type AssessmentQuestionListItem = {
   stem: string;
   status: ActiveStatus;
   version: number;
+  /** Provenance (migration 145): the paper/test the question appeared in. */
+  source: string | null;
+  sourceYear: number | null;
   /** Options in order, with the correct one(s) flagged — for inline answer display. */
   options: { label: string; isCorrect: boolean }[];
 };
@@ -74,7 +77,7 @@ export async function fetchAssessmentQuestions(
   let q = supabase
     .from("assessment_question")
     .select(
-      "id, subject_id, chapter_id, kind, difficulty, answer_type, stem, status, version",
+      "id, subject_id, chapter_id, kind, difficulty, answer_type, stem, status, version, source, source_year",
       { count: "exact" },
     )
     .order("created_at", { ascending: false })
@@ -119,6 +122,8 @@ export async function fetchAssessmentQuestions(
       stem: r.stem as string,
       status: r.status as ActiveStatus,
       version: r.version as number,
+      source: (r.source as string | null) ?? null,
+      sourceYear: (r.source_year as number | null) ?? null,
       options,
     };
   });
@@ -132,7 +137,7 @@ export async function fetchAssessmentQuestionFull(
   const { data, error } = await supabase
     .from("assessment_question")
     .select(
-      "id, subject_id, chapter_id, kind, difficulty, answer_type, stem, stem_image_url, explanation, status, version, assessment_question_option(id, label, is_correct, position)",
+      "id, subject_id, chapter_id, kind, difficulty, answer_type, stem, stem_image_url, explanation, status, version, source, source_year, assessment_question_option(id, label, is_correct, position)",
     )
     .eq("id", id)
     .maybeSingle();
@@ -165,6 +170,8 @@ export async function fetchAssessmentQuestionFull(
     explanation: (data.explanation as string | null) ?? null,
     status: data.status as ActiveStatus,
     version: data.version as number,
+    source: (data.source as string | null) ?? null,
+    sourceYear: (data.source_year as number | null) ?? null,
     options,
   };
 }

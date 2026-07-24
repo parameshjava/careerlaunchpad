@@ -246,6 +246,12 @@ export function AssessmentQuestionsClient() {
                             </span>
                           ))}
                           <span className="text-muted-foreground/70">· {q.chapterName ?? "—"}</span>
+                          {q.source && (
+                            <span className="text-muted-foreground/70">
+                              · {q.source}
+                              {q.sourceYear ? ` (${q.sourceYear})` : ""}
+                            </span>
+                          )}
                         </div>
                       </div>
                       <div className="flex shrink-0 gap-1">
