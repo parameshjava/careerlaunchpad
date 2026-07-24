@@ -190,9 +190,14 @@ on conflict do nothing;
 -- ============================================================================
 
 -- 7a) Materialise/prune a batch's chapters from its course's competitive-exam
---     syllabus. Called after a batch's subjects change (see replace_batch_subjects
---     below). Staff-only (finance.manage). Stale chapters are pruned only when they
---     carry no attempts (honours Q4's "don't silently discard work").
+--     syllabus. Invoked by the batch_subject trigger (7i) as a consequence of an
+--     already-authorised batch_subject write, so it is NOT permission-guarded — it
+--     only mirrors syllabus data into batch_chapter (no data exposure).
+--     A course is M:N with competitive exams and two exams may list the SAME
+--     (subject, chapter), so the source is DISTINCT-ed to stop ON CONFLICT touching
+--     a row twice. sort_order is recomputed on every sync so incremental adds never
+--     collide. Prune removes only chapters dropped from the syllabus that are still
+--     'not_started' AND carry no attempts — mentor progress/audit never vanishes.
 create or replace function public.sync_batch_chapters(p_batch_id uuid)
 returns integer
 language plpgsql
@@ -201,27 +206,30 @@ set search_path = public
 as $$
 declare v_count int := 0;
 begin
-  if not public.has_permission('finance.manage') then
-    raise exception 'Forbidden';
-  end if;
-
+  with syllabus as (
+    select distinct bs.subject_id, ch.id as chapter_id, ch.name
+    from public.batch_subject bs
+    join public.batch b                          on b.id = bs.batch_id
+    join public.course_competitive_exam cce      on cce.course_id = b.course_id
+    join public.competitive_exam_subject_chapter cesc
+          on cesc.competitive_exam_id = cce.competitive_exam_id
+         and cesc.subject_id = bs.subject_id
+    join public.chapter ch                        on ch.id = cesc.chapter_id
+    where bs.batch_id = p_batch_id
+  )
   insert into public.batch_chapter (batch_id, subject_id, chapter_id, chapter_name, sort_order)
-  select bs.batch_id, bs.subject_id, ch.id, ch.name,
-         row_number() over (partition by bs.subject_id order by lower(ch.name))
-  from public.batch_subject bs
-  join public.batch b                          on b.id = bs.batch_id
-  join public.course_competitive_exam cce      on cce.course_id = b.course_id
-  join public.competitive_exam_subject_chapter cesc
-        on cesc.competitive_exam_id = cce.competitive_exam_id
-       and cesc.subject_id = bs.subject_id
-  join public.chapter ch                        on ch.id = cesc.chapter_id
-  where bs.batch_id = p_batch_id
+  select p_batch_id, subject_id, chapter_id, name,
+         row_number() over (partition by subject_id order by lower(name))
+  from syllabus
   on conflict (batch_id, subject_id, chapter_id)
-    do update set chapter_name = excluded.chapter_name;
+    do update set chapter_name = excluded.chapter_name,
+                  sort_order   = excluded.sort_order;
 
-  -- prune chapters no longer in the syllabus AND with no attempts recorded
+  -- Prune chapters dropped from the syllabus — but NEVER ones a mentor has touched
+  -- (status <> 'not_started') or that carry attempts. That work must not disappear.
   delete from public.batch_chapter bc
   where bc.batch_id = p_batch_id
+    and bc.status = 'not_started'
     and not exists (
       select 1
       from public.batch_subject bs
@@ -345,7 +353,8 @@ returns table (
   best_pct           numeric,
   best_passed        boolean,
   question_count     bigint,
-  available          boolean
+  available          boolean,
+  resume_attempt_id  uuid
 )
 language sql
 stable
@@ -357,15 +366,18 @@ as $$
          greatest(0, 3 - coalesce(a.used, 0))::int,
          a.best_pct, a.best_passed,
          coalesce(qc.qcount, 0),
-         (bc.status = 'completed' and coalesce(qc.qcount, 0) > 0)
+         (bc.status = 'completed' and coalesce(qc.qcount, 0) > 0),
+         a.resume_attempt_id
   from public.batch_chapter bc
   join public.batch_subject bs
         on bs.batch_id = bc.batch_id and bs.subject_id = bc.subject_id
   left join lateral (
-    select count(*) as used,
+    -- Only SUBMITTED attempts count toward the cap; surface any in-progress one to resume.
+    select count(*) filter (where qa.status = 'submitted') as used,
            max(round(100 * qa.score / nullif(qa.total_marks, 0), 2))
              filter (where qa.status = 'submitted') as best_pct,
-           bool_or(qa.passed) as best_passed
+           bool_or(qa.passed) filter (where qa.status = 'submitted') as best_passed,
+           max(qa.id) filter (where qa.status = 'in_progress') as resume_attempt_id
     from public.chapter_quiz_attempt qa
     where qa.batch_id = bc.batch_id and qa.chapter_id = bc.chapter_id
       and qa.student_id = auth.uid()
@@ -375,7 +387,8 @@ as $$
     from public.assessment_question q
     where q.chapter_id = bc.chapter_id and q.status = 'active'
   ) qc on true
-  where bc.status = 'completed'
+  where bc.batch_id = p_batch_id
+    and bc.status = 'completed'
     and exists (
       select 1 from public.student_enrollment e
       where e.batch_id = p_batch_id and e.student_id = auth.uid()
@@ -432,27 +445,56 @@ begin
   left join public.chapter_quiz cq on cq.chapter_id = x.cid and cq.status = 'active';
   v_num := coalesce(v_num, 10);
 
-  -- serialise this student's attempts for this chapter to make the cap race-safe
-  perform 1 from public.chapter_quiz_attempt
+  -- Resume an existing in-progress attempt instead of spending a new slot — covers
+  -- refreshes, crashes, and double-clicks (at most one in-progress attempt at a time).
+  select id into v_attempt from public.chapter_quiz_attempt
    where batch_id = p_batch_id and chapter_id = p_chapter_id and student_id = v_uid
-   for update;
+     and status = 'in_progress'
+   order by started_at
+   limit 1;
+  if v_attempt is not null then
+    return v_attempt;
+  end if;
 
+  -- Only SUBMITTED attempts count toward the 3-attempt cap (D2), so an abandoned
+  -- in-progress attempt (resumed above) never wastes a slot.
   select count(*) into v_used from public.chapter_quiz_attempt
-   where batch_id = p_batch_id and chapter_id = p_chapter_id and student_id = v_uid;
+   where batch_id = p_batch_id and chapter_id = p_chapter_id and student_id = v_uid
+     and status = 'submitted';
   if v_used >= 3 then
     raise exception 'You have used all 3 attempts for this chapter';
   end if;
 
-  insert into public.chapter_quiz_attempt (chapter_id, batch_id, student_id, attempt_no, status)
-  values (p_chapter_id, p_batch_id, v_uid, v_used + 1, 'in_progress')
-  returning id into v_attempt;
+  -- Create the attempt. The unique(chapter,batch,student,attempt_no) constraint makes
+  -- this race-safe: a concurrent first start loses here and resumes the winner's row
+  -- rather than surfacing a raw 500.
+  begin
+    insert into public.chapter_quiz_attempt (chapter_id, batch_id, student_id, attempt_no, status)
+    values (p_chapter_id, p_batch_id, v_uid, v_used + 1, 'in_progress')
+    returning id into v_attempt;
+  exception when unique_violation then
+    select id into v_attempt from public.chapter_quiz_attempt
+     where batch_id = p_batch_id and chapter_id = p_chapter_id and student_id = v_uid
+       and status = 'in_progress'
+     order by started_at
+     limit 1;
+    if v_attempt is null then
+      raise exception 'You have used all 3 attempts for this chapter';
+    end if;
+    return v_attempt;   -- the winner already snapshotted its questions
+  end;
 
+  -- Snapshot a random subset with DENSE positions 1..N (row_number over the
+  -- already-limited subset, not the full active bank).
   insert into public.chapter_quiz_attempt_question (attempt_id, question_id, question_version, position)
-  select v_attempt, q.id, q.version, row_number() over (order by random())
-  from public.assessment_question q
-  where q.chapter_id = p_chapter_id and q.status = 'active'
-  order by random()
-  limit v_num;
+  select v_attempt, picked.id, picked.version, row_number() over ()
+  from (
+    select q.id, q.version
+    from public.assessment_question q
+    where q.chapter_id = p_chapter_id and q.status = 'active'
+    order by random()
+    limit v_num
+  ) picked;
 
   if not exists (select 1 from public.chapter_quiz_attempt_question where attempt_id = v_attempt) then
     raise exception 'No assessment questions available for this chapter yet';
@@ -553,10 +595,16 @@ begin
   with graded as (
     select aq.position,
       case
+        -- Unkeyed/draft question (no correct option set): never penalise — skip it.
+        when not exists (
+          select 1 from public.assessment_question_option o
+          where o.question_id = aq.question_id and o.is_correct
+        ) then 0::numeric
+        -- Exact match of the correct set vs the DISTINCT-ed selected set.
         when (select array_agg(o.id order by o.id)
               from public.assessment_question_option o
               where o.question_id = aq.question_id and o.is_correct)
-             = (select array_agg(s order by s) from unnest(aq.selected_option_ids) s)
+             = (select array_agg(distinct s order by s) from unnest(aq.selected_option_ids) s)
         then 1::numeric
         when cardinality(aq.selected_option_ids) > 0 then -v_neg
         else 0::numeric
@@ -586,95 +634,44 @@ begin
            (v_total > 0 and (100 * v_score / v_total) >= v_pass), v_pass;
 end $$;
 
--- 7i) Re-point replace_batch_subjects (135) so editing a batch's subjects also
---     materialises its chapters. Body copied from 135 with a trailing
---     sync_batch_chapters() call — keep in step if 135 changes.
-create or replace function public.replace_batch_subjects(p_batch_id uuid, p_subjects jsonb)
-returns void
+-- 7i) Keep batch_chapter in step with a batch's subjects via a TRIGGER on
+--     batch_subject — not by forking replace_batch_subjects (135), which would drift.
+--     Statement-level with transition tables so one subjects-edit performs one sync
+--     per affected batch. Removing a subject cascade-deletes its batch_chapter rows
+--     (the FK), so only add/keep needs an explicit sync; the trigger runs off an
+--     already-authorised write, hence sync_batch_chapters is not permission-guarded.
+create or replace function public.batch_subject_sync_chapters()
+returns trigger
 language plpgsql
 security definer
 set search_path = public
 as $$
-declare
-  rec         jsonb;
-  v_subject   uuid;
-  v_sort      int;
-  v_name      text;
-  v_mentor    uuid;
-  v_new_ids   uuid[];
-  v_removed   uuid;
-  v_mentors   uuid[];
+declare v_batch uuid;
 begin
-  if not public.has_permission('finance.manage') then
-    raise exception 'Forbidden';
-  end if;
-  if p_subjects is null or jsonb_typeof(p_subjects) <> 'array' then
-    raise exception 'subjects must be a JSON array';
-  end if;
-
-  select coalesce(array_agg((e->>'subject_id')::uuid), '{}')
-    into v_new_ids
-    from jsonb_array_elements(p_subjects) e;
-
-  for v_removed in
-    select bs.subject_id from public.batch_subject bs
-    where bs.batch_id = p_batch_id and not (bs.subject_id = any (v_new_ids))
+  for v_batch in select distinct batch_id from changed
   loop
-    if exists (
-      select 1 from public.batch_session ss
-      where ss.batch_id = p_batch_id and ss.subject_id = v_removed
-        and ss.status in ('scheduled', 'live', 'completed')
-    ) then
-      raise exception
-        'Cannot remove a subject that still has scheduled or past classes — cancel its classes first.';
-    end if;
+    perform public.sync_batch_chapters(v_batch);
   end loop;
-
-  delete from public.batch_subject
-   where batch_id = p_batch_id and not (subject_id = any (v_new_ids));
-
-  for rec in select value from jsonb_array_elements(p_subjects) as t(value)
-  loop
-    v_subject := (rec->>'subject_id')::uuid;
-    v_sort    := coalesce((rec->>'sort_order')::int, 0);
-
-    select name into v_name from public.subject where id = v_subject;
-    if v_name is null then
-      raise exception 'Unknown subject %', v_subject;
-    end if;
-
-    insert into public.batch_subject (batch_id, subject_id, subject_name, sort_order)
-    values (p_batch_id, v_subject, v_name, v_sort)
-    on conflict (batch_id, subject_id)
-      do update set subject_name = excluded.subject_name, sort_order = excluded.sort_order;
-
-    delete from public.batch_subject_mentor
-     where batch_id = p_batch_id and subject_id = v_subject;
-
-    select coalesce(array_agg(m::uuid), '{}')
-      into v_mentors
-      from jsonb_array_elements_text(coalesce(rec->'mentor_ids', '[]'::jsonb)) m;
-
-    foreach v_mentor in array v_mentors
-    loop
-      if not exists (
-        select 1 from public.mentor_profile
-        where user_id = v_mentor and status = 'approved'
-      ) then
-        raise exception 'Mentor % is not an approved mentor', v_mentor;
-      end if;
-      insert into public.batch_subject_mentor
-        (batch_id, subject_id, mentor_id, mentor_name, assigned_by)
-      select p_batch_id, v_subject, v_mentor, mp.full_name, auth.uid()
-      from public.mentor_profile mp where mp.user_id = v_mentor
-      on conflict (batch_id, subject_id, mentor_id)
-        do update set mentor_name = excluded.mentor_name;
-    end loop;
-  end loop;
-
-  -- NEW (143): keep batch_chapter in step with the batch's subjects.
-  perform public.sync_batch_chapters(p_batch_id);
+  return null;
 end $$;
+
+drop trigger if exists batch_subject_sync_chapters_ins on public.batch_subject;
+create trigger batch_subject_sync_chapters_ins
+  after insert on public.batch_subject
+  referencing new table as changed
+  for each statement execute function public.batch_subject_sync_chapters();
+
+drop trigger if exists batch_subject_sync_chapters_upd on public.batch_subject;
+create trigger batch_subject_sync_chapters_upd
+  after update on public.batch_subject
+  referencing new table as changed
+  for each statement execute function public.batch_subject_sync_chapters();
+
+drop trigger if exists batch_subject_sync_chapters_del on public.batch_subject;
+create trigger batch_subject_sync_chapters_del
+  after delete on public.batch_subject
+  referencing old table as changed
+  for each statement execute function public.batch_subject_sync_chapters();
 
 -- ============================================================================
 -- 8) RLS
@@ -767,7 +764,8 @@ grant select, insert, update, delete on public.chapter_quiz               to aut
 grant select on public.chapter_quiz_attempt          to authenticated;
 grant select on public.chapter_quiz_attempt_question to authenticated;
 
-grant execute on function public.sync_batch_chapters(uuid)                        to authenticated;
+-- sync_batch_chapters is intentionally NOT granted to authenticated: it runs only
+-- from the batch_subject trigger (as the definer), so no direct caller path exists.
 grant execute on function public.set_batch_subject_progress(uuid, uuid, text)     to authenticated;
 grant execute on function public.set_batch_chapter_progress(uuid, uuid, uuid, text) to authenticated;
 grant execute on function public.student_chapter_quizzes(uuid)                    to authenticated;
