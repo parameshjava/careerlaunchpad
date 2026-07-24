@@ -9,14 +9,14 @@ This file lists **every** verified finding, including the duplicate/related loca
 
 ## Resolution status (2026-07-24)
 
-All findings addressed except #4 (a product decision left for confirmation).
+All 10 findings addressed.
 
 | # | Status | What was done |
 |---|--------|---------------|
 | 1 | ✅ Fixed | `lib/format-date.ts` gained `formatISODate()` (UTC, timezone-agnostic date-only); `date-picker.tsx` renders the label with it — no more IST shift. |
 | 2 | ✅ Fixed | `PrintDocument` now wraps the sheet in a `.pd-scroll` (`overflow-x:auto`) with a min-width, so the A4 preview scrolls inside its own box instead of overflowing the page on mobile. |
 | 3 | ✅ Fixed | Same `PrintDocument` change — the always-visible admin sheets no longer force page-level horizontal scroll. |
-| 4 | ⏸️ Deferred | Times now render in IST (`lib/format-date.ts`). For an India-only audience this is arguably *more* consistent; left as-is pending your call (could add an "IST" label or switch to viewer-local). |
+| 4 | ✅ Fixed | Event times now carry an explicit **"IST"** label (`formatDateTime` + new `formatTimeRange`), so a non-IST viewer can't misread them, while keeping the app's canonical IST rendering. |
 | 5 | ✅ Fixed | `ConfirmDialog` type-to-confirm is now case-insensitive. |
 | 6 | ✅ Fixed | The optional `SelectRef`/`RefSelect` instances (mentor, registration, tell-us) now pass `emptyLabel`, restoring a selectable clear item. |
 | 7 | ✅ Fixed | Covered by the `PrintDocument` `.pd-scroll` wrapper (the wide results table scrolls within the sheet). |

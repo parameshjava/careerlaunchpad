@@ -11,7 +11,7 @@ import Link from "next/link";
 import { Button } from "@/components/ui/button";
 import { arrIncludes } from "@/components/data-table";
 import { SortHeader, StatusBadge, type StatusTone } from "@/components/data-table-parts";
-import { formatDate, formatTime } from "@/lib/format-date";
+import { formatDate, formatTimeRange } from "@/lib/format-date";
 
 export type Section = { subject: string; num_questions: number; marks_per_question: number };
 
@@ -89,8 +89,7 @@ const colScheduled: ColumnDef<ExamRow> = {
       <div className="flex flex-col whitespace-nowrap">
         <span>{formatDate(opens_at)}</span>
         <span className="text-muted-foreground text-xs tabular-nums">
-          {formatTime(opens_at)}
-          {closes_at ? `–${formatTime(closes_at)}` : ""}
+          {formatTimeRange(opens_at, closes_at)}
         </span>
       </div>
     );

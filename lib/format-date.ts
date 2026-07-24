@@ -23,6 +23,7 @@ const DATE_TIME = new Intl.DateTimeFormat("en-IN", {
   minute: "2-digit",
   hour12: true,
   timeZone: "Asia/Kolkata",
+  timeZoneName: "short", // append "IST" so a time is never ambiguous for non-IST viewers
 });
 
 const TIME = new Intl.DateTimeFormat("en-IN", {
@@ -30,6 +31,16 @@ const TIME = new Intl.DateTimeFormat("en-IN", {
   minute: "2-digit",
   hour12: true,
   timeZone: "Asia/Kolkata",
+});
+
+// Same as TIME but with the zone label ("IST") — used for the END of a range so
+// the label appears once (e.g. "09:30 AM–10:30 AM IST").
+const TIME_ZONE = new Intl.DateTimeFormat("en-IN", {
+  hour: "2-digit",
+  minute: "2-digit",
+  hour12: true,
+  timeZone: "Asia/Kolkata",
+  timeZoneName: "short",
 });
 
 const WEEKDAY_LONG = new Intl.DateTimeFormat("en-IN", {
@@ -74,10 +85,18 @@ export function formatDateTime(value: DateInput, fallback = "—"): string {
   return d ? DATE_TIME.format(d) : fallback;
 }
 
-/** "09:30 AM" (IST). */
+/** "09:30 AM" (IST, no zone label — use formatTimeRange for a labelled range). */
 export function formatTime(value: DateInput, fallback = "—"): string {
   const d = toDate(value);
   return d ? TIME.format(d) : fallback;
+}
+
+/** "09:30 AM–10:30 AM IST" (IST label shown once). With no end: "09:30 AM IST". */
+export function formatTimeRange(start: DateInput, end: DateInput, fallback = "—"): string {
+  const s = toDate(start);
+  if (!s) return fallback;
+  const e = toDate(end);
+  return e ? `${TIME.format(s)}–${TIME_ZONE.format(e)}` : TIME_ZONE.format(s);
 }
 
 /** "Friday" (IST). */
