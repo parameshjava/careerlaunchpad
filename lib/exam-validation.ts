@@ -30,6 +30,8 @@ export type CleanQuestion = {
   stem: string;
   stem_image_url: string | null;
   explanation: string | null;
+  source: string | null;
+  source_year: number | null;
   options: { label: string; is_correct: boolean; position: number }[];
 };
 
@@ -47,6 +49,9 @@ export type QuestionFields = {
   stem: string;
   stem_image_url: string | null;
   explanation: string | null;
+  // Provenance (migration 145): where the question originally appeared.
+  source: string | null;
+  source_year: number | null;
   options: { label: string; is_correct: boolean; position: number }[];
 };
 
@@ -70,6 +75,15 @@ export function validateQuestionFields(
   const stemImageUrl = data.stem_image_url == null ? null : str(data.stem_image_url) || null;
   const explanation = data.explanation == null ? null : str(data.explanation) || null;
   if (!explanation) errors.push("explanation: required");
+
+  // Provenance (optional). source: free-text label; source_year: a plausible year.
+  const source = data.source == null ? null : str(data.source) || null;
+  let sourceYear: number | null = null;
+  if (data.source_year != null && str(data.source_year) !== "") {
+    const y = typeof data.source_year === "number" ? data.source_year : parseInt(str(data.source_year), 10);
+    if (!Number.isInteger(y) || y < 1900 || y > 2100) errors.push("source_year: must be a year between 1900 and 2100");
+    else sourceYear = y;
+  }
 
   // Options: 4 or 5 (the source bank uses a 5th "None of these"), each labelled,
   // ≥1 correct; single ⇒ exactly 1 correct.
@@ -97,6 +111,8 @@ export function validateQuestionFields(
       stem,
       stem_image_url: stemImageUrl,
       explanation,
+      source,
+      source_year: sourceYear,
       options,
     },
   };
@@ -156,6 +172,8 @@ export async function validateQuestion(
       stem: fields.stem,
       stem_image_url: fields.stem_image_url,
       explanation: fields.explanation,
+      source: fields.source,
+      source_year: fields.source_year,
       options: fields.options,
     },
     errors,

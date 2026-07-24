@@ -1,16 +1,13 @@
 /**
- * Bulk question import (docs/superpowers/specs/2026-07-12-admin-question-bulk-
- * import-design.md). Admin-only. One subject per file; nothing is written until
- * commit, and commit is all-or-nothing.
+ * Bulk assessment-question import (migration 144). Mirrors the exam question
+ * import but for the assessment bank: no passages, kinds limited to standard /
+ * data_sufficiency. One subject per file; nothing is written until commit, and
+ * commit is all-or-nothing (duplicates are skipped, not blocking).
  *
  *   POST body { subject_id, commit, overrides?, data }
  *     commit=false -> dry-run: returns a per-question validated report
  *     commit=true  -> only if the report has zero blocking issues; inserts via
- *                     the import_questions() RPC (single transaction).
- *
- * Report: { ok, total, valid, errorCount, duplicateCount, fileErrors[],
- *           unresolved_chapters:[{name,count}], chapters:[{id,name}],
- *           rows:[{row, chapter, stem, difficulty, status, messages}], inserted? }
+ *                     the import_assessment_questions() RPC (single transaction).
  */
 import { NextResponse, type NextRequest } from "next/server";
 import { createClient } from "@/lib/supabase/server";
@@ -70,7 +67,6 @@ export async function POST(req: NextRequest) {
   if (!fileQuestions || fileQuestions.length === 0) {
     return NextResponse.json({ error: "data.questions: a non-empty array is required." }, { status: 422 });
   }
-  const filePassages = Array.isArray(file.passages) ? (file.passages as Record<string, unknown>[]) : [];
 
   const supabase = await createClient();
 
@@ -98,13 +94,11 @@ export async function POST(req: NextRequest) {
   const chapterByName = new Map(chapters.map((c) => [norm(c.name), c.id]));
   const overrideByName = new Map(Object.entries(overrides).map(([k, v]) => [norm(k), v]));
 
-  // Fetch every existing stem for the subject, paging past Supabase's 1000-row
-  // cap — otherwise a subject with >1000 questions (e.g. Arithmetic) would leave
-  // some bank duplicates undetected in the dry-run and only fail at commit.
+  // Fetch every existing assessment stem for the subject, paging past the 1000-row cap.
   const bankKey = new Set<string>();
   for (let from = 0; ; from += 1000) {
     const { data } = await supabase
-      .from("question")
+      .from("assessment_question")
       .select("chapter_id, stem")
       .eq("subject_id", subjectId)
       .range(from, from + 999);
@@ -113,18 +107,7 @@ export async function POST(req: NextRequest) {
     if (batch.length < 1000) break;
   }
 
-  // Passage structural checks (blocking) + the set of valid refs.
   const fileErrors: string[] = [];
-  const passageRefs = new Set<string>();
-  for (const p of filePassages) {
-    const ref = String(p.ref ?? "").trim();
-    const pbody = typeof p.body === "string" ? p.body.trim() : "";
-    if (!ref) fileErrors.push("A passage is missing its 'ref'.");
-    else if (passageRefs.has(ref)) fileErrors.push(`Duplicate passage ref "${ref}".`);
-    else passageRefs.add(ref);
-    if (!pbody) fileErrors.push(`Passage "${ref || "?"}" is missing 'body'.`);
-  }
-
   const rows: ReportRow[] = [];
   const unresolved = new Map<string, number>();
   const seenInFile = new Set<string>();
@@ -141,6 +124,13 @@ export async function POST(req: NextRequest) {
     const { errors: fieldErrors, fields } = validateQuestionFields(q);
     messages.push(...fieldErrors);
 
+    // Assessment bank: no passages (Q10). Flag passage-kind AND a stray passage_ref
+    // so silently-dropped data is reported rather than swallowed.
+    if (fields && fields.kind === "passage")
+      messages.push("kind: passage-based questions are not supported in assessments");
+    if (q.passage_ref != null && String(q.passage_ref).trim() !== "")
+      messages.push("passage_ref: not supported for assessment questions.");
+
     // Resolve chapter by name → override.
     const chapterId = chapterByName.get(norm(chapterName)) ?? overrideByName.get(norm(chapterName));
     if (!chapterName) messages.push("chapter: required");
@@ -150,19 +140,7 @@ export async function POST(req: NextRequest) {
       status = "unresolved";
     }
 
-    // passage_ref rules.
-    const kind = typeof q.kind === "string" ? q.kind : "standard";
-    const passageRef = q.passage_ref == null ? "" : String(q.passage_ref);
-    if (kind === "passage") {
-      if (!passageRef) messages.push("passage_ref: required for a passage question.");
-      else if (!passageRefs.has(passageRef)) messages.push(`passage_ref "${passageRef}" not found in passages.`);
-    } else if (passageRef) {
-      messages.push("passage_ref: only allowed on passage questions.");
-    }
-
-    // Duplicate (chapter, stem) vs the bank and within the file. Duplicates are
-    // NOT errors — they are simply skipped on import (so a file that partially
-    // overlaps the bank still imports its new questions).
+    // Duplicate (chapter, stem) vs the bank and within the file — skipped, not an error.
     if (chapterId && stem && status === "ok") {
       const key = `${chapterId}::${norm(stem)}`;
       if (bankKey.has(key)) {
@@ -181,7 +159,6 @@ export async function POST(req: NextRequest) {
     if (status === "ok" && fields && chapterId) {
       resolved.push({
         chapter_id: chapterId,
-        passage_ref: kind === "passage" ? passageRef : null,
         kind: fields.kind,
         difficulty: fields.difficulty,
         answer_type: fields.answer_type,
@@ -197,7 +174,6 @@ export async function POST(req: NextRequest) {
 
   const errorCount = rows.filter((r) => r.status === "error" || r.status === "unresolved").length;
   const duplicateCount = rows.filter((r) => r.status === "duplicate").length;
-  // Duplicates are skipped, not blocking — only genuine errors block the import.
   const blocking = errorCount + fileErrors.length;
 
   const report = {
@@ -219,13 +195,8 @@ export async function POST(req: NextRequest) {
     return NextResponse.json({ ...report, error: "Fix every error before importing." }, { status: 422 });
   }
 
-  const { data: inserted, error } = await supabase.rpc("import_questions", {
+  const { data: inserted, error } = await supabase.rpc("import_assessment_questions", {
     p_subject_id: subjectId,
-    p_passages: filePassages.map((p) => ({
-      ref: String(p.ref ?? ""),
-      title: typeof p.title === "string" ? p.title : null,
-      body: typeof p.body === "string" ? p.body : "",
-    })),
     p_questions: resolved,
   });
   if (error) return NextResponse.json({ ...report, ok: false, error: error.message }, { status: 500 });

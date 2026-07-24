@@ -1,10 +1,10 @@
 "use client";
 
-// Author or edit a question. Submits through /api/exam/questions (API-first).
-// A live <RichContent> preview shows exactly what the student/PDF will render
-// (Markdown + LaTeX + code). Editing a question already used by a paper returns
-// 409 — the bank then asks the author to archive + recreate. Built to
-// docs/STYLE_GUIDE.md: shadcn primitives + brand tokens, mobile-first.
+// Author or edit an ASSESSMENT question (per-chapter quiz bank). Mirrors the exam
+// question editor but submits through /api/assessment/questions, has no passages,
+// and offers only standard / data-sufficiency kinds (migration 143 Q10). Subjects
+// and chapters come from the shared global taxonomy via /api/exam/{subjects,chapters}.
+// Built to docs/STYLE_GUIDE.md: shadcn primitives + brand tokens, mobile-first.
 import { useCallback, useEffect, useState, type ReactNode } from "react";
 import { useRouter } from "next/navigation";
 import { Button } from "@/components/ui/button";
@@ -29,13 +29,11 @@ import {
   type AnswerType,
   type Chapter,
   type Difficulty,
-  type Passage,
-  type QuestionKind,
 } from "@/lib/exam-query";
+import { type AssessmentKind } from "@/lib/assessment-query";
 
-const KINDS: { value: QuestionKind; label: string }[] = [
+const KINDS: { value: AssessmentKind; label: string }[] = [
   { value: "standard", label: "Standard" },
-  { value: "passage", label: "Passage-based" },
   { value: "data_sufficiency", label: "Data sufficiency" },
 ];
 
@@ -55,7 +53,7 @@ const EMPTY_OPTIONS: OptionRow[] = [
   { label: "", is_correct: false },
 ];
 
-// Small labeled shadcn Select wrapper — the editor has five of these.
+// Small labeled shadcn Select wrapper.
 function SelectField({
   id,
   label,
@@ -84,7 +82,7 @@ function SelectField({
   );
 }
 
-export function QuestionEditor({
+export function AssessmentQuestionEditor({
   mode,
   questionId,
   initialSubjectId = "",
@@ -95,12 +93,10 @@ export function QuestionEditor({
 }) {
   const router = useRouter();
   const [chapters, setChapters] = useState<Chapter[]>([]);
-  const [passages, setPassages] = useState<Passage[]>([]);
 
   const [subjectId, setSubjectId] = useState(initialSubjectId);
   const [chapterId, setChapterId] = useState("");
-  const [passageId, setPassageId] = useState("");
-  const [kind, setKind] = useState<QuestionKind>("standard");
+  const [kind, setKind] = useState<AssessmentKind>("standard");
   const [difficulty, setDifficulty] = useState<Difficulty>("medium");
   const [answerType, setAnswerType] = useState<AnswerType>("single");
   const [stem, setStem] = useState("");
@@ -114,28 +110,23 @@ export function QuestionEditor({
   const [saving, setSaving] = useState(false);
   const [error, setError] = useState("");
 
-  const loadSubjectRefs = useCallback(async (sid: string) => {
+  const loadChapters = useCallback(async (sid: string) => {
     if (!sid) {
       setChapters([]);
-      setPassages([]);
       return;
     }
-    const [c, p] = await Promise.all([
-      fetch(`/api/exam/chapters?subject_id=${sid}`).then((r) => r.json()),
-      fetch(`/api/exam/passages?subject_id=${sid}`).then((r) => r.json()),
-    ]);
+    const c = await fetch(`/api/exam/chapters?subject_id=${sid}`).then((r) => r.json());
     setChapters(c.chapters ?? []);
-    setPassages(p.passages ?? []);
   }, []);
 
   useEffect(() => {
-    loadSubjectRefs(subjectId);
-  }, [subjectId, loadSubjectRefs]);
+    loadChapters(subjectId);
+  }, [subjectId, loadChapters]);
 
   // On edit, hydrate from the existing question.
   useEffect(() => {
     if (mode !== "edit" || !questionId) return;
-    fetch(`/api/exam/questions/${questionId}`)
+    fetch(`/api/assessment/questions/${questionId}`)
       .then((r) => r.json())
       .then((d) => {
         const q = d.question;
@@ -145,7 +136,6 @@ export function QuestionEditor({
         }
         setSubjectId(q.subjectId);
         setChapterId(q.chapterId);
-        setPassageId(q.passageId ?? "");
         setKind(q.kind);
         setDifficulty(q.difficulty);
         setAnswerType(q.answerType);
@@ -190,7 +180,7 @@ export function QuestionEditor({
     );
   }
 
-  function chooseKind(k: QuestionKind) {
+  function chooseKind(k: AssessmentKind) {
     setKind(k);
     if (k === "data_sufficiency" && options.every((o) => !o.label.trim())) {
       setOptions(DS_OPTIONS.map((label) => ({ label, is_correct: false })));
@@ -202,7 +192,6 @@ export function QuestionEditor({
     setSaving(true);
     const body = {
       chapter_id: chapterId,
-      passage_id: passageId || null,
       kind,
       difficulty,
       answer_type: answerType,
@@ -213,7 +202,8 @@ export function QuestionEditor({
       source_year: sourceYear ? Number(sourceYear) : null,
       options,
     };
-    const url = mode === "edit" ? `/api/exam/questions/${questionId}` : "/api/exam/questions";
+    const url =
+      mode === "edit" ? `/api/assessment/questions/${questionId}` : "/api/assessment/questions";
     const res = await fetch(url, {
       method: mode === "edit" ? "PATCH" : "POST",
       headers: { "Content-Type": "application/json" },
@@ -225,13 +215,11 @@ export function QuestionEditor({
       setError((data.errors as string[])?.join("; ") || data.error || "Could not save");
       return;
     }
-    router.push("/dashboard/questions");
+    router.push("/dashboard/assessment-questions");
     router.refresh();
   }
 
   if (loading) return <p className="text-muted-foreground text-sm">Loading…</p>;
-
-  const passagesForKind = kind === "passage" ? passages : [];
 
   return (
     <div className="grid gap-6">
@@ -254,7 +242,6 @@ export function QuestionEditor({
               onChange={(v) => {
                 setSubjectId(v);
                 setChapterId("");
-                setPassageId("");
               }}
             />
           </div>
@@ -275,7 +262,7 @@ export function QuestionEditor({
             id="kind"
             label="Kind"
             value={kind}
-            onValueChange={(v) => chooseKind(v as QuestionKind)}
+            onValueChange={(v) => chooseKind(v as AssessmentKind)}
           >
             {KINDS.map((k) => (
               <SelectItem key={k.value} value={k.value}>
@@ -306,22 +293,6 @@ export function QuestionEditor({
             <SelectItem value="single">Single correct</SelectItem>
             <SelectItem value="multi">Multiple correct</SelectItem>
           </SelectField>
-
-          {kind === "passage" && (
-            <SelectField
-              id="passage"
-              label="Passage"
-              value={passageId}
-              onValueChange={setPassageId}
-              placeholder="Select a passage…"
-            >
-              {passagesForKind.map((p) => (
-                <SelectItem key={p.id} value={p.id}>
-                  {p.title ?? p.body.slice(0, 40)}
-                </SelectItem>
-              ))}
-            </SelectField>
-          )}
 
           <div className="grid gap-1.5">
             <Label htmlFor="source">Source (optional)</Label>
@@ -439,7 +410,7 @@ export function QuestionEditor({
       <Card>
         <CardHeader>
           <CardTitle>Explanation</CardTitle>
-          <p className="text-muted-foreground text-xs">Optional — shown with results.</p>
+          <p className="text-muted-foreground text-xs">Shown with quiz results.</p>
         </CardHeader>
         <CardContent>
           <Textarea
@@ -455,7 +426,7 @@ export function QuestionEditor({
         <Button onClick={save} disabled={saving}>
           {saving ? "Saving…" : mode === "edit" ? "Save changes" : "Create question"}
         </Button>
-        <Button variant="outline" onClick={() => router.push("/dashboard/questions")}>
+        <Button variant="outline" onClick={() => router.push("/dashboard/assessment-questions")}>
           Cancel
         </Button>
       </div>

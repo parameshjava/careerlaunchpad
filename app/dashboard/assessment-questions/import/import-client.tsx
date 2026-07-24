@@ -1,18 +1,17 @@
 "use client";
 
 /**
- * Admin JSON question import: pick subject → download schema/sample → upload a
- * .json file → validated preview of every question → commit (only when all
- * checks pass). Wired to POST /api/exam/questions/import (dry-run vs commit).
- * The parsed file is held in memory so re-validate/commit don't re-upload.
- * Built to docs/STYLE_GUIDE.md: shadcn primitives + brand tokens, mobile-first.
+ * Admin JSON import for ASSESSMENT questions: pick subject → download schema/sample
+ * → upload a .json file → validated preview of every question → commit (only when
+ * all checks pass). Wired to POST /api/assessment/questions/import (dry-run vs
+ * commit). Mirrors the exam question import, minus passages (assessment is
+ * standalone MCQs). Built to docs/STYLE_GUIDE.md: shadcn primitives, mobile-first.
  */
 import { useEffect, useRef, useState } from "react";
 import { cn } from "@/lib/utils";
 import { RichContent } from "@/components/exam/RichContent";
 import { SubjectSelect } from "@/components/exam/SubjectSelect";
 import { Button } from "@/components/ui/button";
-import { Label } from "@/components/ui/label";
 import { Badge } from "@/components/ui/badge";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import {
@@ -47,8 +46,6 @@ type Report = {
   error?: string;
 };
 
-// Shapes read straight from the parsed upload (held in memory) so the preview can
-// render each question exactly as the student sees it — same RichContent renderer.
 type FileOption = { label?: string; is_correct?: boolean };
 type FileQuestion = {
   chapter?: string;
@@ -57,11 +54,9 @@ type FileQuestion = {
   answer_type?: string;
   stem?: string;
   explanation?: string;
-  passage_ref?: string;
   options?: FileOption[];
 };
-type FilePassage = { ref?: string; title?: string; body?: string };
-type FileData = { subject?: string; passages?: FilePassage[]; questions?: FileQuestion[] };
+type FileData = { subject?: string; questions?: FileQuestion[] };
 
 const STATUS_VARIANT: Record<RowStatus, "default" | "destructive" | "secondary" | "outline"> = {
   ok: "default",
@@ -70,34 +65,35 @@ const STATUS_VARIANT: Record<RowStatus, "default" | "destructive" | "secondary" 
   unresolved: "outline",
 };
 
-// Build a JSON Schema TAILORED to the chosen subject: `subject` is fixed (const)
-// and `chapter` is constrained to that subject's real chapters — so an AI agent
-// (or a human) can only produce values the importer will accept.
+// A JSON Schema TAILORED to the chosen subject: `subject` is fixed (const) and
+// `chapter` is constrained to that subject's real chapters — so an AI agent (or a
+// human) can only produce values the importer will accept. No passages.
 function buildSchema(subject: string, chapterNames: string[]) {
+  // A "there exists a correct option" subschema, reused by the single/multi rules.
+  const hasCorrect = {
+    type: "object",
+    properties: { is_correct: { const: true } },
+    required: ["is_correct"],
+  };
   return {
     $schema: "https://json-schema.org/draft/2020-12/schema",
-    title: `CareerLaunchpad question import — ${subject}`,
+    title: `CareerLaunchpad assessment-question import — ${subject}`,
     description:
-      "One subject per file. `subject` is fixed to the selected subject; `chapter` must be one of the enumerated chapters (they must already exist in the bank).",
+      [
+        "Import file for CareerLaunchpad per-chapter assessment questions.",
+        "How the importer behaves:",
+        "• One subject per file — `subject` MUST equal the selected subject exactly.",
+        "• `chapter` MUST already exist in that subject (pick from the enum); unknown chapters are reported, not created.",
+        "• Standalone MCQs only — no passages.",
+        "• A question with the same chapter + stem as one already in the bank is SKIPPED (safe to re-run).",
+        "• Nothing is saved until every question passes validation in the preview.",
+        "Content fields (stem, options, explanation) accept Markdown and LaTeX ($…$).",
+      ].join("\n"),
     type: "object",
     required: ["subject", "questions"],
     additionalProperties: false,
     properties: {
       subject: { const: subject, description: "Must be exactly this subject." },
-      passages: {
-        type: "array",
-        description: "Optional. Referenced by passage-type questions via passage_ref.",
-        items: {
-          type: "object",
-          required: ["ref", "body"],
-          additionalProperties: false,
-          properties: {
-            ref: { type: "string", minLength: 1, description: 'File-local id, e.g. "p1".' },
-            title: { type: "string" },
-            body: { type: "string", minLength: 1, description: "Markdown + LaTeX." },
-          },
-        },
-      },
       questions: {
         type: "array",
         minItems: 1,
@@ -114,15 +110,18 @@ function buildSchema(subject: string, chapterNames: string[]) {
                     minLength: 1,
                     description: "This subject has no chapters yet — add chapters first.",
                   },
-            kind: { enum: ["standard", "passage", "data_sufficiency"], default: "standard" },
-            passage_ref: {
-              type: "string",
-              description: "Required iff kind = passage; must match a passages[].ref.",
+            kind: {
+              enum: ["standard", "data_sufficiency"],
+              default: "standard",
+              description: "'standard' MCQ, or 'data_sufficiency' (statement-sufficiency style).",
             },
             difficulty: { enum: ["easy", "medium", "hard", "very_hard"] },
-            answer_type: { enum: ["single", "multi"] },
-            stem: { type: "string", minLength: 1, description: "Markdown + LaTeX." },
-            stem_image_url: { type: "string" },
+            answer_type: {
+              enum: ["single", "multi"],
+              description: "'single' = exactly one correct option; 'multi' = one or more.",
+            },
+            stem: { type: "string", minLength: 1, description: "Question text. Markdown + LaTeX." },
+            stem_image_url: { type: "string", description: "Optional image URL / R2 object key." },
             explanation: {
               type: "string",
               minLength: 1,
@@ -142,7 +141,7 @@ function buildSchema(subject: string, chapterNames: string[]) {
               type: "array",
               minItems: 4,
               maxItems: 5,
-              description: "4 or 5 options. single ⇒ exactly 1 is_correct; multi ⇒ ≥1.",
+              description: "4 or 5 options. Correctness is enforced by answer_type (see allOf).",
               items: {
                 type: "object",
                 required: ["label", "is_correct"],
@@ -154,13 +153,33 @@ function buildSchema(subject: string, chapterNames: string[]) {
               },
             },
           },
+          // Machine-enforce the correctness rule so a validator (or an AI agent
+          // checking against the schema) catches it BEFORE upload — not just at the
+          // server dry-run: single ⇒ exactly one correct; multi ⇒ at least one.
+          allOf: [
+            {
+              if: { properties: { answer_type: { const: "single" } }, required: ["answer_type"] },
+              then: {
+                properties: {
+                  options: { contains: hasCorrect, minContains: 1, maxContains: 1 },
+                },
+              },
+            },
+            {
+              if: { properties: { answer_type: { const: "multi" } }, required: ["answer_type"] },
+              then: { properties: { options: { contains: hasCorrect, minContains: 1 } } },
+            },
+          ],
         },
       },
     },
+    examples: [buildSample(subject, chapterNames)],
   };
 }
 
-// A minimal valid example for the subject, using its first chapter.
+// A valid example for the subject, using its first chapter — one of each shape
+// (single-correct, multi-correct, data-sufficiency) so an author or AI agent sees
+// the full vocabulary at a glance.
 function buildSample(subject: string, chapterNames: string[]) {
   const chapter = chapterNames[0] ?? "An existing chapter name";
   return {
@@ -171,15 +190,43 @@ function buildSample(subject: string, chapterNames: string[]) {
         kind: "standard",
         difficulty: "easy",
         answer_type: "single",
-        stem: "Replace with the question text (Markdown + LaTeX supported).",
+        stem: "Single-correct example. What is $2 + 2$?",
         explanation: "Replace with the worked solution.",
         source: "ICET 2019 - Slot 2",
         source_year: 2019,
         options: [
-          { label: "Correct option", is_correct: true },
-          { label: "Distractor 1", is_correct: false },
-          { label: "Distractor 2", is_correct: false },
-          { label: "Distractor 3", is_correct: false },
+          { label: "4", is_correct: true },
+          { label: "3", is_correct: false },
+          { label: "5", is_correct: false },
+          { label: "22", is_correct: false },
+        ],
+      },
+      {
+        chapter,
+        kind: "standard",
+        difficulty: "medium",
+        answer_type: "multi",
+        stem: "Multi-correct example — select all prime numbers.",
+        explanation: "2, 3 and 5 are prime; 4 is not.",
+        options: [
+          { label: "2", is_correct: true },
+          { label: "3", is_correct: true },
+          { label: "4", is_correct: false },
+          { label: "5", is_correct: true },
+        ],
+      },
+      {
+        chapter,
+        kind: "data_sufficiency",
+        difficulty: "hard",
+        answer_type: "single",
+        stem: "Data-sufficiency example. Is $x > 0$? (1) $x^2 = 9$. (2) $x = 3$.",
+        explanation: "Statement (2) alone fixes x = 3 > 0; (1) allows ±3.",
+        options: [
+          { label: "Statement I alone is sufficient, but statement II alone is not.", is_correct: false },
+          { label: "Statement II alone is sufficient, but statement I alone is not.", is_correct: true },
+          { label: "Both statements together are sufficient, but neither alone is.", is_correct: false },
+          { label: "Each statement alone is sufficient.", is_correct: false },
         ],
       },
     ],
@@ -196,7 +243,7 @@ function downloadJSON(name: string, obj: unknown) {
   URL.revokeObjectURL(url);
 }
 
-export function ImportQuestionsClient({ subjects }: { subjects: Subject[] }) {
+export function ImportAssessmentQuestionsClient({ subjects }: { subjects: Subject[] }) {
   const [subjectId, setSubjectId] = useState("");
   const [chapters, setChapters] = useState<string[]>([]);
   const [parsed, setParsed] = useState<unknown>(null);
@@ -211,7 +258,6 @@ export function ImportQuestionsClient({ subjects }: { subjects: Subject[] }) {
 
   const subjectName = subjects.find((s) => s.id === subjectId)?.name ?? "";
 
-  // Load the subject's chapters so the downloadable schema can enumerate them.
   useEffect(() => {
     if (!subjectId) {
       setChapters([]);
@@ -246,7 +292,7 @@ export function ImportQuestionsClient({ subjects }: { subjects: Subject[] }) {
     setBusy(true);
     setError(null);
     if (commit) setDone(null);
-    const res = await fetch("/api/exam/questions/import", {
+    const res = await fetch("/api/assessment/questions/import", {
       method: "POST",
       headers: { "content-type": "application/json" },
       body: JSON.stringify({ subject_id: subjectId, commit, overrides: ov, data: parsed }),
@@ -269,7 +315,6 @@ export function ImportQuestionsClient({ subjects }: { subjects: Subject[] }) {
   const fileRef = useRef<HTMLInputElement>(null);
   const fileData = parsed as FileData | null;
 
-  // Pagination — review a large import one set at a time.
   const allRows = report?.rows ?? [];
   const pageCount = Math.max(1, Math.ceil(allRows.length / pageSize));
   const safePage = Math.min(page, pageCount - 1);
@@ -365,7 +410,10 @@ export function ImportQuestionsClient({ subjects }: { subjects: Subject[] }) {
               variant="outline"
               disabled={!subjectId}
               onClick={() =>
-                downloadJSON(`${subjectName || "questions"}-import.schema.json`, buildSchema(subjectName, chapters))
+                downloadJSON(
+                  `${subjectName || "assessment-questions"}-import.schema.json`,
+                  buildSchema(subjectName, chapters),
+                )
               }
             >
               ⬇ JSON schema
@@ -374,7 +422,10 @@ export function ImportQuestionsClient({ subjects }: { subjects: Subject[] }) {
               variant="outline"
               disabled={!subjectId}
               onClick={() =>
-                downloadJSON(`${subjectName || "questions"}-import.sample.json`, buildSample(subjectName, chapters))
+                downloadJSON(
+                  `${subjectName || "assessment-questions"}-import.sample.json`,
+                  buildSample(subjectName, chapters),
+                )
               }
             >
               ⬇ Sample file
@@ -402,9 +453,6 @@ export function ImportQuestionsClient({ subjects }: { subjects: Subject[] }) {
           </CardDescription>
         </CardHeader>
         <CardContent>
-          {/* Native file input is hidden; a styled Browse button triggers it so
-              the control matches the rest of the UI. Validate appears only once a
-              file has been chosen. */}
           <input
             ref={fileRef}
             type="file"
@@ -416,9 +464,7 @@ export function ImportQuestionsClient({ subjects }: { subjects: Subject[] }) {
             <Button type="button" variant="outline" onClick={() => fileRef.current?.click()}>
               {fileName ? "Choose a different file" : "Browse…"}
             </Button>
-            <span className="text-muted-foreground text-sm">
-              {fileName ?? "No file chosen"}
-            </span>
+            <span className="text-muted-foreground text-sm">{fileName ?? "No file chosen"}</span>
             {parsed != null && (
               <Button onClick={() => run(false)} disabled={!canValidate}>
                 {busy ? "Validating…" : "Validate"}
@@ -473,7 +519,6 @@ export function ImportQuestionsClient({ subjects }: { subjects: Subject[] }) {
               </ul>
             )}
 
-            {/* Unresolved chapter mapping */}
             {report.unresolved_chapters.length > 0 && (
               <div className="bg-muted/40 rounded-lg border p-4">
                 <p className="text-sm font-medium">Map unrecognised chapters</p>
@@ -517,19 +562,11 @@ export function ImportQuestionsClient({ subjects }: { subjects: Subject[] }) {
               </div>
             )}
 
-            {/* Paginated so a large import is reviewed one set at a time. */}
             {allRows.length > pageSize && PageBar()}
 
-            {/* Every question rendered as the student sees it (same RichContent
-                renderer as the attempt UI), with the correct option marked for the
-                admin to verify before committing. */}
             <div className="grid gap-2">
               {pageRows.map((r) => {
                 const q = fileData?.questions?.[r.row - 1];
-                const passage =
-                  q?.passage_ref != null
-                    ? fileData?.passages?.find((p) => p.ref === q.passage_ref)
-                    : undefined;
                 return (
                   <div key={r.row} className="rounded-lg border p-3">
                     <div className="mb-1.5 flex flex-wrap items-center gap-2 text-xs">
@@ -540,15 +577,6 @@ export function ImportQuestionsClient({ subjects }: { subjects: Subject[] }) {
                       {q?.kind && q.kind !== "standard" && <Badge variant="outline">{q.kind}</Badge>}
                       {q?.answer_type === "multi" && <Badge variant="outline">multi-select</Badge>}
                     </div>
-
-                    {passage?.body && (
-                      <div className="bg-muted/40 mb-2 rounded-md border p-2.5">
-                        {passage.title && (
-                          <p className="mb-1 text-xs font-semibold">{passage.title}</p>
-                        )}
-                        <RichContent content={passage.body} className="text-sm" />
-                      </div>
-                    )}
 
                     {q?.stem ? (
                       <RichContent content={q.stem} className="text-sm font-medium" />
@@ -579,10 +607,7 @@ export function ImportQuestionsClient({ subjects }: { subjects: Subject[] }) {
                     {q?.explanation && (
                       <div className="bg-muted/50 mt-2 rounded-md border px-2.5 py-1.5 text-sm">
                         <span className="text-foreground font-semibold">Explanation</span>
-                        <RichContent
-                          content={q.explanation}
-                          className="text-muted-foreground mt-0.5"
-                        />
+                        <RichContent content={q.explanation} className="text-muted-foreground mt-0.5" />
                       </div>
                     )}
 

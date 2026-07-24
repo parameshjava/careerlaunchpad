@@ -138,8 +138,10 @@ export function buildNav(ctx: AuthContext, opts: { studentApproved?: boolean } =
     const bank: NavItem[] = [];
     if (ctx.permissions.has("*") || can(ctx, "exam.subject.manage"))
       bank.push({ label: "Subjects & Chapters", href: "/dashboard/subjects", icon: "exams" });
-    if (ctx.permissions.has("*") || can(ctx, "exam.question.manage"))
+    if (ctx.permissions.has("*") || can(ctx, "exam.question.manage")) {
       bank.push({ label: "Questions", href: "/dashboard/questions", icon: "exams" });
+      bank.push({ label: "Assessment questions", href: "/dashboard/assessment-questions", icon: "exams" });
+    }
 
     // Exams — papers (create/conduct), results (read), evaluation. Sittings are
     // reached through each paper, not a separate menu item.

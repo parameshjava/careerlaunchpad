@@ -1,9 +1,9 @@
 "use client";
 
-// Questions — browse & author the GLOBAL question bank. Reads subjects/chapters
-// (curated on the Subjects & Chapters page) to filter and author; needs
-// exam.question.manage (the page gates access). The heavy question form is its
-// own route (/dashboard/questions/new, /q/[id]). Built to docs/STYLE_GUIDE.md.
+// Assessment questions — browse & author the per-chapter quiz bank. Mirrors the
+// exam Questions list but reads /api/assessment/questions; subjects & chapters
+// come from the shared taxonomy (/api/exam/{subjects,chapters}). Needs
+// exam.question.manage (the page gates access). Built to docs/STYLE_GUIDE.md.
 import { useCallback, useEffect, useState } from "react";
 import Link from "next/link";
 import { Button } from "@/components/ui/button";
@@ -18,16 +18,10 @@ import {
 } from "@/components/ui/select";
 import { SearchableSelect } from "@/components/exam/SearchableSelect";
 import { SubjectSelect } from "@/components/exam/SubjectSelect";
-import {
-  DIFFICULTIES,
-  DIFFICULTY_LABELS,
-  type Chapter,
-  type Difficulty,
-  type QuestionListItem,
-} from "@/lib/exam-query";
+import { DIFFICULTIES, DIFFICULTY_LABELS, type Chapter, type Difficulty } from "@/lib/exam-query";
+import { type AssessmentQuestionListItem } from "@/lib/assessment-query";
 
-// Traffic-light difficulty coding (categorical status, not brand color) — kept
-// intentionally for scannability; dark-aware Tailwind palette, no brand hex.
+// Traffic-light difficulty coding (categorical status, not brand color).
 const DIFF_STYLES: Record<Difficulty, string> = {
   easy: "bg-emerald-100 text-emerald-700 dark:bg-emerald-950 dark:text-emerald-300",
   medium: "bg-blue-100 text-blue-700 dark:bg-blue-950 dark:text-blue-300",
@@ -38,10 +32,10 @@ const DIFF_STYLES: Record<Difficulty, string> = {
 const LETTERS = ["A", "B", "C", "D", "E"];
 const PAGE_SIZE = 20;
 
-export function QuestionsClient() {
+export function AssessmentQuestionsClient() {
   const [subjectId, setSubjectId] = useState("");
   const [chapters, setChapters] = useState<Chapter[]>([]);
-  const [questions, setQuestions] = useState<QuestionListItem[]>([]);
+  const [questions, setQuestions] = useState<AssessmentQuestionListItem[]>([]);
   const [total, setTotal] = useState(0);
   const [filterChapter, setFilterChapter] = useState("");
   const [filterDifficulty, setFilterDifficulty] = useState("");
@@ -55,7 +49,6 @@ export function QuestionsClient() {
     if (res.ok) setChapters(data.chapters ?? []);
   }, []);
 
-  // Server-side paging: the API returns one page of rows + the total match count.
   const loadQuestions = useCallback(
     async (sid: string, chapter: string, difficulty: string, pageNum: number) => {
       if (!sid) {
@@ -70,7 +63,7 @@ export function QuestionsClient() {
       });
       if (chapter) params.set("chapter_id", chapter);
       if (difficulty) params.set("difficulty", difficulty);
-      const res = await fetch(`/api/exam/questions?${params}`);
+      const res = await fetch(`/api/assessment/questions?${params}`);
       const data = await res.json();
       if (res.ok) {
         setQuestions(data.questions ?? []);
@@ -83,8 +76,6 @@ export function QuestionsClient() {
   useEffect(() => {
     loadChapters(subjectId);
   }, [subjectId, loadChapters]);
-  // Fetch whenever subject / filters / page change. The filter handlers reset
-  // page to 1, so a filter change fetches page 1.
   useEffect(() => {
     loadQuestions(subjectId, filterChapter, filterDifficulty, page);
   }, [subjectId, filterChapter, filterDifficulty, page, loadQuestions]);
@@ -92,7 +83,7 @@ export function QuestionsClient() {
   const totalPages = Math.max(1, Math.ceil(total / PAGE_SIZE));
 
   async function archiveQuestion(id: string) {
-    const res = await fetch(`/api/exam/questions/${id}/archive`, {
+    const res = await fetch(`/api/assessment/questions/${id}/archive`, {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: "{}",
@@ -178,7 +169,9 @@ export function QuestionsClient() {
               </div>
               <div className="flex gap-2">
                 <Button asChild disabled={chapters.length === 0}>
-                  <Link href={`/dashboard/questions/new?subject=${encodeURIComponent(subjectId)}`}>
+                  <Link
+                    href={`/dashboard/assessment-questions/new?subject=${encodeURIComponent(subjectId)}`}
+                  >
                     New question
                   </Link>
                 </Button>
@@ -208,48 +201,52 @@ export function QuestionsClient() {
                 </div>
                 <ul className="divide-y rounded-md border">
                   {questions.map((q) => (
-                  <li key={q.id} className="flex items-start justify-between gap-3 px-3 py-2">
-                    <div className="min-w-0 flex-1">
-                      <div className="flex items-start gap-2">
-                        <span
-                          className={`shrink-0 rounded px-1.5 py-0.5 text-[11px] ${DIFF_STYLES[q.difficulty]}`}
-                        >
-                          {DIFFICULTY_LABELS[q.difficulty]}
-                        </span>
-                        <span className="min-w-0 break-words text-sm">{q.stem}</span>
-                      </div>
-                      <div className="text-muted-foreground mt-1 flex flex-wrap gap-x-3 gap-y-0.5 pl-0.5 text-xs">
-                        {q.options.map((o, i) => (
+                    <li key={q.id} className="flex items-start justify-between gap-3 px-3 py-2">
+                      <div className="min-w-0 flex-1">
+                        <div className="flex items-start gap-2">
                           <span
-                            key={i}
-                            className={
-                              o.isCorrect
-                                ? "font-semibold text-emerald-700 dark:text-emerald-400"
-                                : ""
-                            }
+                            className={`shrink-0 rounded px-1.5 py-0.5 text-[11px] ${DIFF_STYLES[q.difficulty]}`}
                           >
-                            {LETTERS[i]}. {o.label}
-                            {o.isCorrect ? " ✓" : ""}
+                            {DIFFICULTY_LABELS[q.difficulty]}
                           </span>
-                        ))}
-                        <span className="text-muted-foreground/70">· {q.chapterName ?? "—"}</span>
-                        {q.source && (
-                          <span className="text-muted-foreground/70">
-                            · {q.source}
-                            {q.sourceYear ? ` (${q.sourceYear})` : ""}
-                          </span>
-                        )}
+                          <span className="min-w-0 break-words text-sm">{q.stem}</span>
+                        </div>
+                        <div className="text-muted-foreground mt-1 flex flex-wrap gap-x-3 gap-y-0.5 pl-0.5 text-xs">
+                          {q.options.map((o, i) => (
+                            <span
+                              key={i}
+                              className={
+                                o.isCorrect
+                                  ? "font-semibold text-emerald-700 dark:text-emerald-400"
+                                  : ""
+                              }
+                            >
+                              {LETTERS[i]}. {o.label}
+                              {o.isCorrect ? " ✓" : ""}
+                            </span>
+                          ))}
+                          <span className="text-muted-foreground/70">· {q.chapterName ?? "—"}</span>
+                          {q.source && (
+                            <span className="text-muted-foreground/70">
+                              · {q.source}
+                              {q.sourceYear ? ` (${q.sourceYear})` : ""}
+                            </span>
+                          )}
+                        </div>
                       </div>
-                    </div>
-                    <div className="flex shrink-0 gap-1">
-                      <Button variant="ghost" size="sm" asChild>
-                        <Link href={`/dashboard/questions/q/${encodeURIComponent(q.id)}`}>Edit</Link>
-                      </Button>
-                      <Button variant="ghost" size="sm" onClick={() => archiveQuestion(q.id)}>
-                        Archive
-                      </Button>
-                    </div>
-                  </li>
+                      <div className="flex shrink-0 gap-1">
+                        <Button variant="ghost" size="sm" asChild>
+                          <Link
+                            href={`/dashboard/assessment-questions/q/${encodeURIComponent(q.id)}`}
+                          >
+                            Edit
+                          </Link>
+                        </Button>
+                        <Button variant="ghost" size="sm" onClick={() => archiveQuestion(q.id)}>
+                          Archive
+                        </Button>
+                      </div>
+                    </li>
                   ))}
                 </ul>
                 {totalPages > 1 && (

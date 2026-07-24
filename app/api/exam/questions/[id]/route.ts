@@ -88,6 +88,8 @@ export async function PATCH(req: NextRequest, { params }: { params: Promise<{ id
       stem: clean.stem,
       stem_image_url: clean.stem_image_url,
       explanation: clean.explanation,
+      source: clean.source,
+      source_year: clean.source_year,
       version: existing.version + 1,
       updated_at: new Date().toISOString(),
     })
