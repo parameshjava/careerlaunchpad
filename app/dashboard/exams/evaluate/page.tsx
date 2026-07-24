@@ -5,6 +5,7 @@ import { createClient } from "@/lib/supabase/server";
 import { fetchAllEvaluatorExams, fetchEvaluatorExams } from "@/lib/exam-query";
 import { Card, CardContent } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
+import { PageContainer } from "@/components/app-shell/page-container";
 
 // Evaluator landing. Blanket evaluators (mentors/employers with exam.evaluate)
 // and admins see every exam; per-exam assignees see only their assigned exams.
@@ -23,7 +24,7 @@ export default async function EvaluateHomePage() {
     : await fetchEvaluatorExams(supabase, ctx.userId);
 
   return (
-    <div className="mx-auto max-w-4xl">
+    <PageContainer variant="full">
       <header className="mb-6">
         <h1 className="text-2xl font-bold tracking-tight">Exam evaluation</h1>
         <p className="text-muted-foreground mt-1 text-sm">
@@ -65,6 +66,6 @@ export default async function EvaluateHomePage() {
           ))}
         </div>
       )}
-    </div>
+    </PageContainer>
   );
 }

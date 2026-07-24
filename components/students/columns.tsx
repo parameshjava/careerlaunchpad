@@ -1,10 +1,9 @@
 "use client";
 
 import { ColumnDef, type Table } from "@tanstack/react-table";
-import { ArrowUpDown, MoreHorizontal } from "lucide-react";
+import { MoreHorizontal } from "lucide-react";
 import { useRouter } from "next/navigation";
 
-import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import { Checkbox } from "@/components/ui/checkbox";
 import {
@@ -15,14 +14,15 @@ import {
   DropdownMenuSeparator,
   DropdownMenuTrigger,
 } from "@/components/ui/dropdown-menu";
+import { SortHeader, StatusBadge, type StatusTone } from "@/components/data-table-parts";
 import type { Student, StudentStage } from "@/lib/students-query";
 import { deleteStudent } from "@/app/dashboard/students/actions";
 import { enterImpersonation } from "@/app/impersonation/actions";
 
-const stageStyles: Record<StudentStage, string> = {
-  Registered: "bg-emerald-100 text-emerald-700 dark:bg-emerald-950 dark:text-emerald-300",
-  Invited: "bg-blue-100 text-blue-700 dark:bg-blue-950 dark:text-blue-300",
-  Imported: "bg-violet-100 text-violet-700 dark:bg-violet-950 dark:text-violet-300",
+const stageTones: Record<StudentStage, StatusTone> = {
+  Registered: "emerald",
+  Invited: "blue",
+  Imported: "violet",
 };
 
 export const columns: ColumnDef<Student>[] = [
@@ -50,15 +50,7 @@ export const columns: ColumnDef<Student>[] = [
   },
   {
     accessorKey: "name",
-    header: ({ column }) => (
-      <Button
-        variant="ghost"
-        className="-ml-3 h-8"
-        onClick={() => column.toggleSorting(column.getIsSorted() === "asc")}
-      >
-        Name <ArrowUpDown className="size-3.5" />
-      </Button>
-    ),
+    header: ({ column }) => <SortHeader column={column}>Name</SortHeader>,
     cell: ({ row }) => {
       const course = row.original.course;
       return (
@@ -88,15 +80,7 @@ export const columns: ColumnDef<Student>[] = [
   {
     accessorKey: "completeness",
     meta: { label: "Profile" },
-    header: ({ column }) => (
-      <Button
-        variant="ghost"
-        className="-ml-3 h-8"
-        onClick={() => column.toggleSorting(column.getIsSorted() === "asc")}
-      >
-        Profile <ArrowUpDown className="size-3.5" />
-      </Button>
-    ),
+    header: ({ column }) => <SortHeader column={column}>Profile</SortHeader>,
     // Imported/invited rows have no profile yet → sort them last, show "—".
     sortUndefined: "last",
     cell: ({ row }) => {
@@ -121,25 +105,13 @@ export const columns: ColumnDef<Student>[] = [
     header: "Status",
     cell: ({ row }) => {
       const stage = row.getValue("stage") as StudentStage;
-      return (
-        <Badge variant="secondary" className={stageStyles[stage]}>
-          {stage}
-        </Badge>
-      );
+      return <StatusBadge tone={stageTones[stage]}>{stage}</StatusBadge>;
     },
   },
   {
     accessorKey: "joinedAt",
     meta: { label: "Joined" },
-    header: ({ column }) => (
-      <Button
-        variant="ghost"
-        className="-ml-3 h-8"
-        onClick={() => column.toggleSorting(column.getIsSorted() === "asc")}
-      >
-        Joined <ArrowUpDown className="size-3.5" />
-      </Button>
-    ),
+    header: ({ column }) => <SortHeader column={column}>Joined</SortHeader>,
     cell: ({ row }) => (
       <span className="tabular-nums">{row.getValue("joinedAt")}</span>
     ),

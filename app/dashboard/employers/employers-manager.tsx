@@ -8,13 +8,15 @@
 import { useState } from "react";
 import { useRouter } from "next/navigation";
 import { Pencil } from "lucide-react";
+import type { ColumnDef } from "@tanstack/react-table";
 import { Button } from "@/components/ui/button";
-import { Badge } from "@/components/ui/badge";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import {
   Dialog, DialogContent, DialogFooter, DialogHeader, DialogTitle,
 } from "@/components/ui/dialog";
+import { DataTable } from "@/components/data-table";
+import { SortHeader, StatusBadge } from "@/components/data-table-parts";
 import { createEmployer, updateEmployer, setEmployerStatus } from "./actions";
 
 export type Employer = {
@@ -25,7 +27,75 @@ export type Employer = {
   status: "active" | "suspended";
 };
 
-const cell = "border-border border px-3 py-2 align-middle";
+const columns: ColumnDef<Employer>[] = [
+  {
+    id: "index",
+    header: "#",
+    enableSorting: false,
+    enableHiding: false,
+    cell: ({ row }) => <span className="text-muted-foreground tabular-nums">{row.index + 1}</span>,
+  },
+  {
+    id: "logo",
+    header: "Logo",
+    enableSorting: false,
+    cell: ({ row }) =>
+      row.original.logo_url ? (
+        // eslint-disable-next-line @next/next/no-img-element
+        <img src={row.original.logo_url} alt="" className="size-8 rounded object-contain" />
+      ) : (
+        <span className="text-muted-foreground">—</span>
+      ),
+  },
+  {
+    accessorKey: "name",
+    meta: { label: "Organization" },
+    header: ({ column }) => <SortHeader column={column}>Organization</SortHeader>,
+    cell: ({ row }) => <span className="font-medium">{row.original.name}</span>,
+  },
+  {
+    accessorKey: "website",
+    header: "Website",
+    cell: ({ row }) =>
+      row.original.website ? (
+        <a href={row.original.website} target="_blank" rel="noreferrer" className="text-primary break-all hover:underline">
+          {row.original.website}
+        </a>
+      ) : (
+        <span className="text-muted-foreground">—</span>
+      ),
+  },
+  {
+    accessorKey: "status",
+    header: "Status",
+    cell: ({ row }) => (
+      <StatusBadge tone={row.original.status === "suspended" ? "amber" : "emerald"}>
+        {row.original.status}
+      </StatusBadge>
+    ),
+  },
+  {
+    id: "actions",
+    header: "Actions",
+    enableSorting: false,
+    enableHiding: false,
+    cell: ({ row }) => {
+      const e = row.original;
+      return (
+        <div className="flex flex-wrap items-center gap-2">
+          <EmployerDialog mode="edit" employer={e} />
+          <form action={setEmployerStatus}>
+            <input type="hidden" name="id" value={e.id} />
+            <input type="hidden" name="status" value={e.status === "suspended" ? "active" : "suspended"} />
+            <Button type="submit" variant="outline" size="sm">
+              {e.status === "suspended" ? "Reactivate" : "Suspend"}
+            </Button>
+          </form>
+        </div>
+      );
+    },
+  },
+];
 
 export function EmployersManager({ employers }: { employers: Employer[] }) {
   return (
@@ -33,63 +103,12 @@ export function EmployersManager({ employers }: { employers: Employer[] }) {
       <div className="flex justify-end">
         <EmployerDialog mode="create" />
       </div>
-      <div className="bg-card rounded-xl border p-2 shadow-sm">
-        <div className="overflow-x-auto">
-          <table className="w-full min-w-[720px] border-collapse text-sm">
-            <thead>
-              <tr className="bg-muted/60 text-left">
-                <th className={`${cell} w-12 font-semibold`}>#</th>
-                <th className={`${cell} w-16 font-semibold`}>Logo</th>
-                <th className={`${cell} font-semibold`}>Organization</th>
-                <th className={`${cell} font-semibold`}>Website</th>
-                <th className={`${cell} font-semibold`}>Status</th>
-                <th className={`${cell} font-semibold`}>Actions</th>
-              </tr>
-            </thead>
-            <tbody>
-              {employers.length === 0 && (
-                <tr><td className={`${cell} text-muted-foreground text-center`} colSpan={6}>No organizations yet.</td></tr>
-              )}
-              {employers.map((e, i) => (
-                <tr key={e.id} className="hover:bg-muted/30">
-                  <td className={`${cell} text-muted-foreground tabular-nums`}>{i + 1}</td>
-                  <td className={cell}>
-                    {e.logo_url ? (
-                      // eslint-disable-next-line @next/next/no-img-element
-                      <img src={e.logo_url} alt="" className="size-8 rounded object-contain" />
-                    ) : (
-                      <span className="text-muted-foreground">—</span>
-                    )}
-                  </td>
-                  <td className={`${cell} font-medium`}>{e.name}</td>
-                  <td className={`${cell} break-all`}>
-                    {e.website ? (
-                      <a href={e.website} target="_blank" rel="noreferrer" className="text-primary hover:underline">{e.website}</a>
-                    ) : <span className="text-muted-foreground">—</span>}
-                  </td>
-                  <td className={cell}>
-                    <Badge variant="secondary" className={e.status === "suspended" ? "bg-amber-100 text-amber-700 dark:bg-amber-950 dark:text-amber-300" : "bg-emerald-100 text-emerald-700 dark:bg-emerald-950 dark:text-emerald-300"}>
-                      {e.status}
-                    </Badge>
-                  </td>
-                  <td className={cell}>
-                    <div className="flex flex-wrap items-center gap-2">
-                      <EmployerDialog mode="edit" employer={e} />
-                      <form action={setEmployerStatus}>
-                        <input type="hidden" name="id" value={e.id} />
-                        <input type="hidden" name="status" value={e.status === "suspended" ? "active" : "suspended"} />
-                        <Button type="submit" variant="outline" size="sm">
-                          {e.status === "suspended" ? "Reactivate" : "Suspend"}
-                        </Button>
-                      </form>
-                    </div>
-                  </td>
-                </tr>
-              ))}
-            </tbody>
-          </table>
-        </div>
-      </div>
+      <DataTable
+        columns={columns as ColumnDef<Employer, unknown>[]}
+        data={employers}
+        searchKey="name"
+        searchPlaceholder="Search organizations…"
+      />
     </div>
   );
 }

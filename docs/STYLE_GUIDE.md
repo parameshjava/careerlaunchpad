@@ -32,19 +32,34 @@ Raw brand vars (`var(--brand-gradient)`, `var(--brand-gradient-135)`) are reserv
 
 ## Page pattern (copy this skeleton)
 
+Wrap every page in **`<PageContainer variant>`** (`components/app-shell/page-container.tsx`) — never hand-pick a `max-w-*`. It centres the content and applies one of four semantic width tiers, so the column no longer jumps as you navigate. **Go wide on desktop:** lists/tables/dashboards use the full width; only forms stay narrow.
+
+| `variant`  | Width               | Use for                                              |
+| ---------- | ------------------- | ---------------------------------------------------- |
+| `full`     | `max-w-screen-2xl`  | dashboards, analytics, lists, tables, grids          |
+| `wide`     | `max-w-5xl`         | mixed detail + grid pages                            |
+| `reading`  | `max-w-4xl`         | single-record detail / reading / result / receipt    |
+| `form`     | `max-w-3xl`         | single-column forms, wizards, import flows           |
+
 ```tsx
-<div className="mx-auto max-w-4xl">        {/* max-w-3xl forms · 4xl lists · 5xl wide/grids */}
+import { PageContainer } from "@/components/app-shell/page-container";
+
+<PageContainer variant="full">        {/* pick the tier from the table above */}
   <header className="mb-6">
     <h1 className="text-2xl font-bold tracking-tight">Title</h1>
     <p className="text-muted-foreground mt-1 text-sm">One-line description.</p>
   </header>
   {/* sections in <Card>; tabs via <Tabs>; grids via DataTable */}
-</div>
+</PageContainer>
 ```
 
 - **Section container:** `Card` + `CardContent` (`pt-6` when there's no `CardHeader`).
 - **Tabs:** **coloured folder tabs** with a count in the trigger, e.g. `Active ({n})` — see **Tabs** below. Don't use the plain default pill `TabsList`.
-- **Data grids:** `components/data-table.tsx` (TanStack) — never a hand-rolled table for sortable/filterable data.
+- **Data grids:** `components/data-table.tsx` (TanStack) — never a hand-rolled table for sortable/filterable data. For column headers use `<SortHeader column={column}>` and for status pills `<StatusBadge tone="…">` from `components/data-table-parts.tsx` — don't re-roll a sort button or hand-write `bg-*-100 text-*-700` colour maps.
+- **Collapsible sections:** `components/ui/accordion.tsx` (`Accordion`/`AccordionItem`/`AccordionTrigger`/`AccordionContent`). The trigger shows a **chevron inside a closed circle** (built in, theme tokens) — this is the one accordion look. Don't hand-roll a `useState` toggle or a custom chevron for content disclosure.
+- **Dates & times:** display via `lib/format-date.ts` (`formatDate`/`formatDateTime`/`formatTime`) — en-IN + IST everywhere, so a date reads the same on every screen. Never hand-roll `Intl.DateTimeFormat`/`toLocaleDateString`. Date input uses `components/ui/date-picker.tsx` (`DatePicker`) / `date-time-picker.tsx`, never `<input type="date">`.
+- **College selection:** `components/colleges/college-picker.tsx` (`CollegePicker`) — single (`value`/`onChange`), `variant="filter"` (compact toolbar), or `multiple` (chips). One search-as-you-type against `/api/colleges/search`.
+- **Calendars / schedules:** `components/calendar/schedule-calendar.tsx` (`ScheduleCalendar`) — the shared Day/Week/Month/Agenda grid for `CalendarSession[]`; used by both student and admin surfaces.
 - **Forms:** `Label` + `Input`/`Select` in `grid gap-1.5`; primary submit is `<Button>`; validation/error message in `text-destructive text-sm`. For a field users may not recognise (e.g. an ID/number), add a `<InfoTooltip>` next to the label explaining what it is and where to find it — see **Tooltips** below. Don't hide required guidance in a tooltip; it only supplements.
 - **Empty state:** `text-muted-foreground bg-muted/40 rounded-lg border px-4 py-10 text-center text-sm`.
 - **Status:** `Badge` — `variant="default"` for live/positive, `"secondary"` otherwise.
@@ -119,6 +134,30 @@ import { InfoTooltip } from "@/components/ui/tooltip";
     stored in your DigiLocker account.
   </InfoTooltip>
 </Label>
+```
+
+## Printing (letterhead documents)
+
+Every printable document — question papers, result statements, fee receipts — is built the **same way**. Do not hand-roll a letterhead, a `window.print()` call, or a `body * { visibility:hidden }` print trick.
+
+- **`<PrintDocument>`** (`components/print/print-document.tsx`) is the one letterhead frame: it supplies the brand header (logo corner + blue→green band) and address footer that **repeat on every printed page**, plus the A4 page geometry (`@page { size: A4 portrait; margin: 0 }`). It renders a **visible A4 preview on screen** and prints. Put your document content inside it as children; pass `docLabel` for the small doc-type line.
+- **`usePrint()`** (`lib/use-print.ts`) is the one print mechanism. It returns `{ printRef, print }`; put `printRef` on the `<PrintDocument>` and call `print()` from a button. It prints an **isolated clone** in a hidden iframe, so it works even inside a dialog, and forces light (paper has no dark mode). For split documents (e.g. paper vs answer key), call `print("key")` and gate halves with `[data-print-part="key"] .some-section { display:none }` in a `<style>` inside the document.
+- **`components/print/blocks.tsx`** — `PrintToolbar` (the on-screen Back/Print/Close bar; place it as a sibling **above** the ref'd `<PrintDocument>` so it never prints), `BrandBlock` (cover), `InfoTable`/`InfoCell` (label/value grid), `SignatureLine`, `ComputerGeneratedNote`.
+- **Fixed print inks, not theme tokens.** Import from `lib/print-brand.ts` (`PRINT_INK`, or the `--pd-*` CSS vars `PrintDocument` exposes). This is the **only** sanctioned exception to "tokens only" — it applies to print surfaces exclusively, because paper has no dark mode.
+
+```tsx
+const { printRef, print } = usePrint();
+return (
+  <>
+    <PrintToolbar backHref="/…">
+      <Button onClick={() => print()}><Printer /> Print / Download PDF</Button>
+    </PrintToolbar>
+    <PrintDocument ref={printRef} docLabel="Statement of Results">
+      <BrandBlock … /> <InfoTable>…</InfoTable> {/* …content… */}
+      <SignatureLine label="Controller of Examinations" />
+    </PrintDocument>
+  </>
+);
 ```
 
 ## Governance

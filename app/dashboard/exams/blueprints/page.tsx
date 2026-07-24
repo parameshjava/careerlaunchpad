@@ -6,6 +6,7 @@ import { fetchBlueprints } from "@/lib/exam-query";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
+import { PageContainer } from "@/components/app-shell/page-container";
 
 // List of exam blueprints (templates) for the caller's college.
 export default async function BlueprintsPage() {
@@ -18,7 +19,7 @@ export default async function BlueprintsPage() {
   const blueprints = await fetchBlueprints(supabase);
 
   return (
-    <div className="mx-auto max-w-4xl">
+    <PageContainer variant="full">
       <header className="mb-6 flex items-center justify-between gap-4">
         <div>
           <h1 className="text-2xl font-bold tracking-tight">Exam blueprints</h1>
@@ -60,6 +61,6 @@ export default async function BlueprintsPage() {
           ))}
         </ul>
       )}
-    </div>
+    </PageContainer>
   );
 }

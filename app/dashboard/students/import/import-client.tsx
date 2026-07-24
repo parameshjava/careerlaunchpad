@@ -8,7 +8,7 @@
 import { useState } from "react";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
-import { CollegePicker, type College } from "@/components/students/college-picker";
+import { CollegePicker, type College } from "@/components/colleges/college-picker";
 
 type ReportRow = { row: number; email: string | null; result: string; invite?: string; warnings?: string[] };
 type Report = {
@@ -85,7 +85,7 @@ export function ImportClient() {
           Required — the template and every imported student will be tied to this college.
         </p>
         <div className="max-w-md">
-          <CollegePicker college={college} onPick={(c) => { setCollege(c); setReport(null); setDlError(null); }} />
+          <CollegePicker value={college} details={false} label={null} onChange={(c) => { setCollege(c); setReport(null); setDlError(null); }} />
         </div>
       </section>
 

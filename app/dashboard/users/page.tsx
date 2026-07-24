@@ -5,6 +5,7 @@ import { createClient } from "@/lib/supabase/server";
 import { Button } from "@/components/ui/button";
 import { InviteDialog } from "./invite-dialog";
 import { PlatformUsersTable, type MemberRow, type Caps } from "./platform-users-table";
+import { PageContainer } from "@/components/app-shell/page-container";
 
 // Privilege ladder (mirrors role.rank) for the caller's assign reach.
 const ROLE_RANK: Record<string, number> = { owner: 3, platform_admin: 2, coordinator: 1, support: 1 };
@@ -112,7 +113,7 @@ export default async function UsersPage() {
   const rows = [...userRows, ...inviteRows];
 
   return (
-    <div className="flex flex-col gap-6">
+    <PageContainer variant="full" className="flex flex-col gap-6">
       <div className="flex flex-col gap-3 sm:flex-row sm:items-start sm:justify-between">
         <div>
           <h1 className="text-2xl font-semibold">Platform users</h1>
@@ -144,6 +145,6 @@ export default async function UsersPage() {
           currentUserId={ctx.userId}
         />
       </div>
-    </div>
+    </PageContainer>
   );
 }

@@ -1,6 +1,7 @@
 import { redirect } from "next/navigation";
 import { getAuthContext, can } from "@/lib/auth";
 import { QuestionEditor } from "../question-editor";
+import { PageContainer } from "@/components/app-shell/page-container";
 
 export default async function NewQuestionPage({
   searchParams,
@@ -16,11 +17,11 @@ export default async function NewQuestionPage({
   const { subject } = await searchParams;
 
   return (
-    <div className="mx-auto max-w-5xl">
+    <PageContainer variant="form">
       <header className="mb-6">
         <h1 className="text-2xl font-bold tracking-tight">New question</h1>
       </header>
       <QuestionEditor mode="new" initialSubjectId={subject ?? ""} />
-    </div>
+    </PageContainer>
   );
 }

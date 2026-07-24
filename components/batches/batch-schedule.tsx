@@ -31,7 +31,9 @@ import {
   SelectValue,
 } from "@/components/ui/select";
 import { cachedGet, invalidate } from "@/lib/fetch-cache";
+import { formatDate, formatTime } from "@/lib/format-date";
 import type { CalendarSession } from "@/lib/calendar-query";
+import { ScheduleCalendar } from "@/components/calendar/schedule-calendar";
 
 const TZ = "Asia/Kolkata";
 const WEEKDAYS = [
@@ -40,10 +42,6 @@ const WEEKDAYS = [
 ];
 type Subject = { subjectId: string; name: string };
 
-const fmtDay = (iso: string) =>
-  new Intl.DateTimeFormat("en-IN", { timeZone: TZ, weekday: "short", day: "2-digit", month: "short" }).format(new Date(iso));
-const fmtTime = (iso: string) =>
-  new Intl.DateTimeFormat("en-IN", { timeZone: TZ, hour: "2-digit", minute: "2-digit", hour12: true }).format(new Date(iso));
 // ISO instant → DateTimePicker value "YYYY-MM-DDTHH:mm" in IST wall-clock.
 const toLocalInput = (iso: string) => {
   const p = new Intl.DateTimeFormat("en-CA", {
@@ -531,6 +529,16 @@ export function BatchSchedule({ batchId, embedded = false }: { batchId: string; 
         </Card>
       )}
 
+      {/* Calendar grid — the same shared calendar students see, rendered
+          read-only (controlled) from the sessions loaded above. The list below
+          keeps the per-class edit / cancel actions the grid doesn't offer. */}
+      {sessions.length > 0 && (
+        <div className="mb-6">
+          <h2 className="mb-3 text-base font-semibold tracking-tight">Class calendar</h2>
+          <ScheduleCalendar sessions={sessions} title={null} className="" />
+        </div>
+      )}
+
       {/* Upcoming */}
       <Card>
         <CardHeader className="flex-row flex-wrap items-center justify-between gap-3 space-y-0">
@@ -566,7 +574,7 @@ export function BatchSchedule({ batchId, embedded = false }: { batchId: string; 
                     {s.meetingStatus === "failed" && <Badge variant="destructive">No Zoom</Badge>}
                   </div>
                   <p className="text-muted-foreground text-sm tabular-nums">
-                    {fmtDay(s.startsAt)} · {fmtTime(s.startsAt)}–{fmtTime(s.endsAt)}
+                    {formatDate(s.startsAt)} · {formatTime(s.startsAt)}–{formatTime(s.endsAt)}
                     {s.mentors.length ? ` · ${s.mentors.join(", ")}` : ""}
                   </p>
                 </div>

@@ -1,8 +1,9 @@
 "use client";
 
 /**
- * Platform users grid: one row per member and per pending invite, with a toolbar
- * to search + filter (role, college, status) + sort. Columns: #, Full Name,
+ * Platform users grid: one row per member and per pending invite. Built on the
+ * shared DataTable — search (name / email / college), faceted filters (role,
+ * college, status), sortable headers and pagination. Columns: #, Full Name,
  * Email, Phone, Office Email, Role (badges + scoped college), Status, Actions.
  * Actions: Suspend/Reactivate, ✏️ Manage member, 🗑️ delete / revoke invite.
  * Guardrails are enforced in the server actions/RPCs.
@@ -10,16 +11,11 @@
 import { useMemo, useState } from "react";
 import { useRouter } from "next/navigation";
 import { Trash2 } from "lucide-react";
+import type { ColumnDef, FilterFn } from "@tanstack/react-table";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
-import { Input } from "@/components/ui/input";
-import {
-  Select,
-  SelectContent,
-  SelectItem,
-  SelectTrigger,
-  SelectValue,
-} from "@/components/ui/select";
+import { DataTable, arrIncludes, type DataTableFilter } from "@/components/data-table";
+import { SortHeader, StatusBadge, type StatusTone } from "@/components/data-table-parts";
 import { ManageMemberDialog } from "./manage-roles-dialog";
 import { setUserStatus, resendInvite, revokeInvite, deleteMember } from "./actions";
 import { enterImpersonation } from "@/app/impersonation/actions";
@@ -60,15 +56,32 @@ const ROLE_LABELS: Record<string, string> = {
   student: "Student",
 };
 
-const STATUS_STYLES: Record<string, string> = {
-  active: "bg-emerald-100 text-emerald-700 dark:bg-emerald-950 dark:text-emerald-300",
-  suspended: "bg-amber-100 text-amber-700 dark:bg-amber-950 dark:text-amber-300",
-  pending: "bg-blue-100 text-blue-700 dark:bg-blue-950 dark:text-blue-300",
+const STATUS_TONES: Record<string, StatusTone> = {
+  active: "emerald",
+  suspended: "amber",
+  pending: "blue",
 };
 
-const cell = "border-border border px-3 py-2 align-middle";
+// Multi-field text search (name / email / scoped colleges) bound to the search box.
+const searchFilter: FilterFn<MemberRow> = (row, _id, value) => {
+  const t = String(value ?? "").trim().toLowerCase();
+  if (!t) return true;
+  const r = row.original;
+  return (
+    (r.fullName ?? "").toLowerCase().includes(t) ||
+    r.email.toLowerCase().includes(t) ||
+    r.collegeNames.some((c) => c.toLowerCase().includes(t))
+  );
+};
 
-type Sort = "default" | "name" | "role";
+// Faceted filter over an array-valued cell (roleKeys / collegeNames): keep the row
+// when nothing is selected, else when any of its values is selected.
+const arrayOverlap: FilterFn<MemberRow> = (row, id, value) => {
+  const selected = value as string[] | undefined;
+  if (!selected || selected.length === 0) return true;
+  const values = (row.getValue(id) as string[]) ?? [];
+  return values.some((v) => selected.includes(v));
+};
 
 export function PlatformUsersTable({
   rows,
@@ -83,12 +96,6 @@ export function PlatformUsersTable({
   isOwner: boolean;
   currentUserId: string;
 }) {
-  const [query, setQuery] = useState("");
-  const [role, setRole] = useState("all");
-  const [college, setCollege] = useState("all");
-  const [statusFilter, setStatusFilter] = useState("all");
-  const [sort, setSort] = useState<Sort>("default");
-
   // Distinct role keys + colleges present, for the filter dropdowns.
   const roleKeys = useMemo(
     () => Array.from(new Set(rows.flatMap((r) => r.roleKeys))).sort(),
@@ -99,154 +106,146 @@ export function PlatformUsersTable({
     [rows],
   );
 
-  const filtered = useMemo(() => {
-    const t = query.trim().toLowerCase();
-    const list = rows.filter(
-      (r) =>
-        (!t ||
-          (r.fullName ?? "").toLowerCase().includes(t) ||
-          r.email.toLowerCase().includes(t) ||
-          r.collegeNames.some((c) => c.toLowerCase().includes(t))) &&
-        (role === "all" || r.roleKeys.includes(role)) &&
-        (college === "all" || r.collegeNames.includes(college)) &&
-        (statusFilter === "all" || r.status === statusFilter),
-    );
-    if (sort === "name")
-      return [...list].sort((a, b) =>
-        (a.fullName ?? a.email).localeCompare(b.fullName ?? b.email),
-      );
-    if (sort === "role")
-      return [...list].sort((a, b) => a.roleLabel.localeCompare(b.roleLabel));
-    return list; // default = incoming order (newest first)
-  }, [rows, query, role, college, statusFilter, sort]);
+  const columns = useMemo<ColumnDef<MemberRow>[]>(() => {
+    return [
+      {
+        id: "index",
+        header: "#",
+        enableSorting: false,
+        enableHiding: false,
+        cell: ({ row }) => <span className="text-muted-foreground tabular-nums">{row.index + 1}</span>,
+      },
+      {
+        accessorKey: "fullName",
+        meta: { label: "Full Name" },
+        header: ({ column }) => <SortHeader column={column}>Full Name</SortHeader>,
+        filterFn: searchFilter,
+        cell: ({ row }) => row.original.fullName || <span className="text-muted-foreground">—</span>,
+      },
+      {
+        accessorKey: "email",
+        meta: { label: "Email Id" },
+        header: "Email Id",
+        cell: ({ row }) => <span className="break-all">{row.original.email}</span>,
+      },
+      {
+        accessorKey: "phone",
+        meta: { label: "Phone No" },
+        header: "Phone No",
+        cell: ({ row }) => row.original.phone || <span className="text-muted-foreground">—</span>,
+      },
+      {
+        accessorKey: "officeEmail",
+        meta: { label: "Office Email" },
+        header: "Office Email",
+        cell: ({ row }) =>
+          row.original.officeEmail ? (
+            <span className="break-all">{row.original.officeEmail}</span>
+          ) : (
+            <span className="text-muted-foreground">—</span>
+          ),
+      },
+      {
+        id: "role",
+        accessorFn: (r) => r.roleKeys,
+        meta: { label: "Role" },
+        header: ({ column }) => <SortHeader column={column}>Role</SortHeader>,
+        filterFn: arrayOverlap,
+        // Sort by the human role label, not the raw key array.
+        sortingFn: (a, b) => a.original.roleLabel.localeCompare(b.original.roleLabel),
+        cell: ({ row }) => {
+          const r = row.original;
+          if (!r.roleKeys.length) return <span className="text-muted-foreground">—</span>;
+          return (
+            <div className="flex flex-wrap items-center gap-1">
+              {r.roleKeys.map((k) => (
+                <Badge key={k} variant="secondary">
+                  {ROLE_LABELS[k] ?? k}
+                </Badge>
+              ))}
+              {r.collegeNames.length > 0 && (
+                <span className="text-muted-foreground text-xs">· {r.collegeNames.join(", ")}</span>
+              )}
+            </div>
+          );
+        },
+      },
+      // Hidden column that backs the College faceted filter (colleges are shown
+      // inline in the Role cell, so there's no visible College column).
+      {
+        id: "college",
+        accessorFn: (r) => r.collegeNames,
+        enableHiding: false,
+        enableSorting: false,
+        filterFn: arrayOverlap,
+        header: () => null,
+        cell: () => null,
+      },
+      {
+        accessorKey: "status",
+        header: "Status",
+        filterFn: arrIncludes,
+        cell: ({ row }) => (
+          <StatusBadge tone={STATUS_TONES[row.original.status] ?? "slate"}>
+            {row.original.status === "pending" ? "Pending" : row.original.status}
+          </StatusBadge>
+        ),
+      },
+      {
+        id: "actions",
+        header: "Actions",
+        enableSorting: false,
+        enableHiding: false,
+        cell: ({ row }) => (
+          <RowActions
+            row={row.original}
+            caps={caps}
+            callerRank={callerRank}
+            isOwner={isOwner}
+            isSelf={row.original.id === currentUserId}
+          />
+        ),
+      },
+    ];
+  }, [caps, callerRank, isOwner, currentUserId]);
+
+  const filters = useMemo<DataTableFilter[]>(() => {
+    const list: DataTableFilter[] = [
+      {
+        columnId: "role",
+        title: "Role",
+        options: roleKeys.map((k) => ({ label: ROLE_LABELS[k] ?? k, value: k })),
+      },
+    ];
+    if (colleges.length > 0) {
+      list.push({
+        columnId: "college",
+        title: "College",
+        options: colleges.map((c) => ({ label: c, value: c })),
+      });
+    }
+    list.push({
+      columnId: "status",
+      title: "Status",
+      options: [
+        { label: "Active", value: "active" },
+        { label: "Suspended", value: "suspended" },
+        { label: "Pending", value: "pending" },
+      ],
+    });
+    return list;
+  }, [roleKeys, colleges]);
 
   return (
-    <div className="grid gap-3">
-      {/* Toolbar */}
-      <div className="flex flex-col gap-2 p-1 sm:flex-row sm:flex-wrap sm:items-center">
-        <Input
-          placeholder="Search name, email or college…"
-          value={query}
-          onChange={(e) => setQuery(e.target.value)}
-          className="sm:max-w-xs"
-        />
-        <Select value={role} onValueChange={setRole}>
-          <SelectTrigger className="sm:w-44">
-            <SelectValue placeholder="Role" />
-          </SelectTrigger>
-          <SelectContent>
-            <SelectItem value="all">All roles</SelectItem>
-            {roleKeys.map((k) => (
-              <SelectItem key={k} value={k}>
-                {ROLE_LABELS[k] ?? k}
-              </SelectItem>
-            ))}
-          </SelectContent>
-        </Select>
-        {colleges.length > 0 && (
-          <Select value={college} onValueChange={setCollege}>
-            <SelectTrigger className="sm:w-52">
-              <SelectValue placeholder="College" />
-            </SelectTrigger>
-            <SelectContent>
-              <SelectItem value="all">All colleges</SelectItem>
-              {colleges.map((c) => (
-                <SelectItem key={c} value={c}>
-                  {c}
-                </SelectItem>
-              ))}
-            </SelectContent>
-          </Select>
-        )}
-        <Select value={statusFilter} onValueChange={setStatusFilter}>
-          <SelectTrigger className="sm:w-36">
-            <SelectValue placeholder="Status" />
-          </SelectTrigger>
-          <SelectContent>
-            <SelectItem value="all">All statuses</SelectItem>
-            <SelectItem value="active">Active</SelectItem>
-            <SelectItem value="suspended">Suspended</SelectItem>
-            <SelectItem value="pending">Pending</SelectItem>
-          </SelectContent>
-        </Select>
-        <Select value={sort} onValueChange={(v) => setSort(v as Sort)}>
-          <SelectTrigger className="sm:w-40">
-            <SelectValue placeholder="Sort" />
-          </SelectTrigger>
-          <SelectContent>
-            <SelectItem value="default">Newest first</SelectItem>
-            <SelectItem value="name">Name (A–Z)</SelectItem>
-            <SelectItem value="role">Role</SelectItem>
-          </SelectContent>
-        </Select>
-        <span className="text-muted-foreground text-xs sm:ml-auto">
-          {filtered.length} of {rows.length}
-        </span>
-      </div>
-
-      <div className="overflow-x-auto">
-        <table className="w-full min-w-[900px] border-collapse text-sm">
-          <thead>
-            <tr className="bg-muted/60 text-left">
-              <th className={`${cell} w-12 font-semibold`}>#</th>
-              <th className={`${cell} font-semibold`}>Full Name</th>
-              <th className={`${cell} font-semibold`}>Email Id</th>
-              <th className={`${cell} font-semibold`}>Phone No</th>
-              <th className={`${cell} font-semibold`}>Office Email</th>
-              <th className={`${cell} font-semibold`}>Role</th>
-              <th className={`${cell} font-semibold`}>Status</th>
-              <th className={`${cell} font-semibold`}>Actions</th>
-            </tr>
-          </thead>
-          <tbody>
-            {filtered.length === 0 && (
-              <tr>
-                <td className={`${cell} text-muted-foreground text-center`} colSpan={8}>
-                  No users match.
-                </td>
-              </tr>
-            )}
-            {filtered.map((r, i) => (
-              <tr key={`${r.kind}-${r.id}`} className="hover:bg-muted/30">
-                <td className={`${cell} text-muted-foreground tabular-nums`}>{i + 1}</td>
-                <td className={cell}>{r.fullName || <span className="text-muted-foreground">—</span>}</td>
-                <td className={`${cell} break-all`}>{r.email}</td>
-                <td className={cell}>{r.phone || <span className="text-muted-foreground">—</span>}</td>
-                <td className={`${cell} break-all`}>
-                  {r.officeEmail || <span className="text-muted-foreground">—</span>}
-                </td>
-                <td className={cell}>
-                  {r.roleKeys.length ? (
-                    <div className="flex flex-wrap items-center gap-1">
-                      {r.roleKeys.map((k) => (
-                        <Badge key={k} variant="secondary">
-                          {ROLE_LABELS[k] ?? k}
-                        </Badge>
-                      ))}
-                      {r.collegeNames.length > 0 && (
-                        <span className="text-muted-foreground text-xs">
-                          · {r.collegeNames.join(", ")}
-                        </span>
-                      )}
-                    </div>
-                  ) : (
-                    <span className="text-muted-foreground">—</span>
-                  )}
-                </td>
-                <td className={cell}>
-                  <Badge variant="secondary" className={STATUS_STYLES[r.status] ?? ""}>
-                    {r.status === "pending" ? "Pending" : r.status}
-                  </Badge>
-                </td>
-                <td className={cell}>
-                  <RowActions row={r} caps={caps} callerRank={callerRank} isOwner={isOwner} isSelf={r.id === currentUserId} />
-                </td>
-              </tr>
-            ))}
-          </tbody>
-        </table>
-      </div>
-    </div>
+    <DataTable
+      columns={columns as ColumnDef<MemberRow, unknown>[]}
+      data={rows}
+      searchKey="fullName"
+      searchPlaceholder="Search name, email or college…"
+      filters={filters}
+      // The College filter is backed by a hidden column; keep it out of the grid.
+      initialColumnVisibility={{ college: false }}
+    />
   );
 }
 

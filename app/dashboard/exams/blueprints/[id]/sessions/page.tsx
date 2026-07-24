@@ -5,6 +5,7 @@ import { createClient } from "@/lib/supabase/server";
 import { fetchBlueprint, fetchSessions } from "@/lib/exam-query";
 import { Card, CardContent } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
+import { PageContainer } from "@/components/app-shell/page-container";
 
 // Sittings of a blueprint. The sitting and its paper are created AUTOMATICALLY
 // when the blueprint is published (see api/exam/blueprints/[id]/publish) — one
@@ -27,7 +28,7 @@ export default async function BlueprintSessionsPage({
   const sessions = await fetchSessions(supabase, id);
 
   return (
-    <div className="mx-auto max-w-4xl">
+    <PageContainer variant="full">
       <header className="mb-6">
         <h1 className="text-2xl font-bold tracking-tight">Sittings — {blueprint.title}</h1>
         <p className="text-muted-foreground mt-1 text-sm">
@@ -63,6 +64,6 @@ export default async function BlueprintSessionsPage({
           ))}
         </ul>
       )}
-    </div>
+    </PageContainer>
   );
 }

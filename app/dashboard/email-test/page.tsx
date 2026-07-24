@@ -5,6 +5,7 @@ import { mailerStatus } from "@/lib/mailer";
 import { Badge } from "@/components/ui/badge";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { TestEmailForm } from "./test-form";
+import { PageContainer } from "@/components/app-shell/page-container";
 
 export default async function EmailTestPage() {
   const ctx = await getAuthContext();
@@ -15,7 +16,7 @@ export default async function EmailTestPage() {
   const { configured, from } = mailerStatus();
 
   return (
-    <div className="flex max-w-2xl flex-col gap-6">
+    <PageContainer variant="form" className="flex flex-col gap-6">
       <div>
         <h1 className="text-2xl font-semibold tracking-tight">Email integration</h1>
         <p className="text-muted-foreground mt-1 text-sm">
@@ -52,6 +53,6 @@ export default async function EmailTestPage() {
           <TestEmailForm defaultTo={ctx.email} disabled={!configured} />
         </CardContent>
       </Card>
-    </div>
+    </PageContainer>
   );
 }

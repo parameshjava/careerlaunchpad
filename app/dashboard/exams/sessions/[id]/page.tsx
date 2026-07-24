@@ -5,6 +5,7 @@ import { createClient } from "@/lib/supabase/server";
 import { fetchPaperForPrint, fetchRoster, fetchSession } from "@/lib/exam-query";
 import { SessionDetailClient } from "./session-detail-client";
 import { PaperPrint } from "./paper-print";
+import { PageContainer } from "@/components/app-shell/page-container";
 
 export default async function SessionDetailPage({
   params,
@@ -29,7 +30,7 @@ export default async function SessionDetailPage({
   ]);
 
   return (
-    <div className="mx-auto max-w-7xl">
+    <PageContainer variant="full">
       <Link
         href={`/dashboard/exams/papers?tab=${
           session.status === "closed" || session.status === "graded" ? "closed" : "active"
@@ -44,13 +45,9 @@ export default async function SessionDetailPage({
           {session.examTitle} · {session.mode} · {session.questionCount} questions
         </p>
       </header>
-      <SessionDetailClient
-        session={session}
-        roster={roster}
-        canPrintPaper={canExportPdf && !!paper && paper.questions.length > 0}
-      />
-      {/* Print-only question paper / answer key on the letterhead; the Print
-          paper / Print key buttons in SessionDetailClient fire window.print(). */}
+      <SessionDetailClient session={session} roster={roster} />
+      {/* Question paper / answer key on the letterhead — a self-contained
+          A4 preview with its own Print paper / Print key toolbar. */}
       {canExportPdf && paper && paper.questions.length > 0 && (
         <PaperPrint
           title={session.examTitle ?? "Exam"}
@@ -61,6 +58,6 @@ export default async function SessionDetailPage({
           questions={paper.questions}
         />
       )}
-    </div>
+    </PageContainer>
   );
 }

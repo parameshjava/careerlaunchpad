@@ -3,6 +3,7 @@ import { getAuthContext, can, scopedCollege } from "@/lib/auth";
 import { createClient } from "@/lib/supabase/server";
 import { fetchCollegeSessions } from "@/lib/exam-query";
 import { ResultsBrowser } from "./results-browser";
+import { PageContainer } from "@/components/app-shell/page-container";
 
 // Exam results home: every finished sitting (closed or graded) the admin may
 // see, in one flat list. Each row links to the sitting's results sheet and the
@@ -20,7 +21,7 @@ export default async function ExamResultsPage() {
   const finished = sessions.filter((s) => s.status === "closed" || s.status === "graded");
 
   return (
-    <div className="mx-auto max-w-4xl">
+    <PageContainer variant="full">
       <header className="mb-6">
         <h1 className="text-2xl font-bold tracking-tight">Exam results</h1>
         <p className="text-muted-foreground mt-1 text-sm">
@@ -29,6 +30,6 @@ export default async function ExamResultsPage() {
         </p>
       </header>
       <ResultsBrowser sessions={finished} />
-    </div>
+    </PageContainer>
   );
 }

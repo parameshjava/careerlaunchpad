@@ -7,6 +7,7 @@
 import { redirect } from "next/navigation";
 import { getAuthContext, can } from "@/lib/auth";
 import { CollegesManager } from "@/components/colleges/CollegesManager";
+import { PageContainer } from "@/components/app-shell/page-container";
 
 export default async function CollegesPage() {
   const ctx = await getAuthContext();
@@ -14,7 +15,7 @@ export default async function CollegesPage() {
   if (!can(ctx, "college.manage")) redirect("/dashboard");
 
   return (
-    <div className="flex flex-col gap-6">
+    <PageContainer variant="full" className="flex flex-col gap-6">
       <div>
         <h1 className="text-2xl font-semibold">Colleges</h1>
         <p className="text-muted-foreground text-sm">
@@ -24,6 +25,6 @@ export default async function CollegesPage() {
         </p>
       </div>
       <CollegesManager />
-    </div>
+    </PageContainer>
   );
 }

@@ -7,10 +7,11 @@
 import { useCallback, useEffect, useMemo, useState } from "react";
 import { useRouter } from "next/navigation";
 import Link from "next/link";
-import { ArrowLeft, Copy, Loader2, Lock, Plus, RotateCcw, Save, Trash2, X } from "lucide-react";
+import { ArrowLeft, Copy, Loader2, Lock, Plus, RotateCcw, Save, Trash2 } from "lucide-react";
 
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
+import { CollegePicker, type College } from "@/components/colleges/college-picker";
 import { DatePicker } from "@/components/ui/date-picker";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
@@ -62,11 +63,8 @@ export function BatchEditor({ batchId, embedded = false }: { batchId?: string; e
   const [enrollmentStatus, setEnrollmentStatus] = useState<BatchEnrollmentStatus>("not_open");
   const [feeRows, setFeeRows] = useState<FeeRow[]>([]);
 
-  // Colleges: typeahead search (the college table has ~10k rows) + selected chips.
-  const [colleges, setColleges] = useState<{ id: string; name: string }[]>([]);
-  const [collegeQuery, setCollegeQuery] = useState("");
-  const [collegeResults, setCollegeResults] = useState<{ id: string; name: string }[]>([]);
-  const [searchingColleges, setSearchingColleges] = useState(false);
+  // Colleges: shared multi-select picker (searches the ~10k-row college table).
+  const [colleges, setColleges] = useState<College[]>([]);
 
   useEffect(() => {
     let cancelled = false;
@@ -123,31 +121,6 @@ export function BatchEditor({ batchId, embedded = false }: { batchId?: string; e
     // On first pick (new batch, no fee lines yet) copy the course's defaults.
     if (!editing && feeRows.length === 0) copyFeeFromCourse(coursesRef.find((c) => c.id === id));
   };
-
-  async function searchColleges(q: string) {
-    setCollegeQuery(q);
-    if (q.trim().length < 2) {
-      setCollegeResults([]);
-      return;
-    }
-    setSearchingColleges(true);
-    try {
-      const res = await fetch(`/api/colleges/search?q=${encodeURIComponent(q.trim())}`);
-      const json = await res.json();
-      const results = (json.results ?? []) as { id: string; name: string }[];
-      setCollegeResults(results.map((r) => ({ id: r.id, name: r.name })));
-    } catch {
-      setCollegeResults([]);
-    } finally {
-      setSearchingColleges(false);
-    }
-  }
-  const addCollege = (c: { id: string; name: string }) => {
-    setColleges((prev) => (prev.some((x) => x.id === c.id) ? prev : [...prev, c]));
-    setCollegeQuery("");
-    setCollegeResults([]);
-  };
-  const removeCollege = (id: string) => setColleges((prev) => prev.filter((x) => x.id !== id));
 
   const addFee = () => setFeeRows((p) => [...p, { label: "", amount: "" }]);
   const removeFee = (i: number) => setFeeRows((p) => p.filter((_, idx) => idx !== i));
@@ -401,57 +374,15 @@ export function BatchEditor({ batchId, embedded = false }: { batchId?: string; e
             <CardTitle className="text-base">Associated colleges</CardTitle>
           </CardHeader>
           <CardContent className="grid gap-3">
-            <div className="relative">
-              <Input
-                value={collegeQuery}
-                onChange={(e) => searchColleges(e.target.value)}
-                placeholder="Search colleges by name (type 2+ letters)…"
-              />
-              {(collegeResults.length > 0 || (collegeQuery.trim().length >= 2 && !searchingColleges)) && (
-                <div className="bg-popover absolute z-10 mt-1 max-h-56 w-full overflow-y-auto rounded-lg border shadow-md">
-                  {collegeResults.length === 0 ? (
-                    <p className="text-muted-foreground p-3 text-sm">No matches.</p>
-                  ) : (
-                    <ul className="divide-y">
-                      {collegeResults.map((c) => (
-                        <li key={c.id}>
-                          <button
-                            type="button"
-                            onClick={() => addCollege(c)}
-                            className="hover:bg-muted w-full px-3 py-2 text-left text-sm"
-                          >
-                            {c.name}
-                          </button>
-                        </li>
-                      ))}
-                    </ul>
-                  )}
-                </div>
-              )}
-            </div>
-            {searchingColleges && <p className="text-muted-foreground text-xs">Searching…</p>}
-
-            {colleges.length === 0 ? (
+            <CollegePicker
+              multiple
+              label={null}
+              values={colleges}
+              onChange={setColleges}
+              placeholder="Search colleges by name (type 2+ letters)…"
+            />
+            {colleges.length === 0 && (
               <p className="text-muted-foreground text-sm">No colleges associated yet.</p>
-            ) : (
-              <div className="flex flex-wrap gap-2">
-                {colleges.map((c) => (
-                  <span
-                    key={c.id}
-                    className="bg-muted inline-flex items-center gap-1.5 rounded-full py-1 pl-3 pr-1.5 text-sm"
-                  >
-                    {c.name}
-                    <button
-                      type="button"
-                      onClick={() => removeCollege(c.id)}
-                      aria-label={`Remove ${c.name}`}
-                      className="text-muted-foreground hover:text-destructive rounded-full"
-                    >
-                      <X className="size-3.5" />
-                    </button>
-                  </span>
-                ))}
-              </div>
             )}
           </CardContent>
         </Card>

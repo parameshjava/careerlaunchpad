@@ -29,11 +29,12 @@ import {
   SelectTrigger,
   SelectValue,
 } from "@/components/ui/select";
-import { CollegePicker, type College } from "@/components/analytics/CollegePicker";
+import { CollegePicker, type College } from "@/components/colleges/college-picker";
 import { DateTimePicker } from "@/components/ui/date-time-picker";
 import { Stepper } from "@/components/students/registration-fields";
 import { RichContent } from "@/components/exam/RichContent";
 import { createClient } from "@/lib/supabase/client";
+import { formatDateTime } from "@/lib/format-date";
 import {
   DIFFICULTIES,
   DIFFICULTY_LABELS,
@@ -428,10 +429,9 @@ export function BlueprintEditor({
                 : "Choose the college this exam blueprint belongs to."}
             </p>
             <CollegePicker
-              selected={college}
+              value={college}
               disabled={collegeLocked}
-              onSelect={setCollege}
-              onClear={() => setCollege(null)}
+              onChange={setCollege}
             />
           </div>
         )}
@@ -876,10 +876,7 @@ export function BlueprintEditor({
                     <Label>End time</Label>
                     <div className="border-input bg-muted/40 text-muted-foreground flex h-9 items-center rounded-md border px-3 text-sm">
                       {startAt
-                        ? new Date(new Date(startAt).getTime() + duration * 60000).toLocaleString(
-                            undefined,
-                            { dateStyle: "medium", timeStyle: "short" },
-                          )
+                        ? formatDateTime(new Date(new Date(startAt).getTime() + duration * 60000))
                         : "— set a start time"}
                     </div>
                   </div>

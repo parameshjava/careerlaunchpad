@@ -29,6 +29,7 @@ import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { Badge } from "@/components/ui/badge";
+import { StatusBadge } from "@/components/data-table-parts";
 import {
   Dialog,
   DialogContent,
@@ -613,9 +614,9 @@ export function CollegesManager() {
                       : "—"}
                   </TableCell>
                   <TableCell>
-                    <Badge variant={c.status === "active" ? "secondary" : "outline"}>
+                    <StatusBadge tone={c.status === "active" ? "emerald" : "slate"}>
                       {c.status === "active" ? "Active" : "Archived"}
-                    </Badge>
+                    </StatusBadge>
                   </TableCell>
                   <TableCell className="text-right whitespace-nowrap">
                     <div className="flex items-center justify-end gap-0.5">

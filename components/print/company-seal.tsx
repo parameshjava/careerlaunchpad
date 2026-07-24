@@ -6,7 +6,9 @@
 // across the top and the region across the bottom (centred in the band), a star
 // on each side, and the payment date in the centre. Single royal-blue ink.
 
-const BLUE = "#1d4ed8";
+import { PRINT_INK } from "@/lib/print-brand";
+
+const BLUE = PRINT_INK.sealBlue;
 
 // Circle radii (viewBox 0 0 200 200, centre 100,100). The text baseline sits on
 // the mid-line of the band between the two circles; with dominant-baseline:central

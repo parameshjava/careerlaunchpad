@@ -7,7 +7,7 @@ import { createEmployer } from "../employers/actions";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
-import { CollegePicker, type College } from "@/components/analytics/CollegePicker";
+import { CollegePicker, type College } from "@/components/colleges/college-picker";
 
 type Employer = { id: string; name: string };
 
@@ -101,7 +101,7 @@ export function InviteForm({ employers, canInviteOwner = false }: { employers: E
           {/* Hidden field carries the id to the server action; the picker shows
               the full college details once one is chosen. */}
           <input type="hidden" name="college_id" value={college?.id ?? ""} required />
-          <CollegePicker selected={college} onSelect={setCollege} onClear={() => setCollege(null)} />
+          <CollegePicker value={college} onChange={setCollege} />
         </div>
       )}
 

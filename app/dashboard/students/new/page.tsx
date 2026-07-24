@@ -1,6 +1,7 @@
 import { redirect } from "next/navigation";
 import { getAuthContext, can } from "@/lib/auth";
 import { AddStudentWizard } from "@/components/students/add-student-wizard";
+import { PageContainer } from "@/components/app-shell/page-container";
 
 // Add a single student (same profile wizard as self-registration), staged +
 // invited via the intake flow. Owner / Support / College Admin.
@@ -11,7 +12,7 @@ export default async function AddStudentPage() {
   if (!can(ctx, "student.intake.import")) redirect("/dashboard");
 
   return (
-    <div className="mx-auto max-w-3xl">
+    <PageContainer variant="form">
       <header className="mb-6">
         <h1 className="text-2xl font-bold tracking-tight">Add a student</h1>
         <p className="text-muted-foreground mt-1 text-sm">
@@ -21,6 +22,6 @@ export default async function AddStudentPage() {
         </p>
       </header>
       <AddStudentWizard />
-    </div>
+    </PageContainer>
   );
 }

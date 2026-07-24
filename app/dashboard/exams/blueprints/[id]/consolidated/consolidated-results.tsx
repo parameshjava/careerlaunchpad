@@ -2,10 +2,13 @@
 
 // Consolidated "Statement of Results" for one exam across all its batches: a
 // college letterhead, a ranked table (all candidates from every sitting), a
-// summary, and a signature footer. Print-optimized; save as PDF from the browser.
+// summary, and a signature footer. Rendered as a visible A4 preview and printed
+// via usePrint(); save as PDF from the browser.
 import { Printer } from "lucide-react";
 import { Button } from "@/components/ui/button";
-import { LetterheadFrame } from "@/components/print/letterhead";
+import { PrintDocument } from "@/components/print/print-document";
+import { PrintToolbar, SignatureLine, ComputerGeneratedNote } from "@/components/print/blocks";
+import { usePrint } from "@/lib/use-print";
 import type { SubjectColumn } from "@/lib/exam-query";
 
 type Row = {
@@ -36,6 +39,8 @@ export function ConsolidatedResults({
   rows: Row[];
   printedOn: string;
 }) {
+  const { printRef, print } = usePrint();
+
   const appeared = rows
     .filter((r) => r.score != null)
     .sort((a, b) => (b.score as number) - (a.score as number));
@@ -62,28 +67,21 @@ export function ConsolidatedResults({
 
   return (
     <>
-      <style>{`
-        @media print {
-          body * { visibility: hidden !important; }
-          #consolidated-print, #consolidated-print * { visibility: visible !important; }
-          #consolidated-print { position: absolute; left: 0; top: 0; width: 100%; max-width: none; padding: 0; }
-          .no-print { display: none !important; }
-        }
-        #consolidated-print table { border-collapse: collapse; width: 100%; }
-        #consolidated-print th, #consolidated-print td { border: 1px solid #111; padding: 5px 8px; font-size: 12.5px; }
-        #consolidated-print th { background: #f0f0f0; text-align: left; -webkit-print-color-adjust: exact; print-color-adjust: exact; }
-        #consolidated-print td.num, #consolidated-print th.num { text-align: center; }
-      `}</style>
-
-      <div className="no-print mx-auto mb-4 flex max-w-4xl items-center justify-between px-4">
+      <PrintToolbar>
         <p className="text-muted-foreground text-sm">Use your browser&apos;s print dialog to save as PDF.</p>
-        <Button onClick={() => window.print()}>
+        <Button onClick={() => print()}>
           <Printer /> Print
         </Button>
-      </div>
+      </PrintToolbar>
 
-      <div id="consolidated-print" className="mx-auto max-w-4xl px-4 text-black">
-        <LetterheadFrame docLabel="Consolidated Statement of Results">
+      <PrintDocument ref={printRef} docLabel="Consolidated Statement of Results">
+        <style>{`
+          .results-table { border-collapse: collapse; width: 100%; }
+          .results-table th, .results-table td { border: 1px solid #111; padding: 5px 8px; font-size: 12.5px; }
+          .results-table th { background: #f0f0f0; text-align: left; -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+          .results-table td.num, .results-table th.num { text-align: center; }
+        `}</style>
+
         {/* Document cover — content only; the brand frame is the letterhead */}
         <div className="text-center">
           {collegeName && <div className="text-xl font-bold uppercase tracking-wide">{collegeName}</div>}
@@ -104,7 +102,8 @@ export function ConsolidatedResults({
           {hasMax && <div><span className="font-semibold">Passed (≥{PASS_PCT}%):</span> {passed} / {appeared.length}</div>}
         </div>
 
-        <table className="mt-4">
+        <div className="overflow-x-auto">
+        <table className="results-table mt-4">
           <thead>
             <tr>
               <th className="num" style={{ width: "7%" }}>Rank</th>
@@ -170,21 +169,19 @@ export function ConsolidatedResults({
             )}
           </tbody>
         </table>
+        </div>
 
         <p className="mt-2 text-xs text-black/70">AB = Absent / not attempted. Ranking is across all batches by marks obtained.</p>
 
         <div className="mt-12 flex items-end justify-between text-sm">
           <div>Date of issue: {printedOn}</div>
-          <div className="text-center">
-            <div className="mt-8 border-t border-black px-6 pt-1">Controller of Examinations</div>
-          </div>
+          <SignatureLine label="Controller of Examinations" />
         </div>
 
-        <p className="mt-6 border-t border-gray-300 pt-2 text-center text-[10px] text-gray-600">
+        <ComputerGeneratedNote className="mt-6 border-t border-gray-300 pt-2 text-center">
           This is a computer-generated consolidated statement of results.
-        </p>
-        </LetterheadFrame>
-      </div>
+        </ComputerGeneratedNote>
+      </PrintDocument>
     </>
   );
 }

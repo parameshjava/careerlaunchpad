@@ -13,6 +13,7 @@ import { ArrowLeft, Check, Loader2, Search, UserPlus, X } from "lucide-react";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import { Checkbox } from "@/components/ui/checkbox";
+import { CollegePicker, type College } from "@/components/colleges/college-picker";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import {
@@ -64,9 +65,7 @@ export function EnrolStudents({
   // search + filters
   const [q, setQ] = useState("");
   const [year, setYear] = useState("");
-  const [college, setCollege] = useState<{ id: string; name: string } | null>(null);
-  const [collegeQuery, setCollegeQuery] = useState("");
-  const [collegeResults, setCollegeResults] = useState<{ id: string; name: string }[]>([]);
+  const [college, setCollege] = useState<College | null>(null);
   const [results, setResults] = useState<EnrollableStudent[]>([]);
   const [searching, setSearching] = useState(false);
 
@@ -96,19 +95,6 @@ export function EnrolStudents({
     }, 250);
     return () => clearTimeout(t);
   }, [q, college, year]);
-
-  // college filter typeahead
-  async function searchColleges(v: string) {
-    setCollegeQuery(v);
-    if (v.trim().length < 2) return setCollegeResults([]);
-    try {
-      const res = await fetch(`/api/colleges/search?q=${encodeURIComponent(v.trim())}`);
-      const json = await res.json();
-      setCollegeResults(((json.results ?? []) as { id: string; name: string }[]).map((r) => ({ id: r.id, name: r.name })));
-    } catch {
-      setCollegeResults([]);
-    }
-  }
 
   const inBasket = (id: string) => basket.some((b) => b.student.userId === id);
   const toggleStudent = (s: EnrollableStudent) =>
@@ -232,47 +218,7 @@ export function EnrolStudents({
             <Input value={q} onChange={(e) => setQ(e.target.value)} placeholder="Name, roll no. or registration no.…" className="pl-8" />
           </div>
           <div className="grid gap-3 sm:grid-cols-2">
-            <div className="relative">
-              <Input
-                value={college ? college.name : collegeQuery}
-                onChange={(e) => {
-                  if (college) setCollege(null);
-                  searchColleges(e.target.value);
-                }}
-                placeholder="Filter by college…"
-              />
-              {!college && collegeResults.length > 0 && (
-                <div className="bg-popover absolute z-10 mt-1 max-h-52 w-full overflow-y-auto rounded-lg border shadow-md">
-                  <ul className="divide-y">
-                    {collegeResults.map((c) => (
-                      <li key={c.id}>
-                        <button
-                          type="button"
-                          onClick={() => {
-                            setCollege(c);
-                            setCollegeQuery("");
-                            setCollegeResults([]);
-                          }}
-                          className="hover:bg-muted w-full px-3 py-2 text-left text-sm"
-                        >
-                          {c.name}
-                        </button>
-                      </li>
-                    ))}
-                  </ul>
-                </div>
-              )}
-              {college && (
-                <button
-                  type="button"
-                  onClick={() => setCollege(null)}
-                  className="text-muted-foreground hover:text-destructive absolute right-2 top-2.5"
-                  aria-label="Clear college filter"
-                >
-                  <X className="size-4" />
-                </button>
-              )}
-            </div>
+            <CollegePicker variant="filter" label={null} value={college} onChange={setCollege} placeholder="Filter by college…" />
             <Input value={year} onChange={(e) => setYear(e.target.value)} placeholder="Year (e.g. 4th)" />
           </div>
 

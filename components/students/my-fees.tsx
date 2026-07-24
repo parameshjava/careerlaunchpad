@@ -16,17 +16,12 @@ import {
   TableRow,
 } from "@/components/ui/table";
 import { CONCESSION_LABEL, formatINR, MODE_LABELS } from "@/lib/fee-receipt";
+import { formatDate as fmtDate } from "@/lib/format-date";
 import type { MyFeeEnrollment } from "@/lib/enrollment-query";
 
 // Brand gradient tint (matches the registration SectionCard); reserved for accents.
 const BAND = "bg-gradient-to-r from-[#2563eb]/[0.06] to-[#7c3aed]/[0.06]";
 const BAR = "bg-gradient-to-r from-[#2563eb] to-[#7c3aed]";
-
-const DATE = new Intl.DateTimeFormat("en-IN", { day: "2-digit", month: "short", year: "numeric", timeZone: "UTC" });
-const fmtDate = (iso: string) => {
-  const d = new Date(iso);
-  return Number.isNaN(d.getTime()) ? iso : DATE.format(d);
-};
 
 const INSTALLMENT_BADGE: Record<MyFeeEnrollment["installments"][number]["status"], "default" | "secondary" | "destructive"> = {
   paid: "default",

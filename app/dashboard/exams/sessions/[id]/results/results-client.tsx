@@ -4,7 +4,6 @@
 // scores, and the publish toggle (gates whether students can see their result).
 import { useState } from "react";
 import { useRouter } from "next/navigation";
-import { Printer } from "lucide-react";
 import { Bar, BarChart, CartesianGrid, ResponsiveContainer, Tooltip, XAxis, YAxis } from "recharts";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
@@ -61,13 +60,6 @@ export function ResultsClient({
   return (
     <div className="grid gap-6">
       {error && <p className="text-destructive text-sm">{error}</p>}
-
-      <div className="flex justify-end">
-        {/* Prints the letterhead statement embedded in this page (ResultsPrint). */}
-        <Button onClick={() => window.print()}>
-          <Printer /> Print
-        </Button>
-      </div>
 
       <div className="grid grid-cols-2 gap-3 lg:grid-cols-4">
         <Stat label="Assigned" value={String(roster.length)} />

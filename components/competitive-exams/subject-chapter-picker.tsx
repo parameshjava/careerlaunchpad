@@ -1,12 +1,15 @@
 "use client";
 
 // Reusable syllabus picker: choose subjects and, per subject, which chapters are
-// in scope. Renders the registration-style SectionCard accordion (tinted header
-// band + circular chevron). Controlled via value/onChange so any editor can use
-// it — today the competitive-exam editor authors an exam's syllabus with it.
-import { useState } from "react";
-import { ChevronDown } from "lucide-react";
-
+// in scope. Built on the shared Accordion (tinted header band + the standard
+// circled chevron affordance). Controlled via value/onChange so any editor can
+// use it — today the competitive-exam editor authors an exam's syllabus with it.
+import {
+  Accordion,
+  AccordionContent,
+  AccordionItem,
+  AccordionTrigger,
+} from "@/components/ui/accordion";
 import { Button } from "@/components/ui/button";
 import { Checkbox } from "@/components/ui/checkbox";
 import type { SubjectWithChapters } from "@/lib/course-query";
@@ -22,10 +25,6 @@ export function SubjectChapterPicker({
   value: SubjectSelection[];
   onChange: (next: SubjectSelection[]) => void;
 }) {
-  const [open, setOpen] = useState<string[]>([]);
-  const toggleOpen = (id: string) =>
-    setOpen((prev) => (prev.includes(id) ? prev.filter((x) => x !== id) : [...prev, id]));
-
   const entryOf = (id: string) => value.find((s) => s.subjectId === id);
   const allChapterIdsOf = (id: string) =>
     subjectsRef.find((s) => s.id === id)?.chapters.map((c) => c.id) ?? [];
@@ -80,78 +79,68 @@ export function SubjectChapterPicker({
         </Button>
       </div>
 
-      <div className="grid gap-2">
+      <Accordion type="multiple" className="grid gap-2">
         {subjectsRef.map((subj) => {
           const entry = entryOf(subj.id);
           const selected = Boolean(entry);
           const total = subj.chapters.length;
           const selCount = entry?.chapterIds.length ?? 0;
           const allSelected = total > 0 && selCount === total;
-          const isOpen = open.includes(subj.id);
           return (
-            <div key={subj.id} className="overflow-hidden rounded-xl border">
-              <div
-                className={`flex items-center gap-3 bg-gradient-to-r from-[#2563eb]/5 to-[#7c3aed]/5 px-3.5 py-2.5 ${isOpen ? "border-b" : ""}`}
-              >
+            <AccordionItem
+              key={subj.id}
+              value={subj.id}
+              className="overflow-hidden rounded-xl border"
+            >
+              {/* Checkbox lives beside the trigger (not inside it) so ticking a
+                  subject never toggles the section open/closed. */}
+              <div className="bg-primary/5 flex items-center gap-3 px-3.5">
                 <Checkbox
                   checked={selected}
                   onCheckedChange={() => toggleSubject(subj.id)}
                   aria-label={`Include ${subj.name}`}
                 />
-                <button
-                  type="button"
-                  onClick={() => toggleOpen(subj.id)}
-                  aria-expanded={isOpen}
-                  className="flex flex-1 items-center justify-between gap-2 text-left"
-                >
+                <AccordionTrigger className="flex-1">
                   <span className="flex items-baseline gap-2">
                     <span className="text-sm font-bold">{subj.name}</span>
                     <span className="text-muted-foreground text-xs font-normal">
                       {selected ? `${selCount} / ${total} chapters` : `${total} chapters`}
                     </span>
                   </span>
-                  <span className="border-[#7c3aed]/30 bg-background flex size-7 shrink-0 items-center justify-center rounded-full border shadow-sm">
-                    <ChevronDown
-                      className={`size-4 text-[#7c3aed] transition-transform duration-300 ${isOpen ? "rotate-180" : ""}`}
-                      aria-hidden
-                    />
-                  </span>
-                </button>
+                </AccordionTrigger>
               </div>
-              {isOpen && (
-                <div className="px-3.5 py-3">
-                  {total === 0 ? (
-                    <p className="text-muted-foreground text-xs">No chapters under this subject.</p>
-                  ) : (
-                    <div className="grid gap-3">
-                      <button
-                        type="button"
-                        onClick={() =>
-                          setChaptersFor(subj.id, allSelected ? [] : subj.chapters.map((c) => c.id))
-                        }
-                        className="text-primary w-fit text-xs font-medium hover:underline"
-                      >
-                        {allSelected ? "Clear all chapters" : "Select all chapters"}
-                      </button>
-                      <div className="grid gap-1.5 sm:grid-cols-2">
-                        {subj.chapters.map((ch) => (
-                          <label key={ch.id} className="flex cursor-pointer items-center gap-2 text-sm">
-                            <Checkbox
-                              checked={entry?.chapterIds.includes(ch.id) ?? false}
-                              onCheckedChange={() => toggleChapter(subj.id, ch.id)}
-                            />
-                            {ch.name}
-                          </label>
-                        ))}
-                      </div>
+              <AccordionContent className="border-t px-3.5 pt-3 pb-3">
+                {total === 0 ? (
+                  <p className="text-muted-foreground text-xs">No chapters under this subject.</p>
+                ) : (
+                  <div className="grid gap-3">
+                    <button
+                      type="button"
+                      onClick={() =>
+                        setChaptersFor(subj.id, allSelected ? [] : subj.chapters.map((c) => c.id))
+                      }
+                      className="text-primary w-fit text-xs font-medium hover:underline"
+                    >
+                      {allSelected ? "Clear all chapters" : "Select all chapters"}
+                    </button>
+                    <div className="grid gap-1.5 sm:grid-cols-2">
+                      {subj.chapters.map((ch) => (
+                        <label key={ch.id} className="flex cursor-pointer items-center gap-2 text-sm">
+                          <Checkbox
+                            checked={entry?.chapterIds.includes(ch.id) ?? false}
+                            onCheckedChange={() => toggleChapter(subj.id, ch.id)}
+                          />
+                          {ch.name}
+                        </label>
+                      ))}
                     </div>
-                  )}
-                </div>
-              )}
-            </div>
+                  </div>
+                )}
+              </AccordionContent>
+            </AccordionItem>
           );
         })}
-      </div>
+      </Accordion>
     </div>
   );
 }

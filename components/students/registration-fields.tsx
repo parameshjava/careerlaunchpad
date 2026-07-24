@@ -7,16 +7,17 @@
  * identical. Owns the form shape, the per-step field bodies, the building-block
  * inputs, and the stepper. Flow (how it's saved/submitted) lives in each caller.
  */
-import { useEffect, useRef, useState } from "react";
+import { useState } from "react";
 import { Check, Plus } from "lucide-react";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { InfoTooltip } from "@/components/ui/tooltip";
+import { CollegePicker, type College } from "@/components/colleges/college-picker";
 import { TellUsStep } from "./tell-us-step";
 
 export type Ref = { id: string; slug: string; label: string; category: string | null };
 export type RefData = Record<string, Ref[]>;
-export type College = { id: string; name: string; place: string | null; state?: string | null };
+export type { College };
 
 export type Form = {
   full_name: string; phone: string; gender: string;
@@ -136,7 +137,7 @@ export function StepBody({
   if (step === 2) return (
     <Step title="Academic Details" hint="Your college and current course.">
       <div className="sm:col-span-2">
-        <CollegePicker college={college} onPick={(c) => { onPickCollege(c); set("college_id", c?.id ?? ""); }} />
+        <CollegePicker value={college} onChange={(c) => { onPickCollege(c); set("college_id", c?.id ?? ""); }} required />
       </div>
       <Field label="Roll Number" required><Input value={f.roll_number} onChange={(e) => set("roll_number", e.target.value)} placeholder="e.g. 21B81A0512" /></Field>
       <Field
@@ -482,46 +483,6 @@ function PreferencePicker({ refs, selected, onChange }: {
             ))}
           </div>
         </div>
-      )}
-    </div>
-  );
-}
-
-function CollegePicker({ college, onPick }: { college: College | null; onPick: (c: College | null) => void }) {
-  const [query, setQuery] = useState("");
-  const [results, setResults] = useState<College[]>([]);
-  const [open, setOpen] = useState(false);
-  const debounce = useRef<ReturnType<typeof setTimeout> | null>(null);
-
-  useEffect(() => {
-    if (college || query.trim().length < 2) { setResults([]); return; }
-    if (debounce.current) clearTimeout(debounce.current);
-    debounce.current = setTimeout(async () => {
-      const res = await fetch(`/api/colleges/search?q=${encodeURIComponent(query)}`);
-      if (res.ok) { setResults((await res.json()).results); setOpen(true); }
-    }, 250);
-  }, [query, college]);
-
-  return (
-    <div className="relative grid gap-1.5">
-      <Label>College <span className="text-primary">*</span></Label>
-      <Input
-        autoComplete="off"
-        placeholder="Search your college…"
-        value={college ? `${college.name}${college.place ? ` — ${college.place}` : ""}` : query}
-        onChange={(e) => { onPick(null); setQuery(e.target.value); }}
-        onFocus={() => results.length && setOpen(true)}
-      />
-      {open && !college && results.length > 0 && (
-        <ul className="border-input bg-background absolute top-full z-10 mt-1 max-h-56 w-full overflow-auto rounded-md border text-sm shadow-md">
-          {results.map((c) => (
-            <li key={c.id}>
-              <button type="button" className="hover:bg-muted w-full px-3 py-2 text-left" onClick={() => { onPick(c); setOpen(false); }}>
-                {c.name}{c.place ? <span className="text-muted-foreground"> — {c.place}{c.state ? `, ${c.state}` : ""}</span> : null}
-              </button>
-            </li>
-          ))}
-        </ul>
       )}
     </div>
   );

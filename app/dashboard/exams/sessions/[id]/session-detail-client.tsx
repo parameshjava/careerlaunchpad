@@ -1,14 +1,12 @@
 "use client";
 
-// Conduct a sitting: open/close it, assign students, print the offline question
-// paper / answer key directly (separate sheets — the print-only PaperPrint block
-// is embedded by the page), and view the roster + scores. Results printing lives
-// on the Results page.
+// Conduct a sitting: open/close it, assign students, and view the roster +
+// scores. The offline question paper / answer key is a self-contained
+// PaperPrint block embedded by the page (with its own Print toolbar). Results
+// printing lives on the Results page.
 import { useState, useEffect } from "react";
 import Link from "next/link";
 import { useRouter } from "next/navigation";
-import { Printer } from "lucide-react";
-import { printAs } from "./paper-print";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
@@ -18,11 +16,9 @@ import type { RosterEntry, SessionSummary } from "@/lib/exam-query";
 export function SessionDetailClient({
   session,
   roster,
-  canPrintPaper,
 }: {
   session: SessionSummary;
   roster: RosterEntry[];
-  canPrintPaper: boolean;
 }) {
   const router = useRouter();
   const [busy, setBusy] = useState("");
@@ -97,16 +93,6 @@ export function SessionDetailClient({
               <Button size="sm" variant="secondary" disabled={!!busy} onClick={() => action("close", `/api/exam/sessions/${session.id}/close`, { status: "closed" })}>
                 Close now
               </Button>
-            )}
-            {canPrintPaper && (
-              <>
-                <Button size="sm" onClick={() => printAs("paper")}>
-                  <Printer /> Print paper
-                </Button>
-                <Button size="sm" onClick={() => printAs("key")}>
-                  <Printer /> Print key
-                </Button>
-              </>
             )}
             {/* A scheduled sitting has no results yet. */}
             {session.status === "scheduled" ? (

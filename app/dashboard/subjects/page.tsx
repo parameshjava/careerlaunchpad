@@ -1,6 +1,7 @@
 import { redirect } from "next/navigation";
 import { getAuthContext, can } from "@/lib/auth";
 import { TaxonomyClient } from "./taxonomy-client";
+import { PageContainer } from "@/components/app-shell/page-container";
 
 // Subjects & Chapters — the GLOBAL question-bank taxonomy (subjects, chapters,
 // passages). Curating it needs exam.subject.manage. Question authoring lives on
@@ -12,7 +13,7 @@ export default async function SubjectsChaptersPage() {
   if (!(ctx.permissions.has("*") || can(ctx, "exam.subject.manage"))) redirect("/dashboard");
 
   return (
-    <div className="mx-auto max-w-5xl">
+    <PageContainer variant="full">
       <header className="mb-6">
         <h1 className="text-2xl font-bold tracking-tight">Subjects &amp; Chapters</h1>
         <p className="text-muted-foreground mt-1 text-sm">
@@ -21,6 +22,6 @@ export default async function SubjectsChaptersPage() {
         </p>
       </header>
       <TaxonomyClient />
-    </div>
+    </PageContainer>
   );
 }

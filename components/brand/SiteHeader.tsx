@@ -33,8 +33,11 @@ export function SiteHeader({
   return (
     <header className="bg-background sticky top-0 z-50 border-b shadow-[0_1px_3px_rgba(0,0,0,0.04)]">
       {/* Dimensions mirror the marketing .navbar/.brand rules in app/landing.css so
-          the bar looks identical on the marketing and app surfaces. */}
-      <div className="flex items-center gap-3 px-[clamp(16px,4vw,28px)] py-2">
+          the bar looks identical on the marketing and app surfaces. The fluid
+          gutter stays on the outer element; an inner max-w cap keeps the header
+          content aligned with page content on wide (go-wide) screens. */}
+      <div className="px-[clamp(16px,4vw,28px)] py-2">
+        <div className="mx-auto flex w-full max-w-screen-2xl items-center gap-3">
         {/* /home resolves per-user: signed-in → their dashboard, else → marketing home. */}
         <Link href="/home" className="flex min-w-0 items-center gap-3 max-[420px]:gap-2">
           <Image
@@ -80,6 +83,7 @@ export function SiteHeader({
             right
           )}
         </div>
+      </div>
       </div>
     </header>
   );

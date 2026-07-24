@@ -3,6 +3,7 @@ import { redirect } from "next/navigation";
 import { getAuthContext, can } from "@/lib/auth";
 import { Button } from "@/components/ui/button";
 import { QuestionsClient } from "./questions-client";
+import { PageContainer } from "@/components/app-shell/page-container";
 
 // Questions — browse & author the GLOBAL question bank (migration 021). Shared
 // across all colleges. Subjects/chapters/passages are curated on the separate
@@ -14,7 +15,7 @@ export default async function QuestionsPage() {
   if (!(ctx.permissions.has("*") || can(ctx, "exam.question.manage"))) redirect("/dashboard");
 
   return (
-    <div className="mx-auto max-w-5xl">
+    <PageContainer variant="full">
       <header className="mb-6 flex flex-col gap-3 sm:flex-row sm:items-start sm:justify-between">
         <div>
           <h1 className="text-2xl font-bold tracking-tight">Questions</h1>
@@ -30,6 +31,6 @@ export default async function QuestionsPage() {
         </Button>
       </header>
       <QuestionsClient />
-    </div>
+    </PageContainer>
   );
 }

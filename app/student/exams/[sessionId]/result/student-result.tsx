@@ -5,12 +5,19 @@
 // the correct answer revealed and the student's choice marked.
 import { useEffect, useState } from "react";
 import Link from "next/link";
-import { ArrowLeft, Printer } from "lucide-react";
+import { Printer } from "lucide-react";
 import { createClient } from "@/lib/supabase/client";
 import { RichContent } from "@/components/exam/RichContent";
 import { Button } from "@/components/ui/button";
-import { Card, CardContent } from "@/components/ui/card";
-import { BrandBlock, InfoCell, InfoTable, PrintFrame } from "../../print-brand";
+import {
+  BrandBlock,
+  ComputerGeneratedNote,
+  InfoCell,
+  InfoTable,
+  PrintToolbar,
+} from "@/components/print/blocks";
+import { PrintDocument } from "@/components/print/print-document";
+import { usePrint } from "@/lib/use-print";
 import type { SessionPrintMeta } from "../paper-print";
 
 type ResultOption = { id: string; label: string; is_correct: boolean };
@@ -46,18 +53,10 @@ export function StudentResult({
   const supabase = createClient();
   const [result, setResult] = useState<Result | null>(null);
   const [error, setError] = useState("");
-  // Which document to print. Set by the two Print buttons; a print-scoped CSS
-  // rule (below) then hides the other half so the result and the answer key
-  // each save as their own PDF. Reset after the dialog closes.
-  const [printMode, setPrintMode] = useState<null | "result" | "paper">(null);
-
-  useEffect(() => {
-    if (!printMode) return;
-    const done = () => setPrintMode(null);
-    window.addEventListener("afterprint", done, { once: true });
-    window.print();
-    return () => window.removeEventListener("afterprint", done);
-  }, [printMode]);
+  // The two Print buttons each save one half as its own PDF: print("result")
+  // and print("key") stamp data-print-part on the printed clone, and the split
+  // CSS in <PrintDocument> hides the other half.
+  const { printRef, print } = usePrint();
 
   useEffect(() => {
     supabase
@@ -128,37 +127,24 @@ export function StudentResult({
   }
 
   return (
-    <div id="result-print" data-print={printMode ?? undefined} className="mx-auto max-w-2xl px-4 py-6 sm:px-6">
-      <style>{`
-        @media print {
-          body * { visibility: hidden !important; }
-          #result-print, #result-print * { visibility: visible !important; }
-          #result-print { position: absolute; left: 0; top: 0; width: 100%; max-width: none; padding: 0; }
-          .no-print { display: none !important; }
-          /* Split prints: hide the half we're not saving. */
-          #result-print[data-print="result"] #print-paper { display: none !important; }
-          #result-print[data-print="paper"] #print-result { display: none !important; }
-        }
-      `}</style>
-      <div className="no-print mb-4 flex flex-wrap items-center justify-between gap-3">
-        <Button variant="outline" asChild>
-          <Link href="/student/exams">
-            <ArrowLeft /> Back
-          </Link>
+    <div className="px-4 py-6 sm:px-6">
+      <PrintToolbar backHref="/student/exams">
+        <Button onClick={() => print("result")}>
+          <Printer /> Print result
         </Button>
-        <div className="flex flex-wrap gap-2">
-          <Button onClick={() => setPrintMode("result")}>
-            <Printer /> Print result
-          </Button>
-          <Button onClick={() => setPrintMode("paper")}>
-            <Printer /> Print answer key
-          </Button>
-        </div>
-      </div>
+        <Button onClick={() => print("key")}>
+          <Printer /> Print answer key
+        </Button>
+      </PrintToolbar>
 
-      <PrintFrame docLabel="Result">
+      <PrintDocument ref={printRef} docLabel="Result" className="text-black">
+        <style>{`
+          /* Split prints: each button saves only its half as its own PDF. */
+          [data-print-part="result"] .pd-answer-key { display: none !important; }
+          [data-print-part="key"] .pd-statement { display: none !important; }
+        `}</style>
       {/* ── Statement of Marks (its own PDF via "Print result") ── */}
-      <div id="print-result" className="print-chrome">
+      <div className="pd-statement">
         <BrandBlock
           collegeName={collegeName || undefined}
           title={meta?.exam_title ?? "Assessment Test"}
@@ -264,42 +250,10 @@ export function StudentResult({
 
       </div>
 
-      <header className="no-print mb-6">
-        <h1 className="text-2xl font-bold tracking-tight">Your result</h1>
-        <p className="text-muted-foreground mt-1 text-sm">
-          Score {total}
-          {maxTotal > 0 ? ` / ${maxTotal}` : ""} · {correctCount} / {result.questions.length}{" "}
-          correct
-        </p>
-      </header>
-
-      {/* Subject-wise breakdown */}
-      {sections.size > 1 && (
-        <Card className="no-print mb-6">
-          <CardContent className="grid gap-2 pt-6">
-            <p className="text-xs font-semibold uppercase tracking-wide">Section-wise score</p>
-            {Array.from(sections, ([subject, qs]) => {
-              const secScore = qs.reduce((s, q) => s + (q.awarded_marks ?? 0), 0);
-              const secMax = qs.reduce((s, q) => s + qMax(q), 0);
-              const secCorrect = qs.filter((q) => (q.awarded_marks ?? 0) > 0).length;
-              return (
-                <div key={subject} className="flex items-center justify-between gap-3 text-sm">
-                  <span className="min-w-0 truncate">{subject}</span>
-                  <span className="text-muted-foreground shrink-0 tabular-nums">
-                    {secCorrect} / {qs.length} correct · {secScore}
-                    {secMax > 0 ? ` / ${secMax}` : ""} marks
-                  </span>
-                </div>
-              );
-            })}
-          </CardContent>
-        </Card>
-      )}
-
       {/* ── Detailed Answer Key (its own PDF via "Print answer key") ── */}
-      <div id="print-paper">
+      <div className="pd-answer-key mt-6">
       {/* Branded cover so the answer key stands alone as a document. */}
-      <div className="print-chrome">
+      <div>
         <BrandBlock
           collegeName={collegeName || undefined}
           title={meta?.exam_title ?? "Assessment Test"}
@@ -334,43 +288,43 @@ export function StudentResult({
           const got = (q.awarded_marks ?? 0) > 0;
           return (
             <li key={q.position} className="break-inside-avoid">
-              <Card>
-                <CardContent className="grid gap-3 pt-6">
-                  <div className="flex items-start justify-between gap-3">
-                    <div className="font-medium">
-                      <span className="mr-1">{q.position + 1}.</span>
-                      <RichContent content={q.stem} inline />
-                    </div>
-                    <span className={`shrink-0 text-xs font-semibold ${got ? "text-emerald-600" : "text-destructive"}`}>
-                      {got ? "Correct" : "Incorrect"}
-                    </span>
+              {/* Fixed print colours (no shadcn Card / theme tokens): this renders
+                  on the white letterhead sheet, and paper has no dark mode. */}
+              <div className="grid gap-3 rounded-lg border border-gray-300 p-4">
+                <div className="flex items-start justify-between gap-3">
+                  <div className="font-medium text-gray-900">
+                    <span className="mr-1">{q.position + 1}.</span>
+                    <RichContent content={q.stem} inline />
                   </div>
-                  <ul className="grid gap-1">
-                    {q.options.map((o) => {
-                      const chosen = q.selected_option_ids.includes(o.id);
-                      const cls = o.is_correct
-                        ? "border-emerald-300 bg-emerald-50 dark:bg-emerald-950/40"
-                        : chosen
-                          ? "border-rose-300 bg-rose-50 dark:bg-rose-950/40"
-                          : "";
-                      return (
-                        <li key={o.id} className={`flex items-center gap-2 rounded border p-2 text-sm ${cls}`}>
-                          <RichContent content={o.label} inline />
-                          {o.is_correct && <span className="text-xs text-emerald-700">✓ correct</span>}
-                          {chosen && !o.is_correct && <span className="text-xs text-rose-700">your choice</span>}
-                          {chosen && o.is_correct && <span className="text-xs text-emerald-700">your choice</span>}
-                        </li>
-                      );
-                    })}
-                  </ul>
-                  {q.explanation && (
-                    <div className="bg-muted/50 text-muted-foreground rounded border p-3 text-sm">
-                      <p className="text-foreground mb-1 text-xs font-semibold">Explanation</p>
-                      <RichContent content={q.explanation} />
-                    </div>
-                  )}
-                </CardContent>
-              </Card>
+                  <span className={`shrink-0 text-xs font-semibold ${got ? "text-emerald-700" : "text-rose-700"}`}>
+                    {got ? "Correct" : "Incorrect"}
+                  </span>
+                </div>
+                <ul className="grid gap-1">
+                  {q.options.map((o) => {
+                    const chosen = q.selected_option_ids.includes(o.id);
+                    const cls = o.is_correct
+                      ? "border-emerald-300 bg-emerald-50"
+                      : chosen
+                        ? "border-rose-300 bg-rose-50"
+                        : "border-gray-200";
+                    return (
+                      <li key={o.id} className={`flex items-center gap-2 rounded border p-2 text-sm text-gray-900 ${cls}`}>
+                        <RichContent content={o.label} inline />
+                        {o.is_correct && <span className="text-xs text-emerald-700">✓ correct</span>}
+                        {chosen && !o.is_correct && <span className="text-xs text-rose-700">your choice</span>}
+                        {chosen && o.is_correct && <span className="text-xs text-emerald-700">your choice</span>}
+                      </li>
+                    );
+                  })}
+                </ul>
+                {q.explanation && (
+                  <div className="rounded border border-gray-200 bg-gray-50 p-3 text-sm text-gray-700">
+                    <p className="mb-1 text-xs font-semibold text-gray-900">Explanation</p>
+                    <RichContent content={q.explanation} />
+                  </div>
+                )}
+              </div>
             </li>
           );
             })}
@@ -379,11 +333,11 @@ export function StudentResult({
       ))}
       </div>
 
-      <div className="print-chrome mt-6 border-t border-gray-300 pt-2 text-center text-[10px] text-gray-600">
-        Date of issue: {printedOn} · This is a computer-generated document and does not require a signature.
-      </div>
-
-      </PrintFrame>
+      <ComputerGeneratedNote
+        issuedOn={printedOn}
+        className="mt-6 border-t border-gray-300 pt-2 text-center"
+      />
+      </PrintDocument>
     </div>
   );
 }
