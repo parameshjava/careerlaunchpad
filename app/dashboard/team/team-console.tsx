@@ -106,7 +106,12 @@ export function TeamConsole({
         {mentors.length === 0 ? (
           <EmptyState>No mentors have signed up yet.</EmptyState>
         ) : (
-          <MentorsTable mentors={mentors} canReview={canReviewMentors} />
+          <MentorsTable
+            mentors={mentors}
+            canReview={canReviewMentors}
+            canDelete={caps.canDelete}
+            currentUserId={currentUserId}
+          />
         )}
       </TabsContent>
 

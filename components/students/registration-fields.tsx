@@ -8,10 +8,11 @@
  * inputs, and the stepper. Flow (how it's saved/submitted) lives in each caller.
  */
 import { useState } from "react";
-import { Check, Plus } from "lucide-react";
+import { Check, Plus, MessageSquareWarning } from "lucide-react";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { InfoTooltip } from "@/components/ui/tooltip";
+import { PhoneField } from "@/components/ui/phone-input";
 import { RefSelect } from "@/components/ui/ref-select";
 import { CollegePicker, type College } from "@/components/colleges/college-picker";
 import { TellUsStep } from "./tell-us-step";
@@ -101,6 +102,10 @@ export function StepBody({
 }) {
   if (step === 1) return (
     <Step title="Basic Information" hint="Tell us who you are and where you're from.">
+      <Important className="sm:col-span-2">
+        Enter your <strong>full name exactly as it appears in your college records</strong>. Avoid
+        nicknames or short forms — this name is used on certificates and official communication.
+      </Important>
       <Field label="Full Name" required>
         <Input value={f.full_name} onChange={(e) => set("full_name", e.target.value)} placeholder="e.g. Ravi Kumar" />
       </Field>
@@ -115,7 +120,7 @@ export function StepBody({
         />
       </Field>
       <Field label="Mobile Number" required>
-        <Input value={f.phone} onChange={(e) => set("phone", e.target.value)} placeholder="+91 90000 00000" />
+        <PhoneField value={f.phone} onChange={(v) => set("phone", v)} />
       </Field>
       <Field label="Gender">
         <SelectRef value={f.gender} onChange={(v) => set("gender", v)} options={refs.gender} placeholder="Select…" />
@@ -137,7 +142,7 @@ export function StepBody({
       <div className="sm:col-span-2">
         <CollegePicker value={college} onChange={(c) => { onPickCollege(c); set("college_id", c?.id ?? ""); }} required />
       </div>
-      <Field label="Roll Number" required><Input value={f.roll_number} onChange={(e) => set("roll_number", e.target.value)} placeholder="e.g. 21B81A0512" /></Field>
+      <Field label="Roll Number"><Input value={f.roll_number} onChange={(e) => set("roll_number", e.target.value)} placeholder="e.g. 21B81A0512" /></Field>
       <Field
         label="University Registration No."
         info="The registration/enrollment number your university assigned when you were admitted. It's printed on your admission letter, ID card, or marks memo — and is different from your class roll number."
@@ -255,6 +260,23 @@ export function Step({ title, hint, children }: { title: string; hint: string; c
   );
 }
 
+// GitHub-flavoured-markdown "Important" admonition: violet accent bar, tinted
+// panel, icon + "Important" heading. Use for guidance the student must not miss.
+export function Important({ children, className = "" }: { children: React.ReactNode; className?: string }) {
+  return (
+    <div
+      className={`rounded-lg border border-[#7c3aed]/25 border-l-4 border-l-[#7c3aed] bg-[#7c3aed]/5 p-3 text-sm ${className}`}
+      role="note"
+    >
+      <p className="flex items-center gap-1.5 font-semibold text-[#7c3aed]">
+        <MessageSquareWarning className="size-4 shrink-0" aria-hidden />
+        Important
+      </p>
+      <div className="text-foreground mt-1 leading-relaxed">{children}</div>
+    </div>
+  );
+}
+
 export function Field({ label, required, info, children }: { label: string; required?: boolean; info?: React.ReactNode; children: React.ReactNode }) {
   return (
     <div className="grid gap-1.5">
@@ -277,6 +299,9 @@ function SelectRef({ value, onChange, options, placeholder = "Select…" }: { va
       onChange={onChange}
       placeholder={placeholder}
       emptyLabel={placeholder}
+      // Fill the grid column so selects line up with the text inputs beside them
+      // (the shadcn SelectTrigger is w-fit by default and would otherwise shrink).
+      className="w-full"
       options={options.map((o) => ({ value: o.slug, label: o.label }))}
     />
   );

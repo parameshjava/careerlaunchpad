@@ -9,6 +9,7 @@
 import { useCallback, useEffect, useState } from "react";
 import Link from "next/link";
 import { Button } from "@/components/ui/button";
+import { profileCompleteness } from "@/lib/registration";
 import {
   type Form, type RefData, type College,
   EMPTY, StepBody, Stepper,
@@ -92,12 +93,24 @@ export function AddStudentWizard() {
     );
   }
 
+  // Live profile completeness (same 0–100 scale the student wizard, admin grid
+  // and approval email use) so the admin sees how full the staged profile is.
+  const pct = profileCompleteness(f as unknown as Record<string, unknown>);
+
   return (
     <div>
       <Stepper step={step} onJump={setStep} />
 
-      <div className="bg-card rounded-3xl border p-5 shadow-xl shadow-[#7c3aed]/5 sm:p-8">
-        <p className="mb-1 text-[0.72rem] font-bold tracking-[0.08em] text-[#7c3aed] uppercase">Step {step}</p>
+      <div className="bg-card overflow-hidden rounded-3xl border p-5 shadow-xl shadow-[#7c3aed]/5 sm:p-8">
+        <div className="-mx-5 -mt-5 mb-6 flex items-center justify-between gap-3 bg-gradient-to-r from-[#2563eb] to-[#7c3aed] px-5 py-3 text-white sm:-mx-8 sm:-mt-8 sm:px-8">
+          <p className="text-sm font-bold tracking-[0.04em]">Step {step} of 6</p>
+          <div className="flex items-center gap-2" title={`Profile is ${pct}% complete`}>
+            <div className="h-1.5 w-20 overflow-hidden rounded-full bg-white/25 sm:w-28">
+              <div className="h-full rounded-full bg-white transition-all" style={{ width: `${pct}%` }} />
+            </div>
+            <span className="text-xs font-semibold tabular-nums whitespace-nowrap">{pct}% complete</span>
+          </div>
+        </div>
         <StepBody
           step={step}
           f={f}
@@ -117,7 +130,6 @@ export function AddStudentWizard() {
 
         <div className="mt-7 flex items-center justify-between gap-3 border-t pt-5">
           <Button variant="ghost" disabled={step === 1 || saving} onClick={() => setStep((s) => Math.max(1, s - 1))}>← Back</Button>
-          <span className="text-muted-foreground text-xs font-medium">Step {step} of 6</span>
           {step < 6 ? (
             <Button
               onClick={() => { setStep((s) => Math.min(6, s + 1)); window.scrollTo({ top: 0, behavior: "smooth" }); }}
