@@ -12,6 +12,7 @@ import { Check, Plus } from "lucide-react";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { InfoTooltip } from "@/components/ui/tooltip";
+import { RefSelect } from "@/components/ui/ref-select";
 import { CollegePicker, type College } from "@/components/colleges/college-picker";
 import { TellUsStep } from "./tell-us-step";
 
@@ -64,9 +65,6 @@ export const FIELD_LABELS: Record<string, string> = {
   roll_number: "Roll number",
   preferred_category_slugs: "Career paths",
 };
-
-export const selectClass =
-  "border-input bg-background h-10 w-full rounded-md border px-3 text-sm shadow-sm focus-visible:ring-1 focus-visible:ring-ring focus-visible:outline-none";
 
 // Fields each step owns (must match STEP_FIELDS in lib/registration.ts).
 export const STEP_PAYLOAD: Record<number, (f: Form) => Record<string, unknown>> = {
@@ -274,10 +272,12 @@ export function Field({ label, required, info, children }: { label: string; requ
 
 function SelectRef({ value, onChange, options, placeholder = "Select…" }: { value: string; onChange: (v: string) => void; options: Ref[]; placeholder?: string }) {
   return (
-    <select className={selectClass} value={value} onChange={(e) => onChange(e.target.value)}>
-      <option value="">{placeholder}</option>
-      {options.map((o) => <option key={o.slug} value={o.slug}>{o.label}</option>)}
-    </select>
+    <RefSelect
+      value={value}
+      onChange={onChange}
+      placeholder={placeholder}
+      options={options.map((o) => ({ value: o.slug, label: o.label }))}
+    />
   );
 }
 

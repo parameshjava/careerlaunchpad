@@ -10,6 +10,7 @@
  */
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
+import { RefSelect } from "@/components/ui/ref-select";
 import { CollegePicker, type College } from "@/components/colleges/college-picker";
 
 export type Ref = { id: string; slug: string; label: string; category: string | null };
@@ -188,10 +189,12 @@ function SelectRef({ value, onChange, options, placeholder = "Select…", valueK
   value: string; onChange: (v: string) => void; options: Ref[]; placeholder?: string; valueKey?: "slug" | "id";
 }) {
   return (
-    <select className={selectClass} value={value} onChange={(e) => onChange(e.target.value)}>
-      <option value="">{placeholder}</option>
-      {options.map((o) => <option key={o[valueKey]} value={o[valueKey]}>{o.label}</option>)}
-    </select>
+    <RefSelect
+      value={value}
+      onChange={onChange}
+      placeholder={placeholder}
+      options={options.map((o) => ({ value: o[valueKey], label: o.label }))}
+    />
   );
 }
 

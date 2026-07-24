@@ -8,6 +8,7 @@ import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { CollegePicker, type College } from "@/components/colleges/college-picker";
+import { RefSelect } from "@/components/ui/ref-select";
 
 type Employer = { id: string; name: string };
 
@@ -21,9 +22,6 @@ const ROLES = [
   { key: "coordinator", label: "Coordinator" },
   { key: "support", label: "Support Team" },
 ];
-
-const selectClass =
-  "border-input bg-background h-9 w-full rounded-md border px-3 py-1 text-sm shadow-sm focus-visible:ring-1 focus-visible:outline-none";
 
 const EMAIL_RE = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
 
@@ -81,19 +79,14 @@ export function InviteForm({ employers, canInviteOwner = false }: { employers: E
 
       <div className="grid gap-1.5">
         <Label htmlFor="role">Role</Label>
-        <select
+        <RefSelect
           id="role"
-          name="role"
-          className={selectClass}
           value={role}
-          onChange={(e) => setRole(e.target.value)}
-          required
-        >
-          <option value="" disabled>Select a role…</option>
-          {roles.map((r) => (
-            <option key={r.key} value={r.key}>{r.label}</option>
-          ))}
-        </select>
+          onChange={setRole}
+          placeholder="Select a role…"
+          options={roles.map((r) => ({ value: r.key, label: r.label }))}
+        />
+        <input type="hidden" name="role" value={role} required />
       </div>
 
       {needsCollege && (
@@ -108,19 +101,14 @@ export function InviteForm({ employers, canInviteOwner = false }: { employers: E
       {needsEmployer && (
         <div className="grid gap-1.5">
           <Label htmlFor="employer_id">Employer</Label>
-          <select
+          <RefSelect
             id="employer_id"
-            name="employer_id"
-            className={selectClass}
             value={employerId}
-            onChange={(e) => setEmployerId(e.target.value)}
-            required
-          >
-            <option value="" disabled>Select an employer…</option>
-            {emps.map((e) => (
-              <option key={e.id} value={e.id}>{e.name}</option>
-            ))}
-          </select>
+            onChange={setEmployerId}
+            placeholder="Select an employer…"
+            options={emps.map((e) => ({ value: e.id, label: e.name }))}
+          />
+          <input type="hidden" name="employer_id" value={employerId} required />
 
           {showNewEmp ? (
             <div className="mt-1 grid gap-2 rounded-md border p-3">

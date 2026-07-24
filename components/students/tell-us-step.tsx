@@ -26,7 +26,8 @@ import { DatePicker } from "@/components/ui/date-picker";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { MarkdownEditor } from "@/components/ui/markdown-editor";
-import { Step, selectClass, type Form, type SetForm, type RefData, type Ref } from "./registration-fields";
+import { RefSelect } from "@/components/ui/ref-select";
+import { Step, type Form, type SetForm, type RefData, type Ref } from "./registration-fields";
 import { MIN_AGE_YEARS } from "@/lib/registration";
 
 export type FamilyMember = { relation: string; occupation: string };
@@ -101,16 +102,12 @@ export function TellUsStep({ f, set, refs }: { f: Form; set: SetForm; refs: RefD
               {f.caste_certificate_status === "has" && (
                 <div className="border-primary/30 bg-primary/[0.03] mt-3 rounded-lg border p-3">
                   <Label className="mb-1.5 block">Which category is on your certificate?</Label>
-                  <select
-                    className={selectClass}
+                  <RefSelect
                     value={f.reservation_category}
-                    onChange={(e) => set("reservation_category", e.target.value)}
-                  >
-                    <option value="">Select your category…</option>
-                    {(refs.reservation_category ?? []).map((c) => (
-                      <option key={c.slug} value={c.slug}>{c.label}</option>
-                    ))}
-                  </select>
+                    onChange={(v) => set("reservation_category", v)}
+                    placeholder="Select your category…"
+                    options={(refs.reservation_category ?? []).map((c) => ({ value: c.slug, label: c.label }))}
+                  />
                   <p className="text-muted-foreground mt-1.5 text-xs">
                     As printed on your certificate — this is what determines your reservation group.
                   </p>
@@ -146,17 +143,21 @@ export function TellUsStep({ f, set, refs }: { f: Form; set: SetForm; refs: RefD
               <div key={i} className="grid gap-2 sm:grid-cols-[1fr_1fr_auto] sm:items-end">
                 <div className="grid gap-1.5">
                   <Label className="text-xs">Relation</Label>
-                  <select className={selectClass} value={m.relation} onChange={(e) => setMember(i, { relation: e.target.value })}>
-                    <option value="">Select…</option>
-                    {relationOptions.map((r) => <option key={r.slug} value={r.slug}>{r.label}</option>)}
-                  </select>
+                  <RefSelect
+                    value={m.relation}
+                    onChange={(v) => setMember(i, { relation: v })}
+                    placeholder="Select…"
+                    options={relationOptions.map((r) => ({ value: r.slug, label: r.label }))}
+                  />
                 </div>
                 <div className="grid gap-1.5">
                   <Label className="text-xs">What they do</Label>
-                  <select className={selectClass} value={m.occupation} onChange={(e) => setMember(i, { occupation: e.target.value })}>
-                    <option value="">Select…</option>
-                    {(refs.family_occupation ?? []).map((o) => <option key={o.slug} value={o.slug}>{o.label}</option>)}
-                  </select>
+                  <RefSelect
+                    value={m.occupation}
+                    onChange={(v) => setMember(i, { occupation: v })}
+                    placeholder="Select…"
+                    options={(refs.family_occupation ?? []).map((o) => ({ value: o.slug, label: o.label }))}
+                  />
                 </div>
                 <button
                   type="button"
