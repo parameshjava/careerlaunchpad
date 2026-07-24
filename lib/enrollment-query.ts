@@ -435,63 +435,7 @@ export async function fetchStudentFees(
 }
 
 // ---- student self-enrolment ------------------------------------------------
-
-export type OpenBatch = {
-  batchId: string;
-  name: string;
-  courseName: string;
-  academicYear: string | null;
-  startDate: string | null;
-  feePaise: number;
-  enrolled: boolean;
-};
-
-/** Open/running batches a student may self-enrol into: those associated with the
- * student's own college. Flags the ones they're already enrolled in. */
-export async function fetchOpenBatchesForStudent(
-  supabase: SupabaseClient,
-  studentId: string
-): Promise<OpenBatch[]> {
-  const { data: sp } = await supabase
-    .from("student_profile")
-    .select("college_id")
-    .eq("user_id", studentId)
-    .maybeSingle();
-  const collegeId = (sp as { college_id?: string | null } | null)?.college_id;
-  if (!collegeId) return [];
-
-  const { data: bc } = await supabase.from("batch_college").select("batch_id").eq("college_id", collegeId);
-  const batchIds = ((bc ?? []) as { batch_id: string }[]).map((x) => x.batch_id);
-  if (batchIds.length === 0) return [];
-
-  const { data: batches, error } = await supabase
-    .from("batch")
-    .select("id, name, academic_year, start_date, status, course:course_id(name), fee_component(amount_paise)")
-    .in("id", batchIds)
-    .in("status", ["open", "running"])
-    .order("start_date", { ascending: true, nullsFirst: true });
-  if (error) throw new Error(`batch: ${error.message}`);
-
-  // Only a live enrolment marks a batch "already enrolled"; a rejected
-  // (cancelled) one leaves the student free to enrol again.
-  const { data: enr } = await supabase
-    .from("student_enrollment")
-    .select("batch_id")
-    .eq("student_id", studentId)
-    .in("batch_id", batchIds)
-    .neq("status", "cancelled");
-  const enrolledSet = new Set(((enr ?? []) as { batch_id: string }[]).map((x) => x.batch_id));
-
-  return ((batches ?? []) as unknown as {
-    id: string; name: string; academic_year: string | null; start_date: string | null;
-    course: { name: string } | null; fee_component: { amount_paise: number }[];
-  }[]).map((b) => ({
-    batchId: b.id,
-    name: b.name,
-    courseName: b.course?.name ?? "Course",
-    academicYear: b.academic_year,
-    startDate: b.start_date,
-    feePaise: (b.fee_component ?? []).reduce((s, f) => s + f.amount_paise, 0),
-    enrolled: enrolledSet.has(b.id),
-  }));
-}
+// The student's Courses catalogue + course-details reads live in
+// lib/course-query.ts (fetchOpenCoursesForStudent / fetchStudentCourseWithBatches),
+// which group batches under their course. The old per-batch OpenBatch listing was
+// removed when the surface moved from "batches as courses" to course → batches.

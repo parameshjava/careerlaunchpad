@@ -1,10 +1,11 @@
 import { NextResponse, type NextRequest } from "next/server";
 import { getAuthContext, can, requirePermission } from "@/lib/auth";
 import { createClient } from "@/lib/supabase/server";
-import { fetchBatch, type BatchStatus } from "@/lib/batch-query";
+import { fetchBatch, type BatchStatus, type BatchEnrollmentStatus } from "@/lib/batch-query";
 import { parseBatchPayload } from "@/lib/batch-write";
 
 const STATUSES: BatchStatus[] = ["draft", "open", "running", "closed", "cancelled"];
+const ENROLLMENT_STATUSES: BatchEnrollmentStatus[] = ["not_open", "open", "closed"];
 
 // Closed batches are stamped with who/when; moving away from closed clears it.
 function closeStamp(status: BatchStatus, userId: string) {
@@ -63,6 +64,19 @@ export async function PATCH(req: NextRequest, { params }: { params: Promise<{ id
     return NextResponse.json({ ok: true });
   }
 
+  // Enrolment-gate-only change (Close / reopen enrolment without touching the
+  // lifecycle status) — the "Enrollment Closed" lifecycle step.
+  if (typeof b.enrollmentStatus === "string" && Object.keys(b).length === 1) {
+    if (!ENROLLMENT_STATUSES.includes(b.enrollmentStatus as BatchEnrollmentStatus))
+      return NextResponse.json({ error: "Invalid enrolment status." }, { status: 422 });
+    const { error } = await supabase
+      .from("batch")
+      .update({ enrollment_status: b.enrollmentStatus, updated_at: new Date().toISOString() })
+      .eq("id", id);
+    if (error) return NextResponse.json({ error: error.message }, { status: 500 });
+    return NextResponse.json({ ok: true });
+  }
+
   const parsed = parseBatchPayload(body);
   if (!parsed.ok) return NextResponse.json({ error: parsed.error }, { status: 422 });
   const p = parsed.value;
@@ -79,6 +93,7 @@ export async function PATCH(req: NextRequest, { params }: { params: Promise<{ id
       end_date: p.endDate,
       currency: p.currency,
       status: p.status,
+      enrollment_status: p.enrollmentStatus,
       ...closeStamp(p.status, ctx.userId),
       updated_at: new Date().toISOString(),
     })

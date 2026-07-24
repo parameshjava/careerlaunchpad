@@ -52,6 +52,7 @@ export async function POST(req: NextRequest) {
       end_date: p.endDate,
       currency: p.currency,
       status: p.status,
+      enrollment_status: p.enrollmentStatus,
       closed_at: p.status === "closed" ? new Date().toISOString() : null,
       closed_by: p.status === "closed" ? ctx.userId : null,
       created_by: ctx.userId,

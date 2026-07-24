@@ -26,8 +26,11 @@ import { paiseToRupeeInput, rupeesToPaise } from "@/lib/course-query";
 import {
   BATCH_STATUSES,
   BATCH_STATUS_LABELS,
+  BATCH_ENROLLMENT_STATUSES,
+  BATCH_ENROLLMENT_STATUS_LABELS,
   type BatchDetail,
   type BatchStatus,
+  type BatchEnrollmentStatus,
   type CourseOption,
 } from "@/lib/batch-query";
 import { cachedGet, invalidate } from "@/lib/fetch-cache";
@@ -56,6 +59,7 @@ export function BatchEditor({ batchId, embedded = false }: { batchId?: string; e
   const [endDate, setEndDate] = useState("");
   const [currency, setCurrency] = useState("INR");
   const [status, setStatus] = useState<BatchStatus>("draft");
+  const [enrollmentStatus, setEnrollmentStatus] = useState<BatchEnrollmentStatus>("not_open");
   const [feeRows, setFeeRows] = useState<FeeRow[]>([]);
 
   // Colleges: typeahead search (the college table has ~10k rows) + selected chips.
@@ -85,6 +89,7 @@ export function BatchEditor({ batchId, embedded = false }: { batchId?: string; e
           setEndDate(bt.endDate ?? "");
           setCurrency(bt.currency);
           setStatus(bt.status);
+          setEnrollmentStatus(bt.enrollmentStatus);
           setColleges(bt.colleges);
           setFeeRows(bt.feeLines.map((f) => ({ label: f.label, amount: paiseToRupeeInput(f.amountPaise) })));
         }
@@ -179,6 +184,7 @@ export function BatchEditor({ batchId, embedded = false }: { batchId?: string; e
       endDate: endDate || null,
       currency: currency.trim() || "INR",
       status,
+      enrollmentStatus,
       collegeIds: colleges.map((c) => c.id),
       feeLines,
     };
@@ -317,6 +323,25 @@ export function BatchEditor({ batchId, embedded = false }: { batchId?: string; e
                     ))}
                   </SelectContent>
                 </Select>
+              </div>
+              <div className="grid gap-1.5">
+                <Label htmlFor="b-enrolment">Enrolment</Label>
+                <Select value={enrollmentStatus} onValueChange={(v) => setEnrollmentStatus(v as BatchEnrollmentStatus)}>
+                  <SelectTrigger id="b-enrolment" className="w-full">
+                    <SelectValue />
+                  </SelectTrigger>
+                  <SelectContent>
+                    {BATCH_ENROLLMENT_STATUSES.map((s) => (
+                      <SelectItem key={s} value={s}>
+                        {BATCH_ENROLLMENT_STATUS_LABELS[s]}
+                      </SelectItem>
+                    ))}
+                  </SelectContent>
+                </Select>
+                <p className="text-muted-foreground text-xs">
+                  Only <span className="font-medium">Open</span> accepts new student enrolments. Use{" "}
+                  <span className="font-medium">Closed</span> to stop them while the batch still runs.
+                </p>
               </div>
             </div>
             <div className="grid gap-4 sm:grid-cols-2">

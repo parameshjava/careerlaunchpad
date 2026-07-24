@@ -15,6 +15,16 @@ export const BATCH_STATUS_LABELS: Record<BatchStatus, string> = {
   cancelled: "Cancelled",
 };
 
+// Enrolment gate, independent of the lifecycle status (schema in migration 139).
+// A text enum, not a boolean, so more states can be added later.
+export type BatchEnrollmentStatus = "not_open" | "open" | "closed";
+export const BATCH_ENROLLMENT_STATUSES: BatchEnrollmentStatus[] = ["not_open", "open", "closed"];
+export const BATCH_ENROLLMENT_STATUS_LABELS: Record<BatchEnrollmentStatus, string> = {
+  not_open: "Not open yet",
+  open: "Open",
+  closed: "Closed",
+};
+
 export type DeliveryMode = "online" | "offline" | "hybrid";
 
 export type BatchListRow = {
@@ -42,6 +52,7 @@ export type BatchDetail = {
   endDate: string | null;
   currency: string;
   status: BatchStatus;
+  enrollmentStatus: BatchEnrollmentStatus;
   /** Associated colleges (with names, for the editor's chips). */
   colleges: { id: string; name: string }[];
   feeLines: { label: string; amountPaise: number }[];
@@ -112,7 +123,7 @@ export async function fetchBatch(supabase: SupabaseClient, id: string): Promise<
   const { data, error } = await supabase
     .from("batch")
     .select(
-      "id, course_id, name, code, academic_year, delivery_mode, start_date, end_date, currency, status, " +
+      "id, course_id, name, code, academic_year, delivery_mode, start_date, end_date, currency, status, enrollment_status, " +
         "batch_college(college_id, college:college_id(name)), fee_component(label, amount_paise, sort_order)"
     )
     .eq("id", id)
@@ -124,6 +135,7 @@ export async function fetchBatch(supabase: SupabaseClient, id: string): Promise<
     id: string; course_id: string; name: string; code: string;
     academic_year: string | null; delivery_mode: string | null;
     start_date: string | null; end_date: string | null; currency: string; status: BatchStatus;
+    enrollment_status: BatchEnrollmentStatus;
     batch_college: { college_id: string; college: { name: string } | null }[];
     fee_component: { label: string; amount_paise: number; sort_order: number }[];
   };
@@ -138,6 +150,7 @@ export async function fetchBatch(supabase: SupabaseClient, id: string): Promise<
     endDate: row.end_date,
     currency: row.currency,
     status: row.status,
+    enrollmentStatus: row.enrollment_status ?? "open",
     colleges: row.batch_college.map((c) => ({ id: c.college_id, name: c.college?.name ?? "College" })),
     feeLines: [...row.fee_component]
       .sort((a, b) => a.sort_order - b.sort_order)

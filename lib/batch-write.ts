@@ -2,7 +2,7 @@
 // colleges, fee lines). Shared by the create (POST) and update (PATCH) batch API
 // routes. Same non-transactional approach as lib/course-write.ts.
 import type { SupabaseClient } from "@supabase/supabase-js";
-import type { BatchStatus, DeliveryMode } from "@/lib/batch-query";
+import type { BatchStatus, BatchEnrollmentStatus, DeliveryMode } from "@/lib/batch-query";
 
 export type BatchPayload = {
   courseId: string;
@@ -14,11 +14,13 @@ export type BatchPayload = {
   endDate: string | null;
   currency: string;
   status: BatchStatus;
+  enrollmentStatus: BatchEnrollmentStatus;
   collegeIds: string[];
   feeLines: { label: string; amountPaise: number }[];
 };
 
 const STATUSES: BatchStatus[] = ["draft", "open", "running", "closed", "cancelled"];
+const ENROLLMENT_STATUSES: BatchEnrollmentStatus[] = ["not_open", "open", "closed"];
 const MODES: DeliveryMode[] = ["online", "offline", "hybrid"];
 const DATE_RE = /^\d{4}-\d{2}-\d{2}$/;
 
@@ -44,6 +46,10 @@ export function parseBatchPayload(
 
   const status = (str(b.status) ?? "draft") as BatchStatus;
   if (!STATUSES.includes(status)) return { ok: false, error: "Invalid batch status." };
+
+  const enrollmentStatus = (str(b.enrollmentStatus) ?? "not_open") as BatchEnrollmentStatus;
+  if (!ENROLLMENT_STATUSES.includes(enrollmentStatus))
+    return { ok: false, error: "Invalid enrolment status." };
 
   const deliveryMode = str(b.deliveryMode) as DeliveryMode | null;
   if (deliveryMode && !MODES.includes(deliveryMode))
@@ -85,6 +91,7 @@ export function parseBatchPayload(
       endDate,
       currency: str(b.currency) ?? "INR",
       status,
+      enrollmentStatus,
       collegeIds,
       feeLines,
     },
