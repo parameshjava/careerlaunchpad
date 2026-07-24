@@ -96,6 +96,12 @@ export function RegistrationForm({
   }, [endpoints.profile, reviewFirst]);
 
   async function saveStep(target: number) {
+    // College is mandatory: block leaving Academics (step 2) — via Next or
+    // Submit — until one is picked, instead of deferring the failure to submit.
+    if (step === 2 && !f.college_id) {
+      setErrors(["Step 2: College is required — search and select your college to continue."]);
+      return;
+    }
     setSaving(true);
     setErrors([]);
     const res = await fetch(endpoints.profile, {

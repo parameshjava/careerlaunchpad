@@ -132,7 +132,16 @@ export function AddStudentWizard() {
           <Button variant="ghost" disabled={step === 1 || saving} onClick={() => setStep((s) => Math.max(1, s - 1))}>← Back</Button>
           {step < 6 ? (
             <Button
-              onClick={() => { setStep((s) => Math.min(6, s + 1)); window.scrollTo({ top: 0, behavior: "smooth" }); }}
+              onClick={() => {
+                // College is mandatory — don't let the admin leave Academics without one.
+                if (step === 2 && !f.college_id) {
+                  setErrors(["Step 2: College is required — search and select a college to continue."]);
+                  return;
+                }
+                setErrors([]);
+                setStep((s) => Math.min(6, s + 1));
+                window.scrollTo({ top: 0, behavior: "smooth" });
+              }}
               className="bg-gradient-to-r from-[#2563eb] to-[#7c3aed] text-white shadow-lg shadow-[#7c3aed]/25 transition hover:brightness-105"
             >
               Next →
