@@ -7,7 +7,7 @@
  * set_member_roles() (escalation + last-owner guards); office email via
  * setMemberOfficeEmail (notification_email, user.manage).
  */
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { useRouter } from "next/navigation";
 import { Button } from "@/components/ui/button";
 import { Checkbox } from "@/components/ui/checkbox";
@@ -16,7 +16,7 @@ import { Label } from "@/components/ui/label";
 import {
   Dialog, DialogContent, DialogDescription, DialogFooter, DialogHeader, DialogTitle,
 } from "@/components/ui/dialog";
-import { Pencil, X } from "lucide-react";
+import { X } from "lucide-react";
 import { CollegePicker } from "@/components/colleges/college-picker";
 import {
   updateMemberRoles,
@@ -40,14 +40,18 @@ export function ManageMemberDialog({
   callerRank,
   isOwner,
   canOffice,
+  open,
+  onOpenChange,
 }: {
   user: { id: string; email: string; fullName: string | null; phone: string | null; roleKeys: string[]; officeEmail: string | null; collegeAdmin: { id: string; name: string }[] };
   callerRank: number;
   isOwner: boolean;
   canOffice: boolean;
+  /** Controlled by the row's ⋯ menu — this dialog has no trigger of its own. */
+  open: boolean;
+  onOpenChange: (open: boolean) => void;
 }) {
   const router = useRouter();
-  const [open, setOpen] = useState(false);
   const [selected, setSelected] = useState<Set<string>>(new Set());
   const [fullName, setFullName] = useState("");
   const [phone, setPhone] = useState("");
@@ -72,15 +76,19 @@ export function ManageMemberDialog({
     });
   }
 
-  function openDialog() {
+  // Seed the form from the row whenever the dialog opens. Keyed on `open` only —
+  // `user` is a fresh object literal each render, so depending on it would reset
+  // the form (wiping edits) on every parent re-render.
+  useEffect(() => {
+    if (!open) return;
     setSelected(new Set(user.roleKeys.filter((k) => STAFF_KEYS.includes(k))));
     setFullName(user.fullName ?? "");
     setPhone(user.phone ?? "");
     setOffice(user.officeEmail ?? "");
     setAdmins(user.collegeAdmin);
     setError(null);
-    setOpen(true);
-  }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [open]);
 
   async function save() {
     setBusy(true); setError(null);
@@ -117,16 +125,12 @@ export function ManageMemberDialog({
     }
 
     setBusy(false);
-    setOpen(false);
+    onOpenChange(false);
     router.refresh();
   }
 
   return (
-    <>
-      <Button variant="outline" size="sm" onClick={openDialog} title="Manage member">
-        <Pencil className="size-3.5" />
-      </Button>
-      <Dialog open={open} onOpenChange={setOpen}>
+      <Dialog open={open} onOpenChange={onOpenChange}>
         <DialogContent className="sm:max-w-md">
           <DialogHeader>
             <DialogTitle>Manage member</DialogTitle>
@@ -223,11 +227,10 @@ export function ManageMemberDialog({
           </div>
 
           <DialogFooter>
-            <Button variant="outline" onClick={() => setOpen(false)} disabled={busy}>Cancel</Button>
+            <Button variant="outline" onClick={() => onOpenChange(false)} disabled={busy}>Cancel</Button>
             <Button onClick={save} disabled={busy}>{busy ? "Saving…" : "Save"}</Button>
           </DialogFooter>
         </DialogContent>
       </Dialog>
-    </>
   );
 }

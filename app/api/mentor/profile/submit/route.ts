@@ -65,7 +65,7 @@ export async function POST() {
       to: (recips as string[] | null) ?? [],
       kind: "mentor",
       name: fullName,
-      reviewUrl: `${SITE_URL}/dashboard/mentors`,
+      reviewUrl: `${SITE_URL}/dashboard/team?tab=mentors`,
     });
   }
 

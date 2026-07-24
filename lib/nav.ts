@@ -103,17 +103,20 @@ export function buildNav(ctx: AuthContext, opts: { studentApproved?: boolean } =
     //   Students (the domain) · Platform (its people + config) · Question Bank
     //   (content) · Exams (assessment) · Reports (read-only analytics).
 
-    // Students — everything about students (add/delete live in the row menu).
-    const students: NavItem[] = [];
-    if (canViewStudents(ctx)) students.push({ label: "Students", href: "/dashboard", icon: "students" });
+    // People — students + the internal team (admins, staff, mentors) who run
+    // the platform. Students keep their own high-volume console; the Team hub
+    // segregates the internal actors into tabs. Add/delete live in the row menu.
+    const people: NavItem[] = [];
+    if (canViewStudents(ctx)) people.push({ label: "Students", href: "/dashboard", icon: "students" });
     if (can(ctx, "student.intake.import"))
-      students.push({ label: "Import", href: "/dashboard/students/import", icon: "import" });
+      people.push({ label: "Import", href: "/dashboard/students/import", icon: "import" });
+    // Team absorbs the old Users + Mentors pages — shown to anyone who can view
+    // members, invite, manage, or review mentors.
+    if (can(ctx, "user.view") || can(ctx, "user.invite") || can(ctx, "user.manage") || canReviewMentors(ctx))
+      people.push({ label: "Team", href: "/dashboard/team", icon: "users" });
 
-    // Platform — the people who run it + supporting configuration.
+    // Platform — supporting configuration (colleges, organizations, tooling).
     const platform: NavItem[] = [];
-    if (can(ctx, "user.view") || can(ctx, "user.invite") || can(ctx, "user.manage"))
-      platform.push({ label: "Users", href: "/dashboard/users", icon: "users" });
-    if (canReviewMentors(ctx)) platform.push({ label: "Mentors", href: "/dashboard/mentors", icon: "mentor" });
     if (can(ctx, "college.manage"))
       platform.push({ label: "Colleges", href: "/dashboard/colleges", icon: "college" });
     if (can(ctx, "user.manage"))
@@ -153,7 +156,7 @@ export function buildNav(ctx: AuthContext, opts: { studentApproved?: boolean } =
       reports.push({ label: "College analytics", href: "/dashboard/analytics", icon: "analytics" });
 
     const sections: NavSection[] = [];
-    if (students.length) sections.push({ title: "Students", items: students });
+    if (people.length) sections.push({ title: "People", items: people });
     if (platform.length) sections.push({ title: "Platform", items: platform });
     if (finance.length) sections.push({ title: "Courses & Fees", items: finance });
     if (bank.length) sections.push({ title: "Question Bank", items: bank });

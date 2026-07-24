@@ -21,11 +21,25 @@ const REQUIRED: { step: number; ok: (f: Form, email: string) => boolean; label: 
   { step: 3, ok: (f) => !!f.mentor_mode_id, label: "Step 3: Choose a preferred mode" },
 ];
 
-export function AddMentorWizard() {
+/** When editing a pending invite, the wizard pre-fills from its staged profile
+ * and saves back to that invite instead of creating a new one. */
+export type EditInvite = {
+  id: string;
+  email: string;
+  profile: Record<string, unknown>;
+  college: College | null;
+};
+
+export function AddMentorWizard({ editInvite }: { editInvite?: EditInvite | null }) {
+  const editing = !!editInvite;
+  const initialForm: Form = editInvite
+    ? { ...EMPTY, ...(Object.fromEntries(Object.entries(editInvite.profile).filter(([k]) => k in EMPTY)) as Partial<Form>) }
+    : EMPTY;
+
   const [refs, setRefs] = useState<RefData | null>(null);
-  const [f, setF] = useState<Form>(EMPTY);
-  const [email, setEmail] = useState("");
-  const [college, setCollege] = useState<College | null>(null);
+  const [f, setF] = useState<Form>(initialForm);
+  const [email, setEmail] = useState(editInvite?.email ?? "");
+  const [college, setCollege] = useState<College | null>(editInvite?.college ?? null);
   const [step, setStep] = useState(1);
   const [loading, setLoading] = useState(true);
   const [saving, setSaving] = useState(false);
@@ -52,13 +66,17 @@ export function AddMentorWizard() {
     }
     setSaving(true); setErrors([]);
     const res = await fetch("/api/admin/mentor", {
-      method: "POST",
+      method: editing ? "PATCH" : "POST",
       headers: { "Content-Type": "application/json" },
-      body: JSON.stringify({ email: email.trim(), profile: f }),
+      body: JSON.stringify(
+        editing
+          ? { inviteId: editInvite!.id, email: email.trim(), profile: f }
+          : { email: email.trim(), profile: f },
+      ),
     });
     setSaving(false);
     const body = await res.json().catch(() => ({}));
-    if (!res.ok) { setErrors([body.error ?? "Could not add the mentor."]); return; }
+    if (!res.ok) { setErrors([body.error ?? `Could not ${editing ? "update" : "add"} the mentor.`]); return; }
     setDone(body.email ?? email.trim());
   }
 
@@ -73,28 +91,43 @@ export function AddMentorWizard() {
     return (
       <div className="bg-card rounded-3xl border p-8 text-center shadow-xl shadow-[#7c3aed]/5">
         <span className="inline-flex items-center gap-1.5 rounded-full bg-emerald-50 px-2.5 py-0.5 text-[0.72rem] font-semibold text-emerald-700">
-          ✓ Mentor invited
+          {editing ? "✓ Mentor updated" : "✓ Mentor invited"}
         </span>
         <h2 className="mt-3 text-xl font-bold">{done}</h2>
         <p className="text-muted-foreground mt-1 text-sm">
-          They’ve been emailed a login link and show as <b>Pending</b> until they sign in — their
-          profile is already filled in and appears the moment they do.
+          {editing ? (
+            <>The invite has been updated. It still shows as <b>Pending</b> until they sign in, when their profile is created from these details.</>
+          ) : (
+            <>They’ve been emailed a login link and show as <b>Pending</b> until they sign in — their profile is already filled in and appears the moment they do.</>
+          )}
         </p>
         <div className="mt-6 flex justify-center gap-3">
-          <Button variant="outline" onClick={reset}>Add another</Button>
+          {!editing && <Button variant="outline" onClick={reset}>Add another</Button>}
           <Button asChild className="bg-gradient-to-r from-[#2563eb] to-[#7c3aed] text-white">
-            <Link href="/dashboard/users">Back to platform users</Link>
+            <Link href="/dashboard/team?tab=mentors">Back to team</Link>
           </Button>
         </div>
       </div>
     );
   }
 
+  // Step position, shown as the progress fill in the gradient band (same chrome
+  // as the student registration wizard).
+  const pct = Math.round((step / 3) * 100);
+
   return (
     <div>
       <MentorStepper step={step} onJump={setStep} />
-      <div className="bg-card rounded-3xl border p-5 shadow-xl shadow-[#7c3aed]/5 sm:p-8">
-        <p className="mb-1 text-[0.72rem] font-bold tracking-[0.08em] text-[#7c3aed] uppercase">Step {step}</p>
+      <div className="bg-card overflow-hidden rounded-3xl border p-5 shadow-xl shadow-[#7c3aed]/5 sm:p-8">
+        <div className="-mx-5 -mt-5 mb-6 flex items-center justify-between gap-3 bg-gradient-to-r from-[#2563eb] to-[#7c3aed] px-5 py-3 text-white sm:-mx-8 sm:-mt-8 sm:px-8">
+          <p className="text-sm font-bold tracking-[0.04em]">Step {step} of 3</p>
+          <div className="flex items-center gap-2">
+            <div className="h-1.5 w-20 overflow-hidden rounded-full bg-white/25 sm:w-28">
+              <div className="h-full rounded-full bg-white transition-all" style={{ width: `${pct}%` }} />
+            </div>
+            <span className="text-xs font-semibold tabular-nums whitespace-nowrap">{step} / 3</span>
+          </div>
+        </div>
         <MentorStepBody
           step={step}
           f={f}
@@ -113,8 +146,19 @@ export function AddMentorWizard() {
         )}
 
         <div className="mt-7 flex items-center justify-between gap-3 border-t pt-5">
-          <Button variant="ghost" disabled={step === 1 || saving} onClick={() => setStep((s) => Math.max(1, s - 1))}>← Back</Button>
-          <span className="text-muted-foreground text-xs font-medium">Step {step} of 3</span>
+          <div className="flex items-center gap-2">
+            <Button
+              variant="outline"
+              disabled={step === 1 || saving}
+              onClick={() => setStep((s) => Math.max(1, s - 1))}
+              className="border-2 border-[#2563eb] font-semibold text-[#2563eb] hover:bg-[#2563eb]/5"
+            >
+              ← Back
+            </Button>
+            <Button variant="ghost" asChild>
+              <Link href="/dashboard/team?tab=mentors">Cancel</Link>
+            </Button>
+          </div>
           {step < 3 ? (
             <Button
               onClick={() => { setStep((s) => Math.min(3, s + 1)); window.scrollTo({ top: 0, behavior: "smooth" }); }}

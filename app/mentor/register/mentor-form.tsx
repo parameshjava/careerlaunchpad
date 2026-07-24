@@ -15,7 +15,20 @@ import {
   EMPTY, FIELD_LABELS, STEP_PAYLOAD, MentorStepBody, MentorStepper,
 } from "@/components/mentor/mentor-fields";
 
-export function MentorForm() {
+// Endpoints default to the mentor's own registration API; the console profile
+// editor overrides them to target a specific mentor (/api/admin/mentor/:id/...).
+const DEFAULT_ENDPOINTS = { profile: "/api/mentor/profile", submit: "/api/mentor/profile/submit" };
+
+// `reviewFirst` lands on the read-only summary first (the console: staff review
+// the profile, then click Edit to open the wizard). Self-registering mentors
+// leave it false so an in-progress profile drops back into the wizard.
+export function MentorForm({
+  endpoints = DEFAULT_ENDPOINTS,
+  reviewFirst = false,
+}: {
+  endpoints?: { profile: string; submit: string };
+  reviewFirst?: boolean;
+} = {}) {
   const [refs, setRefs] = useState<RefData | null>(null);
   const [f, setF] = useState<Form>(EMPTY);
   const [email, setEmail] = useState<string | null>(null);
@@ -33,7 +46,7 @@ export function MentorForm() {
     (async () => {
       const [refRes, profRes] = await Promise.all([
         fetch("/api/mentor/reference"),
-        fetch("/api/mentor/profile"),
+        fetch(endpoints.profile),
       ]);
       if (refRes.ok) setRefs(await refRes.json());
       if (profRes.ok) {
@@ -46,6 +59,7 @@ export function MentorForm() {
             ...Object.fromEntries(Object.entries(profile).filter(([, v]) => v != null && (Array.isArray(v) ? true : typeof v !== "object"))),
             mentoring_area_ids: profile.mentoring_area_ids ?? [],
             skills: profile.skills ?? [],
+            teachable_subject_ids: profile.teachable_subject_ids ?? [],
             career_goal_ids: profile.career_goal_ids ?? [],
             graduation_year: profile.graduation_year != null ? String(profile.graduation_year) : "",
             years_experience: profile.years_experience != null ? String(profile.years_experience) : "",
@@ -56,17 +70,17 @@ export function MentorForm() {
           }));
           if (profile.college) setCollege(profile.college);
         }
-        if (registration_status === "submitted") setDone(true);
+        if (reviewFirst || registration_status === "submitted") setDone(true);
         setStep(Math.min(3, Math.max(1, (last_completed_step ?? 0) + 1)));
       }
       setLoading(false);
     })();
-  }, []);
+  }, [endpoints.profile, reviewFirst]);
 
   async function saveStep(target: number) {
     setSaving(true);
     setErrors([]);
-    const res = await fetch("/api/mentor/profile", {
+    const res = await fetch(endpoints.profile, {
       method: "PATCH",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({ step, data: STEP_PAYLOAD[step](f) }),
@@ -78,7 +92,7 @@ export function MentorForm() {
       return;
     }
     if (target > 3) {
-      const sub = await fetch("/api/mentor/profile/submit", { method: "POST" });
+      const sub = await fetch(endpoints.submit, { method: "POST" });
       if (sub.ok) { setDone(true); window.scrollTo({ top: 0, behavior: "smooth" }); return; }
       const body = await sub.json().catch(() => ({}));
       if (body.missing?.length) {
@@ -165,6 +179,7 @@ function MentorSummary({
   const areaLabel = byId(refs?.mentoring_area);
   const goalLabel = byId(refs?.career_goal);
   const skillLabel = bySlug(refs?.skill);
+  const subjectLabel = byId(refs?.subject);
 
   const collegeText = college ? `${college.name}${college.place ? ` — ${college.place}` : ""}` : "";
   const badge = STATUS_BADGE[status] ?? STATUS_BADGE.pending_review;
@@ -212,6 +227,8 @@ function MentorSummary({
           <ChipList items={f.mentoring_area_ids.map((id) => areaLabel.get(id) ?? id)} />
           <p className="text-muted-foreground mt-4 mb-1.5 text-xs font-semibold tracking-wide uppercase">Skills</p>
           <ChipList items={f.skills.map((s) => skillLabel.get(s) ?? s)} />
+          <p className="text-muted-foreground mt-4 mb-1.5 text-xs font-semibold tracking-wide uppercase">Subjects</p>
+          <ChipList items={f.teachable_subject_ids.map((id) => subjectLabel.get(id) ?? id)} />
           <p className="text-muted-foreground mt-4 mb-1.5 text-xs font-semibold tracking-wide uppercase">Career goals</p>
           <ChipList items={f.career_goal_ids.map((id) => goalLabel.get(id) ?? id)} />
         </div>

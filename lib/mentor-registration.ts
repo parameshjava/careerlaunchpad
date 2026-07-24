@@ -32,7 +32,7 @@ export const STEP_FIELDS: Record<number, string[]> = {
     "current_company", "current_title", "industry_id", "years_experience",
   ],
   3: [
-    "mentoring_area_ids", "skills", "career_goal_ids",
+    "mentoring_area_ids", "skills", "teachable_subject_ids", "career_goal_ids",
     "mentor_mode_id", "contribution_type_id", "availability",
   ],
 };
@@ -56,6 +56,7 @@ type Refs = {
   industryIds: Set<string>;
   modeIds: Set<string>;
   contributionIds: Set<string>;
+  subjectIds: Set<string>; // public.subject ids (via mentor_teachable_subjects RPC)
 };
 
 const UUID_RE = /^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$/i;
@@ -81,15 +82,24 @@ async function loadRefs(supabase: SupabaseClient, fields: string[]): Promise<Ref
     return new Set((data ?? []).map((r: { id: string }) => r.id));
   };
 
-  const [goalIds, areaIds, industryIds, modeIds, contributionIds] = await Promise.all([
+  // Subjects come from the SECURITY DEFINER RPC (subject RLS is exam-staff-only,
+  // but external mentors must be able to declare teachable subjects).
+  const subjectIdSet = async (need: boolean) => {
+    if (!need) return new Set<string>();
+    const { data } = await supabase.rpc("mentor_teachable_subjects");
+    return new Set(((data ?? []) as { id: string }[]).map((r) => r.id));
+  };
+
+  const [goalIds, areaIds, industryIds, modeIds, contributionIds, subjectIds] = await Promise.all([
     idSet(fields.includes("career_goal_ids"), "ref_career_goal"),
     idSet(fields.includes("mentoring_area_ids"), "ref_mentoring_area"),
     idSet(fields.includes("industry_id"), "ref_industry"),
     idSet(fields.includes("mentor_mode_id"), "ref_mentor_mode"),
     idSet(fields.includes("contribution_type_id"), "ref_contribution_type"),
+    subjectIdSet(fields.includes("teachable_subject_ids")),
   ]);
 
-  return { slugSets, goalIds, areaIds, industryIds, modeIds, contributionIds };
+  return { slugSets, goalIds, areaIds, industryIds, modeIds, contributionIds, subjectIds };
 }
 
 export type ValidationResult = {
@@ -157,9 +167,13 @@ export async function validatePartial(
         break;
       }
       case "mentoring_area_ids":
-      case "career_goal_ids": {
+      case "career_goal_ids":
+      case "teachable_subject_ids": {
         if (!Array.isArray(v)) { errors.push(`${field}: must be a list`); break; }
-        const set = field === "mentoring_area_ids" ? refs.areaIds : refs.goalIds;
+        const set =
+          field === "mentoring_area_ids" ? refs.areaIds
+          : field === "career_goal_ids" ? refs.goalIds
+          : refs.subjectIds;
         const ids = v.map(str).filter(Boolean);
         const bad = ids.filter((id) => !UUID_RE.test(id) || !set.has(id));
         if (bad.length) errors.push(`${field}: unknown value(s)`);

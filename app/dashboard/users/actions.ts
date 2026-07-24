@@ -2,6 +2,7 @@
 
 import { revalidatePath } from "next/cache";
 import { createClient } from "@/lib/supabase/server";
+import { createAdminClient } from "@/lib/supabase/admin";
 import { requirePermission } from "@/lib/auth";
 import { sendInviteEmail } from "@/lib/mailer";
 
@@ -67,7 +68,7 @@ export async function createInvite(_prev: InviteState, formData: FormData): Prom
     loginUrl: `${SITE_URL}/auth/login`,
   });
 
-  revalidatePath("/dashboard/users");
+  revalidatePath("/dashboard/team");
   return { ok: true, message: `Invited ${email} as ${role.name}.` };
 }
 
@@ -91,7 +92,7 @@ export async function resendInvite(formData: FormData): Promise<void> {
     const roleName = Array.isArray(inv.role) ? inv.role[0]?.name : (inv.role as { name?: string })?.name;
     await sendInviteEmail({ to: inv.email, roleName: roleName ?? "user", loginUrl: `${SITE_URL}/auth/login` });
   }
-  revalidatePath("/dashboard/users");
+  revalidatePath("/dashboard/team");
 }
 
 /** Revoke an invite (prevents it from being consumed). */
@@ -100,7 +101,70 @@ export async function revokeInvite(formData: FormData): Promise<void> {
   const supabase = await createClient();
   const id = String(formData.get("id") ?? "");
   await supabase.from("invite").update({ status: "revoked" }).eq("id", id);
-  revalidatePath("/dashboard/users");
+  revalidatePath("/dashboard/team");
+}
+
+/**
+ * Activate an invited user NOW, without waiting for their first sign-in. Mints
+ * the target's auth.users row via the admin API (email pre-confirmed so their
+ * later OAuth sign-in links to it); the on_auth_user_created trigger then
+ * provisions app_user + role(s) and materialises any staged mentor profile,
+ * consuming the pending invite. If an auth account already exists for the email
+ * (they signed in before the invite), we provision it directly via
+ * admin_provision_invites(). Auth: user.invite.
+ */
+export async function activateInvite(inviteId: string): Promise<{ ok?: boolean; error?: string }> {
+  try {
+    await requirePermission("user.invite");
+  } catch {
+    return { error: "You don't have permission to activate users." };
+  }
+
+  const supabase = await createClient();
+  const { data: inv } = await supabase
+    .from("invite")
+    .select("id, email, status, expires_at")
+    .eq("id", inviteId)
+    .maybeSingle();
+  if (!inv) return { error: "Invite not found." };
+  if (inv.status !== "pending") {
+    return { error: "This invite is no longer pending." };
+  }
+  const email = String(inv.email ?? "").trim().toLowerCase();
+  if (!email) return { error: "This invite has no email to activate." };
+
+  const admin = createAdminClient();
+
+  // Create the auth user → the on_auth_user_created trigger provisions from the
+  // pending invite(s). email_confirm so a later social sign-in links to it.
+  const { error: createErr } = await admin.auth.admin.createUser({
+    email,
+    email_confirm: true,
+  });
+
+  if (createErr) {
+    // Already has an auth account (signed in before the invite existed): fetch
+    // its id and provision directly. generateLink returns the existing user.
+    const alreadyExists =
+      // supabase-js surfaces this as code "email_exists" or a "already been registered" message
+      (createErr as { code?: string }).code === "email_exists" ||
+      /already.*registered|already exists/i.test(createErr.message);
+    if (!alreadyExists) return { error: createErr.message };
+
+    const { data: link, error: linkErr } = await admin.auth.admin.generateLink({
+      type: "magiclink",
+      email,
+    });
+    const existingId = link?.user?.id;
+    if (linkErr || !existingId) {
+      return { error: linkErr?.message ?? "Could not find the existing account to activate." };
+    }
+    const { error: rpcErr } = await admin.rpc("admin_provision_invites", { p_user_id: existingId });
+    if (rpcErr) return { error: rpcErr.message };
+  }
+
+  revalidatePath("/dashboard/team");
+  return { ok: true };
 }
 
 /**
@@ -122,7 +186,7 @@ export async function updateMemberRoles(
     p_role_keys: roleKeys,
   });
   if (error) return { error: error.message };
-  revalidatePath("/dashboard/users");
+  revalidatePath("/dashboard/team");
   return { ok: true };
 }
 
@@ -145,7 +209,7 @@ export async function setCollegeAdmin(
     p_grant: grant,
   });
   if (error) return { error: error.message };
-  revalidatePath("/dashboard/users");
+  revalidatePath("/dashboard/team");
   return { ok: true };
 }
 
@@ -173,7 +237,7 @@ export async function setMemberOfficeEmail(
       .insert({ user_id: userId, email: trimmed, kind: "office", active: true });
     if (error) return { error: error.message };
   }
-  revalidatePath("/dashboard/users");
+  revalidatePath("/dashboard/team");
   return { ok: true };
 }
 
@@ -195,7 +259,7 @@ export async function updateMemberProfile(
     .update({ full_name: fullName.trim() || null, phone: phone.trim() || null })
     .eq("id", userId);
   if (error) return { error: error.message };
-  revalidatePath("/dashboard/users");
+  revalidatePath("/dashboard/team");
   return { ok: true };
 }
 
@@ -209,7 +273,7 @@ export async function deleteMember(userId: string): Promise<{ ok?: boolean; erro
   const supabase = await createClient();
   const { error } = await supabase.rpc("soft_delete_member", { p_user_id: userId });
   if (error) return { error: error.message };
-  revalidatePath("/dashboard/users");
+  revalidatePath("/dashboard/team");
   return { ok: true };
 }
 
@@ -221,5 +285,5 @@ export async function setUserStatus(formData: FormData): Promise<void> {
   const status = String(formData.get("status") ?? "");
   if (status !== "active" && status !== "suspended") return;
   await supabase.from("app_user").update({ status }).eq("id", id);
-  revalidatePath("/dashboard/users");
+  revalidatePath("/dashboard/team");
 }
