@@ -22,6 +22,7 @@ import {
 } from "@/components/ui/select";
 import { RichContent } from "@/components/exam/RichContent";
 import { SearchableSelect } from "@/components/exam/SearchableSelect";
+import { SubjectSelect } from "@/components/exam/SubjectSelect";
 import {
   DIFFICULTIES,
   DIFFICULTY_LABELS,
@@ -30,7 +31,6 @@ import {
   type Difficulty,
   type Passage,
   type QuestionKind,
-  type Subject,
 } from "@/lib/exam-query";
 
 const KINDS: { value: QuestionKind; label: string }[] = [
@@ -94,7 +94,6 @@ export function QuestionEditor({
   initialSubjectId?: string;
 }) {
   const router = useRouter();
-  const [subjects, setSubjects] = useState<Subject[]>([]);
   const [chapters, setChapters] = useState<Chapter[]>([]);
   const [passages, setPassages] = useState<Passage[]>([]);
 
@@ -114,14 +113,6 @@ export function QuestionEditor({
   const [loading, setLoading] = useState(mode === "edit");
   const [saving, setSaving] = useState(false);
   const [error, setError] = useState("");
-
-  // Reference data.
-  useEffect(() => {
-    fetch("/api/exam/subjects")
-      .then((r) => r.json())
-      .then((d) => setSubjects(d.subjects ?? []))
-      .catch(() => {});
-  }, []);
 
   const loadSubjectRefs = useCallback(async (sid: string) => {
     if (!sid) {
@@ -255,22 +246,18 @@ export function QuestionEditor({
           <CardTitle>Details</CardTitle>
         </CardHeader>
         <CardContent className="grid gap-4 sm:grid-cols-2">
-          <SelectField
-            id="subject"
-            label="Subject"
-            value={subjectId}
-            onValueChange={(v) => {
-              setSubjectId(v);
-              setChapterId("");
-              setPassageId("");
-            }}
-          >
-            {subjects.map((s) => (
-              <SelectItem key={s.id} value={s.id}>
-                {s.name}
-              </SelectItem>
-            ))}
-          </SelectField>
+          <div className="grid gap-1.5">
+            <Label htmlFor="subject">Subject</Label>
+            <SubjectSelect
+              id="subject"
+              value={subjectId}
+              onChange={(v) => {
+                setSubjectId(v);
+                setChapterId("");
+                setPassageId("");
+              }}
+            />
+          </div>
 
           <div className="grid gap-1.5">
             <Label htmlFor="chapter">Chapter</Label>

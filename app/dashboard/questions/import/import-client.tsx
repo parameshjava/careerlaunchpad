@@ -10,6 +10,7 @@
 import { useEffect, useRef, useState } from "react";
 import { cn } from "@/lib/utils";
 import { RichContent } from "@/components/exam/RichContent";
+import { SubjectSelect } from "@/components/exam/SubjectSelect";
 import { Button } from "@/components/ui/button";
 import { Label } from "@/components/ui/label";
 import { Badge } from "@/components/ui/badge";
@@ -335,25 +336,16 @@ export function ImportQuestionsClient({ subjects }: { subjects: Subject[] }) {
           </CardDescription>
         </CardHeader>
         <CardContent>
-          <Select
+          <SubjectSelect
+            className="max-w-md"
+            subjects={subjects}
             value={subjectId}
-            onValueChange={(v) => {
+            onChange={(v) => {
               setSubjectId(v);
               setReport(null);
               setDone(null);
             }}
-          >
-            <SelectTrigger className="w-full max-w-md">
-              <SelectValue placeholder="Select a subject…" />
-            </SelectTrigger>
-            <SelectContent>
-              {subjects.map((s) => (
-                <SelectItem key={s.id} value={s.id}>
-                  {s.name}
-                </SelectItem>
-              ))}
-            </SelectContent>
-          </Select>
+          />
         </CardContent>
       </Card>
 

@@ -17,7 +17,8 @@ import {
   SelectValue,
 } from "@/components/ui/select";
 import { SearchableSelect } from "@/components/exam/SearchableSelect";
-import { DIFFICULTIES, DIFFICULTY_LABELS, type Chapter, type Difficulty, type Subject } from "@/lib/exam-query";
+import { SubjectSelect } from "@/components/exam/SubjectSelect";
+import { DIFFICULTIES, DIFFICULTY_LABELS, type Chapter, type Difficulty } from "@/lib/exam-query";
 import { type AssessmentQuestionListItem } from "@/lib/assessment-query";
 
 // Traffic-light difficulty coding (categorical status, not brand color).
@@ -32,7 +33,6 @@ const LETTERS = ["A", "B", "C", "D", "E"];
 const PAGE_SIZE = 20;
 
 export function AssessmentQuestionsClient() {
-  const [subjects, setSubjects] = useState<Subject[]>([]);
   const [subjectId, setSubjectId] = useState("");
   const [chapters, setChapters] = useState<Chapter[]>([]);
   const [questions, setQuestions] = useState<AssessmentQuestionListItem[]>([]);
@@ -41,13 +41,6 @@ export function AssessmentQuestionsClient() {
   const [filterDifficulty, setFilterDifficulty] = useState("");
   const [error, setError] = useState("");
   const [page, setPage] = useState(1);
-
-  const loadSubjects = useCallback(async () => {
-    const res = await fetch("/api/exam/subjects");
-    const data = await res.json();
-    if (res.ok) setSubjects(data.subjects ?? []);
-    else setError(data.error ?? "Failed to load subjects");
-  }, []);
 
   const loadChapters = useCallback(async (sid: string) => {
     if (!sid) return setChapters([]);
@@ -80,9 +73,6 @@ export function AssessmentQuestionsClient() {
     [],
   );
 
-  useEffect(() => {
-    loadSubjects();
-  }, [loadSubjects]);
   useEffect(() => {
     loadChapters(subjectId);
   }, [subjectId, loadChapters]);
@@ -118,25 +108,15 @@ export function AssessmentQuestionsClient() {
         <CardContent className="grid gap-4 sm:grid-cols-2">
           <div className="grid gap-1.5">
             <Label htmlFor="subject">Select subject</Label>
-            <Select
+            <SubjectSelect
+              id="subject"
               value={subjectId}
-              onValueChange={(v) => {
+              onChange={(v) => {
                 setSubjectId(v);
                 setFilterChapter("");
                 setPage(1);
               }}
-            >
-              <SelectTrigger id="subject" className="w-full">
-                <SelectValue placeholder="Select a subject…" />
-              </SelectTrigger>
-              <SelectContent>
-                {subjects.map((s) => (
-                  <SelectItem key={s.id} value={s.id}>
-                    {s.name}
-                  </SelectItem>
-                ))}
-              </SelectContent>
-            </Select>
+            />
           </div>
         </CardContent>
       </Card>
