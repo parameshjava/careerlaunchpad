@@ -17,11 +17,15 @@ const TAB_CLS =
   "-mb-px h-auto flex-none rounded-t-md rounded-b-none border border-border bg-muted! px-4 py-2 font-medium text-muted-foreground shadow-none transition-colors after:hidden hover:bg-muted/70 " +
   "data-active:border-primary! data-active:border-b-0 data-active:bg-primary! data-active:text-primary-foreground! data-active:font-semibold data-active:shadow-none";
 
-// A student is "pending approval" when they self-registered, submitted their
-// profile, and haven't been reviewed yet. Imported/invited students are
-// auto-approved (no student_profile to review), so they land in Approved.
+// A registered student is "pending approval" whenever their review status is
+// still 'pending_review' — self-registered students are set pending the moment
+// their profile is created (migration 020), so this must NOT also require a
+// finished submit, or a student who is mid-registration but already
+// 'pending_review' would wrongly fall through to the Approved tab. Imported/
+// invited students have no profile to review and default to 'approved', so they
+// stay in Approved.
 const isPendingApproval = (s: Student) =>
-  s.stage === "Registered" && s.registrationStatus === "submitted" && s.reviewStatus === "pending_review";
+  s.stage === "Registered" && s.reviewStatus === "pending_review";
 
 export const metadata: Metadata = {
   title: "Students Console",
@@ -89,9 +93,9 @@ export default async function DashboardPage() {
           <Card>
             <CardContent className="grid gap-4 pt-6">
               <p className="text-muted-foreground text-sm">
-                Self-registered students who’ve submitted their profile and are awaiting review. Open
-                a profile to approve — they’re emailed on approval. Imported students are
-                auto-approved and don’t appear here.
+                Self-registered students awaiting review — including those still completing their
+                profile. Open a profile to approve — they’re emailed on approval. Imported students
+                are auto-approved and don’t appear here.
               </p>
               {pendingStudents.length === 0 ? (
                 <div className="text-muted-foreground bg-muted/40 rounded-lg border px-4 py-10 text-center text-sm">
