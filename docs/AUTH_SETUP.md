@@ -29,20 +29,20 @@ student → `/student`; employer → `/employer`.
 Everything below is filled in from `.env`. There are **two Supabase projects**; do
 each step in **both** (or just the one you're configuring).
 
-| | Preview | Production |
-|---|---|---|
-| **Project ref** | `etzfcktxzfttgcqbjgyu` | `zwvcsvbjmmbnoroasgim` |
-| **Supabase URL** | `https://etzfcktxzfttgcqbjgyu.supabase.co` | `https://zwvcsvbjmmbnoroasgim.supabase.co` |
-| **Publishable key** | `sb_publishable_PJA69Byy77-2OD-AmNxD7A_h8iY-HU_` | `sb_publishable_8JyKoHF-vkMJaS0X3GoMaQ_pCol82xu` |
-| **App domain** | `https://preview.careerlaunchpad.ai` | `https://careerlaunchpad.ai` |
-| **Provider callback** (register at each provider) | `https://etzfcktxzfttgcqbjgyu.supabase.co/auth/v1/callback` | `https://zwvcsvbjmmbnoroasgim.supabase.co/auth/v1/callback` |
+|                                                   | Preview                                                     | Production                                                  |
+| ------------------------------------------------- | ----------------------------------------------------------- | ----------------------------------------------------------- |
+| **Project ref**                                   | `jdboqyhrvvywfkvejevo`                                      | `asdiotmvebzbskzboawe`                                      |
+| **Supabase URL**                                  | `https://jdboqyhrvvywfkvejevo.supabase.co`                  | `https://asdiotmvebzbskzboawe.supabase.co`                  |
+| **Publishable key**                               | `sb_publishable_PJA69Byy77-2OD-AmNxD7A_h8iY-HU_`            | `sb_publishable_8JyKoHF-vkMJaS0X3GoMaQ_pCol82xu`            |
+| **App domain**                                    | `https://preview.careerlaunchpad.ai`                        | `https://careerlaunchpad.ai`                                |
+| **Provider callback** (register at each provider) | `https://jdboqyhrvvywfkvejevo.supabase.co/auth/v1/callback` | `https://asdiotmvebzbskzboawe.supabase.co/auth/v1/callback` |
 
 Supabase dashboard deep-links (sign in first):
 
-| | Preview | Production |
-|---|---|---|
-| **URL Configuration** | https://supabase.com/dashboard/project/etzfcktxzfttgcqbjgyu/auth/url-configuration | https://supabase.com/dashboard/project/zwvcsvbjmmbnoroasgim/auth/url-configuration |
-| **Providers** | https://supabase.com/dashboard/project/etzfcktxzfttgcqbjgyu/auth/providers | https://supabase.com/dashboard/project/zwvcsvbjmmbnoroasgim/auth/providers |
+|                       | Preview                                                                            | Production                                                                         |
+| --------------------- | ---------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------- |
+| **URL Configuration** | https://supabase.com/dashboard/project/jdboqyhrvvywfkvejevo/auth/url-configuration | https://supabase.com/dashboard/project/asdiotmvebzbskzboawe/auth/url-configuration |
+| **Providers**         | https://supabase.com/dashboard/project/jdboqyhrvvywfkvejevo/auth/providers         | https://supabase.com/dashboard/project/asdiotmvebzbskzboawe/auth/providers         |
 
 ---
 
@@ -50,7 +50,7 @@ Supabase dashboard deep-links (sign in first):
 
 Open **URL Configuration** for the project (links above).
 
-**Preview** — `https://supabase.com/dashboard/project/etzfcktxzfttgcqbjgyu/auth/url-configuration`:
+**Preview** — `https://supabase.com/dashboard/project/jdboqyhrvvywfkvejevo/auth/url-configuration`:
 - **Site URL:**
   ```
   https://preview.careerlaunchpad.ai
@@ -65,7 +65,7 @@ Open **URL Configuration** for the project (links above).
 > `preview.careerlaunchpad.ai` is a **subdomain of the domain you already own** — no
 > new domain to buy. See [§Reusing the same domain for preview](#reusing-the-same-domain-for-preview-vercel) below for the one-time Vercel + DNS wiring.
 
-**Production** — `https://supabase.com/dashboard/project/zwvcsvbjmmbnoroasgim/auth/url-configuration`:
+**Production** — `https://supabase.com/dashboard/project/asdiotmvebzbskzboawe/auth/url-configuration`:
 - **Site URL:**
   ```
   https://careerlaunchpad.ai
@@ -86,10 +86,10 @@ For each provider you create an OAuth app, register the **Supabase** callback UR
 the provider, then paste the client id/secret into **Supabase → Authentication →
 Providers**. The callback to register at every provider:
 
-| Environment | Register this redirect URL at the provider |
-|---|---|
-| Preview | `https://etzfcktxzfttgcqbjgyu.supabase.co/auth/v1/callback` |
-| Production | `https://zwvcsvbjmmbnoroasgim.supabase.co/auth/v1/callback` |
+| Environment | Register this redirect URL at the provider                  |
+| ----------- | ----------------------------------------------------------- |
+| Preview     | `https://jdboqyhrvvywfkvejevo.supabase.co/auth/v1/callback` |
+| Production  | `https://asdiotmvebzbskzboawe.supabase.co/auth/v1/callback` |
 
 > The provider only ever needs the **Supabase** callback above — never `localhost`
 > or this app's `/auth/callback`. This app's URLs go in the redirect allow-list (§1).
@@ -110,8 +110,8 @@ a troubleshooting table) see **[`OAUTH_PROVIDERS.md`](./OAUTH_PROVIDERS.md)**.
    ```
 4. **Authorized redirect URIs** — add both Supabase callbacks:
    ```
-   https://etzfcktxzfttgcqbjgyu.supabase.co/auth/v1/callback
-   https://zwvcsvbjmmbnoroasgim.supabase.co/auth/v1/callback
+   https://jdboqyhrvvywfkvejevo.supabase.co/auth/v1/callback
+   https://asdiotmvebzbskzboawe.supabase.co/auth/v1/callback
    ```
 5. Copy **Client ID + Secret** → Supabase → Auth → Providers → **Google** (toggle on,
    paste, Save) — in **both** projects (links in §0).
@@ -125,9 +125,9 @@ a troubleshooting table) see **[`OAUTH_PROVIDERS.md`](./OAUTH_PROVIDERS.md)**.
 3. **Authorization callback URL** (GitHub allows one per app — make a second app for
    the other env, or use the prod one):
    ```
-   https://zwvcsvbjmmbnoroasgim.supabase.co/auth/v1/callback
+   https://asdiotmvebzbskzboawe.supabase.co/auth/v1/callback
    ```
-   (Preview app callback: `https://etzfcktxzfttgcqbjgyu.supabase.co/auth/v1/callback`)
+   (Preview app callback: `https://jdboqyhrvvywfkvejevo.supabase.co/auth/v1/callback`)
 4. **Generate a new client secret**, copy **Client ID + Secret** → Supabase → **GitHub**.
 5. Email scope (`user:email`) is requested by default — needed because the invite
    matches on email; a fully-private GitHub email yields no address.
@@ -137,19 +137,19 @@ a troubleshooting table) see **[`OAUTH_PROVIDERS.md`](./OAUTH_PROVIDERS.md)**.
 2. **Products** → request **"Sign In with LinkedIn using OpenID Connect"**.
 3. **Auth** tab → under **Authorized redirect URLs for your app** add both:
    ```
-   https://etzfcktxzfttgcqbjgyu.supabase.co/auth/v1/callback
-   https://zwvcsvbjmmbnoroasgim.supabase.co/auth/v1/callback
+   https://jdboqyhrvvywfkvejevo.supabase.co/auth/v1/callback
+   https://asdiotmvebzbskzboawe.supabase.co/auth/v1/callback
    ```
    Scopes: `openid profile email`.
 4. Copy **Client ID + Secret** → Supabase → **LinkedIn (OIDC)** (not legacy LinkedIn).
    The app already calls the `linkedin_oidc` provider in `app/auth/login/page.tsx`.
 
 ### Facebook  (Meta)
-1. Meta for Developers → **Create App** → add the **Facebook Login** product (Web).
+1. [Meta for Developers](https://developers.facebook.com) → **Create App** → add the **Facebook Login** product (Web).
 2. **Facebook Login → Settings → Valid OAuth Redirect URIs** — add both:
    ```
-   https://etzfcktxzfttgcqbjgyu.supabase.co/auth/v1/callback
-   https://zwvcsvbjmmbnoroasgim.supabase.co/auth/v1/callback
+   https://jdboqyhrvvywfkvejevo.supabase.co/auth/v1/callback
+   https://asdiotmvebzbskzboawe.supabase.co/auth/v1/callback
    ```
 3. **Settings → Basic → App domains:**
    ```
@@ -184,7 +184,7 @@ NEXT_PUBLIC_SUPABASE_PUBLISHABLE_KEY
 
 ### Local (`.env.local`, gitignored — preferred over `.env`)
 ```
-NEXT_PUBLIC_SUPABASE_URL=https://etzfcktxzfttgcqbjgyu.supabase.co
+NEXT_PUBLIC_SUPABASE_URL=https://jdboqyhrvvywfkvejevo.supabase.co
 NEXT_PUBLIC_SUPABASE_PUBLISHABLE_KEY=sb_publishable_PJA69Byy77-2OD-AmNxD7A_h8iY-HU_
 NEXT_PUBLIC_SITE_URL=http://localhost:3000
 ```
@@ -193,7 +193,7 @@ Then **stop and restart** `npm run dev`. Verify it loaded:
 # in the running app, open the browser console on /auth/login:
 #   the "URL and API key are required" error should be gone.
 # or check the value is inlined into the client bundle after a build:
-npm run build && grep -rl "etzfcktxzfttgcqbjgyu.supabase.co" .next/static/ | head -1
+npm run build && grep -rl "jdboqyhrvvywfkvejevo.supabase.co" .next/static/ | head -1
 ```
 
 ### Vercel (per environment) — fixes the deployed-site error
@@ -209,14 +209,14 @@ The values to paste:
 
 **Production deploy env:**
 ```
-NEXT_PUBLIC_SUPABASE_URL=https://zwvcsvbjmmbnoroasgim.supabase.co
+NEXT_PUBLIC_SUPABASE_URL=https://asdiotmvebzbskzboawe.supabase.co
 NEXT_PUBLIC_SUPABASE_PUBLISHABLE_KEY=sb_publishable_8JyKoHF-vkMJaS0X3GoMaQ_pCol82xu
 NEXT_PUBLIC_SITE_URL=https://careerlaunchpad.ai
 ```
 
 **Preview deploy env** (`preview.careerlaunchpad.ai`):
 ```
-NEXT_PUBLIC_SUPABASE_URL=https://etzfcktxzfttgcqbjgyu.supabase.co
+NEXT_PUBLIC_SUPABASE_URL=https://jdboqyhrvvywfkvejevo.supabase.co
 NEXT_PUBLIC_SUPABASE_PUBLISHABLE_KEY=sb_publishable_PJA69Byy77-2OD-AmNxD7A_h8iY-HU_
 NEXT_PUBLIC_SITE_URL=https://preview.careerlaunchpad.ai
 ```
@@ -228,13 +228,13 @@ app — they're stored in Supabase (step 2).
 This means the browser received empty `NEXT_PUBLIC_SUPABASE_URL` /
 `NEXT_PUBLIC_SUPABASE_PUBLISHABLE_KEY`. Walk these in order:
 
-| Check | Fix |
-|---|---|
-| **Var names** match exactly (incl. `NEXT_PUBLIC_` prefix and `_PUBLISHABLE_KEY`, not `_ANON_KEY`) | Rename to the two names in §3. |
-| **Local:** vars in `.env.local`/`.env` but error persists | The dev server caches env at startup — **stop and re-run `npm run dev`**. |
-| **Deployed (minified `…js` in the stack):** vars never set on Vercel | Add them in Project → Settings → Environment Variables, scoped to that environment. |
-| **Deployed:** vars set, still failing | They were added **after** the live build — **redeploy** so they're inlined. |
-| Set only for Production, but error is on the **preview** URL (or vice-versa) | Each var must be ticked for the environment that's actually serving — set both scopes. |
+| Check                                                                                             | Fix                                                                                    |
+| ------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------- |
+| **Var names** match exactly (incl. `NEXT_PUBLIC_` prefix and `_PUBLISHABLE_KEY`, not `_ANON_KEY`) | Rename to the two names in §3.                                                         |
+| **Local:** vars in `.env.local`/`.env` but error persists                                         | The dev server caches env at startup — **stop and re-run `npm run dev`**.              |
+| **Deployed (minified `…js` in the stack):** vars never set on Vercel                              | Add them in Project → Settings → Environment Variables, scoped to that environment.    |
+| **Deployed:** vars set, still failing                                                             | They were added **after** the live build — **redeploy** so they're inlined.            |
+| Set only for Production, but error is on the **preview** URL (or vice-versa)                      | Each var must be ticked for the environment that's actually serving — set both scopes. |
 
 ---
 
@@ -271,11 +271,11 @@ at Vercel, and Vercel pins it to a branch.
 Set each `NEXT_PUBLIC_*` var twice, scoped by environment, so prod and preview hit
 their own Supabase project:
 
-| Variable | Production scope | Preview scope |
-|---|---|---|
-| `NEXT_PUBLIC_SUPABASE_URL` | `https://zwvcsvbjmmbnoroasgim.supabase.co` | `https://etzfcktxzfttgcqbjgyu.supabase.co` |
+| Variable                               | Production scope                                 | Preview scope                                    |
+| -------------------------------------- | ------------------------------------------------ | ------------------------------------------------ |
+| `NEXT_PUBLIC_SUPABASE_URL`             | `https://asdiotmvebzbskzboawe.supabase.co`       | `https://jdboqyhrvvywfkvejevo.supabase.co`       |
 | `NEXT_PUBLIC_SUPABASE_PUBLISHABLE_KEY` | `sb_publishable_8JyKoHF-vkMJaS0X3GoMaQ_pCol82xu` | `sb_publishable_PJA69Byy77-2OD-AmNxD7A_h8iY-HU_` |
-| `NEXT_PUBLIC_SITE_URL` | `https://careerlaunchpad.ai` | `https://preview.careerlaunchpad.ai` |
+| `NEXT_PUBLIC_SITE_URL`                 | `https://careerlaunchpad.ai`                     | `https://preview.careerlaunchpad.ai`             |
 
 > Want a unique URL per pull request on your own domain
 > (`pr-123.preview.careerlaunchpad.ai`)? Add a **wildcard** domain
@@ -287,22 +287,22 @@ their own Supabase project:
 ---
 
 ## How it maps to the code
-| Piece | Path |
-|---|---|
-| Login page (4 social buttons) | `app/auth/login/page.tsx` |
-| OAuth callback (code → session → role routing) | `app/auth/callback/route.ts` |
-| Not-provisioned / error pages | `app/auth/no-access/page.tsx`, `app/auth/auth-code-error/page.tsx` |
-| Sign-out | `app/auth/signout/route.ts` |
-| Session refresh + route gating | `middleware.ts` + `lib/supabase/middleware.ts` |
-| RBAC context (roles/permissions/home) | `lib/auth.ts` ← `auth_context()` SQL (migration 009) |
-| Owner "add users" / invites | `app/dashboard/users/` |
-| Provisioning trigger | `supabase/migrations/005_handle_new_user.sql` |
-| Per-provider registration guide | [`OAUTH_PROVIDERS.md`](./OAUTH_PROVIDERS.md) |
+| Piece                                          | Path                                                               |
+| ---------------------------------------------- | ------------------------------------------------------------------ |
+| Login page (4 social buttons)                  | `app/auth/login/page.tsx`                                          |
+| OAuth callback (code → session → role routing) | `app/auth/callback/route.ts`                                       |
+| Not-provisioned / error pages                  | `app/auth/no-access/page.tsx`, `app/auth/auth-code-error/page.tsx` |
+| Sign-out                                       | `app/auth/signout/route.ts`                                        |
+| Session refresh + route gating                 | `middleware.ts` + `lib/supabase/middleware.ts`                     |
+| RBAC context (roles/permissions/home)          | `lib/auth.ts` ← `auth_context()` SQL (migration 009)               |
+| Owner "add users" / invites                    | `app/dashboard/users/`                                             |
+| Provisioning trigger                           | `supabase/migrations/005_handle_new_user.sql`                      |
+| Per-provider registration guide                | [`OAUTH_PROVIDERS.md`](./OAUTH_PROVIDERS.md)                       |
 
 ## Add another provider later
 1. Enable it in Supabase (step 2) and register the Supabase callback at the provider:
-   - Preview: `https://etzfcktxzfttgcqbjgyu.supabase.co/auth/v1/callback`
-   - Production: `https://zwvcsvbjmmbnoroasgim.supabase.co/auth/v1/callback`
+   - Preview: `https://jdboqyhrvvywfkvejevo.supabase.co/auth/v1/callback`
+   - Production: `https://asdiotmvebzbskzboawe.supabase.co/auth/v1/callback`
 2. Add one entry to the `PROVIDERS` array in `app/auth/login/page.tsx` (provider id +
    label + icon). That's it — the callback and provisioning are provider-agnostic.
 
