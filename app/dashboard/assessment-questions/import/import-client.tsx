@@ -68,11 +68,26 @@ const STATUS_VARIANT: Record<RowStatus, "default" | "destructive" | "secondary" 
 // `chapter` is constrained to that subject's real chapters — so an AI agent (or a
 // human) can only produce values the importer will accept. No passages.
 function buildSchema(subject: string, chapterNames: string[]) {
+  // A "there exists a correct option" subschema, reused by the single/multi rules.
+  const hasCorrect = {
+    type: "object",
+    properties: { is_correct: { const: true } },
+    required: ["is_correct"],
+  };
   return {
     $schema: "https://json-schema.org/draft/2020-12/schema",
     title: `CareerLaunchpad assessment-question import — ${subject}`,
     description:
-      "One subject per file. `subject` is fixed to the selected subject; `chapter` must be one of the enumerated chapters (they must already exist). Standalone MCQs only — no passages.",
+      [
+        "Import file for CareerLaunchpad per-chapter assessment questions.",
+        "How the importer behaves:",
+        "• One subject per file — `subject` MUST equal the selected subject exactly.",
+        "• `chapter` MUST already exist in that subject (pick from the enum); unknown chapters are reported, not created.",
+        "• Standalone MCQs only — no passages.",
+        "• A question with the same chapter + stem as one already in the bank is SKIPPED (safe to re-run).",
+        "• Nothing is saved until every question passes validation in the preview.",
+        "Content fields (stem, options, explanation) accept Markdown and LaTeX ($…$).",
+      ].join("\n"),
     type: "object",
     required: ["subject", "questions"],
     additionalProperties: false,
@@ -94,11 +109,18 @@ function buildSchema(subject: string, chapterNames: string[]) {
                     minLength: 1,
                     description: "This subject has no chapters yet — add chapters first.",
                   },
-            kind: { enum: ["standard", "data_sufficiency"], default: "standard" },
+            kind: {
+              enum: ["standard", "data_sufficiency"],
+              default: "standard",
+              description: "'standard' MCQ, or 'data_sufficiency' (statement-sufficiency style).",
+            },
             difficulty: { enum: ["easy", "medium", "hard", "very_hard"] },
-            answer_type: { enum: ["single", "multi"] },
-            stem: { type: "string", minLength: 1, description: "Markdown + LaTeX." },
-            stem_image_url: { type: "string" },
+            answer_type: {
+              enum: ["single", "multi"],
+              description: "'single' = exactly one correct option; 'multi' = one or more.",
+            },
+            stem: { type: "string", minLength: 1, description: "Question text. Markdown + LaTeX." },
+            stem_image_url: { type: "string", description: "Optional image URL / R2 object key." },
             explanation: {
               type: "string",
               minLength: 1,
@@ -108,7 +130,7 @@ function buildSchema(subject: string, chapterNames: string[]) {
               type: "array",
               minItems: 4,
               maxItems: 5,
-              description: "4 or 5 options. single ⇒ exactly 1 is_correct; multi ⇒ ≥1.",
+              description: "4 or 5 options. Correctness is enforced by answer_type (see allOf).",
               items: {
                 type: "object",
                 required: ["label", "is_correct"],
@@ -120,13 +142,33 @@ function buildSchema(subject: string, chapterNames: string[]) {
               },
             },
           },
+          // Machine-enforce the correctness rule so a validator (or an AI agent
+          // checking against the schema) catches it BEFORE upload — not just at the
+          // server dry-run: single ⇒ exactly one correct; multi ⇒ at least one.
+          allOf: [
+            {
+              if: { properties: { answer_type: { const: "single" } }, required: ["answer_type"] },
+              then: {
+                properties: {
+                  options: { contains: hasCorrect, minContains: 1, maxContains: 1 },
+                },
+              },
+            },
+            {
+              if: { properties: { answer_type: { const: "multi" } }, required: ["answer_type"] },
+              then: { properties: { options: { contains: hasCorrect, minContains: 1 } } },
+            },
+          ],
         },
       },
     },
+    examples: [buildSample(subject, chapterNames)],
   };
 }
 
-// A minimal valid example for the subject, using its first chapter.
+// A valid example for the subject, using its first chapter — one of each shape
+// (single-correct, multi-correct, data-sufficiency) so an author or AI agent sees
+// the full vocabulary at a glance.
 function buildSample(subject: string, chapterNames: string[]) {
   const chapter = chapterNames[0] ?? "An existing chapter name";
   return {
@@ -137,13 +179,41 @@ function buildSample(subject: string, chapterNames: string[]) {
         kind: "standard",
         difficulty: "easy",
         answer_type: "single",
-        stem: "Replace with the question text (Markdown + LaTeX supported).",
+        stem: "Single-correct example. What is $2 + 2$?",
         explanation: "Replace with the worked solution.",
         options: [
-          { label: "Correct option", is_correct: true },
-          { label: "Distractor 1", is_correct: false },
-          { label: "Distractor 2", is_correct: false },
-          { label: "Distractor 3", is_correct: false },
+          { label: "4", is_correct: true },
+          { label: "3", is_correct: false },
+          { label: "5", is_correct: false },
+          { label: "22", is_correct: false },
+        ],
+      },
+      {
+        chapter,
+        kind: "standard",
+        difficulty: "medium",
+        answer_type: "multi",
+        stem: "Multi-correct example — select all prime numbers.",
+        explanation: "2, 3 and 5 are prime; 4 is not.",
+        options: [
+          { label: "2", is_correct: true },
+          { label: "3", is_correct: true },
+          { label: "4", is_correct: false },
+          { label: "5", is_correct: true },
+        ],
+      },
+      {
+        chapter,
+        kind: "data_sufficiency",
+        difficulty: "hard",
+        answer_type: "single",
+        stem: "Data-sufficiency example. Is $x > 0$? (1) $x^2 = 9$. (2) $x = 3$.",
+        explanation: "Statement (2) alone fixes x = 3 > 0; (1) allows ±3.",
+        options: [
+          { label: "Statement I alone is sufficient, but statement II alone is not.", is_correct: false },
+          { label: "Statement II alone is sufficient, but statement I alone is not.", is_correct: true },
+          { label: "Both statements together are sufficient, but neither alone is.", is_correct: false },
+          { label: "Each statement alone is sufficient.", is_correct: false },
         ],
       },
     ],
