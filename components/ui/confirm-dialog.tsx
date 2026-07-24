@@ -35,6 +35,7 @@ export function ConfirmDialog({
   destructive = false,
   confirmPhrase,
   onConfirm,
+  children,
 }: {
   open: boolean;
   onOpenChange: (open: boolean) => void;
@@ -49,6 +50,9 @@ export function ConfirmDialog({
   confirmPhrase?: string;
   /** May be async. A thrown Error is shown inline; success auto-closes. */
   onConfirm: () => void | Promise<void>;
+  /** Extra body content (e.g. a scope selector) shown above the type-to-confirm
+      input. Keep it to a small choice — this is still a confirm dialog. */
+  children?: React.ReactNode;
 }) {
   const [busy, setBusy] = useState(false);
   const [error, setError] = useState("");
@@ -92,6 +96,7 @@ export function ConfirmDialog({
             )}
             {description && <div className="text-muted-foreground text-sm">{description}</div>}
           </div>
+          {children}
           {confirmPhrase && (
             <div className="grid gap-1.5">
               <Label htmlFor="confirm-phrase" className="text-sm font-normal">
