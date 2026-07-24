@@ -466,7 +466,7 @@ end $$;
 --     so this definer read is how the student sees them.
 create or replace function public.get_chapter_quiz_attempt(p_attempt_id uuid)
 returns table (
-  position        int,
+  q_position      int,
   question_id     uuid,
   stem            text,
   stem_image_url  text,
