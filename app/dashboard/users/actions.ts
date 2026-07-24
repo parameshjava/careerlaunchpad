@@ -277,6 +277,42 @@ export async function deleteMember(userId: string): Promise<{ ok?: boolean; erro
   return { ok: true };
 }
 
+/**
+ * PERMANENTLY purge a platform member — for cleaning up wrong records. Unlike
+ * deleteMember (reversible soft delete), hard_delete_member() removes the
+ * auth.users row, which cascades to app_user and every profile/role/notification
+ * row keyed to it, and clears the member's invite rows. Same guardrails as the
+ * soft delete (never self / last owner / owner-only for admins) live in the RPC.
+ */
+export async function deleteMemberPermanently(userId: string): Promise<{ ok?: boolean; error?: string }> {
+  try {
+    await requirePermission("user.manage");
+  } catch {
+    return { error: "You don't have permission to delete members." };
+  }
+  const supabase = await createClient();
+  const { error } = await supabase.rpc("hard_delete_member", { p_user_id: userId });
+  if (error) return { error: error.message };
+  revalidatePath("/dashboard/team");
+  return { ok: true };
+}
+
+/** Permanently delete a pending/revoked invite row (clean up wrong invites).
+ * Distinct from revokeInvite (soft — keeps the row as status='revoked'). RLS
+ * (invite_delete, migration 142) enforces user.invite. */
+export async function deleteInvite(inviteId: string): Promise<{ ok?: boolean; error?: string }> {
+  try {
+    await requirePermission("user.invite");
+  } catch {
+    return { error: "You don't have permission to delete invites." };
+  }
+  const supabase = await createClient();
+  const { error } = await supabase.from("invite").delete().eq("id", inviteId);
+  if (error) return { error: error.message };
+  revalidatePath("/dashboard/team");
+  return { ok: true };
+}
+
 /** Suspend or reactivate a user. */
 export async function setUserStatus(formData: FormData): Promise<void> {
   await requirePermission("user.suspend");

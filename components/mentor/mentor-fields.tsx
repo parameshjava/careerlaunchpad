@@ -12,6 +12,7 @@ import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { RefSelect } from "@/components/ui/ref-select";
 import { CollegePicker, type College } from "@/components/colleges/college-picker";
+import { PhoneField } from "@/components/ui/phone-input";
 
 export type Ref = { id: string; slug: string; label: string; category: string | null };
 export type RefData = Record<string, Ref[]>;
@@ -118,7 +119,7 @@ export function MentorStepBody({
         />
       </Field>
       <Field label="Mobile Number">
-        <Input value={f.phone} onChange={(e) => set("phone", e.target.value)} placeholder="+91 90000 00000" />
+        <PhoneField value={f.phone} onChange={(v) => set("phone", v)} />
       </Field>
       <Field label="LinkedIn">
         <Input value={f.linkedin_url} onChange={(e) => set("linkedin_url", e.target.value)} placeholder="https://linkedin.com/in/…" />

@@ -106,7 +106,6 @@ export const REQUIRED_FIELDS: { step: number; field: string }[] = [
   { step: 1, field: "full_name" },
   { step: 1, field: "phone" },
   { step: 2, field: "college_id" },
-  { step: 2, field: "roll_number" },
 ];
 
 /**

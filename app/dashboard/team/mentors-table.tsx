@@ -27,8 +27,10 @@ import {
 } from "@/components/ui/sheet";
 import { DataTable, arrIncludes, type DataTableFilter } from "@/components/data-table";
 import { SortHeader, StatusBadge, type StatusTone } from "@/components/data-table-parts";
+import { ConfirmDialog } from "@/components/ui/confirm-dialog";
 import type { MentorRow, MentorStatus } from "@/lib/mentors-query";
 import { setMentorStatus } from "@/app/dashboard/mentors/actions";
+import { deleteMemberPermanently } from "@/app/dashboard/users/actions";
 
 const KIND_LABEL: Record<string, string> = {
   student_alumni: "Alumnus / placed student",
@@ -50,7 +52,18 @@ const searchFilter: FilterFn<MentorRow> = (row, _id, value) => {
   return (r.name ?? "").toLowerCase().includes(t) || r.email.toLowerCase().includes(t);
 };
 
-export function MentorsTable({ mentors, canReview }: { mentors: MentorRow[]; canReview: boolean }) {
+export function MentorsTable({
+  mentors,
+  canReview,
+  canDelete,
+  currentUserId,
+}: {
+  mentors: MentorRow[];
+  canReview: boolean;
+  /** user.manage — gates the permanent "Delete mentor" purge. */
+  canDelete: boolean;
+  currentUserId: string;
+}) {
   const [selected, setSelected] = useState<MentorRow | null>(null);
 
   const colleges = useMemo(
@@ -119,11 +132,17 @@ export function MentorsTable({ mentors, canReview }: { mentors: MentorRow[]; can
         enableSorting: false,
         enableHiding: false,
         cell: ({ row }) => (
-          <MentorRowActions mentor={row.original} canReview={canReview} onReview={setSelected} />
+          <MentorRowActions
+            mentor={row.original}
+            canReview={canReview}
+            canDelete={canDelete}
+            isSelf={row.original.userId === currentUserId}
+            onReview={setSelected}
+          />
         ),
       },
     ];
-  }, [canReview]);
+  }, [canReview, canDelete, currentUserId]);
 
   const filters = useMemo<DataTableFilter[]>(() => {
     const list: DataTableFilter[] = [
@@ -173,20 +192,33 @@ export function MentorsTable({ mentors, canReview }: { mentors: MentorRow[]; can
 // detail drawer; Edit profile goes to the full wizard; the status actions call
 // setMentorStatus directly for quick approve/suspend without opening the drawer.
 function MentorRowActions({
-  mentor, canReview, onReview,
+  mentor, canReview, canDelete, isSelf, onReview,
 }: {
   mentor: MentorRow;
   canReview: boolean;
+  canDelete: boolean;
+  isSelf: boolean;
   onReview: (m: MentorRow) => void;
 }) {
   const router = useRouter();
   const [, startTransition] = useTransition();
+  const [purgeOpen, setPurgeOpen] = useState(false);
 
   const setStatus = (status: "approved" | "suspended" | "pending_review") =>
     startTransition(async () => {
       await setMentorStatus(mentor.userId, status);
       router.refresh();
     });
+
+  // Irreversible purge of the whole account (roles, profile, sign-in). Guards
+  // (never self / last owner / owner-only for admins) live in hard_delete_member.
+  async function onPurge() {
+    const res = await deleteMemberPermanently(mentor.userId);
+    if (res.error) throw new Error(res.error);
+    router.refresh();
+  }
+
+  const showDelete = canDelete && !isSelf;
 
   return (
     <div className="flex justify-end">
@@ -219,8 +251,37 @@ function MentorRowActions({
               )}
             </>
           )}
+          {showDelete && (
+            <>
+              <DropdownMenuSeparator />
+              <DropdownMenuItem
+                className="text-destructive focus:text-destructive"
+                onClick={() => setPurgeOpen(true)}
+              >
+                Delete permanently
+              </DropdownMenuItem>
+            </>
+          )}
         </DropdownMenuContent>
       </DropdownMenu>
+
+      <ConfirmDialog
+        open={purgeOpen}
+        onOpenChange={setPurgeOpen}
+        destructive
+        title="Delete permanently"
+        description={
+          <>
+            Permanently delete{" "}
+            <span className="text-foreground font-semibold">{mentor.name || mentor.email}</span> and all
+            their data — mentor profile, roles, and sign-in account. This{" "}
+            <strong>cannot be undone</strong>. To hide them reversibly, use Suspend instead.
+          </>
+        }
+        confirmPhrase={mentor.email}
+        confirmLabel="Delete permanently"
+        onConfirm={onPurge}
+      />
     </div>
   );
 }

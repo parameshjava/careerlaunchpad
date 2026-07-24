@@ -1,14 +1,27 @@
 import type { Metadata } from "next";
 
 import { Button } from "@/components/ui/button";
-import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
+import { Card, CardContent } from "@/components/ui/card";
+import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { DataTable } from "@/components/data-table";
 import Link from "next/link";
 import { columns } from "@/components/students/columns";
 import { createClient } from "@/lib/supabase/server";
 import { getAuthContext, can } from "@/lib/auth";
-import { fetchStudents } from "@/lib/students-query";
+import { fetchStudents, type Student } from "@/lib/students-query";
 import { PageContainer } from "@/components/app-shell/page-container";
+
+// Folder-tab styling shared with the Team hub (docs/STYLE_GUIDE.md → Tabs):
+// muted inactive tabs, active tab a solid brand fill sitting on the border.
+const TAB_CLS =
+  "-mb-px h-auto flex-none rounded-t-md rounded-b-none border border-border bg-muted! px-4 py-2 font-medium text-muted-foreground shadow-none transition-colors after:hidden hover:bg-muted/70 " +
+  "data-active:border-primary! data-active:border-b-0 data-active:bg-primary! data-active:text-primary-foreground! data-active:font-semibold data-active:shadow-none";
+
+// A student is "pending approval" when they self-registered, submitted their
+// profile, and haven't been reviewed yet. Imported/invited students are
+// auto-approved (no student_profile to review), so they land in Approved.
+const isPendingApproval = (s: Student) =>
+  s.stage === "Registered" && s.registrationStatus === "submitted" && s.reviewStatus === "pending_review";
 
 export const metadata: Metadata = {
   title: "Students Console",
@@ -16,7 +29,6 @@ export const metadata: Metadata = {
 
 export default async function DashboardPage() {
   const ctx = await getAuthContext();
-  const canReview = !!ctx && (ctx.permissions.has("*") || can(ctx, "student.review"));
   const canImport = !!ctx && (ctx.permissions.has("*") || can(ctx, "student.intake.import"));
   const canDelete = !!ctx && (ctx.permissions.has("*") || can(ctx, "student.delete"));
   const canImpersonate =
@@ -25,21 +37,10 @@ export default async function DashboardPage() {
   const supabase = await createClient();
   const data = await fetchStudents(supabase);
 
-  // Self-registered students who submitted and are still awaiting approval.
-  const awaitingApproval = data.filter(
-    (s) => s.stage === "Registered" && s.registrationStatus === "submitted" && s.reviewStatus === "pending_review",
-  );
-
-  const registered = data.filter((s) => s.stage === "Registered").length;
-  const awaiting = data.filter((s) => s.stage !== "Registered").length;
-  const colleges = new Set(data.map((s) => s.college).filter(Boolean)).size;
-
-  const stats = [
-    { label: "Total Students", value: String(data.length), hint: "imported + registered" },
-    { label: "Registered", value: String(registered), hint: "signed in & provisioned" },
-    { label: "Awaiting Sign-up", value: String(awaiting), hint: "imported / invited" },
-    { label: "Colleges", value: String(colleges), hint: "represented" },
-  ];
+  // Split the grid into the two approval buckets (imported/invited count as
+  // approved — there's nothing to review until they register).
+  const pendingStudents = data.filter(isPendingApproval);
+  const approvedStudents = data.filter((s) => !isPendingApproval(s));
 
   return (
     <PageContainer variant="full" className="space-y-6">
@@ -57,65 +58,58 @@ export default async function DashboardPage() {
         )}
       </div>
 
-      <div className="grid grid-cols-2 gap-4 lg:grid-cols-4">
-        {stats.map((s) => (
-          <Card key={s.label}>
-            <CardHeader className="pb-2">
-              <CardTitle className="text-muted-foreground text-sm font-medium">
-                {s.label}
-              </CardTitle>
-            </CardHeader>
-            <CardContent>
-              <div className="text-2xl font-semibold">{s.value}</div>
-              <p className="text-muted-foreground text-xs">{s.hint}</p>
+      <Tabs defaultValue="approved">
+        <TabsList
+          variant="line"
+          className="group-data-horizontal/tabs:h-auto w-full justify-start gap-0 overflow-x-auto rounded-none border-b p-0"
+        >
+          <TabsTrigger value="approved" className={TAB_CLS}>
+            Approved ({approvedStudents.length})
+          </TabsTrigger>
+          <TabsTrigger value="pending" className={TAB_CLS}>
+            Pending approval ({pendingStudents.length})
+          </TabsTrigger>
+        </TabsList>
+
+        <TabsContent value="approved" className="mt-4 min-w-0">
+          <Card>
+            <CardContent className="pt-6">
+              <DataTable
+                columns={columns}
+                data={approvedStudents}
+                searchKey="name"
+                searchPlaceholder="Search students…"
+                meta={{ canDelete, canImpersonate }}
+              />
             </CardContent>
           </Card>
-        ))}
-      </div>
+        </TabsContent>
 
-      {canReview && awaitingApproval.length > 0 && (
-        <Card>
-          <CardHeader>
-            <CardTitle>Awaiting approval ({awaitingApproval.length})</CardTitle>
-            <CardDescription>
-              Self-registered students who’ve submitted their profile. Approve to grant full access
-              (they’re emailed); imported students are auto-approved and don’t appear here.
-            </CardDescription>
-          </CardHeader>
-          <CardContent className="grid gap-3">
-            {awaitingApproval.map((s) => (
-              <div
-                key={s.id}
-                className="flex flex-col gap-3 rounded-md border p-3 sm:flex-row sm:items-center sm:justify-between"
-              >
-                <div className="min-w-0">
-                  <div className="truncate font-medium">{s.name ?? s.email}</div>
-                  <div className="text-muted-foreground truncate text-sm">
-                    {[s.email, s.college, s.course].filter(Boolean).join(" · ")}
-                  </div>
+        <TabsContent value="pending" className="mt-4 min-w-0">
+          <Card>
+            <CardContent className="grid gap-4 pt-6">
+              <p className="text-muted-foreground text-sm">
+                Self-registered students who’ve submitted their profile and are awaiting review. Open
+                a profile to approve — they’re emailed on approval. Imported students are
+                auto-approved and don’t appear here.
+              </p>
+              {pendingStudents.length === 0 ? (
+                <div className="text-muted-foreground bg-muted/40 rounded-lg border px-4 py-10 text-center text-sm">
+                  No students are awaiting approval.
                 </div>
-                <div className="flex shrink-0 gap-2">
-                  <Button asChild size="sm" variant="outline">
-                    <Link href={`/dashboard/students/${s.id}`}>Review details</Link>
-                  </Button>
-                </div>
-              </div>
-            ))}
-          </CardContent>
-        </Card>
-      )}
-
-      <Card>
-        <CardContent className="pt-6">
-          <DataTable
-            columns={columns}
-            data={data}
-            searchKey="name"
-            searchPlaceholder="Search students…"
-            meta={{ canDelete, canImpersonate }}
-          />
-        </CardContent>
-      </Card>
+              ) : (
+                <DataTable
+                  columns={columns}
+                  data={pendingStudents}
+                  searchKey="name"
+                  searchPlaceholder="Search students awaiting approval…"
+                  meta={{ canDelete, canImpersonate }}
+                />
+              )}
+            </CardContent>
+          </Card>
+        </TabsContent>
+      </Tabs>
     </PageContainer>
   );
 }

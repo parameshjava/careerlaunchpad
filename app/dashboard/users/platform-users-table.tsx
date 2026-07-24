@@ -27,7 +27,15 @@ import { DataTable, arrIncludes, type DataTableFilter } from "@/components/data-
 import { SortHeader, StatusBadge, type StatusTone } from "@/components/data-table-parts";
 import { ConfirmDialog } from "@/components/ui/confirm-dialog";
 import { ManageMemberDialog } from "./manage-roles-dialog";
-import { setUserStatus, resendInvite, revokeInvite, deleteMember, activateInvite } from "./actions";
+import {
+  setUserStatus,
+  resendInvite,
+  revokeInvite,
+  deleteMember,
+  deleteMemberPermanently,
+  deleteInvite,
+  activateInvite,
+} from "./actions";
 import { enterImpersonation } from "@/app/impersonation/actions";
 
 export type MemberRow = {
@@ -267,6 +275,8 @@ function RowActions({
 }) {
   const router = useRouter();
   const [confirmOpen, setConfirmOpen] = useState(false);
+  const [purgeOpen, setPurgeOpen] = useState(false);
+  const [deleteInviteOpen, setDeleteInviteOpen] = useState(false);
   const [activateOpen, setActivateOpen] = useState(false);
   const [manageOpen, setManageOpen] = useState(false);
   const [, startTransition] = useTransition();
@@ -283,6 +293,20 @@ function RowActions({
   // The ConfirmDialog owns busy/error for delete.
   async function onDelete() {
     const res = await deleteMember(row.id);
+    if (res.error) throw new Error(res.error);
+    router.refresh();
+  }
+
+  // Irreversible purge of a provisioned member (auth + profile + roles).
+  async function onPurge() {
+    const res = await deleteMemberPermanently(row.id);
+    if (res.error) throw new Error(res.error);
+    router.refresh();
+  }
+
+  // Irreversible delete of a pending/revoked invite row.
+  async function onDeleteInvite() {
+    const res = await deleteInvite(row.id);
     if (res.error) throw new Error(res.error);
     router.refresh();
   }
@@ -335,6 +359,15 @@ function RowActions({
             >
               Revoke invite
             </DropdownMenuItem>
+            {/* Permanent removal of the invite row — cleans up wrong records. */}
+            {caps.canInvite && (
+              <DropdownMenuItem
+                className="text-destructive focus:text-destructive"
+                onClick={() => setDeleteInviteOpen(true)}
+              >
+                Delete invite
+              </DropdownMenuItem>
+            )}
           </DropdownMenuContent>
         </DropdownMenu>
 
@@ -351,6 +384,21 @@ function RowActions({
           }
           confirmLabel="Activate"
           onConfirm={onActivate}
+        />
+        <ConfirmDialog
+          open={deleteInviteOpen}
+          onOpenChange={setDeleteInviteOpen}
+          destructive
+          title="Delete invite"
+          description={
+            <>
+              Permanently delete the invite for{" "}
+              <span className="text-foreground font-semibold">{row.email}</span>? This removes the
+              record entirely (unlike Revoke, which keeps it). You can re-invite this email later.
+            </>
+          }
+          confirmLabel="Delete"
+          onConfirm={onDeleteInvite}
         />
       </div>
     );
@@ -396,6 +444,13 @@ function RowActions({
               >
                 Remove member
               </DropdownMenuItem>
+              {/* Irreversible purge — for cleaning up wrong records. */}
+              <DropdownMenuItem
+                className="text-destructive focus:text-destructive"
+                onClick={() => setPurgeOpen(true)}
+              >
+                Delete permanently
+              </DropdownMenuItem>
             </>
           )}
         </DropdownMenuContent>
@@ -419,6 +474,23 @@ function RowActions({
         description={<>Remove <span className="text-foreground font-semibold">{row.fullName || row.email}</span>? They&apos;ll lose access (reversible by an owner).</>}
         confirmLabel="Remove"
         onConfirm={onDelete}
+      />
+      <ConfirmDialog
+        open={purgeOpen}
+        onOpenChange={setPurgeOpen}
+        destructive
+        title="Delete permanently"
+        description={
+          <>
+            Permanently delete{" "}
+            <span className="text-foreground font-semibold">{row.fullName || row.email}</span> and all
+            their data — roles, profile, and sign-in account. This <strong>cannot be undone</strong>.
+            To remove access reversibly, use Remove member instead.
+          </>
+        }
+        confirmPhrase={row.email}
+        confirmLabel="Delete permanently"
+        onConfirm={onPurge}
       />
     </div>
   );
