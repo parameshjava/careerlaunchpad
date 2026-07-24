@@ -9,7 +9,7 @@
 // switching tabs is lazy on first open and instant thereafter.
 import { useEffect, useState } from "react";
 import Link from "next/link";
-import { ArrowLeft, BookOpen, CalendarDays, GraduationCap, Settings2 } from "lucide-react";
+import { ArrowLeft, BookOpen, CalendarDays, GraduationCap, ListChecks, Settings2 } from "lucide-react";
 
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
@@ -20,8 +20,9 @@ import { BatchEditor } from "@/components/batches/batch-editor";
 import { BatchSubjectsEditor } from "@/components/batches/batch-subjects-editor";
 import { BatchSchedule } from "@/components/batches/batch-schedule";
 import { BatchRosterLazy } from "@/components/batches/batch-roster-lazy";
+import { BatchProgressEditor } from "@/components/batches/batch-progress-editor";
 
-const TABS = ["details", "subjects", "schedule", "students"] as const;
+const TABS = ["details", "subjects", "schedule", "students", "progress"] as const;
 type TabKey = (typeof TABS)[number];
 const ACTIVE = new Set<BatchStatus>(["open", "running"]);
 
@@ -38,6 +39,7 @@ export function BatchWorkspace({
   name,
   status,
   facts,
+  showProgress = false,
 }: {
   batchId: string;
   name: string;
@@ -50,6 +52,8 @@ export function BatchWorkspace({
     studentCount: number;
     grossPaise: number;
   };
+  /** Whether the caller can manage chapter progress (batch.progress.manage). */
+  showProgress?: boolean;
 }) {
   const [tab, setTab] = useState<TabKey>("details");
 
@@ -109,6 +113,11 @@ export function BatchWorkspace({
           <TabsTrigger value="students" className={TAB_CLS}>
             <GraduationCap className="size-4" /> Students
           </TabsTrigger>
+          {showProgress && (
+            <TabsTrigger value="progress" className={TAB_CLS}>
+              <ListChecks className="size-4" /> Progress
+            </TabsTrigger>
+          )}
         </TabsList>
 
         <TabsContent value="details" className="mt-4 min-w-0">
@@ -123,6 +132,11 @@ export function BatchWorkspace({
         <TabsContent value="students" className="mt-4 min-w-0">
           <BatchRosterLazy batchId={batchId} />
         </TabsContent>
+        {showProgress && (
+          <TabsContent value="progress" className="mt-4 min-w-0">
+            <BatchProgressEditor batchId={batchId} embedded />
+          </TabsContent>
+        )}
       </Tabs>
     </div>
   );

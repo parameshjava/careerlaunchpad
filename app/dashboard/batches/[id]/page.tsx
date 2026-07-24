@@ -47,6 +47,7 @@ export default async function EditBatchPage({ params }: { params: Promise<{ id: 
       batchId={id}
       name={batch.name}
       status={status}
+      showProgress={ctx.permissions.has("*") || can(ctx, "batch.progress.manage")}
       facts={{
         courseName: batch.courseName,
         academicYear: batch.academicYear,
