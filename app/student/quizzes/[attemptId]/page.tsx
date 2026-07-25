@@ -2,7 +2,6 @@ import type { Metadata } from "next";
 import { redirect } from "next/navigation";
 import { getAuthContext, can } from "@/lib/auth";
 import { requireApprovedStudent } from "@/lib/student-approval";
-import { PageContainer } from "@/components/app-shell/page-container";
 import { QuizRunner } from "@/components/student/quiz-runner";
 
 export const metadata: Metadata = { title: "Assessment" };
@@ -20,9 +19,7 @@ export default async function QuizRunnerPage({
 
   const { attemptId } = await params;
 
-  return (
-    <PageContainer variant="reading" className="space-y-6">
-      <QuizRunner attemptId={attemptId} />
-    </PageContainer>
-  );
+  // Rendered full-width (no PageContainer) — the runner controls its own layout,
+  // exactly like the exam sitting, so the shared AttemptView lays out identically.
+  return <QuizRunner attemptId={attemptId} />;
 }

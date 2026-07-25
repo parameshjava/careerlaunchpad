@@ -232,7 +232,7 @@ export function QuizRunner({ attemptId }: { attemptId: string }) {
 
   if (error && !questions)
     return (
-      <div className="space-y-4">
+      <div className="mx-auto max-w-2xl space-y-4 px-4 py-8">
         <p className="text-destructive bg-destructive/10 rounded-md border border-destructive/20 px-3 py-2 text-sm">
           {error}
         </p>
@@ -243,7 +243,7 @@ export function QuizRunner({ attemptId }: { attemptId: string }) {
     );
   if (questions === null)
     return (
-      <p className="text-muted-foreground flex items-center gap-2 text-sm">
+      <p className="text-muted-foreground mx-auto flex max-w-2xl items-center gap-2 px-4 py-8 text-sm">
         <Loader2 className="size-4 animate-spin" /> Loading…
       </p>
     );
@@ -251,7 +251,7 @@ export function QuizRunner({ attemptId }: { attemptId: string }) {
   if (result) {
     const pct = result.total_marks > 0 ? Math.round((100 * result.score) / result.total_marks) : 0;
     return (
-      <div className="space-y-6">
+      <div className="mx-auto max-w-2xl space-y-6 px-4 py-8">
         <div
           className={`rounded-2xl border p-6 text-center ${
             result.passed
@@ -280,7 +280,7 @@ export function QuizRunner({ attemptId }: { attemptId: string }) {
 
   return (
     <div
-      className="select-none"
+      className="mx-auto max-w-6xl px-4 py-4 select-none sm:px-6"
       onCopy={(e) => e.preventDefault()}
       onContextMenu={(e) => e.preventDefault()}
     >
