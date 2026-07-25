@@ -89,9 +89,9 @@ export function useQuizEngine(input: QuizEngineInput) {
   const strikesRef = useRef(0);
   const lastLeaveRef = useRef(0); // coalesce blur+visibility from one switch
   const suppressLeaveRef = useRef(false); // e.g. suppressed while a print dialog is open
-  const firedTimeoutRef = useRef(false);
   const navigatedRef = useRef(false); // once the user has moved, don't re-seed the cursor
-  const seededRef = useRef(false);
+  const seededRef = useRef(false); // seen/marked seeded once
+  const cursorSeededRef = useRef(false); // the FIRST hydrate to supply an index wins
 
   // ---- Hydration ------------------------------------------------------------
   // Seed once from loaded data; re-calls merge answers (server under local edits),
@@ -107,7 +107,13 @@ export function useQuizEngine(input: QuizEngineInput) {
       if (incoming) setAnswers((local) => ({ ...incoming, ...local }));
       if (data.seen && !seededRef.current) setSeen(new Set(data.seen));
       if (data.marked && !seededRef.current) setMarked(new Set(data.marked));
-      if (data.index != null && !navigatedRef.current) setIndex(data.index);
+      // The first supplied cursor wins and locks (unless the user already moved) —
+      // so a cache-restored position survives a later server hydrate, matching the
+      // exam's "cache cursor wins" resume behaviour.
+      if (data.index != null && !navigatedRef.current && !cursorSeededRef.current) {
+        setIndex(data.index);
+        cursorSeededRef.current = true;
+      }
       seededRef.current = true;
     },
     [],
@@ -188,12 +194,13 @@ export function useQuizEngine(input: QuizEngineInput) {
   useEffect(() => {
     if (deadline == null || !active) return;
     const tick = () => {
-      const rem = Math.max(0, Math.round((deadline - Date.now()) / 1000));
+      // Math.floor (not round) so the hard stop triggers within the final second,
+      // matching the exam's prior contract. submit() is called every tick past
+      // zero — its own in-flight guard dedupes, but a transient RPC failure that
+      // resets that guard is retried on the next tick (self-healing auto-submit).
+      const rem = Math.max(0, Math.floor((deadline - Date.now()) / 1000));
       setTimeLeft(rem);
-      if (rem <= 0 && !firedTimeoutRef.current) {
-        firedTimeoutRef.current = true;
-        void adapter.current.submit("time");
-      }
+      if (rem <= 0) void adapter.current.submit("time");
     };
     tick();
     const id = setInterval(tick, 1000);
