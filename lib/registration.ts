@@ -423,7 +423,9 @@ export async function validatePartial(
         for (const [k, raw] of Object.entries(v as Record<string, unknown>)) {
           if (cats && !cats.has(k)) { errors.push(`'${k}' is not a valid skill category.`); continue; }
           const n = Number(raw);
-          if (!Number.isInteger(n) || n < 1 || n > 5) { errors.push("Each skill rating must be between 1 and 5."); continue; }
+          // 0 = "no skill" (a deliberate answer); 1–5 = beginner→confident.
+          // Categories the student hasn't answered are simply absent from the map.
+          if (!Number.isInteger(n) || n < 0 || n > 5) { errors.push("Each skill rating must be between 0 and 5."); continue; }
           obj[k] = n;
         }
         clean[field] = obj;
