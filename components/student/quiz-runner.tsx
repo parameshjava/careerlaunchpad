@@ -10,16 +10,9 @@ import { useCallback, useEffect, useRef, useState } from "react";
 import Link from "next/link";
 import { Loader2, TriangleAlert } from "lucide-react";
 import { Button } from "@/components/ui/button";
-import {
-  Dialog,
-  DialogContent,
-  DialogDescription,
-  DialogFooter,
-  DialogHeader,
-  DialogTitle,
-} from "@/components/ui/dialog";
 import { AttemptView, type AttemptQuestion } from "@/components/exam/attempt-view";
 import { useQuizEngine } from "@/components/quiz/use-quiz-engine";
+import { LeaveWarningDialog } from "@/components/quiz/leave-warning-dialog";
 
 type ApiQuestion = {
   position: number;
@@ -248,27 +241,16 @@ export function QuizRunner({ attemptId }: { attemptId: string }) {
       />
 
       {/* First switch-away warning; the second leave auto-submits (see the engine). */}
-      <Dialog open={engine.warnOpen} onOpenChange={engine.setWarnOpen}>
-        <DialogContent>
-          <DialogHeader>
-            <DialogTitle>Don&rsquo;t leave the assessment</DialogTitle>
-          </DialogHeader>
-          <div className="flex items-start gap-3">
-            <span className="flex size-10 shrink-0 items-center justify-center rounded-full bg-amber-100 text-amber-600 dark:bg-amber-950 dark:text-amber-400">
-              <TriangleAlert className="size-5" />
-            </span>
-            <DialogDescription className="flex-1">
-              You switched away from the assessment. This is your{" "}
-              <strong className="text-foreground font-medium">only warning</strong> — if you leave
-              again (Alt+Tab, Cmd+Tab, switching apps, or minimising), your assessment will be
-              submitted automatically.
-            </DialogDescription>
-          </div>
-          <DialogFooter>
-            <Button onClick={() => engine.setWarnOpen(false)}>I understand — continue</Button>
-          </DialogFooter>
-        </DialogContent>
-      </Dialog>
+      <LeaveWarningDialog
+        open={engine.warnOpen}
+        onOpenChange={engine.setWarnOpen}
+        title="Don't leave the assessment"
+      >
+        You switched away from the assessment. This is your{" "}
+        <strong className="text-foreground font-medium">only warning</strong> — if you leave again
+        (Alt+Tab, Cmd+Tab, switching apps, or minimising), your assessment will be submitted
+        automatically.
+      </LeaveWarningDialog>
     </div>
   );
 }

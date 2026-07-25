@@ -17,17 +17,10 @@ import { TriangleAlert } from "lucide-react";
 import { WarningSign } from "../warning-sign";
 import { createClient } from "@/lib/supabase/client";
 import { Button } from "@/components/ui/button";
-import {
-  Dialog,
-  DialogContent,
-  DialogDescription,
-  DialogFooter,
-  DialogHeader,
-  DialogTitle,
-} from "@/components/ui/dialog";
 import { formatDateTime } from "@/lib/format-date";
 import { AttemptView, type AttemptQuestion } from "@/components/exam/attempt-view";
 import { useQuizEngine } from "@/components/quiz/use-quiz-engine";
+import { LeaveWarningDialog } from "@/components/quiz/leave-warning-dialog";
 import { type SessionPrintMeta } from "./paper-print";
 
 type Option = { id: string; label: string };
@@ -66,6 +59,20 @@ function Kbd({ children }: { children: React.ReactNode }) {
       {children}
     </kbd>
   );
+}
+
+// Resolve the resume cursor: the saved position when it's in range, else the
+// first unanswered question, else Q1. Used on BOTH the cache and server hydrate
+// paths so a fully-offline (cache-only) resume restores the same way the server
+// path would — and an out-of-range saved position can never index past the paper.
+function computeCursor(
+  qs: Question[],
+  answers: Record<string, string[]>,
+  lastPosition: number | null,
+): number {
+  if (lastPosition != null && lastPosition > 0 && lastPosition < qs.length) return lastPosition;
+  const firstUnanswered = qs.findIndex((qq) => !(answers[qq.question_id]?.length));
+  return firstUnanswered > 0 ? firstUnanswered : 0;
 }
 
 // Waiting-screen countdown: HH:MM:SS, or "Nd HHh MMm" once it's more than a day.
@@ -315,7 +322,7 @@ export function AttemptRunner({
         answers: cachedAnswers,
         seen: cached.seen ?? [],
         marked: cached.marked ?? [],
-        index: cached.lastPosition ?? undefined,
+        index: computeCursor(cached.questions, cachedAnswers, cached.lastPosition ?? null),
       });
       setLoading(false);
     }
@@ -359,20 +366,17 @@ export function AttemptRunner({
       const dl = payload.ends_at
         ? new Date(payload.ends_at).getTime()
         : (cached?.deadline ?? Date.now() + payload.duration_minutes * 60_000);
-      // Restore the cursor: persisted last_position, else the first unanswered
-      // question, else Q1.
-      let restoreIndex = lastPositionRef.current ?? 0;
-      if (!(restoreIndex > 0 && restoreIndex < payload.questions.length)) {
-        const firstUnanswered = payload.questions.findIndex(
-          (qq) => !(answersRef.current[qq.question_id]?.length),
-        );
-        restoreIndex = firstUnanswered > 0 ? firstUnanswered : 0;
-      }
       setAttemptId(payload.attempt_id);
       setQuestions(payload.questions);
       setDeadline(dl);
       setLoading(false);
-      hydrate({ answers: serverAnswers, index: restoreIndex });
+      // The cursor is locked by the first hydrate to supply one, so when a cache
+      // already restored the position this server value is ignored (cache wins);
+      // it only applies on a cold, cache-less resume.
+      hydrate({
+        answers: serverAnswers,
+        index: computeCursor(payload.questions, answersRef.current, lastPositionRef.current),
+      });
       persist({
         attemptId: payload.attempt_id,
         durationMinutes: payload.duration_minutes,
@@ -610,27 +614,16 @@ export function AttemptRunner({
       </div>
 
       {/* First switch-away warning. The second leave aborts/auto-submits (engine). */}
-      <Dialog open={engine.warnOpen} onOpenChange={engine.setWarnOpen}>
-        <DialogContent>
-          <DialogHeader>
-            <DialogTitle>Don&rsquo;t leave the exam</DialogTitle>
-          </DialogHeader>
-          <div className="flex items-start gap-3">
-            <span className="flex size-10 shrink-0 items-center justify-center rounded-full bg-amber-100 text-amber-600 dark:bg-amber-950 dark:text-amber-400">
-              <TriangleAlert className="size-5" />
-            </span>
-            <DialogDescription className="flex-1">
-              You switched away from the exam window. This is your{" "}
-              <strong className="text-foreground font-medium">only warning</strong> — if you leave
-              again (Alt+Tab, Cmd+Tab, switching apps, or minimising the window), your exam will be
-              submitted automatically and you will not be able to resume.
-            </DialogDescription>
-          </div>
-          <DialogFooter>
-            <Button onClick={() => engine.setWarnOpen(false)}>I understand — continue</Button>
-          </DialogFooter>
-        </DialogContent>
-      </Dialog>
+      <LeaveWarningDialog
+        open={engine.warnOpen}
+        onOpenChange={engine.setWarnOpen}
+        title="Don't leave the exam"
+      >
+        You switched away from the exam window. This is your{" "}
+        <strong className="text-foreground font-medium">only warning</strong> — if you leave again
+        (Alt+Tab, Cmd+Tab, switching apps, or minimising the window), your exam will be submitted
+        automatically and you will not be able to resume.
+      </LeaveWarningDialog>
     </>
   );
 }
