@@ -50,9 +50,9 @@ export async function POST() {
 
   if (upErr) return NextResponse.json({ ok: false, error: upErr.message }, { status: 500 });
 
-  // If the student was sent back for corrections (changes_requested), flip them
-  // back into the review queue (pending_review) and resolve their open change
-  // requests. Returns the resulting review status; a no-op for everyone else.
+  // Re-submitting is the student's response to the reviewer: resolves all their
+  // open remarks, and — if they were sent back (changes_requested) — flips them
+  // back into the review queue (pending_review). Returns the resulting status.
   const { data: resubStatus } = await supabase.rpc("mark_registration_resubmitted");
   const reviewStatus = (resubStatus as string | null) ?? (p.status as string | null);
 

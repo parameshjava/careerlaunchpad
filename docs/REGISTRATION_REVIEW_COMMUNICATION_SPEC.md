@@ -188,8 +188,10 @@ re-submit" line; otherwise it reads as an informational note. A plain-text alter
   `status in ('pending_review', 'changes_requested')`.
 - If the student was `changes_requested`, flip them back to `pending_review` on submit
   (re-enters the review queue).
-- Stamp `resolved_at = now()` on that student's unresolved `changes_requested` notes, so
-  the admin sees the loop closed.
+- Re-submitting is the student's **response** to every open remark: stamp
+  `resolved_at = now()` on **all** their unresolved notes (any kind — migration 150), so the
+  admin sees the loop closed. `resolved_at` doubles as the "responded" flag. Any remark the
+  admin adds afterwards is a fresh unresolved row, so the student then sees only that one.
 
 No editability change is needed — the profile PATCH endpoint already has no
 `registration_status` lock, so a sent-back student can edit immediately.
@@ -198,7 +200,8 @@ No editability change is needed — the profile PATCH endpoint already has no
 
 ## 8. Admin UI — profile page (`app/dashboard/students/[id]/page.tsx`)
 
-Add a **Remarks** panel below the existing `ApprovalBar`, shown for **every** profile
+Add a **Remarks** panel at the **bottom of the page** (below the profile summary/form, so
+the reviewer reads the full profile before commenting), shown for **every** profile
 (pending, approved, or suspended) so it also serves the existing-profile case:
 
 - A **thread** of prior `student_review_note` rows (newest first): author, timestamp,

@@ -85,10 +85,9 @@ export default async function StudentProfilePage({ params }: { params: Promise<{
   // fetched (that was the existence gate).
   if (can(ctx, "student.profile.manage")) {
     return (
-      <PageContainer variant="reading">
+      <PageContainer variant="full">
         <BackLink />
         {awaitingReview && <ApprovalBar id={id} name={reviewRow?.full_name ?? ""} />}
-        {remarks}
         <RegistrationForm
           reviewFirst
           endpoints={{
@@ -96,6 +95,7 @@ export default async function StudentProfilePage({ params }: { params: Promise<{
             submit: `/api/students/${id}/profile/submit`,
           }}
         />
+        {remarks}
       </PageContainer>
     );
   }
@@ -156,11 +156,11 @@ export default async function StudentProfilePage({ params }: { params: Promise<{
   const status = r.registration_status === "submitted" ? "submitted" : "in_progress";
 
   return (
-    <PageContainer variant="reading">
+    <PageContainer variant="full">
       <BackLink />
       {awaitingReview && <ApprovalBar id={id} name={f.full_name} />}
-      {remarks}
       <ProfileSummary f={f} refs={refs} email={email} college={college} status={status} />
+      {remarks}
     </PageContainer>
   );
 }

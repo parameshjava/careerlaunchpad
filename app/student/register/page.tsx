@@ -13,7 +13,7 @@ export default async function StudentRegisterPage() {
   if (!ctx.provisioned || ctx.status === "suspended") redirect("/auth/no-access");
 
   return (
-    <PageContainer variant="form">
+    <PageContainer variant="full">
       <header className="mb-6 text-center">
         <h1 className="text-2xl font-bold tracking-tight">🎓 Student Registration</h1>
         <p className="text-muted-foreground mt-1 text-sm">

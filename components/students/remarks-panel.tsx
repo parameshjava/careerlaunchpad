@@ -63,7 +63,7 @@ export function RemarksPanel({
   }
 
   return (
-    <section className="mb-6 rounded-lg border bg-card p-4 sm:p-5">
+    <section className="mt-6 rounded-lg border bg-card p-4 sm:p-5">
       <div className="mb-3 flex items-center gap-2">
         <MessageSquare className="text-muted-foreground size-4" />
         <h2 className="text-sm font-semibold">Remarks to the student</h2>

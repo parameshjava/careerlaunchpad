@@ -27,10 +27,10 @@ export async function StudentRemarksAlert({ showCta = false }: { showCta?: boole
 
   return (
     <div className="mb-6 rounded-lg border border-amber-300 bg-amber-50 p-4 dark:border-amber-900/50 dark:bg-amber-950/30">
-      <p className="font-semibold text-amber-900 dark:text-amber-200">Corrections requested</p>
+      <p className="font-semibold text-amber-900 dark:text-amber-200">Remarks from the team</p>
       <p className="mt-1 text-sm text-amber-800 dark:text-amber-300/90">
-        Our team reviewed your registration and asked for a few changes. Please update your profile
-        and re-submit:
+        Our team left remarks on your registration. Please review them, update your profile, and
+        re-submit — submitting clears these remarks:
       </p>
       <ul className="mt-3 space-y-2">
         {notes.map((n) => (
