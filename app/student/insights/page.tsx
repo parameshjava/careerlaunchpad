@@ -5,6 +5,7 @@ import { redirect } from "next/navigation";
 import { Button } from "@/components/ui/button";
 import { AnalyticsView } from "@/components/analytics/AnalyticsView";
 import { StudentComparisonView } from "@/components/analytics/StudentComparisonView";
+import { StudentPerformance } from "@/components/analytics/student-performance";
 import { getAuthContext } from "@/lib/auth";
 import { createClient } from "@/lib/supabase/server";
 import { requireApprovedStudent } from "@/lib/student-approval";
@@ -50,6 +51,19 @@ export default async function StudentInsightsPage() {
         </Button>
       </div>
 
+      <section className="space-y-3">
+        <div>
+          <h2 className="text-lg font-semibold tracking-tight">My performance</h2>
+          <p className="text-muted-foreground text-sm">
+            How you&apos;re doing on chapter assessments — and where the next attempt pays off most.
+          </p>
+        </div>
+        <StudentPerformance />
+      </section>
+
+      <section className="space-y-3">
+        <h2 className="text-lg font-semibold tracking-tight">How you compare</h2>
+
       {hasCollege ? (
         <StudentComparisonView
           self={cmp.self}
@@ -69,6 +83,7 @@ export default async function StudentInsightsPage() {
           <AnalyticsView data={cmp.self} mode="self" />
         </>
       )}
+      </section>
     </PageContainer>
   );
 }

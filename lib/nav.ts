@@ -186,6 +186,8 @@ export function buildNav(ctx: AuthContext, opts: { studentApproved?: boolean } =
       items.push({ label: "My calendar", href: "/student/calendar", icon: "calendar" });
     if (can(ctx, "exam.attempt.take") && studentApproved)
       items.push({ label: "My exams", href: "/student/exams", icon: "exams", badge: "exams" });
+    if (can(ctx, "chapter.quiz.take") && studentApproved)
+      items.push({ label: "Assessments", href: "/student/quizzes", icon: "exams" });
     if (canEvaluate) items.push(evalItem);
     const sections: NavSection[] = [{ items }];
     if (isMentor) sections.push({ title: "Mentoring", items: mentorItems() });

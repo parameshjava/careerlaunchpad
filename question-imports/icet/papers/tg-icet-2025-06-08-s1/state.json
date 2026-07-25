@@ -1,0 +1,40 @@
+{
+  "paper": "TG ICET 2025 8th June 2025 Shift 1",
+  "pdf": "/Users/paramesh/LP/materials/97410916_TG ICET 2025 8th June 2025 Shift 1 Actual.pdf",
+  "source": "TG ICET 2025 8th June 2025 Shift 1",
+  "source_year": 2025,
+  "key": "question-imports/icet/keys/tg-icet-2025-06-08-s1.json",
+  "key_status": "ok — 800 markers, 200 questions, 0 suspect; spot-checked against 24 pages",
+  "questions_total": 200,
+  "transcribed_through_question": 200,
+  "transcribed_through_page": 145,
+  "imported": 188,
+  "excluded": [
+    2,
+    15,
+    17,
+    20,
+    36,
+    88,
+    96,
+    103,
+    128,
+    175,
+    180,
+    192
+  ],
+  "sections_done": [
+    "Section A · Analytical Ability (Q1-75)",
+    "Section B · Mathematical Ability (Q76-150)",
+    "Section C · Communication Ability (Q151-200)"
+  ],
+  "note": "Section A runs to Q75; Section B (Mathematical Ability) Q76-150; Section C (Communication Ability) Q151-200.",
+  "exclusion_rule": "Only questions whose key is genuine and matches an independent solution are imported; see REVIEW.md.",
+  "status": "COMPLETE",
+  "by_subject": {
+    "Quantitative Aptitude": 71,
+    "Logical & Analytical Reasoning": 64,
+    "Verbal Ability & Reading Comprehension": 47,
+    "Data Interpretation & Data Sufficiency": 6
+  }
+}

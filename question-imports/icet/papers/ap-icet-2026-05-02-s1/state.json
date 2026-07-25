@@ -1,0 +1,27 @@
+{
+  "paper": "AP ICET 2026 2nd May 2026 Shift 1",
+  "pdf": "/Users/paramesh/LP/materials/1779032646php6iuOPH.pdf",
+  "source": "AP ICET 2026 2nd May 2026 Shift 1",
+  "source_year": 2026,
+  "key": "question-imports/icet/keys/ap-icet-2026-05-02-s1.json",
+  "key_status": "genuine — 800 markers, 200 questions, 0 suspect, spread 54/53/57/36 (chi2 5.4)",
+  "status": "IN PROGRESS",
+  "questions_total": 200,
+  "pages": 113,
+  "transcribed_through_question": 130,
+  "transcribed_through_page": 73,
+  "next_read_pages": "74-79",
+  "imported": 127,
+  "excluded": [
+    2,
+    85,
+    120
+  ],
+  "note": "APICET_SHIFT_1_QP_2026.pdf is a byte-identical duplicate of this file (manifest.json). Questions start on page 2 — this paper is more tightly set than the TG 2025 one (113 pages for 200 questions vs 145).",
+  "sections_done": [
+    "Section 1 · Analytical Ability (Q1-75) COMPLETE — DS, sequences/series, odd-one-out, analogies, DI (table + 2 pie charts), coding-decoding, calendars/clocks, seating",
+    "Section 2 · Communication Ability (Q76-129, in progress)"
+  ],
+  "ds_instructions": "This paper PRINTS the DS instruction block on page 2 — the option wording is taken verbatim from it, confirming the convention inferred for tg-icet-2025-06-08-s1 (REVIEW.md §1.2).",
+  "paper_structure": "This paper orders the sections differently from TG 2025: Section 1 Analytical Ability (75 Q), Section 2 COMMUNICATION Ability (54 Q, 70 marks), Section 3 Mathematical Ability (71 Q) — communication comes second, not last."
+}

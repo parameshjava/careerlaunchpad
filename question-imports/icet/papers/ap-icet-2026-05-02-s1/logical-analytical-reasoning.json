@@ -1,0 +1,1752 @@
+{
+  "subject": "Logical & Analytical Reasoning",
+  "questions": [
+    {
+      "chapter": "Data Sufficiency (Reasoning)",
+      "kind": "data_sufficiency",
+      "difficulty": "medium",
+      "answer_type": "single",
+      "stem": "What is the arithmetic mean of a list of six consecutive two-digit integers?\n\n**I.** The remainder obtained when the fourth integer is divided by 5 is 3.\n\n**II.** The ratio of the largest integer to the smallest integer is $5 : 4$.",
+      "explanation": "Let the six integers be $n, n+1, \\ldots, n+5$, so the mean is $n + 2.5$ — the whole question reduces to finding $n$.\n\n**From I:** the fourth integer is $n+3$, and $n+3 \\equiv 3 \\pmod 5$ means $n$ is a multiple of 5. That allows $n = 10, 15, 20, \\ldots$, giving different means. Not enough.\n\n**From II:** $\\dfrac{n+5}{n} = \\dfrac54 \\Rightarrow 4n + 20 = 5n \\Rightarrow n = 20$, so the integers are 20–25 and the mean is $22.5$. Statement II alone is sufficient.",
+      "source": "AP ICET 2026 2nd May 2026 Shift 1",
+      "source_year": 2026,
+      "options": [
+        {
+          "label": "Statement I alone is sufficient to answer the question.",
+          "is_correct": false
+        },
+        {
+          "label": "Statement II alone is sufficient to answer the question.",
+          "is_correct": true
+        },
+        {
+          "label": "Statements I and II together are sufficient to answer the question, but neither statement alone is sufficient.",
+          "is_correct": false
+        },
+        {
+          "label": "Statements I and II together are not sufficient to answer the question and additional data is required.",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Data Sufficiency (Reasoning)",
+      "kind": "data_sufficiency",
+      "difficulty": "easy",
+      "answer_type": "single",
+      "stem": "Is $\\triangle ABC$ a right-angled triangle?\n\n**I.** The sides are 36, 48 and 60 cms.\n\n**II.** One of the angles of the triangle is $45^\\circ$.",
+      "explanation": "**From I:** test the converse of Pythagoras on the three given sides:\n$$36^2 + 48^2 = 1296 + 2304 = 3600 = 60^2,$$\nso the triangle **is** right-angled (it is the 3-4-5 triple scaled by 12). A definite \"yes\" answers the question, so statement I alone is sufficient.\n\n**From II:** a $45^\\circ$ angle proves nothing — the triangle could be $45$-$45$-$90$ (right-angled) or $45$-$60$-$75$ (not). Not enough.",
+      "source": "AP ICET 2026 2nd May 2026 Shift 1",
+      "source_year": 2026,
+      "options": [
+        {
+          "label": "Statement I alone is sufficient to answer the question.",
+          "is_correct": true
+        },
+        {
+          "label": "Statement II alone is sufficient to answer the question.",
+          "is_correct": false
+        },
+        {
+          "label": "Statements I and II together are sufficient to answer the question, but neither statement alone is sufficient.",
+          "is_correct": false
+        },
+        {
+          "label": "Statements I and II together are not sufficient to answer the question and additional data is required.",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Data Sufficiency (Reasoning)",
+      "kind": "data_sufficiency",
+      "difficulty": "easy",
+      "answer_type": "single",
+      "stem": "What is the present age of the father?\n\n**I.** 5 years ago the father's age was 3 times his son's age.\n\n**II.** The son's present age is 20.",
+      "explanation": "Let the present ages be $F$ and $S$.\n\n**From I:** $F - 5 = 3(S - 5)$ — one equation in two unknowns, so $F$ is not fixed. Not enough.\n\n**From II:** $S = 20$ says nothing about the father on its own. Not enough.\n\n**Together:** $F - 5 = 3(20 - 5) = 45$, so $F = 50$. Both statements are needed.",
+      "source": "AP ICET 2026 2nd May 2026 Shift 1",
+      "source_year": 2026,
+      "options": [
+        {
+          "label": "Statement I alone is sufficient to answer the question.",
+          "is_correct": false
+        },
+        {
+          "label": "Statement II alone is sufficient to answer the question.",
+          "is_correct": false
+        },
+        {
+          "label": "Statements I and II together are sufficient to answer the question, but neither statement alone is sufficient.",
+          "is_correct": true
+        },
+        {
+          "label": "Statements I and II together are not sufficient to answer the question and additional data is required.",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Data Sufficiency (Reasoning)",
+      "kind": "data_sufficiency",
+      "difficulty": "hard",
+      "answer_type": "single",
+      "stem": "At a company R, the average age of executives is 54 years and the average age of non-executives is 34 years. What is the average age of all the employees at R?\n\n**I.** There are 10 executives at R.\n\n**II.** The number of non-executives at R is 4 times the number of executives at R.",
+      "explanation": "A combined average needs the **ratio** of the two group sizes, not their absolute values.\n\n**From I:** knowing there are 10 executives tells us nothing about how many non-executives there are. Not enough.\n\n**From II:** with non-executives $= 4 \\times$ executives, take the sizes as $1$ and $4$:\n$$\\text{Average} = \\frac{1(54) + 4(34)}{1 + 4} = \\frac{54 + 136}{5} = \\frac{190}{5} = 38 \\text{ years}.$$\nThe answer does not depend on the actual head-count, so statement II alone is sufficient.",
+      "source": "AP ICET 2026 2nd May 2026 Shift 1",
+      "source_year": 2026,
+      "options": [
+        {
+          "label": "Statement I alone is sufficient to answer the question.",
+          "is_correct": false
+        },
+        {
+          "label": "Statement II alone is sufficient to answer the question.",
+          "is_correct": true
+        },
+        {
+          "label": "Statements I and II together are sufficient to answer the question, but neither statement alone is sufficient.",
+          "is_correct": false
+        },
+        {
+          "label": "Statements I and II together are not sufficient to answer the question and additional data is required.",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Data Sufficiency (Reasoning)",
+      "kind": "data_sufficiency",
+      "difficulty": "hard",
+      "answer_type": "single",
+      "stem": "Is $x > y$?\n\n**I.** $xy < 0$\n\n**II.** $x + y > 0$",
+      "explanation": "**From I:** $xy < 0$ means one number is positive and the other negative — but not **which**. $(x,y) = (3,-1)$ gives yes; $(-1,3)$ gives no. Not enough.\n\n**From II:** $x + y > 0$ is satisfied by $(5,1)$ (yes) and $(1,5)$ (no). Not enough.\n\n**Together:** the pair still only has to be one positive and one negative with a positive sum — the positive number is the larger in magnitude, but it may be either $x$ or $y$: $(3,-1)$ gives yes, $(-1,3)$ gives no. Even both statements together cannot answer it.",
+      "source": "AP ICET 2026 2nd May 2026 Shift 1",
+      "source_year": 2026,
+      "options": [
+        {
+          "label": "Statement I alone is sufficient to answer the question.",
+          "is_correct": false
+        },
+        {
+          "label": "Statement II alone is sufficient to answer the question.",
+          "is_correct": false
+        },
+        {
+          "label": "Statements I and II together are sufficient to answer the question, but neither statement alone is sufficient.",
+          "is_correct": false
+        },
+        {
+          "label": "Statements I and II together are not sufficient to answer the question and additional data is required.",
+          "is_correct": true
+        }
+      ]
+    },
+    {
+      "chapter": "Data Sufficiency (Reasoning)",
+      "kind": "data_sufficiency",
+      "difficulty": "medium",
+      "answer_type": "single",
+      "stem": "What is the sum of the 15 numbers $a_1, a_2, \\ldots, a_{15}$?\n\n**I.** Their middle term is 20.\n\n**II.** They are in arithmetic progression.",
+      "explanation": "**From I:** one term out of fifteen says nothing about the total when the list is arbitrary. Not enough.\n\n**From II:** knowing it is an AP without any value gives no total. Not enough.\n\n**Together:** in an AP with an **odd** number of terms the mean equals the middle term, so\n$$\\text{Sum} = 15 \\times a_8 = 15 \\times 20 = 300.$$\nBoth statements are needed.",
+      "source": "AP ICET 2026 2nd May 2026 Shift 1",
+      "source_year": 2026,
+      "options": [
+        {
+          "label": "Statement I alone is sufficient to answer the question.",
+          "is_correct": false
+        },
+        {
+          "label": "Statement II alone is sufficient to answer the question.",
+          "is_correct": false
+        },
+        {
+          "label": "Statements I and II together are sufficient to answer the question, but neither statement alone is sufficient.",
+          "is_correct": true
+        },
+        {
+          "label": "Statements I and II together are not sufficient to answer the question and additional data is required.",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Data Sufficiency (Reasoning)",
+      "kind": "data_sufficiency",
+      "difficulty": "easy",
+      "answer_type": "single",
+      "stem": "What is the probability of selecting a red ball?\n\n**I.** There are 5 red and 3 blue balls.\n\n**II.** Two balls are drawn randomly.",
+      "explanation": "**From I:** the bag holds $5 + 3 = 8$ balls, so the probability of drawing a red one is $\\dfrac58$. Statement I alone is sufficient.\n\n**From II:** how many balls are drawn tells us nothing about the composition of the bag — without the counts no probability can be computed. Not enough.",
+      "source": "AP ICET 2026 2nd May 2026 Shift 1",
+      "source_year": 2026,
+      "options": [
+        {
+          "label": "Statement I alone is sufficient to answer the question.",
+          "is_correct": true
+        },
+        {
+          "label": "Statement II alone is sufficient to answer the question.",
+          "is_correct": false
+        },
+        {
+          "label": "Statements I and II together are sufficient to answer the question, but neither statement alone is sufficient.",
+          "is_correct": false
+        },
+        {
+          "label": "Statements I and II together are not sufficient to answer the question and additional data is required.",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Data Sufficiency (Reasoning)",
+      "kind": "data_sufficiency",
+      "difficulty": "very_hard",
+      "answer_type": "single",
+      "stem": "If $x$ and $y$ are both integers and $xy < 0$, what is the difference in value between $x$ and $y$?\n\n**I.** $x + y = 2$\n\n**II.** $-3 < x < y$",
+      "explanation": "Since $xy < 0$, one of them is negative and the other positive.\n\n**From I:** $x + y = 2$ allows $(3,-1)$ with difference 4, $(4,-2)$ with difference 6, and many more. Not enough.\n\n**From II:** $-3 < x < y$ with $xy < 0$ forces $x \\in \\{-2,-1\\}$ and $y \\ge 1$, still leaving many differences. Not enough.\n\n**Together:** both conditions still leave two cases — $x = -2, y = 4$ (difference 6) and $x = -1, y = 3$ (difference 4). Since the difference is not unique, even both statements together are insufficient.",
+      "source": "AP ICET 2026 2nd May 2026 Shift 1",
+      "source_year": 2026,
+      "options": [
+        {
+          "label": "Statement I alone is sufficient to answer the question.",
+          "is_correct": false
+        },
+        {
+          "label": "Statement II alone is sufficient to answer the question.",
+          "is_correct": false
+        },
+        {
+          "label": "Statements I and II together are sufficient to answer the question, but neither statement alone is sufficient.",
+          "is_correct": false
+        },
+        {
+          "label": "Statements I and II together are not sufficient to answer the question and additional data is required.",
+          "is_correct": true
+        }
+      ]
+    },
+    {
+      "chapter": "Data Sufficiency (Reasoning)",
+      "kind": "data_sufficiency",
+      "difficulty": "easy",
+      "answer_type": "single",
+      "stem": "Is $n$ divisible by 12?\n\n**I.** $n$ is divisible by 3.\n\n**II.** $n$ is divisible by 4.",
+      "explanation": "**From I:** $n = 3$ or $n = 6$ is divisible by 3 but not by 12. Not enough.\n\n**From II:** $n = 4$ or $n = 8$ is divisible by 4 but not by 12. Not enough.\n\n**Together:** 3 and 4 are coprime, so $n$ is a multiple of $\\text{lcm}(3,4) = 12$ — a definite \"yes\". Both statements are needed.",
+      "source": "AP ICET 2026 2nd May 2026 Shift 1",
+      "source_year": 2026,
+      "options": [
+        {
+          "label": "Statement I alone is sufficient to answer the question.",
+          "is_correct": false
+        },
+        {
+          "label": "Statement II alone is sufficient to answer the question.",
+          "is_correct": false
+        },
+        {
+          "label": "Statements I and II together are sufficient to answer the question, but neither statement alone is sufficient.",
+          "is_correct": true
+        },
+        {
+          "label": "Statements I and II together are not sufficient to answer the question and additional data is required.",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Data Sufficiency (Reasoning)",
+      "kind": "data_sufficiency",
+      "difficulty": "medium",
+      "answer_type": "single",
+      "stem": "What is the number of distinct roots of $ax^2 + bx + c = 0$?\n\n**I.** $b^2 - 4ac = 0$\n\n**II.** $a > 0$",
+      "explanation": "The discriminant decides the count: positive gives 2 distinct roots, zero gives 1 (a repeated root), negative gives none real.\n\n**From I:** $b^2 - 4ac = 0$ means the quadratic is a perfect square, so there is exactly **one** distinct root, $x = -\\dfrac{b}{2a}$. The question is answered.\n\n**From II:** the sign of $a$ tells us which way the parabola opens, not how many times it meets the $x$-axis. Not enough.",
+      "source": "AP ICET 2026 2nd May 2026 Shift 1",
+      "source_year": 2026,
+      "options": [
+        {
+          "label": "Statement I alone is sufficient to answer the question.",
+          "is_correct": true
+        },
+        {
+          "label": "Statement II alone is sufficient to answer the question.",
+          "is_correct": false
+        },
+        {
+          "label": "Statements I and II together are sufficient to answer the question, but neither statement alone is sufficient.",
+          "is_correct": false
+        },
+        {
+          "label": "Statements I and II together are not sufficient to answer the question and additional data is required.",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Data Sufficiency (Reasoning)",
+      "kind": "data_sufficiency",
+      "difficulty": "easy",
+      "answer_type": "single",
+      "stem": "What is the time taken to complete the work by A and B together?\n\n**I.** A alone can do it in 10 days.\n\n**II.** B alone can do it in 15 days.",
+      "explanation": "**From I:** only A's rate is known — B's contribution is unknown. Not enough.\n\n**From II:** only B's rate. Not enough.\n\n**Together:** combined rate $= \\dfrac{1}{10} + \\dfrac{1}{15} = \\dfrac{3+2}{30} = \\dfrac16$, so together they finish in **6 days**. Both statements are needed.",
+      "source": "AP ICET 2026 2nd May 2026 Shift 1",
+      "source_year": 2026,
+      "options": [
+        {
+          "label": "Statement I alone is sufficient to answer the question.",
+          "is_correct": false
+        },
+        {
+          "label": "Statement II alone is sufficient to answer the question.",
+          "is_correct": false
+        },
+        {
+          "label": "Statements I and II together are sufficient to answer the question, but neither statement alone is sufficient.",
+          "is_correct": true
+        },
+        {
+          "label": "Statements I and II together are not sufficient to answer the question and additional data is required.",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Data Sufficiency (Reasoning)",
+      "kind": "data_sufficiency",
+      "difficulty": "medium",
+      "answer_type": "single",
+      "stem": "What is the value of $x^2 + y^2$?\n\n**I.** $(x, y)$ is a point on the circle with centre $(0,0)$ and radius 10.\n\n**II.** $x - y = 10$",
+      "explanation": "**From I:** the circle centred at the origin with radius 10 has equation $x^2 + y^2 = 10^2 = 100$. Any point on it satisfies exactly what was asked, so statement I alone is sufficient.\n\n**From II:** $x - y = 10$ gives $(10, 0)$ with $x^2+y^2 = 100$ but also $(11, 1)$ with $x^2+y^2 = 122$. Not enough.",
+      "source": "AP ICET 2026 2nd May 2026 Shift 1",
+      "source_year": 2026,
+      "options": [
+        {
+          "label": "Statement I alone is sufficient to answer the question.",
+          "is_correct": true
+        },
+        {
+          "label": "Statement II alone is sufficient to answer the question.",
+          "is_correct": false
+        },
+        {
+          "label": "Statements I and II together are sufficient to answer the question, but neither statement alone is sufficient.",
+          "is_correct": false
+        },
+        {
+          "label": "Statements I and II together are not sufficient to answer the question and additional data is required.",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Data Sufficiency (Reasoning)",
+      "kind": "data_sufficiency",
+      "difficulty": "easy",
+      "answer_type": "single",
+      "stem": "What is the height of the building?\n\n**I.** The angle of elevation to view the top of the building from a point 30 metres away from the bottom of the building on the ground is $45^\\circ$.\n\n**II.** A man can climb the building in a lift in 3 minutes.",
+      "explanation": "**From I:** with the horizontal distance and the angle,\n$$\\tan 45^\\circ = \\frac{h}{30} \\Rightarrow h = 30 \\times 1 = 30 \\text{ m}.$$\nStatement I alone is sufficient.\n\n**From II:** the time a lift takes says nothing about height without its speed — and no speed is given. Not enough.",
+      "source": "AP ICET 2026 2nd May 2026 Shift 1",
+      "source_year": 2026,
+      "options": [
+        {
+          "label": "Statement I alone is sufficient to answer the question.",
+          "is_correct": true
+        },
+        {
+          "label": "Statement II alone is sufficient to answer the question.",
+          "is_correct": false
+        },
+        {
+          "label": "Statements I and II together are sufficient to answer the question, but neither statement alone is sufficient.",
+          "is_correct": false
+        },
+        {
+          "label": "Statements I and II together are not sufficient to answer the question and additional data is required.",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Data Sufficiency (Reasoning)",
+      "kind": "data_sufficiency",
+      "difficulty": "hard",
+      "answer_type": "single",
+      "stem": "What is the relative velocity of two trains?\n\n**I.** The sum of their velocities is 180 kmph.\n\n**II.** The sum of the lengths of both the trains is 600 metres.",
+      "explanation": "Relative velocity depends on **direction**: trains moving towards each other have relative velocity equal to the **sum** of their speeds, while trains moving in the same direction have the **difference**.\n\n**From I:** the sum is 180 kmph, but nothing says which way they travel. If opposite, the answer is 180; if same direction it could be anything from 0 upwards. Not enough.\n\n**From II:** lengths are irrelevant to velocity.\n\n**Together:** still no information about direction or the individual speeds, so the relative velocity cannot be determined.",
+      "source": "AP ICET 2026 2nd May 2026 Shift 1",
+      "source_year": 2026,
+      "options": [
+        {
+          "label": "Statement I alone is sufficient to answer the question.",
+          "is_correct": false
+        },
+        {
+          "label": "Statement II alone is sufficient to answer the question.",
+          "is_correct": false
+        },
+        {
+          "label": "Statements I and II together are sufficient to answer the question, but neither statement alone is sufficient.",
+          "is_correct": false
+        },
+        {
+          "label": "Statements I and II together are not sufficient to answer the question and additional data is required.",
+          "is_correct": true
+        }
+      ]
+    },
+    {
+      "chapter": "Data Sufficiency (Reasoning)",
+      "kind": "data_sufficiency",
+      "difficulty": "medium",
+      "answer_type": "single",
+      "stem": "How many pencils did the shopkeeper sell on Sunday?\n\n**I.** On Sunday he sold 12 more pencils than he sold the previous day.\n\n**II.** He sold 28 pencils each on Thursday and Saturday.",
+      "explanation": "**From I:** Sunday $=$ Saturday $+ 12$, but Saturday's figure is unknown. Not enough.\n\n**From II:** Thursday and Saturday sales are given, but nothing links them to Sunday. Not enough.\n\n**Together:** the day before Sunday is Saturday, when he sold 28, so Sunday $= 28 + 12 = 40$ pencils. Both statements are needed. (Thursday's figure is a decoy.)",
+      "source": "AP ICET 2026 2nd May 2026 Shift 1",
+      "source_year": 2026,
+      "options": [
+        {
+          "label": "Statement I alone is sufficient to answer the question.",
+          "is_correct": false
+        },
+        {
+          "label": "Statement II alone is sufficient to answer the question.",
+          "is_correct": false
+        },
+        {
+          "label": "Statements I and II together are sufficient to answer the question, but neither statement alone is sufficient.",
+          "is_correct": true
+        },
+        {
+          "label": "Statements I and II together are not sufficient to answer the question and additional data is required.",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Data Sufficiency (Reasoning)",
+      "kind": "data_sufficiency",
+      "difficulty": "medium",
+      "answer_type": "single",
+      "stem": "How many students passed in both Maths and Science?\n\n**I.** 50 students passed in Maths.\n\n**II.** 60 students passed in Science and 90 students passed in at least Maths or Science.",
+      "explanation": "Use $n(M \\cup S) = n(M) + n(S) - n(M \\cap S)$.\n\n**From I:** only $n(M) = 50$. Not enough.\n\n**From II:** $n(S) = 60$ and $n(M \\cup S) = 90$, but $n(M)$ is missing. Not enough.\n\n**Together:**\n$$90 = 50 + 60 - n(M \\cap S) \\Rightarrow n(M \\cap S) = 20.$$\nBoth statements are needed.",
+      "source": "AP ICET 2026 2nd May 2026 Shift 1",
+      "source_year": 2026,
+      "options": [
+        {
+          "label": "Statement I alone is sufficient to answer the question.",
+          "is_correct": false
+        },
+        {
+          "label": "Statement II alone is sufficient to answer the question.",
+          "is_correct": false
+        },
+        {
+          "label": "Statements I and II together are sufficient to answer the question, but neither statement alone is sufficient.",
+          "is_correct": true
+        },
+        {
+          "label": "Statements I and II together are not sufficient to answer the question and additional data is required.",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Data Sufficiency (Reasoning)",
+      "kind": "data_sufficiency",
+      "difficulty": "very_hard",
+      "answer_type": "single",
+      "stem": "Sunil drives the distance from home to beach in less than 2 hours. Is his average speed greater than 60 km/hr?\n\n**I.** The distance from home to beach is less than 125 kms.\n\n**II.** The distance from home to beach is greater than 122 kms.",
+      "explanation": "Average speed $= \\dfrac{\\text{distance}}{\\text{time}}$ with time $< 2$ hours.\n\n**From I:** an upper bound on distance decides nothing — 124 km in 1 hour gives 124 km/hr (yes), while 10 km in 1.9 hours gives about 5 km/hr (no). Not enough.\n\n**From II:** here a **lower** bound is decisive. Distance $> 122$ km and time $< 2$ hours give\n$$\\text{speed} > \\frac{122}{2} = 61 \\text{ km/hr} > 60.$$\nSo the answer is a definite \"yes\" — statement II alone is sufficient.\n\n*The lesson: for a \"is it greater than\" question, a lower bound on the numerator paired with an upper bound on the denominator settles it; an upper bound alone cannot.*",
+      "source": "AP ICET 2026 2nd May 2026 Shift 1",
+      "source_year": 2026,
+      "options": [
+        {
+          "label": "Statement I alone is sufficient to answer the question.",
+          "is_correct": false
+        },
+        {
+          "label": "Statement II alone is sufficient to answer the question.",
+          "is_correct": true
+        },
+        {
+          "label": "Statements I and II together are sufficient to answer the question, but neither statement alone is sufficient.",
+          "is_correct": false
+        },
+        {
+          "label": "Statements I and II together are not sufficient to answer the question and additional data is required.",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Data Sufficiency (Reasoning)",
+      "kind": "data_sufficiency",
+      "difficulty": "medium",
+      "answer_type": "single",
+      "stem": "If Anil spent Rs. 40,000 of his earnings last month on rent, how much did he earn last month?\n\n**I.** Anil saved $\\dfrac{1}{3}$ of his earnings and spent half of the remainder on rent.\n\n**II.** Anil earned twice as much this month as last month.",
+      "explanation": "**From I:** let last month's earnings be $E$. He saved $\\dfrac{E}{3}$, leaving $\\dfrac{2E}{3}$, and rent was half of that:\n$$\\frac12 \\cdot \\frac{2E}{3} = \\frac{E}{3} = 40000 \\Rightarrow E = 120000.$$\nStatement I alone is sufficient.\n\n**From II:** relating this month to last month introduces a new unknown without pinning either down. Not enough.",
+      "source": "AP ICET 2026 2nd May 2026 Shift 1",
+      "source_year": 2026,
+      "options": [
+        {
+          "label": "Statement I alone is sufficient to answer the question.",
+          "is_correct": true
+        },
+        {
+          "label": "Statement II alone is sufficient to answer the question.",
+          "is_correct": false
+        },
+        {
+          "label": "Statements I and II together are sufficient to answer the question, but neither statement alone is sufficient.",
+          "is_correct": false
+        },
+        {
+          "label": "Statements I and II together are not sufficient to answer the question and additional data is required.",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Data Sufficiency (Reasoning)",
+      "kind": "data_sufficiency",
+      "difficulty": "hard",
+      "answer_type": "single",
+      "stem": "A club conducted baseball games during June and July at a stadium. What was the average attendance for those games?\n\n**I.** The average number of people attending baseball games at the stadium during June and July were 23,100 and 25,200 respectively.\n\n**II.** 20 baseball games were played in June and 22 baseball games were played in July at the stadium.",
+      "explanation": "The overall average is the **weighted** mean of the two monthly averages, so both the averages and the number of games are required.\n\n**From I:** two averages with no game counts cannot be combined — averaging 23,100 and 25,200 directly would be wrong unless the counts were equal, which is not stated. Not enough.\n\n**From II:** counts without attendance figures give nothing. Not enough.\n\n**Together:**\n$$\\frac{20(23100) + 22(25200)}{42} = \\frac{462000 + 554400}{42} = \\frac{1016400}{42} = 24200.$$\nBoth statements are needed.",
+      "source": "AP ICET 2026 2nd May 2026 Shift 1",
+      "source_year": 2026,
+      "options": [
+        {
+          "label": "Statement I alone is sufficient to answer the question.",
+          "is_correct": false
+        },
+        {
+          "label": "Statement II alone is sufficient to answer the question.",
+          "is_correct": false
+        },
+        {
+          "label": "Statements I and II together are sufficient to answer the question, but neither statement alone is sufficient.",
+          "is_correct": true
+        },
+        {
+          "label": "Statements I and II together are not sufficient to answer the question and additional data is required.",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Number & Alphabet Series",
+      "difficulty": "medium",
+      "answer_type": "single",
+      "stem": "What is the missing number in the sequence?\n\n5, 7, 11, ____, 35, 67",
+      "explanation": "Look at the gaps between consecutive terms:\n$$5 \\xrightarrow{+2} 7 \\xrightarrow{+4} 11 \\xrightarrow{+8} ? \\xrightarrow{+16} 35 \\xrightarrow{+32} 67$$\n\nThe differences double each time — $2, 4, 8, 16, 32$ — so the missing term is $11 + 8 = 19$.\n\n*(Check forward: $19 + 16 = 35$ ✓ and $35 + 32 = 67$ ✓.)*",
+      "source": "AP ICET 2026 2nd May 2026 Shift 1",
+      "source_year": 2026,
+      "options": [
+        {
+          "label": "16",
+          "is_correct": false
+        },
+        {
+          "label": "17",
+          "is_correct": false
+        },
+        {
+          "label": "18",
+          "is_correct": false
+        },
+        {
+          "label": "19",
+          "is_correct": true
+        }
+      ]
+    },
+    {
+      "chapter": "Number & Alphabet Series",
+      "difficulty": "easy",
+      "answer_type": "single",
+      "stem": "What is the missing alphabet at the end of the series?\n\nA, C, E, G, ____ ?",
+      "explanation": "The letters advance by **2** each time — they are the odd-numbered positions of the alphabet:\n$$A(1),\\ C(3),\\ E(5),\\ G(7),\\ \\mathbf{I(9)}.$$\n\nSo the next letter is **I**.",
+      "source": "AP ICET 2026 2nd May 2026 Shift 1",
+      "source_year": 2026,
+      "options": [
+        {
+          "label": "H",
+          "is_correct": false
+        },
+        {
+          "label": "I",
+          "is_correct": true
+        },
+        {
+          "label": "J",
+          "is_correct": false
+        },
+        {
+          "label": "K",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Number & Alphabet Series",
+      "difficulty": "hard",
+      "answer_type": "single",
+      "stem": "Complete the series of 5 letters:\n\nA, D, I, P, ?",
+      "explanation": "Convert to alphabet positions:\n$$A = 1,\\quad D = 4,\\quad I = 9,\\quad P = 16.$$\n\nThese are the **perfect squares** $1^2, 2^2, 3^2, 4^2$, so the next position is $5^2 = 25$ — the 25th letter, **Y**.",
+      "source": "AP ICET 2026 2nd May 2026 Shift 1",
+      "source_year": 2026,
+      "options": [
+        {
+          "label": "Y",
+          "is_correct": true
+        },
+        {
+          "label": "U",
+          "is_correct": false
+        },
+        {
+          "label": "Z",
+          "is_correct": false
+        },
+        {
+          "label": "X",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Analogy",
+      "difficulty": "easy",
+      "answer_type": "single",
+      "stem": "Find the missing number: $17 : 4913 :: 19 : ?$",
+      "explanation": "Check the relation in the first pair: $17^3 = 17 \\times 17 \\times 17 = 4913$ — the number is **cubed**.\n\nSo the answer is\n$$19^3 = 361 \\times 19 = 6859.$$\n\n*(9261 is $21^3$ and 12167 is $23^3$ — both are cubes of the wrong number, and 5832 is $18^3$.)*",
+      "source": "AP ICET 2026 2nd May 2026 Shift 1",
+      "source_year": 2026,
+      "options": [
+        {
+          "label": "6859",
+          "is_correct": true
+        },
+        {
+          "label": "5832",
+          "is_correct": false
+        },
+        {
+          "label": "9261",
+          "is_correct": false
+        },
+        {
+          "label": "12167",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Analogy",
+      "difficulty": "very_hard",
+      "answer_type": "single",
+      "stem": "Find the missing number: $2730 : 196 :: 2184 : $ ________",
+      "explanation": "Factorise the first number into consecutive integers:\n$$2730 = 13 \\times 14 \\times 15,$$\nand notice that $196 = 14^2$ — the **square of the middle** factor.\n\nDo the same to the second: $2184 = 12 \\times 13 \\times 14$, whose middle factor is 13, so the answer is\n$$13^2 = 169.$$",
+      "source": "AP ICET 2026 2nd May 2026 Shift 1",
+      "source_year": 2026,
+      "options": [
+        {
+          "label": "144",
+          "is_correct": false
+        },
+        {
+          "label": "169",
+          "is_correct": true
+        },
+        {
+          "label": "249",
+          "is_correct": false
+        },
+        {
+          "label": "244",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Analogy",
+      "difficulty": "easy",
+      "answer_type": "single",
+      "stem": "Painting : Artist :: Symphony : ________",
+      "explanation": "The relation is **work of art → the person who creates it**: a painting is created by an artist.\n\nA symphony is a musical composition, and the person who writes it is a **composer**.\n\n*A poet writes poems, an actor performs, and a novelist writes novels — none creates a symphony.*",
+      "source": "AP ICET 2026 2nd May 2026 Shift 1",
+      "source_year": 2026,
+      "options": [
+        {
+          "label": "Poet",
+          "is_correct": false
+        },
+        {
+          "label": "Actor",
+          "is_correct": false
+        },
+        {
+          "label": "Composer",
+          "is_correct": true
+        },
+        {
+          "label": "Novelist",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Clocks & Calendars",
+      "difficulty": "hard",
+      "answer_type": "single",
+      "stem": "What is the odd one in the following pairs of &lt;date, day&gt; in a month?\n\n&lt;1, Friday&gt;, &lt;18, Monday&gt;, &lt;6, Wednesday&gt;, &lt;28, Sunday&gt;",
+      "explanation": "Take the first pair as the anchor: if the **1st is a Friday**, then every date 7 apart is also Friday — the 8th, 15th, 22nd and 29th.\n\nNow test the others:\n\n- **6th:** 1 Fri, 2 Sat, 3 Sun, 4 Mon, 5 Tue, **6 Wed** ✓ matches\n- **18th:** 15 Fri, 16 Sat, 17 Sun, **18 Mon** ✓ matches\n- **28th:** 22 Fri, 23 Sat, 24 Sun, 25 Mon, 26 Tue, 27 Wed, **28 Thu** ✗ — the pair claims Sunday\n\nSo &lt;28, Sunday&gt; is the odd one out.",
+      "source": "AP ICET 2026 2nd May 2026 Shift 1",
+      "source_year": 2026,
+      "options": [
+        {
+          "label": "&lt;1, Friday&gt;",
+          "is_correct": false
+        },
+        {
+          "label": "&lt;18, Monday&gt;",
+          "is_correct": false
+        },
+        {
+          "label": "&lt;6, Wednesday&gt;",
+          "is_correct": false
+        },
+        {
+          "label": "&lt;28, Sunday&gt;",
+          "is_correct": true
+        }
+      ]
+    },
+    {
+      "chapter": "Classification (Odd One Out)",
+      "difficulty": "easy",
+      "answer_type": "single",
+      "stem": "Find the odd one from the following:\n\nFootball, Table-tennis, Chess, Badminton",
+      "explanation": "Football, table-tennis and badminton are **physical games played with a ball or shuttle**.\n\n**Chess** is an indoor board game requiring no physical play — it is the odd one out.",
+      "source": "AP ICET 2026 2nd May 2026 Shift 1",
+      "source_year": 2026,
+      "options": [
+        {
+          "label": "Football",
+          "is_correct": false
+        },
+        {
+          "label": "Table-tennis",
+          "is_correct": false
+        },
+        {
+          "label": "Chess",
+          "is_correct": true
+        },
+        {
+          "label": "Badminton",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Classification (Odd One Out)",
+      "difficulty": "easy",
+      "answer_type": "single",
+      "stem": "Pick up the odd one:\n\nMango, Orange, Potato, Apple",
+      "explanation": "Mango, orange and apple are **fruits**.\n\n**Potato** is a vegetable — specifically an underground tuber — so it does not belong with the rest.",
+      "source": "AP ICET 2026 2nd May 2026 Shift 1",
+      "source_year": 2026,
+      "options": [
+        {
+          "label": "Mango",
+          "is_correct": false
+        },
+        {
+          "label": "Orange",
+          "is_correct": false
+        },
+        {
+          "label": "Potato",
+          "is_correct": true
+        },
+        {
+          "label": "Apple",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Classification (Odd One Out)",
+      "difficulty": "easy",
+      "answer_type": "single",
+      "stem": "Pick up the odd one:\n\nSquare, Rectangle, Circle, Quadrilateral",
+      "explanation": "A square, a rectangle and a quadrilateral are all **polygons bounded by straight sides** — in fact squares and rectangles are particular quadrilaterals.\n\nA **circle** has no sides or vertices at all, so it is the odd one out.",
+      "source": "AP ICET 2026 2nd May 2026 Shift 1",
+      "source_year": 2026,
+      "options": [
+        {
+          "label": "Square",
+          "is_correct": false
+        },
+        {
+          "label": "Rectangle",
+          "is_correct": false
+        },
+        {
+          "label": "Circle",
+          "is_correct": true
+        },
+        {
+          "label": "Quadrilateral",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Classification (Odd One Out)",
+      "difficulty": "medium",
+      "answer_type": "single",
+      "stem": "Find the odd one out from the following:\n\nQ T W Z,  N P S V,  X A D G,  B E H K",
+      "explanation": "Measure the gaps between consecutive letters in each group:\n\n- **Q T W Z** → $+3, +3, +3$ ✓\n- **N P S V** → $+2, +3, +3$ ✗ — the first gap is 2, not 3\n- **X A D G** → $+3, +3, +3$ ✓ (wrapping past Z)\n- **B E H K** → $+3, +3, +3$ ✓\n\nSo **N P S V** breaks the pattern. Had it been N Q T W, it would have fitted.",
+      "source": "AP ICET 2026 2nd May 2026 Shift 1",
+      "source_year": 2026,
+      "options": [
+        {
+          "label": "Q T W Z",
+          "is_correct": false
+        },
+        {
+          "label": "N P S V",
+          "is_correct": true
+        },
+        {
+          "label": "X A D G",
+          "is_correct": false
+        },
+        {
+          "label": "B E H K",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Classification (Odd One Out)",
+      "difficulty": "medium",
+      "answer_type": "single",
+      "stem": "Find the odd one out from the following:\n\n(3, 4, 14),  (4, 6, 26),  (5, 7, 37),  (8, 9, 76)",
+      "explanation": "In each triple, the third number should be **(product of the first two) $+\\ 2$**:\n\n- $3 \\times 4 + 2 = 14$ ✓\n- $4 \\times 6 + 2 = 26$ ✓\n- $5 \\times 7 + 2 = 37$ ✓\n- $8 \\times 9 + 2 = 74$, but the triple gives **76** ✗\n\nSo $(8, 9, 76)$ is the odd one out.",
+      "source": "AP ICET 2026 2nd May 2026 Shift 1",
+      "source_year": 2026,
+      "options": [
+        {
+          "label": "3, 4, 14",
+          "is_correct": false
+        },
+        {
+          "label": "4, 6, 26",
+          "is_correct": false
+        },
+        {
+          "label": "5, 7, 37",
+          "is_correct": false
+        },
+        {
+          "label": "8, 9, 76",
+          "is_correct": true
+        }
+      ]
+    },
+    {
+      "chapter": "Number & Alphabet Series",
+      "difficulty": "easy",
+      "answer_type": "single",
+      "stem": "Find the missing term: JFM, AMJ, JAS, ______.",
+      "explanation": "Each group is the **initials of three consecutive months**:\n\n- **JFM** = January, February, March\n- **AMJ** = April, May, June\n- **JAS** = July, August, September\n- so next comes **OND** = October, November, December.",
+      "source": "AP ICET 2026 2nd May 2026 Shift 1",
+      "source_year": 2026,
+      "options": [
+        {
+          "label": "FMA",
+          "is_correct": false
+        },
+        {
+          "label": "OND",
+          "is_correct": true
+        },
+        {
+          "label": "JJA",
+          "is_correct": false
+        },
+        {
+          "label": "ASO",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Analogy",
+      "difficulty": "medium",
+      "answer_type": "single",
+      "stem": "Fill the last position: BREAD : 30 :: HONEY : ?",
+      "explanation": "Add the alphabet positions of the letters:\n$$\\text{BREAD} = 2 + 18 + 5 + 1 + 4 = 30 \\ \\checkmark$$\n\nDo the same for HONEY:\n$$8 + 15 + 14 + 5 + 25 = 67.$$",
+      "source": "AP ICET 2026 2nd May 2026 Shift 1",
+      "source_year": 2026,
+      "options": [
+        {
+          "label": "55",
+          "is_correct": false
+        },
+        {
+          "label": "70",
+          "is_correct": false
+        },
+        {
+          "label": "60",
+          "is_correct": false
+        },
+        {
+          "label": "67",
+          "is_correct": true
+        }
+      ]
+    },
+    {
+      "chapter": "Classification (Odd One Out)",
+      "difficulty": "hard",
+      "answer_type": "single",
+      "stem": "Find the odd one out:\n\n(8, 15, 17),  (7, 24, 25),  (9, 40, 41),  (6, 35, 37)",
+      "explanation": "Each triple should be a **Pythagorean triple** $(a^2 + b^2 = c^2)$:\n\n- $8^2 + 15^2 = 64 + 225 = 289 = 17^2$ ✓\n- $7^2 + 24^2 = 49 + 576 = 625 = 25^2$ ✓\n- $9^2 + 40^2 = 81 + 1600 = 1681 = 41^2$ ✓\n- $6^2 + 35^2 = 36 + 1225 = 1261$, but $37^2 = 1369$ ✗\n\nSo $(6, 35, 37)$ is the odd one out. (The triple that fits 35 and 37 is $12, 35, 37$.)",
+      "source": "AP ICET 2026 2nd May 2026 Shift 1",
+      "source_year": 2026,
+      "options": [
+        {
+          "label": "8, 15, 17",
+          "is_correct": false
+        },
+        {
+          "label": "7, 24, 25",
+          "is_correct": false
+        },
+        {
+          "label": "9, 40, 41",
+          "is_correct": false
+        },
+        {
+          "label": "6, 35, 37",
+          "is_correct": true
+        }
+      ]
+    },
+    {
+      "chapter": "Classification (Odd One Out)",
+      "difficulty": "medium",
+      "answer_type": "single",
+      "stem": "Find the odd one out:\n\n(D, 16, 4),  (H, 64, 8),  (L, 144, 12),  (P, 256, 15)",
+      "explanation": "In each group the third number is the letter's **position in the alphabet** and the middle number is its **square**:\n\n- D is 4th: $4^2 = 16$, position 4 ✓\n- H is 8th: $8^2 = 64$, position 8 ✓\n- L is 12th: $12^2 = 144$, position 12 ✓\n- P is **16th**: $16^2 = 256$ ✓ but the group gives the position as **15** ✗\n\nSo (P, 256, 15) is the odd one out.",
+      "source": "AP ICET 2026 2nd May 2026 Shift 1",
+      "source_year": 2026,
+      "options": [
+        {
+          "label": "D, 16, 4",
+          "is_correct": false
+        },
+        {
+          "label": "H, 64, 8",
+          "is_correct": false
+        },
+        {
+          "label": "L, 144, 12",
+          "is_correct": false
+        },
+        {
+          "label": "P, 256, 15",
+          "is_correct": true
+        }
+      ]
+    },
+    {
+      "chapter": "Classification (Odd One Out)",
+      "difficulty": "easy",
+      "answer_type": "single",
+      "stem": "Find the odd one out:\n\nEars, Eyes, Nose, Heart",
+      "explanation": "Ears, eyes and nose are **sense organs** — they receive information from outside the body (hearing, sight, smell).\n\nThe **heart** is an internal organ that pumps blood; it senses nothing, so it is the odd one out.",
+      "source": "AP ICET 2026 2nd May 2026 Shift 1",
+      "source_year": 2026,
+      "options": [
+        {
+          "label": "Ears",
+          "is_correct": false
+        },
+        {
+          "label": "Eyes",
+          "is_correct": false
+        },
+        {
+          "label": "Nose",
+          "is_correct": false
+        },
+        {
+          "label": "Heart",
+          "is_correct": true
+        }
+      ]
+    },
+    {
+      "chapter": "Number & Alphabet Series",
+      "difficulty": "easy",
+      "answer_type": "single",
+      "stem": "What comes next in the series?\n\n441, 484, 529, 576, ____ ?",
+      "explanation": "Each term is a **perfect square** of consecutive integers:\n$$441 = 21^2,\\quad 484 = 22^2,\\quad 529 = 23^2,\\quad 576 = 24^2.$$\n\nSo the next term is $25^2 = 625$.",
+      "source": "AP ICET 2026 2nd May 2026 Shift 1",
+      "source_year": 2026,
+      "options": [
+        {
+          "label": "625",
+          "is_correct": true
+        },
+        {
+          "label": "615",
+          "is_correct": false
+        },
+        {
+          "label": "679",
+          "is_correct": false
+        },
+        {
+          "label": "582",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Classification (Odd One Out)",
+      "difficulty": "easy",
+      "answer_type": "single",
+      "stem": "Pick up the wrong letter from the following:\n\ne, j, o, u",
+      "explanation": "The list is meant to be **vowels**: *a, e, i, o, u*.\n\n**e**, **o** and **u** are vowels, but **j** is a consonant — so j is the wrong letter in the set.",
+      "source": "AP ICET 2026 2nd May 2026 Shift 1",
+      "source_year": 2026,
+      "options": [
+        {
+          "label": "e",
+          "is_correct": false
+        },
+        {
+          "label": "j",
+          "is_correct": true
+        },
+        {
+          "label": "o",
+          "is_correct": false
+        },
+        {
+          "label": "u",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Classification (Odd One Out)",
+      "difficulty": "easy",
+      "answer_type": "single",
+      "stem": "Find the odd pair from the following:\n\nPakistan – Islamabad,  Srilanka – Colombo,  Dhaka – Bangladesh,  India – New Delhi",
+      "explanation": "Three pairs are written as **country followed by its capital city**: Pakistan–Islamabad, Srilanka–Colombo, India–New Delhi.\n\n**Dhaka – Bangladesh** reverses that order, putting the city first and the country second, so it is the odd pair.",
+      "source": "AP ICET 2026 2nd May 2026 Shift 1",
+      "source_year": 2026,
+      "options": [
+        {
+          "label": "Pakistan, Islamabad",
+          "is_correct": false
+        },
+        {
+          "label": "Srilanka, Colombo",
+          "is_correct": false
+        },
+        {
+          "label": "Dhaka, Bangladesh",
+          "is_correct": true
+        },
+        {
+          "label": "India, New Delhi",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Classification (Odd One Out)",
+      "difficulty": "easy",
+      "answer_type": "single",
+      "stem": "Pick the odd month from the following:\n\nAugust, September, January, December",
+      "explanation": "Count the days: August has **31**, January has **31**, December has **31**.\n\n**September** has only **30** days, so it is the odd month out.",
+      "source": "AP ICET 2026 2nd May 2026 Shift 1",
+      "source_year": 2026,
+      "options": [
+        {
+          "label": "August",
+          "is_correct": false
+        },
+        {
+          "label": "September",
+          "is_correct": true
+        },
+        {
+          "label": "January",
+          "is_correct": false
+        },
+        {
+          "label": "December",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Classification (Odd One Out)",
+      "difficulty": "easy",
+      "answer_type": "single",
+      "stem": "Find the odd year from the following:\n\n1954, 1968, 1970, 1982",
+      "explanation": "Test divisibility by 4, which marks a **leap year**:\n\n- $1954 \\div 4$ leaves 2 — not a leap year\n- $1968 \\div 4 = 492$ exactly — **leap year**\n- $1970 \\div 4$ leaves 2 — not a leap year\n- $1982 \\div 4$ leaves 2 — not a leap year\n\nSo **1968** is the odd one out.",
+      "source": "AP ICET 2026 2nd May 2026 Shift 1",
+      "source_year": 2026,
+      "options": [
+        {
+          "label": "1954",
+          "is_correct": false
+        },
+        {
+          "label": "1968",
+          "is_correct": true
+        },
+        {
+          "label": "1970",
+          "is_correct": false
+        },
+        {
+          "label": "1982",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Number & Alphabet Series",
+      "difficulty": "medium",
+      "answer_type": "single",
+      "stem": "Find the next number in the series:\n\n54, 135, 199, 248, 284, 309, ____ ?",
+      "explanation": "Take the differences between consecutive terms:\n$$81,\\ 64,\\ 49,\\ 36,\\ 25$$\nwhich are the descending squares $9^2, 8^2, 7^2, 6^2, 5^2$.\n\nThe next difference is $4^2 = 16$, so the answer is $309 + 16 = 325$.",
+      "source": "AP ICET 2026 2nd May 2026 Shift 1",
+      "source_year": 2026,
+      "options": [
+        {
+          "label": "318",
+          "is_correct": false
+        },
+        {
+          "label": "325",
+          "is_correct": true
+        },
+        {
+          "label": "328",
+          "is_correct": false
+        },
+        {
+          "label": "335",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Number & Alphabet Series",
+      "difficulty": "very_hard",
+      "answer_type": "single",
+      "stem": "Find the next number in the series:\n\n2, 6, 15, 28, 55, 78, ____ ?",
+      "explanation": "The differences ($4, 9, 13, 27, 23$) go nowhere — so factorise each term instead:\n$$2 = 1 \\times 2,\\quad 6 = 2 \\times 3,\\quad 15 = 3 \\times 5,\\quad 28 = 4 \\times 7,\\quad 55 = 5 \\times 11,\\quad 78 = 6 \\times 13.$$\n\nEach term is $n \\times (n\\text{-th prime})$: the counters run $1,2,3,4,5,6$ and the primes run $2,3,5,7,11,13$.\n\nThe next term is $7 \\times 17 = 119$.",
+      "source": "AP ICET 2026 2nd May 2026 Shift 1",
+      "source_year": 2026,
+      "options": [
+        {
+          "label": "119",
+          "is_correct": true
+        },
+        {
+          "label": "135",
+          "is_correct": false
+        },
+        {
+          "label": "216",
+          "is_correct": false
+        },
+        {
+          "label": "224",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Number & Alphabet Series",
+      "difficulty": "medium",
+      "answer_type": "single",
+      "stem": "Find the next letter in the series:\n\nE, H, L, Q, ______ ?",
+      "explanation": "Convert to alphabet positions: $E = 5$, $H = 8$, $L = 12$, $Q = 17$.\n\nThe gaps grow by one each step: $+3, +4, +5$, so the next gap is $+6$:\n$$17 + 6 = 23 \\Rightarrow \\textbf{W}.$$",
+      "source": "AP ICET 2026 2nd May 2026 Shift 1",
+      "source_year": 2026,
+      "options": [
+        {
+          "label": "S",
+          "is_correct": false
+        },
+        {
+          "label": "X",
+          "is_correct": false
+        },
+        {
+          "label": "W",
+          "is_correct": true
+        },
+        {
+          "label": "Z",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Coding-Decoding",
+      "difficulty": "easy",
+      "answer_type": "single",
+      "stem": "If $A = D$, $B = E$, $C = F$ and so on, how is DOG written?",
+      "explanation": "The given pairs show each letter is replaced by the letter **3 places further on** ($A \\to D$ is $+3$).\n\nApply it to DOG:\n$$D + 3 = G,\\quad O + 3 = R,\\quad G + 3 = J$$\n\nSo DOG is written as **GRJ**.",
+      "source": "AP ICET 2026 2nd May 2026 Shift 1",
+      "source_year": 2026,
+      "options": [
+        {
+          "label": "GRJ",
+          "is_correct": true
+        },
+        {
+          "label": "GRK",
+          "is_correct": false
+        },
+        {
+          "label": "GRI",
+          "is_correct": false
+        },
+        {
+          "label": "HSK",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Coding-Decoding",
+      "difficulty": "medium",
+      "answer_type": "single",
+      "stem": "If each letter of the alphabet is coded as the 3rd letter from the current letter, how is 'PEN' coded?",
+      "explanation": "Read the rule carefully: counting **from** the current letter, that letter is the 1st, so the \"3rd letter from\" it is two places on:\n$$P \\to (P, Q, R) = R,\\quad E \\to (E, F, G) = G,\\quad N \\to (N, O, P) = P.$$\n\nSo PEN is coded **RGP**.\n\n*(If the count had excluded the starting letter — a $+3$ shift — the answer would be SHQ, which is why the wording matters.)*",
+      "source": "AP ICET 2026 2nd May 2026 Shift 1",
+      "source_year": 2026,
+      "options": [
+        {
+          "label": "RGP",
+          "is_correct": true
+        },
+        {
+          "label": "RPG",
+          "is_correct": false
+        },
+        {
+          "label": "QFO",
+          "is_correct": false
+        },
+        {
+          "label": "SFO",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Coding-Decoding",
+      "difficulty": "easy",
+      "answer_type": "single",
+      "stem": "If ROSE is coded as 18-15-19-5, how is LILY coded?",
+      "explanation": "Each letter is simply its **position in the alphabet**: $R = 18$, $O = 15$, $S = 19$, $E = 5$ ✓\n\nFor LILY:\n$$L = 12,\\quad I = 9,\\quad L = 12,\\quad Y = 25$$\n\nso the code is **12-9-12-25**.",
+      "source": "AP ICET 2026 2nd May 2026 Shift 1",
+      "source_year": 2026,
+      "options": [
+        {
+          "label": "12-9-12-25",
+          "is_correct": true
+        },
+        {
+          "label": "12-9-11-25",
+          "is_correct": false
+        },
+        {
+          "label": "11-9-12-25",
+          "is_correct": false
+        },
+        {
+          "label": "12-8-12-25",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Coding-Decoding",
+      "difficulty": "hard",
+      "answer_type": "single",
+      "stem": "In a coding scheme IBM is coded as HCL. Then BBA is coded as",
+      "explanation": "Compare letter by letter:\n$$I(9) \\to H(8) = -1,\\qquad B(2) \\to C(3) = +1,\\qquad M(13) \\to L(12) = -1.$$\n\nThe pattern by position is $-1, +1, -1$. Apply it to BBA:\n$$B - 1 = A,\\qquad B + 1 = C,\\qquad A - 1 = Z \\ (\\text{wrapping to the end})$$\n\nSo BBA is coded **ACZ**.",
+      "source": "AP ICET 2026 2nd May 2026 Shift 1",
+      "source_year": 2026,
+      "options": [
+        {
+          "label": "ACZ",
+          "is_correct": true
+        },
+        {
+          "label": "CCA",
+          "is_correct": false
+        },
+        {
+          "label": "CCB",
+          "is_correct": false
+        },
+        {
+          "label": "CBZ",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Coding-Decoding",
+      "difficulty": "hard",
+      "answer_type": "single",
+      "stem": "If each of the letters A, C, D, E, G, M, N, O, R, S denotes a different digit between 0 and 9 in the coded expression **SEND + MORE = MONEY**, then the value of M = ?",
+      "explanation": "SEND and MORE are both 4-digit numbers, so their sum is at most $9999 + 9999 = 19998$ — a 5-digit number whose leading digit can only be **1**.\n\nMONEY is that 5-digit sum, and its leading digit is M, so\n$$M = 1.$$\n\n*(No trial-and-error on the other letters is needed; the carry argument settles M immediately. For the record, the full solution is $9567 + 1085 = 10652$.)*",
+      "source": "AP ICET 2026 2nd May 2026 Shift 1",
+      "source_year": 2026,
+      "options": [
+        {
+          "label": "1",
+          "is_correct": true
+        },
+        {
+          "label": "2",
+          "is_correct": false
+        },
+        {
+          "label": "0",
+          "is_correct": false
+        },
+        {
+          "label": "3",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Coding-Decoding",
+      "difficulty": "medium",
+      "answer_type": "single",
+      "stem": "If each of the letters from A to I are coded with the decimal digits starting from 1 to 9, what is the result of AED + BCA = ?",
+      "explanation": "The code is $A=1, B=2, C=3, D=4, E=5, F=6, G=7, H=8, I=9$.\n\nSo the two words are numbers:\n$$\\text{AED} = 154, \\qquad \\text{BCA} = 231.$$\n\nAdd them: $154 + 231 = 385$. Translating back digit by digit — $3 = C$, $8 = H$, $5 = E$ — gives **CHE**.",
+      "source": "AP ICET 2026 2nd May 2026 Shift 1",
+      "source_year": 2026,
+      "options": [
+        {
+          "label": "CHE",
+          "is_correct": true
+        },
+        {
+          "label": "CEG",
+          "is_correct": false
+        },
+        {
+          "label": "DBA",
+          "is_correct": false
+        },
+        {
+          "label": "CAD",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Coding-Decoding",
+      "difficulty": "medium",
+      "answer_type": "single",
+      "stem": "If GALAXY is coded as DXIXUV, then the code word for STAR is",
+      "explanation": "Check each letter of the given pair:\n$$G(7) \\to D(4),\\quad A(1) \\to X(24),\\quad L(12) \\to I(9),\\quad A \\to X,\\quad X(24) \\to U(21),\\quad Y(25) \\to V(22)$$\n\nEvery letter moves **3 places back**, wrapping round the alphabet where needed ($A \\to X$).\n\nFor STAR:\n$$S(19) \\to P,\\quad T(20) \\to Q,\\quad A(1) \\to X,\\quad R(18) \\to O$$\n\ngiving **PQXO**.",
+      "source": "AP ICET 2026 2nd May 2026 Shift 1",
+      "source_year": 2026,
+      "options": [
+        {
+          "label": "PQXN",
+          "is_correct": false
+        },
+        {
+          "label": "PQXM",
+          "is_correct": false
+        },
+        {
+          "label": "PQXO",
+          "is_correct": true
+        },
+        {
+          "label": "PQOX",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Coding-Decoding",
+      "difficulty": "hard",
+      "answer_type": "single",
+      "stem": "If GATE is coded as 10042308, then the word LURE is coded as ____",
+      "explanation": "Split the code into **two-digit blocks**: $10\\ |\\ 04\\ |\\ 23\\ |\\ 08$, one per letter of GATE.\n\nCompare with the alphabet positions $G = 7$, $A = 1$, $T = 20$, $E = 5$: each block is the position **plus 3**, written with two digits.\n\nSo for LURE:\n$$L(12) + 3 = 15,\\quad U(21) + 3 = 24,\\quad R(18) + 3 = 21,\\quad E(5) + 3 = 08$$\n\ngiving **15242108**.",
+      "source": "AP ICET 2026 2nd May 2026 Shift 1",
+      "source_year": 2026,
+      "options": [
+        {
+          "label": "15212108",
+          "is_correct": false
+        },
+        {
+          "label": "15241805",
+          "is_correct": false
+        },
+        {
+          "label": "15242108",
+          "is_correct": true
+        },
+        {
+          "label": "12182105",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Coding-Decoding",
+      "difficulty": "easy",
+      "answer_type": "single",
+      "stem": "If 'MAN' = 28, 'WOMAN' = 66, then 'BOY' = ?",
+      "explanation": "Add the alphabet positions of the letters:\n$$\\text{MAN} = 13 + 1 + 14 = 28 \\ \\checkmark$$\n$$\\text{WOMAN} = 23 + 15 + 13 + 1 + 14 = 66 \\ \\checkmark$$\n\nSo\n$$\\text{BOY} = 2 + 15 + 25 = 42.$$",
+      "source": "AP ICET 2026 2nd May 2026 Shift 1",
+      "source_year": 2026,
+      "options": [
+        {
+          "label": "38",
+          "is_correct": false
+        },
+        {
+          "label": "42",
+          "is_correct": true
+        },
+        {
+          "label": "43",
+          "is_correct": false
+        },
+        {
+          "label": "45",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Coding-Decoding",
+      "difficulty": "very_hard",
+      "answer_type": "single",
+      "stem": "In a code language \"STUDENT\" is coded as \"A10B10A11B2A3B7B10\". Then how will you code \"FRIEND\" in that code language?",
+      "explanation": "Split the code into letter-blocks and line them up with STUDENT:\n\n| Letter | S(19) | T(20) | U(21) | D(4) | E(5) | N(14) | T(20) |\n| --- | --- | --- | --- | --- | --- | --- | --- |\n| Block | A10 | B10 | A11 | B2 | A3 | B7 | B10 |\n\nThe rule falls out: a letter at an **odd** alphabet position $2k-1$ becomes $A_k$, and one at an **even** position $2k$ becomes $B_k$. Check: $S = 19 = 2(10)-1 \\to A10$ ✓, $T = 20 = 2(10) \\to B10$ ✓, $D = 4 = 2(2) \\to B2$ ✓.\n\nNow FRIEND:\n$$F(6) = 2(3) \\to B3,\\quad R(18) = 2(9) \\to B9,\\quad I(9) = 2(5)-1 \\to A5,$$\n$$E(5) = 2(3)-1 \\to A3,\\quad N(14) = 2(7) \\to B7,\\quad D(4) = 2(2) \\to B2$$\n\ngiving **B3B9A5A3B7B2**.",
+      "source": "AP ICET 2026 2nd May 2026 Shift 1",
+      "source_year": 2026,
+      "options": [
+        {
+          "label": "B7A10A3B1B6A5",
+          "is_correct": false
+        },
+        {
+          "label": "B3A5A7A11A9B12",
+          "is_correct": false
+        },
+        {
+          "label": "B9A10A4B6A9B8",
+          "is_correct": false
+        },
+        {
+          "label": "B3B9A5A3B7B2",
+          "is_correct": true
+        }
+      ]
+    },
+    {
+      "chapter": "Clocks & Calendars",
+      "difficulty": "easy",
+      "answer_type": "single",
+      "stem": "If 1st January 2024 was a Monday, what day was 31st January 2024?",
+      "explanation": "From the 1st to the 31st is $31 - 1 = 30$ days.\n\nOnly the remainder on division by 7 matters: $30 = 7 \\times 4 + 2$, so the day advances by **2**.\n\nMonday $+ 2 = $ **Wednesday**.",
+      "source": "AP ICET 2026 2nd May 2026 Shift 1",
+      "source_year": 2026,
+      "options": [
+        {
+          "label": "Tuesday",
+          "is_correct": false
+        },
+        {
+          "label": "Wednesday",
+          "is_correct": true
+        },
+        {
+          "label": "Thursday",
+          "is_correct": false
+        },
+        {
+          "label": "Friday",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Clocks & Calendars",
+      "difficulty": "medium",
+      "answer_type": "single",
+      "stem": "What is the angle between the hours hand and minutes hand at 3:30?",
+      "explanation": "**Minute hand:** 30 minutes $\\times\\ 6^\\circ = 180^\\circ$ from 12.\n\n**Hour hand:** it does not sit on the 3 — by 3:30 it has crept halfway to the 4:\n$$3 \\times 30^\\circ + 30 \\times 0.5^\\circ = 90^\\circ + 15^\\circ = 105^\\circ.$$\n\nThe angle between them is $180^\\circ - 105^\\circ = 75^\\circ$.\n\n*(Forgetting the hour hand's drift gives the trap answer $90^\\circ$.)*",
+      "source": "AP ICET 2026 2nd May 2026 Shift 1",
+      "source_year": 2026,
+      "options": [
+        {
+          "label": "$60^\\circ$",
+          "is_correct": false
+        },
+        {
+          "label": "$75^\\circ$",
+          "is_correct": true
+        },
+        {
+          "label": "$90^\\circ$",
+          "is_correct": false
+        },
+        {
+          "label": "$105^\\circ$",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Clocks & Calendars",
+      "difficulty": "medium",
+      "answer_type": "single",
+      "stem": "How many times do the hands of a clock coincide in a day?",
+      "explanation": "In 12 hours the hands overlap **11** times, not 12: between 11 o'clock and 12 o'clock there is no separate overlap because the coincidence happens exactly at 12.\n\nOver a full day of 24 hours that gives\n$$11 \\times 2 = 22 \\text{ times}.$$",
+      "source": "AP ICET 2026 2nd May 2026 Shift 1",
+      "source_year": 2026,
+      "options": [
+        {
+          "label": "22",
+          "is_correct": true
+        },
+        {
+          "label": "24",
+          "is_correct": false
+        },
+        {
+          "label": "11",
+          "is_correct": false
+        },
+        {
+          "label": "12",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Blood Relations",
+      "difficulty": "medium",
+      "answer_type": "single",
+      "stem": "If A is the brother of E and father of B, and if B is the wife of C and mother of D, how is A related to C?",
+      "explanation": "Work through the links:\n\n- A is B's **father**.\n- B is C's **wife**, so C is A's daughter's husband.\n\nThe father of a man's wife is his **father-in-law**, so A is C's father-in-law.\n\n*(E and D are decoys — A's brother and B's child play no part in the A-to-C link.)*",
+      "source": "AP ICET 2026 2nd May 2026 Shift 1",
+      "source_year": 2026,
+      "options": [
+        {
+          "label": "Grand father",
+          "is_correct": false
+        },
+        {
+          "label": "Aunt",
+          "is_correct": false
+        },
+        {
+          "label": "Son-in-law",
+          "is_correct": false
+        },
+        {
+          "label": "Father-in-law",
+          "is_correct": true
+        }
+      ]
+    },
+    {
+      "chapter": "Clocks & Calendars",
+      "difficulty": "hard",
+      "answer_type": "single",
+      "stem": "In a certain leap year 15th January is a Monday. Then what day is 2nd October of the same year?",
+      "explanation": "Count the days from 15 January to 2 October in a **leap** year:\n\n| Stretch | Days |\n| --- | --- |\n| rest of January (16th–31st) | 16 |\n| February (leap) | 29 |\n| March | 31 |\n| April | 30 |\n| May | 31 |\n| June | 30 |\n| July | 31 |\n| August | 31 |\n| September | 30 |\n| 1–2 October | 2 |\n| **Total** | **261** |\n\nOnly the remainder matters: $261 = 7 \\times 37 + 2$, so the day advances by 2.\n\nMonday $+ 2 = $ **Wednesday**.",
+      "source": "AP ICET 2026 2nd May 2026 Shift 1",
+      "source_year": 2026,
+      "options": [
+        {
+          "label": "Tuesday",
+          "is_correct": false
+        },
+        {
+          "label": "Wednesday",
+          "is_correct": true
+        },
+        {
+          "label": "Thursday",
+          "is_correct": false
+        },
+        {
+          "label": "Friday",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Clocks & Calendars",
+      "difficulty": "very_hard",
+      "answer_type": "single",
+      "stem": "In an island, Mother's day is celebrated on the second Sunday of June. In one year, Mother's day was celebrated on 8th June. On what date will Mother's day be celebrated in the next year, which is not a leap year?",
+      "explanation": "If 8 June is the **second** Sunday, the first Sunday was 1 June.\n\nMoving to the same date one year later shifts the weekday by one day when no 29 February intervenes — and we are told the next year is **not** a leap year, so the shift is $365 \\bmod 7 = 1$ day.\n\nSo next year 8 June is a **Monday**, which makes 7 June the Sunday — and since $7 \\le 7$, that is the **first** Sunday of the month.\n\nThe second Sunday is therefore $7 + 7 = $ **14th June**.",
+      "source": "AP ICET 2026 2nd May 2026 Shift 1",
+      "source_year": 2026,
+      "options": [
+        {
+          "label": "9th June",
+          "is_correct": false
+        },
+        {
+          "label": "7th June",
+          "is_correct": false
+        },
+        {
+          "label": "14th June",
+          "is_correct": true
+        },
+        {
+          "label": "10th June",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Clocks & Calendars",
+      "difficulty": "easy",
+      "answer_type": "single",
+      "stem": "How many times does the minutes hand rotate in 12 hours?",
+      "explanation": "The minute hand completes **one full rotation every hour**.\n\nSo in 12 hours it rotates $12$ times. (The hour hand, by contrast, makes just one rotation in the same period.)",
+      "source": "AP ICET 2026 2nd May 2026 Shift 1",
+      "source_year": 2026,
+      "options": [
+        {
+          "label": "10",
+          "is_correct": false
+        },
+        {
+          "label": "12",
+          "is_correct": true
+        },
+        {
+          "label": "11",
+          "is_correct": false
+        },
+        {
+          "label": "13",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Seating Arrangement",
+      "difficulty": "hard",
+      "answer_type": "single",
+      "stem": "Six persons are sitting around a circular table at equal distances, facing the centre. A is between B and C, D is between E and F, and E is to the left of A and sits between B and D.\n\nWho is sitting opposite to C?",
+      "explanation": "Turn each clue into a pair of neighbours:\n\n- A is between B and C → A's neighbours are **B and C**\n- E is between B and D → E's neighbours are **B and D**\n- D is between E and F → D's neighbours are **E and F**\n\nChaining these gives $C - A - B - E - D - F$, and F closes the circle back to C. So around the table:\n$$\\textbf{A, B, E, D, F, C}$$\n\nIn a circle of six, the person opposite is three seats away, so the opposite pairs are A–D, B–F and **E–C**.\n\nHence **E** sits opposite C.",
+      "source": "AP ICET 2026 2nd May 2026 Shift 1",
+      "source_year": 2026,
+      "options": [
+        {
+          "label": "E",
+          "is_correct": true
+        },
+        {
+          "label": "D",
+          "is_correct": false
+        },
+        {
+          "label": "B",
+          "is_correct": false
+        },
+        {
+          "label": "F",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Seating Arrangement",
+      "difficulty": "medium",
+      "answer_type": "single",
+      "stem": "Six persons are sitting around a circular table at equal distances, facing the centre. A is between B and C, D is between E and F, and E is to the left of A and sits between B and D.\n\nWho is sitting between A and F?",
+      "explanation": "The seating that satisfies all three clues is\n$$\\textbf{A, B, E, D, F, C}$$\naround the table (see the neighbour-chaining: A's neighbours are B and C, E's are B and D, D's are E and F).\n\nA and F are separated by one seat on the side away from B, and that seat belongs to **C**.",
+      "source": "AP ICET 2026 2nd May 2026 Shift 1",
+      "source_year": 2026,
+      "options": [
+        {
+          "label": "D",
+          "is_correct": false
+        },
+        {
+          "label": "B",
+          "is_correct": false
+        },
+        {
+          "label": "C",
+          "is_correct": true
+        },
+        {
+          "label": "E",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Seating Arrangement",
+      "difficulty": "medium",
+      "answer_type": "single",
+      "stem": "Six persons are sitting around a circular table at equal distances, facing the centre. A is between B and C, D is between E and F, and E is to the left of A and sits between B and D.\n\nWho are sitting between B and F?",
+      "explanation": "The arrangement round the table is\n$$\\textbf{A, B, E, D, F, C}$$\n\nBetween B and F there are two arcs: one passes through E and D, the other through **A and C**. Only the second appears among the options, so the answer is **A and C**.",
+      "source": "AP ICET 2026 2nd May 2026 Shift 1",
+      "source_year": 2026,
+      "options": [
+        {
+          "label": "A and D",
+          "is_correct": false
+        },
+        {
+          "label": "A and C",
+          "is_correct": true
+        },
+        {
+          "label": "A and E",
+          "is_correct": false
+        },
+        {
+          "label": "C and D",
+          "is_correct": false
+        }
+      ]
+    }
+  ]
+}

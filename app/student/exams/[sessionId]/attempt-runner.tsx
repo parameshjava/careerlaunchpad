@@ -3,16 +3,20 @@
 // The exam runner. On mount it calls start_exam_attempt (SECURITY DEFINER RPC),
 // then caches the hydrated paper + answers in localStorage so navigation and
 // answering survive brief disconnects. Answers autosave (debounced) via
-// save_exam_answer; submit calls submit_exam_attempt. One question per screen
-// (mobile-first) with a palette and a hard-stop countdown.
-import { useCallback, useEffect, useRef, useState } from "react";
+// save_exam_answer; submit calls submit_exam_attempt.
+//
+// All the interactive behaviour — one question per screen, the palette, the
+// countdown, and the Alt+Tab / Cmd+Tab leave guard — lives in the shared
+// useQuizEngine (so exams, assessments, and future mock tests behave identically).
+// This file is the exam's data layer: start/resume, localStorage cache, per-answer
+// autosave, the abort-on-second-leave flow, the waiting/closed screens, and print
+// blocking.
+import { useCallback, useEffect, useMemo, useRef, useState } from "react";
 import { useRouter } from "next/navigation";
-import { Check, CheckCircle2, TriangleAlert, Flag, Eraser, ChevronDown } from "lucide-react";
+import { TriangleAlert } from "lucide-react";
 import { WarningSign } from "../warning-sign";
 import { createClient } from "@/lib/supabase/client";
-import { RichContent } from "@/components/exam/RichContent";
 import { Button } from "@/components/ui/button";
-import { Card, CardContent } from "@/components/ui/card";
 import {
   Dialog,
   DialogContent,
@@ -22,6 +26,8 @@ import {
   DialogTitle,
 } from "@/components/ui/dialog";
 import { formatDateTime } from "@/lib/format-date";
+import { AttemptView, type AttemptQuestion } from "@/components/exam/attempt-view";
+import { useQuizEngine } from "@/components/quiz/use-quiz-engine";
 import { type SessionPrintMeta } from "./paper-print";
 
 type Option = { id: string; label: string };
@@ -92,67 +98,17 @@ export function AttemptRunner({
   const [waiting, setWaiting] = useState("");
   const [attemptId, setAttemptId] = useState("");
   const [questions, setQuestions] = useState<Question[]>([]);
-  const [answers, setAnswers] = useState<Record<string, string[]>>({});
-  // Question ids the student has landed on — drives the amber "seen but not
-  // answered" palette state. Persisted like answers so it survives a resume.
-  const [seen, setSeen] = useState<Set<string>>(new Set());
-  // Question ids the student flagged with "Mark for review" — a violet palette
-  // state so they can triage and come back. Persisted like `seen`.
-  const [marked, setMarked] = useState<Set<string>>(new Set());
-  // Subject section ids the student has collapsed in the palette accordion.
-  // Empty by default (all expanded); the active section is always force-expanded.
-  const [collapsed, setCollapsed] = useState<Set<string>>(new Set());
-  const [index, setIndex] = useState(0);
-  // Keep the active palette chip in view as the student moves through a long,
-  // scrollable palette (60+ questions no longer paginate — they all render).
-  const currentCellRef = useRef<HTMLButtonElement>(null);
-  useEffect(() => {
-    currentCellRef.current?.scrollIntoView({ block: "nearest" });
-  }, [index]);
-  // On first load, restore the student's cursor so a resumed student lands
-  // exactly where they left off. Prefer the persisted last_position (server +
-  // cache, survives an abort); fall back to the first unanswered question, then
-  // Q1. Runs once, after questions + answers are loaded.
-  const initedIndexRef = useRef(false);
-  const lastPositionRef = useRef<number | null>(null);
-  useEffect(() => {
-    if (initedIndexRef.current || loading || questions.length === 0) return;
-    initedIndexRef.current = true;
-    const saved = lastPositionRef.current;
-    if (saved != null && saved > 0 && saved < questions.length) {
-      setIndex(saved);
-      return;
-    }
-    const firstUnanswered = questions.findIndex((qq) => !(answers[qq.question_id]?.length));
-    if (firstUnanswered > 0) setIndex(firstUnanswered);
-  }, [loading, questions, answers]);
   const [deadline, setDeadline] = useState<number | null>(null);
-  const [timeLeft, setTimeLeft] = useState<number | null>(null);
   const [submitting, setSubmitting] = useState(false);
-  // Manual submit goes through a confirmation dialog (accidental-tap guard);
-  // the deadline auto-submit calls doSubmit directly.
-  const [confirmOpen, setConfirmOpen] = useState(false);
-
-  // Anti-cheat: leaving the exam window (Alt+Tab / Cmd+Tab / app-switch /
-  // minimise) fires window `blur` / `visibilitychange` — the only signal a web
-  // page gets (the OS switch itself can't be blocked). First leave → warning;
-  // second → auto-submit + no resume. A single switch fires BOTH events, so we
-  // coalesce them within a short window (lastLeaveRef).
-  const [strikes, setStrikes] = useState(0);
-  const [warnOpen, setWarnOpen] = useState(false);
   // null while live; set when the anti-cheat closes the paper. `final` = graded
   // (no resumes left); otherwise the attempt is `aborted` and recoverable.
   const [abortInfo, setAbortInfo] = useState<{ final: boolean; resumeCount: number } | null>(null);
-  const strikesRef = useRef(0);
-  strikesRef.current = strikes;
-  const lastLeaveRef = useRef(0);
-  const suppressLeaveRef = useRef(false); // true while a print dialog is open (see print-block effect)
 
+  const lastPositionRef = useRef<number | null>(null);
   const saveTimers = useRef<Record<string, ReturnType<typeof setTimeout>>>({});
-  // Latest answers, readable inside doSubmit without making it depend on `answers`
-  // (which would re-create the countdown effect on every keystroke).
+  // Latest answers, readable inside doSubmit / the abort flow without depending on
+  // the engine's reactive state. Kept in sync by the adapter + the loader.
   const answersRef = useRef<Record<string, string[]>>({});
-  answersRef.current = answers;
 
   const persist = useCallback(
     (next: Partial<Cache>) => {
@@ -165,6 +121,168 @@ export function AttemptRunner({
     },
     [cacheKey],
   );
+
+  // Map the exam's questions into the shared AttemptView shape, resolving each
+  // section's label from the payload, else meta.sections in paper order.
+  const attemptQuestions: AttemptQuestion[] = useMemo(() => {
+    const bands: { id: string; title: string | null; items: Question[] }[] = [];
+    questions.forEach((qq) => {
+      const last = bands[bands.length - 1];
+      if (last && last.id === qq.section_id) last.items.push(qq);
+      else bands.push({ id: qq.section_id, title: qq.section_title, items: [qq] });
+    });
+    const labelByQid = new Map<string, string | null>();
+    bands.forEach((b, bi) => {
+      const label = b.title ?? meta?.sections[bi]?.subject ?? null;
+      b.items.forEach((qq) => labelByQid.set(qq.question_id, label));
+    });
+    return questions.map((qq) => ({
+      position: qq.position,
+      questionId: qq.question_id,
+      sectionId: qq.section_id,
+      sectionLabel: labelByQid.get(qq.question_id) ?? null,
+      answerType: qq.answer_type,
+      stem: qq.stem,
+      stemImageUrl: qq.stem_image_url,
+      passage: qq.passage,
+      options: qq.options,
+    }));
+  }, [questions, meta]);
+
+  // Autosave a single answer (debounced 800ms per question).
+  const scheduleSave = useCallback(
+    (questionId: string, selected: string[]) => {
+      clearTimeout(saveTimers.current[questionId]);
+      saveTimers.current[questionId] = setTimeout(() => {
+        supabase
+          .rpc("save_exam_answer", {
+            p_attempt_id: attemptId,
+            p_question_id: questionId,
+            p_selected: selected,
+          })
+          .then(({ error: saveErr }) => {
+            // Autosave failures are non-fatal — the answer stays cached and is
+            // re-sent on the next change / final submit. Surface quietly.
+            if (saveErr) console.warn("autosave failed", saveErr.message);
+          });
+      }, 800);
+    },
+    [attemptId, supabase],
+  );
+
+  const doSubmit = useCallback(async () => {
+    if (!attemptId || submitting) return;
+    setSubmitting(true);
+    // Flush any pending debounced saves so a last-second answer (or one changed
+    // within the 800ms window before tapping Submit) is persisted BEFORE grading.
+    Object.values(saveTimers.current).forEach(clearTimeout);
+    saveTimers.current = {};
+    try {
+      await Promise.all(
+        Object.entries(answersRef.current).map(([qid, sel]) =>
+          supabase.rpc("save_exam_answer", {
+            p_attempt_id: attemptId,
+            p_question_id: qid,
+            p_selected: sel,
+          }),
+        ),
+      );
+    } catch {
+      /* non-fatal — grading uses whatever persisted */
+    }
+    const { error: subErr } = await supabase.rpc("submit_exam_attempt", { p_attempt_id: attemptId });
+    if (subErr) {
+      setError(subErr.message);
+      setSubmitting(false);
+      return;
+    }
+    try {
+      localStorage.removeItem(cacheKey);
+    } catch {
+      /* ignore */
+    }
+    router.push(`/student/exams/${sessionId}/result`);
+  }, [attemptId, submitting, supabase, cacheKey, router, sessionId]);
+
+  // Second leave strike: flush answers-so-far, then abort (recoverable) or finalise
+  // if resumes are spent. start_exam_attempt won't re-hand a non-in_progress
+  // attempt, so a `final` abort can't be resumed.
+  const abortForLeave = useCallback(async () => {
+    if (!attemptId) return;
+    Object.values(saveTimers.current).forEach(clearTimeout);
+    saveTimers.current = {};
+    try {
+      await Promise.all(
+        Object.entries(answersRef.current).map(([qid, sel]) =>
+          supabase.rpc("save_exam_answer", {
+            p_attempt_id: attemptId,
+            p_question_id: qid,
+            p_selected: sel,
+          }),
+        ),
+      );
+    } catch {
+      /* non-fatal — abort uses whatever persisted */
+    }
+    const { data, error: e } = await supabase.rpc("abort_exam_attempt", { p_attempt_id: attemptId });
+    if (e) {
+      setError(e.message);
+      return;
+    }
+    const info = (data as { final?: boolean; resume_count?: number }) ?? {};
+    setAbortInfo({ final: !!info.final, resumeCount: info.resume_count ?? 0 });
+    try {
+      localStorage.removeItem(cacheKey);
+    } catch {
+      /* ignore */
+    }
+  }, [attemptId, supabase, cacheKey]);
+
+  const engine = useQuizEngine({
+    questions: attemptQuestions,
+    active: !!attemptId && !abortInfo,
+    deadline,
+    onAnswerChange: (all, questionId, selected) => {
+      answersRef.current = all;
+      persist({ answers: all });
+      scheduleSave(questionId, selected);
+    },
+    onNavigate: (i) => {
+      // Persist any answers still in the debounce window before navigating —
+      // moving between questions never leaves an unsaved answer behind.
+      for (const qid of Object.keys(saveTimers.current)) {
+        clearTimeout(saveTimers.current[qid]);
+        supabase
+          .rpc("save_exam_answer", {
+            p_attempt_id: attemptId,
+            p_question_id: qid,
+            p_selected: answersRef.current[qid] ?? [],
+          })
+          .then(({ error: e }) => {
+            if (e) console.warn("autosave failed", e.message);
+          });
+      }
+      saveTimers.current = {};
+      // Persist the cursor so a resume lands exactly here (server = durable across
+      // abort/device; cache = instant restore on a plain reload).
+      lastPositionRef.current = i;
+      persist({ lastPosition: i });
+      supabase.rpc("save_exam_position", { p_attempt_id: attemptId, p_position: i }).then(({ error: e }) => {
+        if (e) console.warn("save_exam_position failed", e.message);
+      });
+    },
+    onSeenChange: (seen) => persist({ seen }),
+    onMarkedChange: (marked) => persist({ marked }),
+    onLeaveRecorded: () => {
+      // Persist the switch-away for staff (Alt-Tab metric). Fire-and-forget.
+      supabase.rpc("record_exam_leave", { p_attempt_id: attemptId }).then(({ error: e }) => {
+        if (e) console.warn("record_exam_leave failed", e.message);
+      });
+    },
+    submit: doSubmit,
+    onSecondLeave: abortForLeave,
+  });
+  const { hydrate, suppressLeaveRef } = engine;
 
   // Ticking clock for the waiting-screen countdown (1s cadence, only while the
   // student is on the waiting screen).
@@ -187,13 +305,18 @@ export function AttemptRunner({
       /* ignore */
     }
     if (cached?.questions?.length) {
+      const cachedAnswers = cached.answers ?? {};
+      answersRef.current = cachedAnswers;
       setAttemptId(cached.attemptId);
       setQuestions(cached.questions);
-      setAnswers(cached.answers ?? {});
-      setSeen(new Set(cached.seen ?? []));
-      setMarked(new Set(cached.marked ?? []));
       setDeadline(cached.deadline ?? null);
       if (cached.lastPosition != null) lastPositionRef.current = cached.lastPosition;
+      hydrate({
+        answers: cachedAnswers,
+        seen: cached.seen ?? [],
+        marked: cached.marked ?? [],
+        index: cached.lastPosition ?? undefined,
+      });
       setLoading(false);
     }
 
@@ -229,16 +352,27 @@ export function AttemptRunner({
       if (payload.last_position != null) lastPositionRef.current = payload.last_position;
       const serverAnswers: Record<string, string[]> = {};
       for (const q of payload.questions) serverAnswers[q.question_id] = q.selected_option_ids ?? [];
+      // Local edits win over the server copy (matches the engine's merge).
+      answersRef.current = { ...serverAnswers, ...answersRef.current };
       // Server-authoritative deadline (duration clamped to the session close);
       // fall back to the cached value (offline) or a duration-from-now estimate.
       const dl = payload.ends_at
         ? new Date(payload.ends_at).getTime()
         : (cached?.deadline ?? Date.now() + payload.duration_minutes * 60_000);
+      // Restore the cursor: persisted last_position, else the first unanswered
+      // question, else Q1.
+      let restoreIndex = lastPositionRef.current ?? 0;
+      if (!(restoreIndex > 0 && restoreIndex < payload.questions.length)) {
+        const firstUnanswered = payload.questions.findIndex(
+          (qq) => !(answersRef.current[qq.question_id]?.length),
+        );
+        restoreIndex = firstUnanswered > 0 ? firstUnanswered : 0;
+      }
       setAttemptId(payload.attempt_id);
       setQuestions(payload.questions);
-      setAnswers((local) => ({ ...serverAnswers, ...local })); // local edits win over server
       setDeadline(dl);
       setLoading(false);
+      hydrate({ answers: serverAnswers, index: restoreIndex });
       persist({
         attemptId: payload.attempt_id,
         durationMinutes: payload.duration_minutes,
@@ -254,119 +388,6 @@ export function AttemptRunner({
     };
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [sessionId]);
-
-  const doSubmit = useCallback(async ({ redirect = true }: { redirect?: boolean } = {}) => {
-    if (!attemptId || submitting) return;
-    setSubmitting(true);
-    // Flush any pending debounced saves so a last-second answer (or one changed
-    // within the 800ms window before tapping Submit) is persisted BEFORE grading.
-    Object.values(saveTimers.current).forEach(clearTimeout);
-    saveTimers.current = {};
-    try {
-      await Promise.all(
-        Object.entries(answersRef.current).map(([qid, sel]) =>
-          supabase.rpc("save_exam_answer", {
-            p_attempt_id: attemptId,
-            p_question_id: qid,
-            p_selected: sel,
-          }),
-        ),
-      );
-    } catch {
-      /* non-fatal — grading uses whatever persisted */
-    }
-    const { error: subErr } = await supabase.rpc("submit_exam_attempt", { p_attempt_id: attemptId });
-    if (subErr) {
-      setError(subErr.message);
-      setSubmitting(false);
-      return;
-    }
-    try {
-      localStorage.removeItem(cacheKey);
-    } catch {
-      /* ignore */
-    }
-    if (redirect) router.push(`/student/exams/${sessionId}/result`);
-  }, [attemptId, submitting, supabase, cacheKey, router, sessionId]);
-
-  // Countdown → hard auto-submit at zero.
-  useEffect(() => {
-    if (deadline == null) return;
-    const tick = () => {
-      const left = Math.max(0, Math.floor((deadline - Date.now()) / 1000));
-      setTimeLeft(left);
-      if (left <= 0) doSubmit();
-    };
-    tick();
-    const t = setInterval(tick, 1000);
-    return () => clearInterval(t);
-  }, [deadline, doSubmit]);
-
-  // Mark the current question as "seen" the moment it's shown.
-  useEffect(() => {
-    const qid = questions[index]?.question_id;
-    if (!qid || seen.has(qid)) return;
-    const next = new Set(seen).add(qid);
-    setSeen(next);
-    persist({ seen: [...next] });
-  }, [index, questions, seen, persist]);
-
-  // Anti-cheat: detect the student leaving the exam window. Active only while an
-  // attempt is live. First leave warns; the second submits as-is and shows the
-  // closed screen — start_exam_attempt won't re-hand a non-in_progress attempt,
-  // so it can't be resumed.
-  useEffect(() => {
-    if (!attemptId || abortInfo) return;
-    const registerLeave = () => {
-      if (suppressLeaveRef.current) return;
-      const now = Date.now();
-      if (now - lastLeaveRef.current < 1500) return; // one switch fires blur+visibility → one strike
-      lastLeaveRef.current = now;
-      // Persist the switch-away for staff (Alt-Tab metric). Fire-and-forget.
-      supabase.rpc("record_exam_leave", { p_attempt_id: attemptId }).then(({ error: e }) => {
-        if (e) console.warn("record_exam_leave failed", e.message);
-      });
-      const n = strikesRef.current + 1;
-      setStrikes(n);
-      if (n >= 2) {
-        // Second strike: flush answers-so-far (like doSubmit), then abort
-        // (recoverable) or finalize if resumes are spent.
-        void (async () => {
-          Object.values(saveTimers.current).forEach(clearTimeout);
-          saveTimers.current = {};
-          try {
-            await Promise.all(
-              Object.entries(answersRef.current).map(([qid, sel]) =>
-                supabase.rpc("save_exam_answer", {
-                  p_attempt_id: attemptId,
-                  p_question_id: qid,
-                  p_selected: sel,
-                }),
-              ),
-            );
-          } catch {
-            /* non-fatal — abort uses whatever persisted */
-          }
-          const { data, error: e } = await supabase.rpc("abort_exam_attempt", { p_attempt_id: attemptId });
-          if (e) { setError(e.message); return; }
-          const info = (data as { final?: boolean; resume_count?: number }) ?? {};
-          setAbortInfo({ final: !!info.final, resumeCount: info.resume_count ?? 0 });
-          try { localStorage.removeItem(cacheKey); } catch { /* ignore */ }
-        })();
-      } else {
-        setWarnOpen(true);
-      }
-    };
-    const onVisibility = () => {
-      if (document.visibilityState === "hidden") registerLeave();
-    };
-    window.addEventListener("blur", registerLeave);
-    document.addEventListener("visibilitychange", onVisibility);
-    return () => {
-      window.removeEventListener("blur", registerLeave);
-      document.removeEventListener("visibilitychange", onVisibility);
-    };
-  }, [attemptId, abortInfo, supabase, cacheKey]);
 
   // Printing is disabled during an attempt (the paper is print:hidden with no
   // print-visible component). Block the Ctrl/Cmd+P shortcut so no dialog opens,
@@ -392,100 +413,7 @@ export function AttemptRunner({
       window.removeEventListener("beforeprint", onBeforePrint);
       window.removeEventListener("afterprint", onAfterPrint);
     };
-  }, [attemptId, abortInfo]);
-
-  function scheduleSave(questionId: string, selected: string[]) {
-    clearTimeout(saveTimers.current[questionId]);
-    saveTimers.current[questionId] = setTimeout(() => {
-      supabase
-        .rpc("save_exam_answer", {
-          p_attempt_id: attemptId,
-          p_question_id: questionId,
-          p_selected: selected,
-        })
-        .then(({ error: saveErr }) => {
-          // Autosave failures are non-fatal — the answer stays cached and is
-          // re-sent on the next change / final submit. Surface quietly.
-          if (saveErr) console.warn("autosave failed", saveErr.message);
-        });
-    }, 800);
-  }
-
-  // Persist any answers still sitting in the debounce window, then navigate —
-  // moving between questions never leaves an unsaved answer behind.
-  const goTo = useCallback(
-    (i: number) => {
-      for (const qid of Object.keys(saveTimers.current)) {
-        clearTimeout(saveTimers.current[qid]);
-        supabase
-          .rpc("save_exam_answer", {
-            p_attempt_id: attemptId,
-            p_question_id: qid,
-            p_selected: answersRef.current[qid] ?? [],
-          })
-          .then(({ error: saveErr }) => {
-            if (saveErr) console.warn("autosave failed", saveErr.message);
-          });
-      }
-      saveTimers.current = {};
-      setIndex(i);
-      // Persist the cursor so a resume lands exactly here (server = durable
-      // across abort/device; cache = instant restore on a plain reload).
-      lastPositionRef.current = i;
-      persist({ lastPosition: i });
-      supabase.rpc("save_exam_position", { p_attempt_id: attemptId, p_position: i }).then(({ error: e }) => {
-        if (e) console.warn("save_exam_position failed", e.message);
-      });
-    },
-    [attemptId, supabase, persist],
-  );
-
-  function choose(q: Question, optionId: string) {
-    setAnswers((prev) => {
-      const cur = prev[q.question_id] ?? [];
-      let next: string[];
-      if (q.answer_type === "single") next = [optionId];
-      else next = cur.includes(optionId) ? cur.filter((id) => id !== optionId) : [...cur, optionId];
-      const updated = { ...prev, [q.question_id]: next };
-      persist({ answers: updated });
-      scheduleSave(q.question_id, next);
-      return updated;
-    });
-  }
-
-  // Clear response: empty the selection so the question reverts to "not answered"
-  // (grey/seen). Essential with negative marking — a student can un-commit a risky
-  // guess instead of being forced to keep an answer once tapped.
-  function clearAnswer(q: Question) {
-    if (!(answers[q.question_id]?.length)) return; // already blank
-    setAnswers((prev) => {
-      const updated = { ...prev, [q.question_id]: [] };
-      persist({ answers: updated });
-      scheduleSave(q.question_id, []); // persist the clear server-side too
-      return updated;
-    });
-  }
-
-  // Toggle "Mark for review" on the current question (client-side, like `seen`).
-  function toggleMark(questionId: string) {
-    setMarked((prev) => {
-      const next = new Set(prev);
-      if (next.has(questionId)) next.delete(questionId);
-      else next.add(questionId);
-      persist({ marked: [...next] });
-      return next;
-    });
-  }
-
-  // Collapse / expand a subject band in the palette accordion.
-  function toggleSection(sectionId: string) {
-    setCollapsed((prev) => {
-      const next = new Set(prev);
-      if (next.has(sectionId)) next.delete(sectionId);
-      else next.add(sectionId);
-      return next;
-    });
-  }
+  }, [attemptId, abortInfo, suppressLeaveRef]);
 
   if (abortInfo)
     return (
@@ -631,459 +559,61 @@ export function AttemptRunner({
       </div>
     );
 
-  const q = questions[index];
-  const answered = (qid: string) => (answers[qid]?.length ?? 0) > 0;
-  const mm = timeLeft != null ? String(Math.floor(timeLeft / 60)).padStart(2, "0") : "--";
-  const ss = timeLeft != null ? String(timeLeft % 60).padStart(2, "0") : "--";
-  const lowTime = timeLeft != null && timeLeft <= 60;
-
-  // Palette counts (whole paper) + per-subject bands. Questions arrive ordered by
-  // position and each section is contiguous, so grouping in encounter order keeps
-  // the subjects in their exam order. Papers without sections fall into one band.
-  // Palette buckets, assigned by priority marked > answered > seen > not-visited,
-  // so the four counts always sum to the paper length. The submit dialog computes
-  // its own has-answer count separately — this bucketing is palette-only.
-  const markedCount = questions.filter((qq) => marked.has(qq.question_id)).length;
-  const answeredCount = questions.filter(
-    (qq) => answered(qq.question_id) && !marked.has(qq.question_id),
-  ).length;
-  const seenCount = questions.filter(
-    (qq) =>
-      !answered(qq.question_id) && !marked.has(qq.question_id) && seen.has(qq.question_id),
-  ).length;
-  const notVisitedCount = questions.length - markedCount - answeredCount - seenCount;
-  const rawBands: { id: string; title: string | null; items: { qq: Question; i: number }[] }[] = [];
-  questions.forEach((qq, i) => {
-    const last = rawBands[rawBands.length - 1];
-    if (last && last.id === qq.section_id) last.items.push({ qq, i });
-    else rawBands.push({ id: qq.section_id, title: qq.section_title, items: [{ qq, i }] });
-  });
-  // Subject label: from the question payload (migration 116) if present, else
-  // fall back to meta.sections — same paper order, contiguous — so bands are
-  // labelled even before that migration reaches the DB.
-  const bands = rawBands.map((b, bi) => ({
-    ...b,
-    label: b.title ?? meta?.sections[bi]?.subject ?? null,
-  }));
-  const multiSection = bands.length > 1;
-  const currentSubject = bands.find((b) => b.items.some((it) => it.i === index))?.label ?? null;
-
   return (
     <>
-    <div
-      className="mx-auto max-w-6xl px-4 py-4 select-none sm:px-6 print:hidden"
-      // Copy disabled: block the copy/cut/context-menu events and non-selectable
-      // text (select-none) so Ctrl/Cmd+C has nothing to lift.
-      onCopy={(e) => e.preventDefault()}
-      onCut={(e) => e.preventDefault()}
-      onContextMenu={(e) => e.preventDefault()}
-    >
-      {/* Header: progress + timer. Bleeds over the container's px/py padding
-          (-mx / -mt + re-pad) so its opaque background fully masks content
-          scrolling underneath — otherwise the amber banner peeks above/beside
-          it on scroll. z-20 keeps it above the palette's own sticky subheaders. */}
-      <div className="bg-background sticky top-0 z-20 mb-4 -mx-4 -mt-4 flex items-center justify-between gap-4 border-b px-4 pt-4 pb-2 sm:-mx-6 sm:px-6">
-        <span className="min-w-0 truncate text-sm font-medium">
-          Question {index + 1} / {questions.length}
-          {currentSubject && (
-            <span className="text-muted-foreground"> · {currentSubject}</span>
-          )}
-        </span>
-        <div className="flex items-center gap-3">
-          <span
-            className={`tabular-nums text-sm font-semibold ${lowTime ? "text-destructive" : ""}`}
-          >
-            ⏱ {mm}:{ss}
-          </span>
-        </div>
-      </div>
-
-      {/* Anti-cheat notice — collapsed to a slim persistent strip (was a tall
-          block) so the question gets more room; full detail behind "Details". */}
-      <details className="group mb-4 rounded-md border border-amber-300 bg-amber-50 px-3 py-2 text-xs text-amber-900 dark:border-amber-900/60 dark:bg-amber-950/40 dark:text-amber-200">
-        <summary className="flex cursor-pointer list-none items-center gap-2 font-medium [&::-webkit-details-marker]:hidden">
-          <TriangleAlert className="size-4 shrink-0" />
-          <span className="min-w-0 flex-1 truncate">
-            Stay on this screen — leaving closes your exam (one warning only).
-          </span>
-          <span className="shrink-0 underline group-open:hidden">Details</span>
-          <span className="hidden shrink-0 underline group-open:inline">Less</span>
-        </summary>
-        <div className="mt-2 leading-relaxed">
-          Pressing <Kbd>Alt + Tab</Kbd> or <Kbd>Cmd + Tab</Kbd>, switching apps, or
-          minimising the window will close your exam. You get{" "}
-          <strong>one warning</strong> — the next time, your exam is submitted
-          automatically and <strong>cannot be resumed</strong>. Copying is disabled.
-        </div>
-      </details>
-
-      {/* Desktop fills the width: the question sits in a wide main column with the
-          palette as a persistent right sidebar. On mobile it stacks — the question
-          first, then the navigator below. */}
-      <div className="lg:grid lg:grid-cols-[minmax(0,1fr)_20rem] lg:items-start lg:gap-6">
-        {/* Main column — question + per-question actions + navigation. */}
-        <div className="min-w-0">
-
-      {/* Question */}
-      <Card>
-        <CardContent className="grid gap-4 pt-6">
-          {q.passage && (
-            <div className="bg-muted/40 rounded border-l-4 p-3 text-sm">
-              {q.passage.title && <p className="font-semibold">{q.passage.title}</p>}
-              <RichContent content={q.passage.body} />
-            </div>
-          )}
-          <div className="flex gap-2.5 font-medium">
-            <span className="text-primary bg-primary/10 h-fit shrink-0 rounded-md px-2 py-0.5 text-sm font-bold tabular-nums">
-              Q{index + 1}
-            </span>
-            <div className="min-w-0 flex-1">
-              <RichContent content={q.stem} />
-            </div>
-          </div>
-          {q.stem_image_url && (
-            // eslint-disable-next-line @next/next/no-img-element
-            <img src={q.stem_image_url} alt="" className="max-h-60 rounded" />
-          )}
-          <div className="grid gap-2">
-            {q.options.map((o) => {
-              const sel = (answers[q.question_id] ?? []).includes(o.id);
-              return (
-                <button
-                  key={o.id}
-                  onClick={() => choose(q, o.id)}
-                  className={`flex items-start gap-3 rounded-md border p-3 text-left text-sm transition ${
-                    sel ? "border-primary bg-primary/5" : "hover:border-primary/40"
-                  }`}
-                >
-                  <span
-                    className={`mt-0.5 flex size-5 shrink-0 items-center justify-center rounded-full border text-xs ${
-                      sel ? "border-primary bg-primary text-primary-foreground" : ""
-                    }`}
-                  >
-                    {sel ? "✓" : ""}
-                  </span>
-                  <RichContent content={o.label} inline />
-                </button>
-              );
-            })}
-          </div>
-          {q.answer_type === "multi" && (
-            <p className="text-muted-foreground text-xs">More than one answer may be correct.</p>
-          )}
-        </CardContent>
-      </Card>
-
-      {/* Action bar — question actions (Clear / Mark) on the left, navigation on
-          the right. All four sit on ONE line on desktop; on mobile they stack as
-          two 2-column rows (actions, then nav) with shortened labels so nothing
-          overflows at ~320px. */}
-      <div className="mt-4 flex flex-col gap-2 sm:flex-row sm:items-center sm:justify-between sm:gap-3">
-        {/* Per-question actions — Clear response (un-answer, so a student can dodge
-            the negative mark) + Mark for review (violet palette flag). */}
-        <div className="grid grid-cols-2 gap-2 sm:flex sm:gap-3">
-          <Button
-            variant="outline"
-            size="sm"
-            onClick={() => clearAnswer(q)}
-            disabled={!answered(q.question_id)}
-          >
-            <Eraser /> Clear<span className="hidden sm:inline">&nbsp;response</span>
-          </Button>
-          <Button
-            variant="outline"
-            size="sm"
-            aria-pressed={marked.has(q.question_id)}
-            onClick={() => toggleMark(q.question_id)}
-            className={
-              marked.has(q.question_id)
-                ? "border-violet-400 bg-violet-100 text-violet-700 hover:bg-violet-100 hover:text-violet-700 dark:border-violet-700 dark:bg-violet-950/50 dark:text-violet-300 dark:hover:bg-violet-950/50"
-                : ""
-            }
-          >
-            <Flag /> {marked.has(q.question_id) ? "Marked" : "Mark"}
-            <span className="hidden sm:inline">&nbsp;for review</span>
-          </Button>
-        </div>
-
-        {/* Navigation between questions. Submit lives in the navigator panel so
-            it's reachable from any question (no need to walk to the last one). */}
-        <div className="grid grid-cols-2 gap-2 sm:flex sm:gap-3">
-          <Button
-            variant="outline"
-            size="sm"
-            disabled={index === 0}
-            onClick={() => goTo(index - 1)}
-          >
-            Previous
-          </Button>
-          <Button
-            size="sm"
-            disabled={index === questions.length - 1}
-            onClick={() => goTo(index + 1)}
-          >
-            Next
-          </Button>
-        </div>
-      </div>
-
-        </div>
-        {/* Palette sidebar — legend + accordion of subject sections. On mobile it
-            sits below the question; on desktop it is a sticky right rail. */}
-        <aside className="mt-6 lg:sticky lg:top-20 lg:mt-0">
-          {/* Summary counts double as the legend. */}
-          <div className="mb-2 grid grid-cols-2 gap-2 text-xs">
-            <div className="flex items-center gap-2 rounded-md border p-2">
-              <span className="size-3 shrink-0 rounded-sm bg-emerald-500" />
-              <span className="tabular-nums font-semibold">{answeredCount}</span>
-              <span className="text-muted-foreground">Answered</span>
-            </div>
-            <div className="flex items-center gap-2 rounded-md border p-2">
-              <span className="size-3 shrink-0 rounded-sm bg-violet-500" />
-              <span className="tabular-nums font-semibold">{markedCount}</span>
-              <span className="text-muted-foreground">Marked</span>
-            </div>
-            <div className="flex items-center gap-2 rounded-md border p-2">
-              <span className="size-3 shrink-0 rounded-sm border-2 border-amber-400 bg-amber-50 dark:bg-amber-950/40" />
-              <span className="tabular-nums font-semibold">{seenCount}</span>
-              <span className="text-muted-foreground">Seen</span>
-            </div>
-            <div className="flex items-center gap-2 rounded-md border p-2">
-              <span className="bg-muted size-3 shrink-0 rounded-sm border" />
-              <span className="tabular-nums font-semibold">{notVisitedCount}</span>
-              <span className="text-muted-foreground">Left</span>
-            </div>
-          </div>
-
-          {/* Collapse / expand every section at once (sectioned papers only). */}
-          {multiSection && (
-            <div className="mb-2 flex justify-end">
-              <button
-                type="button"
-                onClick={() =>
-                  setCollapsed((prev) =>
-                    prev.size >= bands.length ? new Set() : new Set(bands.map((b) => b.id)),
-                  )
-                }
-                className="text-primary text-xs font-medium hover:underline"
-              >
-                {collapsed.size >= bands.length ? "Expand all" : "Collapse all"}
-              </button>
-            </div>
-          )}
-
-          <div className="bg-muted/30 max-h-[22rem] overflow-y-auto rounded-md border p-2 lg:max-h-[calc(100vh-16rem)]">
-            {bands.map((band) => {
-              const hasCurrent = band.items.some((it) => it.i === index);
-              // A section is open unless collapsed — but the one holding the current
-              // question is always shown, so "where am I" can never be hidden.
-              const open = !multiSection || !collapsed.has(band.id) || hasCurrent;
-              return (
-                <div key={band.id}>
-                  {/* Subject header — a tap-to-collapse accordion row (sectioned
-                      papers only); chevron rotates, count shows answered/total. */}
-                  {multiSection && band.label && (
-                    <button
-                      type="button"
-                      onClick={() => toggleSection(band.id)}
-                      aria-expanded={open}
-                      className="bg-primary/10 text-primary sticky top-0 z-10 mb-2 flex w-full items-center justify-between gap-2 rounded-sm border-l-4 border-primary px-2 py-1.5 text-xs font-bold tracking-wide uppercase backdrop-blur"
-                    >
-                      <span className="flex min-w-0 items-center gap-1.5">
-                        <ChevronDown
-                          className={`size-3.5 shrink-0 transition-transform ${open ? "" : "-rotate-90"}`}
-                        />
-                        <span className="truncate">{band.label}</span>
-                      </span>
-                      <span className="tabular-nums whitespace-nowrap">
-                        {band.items.filter(({ qq }) => answered(qq.question_id)).length}/
-                        {band.items.length}
-                      </span>
-                    </button>
-                  )}
-                  {open && (
-                    <div className="mb-2 grid grid-cols-[repeat(auto-fill,minmax(2rem,1fr))] gap-1.5">
-                      {band.items.map(({ qq, i }) => {
-                        const mk = marked.has(qq.question_id);
-                        const ans = answered(qq.question_id);
-                        const sn = seen.has(qq.question_id);
-                        return (
-                          <button
-                            key={qq.question_id}
-                            ref={i === index ? currentCellRef : null}
-                            onClick={() => goTo(i)}
-                            className={`relative flex aspect-square items-center justify-center rounded-md border text-xs font-medium tabular-nums transition ${
-                              mk
-                                ? "border-violet-500 bg-violet-500 text-white dark:border-violet-600 dark:bg-violet-600"
-                                : ans
-                                  ? "border-emerald-500 bg-emerald-500 text-white dark:border-emerald-600 dark:bg-emerald-600"
-                                  : sn
-                                    ? "border-amber-400 bg-amber-50 text-amber-700 dark:border-amber-700 dark:bg-amber-950/40 dark:text-amber-300"
-                                    : "bg-background"
-                            } ${i === index ? "ring-primary border-primary ring-2" : ""}`}
-                          >
-                            {i + 1}
-                            {/* Corner badge: a flag when marked, else a tick when
-                                answered — so state reads even in greyscale. */}
-                            {mk ? (
-                              <span className="bg-background absolute -top-1 -right-1 flex size-3.5 items-center justify-center rounded-full text-violet-600 dark:bg-background">
-                                <Flag className="size-2.5" strokeWidth={3} />
-                              </span>
-                            ) : ans ? (
-                              <span className="bg-background absolute -top-1 -right-1 flex size-3.5 items-center justify-center rounded-full text-emerald-600 dark:bg-background">
-                                <Check className="size-2.5" strokeWidth={3.5} />
-                              </span>
-                            ) : null}
-                          </button>
-                        );
-                      })}
-                    </div>
-                  )}
-                </div>
-              );
-            })}
-          </div>
-
-          {/* Submit lives in the navigator so it's reachable from ANY question —
-              always enabled; the confirmation dialog guards accidental taps and
-              shows the attempted / marked / unanswered breakdown. */}
-          <Button
-            onClick={() => setConfirmOpen(true)}
-            disabled={submitting}
-            className="mt-3 w-full bg-emerald-600 font-semibold text-white shadow-sm hover:bg-emerald-700 dark:bg-emerald-600 dark:hover:bg-emerald-500"
-          >
-            <CheckCircle2 /> {submitting ? "Submitting…" : "Submit exam"}
-          </Button>
-        </aside>
-      </div>
-
-      {/* Submit confirmation */}
-      <Dialog open={confirmOpen} onOpenChange={setConfirmOpen}>
-        <DialogContent className="sm:max-w-md">
-          <DialogHeader>
-            <DialogTitle>Submit exam?</DialogTitle>
-          </DialogHeader>
-          {(() => {
-            const total = questions.length;
-            const attempted = questions.filter((qq) => answered(qq.question_id)).length;
-            const unanswered = total - attempted;
-            const markedForReview = questions.filter((qq) => marked.has(qq.question_id)).length;
-            const allDone = unanswered === 0;
-            const pct = total ? Math.round((attempted / total) * 100) : 0;
-            // Breakdown rows so the student can weigh submitting now vs. going back.
-            // The whole row — dot, label and value — carries the state colour.
-            const rows = [
-              { label: "Attempted", value: attempted, dot: "bg-emerald-500", text: "text-emerald-700 dark:text-emerald-400" },
-              { label: "Marked for review", value: markedForReview, dot: "bg-violet-500", text: "text-violet-700 dark:text-violet-400" },
-              {
-                label: "Unanswered",
-                value: unanswered,
-                dot: "bg-amber-500",
-                text: unanswered > 0 ? "text-amber-700 dark:text-amber-400" : "text-muted-foreground",
-              },
-            ];
-            return (
-              <div className="space-y-4">
-                <div className="flex items-center gap-3">
-                  <span
-                    className={
-                      allDone
-                        ? "flex size-9 shrink-0 items-center justify-center rounded-full bg-emerald-100 text-emerald-600 dark:bg-emerald-950 dark:text-emerald-400"
-                        : "flex size-9 shrink-0 items-center justify-center rounded-full bg-amber-100 text-amber-600 dark:bg-amber-950 dark:text-amber-400"
-                    }
-                  >
-                    {allDone ? <CheckCircle2 className="size-5" /> : <TriangleAlert className="size-5" />}
-                  </span>
-                  <p className="min-w-0 flex-1 text-sm">
-                    {allDone ? (
-                      <>You&apos;ve answered <strong>every question</strong>.</>
-                    ) : (
-                      <>
-                        You still have{" "}
-                        <span className="font-semibold text-amber-700 dark:text-amber-400">
-                          {unanswered} unanswered
-                        </span>
-                        {markedForReview > 0 && (
-                          <>
-                            {" "}
-                            and{" "}
-                            <span className="font-semibold text-violet-700 dark:text-violet-400">
-                              {markedForReview} marked for review
-                            </span>
-                          </>
-                        )}
-                        .
-                      </>
-                    )}
-                  </p>
-                </div>
-
-                {/* Breakdown table — Total header row, then coloured state rows. */}
-                <div className="overflow-hidden rounded-lg border">
-                  <table className="w-full text-sm">
-                    <tbody>
-                      <tr className="bg-muted/50 border-b">
-                        <th scope="row" className="px-3 py-2 text-left font-semibold">
-                          Total questions
-                        </th>
-                        <td className="px-3 py-2 text-right text-base font-bold tabular-nums">
-                          {total}
-                        </td>
-                      </tr>
-                      {rows.map((r) => (
-                        <tr key={r.label} className="border-b last:border-b-0">
-                          <th scope="row" className={`px-3 py-2 text-left font-medium ${r.text}`}>
-                            <span className="flex items-center gap-2">
-                              <span className={`size-2.5 shrink-0 rounded-full ${r.dot}`} />
-                              {r.label}
-                            </span>
-                          </th>
-                          <td className={`px-3 py-2 text-right text-base font-bold tabular-nums ${r.text}`}>
-                            {r.value}
-                          </td>
-                        </tr>
-                      ))}
-                    </tbody>
-                  </table>
-                </div>
-
-                <div className="bg-muted h-1.5 w-full overflow-hidden rounded-full">
-                  <div
-                    className={allDone ? "h-full rounded-full bg-emerald-500" : "h-full rounded-full bg-primary"}
-                    style={{ width: `${pct}%` }}
-                  />
-                </div>
-
-                <DialogDescription>
-                  Once submitted, you can&apos;t change your answers.
-                  {(unanswered > 0 || markedForReview > 0) &&
-                    " Go back and review them if you're not sure."}
-                </DialogDescription>
+      <div
+        className="mx-auto max-w-6xl px-4 py-4 select-none sm:px-6 print:hidden"
+        onCopy={(e) => e.preventDefault()}
+        onCut={(e) => e.preventDefault()}
+        onContextMenu={(e) => e.preventDefault()}
+      >
+        <AttemptView
+          questions={attemptQuestions}
+          index={engine.index}
+          answers={engine.answers}
+          seen={engine.seen}
+          marked={engine.marked}
+          collapsed={engine.collapsed}
+          timeLeft={engine.timeLeft}
+          submitting={submitting}
+          confirmOpen={engine.confirmOpen}
+          submitLabel="Submit exam"
+          submitTitle="Submit exam?"
+          notice={
+            <details className="group mb-4 rounded-md border border-amber-300 bg-amber-50 px-3 py-2 text-xs text-amber-900 dark:border-amber-900/60 dark:bg-amber-950/40 dark:text-amber-200">
+              <summary className="flex cursor-pointer list-none items-center gap-2 font-medium [&::-webkit-details-marker]:hidden">
+                <TriangleAlert className="size-4 shrink-0" />
+                <span className="min-w-0 flex-1 truncate">
+                  Stay on this screen — leaving closes your exam (one warning only).
+                </span>
+                <span className="shrink-0 underline group-open:hidden">Details</span>
+                <span className="hidden shrink-0 underline group-open:inline">Less</span>
+              </summary>
+              <div className="mt-2 leading-relaxed">
+                Pressing <Kbd>Alt + Tab</Kbd> or <Kbd>Cmd + Tab</Kbd>, switching apps, or minimising
+                the window will close your exam. You get <strong>one warning</strong> — the next time,
+                your exam is submitted automatically and <strong>cannot be resumed</strong>. Copying
+                is disabled.
               </div>
-            );
-          })()}
-          <DialogFooter className="gap-2">
-            <Button variant="outline" onClick={() => setConfirmOpen(false)}>
-              Go back &amp; review
-            </Button>
-            <Button
-              disabled={submitting}
-              onClick={() => {
-                setConfirmOpen(false);
-                doSubmit();
-              }}
-            >
-              {submitting ? "Submitting…" : "Submit exam"}
-            </Button>
-          </DialogFooter>
-        </DialogContent>
-      </Dialog>
+            </details>
+          }
+          onChoose={engine.onChoose}
+          onGoTo={engine.onGoTo}
+          onClear={engine.onClear}
+          onToggleMark={engine.onToggleMark}
+          onToggleSection={engine.onToggleSection}
+          onToggleCollapseAll={engine.onToggleCollapseAll}
+          onOpenConfirm={engine.onOpenConfirm}
+          onCloseConfirm={engine.onCloseConfirm}
+          onSubmit={engine.onSubmit}
+        />
+      </div>
 
-      {/* First switch-away warning. The second leave auto-submits (see effect). */}
-      <Dialog open={warnOpen} onOpenChange={setWarnOpen}>
+      {/* First switch-away warning. The second leave aborts/auto-submits (engine). */}
+      <Dialog open={engine.warnOpen} onOpenChange={engine.setWarnOpen}>
         <DialogContent>
           <DialogHeader>
-            <DialogTitle>Don’t leave the exam</DialogTitle>
+            <DialogTitle>Don&rsquo;t leave the exam</DialogTitle>
           </DialogHeader>
           <div className="flex items-start gap-3">
             <span className="flex size-10 shrink-0 items-center justify-center rounded-full bg-amber-100 text-amber-600 dark:bg-amber-950 dark:text-amber-400">
@@ -1091,18 +621,16 @@ export function AttemptRunner({
             </span>
             <DialogDescription className="flex-1">
               You switched away from the exam window. This is your{" "}
-              <strong className="font-medium text-foreground">only warning</strong> — if
-              you leave again (Alt+Tab, Cmd+Tab, switching apps, or minimising the
-              window), your exam will be submitted automatically and you will not be
-              able to resume.
+              <strong className="text-foreground font-medium">only warning</strong> — if you leave
+              again (Alt+Tab, Cmd+Tab, switching apps, or minimising the window), your exam will be
+              submitted automatically and you will not be able to resume.
             </DialogDescription>
           </div>
           <DialogFooter>
-            <Button onClick={() => setWarnOpen(false)}>I understand — continue</Button>
+            <Button onClick={() => engine.setWarnOpen(false)}>I understand — continue</Button>
           </DialogFooter>
         </DialogContent>
       </Dialog>
-    </div>
     </>
   );
 }

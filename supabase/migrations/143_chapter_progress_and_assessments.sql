@@ -116,9 +116,9 @@ create table if not exists public.chapter_quiz (
   subject_id              uuid not null,
   chapter_id              uuid not null unique,     -- one active config per chapter
   title                   text,
-  num_questions           int  not null default 10  check (num_questions > 0),
+  num_questions           int  not null default 30  check (num_questions > 0),   -- capped at 30 at start
   pass_pct                int  not null default 40  check (pass_pct between 0 and 100),
-  duration_minutes        int,                       -- null = untimed
+  duration_minutes        int  not null default 30  check (duration_minutes > 0),  -- timed: 30 min
   shuffle                 boolean not null default true,
   negative_mark_per_wrong numeric(4,2) not null default 0,
   status                  text not null default 'active' check (status in ('active', 'archived')),
@@ -341,7 +341,12 @@ end $$;
 
 -- 7d) The completed chapters + quiz availability for the CALLING student in a batch.
 --     best_pct = best of their ≤3 attempts (Q12). available = completed AND the
---     assessment bank has active questions.
+--     assessment bank has active questions. IMPORTANT: availability is scoped to
+--     THIS batch (bc.batch_id = p_batch_id) — a chapter completed in one batch must
+--     never unlock the quiz in another batch of the same course.
+--     Drop first: an earlier build returned a different table shape, and
+--     create-or-replace cannot change a function's return type.
+drop function if exists public.student_chapter_quizzes(uuid);
 create or replace function public.student_chapter_quizzes(p_batch_id uuid)
 returns table (
   chapter_id         uuid,
@@ -377,7 +382,8 @@ as $$
            max(round(100 * qa.score / nullif(qa.total_marks, 0), 2))
              filter (where qa.status = 'submitted') as best_pct,
            bool_or(qa.passed) filter (where qa.status = 'submitted') as best_passed,
-           max(qa.id) filter (where qa.status = 'in_progress') as resume_attempt_id
+           -- array_agg (not max(uuid) — min/max aggregates on uuid aren't universal)
+           (array_agg(qa.id) filter (where qa.status = 'in_progress'))[1] as resume_attempt_id
     from public.chapter_quiz_attempt qa
     where qa.batch_id = bc.batch_id and qa.chapter_id = bc.chapter_id
       and qa.student_id = auth.uid()
@@ -439,11 +445,12 @@ begin
     raise exception 'This batch is closed — no new attempts';
   end if;
 
-  -- config (Q7 optional; defaults when absent)
-  select coalesce(cq.num_questions, 10) into v_num
+  -- config (Q7 optional; defaults when absent). Cap at 30 — the snapshot's
+  -- `limit v_num` then naturally takes least(available, 30) questions.
+  select least(coalesce(cq.num_questions, 30), 30) into v_num
   from (select p_chapter_id as cid) x
   left join public.chapter_quiz cq on cq.chapter_id = x.cid and cq.status = 'active';
-  v_num := coalesce(v_num, 10);
+  v_num := least(coalesce(v_num, 30), 30);
 
   -- Resume an existing in-progress attempt instead of spending a new slot — covers
   -- refreshes, crashes, and double-clicks (at most one in-progress attempt at a time).

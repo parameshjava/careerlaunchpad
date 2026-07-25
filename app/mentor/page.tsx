@@ -6,6 +6,7 @@ import { Button } from "@/components/ui/button";
 import { getAuthContext } from "@/lib/auth";
 import { createClient } from "@/lib/supabase/server";
 import { PageContainer } from "@/components/app-shell/page-container";
+import { MentorTeachingBoard } from "@/components/mentor/teaching-board";
 
 export const metadata: Metadata = { title: "Mentor hub" };
 
@@ -76,6 +77,19 @@ export default async function MentorHome() {
           <Link href="/mentor/register">View / edit profile</Link>
         </Button>
       </div>
+
+      {data.status === "approved" && (
+        <section className="space-y-3">
+          <div>
+            <h2 className="text-lg font-semibold">My teaching</h2>
+            <p className="text-muted-foreground text-sm">
+              Track your subjects and chapters. Mark a chapter <b>Completed</b> to unlock its
+              assessment for the batch&apos;s students.
+            </p>
+          </div>
+          <MentorTeachingBoard />
+        </section>
+      )}
     </PageContainer>
   );
 }
