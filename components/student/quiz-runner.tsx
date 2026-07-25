@@ -149,11 +149,17 @@ export function QuizRunner({ attemptId }: { attemptId: string }) {
     return () => clearInterval(id);
   }, [deadline, result, finalize]);
 
-  // Integrity guard: leaving the tab (switch / minimize) auto-submits the attempt.
+  // Integrity guard: leaving the tab (switch / minimize) is allowed once with a
+  // warning; the second time auto-submits the attempt.
+  const tabAwayRef = useRef(0);
+  const [tabWarned, setTabWarned] = useState(false);
   useEffect(() => {
     if (result) return;
     const onHide = () => {
-      if (document.hidden) finalize("tab");
+      if (!document.hidden) return; // count only the tab-away, not the return
+      tabAwayRef.current += 1;
+      if (tabAwayRef.current >= 2) finalize("tab");
+      else setTabWarned(true);
     };
     document.addEventListener("visibilitychange", onHide);
     return () => document.removeEventListener("visibilitychange", onHide);
@@ -196,7 +202,7 @@ export function QuizRunner({ attemptId }: { attemptId: string }) {
           {autoReason && (
             <p className="mt-2 text-xs font-medium">
               {autoReason === "tab"
-                ? "Submitted automatically because you left the assessment tab."
+                ? "Submitted automatically — you left the assessment tab after a warning."
                 : "Submitted automatically — the 30-minute time limit ran out."}
             </p>
           )}
@@ -239,10 +245,20 @@ export function QuizRunner({ attemptId }: { attemptId: string }) {
       <div className="flex items-start gap-2 rounded-md border border-amber-200 bg-amber-50 px-3 py-2 text-xs text-amber-800 dark:border-amber-900 dark:bg-amber-950 dark:text-amber-200">
         <AlertTriangle className="mt-0.5 size-4 shrink-0" />
         <span>
-          Stay on this tab — <b>switching tabs or leaving submits your assessment automatically</b>.
-          You have 30 minutes; it auto-submits when time runs out.
+          Stay on this tab. <b>Leaving gives one warning — the second time submits your assessment
+          automatically.</b> You have 30 minutes; it also auto-submits when time runs out.
         </span>
       </div>
+
+      {tabWarned && (
+        <div className="flex items-start gap-2 rounded-md border border-rose-300 bg-rose-50 px-3 py-2 text-sm font-medium text-rose-800 dark:border-rose-800 dark:bg-rose-950 dark:text-rose-200">
+          <AlertTriangle className="mt-0.5 size-4 shrink-0" />
+          <span>
+            Warning: you left the assessment tab. Leave again and your assessment will be submitted
+            automatically.
+          </span>
+        </div>
+      )}
 
       {error && (
         <p className="text-destructive bg-destructive/10 rounded-md border border-destructive/20 px-3 py-2 text-sm">
