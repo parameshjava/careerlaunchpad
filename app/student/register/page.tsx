@@ -2,6 +2,7 @@ import { redirect } from "next/navigation";
 import { getAuthContext } from "@/lib/auth";
 import { RegistrationForm } from "./registration-form";
 import { PageContainer } from "@/components/app-shell/page-container";
+import { StudentRemarksAlert } from "@/components/students/student-remarks-alert";
 
 // Student registration / profile editor. The form (client) loads reference data
 // + the existing profile from the API and resumes where the student left off,
@@ -19,6 +20,7 @@ export default async function StudentRegisterPage() {
           Build your career-ready profile — it saves as you go, so you can finish anytime.
         </p>
       </header>
+      <StudentRemarksAlert />
       <RegistrationForm />
     </PageContainer>
   );
