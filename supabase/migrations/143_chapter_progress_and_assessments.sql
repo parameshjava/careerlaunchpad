@@ -377,7 +377,8 @@ as $$
            max(round(100 * qa.score / nullif(qa.total_marks, 0), 2))
              filter (where qa.status = 'submitted') as best_pct,
            bool_or(qa.passed) filter (where qa.status = 'submitted') as best_passed,
-           max(qa.id) filter (where qa.status = 'in_progress') as resume_attempt_id
+           -- array_agg (not max(uuid) — min/max aggregates on uuid aren't universal)
+           (array_agg(qa.id) filter (where qa.status = 'in_progress'))[1] as resume_attempt_id
     from public.chapter_quiz_attempt qa
     where qa.batch_id = bc.batch_id and qa.chapter_id = bc.chapter_id
       and qa.student_id = auth.uid()

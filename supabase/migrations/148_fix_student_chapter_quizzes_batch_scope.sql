@@ -17,9 +17,16 @@
 --
 -- Also swaps max(qa.id) (uuid) for an array_agg expression — min/max aggregates on
 -- uuid aren't universally available and this is version-safe. Idempotent.
+--
+-- An earlier build had a different RETURNS TABLE shape (no resume_attempt_id,
+-- different column names), so create-or-replace can't change the return type —
+-- drop the old signature first, then recreate. Nothing else in the DB depends on
+-- this function (it's called only via the /api/student/quizzes RPC).
 -- ============================================================================
 
 begin;
+
+drop function if exists public.student_chapter_quizzes(uuid);
 
 create or replace function public.student_chapter_quizzes(p_batch_id uuid)
 returns table (
