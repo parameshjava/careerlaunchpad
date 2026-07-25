@@ -10,13 +10,7 @@ import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { Textarea } from "@/components/ui/textarea";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
-import {
-  Select,
-  SelectContent,
-  SelectItem,
-  SelectTrigger,
-  SelectValue,
-} from "@/components/ui/select";
+import { SubjectSelect } from "@/components/exam/SubjectSelect";
 import type { Chapter, ChapterCounts, Passage, Subject } from "@/lib/exam-query";
 
 async function postJSON(url: string, body: unknown) {
@@ -136,18 +130,12 @@ export function TaxonomyClient() {
         <CardContent className="grid gap-4 sm:grid-cols-2">
           <div className="grid gap-1.5">
             <Label htmlFor="subject">Select subject</Label>
-            <Select value={subjectId} onValueChange={setSubjectId}>
-              <SelectTrigger id="subject" className="w-full">
-                <SelectValue placeholder="Select a subject…" />
-              </SelectTrigger>
-              <SelectContent>
-                {subjects.map((s) => (
-                  <SelectItem key={s.id} value={s.id}>
-                    {s.name}
-                  </SelectItem>
-                ))}
-              </SelectContent>
-            </Select>
+            <SubjectSelect
+              id="subject"
+              subjects={subjects}
+              value={subjectId}
+              onChange={setSubjectId}
+            />
           </div>
           <div className="grid gap-1.5">
             <Label htmlFor="new-subject">New subject</Label>

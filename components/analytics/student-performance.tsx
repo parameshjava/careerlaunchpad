@@ -52,6 +52,10 @@ const TOOLTIP_STYLE = {
 } as const;
 const AXIS_TICK = { fill: "var(--muted-foreground)", fontSize: 11 } as const;
 
+// recharts types formatter/label values as ValueType (string|number|array), so
+// coerce before rounding rather than narrowing the param to number.
+const pctLabel = (v: unknown) => `${Math.round(Number(v))}%`;
+
 type Summary = {
   overall_pct: number | null;
   pass_rate_pct: number | null;
@@ -188,11 +192,11 @@ function SubjectBars({
         <Tooltip
           cursor={{ fill: "var(--muted)", fillOpacity: 0.5 }}
           contentStyle={TOOLTIP_STYLE}
-          formatter={(v: number) => [`${Math.round(v)}%`, "Score"]}
+          formatter={(v) => [pctLabel(v), "Score"]}
         />
         <ReferenceLine x={PASS_LINE} stroke="var(--muted-foreground)" strokeDasharray="4 3" />
         <Bar dataKey="score_pct" radius={[0, 4, 4, 0]} onClick={(_, i) => onPick(rows[i])} className="cursor-pointer">
-          <LabelList dataKey="score_pct" position="right" formatter={(v: number) => `${Math.round(v)}%`} className="fill-foreground text-[11px]" />
+          <LabelList dataKey="score_pct" position="right" formatter={pctLabel} className="fill-foreground text-[11px]" />
           {rows.map((s) => (
             <Cell
               key={s.subject_id}
@@ -247,11 +251,11 @@ function ChapterBars({ chapters }: { chapters: Chapter[] }) {
         <Tooltip
           cursor={{ fill: "var(--muted)", fillOpacity: 0.5 }}
           contentStyle={TOOLTIP_STYLE}
-          formatter={(v: number) => [`${Math.round(v)}%`, "Best"]}
+          formatter={(v) => [pctLabel(v), "Best"]}
         />
         <ReferenceLine x={PASS_LINE} stroke="var(--muted-foreground)" strokeDasharray="4 3" />
         <Bar dataKey="best_pct" radius={[0, 4, 4, 0]}>
-          <LabelList dataKey="best_pct" position="right" formatter={(v: number) => `${Math.round(v)}%`} className="fill-foreground text-[11px]" />
+          <LabelList dataKey="best_pct" position="right" formatter={pctLabel} className="fill-foreground text-[11px]" />
           {rows.map((c) => (
             <Cell key={c.chapter_id} fill={(c.best_pct ?? 0) < PASS_LINE ? WEAK : BRAND} />
           ))}
@@ -278,7 +282,7 @@ function TrendChart({ points, bySubject }: { points: TrendPoint[]; bySubject: bo
           <CartesianGrid vertical={false} stroke="var(--border)" />
           <XAxis dataKey="month" tick={AXIS_TICK} />
           <YAxis domain={[0, 100]} width={34} tick={AXIS_TICK} tickFormatter={(v) => `${v}%`} />
-          <Tooltip contentStyle={TOOLTIP_STYLE} formatter={(v: number) => [`${Math.round(v)}%`, "Overall"]} />
+          <Tooltip contentStyle={TOOLTIP_STYLE} formatter={(v) => [pctLabel(v), "Overall"]} />
           <Line type="monotone" dataKey="pct" stroke={BRAND} strokeWidth={2} dot={{ r: 3 }} connectNulls />
         </LineChart>
       </ResponsiveContainer>
@@ -299,7 +303,7 @@ function TrendChart({ points, bySubject }: { points: TrendPoint[]; bySubject: bo
           <CartesianGrid vertical={false} stroke="var(--border)" />
           <XAxis dataKey="month" tick={AXIS_TICK} />
           <YAxis domain={[0, 100]} width={34} tick={AXIS_TICK} tickFormatter={(v) => `${v}%`} />
-          <Tooltip contentStyle={TOOLTIP_STYLE} formatter={(v: number) => `${Math.round(v)}%`} />
+          <Tooltip contentStyle={TOOLTIP_STYLE} formatter={pctLabel} />
           {subjects.map(([sid], i) => (
             <Line key={sid} type="monotone" dataKey={sid} name={subjects[i][1]} stroke={PALETTE[i % PALETTE.length]} strokeWidth={2} dot={{ r: 2 }} connectNulls />
           ))}
