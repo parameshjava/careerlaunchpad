@@ -17,15 +17,22 @@ const TAB_CLS =
   "-mb-px h-auto flex-none rounded-t-md rounded-b-none border border-border bg-muted! px-4 py-2 font-medium text-muted-foreground shadow-none transition-colors after:hidden hover:bg-muted/70 " +
   "data-active:border-primary! data-active:border-b-0 data-active:bg-primary! data-active:text-primary-foreground! data-active:font-semibold data-active:shadow-none";
 
-// A registered student is "pending approval" whenever their review status is
-// still 'pending_review' — self-registered students are set pending the moment
-// their profile is created (migration 020), so this must NOT also require a
-// finished submit, or a student who is mid-registration but already
-// 'pending_review' would wrongly fall through to the Approved tab. Imported/
-// invited students have no profile to review and default to 'approved', so they
-// stay in Approved.
+// A registered student who hasn't pressed Submit is a DRAFT — they stay here
+// until they finalize, regardless of review status (self-registered students are
+// 'pending_review' from the moment their profile row is created, migration 020,
+// but they shouldn't sit in "Pending approval" while the form is unfinished).
+// Imported/invited rows carry registrationStatus 'in_progress' too, but their
+// stage is Imported/Invited (no profile yet), so the stage check keeps them out.
+const isDraft = (s: Student) =>
+  s.stage === "Registered" && s.registrationStatus === "in_progress";
+
+// "Pending approval" = a registered student who has SUBMITTED and is awaiting
+// review. Drafts are excluded (they submit first); imported/invited default to
+// 'approved' with no profile to review, so they stay in Approved.
 const isPendingApproval = (s: Student) =>
-  s.stage === "Registered" && s.reviewStatus === "pending_review";
+  s.stage === "Registered" &&
+  s.registrationStatus === "submitted" &&
+  s.reviewStatus === "pending_review";
 
 export const metadata: Metadata = {
   title: "Students Console",
@@ -41,10 +48,12 @@ export default async function DashboardPage() {
   const supabase = await createClient();
   const data = await fetchStudents(supabase);
 
-  // Split the grid into the two approval buckets (imported/invited count as
-  // approved — there's nothing to review until they register).
+  // Split the grid into three buckets: unfinished drafts, submitted-and-awaiting
+  // review, and everyone else (approved registrations + imported/invited, which
+  // have nothing to review). The three predicates are mutually exclusive.
+  const draftStudents = data.filter(isDraft);
   const pendingStudents = data.filter(isPendingApproval);
-  const approvedStudents = data.filter((s) => !isPendingApproval(s));
+  const approvedStudents = data.filter((s) => !isDraft(s) && !isPendingApproval(s));
 
   return (
     <PageContainer variant="full" className="space-y-6">
@@ -73,6 +82,9 @@ export default async function DashboardPage() {
           <TabsTrigger value="pending" className={TAB_CLS}>
             Pending approval ({pendingStudents.length})
           </TabsTrigger>
+          <TabsTrigger value="draft" className={TAB_CLS}>
+            In progress ({draftStudents.length})
+          </TabsTrigger>
         </TabsList>
 
         <TabsContent value="approved" className="mt-4 min-w-0">
@@ -93,9 +105,9 @@ export default async function DashboardPage() {
           <Card>
             <CardContent className="grid gap-4 pt-6">
               <p className="text-muted-foreground text-sm">
-                Self-registered students awaiting review — including those still completing their
-                profile. Open a profile to approve — they’re emailed on approval. Imported students
-                are auto-approved and don’t appear here.
+                Self-registered students who have <strong>submitted</strong> their profile and are
+                awaiting review. Open a profile to approve — they’re emailed on approval. Imported
+                students are auto-approved and don’t appear here.
               </p>
               {pendingStudents.length === 0 ? (
                 <div className="text-muted-foreground bg-muted/40 rounded-lg border px-4 py-10 text-center text-sm">
@@ -107,6 +119,31 @@ export default async function DashboardPage() {
                   data={pendingStudents}
                   searchKey="name"
                   searchPlaceholder="Search students awaiting approval…"
+                  meta={{ canDelete, canImpersonate }}
+                />
+              )}
+            </CardContent>
+          </Card>
+        </TabsContent>
+
+        <TabsContent value="draft" className="mt-4 min-w-0">
+          <Card>
+            <CardContent className="grid gap-4 pt-6">
+              <p className="text-muted-foreground text-sm">
+                Students who have started registering but haven’t pressed <strong>Submit</strong> yet
+                — their profile is still incomplete (college is captured mid-way, so it may be blank).
+                They move to <strong>Pending approval</strong> automatically once they submit.
+              </p>
+              {draftStudents.length === 0 ? (
+                <div className="text-muted-foreground bg-muted/40 rounded-lg border px-4 py-10 text-center text-sm">
+                  No students are mid-registration.
+                </div>
+              ) : (
+                <DataTable
+                  columns={columns}
+                  data={draftStudents}
+                  searchKey="name"
+                  searchPlaceholder="Search in-progress students…"
                   meta={{ canDelete, canImpersonate }}
                 />
               )}
