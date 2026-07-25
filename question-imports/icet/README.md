@@ -74,6 +74,13 @@ Arithmetical Ability` → `Quantitative Aptitude`, then the chapter by content),
 Solving each question also double-checks the extracted key. A disagreement is not
 resolved silently: the question is left out and logged in REVIEW.md.
 
+**Stems must be self-contained.** The importer dedupes on `(chapter, stem)`, so two
+questions printed under one generic instruction — "Pick up the odd one." with the
+actual items only in the options — collide and one is silently dropped. Inline the
+items into the stem ("Pick up the odd one: Mango, Orange, Potato, Apple"). `merge.mjs`
+**refuses** a batch containing such a collision; a duplicate against an already-written
+file is treated as a harmless re-run and skipped.
+
 Because the importer takes **one subject per file**, a paper produces up to four
 files, named by `SUBJECT_SLUGS` in `taxonomy.mjs`.
 

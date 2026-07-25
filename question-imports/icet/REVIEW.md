@@ -56,15 +56,21 @@ TS 2024's and the whole paper should be dropped.
 
 ### 1.2 Data Sufficiency option labels are not printed in the papers
 
-In every ICET paper the Data Sufficiency options are printed as bare numerals
-`1 2 3 4` — the wording lives in the section instructions, which these preview
-exports omit. The import files therefore expand them to the standard ICET
-convention, confirmed against the keys of several solved questions (see §2):
+In most of these preview exports the Data Sufficiency options are printed as bare
+numerals `1 2 3 4`, because the wording lives in a section-instruction block the
+export omits. **`ap-icet-2026-05-02-s1` is the exception — it prints the block in
+full on page 2**, and it reads exactly as the convention inferred earlier:
 
 1. The question can be answered using statement I alone.
 2. The question can be answered using statement II alone.
 3. The question can be answered using both statements I and II together, but not by either statement alone.
 4. The question cannot be answered even by using both statements together.
+
+The AP 2026 paper's own phrasing ("Statement I alone is sufficient to answer the
+question", … , "Statements I and II together are not sufficient … and additional data
+is required") is used verbatim for that paper, so its option text is the paper's, not
+an editorial reconstruction. Papers without the block keep the wording above, which
+matches it in substance.
 
 **Decide:** whether to keep this wording. Note it differs from the
 data-sufficiency prefill in `app/dashboard/assessment-questions/assessment-question-editor.tsx`
@@ -151,3 +157,13 @@ generated files is written from scratch to teach the method, then checked agains
 the paper's own key. Where that check fails, the question lands in §2 instead of
 the import file. That cross-check is the main quality gate in this pipeline, and
 it is what produced the findings in §1.1.
+
+### `ap-icet-2026-05-02-s1` — AP ICET 2026, 2 May, Shift 1
+
+In progress — Q1-119 transcribed: **117 imported, 3 excluded.**
+
+| Q | Page | Issue | Detail |
+| --- | --- | --- | --- |
+| 120 | 67 | **Keyed answer is factually wrong — excluded** | "The financial year statement showing profit or loss is called a ______" is keyed **balance sheet**. A balance sheet shows assets, liabilities and equity at a point in time; the statement that shows profit or loss is the **profit and loss (income) statement** — option 2, "profit statement", is the defensible answer. Importing this would teach a basic accounting error. |
+| 85 | 51 | **Two options are synonymous — excluded** | "Choose the correct opposite of **Kindle**" offers both *extinguish* (keyed) and *put out*, which mean the same thing. A student who picks "put out" has answered correctly and would still be marked wrong, so the question cannot be used as printed. |
+| 2 | 4 | **Statements contradict each other — excluded** | Figure: circle centred O with P on it, $\angle POQ = 90^\circ$, and QRO a semicircle on OQ. "What is the area of the circle with centre at O?" **I.** Area of $\triangle POQ$ is 30 $\Rightarrow \frac12 r^2 = 30 \Rightarrow r^2 = 60$, area $= 60\pi$. **II.** Length of QRO is $2.5\pi \Rightarrow$ the semicircle on diameter $OQ = r$ has arc $\frac{\pi r}{2} = 2.5\pi \Rightarrow r = 5$, area $= 25\pi$. Each statement alone determines the area, but they give **different** radii — the data is inconsistent. The paper keys option 3 ("together, but neither alone"), which is wrong either way. |

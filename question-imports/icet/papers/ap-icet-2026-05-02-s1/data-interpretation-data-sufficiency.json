@@ -1,0 +1,275 @@
+{
+  "subject": "Data Interpretation & Data Sufficiency",
+  "questions": [
+    {
+      "chapter": "Tables",
+      "difficulty": "medium",
+      "answer_type": "single",
+      "stem": "The table gives the number of cars manufactured (in thousands) by five brands from 2020 to 2024.\n\n| Brand \\ Year | 2020 | 2021 | 2022 | 2023 | 2024 |\n| --- | --- | --- | --- | --- | --- |\n| Brand A | 420 | 450 | 480 | 510 | 540 |\n| Brand B | 380 | 400 | 390 | 420 | 460 |\n| Brand C | 300 | 340 | 360 | 390 | 410 |\n| Brand D | 500 | 480 | 470 | 460 | 450 |\n| Brand E | 260 | 290 | 320 | 350 | 380 |\n\nIn which year was the difference between the highest and lowest car production among all five brands maximum?",
+      "explanation": "Take each year's largest and smallest figures:\n\n| Year | Highest | Lowest | Difference |\n| --- | --- | --- | --- |\n| **2020** | 500 (D) | 260 (E) | **240** |\n| 2021 | 480 (D) | 290 (E) | 190 |\n| 2022 | 480 (A) | 320 (E) | 160 |\n| 2023 | 510 (A) | 350 (E) | 160 |\n| 2024 | 540 (A) | 380 (E) | 160 |\n\nThe spread is widest in **2020**. Note the gap narrows over time even though the leader's output grows — brand E is catching up faster than A pulls away.",
+      "source": "AP ICET 2026 2nd May 2026 Shift 1",
+      "source_year": 2026,
+      "options": [
+        {
+          "label": "2020",
+          "is_correct": true
+        },
+        {
+          "label": "2021",
+          "is_correct": false
+        },
+        {
+          "label": "2022",
+          "is_correct": false
+        },
+        {
+          "label": "2024",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Tables",
+      "difficulty": "easy",
+      "answer_type": "single",
+      "stem": "The table gives the number of cars manufactured (in thousands) by five brands from 2020 to 2024.\n\n| Brand \\ Year | 2020 | 2021 | 2022 | 2023 | 2024 |\n| --- | --- | --- | --- | --- | --- |\n| Brand A | 420 | 450 | 480 | 510 | 540 |\n| Brand B | 380 | 400 | 390 | 420 | 460 |\n| Brand C | 300 | 340 | 360 | 390 | 410 |\n| Brand D | 500 | 480 | 470 | 460 | 450 |\n| Brand E | 260 | 290 | 320 | 350 | 380 |\n\nBetween 2020 and 2024, which brand recorded consistently decreasing annual production?",
+      "explanation": "\"Consistently decreasing\" means **every** year is lower than the one before.\n\n- A: 420 → 540, rising throughout\n- B: 380, 400, **390**, 420, 460 — rises, dips, then rises again\n- C: 300 → 410, rising throughout\n- **D: 500, 480, 470, 460, 450 — falls every single year** ✓\n- E: 260 → 380, rising throughout\n\nSo the answer is **Brand D**.",
+      "source": "AP ICET 2026 2nd May 2026 Shift 1",
+      "source_year": 2026,
+      "options": [
+        {
+          "label": "Brand A",
+          "is_correct": false
+        },
+        {
+          "label": "Brand B",
+          "is_correct": false
+        },
+        {
+          "label": "Brand C",
+          "is_correct": false
+        },
+        {
+          "label": "Brand D",
+          "is_correct": true
+        }
+      ]
+    },
+    {
+      "chapter": "Tables",
+      "difficulty": "medium",
+      "answer_type": "single",
+      "stem": "The table gives the number of cars manufactured (in thousands) by five brands from 2020 to 2024.\n\n| Brand \\ Year | 2020 | 2021 | 2022 | 2023 | 2024 |\n| --- | --- | --- | --- | --- | --- |\n| Brand A | 420 | 450 | 480 | 510 | 540 |\n| Brand B | 380 | 400 | 390 | 420 | 460 |\n| Brand C | 300 | 340 | 360 | 390 | 410 |\n| Brand D | 500 | 480 | 470 | 460 | 450 |\n| Brand E | 260 | 290 | 320 | 350 | 380 |\n\nIf the total production of all brands in 2022 is taken as 100%, what is the approximate percentage share of Brand D in that year?",
+      "explanation": "Total production in 2022:\n$$480 + 390 + 360 + 470 + 320 = 2020.$$\n\nBrand D's share:\n$$\\frac{470}{2020} \\times 100 = 23.3\\%,$$\nwhich to the nearest option is **24%**. (The question asks for an approximate figure.)",
+      "source": "AP ICET 2026 2nd May 2026 Shift 1",
+      "source_year": 2026,
+      "options": [
+        {
+          "label": "24%",
+          "is_correct": true
+        },
+        {
+          "label": "27%",
+          "is_correct": false
+        },
+        {
+          "label": "30%",
+          "is_correct": false
+        },
+        {
+          "label": "33%",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Tables",
+      "difficulty": "hard",
+      "answer_type": "single",
+      "stem": "The table gives the number of cars manufactured (in thousands) by five brands from 2020 to 2024.\n\n| Brand \\ Year | 2020 | 2021 | 2022 | 2023 | 2024 |\n| --- | --- | --- | --- | --- | --- |\n| Brand A | 420 | 450 | 480 | 510 | 540 |\n| Brand B | 380 | 400 | 390 | 420 | 460 |\n| Brand C | 300 | 340 | 360 | 390 | 410 |\n| Brand D | 500 | 480 | 470 | 460 | 450 |\n| Brand E | 260 | 290 | 320 | 350 | 380 |\n\nSuppose a policy classifies a brand as 'high growth' if its average increase in annual production during 2020 to 2024 is equal to or greater than 30 thousand cars per year. Which of the following brand(s) meets this criterion?",
+      "explanation": "The average annual increase over the four year-gaps is $\\dfrac{2024 \\text{ figure} - 2020 \\text{ figure}}{4}$:\n\n| Brand | Change | Average per year |\n| --- | --- | --- |\n| **A** | $540 - 420 = 120$ | **30** ✓ |\n| B | $460 - 380 = 80$ | 20 |\n| C | $410 - 300 = 110$ | 27.5 |\n| D | $450 - 500 = -50$ | $-12.5$ |\n| **E** | $380 - 260 = 120$ | **30** ✓ |\n\nOnly **A and E** reach 30, and they do so exactly — which counts, since the rule says \"equal to or greater than\". Note the denominator is 4 (the number of gaps between 2020 and 2024), not 5.",
+      "source": "AP ICET 2026 2nd May 2026 Shift 1",
+      "source_year": 2026,
+      "options": [
+        {
+          "label": "Brand A and Brand E only",
+          "is_correct": true
+        },
+        {
+          "label": "Brand A, Brand C, and Brand E",
+          "is_correct": false
+        },
+        {
+          "label": "Brand B and Brand C only",
+          "is_correct": false
+        },
+        {
+          "label": "Brand A only",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Pie Charts",
+      "difficulty": "medium",
+      "answer_type": "single",
+      "stem": "A pie chart gives the percentage of students enrolled in the six colleges of a university:\n\n| College | Share |\n| --- | --- |\n| Arts | 12% |\n| Science | 18% |\n| Engineering | 31% |\n| Medicine | 22% |\n| Pharmacy | 13% |\n| Law | 4% |\n\nIf the number of students in the Pharmacy college is 1440 more than that of the Law college, then what is the number of students in the Engineering college?",
+      "explanation": "Pharmacy and Law differ by $13\\% - 4\\% = 9\\%$ of the university, and that gap is 1440 students:\n$$0.09 \\times T = 1440 \\Rightarrow T = 16000.$$\n\nEngineering takes 31% of that:\n$$0.31 \\times 16000 = 4960.$$",
+      "source": "AP ICET 2026 2nd May 2026 Shift 1",
+      "source_year": 2026,
+      "options": [
+        {
+          "label": "3520",
+          "is_correct": false
+        },
+        {
+          "label": "5080",
+          "is_correct": false
+        },
+        {
+          "label": "4960",
+          "is_correct": true
+        },
+        {
+          "label": "2880",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Pie Charts",
+      "difficulty": "medium",
+      "answer_type": "single",
+      "stem": "A pie chart gives the percentage of students enrolled in the six colleges of a university:\n\n| College | Share |\n| --- | --- |\n| Arts | 12% |\n| Science | 18% |\n| Engineering | 31% |\n| Medicine | 22% |\n| Pharmacy | 13% |\n| Law | 4% |\n\nThe number of students in the Pharmacy college is 1440 more than that of the Law college. If 80% of the total students of both the Science and Engineering colleges got jobs in campus placements, then how many students of the Science and Engineering colleges got placed?",
+      "explanation": "First the university total: Pharmacy $-$ Law $= 13\\% - 4\\% = 9\\%$ corresponds to 1440 students, so $T = \\dfrac{1440}{0.09} = 16000$.\n\nScience and Engineering together:\n$$(18\\% + 31\\%) \\times 16000 = 0.49 \\times 16000 = 7840.$$\n\nPlaced students:\n$$0.80 \\times 7840 = 6272.$$",
+      "source": "AP ICET 2026 2nd May 2026 Shift 1",
+      "source_year": 2026,
+      "options": [
+        {
+          "label": "6000",
+          "is_correct": false
+        },
+        {
+          "label": "6272",
+          "is_correct": true
+        },
+        {
+          "label": "4820",
+          "is_correct": false
+        },
+        {
+          "label": "5892",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Pie Charts",
+      "difficulty": "medium",
+      "answer_type": "single",
+      "stem": "A pie chart gives the percentage of students enrolled in the six colleges of a university:\n\n| College | Share |\n| --- | --- |\n| Arts | 12% |\n| Science | 18% |\n| Engineering | 31% |\n| Medicine | 22% |\n| Pharmacy | 13% |\n| Law | 4% |\n\nThe number of students in the Pharmacy college is 1440 more than that of the Law college. Among the students of the Arts college, 75% are girls; among Medical college students, 50% are girls. Then what is the total number of girl students belonging to the Arts and Medical colleges?",
+      "explanation": "The university total is $T = \\dfrac{1440}{0.13 - 0.04} = 16000$.\n\n- **Arts:** $0.12 \\times 16000 = 1920$ students, of whom $75\\%$ are girls $\\Rightarrow 1440$.\n- **Medicine:** $0.22 \\times 16000 = 3520$ students, of whom $50\\%$ are girls $\\Rightarrow 1760$.\n\nTotal girls $= 1440 + 1760 = 3200$.",
+      "source": "AP ICET 2026 2nd May 2026 Shift 1",
+      "source_year": 2026,
+      "options": [
+        {
+          "label": "3200",
+          "is_correct": true
+        },
+        {
+          "label": "1760",
+          "is_correct": false
+        },
+        {
+          "label": "3000",
+          "is_correct": false
+        },
+        {
+          "label": "2400",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Pie Charts",
+      "difficulty": "hard",
+      "answer_type": "single",
+      "stem": "A pie chart gives the number of cars in four major cities of a state, and the table gives each city's ratio of diesel cars to petrol cars. The total number of cars in all four cities is **1,47,000**.\n\n| City | Share of cars | Diesel : Petrol |\n| --- | --- | --- |\n| A | 14% | 3 : 4 |\n| B | 26% | 6 : 7 |\n| C | 32% | 5 : 3 |\n| D | 28% | 3 : 11 |\n\nWhat is the difference between the number of diesel cars in city D and the number of petrol cars in city B?",
+      "explanation": "City totals out of 1,47,000:\n$$A = 20580,\\quad B = 38220,\\quad C = 47040,\\quad D = 41160.$$\n\n**Diesel in D** (ratio $3:11$, so $\\tfrac{3}{14}$ of the city):\n$$\\frac{3}{14} \\times 41160 = 8820.$$\n\n**Petrol in B** (ratio $6:7$, so $\\tfrac{7}{13}$ of the city):\n$$\\frac{7}{13} \\times 38220 = 20580.$$\n\nDifference $= 20580 - 8820 = 11760$.",
+      "source": "AP ICET 2026 2nd May 2026 Shift 1",
+      "source_year": 2026,
+      "options": [
+        {
+          "label": "10670",
+          "is_correct": false
+        },
+        {
+          "label": "11760",
+          "is_correct": true
+        },
+        {
+          "label": "9420",
+          "is_correct": false
+        },
+        {
+          "label": "8760",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Pie Charts",
+      "difficulty": "hard",
+      "answer_type": "single",
+      "stem": "A pie chart gives the number of cars in four major cities of a state, and the table gives each city's ratio of diesel cars to petrol cars. The total number of cars in all four cities is **1,47,000**.\n\n| City | Share of cars | Diesel : Petrol |\n| --- | --- | --- |\n| A | 14% | 3 : 4 |\n| B | 26% | 6 : 7 |\n| C | 32% | 5 : 3 |\n| D | 28% | 3 : 11 |\n\nWhat is the average number of diesel cars in the four cities?",
+      "explanation": "Work out the diesel count city by city:\n\n| City | Cars | Diesel fraction | Diesel |\n| --- | --- | --- | --- |\n| A | 20580 | $3/7$ | 8820 |\n| B | 38220 | $6/13$ | 17640 |\n| C | 47040 | $5/8$ | 29400 |\n| D | 41160 | $3/14$ | 8820 |\n\nTotal diesel $= 8820 + 17640 + 29400 + 8820 = 64680$, so the average is\n$$\\frac{64680}{4} = 16170.$$",
+      "source": "AP ICET 2026 2nd May 2026 Shift 1",
+      "source_year": 2026,
+      "options": [
+        {
+          "label": "16170",
+          "is_correct": true
+        },
+        {
+          "label": "17610",
+          "is_correct": false
+        },
+        {
+          "label": "15720",
+          "is_correct": false
+        },
+        {
+          "label": "14280",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Pie Charts",
+      "difficulty": "medium",
+      "answer_type": "single",
+      "stem": "A pie chart gives the number of cars in four major cities of a state, and the table gives each city's ratio of diesel cars to petrol cars. The total number of cars in all four cities is **1,47,000**.\n\n| City | Share of cars | Diesel : Petrol |\n| --- | --- | --- |\n| A | 14% | 3 : 4 |\n| B | 26% | 6 : 7 |\n| C | 32% | 5 : 3 |\n| D | 28% | 3 : 11 |\n\nWhat is the ratio of the number of petrol cars in the two cities A and D?",
+      "explanation": "**Petrol in A:** city A has $0.14 \\times 147000 = 20580$ cars, of which $\\tfrac47$ are petrol:\n$$\\frac47 \\times 20580 = 11760.$$\n\n**Petrol in D:** city D has $0.28 \\times 147000 = 41160$ cars, of which $\\tfrac{11}{14}$ are petrol:\n$$\\frac{11}{14} \\times 41160 = 32340.$$\n\n$$11760 : 32340 = 4 : 11 \\quad (\\text{dividing both by } 2940).$$",
+      "source": "AP ICET 2026 2nd May 2026 Shift 1",
+      "source_year": 2026,
+      "options": [
+        {
+          "label": "4 : 13",
+          "is_correct": false
+        },
+        {
+          "label": "5 : 12",
+          "is_correct": false
+        },
+        {
+          "label": "3 : 12",
+          "is_correct": false
+        },
+        {
+          "label": "4 : 11",
+          "is_correct": true
+        }
+      ]
+    }
+  ]
+}
