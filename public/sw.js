@@ -6,8 +6,10 @@
 //   • navigations                                  -> network-first, falling back to
 //                                                     an offline page only when truly offline
 //   • everything else                              -> passthrough (network)
-// Bump CACHE to invalidate the precache on the next deploy.
-const CACHE = "clp-static-v1";
+// Bump CACHE to invalidate the precache on the next deploy. The activate handler
+// deletes every cache whose key != CACHE, so bumping this version purges the old
+// cached /_next/static/* chunks the moment the updated worker takes over.
+const CACHE = "clp-static-v2";
 const OFFLINE_URL = "/offline.html";
 
 self.addEventListener("install", (event) => {
