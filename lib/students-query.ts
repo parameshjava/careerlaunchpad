@@ -10,7 +10,7 @@ import type { SupabaseClient } from "@supabase/supabase-js";
 import { PROFILE_SELECT, profileCompleteness } from "@/lib/registration";
 
 export type StudentStage = "Imported" | "Invited" | "Registered";
-export type ReviewStatus = "pending_review" | "approved" | "suspended";
+export type ReviewStatus = "pending_review" | "changes_requested" | "approved" | "suspended";
 
 export type Student = {
   id: string;

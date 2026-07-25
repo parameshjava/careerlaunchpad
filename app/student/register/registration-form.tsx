@@ -8,7 +8,9 @@
  * calls POST …/submit. See docs/REGISTRATION_AND_INTAKE_API.md.
  */
 import { useCallback, useEffect, useRef, useState } from "react";
+import { useRouter } from "next/navigation";
 import { Button } from "@/components/ui/button";
+import { Accordion, AccordionItem, AccordionTrigger, AccordionContent } from "@/components/ui/accordion";
 import { RichContent } from "@/components/exam/RichContent";
 import { profileCompleteness } from "@/lib/registration";
 import {
@@ -41,6 +43,7 @@ export function RegistrationForm({
   const [errors, setErrors] = useState<string[]>([]);
   const [done, setDone] = useState(false);
   const [regStatus, setRegStatus] = useState<"submitted" | "in_progress">("in_progress");
+  const router = useRouter();
 
   const set = useCallback(<K extends keyof Form>(k: K, v: Form[K]) => setF((p) => ({ ...p, [k]: v })), []);
 
@@ -117,7 +120,14 @@ export function RegistrationForm({
     }
     if (target > 6) {
       const sub = await fetch(endpoints.submit, { method: "POST" });
-      if (sub.ok) { setDone(true); return; }
+      if (sub.ok) {
+        setDone(true);
+        // The submit resolved any open reviewer remarks server-side; refresh so the
+        // page's server components (the StudentRemarksAlert) re-query and the now-
+        // cleared remarks disappear without a manual page reload.
+        router.refresh();
+        return;
+      }
       const body = await sub.json().catch(() => ({}));
       if (body.missing?.length) {
         setErrors(body.missing.map((m: { step: number; field: string }) => `Step ${m.step}: ${FIELD_LABELS[m.field] ?? m.field.replace(/_/g, " ")} is required`));
@@ -144,7 +154,9 @@ export function RegistrationForm({
   const pct = profileCompleteness(f as unknown as Record<string, unknown>);
 
   return (
-    <div>
+    // The wizard stays narrow for readability (per the style guide) even when the
+    // page container is full-width for the profile view.
+    <div className="mx-auto w-full max-w-3xl">
       {/* Scroll anchor — the app shell scrolls this into view on every step change. */}
       <div ref={topRef} className="scroll-mt-4" aria-hidden />
       <Stepper step={step} onJump={setStep} />
@@ -248,9 +260,6 @@ export function ProfileSummary({
   const occLabel = bySlug(refs?.family_occupation);
   const langLabel = bySlug(refs?.language);
   const hobbyLabel = bySlug(refs?.hobby);
-  // Grandfathered: no longer collected in the wizard, but Excel intake still
-  // records it, so surface it read-only for admins when present.
-  const mentorLabel = bySlug(refs?.mentor_preference).get(f.preferred_mentor_pref_id) ?? "";
   const familyRows = f.family_members.filter((m) => m.relation || m.occupation);
   const hobbyItems = [
     ...f.hobbies.map((s) => hobbyLabel.get(s) ?? s),
@@ -300,117 +309,146 @@ export function ProfileSummary({
         )}
       </div>
 
-      <SummarySection title="Basic Information">
-        <SummaryItem label="Full name" value={f.full_name} />
-        <SummaryItem label="Email" value={email} />
-        <SummaryItem label="Mobile" value={f.phone} />
-        <SummaryItem label="Gender" value={genderLabel} />
-        <SummaryItem label="Location" value={location} className="sm:col-span-2" />
-      </SummarySection>
+      {/* One card per registration step, so the read-only view maps 1:1 onto the
+          wizard and each section shows exactly that step's inputs. All open by
+          default; each is independently collapsible. */}
+      <Accordion type="multiple" defaultValue={["s1", "s2", "s3", "s4", "s5", "s6"]} className="mt-5 gap-3">
+        <Section value="s1" n={1} title="Basic Information">
+          <SummaryItem label="Full name" value={f.full_name} />
+          <SummaryItem label="Email" value={email} />
+          <SummaryItem label="Mobile" value={f.phone} />
+          <SummaryItem label="Gender" value={genderLabel} />
+          <SummaryItem label="Location" value={location} className="col-span-full" />
+        </Section>
 
-      <SummarySection title="Academics">
-        <SummaryItem label="College" value={collegeText} className="sm:col-span-2" />
-        <SummaryItem label="Degree" value={degreeLabel} />
-        <SummaryItem label="Branch" value={branchLabel} />
-        <SummaryItem label="Year of study" value={yearLabel} />
-        <SummaryItem label="Graduation year" value={f.graduation_year} />
-        <SummaryItem label="CGPA / %" value={f.cgpa} />
-      </SummarySection>
+        <Section value="s2" n={2} title="Academic Details">
+          <SummaryItem label="College" value={collegeText} className="col-span-full" />
+          <SummaryItem label="Roll number" value={f.roll_number} />
+          <SummaryItem label="Registration number" value={f.registration_number} />
+          <SummaryItem label="APAAR ID" value={f.apaar_id} />
+          <SummaryItem label="Degree" value={degreeLabel} />
+          <SummaryItem label="Branch" value={branchLabel} />
+          <SummaryItem label="Year of study" value={yearLabel} />
+          <SummaryItem label="Graduation year" value={f.graduation_year} />
+          <SummaryItem label="CGPA / %" value={f.cgpa} />
+        </Section>
 
-      <SummarySection title="Career Paths">
-        {f.preferred_category_slugs.length === 0 ? (
-          <Empty />
-        ) : (
-          <div className="flex flex-wrap gap-2 sm:col-span-2">
-            {f.preferred_category_slugs.map((slug) => (
-              <span
-                key={slug}
-                className="border-transparent bg-primary text-primary-foreground rounded-full border px-3 py-1 text-sm font-medium"
-              >
-                {categoryName.get(slug) ?? slug}
-              </span>
-            ))}
+        <Section value="s3" n={3} title="Career Paths">
+          {f.preferred_category_slugs.length === 0 ? (
+            <Empty />
+          ) : (
+            <div className="flex flex-wrap gap-2 col-span-full">
+              {f.preferred_category_slugs.map((slug) => (
+                <span
+                  key={slug}
+                  className="border-transparent bg-primary text-primary-foreground rounded-full border px-3 py-1 text-sm font-medium"
+                >
+                  {categoryName.get(slug) ?? slug}
+                </span>
+              ))}
+            </div>
+          )}
+        </Section>
+
+        <Section value="s4" n={4} title="Current Skill Assessment">
+          {ratedCats.length === 0 ? (
+            <Empty />
+          ) : (
+            <div className="grid gap-3 col-span-full sm:grid-cols-2">
+              {ratedCats.map((c) => (
+                <div key={c.slug} className="flex items-center justify-between gap-3">
+                  <span className="text-sm">{c.label}</span>
+                  {f.skill_assessment[c.slug] === 0 ? (
+                    <span className="text-muted-foreground text-xs font-medium">No skill</span>
+                  ) : (
+                    <RatingDots value={f.skill_assessment[c.slug] ?? 0} />
+                  )}
+                </div>
+              ))}
+            </div>
+          )}
+        </Section>
+
+        <Section value="s5" n={5} title="Skills & Interests">
+          <div className="col-span-full">
+            <p className="text-muted-foreground mb-1.5 text-xs font-semibold tracking-wide uppercase">Skills</p>
+            <ChipList items={f.skills.map((s) => skillLabel.get(s) ?? s)} />
+            <p className="text-muted-foreground mt-4 mb-1.5 text-xs font-semibold tracking-wide uppercase">Interests</p>
+            <ChipList items={f.interests.map((s) => interestLabel.get(s) ?? s)} />
           </div>
-        )}
-      </SummarySection>
+        </Section>
 
-      <SummarySection title="Skill Self-Assessment">
-        {ratedCats.length === 0 ? (
-          <Empty />
-        ) : (
-          <div className="grid gap-3 sm:col-span-2 sm:grid-cols-2">
-            {ratedCats.map((c) => (
-              <div key={c.slug} className="flex items-center justify-between gap-3">
-                <span className="text-sm">{c.label}</span>
-                {f.skill_assessment[c.slug] === 0 ? (
-                  <span className="text-muted-foreground text-xs font-medium">No skill</span>
-                ) : (
-                  <RatingDots value={f.skill_assessment[c.slug] ?? 0} />
-                )}
-              </div>
-            ))}
+        <Section value="s6" n={6} title="Tell Us">
+          <SummaryItem label="First-generation learner" value={firstGenLabel} />
+          <SummaryItem label="Date of birth" value={f.date_of_birth} />
+          <SummaryItem label="Caste / community certificate" value={certLabel} />
+          {f.caste_certificate_status === "has" && <SummaryItem label="Reservation category" value={categoryLabel} />}
+          <SummaryItem label="Household income" value={incomeLabel} />
+          <div className="col-span-full">
+            <dt className="text-muted-foreground text-xs">Languages</dt>
+            <dd className="mt-1"><ChipList items={f.languages.map((s) => langLabel.get(s) ?? s)} /></dd>
           </div>
-        )}
-      </SummarySection>
-
-      <SummarySection title="Skills & Interests">
-        <div className="sm:col-span-2">
-          <p className="text-muted-foreground mb-1.5 text-xs font-semibold tracking-wide uppercase">Skills</p>
-          <ChipList items={f.skills.map((s) => skillLabel.get(s) ?? s)} />
-          <p className="text-muted-foreground mt-4 mb-1.5 text-xs font-semibold tracking-wide uppercase">Interests</p>
-          <ChipList items={f.interests.map((s) => interestLabel.get(s) ?? s)} />
-        </div>
-      </SummarySection>
-
-      <SummarySection title="Tell Us">
-        <SummaryItem label="First-generation learner" value={firstGenLabel} />
-        <SummaryItem label="Date of birth" value={f.date_of_birth} />
-        <SummaryItem label="Caste / community certificate" value={certLabel} />
-        {f.caste_certificate_status === "has" && <SummaryItem label="Reservation category" value={categoryLabel} />}
-        <SummaryItem label="Household income" value={incomeLabel} />
-        {f.preferred_mentor_pref_id && <SummaryItem label="Preferred mentor type" value={mentorLabel} />}
-        <div className="sm:col-span-2">
-          <dt className="text-muted-foreground text-xs">Languages</dt>
-          <dd className="mt-1"><ChipList items={f.languages.map((s) => langLabel.get(s) ?? s)} /></dd>
-        </div>
-        <div className="sm:col-span-2">
-          <dt className="text-muted-foreground text-xs">Family members</dt>
-          <dd className="mt-1">
-            {familyRows.length === 0 ? (
-              <p className="text-muted-foreground/60 text-sm">—</p>
-            ) : (
-              <ul className="space-y-1 text-sm">
-                {familyRows.map((m, i) => (
-                  <li key={i}>
-                    <span className="font-medium">{relLabel.get(m.relation) ?? m.relation ?? "—"}</span>
-                    {m.occupation ? <span className="text-muted-foreground"> — {occLabel.get(m.occupation) ?? m.occupation}</span> : null}
-                  </li>
-                ))}
-              </ul>
-            )}
-          </dd>
-        </div>
-        <div className="sm:col-span-2">
-          <dt className="text-muted-foreground text-xs">Hobbies &amp; interests</dt>
-          <dd className="mt-1"><ChipList items={hobbyItems} /></dd>
-        </div>
-        <div className="sm:col-span-2">
-          <dt className="text-muted-foreground text-xs">Biggest challenge</dt>
-          <dd className={`mt-1 text-sm ${f.biggest_challenge ? "" : "text-muted-foreground/60"}`}>
-            {f.biggest_challenge ? <RichContent content={f.biggest_challenge} math={false} /> : "—"}
-          </dd>
-        </div>
-      </SummarySection>
+          <div className="col-span-full">
+            <dt className="text-muted-foreground text-xs">Family members</dt>
+            <dd className="mt-1">
+              {familyRows.length === 0 ? (
+                <p className="text-muted-foreground/60 text-sm">—</p>
+              ) : (
+                <ul className="space-y-1 text-sm">
+                  {familyRows.map((m, i) => (
+                    <li key={i}>
+                      <span className="font-medium">{relLabel.get(m.relation) ?? m.relation ?? "—"}</span>
+                      {m.occupation ? <span className="text-muted-foreground"> — {occLabel.get(m.occupation) ?? m.occupation}</span> : null}
+                    </li>
+                  ))}
+                </ul>
+              )}
+            </dd>
+          </div>
+          <div className="col-span-full">
+            <dt className="text-muted-foreground text-xs">Hobbies &amp; interests</dt>
+            <dd className="mt-1"><ChipList items={hobbyItems} /></dd>
+          </div>
+          <div className="col-span-full">
+            <dt className="text-muted-foreground text-xs">Biggest challenge</dt>
+            <dd className={`mt-1 text-sm ${f.biggest_challenge ? "" : "text-muted-foreground/60"}`}>
+              {f.biggest_challenge ? <RichContent content={f.biggest_challenge} math={false} /> : "—"}
+            </dd>
+          </div>
+        </Section>
+      </Accordion>
     </div>
   );
 }
 
-function SummarySection({ title, children }: { title: string; children: React.ReactNode }) {
+// One collapsible card per registration step, so the read-only view maps 1:1
+// onto the wizard: a numbered brand chip + step title on a tinted header, and the
+// step's fields in a 2-column grid below. Children are the SummaryItems/blocks.
+function Section({
+  value,
+  n,
+  title,
+  children,
+}: {
+  value: string;
+  n: number;
+  title: string;
+  children: React.ReactNode;
+}) {
   return (
-    <section className="border-b py-5 last:border-b-0 last:pb-0">
-      <h3 className="text-[0.72rem] font-bold tracking-[0.08em] text-[#7c3aed] uppercase">{title}</h3>
-      <div className="mt-3 grid gap-x-6 gap-y-3 sm:grid-cols-2">{children}</div>
-    </section>
+    <AccordionItem value={value} className="overflow-hidden rounded-xl border">
+      <AccordionTrigger className="bg-muted/40 hover:bg-muted/60 px-4">
+        <span className="flex items-center gap-2.5">
+          <span className="bg-primary text-primary-foreground flex size-6 shrink-0 items-center justify-center rounded-full text-[0.72rem] font-bold">
+            {n}
+          </span>
+          <span className="text-sm font-semibold">{title}</span>
+        </span>
+      </AccordionTrigger>
+      <AccordionContent className="border-t px-4 pt-4 pb-4">
+        <div className="grid gap-x-6 gap-y-3 sm:grid-cols-2 lg:grid-cols-3">{children}</div>
+      </AccordionContent>
+    </AccordionItem>
   );
 }
 
@@ -445,6 +483,6 @@ function RatingDots({ value }: { value: number }) {
 }
 
 function Empty() {
-  return <p className="text-muted-foreground/60 text-sm sm:col-span-2">Nothing added yet.</p>;
+  return <p className="text-muted-foreground/60 text-sm col-span-full">Nothing added yet.</p>;
 }
 

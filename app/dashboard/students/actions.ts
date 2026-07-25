@@ -4,7 +4,7 @@ import { revalidatePath } from "next/cache";
 import { redirect } from "next/navigation";
 import { createClient } from "@/lib/supabase/server";
 import { requirePermission } from "@/lib/auth";
-import { sendStudentApprovedEmail } from "@/lib/mailer";
+import { sendStudentApprovedEmail, sendStudentRemarksEmail } from "@/lib/mailer";
 import { PROFILE_SELECT, profileCompleteness } from "@/lib/registration";
 
 const SITE_URL = process.env.NEXT_PUBLIC_SITE_URL ?? "http://localhost:3000";
@@ -55,6 +55,54 @@ export async function setStudentStatus(formData: FormData): Promise<void> {
   // The action is invoked from the student detail page; send the reviewer back
   // to the list once the decision is recorded.
   redirect("/dashboard");
+}
+
+/**
+ * Send a review remark to a student (issue #82). Posts a note to the review
+ * thread and emails the student the remark. `request_changes` (only meaningful
+ * pre-approval) also sends the profile back — add_student_review_note flips a
+ * pending_review student to changes_requested; an approved student keeps access.
+ * Authorized by student.review (RLS-enforced in the RPC); requirePermission is
+ * the fail-fast UI guard. Best-effort email — never blocks the note being saved.
+ */
+export async function sendStudentRemark(formData: FormData): Promise<void> {
+  await requirePermission("student.review");
+  const supabase = await createClient();
+
+  const userId = String(formData.get("user_id") ?? "");
+  const body = String(formData.get("body") ?? "").trim();
+  const requestChanges = formData.get("request_changes") === "on";
+  if (!userId || !body) return;
+
+  const { error } = await supabase.rpc("add_student_review_note", {
+    p_student: userId,
+    p_body: body,
+    p_request_changes: requestChanges,
+  });
+  if (error) throw new Error(error.message);
+
+  // Email the student the remark. Best-effort — sendStudentRemarksEmail never
+  // throws, so a mail hiccup can't lose the note we just saved.
+  const { data: row } = await supabase
+    .from("student_profile")
+    .select("full_name, app_user:user_id(email)")
+    .eq("user_id", userId)
+    .maybeSingle();
+  const profile = row as { full_name?: string | null; app_user?: unknown } | null;
+  const appUser = profile?.app_user as { email?: string | null } | { email?: string | null }[] | null;
+  const email = Array.isArray(appUser) ? appUser[0]?.email : appUser?.email;
+  if (email) {
+    await sendStudentRemarksEmail({
+      to: email,
+      name: profile?.full_name ?? null,
+      remarks: body,
+      requestChanges,
+      profileUrl: `${SITE_URL}/student/register`,
+    });
+  }
+
+  revalidatePath("/dashboard");
+  revalidatePath(`/dashboard/students/${userId}`);
 }
 
 /**

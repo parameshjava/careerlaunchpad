@@ -12,6 +12,7 @@
  * flow that calls us.
  */
 import nodemailer, { type Transporter } from "nodemailer";
+import { markdownToEmailHtml } from "./markdown-email";
 
 type InviteEmail = {
   to: string;
@@ -44,6 +45,64 @@ function getTransporter(): Transporter | null {
     });
   }
   return transporter;
+}
+
+/** Escape user/free-text before interpolating into email HTML. */
+function escapeHtml(s: string): string {
+  return s.replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;").replace(/"/g, "&quot;");
+}
+
+
+/**
+ * Responsive, mobile-first email shell. Email clients strip <head><style> and
+ * don't support flexbox/grid, so this is a SINGLE fluid column (max-width 600px,
+ * 100% on phones), TABLE-based, with all CSS inlined — the combination that
+ * renders correctly in Gmail, Apple Mail, and Outlook (Word engine) alike.
+ *
+ *   • viewport meta + x-apple-disable-message-reformatting → no iOS auto-zoom.
+ *   • bgcolor beside every gradient → Outlook falls back to solid brand blue.
+ *   • 16px body / 20px heading, 44px+ tap-target button → readable + tappable.
+ *   • hidden preheader → controls the inbox preview line.
+ *
+ * `contentHtml` is the inner body-cell markup (headings/paragraphs/callouts).
+ * Build buttons with `emailButton()` so they stay bulletproof.
+ */
+function emailShell({ preheader, contentHtml }: { preheader: string; contentHtml: string }): string {
+  const font = "-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,Helvetica,Arial,sans-serif";
+  return `<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="x-apple-disable-message-reformatting">
+</head>
+<body style="margin:0;padding:0;background:#f6f8fb;">
+<div style="display:none;max-height:0;overflow:hidden;opacity:0;">${escapeHtml(preheader)}</div>
+<table role="presentation" width="100%" cellpadding="0" cellspacing="0" style="background:#f6f8fb;">
+<tr><td align="center" style="padding:24px 12px;">
+<table role="presentation" width="600" cellpadding="0" cellspacing="0" style="width:100%;max-width:600px;background:#ffffff;border-radius:16px;overflow:hidden;font-family:${font};">
+<tr><td bgcolor="#2563eb" style="background:linear-gradient(90deg,#2563eb,#7c3aed);padding:20px 28px;">
+<span style="color:#ffffff;font-size:18px;font-weight:700;letter-spacing:-0.01em;">CareerLaunchpad</span>
+</td></tr>
+<tr><td style="padding:28px;color:#0f172a;font-size:16px;line-height:1.6;">
+${contentHtml}
+</td></tr>
+<tr><td style="padding:18px 28px;border-top:1px solid #eef2f7;color:#64748b;font-size:13px;line-height:1.5;">
+You're receiving this because you registered at CareerLaunchpad.
+</td></tr>
+</table>
+</td></tr>
+</table>
+</body>
+</html>`;
+}
+
+/** Bulletproof (table-based) CTA button — large tap target, Outlook-safe. */
+function emailButton(href: string, label: string): string {
+  return `<table role="presentation" cellpadding="0" cellspacing="0"><tr>
+<td bgcolor="#2563eb" style="border-radius:10px;background:linear-gradient(90deg,#2563eb,#7c3aed);">
+<a href="${escapeHtml(href)}" style="display:inline-block;padding:13px 26px;color:#ffffff;font-size:16px;font-weight:600;text-decoration:none;border-radius:10px;">${escapeHtml(label)}</a>
+</td></tr></table>`;
 }
 
 /**
@@ -196,6 +255,67 @@ export async function sendStudentApprovedEmail({
     `<p>To your success,<br/>The CareerLaunchPad Team</p>`;
 
   await deliver("student-approved", to, subject, text, html);
+}
+
+type RemarksEmail = {
+  to: string;
+  name?: string | null;
+  /** The reviewer's remark, verbatim (free text — escaped + line-break-preserved here). */
+  remarks: string;
+  /** True when the profile was sent back for correction (pre-approval); false for
+   *  an informational note to an already-approved/registered student. */
+  requestChanges: boolean;
+  profileUrl: string;
+};
+
+/**
+ * A reviewer left remarks on a student's registration (issue #82). When
+ * `requestChanges` is true the student was sent back to correct + re-submit;
+ * otherwise it's an informational note (they keep their current access). Uses the
+ * responsive email shell so it reads well on a phone. Best-effort — never throws.
+ */
+export async function sendStudentRemarksEmail({
+  to,
+  name,
+  remarks,
+  requestChanges,
+  profileUrl,
+}: RemarksEmail): Promise<void> {
+  const hi = name ? `Hi ${name},` : "Hi,";
+  const subject = requestChanges
+    ? "Action needed on your CareerLaunchpad registration"
+    : "A note from the CareerLaunchpad team about your profile";
+  const lead = requestChanges
+    ? "Our team reviewed your registration and needs a few corrections before we can approve it:"
+    : "Our team left a note about your CareerLaunchpad profile:";
+  const closing = requestChanges
+    ? "Please update your profile and re-submit — we'll review it again as soon as you do."
+    : "You can update your profile any time from the link below.";
+  const cta = requestChanges ? "Update & re-submit" : "Open my profile";
+
+  const text =
+    `${hi}\n\n${lead}\n\n${remarks}\n\n${closing}\n\n${cta}: ${profileUrl}\n`;
+
+  // Render the reviewer's Markdown (GFM) to HTML for the email body.
+  const remarksHtml = markdownToEmailHtml(remarks);
+  const content =
+    `<h1 style="margin:0 0 12px;font-size:20px;line-height:1.3;">${requestChanges ? "Action needed on your registration" : "A note about your profile"}</h1>` +
+    `<p style="margin:0 0 16px;">${escapeHtml(hi)}</p>` +
+    `<p style="margin:0 0 16px;">${escapeHtml(lead)}</p>` +
+    `<table role="presentation" width="100%" cellpadding="0" cellspacing="0" style="margin:0 0 22px;"><tr>` +
+    `<td style="background:#fff7ed;border-left:4px solid #f59e0b;border-radius:8px;padding:14px 16px;color:#7c2d12;font-size:15px;line-height:1.6;">${remarksHtml}</td>` +
+    `</tr></table>` +
+    `<p style="margin:0 0 22px;">${escapeHtml(closing)}</p>` +
+    emailButton(profileUrl, cta);
+
+  const html = emailShell({
+    preheader: requestChanges
+      ? "Your reviewer requested corrections to your registration."
+      : "Your reviewer left a note on your CareerLaunchpad profile.",
+    contentHtml: content,
+  });
+
+  await deliver("student-remarks", to, subject, text, html);
 }
 
 type PendingNotice = {

@@ -6,6 +6,7 @@ import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { getAuthContext } from "@/lib/auth";
 import { createClient } from "@/lib/supabase/server";
+import { StudentRemarksAlert } from "@/components/students/student-remarks-alert";
 
 export const metadata: Metadata = { title: "Pending approval" };
 
@@ -29,24 +30,34 @@ export default async function StudentPendingPage() {
   if (data?.status === "approved") redirect("/student/insights");
 
   const suspended = data?.status === "suspended";
+  // Sent back for corrections — the reviewer left remarks and the student must
+  // fix + re-submit. Surfaced as an actionable alert (with CTA) above the card.
+  const changesRequested = data?.status === "changes_requested";
 
   return (
     <div className="mx-auto w-full max-w-lg">
+      {changesRequested && <StudentRemarksAlert showCta />}
       <Card>
         <CardHeader className="text-center">
-          <div className="mx-auto mb-2 text-4xl">{suspended ? "⏸️" : "⏳"}</div>
+          <div className="mx-auto mb-2 text-4xl">{suspended ? "⏸️" : changesRequested ? "✏️" : "⏳"}</div>
           <CardTitle className="text-xl">
-            {suspended ? "Your account is on hold" : "Your profile is awaiting approval"}
+            {suspended
+              ? "Your account is on hold"
+              : changesRequested
+                ? "A few corrections needed"
+                : "Your profile is awaiting approval"}
           </CardTitle>
           <CardDescription>
             {suspended
               ? "An administrator has paused your access. Please reach out to your college admin if you think this is a mistake."
-              : "Thanks for registering! An owner or admin will review your profile shortly. We'll email you as soon as it's approved — then you'll get your full insights."}
+              : changesRequested
+                ? "Our team reviewed your registration and asked for some changes. Update your profile and re-submit — we'll review it again right away."
+                : "Thanks for registering! An owner or admin will review your profile shortly. We'll email you as soon as it's approved — then you'll get your full insights."}
           </CardDescription>
         </CardHeader>
         <CardContent className="flex justify-center">
-          <Button asChild variant="outline">
-            <Link href="/student/register">Review my profile</Link>
+          <Button asChild variant={changesRequested ? "default" : "outline"}>
+            <Link href="/student/register">{changesRequested ? "Update my profile" : "Review my profile"}</Link>
           </Button>
         </CardContent>
       </Card>

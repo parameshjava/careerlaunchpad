@@ -50,6 +50,12 @@ export async function POST() {
 
   if (upErr) return NextResponse.json({ ok: false, error: upErr.message }, { status: 500 });
 
+  // Re-submitting is the student's response to the reviewer: resolves all their
+  // open remarks, and — if they were sent back (changes_requested) — flips them
+  // back into the review queue (pending_review). Returns the resulting status.
+  const { data: resubStatus } = await supabase.rpc("mark_registration_resubmitted");
+  const reviewStatus = (resubStatus as string | null) ?? (p.status as string | null);
+
   const fullName = (p.full_name as string | null | undefined) ?? null;
 
   // Confirm the submission to the student. Best-effort — never blocks the response.
@@ -62,8 +68,9 @@ export async function POST() {
   }
 
   // Self-registered students await approval — notify owners/admins to review.
-  // Invited/imported students are auto-approved, so their submit notifies no one.
-  if (p.status === "pending_review") {
+  // Covers both a first submit (pending_review) and a re-submit after a send-back
+  // (changes_requested → pending_review above). Auto-approved students notify no one.
+  if (reviewStatus === "pending_review") {
     const { data: recips } = await supabase.rpc("notification_recipients");
     await sendRegistrationPendingEmail({
       to: (recips as string[] | null) ?? [],

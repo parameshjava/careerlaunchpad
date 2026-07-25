@@ -26,13 +26,15 @@ const TAB_CLS =
 const isDraft = (s: Student) =>
   s.stage === "Registered" && s.registrationStatus === "in_progress";
 
-// "Pending approval" = a registered student who has SUBMITTED and is awaiting
-// review. Drafts are excluded (they submit first); imported/invited default to
-// 'approved' with no profile to review, so they stay in Approved.
+// "Pending approval" = a registered student in the pre-approval review loop:
+// SUBMITTED and either awaiting review (pending_review) or sent back for
+// corrections (changes_requested, issue #82 — awaiting the student's fix). Both
+// are not-yet-approved, so neither belongs in Approved. Drafts are excluded (they
+// submit first); imported/invited default to 'approved' with nothing to review.
 const isPendingApproval = (s: Student) =>
   s.stage === "Registered" &&
   s.registrationStatus === "submitted" &&
-  s.reviewStatus === "pending_review";
+  (s.reviewStatus === "pending_review" || s.reviewStatus === "changes_requested");
 
 export const metadata: Metadata = {
   title: "Students Console",
@@ -105,9 +107,10 @@ export default async function DashboardPage() {
           <Card>
             <CardContent className="grid gap-4 pt-6">
               <p className="text-muted-foreground text-sm">
-                Self-registered students who have <strong>submitted</strong> their profile and are
-                awaiting review. Open a profile to approve — they’re emailed on approval. Imported
-                students are auto-approved and don’t appear here.
+                Self-registered students in the review loop — <strong>submitted</strong> and awaiting
+                review, or <strong>sent back</strong> for corrections (they’re emailed your remarks
+                and re-appear here when they re-submit). Open a profile to approve or add remarks.
+                Imported students are auto-approved and don’t appear here.
               </p>
               {pendingStudents.length === 0 ? (
                 <div className="text-muted-foreground bg-muted/40 rounded-lg border px-4 py-10 text-center text-sm">

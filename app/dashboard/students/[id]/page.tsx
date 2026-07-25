@@ -7,7 +7,10 @@ import { EMPTY, type Form, type RefData, type College } from "@/components/stude
 import { ProfileSummary, RegistrationForm } from "@/app/student/register/registration-form";
 import { Button } from "@/components/ui/button";
 import { PageContainer } from "@/components/app-shell/page-container";
+import { RemarksPanel, type ReviewNote } from "@/components/students/remarks-panel";
 import { setStudentStatus } from "../actions";
+
+type ReviewStatus = "pending_review" | "changes_requested" | "approved" | "suspended";
 
 // Console-side student profile. Platform staff (student.profile.manage) get the
 // registration wizard pointed at the admin API, which does its own load → summary
@@ -36,7 +39,34 @@ export default async function StudentProfilePage({ params }: { params: Promise<{
   // after seeing the full profile).
   const canReview = can(ctx, "student.review") || ctx.permissions.has("*");
   const reviewRow = row as { status?: string | null; full_name?: string | null } | null;
-  const awaitingReview = canReview && (reviewRow?.status ?? "approved") === "pending_review";
+  const reviewStatus = (reviewRow?.status ?? "approved") as ReviewStatus;
+  const awaitingReview = canReview && reviewStatus === "pending_review";
+
+  // Review-note thread for the Remarks panel (issue #82). RLS returns rows only to
+  // reviewers, so this is empty for anyone else; we still gate the panel on canReview.
+  let notes: ReviewNote[] = [];
+  if (canReview && row) {
+    const { data: noteRows } = await supabase
+      .from("student_review_note")
+      .select("id, body, kind, created_at, resolved_at, author:author_user_id ( full_name, email )")
+      .eq("student_user_id", id)
+      .order("created_at", { ascending: false });
+    notes = (noteRows ?? []).map((n) => {
+      const a = Array.isArray(n.author) ? n.author[0] : n.author;
+      const author = a as { full_name?: string | null; email?: string | null } | null;
+      return {
+        id: n.id as string,
+        body: n.body as string,
+        kind: (n.kind as "changes_requested" | "note") ?? "note",
+        created_at: n.created_at as string,
+        resolved_at: (n.resolved_at as string | null) ?? null,
+        authorName: author?.full_name ?? author?.email ?? null,
+      };
+    });
+  }
+  const remarks = canReview && row ? (
+    <RemarksPanel studentId={id} status={reviewStatus} notes={notes} />
+  ) : null;
 
   if (!row) {
     return (
@@ -55,7 +85,7 @@ export default async function StudentProfilePage({ params }: { params: Promise<{
   // fetched (that was the existence gate).
   if (can(ctx, "student.profile.manage")) {
     return (
-      <PageContainer variant="reading">
+      <PageContainer variant="full">
         <BackLink />
         {awaitingReview && <ApprovalBar id={id} name={reviewRow?.full_name ?? ""} />}
         <RegistrationForm
@@ -65,6 +95,7 @@ export default async function StudentProfilePage({ params }: { params: Promise<{
             submit: `/api/students/${id}/profile/submit`,
           }}
         />
+        {remarks}
       </PageContainer>
     );
   }
@@ -125,10 +156,11 @@ export default async function StudentProfilePage({ params }: { params: Promise<{
   const status = r.registration_status === "submitted" ? "submitted" : "in_progress";
 
   return (
-    <PageContainer variant="reading">
+    <PageContainer variant="full">
       <BackLink />
       {awaitingReview && <ApprovalBar id={id} name={f.full_name} />}
       <ProfileSummary f={f} refs={refs} email={email} college={college} status={status} />
+      {remarks}
     </PageContainer>
   );
 }
