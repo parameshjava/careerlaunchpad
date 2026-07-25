@@ -7,12 +7,10 @@
 // (mobile-first) with a palette and a hard-stop countdown.
 import { useCallback, useEffect, useRef, useState } from "react";
 import { useRouter } from "next/navigation";
-import { Check, CheckCircle2, TriangleAlert, Flag, Eraser, ChevronDown } from "lucide-react";
+import { TriangleAlert } from "lucide-react";
 import { WarningSign } from "../warning-sign";
 import { createClient } from "@/lib/supabase/client";
-import { RichContent } from "@/components/exam/RichContent";
 import { Button } from "@/components/ui/button";
-import { Card, CardContent } from "@/components/ui/card";
 import {
   Dialog,
   DialogContent,
@@ -22,6 +20,7 @@ import {
   DialogTitle,
 } from "@/components/ui/dialog";
 import { formatDateTime } from "@/lib/format-date";
+import { AttemptView, type AttemptQuestion } from "@/components/exam/attempt-view";
 import { type SessionPrintMeta } from "./paper-print";
 
 type Option = { id: string; label: string };
@@ -103,12 +102,7 @@ export function AttemptRunner({
   // Empty by default (all expanded); the active section is always force-expanded.
   const [collapsed, setCollapsed] = useState<Set<string>>(new Set());
   const [index, setIndex] = useState(0);
-  // Keep the active palette chip in view as the student moves through a long,
-  // scrollable palette (60+ questions no longer paginate — they all render).
-  const currentCellRef = useRef<HTMLButtonElement>(null);
-  useEffect(() => {
-    currentCellRef.current?.scrollIntoView({ block: "nearest" });
-  }, [index]);
+  // (The active-cell scroll-into-view now lives inside <AttemptView>.)
   // On first load, restore the student's cursor so a resumed student lands
   // exactly where they left off. Prefer the persisted last_position (server +
   // cache, survives an abort); fall back to the first unanswered question, then
@@ -631,459 +625,99 @@ export function AttemptRunner({
       </div>
     );
 
-  const q = questions[index];
-  const answered = (qid: string) => (answers[qid]?.length ?? 0) > 0;
-  const mm = timeLeft != null ? String(Math.floor(timeLeft / 60)).padStart(2, "0") : "--";
-  const ss = timeLeft != null ? String(timeLeft % 60).padStart(2, "0") : "--";
-  const lowTime = timeLeft != null && timeLeft <= 60;
-
-  // Palette counts (whole paper) + per-subject bands. Questions arrive ordered by
-  // position and each section is contiguous, so grouping in encounter order keeps
-  // the subjects in their exam order. Papers without sections fall into one band.
-  // Palette buckets, assigned by priority marked > answered > seen > not-visited,
-  // so the four counts always sum to the paper length. The submit dialog computes
-  // its own has-answer count separately — this bucketing is palette-only.
-  const markedCount = questions.filter((qq) => marked.has(qq.question_id)).length;
-  const answeredCount = questions.filter(
-    (qq) => answered(qq.question_id) && !marked.has(qq.question_id),
-  ).length;
-  const seenCount = questions.filter(
-    (qq) =>
-      !answered(qq.question_id) && !marked.has(qq.question_id) && seen.has(qq.question_id),
-  ).length;
-  const notVisitedCount = questions.length - markedCount - answeredCount - seenCount;
-  const rawBands: { id: string; title: string | null; items: { qq: Question; i: number }[] }[] = [];
-  questions.forEach((qq, i) => {
-    const last = rawBands[rawBands.length - 1];
-    if (last && last.id === qq.section_id) last.items.push({ qq, i });
-    else rawBands.push({ id: qq.section_id, title: qq.section_title, items: [{ qq, i }] });
+  // Map the exam's questions into the shared AttemptView shape, resolving each
+  // section's label from the payload, else meta.sections in paper order.
+  const _bands: { id: string; title: string | null; items: Question[] }[] = [];
+  questions.forEach((qq) => {
+    const last = _bands[_bands.length - 1];
+    if (last && last.id === qq.section_id) last.items.push(qq);
+    else _bands.push({ id: qq.section_id, title: qq.section_title, items: [qq] });
   });
-  // Subject label: from the question payload (migration 116) if present, else
-  // fall back to meta.sections — same paper order, contiguous — so bands are
-  // labelled even before that migration reaches the DB.
-  const bands = rawBands.map((b, bi) => ({
-    ...b,
-    label: b.title ?? meta?.sections[bi]?.subject ?? null,
+  const labelByQid = new Map<string, string | null>();
+  _bands.forEach((b, bi) => {
+    const label = b.title ?? meta?.sections[bi]?.subject ?? null;
+    b.items.forEach((qq) => labelByQid.set(qq.question_id, label));
+  });
+  const attemptQuestions: AttemptQuestion[] = questions.map((qq) => ({
+    position: qq.position,
+    questionId: qq.question_id,
+    sectionId: qq.section_id,
+    sectionLabel: labelByQid.get(qq.question_id) ?? null,
+    answerType: qq.answer_type,
+    stem: qq.stem,
+    stemImageUrl: qq.stem_image_url,
+    passage: qq.passage,
+    options: qq.options,
   }));
-  const multiSection = bands.length > 1;
-  const currentSubject = bands.find((b) => b.items.some((it) => it.i === index))?.label ?? null;
+  const sectionIds = [...new Set(attemptQuestions.map((qq) => qq.sectionId))];
+  const qById = new Map(questions.map((qq) => [qq.question_id, qq]));
 
   return (
     <>
-    <div
-      className="mx-auto max-w-6xl px-4 py-4 select-none sm:px-6 print:hidden"
-      // Copy disabled: block the copy/cut/context-menu events and non-selectable
-      // text (select-none) so Ctrl/Cmd+C has nothing to lift.
-      onCopy={(e) => e.preventDefault()}
-      onCut={(e) => e.preventDefault()}
-      onContextMenu={(e) => e.preventDefault()}
-    >
-      {/* Header: progress + timer. Bleeds over the container's px/py padding
-          (-mx / -mt + re-pad) so its opaque background fully masks content
-          scrolling underneath — otherwise the amber banner peeks above/beside
-          it on scroll. z-20 keeps it above the palette's own sticky subheaders. */}
-      <div className="bg-background sticky top-0 z-20 mb-4 -mx-4 -mt-4 flex items-center justify-between gap-4 border-b px-4 pt-4 pb-2 sm:-mx-6 sm:px-6">
-        <span className="min-w-0 truncate text-sm font-medium">
-          Question {index + 1} / {questions.length}
-          {currentSubject && (
-            <span className="text-muted-foreground"> · {currentSubject}</span>
-          )}
-        </span>
-        <div className="flex items-center gap-3">
-          <span
-            className={`tabular-nums text-sm font-semibold ${lowTime ? "text-destructive" : ""}`}
-          >
-            ⏱ {mm}:{ss}
-          </span>
-        </div>
-      </div>
-
-      {/* Anti-cheat notice — collapsed to a slim persistent strip (was a tall
-          block) so the question gets more room; full detail behind "Details". */}
-      <details className="group mb-4 rounded-md border border-amber-300 bg-amber-50 px-3 py-2 text-xs text-amber-900 dark:border-amber-900/60 dark:bg-amber-950/40 dark:text-amber-200">
-        <summary className="flex cursor-pointer list-none items-center gap-2 font-medium [&::-webkit-details-marker]:hidden">
-          <TriangleAlert className="size-4 shrink-0" />
-          <span className="min-w-0 flex-1 truncate">
-            Stay on this screen — leaving closes your exam (one warning only).
-          </span>
-          <span className="shrink-0 underline group-open:hidden">Details</span>
-          <span className="hidden shrink-0 underline group-open:inline">Less</span>
-        </summary>
-        <div className="mt-2 leading-relaxed">
-          Pressing <Kbd>Alt + Tab</Kbd> or <Kbd>Cmd + Tab</Kbd>, switching apps, or
-          minimising the window will close your exam. You get{" "}
-          <strong>one warning</strong> — the next time, your exam is submitted
-          automatically and <strong>cannot be resumed</strong>. Copying is disabled.
-        </div>
-      </details>
-
-      {/* Desktop fills the width: the question sits in a wide main column with the
-          palette as a persistent right sidebar. On mobile it stacks — the question
-          first, then the navigator below. */}
-      <div className="lg:grid lg:grid-cols-[minmax(0,1fr)_20rem] lg:items-start lg:gap-6">
-        {/* Main column — question + per-question actions + navigation. */}
-        <div className="min-w-0">
-
-      {/* Question */}
-      <Card>
-        <CardContent className="grid gap-4 pt-6">
-          {q.passage && (
-            <div className="bg-muted/40 rounded border-l-4 p-3 text-sm">
-              {q.passage.title && <p className="font-semibold">{q.passage.title}</p>}
-              <RichContent content={q.passage.body} />
-            </div>
-          )}
-          <div className="flex gap-2.5 font-medium">
-            <span className="text-primary bg-primary/10 h-fit shrink-0 rounded-md px-2 py-0.5 text-sm font-bold tabular-nums">
-              Q{index + 1}
-            </span>
-            <div className="min-w-0 flex-1">
-              <RichContent content={q.stem} />
-            </div>
-          </div>
-          {q.stem_image_url && (
-            // eslint-disable-next-line @next/next/no-img-element
-            <img src={q.stem_image_url} alt="" className="max-h-60 rounded" />
-          )}
-          <div className="grid gap-2">
-            {q.options.map((o) => {
-              const sel = (answers[q.question_id] ?? []).includes(o.id);
-              return (
-                <button
-                  key={o.id}
-                  onClick={() => choose(q, o.id)}
-                  className={`flex items-start gap-3 rounded-md border p-3 text-left text-sm transition ${
-                    sel ? "border-primary bg-primary/5" : "hover:border-primary/40"
-                  }`}
-                >
-                  <span
-                    className={`mt-0.5 flex size-5 shrink-0 items-center justify-center rounded-full border text-xs ${
-                      sel ? "border-primary bg-primary text-primary-foreground" : ""
-                    }`}
-                  >
-                    {sel ? "✓" : ""}
-                  </span>
-                  <RichContent content={o.label} inline />
-                </button>
-              );
-            })}
-          </div>
-          {q.answer_type === "multi" && (
-            <p className="text-muted-foreground text-xs">More than one answer may be correct.</p>
-          )}
-        </CardContent>
-      </Card>
-
-      {/* Action bar — question actions (Clear / Mark) on the left, navigation on
-          the right. All four sit on ONE line on desktop; on mobile they stack as
-          two 2-column rows (actions, then nav) with shortened labels so nothing
-          overflows at ~320px. */}
-      <div className="mt-4 flex flex-col gap-2 sm:flex-row sm:items-center sm:justify-between sm:gap-3">
-        {/* Per-question actions — Clear response (un-answer, so a student can dodge
-            the negative mark) + Mark for review (violet palette flag). */}
-        <div className="grid grid-cols-2 gap-2 sm:flex sm:gap-3">
-          <Button
-            variant="outline"
-            size="sm"
-            onClick={() => clearAnswer(q)}
-            disabled={!answered(q.question_id)}
-          >
-            <Eraser /> Clear<span className="hidden sm:inline">&nbsp;response</span>
-          </Button>
-          <Button
-            variant="outline"
-            size="sm"
-            aria-pressed={marked.has(q.question_id)}
-            onClick={() => toggleMark(q.question_id)}
-            className={
-              marked.has(q.question_id)
-                ? "border-violet-400 bg-violet-100 text-violet-700 hover:bg-violet-100 hover:text-violet-700 dark:border-violet-700 dark:bg-violet-950/50 dark:text-violet-300 dark:hover:bg-violet-950/50"
-                : ""
-            }
-          >
-            <Flag /> {marked.has(q.question_id) ? "Marked" : "Mark"}
-            <span className="hidden sm:inline">&nbsp;for review</span>
-          </Button>
-        </div>
-
-        {/* Navigation between questions. Submit lives in the navigator panel so
-            it's reachable from any question (no need to walk to the last one). */}
-        <div className="grid grid-cols-2 gap-2 sm:flex sm:gap-3">
-          <Button
-            variant="outline"
-            size="sm"
-            disabled={index === 0}
-            onClick={() => goTo(index - 1)}
-          >
-            Previous
-          </Button>
-          <Button
-            size="sm"
-            disabled={index === questions.length - 1}
-            onClick={() => goTo(index + 1)}
-          >
-            Next
-          </Button>
-        </div>
-      </div>
-
-        </div>
-        {/* Palette sidebar — legend + accordion of subject sections. On mobile it
-            sits below the question; on desktop it is a sticky right rail. */}
-        <aside className="mt-6 lg:sticky lg:top-20 lg:mt-0">
-          {/* Summary counts double as the legend. */}
-          <div className="mb-2 grid grid-cols-2 gap-2 text-xs">
-            <div className="flex items-center gap-2 rounded-md border p-2">
-              <span className="size-3 shrink-0 rounded-sm bg-emerald-500" />
-              <span className="tabular-nums font-semibold">{answeredCount}</span>
-              <span className="text-muted-foreground">Answered</span>
-            </div>
-            <div className="flex items-center gap-2 rounded-md border p-2">
-              <span className="size-3 shrink-0 rounded-sm bg-violet-500" />
-              <span className="tabular-nums font-semibold">{markedCount}</span>
-              <span className="text-muted-foreground">Marked</span>
-            </div>
-            <div className="flex items-center gap-2 rounded-md border p-2">
-              <span className="size-3 shrink-0 rounded-sm border-2 border-amber-400 bg-amber-50 dark:bg-amber-950/40" />
-              <span className="tabular-nums font-semibold">{seenCount}</span>
-              <span className="text-muted-foreground">Seen</span>
-            </div>
-            <div className="flex items-center gap-2 rounded-md border p-2">
-              <span className="bg-muted size-3 shrink-0 rounded-sm border" />
-              <span className="tabular-nums font-semibold">{notVisitedCount}</span>
-              <span className="text-muted-foreground">Left</span>
-            </div>
-          </div>
-
-          {/* Collapse / expand every section at once (sectioned papers only). */}
-          {multiSection && (
-            <div className="mb-2 flex justify-end">
-              <button
-                type="button"
-                onClick={() =>
-                  setCollapsed((prev) =>
-                    prev.size >= bands.length ? new Set() : new Set(bands.map((b) => b.id)),
-                  )
-                }
-                className="text-primary text-xs font-medium hover:underline"
-              >
-                {collapsed.size >= bands.length ? "Expand all" : "Collapse all"}
-              </button>
-            </div>
-          )}
-
-          <div className="bg-muted/30 max-h-[22rem] overflow-y-auto rounded-md border p-2 lg:max-h-[calc(100vh-16rem)]">
-            {bands.map((band) => {
-              const hasCurrent = band.items.some((it) => it.i === index);
-              // A section is open unless collapsed — but the one holding the current
-              // question is always shown, so "where am I" can never be hidden.
-              const open = !multiSection || !collapsed.has(band.id) || hasCurrent;
-              return (
-                <div key={band.id}>
-                  {/* Subject header — a tap-to-collapse accordion row (sectioned
-                      papers only); chevron rotates, count shows answered/total. */}
-                  {multiSection && band.label && (
-                    <button
-                      type="button"
-                      onClick={() => toggleSection(band.id)}
-                      aria-expanded={open}
-                      className="bg-primary/10 text-primary sticky top-0 z-10 mb-2 flex w-full items-center justify-between gap-2 rounded-sm border-l-4 border-primary px-2 py-1.5 text-xs font-bold tracking-wide uppercase backdrop-blur"
-                    >
-                      <span className="flex min-w-0 items-center gap-1.5">
-                        <ChevronDown
-                          className={`size-3.5 shrink-0 transition-transform ${open ? "" : "-rotate-90"}`}
-                        />
-                        <span className="truncate">{band.label}</span>
-                      </span>
-                      <span className="tabular-nums whitespace-nowrap">
-                        {band.items.filter(({ qq }) => answered(qq.question_id)).length}/
-                        {band.items.length}
-                      </span>
-                    </button>
-                  )}
-                  {open && (
-                    <div className="mb-2 grid grid-cols-[repeat(auto-fill,minmax(2rem,1fr))] gap-1.5">
-                      {band.items.map(({ qq, i }) => {
-                        const mk = marked.has(qq.question_id);
-                        const ans = answered(qq.question_id);
-                        const sn = seen.has(qq.question_id);
-                        return (
-                          <button
-                            key={qq.question_id}
-                            ref={i === index ? currentCellRef : null}
-                            onClick={() => goTo(i)}
-                            className={`relative flex aspect-square items-center justify-center rounded-md border text-xs font-medium tabular-nums transition ${
-                              mk
-                                ? "border-violet-500 bg-violet-500 text-white dark:border-violet-600 dark:bg-violet-600"
-                                : ans
-                                  ? "border-emerald-500 bg-emerald-500 text-white dark:border-emerald-600 dark:bg-emerald-600"
-                                  : sn
-                                    ? "border-amber-400 bg-amber-50 text-amber-700 dark:border-amber-700 dark:bg-amber-950/40 dark:text-amber-300"
-                                    : "bg-background"
-                            } ${i === index ? "ring-primary border-primary ring-2" : ""}`}
-                          >
-                            {i + 1}
-                            {/* Corner badge: a flag when marked, else a tick when
-                                answered — so state reads even in greyscale. */}
-                            {mk ? (
-                              <span className="bg-background absolute -top-1 -right-1 flex size-3.5 items-center justify-center rounded-full text-violet-600 dark:bg-background">
-                                <Flag className="size-2.5" strokeWidth={3} />
-                              </span>
-                            ) : ans ? (
-                              <span className="bg-background absolute -top-1 -right-1 flex size-3.5 items-center justify-center rounded-full text-emerald-600 dark:bg-background">
-                                <Check className="size-2.5" strokeWidth={3.5} />
-                              </span>
-                            ) : null}
-                          </button>
-                        );
-                      })}
-                    </div>
-                  )}
-                </div>
-              );
-            })}
-          </div>
-
-          {/* Submit lives in the navigator so it's reachable from ANY question —
-              always enabled; the confirmation dialog guards accidental taps and
-              shows the attempted / marked / unanswered breakdown. */}
-          <Button
-            onClick={() => setConfirmOpen(true)}
-            disabled={submitting}
-            className="mt-3 w-full bg-emerald-600 font-semibold text-white shadow-sm hover:bg-emerald-700 dark:bg-emerald-600 dark:hover:bg-emerald-500"
-          >
-            <CheckCircle2 /> {submitting ? "Submitting…" : "Submit exam"}
-          </Button>
-        </aside>
-      </div>
-
-      {/* Submit confirmation */}
-      <Dialog open={confirmOpen} onOpenChange={setConfirmOpen}>
-        <DialogContent className="sm:max-w-md">
-          <DialogHeader>
-            <DialogTitle>Submit exam?</DialogTitle>
-          </DialogHeader>
-          {(() => {
-            const total = questions.length;
-            const attempted = questions.filter((qq) => answered(qq.question_id)).length;
-            const unanswered = total - attempted;
-            const markedForReview = questions.filter((qq) => marked.has(qq.question_id)).length;
-            const allDone = unanswered === 0;
-            const pct = total ? Math.round((attempted / total) * 100) : 0;
-            // Breakdown rows so the student can weigh submitting now vs. going back.
-            // The whole row — dot, label and value — carries the state colour.
-            const rows = [
-              { label: "Attempted", value: attempted, dot: "bg-emerald-500", text: "text-emerald-700 dark:text-emerald-400" },
-              { label: "Marked for review", value: markedForReview, dot: "bg-violet-500", text: "text-violet-700 dark:text-violet-400" },
-              {
-                label: "Unanswered",
-                value: unanswered,
-                dot: "bg-amber-500",
-                text: unanswered > 0 ? "text-amber-700 dark:text-amber-400" : "text-muted-foreground",
-              },
-            ];
-            return (
-              <div className="space-y-4">
-                <div className="flex items-center gap-3">
-                  <span
-                    className={
-                      allDone
-                        ? "flex size-9 shrink-0 items-center justify-center rounded-full bg-emerald-100 text-emerald-600 dark:bg-emerald-950 dark:text-emerald-400"
-                        : "flex size-9 shrink-0 items-center justify-center rounded-full bg-amber-100 text-amber-600 dark:bg-amber-950 dark:text-amber-400"
-                    }
-                  >
-                    {allDone ? <CheckCircle2 className="size-5" /> : <TriangleAlert className="size-5" />}
-                  </span>
-                  <p className="min-w-0 flex-1 text-sm">
-                    {allDone ? (
-                      <>You&apos;ve answered <strong>every question</strong>.</>
-                    ) : (
-                      <>
-                        You still have{" "}
-                        <span className="font-semibold text-amber-700 dark:text-amber-400">
-                          {unanswered} unanswered
-                        </span>
-                        {markedForReview > 0 && (
-                          <>
-                            {" "}
-                            and{" "}
-                            <span className="font-semibold text-violet-700 dark:text-violet-400">
-                              {markedForReview} marked for review
-                            </span>
-                          </>
-                        )}
-                        .
-                      </>
-                    )}
-                  </p>
-                </div>
-
-                {/* Breakdown table — Total header row, then coloured state rows. */}
-                <div className="overflow-hidden rounded-lg border">
-                  <table className="w-full text-sm">
-                    <tbody>
-                      <tr className="bg-muted/50 border-b">
-                        <th scope="row" className="px-3 py-2 text-left font-semibold">
-                          Total questions
-                        </th>
-                        <td className="px-3 py-2 text-right text-base font-bold tabular-nums">
-                          {total}
-                        </td>
-                      </tr>
-                      {rows.map((r) => (
-                        <tr key={r.label} className="border-b last:border-b-0">
-                          <th scope="row" className={`px-3 py-2 text-left font-medium ${r.text}`}>
-                            <span className="flex items-center gap-2">
-                              <span className={`size-2.5 shrink-0 rounded-full ${r.dot}`} />
-                              {r.label}
-                            </span>
-                          </th>
-                          <td className={`px-3 py-2 text-right text-base font-bold tabular-nums ${r.text}`}>
-                            {r.value}
-                          </td>
-                        </tr>
-                      ))}
-                    </tbody>
-                  </table>
-                </div>
-
-                <div className="bg-muted h-1.5 w-full overflow-hidden rounded-full">
-                  <div
-                    className={allDone ? "h-full rounded-full bg-emerald-500" : "h-full rounded-full bg-primary"}
-                    style={{ width: `${pct}%` }}
-                  />
-                </div>
-
-                <DialogDescription>
-                  Once submitted, you can&apos;t change your answers.
-                  {(unanswered > 0 || markedForReview > 0) &&
-                    " Go back and review them if you're not sure."}
-                </DialogDescription>
+      <div
+        className="mx-auto max-w-6xl px-4 py-4 select-none sm:px-6 print:hidden"
+        onCopy={(e) => e.preventDefault()}
+        onCut={(e) => e.preventDefault()}
+        onContextMenu={(e) => e.preventDefault()}
+      >
+        <AttemptView
+          questions={attemptQuestions}
+          index={index}
+          answers={answers}
+          seen={seen}
+          marked={marked}
+          collapsed={collapsed}
+          timeLeft={timeLeft}
+          submitting={submitting}
+          confirmOpen={confirmOpen}
+          submitLabel="Submit exam"
+          submitTitle="Submit exam?"
+          notice={
+            <details className="group mb-4 rounded-md border border-amber-300 bg-amber-50 px-3 py-2 text-xs text-amber-900 dark:border-amber-900/60 dark:bg-amber-950/40 dark:text-amber-200">
+              <summary className="flex cursor-pointer list-none items-center gap-2 font-medium [&::-webkit-details-marker]:hidden">
+                <TriangleAlert className="size-4 shrink-0" />
+                <span className="min-w-0 flex-1 truncate">
+                  Stay on this screen — leaving closes your exam (one warning only).
+                </span>
+                <span className="shrink-0 underline group-open:hidden">Details</span>
+                <span className="hidden shrink-0 underline group-open:inline">Less</span>
+              </summary>
+              <div className="mt-2 leading-relaxed">
+                Pressing <Kbd>Alt + Tab</Kbd> or <Kbd>Cmd + Tab</Kbd>, switching apps, or minimising
+                the window will close your exam. You get <strong>one warning</strong> — the next time,
+                your exam is submitted automatically and <strong>cannot be resumed</strong>. Copying
+                is disabled.
               </div>
-            );
-          })()}
-          <DialogFooter className="gap-2">
-            <Button variant="outline" onClick={() => setConfirmOpen(false)}>
-              Go back &amp; review
-            </Button>
-            <Button
-              disabled={submitting}
-              onClick={() => {
-                setConfirmOpen(false);
-                doSubmit();
-              }}
-            >
-              {submitting ? "Submitting…" : "Submit exam"}
-            </Button>
-          </DialogFooter>
-        </DialogContent>
-      </Dialog>
+            </details>
+          }
+          onChoose={(aq, oid) => {
+            const qq = qById.get(aq.questionId);
+            if (qq) choose(qq, oid);
+          }}
+          onGoTo={goTo}
+          onClear={(aq) => {
+            const qq = qById.get(aq.questionId);
+            if (qq) clearAnswer(qq);
+          }}
+          onToggleMark={toggleMark}
+          onToggleSection={toggleSection}
+          onToggleCollapseAll={() =>
+            setCollapsed((prev) => (prev.size >= sectionIds.length ? new Set() : new Set(sectionIds)))
+          }
+          onOpenConfirm={() => setConfirmOpen(true)}
+          onCloseConfirm={() => setConfirmOpen(false)}
+          onSubmit={() => {
+            setConfirmOpen(false);
+            doSubmit();
+          }}
+        />
+      </div>
 
       {/* First switch-away warning. The second leave auto-submits (see effect). */}
       <Dialog open={warnOpen} onOpenChange={setWarnOpen}>
         <DialogContent>
           <DialogHeader>
-            <DialogTitle>Don’t leave the exam</DialogTitle>
+            <DialogTitle>Don&rsquo;t leave the exam</DialogTitle>
           </DialogHeader>
           <div className="flex items-start gap-3">
             <span className="flex size-10 shrink-0 items-center justify-center rounded-full bg-amber-100 text-amber-600 dark:bg-amber-950 dark:text-amber-400">
@@ -1091,10 +725,9 @@ export function AttemptRunner({
             </span>
             <DialogDescription className="flex-1">
               You switched away from the exam window. This is your{" "}
-              <strong className="font-medium text-foreground">only warning</strong> — if
-              you leave again (Alt+Tab, Cmd+Tab, switching apps, or minimising the
-              window), your exam will be submitted automatically and you will not be
-              able to resume.
+              <strong className="text-foreground font-medium">only warning</strong> — if you leave
+              again (Alt+Tab, Cmd+Tab, switching apps, or minimising the window), your exam will be
+              submitted automatically and you will not be able to resume.
             </DialogDescription>
           </div>
           <DialogFooter>
@@ -1102,7 +735,6 @@ export function AttemptRunner({
           </DialogFooter>
         </DialogContent>
       </Dialog>
-    </div>
     </>
   );
 }
