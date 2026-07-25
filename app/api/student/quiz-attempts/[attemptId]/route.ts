@@ -71,7 +71,29 @@ export async function GET(_req: NextRequest, { params }: { params: Promise<{ att
   const questions = [...byQ.values()].sort((a, b) => a.position - b.position);
   if (questions.length === 0)
     return NextResponse.json({ error: "Attempt not found" }, { status: 404 });
-  return NextResponse.json({ questions });
+
+  // The attempt's start time + the chapter's time limit drive the runner's timer.
+  // chapter_quiz_attempt is self-readable (RLS); duration defaults to 30 min.
+  const { data: att } = await supabase
+    .from("chapter_quiz_attempt")
+    .select("started_at, chapter_id")
+    .eq("id", attemptId)
+    .maybeSingle();
+  let durationMinutes = 30;
+  if (att?.chapter_id) {
+    const { data: cfg } = await supabase
+      .from("chapter_quiz")
+      .select("duration_minutes")
+      .eq("chapter_id", att.chapter_id)
+      .eq("status", "active")
+      .maybeSingle();
+    durationMinutes = (cfg?.duration_minutes as number | null) ?? 30;
+  }
+  return NextResponse.json({
+    questions,
+    startedAt: att?.started_at ?? null,
+    durationMinutes,
+  });
 }
 
 export async function PATCH(req: NextRequest, { params }: { params: Promise<{ attemptId: string }> }) {

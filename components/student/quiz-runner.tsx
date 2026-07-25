@@ -1,12 +1,12 @@
 "use client";
 
-// Lightweight chapter-quiz runner: loads the attempt's questions, tracks answers,
-// autosaves (debounced), and submits for an immediate score. Modeled on the exam
-// attempt runner but slimmed down — no timer/anti-cheat; a quiz is available the
-// moment its chapter is completed. Reads/writes /api/student/quiz-attempts/[id].
+// Chapter-quiz runner: loads the attempt's questions, tracks answers, autosaves
+// (debounced), and submits for an immediate score. Time-bound (default 30 min,
+// auto-submit on timeout) and integrity-guarded: leaving the tab auto-submits the
+// attempt, so students take it responsibly. Reads/writes /api/student/quiz-attempts/[id].
 import { useCallback, useEffect, useRef, useState } from "react";
 import Link from "next/link";
-import { Loader2 } from "lucide-react";
+import { Loader2, TimerReset, AlertTriangle } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { RichContent } from "@/components/exam/RichContent";
@@ -30,7 +30,15 @@ export function QuizRunner({ attemptId }: { attemptId: string }) {
   const [error, setError] = useState("");
   const [submitting, setSubmitting] = useState(false);
   const [result, setResult] = useState<Result | null>(null);
+  const [deadline, setDeadline] = useState<number | null>(null);
+  const [remaining, setRemaining] = useState<number | null>(null);
+  const [autoReason, setAutoReason] = useState("");
   const saveTimer = useRef<ReturnType<typeof setTimeout> | null>(null);
+  const doneRef = useRef(false); // guards against double / re-entrant submit
+  const answersRef = useRef(answers);
+  useEffect(() => {
+    answersRef.current = answers;
+  }, [answers]);
 
   const url = `/api/student/quiz-attempts/${attemptId}`;
 
@@ -47,6 +55,9 @@ export function QuizRunner({ attemptId }: { attemptId: string }) {
         const qs = (d.questions ?? []) as Question[];
         setQuestions(qs);
         setAnswers(Object.fromEntries(qs.map((q) => [q.position, q.selected ?? []])));
+        if (d.startedAt && d.durationMinutes) {
+          setDeadline(new Date(d.startedAt).getTime() + d.durationMinutes * 60000);
+        }
       })
       .catch((e) => {
         if (!cancelled) setError(String(e));
@@ -90,32 +101,63 @@ export function QuizRunner({ attemptId }: { attemptId: string }) {
     });
   }
 
-  async function submit() {
-    setError("");
-    setSubmitting(true);
-    // Flush any pending autosave first so the graded answers are current.
-    if (saveTimer.current) clearTimeout(saveTimer.current);
-    try {
-      await fetch(url, {
-        method: "PATCH",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({
-          answers: Object.entries(answers).map(([position, option_ids]) => ({
-            position: Number(position),
-            option_ids,
-          })),
-        }),
-      });
-      const res = await fetch(`${url}/submit`, { method: "POST" });
-      const json = await res.json().catch(() => ({}));
-      if (!res.ok) throw new Error(json.error ?? "Could not submit");
-      setResult(json as Result);
-    } catch (e) {
-      setError((e as Error).message);
-    } finally {
-      setSubmitting(false);
-    }
-  }
+  // Single finalize path used by the Submit button, the timer, and the tab-switch
+  // guard. doneRef makes it idempotent; reads answersRef so it's stable.
+  const finalize = useCallback(
+    async (reason?: string) => {
+      if (doneRef.current) return;
+      doneRef.current = true;
+      if (reason) setAutoReason(reason);
+      setError("");
+      setSubmitting(true);
+      if (saveTimer.current) clearTimeout(saveTimer.current);
+      try {
+        await fetch(url, {
+          method: "PATCH",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify({
+            answers: Object.entries(answersRef.current).map(([position, option_ids]) => ({
+              position: Number(position),
+              option_ids,
+            })),
+          }),
+        });
+        const res = await fetch(`${url}/submit`, { method: "POST" });
+        const json = await res.json().catch(() => ({}));
+        if (!res.ok) throw new Error(json.error ?? "Could not submit");
+        setResult(json as Result);
+      } catch (e) {
+        setError((e as Error).message);
+        doneRef.current = false; // allow a retry on failure
+      } finally {
+        setSubmitting(false);
+      }
+    },
+    [url],
+  );
+
+  // Countdown → auto-submit when time runs out.
+  useEffect(() => {
+    if (deadline == null || result) return;
+    const tick = () => {
+      const rem = deadline - Date.now();
+      setRemaining(rem);
+      if (rem <= 0) finalize("time");
+    };
+    tick();
+    const id = setInterval(tick, 1000);
+    return () => clearInterval(id);
+  }, [deadline, result, finalize]);
+
+  // Integrity guard: leaving the tab (switch / minimize) auto-submits the attempt.
+  useEffect(() => {
+    if (result) return;
+    const onHide = () => {
+      if (document.hidden) finalize("tab");
+    };
+    document.addEventListener("visibilitychange", onHide);
+    return () => document.removeEventListener("visibilitychange", onHide);
+  }, [result, finalize]);
 
   if (error && !questions)
     return (
@@ -151,6 +193,13 @@ export function QuizRunner({ attemptId }: { attemptId: string }) {
             You scored <b>{pct}%</b> ({result.score} / {result.total_marks}) · pass mark{" "}
             {result.pass_pct}%
           </p>
+          {autoReason && (
+            <p className="mt-2 text-xs font-medium">
+              {autoReason === "tab"
+                ? "Submitted automatically because you left the assessment tab."
+                : "Submitted automatically — the 30-minute time limit ran out."}
+            </p>
+          )}
         </div>
         <Button asChild>
           <Link href="/student/quizzes">Back to assessments</Link>
@@ -161,14 +210,40 @@ export function QuizRunner({ attemptId }: { attemptId: string }) {
 
   const answeredCount = Object.values(answers).filter((a) => a.length > 0).length;
 
+  const secs = remaining == null ? null : Math.max(0, Math.floor(remaining / 1000));
+  const clock = secs == null ? null : `${Math.floor(secs / 60)}:${String(secs % 60).padStart(2, "0")}`;
+  const lowTime = secs != null && secs <= 60;
+
   return (
     <div className="space-y-5">
-      <div className="flex items-center justify-between">
+      <div className="flex flex-wrap items-center justify-between gap-2">
         <h1 className="text-xl font-bold tracking-tight">Assessment</h1>
-        <span className="text-muted-foreground text-sm">
-          {answeredCount}/{questions.length} answered
+        <div className="flex items-center gap-3">
+          <span className="text-muted-foreground text-sm">
+            {answeredCount}/{questions.length} answered
+          </span>
+          {clock && (
+            <span
+              className={`inline-flex items-center gap-1.5 rounded-md border px-2 py-1 text-sm font-semibold tabular-nums ${
+                lowTime
+                  ? "border-rose-200 bg-rose-50 text-rose-700 dark:border-rose-900 dark:bg-rose-950 dark:text-rose-300"
+                  : "text-foreground"
+              }`}
+            >
+              <TimerReset className="size-4" /> {clock}
+            </span>
+          )}
+        </div>
+      </div>
+
+      <div className="flex items-start gap-2 rounded-md border border-amber-200 bg-amber-50 px-3 py-2 text-xs text-amber-800 dark:border-amber-900 dark:bg-amber-950 dark:text-amber-200">
+        <AlertTriangle className="mt-0.5 size-4 shrink-0" />
+        <span>
+          Stay on this tab — <b>switching tabs or leaving submits your assessment automatically</b>.
+          You have 30 minutes; it auto-submits when time runs out.
         </span>
       </div>
+
       {error && (
         <p className="text-destructive bg-destructive/10 rounded-md border border-destructive/20 px-3 py-2 text-sm">
           {error}
@@ -220,7 +295,7 @@ export function QuizRunner({ attemptId }: { attemptId: string }) {
       ))}
 
       <div className="flex items-center gap-3">
-        <Button onClick={submit} disabled={submitting}>
+        <Button onClick={() => finalize()} disabled={submitting}>
           {submitting ? (
             <>
               <Loader2 className="size-4 animate-spin" /> Submitting…
