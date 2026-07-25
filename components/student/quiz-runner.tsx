@@ -1,17 +1,25 @@
 "use client";
 
-// Chapter-quiz runner: loads the attempt's questions, tracks answers, autosaves
-// (debounced), and submits for an immediate score. Time-bound (default 30 min,
-// auto-submit on timeout) and integrity-guarded: leaving the tab auto-submits the
-// attempt, so students take it responsibly. Reads/writes /api/student/quiz-attempts/[id].
+// Chapter-quiz runner. Reuses the shared exam-style <AttemptView> (question-by-
+// question + right-side number palette) so an assessment looks and behaves exactly
+// like an exam. Adds the quiz specifics: a 30-minute countdown (auto-submit on
+// timeout) and a one-warning tab-switch guard (leave once → warning, twice →
+// auto-submit). Data via /api/student/quiz-attempts/[id]; grades inline.
 import { useCallback, useEffect, useRef, useState } from "react";
 import Link from "next/link";
-import { Loader2, TimerReset, AlertTriangle } from "lucide-react";
+import { Loader2, TriangleAlert } from "lucide-react";
 import { Button } from "@/components/ui/button";
-import { Card, CardContent } from "@/components/ui/card";
-import { RichContent } from "@/components/exam/RichContent";
+import {
+  Dialog,
+  DialogContent,
+  DialogDescription,
+  DialogFooter,
+  DialogHeader,
+  DialogTitle,
+} from "@/components/ui/dialog";
+import { AttemptView, type AttemptQuestion } from "@/components/exam/attempt-view";
 
-type Question = {
+type ApiQuestion = {
   position: number;
   questionId: string;
   stem: string;
@@ -20,22 +28,28 @@ type Question = {
   options: { id: string; label: string }[];
   selected: string[];
 };
-
 type Result = { score: number; total_marks: number; passed: boolean; pass_pct: number };
 
 export function QuizRunner({ attemptId }: { attemptId: string }) {
-  const [questions, setQuestions] = useState<Question[] | null>(null);
-  // answers keyed by question position → selected option ids
-  const [answers, setAnswers] = useState<Record<number, string[]>>({});
-  const [error, setError] = useState("");
-  const [submitting, setSubmitting] = useState(false);
-  const [result, setResult] = useState<Result | null>(null);
+  const [questions, setQuestions] = useState<AttemptQuestion[] | null>(null);
+  const [answers, setAnswers] = useState<Record<string, string[]>>({});
+  const [seen, setSeen] = useState<Set<string>>(new Set());
+  const [marked, setMarked] = useState<Set<string>>(new Set());
+  const [index, setIndex] = useState(0);
+  const [timeLeft, setTimeLeft] = useState<number | null>(null);
   const [deadline, setDeadline] = useState<number | null>(null);
-  const [remaining, setRemaining] = useState<number | null>(null);
+  const [submitting, setSubmitting] = useState(false);
+  const [confirmOpen, setConfirmOpen] = useState(false);
+  const [warnOpen, setWarnOpen] = useState(false);
+  const [result, setResult] = useState<Result | null>(null);
   const [autoReason, setAutoReason] = useState("");
+  const [error, setError] = useState("");
+
   const saveTimer = useRef<ReturnType<typeof setTimeout> | null>(null);
-  const doneRef = useRef(false); // guards against double / re-entrant submit
+  const doneRef = useRef(false);
   const answersRef = useRef(answers);
+  const posByQid = useRef<Record<string, number>>({});
+  const tabAwayRef = useRef(0);
   useEffect(() => {
     answersRef.current = answers;
   }, [answers]);
@@ -52,9 +66,22 @@ export function QuizRunner({ attemptId }: { attemptId: string }) {
           setError(d.error);
           return;
         }
-        const qs = (d.questions ?? []) as Question[];
+        const api = (d.questions ?? []) as ApiQuestion[];
+        const qs: AttemptQuestion[] = api.map((q) => ({
+          position: q.position,
+          questionId: q.questionId,
+          sectionId: "quiz", // single section — no accordion in the palette
+          sectionLabel: null,
+          answerType: q.answerType,
+          stem: q.stem,
+          stemImageUrl: q.stemImageUrl,
+          passage: null,
+          options: q.options,
+        }));
+        posByQid.current = Object.fromEntries(qs.map((q) => [q.questionId, q.position]));
         setQuestions(qs);
-        setAnswers(Object.fromEntries(qs.map((q) => [q.position, q.selected ?? []])));
+        setAnswers(Object.fromEntries(api.map((q) => [q.questionId, q.selected ?? []])));
+        if (qs[0]) setSeen(new Set([qs[0].questionId]));
         if (d.startedAt && d.durationMinutes) {
           setDeadline(new Date(d.startedAt).getTime() + d.durationMinutes * 60000);
         }
@@ -67,11 +94,11 @@ export function QuizRunner({ attemptId }: { attemptId: string }) {
     };
   }, [url]);
 
-  const save = useCallback(
-    (next: Record<number, string[]>) => {
+  const persist = useCallback(
+    (next: Record<string, string[]>) => {
       const payload = {
-        answers: Object.entries(next).map(([position, option_ids]) => ({
-          position: Number(position),
+        answers: Object.entries(next).map(([qid, option_ids]) => ({
+          position: posByQid.current[qid],
           option_ids,
         })),
       };
@@ -84,30 +111,59 @@ export function QuizRunner({ attemptId }: { attemptId: string }) {
     [url],
   );
 
-  function choose(q: Question, optionId: string) {
+  function scheduleSave(next: Record<string, string[]>) {
+    if (saveTimer.current) clearTimeout(saveTimer.current);
+    saveTimer.current = setTimeout(() => persist(next), 700);
+  }
+
+  function choose(q: AttemptQuestion, optionId: string) {
     if (result) return;
     setAnswers((prev) => {
-      const cur = prev[q.position] ?? [];
+      const cur = prev[q.questionId] ?? [];
       const nextSel =
         q.answerType === "single"
           ? [optionId]
           : cur.includes(optionId)
             ? cur.filter((id) => id !== optionId)
             : [...cur, optionId];
-      const next = { ...prev, [q.position]: nextSel };
-      if (saveTimer.current) clearTimeout(saveTimer.current);
-      saveTimer.current = setTimeout(() => save(next), 700);
+      const next = { ...prev, [q.questionId]: nextSel };
+      scheduleSave(next);
+      return next;
+    });
+    setSeen((s) => new Set(s).add(q.questionId));
+  }
+
+  function clearAnswer(q: AttemptQuestion) {
+    if (result) return;
+    setAnswers((prev) => {
+      const next = { ...prev, [q.questionId]: [] };
+      scheduleSave(next);
       return next;
     });
   }
 
-  // Single finalize path used by the Submit button, the timer, and the tab-switch
-  // guard. doneRef makes it idempotent; reads answersRef so it's stable.
+  function goTo(i: number) {
+    const q = questions?.[i];
+    if (!q) return;
+    setIndex(i);
+    setSeen((s) => new Set(s).add(q.questionId));
+  }
+
+  function toggleMark(qid: string) {
+    setMarked((m) => {
+      const n = new Set(m);
+      if (n.has(qid)) n.delete(qid);
+      else n.add(qid);
+      return n;
+    });
+  }
+
   const finalize = useCallback(
     async (reason?: string) => {
       if (doneRef.current) return;
       doneRef.current = true;
       if (reason) setAutoReason(reason);
+      setConfirmOpen(false);
       setError("");
       setSubmitting(true);
       if (saveTimer.current) clearTimeout(saveTimer.current);
@@ -116,8 +172,8 @@ export function QuizRunner({ attemptId }: { attemptId: string }) {
           method: "PATCH",
           headers: { "Content-Type": "application/json" },
           body: JSON.stringify({
-            answers: Object.entries(answersRef.current).map(([position, option_ids]) => ({
-              position: Number(position),
+            answers: Object.entries(answersRef.current).map(([qid, option_ids]) => ({
+              position: posByQid.current[qid],
               option_ids,
             })),
           }),
@@ -128,7 +184,7 @@ export function QuizRunner({ attemptId }: { attemptId: string }) {
         setResult(json as Result);
       } catch (e) {
         setError((e as Error).message);
-        doneRef.current = false; // allow a retry on failure
+        doneRef.current = false;
       } finally {
         setSubmitting(false);
       }
@@ -136,12 +192,12 @@ export function QuizRunner({ attemptId }: { attemptId: string }) {
     [url],
   );
 
-  // Countdown → auto-submit when time runs out.
+  // Countdown → auto-submit at zero.
   useEffect(() => {
     if (deadline == null || result) return;
     const tick = () => {
-      const rem = deadline - Date.now();
-      setRemaining(rem);
+      const rem = Math.max(0, Math.round((deadline - Date.now()) / 1000));
+      setTimeLeft(rem);
       if (rem <= 0) finalize("time");
     };
     tick();
@@ -149,17 +205,14 @@ export function QuizRunner({ attemptId }: { attemptId: string }) {
     return () => clearInterval(id);
   }, [deadline, result, finalize]);
 
-  // Integrity guard: leaving the tab (switch / minimize) is allowed once with a
-  // warning; the second time auto-submits the attempt.
-  const tabAwayRef = useRef(0);
-  const [tabWarned, setTabWarned] = useState(false);
+  // Integrity: leaving the tab warns once, then auto-submits.
   useEffect(() => {
     if (result) return;
     const onHide = () => {
-      if (!document.hidden) return; // count only the tab-away, not the return
+      if (!document.hidden) return;
       tabAwayRef.current += 1;
       if (tabAwayRef.current >= 2) finalize("tab");
-      else setTabWarned(true);
+      else setWarnOpen(true);
     };
     document.addEventListener("visibilitychange", onHide);
     return () => document.removeEventListener("visibilitychange", onHide);
@@ -196,8 +249,7 @@ export function QuizRunner({ attemptId }: { attemptId: string }) {
         >
           <div className="text-3xl font-bold">{result.passed ? "PASS" : "FAIL"}</div>
           <p className="mt-2 text-sm">
-            You scored <b>{pct}%</b> ({result.score} / {result.total_marks}) · pass mark{" "}
-            {result.pass_pct}%
+            You scored <b>{pct}%</b> ({result.score} / {result.total_marks}) · pass mark {result.pass_pct}%
           </p>
           {autoReason && (
             <p className="mt-2 text-xs font-medium">
@@ -214,116 +266,73 @@ export function QuizRunner({ attemptId }: { attemptId: string }) {
     );
   }
 
-  const answeredCount = Object.values(answers).filter((a) => a.length > 0).length;
-
-  const secs = remaining == null ? null : Math.max(0, Math.floor(remaining / 1000));
-  const clock = secs == null ? null : `${Math.floor(secs / 60)}:${String(secs % 60).padStart(2, "0")}`;
-  const lowTime = secs != null && secs <= 60;
-
   return (
-    <div className="space-y-5">
-      <div className="flex flex-wrap items-center justify-between gap-2">
-        <h1 className="text-xl font-bold tracking-tight">Assessment</h1>
-        <div className="flex items-center gap-3">
-          <span className="text-muted-foreground text-sm">
-            {answeredCount}/{questions.length} answered
-          </span>
-          {clock && (
-            <span
-              className={`inline-flex items-center gap-1.5 rounded-md border px-2 py-1 text-sm font-semibold tabular-nums ${
-                lowTime
-                  ? "border-rose-200 bg-rose-50 text-rose-700 dark:border-rose-900 dark:bg-rose-950 dark:text-rose-300"
-                  : "text-foreground"
-              }`}
-            >
-              <TimerReset className="size-4" /> {clock}
+    <div
+      className="select-none"
+      onCopy={(e) => e.preventDefault()}
+      onContextMenu={(e) => e.preventDefault()}
+    >
+      <AttemptView
+        questions={questions}
+        index={index}
+        answers={answers}
+        seen={seen}
+        marked={marked}
+        collapsed={new Set()}
+        timeLeft={timeLeft}
+        submitting={submitting}
+        confirmOpen={confirmOpen}
+        submitLabel="Submit assessment"
+        submitTitle="Submit assessment?"
+        notice={
+          <details className="group mb-4 rounded-md border border-amber-300 bg-amber-50 px-3 py-2 text-xs text-amber-900 dark:border-amber-900/60 dark:bg-amber-950/40 dark:text-amber-200">
+            <summary className="flex cursor-pointer list-none items-center gap-2 font-medium [&::-webkit-details-marker]:hidden">
+              <TriangleAlert className="size-4 shrink-0" />
+              <span className="min-w-0 flex-1 truncate">
+                Stay on this tab — leaving submits your assessment (one warning only). 30-minute limit.
+              </span>
+              <span className="shrink-0 underline group-open:hidden">Details</span>
+              <span className="hidden shrink-0 underline group-open:inline">Less</span>
+            </summary>
+            <div className="mt-2 leading-relaxed">
+              Switching tabs, apps or minimising the window gives <strong>one warning</strong> — the
+              next time, your assessment is submitted automatically. You have{" "}
+              <strong>30 minutes</strong>; it also auto-submits when time runs out. Copying is disabled.
+            </div>
+          </details>
+        }
+        onChoose={choose}
+        onGoTo={goTo}
+        onClear={clearAnswer}
+        onToggleMark={toggleMark}
+        onToggleSection={() => {}}
+        onToggleCollapseAll={() => {}}
+        onOpenConfirm={() => setConfirmOpen(true)}
+        onCloseConfirm={() => setConfirmOpen(false)}
+        onSubmit={() => finalize()}
+      />
+
+      {/* First switch-away warning; the second leave auto-submits. */}
+      <Dialog open={warnOpen} onOpenChange={setWarnOpen}>
+        <DialogContent>
+          <DialogHeader>
+            <DialogTitle>Don&apos;t leave the assessment</DialogTitle>
+          </DialogHeader>
+          <div className="flex items-start gap-3">
+            <span className="flex size-10 shrink-0 items-center justify-center rounded-full bg-amber-100 text-amber-600 dark:bg-amber-950 dark:text-amber-400">
+              <TriangleAlert className="size-5" />
             </span>
-          )}
-        </div>
-      </div>
-
-      <div className="flex items-start gap-2 rounded-md border border-amber-200 bg-amber-50 px-3 py-2 text-xs text-amber-800 dark:border-amber-900 dark:bg-amber-950 dark:text-amber-200">
-        <AlertTriangle className="mt-0.5 size-4 shrink-0" />
-        <span>
-          Stay on this tab. <b>Leaving gives one warning — the second time submits your assessment
-          automatically.</b> You have 30 minutes; it also auto-submits when time runs out.
-        </span>
-      </div>
-
-      {tabWarned && (
-        <div className="flex items-start gap-2 rounded-md border border-rose-300 bg-rose-50 px-3 py-2 text-sm font-medium text-rose-800 dark:border-rose-800 dark:bg-rose-950 dark:text-rose-200">
-          <AlertTriangle className="mt-0.5 size-4 shrink-0" />
-          <span>
-            Warning: you left the assessment tab. Leave again and your assessment will be submitted
-            automatically.
-          </span>
-        </div>
-      )}
-
-      {error && (
-        <p className="text-destructive bg-destructive/10 rounded-md border border-destructive/20 px-3 py-2 text-sm">
-          {error}
-        </p>
-      )}
-
-      {questions.map((q, i) => (
-        <Card key={q.questionId}>
-          <CardContent className="grid gap-3 pt-6">
-            <div className="flex gap-2">
-              <span className="text-muted-foreground shrink-0 text-sm font-medium">Q{i + 1}.</span>
-              <div className="min-w-0 flex-1">
-                <RichContent content={q.stem} />
-                {q.stemImageUrl && (
-                  // eslint-disable-next-line @next/next/no-img-element
-                  <img src={q.stemImageUrl} alt="" className="mt-2 max-h-64 max-w-full rounded-md border" />
-                )}
-                {q.answerType === "multi" && (
-                  <p className="text-muted-foreground mt-1 text-xs">Select all that apply.</p>
-                )}
-              </div>
-            </div>
-            <div className="grid gap-2">
-              {q.options.map((o) => {
-                const sel = (answers[q.position] ?? []).includes(o.id);
-                return (
-                  <button
-                    key={o.id}
-                    type="button"
-                    onClick={() => choose(q, o.id)}
-                    className={`flex items-start gap-3 rounded-md border p-3 text-left text-sm transition ${
-                      sel ? "border-primary bg-primary/5" : "hover:border-primary/40"
-                    }`}
-                  >
-                    <span
-                      className={`mt-0.5 flex size-5 shrink-0 items-center justify-center rounded-full border text-xs ${
-                        sel ? "border-primary bg-primary text-primary-foreground" : ""
-                      }`}
-                    >
-                      {sel ? "✓" : ""}
-                    </span>
-                    <RichContent content={o.label} inline className="flex-1" />
-                  </button>
-                );
-              })}
-            </div>
-          </CardContent>
-        </Card>
-      ))}
-
-      <div className="flex items-center gap-3">
-        <Button onClick={() => finalize()} disabled={submitting}>
-          {submitting ? (
-            <>
-              <Loader2 className="size-4 animate-spin" /> Submitting…
-            </>
-          ) : (
-            "Submit assessment"
-          )}
-        </Button>
-        <Button variant="outline" asChild>
-          <Link href="/student/quizzes">Cancel</Link>
-        </Button>
-      </div>
+            <DialogDescription className="flex-1">
+              You switched away from the assessment. This is your{" "}
+              <strong className="text-foreground font-medium">only warning</strong> — if you leave again
+              (switching tabs or apps, or minimising), your assessment will be submitted automatically.
+            </DialogDescription>
+          </div>
+          <DialogFooter>
+            <Button onClick={() => setWarnOpen(false)}>I understand — continue</Button>
+          </DialogFooter>
+        </DialogContent>
+      </Dialog>
     </div>
   );
 }

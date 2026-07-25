@@ -6,10 +6,18 @@
 // runner. Reads /api/student/quizzes; starts via /api/student/quizzes/attempts.
 import { useEffect, useState } from "react";
 import { useRouter } from "next/navigation";
-import { Loader2 } from "lucide-react";
+import { Loader2, TriangleAlert } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
+import {
+  Dialog,
+  DialogContent,
+  DialogDescription,
+  DialogFooter,
+  DialogHeader,
+  DialogTitle,
+} from "@/components/ui/dialog";
 
 type Quiz = {
   chapter_id: string;
@@ -31,6 +39,8 @@ export function QuizzesHub() {
   const [batches, setBatches] = useState<BatchQuizzes[] | null>(null);
   const [error, setError] = useState("");
   const [starting, setStarting] = useState<string | null>(null);
+  // A new take opens the instructions popup first; resume goes straight in.
+  const [pending, setPending] = useState<{ batchId: string; quiz: Quiz } | null>(null);
 
   useEffect(() => {
     let cancelled = false;
@@ -49,18 +59,26 @@ export function QuizzesHub() {
     };
   }, []);
 
-  async function start(batchId: string, q: Quiz) {
+  function start(batchId: string, q: Quiz) {
     setError("");
+    // Resume goes straight into the existing attempt (its timer is already running);
+    // a fresh take shows the instructions popup first, then creates the attempt.
     if (q.resume_attempt_id) {
       router.push(`/student/quizzes/${q.resume_attempt_id}`);
       return;
     }
-    setStarting(q.chapter_id);
+    setPending({ batchId, quiz: q });
+  }
+
+  async function beginNew() {
+    if (!pending) return;
+    setError("");
+    setStarting(pending.quiz.chapter_id);
     try {
       const res = await fetch("/api/student/quizzes/attempts", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ batch_id: batchId, chapter_id: q.chapter_id }),
+        body: JSON.stringify({ batch_id: pending.batchId, chapter_id: pending.quiz.chapter_id }),
       });
       const json = await res.json().catch(() => ({}));
       if (!res.ok) throw new Error(json.error ?? "Could not start the assessment");
@@ -68,6 +86,7 @@ export function QuizzesHub() {
     } catch (e) {
       setError((e as Error).message);
       setStarting(null);
+      setPending(null);
     }
   }
 
@@ -161,6 +180,42 @@ export function QuizzesHub() {
           </CardContent>
         </Card>
       ))}
+
+      {/* Pre-start instructions — shown before a fresh attempt (not on resume).
+          Exam-style security warning; the timer only starts once they hit Start. */}
+      <Dialog open={!!pending} onOpenChange={(o) => !o && setPending(null)}>
+        <DialogContent className="sm:max-w-md">
+          <DialogHeader>
+            <DialogTitle>{pending?.quiz.chapter_name ?? "Assessment"}</DialogTitle>
+            <DialogDescription>
+              {pending?.quiz.subject_name} · {Math.min(pending?.quiz.question_count ?? 0, 30)} questions
+            </DialogDescription>
+          </DialogHeader>
+          <div className="flex items-start gap-3 rounded-xl border border-amber-300 bg-amber-50 p-3 text-amber-900 dark:border-amber-900/60 dark:bg-amber-950/40 dark:text-amber-200">
+            <TriangleAlert className="size-8 shrink-0" />
+            <p className="text-xs leading-relaxed">
+              Once you start, <strong>leaving this tab or window</strong> — switching tabs/apps or
+              minimising — gives <strong>one warning</strong>; the next time your assessment is
+              submitted automatically. You have <strong>30 minutes</strong>, and it also auto-submits
+              when time runs out. Copying is disabled. You cannot pause once started.
+            </p>
+          </div>
+          <DialogFooter className="gap-2">
+            <Button variant="outline" onClick={() => setPending(null)} disabled={!!starting}>
+              Cancel
+            </Button>
+            <Button onClick={beginNew} disabled={!!starting}>
+              {starting ? (
+                <>
+                  <Loader2 className="size-4 animate-spin" /> Starting…
+                </>
+              ) : (
+                "Start assessment"
+              )}
+            </Button>
+          </DialogFooter>
+        </DialogContent>
+      </Dialog>
     </div>
   );
 }
