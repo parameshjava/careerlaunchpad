@@ -202,7 +202,7 @@ as $$
       and (p_from is null or qa.submitted_at >= p_from)
       and (p_to   is null or qa.submitted_at <  (p_to + 1))
   )
-  select month, null::uuid, null::text, round(avg(pct), 2)
+  select month, null::uuid as subject_id, null::text as subject_name, round(avg(pct), 2) as pct
   from atts group by month
   union all
   select month, subject_id, max(subject_name), round(avg(pct), 2)
