@@ -8,7 +8,7 @@
  * inputs, and the stepper. Flow (how it's saved/submitted) lives in each caller.
  */
 import { useState } from "react";
-import { Check, Plus, MessageSquareWarning, X } from "lucide-react";
+import { Check, Plus, MessageSquareWarning, Eraser } from "lucide-react";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { InfoTooltip } from "@/components/ui/tooltip";
@@ -354,7 +354,7 @@ function Rating({ value, onChange }: { value: number | undefined; onChange: (v: 
           rated ? "text-muted-foreground hover:border-destructive/50 hover:text-destructive" : "cursor-not-allowed opacity-40"
         }`}
       >
-        <X className="size-4" />
+        <Eraser className="size-4" />
       </button>
     </div>
   );
