@@ -116,10 +116,12 @@ export function AttemptView({
 
   return (
     <div>
-      {/* Sticky header. The negative margins bleed its opaque background over the
-          parent's px/py padding so content scrolling underneath is fully masked
-          (the parent must use max-w-6xl px-4 sm:px-6 py-4 — as both callers do). */}
-      <div className="bg-background sticky top-0 z-20 mb-4 -mx-4 -mt-4 flex items-center justify-between gap-4 border-b px-4 pt-4 pb-2 sm:-mx-6 sm:px-6">
+      {/* Sticky header. A solid bg + horizontal bleed (-mx to the parent's px
+          padding) masks content scrolling underneath. NO negative top margin —
+          `-mt` + `sticky top-0` makes the pinned bar ride up and lets a strip of
+          scrolling content peek above it (the "floating Question N/M" bug). The
+          parent supplies the top spacing (max-w-6xl px-4 sm:px-6 py-4). */}
+      <div className="bg-background sticky top-0 z-30 mb-4 -mx-4 flex items-center justify-between gap-4 border-b px-4 pt-4 pb-2 shadow-sm sm:-mx-6 sm:px-6">
         <span className="min-w-0 truncate text-sm font-medium">
           Question {index + 1} / {questions.length}
           {currentSubject && <span className="text-muted-foreground"> · {currentSubject}</span>}
