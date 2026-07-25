@@ -50,6 +50,7 @@ export function QuizRunner({ attemptId }: { attemptId: string }) {
   const answersRef = useRef(answers);
   const posByQid = useRef<Record<string, number>>({});
   const tabAwayRef = useRef(0);
+  const lastLeaveRef = useRef(0); // coalesce blur+visibility from one switch into one strike
   useEffect(() => {
     answersRef.current = answers;
   }, [answers]);
@@ -205,17 +206,28 @@ export function QuizRunner({ attemptId }: { attemptId: string }) {
     return () => clearInterval(id);
   }, [deadline, result, finalize]);
 
-  // Integrity: leaving the tab warns once, then auto-submits.
+  // Integrity: leaving the assessment (switching tabs OR windows/apps, or
+  // minimising) warns once, then auto-submits. Matches the exam — listen to BOTH
+  // window blur and visibilitychange, coalescing the two events one switch fires.
   useEffect(() => {
     if (result) return;
-    const onHide = () => {
-      if (!document.hidden) return;
+    const registerLeave = () => {
+      const now = Date.now();
+      if (now - lastLeaveRef.current < 1500) return; // blur + visibility → one strike
+      lastLeaveRef.current = now;
       tabAwayRef.current += 1;
       if (tabAwayRef.current >= 2) finalize("tab");
       else setWarnOpen(true);
     };
-    document.addEventListener("visibilitychange", onHide);
-    return () => document.removeEventListener("visibilitychange", onHide);
+    const onVisibility = () => {
+      if (document.visibilityState === "hidden") registerLeave();
+    };
+    window.addEventListener("blur", registerLeave);
+    document.addEventListener("visibilitychange", onVisibility);
+    return () => {
+      window.removeEventListener("blur", registerLeave);
+      document.removeEventListener("visibilitychange", onVisibility);
+    };
   }, [result, finalize]);
 
   if (error && !questions)
