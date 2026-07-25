@@ -8,7 +8,7 @@
  * inputs, and the stepper. Flow (how it's saved/submitted) lives in each caller.
  */
 import { useState } from "react";
-import { Check, Plus, MessageSquareWarning } from "lucide-react";
+import { Check, Plus, MessageSquareWarning, Eraser } from "lucide-react";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { InfoTooltip } from "@/components/ui/tooltip";
@@ -176,12 +176,24 @@ export function StepBody({
   );
 
   if (step === 4) return (
-    <Step title="Current Skill Assessment" hint="Rate yourself from 1 (beginner) to 5 (confident).">
+    <Step title="Current Skill Assessment" hint="Rate yourself from 1 (beginner) to 5 (confident) — pick 0 if you don't have the skill, or Clear to remove a rating.">
       <div className="sm:col-span-2 divide-y">
         {refs.skill_assessment_category.map((cat) => (
-          <div key={cat.slug} className="flex items-center justify-between gap-3 py-3">
+          <div
+            key={cat.slug}
+            className="flex flex-col items-start gap-2 py-3 sm:flex-row sm:items-center sm:justify-between sm:gap-3"
+          >
             <span className="text-sm font-medium">{cat.label}</span>
-            <Rating value={f.skill_assessment[cat.slug] ?? 0} onChange={(v) => set("skill_assessment", { ...f.skill_assessment, [cat.slug]: v })} />
+            <Rating
+              value={f.skill_assessment[cat.slug]}
+              onChange={(v) => {
+                const next = { ...f.skill_assessment };
+                // undefined = Clear → drop the key entirely (unrated); 0–5 = set.
+                if (v == null) delete next[cat.slug];
+                else next[cat.slug] = v;
+                set("skill_assessment", next);
+              }}
+            />
           </div>
         ))}
       </div>
@@ -307,21 +319,43 @@ function SelectRef({ value, onChange, options, placeholder = "Select…" }: { va
   );
 }
 
-function Rating({ value, onChange }: { value: number; onChange: (v: number) => void }) {
+// A 0–5 self-rating. `value` is undefined when the category is unrated. 0 means
+// "I don't have this skill" (only the 0 chip lights up); 1–5 fill cumulatively.
+// The Clear (✕) button removes the rating entirely (onChange(undefined)), so a
+// wrong tap is fully reversible — it's disabled while unrated.
+function Rating({ value, onChange }: { value: number | undefined; onChange: (v: number | undefined) => void }) {
+  const rated = value !== undefined;
+  const cell = "flex h-8 w-8 items-center justify-center rounded-md border text-sm font-bold transition";
   return (
-    <div className="flex gap-1.5">
-      {[1, 2, 3, 4, 5].map((n) => (
-        <button
-          key={n}
-          type="button"
-          onClick={() => onChange(n)}
-          className={`h-8 w-8 rounded-md border text-sm font-bold transition ${
-            n <= value ? "border-transparent bg-primary text-primary-foreground" : "bg-background text-muted-foreground hover:border-primary/50"
-          }`}
-        >
-          {n}
-        </button>
-      ))}
+    <div className="flex flex-wrap items-center gap-1.5">
+      {[0, 1, 2, 3, 4, 5].map((n) => {
+        const active = value !== undefined && (n === 0 ? value === 0 : n <= value);
+        return (
+          <button
+            key={n}
+            type="button"
+            onClick={() => onChange(n)}
+            title={n === 0 ? "I don't have this skill" : undefined}
+            className={`${cell} ${
+              active ? "border-transparent bg-primary text-primary-foreground" : "bg-background text-muted-foreground hover:border-primary/50"
+            }`}
+          >
+            {n}
+          </button>
+        );
+      })}
+      <button
+        type="button"
+        onClick={() => onChange(undefined)}
+        disabled={!rated}
+        aria-label="Clear rating"
+        title="Clear rating"
+        className={`${cell} bg-background ${
+          rated ? "text-muted-foreground hover:border-destructive/50 hover:text-destructive" : "cursor-not-allowed opacity-40"
+        }`}
+      >
+        <Eraser className="size-4" />
+      </button>
     </div>
   );
 }

@@ -259,7 +259,10 @@ export function ProfileSummary({
 
   const location = [f.city_village, f.district, f.state].filter(Boolean).join(", ");
   const collegeText = college ? `${college.name}${college.place ? ` — ${college.place}` : ""}` : "";
-  const ratedCats = assessCats.filter((c) => (f.skill_assessment[c.slug] ?? 0) > 0);
+  // Answered categories — includes an explicit 0 ("no skill"); only truly
+  // unrated categories (key absent) are left out. `in` avoids a number-vs-
+  // undefined comparison (noUncheckedIndexedAccess is off).
+  const ratedCats = assessCats.filter((c) => c.slug in f.skill_assessment);
   const pct = profileCompleteness(f as unknown as Record<string, unknown>);
 
   return (
@@ -339,7 +342,11 @@ export function ProfileSummary({
             {ratedCats.map((c) => (
               <div key={c.slug} className="flex items-center justify-between gap-3">
                 <span className="text-sm">{c.label}</span>
-                <RatingDots value={f.skill_assessment[c.slug] ?? 0} />
+                {f.skill_assessment[c.slug] === 0 ? (
+                  <span className="text-muted-foreground text-xs font-medium">No skill</span>
+                ) : (
+                  <RatingDots value={f.skill_assessment[c.slug] ?? 0} />
+                )}
               </div>
             ))}
           </div>

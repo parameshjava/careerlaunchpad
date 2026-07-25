@@ -106,7 +106,14 @@ export const columns: ColumnDef<Student>[] = [
     accessorKey: "stage",
     header: "Status",
     cell: ({ row }) => {
-      const stage = row.getValue("stage") as StudentStage;
+      const { stage, registrationStatus } = row.original;
+      // A registered student who hasn't finished the wizard is a draft, not a
+      // completed registration. Show it distinctly so an empty College column on
+      // an unfinished profile isn't misread as "registered without a college"
+      // (the college is captured in Step 2, which drafts often haven't reached).
+      if (stage === "Registered" && registrationStatus === "in_progress") {
+        return <StatusBadge tone="slate">Draft</StatusBadge>;
+      }
       return <StatusBadge tone={stageTones[stage]}>{stage}</StatusBadge>;
     },
   },
