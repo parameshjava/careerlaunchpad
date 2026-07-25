@@ -3,9 +3,15 @@
 // The exam runner. On mount it calls start_exam_attempt (SECURITY DEFINER RPC),
 // then caches the hydrated paper + answers in localStorage so navigation and
 // answering survive brief disconnects. Answers autosave (debounced) via
-// save_exam_answer; submit calls submit_exam_attempt. One question per screen
-// (mobile-first) with a palette and a hard-stop countdown.
-import { useCallback, useEffect, useRef, useState } from "react";
+// save_exam_answer; submit calls submit_exam_attempt.
+//
+// All the interactive behaviour — one question per screen, the palette, the
+// countdown, and the Alt+Tab / Cmd+Tab leave guard — lives in the shared
+// useQuizEngine (so exams, assessments, and future mock tests behave identically).
+// This file is the exam's data layer: start/resume, localStorage cache, per-answer
+// autosave, the abort-on-second-leave flow, the waiting/closed screens, and print
+// blocking.
+import { useCallback, useEffect, useMemo, useRef, useState } from "react";
 import { useRouter } from "next/navigation";
 import { TriangleAlert } from "lucide-react";
 import { WarningSign } from "../warning-sign";
@@ -21,6 +27,7 @@ import {
 } from "@/components/ui/dialog";
 import { formatDateTime } from "@/lib/format-date";
 import { AttemptView, type AttemptQuestion } from "@/components/exam/attempt-view";
+import { useQuizEngine } from "@/components/quiz/use-quiz-engine";
 import { type SessionPrintMeta } from "./paper-print";
 
 type Option = { id: string; label: string };
@@ -91,62 +98,17 @@ export function AttemptRunner({
   const [waiting, setWaiting] = useState("");
   const [attemptId, setAttemptId] = useState("");
   const [questions, setQuestions] = useState<Question[]>([]);
-  const [answers, setAnswers] = useState<Record<string, string[]>>({});
-  // Question ids the student has landed on — drives the amber "seen but not
-  // answered" palette state. Persisted like answers so it survives a resume.
-  const [seen, setSeen] = useState<Set<string>>(new Set());
-  // Question ids the student flagged with "Mark for review" — a violet palette
-  // state so they can triage and come back. Persisted like `seen`.
-  const [marked, setMarked] = useState<Set<string>>(new Set());
-  // Subject section ids the student has collapsed in the palette accordion.
-  // Empty by default (all expanded); the active section is always force-expanded.
-  const [collapsed, setCollapsed] = useState<Set<string>>(new Set());
-  const [index, setIndex] = useState(0);
-  // (The active-cell scroll-into-view now lives inside <AttemptView>.)
-  // On first load, restore the student's cursor so a resumed student lands
-  // exactly where they left off. Prefer the persisted last_position (server +
-  // cache, survives an abort); fall back to the first unanswered question, then
-  // Q1. Runs once, after questions + answers are loaded.
-  const initedIndexRef = useRef(false);
-  const lastPositionRef = useRef<number | null>(null);
-  useEffect(() => {
-    if (initedIndexRef.current || loading || questions.length === 0) return;
-    initedIndexRef.current = true;
-    const saved = lastPositionRef.current;
-    if (saved != null && saved > 0 && saved < questions.length) {
-      setIndex(saved);
-      return;
-    }
-    const firstUnanswered = questions.findIndex((qq) => !(answers[qq.question_id]?.length));
-    if (firstUnanswered > 0) setIndex(firstUnanswered);
-  }, [loading, questions, answers]);
   const [deadline, setDeadline] = useState<number | null>(null);
-  const [timeLeft, setTimeLeft] = useState<number | null>(null);
   const [submitting, setSubmitting] = useState(false);
-  // Manual submit goes through a confirmation dialog (accidental-tap guard);
-  // the deadline auto-submit calls doSubmit directly.
-  const [confirmOpen, setConfirmOpen] = useState(false);
-
-  // Anti-cheat: leaving the exam window (Alt+Tab / Cmd+Tab / app-switch /
-  // minimise) fires window `blur` / `visibilitychange` — the only signal a web
-  // page gets (the OS switch itself can't be blocked). First leave → warning;
-  // second → auto-submit + no resume. A single switch fires BOTH events, so we
-  // coalesce them within a short window (lastLeaveRef).
-  const [strikes, setStrikes] = useState(0);
-  const [warnOpen, setWarnOpen] = useState(false);
   // null while live; set when the anti-cheat closes the paper. `final` = graded
   // (no resumes left); otherwise the attempt is `aborted` and recoverable.
   const [abortInfo, setAbortInfo] = useState<{ final: boolean; resumeCount: number } | null>(null);
-  const strikesRef = useRef(0);
-  strikesRef.current = strikes;
-  const lastLeaveRef = useRef(0);
-  const suppressLeaveRef = useRef(false); // true while a print dialog is open (see print-block effect)
 
+  const lastPositionRef = useRef<number | null>(null);
   const saveTimers = useRef<Record<string, ReturnType<typeof setTimeout>>>({});
-  // Latest answers, readable inside doSubmit without making it depend on `answers`
-  // (which would re-create the countdown effect on every keystroke).
+  // Latest answers, readable inside doSubmit / the abort flow without depending on
+  // the engine's reactive state. Kept in sync by the adapter + the loader.
   const answersRef = useRef<Record<string, string[]>>({});
-  answersRef.current = answers;
 
   const persist = useCallback(
     (next: Partial<Cache>) => {
@@ -159,6 +121,168 @@ export function AttemptRunner({
     },
     [cacheKey],
   );
+
+  // Map the exam's questions into the shared AttemptView shape, resolving each
+  // section's label from the payload, else meta.sections in paper order.
+  const attemptQuestions: AttemptQuestion[] = useMemo(() => {
+    const bands: { id: string; title: string | null; items: Question[] }[] = [];
+    questions.forEach((qq) => {
+      const last = bands[bands.length - 1];
+      if (last && last.id === qq.section_id) last.items.push(qq);
+      else bands.push({ id: qq.section_id, title: qq.section_title, items: [qq] });
+    });
+    const labelByQid = new Map<string, string | null>();
+    bands.forEach((b, bi) => {
+      const label = b.title ?? meta?.sections[bi]?.subject ?? null;
+      b.items.forEach((qq) => labelByQid.set(qq.question_id, label));
+    });
+    return questions.map((qq) => ({
+      position: qq.position,
+      questionId: qq.question_id,
+      sectionId: qq.section_id,
+      sectionLabel: labelByQid.get(qq.question_id) ?? null,
+      answerType: qq.answer_type,
+      stem: qq.stem,
+      stemImageUrl: qq.stem_image_url,
+      passage: qq.passage,
+      options: qq.options,
+    }));
+  }, [questions, meta]);
+
+  // Autosave a single answer (debounced 800ms per question).
+  const scheduleSave = useCallback(
+    (questionId: string, selected: string[]) => {
+      clearTimeout(saveTimers.current[questionId]);
+      saveTimers.current[questionId] = setTimeout(() => {
+        supabase
+          .rpc("save_exam_answer", {
+            p_attempt_id: attemptId,
+            p_question_id: questionId,
+            p_selected: selected,
+          })
+          .then(({ error: saveErr }) => {
+            // Autosave failures are non-fatal — the answer stays cached and is
+            // re-sent on the next change / final submit. Surface quietly.
+            if (saveErr) console.warn("autosave failed", saveErr.message);
+          });
+      }, 800);
+    },
+    [attemptId, supabase],
+  );
+
+  const doSubmit = useCallback(async () => {
+    if (!attemptId || submitting) return;
+    setSubmitting(true);
+    // Flush any pending debounced saves so a last-second answer (or one changed
+    // within the 800ms window before tapping Submit) is persisted BEFORE grading.
+    Object.values(saveTimers.current).forEach(clearTimeout);
+    saveTimers.current = {};
+    try {
+      await Promise.all(
+        Object.entries(answersRef.current).map(([qid, sel]) =>
+          supabase.rpc("save_exam_answer", {
+            p_attempt_id: attemptId,
+            p_question_id: qid,
+            p_selected: sel,
+          }),
+        ),
+      );
+    } catch {
+      /* non-fatal — grading uses whatever persisted */
+    }
+    const { error: subErr } = await supabase.rpc("submit_exam_attempt", { p_attempt_id: attemptId });
+    if (subErr) {
+      setError(subErr.message);
+      setSubmitting(false);
+      return;
+    }
+    try {
+      localStorage.removeItem(cacheKey);
+    } catch {
+      /* ignore */
+    }
+    router.push(`/student/exams/${sessionId}/result`);
+  }, [attemptId, submitting, supabase, cacheKey, router, sessionId]);
+
+  // Second leave strike: flush answers-so-far, then abort (recoverable) or finalise
+  // if resumes are spent. start_exam_attempt won't re-hand a non-in_progress
+  // attempt, so a `final` abort can't be resumed.
+  const abortForLeave = useCallback(async () => {
+    if (!attemptId) return;
+    Object.values(saveTimers.current).forEach(clearTimeout);
+    saveTimers.current = {};
+    try {
+      await Promise.all(
+        Object.entries(answersRef.current).map(([qid, sel]) =>
+          supabase.rpc("save_exam_answer", {
+            p_attempt_id: attemptId,
+            p_question_id: qid,
+            p_selected: sel,
+          }),
+        ),
+      );
+    } catch {
+      /* non-fatal — abort uses whatever persisted */
+    }
+    const { data, error: e } = await supabase.rpc("abort_exam_attempt", { p_attempt_id: attemptId });
+    if (e) {
+      setError(e.message);
+      return;
+    }
+    const info = (data as { final?: boolean; resume_count?: number }) ?? {};
+    setAbortInfo({ final: !!info.final, resumeCount: info.resume_count ?? 0 });
+    try {
+      localStorage.removeItem(cacheKey);
+    } catch {
+      /* ignore */
+    }
+  }, [attemptId, supabase, cacheKey]);
+
+  const engine = useQuizEngine({
+    questions: attemptQuestions,
+    active: !!attemptId && !abortInfo,
+    deadline,
+    onAnswerChange: (all, questionId, selected) => {
+      answersRef.current = all;
+      persist({ answers: all });
+      scheduleSave(questionId, selected);
+    },
+    onNavigate: (i) => {
+      // Persist any answers still in the debounce window before navigating —
+      // moving between questions never leaves an unsaved answer behind.
+      for (const qid of Object.keys(saveTimers.current)) {
+        clearTimeout(saveTimers.current[qid]);
+        supabase
+          .rpc("save_exam_answer", {
+            p_attempt_id: attemptId,
+            p_question_id: qid,
+            p_selected: answersRef.current[qid] ?? [],
+          })
+          .then(({ error: e }) => {
+            if (e) console.warn("autosave failed", e.message);
+          });
+      }
+      saveTimers.current = {};
+      // Persist the cursor so a resume lands exactly here (server = durable across
+      // abort/device; cache = instant restore on a plain reload).
+      lastPositionRef.current = i;
+      persist({ lastPosition: i });
+      supabase.rpc("save_exam_position", { p_attempt_id: attemptId, p_position: i }).then(({ error: e }) => {
+        if (e) console.warn("save_exam_position failed", e.message);
+      });
+    },
+    onSeenChange: (seen) => persist({ seen }),
+    onMarkedChange: (marked) => persist({ marked }),
+    onLeaveRecorded: () => {
+      // Persist the switch-away for staff (Alt-Tab metric). Fire-and-forget.
+      supabase.rpc("record_exam_leave", { p_attempt_id: attemptId }).then(({ error: e }) => {
+        if (e) console.warn("record_exam_leave failed", e.message);
+      });
+    },
+    submit: doSubmit,
+    onSecondLeave: abortForLeave,
+  });
+  const { hydrate, suppressLeaveRef } = engine;
 
   // Ticking clock for the waiting-screen countdown (1s cadence, only while the
   // student is on the waiting screen).
@@ -181,13 +305,18 @@ export function AttemptRunner({
       /* ignore */
     }
     if (cached?.questions?.length) {
+      const cachedAnswers = cached.answers ?? {};
+      answersRef.current = cachedAnswers;
       setAttemptId(cached.attemptId);
       setQuestions(cached.questions);
-      setAnswers(cached.answers ?? {});
-      setSeen(new Set(cached.seen ?? []));
-      setMarked(new Set(cached.marked ?? []));
       setDeadline(cached.deadline ?? null);
       if (cached.lastPosition != null) lastPositionRef.current = cached.lastPosition;
+      hydrate({
+        answers: cachedAnswers,
+        seen: cached.seen ?? [],
+        marked: cached.marked ?? [],
+        index: cached.lastPosition ?? undefined,
+      });
       setLoading(false);
     }
 
@@ -223,16 +352,27 @@ export function AttemptRunner({
       if (payload.last_position != null) lastPositionRef.current = payload.last_position;
       const serverAnswers: Record<string, string[]> = {};
       for (const q of payload.questions) serverAnswers[q.question_id] = q.selected_option_ids ?? [];
+      // Local edits win over the server copy (matches the engine's merge).
+      answersRef.current = { ...serverAnswers, ...answersRef.current };
       // Server-authoritative deadline (duration clamped to the session close);
       // fall back to the cached value (offline) or a duration-from-now estimate.
       const dl = payload.ends_at
         ? new Date(payload.ends_at).getTime()
         : (cached?.deadline ?? Date.now() + payload.duration_minutes * 60_000);
+      // Restore the cursor: persisted last_position, else the first unanswered
+      // question, else Q1.
+      let restoreIndex = lastPositionRef.current ?? 0;
+      if (!(restoreIndex > 0 && restoreIndex < payload.questions.length)) {
+        const firstUnanswered = payload.questions.findIndex(
+          (qq) => !(answersRef.current[qq.question_id]?.length),
+        );
+        restoreIndex = firstUnanswered > 0 ? firstUnanswered : 0;
+      }
       setAttemptId(payload.attempt_id);
       setQuestions(payload.questions);
-      setAnswers((local) => ({ ...serverAnswers, ...local })); // local edits win over server
       setDeadline(dl);
       setLoading(false);
+      hydrate({ answers: serverAnswers, index: restoreIndex });
       persist({
         attemptId: payload.attempt_id,
         durationMinutes: payload.duration_minutes,
@@ -248,119 +388,6 @@ export function AttemptRunner({
     };
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [sessionId]);
-
-  const doSubmit = useCallback(async ({ redirect = true }: { redirect?: boolean } = {}) => {
-    if (!attemptId || submitting) return;
-    setSubmitting(true);
-    // Flush any pending debounced saves so a last-second answer (or one changed
-    // within the 800ms window before tapping Submit) is persisted BEFORE grading.
-    Object.values(saveTimers.current).forEach(clearTimeout);
-    saveTimers.current = {};
-    try {
-      await Promise.all(
-        Object.entries(answersRef.current).map(([qid, sel]) =>
-          supabase.rpc("save_exam_answer", {
-            p_attempt_id: attemptId,
-            p_question_id: qid,
-            p_selected: sel,
-          }),
-        ),
-      );
-    } catch {
-      /* non-fatal — grading uses whatever persisted */
-    }
-    const { error: subErr } = await supabase.rpc("submit_exam_attempt", { p_attempt_id: attemptId });
-    if (subErr) {
-      setError(subErr.message);
-      setSubmitting(false);
-      return;
-    }
-    try {
-      localStorage.removeItem(cacheKey);
-    } catch {
-      /* ignore */
-    }
-    if (redirect) router.push(`/student/exams/${sessionId}/result`);
-  }, [attemptId, submitting, supabase, cacheKey, router, sessionId]);
-
-  // Countdown → hard auto-submit at zero.
-  useEffect(() => {
-    if (deadline == null) return;
-    const tick = () => {
-      const left = Math.max(0, Math.floor((deadline - Date.now()) / 1000));
-      setTimeLeft(left);
-      if (left <= 0) doSubmit();
-    };
-    tick();
-    const t = setInterval(tick, 1000);
-    return () => clearInterval(t);
-  }, [deadline, doSubmit]);
-
-  // Mark the current question as "seen" the moment it's shown.
-  useEffect(() => {
-    const qid = questions[index]?.question_id;
-    if (!qid || seen.has(qid)) return;
-    const next = new Set(seen).add(qid);
-    setSeen(next);
-    persist({ seen: [...next] });
-  }, [index, questions, seen, persist]);
-
-  // Anti-cheat: detect the student leaving the exam window. Active only while an
-  // attempt is live. First leave warns; the second submits as-is and shows the
-  // closed screen — start_exam_attempt won't re-hand a non-in_progress attempt,
-  // so it can't be resumed.
-  useEffect(() => {
-    if (!attemptId || abortInfo) return;
-    const registerLeave = () => {
-      if (suppressLeaveRef.current) return;
-      const now = Date.now();
-      if (now - lastLeaveRef.current < 1500) return; // one switch fires blur+visibility → one strike
-      lastLeaveRef.current = now;
-      // Persist the switch-away for staff (Alt-Tab metric). Fire-and-forget.
-      supabase.rpc("record_exam_leave", { p_attempt_id: attemptId }).then(({ error: e }) => {
-        if (e) console.warn("record_exam_leave failed", e.message);
-      });
-      const n = strikesRef.current + 1;
-      setStrikes(n);
-      if (n >= 2) {
-        // Second strike: flush answers-so-far (like doSubmit), then abort
-        // (recoverable) or finalize if resumes are spent.
-        void (async () => {
-          Object.values(saveTimers.current).forEach(clearTimeout);
-          saveTimers.current = {};
-          try {
-            await Promise.all(
-              Object.entries(answersRef.current).map(([qid, sel]) =>
-                supabase.rpc("save_exam_answer", {
-                  p_attempt_id: attemptId,
-                  p_question_id: qid,
-                  p_selected: sel,
-                }),
-              ),
-            );
-          } catch {
-            /* non-fatal — abort uses whatever persisted */
-          }
-          const { data, error: e } = await supabase.rpc("abort_exam_attempt", { p_attempt_id: attemptId });
-          if (e) { setError(e.message); return; }
-          const info = (data as { final?: boolean; resume_count?: number }) ?? {};
-          setAbortInfo({ final: !!info.final, resumeCount: info.resume_count ?? 0 });
-          try { localStorage.removeItem(cacheKey); } catch { /* ignore */ }
-        })();
-      } else {
-        setWarnOpen(true);
-      }
-    };
-    const onVisibility = () => {
-      if (document.visibilityState === "hidden") registerLeave();
-    };
-    window.addEventListener("blur", registerLeave);
-    document.addEventListener("visibilitychange", onVisibility);
-    return () => {
-      window.removeEventListener("blur", registerLeave);
-      document.removeEventListener("visibilitychange", onVisibility);
-    };
-  }, [attemptId, abortInfo, supabase, cacheKey]);
 
   // Printing is disabled during an attempt (the paper is print:hidden with no
   // print-visible component). Block the Ctrl/Cmd+P shortcut so no dialog opens,
@@ -386,100 +413,7 @@ export function AttemptRunner({
       window.removeEventListener("beforeprint", onBeforePrint);
       window.removeEventListener("afterprint", onAfterPrint);
     };
-  }, [attemptId, abortInfo]);
-
-  function scheduleSave(questionId: string, selected: string[]) {
-    clearTimeout(saveTimers.current[questionId]);
-    saveTimers.current[questionId] = setTimeout(() => {
-      supabase
-        .rpc("save_exam_answer", {
-          p_attempt_id: attemptId,
-          p_question_id: questionId,
-          p_selected: selected,
-        })
-        .then(({ error: saveErr }) => {
-          // Autosave failures are non-fatal — the answer stays cached and is
-          // re-sent on the next change / final submit. Surface quietly.
-          if (saveErr) console.warn("autosave failed", saveErr.message);
-        });
-    }, 800);
-  }
-
-  // Persist any answers still sitting in the debounce window, then navigate —
-  // moving between questions never leaves an unsaved answer behind.
-  const goTo = useCallback(
-    (i: number) => {
-      for (const qid of Object.keys(saveTimers.current)) {
-        clearTimeout(saveTimers.current[qid]);
-        supabase
-          .rpc("save_exam_answer", {
-            p_attempt_id: attemptId,
-            p_question_id: qid,
-            p_selected: answersRef.current[qid] ?? [],
-          })
-          .then(({ error: saveErr }) => {
-            if (saveErr) console.warn("autosave failed", saveErr.message);
-          });
-      }
-      saveTimers.current = {};
-      setIndex(i);
-      // Persist the cursor so a resume lands exactly here (server = durable
-      // across abort/device; cache = instant restore on a plain reload).
-      lastPositionRef.current = i;
-      persist({ lastPosition: i });
-      supabase.rpc("save_exam_position", { p_attempt_id: attemptId, p_position: i }).then(({ error: e }) => {
-        if (e) console.warn("save_exam_position failed", e.message);
-      });
-    },
-    [attemptId, supabase, persist],
-  );
-
-  function choose(q: Question, optionId: string) {
-    setAnswers((prev) => {
-      const cur = prev[q.question_id] ?? [];
-      let next: string[];
-      if (q.answer_type === "single") next = [optionId];
-      else next = cur.includes(optionId) ? cur.filter((id) => id !== optionId) : [...cur, optionId];
-      const updated = { ...prev, [q.question_id]: next };
-      persist({ answers: updated });
-      scheduleSave(q.question_id, next);
-      return updated;
-    });
-  }
-
-  // Clear response: empty the selection so the question reverts to "not answered"
-  // (grey/seen). Essential with negative marking — a student can un-commit a risky
-  // guess instead of being forced to keep an answer once tapped.
-  function clearAnswer(q: Question) {
-    if (!(answers[q.question_id]?.length)) return; // already blank
-    setAnswers((prev) => {
-      const updated = { ...prev, [q.question_id]: [] };
-      persist({ answers: updated });
-      scheduleSave(q.question_id, []); // persist the clear server-side too
-      return updated;
-    });
-  }
-
-  // Toggle "Mark for review" on the current question (client-side, like `seen`).
-  function toggleMark(questionId: string) {
-    setMarked((prev) => {
-      const next = new Set(prev);
-      if (next.has(questionId)) next.delete(questionId);
-      else next.add(questionId);
-      persist({ marked: [...next] });
-      return next;
-    });
-  }
-
-  // Collapse / expand a subject band in the palette accordion.
-  function toggleSection(sectionId: string) {
-    setCollapsed((prev) => {
-      const next = new Set(prev);
-      if (next.has(sectionId)) next.delete(sectionId);
-      else next.add(sectionId);
-      return next;
-    });
-  }
+  }, [attemptId, abortInfo, suppressLeaveRef]);
 
   if (abortInfo)
     return (
@@ -625,33 +559,6 @@ export function AttemptRunner({
       </div>
     );
 
-  // Map the exam's questions into the shared AttemptView shape, resolving each
-  // section's label from the payload, else meta.sections in paper order.
-  const _bands: { id: string; title: string | null; items: Question[] }[] = [];
-  questions.forEach((qq) => {
-    const last = _bands[_bands.length - 1];
-    if (last && last.id === qq.section_id) last.items.push(qq);
-    else _bands.push({ id: qq.section_id, title: qq.section_title, items: [qq] });
-  });
-  const labelByQid = new Map<string, string | null>();
-  _bands.forEach((b, bi) => {
-    const label = b.title ?? meta?.sections[bi]?.subject ?? null;
-    b.items.forEach((qq) => labelByQid.set(qq.question_id, label));
-  });
-  const attemptQuestions: AttemptQuestion[] = questions.map((qq) => ({
-    position: qq.position,
-    questionId: qq.question_id,
-    sectionId: qq.section_id,
-    sectionLabel: labelByQid.get(qq.question_id) ?? null,
-    answerType: qq.answer_type,
-    stem: qq.stem,
-    stemImageUrl: qq.stem_image_url,
-    passage: qq.passage,
-    options: qq.options,
-  }));
-  const sectionIds = [...new Set(attemptQuestions.map((qq) => qq.sectionId))];
-  const qById = new Map(questions.map((qq) => [qq.question_id, qq]));
-
   return (
     <>
       <div
@@ -662,14 +569,14 @@ export function AttemptRunner({
       >
         <AttemptView
           questions={attemptQuestions}
-          index={index}
-          answers={answers}
-          seen={seen}
-          marked={marked}
-          collapsed={collapsed}
-          timeLeft={timeLeft}
+          index={engine.index}
+          answers={engine.answers}
+          seen={engine.seen}
+          marked={engine.marked}
+          collapsed={engine.collapsed}
+          timeLeft={engine.timeLeft}
           submitting={submitting}
-          confirmOpen={confirmOpen}
+          confirmOpen={engine.confirmOpen}
           submitLabel="Submit exam"
           submitTitle="Submit exam?"
           notice={
@@ -690,31 +597,20 @@ export function AttemptRunner({
               </div>
             </details>
           }
-          onChoose={(aq, oid) => {
-            const qq = qById.get(aq.questionId);
-            if (qq) choose(qq, oid);
-          }}
-          onGoTo={goTo}
-          onClear={(aq) => {
-            const qq = qById.get(aq.questionId);
-            if (qq) clearAnswer(qq);
-          }}
-          onToggleMark={toggleMark}
-          onToggleSection={toggleSection}
-          onToggleCollapseAll={() =>
-            setCollapsed((prev) => (prev.size >= sectionIds.length ? new Set() : new Set(sectionIds)))
-          }
-          onOpenConfirm={() => setConfirmOpen(true)}
-          onCloseConfirm={() => setConfirmOpen(false)}
-          onSubmit={() => {
-            setConfirmOpen(false);
-            doSubmit();
-          }}
+          onChoose={engine.onChoose}
+          onGoTo={engine.onGoTo}
+          onClear={engine.onClear}
+          onToggleMark={engine.onToggleMark}
+          onToggleSection={engine.onToggleSection}
+          onToggleCollapseAll={engine.onToggleCollapseAll}
+          onOpenConfirm={engine.onOpenConfirm}
+          onCloseConfirm={engine.onCloseConfirm}
+          onSubmit={engine.onSubmit}
         />
       </div>
 
-      {/* First switch-away warning. The second leave auto-submits (see effect). */}
-      <Dialog open={warnOpen} onOpenChange={setWarnOpen}>
+      {/* First switch-away warning. The second leave aborts/auto-submits (engine). */}
+      <Dialog open={engine.warnOpen} onOpenChange={engine.setWarnOpen}>
         <DialogContent>
           <DialogHeader>
             <DialogTitle>Don&rsquo;t leave the exam</DialogTitle>
@@ -731,7 +627,7 @@ export function AttemptRunner({
             </DialogDescription>
           </div>
           <DialogFooter>
-            <Button onClick={() => setWarnOpen(false)}>I understand — continue</Button>
+            <Button onClick={() => engine.setWarnOpen(false)}>I understand — continue</Button>
           </DialogFooter>
         </DialogContent>
       </Dialog>
