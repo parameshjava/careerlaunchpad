@@ -341,7 +341,12 @@ end $$;
 
 -- 7d) The completed chapters + quiz availability for the CALLING student in a batch.
 --     best_pct = best of their ≤3 attempts (Q12). available = completed AND the
---     assessment bank has active questions.
+--     assessment bank has active questions. IMPORTANT: availability is scoped to
+--     THIS batch (bc.batch_id = p_batch_id) — a chapter completed in one batch must
+--     never unlock the quiz in another batch of the same course.
+--     Drop first: an earlier build returned a different table shape, and
+--     create-or-replace cannot change a function's return type.
+drop function if exists public.student_chapter_quizzes(uuid);
 create or replace function public.student_chapter_quizzes(p_batch_id uuid)
 returns table (
   chapter_id         uuid,
