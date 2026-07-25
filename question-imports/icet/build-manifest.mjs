@@ -26,6 +26,14 @@ const run = (cmd, args) => {
   }
 };
 
+// Two papers are image-only scans with no text layer at all, so their own header
+// can't be parsed — it was read off the rendered cover page instead. Both print the
+// usual green-tick notation and "Actual Answer Key: Yes".
+const SCAN_METADATA = {
+  "1712571043phppMwItv.pdf": "AP ICET 2020 10th Sep 2020 Shift 1",
+  "1712571122phpXb6ku4.pdf": "AP ICET 2020 10th Sep 2020 Shift 2",
+};
+
 // Telugu: U+0C00–U+0C7F. Urdu/Arabic: U+0600–U+06FF.
 const hasTelugu = (s) => /[ఀ-౿]/.test(s);
 const hasUrdu = (s) => /[؀-ۿ]/.test(s);
@@ -60,6 +68,7 @@ const entries = files.map((file) => {
   // value can land on the same line or a later one, so take the first plausible
   // "<BOARD> ICET <year> …" string anywhere in the first two pages.
   const paperName =
+    SCAN_METADATA[file] ??
     meta.match(/((?:AP|TS|TG)\s*ICET[^\n]*?(?:Shift\s*\d|S\d)[^\n]*)/i)?.[1]?.trim() ??
     meta.match(/((?:AP|TS|TG)\s*ICET\s*(?:19|20)\d{2}[^\n]*)/i)?.[1]?.trim() ??
     null;

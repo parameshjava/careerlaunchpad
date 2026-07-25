@@ -159,14 +159,21 @@ const best = (counts) =>
   [...counts.entries()].sort((a, b) => Math.abs(a[1] - target) - Math.abs(b[1] - target))[0];
 const bySize = best(tally((m) => m.size));
 const byWidth = best(tally((m) => m.size.split("x")[0]));
-const chosen =
-  bySize && Math.abs(bySize[1] - target) <= Math.abs((byWidth?.[1] ?? Infinity) - target)
-    ? { by: "size", value: bySize[0], count: bySize[1] }
-    : { by: "width", value: byWidth[0], count: byWidth[1] };
-const marker_class = chosen;
-const kept = markers.filter((m) =>
-  chosen.by === "size" ? m.size === chosen.value : m.size.split("x")[0] === chosen.value,
-);
+// A paper can carry no key at all (the 2019 papers are plain question papers with
+// no tick/cross), in which case there is no class to choose.
+const marker_class =
+  !bySize && !byWidth
+    ? null
+    : bySize && Math.abs(bySize[1] - target) <= Math.abs((byWidth?.[1] ?? Infinity) - target)
+      ? { by: "size", value: bySize[0], count: bySize[1] }
+      : { by: "width", value: byWidth[0], count: byWidth[1] };
+const kept = marker_class
+  ? markers.filter((m) =>
+      marker_class.by === "size"
+        ? m.size === marker_class.value
+        : m.size.split("x")[0] === marker_class.value,
+    )
+  : [];
 
 // ── 4) group markers into questions ──────────────────────────────────────────
 const groups = [];

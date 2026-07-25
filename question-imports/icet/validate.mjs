@@ -106,7 +106,9 @@ function validateFile(path) {
 
 const args = process.argv.slice(2);
 const files = args.includes("--all")
-  ? globSync(join(here, "papers/*/*.json")).sort()
+  ? globSync(join(here, "papers/*/*.json"))
+      .filter((f) => basename(f) !== "state.json") // per-paper progress, not an import file
+      .sort()
   : args.filter((a) => !a.startsWith("--"));
 
 if (files.length === 0) {

@@ -1,0 +1,167 @@
+{
+  "subject": "Data Interpretation & Data Sufficiency",
+  "questions": [
+    {
+      "chapter": "Tables",
+      "difficulty": "easy",
+      "answer_type": "single",
+      "stem": "The table shows MBA admissions in five colleges A to E over five years.\n\n| College \\ Year | 2020 | 2021 | 2022 | 2023 | 2024 |\n| --- | --- | --- | --- | --- | --- |\n| A | 140 | 135 | 150 | 140 | 160 |\n| B | 180 | 170 | 190 | 210 | 200 |\n| C | 120 | 100 | 110 | 125 | 140 |\n| D | 200 | 210 | 205 | 220 | 230 |\n| E | 150 | 145 | 160 | 155 | 170 |\n\nWhich of the five colleges had the highest total admissions over the 5 years?",
+      "explanation": "Add each row:\n\n- A: $140+135+150+140+160 = 725$\n- B: $180+170+190+210+200 = 950$\n- C: $120+100+110+125+140 = 595$\n- **D: $200+210+205+220+230 = 1065$**\n- E: $150+145+160+155+170 = 780$\n\nCollege **D** has the highest total. (A quick shortcut: D leads in every single year, so it must lead overall.)",
+      "source": "TG ICET 2025 8th June 2025 Shift 1",
+      "source_year": 2025,
+      "options": [
+        {
+          "label": "B",
+          "is_correct": false
+        },
+        {
+          "label": "E",
+          "is_correct": false
+        },
+        {
+          "label": "D",
+          "is_correct": true
+        },
+        {
+          "label": "A",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Tables",
+      "difficulty": "medium",
+      "answer_type": "single",
+      "stem": "The table shows MBA admissions in five colleges A to E over five years.\n\n| College \\ Year | 2020 | 2021 | 2022 | 2023 | 2024 |\n| --- | --- | --- | --- | --- | --- |\n| A | 140 | 135 | 150 | 140 | 160 |\n| B | 180 | 170 | 190 | 210 | 200 |\n| C | 120 | 100 | 110 | 125 | 140 |\n| D | 200 | 210 | 205 | 220 | 230 |\n| E | 150 | 145 | 160 | 155 | 170 |\n\nOut of all admissions in the year 2024, the percentage of admissions in college B is",
+      "explanation": "Total admissions in 2024 $= 160 + 200 + 140 + 230 + 170 = 900$.\n\nCollege B's share $= \\dfrac{200}{900} \\times 100 = 22.22\\%$.",
+      "source": "TG ICET 2025 8th June 2025 Shift 1",
+      "source_year": 2025,
+      "options": [
+        {
+          "label": "20.12",
+          "is_correct": false
+        },
+        {
+          "label": "19.52",
+          "is_correct": false
+        },
+        {
+          "label": "23.32",
+          "is_correct": false
+        },
+        {
+          "label": "22.22",
+          "is_correct": true
+        }
+      ]
+    },
+    {
+      "chapter": "Tables",
+      "difficulty": "medium",
+      "answer_type": "single",
+      "stem": "The table shows MBA admissions in five colleges A to E over five years.\n\n| College \\ Year | 2020 | 2021 | 2022 | 2023 | 2024 |\n| --- | --- | --- | --- | --- | --- |\n| A | 140 | 135 | 150 | 140 | 160 |\n| B | 180 | 170 | 190 | 210 | 200 |\n| C | 120 | 100 | 110 | 125 | 140 |\n| D | 200 | 210 | 205 | 220 | 230 |\n| E | 150 | 145 | 160 | 155 | 170 |\n\nWhich college has witnessed the highest growth percentage in admissions in 2024 compared to 2020?",
+      "explanation": "Growth $\\% = \\dfrac{2024 - 2020}{2020} \\times 100$ for each college:\n\n- A: $\\dfrac{20}{140} = 14.29\\%$\n- B: $\\dfrac{20}{180} = 11.11\\%$\n- **C: $\\dfrac{20}{120} = 16.67\\%$**\n- D: $\\dfrac{30}{200} = 15\\%$\n- E: $\\dfrac{20}{150} = 13.33\\%$\n\nFour colleges gained the same 20 admissions, so the one with the **smallest 2020 base** wins — college **C**. D gained more in absolute terms (30) but on a base of 200, which is only 15%.",
+      "source": "TG ICET 2025 8th June 2025 Shift 1",
+      "source_year": 2025,
+      "options": [
+        {
+          "label": "B",
+          "is_correct": false
+        },
+        {
+          "label": "C",
+          "is_correct": true
+        },
+        {
+          "label": "D",
+          "is_correct": false
+        },
+        {
+          "label": "E",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Pie Charts",
+      "difficulty": "medium",
+      "answer_type": "single",
+      "stem": "Two pie charts show how students in colleges A and B are distributed across games. College A has **1000** students, college B has **1500**.\n\n| Game | College A (share) | College B (sector angle) |\n| --- | --- | --- |\n| Cricket | 10% | $108^\\circ$ |\n| Football | 20% | $108^\\circ$ |\n| Boxing | 30% | $36^\\circ$ |\n| Tennis | 20% | $36^\\circ$ |\n| Chess | 20% | $72^\\circ$ |\n\nFind the total number of students who play football in both colleges A and B together.",
+      "explanation": "**College A:** football is 20% of 1000 $= 200$ students.\n\n**College B:** the football sector is $108^\\circ$, so its share is $\\dfrac{108}{360} = 30\\%$ of 1500 $= 450$ students.\n\nTotal $= 200 + 450 = 650$.",
+      "source": "TG ICET 2025 8th June 2025 Shift 1",
+      "source_year": 2025,
+      "options": [
+        {
+          "label": "700",
+          "is_correct": false
+        },
+        {
+          "label": "650",
+          "is_correct": true
+        },
+        {
+          "label": "600",
+          "is_correct": false
+        },
+        {
+          "label": "680",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Pie Charts",
+      "difficulty": "hard",
+      "answer_type": "single",
+      "stem": "Two pie charts show how students in colleges A and B are distributed across games. College A has **1000** students, college B has **1500**.\n\n| Game | College A (share) | College B (sector angle) |\n| --- | --- | --- |\n| Cricket | 10% | $108^\\circ$ |\n| Football | 20% | $108^\\circ$ |\n| Boxing | 30% | $36^\\circ$ |\n| Tennis | 20% | $36^\\circ$ |\n| Chess | 20% | $72^\\circ$ |\n\nWith both colleges put together, which is the game played by the fewest students?",
+      "explanation": "Convert both charts to head-counts (B's shares are the angle $\\div\\ 360$):\n\n| Game | A (of 1000) | B (of 1500) | Total |\n| --- | --- | --- | --- |\n| Cricket | 100 | 450 | 550 |\n| Football | 200 | 450 | 650 |\n| Boxing | 300 | 150 | 450 |\n| **Tennis** | 200 | 150 | **350** |\n| Chess | 200 | 300 | 500 |\n\n**Tennis** has the smallest total. Note that boxing is the *largest* group in A, which is why the two charts must be combined rather than compared by percentage.",
+      "source": "TG ICET 2025 8th June 2025 Shift 1",
+      "source_year": 2025,
+      "options": [
+        {
+          "label": "Tennis",
+          "is_correct": true
+        },
+        {
+          "label": "Boxing",
+          "is_correct": false
+        },
+        {
+          "label": "Cricket",
+          "is_correct": false
+        },
+        {
+          "label": "Football",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Pie Charts",
+      "difficulty": "easy",
+      "answer_type": "single",
+      "stem": "Two pie charts show how students in colleges A and B are distributed across games. College A has **1000** students, college B has **1500**.\n\n| Game | College A (share) | College B (sector angle) |\n| --- | --- | --- |\n| Cricket | 10% | $108^\\circ$ |\n| Football | 20% | $108^\\circ$ |\n| Boxing | 30% | $36^\\circ$ |\n| Tennis | 20% | $36^\\circ$ |\n| Chess | 20% | $72^\\circ$ |\n\nIn college B, find the difference between the number of players of football and chess.",
+      "explanation": "In college B, football takes $108^\\circ$ and chess $72^\\circ$, a gap of $36^\\circ$.\n\nEach degree is worth $\\dfrac{1500}{360}$ students, so the difference $= \\dfrac{36}{360} \\times 1500 = 150$.\n\n*(Longer way: football $= 450$, chess $= 300$, difference $= 150$.)*",
+      "source": "TG ICET 2025 8th June 2025 Shift 1",
+      "source_year": 2025,
+      "options": [
+        {
+          "label": "175",
+          "is_correct": false
+        },
+        {
+          "label": "180",
+          "is_correct": false
+        },
+        {
+          "label": "150",
+          "is_correct": true
+        },
+        {
+          "label": "200",
+          "is_correct": false
+        }
+      ]
+    }
+  ]
+}

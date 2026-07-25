@@ -1,0 +1,1749 @@
+{
+  "subject": "Logical & Analytical Reasoning",
+  "questions": [
+    {
+      "chapter": "Data Sufficiency (Reasoning)",
+      "kind": "data_sufficiency",
+      "difficulty": "easy",
+      "answer_type": "single",
+      "stem": "What is the area of the circle?\n\n**I.** The perimeter of the circle is $54\\pi$ cm.\n\n**II.** The area of the triangle inscribed in the circle is 365 sq. cm.",
+      "explanation": "**From I:** $2\\pi r = 54\\pi \\Rightarrow r = 27$ cm, so the area $= \\pi r^2 = 729\\pi$ sq. cm. Statement I alone settles it.\n\n**From II:** infinitely many triangles of area 365 sq. cm can be inscribed in circles of different radii, so the radius is not fixed. Statement II alone is not enough.\n\nHence the question can be answered using statement I alone.",
+      "source": "TG ICET 2025 8th June 2025 Shift 1",
+      "source_year": 2025,
+      "options": [
+        {
+          "label": "The question can be answered using statement I alone.",
+          "is_correct": true
+        },
+        {
+          "label": "The question can be answered using statement II alone.",
+          "is_correct": false
+        },
+        {
+          "label": "The question can be answered using both statements I and II together, but not by either statement alone.",
+          "is_correct": false
+        },
+        {
+          "label": "The question cannot be answered even by using both statements together.",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Data Sufficiency (Reasoning)",
+      "kind": "data_sufficiency",
+      "difficulty": "easy",
+      "answer_type": "single",
+      "stem": "What is the sum of the marks obtained in Physics and Chemistry by Ram?\n\n**I.** Ram got 8 marks more in Physics than in Chemistry.\n\n**II.** Ram got 72 marks on average in Physics and Chemistry.",
+      "explanation": "Let the marks be $P$ and $C$; we need $P + C$.\n\n**From I:** $P = C + 8$ — one equation in two unknowns, so $P + C$ is not fixed. Not enough.\n\n**From II:** $\\dfrac{P + C}{2} = 72 \\Rightarrow P + C = 144$. That is exactly what was asked, so statement II alone is enough.",
+      "source": "TG ICET 2025 8th June 2025 Shift 1",
+      "source_year": 2025,
+      "options": [
+        {
+          "label": "The question can be answered using statement I alone.",
+          "is_correct": false
+        },
+        {
+          "label": "The question can be answered using statement II alone.",
+          "is_correct": true
+        },
+        {
+          "label": "The question can be answered using both statements I and II together, but not by either statement alone.",
+          "is_correct": false
+        },
+        {
+          "label": "The question cannot be answered even by using both statements together.",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Data Sufficiency (Reasoning)",
+      "kind": "data_sufficiency",
+      "difficulty": "medium",
+      "answer_type": "single",
+      "stem": "What is the cost of erecting a fence around a rectangular field?\n\n**I.** The cost of fencing is Rs. 150 per metre.\n\n**II.** The area of the field is 20000 sq. metres.",
+      "explanation": "Fencing cost $=$ perimeter $\\times$ rate, so both the perimeter and the rate are needed.\n\n**From I:** only the rate — no dimensions.\n\n**From II:** area alone does not fix the perimeter: $200 \\times 100$ and $400 \\times 50$ both have area 20000 sq. m but perimeters of 600 m and 900 m.\n\n**Together:** the rate is known but the perimeter still is not, so the cost cannot be found even with both statements.",
+      "source": "TG ICET 2025 8th June 2025 Shift 1",
+      "source_year": 2025,
+      "options": [
+        {
+          "label": "The question can be answered using statement I alone.",
+          "is_correct": false
+        },
+        {
+          "label": "The question can be answered using statement II alone.",
+          "is_correct": false
+        },
+        {
+          "label": "The question can be answered using both statements I and II together, but not by either statement alone.",
+          "is_correct": false
+        },
+        {
+          "label": "The question cannot be answered even by using both statements together.",
+          "is_correct": true
+        }
+      ]
+    },
+    {
+      "chapter": "Data Sufficiency (Reasoning)",
+      "kind": "data_sufficiency",
+      "difficulty": "easy",
+      "answer_type": "single",
+      "stem": "What is the simple interest earned by a depositor on a fixed deposit?\n\n**I.** The deposit is kept for one year.\n\n**II.** The amount deposited is Rs. 10000.",
+      "explanation": "Simple interest $= \\dfrac{P \\times R \\times T}{100}$, so the principal, rate and time are all needed.\n\n**From I:** only $T = 1$ year. **From II:** only $P = 10000$.\n\n**Together:** $P$ and $T$ are known but the **rate of interest is never given**, so the interest cannot be computed even with both statements.",
+      "source": "TG ICET 2025 8th June 2025 Shift 1",
+      "source_year": 2025,
+      "options": [
+        {
+          "label": "The question can be answered using statement I alone.",
+          "is_correct": false
+        },
+        {
+          "label": "The question can be answered using statement II alone.",
+          "is_correct": false
+        },
+        {
+          "label": "The question can be answered using both statements I and II together, but not by either statement alone.",
+          "is_correct": false
+        },
+        {
+          "label": "The question cannot be answered even by using both statements together.",
+          "is_correct": true
+        }
+      ]
+    },
+    {
+      "chapter": "Data Sufficiency (Reasoning)",
+      "kind": "data_sufficiency",
+      "difficulty": "hard",
+      "answer_type": "single",
+      "stem": "Are the roots of the equation $4ax^2 + 5bx + 6c = 0$ real numbers?\n\n**I.** $a : b : c = 2 : 3 : 4$\n\n**II.** $a + b + c = 27$",
+      "explanation": "The roots are real when the discriminant $D = (5b)^2 - 4(4a)(6c) = 25b^2 - 96ac \\ge 0$.\n\n**From I:** put $a = 2k,\\ b = 3k,\\ c = 4k$ $(k \\neq 0)$. Then\n$$D = 25(3k)^2 - 96(2k)(4k) = 225k^2 - 768k^2 = -543k^2 < 0,$$\nso the roots are **not** real. The question is answered — a definite \"no\" is still an answer.\n\n**From II:** $a + b + c = 27$ says nothing about the ratio needed in $25b^2 - 96ac$; e.g. $(a,b,c) = (1,25,1)$ gives $D > 0$ while $(9,9,9)$ gives $D < 0$. Not enough.\n\nHence statement I alone is sufficient.",
+      "source": "TG ICET 2025 8th June 2025 Shift 1",
+      "source_year": 2025,
+      "options": [
+        {
+          "label": "The question can be answered using statement I alone.",
+          "is_correct": true
+        },
+        {
+          "label": "The question can be answered using statement II alone.",
+          "is_correct": false
+        },
+        {
+          "label": "The question can be answered using both statements I and II together, but not by either statement alone.",
+          "is_correct": false
+        },
+        {
+          "label": "The question cannot be answered even by using both statements together.",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Data Sufficiency (Reasoning)",
+      "kind": "data_sufficiency",
+      "difficulty": "medium",
+      "answer_type": "single",
+      "stem": "What is the volume of the right circular cone?\n\n**I.** The semi-vertical angle of the cone is $30^\\circ$.\n\n**II.** The slant height of the cone is 17 cm.",
+      "explanation": "Volume $= \\dfrac{1}{3}\\pi r^2 h$, so both $r$ and $h$ are needed.\n\n**From I:** the angle fixes only the shape — $\\dfrac{r}{h} = \\tan 30^\\circ$ — not the size.\n\n**From II:** $l = 17$ gives $r^2 + h^2 = 289$, which has many solutions.\n\n**Together:** $r = l\\sin 30^\\circ = 8.5$ cm and $h = l\\cos 30^\\circ = \\dfrac{17\\sqrt3}{2}$ cm, so the volume is determined. Both statements are needed.",
+      "source": "TG ICET 2025 8th June 2025 Shift 1",
+      "source_year": 2025,
+      "options": [
+        {
+          "label": "The question can be answered using statement I alone.",
+          "is_correct": false
+        },
+        {
+          "label": "The question can be answered using statement II alone.",
+          "is_correct": false
+        },
+        {
+          "label": "The question can be answered using both statements I and II together, but not by either statement alone.",
+          "is_correct": true
+        },
+        {
+          "label": "The question cannot be answered even by using both statements together.",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Data Sufficiency (Reasoning)",
+      "kind": "data_sufficiency",
+      "difficulty": "medium",
+      "answer_type": "single",
+      "stem": "Find the average of 10 numbers written in ascending order.\n\n**I.** The average of the first four and the last four of these together is 20.\n\n**II.** The sum of the middle two numbers is 15.",
+      "explanation": "The average of all ten needs the total of all ten.\n\n**From I:** those eight numbers total $8 \\times 20 = 160$, but the middle two are unknown. Not enough.\n\n**From II:** only the middle two total 15. Not enough.\n\n**Together:** total $= 160 + 15 = 175$, so the average $= \\dfrac{175}{10} = 17.5$. Both statements are needed.",
+      "source": "TG ICET 2025 8th June 2025 Shift 1",
+      "source_year": 2025,
+      "options": [
+        {
+          "label": "The question can be answered using statement I alone.",
+          "is_correct": false
+        },
+        {
+          "label": "The question can be answered using statement II alone.",
+          "is_correct": false
+        },
+        {
+          "label": "The question can be answered using both statements I and II together, but not by either statement alone.",
+          "is_correct": true
+        },
+        {
+          "label": "The question cannot be answered even by using both statements together.",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Data Sufficiency (Reasoning)",
+      "kind": "data_sufficiency",
+      "difficulty": "medium",
+      "answer_type": "single",
+      "stem": "What is the mode of the frequency distribution?\n\n**I.** The total number of observations is 100.\n\n**II.** The median of the distribution is 68.43.",
+      "explanation": "The mode needs the class frequencies (which class occurs most often, and its neighbours).\n\n**From I:** the total frequency says nothing about how it is spread across classes.\n\n**From II:** the median is a positional average; distributions with the same median can have entirely different modes.\n\n**Together:** still no class-wise frequencies, so the mode cannot be found even with both statements.",
+      "source": "TG ICET 2025 8th June 2025 Shift 1",
+      "source_year": 2025,
+      "options": [
+        {
+          "label": "The question can be answered using statement I alone.",
+          "is_correct": false
+        },
+        {
+          "label": "The question can be answered using statement II alone.",
+          "is_correct": false
+        },
+        {
+          "label": "The question can be answered using both statements I and II together, but not by either statement alone.",
+          "is_correct": false
+        },
+        {
+          "label": "The question cannot be answered even by using both statements together.",
+          "is_correct": true
+        }
+      ]
+    },
+    {
+      "chapter": "Data Sufficiency (Reasoning)",
+      "kind": "data_sufficiency",
+      "difficulty": "medium",
+      "answer_type": "single",
+      "stem": "What is the number of persons between two persons $A$ and $B$ in a row of 29 persons?\n\n**I.** $A$ is the 24th person from the beginning.\n\n**II.** $B$ is the 19th person from the end.",
+      "explanation": "**From I:** only $A$'s position is known. **From II:** only $B$'s position is known. Neither alone gives a gap.\n\n**Together:** $B$ is the 19th from the end of 29, i.e. the $29 - 19 + 1 = 11$th from the beginning. With $A$ at 24 and $B$ at 11, the number of persons between them is $24 - 11 - 1 = 12$. Both statements are needed.",
+      "source": "TG ICET 2025 8th June 2025 Shift 1",
+      "source_year": 2025,
+      "options": [
+        {
+          "label": "The question can be answered using statement I alone.",
+          "is_correct": false
+        },
+        {
+          "label": "The question can be answered using statement II alone.",
+          "is_correct": false
+        },
+        {
+          "label": "The question can be answered using both statements I and II together, but not by either statement alone.",
+          "is_correct": true
+        },
+        {
+          "label": "The question cannot be answered even by using both statements together.",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Data Sufficiency (Reasoning)",
+      "kind": "data_sufficiency",
+      "difficulty": "medium",
+      "answer_type": "single",
+      "stem": "If an empty tank is filled by two pipes $A$ and $B$, what is the time taken to fill the tank by pipe $A$ alone?\n\n**I.** $A$ alone fills it 5 hours faster than pipe $B$ does.\n\n**II.** $B$ fills $\\dfrac{1}{15}$ of the tank in 1 hour.",
+      "explanation": "**From I:** $a = b - 5$ relates the two times but pins neither down.\n\n**From II:** $B$ alone takes 15 hours — that is about $B$, not $A$.\n\n**Together:** $b = 15$, so $a = 15 - 5 = 10$ hours. Both statements are needed.",
+      "source": "TG ICET 2025 8th June 2025 Shift 1",
+      "source_year": 2025,
+      "options": [
+        {
+          "label": "The question can be answered using statement I alone.",
+          "is_correct": false
+        },
+        {
+          "label": "The question can be answered using statement II alone.",
+          "is_correct": false
+        },
+        {
+          "label": "The question can be answered using both statements I and II together, but not by either statement alone.",
+          "is_correct": true
+        },
+        {
+          "label": "The question cannot be answered even by using both statements together.",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Data Sufficiency (Reasoning)",
+      "kind": "data_sufficiency",
+      "difficulty": "hard",
+      "answer_type": "single",
+      "stem": "For positive integers $a$ and $b$, is $\\sqrt{a^2 + b^2}$ an integer?\n\n**I.** $a^2 + b^2$ is an integer.\n\n**II.** $a^2 - 24b^2 = 0$",
+      "explanation": "**From I:** $a$ and $b$ are already positive integers, so $a^2 + b^2$ is automatically an integer — the statement adds nothing. For $(3,4)$ the root is 5 (an integer); for $(1,1)$ it is $\\sqrt2$ (not one). Not enough.\n\n**From II:** $a^2 = 24b^2$, so\n$$a^2 + b^2 = 24b^2 + b^2 = 25b^2 \\Rightarrow \\sqrt{a^2+b^2} = 5b,$$\nwhich is an integer for every integer $b$. The question is answered — \"yes\". Statement II alone is sufficient.",
+      "source": "TG ICET 2025 8th June 2025 Shift 1",
+      "source_year": 2025,
+      "options": [
+        {
+          "label": "The question can be answered using statement I alone.",
+          "is_correct": false
+        },
+        {
+          "label": "The question can be answered using statement II alone.",
+          "is_correct": true
+        },
+        {
+          "label": "The question can be answered using both statements I and II together, but not by either statement alone.",
+          "is_correct": false
+        },
+        {
+          "label": "The question cannot be answered even by using both statements together.",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Data Sufficiency (Reasoning)",
+      "kind": "data_sufficiency",
+      "difficulty": "medium",
+      "answer_type": "single",
+      "stem": "In how many days can 8 men and 8 women together complete the work?\n\n**I.** 4 men or 6 women can complete that work in 10 days.\n\n**II.** 4 men and 6 women together can complete that work in 5 days.",
+      "explanation": "**From I:** 4 men do the job in 10 days, so one man does $\\dfrac{1}{40}$ per day; 6 women do it in 10 days, so one woman does $\\dfrac{1}{60}$ per day. Then\n$$8\\left(\\tfrac{1}{40}\\right) + 8\\left(\\tfrac{1}{60}\\right) = \\tfrac{1}{5} + \\tfrac{2}{15} = \\tfrac{1}{3},$$\nso 8 men and 8 women finish in 3 days. Statement I alone is sufficient.\n\n**From II:** $4m + 6w = \\dfrac{1}{5}$ is a single equation in two unknowns — the individual rates, and hence $8m + 8w$, are not determined. Not enough.",
+      "source": "TG ICET 2025 8th June 2025 Shift 1",
+      "source_year": 2025,
+      "options": [
+        {
+          "label": "The question can be answered using statement I alone.",
+          "is_correct": true
+        },
+        {
+          "label": "The question can be answered using statement II alone.",
+          "is_correct": false
+        },
+        {
+          "label": "The question can be answered using both statements I and II together, but not by either statement alone.",
+          "is_correct": false
+        },
+        {
+          "label": "The question cannot be answered even by using both statements together.",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Data Sufficiency (Reasoning)",
+      "kind": "data_sufficiency",
+      "difficulty": "very_hard",
+      "answer_type": "single",
+      "stem": "Is $n$ a natural number?\n\n**I.** $n = \\left(\\dfrac{3+\\sqrt5}{\\sqrt2+\\sqrt{3+\\sqrt5}} + \\dfrac{3-\\sqrt5}{\\sqrt2-\\sqrt{3-\\sqrt5}}\\right)^2$\n\n**II.** $n^2$ is a positive integer.",
+      "explanation": "**From I:** de-nest the surds. Since $3+\\sqrt5 = \\dfrac{6+2\\sqrt5}{2} = \\dfrac{(\\sqrt5+1)^2}{2}$, we get $\\sqrt{3+\\sqrt5} = \\dfrac{\\sqrt5+1}{\\sqrt2}$, and likewise $\\sqrt{3-\\sqrt5} = \\dfrac{\\sqrt5-1}{\\sqrt2}$. Then\n$$\\sqrt2 + \\sqrt{3+\\sqrt5} = \\frac{2+\\sqrt5+1}{\\sqrt2} = \\frac{3+\\sqrt5}{\\sqrt2}, \\qquad \\sqrt2 - \\sqrt{3-\\sqrt5} = \\frac{2-\\sqrt5+1}{\\sqrt2} = \\frac{3-\\sqrt5}{\\sqrt2}.$$\nEach fraction therefore collapses to $\\sqrt2$, so the bracket is $2\\sqrt2$ and $n = (2\\sqrt2)^2 = 8$ — a natural number. Statement I alone answers it.\n\n**From II:** $n^2$ being a positive integer does not make $n$ one: $n = \\sqrt2$ gives $n^2 = 2$. Not enough.",
+      "source": "TG ICET 2025 8th June 2025 Shift 1",
+      "source_year": 2025,
+      "options": [
+        {
+          "label": "The question can be answered using statement I alone.",
+          "is_correct": true
+        },
+        {
+          "label": "The question can be answered using statement II alone.",
+          "is_correct": false
+        },
+        {
+          "label": "The question can be answered using both statements I and II together, but not by either statement alone.",
+          "is_correct": false
+        },
+        {
+          "label": "The question cannot be answered even by using both statements together.",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Data Sufficiency (Reasoning)",
+      "kind": "data_sufficiency",
+      "difficulty": "medium",
+      "answer_type": "single",
+      "stem": "How many brothers does Githa have?\n\n**I.** Ramu has two sisters and no brothers.\n\n**II.** Rita, one of Ramu's sisters, has only one sister, Githa.",
+      "explanation": "**From I:** we learn about Ramu's siblings, but nothing yet ties Githa to that family. Not enough.\n\n**From II:** Ramu's two sisters are Rita and Githa — but on its own this says nothing about how many brothers exist in the family. Not enough.\n\n**Together:** Githa is Ramu's sister, and Ramu has no brothers, so the only brother in the family is Ramu himself: Githa has exactly **1** brother. Both statements are needed.",
+      "source": "TG ICET 2025 8th June 2025 Shift 1",
+      "source_year": 2025,
+      "options": [
+        {
+          "label": "The question can be answered using statement I alone.",
+          "is_correct": false
+        },
+        {
+          "label": "The question can be answered using statement II alone.",
+          "is_correct": false
+        },
+        {
+          "label": "The question can be answered using both statements I and II together, but not by either statement alone.",
+          "is_correct": true
+        },
+        {
+          "label": "The question cannot be answered even by using both statements together.",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Data Sufficiency (Reasoning)",
+      "kind": "data_sufficiency",
+      "difficulty": "medium",
+      "answer_type": "single",
+      "stem": "Five friends $A, B, C, D$ and $E$ stand in a line for a photograph in some order. Who is the middle one?\n\n**I.** $B$ is fourth from the right end and immediately to the left of $C$.\n\n**II.** $D$ is neighbour to neither $A$ nor $B$.",
+      "explanation": "**From I:** in a line of 5, fourth from the right is the 2nd from the left, so $B$ is at position 2 and $C$, immediately to his left-hand side in the photo order, takes position 3 — the middle. The middle one is $C$. Statement I alone is sufficient.\n\n**From II:** \"$D$ is next to neither $A$ nor $B$\" leaves several arrangements (e.g. $A\\,B\\,C\\,D\\,E$ is ruled out, but both $A\\,B\\,E\\,D\\,C$ and $C\\,B\\,A\\,E\\,D$ survive), so the middle person is not fixed. Not enough.",
+      "source": "TG ICET 2025 8th June 2025 Shift 1",
+      "source_year": 2025,
+      "options": [
+        {
+          "label": "The question can be answered using statement I alone.",
+          "is_correct": true
+        },
+        {
+          "label": "The question can be answered using statement II alone.",
+          "is_correct": false
+        },
+        {
+          "label": "The question can be answered using both statements I and II together, but not by either statement alone.",
+          "is_correct": false
+        },
+        {
+          "label": "The question cannot be answered even by using both statements together.",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Data Sufficiency (Reasoning)",
+      "kind": "data_sufficiency",
+      "difficulty": "medium",
+      "answer_type": "single",
+      "stem": "Is the positive integer $a$ divisible by 35?\n\n**I.** $a$ is divisible by 15.\n\n**II.** $a$ is divisible by 14.",
+      "explanation": "$35 = 5 \\times 7$, so divisibility by both 5 and 7 is required.\n\n**From I:** $a$ divisible by 15 gives the factor 5 but not 7 ($a = 15$ is not divisible by 35). Not enough.\n\n**From II:** $a$ divisible by 14 gives the factor 7 but not 5 ($a = 14$). Not enough.\n\n**Together:** $a$ is a multiple of $\\text{lcm}(15,14) = 210 = 35 \\times 6$, so $a$ **is** divisible by 35. Both statements are needed.",
+      "source": "TG ICET 2025 8th June 2025 Shift 1",
+      "source_year": 2025,
+      "options": [
+        {
+          "label": "The question can be answered using statement I alone.",
+          "is_correct": false
+        },
+        {
+          "label": "The question can be answered using statement II alone.",
+          "is_correct": false
+        },
+        {
+          "label": "The question can be answered using both statements I and II together, but not by either statement alone.",
+          "is_correct": true
+        },
+        {
+          "label": "The question cannot be answered even by using both statements together.",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Analogy",
+      "difficulty": "medium",
+      "answer_type": "single",
+      "stem": "RSab : STcd :: TUvw : ______",
+      "explanation": "Capitals move **one** step forward, small letters move **two** steps forward: $R \\to S$, $S \\to T$; $a \\to c$, $b \\to d$.\n\nApplying the same to TUvw: $T \\to U$, $U \\to V$, $v \\to x$, $w \\to y$, giving **UVxy**.",
+      "source": "TG ICET 2025 8th June 2025 Shift 1",
+      "source_year": 2025,
+      "options": [
+        {
+          "label": "VUxy",
+          "is_correct": false
+        },
+        {
+          "label": "UVxy",
+          "is_correct": true
+        },
+        {
+          "label": "VUxy",
+          "is_correct": false
+        },
+        {
+          "label": "uVab",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Analogy",
+      "difficulty": "medium",
+      "answer_type": "single",
+      "stem": "4DH : 9LP :: ______ : 14NR",
+      "explanation": "From the first pair: the number grows by 5 $(4 \\to 9)$ and each letter moves 8 places forward $(D \\to L,\\ H \\to P)$.\n\nWork backwards from 14NR: $14 - 5 = 9$; $N$ is the 14th letter, so $14 - 8 = 6 \\Rightarrow F$; $R$ is the 18th, so $18 - 8 = 10 \\Rightarrow J$. The missing term is **9FJ**.",
+      "source": "TG ICET 2025 8th June 2025 Shift 1",
+      "source_year": 2025,
+      "options": [
+        {
+          "label": "9EI",
+          "is_correct": false
+        },
+        {
+          "label": "9FK",
+          "is_correct": false
+        },
+        {
+          "label": "9FJ",
+          "is_correct": true
+        },
+        {
+          "label": "9PQ",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Analogy",
+      "difficulty": "easy",
+      "answer_type": "single",
+      "stem": "$U \\otimes W$ : $21 \\otimes 23$ :: $L \\otimes M$ : ______",
+      "explanation": "Each letter is replaced by its position in the alphabet: $U = 21$, $W = 23$.\n\nSo $L = 12$ and $M = 13$, giving **$12 \\otimes 13$** — in the same order as the letters.",
+      "source": "TG ICET 2025 8th June 2025 Shift 1",
+      "source_year": 2025,
+      "options": [
+        {
+          "label": "$11 \\otimes 12$",
+          "is_correct": false
+        },
+        {
+          "label": "$13 \\otimes 11$",
+          "is_correct": false
+        },
+        {
+          "label": "$13 \\otimes 12$",
+          "is_correct": false
+        },
+        {
+          "label": "$12 \\otimes 13$",
+          "is_correct": true
+        }
+      ]
+    },
+    {
+      "chapter": "Analogy",
+      "difficulty": "very_hard",
+      "answer_type": "single",
+      "stem": "$\\dfrac{7}{6}$ : $\\dfrac{77}{42}$ :: $\\dfrac{143}{56}$ : ______",
+      "explanation": "Read each fraction as a product.\n\n$\\dfrac{7}{6} \\to \\dfrac{77}{42} = \\dfrac{7 \\times 11}{6 \\times 7}$: the numerator keeps 7 and picks up the **next prime** (11); the denominator keeps 6 and picks up the **next integer** (7).\n\nNow $\\dfrac{143}{56} = \\dfrac{11 \\times 13}{7 \\times 8}$. Shift each one step: the numerator keeps 13 and picks up the next prime 17 $\\Rightarrow 13 \\times 17 = 221$; the denominator keeps 8 and picks up 9 $\\Rightarrow 8 \\times 9 = 72$.\n\nThe answer is $\\dfrac{221}{72}$.",
+      "source": "TG ICET 2025 8th June 2025 Shift 1",
+      "source_year": 2025,
+      "options": [
+        {
+          "label": "$\\dfrac{26}{9}$",
+          "is_correct": false
+        },
+        {
+          "label": "$\\dfrac{247}{72}$",
+          "is_correct": false
+        },
+        {
+          "label": "$\\dfrac{221}{72}$",
+          "is_correct": true
+        },
+        {
+          "label": "$\\dfrac{65}{18}$",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Analogy",
+      "difficulty": "easy",
+      "answer_type": "single",
+      "stem": "ABC : ZYX :: DEF : ______",
+      "explanation": "Each letter is replaced by its **opposite** letter in the alphabet (the letter whose position adds up to 27): $A \\leftrightarrow Z$, $B \\leftrightarrow Y$, $C \\leftrightarrow X$.\n\nFor DEF: $D(4) \\to W(23)$, $E(5) \\to V(22)$, $F(6) \\to U(21)$, so the answer is **WVU** — the letters stay in the same order as the given term.",
+      "source": "TG ICET 2025 8th June 2025 Shift 1",
+      "source_year": 2025,
+      "options": [
+        {
+          "label": "UVW",
+          "is_correct": false
+        },
+        {
+          "label": "WVU",
+          "is_correct": true
+        },
+        {
+          "label": "VWU",
+          "is_correct": false
+        },
+        {
+          "label": "UWV",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Analogy",
+      "difficulty": "medium",
+      "answer_type": "single",
+      "stem": "BEYOND : ______ :: WOULD : TLRIA",
+      "explanation": "Check the known pair: $W \\to T$, $O \\to L$, $U \\to R$, $L \\to I$, $D \\to A$ — every letter moves **3 places back**.\n\nDo the same to BEYOND: $B \\to Y$ (wrapping round), $E \\to B$, $Y \\to V$, $O \\to L$, $N \\to K$, $D \\to A$, giving **YBVLKA**.",
+      "source": "TG ICET 2025 8th June 2025 Shift 1",
+      "source_year": 2025,
+      "options": [
+        {
+          "label": "YCWKLA",
+          "is_correct": false
+        },
+        {
+          "label": "YAUJMA",
+          "is_correct": false
+        },
+        {
+          "label": "YBVLKA",
+          "is_correct": true
+        },
+        {
+          "label": "YDXNPA",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Analogy",
+      "difficulty": "medium",
+      "answer_type": "single",
+      "stem": "LAKE5 : PEOI8 :: ______ : QIEX7",
+      "explanation": "In the first pair every letter moves **4 places forward** and the digit increases by **3**: $L \\to P$, $A \\to E$, $K \\to O$, $E \\to I$, $5 \\to 8$.\n\nReverse that from QIEX7: $Q - 4 = M$, $I - 4 = E$, $E - 4 = A$, $X - 4 = T$, and $7 - 3 = 4$. The missing term is **MEAT4**.",
+      "source": "TG ICET 2025 8th June 2025 Shift 1",
+      "source_year": 2025,
+      "options": [
+        {
+          "label": "TEAM4",
+          "is_correct": false
+        },
+        {
+          "label": "TAME4",
+          "is_correct": false
+        },
+        {
+          "label": "MATE4",
+          "is_correct": false
+        },
+        {
+          "label": "MEAT4",
+          "is_correct": true
+        }
+      ]
+    },
+    {
+      "chapter": "Analogy",
+      "difficulty": "easy",
+      "answer_type": "single",
+      "stem": "______ : PEQT :: JUMP : NYQT",
+      "explanation": "From JUMP $\\to$ NYQT every letter moves **4 places forward** $(J \\to N,\\ U \\to Y,\\ M \\to Q,\\ P \\to T)$.\n\nSo the missing word, moved 4 forward, must give PEQT. Step back: $P - 4 = L$, $E - 4 = A$, $Q - 4 = M$, $T - 4 = P$ — the word is **LAMP**.",
+      "source": "TG ICET 2025 8th June 2025 Shift 1",
+      "source_year": 2025,
+      "options": [
+        {
+          "label": "AMPL",
+          "is_correct": false
+        },
+        {
+          "label": "ALMP",
+          "is_correct": false
+        },
+        {
+          "label": "LIMP",
+          "is_correct": false
+        },
+        {
+          "label": "LAMP",
+          "is_correct": true
+        }
+      ]
+    },
+    {
+      "chapter": "Analogy",
+      "difficulty": "medium",
+      "answer_type": "single",
+      "stem": "(8)Z : (27)Y :: (64)B : ______",
+      "explanation": "The numbers are consecutive cubes: $8 = 2^3$, $27 = 3^3$, $64 = 4^3$, so the next one is $5^3 = 125$.\n\nThe letters move **one step back**: $Z \\to Y$, so $B \\to A$.\n\nThe answer is **125A**.",
+      "source": "TG ICET 2025 8th June 2025 Shift 1",
+      "source_year": 2025,
+      "options": [
+        {
+          "label": "125A",
+          "is_correct": true
+        },
+        {
+          "label": "125C",
+          "is_correct": false
+        },
+        {
+          "label": "216A",
+          "is_correct": false
+        },
+        {
+          "label": "125F",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Analogy",
+      "difficulty": "medium",
+      "answer_type": "single",
+      "stem": "______ : JUBA :: CRSY : APQW",
+      "explanation": "In the known pair every letter moves **2 places back**: $C \\to A$, $R \\to P$, $S \\to Q$, $Y \\to W$.\n\nSo the missing term, moved 2 back, must give JUBA — step forward instead: $J + 2 = L$, $U + 2 = W$, $B + 2 = D$, $A + 2 = C$, giving **LWDC**.",
+      "source": "TG ICET 2025 8th June 2025 Shift 1",
+      "source_year": 2025,
+      "options": [
+        {
+          "label": "LWDC",
+          "is_correct": true
+        },
+        {
+          "label": "LXEB",
+          "is_correct": false
+        },
+        {
+          "label": "LYCD",
+          "is_correct": false
+        },
+        {
+          "label": "LZDA",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Classification (Odd One Out)",
+      "difficulty": "hard",
+      "answer_type": "single",
+      "stem": "Find the odd one out:\n\n$$\\dfrac{21}{11},\\ \\dfrac{31}{19},\\ \\dfrac{43}{29},\\ \\dfrac{57}{41},\\ \\dfrac{73}{55},\\ \\dfrac{91}{70}$$",
+      "explanation": "Compare numerator and denominator term by term. The numerators rise by $10, 12, 14, 16, 18$ — a steady pattern. The gap between numerator and denominator is\n$$21-11 = 10,\\quad 31-19 = 12,\\quad 43-29 = 14,\\quad 57-41 = 16,\\quad 73-55 = 18,$$\nso the last gap should be **20**, i.e. the fraction should be $\\dfrac{91}{71}$, not $\\dfrac{91}{70}$.\n\nHence $\\dfrac{91}{70}$ is the odd one out.",
+      "source": "TG ICET 2025 8th June 2025 Shift 1",
+      "source_year": 2025,
+      "options": [
+        {
+          "label": "$\\dfrac{21}{11}$",
+          "is_correct": false
+        },
+        {
+          "label": "$\\dfrac{91}{70}$",
+          "is_correct": true
+        },
+        {
+          "label": "$\\dfrac{73}{55}$",
+          "is_correct": false
+        },
+        {
+          "label": "$\\dfrac{31}{19}$",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Classification (Odd One Out)",
+      "difficulty": "easy",
+      "answer_type": "single",
+      "stem": "Find the odd one out:\n\n75, 57, 54, 64, 36, 87, 69, 93",
+      "explanation": "Test divisibility by 3 (add the digits): $75 \\to 12$, $57 \\to 12$, $54 \\to 9$, $36 \\to 9$, $87 \\to 15$, $69 \\to 15$, $93 \\to 12$ — all multiples of 3.\n\nBut $64 \\to 6 + 4 = 10$, which is not a multiple of 3. So **64** is the odd one out.",
+      "source": "TG ICET 2025 8th June 2025 Shift 1",
+      "source_year": 2025,
+      "options": [
+        {
+          "label": "54",
+          "is_correct": false
+        },
+        {
+          "label": "36",
+          "is_correct": false
+        },
+        {
+          "label": "93",
+          "is_correct": false
+        },
+        {
+          "label": "64",
+          "is_correct": true
+        }
+      ]
+    },
+    {
+      "chapter": "Classification (Odd One Out)",
+      "difficulty": "hard",
+      "answer_type": "single",
+      "stem": "Find the odd one out:\n\n45, 75, 175, 245, 315, 605, 845",
+      "explanation": "Write each number as a factor times a **perfect square**:\n$$45 = 5 \\times 3^2,\\quad 75 = 3 \\times 5^2,\\quad 175 = 7 \\times 5^2,\\quad 245 = 5 \\times 7^2,\\quad 605 = 5 \\times 11^2,\\quad 845 = 5 \\times 13^2.$$\nEvery number is (a prime) $\\times$ (a perfect square). But $315 = 5 \\times 63$ and 63 is not a perfect square $(315 = 3^2 \\times 5 \\times 7)$.\n\nSo **315** is the odd one out.",
+      "source": "TG ICET 2025 8th June 2025 Shift 1",
+      "source_year": 2025,
+      "options": [
+        {
+          "label": "315",
+          "is_correct": true
+        },
+        {
+          "label": "405",
+          "is_correct": false
+        },
+        {
+          "label": "75",
+          "is_correct": false
+        },
+        {
+          "label": "245",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Classification (Odd One Out)",
+      "difficulty": "easy",
+      "answer_type": "single",
+      "stem": "Find the odd one out:\n\n83, 31, 29, 23, 17, 19, 39, 53",
+      "explanation": "83, 31, 29, 23, 17, 19 and 53 are all **prime** numbers.\n\n$39 = 3 \\times 13$ is composite, so **39** is the odd one out.",
+      "source": "TG ICET 2025 8th June 2025 Shift 1",
+      "source_year": 2025,
+      "options": [
+        {
+          "label": "39",
+          "is_correct": true
+        },
+        {
+          "label": "53",
+          "is_correct": false
+        },
+        {
+          "label": "83",
+          "is_correct": false
+        },
+        {
+          "label": "19",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Classification (Odd One Out)",
+      "difficulty": "easy",
+      "answer_type": "single",
+      "stem": "Find the odd one out:\n\nMahanadi, Tapati, Sutlej, Chambal, Ghaghara, Jhelum, Indus, Aravalli",
+      "explanation": "Mahanadi, Tapati (Tapti), Sutlej, Chambal, Ghaghara, Jhelum and Indus are all **rivers** of India.\n\n**Aravalli** is a mountain range, not a river — so it is the odd one out.",
+      "source": "TG ICET 2025 8th June 2025 Shift 1",
+      "source_year": 2025,
+      "options": [
+        {
+          "label": "Aravalli",
+          "is_correct": true
+        },
+        {
+          "label": "Ghaghara",
+          "is_correct": false
+        },
+        {
+          "label": "Chambal",
+          "is_correct": false
+        },
+        {
+          "label": "Tapati",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Number & Alphabet Series",
+      "difficulty": "medium",
+      "answer_type": "single",
+      "stem": "Find the missing term:\n\n2, 5, 10, 15, 50, 45, 250, ______",
+      "explanation": "Two series are interleaved.\n\n**Odd positions:** $2,\\ 10,\\ 50,\\ 250$ — each $\\times 5$.\n\n**Even positions:** $5,\\ 15,\\ 45,\\ ?$ — each $\\times 3$, so the next is $45 \\times 3 = 135$.\n\nThe blank sits in an even position, so the answer is **135**.",
+      "source": "TG ICET 2025 8th June 2025 Shift 1",
+      "source_year": 2025,
+      "options": [
+        {
+          "label": "225",
+          "is_correct": false
+        },
+        {
+          "label": "135",
+          "is_correct": true
+        },
+        {
+          "label": "175",
+          "is_correct": false
+        },
+        {
+          "label": "315",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Number & Alphabet Series",
+      "difficulty": "very_hard",
+      "answer_type": "single",
+      "stem": "Find the letters that fill the blanks, in order:\n\nICETMGU,  KAG__OEW,  MYIPQC__,  O__KNSAA,  QUM__UYC,  __SOJWWE,  UQ__HYUG",
+      "explanation": "Read the seven words as a grid and look **down each column**.\n\n- Col 1: I, K, M, O, Q, ?, U → $+2$ each, so the 6th word starts with **S**.\n- Col 2: C, A, Y, ?, U, S, Q → $-2$ each, so the 4th word's 2nd letter is **W**.\n- Col 3: E, G, I, K, M, O, ? → $+2$ each, so the 7th word's 3rd letter is **Q**.\n- Col 4: T, ?, P, N, ?, J, H → $-2$ each $(20, 18, 16, 14, 12, 10, 8)$, giving **R** in word 2 and **L** in word 5.\n- Col 7: U, W, ?, A, C, E, G → $+2$ each, so word 3 ends in **Y**.\n\nTaking the blanks in the order they appear: **R, Y, W, L, S, Q**.",
+      "source": "TG ICET 2025 8th June 2025 Shift 1",
+      "source_year": 2025,
+      "options": [
+        {
+          "label": "S, X, W, M, S, Q",
+          "is_correct": false
+        },
+        {
+          "label": "R, Y, W, L, S, Q",
+          "is_correct": true
+        },
+        {
+          "label": "R, X, X, L, S, Q",
+          "is_correct": false
+        },
+        {
+          "label": "S, X, W, L, R, Q",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Number & Alphabet Series",
+      "difficulty": "easy",
+      "answer_type": "single",
+      "stem": "Find the missing term:\n\n67, 71, 73, ______, 83, 89, 97, 101",
+      "explanation": "The list is the sequence of **consecutive prime numbers**: 67, 71, 73, 79, 83, 89, 97, 101.\n\nThe prime between 73 and 83 is **79** (75, 76, 77 = 7×11, 78 and 81 = 9×9 are all composite).",
+      "source": "TG ICET 2025 8th June 2025 Shift 1",
+      "source_year": 2025,
+      "options": [
+        {
+          "label": "81",
+          "is_correct": false
+        },
+        {
+          "label": "77",
+          "is_correct": false
+        },
+        {
+          "label": "79",
+          "is_correct": true
+        },
+        {
+          "label": "76",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Number & Alphabet Series",
+      "difficulty": "medium",
+      "answer_type": "single",
+      "stem": "Find the missing term:\n\n55, 56, 59, 68, 95, 176, ______",
+      "explanation": "Look at the differences: $1, 3, 9, 27, 81$ — successive **powers of 3**.\n\nThe next difference is $3^5 = 243$, so the answer is $176 + 243 = 419$.",
+      "source": "TG ICET 2025 8th June 2025 Shift 1",
+      "source_year": 2025,
+      "options": [
+        {
+          "label": "249",
+          "is_correct": false
+        },
+        {
+          "label": "337",
+          "is_correct": false
+        },
+        {
+          "label": "419",
+          "is_correct": true
+        },
+        {
+          "label": "521",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Number & Alphabet Series",
+      "difficulty": "medium",
+      "answer_type": "single",
+      "stem": "Find the missing term:\n\n5, 6, 13, 12, 21, 24, 29, 48, ______",
+      "explanation": "Two series alternate.\n\n**Odd positions:** $5,\\ 13,\\ 21,\\ 29,\\ ?$ — each $+8$, so the next is $37$.\n\n**Even positions:** $6,\\ 12,\\ 24,\\ 48$ — each $\\times 2$.\n\nThe blank is the 9th term (an odd position), so the answer is **37**.",
+      "source": "TG ICET 2025 8th June 2025 Shift 1",
+      "source_year": 2025,
+      "options": [
+        {
+          "label": "64",
+          "is_correct": false
+        },
+        {
+          "label": "56",
+          "is_correct": false
+        },
+        {
+          "label": "43",
+          "is_correct": false
+        },
+        {
+          "label": "37",
+          "is_correct": true
+        }
+      ]
+    },
+    {
+      "chapter": "Number & Alphabet Series",
+      "difficulty": "medium",
+      "answer_type": "single",
+      "stem": "Find the missing term:\n\n123, 78, 112, 87, 101, 96, ______, 105",
+      "explanation": "Separate the alternate terms.\n\n**Odd positions:** $123,\\ 112,\\ 101,\\ ?$ — each $-11$, so the next is $90$.\n\n**Even positions:** $78,\\ 87,\\ 96,\\ 105$ — each $+9$, which confirms the split.\n\nThe blank is in an odd position, so the answer is **90**.",
+      "source": "TG ICET 2025 8th June 2025 Shift 1",
+      "source_year": 2025,
+      "options": [
+        {
+          "label": "90",
+          "is_correct": true
+        },
+        {
+          "label": "97",
+          "is_correct": false
+        },
+        {
+          "label": "103",
+          "is_correct": false
+        },
+        {
+          "label": "111",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Number & Alphabet Series",
+      "difficulty": "hard",
+      "answer_type": "single",
+      "stem": "Find the letters that fill the blanks, in order:\n\nUSTRUMP,  __RUMPUS,  U__PUSTR,  PU__TRUM,  STR__MPU,  RUMP__ST,  MPUST__U",
+      "explanation": "Every word is the same 7-letter block **USTRUMP** read from a different starting point (a cyclic rotation): USTRUMP, STRUMPU, TRUMPUS, RUMPUST, UMPUSTR, MPUSTRU, PUSTRUM.\n\nMatch each given word to its rotation and read off the missing letter:\n\n- $\\_$RUMPUS $\\Rightarrow$ T**RUMPUS** → **T**\n- U$\\_$PUSTR $\\Rightarrow$ U**M**PUSTR → **M**\n- PU$\\_$TRUM $\\Rightarrow$ PU**S**TRUM → **S**\n- STR$\\_$MPU $\\Rightarrow$ STR**U**MPU → **U**\n- RUMP$\\_$ST $\\Rightarrow$ RUMP**U**ST → **U**\n- MPUST$\\_$U $\\Rightarrow$ MPUST**R**U → **R**\n\nSo the blanks are **T, M, S, U, U, R**.",
+      "source": "TG ICET 2025 8th June 2025 Shift 1",
+      "source_year": 2025,
+      "options": [
+        {
+          "label": "T, M, S, U, U, R",
+          "is_correct": true
+        },
+        {
+          "label": "U, S, M, T, U, R",
+          "is_correct": false
+        },
+        {
+          "label": "T, S, U, M, U, R",
+          "is_correct": false
+        },
+        {
+          "label": "U, M, S, T, U, R",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Number & Alphabet Series",
+      "difficulty": "hard",
+      "answer_type": "single",
+      "stem": "Find the missing term:\n\n4, 18, 48, 100, 180, ______, 448",
+      "explanation": "Each term is $n(n+1)^2$:\n$$1 \\times 2^2 = 4,\\quad 2 \\times 3^2 = 18,\\quad 3 \\times 4^2 = 48,\\quad 4 \\times 5^2 = 100,\\quad 5 \\times 6^2 = 180.$$\nSo the 6th term is $6 \\times 7^2 = 294$, and the 7th is $7 \\times 8^2 = 448$ — which matches the last given term.\n\n*(Same result from differences: $14, 30, 52, 80, \\ldots$ rise by $16, 22, 28, 34$, so the next difference is 114 and $180 + 114 = 294$.)*",
+      "source": "TG ICET 2025 8th June 2025 Shift 1",
+      "source_year": 2025,
+      "options": [
+        {
+          "label": "196",
+          "is_correct": false
+        },
+        {
+          "label": "326",
+          "is_correct": false
+        },
+        {
+          "label": "244",
+          "is_correct": false
+        },
+        {
+          "label": "294",
+          "is_correct": true
+        }
+      ]
+    },
+    {
+      "chapter": "Number & Alphabet Series",
+      "difficulty": "medium",
+      "answer_type": "single",
+      "stem": "Find the missing term:\n\n$2,\\ 3,\\ \\dfrac{9}{2},\\ \\dfrac{27}{4},\\ \\underline{\\quad},\\ \\dfrac{243}{16},\\ \\dfrac{729}{32}$",
+      "explanation": "The sequence is geometric with ratio $\\dfrac{3}{2}$:\n$$2,\\ 2 \\cdot \\tfrac32 = 3,\\ 3 \\cdot \\tfrac32 = \\tfrac92,\\ \\tfrac92 \\cdot \\tfrac32 = \\tfrac{27}{4},\\ \\tfrac{27}{4} \\cdot \\tfrac32 = \\tfrac{81}{8}.$$\nChecking onward: $\\tfrac{81}{8} \\cdot \\tfrac32 = \\tfrac{243}{16}$ and then $\\tfrac{729}{32}$ — both match.\n\nThe missing term is $\\dfrac{81}{8}$.",
+      "source": "TG ICET 2025 8th June 2025 Shift 1",
+      "source_year": 2025,
+      "options": [
+        {
+          "label": "$\\dfrac{54}{6}$",
+          "is_correct": false
+        },
+        {
+          "label": "$\\dfrac{81}{6}$",
+          "is_correct": false
+        },
+        {
+          "label": "$\\dfrac{45}{8}$",
+          "is_correct": false
+        },
+        {
+          "label": "$\\dfrac{81}{8}$",
+          "is_correct": true
+        }
+      ]
+    },
+    {
+      "chapter": "Venn Diagrams",
+      "difficulty": "medium",
+      "answer_type": "single",
+      "stem": "Let $U = \\{1,2,3,\\ldots,16\\}$ be the universal set, with\n$$I = \\{1,3,5,7,9,11,13,15\\},\\quad II = \\{1,4,9,16\\},\\quad III = \\{2,3,5,7,11,13\\}.$$\nThree overlapping circles $I$, $II$, $III$ are drawn inside the rectangle $U$, and their regions are labelled:\n\n| Region | Meaning |\n| --- | --- |\n| A | in $I$ only |\n| B | in $II$ only |\n| C | in $III$ only |\n| D | in $I$ and $II$ but not $III$ |\n| E | in $I$ and $III$ but not $II$ |\n| F | in $II$ and $III$ but not $I$ |\n| G | in all three |\n| H | in none of the three |\n\nThe empty regions in the Venn diagram are",
+      "explanation": "Work out the overlaps:\n\n- $I \\cap II = \\{1, 9\\}$ — both are odd squares, so region **D** holds 2 elements.\n- $I \\cap III = \\{3,5,7,11,13\\}$ — region **E**.\n- $II \\cap III = \\varnothing$: $II = \\{1,4,9,16\\}$ is all squares and none of $2,3,5,7,11,13$ is a square. So region **F** is empty.\n- $I \\cap II \\cap III \\subseteq II \\cap III = \\varnothing$, so region **G** is empty too.\n\nThe empty regions are **G and F**.",
+      "source": "TG ICET 2025 8th June 2025 Shift 1",
+      "source_year": 2025,
+      "options": [
+        {
+          "label": "C, G",
+          "is_correct": false
+        },
+        {
+          "label": "G, F",
+          "is_correct": true
+        },
+        {
+          "label": "A, C",
+          "is_correct": false
+        },
+        {
+          "label": "B, C",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Venn Diagrams",
+      "difficulty": "medium",
+      "answer_type": "single",
+      "stem": "Let $U = \\{1,2,3,\\ldots,16\\}$ be the universal set, with\n$$I = \\{1,3,5,7,9,11,13,15\\},\\quad II = \\{1,4,9,16\\},\\quad III = \\{2,3,5,7,11,13\\}.$$\nThree overlapping circles $I$, $II$, $III$ are drawn inside the rectangle $U$, and their regions are labelled:\n\n| Region | Meaning |\n| --- | --- |\n| A | in $I$ only |\n| B | in $II$ only |\n| C | in $III$ only |\n| D | in $I$ and $II$ but not $III$ |\n| E | in $I$ and $III$ but not $II$ |\n| F | in $II$ and $III$ but not $I$ |\n| G | in all three |\n| H | in none of the three |\n\nWhich are the only regions that contain exactly two integers?",
+      "explanation": "Fill in every region:\n\n| Region | Elements | Count |\n| --- | --- | --- |\n| A (only $I$) | 15 | 1 |\n| **B** (only $II$) | 4, 16 | **2** |\n| C (only $III$) | 2 | 1 |\n| **D** ($I \\cap II$) | 1, 9 | **2** |\n| E ($I \\cap III$) | 3, 5, 7, 11, 13 | 5 |\n| F, G | — | 0 |\n| H (none) | 6, 8, 10, 12, 14 | 5 |\n\nOnly **B and D** hold exactly two integers.",
+      "source": "TG ICET 2025 8th June 2025 Shift 1",
+      "source_year": 2025,
+      "options": [
+        {
+          "label": "C, D",
+          "is_correct": false
+        },
+        {
+          "label": "B, C",
+          "is_correct": false
+        },
+        {
+          "label": "B",
+          "is_correct": false
+        },
+        {
+          "label": "B, D",
+          "is_correct": true
+        }
+      ]
+    },
+    {
+      "chapter": "Venn Diagrams",
+      "difficulty": "easy",
+      "answer_type": "single",
+      "stem": "Let $U = \\{1,2,3,\\ldots,16\\}$ be the universal set, with\n$$I = \\{1,3,5,7,9,11,13,15\\},\\quad II = \\{1,4,9,16\\},\\quad III = \\{2,3,5,7,11,13\\}.$$\nThree overlapping circles $I$, $II$, $III$ are drawn inside the rectangle $U$, and their regions are labelled:\n\n| Region | Meaning |\n| --- | --- |\n| A | in $I$ only |\n| B | in $II$ only |\n| C | in $III$ only |\n| D | in $I$ and $II$ but not $III$ |\n| E | in $I$ and $III$ but not $II$ |\n| F | in $II$ and $III$ but not $I$ |\n| G | in all three |\n| H | in none of the three |\n\nThe set representing region A is",
+      "explanation": "Region A holds the elements of $I$ that lie in neither $II$ nor $III$:\n$$I \\setminus (II \\cup III) = \\{1,3,5,7,9,11,13,15\\} \\setminus \\{1,4,9,16,2,3,5,7,11,13\\}.$$\nRemove 1 and 9 (also in $II$) and 3, 5, 7, 11, 13 (also in $III$); only **15** survives.\n\nSo region A is $\\{15\\}$.",
+      "source": "TG ICET 2025 8th June 2025 Shift 1",
+      "source_year": 2025,
+      "options": [
+        {
+          "label": "$\\{15\\}$",
+          "is_correct": true
+        },
+        {
+          "label": "$\\{2, 15\\}$",
+          "is_correct": false
+        },
+        {
+          "label": "$\\{1, 15\\}$",
+          "is_correct": false
+        },
+        {
+          "label": "Empty set",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Venn Diagrams",
+      "difficulty": "easy",
+      "answer_type": "single",
+      "stem": "Let $U = \\{1,2,3,\\ldots,16\\}$ be the universal set, with\n$$I = \\{1,3,5,7,9,11,13,15\\},\\quad II = \\{1,4,9,16\\},\\quad III = \\{2,3,5,7,11,13\\}.$$\nThree overlapping circles $I$, $II$, $III$ are drawn inside the rectangle $U$, and their regions are labelled:\n\n| Region | Meaning |\n| --- | --- |\n| A | in $I$ only |\n| B | in $II$ only |\n| C | in $III$ only |\n| D | in $I$ and $II$ but not $III$ |\n| E | in $I$ and $III$ but not $II$ |\n| F | in $II$ and $III$ but not $I$ |\n| G | in all three |\n| H | in none of the three |\n\nHow many elements are there in region E?",
+      "explanation": "Region E is $(I \\cap III) \\setminus II$.\n\n$I \\cap III = \\{3,5,7,11,13\\}$ — the odd primes common to both — and none of them lies in $II = \\{1,4,9,16\\}$.\n\nSo region E has **5** elements.",
+      "source": "TG ICET 2025 8th June 2025 Shift 1",
+      "source_year": 2025,
+      "options": [
+        {
+          "label": "5",
+          "is_correct": true
+        },
+        {
+          "label": "4",
+          "is_correct": false
+        },
+        {
+          "label": "3",
+          "is_correct": false
+        },
+        {
+          "label": "6",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Coding-Decoding",
+      "difficulty": "hard",
+      "answer_type": "single",
+      "stem": "Digits are coded by symbols as follows:\n\n| Number | 1 | 0 | 5 | 2 | 6 | 3 | 9 | 7 | 4 | 8 |\n| --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |\n| Symbol | @ | A | # | C | K | \\$ | % | G | * | © |\n\n**Rules**\n1. If the first digit is even and the last digit is odd, both of them are coded with the code of the **first** digit.\n2. If the first digit is odd and the last digit is even, their codes are **interchanged**.\n3. If the first and last digits are both odd, both are denoted by the code of the **last** digit.\n4. If the first and last digits are both even, both are denoted by the code of the **greatest** digit.\n\nWhat is the code for **243578**?",
+      "explanation": "First digit 2 and last digit 8 are **both even**, so rule 4 applies: both ends take the code of the greatest digit in the number. The greatest digit is 8, whose code is ©.\n\nThe middle digits keep their own codes: $4 \\to *$, $3 \\to \\$$, $5 \\to \\#$, $7 \\to G$.\n\nSo the code is **©\\*\\$\\#G©**.",
+      "source": "TG ICET 2025 8th June 2025 Shift 1",
+      "source_year": 2025,
+      "options": [
+        {
+          "label": "©*$G# ©",
+          "is_correct": false
+        },
+        {
+          "label": "©*$#G©",
+          "is_correct": true
+        },
+        {
+          "label": "C*$#G©",
+          "is_correct": false
+        },
+        {
+          "label": "C*$#GC",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Coding-Decoding",
+      "difficulty": "hard",
+      "answer_type": "single",
+      "stem": "Digits are coded by symbols as follows:\n\n| Number | 1 | 0 | 5 | 2 | 6 | 3 | 9 | 7 | 4 | 8 |\n| --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |\n| Symbol | @ | A | # | C | K | \\$ | % | G | * | © |\n\n**Rules**\n1. If the first digit is even and the last digit is odd, both of them are coded with the code of the **first** digit.\n2. If the first digit is odd and the last digit is even, their codes are **interchanged**.\n3. If the first and last digits are both odd, both are denoted by the code of the **last** digit.\n4. If the first and last digits are both even, both are denoted by the code of the **greatest** digit.\n\nWhat is the code for **1245678**?",
+      "explanation": "The first digit 1 is odd and the last digit 8 is even, so rule 2 applies: **swap their codes**. $1 \\to @$ and $8 \\to ©$, so the number now begins with © and ends with @.\n\nThe middle digits are unchanged: $2 \\to C$, $4 \\to *$, $5 \\to \\#$, $6 \\to K$, $7 \\to G$.\n\nSo the code is **©C\\*\\#KG@**.",
+      "source": "TG ICET 2025 8th June 2025 Shift 1",
+      "source_year": 2025,
+      "options": [
+        {
+          "label": "@CC*#K©",
+          "is_correct": false
+        },
+        {
+          "label": "GC*#KK@",
+          "is_correct": false
+        },
+        {
+          "label": "@GC*K#G",
+          "is_correct": false
+        },
+        {
+          "label": "©C*#KG@",
+          "is_correct": true
+        }
+      ]
+    },
+    {
+      "chapter": "Coding-Decoding",
+      "difficulty": "hard",
+      "answer_type": "single",
+      "stem": "Digits are coded by symbols as follows:\n\n| Number | 1 | 0 | 5 | 2 | 6 | 3 | 9 | 7 | 4 | 8 |\n| --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |\n| Symbol | @ | A | # | C | K | \\$ | % | G | * | © |\n\n**Rules**\n1. If the first digit is even and the last digit is odd, both of them are coded with the code of the **first** digit.\n2. If the first digit is odd and the last digit is even, their codes are **interchanged**.\n3. If the first and last digits are both odd, both are denoted by the code of the **last** digit.\n4. If the first and last digits are both even, both are denoted by the code of the **greatest** digit.\n\nWhat is the code for **697845**?",
+      "explanation": "The first digit 6 is even and the last digit 5 is odd, so rule 1 applies: **both ends** take the code of the first digit, $6 \\to K$.\n\nThe middle digits keep their codes: $9 \\to \\%$, $7 \\to G$, $8 \\to ©$, $4 \\to *$.\n\nSo the code is **K\\%G©\\*K**.",
+      "source": "TG ICET 2025 8th June 2025 Shift 1",
+      "source_year": 2025,
+      "options": [
+        {
+          "label": "K%G©*K",
+          "is_correct": true
+        },
+        {
+          "label": "K%G©*#",
+          "is_correct": false
+        },
+        {
+          "label": "#%G©*#",
+          "is_correct": false
+        },
+        {
+          "label": "#%G©*#",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Coding-Decoding",
+      "difficulty": "hard",
+      "answer_type": "single",
+      "stem": "Digits are coded by symbols as follows:\n\n| Number | 1 | 0 | 5 | 2 | 6 | 3 | 9 | 7 | 4 | 8 |\n| --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |\n| Symbol | @ | A | # | C | K | \\$ | % | G | * | © |\n\n**Rules**\n1. If the first digit is even and the last digit is odd, both of them are coded with the code of the **first** digit.\n2. If the first digit is odd and the last digit is even, their codes are **interchanged**.\n3. If the first and last digits are both odd, both are denoted by the code of the **last** digit.\n4. If the first and last digits are both even, both are denoted by the code of the **greatest** digit.\n\nWhat is the code for **987366**?",
+      "explanation": "The first digit 9 is odd and the last digit 6 is even, so rule 2 applies: **swap their codes**. $9 \\to \\%$ and $6 \\to K$, so the code starts with K and ends with %.\n\nThe middle digits keep their codes: $8 \\to ©$, $7 \\to G$, $3 \\to \\$$, $6 \\to K$.\n\nSo the code is **K©G\\$K%**.",
+      "source": "TG ICET 2025 8th June 2025 Shift 1",
+      "source_year": 2025,
+      "options": [
+        {
+          "label": "%©G$KK",
+          "is_correct": false
+        },
+        {
+          "label": "K©G$K%",
+          "is_correct": true
+        },
+        {
+          "label": "%©G$K%",
+          "is_correct": false
+        },
+        {
+          "label": "K©G$KK",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Coding-Decoding",
+      "difficulty": "hard",
+      "answer_type": "single",
+      "stem": "Digits are coded by symbols as follows:\n\n| Number | 1 | 0 | 5 | 2 | 6 | 3 | 9 | 7 | 4 | 8 |\n| --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |\n| Symbol | @ | A | # | C | K | \\$ | % | G | * | © |\n\n**Rules**\n1. If the first digit is even and the last digit is odd, both of them are coded with the code of the **first** digit.\n2. If the first digit is odd and the last digit is even, their codes are **interchanged**.\n3. If the first and last digits are both odd, both are denoted by the code of the **last** digit.\n4. If the first and last digits are both even, both are denoted by the code of the **greatest** digit.\n\nWhat is the code for **928657**?",
+      "explanation": "Both the first digit 9 and the last digit 7 are **odd**, so rule 3 applies: both ends take the code of the **last** digit, $7 \\to G$.\n\nThe middle digits keep their codes: $2 \\to C$, $8 \\to ©$, $6 \\to K$, $5 \\to \\#$.\n\nSo the code is **GC©K\\#G**.",
+      "source": "TG ICET 2025 8th June 2025 Shift 1",
+      "source_year": 2025,
+      "options": [
+        {
+          "label": "%C©K#G",
+          "is_correct": false
+        },
+        {
+          "label": "%C©K#%",
+          "is_correct": false
+        },
+        {
+          "label": "GC©K#G",
+          "is_correct": true
+        },
+        {
+          "label": "GC©K#%",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Coding-Decoding",
+      "difficulty": "medium",
+      "answer_type": "single",
+      "stem": "In a certain code PROBLEM is coded as KILYOVN. In the same code, SOLUTION is coded as",
+      "explanation": "Each letter is replaced by its **opposite letter** — the one whose alphabet position makes the pair add up to 27:\n$$P(16) \\to K(11),\\quad R(18) \\to I(9),\\quad O(15) \\to L(12),\\quad B(2) \\to Y(25),\\quad L \\to O,\\quad E \\to V,\\quad M \\to N.$$\n\nApply it to SOLUTION:\n$$S(19) \\to H,\\ O(15) \\to L,\\ L(12) \\to O,\\ U(21) \\to F,\\ T(20) \\to G,\\ I(9) \\to R,\\ O \\to L,\\ N(14) \\to M$$\ngiving **HLOFGRLM**.",
+      "source": "TG ICET 2025 8th June 2025 Shift 1",
+      "source_year": 2025,
+      "options": [
+        {
+          "label": "HLOFGRLM",
+          "is_correct": true
+        },
+        {
+          "label": "MHOFGSHN",
+          "is_correct": false
+        },
+        {
+          "label": "MKOEGRKS",
+          "is_correct": false
+        },
+        {
+          "label": "HMOFGSMN",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Coding-Decoding",
+      "difficulty": "medium",
+      "answer_type": "single",
+      "stem": "In a certain code the word NICE is coded as PLGJ and the word HAND is coded as JDRI. In the same code the word SWIM is coded as",
+      "explanation": "The shift grows across the word: $+2, +3, +4, +5$.\n\n- NICE: $N+2 = P$, $I+3 = L$, $C+4 = G$, $E+5 = J$ ✓\n- HAND: $H+2 = J$, $A+3 = D$, $N+4 = R$, $D+5 = I$ ✓\n\nSo for SWIM: $S+2 = U$, $W+3 = Z$, $I+4 = M$, $M+5 = R$, giving **UZMR**.",
+      "source": "TG ICET 2025 8th June 2025 Shift 1",
+      "source_year": 2025,
+      "options": [
+        {
+          "label": "UGLO",
+          "is_correct": false
+        },
+        {
+          "label": "UANQ",
+          "is_correct": false
+        },
+        {
+          "label": "UZMR",
+          "is_correct": true
+        },
+        {
+          "label": "UYOP",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Coding-Decoding",
+      "difficulty": "medium",
+      "answer_type": "single",
+      "stem": "In a certain code DOG is coded as 420 and CAT is coded as 60. Then in the same code FLY is coded as",
+      "explanation": "Replace each letter by its alphabet position and **multiply**:\n\n- DOG: $4 \\times 15 \\times 7 = 420$ ✓\n- CAT: $3 \\times 1 \\times 20 = 60$ ✓\n\nSo FLY: $F = 6$, $L = 12$, $Y = 25$, giving $6 \\times 12 \\times 25 = 1800$.",
+      "source": "TG ICET 2025 8th June 2025 Shift 1",
+      "source_year": 2025,
+      "options": [
+        {
+          "label": "1800",
+          "is_correct": true
+        },
+        {
+          "label": "900",
+          "is_correct": false
+        },
+        {
+          "label": "450",
+          "is_correct": false
+        },
+        {
+          "label": "360",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Coding-Decoding",
+      "difficulty": "very_hard",
+      "answer_type": "single",
+      "stem": "In a certain code PRIME is coded as NFIOQ, and MANGO is coded as HPNLZ. Then in the same code the word GRAPE is coded as",
+      "explanation": "The two halves of the five-letter word **change places** around the fixed middle letter, and letters moving to the front step **one forward** while letters moving to the back step **one back**:\n$$\\text{code} = [\\,4\\text{th}+1,\\ 5\\text{th}+1,\\ 3\\text{rd},\\ 1\\text{st}-1,\\ 2\\text{nd}-1\\,]$$\n\n- PRIME: $M+1 = N$, $E+1 = F$, $I$, $P-1 = O$, $R-1 = Q$ → NFIOQ ✓\n- MANGO: $G+1 = H$, $O+1 = P$, $N$, $M-1 = L$, $A-1 = Z$ (wrapping) → HPNLZ ✓\n\nFor GRAPE: $P+1 = Q$, $E+1 = F$, $A$, $G-1 = F$, $R-1 = Q$, giving **QFAFQ**.",
+      "source": "TG ICET 2025 8th June 2025 Shift 1",
+      "source_year": 2025,
+      "options": [
+        {
+          "label": "QFAHS",
+          "is_correct": false
+        },
+        {
+          "label": "QFAFQ",
+          "is_correct": true
+        },
+        {
+          "label": "ODAFQ",
+          "is_correct": false
+        },
+        {
+          "label": "ODAHS",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Coding-Decoding",
+      "difficulty": "very_hard",
+      "answer_type": "single",
+      "stem": "In a certain code PYTHAGORUS is coded as OZSGBHPQVT. Then which word is coded as CJQJDGKFS?",
+      "explanation": "Look at each letter's **position in the alphabet**: if it is odd the letter moves one step **forward**, if even it moves one step **back**.\n\nCheck it on the given pair: $P(16) \\to O$, $Y(25) \\to Z$, $T(20) \\to S$, $H(8) \\to G$, $A(1) \\to B$, $G(7) \\to H$, $O(15) \\to P$, $R(18) \\to Q$, $U(21) \\to V$, $S(19) \\to T$ — exactly OZSGBHPQVT ✓\n\nNow decode CJQJDGKFS by reversing the rule on each letter, and DIRICHLET is confirmed by re-encoding it:\n$$D(4) \\to C,\\ I(9) \\to J,\\ R(18) \\to Q,\\ I \\to J,\\ C(3) \\to D,\\ H(8) \\to G,\\ L(12) \\to K,\\ E(5) \\to F,\\ T(20) \\to S.$$\n\nSo the word is **DIRICHLET**.",
+      "source": "TG ICET 2025 8th June 2025 Shift 1",
+      "source_year": 2025,
+      "options": [
+        {
+          "label": "DIRICHLET",
+          "is_correct": true
+        },
+        {
+          "label": "BHASKARAN",
+          "is_correct": false
+        },
+        {
+          "label": "ALEXANDER",
+          "is_correct": false
+        },
+        {
+          "label": "CATHERINE",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Clocks & Calendars",
+      "difficulty": "easy",
+      "answer_type": "single",
+      "stem": "If today is Friday, then the $214^{th}$ day from today falls on which day?",
+      "explanation": "Days repeat every 7, so only the remainder matters:\n$$214 = 7 \\times 30 + 4 \\Rightarrow 214 \\equiv 4 \\pmod 7.$$\nCounting 4 days on from Friday: Saturday, Sunday, Monday, **Tuesday**.",
+      "source": "TG ICET 2025 8th June 2025 Shift 1",
+      "source_year": 2025,
+      "options": [
+        {
+          "label": "Wednesday",
+          "is_correct": false
+        },
+        {
+          "label": "Monday",
+          "is_correct": false
+        },
+        {
+          "label": "Tuesday",
+          "is_correct": true
+        },
+        {
+          "label": "Sunday",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Clocks & Calendars",
+      "difficulty": "hard",
+      "answer_type": "single",
+      "stem": "What is the least time required after 4 o'clock for the hour hand and the minute hand of a clock to be $54^\\circ$ apart?",
+      "explanation": "At 4:00 the hour hand is at $4 \\times 30 = 120^\\circ$ and the minute hand at $0^\\circ$, so they start $120^\\circ$ apart.\n\nThe minute hand gains on the hour hand at $6^\\circ - 0.5^\\circ = 5.5^\\circ$ per minute, so after $t$ minutes the gap is $|120 - 5.5t|$.\n\nSetting $120 - 5.5t = 54$ gives $5.5t = 66$, so $t = 12$ minutes.\n\n*(The other solution, $5.5t = 174 \\Rightarrow t \\approx 31\\tfrac{7}{11}$ min, is when the minute hand has overtaken the hour hand — later, so 12 minutes is the least time.)*",
+      "source": "TG ICET 2025 8th June 2025 Shift 1",
+      "source_year": 2025,
+      "options": [
+        {
+          "label": "11 minutes",
+          "is_correct": false
+        },
+        {
+          "label": "10 minutes",
+          "is_correct": false
+        },
+        {
+          "label": "13 minutes",
+          "is_correct": false
+        },
+        {
+          "label": "12 minutes",
+          "is_correct": true
+        }
+      ]
+    },
+    {
+      "chapter": "Clocks & Calendars",
+      "difficulty": "hard",
+      "answer_type": "single",
+      "stem": "At what time between 6 hours and 7 hours will the two hands of a clock be at right angle for the **second** time?",
+      "explanation": "At 6:00 the hands are $180^\\circ$ apart, and the minute hand closes on the hour hand at $5.5^\\circ$ per minute. After $t$ minutes the gap is $|180 - 5.5t|$.\n\n- **First** right angle: $180 - 5.5t = 90 \\Rightarrow t = \\dfrac{90}{5.5} = 16\\dfrac{4}{11}$ min.\n- **Second** right angle: the minute hand has passed the hour hand, so $5.5t - 180 = 90 \\Rightarrow t = \\dfrac{270}{5.5} = 49\\dfrac{1}{11}$ min.\n\nSo the answer is **6 hours $49\\frac{1}{11}$ minutes**.",
+      "source": "TG ICET 2025 8th June 2025 Shift 1",
+      "source_year": 2025,
+      "options": [
+        {
+          "label": "6 hours $16\\frac{4}{11}$ minutes",
+          "is_correct": false
+        },
+        {
+          "label": "6 hours $44\\frac{6}{11}$ minutes",
+          "is_correct": false
+        },
+        {
+          "label": "6 hours $41\\frac{9}{11}$ minutes",
+          "is_correct": false
+        },
+        {
+          "label": "6 hours $49\\frac{1}{11}$ minutes",
+          "is_correct": true
+        }
+      ]
+    },
+    {
+      "chapter": "Blood Relations",
+      "difficulty": "medium",
+      "answer_type": "single",
+      "stem": "Ramana is a son of Murthy's father's sister, and Lakshmi is the paternal grandmother of Murthy. Then Ramana is related to Lakshmi as",
+      "explanation": "Lakshmi is Murthy's **paternal** grandmother, so she is the mother of Murthy's father — and therefore also the mother of Murthy's father's **sister**.\n\nRamana is that sister's son, i.e. the son of Lakshmi's daughter.\n\nSo Ramana is Lakshmi's **grandson**.",
+      "source": "TG ICET 2025 8th June 2025 Shift 1",
+      "source_year": 2025,
+      "options": [
+        {
+          "label": "Son",
+          "is_correct": false
+        },
+        {
+          "label": "Nephew",
+          "is_correct": false
+        },
+        {
+          "label": "Father",
+          "is_correct": false
+        },
+        {
+          "label": "Grandson",
+          "is_correct": true
+        }
+      ]
+    },
+    {
+      "chapter": "Clocks & Calendars",
+      "difficulty": "medium",
+      "answer_type": "single",
+      "stem": "At Vijayawada bus station a board says there is a bus to Hyderabad every 45 minutes. An announcement says \"a bus to Hyderabad has left 13 minutes ago and the next bus to Hyderabad is at 5.18 pm.\" Then the time at which the announcement came is",
+      "explanation": "Buses run every 45 minutes, so the bus before the 5.18 pm one left at\n$$5{:}18 - 0{:}45 = 4{:}33 \\text{ pm}.$$\nThat is the bus that had left 13 minutes before the announcement, so the announcement was made at\n$$4{:}33 + 0{:}13 = \\mathbf{4{:}46 \\text{ pm}}.$$",
+      "source": "TG ICET 2025 8th June 2025 Shift 1",
+      "source_year": 2025,
+      "options": [
+        {
+          "label": "4.20 pm",
+          "is_correct": false
+        },
+        {
+          "label": "4.33 pm",
+          "is_correct": false
+        },
+        {
+          "label": "4.46 pm",
+          "is_correct": true
+        },
+        {
+          "label": "4.51 pm",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Clocks & Calendars",
+      "difficulty": "medium",
+      "answer_type": "single",
+      "stem": "Sunil arrived at a place on Friday and came to know that he was three days earlier than the scheduled day of the meeting. Had he reached there on the following Sunday, he would have been early/late by",
+      "explanation": "He arrived Friday, three days **before** the meeting, so the meeting is on **Monday**.\n\nThe following Sunday is one day before Monday, so arriving then he would still be **one day earlier** — early, not late.",
+      "source": "TG ICET 2025 8th June 2025 Shift 1",
+      "source_year": 2025,
+      "options": [
+        {
+          "label": "One day earlier",
+          "is_correct": true
+        },
+        {
+          "label": "One day late",
+          "is_correct": false
+        },
+        {
+          "label": "Two days earlier",
+          "is_correct": false
+        },
+        {
+          "label": "Two days late",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Seating Arrangement",
+      "difficulty": "hard",
+      "answer_type": "single",
+      "stem": "Six persons A, B, C, D, E and F sat for a meeting around a round table facing the centre. C is to the immediate left of E, F is between B and C, D is between A and E, and A is to the immediate left of B. Who is sitting between F and E?",
+      "explanation": "Facing the centre, a person's immediate left is the next seat **clockwise**.\n\n- \"C is to the immediate left of E\" $\\Rightarrow$ going clockwise: E, C.\n- \"F is between B and C\" $\\Rightarrow$ F sits next to C, so clockwise: E, C, F, B.\n- \"A is to the immediate left of B\" $\\Rightarrow$ clockwise: E, C, F, B, A.\n- D takes the last seat, and it checks out: D is between A and E ✓\n\nThe clockwise order is **E, C, F, B, A, D**. Between F and E sits **C**.",
+      "source": "TG ICET 2025 8th June 2025 Shift 1",
+      "source_year": 2025,
+      "options": [
+        {
+          "label": "A",
+          "is_correct": false
+        },
+        {
+          "label": "B",
+          "is_correct": false
+        },
+        {
+          "label": "C",
+          "is_correct": true
+        },
+        {
+          "label": "D",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Coding-Decoding",
+      "difficulty": "medium",
+      "answer_type": "single",
+      "stem": "If $\\boxtimes, \\ominus, \\otimes, \\oplus$ respectively denote $+,\\ \\div,\\ -,\\ \\times$, then\n$$\\frac{(16 \\otimes 4) \\ominus (8 \\otimes 4)}{(4 \\oplus 8) \\otimes (2 \\oplus 16) \\boxtimes 2} = ?$$",
+      "explanation": "Substitute the real operators: $\\boxtimes = +$, $\\ominus = \\div$, $\\otimes = -$, $\\oplus = \\times$.\n\n**Numerator:** $(16 - 4) \\div (8 - 4) = 12 \\div 4 = 3$.\n\n**Denominator:** $(4 \\times 8) - (2 \\times 16) + 2 = 32 - 32 + 2 = 2$.\n\nSo the value is $\\dfrac{3}{2}$.",
+      "source": "TG ICET 2025 8th June 2025 Shift 1",
+      "source_year": 2025,
+      "options": [
+        {
+          "label": "$-\\dfrac{3}{2}$",
+          "is_correct": false
+        },
+        {
+          "label": "$\\dfrac{-3}{4}$",
+          "is_correct": false
+        },
+        {
+          "label": "$\\dfrac{3}{4}$",
+          "is_correct": false
+        },
+        {
+          "label": "$\\dfrac{3}{2}$",
+          "is_correct": true
+        }
+      ]
+    },
+    {
+      "chapter": "Coding-Decoding",
+      "difficulty": "medium",
+      "answer_type": "single",
+      "stem": "If $a \\mathbin{\\alpha} b = \\dfrac{a+2b}{3}$, $a \\mathbin{\\gamma} b = \\dfrac{2a+b}{2}$ and $a \\mathbin{\\beta} b = \\dfrac{a+b}{2}$, then $\\big(2 \\mathbin{\\alpha} (3 \\mathbin{\\gamma} 1)\\big) \\mathbin{\\beta} 4 = ?$",
+      "explanation": "Work from the innermost bracket outwards.\n\n1. $3 \\mathbin{\\gamma} 1 = \\dfrac{2(3)+1}{2} = \\dfrac{7}{2}$\n2. $2 \\mathbin{\\alpha} \\dfrac{7}{2} = \\dfrac{2 + 2\\left(\\frac{7}{2}\\right)}{3} = \\dfrac{2+7}{3} = 3$\n3. $3 \\mathbin{\\beta} 4 = \\dfrac{3+4}{2} = \\dfrac{7}{2}$\n\nSo the value is $\\dfrac{7}{2}$.",
+      "source": "TG ICET 2025 8th June 2025 Shift 1",
+      "source_year": 2025,
+      "options": [
+        {
+          "label": "$\\dfrac{7}{3}$",
+          "is_correct": false
+        },
+        {
+          "label": "7",
+          "is_correct": false
+        },
+        {
+          "label": "$\\dfrac{7}{2}$",
+          "is_correct": true
+        },
+        {
+          "label": "14",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Coding-Decoding",
+      "difficulty": "medium",
+      "answer_type": "single",
+      "stem": "If $a * b = 2a + b$, $a \\oplus b = \\dfrac{a+b}{2}$ and $a \\# b = 2(a+b)$, then\n$$[\\{(1 * 1) \\oplus 1\\} \\oplus 1] \\# 1 = ?$$",
+      "explanation": "Peel the brackets from the inside.\n\n1. $1 * 1 = 2(1) + 1 = 3$\n2. $3 \\oplus 1 = \\dfrac{3+1}{2} = 2$\n3. $2 \\oplus 1 = \\dfrac{2+1}{2} = \\dfrac{3}{2}$\n4. $\\dfrac{3}{2} \\# 1 = 2\\left(\\dfrac{3}{2} + 1\\right) = 2 \\times \\dfrac{5}{2} = 5$\n\nSo the value is **5**.",
+      "source": "TG ICET 2025 8th June 2025 Shift 1",
+      "source_year": 2025,
+      "options": [
+        {
+          "label": "2",
+          "is_correct": false
+        },
+        {
+          "label": "5",
+          "is_correct": true
+        },
+        {
+          "label": "3",
+          "is_correct": false
+        },
+        {
+          "label": "4",
+          "is_correct": false
+        }
+      ]
+    }
+  ]
+}
