@@ -207,14 +207,7 @@ export function useQuizEngine(input: QuizEngineInput) {
   // (or runs the adapter's custom penalty).
   useEffect(() => {
     if (!active) return;
-    // Diagnostic: prove the guard is armed in the running build. Remove once the
-    // tab-switch behaviour is confirmed in the deployed app.
-    console.info("[quiz-guard] armed");
-    const registerLeave = (via: string) => {
-      console.info("[quiz-guard] leave via", via, {
-        suppressed: suppressLeaveRef.current,
-        sinceLast: Date.now() - lastLeaveRef.current,
-      });
+    const registerLeave = () => {
       if (suppressLeaveRef.current) return;
       const now = Date.now();
       if (now - lastLeaveRef.current < 1500) return;
@@ -228,15 +221,13 @@ export function useQuizEngine(input: QuizEngineInput) {
         setWarnOpen(true);
       }
     };
-    const onBlur = () => registerLeave("blur");
     const onVisibility = () => {
-      if (document.visibilityState === "hidden") registerLeave("visibility");
+      if (document.visibilityState === "hidden") registerLeave();
     };
-    window.addEventListener("blur", onBlur);
+    window.addEventListener("blur", registerLeave);
     document.addEventListener("visibilitychange", onVisibility);
     return () => {
-      console.info("[quiz-guard] disarmed");
-      window.removeEventListener("blur", onBlur);
+      window.removeEventListener("blur", registerLeave);
       document.removeEventListener("visibilitychange", onVisibility);
     };
   }, [active]);
