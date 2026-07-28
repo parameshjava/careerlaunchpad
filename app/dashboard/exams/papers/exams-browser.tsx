@@ -6,7 +6,7 @@
 import { useMemo, useState } from "react";
 import { useRouter } from "next/navigation";
 import Link from "next/link";
-import { ChartColumnIncreasing, Eye, FileText, Trash2 } from "lucide-react";
+import { ChartColumnIncreasing, Trash2 } from "lucide-react";
 import { Input } from "@/components/ui/input";
 import { Badge } from "@/components/ui/badge";
 import { Button, buttonVariants } from "@/components/ui/button";
@@ -244,43 +244,34 @@ function ExamList({ exams, empty }: { exams: ExamCard[]; empty: string }) {
               {/* Status badge only while not finished — on the Closed tab it's redundant. */}
               {!finished && <Badge variant={st.live ? "default" : "secondary"}>{st.text}</Badge>}
 
-              {/* Finished exam: publish results to students + view them. */}
+              {/* Finished exam: toggle whether students can see results. The
+                  results / paper themselves live on the Session page now, so no
+                  separate Results or View-paper buttons here (they resolved to
+                  the same place). */}
               {finished && e.sessionId && (
-                <>
-                  <Button
-                    size="sm"
-                    variant={e.resultsPublished ? "default" : "outline"}
-                    disabled={publishing === e.sessionId}
-                    onClick={() => togglePublish(e)}
-                    title={
-                      e.resultsPublished
-                        ? "Results are visible to students — click to hide"
-                        : "Make results visible to students"
-                    }
-                  >
-                    {publishing === e.sessionId ? (
-                      "…"
-                    ) : e.resultsPublished ? (
-                      <>
-                        <ChartColumnIncreasing className="size-4" /> published ✓
-                      </>
-                    ) : (
-                      <>
-                        Publish <ChartColumnIncreasing className="size-4" />
-                      </>
-                    )}
-                  </Button>
-                  <Link
-                    href={
-                      e.sessionCount > 1
-                        ? `/dashboard/exams/blueprints/${e.id}/consolidated`
-                        : `/dashboard/exams/sessions/${e.sessionId}`
-                    }
-                    className={cn(buttonVariants({ variant: "outline", size: "sm" }))}
-                  >
-                    Results
-                  </Link>
-                </>
+                <Button
+                  size="sm"
+                  variant={e.resultsPublished ? "default" : "outline"}
+                  disabled={publishing === e.sessionId}
+                  onClick={() => togglePublish(e)}
+                  title={
+                    e.resultsPublished
+                      ? "Results are visible to students — click to hide"
+                      : "Make results visible to students"
+                  }
+                >
+                  {publishing === e.sessionId ? (
+                    "…"
+                  ) : e.resultsPublished ? (
+                    <>
+                      <ChartColumnIncreasing className="size-4" /> published ✓
+                    </>
+                  ) : (
+                    <>
+                      Publish <ChartColumnIncreasing className="size-4" />
+                    </>
+                  )}
+                </Button>
               )}
 
               {e.examStatus === "published" && e.sessionId && (
@@ -289,17 +280,6 @@ function ExamList({ exams, empty }: { exams: ExamCard[]; empty: string }) {
                   className={cn(buttonVariants({ variant: "outline", size: "sm" }))}
                 >
                   Session
-                </Link>
-              )}
-              {e.examStatus === "published" && (
-                <Link
-                  href={`/dashboard/exams/blueprints/${e.id}/paper`}
-                  title="View paper"
-                  aria-label="View paper"
-                  className={cn(buttonVariants({ variant: "outline", size: "sm" }))}
-                >
-                  <Eye className="size-4" />
-                  <FileText className="size-4" />
                 </Link>
               )}
 

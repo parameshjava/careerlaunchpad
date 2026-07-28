@@ -28,6 +28,33 @@ function AttemptBadge({ row }: { row: LiveStudentRow }) {
   return <StatusBadge tone={attemptTone[s] ?? "slate"}>{s.replace("_", " ")}</StatusBadge>;
 }
 
+// Proctoring signal: how many times the student left the exam window, and how
+// many times the attempt was auto-aborted as a result. Zero is muted; any
+// positive count is flagged (amber for leaves, rose once it forced an abort).
+function CheatCell({ row }: { row: LiveStudentRow }) {
+  const { leaveCount, abortCount } = row;
+  if (leaveCount === 0 && abortCount === 0)
+    return <span className="text-muted-foreground text-sm">—</span>;
+  const title =
+    `Left the exam window ${leaveCount} time${leaveCount === 1 ? "" : "s"}` +
+    (abortCount > 0 ? ` · auto-aborted ${abortCount} time${abortCount === 1 ? "" : "s"}` : "");
+  return (
+    <span className="tabular-nums whitespace-nowrap text-sm" title={title}>
+      <span
+        className={cn(
+          "font-semibold",
+          abortCount > 0 ? "text-rose-600 dark:text-rose-500" : "text-amber-600 dark:text-amber-500",
+        )}
+      >
+        {leaveCount}
+      </span>
+      {abortCount > 0 && (
+        <span className="text-rose-600/80 dark:text-rose-500/80 text-xs"> · {abortCount} aborted</span>
+      )}
+    </span>
+  );
+}
+
 // The three live counts for one subject: attempted (ink) / marked (amber) / correct (emerald).
 function Cell({ cell }: { cell: { total: number; attempted: number; marked: number; correct: number } }) {
   return (
@@ -79,6 +106,7 @@ export function LiveRoster({
           <tr className="bg-muted/40 border-b text-left">
             <th className="text-muted-foreground w-8 px-2 py-1.5 text-xs font-medium">#</th>
             <th className="text-muted-foreground px-2 py-1.5 text-xs font-medium">Student</th>
+            <th className="text-muted-foreground px-2 py-1.5 text-xs font-medium">Status</th>
             {sections.map((s) => (
               <th key={s.sectionId} className="text-muted-foreground px-2 py-1.5 text-center text-xs font-medium">
                 <div className="whitespace-nowrap">{s.subject}</div>
@@ -86,6 +114,9 @@ export function LiveRoster({
               </th>
             ))}
             <th className="text-muted-foreground px-2 py-1.5 text-center text-xs font-medium">Total</th>
+            <th className="text-muted-foreground px-2 py-1.5 text-center text-xs font-medium" title="Times the student left the exam window / was auto-aborted">
+              Cheat
+            </th>
             <th className="w-0 px-1 py-1.5" />
           </tr>
         </thead>
@@ -103,10 +134,10 @@ export function LiveRoster({
                     {st.rollNumber && (
                       <span className="text-muted-foreground shrink-0 text-xs tabular-nums">{st.rollNumber}</span>
                     )}
-                    <span className="shrink-0">
-                      <AttemptBadge row={st} />
-                    </span>
                   </div>
+                </td>
+                <td className="px-2 py-1.5 align-middle">
+                  <AttemptBadge row={st} />
                 </td>
                 {sections.map((s) => (
                   <td key={s.sectionId} className="px-2 py-1.5 text-center align-middle">
@@ -118,6 +149,9 @@ export function LiveRoster({
                     <span className="font-bold text-emerald-600 dark:text-emerald-500">{st.totalCorrect}</span>
                     <span className="text-muted-foreground text-xs"> / {st.totalQuestions}</span>
                   </span>
+                </td>
+                <td className="px-2 py-1.5 text-center align-middle">
+                  <CheatCell row={st} />
                 </td>
                 <td className="px-1 py-1.5 align-middle">
                   {canResume && (
