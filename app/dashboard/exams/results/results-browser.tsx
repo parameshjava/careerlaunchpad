@@ -82,7 +82,7 @@ export function ResultsBrowser({ sessions }: { sessions: SessionSummary[] }) {
               key={s.id}
               className="hover:bg-muted/50 flex flex-col gap-2 px-3 py-2.5 transition sm:flex-row sm:items-center sm:justify-between"
             >
-              <Link href={`/dashboard/exams/sessions/${s.id}/results`} className="min-w-0 flex-1">
+              <Link href={`/dashboard/exams/sessions/${s.id}`} className="min-w-0 flex-1">
                 <div className="truncate text-sm font-medium">
                   {s.examTitle ?? "Exam"} — {s.label}
                 </div>
@@ -97,7 +97,7 @@ export function ResultsBrowser({ sessions }: { sessions: SessionSummary[] }) {
                 </Badge>
                 {s.resultsPublished && <Badge variant="outline">Published to students</Badge>}
                 <Link
-                  href={`/dashboard/exams/sessions/${s.id}/results`}
+                  href={`/dashboard/exams/sessions/${s.id}`}
                   className={cn(buttonVariants({ variant: "outline", size: "sm" }))}
                 >
                   Results

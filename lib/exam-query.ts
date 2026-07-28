@@ -657,6 +657,208 @@ export async function fetchRoster(
   });
 }
 
+// ----------------------------------------------------------------------------
+// Live monitoring board (issue #78) — per student, per section: attempted /
+// marked-for-review / correct, computed LIVE while the sitting runs (no grading
+// needed). "Attempted" and "correct" derive from exam_attempt_question
+// .selected_option_ids (written live by save_exam_answer) vs. question_option
+// .is_correct; "marked" from exam_attempt_question.marked_for_review (migration
+// 151). Correctness uses the SAME exact-set-match rule as _grade_attempts (022),
+// so live counts and final grades agree. All reads are RLS-bounded to callers
+// with exam.results.view_all for the sitting's college.
+// ----------------------------------------------------------------------------
+
+export type LiveSectionColumn = { sectionId: string; subject: string; position: number; total: number };
+
+export type LiveSectionCell = { total: number; attempted: number; marked: number; correct: number };
+
+export type LiveStudentRow = {
+  studentId: string;
+  name: string | null;
+  email: string | null;
+  rollNumber: string | null;
+  rosterStatus: RosterEntry["rosterStatus"];
+  attemptId: string | null;
+  attemptStatus: RosterEntry["attemptStatus"];
+  resumeCount: number;
+  startedAt: string | null;
+  submittedAt: string | null;
+  /** Keyed by sectionId → this student's counts for that section. */
+  perSection: Record<string, LiveSectionCell>;
+  totalQuestions: number;
+  totalAttempted: number;
+  totalMarked: number;
+  totalCorrect: number;
+};
+
+export type SessionLiveProgress = {
+  sections: LiveSectionColumn[];
+  students: LiveStudentRow[];
+};
+
+function setEqual(selected: string[], correct: Set<string>): boolean {
+  if (selected.length === 0 || selected.length !== correct.size) return false;
+  return selected.every((id) => correct.has(id));
+}
+
+export async function fetchSessionLiveProgress(
+  supabase: SupabaseClient,
+  sessionId: string,
+): Promise<SessionLiveProgress> {
+  const { data: sess } = await supabase
+    .from("exam_session")
+    .select("exam_id")
+    .eq("id", sessionId)
+    .maybeSingle();
+  const examId = (sess?.exam_id as string | undefined) ?? null;
+  if (!examId) return { sections: [], students: [] };
+
+  // Ordered section columns (subject + total questions) — the table's header.
+  const { data: secRows } = await supabase
+    .from("exam_section")
+    .select("id, position, num_questions, subject:subject_id(name)")
+    .eq("exam_id", examId)
+    .order("position");
+  const sections: LiveSectionColumn[] = ((secRows ?? []) as unknown as Record<string, unknown>[]).map(
+    (s) => ({
+      sectionId: s.id as string,
+      subject: one<{ name: string | null }>(s.subject as never)?.name ?? "—",
+      position: s.position as number,
+      total: (s.num_questions as number) ?? 0,
+    }),
+  );
+  const sectionTotals = new Map(sections.map((s) => [s.sectionId, s.total]));
+  const totalQuestions = sections.reduce((n, s) => n + s.total, 0);
+
+  // Roster + identity (student_profile has two FKs to app_user → plain lookups).
+  const { data: rosterRows } = await supabase
+    .from("exam_session_student")
+    .select("student_id, status")
+    .eq("session_id", sessionId);
+  const studentIds = (rosterRows ?? []).map((r) => r.student_id as string);
+
+  const [accounts, profiles, attempts] = await Promise.all([
+    studentIds.length
+      ? supabase.from("app_user").select("id, email").in("id", studentIds)
+      : Promise.resolve({ data: [] as Record<string, unknown>[] }),
+    studentIds.length
+      ? supabase.from("student_profile").select("user_id, full_name, roll_number").in("user_id", studentIds)
+      : Promise.resolve({ data: [] as Record<string, unknown>[] }),
+    supabase
+      .from("exam_attempt")
+      .select("id, student_id, status, resume_count, started_at, submitted_at")
+      .eq("session_id", sessionId),
+  ]);
+  const emailById = new Map<string, string | null>(
+    (accounts.data ?? []).map((a) => [a.id as string, (a.email as string | null) ?? null]),
+  );
+  const nameById = new Map<string, string | null>(
+    (profiles.data ?? []).map((p) => [p.user_id as string, (p.full_name as string | null) ?? null]),
+  );
+  const rollById = new Map<string, string | null>(
+    (profiles.data ?? []).map((p) => [p.user_id as string, (p.roll_number as string | null) ?? null]),
+  );
+  type AttemptMeta = {
+    id: string;
+    status: RosterEntry["attemptStatus"];
+    resumeCount: number;
+    startedAt: string | null;
+    submittedAt: string | null;
+  };
+  const attemptByStudent = new Map<string, AttemptMeta>(
+    (attempts.data ?? []).map((a) => [
+      a.student_id as string,
+      {
+        id: a.id as string,
+        status: a.status as RosterEntry["attemptStatus"],
+        resumeCount: (a.resume_count as number) ?? 0,
+        startedAt: (a.started_at as string | null) ?? null,
+        submittedAt: (a.submitted_at as string | null) ?? null,
+      },
+    ]),
+  );
+  const attemptIds = (attempts.data ?? []).map((a) => a.id as string);
+  const studentByAttempt = new Map((attempts.data ?? []).map((a) => [a.id as string, a.student_id as string]));
+
+  // Live answer rows for every attempt, plus the correct-option set per question.
+  const aq = attemptIds.length
+    ? (
+        await supabase
+          .from("exam_attempt_question")
+          .select("attempt_id, question_id, section_id, selected_option_ids, marked_for_review")
+          .in("attempt_id", attemptIds)
+      ).data ?? []
+    : [];
+  const questionIds = [...new Set(aq.map((r) => r.question_id as string))];
+  const correctByQ = new Map<string, Set<string>>();
+  if (questionIds.length) {
+    const { data: opts } = await supabase
+      .from("question_option")
+      .select("question_id, id")
+      .eq("is_correct", true)
+      .in("question_id", questionIds);
+    for (const o of opts ?? []) {
+      const qid = o.question_id as string;
+      (correctByQ.get(qid) ?? correctByQ.set(qid, new Set()).get(qid)!).add(o.id as string);
+    }
+  }
+
+  // Aggregate attempt-question rows into per-student, per-section cells.
+  const cellsByStudent = new Map<string, Record<string, LiveSectionCell>>();
+  for (const r of aq as unknown as Record<string, unknown>[]) {
+    const sid = studentByAttempt.get(r.attempt_id as string);
+    if (!sid) continue;
+    const secId = r.section_id as string;
+    const bucket = (cellsByStudent.get(sid) ?? cellsByStudent.set(sid, {}).get(sid)!);
+    const cell = (bucket[secId] ??= { total: sectionTotals.get(secId) ?? 0, attempted: 0, marked: 0, correct: 0 });
+    const selected = (r.selected_option_ids as string[] | null) ?? [];
+    if (selected.length > 0) {
+      cell.attempted += 1;
+      if (setEqual(selected, correctByQ.get(r.question_id as string) ?? new Set())) cell.correct += 1;
+    }
+    if (r.marked_for_review === true) cell.marked += 1;
+  }
+
+  const students: LiveStudentRow[] = studentIds.map((sid) => {
+    const attempt = attemptByStudent.get(sid);
+    const perSection: Record<string, LiveSectionCell> = {};
+    for (const s of sections) {
+      const c = cellsByStudent.get(sid)?.[s.sectionId];
+      perSection[s.sectionId] = c ?? { total: s.total, attempted: 0, marked: 0, correct: 0 };
+    }
+    const totalAttempted = Object.values(perSection).reduce((n, c) => n + c.attempted, 0);
+    const totalMarked = Object.values(perSection).reduce((n, c) => n + c.marked, 0);
+    const totalCorrect = Object.values(perSection).reduce((n, c) => n + c.correct, 0);
+    const roster = (rosterRows ?? []).find((r) => r.student_id === sid);
+    return {
+      studentId: sid,
+      name: nameById.get(sid) ?? null,
+      email: emailById.get(sid) ?? null,
+      rollNumber: rollById.get(sid) ?? null,
+      rosterStatus: (roster?.status as RosterEntry["rosterStatus"]) ?? "invited",
+      attemptId: attempt?.id ?? null,
+      attemptStatus: attempt?.status ?? null,
+      resumeCount: attempt?.resumeCount ?? 0,
+      startedAt: attempt?.startedAt ?? null,
+      submittedAt: attempt?.submittedAt ?? null,
+      perSection,
+      totalQuestions,
+      totalAttempted,
+      totalMarked,
+      totalCorrect,
+    };
+  });
+  // Stable order → stable SNO. Roll number first (natural roster order), then name.
+  students.sort((a, b) => {
+    const ra = a.rollNumber ?? "";
+    const rb = b.rollNumber ?? "";
+    if (ra !== rb) return ra.localeCompare(rb, undefined, { numeric: true });
+    return (a.name ?? a.email ?? "").localeCompare(b.name ?? b.email ?? "");
+  });
+
+  return { sections, students };
+}
+
 // Per-subject average score across a sitting's graded attempts (admin results
 // chart). `max` is the section's full marks so the chart can show avg vs. total.
 export type SubjectAvg = { subject: string; avg: number; max: number };

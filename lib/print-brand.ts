@@ -7,7 +7,7 @@
 // sanctioned exception to the "tokens only" rule in docs/STYLE_GUIDE.md, and it
 // applies to print surfaces only. Import from here instead of re-declaring the
 // hexes per file (they used to be copy-pasted across letterhead / fee-receipt /
-// results-print / company-seal).
+// results-document / company-seal).
 
 export const PRINT_INK = {
   navy: "#0e2f55", // logo corner, footer band, headings
