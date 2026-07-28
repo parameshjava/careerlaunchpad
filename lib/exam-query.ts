@@ -740,6 +740,9 @@ export type LiveStudentRow = {
   attemptId: string | null;
   attemptStatus: RosterEntry["attemptStatus"];
   resumeCount: number;
+  /** Proctoring signals: times the student left the exam window / was auto-aborted. */
+  leaveCount: number;
+  abortCount: number;
   startedAt: string | null;
   submittedAt: string | null;
   /** Keyed by sectionId → this student's counts for that section. */
@@ -787,7 +790,7 @@ export async function fetchSessionLiveProgress(
       : Promise.resolve({ data: [] as Record<string, unknown>[] }),
     supabase
       .from("exam_attempt")
-      .select("id, student_id, status, resume_count, started_at, submitted_at")
+      .select("id, student_id, status, resume_count, leave_count, abort_count, started_at, submitted_at")
       .eq("session_id", sessionId),
     fetchProgressRows(supabase, sessionId),
   ]);
@@ -804,6 +807,8 @@ export async function fetchSessionLiveProgress(
     id: string;
     status: RosterEntry["attemptStatus"];
     resumeCount: number;
+    leaveCount: number;
+    abortCount: number;
     startedAt: string | null;
     submittedAt: string | null;
   };
@@ -814,6 +819,8 @@ export async function fetchSessionLiveProgress(
         id: a.id as string,
         status: a.status as RosterEntry["attemptStatus"],
         resumeCount: (a.resume_count as number) ?? 0,
+        leaveCount: (a.leave_count as number) ?? 0,
+        abortCount: (a.abort_count as number) ?? 0,
         startedAt: (a.started_at as string | null) ?? null,
         submittedAt: (a.submitted_at as string | null) ?? null,
       },
@@ -853,6 +860,8 @@ export async function fetchSessionLiveProgress(
       attemptId: attempt?.id ?? null,
       attemptStatus: attempt?.status ?? null,
       resumeCount: attempt?.resumeCount ?? 0,
+      leaveCount: attempt?.leaveCount ?? 0,
+      abortCount: attempt?.abortCount ?? 0,
       startedAt: attempt?.startedAt ?? null,
       submittedAt: attempt?.submittedAt ?? null,
       perSection,
