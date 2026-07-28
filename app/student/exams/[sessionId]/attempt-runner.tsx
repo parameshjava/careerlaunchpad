@@ -112,6 +112,9 @@ export function AttemptRunner({
   const [abortInfo, setAbortInfo] = useState<{ final: boolean; resumeCount: number } | null>(null);
 
   const lastPositionRef = useRef<number | null>(null);
+  // Previously-flagged question ids, so onMarkedChange (which hands us the full
+  // set) can persist just the toggled question to the server.
+  const markedRef = useRef<Set<string>>(new Set());
   const saveTimers = useRef<Record<string, ReturnType<typeof setTimeout>>>({});
   // Latest answers, readable inside doSubmit / the abort flow without depending on
   // the engine's reactive state. Kept in sync by the adapter + the loader.
@@ -279,7 +282,27 @@ export function AttemptRunner({
       });
     },
     onSeenChange: (seen) => persist({ seen }),
-    onMarkedChange: (marked) => persist({ marked }),
+    onMarkedChange: (marked) => {
+      persist({ marked });
+      // Persist the toggle to the server so staff monitoring the sitting see the
+      // review flag live (issue #78). Diff against the last set to find the one
+      // question that changed; fire-and-forget (non-fatal, like autosave).
+      const next = new Set(marked);
+      const prev = markedRef.current;
+      const changed = [...next].find((id) => !prev.has(id)) ?? [...prev].find((id) => !next.has(id));
+      markedRef.current = next;
+      if (changed && attemptId) {
+        supabase
+          .rpc("save_exam_review_flag", {
+            p_attempt_id: attemptId,
+            p_question_id: changed,
+            p_marked: next.has(changed),
+          })
+          .then(({ error: e }) => {
+            if (e) console.warn("save_exam_review_flag failed", e.message);
+          });
+      }
+    },
     onLeaveRecorded: () => {
       // Persist the switch-away for staff (Alt-Tab metric). Fire-and-forget.
       supabase.rpc("record_exam_leave", { p_attempt_id: attemptId }).then(({ error: e }) => {
@@ -318,6 +341,7 @@ export function AttemptRunner({
       setQuestions(cached.questions);
       setDeadline(cached.deadline ?? null);
       if (cached.lastPosition != null) lastPositionRef.current = cached.lastPosition;
+      markedRef.current = new Set(cached.marked ?? []);
       hydrate({
         answers: cachedAnswers,
         seen: cached.seen ?? [],

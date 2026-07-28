@@ -2,9 +2,17 @@ import { notFound, redirect } from "next/navigation";
 import Link from "next/link";
 import { getAuthContext, can } from "@/lib/auth";
 import { createClient } from "@/lib/supabase/server";
-import { fetchPaperForPrint, fetchRoster, fetchSession } from "@/lib/exam-query";
-import { SessionDetailClient } from "./session-detail-client";
-import { PaperPrint } from "./paper-print";
+import {
+  fetchPaperForPrint,
+  fetchRoster,
+  fetchSession,
+  fetchSessionLiveProgress,
+  fetchSubjectAverages,
+  fetchSubjectMarksByStudent,
+} from "@/lib/exam-query";
+import { SessionConsole } from "./session-console";
+import type { PaperDocumentProps } from "./paper-print";
+import type { ResultsDocumentProps } from "./results-document";
 import { PageContainer } from "@/components/app-shell/page-container";
 
 export default async function SessionDetailPage({
@@ -24,10 +32,49 @@ export default async function SessionDetailPage({
   const session = await fetchSession(supabase, id);
   if (!session) notFound();
   const canExportPdf = ctx.permissions.has("*") || can(ctx, "exam.paper.export_pdf");
-  const [roster, paper] = await Promise.all([
-    fetchRoster(supabase, id),
+  const canPublish = ctx.permissions.has("*") || can(ctx, "exam.assign");
+  const [progress, paper, roster, subjectAvgs, subjectMarks] = await Promise.all([
+    fetchSessionLiveProgress(supabase, id),
     canExportPdf ? fetchPaperForPrint(supabase, id) : Promise.resolve(null),
+    fetchRoster(supabase, id),
+    fetchSubjectAverages(supabase, id),
+    fetchSubjectMarksByStudent(supabase, id),
   ]);
+
+  // Printable paper/key props — only when the caller can export and the paper
+  // has questions; passed to the console for its top Print buttons + hidden preview.
+  const paperProps: PaperDocumentProps | null =
+    paper && paper.questions.length > 0
+      ? {
+          title: session.examTitle ?? "Exam",
+          label: session.label,
+          collegeName: session.collegeName,
+          durationMinutes: session.durationMinutes ?? 0,
+          totalMarks: paper.totalMarks,
+          questions: paper.questions,
+        }
+      : null;
+
+  // Statement-of-Results props for the console's "Print Result" button (no
+  // separate results page any more — issue #78). Server-side date so the printed
+  // sheet is stable (no hydration mismatch).
+  const printedOn = new Date().toLocaleDateString("en-IN", {
+    day: "2-digit",
+    month: "long",
+    year: "numeric",
+  });
+  const resultsProps: ResultsDocumentProps = {
+    collegeName: session.collegeName ?? null,
+    examTitle: session.examTitle ?? "Exam",
+    label: session.label,
+    mode: session.mode,
+    totalMarks: paper?.totalMarks ?? null,
+    roster,
+    subjects: subjectMarks.subjects,
+    subjectMarks: subjectMarks.byStudent,
+    subjectAvgs,
+    printedOn,
+  };
 
   return (
     <PageContainer variant="full">
@@ -45,19 +92,15 @@ export default async function SessionDetailPage({
           {session.examTitle} · {session.mode} · {session.questionCount} questions
         </p>
       </header>
-      <SessionDetailClient session={session} roster={roster} />
-      {/* Question paper / answer key on the letterhead — a self-contained
-          A4 preview with its own Print paper / Print key toolbar. */}
-      {canExportPdf && paper && paper.questions.length > 0 && (
-        <PaperPrint
-          title={session.examTitle ?? "Exam"}
-          label={session.label}
-          collegeName={session.collegeName}
-          durationMinutes={session.durationMinutes ?? 0}
-          totalMarks={paper.totalMarks}
-          questions={paper.questions}
-        />
-      )}
+      <SessionConsole
+        session={session}
+        initialProgress={progress}
+        initialGeneratedAt={new Date().toISOString()}
+        paper={paperProps}
+        results={resultsProps}
+        resultsPublished={session.resultsPublished}
+        canPublish={canPublish}
+      />
     </PageContainer>
   );
 }

@@ -274,7 +274,7 @@ function ExamList({ exams, empty }: { exams: ExamCard[]; empty: string }) {
                     href={
                       e.sessionCount > 1
                         ? `/dashboard/exams/blueprints/${e.id}/consolidated`
-                        : `/dashboard/exams/sessions/${e.sessionId}/results`
+                        : `/dashboard/exams/sessions/${e.sessionId}`
                     }
                     className={cn(buttonVariants({ variant: "outline", size: "sm" }))}
                   >

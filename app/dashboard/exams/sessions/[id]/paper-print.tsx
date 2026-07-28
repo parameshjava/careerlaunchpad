@@ -1,18 +1,15 @@
 "use client";
 
-// The printable question paper / answer key, embedded in the session page and
-// shown VISIBLE on screen as an A4 preview (below the session management UI).
-// The toolbar's "Print paper" / "Print key" buttons call print(part), which
-// clones the letterhead document into an isolated iframe and stamps the part on
-// its <body> so the two halves print as SEPARATE documents (offline conduct:
-// students must never receive the key). Passages render once before their
-// question block.
+// The printable question paper / answer key. Rendered by SessionConsole into a
+// hidden wrapper (the on-screen A4 preview is off by default, issue #78) — the
+// node stays in the DOM so usePrint can clone it. The Print paper / Print key
+// buttons live at the TOP of the console and call print(part), which clones this
+// letterhead document into an isolated iframe and stamps the part on its <body>
+// so the two halves print as SEPARATE documents (offline conduct: students must
+// never receive the key). Passages render once before their question block.
+import { forwardRef } from "react";
 import { RichContent } from "@/components/exam/RichContent";
-import { Button } from "@/components/ui/button";
 import { PrintDocument } from "@/components/print/print-document";
-import { PrintToolbar } from "@/components/print/blocks";
-import { usePrint } from "@/lib/use-print";
-import { Printer } from "lucide-react";
 import type { PrintQuestion } from "@/lib/exam-query";
 
 const LETTERS = ["A", "B", "C", "D", "E"];
@@ -24,36 +21,24 @@ function correctLetters(q: PrintQuestion): string {
     .join(", ");
 }
 
-export function PaperPrint({
-  title,
-  label,
-  collegeName,
-  durationMinutes,
-  totalMarks,
-  questions,
-}: {
+export type PaperDocumentProps = {
   title: string;
   label: string;
   collegeName?: string | null;
   durationMinutes: number;
   totalMarks: number;
   questions: PrintQuestion[];
-}) {
-  const { printRef, print } = usePrint();
+};
+
+export const PaperDocument = forwardRef<HTMLDivElement, PaperDocumentProps>(function PaperDocument(
+  { title, label, collegeName, durationMinutes, totalMarks, questions },
+  ref,
+) {
   let lastPassageId: string | null = null;
 
   return (
     <>
-      <PrintToolbar>
-        <Button onClick={() => print("paper")}>
-          <Printer /> Print paper
-        </Button>
-        <Button onClick={() => print("key")}>
-          <Printer /> Print key
-        </Button>
-      </PrintToolbar>
-
-      <PrintDocument ref={printRef} docLabel="Question Paper">
+      <PrintDocument ref={ref} docLabel="Question Paper">
         {/* Split-document CSS — a child of PrintDocument so it is cloned into
             the print iframe. print("paper") hides the key; print("key") hides
             the questions. */}
@@ -132,4 +117,4 @@ export function PaperPrint({
       </PrintDocument>
     </>
   );
-}
+});
