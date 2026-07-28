@@ -668,6 +668,65 @@ export async function fetchRoster(
 // with exam.results.view_all for the sitting's college.
 // ----------------------------------------------------------------------------
 
+// Per (student, section) aggregates from the exam_session_progress RPC (migration
+// 152). The RPC does the counting in SQL and returns only these ~(students ×
+// sections) rows, so we never pull the raw exam_attempt_question rows to the
+// client (which would exceed PostgREST's 1000-row cap and undercount) — see the
+// migration for the exact-match rule, which mirrors the grader.
+type ProgressRow = {
+  student_id: string;
+  section_id: string;
+  attempted: number;
+  marked: number;
+  correct: number;
+  awarded: number;
+};
+
+async function fetchProgressRows(
+  supabase: SupabaseClient,
+  sessionId: string,
+): Promise<ProgressRow[]> {
+  const { data, error } = await supabase.rpc("exam_session_progress", { p_session_id: sessionId });
+  if (error) throw new Error(`exam_session_progress: ${error.message}`);
+  return (data ?? []) as ProgressRow[];
+}
+
+// A sitting's ordered sections with the metadata every results/monitoring view
+// needs (subject, position, and the fixed per-section counts). Small — one row
+// per section — so a plain read is fine.
+type SectionMeta = {
+  sectionId: string;
+  subject: string;
+  position: number;
+  numQuestions: number;
+  marksPerQuestion: number;
+};
+
+async function fetchSessionSectionMeta(
+  supabase: SupabaseClient,
+  sessionId: string,
+): Promise<SectionMeta[]> {
+  const { data: sess } = await supabase
+    .from("exam_session")
+    .select("exam_id")
+    .eq("id", sessionId)
+    .maybeSingle();
+  const examId = (sess?.exam_id as string | undefined) ?? null;
+  if (!examId) return [];
+  const { data } = await supabase
+    .from("exam_section")
+    .select("id, position, num_questions, marks_per_question, subject:subject_id(name)")
+    .eq("exam_id", examId)
+    .order("position");
+  return ((data ?? []) as unknown as Record<string, unknown>[]).map((s) => ({
+    sectionId: s.id as string,
+    subject: one<{ name: string | null }>(s.subject as never)?.name ?? "—",
+    position: s.position as number,
+    numQuestions: (s.num_questions as number) ?? 0,
+    marksPerQuestion: Number(s.marks_per_question ?? 0),
+  }));
+}
+
 export type LiveSectionColumn = { sectionId: string; subject: string; position: number; total: number };
 
 export type LiveSectionCell = { total: number; attempted: number; marked: number; correct: number };
@@ -696,37 +755,19 @@ export type SessionLiveProgress = {
   students: LiveStudentRow[];
 };
 
-function setEqual(selected: string[], correct: Set<string>): boolean {
-  if (selected.length === 0 || selected.length !== correct.size) return false;
-  return selected.every((id) => correct.has(id));
-}
-
 export async function fetchSessionLiveProgress(
   supabase: SupabaseClient,
   sessionId: string,
 ): Promise<SessionLiveProgress> {
-  const { data: sess } = await supabase
-    .from("exam_session")
-    .select("exam_id")
-    .eq("id", sessionId)
-    .maybeSingle();
-  const examId = (sess?.exam_id as string | undefined) ?? null;
-  if (!examId) return { sections: [], students: [] };
-
   // Ordered section columns (subject + total questions) — the table's header.
-  const { data: secRows } = await supabase
-    .from("exam_section")
-    .select("id, position, num_questions, subject:subject_id(name)")
-    .eq("exam_id", examId)
-    .order("position");
-  const sections: LiveSectionColumn[] = ((secRows ?? []) as unknown as Record<string, unknown>[]).map(
-    (s) => ({
-      sectionId: s.id as string,
-      subject: one<{ name: string | null }>(s.subject as never)?.name ?? "—",
-      position: s.position as number,
-      total: (s.num_questions as number) ?? 0,
-    }),
-  );
+  const sectionMeta = await fetchSessionSectionMeta(supabase, sessionId);
+  if (sectionMeta.length === 0) return { sections: [], students: [] };
+  const sections: LiveSectionColumn[] = sectionMeta.map((s) => ({
+    sectionId: s.sectionId,
+    subject: s.subject,
+    position: s.position,
+    total: s.numQuestions,
+  }));
   const sectionTotals = new Map(sections.map((s) => [s.sectionId, s.total]));
   const totalQuestions = sections.reduce((n, s) => n + s.total, 0);
 
@@ -737,7 +778,7 @@ export async function fetchSessionLiveProgress(
     .eq("session_id", sessionId);
   const studentIds = (rosterRows ?? []).map((r) => r.student_id as string);
 
-  const [accounts, profiles, attempts] = await Promise.all([
+  const [accounts, profiles, attempts, progressRows] = await Promise.all([
     studentIds.length
       ? supabase.from("app_user").select("id, email").in("id", studentIds)
       : Promise.resolve({ data: [] as Record<string, unknown>[] }),
@@ -748,6 +789,7 @@ export async function fetchSessionLiveProgress(
       .from("exam_attempt")
       .select("id, student_id, status, resume_count, started_at, submitted_at")
       .eq("session_id", sessionId),
+    fetchProgressRows(supabase, sessionId),
   ]);
   const emailById = new Map<string, string | null>(
     (accounts.data ?? []).map((a) => [a.id as string, (a.email as string | null) ?? null]),
@@ -777,46 +819,18 @@ export async function fetchSessionLiveProgress(
       },
     ]),
   );
-  const attemptIds = (attempts.data ?? []).map((a) => a.id as string);
-  const studentByAttempt = new Map((attempts.data ?? []).map((a) => [a.id as string, a.student_id as string]));
-
-  // Live answer rows for every attempt, plus the correct-option set per question.
-  const aq = attemptIds.length
-    ? (
-        await supabase
-          .from("exam_attempt_question")
-          .select("attempt_id, question_id, section_id, selected_option_ids, marked_for_review")
-          .in("attempt_id", attemptIds)
-      ).data ?? []
-    : [];
-  const questionIds = [...new Set(aq.map((r) => r.question_id as string))];
-  const correctByQ = new Map<string, Set<string>>();
-  if (questionIds.length) {
-    const { data: opts } = await supabase
-      .from("question_option")
-      .select("question_id, id")
-      .eq("is_correct", true)
-      .in("question_id", questionIds);
-    for (const o of opts ?? []) {
-      const qid = o.question_id as string;
-      (correctByQ.get(qid) ?? correctByQ.set(qid, new Set()).get(qid)!).add(o.id as string);
-    }
-  }
-
-  // Aggregate attempt-question rows into per-student, per-section cells.
+  // Per-student, per-section counts come pre-aggregated from the RPC: attempted /
+  // marked / correct are computed in SQL (correct via the grader's exact-set-match
+  // rule), so no raw answer rows cross the wire and there's no 1000-row cap to hit.
   const cellsByStudent = new Map<string, Record<string, LiveSectionCell>>();
-  for (const r of aq as unknown as Record<string, unknown>[]) {
-    const sid = studentByAttempt.get(r.attempt_id as string);
-    if (!sid) continue;
-    const secId = r.section_id as string;
-    const bucket = (cellsByStudent.get(sid) ?? cellsByStudent.set(sid, {}).get(sid)!);
-    const cell = (bucket[secId] ??= { total: sectionTotals.get(secId) ?? 0, attempted: 0, marked: 0, correct: 0 });
-    const selected = (r.selected_option_ids as string[] | null) ?? [];
-    if (selected.length > 0) {
-      cell.attempted += 1;
-      if (setEqual(selected, correctByQ.get(r.question_id as string) ?? new Set())) cell.correct += 1;
-    }
-    if (r.marked_for_review === true) cell.marked += 1;
+  for (const r of progressRows) {
+    const bucket = cellsByStudent.get(r.student_id) ?? cellsByStudent.set(r.student_id, {}).get(r.student_id)!;
+    bucket[r.section_id] = {
+      total: sectionTotals.get(r.section_id) ?? 0,
+      attempted: Number(r.attempted),
+      marked: Number(r.marked),
+      correct: Number(r.correct),
+    };
   }
 
   const students: LiveStudentRow[] = studentIds.map((sid) => {
@@ -867,48 +881,46 @@ export async function fetchSubjectAverages(
   supabase: SupabaseClient,
   sessionId: string,
 ): Promise<SubjectAvg[]> {
-  const { data: attempts, error: aErr } = await supabase
+  // Only graded attempts count toward the average.
+  const { data: gradedAtt, error: aErr } = await supabase
     .from("exam_attempt")
-    .select("id")
+    .select("student_id")
     .eq("session_id", sessionId)
     .eq("status", "graded");
   if (aErr) throw new Error(`exam_attempt: ${aErr.message}`);
-  const ids = (attempts ?? []).map((a) => a.id as string);
-  if (!ids.length) return [];
+  const gradedStudents = new Set((gradedAtt ?? []).map((a) => a.student_id as string));
+  if (gradedStudents.size === 0) return [];
 
-  const { data, error } = await supabase
-    .from("exam_attempt_question")
-    .select(
-      "awarded_marks, section:section_id(position, num_questions, marks_per_question, subject:subject_id(name))",
-    )
-    .in("attempt_id", ids);
-  if (error) throw new Error(`exam_attempt_question: ${error.message}`);
+  // Awarded marks are pre-summed per (student, section) in SQL by the RPC; the
+  // section columns/maxes come from the (small) section-meta read. No raw
+  // attempt_question rows are pulled to the client.
+  const [sectionMeta, progressRows] = await Promise.all([
+    fetchSessionSectionMeta(supabase, sessionId),
+    fetchProgressRows(supabase, sessionId),
+  ]);
+  const sectionSubject = new Map(sectionMeta.map((m) => [m.sectionId, m]));
 
   type Acc = { subject: string; position: number; sum: number; max: number };
-  const bySection = new Map<string, Acc>();
-  for (const r of (data ?? []) as unknown as Record<string, unknown>[]) {
-    const sec = one<{
-      position: number;
-      num_questions: number;
-      marks_per_question: number;
-      subject: unknown;
-    }>(r.section as never);
-    if (!sec) continue;
-    const subject = one<{ name: string | null }>(sec.subject as never)?.name ?? "—";
-    const acc = bySection.get(subject) ?? {
-      subject,
-      position: sec.position,
-      sum: 0,
-      max: sec.num_questions * sec.marks_per_question,
-    };
-    acc.sum += Number(r.awarded_marks ?? 0);
-    bySection.set(subject, acc);
+  const bySubject = new Map<string, Acc>();
+  // Seed each subject's full marks from the blueprint (a subject can span sections).
+  for (const m of sectionMeta) {
+    const acc = bySubject.get(m.subject) ?? { subject: m.subject, position: m.position, sum: 0, max: 0 };
+    acc.max += m.numQuestions * m.marksPerQuestion;
+    acc.position = Math.min(acc.position, m.position);
+    bySubject.set(m.subject, acc);
   }
-  return Array.from(bySection.values())
+  // Sum awarded marks over graded students only.
+  for (const r of progressRows) {
+    if (!gradedStudents.has(r.student_id)) continue;
+    const m = sectionSubject.get(r.section_id);
+    if (!m) continue;
+    bySubject.get(m.subject)!.sum += Number(r.awarded);
+  }
+  return Array.from(bySubject.values())
     .sort((a, b) => a.position - b.position)
     .map((s) => ({
       subject: s.subject,
-      avg: Math.round((s.sum / ids.length) * 100) / 100,
+      avg: Math.round((s.sum / gradedStudents.size) * 100) / 100,
       max: s.max,
     }));
 }
@@ -927,57 +939,32 @@ export async function fetchSubjectMarksByStudent(
   supabase: SupabaseClient,
   sessionId: string,
 ): Promise<StudentSubjectMarks> {
-  const { data: attempts, error: aErr } = await supabase
-    .from("exam_attempt")
-    .select("id, student_id")
-    .eq("session_id", sessionId);
-  if (aErr) throw new Error(`exam_attempt: ${aErr.message}`);
-  const rows = (attempts ?? []) as { id: string; student_id: string }[];
-  const studentByAttempt = new Map(rows.map((a) => [a.id, a.student_id]));
-  const ids = rows.map((a) => a.id);
-  if (!ids.length) return { subjects: [], byStudent: {} };
+  // Awarded marks are pre-summed per (student, section) in SQL by the RPC; the
+  // subject columns/maxes come from the (small) section-meta read. No raw
+  // attempt_question rows are pulled to the client.
+  const [sectionMeta, progressRows] = await Promise.all([
+    fetchSessionSectionMeta(supabase, sessionId),
+    fetchProgressRows(supabase, sessionId),
+  ]);
+  if (!sectionMeta.length) return { subjects: [], byStudent: {} };
+  const sectionSubject = new Map(sectionMeta.map((m) => [m.sectionId, m.subject]));
 
-  const { data, error } = await supabase
-    .from("exam_attempt_question")
-    .select(
-      "attempt_id, section_id, awarded_marks, section:section_id(position, num_questions, marks_per_question, subject:subject_id(name))",
-    )
-    .in("attempt_id", ids);
-  if (error) throw new Error(`exam_attempt_question: ${error.message}`);
-
-  // A section's full marks is fixed (num_questions * marks_per_question); the
-  // attempt_question rows repeat it, so dedupe by section_id before summing maxes.
-  const sectionMeta = new Map<string, { subject: string; position: number; max: number }>();
+  // Sum a student's per-section awarded marks up to their subject totals.
   const byStudent: Record<string, Record<string, number>> = {};
-  for (const r of (data ?? []) as unknown as Record<string, unknown>[]) {
-    const sec = one<{
-      position: number;
-      num_questions: number;
-      marks_per_question: number;
-      subject: unknown;
-    }>(r.section as never);
-    if (!sec) continue;
-    const subject = one<{ name: string | null }>(sec.subject as never)?.name ?? "—";
-    const secId = r.section_id as string;
-    if (!sectionMeta.has(secId)) {
-      sectionMeta.set(secId, {
-        subject,
-        position: sec.position,
-        max: sec.num_questions * sec.marks_per_question,
-      });
-    }
-    const sid = studentByAttempt.get(r.attempt_id as string);
-    if (!sid) continue;
-    const rec = (byStudent[sid] ??= {});
-    rec[subject] = (rec[subject] ?? 0) + Number(r.awarded_marks ?? 0);
+  for (const r of progressRows) {
+    const subject = sectionSubject.get(r.section_id);
+    if (!subject) continue;
+    const rec = (byStudent[r.student_id] ??= {});
+    rec[subject] = (rec[subject] ?? 0) + Number(r.awarded);
   }
 
   // Aggregate section maxes into subject columns (a subject can span sections).
   const subjAgg = new Map<string, { max: number; position: number }>();
-  for (const m of sectionMeta.values()) {
+  for (const m of sectionMeta) {
+    const secMax = m.numQuestions * m.marksPerQuestion;
     const cur = subjAgg.get(m.subject);
-    if (cur) { cur.max += m.max; cur.position = Math.min(cur.position, m.position); }
-    else subjAgg.set(m.subject, { max: m.max, position: m.position });
+    if (cur) { cur.max += secMax; cur.position = Math.min(cur.position, m.position); }
+    else subjAgg.set(m.subject, { max: secMax, position: m.position });
   }
   const subjects = Array.from(subjAgg.entries())
     .sort((a, b) => a[1].position - b[1].position)
