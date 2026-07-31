@@ -1,0 +1,1590 @@
+{
+  "subject": "Logical & Analytical Reasoning",
+  "questions": [
+    {
+      "chapter": "Data Sufficiency (Reasoning)",
+      "kind": "data_sufficiency",
+      "difficulty": "easy",
+      "answer_type": "single",
+      "stem": "What is the value of $x$?\n\n**I.** $3x + 5 = 14$\n\n**II.** $2x + 5y = 11$",
+      "explanation": "**From I:** a single linear equation in $x$ alone,\n$$3x = 9 \\Rightarrow x = 3.$$\nOne unique value — **sufficient**.\n\n**From II:** $2x + 5y = 11$ has two unknowns, so $x$ can be anything (e.g. $x = 3, y = 1$ or $x = -2, y = 3$). **Not sufficient**.",
+      "source": "AP ICET 2025 7th May 2025 Shift 1",
+      "source_year": 2025,
+      "options": [
+        {
+          "label": "Statement I alone is sufficient to answer the question.",
+          "is_correct": true
+        },
+        {
+          "label": "Statement II alone is sufficient to answer the question.",
+          "is_correct": false
+        },
+        {
+          "label": "Statements I and II together are sufficient to answer the question, but neither statement alone is sufficient.",
+          "is_correct": false
+        },
+        {
+          "label": "Statements I and II together are not sufficient to answer the question and additional data is required.",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Data Sufficiency (Reasoning)",
+      "kind": "data_sufficiency",
+      "difficulty": "easy",
+      "answer_type": "single",
+      "stem": "What is the age of Ramesh?\n\n**I.** The sum of Ramesh's age and his brother's age is 50.\n\n**II.** Ramesh is 10 years older than his brother.",
+      "explanation": "Let Ramesh be $R$ and his brother $B$.\n\n**From I:** $R + B = 50$ — one equation, two unknowns. **Not sufficient**.\n\n**From II:** $R = B + 10$ — again two unknowns. **Not sufficient**.\n\n**Together:**\n$$(B+10) + B = 50 \\Rightarrow B = 20 \\Rightarrow R = 30.$$\nA unique answer, so both statements together are needed.",
+      "source": "AP ICET 2025 7th May 2025 Shift 1",
+      "source_year": 2025,
+      "options": [
+        {
+          "label": "Statement I alone is sufficient to answer the question.",
+          "is_correct": false
+        },
+        {
+          "label": "Statement II alone is sufficient to answer the question.",
+          "is_correct": false
+        },
+        {
+          "label": "Statements I and II together are sufficient to answer the question, but neither statement alone is sufficient.",
+          "is_correct": true
+        },
+        {
+          "label": "Statements I and II together are not sufficient to answer the question and additional data is required.",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Data Sufficiency (Reasoning)",
+      "kind": "data_sufficiency",
+      "difficulty": "easy",
+      "answer_type": "single",
+      "stem": "What is the perimeter of the rectangle?\n\n**I.** The length of the rectangle is 8 cm.\n\n**II.** The area of the rectangle is 32 cm².",
+      "explanation": "The perimeter needs **both** the length $l$ and the breadth $b$: $P = 2(l+b)$.\n\n**From I:** $l = 8$ only — $b$ is free. **Not sufficient**.\n\n**From II:** $lb = 32$ allows $(8,4)$, $(16,2)$, $(32,1)$, … each with a different perimeter. **Not sufficient**.\n\n**Together:** $8b = 32 \\Rightarrow b = 4$, so\n$$P = 2(8+4) = 24 \\text{ cm}.$$",
+      "source": "AP ICET 2025 7th May 2025 Shift 1",
+      "source_year": 2025,
+      "options": [
+        {
+          "label": "Statement I alone is sufficient to answer the question.",
+          "is_correct": false
+        },
+        {
+          "label": "Statement II alone is sufficient to answer the question.",
+          "is_correct": false
+        },
+        {
+          "label": "Statements I and II together are sufficient to answer the question, but neither statement alone is sufficient.",
+          "is_correct": true
+        },
+        {
+          "label": "Statements I and II together are not sufficient to answer the question and additional data is required.",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Data Sufficiency (Reasoning)",
+      "kind": "data_sufficiency",
+      "difficulty": "easy",
+      "answer_type": "single",
+      "stem": "What is the speed of the train?\n\n**I.** The train covers 240 km in 4 hours.\n\n**II.** The train is travelling towards North.",
+      "explanation": "**From I:**\n$$\\text{speed} = \\frac{240}{4} = 60 \\text{ km/h}.$$\nDistance and time are exactly what speed needs — **sufficient**.\n\n**From II:** direction says nothing about how fast the train moves. **Not sufficient**.",
+      "source": "AP ICET 2025 7th May 2025 Shift 1",
+      "source_year": 2025,
+      "options": [
+        {
+          "label": "Statement I alone is sufficient to answer the question.",
+          "is_correct": true
+        },
+        {
+          "label": "Statement II alone is sufficient to answer the question.",
+          "is_correct": false
+        },
+        {
+          "label": "Statements I and II together are sufficient to answer the question, but neither statement alone is sufficient.",
+          "is_correct": false
+        },
+        {
+          "label": "Statements I and II together are not sufficient to answer the question and additional data is required.",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Data Sufficiency (Reasoning)",
+      "kind": "data_sufficiency",
+      "difficulty": "medium",
+      "answer_type": "single",
+      "stem": "Is triangle ABC a right-angled triangle?\n\n**I.** ABC has angles 30°, 60° and 90°.\n\n**II.** The longest side is 10 units.",
+      "explanation": "**From I:** one of the angles is 90°, so the triangle **is** right-angled. A definite *yes* — **sufficient**.\n\n**From II:** knowing only that the longest side measures 10 units tells us nothing about the angles; the other two sides could be $6, 8$ (right-angled) or $7, 7$ (not). **Not sufficient**.\n\n*(In data sufficiency a firm \"yes\" counts as an answer just as much as a number does.)*",
+      "source": "AP ICET 2025 7th May 2025 Shift 1",
+      "source_year": 2025,
+      "options": [
+        {
+          "label": "Statement I alone is sufficient to answer the question.",
+          "is_correct": true
+        },
+        {
+          "label": "Statement II alone is sufficient to answer the question.",
+          "is_correct": false
+        },
+        {
+          "label": "Statements I and II together are sufficient to answer the question, but neither statement alone is sufficient.",
+          "is_correct": false
+        },
+        {
+          "label": "Statements I and II together are not sufficient to answer the question and additional data is required.",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Data Sufficiency (Reasoning)",
+      "kind": "data_sufficiency",
+      "difficulty": "medium",
+      "answer_type": "single",
+      "stem": "Is $x$ a perfect square?\n\n**I.** $x$ is a positive integer.\n\n**II.** $x$ is a product of two equal prime numbers.",
+      "explanation": "**From I:** $4$ is a perfect square, $5$ is not — both are positive integers. **Not sufficient**.\n\n**From II:** \"a product of two equal primes\" means\n$$x = p \\times p = p^2,$$\nand the square of an integer is always a perfect square (4, 9, 25, 49, …). A definite *yes* — **sufficient**.",
+      "source": "AP ICET 2025 7th May 2025 Shift 1",
+      "source_year": 2025,
+      "options": [
+        {
+          "label": "Statement I alone is sufficient to answer the question.",
+          "is_correct": false
+        },
+        {
+          "label": "Statement II alone is sufficient to answer the question.",
+          "is_correct": true
+        },
+        {
+          "label": "Statements I and II together are sufficient to answer the question, but neither statement alone is sufficient.",
+          "is_correct": false
+        },
+        {
+          "label": "Statements I and II together are not sufficient to answer the question and additional data is required.",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Data Sufficiency (Reasoning)",
+      "kind": "data_sufficiency",
+      "difficulty": "medium",
+      "answer_type": "single",
+      "stem": "If a motor car is driven 150 miles, the fuel tank is filled to what percent of capacity at the end of the trip?\n\n**I.** The car averaged 15 miles per gallon for the trip.\n\n**II.** The tank is filled to 75 percent of capacity at the start of the trip.",
+      "explanation": "Let the tank capacity be $C$ gallons.\n\n**From I:** the trip consumes $\\dfrac{150}{15} = 10$ gallons, but with no starting level and no capacity there is no percentage. **Not sufficient**.\n\n**From II:** the start is $0.75C$, but without knowing how much fuel was burnt the end level is unknown. **Not sufficient**.\n\n**Together:** the end level is $0.75C - 10$ gallons, so the percentage is\n$$\\frac{0.75C - 10}{C}\\times 100 = 75 - \\frac{1000}{C},$$\nwhich still depends on the unknown capacity $C$. **Additional data is required.**",
+      "source": "AP ICET 2025 7th May 2025 Shift 1",
+      "source_year": 2025,
+      "options": [
+        {
+          "label": "Statement I alone is sufficient to answer the question.",
+          "is_correct": false
+        },
+        {
+          "label": "Statement II alone is sufficient to answer the question.",
+          "is_correct": false
+        },
+        {
+          "label": "Statements I and II together are sufficient to answer the question, but neither statement alone is sufficient.",
+          "is_correct": false
+        },
+        {
+          "label": "Statements I and II together are not sufficient to answer the question and additional data is required.",
+          "is_correct": true
+        }
+      ]
+    },
+    {
+      "chapter": "Data Sufficiency (Reasoning)",
+      "kind": "data_sufficiency",
+      "difficulty": "hard",
+      "answer_type": "single",
+      "stem": "If the number of square units in the area of a circle is $A$ and the number of linear units in the circumference is $C$, what is the radius of the circle?",
+      "explanation": "For a circle, $A = \\pi r^2$ and $C = 2\\pi r$, so\n$$\\frac AC = \\frac{\\pi r^2}{2\\pi r} = \\frac r2.$$\n\n**From I:** $A > C + 3$ is an **inequality** — it restricts $r$ to a range, not a single value. **Not sufficient**.\n\n**From II:**\n$$\\frac r2 = \\frac32 \\Rightarrow r = 3.$$\nA unique value — **sufficient**.\n\n*Statements:* **I.** $A > C + 3$  **II.** $A/C = 3/2$",
+      "source": "AP ICET 2025 7th May 2025 Shift 1",
+      "source_year": 2025,
+      "options": [
+        {
+          "label": "Statement I alone is sufficient to answer the question.",
+          "is_correct": false
+        },
+        {
+          "label": "Statement II alone is sufficient to answer the question.",
+          "is_correct": true
+        },
+        {
+          "label": "Statements I and II together are sufficient to answer the question, but neither statement alone is sufficient.",
+          "is_correct": false
+        },
+        {
+          "label": "Statements I and II together are not sufficient to answer the question and additional data is required.",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Data Sufficiency (Reasoning)",
+      "kind": "data_sufficiency",
+      "difficulty": "medium",
+      "answer_type": "single",
+      "stem": "Is $p$ a prime number?\n\n**I.** $p$ is an odd number.\n\n**II.** $p$ is not divisible by any number other than 1 and itself.",
+      "explanation": "**From I:** $7$ is odd and prime, $9$ is odd and composite. **Not sufficient**.\n\n**From II:** \"divisible only by 1 and itself\" is precisely the definition of a prime, so the answer is a definite *yes*. **Sufficient**.",
+      "source": "AP ICET 2025 7th May 2025 Shift 1",
+      "source_year": 2025,
+      "options": [
+        {
+          "label": "Statement I alone is sufficient to answer the question.",
+          "is_correct": false
+        },
+        {
+          "label": "Statement II alone is sufficient to answer the question.",
+          "is_correct": true
+        },
+        {
+          "label": "Statements I and II together are sufficient to answer the question, but neither statement alone is sufficient.",
+          "is_correct": false
+        },
+        {
+          "label": "Statements I and II together are not sufficient to answer the question and additional data is required.",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Data Sufficiency (Reasoning)",
+      "kind": "data_sufficiency",
+      "difficulty": "hard",
+      "answer_type": "single",
+      "stem": "On which day of the week did Venkatesh visit the park?\n\n**I.** Venkatesh did not visit the park either on Tuesday or Thursday.\n\n**II.** Venkatesh visited the park three days before his father reached his home, which was the day after Wednesday.",
+      "explanation": "**From I:** five days remain open. **Not sufficient**.\n\n**From II:** the father reached home \"the day after Wednesday\" = **Thursday**. Venkatesh's visit was three days earlier:\n$$\\text{Thursday} - 3 = \\textbf{Monday}.$$\nA single day — **sufficient**.",
+      "source": "AP ICET 2025 7th May 2025 Shift 1",
+      "source_year": 2025,
+      "options": [
+        {
+          "label": "Statement I alone is sufficient to answer the question.",
+          "is_correct": false
+        },
+        {
+          "label": "Statement II alone is sufficient to answer the question.",
+          "is_correct": true
+        },
+        {
+          "label": "Statements I and II together are sufficient to answer the question, but neither statement alone is sufficient.",
+          "is_correct": false
+        },
+        {
+          "label": "Statements I and II together are not sufficient to answer the question and additional data is required.",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Data Sufficiency (Reasoning)",
+      "kind": "data_sufficiency",
+      "difficulty": "medium",
+      "answer_type": "single",
+      "stem": "Find the fifth term of the sequence.\n\n**I.** The average of the first four terms of the sequence is 53.\n\n**II.** The third term of the sequence is 72.",
+      "explanation": "No rule (arithmetic, geometric, or otherwise) is given for how the sequence is built, so the fifth term is not tied to the earlier ones.\n\n**From I:** the first four terms sum to $4 \\times 53 = 212$ — nothing about the fifth. **Not sufficient**.\n\n**From II:** one term of the four already covered. **Not sufficient**.\n\n**Together:** they still describe only the first four terms; the fifth can be any number. **Additional data is required.**",
+      "source": "AP ICET 2025 7th May 2025 Shift 1",
+      "source_year": 2025,
+      "options": [
+        {
+          "label": "Statement I alone is sufficient to answer the question.",
+          "is_correct": false
+        },
+        {
+          "label": "Statement II alone is sufficient to answer the question.",
+          "is_correct": false
+        },
+        {
+          "label": "Statements I and II together are sufficient to answer the question, but neither statement alone is sufficient.",
+          "is_correct": false
+        },
+        {
+          "label": "Statements I and II together are not sufficient to answer the question and additional data is required.",
+          "is_correct": true
+        }
+      ]
+    },
+    {
+      "chapter": "Data Sufficiency (Reasoning)",
+      "kind": "data_sufficiency",
+      "difficulty": "medium",
+      "answer_type": "single",
+      "stem": "What is the value of $x$?\n\n**I.** $x + 2y = 6$\n\n**II.** $3x + 6y = 18$",
+      "explanation": "**From I:** one equation, two unknowns. **Not sufficient**.\n\n**From II:** likewise. **Not sufficient**.\n\n**Together:** notice that II is just I multiplied by 3 —\n$$3(x + 2y) = 3(6) \\Rightarrow 3x + 6y = 18.$$\nThe two equations are **dependent**, i.e. the same line, so they have infinitely many solutions $(x, y)$ and $x$ is still undetermined. **Additional data is required.**\n\n*(The trap is to count \"two equations, two unknowns\" without checking that they are independent.)*",
+      "source": "AP ICET 2025 7th May 2025 Shift 1",
+      "source_year": 2025,
+      "options": [
+        {
+          "label": "Statement I alone is sufficient to answer the question.",
+          "is_correct": false
+        },
+        {
+          "label": "Statement II alone is sufficient to answer the question.",
+          "is_correct": false
+        },
+        {
+          "label": "Statements I and II together are sufficient to answer the question, but neither statement alone is sufficient.",
+          "is_correct": false
+        },
+        {
+          "label": "Statements I and II together are not sufficient to answer the question and additional data is required.",
+          "is_correct": true
+        }
+      ]
+    },
+    {
+      "chapter": "Data Sufficiency (Reasoning)",
+      "kind": "data_sufficiency",
+      "difficulty": "hard",
+      "answer_type": "single",
+      "stem": "How many bricks were needed to construct a wall?\n\n**I.** The ratio of length to breadth of the wall is 8 : 3 and each brick measures 19 × 9 cm.\n\n**II.** The price of 100 bricks was ₹500 and a total cost of ₹12,000 was incurred in purchasing all the needed bricks.",
+      "explanation": "**From I:** a *ratio* fixes the wall's shape but not its size — the actual area is unknown, so the brick count cannot be found. **Not sufficient**.\n\n**From II:** work with the cost per brick:\n$$\\frac{500}{100} = ₹5 \\text{ per brick} \\Rightarrow \\frac{12000}{5} = \\mathbf{2400} \\text{ bricks}.$$\nA unique number — **sufficient**.",
+      "source": "AP ICET 2025 7th May 2025 Shift 1",
+      "source_year": 2025,
+      "options": [
+        {
+          "label": "Statement I alone is sufficient to answer the question.",
+          "is_correct": false
+        },
+        {
+          "label": "Statement II alone is sufficient to answer the question.",
+          "is_correct": true
+        },
+        {
+          "label": "Statements I and II together are sufficient to answer the question, but neither statement alone is sufficient.",
+          "is_correct": false
+        },
+        {
+          "label": "Statements I and II together are not sufficient to answer the question and additional data is required.",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Data Sufficiency (Reasoning)",
+      "kind": "data_sufficiency",
+      "difficulty": "medium",
+      "answer_type": "single",
+      "stem": "Is $x$ divisible by 27?\n\n**I.** $x$ is divisible by 3.\n\n**II.** $x$ is divisible by 6.",
+      "explanation": "$27 = 3^3$, so $x$ must carry **three** factors of 3.\n\n**From I:** $x = 3$ (no) and $x = 27$ (yes) both qualify. **Not sufficient**.\n\n**From II:** $x = 6$ (no) and $x = 54$ (yes) both qualify. **Not sufficient**.\n\n**Together:** divisibility by 6 already implies divisibility by 3, so II adds nothing to I. $x = 12$ is divisible by both 3 and 6 but not by 27, while $x = 54$ is divisible by all three. **Additional data is required.**",
+      "source": "AP ICET 2025 7th May 2025 Shift 1",
+      "source_year": 2025,
+      "options": [
+        {
+          "label": "Statement I alone is sufficient to answer the question.",
+          "is_correct": false
+        },
+        {
+          "label": "Statement II alone is sufficient to answer the question.",
+          "is_correct": false
+        },
+        {
+          "label": "Statements I and II together are sufficient to answer the question, but neither statement alone is sufficient.",
+          "is_correct": false
+        },
+        {
+          "label": "Statements I and II together are not sufficient to answer the question and additional data is required.",
+          "is_correct": true
+        }
+      ]
+    },
+    {
+      "chapter": "Data Sufficiency (Reasoning)",
+      "kind": "data_sufficiency",
+      "difficulty": "hard",
+      "answer_type": "single",
+      "stem": "What is the volume of the bucket?\n\n**I.** The bucket is half filled.\n\n**II.** If 20% of the water inside the bucket is drained, it will be one-fifth filled.",
+      "explanation": "The question asks for an **absolute** volume, so somewhere a real quantity (litres, cm³) must be given.\n\n**From I:** \"half filled\" is a proportion, not a measurement. **Not sufficient**.\n\n**From II:** with capacity $C$ and water $W$, draining 20% leaves $0.8W = \\dfrac{C}{5}$, i.e. $W = \\dfrac{C}{4}$ — again only a ratio between two unknowns. **Not sufficient**.\n\n**Together:** both statements are purely proportional; no litre figure is ever supplied, so $C$ cannot be found. **Additional data is required.**",
+      "source": "AP ICET 2025 7th May 2025 Shift 1",
+      "source_year": 2025,
+      "options": [
+        {
+          "label": "Statement I alone is sufficient to answer the question.",
+          "is_correct": false
+        },
+        {
+          "label": "Statement II alone is sufficient to answer the question.",
+          "is_correct": false
+        },
+        {
+          "label": "Statements I and II together are sufficient to answer the question, but neither statement alone is sufficient.",
+          "is_correct": false
+        },
+        {
+          "label": "Statements I and II together are not sufficient to answer the question and additional data is required.",
+          "is_correct": true
+        }
+      ]
+    },
+    {
+      "chapter": "Data Sufficiency (Reasoning)",
+      "kind": "data_sufficiency",
+      "difficulty": "easy",
+      "answer_type": "single",
+      "stem": "Who is the shortest in height among Ram, Raju and Ravi?\n\n**I.** Ram is taller than Ravi.\n\n**II.** Ravi is shorter than Raju.",
+      "explanation": "**From I:** Ravi < Ram, but Raju is unplaced — Raju could be the shortest. **Not sufficient**.\n\n**From II:** Ravi < Raju, but Ram is unplaced. **Not sufficient**.\n\n**Together:**\n$$\\text{Ravi} < \\text{Ram} \\quad\\text{and}\\quad \\text{Ravi} < \\text{Raju},$$\nso Ravi is below both — **Ravi is the shortest**. (The order of Ram and Raju is still unknown, but the question does not need it.)",
+      "source": "AP ICET 2025 7th May 2025 Shift 1",
+      "source_year": 2025,
+      "options": [
+        {
+          "label": "Statement I alone is sufficient to answer the question.",
+          "is_correct": false
+        },
+        {
+          "label": "Statement II alone is sufficient to answer the question.",
+          "is_correct": false
+        },
+        {
+          "label": "Statements I and II together are sufficient to answer the question, but neither statement alone is sufficient.",
+          "is_correct": true
+        },
+        {
+          "label": "Statements I and II together are not sufficient to answer the question and additional data is required.",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Data Sufficiency (Reasoning)",
+      "kind": "data_sufficiency",
+      "difficulty": "hard",
+      "answer_type": "single",
+      "stem": "In the figure, $A$ is the apex and $D$, $C$, $B$ lie on a straight line with $AC \\perp DB$.\n\nWhat is the area of triangle $ACD$?\n\n**I.** The length of $CD$ is 10 cm and the area of triangle $ABC$ is 20 cm².\n\n**II.** The length of $BD$ is 16 cm.",
+      "explanation": "$AC$ is the common height of both right triangles, so\n$$[ACD] = \\tfrac12 \\times CD \\times AC.$$\n\n**From I:** $CD = 10$ and $\\tfrac12 \\times CB \\times AC = 20 \\Rightarrow CB \\times AC = 40$. Two unknowns ($CB$, $AC$) remain, so $AC$ is not pinned down. **Not sufficient**.\n\n**From II:** $BD = 16$ alone gives neither piece. **Not sufficient**.\n\n**Together:** $CB = BD - CD = 16 - 10 = 6$, hence\n$$AC = \\frac{40}{6} = \\frac{20}{3}, \\qquad [ACD] = \\frac12 \\times 10 \\times \\frac{20}{3} = \\frac{100}{3}\\ \\text{cm}^2.$$",
+      "source": "AP ICET 2025 7th May 2025 Shift 1",
+      "source_year": 2025,
+      "options": [
+        {
+          "label": "Statement I alone is sufficient to answer the question.",
+          "is_correct": false
+        },
+        {
+          "label": "Statement II alone is sufficient to answer the question.",
+          "is_correct": false
+        },
+        {
+          "label": "Statements I and II together are sufficient to answer the question, but neither statement alone is sufficient.",
+          "is_correct": true
+        },
+        {
+          "label": "Statements I and II together are not sufficient to answer the question and additional data is required.",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Data Sufficiency (Reasoning)",
+      "kind": "data_sufficiency",
+      "difficulty": "easy",
+      "answer_type": "single",
+      "stem": "What is the average marks of a class?\n\n**I.** The highest marks of the class is 100 and the lowest marks is 20.\n\n**II.** The total number of students in the class is 50.",
+      "explanation": "An average needs the **total marks** and the **number of students**.\n\n**From I:** the extremes say nothing about the 48 marks in between. **Not sufficient**.\n\n**From II:** the count alone, with no total. **Not sufficient**.\n\n**Together:** we know $n = 50$ and that the marks lie between 20 and 100 — the average could be anywhere in that range. **Additional data is required.**",
+      "source": "AP ICET 2025 7th May 2025 Shift 1",
+      "source_year": 2025,
+      "options": [
+        {
+          "label": "Statement I alone is sufficient to answer the question.",
+          "is_correct": false
+        },
+        {
+          "label": "Statement II alone is sufficient to answer the question.",
+          "is_correct": false
+        },
+        {
+          "label": "Statements I and II together are sufficient to answer the question, but neither statement alone is sufficient.",
+          "is_correct": false
+        },
+        {
+          "label": "Statements I and II together are not sufficient to answer the question and additional data is required.",
+          "is_correct": true
+        }
+      ]
+    },
+    {
+      "chapter": "Data Sufficiency (Reasoning)",
+      "kind": "data_sufficiency",
+      "difficulty": "hard",
+      "answer_type": "single",
+      "stem": "What is the average salary of Sita, Gita and Lata?\n\n**I.** Gita's salary is half of the combined salary of Sita and Lata.\n\n**II.** Sita and Gita together earn ₹50 more than Lata, and Lata earns ₹500.",
+      "explanation": "Write the salaries as $S$, $G$, $L$; the average is $\\dfrac{S+G+L}{3}$.\n\n**From I:** $G = \\dfrac{S+L}{2} \\Rightarrow S + L = 2G$, so the total is $3G$ and the average is $G$ — but $G$ itself is unknown. **Not sufficient**.\n\n**From II:**\n$$L = 500, \\qquad S + G = L + 50 = 550.$$\n$$\\text{Total} = 550 + 500 = 1050 \\Rightarrow \\text{average} = \\frac{1050}{3} = ₹350.$$\nThe individual salaries stay unknown, but the **average** is fixed — **sufficient**.",
+      "source": "AP ICET 2025 7th May 2025 Shift 1",
+      "source_year": 2025,
+      "options": [
+        {
+          "label": "Statement I alone is sufficient to answer the question.",
+          "is_correct": false
+        },
+        {
+          "label": "Statement II alone is sufficient to answer the question.",
+          "is_correct": true
+        },
+        {
+          "label": "Statements I and II together are sufficient to answer the question, but neither statement alone is sufficient.",
+          "is_correct": false
+        },
+        {
+          "label": "Statements I and II together are not sufficient to answer the question and additional data is required.",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Number & Alphabet Series",
+      "difficulty": "easy",
+      "answer_type": "single",
+      "stem": "Find the missing number:\n\n$$2, \\; 6, \\; 12, \\; 20, \\; ?, \\; 42$$",
+      "explanation": "Look at the gaps between consecutive terms:\n$$6-2 = 4, \\quad 12-6 = 6, \\quad 20-12 = 8, \\quad \\ldots$$\n\nThe differences grow by 2 each time: $4, 6, 8, \\mathbf{10}, \\mathbf{12}$.\n\n$$20 + 10 = \\mathbf{30}, \\qquad 30 + 12 = 42 \\;\\checkmark$$\n\n*(Equivalently the terms are $n(n+1)$: $1{\\cdot}2, 2{\\cdot}3, 3{\\cdot}4, 4{\\cdot}5, \\mathbf{5{\\cdot}6}, 6{\\cdot}7$.)*",
+      "source": "AP ICET 2025 7th May 2025 Shift 1",
+      "source_year": 2025,
+      "options": [
+        {
+          "label": "26",
+          "is_correct": false
+        },
+        {
+          "label": "30",
+          "is_correct": true
+        },
+        {
+          "label": "32",
+          "is_correct": false
+        },
+        {
+          "label": "36",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Number & Alphabet Series",
+      "difficulty": "easy",
+      "answer_type": "single",
+      "stem": "Find the missing number:\n\n$$3, \\; 6, \\; 12, \\; 24, \\; ?, \\; 96$$",
+      "explanation": "Each term is **double** the one before:\n$$3 \\times 2 = 6, \\quad 6 \\times 2 = 12, \\quad 12 \\times 2 = 24.$$\n\n$$24 \\times 2 = \\mathbf{48}, \\qquad 48 \\times 2 = 96 \\;\\checkmark$$",
+      "source": "AP ICET 2025 7th May 2025 Shift 1",
+      "source_year": 2025,
+      "options": [
+        {
+          "label": "36",
+          "is_correct": false
+        },
+        {
+          "label": "42",
+          "is_correct": false
+        },
+        {
+          "label": "48",
+          "is_correct": true
+        },
+        {
+          "label": "60",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Number & Alphabet Series",
+      "difficulty": "medium",
+      "answer_type": "single",
+      "stem": "Find the missing number:\n\n$$0.5, \\; 2, \\; 4.5, \\; 8, \\; 12.5, \\; ?$$",
+      "explanation": "Each term is **half of a perfect square**:\n$$\\frac{1^2}{2} = 0.5, \\quad \\frac{2^2}{2} = 2, \\quad \\frac{3^2}{2} = 4.5, \\quad \\frac{4^2}{2} = 8, \\quad \\frac{5^2}{2} = 12.5.$$\n\nSo the next term is\n$$\\frac{6^2}{2} = \\frac{36}{2} = \\mathbf{18}.$$\n\n*(Check with differences: $1.5, 2.5, 3.5, 4.5, \\mathbf{5.5}$ — and $12.5 + 5.5 = 18$ ✓)*",
+      "source": "AP ICET 2025 7th May 2025 Shift 1",
+      "source_year": 2025,
+      "options": [
+        {
+          "label": "16",
+          "is_correct": false
+        },
+        {
+          "label": "18",
+          "is_correct": true
+        },
+        {
+          "label": "17",
+          "is_correct": false
+        },
+        {
+          "label": "20",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Number & Alphabet Series",
+      "difficulty": "medium",
+      "answer_type": "single",
+      "stem": "Find the missing number:\n\n$$100, \\; 97, \\; 91, \\; 82, \\; ?, \\; 55$$",
+      "explanation": "The terms fall by a growing amount:\n$$100-97 = 3, \\quad 97-91 = 6, \\quad 91-82 = 9.$$\n\nThe drops are the multiples of 3: $3, 6, 9, \\mathbf{12}, \\mathbf{15}$.\n\n$$82 - 12 = \\mathbf{70}, \\qquad 70 - 15 = 55 \\;\\checkmark$$",
+      "source": "AP ICET 2025 7th May 2025 Shift 1",
+      "source_year": 2025,
+      "options": [
+        {
+          "label": "70",
+          "is_correct": true
+        },
+        {
+          "label": "71",
+          "is_correct": false
+        },
+        {
+          "label": "68",
+          "is_correct": false
+        },
+        {
+          "label": "69",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Number & Alphabet Series",
+      "difficulty": "easy",
+      "answer_type": "single",
+      "stem": "Find the missing number:\n\n$$1, \\; 2, \\; 6, \\; 24, \\; ?, \\; 720$$",
+      "explanation": "These are the **factorials**:\n$$1! = 1, \\quad 2! = 2, \\quad 3! = 6, \\quad 4! = 24.$$\n\nSo the next term is\n$$5! = \\mathbf{120}, \\qquad 6! = 720 \\;\\checkmark$$\n\n*(Equivalently each term is the previous one multiplied by the next counting number: $24 \\times 5 = 120$, $120 \\times 6 = 720$.)*",
+      "source": "AP ICET 2025 7th May 2025 Shift 1",
+      "source_year": 2025,
+      "options": [
+        {
+          "label": "100",
+          "is_correct": false
+        },
+        {
+          "label": "120",
+          "is_correct": true
+        },
+        {
+          "label": "150",
+          "is_correct": false
+        },
+        {
+          "label": "130",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Number & Alphabet Series",
+      "difficulty": "hard",
+      "answer_type": "single",
+      "stem": "Find the missing number in the following number series:\n\n$$266, \\; 196, \\; 256, \\; 169, \\; \\underline{\\qquad}$$",
+      "explanation": "Each term is the **square of the digit sum of the term before it**:\n\n$$266 \\to 2+6+6 = 14, \\quad 14^2 = 196 \\;\\checkmark$$\n$$196 \\to 1+9+6 = 16, \\quad 16^2 = 256 \\;\\checkmark$$\n$$256 \\to 2+5+6 = 13, \\quad 13^2 = 169 \\;\\checkmark$$\n\nApplying it once more:\n$$169 \\to 1+6+9 = 16, \\quad 16^2 = \\mathbf{256}.$$",
+      "source": "AP ICET 2025 7th May 2025 Shift 1",
+      "source_year": 2025,
+      "options": [
+        {
+          "label": "265",
+          "is_correct": false
+        },
+        {
+          "label": "256",
+          "is_correct": true
+        },
+        {
+          "label": "625",
+          "is_correct": false
+        },
+        {
+          "label": "225",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Analogy",
+      "difficulty": "hard",
+      "answer_type": "single",
+      "stem": "Select the option that is related to the third letter-cluster in the same way as the second letter-cluster is related to the first letter-cluster.\n\n$$\\text{JETW} : \\text{TOYZ} :: \\text{KCSZ} : \\;?$$",
+      "explanation": "Read the shift applied to each of the four positions in the sample pair:\n\n| | 1st | 2nd | 3rd | 4th |\n| --- | --- | --- | --- | --- |\n| JETW | J(10) | E(5) | T(20) | W(23) |\n| TOYZ | T(20) | O(15) | Y(25) | Z(26) |\n| shift | $+10$ | $+10$ | $+5$ | $+3$ |\n\nApply the same shifts $(+10, +10, +5, +3)$ to KCSZ, wrapping past Z back to A:\n\n$$K(11) \\to U(21), \\quad C(3) \\to M(13), \\quad S(19) \\to X(24), \\quad Z(26) \\to C(29-26=3).$$\n\n$$\\Rightarrow \\mathbf{UMXC}$$",
+      "source": "AP ICET 2025 7th May 2025 Shift 1",
+      "source_year": 2025,
+      "options": [
+        {
+          "label": "UMYF",
+          "is_correct": false
+        },
+        {
+          "label": "UMXC",
+          "is_correct": true
+        },
+        {
+          "label": "SLYC",
+          "is_correct": false
+        },
+        {
+          "label": "SLXF",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Analogy",
+      "difficulty": "easy",
+      "answer_type": "single",
+      "stem": "Select the option that is related to the third word in the same way as the second word is related to the first word.\n\n$$\\text{Oak} : \\text{Tree} :: \\text{Rose} : \\;?$$",
+      "explanation": "An **oak** is a *kind of* **tree** — the relation is member-to-category.\n\nA **rose** is a kind of **flower**, so the category word completes the pair.\n\n*Flavor*, *Love* and *Pink* are associations of a rose (its scent, its symbolism, its colour), not the class it belongs to.",
+      "source": "AP ICET 2025 7th May 2025 Shift 1",
+      "source_year": 2025,
+      "options": [
+        {
+          "label": "Flower",
+          "is_correct": true
+        },
+        {
+          "label": "Flavor",
+          "is_correct": false
+        },
+        {
+          "label": "Love",
+          "is_correct": false
+        },
+        {
+          "label": "Pink",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Analogy",
+      "difficulty": "easy",
+      "answer_type": "single",
+      "stem": "Select the option that is related to the third letter in the same way as the second letter-cluster is related to the first letter.\n\n$$a : \\text{One} :: f : \\;?$$",
+      "explanation": "The relation is **position in the alphabet, written in words**:\n$$a \\text{ is the 1st letter} \\to \\text{One}.$$\n\n$f$ is the 6th letter ($a, b, c, d, e, \\mathbf{f}$), so\n$$f \\to \\mathbf{Six}.$$\n\n*(\"Fail\" and \"Gail\" only rhyme or share a letter — they ignore the rule.)*",
+      "source": "AP ICET 2025 7th May 2025 Shift 1",
+      "source_year": 2025,
+      "options": [
+        {
+          "label": "Six",
+          "is_correct": true
+        },
+        {
+          "label": "Fail",
+          "is_correct": false
+        },
+        {
+          "label": "Gail",
+          "is_correct": false
+        },
+        {
+          "label": "Eight",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Classification (Odd One Out)",
+      "difficulty": "easy",
+      "answer_type": "single",
+      "stem": "Find the odd one out from the following:\n\nVolcano, Earthquake, Tsunami, Chemical explosion",
+      "explanation": "A **volcano**, an **earthquake** and a **tsunami** are all *natural* disasters — they occur through the earth's own processes.\n\nA **chemical explosion** is caused by human activity (industrial accidents, mishandled chemicals), so it is the one of a different kind.",
+      "source": "AP ICET 2025 7th May 2025 Shift 1",
+      "source_year": 2025,
+      "options": [
+        {
+          "label": "Volcano",
+          "is_correct": false
+        },
+        {
+          "label": "Earthquake",
+          "is_correct": false
+        },
+        {
+          "label": "Tsunami",
+          "is_correct": false
+        },
+        {
+          "label": "Chemical explosion",
+          "is_correct": true
+        }
+      ]
+    },
+    {
+      "chapter": "Classification (Odd One Out)",
+      "difficulty": "easy",
+      "answer_type": "single",
+      "stem": "Find the odd one out from the following:\n\nAsia, Africa, China, Europe",
+      "explanation": "**Asia**, **Africa** and **Europe** are **continents**.\n\n**China** is a **country** — and in fact a country *within* Asia, so it belongs to a smaller category than the other three.",
+      "source": "AP ICET 2025 7th May 2025 Shift 1",
+      "source_year": 2025,
+      "options": [
+        {
+          "label": "Asia",
+          "is_correct": false
+        },
+        {
+          "label": "Africa",
+          "is_correct": false
+        },
+        {
+          "label": "China",
+          "is_correct": true
+        },
+        {
+          "label": "Europe",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Analogy",
+      "difficulty": "easy",
+      "answer_type": "single",
+      "stem": "Find the missing number in the following:\n\n$$16 : 64 :: 36 : \\underline{\\qquad}$$",
+      "explanation": "The second number is **four times** the first:\n$$16 \\times 4 = 64.$$\n\n$$36 \\times 4 = \\mathbf{144}.$$\n\n*(The same answer comes from the square reading: $16 = 4^2 \\to 8^2 = 64$ doubles the root, and $36 = 6^2 \\to 12^2 = 144$.)*",
+      "source": "AP ICET 2025 7th May 2025 Shift 1",
+      "source_year": 2025,
+      "options": [
+        {
+          "label": "128",
+          "is_correct": false
+        },
+        {
+          "label": "144",
+          "is_correct": true
+        },
+        {
+          "label": "72",
+          "is_correct": false
+        },
+        {
+          "label": "100",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Analogy",
+      "difficulty": "easy",
+      "answer_type": "single",
+      "stem": "Find the missing term in the following:\n\n$$\\text{CAP} : \\text{BZO} :: \\text{SIT} : \\underline{\\qquad}$$",
+      "explanation": "Every letter moves **one step back** in the alphabet:\n$$C \\to B, \\qquad A \\to Z \\;(\\text{wrapping round}), \\qquad P \\to O.$$\n\nApplying the same shift to SIT:\n$$S \\to R, \\qquad I \\to H, \\qquad T \\to S$$\n$$\\Rightarrow \\mathbf{RHS}.$$",
+      "source": "AP ICET 2025 7th May 2025 Shift 1",
+      "source_year": 2025,
+      "options": [
+        {
+          "label": "LHS",
+          "is_correct": false
+        },
+        {
+          "label": "MUD",
+          "is_correct": false
+        },
+        {
+          "label": "RHS",
+          "is_correct": true
+        },
+        {
+          "label": "NHS",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Analogy",
+      "difficulty": "medium",
+      "answer_type": "single",
+      "stem": "Find the missing number in the following:\n\n$$4 : 18 :: 9 : \\underline{\\qquad}$$",
+      "explanation": "Square the number and add 2:\n$$4^2 + 2 = 16 + 2 = 18.$$\n\n$$9^2 + 2 = 81 + 2 = \\mathbf{83}.$$\n\n*(The bare square 81 is offered as a distractor — the \"+2\" is what the first pair fixes.)*",
+      "source": "AP ICET 2025 7th May 2025 Shift 1",
+      "source_year": 2025,
+      "options": [
+        {
+          "label": "81",
+          "is_correct": false
+        },
+        {
+          "label": "85",
+          "is_correct": false
+        },
+        {
+          "label": "83",
+          "is_correct": true
+        },
+        {
+          "label": "82",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Analogy",
+      "difficulty": "medium",
+      "answer_type": "single",
+      "stem": "Find the missing term in the following:\n\n$$\\text{PRINT} : \\text{RPITN} :: \\text{BLANK} : \\underline{\\qquad}$$",
+      "explanation": "Compare the two words position by position:\n$$\\text{P R I N T} \\;\\to\\; \\text{R P I T N}.$$\n\nThe **first two letters swap**, the **middle letter stays**, and the **last two letters swap**.\n\nApply the same to BLANK:\n$$\\underbrace{BL}_{\\to LB} \\; \\underbrace{A}_{\\to A} \\; \\underbrace{NK}_{\\to KN} \\;\\Rightarrow\\; \\mathbf{LBAKN}.$$",
+      "source": "AP ICET 2025 7th May 2025 Shift 1",
+      "source_year": 2025,
+      "options": [
+        {
+          "label": "ANKBL",
+          "is_correct": false
+        },
+        {
+          "label": "KLABN",
+          "is_correct": false
+        },
+        {
+          "label": "NALBK",
+          "is_correct": false
+        },
+        {
+          "label": "LBAKN",
+          "is_correct": true
+        }
+      ]
+    },
+    {
+      "chapter": "Analogy",
+      "difficulty": "easy",
+      "answer_type": "single",
+      "stem": "Find the missing number in the following:\n\n$$5 : 30 :: 4 : \\underline{\\qquad}$$",
+      "explanation": "The second number is $n(n+1)$ — the number multiplied by its successor:\n$$5 \\times 6 = 30.$$\n\n$$4 \\times 5 = \\mathbf{20}.$$\n\n*(Equally, $30 = 5^2 + 5$, so $4^2 + 4 = 20$.)*",
+      "source": "AP ICET 2025 7th May 2025 Shift 1",
+      "source_year": 2025,
+      "options": [
+        {
+          "label": "20",
+          "is_correct": true
+        },
+        {
+          "label": "40",
+          "is_correct": false
+        },
+        {
+          "label": "60",
+          "is_correct": false
+        },
+        {
+          "label": "80",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Number & Alphabet Series",
+      "difficulty": "easy",
+      "answer_type": "single",
+      "stem": "Find the missing letter in the series:\n\n$$C, \\; F, \\; I, \\; L, \\; O, \\; \\underline{\\qquad}$$",
+      "explanation": "Write the alphabet positions:\n$$C(3), \\; F(6), \\; I(9), \\; L(12), \\; O(15).$$\n\nEach letter is **three places** after the one before, so the next is\n$$15 + 3 = 18 \\Rightarrow \\mathbf{R}.$$",
+      "source": "AP ICET 2025 7th May 2025 Shift 1",
+      "source_year": 2025,
+      "options": [
+        {
+          "label": "T",
+          "is_correct": false
+        },
+        {
+          "label": "U",
+          "is_correct": false
+        },
+        {
+          "label": "S",
+          "is_correct": false
+        },
+        {
+          "label": "R",
+          "is_correct": true
+        }
+      ]
+    },
+    {
+      "chapter": "Number & Alphabet Series",
+      "difficulty": "easy",
+      "answer_type": "single",
+      "stem": "Find the missing number in the series:\n\n$$3, \\; 7, \\; 13, \\; 21, \\; 31, \\; \\underline{\\qquad}$$",
+      "explanation": "The gaps between terms are the even numbers:\n$$7-3 = 4, \\quad 13-7 = 6, \\quad 21-13 = 8, \\quad 31-21 = 10.$$\n\nThe next gap is 12:\n$$31 + 12 = \\mathbf{43}.$$",
+      "source": "AP ICET 2025 7th May 2025 Shift 1",
+      "source_year": 2025,
+      "options": [
+        {
+          "label": "43",
+          "is_correct": true
+        },
+        {
+          "label": "53",
+          "is_correct": false
+        },
+        {
+          "label": "41",
+          "is_correct": false
+        },
+        {
+          "label": "55",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Number & Alphabet Series",
+      "difficulty": "medium",
+      "answer_type": "single",
+      "stem": "Find the missing number in the series:\n\n$$5, \\; 12, \\; 26, \\; 54, \\; 110, \\; \\underline{\\qquad}$$",
+      "explanation": "Each term is **double the previous term plus 2**:\n$$5(2)+2 = 12, \\quad 12(2)+2 = 26, \\quad 26(2)+2 = 54, \\quad 54(2)+2 = 110.$$\n\n$$110(2) + 2 = \\mathbf{222}.$$\n\n*(The differences $7, 14, 28, 56$ also double each time, and the next one is $112$: $110 + 112 = 222$ ✓)*",
+      "source": "AP ICET 2025 7th May 2025 Shift 1",
+      "source_year": 2025,
+      "options": [
+        {
+          "label": "222",
+          "is_correct": true
+        },
+        {
+          "label": "151",
+          "is_correct": false
+        },
+        {
+          "label": "214",
+          "is_correct": false
+        },
+        {
+          "label": "250",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Number & Alphabet Series",
+      "difficulty": "medium",
+      "answer_type": "single",
+      "stem": "Find the missing number in the series:\n\n$$96, \\; 60, \\; 35, \\; 19, \\; 10, \\; \\underline{\\qquad}$$",
+      "explanation": "Look at how much is subtracted each time:\n$$96-60 = 36, \\quad 60-35 = 25, \\quad 35-19 = 16, \\quad 19-10 = 9.$$\n\nThose are the **descending squares** $6^2, 5^2, 4^2, 3^2$, so the next subtraction is $2^2 = 4$:\n$$10 - 4 = \\mathbf{6}.$$",
+      "source": "AP ICET 2025 7th May 2025 Shift 1",
+      "source_year": 2025,
+      "options": [
+        {
+          "label": "4",
+          "is_correct": false
+        },
+        {
+          "label": "3",
+          "is_correct": false
+        },
+        {
+          "label": "6",
+          "is_correct": true
+        },
+        {
+          "label": "2",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Number & Alphabet Series",
+      "difficulty": "easy",
+      "answer_type": "single",
+      "stem": "Find the missing term in the series:\n\n$$\\text{OK}, \\; \\text{PL}, \\; \\text{QM}, \\; \\text{RN}, \\; \\underline{\\qquad}$$",
+      "explanation": "Handle the two letters separately — **both** advance by one each time:\n$$O \\to P \\to Q \\to R \\to \\mathbf{S}$$\n$$K \\to L \\to M \\to N \\to \\mathbf{O}$$\n\n$$\\Rightarrow \\mathbf{SO}.$$",
+      "source": "AP ICET 2025 7th May 2025 Shift 1",
+      "source_year": 2025,
+      "options": [
+        {
+          "label": "TV",
+          "is_correct": false
+        },
+        {
+          "label": "TO",
+          "is_correct": false
+        },
+        {
+          "label": "SV",
+          "is_correct": false
+        },
+        {
+          "label": "SO",
+          "is_correct": true
+        }
+      ]
+    },
+    {
+      "chapter": "Classification (Odd One Out)",
+      "difficulty": "easy",
+      "answer_type": "single",
+      "stem": "Find the odd thing from the following:\n\nEiffel Tower, Statue of Liberty, Great Wall of China, Mount Everest",
+      "explanation": "The **Eiffel Tower**, the **Statue of Liberty** and the **Great Wall of China** are all *man-made* monuments.\n\n**Mount Everest** is a natural feature — the world's highest mountain — so it does not belong with the other three.",
+      "source": "AP ICET 2025 7th May 2025 Shift 1",
+      "source_year": 2025,
+      "options": [
+        {
+          "label": "Eiffel Tower",
+          "is_correct": false
+        },
+        {
+          "label": "Statue of Liberty",
+          "is_correct": false
+        },
+        {
+          "label": "Great wall of China",
+          "is_correct": false
+        },
+        {
+          "label": "Mount Everest",
+          "is_correct": true
+        }
+      ]
+    },
+    {
+      "chapter": "Classification (Odd One Out)",
+      "difficulty": "easy",
+      "answer_type": "single",
+      "stem": "Find the odd number from the following:\n\n13, 37, 21, 41",
+      "explanation": "Test each number for primality:\n$$13 \\;(\\text{prime}), \\quad 37 \\;(\\text{prime}), \\quad 41 \\;(\\text{prime}),$$\n$$21 = 3 \\times 7 \\;(\\textbf{composite}).$$\n\nSo **21** is the odd one out.",
+      "source": "AP ICET 2025 7th May 2025 Shift 1",
+      "source_year": 2025,
+      "options": [
+        {
+          "label": "13",
+          "is_correct": false
+        },
+        {
+          "label": "37",
+          "is_correct": false
+        },
+        {
+          "label": "21",
+          "is_correct": true
+        },
+        {
+          "label": "41",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Coding-Decoding",
+      "difficulty": "easy",
+      "answer_type": "single",
+      "stem": "If 'LEMON' is coded as 'NGOQP', how would 'JUICE' be coded?",
+      "explanation": "Compare the sample letter by letter:\n$$L(12) \\to N(14), \\quad E(5) \\to G(7), \\quad M(13) \\to O(15), \\quad O(15) \\to Q(17), \\quad N(14) \\to P(16).$$\n\nEvery letter moves **two places forward**.\n\nApply $+2$ to JUICE:\n$$J \\to L, \\quad U \\to W, \\quad I \\to K, \\quad C \\to E, \\quad E \\to G$$\n$$\\Rightarrow \\mathbf{LWKEG}.$$",
+      "source": "AP ICET 2025 7th May 2025 Shift 1",
+      "source_year": 2025,
+      "options": [
+        {
+          "label": "LWKEG",
+          "is_correct": true
+        },
+        {
+          "label": "LWKEF",
+          "is_correct": false
+        },
+        {
+          "label": "LWKFG",
+          "is_correct": false
+        },
+        {
+          "label": "LWKDG",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Coding-Decoding",
+      "difficulty": "easy",
+      "answer_type": "single",
+      "stem": "If 'TABLE' is written as 'VCDNG', how would 'CHAIR' be written?",
+      "explanation": "Check the shift on each letter of the sample:\n$$T(20)\\to V(22), \\quad A(1)\\to C(3), \\quad B(2)\\to D(4), \\quad L(12)\\to N(14), \\quad E(5)\\to G(7).$$\n\nAll five move **$+2$**.\n\nSo CHAIR becomes\n$$C\\to E, \\quad H\\to J, \\quad A\\to C, \\quad I\\to K, \\quad R\\to T$$\n$$\\Rightarrow \\mathbf{EJCKT}.$$\n\n*(Every distractor changes just one letter — check the third and fifth positions carefully.)*",
+      "source": "AP ICET 2025 7th May 2025 Shift 1",
+      "source_year": 2025,
+      "options": [
+        {
+          "label": "EJCKT",
+          "is_correct": true
+        },
+        {
+          "label": "EJCKS",
+          "is_correct": false
+        },
+        {
+          "label": "EJBKT",
+          "is_correct": false
+        },
+        {
+          "label": "EJBKS",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Coding-Decoding",
+      "difficulty": "easy",
+      "answer_type": "single",
+      "stem": "If 'SCHOOL' is coded as 'TDIPPM', how is 'TEACHER' coded?",
+      "explanation": "Each letter of the sample advances by **one**:\n$$S\\to T, \\quad C\\to D, \\quad H\\to I, \\quad O\\to P, \\quad O\\to P, \\quad L\\to M.$$\n\nApply $+1$ to all seven letters of TEACHER:\n$$T\\to U, \\; E\\to F, \\; A\\to B, \\; C\\to D, \\; H\\to I, \\; E\\to F, \\; R\\to S$$\n$$\\Rightarrow \\mathbf{UFBDIFS}.$$",
+      "source": "AP ICET 2025 7th May 2025 Shift 1",
+      "source_year": 2025,
+      "options": [
+        {
+          "label": "UFBDIFS",
+          "is_correct": true
+        },
+        {
+          "label": "UFBDIFT",
+          "is_correct": false
+        },
+        {
+          "label": "UFBDJFS",
+          "is_correct": false
+        },
+        {
+          "label": "UFBDJEF",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Coding-Decoding",
+      "difficulty": "medium",
+      "answer_type": "single",
+      "stem": "If SITE = S3T2 and COAL = C41L, then AROUND is written as?",
+      "explanation": "In both samples the **consonants are left alone** and the **vowels become numbers**:\n\n$$\\text{SITE} \\to S\\,\\mathbf{3}\\,T\\,\\mathbf{2}: \\quad I \\to 3, \\; E \\to 2$$\n$$\\text{COAL} \\to C\\,\\mathbf{4}\\,\\mathbf{1}\\,L: \\quad O \\to 4, \\; A \\to 1$$\n\nSo each vowel is replaced by its position **among the vowels**:\n$$A = 1, \\quad E = 2, \\quad I = 3, \\quad O = 4, \\quad U = 5.$$\n\nAROUND $= A\\,R\\,O\\,U\\,N\\,D$ becomes\n$$1\\,R\\,4\\,5\\,N\\,D = \\mathbf{1R45ND}.$$\n\n*(The consonants keep their original positions — that is what rules out 145RND.)*",
+      "source": "AP ICET 2025 7th May 2025 Shift 1",
+      "source_year": 2025,
+      "options": [
+        {
+          "label": "145RND",
+          "is_correct": false
+        },
+        {
+          "label": "1R45ND",
+          "is_correct": true
+        },
+        {
+          "label": "1R4N5D",
+          "is_correct": false
+        },
+        {
+          "label": "1R4ND5",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Coding-Decoding",
+      "difficulty": "hard",
+      "answer_type": "single",
+      "stem": "If HELLO is written as 23-20-1-1-4, how is SWELL written?",
+      "explanation": "Take the alphabet position of each letter of HELLO and compare with its code:\n\n| Letter | H | E | L | L | O |\n| --- | --- | --- | --- | --- | --- |\n| Position | 8 | 5 | 12 | 12 | 15 |\n| Code | 23 | 20 | 1 | 1 | 4 |\n\nEach code is the position **minus 11** (adding 26 when it goes below 1):\n$$12-11 = 1, \\quad 15-11 = 4, \\quad 8-11 = -3 \\to 23, \\quad 5-11 = -6 \\to 20.$$\n\nApply the same to SWELL:\n$$S(19)-11 = 8, \\quad W(23)-11 = 12, \\quad E(5)-11 \\to 20, \\quad L \\to 1, \\quad L \\to 1$$\n$$\\Rightarrow \\mathbf{8\\text{-}12\\text{-}20\\text{-}1\\text{-}1}.$$",
+      "source": "AP ICET 2025 7th May 2025 Shift 1",
+      "source_year": 2025,
+      "options": [
+        {
+          "label": "8-12-20-1-1",
+          "is_correct": true
+        },
+        {
+          "label": "23-25-20-1-1",
+          "is_correct": false
+        },
+        {
+          "label": "10-16-20-1-1",
+          "is_correct": false
+        },
+        {
+          "label": "8-16-20-1-1",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Coding-Decoding",
+      "difficulty": "hard",
+      "answer_type": "single",
+      "stem": "If FRAGRANCE is written as HPCETYPAG, how can IMPOSING be written?",
+      "explanation": "Line the two words up position by position:\n\n| | F | R | A | G | R | A | N | C | E |\n| --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |\n| code | H | P | C | E | T | Y | P | A | G |\n| shift | $+2$ | $-2$ | $+2$ | $-2$ | $+2$ | $-2$ | $+2$ | $-2$ | $+2$ |\n\nThe shifts **alternate $+2$ and $-2$**, starting with $+2$ (note $A(1) - 2$ wraps round to $Y(25)$).\n\nApply the same alternation to IMPOSING:\n$$I{+}2{=}K, \\; M{-}2{=}K, \\; P{+}2{=}R, \\; O{-}2{=}M, \\; S{+}2{=}U, \\; I{-}2{=}G, \\; N{+}2{=}P, \\; G{-}2{=}E$$\n$$\\Rightarrow \\mathbf{KKRMUGPE}.$$",
+      "source": "AP ICET 2025 7th May 2025 Shift 1",
+      "source_year": 2025,
+      "options": [
+        {
+          "label": "KKRMUIPE",
+          "is_correct": false
+        },
+        {
+          "label": "KKRMUEPE",
+          "is_correct": false
+        },
+        {
+          "label": "KKROUJPE",
+          "is_correct": false
+        },
+        {
+          "label": "KKRMUGPE",
+          "is_correct": true
+        }
+      ]
+    },
+    {
+      "chapter": "Coding-Decoding",
+      "difficulty": "hard",
+      "answer_type": "single",
+      "stem": "If '+' stands for division, '÷' stands for multiplication, 'x' stands for subtraction and '−' stands for addition, then which of the following equations is correct?",
+      "explanation": "Translate each option with the swapped symbols, then evaluate normally (BODMAS).\n\n**Option 1:** $18 \\div 6 - 7 + 5 \\times 2$ reads as $18 \\times 6 + 7 \\div 5 - 2 = 108 + 1.4 - 2 = 107.4 \\ne \\frac23$ ✗\n\n**Option 2:** $18 + 6 \\div 7 \\times 5 - 2$ reads as\n$$18 \\div 6 \\times 7 - 5 + 2 = 3 \\times 7 - 5 + 2 = 21 - 3 = \\mathbf{18} \\;\\checkmark$$\n\n**Option 3:** $18 \\times 6 + 7 \\div 5 - 2$ reads as $18 - 6 \\div 7 \\times 5 + 2 = 18 - 4.29 + 2 = 15.71 \\ne 16$ ✗\n\n**Option 4:** $18 \\div 6 \\times 7 + 5 - 2$ reads as $18 \\times 6 - 7 \\div 5 + 2 = 108 - 1.4 + 2 = 108.6 \\ne 22$ ✗",
+      "source": "AP ICET 2025 7th May 2025 Shift 1",
+      "source_year": 2025,
+      "options": [
+        {
+          "label": "$18 \\div 6 - 7 + 5 \\times 2 = 2/3$",
+          "is_correct": false
+        },
+        {
+          "label": "$18 + 6 \\div 7 \\times 5 - 2 = 18$",
+          "is_correct": true
+        },
+        {
+          "label": "$18 \\times 6 + 7 \\div 5 - 2 = 16$",
+          "is_correct": false
+        },
+        {
+          "label": "$18 \\div 6 \\times 7 + 5 - 2 = 22$",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Coding-Decoding",
+      "difficulty": "medium",
+      "answer_type": "single",
+      "stem": "In a certain code, the number 12345 is coded as 36936. What will be the code for the number 99325?",
+      "explanation": "Match the digits one by one:\n$$1 \\to 3, \\quad 2 \\to 6, \\quad 3 \\to 9, \\quad 4 \\to 3, \\quad 5 \\to 6.$$\n\nEach digit is **multiplied by 3**, and when the product has two digits its **digits are added**:\n$$4 \\times 3 = 12 \\to 1+2 = 3 \\;\\checkmark, \\qquad 5 \\times 3 = 15 \\to 1+5 = 6 \\;\\checkmark$$\n\nApply it to 99325:\n$$9\\times3 = 27 \\to 9, \\quad 9 \\to 9, \\quad 3\\times3 = 9, \\quad 2\\times3 = 6, \\quad 5\\times3 = 15 \\to 6$$\n$$\\Rightarrow \\mathbf{99966}.$$",
+      "source": "AP ICET 2025 7th May 2025 Shift 1",
+      "source_year": 2025,
+      "options": [
+        {
+          "label": "99966",
+          "is_correct": true
+        },
+        {
+          "label": "33965",
+          "is_correct": false
+        },
+        {
+          "label": "78356",
+          "is_correct": false
+        },
+        {
+          "label": "37649",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Clocks & Calendars",
+      "difficulty": "easy",
+      "answer_type": "single",
+      "stem": "If 15ᵗʰ August 2022 was a Monday, what day of the week was 15ᵗʰ August 2023?",
+      "explanation": "A date moves forward by **one weekday** each ordinary year and **two** across a leap year.\n\nThe span 15 Aug 2022 → 15 Aug 2023 contains 365 days: February 2023 has 28 days, so no 29 February falls inside it.\n\n$$365 = 52 \\times 7 + 1 \\Rightarrow \\text{one odd day}.$$\n\n$$\\text{Monday} + 1 = \\mathbf{Tuesday}.$$",
+      "source": "AP ICET 2025 7th May 2025 Shift 1",
+      "source_year": 2025,
+      "options": [
+        {
+          "label": "Monday",
+          "is_correct": false
+        },
+        {
+          "label": "Tuesday",
+          "is_correct": true
+        },
+        {
+          "label": "Wednesday",
+          "is_correct": false
+        },
+        {
+          "label": "Sunday",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Clocks & Calendars",
+      "difficulty": "medium",
+      "answer_type": "single",
+      "stem": "What will be the angle between the hour and minute hand at 3:30?",
+      "explanation": "Track the two hands from 12 o'clock.\n\n**Minute hand** at 30 minutes: $30 \\times 6^\\circ = 180^\\circ$.\n\n**Hour hand** at 3:30: it has passed 3 hours *and* half of the next, so\n$$3 \\times 30^\\circ + 30 \\times 0.5^\\circ = 90^\\circ + 15^\\circ = 105^\\circ.$$\n\n$$\\text{Angle} = 180^\\circ - 105^\\circ = \\mathbf{75^\\circ}.$$\n\n*(Forgetting that the hour hand drifts past the 3 gives $180 - 90 = 90^\\circ$ — the classic error.)*",
+      "source": "AP ICET 2025 7th May 2025 Shift 1",
+      "source_year": 2025,
+      "options": [
+        {
+          "label": "60°",
+          "is_correct": false
+        },
+        {
+          "label": "75°",
+          "is_correct": true
+        },
+        {
+          "label": "45°",
+          "is_correct": false
+        },
+        {
+          "label": "90°",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Seating Arrangement",
+      "difficulty": "easy",
+      "answer_type": "single",
+      "stem": "In a row of students, A is 12ᵗʰ from the left and B is 17ᵗʰ from the right. If there are 30 students in the row, how many students are between A and B?",
+      "explanation": "Put both positions on the **same** scale — counting from the left:\n$$B\\text{'s position from the left} = 30 - 17 + 1 = 14.$$\n\nA is at 12 and B is at 14, so the students strictly between them occupy positions 13 only:\n$$14 - 12 - 1 = \\mathbf{1}.$$",
+      "source": "AP ICET 2025 7th May 2025 Shift 1",
+      "source_year": 2025,
+      "options": [
+        {
+          "label": "2",
+          "is_correct": false
+        },
+        {
+          "label": "1",
+          "is_correct": true
+        },
+        {
+          "label": "0",
+          "is_correct": false
+        },
+        {
+          "label": "3",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Clocks & Calendars",
+      "difficulty": "easy",
+      "answer_type": "single",
+      "stem": "A clock gains 2 minutes every hour. If it was set right at 6:00 AM, what will be the time shown at 6:00 PM on the clock?",
+      "explanation": "From 6:00 AM to 6:00 PM is **12 hours** of true time.\n\nThe clock runs fast by 2 minutes in each of those hours:\n$$12 \\times 2 = 24 \\text{ minutes gained}.$$\n\nSo it reads\n$$6{:}00 \\text{ PM} + 24 \\text{ min} = \\mathbf{6{:}24 \\text{ PM}}.$$",
+      "source": "AP ICET 2025 7th May 2025 Shift 1",
+      "source_year": 2025,
+      "options": [
+        {
+          "label": "6:20 PM",
+          "is_correct": false
+        },
+        {
+          "label": "6:24 PM",
+          "is_correct": true
+        },
+        {
+          "label": "6:12 PM",
+          "is_correct": false
+        },
+        {
+          "label": "6:30 pm",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Blood Relations",
+      "difficulty": "very_hard",
+      "answer_type": "single",
+      "stem": "'A', 'B', 'C', 'D' and 'E' are members of the same family. There are 2 fathers, 2 sons and 2 wives in the family. 3 of the family members are males and 2 are females. A is a teacher. The teacher is the wife of the lawyer. The lawyer is the son of E. C is the youngest person in the family while D is the eldest. E is a female and B is a male. How is 'D' related to 'E'?",
+      "explanation": "**Fix the sexes first.** A is \"the wife of the lawyer\", so A is female; E is female. That uses up both females, so **B, C and D are male**.\n\n**Place the lawyer.** The lawyer has a wife (A) and is E's son, so the lawyer is male — B, C or D. C is the youngest and D the eldest, so the married middle generation must be **B** → B is the lawyer, married to A.\n\n**Build the three generations.** B is E's son, so E is B's mother. Two wives means E is married too, and the only remaining adult male is **D** (the eldest) — E's husband and B's father. C, the youngest, is then the child of B and A.\n\nCheck: 2 fathers (D, B) ✓, 2 sons (B, C) ✓, 2 wives (E, A) ✓.\n\n$$\\Rightarrow D \\text{ is E's } \\mathbf{husband}.$$",
+      "source": "AP ICET 2025 7th May 2025 Shift 1",
+      "source_year": 2025,
+      "options": [
+        {
+          "label": "Husband",
+          "is_correct": true
+        },
+        {
+          "label": "Son",
+          "is_correct": false
+        },
+        {
+          "label": "Father",
+          "is_correct": false
+        },
+        {
+          "label": "Wife",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Seating Arrangement",
+      "difficulty": "hard",
+      "answer_type": "single",
+      "stem": "Six persons P, Q, R, S, T, U are sitting around a circular table facing the centre, not necessarily in the same order.\n\na. 'S' is sitting to the immediate right hand side of 'R'.\nb. 'P' is not sitting next to 'T'.\nc. 'T' is sitting opposite to 'S'.\nd. 'Q' is sitting opposite to 'P'.\n\nWho is sitting to the immediate right of 'U'?",
+      "explanation": "**Setting up.** Number the six seats 1-6 clockwise. Since everyone faces the centre, a person's *right* is the seat one step **anticlockwise**.\n\n**Step 1 (clue a):** put S at seat 1 and R at seat 2, so S is on R's immediate right.\n\n**Step 2 (clue c):** T sits opposite S, i.e. at seat 4.\n\n**Step 3 (clue d):** P and Q are opposite each other. Seats 3, 5, 6 are free, and among them only 3 and 6 form an opposite pair — so P and Q take 3 and 6, leaving **U at seat 5**.\n\n**Step 4 (clue b):** T (seat 4) has neighbours 3 and 5. Seat 5 is U, so seat 3 must not be P ⇒ **Q at 3, P at 6**.\n\n$$\\text{Clockwise: } S(1), \\; R(2), \\; Q(3), \\; T(4), \\; U(5), \\; P(6).$$\n\nU is at seat 5, and the seat to a person's immediate right is the next one **anticlockwise** — seat 4.\n\n$$\\Rightarrow \\mathbf{T}.$$",
+      "source": "AP ICET 2025 7th May 2025 Shift 1",
+      "source_year": 2025,
+      "options": [
+        {
+          "label": "P",
+          "is_correct": false
+        },
+        {
+          "label": "S",
+          "is_correct": false
+        },
+        {
+          "label": "Q",
+          "is_correct": false
+        },
+        {
+          "label": "T",
+          "is_correct": true
+        }
+      ]
+    },
+    {
+      "chapter": "Seating Arrangement",
+      "difficulty": "hard",
+      "answer_type": "single",
+      "stem": "Six persons P, Q, R, S, T, U are sitting around a circular table facing the centre, not necessarily in the same order.\n\na. 'S' is sitting to the immediate right hand side of 'R'.\nb. 'P' is not sitting next to 'T'.\nc. 'T' is sitting opposite to 'S'.\nd. 'Q' is sitting opposite to 'P'.\n\nWho is sitting opposite to 'R'?",
+      "explanation": "**Setting up.** Number the six seats 1-6 clockwise. Since everyone faces the centre, a person's *right* is the seat one step **anticlockwise**.\n\n**Step 1 (clue a):** put S at seat 1 and R at seat 2, so S is on R's immediate right.\n\n**Step 2 (clue c):** T sits opposite S, i.e. at seat 4.\n\n**Step 3 (clue d):** P and Q are opposite each other. Seats 3, 5, 6 are free, and among them only 3 and 6 form an opposite pair — so P and Q take 3 and 6, leaving **U at seat 5**.\n\n**Step 4 (clue b):** T (seat 4) has neighbours 3 and 5. Seat 5 is U, so seat 3 must not be P ⇒ **Q at 3, P at 6**.\n\n$$\\text{Clockwise: } S(1), \\; R(2), \\; Q(3), \\; T(4), \\; U(5), \\; P(6).$$\n\nR is at seat 2, and the seat directly across a six-seat table is three places away:\n$$2 + 3 = 5 \\Rightarrow \\mathbf{U}.$$",
+      "source": "AP ICET 2025 7th May 2025 Shift 1",
+      "source_year": 2025,
+      "options": [
+        {
+          "label": "S",
+          "is_correct": false
+        },
+        {
+          "label": "P",
+          "is_correct": false
+        },
+        {
+          "label": "U",
+          "is_correct": true
+        },
+        {
+          "label": "Q",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Seating Arrangement",
+      "difficulty": "hard",
+      "answer_type": "single",
+      "stem": "Six persons P, Q, R, S, T, U are sitting around a circular table facing the centre, not necessarily in the same order.\n\na. 'S' is sitting to the immediate right hand side of 'R'.\nb. 'P' is not sitting next to 'T'.\nc. 'T' is sitting opposite to 'S'.\nd. 'Q' is sitting opposite to 'P'.\n\nWho is between 'T' and 'R'?",
+      "explanation": "**Setting up.** Number the six seats 1-6 clockwise. Since everyone faces the centre, a person's *right* is the seat one step **anticlockwise**.\n\n**Step 1 (clue a):** put S at seat 1 and R at seat 2, so S is on R's immediate right.\n\n**Step 2 (clue c):** T sits opposite S, i.e. at seat 4.\n\n**Step 3 (clue d):** P and Q are opposite each other. Seats 3, 5, 6 are free, and among them only 3 and 6 form an opposite pair — so P and Q take 3 and 6, leaving **U at seat 5**.\n\n**Step 4 (clue b):** T (seat 4) has neighbours 3 and 5. Seat 5 is U, so seat 3 must not be P ⇒ **Q at 3, P at 6**.\n\n$$\\text{Clockwise: } S(1), \\; R(2), \\; Q(3), \\; T(4), \\; U(5), \\; P(6).$$\n\nT is at seat 4 and R at seat 2, so the single seat between them is seat 3.\n\n$$\\Rightarrow \\mathbf{Q}.$$",
+      "source": "AP ICET 2025 7th May 2025 Shift 1",
+      "source_year": 2025,
+      "options": [
+        {
+          "label": "P",
+          "is_correct": false
+        },
+        {
+          "label": "Q",
+          "is_correct": true
+        },
+        {
+          "label": "S",
+          "is_correct": false
+        },
+        {
+          "label": "T",
+          "is_correct": false
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,113 @@
+{
+  "subject": "Data Interpretation & Data Sufficiency",
+  "questions": [
+    {
+      "chapter": "Tables",
+      "difficulty": "medium",
+      "answer_type": "single",
+      "stem": "The table below shows the production of five different models of cars of a company during the years 2018-2023.\n\n| Year | A | B | C | D | E | Total |\n| --- | --- | --- | --- | --- | --- | --- |\n| 2018 | 8000 | 12000 | 20000 | 5000 | 26000 | 71000 |\n| 2019 | 16000 | 14000 | 15000 | 6000 | 24000 | 75000 |\n| 2020 | 15000 | 16000 | 12000 | 8000 | 22000 | 73000 |\n| 2021 | 16000 | 12000 | 14000 | 15000 | 25000 | 82000 |\n| 2022 | 18000 | 14000 | 16000 | 14000 | 20000 | 80000 |\n| 2023 | 8000 | 16000 | 8000 | 22000 | 28000 | 82000 |\n\nIn which year was the total number of cars of types A and B together equal to that of types D and E together?",
+      "explanation": "Add the two pairs for each year:\n\n| Year | A + B | D + E |\n| --- | --- | --- |\n| 2018 | 20000 | 31000 |\n| **2019** | **30000** | **30000** ✓ |\n| 2020 | 31000 | 30000 |\n| 2021 | 28000 | 40000 |\n| 2022 | 32000 | 34000 |\n| 2023 | 24000 | 50000 |\n\nOnly in **2019** do the two sums match, at 30,000 each.\n\n*(2020 is the near miss — 31,000 against 30,000 — so the pair must be checked, not eyeballed.)*",
+      "source": "AP ICET 2024 6th May 2024 Shift 2",
+      "source_year": 2024,
+      "options": [
+        {
+          "label": "2018",
+          "is_correct": false
+        },
+        {
+          "label": "2019",
+          "is_correct": true
+        },
+        {
+          "label": "2022",
+          "is_correct": false
+        },
+        {
+          "label": "2021",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Tables",
+      "difficulty": "medium",
+      "answer_type": "single",
+      "stem": "The table below shows the production of five different models of cars of a company during the years 2018-2023.\n\n| Year | A | B | C | D | E | Total |\n| --- | --- | --- | --- | --- | --- | --- |\n| 2018 | 8000 | 12000 | 20000 | 5000 | 26000 | 71000 |\n| 2019 | 16000 | 14000 | 15000 | 6000 | 24000 | 75000 |\n| 2020 | 15000 | 16000 | 12000 | 8000 | 22000 | 73000 |\n| 2021 | 16000 | 12000 | 14000 | 15000 | 25000 | 82000 |\n| 2022 | 18000 | 14000 | 16000 | 14000 | 20000 | 80000 |\n| 2023 | 8000 | 16000 | 8000 | 22000 | 28000 | 82000 |\n\nThe increase percentage of total production of all modes in 2023 to that of 2018 is:",
+      "explanation": "Read the two totals from the last column:\n$$2018: 71000, \\qquad 2023: 82000.$$\n\n$$\\text{Increase} = 82000 - 71000 = 11000.$$\n\nThe percentage is taken **on the earlier year**:\n$$\\frac{11000}{71000}\\times 100 = 15.49\\% \\approx \\mathbf{15.5}.$$\n\n*(Dividing by 82,000 instead would give 13.4% — the base year is what the phrase \"to that of 2018\" fixes.)*",
+      "source": "AP ICET 2024 6th May 2024 Shift 2",
+      "source_year": 2024,
+      "options": [
+        {
+          "label": "15",
+          "is_correct": false
+        },
+        {
+          "label": "14.5",
+          "is_correct": false
+        },
+        {
+          "label": "14",
+          "is_correct": false
+        },
+        {
+          "label": "15.5",
+          "is_correct": true
+        }
+      ]
+    },
+    {
+      "chapter": "Tables",
+      "difficulty": "hard",
+      "answer_type": "single",
+      "stem": "The table below shows the production of five different models of cars of a company during the years 2018-2023.\n\n| Year | A | B | C | D | E | Total |\n| --- | --- | --- | --- | --- | --- | --- |\n| 2018 | 8000 | 12000 | 20000 | 5000 | 26000 | 71000 |\n| 2019 | 16000 | 14000 | 15000 | 6000 | 24000 | 75000 |\n| 2020 | 15000 | 16000 | 12000 | 8000 | 22000 | 73000 |\n| 2021 | 16000 | 12000 | 14000 | 15000 | 25000 | 82000 |\n| 2022 | 18000 | 14000 | 16000 | 14000 | 20000 | 80000 |\n| 2023 | 8000 | 16000 | 8000 | 22000 | 28000 | 82000 |\n\nIn which year was the production of all types of cars taken together nearest to the average of total production during 2018-2023?",
+      "explanation": "**Average of the six totals:**\n$$\\frac{71000 + 75000 + 73000 + 82000 + 80000 + 82000}{6} = \\frac{463000}{6} \\approx 77{,}167.$$\n\n**Distance of each year from that average:**\n$$2018: 6167, \\quad \\mathbf{2019: 2167}, \\quad 2020: 4167,$$\n$$2021: 4833, \\quad 2022: 2833, \\quad 2023: 4833.$$\n\nThe smallest gap belongs to **2019**.\n\n*(2022 is the runner-up at 2,833 — the two must be compared, not guessed.)*",
+      "source": "AP ICET 2024 6th May 2024 Shift 2",
+      "source_year": 2024,
+      "options": [
+        {
+          "label": "2020",
+          "is_correct": false
+        },
+        {
+          "label": "2022",
+          "is_correct": false
+        },
+        {
+          "label": "2019",
+          "is_correct": true
+        },
+        {
+          "label": "2018",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Tables",
+      "difficulty": "easy",
+      "answer_type": "single",
+      "stem": "The table below shows the production of five different models of cars of a company during the years 2018-2023.\n\n| Year | A | B | C | D | E | Total |\n| --- | --- | --- | --- | --- | --- | --- |\n| 2018 | 8000 | 12000 | 20000 | 5000 | 26000 | 71000 |\n| 2019 | 16000 | 14000 | 15000 | 6000 | 24000 | 75000 |\n| 2020 | 15000 | 16000 | 12000 | 8000 | 22000 | 73000 |\n| 2021 | 16000 | 12000 | 14000 | 15000 | 25000 | 82000 |\n| 2022 | 18000 | 14000 | 16000 | 14000 | 20000 | 80000 |\n| 2023 | 8000 | 16000 | 8000 | 22000 | 28000 | 82000 |\n\nThe decrease percentage of type C cars from 2022 to 2023 is:",
+      "explanation": "Read the C column:\n$$2022: 16000, \\qquad 2023: 8000.$$\n\n$$\\text{Decrease} = 16000 - 8000 = 8000.$$\n\nThe percentage is taken on the **earlier** figure:\n$$\\frac{8000}{16000}\\times 100 = \\mathbf{50\\%}.$$",
+      "source": "AP ICET 2024 6th May 2024 Shift 2",
+      "source_year": 2024,
+      "options": [
+        {
+          "label": "45",
+          "is_correct": false
+        },
+        {
+          "label": "60",
+          "is_correct": false
+        },
+        {
+          "label": "40",
+          "is_correct": false
+        },
+        {
+          "label": "50",
+          "is_correct": true
+        }
+      ]
+    }
+  ]
+}

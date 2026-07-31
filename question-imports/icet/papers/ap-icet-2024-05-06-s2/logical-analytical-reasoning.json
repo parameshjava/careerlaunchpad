@@ -1,0 +1,1694 @@
+{
+  "subject": "Logical & Analytical Reasoning",
+  "questions": [
+    {
+      "chapter": "Data Sufficiency (Reasoning)",
+      "kind": "data_sufficiency",
+      "difficulty": "hard",
+      "answer_type": "single",
+      "stem": "What is the interest after three years?\n\n**I.** The principal amount is ₹20,000.\n\n**II.** The rate of interest is 7.5%.",
+      "explanation": "**From I:** the principal alone, with no rate. **Not sufficient**.\n\n**From II:** the rate alone, with no principal. **Not sufficient**.\n\n**Together:** we now have $P = 20000$, $r = 7.5\\%$, $n = 3$ — but the question never says **which kind** of interest, and the two answers differ:\n$$\\text{Simple: } \\frac{20000 \\times 7.5 \\times 3}{100} = ₹4500$$\n$$\\text{Compound: } 20000\\left[(1.075)^3 - 1\\right] \\approx ₹4846.$$\n\nSince the data admits two different values, it does not determine the interest. **Additional data is required.**",
+      "source": "AP ICET 2024 6th May 2024 Shift 2",
+      "source_year": 2024,
+      "options": [
+        {
+          "label": "Statement I alone is sufficient to answer the question.",
+          "is_correct": false
+        },
+        {
+          "label": "Statement II alone is sufficient to answer the question.",
+          "is_correct": false
+        },
+        {
+          "label": "Statements I and II together are sufficient to answer the question, but neither statement alone is sufficient.",
+          "is_correct": false
+        },
+        {
+          "label": "Statements I and II together are not sufficient to answer the question and additional data is required.",
+          "is_correct": true
+        }
+      ]
+    },
+    {
+      "chapter": "Data Sufficiency (Reasoning)",
+      "kind": "data_sufficiency",
+      "difficulty": "medium",
+      "answer_type": "single",
+      "stem": "On which day of the week did Vasu leave for Singapore?\n\n**I.** Vasu did not leave for Singapore during the weekend.\n\n**II.** Vasu's sister left for Singapore on Saturday, 3 days after Vasu left for Singapore.",
+      "explanation": "**From I:** ruling out Saturday and Sunday still leaves five days. **Not sufficient**.\n\n**From II:** count back three days from Saturday:\n$$\\text{Saturday} - 3 = \\textbf{Wednesday}.$$\nA single day — **sufficient**.",
+      "source": "AP ICET 2024 6th May 2024 Shift 2",
+      "source_year": 2024,
+      "options": [
+        {
+          "label": "Statement I alone is sufficient to answer the question.",
+          "is_correct": false
+        },
+        {
+          "label": "Statement II alone is sufficient to answer the question.",
+          "is_correct": true
+        },
+        {
+          "label": "Statements I and II together are sufficient to answer the question, but neither statement alone is sufficient.",
+          "is_correct": false
+        },
+        {
+          "label": "Statements I and II together are not sufficient to answer the question and additional data is required.",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Data Sufficiency (Reasoning)",
+      "kind": "data_sufficiency",
+      "difficulty": "medium",
+      "answer_type": "single",
+      "stem": "How many students in a class play football?\n\n**I.** Only boys play football.\n\n**II.** There are forty boys and thirty girls in the class.",
+      "explanation": "**From I:** \"only boys play\" excludes the girls but says nothing about **how many** boys play. **Not sufficient**.\n\n**From II:** the class composition, with no information about who plays. **Not sufficient**.\n\n**Together:** we know the footballers are among the 40 boys, but not that *all* 40 play — the number could be anything from 0 to 40. **Additional data is required.**",
+      "source": "AP ICET 2024 6th May 2024 Shift 2",
+      "source_year": 2024,
+      "options": [
+        {
+          "label": "Statement I alone is sufficient to answer the question.",
+          "is_correct": false
+        },
+        {
+          "label": "Statement II alone is sufficient to answer the question.",
+          "is_correct": false
+        },
+        {
+          "label": "Statements I and II together are sufficient to answer the question, but neither statement alone is sufficient.",
+          "is_correct": false
+        },
+        {
+          "label": "Statements I and II together are not sufficient to answer the question and additional data is required.",
+          "is_correct": true
+        }
+      ]
+    },
+    {
+      "chapter": "Data Sufficiency (Reasoning)",
+      "kind": "data_sufficiency",
+      "difficulty": "medium",
+      "answer_type": "single",
+      "stem": "In the figure, $O$ is the centre of the circle and $P$, $Q$ lie on it. What is the area of the sector $POQ$?\n\n**I.** The diameter of the circle is twice the radius.\n\n**II.** The sector makes an angle of 60° at the centre.",
+      "explanation": "The area of a sector is $\\dfrac{\\theta}{360^\\circ}\\times \\pi r^2$, so both the **angle** and the **radius** are needed.\n\n**From I:** \"the diameter is twice the radius\" is true of *every* circle — it is a definition, not data. **Not sufficient**.\n\n**From II:** $\\theta = 60^\\circ$ gives $\\dfrac16 \\pi r^2$, but $r$ is unknown. **Not sufficient**.\n\n**Together:** still no numerical radius anywhere. **Additional data is required.**",
+      "source": "AP ICET 2024 6th May 2024 Shift 2",
+      "source_year": 2024,
+      "options": [
+        {
+          "label": "Statement I alone is sufficient to answer the question.",
+          "is_correct": false
+        },
+        {
+          "label": "Statement II alone is sufficient to answer the question.",
+          "is_correct": false
+        },
+        {
+          "label": "Statements I and II together are sufficient to answer the question, but neither statement alone is sufficient.",
+          "is_correct": false
+        },
+        {
+          "label": "Statements I and II together are not sufficient to answer the question and additional data is required.",
+          "is_correct": true
+        }
+      ]
+    },
+    {
+      "chapter": "Data Sufficiency (Reasoning)",
+      "kind": "data_sufficiency",
+      "difficulty": "hard",
+      "answer_type": "single",
+      "stem": "What is the average daily wage of A, B and C?\n\n**I.** B's salary is half of the salary of (A + C).\n\n**II.** A and B together earn ₹80 more than C, and C earns ₹600.",
+      "explanation": "**From I:** $B = \\dfrac{A+C}{2} \\Rightarrow A + C = 2B$, so the total is $3B$ and the average is $B$ — but $B$ itself is unknown. **Not sufficient**.\n\n**From II:**\n$$C = 600, \\qquad A + B = C + 80 = 680.$$\n$$\\text{Total} = 680 + 600 = 1280 \\Rightarrow \\text{average} = \\frac{1280}{3} \\approx ₹426.67.$$\nThe individual wages stay unknown, but the **average** is fixed — **sufficient**.",
+      "source": "AP ICET 2024 6th May 2024 Shift 2",
+      "source_year": 2024,
+      "options": [
+        {
+          "label": "Statement I alone is sufficient to answer the question.",
+          "is_correct": false
+        },
+        {
+          "label": "Statement II alone is sufficient to answer the question.",
+          "is_correct": true
+        },
+        {
+          "label": "Statements I and II together are sufficient to answer the question, but neither statement alone is sufficient.",
+          "is_correct": false
+        },
+        {
+          "label": "Statements I and II together are not sufficient to answer the question and additional data is required.",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Data Sufficiency (Reasoning)",
+      "kind": "data_sufficiency",
+      "difficulty": "hard",
+      "answer_type": "single",
+      "stem": "What is the rate of interest percent per annum?\n\n**I.** Simple interest earned in 3 years is ₹X.\n\n**II.** The amount increases by 80% in 5 years.",
+      "explanation": "**From I:** \"₹X\" is itself an unknown, and no principal is given. **Not sufficient**.\n\n**From II:** growing by 80% means the simple interest over 5 years equals $0.8P$:\n$$\\frac{P \\times r \\times 5}{100} = 0.8P \\Rightarrow r = \\frac{80}{5} = 16\\%.$$\nThe principal cancels, so the rate is fixed — **sufficient**.",
+      "source": "AP ICET 2024 6th May 2024 Shift 2",
+      "source_year": 2024,
+      "options": [
+        {
+          "label": "Statement I alone is sufficient to answer the question.",
+          "is_correct": false
+        },
+        {
+          "label": "Statement II alone is sufficient to answer the question.",
+          "is_correct": true
+        },
+        {
+          "label": "Statements I and II together are sufficient to answer the question, but neither statement alone is sufficient.",
+          "is_correct": false
+        },
+        {
+          "label": "Statements I and II together are not sufficient to answer the question and additional data is required.",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Data Sufficiency (Reasoning)",
+      "kind": "data_sufficiency",
+      "difficulty": "hard",
+      "answer_type": "single",
+      "stem": "What is the sum of the natural numbers $a$ and $b$?\n\n**I.** $b = 17$\n\n**II.** L.C.M. $\\{a, b\\} = 34$",
+      "explanation": "**From I:** $b$ alone, with $a$ free. **Not sufficient**.\n\n**From II:** many pairs have LCM 34, e.g. $(2, 17)$ and $(34, 1)$. **Not sufficient**.\n\n**Together:** with $b = 17$ we need $\\text{lcm}(a, 17) = 34 = 2 \\times 17$, so $a$ must divide 34 and supply the factor 2:\n$$a = 2 \\;\\Rightarrow\\; a+b = 19, \\qquad a = 34 \\;\\Rightarrow\\; a+b = 51.$$\n\nBoth satisfy every condition, so the sum is not unique. **Additional data is required.**",
+      "source": "AP ICET 2024 6th May 2024 Shift 2",
+      "source_year": 2024,
+      "options": [
+        {
+          "label": "Statement I alone is sufficient to answer the question.",
+          "is_correct": false
+        },
+        {
+          "label": "Statement II alone is sufficient to answer the question.",
+          "is_correct": false
+        },
+        {
+          "label": "Statements I and II together are sufficient to answer the question, but neither statement alone is sufficient.",
+          "is_correct": false
+        },
+        {
+          "label": "Statements I and II together are not sufficient to answer the question and additional data is required.",
+          "is_correct": true
+        }
+      ]
+    },
+    {
+      "chapter": "Data Sufficiency (Reasoning)",
+      "kind": "data_sufficiency",
+      "difficulty": "hard",
+      "answer_type": "single",
+      "stem": "On which day of the week was the birthday of Sahil?\n\n**I.** Sahil celebrated his birthday the very next day on which Arun celebrated his birthday.\n\n**II.** The sister of Sahil was born on the third day of the week and two days after Sahil was born.",
+      "explanation": "**From I:** Sahil's day is one after Arun's — but Arun's day is never given, so the chain has no anchor. **Not sufficient**.\n\n**From II:** the sister's day is fixed (the third day of the week) and Sahil was born **two days before** her, so counting back two days pins Sahil's day exactly. **Sufficient**.\n\n*(Taking the week to start on Sunday, the sister was born on Tuesday and Sahil on Sunday. Whatever convention is used for \"third day\", statement II fixes one specific day — which is all data sufficiency asks.)*",
+      "source": "AP ICET 2024 6th May 2024 Shift 2",
+      "source_year": 2024,
+      "options": [
+        {
+          "label": "Statement I alone is sufficient to answer the question.",
+          "is_correct": false
+        },
+        {
+          "label": "Statement II alone is sufficient to answer the question.",
+          "is_correct": true
+        },
+        {
+          "label": "Statements I and II together are sufficient to answer the question, but neither statement alone is sufficient.",
+          "is_correct": false
+        },
+        {
+          "label": "Statements I and II together are not sufficient to answer the question and additional data is required.",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Data Sufficiency (Reasoning)",
+      "kind": "data_sufficiency",
+      "difficulty": "medium",
+      "answer_type": "single",
+      "stem": "Among the partners P and Q, what is the profit made by P?\n\n**I.** Q has invested twice of that of P.\n\n**II.** The profit made by Q is ₹50,000.",
+      "explanation": "In a partnership the profits divide in the **ratio of the investments** (for equal time).\n\n**From I:** the ratio $P : Q = 1 : 2$, but no amount of profit. **Not sufficient**.\n\n**From II:** Q's profit alone, with no ratio. **Not sufficient**.\n\n**Together:**\n$$\\frac{\\text{P's profit}}{50000} = \\frac12 \\Rightarrow \\text{P's profit} = ₹25{,}000.$$",
+      "source": "AP ICET 2024 6th May 2024 Shift 2",
+      "source_year": 2024,
+      "options": [
+        {
+          "label": "Statement I alone is sufficient to answer the question.",
+          "is_correct": false
+        },
+        {
+          "label": "Statement II alone is sufficient to answer the question.",
+          "is_correct": false
+        },
+        {
+          "label": "Statements I and II together are sufficient to answer the question, but neither statement alone is sufficient.",
+          "is_correct": true
+        },
+        {
+          "label": "Statements I and II together are not sufficient to answer the question and additional data is required.",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Data Sufficiency (Reasoning)",
+      "kind": "data_sufficiency",
+      "difficulty": "medium",
+      "answer_type": "single",
+      "stem": "What is the measure of the angle $A$ in $\\triangle ABC$?\n\n**I.** $\\angle A + \\angle C = 120^\\circ$\n\n**II.** $\\angle A + \\angle B = 130^\\circ$",
+      "explanation": "The angles of a triangle sum to $180^\\circ$.\n\n**From I:** $\\angle B = 180 - 120 = 60^\\circ$, but $\\angle A$ could be anything below $120^\\circ$. **Not sufficient**.\n\n**From II:** $\\angle C = 180 - 130 = 50^\\circ$, and $\\angle A$ is still free. **Not sufficient**.\n\n**Together:** $\\angle B = 60^\\circ$ from I, so\n$$\\angle A = 130^\\circ - 60^\\circ = \\mathbf{70^\\circ}$$\n(and $\\angle C = 50^\\circ$, checking $70+60+50 = 180$ ✓).",
+      "source": "AP ICET 2024 6th May 2024 Shift 2",
+      "source_year": 2024,
+      "options": [
+        {
+          "label": "Statement I alone is sufficient to answer the question.",
+          "is_correct": false
+        },
+        {
+          "label": "Statement II alone is sufficient to answer the question.",
+          "is_correct": false
+        },
+        {
+          "label": "Statements I and II together are sufficient to answer the question, but neither statement alone is sufficient.",
+          "is_correct": true
+        },
+        {
+          "label": "Statements I and II together are not sufficient to answer the question and additional data is required.",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Data Sufficiency (Reasoning)",
+      "kind": "data_sufficiency",
+      "difficulty": "medium",
+      "answer_type": "single",
+      "stem": "What is the annual salary of Mr Hari?\n\n**I.** The ratio of the monthly salaries of Hari and Suresh is 9 : 7.\n\n**II.** The monthly salary of Hari is more than that of Suresh by ₹16,000.",
+      "explanation": "**From I:** a ratio fixes the proportion but not the amount. **Not sufficient**.\n\n**From II:** a difference with no ratio leaves both salaries free. **Not sufficient**.\n\n**Together:** the ratio $9 : 7$ means the difference is 2 parts, so\n$$2 \\text{ parts} = ₹16{,}000 \\Rightarrow 1 \\text{ part} = ₹8{,}000.$$\n$$\\text{Hari's monthly} = 9 \\times 8000 = ₹72{,}000 \\Rightarrow \\text{annual} = ₹8{,}64{,}000.$$",
+      "source": "AP ICET 2024 6th May 2024 Shift 2",
+      "source_year": 2024,
+      "options": [
+        {
+          "label": "Statement I alone is sufficient to answer the question.",
+          "is_correct": false
+        },
+        {
+          "label": "Statement II alone is sufficient to answer the question.",
+          "is_correct": false
+        },
+        {
+          "label": "Statements I and II together are sufficient to answer the question, but neither statement alone is sufficient.",
+          "is_correct": true
+        },
+        {
+          "label": "Statements I and II together are not sufficient to answer the question and additional data is required.",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Data Sufficiency (Reasoning)",
+      "kind": "data_sufficiency",
+      "difficulty": "hard",
+      "answer_type": "single",
+      "stem": "What is the code for 'Comfort' in the code language?\n\n**I.** 'pa ke W.' means 'sit with comfort'.\n\n**II.** 'ke da ra ja' means 'she sat with confidence'.",
+      "explanation": "**From I:** three code words map to three English words in unknown order — *comfort* could be any of them. **Not sufficient**.\n\n**From II:** a different sentence altogether, with no *comfort* in it. **Not sufficient**.\n\n**Together:** compare the two lines. The only shared code word is **ke**, and the only shared English word is **with**, so $ke = with$. That fixes the code for *with*, not for *comfort* — after removing *ke*, the pair $\\{pa, W\\}$ still maps to $\\{sit, comfort\\}$ in an unknown order. **Additional data is required.**",
+      "source": "AP ICET 2024 6th May 2024 Shift 2",
+      "source_year": 2024,
+      "options": [
+        {
+          "label": "Statement I alone is sufficient to answer the question.",
+          "is_correct": false
+        },
+        {
+          "label": "Statement II alone is sufficient to answer the question.",
+          "is_correct": false
+        },
+        {
+          "label": "Statements I and II together are sufficient to answer the question, but neither statement alone is sufficient.",
+          "is_correct": false
+        },
+        {
+          "label": "Statements I and II together are not sufficient to answer the question and additional data is required.",
+          "is_correct": true
+        }
+      ]
+    },
+    {
+      "chapter": "Data Sufficiency (Reasoning)",
+      "kind": "data_sufficiency",
+      "difficulty": "medium",
+      "answer_type": "single",
+      "stem": "What is Gagan's age?\n\n**I.** Gagan, Vimal and Kunal are all of the same age.\n\n**II.** The total age of Vimal, Kunal and Anil is 32 years, and Anil is as old as Vimal and Kunal together.",
+      "explanation": "**From I:** the three ages are equal, but no number is given. **Not sufficient**.\n\n**From II:** with $V + K + A = 32$ and $A = V + K$:\n$$2(V+K) = 32 \\Rightarrow V + K = 16, \\quad A = 16.$$\nGagan is never mentioned. **Not sufficient**.\n\n**Together:** statement I gives $G = V = K$, and $V + K = 16$ makes each of them 8, so\n$$G = \\mathbf{8} \\text{ years}.$$",
+      "source": "AP ICET 2024 6th May 2024 Shift 2",
+      "source_year": 2024,
+      "options": [
+        {
+          "label": "Statement I alone is sufficient to answer the question.",
+          "is_correct": false
+        },
+        {
+          "label": "Statement II alone is sufficient to answer the question.",
+          "is_correct": false
+        },
+        {
+          "label": "Statements I and II together are sufficient to answer the question, but neither statement alone is sufficient.",
+          "is_correct": true
+        },
+        {
+          "label": "Statements I and II together are not sufficient to answer the question and additional data is required.",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Data Sufficiency (Reasoning)",
+      "kind": "data_sufficiency",
+      "difficulty": "medium",
+      "answer_type": "single",
+      "stem": "What will be the age of P after 5 years from now?\n\n**I.** P is 30 years younger than his father.\n\n**II.** His father was 35 years old six years ago.",
+      "explanation": "**From I:** a difference only — both ages are still unknown. **Not sufficient**.\n\n**From II:** the father is $35 + 6 = 41$ now, but nothing links this to P. **Not sufficient**.\n\n**Together:**\n$$P = 41 - 30 = 11 \\text{ now} \\Rightarrow P + 5 = \\mathbf{16} \\text{ years}.$$",
+      "source": "AP ICET 2024 6th May 2024 Shift 2",
+      "source_year": 2024,
+      "options": [
+        {
+          "label": "Statement I alone is sufficient to answer the question.",
+          "is_correct": false
+        },
+        {
+          "label": "Statement II alone is sufficient to answer the question.",
+          "is_correct": false
+        },
+        {
+          "label": "Statements I and II together are sufficient to answer the question, but neither statement alone is sufficient.",
+          "is_correct": true
+        },
+        {
+          "label": "Statements I and II together are not sufficient to answer the question and additional data is required.",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Data Sufficiency (Reasoning)",
+      "kind": "data_sufficiency",
+      "difficulty": "hard",
+      "answer_type": "single",
+      "stem": "How is T related to K?\n\n**I.** K has two sons; one of the sons is A.\n\n**II.** The mother of T has only two sons — A and B.",
+      "explanation": "**From I:** we learn about K's sons, but T never appears. **Not sufficient**.\n\n**From II:** we learn about T's mother's sons, but K never appears. **Not sufficient**.\n\n**Together:** K has exactly two sons, one of whom is A; T's mother has exactly the two sons A and B. The two families therefore coincide, so K is a **parent of T** and T is K's child.\n\nOnly by putting both statements side by side does A act as the link between the two families, which is why neither alone will do.",
+      "source": "AP ICET 2024 6th May 2024 Shift 2",
+      "source_year": 2024,
+      "options": [
+        {
+          "label": "Statement I alone is sufficient to answer the question.",
+          "is_correct": false
+        },
+        {
+          "label": "Statement II alone is sufficient to answer the question.",
+          "is_correct": false
+        },
+        {
+          "label": "Statements I and II together are sufficient to answer the question, but neither statement alone is sufficient.",
+          "is_correct": true
+        },
+        {
+          "label": "Statements I and II together are not sufficient to answer the question and additional data is required.",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Classification (Odd One Out)",
+      "difficulty": "hard",
+      "answer_type": "single",
+      "stem": "Find the odd thing from the following:\n\n39, 26, 52, 65",
+      "explanation": "Every number is a multiple of 13, so that is not the distinguishing feature — look at the **multiplier**:\n$$39 = 13 \\times 3, \\quad 26 = 13 \\times 2, \\quad 52 = 13 \\times \\mathbf{4}, \\quad 65 = 13 \\times 5.$$\n\nThe multipliers are $3, 2, \\mathbf{4}, 5$ — and 3, 2, 5 are **prime** while **4 is composite**.\n\n$$\\Rightarrow \\mathbf{52}.$$",
+      "source": "AP ICET 2024 6th May 2024 Shift 2",
+      "source_year": 2024,
+      "options": [
+        {
+          "label": "39",
+          "is_correct": false
+        },
+        {
+          "label": "26",
+          "is_correct": false
+        },
+        {
+          "label": "52",
+          "is_correct": true
+        },
+        {
+          "label": "65",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Classification (Odd One Out)",
+      "difficulty": "easy",
+      "answer_type": "single",
+      "stem": "Find the odd thing from the following:\n\nSAT, GET, RAT, MAT",
+      "explanation": "Look at the middle letter of each three-letter word:\n$$S\\mathbf{A}T, \\quad G\\mathbf{E}T, \\quad R\\mathbf{A}T, \\quad M\\mathbf{A}T.$$\n\nThree of them are built on the **-AT** pattern and rhyme with one another; **GET** breaks it with an *E*.",
+      "source": "AP ICET 2024 6th May 2024 Shift 2",
+      "source_year": 2024,
+      "options": [
+        {
+          "label": "SAT",
+          "is_correct": false
+        },
+        {
+          "label": "GET",
+          "is_correct": true
+        },
+        {
+          "label": "RAT",
+          "is_correct": false
+        },
+        {
+          "label": "MAT",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Classification (Odd One Out)",
+      "difficulty": "easy",
+      "answer_type": "single",
+      "stem": "Find the odd thing from the following:\n\nTesla, Infosys, Microsoft, Apple Company",
+      "explanation": "**Infosys**, **Microsoft** and **Apple** are all companies whose core business is **software / information technology**.\n\n**Tesla** is an **automobile** manufacturer (electric vehicles and energy storage), so it belongs to a different industry.",
+      "source": "AP ICET 2024 6th May 2024 Shift 2",
+      "source_year": 2024,
+      "options": [
+        {
+          "label": "Tesla",
+          "is_correct": true
+        },
+        {
+          "label": "Infosys",
+          "is_correct": false
+        },
+        {
+          "label": "Microsoft",
+          "is_correct": false
+        },
+        {
+          "label": "Apple Company",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Classification (Odd One Out)",
+      "difficulty": "medium",
+      "answer_type": "single",
+      "stem": "Find the odd thing from the following:\n\nRevenue, Profit Margin, Earnings per share, Market share",
+      "explanation": "**Revenue**, **Profit margin** and **Earnings per share** are all read straight off a company's **own financial statements** — they measure its internal financial performance.\n\n**Market share** measures the company's position **relative to its competitors** in an industry, which no financial statement reports.",
+      "source": "AP ICET 2024 6th May 2024 Shift 2",
+      "source_year": 2024,
+      "options": [
+        {
+          "label": "Revenue",
+          "is_correct": false
+        },
+        {
+          "label": "Profit Margin",
+          "is_correct": false
+        },
+        {
+          "label": "Earnings per share",
+          "is_correct": false
+        },
+        {
+          "label": "Market share",
+          "is_correct": true
+        }
+      ]
+    },
+    {
+      "chapter": "Classification (Odd One Out)",
+      "difficulty": "medium",
+      "answer_type": "single",
+      "stem": "Find the odd thing from the following:\n\n29000, 9000, 25000, 4000",
+      "explanation": "Strip the three zeros from each number and look at what is left:\n$$9 = 3^2, \\qquad 25 = 5^2, \\qquad 4 = 2^2, \\qquad \\mathbf{29} = ?$$\n\nThree of them are $(\\text{perfect square}) \\times 1000$; **29 is not a perfect square**, so 29000 is the odd one.",
+      "source": "AP ICET 2024 6th May 2024 Shift 2",
+      "source_year": 2024,
+      "options": [
+        {
+          "label": "29000",
+          "is_correct": true
+        },
+        {
+          "label": "9000",
+          "is_correct": false
+        },
+        {
+          "label": "25000",
+          "is_correct": false
+        },
+        {
+          "label": "4000",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Classification (Odd One Out)",
+      "difficulty": "easy",
+      "answer_type": "single",
+      "stem": "Find the odd thing from the following:\n\nPluto, Neptune, Jupiter, Saturn",
+      "explanation": "**Jupiter**, **Saturn** and **Neptune** are **planets** of the solar system.\n\n**Pluto** was reclassified by the International Astronomical Union in 2006 as a **dwarf planet**, so it no longer belongs to the group.",
+      "source": "AP ICET 2024 6th May 2024 Shift 2",
+      "source_year": 2024,
+      "options": [
+        {
+          "label": "Pluto",
+          "is_correct": true
+        },
+        {
+          "label": "Neptune",
+          "is_correct": false
+        },
+        {
+          "label": "Jupiter",
+          "is_correct": false
+        },
+        {
+          "label": "Saturn",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Classification (Odd One Out)",
+      "difficulty": "medium",
+      "answer_type": "single",
+      "stem": "Find the odd thing from the following:\n\nMidfielder, Ace, Pass, Assist",
+      "explanation": "**Midfielder**, **Pass** and **Assist** are all terms from **football (soccer)** — a position, a move and a statistic.\n\nAn **ace** is a serve that the opponent fails to touch — a term from **tennis** (and volleyball), not football.",
+      "source": "AP ICET 2024 6th May 2024 Shift 2",
+      "source_year": 2024,
+      "options": [
+        {
+          "label": "Midfielder",
+          "is_correct": false
+        },
+        {
+          "label": "Ace",
+          "is_correct": true
+        },
+        {
+          "label": "Pass",
+          "is_correct": false
+        },
+        {
+          "label": "Assist",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Classification (Odd One Out)",
+      "difficulty": "hard",
+      "answer_type": "single",
+      "stem": "Find the odd thing from the following:\n\nLegislative Assembly – Lok Sabha, Governor – President, CM – PM, Legislative Council – Parliament",
+      "explanation": "Each pair is meant to match a **state-level** office or house with its **national-level** counterpart:\n\n| State | Union | ✓ |\n| --- | --- | --- |\n| Legislative Assembly | Lok Sabha | lower house ↔ lower house ✓ |\n| Governor | President | constitutional head ↔ head ✓ |\n| Chief Minister | Prime Minister | head of government ✓ |\n| Legislative Council | **Parliament** | ✗ |\n\nThe national counterpart of a state's **Legislative Council** (its upper house) is the **Rajya Sabha**. \"Parliament\" is the whole national legislature — both houses together — so the last pair is not a like-for-like match.",
+      "source": "AP ICET 2024 6th May 2024 Shift 2",
+      "source_year": 2024,
+      "options": [
+        {
+          "label": "Legislative Assembly – Lok Sabha",
+          "is_correct": false
+        },
+        {
+          "label": "Governor – President",
+          "is_correct": false
+        },
+        {
+          "label": "CM – PM",
+          "is_correct": false
+        },
+        {
+          "label": "Legislative Council – Parliament",
+          "is_correct": true
+        }
+      ]
+    },
+    {
+      "chapter": "Classification (Odd One Out)",
+      "difficulty": "hard",
+      "answer_type": "single",
+      "stem": "Find the odd thing from the following:\n\nDecember, October, September, April",
+      "explanation": "Three of the names carry a **Latin number** inside them, left over from the old Roman calendar that began in March:\n$$\\text{Sept}ember \\leftarrow septem = 7, \\quad \\text{Oct}ober \\leftarrow octo = 8, \\quad \\text{Dec}ember \\leftarrow decem = 10.$$\n\n**April** has no numeral in its name (it is usually traced to *aperire*, \"to open\", or to Aphrodite), so it is the odd one out.",
+      "source": "AP ICET 2024 6th May 2024 Shift 2",
+      "source_year": 2024,
+      "options": [
+        {
+          "label": "December",
+          "is_correct": false
+        },
+        {
+          "label": "October",
+          "is_correct": false
+        },
+        {
+          "label": "September",
+          "is_correct": false
+        },
+        {
+          "label": "April",
+          "is_correct": true
+        }
+      ]
+    },
+    {
+      "chapter": "Classification (Odd One Out)",
+      "difficulty": "easy",
+      "answer_type": "single",
+      "stem": "Find the odd thing from the following:\n\nPlateau, Star, Mountain, Forest",
+      "explanation": "A **plateau**, a **mountain** and a **forest** are all features found on the **surface of the Earth**.\n\nA **star** is a celestial body far outside the Earth, so it does not belong with the terrestrial three.",
+      "source": "AP ICET 2024 6th May 2024 Shift 2",
+      "source_year": 2024,
+      "options": [
+        {
+          "label": "Plateau",
+          "is_correct": false
+        },
+        {
+          "label": "Star",
+          "is_correct": true
+        },
+        {
+          "label": "Mountain",
+          "is_correct": false
+        },
+        {
+          "label": "Forest",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Number & Alphabet Series",
+      "difficulty": "easy",
+      "answer_type": "single",
+      "stem": "Find the missing number:\n\n$$256, \\; 128, \\; 64, \\; 32, \\; 16, \\; \\underline{\\qquad}$$",
+      "explanation": "Each term is **half** of the one before:\n$$\\frac{256}{2} = 128, \\quad \\frac{128}{2} = 64, \\quad \\frac{64}{2} = 32, \\quad \\frac{32}{2} = 16.$$\n\n$$\\frac{16}{2} = \\mathbf{8}.$$\n\n*(Equivalently they are the powers of 2 counting down: $2^8, 2^7, 2^6, 2^5, 2^4, \\mathbf{2^3}$.)*",
+      "source": "AP ICET 2024 6th May 2024 Shift 2",
+      "source_year": 2024,
+      "options": [
+        {
+          "label": "10",
+          "is_correct": false
+        },
+        {
+          "label": "4",
+          "is_correct": false
+        },
+        {
+          "label": "8",
+          "is_correct": true
+        },
+        {
+          "label": "12",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Number & Alphabet Series",
+      "difficulty": "easy",
+      "answer_type": "single",
+      "stem": "Find the missing number:\n\n$$729, \\; 243, \\; 81, \\; 27, \\; \\underline{\\qquad}$$",
+      "explanation": "Each term is the previous one **divided by 3**:\n$$\\frac{729}{3} = 243, \\quad \\frac{243}{3} = 81, \\quad \\frac{81}{3} = 27.$$\n\n$$\\frac{27}{3} = \\mathbf{9}.$$\n\n*(They are the descending powers of 3: $3^6, 3^5, 3^4, 3^3, \\mathbf{3^2}$.)*",
+      "source": "AP ICET 2024 6th May 2024 Shift 2",
+      "source_year": 2024,
+      "options": [
+        {
+          "label": "15",
+          "is_correct": false
+        },
+        {
+          "label": "12",
+          "is_correct": false
+        },
+        {
+          "label": "9",
+          "is_correct": true
+        },
+        {
+          "label": "18",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Number & Alphabet Series",
+      "difficulty": "easy",
+      "answer_type": "single",
+      "stem": "Find the missing letters:\n\n$$\\text{AI}, \\; \\text{BJ}, \\; \\text{CK}, \\; \\underline{\\qquad}$$",
+      "explanation": "Treat the two positions separately — **each advances by one letter**:\n$$A \\to B \\to C \\to \\mathbf{D}$$\n$$I \\to J \\to K \\to \\mathbf{L}$$\n\n$$\\Rightarrow \\mathbf{DL}.$$\n\n*(The gap between the two letters stays 8 throughout: $A(1), I(9)$; $D(4), L(12)$ ✓)*",
+      "source": "AP ICET 2024 6th May 2024 Shift 2",
+      "source_year": 2024,
+      "options": [
+        {
+          "label": "LM",
+          "is_correct": false
+        },
+        {
+          "label": "GH",
+          "is_correct": false
+        },
+        {
+          "label": "QR",
+          "is_correct": false
+        },
+        {
+          "label": "DL",
+          "is_correct": true
+        }
+      ]
+    },
+    {
+      "chapter": "Number & Alphabet Series",
+      "difficulty": "easy",
+      "answer_type": "single",
+      "stem": "Find the missing letters:\n\n$$A, \\; E, \\; I, \\; \\underline{\\qquad}, \\; \\underline{\\qquad}$$",
+      "explanation": "The letters given are the first three **vowels** of the English alphabet, in order:\n$$A, \\; E, \\; I, \\; \\mathbf{O}, \\; \\mathbf{U}.$$",
+      "source": "AP ICET 2024 6th May 2024 Shift 2",
+      "source_year": 2024,
+      "options": [
+        {
+          "label": "O, U",
+          "is_correct": true
+        },
+        {
+          "label": "U, U",
+          "is_correct": false
+        },
+        {
+          "label": "U, O",
+          "is_correct": false
+        },
+        {
+          "label": "O, O",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Number & Alphabet Series",
+      "difficulty": "medium",
+      "answer_type": "single",
+      "stem": "Find the missing number:\n\n$$4, \\; 9, \\; 25, \\; 49, \\; \\underline{\\qquad}, \\; 169$$",
+      "explanation": "Take the square root of each term:\n$$\\sqrt4 = 2, \\quad \\sqrt9 = 3, \\quad \\sqrt{25} = 5, \\quad \\sqrt{49} = 7, \\quad \\ldots, \\quad \\sqrt{169} = 13.$$\n\nThe roots are the **prime numbers** $2, 3, 5, 7, \\mathbf{11}, 13$, so the missing term is\n$$11^2 = \\mathbf{121}.$$\n\n*(Note the primes are consecutive — 9 is skipped as the root because it is not prime.)*",
+      "source": "AP ICET 2024 6th May 2024 Shift 2",
+      "source_year": 2024,
+      "options": [
+        {
+          "label": "139",
+          "is_correct": false
+        },
+        {
+          "label": "127",
+          "is_correct": false
+        },
+        {
+          "label": "83",
+          "is_correct": false
+        },
+        {
+          "label": "121",
+          "is_correct": true
+        }
+      ]
+    },
+    {
+      "chapter": "Number & Alphabet Series",
+      "difficulty": "very_hard",
+      "answer_type": "single",
+      "stem": "Find the missing number:\n\n$$17, \\; 39, \\; 85, \\; \\underline{\\qquad}, \\; 281$$",
+      "explanation": "The first differences do not repeat, so go one level deeper.\n\nWriting the missing term as $x$, the differences are\n$$22, \\; 46, \\; (x-85), \\; (281-x).$$\n\nTrying $x = 163$ gives differences\n$$22, \\; 46, \\; 78, \\; 118,$$\nand **their** differences are\n$$24, \\; 32, \\; 40 \\quad \\text{— rising by 8 each time} \\;\\checkmark$$\n\nNo other option produces a regular second difference (165 gives $24, 34, 36$; 162 gives $24, 31, 42$; 166 gives $24, 35, 34$), so\n$$x = \\mathbf{163}.$$",
+      "source": "AP ICET 2024 6th May 2024 Shift 2",
+      "source_year": 2024,
+      "options": [
+        {
+          "label": "165",
+          "is_correct": false
+        },
+        {
+          "label": "162",
+          "is_correct": false
+        },
+        {
+          "label": "163",
+          "is_correct": true
+        },
+        {
+          "label": "166",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Number & Alphabet Series",
+      "difficulty": "medium",
+      "answer_type": "single",
+      "stem": "Find the missing letters:\n\n$$\\text{SCD}, \\; \\text{TEF}, \\; \\text{UGH}, \\; \\underline{\\qquad}, \\; \\text{WKL}$$",
+      "explanation": "Handle the three positions separately.\n\n**First letter:** $S \\to T \\to U \\to \\mathbf{V} \\to W$ — one step each time.\n\n**Second letter:** $C \\to E \\to G \\to \\mathbf{I} \\to K$ — two steps each time.\n\n**Third letter:** $D \\to F \\to H \\to \\mathbf{J} \\to L$ — two steps each time.\n\n$$\\Rightarrow \\mathbf{VIJ}.$$",
+      "source": "AP ICET 2024 6th May 2024 Shift 2",
+      "source_year": 2024,
+      "options": [
+        {
+          "label": "CMN",
+          "is_correct": false
+        },
+        {
+          "label": "UJI",
+          "is_correct": false
+        },
+        {
+          "label": "VIJ",
+          "is_correct": true
+        },
+        {
+          "label": "IJT",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Number & Alphabet Series",
+      "difficulty": "easy",
+      "answer_type": "single",
+      "stem": "Find the missing number:\n\n$$1, \\; 2, \\; 4, \\; 7, \\; 11, \\; \\underline{\\qquad}$$",
+      "explanation": "The gaps grow by one each time:\n$$2-1 = 1, \\quad 4-2 = 2, \\quad 7-4 = 3, \\quad 11-7 = 4.$$\n\nThe next gap is 5:\n$$11 + 5 = \\mathbf{16}.$$",
+      "source": "AP ICET 2024 6th May 2024 Shift 2",
+      "source_year": 2024,
+      "options": [
+        {
+          "label": "15",
+          "is_correct": false
+        },
+        {
+          "label": "16",
+          "is_correct": true
+        },
+        {
+          "label": "17",
+          "is_correct": false
+        },
+        {
+          "label": "18",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Number & Alphabet Series",
+      "difficulty": "medium",
+      "answer_type": "single",
+      "stem": "Find the missing number:\n\n$$10, \\; 22, \\; 46, \\; 94, \\; 190, \\; \\underline{\\qquad}$$",
+      "explanation": "Each term is **double the previous one plus 2**:\n$$10(2)+2 = 22, \\quad 22(2)+2 = 46, \\quad 46(2)+2 = 94, \\quad 94(2)+2 = 190.$$\n\n$$190(2) + 2 = \\mathbf{382}.$$\n\n*(The differences $12, 24, 48, 96$ also double each time, and the next is 192: $190 + 192 = 382$ ✓)*",
+      "source": "AP ICET 2024 6th May 2024 Shift 2",
+      "source_year": 2024,
+      "options": [
+        {
+          "label": "202",
+          "is_correct": false
+        },
+        {
+          "label": "382",
+          "is_correct": true
+        },
+        {
+          "label": "404",
+          "is_correct": false
+        },
+        {
+          "label": "380",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Number & Alphabet Series",
+      "difficulty": "hard",
+      "answer_type": "single",
+      "stem": "Find the missing number:\n\n$$155, \\; 151, \\; 144, \\; 132, \\; 113, \\; \\underline{\\qquad}$$",
+      "explanation": "The amounts subtracted are not constant, so look at how they change:\n$$-4, \\; -7, \\; -12, \\; -19, \\; \\ldots$$\n\nThose steps themselves grow by the odd numbers:\n$$-7-(-4) = -3, \\quad -12-(-7) = -5, \\quad -19-(-12) = -7.$$\n\nSo the next change is $-9$, making the next subtraction $-19 - 9 = -28$:\n$$113 - 28 = \\mathbf{85}.$$",
+      "source": "AP ICET 2024 6th May 2024 Shift 2",
+      "source_year": 2024,
+      "options": [
+        {
+          "label": "89",
+          "is_correct": false
+        },
+        {
+          "label": "71",
+          "is_correct": false
+        },
+        {
+          "label": "85",
+          "is_correct": true
+        },
+        {
+          "label": "92",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Number & Alphabet Series",
+      "difficulty": "easy",
+      "answer_type": "single",
+      "stem": "Find the missing number:\n\n$$31, \\; 29, \\; 24, \\; 22, \\; 17, \\; \\underline{\\qquad}$$",
+      "explanation": "The subtractions alternate:\n$$31 \\xrightarrow{-2} 29 \\xrightarrow{-5} 24 \\xrightarrow{-2} 22 \\xrightarrow{-5} 17.$$\n\nThe next step is $-2$:\n$$17 - 2 = \\mathbf{15}.$$",
+      "source": "AP ICET 2024 6th May 2024 Shift 2",
+      "source_year": 2024,
+      "options": [
+        {
+          "label": "15",
+          "is_correct": true
+        },
+        {
+          "label": "14",
+          "is_correct": false
+        },
+        {
+          "label": "13",
+          "is_correct": false
+        },
+        {
+          "label": "12",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Coding-Decoding",
+      "difficulty": "easy",
+      "answer_type": "single",
+      "stem": "If in a certain code language 'HELPER' is coded as 'REPLEH', then the code for 'SATURN' is:",
+      "explanation": "Read the code backwards:\n$$\\text{REPLEH} \\text{ reversed} = \\text{HELPER}.$$\n\nSo the rule is simply to **write the word in reverse**.\n\n$$\\text{S A T U R N} \\longrightarrow \\mathbf{N R U T A S}.$$\n\n*(The distractors are near-reversals — check every letter position.)*",
+      "source": "AP ICET 2024 6th May 2024 Shift 2",
+      "source_year": 2024,
+      "options": [
+        {
+          "label": "ASUTNR",
+          "is_correct": false
+        },
+        {
+          "label": "NRTUAS",
+          "is_correct": false
+        },
+        {
+          "label": "NRUTSA",
+          "is_correct": false
+        },
+        {
+          "label": "NRUTAS",
+          "is_correct": true
+        }
+      ]
+    },
+    {
+      "chapter": "Coding-Decoding",
+      "difficulty": "easy",
+      "answer_type": "single",
+      "stem": "If in a certain code language 'RIGHT' is coded as 'THGIR', how would 'OCTOBER' be coded?",
+      "explanation": "THGIR is RIGHT spelt backwards, so the code **reverses the word**.\n\n$$\\text{O C T O B E R} \\longrightarrow \\mathbf{R E B O T C O}.$$\n\n*(Write the letters out from the end one at a time — R, E, B, O, T, C, O — the distractors differ only in the last three.)*",
+      "source": "AP ICET 2024 6th May 2024 Shift 2",
+      "source_year": 2024,
+      "options": [
+        {
+          "label": "REOBTCO",
+          "is_correct": false
+        },
+        {
+          "label": "REBOCTO",
+          "is_correct": false
+        },
+        {
+          "label": "REBOTOC",
+          "is_correct": false
+        },
+        {
+          "label": "REBOTCO",
+          "is_correct": true
+        }
+      ]
+    },
+    {
+      "chapter": "Coding-Decoding",
+      "difficulty": "medium",
+      "answer_type": "single",
+      "stem": "If X = 48 and RUN = 106, then what will be CAT?",
+      "explanation": "Add the alphabet positions of the letters and **double** the total.\n\n**Check with X:** $X = 24$, and $24 \\times 2 = 48$ ✓\n\n**Check with RUN:**\n$$R(18) + U(21) + N(14) = 53, \\qquad 53 \\times 2 = 106 \\;\\checkmark$$\n\n**Apply to CAT:**\n$$C(3) + A(1) + T(20) = 24, \\qquad 24 \\times 2 = \\mathbf{48}.$$",
+      "source": "AP ICET 2024 6th May 2024 Shift 2",
+      "source_year": 2024,
+      "options": [
+        {
+          "label": "48",
+          "is_correct": true
+        },
+        {
+          "label": "24",
+          "is_correct": false
+        },
+        {
+          "label": "52",
+          "is_correct": false
+        },
+        {
+          "label": "125",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Coding-Decoding",
+      "difficulty": "easy",
+      "answer_type": "single",
+      "stem": "APPLE is coded as 50, then ORANGE is coded as:",
+      "explanation": "Count the letters rather than their values:\n$$\\text{APPLE has } 5 \\text{ letters}, \\qquad 5 \\times 10 = 50.$$\n\nSo the code is **ten times the number of letters**.\n\n$$\\text{ORANGE has } 6 \\text{ letters} \\Rightarrow 6 \\times 10 = \\mathbf{60}.$$",
+      "source": "AP ICET 2024 6th May 2024 Shift 2",
+      "source_year": 2024,
+      "options": [
+        {
+          "label": "50",
+          "is_correct": false
+        },
+        {
+          "label": "80",
+          "is_correct": false
+        },
+        {
+          "label": "70",
+          "is_correct": false
+        },
+        {
+          "label": "60",
+          "is_correct": true
+        }
+      ]
+    },
+    {
+      "chapter": "Coding-Decoding",
+      "difficulty": "medium",
+      "answer_type": "single",
+      "stem": "If CAR is 22, SCOOTER = ?",
+      "explanation": "Add the alphabet positions of the letters.\n\n**Check with CAR:**\n$$C(3) + A(1) + R(18) = 22 \\;\\checkmark$$\n\n**Apply to SCOOTER:**\n$$S(19) + C(3) + O(15) + O(15) + T(20) + E(5) + R(18)$$\n$$= 19 + 3 + 15 + 15 + 20 + 5 + 18 = \\mathbf{95}.$$",
+      "source": "AP ICET 2024 6th May 2024 Shift 2",
+      "source_year": 2024,
+      "options": [
+        {
+          "label": "33",
+          "is_correct": false
+        },
+        {
+          "label": "44",
+          "is_correct": false
+        },
+        {
+          "label": "11",
+          "is_correct": false
+        },
+        {
+          "label": "95",
+          "is_correct": true
+        }
+      ]
+    },
+    {
+      "chapter": "Coding-Decoding",
+      "difficulty": "hard",
+      "answer_type": "single",
+      "stem": "In a certain language 'VIZAG' = 6, 'KURNOOL' = 12, 'ONGOLE' = 9, then 'HYDERABAD' = ?",
+      "explanation": "The values do not come from the letters themselves — count how **long** each word is:\n\n| Word | Letters | Code |\n| --- | --- | --- |\n| VIZAG | 5 | 6 |\n| ONGOLE | 6 | 9 |\n| KURNOOL | 7 | 12 |\n\nEach extra letter adds 3, so the rule is\n$$\\text{code} = 3n - 9.$$\n\n*(Check: $3(5)-9 = 6$ ✓, $3(6)-9 = 9$ ✓, $3(7)-9 = 12$ ✓)*\n\nHYDERABAD has **9** letters:\n$$3(9) - 9 = \\mathbf{18}.$$",
+      "source": "AP ICET 2024 6th May 2024 Shift 2",
+      "source_year": 2024,
+      "options": [
+        {
+          "label": "18",
+          "is_correct": true
+        },
+        {
+          "label": "16",
+          "is_correct": false
+        },
+        {
+          "label": "9",
+          "is_correct": false
+        },
+        {
+          "label": "14",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Analogy",
+      "difficulty": "medium",
+      "answer_type": "single",
+      "stem": "Find the missing term:\n\n$$584 : \\text{EHD} :: 695 : \\underline{\\qquad}$$",
+      "explanation": "Replace each digit by the letter standing at that **position in the alphabet**:\n$$5 \\to E, \\qquad 8 \\to H, \\qquad 4 \\to D \\;\\checkmark$$\n\nApply the same to 695:\n$$6 \\to F, \\qquad 9 \\to I, \\qquad 5 \\to E$$\n\n$$\\Rightarrow \\mathbf{FIE}.$$",
+      "source": "AP ICET 2024 6th May 2024 Shift 2",
+      "source_year": 2024,
+      "options": [
+        {
+          "label": "FIE",
+          "is_correct": true
+        },
+        {
+          "label": "GJD",
+          "is_correct": false
+        },
+        {
+          "label": "FID",
+          "is_correct": false
+        },
+        {
+          "label": "GIE",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Analogy",
+      "difficulty": "easy",
+      "answer_type": "single",
+      "stem": "Find the missing term:\n\n$$3784 : 1892 :: \\underline{\\qquad} : 2874$$",
+      "explanation": "Compare the given pair:\n$$\\frac{3784}{1892} = 2,$$\nso the first number is **twice** the second.\n\nApplying the same relation to 2874:\n$$2874 \\times 2 = \\mathbf{5748}.$$",
+      "source": "AP ICET 2024 6th May 2024 Shift 2",
+      "source_year": 2024,
+      "options": [
+        {
+          "label": "5648",
+          "is_correct": false
+        },
+        {
+          "label": "5748",
+          "is_correct": true
+        },
+        {
+          "label": "4856",
+          "is_correct": false
+        },
+        {
+          "label": "4788",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Analogy",
+      "difficulty": "hard",
+      "answer_type": "single",
+      "stem": "Find the missing term:\n\n$$23 : 57 :: 1113 : \\underline{\\qquad}$$",
+      "explanation": "Split each number into **two primes** written side by side:\n$$23 \\to 2, 3 \\qquad\\text{and}\\qquad 57 \\to 5, 7.$$\n\nThe primes in order are $2, 3, 5, 7, 11, 13, 17, 19, \\ldots$ — so the second number simply carries on with the **next two primes**.\n\n$$1113 \\to 11, 13 \\;\\Rightarrow\\; \\text{next two primes are } 17, 19$$\n\n$$\\Rightarrow \\mathbf{1719}.$$",
+      "source": "AP ICET 2024 6th May 2024 Shift 2",
+      "source_year": 2024,
+      "options": [
+        {
+          "label": "1719",
+          "is_correct": true
+        },
+        {
+          "label": "1516",
+          "is_correct": false
+        },
+        {
+          "label": "1517",
+          "is_correct": false
+        },
+        {
+          "label": "1917",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Clocks & Calendars",
+      "difficulty": "easy",
+      "answer_type": "single",
+      "stem": "If today is Tuesday, what day of the week was it 124 days before?",
+      "explanation": "Only the remainder after dividing by 7 matters:\n$$124 = 17 \\times 7 + 5,$$\nso 124 days before is the same as **5 days before**.\n\nCounting back from Tuesday:\n$$\\text{Tue} \\to \\text{Mon} \\to \\text{Sun} \\to \\text{Sat} \\to \\text{Fri} \\to \\mathbf{Thu}.$$",
+      "source": "AP ICET 2024 6th May 2024 Shift 2",
+      "source_year": 2024,
+      "options": [
+        {
+          "label": "Sunday",
+          "is_correct": false
+        },
+        {
+          "label": "Friday",
+          "is_correct": false
+        },
+        {
+          "label": "Saturday",
+          "is_correct": false
+        },
+        {
+          "label": "Thursday",
+          "is_correct": true
+        }
+      ]
+    },
+    {
+      "chapter": "Clocks & Calendars",
+      "difficulty": "medium",
+      "answer_type": "single",
+      "stem": "At what angle are the hands of a clock inclined when the time is 20 minutes past 4?",
+      "explanation": "Measure both hands from 12 o'clock.\n\n**Minute hand** at 20 minutes: $20 \\times 6^\\circ = 120^\\circ$.\n\n**Hour hand** at 4:20: four full hours plus a third of the next,\n$$4 \\times 30^\\circ + 20 \\times 0.5^\\circ = 120^\\circ + 10^\\circ = 130^\\circ.$$\n\n$$\\text{Angle} = 130^\\circ - 120^\\circ = \\mathbf{10^\\circ}.$$\n\n*(Equivalently $\\left|30H - 5.5M\\right| = \\left|120 - 110\\right| = 10^\\circ$.)*",
+      "source": "AP ICET 2024 6th May 2024 Shift 2",
+      "source_year": 2024,
+      "options": [
+        {
+          "label": "12°",
+          "is_correct": false
+        },
+        {
+          "label": "20°",
+          "is_correct": false
+        },
+        {
+          "label": "10°",
+          "is_correct": true
+        },
+        {
+          "label": "15°",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Blood Relations",
+      "difficulty": "medium",
+      "answer_type": "single",
+      "stem": "If A is the brother of the son of B's son, how is A related to B?",
+      "explanation": "Unpack the phrase from the inside out:\n\n1. **B's son** — one generation below B.\n2. **The son of B's son** — two generations below B, i.e. B's **grandson**.\n3. **The brother of** that grandson — a brother shares the same parents, so he too is a son of B's son.\n\nTherefore A is also two generations below B:\n$$\\Rightarrow A \\text{ is B's } \\mathbf{grandson}.$$",
+      "source": "AP ICET 2024 6th May 2024 Shift 2",
+      "source_year": 2024,
+      "options": [
+        {
+          "label": "Son",
+          "is_correct": false
+        },
+        {
+          "label": "Grand son",
+          "is_correct": true
+        },
+        {
+          "label": "Brother",
+          "is_correct": false
+        },
+        {
+          "label": "Grand daughter",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Seating Arrangement",
+      "difficulty": "hard",
+      "answer_type": "single",
+      "stem": "Six friends A, B, C, D, E and F are sitting around a round table facing the centre of the table. E is to the left of D, C is between A and B, and F is between E and A. Who is on the left of B?",
+      "explanation": "Everyone faces the centre, so a person's **left** is the neighbour one step **clockwise**.\n\n**Step 1 (E is to the left of D):** going clockwise, $D, E$.\n\n**Step 2 (F is between E and A):** extend the chain — $D, E, F, A$.\n\n**Step 3 (C is between A and B):** extend again — $D, E, F, A, C, B$, and B closes the circle back to D.\n\n$$\\text{Clockwise order: } D \\to E \\to F \\to A \\to C \\to B \\to D.$$\n\nThe person on B's left is B's clockwise neighbour:\n$$\\Rightarrow \\mathbf{D}.$$",
+      "source": "AP ICET 2024 6th May 2024 Shift 2",
+      "source_year": 2024,
+      "options": [
+        {
+          "label": "F",
+          "is_correct": false
+        },
+        {
+          "label": "A",
+          "is_correct": false
+        },
+        {
+          "label": "C",
+          "is_correct": false
+        },
+        {
+          "label": "D",
+          "is_correct": true
+        }
+      ]
+    },
+    {
+      "chapter": "Venn Diagrams",
+      "difficulty": "medium",
+      "answer_type": "single",
+      "stem": "In a community of 300 people, 50 members know Hindi (H), English (E) and Telugu (T). 40 members know E and H only. The number of members knowing T and H only is equal to the number of members knowing E and T only. 40 know only Telugu, 40 know only Hindi and 30 know only English. Every person knows at least one of the three languages.\n\nHow many know only Telugu and English?",
+      "explanation": "**Fill in the seven regions.** Let $x$ be the number who know exactly two languages in each of the two unnamed overlaps:\n\n| Region | Count |\n| --- | --- |\n| All three | 50 |\n| E and H only | 40 |\n| T and H only | $x$ |\n| E and T only | $x$ |\n| Telugu only | 40 |\n| Hindi only | 40 |\n| English only | 30 |\n\nSince everyone knows at least one language, the seven regions must add to 300:\n$$50 + 40 + x + x + 40 + 40 + 30 = 300 \\Rightarrow 200 + 2x = 300 \\Rightarrow \\mathbf{x = 50}.$$\n\n\"Telugu and English only\" is one of the two equal overlaps, so the answer is\n$$x = \\mathbf{50}.$$",
+      "source": "AP ICET 2024 6th May 2024 Shift 2",
+      "source_year": 2024,
+      "options": [
+        {
+          "label": "40",
+          "is_correct": false
+        },
+        {
+          "label": "55",
+          "is_correct": false
+        },
+        {
+          "label": "45",
+          "is_correct": false
+        },
+        {
+          "label": "50",
+          "is_correct": true
+        }
+      ]
+    },
+    {
+      "chapter": "Venn Diagrams",
+      "difficulty": "medium",
+      "answer_type": "single",
+      "stem": "In a community of 300 people, 50 members know Hindi (H), English (E) and Telugu (T). 40 members know E and H only. The number of members knowing T and H only is equal to the number of members knowing E and T only. 40 know only Telugu, 40 know only Hindi and 30 know only English. Every person knows at least one of the three languages.\n\nWhat is the percentage of people in the community knowing Hindi and English only?",
+      "explanation": "**Fill in the seven regions.** Let $x$ be the number who know exactly two languages in each of the two unnamed overlaps:\n\n| Region | Count |\n| --- | --- |\n| All three | 50 |\n| E and H only | 40 |\n| T and H only | $x$ |\n| E and T only | $x$ |\n| Telugu only | 40 |\n| Hindi only | 40 |\n| English only | 30 |\n\nSince everyone knows at least one language, the seven regions must add to 300:\n$$50 + 40 + x + x + 40 + 40 + 30 = 300 \\Rightarrow 200 + 2x = 300 \\Rightarrow \\mathbf{x = 50}.$$\n\nThe stem gives \"E and H only\" directly as **40**:\n$$\\frac{40}{300}\\times 100 = \\mathbf{13.33\\%}.$$\n\n*(The trap is to include the 50 who know all three; \"only\" excludes them.)*",
+      "source": "AP ICET 2024 6th May 2024 Shift 2",
+      "source_year": 2024,
+      "options": [
+        {
+          "label": "14.33",
+          "is_correct": false
+        },
+        {
+          "label": "15",
+          "is_correct": false
+        },
+        {
+          "label": "13.33",
+          "is_correct": true
+        },
+        {
+          "label": "12",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Venn Diagrams",
+      "difficulty": "hard",
+      "answer_type": "single",
+      "stem": "In a community of 300 people, 50 members know Hindi (H), English (E) and Telugu (T). 40 members know E and H only. The number of members knowing T and H only is equal to the number of members knowing E and T only. 40 know only Telugu, 40 know only Hindi and 30 know only English. Every person knows at least one of the three languages.\n\nThe number of members who do not know English is:",
+      "explanation": "**Fill in the seven regions.** Let $x$ be the number who know exactly two languages in each of the two unnamed overlaps:\n\n| Region | Count |\n| --- | --- |\n| All three | 50 |\n| E and H only | 40 |\n| T and H only | $x$ |\n| E and T only | $x$ |\n| Telugu only | 40 |\n| Hindi only | 40 |\n| English only | 30 |\n\nSince everyone knows at least one language, the seven regions must add to 300:\n$$50 + 40 + x + x + 40 + 40 + 30 = 300 \\Rightarrow 200 + 2x = 300 \\Rightarrow \\mathbf{x = 50}.$$\n\n**Count everyone who *does* know English** — the four regions touching E:\n$$\\underbrace{50}_{\\text{all three}} + \\underbrace{40}_{E,H\\text{ only}} + \\underbrace{50}_{E,T\\text{ only}} + \\underbrace{30}_{E\\text{ only}} = 170.$$\n\n$$\\text{Do not know English} = 300 - 170 = \\mathbf{130}.$$\n\n*(Cross-check: those without English are Hindi only (40), Telugu only (40) and T-and-H only (50) — again 130 ✓)*",
+      "source": "AP ICET 2024 6th May 2024 Shift 2",
+      "source_year": 2024,
+      "options": [
+        {
+          "label": "120",
+          "is_correct": false
+        },
+        {
+          "label": "130",
+          "is_correct": true
+        },
+        {
+          "label": "125",
+          "is_correct": false
+        },
+        {
+          "label": "140",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Venn Diagrams",
+      "difficulty": "easy",
+      "answer_type": "single",
+      "stem": "In a community of 300 people, 50 members know Hindi (H), English (E) and Telugu (T). 40 members know E and H only. The number of members knowing T and H only is equal to the number of members knowing E and T only. 40 know only Telugu, 40 know only Hindi and 30 know only English. Every person knows at least one of the three languages.\n\nThe number of persons who know only one of the three languages is:",
+      "explanation": "**Fill in the seven regions.** Let $x$ be the number who know exactly two languages in each of the two unnamed overlaps:\n\n| Region | Count |\n| --- | --- |\n| All three | 50 |\n| E and H only | 40 |\n| T and H only | $x$ |\n| E and T only | $x$ |\n| Telugu only | 40 |\n| Hindi only | 40 |\n| English only | 30 |\n\nSince everyone knows at least one language, the seven regions must add to 300:\n$$50 + 40 + x + x + 40 + 40 + 30 = 300 \\Rightarrow 200 + 2x = 300 \\Rightarrow \\mathbf{x = 50}.$$\n\nAdd the three \"only\" regions:\n$$\\underbrace{40}_{\\text{Telugu only}} + \\underbrace{40}_{\\text{Hindi only}} + \\underbrace{30}_{\\text{English only}} = \\mathbf{110}.$$",
+      "source": "AP ICET 2024 6th May 2024 Shift 2",
+      "source_year": 2024,
+      "options": [
+        {
+          "label": "110",
+          "is_correct": true
+        },
+        {
+          "label": "120",
+          "is_correct": false
+        },
+        {
+          "label": "130",
+          "is_correct": false
+        },
+        {
+          "label": "140",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Venn Diagrams",
+      "difficulty": "hard",
+      "answer_type": "single",
+      "stem": "In a community of 300 people, 50 members know Hindi (H), English (E) and Telugu (T). 40 members know E and H only. The number of members knowing T and H only is equal to the number of members knowing E and T only. 40 know only Telugu, 40 know only Hindi and 30 know only English. Every person knows at least one of the three languages.\n\nThe percentage of members not knowing Hindi is:",
+      "explanation": "**Fill in the seven regions.** Let $x$ be the number who know exactly two languages in each of the two unnamed overlaps:\n\n| Region | Count |\n| --- | --- |\n| All three | 50 |\n| E and H only | 40 |\n| T and H only | $x$ |\n| E and T only | $x$ |\n| Telugu only | 40 |\n| Hindi only | 40 |\n| English only | 30 |\n\nSince everyone knows at least one language, the seven regions must add to 300:\n$$50 + 40 + x + x + 40 + 40 + 30 = 300 \\Rightarrow 200 + 2x = 300 \\Rightarrow \\mathbf{x = 50}.$$\n\n**Count everyone who knows Hindi** — the four regions touching H:\n$$\\underbrace{50}_{\\text{all three}} + \\underbrace{40}_{E,H\\text{ only}} + \\underbrace{50}_{T,H\\text{ only}} + \\underbrace{40}_{H\\text{ only}} = 180.$$\n\n$$\\text{Not knowing Hindi} = 300 - 180 = 120 \\Rightarrow \\frac{120}{300}\\times 100 = \\mathbf{40\\%}.$$",
+      "source": "AP ICET 2024 6th May 2024 Shift 2",
+      "source_year": 2024,
+      "options": [
+        {
+          "label": "42",
+          "is_correct": false
+        },
+        {
+          "label": "45",
+          "is_correct": false
+        },
+        {
+          "label": "35",
+          "is_correct": false
+        },
+        {
+          "label": "40",
+          "is_correct": true
+        }
+      ]
+    },
+    {
+      "chapter": "Clocks & Calendars",
+      "difficulty": "very_hard",
+      "answer_type": "single",
+      "stem": "The calendar for the year 2007 will be the same for the following year:",
+      "explanation": "A calendar repeats when the accumulated **odd days** come back to a multiple of 7 *and* the leap status matches. An ordinary year contributes 1 odd day, a leap year 2.\n\nAdd the odd days year by year from 2007:\n$$2007{:}1, \\; 2008{:}2, \\; 2009{:}1, \\; 2010{:}1, \\; 2011{:}1, \\; 2012{:}2,$$\n$$2013{:}1, \\; 2014{:}1, \\; 2015{:}1, \\; 2016{:}2, \\; 2017{:}1.$$\n\nRunning total up to and including 2017:\n$$1+2+1+1+1+2+1+1+1+2+1 = 14 \\equiv 0 \\pmod 7.$$\n\nSo **2018** starts on the same weekday as 2007, and — like 2007 — it is an ordinary year, so the whole calendar matches.\n\n$$\\Rightarrow \\mathbf{2018}.$$",
+      "source": "AP ICET 2024 6th May 2024 Shift 2",
+      "source_year": 2024,
+      "options": [
+        {
+          "label": "2014",
+          "is_correct": false
+        },
+        {
+          "label": "2016",
+          "is_correct": false
+        },
+        {
+          "label": "2017",
+          "is_correct": false
+        },
+        {
+          "label": "2018",
+          "is_correct": true
+        }
+      ]
+    },
+    {
+      "chapter": "Clocks & Calendars",
+      "difficulty": "easy",
+      "answer_type": "single",
+      "stem": "What is the angle between the hour hand and the minute hand at 3 PM?",
+      "explanation": "At an exact hour the minute hand points at 12 and the hour hand at the hour mark.\n\nThe dial is $360^\\circ$ over 12 hours, so each hour mark is $30^\\circ$ apart:\n$$3 \\times 30^\\circ = \\mathbf{90^\\circ}.$$",
+      "source": "AP ICET 2024 6th May 2024 Shift 2",
+      "source_year": 2024,
+      "options": [
+        {
+          "label": "90°",
+          "is_correct": true
+        },
+        {
+          "label": "120°",
+          "is_correct": false
+        },
+        {
+          "label": "270°",
+          "is_correct": false
+        },
+        {
+          "label": "0°",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Seating Arrangement",
+      "difficulty": "easy",
+      "answer_type": "single",
+      "stem": "Ramu ranks 7th from the top and 28th from the bottom in the class. How many students are there in the class?",
+      "explanation": "Adding the two ranks counts Ramu **twice**, so subtract one:\n$$\\text{Total} = 7 + 28 - 1 = \\mathbf{34}.$$\n\n*(Check: with 34 students, 7th from the top is $34 - 7 + 1 = 28$th from the bottom ✓)*",
+      "source": "AP ICET 2024 6th May 2024 Shift 2",
+      "source_year": 2024,
+      "options": [
+        {
+          "label": "34",
+          "is_correct": true
+        },
+        {
+          "label": "35",
+          "is_correct": false
+        },
+        {
+          "label": "36",
+          "is_correct": false
+        },
+        {
+          "label": "37",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Clocks & Calendars",
+      "difficulty": "hard",
+      "answer_type": "single",
+      "stem": "What was the day on 1st January, 1 A.D.?",
+      "explanation": "In the odd-days method the count starts from the very beginning of the era: at the start of 1 January 1 A.D. **no** complete days have elapsed, so the number of odd days is 0.\n\nThe standard correspondence used for odd days is\n$$0 \\to \\text{Sunday}, \\quad 1 \\to \\text{Monday}, \\quad 2 \\to \\text{Tuesday}, \\ldots$$\nand the first day of the era is counted as day 1:\n$$\\Rightarrow \\mathbf{Monday}.$$\n\n*(This is the convention every calendar-problem table is built on — the odd days of 100 years, 200 years and so on are all measured from this starting point.)*",
+      "source": "AP ICET 2024 6th May 2024 Shift 2",
+      "source_year": 2024,
+      "options": [
+        {
+          "label": "Sunday",
+          "is_correct": false
+        },
+        {
+          "label": "Monday",
+          "is_correct": true
+        },
+        {
+          "label": "Tuesday",
+          "is_correct": false
+        },
+        {
+          "label": "Wednesday",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Clocks & Calendars",
+      "difficulty": "hard",
+      "answer_type": "single",
+      "stem": "How many times do the hour and minute hands of a clock become perpendicular to each other in a day?",
+      "explanation": "In **12 hours** the hands are at right angles 22 times: they would be perpendicular twice in each hour (once with the minute hand ahead, once behind), giving 24, but two of those coincide with the overlaps around 3 and 9 o'clock, so 2 are lost.\n\nIn a full day of 24 hours:\n$$22 \\times 2 = \\mathbf{44} \\text{ times}.$$",
+      "source": "AP ICET 2024 6th May 2024 Shift 2",
+      "source_year": 2024,
+      "options": [
+        {
+          "label": "24 times",
+          "is_correct": false
+        },
+        {
+          "label": "20 times",
+          "is_correct": false
+        },
+        {
+          "label": "44 times",
+          "is_correct": true
+        },
+        {
+          "label": "34 times",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Clocks & Calendars",
+      "difficulty": "hard",
+      "answer_type": "single",
+      "stem": "At what time between 6 o'clock and 7 o'clock will the hands of a clock coincide?",
+      "explanation": "At 6:00 the minute hand is $180^\\circ$ behind the hour hand.\n\nThe minute hand gains $6^\\circ$ per minute while the hour hand gains $0.5^\\circ$, i.e. a relative gain of $5.5^\\circ$ per minute. To close a $180^\\circ$ gap:\n$$t = \\frac{180}{5.5} = \\frac{360}{11} = 32\\frac{8}{11} \\text{ minutes}.$$\n\n$$\\Rightarrow \\text{about } \\mathbf{6\\text{ hours } 33 \\text{ min}}.$$",
+      "source": "AP ICET 2024 6th May 2024 Shift 2",
+      "source_year": 2024,
+      "options": [
+        {
+          "label": "6 hours 33 min",
+          "is_correct": true
+        },
+        {
+          "label": "6 hours 23 min",
+          "is_correct": false
+        },
+        {
+          "label": "6 hours 43 min",
+          "is_correct": false
+        },
+        {
+          "label": "6 hours 53 min",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Coding-Decoding",
+      "difficulty": "medium",
+      "answer_type": "single",
+      "stem": "If $a * b = \\dfrac{a^2 + b^2}{ab}$, then $1 * \\big(1 * (1 * 1)\\big) = ?$",
+      "explanation": "Work from the **innermost** bracket outwards.\n\n**Step 1:** $1 * 1 = \\dfrac{1+1}{1} = 2$.\n\n**Step 2:** $1 * 2 = \\dfrac{1 + 4}{1 \\times 2} = \\dfrac52 = 2.5$.\n\n**Step 3:** $1 * 2.5 = \\dfrac{1 + 6.25}{1 \\times 2.5} = \\dfrac{7.25}{2.5} = \\mathbf{2.9}.$",
+      "source": "AP ICET 2024 6th May 2024 Shift 2",
+      "source_year": 2024,
+      "options": [
+        {
+          "label": "2.8",
+          "is_correct": false
+        },
+        {
+          "label": "2.9",
+          "is_correct": true
+        },
+        {
+          "label": "3.4",
+          "is_correct": false
+        },
+        {
+          "label": "1.3",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Coding-Decoding",
+      "difficulty": "easy",
+      "answer_type": "single",
+      "stem": "For real numbers $a$ and $b$, if $a * b = (a-b)^4$, then $(62) * (65) = ?$",
+      "explanation": "Substitute straight into the definition:\n$$(62) * (65) = (62 - 65)^4 = (-3)^4.$$\n\nAn **even** power makes the result positive:\n$$(-3)^4 = 81.$$\n\n$$\\Rightarrow \\mathbf{81}.$$\n\n*(Dropping the sign but using the wrong power gives the distractors: $3^2 = 9$-family values like 8 and 16, or $4^4 = 256$.)*",
+      "source": "AP ICET 2024 6th May 2024 Shift 2",
+      "source_year": 2024,
+      "options": [
+        {
+          "label": "8",
+          "is_correct": false
+        },
+        {
+          "label": "256",
+          "is_correct": false
+        },
+        {
+          "label": "81",
+          "is_correct": true
+        },
+        {
+          "label": "16",
+          "is_correct": false
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,1589 @@
+{
+  "subject": "Logical & Analytical Reasoning",
+  "questions": [
+    {
+      "chapter": "Data Sufficiency (Reasoning)",
+      "kind": "data_sufficiency",
+      "difficulty": "medium",
+      "answer_type": "single",
+      "stem": "In which year was Rahul born?\n\n**I.** Rahul is 25 years younger to his mother.\n\n**II.** Rahul's brother, who was born in 1964, is 35 years younger to his mother.",
+      "explanation": "**From I:** only the age gap to his mother — with her birth year unknown, so is Rahul's. Not sufficient.\n\n**From II:** the mother was born in $1964 - 35 = 1929$, but the statement says nothing about Rahul himself. Not sufficient.\n\n**Together:** the mother's year comes from II and the 25-year gap from I:\n$$1929 + 25 = 1954.$$\nBoth statements are needed, and neither works alone.",
+      "source": "AP ICET 2025 7th May 2025 Shift 2",
+      "source_year": 2025,
+      "options": [
+        {
+          "label": "Statement I alone is sufficient to answer the question.",
+          "is_correct": false
+        },
+        {
+          "label": "Statement II alone is sufficient to answer the question.",
+          "is_correct": false
+        },
+        {
+          "label": "Statements I and II together are sufficient to answer the question, but neither statement alone is sufficient.",
+          "is_correct": true
+        },
+        {
+          "label": "Statements I and II together are not sufficient to answer the question and additional data is required.",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Data Sufficiency (Reasoning)",
+      "kind": "data_sufficiency",
+      "difficulty": "hard",
+      "answer_type": "single",
+      "stem": "Who among P, Q, T, V and M is exactly in the middle when they are arranged in ascending order of their heights?\n\n**I.** V is taller than Q but shorter than M.\n\n**II.** T is taller than Q and M but shorter than P.",
+      "explanation": "**From I:** $Q < V < M$ — nothing about P or T, so the middle of five is not fixed. Not sufficient.\n\n**From II:** $Q < T < P$ and $M < T$ — V is missing. Not sufficient.\n\n**Together:** chain the two:\n$$Q < V < M < T < P.$$\nWith all five ordered, the third — exactly in the middle — is **M**. Both statements are needed.",
+      "source": "AP ICET 2025 7th May 2025 Shift 2",
+      "source_year": 2025,
+      "options": [
+        {
+          "label": "Statement I alone is sufficient to answer the question.",
+          "is_correct": false
+        },
+        {
+          "label": "Statement II alone is sufficient to answer the question.",
+          "is_correct": false
+        },
+        {
+          "label": "Statements I and II together are sufficient to answer the question, but neither statement alone is sufficient.",
+          "is_correct": true
+        },
+        {
+          "label": "Statements I and II together are not sufficient to answer the question and additional data is required.",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Data Sufficiency (Reasoning)",
+      "kind": "data_sufficiency",
+      "difficulty": "medium",
+      "answer_type": "single",
+      "stem": "The last Sunday of March 2006 fell on which date?\n\n**I.** The first Sunday of that month fell on 5th.\n\n**II.** The last day of month was not Saturday.",
+      "explanation": "**From I:** if the first Sunday is the 5th, the Sundays are 5, 12, 19 and **26**. March has 31 days, so the next Sunday (2 April) falls outside the month — the last Sunday is the 26th. Sufficient.\n\n**From II:** ruling out one weekday for the 31st still leaves six possibilities for the month's layout, and the last Sunday could be any of several dates. Not sufficient.",
+      "source": "AP ICET 2025 7th May 2025 Shift 2",
+      "source_year": 2025,
+      "options": [
+        {
+          "label": "Statement I alone is sufficient to answer the question.",
+          "is_correct": true
+        },
+        {
+          "label": "Statement II alone is sufficient to answer the question.",
+          "is_correct": false
+        },
+        {
+          "label": "Statements I and II together are sufficient to answer the question, but neither statement alone is sufficient.",
+          "is_correct": false
+        },
+        {
+          "label": "Statements I and II together are not sufficient to answer the question and additional data is required.",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Data Sufficiency (Reasoning)",
+      "kind": "data_sufficiency",
+      "difficulty": "medium",
+      "answer_type": "single",
+      "stem": "What is the buying cost of the shirt?\n\n**I.** The shirt was sold for ₹800/- at a 20% profit.\n\n**II.** The difference between the selling price and the cost price is ₹160/-.",
+      "explanation": "**From I:** the selling price is 120% of the cost price:\n$$CP = \\frac{800}{1.2} = ₹666.67.$$\nSufficient.\n\n**From II:** a ₹160 profit could sit on any cost price — ₹500, ₹1000, anything — because no selling price is given. Not sufficient.",
+      "source": "AP ICET 2025 7th May 2025 Shift 2",
+      "source_year": 2025,
+      "options": [
+        {
+          "label": "Statement I alone is sufficient to answer the question.",
+          "is_correct": true
+        },
+        {
+          "label": "Statement II alone is sufficient to answer the question.",
+          "is_correct": false
+        },
+        {
+          "label": "Statements I and II together are sufficient to answer the question, but neither statement alone is sufficient.",
+          "is_correct": false
+        },
+        {
+          "label": "Statements I and II together are not sufficient to answer the question and additional data is required.",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Data Sufficiency (Reasoning)",
+      "kind": "data_sufficiency",
+      "difficulty": "easy",
+      "answer_type": "single",
+      "stem": "How tall is Nandhini?\n\n**I.** Nandhini is 10 cm taller than Riya, who is 150 cm tall.\n\n**II.** Nandhini is shorter than Ananya, who is 165 cm tall.",
+      "explanation": "**From I:** Riya's height is given outright, so\n$$150 + 10 = 160 \\text{ cm}.$$\nSufficient.\n\n**From II:** all we learn is that Nandhini is under 165 cm — she could be 164, 160 or 120. Not sufficient.",
+      "source": "AP ICET 2025 7th May 2025 Shift 2",
+      "source_year": 2025,
+      "options": [
+        {
+          "label": "Statement I alone is sufficient to answer the question.",
+          "is_correct": true
+        },
+        {
+          "label": "Statement II alone is sufficient to answer the question.",
+          "is_correct": false
+        },
+        {
+          "label": "Statements I and II together are sufficient to answer the question, but neither statement alone is sufficient.",
+          "is_correct": false
+        },
+        {
+          "label": "Statements I and II together are not sufficient to answer the question and additional data is required.",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Data Sufficiency (Reasoning)",
+      "kind": "data_sufficiency",
+      "difficulty": "easy",
+      "answer_type": "single",
+      "stem": "What was the percentage of defective items produced in the factory?\n\n**I.** The factory produced 50,000 items in total.\n\n**II.** The factory produced 2,500 defective items.",
+      "explanation": "A percentage needs **both** the part and the whole.\n\n**From I:** only the total. **From II:** only the defective count. Neither alone gives a ratio.\n\n**Together:**\n$$\\frac{2500}{50000} \\times 100 = 5\\%.$$\nBoth statements are needed, and neither works alone.",
+      "source": "AP ICET 2025 7th May 2025 Shift 2",
+      "source_year": 2025,
+      "options": [
+        {
+          "label": "Statement I alone is sufficient to answer the question.",
+          "is_correct": false
+        },
+        {
+          "label": "Statement II alone is sufficient to answer the question.",
+          "is_correct": false
+        },
+        {
+          "label": "Statements I and II together are sufficient to answer the question, but neither statement alone is sufficient.",
+          "is_correct": true
+        },
+        {
+          "label": "Statements I and II together are not sufficient to answer the question and additional data is required.",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Data Sufficiency (Reasoning)",
+      "kind": "data_sufficiency",
+      "difficulty": "hard",
+      "answer_type": "single",
+      "stem": "There is a set of parcels A to F to be handled in a logistics company. Find the heaviest parcel among them.\n\n**I.** 'B' is lighter than 'E' but heavier than 'D'.\n\n**II.** 'D' is heavier than 'A, C and F'.",
+      "explanation": "**From I:** $D < B < E$ — but A, C and F are unplaced, so any of them could be the heaviest. Not sufficient.\n\n**From II:** $A, C, F < D$ — nothing about B or E. Not sufficient.\n\n**Together:** chaining the two,\n$$A, C, F < D < B < E,$$\nso **E** is the heaviest of all six. Both statements are needed.",
+      "source": "AP ICET 2025 7th May 2025 Shift 2",
+      "source_year": 2025,
+      "options": [
+        {
+          "label": "Statement I alone is sufficient to answer the question.",
+          "is_correct": false
+        },
+        {
+          "label": "Statement II alone is sufficient to answer the question.",
+          "is_correct": false
+        },
+        {
+          "label": "Statements I and II together are sufficient to answer the question, but neither statement alone is sufficient.",
+          "is_correct": true
+        },
+        {
+          "label": "Statements I and II together are not sufficient to answer the question and additional data is required.",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Data Sufficiency (Reasoning)",
+      "kind": "data_sufficiency",
+      "difficulty": "medium",
+      "answer_type": "single",
+      "stem": "How many children does 'X' have?\n\n**I.** 'Y' is the only son of 'Z' who is wife of 'X'.\n\n**II.** 'W' is aunt of 'Y'.",
+      "explanation": "**From I:** X and Z have exactly one **son**, Y — but the statement says nothing about daughters, so the number of children is not fixed.\n\n**From II:** an aunt of Y tells us about X's or Z's siblings, not about their children.\n\n**Together:** still nothing rules out daughters — X could have one child or several. The question cannot be answered even by using both statements together.",
+      "source": "AP ICET 2025 7th May 2025 Shift 2",
+      "source_year": 2025,
+      "options": [
+        {
+          "label": "Statement I alone is sufficient to answer the question.",
+          "is_correct": false
+        },
+        {
+          "label": "Statement II alone is sufficient to answer the question.",
+          "is_correct": false
+        },
+        {
+          "label": "Statements I and II together are sufficient to answer the question, but neither statement alone is sufficient.",
+          "is_correct": false
+        },
+        {
+          "label": "Statements I and II together are not sufficient to answer the question and additional data is required.",
+          "is_correct": true
+        }
+      ]
+    },
+    {
+      "chapter": "Data Sufficiency (Reasoning)",
+      "kind": "data_sufficiency",
+      "difficulty": "easy",
+      "answer_type": "single",
+      "stem": "What is the value of $x$?\n\n**I.** $2x + 3y = 12$\n\n**II.** $x - 2y + z = 15$",
+      "explanation": "**From I:** one equation in two unknowns — $x$ varies with $y$. Not sufficient.\n\n**From II:** one equation in three unknowns. Not sufficient.\n\n**Together:** two equations but **three** unknowns ($x, y, z$), leaving a whole family of solutions. For example $(x,y,z) = (6,0,9)$ and $(x,y,z) = (3,2,16)$ both satisfy each equation, with different $x$. Not sufficient even together.",
+      "source": "AP ICET 2025 7th May 2025 Shift 2",
+      "source_year": 2025,
+      "options": [
+        {
+          "label": "Statement I alone is sufficient to answer the question.",
+          "is_correct": false
+        },
+        {
+          "label": "Statement II alone is sufficient to answer the question.",
+          "is_correct": false
+        },
+        {
+          "label": "Statements I and II together are sufficient to answer the question, but neither statement alone is sufficient.",
+          "is_correct": false
+        },
+        {
+          "label": "Statements I and II together are not sufficient to answer the question and additional data is required.",
+          "is_correct": true
+        }
+      ]
+    },
+    {
+      "chapter": "Data Sufficiency (Reasoning)",
+      "kind": "data_sufficiency",
+      "difficulty": "medium",
+      "answer_type": "single",
+      "stem": "What is the numerical code for 'food' in a certain code language, when\n\n**I.** The code for 'they gave food' is '123'.\n\n**II.** The code for 'They all can take good food' is '324567'.",
+      "explanation": "Neither statement pairs words with digits — the codes are given as unordered strings.\n\n**Together:** the two sentences share the words **they** and **food**, and the codes share the digits **2** and **3**. So $\\{they, food\\} \\leftrightarrow \\{2, 3\\}$, but nothing decides *which* digit belongs to *which* word. The code for 'food' could be 2 or 3, so the question cannot be answered even by using both statements together.",
+      "source": "AP ICET 2025 7th May 2025 Shift 2",
+      "source_year": 2025,
+      "options": [
+        {
+          "label": "Statement I alone is sufficient to answer the question.",
+          "is_correct": false
+        },
+        {
+          "label": "Statement II alone is sufficient to answer the question.",
+          "is_correct": false
+        },
+        {
+          "label": "Statements I and II together are sufficient to answer the question, but neither statement alone is sufficient.",
+          "is_correct": false
+        },
+        {
+          "label": "Statements I and II together are not sufficient to answer the question and additional data is required.",
+          "is_correct": true
+        }
+      ]
+    },
+    {
+      "chapter": "Data Sufficiency (Reasoning)",
+      "kind": "data_sufficiency",
+      "difficulty": "medium",
+      "answer_type": "single",
+      "stem": "What is the value of $x + y + z$?\n\n**I.** $x + y = 3$\n\n**II.** $x + z = 2$",
+      "explanation": "**From I** or **II** alone, a third variable is missing.\n\n**Together:** adding the two gives\n$$2x + y + z = 5 \\Rightarrow x + y + z = 5 - x,$$\nwhich still depends on $x$. Concretely, $(x,y,z) = (0,3,2)$ gives a sum of 5, while $(1,2,1)$ gives 4 — both satisfy I and II. Not sufficient even together.",
+      "source": "AP ICET 2025 7th May 2025 Shift 2",
+      "source_year": 2025,
+      "options": [
+        {
+          "label": "Statement I alone is sufficient to answer the question.",
+          "is_correct": false
+        },
+        {
+          "label": "Statement II alone is sufficient to answer the question.",
+          "is_correct": false
+        },
+        {
+          "label": "Statements I and II together are sufficient to answer the question, but neither statement alone is sufficient.",
+          "is_correct": false
+        },
+        {
+          "label": "Statements I and II together are not sufficient to answer the question and additional data is required.",
+          "is_correct": true
+        }
+      ]
+    },
+    {
+      "chapter": "Data Sufficiency (Reasoning)",
+      "kind": "data_sufficiency",
+      "difficulty": "medium",
+      "answer_type": "single",
+      "stem": "Is 'P' the uncle of 'Q'?\n\n**I.** 'P' is the brother of 'M', and 'M' is the father of 'Q'.\n\n**II.** 'L' is the brother of 'Q' and 'R' is daughter of 'M'.",
+      "explanation": "**From I:** P is the brother of Q's father, which is precisely what an uncle is — a definite **yes**. Sufficient.\n\n**From II:** it places L and R as Q's siblings (children of M) but never mentions P, so the question stays open. Not sufficient.",
+      "source": "AP ICET 2025 7th May 2025 Shift 2",
+      "source_year": 2025,
+      "options": [
+        {
+          "label": "Statement I alone is sufficient to answer the question.",
+          "is_correct": true
+        },
+        {
+          "label": "Statement II alone is sufficient to answer the question.",
+          "is_correct": false
+        },
+        {
+          "label": "Statements I and II together are sufficient to answer the question, but neither statement alone is sufficient.",
+          "is_correct": false
+        },
+        {
+          "label": "Statements I and II together are not sufficient to answer the question and additional data is required.",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Data Sufficiency (Reasoning)",
+      "kind": "data_sufficiency",
+      "difficulty": "easy",
+      "answer_type": "single",
+      "stem": "How much money does Alice have?\n\n**I.** Alice has ₹50/- more than Bob.\n\n**II.** Alice and Bob together have ₹200/-.",
+      "explanation": "**From I:** $A = B + 50$ — one equation, two unknowns. Not sufficient.\n\n**From II:** $A + B = 200$ — again two unknowns. Not sufficient.\n\n**Together:** substituting,\n$$(B + 50) + B = 200 \\Rightarrow B = 75, \\quad A = ₹125.$$\nBoth statements are needed, and neither works alone.",
+      "source": "AP ICET 2025 7th May 2025 Shift 2",
+      "source_year": 2025,
+      "options": [
+        {
+          "label": "Statement I alone is sufficient to answer the question.",
+          "is_correct": false
+        },
+        {
+          "label": "Statement II alone is sufficient to answer the question.",
+          "is_correct": false
+        },
+        {
+          "label": "Statements I and II together are sufficient to answer the question, but neither statement alone is sufficient.",
+          "is_correct": true
+        },
+        {
+          "label": "Statements I and II together are not sufficient to answer the question and additional data is required.",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Data Sufficiency (Reasoning)",
+      "kind": "data_sufficiency",
+      "difficulty": "hard",
+      "answer_type": "single",
+      "stem": "Is Hari the topper in exam?\n\n**I.** 15 students are in between Hari and Chinu.\n\n**II.** Chinu is last in the exam.",
+      "explanation": "**From I:** a gap of 15 places between two students says nothing about who is first. Not sufficient.\n\n**From II:** knowing Chinu is last says nothing about Hari. Not sufficient.\n\n**Together:** Chinu is last and 15 students lie between them, so Hari is **17th from the bottom**. Whether that is also first depends on the class size, which is never given — with 17 students Hari is the topper, with 30 he is not. Not sufficient even together.",
+      "source": "AP ICET 2025 7th May 2025 Shift 2",
+      "source_year": 2025,
+      "options": [
+        {
+          "label": "Statement I alone is sufficient to answer the question.",
+          "is_correct": false
+        },
+        {
+          "label": "Statement II alone is sufficient to answer the question.",
+          "is_correct": false
+        },
+        {
+          "label": "Statements I and II together are sufficient to answer the question, but neither statement alone is sufficient.",
+          "is_correct": false
+        },
+        {
+          "label": "Statements I and II together are not sufficient to answer the question and additional data is required.",
+          "is_correct": true
+        }
+      ]
+    },
+    {
+      "chapter": "Data Sufficiency (Reasoning)",
+      "kind": "data_sufficiency",
+      "difficulty": "hard",
+      "answer_type": "single",
+      "stem": "On which day of the week is Adi's birthday?\n\n**I.** The birthday is not on any day whose name starts with 'T' or 'S'.\n\n**II.** Saurabh's birthday is in the same week on Wednesday, after Adi's birthday.",
+      "explanation": "**From I:** ruling out Tuesday, Thursday, Saturday and Sunday leaves **Monday, Wednesday or Friday** — three possibilities. Not sufficient.\n\n**From II:** Adi's birthday falls earlier in the same week than Wednesday, i.e. Monday or Tuesday. Not sufficient.\n\n**Together:** intersecting $\\{$Mon, Wed, Fri$\\}$ with $\\{$Mon, Tue$\\}$ leaves only **Monday**. Both statements are needed.",
+      "source": "AP ICET 2025 7th May 2025 Shift 2",
+      "source_year": 2025,
+      "options": [
+        {
+          "label": "Statement I alone is sufficient to answer the question.",
+          "is_correct": false
+        },
+        {
+          "label": "Statement II alone is sufficient to answer the question.",
+          "is_correct": false
+        },
+        {
+          "label": "Statements I and II together are sufficient to answer the question, but neither statement alone is sufficient.",
+          "is_correct": true
+        },
+        {
+          "label": "Statements I and II together are not sufficient to answer the question and additional data is required.",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Data Sufficiency (Reasoning)",
+      "kind": "data_sufficiency",
+      "difficulty": "medium",
+      "answer_type": "single",
+      "stem": "There is a circular path around a circular garden. What is the width of the path?\n\n**I.** The radius of the circular garden is 20 metres.\n\n**II.** The circumference of the circular garden is 125 metres and the radius of the circular path around it is 25 metres.",
+      "explanation": "The width is the difference between the outer and inner radii, so **both** are needed.\n\n**From I:** only the garden's radius. Not sufficient.\n\n**From II:** the circumference gives the inner radius,\n$$r = \\frac{125}{2\\pi} \\approx 19.9 \\text{ m},$$\nand the outer radius is given as 25 m, so the width is about $25 - 19.9 = 5.1$ m. Statement II alone is sufficient.",
+      "source": "AP ICET 2025 7th May 2025 Shift 2",
+      "source_year": 2025,
+      "options": [
+        {
+          "label": "Statement I alone is sufficient to answer the question.",
+          "is_correct": false
+        },
+        {
+          "label": "Statement II alone is sufficient to answer the question.",
+          "is_correct": true
+        },
+        {
+          "label": "Statements I and II together are sufficient to answer the question, but neither statement alone is sufficient.",
+          "is_correct": false
+        },
+        {
+          "label": "Statements I and II together are not sufficient to answer the question and additional data is required.",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Data Sufficiency (Reasoning)",
+      "kind": "data_sufficiency",
+      "difficulty": "very_hard",
+      "answer_type": "single",
+      "stem": "ABCD is a quadrilateral in which the diagonal BD makes an angle of $45^\\circ$ with AB (that is, $\\angle DBA = 45^\\circ$), with A and B at the base, D above A and C to the right of D. What is the length of CD?\n\n**I.** The length of AB is 10 cm and BC is 16 cm.\n\n**II.** BC is perpendicular to BD, and AD is perpendicular to AB.",
+      "explanation": "**From I:** two side lengths without any angle at the corners leave D and C free to move. Not sufficient.\n\n**From II:** the right angles fix the shape but give no size at all. Not sufficient.\n\n**Together:** in $\\triangle ABD$, the right angle at A plus $\\angle DBA = 45^\\circ$ makes it isosceles, so\n$$AD = AB = 10 \\Rightarrow BD = 10\\sqrt2.$$\nThen $\\triangle DBC$ is right-angled at B, so\n$$CD = \\sqrt{BD^2 + BC^2} = \\sqrt{200 + 256} = \\sqrt{456} \\approx 21.4 \\text{ cm}.$$\nBoth statements are needed.",
+      "source": "AP ICET 2025 7th May 2025 Shift 2",
+      "source_year": 2025,
+      "options": [
+        {
+          "label": "Statement I alone is sufficient to answer the question.",
+          "is_correct": false
+        },
+        {
+          "label": "Statement II alone is sufficient to answer the question.",
+          "is_correct": false
+        },
+        {
+          "label": "Statements I and II together are sufficient to answer the question, but neither statement alone is sufficient.",
+          "is_correct": true
+        },
+        {
+          "label": "Statements I and II together are not sufficient to answer the question and additional data is required.",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Data Sufficiency (Reasoning)",
+      "kind": "data_sufficiency",
+      "difficulty": "hard",
+      "answer_type": "single",
+      "stem": "Which weekday is the last day of 1996?\n\n**I.** The year has 53 Mondays and 53 Tuesdays.\n\n**II.** 1996 is a leap year.",
+      "explanation": "**From I:** only a **leap** year (366 days = 52 weeks + 2 days) can have 53 of two different weekdays, and those two must be the **first two days** of the year. So 1 January was a Monday and 2 January a Tuesday — which puts 31 December, the 366th day, on the second of those weekdays, a **Tuesday**. Sufficient.\n\n**From II:** knowing only that it is a leap year leaves all seven starting weekdays possible. Not sufficient.",
+      "source": "AP ICET 2025 7th May 2025 Shift 2",
+      "source_year": 2025,
+      "options": [
+        {
+          "label": "Statement I alone is sufficient to answer the question.",
+          "is_correct": true
+        },
+        {
+          "label": "Statement II alone is sufficient to answer the question.",
+          "is_correct": false
+        },
+        {
+          "label": "Statements I and II together are sufficient to answer the question, but neither statement alone is sufficient.",
+          "is_correct": false
+        },
+        {
+          "label": "Statements I and II together are not sufficient to answer the question and additional data is required.",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Number & Alphabet Series",
+      "difficulty": "easy",
+      "answer_type": "single",
+      "stem": "Which of the following is an arithmetic sequence?",
+      "explanation": "An arithmetic sequence adds the **same** amount each step.\n\n- $3, 5, 7, 9, 11$ — a constant difference of $+2$ ✓\n- $1, 4, 9, 16, 25$ are the squares; the gaps grow $3, 5, 7, 9$.\n- $2, 4, 8, 16, 32$ and $1, 2, 4, 8, 16$ are **geometric** — each term doubles.",
+      "source": "AP ICET 2025 7th May 2025 Shift 2",
+      "source_year": 2025,
+      "options": [
+        {
+          "label": "1, 4, 9, 16, 25",
+          "is_correct": false
+        },
+        {
+          "label": "3, 5, 7, 9, 11",
+          "is_correct": true
+        },
+        {
+          "label": "2, 4, 8, 16, 32",
+          "is_correct": false
+        },
+        {
+          "label": "1, 2, 4, 8, 16",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Number & Alphabet Series",
+      "difficulty": "easy",
+      "answer_type": "single",
+      "stem": "Find the $15^{\\text{th}}$ term of the Fibonacci series if the $13^{\\text{th}}$ and $14^{\\text{th}}$ terms are 144 and 233 respectively.",
+      "explanation": "In a Fibonacci series each term is the sum of the two before it:\n$$t_{15} = t_{13} + t_{14} = 144 + 233 = \\mathbf{377}.$$",
+      "source": "AP ICET 2025 7th May 2025 Shift 2",
+      "source_year": 2025,
+      "options": [
+        {
+          "label": "377",
+          "is_correct": true
+        },
+        {
+          "label": "389",
+          "is_correct": false
+        },
+        {
+          "label": "261",
+          "is_correct": false
+        },
+        {
+          "label": "260",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Number & Alphabet Series",
+      "difficulty": "easy",
+      "answer_type": "single",
+      "stem": "If the 1st term of a G.P. is 2 and the 3rd term is 8, find the common ratio.",
+      "explanation": "In a GP, $t_3 = ar^2$:\n$$2r^2 = 8 \\Rightarrow r^2 = 4 \\Rightarrow r = \\mathbf{2}$$\ntaking the positive ratio, which is the one offered.\n\n*(The series is 2, 4, 8, 16, … ✓)*",
+      "source": "AP ICET 2025 7th May 2025 Shift 2",
+      "source_year": 2025,
+      "options": [
+        {
+          "label": "2",
+          "is_correct": true
+        },
+        {
+          "label": "3",
+          "is_correct": false
+        },
+        {
+          "label": "4",
+          "is_correct": false
+        },
+        {
+          "label": "5",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Number & Alphabet Series",
+      "difficulty": "medium",
+      "answer_type": "single",
+      "stem": "How many 6's are there in the following sequence which are either immediately followed by '6' or immediately preceded by '6'?\n\n$$5\\;6\\;1\\;2\\;6\\;6\\;3\\;7\\;9\\;4\\;6\\;3\\;1\\;0\\;6\\;6\\;8\\;4$$",
+      "explanation": "Find every 6 and check its immediate neighbours.\n\n| position of 6 | neighbours | counts? |\n| --- | --- | --- |\n| 2nd digit | 5, 1 | no |\n| 5th | 2, **6** | ✓ |\n| 6th | **6**, 3 | ✓ |\n| 11th | 4, 3 | no |\n| 15th | 0, **6** | ✓ |\n| 16th | **6**, 8 | ✓ |\n\nThe two adjacent pairs `66` contribute two 6's each, so the answer is **four**.",
+      "source": "AP ICET 2025 7th May 2025 Shift 2",
+      "source_year": 2025,
+      "options": [
+        {
+          "label": "Five",
+          "is_correct": false
+        },
+        {
+          "label": "Four",
+          "is_correct": true
+        },
+        {
+          "label": "Six",
+          "is_correct": false
+        },
+        {
+          "label": "Two",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Number & Alphabet Series",
+      "difficulty": "hard",
+      "answer_type": "single",
+      "stem": "Find the missing term in the following series:\n\n$$1K1, \\; 1M3, \\; 1Q7, \\; \\underline{\\qquad}, \\; 2W3$$",
+      "explanation": "Read each term as a **number with its letter inserted in the middle**:\n$$1K1 \\to 11, \\quad 1M3 \\to 13, \\quad 1Q7 \\to 17, \\quad 2W3 \\to 23.$$\n\nThose are the consecutive primes 11, 13, 17, ?, 23 — so the missing number is **19**.\n\nThe letter is the one at that alphabet position, and the check holds throughout:\n$$K = 11, \\; M = 13, \\; Q = 17, \\; W = 23 \\;\\checkmark$$\n\nSo the missing term is $1\\,\\mathbf{S}\\,9$, with $S = 19$.",
+      "source": "AP ICET 2025 7th May 2025 Shift 2",
+      "source_year": 2025,
+      "options": [
+        {
+          "label": "1S9",
+          "is_correct": true
+        },
+        {
+          "label": "2U0",
+          "is_correct": false
+        },
+        {
+          "label": "2T1",
+          "is_correct": false
+        },
+        {
+          "label": "1R7",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Classification (Odd One Out)",
+      "difficulty": "easy",
+      "answer_type": "single",
+      "stem": "Find odd thing from the following: Platelets, Red blood cells, Nerve cells, White blood cells",
+      "explanation": "**Platelets**, **red blood cells** and **white blood cells** are all components of **blood**.\n\n**Nerve cells** (neurons) belong to the nervous system, not the blood — the odd one out.",
+      "source": "AP ICET 2025 7th May 2025 Shift 2",
+      "source_year": 2025,
+      "options": [
+        {
+          "label": "Platelets",
+          "is_correct": false
+        },
+        {
+          "label": "Red blood cells",
+          "is_correct": false
+        },
+        {
+          "label": "Nerve cells",
+          "is_correct": true
+        },
+        {
+          "label": "White blood cells",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Classification (Odd One Out)",
+      "difficulty": "easy",
+      "answer_type": "single",
+      "stem": "Find odd thing from the following: Joey, Fawn, Hen, Foal",
+      "explanation": "A **joey** is a young kangaroo, a **fawn** a young deer and a **foal** a young horse — all names for the **young** of an animal.\n\nA **hen** is an **adult** female bird; the young would be a chick.",
+      "source": "AP ICET 2025 7th May 2025 Shift 2",
+      "source_year": 2025,
+      "options": [
+        {
+          "label": "Joey",
+          "is_correct": false
+        },
+        {
+          "label": "Fawn",
+          "is_correct": false
+        },
+        {
+          "label": "Hen",
+          "is_correct": true
+        },
+        {
+          "label": "Foal",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Classification (Odd One Out)",
+      "difficulty": "easy",
+      "answer_type": "single",
+      "stem": "Find odd thing from the following: Ears, Skin, Tongue, Heart",
+      "explanation": "**Ears**, **skin** and **tongue** are sense organs — hearing, touch and taste.\n\nThe **heart** is an internal organ that pumps blood; it carries no sense.",
+      "source": "AP ICET 2025 7th May 2025 Shift 2",
+      "source_year": 2025,
+      "options": [
+        {
+          "label": "Ears",
+          "is_correct": false
+        },
+        {
+          "label": "Skin",
+          "is_correct": false
+        },
+        {
+          "label": "Tongue",
+          "is_correct": false
+        },
+        {
+          "label": "Heart",
+          "is_correct": true
+        }
+      ]
+    },
+    {
+      "chapter": "Classification (Odd One Out)",
+      "difficulty": "easy",
+      "answer_type": "single",
+      "stem": "Find odd thing from the following: Shark, Whale, Dolphin, Seal",
+      "explanation": "**Whales**, **dolphins** and **seals** are marine **mammals** — warm-blooded, breathing air through lungs and suckling their young.\n\nA **shark** is a **fish**: cold-blooded, breathing through gills.",
+      "source": "AP ICET 2025 7th May 2025 Shift 2",
+      "source_year": 2025,
+      "options": [
+        {
+          "label": "Shark",
+          "is_correct": true
+        },
+        {
+          "label": "Whale",
+          "is_correct": false
+        },
+        {
+          "label": "Dolphin",
+          "is_correct": false
+        },
+        {
+          "label": "Seal",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Classification (Odd One Out)",
+      "difficulty": "easy",
+      "answer_type": "single",
+      "stem": "Find odd thing from the following: Fire fox, Chrome, Photoshop, Safari",
+      "explanation": "**Firefox**, **Chrome** and **Safari** are web **browsers**.\n\n**Photoshop** is image-editing software — a different kind of application altogether.",
+      "source": "AP ICET 2025 7th May 2025 Shift 2",
+      "source_year": 2025,
+      "options": [
+        {
+          "label": "Fire fox",
+          "is_correct": false
+        },
+        {
+          "label": "Chrome",
+          "is_correct": false
+        },
+        {
+          "label": "Photoshop",
+          "is_correct": true
+        },
+        {
+          "label": "Safari",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Classification (Odd One Out)",
+      "difficulty": "medium",
+      "answer_type": "single",
+      "stem": "Find odd thing from the following: 8 : 276, 9 : 324, 12 : 576, 5 : 100",
+      "explanation": "In each pair the second number should be **four times the square** of the first:\n$$9 \\to 4(81) = 324 \\;\\checkmark \\qquad 12 \\to 4(144) = 576 \\;\\checkmark \\qquad 5 \\to 4(25) = 100 \\;\\checkmark$$\n\nFor 8 that would be\n$$4(64) = 256,$$\nbut the pair prints **276** — the odd one out.\n\n*(Equivalently, the second number is $(2n)^2$: $18^2, 24^2, 10^2$ — and 276 is not a perfect square at all.)*",
+      "source": "AP ICET 2025 7th May 2025 Shift 2",
+      "source_year": 2025,
+      "options": [
+        {
+          "label": "8 : 276",
+          "is_correct": true
+        },
+        {
+          "label": "9 : 324",
+          "is_correct": false
+        },
+        {
+          "label": "12 : 576",
+          "is_correct": false
+        },
+        {
+          "label": "5 : 100",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Classification (Odd One Out)",
+      "difficulty": "hard",
+      "answer_type": "single",
+      "stem": "Find odd thing from the following: BFU, KOL, TXD, IMN",
+      "explanation": "In every group the second letter is **four places after** the first:\n$$B \\to F, \\quad K \\to O, \\quad T \\to X, \\quad I \\to M \\;\\checkmark$$\nso that is not what separates them.\n\nLook at the letters themselves: **BFU** contains the vowel U, **KOL** contains O, **IMN** contains I — but **TXD** has **no vowel** at all.",
+      "source": "AP ICET 2025 7th May 2025 Shift 2",
+      "source_year": 2025,
+      "options": [
+        {
+          "label": "BFU",
+          "is_correct": false
+        },
+        {
+          "label": "KOL",
+          "is_correct": false
+        },
+        {
+          "label": "TXD",
+          "is_correct": true
+        },
+        {
+          "label": "IMN",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Classification (Odd One Out)",
+      "difficulty": "very_hard",
+      "answer_type": "single",
+      "stem": "Find odd thing from the following: ASTRO-AOTSR, THRIVE-EIVRTH, GROUP-OURPG, APICET-AEITPC",
+      "explanation": "The rule is: write the **vowels first, in the order they appear**, then the **consonants in reverse alphabetical order**.\n\n| word | vowels | consonants (descending) | result |\n| --- | --- | --- | --- |\n| ASTRO | A, O | T, S, R | AOTSR ✓ |\n| GROUP | O, U | R, P, G | OURPG ✓ |\n| APICET | A, I, E | T, P, C | AEITPC ✓ |\n| THRIVE | I, E | V, T, R, H | **IEVTRH** |\n\nTHRIVE should therefore give IEVTRH, but it is printed as **EIVRTH** — the odd one out.",
+      "source": "AP ICET 2025 7th May 2025 Shift 2",
+      "source_year": 2025,
+      "options": [
+        {
+          "label": "ASTRO-AOTSR",
+          "is_correct": false
+        },
+        {
+          "label": "THRIVE-EIVRTH",
+          "is_correct": true
+        },
+        {
+          "label": "GROUP-OURPG",
+          "is_correct": false
+        },
+        {
+          "label": "APICET-AEITPC",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Analogy",
+      "difficulty": "medium",
+      "answer_type": "single",
+      "stem": "Find the missing term in the following series:\n$$8 : 514 :: 11 : \\underline{\\qquad}$$",
+      "explanation": "Cube the number and add 2:\n$$8^3 + 2 = 512 + 2 = 514 \\;\\checkmark$$\n\nApplying the same rule:\n$$11^3 + 2 = 1331 + 2 = \\mathbf{1333}.$$",
+      "source": "AP ICET 2025 7th May 2025 Shift 2",
+      "source_year": 2025,
+      "options": [
+        {
+          "label": "1333",
+          "is_correct": true
+        },
+        {
+          "label": "1002",
+          "is_correct": false
+        },
+        {
+          "label": "731",
+          "is_correct": false
+        },
+        {
+          "label": "1225",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Analogy",
+      "difficulty": "hard",
+      "answer_type": "single",
+      "stem": "Find the missing term in the following series:\n$$\\text{RISE} : \\text{NLQF} :: \\text{GOAL} : \\underline{\\qquad}$$",
+      "explanation": "Compare RISE with NLQF letter by letter:\n$$R(18) \\to N(14): -4, \\quad I(9) \\to L(12): +3, \\quad S(19) \\to Q(17): -2, \\quad E(5) \\to F(6): +1.$$\n\nThe shifts are $-4, +3, -2, +1$. Apply them to GOAL:\n$$G(7) - 4 = 3 = C, \\quad O(15) + 3 = 18 = R, \\quad A(1) - 2 \\equiv 25 = Y, \\quad L(12) + 1 = 13 = M.$$\n\nThe answer is **CRYM** (note the wrap-around: A back two letters gives Y).",
+      "source": "AP ICET 2025 7th May 2025 Shift 2",
+      "source_year": 2025,
+      "options": [
+        {
+          "label": "CRAM",
+          "is_correct": false
+        },
+        {
+          "label": "CRYM",
+          "is_correct": true
+        },
+        {
+          "label": "KLCK",
+          "is_correct": false
+        },
+        {
+          "label": "KLBM",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Analogy",
+      "difficulty": "medium",
+      "answer_type": "single",
+      "stem": "Find the missing term in the following series:\n$$6F : 18R :: 8H : \\underline{\\qquad}$$",
+      "explanation": "Both parts are multiplied by **3**:\n$$6 \\times 3 = 18, \\qquad F(6) \\times 3 = 18 = R \\;\\checkmark$$\n\nNotice the letter always matches the number — F is the 6th letter, R the 18th.\n\nFor 8H:\n$$8 \\times 3 = 24, \\qquad H(8) \\times 3 = 24 = X,$$\ngiving **24X**.",
+      "source": "AP ICET 2025 7th May 2025 Shift 2",
+      "source_year": 2025,
+      "options": [
+        {
+          "label": "21T",
+          "is_correct": false
+        },
+        {
+          "label": "22V",
+          "is_correct": false
+        },
+        {
+          "label": "22S",
+          "is_correct": false
+        },
+        {
+          "label": "24X",
+          "is_correct": true
+        }
+      ]
+    },
+    {
+      "chapter": "Classification (Odd One Out)",
+      "difficulty": "easy",
+      "answer_type": "single",
+      "stem": "Find the odd one out: Mercury, Venus, Earth, Moon",
+      "explanation": "**Mercury**, **Venus** and **Earth** are **planets**, orbiting the Sun.\n\nThe **Moon** is a natural **satellite** — it orbits the Earth, not the Sun.",
+      "source": "AP ICET 2025 7th May 2025 Shift 2",
+      "source_year": 2025,
+      "options": [
+        {
+          "label": "Mercury",
+          "is_correct": false
+        },
+        {
+          "label": "Venus",
+          "is_correct": false
+        },
+        {
+          "label": "Earth",
+          "is_correct": false
+        },
+        {
+          "label": "Moon",
+          "is_correct": true
+        }
+      ]
+    },
+    {
+      "chapter": "Number & Alphabet Series",
+      "difficulty": "medium",
+      "answer_type": "single",
+      "stem": "What is the sum of the following series?\n$$-64, \\; -66, \\; -68, \\; \\ldots, \\; -100$$",
+      "explanation": "Ignore the signs first: 64, 66, 68, …, 100 is an AP with $d = 2$.\n\n**Number of terms:**\n$$n = \\frac{100 - 64}{2} + 1 = 19.$$\n\n**Sum:**\n$$S = \\frac{n}{2}(\\text{first} + \\text{last}) = \\frac{19}{2}(64 + 100) = 19 \\times 82 = 1558.$$\n\nEvery term is negative, so the sum is $\\mathbf{-1558}$.",
+      "source": "AP ICET 2025 7th May 2025 Shift 2",
+      "source_year": 2025,
+      "options": [
+        {
+          "label": "$-1458$",
+          "is_correct": false
+        },
+        {
+          "label": "$-1558$",
+          "is_correct": true
+        },
+        {
+          "label": "$-1568$",
+          "is_correct": false
+        },
+        {
+          "label": "$-1664$",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Analogy",
+      "difficulty": "easy",
+      "answer_type": "single",
+      "stem": "Find the missing term in the following series:\n$$\\text{LXM} : 12\\text{ X }13 :: \\text{UXW} : ?$$",
+      "explanation": "Each **letter** is replaced by its position in the alphabet, and the X in the middle is left as it is:\n$$L = 12, \\qquad M = 13 \\;\\checkmark$$\n\nApplying the same to UXW:\n$$U = 21, \\qquad W = 23,$$\ngiving **21 X 23**.",
+      "source": "AP ICET 2025 7th May 2025 Shift 2",
+      "source_year": 2025,
+      "options": [
+        {
+          "label": "21 X 31",
+          "is_correct": false
+        },
+        {
+          "label": "21 X 22",
+          "is_correct": false
+        },
+        {
+          "label": "21 X 25",
+          "is_correct": false
+        },
+        {
+          "label": "21 X 23",
+          "is_correct": true
+        }
+      ]
+    },
+    {
+      "chapter": "Classification (Odd One Out)",
+      "difficulty": "easy",
+      "answer_type": "single",
+      "stem": "Find the odd one out from the following series:\n$$8, \\; 27, \\; 64, \\; 100, \\; 125, \\; 216, \\; 343$$",
+      "explanation": "All but one are **perfect cubes**:\n$$2^3 = 8, \\quad 3^3 = 27, \\quad 4^3 = 64, \\quad 5^3 = 125, \\quad 6^3 = 216, \\quad 7^3 = 343.$$\n\n**100** is a perfect *square* ($10^2$) but not a cube — the odd one out.",
+      "source": "AP ICET 2025 7th May 2025 Shift 2",
+      "source_year": 2025,
+      "options": [
+        {
+          "label": "27",
+          "is_correct": false
+        },
+        {
+          "label": "100",
+          "is_correct": true
+        },
+        {
+          "label": "125",
+          "is_correct": false
+        },
+        {
+          "label": "343",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Number & Alphabet Series",
+      "difficulty": "very_hard",
+      "answer_type": "single",
+      "stem": "Find the missing number in the following number series:\n$$12, \\; 13, \\; 24, \\; 75, \\; 296, \\; ?$$",
+      "explanation": "Each step multiplies by the next integer and then adds or subtracts that same integer, with the sign alternating:\n$$12 \\times 1 + 1 = 13$$\n$$13 \\times 2 - 2 = 24$$\n$$24 \\times 3 + 3 = 75$$\n$$75 \\times 4 - 4 = 296$$\n\nThe next step uses 5 with a **plus**:\n$$296 \\times 5 + 5 = \\mathbf{1485}.$$",
+      "source": "AP ICET 2025 7th May 2025 Shift 2",
+      "source_year": 2025,
+      "options": [
+        {
+          "label": "1525",
+          "is_correct": false
+        },
+        {
+          "label": "1575",
+          "is_correct": false
+        },
+        {
+          "label": "1425",
+          "is_correct": false
+        },
+        {
+          "label": "1485",
+          "is_correct": true
+        }
+      ]
+    },
+    {
+      "chapter": "Number & Alphabet Series",
+      "difficulty": "easy",
+      "answer_type": "single",
+      "stem": "Find the missing number in the following number series:\n$$13, \\; 39, \\; 117, \\; ?, \\; 1053, \\; 3159$$",
+      "explanation": "Each term is **three times** the one before:\n$$13 \\times 3 = 39, \\quad 39 \\times 3 = 117, \\quad 117 \\times 3 = \\mathbf{351}, \\quad 351 \\times 3 = 1053, \\quad 1053 \\times 3 = 3159 \\;\\checkmark$$",
+      "source": "AP ICET 2025 7th May 2025 Shift 2",
+      "source_year": 2025,
+      "options": [
+        {
+          "label": "329",
+          "is_correct": false
+        },
+        {
+          "label": "347",
+          "is_correct": false
+        },
+        {
+          "label": "351",
+          "is_correct": true
+        },
+        {
+          "label": "364",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Classification (Odd One Out)",
+      "difficulty": "medium",
+      "answer_type": "single",
+      "stem": "Find the odd number in the following number series:\n$$28, \\; 44, \\; 64, \\; 90, \\; 116$$",
+      "explanation": "The gaps should grow by 4 each time:\n$$28 \\xrightarrow{+16} 44 \\xrightarrow{+20} 64 \\xrightarrow{+24} \\mathbf{88} \\xrightarrow{+28} 116.$$\n\nThat makes the fourth term **88**, but the series prints **90** — the odd one out. *(As printed the gaps run 16, 20, 26, 26, which breaks the pattern twice over.)*",
+      "source": "AP ICET 2025 7th May 2025 Shift 2",
+      "source_year": 2025,
+      "options": [
+        {
+          "label": "90",
+          "is_correct": true
+        },
+        {
+          "label": "116",
+          "is_correct": false
+        },
+        {
+          "label": "28",
+          "is_correct": false
+        },
+        {
+          "label": "64",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Coding-Decoding",
+      "difficulty": "hard",
+      "answer_type": "single",
+      "stem": "If in the English alphabets, every alternate letter from B onwards is written in small letters while others are written in capitals, then how will the 3rd day from Tuesday be coded?",
+      "explanation": "**Which letters are small?** Starting at B and taking every alternate letter:\n$$b, d, f, h, j, l, n, p, r, t, v, x, z$$\nAll the others (A, C, E, G, I, K, …) stay capital.\n\n**Which day?** The 3rd day from Tuesday is Wednesday (1st), Thursday (2nd), **Friday** (3rd).\n\n**Now code FRIDAY letter by letter:**\n\n| letter | F | R | I | D | A | Y |\n| --- | --- | --- | --- | --- | --- | --- |\n| case | small | small | capital | small | capital | capital |\n\nThe answer is **frIdAY**.",
+      "source": "AP ICET 2025 7th May 2025 Shift 2",
+      "source_year": 2025,
+      "options": [
+        {
+          "label": "WeDNeSdAY",
+          "is_correct": false
+        },
+        {
+          "label": "FrIdAy",
+          "is_correct": false
+        },
+        {
+          "label": "THURSdAY",
+          "is_correct": false
+        },
+        {
+          "label": "frIdAY",
+          "is_correct": true
+        }
+      ]
+    },
+    {
+      "chapter": "Coding-Decoding",
+      "difficulty": "medium",
+      "answer_type": "single",
+      "stem": "In a certain code 'CERTAIN' is coded as 'BFQUZJM'. How is 'MUNDANE' coded in that code?",
+      "explanation": "Compare the letters position by position:\n$$C \\to B\\,(-1), \\; E \\to F\\,(+1), \\; R \\to Q\\,(-1), \\; T \\to U\\,(+1), \\; A \\to Z\\,(-1), \\; I \\to J\\,(+1), \\; N \\to M\\,(-1)$$\n\nThe shifts alternate $-1, +1$. Apply the same to MUNDANE:\n$$M \\to L, \\; U \\to V, \\; N \\to M, \\; D \\to E, \\; A \\to Z, \\; N \\to O, \\; E \\to D$$\n\nThe code is **LVMEZOD** (note A wraps back to Z).",
+      "source": "AP ICET 2025 7th May 2025 Shift 2",
+      "source_year": 2025,
+      "options": [
+        {
+          "label": "LVMEZOD",
+          "is_correct": true
+        },
+        {
+          "label": "NTCOMBF",
+          "is_correct": false
+        },
+        {
+          "label": "NTOCNBF",
+          "is_correct": false
+        },
+        {
+          "label": "LTMCZOF",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Coding-Decoding",
+      "difficulty": "medium",
+      "answer_type": "single",
+      "stem": "If the letters of the word 'CYCLINDER' are arranged alphabetically, then which letter would be farthest from the first letter of word?",
+      "explanation": "The word's **first letter is C**.\n\nSorting its letters alphabetically:\n$$C, C, D, E, I, L, N, R, Y.$$\n\nThe letter standing farthest from C — both at the end of the sorted list and in alphabet distance ($Y = 25$, $C = 3$, a gap of 22) — is **Y**.",
+      "source": "AP ICET 2025 7th May 2025 Shift 2",
+      "source_year": 2025,
+      "options": [
+        {
+          "label": "N",
+          "is_correct": false
+        },
+        {
+          "label": "E",
+          "is_correct": false
+        },
+        {
+          "label": "Y",
+          "is_correct": true
+        },
+        {
+          "label": "R",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Coding-Decoding",
+      "difficulty": "medium",
+      "answer_type": "single",
+      "stem": "In certain code 'HILTON' is written as 'IHTLNO'. How is 'BILLION' written in that code?",
+      "explanation": "The letters are not changed — they are **swapped in adjacent pairs**:\n$$\\underbrace{HI}_{\\to IH}\\;\\underbrace{LT}_{\\to TL}\\;\\underbrace{ON}_{\\to NO} \\;\\Rightarrow\\; IHTLNO \\;\\checkmark$$\n\nBILLION has **seven** letters, so the last one has no partner and stays put:\n$$\\underbrace{BI}_{\\to IB}\\;\\underbrace{LL}_{\\to LL}\\;\\underbrace{IO}_{\\to OI}\\;N$$\n\nThe code is **IBLLOIN**.",
+      "source": "AP ICET 2025 7th May 2025 Shift 2",
+      "source_year": 2025,
+      "options": [
+        {
+          "label": "IBLLION",
+          "is_correct": false
+        },
+        {
+          "label": "IBOILLN",
+          "is_correct": false
+        },
+        {
+          "label": "IBLLOIN",
+          "is_correct": true
+        },
+        {
+          "label": "IBLOILN",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Coding-Decoding",
+      "difficulty": "hard",
+      "answer_type": "single",
+      "stem": "If PHONE : 63 and COIR : 49, then BAT : ?",
+      "explanation": "Add the alphabet positions, then add the **number of letters**.\n\n**PHONE:** $16+8+15+14+5 = 58$, plus 5 letters $= 63$ ✓\n**COIR:** $3+15+9+18 = 45$, plus 4 letters $= 49$ ✓\n\n**BAT:** $2+1+20 = 23$, plus 3 letters\n$$= \\mathbf{26}.$$",
+      "source": "AP ICET 2025 7th May 2025 Shift 2",
+      "source_year": 2025,
+      "options": [
+        {
+          "label": "26",
+          "is_correct": true
+        },
+        {
+          "label": "36",
+          "is_correct": false
+        },
+        {
+          "label": "46",
+          "is_correct": false
+        },
+        {
+          "label": "27",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Coding-Decoding",
+      "difficulty": "medium",
+      "answer_type": "single",
+      "stem": "In a certain code language, if each vowel of English alphabet is coded as 9 and each of the consonants is coded as 6, then what is the code for the word \"CLAIRVOYANCE\"?",
+      "explanation": "Go through CLAIRVOYANCE one letter at a time, coding the vowels A, E, I, O, U as **9** and every other letter as **6**:\n\n| C | L | A | I | R | V | O | Y | A | N | C | E |\n| --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |\n| 6 | 6 | 9 | 9 | 6 | 6 | 9 | 6 | 9 | 6 | 6 | 9 |\n\nSo the code is **669966969669**.\n\n*(Y counts as a **consonant** here — treating it as a vowel would change the 8th digit and give a different string.)*",
+      "source": "AP ICET 2025 7th May 2025 Shift 2",
+      "source_year": 2025,
+      "options": [
+        {
+          "label": "996966996969",
+          "is_correct": false
+        },
+        {
+          "label": "669696696696",
+          "is_correct": false
+        },
+        {
+          "label": "669966969669",
+          "is_correct": true
+        },
+        {
+          "label": "996699696996",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Coding-Decoding",
+      "difficulty": "medium",
+      "answer_type": "single",
+      "stem": "If 'PAINT' is coded as '74128' and 'EXCEL' is coded as '93596', then how would you encode 'ACCEPT'?",
+      "explanation": "Read off the letter-digit pairs from the two given words:\n$$P = 7, \\; A = 4, \\; I = 1, \\; N = 2, \\; T = 8; \\qquad E = 9, \\; X = 3, \\; C = 5, \\; L = 6.$$\n\nNow spell ACCEPT:\n$$A(4) \\; C(5) \\; C(5) \\; E(9) \\; P(7) \\; T(8) = \\mathbf{455978}.$$",
+      "source": "AP ICET 2025 7th May 2025 Shift 2",
+      "source_year": 2025,
+      "options": [
+        {
+          "label": "455978",
+          "is_correct": true
+        },
+        {
+          "label": "547978",
+          "is_correct": false
+        },
+        {
+          "label": "554978",
+          "is_correct": false
+        },
+        {
+          "label": "735961",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Coding-Decoding",
+      "difficulty": "easy",
+      "answer_type": "single",
+      "stem": "If 'D' is coded as 4 and 'COVER' is coded as 63, then 'BASIS' will be coded as ____",
+      "explanation": "'D' = 4 shows that each letter is worth its **alphabet position**, and the word's code is the **sum** of those positions:\n$$COVER = 3+15+22+5+18 = 63 \\;\\checkmark$$\n\nSo\n$$BASIS = 2+1+19+9+19 = \\mathbf{50}.$$",
+      "source": "AP ICET 2025 7th May 2025 Shift 2",
+      "source_year": 2025,
+      "options": [
+        {
+          "label": "49",
+          "is_correct": false
+        },
+        {
+          "label": "50",
+          "is_correct": true
+        },
+        {
+          "label": "54",
+          "is_correct": false
+        },
+        {
+          "label": "55",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Coding-Decoding",
+      "difficulty": "easy",
+      "answer_type": "single",
+      "stem": "In a certain code, 2 is coded as P, 3 as N, 9 as Q, 5 as R, 4 as A and 6 as B. How is 599423 coded in that code?",
+      "explanation": "Substitute digit by digit using the given table:\n$$5 \\to R, \\quad 9 \\to Q, \\quad 9 \\to Q, \\quad 4 \\to A, \\quad 2 \\to P, \\quad 3 \\to N.$$\n\nThe code is **RQQAPN**.",
+      "source": "AP ICET 2025 7th May 2025 Shift 2",
+      "source_year": 2025,
+      "options": [
+        {
+          "label": "EIIDBC",
+          "is_correct": false
+        },
+        {
+          "label": "RQPANB",
+          "is_correct": false
+        },
+        {
+          "label": "EIMDBC",
+          "is_correct": false
+        },
+        {
+          "label": "RQQAPN",
+          "is_correct": true
+        }
+      ]
+    },
+    {
+      "chapter": "Clocks & Calendars",
+      "difficulty": "easy",
+      "answer_type": "single",
+      "stem": "What day of the week will it be 200 days after a Sunday?",
+      "explanation": "Only the remainder on division by 7 matters — whole weeks bring you back to the same day:\n$$200 = 7 \\times 28 + 4,$$\nso the day is **4 days after Sunday**.\n\n$$\\text{Sun} \\to \\text{Mon} \\to \\text{Tue} \\to \\text{Wed} \\to \\mathbf{Thursday}.$$",
+      "source": "AP ICET 2025 7th May 2025 Shift 2",
+      "source_year": 2025,
+      "options": [
+        {
+          "label": "Monday",
+          "is_correct": false
+        },
+        {
+          "label": "Tuesday",
+          "is_correct": false
+        },
+        {
+          "label": "Friday",
+          "is_correct": false
+        },
+        {
+          "label": "Thursday",
+          "is_correct": true
+        }
+      ]
+    },
+    {
+      "chapter": "Clocks & Calendars",
+      "difficulty": "hard",
+      "answer_type": "single",
+      "stem": "If 24th February, 2010 was Wednesday, what day of the week will be 11th October in that year?",
+      "explanation": "Count the days from 24 February to 11 October 2010 (not a leap year):\n$$\\underbrace{4}_{\\text{Feb}} + 31 + 30 + 31 + 30 + 31 + 31 + 30 + \\underbrace{11}_{\\text{Oct}} = 229.$$\n\nOnly the remainder matters:\n$$229 = 7 \\times 32 + 5,$$\nso the day is 5 places after Wednesday:\n$$\\text{Thu, Fri, Sat, Sun, } \\mathbf{Monday}.$$",
+      "source": "AP ICET 2025 7th May 2025 Shift 2",
+      "source_year": 2025,
+      "options": [
+        {
+          "label": "Friday",
+          "is_correct": false
+        },
+        {
+          "label": "Saturday",
+          "is_correct": false
+        },
+        {
+          "label": "Sunday",
+          "is_correct": false
+        },
+        {
+          "label": "Monday",
+          "is_correct": true
+        }
+      ]
+    },
+    {
+      "chapter": "Clocks & Calendars",
+      "difficulty": "medium",
+      "answer_type": "single",
+      "stem": "If the seconds hand moves by $300^\\circ$, then by how much angle does the minutes hand move in the same time?",
+      "explanation": "In one minute the **seconds** hand sweeps $360^\\circ$ while the **minutes** hand sweeps only $6^\\circ$ — a ratio of $60 : 1$.\n\n$$\\frac{300^\\circ}{60} = \\mathbf{5^\\circ}.$$\n\n*(Equivalently, $300^\\circ$ of the seconds hand is $\\frac{300}{360} = \\frac56$ of a minute, and $\\frac56 \\times 6^\\circ = 5^\\circ$.)*",
+      "source": "AP ICET 2025 7th May 2025 Shift 2",
+      "source_year": 2025,
+      "options": [
+        {
+          "label": "$5^\\circ$",
+          "is_correct": true
+        },
+        {
+          "label": "$10^\\circ$",
+          "is_correct": false
+        },
+        {
+          "label": "$6^\\circ$",
+          "is_correct": false
+        },
+        {
+          "label": "$7.2^\\circ$",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Coding-Decoding",
+      "difficulty": "medium",
+      "answer_type": "single",
+      "stem": "If $a \\wedge b = a^2 + b^3 - ab$ and $a \\vee b = a^3 + b^2 + ab$, then what is $(1 \\wedge 2) \\vee (1 \\vee 2)$?",
+      "explanation": "Evaluate the two brackets first.\n\n$$1 \\wedge 2 = 1^2 + 2^3 - (1)(2) = 1 + 8 - 2 = 7$$\n$$1 \\vee 2 = 1^3 + 2^2 + (1)(2) = 1 + 4 + 2 = 7$$\n\nNow combine them with $\\vee$:\n$$7 \\vee 7 = 7^3 + 7^2 + (7)(7) = 343 + 49 + 49 = \\mathbf{441}.$$",
+      "source": "AP ICET 2025 7th May 2025 Shift 2",
+      "source_year": 2025,
+      "options": [
+        {
+          "label": "54",
+          "is_correct": false
+        },
+        {
+          "label": "441",
+          "is_correct": true
+        },
+        {
+          "label": "247",
+          "is_correct": false
+        },
+        {
+          "label": "1429",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Blood Relations",
+      "difficulty": "hard",
+      "answer_type": "single",
+      "stem": "How is your mother's maternal aunt's only niece's father related to you?",
+      "explanation": "Unwrap the chain from the inside out.\n\n1. **Your mother's maternal aunt** — the sister of your mother's mother (your grandmother).\n2. **Her only niece** — the daughter of her sibling. Her sibling is your grandmother, so the niece is **your mother**.\n3. **That niece's father** — your mother's father.\n\nYour mother's father is your **grandfather**.",
+      "source": "AP ICET 2025 7th May 2025 Shift 2",
+      "source_year": 2025,
+      "options": [
+        {
+          "label": "Grand father",
+          "is_correct": true
+        },
+        {
+          "label": "Uncle",
+          "is_correct": false
+        },
+        {
+          "label": "Father",
+          "is_correct": false
+        },
+        {
+          "label": "cousin",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Seating Arrangement",
+      "difficulty": "easy",
+      "answer_type": "single",
+      "stem": "Five boys are sitting on a bench to be photographed. Shyam is to the left of Ravi and to the right of Sachin. Martin is to the right of Ravi. Rajiv is between Ravi and Martin.\n\nWho is sitting immediately right to Rajiv?",
+      "explanation": "Build the row from left to right.\n\n- *Shyam is right of Sachin, left of Ravi* → **Sachin, Shyam, Ravi**.\n- *Martin is right of Ravi* → Martin goes after Ravi.\n- *Rajiv is between Ravi and Martin* → he slots in between them.\n\n$$\\textbf{Sachin} \\; - \\; \\textbf{Shyam} \\; - \\; \\textbf{Ravi} \\; - \\; \\textbf{Rajiv} \\; - \\; \\textbf{Martin}$$\n\nRajiv is fourth, so the boy immediately to his right is **Martin**.",
+      "source": "AP ICET 2025 7th May 2025 Shift 2",
+      "source_year": 2025,
+      "options": [
+        {
+          "label": "Sachin",
+          "is_correct": false
+        },
+        {
+          "label": "Ravi",
+          "is_correct": false
+        },
+        {
+          "label": "Martin",
+          "is_correct": true
+        },
+        {
+          "label": "Shyam",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Seating Arrangement",
+      "difficulty": "easy",
+      "answer_type": "single",
+      "stem": "Five boys are sitting on a bench to be photographed. Shyam is to the left of Ravi and to the right of Sachin. Martin is to the right of Ravi. Rajiv is between Ravi and Martin.\n\nWho is in the middle of the photograph?",
+      "explanation": "Build the row from left to right.\n\n- *Shyam is right of Sachin, left of Ravi* → **Sachin, Shyam, Ravi**.\n- *Martin is right of Ravi* → Martin goes after Ravi.\n- *Rajiv is between Ravi and Martin* → he slots in between them.\n\n$$\\textbf{Sachin} \\; - \\; \\textbf{Shyam} \\; - \\; \\textbf{Ravi} \\; - \\; \\textbf{Rajiv} \\; - \\; \\textbf{Martin}$$\n\nWith five boys the middle is the **third** seat, which is **Ravi**.",
+      "source": "AP ICET 2025 7th May 2025 Shift 2",
+      "source_year": 2025,
+      "options": [
+        {
+          "label": "Sachin",
+          "is_correct": false
+        },
+        {
+          "label": "Ravi",
+          "is_correct": true
+        },
+        {
+          "label": "Rajiv",
+          "is_correct": false
+        },
+        {
+          "label": "Shyam",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Seating Arrangement",
+      "difficulty": "easy",
+      "answer_type": "single",
+      "stem": "Five boys are sitting on a bench to be photographed. Shyam is to the left of Ravi and to the right of Sachin. Martin is to the right of Ravi. Rajiv is between Ravi and Martin.\n\nWho is second from the right in the photograph?",
+      "explanation": "Build the row from left to right.\n\n- *Shyam is right of Sachin, left of Ravi* → **Sachin, Shyam, Ravi**.\n- *Martin is right of Ravi* → Martin goes after Ravi.\n- *Rajiv is between Ravi and Martin* → he slots in between them.\n\n$$\\textbf{Sachin} \\; - \\; \\textbf{Shyam} \\; - \\; \\textbf{Ravi} \\; - \\; \\textbf{Rajiv} \\; - \\; \\textbf{Martin}$$\n\nCounting from the right: Martin is first, so **Rajiv** is second.",
+      "source": "AP ICET 2025 7th May 2025 Shift 2",
+      "source_year": 2025,
+      "options": [
+        {
+          "label": "Martin",
+          "is_correct": false
+        },
+        {
+          "label": "Ravi",
+          "is_correct": false
+        },
+        {
+          "label": "Rajiv",
+          "is_correct": true
+        },
+        {
+          "label": "Shyam",
+          "is_correct": false
+        }
+      ]
+    }
+  ]
+}

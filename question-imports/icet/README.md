@@ -98,11 +98,35 @@ in-file `(chapter, stem)` duplicates (which the importer skips).
 Then upload at **/dashboard/assessment-questions/import**, pick the matching
 subject, dry-run, and commit. Re-running a file is safe: duplicates are skipped.
 
+## After every merge
+
+```bash
+node question-imports/icet/verify.mjs --backup
+```
+
+Two tripwires, both of which have caught real losses:
+
+1. **file counts vs `state.json.imported`** — a tracked file reverted by a git
+   operation elsewhere in the repo silently cost 15 questions once.
+2. **`imported + excluded` vs the paper's 200** — a question skipped between two
+   read batches leaves the file counts perfectly self-consistent, so only this
+   sum finds it (it found `ap-icet-2026-05-02-s1` Q160, which then turned out to
+   be defective and was excluded).
+
+`--backup` mirrors `papers/` to the gitignored `.backup/`; `--restore` copies any
+short file back.
+
 ## Progress
 
 | Paper | Key | Status |
 | --- | --- | --- |
 | tg-icet-2025-06-08-s1 | genuine | **COMPLETE** — 188 of 200 imported, 12 excluded (REVIEW.md §2) |
-| 22 other papers with a genuine key | genuine | not started |
+| ap-icet-2026-05-02-s1 | genuine | **COMPLETE** — 196 of 200 imported, 4 excluded |
+| ap-icet-2026-05-02-s2 | genuine | **COMPLETE** — 198 of 200 imported, 2 excluded |
+| tg-icet-2025-06-09-s1 | genuine | **COMPLETE** — 189 of 200 imported, 11 excluded |
+| tg-icet-2025-06-08-s2 | genuine | **COMPLETE** — 192 of 200 imported, 8 excluded |
+| ap-icet-2025-05-07-s2 | genuine | **COMPLETE** — 191 of 200 imported, 9 excluded |
+| ap-icet-2025-05-07-s1 | genuine | **COMPLETE** — 193 of 200 imported, 7 excluded |
+| 16 other papers with a genuine key | genuine | not started |
 | ap-icet-2020-09-10-s1 / -s2 | genuine (scan) | not started — vision-only, slower |
 | ts-icet-2024 ×3, ap-icet-2019 ×2 | placeholder / absent | **dropped, will not be imported** |

@@ -1,0 +1,1463 @@
+{
+  "subject": "Quantitative Aptitude",
+  "questions": [
+    {
+      "chapter": "Percentages",
+      "difficulty": "easy",
+      "answer_type": "single",
+      "stem": "An employee's salary has been increased by 15000 rupees. If his annual salary now equals 90000 rupees, then what is the percentage of increment?",
+      "explanation": "The percentage increase is always measured against the **original** salary, not the new one.\n$$\\text{Original} = 90000 - 15000 = 75000.$$\n\n$$\\text{Increment \\%} = \\frac{15000}{75000} \\times 100 = 20\\%.$$\n\n*(Dividing by 90000 instead gives 16.67% — the classic error of using the new value as the base.)*",
+      "source": "AP ICET 2026 2nd May 2026 Shift 1",
+      "source_year": 2026,
+      "options": [
+        {
+          "label": "15%",
+          "is_correct": false
+        },
+        {
+          "label": "20%",
+          "is_correct": true
+        },
+        {
+          "label": "22%",
+          "is_correct": false
+        },
+        {
+          "label": "25%",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Algebra",
+      "difficulty": "very_hard",
+      "answer_type": "single",
+      "stem": "In a family, the father is older than the mother. The father is three times as old as his son, and the mother is twice as old as her daughter. The age difference between the parents is the same as the age difference between the children. Five years ago, the sum of the parents' ages was three times the sum of the children's ages. Which one of the following is correct?",
+      "explanation": "Let the son be $s$ and the daughter $d$, so $F = 3s$ and $M = 2d$.\n\n**Equal differences.** Since $F > M$, try the daughter as the elder child, matching $F - M$ with $d - s$:\n$$3s - 2d = d - s \\Rightarrow 4s = 3d.$$\n\n**Five years ago:**\n$$(F-5)+(M-5) = 3\\big[(s-5)+(d-5)\\big] \\Rightarrow 3s + 2d - 10 = 3s + 3d - 30,$$\nwhich gives $d = 20$, and then $s = \\dfrac{3d}{4} = 15$.\n\nSo son 15, daughter 20, father 45, mother 40. Check: $F > M$ ✓, both differences are 5 ✓, and five years ago $40 + 35 = 75 = 3(10 + 15)$ ✓\n\nThe father is 45, not 35 or 40, so the only correct statement is **son's age is 15 years**.",
+      "source": "AP ICET 2026 2nd May 2026 Shift 1",
+      "source_year": 2026,
+      "options": [
+        {
+          "label": "Son's age is 15 years",
+          "is_correct": true
+        },
+        {
+          "label": "Son's age is 20 years",
+          "is_correct": false
+        },
+        {
+          "label": "Father's age is 35 years",
+          "is_correct": false
+        },
+        {
+          "label": "Father's age is 40 years",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Surds & Indices",
+      "difficulty": "hard",
+      "answer_type": "single",
+      "stem": "$$\\left(x^{-\\frac32}\\,(xy^{-2})^{-\\frac12}\\,(x^{-1})^{-\\frac23}\\right)^{3} = x^k y^l \\implies l - k = ?$$",
+      "explanation": "Simplify inside the bracket, one factor at a time:\n$$(xy^{-2})^{-\\frac12} = x^{-\\frac12} y^{1}, \\qquad (x^{-1})^{-\\frac23} = x^{\\frac23}.$$\n\nCollect the powers of $x$:\n$$-\\frac32 - \\frac12 + \\frac23 = -2 + \\frac23 = -\\frac43,$$\nso the bracket is $x^{-\\frac43} y$.\n\nRaising to the third power:\n$$\\left(x^{-\\frac43} y\\right)^3 = x^{-4} y^{3},$$\nso $k = -4$ and $l = 3$, giving\n$$l - k = 3 - (-4) = 7.$$",
+      "source": "AP ICET 2026 2nd May 2026 Shift 1",
+      "source_year": 2026,
+      "options": [
+        {
+          "label": "5",
+          "is_correct": false
+        },
+        {
+          "label": "6",
+          "is_correct": false
+        },
+        {
+          "label": "7",
+          "is_correct": true
+        },
+        {
+          "label": "-7",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Pipes & Cisterns",
+      "difficulty": "medium",
+      "answer_type": "single",
+      "stem": "A pump can fill a tank with water in 2 hours. Because of a leak, it took $2\\dfrac13$ hours to fill the tank. The leak alone can drain all the water of the tank in:",
+      "explanation": "Work with rates per hour.\n\n- Pump alone: $\\dfrac12$ of the tank.\n- Pump with the leak: $\\dfrac{1}{7/3} = \\dfrac{3}{7}$ of the tank.\n\nThe leak accounts for the shortfall:\n$$\\frac12 - \\frac37 = \\frac{7 - 6}{14} = \\frac{1}{14}.$$\n\nEmptying $\\dfrac1{14}$ of the tank per hour means the leak alone drains it in **14 hours**.",
+      "source": "AP ICET 2026 2nd May 2026 Shift 1",
+      "source_year": 2026,
+      "options": [
+        {
+          "label": "$4\\frac{1}{3}$ hours",
+          "is_correct": false
+        },
+        {
+          "label": "7 hours",
+          "is_correct": false
+        },
+        {
+          "label": "8 hours",
+          "is_correct": false
+        },
+        {
+          "label": "14 hours",
+          "is_correct": true
+        }
+      ]
+    },
+    {
+      "chapter": "Algebra",
+      "difficulty": "hard",
+      "answer_type": "single",
+      "stem": "If $a^x + a^{-x} = 3$, then $a^{4x} + a^{-4x}$ equals",
+      "explanation": "Squaring a sum of the form $t + \\dfrac1t$ doubles the exponent and leaves a constant behind:\n$$\\left(a^x + a^{-x}\\right)^2 = a^{2x} + a^{-2x} + 2.$$\n\n**First squaring:** $9 = a^{2x} + a^{-2x} + 2 \\Rightarrow a^{2x} + a^{-2x} = 7$.\n\n**Second squaring:** $49 = a^{4x} + a^{-4x} + 2 \\Rightarrow a^{4x} + a^{-4x} = 47$.",
+      "source": "AP ICET 2026 2nd May 2026 Shift 1",
+      "source_year": 2026,
+      "options": [
+        {
+          "label": "37",
+          "is_correct": false
+        },
+        {
+          "label": "42",
+          "is_correct": false
+        },
+        {
+          "label": "47",
+          "is_correct": true
+        },
+        {
+          "label": "52",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Mean, Median & Mode",
+      "difficulty": "medium",
+      "answer_type": "single",
+      "stem": "The average of 20 numbers is 0. At the most, how many of them can be greater than 0?",
+      "explanation": "An average of 0 means the twenty numbers **sum to 0**, so any positive amount must be cancelled by an equal negative amount.\n\nThey cannot all be positive, but **19** can be: take nineteen 1s and one $-19$, which sum to 0 and average 0.\n\nSo the maximum is **19** — at least one number must be negative, but only one needs to be.",
+      "source": "AP ICET 2026 2nd May 2026 Shift 1",
+      "source_year": 2026,
+      "options": [
+        {
+          "label": "0",
+          "is_correct": false
+        },
+        {
+          "label": "1",
+          "is_correct": false
+        },
+        {
+          "label": "10",
+          "is_correct": false
+        },
+        {
+          "label": "19",
+          "is_correct": true
+        }
+      ]
+    },
+    {
+      "chapter": "Algebra",
+      "difficulty": "hard",
+      "answer_type": "single",
+      "stem": "Let $0 < a < b < c$ be rational numbers such that $\\dfrac1a + \\dfrac1b + \\dfrac1c = 1$. Which of the following is always true?",
+      "explanation": "Suppose $a \\le 1$. Then $\\dfrac1a \\ge 1$, and since $\\dfrac1b$ and $\\dfrac1c$ are strictly positive, the total would **exceed** 1 — contradicting the condition. So $a > 1$.\n\nCombined with the given ordering $a < b < c$, that gives\n$$1 < a < b < c.$$\n\n*(The familiar example is $\\frac12 + \\frac13 + \\frac16 = 1$ with $a=2, b=3, c=6$ — all greater than 1, as the argument requires.)*",
+      "source": "AP ICET 2026 2nd May 2026 Shift 1",
+      "source_year": 2026,
+      "options": [
+        {
+          "label": "$a < 1 < b < c$",
+          "is_correct": false
+        },
+        {
+          "label": "$a < b < 1 < c$",
+          "is_correct": false
+        },
+        {
+          "label": "$a < b < c < 1$",
+          "is_correct": false
+        },
+        {
+          "label": "$1 < a < b < c$",
+          "is_correct": true
+        }
+      ]
+    },
+    {
+      "chapter": "Ratio & Proportion",
+      "difficulty": "hard",
+      "answer_type": "single",
+      "stem": "An equal amount of water and milk are mixed in a container. Of that mixture, 20% is removed and replaced with milk. From the resulting mixture, 20% is again removed and replaced with water. What is the percentage of milk in the final mixture?",
+      "explanation": "Take 100 units: milk 50, water 50.\n\n**First replacement.** Removing 20% leaves 80 units in the same ratio — milk 40, water 40. Adding 20 units of milk gives\n$$\\text{milk } 60,\\quad \\text{water } 40.$$\n\n**Second replacement.** Removing 20% leaves 80 units in the new ratio — milk 48, water 32. Adding 20 units of water gives\n$$\\text{milk } 48,\\quad \\text{water } 52.$$\n\nSo the final mixture is **48% milk**. The key step is that removing part of a mixture takes both liquids **in proportion**; only the top-up is one-sided.",
+      "source": "AP ICET 2026 2nd May 2026 Shift 1",
+      "source_year": 2026,
+      "options": [
+        {
+          "label": "48%",
+          "is_correct": true
+        },
+        {
+          "label": "50%",
+          "is_correct": false
+        },
+        {
+          "label": "52%",
+          "is_correct": false
+        },
+        {
+          "label": "54%",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Profit, Loss & Discount",
+      "difficulty": "easy",
+      "answer_type": "single",
+      "stem": "A shopkeeper marks an item 40% above the cost price and gives a discount of 20%. His profit percentage is:",
+      "explanation": "Take the cost price as 100.\n\n- Marked price $= 140$.\n- Selling price after 20% off $= 0.8 \\times 140 = 112$.\n\nSo the profit is $112 - 100 = 12$ on a cost of 100, i.e. **12%**.\n\n*(A common slip is subtracting the percentages, $40 - 20 = 20\\%$; the discount applies to the higher marked price, not to the cost.)*",
+      "source": "AP ICET 2026 2nd May 2026 Shift 1",
+      "source_year": 2026,
+      "options": [
+        {
+          "label": "12%",
+          "is_correct": true
+        },
+        {
+          "label": "16%",
+          "is_correct": false
+        },
+        {
+          "label": "20%",
+          "is_correct": false
+        },
+        {
+          "label": "24%",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Number System",
+      "difficulty": "very_hard",
+      "answer_type": "single",
+      "stem": "The largest power of 3 which is a factor of $13 \\times 14 \\times 15 \\times \\cdots \\times 100$ is denoted by $3^k$. Then $k = ?$",
+      "explanation": "The product is $\\dfrac{100!}{12!}$, so count the factors of 3 in each and subtract.\n\n**In $100!$** (Legendre's method — divide by 3, 9, 27, 81 and take floors):\n$$\\left\\lfloor\\tfrac{100}{3}\\right\\rfloor + \\left\\lfloor\\tfrac{100}{9}\\right\\rfloor + \\left\\lfloor\\tfrac{100}{27}\\right\\rfloor + \\left\\lfloor\\tfrac{100}{81}\\right\\rfloor = 33 + 11 + 3 + 1 = 48.$$\n\n**In $12!$:** $4 + 1 = 5$.\n\n$$k = 48 - 5 = 43.$$",
+      "source": "AP ICET 2026 2nd May 2026 Shift 1",
+      "source_year": 2026,
+      "options": [
+        {
+          "label": "42",
+          "is_correct": false
+        },
+        {
+          "label": "43",
+          "is_correct": true
+        },
+        {
+          "label": "45",
+          "is_correct": false
+        },
+        {
+          "label": "48",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Ratio & Proportion",
+      "difficulty": "hard",
+      "answer_type": "single",
+      "stem": "If $\\dfrac{5a}{6b} + \\dfrac{3b}{10a} = 1$, then $5a : 4b = ?$",
+      "explanation": "Everything depends on the single ratio $r = \\dfrac{a}{b}$:\n$$\\frac{5r}{6} + \\frac{3}{10r} = 1.$$\n\nMultiply through by $30r$:\n$$25r^2 + 9 = 30r \\Rightarrow 25r^2 - 30r + 9 = 0 \\Rightarrow (5r - 3)^2 = 0,$$\nso $r = \\dfrac{3}{5}$ — a perfect square, so the ratio is forced.\n\nThen\n$$\\frac{5a}{4b} = \\frac54 \\cdot \\frac{a}{b} = \\frac54 \\cdot \\frac35 = \\frac34,$$\ni.e. $5a : 4b = 3 : 4$.",
+      "source": "AP ICET 2026 2nd May 2026 Shift 1",
+      "source_year": 2026,
+      "options": [
+        {
+          "label": "3 : 5",
+          "is_correct": false
+        },
+        {
+          "label": "3 : 4",
+          "is_correct": true
+        },
+        {
+          "label": "1 : 2",
+          "is_correct": false
+        },
+        {
+          "label": "5 : 7",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Percentages",
+      "difficulty": "easy",
+      "answer_type": "single",
+      "stem": "A number $a$ is 12% more than another number $b$. Then $a : b = ?$",
+      "explanation": "\"12% more than $b$\" means\n$$a = b + 0.12b = 1.12b.$$\n\nSo\n$$a : b = 1.12 : 1 = 112 : 100 = 28 : 25$$\nafter dividing both by 4.",
+      "source": "AP ICET 2026 2nd May 2026 Shift 1",
+      "source_year": 2026,
+      "options": [
+        {
+          "label": "27 : 25",
+          "is_correct": false
+        },
+        {
+          "label": "35 : 27",
+          "is_correct": false
+        },
+        {
+          "label": "35 : 28",
+          "is_correct": false
+        },
+        {
+          "label": "28 : 25",
+          "is_correct": true
+        }
+      ]
+    },
+    {
+      "chapter": "Percentages",
+      "difficulty": "medium",
+      "answer_type": "single",
+      "stem": "A number $a$ is 10% more than another number $b$. Then by what percent is $b$ less than $a$?",
+      "explanation": "The two percentages are **not** the same, because the base changes.\n\nWith $a = 1.1b$:\n$$\\frac{a - b}{a} \\times 100 = \\frac{0.1b}{1.1b} \\times 100 = \\frac{100}{11} = 9\\tfrac{1}{11}\\%.$$\n\nSo $b$ is $9\\frac{1}{11}\\%$ less than $a$, even though $a$ is 10% more than $b$ — going up uses $b$ as the base, coming down uses the larger $a$.",
+      "source": "AP ICET 2026 2nd May 2026 Shift 1",
+      "source_year": 2026,
+      "options": [
+        {
+          "label": "$11\\frac{1}{11}\\%$",
+          "is_correct": false
+        },
+        {
+          "label": "10%",
+          "is_correct": false
+        },
+        {
+          "label": "$8\\frac{1}{11}\\%$",
+          "is_correct": false
+        },
+        {
+          "label": "$9\\frac{1}{11}\\%$",
+          "is_correct": true
+        }
+      ]
+    },
+    {
+      "chapter": "Time & Work",
+      "difficulty": "easy",
+      "answer_type": "single",
+      "stem": "A can do a work in 15 days and B in 20 days. They work together for 5 days. The fraction of work left is",
+      "explanation": "Combined one-day rate:\n$$\\frac{1}{15} + \\frac{1}{20} = \\frac{4 + 3}{60} = \\frac{7}{60}.$$\n\nIn 5 days they complete $5 \\times \\dfrac{7}{60} = \\dfrac{35}{60} = \\dfrac{7}{12}$.\n\nSo the fraction left is\n$$1 - \\frac{7}{12} = \\frac{5}{12}.$$",
+      "source": "AP ICET 2026 2nd May 2026 Shift 1",
+      "source_year": 2026,
+      "options": [
+        {
+          "label": "$\\dfrac{5}{12}$",
+          "is_correct": true
+        },
+        {
+          "label": "$\\dfrac{1}{3}$",
+          "is_correct": false
+        },
+        {
+          "label": "$\\dfrac{1}{2}$",
+          "is_correct": false
+        },
+        {
+          "label": "$\\dfrac{3}{5}$",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Surds & Indices",
+      "difficulty": "hard",
+      "answer_type": "single",
+      "stem": "The expression $\\dfrac{\\left(2^{x+3} \\times 4^{2x-1}\\right)^2 \\times 8^{1-x}}{16^{x+1} \\times 2^{3-2x}}$ equals",
+      "explanation": "Write every base as a power of 2.\n\n**Numerator:** $4^{2x-1} = 2^{4x-2}$, so the bracket is $2^{(x+3)+(4x-2)} = 2^{5x+1}$; squaring gives $2^{10x+2}$. With $8^{1-x} = 2^{3-3x}$:\n$$2^{10x+2} \\times 2^{3-3x} = 2^{7x+5}.$$\n\n**Denominator:** $16^{x+1} = 2^{4x+4}$, so\n$$2^{4x+4} \\times 2^{3-2x} = 2^{2x+7}.$$\n\n**Divide** by subtracting exponents:\n$$2^{(7x+5)-(2x+7)} = 2^{5x-2}.$$",
+      "source": "AP ICET 2026 2nd May 2026 Shift 1",
+      "source_year": 2026,
+      "options": [
+        {
+          "label": "$2^{5x+2}$",
+          "is_correct": false
+        },
+        {
+          "label": "$2^{7x-4}$",
+          "is_correct": false
+        },
+        {
+          "label": "$2^{3x-5}$",
+          "is_correct": false
+        },
+        {
+          "label": "$2^{5x-2}$",
+          "is_correct": true
+        }
+      ]
+    },
+    {
+      "chapter": "LCM & HCF",
+      "difficulty": "hard",
+      "answer_type": "single",
+      "stem": "Given that $\\gcd(a, b, c) = 8$, $\\text{lcm}(a, b) = 48$ and $\\text{lcm}(b, c) = 72$, what is $\\text{lcm}(a, b, c)$?",
+      "explanation": "The lcm of three numbers can be assembled from pairwise lcms, because every one of $a$, $b$, $c$ appears in at least one pair:\n$$\\text{lcm}(a,b,c) = \\text{lcm}\\big(\\text{lcm}(a,b),\\ \\text{lcm}(b,c)\\big) = \\text{lcm}(48, 72).$$\n\nNow $48 = 2^4 \\times 3$ and $72 = 2^3 \\times 3^2$, so taking the highest power of each prime:\n$$\\text{lcm} = 2^4 \\times 3^2 = 144.$$\n\n*(The gcd of 8 is consistent — e.g. $a = 16, b = 24, c = 72$ satisfies every condition.)*",
+      "source": "AP ICET 2026 2nd May 2026 Shift 1",
+      "source_year": 2026,
+      "options": [
+        {
+          "label": "120",
+          "is_correct": false
+        },
+        {
+          "label": "96",
+          "is_correct": false
+        },
+        {
+          "label": "72",
+          "is_correct": false
+        },
+        {
+          "label": "144",
+          "is_correct": true
+        }
+      ]
+    },
+    {
+      "chapter": "Ratio & Proportion",
+      "difficulty": "medium",
+      "answer_type": "single",
+      "stem": "In a group, the ratio of the number of men to women is $4 : 5$, and the ratio of the number of women to children is $3 : 7$. If there are 84 men in the group, the number of children is",
+      "explanation": "Go through the women, who appear in both ratios.\n\n**Men to women** $= 4 : 5$ with 84 men:\n$$\\text{women} = 84 \\times \\frac54 = 105.$$\n\n**Women to children** $= 3 : 7$ with 105 women:\n$$\\text{children} = 105 \\times \\frac73 = 245.$$\n\n*(Alternatively, chain the ratios: men : women : children $= 12 : 15 : 35$, and $84 = 12 \\times 7$, so children $= 35 \\times 7 = 245$.)*",
+      "source": "AP ICET 2026 2nd May 2026 Shift 1",
+      "source_year": 2026,
+      "options": [
+        {
+          "label": "217",
+          "is_correct": false
+        },
+        {
+          "label": "245",
+          "is_correct": true
+        },
+        {
+          "label": "280",
+          "is_correct": false
+        },
+        {
+          "label": "294",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Algebra",
+      "difficulty": "hard",
+      "answer_type": "single",
+      "stem": "For what values of $k$ are the roots of $x^2 + (2k+3)x + (k^2 + 3k + 1) = 0$ imaginary?",
+      "explanation": "Roots are imaginary when the discriminant is **negative**:\n$$D = (2k+3)^2 - 4(k^2 + 3k + 1).$$\n\nExpand carefully:\n$$D = 4k^2 + 12k + 9 - 4k^2 - 12k - 4 = 5.$$\n\nEvery term in $k$ cancels — the discriminant is the **constant 5**, which is positive whatever $k$ is. So the roots are always real and distinct, and there is **no real value of $k$** that makes them imaginary.",
+      "source": "AP ICET 2026 2nd May 2026 Shift 1",
+      "source_year": 2026,
+      "options": [
+        {
+          "label": "for no real values of $k$",
+          "is_correct": true
+        },
+        {
+          "label": "$k = 2$",
+          "is_correct": false
+        },
+        {
+          "label": "$k = -1$",
+          "is_correct": false
+        },
+        {
+          "label": "$k = 1$",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Algebra",
+      "difficulty": "hard",
+      "answer_type": "single",
+      "stem": "Let $f : [0, \\infty) \\to \\mathbb{R}$ be defined as $f(x) = \\dfrac{x}{1+x}$. Then which of the following is true?",
+      "explanation": "**One-one?** Yes. Write $f(x) = 1 - \\dfrac{1}{1+x}$; as $x$ increases, $\\dfrac{1}{1+x}$ decreases, so $f$ is strictly increasing on $[0,\\infty)$ and never repeats a value.\n\n**Onto?** No. At $x = 0$, $f = 0$, and as $x \\to \\infty$, $f \\to 1$ without reaching it, so the range is $[0, 1)$ — a small part of the codomain $\\mathbb{R}$. Negative values and values $\\ge 1$ are never attained.\n\nSo $f$ is **one-one but not onto** (and therefore not bijective).",
+      "source": "AP ICET 2026 2nd May 2026 Shift 1",
+      "source_year": 2026,
+      "options": [
+        {
+          "label": "$f$ is bijective",
+          "is_correct": false
+        },
+        {
+          "label": "$f$ is one-one but not onto",
+          "is_correct": true
+        },
+        {
+          "label": "$f$ is onto but not one-one",
+          "is_correct": false
+        },
+        {
+          "label": "$f$ is neither one-one nor onto",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Profit, Loss & Discount",
+      "difficulty": "hard",
+      "answer_type": "single",
+      "stem": "A person sells an article, whose cost price is $C$, for rupees 999, with a profit percent equal to $C\\%$. Then $C = ?$",
+      "explanation": "The profit percentage equals the cost price itself, so\n$$999 = C\\left(1 + \\frac{C}{100}\\right) \\Rightarrow C^2 + 100C - 99900 = 0.$$\n\nSolve with the quadratic formula:\n$$C = \\frac{-100 + \\sqrt{10000 + 399600}}{2} = \\frac{-100 + \\sqrt{409600}}{2} = \\frac{-100 + 640}{2} = 270.$$\n\n*(Check: 270 with a 270% profit gives $270 \\times 3.7 = 999$ ✓)*",
+      "source": "AP ICET 2026 2nd May 2026 Shift 1",
+      "source_year": 2026,
+      "options": [
+        {
+          "label": "250",
+          "is_correct": false
+        },
+        {
+          "label": "270",
+          "is_correct": true
+        },
+        {
+          "label": "275",
+          "is_correct": false
+        },
+        {
+          "label": "300",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Time, Speed & Distance",
+      "difficulty": "hard",
+      "answer_type": "single",
+      "stem": "Two trains P and Q move with different speeds between two stations A and B, which are 450 km apart. If P covers the distance one hour earlier than Q, and the speed of Q is 5 kmph less than P, then the speed of Q (in kmph) is",
+      "explanation": "Let Q's speed be $q$, so P's is $q + 5$. Q takes one hour **longer**:\n$$\\frac{450}{q} - \\frac{450}{q+5} = 1.$$\n\nMultiply through by $q(q+5)$:\n$$450(q+5) - 450q = q(q+5) \\Rightarrow 2250 = q^2 + 5q.$$\n\n$$q^2 + 5q - 2250 = 0 \\Rightarrow q = \\frac{-5 + \\sqrt{25 + 9000}}{2} = \\frac{-5 + 95}{2} = 45.$$\n\n*(Check: at 45 kmph Q takes 10 h; at 50 kmph P takes 9 h ✓)*",
+      "source": "AP ICET 2026 2nd May 2026 Shift 1",
+      "source_year": 2026,
+      "options": [
+        {
+          "label": "48",
+          "is_correct": false
+        },
+        {
+          "label": "42",
+          "is_correct": false
+        },
+        {
+          "label": "45",
+          "is_correct": true
+        },
+        {
+          "label": "54",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Time & Work",
+      "difficulty": "very_hard",
+      "answer_type": "single",
+      "stem": "In completing a job, the working efficiencies of three persons A, B and C are as follows: A and B together can complete half of the job in 15 days; B and C together can finish the job in 12 days; A and C together can finish $\\dfrac{1}{7}$ of the job in 60 days. In how many days can A, B and C together finish the job?",
+      "explanation": "First convert each clue into a full-job rate:\n\n- A + B do half in 15 days $\\Rightarrow$ the whole in 30 days $\\Rightarrow$ rate $\\dfrac{1}{30}$.\n- B + C: rate $\\dfrac{1}{12}$.\n- A + C do $\\dfrac17$ in 60 days $\\Rightarrow$ the whole in 420 days $\\Rightarrow$ rate $\\dfrac{1}{420}$.\n\nAdding all three counts every person **twice**:\n$$2(A+B+C) = \\frac{1}{30} + \\frac{1}{12} + \\frac{1}{420} = \\frac{14 + 35 + 1}{420} = \\frac{50}{420} = \\frac{5}{42}.$$\n\nSo $A+B+C = \\dfrac{5}{84}$ per day, and the job takes\n$$\\frac{84}{5} = 16.8 \\text{ days}.$$",
+      "source": "AP ICET 2026 2nd May 2026 Shift 1",
+      "source_year": 2026,
+      "options": [
+        {
+          "label": "16.8",
+          "is_correct": true
+        },
+        {
+          "label": "7",
+          "is_correct": false
+        },
+        {
+          "label": "5",
+          "is_correct": false
+        },
+        {
+          "label": "8",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Mensuration",
+      "difficulty": "medium",
+      "answer_type": "single",
+      "stem": "The length of a rectangle is 14 cm more than its breadth. If a diagonal of the rectangle is 26 cm, then what is the area (in cm²) of the rectangle?",
+      "explanation": "Let the breadth be $b$, so the length is $b + 14$. By Pythagoras on the diagonal:\n$$b^2 + (b+14)^2 = 26^2 \\Rightarrow 2b^2 + 28b + 196 = 676.$$\n\n$$b^2 + 14b - 240 = 0 \\Rightarrow (b + 24)(b - 10) = 0 \\Rightarrow b = 10.$$\n\nSo the sides are 10 cm and 24 cm — the 5-12-13 triple doubled — and\n$$\\text{Area} = 10 \\times 24 = 240 \\text{ cm}^2.$$",
+      "source": "AP ICET 2026 2nd May 2026 Shift 1",
+      "source_year": 2026,
+      "options": [
+        {
+          "label": "180",
+          "is_correct": false
+        },
+        {
+          "label": "210",
+          "is_correct": false
+        },
+        {
+          "label": "240",
+          "is_correct": true
+        },
+        {
+          "label": "250",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Ratio & Proportion",
+      "difficulty": "easy",
+      "answer_type": "single",
+      "stem": "If $\\dfrac{x}{y} = \\dfrac{3}{5}$ and $x + y = 64$, then $x = ?$",
+      "explanation": "The ratio $3 : 5$ splits the total into $3 + 5 = 8$ equal parts, and $x$ takes 3 of them:\n$$x = \\frac{3}{8} \\times 64 = 24.$$\n\n*(Then $y = 40$, and indeed $\\dfrac{24}{40} = \\dfrac35$ ✓)*",
+      "source": "AP ICET 2026 2nd May 2026 Shift 1",
+      "source_year": 2026,
+      "options": [
+        {
+          "label": "24",
+          "is_correct": true
+        },
+        {
+          "label": "36",
+          "is_correct": false
+        },
+        {
+          "label": "40",
+          "is_correct": false
+        },
+        {
+          "label": "48",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Number System",
+      "difficulty": "medium",
+      "answer_type": "single",
+      "stem": "Let $x = \\cfrac{1}{1 + \\cfrac{1}{1 + \\cfrac{1}{1 + \\frac{1}{2}}}}$, then $x = ?$",
+      "explanation": "Unfold the continued fraction from the **innermost** level outwards:\n\n$$1 + \\frac12 = \\frac32 \\quad\\Rightarrow\\quad \\frac{1}{3/2} = \\frac23$$\n$$1 + \\frac23 = \\frac53 \\quad\\Rightarrow\\quad \\frac{1}{5/3} = \\frac35$$\n$$1 + \\frac35 = \\frac85 \\quad\\Rightarrow\\quad x = \\frac{1}{8/5} = \\frac58.$$\n\n*(The numerators and denominators are consecutive Fibonacci numbers — 2, 3, 5, 8 — which is characteristic of this continued fraction.)*",
+      "source": "AP ICET 2026 2nd May 2026 Shift 1",
+      "source_year": 2026,
+      "options": [
+        {
+          "label": "$\\dfrac{3}{5}$",
+          "is_correct": false
+        },
+        {
+          "label": "$\\dfrac{5}{8}$",
+          "is_correct": true
+        },
+        {
+          "label": "$\\dfrac{8}{13}$",
+          "is_correct": false
+        },
+        {
+          "label": "$\\dfrac{13}{21}$",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Mensuration",
+      "difficulty": "medium",
+      "answer_type": "single",
+      "stem": "A cube is melted and recast into a sphere. If the edge of the cube is 6 cm, the radius of the sphere is: ____",
+      "explanation": "Melting preserves **volume**, so set the sphere's volume equal to the cube's:\n$$\\frac43 \\pi r^3 = 6^3 = 216 \\Rightarrow r^3 = \\frac{216 \\times 3}{4\\pi} = \\frac{162}{\\pi} \\approx 51.57.$$\n\n$$r \\approx \\sqrt[3]{51.57} \\approx 3.7 \\text{ cm}.$$\n\n*(Sanity check: the sphere must fit inside the cube's span, so a radius near 3.7 cm — just under half the 6 cm edge plus a little — is reasonable, while 5 cm would be impossible.)*",
+      "source": "AP ICET 2026 2nd May 2026 Shift 1",
+      "source_year": 2026,
+      "options": [
+        {
+          "label": "2.5 cm",
+          "is_correct": false
+        },
+        {
+          "label": "5 cm",
+          "is_correct": false
+        },
+        {
+          "label": "3.7 cm",
+          "is_correct": true
+        },
+        {
+          "label": "4.2 cm",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Ratio & Proportion",
+      "difficulty": "medium",
+      "answer_type": "single",
+      "stem": "The ratio of the ages of A and B is $4 : 5$. After 8 years, it becomes $5 : 6$. Then the present age of A is",
+      "explanation": "Write the present ages as $4k$ and $5k$. After 8 years:\n$$\\frac{4k+8}{5k+8} = \\frac56.$$\n\nCross-multiply:\n$$24k + 48 = 25k + 40 \\Rightarrow k = 8.$$\n\nSo A is $4k = 32$ years old (and B is 40; in 8 years they are 40 and 48, which is indeed $5:6$ ✓).",
+      "source": "AP ICET 2026 2nd May 2026 Shift 1",
+      "source_year": 2026,
+      "options": [
+        {
+          "label": "24 years",
+          "is_correct": false
+        },
+        {
+          "label": "32 years",
+          "is_correct": true
+        },
+        {
+          "label": "40 years",
+          "is_correct": false
+        },
+        {
+          "label": "48 years",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Mensuration",
+      "difficulty": "medium",
+      "answer_type": "single",
+      "stem": "A wire of length $L$ is bent to form a square. If instead it is bent into a circle, the ratio of areas (circle : square) is",
+      "explanation": "The wire's length becomes the perimeter in both cases.\n\n**Square:** side $= \\dfrac{L}{4}$, so area $= \\dfrac{L^2}{16}$.\n\n**Circle:** $2\\pi r = L \\Rightarrow r = \\dfrac{L}{2\\pi}$, so area $= \\pi \\cdot \\dfrac{L^2}{4\\pi^2} = \\dfrac{L^2}{4\\pi}$.\n\n$$\\frac{\\text{circle}}{\\text{square}} = \\frac{L^2/4\\pi}{L^2/16} = \\frac{16}{4\\pi} = \\frac{4}{\\pi}.$$\n\nSince $\\dfrac4\\pi > 1$, the circle encloses more area than the square from the same wire — as it does than any other shape.",
+      "source": "AP ICET 2026 2nd May 2026 Shift 1",
+      "source_year": 2026,
+      "options": [
+        {
+          "label": "$\\pi : 4$",
+          "is_correct": false
+        },
+        {
+          "label": "$\\pi : 2$",
+          "is_correct": false
+        },
+        {
+          "label": "$4 : \\pi$",
+          "is_correct": true
+        },
+        {
+          "label": "$\\pi : 1$",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Number System",
+      "difficulty": "medium",
+      "answer_type": "single",
+      "stem": "Find the remainder of $1^3 + 2^3 + 3^3 + \\cdots + 20^3$ when it is divided by 9.",
+      "explanation": "Use the identity for the sum of cubes:\n$$1^3 + 2^3 + \\cdots + n^3 = \\left[\\frac{n(n+1)}{2}\\right]^2.$$\n\nFor $n = 20$:\n$$\\left[\\frac{20 \\times 21}{2}\\right]^2 = 210^2 = 44100.$$\n\nTest divisibility by 9 with the digit sum: $4+4+1+0+0 = 9$, a multiple of 9.\n\nSo the remainder is **0**. *(Neatly, $210 = 3 \\times 70$, so $210^2$ carries a factor $9$ outright.)*",
+      "source": "AP ICET 2026 2nd May 2026 Shift 1",
+      "source_year": 2026,
+      "options": [
+        {
+          "label": "0",
+          "is_correct": true
+        },
+        {
+          "label": "2",
+          "is_correct": false
+        },
+        {
+          "label": "3",
+          "is_correct": false
+        },
+        {
+          "label": "5",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Partnership",
+      "difficulty": "hard",
+      "answer_type": "single",
+      "stem": "Three persons P, Q and R invest in a joint business in the ratio $3 : 4 : 5$. The year-end profits are shared in the ratio $4 : 5 : 7$. If Q receives Rs. 100000 towards his share in the profit, which is equal to $\\dfrac{1}{5}$ of his investment, then what is the investment made by R?",
+      "explanation": "Start from Q, the only person with an absolute figure.\n\nHis profit is $\\dfrac15$ of his investment, so\n$$\\text{Q's investment} = 5 \\times 100000 = 500000.$$\n\nInvestments are in the ratio $3 : 4 : 5$, and Q holds the 4 parts:\n$$4 \\text{ parts} = 500000 \\Rightarrow 1 \\text{ part} = 125000.$$\n\nR holds 5 parts:\n$$5 \\times 125000 = \\text{Rs. } 625000.$$\n\n*(The profit ratio $4:5:7$ is not needed here — it would matter only for splitting the total profit.)*",
+      "source": "AP ICET 2026 2nd May 2026 Shift 1",
+      "source_year": 2026,
+      "options": [
+        {
+          "label": "Rs. 600000",
+          "is_correct": false
+        },
+        {
+          "label": "Rs. 625000",
+          "is_correct": true
+        },
+        {
+          "label": "Rs. 650000",
+          "is_correct": false
+        },
+        {
+          "label": "Rs. 675000",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "LCM & HCF",
+      "difficulty": "medium",
+      "answer_type": "single",
+      "stem": "If $m : n = 2 : 5$ and $\\text{lcm}(m, n) = 6300$, then",
+      "explanation": "Write $m = 2k$ and $n = 5k$, where $k$ is their HCF. Since 2 and 5 are coprime,\n$$\\text{lcm}(2k, 5k) = 10k.$$\n\nSo $10k = 6300 \\Rightarrow k = 630$, giving\n$$m = 1260, \\qquad n = 5 \\times 630 = 3150.$$\n\n*(Check: $\\text{lcm}(1260, 3150) = 6300$ ✓ — note 1260 appears as a distractor, since it is $m$, not $n$.)*",
+      "source": "AP ICET 2026 2nd May 2026 Shift 1",
+      "source_year": 2026,
+      "options": [
+        {
+          "label": "$n = 3150$",
+          "is_correct": true
+        },
+        {
+          "label": "$n = 1260$",
+          "is_correct": false
+        },
+        {
+          "label": "$n = 1575$",
+          "is_correct": false
+        },
+        {
+          "label": "$n = 2100$",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Limits & Derivatives",
+      "difficulty": "medium",
+      "answer_type": "single",
+      "stem": "$$\\lim_{x \\to 0} \\frac{(1-x)^n - 1}{x} = ?$$",
+      "explanation": "Expand the binomial for small $x$:\n$$(1-x)^n = 1 - nx + \\frac{n(n-1)}{2}x^2 - \\cdots$$\n\nSubtracting 1 and dividing by $x$:\n$$\\frac{-nx + O(x^2)}{x} = -n + O(x),$$\nwhich tends to $-n$ as $x \\to 0$.\n\n*(Equivalently, the limit is the derivative of $(1-x)^n$ at $x = 0$, namely $-n(1-x)^{n-1}\\big|_{x=0} = -n$. The minus sign comes from differentiating the inner $-x$.)*",
+      "source": "AP ICET 2026 2nd May 2026 Shift 1",
+      "source_year": 2026,
+      "options": [
+        {
+          "label": "1",
+          "is_correct": false
+        },
+        {
+          "label": "-1",
+          "is_correct": false
+        },
+        {
+          "label": "$n$",
+          "is_correct": false
+        },
+        {
+          "label": "$-n$",
+          "is_correct": true
+        }
+      ]
+    },
+    {
+      "chapter": "Time, Speed & Distance",
+      "difficulty": "medium",
+      "answer_type": "single",
+      "stem": "A person travels from a place A to another place B. The first half of the journey is covered with a speed of 48 kmph and the remaining half at a speed of 42 kmph. Then the average speed (in kmph) is",
+      "explanation": "For **equal distances** the average speed is the harmonic mean, not the arithmetic mean:\n$$\\text{Average} = \\frac{2 v_1 v_2}{v_1 + v_2} = \\frac{2 \\times 48 \\times 42}{48 + 42} = \\frac{4032}{90} = 44.8 \\text{ kmph}.$$\n\nNote it is **below** the arithmetic mean of 45, because more time is spent on the slower half — the trap answer here is exactly 45.",
+      "source": "AP ICET 2026 2nd May 2026 Shift 1",
+      "source_year": 2026,
+      "options": [
+        {
+          "label": "44.8",
+          "is_correct": true
+        },
+        {
+          "label": "44.6",
+          "is_correct": false
+        },
+        {
+          "label": "44.4",
+          "is_correct": false
+        },
+        {
+          "label": "45",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Number System",
+      "difficulty": "medium",
+      "answer_type": "single",
+      "stem": "Which one of the following is the correct ordering of the given rational numbers?",
+      "explanation": "Convert each to a decimal, watching the negative sign in $\\dfrac{7}{-4}$:\n$$\\frac{7}{-4} = -1.75,\\quad -\\frac32 = -1.5,\\quad -\\frac13 = -0.33,\\quad \\frac56 = 0.83,\\quad \\frac83 = 2.67.$$\n\nIn increasing order that is\n$$\\frac{7}{-4} < -\\frac32 < -\\frac13 < \\frac56 < \\frac83.$$\n\nThe trap is treating $\\dfrac{7}{-4}$ as positive, or forgetting that among negatives the **larger** magnitude is the **smaller** number.",
+      "source": "AP ICET 2026 2nd May 2026 Shift 1",
+      "source_year": 2026,
+      "options": [
+        {
+          "label": "$\\dfrac{-3}{2} < \\dfrac{7}{-4} < \\dfrac{-1}{3} < \\dfrac{5}{6} < \\dfrac{8}{3}$",
+          "is_correct": false
+        },
+        {
+          "label": "$\\dfrac{7}{-4} < -\\dfrac{3}{2} < -\\dfrac{1}{3} < \\dfrac{5}{6} < \\dfrac{8}{3}$",
+          "is_correct": true
+        },
+        {
+          "label": "$-\\dfrac{3}{2} < -\\dfrac{1}{3} < \\dfrac{7}{-4} < \\dfrac{5}{6} < \\dfrac{8}{3}$",
+          "is_correct": false
+        },
+        {
+          "label": "$-\\dfrac{1}{3} < -\\dfrac{3}{2} < \\dfrac{7}{-4} < \\dfrac{5}{6} < \\dfrac{8}{3}$",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Algebra",
+      "difficulty": "very_hard",
+      "answer_type": "single",
+      "stem": "If $abc \\neq 0$ and $2b = 3c - a$, then $\\dfrac{a^3 + 8b^3 - 27c^3}{abc} = ?$",
+      "explanation": "Rewrite the numerator as a sum of three cubes:\n$$a^3 + (2b)^3 + (-3c)^3.$$\n\nThe condition $2b = 3c - a$ rearranges to\n$$a + 2b + (-3c) = 0,$$\nand whenever $x + y + z = 0$ the identity $x^3 + y^3 + z^3 = 3xyz$ applies. With $x = a$, $y = 2b$, $z = -3c$:\n$$a^3 + 8b^3 - 27c^3 = 3 \\cdot a \\cdot 2b \\cdot (-3c) = -18abc.$$\n\nDividing by $abc$ (non-zero) gives $\\boxed{-18}$.",
+      "source": "AP ICET 2026 2nd May 2026 Shift 1",
+      "source_year": 2026,
+      "options": [
+        {
+          "label": "18",
+          "is_correct": false
+        },
+        {
+          "label": "-18",
+          "is_correct": true
+        },
+        {
+          "label": "9",
+          "is_correct": false
+        },
+        {
+          "label": "-9",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Mensuration",
+      "difficulty": "medium",
+      "answer_type": "single",
+      "stem": "A solid is formed by placing a right circular cone perfectly on top of a right circular cylinder such that both have the same base radius. If the radius of the base is 7 cm, the height of the cylinder is 24 cm, and the height of the cone is 9 cm, then taking $\\pi = \\dfrac{22}{7}$, the volume of the solid in cm³ is",
+      "explanation": "Add the two volumes.\n\n**Cylinder:**\n$$\\pi r^2 h = \\frac{22}{7} \\times 49 \\times 24 = 22 \\times 7 \\times 24 = 3696.$$\n\n**Cone:**\n$$\\frac13 \\pi r^2 h = \\frac13 \\times \\frac{22}{7} \\times 49 \\times 9 = \\frac{22 \\times 7 \\times 9}{3} = 462.$$\n\n$$\\text{Total} = 3696 + 462 = 4158 \\text{ cm}^3.$$\n\n*(Forgetting the $\\frac13$ for the cone gives $3696 + 1386 = 5082$ — not offered, but the classic error.)*",
+      "source": "AP ICET 2026 2nd May 2026 Shift 1",
+      "source_year": 2026,
+      "options": [
+        {
+          "label": "3160",
+          "is_correct": false
+        },
+        {
+          "label": "3147",
+          "is_correct": false
+        },
+        {
+          "label": "4158",
+          "is_correct": true
+        },
+        {
+          "label": "4284",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Surds & Indices",
+      "difficulty": "medium",
+      "answer_type": "single",
+      "stem": "If $a^{x-y} = 27$ and $a^{x+y} = 2187$, then the value of $a^{3y}$ is ____",
+      "explanation": "Write both numbers as powers of 3: $27 = 3^3$ and $2187 = 3^7$.\n\nDivide the second equation by the first — the exponents subtract:\n$$a^{(x+y)-(x-y)} = a^{2y} = \\frac{3^7}{3^3} = 3^4 = 81.$$\n\nSo $a^{y} = 9$ (taking the positive root), and\n$$a^{3y} = \\left(a^y\\right)^3 = 9^3 = 729.$$",
+      "source": "AP ICET 2026 2nd May 2026 Shift 1",
+      "source_year": 2026,
+      "options": [
+        {
+          "label": "9",
+          "is_correct": false
+        },
+        {
+          "label": "81",
+          "is_correct": false
+        },
+        {
+          "label": "243",
+          "is_correct": false
+        },
+        {
+          "label": "729",
+          "is_correct": true
+        }
+      ]
+    },
+    {
+      "chapter": "Set Theory",
+      "difficulty": "hard",
+      "answer_type": "single",
+      "stem": "If $p$ and $q$ are any two propositions, then the statement logically equivalent to $p \\to {\\sim}q$ is",
+      "explanation": "An implication can always be rewritten as a disjunction: $p \\to r \\equiv {\\sim}p \\vee r$. With $r = {\\sim}q$:\n$$p \\to {\\sim}q \\equiv {\\sim}p \\vee {\\sim}q.$$\n\nNow apply De Morgan's law, ${\\sim}p \\vee {\\sim}q \\equiv {\\sim}(p \\wedge q)$, giving\n$$p \\to {\\sim}q \\equiv {\\sim}(p \\wedge q).$$\n\nIn words: \"if $p$ then not $q$\" says exactly that $p$ and $q$ are never both true.",
+      "source": "AP ICET 2026 2nd May 2026 Shift 1",
+      "source_year": 2026,
+      "options": [
+        {
+          "label": "$p \\vee q$",
+          "is_correct": false
+        },
+        {
+          "label": "$(p \\wedge q)$",
+          "is_correct": false
+        },
+        {
+          "label": "${\\sim}(p \\vee q)$",
+          "is_correct": false
+        },
+        {
+          "label": "${\\sim}(p \\wedge q)$",
+          "is_correct": true
+        }
+      ]
+    },
+    {
+      "chapter": "Coordinate Geometry",
+      "difficulty": "very_hard",
+      "answer_type": "single",
+      "stem": "The equation of the cylinder with axis as the z-axis and passing through the curve $x^2 + y^2 - 2z = 0$, $x + y + z = 1$ is:",
+      "explanation": "A cylinder with the z-axis as its axis has an equation in $x$ and $y$ only — so the task is to **eliminate $z$** between the two given equations.\n\nFrom the plane: $z = 1 - x - y$. Substitute into the first surface:\n$$x^2 + y^2 - 2(1 - x - y) = 0$$\n$$x^2 + y^2 + 2x + 2y - 2 = 0.$$\n\nSince no $z$ remains, this equation describes a surface generated by lines parallel to the z-axis — the required cylinder.",
+      "source": "AP ICET 2026 2nd May 2026 Shift 1",
+      "source_year": 2026,
+      "options": [
+        {
+          "label": "$x^2 + y^2 - 2x - 2y - 2 = 0$",
+          "is_correct": false
+        },
+        {
+          "label": "$x^2 - y^2 - 2x + 2y - 2 = 0$",
+          "is_correct": false
+        },
+        {
+          "label": "$x^2 + y^2 + 2x + 2y - 2 = 0$",
+          "is_correct": true
+        },
+        {
+          "label": "$x^2 + y^2 - 2x - 2y + 2 = 0$",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Mensuration",
+      "difficulty": "medium",
+      "answer_type": "single",
+      "stem": "A path of 2 m width is built inside along the boundary of a rectangular park 40 m long and 30 m wide. The area of the path in m² is",
+      "explanation": "The path runs **inside** the boundary, so it is the region between the park and a smaller inner rectangle.\n\nThe inner rectangle loses 2 m at **each** end of both dimensions:\n$$(40 - 4) \\times (30 - 4) = 36 \\times 26 = 936.$$\n\n$$\\text{Path} = 40 \\times 30 - 936 = 1200 - 936 = 264 \\text{ m}^2.$$\n\n*(Subtracting only 2 m — not 4 — from each side is the usual slip, giving 38 × 28 and the wrong answer.)*",
+      "source": "AP ICET 2026 2nd May 2026 Shift 1",
+      "source_year": 2026,
+      "options": [
+        {
+          "label": "219",
+          "is_correct": false
+        },
+        {
+          "label": "144",
+          "is_correct": false
+        },
+        {
+          "label": "296",
+          "is_correct": false
+        },
+        {
+          "label": "264",
+          "is_correct": true
+        }
+      ]
+    },
+    {
+      "chapter": "Mensuration",
+      "difficulty": "easy",
+      "answer_type": "single",
+      "stem": "If each edge of a cube is increased by 10%, then the increase in its surface area is",
+      "explanation": "Surface area varies as the **square** of the edge, so multiplying the edge by 1.1 multiplies the area by\n$$1.1^2 = 1.21,$$\nwhich is a **21%** increase.\n\n*(The volume, varying as the cube, would rise by $1.1^3 - 1 = 33.1\\%$ — a useful contrast to remember.)*",
+      "source": "AP ICET 2026 2nd May 2026 Shift 1",
+      "source_year": 2026,
+      "options": [
+        {
+          "label": "21%",
+          "is_correct": true
+        },
+        {
+          "label": "20%",
+          "is_correct": false
+        },
+        {
+          "label": "22%",
+          "is_correct": false
+        },
+        {
+          "label": "24%",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Number System",
+      "difficulty": "medium",
+      "answer_type": "single",
+      "stem": "Which one of the following statements is true about the natural numbers?",
+      "explanation": "Test each claim:\n\n- *Every prime is odd* — **false**: 2 is prime and even.\n- *The sum of two primes is never prime* — **false**: $2 + 3 = 5$ is prime.\n- **If $a$ and $b$ are relatively prime, then $\\text{lcm}(a,b) = ab$** — **true**: since $\\gcd \\times \\text{lcm} = ab$ and the gcd is 1.\n- *The number of primes up to 20 is 7* — **false**: they are 2, 3, 5, 7, 11, 13, 17, 19 — **eight** of them.",
+      "source": "AP ICET 2026 2nd May 2026 Shift 1",
+      "source_year": 2026,
+      "options": [
+        {
+          "label": "Every prime number is odd.",
+          "is_correct": false
+        },
+        {
+          "label": "Sum of two prime numbers is never a prime.",
+          "is_correct": false
+        },
+        {
+          "label": "If $a$ and $b$ are relatively prime, then $\\text{lcm}(a, b) = ab$.",
+          "is_correct": true
+        },
+        {
+          "label": "The number of primes up to 20 is 7.",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Algebra",
+      "difficulty": "medium",
+      "answer_type": "single",
+      "stem": "Solve for $x$ if $e^{2x} - 5e^{x} + 6 = 0$",
+      "explanation": "Substitute $t = e^x$, which turns the equation into a quadratic:\n$$t^2 - 5t + 6 = 0 \\Rightarrow (t-2)(t-3) = 0 \\Rightarrow t = 2 \\text{ or } 3.$$\n\nNow undo the substitution — both roots are positive, so both are admissible for $e^x$:\n$$e^x = 2 \\Rightarrow x = \\ln 2, \\qquad e^x = 3 \\Rightarrow x = \\ln 3.$$",
+      "source": "AP ICET 2026 2nd May 2026 Shift 1",
+      "source_year": 2026,
+      "options": [
+        {
+          "label": "$\\ln 2,\\ \\ln 5$",
+          "is_correct": false
+        },
+        {
+          "label": "$\\ln 3,\\ \\ln 7$",
+          "is_correct": false
+        },
+        {
+          "label": "$\\ln 2,\\ \\ln 3$",
+          "is_correct": true
+        },
+        {
+          "label": "$\\ln 5,\\ \\ln 7$",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Mensuration",
+      "difficulty": "medium",
+      "answer_type": "single",
+      "stem": "A chord of length 16 cm is drawn in a circle such that its distance from the centre is 6 cm. The area of the square circumscribing the circle is",
+      "explanation": "The perpendicular from the centre bisects the chord, so half the chord (8 cm), the distance (6 cm) and the radius form a right triangle:\n$$r = \\sqrt{8^2 + 6^2} = \\sqrt{100} = 10 \\text{ cm}.$$\n\nA square **circumscribing** the circle touches it on all four sides, so its side equals the **diameter**:\n$$\\text{side} = 20 \\text{ cm} \\Rightarrow \\text{area} = 400 \\text{ cm}^2.$$\n\n*(A square **inscribed** in the same circle would have area 200 — worth keeping the two apart.)*",
+      "source": "AP ICET 2026 2nd May 2026 Shift 1",
+      "source_year": 2026,
+      "options": [
+        {
+          "label": "64 cm²",
+          "is_correct": false
+        },
+        {
+          "label": "100 cm²",
+          "is_correct": false
+        },
+        {
+          "label": "256 cm²",
+          "is_correct": false
+        },
+        {
+          "label": "400 cm²",
+          "is_correct": true
+        }
+      ]
+    },
+    {
+      "chapter": "Standard Deviation & Variance",
+      "difficulty": "hard",
+      "answer_type": "single",
+      "stem": "In five one-day international matches, a batsman scored 31, 97, 112, 63, 12 runs. The standard deviation of this information is",
+      "explanation": "**Mean:** $\\dfrac{31+97+112+63+12}{5} = \\dfrac{315}{5} = 63$.\n\n**Deviations and their squares:**\n\n| Score | $x - 63$ | $(x-63)^2$ |\n| --- | --- | --- |\n| 31 | $-32$ | 1024 |\n| 97 | $34$ | 1156 |\n| 112 | $49$ | 2401 |\n| 63 | $0$ | 0 |\n| 12 | $-51$ | 2601 |\n| | | **7182** |\n\n$$\\text{Variance} = \\frac{7182}{5} = 1436.4, \\qquad \\sigma = \\sqrt{1436.4} \\approx 37.89.$$",
+      "source": "AP ICET 2026 2nd May 2026 Shift 1",
+      "source_year": 2026,
+      "options": [
+        {
+          "label": "21.78",
+          "is_correct": false
+        },
+        {
+          "label": "37.89",
+          "is_correct": true
+        },
+        {
+          "label": "25.79",
+          "is_correct": false
+        },
+        {
+          "label": "26.77",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Probability",
+      "difficulty": "hard",
+      "answer_type": "single",
+      "stem": "Let $A = \\{5, 10, 15, 20, 25\\}$ and $B = \\{3, 6, 9, 18, 21, 24, 27\\}$. Two elements are drawn from them at random. What is the probability that one element comes from A and the other from B?",
+      "explanation": "The two sets are disjoint, so the pool has $5 + 7 = 12$ elements.\n\n**Total ways** to choose 2 from 12:\n$$\\binom{12}{2} = 66.$$\n\n**Favourable ways** — one from each set:\n$$5 \\times 7 = 35.$$\n\n$$P = \\frac{35}{66}.$$",
+      "source": "AP ICET 2026 2nd May 2026 Shift 1",
+      "source_year": 2026,
+      "options": [
+        {
+          "label": "$\\dfrac{35}{66}$",
+          "is_correct": true
+        },
+        {
+          "label": "$\\dfrac{31}{36}$",
+          "is_correct": false
+        },
+        {
+          "label": "$\\dfrac{35}{65}$",
+          "is_correct": false
+        },
+        {
+          "label": "$\\dfrac{35}{55}$",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Mean, Median & Mode",
+      "difficulty": "very_hard",
+      "answer_type": "single",
+      "stem": "The mean of four numbers is 26. The mean of the largest three numbers is 30. If the median of the four numbers is 25, what is the range of the data?",
+      "explanation": "**Total of all four:** $4 \\times 26 = 104$.\n\n**Total of the largest three:** $3 \\times 30 = 90$, so the **smallest** number is $104 - 90 = 14$.\n\n**Median 25** — for four values the median is the mean of the middle two, so those two total $2 \\times 25 = 50$.\n\nThe largest number is therefore $90 - 50 = 40$, and\n$$\\text{Range} = 40 - 14 = 26.$$",
+      "source": "AP ICET 2026 2nd May 2026 Shift 1",
+      "source_year": 2026,
+      "options": [
+        {
+          "label": "14",
+          "is_correct": false
+        },
+        {
+          "label": "20",
+          "is_correct": false
+        },
+        {
+          "label": "26",
+          "is_correct": true
+        },
+        {
+          "label": "30",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Mean, Median & Mode",
+      "difficulty": "medium",
+      "answer_type": "single",
+      "stem": "What is the median of the following data?\n\n| x | 2 | 4 | 6 | 8 |\n| --- | --- | --- | --- | --- |\n| Frequency | 3 | 5 | 4 | 2 |",
+      "explanation": "Total frequency $N = 3+5+4+2 = 14$, so the median is the mean of the **7th and 8th** observations.\n\nCumulative frequencies:\n$$x=2 \\to 3, \\qquad x=4 \\to 8, \\qquad x=6 \\to 12, \\qquad x=8 \\to 14.$$\n\nObservations 4 through 8 all equal 4, so both the 7th and 8th are **4** and the median is 4.\n\n*(The mean here is $\\frac{68}{14} \\approx 4.86$ — close by, but not what was asked.)*",
+      "source": "AP ICET 2026 2nd May 2026 Shift 1",
+      "source_year": 2026,
+      "options": [
+        {
+          "label": "5",
+          "is_correct": false
+        },
+        {
+          "label": "4",
+          "is_correct": true
+        },
+        {
+          "label": "6",
+          "is_correct": false
+        },
+        {
+          "label": "7",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Probability",
+      "difficulty": "very_hard",
+      "answer_type": "single",
+      "stem": "Given that a number is chosen from 4-digit decimal numbers that contain no repeated digits, what is the probability that it contains 2?",
+      "explanation": "**Total 4-digit numbers with all digits distinct.** The leading digit cannot be 0, so\n$$9 \\times 9 \\times 8 \\times 7 = 4536.$$\n\n**Those containing the digit 2**, split by where the 2 sits:\n\n- *2 in the leading place:* the other three come from the remaining 9 digits — $9 \\times 8 \\times 7 = 504$.\n- *2 in one of the last three places:* 3 choices of place; the leading digit is any of $\\{1,\\ldots,9\\}$ except 2, i.e. 8 ways; the two remaining places take $8 \\times 7$ ways — $3 \\times 8 \\times 56 = 1344$.\n\nTotal $= 504 + 1344 = 1848$, so\n$$P = \\frac{1848}{4536} = \\frac{11}{27}.$$",
+      "source": "AP ICET 2026 2nd May 2026 Shift 1",
+      "source_year": 2026,
+      "options": [
+        {
+          "label": "$\\dfrac{13}{25}$",
+          "is_correct": false
+        },
+        {
+          "label": "$\\dfrac{11}{27}$",
+          "is_correct": true
+        },
+        {
+          "label": "$\\dfrac{13}{27}$",
+          "is_correct": false
+        },
+        {
+          "label": "$\\dfrac{11}{25}$",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Mean, Median & Mode",
+      "difficulty": "hard",
+      "answer_type": "single",
+      "stem": "Let $x$ be the median of 13, 8, 15, 14, 17, 9, 14, 16, 13, 17, 14, 15, 16, 15, 14. If 8 is replaced by 18, then the median of the data is $y$. What is the sum of the values of $x$ and $y$?",
+      "explanation": "There are 15 values, so the median is the **8th** after sorting.\n\n**Original, sorted:** 8, 9, 13, 13, 14, 14, 14, **14**, 15, 15, 15, 16, 16, 17, 17 $\\Rightarrow x = 14$.\n\n**Replacing 8 by 18** removes the smallest value and adds the largest, shifting every position down by one:\n9, 13, 13, 14, 14, 14, 14, **15**, 15, 15, 16, 16, 17, 17, 18 $\\Rightarrow y = 15$.\n\n$$x + y = 14 + 15 = 29.$$",
+      "source": "AP ICET 2026 2nd May 2026 Shift 1",
+      "source_year": 2026,
+      "options": [
+        {
+          "label": "28",
+          "is_correct": false
+        },
+        {
+          "label": "29",
+          "is_correct": true
+        },
+        {
+          "label": "30",
+          "is_correct": false
+        },
+        {
+          "label": "27",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Probability",
+      "difficulty": "medium",
+      "answer_type": "single",
+      "stem": "A box contains 10 balls: 3 red, 4 blue, and 3 green. Two balls are drawn one after another without replacement. What is the probability that both balls are of the same colour?",
+      "explanation": "Count the favourable pairs colour by colour:\n$$\\binom32 + \\binom42 + \\binom32 = 3 + 6 + 3 = 12.$$\n\nTotal pairs from 10 balls:\n$$\\binom{10}{2} = 45.$$\n\n$$P = \\frac{12}{45} = \\frac{4}{15}.$$\n\n*(Drawing \"one after another without replacement\" is the same as drawing two together — order does not matter for a same-colour event.)*",
+      "source": "AP ICET 2026 2nd May 2026 Shift 1",
+      "source_year": 2026,
+      "options": [
+        {
+          "label": "$\\dfrac{2}{15}$",
+          "is_correct": false
+        },
+        {
+          "label": "$\\dfrac{7}{15}$",
+          "is_correct": false
+        },
+        {
+          "label": "$\\dfrac{4}{15}$",
+          "is_correct": true
+        },
+        {
+          "label": "$\\dfrac{11}{15}$",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Mean, Median & Mode",
+      "difficulty": "hard",
+      "answer_type": "single",
+      "stem": "Find the mode of the following data:\n\n| Class | 0–10 | 10–20 | 20–30 | 30–40 | 40–50 |\n| --- | --- | --- | --- | --- | --- |\n| Frequency | 4 | 7 | 15 | 10 | 6 |",
+      "explanation": "The highest frequency is 15, so the modal class is **20–30**, with $l = 20$, $f = 15$, $f_1 = 7$ (before), $f_2 = 10$ (after) and $h = 10$.\n\n$$\\text{Mode} = l + \\frac{f - f_1}{2f - f_1 - f_2} \\times h = 20 + \\frac{15-7}{30-7-10} \\times 10 = 20 + \\frac{8}{13} \\times 10$$\n\n$$= 20 + 6.15 = 26.15.$$",
+      "source": "AP ICET 2026 2nd May 2026 Shift 1",
+      "source_year": 2026,
+      "options": [
+        {
+          "label": "26.45",
+          "is_correct": false
+        },
+        {
+          "label": "26.40",
+          "is_correct": false
+        },
+        {
+          "label": "26.15",
+          "is_correct": true
+        },
+        {
+          "label": "26.30",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Mean, Median & Mode",
+      "difficulty": "easy",
+      "answer_type": "single",
+      "stem": "The arithmetic mean of a set of 10 numbers is 20. If each number is first multiplied by 2 and then increased by 5, then what is the mean of the new numbers?",
+      "explanation": "A linear change applied to every value passes straight through to the mean: if each $x$ becomes $2x + 5$, then\n$$\\text{new mean} = 2(\\text{old mean}) + 5 = 2(20) + 5 = 45.$$\n\nThe count of 10 never enters the calculation — it would only matter if the numbers were being pooled with another set.",
+      "source": "AP ICET 2026 2nd May 2026 Shift 1",
+      "source_year": 2026,
+      "options": [
+        {
+          "label": "20",
+          "is_correct": false
+        },
+        {
+          "label": "25",
+          "is_correct": false
+        },
+        {
+          "label": "40",
+          "is_correct": false
+        },
+        {
+          "label": "45",
+          "is_correct": true
+        }
+      ]
+    },
+    {
+      "chapter": "Probability",
+      "difficulty": "medium",
+      "answer_type": "single",
+      "stem": "A bag contains 2 red, 3 green and 2 blue balls. Two balls are drawn at random. What is the probability that none of the balls drawn is blue?",
+      "explanation": "\"None is blue\" means both come from the **non-blue** balls — the 2 red and 3 green, i.e. 5 balls.\n\n$$P = \\frac{\\binom52}{\\binom72} = \\frac{10}{21}.$$\n\n*(Equivalently, drawing one at a time: $\\dfrac57 \\times \\dfrac46 = \\dfrac{20}{42} = \\dfrac{10}{21}$.)*",
+      "source": "AP ICET 2026 2nd May 2026 Shift 1",
+      "source_year": 2026,
+      "options": [
+        {
+          "label": "$\\dfrac{10}{21}$",
+          "is_correct": true
+        },
+        {
+          "label": "$\\dfrac{11}{21}$",
+          "is_correct": false
+        },
+        {
+          "label": "$\\dfrac{2}{7}$",
+          "is_correct": false
+        },
+        {
+          "label": "$\\dfrac{5}{7}$",
+          "is_correct": false
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,1490 @@
+{
+  "subject": "Quantitative Aptitude",
+  "questions": [
+    {
+      "chapter": "Progressions (AP & GP)",
+      "difficulty": "medium",
+      "answer_type": "single",
+      "stem": "What is the sum of all positive integers up to 1000 which are divisible by 5 and are not divisible by 2?",
+      "explanation": "\"Divisible by 5 but not by 2\" means the **odd** multiples of 5, i.e. the numbers ending in 5:\n$$5, \\; 15, \\; 25, \\; \\ldots, \\; 995.$$\n\nThis is an AP with $a = 5$, $d = 10$, $l = 995$:\n$$n = \\frac{995-5}{10} + 1 = 100 \\text{ terms}.$$\n\n$$S = \\frac n2(a + l) = \\frac{100}{2}(5 + 995) = 50 \\times 1000 = \\mathbf{50{,}000}.$$\n\n*(All multiples of 5 up to 1000 sum to $5(1+2+\\cdots+200) = 100{,}500$; the even ones — the multiples of 10 — sum to $10(1+\\cdots+100) = 50{,}500$, and $100{,}500 - 50{,}500 = 50{,}000$ ✓)*",
+      "source": "AP ICET 2025 7th May 2025 Shift 1",
+      "source_year": 2025,
+      "options": [
+        {
+          "label": "10,050",
+          "is_correct": false
+        },
+        {
+          "label": "5,050",
+          "is_correct": false
+        },
+        {
+          "label": "50,000",
+          "is_correct": true
+        },
+        {
+          "label": "49,000",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Progressions (AP & GP)",
+      "difficulty": "medium",
+      "answer_type": "single",
+      "stem": "The sum of the third and ninth term of an Arithmetic Progression is 8. Find the sum of the first 11 terms of the progression.",
+      "explanation": "With first term $a$ and common difference $d$:\n$$a_3 + a_9 = (a+2d) + (a+8d) = 2a + 10d = 8.$$\n\nThe sum of 11 terms is\n$$S_{11} = \\frac{11}{2}\\big(2a + 10d\\big) = \\frac{11}{2}(8) = \\mathbf{44}.$$\n\n*(Neatly: $2a+10d = 8$ means $a_6 = a + 5d = 4$, and for an odd number of terms $S_{11} = 11 \\times a_6 = 44$ — the middle term is the average.)*",
+      "source": "AP ICET 2025 7th May 2025 Shift 1",
+      "source_year": 2025,
+      "options": [
+        {
+          "label": "44",
+          "is_correct": true
+        },
+        {
+          "label": "22",
+          "is_correct": false
+        },
+        {
+          "label": "19",
+          "is_correct": false
+        },
+        {
+          "label": "37",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Time, Speed & Distance",
+      "difficulty": "medium",
+      "answer_type": "single",
+      "stem": "A train running at 60 km/hr takes 30 seconds to cross a platform of 400 metres. What is the length of the train?",
+      "explanation": "Convert the speed to metres per second:\n$$60 \\text{ km/hr} = 60 \\times \\frac{5}{18} = \\frac{50}{3} \\text{ m/s}.$$\n\nIn 30 seconds the train covers\n$$\\frac{50}{3} \\times 30 = 500 \\text{ m}.$$\n\nCrossing a platform means covering **the platform plus its own length**:\n$$400 + L = 500 \\Rightarrow L = \\mathbf{100} \\text{ m}.$$",
+      "source": "AP ICET 2025 7th May 2025 Shift 1",
+      "source_year": 2025,
+      "options": [
+        {
+          "label": "200 m",
+          "is_correct": false
+        },
+        {
+          "label": "300 m",
+          "is_correct": false
+        },
+        {
+          "label": "100 m",
+          "is_correct": true
+        },
+        {
+          "label": "500 m",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Time, Speed & Distance",
+      "difficulty": "hard",
+      "answer_type": "single",
+      "stem": "Ramu starts his car from his house to reach the airport. If he drives his car at 10 km/hour, he will reach the airport 3 minutes late. If he drives at a speed of 20 km/hour, he will reach the airport 6 minutes early. What is the distance between Ramu's house and the airport?",
+      "explanation": "Let the distance be $d$ km. The two journeys differ by\n$$3 + 6 = 9 \\text{ minutes} = \\frac{9}{60} = 0.15 \\text{ hours}.$$\n\nThe slower trip takes that much longer:\n$$\\frac{d}{10} - \\frac{d}{20} = 0.15.$$\n\n$$\\frac{2d - d}{20} = 0.15 \\Rightarrow \\frac{d}{20} = 0.15 \\Rightarrow d = \\mathbf{3} \\text{ km}.$$\n\n*(Check: at 10 km/h it takes 18 min, at 20 km/h it takes 9 min — 9 minutes apart, i.e. 3 late and 6 early about a 15-minute deadline ✓)*",
+      "source": "AP ICET 2025 7th May 2025 Shift 1",
+      "source_year": 2025,
+      "options": [
+        {
+          "label": "4 km",
+          "is_correct": false
+        },
+        {
+          "label": "5 km",
+          "is_correct": false
+        },
+        {
+          "label": "3 km",
+          "is_correct": true
+        },
+        {
+          "label": "6 km",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Time, Speed & Distance",
+      "difficulty": "medium",
+      "answer_type": "single",
+      "stem": "Two trains 100 m and 150 m long, moving at 30 m/s and 20 m/s, cross each other. The time taken by the trains to cross each other is:",
+      "explanation": "To completely cross one another the trains must together cover the **sum of their lengths**:\n$$100 + 150 = 250 \\text{ m}.$$\n\nMoving towards each other, the speeds **add**:\n$$30 + 20 = 50 \\text{ m/s}.$$\n\n$$t = \\frac{250}{50} = \\mathbf{5} \\text{ seconds}.$$",
+      "source": "AP ICET 2025 7th May 2025 Shift 1",
+      "source_year": 2025,
+      "options": [
+        {
+          "label": "5 seconds",
+          "is_correct": true
+        },
+        {
+          "label": "8 seconds",
+          "is_correct": false
+        },
+        {
+          "label": "10 seconds",
+          "is_correct": false
+        },
+        {
+          "label": "12 Seconds",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Time, Speed & Distance",
+      "difficulty": "hard",
+      "answer_type": "single",
+      "stem": "Two trains T₁ and T₂ start at the same time from two stations P and Q respectively to reach stations Q and P. After passing each other T₁ and T₂ take 12 hours and 3 hours to reach the stations Q and P respectively. If the speed of the fastest train is 48 kmph, the speed of the other train is:",
+      "explanation": "For two trains that start together and meet on the way, there is a standard result:\n$$\\frac{S_1}{S_2} = \\sqrt{\\frac{t_2}{t_1}},$$\nwhere $t_1, t_2$ are the times taken **after** they meet.\n\n$$\\frac{S_1}{S_2} = \\sqrt{\\frac{3}{12}} = \\sqrt{\\frac14} = \\frac12.$$\n\nSo $T_2$ is the faster train — it finishes its remaining stretch in just 3 hours.\n$$S_2 = 48 \\Rightarrow S_1 = \\frac{48}{2} = \\mathbf{24} \\text{ kmph}.$$\n\n*(Assigning 48 to the slower train instead would give 96 — option 1, the trap.)*",
+      "source": "AP ICET 2025 7th May 2025 Shift 1",
+      "source_year": 2025,
+      "options": [
+        {
+          "label": "96 kmph",
+          "is_correct": false
+        },
+        {
+          "label": "24 kmph",
+          "is_correct": true
+        },
+        {
+          "label": "36 kmph",
+          "is_correct": false
+        },
+        {
+          "label": "25 kmph",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Time & Work",
+      "difficulty": "medium",
+      "answer_type": "single",
+      "stem": "The time taken by A to finish a work is twice the time taken by B and thrice the time taken by C. If all of them work together, it takes 2 days to complete the entire work. Then the time taken by A, B, C individually to finish the work is ____, ____ and ____ days respectively:",
+      "explanation": "Let A take $t$ days. Then\n$$t = 2 \\times (\\text{B's time}) \\Rightarrow B = \\frac t2, \\qquad t = 3 \\times (\\text{C's time}) \\Rightarrow C = \\frac t3.$$\n\nAdd the one-day rates:\n$$\\frac1t + \\frac2t + \\frac3t = \\frac6t.$$\n\nTogether they finish in 2 days, so\n$$\\frac6t = \\frac12 \\Rightarrow t = \\mathbf{12}.$$\n\n$$A = 12, \\quad B = 6, \\quad C = 4 \\text{ days}.$$",
+      "source": "AP ICET 2025 7th May 2025 Shift 1",
+      "source_year": 2025,
+      "options": [
+        {
+          "label": "10, 6 and 5",
+          "is_correct": false
+        },
+        {
+          "label": "12, 6 and 4",
+          "is_correct": true
+        },
+        {
+          "label": "11, 6 and 5",
+          "is_correct": false
+        },
+        {
+          "label": "10, 5 and 4",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Profit, Loss & Discount",
+      "difficulty": "hard",
+      "answer_type": "single",
+      "stem": "Two products are sold at ₹300 each, where one product gives a profit of 20% and the other product gives a loss of 20%. The total amount of Profit/Loss is:",
+      "explanation": "The two **selling prices** are equal, but the **cost prices** are not — work each one back.\n\n**Profit article:**\n$$CP = \\frac{300}{1.20} = ₹250.$$\n\n**Loss article:**\n$$CP = \\frac{300}{0.80} = ₹375.$$\n\n$$\\text{Total CP} = 250 + 375 = ₹625, \\qquad \\text{Total SP} = 600.$$\n\n$$\\Rightarrow \\textbf{₹25 loss}.$$\n\n*(Whenever two items sell for the same price at equal % gain and loss, the result is **always a loss** — here $\\frac{20^2}{100}\\% = 4\\%$ of ₹625 = ₹25.)*",
+      "source": "AP ICET 2025 7th May 2025 Shift 1",
+      "source_year": 2025,
+      "options": [
+        {
+          "label": "No profit or loss",
+          "is_correct": false
+        },
+        {
+          "label": "₹ 25 profit",
+          "is_correct": false
+        },
+        {
+          "label": "₹ 25 loss",
+          "is_correct": true
+        },
+        {
+          "label": "₹ 20 loss",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Surds & Indices",
+      "difficulty": "easy",
+      "answer_type": "single",
+      "stem": "If $3^{x-y} = 27$ and $3^{x+y} = 243$, then $(x, y) = ?$",
+      "explanation": "Write both right-hand sides as powers of 3 and compare exponents:\n$$27 = 3^3 \\Rightarrow x - y = 3$$\n$$243 = 3^5 \\Rightarrow x + y = 5$$\n\nAdding the two equations:\n$$2x = 8 \\Rightarrow x = 4, \\qquad y = 5 - 4 = 1.$$\n\n$$\\Rightarrow (x, y) = \\mathbf{(4, 1)}.$$",
+      "source": "AP ICET 2025 7th May 2025 Shift 1",
+      "source_year": 2025,
+      "options": [
+        {
+          "label": "(2, 4)",
+          "is_correct": false
+        },
+        {
+          "label": "(1, 7)",
+          "is_correct": false
+        },
+        {
+          "label": "(1, 4)",
+          "is_correct": false
+        },
+        {
+          "label": "(4, 1)",
+          "is_correct": true
+        }
+      ]
+    },
+    {
+      "chapter": "Profit, Loss & Discount",
+      "difficulty": "hard",
+      "answer_type": "single",
+      "stem": "If the selling price of an item is doubled, the profit will be tripled. What is the original profit percentage?",
+      "explanation": "Let the cost price be $c$ and the selling price $s$, so the profit is $s - c$.\n\nDoubling the selling price triples the profit:\n$$2s - c = 3(s - c).$$\n\n$$2s - c = 3s - 3c \\Rightarrow 2c = s.$$\n\nSo the selling price is twice the cost, and the profit equals the cost:\n$$\\text{Profit}\\% = \\frac{s-c}{c}\\times 100 = \\frac{c}{c}\\times 100 = \\mathbf{100\\%}.$$",
+      "source": "AP ICET 2025 7th May 2025 Shift 1",
+      "source_year": 2025,
+      "options": [
+        {
+          "label": "100",
+          "is_correct": true
+        },
+        {
+          "label": "50",
+          "is_correct": false
+        },
+        {
+          "label": "25",
+          "is_correct": false
+        },
+        {
+          "label": "10",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Ratio & Proportion",
+      "difficulty": "easy",
+      "answer_type": "single",
+      "stem": "The ratio between the speeds of two trains is 7 : 8. If the second train runs 400 km in 4 hours, then the speed of the first train is:",
+      "explanation": "**Second train's speed:**\n$$\\frac{400}{4} = 100 \\text{ kmph}.$$\n\nThe ratio $7 : 8$ gives\n$$\\frac{S_1}{100} = \\frac78 \\Rightarrow S_1 = \\frac{700}{8} = \\mathbf{87.5} \\text{ kmph}.$$",
+      "source": "AP ICET 2025 7th May 2025 Shift 1",
+      "source_year": 2025,
+      "options": [
+        {
+          "label": "70 kmph",
+          "is_correct": false
+        },
+        {
+          "label": "75 kmph",
+          "is_correct": false
+        },
+        {
+          "label": "87.5 kmph",
+          "is_correct": true
+        },
+        {
+          "label": "84 kmph",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "LCM & HCF",
+      "difficulty": "medium",
+      "answer_type": "single",
+      "stem": "The smallest five digit number that is divisible by 22, 33 and 44 is:",
+      "explanation": "A number divisible by all three must be a multiple of their **LCM**:\n$$22 = 2 \\times 11, \\quad 33 = 3 \\times 11, \\quad 44 = 2^2 \\times 11$$\n$$\\Rightarrow \\text{LCM} = 2^2 \\times 3 \\times 11 = 132.$$\n\nThe smallest five-digit number is 10000:\n$$\\frac{10000}{132} = 75.75\\ldots \\Rightarrow \\text{take } 76.$$\n\n$$76 \\times 132 = \\mathbf{10032}.$$",
+      "source": "AP ICET 2025 7th May 2025 Shift 1",
+      "source_year": 2025,
+      "options": [
+        {
+          "label": "10012",
+          "is_correct": false
+        },
+        {
+          "label": "10022",
+          "is_correct": false
+        },
+        {
+          "label": "10032",
+          "is_correct": true
+        },
+        {
+          "label": "10042",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Surds & Indices",
+      "difficulty": "very_hard",
+      "answer_type": "single",
+      "stem": "If $\\dfrac{2^{\\frac32} + 27a^{\\frac35}}{\\left(\\frac12\\right)^{\\frac{-1}{2}} + 3a^{\\frac15}} = 2 - k\\,a^{\\frac15} + 9\\,a^{\\frac25}$, then $k = ?$",
+      "explanation": "The shape $\\dfrac{u^3+v^3}{u+v} = u^2 - uv + v^2$ is hiding in this expression. Set\n$$u = 2^{\\frac12} = \\sqrt2, \\qquad v = 3a^{\\frac15}.$$\n\n**Numerator:**\n$$u^3 = 2^{\\frac32}, \\qquad v^3 = 27a^{\\frac35} \\;\\checkmark$$\n\n**Denominator:** note $\\left(\\frac12\\right)^{-\\frac12} = 2^{\\frac12} = u$, so it is $u + v$ ✓\n\nTherefore the fraction equals\n$$u^2 - uv + v^2 = 2 - 3\\sqrt2\\,a^{\\frac15} + 9a^{\\frac25}.$$\n\nMatching with $2 - k a^{\\frac15} + 9a^{\\frac25}$:\n$$k = \\mathbf{3\\sqrt2}.$$",
+      "source": "AP ICET 2025 7th May 2025 Shift 1",
+      "source_year": 2025,
+      "options": [
+        {
+          "label": "$-\\sqrt6$",
+          "is_correct": false
+        },
+        {
+          "label": "$\\sqrt6$",
+          "is_correct": false
+        },
+        {
+          "label": "$-3\\sqrt2$",
+          "is_correct": false
+        },
+        {
+          "label": "$3\\sqrt2$",
+          "is_correct": true
+        }
+      ]
+    },
+    {
+      "chapter": "Number System",
+      "difficulty": "medium",
+      "answer_type": "single",
+      "stem": "The number of positive divisors of 2025 is:",
+      "explanation": "Factorise first:\n$$2025 = 81 \\times 25 = 3^4 \\times 5^2.$$\n\nFor $N = p^a q^b$, the number of divisors is $(a+1)(b+1)$ — each prime's exponent may be chosen independently from 0 up to its maximum:\n$$(4+1)(2+1) = 5 \\times 3 = \\mathbf{15}.$$",
+      "source": "AP ICET 2025 7th May 2025 Shift 1",
+      "source_year": 2025,
+      "options": [
+        {
+          "label": "15",
+          "is_correct": true
+        },
+        {
+          "label": "20",
+          "is_correct": false
+        },
+        {
+          "label": "21",
+          "is_correct": false
+        },
+        {
+          "label": "24",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Ratio & Proportion",
+      "difficulty": "medium",
+      "answer_type": "single",
+      "stem": "In a mixture of 60 litres, the ratio of milk and water is 2 : 1. If this ratio is to be 1 : 2, then the quantity of water to be further added is:",
+      "explanation": "**Present composition** (60 L in the ratio $2:1$):\n$$\\text{milk} = 40 \\text{ L}, \\qquad \\text{water} = 20 \\text{ L}.$$\n\nOnly water is added, so the **milk stays at 40 L**. For the new ratio $1 : 2$:\n$$\\frac{40}{\\text{water}} = \\frac12 \\Rightarrow \\text{water} = 80 \\text{ L}.$$\n\n$$\\text{Water to add} = 80 - 20 = \\mathbf{60} \\text{ litres}.$$",
+      "source": "AP ICET 2025 7th May 2025 Shift 1",
+      "source_year": 2025,
+      "options": [
+        {
+          "label": "10 liters",
+          "is_correct": false
+        },
+        {
+          "label": "20 liters",
+          "is_correct": false
+        },
+        {
+          "label": "40 liters",
+          "is_correct": false
+        },
+        {
+          "label": "60 liters",
+          "is_correct": true
+        }
+      ]
+    },
+    {
+      "chapter": "Surds & Indices",
+      "difficulty": "hard",
+      "answer_type": "single",
+      "stem": "$\\sqrt{24 + 2\\sqrt{143}} = \\underline{\\qquad}$",
+      "explanation": "An expression of the form $\\sqrt{a + b + 2\\sqrt{ab}}$ simplifies to $\\sqrt a + \\sqrt b$, because\n$$\\left(\\sqrt a + \\sqrt b\\right)^2 = a + b + 2\\sqrt{ab}.$$\n\nHere we need two numbers with **product 143** and **sum 24**:\n$$143 = 11 \\times 13, \\qquad 11 + 13 = 24 \\;\\checkmark$$\n\n$$\\Rightarrow \\sqrt{24 + 2\\sqrt{143}} = \\mathbf{\\sqrt{11} + \\sqrt{13}}.$$",
+      "source": "AP ICET 2025 7th May 2025 Shift 1",
+      "source_year": 2025,
+      "options": [
+        {
+          "label": "$\\sqrt2 + \\sqrt{13}$",
+          "is_correct": false
+        },
+        {
+          "label": "$\\sqrt3 + \\sqrt{13}$",
+          "is_correct": false
+        },
+        {
+          "label": "$\\sqrt7 + \\sqrt{13}$",
+          "is_correct": false
+        },
+        {
+          "label": "$\\sqrt{11} + \\sqrt{13}$",
+          "is_correct": true
+        }
+      ]
+    },
+    {
+      "chapter": "Profit, Loss & Discount",
+      "difficulty": "hard",
+      "answer_type": "single",
+      "stem": "An article A is sold for ₹200 more than the selling price of another article 'B'. If 'B' is sold for 5% less than that of 'A' and the cost price of 'B' is ₹2500, then what is the percentage of profit on 'B'?",
+      "explanation": "Let the selling prices be $A$ and $B$.\n\n**From the first sentence:** $A = B + 200$.\n**From the second:** $B$ is 5% below $A$, i.e. $B = 0.95A$.\n\nSubstitute:\n$$A = 0.95A + 200 \\Rightarrow 0.05A = 200 \\Rightarrow A = ₹4000.$$\n$$B = 4000 - 200 = ₹3800.$$\n\nWith $CP_B = ₹2500$:\n$$\\text{Profit} = 3800 - 2500 = ₹1300$$\n$$\\text{Profit}\\% = \\frac{1300}{2500}\\times 100 = \\mathbf{52\\%}.$$",
+      "source": "AP ICET 2025 7th May 2025 Shift 1",
+      "source_year": 2025,
+      "options": [
+        {
+          "label": "51%",
+          "is_correct": false
+        },
+        {
+          "label": "52%",
+          "is_correct": true
+        },
+        {
+          "label": "53%",
+          "is_correct": false
+        },
+        {
+          "label": "54%",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Number System",
+      "difficulty": "medium",
+      "answer_type": "single",
+      "stem": "A 7-digit number $345a812$ is exactly divisible by 3. Then the number of possible values of $a$ is:",
+      "explanation": "A number is divisible by 3 when its **digit sum** is divisible by 3.\n\n$$3+4+5+a+8+1+2 = 23 + a.$$\n\nThe next multiples of 3 at or above 23 are 24, 27 and 30, so\n$$a = 1, \\; 4, \\; 7.$$\n\n(The next would be $a = 10$, which is not a single digit.)\n\n$$\\Rightarrow \\mathbf{3} \\text{ possible values}.$$",
+      "source": "AP ICET 2025 7th May 2025 Shift 1",
+      "source_year": 2025,
+      "options": [
+        {
+          "label": "2",
+          "is_correct": false
+        },
+        {
+          "label": "3",
+          "is_correct": true
+        },
+        {
+          "label": "4",
+          "is_correct": false
+        },
+        {
+          "label": "5",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Pipes & Cisterns",
+      "difficulty": "easy",
+      "answer_type": "single",
+      "stem": "A pipe 'P' can fill a tank in 20 hours and another pipe 'Q' in 30 hours. If both pipes are opened in an empty tank, how much time will they take to fill it?",
+      "explanation": "Add the one-hour rates:\n$$\\frac{1}{20} + \\frac{1}{30} = \\frac{3 + 2}{60} = \\frac{5}{60} = \\frac{1}{12}.$$\n\nTogether they fill $\\dfrac{1}{12}$ of the tank each hour, so the tank fills in\n$$\\mathbf{12} \\text{ hours}.$$\n\n*(A useful check: the combined time must be less than the faster pipe's 20 hours ✓)*",
+      "source": "AP ICET 2025 7th May 2025 Shift 1",
+      "source_year": 2025,
+      "options": [
+        {
+          "label": "12 hours",
+          "is_correct": true
+        },
+        {
+          "label": "15 hours",
+          "is_correct": false
+        },
+        {
+          "label": "20 hours",
+          "is_correct": false
+        },
+        {
+          "label": "50 hours",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Mean, Median & Mode",
+      "difficulty": "very_hard",
+      "answer_type": "single",
+      "stem": "The average age of 10 children is 14 years. If two children of ages 13 years and 10 years left this group and another two children having ages 7 years and 6 years joined, then the average age of this new group is $x$. If the two children who left from the original group rejoin this new group, then the average age of this group is less than $x$ by:",
+      "explanation": "Work with **totals**, not averages.\n\n**Original group:** $10 \\times 14 = 140$ years.\n\n**After the swap:** two children (13 + 10 = 23) leave and two (7 + 6 = 13) join —\n$$140 - 23 + 13 = 130 \\text{ years across } 10 \\text{ children} \\Rightarrow x = 13.$$\n\n**When the two rejoin:**\n$$130 + 23 = 153 \\text{ years across } 12 \\text{ children} \\Rightarrow \\frac{153}{12} = 12.75.$$\n\n$$x - 12.75 = 13 - 12.75 = 0.25 = \\mathbf{\\frac14}.$$",
+      "source": "AP ICET 2025 7th May 2025 Shift 1",
+      "source_year": 2025,
+      "options": [
+        {
+          "label": "$\\frac34$",
+          "is_correct": false
+        },
+        {
+          "label": "$\\frac14$",
+          "is_correct": true
+        },
+        {
+          "label": "$\\frac74$",
+          "is_correct": false
+        },
+        {
+          "label": "$\\frac{15}{14}$",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Percentages",
+      "difficulty": "easy",
+      "answer_type": "single",
+      "stem": "The price of an article increases by 20% and then decreases by 10%. Then the net percentage change is:",
+      "explanation": "Successive percentage changes **multiply**, they do not add. Start from 100:\n$$100 \\xrightarrow{+20\\%} 120 \\xrightarrow{-10\\%} 120 \\times 0.9 = 108.$$\n\n$$\\Rightarrow \\mathbf{8\\%\\ increase}.$$\n\n*(The 10% cut is taken on the raised price of 120, not on the original 100 — which is why the answer is 8% and not 10%.)*",
+      "source": "AP ICET 2025 7th May 2025 Shift 1",
+      "source_year": 2025,
+      "options": [
+        {
+          "label": "8% increase",
+          "is_correct": true
+        },
+        {
+          "label": "10% increase",
+          "is_correct": false
+        },
+        {
+          "label": "8% decrease",
+          "is_correct": false
+        },
+        {
+          "label": "10% decrease",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Number System",
+      "difficulty": "easy",
+      "answer_type": "single",
+      "stem": "The last digit of $7^{100}$ is:",
+      "explanation": "The units digit of the powers of 7 repeats with period 4:\n$$7^1 = 7, \\quad 7^2 = 49 \\to 9, \\quad 7^3 \\to 3, \\quad 7^4 \\to 1, \\quad 7^5 \\to 7, \\ldots$$\n\n$$100 = 4 \\times 25 \\Rightarrow \\text{remainder } 0,$$\nso we land on the last member of the cycle:\n$$\\text{last digit} = \\mathbf{1}.$$",
+      "source": "AP ICET 2025 7th May 2025 Shift 1",
+      "source_year": 2025,
+      "options": [
+        {
+          "label": "0",
+          "is_correct": false
+        },
+        {
+          "label": "1",
+          "is_correct": true
+        },
+        {
+          "label": "2",
+          "is_correct": false
+        },
+        {
+          "label": "3",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Surds & Indices",
+      "difficulty": "medium",
+      "answer_type": "single",
+      "stem": "If $\\left(\\dfrac ab\\right)^{x-1} = \\left(\\dfrac ba\\right)^{x-3}$, then $x = \\underline{\\qquad}$",
+      "explanation": "Make both sides powers of the **same** base. Since $\\dfrac ba = \\left(\\dfrac ab\\right)^{-1}$,\n$$\\left(\\frac ba\\right)^{x-3} = \\left(\\frac ab\\right)^{-(x-3)} = \\left(\\frac ab\\right)^{3-x}.$$\n\nWith equal bases the exponents must match:\n$$x - 1 = 3 - x \\Rightarrow 2x = 4 \\Rightarrow x = \\mathbf{2}.$$\n\n*(Check: both sides become $\\left(\\frac ab\\right)^1$ ✓)*",
+      "source": "AP ICET 2025 7th May 2025 Shift 1",
+      "source_year": 2025,
+      "options": [
+        {
+          "label": "2",
+          "is_correct": true
+        },
+        {
+          "label": "3",
+          "is_correct": false
+        },
+        {
+          "label": "4",
+          "is_correct": false
+        },
+        {
+          "label": "5",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Mensuration",
+      "difficulty": "easy",
+      "answer_type": "single",
+      "stem": "The total surface area of a cuboid of length $l = 5$ cm, width $b = 2$ cm and height $h = 3$ cm is ______ sq. cm.",
+      "explanation": "A cuboid has three pairs of identical faces, so\n$$\\text{TSA} = 2(lb + bh + hl).$$\n\n$$= 2\\big(5{\\times}2 + 2{\\times}3 + 3{\\times}5\\big) = 2(10 + 6 + 15)$$\n\n$$= 2 \\times 31 = \\mathbf{62}\\ \\text{cm}^2.$$",
+      "source": "AP ICET 2025 7th May 2025 Shift 1",
+      "source_year": 2025,
+      "options": [
+        {
+          "label": "50",
+          "is_correct": false
+        },
+        {
+          "label": "42",
+          "is_correct": false
+        },
+        {
+          "label": "62",
+          "is_correct": true
+        },
+        {
+          "label": "70",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Mensuration",
+      "difficulty": "hard",
+      "answer_type": "single",
+      "stem": "A conical chamber with the same height and base diameter is created from a solid cylinder of height 18 cm and diameter 14 cm. The remaining solid's volume is around (take $\\pi = \\frac{22}{7}$):",
+      "explanation": "The cone hollowed out has the **same radius and height** as the cylinder, and a cone is exactly one-third of such a cylinder. So the solid that remains is\n$$V = \\pi r^2 h - \\frac13\\pi r^2 h = \\frac23 \\pi r^2 h.$$\n\nWith $r = \\dfrac{14}{2} = 7$ and $h = 18$:\n$$V = \\frac23 \\times \\frac{22}{7} \\times 49 \\times 18 = \\frac23 \\times 22 \\times 7 \\times 18$$\n\n$$= \\frac23 \\times 2772 = \\mathbf{1848}\\ \\text{cm}^3.$$",
+      "source": "AP ICET 2025 7th May 2025 Shift 1",
+      "source_year": 2025,
+      "options": [
+        {
+          "label": "1888 cm³",
+          "is_correct": false
+        },
+        {
+          "label": "1448 cm³",
+          "is_correct": false
+        },
+        {
+          "label": "1848 cm³",
+          "is_correct": true
+        },
+        {
+          "label": "1998 cm³",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Ratio & Proportion",
+      "difficulty": "medium",
+      "answer_type": "single",
+      "stem": "Suppose $a, b, c$ are real numbers such that $a : b : c = 3 : 2 : 4$. Then $\\sqrt{a^2 + 6b^2 + c^2}$ is equal to:",
+      "explanation": "Write the three numbers with a common multiplier: $a = 3k$, $b = 2k$, $c = 4k$.\n\n$$a^2 + 6b^2 + c^2 = 9k^2 + 6(4k^2) + 16k^2 = 9k^2 + 24k^2 + 16k^2 = 49k^2.$$\n\n$$\\sqrt{49k^2} = 7k.$$\n\nNow express $7k$ using the options:\n$$a + 2b = 3k + 4k = 7k \\;\\checkmark$$\n\n*(For comparison $a + 3b = 9k$, $b + c = 6k$ and $a+b+c = 9k$ — none matches.)*",
+      "source": "AP ICET 2025 7th May 2025 Shift 1",
+      "source_year": 2025,
+      "options": [
+        {
+          "label": "$a + 3b$",
+          "is_correct": false
+        },
+        {
+          "label": "$a + 2b$",
+          "is_correct": true
+        },
+        {
+          "label": "$b + c$",
+          "is_correct": false
+        },
+        {
+          "label": "$a + b + c$",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Algebra",
+      "difficulty": "very_hard",
+      "answer_type": "single",
+      "stem": "If $|x - y| < 5$ and $|x - y| \\ge 2$, then the maximum integral value of $y$ such that $x$ is always negative is:",
+      "explanation": "The two conditions together say the gap between $x$ and $y$ lies in $[2, 5)$, so\n$$x \\in (y-5,\\; y-2] \\;\\cup\\; [y+2,\\; y+5).$$\n\nFor **every** such $x$ to be negative, even the largest possible one must be. The upper end of the right interval approaches $y + 5$, so we need\n$$y + 5 \\le 0 \\Rightarrow y \\le -5.$$\n\nThe greatest integer satisfying this is\n$$y = \\mathbf{-5}.$$\n\n*(Check $y = -5$: $x$ ranges over $(-10,-7] \\cup [-3, 0)$ — all negative ✓. With $y = -4$, $x$ could be $+0.5$, which is not.)*",
+      "source": "AP ICET 2025 7th May 2025 Shift 1",
+      "source_year": 2025,
+      "options": [
+        {
+          "label": "0",
+          "is_correct": false
+        },
+        {
+          "label": "$-2$",
+          "is_correct": false
+        },
+        {
+          "label": "2",
+          "is_correct": false
+        },
+        {
+          "label": "$-5$",
+          "is_correct": true
+        }
+      ]
+    },
+    {
+      "chapter": "Algebra",
+      "difficulty": "hard",
+      "answer_type": "single",
+      "stem": "$\\dfrac{1}{2 \\times 3} + \\dfrac{1}{3 \\times 4} + \\cdots + \\dfrac{1}{49 \\times 50} = ?$",
+      "explanation": "Each term splits into a difference:\n$$\\frac{1}{n(n+1)} = \\frac1n - \\frac1{n+1}.$$\n\nSo the sum **telescopes** — every interior term cancels:\n$$\\left(\\frac12 - \\frac13\\right) + \\left(\\frac13 - \\frac14\\right) + \\cdots + \\left(\\frac1{49} - \\frac1{50}\\right) = \\frac12 - \\frac1{50}.$$\n\n$$= \\frac{25 - 1}{50} = \\frac{24}{50} = \\mathbf{\\frac{12}{25}}.$$",
+      "source": "AP ICET 2025 7th May 2025 Shift 1",
+      "source_year": 2025,
+      "options": [
+        {
+          "label": "$\\frac{12}{25}$",
+          "is_correct": true
+        },
+        {
+          "label": "$\\frac{8}{25}$",
+          "is_correct": false
+        },
+        {
+          "label": "$\\frac{29}{50}$",
+          "is_correct": false
+        },
+        {
+          "label": "$\\frac{47}{50}$",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Geometry",
+      "difficulty": "easy",
+      "answer_type": "single",
+      "stem": "The sides of a triangle are in the ratio $3 : 4 : 5$. Then the measure (in degrees) of the largest angle of the triangle is:",
+      "explanation": "Take the sides as $3k, 4k, 5k$ and test the converse of Pythagoras:\n$$(3k)^2 + (4k)^2 = 9k^2 + 16k^2 = 25k^2 = (5k)^2.$$\n\nThe relation holds, so the triangle is **right-angled**, and the right angle lies opposite the longest side.\n\n$$\\Rightarrow \\text{largest angle} = \\mathbf{90^\\circ}.$$",
+      "source": "AP ICET 2025 7th May 2025 Shift 1",
+      "source_year": 2025,
+      "options": [
+        {
+          "label": "90°",
+          "is_correct": true
+        },
+        {
+          "label": "60°",
+          "is_correct": false
+        },
+        {
+          "label": "80°",
+          "is_correct": false
+        },
+        {
+          "label": "85°",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Number System",
+      "difficulty": "medium",
+      "answer_type": "single",
+      "stem": "Which of the following arrangements of rational numbers in ascending order is correct?",
+      "explanation": "Convert each to a decimal — and remember that with **negative** numbers the one further from zero is the *smaller*:\n$$-\\frac34 = -0.75, \\qquad -\\frac{7}{10} = -0.70, \\qquad -\\frac58 = -0.625.$$\n\nAscending (least to greatest):\n$$-0.75 < -0.70 < -0.625$$\n\n$$\\Rightarrow -\\frac34 < -\\frac{7}{10} < -\\frac58.$$",
+      "source": "AP ICET 2025 7th May 2025 Shift 1",
+      "source_year": 2025,
+      "options": [
+        {
+          "label": "$-\\frac58 < -\\frac34 < -\\frac{7}{10}$",
+          "is_correct": false
+        },
+        {
+          "label": "$-\\frac34 < -\\frac58 < -\\frac{7}{10}$",
+          "is_correct": false
+        },
+        {
+          "label": "$-\\frac{7}{10} < -\\frac58 < -\\frac34$",
+          "is_correct": false
+        },
+        {
+          "label": "$-\\frac34 < -\\frac{7}{10} < -\\frac58$",
+          "is_correct": true
+        }
+      ]
+    },
+    {
+      "chapter": "LCM & HCF",
+      "difficulty": "medium",
+      "answer_type": "single",
+      "stem": "In a function hall, 21 yellow chairs, 42 red chairs and 56 orange chairs have to be put in a row such that each row contains the same number of chairs of one colour only. The minimum number of rows in which the chairs may be arranged is:",
+      "explanation": "To use the **fewest rows**, each row must hold as many chairs as possible — and that common row size must divide all three counts. So take their **HCF**:\n$$21 = 3 \\times 7, \\quad 42 = 2 \\times 3 \\times 7, \\quad 56 = 2^3 \\times 7 \\Rightarrow \\text{HCF} = 7.$$\n\nWith 7 chairs per row:\n$$\\frac{21}{7} + \\frac{42}{7} + \\frac{56}{7} = 3 + 6 + 8 = \\mathbf{17} \\text{ rows}.$$",
+      "source": "AP ICET 2025 7th May 2025 Shift 1",
+      "source_year": 2025,
+      "options": [
+        {
+          "label": "17",
+          "is_correct": true
+        },
+        {
+          "label": "21",
+          "is_correct": false
+        },
+        {
+          "label": "27",
+          "is_correct": false
+        },
+        {
+          "label": "34",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "LCM & HCF",
+      "difficulty": "easy",
+      "answer_type": "single",
+      "stem": "The least number which, when divided by 6, 9, 12, 15 and 18, leaves a remainder 5 in each case is:",
+      "explanation": "A number leaving the **same remainder 5** with every divisor is 5 more than a common multiple of them all. The least such number is\n$$\\text{LCM}(6, 9, 12, 15, 18) + 5.$$\n\n$$6 = 2\\cdot3, \\; 9 = 3^2, \\; 12 = 2^2\\cdot3, \\; 15 = 3\\cdot5, \\; 18 = 2\\cdot3^2$$\n$$\\Rightarrow \\text{LCM} = 2^2 \\times 3^2 \\times 5 = 180.$$\n\n$$180 + 5 = \\mathbf{185}.$$",
+      "source": "AP ICET 2025 7th May 2025 Shift 1",
+      "source_year": 2025,
+      "options": [
+        {
+          "label": "185",
+          "is_correct": true
+        },
+        {
+          "label": "365",
+          "is_correct": false
+        },
+        {
+          "label": "1850",
+          "is_correct": false
+        },
+        {
+          "label": "3650",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Number System",
+      "difficulty": "medium",
+      "answer_type": "single",
+      "stem": "If a number is divided by 15, it gives a remainder of 7. What will be the remainder when the square of this number is divided by 15?",
+      "explanation": "Write the number as $N = 15k + 7$ and square it:\n$$N^2 = 225k^2 + 210k + 49.$$\n\nThe first two terms are multiples of 15, so only 49 matters:\n$$49 = 15 \\times 3 + 4.$$\n\n$$\\Rightarrow \\text{remainder} = \\mathbf{4}.$$\n\n*(Shortcut: the remainder of $N^2$ is the remainder of $7^2 = 49$, i.e. 4.)*",
+      "source": "AP ICET 2025 7th May 2025 Shift 1",
+      "source_year": 2025,
+      "options": [
+        {
+          "label": "1",
+          "is_correct": false
+        },
+        {
+          "label": "2",
+          "is_correct": false
+        },
+        {
+          "label": "3",
+          "is_correct": false
+        },
+        {
+          "label": "4",
+          "is_correct": true
+        }
+      ]
+    },
+    {
+      "chapter": "Time, Speed & Distance",
+      "difficulty": "very_hard",
+      "answer_type": "single",
+      "stem": "A man on a boat goes 10 km upstream and comes back to the starting point in the same path in 55 minutes. If the speed of the stream is 2 kmph, then the speed of the boat in still water is:",
+      "explanation": "Let the still-water speed be $b$ kmph. Upstream the boat makes $b-2$, downstream $b+2$, and the round trip takes $\\dfrac{55}{60} = \\dfrac{11}{12}$ hours:\n\n$$\\frac{10}{b-2} + \\frac{10}{b+2} = \\frac{11}{12}.$$\n\nCombine the left side:\n$$\\frac{10(b+2) + 10(b-2)}{b^2-4} = \\frac{20b}{b^2-4} = \\frac{11}{12}.$$\n\n$$240b = 11b^2 - 44 \\Rightarrow 11b^2 - 240b - 44 = 0.$$\n\n$$b = \\frac{240 \\pm \\sqrt{57600 + 1936}}{22} = \\frac{240 \\pm 244}{22}.$$\n\nThe negative root is rejected, leaving\n$$b = \\frac{484}{22} = \\mathbf{22} \\text{ kmph}.$$\n\n*(Check: $\\frac{10}{20} + \\frac{10}{24} = 0.5 + 0.4167 = 0.9167 = \\frac{11}{12}$ ✓)*",
+      "source": "AP ICET 2025 7th May 2025 Shift 1",
+      "source_year": 2025,
+      "options": [
+        {
+          "label": "25 kmph",
+          "is_correct": false
+        },
+        {
+          "label": "27 kmph",
+          "is_correct": false
+        },
+        {
+          "label": "22 kmph",
+          "is_correct": true
+        },
+        {
+          "label": "30 kmph",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Mean, Median & Mode",
+      "difficulty": "easy",
+      "answer_type": "single",
+      "stem": "The average of runs of a cricket player of 10 innings was 32. How many runs must he make in his next innings so as to increase his average of runs by 4?",
+      "explanation": "**Runs so far:** $10 \\times 32 = 320$.\n\n**Runs needed after 11 innings** at the new average $32 + 4 = 36$:\n$$11 \\times 36 = 396.$$\n\n$$\\text{Next innings} = 396 - 320 = \\mathbf{76}.$$\n\n*(Intuition: he needs 36 for the innings itself plus $10 \\times 4 = 40$ to lift the ten earlier innings — again 76.)*",
+      "source": "AP ICET 2025 7th May 2025 Shift 1",
+      "source_year": 2025,
+      "options": [
+        {
+          "label": "60",
+          "is_correct": false
+        },
+        {
+          "label": "64",
+          "is_correct": false
+        },
+        {
+          "label": "70",
+          "is_correct": false
+        },
+        {
+          "label": "76",
+          "is_correct": true
+        }
+      ]
+    },
+    {
+      "chapter": "Number System",
+      "difficulty": "hard",
+      "answer_type": "single",
+      "stem": "If '$n!$' denotes the product of the integers 1 through '$n$', what is the remainder when $(1! + 2! + 3! + 4! + 5! + 6! + \\cdots)$ is divided by 9?",
+      "explanation": "From $6!$ onwards every term contains the factors $3 \\times 6 = 18$, so **each is a multiple of 9** and contributes nothing to the remainder.\n\nThat leaves only the first five terms:\n$$1 + 2 + 6 + 24 + 120 = 153.$$\n\n$$153 = 9 \\times 17 \\Rightarrow \\text{remainder} = \\mathbf{0}.$$",
+      "source": "AP ICET 2025 7th May 2025 Shift 1",
+      "source_year": 2025,
+      "options": [
+        {
+          "label": "8",
+          "is_correct": false
+        },
+        {
+          "label": "1",
+          "is_correct": false
+        },
+        {
+          "label": "2",
+          "is_correct": false
+        },
+        {
+          "label": "0",
+          "is_correct": true
+        }
+      ]
+    },
+    {
+      "chapter": "Mensuration",
+      "difficulty": "hard",
+      "answer_type": "single",
+      "stem": "The number of revolutions made by a wheel of radius $r_1$ to cover a distance of $5\\frac12$ km is 2500, while another wheel of radius $r_2$ made 3125 revolutions to cover the same distance. Then $r_1 + r_2 = ?$",
+      "explanation": "In one revolution a wheel covers its **circumference**, so\n$$\\text{circumference} = \\frac{\\text{distance}}{\\text{revolutions}}.$$\n\nThe distance is $5\\frac12$ km $= 5500$ m $= 550000$ cm.\n\n**First wheel:**\n$$2\\pi r_1 = \\frac{550000}{2500} = 220 \\text{ cm} \\Rightarrow r_1 = \\frac{220 \\times 7}{2 \\times 22} = 35 \\text{ cm}.$$\n\n**Second wheel:**\n$$2\\pi r_2 = \\frac{550000}{3125} = 176 \\text{ cm} \\Rightarrow r_2 = \\frac{176 \\times 7}{44} = 28 \\text{ cm}.$$\n\n$$r_1 + r_2 = 35 + 28 = \\mathbf{63} \\text{ cm}.$$",
+      "source": "AP ICET 2025 7th May 2025 Shift 1",
+      "source_year": 2025,
+      "options": [
+        {
+          "label": "60 cm",
+          "is_correct": false
+        },
+        {
+          "label": "61 cm",
+          "is_correct": false
+        },
+        {
+          "label": "62 cm",
+          "is_correct": false
+        },
+        {
+          "label": "63 cm",
+          "is_correct": true
+        }
+      ]
+    },
+    {
+      "chapter": "Simple & Compound Interest",
+      "difficulty": "medium",
+      "answer_type": "single",
+      "stem": "The population of a city increases by 5% annually. If the present population is 10,00,000, then the population after 3 years is:",
+      "explanation": "Growth at a fixed annual rate compounds, exactly like compound interest:\n$$P = P_0(1 + r)^n = 10{,}00{,}000 \\times (1.05)^3.$$\n\n$$(1.05)^3 = 1.157625$$\n\n$$P = 10{,}00{,}000 \\times 1.157625 = \\mathbf{11{,}57{,}625}.$$\n\n*(Simple 5% × 3 = 15% would give 11,50,000 — the extra ₹7,625 is the compounding.)*",
+      "source": "AP ICET 2025 7th May 2025 Shift 1",
+      "source_year": 2025,
+      "options": [
+        {
+          "label": "11,57,620",
+          "is_correct": false
+        },
+        {
+          "label": "11,57,625",
+          "is_correct": true
+        },
+        {
+          "label": "11,57,630",
+          "is_correct": false
+        },
+        {
+          "label": "11,57,635",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Coordinate Geometry",
+      "difficulty": "medium",
+      "answer_type": "single",
+      "stem": "The equation of the straight line passing through the point $(-1, 2)$ and perpendicular to the line $x + 3y = 4$ is:",
+      "explanation": "**Slope of the given line:** rewrite as $y = -\\dfrac13 x + \\dfrac43$, so $m = -\\dfrac13$.\n\n**Perpendicular slope:** the negative reciprocal, $m' = 3$.\n\n**Through $(-1, 2)$:**\n$$y - 2 = 3(x + 1) \\Rightarrow y = 3x + 5$$\n$$\\Rightarrow \\mathbf{3x - y + 5 = 0}.$$\n\n*(Check the point: $3(-1) - 2 + 5 = 0$ ✓)*",
+      "source": "AP ICET 2025 7th May 2025 Shift 1",
+      "source_year": 2025,
+      "options": [
+        {
+          "label": "$x - y - 3 = 0$",
+          "is_correct": false
+        },
+        {
+          "label": "$3x + y + 1 = 0$",
+          "is_correct": false
+        },
+        {
+          "label": "$3x - y + 5 = 0$",
+          "is_correct": true
+        },
+        {
+          "label": "$3x - y + 10 = 0$",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Coordinate Geometry",
+      "difficulty": "hard",
+      "answer_type": "single",
+      "stem": "The distance of the point $(1, 6, 2)$ from the point of intersection of the line $\\dfrac{x-2}{3} = \\dfrac{y+1}{4} = \\dfrac{z-2}{12}$ and the plane $x - y + z = 16$ is:",
+      "explanation": "**Step 1 — parametrise the line.** Setting each ratio equal to $t$:\n$$x = 2 + 3t, \\quad y = -1 + 4t, \\quad z = 2 + 12t.$$\n\n**Step 2 — substitute into the plane:**\n$$(2+3t) - (-1+4t) + (2+12t) = 16$$\n$$5 + 11t = 16 \\Rightarrow t = 1.$$\n\nSo the intersection point is $(5, 3, 14)$.\n\n**Step 3 — distance from $(1, 6, 2)$:**\n$$\\sqrt{(5-1)^2 + (3-6)^2 + (14-2)^2} = \\sqrt{16 + 9 + 144} = \\sqrt{169} = \\mathbf{13} \\text{ units}.$$",
+      "source": "AP ICET 2025 7th May 2025 Shift 1",
+      "source_year": 2025,
+      "options": [
+        {
+          "label": "11 units",
+          "is_correct": false
+        },
+        {
+          "label": "12 units",
+          "is_correct": false
+        },
+        {
+          "label": "13 units",
+          "is_correct": true
+        },
+        {
+          "label": "14 units",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Trigonometry",
+      "difficulty": "hard",
+      "answer_type": "single",
+      "stem": "$\\dfrac{\\cot A - \\cos A}{\\cot A + \\cos A} - \\dfrac{\\operatorname{cosec} A - 1}{\\operatorname{cosec} A + 1} = \\underline{\\qquad}$",
+      "explanation": "**First fraction.** Write $\\cot A = \\dfrac{\\cos A}{\\sin A}$ and take $\\cos A$ out of both parts:\n$$\\frac{\\cos A\\left(\\frac{1}{\\sin A} - 1\\right)}{\\cos A\\left(\\frac{1}{\\sin A} + 1\\right)} = \\frac{\\frac{1-\\sin A}{\\sin A}}{\\frac{1+\\sin A}{\\sin A}} = \\frac{1 - \\sin A}{1 + \\sin A}.$$\n\n**Second fraction.** With $\\operatorname{cosec} A = \\dfrac{1}{\\sin A}$:\n$$\\frac{\\frac{1}{\\sin A} - 1}{\\frac{1}{\\sin A} + 1} = \\frac{1 - \\sin A}{1 + \\sin A}.$$\n\nThe two are **identical**, so their difference is\n$$\\mathbf{0}.$$",
+      "source": "AP ICET 2025 7th May 2025 Shift 1",
+      "source_year": 2025,
+      "options": [
+        {
+          "label": "0",
+          "is_correct": true
+        },
+        {
+          "label": "1",
+          "is_correct": false
+        },
+        {
+          "label": "$\\sqrt2$",
+          "is_correct": false
+        },
+        {
+          "label": "$-1$",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Geometry",
+      "difficulty": "medium",
+      "answer_type": "single",
+      "stem": "The circumradius of a triangle with sides 7, 24, 25 is:",
+      "explanation": "Check the sides against Pythagoras:\n$$7^2 + 24^2 = 49 + 576 = 625 = 25^2.$$\n\nSo the triangle is **right-angled**, with 25 as the hypotenuse.\n\nFor a right triangle the hypotenuse is a **diameter** of the circumcircle (angle in a semicircle), so\n$$R = \\frac{25}{2} = \\mathbf{12.5}.$$",
+      "source": "AP ICET 2025 7th May 2025 Shift 1",
+      "source_year": 2025,
+      "options": [
+        {
+          "label": "12.5",
+          "is_correct": true
+        },
+        {
+          "label": "21",
+          "is_correct": false
+        },
+        {
+          "label": "28",
+          "is_correct": false
+        },
+        {
+          "label": "56",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Set Theory",
+      "difficulty": "easy",
+      "answer_type": "single",
+      "stem": "If $A = \\{x \\in \\mathbb{N} : x^2 < 25\\}$ and $B = \\{x \\in \\mathbb{N} : x \\text{ is even}, x \\le 10\\}$, then $A \\cap B$ is:",
+      "explanation": "**List each set.** $\\mathbb{N}$ here starts at 1.\n$$A: x^2 < 25 \\Rightarrow x < 5 \\Rightarrow A = \\{1, 2, 3, 4\\}$$\n$$B = \\{2, 4, 6, 8, 10\\}$$\n\nThe **intersection** keeps only the members common to both:\n$$A \\cap B = \\mathbf{\\{2, 4\\}}.$$\n\n*(6, 8 and 10 fail $x^2 < 25$, so option 4 is the whole of $B$, not the intersection.)*",
+      "source": "AP ICET 2025 7th May 2025 Shift 1",
+      "source_year": 2025,
+      "options": [
+        {
+          "label": "$\\{2, 4\\}$",
+          "is_correct": true
+        },
+        {
+          "label": "$\\{4\\}$",
+          "is_correct": false
+        },
+        {
+          "label": "$\\{2, 4, 6\\}$",
+          "is_correct": false
+        },
+        {
+          "label": "$\\{2, 4, 6, 8, 10\\}$",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Trigonometry",
+      "difficulty": "hard",
+      "answer_type": "single",
+      "stem": "If $a\\sin\\theta + b\\cos\\theta = c$, then $(a\\cos\\theta - b\\sin\\theta)^2 = \\underline{\\qquad}$",
+      "explanation": "Expand both squares and add them — the cross terms cancel:\n\n$$(a\\sin\\theta + b\\cos\\theta)^2 = a^2\\sin^2\\theta + 2ab\\sin\\theta\\cos\\theta + b^2\\cos^2\\theta$$\n$$(a\\cos\\theta - b\\sin\\theta)^2 = a^2\\cos^2\\theta - 2ab\\sin\\theta\\cos\\theta + b^2\\sin^2\\theta$$\n\n$$\\text{Sum} = a^2(\\sin^2\\theta + \\cos^2\\theta) + b^2(\\cos^2\\theta + \\sin^2\\theta) = a^2 + b^2.$$\n\nSince the first square is $c^2$,\n$$(a\\cos\\theta - b\\sin\\theta)^2 = \\mathbf{a^2 + b^2 - c^2}.$$",
+      "source": "AP ICET 2025 7th May 2025 Shift 1",
+      "source_year": 2025,
+      "options": [
+        {
+          "label": "$a^2 - b^2 + c^2$",
+          "is_correct": false
+        },
+        {
+          "label": "$a^2 + b^2 - c^2$",
+          "is_correct": true
+        },
+        {
+          "label": "$a^2 - b^2 - c^2$",
+          "is_correct": false
+        },
+        {
+          "label": "$a^2 + b^2 + c^2$",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Coordinate Geometry",
+      "difficulty": "hard",
+      "answer_type": "single",
+      "stem": "The four points $(1, 7)$, $(4, 2)$, $(-1, -1)$, $(-4, 4)$ form a ________.",
+      "explanation": "Label them $A(1,7)$, $B(4,2)$, $C(-1,-1)$, $D(-4,4)$ and measure the four sides:\n\n$$AB = \\sqrt{3^2 + 5^2} = \\sqrt{34}, \\qquad BC = \\sqrt{5^2 + 3^2} = \\sqrt{34}$$\n$$CD = \\sqrt{3^2 + 5^2} = \\sqrt{34}, \\qquad DA = \\sqrt{5^2 + 3^2} = \\sqrt{34}$$\n\nAll four sides are equal — so far a **rhombus**. Now the diagonals:\n$$AC = \\sqrt{2^2 + 8^2} = \\sqrt{68}, \\qquad BD = \\sqrt{8^2 + 2^2} = \\sqrt{68}.$$\n\nEqual sides **and** equal diagonals ⇒ the angles are right angles, so the figure is a **square**.",
+      "source": "AP ICET 2025 7th May 2025 Shift 1",
+      "source_year": 2025,
+      "options": [
+        {
+          "label": "Trapezium",
+          "is_correct": false
+        },
+        {
+          "label": "Rhombus",
+          "is_correct": false
+        },
+        {
+          "label": "Square",
+          "is_correct": true
+        },
+        {
+          "label": "Rectangle",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Trigonometry",
+      "difficulty": "medium",
+      "answer_type": "single",
+      "stem": "If $\\dfrac{\\pi}{2} < x < \\pi$ and $\\tan x = \\dfrac{-3}{4}$, then $\\cos x = ?$",
+      "explanation": "The interval $\\left(\\dfrac{\\pi}{2}, \\pi\\right)$ is the **second quadrant**, where sine is positive and **cosine is negative**.\n\nFrom $|\\tan x| = \\dfrac34$ the reference triangle is 3-4-5, so $|\\cos x| = \\dfrac45$.\n\nApplying the sign for the second quadrant:\n$$\\cos x = \\mathbf{-\\frac45}.$$\n\n*(Check: $\\sin x = \\frac35$, and $\\tan x = \\frac{3/5}{-4/5} = -\\frac34$ ✓)*",
+      "source": "AP ICET 2025 7th May 2025 Shift 1",
+      "source_year": 2025,
+      "options": [
+        {
+          "label": "$\\frac{-3}{5}$",
+          "is_correct": false
+        },
+        {
+          "label": "$\\frac35$",
+          "is_correct": false
+        },
+        {
+          "label": "$\\frac45$",
+          "is_correct": false
+        },
+        {
+          "label": "$\\frac{-4}{5}$",
+          "is_correct": true
+        }
+      ]
+    },
+    {
+      "chapter": "Mean, Median & Mode",
+      "difficulty": "medium",
+      "answer_type": "single",
+      "stem": "The mean and median of the data $a$, $b$ and $c$ are 50 and 35 respectively, where $a < b < c$. If $c - a = 55$, then $b - a = \\underline{\\qquad}$",
+      "explanation": "With three values in increasing order the **median is the middle one**:\n$$b = 35.$$\n\nFrom the mean:\n$$\\frac{a+b+c}{3} = 50 \\Rightarrow a + b + c = 150 \\Rightarrow a + c = 115.$$\n\nCombine with $c - a = 55$:\n$$2c = 170 \\Rightarrow c = 85, \\qquad a = 30.$$\n\n$$b - a = 35 - 30 = \\mathbf{5}.$$\n\n*(Check $a < b < c$: $30 < 35 < 85$ ✓)*",
+      "source": "AP ICET 2025 7th May 2025 Shift 1",
+      "source_year": 2025,
+      "options": [
+        {
+          "label": "5",
+          "is_correct": true
+        },
+        {
+          "label": "7",
+          "is_correct": false
+        },
+        {
+          "label": "3",
+          "is_correct": false
+        },
+        {
+          "label": "8",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Standard Deviation & Variance",
+      "difficulty": "medium",
+      "answer_type": "single",
+      "stem": "The standard deviation of $10, 16, 10, 16, 10, 10, 16, 16$ is ________.",
+      "explanation": "The data has four 10s and four 16s, so the mean sits exactly midway:\n$$\\bar x = \\frac{4(10) + 4(16)}{8} = \\frac{104}{8} = 13.$$\n\nEvery observation is **3 away** from 13, so every squared deviation is 9:\n$$\\sigma^2 = \\frac{8 \\times 9}{8} = 9 \\Rightarrow \\sigma = \\mathbf{3}.$$",
+      "source": "AP ICET 2025 7th May 2025 Shift 1",
+      "source_year": 2025,
+      "options": [
+        {
+          "label": "4",
+          "is_correct": false
+        },
+        {
+          "label": "6",
+          "is_correct": false
+        },
+        {
+          "label": "3",
+          "is_correct": true
+        },
+        {
+          "label": "0",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Mean, Median & Mode",
+      "difficulty": "easy",
+      "answer_type": "single",
+      "stem": "The data of marks scored by 11 students in a class are $223, 217, 237, 255, 243, 218, 265, 279, 263, 233, 227$. The median is:",
+      "explanation": "Sort the values first:\n$$217, \\; 218, \\; 223, \\; 227, \\; 233, \\; \\mathbf{237}, \\; 243, \\; 255, \\; 263, \\; 265, \\; 279.$$\n\nWith $n = 11$ (odd), the median is the $\\dfrac{11+1}{2} = 6\\text{th}$ value:\n$$\\Rightarrow \\mathbf{237}.$$\n\n*(Reading the 6th value from the **unsorted** list would give 218 — sorting is the whole task here.)*",
+      "source": "AP ICET 2025 7th May 2025 Shift 1",
+      "source_year": 2025,
+      "options": [
+        {
+          "label": "227",
+          "is_correct": false
+        },
+        {
+          "label": "233",
+          "is_correct": false
+        },
+        {
+          "label": "237",
+          "is_correct": true
+        },
+        {
+          "label": "243",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Standard Deviation & Variance",
+      "difficulty": "easy",
+      "answer_type": "single",
+      "stem": "In a distribution if the mean is 4 and the coefficient of variation is 75%, then the variance is ____.",
+      "explanation": "The coefficient of variation links the standard deviation to the mean:\n$$CV = \\frac{\\sigma}{\\bar x}\\times 100 \\Rightarrow 75 = \\frac{\\sigma}{4}\\times 100 \\Rightarrow \\sigma = 3.$$\n\nVariance is the **square** of the standard deviation:\n$$\\sigma^2 = 3^2 = \\mathbf{9}.$$\n\n*(Stopping at $\\sigma = 3$ gives option 1 — the standard deviation, not the variance.)*",
+      "source": "AP ICET 2025 7th May 2025 Shift 1",
+      "source_year": 2025,
+      "options": [
+        {
+          "label": "3",
+          "is_correct": false
+        },
+        {
+          "label": "27",
+          "is_correct": false
+        },
+        {
+          "label": "81",
+          "is_correct": false
+        },
+        {
+          "label": "9",
+          "is_correct": true
+        }
+      ]
+    },
+    {
+      "chapter": "Probability",
+      "difficulty": "easy",
+      "answer_type": "single",
+      "stem": "If the probability $P(x) = 0.8$ and $x = 3$, then find the expected value $E(x) = ?$",
+      "explanation": "The expected value of a value $x$ occurring with probability $P(x)$ is the product\n$$E(x) = x \\cdot P(x).$$\n\n$$= 3 \\times 0.8 = \\mathbf{2.4}.$$",
+      "source": "AP ICET 2025 7th May 2025 Shift 1",
+      "source_year": 2025,
+      "options": [
+        {
+          "label": "2.6",
+          "is_correct": false
+        },
+        {
+          "label": "2.8",
+          "is_correct": false
+        },
+        {
+          "label": "2.2",
+          "is_correct": false
+        },
+        {
+          "label": "2.4",
+          "is_correct": true
+        }
+      ]
+    },
+    {
+      "chapter": "Probability",
+      "difficulty": "hard",
+      "answer_type": "single",
+      "stem": "If two balls are drawn from a bag having 5 red, 4 black and 6 blue balls, then the probability of getting both the balls of different colour is:",
+      "explanation": "There are $5 + 4 + 6 = 15$ balls, so the total number of pairs is\n$$\\binom{15}{2} = 105.$$\n\nIt is quicker to count the **same-colour** pairs and subtract:\n$$\\binom52 + \\binom42 + \\binom62 = 10 + 6 + 15 = 31.$$\n\n$$P(\\text{different}) = \\frac{105 - 31}{105} = \\mathbf{\\frac{74}{105}}.$$\n\n*(Direct count as a check: $5{\\times}4 + 4{\\times}6 + 5{\\times}6 = 20 + 24 + 30 = 74$ ✓)*",
+      "source": "AP ICET 2025 7th May 2025 Shift 1",
+      "source_year": 2025,
+      "options": [
+        {
+          "label": "$\\frac{74}{105}$",
+          "is_correct": true
+        },
+        {
+          "label": "$\\frac{15}{68}$",
+          "is_correct": false
+        },
+        {
+          "label": "$\\frac{53}{68}$",
+          "is_correct": false
+        },
+        {
+          "label": "$\\frac{31}{105}$",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Probability",
+      "difficulty": "medium",
+      "answer_type": "single",
+      "stem": "Two dice of two different colours are thrown simultaneously. Then the probability of getting two numbers whose sum is an even number is:",
+      "explanation": "A sum is **even** exactly when the two numbers are both even or both odd.\n\nEach die shows 3 even and 3 odd faces, so\n$$P(\\text{both even}) = \\frac12 \\times \\frac12 = \\frac14, \\qquad P(\\text{both odd}) = \\frac14.$$\n\n$$P(\\text{even sum}) = \\frac14 + \\frac14 = \\mathbf{\\frac12}.$$\n\n*(Counting instead: 18 of the 36 outcomes give an even sum.)*",
+      "source": "AP ICET 2025 7th May 2025 Shift 1",
+      "source_year": 2025,
+      "options": [
+        {
+          "label": "$\\frac13$",
+          "is_correct": false
+        },
+        {
+          "label": "$\\frac12$",
+          "is_correct": true
+        },
+        {
+          "label": "$\\frac43$",
+          "is_correct": false
+        },
+        {
+          "label": "$\\frac56$",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Mean, Median & Mode",
+      "difficulty": "medium",
+      "answer_type": "single",
+      "stem": "Four groups of students, consisting of 15, 20, 10 and 18 individuals, reported mean weights of 162, 148, 153 and 140 pounds respectively. The mean weight of all the students is:",
+      "explanation": "Averages of unequal groups cannot simply be averaged — weight each by its group size.\n\n**Total weight:**\n$$15(162) + 20(148) + 10(153) + 18(140)$$\n$$= 2430 + 2960 + 1530 + 2520 = 9440.$$\n\n**Total students:** $15+20+10+18 = 63$.\n\n$$\\bar x = \\frac{9440}{63} = 149.84 \\approx \\mathbf{150} \\text{ pounds}.$$\n\n*(The plain average of the four means would be 150.75 — close here, but the weighted figure is the correct one.)*",
+      "source": "AP ICET 2025 7th May 2025 Shift 1",
+      "source_year": 2025,
+      "options": [
+        {
+          "label": "140 pounds",
+          "is_correct": false
+        },
+        {
+          "label": "150 pounds",
+          "is_correct": true
+        },
+        {
+          "label": "160 pounds",
+          "is_correct": false
+        },
+        {
+          "label": "165 pounds",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Probability",
+      "difficulty": "easy",
+      "answer_type": "single",
+      "stem": "From a well shuffled pack of cards (52), what is the probability the card drawn is a diamond, spade or a club?",
+      "explanation": "The pack has four suits of 13 cards each. \"Diamond, spade or club\" covers **three** of the four suits:\n$$13 \\times 3 = 39 \\text{ favourable cards}.$$\n\n$$P = \\frac{39}{52} = \\frac34 = \\mathbf{0.75}.$$\n\n*(Equivalently, it is everything except hearts: $1 - \\frac{13}{52} = 0.75$.)*",
+      "source": "AP ICET 2025 7th May 2025 Shift 1",
+      "source_year": 2025,
+      "options": [
+        {
+          "label": "0.25",
+          "is_correct": false
+        },
+        {
+          "label": "0.75",
+          "is_correct": true
+        },
+        {
+          "label": "0.83",
+          "is_correct": false
+        },
+        {
+          "label": "0.29",
+          "is_correct": false
+        }
+      ]
+    }
+  ]
+}

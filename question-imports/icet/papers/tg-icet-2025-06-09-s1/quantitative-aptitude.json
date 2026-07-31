@@ -1,0 +1,1895 @@
+{
+  "subject": "Quantitative Aptitude",
+  "questions": [
+    {
+      "chapter": "Surds & Indices",
+      "difficulty": "hard",
+      "answer_type": "single",
+      "stem": "If $(64)^{2x} = (256)^{-y} = 2^{5/2}$, then $3x + 2y = $",
+      "explanation": "Write both bases as powers of 2 and match exponents.\n\n$$64 = 2^6: \\quad 2^{12x} = 2^{5/2} \\Rightarrow 12x = \\frac52 \\Rightarrow x = \\frac{5}{24}.$$\n$$256 = 2^8: \\quad 2^{-8y} = 2^{5/2} \\Rightarrow -8y = \\frac52 \\Rightarrow y = -\\frac{5}{16}.$$\n\nThen\n$$3x + 2y = \\frac{15}{24} - \\frac{10}{16} = \\frac58 - \\frac58 = \\mathbf{0}.$$",
+      "source": "TG ICET 2025 9th June 2025 Shift 1",
+      "source_year": 2025,
+      "options": [
+        {
+          "label": "1",
+          "is_correct": false
+        },
+        {
+          "label": "0",
+          "is_correct": true
+        },
+        {
+          "label": "$-1$",
+          "is_correct": false
+        },
+        {
+          "label": "$\\frac12$",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Surds & Indices",
+      "difficulty": "medium",
+      "answer_type": "single",
+      "stem": "If $\\left(\\sqrt3\\right)^5 \\times 9^2 = 3^n \\times 3\\sqrt3$, then the value of $n$ is",
+      "explanation": "Express everything as a power of 3.\n\n**Left:** $\\left(3^{1/2}\\right)^5 \\times \\left(3^2\\right)^2 = 3^{5/2} \\times 3^4 = 3^{13/2}$.\n\n**Right:** $3^n \\times 3 \\times 3^{1/2} = 3^{n + 3/2}$.\n\nEquate the exponents:\n$$n + \\frac32 = \\frac{13}{2} \\Rightarrow n = \\mathbf{5}.$$",
+      "source": "TG ICET 2025 9th June 2025 Shift 1",
+      "source_year": 2025,
+      "options": [
+        {
+          "label": "2",
+          "is_correct": false
+        },
+        {
+          "label": "3",
+          "is_correct": false
+        },
+        {
+          "label": "4",
+          "is_correct": false
+        },
+        {
+          "label": "5",
+          "is_correct": true
+        }
+      ]
+    },
+    {
+      "chapter": "Ratio & Proportion",
+      "difficulty": "very_hard",
+      "answer_type": "single",
+      "stem": "If $a, b, c, d$ are non-zero real numbers such that $a : b = 4 : 7$, $b : c = c : d$, $a : d = 7 : 8$ and $d = 32$, then the positive value of $c$ is",
+      "explanation": "Work through the chain.\n\n**From $a:d = 7:8$ with $d = 32$:** $a = \\dfrac{7}{8} \\times 32 = 28$.\n\n**From $a:b = 4:7$:** $b = \\dfrac74 \\times 28 = 49$.\n\n**From $b:c = c:d$** — $c$ is the geometric mean of $b$ and $d$:\n$$c^2 = bd = 49 \\times 32 = 1568 \\Rightarrow c = \\sqrt{784 \\times 2} = \\mathbf{28\\sqrt2}.$$",
+      "source": "TG ICET 2025 9th June 2025 Shift 1",
+      "source_year": 2025,
+      "options": [
+        {
+          "label": "28",
+          "is_correct": false
+        },
+        {
+          "label": "$28\\sqrt2$",
+          "is_correct": true
+        },
+        {
+          "label": "56",
+          "is_correct": false
+        },
+        {
+          "label": "$56\\sqrt2$",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Ratio & Proportion",
+      "difficulty": "medium",
+      "answer_type": "single",
+      "stem": "A bag contains Rs.10, Rs.20 and Rs.50 notes in the ratio 9 : 8 : 5. If the total amount in the bag is Rs.6,25,000, then the total value of the Rs.10 and Rs.20 notes in the bag (in rupees) is",
+      "explanation": "The ratio counts the **notes**, not the money. Let the counts be $9k, 8k, 5k$.\n\nTotal value:\n$$10(9k) + 20(8k) + 50(5k) = 90k + 160k + 250k = 500k.$$\n\n$$500k = 625000 \\Rightarrow k = 1250.$$\n\nValue of the Rs.10 and Rs.20 notes:\n$$90k + 160k = 250k = 250 \\times 1250 = \\textbf{3,12,500}.$$\n\n*(Neatly, they account for $\\frac{250}{500} = \\) half the total.)*",
+      "source": "TG ICET 2025 9th June 2025 Shift 1",
+      "source_year": 2025,
+      "options": [
+        {
+          "label": "312500",
+          "is_correct": true
+        },
+        {
+          "label": "12500",
+          "is_correct": false
+        },
+        {
+          "label": "156250",
+          "is_correct": false
+        },
+        {
+          "label": "3125",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Surds & Indices",
+      "difficulty": "hard",
+      "answer_type": "single",
+      "stem": "$$\\frac{1}{\\sqrt{11 + 2\\sqrt{18}}} + \\frac{1}{\\sqrt{11 - 2\\sqrt{18}}} = ?$$",
+      "explanation": "First simplify $2\\sqrt{18} = 6\\sqrt2$, then de-nest each surd.\n\nLook for $(a+b)^2 = 11 + 6\\sqrt2$ with $2ab = 6\\sqrt2$ and $a^2+b^2 = 11$. Taking $a = 3, b = \\sqrt2$:\n$$(3+\\sqrt2)^2 = 9 + 6\\sqrt2 + 2 = 11 + 6\\sqrt2 \\;\\checkmark$$\n\nSo $\\sqrt{11+6\\sqrt2} = 3+\\sqrt2$ and $\\sqrt{11-6\\sqrt2} = 3-\\sqrt2$. The expression becomes\n$$\\frac{1}{3+\\sqrt2} + \\frac{1}{3-\\sqrt2} = \\frac{(3-\\sqrt2)+(3+\\sqrt2)}{9-2} = \\frac{6}{7}.$$",
+      "source": "TG ICET 2025 9th June 2025 Shift 1",
+      "source_year": 2025,
+      "options": [
+        {
+          "label": "$\\frac37$",
+          "is_correct": false
+        },
+        {
+          "label": "$\\frac47$",
+          "is_correct": false
+        },
+        {
+          "label": "$\\frac57$",
+          "is_correct": false
+        },
+        {
+          "label": "$\\frac67$",
+          "is_correct": true
+        }
+      ]
+    },
+    {
+      "chapter": "Surds & Indices",
+      "difficulty": "very_hard",
+      "answer_type": "single",
+      "stem": "If $\\sqrt{\\sqrt{13 + 4\\sqrt{10}} + \\sqrt{14 - 6\\sqrt5}} = m + \\sqrt n$, then $5m^2 + 2n^2 = ?$",
+      "explanation": "De-nest the two inner surds, then the outer one.\n\n**$13 + 4\\sqrt{10}$:** need $a^2+b^2 = 13$, $2ab = 4\\sqrt{10}$. Take $a = 2\\sqrt2, b = \\sqrt5$ — then $8+5 = 13\\;\\checkmark$ and $2ab = 4\\sqrt{10}\\;\\checkmark$, so $\\sqrt{13+4\\sqrt{10}} = 2\\sqrt2 + \\sqrt5$.\n\n**$14 - 6\\sqrt5$:** need $a^2+b^2 = 14$, $2ab = 6\\sqrt5$. Take $a = 3, b = \\sqrt5$ — then $9+5 = 14\\;\\checkmark$, so $\\sqrt{14-6\\sqrt5} = 3 - \\sqrt5$ (positive, as $3 > \\sqrt5$).\n\n**Add them:** $(2\\sqrt2 + \\sqrt5) + (3 - \\sqrt5) = 3 + 2\\sqrt2$ — the $\\sqrt5$ terms cancel, which is the point of the problem.\n\n**Outer root:** $3 + 2\\sqrt2 = (1+\\sqrt2)^2$, so the whole expression is $1 + \\sqrt2$, giving $m = 1, n = 2$.\n\n$$5m^2 + 2n^2 = 5(1) + 2(4) = \\mathbf{13}.$$",
+      "source": "TG ICET 2025 9th June 2025 Shift 1",
+      "source_year": 2025,
+      "options": [
+        {
+          "label": "11",
+          "is_correct": false
+        },
+        {
+          "label": "12",
+          "is_correct": false
+        },
+        {
+          "label": "13",
+          "is_correct": true
+        },
+        {
+          "label": "14",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Number System",
+      "difficulty": "easy",
+      "answer_type": "single",
+      "stem": "The number of positive divisors of 2025 is",
+      "explanation": "Factorise first:\n$$2025 = 81 \\times 25 = 3^4 \\times 5^2.$$\n\nFor $N = p^a q^b$, the divisor count is $(a+1)(b+1)$:\n$$(4+1)(2+1) = 5 \\times 3 = \\mathbf{15}.$$",
+      "source": "TG ICET 2025 9th June 2025 Shift 1",
+      "source_year": 2025,
+      "options": [
+        {
+          "label": "13",
+          "is_correct": false
+        },
+        {
+          "label": "14",
+          "is_correct": false
+        },
+        {
+          "label": "15",
+          "is_correct": true
+        },
+        {
+          "label": "16",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "LCM & HCF",
+      "difficulty": "easy",
+      "answer_type": "single",
+      "stem": "What is the maximum number of students among whom 200 pens and 320 pencils can be distributed in equal number?",
+      "explanation": "Each student must get a whole number of pens and of pencils, so the number of students divides **both** 200 and 320. The largest such number is their HCF.\n\n$$200 = 2^3 \\times 5^2, \\qquad 320 = 2^6 \\times 5.$$\n$$\\text{HCF} = 2^3 \\times 5 = \\mathbf{40}.$$\n\n*(Each student then gets 5 pens and 8 pencils.)*",
+      "source": "TG ICET 2025 9th June 2025 Shift 1",
+      "source_year": 2025,
+      "options": [
+        {
+          "label": "18",
+          "is_correct": false
+        },
+        {
+          "label": "24",
+          "is_correct": false
+        },
+        {
+          "label": "36",
+          "is_correct": false
+        },
+        {
+          "label": "40",
+          "is_correct": true
+        }
+      ]
+    },
+    {
+      "chapter": "Algebra",
+      "difficulty": "hard",
+      "answer_type": "single",
+      "stem": "If the GCD of the polynomials $2x^2 - 9x + l$ and $2x^2 + x - k$ is $2x - 5$, then $k^2 + l^2 = ?$",
+      "explanation": "If $2x-5$ divides both polynomials, then $x = \\dfrac52$ is a root of each.\n\n**First polynomial:**\n$$2\\left(\\tfrac{25}{4}\\right) - 9\\left(\\tfrac52\\right) + l = 12.5 - 22.5 + l = 0 \\Rightarrow l = 10.$$\n\n**Second polynomial:**\n$$2\\left(\\tfrac{25}{4}\\right) + \\tfrac52 - k = 12.5 + 2.5 - k = 0 \\Rightarrow k = 15.$$\n\n$$k^2 + l^2 = 225 + 100 = \\mathbf{325}.$$",
+      "source": "TG ICET 2025 9th June 2025 Shift 1",
+      "source_year": 2025,
+      "options": [
+        {
+          "label": "400",
+          "is_correct": false
+        },
+        {
+          "label": "425",
+          "is_correct": false
+        },
+        {
+          "label": "320",
+          "is_correct": false
+        },
+        {
+          "label": "325",
+          "is_correct": true
+        }
+      ]
+    },
+    {
+      "chapter": "Surds & Indices",
+      "difficulty": "very_hard",
+      "answer_type": "single",
+      "stem": "Which of the following is a rational number?",
+      "explanation": "Simplify the common numerator $\\sqrt{8\\sqrt2 + 2\\sqrt{30}}$.\n\nPull out $2\\sqrt2$:\n$$8\\sqrt2 + 2\\sqrt{30} = 2\\sqrt2\\left(4 + \\sqrt{15}\\right).$$\n\nDe-nest $\\sqrt{4+\\sqrt{15}}$ by doubling inside:\n$$\\sqrt{4+\\sqrt{15}} = \\sqrt{\\frac{8+2\\sqrt{15}}{2}} = \\frac{\\sqrt{(\\sqrt5+\\sqrt3)^2}}{\\sqrt2} = \\frac{\\sqrt5+\\sqrt3}{\\sqrt2}.$$\n\nSo\n$$\\sqrt{8\\sqrt2+2\\sqrt{30}} = \\sqrt{2\\sqrt2}\\cdot\\frac{\\sqrt5+\\sqrt3}{\\sqrt2} = \\frac{2^{3/4}}{2^{1/2}}\\left(\\sqrt3+\\sqrt5\\right) = \\sqrt[4]{2}\\left(\\sqrt3+\\sqrt5\\right).$$\n\nDividing by exactly $\\sqrt[4]{2}\\left(\\sqrt3+\\sqrt5\\right)$ therefore gives **1**, a rational number. Every other denominator leaves an irrational surd behind.",
+      "source": "TG ICET 2025 9th June 2025 Shift 1",
+      "source_year": 2025,
+      "options": [
+        {
+          "label": "$\\dfrac{\\sqrt{8\\sqrt2+2\\sqrt{30}}}{\\sqrt[4]{2}}$",
+          "is_correct": false
+        },
+        {
+          "label": "$\\dfrac{\\sqrt{8\\sqrt2+2\\sqrt{30}}}{\\sqrt[4]{2}\\left(\\sqrt3-\\sqrt5\\right)}$",
+          "is_correct": false
+        },
+        {
+          "label": "$\\dfrac{\\sqrt{8\\sqrt2+2\\sqrt{30}}}{\\sqrt[4]{2}\\left(\\sqrt3+\\sqrt5\\right)}$",
+          "is_correct": true
+        },
+        {
+          "label": "$\\dfrac{\\sqrt{8\\sqrt2+2\\sqrt{30}}}{\\sqrt[4]{2}\\left(\\sqrt3+\\sqrt2\\right)}$",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Surds & Indices",
+      "difficulty": "medium",
+      "answer_type": "single",
+      "stem": "Which positive integer among the following has its square root **not** a rational number?",
+      "explanation": "A perfect square has a rational (indeed integer) square root, so look for the one that is not a perfect square. All four end in 25, so test the pattern $(10a+5)^2 = 100a(a+1) + 25$:\n\n- $3025 = 55^2$\n- $9025 = 95^2$\n- $11025 = 105^2$\n- $6025 = 25 \\times 241$, and 241 is prime, so $\\sqrt{6025} = 5\\sqrt{241}$ — **irrational**.\n\n*(Quick check: $77^2 = 5929$ and $78^2 = 6084$, so 6025 lies strictly between two consecutive squares.)*",
+      "source": "TG ICET 2025 9th June 2025 Shift 1",
+      "source_year": 2025,
+      "options": [
+        {
+          "label": "3025",
+          "is_correct": false
+        },
+        {
+          "label": "6025",
+          "is_correct": true
+        },
+        {
+          "label": "9025",
+          "is_correct": false
+        },
+        {
+          "label": "11025",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Surds & Indices",
+      "difficulty": "hard",
+      "answer_type": "single",
+      "stem": "Let $a = 7 - 4\\sqrt3$, $b = 4 - \\sqrt{15}$, $c = 8 - 3\\sqrt7$, $d = 5 - 2\\sqrt6$, $e = 6 - \\sqrt{35}$. Then the increasing order of these numbers is",
+      "explanation": "Each number is a small positive difference, so estimate the surds to 3 decimals:\n\n| | value | |\n| --- | --- | --- |\n| $a$ | $7 - 6.928$ | $0.072$ |\n| $b$ | $4 - 3.873$ | $0.127$ |\n| $c$ | $8 - 7.937$ | $0.063$ |\n| $d$ | $5 - 4.899$ | $0.101$ |\n| $e$ | $6 - 5.916$ | $0.084$ |\n\nIncreasing: $c < a < e < d < b$.\n\n*(A slicker route: each is of the form $p - \\sqrt{q}$ with $p^2 - q = 1$, so each equals $\\dfrac{1}{p+\\sqrt q}$ — the **largest** $p+\\sqrt q$ gives the **smallest** number, and $c$ has the largest at $\\approx 15.94$.)*",
+      "source": "TG ICET 2025 9th June 2025 Shift 1",
+      "source_year": 2025,
+      "options": [
+        {
+          "label": "$d, b, a, e, c$",
+          "is_correct": false
+        },
+        {
+          "label": "$b, d, e, a, c$",
+          "is_correct": false
+        },
+        {
+          "label": "$c, a, e, d, b$",
+          "is_correct": true
+        },
+        {
+          "label": "$b, d, a, e, c$",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Surds & Indices",
+      "difficulty": "very_hard",
+      "answer_type": "single",
+      "stem": "Let $a = 2^{5/32}$, $b = 2^{1/12}\\cdot 3^{1/48}$, $c = 6^{1/18}$, $d = 2^{1/8}\\cdot 3^{1/24}$. Then the decreasing order of these numbers is",
+      "explanation": "Compare logarithms, using $\\ln 2 = 0.693$ and $\\ln 3 = 1.099$.\n\n$$\\ln a = \\tfrac{5}{32}(0.693) = 0.1083$$\n$$\\ln b = \\tfrac{1}{12}(0.693) + \\tfrac{1}{48}(1.099) = 0.0578 + 0.0229 = 0.0807$$\n$$\\ln c = \\tfrac{1}{18}(0.693 + 1.099) = \\tfrac{1.792}{18} = 0.0995$$\n$$\\ln d = \\tfrac18(0.693) + \\tfrac{1}{24}(1.099) = 0.0866 + 0.0458 = 0.1324$$\n\nSince $\\ln$ is increasing, ordering the logs orders the numbers:\n$$d > a > c > b.$$\n\n*(Note $d = 2^{3/24}3^{1/24} = 24^{1/24}$ and $b = 2^{4/48}3^{1/48} = 48^{1/48}$ — handy if you prefer to compare $n^{1/n}$ forms.)*",
+      "source": "TG ICET 2025 9th June 2025 Shift 1",
+      "source_year": 2025,
+      "options": [
+        {
+          "label": "$d, a, b, c$",
+          "is_correct": false
+        },
+        {
+          "label": "$a, d, c, b$",
+          "is_correct": false
+        },
+        {
+          "label": "$d, a, c, b$",
+          "is_correct": true
+        },
+        {
+          "label": "$a, b, c, d$",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Percentages",
+      "difficulty": "medium",
+      "answer_type": "single",
+      "stem": "The price of coffee powder is increased by 25%. By what percent must a householder reduce the consumption of coffee powder so as not to increase the expenditure on coffee?",
+      "explanation": "Expenditure = price × consumption. If the price becomes $1.25$ times, the consumption must become $\\dfrac{1}{1.25} = 0.8$ times to keep the product unchanged — a reduction of **20%**.\n\nUsing the standard formula for a price rise of $r\\%$:\n$$\\text{reduction} = \\frac{r}{100+r} \\times 100 = \\frac{25}{125} \\times 100 = 20\\%.$$\n\n*(The common error is answering 25% — a 25% cut would over-correct, dropping the expenditure below the original.)*",
+      "source": "TG ICET 2025 9th June 2025 Shift 1",
+      "source_year": 2025,
+      "options": [
+        {
+          "label": "25%",
+          "is_correct": false
+        },
+        {
+          "label": "30%",
+          "is_correct": false
+        },
+        {
+          "label": "20%",
+          "is_correct": true
+        },
+        {
+          "label": "22%",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Percentages",
+      "difficulty": "easy",
+      "answer_type": "single",
+      "stem": "An ore contains 20% of metal. How many tons of ore is required to obtain 690 tons of metal?",
+      "explanation": "The metal is 20% — one-fifth — of the ore, so the ore is five times the metal:\n$$\\text{ore} = \\frac{690}{0.20} = 690 \\times 5 = \\mathbf{3450} \\text{ tons}.$$",
+      "source": "TG ICET 2025 9th June 2025 Shift 1",
+      "source_year": 2025,
+      "options": [
+        {
+          "label": "3150",
+          "is_correct": false
+        },
+        {
+          "label": "3250",
+          "is_correct": false
+        },
+        {
+          "label": "3450",
+          "is_correct": true
+        },
+        {
+          "label": "3650",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Profit, Loss & Discount",
+      "difficulty": "medium",
+      "answer_type": "single",
+      "stem": "The marked price of a TV is Rs.48,000. By allowing a festival discount of 10%, the profit on the sale is 8%. If there is no discount, what would be the percentage of profit?",
+      "explanation": "**Find the cost price from the discounted sale.**\n$$\\text{SP} = 48000 \\times 0.90 = 43200, \\qquad \\text{CP} = \\frac{43200}{1.08} = 40000.$$\n\n**Now sell at the marked price:**\n$$\\text{Profit} = 48000 - 40000 = 8000 \\Rightarrow \\frac{8000}{40000} \\times 100 = \\mathbf{20\\%}.$$",
+      "source": "TG ICET 2025 9th June 2025 Shift 1",
+      "source_year": 2025,
+      "options": [
+        {
+          "label": "27",
+          "is_correct": false
+        },
+        {
+          "label": "24",
+          "is_correct": false
+        },
+        {
+          "label": "22",
+          "is_correct": false
+        },
+        {
+          "label": "20",
+          "is_correct": true
+        }
+      ]
+    },
+    {
+      "chapter": "Profit, Loss & Discount",
+      "difficulty": "medium",
+      "answer_type": "single",
+      "stem": "If the profit that can be derived on selling an article for Rs.950 is twice the profit that can be derived on selling the same article for Rs.650, then to derive a profit of 30% on the same article, the article has to be sold for (in rupees)",
+      "explanation": "Let the cost price be $C$. The two profits are $950 - C$ and $650 - C$, with the first twice the second:\n$$950 - C = 2(650 - C) \\Rightarrow 950 - C = 1300 - 2C \\Rightarrow C = 350.$$\n\nFor a 30% profit:\n$$\\text{SP} = 350 \\times 1.30 = \\mathbf{455}.$$\n\n*(Check: profits of $600$ and $300$ — indeed double ✓)*",
+      "source": "TG ICET 2025 9th June 2025 Shift 1",
+      "source_year": 2025,
+      "options": [
+        {
+          "label": "400",
+          "is_correct": false
+        },
+        {
+          "label": "410",
+          "is_correct": false
+        },
+        {
+          "label": "455",
+          "is_correct": true
+        },
+        {
+          "label": "460",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Partnership",
+      "difficulty": "hard",
+      "answer_type": "single",
+      "stem": "Three persons $A, B$ and $C$ start a business with investments Rs.40,000, Rs.50,000 and Rs.60,000 respectively. After a few months $C$ left the business. At the end of the year, $C$'s share in the year-end profit is $\\dfrac{4}{13}$ of the total profit. Then $C$ stayed in the business only for the first",
+      "explanation": "Profit is shared in the ratio of **capital × time**. With $C$ staying $t$ months (in thousands of rupees):\n$$A : B : C = 40(12) : 50(12) : 60t = 480 : 600 : 60t.$$\n\n$C$'s share is $\\dfrac{4}{13}$ of the whole:\n$$\\frac{60t}{1080 + 60t} = \\frac{4}{13} \\Rightarrow 780t = 4320 + 240t \\Rightarrow 540t = 4320 \\Rightarrow t = \\mathbf{8}.$$\n\n*(Check: the ratio becomes $480:600:480 = 4:5:4$, and $\\frac{4}{13}$ ✓)*",
+      "source": "TG ICET 2025 9th June 2025 Shift 1",
+      "source_year": 2025,
+      "options": [
+        {
+          "label": "9 months",
+          "is_correct": false
+        },
+        {
+          "label": "8 months",
+          "is_correct": true
+        },
+        {
+          "label": "7 months",
+          "is_correct": false
+        },
+        {
+          "label": "6 months",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Partnership",
+      "difficulty": "medium",
+      "answer_type": "single",
+      "stem": "In a business, the investments of Xavier and Younus are in the ratio 3 : 4. The time for which Xavier was in the business is 2 times that of Younus. If the total profit was Rs.1,20,000 at the end of the year, then the share of Xavier (in rupees) is",
+      "explanation": "Profit follows capital × time. Taking Younus's time as 1 unit and Xavier's as 2:\n$$\\text{Xavier} : \\text{Younus} = 3 \\times 2 : 4 \\times 1 = 6 : 4 = 3 : 2.$$\n\nXavier gets 3 of the 5 parts:\n$$\\frac35 \\times 120000 = \\mathbf{72{,}000}.$$",
+      "source": "TG ICET 2025 9th June 2025 Shift 1",
+      "source_year": 2025,
+      "options": [
+        {
+          "label": "68000",
+          "is_correct": false
+        },
+        {
+          "label": "75000",
+          "is_correct": false
+        },
+        {
+          "label": "48000",
+          "is_correct": false
+        },
+        {
+          "label": "72000",
+          "is_correct": true
+        }
+      ]
+    },
+    {
+      "chapter": "Pipes & Cisterns",
+      "difficulty": "hard",
+      "answer_type": "single",
+      "stem": "Pipe A can fill an empty tank in 6 hours and another pipe B can empty the full tank in 4 hours. Pipe A is opened at 6.00 am and after 3 hours pipe B is opened. The time by which the tank will be empty is",
+      "explanation": "**Phase 1 — A alone, 6.00 am to 9.00 am.**\n$$3 \\times \\frac16 = \\frac12 \\text{ of the tank is filled.}$$\n\n**Phase 2 — both open from 9.00 am.** The net effect is emptying:\n$$\\frac16 - \\frac14 = \\frac{2-3}{12} = -\\frac{1}{12} \\text{ per hour.}$$\n\nDraining the half that is present takes\n$$\\frac{1/2}{1/12} = 6 \\text{ hours},$$\nso the tank is empty at **3.00 pm**.",
+      "source": "TG ICET 2025 9th June 2025 Shift 1",
+      "source_year": 2025,
+      "options": [
+        {
+          "label": "12.30 pm",
+          "is_correct": false
+        },
+        {
+          "label": "2.00 pm",
+          "is_correct": false
+        },
+        {
+          "label": "2.30 pm",
+          "is_correct": false
+        },
+        {
+          "label": "3.00 pm",
+          "is_correct": true
+        }
+      ]
+    },
+    {
+      "chapter": "Pipes & Cisterns",
+      "difficulty": "medium",
+      "answer_type": "single",
+      "stem": "Two pipes A and B can separately fill an empty cistern in 48 minutes and 60 minutes respectively. If both A and B are opened together and after 20 minutes B is turned off, then how many minutes will it take for the cistern to be filled?",
+      "explanation": "**First 20 minutes, both open:**\n$$\\frac{20}{48} + \\frac{20}{60} = \\frac{5}{12} + \\frac13 = \\frac{5}{12} + \\frac{4}{12} = \\frac34.$$\n\n**Remaining $\\frac14$ by A alone:**\n$$\\frac14 \\times 48 = 12 \\text{ minutes}.$$\n\n$$\\text{Total} = 20 + 12 = \\mathbf{32} \\text{ minutes}.$$",
+      "source": "TG ICET 2025 9th June 2025 Shift 1",
+      "source_year": 2025,
+      "options": [
+        {
+          "label": "42",
+          "is_correct": false
+        },
+        {
+          "label": "40",
+          "is_correct": false
+        },
+        {
+          "label": "36",
+          "is_correct": false
+        },
+        {
+          "label": "32",
+          "is_correct": true
+        }
+      ]
+    },
+    {
+      "chapter": "Time, Speed & Distance",
+      "difficulty": "hard",
+      "answer_type": "single",
+      "stem": "One-third of a certain journey is covered at 25 kmph, one-fourth at 30 kmph and the rest at 50 kmph. What is the average speed during the whole journey?",
+      "explanation": "Average speed is **total distance ÷ total time**, never the plain average of the speeds. Take the journey as 1 unit; the last leg is\n$$1 - \\frac13 - \\frac14 = \\frac{5}{12}.$$\n\nTotal time:\n$$\\frac{1/3}{25} + \\frac{1/4}{30} + \\frac{5/12}{50} = \\frac{1}{75} + \\frac{1}{120} + \\frac{1}{120} = \\frac{4 + 2.5 + 2.5}{300} = \\frac{9}{300} = \\frac{3}{100}.$$\n\n$$\\text{Average speed} = \\frac{1}{3/100} = \\frac{100}{3} = \\mathbf{33\\tfrac13} \\text{ kmph}.$$",
+      "source": "TG ICET 2025 9th June 2025 Shift 1",
+      "source_year": 2025,
+      "options": [
+        {
+          "label": "$32\\frac13$ kmph",
+          "is_correct": false
+        },
+        {
+          "label": "$35\\frac13$ kmph",
+          "is_correct": false
+        },
+        {
+          "label": "$33\\frac13$ kmph",
+          "is_correct": true
+        },
+        {
+          "label": "$38\\frac13$ kmph",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Time, Speed & Distance",
+      "difficulty": "hard",
+      "answer_type": "single",
+      "stem": "Two persons P and Q walk from A to B, a distance of 14 km, at 3 and 4 kmph respectively. Q reaches B and returns immediately and meets P at C. What is the distance between A and C (in km)?",
+      "explanation": "**When does Q turn back?** Q covers 14 km at 4 kmph, reaching B at\n$$t = \\frac{14}{4} = 3.5 \\text{ hours}.$$\n\nAt that moment P has walked $3 \\times 3.5 = 10.5$ km, so P is $14 - 10.5 = 3.5$ km short of B.\n\n**Now they approach each other**, closing at $3 + 4 = 7$ kmph:\n$$\\frac{3.5}{7} = 0.5 \\text{ hours}.$$\n\nThey meet at $t = 4$ hours, when P has covered\n$$3 \\times 4 = \\mathbf{12} \\text{ km from A}.$$",
+      "source": "TG ICET 2025 9th June 2025 Shift 1",
+      "source_year": 2025,
+      "options": [
+        {
+          "label": "12",
+          "is_correct": true
+        },
+        {
+          "label": "13",
+          "is_correct": false
+        },
+        {
+          "label": "10",
+          "is_correct": false
+        },
+        {
+          "label": "9",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Time & Work",
+      "difficulty": "medium",
+      "answer_type": "single",
+      "stem": "Working independently A and B can complete a piece of work in 6 days and 10 days respectively. Now A starts the work and after 2 days B joins A. In how many days will the work be completed from the day A starts working?",
+      "explanation": "**A's solo stretch:** in 2 days A does $\\dfrac26 = \\dfrac13$, leaving $\\dfrac23$.\n\n**Together:**\n$$\\frac16 + \\frac{1}{10} = \\frac{5+3}{30} = \\frac{4}{15} \\text{ per day}.$$\n\n$$\\text{Time for } \\frac23 = \\frac{2/3}{4/15} = \\frac23 \\times \\frac{15}{4} = 2.5 \\text{ days}.$$\n\n$$\\text{Total} = 2 + 2.5 = \\mathbf{4\\tfrac12} \\text{ days}.$$",
+      "source": "TG ICET 2025 9th June 2025 Shift 1",
+      "source_year": 2025,
+      "options": [
+        {
+          "label": "$5\\frac12$",
+          "is_correct": false
+        },
+        {
+          "label": "5",
+          "is_correct": false
+        },
+        {
+          "label": "$4\\frac12$",
+          "is_correct": true
+        },
+        {
+          "label": "4",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Time & Work",
+      "difficulty": "very_hard",
+      "answer_type": "single",
+      "stem": "Two persons $A$ and $B$ together can complete a piece of work in 12 days, whereas $B$ and $C$ together can complete the same work in 16 days. All three start working together. A quits after working 5 days, B leaves after working 7 days, and C continues till completion, working 13 days from the beginning. How many days will it take for B alone to complete the work?",
+      "explanation": "Let $a, b, c$ be the daily rates. The work done is\n$$5a + 7b + 13c = 1.$$\n\nRegroup so the two given pair-rates appear:\n$$5(a+b) + 2(b+c) + 11c = 1.$$\n\nSubstitute $a+b = \\dfrac{1}{12}$ and $b+c = \\dfrac{1}{16}$:\n$$\\frac{5}{12} + \\frac{2}{16} + 11c = 1 \\Rightarrow \\frac{10}{24} + \\frac{3}{24} + 11c = 1.$$\n\n$$11c = 1 - \\frac{13}{24} = \\frac{11}{24} \\Rightarrow c = \\frac{1}{24}.$$\n\nThen\n$$b = \\frac{1}{16} - \\frac{1}{24} = \\frac{3-2}{48} = \\frac{1}{48},$$\nso **B alone needs 48 days**.",
+      "source": "TG ICET 2025 9th June 2025 Shift 1",
+      "source_year": 2025,
+      "options": [
+        {
+          "label": "40",
+          "is_correct": false
+        },
+        {
+          "label": "42",
+          "is_correct": false
+        },
+        {
+          "label": "45",
+          "is_correct": false
+        },
+        {
+          "label": "48",
+          "is_correct": true
+        }
+      ]
+    },
+    {
+      "chapter": "Mensuration",
+      "difficulty": "easy",
+      "answer_type": "single",
+      "stem": "If the diagonals of a rhombus are 12 cm and 16 cm, then its area, in sq.cm., is",
+      "explanation": "The diagonals of a rhombus bisect each other at right angles, so\n$$\\text{Area} = \\frac12 d_1 d_2 = \\frac12 \\times 12 \\times 16 = \\mathbf{96}\\text{ cm}^2.$$\n\n*(The side would be $\\sqrt{6^2+8^2} = 10$ cm, giving perimeter 40 cm — not needed here.)*",
+      "source": "TG ICET 2025 9th June 2025 Shift 1",
+      "source_year": 2025,
+      "options": [
+        {
+          "label": "72",
+          "is_correct": false
+        },
+        {
+          "label": "192",
+          "is_correct": false
+        },
+        {
+          "label": "88",
+          "is_correct": false
+        },
+        {
+          "label": "96",
+          "is_correct": true
+        }
+      ]
+    },
+    {
+      "chapter": "Mensuration",
+      "difficulty": "medium",
+      "answer_type": "single",
+      "stem": "A rectangular park has dimensions 64 m and 48 m. A path of width 4 m is laid down inside, around the park wall. The cost of fixing tiles on this path at the rate of Rs.70 per sq.m., in rupees, is",
+      "explanation": "The path lies **inside** the boundary, so it eats 4 m from each of the two opposite sides — 8 m off each dimension.\n\n$$\\text{Outer area} = 64 \\times 48 = 3072\\text{ m}^2$$\n$$\\text{Inner area} = 56 \\times 40 = 2240\\text{ m}^2$$\n$$\\text{Path area} = 3072 - 2240 = 832\\text{ m}^2$$\n\n$$\\text{Cost} = 832 \\times 70 = \\textbf{Rs.58,240}.$$",
+      "source": "TG ICET 2025 9th June 2025 Shift 1",
+      "source_year": 2025,
+      "options": [
+        {
+          "label": "58240",
+          "is_correct": true
+        },
+        {
+          "label": "64320",
+          "is_correct": false
+        },
+        {
+          "label": "42640",
+          "is_correct": false
+        },
+        {
+          "label": "72160",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Mensuration",
+      "difficulty": "medium",
+      "answer_type": "single",
+      "stem": "If the breadth of a rectangular plot is 75% of its length and the perimeter of the plot is 1050 metres, then what is its area (in sq.m.)?",
+      "explanation": "Let the length be $l$; then the breadth is $0.75l$.\n\n$$2(l + 0.75l) = 1050 \\Rightarrow 3.5l = 1050 \\Rightarrow l = 300.$$\n\nSo the breadth is $0.75 \\times 300 = 225$ m and\n$$\\text{Area} = 300 \\times 225 = \\mathbf{67{,}500}\\text{ m}^2.$$",
+      "source": "TG ICET 2025 9th June 2025 Shift 1",
+      "source_year": 2025,
+      "options": [
+        {
+          "label": "650",
+          "is_correct": false
+        },
+        {
+          "label": "75000",
+          "is_correct": false
+        },
+        {
+          "label": "57500",
+          "is_correct": false
+        },
+        {
+          "label": "67500",
+          "is_correct": true
+        }
+      ]
+    },
+    {
+      "chapter": "Mensuration",
+      "difficulty": "very_hard",
+      "answer_type": "single",
+      "stem": "A solid hemisphere of radius 8 cm is melted and cast to form a solid right circular cylinder such that the ratio of the curved surface area to the total surface area of the cylinder is 4 : 7. Then the cube of the base radius of the cylinder is",
+      "explanation": "**Use the area ratio to link $h$ and $r$.**\n$$\\frac{\\text{CSA}}{\\text{TSA}} = \\frac{2\\pi r h}{2\\pi r(h+r)} = \\frac{h}{h+r} = \\frac47 \\Rightarrow 7h = 4h + 4r \\Rightarrow h = \\frac{4r}{3}.$$\n\n**Now equate volumes** — melting conserves volume:\n$$\\frac23 \\pi (8)^3 = \\pi r^2 h = \\pi r^2 \\cdot \\frac{4r}{3} = \\frac43 \\pi r^3.$$\n\n$$\\frac23 (512) = \\frac43 r^3 \\Rightarrow r^3 = \\frac{2 \\times 512}{4} = \\mathbf{256}.$$",
+      "source": "TG ICET 2025 9th June 2025 Shift 1",
+      "source_year": 2025,
+      "options": [
+        {
+          "label": "128",
+          "is_correct": false
+        },
+        {
+          "label": "256",
+          "is_correct": true
+        },
+        {
+          "label": "512",
+          "is_correct": false
+        },
+        {
+          "label": "64",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Mensuration",
+      "difficulty": "medium",
+      "answer_type": "single",
+      "stem": "The perimeter of a circle is equal to that of a square. Then the ratio of their areas is",
+      "explanation": "Equate the perimeters, taking the radius $r$ and the square's side $a$:\n$$2\\pi r = 4a \\Rightarrow a = \\frac{\\pi r}{2}.$$\n\nRatio of areas:\n$$\\frac{\\pi r^2}{a^2} = \\frac{\\pi r^2}{\\pi^2 r^2/4} = \\frac{4}{\\pi}.$$\n\nWith $\\pi = \\dfrac{22}{7}$:\n$$\\frac{4}{22/7} = \\frac{28}{22} = \\mathbf{14 : 11}.$$\n\n*(The circle is the larger of the two — for a fixed perimeter the circle always encloses the most area.)*",
+      "source": "TG ICET 2025 9th June 2025 Shift 1",
+      "source_year": 2025,
+      "options": [
+        {
+          "label": "22 : 7",
+          "is_correct": false
+        },
+        {
+          "label": "14 : 11",
+          "is_correct": true
+        },
+        {
+          "label": "7 : 22",
+          "is_correct": false
+        },
+        {
+          "label": "11 : 14",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Time, Speed & Distance",
+      "difficulty": "easy",
+      "answer_type": "single",
+      "stem": "Find the time taken by a man to make 5 rounds of a square field with side 300 m at a speed of 4 kmph.",
+      "explanation": "One round is the perimeter:\n$$4 \\times 300 = 1200\\text{ m}.$$\n\nFive rounds $= 6000$ m $= 6$ km, so\n$$\\text{time} = \\frac{6}{4} = 1.5 \\text{ hours} = \\mathbf{90}\\text{ minutes}.$$",
+      "source": "TG ICET 2025 9th June 2025 Shift 1",
+      "source_year": 2025,
+      "options": [
+        {
+          "label": "90 min.",
+          "is_correct": true
+        },
+        {
+          "label": "60 min.",
+          "is_correct": false
+        },
+        {
+          "label": "80 min.",
+          "is_correct": false
+        },
+        {
+          "label": "120 min.",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Number System",
+      "difficulty": "medium",
+      "answer_type": "single",
+      "stem": "If $x_1, x_2, x_3, x_4, x_5$ and $x_6$ are respectively the remainders when 150, 250, 350, 450, 550 and 650 are divided by 19, then what is the greatest number among $x_1, x_2, x_3, x_4, x_5$ and $x_6$?",
+      "explanation": "Take the remainders one at a time (each is 100 more than the last, and $100 \\equiv 5 \\pmod{19}$, so each remainder rises by 5 and wraps at 19):\n\n| $n$ | 150 | 250 | 350 | 450 | 550 | 650 |\n| --- | --- | --- | --- | --- | --- | --- |\n| remainder | 17 | 3 | 8 | 13 | **18** | 4 |\n\n*(Check one: $19 \\times 28 = 532$, and $550 - 532 = 18$.)*\n\nThe largest remainder is 18, which belongs to 550 — that is $x_5$.",
+      "source": "TG ICET 2025 9th June 2025 Shift 1",
+      "source_year": 2025,
+      "options": [
+        {
+          "label": "$x_4$",
+          "is_correct": false
+        },
+        {
+          "label": "$x_3$",
+          "is_correct": false
+        },
+        {
+          "label": "$x_5$",
+          "is_correct": true
+        },
+        {
+          "label": "$x_6$",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Number System",
+      "difficulty": "hard",
+      "answer_type": "single",
+      "stem": "The remainder when $23^{85} + 15^{85}$ is divided by 19 is",
+      "explanation": "Reduce the bases modulo 19:\n$$23 \\equiv 4, \\qquad 15 \\equiv -4 \\pmod{19}.$$\n\nSince the exponent 85 is **odd**,\n$$23^{85} + 15^{85} \\equiv 4^{85} + (-4)^{85} = 4^{85} - 4^{85} = \\mathbf{0} \\pmod{19}.$$\n\n*(General rule: for odd $n$, $a^n + b^n$ is divisible by $a+b$. Here $a+b = 38 = 2 \\times 19$, so 19 divides the sum.)*",
+      "source": "TG ICET 2025 9th June 2025 Shift 1",
+      "source_year": 2025,
+      "options": [
+        {
+          "label": "0",
+          "is_correct": true
+        },
+        {
+          "label": "17",
+          "is_correct": false
+        },
+        {
+          "label": "7",
+          "is_correct": false
+        },
+        {
+          "label": "11",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Set Theory",
+      "difficulty": "medium",
+      "answer_type": "single",
+      "stem": "In a hostel of 220 inmates, 80 people read newspaper A, 100 read newspaper B, 120 read newspaper C, 40 read both A and B, 50 read both B and C, 60 read both A and C, and 25 read all three newspapers. Then the number of inmates who do not read any of these papers A, B, C is",
+      "explanation": "Apply the inclusion-exclusion principle for three sets:\n$$|A \\cup B \\cup C| = 80 + 100 + 120 - 40 - 50 - 60 + 25.$$\n\n$$= 300 - 150 + 25 = 175.$$\n\nSo the readers number 175, and the rest read nothing:\n$$220 - 175 = \\mathbf{45}.$$",
+      "source": "TG ICET 2025 9th June 2025 Shift 1",
+      "source_year": 2025,
+      "options": [
+        {
+          "label": "175",
+          "is_correct": false
+        },
+        {
+          "label": "45",
+          "is_correct": true
+        },
+        {
+          "label": "125",
+          "is_correct": false
+        },
+        {
+          "label": "95",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Set Theory",
+      "difficulty": "hard",
+      "answer_type": "single",
+      "stem": "If $A, B$ are two sets, then $A - [A - \\{A - (A - B)\\}] = ?$",
+      "explanation": "Peel the brackets from the inside out, using $X - Y = X \\cap Y^c$.\n\n**Innermost:** $A - B$.\n\n**Next:** $A - (A-B) = A \\cap (A \\cap B^c)^c = A \\cap B$ — removing \"A but not B\" from A leaves exactly $A \\cap B$.\n\n**Next:** $A - (A \\cap B) = A - B$.\n\n**Outermost:** $A - (A - B) = \\mathbf{A \\cap B}$.\n\n*(The pattern alternates: each extra subtraction from $A$ flips between $A-B$ and $A \\cap B$, and with three nested subtractions we land on $A \\cap B$.)*",
+      "source": "TG ICET 2025 9th June 2025 Shift 1",
+      "source_year": 2025,
+      "options": [
+        {
+          "label": "$A \\cap B$",
+          "is_correct": true
+        },
+        {
+          "label": "$B$",
+          "is_correct": false
+        },
+        {
+          "label": "$A - B$",
+          "is_correct": false
+        },
+        {
+          "label": "$A \\cup B$",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Algebra",
+      "difficulty": "very_hard",
+      "answer_type": "single",
+      "stem": "Two cubic polynomials $f(x)$ and $g(x)$ (with the same leading coefficient) have $2x^2 + 7x + 5$ as a common factor. If 1 and 2 are respectively the zeros of $f(x)$ and $g(x)$, then the zeros of $f(x) - g(x)$ are",
+      "explanation": "Each cubic is the common quadratic times a linear factor carrying its own zero. Taking the same leading coefficient $k$ for both:\n$$f(x) = k(2x^2+7x+5)(x-1), \\qquad g(x) = k(2x^2+7x+5)(x-2).$$\n\nSubtract:\n$$f(x) - g(x) = k(2x^2+7x+5)\\big[(x-1)-(x-2)\\big] = k(2x^2+7x+5).$$\n\nThe cubic terms cancel and only the common quadratic survives, so the zeros are those of\n$$2x^2+7x+5 = (2x+5)(x+1) = 0 \\Rightarrow x = -\\frac52, \\; -1.$$\n\nBoth are **negative**.",
+      "source": "TG ICET 2025 9th June 2025 Shift 1",
+      "source_year": 2025,
+      "options": [
+        {
+          "label": "0, 5",
+          "is_correct": false
+        },
+        {
+          "label": "both positive",
+          "is_correct": false
+        },
+        {
+          "label": "both negative",
+          "is_correct": true
+        },
+        {
+          "label": "of opposite signs",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Algebra",
+      "difficulty": "hard",
+      "answer_type": "single",
+      "stem": "If one of the zeros of the cubic polynomial $x^3 + ax^2 + bx + c$ is $-1$, then the product of the other two zeros is",
+      "explanation": "Let the zeros be $-1, p, q$ and use the relations between roots and coefficients:\n$$-1 + p + q = -a \\Rightarrow p + q = 1 - a,$$\n$$(-1)p + (-1)q + pq = b \\Rightarrow pq - (p+q) = b.$$\n\nSubstitute the first into the second:\n$$pq = b + (1 - a) = \\mathbf{b - a + 1}.$$\n\n*(Equivalently: $x=-1$ being a root means $-1 + a - b + c = 0$, and $pq = -c/(-1) = c = b - a + 1$.)*",
+      "source": "TG ICET 2025 9th June 2025 Shift 1",
+      "source_year": 2025,
+      "options": [
+        {
+          "label": "$b - a + 1$",
+          "is_correct": true
+        },
+        {
+          "label": "$b - a - 1$",
+          "is_correct": false
+        },
+        {
+          "label": "$a - b + 1$",
+          "is_correct": false
+        },
+        {
+          "label": "$a - b - 1$",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Algebra",
+      "difficulty": "hard",
+      "answer_type": "single",
+      "stem": "If $ax^4 + bx^3 + 2x^2 + 4$ is divisible by $x^2 - x - 2$, then $(a, b) = $",
+      "explanation": "Factorise the divisor: $x^2 - x - 2 = (x-2)(x+1)$, so both $x = 2$ and $x = -1$ must make the quartic zero.\n\n**At $x = 2$:**\n$$16a + 8b + 8 + 4 = 0 \\Rightarrow 4a + 2b = -3.$$\n\n**At $x = -1$:**\n$$a - b + 2 + 4 = 0 \\Rightarrow a = b - 6.$$\n\nSubstitute:\n$$4(b-6) + 2b = -3 \\Rightarrow 6b = 21 \\Rightarrow b = \\frac72, \\quad a = \\frac72 - 6 = -\\frac52.$$\n\n$$(a,b) = \\left(-\\tfrac52, \\tfrac72\\right).$$",
+      "source": "TG ICET 2025 9th June 2025 Shift 1",
+      "source_year": 2025,
+      "options": [
+        {
+          "label": "$\\left(\\frac52, \\frac72\\right)$",
+          "is_correct": false
+        },
+        {
+          "label": "$\\left(\\frac52, \\frac{-7}{2}\\right)$",
+          "is_correct": false
+        },
+        {
+          "label": "$\\left(\\frac{-5}{2}, \\frac72\\right)$",
+          "is_correct": true
+        },
+        {
+          "label": "$\\left(\\frac{-5}{2}, \\frac{-7}{2}\\right)$",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Algebra",
+      "difficulty": "medium",
+      "answer_type": "single",
+      "stem": "The remainders when the polynomial $f(x)$ is divided by $(x-1)$ and $(x+1)$ are 6 and 8 respectively. Then the remainder when $f(x)$ is divided by $(x-1)(x+1)$ is",
+      "explanation": "Dividing by a quadratic leaves a remainder of degree at most 1, so write it as $rx + s$:\n$$f(x) = (x-1)(x+1)Q(x) + rx + s.$$\n\nBy the remainder theorem, $f(1) = 6$ and $f(-1) = 8$. The product term vanishes at both points:\n$$r + s = 6, \\qquad -r + s = 8.$$\n\nAdding: $2s = 14 \\Rightarrow s = 7$, hence $r = -1$.\n\n$$\\text{Remainder} = \\mathbf{-x + 7}.$$",
+      "source": "TG ICET 2025 9th June 2025 Shift 1",
+      "source_year": 2025,
+      "options": [
+        {
+          "label": "$x + 7$",
+          "is_correct": false
+        },
+        {
+          "label": "$-x + 7$",
+          "is_correct": true
+        },
+        {
+          "label": "$x - 7$",
+          "is_correct": false
+        },
+        {
+          "label": "$-x - 7$",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Algebra",
+      "difficulty": "easy",
+      "answer_type": "single",
+      "stem": "The present age of a father is 5 times the age of his son. Five years hence the father's age will be three times the age of the son. Then the present age of the father exceeds the present age of his son by",
+      "explanation": "Let the son's present age be $s$; the father's is $5s$.\n\nFive years later:\n$$5s + 5 = 3(s + 5) \\Rightarrow 5s + 5 = 3s + 15 \\Rightarrow 2s = 10 \\Rightarrow s = 5.$$\n\nSo the father is 25 and the son 5, and the difference is\n$$25 - 5 = \\mathbf{20} \\text{ years}.$$",
+      "source": "TG ICET 2025 9th June 2025 Shift 1",
+      "source_year": 2025,
+      "options": [
+        {
+          "label": "25",
+          "is_correct": false
+        },
+        {
+          "label": "20",
+          "is_correct": true
+        },
+        {
+          "label": "15",
+          "is_correct": false
+        },
+        {
+          "label": "18",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Algebra",
+      "difficulty": "hard",
+      "answer_type": "single",
+      "stem": "If $\\alpha + \\dfrac{12}{\\alpha} = 3$, then $\\alpha^3 + 3\\alpha + 72 = $",
+      "explanation": "Clear the fraction to get the defining quadratic:\n$$\\alpha^2 - 3\\alpha + 12 = 0 \\Rightarrow \\alpha^2 = 3\\alpha - 12.$$\n\nNow reduce $\\alpha^3$ using that relation twice:\n$$\\alpha^3 = \\alpha \\cdot \\alpha^2 = \\alpha(3\\alpha - 12) = 3\\alpha^2 - 12\\alpha = 3(3\\alpha - 12) - 12\\alpha = -3\\alpha - 36.$$\n\nTherefore\n$$\\alpha^3 + 3\\alpha + 72 = (-3\\alpha - 36) + 3\\alpha + 72 = \\mathbf{36}.$$\n\n*(The $\\alpha$ terms cancel, so the value is the same for both complex roots.)*",
+      "source": "TG ICET 2025 9th June 2025 Shift 1",
+      "source_year": 2025,
+      "options": [
+        {
+          "label": "36",
+          "is_correct": true
+        },
+        {
+          "label": "18",
+          "is_correct": false
+        },
+        {
+          "label": "12",
+          "is_correct": false
+        },
+        {
+          "label": "$-36$",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Progressions (AP & GP)",
+      "difficulty": "hard",
+      "answer_type": "single",
+      "stem": "$$1\\cdot\\frac15 + 2\\cdot\\frac{1}{5^2} + 4\\cdot\\frac{1}{5^3} + \\cdots + 512\\cdot\\frac{1}{5^{10}} = ?$$",
+      "explanation": "The numerators double, so the $n$-th term is\n$$\\frac{2^{n-1}}{5^n} = \\frac12\\left(\\frac25\\right)^n, \\qquad n = 1, 2, \\ldots, 10$$\n(the last one being $2^9 = 512$ over $5^{10}$).\n\nThis is a GP with first term $\\dfrac15$ and ratio $\\dfrac25$, summed over 10 terms:\n$$S = \\frac{\\frac15\\left(1 - \\left(\\frac25\\right)^{10}\\right)}{1 - \\frac25} = \\frac{\\frac15}{\\frac35}\\left(1 - \\left(\\frac25\\right)^{10}\\right) = \\frac13\\left(1 - \\left(\\frac25\\right)^{10}\\right).$$",
+      "source": "TG ICET 2025 9th June 2025 Shift 1",
+      "source_year": 2025,
+      "options": [
+        {
+          "label": "$\\frac14\\left(1 - \\left(\\frac25\\right)^{10}\\right)$",
+          "is_correct": false
+        },
+        {
+          "label": "$\\frac13\\left(1 + \\left(\\frac25\\right)^{10}\\right)$",
+          "is_correct": false
+        },
+        {
+          "label": "$\\frac13\\left(1 - \\left(\\frac25\\right)^{10}\\right)$",
+          "is_correct": true
+        },
+        {
+          "label": "$\\frac16\\left(1 + \\left(\\frac25\\right)^{10}\\right)$",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Progressions (AP & GP)",
+      "difficulty": "medium",
+      "answer_type": "single",
+      "stem": "The sum $9 + 99 + 999 + \\cdots$ to $n$ terms is",
+      "explanation": "Write each term as one less than a power of 10:\n$$9 = 10 - 1, \\quad 99 = 10^2 - 1, \\quad 999 = 10^3 - 1, \\ldots$$\n\nSo\n$$S = \\sum_{k=1}^{n}\\left(10^k - 1\\right) = \\left(10 + 10^2 + \\cdots + 10^n\\right) - n.$$\n\nThe bracket is a GP with first term 10 and ratio 10:\n$$10 + 10^2 + \\cdots + 10^n = 10\\left(\\frac{10^n - 1}{9}\\right).$$\n\n$$S = 10\\left(\\frac{10^n - 1}{9}\\right) - n.$$\n\n*(Check $n = 2$: $10 \\times 11 - 2 = 108 = 9 + 99$ ✓)*",
+      "source": "TG ICET 2025 9th June 2025 Shift 1",
+      "source_year": 2025,
+      "options": [
+        {
+          "label": "$10\\left(\\frac{10^n - 1}{9}\\right) - n$",
+          "is_correct": true
+        },
+        {
+          "label": "$\\frac{1}{99}\\left(\\frac{10^n - 1}{9} - n\\right)$",
+          "is_correct": false
+        },
+        {
+          "label": "$10\\left(\\frac{10^n - 1}{9}\\right) + n$",
+          "is_correct": false
+        },
+        {
+          "label": "$\\frac{10 - 1}{9} + n$",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Trigonometry",
+      "difficulty": "medium",
+      "answer_type": "single",
+      "stem": "$$\\frac{\\sin A + \\sin 3A}{\\cos A + \\cos 3A} = ?$$",
+      "explanation": "Use the sum-to-product formulae on numerator and denominator:\n$$\\sin A + \\sin 3A = 2\\sin\\frac{A+3A}{2}\\cos\\frac{3A-A}{2} = 2\\sin 2A\\cos A,$$\n$$\\cos A + \\cos 3A = 2\\cos\\frac{A+3A}{2}\\cos\\frac{3A-A}{2} = 2\\cos 2A\\cos A.$$\n\nThe factor $2\\cos A$ cancels:\n$$\\frac{2\\sin 2A\\cos A}{2\\cos 2A\\cos A} = \\mathbf{\\tan 2A}.$$",
+      "source": "TG ICET 2025 9th June 2025 Shift 1",
+      "source_year": 2025,
+      "options": [
+        {
+          "label": "$\\sin 2A$",
+          "is_correct": false
+        },
+        {
+          "label": "$\\cos 2A$",
+          "is_correct": false
+        },
+        {
+          "label": "$\\tan A$",
+          "is_correct": false
+        },
+        {
+          "label": "$\\tan 2A$",
+          "is_correct": true
+        }
+      ]
+    },
+    {
+      "chapter": "Trigonometry",
+      "difficulty": "hard",
+      "answer_type": "single",
+      "stem": "$$\\sqrt{\\tan^4 x + 4\\sec^2 x} = ?$$",
+      "explanation": "Convert $\\sec^2 x$ using $\\sec^2 x = 1 + \\tan^2 x$ so everything is in $\\tan x$:\n$$\\tan^4 x + 4(1 + \\tan^2 x) = \\tan^4 x + 4\\tan^2 x + 4 = \\left(\\tan^2 x + 2\\right)^2.$$\n\nTaking the (non-negative) square root:\n$$\\tan^2 x + 2 = \\left(\\sec^2 x - 1\\right) + 2 = \\mathbf{1 + \\sec^2 x}.$$",
+      "source": "TG ICET 2025 9th June 2025 Shift 1",
+      "source_year": 2025,
+      "options": [
+        {
+          "label": "$2 - \\sec^2 x$",
+          "is_correct": false
+        },
+        {
+          "label": "$1 - \\sec^2 x$",
+          "is_correct": false
+        },
+        {
+          "label": "$1 + \\sec^2 x$",
+          "is_correct": true
+        },
+        {
+          "label": "$2 + \\sec^2 x$",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Trigonometry",
+      "difficulty": "medium",
+      "answer_type": "single",
+      "stem": "If $\\sin\\theta + \\operatorname{cosec}\\theta = 2$, then $\\sin^2\\theta + \\operatorname{cosec}^2\\theta = ?$",
+      "explanation": "Square the given equation:\n$$(\\sin\\theta + \\operatorname{cosec}\\theta)^2 = \\sin^2\\theta + \\operatorname{cosec}^2\\theta + 2\\sin\\theta\\operatorname{cosec}\\theta.$$\n\nSince $\\sin\\theta \\cdot \\operatorname{cosec}\\theta = 1$, the middle term is exactly 2:\n$$4 = \\sin^2\\theta + \\operatorname{cosec}^2\\theta + 2 \\Rightarrow \\sin^2\\theta + \\operatorname{cosec}^2\\theta = \\mathbf{2}.$$\n\n*(The condition forces $\\sin\\theta = 1$ — a quantity plus its reciprocal equals 2 only at 1 — so both terms are 1.)*",
+      "source": "TG ICET 2025 9th June 2025 Shift 1",
+      "source_year": 2025,
+      "options": [
+        {
+          "label": "1",
+          "is_correct": false
+        },
+        {
+          "label": "4",
+          "is_correct": false
+        },
+        {
+          "label": "2",
+          "is_correct": true
+        },
+        {
+          "label": "0",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Trigonometry",
+      "difficulty": "hard",
+      "answer_type": "single",
+      "stem": "$$\\frac{\\sin 23^\\circ + \\cos 48^\\circ + \\sin 43^\\circ + \\cos 61^\\circ}{\\cos 47^\\circ + \\sin 29^\\circ + \\sin 42^\\circ + \\cos 67^\\circ} = ?$$",
+      "explanation": "Use the complementary-angle identities $\\sin\\theta = \\cos(90^\\circ - \\theta)$ and $\\cos\\theta = \\sin(90^\\circ - \\theta)$ to rewrite each numerator term:\n\n$$\\sin 23^\\circ = \\cos 67^\\circ, \\quad \\cos 48^\\circ = \\sin 42^\\circ, \\quad \\sin 43^\\circ = \\cos 47^\\circ, \\quad \\cos 61^\\circ = \\sin 29^\\circ.$$\n\nThe numerator becomes $\\cos 67^\\circ + \\sin 42^\\circ + \\cos 47^\\circ + \\sin 29^\\circ$ — term for term the same set as the denominator.\n\n$$\\text{Ratio} = \\mathbf{1}.$$",
+      "source": "TG ICET 2025 9th June 2025 Shift 1",
+      "source_year": 2025,
+      "options": [
+        {
+          "label": "$\\frac12$",
+          "is_correct": false
+        },
+        {
+          "label": "1",
+          "is_correct": true
+        },
+        {
+          "label": "$\\frac{\\sqrt3}{2}$",
+          "is_correct": false
+        },
+        {
+          "label": "$-1$",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Heights & Distances",
+      "difficulty": "medium",
+      "answer_type": "single",
+      "stem": "Two persons standing on either side of a temple of 30 m height observe its top at angles of elevation $30^\\circ$ and $60^\\circ$ respectively. Then the distance (in metres) between the two persons is",
+      "explanation": "The two persons are on opposite sides, so the required distance is the **sum** of the two horizontal distances.\n\n$$d_1 = \\frac{30}{\\tan 30^\\circ} = 30\\sqrt3, \\qquad d_2 = \\frac{30}{\\tan 60^\\circ} = \\frac{30}{\\sqrt3} = 10\\sqrt3.$$\n\n$$d_1 + d_2 = 30\\sqrt3 + 10\\sqrt3 = \\mathbf{40\\sqrt3}\\text{ m}.$$\n\n*(The smaller angle belongs to the person standing farther away.)*",
+      "source": "TG ICET 2025 9th June 2025 Shift 1",
+      "source_year": 2025,
+      "options": [
+        {
+          "label": "$30\\sqrt3$",
+          "is_correct": false
+        },
+        {
+          "label": "40",
+          "is_correct": false
+        },
+        {
+          "label": "$40\\sqrt3$",
+          "is_correct": true
+        },
+        {
+          "label": "$30(\\sqrt3+1)$",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Coordinate Geometry",
+      "difficulty": "easy",
+      "answer_type": "single",
+      "stem": "The points $(-4, 0)$, $(4, 0)$ and $(0, 3)$ are the vertices of a",
+      "explanation": "Compute the three side lengths with the distance formula:\n$$(-4,0)\\text{ to }(4,0): 8$$\n$$(-4,0)\\text{ to }(0,3): \\sqrt{16+9} = 5$$\n$$(4,0)\\text{ to }(0,3): \\sqrt{16+9} = 5$$\n\nTwo sides are equal and the third differs, so the triangle is **isosceles**.\n\n*(It is not right-angled: $5^2 + 5^2 = 50 \\ne 64$; nor equilateral.)*",
+      "source": "TG ICET 2025 9th June 2025 Shift 1",
+      "source_year": 2025,
+      "options": [
+        {
+          "label": "Right angled triangle",
+          "is_correct": false
+        },
+        {
+          "label": "Isosceles triangle",
+          "is_correct": true
+        },
+        {
+          "label": "Equilateral triangle",
+          "is_correct": false
+        },
+        {
+          "label": "Scalene triangle",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Geometry",
+      "difficulty": "hard",
+      "answer_type": "single",
+      "stem": "If the lengths of adjacent sides of a parallelogram are 12 cm and 14 cm and the length of one of its diagonals is 16 cm, then the length of the other diagonal (in cm) is",
+      "explanation": "Use the parallelogram law — the sum of the squares of the diagonals equals twice the sum of the squares of two adjacent sides:\n$$d_1^2 + d_2^2 = 2\\left(a^2 + b^2\\right) = 2(144 + 196) = 680.$$\n\nWith $d_1 = 16$:\n$$d_2^2 = 680 - 256 = 424 \\Rightarrow d_2 = \\sqrt{4 \\times 106} = \\mathbf{2\\sqrt{106}}\\text{ cm}.$$",
+      "source": "TG ICET 2025 9th June 2025 Shift 1",
+      "source_year": 2025,
+      "options": [
+        {
+          "label": "$\\sqrt{106}$",
+          "is_correct": false
+        },
+        {
+          "label": "$2\\sqrt{106}$",
+          "is_correct": true
+        },
+        {
+          "label": "$3\\sqrt{106}$",
+          "is_correct": false
+        },
+        {
+          "label": "$\\sqrt{212}$",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Geometry",
+      "difficulty": "medium",
+      "answer_type": "single",
+      "stem": "ABCD is a trapezium in which AB is parallel to CD. P and Q are midpoints of AD and BC respectively. If AB = 8 cm and PQ = 6 cm, then CD = (in cm)",
+      "explanation": "The segment joining the midpoints of the two non-parallel sides of a trapezium — the **midsegment** — is the average of the parallel sides:\n$$PQ = \\frac{AB + CD}{2}.$$\n\n$$6 = \\frac{8 + CD}{2} \\Rightarrow 12 = 8 + CD \\Rightarrow CD = \\mathbf{4}\\text{ cm}.$$",
+      "source": "TG ICET 2025 9th June 2025 Shift 1",
+      "source_year": 2025,
+      "options": [
+        {
+          "label": "2",
+          "is_correct": false
+        },
+        {
+          "label": "7",
+          "is_correct": false
+        },
+        {
+          "label": "3",
+          "is_correct": false
+        },
+        {
+          "label": "4",
+          "is_correct": true
+        }
+      ]
+    },
+    {
+      "chapter": "Geometry",
+      "difficulty": "medium",
+      "answer_type": "single",
+      "stem": "PAB and PCD are secants drawn from an external point P to a circle, cutting the circle at A, B and C, D respectively. If PA = 5 cm, AB = 8 cm, PC = 4 cm and CD = $x$ cm, then $x = $",
+      "explanation": "By the **power of a point** (secant-secant) theorem, the products of the whole secant and its external part are equal:\n$$PA \\cdot PB = PC \\cdot PD.$$\n\nHere $PB = PA + AB = 5 + 8 = 13$ and $PD = PC + CD = 4 + x$:\n$$5 \\times 13 = 4(4 + x) \\Rightarrow 65 = 16 + 4x \\Rightarrow x = \\frac{49}{4}.$$",
+      "source": "TG ICET 2025 9th June 2025 Shift 1",
+      "source_year": 2025,
+      "options": [
+        {
+          "label": "$\\frac{49}{4}$",
+          "is_correct": true
+        },
+        {
+          "label": "$\\frac72$",
+          "is_correct": false
+        },
+        {
+          "label": "$\\frac{25}{4}$",
+          "is_correct": false
+        },
+        {
+          "label": "$\\frac52$",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Geometry",
+      "difficulty": "easy",
+      "answer_type": "single",
+      "stem": "From a point Q, the length of the tangent to a circle is 24 cm and the distance of Q from the centre is 25 cm. The radius of the circle, in cm, is",
+      "explanation": "The radius drawn to the point of contact is perpendicular to the tangent, so the radius, the tangent and the line to the centre form a right triangle with the 25 cm as hypotenuse:\n$$r^2 + 24^2 = 25^2 \\Rightarrow r^2 = 625 - 576 = 49 \\Rightarrow r = \\mathbf{7}\\text{ cm}.$$\n\n*(A 7-24-25 Pythagorean triple.)*",
+      "source": "TG ICET 2025 9th June 2025 Shift 1",
+      "source_year": 2025,
+      "options": [
+        {
+          "label": "7",
+          "is_correct": true
+        },
+        {
+          "label": "12",
+          "is_correct": false
+        },
+        {
+          "label": "15",
+          "is_correct": false
+        },
+        {
+          "label": "24.5",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Coordinate Geometry",
+      "difficulty": "easy",
+      "answer_type": "single",
+      "stem": "If the slope of the line passing through the points $(5, 6)$ and $(4, k)$ is 3, then $k = $",
+      "explanation": "Apply the slope formula:\n$$m = \\frac{6 - k}{5 - 4} = 6 - k.$$\n\n$$6 - k = 3 \\Rightarrow k = \\mathbf{3}.$$",
+      "source": "TG ICET 2025 9th June 2025 Shift 1",
+      "source_year": 2025,
+      "options": [
+        {
+          "label": "$\\frac32$",
+          "is_correct": false
+        },
+        {
+          "label": "2",
+          "is_correct": false
+        },
+        {
+          "label": "3",
+          "is_correct": true
+        },
+        {
+          "label": "$\\frac34$",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Coordinate Geometry",
+      "difficulty": "easy",
+      "answer_type": "single",
+      "stem": "The equation of the line passing through the point $(-4, 5)$ and parallel to the Y-axis is",
+      "explanation": "A line parallel to the Y-axis is vertical, so every point on it has the **same $x$-coordinate** — here $x = -4$:\n$$x = -4 \\quad\\Longleftrightarrow\\quad \\mathbf{x + 4 = 0}.$$\n\n*($y - 5 = 0$ would be the line parallel to the X-axis through the same point.)*",
+      "source": "TG ICET 2025 9th June 2025 Shift 1",
+      "source_year": 2025,
+      "options": [
+        {
+          "label": "$y - 5 = 0$",
+          "is_correct": false
+        },
+        {
+          "label": "$x + 4 = 0$",
+          "is_correct": true
+        },
+        {
+          "label": "$x + 5 = 0$",
+          "is_correct": false
+        },
+        {
+          "label": "$y + 5 = 0$",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Coordinate Geometry",
+      "difficulty": "medium",
+      "answer_type": "single",
+      "stem": "If $\\theta$ is the acute angle between the lines $y = 5x$ and $y = 7x$, then $\\tan\\theta = $",
+      "explanation": "For two lines with slopes $m_1$ and $m_2$, the acute angle satisfies\n$$\\tan\\theta = \\left|\\frac{m_2 - m_1}{1 + m_1 m_2}\\right|.$$\n\nWith $m_1 = 5, m_2 = 7$:\n$$\\tan\\theta = \\left|\\frac{7-5}{1+35}\\right| = \\frac{2}{36} = \\mathbf{\\frac{1}{18}}.$$\n\n*(The modulus is what makes the answer the acute angle, so a negative value can be ruled out at once.)*",
+      "source": "TG ICET 2025 9th June 2025 Shift 1",
+      "source_year": 2025,
+      "options": [
+        {
+          "label": "$\\frac{12}{35}$",
+          "is_correct": false
+        },
+        {
+          "label": "$\\frac{-12}{35}$",
+          "is_correct": false
+        },
+        {
+          "label": "$\\frac{1}{18}$",
+          "is_correct": true
+        },
+        {
+          "label": "$\\frac{-1}{18}$",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Coordinate Geometry",
+      "difficulty": "easy",
+      "answer_type": "single",
+      "stem": "The equation of the straight line which is inclined at an angle of $135^\\circ$ to the X-axis and making an intercept of 0 units on the Y-axis is",
+      "explanation": "The slope is\n$$m = \\tan 135^\\circ = -1,$$\nand a Y-intercept of 0 means the line passes through the origin, so $c = 0$.\n\n$$y = -x \\quad\\Longleftrightarrow\\quad \\mathbf{x + y = 0}.$$",
+      "source": "TG ICET 2025 9th June 2025 Shift 1",
+      "source_year": 2025,
+      "options": [
+        {
+          "label": "$x - y = 0$",
+          "is_correct": false
+        },
+        {
+          "label": "$x + \\sqrt3 y = 0$",
+          "is_correct": false
+        },
+        {
+          "label": "$\\sqrt2 x + y = 0$",
+          "is_correct": false
+        },
+        {
+          "label": "$x + y = 0$",
+          "is_correct": true
+        }
+      ]
+    },
+    {
+      "chapter": "Coordinate Geometry",
+      "difficulty": "easy",
+      "answer_type": "single",
+      "stem": "The equation of the straight line whose slope is $\\dfrac23$ and $y$-intercept 2 is",
+      "explanation": "Use the slope-intercept form $y = mx + c$:\n$$y = \\frac23 x + 2.$$\n\nMultiply through by 3 and rearrange:\n$$3y = 2x + 6 \\Rightarrow \\mathbf{2x - 3y + 6 = 0}.$$\n\n*(Check the intercept: putting $x=0$ gives $y=2$ ✓)*",
+      "source": "TG ICET 2025 9th June 2025 Shift 1",
+      "source_year": 2025,
+      "options": [
+        {
+          "label": "$2x + 3y - 6 = 0$",
+          "is_correct": false
+        },
+        {
+          "label": "$2x - 3y - 6 = 0$",
+          "is_correct": false
+        },
+        {
+          "label": "$2x + 3y + 6 = 0$",
+          "is_correct": false
+        },
+        {
+          "label": "$2x - 3y + 6 = 0$",
+          "is_correct": true
+        }
+      ]
+    },
+    {
+      "chapter": "Coordinate Geometry",
+      "difficulty": "medium",
+      "answer_type": "single",
+      "stem": "If the line $y = 7x + 9$ meets the coordinate axes in A, B respectively, then the area of triangle OAB, in square units, is",
+      "explanation": "Find the two intercepts.\n\n**X-axis** ($y=0$): $0 = 7x + 9 \\Rightarrow x = -\\dfrac97$, so $A\\left(-\\dfrac97, 0\\right)$.\n**Y-axis** ($x=0$): $y = 9$, so $B(0, 9)$.\n\nOAB is right-angled at the origin, so\n$$\\text{Area} = \\frac12 \\times \\left|-\\frac97\\right| \\times 9 = \\frac{81}{14}.$$",
+      "source": "TG ICET 2025 9th June 2025 Shift 1",
+      "source_year": 2025,
+      "options": [
+        {
+          "label": "$\\frac97$",
+          "is_correct": false
+        },
+        {
+          "label": "$\\frac{81}{7}$",
+          "is_correct": false
+        },
+        {
+          "label": "$\\frac{81}{28}$",
+          "is_correct": false
+        },
+        {
+          "label": "$\\frac{81}{14}$",
+          "is_correct": true
+        }
+      ]
+    },
+    {
+      "chapter": "Coordinate Geometry",
+      "difficulty": "hard",
+      "answer_type": "single",
+      "stem": "The equation of the median AD of the triangle ABC, where D is the midpoint of BC and the vertices are $A(-6,-7)$, $B(4,6)$ and $C(2,4)$, is",
+      "explanation": "**Find D**, the midpoint of BC:\n$$D = \\left(\\frac{4+2}{2}, \\frac{6+4}{2}\\right) = (3, 5).$$\n\n**Slope of AD:**\n$$m = \\frac{5 - (-7)}{3 - (-6)} = \\frac{12}{9} = \\frac43.$$\n\n**Point-slope form through $D(3,5)$:**\n$$y - 5 = \\frac43(x - 3) \\Rightarrow 3y - 15 = 4x - 12 \\Rightarrow 4x - 3y + 3 = 0.$$\n\nMultiplying by 3 and rearranging gives the printed form:\n$$\\mathbf{9y - 12x - 9 = 0}.$$\n\n*(Check A: $9(-7) - 12(-6) - 9 = -63 + 72 - 9 = 0$ ✓)*",
+      "source": "TG ICET 2025 9th June 2025 Shift 1",
+      "source_year": 2025,
+      "options": [
+        {
+          "label": "$9y - 12x - 9 = 0$",
+          "is_correct": true
+        },
+        {
+          "label": "$12y + 9x - 12 = 0$",
+          "is_correct": false
+        },
+        {
+          "label": "$6x + 7y + 18 = 0$",
+          "is_correct": false
+        },
+        {
+          "label": "$7y + 6x - 18 = 0$",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Mean, Median & Mode",
+      "difficulty": "medium",
+      "answer_type": "single",
+      "stem": "If the mean of 9, 12, 15, 9, 16, 18, 16, 19, 14, 15, $x$, 18 is $2x$, then the value of $x$ is",
+      "explanation": "There are 12 observations. Add the eleven known ones:\n$$9+12+15+9+16+18+16+19+14+15+18 = 161.$$\n\nSet up the mean condition:\n$$\\frac{161 + x}{12} = 2x \\Rightarrow 161 + x = 24x \\Rightarrow 23x = 161 \\Rightarrow x = \\mathbf{7}.$$\n\n*(Check: the total becomes 168, the mean $\\frac{168}{12} = 14 = 2 \\times 7$ ✓)*",
+      "source": "TG ICET 2025 9th June 2025 Shift 1",
+      "source_year": 2025,
+      "options": [
+        {
+          "label": "8",
+          "is_correct": false
+        },
+        {
+          "label": "7",
+          "is_correct": true
+        },
+        {
+          "label": "6",
+          "is_correct": false
+        },
+        {
+          "label": "5",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Mean, Median & Mode",
+      "difficulty": "medium",
+      "answer_type": "single",
+      "stem": "The arithmetic mean of a data containing 50 observations is 30. While calculating the mean, instead of 54 and 96, the numbers 32 and 18 were taken into account. Now the actual mean is",
+      "explanation": "The wrong total was\n$$50 \\times 30 = 1500.$$\n\nRemove the two wrong entries and put in the right ones:\n$$1500 - (32 + 18) + (54 + 96) = 1500 - 50 + 150 = 1600.$$\n\n$$\\text{Actual mean} = \\frac{1600}{50} = \\mathbf{32}.$$",
+      "source": "TG ICET 2025 9th June 2025 Shift 1",
+      "source_year": 2025,
+      "options": [
+        {
+          "label": "31",
+          "is_correct": false
+        },
+        {
+          "label": "32",
+          "is_correct": true
+        },
+        {
+          "label": "29",
+          "is_correct": false
+        },
+        {
+          "label": "33",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Mean, Median & Mode",
+      "difficulty": "easy",
+      "answer_type": "single",
+      "stem": "The arithmetic mean of 10 numbers is 18 and the arithmetic mean of another $n$ numbers is 36. If the arithmetic mean of all the numbers is 30, then $n = $",
+      "explanation": "Combine the two totals:\n$$\\frac{10(18) + n(36)}{10 + n} = 30.$$\n\n$$180 + 36n = 300 + 30n \\Rightarrow 6n = 120 \\Rightarrow n = \\mathbf{20}.$$\n\n*(Sanity check with the lever rule: 30 is 12 above 18 and 6 below 36, so the group sizes must be in the ratio $6 : 12 = 1 : 2$, giving $n = 20$ against 10.)*",
+      "source": "TG ICET 2025 9th June 2025 Shift 1",
+      "source_year": 2025,
+      "options": [
+        {
+          "label": "15",
+          "is_correct": false
+        },
+        {
+          "label": "25",
+          "is_correct": false
+        },
+        {
+          "label": "30",
+          "is_correct": false
+        },
+        {
+          "label": "20",
+          "is_correct": true
+        }
+      ]
+    },
+    {
+      "chapter": "Mean, Median & Mode",
+      "difficulty": "hard",
+      "answer_type": "single",
+      "stem": "If each one of $5^2, 6^2, 7^2, 8^2, 9^2, 10^2, 11^2$ and $12^2$, when divided by 13, leaves remainders $a_1, a_2, a_3, a_4, a_5, a_6, a_7, a_8$ respectively, then the median of these $a_i$'s is",
+      "explanation": "Compute the eight remainders modulo 13:\n\n| $n^2$ | 25 | 36 | 49 | 64 | 81 | 100 | 121 | 144 |\n| --- | --- | --- | --- | --- | --- | --- | --- | --- |\n| mod 13 | 12 | 10 | 10 | 12 | 3 | 9 | 4 | 1 |\n\nArrange them in order:\n$$1, 3, 4, 9, 10, 10, 12, 12.$$\n\nWith 8 values the median is the mean of the 4th and 5th:\n$$\\frac{9 + 10}{2} = \\mathbf{9.5}.$$",
+      "source": "TG ICET 2025 9th June 2025 Shift 1",
+      "source_year": 2025,
+      "options": [
+        {
+          "label": "8.5",
+          "is_correct": false
+        },
+        {
+          "label": "9.5",
+          "is_correct": true
+        },
+        {
+          "label": "10",
+          "is_correct": false
+        },
+        {
+          "label": "12",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Mean, Median & Mode",
+      "difficulty": "medium",
+      "answer_type": "single",
+      "stem": "Median of the following data is\n\n| Marks | 23 | 35 | 40 | 50 | 55 | 60 | 80 |\n| --- | --- | --- | --- | --- | --- | --- | --- |\n| Frequency | 7 | 8 | 12 | 10 | 15 | 10 | 11 |",
+      "explanation": "Total frequency:\n$$N = 7+8+12+10+15+10+11 = 73,$$\nso the median is the $\\dfrac{73+1}{2} = 37\\text{th}$ observation.\n\nCumulative frequencies:\n$$7,; 15,; 27,; \\mathbf{37},; 52,; 62,; 73.$$\n\nThe 37th value is the last one in the class of marks **50**.",
+      "source": "TG ICET 2025 9th June 2025 Shift 1",
+      "source_year": 2025,
+      "options": [
+        {
+          "label": "55",
+          "is_correct": false
+        },
+        {
+          "label": "50",
+          "is_correct": true
+        },
+        {
+          "label": "40",
+          "is_correct": false
+        },
+        {
+          "label": "60",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Mean, Median & Mode",
+      "difficulty": "hard",
+      "answer_type": "single",
+      "stem": "Find the mode of the following frequency distribution.\n\n| Class | 10–20 | 20–30 | 30–40 | 40–50 | 50–60 | 60–70 | 70–80 |\n| --- | --- | --- | --- | --- | --- | --- | --- |\n| Frequency | 5 | 6 | 8 | 7 | 6 | 4 | 4 |",
+      "explanation": "The largest frequency is 8, so the modal class is **30–40**, with $l = 30$, $f = 8$, $f_1 = 6$ (preceding), $f_2 = 7$ (succeeding) and $h = 10$.\n\n$$\\text{Mode} = l + \\frac{f - f_1}{2f - f_1 - f_2}\\times h = 30 + \\frac{8-6}{16-6-7}\\times 10 = 30 + \\frac23 \\times 10.$$\n\n$$= 30 + 6.67 \\approx \\mathbf{36.6}$$\n\n*(Exactly $36\\frac23$; the paper prints it truncated to one decimal place.)*",
+      "source": "TG ICET 2025 9th June 2025 Shift 1",
+      "source_year": 2025,
+      "options": [
+        {
+          "label": "38.6",
+          "is_correct": false
+        },
+        {
+          "label": "36.6",
+          "is_correct": true
+        },
+        {
+          "label": "39.6",
+          "is_correct": false
+        },
+        {
+          "label": "40.6",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Mean, Median & Mode",
+      "difficulty": "easy",
+      "answer_type": "single",
+      "stem": "In a distribution, the mode is 120 and the median is 140. Then find the arithmetic mean.",
+      "explanation": "Use the empirical relation between the three averages:\n$$\\text{Mode} = 3\\,\\text{Median} - 2\\,\\text{Mean}.$$\n\n$$120 = 3(140) - 2\\,\\text{Mean} = 420 - 2\\,\\text{Mean}$$\n$$2\\,\\text{Mean} = 300 \\Rightarrow \\text{Mean} = \\mathbf{150}.$$\n\n*(In a moderately skewed distribution the median lies between the other two averages — here 120, 140, 150 ✓)*",
+      "source": "TG ICET 2025 9th June 2025 Shift 1",
+      "source_year": 2025,
+      "options": [
+        {
+          "label": "140",
+          "is_correct": false
+        },
+        {
+          "label": "170",
+          "is_correct": false
+        },
+        {
+          "label": "160",
+          "is_correct": false
+        },
+        {
+          "label": "150",
+          "is_correct": true
+        }
+      ]
+    },
+    {
+      "chapter": "Probability",
+      "difficulty": "medium",
+      "answer_type": "single",
+      "stem": "When three fair dice are rolled, the probability that a prime number does not appear on any one of their faces is",
+      "explanation": "The primes on a die are 2, 3 and 5 — three of the six faces — so the non-primes are 1, 4 and 6, also three faces:\n$$P(\\text{one die shows a non-prime}) = \\frac36 = \\frac12.$$\n\nThe three dice are independent:\n$$P = \\left(\\frac12\\right)^3 = \\mathbf{\\frac18}.$$",
+      "source": "TG ICET 2025 9th June 2025 Shift 1",
+      "source_year": 2025,
+      "options": [
+        {
+          "label": "$\\frac13$",
+          "is_correct": false
+        },
+        {
+          "label": "$\\frac12$",
+          "is_correct": false
+        },
+        {
+          "label": "$\\frac16$",
+          "is_correct": false
+        },
+        {
+          "label": "$\\frac18$",
+          "is_correct": true
+        }
+      ]
+    },
+    {
+      "chapter": "Probability",
+      "difficulty": "medium",
+      "answer_type": "single",
+      "stem": "A four-digit number is formed with the digits 1, 2, 6 and 5 with no repetitions. Find the probability that a randomly selected such number is divisible by 5.",
+      "explanation": "**Total numbers:** every digit is non-zero, so all arrangements are valid four-digit numbers:\n$$4! = 24.$$\n\n**Divisible by 5:** the number must end in 5 (there is no 0 available), and the remaining three digits can be arranged in\n$$3! = 6 \\text{ ways}.$$\n\n$$P = \\frac{6}{24} = \\mathbf{\\frac14}.$$",
+      "source": "TG ICET 2025 9th June 2025 Shift 1",
+      "source_year": 2025,
+      "options": [
+        {
+          "label": "$\\frac13$",
+          "is_correct": false
+        },
+        {
+          "label": "$\\frac14$",
+          "is_correct": true
+        },
+        {
+          "label": "$\\frac16$",
+          "is_correct": false
+        },
+        {
+          "label": "$\\frac15$",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Probability",
+      "difficulty": "medium",
+      "answer_type": "single",
+      "stem": "From the first 50 natural numbers, a number is selected at random. Find the probability that it is neither a multiple of 3 nor a multiple of 4.",
+      "explanation": "Count the multiples with inclusion-exclusion:\n$$\\left\\lfloor\\frac{50}{3}\\right\\rfloor = 16, \\quad \\left\\lfloor\\frac{50}{4}\\right\\rfloor = 12, \\quad \\left\\lfloor\\frac{50}{12}\\right\\rfloor = 4.$$\n\n$$|3\\text{ or }4| = 16 + 12 - 4 = 24.$$\n\nSo 26 of the 50 numbers are neither:\n$$P = \\frac{26}{50} = \\mathbf{\\frac{13}{25}}.$$",
+      "source": "TG ICET 2025 9th June 2025 Shift 1",
+      "source_year": 2025,
+      "options": [
+        {
+          "label": "$\\frac{12}{25}$",
+          "is_correct": false
+        },
+        {
+          "label": "$\\frac{11}{25}$",
+          "is_correct": false
+        },
+        {
+          "label": "$\\frac{13}{25}$",
+          "is_correct": true
+        },
+        {
+          "label": "$\\frac{17}{25}$",
+          "is_correct": false
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,1517 @@
+{
+  "subject": "Quantitative Aptitude",
+  "questions": [
+    {
+      "chapter": "Time, Speed & Distance",
+      "difficulty": "easy",
+      "answer_type": "single",
+      "stem": "If a bus travels at 60 km/hr and a car travels at 90 km/hr, how much more distance will the car cover in 2 hours than the bus?",
+      "explanation": "Work with the **difference in speeds** — no need to compute both distances:\n$$90 - 60 = 30 \\text{ km/hr}.$$\n\nOver 2 hours the gap grows to\n$$30 \\times 2 = \\mathbf{60} \\text{ km}.$$\n\n*(Check: the car covers 180 km, the bus 120 km ✓)*",
+      "source": "AP ICET 2025 7th May 2025 Shift 2",
+      "source_year": 2025,
+      "options": [
+        {
+          "label": "30 km",
+          "is_correct": false
+        },
+        {
+          "label": "40 km",
+          "is_correct": false
+        },
+        {
+          "label": "50 km",
+          "is_correct": false
+        },
+        {
+          "label": "60 km",
+          "is_correct": true
+        }
+      ]
+    },
+    {
+      "chapter": "Time, Speed & Distance",
+      "difficulty": "medium",
+      "answer_type": "single",
+      "stem": "The ratio of speeds of A and B is 3 : 4. If A takes 40 minutes to cover a distance, how much time will B take for the same distance?",
+      "explanation": "For a fixed distance, time is **inversely** proportional to speed, so the times are in the ratio $4 : 3$ when the speeds are $3 : 4$.\n\n$$\\frac{t_B}{40} = \\frac34 \\Rightarrow t_B = 40 \\times \\frac34 = \\mathbf{30} \\text{ minutes}.$$\n\n*(B is faster, so B must take **less** time — answering 50 or 45 would have B slower.)*",
+      "source": "AP ICET 2025 7th May 2025 Shift 2",
+      "source_year": 2025,
+      "options": [
+        {
+          "label": "30 minutes",
+          "is_correct": true
+        },
+        {
+          "label": "35 minutes",
+          "is_correct": false
+        },
+        {
+          "label": "45 minutes",
+          "is_correct": false
+        },
+        {
+          "label": "50 minutes",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Time, Speed & Distance",
+      "difficulty": "hard",
+      "answer_type": "single",
+      "stem": "A train can travel 50 percent faster than a car. Both start from point A at the same time and reach point B, 75 kilometres away from A, at the same time. On the way, however, the train lost about 12.5 minutes while stopping at the stations. Speed of the car is ______",
+      "explanation": "Let the car's speed be $v$; the train's is $1.5v$.\n\n**Times for the 75 km:**\n$$\\text{car} = \\frac{75}{v}, \\qquad \\text{train (moving)} = \\frac{75}{1.5v} = \\frac{50}{v}.$$\n\nThey arrive together, so the train's saving must equal the time it lost at stations:\n$$\\frac{75}{v} - \\frac{50}{v} = \\frac{12.5}{60} \\text{ hours}$$\n\n$$\\frac{25}{v} = \\frac{12.5}{60} \\Rightarrow v = \\frac{25 \\times 60}{12.5} = \\mathbf{120} \\text{ kmph}.$$\n\n*(Check: the car takes 37.5 min; the train runs for 25 min and halts 12.5 min ✓)*",
+      "source": "AP ICET 2025 7th May 2025 Shift 2",
+      "source_year": 2025,
+      "options": [
+        {
+          "label": "100 kmph",
+          "is_correct": false
+        },
+        {
+          "label": "110 kmph",
+          "is_correct": false
+        },
+        {
+          "label": "120 kmph",
+          "is_correct": true
+        },
+        {
+          "label": "130 kmph",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Time, Speed & Distance",
+      "difficulty": "easy",
+      "answer_type": "single",
+      "stem": "A and B travel the same distance with 60 km/hr and 90 km/hr respectively. If A takes 9 hrs to cover the distance, then the time taken by B is ______ hrs.",
+      "explanation": "**Find the distance from A:**\n$$60 \\times 9 = 540 \\text{ km}.$$\n\n**Time for B:**\n$$\\frac{540}{90} = \\mathbf{6} \\text{ hours}.$$\n\n*(Shortcut: for a fixed distance time is inversely proportional to speed, so $9 \\times \\frac{60}{90} = 6$.)*",
+      "source": "AP ICET 2025 7th May 2025 Shift 2",
+      "source_year": 2025,
+      "options": [
+        {
+          "label": "12 hrs",
+          "is_correct": false
+        },
+        {
+          "label": "10 hrs",
+          "is_correct": false
+        },
+        {
+          "label": "9 hrs",
+          "is_correct": false
+        },
+        {
+          "label": "6 hrs",
+          "is_correct": true
+        }
+      ]
+    },
+    {
+      "chapter": "Partnership",
+      "difficulty": "medium",
+      "answer_type": "single",
+      "stem": "A, B, and C invest in a ratio of 2 : 3 : 5. After one year, C withdraws his amount. If the total profit after 2 years is ₹1,00,000, then the share of B is:",
+      "explanation": "Profit follows **capital × time**. A and B stay two years, C only one:\n$$A = 2 \\times 2 = 4, \\qquad B = 3 \\times 2 = 6, \\qquad C = 5 \\times 1 = 5.$$\n\nThe ratio is $4 : 6 : 5$, a total of 15 parts:\n$$B = \\frac{6}{15} \\times 1{,}00{,}000 = \\mathbf{₹40{,}000}.$$",
+      "source": "AP ICET 2025 7th May 2025 Shift 2",
+      "source_year": 2025,
+      "options": [
+        {
+          "label": "₹30,000",
+          "is_correct": false
+        },
+        {
+          "label": "₹35,000",
+          "is_correct": false
+        },
+        {
+          "label": "₹40,000",
+          "is_correct": true
+        },
+        {
+          "label": "₹45,000",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Surds & Indices",
+      "difficulty": "medium",
+      "answer_type": "single",
+      "stem": "If $x = 3 + 2\\sqrt2$, then the value of $\\left(\\sqrt x - \\dfrac{1}{\\sqrt x}\\right)$ is:",
+      "explanation": "Recognise the perfect square:\n$$3 + 2\\sqrt2 = 1 + 2\\sqrt2 + 2 = (1+\\sqrt2)^2 \\Rightarrow \\sqrt x = 1 + \\sqrt2.$$\n\nRationalise the reciprocal:\n$$\\frac{1}{1+\\sqrt2} = \\frac{\\sqrt2 - 1}{(\\sqrt2+1)(\\sqrt2-1)} = \\sqrt2 - 1.$$\n\n$$\\sqrt x - \\frac{1}{\\sqrt x} = (1+\\sqrt2) - (\\sqrt2 - 1) = \\mathbf{2}.$$",
+      "source": "AP ICET 2025 7th May 2025 Shift 2",
+      "source_year": 2025,
+      "options": [
+        {
+          "label": "1",
+          "is_correct": false
+        },
+        {
+          "label": "2",
+          "is_correct": true
+        },
+        {
+          "label": "$4\\sqrt2$",
+          "is_correct": false
+        },
+        {
+          "label": "$\\sqrt3$",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Profit, Loss & Discount",
+      "difficulty": "easy",
+      "answer_type": "single",
+      "stem": "A trader allows two successive discounts of 20% and 10% on an item marked ₹500. Then the selling price is:",
+      "explanation": "Successive discounts apply one after the other, each to the **reduced** price:\n$$500 \\times 0.80 = 400, \\qquad 400 \\times 0.90 = \\mathbf{₹360}.$$\n\n*(Adding the discounts to 30% would give ₹350 — successive discounts of 20% and 10% are equivalent to a single 28% discount, not 30%.)*",
+      "source": "AP ICET 2025 7th May 2025 Shift 2",
+      "source_year": 2025,
+      "options": [
+        {
+          "label": "₹340",
+          "is_correct": false
+        },
+        {
+          "label": "₹360",
+          "is_correct": true
+        },
+        {
+          "label": "₹370",
+          "is_correct": false
+        },
+        {
+          "label": "₹390",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Number System",
+      "difficulty": "hard",
+      "answer_type": "single",
+      "stem": "It is being given that $\\left(2^{32}+1\\right)$ is completely divisible by a whole number \"w\". Which of the following numbers is completely divisible by this number \"w\"?",
+      "explanation": "Put $a = 2^{32}$, so $w$ divides $a + 1$.\n\nUse the factorisation of a **sum of cubes**:\n$$a^3 + 1 = (a+1)\\left(a^2 - a + 1\\right).$$\n\nSince $a^3 = \\left(2^{32}\\right)^3 = 2^{96}$, this says\n$$2^{96} + 1 = \\left(2^{32}+1\\right)\\left(2^{64} - 2^{32} + 1\\right),$$\nso anything dividing $2^{32}+1$ also divides $\\mathbf{2^{96}+1}$.\n\n*(The same trick fails for the other options: $2^{16}\\pm1$ are smaller, and $7 \\times 2^{23}$ has only 2 and 7 as prime factors, while $2^{32}+1$ is odd.)*",
+      "source": "AP ICET 2025 7th May 2025 Shift 2",
+      "source_year": 2025,
+      "options": [
+        {
+          "label": "$\\left(2^{16}+1\\right)$",
+          "is_correct": false
+        },
+        {
+          "label": "$\\left(2^{16}-1\\right)$",
+          "is_correct": false
+        },
+        {
+          "label": "$\\left(7 \\times 2^{23}\\right)$",
+          "is_correct": false
+        },
+        {
+          "label": "$\\left(2^{96}+1\\right)$",
+          "is_correct": true
+        }
+      ]
+    },
+    {
+      "chapter": "Ratio & Proportion",
+      "difficulty": "easy",
+      "answer_type": "single",
+      "stem": "The ratio of two numbers is 5 : 8. If 40% of the sum is 104, find the numbers.",
+      "explanation": "**Recover the sum first:**\n$$0.40 \\times S = 104 \\Rightarrow S = 260.$$\n\nThe ratio splits it into $5 + 8 = 13$ parts:\n$$\\text{one part} = \\frac{260}{13} = 20,$$\n\nso the numbers are $5(20) = \\mathbf{100}$ and $8(20) = \\mathbf{160}$.",
+      "source": "AP ICET 2025 7th May 2025 Shift 2",
+      "source_year": 2025,
+      "options": [
+        {
+          "label": "30, 48",
+          "is_correct": false
+        },
+        {
+          "label": "40, 64",
+          "is_correct": false
+        },
+        {
+          "label": "50, 80",
+          "is_correct": false
+        },
+        {
+          "label": "100, 160",
+          "is_correct": true
+        }
+      ]
+    },
+    {
+      "chapter": "Algebra",
+      "difficulty": "medium",
+      "answer_type": "single",
+      "stem": "If twice the square of a number is 45 more than 13 times of it, then what is the cube of that number?",
+      "explanation": "Translate into an equation:\n$$2x^2 = 13x + 45 \\Rightarrow 2x^2 - 13x - 45 = 0.$$\n\nSolve:\n$$x = \\frac{13 \\pm \\sqrt{169 + 360}}{4} = \\frac{13 \\pm 23}{4} \\Rightarrow x = 9 \\text{ or } x = -\\frac52.$$\n\nTaking the whole number $x = 9$:\n$$9^3 = \\mathbf{729}.$$\n\n*(The distractors $216 = 6^3$ and $343 = 7^3$ are cubes of numbers that do not satisfy the equation.)*",
+      "source": "AP ICET 2025 7th May 2025 Shift 2",
+      "source_year": 2025,
+      "options": [
+        {
+          "label": "216",
+          "is_correct": false
+        },
+        {
+          "label": "515",
+          "is_correct": false
+        },
+        {
+          "label": "729",
+          "is_correct": true
+        },
+        {
+          "label": "343",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Algebra",
+      "difficulty": "medium",
+      "answer_type": "single",
+      "stem": "Ram is 6 years older than Sita and Sita is 8 years older than Rahul. After 8 years, if Ram will be twice as old as Rahul, then 4 years ago, Sita's age was?",
+      "explanation": "Work in terms of Rahul's present age $r$:\n$$\\text{Sita} = r + 8, \\qquad \\text{Ram} = r + 14.$$\n\n**Eight years hence:**\n$$(r + 14) + 8 = 2\\big[(r) + 8\\big] \\Rightarrow r + 22 = 2r + 16 \\Rightarrow r = 6.$$\n\nSo Sita is now $6 + 8 = 14$, and four years ago she was\n$$14 - 4 = \\mathbf{10}.$$",
+      "source": "AP ICET 2025 7th May 2025 Shift 2",
+      "source_year": 2025,
+      "options": [
+        {
+          "label": "16",
+          "is_correct": false
+        },
+        {
+          "label": "14",
+          "is_correct": false
+        },
+        {
+          "label": "12",
+          "is_correct": false
+        },
+        {
+          "label": "10",
+          "is_correct": true
+        }
+      ]
+    },
+    {
+      "chapter": "LCM & HCF",
+      "difficulty": "medium",
+      "answer_type": "single",
+      "stem": "The L.C.M. of two prime numbers is 1271. Then what is the sum of those primes?",
+      "explanation": "Two **distinct primes** share no factor, so their LCM is simply their product:\n$$p \\times q = 1271.$$\n\nFactorise 1271 — it is not divisible by 2, 3, 5, 7, 11, 13, 17, 19, 23 or 29, but\n$$1271 = 31 \\times 41,$$\nand both are prime.\n\n$$31 + 41 = \\mathbf{72}.$$",
+      "source": "AP ICET 2025 7th May 2025 Shift 2",
+      "source_year": 2025,
+      "options": [
+        {
+          "label": "54",
+          "is_correct": false
+        },
+        {
+          "label": "72",
+          "is_correct": true
+        },
+        {
+          "label": "78",
+          "is_correct": false
+        },
+        {
+          "label": "50",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Algebra",
+      "difficulty": "hard",
+      "answer_type": "single",
+      "stem": "If $x * y = \\dfrac1x + \\dfrac1y$ for all $x, y \\in R - \\{0\\}$, then $(5 * 2) * (3 * 5) = ?$",
+      "explanation": "Evaluate the inner brackets first.\n\n$$5 * 2 = \\frac15 + \\frac12 = \\frac{7}{10}, \\qquad 3 * 5 = \\frac13 + \\frac15 = \\frac{8}{15}.$$\n\nNow apply the operation to these two results — the reciprocals flip them:\n$$\\frac{7}{10} * \\frac{8}{15} = \\frac{10}{7} + \\frac{15}{8} = \\frac{80 + 105}{56} = \\mathbf{\\frac{185}{56}}.$$",
+      "source": "AP ICET 2025 7th May 2025 Shift 2",
+      "source_year": 2025,
+      "options": [
+        {
+          "label": "$\\frac{185}{64}$",
+          "is_correct": false
+        },
+        {
+          "label": "$\\frac{185}{56}$",
+          "is_correct": true
+        },
+        {
+          "label": "$\\frac{170}{39}$",
+          "is_correct": false
+        },
+        {
+          "label": "$\\frac{145}{82}$",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Surds & Indices",
+      "difficulty": "very_hard",
+      "answer_type": "single",
+      "stem": "Suppose $a, b, c$ are positive real numbers such that $2^a = 3^b = 6^{-c}$. Then $\\dfrac{ab+bc+ca}{abc} = ?$",
+      "explanation": "Split the fraction — this is the key step:\n$$\\frac{ab+bc+ca}{abc} = \\frac1c + \\frac1a + \\frac1b.$$\n\nLet the common value be $k$ and take logarithms:\n$$a = \\frac{\\log k}{\\log 2}, \\quad b = \\frac{\\log k}{\\log 3}, \\quad c = -\\frac{\\log k}{\\log 6}.$$\n\nSo the reciprocals are\n$$\\frac1a = \\frac{\\log 2}{\\log k}, \\quad \\frac1b = \\frac{\\log 3}{\\log k}, \\quad \\frac1c = -\\frac{\\log 6}{\\log k}.$$\n\nAdding, and using $\\log 2 + \\log 3 = \\log 6$:\n$$\\frac{\\log 2 + \\log 3 - \\log 6}{\\log k} = \\mathbf{0}.$$",
+      "source": "AP ICET 2025 7th May 2025 Shift 2",
+      "source_year": 2025,
+      "options": [
+        {
+          "label": "0",
+          "is_correct": true
+        },
+        {
+          "label": "1",
+          "is_correct": false
+        },
+        {
+          "label": "6",
+          "is_correct": false
+        },
+        {
+          "label": "3",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Surds & Indices",
+      "difficulty": "very_hard",
+      "answer_type": "single",
+      "stem": "If $\\sqrt[4]{4\\sqrt[4]{4\\sqrt[4]{4\\sqrt[4]{4}}}} = 2^{\\frac ab}$, where $\\dfrac ab$ is in the reduced form, then $a + b = ?$",
+      "explanation": "Work from the inside out, keeping everything as a power of 4:\n\n$$\\sqrt[4]{4} = 4^{1/4}$$\n$$\\sqrt[4]{4 \\cdot 4^{1/4}} = \\left(4^{5/4}\\right)^{1/4} = 4^{5/16}$$\n$$\\sqrt[4]{4 \\cdot 4^{5/16}} = \\left(4^{21/16}\\right)^{1/4} = 4^{21/64}$$\n$$\\sqrt[4]{4 \\cdot 4^{21/64}} = \\left(4^{85/64}\\right)^{1/4} = 4^{85/256}$$\n\nConvert to base 2:\n$$4^{85/256} = 2^{170/256} = 2^{85/128},$$\nand $\\dfrac{85}{128}$ is already reduced ($85 = 5 \\times 17$, $128 = 2^7$).\n\n$$a + b = 85 + 128 = \\mathbf{213}.$$",
+      "source": "AP ICET 2025 7th May 2025 Shift 2",
+      "source_year": 2025,
+      "options": [
+        {
+          "label": "213",
+          "is_correct": true
+        },
+        {
+          "label": "212",
+          "is_correct": false
+        },
+        {
+          "label": "211",
+          "is_correct": false
+        },
+        {
+          "label": "210",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Pipes & Cisterns",
+      "difficulty": "medium",
+      "answer_type": "single",
+      "stem": "A pipe can fill a tank in 5 hours. Due to a leak in bottom, it is filled in 10 hours. If the tank is full, then the time (in hours) that the leak takes to empty that tank is?",
+      "explanation": "Let the leak empty the full tank in $L$ hours. Working together, filling minus leaking gives the observed rate:\n$$\\frac15 - \\frac1L = \\frac{1}{10}.$$\n\n$$\\frac1L = \\frac15 - \\frac1{10} = \\frac1{10} \\Rightarrow L = \\mathbf{10} \\text{ hours}.$$\n\n*(Here the leak is exactly half as strong as the pipe, which is why the filling time doubles.)*",
+      "source": "AP ICET 2025 7th May 2025 Shift 2",
+      "source_year": 2025,
+      "options": [
+        {
+          "label": "9",
+          "is_correct": false
+        },
+        {
+          "label": "10",
+          "is_correct": true
+        },
+        {
+          "label": "12",
+          "is_correct": false
+        },
+        {
+          "label": "14",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Algebra",
+      "difficulty": "easy",
+      "answer_type": "single",
+      "stem": "A mother's age is 3 times the age of her son. After 6 years, if the sum of their ages is 60, then the present age of son is ------ yrs.",
+      "explanation": "Let the son be $s$; the mother is $3s$.\n\nSix years later each is 6 years older:\n$$(s + 6) + (3s + 6) = 60 \\Rightarrow 4s + 12 = 60 \\Rightarrow s = \\mathbf{12}.$$\n\n*(Check: the son is 12 and the mother 36; in six years, $18 + 42 = 60$ ✓)*",
+      "source": "AP ICET 2025 7th May 2025 Shift 2",
+      "source_year": 2025,
+      "options": [
+        {
+          "label": "10",
+          "is_correct": false
+        },
+        {
+          "label": "11",
+          "is_correct": false
+        },
+        {
+          "label": "12",
+          "is_correct": true
+        },
+        {
+          "label": "13",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Surds & Indices",
+      "difficulty": "medium",
+      "answer_type": "single",
+      "stem": "If $a = \\sqrt5 - \\sqrt3$, then the value of $a^2 + 2a\\sqrt3 + 8$ is:",
+      "explanation": "Compute the two $a$-terms separately.\n\n$$a^2 = \\left(\\sqrt5-\\sqrt3\\right)^2 = 5 + 3 - 2\\sqrt{15} = 8 - 2\\sqrt{15}$$\n$$2a\\sqrt3 = 2\\sqrt3\\left(\\sqrt5-\\sqrt3\\right) = 2\\sqrt{15} - 6$$\n\nAdd everything:\n$$\\left(8 - 2\\sqrt{15}\\right) + \\left(2\\sqrt{15} - 6\\right) + 8 = \\mathbf{10}.$$\n\nThe surds cancel, which is the point of the question.",
+      "source": "AP ICET 2025 7th May 2025 Shift 2",
+      "source_year": 2025,
+      "options": [
+        {
+          "label": "10",
+          "is_correct": true
+        },
+        {
+          "label": "12",
+          "is_correct": false
+        },
+        {
+          "label": "15",
+          "is_correct": false
+        },
+        {
+          "label": "18",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Surds & Indices",
+      "difficulty": "easy",
+      "answer_type": "single",
+      "stem": "$(256)^{0.16} \\times (256)^{0.09} = ?$",
+      "explanation": "Same base, so add the exponents:\n$$0.16 + 0.09 = 0.25 = \\frac14.$$\n\n$$256^{1/4} = \\sqrt[4]{256} = \\mathbf{4}$$\nsince $4^4 = 256$.",
+      "source": "AP ICET 2025 7th May 2025 Shift 2",
+      "source_year": 2025,
+      "options": [
+        {
+          "label": "16",
+          "is_correct": false
+        },
+        {
+          "label": "4",
+          "is_correct": true
+        },
+        {
+          "label": "256.25",
+          "is_correct": false
+        },
+        {
+          "label": "64",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Algebra",
+      "difficulty": "medium",
+      "answer_type": "single",
+      "stem": "$$1 - \\left\\{1 + \\left(x^2-1\\right)^{-1}\\right\\}^{-1} = ?$$",
+      "explanation": "Work outwards from the innermost bracket.\n\n$$\\left(x^2-1\\right)^{-1} = \\frac{1}{x^2-1}$$\n$$1 + \\frac{1}{x^2-1} = \\frac{x^2-1+1}{x^2-1} = \\frac{x^2}{x^2-1}$$\n\nTaking the reciprocal of that:\n$$\\left\\{\\;\\right\\}^{-1} = \\frac{x^2-1}{x^2}.$$\n\n$$1 - \\frac{x^2-1}{x^2} = \\frac{x^2 - x^2 + 1}{x^2} = \\mathbf{\\frac{1}{x^2}}.$$",
+      "source": "AP ICET 2025 7th May 2025 Shift 2",
+      "source_year": 2025,
+      "options": [
+        {
+          "label": "$x$",
+          "is_correct": false
+        },
+        {
+          "label": "$\\frac1x$",
+          "is_correct": false
+        },
+        {
+          "label": "$\\frac{1}{x^2}$",
+          "is_correct": true
+        },
+        {
+          "label": "$x^2$",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Percentages",
+      "difficulty": "medium",
+      "answer_type": "single",
+      "stem": "'B' got 20% marks less than 'A'. What % of marks did 'A' get more than 'B'?",
+      "explanation": "Take A's marks as 100. Then\n$$B = 100 - 20 = 80.$$\n\nNow compare **against B**, since the question asks how much more A has than B:\n$$\\frac{100 - 80}{80} \\times 100 = \\mathbf{25\\%}.$$\n\n*(The base changes: 20% less than A, but 25% more than B — the two percentages are never equal.)*",
+      "source": "AP ICET 2025 7th May 2025 Shift 2",
+      "source_year": 2025,
+      "options": [
+        {
+          "label": "10%",
+          "is_correct": false
+        },
+        {
+          "label": "15%",
+          "is_correct": false
+        },
+        {
+          "label": "20%",
+          "is_correct": false
+        },
+        {
+          "label": "25%",
+          "is_correct": true
+        }
+      ]
+    },
+    {
+      "chapter": "Mensuration",
+      "difficulty": "medium",
+      "answer_type": "single",
+      "stem": "A cylinder and a sphere have the same radius. The height of the cylinder is three times its radius. Then the ratio of the volume of the cylinder to the volume of the sphere is:",
+      "explanation": "With $h = 3r$:\n$$V_{\\text{cylinder}} = \\pi r^2 h = 3\\pi r^3, \\qquad V_{\\text{sphere}} = \\frac43 \\pi r^3.$$\n\n$$\\frac{V_{\\text{cyl}}}{V_{\\text{sph}}} = \\frac{3}{\\frac43} = \\frac94 = \\mathbf{9 : 4}.$$\n\nThe $\\pi r^3$ cancels, so the answer does not depend on the radius.",
+      "source": "AP ICET 2025 7th May 2025 Shift 2",
+      "source_year": 2025,
+      "options": [
+        {
+          "label": "1 : 3",
+          "is_correct": false
+        },
+        {
+          "label": "3 : 1",
+          "is_correct": false
+        },
+        {
+          "label": "9 : 4",
+          "is_correct": true
+        },
+        {
+          "label": "4 : 9",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Mensuration",
+      "difficulty": "medium",
+      "answer_type": "single",
+      "stem": "The outer and inner radii of a hollow sphere are 2 cm and 1 cm respectively. Then the volume of the sphere is ------- cm³.",
+      "explanation": "The material occupies the space between the two spheres:\n$$V = \\frac43\\pi\\left(R^3 - r^3\\right) = \\frac43\\pi\\left(8 - 1\\right) = \\frac{28\\pi}{3}.$$\n\nTaking $\\pi = \\dfrac{22}{7}$:\n$$\\frac{28}{3} \\times \\frac{22}{7} = \\mathbf{\\frac{88}{3}} \\text{ cm}^3.$$",
+      "source": "AP ICET 2025 7th May 2025 Shift 2",
+      "source_year": 2025,
+      "options": [
+        {
+          "label": "$\\frac{88}{3}$",
+          "is_correct": true
+        },
+        {
+          "label": "$\\frac{77}{3}$",
+          "is_correct": false
+        },
+        {
+          "label": "$\\frac{66}{3}$",
+          "is_correct": false
+        },
+        {
+          "label": "$\\frac{55}{3}$",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Percentages",
+      "difficulty": "easy",
+      "answer_type": "single",
+      "stem": "If $A = x\\%$ of $y$ and $B = y\\%$ of $x$, then which of the following is true?",
+      "explanation": "Write both out:\n$$A = \\frac{x}{100} \\times y = \\frac{xy}{100}, \\qquad B = \\frac{y}{100} \\times x = \\frac{xy}{100}.$$\n\nThe two expressions are identical, so $\\mathbf{A = B}$ — always, whatever $x$ and $y$ are.\n\n*(This is the familiar fact that 8% of 25 equals 25% of 8.)*",
+      "source": "AP ICET 2025 7th May 2025 Shift 2",
+      "source_year": 2025,
+      "options": [
+        {
+          "label": "$A > B$",
+          "is_correct": false
+        },
+        {
+          "label": "$B > A$",
+          "is_correct": false
+        },
+        {
+          "label": "$A = B$",
+          "is_correct": true
+        },
+        {
+          "label": "If $x > y$ then $A > B$",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Surds & Indices",
+      "difficulty": "very_hard",
+      "answer_type": "single",
+      "stem": "If $\\dfrac{\\sqrt{13}-\\sqrt{11}}{\\sqrt{13}+\\sqrt{11}} - \\dfrac{\\sqrt{13}+\\sqrt{11}}{\\sqrt{13}-\\sqrt{11}} = x - \\sqrt y$, then $\\left(\\sqrt y\\right)^x = ?$",
+      "explanation": "Rationalise each fraction — both denominators become $13 - 11 = 2$:\n\n$$\\frac{\\sqrt{13}-\\sqrt{11}}{\\sqrt{13}+\\sqrt{11}} = \\frac{\\left(\\sqrt{13}-\\sqrt{11}\\right)^2}{2} = \\frac{24 - 2\\sqrt{143}}{2} = 12 - \\sqrt{143}$$\n$$\\frac{\\sqrt{13}+\\sqrt{11}}{\\sqrt{13}-\\sqrt{11}} = \\frac{24 + 2\\sqrt{143}}{2} = 12 + \\sqrt{143}$$\n\nSubtracting, the 12s cancel:\n$$\\left(12-\\sqrt{143}\\right) - \\left(12+\\sqrt{143}\\right) = -2\\sqrt{143} = -\\sqrt{572}.$$\n\nMatching with $x - \\sqrt y$ gives $x = 0$ (and $y = 572$), so\n$$\\left(\\sqrt y\\right)^x = \\left(\\sqrt{572}\\right)^0 = \\mathbf{1},$$\nsince any non-zero number to the power 0 is 1.",
+      "source": "AP ICET 2025 7th May 2025 Shift 2",
+      "source_year": 2025,
+      "options": [
+        {
+          "label": "$-2\\sqrt{143}$",
+          "is_correct": false
+        },
+        {
+          "label": "$\\left(\\sqrt{286}\\right)^{24}$",
+          "is_correct": false
+        },
+        {
+          "label": "24",
+          "is_correct": false
+        },
+        {
+          "label": "1",
+          "is_correct": true
+        }
+      ]
+    },
+    {
+      "chapter": "Number System",
+      "difficulty": "easy",
+      "answer_type": "single",
+      "stem": "If $a = \\dfrac49$, $b = \\dfrac{7}{12}$, $c = \\dfrac37$, $d = \\dfrac{12}{17}$ and $e = \\dfrac12$, then their descending order is?",
+      "explanation": "Convert each to a decimal:\n\n| | $a$ | $b$ | $c$ | $d$ | $e$ |\n| --- | --- | --- | --- | --- | --- |\n| value | $0.444$ | $0.583$ | $0.4286$ | $0.706$ | $0.5$ |\n\nLargest to smallest:\n$$d > b > e > a > c.$$\n\n*(The close pair is $a = \\frac49$ against $c = \\frac37$: cross-multiplying, $4 \\times 7 = 28 > 27 = 9 \\times 3$, so $a > c$.)*",
+      "source": "AP ICET 2025 7th May 2025 Shift 2",
+      "source_year": 2025,
+      "options": [
+        {
+          "label": "$d, b, e, a, c$",
+          "is_correct": true
+        },
+        {
+          "label": "$c, a, e, b, d$",
+          "is_correct": false
+        },
+        {
+          "label": "$e, d, c, b, a$",
+          "is_correct": false
+        },
+        {
+          "label": "$a, b, c, d, e$",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Set Theory",
+      "difficulty": "medium",
+      "answer_type": "single",
+      "stem": "In an examination, 85% of the students passed in English, 80% passed in Mathematics and 75% passed in both English and Mathematics. If 50 students fail in both the subjects, then the total number of students who appear in the exam is:",
+      "explanation": "**Passed at least one subject** — by inclusion-exclusion:\n$$85 + 80 - 75 = 90\\%.$$\n\nSo the students who failed **both** are\n$$100\\% - 90\\% = 10\\%.$$\n\n$$0.10 \\times T = 50 \\Rightarrow T = \\mathbf{500}.$$",
+      "source": "AP ICET 2025 7th May 2025 Shift 2",
+      "source_year": 2025,
+      "options": [
+        {
+          "label": "500",
+          "is_correct": true
+        },
+        {
+          "label": "400",
+          "is_correct": false
+        },
+        {
+          "label": "600",
+          "is_correct": false
+        },
+        {
+          "label": "300",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Mensuration",
+      "difficulty": "easy",
+      "answer_type": "single",
+      "stem": "The perimeter of the parallelogram PQRS with sides 12 cm and 7 cm is ----- cm.",
+      "explanation": "Opposite sides of a parallelogram are equal, so the perimeter is twice the sum of two adjacent sides:\n$$2(12 + 7) = \\mathbf{38} \\text{ cm}.$$",
+      "source": "AP ICET 2025 7th May 2025 Shift 2",
+      "source_year": 2025,
+      "options": [
+        {
+          "label": "28",
+          "is_correct": false
+        },
+        {
+          "label": "38",
+          "is_correct": true
+        },
+        {
+          "label": "48",
+          "is_correct": false
+        },
+        {
+          "label": "58",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Number System",
+      "difficulty": "medium",
+      "answer_type": "single",
+      "stem": "The number of distinct prime factors in the product $(30)^7 \\times (22)^5 \\times (34)^{10}$ is:",
+      "explanation": "Factorise each base — the exponents do not affect **which** primes appear:\n$$30 = 2 \\times 3 \\times 5, \\qquad 22 = 2 \\times 11, \\qquad 34 = 2 \\times 17.$$\n\nCollecting the distinct primes:\n$$\\{2, 3, 5, 11, 17\\} \\;-\\; \\mathbf{5} \\text{ of them}$$\n(2 appears in all three bases but is counted once).",
+      "source": "AP ICET 2025 7th May 2025 Shift 2",
+      "source_year": 2025,
+      "options": [
+        {
+          "label": "3",
+          "is_correct": false
+        },
+        {
+          "label": "4",
+          "is_correct": false
+        },
+        {
+          "label": "5",
+          "is_correct": true
+        },
+        {
+          "label": "7",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Surds & Indices",
+      "difficulty": "medium",
+      "answer_type": "single",
+      "stem": "The value of $x$ in the following expression is:\n$$\\left(\\frac{2^{2x+1} \\cdot 4^{x-2}}{8^{x-3}}\\right) = 1024$$",
+      "explanation": "Write every term as a power of 2:\n$$4^{x-2} = 2^{2x-4}, \\qquad 8^{x-3} = 2^{3x-9}, \\qquad 1024 = 2^{10}.$$\n\nCombine the exponents:\n$$\\frac{2^{(2x+1) + (2x-4)}}{2^{3x-9}} = 2^{(4x-3)-(3x-9)} = 2^{x+6}.$$\n\n$$x + 6 = 10 \\Rightarrow x = \\mathbf{4}.$$",
+      "source": "AP ICET 2025 7th May 2025 Shift 2",
+      "source_year": 2025,
+      "options": [
+        {
+          "label": "4",
+          "is_correct": true
+        },
+        {
+          "label": "5",
+          "is_correct": false
+        },
+        {
+          "label": "6",
+          "is_correct": false
+        },
+        {
+          "label": "7",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Profit, Loss & Discount",
+      "difficulty": "hard",
+      "answer_type": "single",
+      "stem": "A shopkeeper cheats in weight by 10% and also makes a profit of 20% on cost price. Then the total profit percentage made is.",
+      "explanation": "Take the cost as ₹1 per gram and suppose the customer pays for **1000 g**.\n\n**What the shopkeeper actually gives:** 10% less, i.e. 900 g, costing him ₹900.\n\n**What he charges:** the marked-up price for 1000 g,\n$$1000 \\times 1.20 = ₹1200.$$\n\n$$\\text{Profit}\\% = \\frac{1200 - 900}{900} \\times 100 = \\frac{300}{900} \\times 100 = \\mathbf{33.33\\%}.$$\n\n*(Simply adding 10% and 20% would give 30% — the two gains compound rather than add.)*",
+      "source": "AP ICET 2025 7th May 2025 Shift 2",
+      "source_year": 2025,
+      "options": [
+        {
+          "label": "30%",
+          "is_correct": false
+        },
+        {
+          "label": "33.33%",
+          "is_correct": true
+        },
+        {
+          "label": "35%",
+          "is_correct": false
+        },
+        {
+          "label": "40%",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Number System",
+      "difficulty": "medium",
+      "answer_type": "single",
+      "stem": "The last digit of the number $373^{336}$ is:",
+      "explanation": "Only the units digit of the base matters, so work with **3**. Its powers cycle with period 4:\n$$3^1 = 3, \\quad 3^2 = 9, \\quad 3^3 = 7, \\quad 3^4 = 1, \\quad 3^5 = 3, \\ldots$$\n\nSince $336 = 4 \\times 84$ leaves remainder **0**, we are at the end of a cycle:\n$$\\text{last digit} = \\mathbf{1}.$$",
+      "source": "AP ICET 2025 7th May 2025 Shift 2",
+      "source_year": 2025,
+      "options": [
+        {
+          "label": "4",
+          "is_correct": false
+        },
+        {
+          "label": "3",
+          "is_correct": false
+        },
+        {
+          "label": "7",
+          "is_correct": false
+        },
+        {
+          "label": "1",
+          "is_correct": true
+        }
+      ]
+    },
+    {
+      "chapter": "Percentages",
+      "difficulty": "medium",
+      "answer_type": "single",
+      "stem": "In a cricket match the batsman Varun made 110 runs which includes 3 boundaries and 8 sixes. Then the percent of runs Varun scored by running between the wickets is -------- approximately:",
+      "explanation": "**Runs not run:**\n$$3 \\times 4 = 12 \\text{ (boundaries)}, \\qquad 8 \\times 6 = 48 \\text{ (sixes)}, \\qquad \\text{total } 60.$$\n\n**Runs made by running:**\n$$110 - 60 = 50.$$\n\n$$\\frac{50}{110} \\times 100 = 45.45\\% \\approx \\mathbf{45}.$$",
+      "source": "AP ICET 2025 7th May 2025 Shift 2",
+      "source_year": 2025,
+      "options": [
+        {
+          "label": "35",
+          "is_correct": false
+        },
+        {
+          "label": "40",
+          "is_correct": false
+        },
+        {
+          "label": "45",
+          "is_correct": true
+        },
+        {
+          "label": "55",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "LCM & HCF",
+      "difficulty": "medium",
+      "answer_type": "single",
+      "stem": "Three numbers are in the ratio of 3 : 4 : 5 and their L.C.M. is 2400. Their H.C.F. is:",
+      "explanation": "Write the numbers as $3k, 4k, 5k$, where $k$ is their **HCF** (since 3, 4, 5 share no common factor).\n\nThe LCM of $3k, 4k, 5k$ is $k \\times \\text{lcm}(3,4,5) = 60k$:\n$$60k = 2400 \\Rightarrow k = \\mathbf{40}.$$\n\n*(The numbers are 120, 160, 200 — HCF 40, LCM 2400 ✓)*",
+      "source": "AP ICET 2025 7th May 2025 Shift 2",
+      "source_year": 2025,
+      "options": [
+        {
+          "label": "40",
+          "is_correct": true
+        },
+        {
+          "label": "80",
+          "is_correct": false
+        },
+        {
+          "label": "120",
+          "is_correct": false
+        },
+        {
+          "label": "200",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Ratio & Proportion",
+      "difficulty": "very_hard",
+      "answer_type": "single",
+      "stem": "In an office $\\left(\\frac13\\right)^{rd}$ of the employees are women, $\\left(\\frac12\\right)^{nd}$ of the women are married and $\\left(\\frac13\\right)^{rd}$ of the married women have children. If $\\left(\\frac34\\right)^{th}$ of the men in the office are married and $\\left(\\frac23\\right)^{rd}$ of the married men have children, then the part of the employees in the office without children is:",
+      "explanation": "Take the whole staff as 1 and follow each branch.\n\n**Women** $= \\dfrac13$:\n$$\\text{married} = \\frac12 \\times \\frac13 = \\frac16, \\qquad \\text{with children} = \\frac13 \\times \\frac16 = \\frac{1}{18}.$$\n\n**Men** $= \\dfrac23$:\n$$\\text{married} = \\frac34 \\times \\frac23 = \\frac12, \\qquad \\text{with children} = \\frac23 \\times \\frac12 = \\frac13.$$\n\n**With children:**\n$$\\frac{1}{18} + \\frac13 = \\frac{1 + 6}{18} = \\frac{7}{18}.$$\n\n$$\\text{Without children} = 1 - \\frac{7}{18} = \\mathbf{\\frac{11}{18}}.$$",
+      "source": "AP ICET 2025 7th May 2025 Shift 2",
+      "source_year": 2025,
+      "options": [
+        {
+          "label": "$\\frac{3}{18}$",
+          "is_correct": false
+        },
+        {
+          "label": "$\\frac{5}{18}$",
+          "is_correct": false
+        },
+        {
+          "label": "$\\frac{7}{18}$",
+          "is_correct": false
+        },
+        {
+          "label": "$\\frac{11}{18}$",
+          "is_correct": true
+        }
+      ]
+    },
+    {
+      "chapter": "Percentages",
+      "difficulty": "hard",
+      "answer_type": "single",
+      "stem": "A rectangle has dimensions $15 \\times 20$ cm². Its width is decreased by 5% while its length is increased in such a way that its area remained unchanged. Then percentage of increase in its length is?",
+      "explanation": "For the area to stay the same, the two factors must multiply to 1:\n$$0.95 \\times (1 + r) = 1 \\Rightarrow 1 + r = \\frac{1}{0.95} = \\frac{20}{19}.$$\n\n$$r = \\frac{20}{19} - 1 = \\frac{1}{19} = \\mathbf{5\\frac{5}{19}\\%}$$\nsince $\\dfrac{100}{19} = 5\\dfrac{5}{19}$.\n\n*(The actual dimensions never matter — only the percentage change does. Note the increase is slightly **more** than 5%, because the reduced width is the smaller base.)*",
+      "source": "AP ICET 2025 7th May 2025 Shift 2",
+      "source_year": 2025,
+      "options": [
+        {
+          "label": "$5\\frac{5}{19}$",
+          "is_correct": true
+        },
+        {
+          "label": "$5\\frac{6}{19}$",
+          "is_correct": false
+        },
+        {
+          "label": "$5\\frac{7}{19}$",
+          "is_correct": false
+        },
+        {
+          "label": "$5\\frac{8}{19}$",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Heights & Distances",
+      "difficulty": "hard",
+      "answer_type": "single",
+      "stem": "A tree breaks due to a storm and the broken part bends so that the top of the tree touches the ground making an angle $30^\\circ$ with it. The distance between the foot of the tree to the point where the top touches the ground is 8 metres. Then the height of the tree is?",
+      "explanation": "The tree splits into two pieces: the stump still standing (height $h$) and the broken part leaning to the ground (length $L$, the hypotenuse).\n\n**Standing part:**\n$$\\tan 30^\\circ = \\frac{h}{8} \\Rightarrow h = \\frac{8}{\\sqrt3}.$$\n\n**Broken part:**\n$$\\cos 30^\\circ = \\frac{8}{L} \\Rightarrow L = \\frac{8}{\\cos 30^\\circ} = \\frac{16}{\\sqrt3}.$$\n\nThe original tree was the two pieces together:\n$$h + L = \\frac{8 + 16}{\\sqrt3} = \\frac{24}{\\sqrt3} = \\mathbf{8\\sqrt3} \\text{ m}.$$",
+      "source": "AP ICET 2025 7th May 2025 Shift 2",
+      "source_year": 2025,
+      "options": [
+        {
+          "label": "$8\\sqrt3$ meters",
+          "is_correct": true
+        },
+        {
+          "label": "10 meters",
+          "is_correct": false
+        },
+        {
+          "label": "$5\\sqrt2$ meters",
+          "is_correct": false
+        },
+        {
+          "label": "2 meters",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Trigonometry",
+      "difficulty": "medium",
+      "answer_type": "single",
+      "stem": "If $\\sin\\theta = \\dfrac35$ and $\\theta < 90^\\circ$, then $\\dfrac{\\tan\\theta - 2\\cos\\theta}{3\\sin\\theta + \\sec\\theta} = ?$",
+      "explanation": "With $\\sin\\theta = \\dfrac35$ in the first quadrant, the 3-4-5 triangle gives\n$$\\cos\\theta = \\frac45, \\qquad \\tan\\theta = \\frac34, \\qquad \\sec\\theta = \\frac54.$$\n\n**Numerator:**\n$$\\frac34 - 2\\left(\\frac45\\right) = \\frac{15 - 32}{20} = -\\frac{17}{20}.$$\n\n**Denominator:**\n$$3\\left(\\frac35\\right) + \\frac54 = \\frac{36 + 25}{20} = \\frac{61}{20}.$$\n\n$$\\frac{-17/20}{61/20} = \\mathbf{-\\frac{17}{61}}.$$",
+      "source": "AP ICET 2025 7th May 2025 Shift 2",
+      "source_year": 2025,
+      "options": [
+        {
+          "label": "$-\\frac{17}{61}$",
+          "is_correct": true
+        },
+        {
+          "label": "61",
+          "is_correct": false
+        },
+        {
+          "label": "$-\\frac{61}{17}$",
+          "is_correct": false
+        },
+        {
+          "label": "71",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Limits & Derivatives",
+      "difficulty": "hard",
+      "answer_type": "single",
+      "stem": "Let $a$ be a real number and\n$$f(x) = \\begin{cases} -2\\sin x, & \\text{if } x \\le -\\frac{\\pi}{2} \\\\ 1 + a\\sin x, & \\text{if } -\\frac{\\pi}{2} < x \\le \\frac{\\pi}{2}\\end{cases}$$\nIf $f(x)$ is continuous, then the value of $a$ is equal to:",
+      "explanation": "The only place continuity can fail is the joining point $x = -\\dfrac{\\pi}{2}$, where the two formulas must agree.\n\n**From the left** (and at the point itself):\n$$-2\\sin\\left(-\\frac{\\pi}{2}\\right) = -2(-1) = 2.$$\n\n**From the right:**\n$$1 + a\\sin\\left(-\\frac{\\pi}{2}\\right) = 1 - a.$$\n\nSetting them equal:\n$$1 - a = 2 \\Rightarrow a = \\mathbf{-1}.$$",
+      "source": "AP ICET 2025 7th May 2025 Shift 2",
+      "source_year": 2025,
+      "options": [
+        {
+          "label": "0",
+          "is_correct": false
+        },
+        {
+          "label": "$-1$",
+          "is_correct": true
+        },
+        {
+          "label": "3",
+          "is_correct": false
+        },
+        {
+          "label": "2",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Coordinate Geometry",
+      "difficulty": "medium",
+      "answer_type": "single",
+      "stem": "The equation of a line perpendicular to $3x - 4y = 7$ and passing through $(2, 5)$ is:",
+      "explanation": "**Slope of the given line:** rewrite as $y = \\dfrac34 x - \\dfrac74$, so $m = \\dfrac34$.\n\n**Perpendicular slope:** $-\\dfrac43$.\n\n**Point-slope form through $(2,5)$:**\n$$y - 5 = -\\frac43(x-2) \\Rightarrow 3y - 15 = -4x + 8$$\n$$\\Rightarrow \\mathbf{4x + 3y = 23}.$$\n\n*(Check: $4(2) + 3(5) = 23$ ✓)*",
+      "source": "AP ICET 2025 7th May 2025 Shift 2",
+      "source_year": 2025,
+      "options": [
+        {
+          "label": "$4y + 3x = 23$",
+          "is_correct": false
+        },
+        {
+          "label": "$3y + 4x = 23$",
+          "is_correct": true
+        },
+        {
+          "label": "$2x + 5y = 6$",
+          "is_correct": false
+        },
+        {
+          "label": "$2x + 5y = 29$",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Limits & Derivatives",
+      "difficulty": "easy",
+      "answer_type": "single",
+      "stem": "The value of $\\displaystyle\\lim_{x\\to\\infty}\\frac{x^3+x^2-5}{3x^3+7}$ is:",
+      "explanation": "When $x \\to \\infty$ in a rational function, only the **highest powers** matter. Divide numerator and denominator by $x^3$:\n$$\\frac{1 + \\frac1x - \\frac{5}{x^3}}{3 + \\frac{7}{x^3}}.$$\n\nEvery term with $x$ in the denominator vanishes, leaving\n$$\\frac{1}{3}.$$\n\n*(Equally: the degrees match, so the limit is the ratio of leading coefficients, $\\frac13$.)*",
+      "source": "AP ICET 2025 7th May 2025 Shift 2",
+      "source_year": 2025,
+      "options": [
+        {
+          "label": "1",
+          "is_correct": false
+        },
+        {
+          "label": "1/3",
+          "is_correct": true
+        },
+        {
+          "label": "-5/7",
+          "is_correct": false
+        },
+        {
+          "label": "5/7",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Matrices & Determinants",
+      "difficulty": "very_hard",
+      "answer_type": "single",
+      "stem": "If $3A - B = \\begin{bmatrix} 1 & 2 & -1 \\\\ 0 & 1 & -2 \\\\ -1 & 1 & 4 \\end{bmatrix}$ and $A^{-1} = \\begin{bmatrix} 1 & 2 & 1 \\\\ 0 & 1 & -1 \\\\ 0 & 0 & 1 \\end{bmatrix}$, then $B = ?$",
+      "explanation": "**Step 1 — recover $A$** by inverting the given $A^{-1}$. It is upper triangular with 1s on the diagonal, so row-reduction gives\n$$A = \\begin{bmatrix} 1 & -2 & -3 \\\\ 0 & 1 & 1 \\\\ 0 & 0 & 1 \\end{bmatrix}.$$\n*(Check the middle entry: row 1 of $A$ times column 3 of $A^{-1}$ is $1 + 2 - 3 = 0$ ✓)*\n\n**Step 2 — scale:**\n$$3A = \\begin{bmatrix} 3 & -6 & -9 \\\\ 0 & 3 & 3 \\\\ 0 & 0 & 3 \\end{bmatrix}.$$\n\n**Step 3 — subtract**, entry by entry, $B = 3A - (3A-B)$:\n$$B = \\begin{bmatrix} 3-1 & -6-2 & -9+1 \\\\ 0-0 & 3-1 & 3+2 \\\\ 0+1 & 0-1 & 3-4 \\end{bmatrix} = \\begin{bmatrix} 2 & -8 & -8 \\\\ 0 & 2 & 5 \\\\ 1 & -1 & -1 \\end{bmatrix}.$$",
+      "source": "AP ICET 2025 7th May 2025 Shift 2",
+      "source_year": 2025,
+      "options": [
+        {
+          "label": "$\\begin{bmatrix} 2 & -8 & -8 \\\\ 0 & 1 & -1 \\\\ 0 & -1 & 1 \\end{bmatrix}$",
+          "is_correct": false
+        },
+        {
+          "label": "$\\begin{bmatrix} 2 & -8 & -8 \\\\ 0 & 2 & -1 \\\\ 0 & -1 & 2 \\end{bmatrix}$",
+          "is_correct": false
+        },
+        {
+          "label": "$\\begin{bmatrix} 2 & -8 & -8 \\\\ 0 & 2 & 5 \\\\ 1 & -1 & -1 \\end{bmatrix}$",
+          "is_correct": true
+        },
+        {
+          "label": "$\\begin{bmatrix} 2 & -8 & -8 \\\\ 0 & 1 & 5 \\\\ 1 & -1 & 1 \\end{bmatrix}$",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Coordinate Geometry",
+      "difficulty": "easy",
+      "answer_type": "single",
+      "stem": "The triangle whose vertices are $(5, 7)$, $(2, 7)$ and $(5, 2)$ is a _____ triangle",
+      "explanation": "Two of the sides lie along grid lines through $(5,7)$:\n$$(5,7)\\text{ to }(2,7) = 3 \\text{ (horizontal)}, \\qquad (5,7)\\text{ to }(5,2) = 5 \\text{ (vertical)}.$$\n\nA horizontal and a vertical segment meet at a **right angle**, so the triangle is right-angled at $(5,7)$.\n\nThe third side is $\\sqrt{3^2+5^2} = \\sqrt{34}$, and since $3, 5, \\sqrt{34}$ are all different it is **not** isosceles or equilateral.",
+      "source": "AP ICET 2025 7th May 2025 Shift 2",
+      "source_year": 2025,
+      "options": [
+        {
+          "label": "Equilateral",
+          "is_correct": false
+        },
+        {
+          "label": "Isosceles",
+          "is_correct": false
+        },
+        {
+          "label": "Right angle",
+          "is_correct": true
+        },
+        {
+          "label": "Scalene",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Trigonometry",
+      "difficulty": "hard",
+      "answer_type": "single",
+      "stem": "If $\\theta = 30^\\circ$ then $\\dfrac{\\sin^2\\theta - \\cos 2\\theta}{\\sin 2\\theta + \\cos^2\\theta} = ?$",
+      "explanation": "Substitute the standard values, watching which terms use $\\theta$ and which use $2\\theta$:\n\n**Numerator:**\n$$\\sin^2 30^\\circ - \\cos 60^\\circ = \\frac14 - \\frac12 = -\\frac14.$$\n\n**Denominator:**\n$$\\sin 60^\\circ + \\cos^2 30^\\circ = \\frac{\\sqrt3}{2} + \\frac34 = \\frac{2\\sqrt3+3}{4}.$$\n\n$$\\frac{-\\frac14}{\\frac{2\\sqrt3+3}{4}} = \\frac{-1}{2\\sqrt3+3}.$$\n\nRationalise with $2\\sqrt3 - 3$:\n$$\\frac{-(2\\sqrt3-3)}{12-9} = \\mathbf{\\frac{3-2\\sqrt3}{3}}.$$",
+      "source": "AP ICET 2025 7th May 2025 Shift 2",
+      "source_year": 2025,
+      "options": [
+        {
+          "label": "$\\frac{3-2\\sqrt3}{9}$",
+          "is_correct": false
+        },
+        {
+          "label": "$\\frac{3-2\\sqrt3}{3}$",
+          "is_correct": true
+        },
+        {
+          "label": "$\\sqrt3 + \\frac{2\\sqrt3}{5}$",
+          "is_correct": false
+        },
+        {
+          "label": "$\\frac35$",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Algebra",
+      "difficulty": "easy",
+      "answer_type": "single",
+      "stem": "The XNOR is the combination of",
+      "explanation": "**XNOR** is the negation of XOR — its output is 1 exactly when the two inputs are **equal**, the opposite of XOR's output.\n\nSo it is built from **XOR followed by NOT**, which is why it is drawn as an XOR gate with an inversion bubble.\n\nCombining XOR with AND, NAND or NOR does not produce the equality function.",
+      "source": "AP ICET 2025 7th May 2025 Shift 2",
+      "source_year": 2025,
+      "options": [
+        {
+          "label": "XOR and NOT",
+          "is_correct": true
+        },
+        {
+          "label": "XOR and AND",
+          "is_correct": false
+        },
+        {
+          "label": "XOR and NAND",
+          "is_correct": false
+        },
+        {
+          "label": "XOR and NOR",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Matrices & Determinants",
+      "difficulty": "hard",
+      "answer_type": "single",
+      "stem": "The value of the determinant $\\begin{vmatrix} 50 & 15 & 3 \\\\ 51 & 17 & 7 \\\\ 27 & 9 & 6 \\end{vmatrix}$ is:",
+      "explanation": "Expand along the first row:\n\n$$50\\begin{vmatrix} 17 & 7 \\\\ 9 & 6\\end{vmatrix} - 15\\begin{vmatrix} 51 & 7 \\\\ 27 & 6\\end{vmatrix} + 3\\begin{vmatrix} 51 & 17 \\\\ 27 & 9\\end{vmatrix}$$\n\n$$= 50(102 - 63) - 15(306 - 189) + 3(459 - 459)$$\n$$= 50(39) - 15(117) + 3(0)$$\n$$= 1950 - 1755 = \\mathbf{195}.$$\n\n*(The third minor vanishes because $51 \\times 9 = 27 \\times 17$ — a useful check.)*",
+      "source": "AP ICET 2025 7th May 2025 Shift 2",
+      "source_year": 2025,
+      "options": [
+        {
+          "label": "$-195$",
+          "is_correct": false
+        },
+        {
+          "label": "185",
+          "is_correct": false
+        },
+        {
+          "label": "190",
+          "is_correct": false
+        },
+        {
+          "label": "195",
+          "is_correct": true
+        }
+      ]
+    },
+    {
+      "chapter": "Mean, Median & Mode",
+      "difficulty": "very_hard",
+      "answer_type": "single",
+      "stem": "The mean of four numbers is 37. The mean of the smallest three of them is 34. If the range of the data is 15, what is the mean of the largest three?",
+      "explanation": "**Total of all four:** $4 \\times 37 = 148$.\n**Total of the smallest three:** $3 \\times 34 = 102$.\n\nSo the **largest** number is $148 - 102 = 46$.\n\nThe range is largest minus smallest:\n$$46 - \\text{smallest} = 15 \\Rightarrow \\text{smallest} = 31.$$\n\n**Largest three** = total minus the smallest:\n$$\\frac{148 - 31}{3} = \\frac{117}{3} = \\mathbf{39}.$$",
+      "source": "AP ICET 2025 7th May 2025 Shift 2",
+      "source_year": 2025,
+      "options": [
+        {
+          "label": "41",
+          "is_correct": false
+        },
+        {
+          "label": "38",
+          "is_correct": false
+        },
+        {
+          "label": "40",
+          "is_correct": false
+        },
+        {
+          "label": "39",
+          "is_correct": true
+        }
+      ]
+    },
+    {
+      "chapter": "Mean, Median & Mode",
+      "difficulty": "easy",
+      "answer_type": "single",
+      "stem": "If the mean and median are 28.33 and 28 respectively, then the mode is -------.",
+      "explanation": "Use the empirical relation:\n$$\\text{Mode} = 3\\,\\text{Median} - 2\\,\\text{Mean}.$$\n\n$$= 3(28) - 2(28.33) = 84 - 56.66 = \\mathbf{27.33}.$$\n\n*(Mean > median here, so the distribution is positively skewed and the mode must be the smallest of the three ✓)*",
+      "source": "AP ICET 2025 7th May 2025 Shift 2",
+      "source_year": 2025,
+      "options": [
+        {
+          "label": "28.5",
+          "is_correct": false
+        },
+        {
+          "label": "27.33",
+          "is_correct": true
+        },
+        {
+          "label": "28",
+          "is_correct": false
+        },
+        {
+          "label": "28.66",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Standard Deviation & Variance",
+      "difficulty": "medium",
+      "answer_type": "single",
+      "stem": "Second central moment (Variance) for the first $n$ natural numbers:",
+      "explanation": "The variance of $1, 2, \\ldots, n$ is a standard result:\n$$\\sigma^2 = \\frac{\\sum x^2}{n} - \\left(\\frac{\\sum x}{n}\\right)^2 = \\frac{(n+1)(2n+1)}{6} - \\frac{(n+1)^2}{4} = \\mathbf{\\frac{n^2-1}{12}}.$$\n\n*(Quick check with $n=3$: the numbers 1, 2, 3 have mean 2 and variance $\\frac{1+0+1}{3} = \\frac23$, and $\\frac{9-1}{12} = \\frac23$ ✓)*\n\nThe other options are the formulas for $\\sum x$ and $\\sum x^2$, not the variance.",
+      "source": "AP ICET 2025 7th May 2025 Shift 2",
+      "source_year": 2025,
+      "options": [
+        {
+          "label": "$\\frac{n(n+1)}{2}$",
+          "is_correct": false
+        },
+        {
+          "label": "$\\frac{n(n+1)(2n+1)}{6}$",
+          "is_correct": false
+        },
+        {
+          "label": "$\\frac{n^2+1}{12}$",
+          "is_correct": false
+        },
+        {
+          "label": "$\\frac{n^2-1}{12}$",
+          "is_correct": true
+        }
+      ]
+    },
+    {
+      "chapter": "Frequency Distributions",
+      "difficulty": "easy",
+      "answer_type": "single",
+      "stem": "The cumulative frequency table of marks in a test is given by\n\n| Marks (x) | ≤ 10 | ≤ 20 | ≤ 30 | ≤ 40 | ≤ 50 |\n| --- | --- | --- | --- | --- | --- |\n| Frequency (f) | 5 | 12 | 26 | 37 | 50 |\n\nThen, the number of students scoring between 20 and 40 is:",
+      "explanation": "These are **cumulative** counts, so subtract to get the students in the interval:\n$$(\\le 40) - (\\le 20) = 37 - 12 = \\mathbf{25}.$$\n\n*(Reading 26 or 37 straight off the table would answer a different question — those are the totals up to 30 and up to 40.)*",
+      "source": "AP ICET 2025 7th May 2025 Shift 2",
+      "source_year": 2025,
+      "options": [
+        {
+          "label": "12",
+          "is_correct": false
+        },
+        {
+          "label": "25",
+          "is_correct": true
+        },
+        {
+          "label": "26",
+          "is_correct": false
+        },
+        {
+          "label": "37",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Mean, Median & Mode",
+      "difficulty": "medium",
+      "answer_type": "single",
+      "stem": "The median of the frequency distribution is:\n\n| x | 1 | 2 | 3 | 4 |\n| --- | --- | --- | --- | --- |\n| Frequency (f) | 2 | 4 | 1 | 3 |",
+      "explanation": "Total frequency:\n$$N = 2+4+1+3 = 10,$$\nso the median is the average of the **5th and 6th** observations.\n\nCumulative frequencies: $2, \\; \\mathbf{6}, \\; 7, \\; 10$ — both the 5th and the 6th observation fall in the block where $x = 2$.\n\n$$\\text{Median} = \\mathbf{2}.$$",
+      "source": "AP ICET 2025 7th May 2025 Shift 2",
+      "source_year": 2025,
+      "options": [
+        {
+          "label": "1",
+          "is_correct": false
+        },
+        {
+          "label": "2",
+          "is_correct": true
+        },
+        {
+          "label": "3",
+          "is_correct": false
+        },
+        {
+          "label": "4",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Probability",
+      "difficulty": "medium",
+      "answer_type": "single",
+      "stem": "A box contains 6 red balls and 4 blue balls. If two balls are drawn at random, then the probability that they are of the same colour is:",
+      "explanation": "Count the same-colour pairs:\n$$\\binom62 + \\binom42 = 15 + 6 = 21.$$\n\nTotal pairs:\n$$\\binom{10}{2} = 45.$$\n\n$$P = \\frac{21}{45} = \\mathbf{\\frac{7}{15}}.$$\n\n*(The complement — one of each colour — is $\\frac{6 \\times 4}{45} = \\frac{24}{45} = \\frac{8}{15}$, and the two add to 1 ✓)*",
+      "source": "AP ICET 2025 7th May 2025 Shift 2",
+      "source_year": 2025,
+      "options": [
+        {
+          "label": "$\\frac{7}{15}$",
+          "is_correct": true
+        },
+        {
+          "label": "$\\frac{9}{17}$",
+          "is_correct": false
+        },
+        {
+          "label": "$\\frac35$",
+          "is_correct": false
+        },
+        {
+          "label": "$\\frac{4}{15}$",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Standard Deviation & Variance",
+      "difficulty": "medium",
+      "answer_type": "single",
+      "stem": "If the mean of a frequency distribution is 100 and the coefficient of variation is 45%, then what is the value of the variance?",
+      "explanation": "The coefficient of variation relates the standard deviation to the mean:\n$$CV = \\frac{\\sigma}{\\bar x} \\times 100 \\Rightarrow 45 = \\frac{\\sigma}{100} \\times 100 \\Rightarrow \\sigma = 45.$$\n\nVariance is the **square** of the standard deviation:\n$$\\sigma^2 = 45^2 = \\mathbf{2025}.$$\n\n*(Stopping at 45 gives the standard deviation, which is the trap here.)*",
+      "source": "AP ICET 2025 7th May 2025 Shift 2",
+      "source_year": 2025,
+      "options": [
+        {
+          "label": "2025",
+          "is_correct": true
+        },
+        {
+          "label": "450",
+          "is_correct": false
+        },
+        {
+          "label": "45",
+          "is_correct": false
+        },
+        {
+          "label": "4.5",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Probability",
+      "difficulty": "hard",
+      "answer_type": "single",
+      "stem": "When two dice are thrown, the probability of getting a prime number on one die and composite number on the other die is:",
+      "explanation": "On a die the **primes** are 2, 3, 5 (three faces) and the **composites** are 4, 6 (two faces) — 1 is neither.\n\nThe two dice can take the roles either way round:\n$$P = \\underbrace{\\frac36 \\times \\frac26}_{\\text{prime, composite}} + \\underbrace{\\frac26 \\times \\frac36}_{\\text{composite, prime}} = \\frac{6}{36} + \\frac{6}{36} = \\frac{12}{36} = \\mathbf{\\frac13}.$$\n\n*(Forgetting the second arrangement would give $\\frac16$ — option 1.)*",
+      "source": "AP ICET 2025 7th May 2025 Shift 2",
+      "source_year": 2025,
+      "options": [
+        {
+          "label": "1/6",
+          "is_correct": false
+        },
+        {
+          "label": "1/3",
+          "is_correct": true
+        },
+        {
+          "label": "1/2",
+          "is_correct": false
+        },
+        {
+          "label": "1/4",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Probability",
+      "difficulty": "hard",
+      "answer_type": "single",
+      "stem": "The probability that in 10 throws of a fair die, a score which is a multiple of 3 is obtained in 8 of the throws is …..",
+      "explanation": "On one die the multiples of 3 are 3 and 6, so\n$$p = \\frac26 = \\frac13, \\qquad q = \\frac23.$$\n\nThis is a binomial experiment with $n = 10$ and $r = 8$:\n$$P = \\binom{10}{8}\\left(\\frac13\\right)^8\\left(\\frac23\\right)^2 = 45 \\times \\frac{1}{3^8} \\times \\frac49.$$\n\n$$= \\frac{45 \\times 4}{3^{10}} = \\mathbf{\\frac{180}{3^{10}}}.$$",
+      "source": "AP ICET 2025 7th May 2025 Shift 2",
+      "source_year": 2025,
+      "options": [
+        {
+          "label": "$\\frac{160}{3^{10}}$",
+          "is_correct": false
+        },
+        {
+          "label": "$\\frac{140}{3^{10}}$",
+          "is_correct": false
+        },
+        {
+          "label": "$\\frac{180}{3^{10}}$",
+          "is_correct": true
+        },
+        {
+          "label": "$\\frac{100}{3^{10}}$",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Mean, Median & Mode",
+      "difficulty": "hard",
+      "answer_type": "single",
+      "stem": "Median of the following discrete data is:\n\n$$1, \\; 2, 2, \\; 3, 3, 3, \\; 4, 4, 4, 4, \\; 5, 5, 5, 5, 5, \\; \\ldots, \\; 10, 10, 10, 10, 10, 10, 10, 10, 10, 10$$\n\n(each value $k$ occurring $k$ times, up to $k = 10$)",
+      "explanation": "The total count is the sum of the frequencies:\n$$N = 1 + 2 + \\cdots + 10 = \\frac{10 \\times 11}{2} = 55,$$\nso the median is the $\\dfrac{55+1}{2} = 28\\text{th}$ observation.\n\nCumulative frequencies:\n$$1, \\; 3, \\; 6, \\; 10, \\; 15, \\; 21, \\; \\mathbf{28}, \\; 36, \\; 45, \\; 55.$$\n\nThe count reaches 28 exactly at the value **7**, so the 28th observation — the median — is 7.",
+      "source": "AP ICET 2025 7th May 2025 Shift 2",
+      "source_year": 2025,
+      "options": [
+        {
+          "label": "6",
+          "is_correct": false
+        },
+        {
+          "label": "7",
+          "is_correct": true
+        },
+        {
+          "label": "8",
+          "is_correct": false
+        },
+        {
+          "label": "9",
+          "is_correct": false
+        }
+      ]
+    }
+  ]
+}
