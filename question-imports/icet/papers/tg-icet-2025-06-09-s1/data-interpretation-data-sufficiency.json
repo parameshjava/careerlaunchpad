@@ -1,0 +1,275 @@
+{
+  "subject": "Data Interpretation & Data Sufficiency",
+  "questions": [
+    {
+      "chapter": "Tables",
+      "difficulty": "easy",
+      "answer_type": "single",
+      "stem": "The table shows the production (in tonnes) of cereals from 2019 to 2024 in a village.\n\n| Year | Rice | Wheat | Barley | Oats | Maize |\n| --- | --- | --- | --- | --- | --- |\n| 2019 | 2415 | 825 | 530 | 410 | 740 |\n| 2020 | 2320 | 940 | 480 | 590 | 760 |\n| 2021 | 2617 | 1060 | 460 | 610 | 775 |\n| 2022 | 2720 | 1120 | 520 | 630 | 790 |\n| 2023 | 2516 | 1040 | 670 | 720 | 810 |\n| 2024 | 2810 | 960 | 720 | 810 | 825 |\n\nThe average production of rice in the given period (in tonnes) is",
+      "explanation": "Add the six rice figures:\n$$2415 + 2320 + 2617 + 2720 + 2516 + 2810 = 15398.$$\n\n$$\\text{Average} = \\frac{15398}{6} = 2566.33 \\approx \\mathbf{2566}.$$",
+      "source": "TG ICET 2025 9th June 2025 Shift 1",
+      "source_year": 2025,
+      "options": [
+        {
+          "label": "2366",
+          "is_correct": false
+        },
+        {
+          "label": "2266",
+          "is_correct": false
+        },
+        {
+          "label": "2566",
+          "is_correct": true
+        },
+        {
+          "label": "2766",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Tables",
+      "difficulty": "hard",
+      "answer_type": "single",
+      "stem": "The table shows the production (in tonnes) of cereals from 2019 to 2024 in a village.\n\n| Year | Rice | Wheat | Barley | Oats | Maize |\n| --- | --- | --- | --- | --- | --- |\n| 2019 | 2415 | 825 | 530 | 410 | 740 |\n| 2020 | 2320 | 940 | 480 | 590 | 760 |\n| 2021 | 2617 | 1060 | 460 | 610 | 775 |\n| 2022 | 2720 | 1120 | 520 | 630 | 790 |\n| 2023 | 2516 | 1040 | 670 | 720 | 810 |\n| 2024 | 2810 | 960 | 720 | 810 | 825 |\n\nIn the year 2022, the cereal that yielded the highest growth percent over the previous year is",
+      "explanation": "Compare each cereal's 2022 figure with its 2021 figure:\n\n| Cereal | 2021 → 2022 | Growth |\n| --- | --- | --- |\n| Rice | 2617 → 2720 | 3.9% |\n| Wheat | 1060 → 1120 | 5.7% |\n| **Barley** | 460 → 520 | **13.0%** |\n| Oats | 610 → 630 | 3.3% |\n| Maize | 775 → 790 | 1.9% |\n\n**Barley** wins easily: its absolute rise of 60 tonnes is small, but so is its base — the point of a *percentage* growth question.",
+      "source": "TG ICET 2025 9th June 2025 Shift 1",
+      "source_year": 2025,
+      "options": [
+        {
+          "label": "Barley",
+          "is_correct": true
+        },
+        {
+          "label": "Oats",
+          "is_correct": false
+        },
+        {
+          "label": "Wheat",
+          "is_correct": false
+        },
+        {
+          "label": "Maize",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Tables",
+      "difficulty": "medium",
+      "answer_type": "single",
+      "stem": "The table shows the production (in tonnes) of cereals from 2019 to 2024 in a village.\n\n| Year | Rice | Wheat | Barley | Oats | Maize |\n| --- | --- | --- | --- | --- | --- |\n| 2019 | 2415 | 825 | 530 | 410 | 740 |\n| 2020 | 2320 | 940 | 480 | 590 | 760 |\n| 2021 | 2617 | 1060 | 460 | 610 | 775 |\n| 2022 | 2720 | 1120 | 520 | 630 | 790 |\n| 2023 | 2516 | 1040 | 670 | 720 | 810 |\n| 2024 | 2810 | 960 | 720 | 810 | 825 |\n\nThe percentage of increase in rice production in 2024 over 2023 is approximately",
+      "explanation": "Rice rose from 2516 to 2810:\n$$\\frac{2810 - 2516}{2516} \\times 100 = \\frac{294}{2516} \\times 100 \\approx 11.7\\%,$$\nwhich matches the option **11.66**.\n\n*(The base must be the earlier year, 2023; dividing by 2810 instead gives 10.5%.)*",
+      "source": "TG ICET 2025 9th June 2025 Shift 1",
+      "source_year": 2025,
+      "options": [
+        {
+          "label": "8.72",
+          "is_correct": false
+        },
+        {
+          "label": "11.66",
+          "is_correct": true
+        },
+        {
+          "label": "10.67",
+          "is_correct": false
+        },
+        {
+          "label": "12.02",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Pie Charts",
+      "difficulty": "medium",
+      "answer_type": "single",
+      "stem": "A pie chart shows the marks obtained by a student in five subjects, out of a total of 900 marks, as sector angles:\n\n| Subject | Sector angle |\n| --- | --- |\n| Telugu | $40^\\circ$ |\n| English | $80^\\circ$ |\n| Mathematics | $90^\\circ$ |\n| Physics | $70^\\circ$ |\n| Chemistry | the remaining sector |\n\nThe total marks obtained in the two languages is",
+      "explanation": "The two languages are Telugu $(40^\\circ)$ and English $(80^\\circ)$, together $120^\\circ$ of the $360^\\circ$ circle:\n$$\\frac{120}{360} \\times 900 = \\mathbf{300} \\text{ marks}.$$\n\n*(Equivalently each degree is worth $\\frac{900}{360} = 2.5$ marks, so $120 \\times 2.5 = 300$.)*",
+      "source": "TG ICET 2025 9th June 2025 Shift 1",
+      "source_year": 2025,
+      "options": [
+        {
+          "label": "360",
+          "is_correct": false
+        },
+        {
+          "label": "300",
+          "is_correct": true
+        },
+        {
+          "label": "280",
+          "is_correct": false
+        },
+        {
+          "label": "320",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Pie Charts",
+      "difficulty": "easy",
+      "answer_type": "single",
+      "stem": "A pie chart shows the marks obtained by a student in five subjects, out of a total of 900 marks, as sector angles:\n\n| Subject | Sector angle |\n| --- | --- |\n| Telugu | $40^\\circ$ |\n| English | $80^\\circ$ |\n| Mathematics | $90^\\circ$ |\n| Physics | $70^\\circ$ |\n| Chemistry | the remaining sector |\n\nMarks obtained in Chemistry are",
+      "explanation": "Chemistry takes whatever is left of the circle:\n$$360^\\circ - (40 + 80 + 90 + 70) = 360 - 280 = 80^\\circ.$$\n\nEach degree is worth $\\dfrac{900}{360} = 2.5$ marks, so\n$$80 \\times 2.5 = \\mathbf{200} \\text{ marks}.$$",
+      "source": "TG ICET 2025 9th June 2025 Shift 1",
+      "source_year": 2025,
+      "options": [
+        {
+          "label": "160",
+          "is_correct": false
+        },
+        {
+          "label": "220",
+          "is_correct": false
+        },
+        {
+          "label": "180",
+          "is_correct": false
+        },
+        {
+          "label": "200",
+          "is_correct": true
+        }
+      ]
+    },
+    {
+      "chapter": "Pie Charts",
+      "difficulty": "easy",
+      "answer_type": "single",
+      "stem": "A pie chart shows the marks obtained by a student in five subjects, out of a total of 900 marks, as sector angles:\n\n| Subject | Sector angle |\n| --- | --- |\n| Telugu | $40^\\circ$ |\n| English | $80^\\circ$ |\n| Mathematics | $90^\\circ$ |\n| Physics | $70^\\circ$ |\n| Chemistry | the remaining sector |\n\nThe marks in Mathematics, Physics and Chemistry put together is",
+      "explanation": "Those three sectors are $90^\\circ$, $70^\\circ$ and (by subtraction) $80^\\circ$, totalling $240^\\circ$:\n$$\\frac{240}{360} \\times 900 = \\mathbf{600} \\text{ marks}.$$\n\n*(Equivalently they occupy two-thirds of the circle, and two-thirds of 900 is 600.)*",
+      "source": "TG ICET 2025 9th June 2025 Shift 1",
+      "source_year": 2025,
+      "options": [
+        {
+          "label": "650",
+          "is_correct": false
+        },
+        {
+          "label": "500",
+          "is_correct": false
+        },
+        {
+          "label": "600",
+          "is_correct": true
+        },
+        {
+          "label": "550",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Caselets",
+      "difficulty": "hard",
+      "answer_type": "single",
+      "stem": "A Venn diagram gives the percentage of people speaking different languages in a city — English, Hindi, Telugu, Malayalam and Tamil — with Spanish speakers shown outside all five circles. The regions carry these percentages:\n\n| Region | % |\n| --- | --- |\n| English only | 10 |\n| Hindi only | 9 |\n| Telugu only | 4 |\n| Malayalam only | 8 |\n| Tamil only | 4 |\n| Spanish (outside all five) | 3 |\n| English and Hindi | 4 |\n| English and Malayalam | 8 |\n| Hindi and Telugu | 10 |\n| Hindi and Malayalam | 5 |\n| Hindi and Tamil | 9 |\n| Telugu and Tamil | 3 |\n| Malayalam and Tamil | 2 |\n| English, Hindi and Malayalam | 6 |\n| Hindi, Telugu and Tamil | 8 |\n| Hindi, Telugu, Malayalam and Tamil | 7 |\n\nThe total population of the city is **2,00,000**.\n\nFind the number of people who speak at least three languages.",
+      "explanation": "\"At least three\" means every region covering three **or more** circles:\n$$\\underbrace{6}_{\\text{Eng+Hin+Mal}} + \\underbrace{8}_{\\text{Hin+Tel+Tam}} + \\underbrace{7}_{\\text{four languages}} = 21\\%.$$\n\n$$0.21 \\times 200000 = \\mathbf{42000}.$$\n\n*(The four-language region must be counted — \"at least three\" includes it.)*",
+      "source": "TG ICET 2025 9th June 2025 Shift 1",
+      "source_year": 2025,
+      "options": [
+        {
+          "label": "42000",
+          "is_correct": true
+        },
+        {
+          "label": "54000",
+          "is_correct": false
+        },
+        {
+          "label": "44000",
+          "is_correct": false
+        },
+        {
+          "label": "48000",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Caselets",
+      "difficulty": "hard",
+      "answer_type": "single",
+      "stem": "A Venn diagram gives the percentage of people speaking different languages in a city — English, Hindi, Telugu, Malayalam and Tamil — with Spanish speakers shown outside all five circles. The regions carry these percentages:\n\n| Region | % |\n| --- | --- |\n| English only | 10 |\n| Hindi only | 9 |\n| Telugu only | 4 |\n| Malayalam only | 8 |\n| Tamil only | 4 |\n| Spanish (outside all five) | 3 |\n| English and Hindi | 4 |\n| English and Malayalam | 8 |\n| Hindi and Telugu | 10 |\n| Hindi and Malayalam | 5 |\n| Hindi and Tamil | 9 |\n| Telugu and Tamil | 3 |\n| Malayalam and Tamil | 2 |\n| English, Hindi and Malayalam | 6 |\n| Hindi, Telugu and Tamil | 8 |\n| Hindi, Telugu, Malayalam and Tamil | 7 |\n\nThe total population of the city is **2,00,000**.\n\nFind the number of people who can speak exactly any two languages.",
+      "explanation": "Add only the regions lying in **exactly two** circles:\n$$4 + 8 + 10 + 5 + 9 + 3 + 2 = 41\\%.$$\n\n$$0.41 \\times 200000 = \\mathbf{82000}.$$\n\n*(The triple and quadruple regions are excluded — \"exactly two\" is stricter than \"at least two\".)*",
+      "source": "TG ICET 2025 9th June 2025 Shift 1",
+      "source_year": 2025,
+      "options": [
+        {
+          "label": "78000",
+          "is_correct": false
+        },
+        {
+          "label": "84000",
+          "is_correct": false
+        },
+        {
+          "label": "82000",
+          "is_correct": true
+        },
+        {
+          "label": "80000",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Caselets",
+      "difficulty": "medium",
+      "answer_type": "single",
+      "stem": "A Venn diagram gives the percentage of people speaking different languages in a city — English, Hindi, Telugu, Malayalam and Tamil — with Spanish speakers shown outside all five circles. The regions carry these percentages:\n\n| Region | % |\n| --- | --- |\n| English only | 10 |\n| Hindi only | 9 |\n| Telugu only | 4 |\n| Malayalam only | 8 |\n| Tamil only | 4 |\n| Spanish (outside all five) | 3 |\n| English and Hindi | 4 |\n| English and Malayalam | 8 |\n| Hindi and Telugu | 10 |\n| Hindi and Malayalam | 5 |\n| Hindi and Tamil | 9 |\n| Telugu and Tamil | 3 |\n| Malayalam and Tamil | 2 |\n| English, Hindi and Malayalam | 6 |\n| Hindi, Telugu and Tamil | 8 |\n| Hindi, Telugu, Malayalam and Tamil | 7 |\n\nThe total population of the city is **2,00,000**.\n\nFind the number of people who can speak only one language.",
+      "explanation": "Add the five single-language regions **and** the Spanish speakers, who also speak just one language:\n$$10 + 9 + 4 + 8 + 4 + 3 = 38\\%.$$\n\n$$0.38 \\times 200000 = \\mathbf{76000}.$$\n\n*(Forgetting the 3% outside the circles gives 35% and the wrong answer — they sit outside the five circles precisely because they speak only Spanish.)*",
+      "source": "TG ICET 2025 9th June 2025 Shift 1",
+      "source_year": 2025,
+      "options": [
+        {
+          "label": "80000",
+          "is_correct": false
+        },
+        {
+          "label": "74000",
+          "is_correct": false
+        },
+        {
+          "label": "78000",
+          "is_correct": false
+        },
+        {
+          "label": "76000",
+          "is_correct": true
+        }
+      ]
+    },
+    {
+      "chapter": "Caselets",
+      "difficulty": "hard",
+      "answer_type": "single",
+      "stem": "A Venn diagram gives the percentage of people speaking different languages in a city — English, Hindi, Telugu, Malayalam and Tamil — with Spanish speakers shown outside all five circles. The regions carry these percentages:\n\n| Region | % |\n| --- | --- |\n| English only | 10 |\n| Hindi only | 9 |\n| Telugu only | 4 |\n| Malayalam only | 8 |\n| Tamil only | 4 |\n| Spanish (outside all five) | 3 |\n| English and Hindi | 4 |\n| English and Malayalam | 8 |\n| Hindi and Telugu | 10 |\n| Hindi and Malayalam | 5 |\n| Hindi and Tamil | 9 |\n| Telugu and Tamil | 3 |\n| Malayalam and Tamil | 2 |\n| English, Hindi and Malayalam | 6 |\n| Hindi, Telugu and Tamil | 8 |\n| Hindi, Telugu, Malayalam and Tamil | 7 |\n\nThe total population of the city is **2,00,000**.\n\nFind the number of people in the city who cannot speak Hindi.",
+      "explanation": "Add every region that **includes** Hindi:\n$$9 + 4 + 10 + 5 + 9 + 6 + 8 + 7 = 58\\%.$$\n\nSo those who cannot speak Hindi make up\n$$100 - 58 = 42\\%, \\qquad 0.42 \\times 200000 = \\mathbf{84000}.$$\n\n*(Working with the complement is quicker than adding the non-Hindi regions one by one, and less error-prone.)*",
+      "source": "TG ICET 2025 9th June 2025 Shift 1",
+      "source_year": 2025,
+      "options": [
+        {
+          "label": "86000",
+          "is_correct": false
+        },
+        {
+          "label": "84000",
+          "is_correct": true
+        },
+        {
+          "label": "82000",
+          "is_correct": false
+        },
+        {
+          "label": "80000",
+          "is_correct": false
+        }
+      ]
+    }
+  ]
+}

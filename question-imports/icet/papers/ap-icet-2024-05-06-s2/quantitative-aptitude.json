@@ -1,0 +1,32 @@
+{
+  "subject": "Quantitative Aptitude",
+  "questions": [
+    {
+      "chapter": "Probability",
+      "difficulty": "medium",
+      "answer_type": "single",
+      "stem": "In how many different ways can the letters of the word BANANA be arranged?",
+      "explanation": "BANANA has 6 letters, but they are not all distinct:\n$$B \\times 1, \\quad A \\times 3, \\quad N \\times 2.$$\n\nFor a word with repeated letters the count is\n$$\\frac{n!}{p!\\,q!\\cdots} = \\frac{6!}{3!\\,2!}.$$\n\n$$= \\frac{720}{6 \\times 2} = \\frac{720}{12} = \\mathbf{60}.$$\n\n*(Treating all six letters as distinct would give $6! = 720$ — option 4, the trap.)*",
+      "source": "AP ICET 2024 6th May 2024 Shift 2",
+      "source_year": 2024,
+      "options": [
+        {
+          "label": "60",
+          "is_correct": true
+        },
+        {
+          "label": "120",
+          "is_correct": false
+        },
+        {
+          "label": "360",
+          "is_correct": false
+        },
+        {
+          "label": "720",
+          "is_correct": false
+        }
+      ]
+    }
+  ]
+}

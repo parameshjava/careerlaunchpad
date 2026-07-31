@@ -1,0 +1,167 @@
+{
+  "subject": "Data Interpretation & Data Sufficiency",
+  "questions": [
+    {
+      "chapter": "Tables",
+      "difficulty": "easy",
+      "answer_type": "single",
+      "stem": "The data regarding the sales in one month of mobile phones of brands A, B, C, D and E sold through 5 outlets I, II, III, IV and V are given in the following table.\n\n| Type ↓ / Outlet → | I | II | III | IV | V |\n| --- | --- | --- | --- | --- | --- |\n| A | 210 | 340 | 260 | 190 | 250 |\n| B | 130 | 175 | 240 | 260 | 165 |\n| C | 190 | 260 | 140 | 180 | 160 |\n| D | 385 | 425 | 290 | 180 | 195 |\n| E | 65 | 80 | 45 | 75 | 110 |\n\nWhat is the total number of mobiles of all brands sold through all the outlets in the month?",
+      "explanation": "Add each brand's row, then total the rows:\n\n| Brand | Row total |\n| --- | --- |\n| A | $210+340+260+190+250 = 1250$ |\n| B | $130+175+240+260+165 = 970$ |\n| C | $190+260+140+180+160 = 930$ |\n| D | $385+425+290+180+195 = 1475$ |\n| E | $65+80+45+75+110 = 375$ |\n\n$$1250 + 970 + 930 + 1475 + 375 = \\mathbf{5000}.$$",
+      "source": "TG ICET 2025 8th June 2025 Shift 2",
+      "source_year": 2025,
+      "options": [
+        {
+          "label": "4000",
+          "is_correct": false
+        },
+        {
+          "label": "4500",
+          "is_correct": false
+        },
+        {
+          "label": "5000",
+          "is_correct": true
+        },
+        {
+          "label": "5550",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Tables",
+      "difficulty": "medium",
+      "answer_type": "single",
+      "stem": "The data regarding the sales in one month of mobile phones of brands A, B, C, D and E sold through 5 outlets I, II, III, IV and V are given in the following table.\n\n| Type ↓ / Outlet → | I | II | III | IV | V |\n| --- | --- | --- | --- | --- | --- |\n| A | 210 | 340 | 260 | 190 | 250 |\n| B | 130 | 175 | 240 | 260 | 165 |\n| C | 190 | 260 | 140 | 180 | 160 |\n| D | 385 | 425 | 290 | 180 | 195 |\n| E | 65 | 80 | 45 | 75 | 110 |\n\nWhat is the percentage of the total number of mobiles of brand D in the total number of mobiles of all brands sold through all the outlets?",
+      "explanation": "**Brand D total:**\n$$385 + 425 + 290 + 180 + 195 = 1475.$$\n\n**Grand total** (all five brands): 5000.\n\n$$\\frac{1475}{5000} \\times 100 = \\mathbf{29.5\\%}.$$",
+      "source": "TG ICET 2025 8th June 2025 Shift 2",
+      "source_year": 2025,
+      "options": [
+        {
+          "label": "49.5",
+          "is_correct": false
+        },
+        {
+          "label": "39.5",
+          "is_correct": false
+        },
+        {
+          "label": "35.5",
+          "is_correct": false
+        },
+        {
+          "label": "29.5",
+          "is_correct": true
+        }
+      ]
+    },
+    {
+      "chapter": "Tables",
+      "difficulty": "medium",
+      "answer_type": "single",
+      "stem": "The data regarding the sales in one month of mobile phones of brands A, B, C, D and E sold through 5 outlets I, II, III, IV and V are given in the following table.\n\n| Type ↓ / Outlet → | I | II | III | IV | V |\n| --- | --- | --- | --- | --- | --- |\n| A | 210 | 340 | 260 | 190 | 250 |\n| B | 130 | 175 | 240 | 260 | 165 |\n| C | 190 | 260 | 140 | 180 | 160 |\n| D | 385 | 425 | 290 | 180 | 195 |\n| E | 65 | 80 | 45 | 75 | 110 |\n\nThe ratio of the maximum number of mobiles of all brands sold in the month by a store to the minimum number of mobiles of all brands sold in the month by a store is",
+      "explanation": "Total each **column** (outlet):\n\n| Outlet | I | II | III | IV | V |\n| --- | --- | --- | --- | --- | --- |\n| Total | 980 | **1280** | 975 | 885 | **880** |\n\nThe busiest outlet is II with 1280 and the quietest is V with 880:\n$$\\frac{1280}{880} = \\frac{128}{88} = \\mathbf{16 : 11}.$$",
+      "source": "TG ICET 2025 8th June 2025 Shift 2",
+      "source_year": 2025,
+      "options": [
+        {
+          "label": "9 : 5",
+          "is_correct": false
+        },
+        {
+          "label": "11 : 7",
+          "is_correct": false
+        },
+        {
+          "label": "13 : 8",
+          "is_correct": false
+        },
+        {
+          "label": "16 : 11",
+          "is_correct": true
+        }
+      ]
+    },
+    {
+      "chapter": "Pie Charts",
+      "difficulty": "hard",
+      "answer_type": "single",
+      "stem": "The pie chart below gives the distribution of the number of cars in four major cities of a state, and the table gives the ratio of diesel cars to petrol cars in each city. The total number of cars in the four cities is 1,47,000.\n\n| City | Share of all cars | Ratio of Diesel to Petrol cars |\n| --- | --- | --- |\n| A | 14% | 3 : 4 |\n| B | 26% | 6 : 7 |\n| C | 32% | 5 : 3 |\n| D | the remaining share | 3 : 11 |\n\nWhat is the difference of the number of diesel cars in city D and the number of petrol cars in city B?",
+      "explanation": "**City D's share** is $100 - (14+26+32) = 28\\%$, so\n$$D = 0.28 \\times 147000 = 41160, \\qquad B = 0.26 \\times 147000 = 38220.$$\n\n**Diesel cars in D** (ratio 3 : 11, so 3 of 14 parts):\n$$41160 \\times \\frac{3}{14} = 8820.$$\n\n**Petrol cars in B** (ratio 6 : 7, so 7 of 13 parts):\n$$38220 \\times \\frac{7}{13} = 20580.$$\n\n$$\\text{Difference} = 20580 - 8820 = \\mathbf{11760}.$$",
+      "source": "TG ICET 2025 8th June 2025 Shift 2",
+      "source_year": 2025,
+      "options": [
+        {
+          "label": "12120",
+          "is_correct": false
+        },
+        {
+          "label": "12010",
+          "is_correct": false
+        },
+        {
+          "label": "11960",
+          "is_correct": false
+        },
+        {
+          "label": "11760",
+          "is_correct": true
+        }
+      ]
+    },
+    {
+      "chapter": "Pie Charts",
+      "difficulty": "hard",
+      "answer_type": "single",
+      "stem": "The pie chart below gives the distribution of the number of cars in four major cities of a state, and the table gives the ratio of diesel cars to petrol cars in each city. The total number of cars in the four cities is 1,47,000.\n\n| City | Share of all cars | Ratio of Diesel to Petrol cars |\n| --- | --- | --- |\n| A | 14% | 3 : 4 |\n| B | 26% | 6 : 7 |\n| C | 32% | 5 : 3 |\n| D | the remaining share | 3 : 11 |\n\nHow much percent of petrol cars in city C is greater than the petrol cars in city A?",
+      "explanation": "**City C:** $0.32 \\times 147000 = 47040$ cars, petrol = 3 of 8 parts:\n$$47040 \\times \\frac38 = 17640.$$\n\n**City A:** $0.14 \\times 147000 = 20580$ cars, petrol = 4 of 7 parts:\n$$20580 \\times \\frac47 = 11760.$$\n\nThe increase is measured **against city A**:\n$$\\frac{17640 - 11760}{11760} \\times 100 = \\frac{5880}{11760} \\times 100 = \\mathbf{50\\%}.$$",
+      "source": "TG ICET 2025 8th June 2025 Shift 2",
+      "source_year": 2025,
+      "options": [
+        {
+          "label": "50",
+          "is_correct": true
+        },
+        {
+          "label": "48",
+          "is_correct": false
+        },
+        {
+          "label": "45",
+          "is_correct": false
+        },
+        {
+          "label": "42",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Pie Charts",
+      "difficulty": "medium",
+      "answer_type": "single",
+      "stem": "The pie chart below gives the distribution of the number of cars in four major cities of a state, and the table gives the ratio of diesel cars to petrol cars in each city. The total number of cars in the four cities is 1,47,000.\n\n| City | Share of all cars | Ratio of Diesel to Petrol cars |\n| --- | --- | --- |\n| A | 14% | 3 : 4 |\n| B | 26% | 6 : 7 |\n| C | 32% | 5 : 3 |\n| D | the remaining share | 3 : 11 |\n\nWhat is the ratio of 20% of petrol cars in city B to the 25% of petrol cars in city C?",
+      "explanation": "From the previous working, petrol cars are 20580 in B and 17640 in C.\n\n$$20\\% \\text{ of B's petrol} = 4116, \\qquad 25\\% \\text{ of C's petrol} = 4410.$$\n\n$$\\frac{4116}{4410} = \\frac{686}{735} = \\frac{98}{105} = \\mathbf{14 : 15}.$$\n\n*(Cancelling in stages — by 6, then 7, then 7 — keeps the arithmetic light.)*",
+      "source": "TG ICET 2025 8th June 2025 Shift 2",
+      "source_year": 2025,
+      "options": [
+        {
+          "label": "12 : 15",
+          "is_correct": false
+        },
+        {
+          "label": "13 : 15",
+          "is_correct": false
+        },
+        {
+          "label": "14 : 15",
+          "is_correct": true
+        },
+        {
+          "label": "15 : 17",
+          "is_correct": false
+        }
+      ]
+    }
+  ]
+}

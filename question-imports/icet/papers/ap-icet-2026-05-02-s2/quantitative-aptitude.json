@@ -1,0 +1,1598 @@
+{
+  "subject": "Quantitative Aptitude",
+  "questions": [
+    {
+      "chapter": "Profit, Loss & Discount",
+      "difficulty": "easy",
+      "answer_type": "single",
+      "stem": "A shopkeeper sells an article for Rs. 920 after giving a 20% discount on the marked price. What is the marked price?",
+      "explanation": "After a 20% discount the customer pays **80%** of the marked price:\n$$0.8 \\times MP = 920 \\Rightarrow MP = \\frac{920}{0.8} = 1150.$$\n\n*(Adding 20% to 920 instead gives 1104 — wrong, because the discount is a percentage of the higher marked price, not of the selling price.)*",
+      "source": "AP ICET 2026 2nd May 2026 Shift 2",
+      "source_year": 2026,
+      "options": [
+        {
+          "label": "Rs. 1100",
+          "is_correct": false
+        },
+        {
+          "label": "Rs. 1150",
+          "is_correct": true
+        },
+        {
+          "label": "Rs. 1200",
+          "is_correct": false
+        },
+        {
+          "label": "Rs. 1250",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Ratio & Proportion",
+      "difficulty": "hard",
+      "answer_type": "single",
+      "stem": "The ratio of incomes of A and B is  : 4$ and they save Rs. 2,000 each after spending in the ratio  : 3$. What is A's income?",
+      "explanation": "Let the incomes be x$, x$ and the expenditures y$, y$. Savings are income minus expenditure:\n$$5x - 4y = 2000, \\qquad 4x - 3y = 2000.$$\n\nEliminate $ — multiply the first by 3 and the second by 4:\n$$15x - 12y = 6000, \\qquad 16x - 12y = 8000.$$\n\nSubtracting gives  = 2000$, so A's income is x = \\textbf{Rs. } 10{,}000$.\n\n*(Then B earns 8000, they spend 8000 and 6000, and each saves 2000 ✓)*",
+      "source": "AP ICET 2026 2nd May 2026 Shift 2",
+      "source_year": 2026,
+      "options": [
+        {
+          "label": "Rs. 8,000",
+          "is_correct": false
+        },
+        {
+          "label": "Rs. 10,000",
+          "is_correct": true
+        },
+        {
+          "label": "Rs. 12,000",
+          "is_correct": false
+        },
+        {
+          "label": "Rs. 15,000",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Time, Speed & Distance",
+      "difficulty": "easy",
+      "answer_type": "single",
+      "stem": "A train of length 180 m crosses a pole in 9 seconds. Its speed is:",
+      "explanation": "Crossing a **pole** means covering just the train's own length:\n$$\\text{speed} = \\frac{180}{9} = 20 \\text{ m/s}.$$\n\nConvert to km/h by multiplying by $\\frac{18}{5}$:\n$$20 \\times \\frac{18}{5} = 72 \\text{ km/h}.$$\n\n*(20 km/h is the trap — the m/s figure left unconverted.)*",
+      "source": "AP ICET 2026 2nd May 2026 Shift 2",
+      "source_year": 2026,
+      "options": [
+        {
+          "label": "60 km/h",
+          "is_correct": false
+        },
+        {
+          "label": "72 km/h",
+          "is_correct": true
+        },
+        {
+          "label": "75 km/h",
+          "is_correct": false
+        },
+        {
+          "label": "20 km/h",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Simple & Compound Interest",
+      "difficulty": "easy",
+      "answer_type": "single",
+      "stem": "If the simple interest at 8% per annum on a sum for 4 years is Rs. 1,280, the principal is:",
+      "explanation": "Rearrange $SI = \\dfrac{PRT}{100}$ for the principal:\n$$P = \\frac{100 \\times 1280}{8 \\times 4} = \\frac{128000}{32} = 4000.$$\n\nSo the principal is **Rs. 4,000**.",
+      "source": "AP ICET 2026 2nd May 2026 Shift 2",
+      "source_year": 2026,
+      "options": [
+        {
+          "label": "Rs. 3,600",
+          "is_correct": false
+        },
+        {
+          "label": "Rs. 4,000",
+          "is_correct": true
+        },
+        {
+          "label": "Rs. 4,200",
+          "is_correct": false
+        },
+        {
+          "label": "Rs. 4,500",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Time & Work",
+      "difficulty": "easy",
+      "answer_type": "single",
+      "stem": "A can do a piece of work in 12 days and B in 18 days. Working together, they will complete the work in:",
+      "explanation": "Add the one-day rates:\n$$\\frac1{12} + \\frac1{18} = \\frac{3+2}{36} = \\frac{5}{36}.$$\n\nSo together they need $\\dfrac{36}{5} = 7.2$ days.\n\n*(The answer must be less than 12 — a check that rules out 8 days and above.)*",
+      "source": "AP ICET 2026 2nd May 2026 Shift 2",
+      "source_year": 2026,
+      "options": [
+        {
+          "label": "6.2 days",
+          "is_correct": false
+        },
+        {
+          "label": "7.2 days",
+          "is_correct": true
+        },
+        {
+          "label": "7.5 days",
+          "is_correct": false
+        },
+        {
+          "label": "8 days",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Surds & Indices",
+      "difficulty": "very_hard",
+      "answer_type": "single",
+      "stem": "If $a^m = b^n = c^r$ and $c^3 = a^4 b^5$, then $\\dfrac{4n + 5m}{3} = ?$",
+      "explanation": "Set the common value to $k$, so\n$$a = k^{1/m},\\qquad b = k^{1/n},\\qquad c = k^{1/r}.$$\n\nSubstitute into $c^3 = a^4 b^5$ and compare exponents of $k$:\n$$\\frac{3}{r} = \\frac{4}{m} + \\frac{5}{n}.$$\n\nMultiply through by $mn$:\n$$\\frac{3mn}{r} = 4n + 5m \\Rightarrow \\frac{4n+5m}{3} = \\frac{mn}{r}.$$",
+      "source": "AP ICET 2026 2nd May 2026 Shift 2",
+      "source_year": 2026,
+      "options": [
+        {
+          "label": "$\\dfrac{m+n}{r}$",
+          "is_correct": false
+        },
+        {
+          "label": "$\\dfrac{mn}{r}$",
+          "is_correct": true
+        },
+        {
+          "label": "$\\dfrac{3m+2n}{2r+5m}$",
+          "is_correct": false
+        },
+        {
+          "label": "$\\dfrac{3b+5c}{2a}$",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Ratio & Proportion",
+      "difficulty": "hard",
+      "answer_type": "single",
+      "stem": "A 40-litre mixture contains milk and water in the ratio $3 : 1$. If 10 litres is removed from the mixture and 10 litres of water is added, the ratio of milk to water in the new mixture becomes ______.",
+      "explanation": "Start: milk $= \\frac34 \\times 40 = 30$ L, water $= 10$ L.\n\n**Removing 10 L** takes both liquids in the existing $3:1$ ratio — 7.5 L milk and 2.5 L water — leaving\n$$\\text{milk } 22.5, \\qquad \\text{water } 7.5.$$\n\n**Adding 10 L water:** water becomes $17.5$.\n\n$$22.5 : 17.5 = 45 : 35 = \\mathbf{9 : 7}.$$",
+      "source": "AP ICET 2026 2nd May 2026 Shift 2",
+      "source_year": 2026,
+      "options": [
+        {
+          "label": "5 : 3",
+          "is_correct": false
+        },
+        {
+          "label": "7 : 5",
+          "is_correct": false
+        },
+        {
+          "label": "9 : 7",
+          "is_correct": true
+        },
+        {
+          "label": "11 : 9",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Algebra",
+      "difficulty": "medium",
+      "answer_type": "single",
+      "stem": "Ram is three times as old as his son Rahul. Five years later Ram shall be two and a half times as old as his son. The present ages of Ram and Rahul are ______ and ______ respectively.",
+      "explanation": "Let Rahul be $r$, so Ram is $3r$. After five years:\n$$3r + 5 = 2.5(r + 5) = 2.5r + 12.5.$$\n\n$$0.5r = 7.5 \\Rightarrow r = 15,\\qquad 3r = 45.$$\n\nSo Ram is **45** and Rahul **15**. *(Check: in five years they are 50 and 20, and $50 = 2.5 \\times 20$ ✓)*",
+      "source": "AP ICET 2026 2nd May 2026 Shift 2",
+      "source_year": 2026,
+      "options": [
+        {
+          "label": "48 and 16",
+          "is_correct": false
+        },
+        {
+          "label": "51 and 17",
+          "is_correct": false
+        },
+        {
+          "label": "45 and 15",
+          "is_correct": true
+        },
+        {
+          "label": "42 and 14",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Time, Speed & Distance",
+      "difficulty": "hard",
+      "answer_type": "single",
+      "stem": "Two trains of length 300 m and 180 m moving in opposite directions cross each other in 20 seconds. If one train's speed is twice the other, then the speed of the faster train in km/h is ______",
+      "explanation": "Crossing means covering the **sum of the lengths** at the **relative** speed, which for opposite directions is the sum of the speeds:\n$$\\text{relative speed} = \\frac{300 + 180}{20} = 24 \\text{ m/s}.$$\n\nWith speeds $v$ and $2v$: $3v = 24 \\Rightarrow v = 8$, so the faster train runs at $16$ m/s.\n\n$$16 \\times \\frac{18}{5} = \\mathbf{57.6} \\text{ km/h}.$$",
+      "source": "AP ICET 2026 2nd May 2026 Shift 2",
+      "source_year": 2026,
+      "options": [
+        {
+          "label": "57.6",
+          "is_correct": true
+        },
+        {
+          "label": "65.5",
+          "is_correct": false
+        },
+        {
+          "label": "72.9",
+          "is_correct": false
+        },
+        {
+          "label": "81.2",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Surds & Indices",
+      "difficulty": "hard",
+      "answer_type": "single",
+      "stem": "The value of $\\sqrt[3]{101 + \\sqrt[3]{13824}} + \\sqrt[3]{\\dfrac{0.027}{0.008}} - \\sqrt{\\dfrac{0.09}{0.04}} = ?$",
+      "explanation": "Take the three terms separately.\n\n**First:** $\\sqrt[3]{13824} = 24$, so the inner value is $101 + 24 = 125$ and $\\sqrt[3]{125} = 5$.\n\n**Second:** $0.027 = 0.3^3$ and $0.008 = 0.2^3$, so the cube root is $\\dfrac{0.3}{0.2} = 1.5$.\n\n**Third:** $\\sqrt{\\dfrac{0.09}{0.04}} = \\dfrac{0.3}{0.2} = 1.5$.\n\n$$5 + 1.5 - 1.5 = \\mathbf{5}.$$",
+      "source": "AP ICET 2026 2nd May 2026 Shift 2",
+      "source_year": 2026,
+      "options": [
+        {
+          "label": "4",
+          "is_correct": false
+        },
+        {
+          "label": "6",
+          "is_correct": false
+        },
+        {
+          "label": "7",
+          "is_correct": false
+        },
+        {
+          "label": "5",
+          "is_correct": true
+        }
+      ]
+    },
+    {
+      "chapter": "Simple & Compound Interest",
+      "difficulty": "medium",
+      "answer_type": "single",
+      "stem": "A town's population grows at 12% per year. Given that the population will be 2,85,376 after three years, the current population is ______",
+      "explanation": "Growth at a fixed percentage is compound growth:\n$$P \\times (1.12)^3 = 285376.$$\n\nSince $1.12^3 = 1.404928$,\n$$P = \\frac{285376}{1.404928} = 2{,}03{,}125.$$\n\n*(Check forward: $203125 \\times 1.12 = 227500$, $\\times 1.12 = 254800$, $\\times 1.12 = 285376$ ✓)*",
+      "source": "AP ICET 2026 2nd May 2026 Shift 2",
+      "source_year": 2026,
+      "options": [
+        {
+          "label": "1,95,312",
+          "is_correct": false
+        },
+        {
+          "label": "1,98,750",
+          "is_correct": false
+        },
+        {
+          "label": "2,03,125",
+          "is_correct": true
+        },
+        {
+          "label": "2,12,500",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Time, Speed & Distance",
+      "difficulty": "very_hard",
+      "answer_type": "single",
+      "stem": "A man X started at station M at 10 am and reached station N at 1.45 pm. Another man Y started at M at 10.30 am and reached N at 1.30 pm. At what time did Y cross X before reaching station N?",
+      "explanation": "X takes 3 h 45 min $= 3.75$ h; Y takes 3 h. For a distance $D$, their speeds are $\\dfrac{D}{3.75}$ and $\\dfrac{D}{3}$.\n\nMeasuring $t$ in hours from 10 am, Y has been travelling for $t - 0.5$. They meet when the distances match:\n$$\\frac{t}{3.75} = \\frac{t - 0.5}{3} \\Rightarrow 3t = 3.75t - 1.875 \\Rightarrow 0.75t = 1.875,$$\nso $t = 2.5$ hours after 10 am — that is **12:30 pm**. ($D$ cancels, so the distance is never needed.)",
+      "source": "AP ICET 2026 2nd May 2026 Shift 2",
+      "source_year": 2026,
+      "options": [
+        {
+          "label": "12 noon",
+          "is_correct": false
+        },
+        {
+          "label": "11.45 am",
+          "is_correct": false
+        },
+        {
+          "label": "12.45 pm",
+          "is_correct": false
+        },
+        {
+          "label": "12.30 pm",
+          "is_correct": true
+        }
+      ]
+    },
+    {
+      "chapter": "LCM & HCF",
+      "difficulty": "medium",
+      "answer_type": "single",
+      "stem": "If the HCF of 546, 1155 and 1365 is P and the HCF of 252, 504 and 108 is Q, then $Q + P = ?$",
+      "explanation": "**P:** factorise — $546 = 2 \\cdot 3 \\cdot 7 \\cdot 13$, $1155 = 3 \\cdot 5 \\cdot 7 \\cdot 11$, $1365 = 3 \\cdot 5 \\cdot 7 \\cdot 13$. The shared primes are 3 and 7, so $P = 21$.\n\n**Q:** $252 = 2^2 \\cdot 3^2 \\cdot 7$, $504 = 2^3 \\cdot 3^2 \\cdot 7$, $108 = 2^2 \\cdot 3^3$. Taking the lowest power of each shared prime gives $2^2 \\cdot 3^2 = 36$.\n\n$$Q + P = 36 + 21 = \\mathbf{57}.$$",
+      "source": "AP ICET 2026 2nd May 2026 Shift 2",
+      "source_year": 2026,
+      "options": [
+        {
+          "label": "39",
+          "is_correct": false
+        },
+        {
+          "label": "45",
+          "is_correct": false
+        },
+        {
+          "label": "50",
+          "is_correct": false
+        },
+        {
+          "label": "57",
+          "is_correct": true
+        }
+      ]
+    },
+    {
+      "chapter": "Surds & Indices",
+      "difficulty": "hard",
+      "answer_type": "single",
+      "stem": "$\\dfrac{1}{\\sqrt2+1} + \\dfrac{1}{\\sqrt3+\\sqrt2} + \\dfrac{1}{\\sqrt4+\\sqrt3} + \\dfrac{1}{\\sqrt5+\\sqrt4} + \\cdots$ (35 terms) $=$",
+      "explanation": "Rationalise a general term — the denominator becomes 1:\n$$\\frac{1}{\\sqrt{n+1}+\\sqrt n} \\times \\frac{\\sqrt{n+1}-\\sqrt n}{\\sqrt{n+1}-\\sqrt n} = \\sqrt{n+1} - \\sqrt n.$$\n\nThe sum therefore **telescopes**:\n$$(\\sqrt2-\\sqrt1) + (\\sqrt3-\\sqrt2) + \\cdots + (\\sqrt{36}-\\sqrt{35}) = \\sqrt{36} - 1.$$\n\n$$= 6 - 1 = \\mathbf{5}.$$",
+      "source": "AP ICET 2026 2nd May 2026 Shift 2",
+      "source_year": 2026,
+      "options": [
+        {
+          "label": "3",
+          "is_correct": false
+        },
+        {
+          "label": "5",
+          "is_correct": true
+        },
+        {
+          "label": "6",
+          "is_correct": false
+        },
+        {
+          "label": "4",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Time & Work",
+      "difficulty": "medium",
+      "answer_type": "single",
+      "stem": "X takes twice as long as Y and thrice as long as Z to complete a work. All three together finish the work in 9 days. How many days does X take to do the work alone?",
+      "explanation": "Let X need $x$ days. Then Y needs $\\dfrac{x}{2}$ and Z needs $\\dfrac{x}{3}$, so their daily rates are $\\dfrac1x$, $\\dfrac2x$ and $\\dfrac3x$.\n\nTogether:\n$$\\frac1x + \\frac2x + \\frac3x = \\frac6x = \\frac19 \\Rightarrow x = 54.$$\n\nSo X alone takes **54 days** (Y takes 27, Z takes 18).",
+      "source": "AP ICET 2026 2nd May 2026 Shift 2",
+      "source_year": 2026,
+      "options": [
+        {
+          "label": "54",
+          "is_correct": true
+        },
+        {
+          "label": "36",
+          "is_correct": false
+        },
+        {
+          "label": "27",
+          "is_correct": false
+        },
+        {
+          "label": "18",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Time & Work",
+      "difficulty": "hard",
+      "answer_type": "single",
+      "stem": "A man P can do $\\dfrac14$ of a work in 10 days. A man Q can complete 40% of the same work in 40 days. R can complete $\\dfrac13$ of the same work in 13 days. Which of the following is correct?",
+      "explanation": "Scale each part-completion up to the whole job:\n\n- **P:** $\\dfrac14$ in 10 days $\\Rightarrow$ **40 days**.\n- **Q:** 40% in 40 days $\\Rightarrow$ **100 days**.\n- **R:** $\\dfrac13$ in 13 days $\\Rightarrow$ **39 days**.\n\nNow test the statements: R beats Q by 61 days (not 50), R beats P by 1 day (not 5), and Q is slower than R by 61 days (not 60).\n\nOnly **Q is slower than P by $100 - 40 = 60$ days** holds.",
+      "source": "AP ICET 2026 2nd May 2026 Shift 2",
+      "source_year": 2026,
+      "options": [
+        {
+          "label": "R is faster to complete the work than Q by 50 days",
+          "is_correct": false
+        },
+        {
+          "label": "R is faster to complete the work than P by 5 days",
+          "is_correct": false
+        },
+        {
+          "label": "Q is the slower to complete the work than P by 60 days",
+          "is_correct": true
+        },
+        {
+          "label": "Q is slower to complete the work than R by 60 days",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Profit, Loss & Discount",
+      "difficulty": "hard",
+      "answer_type": "single",
+      "stem": "A shopkeeper sells a packet weighing 900 g but labels it as 1 kg and claims a 10% profit on the cost price. The actual gain percentage is ______",
+      "explanation": "Take the cost as Rs. 1 per gram.\n\n- **What he actually gives:** 900 g, costing him **900**.\n- **What he charges:** the price of 1 kg with 10% profit $= 1000 \\times 1.1 = 1100$.\n\n$$\\text{Gain \\%} = \\frac{1100 - 900}{900} \\times 100 = \\frac{200}{900} \\times 100 = 22.2\\%.$$\n\nThe short weight adds roughly 11% on top of the declared 10%.",
+      "source": "AP ICET 2026 2nd May 2026 Shift 2",
+      "source_year": 2026,
+      "options": [
+        {
+          "label": "21%",
+          "is_correct": false
+        },
+        {
+          "label": "21.2%",
+          "is_correct": false
+        },
+        {
+          "label": "22.2%",
+          "is_correct": true
+        },
+        {
+          "label": "25%",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Percentages",
+      "difficulty": "medium",
+      "answer_type": "single",
+      "stem": "The population of a village increases by 10% at the end of a year. By the end of the next year it decreases by 10%. If the population at the end of the second year is 44,451, the population at the beginning of the first year was",
+      "explanation": "A 10% rise followed by a 10% fall does **not** return to the start — it leaves\n$$P \\times 1.1 \\times 0.9 = 0.99P,$$\na net 1% loss.\n\n$$0.99P = 44451 \\Rightarrow P = \\frac{44451}{0.99} = \\mathbf{44900}.$$",
+      "source": "AP ICET 2026 2nd May 2026 Shift 2",
+      "source_year": 2026,
+      "options": [
+        {
+          "label": "44900",
+          "is_correct": true
+        },
+        {
+          "label": "43520",
+          "is_correct": false
+        },
+        {
+          "label": "45260",
+          "is_correct": false
+        },
+        {
+          "label": "44800",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Algebra",
+      "difficulty": "hard",
+      "answer_type": "single",
+      "stem": "If one root of the equation $ax^2 + bx + c = 0$ is three times the other, then ____",
+      "explanation": "Let the roots be $\\alpha$ and $3\\alpha$.\n\n**Sum:** $4\\alpha = -\\dfrac{b}{a} \\Rightarrow \\alpha = -\\dfrac{b}{4a}$.\n\n**Product:** $3\\alpha^2 = \\dfrac{c}{a}$.\n\nSubstitute $\\alpha$:\n$$3 \\cdot \\frac{b^2}{16a^2} = \\frac{c}{a} \\Rightarrow 3b^2 = 16ac.$$",
+      "source": "AP ICET 2026 2nd May 2026 Shift 2",
+      "source_year": 2026,
+      "options": [
+        {
+          "label": "$b^2 = 16ac$",
+          "is_correct": false
+        },
+        {
+          "label": "$b^2 = 3ac$",
+          "is_correct": false
+        },
+        {
+          "label": "$3b^2 = 16ac$",
+          "is_correct": true
+        },
+        {
+          "label": "$16b^2 = 3ac$",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Surds & Indices",
+      "difficulty": "hard",
+      "answer_type": "single",
+      "stem": "Evaluating $\\sqrt{18 + 12\\sqrt2} - \\sqrt{18 - 12\\sqrt2}$ produces its value as ______",
+      "explanation": "Call the expression $E$ and square it — the cross terms combine neatly:\n$$E^2 = (18+12\\sqrt2) + (18-12\\sqrt2) - 2\\sqrt{(18+12\\sqrt2)(18-12\\sqrt2)}.$$\n\nThe product inside is a difference of squares:\n$$18^2 - (12\\sqrt2)^2 = 324 - 288 = 36.$$\n\nSo $E^2 = 36 - 2(6) = 24$, giving $E = \\sqrt{24}$ (positive, since the first surd is the larger).",
+      "source": "AP ICET 2026 2nd May 2026 Shift 2",
+      "source_year": 2026,
+      "options": [
+        {
+          "label": "$\\sqrt{48}$",
+          "is_correct": false
+        },
+        {
+          "label": "$\\sqrt{32}$",
+          "is_correct": false
+        },
+        {
+          "label": "$\\sqrt{24}$",
+          "is_correct": true
+        },
+        {
+          "label": "$\\sqrt{16}$",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Surds & Indices",
+      "difficulty": "very_hard",
+      "answer_type": "single",
+      "stem": "If $\\dfrac{3^4 \\cdot 6^4 \\cdot 12^3 \\cdot 8^5}{(243)^4 (36)^3} = \\left(\\dfrac13\\right)^m \\left(\\dfrac12\\right)^n$, then $(m+n)^{(m-n)} = $ ______",
+      "explanation": "Reduce everything to powers of 2 and 3.\n\n**Numerator:** $3^4 \\cdot (2\\cdot3)^4 \\cdot (2^2\\cdot3)^3 \\cdot (2^3)^5 = 2^{4+6+15} \\cdot 3^{4+4+3} = 2^{25} \\cdot 3^{11}$.\n\n**Denominator:** $(3^5)^4 \\cdot (2^2 3^2)^3 = 2^6 \\cdot 3^{26}$.\n\n**Ratio:** $2^{19} \\cdot 3^{-15} = \\left(\\frac13\\right)^{15}\\left(\\frac12\\right)^{-19}$, so $m = 15$ and $n = -19$.\n\n$$(m+n)^{(m-n)} = (-4)^{34} = 4^{34} = 2^{68}$$\n(the exponent is even, so the sign is positive).",
+      "source": "AP ICET 2026 2nd May 2026 Shift 2",
+      "source_year": 2026,
+      "options": [
+        {
+          "label": "$3^{12}$",
+          "is_correct": false
+        },
+        {
+          "label": "$5^{23}$",
+          "is_correct": false
+        },
+        {
+          "label": "$2^{68}$",
+          "is_correct": true
+        },
+        {
+          "label": "$7^{21}$",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Profit, Loss & Discount",
+      "difficulty": "medium",
+      "answer_type": "single",
+      "stem": "The cost price of $x$ items is equal to the selling price of $y$ items $(x > y)$. The profit earned by selling an article is 25%. Then the ratio of $x$ to $y$ is ______",
+      "explanation": "The condition $x \\cdot CP = y \\cdot SP$ rearranges to\n$$\\frac{x}{y} = \\frac{SP}{CP}.$$\n\nA 25% profit means $SP = 1.25\\,CP$, so\n$$\\frac{x}{y} = 1.25 = \\frac54.$$\n\nThat $x > y$ is consistent — selling fewer items for the same money is exactly what a profit means.",
+      "source": "AP ICET 2026 2nd May 2026 Shift 2",
+      "source_year": 2026,
+      "options": [
+        {
+          "label": "1 : 4",
+          "is_correct": false
+        },
+        {
+          "label": "3 : 4",
+          "is_correct": false
+        },
+        {
+          "label": "7 : 4",
+          "is_correct": false
+        },
+        {
+          "label": "5 : 4",
+          "is_correct": true
+        }
+      ]
+    },
+    {
+      "chapter": "Profit, Loss & Discount",
+      "difficulty": "hard",
+      "answer_type": "single",
+      "stem": "When the selling price of an article is tripled, the profit becomes 5 times the original profit. The original profit percentage is ______",
+      "explanation": "Let the cost be $C$ and the selling price $S$, so the original profit is $S - C$.\n\nTripling the selling price:\n$$3S - C = 5(S - C) \\Rightarrow 3S - C = 5S - 5C \\Rightarrow 4C = 2S \\Rightarrow S = 2C.$$\n\nThe original profit is therefore $2C - C = C$, i.e.\n$$\\frac{C}{C} \\times 100 = \\mathbf{100\\%}.$$",
+      "source": "AP ICET 2026 2nd May 2026 Shift 2",
+      "source_year": 2026,
+      "options": [
+        {
+          "label": "75%",
+          "is_correct": false
+        },
+        {
+          "label": "50%",
+          "is_correct": false
+        },
+        {
+          "label": "80%",
+          "is_correct": false
+        },
+        {
+          "label": "100%",
+          "is_correct": true
+        }
+      ]
+    },
+    {
+      "chapter": "Pipes & Cisterns",
+      "difficulty": "medium",
+      "answer_type": "single",
+      "stem": "Two inlet pipes fill a tank in 8 hours and 12 hours, and a drainpipe empties it in 6 hours. If all three are opened simultaneously, how long does it take to fill the tank completely?",
+      "explanation": "Add the inlet rates and subtract the outlet rate:\n$$\\frac18 + \\frac1{12} - \\frac16 = \\frac{3 + 2 - 4}{24} = \\frac{1}{24}.$$\n\nThe net rate is positive, so the tank **does** fill — in **24 hours**.\n\n*(Had the drain been faster than the two inlets combined, the net rate would be negative and \"never going to be filled\" would be right — which is what option 1 tests.)*",
+      "source": "AP ICET 2026 2nd May 2026 Shift 2",
+      "source_year": 2026,
+      "options": [
+        {
+          "label": "Never going to be filled",
+          "is_correct": false
+        },
+        {
+          "label": "16 hours",
+          "is_correct": false
+        },
+        {
+          "label": "20 hours",
+          "is_correct": false
+        },
+        {
+          "label": "24 hours",
+          "is_correct": true
+        }
+      ]
+    },
+    {
+      "chapter": "Surds & Indices",
+      "difficulty": "very_hard",
+      "answer_type": "single",
+      "stem": "The value of $\\dfrac{\\sqrt5-\\sqrt3}{\\sqrt5+\\sqrt3} - \\dfrac{\\sqrt3+\\sqrt5}{\\sqrt3-\\sqrt5} - \\dfrac{\\sqrt7+\\sqrt3}{\\sqrt7-\\sqrt3}$ is ______",
+      "explanation": "Rationalise each fraction in turn.\n\n**First:** $\\dfrac{(\\sqrt5-\\sqrt3)^2}{5-3} = \\dfrac{8-2\\sqrt{15}}{2} = 4-\\sqrt{15}$.\n\n**Second:** $\\dfrac{(\\sqrt3+\\sqrt5)^2}{3-5} = \\dfrac{8+2\\sqrt{15}}{-2} = -(4+\\sqrt{15})$ — note the **negative** denominator.\n\n**Third:** $\\dfrac{(\\sqrt7+\\sqrt3)^2}{7-3} = \\dfrac{10+2\\sqrt{21}}{4} = \\dfrac{5+\\sqrt{21}}{2}$.\n\nNow combine — subtracting the second term flips its sign back:\n$$(4-\\sqrt{15}) + (4+\\sqrt{15}) - \\frac{5+\\sqrt{21}}{2} = 8 - \\frac{5+\\sqrt{21}}{2} = \\frac{11-\\sqrt{21}}{2}.$$",
+      "source": "AP ICET 2026 2nd May 2026 Shift 2",
+      "source_year": 2026,
+      "options": [
+        {
+          "label": "$\\dfrac{11-\\sqrt{21}}{2}$",
+          "is_correct": true
+        },
+        {
+          "label": "$\\dfrac{11+\\sqrt{21}}{2}$",
+          "is_correct": false
+        },
+        {
+          "label": "$\\dfrac{11+\\sqrt{21}}{4}$",
+          "is_correct": false
+        },
+        {
+          "label": "$\\dfrac{16-\\sqrt{21}}{2}$",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Percentages",
+      "difficulty": "medium",
+      "answer_type": "single",
+      "stem": "A value is successively increased by 30%, decreased by 20%, and then increased by 10%. Then the net percentage change in the value is ______",
+      "explanation": "Successive percentage changes **multiply**; they do not add.\n$$1.30 \\times 0.80 \\times 1.10 = 1.144.$$\n\nSo the value ends at 114.4% of the original — a **14.40% increase**.\n\n*(Adding $+30 - 20 + 10$ gives 20%, the trap in option 4.)*",
+      "source": "AP ICET 2026 2nd May 2026 Shift 2",
+      "source_year": 2026,
+      "options": [
+        {
+          "label": "14.40% increase",
+          "is_correct": true
+        },
+        {
+          "label": "16.00% increase",
+          "is_correct": false
+        },
+        {
+          "label": "16.67% increase",
+          "is_correct": false
+        },
+        {
+          "label": "20.00% increase",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Partnership",
+      "difficulty": "hard",
+      "answer_type": "single",
+      "stem": "A, B and C invest Rs. 45,000 each. A is a working partner and gets 10% of the profit as salary. The remaining profit is split equally. If A gets Rs. 10,000 more than B, then the combined total profit is ______",
+      "explanation": "Let the total profit be $P$.\n\n- A's salary: $0.1P$.\n- The remaining $0.9P$ splits three ways: $0.3P$ each.\n\nSo A receives $0.1P + 0.3P = 0.4P$ while B receives $0.3P$, and the gap is exactly A's salary:\n$$0.4P - 0.3P = 0.1P = 10000 \\Rightarrow P = \\textbf{Rs. } 1{,}00{,}000.$$\n\nThe equal investments of 45,000 never enter the calculation — they only justify the equal split.",
+      "source": "AP ICET 2026 2nd May 2026 Shift 2",
+      "source_year": 2026,
+      "options": [
+        {
+          "label": "Rs. 100000",
+          "is_correct": true
+        },
+        {
+          "label": "Rs. 125000",
+          "is_correct": false
+        },
+        {
+          "label": "Rs. 150000",
+          "is_correct": false
+        },
+        {
+          "label": "Rs. 200000",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Ratio & Proportion",
+      "difficulty": "easy",
+      "answer_type": "single",
+      "stem": "A company produced three types of items P, Q and R whose quantities are in the ratio $3 : 5 : 7$. If the difference between the production of Q and R is 200 items, what is the production of P?",
+      "explanation": "The gap between Q and R is $7 - 5 = 2$ parts, and that equals 200 items:\n$$1 \\text{ part} = 100.$$\n\nP is 3 parts:\n$$3 \\times 100 = \\mathbf{300}.$$",
+      "source": "AP ICET 2026 2nd May 2026 Shift 2",
+      "source_year": 2026,
+      "options": [
+        {
+          "label": "300",
+          "is_correct": true
+        },
+        {
+          "label": "200",
+          "is_correct": false
+        },
+        {
+          "label": "250",
+          "is_correct": false
+        },
+        {
+          "label": "350",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Number System",
+      "difficulty": "very_hard",
+      "answer_type": "single",
+      "stem": "What is the remainder when $6^{322} - 3^{100} - (-7)^{99}$ is divided by 4?",
+      "explanation": "Take each term modulo 4.\n\n- $6 \\equiv 2$, and $6^{322}$ contains $2^{322}$, so it is divisible by 4: $\\equiv 0$.\n- $3 \\equiv -1$, so $3^{100} \\equiv (-1)^{100} = 1$.\n- $-7 \\equiv 1 \\pmod 4$ (since $-7 + 8 = 1$), so $(-7)^{99} \\equiv 1$.\n\nCombine:\n$$0 - 1 - 1 = -2 \\equiv \\mathbf{2} \\pmod 4.$$\n\n*(A negative intermediate result must be brought back into the range 0-3 by adding the modulus.)*",
+      "source": "AP ICET 2026 2nd May 2026 Shift 2",
+      "source_year": 2026,
+      "options": [
+        {
+          "label": "0",
+          "is_correct": false
+        },
+        {
+          "label": "1",
+          "is_correct": false
+        },
+        {
+          "label": "2",
+          "is_correct": true
+        },
+        {
+          "label": "3",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Surds & Indices",
+      "difficulty": "hard",
+      "answer_type": "single",
+      "stem": "If $x = \\sqrt4 - \\sqrt5$, $y = \\sqrt5 - \\sqrt6$, $z = \\sqrt6 - \\sqrt7$ and $t = \\sqrt8 - \\sqrt7$, then the increasing order of these numbers is",
+      "explanation": "The first three are **negative** (each subtracts a larger root), while $t$ is positive.\n\nAmong the negatives, consecutive square roots draw closer together as the numbers grow, so the gaps shrink and the values rise towards zero:\n$$x \\approx -0.236 < y \\approx -0.213 < z \\approx -0.196 < 0 < t \\approx 0.183.$$\n\nSo the increasing order is $x < y < z < t$.",
+      "source": "AP ICET 2026 2nd May 2026 Shift 2",
+      "source_year": 2026,
+      "options": [
+        {
+          "label": "$x < y < z < t$",
+          "is_correct": true
+        },
+        {
+          "label": "$t < z < y < x$",
+          "is_correct": false
+        },
+        {
+          "label": "$z < y < x < t$",
+          "is_correct": false
+        },
+        {
+          "label": "$y < t < x < z$",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Time, Speed & Distance",
+      "difficulty": "easy",
+      "answer_type": "single",
+      "stem": "A boat travels at 12 km/hr in still water and the current flows at 3 km/hr. Find the total time to travel 45 km upstream and then 45 km back downstream.",
+      "explanation": "**Upstream** the current opposes: $12 - 3 = 9$ km/hr, so $\\dfrac{45}{9} = 5$ hours.\n\n**Downstream** it assists: $12 + 3 = 15$ km/hr, so $\\dfrac{45}{15} = 3$ hours.\n\n$$\\text{Total} = 5 + 3 = \\mathbf{8 \\text{ hours}}.$$\n\n*(Note the round trip takes longer than the 7.5 hours it would take at 12 km/hr throughout — the slow leg costs more than the fast leg saves.)*",
+      "source": "AP ICET 2026 2nd May 2026 Shift 2",
+      "source_year": 2026,
+      "options": [
+        {
+          "label": "7.5 hours",
+          "is_correct": false
+        },
+        {
+          "label": "8 hours",
+          "is_correct": true
+        },
+        {
+          "label": "8.5 hours",
+          "is_correct": false
+        },
+        {
+          "label": "9 hours",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Mean, Median & Mode",
+      "difficulty": "very_hard",
+      "answer_type": "single",
+      "stem": "$P, Q, R, S$ represent the marks obtained by 4 students. If the averages of $P,Q,R$; $Q,R,S$; $R,S,P$; and $S,P,Q$ are respectively $\\dfrac{31}{3}, \\dfrac{41}{3}, \\dfrac{37}{3}$ and $\\dfrac{35}{3}$, then $R - P = $ ______",
+      "explanation": "Multiply each average by 3 to get the four triple-sums:\n$$P+Q+R = 31,\\quad Q+R+S = 41,\\quad R+S+P = 37,\\quad S+P+Q = 35.$$\n\nSubtract the **fourth** from the **second** — $Q$ and $S$... in fact $Q$ cancels and so does the rest:\n$$(Q+R+S) - (S+P+Q) = R - P = 41 - 35 = 6.$$\n\nSimilarly $(R+S+P) - (P+Q+R) = S - Q = 37 - 31 = 6$.\n\nBoth differences equal 6, so $R - P = \\mathbf{S - Q}$.",
+      "source": "AP ICET 2026 2nd May 2026 Shift 2",
+      "source_year": 2026,
+      "options": [
+        {
+          "label": "$2(Q-S)$",
+          "is_correct": false
+        },
+        {
+          "label": "$(Q+S)$",
+          "is_correct": false
+        },
+        {
+          "label": "$2S-Q$",
+          "is_correct": false
+        },
+        {
+          "label": "$S-Q$",
+          "is_correct": true
+        }
+      ]
+    },
+    {
+      "chapter": "Limits & Derivatives",
+      "difficulty": "medium",
+      "answer_type": "single",
+      "stem": "$\\lim\\limits_{x \\to 2} \\dfrac{x^2 + 3x - 10}{x^2 - 5x + 6} = $",
+      "explanation": "Direct substitution gives $\\dfrac00$, so factorise and cancel the common root.\n$$\\frac{(x+5)(x-2)}{(x-2)(x-3)} = \\frac{x+5}{x-3} \\quad (x \\neq 2).$$\n\nNow substitute $x = 2$:\n$$\\frac{7}{-1} = \\mathbf{-7}.$$\n\n*(The negative sign comes from $2 - 3$; missing it gives the trap answer 7.)*",
+      "source": "AP ICET 2026 2nd May 2026 Shift 2",
+      "source_year": 2026,
+      "options": [
+        {
+          "label": "5",
+          "is_correct": false
+        },
+        {
+          "label": "-5",
+          "is_correct": false
+        },
+        {
+          "label": "7",
+          "is_correct": false
+        },
+        {
+          "label": "-7",
+          "is_correct": true
+        }
+      ]
+    },
+    {
+      "chapter": "Matrices & Determinants",
+      "difficulty": "medium",
+      "answer_type": "single",
+      "stem": "For any square matrix $A$, $AA^T$ is",
+      "explanation": "A matrix is symmetric when it equals its own transpose. Test $AA^T$:\n$$(AA^T)^T = (A^T)^T A^T = A A^T.$$\n\nSo $AA^T$ always equals its transpose — it is a **symmetric matrix**, whatever $A$ is.\n\nIt is not generally the unit or a diagonal matrix, and a skew-symmetric matrix would require $(AA^T)^T = -AA^T$.",
+      "source": "AP ICET 2026 2nd May 2026 Shift 2",
+      "source_year": 2026,
+      "options": [
+        {
+          "label": "Unit matrix",
+          "is_correct": false
+        },
+        {
+          "label": "Symmetric matrix",
+          "is_correct": true
+        },
+        {
+          "label": "Skew symmetric matrix",
+          "is_correct": false
+        },
+        {
+          "label": "Diagonal matrix",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Mensuration",
+      "difficulty": "hard",
+      "answer_type": "single",
+      "stem": "A boy is cycling in such a way that the wheels of the cycle make 140 revolutions per minute. If the diameter of a wheel is 60 cm, the speed per hour is",
+      "explanation": "One revolution advances the cycle by the wheel's **circumference**:\n$$\\pi d = \\frac{22}{7} \\times 0.6 \\approx 1.886 \\text{ m}.$$\n\nIn a minute: $140 \\times 1.886 \\approx 264$ m, so in an hour:\n$$264 \\times 60 \\approx 15840 \\text{ m} = \\mathbf{15.84 \\text{ km/hr}}.$$\n\n*(Watch the near-identical distractor 15.48 — a digit swap.)*",
+      "source": "AP ICET 2026 2nd May 2026 Shift 2",
+      "source_year": 2026,
+      "options": [
+        {
+          "label": "18.54 km/hr",
+          "is_correct": false
+        },
+        {
+          "label": "14.84 km/hr",
+          "is_correct": false
+        },
+        {
+          "label": "15.84 km/hr",
+          "is_correct": true
+        },
+        {
+          "label": "15.48 km/hr",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Mensuration",
+      "difficulty": "medium",
+      "answer_type": "single",
+      "stem": "If three cubes each with sides of 5 cm are joined in a row end to end, the surface area of the resulting cuboid is ____ cm²",
+      "explanation": "Joining three 5 cm cubes in a row gives a cuboid $15 \\times 5 \\times 5$.\n\n$$SA = 2(lb + bh + hl) = 2(15 \\cdot 5 + 5 \\cdot 5 + 15 \\cdot 5) = 2(75 + 25 + 75) = \\mathbf{350}.$$\n\n*(Three separate cubes would total $3 \\times 150 = 450$ cm²; joining them hides four faces of 25 cm² each, i.e. 100 cm².)*",
+      "source": "AP ICET 2026 2nd May 2026 Shift 2",
+      "source_year": 2026,
+      "options": [
+        {
+          "label": "400",
+          "is_correct": false
+        },
+        {
+          "label": "300",
+          "is_correct": false
+        },
+        {
+          "label": "350",
+          "is_correct": true
+        },
+        {
+          "label": "500",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Trigonometry",
+      "difficulty": "hard",
+      "answer_type": "single",
+      "stem": "$\\dfrac{1-\\sin^2 x}{1+\\tan^2 x} + \\dfrac{1-\\cos^2 x}{1+\\cot^2 x} + 2\\sin^2 x \\cos^2 x = $",
+      "explanation": "Use the Pythagorean identities on each piece:\n$$1-\\sin^2 x = \\cos^2 x,\\quad 1+\\tan^2 x = \\sec^2 x,\\quad 1-\\cos^2 x = \\sin^2 x,\\quad 1+\\cot^2 x = \\operatorname{cosec}^2 x.$$\n\nSo the first two terms become\n$$\\frac{\\cos^2 x}{\\sec^2 x} = \\cos^4 x, \\qquad \\frac{\\sin^2 x}{\\operatorname{cosec}^2 x} = \\sin^4 x.$$\n\nAdding the third term completes a square:\n$$\\cos^4 x + \\sin^4 x + 2\\sin^2 x\\cos^2 x = (\\sin^2 x + \\cos^2 x)^2 = \\mathbf{1}.$$",
+      "source": "AP ICET 2026 2nd May 2026 Shift 2",
+      "source_year": 2026,
+      "options": [
+        {
+          "label": "1",
+          "is_correct": true
+        },
+        {
+          "label": "$\\sin^2 x - \\cos^2 x$",
+          "is_correct": false
+        },
+        {
+          "label": "$\\tan^2 x + \\cot^2 x$",
+          "is_correct": false
+        },
+        {
+          "label": "$-1$",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Mensuration",
+      "difficulty": "easy",
+      "answer_type": "single",
+      "stem": "The area of an equilateral triangle is equal to $36\\sqrt3$. What is its base length?",
+      "explanation": "For an equilateral triangle of side $a$:\n$$\\frac{\\sqrt3}{4}a^2 = 36\\sqrt3.$$\n\nThe $\\sqrt3$ cancels:\n$$a^2 = 144 \\Rightarrow a = \\mathbf{12}.$$",
+      "source": "AP ICET 2026 2nd May 2026 Shift 2",
+      "source_year": 2026,
+      "options": [
+        {
+          "label": "24",
+          "is_correct": false
+        },
+        {
+          "label": "36",
+          "is_correct": false
+        },
+        {
+          "label": "$12\\sqrt3$",
+          "is_correct": false
+        },
+        {
+          "label": "12",
+          "is_correct": true
+        }
+      ]
+    },
+    {
+      "chapter": "Time, Speed & Distance",
+      "difficulty": "medium",
+      "answer_type": "single",
+      "stem": "If a distance of 25 km is covered in 4 hours, partly on foot at 3.5 km/hr and partly on a vehicle at 9 km/hr, the distance covered on foot is ____ km.",
+      "explanation": "Let the walking distance be $d$, so the ride covers $25 - d$. The two times add to 4 hours:\n$$\\frac{d}{3.5} + \\frac{25-d}{9} = 4.$$\n\nMultiply through by 63:\n$$18d + 7(25 - d) = 252 \\Rightarrow 11d + 175 = 252 \\Rightarrow d = \\mathbf{7}.$$\n\n*(Check: 7 km on foot takes 2 h, 18 km by vehicle takes 2 h ✓)*",
+      "source": "AP ICET 2026 2nd May 2026 Shift 2",
+      "source_year": 2026,
+      "options": [
+        {
+          "label": "4",
+          "is_correct": false
+        },
+        {
+          "label": "6",
+          "is_correct": false
+        },
+        {
+          "label": "7",
+          "is_correct": true
+        },
+        {
+          "label": "5",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Geometry",
+      "difficulty": "easy",
+      "answer_type": "single",
+      "stem": "The tangent to a circle ____ the radius line passing through the point of contact.",
+      "explanation": "A tangent touches the circle at exactly one point, and the radius drawn to that point is always **perpendicular** to it — the standard tangent-radius property.\n\nThe tangent does touch the circle (ruling out options 3 and 4), and it cannot be parallel to that radius, since the two meet at the point of contact.",
+      "source": "AP ICET 2026 2nd May 2026 Shift 2",
+      "source_year": 2026,
+      "options": [
+        {
+          "label": "is parallel to",
+          "is_correct": false
+        },
+        {
+          "label": "is perpendicular to",
+          "is_correct": true
+        },
+        {
+          "label": "Does not touch",
+          "is_correct": false
+        },
+        {
+          "label": "is away from",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Geometry",
+      "difficulty": "medium",
+      "answer_type": "single",
+      "stem": "Which of the following is correct?\n\n(i) All congruent figures are similar but the converse is not true.\n\n(ii) Two figures that have the same shape but not necessarily the same size are called similar figures.\n\n(iii) The ratio of the areas of two similar triangles is equal to the square of the ratio of their corresponding sides.",
+      "explanation": "Check each:\n\n- **(i) True.** Congruent figures have the same shape *and* size, so they are similar; similar figures need not be congruent (a small and a large equilateral triangle).\n- **(ii) True.** That is the definition of similarity.\n- **(iii) True.** Lengths scale by $k$, so areas scale by $k^2$.\n\nAll three hold, so the answer is **(i), (ii) and (iii)**.",
+      "source": "AP ICET 2026 2nd May 2026 Shift 2",
+      "source_year": 2026,
+      "options": [
+        {
+          "label": "(i) and (ii)",
+          "is_correct": false
+        },
+        {
+          "label": "(i) and (iii)",
+          "is_correct": false
+        },
+        {
+          "label": "(ii) and (iii)",
+          "is_correct": false
+        },
+        {
+          "label": "(i), (ii) and (iii)",
+          "is_correct": true
+        }
+      ]
+    },
+    {
+      "chapter": "Heights & Distances",
+      "difficulty": "hard",
+      "answer_type": "single",
+      "stem": "The angles of depression of two objects seen from a helicopter are $45^\\circ$ and $60^\\circ$, and the two objects are respectively at distances $x\\sqrt2$ and $y\\sqrt3$ from it. If both objects are on the same side of the helicopter, then $x : y = $ ____",
+      "explanation": "The given distances are along the **line of sight**, so use the sine of the depression angle to get the common height $h$.\n\n$$\\sin 45^\\circ = \\frac{h}{x\\sqrt2} \\Rightarrow h = x\\sqrt2 \\cdot \\frac{1}{\\sqrt2} = x.$$\n$$\\sin 60^\\circ = \\frac{h}{y\\sqrt3} \\Rightarrow h = y\\sqrt3 \\cdot \\frac{\\sqrt3}{2} = \\frac{3y}{2}.$$\n\nBoth equal the same height, so $x = \\dfrac{3y}{2}$ and\n$$x : y = \\mathbf{3 : 2}.$$",
+      "source": "AP ICET 2026 2nd May 2026 Shift 2",
+      "source_year": 2026,
+      "options": [
+        {
+          "label": "1 : 2",
+          "is_correct": false
+        },
+        {
+          "label": "4 : 5",
+          "is_correct": false
+        },
+        {
+          "label": "2 : 5",
+          "is_correct": false
+        },
+        {
+          "label": "3 : 2",
+          "is_correct": true
+        }
+      ]
+    },
+    {
+      "chapter": "Algebra",
+      "difficulty": "hard",
+      "answer_type": "single",
+      "stem": "If $\\alpha$ and $\\beta$ are the roots of the quadratic polynomial $f(x) = 5x^2 + 6x + 9$, then $\\dfrac{1}{\\alpha^2} + \\dfrac{1}{\\beta^2} = $ ____",
+      "explanation": "From the coefficients: $\\alpha + \\beta = -\\dfrac65$ and $\\alpha\\beta = \\dfrac95$.\n\nCombine the fractions and use the identity $\\alpha^2+\\beta^2 = (\\alpha+\\beta)^2 - 2\\alpha\\beta$:\n$$\\frac{1}{\\alpha^2}+\\frac{1}{\\beta^2} = \\frac{\\alpha^2+\\beta^2}{(\\alpha\\beta)^2} = \\frac{\\frac{36}{25} - \\frac{18}{5}}{\\frac{81}{25}}.$$\n\nThe numerator is $\\dfrac{36-90}{25} = -\\dfrac{54}{25}$, so the value is\n$$-\\frac{54}{25} \\times \\frac{25}{81} = -\\frac{54}{81} = \\mathbf{-\\frac23}.$$\n\n*(A negative result is fine — the roots are complex, so $\\alpha^2 + \\beta^2$ can be negative.)*",
+      "source": "AP ICET 2026 2nd May 2026 Shift 2",
+      "source_year": 2026,
+      "options": [
+        {
+          "label": "$\\dfrac43$",
+          "is_correct": false
+        },
+        {
+          "label": "$\\dfrac{-4}{3}$",
+          "is_correct": false
+        },
+        {
+          "label": "$\\dfrac23$",
+          "is_correct": false
+        },
+        {
+          "label": "$\\dfrac{-2}{3}$",
+          "is_correct": true
+        }
+      ]
+    },
+    {
+      "chapter": "Coordinate Geometry",
+      "difficulty": "hard",
+      "answer_type": "single",
+      "stem": "If $(2,1)$ and $(4,5)$ are the two ends of a diameter of a circle, then which among the following is a point on the circle?",
+      "explanation": "The centre is the midpoint of the diameter:\n$$\\left(\\frac{2+4}{2}, \\frac{1+5}{2}\\right) = (3,3),$$\nand the radius is half the diameter's length:\n$$r = \\frac12\\sqrt{(4-2)^2 + (5-1)^2} = \\frac{\\sqrt{20}}{2} = \\sqrt5.$$\n\nTest the offsets from $(3,3)$. For option 3 the offsets are $\\left(\\frac{\\sqrt5}{\\sqrt2}, -\\frac{\\sqrt5}{\\sqrt2}\\right)$, giving\n$$\\sqrt{\\frac52 + \\frac52} = \\sqrt5 = r \\ \\checkmark$$",
+      "source": "AP ICET 2026 2nd May 2026 Shift 2",
+      "source_year": 2026,
+      "options": [
+        {
+          "label": "$(3+\\sqrt5,\\ 3-\\sqrt5)$",
+          "is_correct": false
+        },
+        {
+          "label": "$\\left(3+\\frac{\\sqrt5}{\\sqrt2},\\ 3-2\\sqrt5\\right)$",
+          "is_correct": false
+        },
+        {
+          "label": "$\\left(3+\\frac{\\sqrt5}{\\sqrt2},\\ 3-\\frac{\\sqrt5}{\\sqrt2}\\right)$",
+          "is_correct": true
+        },
+        {
+          "label": "$(3-\\sqrt5,\\ 3+3\\sqrt5)$",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Set Theory",
+      "difficulty": "hard",
+      "answer_type": "single",
+      "stem": "$R$ is a relation on the set of all real numbers defined as $xRy$ if and only if $|x-y| \\le \\dfrac12$. Then $R$ is",
+      "explanation": "Test the three properties.\n\n- **Reflexive** ✓: $|x-x| = 0 \\le \\frac12$ for every $x$.\n- **Symmetric** ✓: $|x-y| = |y-x|$, so the condition is unchanged by swapping.\n- **Transitive** ✗: take $x = 0$, $y = 0.5$, $z = 1$. Then $xRy$ and $yRz$ hold, but $|0-1| = 1 > \\frac12$.\n\nSo $R$ is **reflexive and symmetric but not transitive** — and therefore not an equivalence relation.",
+      "source": "AP ICET 2026 2nd May 2026 Shift 2",
+      "source_year": 2026,
+      "options": [
+        {
+          "label": "Reflexive and symmetric but not transitive",
+          "is_correct": true
+        },
+        {
+          "label": "Symmetric and transitive but not reflexive",
+          "is_correct": false
+        },
+        {
+          "label": "Transitive and reflexive but not symmetric",
+          "is_correct": false
+        },
+        {
+          "label": "Equivalence relation",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Mensuration",
+      "difficulty": "medium",
+      "answer_type": "single",
+      "stem": "Consider a piece of wire of length 44 cm. **Option 1:** bend the wire into a perfect circle. **Option 2:** bend the wire into a square. Taking $\\pi = \\dfrac{22}{7}$, which option has more area and by how much?",
+      "explanation": "The wire's length is the perimeter in both cases.\n\n**Circle:** $2\\pi r = 44 \\Rightarrow r = 7$, so area $= \\dfrac{22}{7} \\times 49 = 154$ cm².\n\n**Square:** side $= \\dfrac{44}{4} = 11$, so area $= 121$ cm².\n\n$$154 - 121 = 33 \\text{ cm}^2 \\text{ more for the circle.}$$\n\n*(For a fixed perimeter the circle always encloses the most area — so only the amount needed working out.)*",
+      "source": "AP ICET 2026 2nd May 2026 Shift 2",
+      "source_year": 2026,
+      "options": [
+        {
+          "label": "Circle has 30 cm² more area",
+          "is_correct": false
+        },
+        {
+          "label": "Square has 30 cm² more area",
+          "is_correct": false
+        },
+        {
+          "label": "Square has 33 cm² more area",
+          "is_correct": false
+        },
+        {
+          "label": "Circle has 33 cm² more area",
+          "is_correct": true
+        }
+      ]
+    },
+    {
+      "chapter": "Coordinate Geometry",
+      "difficulty": "easy",
+      "answer_type": "single",
+      "stem": "The angle between the lines $y = 2x + 3$ and $2y = 5 - x$ is ____",
+      "explanation": "Read off the slopes: the first is $m_1 = 2$; rewriting the second as $y = \\dfrac{5-x}{2}$ gives $m_2 = -\\dfrac12$.\n\n$$m_1 m_2 = 2 \\times \\left(-\\frac12\\right) = -1,$$\nwhich is exactly the condition for perpendicular lines. So the angle is $\\mathbf{90^\\circ}$.",
+      "source": "AP ICET 2026 2nd May 2026 Shift 2",
+      "source_year": 2026,
+      "options": [
+        {
+          "label": "$45^\\circ$",
+          "is_correct": false
+        },
+        {
+          "label": "$90^\\circ$",
+          "is_correct": true
+        },
+        {
+          "label": "$60^\\circ$",
+          "is_correct": false
+        },
+        {
+          "label": "$75^\\circ$",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Progressions (AP & GP)",
+      "difficulty": "hard",
+      "answer_type": "single",
+      "stem": "If the sum of the first $n$ terms of an arithmetic progression is $3n^2 + 6n - 5$, then the difference between the 5th and 15th terms is ____",
+      "explanation": "Recover the general term from the sums: $a_n = S_n - S_{n-1}$.\n$$a_n = (3n^2+6n-5) - \\big(3(n-1)^2 + 6(n-1) - 5\\big) = 6n + 3.$$\n\nSo $a_5 = 33$ and $a_{15} = 93$, giving\n$$a_{15} - a_5 = 60.$$\n\n*(Equivalently the common difference is 6, and the terms are 10 apart: $10 \\times 6 = 60$.)*",
+      "source": "AP ICET 2026 2nd May 2026 Shift 2",
+      "source_year": 2026,
+      "options": [
+        {
+          "label": "40",
+          "is_correct": false
+        },
+        {
+          "label": "50",
+          "is_correct": false
+        },
+        {
+          "label": "60",
+          "is_correct": true
+        },
+        {
+          "label": "80",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Number System",
+      "difficulty": "hard",
+      "answer_type": "single",
+      "stem": "If the 6-digit number $P6Q424$ is divisible by 88, then $(P+Q) = $ ____",
+      "explanation": "$88 = 8 \\times 11$, so both tests must pass.\n\n**By 8:** only the last three digits matter — $424 = 8 \\times 53$ ✓ regardless of $P$ and $Q$.\n\n**By 11:** alternate the digits $P, 6, Q, 4, 2, 4$:\n$$(P + Q + 2) - (6 + 4 + 4) = P + Q - 12,$$\nwhich must be a multiple of 11. Since $P+Q$ is at most 18, the only possibility is $P + Q - 12 = 0$, giving\n$$P + Q = \\mathbf{12}.$$",
+      "source": "AP ICET 2026 2nd May 2026 Shift 2",
+      "source_year": 2026,
+      "options": [
+        {
+          "label": "16",
+          "is_correct": false
+        },
+        {
+          "label": "9",
+          "is_correct": false
+        },
+        {
+          "label": "25",
+          "is_correct": false
+        },
+        {
+          "label": "12",
+          "is_correct": true
+        }
+      ]
+    },
+    {
+      "chapter": "Mean, Median & Mode",
+      "difficulty": "medium",
+      "answer_type": "single",
+      "stem": "The median of the following data is\n\n| x | 1 | 2 | 3 | 4 | 5 | 6 |\n| --- | --- | --- | --- | --- | --- | --- |\n| Frequency | 1 | 3 | 5 | 7 | 9 | 11 |",
+      "explanation": "Total frequency $N = 1+3+5+7+9+11 = 36$, so the median is the mean of the **18th and 19th** observations.\n\nCumulative frequencies: $1,\\ 4,\\ 9,\\ 16,\\ \\mathbf{25},\\ 36$.\n\nObservations 17 to 25 all equal **5**, so both the 18th and 19th are 5 — the median is **5**.",
+      "source": "AP ICET 2026 2nd May 2026 Shift 2",
+      "source_year": 2026,
+      "options": [
+        {
+          "label": "5",
+          "is_correct": true
+        },
+        {
+          "label": "3",
+          "is_correct": false
+        },
+        {
+          "label": "4",
+          "is_correct": false
+        },
+        {
+          "label": "6",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Mean, Median & Mode",
+      "difficulty": "easy",
+      "answer_type": "single",
+      "stem": "The sum of the deviations from the mean of a collection of data points is",
+      "explanation": "The mean is the balance point of the data, so deviations above and below cancel exactly:\n$$\\sum (x_i - \\bar x) = \\sum x_i - n\\bar x = n\\bar x - n\\bar x = \\mathbf{0}.$$\n\nThis is why deviations are **squared** when defining variance — otherwise the measure of spread would always vanish.",
+      "source": "AP ICET 2026 2nd May 2026 Shift 2",
+      "source_year": 2026,
+      "options": [
+        {
+          "label": "Always greater than 1",
+          "is_correct": false
+        },
+        {
+          "label": "Always lies between 0 and 1",
+          "is_correct": false
+        },
+        {
+          "label": "0",
+          "is_correct": true
+        },
+        {
+          "label": "Lies between -1 and 1",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Probability",
+      "difficulty": "hard",
+      "answer_type": "single",
+      "stem": "Given $P(A) = 0.65$, $P(B) = 0.55$ and $P(A \\cap B) = 0.35$, find $P(A' \\cup B)$.",
+      "explanation": "Use De Morgan's law to turn the union into a complement:\n$$P(A' \\cup B) = 1 - P\\big((A' \\cup B)'\\big) = 1 - P(A \\cap B').$$\n\nNow $P(A \\cap B')$ is the part of $A$ outside $B$:\n$$P(A) - P(A \\cap B) = 0.65 - 0.35 = 0.30.$$\n\n$$P(A' \\cup B) = 1 - 0.30 = \\mathbf{0.70}.$$",
+      "source": "AP ICET 2026 2nd May 2026 Shift 2",
+      "source_year": 2026,
+      "options": [
+        {
+          "label": "0.70",
+          "is_correct": true
+        },
+        {
+          "label": "0.65",
+          "is_correct": false
+        },
+        {
+          "label": "0.75",
+          "is_correct": false
+        },
+        {
+          "label": "0.60",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Frequency Distributions",
+      "difficulty": "easy",
+      "answer_type": "single",
+      "stem": "The difference between the greatest and least values of a variate is called ____ and the number of observations within a class interval is called ____ of the interval.",
+      "explanation": "The spread from smallest to largest value is the **range**; the count of observations falling in a class interval is its **frequency**.\n\n*Size* (or width) of an interval means its upper limit minus its lower limit — a different quantity, which is what makes options 1 and 4 tempting.",
+      "source": "AP ICET 2026 2nd May 2026 Shift 2",
+      "source_year": 2026,
+      "options": [
+        {
+          "label": "Range and size",
+          "is_correct": false
+        },
+        {
+          "label": "Range and frequency",
+          "is_correct": true
+        },
+        {
+          "label": "Frequency and range",
+          "is_correct": false
+        },
+        {
+          "label": "Size and frequency",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Probability",
+      "difficulty": "medium",
+      "answer_type": "single",
+      "stem": "A jar contains 6 white balls and 4 black balls. Two balls are drawn at random, one after the other, **with replacement**. What is the probability that the first ball is white and the second ball is black?",
+      "explanation": "Because the first ball is **replaced**, the jar is identical for the second draw and the two events are independent:\n$$P = \\frac{6}{10} \\times \\frac{4}{10} = \\frac{24}{100} = \\mathbf{\\frac{6}{25}}.$$\n\n*(Without replacement it would be $\\frac{6}{10} \\times \\frac{4}{9} = \\frac{4}{15}$ — offered as option 2, so the phrase \"with replacement\" decides the answer.)*",
+      "source": "AP ICET 2026 2nd May 2026 Shift 2",
+      "source_year": 2026,
+      "options": [
+        {
+          "label": "$\\dfrac{6}{25}$",
+          "is_correct": true
+        },
+        {
+          "label": "$\\dfrac{4}{15}$",
+          "is_correct": false
+        },
+        {
+          "label": "$\\dfrac{9}{25}$",
+          "is_correct": false
+        },
+        {
+          "label": "$\\dfrac{4}{25}$",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Probability",
+      "difficulty": "very_hard",
+      "answer_type": "single",
+      "stem": "If the probability that a non-leap year has 53 Mondays is $x$ and the probability that a leap year has 52 Saturdays is $y$, then $x + y = $ ____",
+      "explanation": "**$x$:** a non-leap year is $52$ weeks $+\\ 1$ day. A 53rd Monday needs that single leftover day to be Monday, so $x = \\dfrac17$.\n\n**$y$:** a leap year is $52$ weeks $+\\ 2$ days, and those two consecutive days give 7 equally likely pairs. A 53rd Saturday occurs when Saturday is one of them — probability $\\dfrac27$ — so having only 52 Saturdays has probability\n$$1 - \\frac27 = \\frac57.$$\n\n$$x + y = \\frac17 + \\frac57 = \\mathbf{\\frac67}.$$",
+      "source": "AP ICET 2026 2nd May 2026 Shift 2",
+      "source_year": 2026,
+      "options": [
+        {
+          "label": "$\\dfrac{2}{7}$",
+          "is_correct": false
+        },
+        {
+          "label": "$\\dfrac{4}{7}$",
+          "is_correct": false
+        },
+        {
+          "label": "$\\dfrac{6}{7}$",
+          "is_correct": true
+        },
+        {
+          "label": "$\\dfrac{5}{7}$",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Mean, Median & Mode",
+      "difficulty": "medium",
+      "answer_type": "single",
+      "stem": "For a data set, the mean is 24 and the mode is 28. Then its median is",
+      "explanation": "Use the empirical relation $\\text{Mode} = 3(\\text{Median}) - 2(\\text{Mean})$:\n$$28 = 3M - 2(24) = 3M - 48.$$\n\n$$3M = 76 \\Rightarrow M = \\frac{76}{3} = \\mathbf{25\\tfrac13}.$$\n\n*(Sensible check: the median lies between the mean and the mode, and $25\\frac13$ does.)*",
+      "source": "AP ICET 2026 2nd May 2026 Shift 2",
+      "source_year": 2026,
+      "options": [
+        {
+          "label": "$25\\frac{1}{3}$",
+          "is_correct": true
+        },
+        {
+          "label": "26",
+          "is_correct": false
+        },
+        {
+          "label": "32",
+          "is_correct": false
+        },
+        {
+          "label": "30",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Probability",
+      "difficulty": "easy",
+      "answer_type": "single",
+      "stem": "The sample space when two coins are tossed is ______",
+      "explanation": "Each coin independently shows H or T, giving $2 \\times 2 = 4$ equally likely outcomes — and the two mixed cases are **distinct** because the coins are distinguishable by order:\n$$\\{HH,\\ TH,\\ HT,\\ TT\\}.$$\n\nOption 2 repeats TT and omits TH, and option 4 drops the mixed outcomes entirely.",
+      "source": "AP ICET 2026 2nd May 2026 Shift 2",
+      "source_year": 2026,
+      "options": [
+        {
+          "label": "$\\{H, T, H, T\\}$",
+          "is_correct": false
+        },
+        {
+          "label": "$\\{HH, TT, HT, TT\\}$",
+          "is_correct": false
+        },
+        {
+          "label": "$\\{HH, TH, HT, TT\\}$",
+          "is_correct": true
+        },
+        {
+          "label": "$\\{HH, TT\\}$",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Standard Deviation & Variance",
+      "difficulty": "medium",
+      "answer_type": "single",
+      "stem": "The variance of 50 numbers is 5. If every number is multiplied by 2 and increased by 7, then the variance of the new set of 50 numbers is",
+      "explanation": "Variance responds to scaling but **ignores shifts**: for $y = ax + b$,\n$$\\operatorname{Var}(y) = a^2 \\operatorname{Var}(x).$$\n\nHere $a = 2$ and $b = 7$, so\n$$\\operatorname{Var} = 2^2 \\times 5 = \\mathbf{20}.$$\n\nAdding 7 moves every value equally and so leaves the spread untouched; only the doubling matters.",
+      "source": "AP ICET 2026 2nd May 2026 Shift 2",
+      "source_year": 2026,
+      "options": [
+        {
+          "label": "5",
+          "is_correct": false
+        },
+        {
+          "label": "20",
+          "is_correct": true
+        },
+        {
+          "label": "10",
+          "is_correct": false
+        },
+        {
+          "label": "15",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Mean, Median & Mode",
+      "difficulty": "medium",
+      "answer_type": "single",
+      "stem": "Which of the following statements are correct?\n\n(i) The mean of a set of numbers is $\\bar x$; if each number is increased by $k$ then the mean is $\\bar x - k$.\n\n(ii) If the arithmetic mean of 7, 5, 13, $x$ and 9 is 10 then $x = 16$.\n\n(iii) Arithmetic mean, geometric mean, harmonic mean, median and mode are various measures of central tendency.",
+      "explanation": "- **(i) False.** Increasing every value by $k$ raises the mean **to $\\bar x + k$**, not $\\bar x - k$.\n- **(ii) True.** Five numbers averaging 10 total 50, and $7+5+13+9 = 34$, so $x = 16$ ✓\n- **(iii) True.** All five are standard measures of central tendency.\n\nSo **(ii) and (iii)** are correct.",
+      "source": "AP ICET 2026 2nd May 2026 Shift 2",
+      "source_year": 2026,
+      "options": [
+        {
+          "label": "(i) and (ii)",
+          "is_correct": false
+        },
+        {
+          "label": "(ii) and (iii)",
+          "is_correct": true
+        },
+        {
+          "label": "(i) and (iii)",
+          "is_correct": false
+        },
+        {
+          "label": "(i), (ii) and (iii)",
+          "is_correct": false
+        }
+      ]
+    }
+  ]
+}

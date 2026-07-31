@@ -1,0 +1,275 @@
+{
+  "subject": "Data Interpretation & Data Sufficiency",
+  "questions": [
+    {
+      "chapter": "Tables",
+      "difficulty": "medium",
+      "answer_type": "single",
+      "stem": "The number of candidates (in lakhs) who appeared in an examination from four different cities, and the ratio of passed to failed candidates within each city:\n\n| City | $C_1$ | $C_2$ | $C_3$ | $C_4$ |\n| --- | --- | --- | --- | --- |\n| Number of candidates (in lakhs) | 3.14 | 1.25 | 2.27 | 1.08 |\n| Ratio of passed : failed | 5 : 3 | 7 : 3 | 1 : 3 | 4 : 5 |\n\nWhich city has the highest number of candidates failed in the examination?",
+      "explanation": "Apply each failure ratio to that city's candidate count:\n\n| City | Failed share | Failed (lakhs) |\n| --- | --- | --- |\n| $C_1$ | $3/8$ of 3.14 | 1.18 |\n| $C_2$ | $3/10$ of 1.25 | 0.38 |\n| **$C_3$** | $3/4$ of 2.27 | **1.70** |\n| $C_4$ | $5/9$ of 1.08 | 0.60 |\n\n$C_3$ has the most failures — note that $C_1$ has more candidates overall, but $C_3$'s far worse pass ratio outweighs that.",
+      "source": "AP ICET 2026 2nd May 2026 Shift 2",
+      "source_year": 2026,
+      "options": [
+        {
+          "label": "$C_3$",
+          "is_correct": true
+        },
+        {
+          "label": "$C_2$",
+          "is_correct": false
+        },
+        {
+          "label": "$C_1$",
+          "is_correct": false
+        },
+        {
+          "label": "$C_4$",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Tables",
+      "difficulty": "medium",
+      "answer_type": "single",
+      "stem": "The number of candidates (in lakhs) who appeared in an examination from four different cities, and the ratio of passed to failed candidates within each city:\n\n| City | $C_1$ | $C_2$ | $C_3$ | $C_4$ |\n| --- | --- | --- | --- | --- |\n| Number of candidates (in lakhs) | 3.14 | 1.25 | 2.27 | 1.08 |\n| Ratio of passed : failed | 5 : 3 | 7 : 3 | 1 : 3 | 4 : 5 |\n\nWhich city has less than fifty thousand failed candidates in the examination?",
+      "explanation": "Fifty thousand is **0.5 lakh**, so compare each city's failures against 0.5:\n\n$$C_1: 1.18,\\quad \\mathbf{C_2: 0.375},\\quad C_3: 1.70,\\quad C_4: 0.60.$$\n\nOnly $C_2$ falls below 0.5 lakh. $C_4$ is the near miss at 0.6 lakh.",
+      "source": "AP ICET 2026 2nd May 2026 Shift 2",
+      "source_year": 2026,
+      "options": [
+        {
+          "label": "$C_1$",
+          "is_correct": false
+        },
+        {
+          "label": "$C_2$",
+          "is_correct": true
+        },
+        {
+          "label": "$C_3$",
+          "is_correct": false
+        },
+        {
+          "label": "$C_4$",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Tables",
+      "difficulty": "easy",
+      "answer_type": "single",
+      "stem": "The number of candidates (in lakhs) who appeared in an examination from four different cities, and the ratio of passed to failed candidates within each city:\n\n| City | $C_1$ | $C_2$ | $C_3$ | $C_4$ |\n| --- | --- | --- | --- | --- |\n| Number of candidates (in lakhs) | 3.14 | 1.25 | 2.27 | 1.08 |\n| Ratio of passed : failed | 5 : 3 | 7 : 3 | 1 : 3 | 4 : 5 |\n\nWhich cities individually have more than 50% pass percentage?",
+      "explanation": "A pass ratio beats 50% exactly when the passed part of the ratio exceeds the failed part:\n\n$$C_1 = \\tfrac58 = 62.5\\%\\ \\checkmark,\\quad C_2 = \\tfrac7{10} = 70\\%\\ \\checkmark,\\quad C_3 = \\tfrac14 = 25\\%,\\quad C_4 = \\tfrac49 = 44.4\\%.$$\n\nSo **$C_1$ and $C_2$** — and note the candidate counts are irrelevant here, only the ratios matter.",
+      "source": "AP ICET 2026 2nd May 2026 Shift 2",
+      "source_year": 2026,
+      "options": [
+        {
+          "label": "$C_1$ and $C_4$",
+          "is_correct": false
+        },
+        {
+          "label": "$C_3$ and $C_4$",
+          "is_correct": false
+        },
+        {
+          "label": "$C_1$ and $C_2$",
+          "is_correct": true
+        },
+        {
+          "label": "$C_2$ and $C_3$",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Tables",
+      "difficulty": "hard",
+      "answer_type": "single",
+      "stem": "The number of candidates (in lakhs) who appeared in an examination from four different cities, and the ratio of passed to failed candidates within each city:\n\n| City | $C_1$ | $C_2$ | $C_3$ | $C_4$ |\n| --- | --- | --- | --- | --- |\n| Number of candidates (in lakhs) | 3.14 | 1.25 | 2.27 | 1.08 |\n| Ratio of passed : failed | 5 : 3 | 7 : 3 | 1 : 3 | 4 : 5 |\n\nThe average pass percentage over all cities in the examination is approximately ________.",
+      "explanation": "This is a **weighted** figure — total passed divided by total appeared, not the mean of the four percentages.\n\n**Total appeared:** $3.14 + 1.25 + 2.27 + 1.08 = 7.74$ lakh.\n\n**Total passed:**\n$$\\tfrac58(3.14) + \\tfrac7{10}(1.25) + \\tfrac14(2.27) + \\tfrac49(1.08) = 1.963 + 0.875 + 0.568 + 0.480 = 3.885.$$\n\n$$\\frac{3.885}{7.74} \\times 100 \\approx 50\\%.$$\n\n*(Averaging the four percentages instead gives about 50.5% — close here, but the weighted method is the correct one.)*",
+      "source": "AP ICET 2026 2nd May 2026 Shift 2",
+      "source_year": 2026,
+      "options": [
+        {
+          "label": "75%",
+          "is_correct": false
+        },
+        {
+          "label": "60%",
+          "is_correct": false
+        },
+        {
+          "label": "40%",
+          "is_correct": false
+        },
+        {
+          "label": "50%",
+          "is_correct": true
+        }
+      ]
+    },
+    {
+      "chapter": "Tables",
+      "difficulty": "easy",
+      "answer_type": "single",
+      "stem": "The table shows the number of students admitted in five courses for the years 2023 and 2024.\n\n| Course | 2023 | 2024 |\n| --- | --- | --- |\n| MBA | 180 | 210 |\n| MCA | 150 | 165 |\n| BBA | 120 | 135 |\n| BCA | 100 | 125 |\n| PGDM | 140 | 160 |\n\nFind the increase in MBA admissions from 2023 to 2024.",
+      "explanation": "Read the MBA row: 180 in 2023 and 210 in 2024.\n\n$$210 - 180 = 30.$$",
+      "source": "AP ICET 2026 2nd May 2026 Shift 2",
+      "source_year": 2026,
+      "options": [
+        {
+          "label": "20",
+          "is_correct": false
+        },
+        {
+          "label": "25",
+          "is_correct": false
+        },
+        {
+          "label": "30",
+          "is_correct": true
+        },
+        {
+          "label": "35",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Tables",
+      "difficulty": "medium",
+      "answer_type": "single",
+      "stem": "The table shows the number of students admitted in five courses for the years 2023 and 2024.\n\n| Course | 2023 | 2024 |\n| --- | --- | --- |\n| MBA | 180 | 210 |\n| MCA | 150 | 165 |\n| BBA | 120 | 135 |\n| BCA | 100 | 125 |\n| PGDM | 140 | 160 |\n\nBy what percentage did total admissions increase in 2024 compared to 2023?",
+      "explanation": "**2023 total:** $180+150+120+100+140 = 690$.\n\n**2024 total:** $210+165+135+125+160 = 795$.\n\n$$\\text{Increase \\%} = \\frac{795-690}{690} \\times 100 = \\frac{105}{690} \\times 100 \\approx 15.2\\%.$$\n\n*(The base must be the 2023 total; dividing by 795 instead gives 13.2%.)*",
+      "source": "AP ICET 2026 2nd May 2026 Shift 2",
+      "source_year": 2026,
+      "options": [
+        {
+          "label": "12.5%",
+          "is_correct": false
+        },
+        {
+          "label": "13.5%",
+          "is_correct": false
+        },
+        {
+          "label": "14.5%",
+          "is_correct": false
+        },
+        {
+          "label": "15.2%",
+          "is_correct": true
+        }
+      ]
+    },
+    {
+      "chapter": "Tables",
+      "difficulty": "easy",
+      "answer_type": "single",
+      "stem": "The table shows the number of students admitted in five courses for the years 2023 and 2024.\n\n| Course | 2023 | 2024 |\n| --- | --- | --- |\n| MBA | 180 | 210 |\n| MCA | 150 | 165 |\n| BBA | 120 | 135 |\n| BCA | 100 | 125 |\n| PGDM | 140 | 160 |\n\nThe average number of students admitted across all courses in 2024 was:",
+      "explanation": "Total 2024 admissions:\n$$210+165+135+125+160 = 795.$$\n\nAcross five courses:\n$$\\frac{795}{5} = 159.$$",
+      "source": "AP ICET 2026 2nd May 2026 Shift 2",
+      "source_year": 2026,
+      "options": [
+        {
+          "label": "155",
+          "is_correct": false
+        },
+        {
+          "label": "157",
+          "is_correct": false
+        },
+        {
+          "label": "159",
+          "is_correct": true
+        },
+        {
+          "label": "161",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Pie Charts",
+      "difficulty": "medium",
+      "answer_type": "single",
+      "stem": "A pie chart gives the monthly expenditure of a household under various heads, as sector angles:\n\n| Head | Sector angle |\n| --- | --- |\n| Food | $80^\\circ$ |\n| Children Education | $70^\\circ$ |\n| House Rent | $55^\\circ$ |\n| Travel | $45^\\circ$ |\n| Savings | $40^\\circ$ |\n| Miscellaneous | $40^\\circ$ |\n| Electricity | $30^\\circ$ |\n\nIf the amount spent on electricity in a month is Rs. 8,100, the amount saved in the month in rupees is",
+      "explanation": "Angles are proportional to amounts, so first find the value of one degree:\n$$\\frac{8100}{30^\\circ} = 270 \\text{ rupees per degree}.$$\n\nSavings occupy $40^\\circ$:\n$$40 \\times 270 = \\text{Rs. } 10{,}800.$$\n\n*(Shortcut: savings and electricity are in the ratio $40:30 = 4:3$, so savings $= \\frac43 \\times 8100$.)*",
+      "source": "AP ICET 2026 2nd May 2026 Shift 2",
+      "source_year": 2026,
+      "options": [
+        {
+          "label": "9,400",
+          "is_correct": false
+        },
+        {
+          "label": "10,800",
+          "is_correct": true
+        },
+        {
+          "label": "11,200",
+          "is_correct": false
+        },
+        {
+          "label": "12,600",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Pie Charts",
+      "difficulty": "easy",
+      "answer_type": "single",
+      "stem": "A pie chart gives the monthly expenditure of a household under various heads, as sector angles:\n\n| Head | Sector angle |\n| --- | --- |\n| Food | $80^\\circ$ |\n| Children Education | $70^\\circ$ |\n| House Rent | $55^\\circ$ |\n| Travel | $45^\\circ$ |\n| Savings | $40^\\circ$ |\n| Miscellaneous | $40^\\circ$ |\n| Electricity | $30^\\circ$ |\n\nThe amount spent on children education in a month is what percent of the amount spent on food in that month?",
+      "explanation": "Since both amounts scale with their angles, the ratio of angles is the ratio of amounts:\n$$\\frac{70^\\circ}{80^\\circ} \\times 100 = 87.5\\%.$$\n\nThe household total never enters the calculation.",
+      "source": "AP ICET 2026 2nd May 2026 Shift 2",
+      "source_year": 2026,
+      "options": [
+        {
+          "label": "87.5",
+          "is_correct": true
+        },
+        {
+          "label": "91.5",
+          "is_correct": false
+        },
+        {
+          "label": "93",
+          "is_correct": false
+        },
+        {
+          "label": "96",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Pie Charts",
+      "difficulty": "easy",
+      "answer_type": "single",
+      "stem": "A pie chart gives the monthly expenditure of a household under various heads, as sector angles:\n\n| Head | Sector angle |\n| --- | --- |\n| Food | $80^\\circ$ |\n| Children Education | $70^\\circ$ |\n| House Rent | $55^\\circ$ |\n| Travel | $45^\\circ$ |\n| Savings | $40^\\circ$ |\n| Miscellaneous | $40^\\circ$ |\n| Electricity | $30^\\circ$ |\n\nIn a month, savings is what percent of the total expenditure?",
+      "explanation": "A full pie is $360^\\circ$, and savings take $40^\\circ$:\n$$\\frac{40}{360} \\times 100 = \\frac{100}{9} = 11\\tfrac19\\%.$$",
+      "source": "AP ICET 2026 2nd May 2026 Shift 2",
+      "source_year": 2026,
+      "options": [
+        {
+          "label": "$11\\frac{1}{9}\\%$",
+          "is_correct": true
+        },
+        {
+          "label": "$12\\frac{2}{9}\\%$",
+          "is_correct": false
+        },
+        {
+          "label": "$13\\frac{1}{3}\\%$",
+          "is_correct": false
+        },
+        {
+          "label": "$10\\frac{5}{9}\\%$",
+          "is_correct": false
+        }
+      ]
+    }
+  ]
+}

@@ -1431,6 +1431,411 @@
           "is_correct": false
         }
       ]
+    },
+    {
+      "chapter": "Reading Comprehension",
+      "difficulty": "easy",
+      "answer_type": "single",
+      "stem": "Read the passage and answer the question.\n\n> Mental health disorders are prevalent worldwide, affecting individuals across different age groups, genders, and cultures. Mental health refers to a person's emotional, psychological, and social well-being, and it is crucial for overall health and quality of life.\n>\n> Mental health disorders are diverse and can range from mild to severe. Anxiety and mood disorders are the most common, affecting millions of people worldwide. Other common mental health disorders include schizophrenia, bipolar disorder, and personality disorders. Each mental health disorder has unique symptoms, causes, and treatments.\n>\n> The importance of mental health care cannot be overstated. Mental illness can be debilitating, affecting an individual's ability to function in their personal and professional lives. It is crucial to seek professional help for mental health disorders to receive appropriate treatment and support. Treatment options may include therapy, medication, lifestyle changes, or a combination of these approaches.\n>\n> Despite the prevalence of mental health disorders, stigma remains a significant barrier to seeking help. Stigma can prevent individuals from seeking professional help, negatively impacting their mental health and quality of life. Stigma can also create a culture of silence surrounding mental health, making it more challenging to discuss and address mental health issues.\n\nWhat are some common types of mental health disorders?",
+      "explanation": "The second paragraph answers it directly: \"**Anxiety and mood disorders** are the most common, affecting millions of people worldwide.\"\n\nThe other options list **physical** conditions — diabetes and hypertension, heart disease and cancer, asthma and allergies — none of which the passage classes as mental health disorders.",
+      "source": "AP ICET 2026 2nd May 2026 Shift 1",
+      "source_year": 2026,
+      "options": [
+        {
+          "label": "Diabetes and hypertension",
+          "is_correct": false
+        },
+        {
+          "label": "Heart disease and cancer",
+          "is_correct": false
+        },
+        {
+          "label": "Anxiety and mood disorders",
+          "is_correct": true
+        },
+        {
+          "label": "Asthma and allergies",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Reading Comprehension",
+      "difficulty": "easy",
+      "answer_type": "single",
+      "stem": "Read the passage and answer the question.\n\n> Mental health disorders are prevalent worldwide, affecting individuals across different age groups, genders, and cultures. Mental health refers to a person's emotional, psychological, and social well-being, and it is crucial for overall health and quality of life.\n>\n> Mental health disorders are diverse and can range from mild to severe. Anxiety and mood disorders are the most common, affecting millions of people worldwide. Other common mental health disorders include schizophrenia, bipolar disorder, and personality disorders. Each mental health disorder has unique symptoms, causes, and treatments.\n>\n> The importance of mental health care cannot be overstated. Mental illness can be debilitating, affecting an individual's ability to function in their personal and professional lives. It is crucial to seek professional help for mental health disorders to receive appropriate treatment and support. Treatment options may include therapy, medication, lifestyle changes, or a combination of these approaches.\n>\n> Despite the prevalence of mental health disorders, stigma remains a significant barrier to seeking help. Stigma can prevent individuals from seeking professional help, negatively impacting their mental health and quality of life. Stigma can also create a culture of silence surrounding mental health, making it more challenging to discuss and address mental health issues.\n\nWhy is seeking professional help for mental health disorders important?",
+      "explanation": "The third paragraph states it: \"It is crucial to seek professional help for mental health disorders **to receive appropriate treatment and support**.\"\n\nRead the options carefully — option 1 is the same phrase with **in**appropriate, a one-word reversal, and options 2 and 3 describe avoiding help rather than seeking it.",
+      "source": "AP ICET 2026 2nd May 2026 Shift 1",
+      "source_year": 2026,
+      "options": [
+        {
+          "label": "To receive inappropriate treatment and support",
+          "is_correct": false
+        },
+        {
+          "label": "To avoid treatment altogether",
+          "is_correct": false
+        },
+        {
+          "label": "To avoid making lifestyle changes",
+          "is_correct": false
+        },
+        {
+          "label": "To receive appropriate treatment and support",
+          "is_correct": true
+        }
+      ]
+    },
+    {
+      "chapter": "Reading Comprehension",
+      "difficulty": "easy",
+      "answer_type": "single",
+      "stem": "Read the passage and answer the question.\n\n> Mental health disorders are prevalent worldwide, affecting individuals across different age groups, genders, and cultures. Mental health refers to a person's emotional, psychological, and social well-being, and it is crucial for overall health and quality of life.\n>\n> Mental health disorders are diverse and can range from mild to severe. Anxiety and mood disorders are the most common, affecting millions of people worldwide. Other common mental health disorders include schizophrenia, bipolar disorder, and personality disorders. Each mental health disorder has unique symptoms, causes, and treatments.\n>\n> The importance of mental health care cannot be overstated. Mental illness can be debilitating, affecting an individual's ability to function in their personal and professional lives. It is crucial to seek professional help for mental health disorders to receive appropriate treatment and support. Treatment options may include therapy, medication, lifestyle changes, or a combination of these approaches.\n>\n> Despite the prevalence of mental health disorders, stigma remains a significant barrier to seeking help. Stigma can prevent individuals from seeking professional help, negatively impacting their mental health and quality of life. Stigma can also create a culture of silence surrounding mental health, making it more challenging to discuss and address mental health issues.\n\nWhat can treatment options for mental health disorders include?",
+      "explanation": "The passage lists them: \"Treatment options may include **therapy, medication, lifestyle changes**, or a combination of these approaches.\"\n\nSurgery and radiation therapy, physical therapy and exercise, and diet and nutrition are treatments for **physical** conditions; the passage does not name them.",
+      "source": "AP ICET 2026 2nd May 2026 Shift 1",
+      "source_year": 2026,
+      "options": [
+        {
+          "label": "Therapy, medication, and lifestyle changes",
+          "is_correct": true
+        },
+        {
+          "label": "Surgery and radiation therapy",
+          "is_correct": false
+        },
+        {
+          "label": "Physical therapy and exercise",
+          "is_correct": false
+        },
+        {
+          "label": "Diet and nutrition",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Reading Comprehension",
+      "difficulty": "easy",
+      "answer_type": "single",
+      "stem": "Read the passage and answer the question.\n\n> Mental health disorders are prevalent worldwide, affecting individuals across different age groups, genders, and cultures. Mental health refers to a person's emotional, psychological, and social well-being, and it is crucial for overall health and quality of life.\n>\n> Mental health disorders are diverse and can range from mild to severe. Anxiety and mood disorders are the most common, affecting millions of people worldwide. Other common mental health disorders include schizophrenia, bipolar disorder, and personality disorders. Each mental health disorder has unique symptoms, causes, and treatments.\n>\n> The importance of mental health care cannot be overstated. Mental illness can be debilitating, affecting an individual's ability to function in their personal and professional lives. It is crucial to seek professional help for mental health disorders to receive appropriate treatment and support. Treatment options may include therapy, medication, lifestyle changes, or a combination of these approaches.\n>\n> Despite the prevalence of mental health disorders, stigma remains a significant barrier to seeking help. Stigma can prevent individuals from seeking professional help, negatively impacting their mental health and quality of life. Stigma can also create a culture of silence surrounding mental health, making it more challenging to discuss and address mental health issues.\n\nHow does stigma impact mental health care?",
+      "explanation": "The last paragraph is explicit: \"Stigma **can prevent individuals from seeking professional help**, negatively impacting their mental health and quality of life.\"\n\nOptions 2 and 4 state the reverse of what the passage says, and option 1 contradicts its opening claim that stigma \"remains a significant barrier\".",
+      "source": "AP ICET 2026 2nd May 2026 Shift 1",
+      "source_year": 2026,
+      "options": [
+        {
+          "label": "It has no impact on mental health care",
+          "is_correct": false
+        },
+        {
+          "label": "It encourages individuals to seek professional help",
+          "is_correct": false
+        },
+        {
+          "label": "It prevents individuals from seeking professional help",
+          "is_correct": true
+        },
+        {
+          "label": "It makes it easier to discuss and address mental health issues",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Reading Comprehension",
+      "difficulty": "medium",
+      "answer_type": "single",
+      "stem": "Read the passage and answer the question.\n\n> Mental health disorders are prevalent worldwide, affecting individuals across different age groups, genders, and cultures. Mental health refers to a person's emotional, psychological, and social well-being, and it is crucial for overall health and quality of life.\n>\n> Mental health disorders are diverse and can range from mild to severe. Anxiety and mood disorders are the most common, affecting millions of people worldwide. Other common mental health disorders include schizophrenia, bipolar disorder, and personality disorders. Each mental health disorder has unique symptoms, causes, and treatments.\n>\n> The importance of mental health care cannot be overstated. Mental illness can be debilitating, affecting an individual's ability to function in their personal and professional lives. It is crucial to seek professional help for mental health disorders to receive appropriate treatment and support. Treatment options may include therapy, medication, lifestyle changes, or a combination of these approaches.\n>\n> Despite the prevalence of mental health disorders, stigma remains a significant barrier to seeking help. Stigma can prevent individuals from seeking professional help, negatively impacting their mental health and quality of life. Stigma can also create a culture of silence surrounding mental health, making it more challenging to discuss and address mental health issues.\n\nWhat is the importance of addressing the stigma surrounding mental health?",
+      "explanation": "Since stigma is what *prevents* people from seeking help, removing it has the opposite effect — it **encourages individuals to seek professional help**.\n\nOptions 2 and 4 describe what stigma **does**, not what addressing it achieves — a common trap in \"why does this matter\" questions. Option 1 contradicts the passage's conclusion that addressing stigma \"is crucial\".",
+      "source": "AP ICET 2026 2nd May 2026 Shift 1",
+      "source_year": 2026,
+      "options": [
+        {
+          "label": "It is not important",
+          "is_correct": false
+        },
+        {
+          "label": "It can create a culture of silence surrounding mental health issues",
+          "is_correct": false
+        },
+        {
+          "label": "It encourages individuals to seek professional help",
+          "is_correct": true
+        },
+        {
+          "label": "It prevents individuals from seeking professional help",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Reading Comprehension",
+      "difficulty": "easy",
+      "answer_type": "single",
+      "stem": "Read the passage and answer the question.\n\n> The process of creating digital payment systems began in the 1970s and 1980s, as traditional paper-based payment mechanisms were replaced by electronic ones. With the advent of automated teller machines, people could manage their money electronically. Electronic Funds Transfer technology revolutionised financial transactions with the advent of national and international money transfer facilities. Over time, the range of digital payment mechanisms has become wider. However, the existing payment mechanisms lack compatibility and access, particularly for individuals without bank accounts or credit histories. In the past, the process of conducting economic transactions was based on the barter system, in which only two parties were involved. With the advent of currency and the establishment of banks, the flexibility to conduct financial transactions has widened. With the advent of online transactions, the geographical scope of conducting financial transactions has widened. Despite technological advancements, the structural limitations of the financial system hinder the flexibility of conducting online transactions.\n\nTraditional payment mechanisms were replaced by:",
+      "explanation": "The opening sentence says it: \"traditional paper-based payment mechanisms were replaced by **electronic ones**.\"\n\nATMs, national money transfers and online transactions are all *examples* of electronic mechanisms mentioned later — the general answer the question asks for is the electronic category itself.",
+      "source": "AP ICET 2026 2nd May 2026 Shift 1",
+      "source_year": 2026,
+      "options": [
+        {
+          "label": "electronic payment mechanisms",
+          "is_correct": true
+        },
+        {
+          "label": "online financial transactions",
+          "is_correct": false
+        },
+        {
+          "label": "automated teller machines",
+          "is_correct": false
+        },
+        {
+          "label": "national money transfers",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Reading Comprehension",
+      "difficulty": "easy",
+      "answer_type": "single",
+      "stem": "Read the passage and answer the question.\n\n> The process of creating digital payment systems began in the 1970s and 1980s, as traditional paper-based payment mechanisms were replaced by electronic ones. With the advent of automated teller machines, people could manage their money electronically. Electronic Funds Transfer technology revolutionised financial transactions with the advent of national and international money transfer facilities. Over time, the range of digital payment mechanisms has become wider. However, the existing payment mechanisms lack compatibility and access, particularly for individuals without bank accounts or credit histories. In the past, the process of conducting economic transactions was based on the barter system, in which only two parties were involved. With the advent of currency and the establishment of banks, the flexibility to conduct financial transactions has widened. With the advent of online transactions, the geographical scope of conducting financial transactions has widened. Despite technological advancements, the structural limitations of the financial system hinder the flexibility of conducting online transactions.\n\nElectronic Funds Transfer technology revolutionised financial transactions with:",
+      "explanation": "The passage pairs them in one sentence: \"Electronic Funds Transfer technology revolutionised financial transactions with the advent of **national and international money transfer facilities**.\"\n\nThe other options name developments the passage attributes to different things — ATMs to managing money electronically, online transactions to widening geographical scope.",
+      "source": "AP ICET 2026 2nd May 2026 Shift 1",
+      "source_year": 2026,
+      "options": [
+        {
+          "label": "the development of online transactions",
+          "is_correct": false
+        },
+        {
+          "label": "the introduction of automated teller machines",
+          "is_correct": false
+        },
+        {
+          "label": "the widening range of payment mechanisms",
+          "is_correct": false
+        },
+        {
+          "label": "national and international money transfer facilities",
+          "is_correct": true
+        }
+      ]
+    },
+    {
+      "chapter": "Reading Comprehension",
+      "difficulty": "easy",
+      "answer_type": "single",
+      "stem": "Read the passage and answer the question.\n\n> The process of creating digital payment systems began in the 1970s and 1980s, as traditional paper-based payment mechanisms were replaced by electronic ones. With the advent of automated teller machines, people could manage their money electronically. Electronic Funds Transfer technology revolutionised financial transactions with the advent of national and international money transfer facilities. Over time, the range of digital payment mechanisms has become wider. However, the existing payment mechanisms lack compatibility and access, particularly for individuals without bank accounts or credit histories. In the past, the process of conducting economic transactions was based on the barter system, in which only two parties were involved. With the advent of currency and the establishment of banks, the flexibility to conduct financial transactions has widened. With the advent of online transactions, the geographical scope of conducting financial transactions has widened. Despite technological advancements, the structural limitations of the financial system hinder the flexibility of conducting online transactions.\n\nIn the past, economic transactions were based on:",
+      "explanation": "The passage states: \"In the past, the process of conducting economic transactions was based on the **barter system**, in which only two parties were involved.\"\n\nOnline transactions, electronic mechanisms and digital payment systems are all modern developments the passage places *after* that period.",
+      "source": "AP ICET 2026 2nd May 2026 Shift 1",
+      "source_year": 2026,
+      "options": [
+        {
+          "label": "online transactions",
+          "is_correct": false
+        },
+        {
+          "label": "the barter system",
+          "is_correct": true
+        },
+        {
+          "label": "electronic payment mechanisms",
+          "is_correct": false
+        },
+        {
+          "label": "digital payment systems",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Reading Comprehension",
+      "difficulty": "medium",
+      "answer_type": "single",
+      "stem": "Read the passage and answer the question.\n\n> The process of creating digital payment systems began in the 1970s and 1980s, as traditional paper-based payment mechanisms were replaced by electronic ones. With the advent of automated teller machines, people could manage their money electronically. Electronic Funds Transfer technology revolutionised financial transactions with the advent of national and international money transfer facilities. Over time, the range of digital payment mechanisms has become wider. However, the existing payment mechanisms lack compatibility and access, particularly for individuals without bank accounts or credit histories. In the past, the process of conducting economic transactions was based on the barter system, in which only two parties were involved. With the advent of currency and the establishment of banks, the flexibility to conduct financial transactions has widened. With the advent of online transactions, the geographical scope of conducting financial transactions has widened. Despite technological advancements, the structural limitations of the financial system hinder the flexibility of conducting online transactions.\n\nThe word \"advent\" in the passage most nearly means:",
+      "explanation": "The passage uses \"advent\" four times, always for something appearing for the first time — \"the advent of automated teller machines\", \"the advent of currency\", \"the advent of online transactions\".\n\nSo it means the **arrival or introduction of a new development**.\n\nThe other options describe *consequences* the passage mentions (market expansion, better design, bank regulation) rather than the meaning of the word itself.",
+      "source": "AP ICET 2026 2nd May 2026 Shift 1",
+      "source_year": 2026,
+      "options": [
+        {
+          "label": "expansion of financial markets across regions",
+          "is_correct": false
+        },
+        {
+          "label": "improvement in the design of digital systems",
+          "is_correct": false
+        },
+        {
+          "label": "arrival or introduction of a new development",
+          "is_correct": true
+        },
+        {
+          "label": "regulation of financial transactions by banks",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Reading Comprehension",
+      "difficulty": "medium",
+      "answer_type": "single",
+      "stem": "Read the passage and answer the question.\n\n> The process of creating digital payment systems began in the 1970s and 1980s, as traditional paper-based payment mechanisms were replaced by electronic ones. With the advent of automated teller machines, people could manage their money electronically. Electronic Funds Transfer technology revolutionised financial transactions with the advent of national and international money transfer facilities. Over time, the range of digital payment mechanisms has become wider. However, the existing payment mechanisms lack compatibility and access, particularly for individuals without bank accounts or credit histories. In the past, the process of conducting economic transactions was based on the barter system, in which only two parties were involved. With the advent of currency and the establishment of banks, the flexibility to conduct financial transactions has widened. With the advent of online transactions, the geographical scope of conducting financial transactions has widened. Despite technological advancements, the structural limitations of the financial system hinder the flexibility of conducting online transactions.\n\nIn the passage the phrase \"structural limitations\" refers to:",
+      "explanation": "The closing sentence contrasts \"technological advancements\" with \"the **structural limitations of the financial system**\", and the passage has already named such a limitation: existing mechanisms \"lack compatibility and access, particularly for individuals without bank accounts or credit histories\".\n\nThose are built-in features of how the system is organised — **inherent constraints within the financial system**.\n\nThe other options describe *temporary* faults or delays; the passage's point is that these limits persist despite technological progress.",
+      "source": "AP ICET 2026 2nd May 2026 Shift 1",
+      "source_year": 2026,
+      "options": [
+        {
+          "label": "inherent constraints within the financial system",
+          "is_correct": true
+        },
+        {
+          "label": "temporary problems in digital payment networks",
+          "is_correct": false
+        },
+        {
+          "label": "technological failures in online banking systems",
+          "is_correct": false
+        },
+        {
+          "label": "operational delays in national money transfers",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Reading Comprehension",
+      "difficulty": "medium",
+      "answer_type": "single",
+      "stem": "Read the passage and answer the question.\n\n> Entrepreneurship is often associated with visionary ideas, yet long-term success depends just as much on adaptability. Markets evolve rapidly, technologies change, and consumer preferences shift in unpredictable ways. Successful entrepreneurs rarely follow a fixed plan from inception to completion. Instead, they continuously refine their strategies in response to feedback and emerging opportunities.\n>\n> A common approach involves iterative experimentation. Founders may introduce limited prototypes or pilot products in order to observe how customers respond. These early insights help entrepreneurs modify their offerings before committing significant resources to large-scale production. Such adjustments require intellectual flexibility. Entrepreneurs must sometimes abandon cherished assumptions when evidence suggests that an alternative direction may be more viable. This willingness to revise one's approach is not a sign of uncertainty but rather a recognition that innovation develops through experimentation. It is adaptability that enables entrepreneurs to navigate uncertainty and sustain growth in dynamic markets.\n\nWhat is the primary idea conveyed in the passage?",
+      "explanation": "The passage opens by setting visionary ideas against something it values just as highly — **adaptability** — and its second paragraph is devoted to **iterative experimentation** with prototypes and pilots. It closes by naming adaptability as what \"enables entrepreneurs to navigate uncertainty and sustain growth\".\n\nSo the primary idea is that **adaptability and experimentation are key to entrepreneurial success**.\n\n- Option 1 raises finance, which the passage never discusses.\n- Option 2 is the opposite of its argument — entrepreneurs \"rarely follow a fixed plan\".\n- Option 4 contradicts \"markets evolve rapidly\".",
+      "source": "AP ICET 2026 2nd May 2026 Shift 1",
+      "source_year": 2026,
+      "options": [
+        {
+          "label": "Entrepreneurship relies mainly on financial investment",
+          "is_correct": false
+        },
+        {
+          "label": "Entrepreneurs should avoid changing their ideas and remain steadfast",
+          "is_correct": false
+        },
+        {
+          "label": "Adaptability and experimentation are key to entrepreneurial success",
+          "is_correct": true
+        },
+        {
+          "label": "Markets rarely change once businesses are established",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Reading Comprehension",
+      "difficulty": "medium",
+      "answer_type": "single",
+      "stem": "Read the passage and answer the question.\n\n> Entrepreneurship is often associated with visionary ideas, yet long-term success depends just as much on adaptability. Markets evolve rapidly, technologies change, and consumer preferences shift in unpredictable ways. Successful entrepreneurs rarely follow a fixed plan from inception to completion. Instead, they continuously refine their strategies in response to feedback and emerging opportunities.\\n>\\n> A common approach involves iterative experimentation. Founders may introduce limited prototypes or pilot products in order to observe how customers respond. These early insights help entrepreneurs modify their offerings before committing significant resources to large-scale production. Such adjustments require intellectual flexibility. Entrepreneurs must sometimes abandon cherished assumptions when evidence suggests that an alternative direction may be more viable. This willingness to revise one's approach is not a sign of uncertainty but rather a recognition that innovation develops through experimentation. It is adaptability that enables entrepreneurs to navigate uncertainty and sustain growth in dynamic markets.\n\nWhy do entrepreneurs introduce prototypes or pilot products?",
+      "explanation": "The passage explains the purpose directly: founders introduce limited prototypes \"in order to observe how customers respond\", and those \"early insights help entrepreneurs modify their offerings **before committing significant resources** to large-scale production\".\n\nSo the aim is **to gather feedback before large-scale investment**.\n\nMarketing costs, regulatory requirements and eliminating competition are motives the passage never raises.",
+      "source": "AP ICET 2026 2nd May 2026 Shift 1",
+      "source_year": 2026,
+      "options": [
+        {
+          "label": "To reduce marketing expenses",
+          "is_correct": false
+        },
+        {
+          "label": "To gather feedback before large-scale investment",
+          "is_correct": true
+        },
+        {
+          "label": "To satisfy regulatory requirements",
+          "is_correct": false
+        },
+        {
+          "label": "To eliminate all competition before a product launch",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Reading Comprehension",
+      "difficulty": "medium",
+      "answer_type": "single",
+      "stem": "Read the passage and answer the question.\n\n> Entrepreneurship is often associated with visionary ideas, yet long-term success depends just as much on adaptability. Markets evolve rapidly, technologies change, and consumer preferences shift in unpredictable ways. Successful entrepreneurs rarely follow a fixed plan from inception to completion. Instead, they continuously refine their strategies in response to feedback and emerging opportunities.\\n>\\n> A common approach involves iterative experimentation. Founders may introduce limited prototypes or pilot products in order to observe how customers respond. These early insights help entrepreneurs modify their offerings before committing significant resources to large-scale production. Such adjustments require intellectual flexibility. Entrepreneurs must sometimes abandon cherished assumptions when evidence suggests that an alternative direction may be more viable. This willingness to revise one's approach is not a sign of uncertainty but rather a recognition that innovation develops through experimentation. It is adaptability that enables entrepreneurs to navigate uncertainty and sustain growth in dynamic markets.\n\nWhat is the author's purpose in discussing intellectual flexibility?",
+      "explanation": "Intellectual flexibility is introduced to explain why entrepreneurs \"must sometimes abandon cherished assumptions when evidence suggests that an alternative direction may be more viable\" — that is, **to illustrate that entrepreneurs must revise ideas when necessary**.\n\nThe author treats this revising as a strength, not a fault, so option 2 (criticising it) inverts the tone; technological innovation and financial management are not the point of the discussion.",
+      "source": "AP ICET 2026 2nd May 2026 Shift 1",
+      "source_year": 2026,
+      "options": [
+        {
+          "label": "To illustrate that entrepreneurs must revise ideas when necessary",
+          "is_correct": true
+        },
+        {
+          "label": "To criticise the tendency of business owners to change strategies",
+          "is_correct": false
+        },
+        {
+          "label": "To explain rapid technological innovation",
+          "is_correct": false
+        },
+        {
+          "label": "To describe financial management practices",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Reading Comprehension",
+      "difficulty": "medium",
+      "answer_type": "single",
+      "stem": "Read the passage and answer the question.\n\n> Entrepreneurship is often associated with visionary ideas, yet long-term success depends just as much on adaptability. Markets evolve rapidly, technologies change, and consumer preferences shift in unpredictable ways. Successful entrepreneurs rarely follow a fixed plan from inception to completion. Instead, they continuously refine their strategies in response to feedback and emerging opportunities.\\n>\\n> A common approach involves iterative experimentation. Founders may introduce limited prototypes or pilot products in order to observe how customers respond. These early insights help entrepreneurs modify their offerings before committing significant resources to large-scale production. Such adjustments require intellectual flexibility. Entrepreneurs must sometimes abandon cherished assumptions when evidence suggests that an alternative direction may be more viable. This willingness to revise one's approach is not a sign of uncertainty but rather a recognition that innovation develops through experimentation. It is adaptability that enables entrepreneurs to navigate uncertainty and sustain growth in dynamic markets.\n\nIn the context of the passage, the word **iterative** means ________.",
+      "explanation": "The passage pairs \"iterative experimentation\" with launching limited prototypes, observing responses, then modifying the offering — a cycle run again and again with improvements each time.\n\nSo iterative means **repeated and gradually refined**.\n\nIt is the opposite of an *immediate and final* output, and nothing in the word implies regulation or pure theory.",
+      "source": "AP ICET 2026 2nd May 2026 Shift 1",
+      "source_year": 2026,
+      "options": [
+        {
+          "label": "strictly regulated",
+          "is_correct": false
+        },
+        {
+          "label": "repeated and gradually refined",
+          "is_correct": true
+        },
+        {
+          "label": "immediate and final output",
+          "is_correct": false
+        },
+        {
+          "label": "purely theoretical and possibly hypothetical",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Reading Comprehension",
+      "difficulty": "medium",
+      "answer_type": "single",
+      "stem": "Read the passage and answer the question.\n\n> Entrepreneurship is often associated with visionary ideas, yet long-term success depends just as much on adaptability. Markets evolve rapidly, technologies change, and consumer preferences shift in unpredictable ways. Successful entrepreneurs rarely follow a fixed plan from inception to completion. Instead, they continuously refine their strategies in response to feedback and emerging opportunities.\\n>\\n> A common approach involves iterative experimentation. Founders may introduce limited prototypes or pilot products in order to observe how customers respond. These early insights help entrepreneurs modify their offerings before committing significant resources to large-scale production. Such adjustments require intellectual flexibility. Entrepreneurs must sometimes abandon cherished assumptions when evidence suggests that an alternative direction may be more viable. This willingness to revise one's approach is not a sign of uncertainty but rather a recognition that innovation develops through experimentation. It is adaptability that enables entrepreneurs to navigate uncertainty and sustain growth in dynamic markets.\n\nWhat key insight does the passage suggest about innovation?",
+      "explanation": "The passage states that revising one's approach reflects \"a recognition that **innovation develops through experimentation**\", and its closing sentence credits adaptability with sustaining growth.\n\nSo the insight is that **innovation emerges through continual experimentation and adjustment**.\n\nOption 2 contradicts \"entrepreneurs rarely follow a fixed plan\"; options 1 and 4 introduce restrictions (industry, funding) the passage never makes.",
+      "source": "AP ICET 2026 2nd May 2026 Shift 1",
+      "source_year": 2026,
+      "options": [
+        {
+          "label": "Innovation can occur only in technology industries",
+          "is_correct": false
+        },
+        {
+          "label": "Innovation requires strict adherence to initial plans without spontaneity",
+          "is_correct": false
+        },
+        {
+          "label": "Innovation emerges through continual experimentation and adjustment",
+          "is_correct": true
+        },
+        {
+          "label": "Innovation depends primarily on large financial investments",
+          "is_correct": false
+        }
+      ]
     }
   ]
 }

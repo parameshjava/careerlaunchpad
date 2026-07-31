@@ -1,0 +1,275 @@
+{
+  "subject": "Data Interpretation & Data Sufficiency",
+  "questions": [
+    {
+      "chapter": "Tables",
+      "difficulty": "easy",
+      "answer_type": "single",
+      "stem": "The table shows the number of female children born in the rural and urban areas of 4 different states (A to D) in 5 consecutive years (2020 to 2024).\n\n| Year | A — Rural | A — Urban | B — Rural | B — Urban | C — Rural | C — Urban | D — Rural | D — Urban |\n| --- | --- | --- | --- | --- | --- | --- | --- | --- |\n| 2020 | 700 | 925 | 495 | 825 | 905 | 910 | 1090 | 965 |\n| 2021 | 825 | 1011 | 600 | 845 | 910 | 902 | 1230 | 1030 |\n| 2022 | 910 | 1125 | 645 | 854 | 937 | 900 | 1160 | 1370 |\n| 2023 | 1003 | 1210 | 765 | 950 | 1110 | 890 | 1340 | 1290 |\n| 2024 | 1200 | 1315 | 630 | 980 | 1200 | 885 | 1250 | 1100 |\n\nWhich state recorded the highest number of female children born in the year 2024?",
+      "explanation": "Add the rural and urban figures for 2024 in each state:\n\n$$A: 1200 + 1315 = \\mathbf{2515}$$\n$$B: 630 + 980 = 1610$$\n$$C: 1200 + 885 = 2085$$\n$$D: 1250 + 1100 = 2350$$\n\nThe largest total is **State A** (2515).\n\n*(Reading only the rural column would put A and C level at 1200 — the urban column is what separates them.)*",
+      "source": "AP ICET 2025 7th May 2025 Shift 1",
+      "source_year": 2025,
+      "options": [
+        {
+          "label": "A",
+          "is_correct": true
+        },
+        {
+          "label": "B",
+          "is_correct": false
+        },
+        {
+          "label": "C",
+          "is_correct": false
+        },
+        {
+          "label": "D",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Tables",
+      "difficulty": "easy",
+      "answer_type": "single",
+      "stem": "The table shows the number of female children born in the rural and urban areas of 4 different states (A to D) in 5 consecutive years (2020 to 2024).\n\n| Year | A — Rural | A — Urban | B — Rural | B — Urban | C — Rural | C — Urban | D — Rural | D — Urban |\n| --- | --- | --- | --- | --- | --- | --- | --- | --- |\n| 2020 | 700 | 925 | 495 | 825 | 905 | 910 | 1090 | 965 |\n| 2021 | 825 | 1011 | 600 | 845 | 910 | 902 | 1230 | 1030 |\n| 2022 | 910 | 1125 | 645 | 854 | 937 | 900 | 1160 | 1370 |\n| 2023 | 1003 | 1210 | 765 | 950 | 1110 | 890 | 1340 | 1290 |\n| 2024 | 1200 | 1315 | 630 | 980 | 1200 | 885 | 1250 | 1100 |\n\nIn the year 2024, which state had the largest difference in the number of female children born between its rural and urban areas?",
+      "explanation": "Take the 2024 row and subtract, ignoring sign:\n\n$$A: |1200 - 1315| = 115$$\n$$B: |630 - 980| = \\mathbf{350}$$\n$$C: |1200 - 885| = 315$$\n$$D: |1250 - 1100| = 150$$\n\n**State B** has the biggest gap, 350.\n\n*(B has the smallest numbers overall, so the largest *difference* need not belong to the largest state — C is a close second at 315.)*",
+      "source": "AP ICET 2025 7th May 2025 Shift 1",
+      "source_year": 2025,
+      "options": [
+        {
+          "label": "A",
+          "is_correct": false
+        },
+        {
+          "label": "B",
+          "is_correct": true
+        },
+        {
+          "label": "C",
+          "is_correct": false
+        },
+        {
+          "label": "D",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Tables",
+      "difficulty": "medium",
+      "answer_type": "single",
+      "stem": "The table shows the number of female children born in the rural and urban areas of 4 different states (A to D) in 5 consecutive years (2020 to 2024).\n\n| Year | A — Rural | A — Urban | B — Rural | B — Urban | C — Rural | C — Urban | D — Rural | D — Urban |\n| --- | --- | --- | --- | --- | --- | --- | --- | --- |\n| 2020 | 700 | 925 | 495 | 825 | 905 | 910 | 1090 | 965 |\n| 2021 | 825 | 1011 | 600 | 845 | 910 | 902 | 1230 | 1030 |\n| 2022 | 910 | 1125 | 645 | 854 | 937 | 900 | 1160 | 1370 |\n| 2023 | 1003 | 1210 | 765 | 950 | 1110 | 890 | 1340 | 1290 |\n| 2024 | 1200 | 1315 | 630 | 980 | 1200 | 885 | 1250 | 1100 |\n\nWhat was the percentage increase in the female children born in state C from the year 2023 to 2024?",
+      "explanation": "Total both areas of state C for each year:\n$$2023: 1110 + 890 = 2000$$\n$$2024: 1200 + 885 = 2085$$\n\n$$\\text{Increase} = 2085 - 2000 = 85.$$\n\n$$\\%\\text{ increase} = \\frac{85}{2000}\\times 100 = \\mathbf{4.25\\%}.$$\n\n*(The urban figure actually **fell** by 5; only the rural rise of 90 keeps the total growing.)*",
+      "source": "AP ICET 2025 7th May 2025 Shift 1",
+      "source_year": 2025,
+      "options": [
+        {
+          "label": "3.75 %",
+          "is_correct": false
+        },
+        {
+          "label": "4.25 %",
+          "is_correct": true
+        },
+        {
+          "label": "5.50 %",
+          "is_correct": false
+        },
+        {
+          "label": "7.25 %",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Tables",
+      "difficulty": "easy",
+      "answer_type": "single",
+      "stem": "The table shows the number of female children born in the rural and urban areas of 4 different states (A to D) in 5 consecutive years (2020 to 2024).\n\n| Year | A — Rural | A — Urban | B — Rural | B — Urban | C — Rural | C — Urban | D — Rural | D — Urban |\n| --- | --- | --- | --- | --- | --- | --- | --- | --- |\n| 2020 | 700 | 925 | 495 | 825 | 905 | 910 | 1090 | 965 |\n| 2021 | 825 | 1011 | 600 | 845 | 910 | 902 | 1230 | 1030 |\n| 2022 | 910 | 1125 | 645 | 854 | 937 | 900 | 1160 | 1370 |\n| 2023 | 1003 | 1210 | 765 | 950 | 1110 | 890 | 1340 | 1290 |\n| 2024 | 1200 | 1315 | 630 | 980 | 1200 | 885 | 1250 | 1100 |\n\nWhich is the only state which recorded a continuous fall in the number of female children born in its urban area over the last 5 consecutive years?",
+      "explanation": "Read each state's **urban** column downwards and check that every step decreases:\n\n$$A: 925 \\to 1011 \\to 1125 \\to 1210 \\to 1315 \\;(\\text{rising})$$\n$$B: 825 \\to 845 \\to 854 \\to 950 \\to 980 \\;(\\text{rising})$$\n$$C: 910 \\to 902 \\to 900 \\to 890 \\to 885 \\;(\\textbf{falling every year})$$\n$$D: 965 \\to 1030 \\to 1370 \\to 1290 \\to 1100 \\;(\\text{up then down})$$\n\nOnly **State C** falls at every step.",
+      "source": "AP ICET 2025 7th May 2025 Shift 1",
+      "source_year": 2025,
+      "options": [
+        {
+          "label": "A",
+          "is_correct": false
+        },
+        {
+          "label": "B",
+          "is_correct": false
+        },
+        {
+          "label": "C",
+          "is_correct": true
+        },
+        {
+          "label": "D",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Tables",
+      "difficulty": "medium",
+      "answer_type": "single",
+      "stem": "The line graph shows the profits of a company (in ₹ lakhs) over 4 years:\n\n| Year | 2019 | 2020 | 2021 | 2022 |\n| --- | --- | --- | --- | --- |\n| Profit (₹ lakhs) | 80 | 100 | 120 | 150 |\n\nWhat is the percentage increase in profit from 2019 to 2022?",
+      "explanation": "The increase is measured **against the earlier year**:\n$$150 - 80 = 70.$$\n\n$$\\%\\text{ increase} = \\frac{70}{80}\\times 100 = 87.5\\% \\approx \\mathbf{87\\%}.$$\n\n*(Dividing by 150 instead would give 46% — option 4 — which is the trap.)*",
+      "source": "AP ICET 2025 7th May 2025 Shift 1",
+      "source_year": 2025,
+      "options": [
+        {
+          "label": "87 %",
+          "is_correct": true
+        },
+        {
+          "label": "75 %",
+          "is_correct": false
+        },
+        {
+          "label": "66 %",
+          "is_correct": false
+        },
+        {
+          "label": "46 %",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Tables",
+      "difficulty": "easy",
+      "answer_type": "single",
+      "stem": "The line graph shows the profits of a company (in ₹ lakhs) over 4 years:\n\n| Year | 2019 | 2020 | 2021 | 2022 |\n| --- | --- | --- | --- | --- |\n| Profit (₹ lakhs) | 80 | 100 | 120 | 150 |\n\nThe percentage increase in profit during 2020 to 2021 is:",
+      "explanation": "$$\\frac{120 - 100}{100}\\times 100 = \\frac{20}{100}\\times 100 = \\mathbf{20\\%}.$$\n\n*(The jump is 20 lakhs on a base of 100 lakhs — the base year is 2020, not 2021.)*",
+      "source": "AP ICET 2025 7th May 2025 Shift 1",
+      "source_year": 2025,
+      "options": [
+        {
+          "label": "50 %",
+          "is_correct": false
+        },
+        {
+          "label": "30 %",
+          "is_correct": false
+        },
+        {
+          "label": "25 %",
+          "is_correct": false
+        },
+        {
+          "label": "20 %",
+          "is_correct": true
+        }
+      ]
+    },
+    {
+      "chapter": "Tables",
+      "difficulty": "medium",
+      "answer_type": "single",
+      "stem": "The line graph shows the profits of a company (in ₹ lakhs) over 4 years:\n\n| Year | 2019 | 2020 | 2021 | 2022 |\n| --- | --- | --- | --- | --- |\n| Profit (₹ lakhs) | 80 | 100 | 120 | 150 |\n\nFor how many years was the profit of the company more than one crore rupees?",
+      "explanation": "One crore $= 100$ lakhs, and the graph is drawn in ₹ lakhs. So the question asks how many years exceed **100**:\n\n$$2019: 80 \\;(\\text{no}), \\quad 2020: 100 \\;(\\text{equal, not more}),$$\n$$2021: 120 \\;(\\textbf{yes}), \\quad 2022: 150 \\;(\\textbf{yes}).$$\n\n$$\\Rightarrow \\mathbf{2} \\text{ years}.$$\n\n*(2020 sits exactly on one crore, so it does not count as \"more than\".)*",
+      "source": "AP ICET 2025 7th May 2025 Shift 1",
+      "source_year": 2025,
+      "options": [
+        {
+          "label": "4",
+          "is_correct": false
+        },
+        {
+          "label": "2",
+          "is_correct": true
+        },
+        {
+          "label": "3",
+          "is_correct": false
+        },
+        {
+          "label": "1",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Pie Charts",
+      "difficulty": "easy",
+      "answer_type": "single",
+      "stem": "The pie chart shows the expenditure breakdown of a family:\n\n| Head | Rent | Food | Education | Transport | Others |\n| --- | --- | --- | --- | --- | --- |\n| Share | 25% | 35% | 15% | 10% | 15% |\n\nIf the total monthly expenditure is ₹48,000, what is the amount spent on Education?",
+      "explanation": "Education takes 15% of the total:\n$$0.15 \\times 48000 = \\mathbf{₹7{,}200}.$$",
+      "source": "AP ICET 2025 7th May 2025 Shift 1",
+      "source_year": 2025,
+      "options": [
+        {
+          "label": "₹ 6,800",
+          "is_correct": false
+        },
+        {
+          "label": "₹ 7,200",
+          "is_correct": true
+        },
+        {
+          "label": "₹ 6,500",
+          "is_correct": false
+        },
+        {
+          "label": "₹ 7,000",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Pie Charts",
+      "difficulty": "easy",
+      "answer_type": "single",
+      "stem": "The pie chart shows the expenditure breakdown of a family:\n\n| Head | Rent | Food | Education | Transport | Others |\n| --- | --- | --- | --- | --- | --- |\n| Share | 25% | 35% | 15% | 10% | 15% |\n\nIf the total monthly expenditure is ₹48,000, how much more expenditure was incurred on Rent compared to Education?",
+      "explanation": "Work with the **difference in percentages** first — it saves a step:\n$$25\\% - 15\\% = 10\\%.$$\n\n$$0.10 \\times 48000 = \\mathbf{₹4{,}800}.$$\n\n*(Longer route: Rent $= ₹12{,}000$, Education $= ₹7{,}200$, difference $= ₹4{,}800$ ✓)*",
+      "source": "AP ICET 2025 7th May 2025 Shift 1",
+      "source_year": 2025,
+      "options": [
+        {
+          "label": "₹ 4,800",
+          "is_correct": true
+        },
+        {
+          "label": "₹ 7,200",
+          "is_correct": false
+        },
+        {
+          "label": "₹ 3,600",
+          "is_correct": false
+        },
+        {
+          "label": "₹ 8,400",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Pie Charts",
+      "difficulty": "medium",
+      "answer_type": "single",
+      "stem": "The pie chart shows the expenditure breakdown of a family:\n\n| Head | Rent | Food | Education | Transport | Others |\n| --- | --- | --- | --- | --- | --- |\n| Share | 25% | 35% | 15% | 10% | 15% |\n\nIf the expenditure on Transport is ₹8,000, what is the expenditure on Education and Rent put together for the same family?",
+      "explanation": "**Step 1 — find the total.** Transport is 10% of it:\n$$0.10 \\times T = 8000 \\Rightarrow T = ₹80{,}000.$$\n\n**Step 2 — add the two shares:**\n$$\\text{Education } 15\\% + \\text{Rent } 25\\% = 40\\%.$$\n\n$$0.40 \\times 80000 = \\mathbf{₹32{,}000}.$$\n\n*(Note the total here is ₹80,000, not the ₹48,000 of the previous questions — each question sets its own base.)*",
+      "source": "AP ICET 2025 7th May 2025 Shift 1",
+      "source_year": 2025,
+      "options": [
+        {
+          "label": "₹ 16,000",
+          "is_correct": false
+        },
+        {
+          "label": "₹ 24,000",
+          "is_correct": false
+        },
+        {
+          "label": "₹ 32,000",
+          "is_correct": true
+        },
+        {
+          "label": "₹ 28,000",
+          "is_correct": false
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,275 @@
+{
+  "subject": "Data Interpretation & Data Sufficiency",
+  "questions": [
+    {
+      "chapter": "Pie Charts",
+      "difficulty": "medium",
+      "answer_type": "single",
+      "stem": "The pie charts below show the distribution of students of graduate and post-graduate levels in seven different institutes in a town.\n\n| Institute | Share of graduate students | Share of post-graduate students |\n| --- | --- | --- |\n| P | 12% | 12% |\n| Q | 13% | 13% |\n| R | 17% | 14% |\n| S | 14% | 21% |\n| T | 15% | 17% |\n| M | 17% | 8% |\n| N | 12% | 15% |\n\n**Total number of students of graduate level = 27,300.**\n**Total number of students of post-graduate level = 24,700.**\n\nWhat is the total number of graduate and post-graduate level students in institute R?",
+      "explanation": "Take R's share from each chart separately.\n\n**Graduate:** $17\\%$ of 27300\n$$0.17 \\times 27300 = 4641.$$\n\n**Post-graduate:** $14\\%$ of 24700\n$$0.14 \\times 24700 = 3458.$$\n\n$$\\text{Total} = 4641 + 3458 = \\mathbf{8099}.$$\n\n*(The two totals differ, so the percentages cannot simply be added — each must be applied to its own total.)*",
+      "source": "AP ICET 2025 7th May 2025 Shift 2",
+      "source_year": 2025,
+      "options": [
+        {
+          "label": "8320",
+          "is_correct": false
+        },
+        {
+          "label": "7916",
+          "is_correct": false
+        },
+        {
+          "label": "9116",
+          "is_correct": false
+        },
+        {
+          "label": "8099",
+          "is_correct": true
+        }
+      ]
+    },
+    {
+      "chapter": "Pie Charts",
+      "difficulty": "medium",
+      "answer_type": "single",
+      "stem": "The pie charts below show the distribution of students of graduate and post-graduate levels in seven different institutes in a town.\n\n| Institute | Share of graduate students | Share of post-graduate students |\n| --- | --- | --- |\n| P | 12% | 12% |\n| Q | 13% | 13% |\n| R | 17% | 14% |\n| S | 14% | 21% |\n| T | 15% | 17% |\n| M | 17% | 8% |\n| N | 12% | 15% |\n\n**Total number of students of graduate level = 27,300.**\n**Total number of students of post-graduate level = 24,700.**\n\nWhat is the ratio between the number of students studying at post-graduate and graduate levels respectively in the institute S?",
+      "explanation": "**Post-graduate:** $0.21 \\times 24700 = 5187$.\n**Graduate:** $0.14 \\times 27300 = 3822$.\n\n$$\\frac{5187}{3822} = \\frac{19}{14}$$\nafter dividing both by 273.\n\nSo the ratio is $\\mathbf{19 : 14}$ — note the order asked for is post-graduate **first**, which is why $14:19$ is offered as a trap.",
+      "source": "AP ICET 2025 7th May 2025 Shift 2",
+      "source_year": 2025,
+      "options": [
+        {
+          "label": "14 : 19",
+          "is_correct": false
+        },
+        {
+          "label": "19 : 21",
+          "is_correct": false
+        },
+        {
+          "label": "17 : 21",
+          "is_correct": false
+        },
+        {
+          "label": "19 : 14",
+          "is_correct": true
+        }
+      ]
+    },
+    {
+      "chapter": "Pie Charts",
+      "difficulty": "easy",
+      "answer_type": "single",
+      "stem": "The pie charts below show the distribution of students of graduate and post-graduate levels in seven different institutes in a town.\n\n| Institute | Share of graduate students | Share of post-graduate students |\n| --- | --- | --- |\n| P | 12% | 12% |\n| Q | 13% | 13% |\n| R | 17% | 14% |\n| S | 14% | 21% |\n| T | 15% | 17% |\n| M | 17% | 8% |\n| N | 12% | 15% |\n\n**Total number of students of graduate level = 27,300.**\n**Total number of students of post-graduate level = 24,700.**\n\nHow many students of institutes M and S are studying at graduate level?",
+      "explanation": "Both shares come from the **graduate** chart, so they can be added first:\n$$17\\% + 14\\% = 31\\%.$$\n\n$$0.31 \\times 27300 = \\mathbf{8463}.$$\n\n*(Checking separately: $4641 + 3822 = 8463$ ✓)*",
+      "source": "AP ICET 2025 7th May 2025 Shift 2",
+      "source_year": 2025,
+      "options": [
+        {
+          "label": "7516",
+          "is_correct": false
+        },
+        {
+          "label": "8463",
+          "is_correct": true
+        },
+        {
+          "label": "9127",
+          "is_correct": false
+        },
+        {
+          "label": "9404",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Pie Charts",
+      "difficulty": "easy",
+      "answer_type": "single",
+      "stem": "The pie charts below show the distribution of students of graduate and post-graduate levels in seven different institutes in a town.\n\n| Institute | Share of graduate students | Share of post-graduate students |\n| --- | --- | --- |\n| P | 12% | 12% |\n| Q | 13% | 13% |\n| R | 17% | 14% |\n| S | 14% | 21% |\n| T | 15% | 17% |\n| M | 17% | 8% |\n| N | 12% | 15% |\n\n**Total number of students of graduate level = 27,300.**\n**Total number of students of post-graduate level = 24,700.**\n\nTotal number of students studying at post-graduate level from institutes N and P is:",
+      "explanation": "Both shares are from the **post-graduate** chart:\n$$15\\% + 12\\% = 27\\%.$$\n\n$$0.27 \\times 24700 = \\mathbf{6669}.$$\n\n*(Separately: $3705 + 2964 = 6669$ ✓)*",
+      "source": "AP ICET 2025 7th May 2025 Shift 2",
+      "source_year": 2025,
+      "options": [
+        {
+          "label": "5601",
+          "is_correct": false
+        },
+        {
+          "label": "944",
+          "is_correct": false
+        },
+        {
+          "label": "6669",
+          "is_correct": true
+        },
+        {
+          "label": "8372",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Bar Graphs",
+      "difficulty": "easy",
+      "answer_type": "single",
+      "stem": "The bar chart below shows the sale of cellular phones over six years.\n\n| Year | 1997 | 1998 | 1999 | 2000 | 2001 | 2002 |\n| --- | --- | --- | --- | --- | --- | --- |\n| Cellular phones sold | 48000 | 40000 | 30000 | 25000 | 18000 | 40000 |\n\nThe difference in the sales of cellular phones for the years 1997 and 1999 is?",
+      "explanation": "Read the two bars and subtract:\n$$48000 - 30000 = \\mathbf{18{,}000} \\text{ units}.$$",
+      "source": "AP ICET 2025 7th May 2025 Shift 2",
+      "source_year": 2025,
+      "options": [
+        {
+          "label": "500 units",
+          "is_correct": false
+        },
+        {
+          "label": "1,000 units",
+          "is_correct": false
+        },
+        {
+          "label": "5,000 units",
+          "is_correct": false
+        },
+        {
+          "label": "18,000 units",
+          "is_correct": true
+        }
+      ]
+    },
+    {
+      "chapter": "Bar Graphs",
+      "difficulty": "easy",
+      "answer_type": "single",
+      "stem": "The bar chart below shows the sale of cellular phones over six years.\n\n| Year | 1997 | 1998 | 1999 | 2000 | 2001 | 2002 |\n| --- | --- | --- | --- | --- | --- | --- |\n| Cellular phones sold | 48000 | 40000 | 30000 | 25000 | 18000 | 40000 |\n\nThe sum of sales of cellular phones in the years 1999 and 2001 is equal to that of which year?",
+      "explanation": "$$1999 + 2001 = 30000 + 18000 = 48000.$$\n\nScanning the chart, 48000 is the figure for **1997**.\n\n*(1998 and 2002 stand at 40000 and 2000 at 25000, so none of them matches.)*",
+      "source": "AP ICET 2025 7th May 2025 Shift 2",
+      "source_year": 2025,
+      "options": [
+        {
+          "label": "1997",
+          "is_correct": true
+        },
+        {
+          "label": "1998",
+          "is_correct": false
+        },
+        {
+          "label": "2000",
+          "is_correct": false
+        },
+        {
+          "label": "2002",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Bar Graphs",
+      "difficulty": "medium",
+      "answer_type": "single",
+      "stem": "The bar chart below shows the sale of cellular phones over six years.\n\n| Year | 1997 | 1998 | 1999 | 2000 | 2001 | 2002 |\n| --- | --- | --- | --- | --- | --- | --- |\n| Cellular phones sold | 48000 | 40000 | 30000 | 25000 | 18000 | 40000 |\n\nThe percentage increase in sales from 2001 to 2002 was?",
+      "explanation": "The increase is measured against the **earlier** year, 2001:\n$$\\frac{40000 - 18000}{18000} \\times 100 = \\frac{22000}{18000} \\times 100 = 122.2\\%,$$\n\nwhich rounds to **122%**.\n\n*(Dividing by 2002's figure instead would give 55% — the usual error in percentage-change questions.)*",
+      "source": "AP ICET 2025 7th May 2025 Shift 2",
+      "source_year": 2025,
+      "options": [
+        {
+          "label": "115 %",
+          "is_correct": false
+        },
+        {
+          "label": "128 %",
+          "is_correct": false
+        },
+        {
+          "label": "122 %",
+          "is_correct": true
+        },
+        {
+          "label": "118 %",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Tables",
+      "difficulty": "medium",
+      "answer_type": "single",
+      "stem": "The line graph below shows the **ratio of exports to imports** of two companies A and B over the years 1995 to 2000.\n\n| Year | 1995 | 1996 | 1997 | 1998 | 1999 | 2000 |\n| --- | --- | --- | --- | --- | --- | --- |\n| Company A | 1.75 | 1.5 | 1.75 | 0.75 | 0.75 | 1.0 |\n| Company B | 0.75 | 0.75 | 1.0 | 1.25 | 1.0 | 1.25 |\n\nIn how many of the given years were the exports more than the imports for Company A?",
+      "explanation": "Exports exceed imports exactly when the ratio is **greater than 1**.\n\nCompany A's ratios are $1.75, 1.5, 1.75, 0.75, 0.75, 1.0$, so the years above 1 are\n$$1995 \\;(1.75), \\quad 1996 \\;(1.5), \\quad 1997 \\;(1.75) \\;-\\; \\mathbf{3 \\text{ years}}.$$\n\n*(2000 has a ratio of exactly 1, meaning exports **equal** imports, so it does not count.)*",
+      "source": "AP ICET 2025 7th May 2025 Shift 2",
+      "source_year": 2025,
+      "options": [
+        {
+          "label": "2",
+          "is_correct": false
+        },
+        {
+          "label": "3",
+          "is_correct": true
+        },
+        {
+          "label": "4",
+          "is_correct": false
+        },
+        {
+          "label": "5",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "chapter": "Tables",
+      "difficulty": "medium",
+      "answer_type": "single",
+      "stem": "The line graph below shows the **ratio of exports to imports** of two companies A and B over the years 1995 to 2000.\n\n| Year | 1995 | 1996 | 1997 | 1998 | 1999 | 2000 |\n| --- | --- | --- | --- | --- | --- | --- |\n| Company A | 1.75 | 1.5 | 1.75 | 0.75 | 0.75 | 1.0 |\n| Company B | 0.75 | 0.75 | 1.0 | 1.25 | 1.0 | 1.25 |\n\nIf the exports of Company A in 1998 were ₹237 crores, what was the amount of imports in that year?",
+      "explanation": "The graph gives a ratio, not an amount:\n$$\\frac{\\text{Exports}}{\\text{Imports}} = 0.75 \\text{ in 1998 for Company A}.$$\n\nSo\n$$\\text{Imports} = \\frac{237}{0.75} = \\mathbf{₹316 \\text{ crores}}.$$\n\n*(Multiplying instead of dividing would give ₹177.75 crores — the ratio being below 1 means imports must be the **larger** figure.)*",
+      "source": "AP ICET 2025 7th May 2025 Shift 2",
+      "source_year": 2025,
+      "options": [
+        {
+          "label": "189.6 crores",
+          "is_correct": false
+        },
+        {
+          "label": "243 crores",
+          "is_correct": false
+        },
+        {
+          "label": "281 crores",
+          "is_correct": false
+        },
+        {
+          "label": "316 crores",
+          "is_correct": true
+        }
+      ]
+    },
+    {
+      "chapter": "Tables",
+      "difficulty": "medium",
+      "answer_type": "single",
+      "stem": "The line graph below shows the **ratio of exports to imports** of two companies A and B over the years 1995 to 2000.\n\n| Year | 1995 | 1996 | 1997 | 1998 | 1999 | 2000 |\n| --- | --- | --- | --- | --- | --- | --- |\n| Company A | 1.75 | 1.5 | 1.75 | 0.75 | 0.75 | 1.0 |\n| Company B | 0.75 | 0.75 | 1.0 | 1.25 | 1.0 | 1.25 |\n\nIn how many years were the imports more than the exports for company 'B'?",
+      "explanation": "Imports exceed exports when the ratio is **less than 1**.\n\nCompany B's ratios are $0.75, 0.75, 1.0, 1.25, 1.0, 1.25$, so the years below 1 are\n$$1995 \\text{ and } 1996 \\;-\\; \\mathbf{2 \\text{ years}}.$$\n\n*(1997 and 1999 sit exactly at 1 — equal, not more.)*",
+      "source": "AP ICET 2025 7th May 2025 Shift 2",
+      "source_year": 2025,
+      "options": [
+        {
+          "label": "3",
+          "is_correct": false
+        },
+        {
+          "label": "1",
+          "is_correct": false
+        },
+        {
+          "label": "2",
+          "is_correct": true
+        },
+        {
+          "label": "0",
+          "is_correct": false
+        }
+      ]
+    }
+  ]
+}
