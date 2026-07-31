@@ -27,6 +27,7 @@ import { Loader2, Table2, BarChart3 } from "lucide-react";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
+import { Input } from "@/components/ui/input";
 import {
   Select,
   SelectContent,
@@ -92,6 +93,17 @@ type PlanItem = {
   pass_pct: number;
   category: "quick_win" | "not_attempted" | "needs_study";
 };
+// FR-8 target/projection: what the average becomes if every still-unpassed assessed
+// chapter is lifted to its pass mark ("clear the pending chapters"). Transparent recompute.
+type Projection = {
+  target: number | null;
+  current_avg: number | null;
+  projected_avg: number | null;
+  chapters_to_lift: number;
+  gap_to_target: number | null;
+  reaches_target: boolean | null;
+};
+type BatchOption = { batch_id: string; batch_name: string };
 
 const RANGES: { value: string; label: string; months: number | null }[] = [
   { value: "12m", label: "Last 12 months", months: 12 },
@@ -136,6 +148,90 @@ const CAT: Record<PlanItem["category"], { label: string; variant: "default" | "s
   not_attempted: { label: "Not attempted", variant: "outline" },
   needs_study: { label: "Needs study", variant: "secondary" },
 };
+
+// FR-8: set a target average; see the gap and a projection of clearing pending chapters.
+function ProjectionPanel({
+  projection,
+  target,
+  onTargetChange,
+  onApply,
+  onClear,
+}: {
+  projection: Projection | null;
+  target: string;
+  onTargetChange: (v: string) => void;
+  onApply: () => void;
+  onClear: () => void;
+}) {
+  const p = projection;
+  const applied = p?.target ?? null;
+  return (
+    <div className="bg-muted/30 mb-4 rounded-md border p-3">
+      <form
+        className="flex flex-wrap items-end gap-2"
+        onSubmit={(e) => {
+          e.preventDefault();
+          onApply();
+        }}
+      >
+        <label className="text-xs">
+          <span className="text-muted-foreground mb-1 block">Target average</span>
+          <div className="flex items-center gap-1">
+            <Input
+              type="number"
+              inputMode="numeric"
+              min={0}
+              max={100}
+              value={target}
+              onChange={(e) => onTargetChange(e.target.value)}
+              placeholder="e.g. 70"
+              className="h-8 w-24"
+              aria-label="Target average percent"
+            />
+            <span className="text-muted-foreground text-sm">%</span>
+          </div>
+        </label>
+        <Button type="submit" size="sm" className="h-8">
+          Set target
+        </Button>
+        {applied != null && (
+          <Button type="button" size="sm" variant="ghost" className="h-8" onClick={onClear}>
+            Clear
+          </Button>
+        )}
+      </form>
+
+      {p && p.current_avg != null && p.chapters_to_lift > 0 && (
+        <p className="text-muted-foreground mt-2 text-xs leading-relaxed">
+          Clearing your <b className="text-foreground">{p.chapters_to_lift}</b> pending chapter
+          {p.chapters_to_lift === 1 ? "" : "s"} to the pass mark would lift your average from{" "}
+          <b className="text-foreground">{Math.round(p.current_avg)}%</b> to ~
+          <b className="text-foreground">{Math.round(p.projected_avg ?? p.current_avg)}%</b>.
+          {applied != null &&
+            (p.reaches_target ? (
+              <span className="text-emerald-600 dark:text-emerald-400">
+                {" "}
+                That clears your {applied}% target. ✓
+              </span>
+            ) : (
+              <>
+                {" "}
+                Still {Math.max(0, Math.round(applied - (p.projected_avg ?? 0)))}% short of your {applied}% target — you&apos;ll
+                need above-pass scores on some chapters.
+              </>
+            ))}{" "}
+          <span className="italic">Estimate.</span>
+        </p>
+      )}
+      {p && p.chapters_to_lift === 0 && p.current_avg != null && (
+        <p className="text-muted-foreground mt-2 text-xs">
+          You&apos;ve passed every assessed chapter — your average is{" "}
+          <b className="text-foreground">{Math.round(p.current_avg)}%</b>.
+        </p>
+      )}
+    </div>
+  );
+}
 
 function StudyPlan({ plan }: { plan: PlanItem[] }) {
   if (plan.length === 0)
@@ -324,10 +420,16 @@ function TrendChart({ points, bySubject }: { points: TrendPoint[]; bySubject: bo
 // ---- Root -------------------------------------------------------------------
 export function StudentPerformance() {
   const [range, setRange] = useState("12m");
+  const [batch, setBatch] = useState("all");
+  const [batches, setBatches] = useState<BatchOption[]>([]);
   const [summary, setSummary] = useState<Summary | null>(null);
   const [subjects, setSubjects] = useState<Subject[]>([]);
   const [trend, setTrend] = useState<TrendPoint[]>([]);
   const [plan, setPlan] = useState<PlanItem[]>([]);
+  const [planLoaded, setPlanLoaded] = useState(false);
+  const [projection, setProjection] = useState<Projection | null>(null);
+  const [target, setTarget] = useState(""); // the target input's text
+  const [appliedTarget, setAppliedTarget] = useState<number | null>(null); // last valid target sent
   const [selected, setSelected] = useState<Subject | null>(null);
   const [chapters, setChapters] = useState<Chapter[]>([]);
   const [trendBySubject, setTrendBySubject] = useState(false);
@@ -335,10 +437,23 @@ export function StudentPerformance() {
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState("");
 
+  // query string shared by the range/batch-scoped endpoints (from + batch).
   const qs = useCallback(() => {
+    const p = new URLSearchParams();
     const from = fromDate(RANGES.find((r) => r.value === range)?.months ?? null);
-    return from ? `?from=${from}` : "";
-  }, [range]);
+    if (from) p.set("from", from);
+    if (batch !== "all") p.set("batch", batch);
+    const s = p.toString();
+    return s ? `?${s}` : "";
+  }, [range, batch]);
+
+  // The student's batches populate the FR-7 filter (rendered only when >1 batch).
+  useEffect(() => {
+    fetch(`/api/student/performance/batches`)
+      .then((r) => r.json())
+      .then((d) => setBatches(d.batches ?? []))
+      .catch(() => setBatches([]));
+  }, []);
 
   useEffect(() => {
     let cancelled = false;
@@ -349,15 +464,13 @@ export function StudentPerformance() {
       fetch(`/api/student/performance/summary${q}`).then((r) => r.json()),
       fetch(`/api/student/performance/subjects${q}`).then((r) => r.json()),
       fetch(`/api/student/performance/trend${q}${q ? "&" : "?"}group=subject`).then((r) => r.json()),
-      fetch(`/api/student/performance/study-plan`).then((r) => r.json()),
     ])
-      .then(([s, sub, tr, pl]) => {
+      .then(([s, sub, tr]) => {
         if (cancelled) return;
         if (s.error) setError(s.error);
         setSummary(s.summary ?? null);
         setSubjects(sub.subjects ?? []);
         setTrend(tr.points ?? []);
-        setPlan(pl.plan ?? []);
       })
       .catch((e) => !cancelled && setError(String(e)))
       .finally(() => !cancelled && setLoading(false));
@@ -365,6 +478,47 @@ export function StudentPerformance() {
       cancelled = true;
     };
   }, [qs]);
+
+  // Study plan + projection refetch on batch or applied-target change — independent
+  // of the time range (the plan RPC is not date-filtered).
+  useEffect(() => {
+    let cancelled = false;
+    const p = new URLSearchParams();
+    if (batch !== "all") p.set("batch", batch);
+    if (appliedTarget != null) p.set("target", String(appliedTarget));
+    const s = p.toString();
+    fetch(`/api/student/performance/study-plan${s ? `?${s}` : ""}`)
+      .then((r) => r.json())
+      .then((d) => {
+        if (cancelled) return;
+        setPlan(d.plan ?? []);
+        setProjection(d.projection ?? null);
+        setPlanLoaded(true);
+      })
+      .catch(() => {
+        if (cancelled) return;
+        setPlan([]);
+        setProjection(null);
+        setPlanLoaded(true);
+      });
+    return () => {
+      cancelled = true;
+    };
+  }, [batch, appliedTarget]);
+
+  function applyTarget() {
+    const t = target.trim();
+    if (t === "") {
+      setAppliedTarget(null);
+      return;
+    }
+    const n = Number(t);
+    if (Number.isInteger(n) && n >= 0 && n <= 100) setAppliedTarget(n);
+  }
+  function clearTarget() {
+    setTarget("");
+    setAppliedTarget(null);
+  }
 
   function pickSubject(s: Subject) {
     if (selected?.subject_id === s.subject_id) {
@@ -401,7 +555,22 @@ export function StudentPerformance() {
   return (
     <div className="space-y-6">
       {/* filter row */}
-      <div className="flex items-center justify-end">
+      <div className="flex flex-wrap items-center justify-end gap-2">
+        {batches.length > 1 && (
+          <Select value={batch} onValueChange={setBatch}>
+            <SelectTrigger className="h-8 w-[12rem]">
+              <SelectValue />
+            </SelectTrigger>
+            <SelectContent>
+              <SelectItem value="all">All batches</SelectItem>
+              {batches.map((b) => (
+                <SelectItem key={b.batch_id} value={b.batch_id}>
+                  {b.batch_name}
+                </SelectItem>
+              ))}
+            </SelectContent>
+          </Select>
+        )}
         <Select value={range} onValueChange={setRange}>
           <SelectTrigger className="h-8 w-[11rem]">
             <SelectValue />
@@ -431,7 +600,20 @@ export function StudentPerformance() {
           <p className="text-muted-foreground text-xs">Where the next attempt pays off most — quick wins first.</p>
         </CardHeader>
         <CardContent>
-          <StudyPlan plan={plan} />
+          <ProjectionPanel
+            projection={projection}
+            target={target}
+            onTargetChange={setTarget}
+            onApply={applyTarget}
+            onClear={clearTarget}
+          />
+          {planLoaded ? (
+            <StudyPlan plan={plan} />
+          ) : (
+            <p className="text-muted-foreground flex items-center gap-2 text-sm">
+              <Loader2 className="size-4 animate-spin" /> Building your plan…
+            </p>
+          )}
         </CardContent>
       </Card>
 
