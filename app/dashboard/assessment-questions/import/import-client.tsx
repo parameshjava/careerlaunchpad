@@ -26,6 +26,7 @@ type Subject = { id: string; name: string };
 type RowStatus = "ok" | "error" | "duplicate" | "unresolved";
 type ReportRow = {
   row: number;
+  subject?: string; // populated in "all subjects" mode
   chapter: string;
   stem: string;
   difficulty: string;
@@ -48,6 +49,7 @@ type Report = {
 
 type FileOption = { label?: string; is_correct?: boolean };
 type FileQuestion = {
+  subject?: string; // present in "all subjects" files
   chapter?: string;
   kind?: string;
   difficulty?: string;
@@ -58,6 +60,11 @@ type FileQuestion = {
 };
 type FileData = { subject?: string; questions?: FileQuestion[] };
 
+// Sentinel subject value for the "All subjects" option in the picker — kept in
+// lockstep with the API route (subject_id = "__all__").
+const ALL = "__all__";
+type SubjectChapters = { subject: string; chapters: string[] };
+
 const STATUS_VARIANT: Record<RowStatus, "default" | "destructive" | "secondary" | "outline"> = {
   ok: "default",
   error: "destructive",
@@ -65,16 +72,84 @@ const STATUS_VARIANT: Record<RowStatus, "default" | "destructive" | "secondary" 
   unresolved: "outline",
 };
 
+// A "there exists a correct option" subschema, reused by the single/multi rules.
+const hasCorrect = {
+  type: "object",
+  properties: { is_correct: { const: true } },
+  required: ["is_correct"],
+};
+
+// The per-question properties shared by both schema shapes (everything except the
+// `chapter`/`subject` locators, which differ by mode). Kept in one place so the
+// single-subject and all-subjects schemas can never drift.
+const QUESTION_FIELD_PROPS = {
+  kind: {
+    enum: ["standard", "data_sufficiency"],
+    default: "standard",
+    description: "'standard' MCQ, or 'data_sufficiency' (statement-sufficiency style).",
+  },
+  difficulty: { enum: ["easy", "medium", "hard", "very_hard"] },
+  answer_type: {
+    enum: ["single", "multi"],
+    description: "'single' = exactly one correct option; 'multi' = one or more.",
+  },
+  stem: { type: "string", minLength: 1, description: "Question text. Markdown + LaTeX." },
+  stem_image_url: { type: "string", description: "Optional image URL / R2 object key." },
+  explanation: {
+    type: "string",
+    minLength: 1,
+    description: "Required. Worked solution (Markdown + LaTeX).",
+  },
+  source: {
+    type: "string",
+    description: 'Optional. The paper/test this question appeared in, e.g. "ICET 2019 - Slot 2".',
+  },
+  source_year: {
+    type: "integer",
+    minimum: 1900,
+    maximum: 2100,
+    description: "Optional. The year of that paper, e.g. 2019.",
+  },
+  options: {
+    type: "array",
+    minItems: 4,
+    maxItems: 5,
+    description: "4 or 5 options. Correctness is enforced by answer_type (see allOf).",
+    items: {
+      type: "object",
+      required: ["label", "is_correct"],
+      additionalProperties: false,
+      properties: {
+        label: { type: "string", minLength: 1 },
+        is_correct: { type: "boolean" },
+      },
+    },
+  },
+} as const;
+
+// Machine-enforce the correctness rule so a validator (or an AI agent checking
+// against the schema) catches it BEFORE upload, not just at the server dry-run:
+// single ⇒ exactly one correct; multi ⇒ at least one.
+const CORRECTNESS_ALL_OF = [
+  {
+    if: { properties: { answer_type: { const: "single" } }, required: ["answer_type"] },
+    then: { properties: { options: { contains: hasCorrect, minContains: 1, maxContains: 1 } } },
+  },
+  {
+    if: { properties: { answer_type: { const: "multi" } }, required: ["answer_type"] },
+    then: { properties: { options: { contains: hasCorrect, minContains: 1 } } },
+  },
+];
+
+const chapterEnumSchema = (chapterNames: string[], desc: string) =>
+  chapterNames.length > 0
+    ? { enum: chapterNames, description: desc }
+    : { type: "string", minLength: 1, description: "This subject has no chapters yet — add chapters first." };
+
 // A JSON Schema TAILORED to the chosen subject: `subject` is fixed (const) and
 // `chapter` is constrained to that subject's real chapters — so an AI agent (or a
 // human) can only produce values the importer will accept. No passages.
 function buildSchema(subject: string, chapterNames: string[]) {
-  // A "there exists a correct option" subschema, reused by the single/multi rules.
-  const hasCorrect = {
-    type: "object",
-    properties: { is_correct: { const: true } },
-    required: ["is_correct"],
-  };
   return {
     $schema: "https://json-schema.org/draft/2020-12/schema",
     title: `CareerLaunchpad assessment-question import — ${subject}`,
@@ -102,74 +177,10 @@ function buildSchema(subject: string, chapterNames: string[]) {
           required: ["chapter", "difficulty", "answer_type", "stem", "explanation", "options"],
           additionalProperties: false,
           properties: {
-            chapter:
-              chapterNames.length > 0
-                ? { enum: chapterNames, description: "Must be one of the subject's chapters." }
-                : {
-                    type: "string",
-                    minLength: 1,
-                    description: "This subject has no chapters yet — add chapters first.",
-                  },
-            kind: {
-              enum: ["standard", "data_sufficiency"],
-              default: "standard",
-              description: "'standard' MCQ, or 'data_sufficiency' (statement-sufficiency style).",
-            },
-            difficulty: { enum: ["easy", "medium", "hard", "very_hard"] },
-            answer_type: {
-              enum: ["single", "multi"],
-              description: "'single' = exactly one correct option; 'multi' = one or more.",
-            },
-            stem: { type: "string", minLength: 1, description: "Question text. Markdown + LaTeX." },
-            stem_image_url: { type: "string", description: "Optional image URL / R2 object key." },
-            explanation: {
-              type: "string",
-              minLength: 1,
-              description: "Required. Worked solution (Markdown + LaTeX).",
-            },
-            source: {
-              type: "string",
-              description: 'Optional. The paper/test this question appeared in, e.g. "ICET 2019 - Slot 2".',
-            },
-            source_year: {
-              type: "integer",
-              minimum: 1900,
-              maximum: 2100,
-              description: "Optional. The year of that paper, e.g. 2019.",
-            },
-            options: {
-              type: "array",
-              minItems: 4,
-              maxItems: 5,
-              description: "4 or 5 options. Correctness is enforced by answer_type (see allOf).",
-              items: {
-                type: "object",
-                required: ["label", "is_correct"],
-                additionalProperties: false,
-                properties: {
-                  label: { type: "string", minLength: 1 },
-                  is_correct: { type: "boolean" },
-                },
-              },
-            },
+            chapter: chapterEnumSchema(chapterNames, "Must be one of the subject's chapters."),
+            ...QUESTION_FIELD_PROPS,
           },
-          // Machine-enforce the correctness rule so a validator (or an AI agent
-          // checking against the schema) catches it BEFORE upload — not just at the
-          // server dry-run: single ⇒ exactly one correct; multi ⇒ at least one.
-          allOf: [
-            {
-              if: { properties: { answer_type: { const: "single" } }, required: ["answer_type"] },
-              then: {
-                properties: {
-                  options: { contains: hasCorrect, minContains: 1, maxContains: 1 },
-                },
-              },
-            },
-            {
-              if: { properties: { answer_type: { const: "multi" } }, required: ["answer_type"] },
-              then: { properties: { options: { contains: hasCorrect, minContains: 1 } } },
-            },
-          ],
+          allOf: CORRECTNESS_ALL_OF,
         },
       },
     },
@@ -177,60 +188,137 @@ function buildSchema(subject: string, chapterNames: string[]) {
   };
 }
 
-// A valid example for the subject, using its first chapter — one of each shape
-// (single-correct, multi-correct, data-sufficiency) so an author or AI agent sees
-// the full vocabulary at a glance.
+// The "All subjects" schema: there is NO top-level subject — every question names
+// its own `subject` (from the enum of all subjects) and `chapter`. Because chapter
+// names aren't unique across subjects, an `allOf` clause constrains each subject's
+// chapters to that subject's real chapter list (if/then per subject).
+function buildSchemaAll(subjectChapters: SubjectChapters[]) {
+  const subjectNames = subjectChapters.map((s) => s.subject);
+  const perSubjectChapterRules = subjectChapters.map((sc) => ({
+    if: { properties: { subject: { const: sc.subject } }, required: ["subject"] },
+    then: { properties: { chapter: chapterEnumSchema(sc.chapters, `Must be a chapter of "${sc.subject}".`) } },
+  }));
+  return {
+    $schema: "https://json-schema.org/draft/2020-12/schema",
+    title: "CareerLaunchpad assessment-question import — All subjects",
+    description:
+      [
+        "Import file for CareerLaunchpad per-chapter assessment questions — ALL SUBJECTS in one file.",
+        "How the importer behaves:",
+        "• No top-level `subject` — each question carries its OWN `subject` AND `chapter`.",
+        "• `subject` MUST be one of the platform's subjects (pick from the enum).",
+        "• `chapter` MUST already exist in THAT question's subject (see the per-subject allOf); unknown subjects/chapters are reported, not created.",
+        "• Standalone MCQs only — no passages.",
+        "• A question with the same chapter + stem as one already in the bank is SKIPPED (safe to re-run).",
+        "• Nothing is saved until every question passes validation in the preview.",
+        "Content fields (stem, options, explanation) accept Markdown and LaTeX ($…$).",
+      ].join("\n"),
+    type: "object",
+    required: ["questions"],
+    additionalProperties: false,
+    properties: {
+      questions: {
+        type: "array",
+        minItems: 1,
+        items: {
+          type: "object",
+          required: ["subject", "chapter", "difficulty", "answer_type", "stem", "explanation", "options"],
+          additionalProperties: false,
+          properties: {
+            subject:
+              subjectNames.length > 0
+                ? { enum: subjectNames, description: "Must be one of the platform's subjects." }
+                : { type: "string", minLength: 1, description: "No subjects exist yet — add subjects first." },
+            chapter: {
+              type: "string",
+              minLength: 1,
+              description: "Must be a chapter of THIS question's subject (constrained per subject in allOf).",
+            },
+            ...QUESTION_FIELD_PROPS,
+          },
+          allOf: [...CORRECTNESS_ALL_OF, ...perSubjectChapterRules],
+        },
+      },
+    },
+    examples: [buildSampleAll(subjectChapters)],
+  };
+}
+
+// One of each shape (single-correct, multi-correct, data-sufficiency), built from
+// `chapterNames` — so an author or AI agent sees the full vocabulary at a glance.
+// `wrap` stamps each question with its locator (top-level subject vs. per-question).
+function sampleQuestions(chapter: string, wrap: (q: Record<string, unknown>) => Record<string, unknown>) {
+  return [
+    wrap({
+      chapter,
+      kind: "standard",
+      difficulty: "easy",
+      answer_type: "single",
+      stem: "Single-correct example. What is $2 + 2$?",
+      explanation: "Replace with the worked solution.",
+      source: "ICET 2019 - Slot 2",
+      source_year: 2019,
+      options: [
+        { label: "4", is_correct: true },
+        { label: "3", is_correct: false },
+        { label: "5", is_correct: false },
+        { label: "22", is_correct: false },
+      ],
+    }),
+    wrap({
+      chapter,
+      kind: "standard",
+      difficulty: "medium",
+      answer_type: "multi",
+      stem: "Multi-correct example — select all prime numbers.",
+      explanation: "2, 3 and 5 are prime; 4 is not.",
+      options: [
+        { label: "2", is_correct: true },
+        { label: "3", is_correct: true },
+        { label: "4", is_correct: false },
+        { label: "5", is_correct: true },
+      ],
+    }),
+    wrap({
+      chapter,
+      kind: "data_sufficiency",
+      difficulty: "hard",
+      answer_type: "single",
+      stem: "Data-sufficiency example. Is $x > 0$? (1) $x^2 = 9$. (2) $x = 3$.",
+      explanation: "Statement (2) alone fixes x = 3 > 0; (1) allows ±3.",
+      options: [
+        { label: "Statement I alone is sufficient, but statement II alone is not.", is_correct: false },
+        { label: "Statement II alone is sufficient, but statement I alone is not.", is_correct: true },
+        { label: "Both statements together are sufficient, but neither alone is.", is_correct: false },
+        { label: "Each statement alone is sufficient.", is_correct: false },
+      ],
+    }),
+  ];
+}
+
+// A valid example for the subject, using its first chapter.
 function buildSample(subject: string, chapterNames: string[]) {
   const chapter = chapterNames[0] ?? "An existing chapter name";
-  return {
-    subject,
-    questions: [
-      {
-        chapter,
-        kind: "standard",
-        difficulty: "easy",
-        answer_type: "single",
-        stem: "Single-correct example. What is $2 + 2$?",
-        explanation: "Replace with the worked solution.",
-        source: "ICET 2019 - Slot 2",
-        source_year: 2019,
-        options: [
-          { label: "4", is_correct: true },
-          { label: "3", is_correct: false },
-          { label: "5", is_correct: false },
-          { label: "22", is_correct: false },
-        ],
-      },
-      {
-        chapter,
-        kind: "standard",
-        difficulty: "medium",
-        answer_type: "multi",
-        stem: "Multi-correct example — select all prime numbers.",
-        explanation: "2, 3 and 5 are prime; 4 is not.",
-        options: [
-          { label: "2", is_correct: true },
-          { label: "3", is_correct: true },
-          { label: "4", is_correct: false },
-          { label: "5", is_correct: true },
-        ],
-      },
-      {
-        chapter,
-        kind: "data_sufficiency",
-        difficulty: "hard",
-        answer_type: "single",
-        stem: "Data-sufficiency example. Is $x > 0$? (1) $x^2 = 9$. (2) $x = 3$.",
-        explanation: "Statement (2) alone fixes x = 3 > 0; (1) allows ±3.",
-        options: [
-          { label: "Statement I alone is sufficient, but statement II alone is not.", is_correct: false },
-          { label: "Statement II alone is sufficient, but statement I alone is not.", is_correct: true },
-          { label: "Both statements together are sufficient, but neither alone is.", is_correct: false },
-          { label: "Each statement alone is sufficient.", is_correct: false },
-        ],
-      },
-    ],
-  };
+  return { subject, questions: sampleQuestions(chapter, (q) => q) };
+}
+
+// An "All subjects" example: cycle the three question shapes across the available
+// subjects so each carries its own subject + a real chapter of that subject.
+function buildSampleAll(subjectChapters: SubjectChapters[]) {
+  const withChapters = subjectChapters.filter((s) => s.chapters.length > 0);
+  const pool = (withChapters.length > 0 ? withChapters : subjectChapters).slice(0, 3);
+  const base =
+    pool.length > 0
+      ? pool
+      : [{ subject: "An existing subject name", chapters: ["An existing chapter name"] }];
+  // Build the three sample shapes off the first subject, then re-stamp each with a
+  // subject cycled through the pool so the example spans multiple subjects.
+  const shapes = sampleQuestions(base[0].chapters[0] ?? "An existing chapter name", (q) => q);
+  const questions = shapes.map((q, i) => {
+    const sc = base[i % base.length];
+    return { subject: sc.subject, ...q, chapter: sc.chapters[0] ?? "An existing chapter name" };
+  });
+  return { questions };
 }
 
 function downloadJSON(name: string, obj: unknown) {
@@ -246,6 +334,8 @@ function downloadJSON(name: string, obj: unknown) {
 export function ImportAssessmentQuestionsClient({ subjects }: { subjects: Subject[] }) {
   const [subjectId, setSubjectId] = useState("");
   const [chapters, setChapters] = useState<string[]>([]);
+  // In "All subjects" mode we need every subject's chapters to build the schema.
+  const [allChapters, setAllChapters] = useState<SubjectChapters[]>([]);
   const [parsed, setParsed] = useState<unknown>(null);
   const [fileName, setFileName] = useState<string | null>(null);
   const [overrides, setOverrides] = useState<Record<string, string>>({});
@@ -256,18 +346,42 @@ export function ImportAssessmentQuestionsClient({ subjects }: { subjects: Subjec
   const [page, setPage] = useState(0);
   const [pageSize, setPageSize] = useState(20);
 
-  const subjectName = subjects.find((s) => s.id === subjectId)?.name ?? "";
+  const isAll = subjectId === ALL;
+  const subjectName = isAll ? "All subjects" : (subjects.find((s) => s.id === subjectId)?.name ?? "");
+  // "All subjects" first, then the real subjects — the sentinel drives all-mode.
+  const subjectOptions = [{ id: ALL, name: "All subjects" }, ...subjects];
 
   useEffect(() => {
     if (!subjectId) {
       setChapters([]);
       return;
     }
+    if (subjectId === ALL) {
+      // Load every subject's chapters (in parallel) to build the all-subjects schema.
+      let alive = true;
+      Promise.all(
+        subjects.map((s) =>
+          fetch(`/api/exam/chapters?subject_id=${s.id}`)
+            .then((r) => r.json())
+            .then((d) => ({
+              subject: s.name,
+              chapters: ((d.chapters ?? []) as { name: string }[]).map((c) => c.name),
+            }))
+            .catch(() => ({ subject: s.name, chapters: [] as string[] })),
+        ),
+      ).then((rows) => {
+        if (alive) setAllChapters(rows);
+      });
+      setChapters([]);
+      return () => {
+        alive = false;
+      };
+    }
     fetch(`/api/exam/chapters?subject_id=${subjectId}`)
       .then((r) => r.json())
       .then((d) => setChapters(((d.chapters ?? []) as { name: string }[]).map((c) => c.name)))
       .catch(() => setChapters([]));
-  }, [subjectId]);
+  }, [subjectId, subjects]);
 
   function onPickFile(f: File | null) {
     setReport(null);
@@ -377,13 +491,15 @@ export function ImportAssessmentQuestionsClient({ subjects }: { subjects: Subjec
         <CardHeader>
           <CardTitle>1 · Choose the subject</CardTitle>
           <CardDescription>
-            One subject per file — the file&apos;s <code>subject</code> must match this.
+            One subject per file — the file&apos;s <code>subject</code> must match this. Or pick{" "}
+            <b>All subjects</b> to import across every subject in a single file, where each question
+            names its own <code>subject</code> and <code>chapter</code>.
           </CardDescription>
         </CardHeader>
         <CardContent>
           <SubjectSelect
             className="max-w-md"
-            subjects={subjects}
+            subjects={subjectOptions}
             value={subjectId}
             onChange={(v) => {
               setSubjectId(v);
@@ -399,9 +515,19 @@ export function ImportAssessmentQuestionsClient({ subjects }: { subjects: Subjec
         <CardHeader>
           <CardTitle>2 · Get the format</CardTitle>
           <CardDescription>
-            The schema is <b>tailored to the selected subject</b> — the subject is fixed and only
-            its chapters are allowed. Hand it to an AI agent (or author by hand) to produce only
-            valid questions.
+            {isAll ? (
+              <>
+                The schema covers <b>every subject</b> — each question names its own subject and is
+                constrained to that subject&apos;s chapters. Hand it to an AI agent (or author by
+                hand) to produce only valid questions.
+              </>
+            ) : (
+              <>
+                The schema is <b>tailored to the selected subject</b> — the subject is fixed and only
+                its chapters are allowed. Hand it to an AI agent (or author by hand) to produce only
+                valid questions.
+              </>
+            )}
           </CardDescription>
         </CardHeader>
         <CardContent className="grid gap-3">
@@ -411,8 +537,8 @@ export function ImportAssessmentQuestionsClient({ subjects }: { subjects: Subjec
               disabled={!subjectId}
               onClick={() =>
                 downloadJSON(
-                  `${subjectName || "assessment-questions"}-import.schema.json`,
-                  buildSchema(subjectName, chapters),
+                  isAll ? "all-subjects-import.schema.json" : `${subjectName || "assessment-questions"}-import.schema.json`,
+                  isAll ? buildSchemaAll(allChapters) : buildSchema(subjectName, chapters),
                 )
               }
             >
@@ -423,22 +549,27 @@ export function ImportAssessmentQuestionsClient({ subjects }: { subjects: Subjec
               disabled={!subjectId}
               onClick={() =>
                 downloadJSON(
-                  `${subjectName || "assessment-questions"}-import.sample.json`,
-                  buildSample(subjectName, chapters),
+                  isAll ? "all-subjects-import.sample.json" : `${subjectName || "assessment-questions"}-import.sample.json`,
+                  isAll ? buildSampleAll(allChapters) : buildSample(subjectName, chapters),
                 )
               }
             >
               ⬇ Sample file
             </Button>
           </div>
-          {subjectId ? (
+          {!subjectId ? (
             <p className="text-muted-foreground text-xs">
-              For <b>{subjectName}</b>: {chapters.length} valid chapter
-              {chapters.length === 1 ? "" : "s"} enumerated in the schema.
+              Select a subject above to download its tailored schema.
+            </p>
+          ) : isAll ? (
+            <p className="text-muted-foreground text-xs">
+              <b>All subjects</b>: {allChapters.length} subject{allChapters.length === 1 ? "" : "s"} and{" "}
+              {allChapters.reduce((n, s) => n + s.chapters.length, 0)} chapters enumerated in the schema.
             </p>
           ) : (
             <p className="text-muted-foreground text-xs">
-              Select a subject above to download its tailored schema.
+              For <b>{subjectName}</b>: {chapters.length} valid chapter
+              {chapters.length === 1 ? "" : "s"} enumerated in the schema.
             </p>
           )}
         </CardContent>
@@ -572,6 +703,11 @@ export function ImportAssessmentQuestionsClient({ subjects }: { subjects: Subjec
                     <div className="mb-1.5 flex flex-wrap items-center gap-2 text-xs">
                       <span className="text-muted-foreground tabular-nums">Q{r.row}</span>
                       <Badge variant={STATUS_VARIANT[r.status]}>{r.status}</Badge>
+                      {r.subject && (
+                        <span className="text-muted-foreground">
+                          {r.subject} <span className="opacity-60">›</span>
+                        </span>
+                      )}
                       <span className="text-muted-foreground">{r.chapter}</span>
                       {q?.difficulty && <Badge variant="outline">{q.difficulty}</Badge>}
                       {q?.kind && q.kind !== "standard" && <Badge variant="outline">{q.kind}</Badge>}
