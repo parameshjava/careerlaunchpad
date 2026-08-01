@@ -1,0 +1,14 @@
+{
+  "excluded": [
+    {
+      "q": 74,
+      "page": 80,
+      "reason": "incomplete-stem: rendered page shows only the definitions of the operators (p⊗q = √(pq)+1/√(pq), p⊙q = √(pq)-1/√(pq)); the actual expression to evaluate is missing from the source, so the question cannot be made self-contained or verified"
+    },
+    {
+      "q": 158,
+      "page": 162,
+      "reason": "wrong-key: question asks for the antonym of 'exude'; the on-page green tick marks option (4) 'display', which is a SYNONYM of exude (to give off/show openly). The correct antonym, option (3) 'conceal', is left unmarked, so the keyed answer is wrong. Per trust-then-verify, excluded rather than following an incorrect tick."
+    }
+  ]
+}

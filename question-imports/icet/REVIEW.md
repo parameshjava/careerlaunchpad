@@ -4,7 +4,7 @@ Everything on this page needs a human (subject-expert) decision. It is generated
 and appended as papers are transcribed from `/Users/paramesh/LP/materials` into
 assessment-bank import files under `question-imports/icet/papers/`.
 
-Last updated: 2026-07-31 · **7 of 25 usable papers complete — 1,347 questions imported, 53 excluded (3.8%).**
+Last updated: 2026-08-01 · **9 of 25 usable papers complete — 1,740 questions imported, 60 excluded (3.3%).**
 
 | Paper | Imported | Excluded |
 | --- | --- | --- |
@@ -15,6 +15,8 @@ Last updated: 2026-07-31 · **7 of 25 usable papers complete — 1,347 questions
 | tg-icet-2025-06-08-s2 | 192 | 8 |
 | ap-icet-2025-05-07-s2 | 191 | 9 |
 | ap-icet-2025-05-07-s1 | 193 | 7 |
+| ts-icet-2023-05-26-s1 | 195 | 5 |
+| ts-icet-2023-05-27-s2 | 198 | 2 |
 
 > ## The rule
 >
@@ -281,3 +283,80 @@ In progress — Q1-125 transcribed: **109 imported, 16 excluded.** *(This paper 
 | 27 | 21 | **Key contradicts the arithmetic — excluded** | \(2+\sqrt6 : 5\sqrt2+4\sqrt3 :: \underline{\quad} : 40\sqrt3+49\sqrt2\). The first pair multiplies by \((\sqrt2+\sqrt3)\): \((2+\sqrt6)(\sqrt2+\sqrt3) = 5\sqrt2+4\sqrt3\) ✓. Applying the same multiplier, the missing term is \((49\sqrt2+40\sqrt3)(\sqrt3-\sqrt2) = 22+9\sqrt6\) — option 1. Check forward: \((22+9\sqrt6)(\sqrt2+\sqrt3) = 49\sqrt2+40\sqrt3\) ✓, whereas the keyed \(20+9\sqrt6\) gives \(47\sqrt2+38\sqrt3\) ✗. The paper keys option 3. |
 | 17 | 20 | **Key contradicts the deduction — excluded** | Six people round a table; "Are B and C adjacent?" **I.** E has C and F on either side (block C-E-F). **II.** B sits adjacent to F. Together, B can only take the seat on F's free side, giving the arc C-E-F-B, so the remaining two people sit between B and C — they are **not** adjacent. A definite "no" answers the question, so the correct choice is option 3; the paper keys option 4 (not answerable). |
 | 26 | 20 | **Pattern not determinable — excluded** | "K7D : ______ :: Q12H : T19J" keyed to **N12F**. The letters follow \(+3\) and \(+2\) (K→N, D→F), but no consistent rule produces the middle numbers: the second pair steps \(12 \to 19\) \((+7)\) while the first would need \(7 \to 12\) \((+5)\), and neither matches any function of the flanking letters. Needs an expert eye, or drop it. |
+
+### `ts-icet-2023-05-26-s1` — TS ICET 2023, 26 May, Shift 1
+
+**COMPLETE** — all 200 questions read: **195 imported, 5 excluded.** Genuine answer key
+(green-tick). Bilingual English + Telugu; only the English text is transcribed (§1.6). Output is a
+**single all-subjects file** (`papers/ts-icet-2023-05-26-s1.json`), per `EXTRACTION_SPEC.md`. By
+subject: Quantitative Aptitude 75, Verbal Ability & Reading Comprehension 48, Logical & Analytical
+Reasoning 47, Data Interpretation & Data Sufficiency 25.
+
+> **Extractor note.** `extract-key.mjs` silently misgrouped markers on this paper's Q101–125
+> (reported `aligned=true, suspect=0` yet mapped the wrong option to a localised run), so the
+> **on-page green tick — read visually per page — was used as the ground-truth key**, not
+> `KEY_OPTION`. Separately, the Q101–125 transcription batch initially drifted one question at the
+> Q100/Q101 page boundary (the `Question Number : N` line is a header that sits *above* its stem);
+> the schema validator caught the resulting duplicate, and Q125 (`sec θ+tan θ=k ⟹ (k²+1)/(k²−1)=csc θ`)
+> was transcribed back in.
+
+| Q | Page | Issue | Detail |
+| --- | --- | --- | --- |
+| 12 | 13 | **Key disagreement (DS) — excluded** | Statement II ("the circle circumscribes the square") fixes the circle-to-square area ratio at π:2 regardless of the radius, so **II alone is sufficient — option 2**. The paper keys option 3 ("both together, neither alone"). |
+| 60 | 64 | **No correct option — excluded** | Under the circle-cipher (verified on Q56–59 and on WELL→QUFF), DOING encodes to **XEAHZ** (N→H, G→Z), but the keyed option 4 reads "XEATM QUFF"; no option gives XEAHZ QUFF (paper option-construction error). |
+| 69 | 74 | **Key disagreement — excluded** | The relation chain gives B = Seetha's mother's son = Seetha's **brother**, so Seetha (a female name) is B's **sister** (option 4); the paper keys Brother (option 1). |
+| 152 | 156 | **Keyed answer is wrong — excluded** | "Something that has not been included" is **omission** (option 3); the paper's tick marks option 2, "permission", which is incorrect. |
+| 180 | 175 | **Keyed answer is factually wrong — excluded** | "RAM is a memory of this type" (options Volatile / Non-volatile / Short / Long) is keyed option 3, **Short**. RAM is unambiguously **volatile** memory (option 1); no reading makes "Short" correct. |
+
+### `ts-icet-2023-05-27-s2` — TS ICET 2023, 27 May, Shift 2 (URDU edition)
+
+**COMPLETE** — all 200 questions read: **198 imported, 2 excluded.** Genuine answer key
+(green-tick). This is the **only copy of this shift** and is kept even though it is the Urdu
+edition (§1.6); it is bilingual English + Urdu and only the English text is transcribed. Output is
+a **single all-subjects file** (`papers/ts-icet-2023-05-27-s2.json`). By subject: Quantitative
+Aptitude 75, Verbal Ability & Reading Comprehension 49, Logical & Analytical Reasoning 48, Data
+Interpretation & Data Sufficiency 26.
+
+> **Extractor note.** On this paper `extract-key.mjs`'s `KEY_OPTION` hints were badly misaligned
+> across the Mathematical Ability sections (17–18 of 25 disagreed per batch) — most likely thrown
+> off by an **orphan marker group on p-047** (a "5, 7, 11, 19, 35, __, 131…" series that carries
+> options + a tick but no `Question Number` line, so it is not a numbered question). The on-page
+> green ticks were sound throughout and every independent solve backed the tick, so the tick was
+> used as the key. The same Q100/Q101 boundary drift as S1 occurred and was fixed the same way
+> (duplicate caught by the validator; Q125 — the identical `sec θ+tan θ=k` item — transcribed back in).
+
+| Q | Page | Issue | Detail |
+| --- | --- | --- | --- |
+| 74 | 80 | **Incomplete stem — excluded** | The rendered page shows only the operator definitions ($p\otimes q=\sqrt{pq}+\tfrac1{\sqrt{pq}}$, $p\odot q=\sqrt{pq}-\tfrac1{\sqrt{pq}}$); the actual expression to evaluate is missing from the source, so the item cannot be made self-contained or verified. |
+| 158 | 162 | **Keyed answer is wrong (tick marks a synonym) — excluded** | The item asks for the **antonym** of "exude"; the green tick marks option 4, "display", a **synonym** (to give off / show openly). The correct antonym, option 3 "conceal", is left unmarked, so the keyed answer is wrong. Excluded per trust-then-verify rather than following an incorrect tick. |
+
+### `ts-icet-2024-06-05-s1` — TS ICET 2024, 5 June, Shift 1 — extracted ON REQUEST, NO GENUINE KEY
+
+**⚠ This paper's printed key is a placeholder (option 1 for all 200, χ² = 600 — §1.1).** It is
+one of the three TS ICET 2024 papers the corpus policy drops. It was transcribed anyway on an
+explicit instruction, so **every answer here is hand-derived by solving, with no key to
+cross-check against.** That removes this pipeline's main quality gate (§3), so this paper carries
+a higher residual-error risk than the genuine-key papers and should be reviewed by a subject
+expert before it is published.
+
+Output is a **single all-subjects file** (not the per-subject split), per the general
+`question-imports/EXTRACTION_SPEC.md`: `papers/ts-icet-2024-06-05-s1.json`. All 200 questions
+read: **193 imported, 7 excluded.** By subject: Quantitative Aptitude 70, Logical & Analytical
+Reasoning 67, Verbal Ability & Reading Comprehension 50, Data Interpretation & Data Sufficiency 6.
+
+`merge.mjs` / `key-status.json` still classify this paper as **dropped**; actually importing it
+requires overriding that gate for this slug only (EXTRACTION_SPEC §5). Left unchanged here.
+
+| Q | Issue | Detail |
+| --- | --- | --- |
+| 36 | **defective — excluded** | Series `35, 48, 80, 120, 168, 224, ___`: no listed option fits a consistent rule; the nearest clean pattern points to 288, which is not offered. |
+| 84 | **defective — excluded** | The recomputed LCM works out to `55N` (adds the prime 11, raises `5¹→5²`); `55N` is not among the options. |
+| 99 | **defective — excluded** | Distances give `AC = 320/3 ≈ 106.7 km`, not among the options. |
+| 103 | **figure required — excluded** | Square + equilateral-triangle shaded region → `a²/2`; answer depends on reading the diagram. |
+| 113 | **defective — excluded** | True polynomial GCD is `(x−2)(x+3)`; not among the options. |
+| 127 | **figure required — excluded** | Three concurrent lines, find angle `x` — needs the diagram. |
+| 131 | **figure required — excluded** | Unit square + semicircle shaded area → `17/28`; needs the diagram. |
+
+Because there is no key, each "defective — value not among options" item could equally be a
+solver/transcription slip rather than a genuine paper defect; excluding them is the safe call
+either way. The full machine-readable exclusion log is `papers/ts-icet-2024-06-05-s1.excluded.json`.
