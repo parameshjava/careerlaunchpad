@@ -53,6 +53,11 @@ export function categorical(i: number): string {
 /** The brand hue — the right choice for a single-series chart (no legend needed). */
 export const BRAND = "var(--cl-cat-1)";
 
+/** The comparison baseline — the "not yours / everyone else" fill. A recessive
+ *  area colour, NOT a text token: --muted-foreground sits at 3.3:1 on white, which
+ *  makes a large fill fight the brand hue instead of receding behind it. */
+export const NEUTRAL = "var(--cl-neutral)";
+
 /** Status colours. Reserved; ship with an icon or label, never colour alone. */
 export const STATUS = {
   weak: "var(--cl-status-weak)",

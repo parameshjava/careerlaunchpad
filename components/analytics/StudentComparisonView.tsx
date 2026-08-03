@@ -36,7 +36,7 @@ import { ChartColumnBig, ChartPie } from "lucide-react";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { cn } from "@/lib/utils";
 import type { AssessmentDatum, CollegeAnalytics, Slice } from "@/lib/analytics-query";
-import { BRAND, TOOLTIP_STYLE, HOVER_CURSOR } from "@/lib/chart-palette";
+import { BRAND, NEUTRAL, TOOLTIP_STYLE, HOVER_CURSOR } from "@/lib/chart-palette";
 
 type ChartType = "pie" | "bar";
 const STORAGE_KEY = "cl-chart-type";
@@ -44,17 +44,23 @@ const STORAGE_KEY = "cl-chart-type";
 // The student's own data wears the brand hue; the benchmark is a recessive
 // neutral. Both from the shared palette module (lib/chart-palette.ts).
 const YOU = BRAND;
-const PEERS = "var(--muted-foreground)";
+const PEERS = NEUTRAL;
 
 
 const NO_FOCUS_RING =
   "[&_svg]:outline-none [&_.recharts-surface]:outline-none [&_.recharts-sector]:outline-none [&_path:focus]:outline-none [&_*:focus]:outline-none";
 
 /** Keep the n most-popular slices, but never drop one the student selected
- * (otherwise their own skill could vanish from "their" comparison). */
-function topNKeep(slices: Slice[], n: number, mine: Set<string>): Slice[] {
-  if (slices.length <= n) return slices;
-  const sorted = [...slices].sort((a, b) => b.value - a.value);
+ * (otherwise their own skill could vanish from "their" comparison).
+ *
+ * The sort is applied unconditionally and is fully deterministic — most popular
+ * first, then alphabetical to break the very common all-values-equal tie. It used
+ * to run only when there were more than n slices, so a card with 4 items came back
+ * in ref_* catalogue order while a card with 14 came back by popularity: two cards
+ * side by side, ordered by different rules, neither of them stated. */
+function orderSlices(slices: Slice[], n: number, mine: Set<string>): Slice[] {
+  const sorted = [...slices].sort((a, b) => b.value - a.value || a.label.localeCompare(b.label));
+  if (sorted.length <= n) return sorted;
   const head = sorted.slice(0, n);
   const extra = sorted.slice(n).filter((s) => mine.has(s.key));
   return [...head, ...extra];
@@ -99,10 +105,11 @@ function ChartTypeToggle({ value, onChange }: { value: ChartType; onChange: (t: 
 // Two-tone distribution: college popularity, with the student's own selections
 // in brand blue and everyone else's in muted grey.
 function DistributionCompare({ data, type, mine }: { data: Slice[]; type: ChartType; mine: Set<string> }) {
-  const slices = topNKeep(data, 8, mine);
+  const slices = orderSlices(data, 8, mine);
   const fill = (key: string) => (mine.has(key) ? YOU : PEERS);
 
   if (type === "bar") {
+    // the x-axis labels already give identity, so no legend is needed here
     return (
       <ResponsiveContainer width="100%" height={300} className={NO_FOCUS_RING}>
         <BarChart data={slices} margin={{ top: 8, right: 8, bottom: 8, left: -12 }}>
@@ -128,27 +135,71 @@ function DistributionCompare({ data, type, mine }: { data: Slice[]; type: ChartT
   }
 
   return (
-    <ResponsiveContainer width="100%" height={300} className={NO_FOCUS_RING}>
-      <PieChart>
-        <Tooltip contentStyle={TOOLTIP_STYLE} />
-        <Pie
-          data={slices}
-          dataKey="value"
-          nameKey="label"
-          cx="50%"
-          cy="45%"
-          outerRadius={80}
-          innerRadius={42}
-          paddingAngle={2}
-          stroke="var(--background)"
-        >
-          {slices.map((s) => (
-            <Cell key={s.key} fill={fill(s.key)} />
-          ))}
-        </Pie>
-        <Legend verticalAlign="bottom" iconType="circle" wrapperStyle={{ fontSize: 11, paddingTop: 8 }} />
-      </PieChart>
-    </ResponsiveContainer>
+    <div className="flex flex-col items-center gap-3 sm:flex-row sm:items-start">
+      <div className="w-full shrink-0 sm:w-[210px]">
+      <ResponsiveContainer width="100%" height={210} className={NO_FOCUS_RING}>
+        <PieChart>
+          <Tooltip contentStyle={TOOLTIP_STYLE} />
+          <Pie
+            data={slices}
+            dataKey="value"
+            nameKey="label"
+            cx="50%"
+            cy="50%"
+            outerRadius={82}
+            innerRadius={44}
+            paddingAngle={2}
+            stroke="var(--background)"
+          >
+            {slices.map((s) => (
+              <Cell key={s.key} fill={fill(s.key)} />
+            ))}
+          </Pie>
+        </PieChart>
+      </ResponsiveContainer>
+      </div>
+      <div className="min-w-0 flex-1 self-center">
+        <SliceLegend slices={slices} mine={mine} />
+      </div>
+    </div>
+  );
+}
+
+/** Beyond a handful of categories a donut stops being readable here, for a reason
+ *  specific to this chart: colour encodes "is this mine?", NOT identity, so every
+ *  one of a student's 14 skills is the same blue. No legend can map a row to an arc
+ *  when the arcs are indistinguishable, and recharts' built-in Legend made it worse
+ *  by centring variable-width labels into a ragged stack (which is what read as
+ *  "the order is off" — the order actually matched the arcs).
+ *
+ *  So above PIE_MAX categories the card draws horizontal bars instead: the label
+ *  sits beside its own bar, so identity needs no colour and no legend at all. Long
+ *  skill names stay horizontal and readable, which they never were at -40°. */
+/** For the small-N donuts: labels beside their own swatch, one per line. */
+function SliceLegend({ slices, mine }: { slices: Slice[]; mine: Set<string> }) {
+  return (
+    // One column beside the chart. Two columns inside a narrow card cut every label
+    // to "Arit…" / "Curr…", and a legend whose labels are unreadable is worse than no
+    // legend. No rank numbers either — the arcs carry no numbers, so a rank here maps
+    // to nothing on the chart and only steals label width.
+    <ul className="list-none space-y-1">
+      {slices.map((s) => (
+        <li key={s.key} className="flex items-center gap-2 text-[11px] leading-tight">
+          <span
+            aria-hidden
+            className="size-2 shrink-0 rounded-full"
+            style={{ background: mine.has(s.key) ? YOU : PEERS }}
+          />
+          <span className="min-w-0 flex-1 truncate" title={s.label}>
+            {s.label}
+          </span>
+          {mine.has(s.key) && (
+            <span className="text-muted-foreground shrink-0 text-[10px]">yours</span>
+          )}
+          <span className="text-muted-foreground shrink-0 tabular-nums">{s.value}</span>
+        </li>
+      ))}
+    </ul>
   );
 }
 
@@ -315,7 +366,7 @@ export function StudentComparisonView({
         <ChartTypeToggle value={chartType} onChange={updateChartType} />
       </div>
 
-      <div className="grid grid-cols-1 gap-4 md:grid-cols-2 xl:grid-cols-4">
+      <div className="grid grid-cols-1 gap-4 md:grid-cols-2">
         <DistributionCard
           title="Skills"
           data={college.skills}

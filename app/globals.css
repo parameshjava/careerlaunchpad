@@ -133,6 +133,12 @@
        shipped with an icon or label rather than colour alone. */
     --cl-status-weak: #e11d48;
     --cl-status-good: #059669;
+
+    /* Comparison baseline (e.g. "college peers" behind the student's own data).
+       A recessive FILL, deliberately not --muted-foreground: that is a text ink at
+       3.3:1 on white, which makes a large area compete with the brand hue instead
+       of sitting behind it. 1.5:1 is the point. */
+    --cl-neutral: #cbd5e1;
 }
 
 .dark {
@@ -204,6 +210,9 @@
 
     --cl-status-weak: #fb7185;
     --cl-status-good: #34d399;
+
+    /* Same role on the dark card: visible but subordinate (2.3:1). */
+    --cl-neutral: #475569;
 }
 
 @layer base {
