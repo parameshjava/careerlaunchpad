@@ -70,11 +70,9 @@
     --border: oklch(0.922 0 0);
     --input: oklch(0.922 0 0);
     --ring: oklch(0.708 0 0);
-    --chart-1: oklch(0.87 0 0);
-    --chart-2: oklch(0.556 0 0);
-    --chart-3: oklch(0.439 0 0);
-    --chart-4: oklch(0.371 0 0);
-    --chart-5: oklch(0.269 0 0);
+    /* --chart-1..5 are the brand blue->violet ramp; see the brand mapping below,
+       which overrides the shadcn defaults. The categorical/sequential/status
+       chart palette lives in the --cl-* tokens further down. */
     --radius: 0.625rem;
     --sidebar: oklch(0.985 0 0);
     --sidebar-foreground: oklch(0.145 0 0);
@@ -101,6 +99,40 @@
     --sidebar-primary: var(--brand-blue);
     --sidebar-primary-foreground: #ffffff;
     --sidebar-ring: var(--brand-blue);
+
+    /* ---- Chart palette (light) -------------------------------------------
+       One source of truth for every chart; see lib/chart-palette.ts for the
+       contract and the validator command that proved these steps. Charts read
+       these as var() in SVG fill/stroke, so dark mode swaps without JS.
+
+       Categorical = identity. Fixed order, assigned per entity and NEVER by
+       rank, so re-sorting or filtering never repaints a subject. Brand blue and
+       brand violet are deliberately non-adjacent: as slots 1 and 2 they were
+       indistinguishable to a deuteranope (CVD ΔE 0.4). */
+    --cl-cat-1: #2563eb;
+    --cl-cat-2: #10b981;
+    --cl-cat-3: #7c3aed;
+    --cl-cat-4: #f59e0b;
+    --cl-cat-5: #06b6d4;
+    --cl-cat-6: #ec4899;
+    --cl-cat-7: #6366f1;
+    --cl-cat-8: #f97316;
+
+    /* Sequential = magnitude. One hue, light -> dark, monotonic in lightness. */
+    --cl-seq-0: #eff6ff;
+    --cl-seq-1: #c7ddfd;
+    --cl-seq-2: #93c5fd;
+    --cl-seq-3: #5b9bf8;
+    --cl-seq-4: #2f6fe0;
+    --cl-seq-5: #1d4ed8;
+    --cl-seq-none: #eceff4;      /* not assessed — neutral, never a low step */
+    --cl-seq-ink-lo: #0d1526;    /* label ink on the pale steps */
+    --cl-seq-ink-hi: #ffffff;    /* label ink on the dark steps */
+
+    /* Status = state. Reserved; never reused as a series colour, and always
+       shipped with an icon or label rather than colour alone. */
+    --cl-status-weak: #e11d48;
+    --cl-status-good: #059669;
 }
 
 .dark {
@@ -122,11 +154,7 @@
     --border: oklch(1 0 0 / 10%);
     --input: oklch(1 0 0 / 15%);
     --ring: oklch(0.556 0 0);
-    --chart-1: oklch(0.87 0 0);
-    --chart-2: oklch(0.556 0 0);
-    --chart-3: oklch(0.439 0 0);
-    --chart-4: oklch(0.371 0 0);
-    --chart-5: oklch(0.269 0 0);
+    /* --chart-1..5: see the brand mapping (dark) at the end of this block. */
     --sidebar: oklch(0.205 0 0);
     --sidebar-foreground: oklch(0.985 0 0);
     --sidebar-primary: oklch(0.488 0.243 264.376);
@@ -148,6 +176,34 @@
     --sidebar-primary: var(--brand-blue);
     --sidebar-primary-foreground: #ffffff;
     --sidebar-ring: var(--brand-blue);
+
+    /* ---- Chart palette (dark) --------------------------------------------
+       Selected for the dark card surface, not an automatic flip of the light
+       steps: three of the light hues sit outside the dark lightness band. Same
+       eight entities, same fixed order; validated against oklch(0.205 0 0). */
+    --cl-cat-1: #3b82f6;
+    --cl-cat-2: #059669;
+    --cl-cat-3: #8b5cf6;
+    --cl-cat-4: #d97706;
+    --cl-cat-5: #0891b2;
+    --cl-cat-6: #ec4899;
+    --cl-cat-7: #6366f1;
+    --cl-cat-8: #ea580c;
+
+    /* Sequential inverts direction on a dark ground: low sits near the surface,
+       high reads brightest. Still one hue, still monotonic in lightness. */
+    --cl-seq-0: #16233a;
+    --cl-seq-1: #1e3a63;
+    --cl-seq-2: #24528f;
+    --cl-seq-3: #2c6bbd;
+    --cl-seq-4: #3b82f6;
+    --cl-seq-5: #60a5fa;
+    --cl-seq-none: #1c2430;
+    --cl-seq-ink-lo: #cbd5e1;
+    --cl-seq-ink-hi: #0b1220;
+
+    --cl-status-weak: #fb7185;
+    --cl-status-good: #34d399;
 }
 
 @layer base {

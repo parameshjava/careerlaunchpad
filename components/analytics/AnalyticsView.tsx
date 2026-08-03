@@ -34,6 +34,7 @@ import { ChartColumnBig, ChartPie } from "lucide-react";
 
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { cn } from "@/lib/utils";
+import { categorical, TOOLTIP_STYLE, HOVER_CURSOR } from "@/lib/chart-palette";
 import type { AssessmentDatum, CollegeAnalytics, Slice } from "@/lib/analytics-query";
 
 export type ChartFilterType = "skill" | "primaryGoal" | "goal";
@@ -42,32 +43,10 @@ export type ChartFilter = { type: ChartFilterType; key: string; label: string };
 type ChartType = "pie" | "bar";
 const STORAGE_KEY = "cl-chart-type";
 
-// Categorical palette — led by the brand blue + violet, then spread across the
-// hue wheel so adjacent bars/slices stay clearly distinguishable (the theme's
-// --chart-* tokens are all blue/violet, which read as "the same colour" with
-// many categories). Wraps for charts with more series than colours.
-const PALETTE = [
-  "#2563eb", // brand blue
-  "#7c3aed", // brand violet
-  "#06b6d4", // cyan
-  "#f59e0b", // amber
-  "#10b981", // emerald
-  "#ec4899", // pink
-  "#6366f1", // indigo
-  "#ef4444", // red
-  "#a855f7", // purple
-  "#14b8a6", // teal
-  "#f97316", // orange
-  "#0ea5e9", // sky
-];
-
-const TOOLTIP_STYLE = {
-  background: "var(--popover)",
-  border: "1px solid var(--border)",
-  borderRadius: 8,
-  fontSize: 12,
-  color: "var(--popover-foreground)",
-} as const;
+// Categorical palette, tooltip chrome and hover cursor come from the shared
+// module (lib/chart-palette.ts) so all three analytics surfaces stay in step —
+// this file used to carry its own 12-hex array whose first two slots, brand blue
+// and brand violet, were indistinguishable under deuteranopia.
 
 // Strip the blue focus ring browsers paint on the clicked SVG bar/slice.
 const NO_FOCUS_RING =
@@ -169,10 +148,10 @@ function DistributionChart({
             tick={{ fill: "var(--muted-foreground)", fontSize: 11 }}
           />
           <YAxis allowDecimals={false} width={28} tick={{ fill: "var(--muted-foreground)", fontSize: 11 }} />
-          <Tooltip cursor={{ fill: "var(--muted)", fillOpacity: 0.5 }} contentStyle={TOOLTIP_STYLE} />
+          <Tooltip cursor={HOVER_CURSOR} contentStyle={TOOLTIP_STYLE} />
           <Bar dataKey="value" radius={[4, 4, 0, 0]} activeBar={false} onClick={handle}>
             {slices.map((s, i) => (
-              <Cell key={s.key} fill={PALETTE[i % PALETTE.length]} fillOpacity={dim(s.key)} />
+              <Cell key={s.key} fill={categorical(i)} fillOpacity={dim(s.key)} />
             ))}
           </Bar>
         </BarChart>
@@ -197,7 +176,7 @@ function DistributionChart({
           onClick={handle}
         >
           {slices.map((s, i) => (
-            <Cell key={s.key} fill={PALETTE[i % PALETTE.length]} fillOpacity={dim(s.key)} />
+            <Cell key={s.key} fill={categorical(i)} fillOpacity={dim(s.key)} />
           ))}
         </Pie>
         <Legend verticalAlign="bottom" iconType="circle" wrapperStyle={{ fontSize: 11, paddingTop: 8 }} />
@@ -268,10 +247,10 @@ function AssessmentChart({ data, type, name }: { data: AssessmentDatum[]; type: 
             width={28}
             tick={{ fill: "var(--muted-foreground)", fontSize: 11 }}
           />
-          <Tooltip cursor={{ fill: "var(--muted)", fillOpacity: 0.5 }} contentStyle={TOOLTIP_STYLE} />
+          <Tooltip cursor={HOVER_CURSOR} contentStyle={TOOLTIP_STYLE} />
           <Bar dataKey="average" name={name} radius={[4, 4, 0, 0]} activeBar={false}>
             {data.map((d, i) => (
-              <Cell key={d.key} fill={PALETTE[i % PALETTE.length]} />
+              <Cell key={d.key} fill={categorical(i)} />
             ))}
           </Bar>
         </BarChart>

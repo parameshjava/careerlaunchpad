@@ -1,31 +1,16 @@
 "use client";
 
-// Student academic-performance view (story #73): the prescriptive study plan up
-// top, then the evidence — a monthly score trend, subject strengths/weaknesses,
-// and a chapter drill-down. All recharts usage lives behind this one client
-// boundary. Self-fetches /api/student/performance/*; every series is a percent so
-// there is a single y-axis. Reuses the app's established chart palette + CSS-var
-// tooltip theming (components/analytics/AnalyticsView.tsx) for consistency and
-// dark-mode; long-label comparisons use horizontal bars. Built to docs/STYLE_GUIDE.md.
+// Student academic-performance view (story #73). This file is the shell: filters,
+// fetching, and the reading order the story specifies — snapshot → study plan →
+// trend → subject bars → chapter drill-down → mastery grid. The plan sits high
+// because it is the action the charts justify; the charts below are the evidence.
+//
+// The charts themselves live in ./performance/*, one per FR, so this stays a
+// composition and the 660-line original stops being the place every change lands.
+// Colour comes from lib/chart-palette.ts — never hardcoded here.
 import { useCallback, useEffect, useState } from "react";
-import Link from "next/link";
-import {
-  Bar,
-  BarChart,
-  CartesianGrid,
-  Cell,
-  LabelList,
-  Line,
-  LineChart,
-  ReferenceLine,
-  ResponsiveContainer,
-  Tooltip,
-  XAxis,
-  YAxis,
-} from "recharts";
-import { Loader2, Table2, BarChart3 } from "lucide-react";
+import { Loader2 } from "lucide-react";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
-import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import {
@@ -35,421 +20,94 @@ import {
   SelectTrigger,
   SelectValue,
 } from "@/components/ui/select";
+import type {
+  ChapterScore,
+  LadderStep,
+  MasteryCell,
+  PerfSummary,
+  PlanItem,
+  PlanProjection,
+  SubjectScore,
+  TrendPoint,
+} from "@/lib/student-performance-query";
+import { EmptyState, TableToggle } from "./performance/shared";
+import { SnapshotTiles } from "./performance/snapshot-tiles";
+import { StudyPlan } from "./performance/study-plan";
+import { PerformanceTrend } from "./performance/performance-trend";
+import { SubjectMasteryBars, type SubjectSort, typicalPassMark } from "./performance/subject-mastery-bars";
+import { ChapterDrilldown, type ChapterView } from "./performance/chapter-drilldown";
+import { MasteryGrid } from "./performance/mastery-grid";
 
-// Same categorical palette + tooltip theming the rest of the analytics use.
-const PALETTE = [
-  "#2563eb", "#7c3aed", "#06b6d4", "#f59e0b", "#10b981", "#ec4899",
-  "#6366f1", "#ef4444", "#a855f7", "#14b8a6", "#f97316", "#0ea5e9",
-];
-const BRAND = "#2563eb";
-const WEAK = "#f43f5e"; // rose — a reserved status colour for below-pass, never a series
-const PASS_LINE = 40; // platform default pass mark (chapter_quiz.pass_pct); a reference guide
-const TOOLTIP_STYLE = {
-  background: "var(--popover)",
-  border: "1px solid var(--border)",
-  borderRadius: 8,
-  fontSize: 12,
-  color: "var(--popover-foreground)",
-} as const;
-const AXIS_TICK = { fill: "var(--muted-foreground)", fontSize: 11 } as const;
-
-// recharts types formatter/label values as ValueType (string|number|array), so
-// coerce before rounding rather than narrowing the param to number.
-const pctLabel = (v: unknown) => `${Math.round(Number(v))}%`;
-
-type Summary = {
-  overall_pct: number | null;
-  pass_rate_pct: number | null;
-  chapters_assessed: number;
-  chapters_completed: number;
-  strongest_subject: string | null;
-  strongest_pct: number | null;
-  weakest_subject: string | null;
-  weakest_pct: number | null;
-};
-type Subject = {
-  subject_id: string;
-  subject_name: string;
-  score_pct: number | null;
-  chapters_assessed: number;
-  chapters_completed: number;
-};
-type Chapter = {
-  chapter_id: string;
-  chapter_name: string;
-  best_pct: number | null;
-  first_pct: number | null;
-  attempts_used: number;
-  passed: boolean | null;
-};
-type TrendPoint = { month: string; subject_id: string | null; subject_name: string | null; pct: number };
-type PlanItem = {
-  chapter_id: string;
-  chapter_name: string;
-  subject_name: string;
-  best_pct: number | null;
-  attempts_used: number;
-  attempts_remaining: number;
-  pass_pct: number;
-  category: "quick_win" | "not_attempted" | "needs_study";
-};
-// FR-8 target/projection: what the average becomes if every still-unpassed assessed
-// chapter is lifted to its pass mark ("clear the pending chapters"). Transparent recompute.
-type Projection = {
-  target: number | null;
-  current_avg: number | null;
-  projected_avg: number | null;
-  chapters_to_lift: number;
-  gap_to_target: number | null;
-  reaches_target: boolean | null;
-};
 type BatchOption = { batch_id: string; batch_name: string };
 
+// O-4: we keep a trailing window rather than an "academic year", because no batch
+// field records academic-year boundaries — inferring them would be a guess. The
+// custom range covers the case where a student wants exactly one term.
 const RANGES: { value: string; label: string; months: number | null }[] = [
   { value: "12m", label: "Last 12 months", months: 12 },
   { value: "6m", label: "Last 6 months", months: 6 },
   { value: "all", label: "All time", months: null },
+  { value: "custom", label: "Custom range…", months: null },
 ];
 
-function fromDate(months: number | null): string | null {
-  if (months == null) return null;
+function monthsAgo(months: number): string {
   const d = new Date();
   d.setMonth(d.getMonth() - months);
   return d.toISOString().slice(0, 10);
 }
 
-const monthLabel = (m: string) =>
-  new Date(m).toLocaleDateString(undefined, { month: "short", year: "2-digit" });
-
-function EmptyState({ message }: { message: string }) {
-  return (
-    <div className="text-muted-foreground bg-muted/40 flex min-h-[120px] items-center justify-center rounded-lg border p-4 text-center text-sm">
-      {message}
-    </div>
-  );
-}
-
-// ---- Snapshot tiles ---------------------------------------------------------
-function Tile({ label, value, sub, tone }: { label: string; value: string; sub?: string; tone?: string }) {
-  return (
-    <Card>
-      <CardContent className="pt-6">
-        <p className="text-muted-foreground text-xs">{label}</p>
-        <p className={`mt-1 text-2xl font-bold tracking-tight ${tone ?? ""}`}>{value}</p>
-        {sub && <p className="text-muted-foreground mt-0.5 text-xs">{sub}</p>}
-      </CardContent>
-    </Card>
-  );
-}
-
-// ---- Study plan -------------------------------------------------------------
-const CAT: Record<PlanItem["category"], { label: string; variant: "default" | "secondary" | "outline" }> = {
-  quick_win: { label: "Quick win", variant: "default" },
-  not_attempted: { label: "Not attempted", variant: "outline" },
-  needs_study: { label: "Needs study", variant: "secondary" },
-};
-
-// FR-8: set a target average; see the gap and a projection of clearing pending chapters.
-function ProjectionPanel({
-  projection,
-  target,
-  onTargetChange,
-  onApply,
-  onClear,
-}: {
-  projection: Projection | null;
-  target: string;
-  onTargetChange: (v: string) => void;
-  onApply: () => void;
-  onClear: () => void;
-}) {
-  const p = projection;
-  const applied = p?.target ?? null;
-  return (
-    <div className="bg-muted/30 mb-4 rounded-md border p-3">
-      <form
-        className="flex flex-wrap items-end gap-2"
-        onSubmit={(e) => {
-          e.preventDefault();
-          onApply();
-        }}
-      >
-        <label className="text-xs">
-          <span className="text-muted-foreground mb-1 block">Target average</span>
-          <div className="flex items-center gap-1">
-            <Input
-              type="number"
-              inputMode="numeric"
-              min={0}
-              max={100}
-              value={target}
-              onChange={(e) => onTargetChange(e.target.value)}
-              placeholder="e.g. 70"
-              className="h-8 w-24"
-              aria-label="Target average percent"
-            />
-            <span className="text-muted-foreground text-sm">%</span>
-          </div>
-        </label>
-        <Button type="submit" size="sm" className="h-8">
-          Set target
-        </Button>
-        {applied != null && (
-          <Button type="button" size="sm" variant="ghost" className="h-8" onClick={onClear}>
-            Clear
-          </Button>
-        )}
-      </form>
-
-      {p && p.current_avg != null && p.chapters_to_lift > 0 && (
-        <p className="text-muted-foreground mt-2 text-xs leading-relaxed">
-          Clearing your <b className="text-foreground">{p.chapters_to_lift}</b> pending chapter
-          {p.chapters_to_lift === 1 ? "" : "s"} to the pass mark would lift your average from{" "}
-          <b className="text-foreground">{Math.round(p.current_avg)}%</b> to ~
-          <b className="text-foreground">{Math.round(p.projected_avg ?? p.current_avg)}%</b>.
-          {applied != null &&
-            (p.reaches_target ? (
-              <span className="text-emerald-600 dark:text-emerald-400">
-                {" "}
-                That clears your {applied}% target. ✓
-              </span>
-            ) : (
-              <>
-                {" "}
-                Still {Math.max(0, Math.round(applied - (p.projected_avg ?? 0)))}% short of your {applied}% target — you&apos;ll
-                need above-pass scores on some chapters.
-              </>
-            ))}{" "}
-          <span className="italic">Estimate.</span>
-        </p>
-      )}
-      {p && p.chapters_to_lift === 0 && p.current_avg != null && (
-        <p className="text-muted-foreground mt-2 text-xs">
-          You&apos;ve passed every assessed chapter — your average is{" "}
-          <b className="text-foreground">{Math.round(p.current_avg)}%</b>.
-        </p>
-      )}
-    </div>
-  );
-}
-
-function StudyPlan({ plan }: { plan: PlanItem[] }) {
-  if (plan.length === 0)
-    return (
-      <EmptyState message="Nothing outstanding — you've passed every completed chapter you've attempted. 🎉" />
-    );
-  return (
-    <ul className="divide-y rounded-md border">
-      {plan.slice(0, 12).map((p) => (
-        <li key={p.chapter_id} className="flex flex-col gap-2 px-3 py-3 sm:flex-row sm:items-center sm:justify-between">
-          <div className="min-w-0">
-            <p className="text-sm font-medium break-words">{p.chapter_name}</p>
-            <div className="text-muted-foreground mt-1 flex flex-wrap items-center gap-2 text-xs">
-              <Badge variant={CAT[p.category].variant}>{CAT[p.category].label}</Badge>
-              <span>{p.subject_name}</span>
-              <span>
-                · {p.best_pct == null ? "not attempted" : `best ${Math.round(p.best_pct)}% (pass ${p.pass_pct}%)`}
-              </span>
-              <span>· {p.attempts_remaining} attempt{p.attempts_remaining === 1 ? "" : "s"} left</span>
-            </div>
-          </div>
-          {p.attempts_remaining > 0 && (
-            <Button size="sm" variant="outline" asChild className="shrink-0">
-              <Link href="/student/quizzes">Practise</Link>
-            </Button>
-          )}
-        </li>
-      ))}
-    </ul>
-  );
-}
-
-// ---- Subject strengths/weaknesses (horizontal bars + table fallback) --------
-function SubjectBars({
-  subjects,
-  onPick,
-  selected,
-}: {
-  subjects: Subject[];
-  onPick: (s: Subject) => void;
-  selected: string | null;
-}) {
-  const rows = subjects
-    .filter((s) => s.score_pct != null)
-    .sort((a, b) => (a.score_pct ?? 0) - (b.score_pct ?? 0)); // weakest first — surfaces gaps
-  if (rows.length === 0)
-    return <EmptyState message="Take a chapter assessment to see your subject scores." />;
-  return (
-    <ResponsiveContainer width="100%" height={Math.max(160, rows.length * 44)}>
-      <BarChart data={rows} layout="vertical" margin={{ top: 4, right: 44, bottom: 4, left: 8 }}>
-        <CartesianGrid horizontal={false} stroke="var(--border)" />
-        <XAxis type="number" domain={[0, 100]} tick={AXIS_TICK} tickFormatter={(v) => `${v}%`} />
-        <YAxis type="category" dataKey="subject_name" width={110} tick={AXIS_TICK} />
-        <Tooltip
-          cursor={{ fill: "var(--muted)", fillOpacity: 0.5 }}
-          contentStyle={TOOLTIP_STYLE}
-          formatter={(v) => [pctLabel(v), "Score"]}
-        />
-        <ReferenceLine x={PASS_LINE} stroke="var(--muted-foreground)" strokeDasharray="4 3" />
-        <Bar dataKey="score_pct" radius={[0, 4, 4, 0]} onClick={(_, i) => onPick(rows[i])} className="cursor-pointer">
-          <LabelList dataKey="score_pct" position="right" formatter={pctLabel} className="fill-foreground text-[11px]" />
-          {rows.map((s) => (
-            <Cell
-              key={s.subject_id}
-              fill={(s.score_pct ?? 0) < PASS_LINE ? WEAK : BRAND}
-              fillOpacity={selected && selected !== s.subject_id ? 0.4 : 1}
-            />
-          ))}
-        </Bar>
-      </BarChart>
-    </ResponsiveContainer>
-  );
-}
-
-function SubjectTable({ subjects }: { subjects: Subject[] }) {
-  return (
-    <div className="overflow-x-auto">
-      <table className="w-full text-sm">
-        <thead className="text-muted-foreground text-left text-xs">
-          <tr className="border-b">
-            <th className="py-2 pr-3 font-medium">Subject</th>
-            <th className="py-2 pr-3 font-medium">Score</th>
-            <th className="py-2 font-medium">Coverage</th>
-          </tr>
-        </thead>
-        <tbody>
-          {subjects.map((s) => (
-            <tr key={s.subject_id} className="border-b last:border-0">
-              <td className="py-2 pr-3">{s.subject_name}</td>
-              <td className="py-2 pr-3">{s.score_pct == null ? "—" : `${Math.round(s.score_pct)}%`}</td>
-              <td className="text-muted-foreground py-2">
-                {s.chapters_assessed}/{s.chapters_completed} chapters
-              </td>
-            </tr>
-          ))}
-        </tbody>
-      </table>
-    </div>
-  );
-}
-
-// ---- Chapter drill-down -----------------------------------------------------
-function ChapterBars({ chapters }: { chapters: Chapter[] }) {
-  const rows = chapters.filter((c) => c.best_pct != null);
-  if (rows.length === 0)
-    return <EmptyState message="No assessed chapters in this subject yet." />;
-  return (
-    <ResponsiveContainer width="100%" height={Math.max(140, rows.length * 40)}>
-      <BarChart data={rows} layout="vertical" margin={{ top: 4, right: 44, bottom: 4, left: 8 }}>
-        <CartesianGrid horizontal={false} stroke="var(--border)" />
-        <XAxis type="number" domain={[0, 100]} tick={AXIS_TICK} tickFormatter={(v) => `${v}%`} />
-        <YAxis type="category" dataKey="chapter_name" width={130} tick={AXIS_TICK} />
-        <Tooltip
-          cursor={{ fill: "var(--muted)", fillOpacity: 0.5 }}
-          contentStyle={TOOLTIP_STYLE}
-          formatter={(v) => [pctLabel(v), "Best"]}
-        />
-        <ReferenceLine x={PASS_LINE} stroke="var(--muted-foreground)" strokeDasharray="4 3" />
-        <Bar dataKey="best_pct" radius={[0, 4, 4, 0]}>
-          <LabelList dataKey="best_pct" position="right" formatter={pctLabel} className="fill-foreground text-[11px]" />
-          {rows.map((c) => (
-            <Cell key={c.chapter_id} fill={(c.best_pct ?? 0) < PASS_LINE ? WEAK : BRAND} />
-          ))}
-        </Bar>
-      </BarChart>
-    </ResponsiveContainer>
-  );
-}
-
-// ---- Trend ------------------------------------------------------------------
-function TrendChart({ points, bySubject }: { points: TrendPoint[]; bySubject: boolean }) {
-  const months = [...new Set(points.map((p) => p.month))].sort();
-  if (months.length === 0)
-    return <EmptyState message="Your score trend appears here once you've taken assessments." />;
-
-  if (!bySubject) {
-    const data = months.map((m) => ({
-      month: monthLabel(m),
-      pct: points.find((p) => p.month === m && p.subject_id == null)?.pct ?? null,
-    }));
-    return (
-      <ResponsiveContainer width="100%" height={260}>
-        <LineChart data={data} margin={{ top: 8, right: 12, bottom: 4, left: -12 }}>
-          <CartesianGrid vertical={false} stroke="var(--border)" />
-          <XAxis dataKey="month" tick={AXIS_TICK} />
-          <YAxis domain={[0, 100]} width={34} tick={AXIS_TICK} tickFormatter={(v) => `${v}%`} />
-          <Tooltip contentStyle={TOOLTIP_STYLE} formatter={(v) => [pctLabel(v), "Overall"]} />
-          <Line type="monotone" dataKey="pct" stroke={BRAND} strokeWidth={2} dot={{ r: 3 }} connectNulls />
-        </LineChart>
-      </ResponsiveContainer>
-    );
-  }
-
-  // Per-subject series (≤ 6 shown; a legend names each).
-  const subjects = [...new Map(points.filter((p) => p.subject_id).map((p) => [p.subject_id!, p.subject_name!])).entries()].slice(0, 6);
-  const data = months.map((m) => {
-    const row: Record<string, string | number | null> = { month: monthLabel(m) };
-    for (const [sid] of subjects) row[sid] = points.find((p) => p.month === m && p.subject_id === sid)?.pct ?? null;
-    return row;
-  });
-  return (
-    <div className="space-y-2">
-      <ResponsiveContainer width="100%" height={260}>
-        <LineChart data={data} margin={{ top: 8, right: 12, bottom: 4, left: -12 }}>
-          <CartesianGrid vertical={false} stroke="var(--border)" />
-          <XAxis dataKey="month" tick={AXIS_TICK} />
-          <YAxis domain={[0, 100]} width={34} tick={AXIS_TICK} tickFormatter={(v) => `${v}%`} />
-          <Tooltip contentStyle={TOOLTIP_STYLE} formatter={pctLabel} />
-          {subjects.map(([sid], i) => (
-            <Line key={sid} type="monotone" dataKey={sid} name={subjects[i][1]} stroke={PALETTE[i % PALETTE.length]} strokeWidth={2} dot={{ r: 2 }} connectNulls />
-          ))}
-        </LineChart>
-      </ResponsiveContainer>
-      <div className="flex flex-wrap gap-x-4 gap-y-1">
-        {subjects.map(([sid, name], i) => (
-          <span key={sid} className="text-muted-foreground flex items-center gap-1.5 text-xs">
-            <span className="size-2.5 rounded-full" style={{ background: PALETTE[i % PALETTE.length] }} />
-            {name}
-          </span>
-        ))}
-      </div>
-    </div>
-  );
-}
-
-// ---- Root -------------------------------------------------------------------
 export function StudentPerformance() {
   const [range, setRange] = useState("12m");
+  const [customFrom, setCustomFrom] = useState("");
+  const [customTo, setCustomTo] = useState("");
   const [batch, setBatch] = useState("all");
   const [batches, setBatches] = useState<BatchOption[]>([]);
-  const [summary, setSummary] = useState<Summary | null>(null);
-  const [subjects, setSubjects] = useState<Subject[]>([]);
+
+  const [summary, setSummary] = useState<PerfSummary | null>(null);
+  const [subjects, setSubjects] = useState<SubjectScore[]>([]);
   const [trend, setTrend] = useState<TrendPoint[]>([]);
+  const [mastery, setMastery] = useState<MasteryCell[]>([]);
+
   const [plan, setPlan] = useState<PlanItem[]>([]);
+  const [projection, setProjection] = useState<PlanProjection | null>(null);
+  const [ladder, setLadder] = useState<LadderStep[]>([]);
   const [planLoaded, setPlanLoaded] = useState(false);
-  const [projection, setProjection] = useState<Projection | null>(null);
-  const [target, setTarget] = useState(""); // the target input's text
-  const [appliedTarget, setAppliedTarget] = useState<number | null>(null); // last valid target sent
-  const [selected, setSelected] = useState<Subject | null>(null);
-  const [chapters, setChapters] = useState<Chapter[]>([]);
+  const [target, setTarget] = useState("");
+  const [appliedTarget, setAppliedTarget] = useState<number | null>(null);
+
+  const [selected, setSelected] = useState<SubjectScore | null>(null);
+  const [chapters, setChapters] = useState<ChapterScore[]>([]);
+
+  // view toggles
   const [trendBySubject, setTrendBySubject] = useState(false);
+  const [trendTable, setTrendTable] = useState(false);
+  const [subjectSort, setSubjectSort] = useState<SubjectSort>("weakest");
   const [subjectTable, setSubjectTable] = useState(false);
+  const [chapterView, setChapterView] = useState<ChapterView>("best");
+  const [chapterTable, setChapterTable] = useState(false);
+  const [masteryTable, setMasteryTable] = useState(false);
+
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState("");
 
-  // query string shared by the range/batch-scoped endpoints (from + batch).
+  // The from/to/batch scope every range-filtered endpoint shares.
   const qs = useCallback(() => {
     const p = new URLSearchParams();
-    const from = fromDate(RANGES.find((r) => r.value === range)?.months ?? null);
-    if (from) p.set("from", from);
+    if (range === "custom") {
+      if (customFrom) p.set("from", customFrom);
+      if (customTo) p.set("to", customTo);
+    } else {
+      const months = RANGES.find((r) => r.value === range)?.months ?? null;
+      if (months != null) p.set("from", monthsAgo(months));
+    }
     if (batch !== "all") p.set("batch", batch);
     const s = p.toString();
     return s ? `?${s}` : "";
-  }, [range, batch]);
+  }, [range, customFrom, customTo, batch]);
 
-  // The student's batches populate the FR-7 filter (rendered only when >1 batch).
+  // The student's batches back the FR-7 filter (rendered only when >1 batch).
   useEffect(() => {
-    fetch(`/api/student/performance/batches`)
+    fetch("/api/student/performance/batches")
       .then((r) => r.json())
       .then((d) => setBatches(d.batches ?? []))
       .catch(() => setBatches([]));
@@ -460,17 +118,20 @@ export function StudentPerformance() {
     setLoading(true);
     setSelected(null);
     const q = qs();
+    const sep = q ? "&" : "?";
     Promise.all([
       fetch(`/api/student/performance/summary${q}`).then((r) => r.json()),
       fetch(`/api/student/performance/subjects${q}`).then((r) => r.json()),
-      fetch(`/api/student/performance/trend${q}${q ? "&" : "?"}group=subject`).then((r) => r.json()),
+      fetch(`/api/student/performance/trend${q}${sep}group=subject`).then((r) => r.json()),
+      fetch(`/api/student/performance/mastery${q}`).then((r) => r.json()),
     ])
-      .then(([s, sub, tr]) => {
+      .then(([s, sub, tr, ms]) => {
         if (cancelled) return;
         if (s.error) setError(s.error);
         setSummary(s.summary ?? null);
         setSubjects(sub.subjects ?? []);
         setTrend(tr.points ?? []);
+        setMastery(ms.cells ?? []);
       })
       .catch((e) => !cancelled && setError(String(e)))
       .finally(() => !cancelled && setLoading(false));
@@ -479,8 +140,8 @@ export function StudentPerformance() {
     };
   }, [qs]);
 
-  // Study plan + projection refetch on batch or applied-target change — independent
-  // of the time range (the plan RPC is not date-filtered).
+  // The plan refetches on batch or target change only — the plan RPC is not
+  // date-filtered, because "what should I do next" isn't a question about a window.
   useEffect(() => {
     let cancelled = false;
     const p = new URLSearchParams();
@@ -493,12 +154,14 @@ export function StudentPerformance() {
         if (cancelled) return;
         setPlan(d.plan ?? []);
         setProjection(d.projection ?? null);
+        setLadder(d.ladder ?? []);
         setPlanLoaded(true);
       })
       .catch(() => {
         if (cancelled) return;
         setPlan([]);
         setProjection(null);
+        setLadder([]);
         setPlanLoaded(true);
       });
     return () => {
@@ -515,22 +178,35 @@ export function StudentPerformance() {
     const n = Number(t);
     if (Number.isInteger(n) && n >= 0 && n <= 100) setAppliedTarget(n);
   }
+
   function clearTarget() {
     setTarget("");
     setAppliedTarget(null);
   }
 
-  function pickSubject(s: Subject) {
+  const loadChapters = useCallback(
+    (subjectId: string) => {
+      setChapters([]);
+      fetch(`/api/student/performance/subjects/${subjectId}/chapters${qs()}`)
+        .then((r) => r.json())
+        .then((d) => setChapters(d.chapters ?? []))
+        .catch(() => setChapters([]));
+    },
+    [qs],
+  );
+
+  function pickSubject(s: SubjectScore) {
     if (selected?.subject_id === s.subject_id) {
       setSelected(null);
       return;
     }
     setSelected(s);
-    setChapters([]);
-    fetch(`/api/student/performance/subjects/${s.subject_id}/chapters${qs()}`)
-      .then((r) => r.json())
-      .then((d) => setChapters(d.chapters ?? []))
-      .catch(() => setChapters([]));
+    loadChapters(s.subject_id);
+  }
+
+  function pickSubjectById(subjectId: string) {
+    const s = subjects.find((x) => x.subject_id === subjectId);
+    if (s) pickSubject(s);
   }
 
   if (loading)
@@ -541,7 +217,7 @@ export function StudentPerformance() {
     );
   if (error && !summary)
     return (
-      <p className="text-destructive bg-destructive/10 rounded-md border border-destructive/20 px-3 py-2 text-sm">
+      <p className="text-destructive border-destructive/20 bg-destructive/10 rounded-md border px-3 py-2 text-sm">
         {error}
       </p>
     );
@@ -552,13 +228,15 @@ export function StudentPerformance() {
       <EmptyState message="No assessment scores yet. Once you take a chapter assessment, your performance shows up here." />
     );
 
+  const { mark: passMark } = typicalPassMark(subjects);
+
   return (
     <div className="space-y-6">
-      {/* filter row */}
+      {/* filters — one row above the charts */}
       <div className="flex flex-wrap items-center justify-end gap-2">
         {batches.length > 1 && (
           <Select value={batch} onValueChange={setBatch}>
-            <SelectTrigger className="h-8 w-[12rem]">
+            <SelectTrigger className="h-8 w-[12rem]" aria-label="Batch">
               <SelectValue />
             </SelectTrigger>
             <SelectContent>
@@ -572,7 +250,7 @@ export function StudentPerformance() {
           </Select>
         )}
         <Select value={range} onValueChange={setRange}>
-          <SelectTrigger className="h-8 w-[11rem]">
+          <SelectTrigger className="h-8 w-[11rem]" aria-label="Time range">
             <SelectValue />
           </SelectTrigger>
           <SelectContent>
@@ -583,32 +261,52 @@ export function StudentPerformance() {
             ))}
           </SelectContent>
         </Select>
+        {range === "custom" && (
+          <div className="flex items-center gap-1.5">
+            <Input
+              type="date"
+              value={customFrom}
+              max={customTo || undefined}
+              onChange={(e) => setCustomFrom(e.target.value)}
+              className="h-8 w-[9.5rem]"
+              aria-label="From date"
+            />
+            <span className="text-muted-foreground text-xs">to</span>
+            <Input
+              type="date"
+              value={customTo}
+              min={customFrom || undefined}
+              onChange={(e) => setCustomTo(e.target.value)}
+              className="h-8 w-[9.5rem]"
+              aria-label="To date"
+            />
+          </div>
+        )}
       </div>
 
-      {/* snapshot tiles */}
-      <div className="grid grid-cols-2 gap-3 lg:grid-cols-4">
-        <Tile label="Overall score" value={summary?.overall_pct == null ? "—" : `${Math.round(summary.overall_pct)}%`} />
-        <Tile label="Pass rate" value={summary?.pass_rate_pct == null ? "—" : `${Math.round(summary.pass_rate_pct)}%`} sub={`${assessed} of ${summary?.chapters_completed ?? 0} chapters assessed`} />
-        <Tile label="Strongest" value={summary?.strongest_subject ?? "—"} sub={summary?.strongest_pct == null ? undefined : `${Math.round(summary.strongest_pct)}%`} tone="text-emerald-600 dark:text-emerald-400 text-lg" />
-        <Tile label="Focus on" value={summary?.weakest_subject ?? "—"} sub={summary?.weakest_pct == null ? undefined : `${Math.round(summary.weakest_pct)}%`} tone="text-rose-600 dark:text-rose-400 text-lg" />
-      </div>
+      <SnapshotTiles summary={summary} trend={trend} />
 
-      {/* study plan (the action the charts justify) */}
+      {/* the study plan — the action the charts justify */}
       <Card>
         <CardHeader>
           <CardTitle className="text-base">Your study plan</CardTitle>
-          <p className="text-muted-foreground text-xs">Where the next attempt pays off most — quick wins first.</p>
+          <p className="text-muted-foreground text-xs">
+            Where the next attempt pays off most. Set a target to see the route to it.
+          </p>
         </CardHeader>
         <CardContent>
-          <ProjectionPanel
-            projection={projection}
-            target={target}
-            onTargetChange={setTarget}
-            onApply={applyTarget}
-            onClear={clearTarget}
-          />
           {planLoaded ? (
-            <StudyPlan plan={plan} />
+            <StudyPlan
+              items={plan}
+              projection={projection}
+              ladder={ladder}
+              target={target}
+              appliedTarget={appliedTarget}
+              onTargetChange={setTarget}
+              onApply={applyTarget}
+              onClear={clearTarget}
+              batch={batch}
+            />
           ) : (
             <p className="text-muted-foreground flex items-center gap-2 text-sm">
               <Loader2 className="size-4 animate-spin" /> Building your plan…
@@ -619,40 +317,93 @@ export function StudentPerformance() {
 
       {/* trend */}
       <Card>
-        <CardHeader className="flex flex-row items-center justify-between">
-          <CardTitle className="text-base">Score over time</CardTitle>
-          <Button size="sm" variant="outline" onClick={() => setTrendBySubject((v) => !v)}>
-            {trendBySubject ? "Overall" : "By subject"}
-          </Button>
+        <CardHeader className="flex flex-row items-start justify-between gap-2">
+          <div>
+            <CardTitle className="text-base">Score over time</CardTitle>
+            <p className="text-muted-foreground text-xs">
+              Monthly average of the attempts you submitted that month.
+            </p>
+          </div>
+          <div className="flex shrink-0 items-center gap-1">
+            <Button size="sm" variant="outline" onClick={() => setTrendBySubject((v) => !v)}>
+              {trendBySubject ? "Overall" : "By subject"}
+            </Button>
+            <TableToggle table={trendTable} onToggle={() => setTrendTable((v) => !v)} />
+          </div>
         </CardHeader>
         <CardContent>
-          <TrendChart points={trend} bySubject={trendBySubject} />
+          <PerformanceTrend
+            points={trend}
+            bySubject={trendBySubject}
+            table={trendTable}
+            passLine={passMark}
+          />
         </CardContent>
       </Card>
 
-      {/* subjects */}
+      {/* subjects + drill-down */}
       <Card>
-        <CardHeader className="flex flex-row items-center justify-between">
+        <CardHeader className="flex flex-row items-start justify-between gap-2">
           <div>
             <CardTitle className="text-base">Subjects — strengths &amp; gaps</CardTitle>
-            <p className="text-muted-foreground text-xs">Weakest first. Tap a subject to see its chapters. Dashed line = pass mark.</p>
+            <p className="text-muted-foreground text-xs">
+              {subjectSort === "weakest" ? "Weakest first" : "Strongest first"}. Tap a subject for its
+              chapters.
+            </p>
           </div>
-          <Button size="sm" variant="ghost" onClick={() => setSubjectTable((v) => !v)} aria-label="Toggle table view">
-            {subjectTable ? <BarChart3 className="size-4" /> : <Table2 className="size-4" />}
-          </Button>
+          <div className="flex shrink-0 items-center gap-1">
+            <Button
+              size="sm"
+              variant="outline"
+              onClick={() => setSubjectSort((s) => (s === "weakest" ? "strongest" : "weakest"))}
+            >
+              {subjectSort === "weakest" ? "Strongest first" : "Weakest first"}
+            </Button>
+            <TableToggle table={subjectTable} onToggle={() => setSubjectTable((v) => !v)} />
+          </div>
         </CardHeader>
         <CardContent>
-          {subjectTable ? (
-            <SubjectTable subjects={subjects} />
-          ) : (
-            <SubjectBars subjects={subjects} onPick={pickSubject} selected={selected?.subject_id ?? null} />
-          )}
+          <SubjectMasteryBars
+            subjects={subjects}
+            sort={subjectSort}
+            table={subjectTable}
+            onPick={pickSubject}
+            selected={selected?.subject_id ?? null}
+          />
           {selected && (
-            <div className="mt-4 border-t pt-4">
-              <p className="mb-2 text-sm font-medium">{selected.subject_name} — chapters</p>
-              <ChapterBars chapters={chapters} />
+            <div className="mt-5 border-t pt-4">
+              <div className="mb-3 flex flex-wrap items-center justify-between gap-2">
+                <p className="text-sm font-medium">{selected.subject_name} — chapters</p>
+                <div className="flex items-center gap-1">
+                  <Button
+                    size="sm"
+                    variant="outline"
+                    onClick={() => setChapterView((v) => (v === "best" ? "improvement" : "best"))}
+                  >
+                    {chapterView === "best" ? "Improvement" : "Best score"}
+                  </Button>
+                  <TableToggle table={chapterTable} onToggle={() => setChapterTable((v) => !v)} />
+                </div>
+              </div>
+              <ChapterDrilldown chapters={chapters} view={chapterView} table={chapterTable} />
             </div>
           )}
+        </CardContent>
+      </Card>
+
+      {/* mastery grid */}
+      <Card>
+        <CardHeader className="flex flex-row items-start justify-between gap-2">
+          <div>
+            <CardTitle className="text-base">Mastery grid</CardTitle>
+            <p className="text-muted-foreground text-xs">
+              Every completed chapter, by subject. Tap a subject name to open its chapters.
+            </p>
+          </div>
+          <TableToggle table={masteryTable} onToggle={() => setMasteryTable((v) => !v)} />
+        </CardHeader>
+        <CardContent>
+          <MasteryGrid cells={mastery} table={masteryTable} onPickSubject={pickSubjectById} />
         </CardContent>
       </Card>
     </div>

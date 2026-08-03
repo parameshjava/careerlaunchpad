@@ -26,7 +26,19 @@ Brand values live in `app/brand.css`; `app/globals.css` maps them onto shadcn to
 | Secondary text / captions           | `text-muted-foreground`                 | muted                      |
 | Hairline borders                    | `border` `border-border`                | line                       |
 | Errors                              | `text-destructive`                      | red                        |
-| Charts                              | `--chart-1..5` (blue→violet ramp)       | via shadcn                 |
+| Charts (brand ramp)                 | `--chart-1..5` (blue→violet ramp)       | via shadcn                 |
+| Charts (data colour)                | `lib/chart-palette.ts`                  | see below                  |
+
+**Chart colour comes from `lib/chart-palette.ts`, not from ad-hoc hex.** The
+`--chart-1..5` ramp is five blue/violet steps — a brand ramp, not a categorical
+palette, so it can't distinguish more than about two series. Anything that colours
+*data* imports the module instead: `CATEGORICAL` / `categorical(i)` for identity
+(fixed order, assigned per entity and never by rank), `SEQUENTIAL` +
+`sequentialStep()` for magnitude, `STATUS` for state (reserved — never a series
+colour, and always paired with an icon or label). The module's header carries the
+validator command and the surfaces it was checked against; **re-run it in both
+modes before adding or reordering a slot**, and never cycle past slot 8 — fold the
+tail into "Other" or switch to small multiples.
 
 Raw brand vars (`var(--brand-gradient)`, `var(--brand-gradient-135)`) are reserved for **gradient accents** (CTAs, avatars, badges) where a token can't express a gradient — not for ordinary fills.
 

@@ -36,20 +36,16 @@ import { ChartColumnBig, ChartPie } from "lucide-react";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { cn } from "@/lib/utils";
 import type { AssessmentDatum, CollegeAnalytics, Slice } from "@/lib/analytics-query";
+import { BRAND, TOOLTIP_STYLE, HOVER_CURSOR } from "@/lib/chart-palette";
 
 type ChartType = "pie" | "bar";
 const STORAGE_KEY = "cl-chart-type";
 
-const YOU = "#2563eb"; // brand blue — the student's own data
-const PEERS = "#cbd5e1"; // slate-300 — the college benchmark (you don't have it)
+// The student's own data wears the brand hue; the benchmark is a recessive
+// neutral. Both from the shared palette module (lib/chart-palette.ts).
+const YOU = BRAND;
+const PEERS = "var(--muted-foreground)";
 
-const TOOLTIP_STYLE = {
-  background: "var(--popover)",
-  border: "1px solid var(--border)",
-  borderRadius: 8,
-  fontSize: 12,
-  color: "var(--popover-foreground)",
-} as const;
 
 const NO_FOCUS_RING =
   "[&_svg]:outline-none [&_.recharts-surface]:outline-none [&_.recharts-sector]:outline-none [&_path:focus]:outline-none [&_*:focus]:outline-none";
@@ -120,7 +116,7 @@ function DistributionCompare({ data, type, mine }: { data: Slice[]; type: ChartT
             tick={{ fill: "var(--muted-foreground)", fontSize: 11 }}
           />
           <YAxis allowDecimals={false} width={28} tick={{ fill: "var(--muted-foreground)", fontSize: 11 }} />
-          <Tooltip cursor={{ fill: "var(--muted)", fillOpacity: 0.5 }} contentStyle={TOOLTIP_STYLE} />
+          <Tooltip cursor={HOVER_CURSOR} contentStyle={TOOLTIP_STYLE} />
           <Bar dataKey="value" name="Students" radius={[4, 4, 0, 0]} activeBar={false}>
             {slices.map((s) => (
               <Cell key={s.key} fill={fill(s.key)} />
@@ -212,7 +208,7 @@ function AssessmentCompare({ data, type }: { data: CompareDatum[]; type: ChartTy
             width={28}
             tick={{ fill: "var(--muted-foreground)", fontSize: 11 }}
           />
-          <Tooltip cursor={{ fill: "var(--muted)", fillOpacity: 0.5 }} contentStyle={TOOLTIP_STYLE} />
+          <Tooltip cursor={HOVER_CURSOR} contentStyle={TOOLTIP_STYLE} />
           <Legend iconType="circle" wrapperStyle={{ fontSize: 11, paddingTop: 8 }} />
           <Bar dataKey="you" name="You" fill={YOU} radius={[4, 4, 0, 0]} activeBar={false} />
           <Bar dataKey="college" name="College avg" fill="#a78bfa" radius={[4, 4, 0, 0]} activeBar={false} />
