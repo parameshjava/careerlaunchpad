@@ -23,6 +23,7 @@ import {
   SEQUENTIAL,
   SEQUENTIAL_LABELS,
   SEQUENTIAL_NONE,
+  STATUS,
   sequentialStep,
 } from "@/lib/chart-palette";
 import type { MasteryCell } from "@/lib/student-performance-query";
@@ -44,7 +45,7 @@ function toRows(cells: MasteryCell[]): Row[] {
   return [...rows.values()];
 }
 
-function Ramp({ passMark }: { passMark: number | null }) {
+function Ramp({ anyBelow }: { anyBelow: boolean }) {
   return (
     <div className="mt-3">
       <div className="flex flex-wrap items-end gap-x-1 gap-y-2">
@@ -65,12 +66,20 @@ function Ramp({ passMark }: { passMark: number | null }) {
           <span className="text-muted-foreground text-[9.5px]">none</span>
         </div>
       </div>
-      {/* "darker = higher" is only true in light mode — on the dark surface the
-          ramp brightens as the score rises, so the wording stays theme-neutral. */}
+      {/* The ramp's 40 boundary is a palette step, NOT a pass mark: pass marks are
+          per chapter and often differ, so an earlier version's claim that the
+          40–55 band "starts at the pass mark" was simply false wherever a quiz
+          used anything but 40. Below-pass is flagged per cell instead. */}
       <p className="text-muted-foreground mt-2 text-xs">
-        Stronger colour means a higher score.
-        {passMark != null && ` The 40–55 step starts at the ${passMark}% pass mark.`} Cells with a
-        dashed edge have no attempt yet.
+        Stronger colour means a higher score; the bands are fixed score ranges, not pass marks.
+        Cells with a dashed edge have no attempt yet.
+        {anyBelow && (
+          <>
+            {" "}
+            A <span className="font-medium" style={{ color: STATUS.weak }}>coloured underline</span>{" "}
+            marks a chapter below <em>its own</em> pass mark.
+          </>
+        )}
       </p>
     </div>
   );
@@ -96,6 +105,9 @@ function GridTable({ rows }: { rows: Row[] }) {
                 <TableCell>{c.chapter_name}</TableCell>
                 <TableCell className="text-right tabular-nums">
                   {c.best_pct == null ? "not assessed" : pct(c.best_pct)}
+                  {c.best_pct != null && c.best_pct < c.pass_pct && (
+                    <span className="text-muted-foreground"> · below pass</span>
+                  )}
                 </TableCell>
                 <TableCell className="text-right tabular-nums">{c.pass_pct}%</TableCell>
               </TableRow>
@@ -124,7 +136,7 @@ export function MasteryGrid({
   if (table) return <GridTable rows={rows} />;
 
   const widest = Math.max(...rows.map((r) => r.cells.length));
-  const passMark = cells.length > 0 ? cells[0].pass_pct : null;
+  const anyBelow = cells.some((c) => c.best_pct != null && c.best_pct < c.pass_pct);
 
   return (
     <>
@@ -178,12 +190,19 @@ export function MasteryGrid({
                       </span>
                     );
                   const step = sequentialStep(c.best_pct);
+                  const failed = c.best_pct < c.pass_pct;
                   return (
                     <span
                       key={i}
-                      title={`${r.name} · ${c.chapter_name} · best ${Math.round(c.best_pct)}% (pass ${c.pass_pct}%)`}
+                      title={`${r.name} · ${c.chapter_name} · best ${Math.round(c.best_pct)}% (pass ${c.pass_pct}%)${failed ? " · below pass" : ""}`}
                       className="flex h-[34px] items-center justify-center rounded-[5px] text-[10.5px] font-semibold tabular-nums"
-                      style={{ background: step.fill, color: step.ink }}
+                      style={{
+                        background: step.fill,
+                        color: step.ink,
+                        // sequential hue keeps encoding the score; the underline adds
+                        // the pass/fail state without stealing a second hue
+                        boxShadow: failed ? `inset 0 -3px 0 0 ${STATUS.weak}` : undefined,
+                      }}
                     >
                       {Math.round(c.best_pct)}
                     </span>
@@ -194,7 +213,7 @@ export function MasteryGrid({
           </div>
         </div>
       </ScrollBox>
-      <Ramp passMark={passMark} />
+      <Ramp anyBelow={anyBelow} />
     </>
   );
 }

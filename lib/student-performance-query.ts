@@ -32,10 +32,16 @@ export type SubjectScore = {
   score_pct: number | null;
   chapters_assessed: number;
   chapters_completed: number;
-  pass_pct: number;
-  /** true when the subject's chapters don't share one pass mark, so the
-   *  reference line is an average and the UI must say so. */
-  pass_pct_mixed: boolean;
+  /** The range of pass marks across the subject's chapters. There is no such
+   *  thing as a subject-level pass mark in this schema (chapter_quiz is one row
+   *  per chapter), so an averaged mark would be an invented number — the UI draws
+   *  a guide line only when min === max, and otherwise says the marks vary. */
+  pass_pct_min: number;
+  pass_pct_max: number;
+  /** How many of the subject's assessed chapters are below THEIR OWN pass mark.
+   *  This, not a comparison of the mean against an averaged mark, is what makes a
+   *  subject "have gaps". */
+  chapters_below_pass: number;
 };
 
 export type ChapterScore = {

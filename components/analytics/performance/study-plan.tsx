@@ -76,7 +76,15 @@ function rungCopy(step: LadderStep, target: number): { title: string; note: stri
   }
 }
 
-function Ladder({ ladder, target }: { ladder: LadderStep[]; target: number }) {
+function Ladder({
+  ladder,
+  target,
+  rangeScoped,
+}: {
+  ladder: LadderStep[];
+  target: number;
+  rangeScoped: boolean;
+}) {
   const rungs = ladder.filter((s) => s.avg != null);
   if (rungs.length === 0) return null;
   const final = rungs[rungs.length - 1].avg ?? 0;
@@ -176,6 +184,17 @@ function Ladder({ ladder, target }: { ladder: LadderStep[]; target: number }) {
           </li>
         ))}
       </ol>
+
+      {/* The plan RPC is deliberately not date-filtered, so this baseline covers
+          every attempt ever — it will not match the range-filtered tiles above.
+          Saying so is better than two unexplained numbers on one screen. */}
+      {rangeScoped && (
+        <p className="text-muted-foreground mt-3 text-xs">
+          These figures cover <b className="text-foreground">all</b> your attempts, not the selected
+          time range — a chapter you failed two years ago still needs work, so the plan ignores the
+          range filter. That is why the baseline can differ from the tiles above.
+        </p>
+      )}
 
       <p className={`mt-3 text-xs font-medium ${reaches ? "text-emerald-600 dark:text-emerald-400" : ""}`}>
         {reaches ? (
@@ -344,10 +363,12 @@ export function StudyPlan({
   onApply,
   onClear,
   batch,
+  rangeScoped,
 }: {
   items: PlanItem[];
   projection: PlanProjection | null;
   ladder: LadderStep[];
+  rangeScoped: boolean;
   target: string;
   appliedTarget: number | null;
   onTargetChange: (v: string) => void;
@@ -369,7 +390,7 @@ export function StudyPlan({
         {projection && <Floor projection={projection} />}
         {appliedTarget != null && ladder.length > 0 && (
           <div className="mt-4 border-t pt-4">
-            <Ladder ladder={ladder} target={appliedTarget} />
+            <Ladder ladder={ladder} target={appliedTarget} rangeScoped={rangeScoped} />
           </div>
         )}
       </div>

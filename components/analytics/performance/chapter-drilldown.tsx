@@ -254,24 +254,44 @@ export function ChapterDrilldown({
   );
 }
 
-/** Completed-but-unattempted chapters — surfaced as coverage (O-8), not as zeros. */
+/** Completed-but-unattempted chapters — surfaced as coverage (O-8), not as zeros.
+ *  Split by whether an attempt is actually still possible: a chapter with no score
+ *  in this range but all 3 attempts spent is NOT an easy point, and calling it one
+ *  sends the student at a quiz the server will refuse. */
 function PendingList({ pending }: { pending: ChapterScore[] }) {
   if (pending.length === 0) return null;
+  const open = pending.filter((c) => c.attempts_remaining > 0);
+  const spent = pending.filter((c) => c.attempts_remaining === 0);
   return (
-    <div className="border-border/70 mt-3 rounded-md border border-dashed p-3">
-      <p className="text-muted-foreground text-xs">
-        <span className="text-foreground font-medium">Not assessed yet</span> —{" "}
-        {pending.length} chapter{pending.length === 1 ? "" : "s"} with no attempt. These have no score
-        rather than 0%, and they&apos;re the easiest points available:
-      </p>
-      <ul className="mt-2 flex flex-wrap gap-x-3 gap-y-1">
-        {pending.map((c) => (
-          <li key={c.chapter_id} className="text-muted-foreground text-xs">
-            {c.chapter_name}
-            <span className="text-muted-foreground/70"> · {c.attempts_remaining} attempts available</span>
-          </li>
-        ))}
-      </ul>
+    <div className="border-border/70 mt-3 space-y-2 rounded-md border border-dashed p-3">
+      {open.length > 0 && (
+        <div>
+          <p className="text-muted-foreground text-xs">
+            <span className="text-foreground font-medium">Not assessed yet</span> — {open.length}{" "}
+            chapter{open.length === 1 ? "" : "s"} with no attempt. These have no score rather than 0%,
+            and they&apos;re the easiest points available:
+          </p>
+          <ul className="mt-2 flex flex-wrap gap-x-3 gap-y-1">
+            {open.map((c) => (
+              <li key={c.chapter_id} className="text-muted-foreground text-xs">
+                {c.chapter_name}
+                <span className="text-muted-foreground/70">
+                  {" "}
+                  · {c.attempts_remaining} attempt{c.attempts_remaining === 1 ? "" : "s"} available
+                </span>
+              </li>
+            ))}
+          </ul>
+        </div>
+      )}
+      {spent.length > 0 && (
+        <p className="text-muted-foreground text-xs">
+          <span className="text-foreground font-medium">No score in this range</span> — {spent.length}{" "}
+          chapter{spent.length === 1 ? "" : "s"} ({spent.map((c) => c.chapter_name).join(", ")}){" "}
+          {spent.length === 1 ? "has" : "have"} used all 3 attempts, just not inside the selected
+          dates. Widen the range to see those scores; they can&apos;t be retaken.
+        </p>
+      )}
     </div>
   );
 }

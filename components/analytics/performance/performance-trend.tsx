@@ -46,7 +46,27 @@ function subjectSeries(points: TrendPoint[]): Series[] {
     .map(([id, name], i) => ({ id, name, colour: categorical(i) }));
 }
 
-function rowsFor(points: TrendPoint[], series: Series[]) {
+/** Subjects beyond the palette's validated slot count. The chart cannot colour
+ *  them (cycling hues would make two subjects look identical), so they are named
+ *  explicitly rather than silently vanishing — and the table view keeps them all,
+ *  since a table has no colour budget. */
+function allSeries(points: TrendPoint[]): { id: string; name: string }[] {
+  const seen = new Map<string, string>();
+  for (const p of points) {
+    if (p.subject_id && !seen.has(p.subject_id)) seen.set(p.subject_id, p.subject_name ?? "—");
+  }
+  return [...seen.entries()].map(([id, name]) => ({ id, name }));
+}
+
+function overflowSeries(points: TrendPoint[]): string[] {
+  const seen = new Map<string, string>();
+  for (const p of points) {
+    if (p.subject_id && !seen.has(p.subject_id)) seen.set(p.subject_id, p.subject_name ?? "—");
+  }
+  return [...seen.values()].slice(CATEGORICAL_MAX);
+}
+
+function rowsFor(points: TrendPoint[], series: { id: string }[]) {
   const index = new Map(points.map((p) => [`${p.month}|${p.subject_id ?? ""}`, Number(p.pct)]));
   return months(points).map((m) => {
     const row: Record<string, string | number | null> = { month: m, label: monthLabel(m) };
@@ -166,7 +186,7 @@ function TrendTable({
   series,
 }: {
   rows: Record<string, string | number | null>[];
-  series: Series[];
+  series: { id: string; name: string }[];
 }) {
   return (
     <ScrollBox>
@@ -213,19 +233,33 @@ export function PerformanceTrend({
 }) {
   const wide = useMediaQuery("(min-width: 640px)");
   const series = subjectSeries(points);
+  const overflow = overflowSeries(points);
   const rows = rowsFor(points, series);
 
   if (rows.length === 0)
     return <EmptyState message="Your score trend appears here once you've taken assessments." />;
 
-  if (table) return <TrendTable rows={rows} series={series} />;
+  // The table has no colour budget, so it carries every subject including the ones
+  // the chart had to leave out.
+  if (table) return <TrendTable rows={rowsFor(points, allSeries(points))} series={allSeries(points)} />;
   if (!bySubject) return <OverallLine rows={rows} passLine={passLine} />;
   if (series.length === 0)
     return <EmptyState message="No per-subject scores in this range yet." />;
   // Under 640px an overlay of several lines is unreadable — facet instead.
-  return wide ? (
-    <SubjectLines rows={rows} series={series} passLine={passLine} />
-  ) : (
-    <SmallMultiples rows={rows} series={series} />
+  return (
+    <>
+      {wide ? (
+        <SubjectLines rows={rows} series={series} passLine={passLine} />
+      ) : (
+        <SmallMultiples rows={rows} series={series} />
+      )}
+      {overflow.length > 0 && (
+        <p className="text-muted-foreground mt-2 text-xs">
+          Not shown here: {overflow.join(", ")} — the chart carries {CATEGORICAL_MAX} distinguishable
+          colours, and reusing one would make two subjects look identical. Switch to the table view to
+          see every subject.
+        </p>
+      )}
+    </>
   );
 }

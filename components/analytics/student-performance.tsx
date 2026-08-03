@@ -127,7 +127,12 @@ export function StudentPerformance() {
     ])
       .then(([s, sub, tr, ms]) => {
         if (cancelled) return;
-        if (s.error) setError(s.error);
+        // Every response is checked: only summary's error was inspected before, so a
+        // failing subjects/trend/mastery call fell through to `?? []` and rendered as
+        // "you haven't taken any assessments" — telling a student with dozens of
+        // graded chapters that they have none.
+        const failed = [s.error, sub.error, tr.error, ms.error].filter(Boolean);
+        setError(failed.length > 0 ? String(failed[0]) : "");
         setSummary(s.summary ?? null);
         setSubjects(sub.subjects ?? []);
         setTrend(tr.points ?? []);
@@ -142,8 +147,11 @@ export function StudentPerformance() {
 
   // The plan refetches on batch or target change only — the plan RPC is not
   // date-filtered, because "what should I do next" isn't a question about a window.
+  // planLoaded drops to false first: rendering the previous target's rungs against a
+  // newly applied target produced a wrong number that looked auditable.
   useEffect(() => {
     let cancelled = false;
+    setPlanLoaded(false);
     const p = new URLSearchParams();
     if (batch !== "all") p.set("batch", batch);
     if (appliedTarget != null) p.set("target", String(appliedTarget));
@@ -300,6 +308,7 @@ export function StudentPerformance() {
               items={plan}
               projection={projection}
               ladder={ladder}
+              rangeScoped={range !== "all"}
               target={target}
               appliedTarget={appliedTarget}
               onTargetChange={setTarget}

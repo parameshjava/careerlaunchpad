@@ -8,10 +8,14 @@
 // between a long bar and a short track is the point — "you score well on what
 // you've attempted, and you've attempted five of six".
 //
-// Pass marks are per-quiz (chapter_quiz.pass_pct), so the below-pass decision is
-// made per subject against ITS OWN mark. The dashed reference line can only sit at
-// one x, so when a student's subjects disagree it is drawn at the most common mark
-// and labelled as typical — the bar colours stay exact either way.
+// Pass marks are per-CHAPTER (chapter_quiz is one row per chapter). There is no
+// subject-level pass mark in the schema, and an earlier version of this file
+// invented one by averaging: a subject with marks 40/40/80 and scores 45/45/60 got
+// an averaged mark of 53 and was painted "below pass" despite passing two chapters
+// of three. So a subject is never compared with a mark of its own — what marks it
+// "has gaps" is chapters_below_pass, each chapter measured against its own mark.
+// The dashed guide line is drawn only when every chapter in view shares one mark;
+// otherwise there is no single line to honestly draw, and the legend says so.
 import {
   Bar,
   BarChart,
@@ -39,18 +43,19 @@ import { EmptyState, Legend, LegendItem, ScrollBox, pct, pctLabel } from "./shar
 
 export type SubjectSort = "weakest" | "strongest";
 
-/** The mark to draw the guide line at: the one most of the subjects use. */
+/** A guide line is only honest when every chapter in view shares one pass mark.
+ *  Returns that mark, or null with mixed=true when they disagree. */
 export function typicalPassMark(subjects: SubjectScore[]): { mark: number | null; mixed: boolean } {
-  const marks = subjects.map((s) => s.pass_pct).filter((m): m is number => m != null);
-  if (marks.length === 0) return { mark: null, mixed: false };
-  const counts = new Map<number, number>();
-  for (const m of marks) counts.set(m, (counts.get(m) ?? 0) + 1);
-  const mark = [...counts.entries()].sort((a, b) => b[1] - a[1] || a[0] - b[0])[0][0];
-  const mixed = counts.size > 1 || subjects.some((s) => s.pass_pct_mixed);
-  return { mark, mixed };
+  const rows = subjects.filter((s) => s.pass_pct_min != null && s.pass_pct_max != null);
+  if (rows.length === 0) return { mark: null, mixed: false };
+  const min = Math.min(...rows.map((s) => s.pass_pct_min));
+  const max = Math.max(...rows.map((s) => s.pass_pct_max));
+  return min === max ? { mark: min, mixed: false } : { mark: null, mixed: true };
 }
 
-const isBelow = (s: SubjectScore) => s.score_pct != null && s.score_pct < s.pass_pct;
+/** A subject "has gaps" when some of its chapters are below their own pass mark —
+ *  never because its mean fell under an averaged mark. */
+const hasGaps = (s: SubjectScore) => s.chapters_below_pass > 0;
 
 function SubjectTable({ subjects }: { subjects: SubjectScore[] }) {
   return (
@@ -60,6 +65,7 @@ function SubjectTable({ subjects }: { subjects: SubjectScore[] }) {
           <TableRow>
             <TableHead>Subject</TableHead>
             <TableHead className="text-right">Score</TableHead>
+            <TableHead className="text-right">Below pass</TableHead>
             <TableHead className="text-right">Pass mark</TableHead>
             <TableHead className="text-right">Coverage</TableHead>
           </TableRow>
@@ -68,12 +74,16 @@ function SubjectTable({ subjects }: { subjects: SubjectScore[] }) {
           {subjects.map((s) => (
             <TableRow key={s.subject_id}>
               <TableCell>{s.subject_name}</TableCell>
+              <TableCell className="text-right tabular-nums">{pct(s.score_pct)}</TableCell>
               <TableCell className="text-right tabular-nums">
-                {pct(s.score_pct)}
-                {isBelow(s) && <span className="text-muted-foreground"> · below pass</span>}
+                {s.chapters_assessed === 0
+                  ? "—"
+                  : `${s.chapters_below_pass} of ${s.chapters_assessed}`}
               </TableCell>
               <TableCell className="text-right tabular-nums">
-                {s.pass_pct}%{s.pass_pct_mixed && <span className="text-muted-foreground"> avg</span>}
+                {s.pass_pct_min === s.pass_pct_max
+                  ? `${s.pass_pct_min}%`
+                  : `${s.pass_pct_min}–${s.pass_pct_max}%`}
               </TableCell>
               <TableCell className="text-muted-foreground text-right tabular-nums">
                 {s.chapters_assessed}/{s.chapters_completed}
@@ -117,7 +127,7 @@ export function SubjectMasteryBars({
     coverage:
       s.chapters_completed > 0 ? (s.chapters_assessed / s.chapters_completed) * 100 : 0,
   }));
-  const anyBelow = rows.some(isBelow);
+  const anyGaps = rows.some(hasGaps);
 
   return (
     <>
@@ -142,14 +152,21 @@ export function SubjectMasteryBars({
                         `${item?.payload?.chapters_assessed}/${item?.payload?.chapters_completed} chapters`,
                         "Assessed",
                       ]
-                    : [`${pctLabel(v)} (pass ${item?.payload?.pass_pct}%)`, "Score"]
+                    : [
+                        `${pctLabel(v)}${
+                          item?.payload?.chapters_below_pass > 0
+                            ? ` · ${item.payload.chapters_below_pass} of ${item.payload.chapters_assessed} chapters below pass`
+                            : ""
+                        }`,
+                        "Score",
+                      ]
                 }
               />
               {mark != null && (
                 <ReferenceLine x={mark} stroke="var(--muted-foreground)" strokeDasharray="4 3" />
               )}
-              {/* score — 4px rounded data end, colour decided per subject against
-                  its own pass mark */}
+              {/* score — 4px rounded data end. Status colour flags a subject that
+                  HAS below-pass chapters; it is never a verdict on the mean. */}
               <Bar
                 dataKey="score_pct"
                 barSize={18}
@@ -166,7 +183,7 @@ export function SubjectMasteryBars({
                 {data.map((s) => (
                   <Cell
                     key={s.subject_id}
-                    fill={isBelow(s) ? STATUS.weak : BRAND}
+                    fill={hasGaps(s) ? STATUS.weak : BRAND}
                     fillOpacity={selected && selected !== s.subject_id ? 0.4 : 1}
                   />
                 ))}
@@ -182,20 +199,24 @@ export function SubjectMasteryBars({
         <LegendItem colour={BRAND} label="Score (mean of your best attempts)" />
         <LegendItem colour="var(--muted-foreground)" label="Coverage (chapters assessed ÷ completed)" />
         {mark != null && (
-          <LegendItem
-            colour="var(--muted-foreground)"
-            label={mixed ? `Typical pass mark (${mark}%) — yours vary by chapter` : `Pass mark (${mark}%)`}
-            line
-          />
+          <LegendItem colour="var(--muted-foreground)" label={`Pass mark (${mark}%)`} line />
         )}
-        {anyBelow && (
+        {anyGaps && (
           <LegendItem
             colour={STATUS.weak}
-            label="Below pass"
+            label="Has chapters below their pass mark"
             icon={<TriangleAlert className="size-3" style={{ color: STATUS.weak }} />}
           />
         )}
       </Legend>
+
+      {mixed && (
+        <p className="text-muted-foreground mt-2 text-xs">
+          No pass-mark line: your chapters use different pass marks, so there is no single line to
+          draw. Each bar is still flagged against its own chapters&rsquo; marks — see the table view
+          for the exact range.
+        </p>
+      )}
 
       {notAssessed.length > 0 && (
         <p className="text-muted-foreground mt-2 text-xs">
