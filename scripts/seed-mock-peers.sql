@@ -48,16 +48,55 @@
 
 
 -- ─────────────────────────────────────────────────────────────────────────────
--- STEP 1 — seed. Edit target_email on the first line of the `config` CTE.
+-- STEP 0 — RUN THIS FIRST. It tells you what to put in the config below.
+--
+-- "NOTHING SEEDED" has three causes and this distinguishes them: the email is not
+-- the one on the account, app_user.email is NULL for that user (it is a nullable
+-- mirror of the auth record, so it is not always populated), or the student has no
+-- college_id. Target by college name in the last two cases.
+-- ─────────────────────────────────────────────────────────────────────────────
+select
+  u.email                                    as app_user_email,
+  co.name                                    as college_name,
+  p.college_id,
+  case
+    when p.college_id is null then 'no college on the profile -> target by college name instead'
+    when u.email is null      then 'app_user.email is NULL -> target by college name instead'
+    else 'usable as target_email'
+  end                                        as verdict
+from public.student_profile p
+left join public.app_user u on u.id = p.user_id
+left join public.college co on co.id = p.college_id
+order by (p.college_id is null), u.email
+limit 50;
+
+-- No students at all? Then there is nothing to compare against and the charts are
+-- empty for a different reason. List the colleges you could seed into:
+--   select id, name from public.college order by name limit 50;
+
+
+-- ─────────────────────────────────────────────────────────────────────────────
+-- STEP 1 — seed. Set ONE of the two values in the `config` CTE below.
 -- ─────────────────────────────────────────────────────────────────────────────
 with config as (
   select
-    'CHANGE_ME@example.com'::text as target_email,   -- <- the only thing to edit
+    -- Set EITHER of these. A college name wins if both are given, and is the
+    -- reliable one: app_user.email is nullable, so an email lookup can miss even
+    -- when the student exists. Step 0 tells you which to use.
+    'CHANGE_ME@example.com'::text as target_email,
+    null::text                    as target_college_name,   -- e.g. 'Test College'
     24::int                       as peer_count
 ),
--- The college of that student. Resolving to no row is the safety mechanism: the
--- INSERT then cross-joins an empty set and writes nothing.
-target as (
+-- Resolve by college name when given.
+by_college as (
+  select co.id as college_id
+  from public.college co, config c
+  where c.target_college_name is not null
+    and lower(co.name) = lower(c.target_college_name)
+  limit 1
+),
+-- Otherwise resolve through the student's email.
+by_email as (
   select p.college_id
   from public.student_profile p
   join public.app_user u on u.id = p.user_id
@@ -65,6 +104,18 @@ target as (
   where lower(u.email) = lower(c.target_email)
     and p.college_id is not null
   limit 1
+),
+-- Resolving to no row is the safety mechanism: the INSERT then cross-joins an
+-- empty set and writes nothing.
+target as (
+  select coalesce(
+           (select college_id from by_college),
+           (select college_id from by_email)
+         ) as college_id
+  where coalesce(
+          (select college_id from by_college),
+          (select college_id from by_email)
+        ) is not null
 ),
 -- Ranked reference data, so the seed uses this database's real slugs and ids
 -- rather than hardcoded UUIDs that would differ between projects.
@@ -139,7 +190,7 @@ on conflict (lower(email)) do nothing;
 select
   case
     when count(*) = 0
-      then 'NOTHING SEEDED - target_email matched no student_profile, or that profile has no college_id.'
+      then 'NOTHING SEEDED - run STEP 0 above: the email may not match, app_user.email may be NULL, or the profile may have no college_id. Use target_college_name instead.'
     else count(*) || ' mock peers present. Re-running step 1 is a no-op.'
   end as result
 from public.student_intake
