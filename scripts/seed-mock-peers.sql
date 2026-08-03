@@ -48,43 +48,53 @@
 
 
 -- ─────────────────────────────────────────────────────────────────────────────
--- STEP 0 — RUN THIS FIRST. It tells you what to put in the config below.
+-- STEP 0 — RUN THIS FIRST, ON ITS OWN. It prints the exact line to paste into
+-- STEP 1, and it works even when the tables are empty.
 --
--- "NOTHING SEEDED" has three causes and this distinguishes them: the email is not
--- the one on the account, app_user.email is NULL for that user (it is a nullable
--- mirror of the auth record, so it is not always populated), or the student has no
--- college_id. Target by college name in the last two cases.
+-- "NOTHING SEEDED" means the config in STEP 1 did not resolve to a college. The
+-- causes are: the placeholder was never edited; the email is not the one on the
+-- account; app_user.email is NULL (it is a nullable mirror of the auth record);
+-- the student has no college_id; or there are no colleges at all. This tells you
+-- which.
 -- ─────────────────────────────────────────────────────────────────────────────
+
+-- 0a. Census — what actually exists in this database.
+select 'colleges'          as table_name, count(*) as rows from public.college
+union all select 'student_profile',        count(*) from public.student_profile
+union all select 'student_profile w/ college', count(*) from public.student_profile where college_id is not null
+union all select 'student_intake',         count(*) from public.student_intake
+union all select 'mock peers already seeded', count(*) from public.student_intake where source = 'mock_seed'
+order by 1;
+
+-- 0b. Candidate targets, best first, with the literal to paste into STEP 1.
+-- Any college works — peers are seeded into a college, not into a student — so if
+-- 0a shows colleges but no student profiles, pick from this list anyway.
 select
-  u.email                                    as app_user_email,
-  co.name                                    as college_name,
-  p.college_id,
-  case
-    when p.college_id is null then 'no college on the profile -> target by college name instead'
-    when u.email is null      then 'app_user.email is NULL -> target by college name instead'
-    else 'usable as target_email'
-  end                                        as verdict
-from public.student_profile p
-left join public.app_user u on u.id = p.user_id
-left join public.college co on co.id = p.college_id
-order by (p.college_id is null), u.email
-limit 50;
-
--- No students at all? Then there is nothing to compare against and the charts are
--- empty for a different reason. List the colleges you could seed into:
---   select id, name from public.college order by name limit 50;
+  co.name                                             as college_name,
+  count(p.user_id)                                    as students,
+  count(u.email)                                      as students_with_email,
+  min(u.email)                                        as an_email_you_could_use,
+  format('    %L::text as target_college_name,', co.name) as paste_this_into_step_1
+from public.college co
+left join public.student_profile p on p.college_id = co.id
+left join public.app_user u        on u.id = p.user_id
+group by co.id, co.name
+order by count(p.user_id) desc, co.name
+limit 25;
 
 
 -- ─────────────────────────────────────────────────────────────────────────────
--- STEP 1 — seed. Set ONE of the two values in the `config` CTE below.
+-- STEP 1 — seed. You MUST edit the config below; unedited it seeds nothing on
+-- purpose. Paste the target_college_name line that STEP 0b printed.
 -- ─────────────────────────────────────────────────────────────────────────────
 with config as (
   select
-    -- Set EITHER of these. A college name wins if both are given, and is the
-    -- reliable one: app_user.email is nullable, so an email lookup can miss even
-    -- when the student exists. Step 0 tells you which to use.
+    -- Set EITHER of these; the college name wins if both are given and is the
+    -- reliable one (app_user.email is nullable, so an email lookup can miss even
+    -- when the student exists). STEP 0b prints the exact line to paste here.
+    -- Leaving both as shipped resolves to nothing and seeds nothing, by design.
     'CHANGE_ME@example.com'::text as target_email,
-    null::text                    as target_college_name,   -- e.g. 'Test College'
+    null::text                    as target_college_name,   -- <- paste STEP 0b's line over this
     24::int                       as peer_count
 ),
 -- Resolve by college name when given.
@@ -92,7 +102,9 @@ by_college as (
   select co.id as college_id
   from public.college co, config c
   where c.target_college_name is not null
-    and lower(co.name) = lower(c.target_college_name)
+    -- trim + case-insensitive: a name copied out of the console often carries
+    -- leading or trailing whitespace, which an exact match would silently miss
+    and lower(btrim(co.name)) = lower(btrim(c.target_college_name))
   limit 1
 ),
 -- Otherwise resolve through the student's email.
