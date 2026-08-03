@@ -100,8 +100,8 @@ with config as (
     -- reliable one (app_user.email is nullable, so an email lookup can miss even
     -- when the student exists). STEP 0b prints the exact line to paste here.
     -- Leaving both as shipped resolves to nothing and seeds nothing, by design.
-    'CHANGE_ME@example.com'::text as target_email,
-    null::text                    as target_college_name,   -- <- paste STEP 0b's line over this
+    null::text                    as target_email,
+    'SEETHARAMA DEGREE COLLEGE'::text as target_college_name,  -- <- change to retarget
     24::int                       as peer_count
 ),
 -- Resolve by college name when given.
@@ -120,7 +120,8 @@ by_email as (
   from public.student_profile p
   join public.app_user u on u.id = p.user_id
   cross join config c
-  where lower(u.email) = lower(c.target_email)
+  where c.target_email is not null
+    and lower(u.email) = lower(c.target_email)
     and p.college_id is not null
   limit 1
 ),
@@ -139,11 +140,15 @@ target as (
 -- Ranked reference data, so the seed uses this database's real slugs and ids
 -- rather than hardcoded UUIDs that would differ between projects.
 skills as (
-  select slug, row_number() over (order by sort_order, slug) as rn
+  select slug,
+         row_number() over (order by sort_order, slug) as rn,
+         count(*)     over ()                         as total
   from public.ref_skill
 ),
 goals as (
-  select id, row_number() over (order by sort_order, label) as rn
+  select id,
+         row_number() over (order by sort_order, label) as rn,
+         count(*)     over ()                          as total
   from public.ref_career_goal
 ),
 cats as (
@@ -162,20 +167,21 @@ select
   t.college_id,
   'pending',
   'mock_seed',
-  -- Descending staircase: skill #1 is held by every peer, #2 by two fewer, and so
-  -- on. Produces the ranked shape the bars are meant to show, deterministically.
+  -- Descending ramp across however many skills this database has: #1 is held by
+  -- every peer, the last by one. A fixed step of 2 was tuned for ~14 skills and
+  -- collapsed everything past #12 to a single student once ref_skill grew to 53.
   coalesce((
     select array_agg(s.slug order by s.rn)
     from skills s, config c
-    where p.i <= greatest(1, c.peer_count - (s.rn - 1) * 2)
+    where p.i <= greatest(1, ceil(c.peer_count * (1.0 - (s.rn - 1)::numeric / s.total)))
   ), '{}'),
   -- "All goals" needs its OWN uneven shape, not the same count for every goal:
   -- picking two neighbours by modulo gave 10/10/10/9/9, which is the flat donut
-  -- this seed exists to avoid. Staircase again, wider steps than skills.
+  -- this seed exists to avoid. Same adaptive ramp as skills.
   coalesce((
     select array_agg(g.id order by g.rn)
     from goals g, config c
-    where p.i <= greatest(2, c.peer_count - (g.rn - 1) * 4)
+    where p.i <= greatest(1, ceil(c.peer_count * (1.0 - (g.rn - 1)::numeric / g.total)))
   ), '{}'),
   -- uneven split so the primary-goal donut has a dominant slice
   (select g.id from goals g
