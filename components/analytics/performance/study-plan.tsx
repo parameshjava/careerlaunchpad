@@ -52,26 +52,19 @@ function rungCopy(step: LadderStep, target: number): { title: string; note: stri
     case "attempt_unassessed":
       return {
         title: `Sit the ${step.chapters} chapter${step.chapters === 1 ? "" : "s"} you haven't attempted`,
-        note:
-          step.chapters === 0
-            ? "nothing outstanding — every completed chapter has an attempt"
-            : `assuming you score around your current average (${Math.round(step.assumed_pct ?? 0)}%). This closes your coverage gap; it barely moves the average, because scoring at your average can't raise it.`,
+        note: `scoring ${Math.round(step.assumed_pct ?? 0)}% on each.`,
       };
     case "clear_below_pass":
       return {
+        // never claims a pass here: clear_below_pass excludes chapters that are
+        // below the mark but out of attempts, so 0 does NOT mean "all passed"
         title: `Retake the ${step.chapters} chapter${step.chapters === 1 ? "" : "s"} below the pass mark`,
-        note:
-          step.chapters === 0
-            ? "you've passed everything you've attempted"
-            : `to ${target}%. This is where nearly all the lift comes from.`,
+        note: `to ${target}%. This is usually where most of the lift comes from.`,
       };
     case "push_to_target":
       return {
         title: `Push ${step.chapters} more chapter${step.chapters === 1 ? "" : "s"} up`,
-        note:
-          step.chapters === 0
-            ? "not needed — the steps above already get you there"
-            : `to ${target}%, starting with the ones closest to it.`,
+        note: `to ${target}%, starting with the ones closest to it.`,
       };
   }
 }
@@ -80,15 +73,22 @@ function Ladder({
   ladder,
   target,
   rangeScoped,
+  projection,
 }: {
   ladder: LadderStep[];
   target: number;
   rangeScoped: boolean;
+  projection: PlanProjection | null;
 }) {
-  const rungs = ladder.filter((s) => s.avg != null);
+  // Only steps that actually involve chapters. A rung covering 0 chapters adds
+  // nothing, and drawing it produced identical bars labelled "+0 pts" — three of
+  // them, on a real student, which is noise pretending to be a plan.
+  const rungs = ladder.filter((s) => s.avg != null && (s.key === "today" || s.chapters > 0));
   if (rungs.length === 0) return null;
   const final = rungs[rungs.length - 1].avg ?? 0;
   const reaches = final >= target;
+  const ceiling = projection?.ceiling_avg ?? null;
+  const blocked = projection?.blocked_chapters ?? 0;
 
   // Stacked pair per rung: `carried` is what the previous rung already reached
   // (recessive), `gain` is what this rung adds (solid). Same 0–100 axis as every
@@ -116,11 +116,11 @@ function Ladder({
     <div>
       <ScrollBox>
         <div className={wide ? "min-w-[520px]" : ""}>
-          <ResponsiveContainer width="100%" height={data.length * (wide ? 62 : 40) + 40}>
+          <ResponsiveContainer width="100%" height={data.length * (wide ? 62 : 40) + 58}>
             <BarChart
               data={data}
               layout="vertical"
-              margin={{ top: 24, right: 52, bottom: 4, left: wide ? 8 : 0 }}
+              margin={{ top: 24, right: 52, bottom: 18, left: wide ? 8 : 0 }}
             >
               <CartesianGrid horizontal={false} stroke={GRID_STROKE} />
               <XAxis
@@ -149,8 +149,10 @@ function Ladder({
                 stroke="var(--cl-cat-3)"
                 strokeDasharray="5 3"
                 label={{
+                  // below the plot: "insideBottomRight" tucked the text under the
+                  // last bar once the no-op rungs stopped being drawn
                   value: `target ${target}%`,
-                  position: "insideBottomRight",
+                  position: "bottom",
                   fontSize: 10,
                   fill: "var(--cl-cat-3)",
                 }}
@@ -196,14 +198,35 @@ function Ladder({
         </p>
       )}
 
+      {/* Why the target is or is not reachable, rather than a bare assertion. The
+          ceiling is 100% on everything still actionable plus the existing best on
+          anything locked, so it separates "you need to aim higher" from "this is
+          arithmetically impossible now". */}
       <p className={`mt-3 text-xs font-medium ${reaches ? "text-emerald-600 dark:text-emerald-400" : ""}`}>
         {reaches ? (
           <>Those steps put you at ~{Math.round(final)}% — clear of your {target}% target. ✓</>
-        ) : (
+        ) : ceiling != null && ceiling >= target ? (
           <>
-            Even with all of that you land at ~{Math.round(final)}%, {Math.round(target - final)} short of{" "}
-            {target}%. You&apos;d need above-target scores, or more chapters to be marked complete.
+            Those steps land you at ~{Math.round(final)}%. {target}% is still reachable — your best
+            possible average is{" "}
+            <b className="text-foreground">{Math.round(ceiling)}%</b> — but it needs scores above{" "}
+            {target}% on the chapters above, not just at it.
           </>
+        ) : ceiling != null ? (
+          <>
+            {target}% is out of reach for now: even scoring 100% on every chapter you can still sit,
+            your average maxes out at <b className="text-foreground">{Math.round(ceiling)}%</b>.
+            {blocked > 0 && (
+              <>
+                {" "}
+                {blocked} chapter{blocked === 1 ? "" : "s"} below the pass mark {blocked === 1 ? "has" : "have"}{" "}
+                no attempts left, which caps you.
+              </>
+            )}{" "}
+            Aim for {Math.floor(ceiling)}% instead, or ask your mentor to complete more chapters.
+          </>
+        ) : (
+          <>Those steps land you at ~{Math.round(final)}%.</>
         )}{" "}
         <span className="text-muted-foreground italic">Estimate — it assumes the scores named above.</span>
       </p>
@@ -272,10 +295,23 @@ function Floor({ projection }: { projection: PlanProjection }) {
         <b className="text-foreground">{Math.round(p.current_avg)}%</b>.
       </p>
     );
+  // The 153 floor counts every below-pass chapter, including ones with no attempts
+  // left. Advertising a lift the student cannot perform is worse than saying
+  // nothing, so when none of them are retakeable the sentence says that instead.
+  if (p.liftable_chapters === 0)
+    return (
+      <p className="text-muted-foreground mt-2 text-xs leading-relaxed">
+        Your average is <b className="text-foreground">{Math.round(p.current_avg)}%</b>.{" "}
+        {p.chapters_to_lift} chapter{p.chapters_to_lift === 1 ? "" : "s"} sit{p.chapters_to_lift === 1 ? "s" : ""}{" "}
+        below the pass mark with <b className="text-foreground">no attempts left</b>, so{" "}
+        {p.chapters_to_lift === 1 ? "it" : "they"} can&apos;t be retaken — your remaining gains have to
+        come from chapters you haven&apos;t sat yet.
+      </p>
+    );
   return (
     <p className="text-muted-foreground mt-2 text-xs leading-relaxed">
-      Just scraping your <b className="text-foreground">{p.chapters_to_lift}</b> pending chapter
-      {p.chapters_to_lift === 1 ? "" : "s"} past the pass mark takes you from{" "}
+      Just scraping your <b className="text-foreground">{p.liftable_chapters}</b> retakeable chapter
+      {p.liftable_chapters === 1 ? "" : "s"} past the pass mark takes you from{" "}
       <b className="text-foreground">{Math.round(p.current_avg)}%</b> to ~
       <b className="text-foreground">{Math.round(p.projected_avg ?? p.current_avg)}%</b> — the floor, not the goal.
     </p>
@@ -390,7 +426,7 @@ export function StudyPlan({
         {projection && <Floor projection={projection} />}
         {appliedTarget != null && ladder.length > 0 && (
           <div className="mt-4 border-t pt-4">
-            <Ladder ladder={ladder} target={appliedTarget} rangeScoped={rangeScoped} />
+            <Ladder ladder={ladder} target={appliedTarget} rangeScoped={rangeScoped} projection={projection} />
           </div>
         )}
       </div>

@@ -93,6 +93,18 @@ export type PlanProjection = {
   current_avg: number | null;
   projected_avg: number | null;
   chapters_to_lift: number;
+  /** How many of chapters_to_lift can actually be retaken. When this is 0 the
+   *  "floor" is unreachable, and saying "just scrape these past the pass mark"
+   *  would be advice the student cannot act on. */
+  liftable_chapters: number;
+  /** Assessed, below its own pass mark, and out of attempts. Counted separately
+   *  because clear_below_pass excludes these, and inferring "you passed
+   *  everything" from that exclusion produced a false statement. */
+  blocked_chapters: number;
+  /** The best average still reachable: 100% on everything retakeable or
+   *  unattempted, existing best on anything locked. Explains WHY a target is or
+   *  is not reachable instead of just asserting it. */
+  ceiling_avg: number | null;
   gap_to_target: number | null;
   reaches_target: boolean | null;
 };
