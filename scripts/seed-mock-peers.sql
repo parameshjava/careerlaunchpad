@@ -1,5 +1,5 @@
 -- ============================================================================
--- seed-mock-peers.sql — PREVIEW ONLY
+-- seed-mock-peers.sql - PREVIEW ONLY
 --
 -- Gives one college enough peers for the "How you compare" charts to show a real
 -- distribution instead of the flat n=1 shape (every count 1, so every donut wedge
@@ -12,20 +12,33 @@
 --
 -- READ THIS IF YOU RUN THE WHOLE FILE AT ONCE
 --   The Supabase SQL editor shows only the LAST statement's result. STEP 0 below
---   is therefore invisible when you run everything in one go — which is why STEP 2
+--   is therefore invisible when you run everything in one go - which is why STEP 2
 --   is written to self-diagnose: on failure it lists the colleges that have
 --   students and the exact config line for each. Select and run STEP 0 on its own
 --   if you want the fuller census.
 --
+-- WHICH CONNECTION / RLS
+--   Run it WITHOUT RLS, i.e. as a privileged role (the Supabase SQL editor's
+--   postgres role, or a service connection). student_intake has RLS enabled and
+--   both its policies require the 'student.intake.import' permission for the
+--   authenticated role, so as `authenticated` the INSERT is rejected and even the
+--   STEP 0 / STEP 2 reads get filtered to colleges the caller may import for --
+--   which looks exactly like "NOTHING SEEDED".
+--
+--   Comments here are deliberately pure ASCII. Box-drawing rules and em dashes in
+--   an earlier version broke clients that strip comments byte-wise: a mangled
+--   multi-byte character exposed the next word as SQL, giving
+--   'ERROR: 42P01: relation "STEP" does not exist'.
+--
 -- WHAT IT TOUCHES
---   public.student_intake only — one row per mock peer, status 'pending',
+--   public.student_intake only - one row per mock peer, status 'pending',
 --   source 'mock_seed'. Nothing else is written.
 --
 -- WHY student_intake AND NOT student_profile
 --   lib/analytics-query.ts aggregates the college over student_profile UNION
 --   student_intake (status pending/invited), so intake rows are counted by the
 --   charts. Intake needs no auth user, so this creates NO logins, NO invites and
---   NO emails — it cannot let anyone in. student_profile would require real
+--   NO emails - it cannot let anyone in. student_profile would require real
 --   auth.users rows, which is not something to fabricate in a shared database.
 --
 -- WHY IT IS SAFE TO UNDO
@@ -35,12 +48,12 @@
 --
 -- IF THE EMAIL IS WRONG
 --   Nothing is written. Step 1 is a single INSERT whose source rows are empty when
---   the target does not resolve, so there is no partial state to clean up — and
+--   the target does not resolve, so there is no partial state to clean up - and
 --   step 2 tells you it seeded nothing.
 --
 -- WHAT IT DOES NOT DO
 --   It does not seed the #73 performance charts (chapter quiz attempts). Those
---   need migrations 154 + 155 on preview first — see the note at the bottom.
+--   need migrations 154 + 155 on preview first - see the note at the bottom.
 --
 -- POINT IT AT PREVIEW, NEVER PROD. Check the project ref before running.
 --
@@ -54,8 +67,8 @@
 -- ============================================================================
 
 
--- ─────────────────────────────────────────────────────────────────────────────
--- STEP 0 — RUN THIS FIRST, ON ITS OWN. It prints the exact line to paste into
+-- --------------------------------------------------------------------------
+-- STEP 0 - RUN THIS FIRST, ON ITS OWN. It prints the exact line to paste into
 -- STEP 1, and it works even when the tables are empty.
 --
 -- "NOTHING SEEDED" means the config in STEP 1 did not resolve to a college. The
@@ -63,9 +76,9 @@
 -- account; app_user.email is NULL (it is a nullable mirror of the auth record);
 -- the student has no college_id; or there are no colleges at all. This tells you
 -- which.
--- ─────────────────────────────────────────────────────────────────────────────
+-- --------------------------------------------------------------------------
 
--- 0a. Census — what actually exists in this database.
+-- 0a. Census - what actually exists in this database.
 select 'colleges'          as table_name, count(*) as rows from public.college
 union all select 'student_profile',        count(*) from public.student_profile
 union all select 'student_profile w/ college', count(*) from public.student_profile where college_id is not null
@@ -74,7 +87,7 @@ union all select 'mock peers already seeded', count(*) from public.student_intak
 order by 1;
 
 -- 0b. Candidate targets, best first, with the literal to paste into STEP 1.
--- Any college works — peers are seeded into a college, not into a student — so if
+-- Any college works - peers are seeded into a college, not into a student - so if
 -- 0a shows colleges but no student profiles, pick from this list anyway.
 select
   co.name                                             as college_name,
@@ -90,10 +103,10 @@ order by count(p.user_id) desc, co.name
 limit 25;
 
 
--- ─────────────────────────────────────────────────────────────────────────────
--- STEP 1 — seed. You MUST edit the config below; unedited it seeds nothing on
+-- --------------------------------------------------------------------------
+-- STEP 1 - seed. You MUST edit the config below; unedited it seeds nothing on
 -- purpose. Paste the target_college_name line that STEP 0b printed.
--- ─────────────────────────────────────────────────────────────────────────────
+-- --------------------------------------------------------------------------
 with config as (
   select
     -- Set EITHER of these; the college name wins if both are given and is the
@@ -209,13 +222,13 @@ cross join target t                 -- no target row => nothing inserted
 on conflict (lower(email)) do nothing;
 
 
--- ─────────────────────────────────────────────────────────────────────────────
--- STEP 2 — the report. This is the LAST statement on purpose: the Supabase SQL
+-- --------------------------------------------------------------------------
+-- STEP 2 - the report. This is the LAST statement on purpose: the Supabase SQL
 -- editor only displays the final result set, so anything diagnostic printed
 -- earlier is executed and then discarded. If the seed found no college, this
 -- lists the colleges that DO have students, each with the line to paste into the
--- STEP 1 config — so running the whole file at once still tells you what to fix.
--- ─────────────────────────────────────────────────────────────────────────────
+-- STEP 1 config - so running the whole file at once still tells you what to fix.
+-- --------------------------------------------------------------------------
 select 'SEEDED'::text as status,
        count(*) || ' mock peers present. Re-running step 1 is a no-op.' as detail,
        null::text as paste_this_into_step_1
@@ -225,7 +238,7 @@ having count(*) > 0
 
 union all
 
-select 'NOTHING SEEDED — paste one of these into STEP 1',
+select 'NOTHING SEEDED - paste one of these into STEP 1',
        co.name || '  (' || count(p.user_id) || ' student' ||
          case when count(p.user_id) = 1 then '' else 's' end || ')',
        format('    %L::text as target_college_name,', co.name)
@@ -237,9 +250,9 @@ order by 1, 2
 limit 10;
 
 
--- ─────────────────────────────────────────────────────────────────────────────
--- STEP 3 (optional) — see what the charts will now aggregate
--- ─────────────────────────────────────────────────────────────────────────────
+-- --------------------------------------------------------------------------
+-- STEP 3 (optional) - see what the charts will now aggregate
+-- --------------------------------------------------------------------------
 -- select s.label, count(*) as students
 -- from public.student_intake i, unnest(i.skills) sk
 -- join public.ref_skill s on s.slug = sk
@@ -249,7 +262,7 @@ limit 10;
 
 
 -- ============================================================================
--- TEARDOWN — removes every trace
+-- TEARDOWN - removes every trace
 --   delete from public.student_intake where source = 'mock_seed';
 --
 -- THE #73 PERFORMANCE CHARTS ARE NOT COVERED BY THIS SCRIPT
@@ -257,6 +270,6 @@ limit 10;
 --   student_subject_scores / student_study_plan, which only exist once migrations
 --   154 and 155 are applied. Preview gets those on merge to main
 --   (migrate-preview.yml). Seeding attempts also means writing rows that look
---   like real submitted assessments for a real student — a heavier decision than
+--   like real submitted assessments for a real student - a heavier decision than
 --   adding intake peers, and worth doing as a separate explicit step.
 -- ============================================================================
