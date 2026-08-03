@@ -58,6 +58,12 @@ export const BRAND = "var(--cl-cat-1)";
  *  makes a large fill fight the brand hue instead of receding behind it. */
 export const NEUTRAL = "var(--cl-neutral)";
 
+/** The same comparison role, but for THIN marks — a legend ring, a 1px outline.
+ *  A 1.5px stroke needs far more contrast than a large fill to register at all, so
+ *  it takes a text-weight ink while NEUTRAL stays recessive for areas. (Using the
+ *  area colour on an 8px ring made it read as a missing marker.) */
+export const NEUTRAL_MARK = "var(--muted-foreground)";
+
 /** Status colours. Reserved; ship with an icon or label, never colour alone. */
 export const STATUS = {
   weak: "var(--cl-status-weak)",

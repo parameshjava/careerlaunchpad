@@ -36,7 +36,7 @@ import { ChartColumnBig, ChartPie } from "lucide-react";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { cn } from "@/lib/utils";
 import type { AssessmentDatum, CollegeAnalytics, Slice } from "@/lib/analytics-query";
-import { BRAND, NEUTRAL, TOOLTIP_STYLE, HOVER_CURSOR } from "@/lib/chart-palette";
+import { BRAND, NEUTRAL, NEUTRAL_MARK, TOOLTIP_STYLE, HOVER_CURSOR } from "@/lib/chart-palette";
 
 type ChartType = "pie" | "bar";
 const STORAGE_KEY = "cl-chart-type";
@@ -185,18 +185,25 @@ function SliceLegend({ slices, mine }: { slices: Slice[]; mine: Set<string> }) {
     <ul className="list-none space-y-1">
       {slices.map((s) => (
         <li key={s.key} className="flex items-center gap-2 text-[11px] leading-tight">
+          {/* Filled = the student's own pick, hollow = peers only. A shape difference
+              rather than a repeated "yours" on every row: the word said nothing that
+              the marker and the section key above don't already say, and on a card
+              where every row is the student's own it was fourteen identical words.
+              Shape also keeps this off colour-alone for CVD readers. */}
           <span
             aria-hidden
             className="size-2 shrink-0 rounded-full"
-            style={{ background: mine.has(s.key) ? YOU : PEERS }}
+            style={
+              mine.has(s.key)
+                ? { background: YOU }
+                : { background: "transparent", boxShadow: `inset 0 0 0 2px ${NEUTRAL_MARK}` }
+            }
           />
           <span className="min-w-0 flex-1 truncate" title={s.label}>
             {s.label}
           </span>
-          {mine.has(s.key) && (
-            <span className="text-muted-foreground shrink-0 text-[10px]">yours</span>
-          )}
           <span className="text-muted-foreground shrink-0 tabular-nums">{s.value}</span>
+          <span className="sr-only">{mine.has(s.key) ? "your selection" : "peers only"}</span>
         </li>
       ))}
     </ul>
@@ -312,7 +319,12 @@ function ColorKey() {
         <span className="size-2.5 rounded-full" style={{ background: YOU }} /> Your selections
       </span>
       <span className="inline-flex items-center gap-1.5">
-        <span className="size-2.5 rounded-full" style={{ background: PEERS }} /> College peers
+        {/* hollow, matching the per-row markers in the card legends */}
+        <span
+          className="size-2.5 rounded-full"
+          style={{ background: "transparent", boxShadow: `inset 0 0 0 2px ${NEUTRAL_MARK}` }}
+        />{" "}
+        College peers
       </span>
     </div>
   );
