@@ -182,7 +182,11 @@ function SliceLegend({ slices, mine }: { slices: Slice[]; mine: Set<string> }) {
     // to "Arit…" / "Curr…", and a legend whose labels are unreadable is worse than no
     // legend. No rank numbers either — the arcs carry no numbers, so a rank here maps
     // to nothing on the chart and only steals label width.
-    <ul className="list-none space-y-1">
+    // w-fit so the list is only as wide as its longest row: the label keeps flex-1
+    // (which right-aligns the counts into a column) without stretching to the card's
+    // full width, which had left a void between "Java" and its value. max-w-full so a
+    // very long label still bounds and truncates on a narrow screen.
+    <ul className="mx-auto list-none space-y-1 w-fit max-w-full">
       {slices.map((s) => (
         <li key={s.key} className="flex items-center gap-2 text-[11px] leading-tight">
           {/* Filled = the student's own pick, hollow = peers only. A shape difference
@@ -202,7 +206,7 @@ function SliceLegend({ slices, mine }: { slices: Slice[]; mine: Set<string> }) {
           <span className="min-w-0 flex-1 truncate" title={s.label}>
             {s.label}
           </span>
-          <span className="text-muted-foreground shrink-0 tabular-nums">{s.value}</span>
+          <span className="text-muted-foreground ml-2 shrink-0 tabular-nums">{s.value}</span>
           <span className="sr-only">{mine.has(s.key) ? "your selection" : "peers only"}</span>
         </li>
       ))}
