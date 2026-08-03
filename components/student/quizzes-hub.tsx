@@ -4,8 +4,12 @@
 // (chapter completed + questions authored), each with attempts used/remaining and
 // best score. "Take assessment" starts (or resumes) an attempt and routes to the
 // runner. Reads /api/student/quizzes; starts via /api/student/quizzes/attempts.
-import { useEffect, useState } from "react";
-import { useRouter } from "next/navigation";
+//
+// Deep link: ?chapter=<chapter_id> highlights that chapter's row and scrolls it
+// into view, so the study plan on /student/insights can point at one specific
+// assessment instead of dropping the student on the hub to hunt for it.
+import { useEffect, useRef, useState } from "react";
+import { useRouter, useSearchParams } from "next/navigation";
 import { Loader2, TriangleAlert } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
@@ -36,6 +40,9 @@ type BatchQuizzes = { batchId: string; batchName: string; quizzes: Quiz[] };
 
 export function QuizzesHub() {
   const router = useRouter();
+  // The chapter the student arrived here for, if any (see the deep-link note above).
+  const focusChapter = useSearchParams().get("chapter");
+  const focusRef = useRef<HTMLLIElement | null>(null);
   const [batches, setBatches] = useState<BatchQuizzes[] | null>(null);
   const [error, setError] = useState("");
   const [starting, setStarting] = useState<string | null>(null);
@@ -58,6 +65,14 @@ export function QuizzesHub() {
       cancelled = true;
     };
   }, []);
+
+  // Scroll to the deep-linked row once the batches have loaded. Not smooth for
+  // prefers-reduced-motion, and centred so the row isn't tucked under the navbar.
+  useEffect(() => {
+    if (!batches || !focusChapter || !focusRef.current) return;
+    const reduce = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+    focusRef.current.scrollIntoView({ behavior: reduce ? "auto" : "smooth", block: "center" });
+  }, [batches, focusChapter]);
 
   function start(batchId: string, q: Quiz) {
     setError("");
@@ -133,10 +148,14 @@ export function QuizzesHub() {
                   : used > 0
                     ? "Retake"
                     : "Take assessment";
+                const focused = q.chapter_id === focusChapter;
                 return (
                   <li
                     key={q.chapter_id}
-                    className="flex flex-col gap-2 px-3 py-3 sm:flex-row sm:items-center sm:justify-between"
+                    ref={focused ? focusRef : undefined}
+                    className={`flex flex-col gap-2 px-3 py-3 sm:flex-row sm:items-center sm:justify-between${
+                      focused ? " bg-primary/5 ring-primary/40 ring-2 ring-inset" : ""
+                    }`}
                   >
                     <div className="min-w-0">
                       <p className="text-sm font-medium break-words">{q.chapter_name ?? "—"}</p>

@@ -4,16 +4,14 @@
 import { NextResponse, type NextRequest } from "next/server";
 import { createClient } from "@/lib/supabase/server";
 import { gateStudentAnalytics } from "@/lib/student-analytics-gate";
+import { fetchSummary, readScope } from "@/lib/student-performance-query";
 
 export async function GET(req: NextRequest) {
   if (!(await gateStudentAnalytics())) return NextResponse.json({ error: "Forbidden" }, { status: 403 });
-  const sp = req.nextUrl.searchParams;
   const supabase = await createClient();
-  const { data, error } = await supabase.rpc("student_performance_summary", {
-    p_from: sp.get("from") || null,
-    p_to: sp.get("to") || null,
-    p_batch: sp.get("batch") || null,
-  });
-  if (error) return NextResponse.json({ error: error.message }, { status: 500 });
-  return NextResponse.json({ summary: (Array.isArray(data) ? data[0] : data) ?? {} });
+  try {
+    return NextResponse.json({ summary: (await fetchSummary(supabase, readScope(req.nextUrl.searchParams))) ?? {} });
+  } catch (e) {
+    return NextResponse.json({ error: (e as Error).message }, { status: 500 });
+  }
 }

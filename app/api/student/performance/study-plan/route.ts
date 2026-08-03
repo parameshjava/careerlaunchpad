@@ -1,13 +1,20 @@
-// Study plan — the prescriptive focus list + target/projection (migration 147, 153).
-// Completed chapters the student hasn't yet passed, ranked quick-win → not-attempted
-// → needs-study, plus a target-gap + projected average when ?target is given (FR-8).
+// Study plan — the prescriptive focus list, the target ladder and the pass-mark
+// floor (migrations 147, 153, 154).
+//
+// Items are every chapter the student can still act on that is short of where they
+// want to be: not yet passed, or (with ?target) passing but below it. Ranked by
+// points_to_target — what lifting that one chapter adds to the overall average —
+// with `category` carrying achievability as a chip.
+//
 //   GET ?batch&target -> { plan: [{ chapter_id, chapter_name, subject_name, best_pct,
-//        attempts_used, attempts_remaining, pass_pct, category }],
+//        attempts_used, attempts_remaining, pass_pct, category, points_to_target }],
 //        projection: { target, current_avg, projected_avg, chapters_to_lift,
-//        gap_to_target, reaches_target } }
+//        gap_to_target, reaches_target },
+//        ladder: [{ key, chapters, assumed_pct, avg }] }
 import { NextResponse, type NextRequest } from "next/server";
 import { createClient } from "@/lib/supabase/server";
 import { gateStudentAnalytics } from "@/lib/student-analytics-gate";
+import { fetchStudyPlan } from "@/lib/student-performance-query";
 
 export async function GET(req: NextRequest) {
   if (!(await gateStudentAnalytics())) return NextResponse.json({ error: "Forbidden" }, { status: 403 });
@@ -24,10 +31,10 @@ export async function GET(req: NextRequest) {
   }
 
   const supabase = await createClient();
-  const { data, error } = await supabase.rpc("student_study_plan", {
-    p_batch: sp.get("batch") || null,
-    p_target: target,
-  });
-  if (error) return NextResponse.json({ error: error.message }, { status: 500 });
-  return NextResponse.json({ plan: data?.items ?? [], projection: data?.projection ?? null });
+  try {
+    const { items, projection, ladder } = await fetchStudyPlan(supabase, sp.get("batch") || null, target);
+    return NextResponse.json({ plan: items, projection, ladder });
+  } catch (e) {
+    return NextResponse.json({ error: (e as Error).message }, { status: 500 });
+  }
 }
