@@ -34,6 +34,10 @@ export type Question = {
   answer_type: "single" | "multi";
   stem: string;
   stem_image_url: string | null;
+  // Past paper the question was asked in (#87). Optional: a paper cached in
+  // localStorage before this shipped has neither field.
+  source?: string | null;
+  source_year?: number | null;
   passage: { title: string | null; body: string } | null;
   options: Option[];
   selected_option_ids: string[];
@@ -154,6 +158,8 @@ export function AttemptRunner({
       answerType: qq.answer_type,
       stem: qq.stem,
       stemImageUrl: qq.stem_image_url,
+      source: qq.source ?? null,
+      sourceYear: qq.source_year ?? null,
       passage: qq.passage,
       options: qq.options,
     }));

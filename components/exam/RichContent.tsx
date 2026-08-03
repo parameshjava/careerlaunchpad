@@ -25,6 +25,18 @@ const INLINE_COMPONENTS = {
   p: ({ children }: { children?: React.ReactNode }) => <>{children}</>,
 };
 
+// Data tables (common in ICET stems — five years × five columns) get their own
+// horizontal scroll box. Without it a wide table is simply clipped at the card's
+// edge on a phone: the page itself must never scroll sideways, so the last column
+// was unreachable rather than merely off-screen.
+const BLOCK_COMPONENTS = {
+  table: ({ children }: { children?: React.ReactNode }) => (
+    <div className="exam-rich-table-wrap">
+      <table>{children}</table>
+    </div>
+  ),
+};
+
 export function RichContent({
   content,
   className,
@@ -44,7 +56,7 @@ export function RichContent({
       <Markdown
         remarkPlugins={math ? REMARK_MATH : REMARK_PLAIN}
         rehypePlugins={math ? REHYPE_MATH : REHYPE_PLAIN}
-        components={inline ? INLINE_COMPONENTS : undefined}
+        components={inline ? INLINE_COMPONENTS : BLOCK_COMPONENTS}
       >
         {content}
       </Markdown>
