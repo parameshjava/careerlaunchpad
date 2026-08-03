@@ -10,6 +10,13 @@
 -- used \set / :'target_email', which the SQL editor rejects with
 -- "syntax error at or near \".
 --
+-- READ THIS IF YOU RUN THE WHOLE FILE AT ONCE
+--   The Supabase SQL editor shows only the LAST statement's result. STEP 0 below
+--   is therefore invisible when you run everything in one go — which is why STEP 2
+--   is written to self-diagnose: on failure it lists the colleges that have
+--   students and the exact config line for each. Select and run STEP 0 on its own
+--   if you want the fuller census.
+--
 -- WHAT IT TOUCHES
 --   public.student_intake only — one row per mock peer, status 'pending',
 --   source 'mock_seed'. Nothing else is written.
@@ -197,16 +204,31 @@ on conflict (lower(email)) do nothing;
 
 
 -- ─────────────────────────────────────────────────────────────────────────────
--- STEP 2 — did it work? Run this next.
+-- STEP 2 — the report. This is the LAST statement on purpose: the Supabase SQL
+-- editor only displays the final result set, so anything diagnostic printed
+-- earlier is executed and then discarded. If the seed found no college, this
+-- lists the colleges that DO have students, each with the line to paste into the
+-- STEP 1 config — so running the whole file at once still tells you what to fix.
 -- ─────────────────────────────────────────────────────────────────────────────
-select
-  case
-    when count(*) = 0
-      then 'NOTHING SEEDED - run STEP 0 above: the email may not match, app_user.email may be NULL, or the profile may have no college_id. Use target_college_name instead.'
-    else count(*) || ' mock peers present. Re-running step 1 is a no-op.'
-  end as result
+select 'SEEDED'::text as status,
+       count(*) || ' mock peers present. Re-running step 1 is a no-op.' as detail,
+       null::text as paste_this_into_step_1
 from public.student_intake
-where source = 'mock_seed';
+where source = 'mock_seed'
+having count(*) > 0
+
+union all
+
+select 'NOTHING SEEDED — paste one of these into STEP 1',
+       co.name || '  (' || count(p.user_id) || ' student' ||
+         case when count(p.user_id) = 1 then '' else 's' end || ')',
+       format('    %L::text as target_college_name,', co.name)
+from public.college co
+join public.student_profile p on p.college_id = co.id
+where (select count(*) from public.student_intake where source = 'mock_seed') = 0
+group by co.id, co.name
+order by 1, 2
+limit 10;
 
 
 -- ─────────────────────────────────────────────────────────────────────────────
