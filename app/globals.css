@@ -253,7 +253,16 @@
   border-radius: 0.25rem;
   font-size: 0.9em;
 }
-.exam-rich :where(table) { border-collapse: collapse; width: 100%; margin: 0.4rem 0; }
+/* Wide stem tables scroll inside their own box (wrapper added by RichContent) —
+   the page must never scroll sideways on a phone. max-content + min-width keeps a
+   narrow table full-width while letting a wide one overflow into the scroller. */
+.exam-rich-table-wrap { overflow-x: auto; max-width: 100%; min-width: 0; }
+.exam-rich :where(table) { border-collapse: collapse; width: max-content; min-width: 100%; margin: 0.4rem 0; }
+/* Paper has no scrollbars: let a wide table shrink to the sheet instead. */
+@media print {
+  .exam-rich-table-wrap { overflow-x: visible; }
+  .exam-rich :where(table) { width: 100%; }
+}
 .exam-rich :where(th, td) { border: 1px solid var(--border); padding: 0.3rem 0.5rem; text-align: left; }
 .exam-rich :where(img) { max-width: 100%; height: auto; }
 /* Inline variant (option labels): unwrap the paragraph so text stays on one line. */

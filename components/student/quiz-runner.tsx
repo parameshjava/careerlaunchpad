@@ -225,13 +225,23 @@ export function QuizRunner({ attemptId }: { attemptId: string }) {
         submitLabel="Submit assessment"
         submitTitle="Submit assessment?"
         notice={
-          <div className="mb-4 flex items-start gap-2 rounded-md border border-amber-300 bg-amber-50 px-3 py-2 text-xs text-amber-900 dark:border-amber-900/60 dark:bg-amber-950/40 dark:text-amber-200">
-            <TriangleAlert className="mt-0.5 size-4 shrink-0" />
-            <span>
-              Stay on this screen — switching tabs/apps or minimising gives{" "}
-              <strong>one warning</strong>, then auto-submits. Copying is disabled.
-            </span>
-          </div>
+          // Collapsed to a single line, like the exam runner's — the rules wrapped
+          // to three lines on a phone and pushed the question off the screen.
+          <details className="group mb-3 rounded-md border border-amber-300 bg-amber-50 px-3 py-2 text-xs text-amber-900 dark:border-amber-900/60 dark:bg-amber-950/40 dark:text-amber-200">
+            <summary className="flex cursor-pointer list-none items-center gap-2 font-medium [&::-webkit-details-marker]:hidden">
+              <TriangleAlert className="size-4 shrink-0" />
+              <span className="min-w-0 flex-1 truncate">
+                Stay on this screen — leaving auto-submits (one warning only).
+              </span>
+              <span className="shrink-0 underline group-open:hidden">Details</span>
+              <span className="hidden shrink-0 underline group-open:inline">Less</span>
+            </summary>
+            <div className="mt-2 leading-relaxed">
+              Switching tabs or apps, or minimising the window, gives you{" "}
+              <strong>one warning</strong> — the next time, your assessment is submitted
+              automatically. Copying is disabled.
+            </div>
+          </details>
         }
         onChoose={engine.onChoose}
         onGoTo={engine.onGoTo}

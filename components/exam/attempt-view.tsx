@@ -98,9 +98,19 @@ export function AttemptView({
   onSubmit: () => void;
 }) {
   const currentCellRef = useRef<HTMLButtonElement>(null);
-  // Keep the active palette cell in view as the student navigates.
+  const paletteRef = useRef<HTMLDivElement>(null);
+  // Keep the active palette cell in view as the student navigates — by scrolling
+  // the palette's OWN scroll box, never the page. `scrollIntoView` here walked up
+  // to the page scroller: on a phone the palette sits below the question, so on
+  // mount it yanked the stem off the screen before the student had read it.
   useEffect(() => {
-    currentCellRef.current?.scrollIntoView({ block: "nearest", behavior: "smooth" });
+    const cell = currentCellRef.current;
+    const box = paletteRef.current;
+    if (!cell || !box) return;
+    const c = cell.getBoundingClientRect();
+    const b = box.getBoundingClientRect();
+    if (c.top < b.top) box.scrollTop -= b.top - c.top + 8;
+    else if (c.bottom > b.bottom) box.scrollTop += c.bottom - b.bottom + 8;
   }, [index]);
 
   // Paper-level provenance (#87): how much of this paper came from real past
@@ -142,13 +152,25 @@ export function AttemptView({
 
   return (
     <div>
-      {/* Sticky header. A solid bg + horizontal bleed (-mx to the parent's px
-          padding) masks content scrolling underneath. NO negative top margin —
-          `-mt` + `sticky top-0` makes the pinned bar ride up and lets a strip of
-          scrolling content peek above it (the "floating Question N/M" bug). The
-          parent supplies the top spacing (max-w-6xl px-4 sm:px-6 py-4). */}
-      <div className="bg-background sticky top-0 z-30 mb-4 -mx-4 flex items-center justify-between gap-4 border-b px-4 pt-4 pb-2 shadow-sm sm:-mx-6 sm:px-6">
-        <span className="min-w-0 truncate text-sm font-medium">
+      {/* Sticky header — ONE bar carrying everything that must stay on screen:
+          position, subject, and the clock. Screen space above the question is
+          scarce (a 720px-tall laptop showed four stacked bands before the stem),
+          so nothing else gets a band here — the question's source paper (#87) is
+          a label on the Q-number row inside the card.
+
+          NO negative top MARGIN — `-mt` + `sticky top-0` makes the pinned bar
+          ride up and lets a strip of scrolling content peek above it (the
+          "floating Question N/M" bug).
+
+          The negative top OFFSET is different and necessary: sticky offsets are
+          measured from the scrollport inset by the scroll container's padding,
+          and this view renders inside ConsoleShell's `<main … py-6 sm:py-8>`
+          (ConsoleShell.tsx:242). With plain `top-0` the bar parks 24/32px below
+          the visible top and question content scrolls through the gap above it.
+          `-top-6 sm:-top-8` cancels that padding so the bar pins flush to the
+          top — keep these in step with main's py if it ever changes. */}
+      <div className="bg-background sticky -top-6 z-30 mb-3 -mx-4 flex flex-wrap items-center gap-x-3 gap-y-0.5 border-b px-4 pt-4 pb-2 shadow-sm sm:-top-8 sm:-mx-6 sm:px-6">
+        <span className="min-w-0 flex-1 truncate text-sm font-medium">
           Question {index + 1} / {questions.length}
           {currentSubject && <span className="text-muted-foreground"> · {currentSubject}</span>}
         </span>
@@ -161,54 +183,36 @@ export function AttemptView({
 
       {notice}
 
-      {/* Past-paper provenance for the whole paper — the confidence signal (#87):
-          these are the questions that were actually asked, not look-alikes. */}
-      {provenance.sourced > 0 && (
-        <div className="mb-4 flex items-start gap-2 rounded-md border border-emerald-300 bg-emerald-50 px-3 py-2 text-xs text-emerald-900 dark:border-emerald-900/60 dark:bg-emerald-950/40 dark:text-emerald-200">
-          <FileText className="mt-0.5 size-4 shrink-0" />
-          <span className="min-w-0">
-            <strong className="tabular-nums">
-              {provenance.sourced} of {provenance.total}
-            </strong>
-            {provenance.sourced === 1
-              ? " question in this paper is from a real past exam paper"
-              : " questions in this paper are from real past exam papers"}
-            {provenanceDetail && <> — {provenanceDetail}</>}.
-          </span>
-        </div>
-      )}
-
       <div className="lg:grid lg:grid-cols-[minmax(0,1fr)_20rem] lg:items-start lg:gap-6">
         {/* Main column — question + actions + navigation. */}
         <div className="min-w-0">
           <Card>
             <CardContent className="grid gap-4 pt-6">
-              {/* This question's own paper (#87), first thing in the card — the
-                  student should know it's a real past-paper question before
-                  reading the stem, not after working through the options.
-                  rounded-md (not a pill) because long labels like
-                  "AP ICET 2026 2nd May 2026 Shift 1" wrap on a phone. */}
-              {questionSource && (
-                <div className="flex">
-                  <span className="bg-muted text-muted-foreground inline-flex items-start gap-1.5 rounded-md px-2.5 py-1 text-xs">
-                    <FileText className="mt-px size-3.5 shrink-0" />
-                    <span className="min-w-0">
-                      Asked in <span className="text-foreground font-medium">{questionSource}</span>
-                    </span>
-                  </span>
-                </div>
-              )}
               {q.passage && (
                 <div className="bg-muted/40 rounded border-l-4 p-3 text-sm">
                   {q.passage.title && <p className="font-semibold">{q.passage.title}</p>}
                   <RichContent content={q.passage.body} />
                 </div>
               )}
-              <div className="flex gap-2.5 font-medium">
+              {/* min-w-0: a grid item defaults to min-width:auto, so a wide stem
+                  table would stretch the whole card past the viewport instead of
+                  scrolling inside its own box. */}
+              <div className="flex min-w-0 flex-wrap items-start gap-x-2.5 gap-y-2 font-medium">
                 <span className="text-primary bg-primary/10 h-fit shrink-0 rounded-md px-2 py-0.5 text-sm font-bold tabular-nums">
                   Q{index + 1}
                 </span>
-                <div className="min-w-0 flex-1">
+                {/* The source paper (#87) rides the Q-number row — a label on the
+                    question itself rather than another full-width band above it.
+                    Emerald so it reads as reassurance, not as a warning. When it
+                    is present the stem drops to its own full-width line (basis-full),
+                    which also gives wide ICET tables the whole card on a phone. */}
+                {questionSource && (
+                  <span className="inline-flex min-w-0 items-center gap-1.5 rounded-md bg-emerald-50 px-2 py-0.5 text-xs font-medium text-emerald-800 dark:bg-emerald-950/50 dark:text-emerald-300">
+                    <FileText className="size-3.5 shrink-0" />
+                    <span className="truncate">{questionSource}</span>
+                  </span>
+                )}
+                <div className={`min-w-0 flex-1 ${questionSource ? "basis-full" : ""}`}>
                   <RichContent content={q.stem} />
                 </div>
               </div>
@@ -287,6 +291,27 @@ export function AttemptView({
 
         {/* Palette sidebar. */}
         <aside className="mt-6 lg:sticky lg:top-20 lg:mt-0">
+          {/* Paper-level provenance (#87). It lives here, not in a band above the
+              question: beside the palette on a desktop it uses space that was
+              empty, and on a phone it sits below the question where it costs the
+              stem no room. The per-question source is in the sticky bar. */}
+          {provenance.sourced > 0 && (
+            <div className="mb-2 rounded-md border border-emerald-300 bg-emerald-50 px-2.5 py-2 text-xs text-emerald-900 dark:border-emerald-900/60 dark:bg-emerald-950/40 dark:text-emerald-200">
+              <p className="flex items-center gap-1.5 font-medium">
+                <FileText className="size-3.5 shrink-0" />
+                <span className="tabular-nums">
+                  {provenance.sourced} of {provenance.total}
+                </span>
+                from real past papers
+              </p>
+              {provenanceDetail && (
+                <p className="mt-0.5 text-emerald-800/80 dark:text-emerald-200/70">
+                  {provenanceDetail}
+                </p>
+              )}
+            </div>
+          )}
+
           <div className="mb-2 grid grid-cols-2 gap-2 text-xs">
             <div className="flex items-center gap-2 rounded-md border p-2">
               <span className="size-3 shrink-0 rounded-sm bg-emerald-500" />
@@ -322,7 +347,10 @@ export function AttemptView({
             </div>
           )}
 
-          <div className="bg-muted/30 max-h-[22rem] overflow-y-auto rounded-md border p-2 lg:max-h-[calc(100vh-16rem)]">
+          <div
+            ref={paletteRef}
+            className="bg-muted/30 max-h-[22rem] overflow-y-auto rounded-md border p-2 lg:max-h-[calc(100vh-16rem)]"
+          >
             {bands.map((band) => {
               const hasCurrent = band.items.some((it) => it.i === index);
               const open = !multiSection || !collapsed.has(band.id) || hasCurrent;
