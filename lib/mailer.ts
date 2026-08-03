@@ -13,6 +13,13 @@
  */
 import nodemailer, { type Transporter } from "nodemailer";
 import { markdownToEmailHtml } from "./markdown-email";
+import {
+  EXAM_PASS_PCT,
+  examGrade,
+  examPassed,
+  examPercentage,
+  examVerdict,
+} from "./exam-grading";
 
 type InviteEmail = {
   to: string;
@@ -65,9 +72,19 @@ function escapeHtml(s: string): string {
  *   • hidden preheader → controls the inbox preview line.
  *
  * `contentHtml` is the inner body-cell markup (headings/paragraphs/callouts).
- * Build buttons with `emailButton()` so they stay bulletproof.
+ * Build buttons with `emailButton()` so they stay bulletproof. `footerHtml`
+ * overrides the default footer line for senders that need to say more (e.g. the
+ * results email, which is a no-reply mass send).
  */
-function emailShell({ preheader, contentHtml }: { preheader: string; contentHtml: string }): string {
+function emailShell({
+  preheader,
+  contentHtml,
+  footerHtml,
+}: {
+  preheader: string;
+  contentHtml: string;
+  footerHtml?: string;
+}): string {
   const font = "-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,Helvetica,Arial,sans-serif";
   return `<!DOCTYPE html>
 <html lang="en">
@@ -88,7 +105,7 @@ function emailShell({ preheader, contentHtml }: { preheader: string; contentHtml
 ${contentHtml}
 </td></tr>
 <tr><td style="padding:18px 28px;border-top:1px solid #eef2f7;color:#64748b;font-size:13px;line-height:1.5;">
-You're receiving this because you registered at CareerLaunchpad.
+${footerHtml ?? "You're receiving this because you registered at CareerLaunchpad."}
 </td></tr>
 </table>
 </td></tr>
@@ -426,6 +443,259 @@ export async function sendClassInviteEmail(input: ClassInviteEmail): Promise<{ s
   } catch (err) {
     const error = err instanceof Error ? err.message : String(err);
     console.error(`[class-invite] failed to email ${input.to}:`, err);
+    return { sent: false, error };
+  }
+}
+
+export type ExamResultSection = { name: string; got: number; max: number };
+
+export type ExamResultEmail = {
+  to: string;
+  name?: string | null;
+  examTitle: string;
+  sittingLabel: string;
+  collegeName?: string | null;
+  marks: number;
+  maxMarks: number;
+  correct: number;
+  questions: number;
+  /** Questions with a selection — only surfaced when the attempt was interrupted. */
+  answered: number;
+  /** The exam monitor cut the attempt short (abort_count > 0). */
+  interrupted: boolean;
+  rank: number | null;
+  outOf: number | null;
+  collegeAverage: number | null;
+  sections: ExamResultSection[];
+  resultUrl: string;
+};
+
+/**
+ * Compose the "your result is ready" email (issue #77). Split out from the
+ * sender so the template can be rendered without SMTP — which is how it was
+ * reviewed at 320 / 390 / 600px before it shipped.
+ *
+ * Mirrors the printed Statement of Marks field for field, grading through
+ * lib/exam-grading.ts so the email and the result page cannot disagree.
+ *
+ * Deliberately has NO chart. An earlier draft drew a per-section bar with nested
+ * `bgcolor` cells; at 320px the four fixed columns overran the ~240px the shell
+ * leaves for content, which widened the shared body cell and clipped the whole
+ * email against the card's overflow:hidden. The bar was redundant beside the
+ * marks and the percentage. Sections below the pass mark carry a downward arrow
+ * as well as red, so nothing is signalled by colour alone.
+ *
+ * No media queries anywhere — Outlook.com strips them.
+ *
+ */
+export function buildExamResultEmail(d: ExamResultEmail): {
+  subject: string;
+  text: string;
+  html: string;
+} {
+  const percentage = examPercentage(d.marks, d.maxMarks);
+  const passed = examPassed(percentage);
+  const verdict = examVerdict(percentage);
+  const gradeLabel = examGrade(percentage);
+  const pctLabel = percentage == null ? "—" : `${percentage.toFixed(1)}%`;
+  // An UNKNOWN verdict must not wear the fail colours — a red pill reading "—"
+  // tells a student they failed when the truth is that nothing could be graded.
+  const verdictBg = verdict === "—" ? "#eef2f7" : passed ? "#dcfce7" : "#fee2e2";
+  const verdictInk = verdict === "—" ? "#475569" : passed ? "#047857" : "#b91c1c";
+
+  // Lowest-scoring subject, named only when it is actually below the pass mark —
+  // and never for an interrupted attempt, whose low sections record where the
+  // clock stopped rather than where the student is weak.
+  const withPct = d.sections
+    .map((s) => ({ ...s, pct: examPercentage(s.got, s.max) }))
+    .filter((s) => s.pct != null) as (ExamResultSection & { pct: number })[];
+  const weakest = withPct.length
+    ? withPct.reduce((a, s) => (s.pct < a.pct ? s : a))
+    : null;
+  const showFocus = !d.interrupted && weakest != null && weakest.pct < EXAM_PASS_PCT;
+  const showRank = !d.interrupted && d.rank != null && d.outOf != null;
+
+  const hi = d.name ? `Hi ${d.name},` : "Hi,";
+  const subject = `Your result for ${d.examTitle} is now available`;
+
+  /* ---- plain text ------------------------------------------------------- */
+  const pad = (s: string, n: number) => s + " ".repeat(Math.max(0, n - s.length));
+  const textLines = [
+    hi,
+    "",
+    `Your results for ${d.examTitle} (${d.sittingLabel}) have been published.`,
+    "",
+    `  Marks obtained : ${d.marks} / ${d.maxMarks}`,
+    `  Percentage     : ${pctLabel}`,
+    `  Correct        : ${d.correct} / ${d.questions}`,
+    `  Grade          : ${gradeLabel}`,
+    `  Result         : ${verdict}  (pass mark ${EXAM_PASS_PCT}%)`,
+  ];
+  if (showRank)
+    textLines.push(
+      `  Rank           : ${d.rank} of ${d.outOf}` +
+        (d.collegeAverage != null ? `  (college average ${d.collegeAverage})` : ""),
+    );
+  if (d.interrupted)
+    textLines.push(
+      "",
+      `Your attempt was interrupted by the exam monitor, so only the ${d.answered} of`,
+      `${d.questions} questions you had answered were graded. Your marks are out of`,
+      "the full paper.",
+    );
+  if (d.sections.length > 1) {
+    textLines.push("", "Section-wise performance", "");
+    for (const s of d.sections) {
+      const sp = examPercentage(s.got, s.max);
+      textLines.push(
+        `  ${pad(s.name, 26)}${pad(`${s.got} / ${s.max}`, 12)}${sp == null ? "—" : `${sp.toFixed(1)}%`}`,
+      );
+    }
+  }
+  if (showFocus && weakest)
+    textLines.push(
+      "",
+      `Start with ${weakest.name} — it is your lowest section at ${weakest.pct.toFixed(1)}%.`,
+    );
+  textLines.push(
+    "",
+    "See the full answer key, with an explanation for every question:",
+    d.resultUrl,
+    "",
+    "-- ",
+    "CareerLaunchpad · please do not reply to this address",
+  );
+  const text = textLines.join("\n");
+
+  /* ---- html ------------------------------------------------------------- */
+  // 3-up stat cells. nowrap on both lines: at 320px a wrapped "33 / 40"
+  // collided with the rule above it.
+  const stat = (label: string, value: string) =>
+    `<td width="33.33%" align="center" style="padding:12px 3px 0;">` +
+    `<div style="font-size:10px;font-weight:700;letter-spacing:.05em;text-transform:uppercase;color:#64748b;white-space:nowrap;">${escapeHtml(label)}</div>` +
+    `<div style="font-size:17px;font-weight:700;color:#0f172a;padding-top:2px;white-space:nowrap;">${escapeHtml(value)}</div>` +
+    `</td>`;
+
+  const secRow = (s: ExamResultSection) => {
+    const sp = examPercentage(s.got, s.max);
+    const low = sp != null && sp < EXAM_PASS_PCT;
+    return (
+      `<tr>` +
+      `<td style="padding:9px 0;border-bottom:1px solid #eef2f7;font-size:14px;line-height:1.4;color:#0f172a;">${escapeHtml(s.name)}</td>` +
+      `<td width="66" align="right" style="padding:9px 0 9px 8px;border-bottom:1px solid #eef2f7;font-size:14px;color:#0f172a;white-space:nowrap;">` +
+      `<strong>${s.got}</strong><span style="color:#64748b;">&nbsp;/&nbsp;${s.max}</span></td>` +
+      `<td width="58" align="right" style="padding:9px 0 9px 8px;border-bottom:1px solid #eef2f7;font-size:13px;font-weight:${low ? "700" : "400"};color:${low ? "#b91c1c" : "#64748b"};white-space:nowrap;">` +
+      `${sp == null ? "&mdash;" : `${sp.toFixed(1)}%${low ? "&nbsp;&#8595;" : ""}`}</td>` +
+      `</tr>`
+    );
+  };
+
+  const sectionBlock =
+    d.sections.length > 1
+      ? `<div style="font-size:12px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:#64748b;margin:0 0 4px;">Section-wise performance</div>` +
+        `<table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0" style="border-collapse:collapse;margin:0 0 22px;">` +
+        d.sections.map(secRow).join("") +
+        `</table>`
+      : "";
+
+  const interruptedNote = d.interrupted
+    ? `<table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0" style="margin:0 0 20px;border-collapse:collapse;"><tr>` +
+      `<td style="background:#fff7ed;border-left:4px solid #f59e0b;border-radius:8px;padding:13px 16px;color:#7c2d12;font-size:14px;line-height:1.55;">` +
+      `Your attempt was interrupted by the exam monitor, so only the <strong>${d.answered} of ${d.questions} questions</strong> you had answered were graded. Your marks are out of the full paper.` +
+      `</td></tr></table>`
+    : "";
+
+  const focusNote =
+    showFocus && weakest
+      ? `<table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0" style="margin:0 0 20px;border-collapse:collapse;"><tr>` +
+        `<td style="background:#f4f7ff;border-left:4px solid #2563eb;border-radius:8px;padding:13px 16px;color:#1e3a8a;font-size:14px;line-height:1.55;">` +
+        `<strong>Start with ${escapeHtml(weakest.name)}</strong> &mdash; it is your lowest section at ${weakest.pct.toFixed(1)}%. The result page shows the correct answer and an explanation for every question you missed.` +
+        `</td></tr></table>`
+      : "";
+
+  const rankLine = showRank
+    ? `<div style="font-size:13px;color:#64748b;padding-top:12px;border-top:1px solid #e3eaf6;margin-top:14px;">` +
+      `Rank <strong style="color:#0f172a;">${d.rank}</strong> of ${d.outOf}` +
+      (d.collegeAverage != null
+        ? ` &nbsp;&middot;&nbsp; College average ${d.collegeAverage} / ${d.maxMarks}`
+        : "") +
+      `</div>`
+    : "";
+
+  const metaLine = [d.sittingLabel, d.collegeName]
+    .filter(Boolean)
+    .map((s) => escapeHtml(String(s)))
+    .join(" &nbsp;&middot;&nbsp; ");
+
+  const content =
+    `<h1 style="margin:0 0 6px;font-size:20px;line-height:1.3;font-weight:700;color:#0f172a;">Your result is ready</h1>` +
+    `<p style="margin:0 0 18px;font-size:14px;color:#64748b;line-height:1.5;">${escapeHtml(d.examTitle)}<br>${metaLine}</p>` +
+    `<p style="margin:0 0 18px;">${escapeHtml(hi)}</p>` +
+    `<p style="margin:0 0 18px;">Your results for this exam have been published. Here is your statement of marks.</p>` +
+    `<table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0" style="margin:0 0 20px;border-collapse:collapse;"><tr>` +
+    // 14px, not 18px, of horizontal padding: measured at a true 320px viewport,
+    // the three nowrap stat cells need 208px, and 18px pushed the card's
+    // min-width to 299 — 323 with the shell's gutters, i.e. a 3px horizontal
+    // scroll on a 320px phone. This is the cheapest 8px and is invisible at 600px.
+    `<td bgcolor="#f4f7ff" style="background:#f4f7ff;border-radius:12px;padding:20px 14px;">` +
+    `<div style="font-size:11px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:#64748b;">Marks obtained</div>` +
+    `<div style="padding:2px 0 14px;">` +
+    `<span style="font-size:38px;font-weight:700;color:#1d4ed8;line-height:1.05;">${d.marks}</span>` +
+    `<span style="font-size:19px;color:#64748b;">&nbsp;/&nbsp;${d.maxMarks}</span></div>` +
+    `<table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0" style="border-collapse:collapse;border-top:1px solid #e3eaf6;"><tr>` +
+    stat("Percentage", pctLabel) +
+    stat("Correct", `${d.correct} / ${d.questions}`) +
+    stat("Grade", gradeLabel) +
+    `</tr></table>` +
+    `<div style="padding-top:16px;">` +
+    `<span style="display:inline-block;background:${verdictBg};color:${verdictInk};font-size:13px;font-weight:700;letter-spacing:.04em;padding:5px 12px;border-radius:6px;white-space:nowrap;">RESULT: ${verdict}</span>` +
+    `</div>` +
+    // Suppressed on a zero-mark paper, where "40% of 0 marks" is nonsense.
+    (d.maxMarks > 0
+      ? `<div style="padding-top:7px;font-size:12px;color:#64748b;">Pass mark: ${EXAM_PASS_PCT}% of ${d.maxMarks} marks</div>`
+      : "") +
+    rankLine +
+    `</td></tr></table>` +
+    interruptedNote +
+    sectionBlock +
+    focusNote +
+    `<p style="margin:0 0 16px;">Open your result to see the full answer key, with the correct answer and an explanation for every question.</p>` +
+    emailButton(d.resultUrl, "View my result") +
+    `<p style="margin:16px 0 0;font-size:13px;color:#64748b;">You can also print your statement of marks and the answer key as PDFs from that page.</p>`;
+
+  const html = emailShell({
+    preheader: "Marks, section-wise breakdown and the full answer key with explanations.",
+    contentHtml: content,
+    footerHtml:
+      `You're receiving this because you registered at CareerLaunchpad.` +
+      (d.collegeName ? ` Results were published by ${escapeHtml(d.collegeName)}.` : "") +
+      ` Please do not reply to this address.`,
+  });
+
+  return { subject, text, html };
+}
+
+/**
+ * Deliver the results email. Returns the outcome instead of swallowing it
+ * (unlike `deliver`), because the caller records it in exam_result_notification
+ * and offers a retry.
+ */
+export async function sendExamResultEmail(
+  d: ExamResultEmail,
+): Promise<{ sent: boolean; error?: string }> {
+  const { subject, text, html } = buildExamResultEmail(d);
+
+  const mailer = getTransporter();
+  if (!mailer) {
+    console.info(`[exam-result] would email ${d.to}: ${subject}`);
+    return { sent: false, error: "SMTP not configured" };
+  }
+  try {
+    await mailer.sendMail({ from: `"${FROM_NAME}" <${FROM_ADDRESS}>`, to: d.to, subject, text, html });
+    return { sent: true };
+  } catch (err) {
+    const error = err instanceof Error ? err.message : String(err);
+    console.error(`[exam-result] failed to email ${d.to}:`, err);
     return { sent: false, error };
   }
 }

@@ -18,6 +18,13 @@ import {
 } from "@/components/print/blocks";
 import { PrintDocument } from "@/components/print/print-document";
 import { usePrint } from "@/lib/use-print";
+import {
+  EXAM_PASS_PCT,
+  examGrade,
+  examPassed,
+  examPercentage,
+  examVerdict,
+} from "@/lib/exam-grading";
 import type { SessionPrintMeta } from "../paper-print";
 
 type ResultOption = { id: string; label: string; is_correct: boolean };
@@ -103,18 +110,12 @@ export function StudentResult({
       ? null
       : meta.total_marks / nQ;
   const qMax = (q: ResultQuestion) => q.max_marks ?? perQuestionMax ?? 0;
-  const percentage = maxTotal > 0 ? (total / maxTotal) * 100 : null;
-  const grade =
-    percentage == null ? "—"
-    : percentage >= 90 ? "A+"
-    : percentage >= 80 ? "A"
-    : percentage >= 70 ? "B+"
-    : percentage >= 60 ? "B"
-    : percentage >= 50 ? "C"
-    : percentage >= 40 ? "D"
-    : "E";
-  const passed = percentage != null && percentage >= 40; // standard 40% pass mark
-  const resultLabel = percentage == null ? "—" : passed ? "PASS" : "FAIL";
+  // Grading rules live in lib/exam-grading.ts so this page and the results email
+  // (issue #77) state the same figures — see that module's header.
+  const percentage = examPercentage(total, maxTotal);
+  const grade = examGrade(percentage);
+  const passed = examPassed(percentage);
+  const resultLabel = examVerdict(percentage);
 
   // Group by section subject (questions arrive in position order and sections
   // are contiguous, so a Map keyed by subject keeps paper order).
@@ -194,7 +195,7 @@ export function StudentResult({
           </tbody>
         </table>
 
-        {/* Result verdict (standard 40% pass mark) */}
+        {/* Result verdict (pass mark from lib/exam-grading.ts) */}
         <div className="mb-4 text-center">
           <span className="text-sm font-semibold text-gray-900">Result: </span>
           <span
@@ -204,7 +205,7 @@ export function StudentResult({
             {resultLabel}
           </span>
           {percentage != null && (
-            <span className="ml-2 text-xs text-gray-600">(Pass mark: 40%)</span>
+            <span className="ml-2 text-xs text-gray-600">(Pass mark: {EXAM_PASS_PCT}%)</span>
           )}
         </div>
 
