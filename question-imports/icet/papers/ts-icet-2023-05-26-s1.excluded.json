@@ -1,0 +1,29 @@
+{
+  "excluded": [
+    {
+      "q": 12,
+      "page": 13,
+      "reason": "key-disagreement: statement II alone (the circle circumscribes the square) fixes the area ratio at pi:2 regardless of the radius, so statement II alone is sufficient and the correct answer is option 2, not the keyed option 3"
+    },
+    {
+      "q": 60,
+      "page": 64,
+      "reason": "No option correct — under the circle-cipher (verified on Q56-59 and on WELL→QUFF), DOING encodes to XEAHZ (N→H, G→Z), but the keyed option 4 reads XEATM QUFF; no option gives XEAHZ QUFF (paper option error)."
+    },
+    {
+      "q": 69,
+      "page": 74,
+      "reason": "Key disagreement — chain gives B = Seetha's mother's son = Seetha's brother, so Seetha (a female name) is B's SISTER (option 4), but the key marks Brother (option 1)."
+    },
+    {
+      "q": 152,
+      "page": 156,
+      "reason": "key-disagreement: stem 'Something that has not been included' is 'omission' (option 3), but the paper's green tick and KEY_OPTION mark option 2 'permission', which is incorrect"
+    },
+    {
+      "q": 180,
+      "page": 175,
+      "reason": "key-disagreement: stem 'RAM is a memory of this type' with options Volatile / Non-volatile / Short / Long; the key marks option 3 (Short), but RAM is unambiguously volatile memory, so the correct answer is option 1 (Volatile). No defensible reading makes 'Short' correct."
+    }
+  ]
+}

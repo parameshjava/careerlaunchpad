@@ -1,0 +1,87 @@
+{
+  "questions": [
+    {
+      "subject": "Analytical Writing",
+      "chapter": "Analyze an Issue",
+      "kind": "standard",
+      "difficulty": "easy",
+      "answer_type": "single",
+      "stem": "Single-correct example. What is $2 + 2$?",
+      "explanation": "Replace with the worked solution.",
+      "source": "ICET 2019 - Slot 2",
+      "source_year": 2019,
+      "options": [
+        {
+          "label": "4",
+          "is_correct": true
+        },
+        {
+          "label": "3",
+          "is_correct": false
+        },
+        {
+          "label": "5",
+          "is_correct": false
+        },
+        {
+          "label": "22",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "subject": "Arithmetic",
+      "chapter": "Alligation or Mixture",
+      "kind": "standard",
+      "difficulty": "medium",
+      "answer_type": "multi",
+      "stem": "Multi-correct example — select all prime numbers.",
+      "explanation": "2, 3 and 5 are prime; 4 is not.",
+      "options": [
+        {
+          "label": "2",
+          "is_correct": true
+        },
+        {
+          "label": "3",
+          "is_correct": true
+        },
+        {
+          "label": "4",
+          "is_correct": false
+        },
+        {
+          "label": "5",
+          "is_correct": true
+        }
+      ]
+    },
+    {
+      "subject": "Computer Aptitude",
+      "chapter": "Abbreviations & Terminology",
+      "kind": "data_sufficiency",
+      "difficulty": "hard",
+      "answer_type": "single",
+      "stem": "Data-sufficiency example. Is $x > 0$? (1) $x^2 = 9$. (2) $x = 3$.",
+      "explanation": "Statement (2) alone fixes x = 3 > 0; (1) allows ±3.",
+      "options": [
+        {
+          "label": "Statement I alone is sufficient, but statement II alone is not.",
+          "is_correct": false
+        },
+        {
+          "label": "Statement II alone is sufficient, but statement I alone is not.",
+          "is_correct": true
+        },
+        {
+          "label": "Both statements together are sufficient, but neither alone is.",
+          "is_correct": false
+        },
+        {
+          "label": "Each statement alone is sufficient.",
+          "is_correct": false
+        }
+      ]
+    }
+  ]
+}

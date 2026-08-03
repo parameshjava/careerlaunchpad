@@ -1,0 +1,37 @@
+[
+  {
+    "q": 36,
+    "reason": "defective: clean pattern gives 288 (differences +8), which is not an option; 285 selected as the only value consistent with the increasing series (next term must exceed 280)",
+    "file": "secA_ps1.json"
+  },
+  {
+    "q": 84,
+    "reason": "defective:correct value is 55N, not among the options",
+    "file": "secB1.json"
+  },
+  {
+    "q": 99,
+    "reason": "defective:correct value is 320/3 (~106.7 km), not among the options",
+    "file": "secB1.json"
+  },
+  {
+    "q": 103,
+    "reason": "figure_required",
+    "file": "secB1.json"
+  },
+  {
+    "q": 113,
+    "reason": "defective:correct GCD is (x-2)(x+3), not among the options",
+    "file": "secB1.json"
+  },
+  {
+    "q": 127,
+    "reason": "figure_required",
+    "file": "secB2.json"
+  },
+  {
+    "q": 131,
+    "reason": "figure_required",
+    "file": "secB2.json"
+  }
+]
