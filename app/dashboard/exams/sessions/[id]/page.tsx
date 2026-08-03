@@ -6,6 +6,7 @@ import {
   fetchPaperForPrint,
   fetchRoster,
   fetchSession,
+  fetchResultNotificationSummary,
   fetchSessionLiveProgress,
   fetchSubjectAverages,
   fetchSubjectMarksByStudent,
@@ -33,12 +34,13 @@ export default async function SessionDetailPage({
   if (!session) notFound();
   const canExportPdf = ctx.permissions.has("*") || can(ctx, "exam.paper.export_pdf");
   const canPublish = ctx.permissions.has("*") || can(ctx, "exam.assign");
-  const [progress, paper, roster, subjectAvgs, subjectMarks] = await Promise.all([
+  const [progress, paper, roster, subjectAvgs, subjectMarks, notifications] = await Promise.all([
     fetchSessionLiveProgress(supabase, id),
     canExportPdf ? fetchPaperForPrint(supabase, id) : Promise.resolve(null),
     fetchRoster(supabase, id),
     fetchSubjectAverages(supabase, id),
     fetchSubjectMarksByStudent(supabase, id),
+    fetchResultNotificationSummary(supabase, id),
   ]);
 
   // Printable paper/key props — only when the caller can export and the paper
@@ -100,6 +102,7 @@ export default async function SessionDetailPage({
         results={resultsProps}
         resultsPublished={session.resultsPublished}
         canPublish={canPublish}
+        notifications={notifications}
       />
     </PageContainer>
   );

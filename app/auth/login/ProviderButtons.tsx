@@ -18,7 +18,7 @@ const PROVIDERS: { id: Provider; label: string; icon: React.ReactNode }[] = [
 // The interactive island of the login page: the only part that needs client
 // JS. The surrounding shell (brand panel, headings, copy) is server-rendered so
 // it's styled on first paint — no flash of under-styled content on cold loads.
-export function ProviderButtons() {
+export function ProviderButtons({ next }: { next?: string | null }) {
   const [pending, setPending] = useState<string | null>(null);
   const [error, setError] = useState<string | null>(null);
 
@@ -26,9 +26,15 @@ export function ProviderButtons() {
     setError(null);
     setPending(provider);
     const supabase = createClient();
+    // `next` rides through the provider round trip on the callback URL, so the
+    // destination the middleware recorded survives sign-in. It was validated
+    // server-side (lib/next-path.ts) and the callback validates it again.
+    const callback = `${window.location.origin}/auth/callback${
+      next ? `?next=${encodeURIComponent(next)}` : ""
+    }`;
     const { error } = await supabase.auth.signInWithOAuth({
       provider,
-      options: { redirectTo: `${window.location.origin}/auth/callback` },
+      options: { redirectTo: callback },
     });
     if (error) {
       setError(error.message);

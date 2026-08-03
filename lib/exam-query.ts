@@ -983,6 +983,48 @@ export async function fetchSubjectMarksByStudent(
 }
 
 // ----------------------------------------------------------------------------
+// Result-email delivery state (issue #77) — the counts the session console shows
+// beside the publish button, from exam_result_notification (migration 157).
+// ----------------------------------------------------------------------------
+
+export type ResultNotificationSummary = {
+  total: number;
+  pending: number;
+  sent: number;
+  failed: number;
+  /** Eligible students with no email address on their account — not sendable. */
+  skipped: number;
+  lastSentAt: string | null;
+};
+
+/**
+ * Never throws: this is a status strip, and a sitting whose emails have never
+ * been queued legitimately has no rows. A failure here must not take down the
+ * session console.
+ */
+export async function fetchResultNotificationSummary(
+  supabase: SupabaseClient,
+  sessionId: string,
+): Promise<ResultNotificationSummary | null> {
+  const { data, error } = await supabase.rpc("exam_result_notification_summary", {
+    p_session_id: sessionId,
+  });
+  if (error || !data) return null;
+  const d = data as Record<string, unknown>;
+  const n = (k: string) => Number(d[k] ?? 0) || 0;
+  const total = n("total");
+  if (total === 0) return null;
+  return {
+    total,
+    pending: n("pending"),
+    sent: n("sent"),
+    failed: n("failed"),
+    skipped: n("skipped"),
+    lastSentAt: (d.last_sent_at as string | null) ?? null,
+  };
+}
+
+// ----------------------------------------------------------------------------
 // Student-facing "my exams" list lives in the list_my_exam_sessions() RPC
 // (migration 102) — students can't read the exam/exam_section tables directly.
 // ----------------------------------------------------------------------------

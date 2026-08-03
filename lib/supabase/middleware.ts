@@ -55,6 +55,14 @@ export async function updateSession(request: NextRequest) {
   if (!user && needsAuth) {
     const url = request.nextUrl.clone()
     url.pathname = '/auth/login'
+    // Remember where they were going. Without this the destination is lost and
+    // everyone lands on their home surface after signing in — which silently
+    // breaks every emailed deep link (issue #77's result link is the first one
+    // whose whole value depends on it). The original query string is carried
+    // inside `next`, not left on the login URL where it means nothing.
+    const destination = `${path}${request.nextUrl.search}`
+    url.search = ''
+    url.searchParams.set('next', destination)
     return NextResponse.redirect(url)
   }
 

@@ -1,5 +1,6 @@
 import { redirect } from "next/navigation";
 import { getAuthContext } from "@/lib/auth";
+import { safeNextPath } from "@/lib/next-path";
 import { ProviderButtons } from "./ProviderButtons";
 
 // Server component: the static shell renders HTML + CSS on first paint (no flash
@@ -12,13 +13,22 @@ const FEATURES = [
   "Be discovered by employers hiring now",
 ];
 
-export default async function LoginPage() {
+export default async function LoginPage({
+  searchParams,
+}: {
+  searchParams: Promise<{ next?: string }>;
+}) {
+  // Where the visitor was heading before the middleware bounced them here, e.g.
+  // the result link in a "your result is ready" email (issue #77). Validated, so
+  // a hand-crafted ?next= cannot turn sign-in into an open redirect.
+  const next = safeNextPath((await searchParams).next);
+
   // Someone who already has a valid session should never see the sign-in screen
-  // — send them straight to their surface (homePath routes unprovisioned users
-  // to /auth/no-access). This stops "asked to sign in again" when a live session
+  // — send them straight on (homePath routes unprovisioned users to
+  // /auth/no-access). This stops "asked to sign in again" when a live session
   // lands on /auth/login.
   const ctx = await getAuthContext();
-  if (ctx) redirect(ctx.homePath);
+  if (ctx) redirect(next && ctx.provisioned ? next : ctx.homePath);
 
   return (
     <main className="flex w-full flex-1 flex-col lg:grid lg:grid-cols-[1.05fr_1fr]">
@@ -60,7 +70,7 @@ export default async function LoginPage() {
             </p>
           </div>
 
-          <ProviderButtons />
+          <ProviderButtons next={next} />
 
           <p className="text-muted-foreground mt-6 text-center text-xs lg:text-left">
             Admins &amp; employers: use the email you were invited with.

@@ -18,7 +18,11 @@ import { ResultsCharts } from "./results-charts";
 import { PaperDocument, type PaperDocumentProps } from "./paper-print";
 import { ResultsDocument, type ResultsDocumentProps } from "./results-document";
 import { usePrint } from "@/lib/use-print";
-import type { SessionSummary, SessionLiveProgress } from "@/lib/exam-query";
+import type {
+  SessionSummary,
+  SessionLiveProgress,
+  ResultNotificationSummary,
+} from "@/lib/exam-query";
 
 // Folder-tab styling shared with the dashboard / Team hub (docs/STYLE_GUIDE.md).
 const TAB_CLS =
@@ -35,6 +39,7 @@ export function SessionConsole({
   results,
   resultsPublished,
   canPublish,
+  notifications,
 }: {
   session: SessionSummary;
   initialProgress: SessionLiveProgress;
@@ -43,6 +48,8 @@ export function SessionConsole({
   results: ResultsDocumentProps | null;
   resultsPublished: boolean;
   canPublish: boolean;
+  /** Result-email delivery state (issue #77); null until a publish queues it. */
+  notifications: ResultNotificationSummary | null;
 }) {
   const router = useRouter();
   // Two independent print documents: the question paper/key and the results sheet.
@@ -51,6 +58,7 @@ export function SessionConsole({
 
   const [busy, setBusy] = useState("");
   const [error, setError] = useState("");
+  const [notice, setNotice] = useState("");
   const [progress, setProgress] = useState(initialProgress);
   const [updatedAt, setUpdatedAt] = useState<number>(() => new Date(initialGeneratedAt).getTime());
   const [refreshing, setRefreshing] = useState(false);
@@ -114,6 +122,26 @@ export function SessionConsole({
     action("publish", `/api/exam/sessions/${session.id}/publish-results`, {
       published: !resultsPublished,
     });
+
+  // Retry the result emails (issue #77). Unlike `action` this reports counts,
+  // because the whole point of pressing it is to learn whether it worked.
+  async function resendResultEmails() {
+    setError("");
+    setNotice("");
+    setBusy("notify");
+    const res = await fetch(`/api/exam/sessions/${session.id}/notify-results`, { method: "POST" });
+    const data = await res.json().catch(() => ({}));
+    setBusy("");
+    if (!res.ok) return setError(data.error ?? "Could not resend the result emails.");
+    setNotice(
+      data.attempted === 0
+        ? "Nothing left to send — every eligible student has already been emailed."
+        : `${data.sent} sent, ${data.failed} failed` +
+            (data.remaining > 0 ? `, ${data.remaining} still queued (press again to continue)` : "") +
+            ".",
+    );
+    router.refresh();
+  }
 
   // Live countdown to close, for staff monitoring an ongoing exam.
   const opensMs = session.opensAt ? new Date(session.opensAt).getTime() : null;
@@ -212,6 +240,45 @@ export function SessionConsole({
               </Button>
             )}
           </div>
+
+          {/* Result-email delivery (issue #77). Only meaningful once a publish has
+              queued something — a mail outage should be a visible, retryable fact
+              rather than silence. */}
+          {canPublish && notifications && (
+            <div className="border-border flex flex-wrap items-center gap-x-3 gap-y-2 border-t pt-3 text-sm">
+              <span className="text-muted-foreground">Result emails</span>
+              <span className="font-medium tabular-nums">
+                {notifications.sent} of {notifications.total} sent
+              </span>
+              {notifications.pending > 0 && (
+                <Badge variant="secondary" className="tabular-nums">
+                  {notifications.pending} queued
+                </Badge>
+              )}
+              {notifications.failed > 0 && (
+                <Badge variant="destructive" className="tabular-nums">
+                  {notifications.failed} failed
+                </Badge>
+              )}
+              {notifications.skipped > 0 && (
+                <Badge variant="outline" className="tabular-nums" title="No email address on the student's account">
+                  {notifications.skipped} no address
+                </Badge>
+              )}
+              {notifications.pending + notifications.failed > 0 && (
+                <Button
+                  size="sm"
+                  variant="outline"
+                  disabled={busy === "notify"}
+                  onClick={resendResultEmails}
+                  title="Retry the emails that have not been delivered. Students already emailed are never sent a second copy."
+                >
+                  {busy === "notify" ? "Sending…" : "Resend"}
+                </Button>
+              )}
+              {notice && <span className="text-muted-foreground">{notice}</span>}
+            </div>
+          )}
         </CardContent>
       </Card>
 
