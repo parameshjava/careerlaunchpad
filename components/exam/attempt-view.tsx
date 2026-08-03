@@ -183,6 +183,21 @@ export function AttemptView({
         <div className="min-w-0">
           <Card>
             <CardContent className="grid gap-4 pt-6">
+              {/* This question's own paper (#87), first thing in the card — the
+                  student should know it's a real past-paper question before
+                  reading the stem, not after working through the options.
+                  rounded-md (not a pill) because long labels like
+                  "AP ICET 2026 2nd May 2026 Shift 1" wrap on a phone. */}
+              {questionSource && (
+                <div className="flex">
+                  <span className="bg-muted text-muted-foreground inline-flex items-start gap-1.5 rounded-md px-2.5 py-1 text-xs">
+                    <FileText className="mt-px size-3.5 shrink-0" />
+                    <span className="min-w-0">
+                      Asked in <span className="text-foreground font-medium">{questionSource}</span>
+                    </span>
+                  </span>
+                </div>
+              )}
               {q.passage && (
                 <div className="bg-muted/40 rounded border-l-4 p-3 text-sm">
                   {q.passage.title && <p className="font-semibold">{q.passage.title}</p>}
@@ -226,16 +241,6 @@ export function AttemptView({
               </div>
               {q.answerType === "multi" && (
                 <p className="text-muted-foreground text-xs">More than one answer may be correct.</p>
-              )}
-              {/* This question's own paper (#87). Sits under the options so it
-                  reads as a footnote, not as part of the question. */}
-              {questionSource && (
-                <p className="text-muted-foreground flex items-start gap-1.5 text-xs">
-                  <FileText className="mt-px size-3.5 shrink-0" />
-                  <span className="min-w-0">
-                    Asked in <span className="text-foreground font-medium">{questionSource}</span>
-                  </span>
-                </p>
               )}
             </CardContent>
           </Card>
