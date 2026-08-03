@@ -3,7 +3,12 @@
 --
 -- Gives one college enough peers for the "How you compare" charts to show a real
 -- distribution instead of the flat n=1 shape (every count 1, so every donut wedge
--- is identical). Read the guardrails before running.
+-- is identical at 7.1%). Read the guardrails before running.
+--
+-- RUNS ANYWHERE: plain SQL only. No psql meta-commands, so this works in the
+-- Supabase SQL editor, in psql, and through any query tool. An earlier version
+-- used \set / :'target_email', which the SQL editor rejects with
+-- "syntax error at or near \".
 --
 -- WHAT IT TOUCHES
 --   public.student_intake only — one row per mock peer, status 'pending',
@@ -21,24 +26,16 @@
 --   (a reserved TLD that can never receive mail). Teardown is one statement:
 --       delete from public.student_intake where source = 'mock_seed';
 --
+-- IF THE EMAIL IS WRONG
+--   Nothing is written. Step 1 is a single INSERT whose source rows are empty when
+--   the target does not resolve, so there is no partial state to clean up — and
+--   step 2 tells you it seeded nothing.
+--
 -- WHAT IT DOES NOT DO
 --   It does not seed the #73 performance charts (chapter quiz attempts). Those
 --   need migrations 154 + 155 on preview first — see the note at the bottom.
 --
--- HOW TO SET THE TARGET COLLEGE
---   Edit :target_email below to the student whose /student/insights you want to
---   look at. The script reads that student's college and seeds peers into it.
---
--- HOW TO RUN IT
---   psql (supports the \set variable below):
---     psql "$PREVIEW_DB_URL" -v ON_ERROR_STOP=1 -f scripts/seed-mock-peers.sql
---
---   Supabase SQL editor: it does NOT support psql meta-commands, so \set and
---   :'target_email' will error there. Either run it through psql, or replace the
---   two :'target_email' references with a literal 'you@example.com' and delete
---   both \set lines first.
---
---   Point it at PREVIEW, never prod. Verify the project ref before running.
+-- POINT IT AT PREVIEW, NEVER PROD. Check the project ref before running.
 --
 -- WHAT IT LOOKS LIKE AFTERWARDS (verified on a throwaway cluster, 24 peers)
 --   Skills               24, 22, 20, 18, 16, 14, 12, 10, 8, 6, 4, 2, 1, 1
@@ -49,57 +46,34 @@
 --   every axis, i.e. a regular hexagon with nothing to compare against.
 -- ============================================================================
 
-begin;
 
--- ── the one thing you must set ───────────────────────────────────────────────
-\set target_email 'CHANGE_ME@example.com'
 -- ─────────────────────────────────────────────────────────────────────────────
-
--- 24 peers is enough for a clean ranked distribution without flooding the college.
-\set peer_count 24
-
--- Resolve the target college into a temp table FIRST. psql does not interpolate
--- :'variables' inside $$-quoted bodies, so the guard cannot read the email
--- directly — it reads this table instead.
-create temporary table _seed_target on commit drop as
-select p.college_id
-from public.student_profile p
-join public.app_user u on u.id = p.user_id
-where lower(u.email) = lower(:'target_email')
-limit 1;
-
--- Pre-flight, checked BEFORE any write and against the target itself rather than a
--- row count: an earlier version counted existing mock_seed rows afterwards, so a
--- mistyped email silently "passed" whenever a previous seed was still in place.
-do $$
-declare v_college uuid;
-begin
-  select college_id into v_college from _seed_target;
-
-  if v_college is null then
-    raise exception
-      'No college found for that email. Either it has no student_profile, or the profile has no college_id set.';
-  end if;
-
-  if not exists (select 1 from public.ref_skill) then
-    raise notice 'ref_skill is empty — peers will have no skills and the Skills card stays empty.';
-  end if;
-
-  raise notice 'Target college %, seeding into it.', v_college;
-end $$;
-
-with target as (
-  select college_id from _seed_target
+-- STEP 1 — seed. Edit target_email on the first line of the `config` CTE.
+-- ─────────────────────────────────────────────────────────────────────────────
+with config as (
+  select
+    'CHANGE_ME@example.com'::text as target_email,   -- <- the only thing to edit
+    24::int                       as peer_count
+),
+-- The college of that student. Resolving to no row is the safety mechanism: the
+-- INSERT then cross-joins an empty set and writes nothing.
+target as (
+  select p.college_id
+  from public.student_profile p
+  join public.app_user u on u.id = p.user_id
+  cross join config c
+  where lower(u.email) = lower(c.target_email)
+    and p.college_id is not null
+  limit 1
 ),
 -- Ranked reference data, so the seed uses this database's real slugs and ids
--- rather than hardcoded UUIDs that would differ per project.
+-- rather than hardcoded UUIDs that would differ between projects.
 skills as (
   select slug, row_number() over (order by sort_order, slug) as rn
   from public.ref_skill
 ),
 goals as (
-  select id, row_number() over (order by sort_order, label) as rn,
-         count(*) over () as total
+  select id, row_number() over (order by sort_order, label) as rn
   from public.ref_career_goal
 ),
 cats as (
@@ -107,7 +81,7 @@ cats as (
   from public.ref_skill_assessment_category
 ),
 peers as (
-  select i from generate_series(1, :peer_count) as g(i)
+  select i from config c, generate_series(1, c.peer_count) as g(i)
 )
 insert into public.student_intake
   (email, full_name, college_id, status, source,
@@ -115,26 +89,26 @@ insert into public.student_intake
 select
   format('mock-peer-%s@mock.invalid', lpad(p.i::text, 2, '0')),
   format('Mock Peer %s', lpad(p.i::text, 2, '0')),
-  (select college_id from target),
+  t.college_id,
   'pending',
   'mock_seed',
   -- Descending staircase: skill #1 is held by every peer, #2 by two fewer, and so
   -- on. Produces the ranked shape the bars are meant to show, deterministically.
   coalesce((
     select array_agg(s.slug order by s.rn)
-    from skills s
-    where p.i <= greatest(1, :peer_count - (s.rn - 1) * 2)
+    from skills s, config c
+    where p.i <= greatest(1, c.peer_count - (s.rn - 1) * 2)
   ), '{}'),
   -- "All goals" needs its OWN uneven shape, not the same count for every goal:
   -- picking two neighbours by modulo gave 10/10/10/9/9, which is the flat donut
   -- this seed exists to avoid. Staircase again, wider steps than skills.
   coalesce((
     select array_agg(g.id order by g.rn)
-    from goals g
-    where p.i <= greatest(2, :peer_count - (g.rn - 1) * 4)
+    from goals g, config c
+    where p.i <= greatest(2, c.peer_count - (g.rn - 1) * 4)
   ), '{}'),
+  -- uneven split so the primary-goal donut has a dominant slice
   (select g.id from goals g
-    -- uneven split so the donut has a dominant slice rather than equal thirds
     where g.rn = case
                    when p.i <= 9  then 1
                    when p.i <= 15 then 2
@@ -143,44 +117,55 @@ select
                    else 5
                  end
     limit 1),
-  -- 1–5 self-assessment. The jitter must be centred on a DIFFERENT base per axis:
+  -- 1-5 self-assessment. The jitter must be centred on a DIFFERENT base per axis:
   -- a uniform 2 + ((i + rn) % 4) averaged to exactly 3.50 on every axis over 24
   -- peers, i.e. a perfectly regular hexagon with nothing to compare against.
-  -- Base cycles 3/4/2 by axis, jitter ±1 by peer, clamped to the 1–5 scale.
+  -- Base cycles 3/4/2 by axis, jitter +/-1 by peer, clamped to the 1-5 scale.
   coalesce((
     select jsonb_object_agg(
-      c.slug,
-      least(5, greatest(1, (2 + (c.rn % 3)) + ((p.i + c.rn) % 3) - 1))
+      c2.slug,
+      least(5, greatest(1, (2 + (c2.rn % 3)) + ((p.i + c2.rn) % 3) - 1))
     )
-    from cats c
+    from cats c2
   ), '{}'::jsonb)
 from peers p
-where (select college_id from target) is not null
+cross join target t                 -- no target row => nothing inserted
 on conflict (lower(email)) do nothing;
 
-do $$
-declare n int;
-begin
-  select count(*) into n from public.student_intake where source = 'mock_seed';
-  raise notice '% mock peers now present (re-running this script is a no-op).', n;
-end $$;
 
-commit;
+-- ─────────────────────────────────────────────────────────────────────────────
+-- STEP 2 — did it work? Run this next.
+-- ─────────────────────────────────────────────────────────────────────────────
+select
+  case
+    when count(*) = 0
+      then 'NOTHING SEEDED - target_email matched no student_profile, or that profile has no college_id.'
+    else count(*) || ' mock peers present. Re-running step 1 is a no-op.'
+  end as result
+from public.student_intake
+where source = 'mock_seed';
+
+
+-- ─────────────────────────────────────────────────────────────────────────────
+-- STEP 3 (optional) — see what the charts will now aggregate
+-- ─────────────────────────────────────────────────────────────────────────────
+-- select s.label, count(*) as students
+-- from public.student_intake i, unnest(i.skills) sk
+-- join public.ref_skill s on s.slug = sk
+-- where i.source = 'mock_seed'
+-- group by s.label, s.sort_order
+-- order by students desc, s.sort_order;
+
 
 -- ============================================================================
--- TEARDOWN (run this to remove every trace)
+-- TEARDOWN — removes every trace
 --   delete from public.student_intake where source = 'mock_seed';
 --
--- VERIFY what the charts will now aggregate
---   select unnest(skills) as skill, count(*)
---   from public.student_intake where source = 'mock_seed'
---   group by 1 order by 2 desc;
---
 -- THE #73 PERFORMANCE CHARTS ARE NOT COVERED BY THIS SCRIPT
---   They read chapter_quiz_attempt via student_mastery_grid / student_subject_scores
---   / student_study_plan, which only exist once migrations 154 and 155 are applied.
---   Preview gets those on merge to main (migrate-preview.yml). Seeding attempts
---   also means writing rows that look like real submitted assessments for a real
---   student, which is a heavier decision than adding intake peers — worth doing as
---   a separate, explicit step.
+--   They read chapter_quiz_attempt via student_mastery_grid /
+--   student_subject_scores / student_study_plan, which only exist once migrations
+--   154 and 155 are applied. Preview gets those on merge to main
+--   (migrate-preview.yml). Seeding attempts also means writing rows that look
+--   like real submitted assessments for a real student — a heavier decision than
+--   adding intake peers, and worth doing as a separate explicit step.
 -- ============================================================================
