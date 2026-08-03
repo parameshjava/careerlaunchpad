@@ -1,7 +1,8 @@
 // A student's own chapter-quiz attempt.
 //
 //   GET   -> { questions: [{ position, questionId, stem, stemImageUrl, answerType,
-//                            options:[{id,label}], selected:[optionId] }] }
+//                            source, sourceYear, options:[{id,label}],
+//                            selected:[optionId] }] }
 //   PATCH  body { answers: [{ position, option_ids:[uuid] }] } -> { ok }
 //
 // get_chapter_quiz_attempt returns a flat row-per-option shape (no is_correct);
@@ -17,6 +18,8 @@ type Row = {
   stem: string;
   stem_image_url: string | null;
   answer_type: "single" | "multi";
+  source: string | null;
+  source_year: number | null;
   option_id: string;
   option_label: string;
   option_position: number;
@@ -47,6 +50,8 @@ export async function GET(_req: NextRequest, { params }: { params: Promise<{ att
       stem: string;
       stemImageUrl: string | null;
       answerType: "single" | "multi";
+      source: string | null;
+      sourceYear: number | null;
       options: { id: string; label: string }[];
       selected: string[];
     }
@@ -60,6 +65,9 @@ export async function GET(_req: NextRequest, { params }: { params: Promise<{ att
         stem: r.stem,
         stemImageUrl: r.stem_image_url ?? null,
         answerType: r.answer_type,
+        // Past paper the question came from (#87) — shown to the student in the runner.
+        source: r.source ?? null,
+        sourceYear: r.source_year ?? null,
         options: [],
         selected: [],
       };

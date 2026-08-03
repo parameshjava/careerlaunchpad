@@ -7,8 +7,16 @@
 // tab-switch guard itself. Layout: a wide question column + a sticky right-side
 // number palette (answered / marked / seen / not-visited), section accordions for
 // multi-section papers, and a submit-confirm dialog. Built to docs/STYLE_GUIDE.md.
-import { useEffect, useRef } from "react";
-import { Check, CheckCircle2, ChevronDown, Eraser, Flag, TriangleAlert } from "lucide-react";
+import { useEffect, useMemo, useRef } from "react";
+import {
+  Check,
+  CheckCircle2,
+  ChevronDown,
+  Eraser,
+  FileText,
+  Flag,
+  TriangleAlert,
+} from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import {
@@ -20,6 +28,11 @@ import {
   DialogTitle,
 } from "@/components/ui/dialog";
 import { RichContent } from "@/components/exam/RichContent";
+import {
+  describeSourceSummary,
+  formatQuestionSource,
+  summarizeQuestionSources,
+} from "@/lib/question-source";
 
 export type AttemptQuestion = {
   position: number;
@@ -32,6 +45,9 @@ export type AttemptQuestion = {
   stemImageUrl?: string | null;
   passage?: { title: string | null; body: string } | null;
   options: { id: string; label: string }[];
+  /** Past paper this question was asked in (issue #87); null for hand-authored ones. */
+  source?: string | null;
+  sourceYear?: number | null;
 };
 
 export function AttemptView({
@@ -87,6 +103,14 @@ export function AttemptView({
     currentCellRef.current?.scrollIntoView({ block: "nearest", behavior: "smooth" });
   }, [index]);
 
+  // Paper-level provenance (#87): how much of this paper came from real past
+  // papers. Derived from the questions already in hand — no extra prop to thread
+  // through, so every caller of AttemptView gets it for free, and it stays hidden
+  // when the bank carries no sources (an unsourced paper looks as it always did).
+  // Memoised above the early return below: the countdown re-renders this view once
+  // a second, and the whole paper would otherwise be re-scanned each tick.
+  const provenance = useMemo(() => summarizeQuestionSources(questions), [questions]);
+
   const q = questions[index];
   if (!q) return null;
   const answered = (qid: string) => (answers[qid]?.length ?? 0) > 0;
@@ -113,6 +137,8 @@ export function AttemptView({
   });
   const multiSection = bands.length > 1;
   const currentSubject = bands.find((b) => b.items.some((it) => it.i === index))?.label ?? null;
+  const provenanceDetail = describeSourceSummary(provenance);
+  const questionSource = formatQuestionSource(q.source, q.sourceYear);
 
   return (
     <div>
@@ -134,6 +160,23 @@ export function AttemptView({
       </div>
 
       {notice}
+
+      {/* Past-paper provenance for the whole paper — the confidence signal (#87):
+          these are the questions that were actually asked, not look-alikes. */}
+      {provenance.sourced > 0 && (
+        <div className="mb-4 flex items-start gap-2 rounded-md border border-emerald-300 bg-emerald-50 px-3 py-2 text-xs text-emerald-900 dark:border-emerald-900/60 dark:bg-emerald-950/40 dark:text-emerald-200">
+          <FileText className="mt-0.5 size-4 shrink-0" />
+          <span className="min-w-0">
+            <strong className="tabular-nums">
+              {provenance.sourced} of {provenance.total}
+            </strong>
+            {provenance.sourced === 1
+              ? " question in this paper is from a real past exam paper"
+              : " questions in this paper are from real past exam papers"}
+            {provenanceDetail && <> — {provenanceDetail}</>}.
+          </span>
+        </div>
+      )}
 
       <div className="lg:grid lg:grid-cols-[minmax(0,1fr)_20rem] lg:items-start lg:gap-6">
         {/* Main column — question + actions + navigation. */}
@@ -183,6 +226,16 @@ export function AttemptView({
               </div>
               {q.answerType === "multi" && (
                 <p className="text-muted-foreground text-xs">More than one answer may be correct.</p>
+              )}
+              {/* This question's own paper (#87). Sits under the options so it
+                  reads as a footnote, not as part of the question. */}
+              {questionSource && (
+                <p className="text-muted-foreground flex items-start gap-1.5 text-xs">
+                  <FileText className="mt-px size-3.5 shrink-0" />
+                  <span className="min-w-0">
+                    Asked in <span className="text-foreground font-medium">{questionSource}</span>
+                  </span>
+                </p>
               )}
             </CardContent>
           </Card>

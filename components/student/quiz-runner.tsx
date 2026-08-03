@@ -20,6 +20,8 @@ type ApiQuestion = {
   stem: string;
   stemImageUrl: string | null;
   answerType: "single" | "multi";
+  source: string | null;
+  sourceYear: number | null;
   options: { id: string; label: string }[];
   selected: string[];
 };
@@ -125,6 +127,8 @@ export function QuizRunner({ attemptId }: { attemptId: string }) {
           answerType: q.answerType,
           stem: q.stem,
           stemImageUrl: q.stemImageUrl,
+          source: q.source ?? null,
+          sourceYear: q.sourceYear ?? null,
           passage: null,
           options: q.options,
         }));

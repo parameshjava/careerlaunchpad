@@ -25,6 +25,11 @@ import {
   examPercentage,
   examVerdict,
 } from "@/lib/exam-grading";
+import {
+  describeSourceSummary,
+  formatQuestionSource,
+  summarizeQuestionSources,
+} from "@/lib/question-source";
 import type { SessionPrintMeta } from "../paper-print";
 
 type ResultOption = { id: string; label: string; is_correct: boolean };
@@ -35,6 +40,9 @@ type ResultQuestion = {
   awarded_marks: number | null;
   max_marks: number | null;
   subject: string | null;
+  // Past paper the question was asked in (#87); null for hand-authored questions.
+  source: string | null;
+  source_year: number | null;
   selected_option_ids: string[];
   options: ResultOption[];
 };
@@ -117,6 +125,13 @@ export function StudentResult({
   const passed = examPassed(percentage);
   const resultLabel = examVerdict(percentage);
 
+  // Past-paper provenance (#87): stated once on the statement of marks, then per
+  // question in the answer key so a student can go back to the original paper.
+  const provenance = summarizeQuestionSources(
+    result.questions.map((q) => ({ source: q.source, sourceYear: q.source_year })),
+  );
+  const provenanceDetail = describeSourceSummary(provenance);
+
   // Group by section subject (questions arrive in position order and sections
   // are contiguous, so a Map keyed by subject keeps paper order).
   const sections = new Map<string, ResultQuestion[]>();
@@ -171,6 +186,15 @@ export function StudentResult({
             <InfoCell label="Total Questions" value={String(result.questions.length)} />
             <InfoCell label="Duration" value={meta ? `${meta.duration_minutes} minutes` : "—"} />
           </tr>
+          {provenance.sourced > 0 && (
+            <tr>
+              <InfoCell
+                label="Past-paper Questions"
+                value={`${provenance.sourced} of ${provenance.total}`}
+              />
+              <InfoCell label="Papers" value={provenanceDetail ?? "—"} />
+            </tr>
+          )}
         </InfoTable>
 
         {/* Result summary band */}
@@ -287,6 +311,7 @@ export function StudentResult({
           <ol className="grid gap-4">
             {qs.map((q) => {
           const got = (q.awarded_marks ?? 0) > 0;
+          const askedIn = formatQuestionSource(q.source, q.source_year);
           return (
             <li key={q.position} className="break-inside-avoid">
               {/* Fixed print colours (no shadcn Card / theme tokens): this renders
@@ -296,6 +321,13 @@ export function StudentResult({
                   <div className="font-medium text-gray-900">
                     <span className="mr-1">{q.position + 1}.</span>
                     <RichContent content={q.stem} inline />
+                    {/* Where the question was originally asked (#87) — the cue for
+                        revising straight from the source paper. */}
+                    {askedIn && (
+                      <span className="mt-1 block text-xs font-normal text-gray-600">
+                        Asked in {askedIn}
+                      </span>
+                    )}
                   </div>
                   <span className={`shrink-0 text-xs font-semibold ${got ? "text-emerald-700" : "text-rose-700"}`}>
                     {got ? "Correct" : "Incorrect"}
