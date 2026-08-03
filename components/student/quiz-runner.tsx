@@ -27,6 +27,13 @@ type ApiQuestion = {
 };
 type Result = { score: number; total_marks: number; passed: boolean; pass_pct: number };
 
+// A 400 from save/submit that means the attempt is finished, not that the request
+// was malformed. Once this happens there is nothing to retry: the server will
+// refuse every further write, so the runner stops saving and says so.
+function isClosedAttempt(message: string): boolean {
+  return /not editable|already submitted|not found/i.test(message);
+}
+
 export function QuizRunner({ attemptId }: { attemptId: string }) {
   const [questions, setQuestions] = useState<AttemptQuestion[] | null>(null);
   const [deadline, setDeadline] = useState<number | null>(null);
@@ -34,30 +41,58 @@ export function QuizRunner({ attemptId }: { attemptId: string }) {
   const [result, setResult] = useState<Result | null>(null);
   const [autoReason, setAutoReason] = useState("");
   const [error, setError] = useState("");
+  // Set when the attempt turns out to be over — either the GET said so (a stale
+  // tab reopened after an auto-submit) or a save/submit was refused.
+  const [closed, setClosed] = useState(false);
 
   const saveTimer = useRef<ReturnType<typeof setTimeout> | null>(null);
   const doneRef = useRef(false);
+  const closedRef = useRef(false);
   const answersRef = useRef<Record<string, string[]>>({});
   const posByQid = useRef<Record<string, number>>({});
 
   const url = `/api/student/quiz-attempts/${attemptId}`;
 
+  // Stop every write path and tell the student, instead of answering into an
+  // attempt the server has closed (each keystroke used to fire a silent 400).
+  const markClosed = useCallback(() => {
+    closedRef.current = true;
+    doneRef.current = true;
+    if (saveTimer.current) clearTimeout(saveTimer.current);
+    setClosed(true);
+  }, []);
+
   // Persist the whole answer set (debounced). The assessment saves all answers in
   // one PATCH rather than per-question, keyed by position.
   const persist = useCallback(
-    (next: Record<string, string[]>) => {
-      fetch(url, {
-        method: "PATCH",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({
-          answers: Object.entries(next).map(([qid, option_ids]) => ({
-            position: posByQid.current[qid],
-            option_ids,
-          })),
-        }),
-      }).catch(() => {});
+    async (next: Record<string, string[]>) => {
+      if (closedRef.current) return;
+      try {
+        const res = await fetch(url, {
+          method: "PATCH",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify({
+            answers: Object.entries(next).map(([qid, option_ids]) => ({
+              position: posByQid.current[qid],
+              option_ids,
+            })),
+          }),
+        });
+        if (res.ok) {
+          setError("");
+          return;
+        }
+        const json = await res.json().catch(() => ({}));
+        const message = (json.error as string) ?? "Could not save your answer";
+        // A transient failure keeps the answer in state and re-sends on the next
+        // change or at submit; a closed attempt is terminal.
+        if (isClosedAttempt(message)) markClosed();
+        else setError(`${message} — your last answer may not be saved.`);
+      } catch {
+        setError("You appear to be offline — your last answer may not be saved.");
+      }
     },
-    [url],
+    [url, markClosed],
   );
 
   // Submit: flush answers, grade, and show the result. Guarded so the timeout, the
@@ -86,13 +121,21 @@ export function QuizRunner({ attemptId }: { attemptId: string }) {
         if (!res.ok) throw new Error(json.error ?? "Could not submit");
         setResult(json as Result);
       } catch (e) {
-        setError((e as Error).message);
-        doneRef.current = false;
+        const message = (e as Error).message;
+        // Already submitted (a second tab, or a tab-switch auto-submit that beat
+        // this one) is not a retryable failure — leaving doneRef false let every
+        // further tap fire another doomed POST.
+        if (isClosedAttempt(message)) {
+          markClosed();
+        } else {
+          setError(message);
+          doneRef.current = false;
+        }
       } finally {
         setSubmitting(false);
       }
     },
-    [url],
+    [url, markClosed],
   );
 
   const engine = useQuizEngine({
@@ -116,6 +159,18 @@ export function QuizRunner({ attemptId }: { attemptId: string }) {
         if (cancelled) return;
         if (d.error) {
           setError(d.error);
+          return;
+        }
+        // Finished attempt (e.g. a tab left open after an auto-submit): show the
+        // result it already has rather than a paper no answer can be saved to.
+        if (d.closed) {
+          markClosed();
+          setResult({
+            score: d.score ?? 0,
+            total_marks: d.totalMarks ?? 0,
+            passed: !!d.passed,
+            pass_pct: d.passPct ?? 40,
+          });
           return;
         }
         const api = (d.questions ?? []) as ApiQuestion[];
@@ -147,7 +202,7 @@ export function QuizRunner({ attemptId }: { attemptId: string }) {
     return () => {
       cancelled = true;
     };
-  }, [url, hydrate]);
+  }, [url, hydrate, markClosed]);
 
   if (error && !questions)
     return (
@@ -160,23 +215,25 @@ export function QuizRunner({ attemptId }: { attemptId: string }) {
         </Button>
       </div>
     );
-  if (questions === null)
-    return (
-      <p className="text-muted-foreground mx-auto flex max-w-2xl items-center gap-2 px-4 py-8 text-sm">
-        <Loader2 className="size-4 animate-spin" /> Loading…
-      </p>
-    );
-
+  // The result branch comes BEFORE the loading branch: a closed attempt resolves
+  // to a result with no questions ever loaded, and would otherwise spin forever.
   if (result) {
     const pct = result.total_marks > 0 ? Math.round((100 * result.score) / result.total_marks) : 0;
     return (
       <div className="mx-auto max-w-2xl space-y-6 px-4 py-8">
-        {autoReason && (
+        {autoReason ? (
           <p className="rounded-md border border-amber-300 bg-amber-50 px-3 py-2 text-sm text-amber-900 dark:border-amber-900/60 dark:bg-amber-950/40 dark:text-amber-200">
             {autoReason === "time"
               ? "Time's up — your assessment was submitted automatically."
               : "You left the assessment after a warning — it was submitted automatically."}
           </p>
+        ) : (
+          closed && (
+            <p className="rounded-md border border-amber-300 bg-amber-50 px-3 py-2 text-sm text-amber-900 dark:border-amber-900/60 dark:bg-amber-950/40 dark:text-amber-200">
+              This assessment was already submitted, so it can&apos;t be answered again. Here is the
+              score it was graded with.
+            </p>
+          )
         )}
         <div className="bg-card rounded-2xl border p-6 text-center shadow-sm">
           <p className="text-muted-foreground text-xs font-semibold tracking-widest uppercase">
@@ -206,12 +263,43 @@ export function QuizRunner({ attemptId }: { attemptId: string }) {
     );
   }
 
+  // Closed mid-attempt (a save or submit was refused) and we never learned the
+  // marks — send the student to the hub, which lists the graded attempt.
+  if (closed)
+    return (
+      <div className="mx-auto max-w-2xl space-y-4 px-4 py-8">
+        <p className="rounded-md border border-amber-300 bg-amber-50 px-3 py-2 text-sm text-amber-900 dark:border-amber-900/60 dark:bg-amber-950/40 dark:text-amber-200">
+          This assessment has already been submitted — most likely in another tab, or
+          automatically because the window was left. Nothing you answer here can be saved. Your
+          score is on the assessments page.
+        </p>
+        <Button variant="outline" asChild>
+          <Link href="/student/quizzes">Back to assessments</Link>
+        </Button>
+      </div>
+    );
+
+  if (questions === null)
+    return (
+      <p className="text-muted-foreground mx-auto flex max-w-2xl items-center gap-2 px-4 py-8 text-sm">
+        <Loader2 className="size-4 animate-spin" /> Loading…
+      </p>
+    );
+
   return (
     <div
       className="mx-auto max-w-6xl px-4 py-4 select-none sm:px-6"
       onCopy={(e) => e.preventDefault()}
       onContextMenu={(e) => e.preventDefault()}
     >
+      {/* Save / submit failures during the paper. Previously invisible: `error` was
+          only rendered on the load-failure screen, so a student answering into a
+          closed attempt saw nothing at all. */}
+      {error && (
+        <p className="text-destructive bg-destructive/10 border-destructive/20 mb-3 rounded-md border px-3 py-2 text-sm">
+          {error}
+        </p>
+      )}
       <AttemptView
         questions={questions}
         index={engine.index}

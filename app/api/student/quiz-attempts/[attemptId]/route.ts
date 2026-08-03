@@ -1,12 +1,22 @@
 // A student's own chapter-quiz attempt.
 //
-//   GET   -> { questions: [{ position, questionId, stem, stemImageUrl, answerType,
-//                            source, sourceYear, options:[{id,label}],
-//                            selected:[optionId] }] }
+//   GET   -> live:   { questions: [{ position, questionId, stem, stemImageUrl,
+//                                    answerType, source, sourceYear,
+//                                    options:[{id,label}], selected:[optionId] }],
+//                      startedAt, durationMinutes }
+//          -> closed: { closed: true, status, score, totalMarks, passed, passPct }
 //   PATCH  body { answers: [{ position, option_ids:[uuid] }] } -> { ok }
 //
 // get_chapter_quiz_attempt returns a flat row-per-option shape (no is_correct);
 // group it into questions here. Both RPCs enforce attempt ownership (auth.uid()).
+//
+// WHY THE `closed` BRANCH EXISTS
+//   The RPC hands back an attempt's questions whatever its status, so a submitted
+//   attempt used to hydrate as a perfectly normal live paper — the student answered
+//   into it while every PATCH came back 400 ('Attempt not found or not editable')
+//   and the runner swallowed the failure. An attempt that is no longer in_progress
+//   is now reported as closed, with its final marks, so the runner shows the result
+//   instead of a paper it cannot save.
 import { NextResponse, type NextRequest } from "next/server";
 import { getAuthContext, can } from "@/lib/auth";
 import { isStudentApproved } from "@/lib/student-approval";
@@ -38,6 +48,40 @@ export async function GET(_req: NextRequest, { params }: { params: Promise<{ att
   if (!(await gate())) return NextResponse.json({ error: "Forbidden" }, { status: 403 });
   const { attemptId } = await params;
   const supabase = await createClient();
+
+  // The attempt row first (self-readable via RLS), so a finished attempt is never
+  // dressed up as a live paper. Its config comes along for the timer / pass mark.
+  const { data: att } = await supabase
+    .from("chapter_quiz_attempt")
+    .select("started_at, chapter_id, status, score, total_marks, passed")
+    .eq("id", attemptId)
+    .maybeSingle();
+  if (!att) return NextResponse.json({ error: "Attempt not found" }, { status: 404 });
+
+  let durationMinutes = 30;
+  let passPct = 40;
+  if (att.chapter_id) {
+    const { data: cfg } = await supabase
+      .from("chapter_quiz")
+      .select("duration_minutes, pass_pct")
+      .eq("chapter_id", att.chapter_id)
+      .eq("status", "active")
+      .maybeSingle();
+    durationMinutes = (cfg?.duration_minutes as number | null) ?? 30;
+    passPct = (cfg?.pass_pct as number | null) ?? 40;
+  }
+
+  if (att.status !== "in_progress") {
+    return NextResponse.json({
+      closed: true,
+      status: att.status,
+      score: Number(att.score ?? 0),
+      totalMarks: Number(att.total_marks ?? 0),
+      passed: !!att.passed,
+      passPct,
+    });
+  }
+
   const { data, error } = await supabase.rpc("get_chapter_quiz_attempt", { p_attempt_id: attemptId });
   if (error) return NextResponse.json({ error: error.message }, { status: 500 });
 
@@ -80,26 +124,11 @@ export async function GET(_req: NextRequest, { params }: { params: Promise<{ att
   if (questions.length === 0)
     return NextResponse.json({ error: "Attempt not found" }, { status: 404 });
 
-  // The attempt's start time + the chapter's time limit drive the runner's timer.
-  // chapter_quiz_attempt is self-readable (RLS); duration defaults to 30 min.
-  const { data: att } = await supabase
-    .from("chapter_quiz_attempt")
-    .select("started_at, chapter_id")
-    .eq("id", attemptId)
-    .maybeSingle();
-  let durationMinutes = 30;
-  if (att?.chapter_id) {
-    const { data: cfg } = await supabase
-      .from("chapter_quiz")
-      .select("duration_minutes")
-      .eq("chapter_id", att.chapter_id)
-      .eq("status", "active")
-      .maybeSingle();
-    durationMinutes = (cfg?.duration_minutes as number | null) ?? 30;
-  }
+  // The attempt's start time + the chapter's time limit drive the runner's timer
+  // (both resolved above, before the status check).
   return NextResponse.json({
     questions,
-    startedAt: att?.started_at ?? null,
+    startedAt: att.started_at ?? null,
     durationMinutes,
   });
 }
