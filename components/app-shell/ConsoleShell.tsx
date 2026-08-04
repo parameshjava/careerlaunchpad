@@ -24,6 +24,7 @@ import {
   ClipboardList,
   GraduationCap,
   Handshake,
+  Layers,
   LayoutDashboard,
   Mail,
   Menu,
@@ -52,6 +53,9 @@ const ICONS: Record<NavIcon, React.ComponentType<{ className?: string }>> = {
   exams: ClipboardList,
   college: Building2,
   courses: BookOpen,
+  // "My batches" sits next to "Courses" in the student nav, so it needs its own
+  // glyph — the same BookOpen twice reads as a duplicated item.
+  batches: Layers,
   fees: Wallet,
   calendar: CalendarDays,
 };

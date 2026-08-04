@@ -135,8 +135,19 @@ export function QuizzesHub() {
       )}
       {withQuizzes.map((b) => (
         <Card key={b.batchId}>
-          <CardHeader>
-            <CardTitle className="text-base">{b.batchName}</CardTitle>
+          {/* The batch has to be unmistakable, not just a heading: a student in two
+              batches sees the same chapter names under both, so an eyebrow labels
+              what the grouping IS, and the count says how much is under it. */}
+          <CardHeader className="gap-1">
+            <p className="text-muted-foreground text-xs font-bold tracking-wider uppercase">
+              Batch
+            </p>
+            <CardTitle className="text-base break-words">
+              {b.batchName}
+              <span className="text-muted-foreground ml-2 text-xs font-normal">
+                {b.quizzes.length} available
+              </span>
+            </CardTitle>
           </CardHeader>
           <CardContent>
             <ul className="divide-y rounded-md border">

@@ -19,6 +19,7 @@ export type NavIcon =
   | "exams"
   | "college"
   | "courses"
+  | "batches"
   | "fees"
   | "calendar";
 
@@ -178,6 +179,9 @@ export function buildNav(ctx: AuthContext, opts: { studentApproved?: boolean } =
   if (ctx.roles.includes("student")) {
     const items: NavItem[] = [
       { label: "My profile", href: "/student/register", icon: "profile" },
+      // "My batches" = what you're already in; "Courses" = what you can still join.
+      // Adjacent on purpose, since students conflate the two.
+      { label: "My batches", href: "/student/batches", icon: "batches" },
       { label: "My insights", href: "/student/insights", icon: "analytics" },
       { label: "Courses", href: "/student/courses", icon: "courses" },
       { label: "My fees", href: "/student/fees", icon: "fees" },

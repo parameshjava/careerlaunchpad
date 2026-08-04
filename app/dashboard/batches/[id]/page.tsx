@@ -48,6 +48,10 @@ export default async function EditBatchPage({ params }: { params: Promise<{ id: 
       name={batch.name}
       status={status}
       showProgress={ctx.permissions.has("*") || can(ctx, "batch.progress.manage")}
+      // Feedback identity and the action list are separate grants (#84): a reader
+      // who may see who said what is not automatically an owner of the follow-up.
+      showFeedback={ctx.permissions.has("*") || can(ctx, "feedback.view.identified")}
+      showActions={ctx.permissions.has("*") || can(ctx, "feedback.action.manage")}
       facts={{
         courseName: batch.courseName,
         academicYear: batch.academicYear,
