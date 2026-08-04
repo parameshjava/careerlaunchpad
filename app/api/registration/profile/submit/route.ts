@@ -3,14 +3,15 @@
  * registration_status -> 'submitted'. On failure returns the missing fields so
  * the form can jump the user back to the right step. See §4 of the spec.
  */
-import { NextResponse } from "next/server";
+import { NextResponse, type NextRequest } from "next/server";
 import { createClient } from "@/lib/supabase/server";
 import { REQUIRED_FIELDS } from "@/lib/registration";
 import { sendStudentSubmittedEmail, sendRegistrationPendingEmail } from "@/lib/mailer";
+import { recordRegistrationActivity } from "@/lib/request-audit";
 
 const SITE_URL = process.env.NEXT_PUBLIC_SITE_URL ?? "http://localhost:3000";
 
-export async function POST() {
+export async function POST(req: NextRequest) {
   const supabase = await createClient();
   const { data: { user } } = await supabase.auth.getUser();
   if (!user) return NextResponse.json({ error: "Not authenticated" }, { status: 401 });
@@ -49,6 +50,11 @@ export async function POST() {
     .eq("user_id", user.id);
 
   if (upErr) return NextResponse.json({ ok: false, error: upErr.message }, { status: 500 });
+
+  // Audit (issue #83): bumps the revision counter and appends the timeline row
+  // (IP, user agent, real actor). Runs before the review/email side effects so a
+  // failure in those still leaves the submit recorded.
+  await recordRegistrationActivity(supabase, req, user.id, "submit");
 
   // Re-submitting is the student's response to the reviewer: resolves all their
   // open remarks, and — if they were sent back (changes_requested) — flips them

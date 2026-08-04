@@ -11,9 +11,10 @@ import { NextResponse, type NextRequest } from "next/server";
 import { createClient } from "@/lib/supabase/server";
 import { requirePermission } from "@/lib/auth";
 import { REQUIRED_FIELDS } from "@/lib/registration";
+import { recordRegistrationActivity } from "@/lib/request-audit";
 
 export async function POST(
-  _req: NextRequest,
+  req: NextRequest,
   { params }: { params: Promise<{ id: string }> },
 ) {
   try {
@@ -56,5 +57,10 @@ export async function POST(
     .eq("user_id", id);
 
   if (upErr) return NextResponse.json({ ok: false, error: upErr.message }, { status: 500 });
+
+  // Audit (issue #83): a staff-completed registration counts as a revision like
+  // any other, attributed to the staff member who submitted it.
+  await recordRegistrationActivity(supabase, req, id, "submit");
+
   return NextResponse.json({ ok: true, registration_status: "submitted" });
 }

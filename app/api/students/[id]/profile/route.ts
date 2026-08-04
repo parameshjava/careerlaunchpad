@@ -14,6 +14,7 @@ import { NextResponse, type NextRequest } from "next/server";
 import { createClient } from "@/lib/supabase/server";
 import { requirePermission } from "@/lib/auth";
 import { STEP_FIELDS, PROFILE_SELECT, validatePartial } from "@/lib/registration";
+import { recordRegistrationActivity } from "@/lib/request-audit";
 
 const PERM = "student.profile.manage";
 
@@ -106,6 +107,10 @@ export async function PATCH(
 
   if (upErr) return NextResponse.json({ ok: false, error: upErr.message }, { status: 500 });
   if (!updated) return NextResponse.json({ ok: false, error: "Could not save profile" }, { status: 500 });
+
+  // Audit (issue #83) — same call as the student's own route, so a staff edit is
+  // recorded identically and `updated_by` shows the staff member, not the student.
+  await recordRegistrationActivity(supabase, req, id, "save");
 
   const { registration_status, last_completed_step, ...profile } = updated as unknown as Record<string, unknown>;
   return NextResponse.json({ ok: true, registration_status, last_completed_step, profile });

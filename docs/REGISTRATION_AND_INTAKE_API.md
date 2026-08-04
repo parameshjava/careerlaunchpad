@@ -56,6 +56,8 @@ alter table public.student_profile
 
 `last_completed_step` is the highest step the student has saved; the form opens at `last_completed_step + 1`. `registration_status` flips to `submitted` only when the final submit passes validation. Imported profiles start with whatever steps the Excel populated (see merge, §2c).
 
+**Audit columns (migration 160, issue #83).** `registration_started_at`, `registration_completed_at`, `registration_reopened_at`, `created_by`, `created_via`, `updated_by`, `last_ip`, `revision` — plus the `student_registration_event` timeline. They are **stamped by triggers, not by routes**, and pinned against untrusted writes, so nothing in this document needs to set them; the two API-visible additions are that all four registration routes call `record_registration_activity()` (for the IP and the revision bump) and that `updated_at`/`updated_by` are now maintained for you. Note `registration_submitted_at` above still means the *latest* submit, while `registration_completed_at` is the *first* one. Full design: `docs/STUDENT_REGISTRATION_AUDIT.md`.
+
 ### 2b. `student_intake` — staging for imported students (new migration 011)
 
 One row per imported student, keyed by `email`. **Every field is nullable** — partial rows are allowed (only `email` is required as the reconciliation key). Columns mirror the registration model exactly:
