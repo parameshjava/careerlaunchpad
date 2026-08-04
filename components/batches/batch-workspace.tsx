@@ -7,9 +7,18 @@
 // time. Each panel reuses its existing component in `embedded` mode; Radix only
 // mounts the active tab, and the section GETs are cached (lib/fetch-cache), so
 // switching tabs is lazy on first open and instant thereafter.
-import { useEffect, useState } from "react";
+import { useCallback, useEffect, useState } from "react";
 import Link from "next/link";
-import { ArrowLeft, BookOpen, CalendarDays, GraduationCap, ListChecks, Settings2 } from "lucide-react";
+import {
+  ArrowLeft,
+  BookOpen,
+  CalendarDays,
+  GraduationCap,
+  ListChecks,
+  ListTodo,
+  MessageSquareQuote,
+  Settings2,
+} from "lucide-react";
 
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
@@ -21,8 +30,18 @@ import { BatchSubjectsEditor } from "@/components/batches/batch-subjects-editor"
 import { BatchSchedule } from "@/components/batches/batch-schedule";
 import { BatchRosterLazy } from "@/components/batches/batch-roster-lazy";
 import { BatchProgressEditor } from "@/components/batches/batch-progress-editor";
+import { BatchFeedback } from "@/components/batches/batch-feedback";
+import { BatchActions, type ActionSeed } from "@/components/batches/batch-actions";
 
-const TABS = ["details", "subjects", "schedule", "students", "progress"] as const;
+const TABS = [
+  "details",
+  "subjects",
+  "schedule",
+  "students",
+  "progress",
+  "feedback",
+  "actions",
+] as const;
 type TabKey = (typeof TABS)[number];
 const ACTIVE = new Set<BatchStatus>(["open", "running"]);
 
@@ -40,6 +59,8 @@ export function BatchWorkspace({
   status,
   facts,
   showProgress = false,
+  showFeedback = false,
+  showActions = false,
 }: {
   batchId: string;
   name: string;
@@ -54,8 +75,20 @@ export function BatchWorkspace({
   };
   /** Whether the caller can manage chapter progress (batch.progress.manage). */
   showProgress?: boolean;
+  /** feedback.view.identified — the tab that shows who said what (#84). */
+  showFeedback?: boolean;
+  /** feedback.action.manage — the todo list built from that feedback (#84). */
+  showActions?: boolean;
 }) {
   const [tab, setTab] = useState<TabKey>("details");
+  // "Create action" on the Feedback tab hands the chapter's source to the Actions
+  // tab and switches to it, so an item can never be filed without provenance.
+  const [actionSeed, setActionSeed] = useState<ActionSeed | null>(null);
+  const seedAction = useCallback((seed: ActionSeed) => {
+    setActionSeed(seed);
+    setTab("actions");
+    history.replaceState(null, "", "#actions");
+  }, []);
 
   // Deep-link: /dashboard/batches/[id]#schedule opens that tab; keep the hash in
   // sync so a refresh stays on the same tab.
@@ -118,6 +151,16 @@ export function BatchWorkspace({
               <ListChecks className="size-4" /> Progress
             </TabsTrigger>
           )}
+          {showFeedback && (
+            <TabsTrigger value="feedback" className={TAB_CLS}>
+              <MessageSquareQuote className="size-4" /> Feedback
+            </TabsTrigger>
+          )}
+          {showActions && (
+            <TabsTrigger value="actions" className={TAB_CLS}>
+              <ListTodo className="size-4" /> Actions
+            </TabsTrigger>
+          )}
         </TabsList>
 
         <TabsContent value="details" className="mt-4 min-w-0">
@@ -135,6 +178,20 @@ export function BatchWorkspace({
         {showProgress && (
           <TabsContent value="progress" className="mt-4 min-w-0">
             <BatchProgressEditor batchId={batchId} embedded />
+          </TabsContent>
+        )}
+        {showFeedback && (
+          <TabsContent value="feedback" className="mt-4 min-w-0">
+            <BatchFeedback batchId={batchId} onCreateAction={showActions ? seedAction : undefined} />
+          </TabsContent>
+        )}
+        {showActions && (
+          <TabsContent value="actions" className="mt-4 min-w-0">
+            <BatchActions
+              batchId={batchId}
+              seed={actionSeed}
+              onSeedConsumed={() => setActionSeed(null)}
+            />
           </TabsContent>
         )}
       </Tabs>

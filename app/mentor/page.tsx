@@ -7,6 +7,7 @@ import { getAuthContext } from "@/lib/auth";
 import { createClient } from "@/lib/supabase/server";
 import { PageContainer } from "@/components/app-shell/page-container";
 import { MentorTeachingBoard } from "@/components/mentor/teaching-board";
+import { MentorFeedbackBoard } from "@/components/mentor/feedback-board";
 
 export const metadata: Metadata = { title: "Mentor hub" };
 
@@ -88,6 +89,19 @@ export default async function MentorHome() {
             </p>
           </div>
           <MentorTeachingBoard />
+        </section>
+      )}
+
+      {data.status === "approved" && (
+        <section className="space-y-3">
+          <div>
+            <h2 className="text-lg font-semibold">Student feedback</h2>
+            <p className="text-muted-foreground text-sm">
+              How your completed chapters landed, with <b>no student names</b> — combined results
+              only, and remarks in random order.
+            </p>
+          </div>
+          <MentorFeedbackBoard />
         </section>
       )}
     </PageContainer>

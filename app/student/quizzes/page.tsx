@@ -4,6 +4,7 @@ import { getAuthContext, can } from "@/lib/auth";
 import { requireApprovedStudent } from "@/lib/student-approval";
 import { PageContainer } from "@/components/app-shell/page-container";
 import { QuizzesHub } from "@/components/student/quizzes-hub";
+import { FeedbackPrompt } from "@/components/student/feedback-prompt";
 
 export const metadata: Metadata = { title: "Assessments" };
 
@@ -24,6 +25,9 @@ export default async function StudentQuizzesPage() {
           Take a chapter&apos;s assessment once your mentor marks it completed — up to 3 attempts each.
         </p>
       </header>
+      {/* Feedback on a finished chapter sits above the assessments (#84): the student
+          is already here, and it must never gate the assessment below it. */}
+      <FeedbackPrompt />
       <QuizzesHub />
     </PageContainer>
   );
