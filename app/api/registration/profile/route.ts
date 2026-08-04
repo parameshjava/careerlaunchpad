@@ -13,6 +13,7 @@
 import { NextResponse, type NextRequest } from "next/server";
 import { createClient } from "@/lib/supabase/server";
 import { STEP_FIELDS, PROFILE_SELECT, validatePartial } from "@/lib/registration";
+import { recordRegistrationActivity } from "@/lib/request-audit";
 
 export async function GET() {
   const supabase = await createClient();
@@ -100,6 +101,10 @@ export async function PATCH(req: NextRequest) {
 
   if (upErr) return NextResponse.json({ ok: false, error: upErr.message }, { status: 500 });
   if (!updated) return NextResponse.json({ ok: false, error: "Could not save profile" }, { status: 500 });
+
+  // Audit (issue #83): refresh the last-seen IP so a registration that is never
+  // finished is still attributable. Who/when is stamped by the DB trigger.
+  await recordRegistrationActivity(supabase, req, user.id, "save");
 
   const { registration_status, last_completed_step, ...profile } = updated as unknown as Record<string, unknown>;
   return NextResponse.json({ ok: true, registration_status, last_completed_step, profile });

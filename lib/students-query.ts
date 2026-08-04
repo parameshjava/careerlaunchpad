@@ -8,6 +8,11 @@
 // '*' satisfies it), so an unauthorized caller simply gets an empty list.
 import type { SupabaseClient } from "@supabase/supabase-js";
 import { PROFILE_SELECT, profileCompleteness } from "@/lib/registration";
+import type {
+  RegistrationAudit,
+  RegistrationEvent,
+  RegistrationSource,
+} from "@/components/students/registration-audit";
 
 export type StudentStage = "Imported" | "Invited" | "Registered";
 export type ReviewStatus = "pending_review" | "changes_requested" | "approved" | "suspended";
@@ -32,6 +37,10 @@ export type Student = {
   // Profile completeness 0–100 for registered students; null for imported/invited
   // rows that have no student_profile yet.
   completeness: number | null;
+  // How the record originated (issue #83) — self-signup vs staff vs college
+  // import. Distinct from `stage`, which is lifecycle: an imported student who
+  // later registers is stage "Registered", source "import".
+  source: RegistrationSource;
 };
 
 // Supabase types a to-one embed as a possible array; normalize to a single row.
@@ -66,7 +75,7 @@ export async function fetchStudents(
   let profileQ = supabase
     .from("student_profile")
     .select(
-      `user_id, updated_at, status, registration_status, ${PROFILE_SELECT}, college:college_id(name), app_user:user_id(email, status)`,
+      `user_id, updated_at, status, registration_status, created_via, ${PROFILE_SELECT}, college:college_id(name), app_user:user_id(email, status)`,
     )
     .order("updated_at", { ascending: false });
 
@@ -97,6 +106,9 @@ export async function fetchStudents(
       goalIds: (r.career_goal_ids as string[] | null) ?? [],
       primaryGoalId: (r.primary_career_goal_id as string | null) ?? null,
       completeness: null, // no student_profile yet
+      // An intake row exists only because staff imported it, whatever the
+      // `source` value says about the file it arrived in.
+      source: "import" as RegistrationSource,
     };
   });
 
@@ -123,9 +135,95 @@ export async function fetchStudents(
       goalIds: (r.career_goal_ids as string[] | null) ?? [],
       primaryGoalId: (r.primary_career_goal_id as string | null) ?? null,
       completeness: profileCompleteness(r as Record<string, unknown>),
+      source: ((r.created_via as RegistrationSource | null) ?? "unknown") as RegistrationSource,
     };
   });
 
   // Registered first, then imported; both already sorted newest-first within group.
   return [...registered, ...imported];
+}
+
+// Supabase embeds a to-one relation as a possibly-array shape; this is the name
+// pair every audit actor resolves to.
+type ActorRef = { full_name: string | null; email: string | null } | null;
+const actorName = (v: unknown): string | null => {
+  const a = one<ActorRef>(v as never);
+  return a?.full_name ?? a?.email ?? null;
+};
+
+/**
+ * The registration audit for one student (issue #83) — the columns stamped by the
+ * triggers in migration 160 plus the event timeline.
+ *
+ * RLS on student_registration_event limits the timeline to staff, so a caller
+ * without `student.review` / `student.profile.manage` gets the facts but an empty
+ * history. Returns null when the student has no profile row at all.
+ *
+ * `created_by` and `updated_by` are BOTH FKs to app_user, so each embed is
+ * disambiguated by column name (`alias:column(...)`) rather than by table.
+ */
+export async function fetchRegistrationAudit(
+  supabase: SupabaseClient,
+  studentUserId: string,
+): Promise<RegistrationAudit | null> {
+  const [profile, events] = await Promise.all([
+    supabase
+      .from("student_profile")
+      .select(
+        `created_via, revision, updated_at,
+         registration_started_at, registration_completed_at, registration_reopened_at, last_ip,
+         creator:created_by ( full_name, email ),
+         updater:updated_by ( full_name, email )`,
+      )
+      .eq("user_id", studentUserId)
+      .maybeSingle(),
+    supabase
+      .from("student_registration_event")
+      .select(
+        `id, event, revision, actor_kind, on_behalf, ip, created_at,
+         actor:actor_user_id ( full_name, email )`,
+      )
+      .eq("student_user_id", studentUserId)
+      .order("created_at", { ascending: false }),
+  ]);
+
+  // Log rather than swallow: the `creator:created_by(...)` / `updater:updated_by(...)`
+  // embeds disambiguate three FKs to app_user by column name, so a stale PostgREST
+  // schema cache after migration 160 shows up here — and a silently missing panel
+  // is a miserable thing to debug.
+  if (profile.error) {
+    console.error(`[audit] registration audit for ${studentUserId}: ${profile.error.message}`);
+    return null;
+  }
+  if (!profile.data) return null;
+  if (events.error) {
+    console.error(`[audit] registration timeline for ${studentUserId}: ${events.error.message}`);
+  }
+  const p = profile.data as unknown as Record<string, unknown>;
+
+  const timeline: RegistrationEvent[] = ((events.data ?? []) as unknown as Record<string, unknown>[]).map(
+    (e) => ({
+      id: e.id as string,
+      event: e.event as RegistrationEvent["event"],
+      revision: (e.revision as number | null) ?? null,
+      actorKind: e.actor_kind as RegistrationEvent["actorKind"],
+      actorName: actorName(e.actor),
+      onBehalf: Boolean(e.on_behalf),
+      ip: (e.ip as string | null) ?? null,
+      createdAt: e.created_at as string,
+    }),
+  );
+
+  return {
+    createdVia: (p.created_via as RegistrationSource | null) ?? null,
+    createdByName: actorName(p.creator),
+    startedAt: (p.registration_started_at as string | null) ?? null,
+    completedAt: (p.registration_completed_at as string | null) ?? null,
+    reopenedAt: (p.registration_reopened_at as string | null) ?? null,
+    updatedAt: (p.updated_at as string | null) ?? null,
+    updatedByName: actorName(p.updater),
+    lastIp: (p.last_ip as string | null) ?? null,
+    revision: Number(p.revision ?? 0),
+    events: timeline,
+  };
 }

@@ -17,6 +17,7 @@ import {
   DropdownMenuTrigger,
 } from "@/components/ui/dropdown-menu";
 import { SortHeader, StatusBadge, type StatusTone } from "@/components/data-table-parts";
+import type { RegistrationSource } from "@/components/students/registration-audit";
 import type { Student, StudentStage } from "@/lib/students-query";
 import { deleteStudent } from "@/app/dashboard/students/actions";
 import { enterImpersonation } from "@/app/impersonation/actions";
@@ -25,6 +26,24 @@ const stageTones: Record<StudentStage, StatusTone> = {
   Registered: "emerald",
   Invited: "blue",
   Imported: "violet",
+};
+
+// Origin of the record (issue #83). Short labels — this is a grid cell, so the
+// full wording lives in the audit panel on the profile page.
+const sourceLabels: Record<RegistrationSource, string> = {
+  self: "Self",
+  admin: "Staff",
+  import: "Import",
+  invite: "Invite",
+  unknown: "—",
+};
+
+const sourceTones: Record<RegistrationSource, StatusTone> = {
+  self: "emerald",
+  admin: "blue",
+  import: "violet",
+  invite: "blue",
+  unknown: "slate",
 };
 
 export const columns: ColumnDef<Student>[] = [
@@ -120,6 +139,18 @@ export const columns: ColumnDef<Student>[] = [
         return <StatusBadge tone="amber">Changes requested</StatusBadge>;
       }
       return <StatusBadge tone={stageTones[stage]}>{stage}</StatusBadge>;
+    },
+  },
+  {
+    // Where the record came from (issue #83) — the "self vs admin registered"
+    // question, at list level. Orthogonal to Status, which is lifecycle: an
+    // imported student who finishes the wizard is Registered / Imported.
+    accessorKey: "source",
+    meta: { label: "Source" },
+    header: ({ column }) => <SortHeader column={column}>Source</SortHeader>,
+    cell: ({ row }) => {
+      const source = row.original.source;
+      return <StatusBadge tone={sourceTones[source]}>{sourceLabels[source]}</StatusBadge>;
     },
   },
   {

@@ -79,6 +79,9 @@ export function InteractiveAnalytics({
             data={filtered}
             searchKey="name"
             searchPlaceholder="Search students…"
+            // Registration source isn't an analytics dimension — hidden here, and
+            // available from the Columns menu if someone wants to eyeball it.
+            initialColumnVisibility={{ source: false }}
           />
         </CardContent>
       </Card>

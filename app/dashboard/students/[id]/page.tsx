@@ -8,6 +8,8 @@ import { ProfileSummary, RegistrationForm } from "@/app/student/register/registr
 import { Button } from "@/components/ui/button";
 import { PageContainer } from "@/components/app-shell/page-container";
 import { RemarksPanel, type ReviewNote } from "@/components/students/remarks-panel";
+import { RegistrationAuditPanel } from "@/components/students/registration-audit";
+import { fetchRegistrationAudit } from "@/lib/students-query";
 import { setStudentStatus } from "../actions";
 
 type ReviewStatus = "pending_review" | "changes_requested" | "approved" | "suspended";
@@ -68,6 +70,13 @@ export default async function StudentProfilePage({ params }: { params: Promise<{
     <RemarksPanel studentId={id} status={reviewStatus} notes={notes} />
   ) : null;
 
+  // Registration audit (issue #83) — who created this record, when they started
+  // and finished, from what IP, and how many times they've re-submitted. Staff
+  // only: an IP is personal data, and RLS on the event timeline says the same.
+  const canAudit = canReview || can(ctx, "student.profile.manage");
+  const audit = canAudit && row ? await fetchRegistrationAudit(supabase, id) : null;
+  const auditPanel = audit ? <RegistrationAuditPanel audit={audit} /> : null;
+
   if (!row) {
     return (
       <PageContainer variant="reading">
@@ -95,6 +104,7 @@ export default async function StudentProfilePage({ params }: { params: Promise<{
             submit: `/api/students/${id}/profile/submit`,
           }}
         />
+        {auditPanel}
         {remarks}
       </PageContainer>
     );
@@ -160,6 +170,7 @@ export default async function StudentProfilePage({ params }: { params: Promise<{
       <BackLink />
       {awaitingReview && <ApprovalBar id={id} name={f.full_name} />}
       <ProfileSummary f={f} refs={refs} email={email} college={college} status={status} />
+      {auditPanel}
       {remarks}
     </PageContainer>
   );

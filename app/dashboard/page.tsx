@@ -98,6 +98,10 @@ export default async function DashboardPage() {
                 searchKey="name"
                 searchPlaceholder="Search students…"
                 meta={{ canDelete, canImpersonate }}
+                // Source (issue #83) is off by default here to keep the grid narrow
+                // on phones — re-show it from the Columns menu. It stays visible on
+                // the Pending tab, where "self or staff?" is the reviewer's question.
+                initialColumnVisibility={{ source: false }}
               />
             </CardContent>
           </Card>
@@ -148,6 +152,7 @@ export default async function DashboardPage() {
                   searchKey="name"
                   searchPlaceholder="Search in-progress students…"
                   meta={{ canDelete, canImpersonate }}
+                  initialColumnVisibility={{ source: false }}
                 />
               )}
             </CardContent>
