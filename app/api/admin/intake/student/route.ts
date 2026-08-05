@@ -13,6 +13,7 @@ import { requirePermission } from "@/lib/auth";
 import { sendStudentImportedEmail } from "@/lib/mailer";
 import { loadDegreeBranchMapping } from "@/lib/intake-excel";
 import { OTHER_TEXT_MAX, resolveBranchPair } from "@/lib/degree-branch";
+import { ADDRESS_LINE_MAX, FLAT_BUILDING_MAX, PINCODE_RE } from "@/lib/geo";
 
 const SITE_URL = process.env.NEXT_PUBLIC_SITE_URL ?? "http://localhost:3000";
 
@@ -21,6 +22,7 @@ const SITE_URL = process.env.NEXT_PUBLIC_SITE_URL ?? "http://localhost:3000";
 // mentor preference) — the client already resolves them via the ref data.
 type Profile = {
   full_name?: string; roll_number?: string; registration_number?: string; apaar_id?: string; phone?: string; gender?: string;
+  pincode?: string; flat_building?: string; address?: string;
   city_village?: string; district?: string; state?: string;
   degree?: string; branch?: string; year_of_study?: string;
   // The "Other" write-ins (#99). student_intake carries them (migration 161) and
@@ -84,6 +86,15 @@ export async function POST(req: NextRequest) {
   setIf("apaar_id", apaar);
   setIf("phone", str(p.phone));
   setIf("gender", str(p.gender));
+  // PIN code (#101). Validated, not silently dropped: unlike the bulk Excel path
+  // (where one bad cell must not cost the whole row), a single-student call is a
+  // deliberate act by an admin who should be told the value was wrong.
+  const pincode = str(p.pincode)?.replace(/[\s-]/g, "");
+  if (pincode && !PINCODE_RE.test(pincode))
+    return NextResponse.json({ error: "PIN code must be 6 digits" }, { status: 422 });
+  setIf("pincode", pincode);
+  setIf("flat_building", str(p.flat_building)?.slice(0, FLAT_BUILDING_MAX));
+  setIf("address", str(p.address)?.slice(0, ADDRESS_LINE_MAX));
   setIf("city_village", str(p.city_village));
   setIf("district", str(p.district));
   setIf("state", str(p.state));

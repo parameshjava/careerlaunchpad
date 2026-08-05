@@ -35,6 +35,7 @@ import {
   type DegreeBranchRow,
   type DegreeRow,
 } from "@/lib/degree-branch";
+import { PINCODE_RE } from "@/lib/geo";
 
 export type RefRow = { id: string; slug: string; label: string; category: string | null };
 export type RefData = Record<string, RefRow[]>;
@@ -56,7 +57,7 @@ export type IntakeMapping = {
 };
 
 type BaseCol =
-  | { key: string; header: string; kind: "email" | "text" | "number" | "date" | "yesno" }
+  | { key: string; header: string; kind: "email" | "text" | "number" | "date" | "yesno" | "pincode" }
   | { key: string; header: string; kind: "refSingle"; ref: string } // stores slug
   | { key: string; header: string; kind: "refMulti"; ref: string; max?: number }; // stores slug[]
 
@@ -68,6 +69,14 @@ const BASE_COLUMNS: BaseCol[] = [
   { key: "apaar_id", header: "APAAR / ABC ID", kind: "text" },
   { key: "phone", header: "Mobile Number", kind: "text" },
   { key: "gender", header: "Gender", kind: "refSingle", ref: "ref_gender" },
+  // PIN code (#101). Sits BEFORE the place names because it's the one an admin is
+  // most likely to have to hand, and because on the student's own form it fills
+  // the other three in.
+  // Two columns, matching the student form (migration 163): the flat is hand-typed,
+  // the address is whatever the geocoder returned.
+  { key: "flat_building", header: "Flat / Building / Street", kind: "text" },
+  { key: "address", header: "Address", kind: "text" },
+  { key: "pincode", header: "PIN Code", kind: "pincode" },
   { key: "city_village", header: "Village / Mandal / City", kind: "text" },
   { key: "district", header: "District", kind: "text" },
   { key: "state", header: "State", kind: "text" },
@@ -228,6 +237,11 @@ export async function buildTemplateWorkbook(
         `Comma-separated${c.max ? ` (choose up to ${c.max})` : ""}. Use exact labels: ${labels}`.slice(0, 32000);
     }
     if (c.kind === "date") ws.getCell(`${letter}1`).note = "Format: YYYY-MM-DD (e.g. 2004-08-15).";
+    if (c.kind === "pincode")
+      ws.getCell(`${letter}1`).note =
+        "6-digit PIN code (e.g. 522201). Optional — but fill it and the student's district and " +
+        "state are filled in for them. A value that isn't 6 digits is skipped with a warning; the " +
+        "rest of the row still imports.";
     if (c.key === "email") ws.getCell(`${letter}1`).note = "Required — the student's sign-in email.";
     // The Branch dropdown lists EVERY branch (see IntakeMapping) — point the
     // person filling this in at the sheet that says which ones go with which
@@ -358,6 +372,64 @@ function isValidYmd(s: string): boolean {
  * imported, e.g. an over-cap Career Paths list that was truncated). */
 export type NormalizedRow = { row: number; errors: string[]; warnings: string[]; data: Record<string, unknown> };
 
+/**
+ * Fill BLANK district/state from each row's PIN code (issue #101).
+ *
+ * Resolves through `providerPincode` — the same Google path the student form uses — so
+ * an imported address and a self-registered one agree. The local PIN catalogue this
+ * originally read was retired because nobody was going to keep it current — see
+ * docs/GEO_ADDRESS.md §6.
+ *
+ * It only ever fills a BLANK cell. An admin who typed a district meant it, and a PIN
+ * code must not overrule them.
+ *
+ * city_village is deliberately NOT filled: a PIN covers many villages and picking one
+ * would be inventing an answer rather than deriving it. District and state are genuinely
+ * properties of the PIN; the village is a choice.
+ *
+ * SEQUENTIAL, AND DEDUPED BY PIN. A 5,000-row import from one college shares a handful
+ * of PINs, and each distinct PIN is one provider call that is then cached for 30 days —
+ * so the cost is per-PIN, not per-row. Firing them in parallel would spike straight
+ * into the rate limit for no gain.
+ *
+ * Mutates `rows` in place and returns them, so callers can chain.
+ */
+export async function fillAddressFromPincode(
+  supabase: SupabaseClient,
+  rows: NormalizedRow[],
+): Promise<NormalizedRow[]> {
+  const pins = Array.from(
+    new Set(rows.map((r) => r.data.pincode).filter((p): p is string => typeof p === "string" && !!p)),
+  );
+  if (pins.length === 0) return rows;
+
+  const { providerPincode } = await import("@/lib/geo-provider");
+  const resolved = new Map<string, { district: string; state: string }>();
+  for (const pin of pins) {
+    try {
+      const hit = await providerPincode(supabase, pin);
+      if (hit) resolved.set(pin, { district: hit.district, state: hit.state });
+    } catch {
+      // A lookup failure must not fail the import — the typed values (if any) still
+      // stand and the student can complete their address in their own form.
+    }
+  }
+
+  for (const row of rows) {
+    const pin = row.data.pincode;
+    if (typeof pin !== "string") continue;
+    const hit = resolved.get(pin);
+    if (!hit) {
+      row.warnings.push(`PIN Code: couldn't look up '${pin}' — district and state not filled in`);
+      continue;
+    }
+    const blank = (v: unknown) => typeof v !== "string" || v.trim() === "";
+    if (blank(row.data.district) && hit.district) row.data.district = hit.district;
+    if (blank(row.data.state) && hit.state) row.data.state = hit.state;
+  }
+  return rows;
+}
+
 /** Resolve labels -> slugs into the shape import_student_intake() expects. */
 export function normalizeRows(
   parsed: { row: number; cells: Record<string, string> }[],
@@ -400,6 +472,17 @@ export function normalizeRows(
           const n = Number(raw);
           if (Number.isNaN(n)) errors.push(`${col.header}: not a number`);
           else data[key] = key === "graduation_year" ? Math.trunc(n) : n;
+          break;
+        }
+        case "pincode": {
+          // A WARNING, not an error: an unusable PIN must not fail the row and
+          // throw away the student's name, college and everything else in it. The
+          // typed district/state still import, and the student can fix the PIN in
+          // their own form. (Excel also loves turning a PIN into a number, so
+          // strip separators before judging it.)
+          const s = raw.replace(/[\s-]/g, "");
+          if (PINCODE_RE.test(s)) data[key] = s;
+          else warnings.push(`${col.header}: '${raw}' is not a 6-digit PIN code — skipped`);
           break;
         }
         case "yesno": {
