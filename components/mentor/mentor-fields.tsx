@@ -13,6 +13,7 @@ import { Label } from "@/components/ui/label";
 import { RefSelect } from "@/components/ui/ref-select";
 import { CollegePicker, type College } from "@/components/colleges/college-picker";
 import { PhoneField } from "@/components/ui/phone-input";
+import { DegreeBranchFields } from "@/components/registration/degree-branch-fields";
 
 export type Ref = { id: string; slug: string; label: string; category: string | null };
 export type RefData = Record<string, Ref[]>;
@@ -21,6 +22,8 @@ export type { College };
 export type Form = {
   full_name: string; phone: string; linkedin_url: string; bio: string;
   college_id: string; graduation_year: string; degree: string; branch: string;
+  // Free text behind an "Other" pick (#99), same as the student form.
+  degree_other: string; branch_other: string;
   current_company: string; current_title: string; industry_id: string; years_experience: string;
   mentoring_area_ids: string[]; skills: string[]; teachable_subject_ids: string[]; career_goal_ids: string[];
   mentor_mode_id: string; contribution_type_id: string; availability: string;
@@ -29,6 +32,7 @@ export type Form = {
 export const EMPTY: Form = {
   full_name: "", phone: "", linkedin_url: "", bio: "",
   college_id: "", graduation_year: "", degree: "", branch: "",
+  degree_other: "", branch_other: "",
   current_company: "", current_title: "", industry_id: "", years_experience: "",
   mentoring_area_ids: [], skills: [], teachable_subject_ids: [], career_goal_ids: [],
   mentor_mode_id: "", contribution_type_id: "", availability: "",
@@ -49,7 +53,8 @@ export const selectClass =
 export const STEP_PAYLOAD: Record<number, (f: Form) => Record<string, unknown>> = {
   1: (f) => ({ full_name: f.full_name, phone: f.phone, linkedin_url: f.linkedin_url, bio: f.bio }),
   2: (f) => ({
-    college_id: f.college_id, graduation_year: f.graduation_year, degree: f.degree, branch: f.branch,
+    college_id: f.college_id, graduation_year: f.graduation_year,
+    degree: f.degree, degree_other: f.degree_other, branch: f.branch, branch_other: f.branch_other,
     current_company: f.current_company, current_title: f.current_title,
     industry_id: f.industry_id, years_experience: f.years_experience,
   }),
@@ -137,8 +142,18 @@ export function MentorStepBody({
         <CollegePicker value={college} onChange={(c) => { onPickCollege(c); set("college_id", c?.id ?? ""); }} label="College (where you studied)" />
       </div>
       <Field label="Graduation Year"><Input type="number" value={f.graduation_year} onChange={(e) => set("graduation_year", e.target.value)} placeholder="2019" /></Field>
-      <Field label="Degree"><SelectRef value={f.degree} onChange={(v) => set("degree", v)} options={refs.degree} /></Field>
-      <Field label="Branch"><SelectRef value={f.branch} onChange={(v) => set("branch", v)} options={refs.branch} /></Field>
+      {/* Same dependent Degree → Branch group as the student wizard (#99) — one
+          component, so the mentor form can't drift from it. */}
+      <DegreeBranchFields
+        value={{ degree: f.degree, degree_other: f.degree_other, branch: f.branch, branch_other: f.branch_other }}
+        onPatch={(patch) => {
+          if (patch.degree !== undefined) set("degree", patch.degree);
+          if (patch.degree_other !== undefined) set("degree_other", patch.degree_other);
+          if (patch.branch !== undefined) set("branch", patch.branch);
+          if (patch.branch_other !== undefined) set("branch_other", patch.branch_other);
+        }}
+        refs={refs}
+      />
       <Field label="Industry"><SelectRef value={f.industry_id} onChange={(v) => set("industry_id", v)} options={refs.industry} valueKey="id" /></Field>
       <Field label="Current Company"><Input value={f.current_company} onChange={(e) => set("current_company", e.target.value)} placeholder="e.g. Infosys" /></Field>
       <Field label="Current Role"><Input value={f.current_title} onChange={(e) => set("current_title", e.target.value)} placeholder="e.g. Senior Engineer" /></Field>

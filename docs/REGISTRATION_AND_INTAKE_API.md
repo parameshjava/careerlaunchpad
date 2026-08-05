@@ -133,6 +133,38 @@ Auth: signed-in (RLS already makes `ref_*` public-read). Returns every option se
 
 Career goals include `id` because `career_goal_ids` / `primary_career_goal_id` are FKs (uuid); other multi-selects (`skills`, `interests`) are slug `text[]`.
 
+### Degree → Branch (issue #99, migration 161)
+
+`degree` and `branch` used to be two **unrelated** flat lists, so `degree='mba' + branch='civil'` passed both the form and the API, and the 10 branches were engineering-only — every B.Sc/B.Com/B.A student was pushed into "Other". They are now a relation. Both `GET /api/registration/reference` and `GET /api/mentor/reference` return the enriched rows plus the mapping:
+
+```jsonc
+{
+  "degree": [
+    { "slug": "btech", "label": "B.Tech", "category": "UG",
+      "branch_mode": "required", "level": "ug", "duration_years": 4,
+      "search_terms": ["btech", "b tech", "engineering"], "sort_order": 1 },
+    { "slug": "mba", "label": "MBA", "category": "PG",
+      "branch_mode": "none", "level": "pg", "duration_years": 2, "sort_order": 10 }
+  ],
+  "branch": [
+    { "slug": "cse", "label": "Computer Science & Engineering (CSE)",
+      "category": "Engineering", "family": "computing",
+      "search_terms": ["cse", "csc", "computers", "comp sci"], "sort_order": 1 }
+  ],
+  "degree_branch": [
+    { "degree_slug": "btech", "branch_slug": "cse", "sort_order": 1, "group_label": "Engineering" }
+  ]
+}
+```
+
+- **`branch_mode`** — `required` / `optional` / `none`. `none` (MBA, MCA, M.Com, B.Pharm, Pharm.D, B.Arch, Other) means the Branch field is **not rendered** and `branch` is stored as `null`, never `"other"`.
+- **`group_label` lives on the mapping, not on `ref_branch.category`** — a shared branch belongs to different groups under different degrees (`data_science` is "Engineering" under B.Tech, "Single major" under B.Sc). The UI groups by `group_label ?? branch.category`.
+- **`search_terms`** — aliases matched alongside the label, so `csc`, `computers`, `mpc`, `bcom computers` all find the right option.
+- **`duration_years`** caps the Year of Study list (a 3-year B.Sc has no 4th year; `year_5`/`year_6` exist for B.Arch/Pharm.D).
+- **`family`** is the coarse bucket (12 values) that mentor matching (`same_branch`) and branch-keyed analytics group by, so ~143 branches don't break either.
+
+Every rule is implemented once, in **`lib/degree-branch.ts`** (dependency-free), and shared by the student form, the mentor form, both PATCH validators, the Excel intake and the admin catalogue.
+
 ---
 
 ## 4. Student Registration API
@@ -180,7 +212,7 @@ Per-step field map (request `data` keys by step):
 | Step | Fields |
 |------|--------|
 | 1 Basic Info | `full_name`*, `phone`*, `email`*(read-only from auth), `gender`, `city_village`, `district`, `state` |
-| 2 Academics | `college_id`*, `degree`, `branch`, `year_of_study`, `graduation_year`, `cgpa` |
+| 2 Academics | `college_id`*, `degree`, `degree_other`, `branch`, `branch_other`, `year_of_study`, `graduation_year`, `cgpa` |
 | 3 Career Goals | `career_goal_ids`* (≥1), `primary_career_goal_id`* (∈ career_goal_ids) |
 | 4 Self-Assessment | `skill_assessment` (slug→1..5 for each `ref_skill_assessment_category`) |
 | 5 Skills & Interests | `skills[]`, `interests[]` |
@@ -189,6 +221,18 @@ Per-step field map (request `data` keys by step):
 > Step 6 was reworked from "Mentor" → "Tell Us" (migration `121_tell_us_step.sql`). `preferred_mentor_pref_id` is retired from the wizard (moved to `LEGACY_FIELDS`) but the column + `ref_mentor_preference` stay for the Excel-intake pipeline. All Step-6 fields are optional.
 
 Validation is **per-step and lenient**: only validates the fields present; FK slugs/ids checked against `ref_*`; `primary_career_goal_id ∈ career_goal_ids`; ratings 1–5; cgpa range. Missing fields are *not* errors on PATCH (that's what makes it resumable).
+
+**Degree ⇄ Branch is the one genuinely cross-field rule** (#99), so `validatePartial()` also takes the stored `{degree, branch}` — a PATCH of just `{degree:'mba'}` has to clear a branch it can't see, and a lone `{branch}` is checked against the degree saved earlier. In order:
+
+| Condition | Result |
+|---|---|
+| degree has `branch_mode = 'none'` and a branch is set | `branch := null`, **silently** — a stale draft value must not block a save, and the student never saw the field |
+| `branch` set, no degree anywhere | `422` — *"Choose your degree before selecting a branch."* |
+| pair not in `ref_degree_branch`, branch came from **storage** while this request changed the degree | `branch := null`, silently (that's "I switched B.Tech → B.Com") |
+| pair not in `ref_degree_branch` and the branch was **sent** | `422` — *"That branch isn't offered for the selected degree."* |
+| `degree`/`branch` moved off `other` | the matching `*_other` write-in is dropped |
+
+`degree_other` / `branch_other` are free text (≤120 chars), kept only while their field is on `other`, and are excluded from `profileCompleteness` (like `apaar_id`) since most students never see them. The mapping is read **without** the `is_active` filter on purpose: deactivating a branch hides it from new pickers but must never start rejecting the save of a student who already holds it.
 
 ### `POST /api/registration/profile/submit` — finalize
 Runs **full** validation across all required fields (name, phone, college, ≥1 goal + primary). On success sets `registration_status = 'submitted'`, `registration_submitted_at = now()`. On failure returns `{ ok:false, missing:[{step,field}] }` so the form can jump the user back.
@@ -209,6 +253,7 @@ Streams an `.xlsx` template:
 - **Dropdown validation** on single-select enumerated columns (gender, degree, branch, year_of_study, caste_certificate_status, reservation_category, income_band, first-generation Yes/No, and the 1–5 self-assessment) sourced from the `ref_*` tables, so admins pick valid values offline. Multi-select columns can't use an in-cell dropdown, so their valid labels are listed in a header note and typed comma-separated: **Career Paths** (`preferred_category_slugs`, `ref_preference_category`, ≤ 2 — extra values are dropped with a per-row warning so the downstream `student_profile` CHECK can't reject the claimed profile), **Skills** (`ref_skill`), **Interests** (`ref_interest`), **Languages** (`ref_language`), **Hobbies** (`ref_hobby`). `date_of_birth` is a free-text `YYYY-MM-DD` column.
 - The template mirrors the **current** wizard: Step 3 is the preference-category "Career Paths" picker (issue #42) and Step 6 carries the "Tell Us" background fields (issue #44). The legacy **Career Goals / Primary Career Goal / Preferred Mentor Type** columns were removed from the template (the DB columns + `ref_career_goal`/`ref_mentor_preference` remain for analytics; the wizard and template simply stopped collecting them). `family_members` (nested) and `custom_hobbies` (write-ins) are intentionally **not** in the template — students add those later in their own form.
 - One row per student; `email` is the only required column. Everything else is optional → partial rows are fine.
+- **Degree → Branch (#99) can't be a dependent dropdown.** Per-degree named ranges + `INDIRECT` validation are brittle across Excel / LibreOffice / Google Sheets, so instead: the Branch column keeps a **flat** dropdown of every branch, the template ships a **visible `Degree → Branch` sheet** listing every legal pair (with an explicit *"— no branch — leave the Branch cell empty"* row for MBA/MCA/M.Com/B.Pharm/Pharm.D/B.Arch), and the pair is enforced **server-side per row** on import through the same `lib/degree-branch.ts` rules the forms use. A mismatch fails **that row** with *"Branch: 'Civil' is not offered for Degree 'B.Com' — see the 'Degree → Branch' sheet"*; the rest of the file still imports. Year of Study is checked against the degree's `duration_years` the same way. The single-student endpoint (`POST /api/admin/intake/student`) applies the identical gate, so no intake path can stage a bad pair.
 
 ### `POST /api/admin/intake/import`  (multipart: `file` + `college_id`)
 1. Parse the workbook; read `_meta` for `college_id` (body value must match, else 400).

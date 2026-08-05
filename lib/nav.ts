@@ -21,6 +21,7 @@ export type NavIcon =
   | "courses"
   | "batches"
   | "fees"
+  | "reference"
   | "calendar";
 
 /** Live badge keys understood by SidebarNav (resolved to a client widget). */
@@ -122,6 +123,9 @@ export function buildNav(ctx: AuthContext, opts: { studentApproved?: boolean } =
       platform.push({ label: "Colleges", href: "/dashboard/colleges", icon: "college" });
     if (can(ctx, "user.manage"))
       platform.push({ label: "Organizations", href: "/dashboard/employers", icon: "employer" });
+    // The degree/branch catalogue the registration forms derive from (#99).
+    if (can(ctx, "refdata.manage"))
+      platform.push({ label: "Reference data", href: "/dashboard/reference", icon: "reference" });
     if (ctx.permissions.has("*"))
       platform.push({ label: "Test Email", href: "/dashboard/email-test", icon: "mail" });
 

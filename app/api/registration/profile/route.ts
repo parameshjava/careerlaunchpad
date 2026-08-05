@@ -12,7 +12,7 @@
  */
 import { NextResponse, type NextRequest } from "next/server";
 import { createClient } from "@/lib/supabase/server";
-import { STEP_FIELDS, PROFILE_SELECT, validatePartial } from "@/lib/registration";
+import { STEP_FIELDS, PROFILE_SELECT, validatePartial, withCurrentYearOfStudy } from "@/lib/registration";
 import { recordRegistrationActivity } from "@/lib/request-audit";
 
 export async function GET() {
@@ -39,7 +39,10 @@ export async function GET() {
     );
   }
 
-  const { registration_status, last_completed_step, ...profile } = data as unknown as Record<string, unknown>;
+  const { registration_status, last_completed_step, ...stored } = data as unknown as Record<string, unknown>;
+  // year_of_study is DERIVED on read from entry_academic_year (#99 follow-up): the
+  // stored slug is a snapshot that would otherwise say "3rd Year" forever.
+  const profile = await withCurrentYearOfStudy(stored);
   return NextResponse.json({
     registration_status,
     last_completed_step,
@@ -75,15 +78,20 @@ export async function PATCH(req: NextRequest) {
     );
   }
 
-  const { clean, errors } = await validatePartial(supabase, data);
+  // Read the stored row FIRST: validation needs the saved degree/branch, because
+  // the degree→branch rule is cross-field (#99) — a PATCH of just `{degree}` must
+  // be able to clear a branch it can't see, and a lone `{branch}` is checked
+  // against the degree saved earlier. Also carries last_completed_step.
+  const { data: current } = await supabase
+    .from("student_profile")
+    .select("last_completed_step, degree, branch")
+    .eq("user_id", user.id)
+    .maybeSingle();
+
+  const { clean, errors } = await validatePartial(supabase, data, current);
   if (errors.length) return NextResponse.json({ ok: false, errors }, { status: 422 });
 
   // Advance last_completed_step monotonically.
-  const { data: current } = await supabase
-    .from("student_profile")
-    .select("last_completed_step")
-    .eq("user_id", user.id)
-    .maybeSingle();
   const nextStep = Math.max(Number(current?.last_completed_step ?? 0), step);
 
   // UPSERT, not UPDATE: a student who self-registers (or whose stub row was
@@ -106,6 +114,7 @@ export async function PATCH(req: NextRequest) {
   // finished is still attributable. Who/when is stamped by the DB trigger.
   await recordRegistrationActivity(supabase, req, user.id, "save");
 
-  const { registration_status, last_completed_step, ...profile } = updated as unknown as Record<string, unknown>;
+  const { registration_status, last_completed_step, ...saved } = updated as unknown as Record<string, unknown>;
+  const profile = await withCurrentYearOfStudy(saved);
   return NextResponse.json({ ok: true, registration_status, last_completed_step, profile });
 }

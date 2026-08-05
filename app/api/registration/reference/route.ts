@@ -7,11 +7,17 @@
  * The option-set reads are cached (lib/ref-cache.ts) — identical for every user
  * and rarely changing — so this endpoint hits the DB once per hour, not on every
  * form load. The auth gate below still runs per-request.
+ *
+ * `degree` / `branch` are ENRICHED (branch_mode, level, duration_years, family,
+ * search_terms) and joined by `degree_branch`, the (degree, branch) mapping the
+ * Step 2 dropdowns derive from (issue #99). getDegreeBranchData() is spread LAST
+ * so its supersets win over the flat rows fetchRefTables produced for the same
+ * two tables.
  */
 import { NextResponse } from "next/server";
 import { createClient } from "@/lib/supabase/server";
 import { REF_TABLES } from "@/lib/registration";
-import { getRefData, getPreferenceData } from "@/lib/ref-cache";
+import { getRefData, getPreferenceData, getDegreeBranchData } from "@/lib/ref-cache";
 
 export async function GET() {
   const supabase = await createClient();
@@ -19,11 +25,12 @@ export async function GET() {
   if (!user) return NextResponse.json({ error: "Not authenticated" }, { status: 401 });
 
   try {
-    const [refData, preference] = await Promise.all([
+    const [refData, preference, degreeBranch] = await Promise.all([
       getRefData(REF_TABLES, "registration"),
       getPreferenceData(),
+      getDegreeBranchData(),
     ]);
-    return NextResponse.json({ ...refData, ...preference });
+    return NextResponse.json({ ...refData, ...preference, ...degreeBranch });
   } catch (e) {
     return NextResponse.json({ error: (e as Error).message }, { status: 500 });
   }

@@ -3,6 +3,8 @@ import { redirect } from "next/navigation";
 import { getAuthContext, can } from "@/lib/auth";
 import { createClient } from "@/lib/supabase/server";
 import { PROFILE_SELECT, REF_TABLES } from "@/lib/registration";
+import { currentYearOfStudy, durationOf } from "@/lib/degree-branch";
+import { getDegreeBranchData } from "@/lib/ref-cache";
 import { EMPTY, type Form, type RefData, type College } from "@/components/students/registration-fields";
 import { ProfileSummary, RegistrationForm } from "@/app/student/register/registration-form";
 import { Button } from "@/components/ui/button";
@@ -111,6 +113,10 @@ export default async function StudentProfilePage({ params }: { params: Promise<{
   }
 
   const r = row as unknown as Record<string, unknown>;
+  // Enriched degree/branch rows (#99): needed BEFORE `f` for duration_years (to
+  // derive the current year of study) and merged into `refs` below for branch_mode —
+  // the generic REF_TABLES select can't carry either column.
+  const degreeBranch = await getDegreeBranchData();
   const one = <T,>(v: unknown): T | null => (Array.isArray(v) ? (v[0] ?? null) : ((v as T) ?? null));
   const college = one<College>(r.college);
   const email = one<{ email: string | null }>(r.app_user)?.email ?? null;
@@ -127,8 +133,18 @@ export default async function StudentProfilePage({ params }: { params: Promise<{
     state: (r.state as string) ?? "",
     college_id: (r.college_id as string) ?? "",
     degree: (r.degree as string) ?? "",
+    degree_other: (r.degree_other as string) ?? "",
     branch: (r.branch as string) ?? "",
-    year_of_study: (r.year_of_study as string) ?? "",
+    branch_other: (r.branch_other as string) ?? "",
+    // DERIVED, not the stored snapshot (#99 follow-up): this page reads the row
+    // directly rather than through /api/students/[id]/profile, so it has to apply
+    // the same derivation or a 3rd-year student would still read "3rd Year" in 2030.
+    year_of_study:
+      currentYearOfStudy(
+        r.entry_academic_year as number | null,
+        r.year_of_study as string | null,
+        durationOf(r.degree as string | null, degreeBranch.degree),
+      ) ?? "",
     graduation_year: r.graduation_year != null ? String(r.graduation_year) : "",
     cgpa: r.cgpa != null ? String(r.cgpa) : "",
     career_goal_ids: (r.career_goal_ids as string[]) ?? [],
@@ -161,7 +177,9 @@ export default async function StudentProfilePage({ params }: { params: Promise<{
       return [key, data ?? []] as const;
     }),
   );
-  const refs = Object.fromEntries(refEntries) as RefData;
+  // Spread the enriched rows LAST so their supersets win — ProfileSummary hides the
+  // Branch row for a degree with branch_mode 'none', which the flat rows can't express.
+  const refs = { ...Object.fromEntries(refEntries), ...degreeBranch } as unknown as RefData;
 
   const status = r.registration_status === "submitted" ? "submitted" : "in_progress";
 

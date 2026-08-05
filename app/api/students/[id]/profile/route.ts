@@ -13,7 +13,7 @@
 import { NextResponse, type NextRequest } from "next/server";
 import { createClient } from "@/lib/supabase/server";
 import { requirePermission } from "@/lib/auth";
-import { STEP_FIELDS, PROFILE_SELECT, validatePartial } from "@/lib/registration";
+import { STEP_FIELDS, PROFILE_SELECT, validatePartial, withCurrentYearOfStudy } from "@/lib/registration";
 import { recordRegistrationActivity } from "@/lib/request-audit";
 
 const PERM = "student.profile.manage";
@@ -46,8 +46,10 @@ export async function GET(
   const email = Array.isArray(appUser)
     ? (appUser[0] as { email?: string })?.email ?? null
     : (appUser as { email?: string } | null)?.email ?? null;
-  const { registration_status, last_completed_step, app_user: _drop, ...profile } = row;
+  const { registration_status, last_completed_step, app_user: _drop, ...stored } = row;
   void _drop;
+  // year_of_study is DERIVED on read (#99 follow-up) — the stored slug is a snapshot.
+  const profile = await withCurrentYearOfStudy(stored);
   return NextResponse.json({ registration_status, last_completed_step, email, profile });
 }
 
@@ -84,17 +86,20 @@ export async function PATCH(
     );
   }
 
-  const { clean, errors } = await validatePartial(supabase, data);
-  if (errors.length) return NextResponse.json({ ok: false, errors }, { status: 422 });
-
-  // Advance last_completed_step monotonically. Also serves as the existence check:
-  // no row -> the id isn't a registered student, so there's nothing to edit.
+  // Read the stored row FIRST — validation needs the saved degree/branch for the
+  // cross-field degree→branch rule (#99). Also the existence check: no row -> the
+  // id isn't a registered student, so there's nothing to edit.
   const { data: current } = await supabase
     .from("student_profile")
-    .select("last_completed_step")
+    .select("last_completed_step, degree, branch")
     .eq("user_id", id)
     .maybeSingle();
   if (!current) return NextResponse.json({ ok: false, error: "No student profile" }, { status: 404 });
+
+  const { clean, errors } = await validatePartial(supabase, data, current);
+  if (errors.length) return NextResponse.json({ ok: false, errors }, { status: 422 });
+
+  // Advance last_completed_step monotonically.
   const nextStep = Math.max(Number(current.last_completed_step ?? 0), step);
 
   // UPDATE (not upsert): never fabricate a profile row for a non-registered id.
@@ -112,6 +117,7 @@ export async function PATCH(
   // recorded identically and `updated_by` shows the staff member, not the student.
   await recordRegistrationActivity(supabase, req, id, "save");
 
-  const { registration_status, last_completed_step, ...profile } = updated as unknown as Record<string, unknown>;
+  const { registration_status, last_completed_step, ...stored } = updated as unknown as Record<string, unknown>;
+  const profile = await withCurrentYearOfStudy(stored);
   return NextResponse.json({ ok: true, registration_status, last_completed_step, profile });
 }

@@ -4,6 +4,15 @@
 // remaining balance. Reads are RLS-bound. Queries avoid PostgREST embeds across
 // tables without a direct FK — they fetch and join in JS.
 import type { SupabaseClient } from "@supabase/supabase-js";
+import {
+  academicYearEnd,
+  courseLabel,
+  currentYearOfStudy,
+  degreesByDuration,
+  durationOf,
+  parseYearInput,
+} from "@/lib/degree-branch";
+import { getDegreeBranchData, getDegreeBranchLabels } from "@/lib/ref-cache";
 import type {
   ConcessionType,
   FeeReceipt,
@@ -61,8 +70,12 @@ function istToday(): string {
     .slice(0, 10);
 }
 
-function courseOf(degree: string | null, branch: string | null): string | null {
-  return [degree, branch].filter(Boolean).join(" · ") || null;
+/** "B.Tech · Computer Science & Engineering (CSE)" from the stored slugs. Labels
+ * come from the cached, is_active-agnostic ref maps (#99) — printing `btech · cse`
+ * on a fee receipt was never acceptable, and the #99 catalogue makes it worse. */
+async function courseOf(degree: string | null, branch: string | null): Promise<string | null> {
+  const labels = await getDegreeBranchLabels();
+  return courseLabel(degree, branch, labels.degree, labels.branch, " · ");
 }
 
 // ---- reads -----------------------------------------------------------------
@@ -78,13 +91,50 @@ export async function searchEnrollableStudents(
     .from("student_profile")
     .select(
       "user_id, full_name, roll_number, registration_number, apaar_id, degree, branch, year_of_study, " +
-        "college_id, college:college_id(name), app_user:user_id(email)"
+        "entry_academic_year, college_id, college:college_id(name), app_user:user_id(email)"
     )
     .order("full_name")
     .limit(opts.limit ?? 25);
 
   if (opts.collegeId) query = query.eq("college_id", opts.collegeId);
-  if (opts.year) query = query.ilike("year_of_study", `%${opts.year}%`);
+  // "Which year?" used to be `ilike(year_of_study, …)` against a STORED snapshot, so
+  // enrolling "the 3rd years" into a batch pulled a stale cohort — including students
+  // who had already graduated (#99 follow-up).
+  //
+  // The current year is DERIVED, and a derived value can't be matched in SQL. So the
+  // request is inverted: a student in year N during the academic year ending `ayEnd`
+  // has entry_academic_year = ayEnd − N — an equality on an indexed int, so this still
+  // scales to thousands rather than filtering in JS after the fact.
+  //
+  // The input is FREE TEXT (the enrol screen's box says 'Year (e.g. 4th)'), so it is
+  // parsed first: an earlier cut compared it to the internal `year_4` slug and
+  // therefore matched nothing for every value a human would actually type.
+  const yearFilter = opts.year ? parseYearInput(opts.year) : null;
+  if (yearFilter) {
+    const ayEnd = academicYearEnd();
+    const lengths = degreesByDuration((await getDegreeBranchData()).degree);
+    const clauses: string[] = [];
+    if (yearFilter.n != null) {
+      clauses.push(`entry_academic_year.eq.${ayEnd - yearFilter.n}`);
+      // Un-anchored rows (degree 'other', or never answered through a writer that
+      // anchors) can only be matched on the stored slug — the same fallback the read
+      // path uses.
+      clauses.push(`and(entry_academic_year.is.null,year_of_study.eq.year_${yearFilter.n})`);
+    } else {
+      // 'final year' / 'passed out' are not ONE anchor: they depend on the degree's
+      // length, so build a clause per distinct length.
+      for (const { duration, slugs } of lengths) {
+        const list = slugs.join(",");
+        clauses.push(
+          yearFilter.slug === "final_year"
+            ? `and(entry_academic_year.eq.${ayEnd - duration},degree.in.(${list}))`
+            : `and(entry_academic_year.lt.${ayEnd - duration},degree.in.(${list}))`,
+        );
+      }
+      clauses.push(`and(entry_academic_year.is.null,year_of_study.eq.${yearFilter.slug})`);
+    }
+    query = query.or(clauses.join(","));
+  }
   const term = (opts.q ?? "").replace(/[(),*%]/g, "").trim();
   if (term) {
     query = query.or(
@@ -92,13 +142,18 @@ export async function searchEnrollableStudents(
     );
   }
 
-  const { data, error } = await query;
+  const [{ data, error }, labels, degreeBranch] = await Promise.all([
+    query,
+    getDegreeBranchLabels(),
+    getDegreeBranchData(),
+  ]);
   if (error) throw new Error(`student_profile: ${error.message}`);
   return (data ?? []).map((r) => {
     const row = r as unknown as {
       user_id: string; full_name: string | null; roll_number: string | null;
       registration_number: string | null; apaar_id: string | null;
       degree: string | null; branch: string | null; year_of_study: string | null;
+      entry_academic_year: number | null;
       college_id: string | null; college: { name: string } | null;
       app_user: { email: string | null } | null;
     };
@@ -111,8 +166,13 @@ export async function searchEnrollableStudents(
       rollNumber: row.roll_number,
       registrationNumber: row.registration_number,
       apaarId: row.apaar_id,
-      course: courseOf(row.degree, row.branch),
-      yearOfStudy: row.year_of_study,
+      course: courseLabel(row.degree, row.branch, labels.degree, labels.branch, " · "),
+      // Derived, so the picker shows the year the student is actually in.
+      yearOfStudy: currentYearOfStudy(
+        row.entry_academic_year,
+        row.year_of_study,
+        durationOf(row.degree, degreeBranch.degree),
+      ),
     };
   });
 }
@@ -233,6 +293,7 @@ export async function getFeeReceipt(supabase: SupabaseClient, receiptId: string)
     .from("student_profile")
     .select(
       "full_name, roll_number, registration_number, apaar_id, degree, branch, year_of_study, " +
+      "entry_academic_year, " +
         "college:college_id(name, place, district, state)"
     )
     .eq("user_id", e.student_id)
@@ -241,9 +302,12 @@ export async function getFeeReceipt(supabase: SupabaseClient, receiptId: string)
   const s = (sp ?? {}) as {
     full_name?: string | null; roll_number?: string | null; registration_number?: string | null;
     apaar_id?: string | null; degree?: string | null; branch?: string | null; year_of_study?: string | null;
+    entry_academic_year?: number | null;
     college?: { name: string | null; place: string | null; district: string | null; state: string | null } | null;
   };
   const collegeAddress = [s.college?.place, s.college?.district, s.college?.state].filter(Boolean).join(", ") || null;
+  // Needed to derive the year of study below (durations are per degree).
+  const { degree: receiptDegrees } = await getDegreeBranchData();
 
   const academicYear = batch?.academicYear ?? null;
   return {
@@ -256,8 +320,15 @@ export async function getFeeReceipt(supabase: SupabaseClient, receiptId: string)
       rollNumber: s.roll_number ?? null,
       registrationNumber: s.registration_number ?? null,
       apaarId: s.apaar_id ?? null,
-      course: courseOf(s.degree ?? null, s.branch ?? null),
-      yearOfStudy: s.year_of_study ?? null,
+      course: await courseOf(s.degree ?? null, s.branch ?? null),
+      // DERIVED, like every other surface (#99 review). A receipt is a paper record —
+      // it was the one output still printing the stale snapshot, so a student anchored
+      // in 2024 got a 2027 receipt that said "3rd Year".
+      yearOfStudy: currentYearOfStudy(
+        s.entry_academic_year ?? null,
+        s.year_of_study ?? null,
+        durationOf(s.degree ?? null, receiptDegrees),
+      ),
       collegeName: s.college?.name ?? null,
       collegeAddress,
     },

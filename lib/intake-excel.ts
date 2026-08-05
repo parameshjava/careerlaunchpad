@@ -18,12 +18,42 @@
  *
  * normalizeRows() resolves human labels back to slugs (the shape the
  * import_student_intake() SQL function expects) and reports per-row errors.
+ *
+ * Degree → Branch (issue #99): a spreadsheet dropdown can't narrow itself to the
+ * row's degree, so the Branch column stays a flat list of every branch, the legal
+ * pairs ship as a VISIBLE "Degree → Branch" sheet, and the pair is enforced per
+ * row on import through the shared lib/degree-branch.ts rules. See IntakeMapping.
  */
 import ExcelJS from "exceljs";
 import type { SupabaseClient } from "@supabase/supabase-js";
+import {
+  branchesForDegree,
+  resolveBranchPair,
+  yearsForDegree,
+  type BranchMode,
+  type BranchRow,
+  type DegreeBranchRow,
+  type DegreeRow,
+} from "@/lib/degree-branch";
 
 export type RefRow = { id: string; slug: string; label: string; category: string | null };
 export type RefData = Record<string, RefRow[]>;
+
+/**
+ * The Degree → Branch relation (issue #99), which the flat `ref_*` lists can't
+ * express. An in-cell dropdown CANNOT be made degree-dependent portably —
+ * per-degree named ranges + INDIRECT validation break across Excel, LibreOffice
+ * and Google Sheets — so the deliberate design is:
+ *   • the Branch column keeps a FLAT dropdown of every branch (fillable anywhere),
+ *   • a VISIBLE "Degree → Branch" sheet shows which pairs are legal, and
+ *   • the pair is enforced SERVER-SIDE per row on import, so a mismatch fails that
+ *     one row with a readable message and the rest of the file still imports.
+ */
+export type IntakeMapping = {
+  degrees: Pick<DegreeRow, "slug" | "label" | "branch_mode" | "duration_years">[];
+  branches: Pick<BranchRow, "slug" | "label" | "category" | "sort_order" | "family" | "search_terms" | "id">[];
+  pairs: DegreeBranchRow[];
+};
 
 type BaseCol =
   | { key: string; header: string; kind: "email" | "text" | "number" | "date" | "yesno" }
@@ -97,6 +127,35 @@ export async function loadRefData(supabase: SupabaseClient): Promise<RefData> {
   return out;
 }
 
+/** The (degree, branch) relation the template documents and the import enforces. */
+export async function loadDegreeBranchMapping(supabase: SupabaseClient): Promise<IntakeMapping> {
+  const [degrees, branches, pairs] = await Promise.all([
+    supabase
+      .from("ref_degree")
+      .select("slug, label, branch_mode, duration_years")
+      .eq("is_active", true)
+      .order("sort_order"),
+    supabase
+      .from("ref_branch")
+      .select("id, slug, label, category, sort_order, family, search_terms")
+      .eq("is_active", true)
+      .order("sort_order"),
+    supabase
+      .from("ref_degree_branch")
+      .select("degree_slug, branch_slug, sort_order, group_label")
+      .eq("is_active", true)
+      .order("sort_order"),
+  ]);
+  if (degrees.error) throw new Error(`ref_degree: ${degrees.error.message}`);
+  if (branches.error) throw new Error(`ref_branch: ${branches.error.message}`);
+  if (pairs.error) throw new Error(`ref_degree_branch: ${pairs.error.message}`);
+  return {
+    degrees: (degrees.data ?? []) as IntakeMapping["degrees"],
+    branches: (branches.data ?? []) as IntakeMapping["branches"],
+    pairs: (pairs.data ?? []) as DegreeBranchRow[],
+  };
+}
+
 /** The full ordered column set = base columns + one column per assessment category. */
 function columns(refData: RefData) {
   const assessment = (refData["ref_skill_assessment_category"] ?? []).map((c) => ({
@@ -116,6 +175,7 @@ const norm = (s: string) => s.trim().toLowerCase();
 export async function buildTemplateWorkbook(
   college: { id: string; name: string; place?: string | null },
   refData: RefData,
+  mapping: IntakeMapping,
 ): Promise<ExcelJS.Workbook> {
   const wb = new ExcelJS.Workbook();
   wb.creator = "CareerLaunchpad";
@@ -169,7 +229,18 @@ export async function buildTemplateWorkbook(
     }
     if (c.kind === "date") ws.getCell(`${letter}1`).note = "Format: YYYY-MM-DD (e.g. 2004-08-15).";
     if (c.key === "email") ws.getCell(`${letter}1`).note = "Required — the student's sign-in email.";
+    // The Branch dropdown lists EVERY branch (see IntakeMapping) — point the
+    // person filling this in at the sheet that says which ones go with which
+    // degree, since the import will reject a mismatch.
+    if (c.key === "branch")
+      ws.getCell(`${letter}1`).note =
+        "Must match the Degree in this row. See the 'Degree → Branch' sheet for the valid options. " +
+        "Leave blank for MBA / MCA / M.Com / B.Pharm / Pharm.D / B.Arch — those degrees have no branch.";
+    if (c.key === "year_of_study")
+      ws.getCell(`${letter}1`).note = "Must exist for the degree (a 3-year degree has no 4th year).";
   });
+
+  buildDegreeBranchSheet(wb, mapping);
 
   // Hidden meta sheet binds this template to the chosen college.
   const meta = wb.addWorksheet("_meta");
@@ -180,6 +251,39 @@ export async function buildTemplateWorkbook(
   meta.getCell("B2").value = college.place ? `${college.name} — ${college.place}` : college.name;
 
   return wb;
+}
+
+/**
+ * A VISIBLE reference sheet: one row per legal (degree, branch) pair. This is the
+ * template's answer to "which branches go with B.Sc?" — the Branch column's own
+ * dropdown can't narrow itself (see IntakeMapping), so the person filling the file
+ * in needs the pairs in front of them or they'll guess and get the row rejected.
+ * Degrees with no branch get an explicit "— no branch —" row rather than being
+ * absent, so their absence can't be read as "we forgot to list them".
+ */
+function buildDegreeBranchSheet(wb: ExcelJS.Workbook, mapping: IntakeMapping) {
+  const ws = wb.addWorksheet("Degree → Branch");
+  ws.columns = [
+    { header: "Degree", key: "degree", width: 26 },
+    { header: "Group", key: "group", width: 24 },
+    { header: "Branch (paste into the Branch column)", key: "branch", width: 52 },
+  ];
+  const header = ws.getRow(1);
+  header.font = { bold: true };
+  header.alignment = { vertical: "middle", wrapText: true };
+  ws.views = [{ state: "frozen", ySplit: 1 }];
+
+  for (const degree of mapping.degrees) {
+    if (degree.branch_mode === "none") {
+      ws.addRow({ degree: degree.label, group: "", branch: "— no branch — leave the Branch cell empty" });
+      continue;
+    }
+    const offered = branchesForDegree(degree.slug, mapping.branches as BranchRow[], mapping.pairs);
+    if (!offered.length) continue;
+    for (const branch of offered) {
+      ws.addRow({ degree: degree.label, group: branch.group_label ?? branch.category ?? "", branch: branch.label });
+    }
+  }
 }
 
 // ---------------------------------------------------------------------------
@@ -258,9 +362,12 @@ export type NormalizedRow = { row: number; errors: string[]; warnings: string[];
 export function normalizeRows(
   parsed: { row: number; cells: Record<string, string> }[],
   refData: RefData,
+  mapping: IntakeMapping,
 ): NormalizedRow[] {
   const cols = columns(refData);
   const byKey = new Map(cols.map((c) => [c.key, c]));
+  const branchModes = new Map<string, BranchMode>(mapping.degrees.map((d) => [d.slug, d.branch_mode]));
+  const degreeLabel = new Map(mapping.degrees.map((d) => [d.slug, d.label]));
 
   const labelToSlug = (table: string) => {
     const m = new Map<string, string>();
@@ -349,6 +456,49 @@ export function normalizeRows(
     }
 
     if (Object.keys(assessment).length) data["skill_assessment"] = assessment;
+
+    // Degree ⇄ Branch (#99) — the SAME rule the student and mentor forms run,
+    // from the same helper, so a bulk import can't reintroduce the bad pairs the
+    // forms now prevent. `stored` is null because an import row is a fresh
+    // assertion: whatever is in the file is what's being claimed.
+    //
+    // A mismatch is BLOCKING (not a warning): silently blanking or keeping the
+    // branch would write a record the student then can't correct from a filtered
+    // dropdown, which is the exact failure #99 exists to fix. The rest of the
+    // file still imports — errors are per row.
+    if ("degree" in data || "branch" in data) {
+      const pair = resolveBranchPair({
+        provided: data,
+        clean: data,
+        stored: null,
+        branchModes,
+        pairs: mapping.pairs,
+      });
+      Object.assign(data, pair.patch);
+      for (const message of pair.errors) {
+        // Rewrite the student-facing copy into the admin's frame of reference:
+        // they're looking at a spreadsheet cell, not their own profile.
+        const degree = typeof data.degree === "string" ? (degreeLabel.get(data.degree) ?? data.degree) : "(blank)";
+        errors.push(
+          message === "That branch isn't offered for the selected degree."
+            ? `Branch: '${cells["branch"]}' is not offered for Degree '${degree}' — see the 'Degree → Branch' sheet`
+            : `Branch: set a Degree in this row first`,
+        );
+      }
+    }
+
+    // Year of study must exist for the degree — the Year column's dropdown is
+    // flat (it can't narrow itself either), so a 3-year B.Sc row could otherwise
+    // claim a 4th year. Same rule the form applies by filtering the list.
+    if (typeof data.degree === "string" && typeof data.year_of_study === "string") {
+      const kept = yearsForDegree(data.degree, mapping.degrees as DegreeRow[], [
+        { slug: data.year_of_study },
+      ]);
+      if (!kept.length) {
+        const degree = degreeLabel.get(data.degree) ?? data.degree;
+        errors.push(`Year of Study: '${cells["year_of_study"]}' does not exist for Degree '${degree}'`);
+      }
+    }
 
     return { row, errors, warnings, data };
   });

@@ -9,6 +9,14 @@
  * "API design first" principle).
  */
 import type { SupabaseClient } from "@supabase/supabase-js";
+import {
+  OTHER_TEXT_MAX,
+  currentYearOfStudy,
+  durationOf,
+  resolveBranchPair,
+  type BranchMode,
+  type DegreeBranchRow,
+} from "@/lib/degree-branch";
 
 /** Reference option sets the form needs: response key -> ref_* table. */
 export const REF_TABLES: Record<string, string> = {
@@ -34,7 +42,10 @@ export const REF_TABLES: Record<string, string> = {
 /** student_profile columns each step may write (the form's per-step field map). */
 export const STEP_FIELDS: Record<number, string[]> = {
   1: ["full_name", "phone", "gender", "city_village", "district", "state"],
-  2: ["college_id", "roll_number", "registration_number", "apaar_id", "degree", "branch", "year_of_study", "graduation_year", "cgpa"],
+  // degree_other / branch_other capture the free text behind an "Other" pick
+  // (issue #99) — before them, a student whose course wasn't listed picked
+  // "Other" and their real answer was thrown away.
+  2: ["college_id", "roll_number", "registration_number", "apaar_id", "degree", "degree_other", "branch", "branch_other", "year_of_study", "graduation_year", "cgpa"],
   3: ["preferred_category_slugs"],
   4: ["skill_assessment"],
   5: ["skills", "interests"],
@@ -64,12 +75,26 @@ export const ALL_FIELDS = Object.values(STEP_FIELDS).flat();
  * registration number isn't universal; APAAR/ABC ID is explicitly "leave blank if
  * you don't have one yet") — counting them would make 100% structurally
  * unreachable and mis-fire the "complete your profile" nudge. */
-export const COMPLETENESS_EXCLUDE = new Set(["registration_number", "apaar_id"]);
+/** degree_other/branch_other join them for the same reason and one more: they are
+ * only reachable by the minority who pick "Other", so counting them would cap
+ * every correctly-catalogued student below 100%. */
+export const COMPLETENESS_EXCLUDE = new Set([
+  "registration_number", "apaar_id", "degree_other", "branch_other",
+]);
 
 export const COMPLETENESS_FIELDS = Object.entries(STEP_FIELDS)
   .filter(([step]) => Number(step) !== 6)
   .flatMap(([, fields]) => fields)
   .filter((f) => !COMPLETENESS_EXCLUDE.has(f));
+
+/**
+ * Columns the DATABASE owns, never the client. `entry_academic_year` is stamped by a
+ * trigger (migration 162) from whatever year_of_study a writer supplies — that is
+ * what makes the year self-rolling instead of a snapshot that goes stale. It is
+ * SELECTED (the read paths derive the current year from it) but deliberately absent
+ * from STEP_FIELDS, so a crafted PATCH can't back-date a student's cohort.
+ */
+export const DERIVED_FIELDS = ["entry_academic_year"];
 
 /** Grandfathered columns the wizard no longer writes (Step 3 moved to
  * preference categories in #42) but the admin grid / analytics / Excel intake
@@ -78,7 +103,7 @@ export const COMPLETENESS_FIELDS = Object.entries(STEP_FIELDS)
 export const LEGACY_FIELDS = ["career_goal_ids", "primary_career_goal_id", "preferred_mentor_pref_id"];
 
 /** The columns returned by GET /api/registration/profile. */
-export const PROFILE_SELECT = [...ALL_FIELDS, "college_id", ...LEGACY_FIELDS].join(", ");
+export const PROFILE_SELECT = [...ALL_FIELDS, "college_id", ...LEGACY_FIELDS, ...DERIVED_FIELDS].join(", ");
 
 /**
  * Profile completeness as a 0–100 %: how many of the core profile fields (steps
@@ -86,9 +111,26 @@ export const PROFILE_SELECT = [...ALL_FIELDS, "college_id", ...LEGACY_FIELDS].jo
  * grid and the approval email's "complete your profile" nudge. A field counts as
  * filled when it's a non-empty string/number, array, or object (skill_assessment).
  */
-export function profileCompleteness(profile: Record<string, unknown> | null | undefined): number {
+export function profileCompleteness(
+  profile: Record<string, unknown> | null | undefined,
+  /**
+   * The degrees that have NO branch (`branch_mode = 'none'`: MBA, MCA, M.Com,
+   * B.Pharm, Pharm.D, B.Arch, Other). For a student on one of these the Branch field
+   * is never rendered and the API forces `branch` to null, so counting it capped them
+   * at 16/17 = 94% forever — the admin grid showed them permanently incomplete and the
+   * approval email nagged them to fill a field they will never be shown. Same reason
+   * degree_other/branch_other are in COMPLETENESS_EXCLUDE.
+   *
+   * Optional so existing callers keep working; omitting it just counts `branch` as
+   * before, which is correct for every branch-bearing degree.
+   */
+  noBranchDegrees?: Set<string> | null,
+): number {
   if (!profile) return 0;
-  const filled = COMPLETENESS_FIELDS.filter((f) => {
+  const skipBranch =
+    !!noBranchDegrees && typeof profile.degree === "string" && noBranchDegrees.has(profile.degree);
+  const fields = skipBranch ? COMPLETENESS_FIELDS.filter((f) => f !== "branch") : COMPLETENESS_FIELDS;
+  const filled = fields.filter((f) => {
     const v = profile[f];
     if (v == null) return false;
     if (Array.isArray(v)) return v.length > 0;
@@ -96,8 +138,12 @@ export function profileCompleteness(profile: Record<string, unknown> | null | un
     if (typeof v === "string") return v.trim() !== "";
     return true; // numbers / booleans
   }).length;
-  return Math.round((filled / COMPLETENESS_FIELDS.length) * 100);
+  return Math.round((filled / fields.length) * 100);
 }
+
+/** The `branch_mode = 'none'` degree slugs, for profileCompleteness(). */
+export const noBranchDegreeSet = (degrees: { slug: string; branch_mode: string }[]) =>
+  new Set(degrees.filter((d) => d.branch_mode === "none").map((d) => d.slug));
 
 /** Fields required before registration can be marked 'submitted'. Only the first
  * two steps are mandatory — career goals, self-assessment, skills and mentor
@@ -126,7 +172,9 @@ export const FIELD_LABELS: Record<string, string> = {
   registration_number: "University registration number",
   apaar_id: "APAAR / ABC ID",
   degree: "Degree",
+  degree_other: "Degree (other)",
   branch: "Branch",
+  branch_other: "Branch (other)",
   year_of_study: "Year of study",
   graduation_year: "Graduation year",
   cgpa: "CGPA / percentage",
@@ -158,6 +206,8 @@ type Refs = {
   goalIds: Set<string>;
   mentorIds: Set<string>;
   categorySlugs: Set<string>; // ref_preference_category.slug (Step 3)
+  branchModes: Map<string, BranchMode>; // ref_degree.slug -> branch_mode (#99)
+  pairs: DegreeBranchRow[];             // ref_degree_branch (#99)
 };
 
 const UUID_RE = /^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$/i;
@@ -206,7 +256,55 @@ async function loadRefs(supabase: SupabaseClient, fields: string[]): Promise<Ref
     const { data } = await supabase.from("ref_preference_category").select("slug");
     categorySlugs = new Set((data ?? []).map((r: { slug: string }) => r.slug));
   }
-  return { slugSets, goalIds, mentorIds, categorySlugs };
+
+  // Degree → Branch (#99). Loaded whenever EITHER field is in play, because the
+  // rules are cross-field in both directions: a new degree can invalidate a
+  // stored branch, and a branch is only meaningful against a degree.
+  //
+  // Deliberately NOT filtered by is_active — matching the slug loads above.
+  // Deactivating a branch (or a mapping row) hides it from NEW pickers; it must
+  // not start rejecting the save of a student who already holds that value.
+  const branchModes = new Map<string, BranchMode>();
+  let pairs: DegreeBranchRow[] = [];
+  if (fields.includes("degree") || fields.includes("branch")) {
+    const [degrees, map] = await Promise.all([
+      supabase.from("ref_degree").select("slug, branch_mode"),
+      supabase.from("ref_degree_branch").select("degree_slug, branch_slug, sort_order, group_label"),
+    ]);
+    for (const d of (degrees.data ?? []) as { slug: string; branch_mode: BranchMode }[]) {
+      branchModes.set(d.slug, d.branch_mode);
+    }
+    pairs = (map.data ?? []) as DegreeBranchRow[];
+  }
+
+  return { slugSets, goalIds, mentorIds, categorySlugs, branchModes, pairs };
+}
+
+/**
+ * Replace the STORED year_of_study with the CURRENT one, derived from the anchor.
+ *
+ * Every read path goes through here rather than deriving in the client, for two
+ * reasons: the client would need the ref data loaded before it could derive (a race
+ * on first paint), and the enrolment filter has to derive server-side anyway. The
+ * form then hydrates with the right year and, because answer→anchor→answer is
+ * idempotent, re-saving Step 2 doesn't move the anchor.
+ *
+ * Falls back to the stored slug whenever derivation is impossible (no anchor,
+ * 'passed_out', degree 'other') — see currentYearOfStudy.
+ */
+export async function withCurrentYearOfStudy<T extends Record<string, unknown>>(
+  row: T | null,
+): Promise<T | null> {
+  if (!row) return row;
+  const { getDegreeBranchData } = await import("@/lib/ref-cache");
+  const { degree } = await getDegreeBranchData();
+  const duration = durationOf(row.degree as string | null, degree);
+  const current = currentYearOfStudy(
+    row.entry_academic_year as number | null,
+    row.year_of_study as string | null,
+    duration,
+  );
+  return { ...row, year_of_study: current };
 }
 
 export type ValidationResult = {
@@ -218,10 +316,18 @@ export type ValidationResult = {
  * Validate + normalize a PARTIAL payload (only the provided fields). Lenient by
  * design — missing fields are never errors, so a half-finished step still saves
  * and the user can resume. Returns the cleaned values to write + any errors.
+ *
+ * `stored` is the row already on disk (degree/branch only). It exists because the
+ * degree→branch rule is genuinely cross-field: a PATCH of just `{degree: 'mba'}`
+ * has to null out a branch it can't see, and a PATCH of just `{branch}` has to be
+ * checked against the degree the student saved earlier. Callers that omit it get
+ * the safe reading — "no degree stored" — which turns a lone branch into a
+ * user-facing "choose your degree first" rather than an unvalidated write.
  */
 export async function validatePartial(
   supabase: SupabaseClient,
   data: Record<string, unknown>,
+  stored?: { degree?: string | null; branch?: string | null } | null,
 ): Promise<ValidationResult> {
   const writable = new Set([...ALL_FIELDS, ...LEGACY_FIELDS]);
   const fields = Object.keys(data).filter((f) => writable.has(f));
@@ -240,6 +346,17 @@ export async function validatePartial(
       case "state":
         clean[field] = str(v) || null;
         break;
+      case "degree_other":
+      case "branch_other": {
+        // Free text behind an "Other" pick. Whether it's KEPT is decided by the
+        // cross-field pass below (it's dropped when the field isn't on 'other');
+        // here we only bound it.
+        const s = str(v);
+        if (s.length > OTHER_TEXT_MAX)
+          errors.push(`Please keep your ${labelFor(field).toLowerCase()} under ${OTHER_TEXT_MAX} characters.`);
+        else clean[field] = s || null;
+        break;
+      }
       case "biggest_challenge": {
         // Free text authored as Markdown; cap length as a safety bound.
         const t = str(v);
@@ -433,6 +550,19 @@ export async function validatePartial(
       }
     }
   }
+
+  // Cross-field: degree ⇄ branch (#99). Runs after the per-field pass because it
+  // needs the CLEANED slugs, and it can override `clean.branch` — a degree with no
+  // branch, or a degree change that orphans the stored branch, nulls it here.
+  const pair = resolveBranchPair({
+    provided: data,
+    clean,
+    stored,
+    branchModes: refs.branchModes,
+    pairs: refs.pairs,
+  });
+  Object.assign(clean, pair.patch);
+  errors.push(...pair.errors);
 
   // Cross-field: primary goal must be one of the selected goals (when both present).
   const goals = (clean.career_goal_ids as string[] | undefined) ?? (data.career_goal_ids as string[] | undefined);

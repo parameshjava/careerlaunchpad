@@ -15,6 +15,8 @@ import { InfoTooltip } from "@/components/ui/tooltip";
 import { PhoneField } from "@/components/ui/phone-input";
 import { RefSelect } from "@/components/ui/ref-select";
 import { CollegePicker, type College } from "@/components/colleges/college-picker";
+import { DegreeBranchFields } from "@/components/registration/degree-branch-fields";
+import { durationOf, retrackedGraduationYear, yearsForDegree, type DegreeRow } from "@/lib/degree-branch";
 import { TellUsStep } from "./tell-us-step";
 
 export type Ref = { id: string; slug: string; label: string; category: string | null };
@@ -26,6 +28,9 @@ export type Form = {
   city_village: string; district: string; state: string;
   college_id: string; roll_number: string; registration_number: string; apaar_id: string;
   degree: string; branch: string; year_of_study: string;
+  // Free text behind an "Other" pick (#99) — only sent while the field is on
+  // "other"; the API drops them otherwise.
+  degree_other: string; branch_other: string;
   graduation_year: string; cgpa: string;
   preferred_category_slugs: string[]; // Step 3 (#42): up to 2 preference categories
   career_goal_ids: string[]; primary_career_goal_id: string; // grandfathered (admin/analytics)
@@ -47,7 +52,8 @@ export type Form = {
 
 export const EMPTY: Form = {
   full_name: "", phone: "", gender: "", city_village: "", district: "", state: "",
-  college_id: "", roll_number: "", registration_number: "", apaar_id: "", degree: "", branch: "", year_of_study: "", graduation_year: "", cgpa: "",
+  college_id: "", roll_number: "", registration_number: "", apaar_id: "", degree: "", branch: "", year_of_study: "",
+  degree_other: "", branch_other: "", graduation_year: "", cgpa: "",
   preferred_category_slugs: [],
   career_goal_ids: [], primary_career_goal_id: "", preferred_mentor_pref_id: "", skill_assessment: {},
   skills: [], interests: [],
@@ -70,7 +76,12 @@ export const FIELD_LABELS: Record<string, string> = {
 // Fields each step owns (must match STEP_FIELDS in lib/registration.ts).
 export const STEP_PAYLOAD: Record<number, (f: Form) => Record<string, unknown>> = {
   1: (f) => ({ full_name: f.full_name, phone: f.phone, gender: f.gender, city_village: f.city_village, district: f.district, state: f.state }),
-  2: (f) => ({ college_id: f.college_id, roll_number: f.roll_number, registration_number: f.registration_number, apaar_id: f.apaar_id, degree: f.degree, branch: f.branch, year_of_study: f.year_of_study, graduation_year: f.graduation_year, cgpa: f.cgpa }),
+  2: (f) => ({
+    college_id: f.college_id, roll_number: f.roll_number, registration_number: f.registration_number,
+    apaar_id: f.apaar_id, degree: f.degree, degree_other: f.degree_other,
+    branch: f.branch, branch_other: f.branch_other,
+    year_of_study: f.year_of_study, graduation_year: f.graduation_year, cgpa: f.cgpa,
+  }),
   3: (f) => ({ preferred_category_slugs: f.preferred_category_slugs }),
   4: (f) => ({ skill_assessment: f.skill_assessment }),
   5: (f) => ({ skills: f.skills, interests: f.interests }),
@@ -137,7 +148,10 @@ export function StepBody({
     </Step>
   );
 
-  if (step === 2) return (
+  if (step === 2) {
+    const degrees = (refs.degree ?? []) as unknown as DegreeRow[];
+    const degreeDuration = durationOf(f.degree, degrees);
+    return (
     <Step title="Academic Details" hint="Your college and current course.">
       <div className="sm:col-span-2">
         <CollegePicker value={college} onChange={(c) => { onPickCollege(c); set("college_id", c?.id ?? ""); }} required />
@@ -155,13 +169,70 @@ export function StepBody({
       >
         <Input inputMode="numeric" value={f.apaar_id} onChange={(e) => set("apaar_id", e.target.value)} placeholder="12-digit number" />
       </Field>
-      <Field label="Degree"><SelectRef value={f.degree} onChange={(v) => set("degree", v)} options={refs.degree} /></Field>
-      <Field label="Branch"><SelectRef value={f.branch} onChange={(v) => set("branch", v)} options={refs.branch} /></Field>
-      <Field label="Year of Study"><SelectRef value={f.year_of_study} onChange={(v) => set("year_of_study", v)} options={refs.year_of_study} /></Field>
-      <Field label="Graduation Year"><Input type="number" value={f.graduation_year} onChange={(e) => set("graduation_year", e.target.value)} placeholder="2026" /></Field>
+      {/* Degree + Branch are ONE dependent group (#99) — branch options come from
+          the chosen degree, and a degree with no branch renders no Branch field.
+          Shared with the mentor form so the two can't diverge. */}
+      <DegreeBranchFields
+        value={{ degree: f.degree, degree_other: f.degree_other, branch: f.branch, branch_other: f.branch_other }}
+        onPatch={(patch) => {
+          // `set` uses a functional update, so several keys in one patch compose.
+          if (patch.degree !== undefined) set("degree", patch.degree);
+          if (patch.degree_other !== undefined) set("degree_other", patch.degree_other);
+          if (patch.branch !== undefined) set("branch", patch.branch);
+          if (patch.branch_other !== undefined) set("branch_other", patch.branch_other);
+          // A DEGREE change moves the graduation year too, because it changes the
+          // programme's length — B.Tech → B.Sc turns a 2028 into a 2027.
+          if (patch.degree !== undefined && f.year_of_study) {
+            const grad = retrackedGraduationYear({
+              current: f.graduation_year,
+              prevYearSlug: f.year_of_study,
+              prevDuration: degreeDuration,
+              nextYearSlug: f.year_of_study,
+              nextDuration: durationOf(patch.degree, degrees),
+            });
+            if (grad != null) set("graduation_year", grad);
+          }
+        }}
+        refs={refs}
+      />
+      <Field
+        label="Year of Study"
+        info="This rolls forward on its own each academic year — we store which year you started, not a fixed label, so you don't have to come back and update it."
+      >
+        {/* Only the years the degree actually has: a 3-year B.Sc student must not
+            be offered a 4th year, and a 5-year B.Arch student needs one. The value
+            shown is DERIVED from the stored anchor, so it is already the current
+            year; re-saving it re-anchors to the same value (idempotent). */}
+        <SelectRef
+          value={f.year_of_study}
+          onChange={(v) => {
+            set("year_of_study", v);
+            // Keep Graduation Year in step. Mirrors the DB rule exactly (migration 162):
+            // an auto-filled value FOLLOWS the answer, a hand-typed one is left alone.
+            // An earlier cut only filled a BLANK field, so changing 3rd → 4th Year left
+            // a stale year on screen that the server then silently corrected on save.
+            const grad = retrackedGraduationYear({
+              current: f.graduation_year,
+              prevYearSlug: f.year_of_study,
+              prevDuration: degreeDuration,
+              nextYearSlug: v,
+              nextDuration: degreeDuration,
+            });
+            if (grad != null) set("graduation_year", grad);
+          }}
+          options={yearsForDegree(f.degree, degrees, refs.year_of_study ?? [])}
+        />
+      </Field>
+      <Field
+        label="Graduation Year"
+        info="Filled in from your year of study — correct it if you took a gap year, repeated a year, or joined through lateral entry."
+      >
+        <Input type="number" value={f.graduation_year} onChange={(e) => set("graduation_year", e.target.value)} placeholder="2026" />
+      </Field>
       <Field label="CGPA / Percentage"><Input value={f.cgpa} onChange={(e) => set("cgpa", e.target.value)} placeholder="e.g. 8.2 or 78" /></Field>
     </Step>
-  );
+    );
+  }
 
   if (step === 3) return (
     <Step title="Which paths interest you?" hint="Pick up to 2 areas to prepare for. We coach you across each — you can enroll in any specific exam later.">

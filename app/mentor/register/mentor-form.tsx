@@ -10,6 +10,7 @@
  */
 import { useCallback, useEffect, useState } from "react";
 import { Button } from "@/components/ui/button";
+import { degreeHasBranch, labelWithOther, type DegreeRow } from "@/lib/degree-branch";
 import {
   type Form, type RefData, type Ref, type College,
   EMPTY, FIELD_LABELS, STEP_PAYLOAD, MentorStepBody, MentorStepper,
@@ -171,8 +172,11 @@ function MentorSummary({
   const bySlug = (list?: Ref[]) => new Map((list ?? []).map((r) => [r.slug, r.label]));
   const byId = (list?: Ref[]) => new Map((list ?? []).map((r) => [r.id, r.label]));
 
-  const degreeLabel = bySlug(refs?.degree).get(f.degree) ?? f.degree;
-  const branchLabel = bySlug(refs?.branch).get(f.branch) ?? f.branch;
+  // Same as the student summary (#99): an "Other" pick reads back as the typed
+  // text, and a degree with no branch shows no Branch row.
+  const degreeLabel = labelWithOther(f.degree, f.degree_other, bySlug(refs?.degree));
+  const branchLabel = labelWithOther(f.branch, f.branch_other, bySlug(refs?.branch));
+  const showBranch = !f.degree || degreeHasBranch(f.degree, (refs?.degree ?? []) as unknown as DegreeRow[]);
   const industryLabel = byId(refs?.industry).get(f.industry_id) ?? "";
   const modeLabel = byId(refs?.mentor_mode).get(f.mentor_mode_id) ?? "";
   const contributionLabel = byId(refs?.contribution_type).get(f.contribution_type_id) ?? "";
@@ -214,7 +218,7 @@ function MentorSummary({
         <Item label="College" value={collegeText} className="sm:col-span-2" />
         <Item label="Graduation year" value={f.graduation_year} />
         <Item label="Degree" value={degreeLabel} />
-        <Item label="Branch" value={branchLabel} />
+        {showBranch && <Item label="Branch" value={branchLabel} />}
         <Item label="Industry" value={industryLabel} />
         <Item label="Current company" value={f.current_company} />
         <Item label="Current role" value={f.current_title} />
