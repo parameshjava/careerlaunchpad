@@ -278,8 +278,15 @@ export default function LocationMap({
     <div className="border-input grid gap-2 overflow-hidden rounded-lg border">
       <div className="relative">
         {/* Tall enough to give context on a phone without pushing the rest of the
-            step off-screen; taller from sm up where there is room. */}
-        <div ref={holder} className="h-64 w-full sm:h-80" />
+            step off-screen; taller from sm up where there is room.
+
+            overflow-hidden is LOAD-BEARING, not tidiness. Google's `.gm-style` surface
+            sets overflow-x: visible and its tile layer is genuinely wider than the map
+            (measured at 320px: 318px wide, scrollWidth 546). Without a clip here the
+            tiles spill and the whole page scrolls sideways on a phone. The parent card
+            also clips, but relying on that means a future change to the card silently
+            breaks the map. */}
+        <div ref={holder} className="h-64 w-full overflow-hidden sm:h-80" />
         {state === "loading" && (
           <div className="bg-muted/60 absolute inset-0 grid place-items-center">
             <LoaderCircle className="size-5 animate-spin" aria-hidden />
