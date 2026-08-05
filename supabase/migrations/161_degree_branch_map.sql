@@ -305,7 +305,7 @@ update public.ref_degree d
     ('diploma', 'diploma', 3,          'required', 'Diploma'),
     ('mtech',   'pg',      2,          'required', 'PG'),
     ('mba',     'pg',      2,          'none',     'PG'),
-    ('mca',     'pg',      2,          'none',     'PG'),
+    ('mca',     'pg',      3,          'none',     'PG'),
     ('msc',     'pg',      2,          'required', 'PG')
   ) as s(slug, level, duration_years, branch_mode, category)
  where d.slug = s.slug
@@ -319,6 +319,12 @@ update public.ref_degree set branch_mode = 'none' where slug = 'other' and branc
 -- re-run and skips the row entirely if an admin has since renamed it.
 update public.ref_degree set label = 'Diploma (Polytechnic)'
  where slug = 'diploma' and label = 'Diploma';
+-- MCA is a THREE-year programme in the AP/TS colleges we admit from; the first cut of
+-- this seed said 2. Guarded on the exact previous seed value, so it no-ops on a re-run
+-- and leaves alone any duration an admin has since tuned. (AICTE moved MCA to two years
+-- nationally in 2020, so if both cohorts ever appear here, this is the row to change —
+-- duration_years is editable on /dashboard/reference.)
+update public.ref_degree set duration_years = 3 where slug = 'mca' and duration_years = 2;
 
 -- Every degree row now has a branch_mode, so it can carry the invariant.
 alter table public.ref_degree alter column branch_mode set default 'required';

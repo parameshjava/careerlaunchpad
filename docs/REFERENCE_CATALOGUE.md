@@ -30,6 +30,8 @@ ref_year_of_study  + year_5, year_6 (final_year/passed_out moved to the end)
 permission 'refdata.manage'  → granted to platform_admin; owner inherits via '*'
 ```
 
+`duration_years` is what caps each degree's Year of Study list, so it is worth stating: **MCA is 3 years** and **MBA is 2** in the AP/TS colleges we admit from. (AICTE moved MCA to two years nationally in 2020, so if both cohorts ever appear, that row is the one to change — it's editable on `/dashboard/reference`.)
+
 Research basis for the catalogue: **AP/TS EAPCET** counselling branch codes (B.Tech/B.E), **AP SBTET C-20** (Diploma — a polytechnic "Computer Engineering (CME)" is *not* `cse`), **APSCHE OAMDC + CBCS** (B.Sc/B.Com/B.A/BBA/BCA/B.Voc — including **both** the pre-2025-26 *combinations* (MPC, MPCs, BZC, HEP…) and the 2025-26 *single majors*, because both generations are in the funnel right now), **AP PGECET** (M.Tech/M.Pharm specialisations — a different list from UG branches), and **AP/TS ICET** (MBA/MCA admit to the bare programme, hence `branch_mode = 'none'`).
 
 ### Four decisions worth knowing

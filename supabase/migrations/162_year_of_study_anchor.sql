@@ -232,6 +232,23 @@ update public.student_intake si
    and si.entry_academic_year is not null
    and d.duration_years is not null;
 
+-- MCA's length was corrected from 2 to 3 years in 161 after this seed first ran, so an
+-- MCA graduation_year that had been AUTO-FILLED with the old length is now a year early.
+-- Retracked here by the same rule the trigger uses: it moves only while the value still
+-- equals what the previous length implied, so a hand-typed year is untouched. Idempotent
+-- — after this runs the predicate no longer matches.
+update public.student_profile sp
+   set graduation_year = sp.entry_academic_year + 3
+ where sp.degree = 'mca'
+   and sp.entry_academic_year is not null
+   and sp.graduation_year = sp.entry_academic_year + 2;
+
+update public.student_intake si
+   set graduation_year = si.entry_academic_year + 3
+ where si.degree = 'mca'
+   and si.entry_academic_year is not null
+   and si.graduation_year = si.entry_academic_year + 2;
+
 -- ---------------------------------------------------------------------------
 -- 4) The anchor is stamped by a TRIGGER, so every writer is covered
 -- ---------------------------------------------------------------------------
