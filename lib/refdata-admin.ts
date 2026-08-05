@@ -83,11 +83,22 @@ export function bustRefCache(): void {
  * and safe in a URL path.
  */
 export function normalizeSlug(raw: unknown): string | null {
-  const s = String(raw ?? "")
+  const collapsed = String(raw ?? "")
     .trim()
     .toLowerCase()
-    .replace(/[^a-z0-9]+/g, "_")
-    .replace(/^_+|_+$/g, "");
+    // Greedy, so every run of non-alphanumerics becomes exactly ONE underscore.
+    .replace(/[^a-z0-9]+/g, "_");
+  // Trimmed by index rather than `/^_+|_+$/`. That regex is quadratic on a long run
+  // of underscores (CodeQL js/polynomial-redos), and while the collapse above means
+  // no run longer than one can actually reach it, that safety lives in the ORDER of
+  // two statements — swap them and it becomes a real hot loop on an authenticated
+  // request path. This is linear regardless, so the invariant is local.
+  let a = 0;
+  let b = collapsed.length;
+  while (a < b && collapsed[a] === "_") a += 1;
+  while (b > a && collapsed[b - 1] === "_") b -= 1;
+  const s = collapsed.slice(a, b);
+  // Bounded repetition, so this one can't backtrack.
   return /^[a-z][a-z0-9_]{1,48}$/.test(s) ? s : null;
 }
 
