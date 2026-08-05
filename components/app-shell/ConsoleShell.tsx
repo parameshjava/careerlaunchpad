@@ -26,6 +26,7 @@ import {
   Handshake,
   Layers,
   LayoutDashboard,
+  ListTree,
   Mail,
   Menu,
   PanelLeft,
@@ -57,6 +58,7 @@ const ICONS: Record<NavIcon, React.ComponentType<{ className?: string }>> = {
   // glyph — the same BookOpen twice reads as a duplicated item.
   batches: Layers,
   fees: Wallet,
+  reference: ListTree,
   calendar: CalendarDays,
 };
 

@@ -9,7 +9,7 @@ import { type NextRequest, NextResponse } from "next/server";
 import { createClient } from "@/lib/supabase/server";
 import { requirePermission } from "@/lib/auth";
 import { sendStudentImportedEmail } from "@/lib/mailer";
-import { loadRefData, parseWorkbook, normalizeRows } from "@/lib/intake-excel";
+import { loadRefData, loadDegreeBranchMapping, parseWorkbook, normalizeRows } from "@/lib/intake-excel";
 
 const SITE_URL = process.env.NEXT_PUBLIC_SITE_URL ?? "http://localhost:3000";
 
@@ -32,7 +32,7 @@ export async function POST(req: NextRequest) {
   if (!collegeId) return NextResponse.json({ error: "college_id is required" }, { status: 400 });
 
   const supabase = await createClient();
-  const refData = await loadRefData(supabase);
+  const [refData, mapping] = await Promise.all([loadRefData(supabase), loadDegreeBranchMapping(supabase)]);
 
   let parsed;
   try {
@@ -50,7 +50,9 @@ export async function POST(req: NextRequest) {
     return NextResponse.json({ error: "No data rows found in the sheet" }, { status: 400 });
   }
 
-  const normalized = normalizeRows(parsed.rows, refData);
+  // `mapping` is what makes a mismatched (degree, branch) pair a per-row error
+  // rather than a silently-stored bad record (#99).
+  const normalized = normalizeRows(parsed.rows, refData, mapping);
   // Rows with BLOCKING errors are NOT imported — importing them would create a
   // student record + invite with the bad cell silently dropped (and a green
   // "created" badge). They are reported back as 'error' so the admin can fix and

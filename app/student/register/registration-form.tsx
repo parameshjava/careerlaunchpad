@@ -12,7 +12,8 @@ import { useRouter } from "next/navigation";
 import { Button } from "@/components/ui/button";
 import { Accordion, AccordionItem, AccordionTrigger, AccordionContent } from "@/components/ui/accordion";
 import { RichContent } from "@/components/exam/RichContent";
-import { profileCompleteness } from "@/lib/registration";
+import { noBranchDegreeSet, profileCompleteness } from "@/lib/registration";
+import { degreeHasBranch, labelWithOther, type DegreeRow } from "@/lib/degree-branch";
 import {
   type Form, type RefData, type Ref, type College,
   EMPTY, FIELD_LABELS, STEP_PAYLOAD, StepBody, Stepper,
@@ -151,7 +152,12 @@ export function RegistrationForm({
 
   // Live profile completeness (same 0–100 scale the admin grid + approval email
   // use), so students see how much richer their profile can still get on every step.
-  const pct = profileCompleteness(f as unknown as Record<string, unknown>);
+  // Exclude Branch for a degree that has none, so an MBA student isn't shown a
+  // permanent 94% for a field the form never renders (#99 review).
+  const pct = profileCompleteness(
+    f as unknown as Record<string, unknown>,
+    noBranchDegreeSet(((refs?.degree ?? []) as unknown as { slug: string; branch_mode: string }[]) ?? []),
+  );
 
   return (
     // The wizard stays narrow for readability (per the style guide) even when the
@@ -242,8 +248,11 @@ export function ProfileSummary({
   const bySlug = (list?: Ref[]) => new Map((list ?? []).map((r) => [r.slug, r.label]));
 
   const genderLabel = bySlug(refs?.gender).get(f.gender) ?? f.gender;
-  const degreeLabel = bySlug(refs?.degree).get(f.degree) ?? f.degree;
-  const branchLabel = bySlug(refs?.branch).get(f.branch) ?? f.branch;
+  // An "Other" pick reads back as the text the student typed (#99), and a degree
+  // with no branch shows no Branch row at all rather than a dead "—".
+  const degreeLabel = labelWithOther(f.degree, f.degree_other, bySlug(refs?.degree));
+  const branchLabel = labelWithOther(f.branch, f.branch_other, bySlug(refs?.branch));
+  const showBranch = !f.degree || degreeHasBranch(f.degree, (refs?.degree ?? []) as unknown as DegreeRow[]);
   const yearLabel = bySlug(refs?.year_of_study).get(f.year_of_study) ?? f.year_of_study;
   const categoryName = new Map(
     ((refs?.preference_category ?? []) as unknown as { slug: string; name: string }[]).map((c) => [c.slug, c.name]),
@@ -272,7 +281,12 @@ export function ProfileSummary({
   // unrated categories (key absent) are left out. `in` avoids a number-vs-
   // undefined comparison (noUncheckedIndexedAccess is off).
   const ratedCats = assessCats.filter((c) => c.slug in f.skill_assessment);
-  const pct = profileCompleteness(f as unknown as Record<string, unknown>);
+  // Exclude Branch for a degree that has none, so an MBA student isn't shown a
+  // permanent 94% for a field the form never renders (#99 review).
+  const pct = profileCompleteness(
+    f as unknown as Record<string, unknown>,
+    noBranchDegreeSet(((refs?.degree ?? []) as unknown as { slug: string; branch_mode: string }[]) ?? []),
+  );
 
   return (
     <div className="bg-card rounded-3xl border p-5 shadow-xl shadow-[#7c3aed]/5 sm:p-8">
@@ -327,7 +341,7 @@ export function ProfileSummary({
           <SummaryItem label="Registration number" value={f.registration_number} />
           <SummaryItem label="APAAR ID" value={f.apaar_id} />
           <SummaryItem label="Degree" value={degreeLabel} />
-          <SummaryItem label="Branch" value={branchLabel} />
+          {showBranch && <SummaryItem label="Branch" value={branchLabel} />}
           <SummaryItem label="Year of study" value={yearLabel} />
           <SummaryItem label="Graduation year" value={f.graduation_year} />
           <SummaryItem label="CGPA / %" value={f.cgpa} />

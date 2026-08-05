@@ -79,14 +79,17 @@ export async function PATCH(req: NextRequest) {
     );
   }
 
-  const { clean, errors } = await validatePartial(supabase, data);
-  if (errors.length) return NextResponse.json({ ok: false, errors }, { status: 422 });
-
+  // Stored row first — validation needs the saved degree/branch for the
+  // cross-field degree→branch rule (#99).
   const { data: current } = await supabase
     .from("mentor_profile")
-    .select("last_completed_step")
+    .select("last_completed_step, degree, branch")
     .eq("user_id", user.id)
     .maybeSingle();
+
+  const { clean, errors } = await validatePartial(supabase, data, current);
+  if (errors.length) return NextResponse.json({ ok: false, errors }, { status: 422 });
+
   const nextStep = Math.max(Number(current?.last_completed_step ?? 0), step);
 
   // UPSERT: the row is normally seeded by register_as_mentor(), but upsert keeps

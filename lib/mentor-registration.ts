@@ -11,6 +11,12 @@
  * mentoring area, a mode); everything else pre-fills for alumni.
  */
 import type { SupabaseClient } from "@supabase/supabase-js";
+import {
+  OTHER_TEXT_MAX,
+  resolveBranchPair,
+  type BranchMode,
+  type DegreeBranchRow,
+} from "@/lib/degree-branch";
 
 /** Reference option sets the mentor form needs: response key -> ref_* table. */
 export const REF_TABLES: Record<string, string> = {
@@ -28,7 +34,9 @@ export const REF_TABLES: Record<string, string> = {
 export const STEP_FIELDS: Record<number, string[]> = {
   1: ["full_name", "phone", "linkedin_url", "bio"],
   2: [
-    "college_id", "graduation_year", "degree", "branch",
+    // degree_other / branch_other: the same "Other" write-in capture the student
+    // form gained in #99 — a mentor's own course is just as likely to be unlisted.
+    "college_id", "graduation_year", "degree", "degree_other", "branch", "branch_other",
     "current_company", "current_title", "industry_id", "years_experience",
   ],
   3: [
@@ -51,6 +59,8 @@ export const REQUIRED_FIELDS: { step: number; field: string }[] = [
 
 type Refs = {
   slugSets: Record<string, Set<string>>; // degree/branch/skill
+  branchModes: Map<string, BranchMode>;  // ref_degree.slug -> branch_mode (#99)
+  pairs: DegreeBranchRow[];              // ref_degree_branch (#99)
   goalIds: Set<string>;
   areaIds: Set<string>;
   industryIds: Set<string>;
@@ -99,7 +109,22 @@ async function loadRefs(supabase: SupabaseClient, fields: string[]): Promise<Ref
     subjectIdSet(fields.includes("teachable_subject_ids")),
   ]);
 
-  return { slugSets, goalIds, areaIds, industryIds, modeIds, contributionIds, subjectIds };
+  // Degree → Branch (#99). Same relation and same is_active reasoning as
+  // lib/registration.ts loadRefs — see the note there.
+  const branchModes = new Map<string, BranchMode>();
+  let pairs: DegreeBranchRow[] = [];
+  if (fields.includes("degree") || fields.includes("branch")) {
+    const [degrees, map] = await Promise.all([
+      supabase.from("ref_degree").select("slug, branch_mode"),
+      supabase.from("ref_degree_branch").select("degree_slug, branch_slug, sort_order, group_label"),
+    ]);
+    for (const d of (degrees.data ?? []) as { slug: string; branch_mode: BranchMode }[]) {
+      branchModes.set(d.slug, d.branch_mode);
+    }
+    pairs = (map.data ?? []) as DegreeBranchRow[];
+  }
+
+  return { slugSets, branchModes, pairs, goalIds, areaIds, industryIds, modeIds, contributionIds, subjectIds };
 }
 
 export type ValidationResult = {
@@ -115,6 +140,10 @@ export type ValidationResult = {
 export async function validatePartial(
   supabase: SupabaseClient,
   data: Record<string, unknown>,
+  /** The row already on disk (degree/branch only) — the degree→branch rule is
+   * cross-field, so a PATCH of just one of them still has to be checked against
+   * the other. See the fuller note on lib/registration.ts#validatePartial. */
+  stored?: { degree?: string | null; branch?: string | null } | null,
 ): Promise<ValidationResult> {
   const fields = Object.keys(data).filter((f) => ALL_FIELDS.includes(f));
   const refs = await loadRefs(supabase, fields);
@@ -150,6 +179,15 @@ export async function validatePartial(
       case "branch": {
         const s = str(v);
         if (s && !refs.slugSets[field]?.has(s)) errors.push(`${field}: '${s}' is not a valid option`);
+        else clean[field] = s || null;
+        break;
+      }
+      case "degree_other":
+      case "branch_other": {
+        // Free text behind an "Other" pick; whether it's KEPT is decided by the
+        // cross-field pass below. Only bounded here.
+        const s = str(v);
+        if (s.length > OTHER_TEXT_MAX) errors.push(`${field}: keep it under ${OTHER_TEXT_MAX} characters`);
         else clean[field] = s || null;
         break;
       }
@@ -204,6 +242,18 @@ export async function validatePartial(
       }
     }
   }
+
+  // Cross-field: degree ⇄ branch (#99) — the same rules, from the same helper, as
+  // the student form and the Excel intake.
+  const pair = resolveBranchPair({
+    provided: data,
+    clean,
+    stored,
+    branchModes: refs.branchModes,
+    pairs: refs.pairs,
+  });
+  Object.assign(clean, pair.patch);
+  errors.push(...pair.errors);
 
   return { clean, errors };
 }

@@ -7,7 +7,9 @@
 // Reads are guarded by RLS (student_intake needs student.intake.import; the Owner's
 // '*' satisfies it), so an unauthorized caller simply gets an empty list.
 import type { SupabaseClient } from "@supabase/supabase-js";
-import { PROFILE_SELECT, profileCompleteness } from "@/lib/registration";
+import { PROFILE_SELECT, profileCompleteness, noBranchDegreeSet } from "@/lib/registration";
+import { courseLabel } from "@/lib/degree-branch";
+import { getDegreeBranchData, getDegreeBranchLabels } from "@/lib/ref-cache";
 import type {
   RegistrationAudit,
   RegistrationEvent,
@@ -49,9 +51,6 @@ function one<T>(v: T | T[] | null | undefined): T | null {
   return v ?? null;
 }
 
-const courseOf = (degree: string | null, branch: string | null) =>
-  [degree, branch].filter(Boolean).join(" — ") || null;
-
 const day = (iso: string | null) => (iso ? iso.slice(0, 10) : "");
 
 export async function fetchStudents(
@@ -84,9 +83,25 @@ export async function fetchStudents(
     profileQ = profileQ.eq("college_id", collegeId);
   }
 
-  const [intake, profiles] = await Promise.all([intakeQ, profileQ]);
+  // Degree/branch are stored as SLUGS, so the grid used to read `btech — cse`.
+  // With the #99 catalogue in play (slugs like `com_computers`, `mgmt_general`,
+  // `plastics_polymers`) that stops being cosmetic, so labels are resolved here —
+  // from the cached, is_active-agnostic label maps, so a student holding a since-
+  // deactivated branch still shows its name rather than a bare slug.
+  const [labels, degreeBranch, intake, profiles] = await Promise.all([
+    getDegreeBranchLabels(),
+    getDegreeBranchData(),
+    intakeQ,
+    profileQ,
+  ]);
+  // Students on a degree with no branch must not be capped below 100% for a field
+  // they are never shown (#99 review).
+  const noBranch = noBranchDegreeSet(degreeBranch.degree);
   if (intake.error) throw new Error(`student_intake: ${intake.error.message}`);
   if (profiles.error) throw new Error(`student_profile: ${profiles.error.message}`);
+
+  const courseOf = (degree: string | null, branch: string | null) =>
+    courseLabel(degree, branch, labels.degree, labels.branch);
 
   type CollegeRef = { name: string | null } | null;
 
@@ -134,7 +149,7 @@ export async function fetchStudents(
       skills: (r.skills as string[] | null) ?? [],
       goalIds: (r.career_goal_ids as string[] | null) ?? [],
       primaryGoalId: (r.primary_career_goal_id as string | null) ?? null,
-      completeness: profileCompleteness(r as Record<string, unknown>),
+      completeness: profileCompleteness(r as Record<string, unknown>, noBranch),
       source: ((r.created_via as RegistrationSource | null) ?? "unknown") as RegistrationSource,
     };
   });

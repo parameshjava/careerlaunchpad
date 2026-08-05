@@ -5,7 +5,8 @@ import { redirect } from "next/navigation";
 import { createClient } from "@/lib/supabase/server";
 import { requirePermission } from "@/lib/auth";
 import { sendStudentApprovedEmail, sendStudentRemarksEmail } from "@/lib/mailer";
-import { PROFILE_SELECT, profileCompleteness } from "@/lib/registration";
+import { PROFILE_SELECT, profileCompleteness, noBranchDegreeSet } from "@/lib/registration";
+import { getDegreeBranchData } from "@/lib/ref-cache";
 
 const SITE_URL = process.env.NEXT_PUBLIC_SITE_URL ?? "http://localhost:3000";
 
@@ -45,7 +46,9 @@ export async function setStudentStatus(formData: FormData): Promise<void> {
         name: (profile?.full_name as string | null) ?? null,
         dashboardUrl: `${SITE_URL}/student`,
         profileUrl: `${SITE_URL}/student/register`,
-        completeness: profileCompleteness(profile),
+        // Same no-branch exclusion as the grid: an MBA student was being told
+        // "currently 94%" and nudged to fill a Branch field they never see (#99 review).
+        completeness: profileCompleteness(profile, noBranchDegreeSet((await getDegreeBranchData()).degree)),
       });
     }
   }

@@ -6,7 +6,7 @@
 import { type NextRequest, NextResponse } from "next/server";
 import { createClient } from "@/lib/supabase/server";
 import { requirePermission } from "@/lib/auth";
-import { loadRefData, buildTemplateWorkbook } from "@/lib/intake-excel";
+import { loadRefData, loadDegreeBranchMapping, buildTemplateWorkbook } from "@/lib/intake-excel";
 
 export async function GET(req: NextRequest) {
   try {
@@ -24,8 +24,11 @@ export async function GET(req: NextRequest) {
   if (error) return NextResponse.json({ error: error.message }, { status: 500 });
   if (!college) return NextResponse.json({ error: "College not found" }, { status: 404 });
 
-  const refData = await loadRefData(supabase);
-  const wb = await buildTemplateWorkbook(college, refData);
+  const [refData, mapping] = await Promise.all([loadRefData(supabase), loadDegreeBranchMapping(supabase)]);
+  // The mapping drives the visible "Degree → Branch" sheet (#99) — the Branch
+  // column's dropdown can't narrow itself to the row's degree, so the valid pairs
+  // ship alongside it and the import enforces them.
+  const wb = await buildTemplateWorkbook(college, refData, mapping);
   const buffer = await wb.xlsx.writeBuffer();
 
   const safe = college.name.replace(/[^a-z0-9]+/gi, "_").slice(0, 40);

@@ -77,16 +77,19 @@ export async function PATCH(req: NextRequest, { params }: { params: Promise<{ us
     );
   }
 
-  const { clean, errors } = await validatePartial(supabase, data);
-  if (errors.length) return NextResponse.json({ ok: false, errors }, { status: 422 });
-
   // Existence check + monotonic step advance. UPDATE-only: never fabricate a row.
+  // Read first: validation needs the saved degree/branch for the cross-field
+  // degree→branch rule (#99).
   const { data: current } = await supabase
     .from("mentor_profile")
-    .select("last_completed_step")
+    .select("last_completed_step, degree, branch")
     .eq("user_id", userId)
     .maybeSingle();
   if (!current) return NextResponse.json({ ok: false, error: "No mentor profile" }, { status: 404 });
+
+  const { clean, errors } = await validatePartial(supabase, data, current);
+  if (errors.length) return NextResponse.json({ ok: false, errors }, { status: 422 });
+
   const nextStep = Math.max(Number(current.last_completed_step ?? 0), step);
 
   const { data: updated, error: upErr } = await supabase
