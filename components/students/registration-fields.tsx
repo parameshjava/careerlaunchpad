@@ -204,6 +204,16 @@ export function StepBody({
             shown is DERIVED from the stored anchor, so it is already the current
             year; re-saving it re-anchors to the same value (idempotent). */}
         <SelectRef
+          // Disabled until a degree is picked, exactly like Branch: the list of valid
+          // years IS derived from the degree's length, so offering it first would let a
+          // student answer a question we can't yet validate — and then silently narrow
+          // it under them.
+          disabled={!f.degree}
+          placeholder={f.degree ? "Select…" : "Select your degree first"}
+          // No clear item while disabled: RefSelect maps an empty value ONTO the clear
+          // item, so passing one here would show its label instead of the placeholder —
+          // and the instruction is the whole point of the disabled state.
+          emptyLabel={f.degree ? "Select…" : undefined}
           value={f.year_of_study}
           onChange={(v) => {
             set("year_of_study", v);
@@ -375,13 +385,22 @@ export function Field({ label, required, info, children }: { label: string; requ
   );
 }
 
-function SelectRef({ value, onChange, options, placeholder = "Select…" }: { value: string; onChange: (v: string) => void; options: Ref[]; placeholder?: string }) {
+function SelectRef({
+  value, onChange, options, placeholder = "Select…", disabled, emptyLabel,
+}: {
+  value: string; onChange: (v: string) => void; options: Ref[];
+  placeholder?: string; disabled?: boolean;
+  /** The "clear" item's label. Defaults to the placeholder, but a placeholder that is
+   * an INSTRUCTION ("Select your degree first") must not become a pickable option. */
+  emptyLabel?: string;
+}) {
   return (
     <RefSelect
       value={value}
       onChange={onChange}
+      disabled={disabled}
       placeholder={placeholder}
-      emptyLabel={placeholder}
+      emptyLabel={emptyLabel ?? placeholder}
       // Fill the grid column so selects line up with the text inputs beside them
       // (the shadcn SelectTrigger is w-fit by default and would otherwise shrink).
       className="w-full"

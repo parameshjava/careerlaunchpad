@@ -201,10 +201,14 @@ export function yearsForDegree<T extends { slug: string }>(
   degrees: DegreeRow[],
   years: T[],
 ): T[] {
+  // 'final_year' is retired as an OPTION (migration 162 deactivates the row; this is
+  // the code-side guard so it can never be offered even if a row is reactivated).
+  // It duplicated the last numbered year in every list.
+  const offered = years.filter((y) => y.slug !== "final_year");
   const duration = findDegree(degreeSlug, degrees)?.duration_years;
-  if (!duration) return years;
+  if (!duration) return offered;
   const maxYear = Math.ceil(duration);
-  return years.filter((y) => {
+  return offered.filter((y) => {
     const n = /^year_(\d+)$/.exec(y.slug);
     return !n || Number(n[1]) <= maxYear;
   });
@@ -267,8 +271,12 @@ export function academicYearEnd(now = new Date()): number {
 }
 
 /**
- * `year_of_study` slug → its ordinal. 'final_year' resolves to the degree's
- * duration; 'passed_out' returns null, because a graduate has no current year.
+ * `year_of_study` slug → its ordinal. 'passed_out' returns null, because a graduate has
+ * no current year.
+ *
+ * 'final_year' is still accepted even though it is no longer OFFERED: rows stored
+ * before it was retired must keep deriving correctly, and it resolves to the degree's
+ * length.
  */
 export function yearNumberOf(slug: string, durationYears: number | null): number | null {
   if (slug === "final_year") return durationYears ? Math.ceil(durationYears) : null;
@@ -276,12 +284,18 @@ export function yearNumberOf(slug: string, durationYears: number | null): number
   return m ? Number(m[1]) : null;
 }
 
-/** Ordinal → slug. Past the degree's length is 'passed_out'; the last year is
- * 'final_year', which students recognise better than "4th Year". */
+/**
+ * Ordinal → slug. Numbered years only; past the degree's length is 'passed_out'.
+ *
+ * Deliberately never returns 'final_year'. Offering it ALONGSIDE the numbered years
+ * put two options for the same year in every list — "2nd Year" and "Final Year" for a
+ * 2-year MCA, "4th Year" and "Final Year" for a 4-year B.Tech — and whichever the
+ * student picked, the derived label then rendered as the other one. 'final_year' is
+ * still READ (see yearNumberOf) so legacy rows keep deriving correctly.
+ */
 export function slugForYearNumber(n: number, durationYears: number | null): string {
   const max = durationYears ? Math.ceil(durationYears) : null;
   if (max && n > max) return "passed_out";
-  if (max && n === max) return "final_year";
   return `year_${Math.max(1, n)}`;
 }
 

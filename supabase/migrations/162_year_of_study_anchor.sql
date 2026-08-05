@@ -177,6 +177,37 @@ update public.student_intake si
  );
 
 -- ---------------------------------------------------------------------------
+-- 2b) Retire 'final_year' as an OPTION — numbered years only
+-- ---------------------------------------------------------------------------
+-- Offering "Final Year" alongside the numbered years put TWO options for the same year
+-- in every list: "2nd Year" and "Final Year" for a 2-year MCA, "4th Year" and "Final
+-- Year" for a 4-year B.Tech. Whichever the student picked, the derived label then
+-- rendered as the other one, so their own answer appeared to change itself.
+--
+-- Stored values are migrated to their numeric equivalent first (we know the degree's
+-- length, so this is lossless — "Final Year" of a 3-year B.Sc *is* "3rd Year"), then
+-- the option is deactivated so it disappears from the form AND the Excel template in
+-- one place. slugForYearNumber() no longer produces it either; yearNumberOf() still
+-- READS it, so any row this cannot convert keeps deriving correctly.
+update public.student_profile sp
+   set year_of_study = 'year_' || ceil(d.duration_years)::int
+  from public.ref_degree d
+ where d.slug = sp.degree
+   and sp.year_of_study = 'final_year'
+   and d.duration_years is not null;
+
+update public.student_intake si
+   set year_of_study = 'year_' || ceil(d.duration_years)::int
+  from public.ref_degree d
+ where d.slug = si.degree
+   and si.year_of_study = 'final_year'
+   and d.duration_years is not null;
+
+-- Deactivated, not deleted: the label must still resolve for any row on a degree with
+-- no known duration, which the two statements above cannot convert.
+update public.ref_year_of_study set is_active = false where slug = 'final_year';
+
+-- ---------------------------------------------------------------------------
 -- 3) graduation_year becomes DERIVED-BUT-EDITABLE
 -- ---------------------------------------------------------------------------
 -- entry + duration is the graduation year, so the two fields can no longer
