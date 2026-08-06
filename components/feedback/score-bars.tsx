@@ -12,10 +12,30 @@
 //     one student's feedback is still feedback that needs addressing.
 //   • Reaction sits next to learning. A rating cannot separate "enjoyed it" from
 //     "learned it"; the chapter's quiz pass rate can.
-import { GROUP_LABELS, type ItemGroup, type Score } from "@/lib/feedback-query";
+import {
+  ATTENDED_LABELS,
+  GROUP_LABELS,
+  type AttendedMix,
+  type ItemGroup,
+  type Score,
+  type Trip,
+} from "@/lib/feedback-query";
 import { Badge } from "@/components/ui/badge";
 
 const GROUPS: ItemGroup[] = ["teaching", "content", "logistics"];
+
+/** Trip badge colours, shared by the batch tab and the cross-batch triage inbox so
+ *  the same flag never looks more urgent on one screen than the other. Severity, not
+ *  brand: a rating of 1-2 is red wherever it appears. */
+export const TRIP_TONE: Record<Trip, string> = {
+  low_rating:
+    "border-rose-300 bg-rose-50 text-rose-900 dark:border-rose-900/60 dark:bg-rose-950/40 dark:text-rose-200",
+  low_mean:
+    "border-rose-300 bg-rose-50 text-rose-900 dark:border-rose-900/60 dark:bg-rose-950/40 dark:text-rose-200",
+  has_remark: "border-primary/30 bg-primary/10 text-primary dark:text-primary",
+  low_turnout:
+    "border-amber-300 bg-amber-50 text-amber-900 dark:border-amber-900/60 dark:bg-amber-950/40 dark:text-amber-200",
+};
 
 // The bar rows use short labels: "Content & material" truncates to "Content & mat…"
 // in the narrow label column at 320px, which reads as a rendering bug.
@@ -92,6 +112,53 @@ export function GroupScores({ scores }: { scores: Record<string, Score> | null }
           </div>
         );
       })}
+    </div>
+  );
+}
+
+/** Who was actually in the room (§G1). Counts, never percentages — with four buckets
+ *  over a handful of responses a percentage claims more than the data supports.
+ *
+ *  It sits beside the scores because it is what makes them readable: a low clarity
+ *  score from respondents who attended "some" or "none" is a scheduling finding, and
+ *  the same score from a full room is a teaching one. Buckets with nobody in them are
+ *  dropped, so the common "everyone attended" case is one quiet chip. */
+export function AttendanceMix({ mix }: { mix: AttendedMix | null }) {
+  if (!mix) return null;
+  const order: (keyof AttendedMix)[] = ["all", "most", "some", "none"];
+  const present = order.filter((k) => mix[k] > 0);
+  if (present.length === 0) return null;
+
+  const partial = mix.some + mix.none;
+  const total = order.reduce((n, k) => n + mix[k], 0);
+
+  return (
+    <div className="grid gap-1.5">
+      <span className="text-muted-foreground text-[10px] font-bold tracking-wider uppercase">
+        How much they attended
+      </span>
+      <div className="flex flex-wrap gap-1.5">
+        {present.map((k) => (
+          <Badge
+            key={k}
+            variant="secondary"
+            className={
+              k === "none" || k === "some"
+                ? "border-amber-300 bg-amber-50 text-amber-900 dark:border-amber-900/60 dark:bg-amber-950/40 dark:text-amber-200"
+                : undefined
+            }
+          >
+            {ATTENDED_LABELS[k]} · {mix[k]}
+          </Badge>
+        ))}
+      </div>
+      {/* Only worth a sentence when it changes how the scores should be read. */}
+      {partial > 0 && partial * 2 >= total && (
+        <p className="text-muted-foreground text-xs">
+          {partial} of {total} respondents attended only some of this chapter, or none of it — read
+          the scores against that before changing how you teach it.
+        </p>
+      )}
     </div>
   );
 }

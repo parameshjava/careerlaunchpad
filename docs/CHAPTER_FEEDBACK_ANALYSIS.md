@@ -1,16 +1,20 @@
 # Post-Chapter Student Feedback — Research & Analysis
 
-**Status:** analysis for product-owner review · **Issue:** [#84](https://github.com/parameshjava/careerlaunchpad/issues/84)
-**Next free migration:** `159_*` (highest today is `158_student_question_source.sql`)
+**Status:** v1 + v2 built · **Issue:** [#84](https://github.com/parameshjava/careerlaunchpad/issues/84)
+**Next free migration:** `175_*` (highest today is `174_feedback_review_fixes.sql`)
 
 > This document does two jobs: (1) validate the eleven bullets in #84 against how
 > feedback systems actually behave in practice, and (2) specify the design that fits
 > the schema and conventions already shipped.
 >
 > **STATUS: v1 BUILT (2026-08-03)** — migration `159_chapter_feedback.sql`, the seven
-> API routes in §4.6, and the three surfaces in §4.7. Not yet applied to any
-> database: CI runs `supabase db push` on merge to `main`. §8 records which decisions
-> were taken and which are still open.
+> API routes in §4.6, and the three surfaces in §4.7.
+>
+> **STATUS: v2 BUILT + ONE v1 DEFECT FIXED (2026-08-06)** — migrations `164`–`174`.
+> See §7.1 for what each one closes; `174` carries the code-review fixes, including a
+> cross-college leak that predates this work. Nothing here is applied to a database yet: CI
+> runs `supabase db push` on merge to `main`, so every claim below is "written and
+> type-checked", not "observed running". §8 records the decisions.
 >
 > **Decisions taken (2026-08-03):**
 > - **O-2 — no suppression at low response counts.** One student's feedback is
@@ -346,6 +350,27 @@ PATCH /api/admin/feedback/actions/[id]               -> status / owner / due / r
 - **v3** — per-session probes for flagged chapters; correlation reporting
   (reaction × learning) in analytics; remark clustering.
 
+### 7.1 What shipped after v1 (2026-08-06, migrations 164–172)
+
+| # | Migration / files | What it closes |
+| - | ----------------- | -------------- |
+| 1 | `164_feedback_window_expiry.sql` | **A v1 defect.** `close_expired_feedback_requests()` was written but never scheduled, and `open_chapter_feedback_request()` resumed any row with `status='open'` without checking `closes_at`. A chapter re-taught and re-completed after its 14 days silently returned the dead request, and the batch was never asked again. Now the open path expires a lapsed window itself (so correctness does not wait on cron) **and** pg_cron sweeps every 5 minutes. |
+| 2 | `165_feedback_triage.sql`, `/dashboard/feedback`, `GET /api/admin/feedback/triage` | §4.8's "staff triage list" existed only inside one batch's tab, so finding what tripped meant opening every batch. The 100-line aggregate moved into one shared helper (`_feedback_overview_rows`) that both the batch tab and the new cross-batch inbox read, so the two can never disagree about what tripped. |
+| 3 | `166_feedback_auto_actions.sql` | §V10's "auto-propose an action when a threshold trips". A trip now files an unowned `open` item with `auto_source='trip'`, one per window ever. `open_claimed_count` keeps *the system noticed* distinguishable from *a person is on it*, so a proposal never reads as work in progress. |
+| 4 | `167_feedback_outreach.sql` | §V9's outreach had a `mailto:` button and no record. `contacted_at / contacted_by / outreach_note` make "did anyone follow up on those two 1-star ratings?" answerable, and the RPC **refuses** to log against a student who did not tick `contact_ok` — the promise on the form is now kept by the database, not by a hidden button. Also fixes `set_feedback_moderation`, which accepted only a global grant, locking out the college admins who could already read the remarks. |
+| 5 | `168_feedback_reminders.sql`, `GET /api/cron/feedback-reminders`, `lib/feedback-notify.ts` | §G3 "being asked at all". One reminder per window per student, 3 days in, to non-responders only — the primary key is what guarantees "once", so a second nudge is a new table rather than a config change (§F4). Vercel Cron, because the SMTP transport lives in Node. |
+| 6 | `169_feedback_attendance_mix.sql` | §G1's screener was collected and shown to staff but never to the trainer, leaving a clarity score of 2.4 unreadable in the one place it matters. The mentor board now reports the attendance mix beside the scores; the staff panel tallies it from rows it already has, so there is no second definition of the same number. |
+| 7 | `components/feedback/chapter-trend.tsx` | §4.8's "Trend" — a trainer against their own successive chapters, computed from the rows already on screen. Never cross-trainer (§F2/§F10), and the component has no shape that could hold a second person's series. |
+| 8 | `170_feedback_form_versions.sql`, `/api/admin/feedback/forms*`, Questions tab | `feedback.form.manage` was seeded in v1 and referenced nowhere, so changing a question meant hand-written SQL against production — which is how a live version gets edited in place. A published version is now **immutable by trigger**; the only editable thing is one draft, and publishing retires the incumbent atomically. |
+| 9 | `171_feedback_minors_and_retention.sql` | **O-11** and **O-12** (see §8). |
+| 9b | `173_feedback_dob_gate.sql`, Step 1 of registration, `/api/admin/students/request-dob` | **Closes O-11 properly.** 171's fail-open behaviour was measured against production and found to cover 43% of students, so date of birth is now **required to submit a registration** and the gate **fails closed**. A skipped student is told what to add (`student_feedback_dob_required()`), and staff can ask the existing cohort in one click. |
+| 9c | `174_feedback_review_fixes.sql` | **Code-review fixes (PR #106).** The important one is not mine alone: `has_permission()` does not mean "globally" — it ignores `ur.scope_college_id` — so every reader written as `has_permission(...) or has_college_permission(...)` silently gave a college admin the whole platform. That idiom comes from 159; 166 and 173 copied it. `has_global_permission()` replaces it in all six readers/writers. Also: a window now opens even when no enrolled student is currently age-eligible (171 opened none, silently and permanently, and that also disarmed the DOB prompt); the frozen `eligible_count` is re-based once, so 173 does not collapse historical response rates and file false `low_turnout` actions; `publish_feedback_form` enforces the instrument contract the reports read by name; and review notes carry a `topic`, so "already asked for a date of birth" stops matching a note about a roll number. |
+| 10 | `172_feedback_overdue_digest.sql` | The v2 "overdue action digest": weekly, to the item's **owner only**, deduped by `(owner, ISO week)` so a daily cron sends at most one and a failed day self-heals. |
+
+Still not built, and deliberately: everything in **v3**, and escalating *unowned*
+overdue items to admins by email (they are counted on the triage screen instead —
+see §8 O-13).
+
 ---
 
 ## 8. Decisions
@@ -369,8 +394,9 @@ comparison in SQL. Say the word on any row and it changes.
 | **O-8**  | Should feedback be **required** to unlock the chapter's assessment?                    | **Built as no gate** (F5). Prompt is skippable, snoozes 3 days locally.                       |
 | **O-9**  | Who owns action items by default?                                                      | **Built as the creator** (falls back to `ctx.userId`); reassignable per item.                 |
 | **O-10** | Publish "what we changed" back to students?                                            | **Built** — per-action `published_to_students` flag, surfaced on the student hub.             |
-| **O-11** | Ask **under-18** students at all, given DPDP consent rules (G8)?                       | **Still open.** Built to ask everyone, with the purpose stated at collection. No age gate.    |
-| **O-12** | Retention period for responses and remarks?                                            | **Still open.** Nothing deletes today; needs a cron sweep once you pick a period.             |
+| **O-11** | Ask **under-18** students at all, given DPDP consent rules (G8)?                       | **DECIDED (2026-08-06) — they are not asked, and neither is anyone whose age we don't know.** Enforced in five places (migration 171): the `eligible_count` denominator, the student's pending list, an insert trigger on the response, the non-responder list, and the reminder queue. 171 first shipped this **fail-open** (unknown DOB ⇒ treated as adult) to avoid switching the feature off for a mostly-empty optional field; measured against production that was 15 of 35 profiles with a DOB (43%), zero from bulk intake, and one known minor — i.e. the gate blocked one student and waved through twenty. So **173 flips it closed** and the field is now **required at registration** (Step 1, `REQUIRED_FIELDS`, same `DobPicker` calendar). Failing closed silently would be its own bug, so: `student_feedback_dob_required()` tells the affected student what to add and why (never mentioning being under 18 — a 17-year-old has nothing to fix, and hinting otherwise invites a false date), and `students_missing_dob()` + `POST /api/admin/students/request-dob` let staff ask the pre-existing cohort through the review-note channel, without touching their access. `/dashboard/feedback` shows the outstanding count, because those students are excluded from every response rate on that screen. |
+| **O-12** | Retention period for responses and remarks?                                            | **DECIDED (2026-08-06) — 24 months.** `prune_old_feedback(24)`, daily at 03:20 via pg_cron (migration 171), deletes responses + answers (and the reminder rows, which carry an email address) once a window closed more than two years ago. The **request row survives**, so "we asked 84 chapters in 2026" stays true while what individuals said does not — which means a pruned window reads as zero responses. That is the intended cost of a retention period. If longer trend is wanted later, snapshot the aggregate onto the request *before* pruning; don't keep the text. |
+| **O-13** | Chase *unowned* overdue actions by email too?                                          | **Built as no** (migration 172). The weekly digest goes to an item's owner only; unowned work — including auto-proposals nobody has taken on — is counted by "Nobody on it" on `/dashboard/feedback` rather than mailed to people who never asked for it. Revisit if that counter is observed sitting high. |
 
 ---
 

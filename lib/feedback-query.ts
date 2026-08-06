@@ -95,7 +95,14 @@ export type MentorFeedback = {
   quizAttempted: number;
   quizPassPct: number | null;
   mentorNote: string | null;
+  /** How much of the chapter the respondents say they attended (§G1, migration 169).
+   *  Counts per bucket, never percentages — four buckets over a handful of responses
+   *  cannot carry a percentage honestly. Null while the window is open, like the
+   *  scores. Staff surfaces compute their own from the per-response rows. */
+  attendedMix: AttendedMix | null;
 };
+
+export type AttendedMix = { all: number; most: number; some: number; none: number };
 
 /** Why a chapter is on the triage list (§4.8 trip rule). n-independent by design. */
 export type Trip = "low_rating" | "low_mean" | "has_remark" | "low_turnout";
@@ -115,6 +122,18 @@ export type StaffFeedbackRow = MentorFeedback & {
   mentorSnapshot: string[];
 };
 
+/** One tripped request on the cross-batch triage inbox (migration 165). Same row as
+ *  the batch tab plus the two things only a cross-batch screen needs: which batch it
+ *  belongs to, and whether someone is already on it. */
+export type TriageRow = StaffFeedbackRow & {
+  /** Open or in-progress action items against this request, proposals included. */
+  openActionCount: number;
+  /** …of which a human has actually taken on: typed by staff, owned, or moved to
+   *  in_progress. An untouched auto-proposal counts here as zero, so "the system
+   *  noticed" never reads as "someone is dealing with it" (migration 166). */
+  openClaimedCount: number;
+};
+
 export type IdentifiedResponse = {
   responseId: string | null;
   studentId: string;
@@ -128,6 +147,12 @@ export type IdentifiedResponse = {
   qualityFlag: string | null;
   moderation: string;
   attended: string | null;
+  /** The staff outreach log (migration 167) — set once someone has actually spoken
+   *  to this student. Only ever populated for `contactOk` rows, and never returned
+   *  to a mentor or to the student. */
+  contactedAt: string | null;
+  contactedByName: string | null;
+  outreachNote: string | null;
 };
 
 export type ActionItem = {
@@ -145,8 +170,15 @@ export type ActionItem = {
   status: "open" | "in_progress" | "done" | "dropped";
   resolutionNote: string | null;
   publishedToStudents: boolean;
+  /** Non-null ⇒ the system proposed this from a trip rule; nobody has committed to
+   *  it yet (migration 166). Staff items are always null here. */
+  autoSource: string | null;
   createdAt: string;
   completedAt: string | null;
+  /** Only populated on cross-batch reads (the triage inbox, the student's "what
+   *  changed" card). A batch-scoped caller already knows which batch it asked for,
+   *  so paying for the extra name lookup there would be waste. */
+  batchName?: string | null;
 };
 
 type Row = Record<string, unknown>;
@@ -195,7 +227,29 @@ export function toMentorFeedback(r: Row): MentorFeedback {
     quizAttempted: num(r.quiz_attempted),
     quizPassPct: numOrNull(r.quiz_pass_pct),
     mentorNote: str(r.mentor_note),
+    attendedMix: toAttendedMix(r.attended_mix),
   };
+}
+
+/** Normalizes the RPC's jsonb (and the staff-side client tally) into four numbers. */
+export function toAttendedMix(v: unknown): AttendedMix | null {
+  if (!v || typeof v !== "object") return null;
+  const m = v as Record<string, unknown>;
+  return { all: num(m.all), most: num(m.most), some: num(m.some), none: num(m.none) };
+}
+
+/** Tally the screener from identified rows — the staff panel already has them, so
+ *  its mix comes from the same data the rows show rather than a second query. */
+export function tallyAttended(rows: { attended: string | null }[]): AttendedMix | null {
+  const mix: AttendedMix = { all: 0, most: 0, some: 0, none: 0 };
+  let any = false;
+  for (const r of rows) {
+    if (r.attended && r.attended in mix) {
+      mix[r.attended as keyof AttendedMix] += 1;
+      any = true;
+    }
+  }
+  return any ? mix : null;
 }
 
 export function toStaffRow(r: Row): StaffFeedbackRow {
@@ -206,6 +260,17 @@ export function toStaffRow(r: Row): StaffFeedbackRow {
     flaggedCount: num(r.flagged_count),
     trips: ((r.trips as string[] | null) ?? []) as Trip[],
     mentorSnapshot: (r.mentor_snapshot as string[] | null) ?? [],
+  };
+}
+
+/** feedback_triage_overview() rows. Unlike toStaffRow this KEEPS batch_name — the
+ *  batch tab already knows which batch it is showing; the inbox does not. */
+export function toTriageRow(r: Row): TriageRow {
+  return {
+    ...toStaffRow(r),
+    batchName: str(r.batch_name),
+    openActionCount: num(r.open_action_count),
+    openClaimedCount: num(r.open_claimed_count),
   };
 }
 
@@ -223,6 +288,9 @@ export function toIdentified(r: Row): IdentifiedResponse {
     qualityFlag: str(r.quality_flag),
     moderation: (str(r.moderation) ?? "ok") as string,
     attended: str(r.attended),
+    contactedAt: str(r.contacted_at),
+    contactedByName: str(r.contacted_by_name),
+    outreachNote: str(r.outreach_note),
   };
 }
 
@@ -242,23 +310,40 @@ export function toActionItem(r: Row): ActionItem {
     status: (str(r.status) ?? "open") as ActionItem["status"],
     resolutionNote: str(r.resolution_note),
     publishedToStudents: r.published_to_students === true,
+    autoSource: str(r.auto_source),
     createdAt: r.created_at as string,
     completedAt: str(r.completed_at),
   };
+}
+
+/** Attach batch names to action items read across batches. Split out of
+ *  fetchPublishedActions so the staff triage inbox and the student card resolve
+ *  names the same way: one extra query over `batch` (readable by any authenticated
+ *  user), never a join that would need a new grant. */
+export async function withBatchNames<T extends { batchId: string }>(
+  supabase: SupabaseClient,
+  rows: T[],
+): Promise<(T & { batchName: string | null })[]> {
+  const ids = [...new Set(rows.map((r) => r.batchId))];
+  const names = new Map<string, string>();
+  if (ids.length > 0) {
+    const { data } = await supabase.from("batch").select("id, name").in("id", ids);
+    for (const b of (data ?? []) as { id: string; name: string }[]) names.set(b.id, b.name);
+  }
+  return rows.map((r) => ({ ...r, batchName: names.get(r.batchId) ?? null }));
 }
 
 /** Action items published to the calling student, for the "what changed" card.
  *  Read directly under the student RLS policy — no RPC needed, because the policy
  *  (published_to_students AND enrolled) is the whole authorization rule.
  *
- *  Batch names come along because a student enrolled in two batches cannot tell
- *  which course an action belongs to from its title alone. `batch` is readable by
- *  any authenticated user, so this is one extra cheap round trip, not a new grant.
- *
  *  `batchId` narrows to one batch for the batch-scoped surfaces. It must be applied
  *  HERE rather than by filtering the result, because `limit` would otherwise be spent
  *  on other batches' actions first — a student with six published actions in one batch
- *  would see an empty "what changed" on every other batch. */
+ *  would see an empty "what changed" on every other batch.
+ *
+ *  Batch names come along because a student enrolled in two batches cannot tell which
+ *  course an action belongs to from its title alone. */
 export async function fetchPublishedActions(
   supabase: SupabaseClient,
   limit = 6,
@@ -267,19 +352,12 @@ export async function fetchPublishedActions(
   let q = supabase
     .from("feedback_action_item")
     .select(
-      "id, batch_id, subject_id, chapter_id, request_id, dimension_key, title, detail, owner_user_id, priority, due_on, status, resolution_note, published_to_students, created_at, completed_at",
+      "id, batch_id, subject_id, chapter_id, request_id, dimension_key, title, detail, owner_user_id, priority, due_on, status, resolution_note, published_to_students, auto_source, created_at, completed_at",
     )
     .eq("published_to_students", true);
   if (batchId) q = q.eq("batch_id", batchId);
   const { data, error } = await q.order("created_at", { ascending: false }).limit(limit);
   if (error) throw new Error(`feedback_action_item: ${error.message}`);
 
-  const actions = (data ?? []).map(toActionItem);
-  const batchIds = [...new Set(actions.map((a) => a.batchId))];
-  const names = new Map<string, string>();
-  if (batchIds.length > 0) {
-    const { data: batches } = await supabase.from("batch").select("id, name").in("id", batchIds);
-    for (const b of (batches ?? []) as { id: string; name: string }[]) names.set(b.id, b.name);
-  }
-  return actions.map((a) => ({ ...a, batchName: names.get(a.batchId) ?? null }));
+  return withBatchNames(supabase, (data ?? []).map(toActionItem));
 }

@@ -29,6 +29,7 @@ import {
   ListTree,
   Mail,
   Menu,
+  MessageSquareQuote,
   PanelLeft,
   PanelLeftClose,
   Upload,
@@ -60,6 +61,7 @@ const ICONS: Record<NavIcon, React.ComponentType<{ className?: string }>> = {
   fees: Wallet,
   reference: ListTree,
   calendar: CalendarDays,
+  feedback: MessageSquareQuote,
 };
 
 const COLLAPSE_KEY = "cl-sidebar-collapsed";

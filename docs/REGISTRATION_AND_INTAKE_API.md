@@ -218,14 +218,16 @@ Per-step field map (request `data` keys by step):
 
 | Step | Fields |
 |------|--------|
-| 1 Basic Info | `full_name`*, `phone`*, `email`*(read-only from auth), `gender`, `flat_building`, `address`, `pincode`, `city_village`, `district`, `state`, `latitude`, `longitude`, `address_source` |
+| 1 Basic Info | `full_name`*, `phone`*, `date_of_birth`*, `email`*(read-only from auth), `gender`, `flat_building`, `address`, `pincode`, `city_village`, `district`, `state`, `latitude`, `longitude`, `address_source` |
 | 2 Academics | `college_id`*, `degree`, `degree_other`, `branch`, `branch_other`, `year_of_study`, `graduation_year`, `cgpa` |
 | 3 Career Goals | `career_goal_ids`* (≥1), `primary_career_goal_id`* (∈ career_goal_ids) |
 | 4 Self-Assessment | `skill_assessment` (slug→1..5 for each `ref_skill_assessment_category`) |
 | 5 Skills & Interests | `skills[]`, `interests[]` |
-| 6 Tell Us | `is_first_generation` (bool), `date_of_birth`, `languages[]` (ref_language), `caste_certificate_status` (ref_caste_certificate_status), `reservation_category` (ref_reservation_category, only when cert = `has`), `income_band` (ref_income_band), `family_members` (jsonb `[{relation, occupation}]` — ref_family_relation / ref_family_occupation), `hobbies[]` (ref_hobby), `custom_hobbies[]` (free text), `biggest_challenge` (Markdown) |
+| 6 Tell Us | `is_first_generation` (bool), `languages[]` (ref_language), `caste_certificate_status` (ref_caste_certificate_status), `reservation_category` (ref_reservation_category, only when cert = `has`), `income_band` (ref_income_band), `family_members` (jsonb `[{relation, occupation}]` — ref_family_relation / ref_family_occupation), `hobbies[]` (ref_hobby), `custom_hobbies[]` (free text), `biggest_challenge` (Markdown) |
 
 > Step 6 was reworked from "Mentor" → "Tell Us" (migration `121_tell_us_step.sql`). `preferred_mentor_pref_id` is retired from the wizard (moved to `LEGACY_FIELDS`) but the column + `ref_mentor_preference` stay for the Excel-intake pipeline. All Step-6 fields are optional.
+
+> **`date_of_birth` moved from Step 6 to Step 1 and became required** (2026-08-06, issue #84 O-11). It is the only field whose absence changes what a student is *eligible for* rather than how complete their profile looks: chapter feedback is not collected from under-18s, and a student whose age is unknown is skipped by the age gate (migration 173). Measured before the change, 43% of profiles had a DOB and the bulk-intake path had supplied none — so the gate was open for the majority. It uses the same `DobPicker` calendar (min age `MIN_AGE_YEARS = 17`), now rendered by `registration-fields.tsx` rather than `tell-us-step.tsx`. Existing DOB-less students are asked for it through the review-note channel — see `POST /api/admin/students/request-dob`.
 
 Validation is **per-step and lenient**: only validates the fields present; FK slugs/ids checked against `ref_*`; `primary_career_goal_id ∈ career_goal_ids`; ratings 1–5; cgpa range. Missing fields are *not* errors on PATCH (that's what makes it resumable).
 
@@ -242,7 +244,7 @@ Validation is **per-step and lenient**: only validates the fields present; FK sl
 `degree_other` / `branch_other` are free text (≤120 chars), kept only while their field is on `other`, and are excluded from `profileCompleteness` (like `apaar_id`) since most students never see them. The mapping is read **without** the `is_active` filter on purpose: deactivating a branch hides it from new pickers but must never start rejecting the save of a student who already holds it.
 
 ### `POST /api/registration/profile/submit` — finalize
-Runs **full** validation across all required fields (name, phone, college, ≥1 goal + primary). On success sets `registration_status = 'submitted'`, `registration_submitted_at = now()`. On failure returns `{ ok:false, missing:[{step,field}] }` so the form can jump the user back.
+Runs **full** validation across all required fields (name, phone, date of birth, college). On success sets `registration_status = 'submitted'`, `registration_submitted_at = now()`. On failure returns `{ ok:false, missing:[{step,field}] }` so the form can jump the user back.
 
 ### College picker — reuse `GET /api/colleges/search?q=` (exists).
 
@@ -259,7 +261,7 @@ Streams an `.xlsx` template:
 - **Pre-filled college**: the picked college's name shows in a locked cell / header; its `id` is embedded in `_meta`.
 - **Dropdown validation** on single-select enumerated columns (gender, degree, branch, year_of_study, caste_certificate_status, reservation_category, income_band, first-generation Yes/No, and the 1–5 self-assessment) sourced from the `ref_*` tables, so admins pick valid values offline. Multi-select columns can't use an in-cell dropdown, so their valid labels are listed in a header note and typed comma-separated: **Career Paths** (`preferred_category_slugs`, `ref_preference_category`, ≤ 2 — extra values are dropped with a per-row warning so the downstream `student_profile` CHECK can't reject the claimed profile), **Skills** (`ref_skill`), **Interests** (`ref_interest`), **Languages** (`ref_language`), **Hobbies** (`ref_hobby`). `date_of_birth` is a free-text `YYYY-MM-DD` column.
 - The template mirrors the **current** wizard: Step 3 is the preference-category "Career Paths" picker (issue #42) and Step 6 carries the "Tell Us" background fields (issue #44). The legacy **Career Goals / Primary Career Goal / Preferred Mentor Type** columns were removed from the template (the DB columns + `ref_career_goal`/`ref_mentor_preference` remain for analytics; the wizard and template simply stopped collecting them). `family_members` (nested) and `custom_hobbies` (write-ins) are intentionally **not** in the template — students add those later in their own form.
-- One row per student; `email` is the only required column. Everything else is optional → partial rows are fine.
+- One row per student; `email` is the only required column. Everything else is optional → partial rows are fine. **`date_of_birth` stays optional here** even though the student-facing form requires it: colleges routinely don't hold it, and rejecting a 300-row upload over one column would push them back to sending spreadsheets by email. The student is asked for it in their own form instead, where it blocks submission.
 - **Degree → Branch (#99) can't be a dependent dropdown.** Per-degree named ranges + `INDIRECT` validation are brittle across Excel / LibreOffice / Google Sheets, so instead: the Branch column keeps a **flat** dropdown of every branch, the template ships a **visible `Degree → Branch` sheet** listing every legal pair (with an explicit *"— no branch — leave the Branch cell empty"* row for MBA/MCA/M.Com/B.Pharm/Pharm.D/B.Arch), and the pair is enforced **server-side per row** on import through the same `lib/degree-branch.ts` rules the forms use. A mismatch fails **that row** with *"Branch: 'Civil' is not offered for Degree 'B.Com' — see the 'Degree → Branch' sheet"*; the rest of the file still imports. Year of Study is checked against the degree's `duration_years` the same way. The single-student endpoint (`POST /api/admin/intake/student`) applies the identical gate, so no intake path can stage a bad pair.
 
 ### `POST /api/admin/intake/import`  (multipart: `file` + `college_id`)

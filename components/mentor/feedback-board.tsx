@@ -26,11 +26,13 @@ import { Textarea } from "@/components/ui/textarea";
 import { formatDate } from "@/lib/format-date";
 import type { MentorFeedback } from "@/lib/feedback-query";
 import {
+  AttendanceMix,
   GroupScores,
   LowConfidenceBadge,
   ReactionVsLearning,
   ResponseBadge,
 } from "@/components/feedback/score-bars";
+import { ChapterTrend } from "@/components/feedback/chapter-trend";
 
 export function MentorFeedbackBoard() {
   const [chapters, setChapters] = useState<MentorFeedback[] | null>(null);
@@ -109,6 +111,10 @@ export function MentorFeedbackBoard() {
         </span>
       </div>
 
+      {/* Trend before the cards: "am I getting better at this?" is the question a
+          trainer opens this screen with, and it is answerable only across chapters. */}
+      <ChapterTrend chapters={chapters} />
+
       {chapters.map((c) => {
         const ready = c.itemScores?.confidence ?? null;
         const editing = noteFor === c.requestId;
@@ -163,6 +169,8 @@ export function MentorFeedbackBoard() {
                     eligible={c.eligibleCount}
                   />
                   <GroupScores scores={c.groupScores} />
+                  {/* Who was in the room, next to what they scored (§G1). */}
+                  <AttendanceMix mix={c.attendedMix} />
 
                   {c.remarks && c.remarks.length > 0 && (
                     <div className="grid gap-2">
