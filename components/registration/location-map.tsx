@@ -51,9 +51,21 @@ const PIN_ZOOM = 18;
 let loader: Promise<void> | null = null;
 
 /** Set by Google's gm_authFailure hook — a rejected key, referrer, or billing state.
- * Kept module-level so the message survives the promise that already resolved. */
+ * Kept module-level so the state survives a promise that already resolved. */
 let authFailed = false;
 export const mapAuthFailed = () => authFailed;
+
+/**
+ * Subscribers notified when Google rejects the key.
+ *
+ * WHY A LISTENER AND NOT JUST THE PROMISE. Google calls `gm_authFailure` when the
+ * library authenticates, which happens AFTER the bootstrap callback has already
+ * resolved. Rejecting the loader promise at that point is a no-op — the component was
+ * already "ready" — so the student was left looking at Google's own grey
+ * "Oops! Something went wrong… see the JavaScript console" panel instead of our message
+ * naming the actual fix. Staff read logs; students do not read consoles.
+ */
+const authFailureListeners = new Set<() => void>();
 
 /** The global name Google will call once the API is genuinely usable. */
 const READY_CALLBACK = "__clpMapsReady";
@@ -89,7 +101,19 @@ function loadMapsApi(): Promise<void> {
     w.gm_authFailure = () => {
       authFailed = true;
       loader = null;
+      // Google gives no error code here; the specific *MapError goes to the console.
+      // Name the three things it is almost always one of, so whoever reads the log has
+      // somewhere to go.
+      console.error(
+        "[geo] Google Maps rejected the browser key (gm_authFailure). Check, in order: " +
+          "(1) the key's HTTP referrer list includes this exact origin — a custom domain " +
+          "is NOT covered by https://*.vercel.app/*; (2) the key's API restriction " +
+          "includes Maps JavaScript API; (3) billing is active on the project. " +
+          "The precise *MapError is in the browser console.",
+      );
       reject(new Error("maps auth failure"));
+      // Tell any ALREADY-MOUNTED map, since the promise above may have resolved long ago.
+      authFailureListeners.forEach((fn) => fn());
     };
     w[READY_CALLBACK] = () => resolve();
 
@@ -132,6 +156,10 @@ export default function LocationMap({
   // A ref, so the geolocation callback and the click handler share ONE marker instead
   // of each creating their own.
   const markerRef = useRef<any>(null); // eslint-disable-line @typescript-eslint/no-explicit-any
+  // Set once the map exists, so the effect's cleanup can tear it down. Google Maps has
+  // no destroy(), so the best available teardown is to detach the marker and drop every
+  // instance listener before React removes the container.
+  const teardownRef = useRef<(() => void) | null>(null);
   const [locating, setLocating] = useState(false);
   const [pin, setPin] = useState<LatLng | null>(
     lat != null && lng != null && isInIndia(lat, lng) ? { lat, lng } : null,
@@ -144,6 +172,12 @@ export default function LocationMap({
       return;
     }
     let cancelled = false;
+
+    // A late auth failure must replace Google's generic panel with ours (see
+    // authFailureListeners).
+    const onAuthFailure = () => { if (!cancelled) setState("failed"); };
+    authFailureListeners.add(onAuthFailure);
+    if (mapAuthFailed()) onAuthFailure();
 
     (async () => {
       try {
@@ -224,6 +258,19 @@ export default function LocationMap({
           place({ lat: e.latLng.lat(), lng: e.latLng.lng() }, false);
         });
 
+        teardownRef.current = () => {
+          try {
+            markerRef.current?.setMap(null);
+            if (g?.maps?.event) {
+              g.maps.event.clearInstanceListeners(map);
+              if (markerRef.current) g.maps.event.clearInstanceListeners(markerRef.current);
+            }
+          } catch {
+            // Teardown is best-effort; a failure here must not break unmounting.
+          }
+          markerRef.current = null;
+        };
+
         if (!cancelled) setState("ready");
 
         // OPENED WITH NO KNOWN POSITION → ASK THE DEVICE.
@@ -253,71 +300,88 @@ export default function LocationMap({
       }
     })();
 
-    return () => { cancelled = true; };
+    return () => {
+      cancelled = true;
+      authFailureListeners.delete(onAuthFailure);
+      // Detach Google's listeners BEFORE React removes the container, or its observers
+      // fire against a node that is no longer in the document.
+      teardownRef.current?.();
+      teardownRef.current = null;
+    };
     // Mount-only: re-running would rebuild the map under the student every time they
     // nudge the pin.
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
-  if (state === "failed") {
-    return (
-      <div className="border-input grid gap-2 rounded-lg border p-3 text-sm">
-        <p className="text-muted-foreground">
-          {mapAuthFailed()
-            ? "The map key was rejected — this needs fixing in the Google Cloud console, not by you. Your PIN code and address fields still work as normal."
-            : "The map couldn't load. Your PIN code and address fields still work as normal."}
-        </p>
-        <Button type="button" variant="outline" onClick={onCancel} className="min-h-11 justify-self-start sm:min-h-9">
-          Close
-        </Button>
-      </div>
-    );
-  }
+  const failed = state === "failed";
 
+  // THE CONTAINER IS ALWAYS RENDERED — loading and failure are OVERLAYS, never a
+  // different tree.
+  //
+  // An earlier version returned separate markup for the failed state, which removed the
+  // `holder` div. If that happened after `new google.maps.Map(holder.current)` had begun
+  // — which is exactly what an auth failure or the load timeout does — Google was left
+  // observing a node React had detached, and production threw
+  // "Failed to execute 'observe' on 'IntersectionObserver': parameter 1 is not of type
+  // 'Element'". Keeping the element mounted for the map's whole lifetime is the fix.
   return (
     <div className="border-input grid gap-2 overflow-hidden rounded-lg border">
       <div className="relative">
-        {/* Tall enough to give context on a phone without pushing the rest of the
-            step off-screen; taller from sm up where there is room.
+        {/* Tall enough to give context on a phone without pushing the rest of the step
+            off-screen; taller from sm up where there is room.
 
             overflow-hidden is LOAD-BEARING, not tidiness. Google's `.gm-style` surface
             sets overflow-x: visible and its tile layer is genuinely wider than the map
             (measured at 320px: 318px wide, scrollWidth 546). Without a clip here the
-            tiles spill and the whole page scrolls sideways on a phone. The parent card
-            also clips, but relying on that means a future change to the card silently
-            breaks the map. */}
+            tiles spill and the whole page scrolls sideways on a phone. */}
         <div ref={holder} className="h-64 w-full overflow-hidden sm:h-80" />
-        {state === "loading" && (
-          <div className="bg-muted/60 absolute inset-0 grid place-items-center">
-            <LoaderCircle className="size-5 animate-spin" aria-hidden />
-            <span className="sr-only">Loading map…</span>
+
+        {state !== "ready" && (
+          <div className="bg-muted absolute inset-0 grid place-items-center p-4 text-center text-sm">
+            {failed ? (
+              <p className="text-muted-foreground">
+                {mapAuthFailed()
+                  ? "The map isn't available on this site yet — a settings change is needed on our side, not yours. Your PIN code and the address fields below still work as normal."
+                  : "The map couldn't load. Your PIN code and address fields still work as normal."}
+              </p>
+            ) : (
+              <>
+                <LoaderCircle className="size-5 animate-spin" aria-hidden />
+                <span className="sr-only">Loading map…</span>
+              </>
+            )}
           </div>
         )}
       </div>
+
       <div className="flex flex-col gap-2 p-3 pt-0 sm:flex-row sm:items-center sm:justify-between">
-        <p className="text-muted-foreground text-xs">
-          {locating
-            ? "Finding your location…"
-            : pin
-              ? "Drag the pin — or tap the map — to mark your building. Switch to Satellite to spot your rooftop."
-              : "Tap the map to mark your building, then zoom in to place it exactly."}
-        </p>
+        {!failed && (
+          <p className="text-muted-foreground text-xs">
+            {locating
+              ? "Finding your location…"
+              : pin
+                ? "Drag the pin — or tap the map — to mark your building. Switch to Satellite to spot your rooftop."
+                : "Tap the map to mark your building, then zoom in to place it exactly."}
+          </p>
+        )}
         <div className="grid gap-2 sm:flex sm:items-center">
-          <Button
-            type="button"
-            onClick={() => pin && onPick(pin)}
-            disabled={!pin}
-            className="min-h-11 w-full sm:min-h-9 sm:w-auto"
-          >
-            Use this location
-          </Button>
+          {!failed && (
+            <Button
+              type="button"
+              onClick={() => pin && onPick(pin)}
+              disabled={!pin}
+              className="min-h-11 w-full sm:min-h-9 sm:w-auto"
+            >
+              Use this location
+            </Button>
+          )}
           <Button
             type="button"
             variant="outline"
             onClick={onCancel}
             className="min-h-11 w-full sm:min-h-9 sm:w-auto"
           >
-            Cancel
+            {failed ? "Close" : "Cancel"}
           </Button>
         </div>
       </div>
