@@ -37,9 +37,15 @@ export async function GET(
   // Google is the only source (#101 follow-up). There is deliberately no local
   // catalogue to fall back to: a wrong district served from data nobody maintains is
   // worse than asking the student to type four fields.
-  sweepProviderCache(supabase);
-  const result = await providerPincode(supabase, pin);
-  if (result) return NextResponse.json({ result, source: "provider" });
+  // See the note in /api/geo/reverse: never let a provider fault reach the student as a
+  // 500 — they are mid-registration and the fields are editable by hand.
+  try {
+    sweepProviderCache(supabase);
+    const result = await providerPincode(supabase, pin);
+    if (result) return NextResponse.json({ result, source: "provider" });
+  } catch (e) {
+    console.error(`[geo] PIN lookup failed for ${pin}`, e);
+  }
 
   return NextResponse.json(
     {

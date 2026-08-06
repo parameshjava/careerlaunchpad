@@ -102,6 +102,12 @@ unlimited billable calls.
 `student_profile.latitude/longitude` is unaffected by the caching rule — that is a pin the
 **student** placed, i.e. their own data. Coordinates Google returns are never persisted.
 
+> **Without `SUPABASE_SECRET_KEY` the cache and counter are unavailable**, because both
+> live in `service_role`-only tables. Lookups then still work — every one just costs a
+> fresh call, and the app-level cap is not enforced (the console quota still is). A
+> warning is logged once. This deliberately does not disable the feature: a dead address
+> lookup is worse for a student than an uncached one, and the endpoints are auth-gated.
+>
 > **After changing resolution logic, clear the cache.** With a 30-day TTL you will
 > otherwise be testing yesterday's answer:
 > `delete from geo_provider_cache where kind = 'reverse';`
