@@ -13,31 +13,36 @@
 //   • Nothing is hidden for a low response count (O-2). A single response gets the
 //     same triage panel as fourteen, and the trip flags fire on one.
 import { useCallback, useEffect, useState } from "react";
-import { ChevronDown, ChevronRight, Loader2, Mail, EyeOff, Eye, Plus } from "lucide-react";
+import {
+  ChevronDown,
+  ChevronRight,
+  Eye,
+  EyeOff,
+  Loader2,
+  Mail,
+  MessageSquarePlus,
+  Plus,
+} from "lucide-react";
 
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
+import { Textarea } from "@/components/ui/textarea";
 import { formatDate, formatDateTime } from "@/lib/format-date";
 import {
   ATTENDED_LABELS,
   TRIP_LABELS,
+  tallyAttended,
   type IdentifiedResponse,
   type StaffFeedbackRow,
-  type Trip,
 } from "@/lib/feedback-query";
-import { GroupScores, LowConfidenceBadge, ReactionVsLearning } from "@/components/feedback/score-bars";
-
-const TRIP_TONE: Record<Trip, string> = {
-  low_rating:
-    "border-rose-300 bg-rose-50 text-rose-900 dark:border-rose-900/60 dark:bg-rose-950/40 dark:text-rose-200",
-  low_mean:
-    "border-rose-300 bg-rose-50 text-rose-900 dark:border-rose-900/60 dark:bg-rose-950/40 dark:text-rose-200",
-  has_remark:
-    "border-primary/30 bg-primary/10 text-primary dark:text-primary",
-  low_turnout:
-    "border-amber-300 bg-amber-50 text-amber-900 dark:border-amber-900/60 dark:bg-amber-950/40 dark:text-amber-200",
-};
+import {
+  AttendanceMix,
+  GroupScores,
+  LowConfidenceBadge,
+  ReactionVsLearning,
+  TRIP_TONE,
+} from "@/components/feedback/score-bars";
 
 export function BatchFeedback({
   batchId,
@@ -99,25 +104,36 @@ export function BatchFeedback({
     [open, detail],
   );
 
-  async function moderate(responseId: string, moderation: "ok" | "hidden", requestId: string) {
-    try {
-      const res = await fetch(`/api/admin/feedback/responses/${responseId}`, {
-        method: "PATCH",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ moderation }),
-      });
-      const json = await res.json().catch(() => ({}));
-      if (!res.ok) throw new Error(json.error ?? "Could not update");
-      setDetail((prev) => ({
-        ...prev,
-        [requestId]: (prev[requestId] ?? []).map((r) =>
-          r.responseId === responseId ? { ...r, moderation } : r,
-        ),
-      }));
-    } catch (e) {
-      setError((e as Error).message);
-    }
-  }
+  // Both response-level writes go through here: same endpoint, same optimistic
+  // patch of the expanded list, so a failure can never leave the row showing a state
+  // the database rejected.
+  const patchResponse = useCallback(
+    async (
+      responseId: string,
+      requestId: string,
+      body: Record<string, unknown>,
+      applied: Partial<IdentifiedResponse>,
+    ) => {
+      try {
+        const res = await fetch(`/api/admin/feedback/responses/${responseId}`, {
+          method: "PATCH",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify(body),
+        });
+        const json = await res.json().catch(() => ({}));
+        if (!res.ok) throw new Error(json.error ?? "Could not update");
+        setDetail((prev) => ({
+          ...prev,
+          [requestId]: (prev[requestId] ?? []).map((r) =>
+            r.responseId === responseId ? { ...r, ...applied } : r,
+          ),
+        }));
+      } catch (e) {
+        setError((e as Error).message);
+      }
+    },
+    [],
+  );
 
   if (error && !rows)
     return (
@@ -228,10 +244,90 @@ export function BatchFeedback({
           row={rows.find((r) => r.requestId === open)!}
           responses={detail[open]}
           loading={loadingDetail}
-          onModerate={(rid, m) => moderate(rid, m, open)}
+          onModerate={(rid, m) => patchResponse(rid, open, { moderation: m }, { moderation: m })}
+          onLogOutreach={(rid, note) =>
+            patchResponse(
+              rid,
+              open,
+              { contacted: true, outreach_note: note },
+              // The server stamps the real time; this is close enough to show now and
+              // is replaced by the server's value on the next expand.
+              { contactedAt: new Date().toISOString(), outreachNote: note || null },
+            )
+          }
+          onClearOutreach={(rid) =>
+            patchResponse(
+              rid,
+              open,
+              { contacted: false },
+              { contactedAt: null, contactedByName: null, outreachNote: null },
+            )
+          }
           onCreateAction={onCreateAction}
         />
       )}
+    </div>
+  );
+}
+
+/** Log what came of contacting a student about their feedback (#84 V9, migration
+ *  167). The note is the point: "spoken to" with no substance tells the next person
+ *  nothing, and the pain point behind a 2-star rating is exactly what #84 asks staff
+ *  to go and find out. */
+function OutreachEditor({
+  responseId,
+  contactedAt,
+  note,
+  onSave,
+  onClear,
+}: {
+  responseId: string;
+  contactedAt: string | null;
+  note: string | null;
+  onSave: (note: string) => void;
+  onClear: () => void;
+}) {
+  const [editing, setEditing] = useState(false);
+  const [text, setText] = useState(note ?? "");
+
+  if (!editing)
+    return (
+      <div className="flex flex-wrap gap-2">
+        <Button size="sm" variant="outline" onClick={() => setEditing(true)}>
+          <MessageSquarePlus className="size-3.5" />
+          {contactedAt ? "Edit follow-up" : "Log follow-up"}
+        </Button>
+        {contactedAt && (
+          <Button size="sm" variant="ghost" onClick={onClear}>
+            Undo
+          </Button>
+        )}
+      </div>
+    );
+
+  return (
+    <div className="grid w-full gap-2">
+      <Textarea
+        id={`outreach-${responseId}`}
+        rows={2}
+        value={text}
+        onChange={(e) => setText(e.target.value)}
+        placeholder="What they said, and what you agreed to do about it"
+      />
+      <div className="flex gap-2">
+        <Button
+          size="sm"
+          onClick={() => {
+            onSave(text.trim());
+            setEditing(false);
+          }}
+        >
+          Save
+        </Button>
+        <Button size="sm" variant="outline" onClick={() => setEditing(false)}>
+          Cancel
+        </Button>
+      </div>
     </div>
   );
 }
@@ -259,12 +355,16 @@ function ChapterDetail({
   responses,
   loading,
   onModerate,
+  onLogOutreach,
+  onClearOutreach,
   onCreateAction,
 }: {
   row: StaffFeedbackRow;
   responses: IdentifiedResponse[] | undefined;
   loading: boolean;
   onModerate: (responseId: string, moderation: "ok" | "hidden") => void;
+  onLogOutreach: (responseId: string, note: string) => void;
+  onClearOutreach: (responseId: string) => void;
   onCreateAction?: (seed: {
     requestId: string;
     subjectId: string;
@@ -321,6 +421,10 @@ function ChapterDetail({
               eligible={row.eligibleCount}
             />
             <GroupScores scores={row.groupScores} />
+            {/* Tallied from the rows below rather than fetched (§G1): the same data
+                the panel is already showing, so the two cannot disagree. Absent
+                until the responses load. */}
+            <AttendanceMix mix={tallyAttended(answered)} />
           </>
         )}
 
@@ -399,6 +503,19 @@ function ChapterDetail({
                       </p>
                     )}
 
+                    {/* What came of the follow-up. Shown before the buttons because
+                        once a conversation has happened, that is the freshest fact
+                        about this response — and it stops a second cold email. */}
+                    {r.contactedAt && (
+                      <p className="rounded-md border border-l-2 border-l-emerald-600 bg-emerald-50/60 px-3 py-2 text-xs break-words dark:bg-emerald-950/30">
+                        <span className="font-medium">
+                          Spoken to {formatDate(r.contactedAt)}
+                          {r.contactedByName ? ` by ${r.contactedByName}` : ""}
+                        </span>
+                        {r.outreachNote && <span className="block">{r.outreachNote}</span>}
+                      </p>
+                    )}
+
                     <div className="flex flex-wrap items-center gap-2">
                       <span className="text-muted-foreground text-xs">
                         {r.submittedAt ? formatDateTime(r.submittedAt) : ""}
@@ -409,6 +526,18 @@ function ChapterDetail({
                             <Mail className="size-3.5" /> Contact
                           </a>
                         </Button>
+                      )}
+                      {/* Logging is offered only where the student opted in — the RPC
+                          refuses otherwise, so an ever-present button would just be a
+                          button that fails. */}
+                      {r.contactOk && r.responseId && (
+                        <OutreachEditor
+                          responseId={r.responseId}
+                          contactedAt={r.contactedAt}
+                          note={r.outreachNote}
+                          onSave={(note) => onLogOutreach(r.responseId!, note)}
+                          onClear={() => onClearOutreach(r.responseId!)}
+                        />
                       )}
                       {r.remark && r.responseId && (
                         <Button

@@ -3,7 +3,14 @@
 //   GET ?batch=<uuid> -> { requests: [{ requestId, batchId, batchName, chapterName,
 //                         subjectName, closesAt, items:[…], submittedAt,
 //                         editableUntil, answers, remark, contactOk }],
-//            published: [{ id, batchId, batchName, title, status, … }] }
+//            published: [{ id, batchId, batchName, title, status, … }],
+//            needsDob: boolean }
+//
+// `needsDob` is the honest answer to an empty `requests`: feedback is not collected
+// from under-18s and cannot be collected from a student whose age we don't know
+// (#84 O-11), so a student with no date of birth on file gets skipped. It is true only
+// when there IS a window they would otherwise be asked about — a prompt with nothing
+// behind it teaches people to ignore prompts.
 //
 // `published` is the "what changed after your feedback" list — the action items
 // staff chose to publish. It ships with this GET rather than a second endpoint
@@ -40,10 +47,14 @@ export async function GET(request: Request) {
   const batchId = raw && UUID.test(raw) ? raw : null;
 
   const supabase = await createClient();
-  const [{ data, error }, published] = await Promise.all([
+  const [{ data, error }, published, { data: needsDob }] = await Promise.all([
     supabase.rpc("student_pending_feedback"),
     // A failure here must not cost the student their feedback prompt.
     fetchPublishedActions(supabase, 6, batchId).catch(() => []),
+    // True when this student has feedback waiting but no date of birth on file, so
+    // the age gate (migration 173) is skipping them. Without this the page would
+    // simply render nothing and they would never learn there was anything to do.
+    supabase.rpc("student_feedback_dob_required"),
   ]);
   if (error) return NextResponse.json({ error: error.message }, { status: 500 });
 
@@ -51,6 +62,7 @@ export async function GET(request: Request) {
 
   return NextResponse.json({
     requests: batchId ? requests.filter((r) => r.batchId === batchId) : requests,
+    needsDob: needsDob === true,
     published: published.map((a) => ({
       id: a.id,
       title: a.title,

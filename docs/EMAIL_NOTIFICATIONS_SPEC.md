@@ -130,3 +130,70 @@ student loses it at sign-in. The middleware records `?next=<path>`, the login pa
 forwards it through the OAuth round trip, and the callback honours it for a
 provisioned account. Values are validated by `lib/next-path.ts` — an unchecked
 `next` on a login flow is an open redirect.
+
+---
+
+## §6 Chapter feedback (issue #84) — the first *scheduled* senders
+
+§1–§5 all fire as a side effect of somebody clicking something. These two have no
+human trigger at all, which is the point: the gaps they close are that nobody was
+telling students a feedback window had opened, and nothing was chasing an action
+item past its due date.
+
+**Scheduler.** Vercel Cron → `GET /api/cron/feedback-reminders`, daily at 04:30 UTC
+(10:00 IST), configured in `vercel.json`. Both jobs run in that one invocation
+(`lib/feedback-notify.ts`), sequentially, because they drain the same single mailbox.
+
+- **`CRON_SECRET` is mandatory.** Vercel sends it as `Authorization: Bearer …`; with
+  the variable unset the route answers **503 and sends nothing**. An unauthenticated
+  endpoint that emails students is worse than a job that is not switched on yet, and
+  the 503 says which state you are in.
+- **Not pg_cron.** The SMTP transport lives in Node, so reaching it from Postgres
+  would mean `pg_net` plus a URL and a shared secret inside a migration. The
+  feedback jobs that need no mail — window expiry (164), action proposals (166), the
+  24-month prune (171) — *do* run in pg_cron, where they belong.
+
+### §6.1 "How was this chapter?" → students
+
+**Trigger.** A feedback window that has been open **3 days** and is still open
+(`enqueue_feedback_reminders(3)`, migration 168).
+
+**Recipients.** Enrolled (`pending`/`active`), active-account students who have **not
+responded**, have an email, and are **18 or over** (O-11 — under-18 students are never
+asked; see CHAPTER_FEEDBACK_ANALYSIS §8).
+
+**Exactly one, ever.** `feedback_reminder_notification`'s primary key is
+`(request_id, student_id)`, so "once" is a database fact, not a timestamp comparison.
+A second nudge would need a new table — deliberately, because prompt fatigue is what
+kills response rates (§F4), and this feature already generates one prompt per chapter
+per student.
+
+**Content** (`sendFeedbackReminderEmail`). The chapter, the ~45-second promise, the
+closing date, a button straight to `/student/feedback/<requestId>`, and the visibility
+promise repeated **verbatim from the form** — the trainer sees combined results with no
+names. An email vaguer than the form it links to is where trust in an anonymous
+channel goes. It also tells an already-answered student to ignore it, because enqueue
+happens before the drain and a few will have answered in between.
+
+**Never sent after the window shuts.** `pending_feedback_reminders` filters on
+`closes_at > now()`: a link to a closed form reads as being asked for something that
+was then taken away.
+
+### §6.2 Overdue action items → their owner
+
+**Trigger.** Any `feedback_action_item` that is `open`/`in_progress` with `due_on` in
+the past (`pending_overdue_action_digests()`, migration 172).
+
+**Recipients.** The item's **owner only**. Unowned items — including auto-proposals
+nobody has taken on (166) — are mailed to nobody; they are counted by "Nobody on it"
+on `/dashboard/feedback` (O-13).
+
+**Once a week.** `feedback_digest_log` is keyed `(user_id, week_start)` where
+`week_start` is the UTC Monday. The daily cron therefore sends at most one digest per
+owner per week, and a failed Monday is covered by Tuesday instead of losing a week.
+Only successes are logged.
+
+**Content** (`sendOverdueActionsEmail`). The items themselves, not a count — "you have
+4 overdue items" makes you open a tab to find out which. Titles are staff-authored and
+may name a student, which is acceptable here precisely because this only ever goes to
+the item's own owner.

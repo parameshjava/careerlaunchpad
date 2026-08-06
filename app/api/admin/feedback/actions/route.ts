@@ -2,6 +2,11 @@
 //
 //   GET  ?batch=<uuid>&status=open|in_progress|done|dropped&overdue=1
 //        -> { actions: [...] }
+//
+// `batch` is optional: without it this returns every item the caller may see, which
+// is what the cross-batch triage inbox (/dashboard/feedback) reads. Those rows carry
+// `batchName`, because "Fix the audio" is unplaceable without it once more than one
+// batch is on screen; a batch-scoped call skips that lookup.
 //   POST body { batch_id, title, detail?, subject_id?, chapter_id?, request_id?,
 //               dimension_key?, owner_user_id?, priority?, due_on?,
 //               published_to_students? } -> { action }
@@ -17,10 +22,10 @@
 import { NextResponse, type NextRequest } from "next/server";
 import { getAuthContext, can } from "@/lib/auth";
 import { createClient } from "@/lib/supabase/server";
-import { toActionItem } from "@/lib/feedback-query";
+import { toActionItem, withBatchNames } from "@/lib/feedback-query";
 
 const COLS =
-  "id, batch_id, subject_id, chapter_id, request_id, dimension_key, title, detail, owner_user_id, priority, due_on, status, resolution_note, published_to_students, created_at, completed_at";
+  "id, batch_id, subject_id, chapter_id, request_id, dimension_key, title, detail, owner_user_id, priority, due_on, status, resolution_note, published_to_students, auto_source, created_at, completed_at";
 const STATUSES = ["open", "in_progress", "done", "dropped"];
 const PRIORITIES = ["low", "normal", "high"];
 
@@ -47,7 +52,11 @@ export async function GET(req: NextRequest) {
     .order("due_on", { ascending: true, nullsFirst: false })
     .order("created_at", { ascending: false });
   if (error) return NextResponse.json({ error: error.message }, { status: 500 });
-  return NextResponse.json({ actions: (data ?? []).map(toActionItem) });
+
+  const actions = (data ?? []).map(toActionItem);
+  return NextResponse.json({
+    actions: batch ? actions : await withBatchNames(supabase, actions),
+  });
 }
 
 export async function POST(req: NextRequest) {

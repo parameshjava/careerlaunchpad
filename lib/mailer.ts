@@ -725,3 +725,175 @@ export async function sendTestEmail(to: string): Promise<TestResult> {
     return { ok: false, error: err instanceof Error ? err.message : String(err) };
   }
 }
+
+export type FeedbackReminderEmail = {
+  to: string;
+  name?: string | null;
+  batchName: string | null;
+  subjectName: string | null;
+  chapterName: string | null;
+  /** ISO date the window shuts — the only urgency this email is allowed to use. */
+  closesAt: string;
+  feedbackUrl: string;
+};
+
+/**
+ * The single reminder that a chapter's feedback window is open (issue #84 §G3,
+ * migration 168). ONE per window per student, ever — the queue's primary key is
+ * what guarantees that, not this function.
+ *
+ * The copy carries three loads, and each is deliberate:
+ *   · It says what feedback is FOR ("what we change"), because a student who has
+ *     never seen anything change stops answering (§F6).
+ *   · It repeats the visibility promise verbatim from the form — the trainer sees
+ *     combined results with no names. An email that is vaguer than the form it links
+ *     to is where trust in an anonymous channel goes.
+ *   · It tells an already-answered student to ignore it, because enqueue happens
+ *     before the drain and a few will have answered in between (migration 168 §2).
+ *
+ * Returns the outcome rather than swallowing it: the caller records it in
+ * feedback_reminder_notification and the row is retried on the next run.
+ */
+export async function sendFeedbackReminderEmail(
+  d: FeedbackReminderEmail,
+): Promise<{ sent: boolean; error?: string }> {
+  const hi = d.name ? `Hi ${d.name},` : "Hi,";
+  const chapter = d.chapterName ?? "a chapter you've just finished";
+  const closes = new Date(d.closesAt).toLocaleDateString("en-IN", {
+    day: "numeric",
+    month: "short",
+    year: "numeric",
+  });
+  const where = [d.subjectName, d.batchName].filter(Boolean).join(" · ");
+  const subject = `45 seconds: how was ${chapter}?`;
+
+  const text =
+    `${hi}\n\n` +
+    `${chapter}${where ? ` (${where})` : ""} is marked complete, and we'd like to know how it went ` +
+    `for you. Six questions, about 45 seconds — it closes on ${closes}.\n\n` +
+    `${d.feedbackUrl}\n\n` +
+    `Your trainer sees the combined results with no names attached. Your teachers and ` +
+    `the academic team use it to change the pace, the notes and the practice.\n\n` +
+    `Already answered? Thank you — please ignore this.\n`;
+
+  const content =
+    `<h1 style="margin:0 0 6px;font-size:20px;line-height:1.3;font-weight:700;color:#0f172a;">How was ${escapeHtml(chapter)}?</h1>` +
+    (where
+      ? `<p style="margin:0 0 18px;font-size:14px;color:#64748b;line-height:1.5;">${escapeHtml(where)}</p>`
+      : "") +
+    `<p style="margin:0 0 18px;">${escapeHtml(hi)}</p>` +
+    `<p style="margin:0 0 18px;">This chapter is marked complete. Six questions on how it went for you — about <strong>45 seconds</strong>, and it closes on <strong>${escapeHtml(closes)}</strong>.</p>` +
+    emailButton(d.feedbackUrl, "Give feedback") +
+    `<table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0" style="margin:20px 0 0;border-collapse:collapse;"><tr>` +
+    `<td style="background:#f4f7ff;border-left:4px solid #2563eb;border-radius:8px;padding:13px 16px;color:#1e3a8a;font-size:14px;line-height:1.55;">` +
+    `Your trainer sees the combined results with <strong>no names attached</strong>. The academic team uses it to change the pace, the notes and the practice — and publishes what changed back to your batch.` +
+    `</td></tr></table>` +
+    `<p style="margin:18px 0 0;font-size:13px;color:#64748b;">Already answered? Thank you — please ignore this. We only send one reminder per chapter.</p>`;
+
+  const html = emailShell({
+    preheader: `Six questions on ${chapter}. Closes ${closes}.`,
+    contentHtml: content,
+    footerHtml:
+      `You're receiving this because you're enrolled in this batch at CareerLaunchpad.` +
+      ` This is the only reminder we send for this chapter. Please do not reply to this address.`,
+  });
+
+  const mailer = getTransporter();
+  if (!mailer) {
+    console.info(`[feedback-reminder] would email ${d.to}: ${subject}`);
+    return { sent: false, error: "SMTP not configured" };
+  }
+  try {
+    await mailer.sendMail({ from: `"${FROM_NAME}" <${FROM_ADDRESS}>`, to: d.to, subject, text, html });
+    return { sent: true };
+  } catch (err) {
+    const error = err instanceof Error ? err.message : String(err);
+    console.error(`[feedback-reminder] failed to email ${d.to}:`, err);
+    return { sent: false, error };
+  }
+}
+
+export type OverdueActionsEmail = {
+  to: string;
+  name?: string | null;
+  items: {
+    title: string;
+    dueOn: string | null;
+    priority: string;
+    status: string;
+    batchName: string | null;
+  }[];
+  actionsUrl: string;
+};
+
+/**
+ * Weekly nudge about the feedback action items you own that are past their due date
+ * (issue #84 §V11, migration 172). One per person per week — the digest log's primary
+ * key is what guarantees that, not this function.
+ *
+ * It lists the items rather than just counting them, because "you have 4 overdue
+ * items" makes you open a tab to find out which; the list lets someone close one from
+ * their phone on the way in. Titles are staff-authored free text that may name a
+ * student, which is fine — this only ever goes to the item's own owner.
+ */
+export async function sendOverdueActionsEmail(
+  d: OverdueActionsEmail,
+): Promise<{ sent: boolean; error?: string }> {
+  const hi = d.name ? `Hi ${d.name},` : "Hi,";
+  const n = d.items.length;
+  const subject = `${n} overdue feedback action${n === 1 ? "" : "s"}`;
+
+  const line = (i: OverdueActionsEmail["items"][number]) =>
+    [i.title, i.batchName, i.dueOn ? `due ${i.dueOn}` : null].filter(Boolean).join(" · ");
+
+  const text =
+    `${hi}\n\n` +
+    `You have ${n} feedback action${n === 1 ? "" : "s"} past its due date:\n\n` +
+    d.items.map((i) => `  · ${line(i)}`).join("\n") +
+    `\n\nClose one by recording what actually changed — that note is what gets published ` +
+    `back to the students who asked for it.\n\n${d.actionsUrl}\n`;
+
+  const rows = d.items
+    .map(
+      (i) =>
+        `<tr><td style="padding:9px 0;border-bottom:1px solid #eef2f7;font-size:14px;line-height:1.5;">` +
+        `<strong style="color:#0f172a;">${escapeHtml(i.title)}</strong>` +
+        `<span style="display:block;color:#64748b;font-size:13px;">` +
+        [i.batchName, i.dueOn ? `due ${i.dueOn}` : null, i.priority !== "normal" ? i.priority : null]
+          .filter(Boolean)
+          .map((s) => escapeHtml(String(s)))
+          .join(" &middot; ") +
+        `</span></td></tr>`,
+    )
+    .join("");
+
+  const content =
+    `<h1 style="margin:0 0 6px;font-size:20px;line-height:1.3;font-weight:700;color:#0f172a;">${n} overdue action${n === 1 ? "" : "s"}</h1>` +
+    `<p style="margin:0 0 18px;font-size:14px;color:#64748b;line-height:1.5;">From student feedback on your batches</p>` +
+    `<p style="margin:0 0 14px;">${escapeHtml(hi)}</p>` +
+    `<table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0" style="margin:0 0 20px;border-collapse:collapse;">${rows}</table>` +
+    emailButton(d.actionsUrl, "Open feedback triage") +
+    `<p style="margin:18px 0 0;font-size:13px;color:#64748b;">Closing an item with a resolution note is what lets us publish "here's what changed" back to the batch — students who never see a change stop answering.</p>`;
+
+  const html = emailShell({
+    preheader: `${n} feedback action${n === 1 ? "" : "s"} past due.`,
+    contentHtml: content,
+    footerHtml:
+      `You're receiving this because you own these action items on CareerLaunchpad.` +
+      ` One digest per week, and only when something is overdue.`,
+  });
+
+  const mailer = getTransporter();
+  if (!mailer) {
+    console.info(`[overdue-actions] would email ${d.to}: ${subject}`);
+    return { sent: false, error: "SMTP not configured" };
+  }
+  try {
+    await mailer.sendMail({ from: `"${FROM_NAME}" <${FROM_ADDRESS}>`, to: d.to, subject, text, html });
+    return { sent: true };
+  } catch (err) {
+    const error = err instanceof Error ? err.message : String(err);
+    console.error(`[overdue-actions] failed to email ${d.to}:`, err);
+    return { sent: false, error };
+  }
+}

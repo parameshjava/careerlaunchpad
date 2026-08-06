@@ -1,6 +1,6 @@
 // Update one feedback action item (issue #84).
 //
-//   PATCH body { status?, owner_user_id?, priority?, due_on?, title?, detail?,
+//   PATCH body { status?, owner_user_id?, claim?, priority?, due_on?, title?, detail?,
 //                resolution_note?, published_to_students? } -> { action }
 //
 // Closing an item stamps completed_at/completed_by so the loop has a date, and the
@@ -13,7 +13,7 @@ import { createClient } from "@/lib/supabase/server";
 import { toActionItem } from "@/lib/feedback-query";
 
 const COLS =
-  "id, batch_id, subject_id, chapter_id, request_id, dimension_key, title, detail, owner_user_id, priority, due_on, status, resolution_note, published_to_students, created_at, completed_at";
+  "id, batch_id, subject_id, chapter_id, request_id, dimension_key, title, detail, owner_user_id, priority, due_on, status, resolution_note, published_to_students, auto_source, created_at, completed_at";
 const STATUSES = ["open", "in_progress", "done", "dropped"];
 const PRIORITIES = ["low", "normal", "high"];
 const CLOSED = new Set(["done", "dropped"]);
@@ -60,6 +60,10 @@ export async function PATCH(req: NextRequest, { params }: { params: Promise<{ id
     patch.resolution_note = typeof body.resolution_note === "string" ? body.resolution_note : null;
   if ("owner_user_id" in body)
     patch.owner_user_id = typeof body.owner_user_id === "string" ? body.owner_user_id : null;
+  // Claiming an auto-proposed item (migration 166). Server-side rather than an
+  // owner_user_id the client supplies: the browser has no business asserting which
+  // user id it is, and "me" is the only owner this button can mean.
+  if (body.claim === true) patch.owner_user_id = ctx.userId;
   if ("due_on" in body)
     patch.due_on = typeof body.due_on === "string" && body.due_on ? body.due_on : null;
   if ("published_to_students" in body)

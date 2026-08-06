@@ -36,7 +36,7 @@ import { formatDate, formatDateTime } from "@/lib/format-date";
 import type { SubjectProgress, ProgressStatus } from "@/lib/batch-progress-query";
 import type { MyBatch, MyBatchSession } from "@/lib/student-batches-query";
 import type { PendingFeedback } from "@/lib/feedback-query";
-import { WhatChanged, type PublishedAction } from "@/components/student/feedback-prompt";
+import { DobRequiredCard, WhatChanged, type PublishedAction } from "@/components/student/feedback-prompt";
 
 // Style-guide folder tabs: bordered, muted inactive with the underline, solid brand
 // fill when active. Same string the staff workspace uses.
@@ -73,6 +73,8 @@ export function BatchDetail({
   // Open feedback windows, keyed by chapter — drives the per-chapter action.
   const [requests, setRequests] = useState<PendingFeedback[]>([]);
   const [published, setPublished] = useState<PublishedAction[]>([]);
+  // The age gate is skipping this student for want of a date of birth (#84 O-11).
+  const [needsDob, setNeedsDob] = useState(false);
   const [loadingFb, setLoadingFb] = useState(true);
 
   const loadFeedback = useCallback(() => {
@@ -85,6 +87,7 @@ export function BatchDetail({
         if (!d.error) {
           setRequests(d.requests ?? []);
           setPublished(d.published ?? []);
+          setNeedsDob(d.needsDob === true);
         }
       })
       .catch(() => {})
@@ -219,6 +222,10 @@ export function BatchDetail({
               <p className="text-muted-foreground flex items-center gap-2 text-sm">
                 <Loader2 className="size-4 animate-spin" /> Loading…
               </p>
+            ) : needsDob ? (
+              // Before the empty state: "nothing to rate" would be a lie here — there
+              // IS something, and one missing field is why they can't see it.
+              <DobRequiredCard />
             ) : batchRequests.length === 0 ? (
               <p className="text-muted-foreground bg-muted/40 rounded-lg border px-4 py-10 text-center text-sm">
                 Nothing to rate right now. A short form appears here whenever your trainer completes

@@ -18,7 +18,8 @@
 //
 // Reads/writes /api/student/feedback.
 import { useCallback, useEffect, useState } from "react";
-import { CheckCircle2, Loader2, Lock, MessageSquare } from "lucide-react";
+import Link from "next/link";
+import { CalendarClock, CheckCircle2, Loader2, Lock, MessageSquare } from "lucide-react";
 
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
@@ -281,6 +282,7 @@ export function FeedbackPrompt() {
   const [requests, setRequests] = useState<PendingFeedback[] | null>(null);
   const [published, setPublished] = useState<PublishedAction[]>([]);
   const [snoozed, setSnoozed] = useState<Record<string, number>>({});
+  const [needsDob, setNeedsDob] = useState(false);
   const [done, setDone] = useState(false);
 
   const load = useCallback(() => {
@@ -290,6 +292,7 @@ export function FeedbackPrompt() {
         if (d.error) return;   // a failed prompt must never break the hub below it
         setRequests(d.requests ?? []);
         setPublished(d.published ?? []);
+        setNeedsDob(d.needsDob === true);
       })
       .catch(() => setRequests([]));
   }, []);
@@ -326,6 +329,8 @@ export function FeedbackPrompt() {
           </CardContent>
         </Card>
       )}
+
+      {needsDob && <DobRequiredCard />}
 
       {current && !done && (
         <Card className="border-primary/40">
@@ -368,6 +373,36 @@ export function FeedbackPrompt() {
 
       {published.length > 0 && <WhatChanged actions={published} />}
     </div>
+  );
+}
+
+/** Shown when a student has feedback waiting but no date of birth on file, so the age
+ *  gate is skipping them (#84 O-11, migration 173).
+ *
+ *  It exists because failing closed on an unknown age is the right call and a silent
+ *  one: without this card the student sees an empty page and never learns there was
+ *  something to answer, or that one field would unlock it. It says what is missing,
+ *  why it is needed, and links straight to the field — and it never mentions being
+ *  under 18, because a 17-year-old has nothing to fix and hinting otherwise would be
+ *  an invitation to enter a false date. */
+export function DobRequiredCard() {
+  return (
+    <Card className="border-amber-300 bg-amber-50/60 dark:border-amber-900/60 dark:bg-amber-950/30">
+      <CardContent className="grid gap-2 pt-6">
+        <h3 className="flex items-center gap-2 font-semibold">
+          <CalendarClock className="size-4 shrink-0 text-amber-700 dark:text-amber-400" />
+          Add your date of birth to give feedback
+        </h3>
+        <p className="text-sm">
+          Your trainers have asked for feedback on a chapter you&apos;ve finished, but we can&apos;t
+          collect it yet. Course feedback is only collected from students aged 18 and over, so we
+          need your date of birth on your profile first.
+        </p>
+        <Button asChild className="justify-self-start">
+          <Link href="/student/register">Add my date of birth</Link>
+        </Button>
+      </CardContent>
+    </Card>
   );
 }
 

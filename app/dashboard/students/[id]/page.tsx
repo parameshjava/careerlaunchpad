@@ -101,6 +101,8 @@ export default async function StudentProfilePage({ params }: { params: Promise<{
         {awaitingReview && <ApprovalBar id={id} name={reviewRow?.full_name ?? ""} />}
         <RegistrationForm
           reviewFirst
+          // Cancel returns staff to this student's record, not to the student hub.
+          cancelHref={`/dashboard/students/${id}`}
           endpoints={{
             profile: `/api/students/${id}/profile`,
             submit: `/api/students/${id}/profile/submit`,

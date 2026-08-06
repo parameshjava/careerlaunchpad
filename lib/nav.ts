@@ -22,7 +22,8 @@ export type NavIcon =
   | "batches"
   | "fees"
   | "reference"
-  | "calendar";
+  | "calendar"
+  | "feedback";
 
 /** Live badge keys understood by SidebarNav (resolved to a client widget). */
 export type NavBadge = "exams";
@@ -157,6 +158,18 @@ export function buildNav(ctx: AuthContext, opts: { studentApproved?: boolean } =
       exams.push({ label: "Exam results", href: "/dashboard/exams/results", icon: "analytics" });
     if (canEvaluate) exams.push(evalItem);
 
+    // Teaching quality — the chapter-feedback triage queue (#84). Deliberately its
+    // own item rather than a Reports entry: it is a work queue, not a read-only
+    // report, and the trip rules are worth only as much as the chance someone looks.
+    const quality: NavItem[] = [];
+    if (
+      ctx.permissions.has("*") ||
+      can(ctx, "feedback.view.identified") ||
+      can(ctx, "feedback.action.manage") ||
+      can(ctx, "feedback.form.manage")
+    )
+      quality.push({ label: "Feedback triage", href: "/dashboard/feedback", icon: "feedback" });
+
     // Reports — read-only analytics across domains.
     const reports: NavItem[] = [];
     if (canViewAnalytics(ctx))
@@ -168,6 +181,7 @@ export function buildNav(ctx: AuthContext, opts: { studentApproved?: boolean } =
     if (finance.length) sections.push({ title: "Courses & Fees", items: finance });
     if (bank.length) sections.push({ title: "Question Bank", items: bank });
     if (exams.length) sections.push({ title: "Exams", items: exams });
+    if (quality.length) sections.push({ title: "Teaching quality", items: quality });
     if (reports.length) sections.push({ title: "Reports", items: reports });
     // Mentoring stays a role-specific group (the mentor's own workspace).
     if (isMentor) sections.push({ title: "Mentoring", items: mentorItems() });

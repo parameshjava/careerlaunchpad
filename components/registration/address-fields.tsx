@@ -342,6 +342,18 @@ export function AddressFields({
 
   return (
     <div className="grid gap-3 sm:col-span-2">
+      {/* A heading and a rule, because six address inputs running straight on from
+          "Gender" and "Date of Birth" read as one undifferentiated wall of twelve
+          fields. It also gives the three shortcut buttons below something to belong
+          to — labelled only "PIN Code", they looked like a toolbar for the input. */}
+      <div className="mt-2 border-t pt-5">
+        <h3 className="text-sm font-semibold">Where you live</h3>
+        <p className="text-muted-foreground mt-0.5 text-xs">
+          Enter your PIN code and we&apos;ll fill in the rest — or use your location, search for
+          your place, or drop a pin on the map.
+        </p>
+      </div>
+
       {/* ── the three entry points ─────────────────────────────────────── */}
       <div className="flex flex-col gap-2 sm:flex-row sm:items-end">
         <div className="grid min-w-0 gap-1.5">
@@ -357,7 +369,7 @@ export function AddressFields({
             inputMode="numeric"
             autoComplete="postal-code"
             maxLength={6}
-            placeholder="522201"
+            placeholder="ex: 522201"
             className="sm:w-32"
             aria-describedby={`${pinId}-status`}
           />
@@ -524,6 +536,10 @@ export function AddressFields({
             className="border-input focus-visible:border-ring focus-visible:ring-ring/50 dark:bg-input/30 w-full resize-y rounded-lg border bg-transparent px-2.5 py-2 text-base outline-none transition-colors focus-visible:ring-3 md:text-sm"
           />
         </div>
+        {/* Three short fields as a 3-up row from `sm`, not two-then-orphan: laid out
+            two-wide, State ends up alone on its own line and the group looks broken
+            off. They also read as one unit — the PIN fills all three together. */}
+        <div className="grid gap-4 sm:col-span-2 sm:grid-cols-3">
         <div className="grid gap-1.5">
           <Label>Village / Mandal / City</Label>
           {/* A native datalist rather than a custom dropdown: the localities for one
@@ -562,6 +578,7 @@ export function AddressFields({
             placeholder="e.g. Andhra Pradesh"
             autoComplete="address-level1"
           />
+        </div>
         </div>
       </div>
 

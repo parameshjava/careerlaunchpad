@@ -12,7 +12,8 @@ import { useRouter } from "next/navigation";
 import { Button } from "@/components/ui/button";
 import { Accordion, AccordionItem, AccordionTrigger, AccordionContent } from "@/components/ui/accordion";
 import { RichContent } from "@/components/exam/RichContent";
-import { noBranchDegreeSet, profileCompleteness } from "@/lib/registration";
+import { labelFor, noBranchDegreeSet, profileCompleteness, stepFill } from "@/lib/registration";
+import { ConfirmDialog } from "@/components/ui/confirm-dialog";
 import { degreeHasBranch, labelWithOther, type DegreeRow } from "@/lib/degree-branch";
 import {
   type Form, type RefData, type Ref, type College,
@@ -30,9 +31,13 @@ const DEFAULT_ENDPOINTS = { profile: "/api/registration/profile", submit: "/api/
 export function RegistrationForm({
   endpoints = DEFAULT_ENDPOINTS,
   reviewFirst = false,
+  cancelHref = "/student",
 }: {
   endpoints?: { profile: string; submit: string };
   reviewFirst?: boolean;
+  /** Where "Cancel" leaves to. Students go back to their hub; the console editor
+   *  overrides it with the student's own page. */
+  cancelHref?: string;
 }) {
   const [refs, setRefs] = useState<RefData | null>(null);
   const [f, setF] = useState<Form>(EMPTY);
@@ -44,9 +49,18 @@ export function RegistrationForm({
   const [errors, setErrors] = useState<string[]>([]);
   const [done, setDone] = useState(false);
   const [regStatus, setRegStatus] = useState<"submitted" | "in_progress">("in_progress");
+  // Edits made since the last successful step save. The wizard only writes on
+  // Next/Submit, so Cancel has to warn rather than silently drop the current step.
+  const [dirty, setDirty] = useState(false);
+  const [confirmLeave, setConfirmLeave] = useState(false);
   const router = useRouter();
 
-  const set = useCallback(<K extends keyof Form>(k: K, v: Form[K]) => setF((p) => ({ ...p, [k]: v })), []);
+  const set = useCallback(<K extends keyof Form>(k: K, v: Form[K]) => {
+    setF((p) => ({ ...p, [k]: v }));
+    setDirty(true);
+  }, []);
+
+  const leave = useCallback(() => router.push(cancelHref), [router, cancelHref]);
 
   // Scroll the top of the wizard into view whenever the step changes (Next,
   // Submit-jump-back, or a Stepper jump). The app shell — not window — is the
@@ -136,6 +150,7 @@ export function RegistrationForm({
       } else setErrors([body.error ?? "Could not submit."]);
       return;
     }
+    setDirty(false);
     setStep(target);
   }
 
@@ -147,16 +162,45 @@ export function RegistrationForm({
 
   if (!refs) return <p className="text-destructive py-20 text-center text-sm">Could not load registration options.</p>;
 
-  // Mandatory fields (steps 1–2). Steps 3–6 are optional, so Submit unlocks once these are set.
-  const canSubmit = Boolean(f.full_name.trim() && f.phone.trim() && f.college_id);
+  // Mandatory fields, per step. Steps 3–6 have none, so Next is always live there.
+  //
+  // Date of birth joined this list when it moved into Step 1 (#84 O-11): it decides
+  // whether the student may be asked for chapter feedback at all, and the submit API
+  // rejects a profile without it — so letting them walk past it only defers the
+  // failure to the last screen.
+  const MISSING: Record<number, { field: keyof Form; label: string }[]> = {
+    1: [
+      { field: "full_name", label: "Full name" },
+      { field: "phone", label: "Mobile number" },
+      { field: "date_of_birth", label: "Date of birth" },
+    ],
+    2: [{ field: "college_id", label: "College" }],
+  };
+  const missingHere = (MISSING[step] ?? []).filter((m) => !String(f[m.field] ?? "").trim());
+  const missingAnywhere = [1, 2].flatMap((n) =>
+    (MISSING[n] ?? [])
+      .filter((m) => !String(f[m.field] ?? "").trim())
+      .map((m) => ({ ...m, step: n })),
+  );
+  // Blocked only where something IS mandatory — never on the optional steps.
+  const canAdvance = missingHere.length === 0;
+  const canSubmit = Boolean(
+    f.full_name.trim() && f.phone.trim() && f.date_of_birth && f.college_id,
+  );
 
   // Live profile completeness (same 0–100 scale the admin grid + approval email
   // use), so students see how much richer their profile can still get on every step.
   // Exclude Branch for a degree that has none, so an MBA student isn't shown a
   // permanent 94% for a field the form never renders (#99 review).
-  const pct = profileCompleteness(
-    f as unknown as Record<string, unknown>,
-    noBranchDegreeSet(((refs?.degree ?? []) as unknown as { slug: string; branch_mode: string }[]) ?? []),
+  const noBranch = noBranchDegreeSet(
+    ((refs?.degree ?? []) as unknown as { slug: string; branch_mode: string }[]) ?? [],
+  );
+  const pct = profileCompleteness(f as unknown as Record<string, unknown>, noBranch);
+
+  // What each step's ring reports. Same field set as the percentage above, so the
+  // rail and the header can never disagree about what is still blank.
+  const fills = Object.fromEntries(
+    [1, 2, 3, 4, 5, 6].map((n) => [n, stepFill(n, f as unknown as Record<string, unknown>, noBranch)]),
   );
 
   return (
@@ -165,7 +209,7 @@ export function RegistrationForm({
     <div className="mx-auto w-full max-w-3xl">
       {/* Scroll anchor — the app shell scrolls this into view on every step change. */}
       <div ref={topRef} className="scroll-mt-4" aria-hidden />
-      <Stepper step={step} onJump={setStep} />
+      <Stepper step={step} onJump={setStep} fills={fills} />
 
       <div className="bg-card overflow-hidden rounded-3xl border p-5 shadow-xl shadow-[#7c3aed]/5 sm:p-8">
         <div className="-mx-5 -mt-5 mb-6 flex items-center justify-between gap-3 bg-gradient-to-r from-[#2563eb] to-[#7c3aed] px-5 py-3 text-white sm:-mx-8 sm:-mt-8 sm:px-8">
@@ -193,21 +237,72 @@ export function RegistrationForm({
           </ul>
         )}
 
-        <div className="mt-7 flex items-center justify-between gap-3 border-t pt-5">
-          <Button
-            variant="outline"
-            disabled={step === 1 || saving}
-            onClick={() => setStep((s) => Math.max(1, s - 1))}
-            className="border-2 border-[#2563eb] font-semibold text-[#2563eb] hover:bg-[#2563eb]/5"
-          >
-            ← Back
-          </Button>
+        {/* A STATUS PANEL AT THE POINT OF DECISION.
+            The rail at the top of the page reports the same thing, but by the time a
+            student has worked down a long step they are looking at this button, not at
+            the top of the page — so "you left 3 of these blank" has to be here, next to
+            the thing they are about to press.
+
+            Three states, in order of what the student needs to know:
+              · a MANDATORY field is missing → what to add (Next is disabled)
+              · optional fields are blank    → which ones, and that they may continue
+              · nothing is blank             → say so, briefly */}
+        <StepStatus
+          step={step}
+          fill={fills[step]}
+          blockedBy={missingHere.map((m) => m.label)}
+          pct={pct}
+          isLast={step === 6}
+        />
+
+        {/* Blocked by a field on a step you are no longer on — say which, and offer the
+            trip back. A resumed profile that predates a newly required field lands
+            here, so this is not a rare path. */}
+        {canAdvance && !canSubmit && step >= 2 && missingAnywhere.length > 0 && (
+          <p className="text-muted-foreground mt-3 text-sm">
+            Before you can submit, add your{" "}
+            <span className="text-foreground font-medium">
+              {missingAnywhere.map((m) => m.label.toLowerCase()).join(", ")}
+            </span>{" "}
+            <button
+              type="button"
+              className="text-[#2563eb] underline"
+              onClick={() => setStep(missingAnywhere[0].step)}
+            >
+              on step {missingAnywhere[0].step}
+            </button>
+            .
+          </p>
+        )}
+
+        <div className="mt-7 flex flex-wrap items-center justify-between gap-3 border-t pt-5">
+          <div className="flex items-center gap-2">
+            <Button
+              variant="outline"
+              disabled={step === 1 || saving}
+              onClick={() => setStep((s) => Math.max(1, s - 1))}
+              className="border-2 border-[#2563eb] font-semibold text-[#2563eb] hover:bg-[#2563eb]/5"
+            >
+              ← Back
+            </Button>
+            {/* Leaves the wizard entirely. Everything saved on a previous step stays
+                saved — only the step on screen is discarded, which is what the
+                confirmation says. */}
+            <Button
+              variant="ghost"
+              disabled={saving}
+              onClick={() => (dirty ? setConfirmLeave(true) : leave())}
+              className="text-muted-foreground hover:text-foreground font-semibold"
+            >
+              Cancel
+            </Button>
+          </div>
           {/* Steps 3–6 are optional: from Academics on, Submit sits beside Next and
               unlocks once the mandatory fields are filled. */}
           <div className="flex items-center gap-2">
             {step < 6 && (
               <Button
-                disabled={saving}
+                disabled={saving || !canAdvance}
                 onClick={() => saveStep(step + 1)}
                 className="bg-gradient-to-r from-[#2563eb] to-[#7c3aed] font-semibold text-white shadow-lg shadow-[#7c3aed]/25 transition hover:brightness-105"
               >
@@ -226,6 +321,95 @@ export function RegistrationForm({
           </div>
         </div>
       </div>
+
+      <ConfirmDialog
+        open={confirmLeave}
+        onOpenChange={setConfirmLeave}
+        title="Leave without saving this step?"
+        description={
+          <>
+            Everything you saved on earlier steps is kept. Only the changes on{" "}
+            <b>step {step}</b> will be discarded.
+          </>
+        }
+        confirmLabel="Leave"
+        cancelLabel="Keep editing"
+        onConfirm={leave}
+      />
+    </div>
+  );
+}
+
+/**
+ * The step's own progress, rendered immediately above Back/Next/Submit (issue: a
+ * student who has scrolled to the buttons cannot see the rail at the top).
+ *
+ * It reports the SAME counts as the stepper's ring — both come from stepFill — so the
+ * page can never say "9 of 10" in one place and something else in the other.
+ *
+ * The wording is deliberately permissive when the gaps are optional. Registration is
+ * resumable and optional fields are genuinely optional; a panel that read like an
+ * error would either coerce answers (which produces junk) or stop people submitting a
+ * profile that is perfectly acceptable.
+ */
+function StepStatus({
+  step,
+  fill,
+  blockedBy,
+  pct,
+  isLast,
+}: {
+  step: number;
+  fill?: { filled: number; total: number; missing: string[] };
+  /** Labels of the MANDATORY fields still empty — non-empty means Next is disabled. */
+  blockedBy: string[];
+  pct: number;
+  isLast: boolean;
+}) {
+  if (blockedBy.length > 0) {
+    return (
+      <p className="mt-5 rounded-lg border border-amber-300 bg-amber-50 px-3 py-2.5 text-sm text-amber-900 dark:border-amber-900/60 dark:bg-amber-950/40 dark:text-amber-200">
+        Add your <span className="font-semibold">{blockedBy.map((l) => l.toLowerCase()).join(", ")}</span> to
+        continue — {blockedBy.length === 1 ? "it is" : "they are"} required.
+      </p>
+    );
+  }
+
+  if (!fill || fill.total === 0) return null;
+
+  const complete = fill.missing.length === 0;
+  const frac = Math.round((fill.filled / fill.total) * 100);
+
+  return (
+    <div className="mt-5 rounded-lg border px-3 py-2.5">
+      <div className="flex flex-wrap items-center gap-x-3 gap-y-1">
+        <span className="text-sm font-semibold">
+          {complete ? "Everything on this step is filled" : `${fill.filled} of ${fill.total} filled on this step`}
+        </span>
+        <span className="bg-muted h-1.5 w-24 overflow-hidden rounded-full">
+          <span
+            className={`block h-full rounded-full ${complete ? "bg-emerald-600" : "bg-[#2563eb]"}`}
+            style={{ width: `${frac}%` }}
+          />
+        </span>
+        {isLast && (
+          <span className="text-muted-foreground text-xs tabular-nums">
+            profile {pct}% complete
+          </span>
+        )}
+      </div>
+
+      {!complete && (
+        <p className="text-muted-foreground mt-1 text-sm">
+          {/* Labels keep their own casing — lowercasing turns "PIN code" into
+              "pin code". They follow a colon, so sentence case reads fine. */}
+          Still blank: <span className="text-foreground">{fill.missing.map(labelFor).join(", ")}</span>.
+          {" "}
+          {/* Named as optional, because they are — and because a student who thinks
+              they are stuck will invent an answer rather than leave it empty. */}
+          These are optional, so you can {isLast ? "submit" : "continue"} without them.
+        </p>
+      )}
     </div>
   );
 }
@@ -336,6 +520,7 @@ export function ProfileSummary({
           <SummaryItem label="Email" value={email} />
           <SummaryItem label="Mobile" value={f.phone} />
           <SummaryItem label="Gender" value={genderLabel} />
+          <SummaryItem label="Date of birth" value={f.date_of_birth} />
           <SummaryItem label="Location" value={location} className="col-span-full" />
         </Section>
 
@@ -398,7 +583,6 @@ export function ProfileSummary({
 
         <Section value="s6" n={6} title="Tell Us">
           <SummaryItem label="First-generation learner" value={firstGenLabel} />
-          <SummaryItem label="Date of birth" value={f.date_of_birth} />
           <SummaryItem label="Caste / community certificate" value={certLabel} />
           {f.caste_certificate_status === "has" && <SummaryItem label="Reservation category" value={categoryLabel} />}
           <SummaryItem label="Household income" value={incomeLabel} />

@@ -3,9 +3,14 @@
 /**
  * Registration Step 6 — "Tell Us". Decision-useful student background, all
  * optional: first-generation status, a govt caste/community certificate (+ the
- * reservation group it's issued against), languages, date of birth, family
- * members & their occupations, household income band, hobbies, and a free-text
- * biggest challenge authored as Markdown.
+ * reservation group it's issued against), languages, family members & their
+ * occupations, household income band, hobbies, and a free-text biggest challenge
+ * authored as Markdown.
+ *
+ * Date of birth used to live here. It moved to Step 1 as a REQUIRED field: it
+ * gates whether a student may be asked for chapter feedback at all (DPDP §9 —
+ * under-18s are not asked, issue #84 O-11), and an optional field that half the
+ * cohort skipped could not carry that weight.
  *
  * Every option set comes from a public-read `ref_*` table via the reference API
  * (never hard-coded) — see lib/registration REF_TABLES. Family members are held
@@ -22,13 +27,11 @@ import {
   AccordionItem,
   AccordionTrigger,
 } from "@/components/ui/accordion";
-import { DatePicker } from "@/components/ui/date-picker";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { MarkdownEditor } from "@/components/ui/markdown-editor";
 import { RefSelect } from "@/components/ui/ref-select";
 import { Step, type Form, type SetForm, type RefData, type Ref } from "./registration-fields";
-import { MIN_AGE_YEARS } from "@/lib/registration";
 
 export type FamilyMember = { relation: string; occupation: string };
 
@@ -121,10 +124,6 @@ export function TellUsStep({ f, set, refs }: { f: Form; set: SetForm; refs: RefD
               <ChipMulti options={refs.language ?? []} selected={f.languages} onChange={(v) => set("languages", v)} />
             </div>
 
-            <div className="max-w-[260px]">
-              <Label className="mb-1.5 block">Date of birth</Label>
-              <DobPicker value={f.date_of_birth} onChange={(v) => set("date_of_birth", v)} />
-            </div>
           </div>
         </SectionCard>
 
@@ -297,31 +296,6 @@ function ChipMulti({ options, selected, onChange }: { options: Pick<Ref, "slug" 
         );
       })}
     </div>
-  );
-}
-
-/** Date-of-birth picker — the shared DatePicker with react-day-picker's DOB
- * knobs wired up: month/year dropdowns make picking a birth year quick, and
- * dates that would make the student younger than MIN_AGE_YEARS are disabled
- * (they must have finished 12th standard). Stores/reads "YYYY-MM-DD". */
-function DobPicker({ value, onChange }: { value: string; onChange: (v: string) => void }) {
-  const now = new Date();
-  // Newest allowed DOB: exactly MIN_AGE_YEARS ago today.
-  const maxDob = new Date(now.getFullYear() - MIN_AGE_YEARS, now.getMonth(), now.getDate());
-
-  return (
-    <DatePicker
-      value={value}
-      onChange={onChange}
-      placeholder="Pick your date of birth"
-      captionLayout="dropdown"
-      startMonth={new Date(1950, 0)}
-      endMonth={new Date(maxDob.getFullYear(), 11)}
-      // With no DOB yet, open the calendar at the newest allowed birth month
-      // rather than today; once set, DatePicker jumps to the selected date.
-      defaultMonth={value ? undefined : maxDob}
-      disabled={{ after: maxDob }}
-    />
   );
 }
 

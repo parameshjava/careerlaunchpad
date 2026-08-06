@@ -45,7 +45,11 @@ export const STEP_FIELDS: Record<number, string[]> = {
   // pincode anchors the address (#101): it resolves district + state from
   // the geocoder so a student types six digits instead of three place names.
   // address_source records how they got filled — see the note in validatePartial.
-  1: ["full_name", "phone", "gender", "flat_building", "address", "latitude", "longitude", "pincode", "address_source", "city_village", "district", "state"],
+  // date_of_birth moved here from step 6 (optional "Tell Us") and is now REQUIRED:
+  // it decides whether a student may be asked for chapter feedback at all (under-18s
+  // are not, DPDP §9 — issue #84 O-11). As an optional field it was filled by 43% of
+  // students, so the gate it has to carry was open for the majority.
+  1: ["full_name", "phone", "gender", "date_of_birth", "flat_building", "address", "latitude", "longitude", "pincode", "address_source", "city_village", "district", "state"],
   // degree_other / branch_other capture the free text behind an "Other" pick
   // (issue #99) — before them, a student whose course wasn't listed picked
   // "Other" and their real answer was thrown away.
@@ -55,7 +59,7 @@ export const STEP_FIELDS: Record<number, string[]> = {
   5: ["skills", "interests"],
   // Step 6 "Tell Us" (all optional)
   6: [
-    "is_first_generation", "date_of_birth", "languages",
+    "is_first_generation", "languages",
     "caste_certificate_status", "reservation_category", "income_band",
     "family_members", "hobbies", "custom_hobbies", "biggest_challenge",
   ],
@@ -144,15 +148,62 @@ export function profileCompleteness(
   const skipBranch =
     !!noBranchDegrees && typeof profile.degree === "string" && noBranchDegrees.has(profile.degree);
   const fields = skipBranch ? COMPLETENESS_FIELDS.filter((f) => f !== "branch") : COMPLETENESS_FIELDS;
-  const filled = fields.filter((f) => {
-    const v = profile[f];
-    if (v == null) return false;
-    if (Array.isArray(v)) return v.length > 0;
-    if (typeof v === "object") return Object.keys(v).length > 0;
-    if (typeof v === "string") return v.trim() !== "";
-    return true; // numbers / booleans
-  }).length;
+  const filled = fields.filter((f) => hasValue(profile[f])).length;
   return Math.round((filled / fields.length) * 100);
+}
+
+/** "Has the student answered this?" — one definition, shared by the overall
+ *  percentage and the per-step ring, so a field can never count as filled in one
+ *  place and empty in the other. */
+export function hasValue(v: unknown): boolean {
+  if (v == null) return false;
+  if (Array.isArray(v)) return v.length > 0;
+  if (typeof v === "object") return Object.keys(v).length > 0;
+  if (typeof v === "string") return v.trim() !== "";
+  return true; // numbers / booleans
+}
+
+/**
+ * How much of ONE step is filled in — what the stepper's part-blue/part-amber ring
+ * reports (`filled` of `total`).
+ *
+ * Why it exists: a tick used to mean only "you walked past this step", which is why a
+ * step with six blank optional fields looked identical to a finished one. Counting the
+ * step's OWN fields is the only way the rail can distinguish them.
+ *
+ * Deliberately counts the same fields `profileCompleteness` does, minus
+ * COMPLETENESS_EXCLUDE (a student who declined the map pin is not "incomplete") — so
+ * the ring and the header percentage always tell the same story. Step 6 is included
+ * here even though it is excluded from the headline percentage: its fields are
+ * optional, and showing that they are unanswered is precisely the point of the ring.
+ */
+export function stepFill(
+  step: number,
+  profile: Record<string, unknown> | null | undefined,
+  noBranchDegrees?: Set<string> | null,
+): { filled: number; total: number; missing: string[] } {
+  const skipBranch =
+    !!noBranchDegrees && typeof profile?.degree === "string" && noBranchDegrees.has(profile.degree);
+  // A field the student will never be OFFERED must not count against them, or the
+  // step can never reach its total and its ring stays amber forever — which is
+  // exactly the trap COMPLETENESS_FIELDS avoids by skipping step 6 wholesale.
+  //   · branch            — not rendered for a `branch_mode = 'none'` degree (#99)
+  //   · reservation_category — only shown to students who hold a caste certificate
+  //   · custom_hobbies    — a write-in escape hatch, like degree_other/branch_other
+  const skipReservation = profile?.caste_certificate_status !== "has";
+  const fields = (STEP_FIELDS[step] ?? []).filter(
+    (f) =>
+      !COMPLETENESS_EXCLUDE.has(f) &&
+      !(skipBranch && f === "branch") &&
+      !(skipReservation && f === "reservation_category") &&
+      f !== "custom_hobbies",
+  );
+  if (!profile || fields.length === 0) return { filled: 0, total: fields.length, missing: fields };
+  // `missing` carries the field KEYS, not labels: the caller decides how to name them
+  // (labelFor here, or a step-local wording), and a UI string in this module would be
+  // one more place for the two to drift.
+  const missing = fields.filter((f) => !hasValue(profile[f]));
+  return { filled: fields.length - missing.length, total: fields.length, missing };
 }
 
 /** The `branch_mode = 'none'` degree slugs, for profileCompleteness(). */
@@ -161,10 +212,17 @@ export const noBranchDegreeSet = (degrees: { slug: string; branch_mode: string }
 
 /** Fields required before registration can be marked 'submitted'. Only the first
  * two steps are mandatory — career goals, self-assessment, skills and mentor
- * (steps 3–6) are optional, so a student can submit right after Academics. */
+ * (steps 3–6) are optional, so a student can submit right after Academics.
+ *
+ * date_of_birth earns its place here for a reason no other optional field has: it
+ * decides ELIGIBILITY, not just completeness. Chapter feedback is not collected from
+ * under-18s (DPDP §9, #84 O-11), and a student whose age we don't know can be neither
+ * asked nor excluded honestly — so they are silently left out. Requiring it is what
+ * turns that from "most students" into "nobody". */
 export const REQUIRED_FIELDS: { step: number; field: string }[] = [
   { step: 1, field: "full_name" },
   { step: 1, field: "phone" },
+  { step: 1, field: "date_of_birth" },
   { step: 2, field: "college_id" },
 ];
 

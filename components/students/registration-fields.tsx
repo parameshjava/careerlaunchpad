@@ -9,6 +9,7 @@
  */
 import { useState } from "react";
 import { Check, Plus, MessageSquareWarning, Eraser } from "lucide-react";
+import { DatePicker } from "@/components/ui/date-picker";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { InfoTooltip } from "@/components/ui/tooltip";
@@ -19,6 +20,7 @@ import { DegreeBranchFields } from "@/components/registration/degree-branch-fiel
 import { AddressFields } from "@/components/registration/address-fields";
 import { durationOf, retrackedGraduationYear, yearsForDegree, type DegreeRow } from "@/lib/degree-branch";
 import { TellUsStep } from "./tell-us-step";
+import { MIN_AGE_YEARS } from "@/lib/registration";
 
 export type Ref = { id: string; slug: string; label: string; category: string | null };
 export type RefData = Record<string, Ref[]>;
@@ -49,9 +51,10 @@ export type Form = {
   preferred_mentor_pref_id: string; // grandfathered — no longer collected in the wizard, but set by Excel intake & shown read-only
   skill_assessment: Record<string, number>;
   skills: string[]; interests: string[];
+  // Step 1 — required (gates feedback eligibility, #84 O-11).
+  date_of_birth: string;
   // Step 6 "Tell Us"
   is_first_generation: string; // "yes" | "no" | ""
-  date_of_birth: string;
   languages: string[];
   caste_certificate_status: string; // ref_caste_certificate_status.slug
   reservation_category: string;     // ref_reservation_category.slug (only when cert = "has")
@@ -83,6 +86,7 @@ export const STEPS = ["Basic Info", "Academics", "Career Goals", "Self Assess", 
 export const FIELD_LABELS: Record<string, string> = {
   full_name: "Full name",
   phone: "Mobile number",
+  date_of_birth: "Date of birth",
   college_id: "College",
   roll_number: "Roll number",
   preferred_category_slugs: "Career paths",
@@ -95,6 +99,7 @@ export const STEP_PAYLOAD: Record<number, (f: Form) => Record<string, unknown>> 
     flat_building: f.flat_building, address: f.address,
     latitude: f.latitude, longitude: f.longitude,
     pincode: f.pincode, city_village: f.city_village, district: f.district, state: f.state,
+    date_of_birth: f.date_of_birth || null,
     // Only sent once the student has actually used one of the fill affordances —
     // an empty string would fail the CHECK on student_profile.address_source.
     ...(f.address_source ? { address_source: f.address_source } : {}),
@@ -110,7 +115,6 @@ export const STEP_PAYLOAD: Record<number, (f: Form) => Record<string, unknown>> 
   5: (f) => ({ skills: f.skills, interests: f.interests }),
   6: (f) => ({
     is_first_generation: f.is_first_generation === "" ? null : f.is_first_generation === "yes",
-    date_of_birth: f.date_of_birth || null,
     languages: f.languages,
     caste_certificate_status: f.caste_certificate_status,
     // Only send a category when they actually hold a certificate.
@@ -140,7 +144,12 @@ export function StepBody({
         Enter your <strong>full name exactly as it appears in your college records</strong>. Avoid
         nicknames or short forms — this name is used on certificates and official communication.
       </Important>
-      <Field label="Full Name" required>
+      {/* FIVE fields in a two-column grid leaves an orphan whichever way they are
+          ordered, and the hole lands next to whatever is last — so Full Name spans
+          the row instead. It earns the width (long legal names are the norm, and the
+          callout above insists on the full one), and the remaining four pair up:
+          contact on one row, the two demographic fields on the next. */}
+      <Field label="Full Name" required className="sm:col-span-2">
         <Input value={f.full_name} onChange={(e) => set("full_name", e.target.value)} placeholder="e.g. Ravi Kumar" />
       </Field>
       <Field label="Email" required={!!onEmailChange}>
@@ -158,6 +167,17 @@ export function StepBody({
       </Field>
       <Field label="Gender">
         <SelectRef value={f.gender} onChange={(v) => set("gender", v)} options={refs.gender} placeholder="Select…" />
+      </Field>
+      {/* Required, and here rather than in the optional "Tell Us" step: it decides
+          whether we may ask this student for chapter feedback at all (under-18s are
+          not asked — DPDP §9, #84 O-11). As an optional field it was filled by 43%
+          of students, which is not a basis for that decision. */}
+      <Field
+        label="Date of Birth"
+        required
+        info="We need this to know which activities you're eligible for — some, like course feedback, are only collected from students aged 18 and over."
+      >
+        <DobPicker value={f.date_of_birth} onChange={(v) => set("date_of_birth", v)} />
       </Field>
       {/* PIN + village/district/state as ONE group (#101): the four fields are
           filled together from a PIN code, a GPS fix or a place search, so they
@@ -324,15 +344,27 @@ export function StepBody({
 }
 
 /** Stepper rail — completed steps are clickable to jump back. */
+/** Circumference of the r=14 ring below — precomputed so the dash maths stays put. */
+const RING_C = 2 * Math.PI * 14;
+
 export function Stepper({
   step,
   onJump,
   steps = STEPS,
+  fills,
 }: {
   step: number;
   onJump: (n: number) => void;
   /** Override the rail labels (defaults to the student STEPS). */
   steps?: string[];
+  /**
+   * Per-step `{ filled, total }` (lib/registration stepFill). A passed step whose
+   * count is short of its total keeps its tick — the mandatory work IS done — but
+   * wears a part-blue / part-amber ring, because a solid tick over six blank
+   * optional fields told the student their profile was finished when it wasn't.
+   * Omit entirely and the rail behaves exactly as before.
+   */
+  fills?: Record<number, { filled: number; total: number }>;
 }) {
   return (
     <ol className="mb-7 flex items-start">
@@ -341,27 +373,69 @@ export function Stepper({
         const active = n === step;
         const done = n < step;
         const reached = n <= step;
+        const fill = fills?.[n];
+        // EVERY step with gaps wears the ring — passed, current, or not yet reached.
+        // It was originally limited to passed steps so the one being typed in wouldn't
+        // nag; the effect was that the rail answered "where have I been?" when the
+        // question it is asked is "what is still missing?". The last step could never
+        // show one at all (nothing is ever *after* step 6), which is precisely where
+        // the optional fields live. On the current step the ring now fills as you type,
+        // which reads as progress rather than reproach.
+        const partial = !!fill && fill.total > 0 && fill.filled < fill.total;
+        const frac = partial && fill ? fill.filled / fill.total : 1;
+        const hint = fill && fill.total > 0 ? `${label} · ${fill.filled} of ${fill.total} details added` : label;
         return (
           <li key={label} className="relative flex flex-1 flex-col items-center gap-2">
             {i > 0 && (
               <span className={`absolute top-[15px] right-1/2 h-0.5 w-full ${reached ? "bg-gradient-to-r from-[#2563eb] to-[#7c3aed]" : "bg-border"}`} />
             )}
-            <button
-              type="button"
-              onClick={() => done && onJump(n)}
-              disabled={!done}
-              aria-current={active ? "step" : undefined}
-              className={`ring-card relative z-10 flex h-8 w-8 items-center justify-center rounded-full text-xs font-bold ring-4 transition ${
-                active || done
-                  ? "bg-gradient-to-br from-[#2563eb] to-[#7c3aed] text-white shadow-sm"
-                  : "border-input text-muted-foreground border-2 bg-background"
-              } ${done ? "cursor-pointer hover:brightness-110" : ""}`}
-            >
-              {done ? "✓" : n}
-            </button>
+            {/* The halo moves to this wrapper so it masks the rail behind the WHOLE
+                32px assembly — with the ring drawn inside it, a halo on the disc
+                alone would paint over the ring. */}
+            <span className="ring-card relative z-10 flex h-8 w-8 items-center justify-center rounded-full ring-4">
+              {partial && (
+                <svg viewBox="0 0 32 32" className="pointer-events-none absolute inset-0 -rotate-90" aria-hidden>
+                  {/* amber = what is still missing; blue = what is answered */}
+                  <circle cx="16" cy="16" r="14" fill="none" stroke="#f59e0b" strokeWidth="3" />
+                  {/* Omitted at zero rather than drawn with a 0-length dash: a round
+                      cap paints a visible blue dot even then, which reads as "one
+                      answered" on a step where nothing is. */}
+                  {frac > 0 && (
+                    <circle
+                      cx="16" cy="16" r="14" fill="none" stroke="#2563eb" strokeWidth="3"
+                      strokeLinecap="round"
+                      strokeDasharray={`${frac * RING_C} ${RING_C}`}
+                    />
+                  )}
+                </svg>
+              )}
+              <button
+                type="button"
+                onClick={() => done && onJump(n)}
+                disabled={!done}
+                aria-current={active ? "step" : undefined}
+                title={hint}
+                className={`flex items-center justify-center rounded-full text-xs font-bold transition ${
+                  partial ? "h-[22px] w-[22px]" : "h-8 w-8"
+                } ${
+                  active || done
+                    ? "bg-gradient-to-br from-[#2563eb] to-[#7c3aed] text-white shadow-sm"
+                    : partial
+                      // The amber ring already outlines it; keeping the disc's own
+                      // border too draws two concentric circles.
+                      ? "bg-muted text-muted-foreground"
+                      : "border-input text-muted-foreground border-2 bg-background"
+                } ${done ? "cursor-pointer hover:brightness-110" : ""}`}
+              >
+                {done ? "✓" : n}
+              </button>
+            </span>
             <span className={`hidden text-center text-[0.7rem] leading-tight font-semibold tracking-wide sm:block ${active ? "text-foreground" : "text-muted-foreground"}`}>
               {label}
             </span>
+            {/* Screen readers get the count as text — a two-tone ring is invisible to
+                them, and "7 of 10 added" is the whole message. */}
+            {partial && <span className="sr-only">{hint}</span>}
           </li>
         );
       })}
@@ -398,9 +472,41 @@ export function Important({ children, className = "" }: { children: React.ReactN
   );
 }
 
-export function Field({ label, required, info, children }: { label: string; required?: boolean; info?: React.ReactNode; children: React.ReactNode }) {
+/** Date-of-birth picker — the shared DatePicker with react-day-picker's DOB
+ * knobs wired up: month/year dropdowns make picking a birth year quick, and
+ * dates that would make the student younger than MIN_AGE_YEARS are disabled
+ * (they must have finished 12th standard). Stores/reads "YYYY-MM-DD". */
+function DobPicker({ value, onChange }: { value: string; onChange: (v: string) => void }) {
+  const now = new Date();
+  // Newest allowed DOB: exactly MIN_AGE_YEARS ago today.
+  const maxDob = new Date(now.getFullYear() - MIN_AGE_YEARS, now.getMonth(), now.getDate());
+
   return (
-    <div className="grid gap-1.5">
+    <DatePicker
+      value={value}
+      onChange={onChange}
+      placeholder="Pick your date of birth"
+      captionLayout="dropdown"
+      startMonth={new Date(1950, 0)}
+      endMonth={new Date(maxDob.getFullYear(), 11)}
+      // With no DOB yet, open the calendar at the newest allowed birth month
+      // rather than today; once set, DatePicker jumps to the selected date.
+      defaultMonth={value ? undefined : maxDob}
+      disabled={{ after: maxDob }}
+    />
+  );
+}
+
+export function Field({
+  label, required, info, className = "", children,
+}: {
+  label: string; required?: boolean; info?: React.ReactNode;
+  /** For spanning the two-column step grid — `sm:col-span-2` on a long value. */
+  className?: string;
+  children: React.ReactNode;
+}) {
+  return (
+    <div className={`grid gap-1.5 ${className}`}>
       {/* The info trigger is a SIBLING of the label, not inside it — a native
           <label> forwards clicks on its text to its first labelable descendant,
           so nesting the ⓘ button would let label taps toggle the tooltip. */}
