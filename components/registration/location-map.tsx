@@ -51,9 +51,21 @@ const PIN_ZOOM = 18;
 let loader: Promise<void> | null = null;
 
 /** Set by Google's gm_authFailure hook — a rejected key, referrer, or billing state.
- * Kept module-level so the message survives the promise that already resolved. */
+ * Kept module-level so the state survives a promise that already resolved. */
 let authFailed = false;
 export const mapAuthFailed = () => authFailed;
+
+/**
+ * Subscribers notified when Google rejects the key.
+ *
+ * WHY A LISTENER AND NOT JUST THE PROMISE. Google calls `gm_authFailure` when the
+ * library authenticates, which happens AFTER the bootstrap callback has already
+ * resolved. Rejecting the loader promise at that point is a no-op — the component was
+ * already "ready" — so the student was left looking at Google's own grey
+ * "Oops! Something went wrong… see the JavaScript console" panel instead of our message
+ * naming the actual fix. Staff read logs; students do not read consoles.
+ */
+const authFailureListeners = new Set<() => void>();
 
 /** The global name Google will call once the API is genuinely usable. */
 const READY_CALLBACK = "__clpMapsReady";
@@ -89,7 +101,19 @@ function loadMapsApi(): Promise<void> {
     w.gm_authFailure = () => {
       authFailed = true;
       loader = null;
+      // Google gives no error code here; the specific *MapError goes to the console.
+      // Name the three things it is almost always one of, so whoever reads the log has
+      // somewhere to go.
+      console.error(
+        "[geo] Google Maps rejected the browser key (gm_authFailure). Check, in order: " +
+          "(1) the key's HTTP referrer list includes this exact origin — a custom domain " +
+          "is NOT covered by https://*.vercel.app/*; (2) the key's API restriction " +
+          "includes Maps JavaScript API; (3) billing is active on the project. " +
+          "The precise *MapError is in the browser console.",
+      );
       reject(new Error("maps auth failure"));
+      // Tell any ALREADY-MOUNTED map, since the promise above may have resolved long ago.
+      authFailureListeners.forEach((fn) => fn());
     };
     w[READY_CALLBACK] = () => resolve();
 
@@ -144,6 +168,12 @@ export default function LocationMap({
       return;
     }
     let cancelled = false;
+
+    // A late auth failure must replace Google's generic panel with ours (see
+    // authFailureListeners).
+    const onAuthFailure = () => { if (!cancelled) setState("failed"); };
+    authFailureListeners.add(onAuthFailure);
+    if (mapAuthFailed()) onAuthFailure();
 
     (async () => {
       try {
@@ -253,7 +283,10 @@ export default function LocationMap({
       }
     })();
 
-    return () => { cancelled = true; };
+    return () => {
+      cancelled = true;
+      authFailureListeners.delete(onAuthFailure);
+    };
     // Mount-only: re-running would rebuild the map under the student every time they
     // nudge the pin.
     // eslint-disable-next-line react-hooks/exhaustive-deps
@@ -264,7 +297,7 @@ export default function LocationMap({
       <div className="border-input grid gap-2 rounded-lg border p-3 text-sm">
         <p className="text-muted-foreground">
           {mapAuthFailed()
-            ? "The map key was rejected — this needs fixing in the Google Cloud console, not by you. Your PIN code and address fields still work as normal."
+            ? "The map isn't available on this site yet — a settings change is needed on our side, not yours. Your PIN code and the address fields below still work as normal."
             : "The map couldn't load. Your PIN code and address fields still work as normal."}
         </p>
         <Button type="button" variant="outline" onClick={onCancel} className="min-h-11 justify-self-start sm:min-h-9">
