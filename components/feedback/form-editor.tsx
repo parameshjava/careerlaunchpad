@@ -52,6 +52,10 @@ export function FeedbackFormEditor() {
   const [error, setError] = useState("");
   const [busy, setBusy] = useState(false);
   const [draftItems, setDraftItems] = useState<FormItemDraft[]>([]);
+  // On-screen edits not yet written to the draft. Publishing makes a version immutable
+  // (migration 170), so publishing over unsaved edits loses them PERMANENTLY — the only
+  // remedy would be starting v3. Hence: Publish is disabled until they are saved.
+  const [unsaved, setUnsaved] = useState(false);
 
   const load = useCallback(async () => {
     try {
@@ -61,6 +65,7 @@ export function FeedbackFormEditor() {
       const list = (json.forms ?? []) as FormVersion[];
       setForms(list);
       setDraftItems(list.find((f) => f.status === "draft")?.items ?? []);
+      setUnsaved(false);
       setError("");
     } catch (e) {
       setError((e as Error).message);
@@ -107,11 +112,24 @@ export function FeedbackFormEditor() {
         </p>
       )}
 
-      <p className="text-muted-foreground bg-muted/40 rounded-lg border px-3 py-2.5 text-xs">
-        Published versions can&apos;t be edited — that is what keeps last term&apos;s scores
-        comparable. To change a question, start a new version from the active one, edit it, and
-        publish. Windows already open keep the version they opened with.
-      </p>
+      <div className="text-muted-foreground bg-muted/40 grid gap-1.5 rounded-lg border px-3 py-2.5 text-xs">
+        <p>
+          Published versions can&apos;t be edited — that is what keeps last term&apos;s scores
+          comparable. To change a question, start a new version from the active one, edit it, and
+          publish. Windows already open keep the version they opened with.
+        </p>
+        {/* Stated here, not just enforced at publish: four items are read BY NAME by the
+            reporting, and finding that out from a publish error is a poor way to learn it. */}
+        <p>
+          Four things the reports read by name, so publishing without them is refused: a question
+          keyed <span className="text-foreground font-medium">attended</span> (the attendance mix),
+          one keyed <span className="text-foreground font-medium">confidence</span> (felt-ready vs
+          actually-passed), and at least one rating question in each of{" "}
+          <span className="text-foreground font-medium">Teaching</span> and{" "}
+          <span className="text-foreground font-medium">Content &amp; material</span> (a 1–2 rating
+          only reaches triage from those two).
+        </p>
+      </div>
 
       {!draft && (
         <div className="flex flex-wrap gap-2">
@@ -169,7 +187,8 @@ export function FeedbackFormEditor() {
                 </Button>
                 <Button
                   size="sm"
-                  disabled={busy || draftItems.length === 0}
+                  disabled={busy || draftItems.length === 0 || unsaved}
+                  title={unsaved ? "Save your questions first" : undefined}
                   onClick={() =>
                     call(`/api/admin/feedback/forms/${draft.id}`, {
                       method: "PATCH",
@@ -193,8 +212,16 @@ export function FeedbackFormEditor() {
               </div>
             </div>
 
-            <p className="text-muted-foreground text-xs">
-              Save first, then publish — publishing uses what is stored, not what is on screen.
+            <p
+              className={
+                unsaved
+                  ? "rounded-md border border-amber-300 bg-amber-50 px-2.5 py-1.5 text-xs text-amber-900 dark:border-amber-900/60 dark:bg-amber-950/40 dark:text-amber-200"
+                  : "text-muted-foreground text-xs"
+              }
+            >
+              {unsaved
+                ? "You have unsaved question edits. Save them first — publishing uses what is stored, and a published version can never be edited again."
+                : "Publishing affects the next chapter completion. Windows already open keep the version they opened with."}
             </p>
 
             <div className="grid gap-2">
@@ -204,19 +231,24 @@ export function FeedbackFormEditor() {
                   item={item}
                   index={n}
                   total={draftItems.length}
-                  onChange={(next) =>
-                    setDraftItems((prev) => prev.map((p, i) => (i === n ? next : p)))
-                  }
-                  onRemove={() => setDraftItems((prev) => prev.filter((_, i) => i !== n))}
-                  onMove={(dir) =>
+                  onChange={(next) => {
+                    setUnsaved(true);
+                    setDraftItems((prev) => prev.map((p, i) => (i === n ? next : p)));
+                  }}
+                  onRemove={() => {
+                    setUnsaved(true);
+                    setDraftItems((prev) => prev.filter((_, i) => i !== n));
+                  }}
+                  onMove={(dir) => {
+                    setUnsaved(true);
                     setDraftItems((prev) => {
                       const to = n + dir;
                       if (to < 0 || to >= prev.length) return prev;
                       const copy = [...prev];
                       [copy[n], copy[to]] = [copy[to], copy[n]];
                       return copy;
-                    })
-                  }
+                    });
+                  }}
                 />
               ))}
             </div>
@@ -225,7 +257,10 @@ export function FeedbackFormEditor() {
               size="sm"
               variant="outline"
               className="justify-self-start"
-              onClick={() => setDraftItems((prev) => [...prev, { ...BLANK }])}
+              onClick={() => {
+                setUnsaved(true);
+                setDraftItems((prev) => [...prev, { ...BLANK }]);
+              }}
             >
               <Plus className="size-4" /> Add a question
             </Button>

@@ -166,7 +166,15 @@ export function BatchActions({
       });
       const json = await res.json().catch(() => ({}));
       if (!res.ok) throw new Error(json.error ?? "Could not update the action");
-      setActions((prev) => (prev ?? []).map((a) => (a.id === id ? json.action : a)));
+      // MERGE, don't replace: the unscoped GET enriches each row with batchName
+      // (withBatchNames), and the PATCH response has no such field — swapping the row
+      // wholesale drops the batch label and link on the cross-batch inbox, leaving an
+      // item with no provenance until the page is reloaded.
+      setActions((prev) =>
+        (prev ?? []).map((a) =>
+          a.id === id ? { ...a, ...json.action, batchName: json.action.batchName ?? a.batchName } : a,
+        ),
+      );
     } catch (e) {
       setError((e as Error).message);
     }

@@ -390,7 +390,12 @@ function ChapterDetail({
             </p>
           </div>
           <div className="flex flex-wrap gap-1.5">
-            {row.lowConfidence && <LowConfidenceBadge n={row.responseCount} eligible={row.eligibleCount} />}
+            {/* Suppressed at zero: a window whose whole class is age-ineligible has
+                eligible_count 0, and "Low confidence · 0 of 0 responded" describes a
+                collection problem rather than the eligibility one it actually is. */}
+            {row.lowConfidence && row.responseCount > 0 && (
+              <LowConfidenceBadge n={row.responseCount} eligible={row.eligibleCount} />
+            )}
             {onCreateAction && (
               <Button
                 size="sm"

@@ -103,6 +103,10 @@ export default async function StudentProfilePage({ params }: { params: Promise<{
           reviewFirst
           // Cancel returns staff to this student's record, not to the student hub.
           cancelHref={`/dashboard/students/${id}`}
+          // Staff cannot invent a student's date of birth, so a missing mandatory field
+          // must not strand them on step 1 (they arrive there on every Edit). It is
+          // still reported, and the submit API still refuses without it.
+          enforceMandatory={false}
           endpoints={{
             profile: `/api/students/${id}/profile`,
             submit: `/api/students/${id}/profile/submit`,

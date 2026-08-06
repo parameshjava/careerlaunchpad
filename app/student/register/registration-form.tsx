@@ -32,9 +32,19 @@ export function RegistrationForm({
   endpoints = DEFAULT_ENDPOINTS,
   reviewFirst = false,
   cancelHref = "/student",
+  enforceMandatory = true,
 }: {
   endpoints?: { profile: string; submit: string };
   reviewFirst?: boolean;
+  /**
+   * Whether a missing mandatory field BLOCKS Next. True for a student filling in their
+   * own profile. The console editor passes false, because gating Next on date of birth
+   * traps staff: Submit only renders from step 2, the stepper only jumps backwards, and
+   * a coordinator opening a pre-#84 student to fix a roll number cannot reach step 2
+   * without inventing a date of birth they do not have. They still see what is missing,
+   * and the submit API still refuses — the difference is they can move.
+   */
+  enforceMandatory?: boolean;
   /** Where "Cancel" leaves to. Students go back to their hub; the console editor
    *  overrides it with the student's own page. */
   cancelHref?: string;
@@ -182,8 +192,9 @@ export function RegistrationForm({
       .filter((m) => !String(f[m.field] ?? "").trim())
       .map((m) => ({ ...m, step: n })),
   );
-  // Blocked only where something IS mandatory — never on the optional steps.
-  const canAdvance = missingHere.length === 0;
+  // Blocked only where something IS mandatory, and only when we are enforcing — never
+  // on the optional steps, and never for staff who cannot supply the answer.
+  const canAdvance = !enforceMandatory || missingHere.length === 0;
   const canSubmit = Boolean(
     f.full_name.trim() && f.phone.trim() && f.date_of_birth && f.college_id,
   );
@@ -251,6 +262,7 @@ export function RegistrationForm({
           step={step}
           fill={fills[step]}
           blockedBy={missingHere.map((m) => m.label)}
+          blocking={enforceMandatory}
           pct={pct}
           isLast={step === 6}
         />
@@ -356,21 +368,35 @@ function StepStatus({
   step,
   fill,
   blockedBy,
+  blocking = true,
   pct,
   isLast,
 }: {
   step: number;
   fill?: { filled: number; total: number; missing: string[] };
-  /** Labels of the MANDATORY fields still empty — non-empty means Next is disabled. */
+  /** Labels of the MANDATORY fields still empty. */
   blockedBy: string[];
+  /** Whether those fields actually block Next (false in the console editor). */
+  blocking?: boolean;
   pct: number;
   isLast: boolean;
 }) {
   if (blockedBy.length > 0) {
     return (
       <p className="mt-5 rounded-lg border border-amber-300 bg-amber-50 px-3 py-2.5 text-sm text-amber-900 dark:border-amber-900/60 dark:bg-amber-950/40 dark:text-amber-200">
-        Add your <span className="font-semibold">{blockedBy.map((l) => l.toLowerCase()).join(", ")}</span> to
-        continue — {blockedBy.length === 1 ? "it is" : "they are"} required.
+        {blocking ? (
+          <>
+            Add your <span className="font-semibold">{blockedBy.map((l) => l.toLowerCase()).join(", ")}</span> to
+            continue — {blockedBy.length === 1 ? "it is" : "they are"} required.
+          </>
+        ) : (
+          <>
+            <span className="font-semibold">{blockedBy.join(", ")}</span>{" "}
+            {blockedBy.length === 1 ? "is" : "are"} required and still empty. You can keep editing other
+            steps, but the profile can&apos;t be submitted until {blockedBy.length === 1 ? "it is" : "they are"}{" "}
+            filled in.
+          </>
+        )}
       </p>
     );
   }

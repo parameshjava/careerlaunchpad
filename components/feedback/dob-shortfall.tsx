@@ -59,6 +59,9 @@ export function DobShortfall({ canAsk }: { canAsk: boolean }) {
           `Asked ${json.asked}`,
           json.skipped ? `${json.skipped} already asked in the last 14 days` : null,
           json.failed ? `${json.failed} failed` : null,
+          // The endpoint caps each press so a big cohort can't outrun the function
+          // timeout — say so, or the button looks like it silently did nothing.
+          json.remaining ? `${json.remaining} left — press again` : null,
         ]
           .filter(Boolean)
           .join(" · "),

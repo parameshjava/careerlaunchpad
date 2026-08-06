@@ -1,7 +1,7 @@
 # Post-Chapter Student Feedback — Research & Analysis
 
 **Status:** v1 + v2 built · **Issue:** [#84](https://github.com/parameshjava/careerlaunchpad/issues/84)
-**Next free migration:** `174_*` (highest today is `173_feedback_dob_gate.sql`)
+**Next free migration:** `175_*` (highest today is `174_feedback_review_fixes.sql`)
 
 > This document does two jobs: (1) validate the eleven bullets in #84 against how
 > feedback systems actually behave in practice, and (2) specify the design that fits
@@ -10,8 +10,9 @@
 > **STATUS: v1 BUILT (2026-08-03)** — migration `159_chapter_feedback.sql`, the seven
 > API routes in §4.6, and the three surfaces in §4.7.
 >
-> **STATUS: v2 BUILT + ONE v1 DEFECT FIXED (2026-08-06)** — migrations `164`–`173`.
-> See §7.1 for what each one closes. Nothing here is applied to a database yet: CI
+> **STATUS: v2 BUILT + ONE v1 DEFECT FIXED (2026-08-06)** — migrations `164`–`174`.
+> See §7.1 for what each one closes; `174` carries the code-review fixes, including a
+> cross-college leak that predates this work. Nothing here is applied to a database yet: CI
 > runs `supabase db push` on merge to `main`, so every claim below is "written and
 > type-checked", not "observed running". §8 records the decisions.
 >
@@ -363,6 +364,7 @@ PATCH /api/admin/feedback/actions/[id]               -> status / owner / due / r
 | 8 | `170_feedback_form_versions.sql`, `/api/admin/feedback/forms*`, Questions tab | `feedback.form.manage` was seeded in v1 and referenced nowhere, so changing a question meant hand-written SQL against production — which is how a live version gets edited in place. A published version is now **immutable by trigger**; the only editable thing is one draft, and publishing retires the incumbent atomically. |
 | 9 | `171_feedback_minors_and_retention.sql` | **O-11** and **O-12** (see §8). |
 | 9b | `173_feedback_dob_gate.sql`, Step 1 of registration, `/api/admin/students/request-dob` | **Closes O-11 properly.** 171's fail-open behaviour was measured against production and found to cover 43% of students, so date of birth is now **required to submit a registration** and the gate **fails closed**. A skipped student is told what to add (`student_feedback_dob_required()`), and staff can ask the existing cohort in one click. |
+| 9c | `174_feedback_review_fixes.sql` | **Code-review fixes (PR #106).** The important one is not mine alone: `has_permission()` does not mean "globally" — it ignores `ur.scope_college_id` — so every reader written as `has_permission(...) or has_college_permission(...)` silently gave a college admin the whole platform. That idiom comes from 159; 166 and 173 copied it. `has_global_permission()` replaces it in all six readers/writers. Also: a window now opens even when no enrolled student is currently age-eligible (171 opened none, silently and permanently, and that also disarmed the DOB prompt); the frozen `eligible_count` is re-based once, so 173 does not collapse historical response rates and file false `low_turnout` actions; `publish_feedback_form` enforces the instrument contract the reports read by name; and review notes carry a `topic`, so "already asked for a date of birth" stops matching a note about a roll number. |
 | 10 | `172_feedback_overdue_digest.sql` | The v2 "overdue action digest": weekly, to the item's **owner only**, deduped by `(owner, ISO week)` so a daily cron sends at most one and a failed day self-heals. |
 
 Still not built, and deliberately: everything in **v3**, and escalating *unowned*
