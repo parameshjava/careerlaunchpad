@@ -71,6 +71,9 @@ create table if not exists public.student_intake (
   full_name     text,
   phone         text,
   gender        text,
+  pincode       text,                                -- #101; CHECK 6 digits, no leading zero
+  flat_building text,                                -- #101: typed by the student, never auto-filled
+  address       text,                                -- #101: the geocoder's formatted_address, verbatim
   city_village  text,
   district      text,
   state         text,
@@ -180,7 +183,11 @@ Returns the caller's profile plus progress, for **resume**:
   "last_completed_step": 2,                 // form opens at step 3
   "profile": {
     "full_name": "Ravi Kumar", "phone": "+91...", "gender": "male",
-    "city_village": "Tenali", "district": "Guntur", "state": "Andhra Pradesh",
+    "flat_building": "Flat 302, Sai Residency",
+    "address": "Chenchupet, Tenali, Andhra Pradesh 522202, India",
+    "pincode": "522201", "city_village": "Tenali", "district": "Guntur", "state": "Andhra Pradesh",
+    "latitude": 12.969350, "longitude": 77.735550,
+    "address_source": "gps", "address_captured_at": "2026-08-05T09:12:44Z",
     "college_id": "<uuid>", "college": { "id": "...", "name": "...", "place": "..." },
     "degree": "btech", "branch": "cse", "year_of_study": "year_3",
     "graduation_year": 2026, "cgpa": 8.2,
@@ -211,7 +218,7 @@ Per-step field map (request `data` keys by step):
 
 | Step | Fields |
 |------|--------|
-| 1 Basic Info | `full_name`*, `phone`*, `email`*(read-only from auth), `gender`, `city_village`, `district`, `state` |
+| 1 Basic Info | `full_name`*, `phone`*, `email`*(read-only from auth), `gender`, `flat_building`, `address`, `pincode`, `city_village`, `district`, `state`, `latitude`, `longitude`, `address_source` |
 | 2 Academics | `college_id`*, `degree`, `degree_other`, `branch`, `branch_other`, `year_of_study`, `graduation_year`, `cgpa` |
 | 3 Career Goals | `career_goal_ids`* (≥1), `primary_career_goal_id`* (∈ career_goal_ids) |
 | 4 Self-Assessment | `skill_assessment` (slug→1..5 for each `ref_skill_assessment_category`) |

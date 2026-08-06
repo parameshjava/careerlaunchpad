@@ -16,6 +16,7 @@ import { PhoneField } from "@/components/ui/phone-input";
 import { RefSelect } from "@/components/ui/ref-select";
 import { CollegePicker, type College } from "@/components/colleges/college-picker";
 import { DegreeBranchFields } from "@/components/registration/degree-branch-fields";
+import { AddressFields } from "@/components/registration/address-fields";
 import { durationOf, retrackedGraduationYear, yearsForDegree, type DegreeRow } from "@/lib/degree-branch";
 import { TellUsStep } from "./tell-us-step";
 
@@ -25,6 +26,17 @@ export type { College };
 
 export type Form = {
   full_name: string; phone: string; gender: string;
+  // Address (#101). `pincode` anchors the other three — it resolves district and
+  // state via /api/geo, so a student types six digits instead of three names.
+  // `address_source` records HOW they were filled (gps/pincode/search/manual); it
+  // is a data-quality hint, never a trust signal (see migration 163).
+  pincode: string; address_source: string;
+  // Two fields split along known-vs-unknowable (#101, migration 163):
+  // `flat_building` is the student's own typing, `address` is the geocoder's
+  // formatted_address kept verbatim so it never needs editing.
+  flat_building: string; address: string;
+  // The pin the student dropped on the map, if they used it (migration 163).
+  latitude: number | null; longitude: number | null;
   city_village: string; district: string; state: string;
   college_id: string; roll_number: string; registration_number: string; apaar_id: string;
   degree: string; branch: string; year_of_study: string;
@@ -51,7 +63,10 @@ export type Form = {
 };
 
 export const EMPTY: Form = {
-  full_name: "", phone: "", gender: "", city_village: "", district: "", state: "",
+  full_name: "", phone: "", gender: "",
+  pincode: "", address_source: "", flat_building: "", address: "",
+  latitude: null, longitude: null,
+  city_village: "", district: "", state: "",
   college_id: "", roll_number: "", registration_number: "", apaar_id: "", degree: "", branch: "", year_of_study: "",
   degree_other: "", branch_other: "", graduation_year: "", cgpa: "",
   preferred_category_slugs: [],
@@ -75,7 +90,15 @@ export const FIELD_LABELS: Record<string, string> = {
 
 // Fields each step owns (must match STEP_FIELDS in lib/registration.ts).
 export const STEP_PAYLOAD: Record<number, (f: Form) => Record<string, unknown>> = {
-  1: (f) => ({ full_name: f.full_name, phone: f.phone, gender: f.gender, city_village: f.city_village, district: f.district, state: f.state }),
+  1: (f) => ({
+    full_name: f.full_name, phone: f.phone, gender: f.gender,
+    flat_building: f.flat_building, address: f.address,
+    latitude: f.latitude, longitude: f.longitude,
+    pincode: f.pincode, city_village: f.city_village, district: f.district, state: f.state,
+    // Only sent once the student has actually used one of the fill affordances —
+    // an empty string would fail the CHECK on student_profile.address_source.
+    ...(f.address_source ? { address_source: f.address_source } : {}),
+  }),
   2: (f) => ({
     college_id: f.college_id, roll_number: f.roll_number, registration_number: f.registration_number,
     apaar_id: f.apaar_id, degree: f.degree, degree_other: f.degree_other,
@@ -136,15 +159,20 @@ export function StepBody({
       <Field label="Gender">
         <SelectRef value={f.gender} onChange={(v) => set("gender", v)} options={refs.gender} placeholder="Select…" />
       </Field>
-      <Field label="Village / Mandal / City">
-        <Input value={f.city_village} onChange={(e) => set("city_village", e.target.value)} placeholder="e.g. Tenali" />
-      </Field>
-      <Field label="District">
-        <Input value={f.district} onChange={(e) => set("district", e.target.value)} placeholder="e.g. Guntur" />
-      </Field>
-      <Field label="State">
-        <Input value={f.state} onChange={(e) => set("state", e.target.value)} placeholder="e.g. Andhra Pradesh" />
-      </Field>
+      {/* PIN + village/district/state as ONE group (#101): the four fields are
+          filled together from a PIN code, a GPS fix or a place search, so they
+          can't be four independent <Field>s. */}
+      <AddressFields
+        value={{
+          flat_building: f.flat_building, address: f.address,
+          latitude: f.latitude, longitude: f.longitude,
+          pincode: f.pincode, city_village: f.city_village, district: f.district, state: f.state,
+        }}
+        onChange={(patch) => {
+          for (const [k, v] of Object.entries(patch)) set(k as keyof Form, v as never);
+        }}
+        onSourceChange={(source) => set("address_source", source)}
+      />
     </Step>
   );
 

@@ -17,6 +17,7 @@ import {
   type BranchMode,
   type DegreeBranchRow,
 } from "@/lib/degree-branch";
+import { ADDRESS_LINE_MAX, FLAT_BUILDING_MAX, PINCODE_RE, isAddressSource } from "@/lib/geo";
 
 /** Reference option sets the form needs: response key -> ref_* table. */
 export const REF_TABLES: Record<string, string> = {
@@ -41,7 +42,10 @@ export const REF_TABLES: Record<string, string> = {
 
 /** student_profile columns each step may write (the form's per-step field map). */
 export const STEP_FIELDS: Record<number, string[]> = {
-  1: ["full_name", "phone", "gender", "city_village", "district", "state"],
+  // pincode anchors the address (#101): it resolves district + state from
+  // the geocoder so a student types six digits instead of three place names.
+  // address_source records how they got filled — see the note in validatePartial.
+  1: ["full_name", "phone", "gender", "flat_building", "address", "latitude", "longitude", "pincode", "address_source", "city_village", "district", "state"],
   // degree_other / branch_other capture the free text behind an "Other" pick
   // (issue #99) — before them, a student whose course wasn't listed picked
   // "Other" and their real answer was thrown away.
@@ -78,8 +82,18 @@ export const ALL_FIELDS = Object.values(STEP_FIELDS).flat();
 /** degree_other/branch_other join them for the same reason and one more: they are
  * only reachable by the minority who pick "Other", so counting them would cap
  * every correctly-catalogued student below 100%. */
+/** address_source joins them for a different reason: it is not something a
+ * student fills in at all — it's provenance metadata the form stamps (#101).
+ * Counting it would mean a student who typed their address by hand scored the
+ * same as one who used the location button, and a legacy row (source null) could
+ * never reach 100%. `pincode` DOES count: it is a real address field, and the
+ * whole point is that it's the easiest one to provide. */
 export const COMPLETENESS_EXCLUDE = new Set([
-  "registration_number", "apaar_id", "degree_other", "branch_other",
+  "registration_number", "apaar_id", "degree_other", "branch_other", "address_source",
+  // The map pin is an optional convenience, and most students will finish their
+  // address without opening a map at all — counting it would cap them below 100%
+  // for declining a feature.
+  "latitude", "longitude",
 ]);
 
 export const COMPLETENESS_FIELDS = Object.entries(STEP_FIELDS)
@@ -164,6 +178,12 @@ export const FIELD_LABELS: Record<string, string> = {
   full_name: "Full name",
   phone: "Mobile number",
   gender: "Gender",
+  latitude: "Pinned latitude",
+  longitude: "Pinned longitude",
+  flat_building: "Flat / building / street",
+  address: "Address",
+  pincode: "PIN code",
+  address_source: "Address source",
   city_village: "Village / Mandal / City",
   district: "District",
   state: "State",
@@ -346,6 +366,52 @@ export async function validatePartial(
       case "state":
         clean[field] = str(v) || null;
         break;
+      case "latitude":
+      case "longitude": {
+        // The map pin (#101 follow-up). Bounded to real coordinates, and rounded to
+        // 6dp to match the numeric(9,6) column — an unrounded double would be
+        // silently truncated by Postgres, so it is done here where it's visible.
+        if (v === "" || v == null) { clean[field] = null; break; }
+        const n = Number(v);
+        const limit = field === "latitude" ? 90 : 180;
+        if (!Number.isFinite(n) || n < -limit || n > limit)
+          errors.push(`${labelFor(field)} is not a valid coordinate.`);
+        else clean[field] = Math.round(n * 1e6) / 1e6;
+        break;
+      }
+      case "flat_building":
+      case "address": {
+        // Free text (#101). Bounded to match the CHECKs in migration 163 so an
+        // over-long paste is a readable validation error rather than a 500 from the
+        // database.
+        const s2 = str(v);
+        const cap = field === "address" ? ADDRESS_LINE_MAX : FLAT_BUILDING_MAX;
+        if (s2.length > cap)
+          errors.push(`Please keep your ${labelFor(field).toLowerCase()} under ${cap} characters.`);
+        else clean[field] = s2 || null;
+        break;
+      }
+      case "pincode": {
+        // Accept as typed (a student may paste "522 201") and store digits only,
+        // matching the CHECK on student_profile.pincode (migration 163).
+        const s = str(v).replace(/[\s-]/g, "");
+        if (!s) { clean[field] = null; break; }
+        if (!PINCODE_RE.test(s)) errors.push(`${labelFor("pincode")} must be 6 digits.`);
+        else clean[field] = s;
+        break;
+      }
+      case "address_source": {
+        // Provenance, self-reported by the form. Constrained to the enum so a
+        // stray value can't hit the DB CHECK and turn a save into a 500 — but
+        // deliberately NOT verified, because the server has no way to know how a
+        // student filled a text input. It informs data-quality reporting only, and
+        // is never read as a trust or authorization signal.
+        const s = str(v);
+        if (!s) { clean[field] = null; break; }
+        if (!isAddressSource(s)) errors.push("Unrecognised address source.");
+        else clean[field] = s;
+        break;
+      }
       case "degree_other":
       case "branch_other": {
         // Free text behind an "Other" pick. Whether it's KEPT is decided by the

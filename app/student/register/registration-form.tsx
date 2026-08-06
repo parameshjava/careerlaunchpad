@@ -275,7 +275,11 @@ export function ProfileSummary({
     ...f.custom_hobbies,
   ];
 
-  const location = [f.city_village, f.district, f.state].filter(Boolean).join(", ");
+  // PIN last and set off with a dash: "Tenali, Guntur, Andhra Pradesh — 522201".
+  // flat first, then the geocoded address (which already carries city/state/PIN).
+  const place = [f.flat_building, f.address].filter(Boolean).join(", ")
+    || [f.city_village, f.district, f.state].filter(Boolean).join(", ");
+  const location = [place, f.pincode].filter(Boolean).join(" — ");
   const collegeText = college ? `${college.name}${college.place ? ` — ${college.place}` : ""}` : "";
   // Answered categories — includes an explicit 0 ("no skill"); only truly
   // unrated categories (key absent) are left out. `in` avoids a number-vs-
