@@ -56,8 +56,17 @@ export async function GET(req: NextRequest) {
     );
   }
 
-  sweepProviderCache(supabase);
-  const candidates = await providerReverse(supabase, lat, lng);
+  // BELT AND BRACES: the provider path is written not to throw, but this endpoint sits
+  // in front of a student mid-registration and a 500 here is the one outcome that must
+  // not happen. (It did: an unguarded admin-client construction turned a missing
+  // SUPABASE_SECRET_KEY into a 500 before any lookup ran.)
+  let candidates: Awaited<ReturnType<typeof providerReverse>> = null;
+  try {
+    sweepProviderCache(supabase);
+    candidates = await providerReverse(supabase, lat, lng);
+  } catch (e) {
+    console.error("[geo] reverse lookup failed", e);
+  }
   if (!candidates || candidates.length === 0) {
     return NextResponse.json(
       {

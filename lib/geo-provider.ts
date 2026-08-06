@@ -75,12 +75,36 @@ export const providerConfigured = () => KEY !== "";
 
 type Kind = "pincode" | "reverse" | "autocomplete" | "details";
 
-/** Lazily built, and only when a provider key exists — so a deployment with no
- * Google key never requires SUPABASE_SECRET_KEY just to serve the fallback. */
+/**
+ * The admin client, or null — NEVER a throw.
+ *
+ * `createAdminClient()` throws when SUPABASE_SECRET_KEY is unset, and an earlier version
+ * called it unguarded from the cache and budget helpers. On a deployment with the Google
+ * keys set but no secret key, that turned every /api/geo/reverse into a **500 in 59ms** —
+ * failing before a single lookup, and violating this file's own stated invariant that a
+ * failure degrades to typing rather than blocking.
+ *
+ * The cache and the spend counter are optimisations and a safety net. Neither is worth an
+ * error page in front of a student mid-registration.
+ */
 let adminClient: SupabaseClient | null = null;
-function admin(): SupabaseClient {
-  adminClient ??= createAdminClient();
-  return adminClient;
+let adminUnavailable = false;
+function admin(): SupabaseClient | null {
+  if (adminUnavailable) return null;
+  if (adminClient) return adminClient;
+  try {
+    adminClient = createAdminClient();
+    return adminClient;
+  } catch {
+    adminUnavailable = true;
+    // Once, not per request — this is a deployment misconfiguration, not a per-call event.
+    console.warn(
+      "[geo] SUPABASE_SECRET_KEY is not set: address lookups will run WITHOUT the response " +
+        "cache and WITHOUT the monthly spend counter. Set it (Vercel: preview + prod) to " +
+        "restore both. Cost remains bounded by the Google Cloud console quota.",
+    );
+    return null;
+  }
 }
 
 /** One Google address_components array, reduced to the fields we store. */
@@ -185,7 +209,9 @@ function mergeComponents(results: { address_components: Component[] }[]): Compon
 
 /** A cache hit, or null. Expired rows are ignored (and swept opportunistically). */
 async function fromCache<T>(_supabase: SupabaseClient, key: string): Promise<T | null> {
-  const { data } = await admin()
+  const db = admin();
+  if (!db) return null; // no cache available → treat as a miss
+  const { data } = await db
     .from("geo_provider_cache")
     .select("payload, expires_at")
     .eq("cache_key", key)
@@ -197,7 +223,9 @@ async function fromCache<T>(_supabase: SupabaseClient, key: string): Promise<T |
 async function toCache(_supabase: SupabaseClient, key: string, kind: Kind, payload: unknown) {
   // Errors here are deliberately ignored: a cache write failing must not fail the
   // request the student is waiting on.
-  await admin().from("geo_provider_cache").upsert(
+  const db = admin();
+  if (!db) return;
+  await db.from("geo_provider_cache").upsert(
     {
       cache_key: key,
       kind,
@@ -212,12 +240,21 @@ async function toCache(_supabase: SupabaseClient, key: string, kind: Kind, paylo
 
 /** Claim one call against the monthly budget. False → caller must fall back. */
 async function budgetAllows(_supabase: SupabaseClient, kind: Kind): Promise<boolean> {
-  const { data, error } = await admin().rpc("geo_provider_take", {
-    p_kind: kind,
-    p_cap: MONTHLY_CAP,
-  });
-  // A broken counter must not silently unlock unlimited spend, so failure is
-  // treated as "no budget" rather than "carry on".
+  const db = admin();
+  // NO COUNTER AVAILABLE → PROCEED, deliberately, and this is the one judgement call
+  // in here worth arguing about.
+  //
+  // Refusing would be the more conservative reading, but it would silently disable
+  // address lookup on any deployment missing SUPABASE_SECRET_KEY — a dead feature is
+  // worse for a student than an uncapped one, and the cost is still bounded by two
+  // things that do not depend on this key: the endpoints are auth-gated (signed-in
+  // students only, not the open internet), and the Google Cloud console quota is the
+  // real hard stop. admin() has already logged the misconfiguration loudly.
+  if (!db) return true;
+
+  const { data, error } = await db.rpc("geo_provider_take", { p_kind: kind, p_cap: MONTHLY_CAP });
+  // A counter that EXISTS but errors is different: something is wrong with a control we
+  // rely on, so fail closed rather than spend blind.
   if (error) return false;
   return data === true;
 }
@@ -572,5 +609,8 @@ export function sweepProviderCache(_supabase: SupabaseClient) {
   // 1-in-50 requests, so the sweep costs nothing on the hot path but still runs
   // many times a day at any real traffic level.
   if (Math.random() > 0.02) return;
-  void admin().rpc("geo_provider_sweep");
+  const db = admin();
+  // Nothing was cached without an admin client, so there is nothing to sweep.
+  if (!db) return;
+  void db.rpc("geo_provider_sweep");
 }

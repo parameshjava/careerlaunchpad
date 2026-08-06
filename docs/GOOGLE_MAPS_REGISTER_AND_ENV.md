@@ -296,9 +296,11 @@ Restart `npm run dev` afterwards — Next.js reads env vars at boot, and a
 `NEXT_PUBLIC_*` value is inlined at **build** time, so a running dev server will not
 pick up the browser key on its own.
 
-The server key also needs `SUPABASE_SECRET_KEY` to be set, because the response cache
-and the spend counter are reached with the admin client (see
-[`GEO_ADDRESS.md`](./GEO_ADDRESS.md) §0). It already is, for impersonation.
+**`SUPABASE_SECRET_KEY` must also be set** — the response cache and the monthly spend
+counter live in `service_role`-only tables reached with the admin client. Without it
+lookups still work, but every one costs a fresh call and the app-level cap is not
+enforced (a warning is logged once at startup). It is **not** set in Vercel today; note
+that user impersonation needs the same key, so it is worth adding for both reasons.
 
 ## 10. Vercel (deployed app)
 
@@ -367,6 +369,7 @@ Google answered, while `"not_configured"` means the server key isn't reaching th
 | `ApiTargetBlockedMapError` | browser key's API restriction excludes Maps JS | §5 step 2 |
 | Everything works locally, map broken on a preview URL | `https://*.vercel.app/*` missing from referrers | §5 |
 | `OVER_QUERY_LIMIT` | daily console quota reached | expected and safe — it falls back to the catalogue. Raise the quota if it's legitimate traffic |
+| `500` from `/api/geo/*`, "SUPABASE_SECRET_KEY is not set" in the logs | fixed — but the log warning means the cache and spend counter are disabled | set `SUPABASE_SECRET_KEY` in Vercel (preview **and** prod). Lookups still work without it; they just cost a call every time |
 | Endpoint returns `"not_configured"` | server key missing or not loaded | check `.env`, then restart (env is read at boot) |
 | Endpoint returns `"unavailable"` / `404` with a valid key | our monthly cap reached, or the provider errored | inspect `geo_provider_usage`; raise `GEO_PROVIDER_MONTHLY_CAP` if the traffic is legitimate |
 | `ZERO_RESULTS` for a valid PIN | Google genuinely has no postal-code polygon for it | falls back to the catalogue automatically |

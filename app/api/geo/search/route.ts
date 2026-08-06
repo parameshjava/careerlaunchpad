@@ -44,11 +44,19 @@ export async function GET(req: NextRequest) {
   // and passed straight through — it is an opaque grouping key, not a credential.
   const sessionToken = (sp.get("session") ?? "").trim() || undefined;
 
-  sweepProviderCache(supabase);
+  // See the note in /api/geo/reverse: a provider fault must not 500 the form.
+  try {
+    sweepProviderCache(supabase);
+  } catch { /* the sweep is housekeeping; never worth failing a request over */ }
 
   // ── stage 2: a prediction was chosen → its address fields ───────────────
   if (placeId) {
-    const record = await providerDetails(supabase, placeId);
+    let record = null;
+    try {
+      record = await providerDetails(supabase, placeId);
+    } catch (e) {
+      console.error("[geo] place details failed", e);
+    }
     if (!record) {
       return NextResponse.json(
         { error: "Couldn't load that place. Please enter your PIN code." },
@@ -63,7 +71,12 @@ export async function GET(req: NextRequest) {
 
   // ── stage 1: predictions ────────────────────────────────────────────────
   if (providerConfigured()) {
-    const preds = await providerAutocomplete(supabase, q, sessionToken);
+    let preds = null;
+    try {
+      preds = await providerAutocomplete(supabase, q, sessionToken);
+    } catch (e) {
+      console.error("[geo] autocomplete failed", e);
+    }
     if (preds) {
       return NextResponse.json({
         source: "provider",
