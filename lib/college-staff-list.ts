@@ -35,15 +35,54 @@ export type StaffRow = {
   updatedAt: string; // YYYY-MM-DD
 };
 
-/** A staff invite that hasn't been signed into yet. */
+/** A college invite (staff or admin) that hasn't been signed into yet. */
 export type StaffInviteRow = {
   inviteId: string;
   email: string;
+  /** 'college_staff' | 'college_admin' — an admin may invite a peer (178). */
+  roleKey: string;
   collegeId: string | null;
   college: string | null;
   name: string | null;
   createdAt: string;
 };
+
+/**
+ * A provisioned member of a college — staff or admin. Read through
+ * college_members() because a College Admin holds neither user.view nor
+ * user.manage, so app_user_self_read (009) shows them only themselves: without
+ * the RPC they could invite a colleague and then never see them.
+ */
+export type CollegeMemberRow = {
+  userId: string;
+  email: string;
+  name: string | null;
+  roleKey: "college_staff" | "college_admin";
+  accountStatus: string | null;
+  staffStatus: string | null;
+  collegeId: string | null;
+  college: string | null;
+};
+
+export async function fetchCollegeMembers(
+  supabase: SupabaseClient,
+  collegeId?: string,
+): Promise<CollegeMemberRow[]> {
+  const { data, error } = await supabase.rpc("college_members", {
+    p_college: collegeId ?? null,
+  });
+  if (error) return [];
+  return ((data ?? []) as Record<string, unknown>[]).map((r) => ({
+    userId: r.user_id as string,
+    email: (r.email as string) ?? "",
+    name: (r.full_name as string | null) ?? null,
+    roleKey: r.role_key as CollegeMemberRow["roleKey"],
+    accountStatus: (r.account_status as string | null) ?? null,
+    staffStatus: (r.staff_status as string | null) ?? null,
+    collegeId: (r.college_id as string | null) ?? null,
+    college: (r.college_name as string | null) ?? null,
+  }));
+}
 
 function one<T>(v: T | T[] | null | undefined): T | null {
   return Array.isArray(v) ? (v[0] ?? null) : (v ?? null);
@@ -165,6 +204,7 @@ export async function fetchStaffInvites(
   return ((data ?? []) as Record<string, unknown>[]).map((r) => ({
     inviteId: r.id as string,
     email: r.email as string,
+    roleKey: (r.role_key as string) ?? "college_staff",
     collegeId: (r.scope_college_id as string | null) ?? null,
     college: (r.college_name as string | null) ?? null,
     name: ((r.staged_profile as { full_name?: string } | null)?.full_name) ?? null,

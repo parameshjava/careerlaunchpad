@@ -21,8 +21,8 @@ import { Label } from "@/components/ui/label";
 import {
   Dialog, DialogContent, DialogDescription, DialogFooter, DialogHeader, DialogTitle,
 } from "@/components/ui/dialog";
-import type { StaffRow, StaffInviteRow, StaffStatus } from "@/lib/college-staff-list";
-import { revokeStaffInvite } from "./actions";
+import type { StaffRow, StaffInviteRow, StaffStatus, CollegeMemberRow } from "@/lib/college-staff-list";
+import { revokeStaffInvite, removeCollegeMember } from "./actions";
 
 const TAB_CLS =
   "-mb-px h-auto flex-none rounded-t-md rounded-b-none border border-border bg-muted! px-4 py-2 font-medium text-muted-foreground shadow-none transition-colors after:hidden hover:bg-muted/70 " +
@@ -36,15 +36,18 @@ const STATUS_BADGE: Record<StaffStatus, { label: string; cls: string }> = {
   rejected:          { label: "Not approved", cls: "bg-rose-50 text-rose-700 ring-rose-200" },
 };
 
-export type StaffTab = "pending" | "approved" | "invited" | "suspended" | "rejected";
+export type StaffTab = "pending" | "approved" | "admins" | "invited" | "suspended" | "rejected";
 
 type Action = { userId: string; name: string; status: StaffStatus } | null;
 
 export function StaffConsole({
-  rows, invites, canReview, canInvite, showCollege, defaultTab,
+  rows, invites, admins, canReview, canInvite, showCollege, defaultTab,
 }: {
   rows: StaffRow[];
   invites: StaffInviteRow[];
+  /** The college's ADMINS (178). Visible, but a college admin cannot remove a
+   *  peer — only the platform can, so no action is offered on these rows. */
+  admins: CollegeMemberRow[];
   canReview: boolean;
   canInvite: boolean;
   /** Platform admins span colleges, so the grid needs the column; a college
@@ -64,6 +67,7 @@ export function StaffConsole({
   const tabs: { value: StaffTab; label: string; count: number }[] = [
     { value: "pending", label: "Pending approval", count: pending.length },
     { value: "approved", label: "Approved", count: approved.length },
+    { value: "admins", label: "Admins", count: admins.length },
     { value: "invited", label: "Invited", count: invites.length },
     { value: "suspended", label: "Suspended", count: suspended.length },
     { value: "rejected", label: "Not approved", count: rejected.length },
@@ -95,6 +99,16 @@ export function StaffConsole({
         <TabsContent value="approved" className="mt-4 min-w-0">
           <Panel empty="No approved staff yet." count={approved.length}>
             <StaffTable rows={approved} showCollege={showCollege} canReview={canReview} onAct={setAction} />
+          </Panel>
+        </TabsContent>
+
+        <TabsContent value="admins" className="mt-4 min-w-0">
+          <Panel
+            note="College admins for this college — they can approve staff and invite others. Removing an admin is a CareerLaunchpad action, so there's no remove here."
+            empty="No college admins yet."
+            count={admins.length}
+          >
+            <AdminTable rows={admins} showCollege={showCollege} />
           </Panel>
         </TabsContent>
 
@@ -218,12 +232,105 @@ function StaffTable({
                     Suspend
                   </Button>
                 )}
+                {canReview && r.status !== "rejected" && (
+                  <RemoveButton row={r} />
+                )}
               </div>
             </div>
           </li>
         );
       })}
     </ul>
+  );
+}
+
+/**
+ * The college's admins. Read-only on purpose: a College Admin may invite a peer
+ * (178) but not unseat one — remove_college_member refuses an admin target for a
+ * college-scoped caller, so offering the button here would only produce an error.
+ */
+function AdminTable({ rows, showCollege }: { rows: CollegeMemberRow[]; showCollege: boolean }) {
+  if (rows.length === 0) return null;
+  return (
+    <ul className="grid gap-2 [&>li]:min-w-0">
+      {rows.map((a) => (
+        <li key={a.userId} className="flex flex-wrap items-center justify-between gap-3 rounded-xl border p-3">
+          <div className="min-w-0 flex-1">
+            <p className="truncate font-medium">{a.name || a.email}</p>
+            <p className="text-muted-foreground truncate text-xs">
+              {a.email}
+              {showCollege && a.college ? ` · ${a.college}` : ""}
+            </p>
+          </div>
+          <div className="flex shrink-0 flex-wrap items-center gap-2">
+            <span className="rounded-full bg-blue-50 px-2 py-0.5 text-[0.7rem] font-semibold text-blue-700 ring-1 ring-inset ring-blue-200">
+              College Admin
+            </span>
+            {a.accountStatus === "suspended" && (
+              <span className="rounded-full bg-rose-50 px-2 py-0.5 text-[0.7rem] font-semibold text-rose-700 ring-1 ring-inset ring-rose-200">
+                suspended
+              </span>
+            )}
+          </div>
+        </li>
+      ))}
+    </ul>
+  );
+}
+
+/** Revoke a staff member's access. Confirms first — it is not reversible from here. */
+function RemoveButton({ row }: { row: StaffRow }) {
+  const router = useRouter();
+  const [open, setOpen] = useState(false);
+  const [note, setNote] = useState("");
+  const [busy, setBusy] = useState(false);
+  const [error, setError] = useState<string | null>(null);
+
+  async function submit() {
+    setBusy(true); setError(null);
+    const res = await removeCollegeMember(row.userId, row.collegeId, note);
+    setBusy(false);
+    if (res.error) { setError(res.error); return; }
+    setOpen(false);
+    router.refresh();
+  }
+
+  return (
+    <>
+      <Button size="sm" variant="outline" className="text-destructive" onClick={() => setOpen(true)}>
+        Remove
+      </Button>
+      {open && (
+        <Dialog open onOpenChange={(o) => !o && setOpen(false)}>
+          <DialogContent className="sm:max-w-md">
+            <DialogHeader>
+              <DialogTitle>Remove {row.name || row.email}</DialogTitle>
+              <DialogDescription>
+                Their access to this college is revoked immediately and their registration is
+                closed. They keep their account, and can register again later.
+              </DialogDescription>
+            </DialogHeader>
+            <div className="grid gap-1.5">
+              <Label htmlFor="remove-note">Reason (sent to them)</Label>
+              <textarea
+                id="remove-note"
+                className="border-input bg-background min-h-20 w-full rounded-md border px-3 py-2 text-sm shadow-sm focus-visible:ring-1 focus-visible:ring-ring focus-visible:outline-none"
+                value={note}
+                onChange={(e) => setNote(e.target.value)}
+                placeholder="e.g. No longer with the college."
+              />
+            </div>
+            {error && <p className="text-destructive text-sm">{error}</p>}
+            <DialogFooter>
+              <Button variant="outline" onClick={() => setOpen(false)} disabled={busy}>Cancel</Button>
+              <Button onClick={submit} disabled={busy || !note.trim()}>
+                {busy ? "Removing…" : "Remove"}
+              </Button>
+            </DialogFooter>
+          </DialogContent>
+        </Dialog>
+      )}
+    </>
   );
 }
 
@@ -247,15 +354,18 @@ function InviteTable({
               <p className="truncate font-semibold">{r.name || r.email}</p>
               {r.name && <p className="text-muted-foreground truncate text-sm">{r.email}</p>}
               <p className="text-muted-foreground mt-0.5 text-xs">
-                Invited {r.createdAt}
+                {r.roleKey === "college_admin" ? "College Admin" : "College Staff"} · invited{" "}
+                {r.createdAt}
                 {showCollege && r.college && ` · ${r.college}`}
               </p>
             </div>
             {canInvite && (
               <div className="flex shrink-0 gap-2">
-                <Button asChild variant="outline" size="sm">
-                  <Link href={`/dashboard/college-staff/new?invite=${r.inviteId}`}>Edit</Link>
-                </Button>
+                {r.roleKey === "college_staff" && (
+                  <Button asChild variant="outline" size="sm">
+                    <Link href={`/dashboard/college-staff/new?invite=${r.inviteId}`}>Edit</Link>
+                  </Button>
+                )}
                 <Button
                   variant="outline" size="sm" disabled={pending}
                   onClick={() =>

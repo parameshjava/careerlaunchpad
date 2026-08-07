@@ -1,17 +1,22 @@
 /**
  * Admin-side College Staff invites.
  *
- *   POST  body { email, college_id, profile, subjects } -> invite + email
- *   PATCH body { inviteId, email, profile, subjects }   -> edit a PENDING invite
+ *   POST  body { email, college_id, role, profile, subjects } -> invite + email
+ *   PATCH body { inviteId, email, profile, subjects }         -> edit a PENDING invite
+ *
+ * `role` is college_staff (default) or college_admin — a College Admin may bring
+ * in a peer admin for their OWN college (migration 178). Anything else is refused
+ * here and again in invite_college_member.
  *
  * WHY THIS IS NOT createInvite(). app/dashboard/users/actions.ts#createInvite
  * checks only `user.invite` and then trusts the role key in the request body, so
  * giving a College Admin that permission — the obvious way to let them invite
  * staff — would also let them invite an OWNER. Instead they hold
- * `college.staff.invite`, and the work is done by invite_college_staff()
- * (migration 175 §10b), a SECURITY DEFINER RPC that hard-codes
- * role = college_staff and forces the scope to a college the caller is
- * authorized for. The role and scope are never caller-supplied.
+ * `college.staff.invite`, and the work is done by invite_college_member()
+ * (migration 178), a SECURITY DEFINER RPC that ALLOWLISTS exactly two roles —
+ * college_staff and college_admin, the two that are scoped to one college — and
+ * forces the scope to a college the caller is authorized for. The scope is never
+ * caller-supplied, and the role can never be anything else.
  *
  * An invited staff member is AUTO-APPROVED: _provision_from_invites materialises
  * their profile with status='approved' at first sign-in (#107 rule 3). That is
@@ -64,7 +69,7 @@ async function buildStaged(
 async function canInviteInto(collegeId: string) {
   const ctx = await getAuthContext();
   if (!ctx || !ctx.provisioned || ctx.status === "suspended") return null;
-  // App-level gate only; invite_college_staff() re-checks the SCOPE in the DB,
+  // App-level gate only; invite_college_member() re-checks the SCOPE in the DB,
   // which is what actually stops a college A admin inviting into college B.
   if (!can(ctx, "college.staff.invite")) return null;
   if (!collegeId) return null;
@@ -76,6 +81,16 @@ export async function POST(req: NextRequest) {
   const email = String(body?.email ?? "").trim().toLowerCase();
   const collegeId = String(body?.college_id ?? "");
   const profile = (body?.profile ?? {}) as Record<string, unknown>;
+  // A College Admin may invite staff OR a peer admin for their own college
+  // (migration 178). The allowlist is repeated in invite_college_member, which is
+  // the check that counts — this one only produces a better message.
+  const roleKey = String(body?.role ?? "college_staff");
+  if (roleKey !== "college_staff" && roleKey !== "college_admin") {
+    return NextResponse.json(
+      { error: "You can only invite college staff or a college admin." },
+      { status: 422 },
+    );
+  }
 
   const ctx = await canInviteInto(collegeId);
   if (!ctx) return NextResponse.json({ error: "Forbidden" }, { status: 403 });
@@ -88,10 +103,12 @@ export async function POST(req: NextRequest) {
   const { staged, errors } = await buildStaged(supabase, profile, body?.subjects);
   if (errors.length) return NextResponse.json({ errors }, { status: 422 });
 
-  const { error } = await supabase.rpc("invite_college_staff", {
+  const { error } = await supabase.rpc("invite_college_member", {
     p_email: email,
     p_college: collegeId,
-    p_profile: staged,
+    p_role: roleKey,
+    // An admin invite has no profile to stage — there is no college_admin_profile.
+    p_profile: roleKey === "college_staff" ? staged : {},
     p_ttl_days: INVITE_TTL_DAYS,
   });
   if (error) {
@@ -107,7 +124,7 @@ export async function POST(req: NextRequest) {
 
   await sendInviteEmail({
     to: email,
-    roleName: "College Staff",
+    roleName: roleKey === "college_admin" ? "College Admin" : "College Staff",
     invitedBy: ctx.email,
     loginUrl: `${SITE_URL}/auth/login`,
   });
@@ -134,9 +151,9 @@ export async function PATCH(req: NextRequest) {
     .maybeSingle();
   if (!inv) return NextResponse.json({ error: "Invite not found." }, { status: 404 });
 
-  const roleKey = Array.isArray(inv.role) ? inv.role[0]?.key : (inv.role as { key?: string } | null)?.key;
-  if (roleKey !== "college_staff") {
-    return NextResponse.json({ error: "Not a college staff invite." }, { status: 400 });
+  const invRole = Array.isArray(inv.role) ? inv.role[0]?.key : (inv.role as { key?: string } | null)?.key;
+  if (invRole !== "college_staff" && invRole !== "college_admin") {
+    return NextResponse.json({ error: "Not a college invite." }, { status: 400 });
   }
   if (inv.status !== "pending") {
     return NextResponse.json({ error: "This invite is no longer pending and can't be edited." }, { status: 409 });

@@ -4,7 +4,7 @@ import { getAuthContext, can, scopedCollege } from "@/lib/auth";
 import { createClient } from "@/lib/supabase/server";
 import { fetchExamCards } from "@/lib/exam-query";
 import { Button } from "@/components/ui/button";
-import { ExamsBrowser } from "./exams-browser";
+import { ExamsBrowser, type ExamCaps } from "./exams-browser";
 import { PageContainer } from "@/components/app-shell/page-container";
 
 // Exam papers. Lists the college's exams (blueprints) — INCLUDING drafts — with
@@ -35,6 +35,15 @@ export default async function ExamPapersPage({
 
   const canCreate = ctx.permissions.has("*") || can(ctx, "exam.blueprint.manage");
 
+  // College roles reach this page via exam.results.view_all, to SEE their
+  // college's papers and results. Publishing results and deleting a paper are
+  // platform acts (migration 178) — without these the buttons rendered for
+  // everyone and 403'd on click.
+  const caps: ExamCaps = {
+    canPublishResults: ctx.permissions.has("*") || can(ctx, "exam.results.publish"),
+    canDeletePapers: ctx.permissions.has("*") || can(ctx, "exam.blueprint.manage"),
+  };
+
   const supabase = await createClient();
   const exams = await fetchExamCards(supabase, scopedCollege(ctx));
 
@@ -54,7 +63,7 @@ export default async function ExamPapersPage({
         )}
       </header>
 
-      <ExamsBrowser exams={exams} initialTab={initialTab} />
+      <ExamsBrowser exams={exams} caps={caps} initialTab={initialTab} />
     </PageContainer>
   );
 }

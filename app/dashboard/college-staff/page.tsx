@@ -6,13 +6,13 @@ import { Button } from "@/components/ui/button";
 import { PageContainer } from "@/components/app-shell/page-container";
 import { getAuthContext, can } from "@/lib/auth";
 import { createClient } from "@/lib/supabase/server";
-import { fetchCollegeStaff, fetchStaffInvites } from "@/lib/college-staff-list";
+import { fetchCollegeStaff, fetchStaffInvites, fetchCollegeMembers } from "@/lib/college-staff-list";
 import { CollegeNavPicker } from "@/components/analytics/college-nav-picker";
 import { StaffConsole, type StaffTab } from "./staff-console";
 
 export const metadata: Metadata = { title: "College staff" };
 
-const TABS: StaffTab[] = ["pending", "approved", "invited", "suspended", "rejected"];
+const TABS: StaffTab[] = ["pending", "approved", "admins", "invited", "suspended", "rejected"];
 
 /**
  * The College Staff roster — where a College Admin manages their own college's
@@ -50,9 +50,10 @@ export default async function CollegeStaffPage({
   const defaultTab: StaffTab = TABS.includes(tab as StaffTab) ? (tab as StaffTab) : "pending";
 
   const supabase = await createClient();
-  const [rows, invites, selectedCollege] = await Promise.all([
+  const [rows, invites, members, selectedCollege] = await Promise.all([
     fetchCollegeStaff(supabase, collegeId),
     fetchStaffInvites(supabase, collegeId),
+    fetchCollegeMembers(supabase, collegeId),
     collegeId
       ? supabase.from("college").select("id, name, place, state").eq("id", collegeId).maybeSingle()
           .then((r) => r.data)
@@ -77,9 +78,18 @@ export default async function CollegeStaffPage({
           </p>
         </div>
         {canInvite && (
-          <Button asChild className="shrink-0">
-            <Link href={inviteHref}>+ Invite staff</Link>
-          </Button>
+          <div className="flex shrink-0 flex-wrap gap-2">
+            <Button asChild>
+              <Link href={inviteHref}>+ Invite staff</Link>
+            </Button>
+            {/* A College Admin may bring in a peer admin for their own college
+                (178) — but never remove one, which stays a platform action. */}
+            <Button asChild variant="outline">
+              <Link href={`${inviteHref}${collegeId ? "&" : "?"}role=college_admin`}>
+                + Invite admin
+              </Link>
+            </Button>
+          </div>
         )}
       </div>
 
@@ -100,6 +110,7 @@ export default async function CollegeStaffPage({
       <StaffConsole
         rows={rows}
         invites={invites}
+        admins={members.filter((m) => m.roleKey === "college_admin")}
         canReview={canReview}
         canInvite={canInvite}
         showCollege={isGlobal && !collegeId}

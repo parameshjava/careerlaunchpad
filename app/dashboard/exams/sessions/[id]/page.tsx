@@ -33,7 +33,10 @@ export default async function SessionDetailPage({
   const session = await fetchSession(supabase, id);
   if (!session) notFound();
   const canExportPdf = ctx.permissions.has("*") || can(ctx, "exam.paper.export_pdf");
-  const canPublish = ctx.permissions.has("*") || can(ctx, "exam.assign");
+  // exam.results.publish, not exam.assign (migration 178): a college admin holds
+  // exam.assign so they can run the sitting, but releasing results to students —
+  // the visibility toggle AND the result emails — is a platform act.
+  const canPublish = ctx.permissions.has("*") || can(ctx, "exam.results.publish");
   const [progress, paper, roster, subjectAvgs, subjectMarks, notifications] = await Promise.all([
     fetchSessionLiveProgress(supabase, id),
     canExportPdf ? fetchPaperForPrint(supabase, id) : Promise.resolve(null),

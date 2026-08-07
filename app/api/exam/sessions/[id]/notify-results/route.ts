@@ -15,12 +15,17 @@
  */
 import { NextResponse } from "next/server";
 import { createClient } from "@/lib/supabase/server";
+// Gated on `exam.results.publish` (migration 178), NOT exam.assign: a college
+// admin holds exam.assign so they can run sittings, but releasing results to
+// students is a platform act. Both doors to a student seeing a result —
+// the visibility flag and the emails — carry the same permission, or one
+// would be a way round the other.
 import { requirePermission } from "@/lib/auth";
 import { drainExamResultNotifications } from "@/lib/exam-result-notify";
 
 export async function POST(_req: Request, { params }: { params: Promise<{ id: string }> }) {
   try {
-    await requirePermission("exam.assign");
+    await requirePermission("exam.results.publish");
   } catch {
     return NextResponse.json({ error: "Forbidden" }, { status: 403 });
   }

@@ -50,11 +50,22 @@ const TAB_CLS =
   "-mb-px h-auto flex-none rounded-t-md rounded-b-none border border-border bg-muted! px-4 py-2 font-medium text-muted-foreground shadow-none transition-colors after:hidden hover:bg-muted/70 " +
   "data-active:border-primary! data-active:border-b-0 data-active:bg-primary! data-active:text-primary-foreground! data-active:font-semibold data-active:shadow-none";
 
+/**
+ * What the signed-in user may DO here, resolved server-side and passed down.
+ * College roles reach this page through exam.results.view_all — they are meant to
+ * SEE their college's papers and results — but publishing results and deleting a
+ * paper are platform acts (migration 178). Both were rendered unconditionally, so
+ * a college admin or staff member saw buttons that 403'd on click.
+ */
+export type ExamCaps = { canPublishResults: boolean; canDeletePapers: boolean };
+
 export function ExamsBrowser({
   exams,
+  caps,
   initialTab = "active",
 }: {
   exams: ExamCard[];
+  caps: ExamCaps;
   initialTab?: "draft" | "active" | "closed";
 }) {
   const [query, setQuery] = useState("");
@@ -148,20 +159,20 @@ export function ExamsBrowser({
           ))}
         </TabsList>
         <TabsContent value="draft" className="mt-4">
-          <ExamList exams={drafts} empty="No draft exams match." />
+          <ExamList exams={drafts} caps={caps} empty="No draft exams match." />
         </TabsContent>
         <TabsContent value="active" className="mt-4">
-          <ExamList exams={active} empty="No active exams match. Create one with “+ Exam”." />
+          <ExamList exams={active} caps={caps} empty="No active exams match. Create one with “+ Exam”." />
         </TabsContent>
         <TabsContent value="closed" className="mt-4">
-          <ExamList exams={closed} empty="No closed exams match." />
+          <ExamList exams={closed} caps={caps} empty="No closed exams match." />
         </TabsContent>
       </Tabs>
     </>
   );
 }
 
-function ExamList({ exams, empty }: { exams: ExamCard[]; empty: string }) {
+function ExamList({ exams, caps, empty }: { exams: ExamCard[]; caps: ExamCaps; empty: string }) {
   const router = useRouter();
   const [publishing, setPublishing] = useState<string | null>(null);
   const [toDelete, setToDelete] = useState<ExamCard | null>(null);
@@ -217,7 +228,9 @@ function ExamList({ exams, empty }: { exams: ExamCard[]; empty: string }) {
         // Deletable only while no student has attempted it — draft, scheduled/
         // upcoming, and closed-with-nobody all qualify; anything with submissions
         // is protected.
-        const canDelete = e.attemptCount === 0;
+        // Permission first, then the domain rule: a paper with attempts is
+        // undeletable for everyone.
+        const canDelete = caps.canDeletePapers && e.attemptCount === 0;
         return (
           <li
             key={e.id}
@@ -248,7 +261,7 @@ function ExamList({ exams, empty }: { exams: ExamCard[]; empty: string }) {
                   results / paper themselves live on the Session page now, so no
                   separate Results or View-paper buttons here (they resolved to
                   the same place). */}
-              {finished && e.sessionId && (
+              {finished && e.sessionId && caps.canPublishResults && (
                 <Button
                   size="sm"
                   variant={e.resultsPublished ? "default" : "outline"}
@@ -272,6 +285,14 @@ function ExamList({ exams, empty }: { exams: ExamCard[]; empty: string }) {
                     </>
                   )}
                 </Button>
+              )}
+
+              {/* Read-only viewer: the FACT still matters to them ("can my
+                  students see this yet?"), only the action does not. */}
+              {finished && e.sessionId && !caps.canPublishResults && e.resultsPublished && (
+                <Badge variant="secondary" title="Results are visible to students">
+                  <ChartColumnIncreasing className="size-4" /> published
+                </Badge>
               )}
 
               {e.examStatus === "published" && e.sessionId && (

@@ -8,6 +8,7 @@ import { getAuthContext, can } from "@/lib/auth";
 import { createClient } from "@/lib/supabase/server";
 import type { SubjectPick } from "@/components/college-staff/staff-fields";
 import { InviteStaffWizard, type EditInvite } from "./invite-wizard";
+import { InviteAdminForm } from "./invite-admin-form";
 
 export const metadata: Metadata = { title: "Invite staff" };
 
@@ -24,14 +25,17 @@ export const metadata: Metadata = { title: "Invite staff" };
 export default async function InviteStaffPage({
   searchParams,
 }: {
-  searchParams: Promise<{ college?: string; invite?: string }>;
+  searchParams: Promise<{ college?: string; invite?: string; role?: string }>;
 }) {
   const ctx = await getAuthContext();
   if (!ctx) redirect("/auth/login");
   if (!ctx.provisioned || ctx.status === "suspended") redirect("/auth/no-access");
   if (!can(ctx, "college.staff.invite")) redirect(ctx.homePath);
 
-  const { college: collegeParam, invite: inviteId } = await searchParams;
+  const { college: collegeParam, invite: inviteId, role: roleParam } = await searchParams;
+  // An ADMIN invite needs only an email: there is no college_admin profile to
+  // fill in, so the 3-step wizard would be a form with nothing in it.
+  const invitingAdmin = roleParam === "college_admin" && !inviteId;
   const supabase = await createClient();
 
   // Editing: the college comes from the invite itself, never the query string.
@@ -84,20 +88,34 @@ export default async function InviteStaffPage({
     <PageContainer variant="form">
       <header className="mb-6 text-center">
         <h1 className="text-2xl font-bold tracking-tight">
-          {editInvite ? "✏️ Edit staff invite" : "🏫 Invite college staff"}
+          {editInvite
+            ? "✏️ Edit staff invite"
+            : invitingAdmin
+              ? "🛡️ Invite a college admin"
+              : "🏫 Invite college staff"}
         </h1>
         <p className="text-muted-foreground mt-1 text-sm">
           {college.name}
           {college.place ? ` — ${college.place}` : ""}
         </p>
-        {!editInvite && (
+        {!editInvite && !invitingAdmin && (
           <p className="text-muted-foreground mt-2 text-sm">
             Fill in what you know — they can complete the rest themselves. Because you&rsquo;re
             inviting them, they&rsquo;re approved automatically.
           </p>
         )}
+        {invitingAdmin && (
+          <p className="text-muted-foreground mt-2 text-sm">
+            They&rsquo;ll be able to approve staff and invite others for this college. They
+            cannot publish results or delete papers, and they cannot remove you.
+          </p>
+        )}
       </header>
-      <InviteStaffWizard college={college} editInvite={editInvite} />
+      {invitingAdmin ? (
+        <InviteAdminForm college={college} />
+      ) : (
+        <InviteStaffWizard college={college} editInvite={editInvite} />
+      )}
     </PageContainer>
   );
 }
