@@ -117,6 +117,12 @@ export function buildNav(ctx: AuthContext, opts: { studentApproved?: boolean } =
     // members, invite, manage, or review mentors.
     if (can(ctx, "user.view") || can(ctx, "user.invite") || can(ctx, "user.manage") || canReviewMentors(ctx))
       people.push({ label: "Team", href: "/dashboard/team", icon: "users" });
+    // College staff (#107) is its OWN item, not a Team tab, because a
+    // college_admin holds none of the four permissions that open Team and so
+    // cannot reach it — this is their people page. Platform admins get the same
+    // roster as a Team tab too.
+    if (can(ctx, "college.staff.view") || can(ctx, "college.staff.invite"))
+      people.push({ label: "College staff", href: "/dashboard/college-staff", icon: "users" });
 
     // Platform — supporting configuration (colleges, organizations, tooling).
     const platform: NavItem[] = [];

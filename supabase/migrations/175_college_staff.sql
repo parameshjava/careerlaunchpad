@@ -899,6 +899,117 @@ $$;
 grant execute on function public.invite_college_staff(text, uuid, jsonb, int) to authenticated;
 
 -- ---------------------------------------------------------------------------
+-- 10b-ii) Reading, editing and revoking a staff invite — the other three verbs
+-- a College Admin needs, and cannot do directly.
+--
+-- `invite` RLS (009) gates SELECT/UPDATE on user.invite or invite.resend, and
+-- DELETE on user.invite (142). A College Admin holds NONE of those, deliberately
+-- (see 10b). Without these they could create an invite and then never see it,
+-- fix a typo in it, or take it back — and would hit "there is already a pending
+-- invite" with no way to clear it. Each mirrors invite_college_staff's
+-- authorization: global college.staff.invite, or scoped to THAT invite's
+-- college.
+-- ---------------------------------------------------------------------------
+create or replace function public.college_staff_invites(p_college uuid default null)
+returns table (
+  id uuid, email text, scope_college_id uuid, college_name text,
+  staged_profile jsonb, created_at timestamptz, expires_at timestamptz
+)
+language sql
+stable
+security definer
+set search_path = public
+as $$
+  select i.id, i.email, i.scope_college_id, c.name, i.staged_profile, i.created_at, i.expires_at
+  from public.invite i
+  join public.role r on r.id = i.role_id
+  left join public.college c on c.id = i.scope_college_id
+  where r.key = 'college_staff'
+    and i.status = 'pending'
+    and (p_college is null or i.scope_college_id = p_college)
+    and (public.has_global_permission('college.staff.view')
+         or public.has_college_permission('college.staff.view', i.scope_college_id))
+  order by i.created_at desc;
+$$;
+
+grant execute on function public.college_staff_invites(uuid) to authenticated;
+
+create or replace function public.update_college_staff_invite(
+  p_invite  uuid,
+  p_email   text,
+  p_profile jsonb default '{}'::jsonb
+)
+returns void
+language plpgsql
+security definer
+set search_path = public
+as $$
+declare
+  v_email   text := lower(btrim(coalesce(p_email, '')));
+  v_college uuid;
+  v_status  text;
+  v_key     text;
+begin
+  select i.scope_college_id, i.status, r.key
+    into v_college, v_status, v_key
+  from public.invite i join public.role r on r.id = i.role_id
+  where i.id = p_invite;
+
+  if v_key is null then raise exception 'Invite not found'; end if;
+  if v_key <> 'college_staff' then raise exception 'Not a college staff invite'; end if;
+  if v_status <> 'pending' then raise exception 'This invite is no longer pending'; end if;
+  if not (public.has_global_permission('college.staff.invite')
+          or public.has_college_permission('college.staff.invite', v_college)) then
+    raise exception 'Forbidden: you cannot edit staff invites for this college';
+  end if;
+  if v_email !~ '^[^\s@]+@[^\s@.]+(\.[^\s@.]+)+$' then
+    raise exception 'A valid email is required';
+  end if;
+  if exists (
+    select 1 from public.invite
+    where lower(email) = v_email and status = 'pending' and id <> p_invite
+  ) then
+    raise exception 'Another pending invite already uses this email.';
+  end if;
+
+  -- scope_college_id is NOT updatable here: moving an invite between colleges
+  -- would move it out of the reviewing admin's reach. Revoke and re-invite.
+  update public.invite
+    set email = v_email, staged_profile = coalesce(p_profile, '{}'::jsonb)
+  where id = p_invite;
+end;
+$$;
+
+grant execute on function public.update_college_staff_invite(uuid, text, jsonb) to authenticated;
+
+create or replace function public.revoke_college_staff_invite(p_invite uuid)
+returns void
+language plpgsql
+security definer
+set search_path = public
+as $$
+declare
+  v_college uuid;
+  v_key     text;
+begin
+  select i.scope_college_id, r.key into v_college, v_key
+  from public.invite i join public.role r on r.id = i.role_id
+  where i.id = p_invite;
+
+  if v_key is null then raise exception 'Invite not found'; end if;
+  if v_key <> 'college_staff' then raise exception 'Not a college staff invite'; end if;
+  if not (public.has_global_permission('college.staff.invite')
+          or public.has_college_permission('college.staff.invite', v_college)) then
+    raise exception 'Forbidden: you cannot revoke staff invites for this college';
+  end if;
+
+  update public.invite set status = 'revoked' where id = p_invite and status = 'pending';
+end;
+$$;
+
+grant execute on function public.revoke_college_staff_invite(uuid) to authenticated;
+
+-- ---------------------------------------------------------------------------
 -- 10c) set_college_staff_status() — the audited review action, and the thing
 -- that actually grants or revokes access.
 --
