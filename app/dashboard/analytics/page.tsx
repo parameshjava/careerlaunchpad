@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Link from "next/link";
 import { redirect } from "next/navigation";
 
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
@@ -36,6 +37,10 @@ export default async function AnalyticsPage({
   // No analytics access at all → send them to their own home surface.
   if (!canSelectAny && !isCollegeAdmin) redirect(ctx.homePath);
 
+  // Same gate as the sidebar's Exam reports item, so the pointer is never a dead
+  // link for someone who cannot open it.
+  const canSeeExamReports = ctx.permissions.has("*") || can(ctx, "exam.results.view_all");
+
   const { college: collegeParam } = await searchParams;
   const collegeId = canSelectAny ? (collegeParam ?? null) : scopedCollegeId;
 
@@ -45,7 +50,7 @@ export default async function AnalyticsPage({
   if (!collegeId) {
     return (
       <PageContainer variant="full" className="space-y-6">
-        <Header />
+        <Header canSeeExamReports={canSeeExamReports} />
         <CollegeNavPicker selected={null} />
         <Card>
           <CardContent className="text-muted-foreground py-16 text-center text-sm">
@@ -70,7 +75,7 @@ export default async function AnalyticsPage({
 
   return (
     <PageContainer variant="full" className="space-y-6">
-      <Header collegeName={analytics.college?.name ?? null} />
+      <Header collegeName={analytics.college?.name ?? null} canSeeExamReports={canSeeExamReports} />
 
       <CollegeNavPicker selected={analytics.college} disabled={isCollegeAdmin} />
 
@@ -93,7 +98,13 @@ export default async function AnalyticsPage({
   );
 }
 
-function Header({ collegeName }: { collegeName?: string | null }) {
+function Header({
+  collegeName,
+  canSeeExamReports = false,
+}: {
+  collegeName?: string | null;
+  canSeeExamReports?: boolean;
+}) {
   return (
     <div>
       <h1 className="text-2xl font-semibold tracking-tight">College Insights</h1>
@@ -102,6 +113,20 @@ function Header({ collegeName }: { collegeName?: string | null }) {
           ? `Skills, goals and skill-assessment for ${collegeName}.`
           : "Skills, goals and skill-assessment, by college."}
       </p>
+      {/* This page is what students TOLD us at registration. Exam performance is a
+          different dataset on a different page, and the two sit next to each other
+          in the sidebar — so say which is which here rather than let someone hunt
+          for results that were never on this page. */}
+      {canSeeExamReports && (
+        <p className="text-muted-foreground mt-2 text-sm">
+          Looking for exam scores?{" "}
+          <Link href="/dashboard/reports" className="text-foreground font-medium underline">
+            Exam reports
+          </Link>{" "}
+          has consolidated results — every exam over a period, and every student&rsquo;s score in
+          one table.
+        </p>
+      )}
     </div>
   );
 }

@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Link from "next/link";
 import { redirect } from "next/navigation";
 
 import { PageContainer } from "@/components/app-shell/page-container";
@@ -32,6 +33,8 @@ export default async function ReportsPage({
   // A scoped grant is pinned by the RPC anyway; hiding the picker just avoids
   // offering a control that cannot change the answer.
   const isGlobal = ctx.permissions.has("*") || ctx.collegeScopes.length === 0;
+  const canSeeAnalytics =
+    ctx.permissions.has("*") || can(ctx, "analytics.platform.view") || can(ctx, "college.analytics.view");
   const { college: collegeParam } = await searchParams;
   const collegeId = isGlobal ? (collegeParam ?? null) : ctx.collegeScopes[0];
 
@@ -49,6 +52,18 @@ export default async function ReportsPage({
             ? `How ${selected.name}'s students are performing across every exam.`
             : "How students are performing across every exam, over a period you choose."}
         </p>
+        {/* The reciprocal of the pointer on College Insights — the two datasets are
+            adjacent in the sidebar and easily mistaken for each other. */}
+        {canSeeAnalytics && (
+          <p className="text-muted-foreground mt-2 text-sm">
+            Skills, career goals and the self-assessment students filled in at registration
+            are in{" "}
+            <Link href="/dashboard/analytics" className="text-foreground font-medium underline">
+              College analytics
+            </Link>
+            .
+          </p>
+        )}
       </div>
 
       {isGlobal && (
