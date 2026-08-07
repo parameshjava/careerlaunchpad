@@ -54,10 +54,10 @@ export function TeamStaffPanel({
           Nobody is waiting for approval.
         </div>
       ) : (
-        <ul className="grid gap-2">
+        <ul className="grid gap-2 [&>li]:min-w-0">
           {pending.map((r) => (
             <li key={r.userId} className="flex flex-wrap items-center justify-between gap-3 rounded-xl border p-3">
-              <div className="min-w-0">
+              <div className="min-w-0 flex-1">
                 <Link href={`/dashboard/college-staff/${r.userId}`} className="font-medium hover:underline">
                   {r.name || r.email}
                 </Link>

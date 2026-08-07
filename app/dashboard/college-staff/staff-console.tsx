@@ -154,13 +154,13 @@ function StaffTable({
 }) {
   if (rows.length === 0) return null;
   return (
-    <ul className="grid gap-3">
+    <ul className="grid gap-3 [&>li]:min-w-0">
       {rows.map((r) => {
         const badge = STATUS_BADGE[r.status];
         return (
           <li key={r.userId} className="rounded-xl border p-4">
             <div className="flex flex-wrap items-start justify-between gap-3">
-              <div className="min-w-0">
+              <div className="min-w-0 flex-1">
                 <div className="flex flex-wrap items-center gap-2">
                   <Link href={`/dashboard/college-staff/${r.userId}`} className="font-semibold hover:underline">
                     {r.name || r.email || "Unnamed"}
@@ -240,10 +240,10 @@ function InviteTable({
   return (
     <>
       {error && <p className="text-destructive text-sm">{error}</p>}
-      <ul className="grid gap-3">
+      <ul className="grid gap-3 [&>li]:min-w-0">
         {rows.map((r) => (
           <li key={r.inviteId} className="flex flex-wrap items-center justify-between gap-3 rounded-xl border p-4">
-            <div className="min-w-0">
+            <div className="min-w-0 flex-1">
               <p className="truncate font-semibold">{r.name || r.email}</p>
               {r.name && <p className="text-muted-foreground truncate text-sm">{r.email}</p>}
               <p className="text-muted-foreground mt-0.5 text-xs">
