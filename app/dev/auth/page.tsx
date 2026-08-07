@@ -23,6 +23,23 @@ export const dynamic = "force-dynamic";
  * environment this route should be indistinguishable from one that does not
  * exist.
  */
+/** Every college, in pages — see the note at the call site. */
+async function fetchAllColleges(admin: ReturnType<typeof createAdminClient>) {
+  const PAGE = 1000;
+  const out: DevCollege[] = [];
+  for (let from = 0; ; from += PAGE) {
+    const { data, error } = await admin
+      .from("college")
+      .select("id, name, place")
+      .order("name")
+      .range(from, from + PAGE - 1);
+    if (error || !data?.length) break;
+    out.push(...(data as DevCollege[]));
+    if (data.length < PAGE) break;
+  }
+  return { data: out };
+}
+
 export default async function DevAuthPage() {
   if (!devAuthEnabled()) notFound();
 
@@ -39,7 +56,11 @@ export default async function DevAuthPage() {
         .from("app_user")
         .select("id, email, full_name, status, user_role(role:role_id(key), college:scope_college_id(name))")
         .neq("status", "deleted"),
-      admin.from("college").select("id, name, place").order("name").limit(1000),
+      // Paged, because the panel's filter is CLIENT-side and PostgREST caps a
+      // response at its db-max-rows (1,000 here) whatever .limit() asks for. With
+      // ~1,258 colleges that silently hid everything late in the alphabet — the
+      // filter reported "no match" for a college that plainly exists.
+      fetchAllColleges(admin),
       admin.from("college_staff_profile").select("user_id, status"),
     ]);
 

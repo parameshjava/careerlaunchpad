@@ -57,7 +57,7 @@ export function DevAuthPanel({
     const list = q
       ? colleges.filter((c) => `${c.name} ${c.place ?? ""}`.toLowerCase().includes(q))
       : colleges;
-    return list.slice(0, 200);
+    return list.slice(0, 300);
   }, [colleges, collegeFilter]);
 
   const visibleUsers = useMemo(() => {
@@ -160,7 +160,9 @@ export function DevAuthPanel({
                 ))}
               </select>
               <p className="text-muted-foreground text-xs">
-                Showing {visibleColleges.length} of {colleges.length}. Filter to narrow.
+                {visibleColleges.length === 0
+                  ? `No college matches “${collegeFilter}”.`
+                  : `Showing ${visibleColleges.length} of ${colleges.length}. Filter to narrow.`}
               </p>
             </div>
           )}
