@@ -191,6 +191,11 @@ export function buildNav(ctx: AuthContext, opts: { studentApproved?: boolean } =
     // college staff it is the landing page, not a report they occasionally open.
     if (can(ctx, "college.students.view") || can(ctx, "college.analytics.view") || can(ctx, "user.manage"))
       reports.push({ label: "My college", href: "/dashboard/college", icon: "college" });
+    // Exam reports (#107 follow-up): every exam over a period, in one place.
+    // Same permission the Exam results list uses, so anyone who can read results
+    // can read the report built from them.
+    if (ctx.permissions.has("*") || can(ctx, "exam.results.view_all"))
+      reports.push({ label: "Exam reports", href: "/dashboard/reports", icon: "analytics" });
     if (canViewAnalytics(ctx))
       reports.push({ label: "College analytics", href: "/dashboard/analytics", icon: "analytics" });
 
