@@ -41,7 +41,7 @@ export async function fetchStaffProfile(
   const [{ data: subjects }, { data: notes }] = await Promise.all([
     supabase
       .from("college_staff_subject")
-      .select("subject_id, relation, since_year, last_year, is_primary")
+      .select("subject_id, subject_name, relation, since_year, last_year, is_primary")
       .eq("user_id", userId),
     supabase
       .from("college_staff_review_note")
@@ -93,7 +93,10 @@ export async function replaceStaffSubjects(
   const { error: insErr } = await supabase.from("college_staff_subject").insert(
     rows.map((r) => ({
       user_id: userId,
-      subject_id: r.subject_id,
+      // Exactly one of the two — 177's CHECK rejects both or neither, and
+      // validateSubjects has already reduced each row to one.
+      subject_id: r.subject_id ?? null,
+      subject_name: r.subject_id ? null : (r.subject_name ?? null),
       relation: r.relation,
       since_year: r.since_year ?? null,
       last_year: r.last_year ?? null,

@@ -299,7 +299,8 @@ function hydrate(profile: Record<string, unknown>, subjects: Record<string, unkn
     certifications: list(profile.certifications, (r) => ({ name: str(r.name), year: str(r.year) })),
     achievements: list(profile.achievements, (r) => ({ title: str(r.title), year: str(r.year) })),
     subjects: subjects.map((s) => ({
-      subject_id: str(s.subject_id),
+      subject_id: s.subject_id ? str(s.subject_id) : null,
+      subject_name: s.subject_id ? null : str(s.subject_name),
       relation: s.relation as SubjectPick["relation"],
       since_year: str(s.since_year),
       last_year: str(s.last_year),
@@ -399,10 +400,15 @@ function StaffSummary({
     f.subjects
       .filter((s) => s.relation === relation)
       .map((s) => {
-        const name = subjectLabel.get(s.subject_id) ?? s.subject_id;
+        // A linked row resolves through the platform list; a free-typed one is
+        // already the label (migration 177).
+        const name = s.subject_id
+          ? subjectLabel.get(s.subject_id) ?? s.subject_id
+          : (s.subject_name ?? "");
         const year = relation === "taught" ? s.last_year : s.since_year;
         return year ? `${name} (${relation === "taught" ? "until" : "since"} ${year})` : name;
-      });
+      })
+      .filter(Boolean) as string[];
 
   const collegeText = college ? `${college.name}${college.place ? ` — ${college.place}` : ""}` : "";
   const badge = STATUS_BADGE[status ?? "pending_review"] ?? STATUS_BADGE.pending_review;

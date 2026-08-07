@@ -56,13 +56,24 @@ export const PROFILE_SELECT = [...ALL_FIELDS, "college_id"].join(", ");
  */
 export const SUBJECT_RELATIONS = ["teaching", "taught", "can_teach"] as const;
 export type SubjectRelation = (typeof SUBJECT_RELATIONS)[number];
+/**
+ * One declared subject. EXACTLY ONE of subject_id / subject_name is set —
+ * `subject_id` when the person picked a platform subject (which links their
+ * declaration to the batch vocabulary), `subject_name` when they typed their own,
+ * because a college syllabus is not in public.subject and its naming is
+ * university-specific. Migration 177 enforces the either/or in the database.
+ */
 export type SubjectRow = {
-  subject_id: string;
+  subject_id?: string | null;
+  subject_name?: string | null;
   relation: SubjectRelation;
   since_year?: number | string | null;
   last_year?: number | string | null;
   is_primary?: boolean;
 };
+
+/** Bound on a typed subject name — matches the column CHECK in 177. */
+export const SUBJECT_NAME_MAX = 120;
 
 /**
  * Fields required before a staff registration can be marked 'submitted'.
@@ -368,14 +379,39 @@ export function validateSubjects(
     if (!raw || typeof raw !== "object") continue;
     const r = raw as Record<string, unknown>;
     const subjectId = String(r.subject_id ?? "");
+    const typedName = String(r.subject_name ?? "").trim();
     const relation = String(r.relation ?? "") as SubjectRelation;
 
-    if (!UUID_RE.test(subjectId) || !known.has(subjectId)) { errors.push("subjects: unknown subject"); continue; }
     if (!SUBJECT_RELATIONS.includes(relation)) { errors.push("subjects: unknown relation"); continue; }
 
-    // The table PK is (user_id, subject_id, relation); de-dupe here so a client
-    // repeat is a no-op rather than a 409.
-    const key = `${subjectId}:${relation}`;
+    // A platform id wins over a typed name, matching the provisioning branch in
+    // 177 and the table's either/or constraint. An id that isn't a real subject
+    // is an error rather than a silent downgrade to free text — it means the
+    // client sent something we didn't offer.
+    let linkedId: string | null = null;
+    let freeName: string | null = null;
+    if (subjectId) {
+      if (!UUID_RE.test(subjectId) || !known.has(subjectId)) {
+        errors.push("subjects: unknown subject");
+        continue;
+      }
+      linkedId = subjectId;
+    } else if (typedName) {
+      if (typedName.length > SUBJECT_NAME_MAX) {
+        errors.push(`subjects: "${typedName.slice(0, 30)}…" is too long (max ${SUBJECT_NAME_MAX})`);
+        continue;
+      }
+      freeName = typedName;
+    } else {
+      // Neither — an empty row the UI should not have sent. Dropped rather than
+      // erroring, so a stray blank entry cannot block a save.
+      continue;
+    }
+
+    // De-dupe on whichever identity the row carries, case-insensitively for typed
+    // names to match the partial unique index — so a client repeat is a no-op
+    // rather than a 409 from the database.
+    const key = `${linkedId ?? freeName!.toLowerCase()}:${relation}`;
     if (seen.has(key)) continue;
     seen.add(key);
 
@@ -386,7 +422,8 @@ export function validateSubjects(
     };
 
     rows.push({
-      subject_id: subjectId,
+      subject_id: linkedId,
+      subject_name: freeName,
       relation,
       since_year: relation === "teaching" ? year(r.since_year) : null,
       last_year: relation === "taught" ? year(r.last_year) : null,

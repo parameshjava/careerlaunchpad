@@ -17,6 +17,9 @@
  *                 it to the college they are inviting into. Neither may change it
  *                 mid-form, because it decides who reviews the registration.
  */
+import { useState } from "react";
+
+import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { Combobox } from "@/components/ui/combobox";
@@ -34,16 +37,33 @@ export type Ref = {
    *  tables that have no such column, which the combobox handles. */
   search_terms?: string[] | null;
 };
-export type RefData = Record<string, Ref[]>;
+/** A type-ahead entry for the subject inputs. `id` null = insert as free text. */
+export type SubjectSuggestion = { id: string | null; label: string };
+
+export type RefData = Record<string, Ref[]> & {
+  /** Platform subjects + names other staff already typed (migration 177). */
+  subject_suggestions?: SubjectSuggestion[];
+};
 export type { College };
 
-/** One row of college_staff_subject, as the form holds it. */
+/**
+ * One row of college_staff_subject, as the form holds it. Exactly one of
+ * subject_id / subject_name — a platform subject (links to batches) or whatever
+ * the person typed. See migration 177 for why free text had to exist: a B.Tech is
+ * forty-odd subjects and every university names them differently, so the platform
+ * list cannot be the vocabulary.
+ */
 export type SubjectPick = {
-  subject_id: string;
+  subject_id?: string | null;
+  subject_name?: string | null;
   relation: "teaching" | "taught" | "can_teach";
   since_year?: string;
   last_year?: string;
 };
+
+/** Stable key for a pick, for React keys and de-duping. */
+export const pickKey = (s: SubjectPick) =>
+  `${s.relation}:${s.subject_id ?? (s.subject_name ?? "").trim().toLowerCase()}`;
 
 /** A previous employer, as held in college_staff_profile.previous_institutions. */
 export type PrevInstitution = { name: string; role: string; from: string; to: string };
@@ -126,12 +146,15 @@ export const STEP_PAYLOAD: Record<number, (f: Form) => Record<string, unknown>> 
 
 /** The subject rows step 3 sends (separate from the column payload above). */
 export const stepSubjects = (f: Form) =>
-  f.subjects.filter((s) => s.subject_id).map((s) => ({
-    subject_id: s.subject_id,
-    relation: s.relation,
-    since_year: s.since_year || null,
-    last_year: s.last_year || null,
-  }));
+  f.subjects
+    .filter((s) => s.subject_id || (s.subject_name ?? "").trim())
+    .map((s) => ({
+      subject_id: s.subject_id ?? null,
+      subject_name: s.subject_id ? null : (s.subject_name ?? "").trim(),
+      relation: s.relation,
+      since_year: s.since_year || null,
+      last_year: s.last_year || null,
+    }));
 
 export type SetForm = <K extends keyof Form>(k: K, v: Form[K]) => void;
 
@@ -320,42 +343,34 @@ export function StaffStepBody({
   return (
     <Step title="What You Teach" hint="The subjects you handle now, what you've taught before, and anything else you could take. This is how we match you to batches and sessions.">
       <div className="min-w-0 space-y-4 sm:col-span-2">
-        {refs.subject && refs.subject.length > 0 ? (
-          <>
-            <SubjectPicker
-              title="Subjects You Teach Now"
-              hint="Your current teaching load."
-              relation="teaching"
-              yearLabel="Since"
-              subjects={refs.subject}
-              value={f.subjects}
-              onChange={(v) => set("subjects", v)}
-            />
-            <SubjectPicker
-              title="Subjects You Taught Earlier"
-              hint="Previously handled — still useful to us."
-              relation="taught"
-              yearLabel="Until"
-              subjects={refs.subject}
-              value={f.subjects}
-              onChange={(v) => set("subjects", v)}
-            />
-            <SubjectPicker
-              title="Other Subjects You Could Teach"
-              hint="Anything you'd be comfortable taking if asked."
-              relation="can_teach"
-              subjects={refs.subject}
-              value={f.subjects}
-              onChange={(v) => set("subjects", v)}
-            />
-          </>
-        ) : (
-          <FieldGroup title="Subjects">
-            <p className="text-muted-foreground text-sm">
-              No subjects are set up yet — an admin can add them under Subjects &amp; Chapters.
-            </p>
-          </FieldGroup>
-        )}
+        {/* Free-text inputs, so no "no subjects configured" empty state: typing
+            works with an empty suggestion list, which is the point of 177. */}
+        <SubjectPicker
+          title="Subjects You Teach Now"
+          hint="Your current teaching load."
+          relation="teaching"
+          yearLabel="Since"
+          suggestions={refs.subject_suggestions ?? []}
+          value={f.subjects}
+          onChange={(v) => set("subjects", v)}
+        />
+        <SubjectPicker
+          title="Subjects You Taught Earlier"
+          hint="Previously handled — still useful to us."
+          relation="taught"
+          yearLabel="Until"
+          suggestions={refs.subject_suggestions ?? []}
+          value={f.subjects}
+          onChange={(v) => set("subjects", v)}
+        />
+        <SubjectPicker
+          title="Other Subjects You Could Teach"
+          hint="Anything you'd be comfortable taking if asked."
+          relation="can_teach"
+          suggestions={refs.subject_suggestions ?? []}
+          value={f.subjects}
+          onChange={(v) => set("subjects", v)}
+        />
 
         <div className="grid gap-4 [&>*]:min-w-0 sm:grid-cols-2">
           <FieldGroup title="Years You Teach" hint="Which year(s) of study you handle.">
@@ -524,83 +539,189 @@ function ChipMulti({ options, selected, onChange, valueKey = "slug" }: {
 }
 
 /**
- * One relation's slice of `subjects`. All three pickers edit the SAME array —
- * each filters to its own relation and splices its rows back — so the caller
- * holds one flat list that maps 1:1 onto college_staff_subject rows.
+ * One relation's slice of `subjects`, as a TAG INPUT: type a subject, press Enter
+ * or +, and it becomes a removable chip.
  *
- * A subject may legitimately appear under more than one relation (taught it in
- * 2019, teaching it again now), which is why the PK includes `relation` and why
- * these pickers deliberately do not exclude each other's picks.
+ * It is free text, not a picker, because the platform's `subject` list is the
+ * BATCH vocabulary (~15 aptitude/exam subjects) and a college syllabus is neither
+ * that short nor that standard — a B.Tech runs to forty-odd subjects and
+ * "DBMS" / "Database Management Systems" / "Database Systems" are one subject
+ * under three affiliating universities. Offering chips could not describe what a
+ * lecturer teaches, which is worse than an empty field: it invites a wrong
+ * answer. See migration 177.
+ *
+ * A suggestion list still appears as you type, from
+ * staff_subject_suggestions(): platform subjects first (picking one LINKS the row
+ * to batches, so batch matching keeps working) and then names ≥2 other staff have
+ * already typed, so a department converges on one spelling without anyone
+ * maintaining a list. Ignoring the list entirely and just typing is always fine.
+ *
+ * All three relations edit the SAME `subjects` array — each filters to its own
+ * relation and splices back — so the caller holds one flat list that maps 1:1
+ * onto college_staff_subject rows. A subject may legitimately appear under more
+ * than one relation (taught it in 2019, teaching it again now).
  */
 function SubjectPicker({
-  title, hint, relation, yearLabel, subjects, value, onChange,
+  title, hint, relation, yearLabel, suggestions, value, onChange,
 }: {
   title: string; hint: string;
   relation: SubjectPick["relation"];
   yearLabel?: string;
-  subjects: Ref[];
+  /** Platform subjects + shared typed names. A null id inserts as free text. */
+  suggestions: SubjectSuggestion[];
   value: SubjectPick[];
   onChange: (v: SubjectPick[]) => void;
 }) {
+  const [draft, setDraft] = useState("");
+  const [open, setOpen] = useState(false);
   const mine = value.filter((s) => s.relation === relation);
-  const picked = new Set(mine.map((s) => s.subject_id));
 
-  const toggle = (subjectId: string) => {
-    onChange(
-      picked.has(subjectId)
-        ? value.filter((s) => !(s.relation === relation && s.subject_id === subjectId))
-        : [...value, { subject_id: subjectId, relation }],
-    );
-  };
+  const label = (s: SubjectPick) =>
+    s.subject_id
+      ? suggestions.find((x) => x.id === s.subject_id)?.label ?? s.subject_id
+      : (s.subject_name ?? "");
 
-  const setYear = (subjectId: string, year: string) => {
+  const taken = new Set(mine.map((s) => label(s).trim().toLowerCase()));
+
+  const matches = draft.trim()
+    ? suggestions
+        .filter(
+          (o) =>
+            o.label.toLowerCase().includes(draft.trim().toLowerCase()) &&
+            !taken.has(o.label.trim().toLowerCase()),
+        )
+        .slice(0, 6)
+    : [];
+
+  function add(pick: SubjectPick) {
+    const key = label(pick).trim().toLowerCase();
+    if (!key || taken.has(key)) { setDraft(""); setOpen(false); return; }
+    onChange([...value, pick]);
+    setDraft("");
+    setOpen(false);
+  }
+
+  /** Whatever is typed, as free text — the default when nothing is picked. */
+  function addTyped() {
+    const name = draft.trim();
+    if (!name) return;
+    // Typing the exact name of a platform subject should still LINK it, so the
+    // batch connection isn't lost just because someone typed instead of clicking.
+    const exact = suggestions.find((o) => o.label.toLowerCase() === name.toLowerCase());
+    add(exact?.id ? { subject_id: exact.id, relation } : { subject_name: name, relation });
+  }
+
+  const remove = (s: SubjectPick) =>
+    onChange(value.filter((x) => !(x.relation === relation && pickKey(x) === pickKey(s))));
+
+  const setYear = (s: SubjectPick, year: string) => {
     const key = relation === "taught" ? "last_year" : "since_year";
     onChange(
-      value.map((s) =>
-        s.relation === relation && s.subject_id === subjectId ? { ...s, [key]: year } : s,
+      value.map((x) =>
+        x.relation === relation && pickKey(x) === pickKey(s) ? { ...x, [key]: year } : x,
       ),
     );
   };
 
+  const inputId = `subj-${relation}`;
+
   return (
     <FieldGroup title={title} hint={hint}>
-      <div className="flex flex-wrap gap-2">
-        {subjects.map((s) => {
-          const on = picked.has(s.id);
-          return (
-            <button key={s.id} type="button" onClick={() => toggle(s.id)}
-              className={`rounded-full border px-4 py-1.5 text-sm font-medium transition ${on ? "border-transparent bg-primary text-primary-foreground" : "bg-background hover:border-primary/50"}`}>
-              {s.label}
-            </button>
-          );
-        })}
+      <div className="relative">
+        <div className="flex flex-wrap gap-2">
+          <Input
+            id={inputId}
+            value={draft}
+            onChange={(e) => { setDraft(e.target.value); setOpen(true); }}
+            onKeyDown={(e) => {
+              if (e.key === "Enter") { e.preventDefault(); addTyped(); }
+              if (e.key === "Escape") setOpen(false);
+            }}
+            // Blur closes the list, but on a delay — clicking a suggestion blurs
+            // the input first, and closing immediately would unmount the row
+            // before its click landed.
+            onBlur={() => window.setTimeout(() => setOpen(false), 150)}
+            placeholder="Type a subject and press + (e.g. Discrete Mathematics)"
+            maxLength={120}
+            aria-label={title}
+            className="min-w-0 flex-1"
+          />
+          <Button
+            type="button"
+            variant="outline"
+            onClick={addTyped}
+            disabled={!draft.trim()}
+            aria-label={`Add ${title}`}
+            className="shrink-0"
+          >
+            + Add
+          </Button>
+        </div>
+
+        {open && matches.length > 0 && (
+          <ul
+            role="listbox"
+            className="bg-popover absolute z-20 mt-1 max-h-56 w-full overflow-auto rounded-md border shadow-md"
+          >
+            {matches.map((o) => (
+              <li key={o.id ?? o.label}>
+                <button
+                  type="button"
+                  role="option"
+                  aria-selected={false}
+                  // onMouseDown, not onClick: the input's blur fires first on
+                  // click and would close the list before the click resolves.
+                  onMouseDown={(e) => {
+                    e.preventDefault();
+                    add(o.id ? { subject_id: o.id, relation } : { subject_name: o.label, relation });
+                  }}
+                  className="hover:bg-accent flex w-full items-center justify-between gap-2 px-3 py-2 text-left text-sm"
+                >
+                  <span className="min-w-0 truncate">{o.label}</span>
+                  {o.id && (
+                    <span className="text-muted-foreground shrink-0 text-xs">on the platform</span>
+                  )}
+                </button>
+              </li>
+            ))}
+          </ul>
+        )}
       </div>
 
-      {/* The year inputs appear only once something is picked, so the block stays
-          quiet until it has anything to ask about. The name gets its own line on
-          a phone (flex-wrap + basis-full) — truncating a subject to nine
-          characters to keep a 96px input on the same row helps nobody. */}
-      {yearLabel && mine.length > 0 && (
-        <div className="mt-3 grid gap-2">
+      {mine.length > 0 && (
+        <ul className="mt-3 grid gap-2 [&>li]:min-w-0">
           {mine.map((s) => {
-            const label = subjects.find((x) => x.id === s.subject_id)?.label ?? "Subject";
             const val = (relation === "taught" ? s.last_year : s.since_year) ?? "";
             return (
-              <div key={s.subject_id} className="flex flex-wrap items-center gap-x-3 gap-y-1">
-                <span className="min-w-0 basis-full text-sm sm:flex-1 sm:basis-auto sm:truncate">{label}</span>
-                <Label className="text-muted-foreground text-xs whitespace-nowrap">{yearLabel}</Label>
-                <Input
-                  type="number"
-                  className="w-24"
-                  value={val}
-                  onChange={(e) => setYear(s.subject_id, e.target.value)}
-                  placeholder="2023"
-                  aria-label={`${yearLabel} — ${label}`}
-                />
-              </div>
+              <li key={pickKey(s)} className="flex flex-wrap items-center gap-x-3 gap-y-1">
+                <span className="bg-muted flex min-w-0 items-center gap-1.5 rounded-full px-3 py-1 text-sm font-medium">
+                  <span className="min-w-0 break-words">{label(s)}</span>
+                  <button
+                    type="button"
+                    onClick={() => remove(s)}
+                    aria-label={`Remove ${label(s)}`}
+                    className="text-muted-foreground hover:text-destructive shrink-0 leading-none"
+                  >
+                    ×
+                  </button>
+                </span>
+                {yearLabel && (
+                  <>
+                    <Label className="text-muted-foreground text-xs whitespace-nowrap">{yearLabel}</Label>
+                    <Input
+                      type="number"
+                      className="w-24"
+                      value={val}
+                      onChange={(e) => setYear(s, e.target.value)}
+                      placeholder="2023"
+                      aria-label={`${yearLabel} — ${label(s)}`}
+                    />
+                  </>
+                )}
+              </li>
             );
           })}
-        </div>
+        </ul>
       )}
     </FieldGroup>
   );

@@ -91,13 +91,21 @@ export async function fetchCollegeStaff(
   const ids = rows.map((r) => r.user_id as string);
   const { data: subjectRows } = await supabase
     .from("college_staff_subject")
-    .select("user_id, subject_id, relation")
+    .select("user_id, subject_id, subject_name, relation")
     .in("user_id", ids);
 
   const byUser = new Map<string, { teaching: string[]; other: string[] }>();
-  for (const s of (subjectRows ?? []) as { user_id: string; subject_id: string; relation: string }[]) {
+  for (const s of (subjectRows ?? []) as {
+    user_id: string; subject_id: string | null; subject_name: string | null; relation: string;
+  }[]) {
     const bucket = byUser.get(s.user_id) ?? { teaching: [], other: [] };
-    const label = refs.subject.get(s.subject_id) ?? s.subject_id;
+    // A linked row resolves through the platform list; a free-typed one already
+    // IS the label (migration 177). Without this the roster printed a raw uuid
+    // for linked rows' misses and nothing at all for typed ones.
+    const label = s.subject_id
+      ? refs.subject.get(s.subject_id) ?? s.subject_id
+      : (s.subject_name ?? "");
+    if (!label) continue;
     if (s.relation === "teaching") bucket.teaching.push(label);
     else if (s.relation === "can_teach") bucket.other.push(label);
     byUser.set(s.user_id, bucket);

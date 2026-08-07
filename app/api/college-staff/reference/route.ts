@@ -32,15 +32,31 @@ export async function GET() {
       // "comp sci", "E.C.E"), and the generic fixed-column select can't carry it.
       // Spread LAST so it wins (see the note on getDegreeBranchData).
       getDegreeBranchData(),
-      supabase.rpc("mentor_teachable_subjects"),
+      // Subjects are TYPE-AHEAD SUGGESTIONS now, not the vocabulary (177): a
+      // college syllabus is not in public.subject and its naming is
+      // university-specific, so staff type their own and this only helps them
+      // land on a platform subject (which links to batches) or on the spelling
+      // their colleagues already used.
+      supabase.rpc("staff_subject_suggestions"),
     ]);
-    const subject = ((subjectsRes.data ?? []) as { id: string; name: string }[]).map((s) => ({
-      id: s.id,
-      slug: s.id,
+
+    const suggestions = (subjectsRes.data ?? []) as
+      { subject_id: string | null; name: string; linked: boolean }[];
+
+    // `subject` stays the LINKED platform list, because the summary and roster
+    // resolve a stored subject_id to its label through it.
+    const subject = suggestions
+      .filter((s) => s.linked && s.subject_id)
+      .map((s) => ({ id: s.subject_id!, slug: s.subject_id!, label: s.name, category: null }));
+
+    // What the input offers: platform subjects plus names ≥2 other staff typed.
+    // A null id means "insert as free text".
+    const subject_suggestions = suggestions.map((s) => ({
+      id: s.linked ? s.subject_id : null,
       label: s.name,
-      category: null,
     }));
-    return NextResponse.json({ ...refData, ...degreeBranch, subject });
+
+    return NextResponse.json({ ...refData, ...degreeBranch, subject, subject_suggestions });
   } catch (e) {
     return NextResponse.json({ error: (e as Error).message }, { status: 500 });
   }
