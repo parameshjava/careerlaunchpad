@@ -74,7 +74,13 @@ export function DevAuthPanel({
     setError(null);
     start(async () => {
       const res = await fn();
-      if (res?.error) setError(res.error);
+      if (res?.error) {
+        setError(res.error);
+        return;
+      }
+      // Navigate when the action says where to go (sign-in), otherwise just
+      // re-read the list (delete).
+      if (res?.redirectTo) router.push(res.redirectTo);
       else router.refresh();
     });
   }
@@ -90,10 +96,18 @@ export function DevAuthPanel({
       {/* ---- create ---------------------------------------------------- */}
       <section className="bg-card rounded-2xl border p-5">
         <h2 className="text-lg font-semibold">Create a test account</h2>
-        <p className="text-muted-foreground mt-0.5 mb-4 text-sm">
+        <p className="text-muted-foreground mt-0.5 text-sm">
           No email is sent and no inbox is needed — the account is created already confirmed.
           Reserved test domains only (<code>.test</code>, <code>.example</code>,{" "}
           <code>example.com</code>, …), so this can never mint an account on a real address.
+        </p>
+        {/* The question this page gets asked first, answered where it's asked. */}
+        <p className="mb-4 mt-2 rounded-lg border bg-blue-50 px-3 py-2 text-sm text-blue-900">
+          <b>To register as a new student or new staff member</b>, create the account with{" "}
+          <b>No role</b> and sign in as them. You land on <code>/auth/no-access</code>, which offers
+          Student / Mentor / College&nbsp;Staff — pick one and go through the real registration form.
+          Picking a role below instead <i>skips</i> registration and gives you an account that is
+          already set up.
         </p>
 
         <form action={createAction} className="grid gap-4 sm:grid-cols-2">

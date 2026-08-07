@@ -17,7 +17,17 @@ import {
  * upstream.
  */
 
-export type DevResult = { ok?: boolean; error?: string; message?: string };
+export type DevResult = {
+  ok?: boolean;
+  error?: string;
+  message?: string;
+  /** Where the caller should navigate next. Returned rather than redirect()'d
+   *  from inside the action: these are invoked imperatively from a client
+   *  component that also needs to distinguish "went somewhere" from "just
+   *  re-read the list" (delete), and one explicit router.push() at the call site
+   *  is easier to follow than a thrown redirect crossing that boundary. */
+  redirectTo?: string;
+};
 
 /**
  * Sign in as `email` without a password, an OAuth round-trip, or a real inbox.
@@ -63,7 +73,7 @@ export async function devSignInAs(email: string): Promise<DevResult> {
   // the role resolves to — an unprovisioned account goes to /auth/no-access, a
   // pending staff member to /college-staff, an approved one to /dashboard.
   const ctx = await getAuthContext();
-  redirect(ctx?.homePath ?? "/auth/no-access");
+  return { ok: true, redirectTo: ctx?.homePath ?? "/auth/no-access" };
 }
 
 /**

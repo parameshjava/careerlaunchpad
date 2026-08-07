@@ -13,13 +13,15 @@ export const metadata: Metadata = { title: "Staff registration" };
  * at first (the college decides who reviews them, so it comes before anything
  * else).
  *
- * No role check: an unapproved registrant holds no role. The layout's
- * provisioned check plus RLS are the guard.
+ * Signed-in only — no role check and no `provisioned` check. A brand-new
+ * registrant has no app_user row until they pick a college here, so requiring
+ * either would bounce them back to /auth/no-access, which is the page that sent
+ * them. See the fuller note in ../layout.tsx.
  */
 export default async function CollegeStaffRegisterPage() {
   const ctx = await getAuthContext();
   if (!ctx) redirect("/auth/login");
-  if (!ctx.provisioned || ctx.status === "suspended") redirect("/auth/no-access");
+  if (ctx.status === "suspended") redirect("/auth/no-access");
 
   return (
     <PageContainer variant="form">

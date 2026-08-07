@@ -60,7 +60,9 @@ const STATUS: Record<string, { emoji: string; title: string; body: string; tone:
 export default async function CollegeStaffHome() {
   const ctx = await getAuthContext();
   if (!ctx) redirect("/auth/login");
-  if (!ctx.provisioned || ctx.status === "suspended") redirect("/auth/no-access");
+  // Signed-in only, same as the layout: an unprovisioned visitor is sent to the
+  // register page below, not bounced to /auth/no-access.
+  if (ctx.status === "suspended") redirect("/auth/no-access");
 
   // Approved staff hold the scoped role and belong in the console.
   if (ctx.roles.includes("college_staff")) redirect("/dashboard");
