@@ -319,3 +319,82 @@ You can validate the invite/provisioning logic without OAuth apps by enabling th
    (`/dashboard`, `/student`, or `/employer`).
 4. Invite a different email than the one you sign in with → expect `/auth/no-access`
    (confirms the email-match security boundary).
+
+---
+
+## Local dev sign-in — testing roles without owning inboxes
+
+Validating a role means being a user who holds it, and every role needs a
+different account. Creating and confirming a real mailbox per role gets old fast,
+so there is a **local-only** shortcut at **`/dev/auth`**, enabled by
+`BYPASS_AUTH=true`.
+
+### What it does
+
+| | |
+|---|---|
+| **Create a test account** | `admin.auth.admin.createUser({ email_confirm: true })` — a confirmed account on a reserved test domain (`staff@alpha.test`). **No email is sent and no inbox is needed.** Optionally provisions a role, including *no role at all*, which is what a self-registering user starts as. |
+| **Sign in as** | Mints a **genuine Supabase session** for any account, then lands you on that user's own home path. |
+| **Delete** | Removes a test account and everything keyed to it. Refuses anything not on a reserved test domain. |
+
+### It is not a fake session — and that is the point
+
+There is **no flag-dependent branch** in `middleware.ts`, `getAuthContext()`, or
+any RLS policy. `/dev/auth` uses `generateLink({ type: "magiclink" })` →
+`verifyOtp()`, the same mechanism as platform-admin "View as user"
+(`app/impersonation/actions.ts`). The session it produces is indistinguishable
+from a real sign-in, so the JWT, `auth_context()`, RLS and the nav all resolve
+normally.
+
+Faking `getAuthContext()` instead — the obvious reading of "bypass auth" — would
+leave every query running as `anon`. RLS would return nothing, every page would
+render empty, and the test would prove nothing. **Minting a real session is the
+only bypass that exercises the thing you are trying to test.**
+
+### Why it cannot be on in a deployed environment
+
+`devAuthEnabled()` (`lib/dev-auth.ts`) requires **all three**:
+
+1. `BYPASS_AUTH === "true"` — explicit opt-in, exact string.
+2. `NODE_ENV !== "production"` — `next dev` only. A local
+   `next build && next start` is also production, and stays off.
+3. **no `VERCEL` env var** — Vercel sets this on every deployment, preview
+   included. This is the condition that makes the feature inert even if the
+   variable were set in Vercel by mistake.
+
+`BYPASS_AUTH` has **no `NEXT_PUBLIC_` prefix**, so it never reaches the browser
+and cannot be set from it. Do not add one, and do not set the variable in Vercel.
+
+Belt and braces:
+
+- When disabled the route `notFound()`s rather than redirecting or 403-ing — on a
+  deployed environment it is indistinguishable from a route that does not exist.
+- Every server action re-checks `assertDevAuth()` itself, so a new entry point
+  cannot inherit an unguarded path.
+- Account creation is restricted to RFC 2606/6761 reserved domains (`.test`,
+  `.invalid`, `.example`, `.localhost`, `example.com/net/org`), so a slip cannot
+  mint an account on a real person's address.
+- While it is on, a red **AUTH BYPASS ON** strip names the current account on
+  every page. With one-click switching it is genuinely easy to lose ten minutes
+  to an empty page because you are signed in as the wrong person.
+
+### Setup
+
+```bash
+# .env.local
+BYPASS_AUTH=true
+# Also needs SUPABASE_SECRET_KEY — minting a session is an admin-API call.
+```
+
+Then `npm run dev` and open <http://localhost:3000/dev/auth>.
+
+### Walking the college-staff flow (#107)
+
+The page carries these steps too, so you don't have to come back here:
+
+1. Create `admin@alpha.test` as **College Admin** at some college — that is who approves.
+2. Create `staff@alpha.test` with **No role**, sign in as them, and pick the *same* college on `/college-staff/register`.
+3. Finish the 3 steps and submit. Sign in as the college admin — the registration is waiting under **Pending approval**.
+4. Approve it, sign back in as the staff member: they land on `/dashboard` with only that college's data.
+5. For the invite half: as the college admin use **Invite staff**; the invitee is approved the moment you sign in as them.
+6. Create a second college admin at a **different** college and confirm they can see none of the above.
