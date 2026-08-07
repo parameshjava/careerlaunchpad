@@ -37,9 +37,13 @@ export default async function AnalyticsPage({
   // No analytics access at all → send them to their own home surface.
   if (!canSelectAny && !isCollegeAdmin) redirect(ctx.homePath);
 
-  // Same gate as the sidebar's Exam reports item, so the pointer is never a dead
-  // link for someone who cannot open it.
-  const canSeeExamReports = ctx.permissions.has("*") || can(ctx, "exam.results.view_all");
+  // Same gate as the sidebar's Performance reports item, so the pointer is never
+  // a dead link for someone who cannot open it.
+  const canSeeExamReports =
+    ctx.permissions.has("*") ||
+    can(ctx, "exam.results.view_all") ||
+    can(ctx, "college.students.view") ||
+    can(ctx, "user.manage");
 
   const { college: collegeParam } = await searchParams;
   const collegeId = canSelectAny ? (collegeParam ?? null) : scopedCollegeId;
@@ -119,12 +123,12 @@ function Header({
           for results that were never on this page. */}
       {canSeeExamReports && (
         <p className="text-muted-foreground mt-2 text-sm">
-          Looking for exam scores?{" "}
+          Looking for scores?{" "}
           <Link href="/dashboard/reports" className="text-foreground font-medium underline">
-            Exam reports
+            Performance reports
           </Link>{" "}
-          has consolidated results — every exam over a period, and every student&rsquo;s score in
-          one table.
+          has consolidated results — every exam and every chapter assessment over a period, and
+          every student&rsquo;s score in one table.
         </p>
       )}
     </div>

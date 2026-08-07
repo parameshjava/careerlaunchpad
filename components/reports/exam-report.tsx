@@ -13,45 +13,21 @@
  * 179's header). Charts show averages, spread and shape and let the reader apply
  * their own standard.
  */
-import { useCallback, useEffect, useMemo, useState } from "react";
+import { useEffect, useMemo, useState } from "react";
 import Link from "next/link";
-import { Loader2 } from "lucide-react";
 import {
   Bar, BarChart, CartesianGrid, Cell as RCell, Line, LineChart,
   ResponsiveContainer, Tooltip, XAxis, YAxis,
 } from "recharts";
 
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
-import { Button } from "@/components/ui/button";
-import { Input } from "@/components/ui/input";
-import { Label } from "@/components/ui/label";
-import { RefSelect } from "@/components/ui/ref-select";
-import { BRAND, NEUTRAL_MARK, sequentialStep } from "@/lib/chart-palette";
+import { BRAND, sequentialStep } from "@/lib/chart-palette";
 import { EmptyState, pct, pctLabel } from "@/components/analytics/performance/shared";
-import { StudentExamMatrix } from "./student-exam-matrix";
+import { StudentScoreMatrix, type MatrixColumn, type MatrixRow } from "./student-score-matrix";
+import { ReportRangeFields, monthLabel, useReportRange } from "./report-range";
 import type {
   BandRow, ExamRow, ReportSummary, StudentExamRow, SubjectRow, TrendPoint,
 } from "@/lib/exam-report-query";
-
-// Trailing windows rather than an "academic year": no field records academic-year
-// boundaries, so inferring them would be a guess (the same reasoning as #73's
-// range filter, kept identical so the two views feel the same).
-const RANGES = [
-  { value: "6m", label: "Last 6 months", months: 6 },
-  { value: "12m", label: "Last 12 months", months: 12 },
-  { value: "24m", label: "Last 2 years", months: 24 },
-  { value: "all", label: "All time", months: null },
-  { value: "custom", label: "Custom range…", months: null },
-] as const;
-
-function monthsAgo(n: number): string {
-  const d = new Date();
-  d.setMonth(d.getMonth() - n);
-  return d.toISOString().slice(0, 10);
-}
-
-const monthLabel = (iso: string) =>
-  new Date(iso).toLocaleDateString(undefined, { month: "short", year: "2-digit" });
 
 type Payload = {
   summary: ReportSummary | null;
@@ -63,31 +39,15 @@ type Payload = {
 };
 
 export function ExamReport({ college, showCollege }: { college?: string | null; showCollege?: boolean }) {
-  const [range, setRange] = useState<string>("12m");
-  const [from, setFrom] = useState("");
-  const [to, setTo] = useState("");
+  const range = useReportRange(college);
   const [data, setData] = useState<Payload | null>(null);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState("");
 
-  const qs = useCallback(() => {
-    const p = new URLSearchParams();
-    if (range === "custom") {
-      if (from) p.set("from", from);
-      if (to) p.set("to", to);
-    } else {
-      const months = RANGES.find((r) => r.value === range)?.months ?? null;
-      if (months != null) p.set("from", monthsAgo(months));
-    }
-    if (college) p.set("college", college);
-    const s = p.toString();
-    return s ? `?${s}` : "";
-  }, [range, from, to, college]);
-
   useEffect(() => {
     let cancelled = false;
     setLoading(true);
-    fetch(`/api/reports/exams${qs()}`)
+    fetch(`/api/reports/exams${range.qs()}`)
       .then((r) => r.json())
       .then((d) => {
         if (cancelled) return;
@@ -99,7 +59,7 @@ export function ExamReport({ college, showCollege }: { college?: string | null; 
       .catch((e) => !cancelled && setError(String(e)))
       .finally(() => !cancelled && setLoading(false));
     return () => { cancelled = true; };
-  }, [qs]);
+  }, [range.qs]);
 
   const s = data?.summary ?? null;
 
@@ -110,6 +70,37 @@ export function ExamReport({ college, showCollege }: { college?: string | null; 
     () => (data?.exams ?? []).filter((e) => e.attempts > 0),
     [data?.exams],
   );
+
+  // Pivot the flat (student, sitting) pairs into matrix rows. Done here rather
+  // than in the matrix, which is generic over what a column IS so the assessment
+  // report can reuse it.
+  const matrixColumns: MatrixColumn[] = useMemo(
+    () =>
+      matrixExams.map((e) => ({
+        key: e.session_id,
+        label: e.title,
+        sublabel: [e.held_on, e.total_marks ? `${e.total_marks} marks` : null]
+          .filter(Boolean)
+          .join(" · ") || null,
+      })),
+    [matrixExams],
+  );
+
+  const matrixRows: MatrixRow[] = useMemo(() => {
+    const by = new Map<string, MatrixRow>();
+    for (const r of data?.students ?? []) {
+      const row = by.get(r.student_id) ?? {
+        studentId: r.student_id,
+        name: r.student_name ?? "Unnamed",
+        roll: r.roll_number,
+        college: r.college_name,
+        values: {} as Record<string, number>,
+      };
+      if (r.pct != null) row.values[r.session_id] = r.pct;
+      by.set(r.student_id, row);
+    }
+    return [...by.values()];
+  }, [data?.students]);
 
   const tiles = [
     { label: "Exams held", value: s?.sittings ?? 0, hint: "sittings in this period" },
@@ -124,32 +115,7 @@ export function ExamReport({ college, showCollege }: { college?: string | null; 
 
   return (
     <div className="space-y-6">
-      {/* ---- range ---------------------------------------------------------- */}
-      <div className="flex flex-wrap items-end gap-3">
-        <div className="grid min-w-0 gap-1.5">
-          <Label htmlFor="report-range">Period</Label>
-          <RefSelect
-            id="report-range"
-            value={range}
-            onChange={setRange}
-            className="w-full min-w-0 sm:w-48"
-            options={RANGES.map((r) => ({ value: r.value, label: r.label }))}
-          />
-        </div>
-        {range === "custom" && (
-          <>
-            <div className="grid min-w-0 gap-1.5">
-              <Label htmlFor="report-from">From</Label>
-              <Input id="report-from" type="date" value={from} onChange={(e) => setFrom(e.target.value)} />
-            </div>
-            <div className="grid min-w-0 gap-1.5">
-              <Label htmlFor="report-to">To</Label>
-              <Input id="report-to" type="date" value={to} onChange={(e) => setTo(e.target.value)} />
-            </div>
-          </>
-        )}
-        {loading && <Loader2 className="text-muted-foreground mb-2 size-4 animate-spin" aria-label="Loading" />}
-      </div>
+      <ReportRangeFields id="exam" state={range} loading={loading} />
 
       {error && <p className="text-destructive text-sm">{error}</p>}
 
@@ -362,10 +328,20 @@ export function ExamReport({ college, showCollege }: { college?: string | null; 
           </p>
         </CardHeader>
         <CardContent>
-          <StudentExamMatrix
-            rows={data?.students ?? []}
-            exams={matrixExams}
+          <StudentScoreMatrix
+            rows={matrixRows}
+            columns={matrixColumns}
             showCollege={!!showCollege}
+            countLabel="exams"
+            satLabel="Sat"
+            footnote={
+              <p>
+                A blank cell means the student didn&rsquo;t sit that exam — it is never counted as
+                0%. <b>Average</b> is the mean of their exam percentages, so a short quiz counts
+                the same as a long mock. There is no pass mark on an exam anywhere in the
+                platform, so no line is drawn — the shading is a gradient, not a verdict.
+              </p>
+            }
           />
         </CardContent>
       </Card>
