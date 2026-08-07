@@ -90,7 +90,7 @@ export async function PATCH(req: NextRequest) {
 
   const { data: current } = await supabase
     .from("college_staff_profile")
-    .select("last_completed_step")
+    .select("last_completed_step, years_teaching_total, years_at_this_college, joined_year")
     .eq("user_id", user.id)
     .maybeSingle();
   if (!current) {
@@ -100,7 +100,9 @@ export async function PATCH(req: NextRequest) {
     );
   }
 
-  const { clean, errors } = await validatePartial(supabase, data);
+  // `current` is passed so the cross-field experience checks can see the saved
+  // values of whichever of the three fields this PATCH did not carry.
+  const { clean, errors } = await validatePartial(supabase, data, current);
 
   let subjectRows: Awaited<ReturnType<typeof validateSubjects>>["rows"] | null = null;
   if (body.subjects !== undefined) {

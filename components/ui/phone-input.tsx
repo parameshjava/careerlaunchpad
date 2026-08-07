@@ -82,7 +82,17 @@ export function PhoneField({
     // so it's readable but not deletable. onChange still returns full E.164.
     disableDialCodeAndPrefix: true,
     inputRef,
-    onChange: (data) => onChange(data.phone),
+    // EMPTY MEANS EMPTY. data.phone is always full E.164, so an untouched field
+    // reports the bare dial code ("+91") rather than "". Every caller then stores
+    // a country code as if it were a number, and the shared phone regex
+    // (`{5,19}` after the first char) rejects it — so leaving an OPTIONAL Mobile
+    // Number blank made step 1 unsaveable with "phone: invalid format" on a field
+    // the user never touched. It bit the staff form and the mentor form
+    // identically; the student form hid it only because phone is mandatory there,
+    // where the same value made a blank field look filled to the required-field
+    // check and produced "enter a valid number" instead of "this is required".
+    // Normalising here fixes all three at the source.
+    onChange: (data) => onChange(data.phone === `+${data.country.dialCode}` ? "" : data.phone),
   });
 
   const filtered = useMemo(() => {

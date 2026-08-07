@@ -142,6 +142,15 @@ export type ValidationResult = { clean: Record<string, unknown>; errors: string[
 export async function validatePartial(
   supabase: SupabaseClient,
   data: Record<string, unknown>,
+  /** The row already on disk. The experience numbers check against EACH OTHER
+   *  (see the cross-field pass at the end), and a PATCH may carry only one of
+   *  them — so the others have to come from somewhere. Same reason
+   *  lib/mentor-registration.ts#validatePartial takes a `stored`. */
+  stored?: {
+    years_teaching_total?: number | null;
+    years_at_this_college?: number | null;
+    joined_year?: number | null;
+  } | null,
 ): Promise<ValidationResult> {
   const fields = Object.keys(data).filter((f) => ALL_FIELDS.includes(f));
   const refs = await loadRefs(supabase, fields);
@@ -285,6 +294,52 @@ export async function validatePartial(
       case "open_to_mentoring":
         clean[field] = v === true || v === "true";
         break;
+    }
+  }
+
+  // ---------------------------------------------------------------------------
+  // Cross-field: the experience numbers have to be able to be true together.
+  //
+  // Each one passes its own range check on its own — 0–70 years, a plausible
+  // joining year — so "15 years teaching, 30 of them at this college, joined
+  // 2021" was accepted and stored. These are the two contradictions that are
+  // both unambiguous and common as typos; anything softer (e.g. teaching +
+  // industry exceeding a working life) is left alone, because the two legitimately
+  // OVERLAP for someone who consults while lecturing.
+  //
+  // `?? stored ?? undefined` so a PATCH of one field is still checked against the
+  // saved values of the others, and a field being CLEARED (explicit null) drops
+  // out of the comparison rather than reading as 0.
+  const resolved = (field: "years_teaching_total" | "years_at_this_college" | "joined_year") => {
+    if (field in clean) return clean[field] as number | null;
+    return (stored?.[field] ?? null) as number | null;
+  };
+  const total = resolved("years_teaching_total");
+  const here = resolved("years_at_this_college");
+  const joined = resolved("joined_year");
+  // Only complain when the offending field is one the caller actually sent —
+  // otherwise editing an unrelated field surfaces an error about a value the user
+  // is not looking at and cannot see.
+  const touched = (f: string) => f in data;
+
+  if (total != null && here != null && here > total) {
+    if (touched("years_at_this_college") || touched("years_teaching_total")) {
+      errors.push(
+        `years_at_this_college: you can't have taught at this college longer (${here}) than you've taught in total (${total})`,
+      );
+    }
+  }
+
+  if (joined != null && here != null) {
+    const impliedYears = new Date().getFullYear() - joined;
+    // A year of joining is not a duration, so allow ±1 for mid-session joins and
+    // for someone who counts an academic year rather than a calendar one.
+    if (impliedYears >= 0 && Math.abs(impliedYears - here) > 1) {
+      if (touched("joined_year") || touched("years_at_this_college")) {
+        errors.push(
+          `joined_year: joining in ${joined} is about ${impliedYears} years at this college, not ${here}`,
+        );
+      }
     }
   }
 
