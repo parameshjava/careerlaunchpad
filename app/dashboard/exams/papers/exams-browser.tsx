@@ -228,9 +228,9 @@ function ExamList({ exams, caps, empty }: { exams: ExamCard[]; caps: ExamCaps; e
         // Deletable only while no student has attempted it — draft, scheduled/
         // upcoming, and closed-with-nobody all qualify; anything with submissions
         // is protected.
-        // Permission first, then the domain rule: a paper with attempts is
-        // undeletable for everyone.
-        const canDelete = caps.canDeletePapers && e.attemptCount === 0;
+        // A paper with attempts is undeletable for everyone — separate from
+        // whether the viewer may delete anything at all (see the button below).
+        const deletableNow = e.attemptCount === 0;
         return (
           <li
             key={e.id}
@@ -314,23 +314,29 @@ function ExamList({ exams, caps, empty }: { exams: ExamCard[]; caps: ExamCaps; e
                 </Link>
               )}
 
-              {/* Always render the slot so every row's buttons line up; hide it
-                  (keeping its width) when the exam can't be deleted. */}
-              <Button
-                variant="ghost"
-                size="sm"
-                className={cn("text-destructive", !canDelete && "invisible")}
-                disabled={!canDelete}
-                aria-hidden={!canDelete}
-                tabIndex={canDelete ? undefined : -1}
-                onClick={() => {
-                  if (!canDelete) return;
-                  setToDelete(e);
-                }}
-                title="Delete exam"
-              >
-                <Trash2 className="size-4" />
-              </Button>
+              {/* Two different reasons, two different treatments.
+                  NO PERMISSION -> no element at all: reserving a slot for a
+                  control this viewer can never use is dead space on every row.
+                  HAS PERMISSION but this paper has attempts -> keep the
+                  invisible placeholder, because now rows in the same list DO
+                  differ and the buttons should still line up. */}
+              {caps.canDeletePapers && (
+                <Button
+                  variant="ghost"
+                  size="sm"
+                  className={cn("text-destructive", !deletableNow && "invisible")}
+                  disabled={!deletableNow}
+                  aria-hidden={!deletableNow}
+                  tabIndex={deletableNow ? undefined : -1}
+                  onClick={() => {
+                    if (!deletableNow) return;
+                    setToDelete(e);
+                  }}
+                  title="Delete exam"
+                >
+                  <Trash2 className="size-4" />
+                </Button>
+              )}
             </div>
           </li>
         );
