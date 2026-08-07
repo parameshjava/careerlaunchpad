@@ -19,13 +19,21 @@
  */
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
-import { RefSelect } from "@/components/ui/ref-select";
+import { Combobox } from "@/components/ui/combobox";
 import { PhoneField } from "@/components/ui/phone-input";
 import { MarkdownEditor } from "@/components/ui/markdown-editor";
 import { Stepper } from "@/components/students/registration-fields";
 import type { College } from "@/components/colleges/college-picker";
 
-export type Ref = { id: string; slug: string; label: string; category: string | null };
+export type Ref = {
+  id: string;
+  slug: string;
+  label: string;
+  category: string | null;
+  /** Search aliases from ref_degree / ref_branch (migration 161). Absent on the
+   *  tables that have no such column, which the combobox handles. */
+  search_terms?: string[] | null;
+};
 export type RefData = Record<string, Ref[]>;
 export type { College };
 
@@ -150,8 +158,8 @@ export function StaffStepBody({
 }) {
   if (step === 1) return (
     <Step title="About You" hint="Who you are and what you do at the college.">
-      <Field label="Full Name" required>
-        <Input value={f.full_name} onChange={(e) => set("full_name", e.target.value)} placeholder="e.g. Dr. Anitha Rao" />
+      <Field label="Full Name" required htmlFor="staff-full-name">
+        <Input id="staff-full-name" value={f.full_name} onChange={(e) => set("full_name", e.target.value)} placeholder="e.g. Dr. Anitha Rao" />
       </Field>
       <Field label="Email" required={!!onEmailChange}>
         <Input
@@ -183,8 +191,8 @@ export function StaffStepBody({
         </p>
       </div>
 
-      <Field label="Designation" required>
-        <SelectRef value={f.designation_id} onChange={(v) => set("designation_id", v)} options={refs.staff_designation} valueKey="id" />
+      <Field label="Designation" required htmlFor="staff-designation">
+        <SelectRef id="staff-designation" grouped value={f.designation_id} onChange={(v) => set("designation_id", v)} options={refs.staff_designation} valueKey="id" />
       </Field>
       {isOther(f.designation_id, refs.staff_designation, "id") && (
         <Field label="Your Designation">
@@ -192,8 +200,8 @@ export function StaffStepBody({
         </Field>
       )}
 
-      <Field label="Department">
-        <SelectRef value={f.department} onChange={(v) => set("department", v)} options={refs.branch} />
+      <Field label="Department" htmlFor="staff-department">
+        <SelectRef id="staff-department" value={f.department} onChange={(v) => set("department", v)} options={refs.branch} />
       </Field>
       {f.department === OTHER_SLUG && (
         <Field label="Your Department">
@@ -246,8 +254,8 @@ export function StaffStepBody({
         </Field>
       )}
 
-      <Field label="Total Teaching Experience (years)" required>
-        <Input type="number" min={0} max={70} value={f.years_teaching_total} onChange={(e) => set("years_teaching_total", e.target.value)} placeholder="12" />
+      <Field label="Total Teaching Experience (years)" required htmlFor="staff-years-teaching">
+        <Input id="staff-years-teaching" type="number" min={0} max={70} value={f.years_teaching_total} onChange={(e) => set("years_teaching_total", e.target.value)} placeholder="12" />
       </Field>
       <Field label="Years at This College">
         <Input type="number" min={0} max={70} value={f.years_at_this_college} onChange={(e) => set("years_at_this_college", e.target.value)} placeholder="5" />
@@ -417,10 +425,17 @@ function Step({ title, hint, children }: { title: string; hint: string; children
   );
 }
 
-function Field({ label, required, children }: { label: string; required?: boolean; children: React.ReactNode }) {
+/**
+ * `htmlFor` associates the label with its control. Worth passing at least on the
+ * mandatory fields: without it a screen reader announces an unlabelled input, and
+ * the label is not a click target. (The control must carry the matching `id`.)
+ */
+function Field({ label, required, htmlFor, children }: {
+  label: string; required?: boolean; htmlFor?: string; children: React.ReactNode;
+}) {
   return (
     <div className="grid min-w-0 gap-1.5">
-      <Label>{label}{required && <span className="text-primary"> *</span>}</Label>
+      <Label htmlFor={htmlFor}>{label}{required && <span className="text-primary"> *</span>}</Label>
       {children}
     </div>
   );
@@ -440,23 +455,50 @@ function FieldGroup({ title, required, hint, children }: {
   );
 }
 
-function SelectRef({ value, onChange, options, placeholder = "Select…", valueKey = "slug" }: {
-  value: string; onChange: (v: string) => void; options?: Ref[]; placeholder?: string; valueKey?: "slug" | "id";
+/**
+ * Every single-select on this form is a searchable Combobox, not a bare
+ * dropdown. Department and Specialization come from ref_branch — 143 rows after
+ * #99 — which is unusable as a scroll list on a phone, and Designation groups
+ * into Teaching / Leadership / Placement / Support. Combobox is a drop-in for
+ * RefSelect (same prop shape) and adds filtering, sticky group headings, a
+ * bottom-sheet panel under `sm`, and alias matching via `search_terms`.
+ *
+ * It also sidesteps the shadcn SelectTrigger problem: that trigger is
+ * `w-fit whitespace-nowrap`, so a long option sized it past its container.
+ */
+function SelectRef({
+  value, onChange, options, placeholder = "Select…", valueKey = "slug", id, grouped = false,
+}: {
+  value: string; onChange: (v: string) => void; options?: Ref[];
+  placeholder?: string; valueKey?: "slug" | "id"; id?: string;
+  /**
+   * Render `category` as option-group headings. OPT-IN, because Combobox starts a
+   * new heading whenever the group changes between CONSECUTIVE options — so it is
+   * only meaningful for a list whose rows are already contiguous by category.
+   *
+   * ref_staff_designation is (its seed groups Teaching / Leadership / Placement /
+   * Support in blocks). ref_branch is NOT: its 143 rows are ordered by
+   * sort_order and its categories interleave, so grouping it produced a heading
+   * above nearly every row. #99 hit the same thing and concluded the grouping
+   * belongs on the degree→branch MAPPING rather than ref_branch.category; a
+   * department here is where someone WORKS, with no degree to key that off, so it
+   * stays a flat searchable list.
+   */
+  grouped?: boolean;
 }) {
   return (
-    <RefSelect
+    <Combobox
+      id={id}
       value={value}
       onChange={onChange}
       placeholder={placeholder}
-      emptyLabel={placeholder}
-      // shadcn's SelectTrigger is `w-fit whitespace-nowrap`, so a long option —
-      // "Computer Science & Engineering (CSE)", "Training & Placement Officer" —
-      // sizes the trigger past its container and scrolls the page sideways on a
-      // phone. w-full + min-w-0 pins it to the field; the value already
-      // line-clamps. Fixed here rather than in RefSelect, which every other form
-      // shares.
       className="w-full min-w-0"
-      options={(options ?? []).map((o) => ({ value: o[valueKey], label: o.label }))}
+      options={(options ?? []).map((o) => ({
+        value: o[valueKey],
+        label: o.label,
+        group: grouped ? o.category : null,
+        searchTerms: o.search_terms,
+      }))}
     />
   );
 }

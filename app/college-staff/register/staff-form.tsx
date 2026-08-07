@@ -17,7 +17,7 @@ import { useCallback, useEffect, useState } from "react";
 import { Button } from "@/components/ui/button";
 import { RichContent } from "@/components/exam/RichContent";
 import { CollegePicker, type College } from "@/components/colleges/college-picker";
-import { FIELD_LABELS } from "@/lib/college-staff-registration";
+import { FIELD_LABELS, REQUIRED_FIELDS } from "@/lib/college-staff-registration";
 import {
   type Form, type RefData, type Ref, type SubjectPick,
   EMPTY, STEP_PAYLOAD, stepSubjects, StaffStepBody, StaffStepper,
@@ -35,9 +35,19 @@ type ReviewNote = { body: string; kind: string; created_at: string; resolved_at:
 export function StaffForm({
   endpoints = DEFAULT_ENDPOINTS,
   reviewFirst = false,
+  enforceMandatory = true,
 }: {
   endpoints?: { profile: string; submit: string };
   reviewFirst?: boolean;
+  /**
+   * Whether a missing mandatory field BLOCKS Next/Submit. False in the console
+   * editor: an admin correcting someone else's record may not know their years of
+   * experience, and stranding them on step 1 over it would make the record
+   * uneditable. The submit API still refuses without them either way — this only
+   * decides whether the button is disabled here. Mirrors the student wizard's
+   * identically-named prop.
+   */
+  enforceMandatory?: boolean;
 } = {}) {
   const [refs, setRefs] = useState<RefData | null>(null);
   const [f, setF] = useState<Form>(EMPTY);
@@ -142,6 +152,19 @@ export function StaffForm({
 
   const openNote = notes.find((n) => !n.resolved_at && n.kind === "changes_requested");
 
+  // Mandatory-field gating, derived from REQUIRED_FIELDS rather than a second
+  // hand-written list — that list is what POST …/submit validates, so a copy here
+  // would eventually disagree with the server and disable Next over a field the
+  // API does not want (or worse, enable it over one the API does).
+  const label = (field: string) => FIELD_LABELS[field] ?? field.replace(/_/g, " ");
+  const isBlank = (field: string) => !String((f as unknown as Record<string, unknown>)[field] ?? "").trim();
+  const missingHere = REQUIRED_FIELDS.filter((r) => r.step === step && isBlank(r.field));
+  const missingAnywhere = REQUIRED_FIELDS.filter((r) => isBlank(r.field));
+  const canAdvance = !enforceMandatory || missingHere.length === 0;
+  // Submit needs every step's mandatory fields, not just this step's — otherwise
+  // the button is live on step 3 and the API bounces you back to step 1.
+  const canSubmit = !enforceMandatory || missingAnywhere.length === 0;
+
   return (
     <div>
       <StaffStepper step={step} onJump={setStep} />
@@ -167,6 +190,36 @@ export function StaffForm({
 
         <StaffStepBody step={step} f={f} set={set} refs={refs} college={college} email={email} />
 
+        {/* Say what is missing next to the button that is disabled because of it —
+            by the time someone has worked down a step they are looking here, not
+            at the rail at the top of the page. */}
+        {enforceMandatory && missingHere.length > 0 && (
+          <p className="mt-5 rounded-lg border border-amber-300 bg-amber-50 px-3 py-2.5 text-sm text-amber-900 dark:border-amber-900/60 dark:bg-amber-950/40 dark:text-amber-200">
+            Add your{" "}
+            <span className="font-semibold">
+              {missingHere.map((m) => label(m.field).toLowerCase()).join(", ")}
+            </span>{" "}
+            to continue — {missingHere.length === 1 ? "it is" : "they are"} required.
+          </p>
+        )}
+
+        {/* Blocked by a field on a step you have already left: name it and offer
+            the trip back, rather than disabling Submit with no explanation. */}
+        {enforceMandatory && step === 3 && missingHere.length === 0 && missingAnywhere.length > 0 && (
+          <p className="text-muted-foreground mt-5 text-sm">
+            Before you can submit, add your{" "}
+            {missingAnywhere.map((m) => label(m.field).toLowerCase()).join(", ")}{" "}
+            <button
+              type="button"
+              onClick={() => setStep(missingAnywhere[0].step)}
+              className="text-foreground font-medium underline"
+            >
+              on step {missingAnywhere[0].step}
+            </button>
+            .
+          </p>
+        )}
+
         {errors.length > 0 && (
           <ul className="text-destructive mt-4 space-y-1 text-sm">
             {errors.map((e, i) => <li key={i}>• {e}</li>)}
@@ -187,7 +240,7 @@ export function StaffForm({
           </Button>
           {step < 3 ? (
             <Button
-              disabled={saving}
+              disabled={saving || !canAdvance}
               onClick={() => saveStep(step + 1)}
               className="bg-gradient-to-r from-[#2563eb] to-[#7c3aed] font-semibold text-white shadow-lg shadow-[#7c3aed]/25 transition hover:brightness-105"
             >
@@ -195,7 +248,7 @@ export function StaffForm({
             </Button>
           ) : (
             <Button
-              disabled={saving}
+              disabled={saving || !canSubmit}
               onClick={() => saveStep(4)}
               className="bg-emerald-600 font-semibold text-white shadow-lg shadow-emerald-600/25 transition hover:bg-emerald-700"
             >

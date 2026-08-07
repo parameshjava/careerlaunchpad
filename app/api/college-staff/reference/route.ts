@@ -13,7 +13,7 @@
 import { NextResponse } from "next/server";
 import { createClient } from "@/lib/supabase/server";
 import { REF_TABLES } from "@/lib/college-staff-registration";
-import { getRefData } from "@/lib/ref-cache";
+import { getRefData, getDegreeBranchData } from "@/lib/ref-cache";
 
 export async function GET() {
   const supabase = await createClient();
@@ -25,8 +25,13 @@ export async function GET() {
     // the cookieless ref-cache; fetch them through the SECURITY DEFINER RPC
     // (migration 140) — the same reader the mentor form uses, so a staff
     // member's declared subjects line up with the batch vocabulary.
-    const [refData, subjectsRes] = await Promise.all([
+    const [refData, degreeBranch, subjectsRes] = await Promise.all([
       getRefData(REF_TABLES, "college-staff"),
+      // Supersedes refData's degree/branch with the enriched rows: `search_terms`
+      // is what makes 143 branches findable by how people actually type ("csc",
+      // "comp sci", "E.C.E"), and the generic fixed-column select can't carry it.
+      // Spread LAST so it wins (see the note on getDegreeBranchData).
+      getDegreeBranchData(),
       supabase.rpc("mentor_teachable_subjects"),
     ]);
     const subject = ((subjectsRes.data ?? []) as { id: string; name: string }[]).map((s) => ({
@@ -35,7 +40,7 @@ export async function GET() {
       label: s.name,
       category: null,
     }));
-    return NextResponse.json({ ...refData, subject });
+    return NextResponse.json({ ...refData, ...degreeBranch, subject });
   } catch (e) {
     return NextResponse.json({ error: (e as Error).message }, { status: 500 });
   }

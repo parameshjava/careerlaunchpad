@@ -120,7 +120,11 @@ export function StaffDetail({
 
       {/* reviewFirst opens on the read-only summary; the form's own "Edit my
           details" button drops into the wizard from there. */}
-      <StaffForm endpoints={endpoints} reviewFirst />
+      {/* enforceMandatory={false}: an admin correcting someone else's record may
+          not know their years of experience, and being stranded on step 1 over it
+          would make the record uneditable. The submit API still refuses without
+          them. Same reasoning as the student console editor. */}
+      <StaffForm endpoints={endpoints} reviewFirst enforceMandatory={false} />
 
       {canReview && (
         <p className="text-muted-foreground text-center text-xs">
