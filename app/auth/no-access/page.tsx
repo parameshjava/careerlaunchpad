@@ -85,11 +85,15 @@ export default function NoAccessPage() {
                   Coming soon
                 </span>
               )}
-              <div className="text-3xl" aria-hidden>
-                {path.emoji}
+              {/* Emoji and title on one line. `pr-24` only when the "Coming soon"
+                  badge is present, so the title can't run under it. */}
+              <div className={`flex items-center gap-2.5 ${path.available ? "" : "pr-24"}`}>
+                <span className="text-2xl leading-none" aria-hidden>
+                  {path.emoji}
+                </span>
+                <h2 className="min-w-0 text-lg font-semibold">{path.title}</h2>
               </div>
-              <h2 className="mt-3 text-lg font-semibold">{path.title}</h2>
-              <p className="text-muted-foreground mt-1 flex-1 text-sm">{path.description}</p>
+              <p className="text-muted-foreground mt-2 flex-1 text-sm">{path.description}</p>
 
               {path.available && path.action ? (
                 <form action={path.action} className="mt-5">

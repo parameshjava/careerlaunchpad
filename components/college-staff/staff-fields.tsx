@@ -21,6 +21,8 @@ import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { RefSelect } from "@/components/ui/ref-select";
 import { PhoneField } from "@/components/ui/phone-input";
+import { MarkdownEditor } from "@/components/ui/markdown-editor";
+import { Stepper } from "@/components/students/registration-fields";
 import type { College } from "@/components/colleges/college-picker";
 
 export type Ref = { id: string; slug: string; label: string; category: string | null };
@@ -129,40 +131,14 @@ export type SetForm = <K extends keyof Form>(k: K, v: Form[K]) => void;
 // box appears only for that slug — matching how the student/mentor forms behave.
 const OTHER_SLUG = "other";
 
+/**
+ * The step rail. Delegates to the SHARED Stepper the student wizard uses
+ * (components/students/registration-fields.tsx), which already takes a `steps`
+ * override — so the staff form looks and behaves identically instead of being a
+ * fourth near-copy of the same 30 lines.
+ */
 export function StaffStepper({ step, onJump }: { step: number; onJump: (n: number) => void }) {
-  return (
-    <ol className="mb-7 flex items-start">
-      {STEPS.map((label, i) => {
-        const n = i + 1;
-        const active = n === step;
-        const isDone = n < step;
-        const reached = n <= step;
-        return (
-          <li key={label} className="relative flex flex-1 flex-col items-center gap-2">
-            {i > 0 && (
-              <span className={`absolute top-[15px] right-1/2 h-0.5 w-full ${reached ? "bg-gradient-to-r from-[#2563eb] to-[#7c3aed]" : "bg-border"}`} />
-            )}
-            <button
-              type="button"
-              onClick={() => isDone && onJump(n)}
-              disabled={!isDone}
-              aria-current={active ? "step" : undefined}
-              className={`ring-card relative z-10 flex h-8 w-8 items-center justify-center rounded-full text-xs font-bold ring-4 transition ${
-                active || isDone
-                  ? "bg-gradient-to-br from-[#2563eb] to-[#7c3aed] text-white shadow-sm"
-                  : "border-input text-muted-foreground border-2 bg-background"
-              } ${isDone ? "cursor-pointer hover:brightness-110" : ""}`}
-            >
-              {isDone ? "✓" : n}
-            </button>
-            <span className={`text-center text-[0.7rem] leading-tight font-semibold tracking-wide ${active ? "text-foreground" : "text-muted-foreground"}`}>
-              {label}
-            </span>
-          </li>
-        );
-      })}
-    </ol>
-  );
+  return <Stepper step={step} onJump={onJump} steps={STEPS} />;
 }
 
 export function StaffStepBody({
@@ -237,13 +213,15 @@ export function StaffStepBody({
       <Field label="LinkedIn">
         <Input value={f.linkedin_url} onChange={(e) => set("linkedin_url", e.target.value)} placeholder="https://linkedin.com/in/…" />
       </Field>
-      <div className="grid min-w-0 gap-1.5 sm:col-span-2">
-        <Label>Short Bio</Label>
-        <textarea
-          className={`${selectClass} min-h-24 py-2`}
+      <div className="min-w-0 sm:col-span-2">
+        <MarkdownEditor
+          id="staff-bio"
+          label="Short Bio"
           value={f.bio}
-          onChange={(e) => set("bio", e.target.value)}
-          placeholder="A line or two about your teaching and what you focus on."
+          onChange={(v) => set("bio", v)}
+          placeholder={"A line or two about your teaching and what you focus on.\n\n- 14 years teaching DBMS and OS\n- NPTEL certified"}
+          hint="Shown to your college admin and the CareerLaunchpad team."
+          maxLength={2000}
         />
       </div>
     </Step>

@@ -15,6 +15,7 @@
  */
 import { useCallback, useEffect, useState } from "react";
 import { Button } from "@/components/ui/button";
+import { RichContent } from "@/components/exam/RichContent";
 import { CollegePicker, type College } from "@/components/colleges/college-picker";
 import { FIELD_LABELS } from "@/lib/college-staff-registration";
 import {
@@ -147,8 +148,22 @@ export function StaffForm({
 
       {openNote && <SendBackNotice body={openNote.body} />}
 
-      <div className="bg-card rounded-3xl border p-5 shadow-xl shadow-[#7c3aed]/5 sm:p-8">
-        <p className="mb-1 text-[0.72rem] font-bold tracking-[0.08em] text-[#7c3aed] uppercase">Step {step}</p>
+      <div className="bg-card overflow-hidden rounded-3xl border p-5 shadow-xl shadow-[#7c3aed]/5 sm:p-8">
+        {/* The same gradient step band the student wizard and the admin invite
+            wizard use, rather than a small "STEP 1" label — this form was the
+            only one of the three without it. */}
+        <div className="-mx-5 -mt-5 mb-6 flex items-center justify-between gap-3 bg-gradient-to-r from-[#2563eb] to-[#7c3aed] px-5 py-3 text-white sm:-mx-8 sm:-mt-8 sm:px-8">
+          <p className="text-sm font-bold tracking-[0.04em]">Step {step} of 3</p>
+          <div className="flex items-center gap-2">
+            <div className="h-1.5 w-20 overflow-hidden rounded-full bg-white/25 sm:w-28">
+              <div
+                className="h-full rounded-full bg-white transition-all"
+                style={{ width: `${Math.round((step / 3) * 100)}%` }}
+              />
+            </div>
+            <span className="text-xs font-semibold tabular-nums whitespace-nowrap">{step} / 3</span>
+          </div>
+        </div>
 
         <StaffStepBody step={step} f={f} set={set} refs={refs} college={college} email={email} />
 
@@ -158,16 +173,35 @@ export function StaffForm({
           </ul>
         )}
 
-        <div className="mt-7 flex items-center justify-between gap-3 border-t pt-5">
-          <Button variant="ghost" disabled={step === 1 || saving} onClick={() => setStep((s) => Math.max(1, s - 1))}>← Back</Button>
-          <span className="text-muted-foreground text-xs font-medium">Step {step} of 3</span>
+        {/* Footer matches the student wizard: outlined-blue Back on the left,
+            gradient Next / emerald Submit on the right. The step counter lives in
+            the band above, so it is not repeated here. */}
+        <div className="mt-7 flex flex-wrap items-center justify-between gap-3 border-t pt-5">
           <Button
-            disabled={saving}
-            onClick={() => saveStep(step + 1)}
-            className="bg-gradient-to-r from-[#2563eb] to-[#7c3aed] text-white shadow-lg shadow-[#7c3aed]/25 transition hover:brightness-105"
+            variant="outline"
+            disabled={step === 1 || saving}
+            onClick={() => setStep((s) => Math.max(1, s - 1))}
+            className="border-2 border-[#2563eb] font-semibold text-[#2563eb] hover:bg-[#2563eb]/5"
           >
-            {saving ? "Saving…" : step === 3 ? "Submit ✓" : "Next →"}
+            ← Back
           </Button>
+          {step < 3 ? (
+            <Button
+              disabled={saving}
+              onClick={() => saveStep(step + 1)}
+              className="bg-gradient-to-r from-[#2563eb] to-[#7c3aed] font-semibold text-white shadow-lg shadow-[#7c3aed]/25 transition hover:brightness-105"
+            >
+              {saving ? "Saving…" : "Next →"}
+            </Button>
+          ) : (
+            <Button
+              disabled={saving}
+              onClick={() => saveStep(4)}
+              className="bg-emerald-600 font-semibold text-white shadow-lg shadow-emerald-600/25 transition hover:bg-emerald-700"
+            >
+              {saving ? "Saving…" : "Submit ✓"}
+            </Button>
+          )}
         </div>
       </div>
     </div>
@@ -354,7 +388,19 @@ function StaffSummary({
         <Item label="Mobile" value={f.phone} />
         <Item label="Office email" value={f.office_email} />
         <Item label="LinkedIn" value={f.linkedin_url} />
-        <Item label="Bio" value={f.bio} className="sm:col-span-2" />
+        {/* Bio is authored as Markdown (MarkdownEditor), so the summary has to
+            RENDER it — a plain Item would print the literal ** and -. Same
+            renderer as the editor's Preview tab, so the two always agree. */}
+        <div className="min-w-0 sm:col-span-2">
+          <dt className="text-muted-foreground text-xs">Bio</dt>
+          <dd className="text-sm">
+            {f.bio.trim() ? (
+              <RichContent content={f.bio} math={false} />
+            ) : (
+              <span className="text-muted-foreground/60">—</span>
+            )}
+          </dd>
+        </div>
       </Section>
 
       <Section title="Experience">

@@ -1,157 +1,183 @@
 "use client";
 
-// GitHub-style Markdown editor: Write/Preview tabs + a formatting toolbar that
-// writes the Markdown so users never have to know the syntax. Preview renders
-// GFM via the shared <RichContent> renderer (same engine as the exam module).
-//
-// Originally authored inline for the student-registration "biggest challenge"
-// field; promoted here so every surface (registration, course description, …)
-// shares one editor. Prose by default (`math={false}`) so a literal "$" stays
-// literal; the toolbar covers headings, bold/italic, quote, code, links, and
-// bulleted / numbered / task lists.
+/**
+ * GitHub-style Markdown editor: a Write / Preview pair with a small formatting
+ * toolbar, for prose fields where a plain textarea loses structure (a staff bio
+ * that wants a couple of bullets, a bold line, a link).
+ *
+ * Preview renders through the SAME RichContent the exam surfaces use, so there
+ * is one markdown renderer in the app rather than two that disagree. `math` is
+ * off: this is user prose, and a literal "$" would otherwise be swallowed into a
+ * KaTeX span (see the note on RichContent's `math` prop).
+ *
+ * No raw HTML is ever rendered — react-markdown ignores it unless rehype-raw is
+ * added, which it deliberately is not here. So a bio is safe to display back to
+ * a college admin without an escaping pass of our own.
+ */
 import { useRef, useState } from "react";
-import {
-  Bold,
-  Code,
-  Heading,
-  Italic,
-  Link as LinkIcon,
-  List,
-  ListChecks,
-  ListOrdered,
-  Quote,
-} from "lucide-react";
+import { Bold, Italic, Link2, List, Code, Heading } from "lucide-react";
 
 import { RichContent } from "@/components/exam/RichContent";
+import { Label } from "@/components/ui/label";
+import { cn } from "@/lib/utils";
+
+type Wrap = { before: string; after?: string; placeholder: string; line?: boolean };
+
+const TOOLS: { key: string; label: string; icon: typeof Bold; wrap: Wrap }[] = [
+  { key: "bold", label: "Bold", icon: Bold, wrap: { before: "**", after: "**", placeholder: "bold text" } },
+  { key: "italic", label: "Italic", icon: Italic, wrap: { before: "_", after: "_", placeholder: "italic text" } },
+  { key: "heading", label: "Heading", icon: Heading, wrap: { before: "### ", placeholder: "Heading", line: true } },
+  { key: "list", label: "Bulleted list", icon: List, wrap: { before: "- ", placeholder: "list item", line: true } },
+  { key: "link", label: "Link", icon: Link2, wrap: { before: "[", after: "](https://)", placeholder: "link text" } },
+  { key: "code", label: "Code", icon: Code, wrap: { before: "`", after: "`", placeholder: "code" } },
+];
 
 export function MarkdownEditor({
   value,
   onChange,
   id,
+  label,
+  hint,
   placeholder,
-  minHeight = "min-h-28",
+  minRows = 5,
+  maxLength,
 }: {
   value: string;
-  onChange: (value: string) => void;
+  onChange: (v: string) => void;
   id?: string;
+  label?: string;
+  hint?: string;
   placeholder?: string;
-  minHeight?: string;
+  minRows?: number;
+  maxLength?: number;
 }) {
   const [tab, setTab] = useState<"write" | "preview">("write");
-  const taRef = useRef<HTMLTextAreaElement>(null);
+  const ref = useRef<HTMLTextAreaElement>(null);
 
-  const reselect = (start: number, end: number) =>
+  /**
+   * Apply a wrap around the selection, or insert the placeholder when nothing is
+   * selected — and leave the inserted text selected, so a second keystroke
+   * replaces it instead of appending to it (the behaviour every editor has and
+   * whose absence feels broken).
+   */
+  function apply(w: Wrap) {
+    const el = ref.current;
+    if (!el) return;
+    const start = el.selectionStart;
+    const end = el.selectionEnd;
+    const selected = value.slice(start, end);
+    const body = selected || w.placeholder;
+
+    let insert: string;
+    let from: number;
+    if (w.line) {
+      // Line prefixes go at the start of every selected line, so marking three
+      // lines as a list does not produce one bullet with two orphans.
+      const lineStart = value.lastIndexOf("\n", start - 1) + 1;
+      const chunk = value.slice(lineStart, end) || w.placeholder;
+      insert = chunk.split("\n").map((l) => (l.startsWith(w.before) ? l : w.before + l)).join("\n");
+      const next = value.slice(0, lineStart) + insert + value.slice(end);
+      onChange(maxLength ? next.slice(0, maxLength) : next);
+      from = lineStart;
+      requestAnimationFrame(() => {
+        el.focus();
+        el.setSelectionRange(from, from + insert.length);
+      });
+      return;
+    }
+
+    insert = `${w.before}${body}${w.after ?? ""}`;
+    const next = value.slice(0, start) + insert + value.slice(end);
+    onChange(maxLength ? next.slice(0, maxLength) : next);
+    from = start + w.before.length;
     requestAnimationFrame(() => {
-      const ta = taRef.current;
-      if (ta) {
-        ta.focus();
-        ta.setSelectionRange(start, end);
-      }
+      el.focus();
+      el.setSelectionRange(from, from + body.length);
     });
+  }
 
-  // Read the textarea's LIVE value so back-to-back clicks never see stale state.
-  const wrap = (token: string, ph: string) => {
-    const ta = taRef.current;
-    if (!ta) return;
-    const v = ta.value;
-    const { selectionStart: s, selectionEnd: e } = ta;
-    const sel = v.slice(s, e) || ph;
-    onChange(v.slice(0, s) + token + sel + token + v.slice(e));
-    reselect(s + token.length, s + token.length + sel.length);
-  };
-  const mapLines = (transform: (ln: string, i: number) => string) => {
-    const ta = taRef.current;
-    if (!ta) return;
-    const v = ta.value;
-    const { selectionStart: s, selectionEnd: e } = ta;
-    const from = v.lastIndexOf("\n", s - 1) + 1;
-    const nl = v.indexOf("\n", e);
-    const to = nl === -1 ? v.length : nl;
-    const out = v.slice(from, to).split("\n").map(transform).join("\n");
-    onChange(v.slice(0, from) + out + v.slice(to));
-    reselect(from, from + out.length);
-  };
-  const link = () => {
-    const ta = taRef.current;
-    if (!ta) return;
-    const v = ta.value;
-    const { selectionStart: s, selectionEnd: e } = ta;
-    const sel = v.slice(s, e) || "link text";
-    const inserted = `[${sel}](https://)`;
-    onChange(v.slice(0, s) + inserted + v.slice(e));
-    reselect(s + inserted.length - 9, s + inserted.length - 1);
-  };
-
-  const TOOLBAR: { key: string; label: string; icon: typeof Bold; run: () => void }[] = [
-    { key: "h", label: "Heading", icon: Heading, run: () => mapLines((ln) => `### ${ln}`) },
-    { key: "b", label: "Bold", icon: Bold, run: () => wrap("**", "bold text") },
-    { key: "i", label: "Italic", icon: Italic, run: () => wrap("_", "italic text") },
-    { key: "quote", label: "Quote", icon: Quote, run: () => mapLines((ln) => `> ${ln}`) },
-    { key: "code", label: "Code", icon: Code, run: () => wrap("`", "code") },
-    { key: "link", label: "Link", icon: LinkIcon, run: link },
-    { key: "ul", label: "Bulleted list", icon: List, run: () => mapLines((ln) => `- ${ln || "List item"}`) },
-    { key: "ol", label: "Numbered list", icon: ListOrdered, run: () => mapLines((ln, i) => `${i + 1}. ${ln || "List item"}`) },
-    { key: "task", label: "Task list", icon: ListChecks, run: () => mapLines((ln) => `- [ ] ${ln || "To do"}`) },
-  ];
+  const tabCls = (active: boolean) =>
+    cn(
+      "rounded-md px-3 py-1.5 text-sm font-medium transition-colors",
+      active
+        ? "bg-background text-foreground border border-b-transparent shadow-sm"
+        : "text-muted-foreground hover:text-foreground",
+    );
 
   return (
-    <div className="focus-within:ring-ring overflow-hidden rounded-md border focus-within:ring-1">
-      <div className="bg-muted/40 flex flex-wrap items-center justify-between gap-y-1 border-b px-1.5 pt-1.5">
-        <div className="flex items-center gap-1">
-          {(["write", "preview"] as const).map((t) => (
-            <button
-              key={t}
-              type="button"
-              onClick={() => setTab(t)}
-              className={`rounded-t-md px-3 py-1.5 text-sm font-medium transition ${
-                tab === t
-                  ? "bg-background border border-b-0 text-foreground"
-                  : "text-muted-foreground hover:text-foreground"
-              }`}
-            >
-              {t === "write" ? "Write" : "Preview"}
+    <div className="grid min-w-0 gap-1.5">
+      {label && <Label htmlFor={id}>{label}</Label>}
+
+      <div className="border-input bg-muted/40 min-w-0 overflow-hidden rounded-md border">
+        {/* Toolbar row: tabs left, formatting right. Wraps on a phone rather than
+            forcing the card wider. */}
+        <div className="flex flex-wrap items-center justify-between gap-2 border-b px-2 py-1.5">
+          <div role="tablist" aria-label="Editor mode" className="flex items-center gap-1">
+            <button type="button" role="tab" aria-selected={tab === "write"}
+              onClick={() => setTab("write")} className={tabCls(tab === "write")}>
+              Write
             </button>
-          ))}
-        </div>
-        {tab === "write" && (
-          <div className="flex items-center gap-0.5 pb-1">
-            {TOOLBAR.map((b, i) => (
-              <span key={b.key} className="flex items-center">
-                {i === 6 && <span className="bg-border mx-1 h-4 w-px" />}
+            <button type="button" role="tab" aria-selected={tab === "preview"}
+              onClick={() => setTab("preview")} className={tabCls(tab === "preview")}>
+              Preview
+            </button>
+          </div>
+
+          {tab === "write" && (
+            <div className="flex flex-wrap items-center gap-0.5">
+              {TOOLS.map((t) => (
                 <button
+                  key={t.key}
                   type="button"
-                  title={b.label}
-                  aria-label={b.label}
-                  onMouseDown={(e) => e.preventDefault()}
-                  onClick={b.run}
-                  className="text-muted-foreground hover:bg-background hover:text-foreground flex size-7 items-center justify-center rounded-md transition"
+                  title={t.label}
+                  aria-label={t.label}
+                  onClick={() => apply(t.wrap)}
+                  className="text-muted-foreground hover:bg-background hover:text-foreground rounded p-1.5 transition-colors"
                 >
-                  <b.icon className="size-4" />
+                  <t.icon className="size-4" aria-hidden />
                 </button>
-              </span>
-            ))}
+              ))}
+            </div>
+          )}
+        </div>
+
+        {tab === "write" ? (
+          <textarea
+            id={id}
+            ref={ref}
+            value={value}
+            maxLength={maxLength}
+            onChange={(e) => onChange(e.target.value)}
+            placeholder={placeholder}
+            rows={minRows}
+            className="bg-background focus-visible:ring-ring block w-full resize-y px-3 py-2 text-sm focus-visible:ring-1 focus-visible:outline-none"
+          />
+        ) : (
+          <div
+            role="tabpanel"
+            className="bg-background px-3 py-2 text-sm"
+            style={{ minHeight: `${minRows * 1.5 + 1}rem` }}
+          >
+            {value.trim() ? (
+              <RichContent content={value} math={false} />
+            ) : (
+              <p className="text-muted-foreground">Nothing to preview yet.</p>
+            )}
           </div>
         )}
       </div>
 
-      {tab === "write" ? (
-        <textarea
-          id={id}
-          ref={taRef}
-          className={`bg-background w-full resize-y px-3 py-2 text-sm focus-visible:outline-none ${minHeight}`}
-          value={value}
-          onChange={(e) => onChange(e.target.value)}
-          placeholder={placeholder}
-        />
-      ) : (
-        <div className={`bg-background px-3 py-2 ${minHeight}`}>
-          {value.trim() ? (
-            <RichContent content={value} math={false} />
-          ) : (
-            <p className="text-muted-foreground text-sm italic">Nothing to preview yet.</p>
-          )}
-        </div>
-      )}
+      {/* No whitespace-nowrap: at 320px it clipped the hint mid-word instead of
+          wrapping it. The counter is pushed to the right on one line with it. */}
+      <div className="text-muted-foreground flex flex-wrap items-baseline justify-between gap-x-3 text-xs">
+        <p className="min-w-0">
+          {hint ? `${hint} ` : ""}
+          Markdown supported — **bold**, _italic_, - lists, [links](url).
+        </p>
+        {maxLength ? (
+          <span className="tabular-nums">{value.length}/{maxLength}</span>
+        ) : null}
+      </div>
     </div>
   );
 }
