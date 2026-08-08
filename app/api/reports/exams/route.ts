@@ -40,6 +40,18 @@ export async function GET(req: NextRequest) {
   const scope = readReportScope(req.nextUrl.searchParams);
   const supabase = await createClient();
 
+  // ?summary=1 → tiles only. The "vs previous period" delta needs the previous
+  // window's headline numbers and nothing else; the other four RPCs are the
+  // expensive ones, so a second full payload would double the page's cost to
+  // render one arrow.
+  if (req.nextUrl.searchParams.get("summary") === "1") {
+    try {
+      return NextResponse.json({ summary: await fetchReportSummary(supabase, scope) });
+    } catch (e) {
+      return NextResponse.json({ error: (e as Error).message }, { status: 500 });
+    }
+  }
+
   try {
     const [summary, trend, exams, subjects, distribution, students] = await Promise.all([
       fetchReportSummary(supabase, scope),

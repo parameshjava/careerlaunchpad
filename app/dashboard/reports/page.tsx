@@ -4,9 +4,7 @@ import { redirect } from "next/navigation";
 
 import { PageContainer } from "@/components/app-shell/page-container";
 import { CollegeNavPicker } from "@/components/analytics/college-nav-picker";
-import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
-import { ExamReport } from "@/components/reports/exam-report";
-import { AssessmentReport } from "@/components/reports/assessment-report";
+import { ReportsWorkspace } from "@/components/reports/reports-workspace";
 import { getAuthContext, can } from "@/lib/auth";
 import { createClient } from "@/lib/supabase/server";
 
@@ -17,11 +15,14 @@ export const metadata: Metadata = { title: "Performance reports" };
  * every chapter assessment over a period, instead of opening each paper and
  * comparing by hand.
  *
- * Two tabs because the two instruments are not comparable and must not be pooled:
- * an exam is a one-shot sitting with no pass mark; a chapter assessment is
- * retakeable and has one. Each tab reads its own endpoint (179 / 180) but they
- * share one period control (components/reports/report-range.tsx), so switching
- * tabs never moves the window under you.
+ * This page is only the shell: the guard, the college lookup, and the heading.
+ * Everything interactive lives in ReportsWorkspace, which owns the one period
+ * both reports share and the sticky bar that keeps it on screen.
+ *
+ * Exams and assessments stay separate views because the two instruments are not
+ * comparable and must not be pooled: an exam is a one-shot sitting with no pass
+ * mark, a chapter assessment is retakeable and has one. Each reads its own
+ * endpoint (migrations 179 / 180).
  *
  * Gated on being able to read student records — the same set as the Students grid
  * — because that is what this page shows. The real boundary is
@@ -33,7 +34,7 @@ export const metadata: Metadata = { title: "Performance reports" };
 export default async function ReportsPage({
   searchParams,
 }: {
-  searchParams: Promise<{ college?: string }>;
+  searchParams: Promise<{ college?: string; view?: string }>;
 }) {
   const ctx = await getAuthContext();
   if (!ctx) redirect("/auth/login");
@@ -50,7 +51,7 @@ export default async function ReportsPage({
   const isGlobal = ctx.permissions.has("*") || ctx.collegeScopes.length === 0;
   const canSeeAnalytics =
     ctx.permissions.has("*") || can(ctx, "analytics.platform.view") || can(ctx, "college.analytics.view");
-  const { college: collegeParam } = await searchParams;
+  const { college: collegeParam, view } = await searchParams;
   const collegeId = isGlobal ? (collegeParam ?? null) : ctx.collegeScopes[0];
 
   const supabase = await createClient();
@@ -58,18 +59,16 @@ export default async function ReportsPage({
     ? (await supabase.from("college").select("id, name, place, state").eq("id", collegeId).maybeSingle()).data
     : null;
 
-  const showCollege = isGlobal && !collegeId;
-
   return (
-    <PageContainer variant="full" className="space-y-6">
-      <div>
+    <PageContainer variant="full">
+      <div className="pb-4">
         <h1 className="text-2xl font-semibold tracking-tight">Performance reports</h1>
         <p className="text-muted-foreground text-sm">
           {selected?.name
             ? `How ${selected.name}'s students are performing across every exam and assessment.`
             : "How students are performing across every exam and assessment, over a period you choose."}
         </p>
-        {/* The reciprocal of the pointer on College Insights — the two datasets are
+        {/* The reciprocal of the pointer on College analytics — the two datasets are
             adjacent in the sidebar and easily mistaken for each other. */}
         {canSeeAnalytics && (
           <p className="text-muted-foreground mt-2 text-sm">
@@ -83,30 +82,18 @@ export default async function ReportsPage({
         )}
       </div>
 
-      {isGlobal && (
-        <div>
-          <CollegeNavPicker selected={selected ?? null} />
-          {!collegeId && (
-            <p className="text-muted-foreground mt-1.5 text-xs">
-              Showing every college. Pick one to narrow the report.
-            </p>
-          )}
-        </div>
-      )}
-
-      {/* Radix unmounts the inactive tab, so only the visible report fetches. */}
-      <Tabs defaultValue="exams" className="gap-6">
-        <TabsList className="max-w-full">
-          <TabsTrigger value="exams">Exams</TabsTrigger>
-          <TabsTrigger value="assessments">Assessments</TabsTrigger>
-        </TabsList>
-        <TabsContent value="exams">
-          <ExamReport college={collegeId} showCollege={showCollege} />
-        </TabsContent>
-        <TabsContent value="assessments">
-          <AssessmentReport college={collegeId} showCollege={showCollege} />
-        </TabsContent>
-      </Tabs>
+      <ReportsWorkspace
+        college={collegeId}
+        showCollege={isGlobal && !collegeId}
+        initialView={view}
+        collegePicker={
+          isGlobal ? (
+            <div className="min-w-0">
+              <CollegeNavPicker selected={selected ?? null} />
+            </div>
+          ) : undefined
+        }
+      />
     </PageContainer>
   );
 }

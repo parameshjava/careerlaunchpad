@@ -2,10 +2,14 @@
 
 /**
  * The college chapter-ASSESSMENT report — every student's chapter-quiz results
- * for the college, across all subjects at once.
+ * for the college, in the same shape as the exam report:
  *
- * Sibling of exam-report.tsx and deliberately shaped the same way (one range, one
- * response, the same matrix component), but it is NOT the same report:
+ *   1 At a glance        — average, pass rate, and whether they are moving
+ *   2 Where the gaps are — which subjects, and which chapters to reteach
+ *   3 Every student      — who is behind, per subject
+ *
+ * Sibling of exam-report.tsx and deliberately laid out the same way, but it is
+ * NOT the same report:
  *
  *   • a chapter quiz is retakeable, so one score per (student, chapter) means
  *     their BEST submitted attempt — the same number the student sees of
@@ -16,9 +20,9 @@
  *
  * Matrix columns are SUBJECTS, not individual chapters: a B.Tech cohort has
  * hundreds of chapters and a column per chapter is unreadable. "Which chapter"
- * is answered by the weakest-chapters table above it.
+ * is answered by the chapters-to-revisit list in section 2.
  */
-import { useEffect, useMemo, useState } from "react";
+import { useEffect, useMemo } from "react";
 import {
   Bar, BarChart, CartesianGrid, Cell as RCell, Line, LineChart,
   ResponsiveContainer, Tooltip, XAxis, YAxis,
@@ -28,11 +32,19 @@ import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { BRAND, categorical, sequentialStep } from "@/lib/chart-palette";
 import { EmptyState, pct, pctLabel } from "@/components/analytics/performance/shared";
 import { StudentScoreMatrix, type MatrixColumn, type MatrixRow } from "./student-score-matrix";
-import { ReportRangeFields, monthLabel, useReportRange } from "./report-range";
+import { monthLabel, type ReportRange } from "./report-range";
+import { Kpi, Methodology, useReportData } from "./report-kit";
+import { ReportSection, type SectionDef } from "./report-section";
 import type {
   AssessmentChapterRow, AssessmentStudentRow, AssessmentSubjectRow,
   AssessmentSummary, AssessmentTrendPoint,
 } from "@/lib/assessment-report-query";
+
+export const ASSESSMENT_SECTIONS: SectionDef[] = [
+  { id: "at-a-glance", label: "At a glance" },
+  { id: "gaps", label: "Where the gaps are" },
+  { id: "every-student", label: "Every student" },
+];
 
 type Payload = {
   summary: AssessmentSummary | null;
@@ -43,34 +55,17 @@ type Payload = {
 };
 
 export function AssessmentReport({
-  college,
+  range,
   showCollege,
+  onLoading,
 }: {
-  college?: string | null;
+  range: ReportRange;
   showCollege?: boolean;
+  /** Reports fetch state up to the sticky bar, which is always on screen. */
+  onLoading?: (loading: boolean) => void;
 }) {
-  const range = useReportRange(college);
-  const [data, setData] = useState<Payload | null>(null);
-  const [loading, setLoading] = useState(true);
-  const [error, setError] = useState("");
-
-  useEffect(() => {
-    let cancelled = false;
-    setLoading(true);
-    fetch(`/api/reports/assessments${range.qs()}`)
-      .then((r) => r.json())
-      .then((d) => {
-        if (cancelled) return;
-        // The RPCs RAISE for an unauthorized caller rather than returning empty,
-        // so an error here is a real problem and must not read as "no data".
-        setError(d.error ? String(d.error) : "");
-        setData(d.error ? null : d);
-      })
-      .catch((e) => !cancelled && setError(String(e)))
-      .finally(() => !cancelled && setLoading(false));
-    return () => { cancelled = true; };
-  }, [range.qs]);
-
+  const { data, prior, loading, error } = useReportData<Payload>("/api/reports/assessments", range);
+  useEffect(() => onLoading?.(loading), [loading, onLoading]);
   const s = data?.summary ?? null;
 
   // Columns are the subjects that actually have a result, in the API's order
@@ -102,199 +97,228 @@ export function AssessmentReport({
     return [...by.values()];
   }, [data?.students]);
 
-  const tiles = [
-    { label: "Students assessed", value: s?.students ?? 0, hint: `${s?.attempts ?? 0} attempts` },
-    {
-      label: "Chapters covered",
-      value: s?.chapters_assessed ?? 0,
-      hint: `${data?.subjects?.length ?? 0} subjects`,
-    },
-    { label: "Average", value: pct(s?.avg_pct), hint: `median ${pct(s?.median_pct)}` },
-    {
-      label: "Pass rate",
-      value: pct(s?.pass_rate_pct),
-      hint: "best attempt vs the chapter's pass mark",
-    },
-  ];
-
   // Weakest first — the list exists to say what to reteach.
   const weakest = useMemo(
     () => [...(data?.chapters ?? [])].sort((a, b) => (a.avg_pct ?? 0) - (b.avg_pct ?? 0)),
     [data?.chapters],
   );
 
-  return (
-    <div className="space-y-6">
-      <ReportRangeFields id="assess" state={range} loading={loading} />
+  const priorAvg = (prior?.avg_pct as number | null | undefined) ?? null;
+  const priorPass = (prior?.pass_rate_pct as number | null | undefined) ?? null;
 
+  return (
+    <div className="space-y-10">
       {error && <p className="text-destructive text-sm">{error}</p>}
 
-      {/* ---- tiles ---------------------------------------------------------- */}
-      <div className="grid grid-cols-2 gap-4 lg:grid-cols-4">
-        {tiles.map((t) => (
-          <Card key={t.label}>
-            <CardContent className="pt-6">
-              <div className="text-2xl font-semibold">{t.value}</div>
-              <p className="mt-0.5 text-sm font-medium">{t.label}</p>
-              <p className="text-muted-foreground text-xs">{t.hint}</p>
-            </CardContent>
-          </Card>
-        ))}
-      </div>
+      {/* ================= 1 · at a glance ================================== */}
+      <ReportSection
+        id="at-a-glance"
+        num={1}
+        title="At a glance"
+        blurb="The headline numbers for this window, and whether they are moving."
+      >
+        <div className="grid grid-cols-2 gap-4 lg:grid-cols-4">
+          <Kpi
+            label="Average"
+            value={pct(s?.avg_pct)}
+            hint={`median ${pct(s?.median_pct)}`}
+            now={s?.avg_pct ?? null}
+            then={priorAvg}
+            compareLabel="the previous period"
+          />
+          <Kpi
+            label="Pass rate"
+            value={pct(s?.pass_rate_pct)}
+            hint="best attempt vs the chapter's pass mark"
+            now={s?.pass_rate_pct ?? null}
+            then={priorPass}
+            compareLabel="the previous period"
+          />
+          <Kpi
+            label="Chapters covered"
+            value={s?.chapters_assessed ?? 0}
+            hint={`${data?.subjects?.length ?? 0} subjects`}
+          />
+          <Kpi
+            label="Students assessed"
+            value={s?.students ?? 0}
+            hint={`${s?.attempts ?? 0} attempts`}
+          />
+        </div>
 
-      {s?.best_subject && (
-        <p className="text-muted-foreground text-sm">
-          Strongest: <b className="text-foreground">{s.best_subject}</b> ({pct(s.best_pct)}) ·
-          Weakest: <b className="text-foreground">{s.weakest_subject}</b> ({pct(s.weakest_pct)})
-        </p>
-      )}
-
-      {/* ---- trend ---------------------------------------------------------- */}
-      <Card>
-        <CardHeader className="pb-2">
-          <CardTitle className="text-base">Average and pass rate over time</CardTitle>
+        {s?.best_subject && (
           <p className="text-muted-foreground text-sm">
-            By the month a chapter was assessed. Two lines because they can move apart — a
-            cohort can creep over the pass mark without getting much better.
+            Strongest: <b className="text-foreground">{s.best_subject}</b> ({pct(s.best_pct)}) ·
+            Weakest: <b className="text-foreground">{s.weakest_subject}</b> ({pct(s.weakest_pct)})
           </p>
-        </CardHeader>
-        <CardContent>
-          {(data?.trend ?? []).length === 0 ? (
-            <EmptyState message="No assessments in this period." />
-          ) : (
-            <ResponsiveContainer width="100%" height={260}>
-              <LineChart data={data!.trend.map((p) => ({ ...p, m: monthLabel(p.month) }))}>
-                <CartesianGrid strokeDasharray="3 3" vertical={false} />
-                <XAxis dataKey="m" tick={{ fontSize: 12 }} />
-                <YAxis domain={[0, 100]} tickFormatter={pctLabel} tick={{ fontSize: 12 }} width={44} />
-                <Tooltip
-                  formatter={(v, n) => [pctLabel(v), n === "avg_pct" ? "Average" : "Pass rate"]}
-                />
-                <Line type="monotone" dataKey="avg_pct" stroke={BRAND} strokeWidth={2} dot />
-                <Line
-                  type="monotone"
-                  dataKey="pass_rate_pct"
-                  stroke={categorical(3)}
-                  strokeWidth={2}
-                  strokeDasharray="4 3"
-                  dot
-                />
-              </LineChart>
-            </ResponsiveContainer>
-          )}
-        </CardContent>
-      </Card>
+        )}
 
-      {/* ---- subjects + weakest chapters ------------------------------------ */}
-      <div className="grid gap-6 lg:grid-cols-2">
         <Card>
           <CardHeader className="pb-2">
-            <CardTitle className="text-base">Subject strength</CardTitle>
+            <CardTitle className="text-base">Average and pass rate over time</CardTitle>
             <p className="text-muted-foreground text-sm">
-              Average of every student&rsquo;s best attempt, pooled across the subject&rsquo;s
-              chapters.
+              By the month a chapter was assessed. Two lines because they can move apart — a
+              cohort can creep over the pass mark without getting much better.
             </p>
           </CardHeader>
           <CardContent>
-            {(data?.subjects ?? []).length === 0 ? (
+            {(data?.trend ?? []).length === 0 ? (
               <EmptyState message="No assessments in this period." />
             ) : (
-              <ResponsiveContainer width="100%" height={Math.max(200, data!.subjects.length * 38)}>
-                <BarChart data={data!.subjects} layout="vertical" margin={{ left: 8, right: 16 }}>
-                  <CartesianGrid strokeDasharray="3 3" horizontal={false} />
-                  <XAxis type="number" domain={[0, 100]} tickFormatter={pctLabel} tick={{ fontSize: 12 }} />
-                  <YAxis type="category" dataKey="subject" width={140} tick={{ fontSize: 11 }} />
-                  <Tooltip formatter={(v) => [pctLabel(v), "Average"]} />
-                  <Bar dataKey="avg_pct" radius={[0, 4, 4, 0]}>
-                    {data!.subjects.map((r) => (
-                      <RCell key={r.subject} fill={sequentialStep(Number(r.avg_pct ?? 0)).fill} />
-                    ))}
-                  </Bar>
-                </BarChart>
+              <ResponsiveContainer width="100%" height={260}>
+                <LineChart data={data!.trend.map((p) => ({ ...p, m: monthLabel(p.month) }))}>
+                  <CartesianGrid strokeDasharray="3 3" vertical={false} />
+                  <XAxis dataKey="m" tick={{ fontSize: 12 }} />
+                  <YAxis domain={[0, 100]} tickFormatter={pctLabel} tick={{ fontSize: 12 }} width={44} />
+                  <Tooltip
+                    formatter={(v, n) => [pctLabel(v), n === "avg_pct" ? "Average" : "Pass rate"]}
+                  />
+                  <Line type="monotone" dataKey="avg_pct" stroke={BRAND} strokeWidth={2} dot />
+                  <Line
+                    type="monotone"
+                    dataKey="pass_rate_pct"
+                    stroke={categorical(3)}
+                    strokeWidth={2}
+                    strokeDasharray="4 3"
+                    dot
+                  />
+                </LineChart>
               </ResponsiveContainer>
             )}
           </CardContent>
         </Card>
+      </ReportSection>
 
-        <Card>
-          <CardHeader className="pb-2">
-            <CardTitle className="text-base">Chapters to revisit</CardTitle>
-            <p className="text-muted-foreground text-sm">
-              Weakest first, with how many students are still below the pass mark.
-            </p>
-          </CardHeader>
-          <CardContent>
-            {weakest.length === 0 ? (
-              <EmptyState message="No chapters assessed in this period." />
-            ) : (
-              <div className="max-h-[26rem] overflow-auto rounded-lg border">
-                <table className="w-max min-w-full text-sm">
-                  <thead className="bg-muted/60 sticky top-0">
-                    <tr className="text-left">
-                      <th className="px-3 py-2 font-semibold">Chapter</th>
-                      <th className="px-3 py-2 font-semibold">Average</th>
-                      <th className="px-3 py-2 font-semibold">Below pass</th>
-                    </tr>
-                  </thead>
-                  <tbody>
-                    {weakest.map((c) => (
-                      <tr key={c.chapter_id} className="hover:bg-muted/40 border-t">
-                        <td className="px-3 py-2">
-                          <span className="block max-w-56 truncate font-medium" title={c.chapter}>
-                            {c.chapter}
-                          </span>
-                          <span className="text-muted-foreground block max-w-56 truncate text-xs">
-                            {c.subject}
-                          </span>
-                        </td>
-                        <td className="px-3 py-2 tabular-nums">{pct(c.avg_pct)}</td>
-                        <td className="px-3 py-2 tabular-nums whitespace-nowrap">
-                          {c.below_pass}
-                          <span className="text-muted-foreground"> / {c.students}</span>
-                        </td>
+      {/* ================= 2 · where the gaps are ========================== */}
+      <ReportSection
+        id="gaps"
+        num={2}
+        title="Where the gaps are"
+        blurb="Which subjects are weak, and which chapters to reteach first."
+      >
+        <div className="grid gap-6 lg:grid-cols-2">
+          <Card>
+            <CardHeader className="pb-2">
+              <CardTitle className="text-base">Subject strength</CardTitle>
+              <p className="text-muted-foreground text-sm">
+                Average of every student&rsquo;s best attempt, pooled across the subject&rsquo;s
+                chapters.
+              </p>
+            </CardHeader>
+            <CardContent>
+              {(data?.subjects ?? []).length === 0 ? (
+                <EmptyState message="No assessments in this period." />
+              ) : (
+                <ResponsiveContainer width="100%" height={Math.max(200, data!.subjects.length * 38)}>
+                  <BarChart data={data!.subjects} layout="vertical" margin={{ left: 8, right: 16 }}>
+                    <CartesianGrid strokeDasharray="3 3" horizontal={false} />
+                    <XAxis type="number" domain={[0, 100]} tickFormatter={pctLabel} tick={{ fontSize: 12 }} />
+                    <YAxis type="category" dataKey="subject" width={140} tick={{ fontSize: 11 }} />
+                    <Tooltip formatter={(v) => [pctLabel(v), "Average"]} />
+                    <Bar dataKey="avg_pct" radius={[0, 4, 4, 0]}>
+                      {data!.subjects.map((r) => (
+                        <RCell key={r.subject} fill={sequentialStep(Number(r.avg_pct ?? 0)).fill} />
+                      ))}
+                    </Bar>
+                  </BarChart>
+                </ResponsiveContainer>
+              )}
+            </CardContent>
+          </Card>
+
+          <Card>
+            <CardHeader className="pb-2">
+              <CardTitle className="text-base">Chapters to revisit</CardTitle>
+              <p className="text-muted-foreground text-sm">
+                Weakest first, with how many students are still below the pass mark.
+              </p>
+            </CardHeader>
+            <CardContent>
+              {weakest.length === 0 ? (
+                <EmptyState message="No chapters assessed in this period." />
+              ) : (
+                <div className="max-h-[26rem] overflow-auto rounded-lg border">
+                  <table className="w-max min-w-full text-sm">
+                    <thead className="bg-muted sticky top-0">
+                      <tr className="text-left">
+                        <th className="px-3 py-2 font-semibold">Chapter</th>
+                        <th className="px-3 py-2 font-semibold">Average</th>
+                        <th className="px-3 py-2 font-semibold">Below pass</th>
                       </tr>
-                    ))}
-                  </tbody>
-                </table>
-              </div>
-            )}
+                    </thead>
+                    <tbody>
+                      {weakest.map((c) => (
+                        <tr key={c.chapter_id} className="hover:bg-muted/40 border-t">
+                          <td className="px-3 py-2">
+                            <span className="block max-w-56 font-medium break-words" title={c.chapter}>
+                              {c.chapter}
+                            </span>
+                            <span className="text-muted-foreground block max-w-56 text-xs break-words">
+                              {c.subject}
+                            </span>
+                          </td>
+                          <td className="px-3 py-2 tabular-nums">{pct(c.avg_pct)}</td>
+                          <td className="px-3 py-2 tabular-nums whitespace-nowrap">
+                            {c.below_pass}
+                            <span className="text-muted-foreground"> of {c.students}</span>
+                          </td>
+                        </tr>
+                      ))}
+                    </tbody>
+                  </table>
+                </div>
+              )}
+            </CardContent>
+          </Card>
+        </div>
+      </ReportSection>
+
+      {/* ================= 3 · every student =============================== */}
+      <ReportSection
+        id="every-student"
+        num={3}
+        title="Every student"
+        blurb="Sort by any subject column to see who is behind in it. Download the CSV to work on it in a spreadsheet."
+      >
+        <Card>
+          <CardContent className="pt-6">
+            <StudentScoreMatrix
+              rows={matrixRows}
+              columns={matrixColumns}
+              showCollege={!!showCollege}
+              countLabel="subjects"
+              footnote={
+                <p>
+                  A blank cell means the student hasn&rsquo;t attempted any chapter in that
+                  subject — it is never counted as 0%.
+                </p>
+              }
+            />
           </CardContent>
         </Card>
-      </div>
+      </ReportSection>
 
-      {/* ---- the matrix ----------------------------------------------------- */}
-      <Card>
-        <CardHeader className="pb-2">
-          <CardTitle className="text-base">Every student, every subject</CardTitle>
-          <p className="text-muted-foreground text-sm">
-            Sort by any subject column to see who is behind in it. Download the CSV to work on
-            it in a spreadsheet.
-          </p>
-        </CardHeader>
-        <CardContent>
-          <StudentScoreMatrix
-            rows={matrixRows}
-            columns={matrixColumns}
-            showCollege={!!showCollege}
-            countLabel="subjects"
-            footnote={
-              <p>
-                A blank cell means the student hasn&rsquo;t attempted any chapter in that subject
-                — it is never counted as 0%. Each cell is the average of their <b>best</b>{" "}
-                attempt per chapter, so retrying a quiz until it clicks improves the number
-                rather than dragging it down.
-              </p>
-            }
-          />
-        </CardContent>
-      </Card>
-
-      <p className="text-muted-foreground text-xs">
-        One score per student per chapter: their highest submitted attempt. Attempts in progress
-        never count. Pass rate is that best attempt measured against the chapter&rsquo;s own pass
-        mark, which is why it can be reported here and is deliberately absent from the exam
-        report.
-      </p>
+      <Methodology>
+        <p>
+          One score per student per chapter: their <b>highest submitted attempt</b>. Attempts in
+          progress never count, and a retry that improves on an earlier try replaces it rather
+          than being averaged with it — practising should not cost a student their number.
+        </p>
+        <p>
+          A cell in the student table is the average of their best attempts across that
+          subject&rsquo;s chapters, and a student&rsquo;s <b>Average</b> is the mean of those
+          subject figures.
+        </p>
+        <p>
+          <b>Pass rate</b> is that best attempt measured against the chapter&rsquo;s own pass
+          mark. It can be reported here, and is deliberately absent from the exam report, because
+          an exam has no pass mark anywhere in this platform.
+        </p>
+        <p>
+          <b>vs the previous period</b> compares the same measure over the window of equal length
+          immediately before this one. All time has no previous window, so it shows no comparison.
+        </p>
+      </Methodology>
     </div>
   );
 }

@@ -40,6 +40,17 @@ export async function GET(req: NextRequest) {
 
   const scope = readReportScope(req.nextUrl.searchParams);
   const supabase = await createClient();
+
+  // ?summary=1 → tiles only, for the "vs previous period" delta. See the same
+  // branch in the exams route.
+  if (req.nextUrl.searchParams.get("summary") === "1") {
+    try {
+      return NextResponse.json({ summary: await fetchAssessmentSummary(supabase, scope) });
+    } catch (e) {
+      return NextResponse.json({ error: (e as Error).message }, { status: 500 });
+    }
+  }
+
   try {
     const [summary, trend, subjects, chapters, students] = await Promise.all([
       fetchAssessmentSummary(supabase, scope),
