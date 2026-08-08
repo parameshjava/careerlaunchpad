@@ -12,29 +12,29 @@
  *     so they belong together rather than in three places;
  *   • the period is owned HERE, so switching between exams and assessments keeps
  *     it. It used to live inside each report, which meant a switch silently
- *     reset the window to 12 months.
+ *     reset the window to 12 months. Radix unmounts the inactive TabsContent, so
+ *     the state has to live above it — which is exactly why real tabs are fine
+ *     here now.
  *
- * The instrument is a segmented control, not tabs, because the sections below it
- * are already the page's tab-like structure — a second row of tabs would make
- * the reader guess which level a click changes. It is mirrored into ?view= so a
- * link to the assessments report actually opens the assessments report.
+ * Exams / Assessments are the house FOLDER TABS (docs/STYLE_GUIDE.md → Tabs),
+ * sitting on their own border at the top of the bar with everything else inside
+ * the folder they open. An earlier version hand-rolled a segmented pill control,
+ * which is the one thing that guide rules out by name — pills read as a generic
+ * dev-tool control, not as "these are the two views of this page".
+ *
+ * The choice is mirrored into ?view= so a link to the assessments report actually
+ * opens the assessments report.
  */
 import { useCallback, useEffect, useState } from "react";
 import { Loader2 } from "lucide-react";
 
+import { Tabs, TabsContent, TabsList, TabsTrigger, FOLDER_TAB_CLS } from "@/components/ui/tabs";
 import { savedAgo } from "@/lib/report-cache";
-
-import { cn } from "@/lib/utils";
 import { ExamReport, EXAM_SECTIONS } from "./exam-report";
 import { AssessmentReport, ASSESSMENT_SECTIONS } from "./assessment-report";
 import { ReportRangeFields, useReportRange } from "./report-range";
 
 type Instrument = "exams" | "assessments";
-
-const INSTRUMENTS: { value: Instrument; label: string }[] = [
-  { value: "exams", label: "Exams" },
-  { value: "assessments", label: "Assessments" },
-];
 
 export function ReportsWorkspace({
   college,
@@ -77,7 +77,7 @@ export function ReportsWorkspace({
   }, [instrument]);
 
   return (
-    <>
+    <Tabs value={instrument} onValueChange={(v) => setInstrument(v as Instrument)}>
       {/* Sticky inside <main>'s scroll area, and OPAQUE: a translucent bar over a
           data table is unreadable — the rows show through the numbers.
 
@@ -89,32 +89,16 @@ export function ReportsWorkspace({
           an over-tall strip is trimmed at the top rather than painting over the
           app header, which keeps this from depending on the shell's exact
           padding. */}
-      <div className="bg-background sticky top-0 z-20 -mx-4 space-y-3 border-b px-4 py-3 shadow-sm sm:-mx-6 sm:px-6 before:pointer-events-none before:absolute before:inset-x-0 before:bottom-full before:h-12 before:bg-background before:content-['']">
-        <div className="flex flex-wrap items-end gap-3">
-          <div
-            role="tablist"
-            aria-label="Report"
-            className="bg-muted inline-flex shrink-0 rounded-lg p-[3px]"
-          >
-            {INSTRUMENTS.map((i) => (
-              <button
-                key={i.value}
-                type="button"
-                role="tab"
-                aria-selected={instrument === i.value}
-                onClick={() => setInstrument(i.value)}
-                className={cn(
-                  "rounded-md px-3 py-1.5 text-sm font-medium transition-colors",
-                  instrument === i.value
-                    ? "bg-background text-foreground shadow-sm"
-                    : "text-muted-foreground hover:text-foreground",
-                )}
-              >
-                {i.label}
-              </button>
-            ))}
-          </div>
+      <div className="bg-background sticky top-0 z-20 -mx-4 px-4 pb-3 shadow-sm sm:-mx-6 sm:px-6 before:pointer-events-none before:absolute before:inset-x-0 before:bottom-full before:h-12 before:bg-background before:content-['']">
+        <TabsList
+          variant="line"
+          className="group-data-horizontal/tabs:h-auto w-full justify-start gap-0 overflow-x-auto rounded-none border-b p-0"
+        >
+          <TabsTrigger value="exams" className={FOLDER_TAB_CLS}>Exams</TabsTrigger>
+          <TabsTrigger value="assessments" className={FOLDER_TAB_CLS}>Assessments</TabsTrigger>
+        </TabsList>
 
+        <div className="flex flex-wrap items-end gap-3 pt-3">
           <ReportRangeFields id="report" state={range} />
           {collegePicker}
           {/* Two different states, said differently: a first load is a spinner,
@@ -132,7 +116,7 @@ export function ReportsWorkspace({
 
         {/* Jump nav — scrolls horizontally on a phone rather than wrapping into
             a two-line bar that eats the viewport. */}
-        <nav aria-label="Jump to section" className="-mb-1 flex gap-2 overflow-x-auto pb-1">
+        <nav aria-label="Jump to section" className="mt-3 -mb-1 flex gap-2 overflow-x-auto pb-1">
           {sections.map((s, i) => (
             <a
               key={s.id}
@@ -145,13 +129,14 @@ export function ReportsWorkspace({
         </nav>
       </div>
 
-      <div className="pt-6">
-        {instrument === "exams" ? (
-          <ExamReport range={range} showCollege={showCollege} userId={userId} onStatus={onStatus} />
-        ) : (
-          <AssessmentReport range={range} showCollege={showCollege} userId={userId} onStatus={onStatus} />
-        )}
-      </div>
-    </>
+      {/* min-w-0 lets a wide table scroll inside its own container instead of
+          overflowing the page on mobile (STYLE_GUIDE's TabsContent note). */}
+      <TabsContent value="exams" className="mt-6 min-w-0">
+        <ExamReport range={range} showCollege={showCollege} userId={userId} onStatus={onStatus} />
+      </TabsContent>
+      <TabsContent value="assessments" className="mt-6 min-w-0">
+        <AssessmentReport range={range} showCollege={showCollege} userId={userId} onStatus={onStatus} />
+      </TabsContent>
+    </Tabs>
   );
 }

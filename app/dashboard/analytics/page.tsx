@@ -37,7 +37,7 @@ export default async function AnalyticsPage({
   // No analytics access at all → send them to their own home surface.
   if (!canSelectAny && !isCollegeAdmin) redirect(ctx.homePath);
 
-  // Same gate as the sidebar's Performance reports item, so the pointer is never
+  // Same gate as the sidebar's Students Performance item, so the pointer is never
   // a dead link for someone who cannot open it.
   const canSeeExamReports =
     ctx.permissions.has("*") ||
@@ -125,7 +125,7 @@ function Header({
         <p className="text-muted-foreground mt-2 text-sm">
           Looking for scores?{" "}
           <Link href="/dashboard/reports" className="text-foreground font-medium underline">
-            Performance reports
+            Students Performance
           </Link>{" "}
           has consolidated results — every exam and every chapter assessment over a period, and
           every student&rsquo;s score in one table.

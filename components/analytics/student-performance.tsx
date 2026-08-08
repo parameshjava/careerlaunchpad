@@ -19,7 +19,7 @@ import { useCallback, useEffect, useState } from "react";
 import { Loader2 } from "lucide-react";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
-import { Input } from "@/components/ui/input";
+import { DatePicker } from "@/components/ui/date-picker";
 import {
   Select,
   SelectContent,
@@ -279,24 +279,31 @@ export function StudentPerformance({ studentId }: { studentId?: string } = {}) {
           </SelectContent>
         </Select>
         {range === "custom" && (
-          <div className="flex items-center gap-1.5">
-            <Input
-              type="date"
-              value={customFrom}
-              max={customTo || undefined}
-              onChange={(e) => setCustomFrom(e.target.value)}
-              className="h-8 w-[9.5rem]"
-              aria-label="From date"
-            />
+          // The shared DatePicker rather than <input type="date">: the native
+          // control shows the browser's own calendar in the browser's own field
+          // order, which is the inconsistency docs/STYLE_GUIDE.md → "Dates &
+          // times" rules out. The min/max attributes become day matchers, so an
+          // end date before the start is still unpickable.
+          <div className="flex flex-wrap items-center gap-1.5">
+            <div className="w-[10.5rem]">
+              <DatePicker
+                value={customFrom}
+                onChange={setCustomFrom}
+                placeholder="Start date"
+                clearable
+                disabled={customTo ? { after: new Date(`${customTo}T00:00:00`) } : undefined}
+              />
+            </div>
             <span className="text-muted-foreground text-xs">to</span>
-            <Input
-              type="date"
-              value={customTo}
-              min={customFrom || undefined}
-              onChange={(e) => setCustomTo(e.target.value)}
-              className="h-8 w-[9.5rem]"
-              aria-label="To date"
-            />
+            <div className="w-[10.5rem]">
+              <DatePicker
+                value={customTo}
+                onChange={setCustomTo}
+                placeholder="End date"
+                clearable
+                disabled={customFrom ? { before: new Date(`${customFrom}T00:00:00`) } : undefined}
+              />
+            </div>
           </div>
         )}
       </div>

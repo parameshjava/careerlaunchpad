@@ -191,7 +191,7 @@ export function buildNav(ctx: AuthContext, opts: { studentApproved?: boolean } =
     // college staff it is the landing page, not a report they occasionally open.
     if (can(ctx, "college.students.view") || can(ctx, "college.analytics.view") || can(ctx, "user.manage"))
       reports.push({ label: "My college", href: "/dashboard/college", icon: "college" });
-    // Performance reports (#107 follow-up): every exam AND every chapter
+    // Students Performance (#107 follow-up): every exam AND every chapter
     // assessment over a period, in one place. Anyone who may read a college's
     // student records, or exam results anywhere, may read the reports built from
     // them — the RPCs pin a college-scoped caller to their own college.
@@ -201,7 +201,7 @@ export function buildNav(ctx: AuthContext, opts: { studentApproved?: boolean } =
       can(ctx, "college.students.view") ||
       can(ctx, "user.manage")
     )
-      reports.push({ label: "Performance reports", href: "/dashboard/reports", icon: "analytics" });
+      reports.push({ label: "Students Performance", href: "/dashboard/reports", icon: "analytics" });
     if (canViewAnalytics(ctx))
       reports.push({ label: "College analytics", href: "/dashboard/analytics", icon: "analytics" });
 

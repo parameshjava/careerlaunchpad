@@ -15,7 +15,7 @@
  */
 import { useCallback, useMemo, useState } from "react";
 
-import { Input } from "@/components/ui/input";
+import { DatePicker } from "@/components/ui/date-picker";
 import { Label } from "@/components/ui/label";
 import { RefSelect } from "@/components/ui/ref-select";
 
@@ -106,7 +106,12 @@ export function ReportRangeFields({ id, state }: { id: string; state: ReportRang
   return (
     <>
       <div className="grid min-w-0 gap-1.5">
-        <Label htmlFor={`${id}-range`} className="text-xs">Period</Label>
+        {/* sr-only below sm: the sticky bar is 154px on a phone already, and the
+            trigger reads "Last 12 months" on its own. Still a real label for
+            screen readers rather than a removed one. */}
+        <Label htmlFor={`${id}-range`} className="sr-only text-xs sm:not-sr-only">
+          Period
+        </Label>
         <RefSelect
           id={`${id}-range`}
           value={range}
@@ -116,14 +121,32 @@ export function ReportRangeFields({ id, state }: { id: string; state: ReportRang
         />
       </div>
       {range === "custom" && (
+        // The shared DatePicker, not <input type="date">: the native control
+        // renders the browser's own calendar and its own locale order
+        // (dd/mm/yyyy here, mm/dd elsewhere), which is exactly the inconsistency
+        // docs/STYLE_GUIDE.md → "Dates & times" rules out. Both bounds are
+        // clearable, since "everything up to X" and "everything since X" are
+        // both legitimate windows.
         <>
           <div className="grid min-w-0 gap-1.5">
             <Label htmlFor={`${id}-from`} className="text-xs">From</Label>
-            <Input id={`${id}-from`} type="date" value={from} onChange={(e) => setFrom(e.target.value)} />
+            <DatePicker
+              id={`${id}-from`}
+              value={from}
+              onChange={setFrom}
+              placeholder="Start date"
+              clearable
+            />
           </div>
           <div className="grid min-w-0 gap-1.5">
             <Label htmlFor={`${id}-to`} className="text-xs">To</Label>
-            <Input id={`${id}-to`} type="date" value={to} onChange={(e) => setTo(e.target.value)} />
+            <DatePicker
+              id={`${id}-to`}
+              value={to}
+              onChange={setTo}
+              placeholder="End date"
+              clearable
+            />
           </div>
         </>
       )}

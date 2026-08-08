@@ -8,10 +8,10 @@ import { ReportsWorkspace } from "@/components/reports/reports-workspace";
 import { getAuthContext, can } from "@/lib/auth";
 import { createClient } from "@/lib/supabase/server";
 
-export const metadata: Metadata = { title: "Performance reports" };
+export const metadata: Metadata = { title: "Students Performance" };
 
 /**
- * Performance reports — how a college's students are doing across EVERY exam and
+ * Students Performance — how a college's students are doing across EVERY exam and
  * every chapter assessment over a period, instead of opening each paper and
  * comparing by hand.
  *
@@ -62,7 +62,7 @@ export default async function ReportsPage({
   return (
     <PageContainer variant="full">
       <div className="pb-4">
-        <h1 className="text-2xl font-semibold tracking-tight">Performance reports</h1>
+        <h1 className="text-2xl font-semibold tracking-tight">Students Performance</h1>
         <p className="text-muted-foreground text-sm">
           {selected?.name
             ? `How ${selected.name}'s students are performing across every exam and assessment.`
