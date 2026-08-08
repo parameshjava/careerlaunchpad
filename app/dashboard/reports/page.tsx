@@ -83,6 +83,7 @@ export default async function ReportsPage({
       </div>
 
       <ReportsWorkspace
+        userId={ctx.userId}
         college={collegeId}
         showCollege={isGlobal && !collegeId}
         initialView={view}

@@ -35,6 +35,7 @@ import { BRAND, sequentialStep } from "@/lib/chart-palette";
 import { EmptyState, pct, pctLabel } from "@/components/analytics/performance/shared";
 import { cn } from "@/lib/utils";
 import { StudentScoreMatrix, type MatrixColumn, type MatrixRow } from "./student-score-matrix";
+import { StudentRankings } from "./student-rankings";
 import { monthLabel, type ReportRange } from "./report-range";
 import { Kpi, Methodology, useReportData } from "./report-kit";
 import { ReportSection, type SectionDef } from "./report-section";
@@ -46,6 +47,7 @@ export const EXAM_SECTIONS: SectionDef[] = [
   { id: "at-a-glance", label: "At a glance" },
   { id: "gaps", label: "Where the gaps are" },
   { id: "every-exam", label: "Every exam" },
+  { id: "rankings", label: "Rankings" },
   { id: "every-student", label: "Every student" },
 ];
 
@@ -60,18 +62,26 @@ type Payload = {
 
 type ExamSort = "held" | "title" | "attempted" | "avg";
 
+/** 42.00 -> "42", 41.50 -> "41.5" — marks are usually whole and shouldn't look
+ *  like currency. */
+const trim = (n: number) => String(Math.round(n * 100) / 100);
+
 export function ExamReport({
   range,
   showCollege,
-  onLoading,
+  userId,
+  onStatus,
 }: {
   range: ReportRange;
   showCollege?: boolean;
+  /** Namespaces the cache, so a shared browser never paints one account's
+   *  students into another account's page. */
+  userId?: string | null;
   /** Reports fetch state up to the sticky bar, which is always on screen. */
-  onLoading?: (loading: boolean) => void;
+  onStatus?: (s: { loading: boolean; savedAt: number | null }) => void;
 }) {
-  const { data, prior, loading, error } = useReportData<Payload>("/api/reports/exams", range);
-  useEffect(() => onLoading?.(loading), [loading, onLoading]);
+  const { data, prior, loading, error, savedAt } = useReportData<Payload>("/api/reports/exams", range, userId);
+  useEffect(() => onStatus?.({ loading, savedAt }), [loading, savedAt, onStatus]);
   const s = data?.summary ?? null;
 
   // Only sittings someone actually attempted become matrix columns; the full
@@ -107,7 +117,15 @@ export function ExamReport({
         college: r.college_name,
         values: {} as Record<string, number>,
       };
-      if (r.pct != null) row.values[r.session_id] = r.pct;
+      if (r.pct != null) {
+        row.values[r.session_id] = r.pct;
+        // The marks behind the percentage, for the expanded ranking row. Shown
+        // as "42 of 60" because a percentage alone hides how much was at stake.
+        (row.notes ??= {})[r.session_id] =
+          r.score == null
+            ? "—"
+            : `${trim(r.score)}${r.total_marks == null ? "" : ` of ${trim(r.total_marks)}`} marks`;
+      }
       by.set(r.student_id, row);
     }
     return [...by.values()];
@@ -352,10 +370,30 @@ export function ExamReport({
         </Card>
       </ReportSection>
 
-      {/* ================= 4 · every student =============================== */}
+      {/* ================= 4 · rankings ==================================== */}
+      <ReportSection
+        id="rankings"
+        num={4}
+        title="Rankings"
+        blurb="Every student in order, best first. Open a row for the exam-by-exam scores behind their average."
+      >
+        <Card>
+          <CardContent className="pt-6">
+            <StudentRankings
+              rows={matrixRows}
+              columns={matrixColumns}
+              showCollege={!!showCollege}
+              countLabel="exams"
+              itemLabel="Exam"
+            />
+          </CardContent>
+        </Card>
+      </ReportSection>
+
+      {/* ================= 5 · every student =============================== */}
       <ReportSection
         id="every-student"
-        num={4}
+        num={5}
         title="Every student"
         blurb="Sort by any exam column to see who struggled with it. Download the CSV to work on it in a spreadsheet."
       >

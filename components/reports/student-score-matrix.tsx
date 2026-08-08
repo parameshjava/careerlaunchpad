@@ -58,6 +58,9 @@ export type MatrixRow = {
   college: string | null;
   /** Column key -> percentage. A missing key means "no result", never 0. */
   values: Record<string, number>;
+  /** Column key -> the detail behind that percentage ("42 of 60 marks"), shown
+   *  when a ranking row is expanded. The matrix itself only needs the number. */
+  notes?: Record<string, string>;
 };
 
 // The two frozen right-hand columns. Fixed widths, because a sticky right offset

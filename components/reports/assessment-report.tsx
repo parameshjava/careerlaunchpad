@@ -32,6 +32,7 @@ import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { BRAND, categorical, sequentialStep } from "@/lib/chart-palette";
 import { EmptyState, pct, pctLabel } from "@/components/analytics/performance/shared";
 import { StudentScoreMatrix, type MatrixColumn, type MatrixRow } from "./student-score-matrix";
+import { StudentRankings } from "./student-rankings";
 import { monthLabel, type ReportRange } from "./report-range";
 import { Kpi, Methodology, useReportData } from "./report-kit";
 import { ReportSection, type SectionDef } from "./report-section";
@@ -43,6 +44,7 @@ import type {
 export const ASSESSMENT_SECTIONS: SectionDef[] = [
   { id: "at-a-glance", label: "At a glance" },
   { id: "gaps", label: "Where the gaps are" },
+  { id: "rankings", label: "Rankings" },
   { id: "every-student", label: "Every student" },
 ];
 
@@ -57,15 +59,19 @@ type Payload = {
 export function AssessmentReport({
   range,
   showCollege,
-  onLoading,
+  userId,
+  onStatus,
 }: {
   range: ReportRange;
   showCollege?: boolean;
+  /** Namespaces the cache, so a shared browser never paints one account's
+   *  students into another account's page. */
+  userId?: string | null;
   /** Reports fetch state up to the sticky bar, which is always on screen. */
-  onLoading?: (loading: boolean) => void;
+  onStatus?: (s: { loading: boolean; savedAt: number | null }) => void;
 }) {
-  const { data, prior, loading, error } = useReportData<Payload>("/api/reports/assessments", range);
-  useEffect(() => onLoading?.(loading), [loading, onLoading]);
+  const { data, prior, loading, error, savedAt } = useReportData<Payload>("/api/reports/assessments", range, userId);
+  useEffect(() => onStatus?.({ loading, savedAt }), [loading, savedAt, onStatus]);
   const s = data?.summary ?? null;
 
   // Columns are the subjects that actually have a result, in the API's order
@@ -91,7 +97,14 @@ export function AssessmentReport({
         college: r.college_name,
         values: {} as Record<string, number>,
       };
-      if (r.avg_pct != null) row.values[r.subject_id ?? r.subject] = Number(r.avg_pct);
+      if (r.avg_pct != null) {
+        const key = r.subject_id ?? r.subject;
+        row.values[key] = Number(r.avg_pct);
+        // There are no marks to quote for a subject (it is an average over the
+        // subject's chapters), so the detail is the coverage behind it.
+        (row.notes ??= {})[key] =
+          `${r.chapters} ${r.chapters === 1 ? "chapter" : "chapters"} · ${r.passed_count} passed`;
+      }
       by.set(r.student_id, row);
     }
     return [...by.values()];
@@ -273,10 +286,30 @@ export function AssessmentReport({
         </div>
       </ReportSection>
 
-      {/* ================= 3 · every student =============================== */}
+      {/* ================= 3 · rankings ==================================== */}
+      <ReportSection
+        id="rankings"
+        num={3}
+        title="Rankings"
+        blurb="Every student in order, best first. Open a row for the subject-by-subject scores behind their average."
+      >
+        <Card>
+          <CardContent className="pt-6">
+            <StudentRankings
+              rows={matrixRows}
+              columns={matrixColumns}
+              showCollege={!!showCollege}
+              countLabel="subjects"
+              itemLabel="Subject"
+            />
+          </CardContent>
+        </Card>
+      </ReportSection>
+
+      {/* ================= 4 · every student =============================== */}
       <ReportSection
         id="every-student"
-        num={3}
+        num={4}
         title="Every student"
         blurb="Sort by any subject column to see who is behind in it. Download the CSV to work on it in a spreadsheet."
       >

@@ -11,6 +11,7 @@ import {
   DropdownMenuSeparator,
   DropdownMenuTrigger,
 } from "@/components/ui/dropdown-menu";
+import { clearReportCache } from "@/lib/report-cache";
 
 /**
  * The signed-in account control for the shared navbar's `right` slot. Replaces
@@ -65,10 +66,13 @@ export function AccountMenu({
         </DropdownMenuItem>
         <DropdownMenuSeparator />
         {/* Native form submit so sign-out works without JS; the route clears the
-            session and redirects home. */}
+            session and redirects home. The onClick additionally drops any cached
+            report payloads (lib/report-cache.ts) — with JS off it isn't reached,
+            which is acceptable: those entries are namespaced to this user id and
+            expire in 30 minutes regardless. */}
         <form action="/auth/signout" method="post">
           <DropdownMenuItem asChild variant="destructive">
-            <button type="submit" className="w-full">
+            <button type="submit" className="w-full" onClick={() => clearReportCache()}>
               <LogOut />
               Sign out
             </button>

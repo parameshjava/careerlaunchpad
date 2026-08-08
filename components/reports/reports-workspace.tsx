@@ -19,8 +19,10 @@
  * the reader guess which level a click changes. It is mirrored into ?view= so a
  * link to the assessments report actually opens the assessments report.
  */
-import { useEffect, useState } from "react";
+import { useCallback, useEffect, useState } from "react";
 import { Loader2 } from "lucide-react";
+
+import { savedAgo } from "@/lib/report-cache";
 
 import { cn } from "@/lib/utils";
 import { ExamReport, EXAM_SECTIONS } from "./exam-report";
@@ -39,9 +41,12 @@ export function ReportsWorkspace({
   showCollege,
   collegePicker,
   initialView,
+  userId,
 }: {
   college: string | null;
   showCollege: boolean;
+  /** Namespaces the report cache — see lib/report-cache.ts. */
+  userId: string;
   /** The college picker, rendered by the server page for global admins only. */
   collegePicker?: React.ReactNode;
   initialView?: string;
@@ -51,7 +56,12 @@ export function ReportsWorkspace({
   );
   // The active report reports its fetch state up, because the bar is the part
   // that is always on screen — a spinner inside the sections would scroll away.
-  const [loading, setLoading] = useState(true);
+  const [status, setStatus] = useState<{ loading: boolean; savedAt: number | null }>({
+    loading: true,
+    savedAt: null,
+  });
+  // Stable, or the report's effect would fire on every parent render.
+  const onStatus = useCallback((s: { loading: boolean; savedAt: number | null }) => setStatus(s), []);
   const range = useReportRange(college);
   const sections = instrument === "exams" ? EXAM_SECTIONS : ASSESSMENT_SECTIONS;
 
@@ -107,8 +117,16 @@ export function ReportsWorkspace({
 
           <ReportRangeFields id="report" state={range} />
           {collegePicker}
-          {loading && (
-            <Loader2 className="text-muted-foreground mb-2 size-4 animate-spin" aria-label="Loading" />
+          {/* Two different states, said differently: a first load is a spinner,
+              a saved copy on screen is a labelled fact with its age. Showing
+              stale numbers unlabelled would be the one unacceptable option. */}
+          {status.loading && (
+            <span className="text-muted-foreground mb-2 flex items-center gap-1.5 text-xs">
+              <Loader2 className="size-4 animate-spin" aria-label="Loading" />
+              {status.savedAt != null && (
+                <span>saved copy from {savedAgo(status.savedAt)} · refreshing</span>
+              )}
+            </span>
           )}
         </div>
 
@@ -129,9 +147,9 @@ export function ReportsWorkspace({
 
       <div className="pt-6">
         {instrument === "exams" ? (
-          <ExamReport range={range} showCollege={showCollege} onLoading={setLoading} />
+          <ExamReport range={range} showCollege={showCollege} userId={userId} onStatus={onStatus} />
         ) : (
-          <AssessmentReport range={range} showCollege={showCollege} onLoading={setLoading} />
+          <AssessmentReport range={range} showCollege={showCollege} userId={userId} onStatus={onStatus} />
         )}
       </div>
     </>
