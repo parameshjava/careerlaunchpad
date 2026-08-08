@@ -12,21 +12,36 @@
  * depends on a denominator the browser doesn't have — an exam's total marks
  * (179), or the best-attempt rule for a chapter (180).
  *
- * Spreadsheet affordances that actually matter here:
+ * NOTHING IS TRUNCATED OR PARKED OFF-SCREEN. A wide matrix has three ways of
+ * losing information, and each is handled rather than tolerated:
+ *
+ *   • long column titles → headers WRAP to as many lines as they need. An
+ *     ellipsis in a header is the worst possible economy: two exams called
+ *     "SDC-Exam-Enhancement-1" and "…-2" become the same column.
+ *   • the summary scrolling away → Student is frozen on the left and
+ *     Sat + Average are frozen on the RIGHT, so the numbers that summarise a
+ *     row can never be the ones you have to scroll to find. Both frozen edges
+ *     have fixed widths, which is what makes the right-hand offsets exact.
+ *   • a phone → below sm the table becomes one card per student, so every
+ *     value is reached by scrolling DOWN rather than sideways. Columns a
+ *     student has no result for collapse into a native <details>, which states
+ *     the count and opens to name them (mobile-first, CLAUDE.md).
+ *
+ * Other spreadsheet affordances that matter here:
  *   • sort by any column, including any single exam — "who did worst in the
- *     January mock" is one click, not a re-query;
- *   • the student column is STICKY, because a row is meaningless once its name
- *     has scrolled off;
+ *     January mock" is one click, not a re-query. The card view gets the same
+ *     sort as a dropdown, so the phone is not a second-class reader;
  *   • a blank cell means "did not sit it", rendered as — and never as 0%, which
  *     would drag every average and libel the student;
  *   • CSV download, so the numbers can go into a real spreadsheet for anything
  *     this page deliberately doesn't do.
  */
-import { useMemo, useState } from "react";
+import { useEffect, useMemo, useRef, useState } from "react";
 import { ArrowDown, ArrowUp, Download } from "lucide-react";
 
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
+import { RefSelect } from "@/components/ui/ref-select";
 import { cn } from "@/lib/utils";
 import { sequentialStep } from "@/lib/chart-palette";
 
@@ -44,6 +59,13 @@ export type MatrixRow = {
   /** Column key -> percentage. A missing key means "no result", never 0. */
   values: Record<string, number>;
 };
+
+// The two frozen right-hand columns. Fixed widths, because a sticky right offset
+// has to be a real number — `right-0` for Average, and exactly Average's width
+// for Sat. Keep these three constants in step.
+const W_SAT = "w-16"; // 4rem
+const W_AVG = "w-20"; // 5rem
+const RIGHT_OF_AVG = "right-20"; // = W_AVG
 
 export function StudentScoreMatrix({
   rows,
@@ -65,6 +87,20 @@ export function StudentScoreMatrix({
   const [query, setQuery] = useState("");
   const [sort, setSort] = useState<SortKey>("avg");
   const [asc, setAsc] = useState(true);
+  // Whether the table is actually wider than its box. Measured rather than
+  // guessed from the column count, so the "scroll sideways" hint never appears
+  // above a table that already fits — a hint you can't act on is noise.
+  const scroller = useRef<HTMLDivElement>(null);
+  const [overflows, setOverflows] = useState(false);
+  useEffect(() => {
+    const el = scroller.current;
+    if (!el) return;
+    const measure = () => setOverflows(el.scrollWidth > el.clientWidth + 1);
+    measure();
+    const ro = new ResizeObserver(measure);
+    ro.observe(el);
+    return () => ro.disconnect();
+  }, [columns.length, rows.length]);
 
   const students = useMemo(
     () =>
@@ -166,6 +202,16 @@ export function StudentScoreMatrix({
     );
   }
 
+  // Every sort the table offers, as one list — the card view needs it as a
+  // dropdown, so it lives here rather than being re-derived per view.
+  const sortOptions = [
+    { value: "avg", label: "Average" },
+    { value: "sat", label: `${satLabel} (count)` },
+    { value: "name", label: "Student name" },
+    { value: "roll", label: "Roll number" },
+    ...columns.map((c) => ({ value: `s:${c.key}`, label: c.label })),
+  ];
+
   return (
     <div className="space-y-3">
       <div className="flex flex-wrap items-center justify-between gap-3">
@@ -186,20 +232,117 @@ export function StudentScoreMatrix({
         </div>
       </div>
 
+      {/* ---- phones: one card per student, so nothing needs sideways scrolling -- */}
+      <div className="space-y-3 sm:hidden">
+        <div className="flex items-end gap-2">
+          <div className="grid min-w-0 flex-1 gap-1">
+            <label htmlFor="matrix-sort" className="text-muted-foreground text-xs">
+              Sort by
+            </label>
+            <RefSelect
+              id="matrix-sort"
+              value={sort}
+              onChange={(v) => setSort(v as SortKey)}
+              options={sortOptions}
+              className="w-full min-w-0"
+            />
+          </div>
+          <Button
+            variant="outline"
+            size="sm"
+            onClick={() => setAsc((v) => !v)}
+            aria-label={asc ? "Sort descending" : "Sort ascending"}
+          >
+            {asc ? <ArrowUp className="size-4" /> : <ArrowDown className="size-4" />}
+            {asc ? "Low first" : "High first"}
+          </Button>
+        </div>
+
+        <ul className="grid gap-3 [&>li]:min-w-0">
+          {filtered.map((s) => {
+            const got = columns.filter((c) => s.values[c.key] != null);
+            const missing = columns.filter((c) => s.values[c.key] == null);
+            return (
+              <li key={s.studentId} className="rounded-xl border p-3">
+                <div className="flex items-start justify-between gap-3">
+                  <div className="min-w-0">
+                    <p className="font-medium break-words">{s.name}</p>
+                    <p className="text-muted-foreground text-xs break-words">
+                      {s.roll ?? "no roll number"}
+                      {showCollege && s.college ? ` · ${s.college}` : ""}
+                    </p>
+                  </div>
+                  <div className="shrink-0 text-right">
+                    <Pill value={s.avg} bold />
+                    <p className="text-muted-foreground mt-0.5 text-[0.65rem]">
+                      avg of {s.sat}
+                    </p>
+                  </div>
+                </div>
+
+                {got.length > 0 && (
+                  <ul className="mt-3 grid gap-1.5">
+                    {got.map((c) => (
+                      <li key={c.key} className="flex items-center justify-between gap-2">
+                        <span className="min-w-0 text-sm break-words">
+                          {c.label}
+                          {c.sublabel && (
+                            <span className="text-muted-foreground block text-[0.65rem]">
+                              {c.sublabel}
+                            </span>
+                          )}
+                        </span>
+                        <Pill value={s.values[c.key]} />
+                      </li>
+                    ))}
+                  </ul>
+                )}
+
+                {missing.length > 0 && (
+                  // Counted AND nameable — the count alone would be the same kind
+                  // of hiding this component exists to avoid.
+                  <details className="mt-3">
+                    <summary className="text-muted-foreground cursor-pointer text-xs">
+                      No result for {missing.length} of {columns.length} {countLabel}
+                    </summary>
+                    <ul className="text-muted-foreground mt-1.5 grid gap-1 text-xs">
+                      {missing.map((c) => (
+                        <li key={c.key} className="break-words">
+                          {c.label}
+                        </li>
+                      ))}
+                    </ul>
+                  </details>
+                )}
+              </li>
+            );
+          })}
+        </ul>
+      </div>
+
+      {/* ---- sm and up: the spreadsheet, with both edges frozen --------------- */}
+      {overflows && (
+        <p className="text-muted-foreground hidden text-xs sm:block">
+          Scroll the table sideways for all {columns.length} {countLabel}. <b>Student</b> stays
+          pinned on the left; <b>{satLabel}</b> and <b>Average</b> stay pinned on the right.
+        </p>
+      )}
       {/* The table scrolls inside its own box — the PAGE must never scroll
-          sideways (CLAUDE.md), and a 20-exam matrix is far wider than a phone. */}
-      <div className="overflow-x-auto rounded-lg border">
+          sideways (CLAUDE.md), and a 14-exam matrix is far wider than a phone. */}
+      <div ref={scroller} className="hidden overflow-x-auto rounded-lg border sm:block">
         <table className="w-max min-w-full border-collapse text-sm">
           <thead>
-            <tr className="bg-muted/60">
-              <Th sticky sortKey="name" sort={sort} asc={asc} onSort={toggle} className="min-w-44">
+            <tr className="bg-muted">
+              <Th sticky="left-0 z-30" sortKey="name" sort={sort} asc={asc} onSort={toggle}
+                  className="min-w-40">
                 Student
               </Th>
               <Th sortKey="roll" sort={sort} asc={asc} onSort={toggle}>Roll no.</Th>
               {columns.map((c) => (
                 <Th key={c.key} sortKey={`s:${c.key}`} sort={sort} asc={asc} onSort={toggle}
-                    className="min-w-28">
-                  <span className="block max-w-40 truncate" title={c.label}>{c.label}</span>
+                    className="min-w-28 max-w-40">
+                  {/* Wraps to as many lines as the title needs — never an ellipsis. */}
+                  <span className="block whitespace-normal break-words">{c.label}</span>
                   {c.sublabel && (
                     <span className="text-muted-foreground block text-[0.65rem] font-normal">
                       {c.sublabel}
@@ -207,25 +350,39 @@ export function StudentScoreMatrix({
                   )}
                 </Th>
               ))}
-              <Th sortKey="sat" sort={sort} asc={asc} onSort={toggle}>{satLabel}</Th>
-              <Th sortKey="avg" sort={sort} asc={asc} onSort={toggle}>Average</Th>
+              <Th sticky={`${RIGHT_OF_AVG} z-30`} sortKey="sat" sort={sort} asc={asc}
+                  onSort={toggle} className={`${W_SAT} border-l`}>
+                {satLabel}
+              </Th>
+              <Th sticky="right-0 z-30" sortKey="avg" sort={sort} asc={asc} onSort={toggle}
+                  className={W_AVG}>
+                Average
+              </Th>
             </tr>
           </thead>
           <tbody>
             {filtered.map((s) => (
               <tr key={s.studentId} className="hover:bg-muted/40 border-t">
-                <td className="bg-background sticky left-0 z-10 px-3 py-2 font-medium whitespace-nowrap">
-                  <span className="block max-w-52 truncate" title={s.name}>{s.name}</span>
+                <td className="bg-background sticky left-0 z-20 px-3 py-2 font-medium">
+                  <span className="block max-w-52 break-words">{s.name}</span>
                   {showCollege && s.college && (
-                    <span className="text-muted-foreground block max-w-52 truncate text-[0.65rem]">
+                    <span className="text-muted-foreground block max-w-52 text-[0.65rem] break-words">
                       {s.college}
                     </span>
                   )}
                 </td>
                 <td className="text-muted-foreground px-3 py-2 whitespace-nowrap">{s.roll ?? "—"}</td>
                 {columns.map((c) => <Cell key={c.key} value={s.values[c.key]} />)}
-                <td className="text-muted-foreground px-3 py-2 text-center tabular-nums">{s.sat}</td>
-                <Cell value={s.avg ?? undefined} bold />
+                <td
+                  className={cn(
+                    "bg-background text-muted-foreground sticky z-20 border-l px-3 py-2 text-center tabular-nums",
+                    RIGHT_OF_AVG,
+                    W_SAT,
+                  )}
+                >
+                  {s.sat}
+                </td>
+                <Cell value={s.avg ?? undefined} bold className={cn("bg-background sticky right-0 z-20", W_AVG)} />
               </tr>
             ))}
           </tbody>
@@ -238,14 +395,15 @@ export function StudentScoreMatrix({
 }
 
 function Th({
-  children, sortKey, sort, asc, onSort, sticky = false, className,
+  children, sortKey, sort, asc, onSort, sticky, className,
 }: {
   children: React.ReactNode;
   sortKey: SortKey;
   sort: SortKey;
   asc: boolean;
   onSort: (k: SortKey) => void;
-  sticky?: boolean;
+  /** Positioning classes when this header is frozen (e.g. "left-0 z-30"). */
+  sticky?: string;
   className?: string;
 }) {
   const active = sort === sortKey;
@@ -255,14 +413,14 @@ function Th({
       aria-sort={active ? (asc ? "ascending" : "descending") : "none"}
       className={cn(
         "px-3 py-2 text-left align-bottom font-semibold",
-        sticky && "bg-muted/60 sticky left-0 z-20",
+        sticky && `bg-muted sticky ${sticky}`,
         className,
       )}
     >
       <button
         type="button"
         onClick={() => onSort(sortKey)}
-        className="hover:text-primary flex items-center gap-1 text-left"
+        className="hover:text-primary flex w-full items-center gap-1 text-left"
       >
         <span className="min-w-0">{children}</span>
         {active &&
@@ -273,19 +431,38 @@ function Th({
 }
 
 /** A percentage cell, shaded by the shared sequential ramp. */
-function Cell({ value, bold = false }: { value?: number | null; bold?: boolean }) {
+function Cell({
+  value, bold = false, className,
+}: {
+  value?: number | null;
+  bold?: boolean;
+  className?: string;
+}) {
   if (value == null) {
-    return <td className="text-muted-foreground/50 px-3 py-2 text-center">—</td>;
+    return (
+      <td className={cn("text-muted-foreground/50 px-3 py-2 text-center", className)}>—</td>
+    );
   }
+  return (
+    <td className={cn("px-1 py-1 text-center", className)}>
+      <Pill value={value} bold={bold} />
+    </td>
+  );
+}
+
+/** The shaded percentage chip, shared by the table cells and the phone cards. */
+function Pill({ value, bold = false }: { value?: number | null; bold?: boolean }) {
+  if (value == null) return <span className="text-muted-foreground/50 text-sm">—</span>;
   const { fill, ink } = sequentialStep(value);
   return (
-    <td className="px-1 py-1 text-center">
-      <span
-        className={cn("inline-block w-full rounded px-2 py-1 tabular-nums", bold && "font-semibold")}
-        style={{ background: fill, color: ink }}
-      >
-        {Math.round(value)}%
-      </span>
-    </td>
+    <span
+      className={cn(
+        "inline-block min-w-12 rounded px-2 py-1 text-center text-sm tabular-nums",
+        bold && "font-semibold",
+      )}
+      style={{ background: fill, color: ink }}
+    >
+      {Math.round(value)}%
+    </span>
   );
 }
