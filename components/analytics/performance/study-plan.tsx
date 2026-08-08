@@ -305,7 +305,7 @@ function Floor({ projection }: { projection: PlanProjection }) {
         {p.chapters_to_lift} chapter{p.chapters_to_lift === 1 ? "" : "s"} sit{p.chapters_to_lift === 1 ? "s" : ""}{" "}
         below the pass mark with <b className="text-foreground">no attempts left</b>, so{" "}
         {p.chapters_to_lift === 1 ? "it" : "they"} can&apos;t be retaken — your remaining gains have to
-        come from chapters you haven&apos;t sat yet.
+        come from chapters you haven&apos;t attempted yet.
       </p>
     );
   return (

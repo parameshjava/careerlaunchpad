@@ -97,7 +97,7 @@ export default async function StudentProfilePage({ params }: { params: Promise<{
   if (can(ctx, "student.profile.manage")) {
     return (
       <PageContainer variant="full">
-        <BackLink />
+        <BackLink studentId={id} />
         {awaitingReview && <ApprovalBar id={id} name={reviewRow?.full_name ?? ""} />}
         <RegistrationForm
           reviewFirst
@@ -197,7 +197,7 @@ export default async function StudentProfilePage({ params }: { params: Promise<{
 
   return (
     <PageContainer variant="full">
-      <BackLink />
+      <BackLink studentId={id} />
       {awaitingReview && <ApprovalBar id={id} name={f.full_name} />}
       <ProfileSummary f={f} refs={refs} email={email} college={college} status={status} />
       {auditPanel}
@@ -233,10 +233,19 @@ function ApprovalBar({ id, name }: { id: string; name: string }) {
   );
 }
 
-function BackLink() {
+function BackLink({ studentId }: { studentId?: string } = {}) {
   return (
-    <Link href="/dashboard" className="text-muted-foreground hover:text-foreground mb-4 inline-block text-sm">
-      ← Back to students
-    </Link>
+    <div className="mb-4 flex flex-wrap items-center justify-between gap-3">
+      <Link href="/dashboard" className="text-muted-foreground hover:text-foreground inline-block text-sm">
+        ← Back to students
+      </Link>
+      {/* The progress drilldown (#111) — reachable from the record it belongs to,
+          which is where staff are when the question "how are they doing?" comes up. */}
+      {studentId && (
+        <Button asChild variant="outline" size="sm">
+          <Link href={`/dashboard/students/${studentId}/progress`}>View progress</Link>
+        </Button>
+      )}
+    </div>
   );
 }

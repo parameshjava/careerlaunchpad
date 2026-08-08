@@ -24,6 +24,19 @@ function Tabs({
   )
 }
 
+/**
+ * The house folder-tab trigger class (docs/STYLE_GUIDE.md → Tabs): muted inactive
+ * tabs that keep their underline, active tab a solid brand fill with no bottom
+ * border so it connects into the content. Pair with
+ * `<TabsList variant="line" …>`.
+ *
+ * Exported here because the same string is currently copy-pasted into ten pages;
+ * new callers should import it rather than add an eleventh copy.
+ */
+export const FOLDER_TAB_CLS =
+  "-mb-px h-auto flex-none rounded-t-md rounded-b-none border border-border bg-muted! px-4 py-2 font-medium text-muted-foreground shadow-none transition-colors after:hidden hover:bg-muted/70 " +
+  "data-active:border-primary! data-active:border-b-0 data-active:bg-primary! data-active:text-primary-foreground! data-active:font-semibold data-active:shadow-none"
+
 const tabsListVariants = cva(
   "group/tabs-list inline-flex w-fit items-center justify-center rounded-lg p-[3px] text-muted-foreground group-data-horizontal/tabs:h-8 group-data-vertical/tabs:h-fit group-data-vertical/tabs:flex-col data-[variant=line]:rounded-none",
   {

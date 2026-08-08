@@ -337,26 +337,39 @@ export async function sendStudentRemarksEmail({
 
 type PendingNotice = {
   to: string[];
-  kind: "student" | "mentor";
+  kind: "student" | "mentor" | "college_staff";
   name?: string | null;
   reviewUrl: string;
+  /** College the registration belongs to — shown for college_staff, where the
+   * recipient list spans one college's admins AND every platform admin, so
+   * "which college?" is the first thing a platform admin needs to know. */
+  collegeName?: string | null;
+};
+
+const PENDING_LABEL: Record<PendingNotice["kind"], string> = {
+  student: "student",
+  mentor: "mentor",
+  college_staff: "college staff member",
 };
 
 /**
- * Notify owners/admins that a new registration is awaiting approval. `to` is the
- * resolved recipient list (notification_recipients RPC) — skips silently if empty,
- * and sends to all addresses at once (Bcc'd so recipients don't see each other).
+ * Notify reviewers that a new registration is awaiting approval. `to` is the
+ * resolved recipient list — notification_recipients() for students/mentors, and
+ * college_staff_recipients(college) for staff, which is scoped to THAT college's
+ * admins plus platform admins (migration 175 §10e). Skips silently if empty, and
+ * sends to all addresses at once (Bcc'd so recipients don't see each other).
  */
-export async function sendRegistrationPendingEmail({ to, kind, name, reviewUrl }: PendingNotice): Promise<void> {
+export async function sendRegistrationPendingEmail({ to, kind, name, reviewUrl, collegeName }: PendingNotice): Promise<void> {
   if (!to.length) return;
-  const who = kind === "student" ? "student" : "mentor";
-  const label = name ? `${name} (${who})` : `A new ${who}`;
-  const subject = `New ${who} registration awaiting approval${name ? ` — ${name}` : ""}`;
+  const who = PENDING_LABEL[kind];
+  const at = collegeName ? ` at ${collegeName}` : "";
+  const label = name ? `${name} (${who}${at})` : `A new ${who}${at}`;
+  const subject = `New ${who} registration awaiting approval${name ? ` — ${name}` : ""}${collegeName ? ` (${collegeName})` : ""}`;
   const text =
     `${label} has submitted a registration and is awaiting approval.\n\n` +
     `Review it here:\n${reviewUrl}\n`;
   const html =
-    `<p><strong>${label}</strong> has submitted a registration and is awaiting approval.</p>` +
+    `<p><strong>${escapeHtml(label)}</strong> has submitted a registration and is awaiting approval.</p>` +
     `<p><a href="${reviewUrl}">Review the registration</a></p>`;
   // One message, recipients hidden from each other.
   const mailer = getTransporter();
@@ -369,6 +382,96 @@ export async function sendRegistrationPendingEmail({ to, kind, name, reviewUrl }
   } catch (err) {
     console.error(`[registration-pending] failed to email reviewers:`, err);
   }
+}
+
+// ---- College Staff (#107) --------------------------------------------------
+
+/** Staff finished registration — confirm we received it and who reviews it. */
+export async function sendCollegeStaffSubmittedEmail({
+  to, name, collegeName, loginUrl,
+}: ApprovalEmail & { collegeName?: string | null }): Promise<void> {
+  const hi = name ? `Hi ${name},` : "Hi,";
+  const at = collegeName ? ` for ${collegeName}` : "";
+  const subject = "We've received your CareerLaunchpad staff registration — pending approval";
+  const text =
+    `${hi}\n\n` +
+    `Thanks for registering as college staff${at} — your registration has been submitted and is now pending approval by your college admin.\n\n` +
+    `We'll email you as soon as it's approved. You can sign in any time to view or update your details:\n${loginUrl}\n`;
+  const html =
+    `<p>${hi}</p>` +
+    `<p>Thanks for registering as college staff${escapeHtml(at)} — your registration has been ` +
+    `<strong>submitted and is now pending approval</strong> by your college admin.</p>` +
+    `<p>We'll email you as soon as it's approved.</p>` +
+    `<p><a href="${loginUrl}">View your registration</a></p>`;
+  await deliver("college-staff-submitted", to, subject, text, html);
+}
+
+/** Staff registration approved — they now have access to their college. */
+export async function sendCollegeStaffApprovedEmail({
+  to, name, collegeName, loginUrl,
+}: ApprovalEmail & { collegeName?: string | null }): Promise<void> {
+  const hi = name ? `Hi ${name},` : "Hi,";
+  const at = collegeName ? ` for ${collegeName}` : "";
+  const subject = "Your CareerLaunchpad staff access is approved";
+  const text =
+    `${hi}\n\n` +
+    `Good news — your staff access${at} has been approved. You can now see your college's students, batches and results.\n\n` +
+    `Sign in here:\n${loginUrl}\n`;
+  const html =
+    `<p>${hi}</p>` +
+    `<p>Good news — your staff access${escapeHtml(at)} has been <strong>approved</strong>. ` +
+    `You can now see your college's students, batches and results.</p>` +
+    `<p><a href="${loginUrl}">Open your dashboard</a></p>`;
+  await deliver("college-staff-approved", to, subject, text, html);
+}
+
+/**
+ * A reviewer sent the registration back, rejected it, or suspended access. One
+ * template for all three because the message is the same shape — what happened,
+ * why, what to do — and splitting it would mean three near-identical bodies that
+ * drift. `note` is the reviewer's own words and is always shown; without a
+ * reason these emails are just a dead end for the recipient.
+ */
+export async function sendCollegeStaffReviewEmail({
+  to, name, outcome, note, loginUrl,
+}: {
+  to: string;
+  name?: string | null;
+  outcome: "changes_requested" | "rejected" | "suspended";
+  note?: string | null;
+  loginUrl: string;
+}): Promise<void> {
+  const hi = name ? `Hi ${name},` : "Hi,";
+  const copy = {
+    changes_requested: {
+      subject: "Your CareerLaunchpad staff registration needs a correction",
+      lead: "Your college admin has asked for a correction to your staff registration before it can be approved.",
+      cta: "Update your registration",
+    },
+    rejected: {
+      subject: "About your CareerLaunchpad staff registration",
+      lead: "Your college admin was not able to approve your staff registration.",
+      cta: "View your registration",
+    },
+    suspended: {
+      subject: "Your CareerLaunchpad staff access has been paused",
+      lead: "Your staff access has been paused by your college admin.",
+      cta: "View your registration",
+    },
+  }[outcome];
+
+  const reason = note?.trim();
+  const text =
+    `${hi}\n\n${copy.lead}\n\n` +
+    (reason ? `What they said:\n${reason}\n\n` : "") +
+    `${copy.cta}:\n${loginUrl}\n`;
+  const html =
+    `<p>${hi}</p><p>${copy.lead}</p>` +
+    (reason
+      ? `<p style="margin:16px 0;padding:12px 16px;background:#f8fafc;border-left:3px solid #7c3aed;">${escapeHtml(reason)}</p>`
+      : "") +
+    `<p><a href="${loginUrl}">${copy.cta}</a></p>`;
+  await deliver(`college-staff-${outcome}`, to, copy.subject, text, html);
 }
 
 /** Whether real delivery is wired up, and the From address if so. For the

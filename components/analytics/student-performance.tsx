@@ -8,11 +8,18 @@
 // The charts themselves live in ./performance/*, one per FR, so this stays a
 // composition and the 660-line original stops being the place every change lands.
 // Colour comes from lib/chart-palette.ts — never hardcoded here.
+//
+// `studentId` (#111) points the same component at ONE OTHER student, for the
+// college-staff drilldown: it appends ?student= to every read, and the database
+// (perf_target, migration 176) decides whether the caller may see them. Omitted
+// on the student's own /student/insights, which is the self-view unchanged. One
+// component, two audiences — the alternative was a staff copy of 420 lines of
+// composition that would drift from the student's view chart by chart.
 import { useCallback, useEffect, useState } from "react";
 import { Loader2 } from "lucide-react";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
-import { Input } from "@/components/ui/input";
+import { DatePicker } from "@/components/ui/date-picker";
 import {
   Select,
   SelectContent,
@@ -56,7 +63,7 @@ function monthsAgo(months: number): string {
   return d.toISOString().slice(0, 10);
 }
 
-export function StudentPerformance() {
+export function StudentPerformance({ studentId }: { studentId?: string } = {}) {
   const [range, setRange] = useState("12m");
   const [customFrom, setCustomFrom] = useState("");
   const [customTo, setCustomTo] = useState("");
@@ -101,17 +108,18 @@ export function StudentPerformance() {
       if (months != null) p.set("from", monthsAgo(months));
     }
     if (batch !== "all") p.set("batch", batch);
+    if (studentId) p.set("student", studentId);
     const s = p.toString();
     return s ? `?${s}` : "";
-  }, [range, customFrom, customTo, batch]);
+  }, [range, customFrom, customTo, batch, studentId]);
 
   // The student's batches back the FR-7 filter (rendered only when >1 batch).
   useEffect(() => {
-    fetch("/api/student/performance/batches")
+    fetch(`/api/student/performance/batches${studentId ? `?student=${studentId}` : ""}`)
       .then((r) => r.json())
       .then((d) => setBatches(d.batches ?? []))
       .catch(() => setBatches([]));
-  }, []);
+  }, [studentId]);
 
   useEffect(() => {
     let cancelled = false;
@@ -155,6 +163,7 @@ export function StudentPerformance() {
     const p = new URLSearchParams();
     if (batch !== "all") p.set("batch", batch);
     if (appliedTarget != null) p.set("target", String(appliedTarget));
+    if (studentId) p.set("student", studentId);
     const s = p.toString();
     fetch(`/api/student/performance/study-plan${s ? `?${s}` : ""}`)
       .then((r) => r.json())
@@ -175,7 +184,7 @@ export function StudentPerformance() {
     return () => {
       cancelled = true;
     };
-  }, [batch, appliedTarget]);
+  }, [batch, appliedTarget, studentId]);
 
   function applyTarget() {
     const t = target.trim();
@@ -270,24 +279,31 @@ export function StudentPerformance() {
           </SelectContent>
         </Select>
         {range === "custom" && (
-          <div className="flex items-center gap-1.5">
-            <Input
-              type="date"
-              value={customFrom}
-              max={customTo || undefined}
-              onChange={(e) => setCustomFrom(e.target.value)}
-              className="h-8 w-[9.5rem]"
-              aria-label="From date"
-            />
+          // The shared DatePicker rather than <input type="date">: the native
+          // control shows the browser's own calendar in the browser's own field
+          // order, which is the inconsistency docs/STYLE_GUIDE.md → "Dates &
+          // times" rules out. The min/max attributes become day matchers, so an
+          // end date before the start is still unpickable.
+          <div className="flex flex-wrap items-center gap-1.5">
+            <div className="w-[10.5rem]">
+              <DatePicker
+                value={customFrom}
+                onChange={setCustomFrom}
+                placeholder="Start date"
+                clearable
+                disabled={customTo ? { after: new Date(`${customTo}T00:00:00`) } : undefined}
+              />
+            </div>
             <span className="text-muted-foreground text-xs">to</span>
-            <Input
-              type="date"
-              value={customTo}
-              min={customFrom || undefined}
-              onChange={(e) => setCustomTo(e.target.value)}
-              className="h-8 w-[9.5rem]"
-              aria-label="To date"
-            />
+            <div className="w-[10.5rem]">
+              <DatePicker
+                value={customTo}
+                onChange={setCustomTo}
+                placeholder="End date"
+                clearable
+                disabled={customFrom ? { before: new Date(`${customFrom}T00:00:00`) } : undefined}
+              />
+            </div>
           </div>
         )}
       </div>

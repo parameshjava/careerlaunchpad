@@ -9,5 +9,13 @@ export async function middleware(request: NextRequest) {
 }
 
 export const config = {
-  matcher: ["/dashboard/:path*", "/student/:path*", "/employer/:path*"],
+  matcher: [
+    "/dashboard/:path*",
+    "/student/:path*",
+    "/employer/:path*",
+    // College Staff registration + status. Included because an UNAPPROVED
+    // registrant lives here for as long as review takes, so a stale session
+    // would otherwise strand them on a page their own layout then bounces.
+    "/college-staff/:path*",
+  ],
 };

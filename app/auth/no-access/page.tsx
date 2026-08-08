@@ -17,7 +17,14 @@ const paths: {
   title: string;
   description: string;
   available: boolean;
+  /** Provision on the spot, then redirect (student, mentor). */
   action?: () => Promise<void>;
+  /**
+   * Or send them to a page that asks something first. College staff use this:
+   * their college has to be chosen BEFORE the account exists, because it decides
+   * who reviews the registration and is pinned once approved (#107).
+   */
+  href?: string;
 }[] = [
   {
     key: "student",
@@ -37,12 +44,21 @@ const paths: {
     available: true,
     action: registerAsMentor,
   },
+  {
+    key: "college_staff",
+    emoji: "🏫",
+    title: "College Staff",
+    description:
+      "Faculty, HOD or placement officer? Follow your own college's students, batches and results in one place. Your college admin approves the request.",
+    available: true,
+    href: "/college-staff/register",
+  },
 ];
 
 export default function NoAccessPage() {
   return (
     <main className="flex min-h-[calc(100vh-var(--header-h,72px))] flex-col items-center justify-center px-4 py-12">
-      <div className="w-full max-w-2xl">
+      <div className="w-full max-w-2xl lg:max-w-4xl">
         <header className="mb-8 text-center">
           <h1 className="text-2xl font-bold tracking-tight sm:text-3xl">
             Welcome to{" "}
@@ -56,7 +72,9 @@ export default function NoAccessPage() {
           </p>
         </header>
 
-        <div className="grid gap-4 sm:grid-cols-2">
+        {/* Three cards: one column on phones, two on tablets, three from lg so
+            the row doesn't leave a lone card stranded on a wide screen. */}
+        <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
           {paths.map((path) => (
             <div
               key={path.key}
@@ -67,11 +85,15 @@ export default function NoAccessPage() {
                   Coming soon
                 </span>
               )}
-              <div className="text-3xl" aria-hidden>
-                {path.emoji}
+              {/* Emoji and title on one line. `pr-24` only when the "Coming soon"
+                  badge is present, so the title can't run under it. */}
+              <div className={`flex items-center gap-2.5 ${path.available ? "" : "pr-24"}`}>
+                <span className="text-2xl leading-none" aria-hidden>
+                  {path.emoji}
+                </span>
+                <h2 className="min-w-0 text-lg font-semibold">{path.title}</h2>
               </div>
-              <h2 className="mt-3 text-lg font-semibold">{path.title}</h2>
-              <p className="text-muted-foreground mt-1 flex-1 text-sm">{path.description}</p>
+              <p className="text-muted-foreground mt-2 flex-1 text-sm">{path.description}</p>
 
               {path.available && path.action ? (
                 <form action={path.action} className="mt-5">
@@ -82,6 +104,13 @@ export default function NoAccessPage() {
                     {path.title} registration
                   </Button>
                 </form>
+              ) : path.available && path.href ? (
+                <Button
+                  asChild
+                  className="mt-5 w-full bg-gradient-to-r from-[#2563eb] to-[#7c3aed] text-white shadow-lg shadow-[#7c3aed]/25 transition hover:brightness-105"
+                >
+                  <Link href={path.href}>{path.title} registration</Link>
+                </Button>
               ) : (
                 <Button type="button" variant="outline" className="mt-5 w-full" disabled>
                   {path.title} registration

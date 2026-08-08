@@ -3,9 +3,11 @@
 // calling supabase.rpc inline, so the row shapes lived only in the client
 // component's type aliases and the range/batch parsing was copy-pasted six times.
 //
-// Every RPC here is SECURITY DEFINER and filters on auth.uid() internally
-// (migrations 147, 153, 154) — these helpers never take a student id, so there is
-// no parameter through which one student could read another's scores.
+// Every RPC here is SECURITY DEFINER and resolves WHOSE progress to report
+// through perf_target() (migration 176): the caller's own by default, or a named
+// student only when the caller holds a student-records grant covering that
+// student's college. `scope.student` is therefore safe to pass straight through
+// — an unauthorized id raises in the database rather than returning rows.
 import type { SupabaseClient } from "@supabase/supabase-js";
 
 /** The from/to/batch scope every performance read shares. */
@@ -13,6 +15,9 @@ export type PerfScope = {
   from: string | null;
   to: string | null;
   batch: string | null;
+  /** Whose progress to read. null = the caller's own (the student surface).
+   *  A staff drilldown passes the student's id; perf_target() authorizes it. */
+  student: string | null;
 };
 
 export type PerfSummary = {
@@ -129,10 +134,13 @@ export function readScope(sp: URLSearchParams): PerfScope {
     from: sp.get("from") || null,
     to: sp.get("to") || null,
     batch: sp.get("batch") || null,
+    student: sp.get("student") || null,
   };
 }
 
-const scopeArgs = (s: PerfScope) => ({ p_from: s.from, p_to: s.to, p_batch: s.batch });
+const scopeArgs = (s: PerfScope) => ({
+  p_from: s.from, p_to: s.to, p_batch: s.batch, p_student: s.student,
+});
 
 // Supabase's generated types aren't wired up in this repo, so rpc() is untyped;
 // each helper asserts the row shape its migration declares.
@@ -188,10 +196,12 @@ export async function fetchStudyPlan(
   supabase: Client,
   batch: string | null,
   target: number | null,
+  student: string | null = null,
 ): Promise<StudyPlan> {
   const data = await rpc<Partial<StudyPlan> | null>(supabase, "student_study_plan", {
     p_batch: batch,
     p_target: target,
+    p_student: student,
   });
   return {
     items: data?.items ?? [],
@@ -202,12 +212,13 @@ export async function fetchStudyPlan(
 
 export async function fetchBatches(
   supabase: Client,
+  student: string | null = null,
 ): Promise<{ batch_id: string; batch_name: string }[]> {
   return (
     (await rpc<{ batch_id: string; batch_name: string }[]>(
       supabase,
       "student_performance_batches",
-      {},
+      { p_student: student },
     )) ?? []
   );
 }

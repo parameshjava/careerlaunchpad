@@ -98,8 +98,11 @@ export function buildNav(ctx: AuthContext, opts: { studentApproved?: boolean } =
   // Role precedence mirrors computeHomePath (lib/auth.ts): console → employer →
   // student → mentor. Keeping the same order here means the sidebar always
   // matches the surface a multi-role user actually lands on.
+  // Must stay in step with CONSOLE_ROLES in lib/auth.ts — that decides where a
+  // user LANDS, this decides what menu they get there, and a role in one list
+  // but not the other means arriving at /dashboard with an empty sidebar.
   const consoleRole = ctx.roles.some((r) =>
-    ["owner", "platform_admin", "college_admin", "support", "coordinator"].includes(r),
+    ["owner", "platform_admin", "college_admin", "college_staff", "support", "coordinator"].includes(r),
   );
   if (consoleRole) {
     // Grouped by what the user acts on, one item per home, each permission-gated:
@@ -117,6 +120,17 @@ export function buildNav(ctx: AuthContext, opts: { studentApproved?: boolean } =
     // members, invite, manage, or review mentors.
     if (can(ctx, "user.view") || can(ctx, "user.invite") || can(ctx, "user.manage") || canReviewMentors(ctx))
       people.push({ label: "Team", href: "/dashboard/team", icon: "users" });
+    // College staff (#107) is its OWN item, not a Team tab, because a
+    // college_admin holds none of the four permissions that open Team and so
+    // cannot reach it — this is their people page. Platform admins get the same
+    // roster as a Team tab too.
+    if (can(ctx, "college.staff.view") || can(ctx, "college.staff.invite"))
+      people.push({ label: "College staff", href: "/dashboard/college-staff", icon: "users" });
+    // College staff get their own profile item — theirs is a rich record
+    // (subjects, experience), not the generic /account one the other console
+    // roles use, and it is the only way back to it from the console.
+    if (ctx.roles.includes("college_staff"))
+      people.push({ label: "My staff profile", href: "/college-staff/register", icon: "profile" });
 
     // Platform — supporting configuration (colleges, organizations, tooling).
     const platform: NavItem[] = [];
@@ -172,6 +186,22 @@ export function buildNav(ctx: AuthContext, opts: { studentApproved?: boolean } =
 
     // Reports — read-only analytics across domains.
     const reports: NavItem[] = [];
+    // "My college" (#111) is the college-scoped starting point: students by
+    // stage, batch progress, what's on next. First in the group because for
+    // college staff it is the landing page, not a report they occasionally open.
+    if (can(ctx, "college.students.view") || can(ctx, "college.analytics.view") || can(ctx, "user.manage"))
+      reports.push({ label: "My college", href: "/dashboard/college", icon: "college" });
+    // Students Performance (#107 follow-up): every exam AND every chapter
+    // assessment over a period, in one place. Anyone who may read a college's
+    // student records, or exam results anywhere, may read the reports built from
+    // them — the RPCs pin a college-scoped caller to their own college.
+    if (
+      ctx.permissions.has("*") ||
+      can(ctx, "exam.results.view_all") ||
+      can(ctx, "college.students.view") ||
+      can(ctx, "user.manage")
+    )
+      reports.push({ label: "Students Performance", href: "/dashboard/reports", icon: "analytics" });
     if (canViewAnalytics(ctx))
       reports.push({ label: "College analytics", href: "/dashboard/analytics", icon: "analytics" });
 

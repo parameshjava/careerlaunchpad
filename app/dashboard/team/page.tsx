@@ -4,11 +4,13 @@ import { redirect } from "next/navigation";
 import { getAuthContext, can } from "@/lib/auth";
 import { createClient } from "@/lib/supabase/server";
 import { fetchMentors } from "@/lib/mentors-query";
+import { fetchCollegeStaff, fetchStaffInvites } from "@/lib/college-staff-list";
 import { Button } from "@/components/ui/button";
 import { PageContainer } from "@/components/app-shell/page-container";
 import { InviteDialog } from "@/app/dashboard/users/invite-dialog";
 import { type MemberRow, type Caps } from "@/app/dashboard/users/platform-users-table";
 import { TeamConsole, type TeamTab } from "./team-console";
+import { TeamStaffPanel } from "@/app/dashboard/college-staff/team-staff-panel";
 
 export const metadata: Metadata = { title: "Team" };
 
@@ -25,7 +27,7 @@ const isStaff = (keys: string[]) =>
 type Role = { key?: string; name?: string };
 const one = <T,>(r: T | T[] | null | undefined): T | null => (Array.isArray(r) ? r[0] ?? null : r ?? null);
 
-const TABS: TeamTab[] = ["admins", "staff", "mentors", "invites"];
+const TABS: TeamTab[] = ["admins", "staff", "mentors", "collegeStaff", "invites"];
 
 export default async function TeamPage({
   searchParams,
@@ -41,6 +43,10 @@ export default async function TeamPage({
   const canViewUsers = can(ctx, "user.view");
   const canReviewMentors = ctx.permissions.has("*") || can(ctx, "mentor.review");
   const canSeeMentors = canReviewMentors || can(ctx, "user.manage");
+  // The College-staff tab is for the PLATFORM side of #107. A college admin
+  // can't reach this page at all (they hold none of the gates above) and has
+  // /dashboard/college-staff instead, so this tab is only ever the global view.
+  const canSeeCollegeStaff = ctx.permissions.has("*") || can(ctx, "college.staff.view");
   if (!canViewUsers && !canInvite && !canResend && !canSeeMentors) redirect("/dashboard");
 
   const caps: Caps = {
@@ -58,8 +64,14 @@ export default async function TeamPage({
   const isMentor = ctx.roles.includes("mentor");
 
   const supabase = await createClient();
-  const [{ data: employers }, { data: invites }, { data: users, error: usersError }, mentors] =
-    await Promise.all([
+  const [
+    { data: employers },
+    { data: invites },
+    { data: users, error: usersError },
+    mentors,
+    staffRows,
+    staffInvites,
+  ] = await Promise.all([
       supabase.from("employer").select("id, name").order("name"),
       supabase
         .from("invite")
@@ -72,6 +84,8 @@ export default async function TeamPage({
         .neq("status", "deleted")
         .order("created_at", { ascending: false }),
       canSeeMentors ? fetchMentors(supabase) : Promise.resolve([]),
+      canSeeCollegeStaff ? fetchCollegeStaff(supabase) : Promise.resolve([]),
+      canSeeCollegeStaff ? fetchStaffInvites(supabase) : Promise.resolve([]),
     ]);
 
   // One MemberRow per provisioned user. Office email comes from notification_email;
@@ -170,6 +184,10 @@ export default async function TeamPage({
         staff={staff}
         invites={inviteRows}
         mentors={mentors}
+        collegeStaff={canSeeCollegeStaff ? { rows: staffRows, invites: staffInvites } : null}
+        collegeStaffPanel={
+          canSeeCollegeStaff ? <TeamStaffPanel rows={staffRows} invites={staffInvites} /> : null
+        }
         caps={caps}
         callerRank={callerRank}
         isOwner={isOwner}

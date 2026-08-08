@@ -33,6 +33,20 @@ export type AuthContext = {
   name: string | null;
   /** Profile photo URL from the social provider (Google/LinkedIn/GitHub/…), if any. */
   avatarUrl: string | null;
+  /**
+   * The user's College Staff registration, if they have one (#107). Present
+   * even before approval — a self-registered staff member holds NO role until a
+   * college admin approves, so this is the only signal that they exist and the
+   * only thing keeping them out of the /auth/no-access loop. Null for everyone
+   * else.
+   */
+  collegeStaff: CollegeStaffContext | null;
+};
+
+export type CollegeStaffContext = {
+  status: "pending_review" | "changes_requested" | "approved" | "suspended" | "rejected";
+  registrationStatus: "in_progress" | "submitted";
+  collegeId: string;
 };
 
 /**
@@ -51,9 +65,15 @@ function readProviderProfile(meta: Record<string, unknown> | undefined) {
 }
 
 /** Roles that use the /dashboard console. */
-const CONSOLE_ROLES = ["owner", "platform_admin", "college_admin", "support", "coordinator"];
+const CONSOLE_ROLES = [
+  "owner", "platform_admin", "college_admin", "college_staff", "support", "coordinator",
+];
 
-function computeHomePath(roles: string[], provisioned: boolean): string {
+function computeHomePath(
+  roles: string[],
+  provisioned: boolean,
+  collegeStaff: CollegeStaffContext | null,
+): string {
   if (!provisioned) return "/auth/no-access";
   if (roles.some((r) => CONSOLE_ROLES.includes(r))) return "/dashboard";
   if (roles.includes("employer")) return "/employer";
@@ -62,6 +82,10 @@ function computeHomePath(roles: string[], provisioned: boolean): string {
   // Multi-role mentors (student/owner/admin who also mentor) keep the home
   // above and reach /mentor via the sidebar.
   if (roles.includes("mentor")) return "/mentor";
+  // A staff registration in flight: provisioned, but holding no role until a
+  // college admin approves (#107 §3.2). Without this they'd be bounced to
+  // /auth/no-access — the page they just registered from — on every request.
+  if (collegeStaff) return "/college-staff";
   return "/auth/no-access";
 }
 
@@ -71,8 +95,15 @@ function computeHomePath(roles: string[], provisioned: boolean): string {
  * students and mentors have their own rich profile editors. Follows the same
  * role precedence as computeHomePath so profile matches where the user works.
  */
-function computeProfilePath(roles: string[], provisioned: boolean): string {
+function computeProfilePath(
+  roles: string[],
+  provisioned: boolean,
+  collegeStaff: CollegeStaffContext | null,
+): string {
   if (!provisioned) return "/account";
+  // College staff have their own rich profile (subjects, experience), so they
+  // are checked BEFORE the generic console branch they otherwise fall into.
+  if (roles.includes("college_staff") || collegeStaff) return "/college-staff/register";
   if (roles.some((r) => CONSOLE_ROLES.includes(r)) || roles.includes("employer")) return "/account";
   if (roles.includes("student")) return "/student/register";
   if (roles.includes("mentor")) return "/mentor/register";
@@ -117,6 +148,17 @@ export async function getAuthContext(): Promise<AuthContext | null> {
   // so no separate exam_staff round-trip. Drives the "Exam evaluation" nav item.
   const examEvaluator = ctx.exam_evaluator === true;
 
+  // college_staff comes back from auth_context() (migration 175) as an object or
+  // SQL null, so no extra round-trip for the "registration in flight" case.
+  const cs = ctx.college_staff as Record<string, unknown> | null | undefined;
+  const collegeStaff: CollegeStaffContext | null = cs
+    ? {
+        status: cs.status as CollegeStaffContext["status"],
+        registrationStatus: cs.registration_status as CollegeStaffContext["registrationStatus"],
+        collegeId: cs.college_id as string,
+      }
+    : null;
+
   return {
     userId: claims.sub,
     email: (ctx.email as string) ?? claims.email ?? null,
@@ -128,10 +170,11 @@ export async function getAuthContext(): Promise<AuthContext | null> {
     collegeScopes: (ctx.college_scopes as string[]) ?? [],
     employerId: (ctx.employer_id as string) ?? null,
     examEvaluator,
-    homePath: computeHomePath(roles, provisioned),
-    profilePath: computeProfilePath(roles, provisioned),
+    homePath: computeHomePath(roles, provisioned, collegeStaff),
+    profilePath: computeProfilePath(roles, provisioned, collegeStaff),
     name,
     avatarUrl,
+    collegeStaff,
   };
 }
 
