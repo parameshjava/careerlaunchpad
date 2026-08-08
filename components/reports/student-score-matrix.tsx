@@ -19,7 +19,7 @@
  *     ellipsis in a header is the worst possible economy: two exams called
  *     "SDC-Exam-Enhancement-1" and "…-2" become the same column.
  *   • the summary scrolling away → Student is frozen on the left and
- *     Sat + Average are frozen on the RIGHT, so the numbers that summarise a
+ *     Attempted + Average are frozen on the RIGHT, so the numbers that sum up a
  *     row can never be the ones you have to scroll to find. Both frozen edges
  *     have fixed widths, which is what makes the right-hand offsets exact.
  *   • a phone → below sm the table becomes one card per student, so every
@@ -62,8 +62,8 @@ export type MatrixRow = {
 
 // The two frozen right-hand columns. Fixed widths, because a sticky right offset
 // has to be a real number — `right-0` for Average, and exactly Average's width
-// for Sat. Keep these three constants in step.
-const W_SAT = "w-24"; // 6rem
+// for the count. Keep these three constants in step.
+const W_COUNT = "w-24"; // 6rem
 const W_AVG = "w-20"; // 5rem
 const RIGHT_OF_AVG = "right-20"; // = W_AVG
 
@@ -77,7 +77,7 @@ export function StudentScoreMatrix({
 }: {
   rows: MatrixRow[];
   /** Column order is the caller's, so a column with no results still appears —
-   *  "nobody sat it" is a finding, not an absence. */
+   *  "nobody attempted it" is a finding, not an absence. */
   columns: MatrixColumn[];
   showCollege?: boolean;
   countLabel?: string;
@@ -138,7 +138,7 @@ export function StudentScoreMatrix({
     return [...list].sort((a, b) => {
       const x = val(a);
       const y = val(b);
-      // Nulls last in BOTH directions: "didn't sit it" is not a low score, and
+      // Nulls last in BOTH directions: "no result" is not a low score, and
       // sorting it to the top of an ascending column would read as one.
       if (x == null && y == null) return 0;
       if (x == null) return 1;
@@ -354,7 +354,7 @@ export function StudentScoreMatrix({
                 </Th>
               ))}
               <Th sticky={`${RIGHT_OF_AVG} z-30`} sortKey="sat" sort={sort} asc={asc}
-                  onSort={toggle} className={`${W_SAT} border-l`}>
+                  onSort={toggle} className={`${W_COUNT} border-l`}>
                 {satLabel}
               </Th>
               <Th sticky="right-0 z-30" sortKey="avg" sort={sort} asc={asc} onSort={toggle}
@@ -380,7 +380,7 @@ export function StudentScoreMatrix({
                   className={cn(
                     "bg-background text-muted-foreground sticky z-20 border-l px-3 py-2 text-center tabular-nums",
                     RIGHT_OF_AVG,
-                    W_SAT,
+                    W_COUNT,
                   )}
                 >
                   {s.sat} <span className="text-muted-foreground/70">of {columns.length}</span>

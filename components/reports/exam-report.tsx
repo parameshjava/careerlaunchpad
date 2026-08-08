@@ -63,9 +63,9 @@ export function ExamReport({ college, showCollege }: { college?: string | null; 
 
   const s = data?.summary ?? null;
 
-  // Only sittings that someone actually sat become matrix columns; the full list
-  // (including unsat ones) stays in the per-exam table below, where "0 of 40 sat
-  // it" is the finding.
+  // Only sittings someone actually attempted become matrix columns; the full
+  // list (including untouched ones) stays in the per-exam table below, where
+  // "0 of 40 attempted it" is the finding.
   const matrixExams = useMemo(
     () => (data?.exams ?? []).filter((e) => e.attempts > 0),
     [data?.exams],
@@ -103,7 +103,7 @@ export function ExamReport({ college, showCollege }: { college?: string | null; 
   }, [data?.students]);
 
   const tiles = [
-    { label: "Exams held", value: s?.sittings ?? 0, hint: "sittings in this period" },
+    { label: "Exams held", value: s?.sittings ?? 0, hint: "in this period" },
     { label: "Students", value: s?.students ?? 0, hint: `${s?.attempts ?? 0} attempts` },
     { label: "Average", value: pct(s?.avg_pct), hint: `median ${pct(s?.median_pct)}` },
     {
@@ -175,7 +175,7 @@ export function ExamReport({ college, showCollege }: { college?: string | null; 
           </CardHeader>
           <CardContent>
             {matrixExams.length === 0 ? (
-              <EmptyState message="No exam has been sat in this period." />
+              <EmptyState message="No exam has been attempted in this period." />
             ) : (
               <ResponsiveContainer width="100%" height={Math.max(200, matrixExams.length * 38)}>
                 <BarChart data={matrixExams} layout="vertical" margin={{ left: 8, right: 16 }}>
@@ -259,7 +259,7 @@ export function ExamReport({ college, showCollege }: { college?: string | null; 
         <CardHeader className="pb-2">
           <CardTitle className="text-base">Exam by exam</CardTitle>
           <p className="text-muted-foreground text-sm">
-            Includes sittings nobody sat — that is a finding, not an absence.
+            Includes exams nobody attempted — that is a finding, not an absence.
           </p>
         </CardHeader>
         <CardContent>
@@ -273,7 +273,7 @@ export function ExamReport({ college, showCollege }: { college?: string | null; 
                     <th className="px-3 py-2 font-semibold">Exam</th>
                     {showCollege && <th className="px-3 py-2 font-semibold">College</th>}
                     <th className="px-3 py-2 font-semibold">Held</th>
-                    <th className="px-3 py-2 font-semibold">Sat</th>
+                    <th className="px-3 py-2 font-semibold">Attempted</th>
                     <th className="px-3 py-2 font-semibold">Average</th>
                     <th className="px-3 py-2 font-semibold">Range</th>
                     <th className="px-3 py-2 font-semibold">Results</th>
@@ -335,7 +335,7 @@ export function ExamReport({ college, showCollege }: { college?: string | null; 
             countLabel="exams"
             footnote={
               <p>
-                A blank cell means the student didn&rsquo;t sit that exam — it is never counted as
+                A blank cell means the student didn&rsquo;t attempt that exam — it is never counted as
                 0%. <b>Average</b> is the mean of their exam percentages, so a short quiz counts
                 the same as a long mock. There is no pass mark on an exam anywhere in the
                 platform, so no line is drawn — the shading is a gradient, not a verdict.
