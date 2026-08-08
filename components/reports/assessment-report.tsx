@@ -277,7 +277,6 @@ export function AssessmentReport({
             columns={matrixColumns}
             showCollege={!!showCollege}
             countLabel="subjects"
-            satLabel="Subjects"
             footnote={
               <p>
                 A blank cell means the student hasn&rsquo;t attempted any chapter in that subject

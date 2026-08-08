@@ -333,7 +333,6 @@ export function ExamReport({ college, showCollege }: { college?: string | null; 
             columns={matrixColumns}
             showCollege={!!showCollege}
             countLabel="exams"
-            satLabel="Sat"
             footnote={
               <p>
                 A blank cell means the student didn&rsquo;t sit that exam — it is never counted as

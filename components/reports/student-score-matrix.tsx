@@ -63,7 +63,7 @@ export type MatrixRow = {
 // The two frozen right-hand columns. Fixed widths, because a sticky right offset
 // has to be a real number — `right-0` for Average, and exactly Average's width
 // for Sat. Keep these three constants in step.
-const W_SAT = "w-16"; // 4rem
+const W_SAT = "w-24"; // 6rem
 const W_AVG = "w-20"; // 5rem
 const RIGHT_OF_AVG = "right-20"; // = W_AVG
 
@@ -72,7 +72,7 @@ export function StudentScoreMatrix({
   columns,
   showCollege = false,
   countLabel = "exams",
-  satLabel = "Sat",
+  satLabel = "Attempted",
   footnote,
 }: {
   rows: MatrixRow[];
@@ -81,6 +81,9 @@ export function StudentScoreMatrix({
   columns: MatrixColumn[];
   showCollege?: boolean;
   countLabel?: string;
+  /** Header for the count-of-results column. Never abbreviate it: "Sat" read as
+   *  the SAT exam, which is exactly the confusion this column cannot afford —
+   *  it is the denominator of the Average beside it. */
   satLabel?: string;
   footnote?: React.ReactNode;
 }) {
@@ -168,7 +171,7 @@ export function StudentScoreMatrix({
       "Roll number",
       ...(showCollege ? ["College"] : []),
       ...columns.map((c) => `${c.label}${c.sublabel ? ` (${c.sublabel})` : ""}`),
-      `${countLabel} counted`,
+      `${satLabel} (of ${columns.length} ${countLabel})`,
       "Average %",
     ];
     const body = filtered.map((s) => [
@@ -206,7 +209,7 @@ export function StudentScoreMatrix({
   // dropdown, so it lives here rather than being re-derived per view.
   const sortOptions = [
     { value: "avg", label: "Average" },
-    { value: "sat", label: `${satLabel} (count)` },
+    { value: "sat", label: `${satLabel} (how many counted)` },
     { value: "name", label: "Student name" },
     { value: "roll", label: "Roll number" },
     ...columns.map((c) => ({ value: `s:${c.key}`, label: c.label })),
@@ -274,8 +277,8 @@ export function StudentScoreMatrix({
                   </div>
                   <div className="shrink-0 text-right">
                     <Pill value={s.avg} bold />
-                    <p className="text-muted-foreground mt-0.5 text-[0.65rem]">
-                      avg of {s.sat}
+                    <p className="text-muted-foreground mt-0.5 text-[0.65rem] whitespace-nowrap">
+                      avg of {s.sat} of {columns.length}
                     </p>
                   </div>
                 </div>
@@ -380,7 +383,7 @@ export function StudentScoreMatrix({
                     W_SAT,
                   )}
                 >
-                  {s.sat}
+                  {s.sat} <span className="text-muted-foreground/70">of {columns.length}</span>
                 </td>
                 <Cell value={s.avg ?? undefined} bold className={cn("bg-background sticky right-0 z-20", W_AVG)} />
               </tr>
